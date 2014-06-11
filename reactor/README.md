@@ -1,7 +1,7 @@
 Unification
 ===========
 
-This small package contains a Java implementation of a "near linear" time syntactic unification algorithm.[^uni]
+This small package contains a Java implementation of a "near linear" time syntactic unification algorithm.<sup><a href="#uni">1</a></sup>
 
 In order to make use of the API one must implement two interfaces:
 
@@ -11,8 +11,6 @@ In order to make use of the API one must implement two interfaces:
 These are used by the algorithm to analyze the syntax graph. 
 
 The results are provided in the form of variable bindings. On successful unification, the algorithm returns the solution in a triangular form. 
-
-Some javadoc can be found [here] [1]. 
 
 License
 -------
@@ -33,7 +31,4 @@ limitations under the License.
 
 > Written with [StackEdit](https://stackedit.io/).
 
-  [^uni]: Baader, Franz, and Wayne Snyder. "Unification Theory." Handbook of automated reasoning 1 (2001): 445-532.
-
-  [1]: http://../doc/index.html
- 
+  <a anchor="uni">1</a>: Baader, Franz, and Wayne Snyder. "Unification Theory." Handbook of automated reasoning 1 (2001): 445-532.
