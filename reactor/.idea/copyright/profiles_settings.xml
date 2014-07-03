@@ -1,5 +1,3 @@
 <component name="CopyrightManager">
-  <settings default="JetBrains">
-    <module2copyright />
-  </settings>
+  <settings default="JetBrains" />
 </component>

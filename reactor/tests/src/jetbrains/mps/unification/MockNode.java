@@ -44,6 +44,26 @@ public abstract class MockNode implements Node {
         }
 
         @Override
+        public boolean isTerm() {
+            return true;
+        }
+
+        @Override
+        public boolean isVar() {
+            return false;
+        }
+
+        @Override
+        public Term term() {
+            return this;
+        }
+
+        @Override
+        public Var var() {
+            throw new IllegalStateException();
+        }
+
+        @Override
         public Object symbol() {
             return mySymbol;
         }
@@ -91,6 +111,26 @@ public abstract class MockNode implements Node {
         @Override
         public String name() {
             return myName;
+        }
+
+        @Override
+        public boolean isTerm() {
+            return false;
+        }
+
+        @Override
+        public boolean isVar() {
+            return true;
+        }
+
+        @Override
+        public Term term() {
+            throw new IllegalStateException();
+        }
+
+        @Override
+        public Var var() {
+            return this;
         }
 
         @Override

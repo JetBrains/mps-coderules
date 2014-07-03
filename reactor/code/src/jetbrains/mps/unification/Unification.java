@@ -56,11 +56,11 @@ public class Unification {
             Node zs = getSchema(s);
             Node zt = getSchema(t);
 
-            if (zs instanceof Term && zt instanceof Term) {
-                if (eq(((Term)zs).symbol(), ((Term)zt).symbol())) {
+            if (zs.isTerm() && zt.isTerm()) {
+                if (eq(zs.term().symbol(), zt.term().symbol())) {
                     union(s, t);
-                    Iterator<Node> scit = ((Term) zs).children().iterator();
-                    Iterator<Node> tcit = ((Term) zt).children().iterator();
+                    Iterator<? extends Node> scit = zs.term().children().iterator();
+                    Iterator<? extends Node> tcit = zt.term().children().iterator();
                     while(scit.hasNext() && tcit.hasNext()) {
                         if (!unifClosure(scit.next(), tcit.next())) return false;
                     }
@@ -83,9 +83,9 @@ public class Unification {
                 union(t, s);
                 return;
             }
-            if (ssize == tsize && s instanceof Var && t instanceof Var) {
+            if (ssize == tsize && s.isVar() && t.isVar()) {
                 // ensure proper order of variables in the substitution
-                if(((Var)s).compareTo((Var)t) < 0) {
+                if(s.var().compareTo(t.var()) < 0) {
                     union(t, s);
                     return;
                 }
@@ -95,7 +95,7 @@ public class Unification {
 
             setSize(s, ssize + tsize);
             appendVars(s, getVars(t));
-            if (getSchema(s) instanceof Var) {
+            if (getSchema(s).isVar()) {
                 setSchema(s, getSchema(t));
             }
             setRepresentative(t, s);
@@ -130,10 +130,10 @@ public class Unification {
             if (isAcyclic(z)) return substitution; // not part of a cycle
             if (isVisited(z)) return FAILED_SUBSTITUTION; // there exists a cycle
 
-            if (z instanceof Term) {
+            if (z.isTerm()) {
                 setVisited(z, true);
 
-                for (Node c : ((Term) z).children()) {
+                for (Node c : z.term().children()) {
                     substitution = findSolution(c, substitution);
                     if (!substitution.isSuccessful()) return substitution;
                 }
@@ -182,7 +182,7 @@ public class Unification {
 
         private List<Var> getVars(Node n) {
             if (!hasData(n)) {
-                return n instanceof Term ? Collections.<Var>emptyList() : Collections.singletonList((Var) n);
+                return n.isTerm() ? Collections.<Var>emptyList() : Collections.singletonList(n.var());
             }
             return getData(n).myVars;
         }
@@ -237,7 +237,7 @@ public class Unification {
             Data(Node n) {
                 myClass = n;
                 mySchema = n;
-                myVars = n instanceof Term ? Collections.<Var>emptyList() : Collections.singletonList((Var) n);
+                myVars = n.isTerm() ? Collections.<Var>emptyList() : Collections.singletonList(n.var());
             }
         }
     }

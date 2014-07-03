@@ -27,6 +27,6 @@ public interface Term extends Node {
 
     Object symbol();
 
-    Collection<Node> children();
+    Collection<? extends Node> children();
 
 }

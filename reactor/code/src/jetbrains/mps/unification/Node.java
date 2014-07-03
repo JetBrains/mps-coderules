@@ -24,4 +24,11 @@ package jetbrains.mps.unification;
  */
 public interface Node {
 
+    boolean isTerm();
+
+    Term term();
+
+    boolean isVar();
+
+    Var var();
 }
