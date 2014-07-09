@@ -22,18 +22,19 @@ import static org.junit.Assert.*;
 
 import static jetbrains.mps.unification.MockNode.*;
 import static jetbrains.mps.unification.MockTreeParser.*;
+import static jetbrains.mps.unification.AssertAll.*;
+
 /**
  * Created by fyodor on 10.06.2014.
  */
 public class ParserTests {
 
     @Test
-    public void testNormal() {
+    public void testSingle() {
         assertEquals(parse("a"), term("a"));
         assertEquals(parseTerm("a").symbol(), term("a").symbol());
         assertEquals(parseVar("X").name(), var("X").name());
-        assertEquals(parse("a b"), term("a"));
-        assertEquals(parse("X b"), var("X"));
+        assertEquals(parse("X"), var("X"));
         assertEquals(parse("a{b}"), term("a", term("b")));
         assertEquals(parseTerm("a{b}").symbol(), term("a", term("b")).symbol());
         assertEquals(parse("a{b c}"), term("a", term("b"), term("c")));
@@ -43,11 +44,16 @@ public class ParserTests {
     }
 
     @Test
+    public void testMuti() {
+        assertEqualsAll(parseAll("a b"), term("a"), term("b"));
+        assertEqualsAll(parseAll("X Y"), var("X"), var("Y"));
+        assertEqualsAll(parseAll("a{b} a{b}"), term("a", term("b")), term("a", term("b")));
+    }
+
+    @Test
     public void testWhitespace() {
         assertEquals(parse("    a"), term("a"));
-        assertEquals(parse("  a   b"), term("a"));
-        assertEquals(parse("  a   Y"), term("a"));
-        assertEquals(parse("  Y   b"), var("Y"));
+        assertEquals(parse("  Y  "), var("Y"));
         assertEquals(parse("a{ b }"), term("a", term("b")));
         assertEquals(parse("a{   b c }"), term("a", term("b"), term("c")));
         assertEquals(parse("a{b X}   "), term("a", term("b"), var("X")));
@@ -72,16 +78,6 @@ public class ParserTests {
                                         var("Z"), term("e"), var("W"), term("f"), term("g")),
                                 var("Y")))));
     }
-    
-    @Test(expected = MockTreeParser.ParseException.class)
-    public void testEmptyFail() {
-        parse("");
-    }
-
-    @Test(expected = MockTreeParser.ParseException.class)
-    public void testEmptyChildrenFail() {
-        parse("a{}");
-    }
 
     @Test(expected = MockTreeParser.ParseException.class)
     public void testUclosedFail() {
@@ -101,6 +97,26 @@ public class ParserTests {
     @Test(expected = MockTreeParser.ParseException.class)
     public void testDoubleClosed() {
         parse("a{X b}}");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFailMulti1() {
+        parse("  a   Y");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFailMulti2() {
+        parse("a b");
+    }
+
+    @Test(expected = MockTreeParser.ParseException.class)
+    public void testEmptyFail() {
+        parse("");
+    }
+
+    @Test(expected = MockTreeParser.ParseException.class)
+    public void testEmptyChildrenFail() {
+        parse("a{}");
     }
 
     @Test(expected = MockTreeParser.ParseException.class)

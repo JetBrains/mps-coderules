@@ -147,6 +147,18 @@ public class SolverTests {
     }
 
     @Test
+    public void test8() throws Exception {
+        assertUnifiesWithBindings(
+                parseTerm("a{b{c d} e{f g} }"),
+                parseTerm("a{b{X Y} e{Z} }"),
+
+                bind(var("X"), parseTerm("c")),
+                bind(var("Y"), parseTerm("d")),
+                bind(var("Z"), parseTerm("f"))
+        );
+    }
+
+    @Test
     public void testFail1() throws Exception {
         assertUnifificationFails(
                 term("a"),

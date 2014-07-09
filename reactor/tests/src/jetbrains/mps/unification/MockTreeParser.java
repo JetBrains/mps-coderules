@@ -16,9 +16,7 @@
 
 package jetbrains.mps.unification;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,16 +27,24 @@ import static jetbrains.mps.unification.MockNode.*;
  */
 public class MockTreeParser {
 
-    public static Node parse(String str) {
+    public static Collection<Node> parseAll(String str) {
         return new RecursiveDescent().parse(str);
     }
 
+    public static Node parse(String str) {
+        List<Node> nodes = new RecursiveDescent().parse(str);
+        if (nodes.size() != 1) {
+            throw new IllegalArgumentException("expected single term or var");
+        }
+        return nodes.get(0);
+    }
+
     public static Term parseTerm(String str) {
-        return (Term) new RecursiveDescent().parse(str);
+        return (Term) parse(str);
     }
 
     public static Var parseVar(String str) {
-        return (Var) new RecursiveDescent().parse(str);
+        return (Var) parse(str);
     }
 
     private static class RecursiveDescent {
@@ -47,12 +53,12 @@ public class MockTreeParser {
         private LinkedList<String> termsStack = new LinkedList<String>();
         private LinkedList<List<Node>> childrenStack = new LinkedList<List<Node>>();
 
-        private Node parse(String toParse) {
+        private List<Node> parse(String toParse) {
             parseNextToken(Token.START, null);
             loop(toParse);
             parseNextToken(Token.END, null);
             checkFinalState();
-            return childrenStack.pop().get(0);
+            return Collections.unmodifiableList(childrenStack.pop());
         }
 
         private void loop(String toParse) {
