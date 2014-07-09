@@ -64,6 +64,9 @@ public class Unification {
                     while(scit.hasNext() && tcit.hasNext()) {
                         if (!unifClosure(scit.next(), tcit.next())) return false;
                     }
+                    if (scit.hasNext() != tcit.hasNext()) {
+                        return false; // children lists are of different size
+                    }
                 }
                 else {
                     return false; // symbol clash

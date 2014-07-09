@@ -60,20 +60,20 @@ public class SolverTests {
                 bind(var("Y"), term("c"))
         );
         assertUnifiesWithBindings(
-                parse("a{b X Y Z}"),
-                parse("a{X Y Z b{e}}"),
+                parse("a{b{c} X Y Z}"),
+                parse("a{X Y Z b{c}}"),
 
-                bind(var("X"), term("b")),
-                bind(var("Y"), term("b")),
-                bind(var("Z"), term("b"))
+                bind(var("X"), parse("b{c}")),
+                bind(var("Y"), parse("b{c}")),
+                bind(var("Z"), parse("b{c}"))
         );
         assertUnifiesWithBindings(
-                parse("a{b Z Y X}"),
-                parse("a{Z Y X b{e}}"),
+                parse("a{b{c} Z Y X}"),
+                parse("a{Z Y X b{c}}"),
 
-                bind(var("X"), term("b")),
-                bind(var("Y"), term("b")),
-                bind(var("Z"), term("b"))
+                bind(var("X"), parse("b{c}")),
+                bind(var("Y"), parse("b{c}")),
+                bind(var("Z"), parse("b{c}"))
         );
     }
 
@@ -149,7 +149,7 @@ public class SolverTests {
     @Test
     public void test8() throws Exception {
         assertUnifiesWithBindings(
-                parseTerm("a{b{c d} e{f g} }"),
+                parseTerm("a{b{c d} e{f} }"),
                 parseTerm("a{b{X Y} e{Z} }"),
 
                 bind(var("X"), parseTerm("c")),
@@ -159,12 +159,31 @@ public class SolverTests {
     }
 
     @Test
+    public void test9() throws Exception {
+        assertUnifiesWithBindings(
+                parseTerm("a{b{c d} e{X} }"),
+                parseTerm("a{b{X Y} e{Z} }"),
+
+                bind(var("X"), parseTerm("c")),
+                bind(var("Y"), parseTerm("d")),
+                bind(var("Z"), parseTerm("c"))
+        );
+    }
+
+    @Test
     public void testFail1() throws Exception {
         assertUnifificationFails(
                 term("a"),
                 term("b")
         );
+    }
 
+    @Test
+    public void testFail2() throws Exception {
+        assertUnifificationFails(
+                parse("a{b c}"),
+                parse("a{X}")
+        );
     }
 
 }
