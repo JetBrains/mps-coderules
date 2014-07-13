@@ -5,6 +5,10 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/jetbrains.mps.jchr.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/jetbrains.mps.jchr.runtime.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/sandbox/jetbrains.mps.jchr.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/jetbrains.mps.logic.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.unification/jetbrains.mps.unification.msd" folder="" />
     </projectModules>
   </component>
 </project>
