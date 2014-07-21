@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.unification;
+package jetbrains.mps.unification.test;
+
+import jetbrains.mps.unification.Node;
 
 import java.util.Arrays;
 import java.util.Collection;

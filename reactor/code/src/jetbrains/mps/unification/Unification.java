@@ -57,10 +57,10 @@ public class Unification {
             Node zt = getSchema(t);
 
             if (zs.isTerm() && zt.isTerm()) {
-                if (eq(zs.term().symbol(), zt.term().symbol())) {
+                if (eq(zs.asTerm().symbol(), zt.asTerm().symbol())) {
                     union(s, t);
-                    Iterator<? extends Node> scit = zs.term().children().iterator();
-                    Iterator<? extends Node> tcit = zt.term().children().iterator();
+                    Iterator<? extends Node> scit = zs.asTerm().children().iterator();
+                    Iterator<? extends Node> tcit = zt.asTerm().children().iterator();
                     while(scit.hasNext() && tcit.hasNext()) {
                         if (!unifClosure(scit.next(), tcit.next())) return false;
                     }
@@ -88,7 +88,7 @@ public class Unification {
             }
             if (ssize == tsize && s.isVar() && t.isVar()) {
                 // ensure proper order of variables in the substitution
-                if(s.var().compareTo(t.var()) < 0) {
+                if(s.asVar().compareTo(t.asVar()) < 0) {
                     union(t, s);
                     return;
                 }
@@ -136,7 +136,7 @@ public class Unification {
             if (z.isTerm()) {
                 setVisited(z, true);
 
-                for (Node c : z.term().children()) {
+                for (Node c : z.asTerm().children()) {
                     substitution = findSolution(c, substitution);
                     if (!substitution.isSuccessful()) return substitution;
                 }
@@ -185,7 +185,7 @@ public class Unification {
 
         private List<Var> getVars(Node n) {
             if (!hasData(n)) {
-                return n.isTerm() ? Collections.<Var>emptyList() : Collections.singletonList(n.var());
+                return n.isTerm() ? Collections.<Var>emptyList() : Collections.singletonList(n.asVar());
             }
             return getData(n).myVars;
         }
@@ -240,7 +240,7 @@ public class Unification {
             Data(Node n) {
                 myClass = n;
                 mySchema = n;
-                myVars = n.isTerm() ? Collections.<Var>emptyList() : Collections.singletonList(n.var());
+                myVars = n.isTerm() ? Collections.<Var>emptyList() : Collections.singletonList(n.asVar());
             }
         }
     }
@@ -303,7 +303,7 @@ public class Unification {
             String sep = "";
             for (Binding b : myBindings) {
                 sb.append(sep); sep = ", ";
-                sb.append(b.var()).append(" -> ").append(b.term());
+                sb.append(b.var()).append(" -> ").append(b.node());
             }
             return sb.append("]").toString();
         }

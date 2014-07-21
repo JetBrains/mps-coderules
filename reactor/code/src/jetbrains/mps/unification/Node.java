@@ -26,9 +26,9 @@ public interface Node {
 
     boolean isTerm();
 
-    Term term();
+    Term asTerm();
 
     boolean isVar();
 
-    Var var();
+    Var asVar();
 }

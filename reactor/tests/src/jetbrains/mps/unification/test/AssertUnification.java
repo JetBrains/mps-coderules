@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.unification;
+package jetbrains.mps.unification.test;
 
 import jetbrains.mps.unification.Substitution;
 import static jetbrains.mps.unification.Substitution.*;
@@ -47,8 +47,8 @@ public class AssertUnification {
             Binding expb = expIt.next();
             Binding actb = actIt.next();
 
-            expMap.put(expb.var(), expb.term());
-            actMap.put(actb.var(), actb.term());
+            expMap.put(expb.var(), expb.node());
+            actMap.put(actb.var(), actb.node());
         }
 
         assertEquals(expMap, actMap);

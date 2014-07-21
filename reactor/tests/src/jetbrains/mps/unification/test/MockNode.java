@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.unification;
+package jetbrains.mps.unification.test;
+
+import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
+import jetbrains.mps.unification.Var;
 
 import java.util.*;
 
@@ -54,12 +58,12 @@ public abstract class MockNode implements Node {
         }
 
         @Override
-        public Term term() {
+        public Term asTerm() {
             return this;
         }
 
         @Override
-        public Var var() {
+        public Var asVar() {
             throw new IllegalStateException();
         }
 
@@ -124,12 +128,12 @@ public abstract class MockNode implements Node {
         }
 
         @Override
-        public Term term() {
+        public Term asTerm() {
             throw new IllegalStateException();
         }
 
         @Override
-        public Var var() {
+        public Var asVar() {
             return this;
         }
 

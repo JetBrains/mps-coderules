@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.unification;
+package jetbrains.mps.unification.test;
+
+import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
+import jetbrains.mps.unification.Var;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static jetbrains.mps.unification.MockNode.*;
+import static jetbrains.mps.unification.test.MockNode.*;
 
 /**
  * Created by fyodor on 10.06.2014.
@@ -34,7 +38,7 @@ public class MockTreeParser {
     public static Node parse(String str) {
         List<Node> nodes = new RecursiveDescent().parse(str);
         if (nodes.size() != 1) {
-            throw new IllegalArgumentException("expected single term or var");
+            throw new IllegalArgumentException("expected single asTerm or asVar");
         }
         return nodes.get(0);
     }

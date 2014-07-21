@@ -31,7 +31,7 @@ public interface Substitution {
 
     Collection<Binding> bindings() ;
 
-    class Binding {
+    public class Binding {
         private Var myVar;
         private Node myNode;
 
@@ -44,7 +44,7 @@ public interface Substitution {
             return myVar;
         }
 
-        public Node term() {
+        public Node node() {
             return myNode;
         }
     }

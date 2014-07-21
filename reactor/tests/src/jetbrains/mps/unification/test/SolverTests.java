@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.unification;
+package jetbrains.mps.unification.test;
 
 import org.junit.Test;
 
-import static jetbrains.mps.unification.MockNode.*;
-import static jetbrains.mps.unification.MockTreeParser.*;
-import static jetbrains.mps.unification.AssertUnification.*;
+import static jetbrains.mps.unification.test.MockNode.*;
+import static jetbrains.mps.unification.test.MockTreeParser.*;
+import static jetbrains.mps.unification.test.AssertUnification.*;
 
 /**
  * Created by fyodor on 09.06.2014.
