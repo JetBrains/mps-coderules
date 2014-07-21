@@ -4,10 +4,20 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
+    <modelRoot contentPath="${module}" type="java_source_stubs">
+      <sourceRoot location="source" />
+    </modelRoot>
   </models>
-  <sourcePath />
+  <sourcePath>
+    <source path="${module}/source" />
+  </sourcePath>
   <dependencies>
+    <dependency reexport="false">b984ee52-f34d-4b6d-8812-866c1d3eae31(jetbrains.mps.jchr.runtime)</dependency>
+    <dependency reexport="false">eaa96e7c-030a-4e4f-8ae7-a24dff1e0572(jetbrains.mps.logic.sandbox)</dependency>
     <dependency reexport="true">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.unification)</dependency>
   </dependencies>
+  <usedDevKits>
+    <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
+  </usedDevKits>
 </solution>
 
