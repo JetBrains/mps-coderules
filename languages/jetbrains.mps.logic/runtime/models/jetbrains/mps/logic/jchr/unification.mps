@@ -1434,11 +1434,11 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1357303818382033962" resolveInfo="bnd" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818382105164" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jfki.~Substitution%dBinding%dterm()" resolveInfo="term" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jfki.~Substitution%dBinding%dnode()" resolveInfo="node" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818382105165" nodeInfo="nn">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jfki.~Node%dvar()" resolveInfo="var" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jfki.~Node%dasVar()" resolveInfo="asVar" />
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818382105166" nodeInfo="nn">
@@ -1476,7 +1476,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1357303818382033962" resolveInfo="bnd" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818382084139" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jfki.~Substitution%dBinding%dterm()" resolveInfo="term" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jfki.~Substitution%dBinding%dnode()" resolveInfo="node" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818382084140" nodeInfo="nn">
