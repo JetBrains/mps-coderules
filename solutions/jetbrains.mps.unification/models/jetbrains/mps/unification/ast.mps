@@ -566,7 +566,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1357303818385771455" nodeInfo="nn" />
             <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1611448358170644769" nodeInfo="nn">
               <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1611448358170646190" nodeInfo="nn">
-                <property name="text" nameId="tpee.6329021646629104958" value="TODO this smells" />
+                <property name="text" nameId="tpee.6329021646629104958" value="TODO: this smells" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1611448358170575337" nodeInfo="nn">
@@ -763,7 +763,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1357303818385363970" nodeInfo="nn" />
             <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1357303818385151581" nodeInfo="nn">
               <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1357303818385151582" nodeInfo="nn">
-                <property name="text" nameId="tpee.6329021646629104958" value="TODO this smells" />
+                <property name="text" nameId="tpee.6329021646629104958" value="TODO: this smells" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1357303818385151583" nodeInfo="nn">

@@ -981,11 +981,45 @@
                     <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1611448358168674989" nodeInfo="ng">
                       <property name="name" nameId="tpck.1169194664001" value="cls" />
                       <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1611448358168674990" nodeInfo="ng">
-                        <property name="value" nameId="5j4j.7571593955706137638" value="Integer" />
+                        <property name="value" nameId="5j4j.7571593955706137638" value="Map" />
                       </node>
                     </node>
                     <node role="symbol" roleId="5j4j.7571593955706284553" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1611448358168674991" nodeInfo="ng">
                       <property name="name" nameId="tpck.1169194664001" value="node3" />
+                    </node>
+                    <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ChildRole" typeId="5j4j.7571593955706137263" id="1357303818388504519" nodeInfo="ng">
+                      <property name="name" nameId="tpck.1169194664001" value="param" />
+                      <property name="cardinality" nameId="5j4j.7571593955706137428" value="0..n" />
+                      <node role="contents" roleId="5j4j.7571593955706137319" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="1357303818388505934" nodeInfo="ng">
+                        <node role="symbol" roleId="5j4j.7571593955706284553" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1357303818388505937" nodeInfo="ng" />
+                        <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1357303818388506675" nodeInfo="ng">
+                          <property name="name" nameId="tpck.1169194664001" value="concept" />
+                          <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1357303818388507542" nodeInfo="ng">
+                            <property name="value" nameId="5j4j.7571593955706137638" value="ClassifierType" />
+                          </node>
+                        </node>
+                        <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1357303818388515489" nodeInfo="ng">
+                          <property name="name" nameId="tpck.1169194664001" value="cls" />
+                          <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1357303818388515736" nodeInfo="ng">
+                            <property name="value" nameId="5j4j.7571593955706137638" value="Integer" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="contents" roleId="5j4j.7571593955706137319" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="1357303818388514775" nodeInfo="ng">
+                        <node role="symbol" roleId="5j4j.7571593955706284553" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1357303818388514776" nodeInfo="ng" />
+                        <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1357303818388514777" nodeInfo="ng">
+                          <property name="name" nameId="tpck.1169194664001" value="concept" />
+                          <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1357303818388514778" nodeInfo="ng">
+                            <property name="value" nameId="5j4j.7571593955706137638" value="ClassifierType" />
+                          </node>
+                        </node>
+                        <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1357303818388516035" nodeInfo="ng">
+                          <property name="name" nameId="tpck.1169194664001" value="cls" />
+                          <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1357303818388516147" nodeInfo="ng">
+                            <property name="value" nameId="5j4j.7571593955706137638" value="String" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                   <node role="contents" roleId="5j4j.7571593955706137319" type="5j4j.NodeVariable" typeId="5j4j.1611448358170966948" id="1611448358171930688" nodeInfo="ng">
@@ -1263,27 +1297,19 @@
             <property name="name" nameId="tpck.1169194664001" value="copy1" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1357303818386798420" nodeInfo="in">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ie8e.1357303818382341941" resolveInfo="ITreePart" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1357303818386798423" nodeInfo="in">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jfki.~Node" resolveInfo="Node" />
+              <node role="parameter" roleId="tpee.1109201940907" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="1357303818388494513" nodeInfo="in">
+                <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1357303818388495678" nodeInfo="in">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jfki.~Node" resolveInfo="Node" />
+                </node>
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1357303818386798431" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1357303818386798432" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1357303818386798433" nodeInfo="nn">
-                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1357303818386798434" nodeInfo="in">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ie8e.1357303818382341941" resolveInfo="ITreePart" />
-                    <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1357303818386798435" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jfki.~Node" resolveInfo="Node" />
-                    </node>
-                  </node>
-                  <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1357303818386798436" nodeInfo="nn">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1357303818386798437" nodeInfo="nn">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1611448358168230123" resolveInfo="tree1" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818386798438" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ie8e.2915549616871243272" resolveInfo="root" />
-                    </node>
-                  </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1357303818386798436" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1357303818386798437" nodeInfo="nn">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1611448358168230123" resolveInfo="tree1" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818386798438" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ie8e.2915549616871243272" resolveInfo="root" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818386798439" nodeInfo="nn">
