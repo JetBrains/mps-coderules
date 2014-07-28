@@ -736,5 +736,28 @@
       </node>
     </node>
   </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7932111957678625922" nodeInfo="ng">
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="5j4j.7932111957678624766" resolveInfo="NodeVariableExpression" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7932111957678626266" nodeInfo="nn">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7932111957678626381" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="`" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.8171260302110651860" resolveInfo="AnyBracket" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationRightStyleClassItem" typeId="tpc2.1233759184865" id="7932111957678655931" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7932111957678626557" nodeInfo="ng">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="5j4j.7932111957678625620" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7932111957678626387" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="`" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.8171260302110651860" resolveInfo="AnyBracket" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="7932111957678656604" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7932111957678626269" nodeInfo="nn" />
+    </node>
+  </root>
 </model>
 
