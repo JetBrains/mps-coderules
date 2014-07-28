@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.unification" uuid="7526e0cf-1ce7-46f8-a555-9eca1e06c23b" compileInMPS="true">
+<solution name="jetbrains.mps.unification.tree" uuid="7526e0cf-1ce7-46f8-a555-9eca1e06c23b" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
