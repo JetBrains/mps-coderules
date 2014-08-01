@@ -3,9 +3,12 @@
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
+      <sourceRoot location="languageAccessories" />
     </modelRoot>
   </models>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="r:63e42001-b680-413c-92d7-b07cd22aa33d(jetbrains.mps.jchr.makehelper)" />
+  </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.jchr#456733934405380506" uuid="3805ea9c-bac0-45ea-9157-1b3b93c1c0cc">
       <models>
