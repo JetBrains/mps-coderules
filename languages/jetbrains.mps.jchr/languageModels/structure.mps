@@ -55,6 +55,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="456733934405496212" resolveInfo="ConstraintDeclaration" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3562712610788606190" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3562712610788604202" resolveInfo="IPredicate" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="456733934405447580" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Rule" />
@@ -196,6 +199,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7932111957672597360" resolveInfo="SolverDeclaration" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3562712610788606397" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3562712610788604202" resolveInfo="IPredicate" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7932111957678809936" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="LocalDeclaration" />
@@ -212,6 +218,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="456733934405450312" resolveInfo="LogicVariable" />
     </node>
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3562712610788604202" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="IPredicate" />
   </root>
 </model>
 

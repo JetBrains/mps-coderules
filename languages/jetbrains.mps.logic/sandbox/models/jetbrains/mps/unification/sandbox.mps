@@ -13,6 +13,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="vgt0" modelUID="r:f36c95e5-e428-4945-91ae-1005e20c7971(jetbrains.mps.jchr.structure)" version="-1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="5j4j" modelUID="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" version="-1" implicit="yes" />
   <root type="vgt0.Handler" typeId="vgt0.456733934405394951" id="7932111957672575234" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="typeOf" />
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimplificationRule" typeId="vgt0.456733934405449669" id="7932111957672584569" nodeInfo="ng">
@@ -53,11 +54,32 @@
           <node role="argument" roleId="vgt0.7932111957674154703" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="6214965505176483045" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="Y" />
           </node>
-          <node role="argument" roleId="vgt0.7932111957674154703" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6214965505176483543" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zcv.6214965505176479767" resolveInfo="t_Bar_of_T" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zcv.7932111957675691621" resolveInfo="Forest" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="6214965505176483544" nodeInfo="ng">
-              <property name="name" nameId="tpck.1169194664001" value="T" />
+          <node role="argument" roleId="vgt0.7932111957674154703" type="5j4j.Ast" typeId="5j4j.7571593955706120730" id="3562712610788578353" nodeInfo="ng">
+            <node role="root" roleId="5j4j.7571593955706125526" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="3562712610788578355" nodeInfo="ng">
+              <property name="kind" nameId="5j4j.7166797808989209772" value="CLASSIFIER_TYPE" />
+              <node role="symbol" roleId="5j4j.7571593955706284553" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="3562712610788578357" nodeInfo="ng" />
+              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="3562712610789186379" nodeInfo="ng">
+                <property name="name" nameId="tpck.1169194664001" value="concept" />
+                <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="3562712610789186380" nodeInfo="ng">
+                  <property name="value" nameId="5j4j.7571593955706137638" value="ClassifierType" />
+                </node>
+              </node>
+              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="3562712610788580030" nodeInfo="ng">
+                <property name="name" nameId="tpck.1169194664001" value="classifier" />
+                <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="3562712610788580031" nodeInfo="ng">
+                  <property name="value" nameId="5j4j.7571593955706137638" value="Bar" />
+                </node>
+              </node>
+              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ChildRole" typeId="5j4j.7571593955706137263" id="3562712610788580154" nodeInfo="ng">
+                <property name="name" nameId="tpck.1169194664001" value="parameter" />
+                <property name="cardinality" nameId="5j4j.7571593955706137428" value="multiple" />
+                <node role="contents" roleId="5j4j.7571593955706137319" type="5j4j.NodeVariableExpression" typeId="5j4j.7932111957678624766" id="3562712610788580538" nodeInfo="ng">
+                  <node role="expression" roleId="5j4j.7932111957678625620" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="3562712610788581261" nodeInfo="ng">
+                    <property name="name" nameId="tpck.1169194664001" value="T" />
+                  </node>
+                  <node role="symbol" roleId="5j4j.7571593955706284553" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="3562712610788580540" nodeInfo="ng" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

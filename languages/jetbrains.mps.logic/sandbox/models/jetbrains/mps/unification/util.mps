@@ -75,6 +75,25 @@
                 <property name="name" nameId="tpck.1169194664001" value="parameter" />
                 <property name="cardinality" nameId="5j4j.7571593955706137428" value="multiple" />
                 <node role="contents" roleId="5j4j.7571593955706137319" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="3562712610780287798" nodeInfo="ng">
+                  <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ChildRole" typeId="5j4j.7571593955706137263" id="3562712610789412411" nodeInfo="ng">
+                    <property name="name" nameId="tpck.1169194664001" value="parameter" />
+                    <property name="cardinality" nameId="5j4j.7571593955706137428" value="multiple" />
+                    <node role="contents" roleId="5j4j.7571593955706137319" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="3562712610789412808" nodeInfo="ng">
+                      <node role="symbol" roleId="5j4j.7571593955706284553" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="3562712610789412813" nodeInfo="ng" />
+                      <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="3562712610789412809" nodeInfo="ng">
+                        <property name="name" nameId="tpck.1169194664001" value="concept" />
+                        <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="3562712610789412810" nodeInfo="ng">
+                          <property name="value" nameId="5j4j.7571593955706137638" value="ClassifierType" />
+                        </node>
+                      </node>
+                      <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="3562712610789412811" nodeInfo="ng">
+                        <property name="name" nameId="tpck.1169194664001" value="classifier" />
+                        <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="3562712610789412812" nodeInfo="ng">
+                          <property name="value" nameId="5j4j.7571593955706137638" value="Foo" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node role="symbol" roleId="5j4j.7571593955706284553" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="3562712610780287803" nodeInfo="ng" />
                   <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="3562712610780287799" nodeInfo="ng">
                     <property name="name" nameId="tpck.1169194664001" value="concept" />
