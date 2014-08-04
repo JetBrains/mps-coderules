@@ -767,6 +767,15 @@
                                         <property name="value" nameId="tpee.1070475926801" value="analysis" />
                                       </node>
                                     </node>
+                                    <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="1503029981644173" nodeInfo="nn">
+                                      <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
+                                      <node role="value" roleId="rzqf.889694274152177540" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1503029981644174" nodeInfo="nn">
+                                        <property name="value" nameId="tpee.1070475926801" value="off" />
+                                      </node>
+                                      <node role="key" roleId="rzqf.889694274152177539" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1503029981644175" nodeInfo="nn">
+                                        <property name="value" nameId="tpee.1070475926801" value="stack" />
+                                      </node>
+                                    </node>
                                     <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="8024275747843814317" nodeInfo="nn">
                                       <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
                                       <node role="value" roleId="rzqf.889694274152177540" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8024275747843856909" nodeInfo="nn">

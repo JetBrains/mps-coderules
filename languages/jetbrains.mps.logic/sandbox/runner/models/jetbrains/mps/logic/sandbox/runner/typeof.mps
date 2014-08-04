@@ -8,6 +8,7 @@
   <import index="zcv" modelUID="r:cbad57c9-c211-4e64-ac84-bbfd0fa39faf(jetbrains.mps.unification.util)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
+  <import index="w2rx" modelUID="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tp68" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="2" implicit="yes" />
@@ -69,8 +70,13 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3562712610788163139" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3562712610788163140" nodeInfo="nn">
             <property name="methodName" nameId="tp68.1174294288199" value="tellTypeOf" />
-            <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3562712610788163141" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="a" />
+            <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1503029981856103" nodeInfo="nn">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1503029981856933" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="w2rx.~Logical%d&lt;init&gt;(java%dlang%dObject)" resolveInfo="Logical" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1503029981858184" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="1" />
+                </node>
+              </node>
             </node>
             <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3562712610788163142" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oy3s.5667087533488031231" resolveInfo="TreeLogical" />
@@ -89,8 +95,13 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3562712610788163146" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3562712610788163147" nodeInfo="nn">
             <property name="methodName" nameId="tp68.1174294288199" value="tellTypeOf" />
-            <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3562712610788163148" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="b" />
+            <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1503029981860508" nodeInfo="nn">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1503029981860509" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="w2rx.~Logical%d&lt;init&gt;(java%dlang%dObject)" resolveInfo="Logical" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1503029981860510" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="2" />
+                </node>
+              </node>
             </node>
             <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3562712610788163149" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oy3s.5667087533488031231" resolveInfo="TreeLogical" />
