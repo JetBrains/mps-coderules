@@ -83,6 +83,8 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="456733934405449659" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PropagationRule" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="==&gt;" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="propagation rule" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="456733934405447580" resolveInfo="Rule" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="456733934405724614" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -93,6 +95,8 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="456733934405449669" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="SimplificationRule" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;=&gt;" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="simplification rule" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="456733934405447580" resolveInfo="Rule" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="456733934405733017" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -103,6 +107,8 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="456733934405449678" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="SimpagationRule" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;=&gt;" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="simpagation rule" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="456733934405447580" resolveInfo="Rule" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="456733934405733078" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
