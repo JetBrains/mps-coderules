@@ -279,18 +279,10 @@
                 <property name="value" nameId="tpee.1068580320021" value="2" />
               </node>
             </node>
-            <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="7337323408787637788" nodeInfo="ng">
-              <link role="key" roleId="tpee.1188214555875" targetNodeId="9sk9.~JCHR_Constraint%dask_infix()" resolveInfo="ask_infix" />
-              <node role="value" roleId="tpee.1188214607812" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5556398506452390910" nodeInfo="nn">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5556398506452384637" resolveInfo="Constraints" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5556398506452385073" resolveInfo="UNI" />
-              </node>
-            </node>
-            <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="7337323408787638240" nodeInfo="ng">
-              <link role="key" roleId="tpee.1188214555875" targetNodeId="9sk9.~JCHR_Constraint%dtell_infix()" resolveInfo="tell_infix" />
-              <node role="value" roleId="tpee.1188214607812" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5556398506452391495" nodeInfo="nn">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5556398506452384637" resolveInfo="Constraints" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5556398506452385073" resolveInfo="UNI" />
+            <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="3562712610791955253" nodeInfo="ng">
+              <link role="key" roleId="tpee.1188214555875" targetNodeId="9sk9.~JCHR_Constraint%dinfix()" resolveInfo="infix" />
+              <node role="value" roleId="tpee.1188214607812" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3562712610791957028" nodeInfo="nn">
+                <property name="value" nameId="tpee.1070475926801" value="=" />
               </node>
             </node>
             <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="7337323408787638512" nodeInfo="ng">
