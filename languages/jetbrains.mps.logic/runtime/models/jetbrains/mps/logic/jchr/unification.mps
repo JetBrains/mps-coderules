@@ -281,8 +281,9 @@
             </node>
             <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="3562712610791955253" nodeInfo="ng">
               <link role="key" roleId="tpee.1188214555875" targetNodeId="9sk9.~JCHR_Constraint%dinfix()" resolveInfo="infix" />
-              <node role="value" roleId="tpee.1188214607812" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3562712610791957028" nodeInfo="nn">
-                <property name="value" nameId="tpee.1070475926801" value="=" />
+              <node role="value" roleId="tpee.1188214607812" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1503029987564755" nodeInfo="nn">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5556398506452384637" resolveInfo="Constraints" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1503029987552607" resolveInfo="INFIX_UNI" />
               </node>
             </node>
             <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="7337323408787638512" nodeInfo="ng">
@@ -306,6 +307,14 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5556398506452385141" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5556398506452386153" nodeInfo="nn">
         <property name="value" nameId="tpee.1070475926801" value="uni" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1503029987552607" nodeInfo="igu">
+      <property name="name" nameId="tpck.1169194664001" value="INFIX_UNI" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1503029987552608" nodeInfo="nn" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1503029987552609" nodeInfo="in" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1503029987552610" nodeInfo="nn">
+        <property name="value" nameId="tpee.1070475926801" value="===" />
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5556398506452384638" nodeInfo="nn" />
