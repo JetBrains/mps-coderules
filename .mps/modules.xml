@@ -2,14 +2,17 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/jetbrains.mps.jchr.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/jetbrains.mps.jchr.runtime.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/sandbox/jetbrains.mps.jchr.sandbox.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/sandbox/runner/jetbrains.mps.jchr.sandbox.runner.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/jetbrains.mps.logic.sandbox.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/runner/jetbrains.mps.logic.sandbox.runner.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/jetbrains.mps.jchr.mpl" folder="jchr" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/jetbrains.mps.jchr.runtime.msd" folder="jchr" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/sandbox/jetbrains.mps.jchr.sandbox.msd" folder="jchr" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/sandbox/runner/jetbrains.mps.jchr.sandbox.runner.msd" folder="jchr" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/jetbrains.mps.logic.sandbox.msd" folder="logic" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/runner/jetbrains.mps.logic.sandbox.runner.msd" folder="logic" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.sandbox.runner/jetbrains.mps.type.sandbox.runner.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.sandbox/jetbrains.mps.type.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.solver/jetbrains.mps.type.solver.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.unification.tree/jetbrains.mps.unification.tree.msd" folder="" />
     </projectModules>
   </component>
