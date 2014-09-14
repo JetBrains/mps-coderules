@@ -1327,7 +1327,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1357303818386798439" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ie8e.4744400670981407610" resolveInfo="copyRecursively" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ie8e.1357303818382343406" resolveInfo="copyRecursively" />
               </node>
             </node>
           </node>
@@ -1787,6 +1787,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="5j4j.Ast" typeId="5j4j.7571593955706120730" id="4744400670981211981" nodeInfo="ng">
               <node role="root" roleId="5j4j.7571593955706125526" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="4744400670981211982" nodeInfo="ng">
+                <property name="kind" nameId="5j4j.7166797808989209772" value="CLASSIFIER_TYPE" />
                 <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="4744400670981211983" nodeInfo="ng">
                   <property name="name" nameId="tpck.1169194664001" value="node1" />
                 </node>
