@@ -11,9 +11,12 @@
     <dependency reexport="false">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
     <dependency reexport="false">eaa96e7c-030a-4e4f-8ae7-a24dff1e0572(jetbrains.mps.logic.sandbox)</dependency>
     <dependency reexport="false">16aea8bc-02ec-4d2e-9965-44a8d4b5d4b2(jetbrains.mps.type.sandbox)</dependency>
+    <dependency reexport="false">2b54fd24-63fa-4af4-8776-244484d34b48(jetbrains.mps.type.solver)</dependency>
+    <dependency reexport="false">a3529a8c-f4ff-4125-865c-391bcc490358(jetbrains.mps.typecheck.runtime)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)</usedLanguage>
+    <usedLanguage>35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
