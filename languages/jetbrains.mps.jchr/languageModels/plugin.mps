@@ -746,7 +746,7 @@
                                 <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="7932111957676869716" nodeInfo="ng">
                                   <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="go48.1240470842553275422" resolveInfo="debuggerSettings" />
                                   <node role="value" roleId="rzqf.856705193941281766" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7932111957676874833" nodeInfo="nn">
-                                    <property name="value" nameId="tpee.1070475926801" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5050" />
+                                    <property name="value" nameId="tpee.1070475926801" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5055" />
                                   </node>
                                 </node>
                                 <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="8024275747842998697" nodeInfo="ng">
@@ -779,7 +779,7 @@
                                     <node role="items" roleId="rzqf.2168104298250244983" type="rzqf.KeyValueCommandPart" typeId="rzqf.889694274152177535" id="8024275747843814317" nodeInfo="nn">
                                       <property name="dash" nameId="rzqf.1616228152991918665" value="true" />
                                       <node role="value" roleId="rzqf.889694274152177540" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8024275747843856909" nodeInfo="nn">
-                                        <property name="value" nameId="tpee.1070475926801" value="bytecode" />
+                                        <property name="value" nameId="tpee.1070475926801" value="default" />
                                       </node>
                                       <node role="key" roleId="rzqf.889694274152177539" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8024275747843835648" nodeInfo="nn">
                                         <property name="value" nameId="tpee.1070475926801" value="output" />
