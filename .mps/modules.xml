@@ -6,6 +6,9 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/jetbrains.mps.jchr.runtime.msd" folder="jchr" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/sandbox/jetbrains.mps.jchr.sandbox.msd" folder="jchr" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/sandbox/runner/jetbrains.mps.jchr.sandbox.runner.msd" folder="jchr" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/jetbrains.mps.lang.typesystem2.mpl" folder="typesystem2" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/runtime/jetbrains.mps.lang.typesystem2.runtime.msd" folder="typesystem2" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.sandbox.msd" folder="typesystem2" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/jetbrains.mps.logic.sandbox.msd" folder="logic" />
