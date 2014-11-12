@@ -26,12 +26,19 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1611448358167895238" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="5j4j.7571593955706120730" resolveInfo="Ast" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1611448358167923142" nodeInfo="nn">
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3562712610790859261" nodeInfo="nn" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3562712610790859261" nodeInfo="nn">
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="7368070394771033531" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
+      </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1611448358167923149" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="5j4j.7571593955706125526" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3562712610790862491" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="7368070394771034539" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3562712610789533965" nodeInfo="nn" />
       <node role="addHints" roleId="tpc2.4242538589862653897" type="tpc2.QueryHintsSpecification" typeId="tpc2.6150987479542522273" id="7166797808986563326" nodeInfo="ng">
@@ -338,13 +345,13 @@
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1503029990833120" nodeInfo="nn">
         <property name="color" nameId="tpc2.1186403713874" value="magenta" />
         <node role="query" roleId="tpc2.1186403803051" type="tpc2.RGBColor" typeId="tpc2.1225456267680" id="1503029990833122" nodeInfo="ng">
-          <property name="value" nameId="tpc2.1225456424731" value="CCFFCC" />
+          <property name="value" nameId="tpc2.1225456424731" value="ECFFEC" />
         </node>
       </node>
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.BackgroundColorStyleClassItem" typeId="tpc2.1186404574412" id="1503029990914909" nodeInfo="nn">
         <property name="color" nameId="tpc2.1186403713874" value="magenta" />
         <node role="query" roleId="tpc2.1186403803051" type="tpc2.RGBColor" typeId="tpc2.1225456267680" id="1503029990914911" nodeInfo="ng">
-          <property name="value" nameId="tpc2.1225456424731" value="CCFFCC" />
+          <property name="value" nameId="tpc2.1225456424731" value="ECFFEC" />
         </node>
       </node>
     </node>
