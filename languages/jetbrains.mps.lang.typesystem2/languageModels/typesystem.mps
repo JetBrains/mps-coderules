@@ -3,12 +3,14 @@
   <persistence version="8" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+  <import index="nc4n" modelUID="r:2a1eb048-898c-47a3-863b-36b04c4b9f7c(jetbrains.mps.lang.typesystem2.runtime.rule)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="7" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="wq2x" modelUID="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.typesystem2.structure)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
+  <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7368070394769248962" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_RuleParameterDeclaration" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.parameter" />
@@ -82,6 +84,45 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7368070394769280223" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="rpr" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="wq2x.7368070394769139970" resolveInfo="RuleParameterReference" />
+    </node>
+  </root>
+  <root type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="7340198212831312992" nodeInfo="ng">
+    <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+    <property name="name" nameId="tpck.1169194664001" value="supertypesOf_LogicVariableType" />
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="7340198212831312993" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7340198212831314189" nodeInfo="nn">
+        <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7340198212831314187" nodeInfo="nn">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7340198212831349601" nodeInfo="in">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="nc4n.6135434422633921345" resolveInfo="LogicVariable" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7340198212831312995" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="lvt" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="wq2x.7840802663736166753" resolveInfo="LogicVariableType" />
+    </node>
+  </root>
+  <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="7340198212831397996" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="LogicVariableType_supertypeOf_classifier_LogicVariable" />
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="7340198212831397998" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7340198212831400806" nodeInfo="nn">
+        <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7340198212831400808" nodeInfo="nn">
+          <property name="text" nameId="tpee.6329021646629104958" value="'nuff said" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="7340198212831443615" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="lv" />
+      <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="7340198212831443617" nodeInfo="in">
+        <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7340198212831443749" nodeInfo="in">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="nc4n.6135434422633921345" resolveInfo="LogicVariable" />
+        </node>
+      </node>
+    </node>
+    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7340198212831444106" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="lvt" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="wq2x.7840802663736166753" resolveInfo="LogicVariableType" />
     </node>
   </root>
 </model>
