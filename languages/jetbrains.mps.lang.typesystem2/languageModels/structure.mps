@@ -178,7 +178,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7368070394767046089" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="constraint" />
     <property name="name" nameId="tpck.1169194664001" value="BuiltinConstraint" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="7368070394767031462" resolveInfo="Constraint" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7368070394767065799" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="constraint.template" />
