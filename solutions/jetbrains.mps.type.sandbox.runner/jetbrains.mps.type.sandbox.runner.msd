@@ -12,7 +12,7 @@
     <dependency reexport="false">eaa96e7c-030a-4e4f-8ae7-a24dff1e0572(jetbrains.mps.logic.sandbox)</dependency>
     <dependency reexport="false">16aea8bc-02ec-4d2e-9965-44a8d4b5d4b2(jetbrains.mps.type.sandbox)</dependency>
     <dependency reexport="false">2b54fd24-63fa-4af4-8776-244484d34b48(jetbrains.mps.type.solver)</dependency>
-    <dependency reexport="false">a3529a8c-f4ff-4125-865c-391bcc490358(jetbrains.mps.typecheck.runtime)</dependency>
+    <dependency reexport="false">a3529a8c-f4ff-4125-865c-391bcc490358(jetbrains.mps.typechecking.solving)</dependency>
     <dependency reexport="false">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.unification.tree)</dependency>
   </dependencies>
   <usedLanguages>

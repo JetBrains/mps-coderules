@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.typecheck.runtime" uuid="a3529a8c-f4ff-4125-865c-391bcc490358" compileInMPS="true">
+<solution name="jetbrains.mps.typechecking.solving" uuid="a3529a8c-f4ff-4125-865c-391bcc490358" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
