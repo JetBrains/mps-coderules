@@ -19,6 +19,7 @@
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.sandbox.runner/jetbrains.mps.type.sandbox.runner.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.sandbox/jetbrains.mps.type.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.solver/jetbrains.mps.type.solver.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking/jetbrains.mps.typechecking.msd" folder="typesystem2" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.unification.tree/jetbrains.mps.unification.tree.msd" folder="" />
     </projectModules>
   </component>
