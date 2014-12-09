@@ -24,7 +24,7 @@
   <root type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="10398748702816268" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Constraint_addArguments" />
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="10398748702816320" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="10398748702816322" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="10398748702816323" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="10398748702816974" nodeInfo="nn">
@@ -41,7 +41,7 @@
         </node>
       </node>
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="10398748702831221" nodeInfo="ng">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="10398748702831979" nodeInfo="ng">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="10398748702831980" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="10398748702831981" nodeInfo="sn">
@@ -75,7 +75,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="10398748702894755" nodeInfo="nn">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="10398748702896013" nodeInfo="nn">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="10398748702896865" nodeInfo="nn">
-                  <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+                  <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
                   <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="vgt0.456733934405496283" />
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpdg.ConceptFunctionParameter_link" typeId="tpdg.1221634900557" id="10398748702895602" nodeInfo="nn" />
@@ -84,7 +84,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parentNode" typeId="tpdg.1154465273778" id="10398748702891249" nodeInfo="nn" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="10398748702892708" nodeInfo="nn">
                   <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="10398748702893438" nodeInfo="nn">
-                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
                   </node>
                 </node>
               </node>

@@ -283,7 +283,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7781107279595468521" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7781107279595468522" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="7781107279595468523" nodeInfo="nn">
-                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+                      <link role="concept" roleId="tp25.1140138128738" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
                       <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7781107279595468524" nodeInfo="nn">
                         <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7781107279595468525" nodeInfo="nn">
                           <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7781107279594909842" resolveInfo="lv" />
@@ -320,7 +320,7 @@
                       <node role="list" roleId="tp2q.1225711182005" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7781107279595456886" nodeInfo="nn">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7781107279595456887" nodeInfo="nn">
                           <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="7781107279595456888" nodeInfo="nn">
-                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+                            <link role="concept" roleId="tp25.1140138128738" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
                             <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7781107279595456889" nodeInfo="nn">
                               <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7781107279595456890" nodeInfo="nn">
                                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7781107279594909842" resolveInfo="lv" />
@@ -366,7 +366,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingLinkOperation" typeId="tp25.5820409030208923287" id="7781107279595434405" nodeInfo="nn" />
           </node>
           <node role="leftExpression" roleId="tpee.1081773367580" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="7781107279595424678" nodeInfo="nn">
-            <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+            <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
             <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="vgt0.456733934405496283" />
           </node>
         </node>

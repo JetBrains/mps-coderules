@@ -4,16 +4,16 @@
   <language namespace="894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)" />
   <language namespace="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="oy3s" modelUID="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.jchr.unification)" version="-1" />
+  <import index="oy3s" modelUID="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" version="-1" />
   <import index="qfgq" modelUID="r:12056882-be6e-41ea-97f1-d0d00393a672(jetbrains.mps.type.sandbox)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="w2rx" modelUID="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" version="-1" />
   <import index="c87j" modelUID="r:db5d11a3-3c62-4a1b-ace3-b983df6a66b4(jetbrains.mps.type.inference.common)" version="-1" />
-  <import index="mqgp" modelUID="r:df98e090-e1cf-4263-9336-dc1ffd952995(jetbrains.mps.typechecking.solver.conversion)" version="-1" />
-  <import index="yg8f" modelUID="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.constraint)" version="-1" />
+  <import index="mqgp" modelUID="r:df98e090-e1cf-4263-9336-dc1ffd952995(jetbrains.mps.typechecking.builtin.conversion)" version="-1" />
+  <import index="yg8f" modelUID="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" version="-1" />
   <import index="ie8e" modelUID="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
-  <import index="zeuh" modelUID="r:f694851a-c984-440d-bb3c-f151b8dba5af(jetbrains.mps.typechecking.solver.containment)" version="-1" />
+  <import index="zeuh" modelUID="r:f694851a-c984-440d-bb3c-f151b8dba5af(jetbrains.mps.typechecking.builtin.containment)" version="-1" />
   <import index="zt4h" modelUID="r:e67bd817-e7ca-40c9-9f79-95fad12bb615(jetbrains.mps.type.inference.baseLanguage)" version="-1" />
   <import index="jfki" modelUID="f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
@@ -44,7 +44,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8314879665370339559" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="scope" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8314879665370339557" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8314879665370339560" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4310122986199138861" resolveInfo="TestTypecheck" />
@@ -642,8 +642,8 @@
             <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="3113146058918637536" nodeInfo="nn">
               <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="3113146058918637537" nodeInfo="ig">
                 <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yg8f.3113146058925176701" resolveInfo="BuiltinConstraintScope" />
+                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yg8f.3113146058925176701" resolveInfo="SolverFarm" />
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3113146058918637538" nodeInfo="nn" />
                 <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3113146058918637539" nodeInfo="igu">
                   <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -651,7 +651,7 @@
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058920020800" nodeInfo="ir">
                     <property name="name" nameId="tpck.1169194664001" value="constraint" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058920021888" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="BuiltinConstraint" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="SolverProxy" />
                     </node>
                   </node>
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058918637542" nodeInfo="ir">
@@ -704,7 +704,7 @@
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058918637556" nodeInfo="ir">
                     <property name="name" nameId="tpck.1169194664001" value="constraint" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058920033803" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="BuiltinConstraint" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="SolverProxy" />
                     </node>
                   </node>
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058918637558" nodeInfo="ir">
@@ -889,7 +889,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058920738920" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3113146058918638028" nodeInfo="nn" />
     </node>
@@ -920,11 +920,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8335224865066948380" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="scope" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8335224865066948381" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8335224865066948637" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8335224865066948574" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yg8f.3113146058925176701" resolveInfo="BuiltinConstraintScope" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yg8f.3113146058925176701" resolveInfo="SolverFarm" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7368070394766059775" nodeInfo="nn">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="oy3s.3113146058921569604" resolveInfo="UnificationBuiltinConstraint" />
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="oy3s.3113146058922298843" resolveInfo="INSTANCE" />

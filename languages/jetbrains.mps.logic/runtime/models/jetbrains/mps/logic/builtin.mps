@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.constraint)">
+<model modelUID="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)">
   <persistence version="8" />
   <language namespace="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -10,7 +10,8 @@
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <root type="tpee.Interface" typeId="tpee.1107796713796" id="3113146058919058666" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="BuiltinConstraint" />
+    <property name="name" nameId="tpck.1169194664001" value="SolverProxy" />
+    <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="3113146058919062883" nodeInfo="ngu" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3113146058919064037" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
@@ -33,7 +34,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058921194589" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="scope" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058921194918" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058920700790" resolveInfo="BuiltinConstraintScope" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058920700790" resolveInfo="SolverFarm" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3113146058921188289" nodeInfo="in">
@@ -50,6 +51,26 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="3113146058921044223" nodeInfo="ngu" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2765114335964478347" nodeInfo="igu">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="solverInterface" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2765114335964478754" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Class" resolveInfo="Class" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="2765114335964478905" nodeInfo="in">
+          <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3113146058921043994" resolveInfo="T" />
+        </node>
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2765114335964478350" nodeInfo="nn" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2765114335964478351" nodeInfo="sn" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="2765114335964483097" nodeInfo="ng">
+        <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="2765114335964483098" nodeInfo="ng">
+          <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="2765114335964483099" nodeInfo="ng">
+            <property name="text" nameId="m373.8970989240999019144" value="The class object representing the solver's interface. " />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2765114335964478146" nodeInfo="ngu" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3113146058921045125" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ask" />
@@ -161,13 +182,15 @@
           <property name="text" nameId="m373.8970989240999019144" value="An abstraction of a &quot;built-in constraint&quot; useful in a non-CHR context." />
         </node>
       </node>
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="2581717380588642271" nodeInfo="ng" />
     </node>
     <node role="typeVariableDeclaration" roleId="tpee.1109279881614" type="tpee.TypeVariableDeclaration" typeId="tpee.1109279763828" id="3113146058921043994" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="T" />
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3113146058920700790" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="BuiltinConstraintScope" />
+    <property name="name" nameId="tpck.1169194664001" value="SolverFarm" />
+    <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="3113146058921100990" nodeInfo="ngu" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="3113146058922250914" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="withConstraints" />
@@ -175,20 +198,20 @@
         <property name="name" nameId="tpck.1169194664001" value="ct" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.VariableArityType" typeId="tpee.1219920932475" id="3113146058922258729" nodeInfo="in">
           <node role="componentType" roleId="tpee.1219921048460" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058922257967" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="BuiltinConstraint" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="SolverProxy" />
             <node role="parameter" roleId="tpee.1109201940907" type="tpee.WildCardType" typeId="tpee.1171903607971" id="3113146058922258534" nodeInfo="in" />
           </node>
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058922256393" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058920700790" resolveInfo="BuiltinConstraintScope" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058920700790" resolveInfo="SolverFarm" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3113146058922250917" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3113146058922250918" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3113146058925206986" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3113146058925206988" nodeInfo="nn">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3113146058925206989" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3113146058925176701" resolveInfo="BuiltinConstraintScope" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3113146058925176701" resolveInfo="SolverFarm" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3113146058925207341" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3113146058922257497" resolveInfo="ct" />
               </node>
@@ -203,7 +226,7 @@
         <property name="name" nameId="tpck.1169194664001" value="ct" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.VariableArityType" typeId="tpee.1219920932475" id="3113146058925181970" nodeInfo="in">
           <node role="componentType" roleId="tpee.1219921048460" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058925181971" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="BuiltinConstraint" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="SolverProxy" />
             <node role="parameter" roleId="tpee.1109201940907" type="tpee.WildCardType" typeId="tpee.1171903607971" id="3113146058925181972" nodeInfo="in" />
           </node>
         </node>
@@ -259,7 +282,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8314879665370357628" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="constraint" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8314879665370357629" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="BuiltinConstraint" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="SolverProxy" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="8314879665370357630" nodeInfo="in">
             <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="8314879665370353607" resolveInfo="T" />
           </node>
@@ -314,7 +337,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058920771109" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="constraint" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058920771488" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="BuiltinConstraint" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="SolverProxy" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3113146058921071329" nodeInfo="in">
             <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3113146058921071038" resolveInfo="T" />
           </node>
@@ -361,7 +384,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058920771980" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="constraint" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058920771981" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="BuiltinConstraint" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="SolverProxy" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3113146058921072007" nodeInfo="in">
             <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3113146058921071774" resolveInfo="T" />
           </node>
@@ -408,7 +431,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058921093787" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="constraint" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058921095421" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="BuiltinConstraint" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="SolverProxy" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3113146058921095744" nodeInfo="in">
             <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3113146058921094804" resolveInfo="T" />
           </node>
@@ -455,7 +478,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058921074282" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="constraint" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058921074455" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="BuiltinConstraint" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3113146058919058666" resolveInfo="SolverProxy" />
           <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3113146058921074786" nodeInfo="in">
             <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3113146058921073465" resolveInfo="T" />
           </node>
@@ -574,6 +597,9 @@
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3113146058920700791" nodeInfo="nn" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="2581717380588653617" nodeInfo="ng">
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="2581717380588653618" nodeInfo="ng" />
+    </node>
   </root>
 </model>
 

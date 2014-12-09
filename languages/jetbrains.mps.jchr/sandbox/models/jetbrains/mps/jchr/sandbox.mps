@@ -20,8 +20,8 @@
       <node role="argumentType" roleId="vgt0.456733934405496239" type="tpee.LongType" typeId="tpee.1068581242867" id="10398748702652235" nodeInfo="in" />
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimplificationRule" typeId="vgt0.456733934405449669" id="10398748702652241" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405733017" type="vgt0.Head" typeId="vgt0.456733934405724502" id="10398748702652242" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="10398748702816090" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405733017" type="vgt0.Head" typeId="vgt0.456733934405724502" id="10398748702652242" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="10398748702816090" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="10398748702652231" resolveInfo="gcd" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="10398748702847212" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="0" />
@@ -36,15 +36,15 @@
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimpagationRule" typeId="vgt0.456733934405449678" id="10398748702890499" nodeInfo="ng">
       <node role="keptHead" roleId="vgt0.456733934405733078" type="vgt0.Head" typeId="vgt0.456733934405724502" id="10398748702890502" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="10398748702890534" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="10398748702890534" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="10398748702652231" resolveInfo="gcd" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="10398748703231108" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="N" />
           </node>
         </node>
       </node>
-      <node role="removedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="10398748702890505" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="10398748703231111" nodeInfo="ng">
+      <node role="replacedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="10398748702890505" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="10398748703231111" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="10398748702652231" resolveInfo="gcd" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="10398748703231117" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="M" />
@@ -52,7 +52,7 @@
         </node>
       </node>
       <node role="body" roleId="vgt0.456733934405732990" type="vgt0.Body" typeId="vgt0.456733934405724637" id="10398748702890508" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="10398748704093131" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="10398748704093131" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="10398748702652231" resolveInfo="gcd" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2550209244922478433" nodeInfo="nn">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="h23x.~ArithmeticsUtils" resolveInfo="ArithmeticsUtils" />

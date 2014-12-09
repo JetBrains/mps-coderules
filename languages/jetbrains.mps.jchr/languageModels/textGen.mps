@@ -614,7 +614,7 @@
   </root>
   <root type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="1516699528205142169" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="handler.constraints" />
-    <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+    <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
     <node role="textGenBlock" roleId="2omo.1233749296504" type="2omo.GenerateTextDeclaration" typeId="2omo.1233749247888" id="1516699528205142170" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1516699528205142171" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="1516699528205142273" nodeInfo="nn">

@@ -20,7 +20,7 @@
   <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="456733934405496302" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Constraint_Call" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="handler.constraints" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="456733934405515840" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="456733934405515851" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="vgt0.456733934405496267" />
@@ -70,7 +70,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="456733934405723538" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vgt0.456733934405414274" resolveInfo="Constraint" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="vgt0.456733934405414274" resolveInfo="UserConstraint" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="456733934405723540" nodeInfo="ng">
       <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="456733934405496302" resolveInfo="Constraint_Call" />
     </node>

@@ -8,16 +8,16 @@
   <import index="ie8e" modelUID="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" version="-1" />
   <import index="zt4h" modelUID="r:e67bd817-e7ca-40c9-9f79-95fad12bb615(jetbrains.mps.type.inference.baseLanguage)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
-  <import index="oy3s" modelUID="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.jchr.unification)" version="-1" />
+  <import index="oy3s" modelUID="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" version="-1" />
   <import index="c87j" modelUID="r:db5d11a3-3c62-4a1b-ace3-b983df6a66b4(jetbrains.mps.type.inference.common)" version="-1" />
   <import index="jfki" modelUID="f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification@java_stub)" version="-1" />
   <import index="w2rx" modelUID="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" version="-1" />
   <import index="9sk9" modelUID="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#annotations(jetbrains.mps.jchr.runtime/annotations@java_stub)" version="-1" />
-  <import index="mqgp" modelUID="r:df98e090-e1cf-4263-9336-dc1ffd952995(jetbrains.mps.typechecking.solver.conversion)" version="-1" />
-  <import index="ukvp" modelUID="r:716ee8d5-e209-473b-a7f4-704982de9b92(jetbrains.mps.typechecking.solver.subtyping)" version="-1" />
+  <import index="mqgp" modelUID="r:df98e090-e1cf-4263-9336-dc1ffd952995(jetbrains.mps.typechecking.builtin.conversion)" version="-1" />
+  <import index="ukvp" modelUID="r:716ee8d5-e209-473b-a7f4-704982de9b92(jetbrains.mps.typechecking.builtin.subtyping)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="yg8f" modelUID="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.constraint)" version="-1" />
-  <import index="zeuh" modelUID="r:f694851a-c984-440d-bb3c-f151b8dba5af(jetbrains.mps.typechecking.solver.containment)" version="-1" />
+  <import index="yg8f" modelUID="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" version="-1" />
+  <import index="zeuh" modelUID="r:f694851a-c984-440d-bb3c-f151b8dba5af(jetbrains.mps.typechecking.builtin.containment)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="5j4j" modelUID="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" version="-1" implicit="yes" />
@@ -1718,8 +1718,8 @@
             <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="3113146058918637536" nodeInfo="nn">
               <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="3113146058918637537" nodeInfo="ig">
                 <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yg8f.3113146058925176701" resolveInfo="BuiltinConstraintScope" />
+                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yg8f.3113146058925176701" resolveInfo="SolverFarm" />
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3113146058918637538" nodeInfo="nn" />
                 <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3113146058918637539" nodeInfo="igu">
                   <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -1727,7 +1727,7 @@
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058920020800" nodeInfo="ir">
                     <property name="name" nameId="tpck.1169194664001" value="constraint" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058920021888" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="BuiltinConstraint" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="SolverProxy" />
                     </node>
                   </node>
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058918637542" nodeInfo="ir">
@@ -1773,7 +1773,7 @@
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058918637556" nodeInfo="ir">
                     <property name="name" nameId="tpck.1169194664001" value="constraint" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058920033803" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="BuiltinConstraint" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="SolverProxy" />
                     </node>
                   </node>
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058918637558" nodeInfo="ir">
@@ -1934,7 +1934,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058920716028" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3113146058918638028" nodeInfo="nn" />
     </node>
@@ -3454,8 +3454,8 @@
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6270176708469763028" nodeInfo="nn" />
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimplificationRule" typeId="vgt0.456733934405449669" id="6270176708469794526" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405733017" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6270176708469794527" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6270176708469814575" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405733017" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6270176708469794527" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6270176708469814575" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6270176708469814700" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -3480,7 +3480,7 @@
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6270176708469815839" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6270176708469815839" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6270176708469832153" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="2" />
@@ -3489,7 +3489,7 @@
             <property name="name" nameId="tpck.1169194664001" value="TMP1" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6270176708470022074" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6270176708470022074" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6270176708470022217" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="3" />
@@ -3501,8 +3501,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimplificationRule" typeId="vgt0.456733934405449669" id="6270176708470033569" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405733017" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6270176708470033572" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6270176708470033766" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405733017" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6270176708470033572" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6270176708470033766" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6270176708470042319" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="4" />
@@ -3527,7 +3527,7 @@
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6270176708470045519" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6270176708470045519" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6270176708470045707" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="5" />
@@ -3539,8 +3539,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="6270176708470050408" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6270176708470050411" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6270176708470050663" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6270176708470050411" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6270176708470050663" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6270176708470051162" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="2" />
@@ -3637,7 +3637,7 @@
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="605536487444606526" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="605536487444606526" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="605536487444606700" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="6" />
@@ -3649,8 +3649,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="605536487444611115" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="605536487444611118" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="605536487444611390" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="605536487444611118" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="605536487444611390" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="605536487444611457" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="6" />
@@ -3687,7 +3687,7 @@
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="605536487444615649" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="605536487444615649" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="605536487444617196" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="7" />
@@ -3715,8 +3715,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="605536487444662607" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="605536487444662610" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="605536487444662864" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="605536487444662610" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="605536487444662864" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="605536487444662985" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="3" />
@@ -3813,7 +3813,7 @@
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="605536487444677347" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="605536487444677347" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="605536487444677687" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="8" />
@@ -3873,8 +3873,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="605536487444719956" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="605536487444719959" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="605536487444720274" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="605536487444719959" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="605536487444720274" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="605536487444725814" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="10" />
@@ -3883,7 +3883,7 @@
             <property name="name" nameId="tpck.1169194664001" value="X10" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="605536487444725257" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="605536487444725257" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="605536487444726167" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="8" />
@@ -4053,7 +4053,7 @@
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="605536487445069214" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="605536487445069214" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="605536487445069524" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="11" />
@@ -4065,8 +4065,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="6726466946034057240" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6726466946034057243" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6726466946034057830" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6726466946034057243" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6726466946034057830" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6726466946034057897" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="11" />
@@ -4106,8 +4106,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="6726466946032958466" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6726466946032958467" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6726466946032958468" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6726466946032958467" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6726466946032958468" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6726466946032958469" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="10" />
@@ -4116,7 +4116,7 @@
             <property name="name" nameId="tpck.1169194664001" value="X10" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6726466946032958471" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6726466946032958471" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6726466946032958472" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="8" />
@@ -4276,7 +4276,7 @@
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6726466946032958521" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6726466946032958521" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6726466946032958522" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="12" />
@@ -4288,8 +4288,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="6726466946035610951" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6726466946035610952" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="6726466946035610953" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="6726466946035610952" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="6726466946035610953" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="6270176708469771647" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6726466946035610954" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="12" />
@@ -5310,7 +5310,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3113146058915556735" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c87j.3113146058914388752" resolveInfo="toTargetDomain" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="c87j.3113146058911901170" resolveInfo="DomainConversionTable" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="c87j.3113146058911901170" resolveInfo="DomainTranslationTable" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3113146058915556736" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3113146058915554637" resolveInfo="boxedInt" />
               </node>
@@ -5360,7 +5360,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3113146058915664948" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c87j.3113146058914388752" resolveInfo="toTargetDomain" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="c87j.3113146058911901170" resolveInfo="DomainConversionTable" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="c87j.3113146058911901170" resolveInfo="DomainTranslationTable" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3113146058915664949" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3113146058915556734" resolveInfo="primInt" />
               </node>
@@ -5410,7 +5410,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3113146058915752430" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c87j.3113146058914388752" resolveInfo="toTargetDomain" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="c87j.3113146058911901170" resolveInfo="DomainConversionTable" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="c87j.3113146058911901170" resolveInfo="DomainTranslationTable" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3113146058915752431" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3113146058915556734" resolveInfo="primInt" />
               </node>
@@ -5768,7 +5768,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3113146058915805585" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c87j.3113146058914388752" resolveInfo="toTargetDomain" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="c87j.3113146058911901170" resolveInfo="DomainConversionTable" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="c87j.3113146058911901170" resolveInfo="DomainTranslationTable" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3113146058915805586" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3113146058915795627" resolveInfo="ubt" />
               </node>
@@ -5814,7 +5814,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3113146058922345503" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="bscope" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058922345494" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="3113146058926053177" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3113146058926094717" resolveInfo="scope" />
@@ -6085,8 +6085,8 @@
             <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="3113146058926052565" nodeInfo="nn">
               <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="3113146058926052566" nodeInfo="ig">
                 <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yg8f.3113146058925176701" resolveInfo="BuiltinConstraintScope" />
+                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="yg8f.3113146058925176701" resolveInfo="SolverFarm" />
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3113146058926052567" nodeInfo="nn" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3113146058926052568" nodeInfo="nn">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="oy3s.3113146058921569604" resolveInfo="UnificationBuiltinConstraint" />
@@ -6106,7 +6106,7 @@
                   <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3113146058926052572" nodeInfo="ir">
                     <property name="name" nameId="tpck.1169194664001" value="constraint" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058926052573" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="BuiltinConstraint" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058919058666" resolveInfo="SolverProxy" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="3113146058926052574" nodeInfo="in">
                         <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="3113146058926052580" resolveInfo="T" />
                       </node>
@@ -6278,7 +6278,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3113146058926057798" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="BuiltinConstraintScope" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yg8f.3113146058920700790" resolveInfo="SolverFarm" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3113146058926053175" nodeInfo="nn" />
     </node>
@@ -6364,8 +6364,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="8335224865066824911" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="8335224865066824912" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="8335224865066824978" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="8335224865066824912" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="8335224865066824978" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="8335224865066836016" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="T1" />
@@ -6373,7 +6373,7 @@
         </node>
       </node>
       <node role="body" roleId="vgt0.456733934405732990" type="vgt0.Body" typeId="vgt0.456733934405724637" id="8335224865066824913" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="8335224865066832983" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="8335224865066832983" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066826302" resolveInfo="varname" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="8335224865066836254" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="T1" />
@@ -6386,15 +6386,15 @@
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimpagationRule" typeId="vgt0.456733934405449678" id="8335224865066873447" nodeInfo="ng">
       <node role="keptHead" roleId="vgt0.456733934405733078" type="vgt0.Head" typeId="vgt0.456733934405724502" id="8335224865066873450" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="8335224865066885445" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="8335224865066885445" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="8335224865066885681" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="T1" />
           </node>
         </node>
       </node>
-      <node role="removedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="8335224865066873453" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="8335224865066873724" nodeInfo="ng">
+      <node role="replacedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="8335224865066873453" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="8335224865066873724" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="8335224865066884472" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="PD1" />
@@ -6446,15 +6446,15 @@
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimpagationRule" typeId="vgt0.456733934405449678" id="7368070394766627247" nodeInfo="ng">
       <node role="keptHead" roleId="vgt0.456733934405733078" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766627248" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766627249" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766627249" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766627250" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="T1" />
           </node>
         </node>
       </node>
-      <node role="removedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766627251" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766627252" nodeInfo="ng">
+      <node role="replacedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766627251" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766627252" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766627253" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="PD1" />
@@ -6506,15 +6506,15 @@
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimpagationRule" typeId="vgt0.456733934405449678" id="7368070394766664142" nodeInfo="ng">
       <node role="keptHead" roleId="vgt0.456733934405733078" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766664143" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766664144" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766664144" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766664145" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="T1" />
           </node>
         </node>
       </node>
-      <node role="removedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766664146" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766664147" nodeInfo="ng">
+      <node role="replacedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766664146" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766664147" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766664148" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="PD1" />
@@ -6560,15 +6560,15 @@
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimpagationRule" typeId="vgt0.456733934405449678" id="7368070394766798458" nodeInfo="ng">
       <node role="keptHead" roleId="vgt0.456733934405733078" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766798459" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766798460" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766798460" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766798461" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="T1" />
           </node>
         </node>
       </node>
-      <node role="removedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766798462" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766798463" nodeInfo="ng">
+      <node role="replacedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766798462" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766798463" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766798464" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="RT1" />
@@ -6593,15 +6593,15 @@
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.SimpagationRule" typeId="vgt0.456733934405449678" id="7368070394766846007" nodeInfo="ng">
       <node role="keptHead" roleId="vgt0.456733934405733078" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766846008" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766846009" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766846009" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766846010" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="T1" />
           </node>
         </node>
       </node>
-      <node role="removedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766846011" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766846012" nodeInfo="ng">
+      <node role="replacedHead" roleId="vgt0.456733934405733080" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766846011" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766846012" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766846013" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="RT1" />
@@ -6651,8 +6651,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="8335224865066849760" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="8335224865066849763" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="8335224865066852308" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="8335224865066849763" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="8335224865066852308" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066840499" resolveInfo="typeof" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="8335224865066852498" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="ARG1" />
@@ -6663,13 +6663,13 @@
         </node>
       </node>
       <node role="body" roleId="vgt0.456733934405732990" type="vgt0.Body" typeId="vgt0.456733934405724637" id="8335224865066849766" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="8335224865066858476" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="8335224865066858476" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="8335224865066859480" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="TMP1" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="8335224865066913769" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="8335224865066913769" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="8335224865066914845" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="TMP2" />
@@ -6688,7 +6688,7 @@
             <property name="name" nameId="tpck.1169194664001" value="TMP2" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766806810" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766806810" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766813743" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="R1" />
@@ -6697,7 +6697,7 @@
             <property name="value" nameId="tpee.1068580320021" value="400" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="8335224865066918845" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="8335224865066918845" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066840499" resolveInfo="typeof" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="8335224865066919182" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="R1" />
@@ -6709,8 +6709,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="7368070394766272886" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766272887" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766272888" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766272887" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766272888" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066840499" resolveInfo="typeof" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766272889" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="ARG1" />
@@ -6721,13 +6721,13 @@
         </node>
       </node>
       <node role="body" roleId="vgt0.456733934405732990" type="vgt0.Body" typeId="vgt0.456733934405724637" id="7368070394766272891" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766272892" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766272892" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766272893" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="TMP1" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766272894" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766272894" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766272895" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="TMP2" />
@@ -6746,7 +6746,7 @@
             <property name="name" nameId="tpck.1169194664001" value="TMP2" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766851865" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766851865" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766853643" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="R1" />
@@ -6755,7 +6755,7 @@
             <property name="value" nameId="tpee.1068580320021" value="500" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766272900" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766272900" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066840499" resolveInfo="typeof" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766272901" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="R1" />
@@ -6767,8 +6767,8 @@
       </node>
     </node>
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="7368070394766660341" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766660342" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766660343" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="7368070394766660342" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766660343" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066840499" resolveInfo="typeof" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766660344" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="ARG1" />
@@ -6779,13 +6779,13 @@
         </node>
       </node>
       <node role="body" roleId="vgt0.456733934405732990" type="vgt0.Body" typeId="vgt0.456733934405724637" id="7368070394766660346" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766660347" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766660347" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066823672" resolveInfo="_T" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766660348" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="TMP1" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766660349" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766660349" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066866698" resolveInfo="typedecl" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766660350" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="TMP2" />
@@ -6804,7 +6804,7 @@
             <property name="name" nameId="tpck.1169194664001" value="TMP2" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="7368070394766660355" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="7368070394766660355" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="8335224865066840499" resolveInfo="typeof" />
           <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="7368070394766660356" nodeInfo="ng">
             <property name="name" nameId="tpck.1169194664001" value="ARG1" />

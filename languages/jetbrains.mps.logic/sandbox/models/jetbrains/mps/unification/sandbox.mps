@@ -16,8 +16,8 @@
   <root type="vgt0.Handler" typeId="vgt0.456733934405394951" id="7932111957672575234" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="typeOf" />
     <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="1503029981603348" nodeInfo="ng">
-      <node role="head" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="1503029981603320" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="1503029981603321" nodeInfo="ng">
+      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="1503029981603320" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="1503029981603321" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="7932111957672579607" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1503029981846993" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="1" />
@@ -26,7 +26,7 @@
             <property name="name" nameId="tpck.1169194664001" value="X" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="1503029981603324" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="1503029981603324" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="7932111957672579607" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1503029981847092" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="2" />
@@ -112,7 +112,7 @@
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.Constraint" typeId="vgt0.456733934405414274" id="1503029981603345" nodeInfo="ng">
+        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="1503029981603345" nodeInfo="ng">
           <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="7932111957672579607" resolveInfo="typeOf" />
           <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1503029981847311" nodeInfo="nn">
             <property name="value" nameId="tpee.1068580320021" value="3" />
