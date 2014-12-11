@@ -535,7 +535,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7368070394768140799" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="constraint.expression" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="wq2x.7368070394768130469" resolveInfo="LogicVariable" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="wq2x.7840802663736276860" resolveInfo="LogicVariableReference" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7368070394768140855" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="3063948360253980080" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="wq2x.3063948360253976409" />
