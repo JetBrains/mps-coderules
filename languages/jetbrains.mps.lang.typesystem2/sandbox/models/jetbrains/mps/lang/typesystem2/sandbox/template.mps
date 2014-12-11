@@ -354,8 +354,9 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7340198212830917606" nodeInfo="nn">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nc4n.8335224865064894929" resolveInfo="binary" />
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nc4n.8335224865064894913" resolveInfo="BuiltinConstraint" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7340198212830918585" nodeInfo="nn">
-                              <property name="value" nameId="tpee.1070475926801" value="=" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3248355648112409703" nodeInfo="nn">
+                              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nc4n.2581717380588039413" resolveInfo="EQUALS" />
+                              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nc4n.2581717380588039380" resolveInfo="BuiltinConstraintSymbol" />
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7340198212830926204" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7340198212830905778" resolveInfo="var3" />
@@ -599,7 +600,6 @@
       <node role="head" roleId="wq2x.7368070394767442414" type="wq2x.Head" typeId="wq2x.7368070394766963750" id="7191523264663183388" nodeInfo="ng">
         <property name="keep" nameId="wq2x.7368070394767443940" value="true" />
         <node role="code" roleId="wq2x.7368070394766972297" type="tpee.StatementList" typeId="tpee.1068580123136" id="7191523264663183389" nodeInfo="sn">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7191523264663183390" nodeInfo="nn" />
           <node role="statement" roleId="tpee.1068581517665" type="wq2x.ParameterDeclarationStatement" typeId="wq2x.3063948360254047686" id="7191523264663183391" nodeInfo="ng">
             <node role="declaration" roleId="wq2x.3063948360254832884" type="wq2x.LogicVariableDeclaration" typeId="wq2x.3063948360253431861" id="7191523264663183392" nodeInfo="ng">
               <property name="name" nameId="tpck.1169194664001" value="OP" />
@@ -2096,6 +2096,10 @@
   </root>
   <root type="wq2x.Solver" typeId="wq2x.7368070394767065799" id="7191523264663184030" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Standard" />
+    <node role="template" roleId="wq2x.7368070394767068701" type="wq2x.ConstraintTemplate" typeId="wq2x.7368070394767067636" id="192485877561789370" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="fact" />
+      <property name="arity" nameId="wq2x.7368070394767096851" value="1" />
+    </node>
     <node role="template" roleId="wq2x.7368070394767068701" type="wq2x.ConstraintTemplate" typeId="wq2x.7368070394767067636" id="7191523264663184031" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="ubound" />
       <property name="arity" nameId="wq2x.7368070394767096851" value="2" />
@@ -2116,6 +2120,162 @@
       <property name="name" nameId="tpck.1169194664001" value="typedecl" />
       <property name="arity" nameId="wq2x.7368070394767096851" value="2" />
     </node>
+  </root>
+  <root type="wq2x.Handler" typeId="wq2x.8335224865066015764" id="192485877561788306" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="Constants" />
+    <node role="rule" roleId="wq2x.7368070394767441299" type="wq2x.Rule" typeId="wq2x.8335224865066016388" id="192485877561788307" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="stringLiteral" />
+      <link role="applicableConcept" roleId="wq2x.8335224865066016395" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
+      <node role="parameter" roleId="wq2x.7368070394769105389" type="wq2x.RuleParameterDeclaration" typeId="wq2x.7368070394769089081" id="192485877561788308" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="str" />
+      </node>
+      <node role="head" roleId="wq2x.7368070394767442414" type="wq2x.Head" typeId="wq2x.7368070394766963750" id="192485877561788309" nodeInfo="ng">
+        <property name="keep" nameId="wq2x.7368070394767443940" value="false" />
+        <node role="code" roleId="wq2x.7368070394766972297" type="tpee.StatementList" typeId="tpee.1068580123136" id="192485877561788310" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="wq2x.EmitConstraintStatement" typeId="wq2x.7368070394766978092" id="192485877561789366" nodeInfo="ng">
+            <node role="constraint" roleId="wq2x.7368070394767031348" type="wq2x.UserConstraint" typeId="wq2x.7368070394767045637" id="192485877561790280" nodeInfo="ng">
+              <link role="template" roleId="wq2x.7368070394767091750" targetNodeId="192485877561789370" resolveInfo="fact" />
+              <node role="argument" roleId="wq2x.7368070394768117915" type="wq2x.LogicValue" typeId="wq2x.7368070394768985089" id="192485877561790286" nodeInfo="ng">
+                <node role="code" roleId="wq2x.7368070394768985507" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="192485877561838228" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1239714902950" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="192485877561838230" nodeInfo="nn">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="192485877561835148" resolveInfo="Facts" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="192485877561837197" resolveInfo="index" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="body" roleId="wq2x.7368070394767442907" type="wq2x.Body" typeId="wq2x.7368070394766966388" id="192485877561788311" nodeInfo="ng">
+        <node role="code" roleId="wq2x.7368070394766972297" type="tpee.StatementList" typeId="tpee.1068580123136" id="192485877561788312" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="wq2x.LocalDeclarationStatement" typeId="wq2x.3063948360254202562" id="192485877561805977" nodeInfo="ng">
+            <node role="declaration" roleId="wq2x.3063948360254832884" type="wq2x.LogicVariableDeclaration" typeId="wq2x.3063948360253431861" id="192485877561805998" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="S" />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="wq2x.EmitConstraintStatement" typeId="wq2x.7368070394766978092" id="192485877561805923" nodeInfo="ng">
+            <node role="constraint" roleId="wq2x.7368070394767031348" type="wq2x.AssignConstraint" typeId="wq2x.7368070394770780974" id="192485877561805941" nodeInfo="ng">
+              <node role="assignee" roleId="wq2x.7368070394770793388" type="wq2x.LogicVariableReference" typeId="wq2x.7840802663736276860" id="192485877561806000" nodeInfo="ng">
+                <link role="declaration" roleId="wq2x.3063948360253976409" targetNodeId="192485877561805998" resolveInfo="S" />
+              </node>
+              <node role="value" roleId="wq2x.7368070394770793930" type="wq2x.LogicValue" typeId="wq2x.7368070394768985089" id="192485877561806165" nodeInfo="ng">
+                <node role="code" roleId="wq2x.7368070394768985507" type="5j4j.Ast" typeId="5j4j.7571593955706120730" id="192485877561806198" nodeInfo="ng">
+                  <node role="root" roleId="5j4j.7571593955706125526" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="192485877561806199" nodeInfo="ng">
+                    <property name="kind" nameId="5j4j.7166797808989209772" value="CLASSIFIER_TYPE" />
+                    <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="192485877561806200" nodeInfo="ng" />
+                    <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="192485877561806201" nodeInfo="ng">
+                      <property name="name" nameId="tpck.1169194664001" value="concept" />
+                      <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="192485877561806202" nodeInfo="ng">
+                        <property name="value" nameId="5j4j.7571593955706137638" value="ClassifierType" />
+                        <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="192485877561806203" nodeInfo="ng" />
+                      </node>
+                    </node>
+                    <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="192485877561806204" nodeInfo="ng">
+                      <property name="name" nameId="tpck.1169194664001" value="classifier" />
+                      <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="192485877561806205" nodeInfo="ng">
+                        <property name="value" nameId="5j4j.7571593955706137638" value="String" />
+                        <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="192485877561806206" nodeInfo="ng" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="wq2x.EmitConstraintStatement" typeId="wq2x.7368070394766978092" id="192485877561790299" nodeInfo="ng">
+            <node role="constraint" roleId="wq2x.7368070394767031348" type="wq2x.TypeofConstraint" typeId="wq2x.3063948360252660075" id="192485877561790303" nodeInfo="ng">
+              <node role="anchor" roleId="wq2x.3063948360252666228" type="wq2x.LogicValue" typeId="wq2x.7368070394768985089" id="192485877561790305" nodeInfo="ng">
+                <node role="code" roleId="wq2x.7368070394768985507" type="wq2x.RuleParameterReference" typeId="wq2x.7368070394769139970" id="192485877561790315" nodeInfo="ng">
+                  <link role="declaration" roleId="wq2x.7368070394769213644" targetNodeId="192485877561788308" resolveInfo="str" />
+                </node>
+              </node>
+              <node role="assignedType" roleId="wq2x.3063948360252667312" type="wq2x.LogicVariableReference" typeId="wq2x.7840802663736276860" id="192485877561806224" nodeInfo="ng">
+                <link role="declaration" roleId="wq2x.3063948360253976409" targetNodeId="192485877561805998" resolveInfo="S" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="rule" roleId="wq2x.7368070394767441299" type="wq2x.Rule" typeId="wq2x.8335224865066016388" id="192485877561882251" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="staticField" />
+      <link role="applicableConcept" roleId="wq2x.8335224865066016395" targetNodeId="tpee.1070533707846" resolveInfo="StaticFieldReference" />
+      <node role="parameter" roleId="wq2x.7368070394769105389" type="wq2x.RuleParameterDeclaration" typeId="wq2x.7368070394769089081" id="192485877561882252" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="sfr" />
+      </node>
+      <node role="head" roleId="wq2x.7368070394767442414" type="wq2x.Head" typeId="wq2x.7368070394766963750" id="192485877561882253" nodeInfo="ng">
+        <property name="keep" nameId="wq2x.7368070394767443940" value="false" />
+        <node role="code" roleId="wq2x.7368070394766972297" type="tpee.StatementList" typeId="tpee.1068580123136" id="192485877561882254" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="wq2x.EmitConstraintStatement" typeId="wq2x.7368070394766978092" id="192485877561883305" nodeInfo="ng">
+            <node role="constraint" roleId="wq2x.7368070394767031348" type="wq2x.UserConstraint" typeId="wq2x.7368070394767045637" id="192485877561883306" nodeInfo="ng">
+              <link role="template" roleId="wq2x.7368070394767091750" targetNodeId="192485877561789370" resolveInfo="fact" />
+              <node role="argument" roleId="wq2x.7368070394768117915" type="wq2x.LogicValue" typeId="wq2x.7368070394768985089" id="192485877561883307" nodeInfo="ng">
+                <node role="code" roleId="wq2x.7368070394768985507" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="192485877561883308" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1239714902950" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="192485877561883309" nodeInfo="nn">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="192485877561835148" resolveInfo="Facts" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="192485877561837197" resolveInfo="index" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="body" roleId="wq2x.7368070394767442907" type="wq2x.Body" typeId="wq2x.7368070394766966388" id="192485877561882255" nodeInfo="ng">
+        <node role="code" roleId="wq2x.7368070394766972297" type="tpee.StatementList" typeId="tpee.1068580123136" id="192485877561882256" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="wq2x.LocalDeclarationStatement" typeId="wq2x.3063948360254202562" id="192485877561884979" nodeInfo="ng">
+            <node role="declaration" roleId="wq2x.3063948360254832884" type="wq2x.LogicVariableDeclaration" typeId="wq2x.3063948360253431861" id="192485877561884981" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="F" />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="wq2x.EmitConstraintStatement" typeId="wq2x.7368070394766978092" id="192485877561903743" nodeInfo="ng">
+            <node role="constraint" roleId="wq2x.7368070394767031348" type="wq2x.UserConstraint" typeId="wq2x.7368070394767045637" id="192485877561903749" nodeInfo="ng">
+              <link role="template" roleId="wq2x.7368070394767091750" targetNodeId="7191523264663184035" resolveInfo="typedecl" />
+              <node role="argument" roleId="wq2x.7368070394768117915" type="wq2x.LogicVariableReference" typeId="wq2x.7840802663736276860" id="192485877561909536" nodeInfo="ng">
+                <link role="declaration" roleId="wq2x.3063948360253976409" targetNodeId="192485877561884981" resolveInfo="F" />
+              </node>
+              <node role="argument" roleId="wq2x.7368070394768117915" type="wq2x.LogicValue" typeId="wq2x.7368070394768985089" id="192485877561909551" nodeInfo="ng">
+                <node role="code" roleId="wq2x.7368070394768985507" type="tpee.DotExpression" typeId="tpee.1197027756228" id="192485877561909740" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="wq2x.RuleParameterReference" typeId="wq2x.7368070394769139970" id="192485877561909558" nodeInfo="ng">
+                    <link role="declaration" roleId="wq2x.7368070394769213644" targetNodeId="192485877561882252" resolveInfo="sfr" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="192485877561912029" nodeInfo="nn">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1070568178160" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="wq2x.EmitConstraintStatement" typeId="wq2x.7368070394766978092" id="192485877561913236" nodeInfo="ng">
+            <node role="constraint" roleId="wq2x.7368070394767031348" type="wq2x.TypeofConstraint" typeId="wq2x.3063948360252660075" id="192485877561913249" nodeInfo="ng">
+              <node role="anchor" roleId="wq2x.3063948360252666228" type="wq2x.LogicValue" typeId="wq2x.7368070394768985089" id="192485877561913251" nodeInfo="ng">
+                <node role="code" roleId="wq2x.7368070394768985507" type="wq2x.RuleParameterReference" typeId="wq2x.7368070394769139970" id="192485877561913261" nodeInfo="ng">
+                  <link role="declaration" roleId="wq2x.7368070394769213644" targetNodeId="192485877561882252" resolveInfo="sfr" />
+                </node>
+              </node>
+              <node role="assignedType" roleId="wq2x.3063948360252667312" type="wq2x.LogicVariableReference" typeId="wq2x.7840802663736276860" id="192485877561913268" nodeInfo="ng">
+                <link role="declaration" roleId="wq2x.3063948360253976409" targetNodeId="192485877561884981" resolveInfo="F" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="192485877561835148" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="Facts" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="192485877561837197" nodeInfo="igu">
+      <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="index" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="false" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="192485877561835206" nodeInfo="in" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="192485877561835195" nodeInfo="nn" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="192485877561870555" nodeInfo="nn">
+        <property name="value" nameId="tpee.1068580320021" value="1" />
+      </node>
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="192485877561835149" nodeInfo="nn" />
   </root>
 </model>
 
