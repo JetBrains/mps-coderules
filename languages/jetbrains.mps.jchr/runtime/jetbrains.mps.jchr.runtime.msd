@@ -9,7 +9,6 @@
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/antlr-2.7.5.jar" />
     <stubModelEntry path="${module}/lib/KULeuven_JCHR.jar" />
-    <stubModelEntry path="${module}/lib/KULeuven_JCHR.zip" />
     <stubModelEntry path="${module}/lib/args4j-2.0.5.jar" />
   </stubModelEntries>
   <sourcePath />
