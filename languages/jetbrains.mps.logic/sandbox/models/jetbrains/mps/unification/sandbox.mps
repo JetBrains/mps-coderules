@@ -1,154 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:ecf59ef9-2b17-40ee-91aa-e7999d4518f0(jetbrains.mps.unification.sandbox)">
-  <persistence version="8" />
-  <language namespace="894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)" />
-  <language namespace="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="oy3s" modelUID="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" version="-1" />
-  <import index="ie8e" modelUID="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" version="-1" />
-  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="w2rx" modelUID="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" version="-1" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
-  <import index="vgt0" modelUID="r:f36c95e5-e428-4945-91ae-1005e20c7971(jetbrains.mps.jchr.structure)" version="0" implicit="yes" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="5j4j" modelUID="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" version="-1" implicit="yes" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
-  <root type="vgt0.Handler" typeId="vgt0.456733934405394951" id="7932111957672575234" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="typeOf" />
-    <node role="rule" roleId="vgt0.456733934405773365" type="vgt0.PropagationRule" typeId="vgt0.456733934405449659" id="1503029981603348" nodeInfo="ng">
-      <node role="keptHead" roleId="vgt0.456733934405724614" type="vgt0.Head" typeId="vgt0.456733934405724502" id="1503029981603320" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="1503029981603321" nodeInfo="ng">
-          <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="7932111957672579607" resolveInfo="typeOf" />
-          <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1503029981846993" nodeInfo="nn">
-            <property name="value" nameId="tpee.1068580320021" value="1" />
+<model ref="r:ecf59ef9-2b17-40ee-91aa-e7999d4518f0(jetbrains.mps.unification.sandbox)">
+  <persistence version="9" />
+  <languages>
+    <use id="894463aa-8754-49c0-bf4b-6a32af66b376" name="jetbrains.mps.jchr" version="-1" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="-1" />
+    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+  </languages>
+  <imports>
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
+    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
+    <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="w2rx" ref="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" />
+    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+  </imports>
+  <registry>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
+      </concept>
+      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
+        <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+    </language>
+    <language id="894463aa-8754-49c0-bf4b-6a32af66b376" name="jetbrains.mps.jchr">
+      <concept id="7932111957678809936" name="jetbrains.mps.jchr.structure.LocalDeclaration" flags="ng" index="3a1Aqs">
+        <child id="7932111957678817258" name="variable" index="3a1BCA" />
+        <child id="7932111957678818116" name="type" index="3a1Sq8" />
+      </concept>
+      <concept id="7932111957672597360" name="jetbrains.mps.jchr.structure.SolverDeclaration" flags="ng" index="3dC9aW">
+        <child id="7932111957672598887" name="type" index="3dC9yF" />
+      </concept>
+      <concept id="3562712610792856834" name="jetbrains.mps.jchr.structure.InfixBuitinConstraint" flags="ng" index="1yrp4W">
+        <property id="3562712610792896168" name="index" index="1yr3Em" />
+        <reference id="3562712610792858432" name="solver" index="1yrqXY" />
+        <child id="3562712610792857835" name="left" index="1yrqNl" />
+        <child id="3562712610792858111" name="right" index="1yrqR1" />
+      </concept>
+      <concept id="456733934405724502" name="jetbrains.mps.jchr.structure.Head" flags="ng" index="3Fi0L1">
+        <child id="456733934405724503" name="constraint" index="3Fi0L0" />
+      </concept>
+      <concept id="456733934405724637" name="jetbrains.mps.jchr.structure.Body" flags="ng" index="3Fi0Na">
+        <child id="456733934405724638" name="constraint" index="3Fi0N9" />
+      </concept>
+      <concept id="456733934405724682" name="jetbrains.mps.jchr.structure.Guard" flags="ng" index="3Fi0Wt" />
+      <concept id="456733934405447580" name="jetbrains.mps.jchr.structure.Rule" flags="ng" index="3FjcEb">
+        <child id="456733934405732990" name="body" index="3Fi6XD" />
+        <child id="456733934405732988" name="guard" index="3Fi6XF" />
+      </concept>
+      <concept id="456733934405449659" name="jetbrains.mps.jchr.structure.PropagationRule" flags="ng" index="3FjdaG">
+        <child id="456733934405724614" name="keptHead" index="3Fi0Nh" />
+      </concept>
+      <concept id="456733934405450312" name="jetbrains.mps.jchr.structure.LogicVariable" flags="ng" index="3FjdXv" />
+      <concept id="456733934405496212" name="jetbrains.mps.jchr.structure.ConstraintDeclaration" flags="ng" index="3Fjoy3">
+        <child id="456733934405496239" name="argumentType" index="3FjoyS" />
+      </concept>
+      <concept id="456733934405394951" name="jetbrains.mps.jchr.structure.Handler" flags="ig" index="3FjKsg">
+        <child id="7932111957678810892" name="local" index="3a1Ab0" />
+        <child id="7932111957672637404" name="solver" index="3dC3og" />
+        <child id="456733934405771625" name="declaration" index="3FishY" />
+        <child id="456733934405773365" name="rule" index="3FisOy" />
+      </concept>
+      <concept id="456733934405414274" name="jetbrains.mps.jchr.structure.UserConstraint" flags="ng" index="3FjOyl">
+        <reference id="456733934405496267" name="declaration" index="3Fjozs" />
+        <child id="456733934405496283" name="argument" index="3Fjozc" />
+      </concept>
+    </language>
+    <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
+      <concept id="4310122986197990603" name="jetbrains.mps.logic.structure.ExpressionNode" flags="ng" index="xgLVe">
+        <child id="4310122986197991094" name="expression" index="xgLMN" />
+      </concept>
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
+        <child id="7571593955706125526" name="root" index="1oi0x0" />
+      </concept>
+      <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
+        <child id="7571593955706137319" name="contents" index="1oi5TL" />
+      </concept>
+      <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Node" flags="ng" index="1oi5UN">
+        <property id="7166797808989209772" name="kind" index="2IF10e" />
+        <child id="7571593955706284441" name="role" index="1ojpOf" />
+      </concept>
+      <concept id="7571593955706137189" name="jetbrains.mps.logic.structure.Role" flags="ng" index="1oi5VN">
+        <property id="7571593955706137428" name="cardinality" index="1oi5Z2" />
+      </concept>
+      <concept id="7571593955706137472" name="jetbrains.mps.logic.structure.ValueRole" flags="ng" index="1oi5Wm">
+        <child id="7571593955706137672" name="contents" index="1oi5zu" />
+      </concept>
+      <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.ValueHolder" flags="ng" index="1oi5XN">
+        <property id="7571593955706137638" name="value" index="1oi5yK" />
+      </concept>
+      <concept id="7571593955706284481" name="jetbrains.mps.logic.structure.Symbol" flags="ng" index="1ojpPn" />
+      <concept id="1503029989441024" name="jetbrains.mps.logic.structure.AbstractNode" flags="ng" index="1KByzZ">
+        <child id="1503029989483908" name="symbol" index="1KAndV" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="3FjKsg" id="6SkxsMzGW42">
+    <property role="TrG5h" value="typeOf" />
+    <node concept="3FjdaG" id="5lJXK8Yok" role="3FisOy">
+      <node concept="3Fi0L1" id="5lJXK8YnS" role="3Fi0Nh">
+        <node concept="3FjOyl" id="5lJXK8YnT" role="3Fi0L0">
+          <ref role="3Fjozs" node="6SkxsMzGX8n" resolve="typeOf" />
+          <node concept="3cmrfG" id="5lJXK9TRh" role="3Fjozc">
+            <property role="3cmrfH" value="1" />
           </node>
-          <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="1503029981603323" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="X" />
+          <node concept="3FjdXv" id="5lJXK8YnV" role="3Fjozc">
+            <property role="TrG5h" value="X" />
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724503" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="1503029981603324" nodeInfo="ng">
-          <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="7932111957672579607" resolveInfo="typeOf" />
-          <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1503029981847092" nodeInfo="nn">
-            <property name="value" nameId="tpee.1068580320021" value="2" />
+        <node concept="3FjOyl" id="5lJXK8YnW" role="3Fi0L0">
+          <ref role="3Fjozs" node="6SkxsMzGX8n" resolve="typeOf" />
+          <node concept="3cmrfG" id="5lJXK9TSO" role="3Fjozc">
+            <property role="3cmrfH" value="2" />
           </node>
-          <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="1503029981603326" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="Y" />
+          <node concept="3FjdXv" id="5lJXK8YnY" role="3Fjozc">
+            <property role="TrG5h" value="Y" />
           </node>
         </node>
       </node>
-      <node role="guard" roleId="vgt0.456733934405732988" type="vgt0.Guard" typeId="vgt0.456733934405724682" id="1503029981603327" nodeInfo="ng" />
-      <node role="body" roleId="vgt0.456733934405732990" type="vgt0.Body" typeId="vgt0.456733934405724637" id="1503029981603328" nodeInfo="ng">
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.InfixBuitinConstraint" typeId="vgt0.3562712610792856834" id="1503029981603329" nodeInfo="ng">
-          <property name="index" nameId="vgt0.3562712610792896168" value="0" />
-          <link role="solver" roleId="vgt0.3562712610792858432" targetNodeId="7932111957672681908" />
-          <node role="left" roleId="vgt0.3562712610792857835" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="1503029981603330" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="X" />
+      <node concept="3Fi0Wt" id="5lJXK8YnZ" role="3Fi6XF" />
+      <node concept="3Fi0Na" id="5lJXK8Yo0" role="3Fi6XD">
+        <node concept="1yrp4W" id="5lJXK8Yo1" role="3Fi0N9">
+          <property role="1yr3Em" value="0" />
+          <ref role="1yrqXY" node="6SkxsMzHm6O" />
+          <node concept="3FjdXv" id="5lJXK8Yo2" role="1yrqNl">
+            <property role="TrG5h" value="X" />
           </node>
-          <node role="right" roleId="vgt0.3562712610792858111" type="5j4j.Ast" typeId="5j4j.7571593955706120730" id="1503029987400584" nodeInfo="ng">
-            <node role="root" roleId="5j4j.7571593955706125526" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="1503029987400905" nodeInfo="ng">
-              <property name="kind" nameId="5j4j.7166797808989209772" value="CLASSIFIER_TYPE" />
-              <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1503029987400910" nodeInfo="ng" />
-              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1503029987400906" nodeInfo="ng">
-                <property name="name" nameId="tpck.1169194664001" value="concept" />
-                <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1503029987400907" nodeInfo="ng">
-                  <property name="value" nameId="5j4j.7571593955706137638" value="ClassifierType" />
-                  <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1503029989791088" nodeInfo="ng" />
+          <node concept="1oi1Uc" id="5lJXKv5I8" role="1yrqR1">
+            <node concept="1oi5UN" id="5lJXKv5N9" role="1oi0x0">
+              <property role="2IF10e" value="CLASSIFIER_TYPE" />
+              <node concept="1ojpPn" id="5lJXKv5Ne" role="1KAndV" />
+              <node concept="1oi5Wm" id="5lJXKv5Na" role="1ojpOf">
+                <property role="TrG5h" value="concept" />
+                <node concept="1oi5XN" id="5lJXKv5Nb" role="1oi5zu">
+                  <property role="1oi5yK" value="ClassifierType" />
+                  <node concept="1ojpPn" id="5lJXKCdlK" role="1KAndV" />
                 </node>
               </node>
-              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1503029987400908" nodeInfo="ng">
-                <property name="name" nameId="tpck.1169194664001" value="classifier" />
-                <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1503029987400909" nodeInfo="ng">
-                  <property name="value" nameId="5j4j.7571593955706137638" value="Foo" />
-                  <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1503029989791087" nodeInfo="ng" />
+              <node concept="1oi5Wm" id="5lJXKv5Nc" role="1ojpOf">
+                <property role="TrG5h" value="classifier" />
+                <node concept="1oi5XN" id="5lJXKv5Nd" role="1oi5zu">
+                  <property role="1oi5yK" value="Foo" />
+                  <node concept="1ojpPn" id="5lJXKCdlJ" role="1KAndV" />
                 </node>
               </node>
-              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ChildRole" typeId="5j4j.7571593955706137263" id="1503029987401857" nodeInfo="ng">
-                <property name="name" nameId="tpck.1169194664001" value="parameter" />
-                <property name="cardinality" nameId="5j4j.7571593955706137428" value="multiple" />
-                <node role="contents" roleId="5j4j.7571593955706137319" type="5j4j.ExpressionNode" typeId="5j4j.4310122986197990603" id="2079564643614965180" nodeInfo="ng">
-                  <node role="expression" roleId="5j4j.4310122986197991094" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="222732967752505504" nodeInfo="ng">
-                    <property name="name" nameId="tpck.1169194664001" value="T" />
+              <node concept="1oi5ST" id="5lJXKv621" role="1ojpOf">
+                <property role="TrG5h" value="parameter" />
+                <property role="1oi5Z2" value="multiple" />
+                <node concept="xgLVe" id="1Ns6gpY8rQW" role="1oi5TL">
+                  <node concept="3FjdXv" id="cnjBgYE1yw" role="xgLMN">
+                    <property role="TrG5h" value="T" />
                   </node>
-                  <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="2079564643614965182" nodeInfo="ng" />
+                  <node concept="1ojpPn" id="1Ns6gpY8rQY" role="1KAndV" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.InfixBuitinConstraint" typeId="vgt0.3562712610792856834" id="1503029981603332" nodeInfo="ng">
-          <property name="index" nameId="vgt0.3562712610792896168" value="0" />
-          <link role="solver" roleId="vgt0.3562712610792858432" targetNodeId="7932111957672681908" />
-          <node role="left" roleId="vgt0.3562712610792857835" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="1503029981603333" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="Y" />
+        <node concept="1yrp4W" id="5lJXK8Yo4" role="3Fi0N9">
+          <property role="1yr3Em" value="0" />
+          <ref role="1yrqXY" node="6SkxsMzHm6O" />
+          <node concept="3FjdXv" id="5lJXK8Yo5" role="1yrqNl">
+            <property role="TrG5h" value="Y" />
           </node>
-          <node role="right" roleId="vgt0.3562712610792858111" type="5j4j.Ast" typeId="5j4j.7571593955706120730" id="1503029981603334" nodeInfo="ng">
-            <node role="root" roleId="5j4j.7571593955706125526" type="5j4j.Node" typeId="5j4j.7571593955706137125" id="1503029981603335" nodeInfo="ng">
-              <property name="kind" nameId="5j4j.7166797808989209772" value="CLASSIFIER_TYPE" />
-              <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1503029981603336" nodeInfo="ng" />
-              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1503029981603337" nodeInfo="ng">
-                <property name="name" nameId="tpck.1169194664001" value="concept" />
-                <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1503029981603338" nodeInfo="ng">
-                  <property name="value" nameId="5j4j.7571593955706137638" value="ClassifierType" />
-                  <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1503029989791089" nodeInfo="ng" />
+          <node concept="1oi1Uc" id="5lJXK8Yo6" role="1yrqR1">
+            <node concept="1oi5UN" id="5lJXK8Yo7" role="1oi0x0">
+              <property role="2IF10e" value="CLASSIFIER_TYPE" />
+              <node concept="1ojpPn" id="5lJXK8Yo8" role="1KAndV" />
+              <node concept="1oi5Wm" id="5lJXK8Yo9" role="1ojpOf">
+                <property role="TrG5h" value="concept" />
+                <node concept="1oi5XN" id="5lJXK8Yoa" role="1oi5zu">
+                  <property role="1oi5yK" value="ClassifierType" />
+                  <node concept="1ojpPn" id="5lJXKCdlL" role="1KAndV" />
                 </node>
               </node>
-              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ValueRole" typeId="5j4j.7571593955706137472" id="1503029981603339" nodeInfo="ng">
-                <property name="name" nameId="tpck.1169194664001" value="classifier" />
-                <node role="contents" roleId="5j4j.7571593955706137672" type="5j4j.ValueHolder" typeId="5j4j.7571593955706137573" id="1503029981603340" nodeInfo="ng">
-                  <property name="value" nameId="5j4j.7571593955706137638" value="Bar" />
-                  <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="1503029989791086" nodeInfo="ng" />
+              <node concept="1oi5Wm" id="5lJXK8Yob" role="1ojpOf">
+                <property role="TrG5h" value="classifier" />
+                <node concept="1oi5XN" id="5lJXK8Yoc" role="1oi5zu">
+                  <property role="1oi5yK" value="Bar" />
+                  <node concept="1ojpPn" id="5lJXKCdlI" role="1KAndV" />
                 </node>
               </node>
-              <node role="role" roleId="5j4j.7571593955706284441" type="5j4j.ChildRole" typeId="5j4j.7571593955706137263" id="1503029981603341" nodeInfo="ng">
-                <property name="name" nameId="tpck.1169194664001" value="parameter" />
-                <property name="cardinality" nameId="5j4j.7571593955706137428" value="multiple" />
-                <node role="contents" roleId="5j4j.7571593955706137319" type="5j4j.ExpressionNode" typeId="5j4j.4310122986197990603" id="2079564643614969866" nodeInfo="ng">
-                  <node role="expression" roleId="5j4j.4310122986197991094" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="222732967752505895" nodeInfo="ng">
-                    <property name="name" nameId="tpck.1169194664001" value="T" />
+              <node concept="1oi5ST" id="5lJXK8Yod" role="1ojpOf">
+                <property role="TrG5h" value="parameter" />
+                <property role="1oi5Z2" value="multiple" />
+                <node concept="xgLVe" id="1Ns6gpY8t0a" role="1oi5TL">
+                  <node concept="3FjdXv" id="cnjBgYE1CB" role="xgLMN">
+                    <property role="TrG5h" value="T" />
                   </node>
-                  <node role="symbol" roleId="5j4j.1503029989483908" type="5j4j.Symbol" typeId="5j4j.7571593955706284481" id="2079564643614969868" nodeInfo="ng" />
+                  <node concept="1ojpPn" id="1Ns6gpY8t0c" role="1KAndV" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="constraint" roleId="vgt0.456733934405724638" type="vgt0.UserConstraint" typeId="vgt0.456733934405414274" id="1503029981603345" nodeInfo="ng">
-          <link role="declaration" roleId="vgt0.456733934405496267" targetNodeId="7932111957672579607" resolveInfo="typeOf" />
-          <node role="argument" roleId="vgt0.456733934405496283" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1503029981847311" nodeInfo="nn">
-            <property name="value" nameId="tpee.1068580320021" value="3" />
+        <node concept="3FjOyl" id="5lJXK8Yoh" role="3Fi0N9">
+          <ref role="3Fjozs" node="6SkxsMzGX8n" resolve="typeOf" />
+          <node concept="3cmrfG" id="5lJXK9TWf" role="3Fjozc">
+            <property role="3cmrfH" value="3" />
           </node>
-          <node role="argument" roleId="vgt0.456733934405496283" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="1503029981603347" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="T" />
+          <node concept="3FjdXv" id="5lJXK8Yoj" role="3Fjozc">
+            <property role="TrG5h" value="T" />
           </node>
         </node>
       </node>
     </node>
-    <node role="declaration" roleId="vgt0.456733934405771625" type="vgt0.ConstraintDeclaration" typeId="vgt0.456733934405496212" id="7932111957672579607" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="typeOf" />
-      <node role="argumentType" roleId="vgt0.456733934405496239" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1503029981597239" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="w2rx.~Logical" resolveInfo="Logical" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1503029981846741" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+    <node concept="3Fjoy3" id="6SkxsMzGX8n" role="3FishY">
+      <property role="TrG5h" value="typeOf" />
+      <node concept="3uibUv" id="5lJXK8WSR" role="3FjoyS">
+        <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+        <node concept="3uibUv" id="5lJXK9TNl" role="11_B2D">
+          <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
         </node>
       </node>
-      <node role="argumentType" roleId="vgt0.456733934405496239" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7932111957678298933" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oy3s.5667087533488031231" resolveInfo="TreeLogical" />
+      <node concept="3uibUv" id="6SkxsM$2LsP" role="3FjoyS">
+        <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="TreeLogical" />
       </node>
     </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7932111957672575235" nodeInfo="nn" />
-    <node role="solver" roleId="vgt0.7932111957672637404" type="vgt0.SolverDeclaration" typeId="vgt0.7932111957672597360" id="7932111957672681908" nodeInfo="ng">
-      <node role="type" roleId="vgt0.7932111957672598887" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7932111957672682081" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oy3s.7337323408787456023" resolveInfo="UnificationSolver" />
+    <node concept="3Tm1VV" id="6SkxsMzGW43" role="1B3o_S" />
+    <node concept="3dC9aW" id="6SkxsMzHm6O" role="3dC3og">
+      <node concept="3uibUv" id="6SkxsMzHm9x" role="3dC9yF">
+        <ref role="3uigEE" to="oy3s:6njqcfQVO0n" resolve="UnificationSolver" />
       </node>
     </node>
-    <node role="local" roleId="vgt0.7932111957678810892" type="vgt0.LocalDeclaration" typeId="vgt0.7932111957678809936" id="6214965505175329707" nodeInfo="ng">
-      <node role="type" roleId="vgt0.7932111957678818116" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6214965505175329989" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oy3s.5667087533488031231" resolveInfo="TreeLogical" />
+    <node concept="3a1Aqs" id="5oZZzbri1IF" role="3a1Ab0">
+      <node concept="3uibUv" id="5oZZzbri1N5" role="3a1Sq8">
+        <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="TreeLogical" />
       </node>
-      <node role="variable" roleId="vgt0.7932111957678817258" type="vgt0.LogicVariable" typeId="vgt0.456733934405450312" id="6214965505175330105" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="T" />
+      <node concept="3FjdXv" id="5oZZzbri1OT" role="3a1BCA">
+        <property role="TrG5h" value="T" />
       </node>
     </node>
-  </root>
+  </node>
 </model>
 
