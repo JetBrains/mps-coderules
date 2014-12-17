@@ -691,45 +691,7 @@
                           </node>
                           <node concept="2oxUTD" id="5dz6b545hpI" role="2OqNvi">
                             <node concept="3B5_sB" id="5dz6b545hpJ" role="2oxUTC">
-                              <ref role="3B5MYn" to="w2rx:~Logical" resolve="Logical" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cpWs8" id="5dz6b545TVm" role="3cqZAp">
-                        <node concept="3cpWsn" id="5dz6b545TVn" role="3cpWs9">
-                          <property role="TrG5h" value="paramCltNode" />
-                          <node concept="3Tqbb2" id="5dz6b545TVd" role="1tU5fm">
-                            <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
-                          </node>
-                          <node concept="2OqwBi" id="5dz6b545TVo" role="33vP2m">
-                            <node concept="2OqwBi" id="5dz6b545TVp" role="2Oq$k0">
-                              <node concept="37vLTw" id="5dz6b545TVq" role="2Oq$k0">
-                                <ref role="3cqZAo" node="ZqZbw4SMAd" resolve="cltNode" />
-                              </node>
-                              <node concept="3Tsc0h" id="5dz6b545TVr" role="2OqNvi">
-                                <ref role="3TtcxE" to="tpee:g91_B6F" />
-                              </node>
-                            </node>
-                            <node concept="2DeJg1" id="5dz6b545TVs" role="2OqNvi">
-                              <ref role="1A0vxQ" to="tpee:g7uibYu" resolve="ClassifierType" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="5dz6b545P8A" role="3cqZAp">
-                        <node concept="2OqwBi" id="5dz6b545UZA" role="3clFbG">
-                          <node concept="2OqwBi" id="5dz6b545U6F" role="2Oq$k0">
-                            <node concept="37vLTw" id="5dz6b545TVt" role="2Oq$k0">
-                              <ref role="3cqZAo" node="5dz6b545TVn" resolve="paramCltNode" />
-                            </node>
-                            <node concept="3TrEf2" id="5dz6b545UD1" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:g7uigIF" />
-                            </node>
-                          </node>
-                          <node concept="2oxUTD" id="5dz6b545WYX" role="2OqNvi">
-                            <node concept="3B5_sB" id="5dz6b545X1r" role="2oxUTC">
-                              <ref role="3B5MYn" to="e2lb:~Object" resolve="Object" />
+                              <ref role="3B5MYn" to="oy3s:1H8E3iB85PX" resolve="StringLogical" />
                             </node>
                           </node>
                         </node>

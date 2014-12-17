@@ -8,7 +8,9 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.jchr/sandbox/runner/jetbrains.mps.jchr.sandbox.runner.msd" folder="jchr" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/jetbrains.mps.lang.typesystem2.mpl" folder="typesystem2" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/runtime/jetbrains.mps.lang.typesystem2.runtime.msd" folder="typesystem2" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.sandbox.msd" folder="typesystem2" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/jetbrains.mps.lang.typesystem2.samplechecker.runner.msd" folder="typesystem2" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker/jetbrains.mps.lang.typesystem2.samplechecker.msd" folder="typesystem2" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.sampleplugin/jetbrains.mps.lang.typesystem2.sampleplugin.msd" folder="typesystem2" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/jetbrains.mps.logic.sandbox.msd" folder="logic" />
