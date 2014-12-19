@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.logic#6626732309150416985" uuid="85f64970-3326-4ea7-966e-1ac904686424">
+    <generator name="" generatorUID="jetbrains.mps.logic#6626732309150416985" uuid="85f64970-3326-4ea7-966e-1ac904686424">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -15,9 +15,10 @@
       </models>
       <external-templates />
       <dependencies>
+        <dependency reexport="false">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.unification.tree)</dependency>
+        <dependency reexport="false">3805ea9c-bac0-45ea-9157-1b3b93c1c0cc(jetbrains.mps.jchr#456733934405380506)</dependency>
         <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
         <dependency reexport="false">894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)</dependency>
-        <dependency reexport="false">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.unification.tree)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguage>
@@ -46,7 +47,22 @@
         <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" fqName="jetbrains.mps.lang.typesystem" version="0" />
         <language id="35320f26-77cb-4c55-be9f-a97a27770af1" fqName="jetbrains.mps.logic" version="0" />
       </languageVersions>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <generator generatorUID="85f64970-3326-4ea7-966e-1ac904686424(jetbrains.mps.logic#6626732309150416985)" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="3805ea9c-bac0-45ea-9157-1b3b93c1c0cc(jetbrains.mps.jchr#456733934405380506)" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <sourcePath />
