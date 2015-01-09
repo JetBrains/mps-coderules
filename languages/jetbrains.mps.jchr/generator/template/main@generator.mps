@@ -134,6 +134,7 @@
       </concept>
       <concept id="5015072279636592410" name="jetbrains.mps.lang.generator.structure.VarMacro_ValueQuery" flags="in" index="2jfdEK" />
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
+        <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
@@ -916,6 +917,19 @@
           <node concept="3clFbF" id="5lJXKrO_X" role="3cqZAp">
             <node concept="37vLTw" id="4oAgtl3TsbG" role="3clFbG">
               <ref role="3cqZAo" node="4oAgtl3Tsb$" resolve="logical" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="gft3U" id="6flDoy9NFzB" role="jxRDz">
+      <node concept="10Nm6u" id="6flDoy9NFRg" role="gfFT$">
+        <node concept="29HgVG" id="6flDoy9NFU3" role="lGtFl">
+          <node concept="3NFfHV" id="6flDoy9NFX$" role="3NFExx">
+            <node concept="3clFbS" id="6flDoy9NFX_" role="2VODD2">
+              <node concept="3clFbF" id="6flDoy9NGhp" role="3cqZAp">
+                <node concept="30H73N" id="6flDoy9NGho" role="3clFbG" />
+              </node>
             </node>
           </node>
         </node>
