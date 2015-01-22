@@ -112,9 +112,9 @@
     </node>
     <node concept="1TJgyj" id="6p0DfM0ie7H" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parameter" />
+      <property role="20kJfa" value="input" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6p0DfM0ia8T" resolve="RuleParameterDeclaration" />
+      <ref role="20lvS9" node="6p0DfM0ia8T" resolve="RuleInputDeclaration" />
     </node>
     <node concept="1TJgyj" id="6p0DfM0bS7I" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -138,6 +138,11 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="applyCondition" />
       <ref role="20lvS9" node="4laj_h9P4cy" resolve="Condition" />
+    </node>
+    <node concept="1TJgyj" id="5MHpiylGjt8" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterBlock" />
+      <ref role="20lvS9" node="5MHpiylG7gA" resolve="RuleParameterBlock" />
     </node>
     <node concept="PrWs8" id="6p0DfM0c$n_" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -271,8 +276,8 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0ia8T">
-    <property role="3GE5qa" value="rule.parameter" />
-    <property role="TrG5h" value="RuleParameterDeclaration" />
+    <property role="3GE5qa" value="rule.input" />
+    <property role="TrG5h" value="RuleInputDeclaration" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6p0DfM0iqhH" role="PzmwI">
       <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
@@ -285,14 +290,14 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0im$2">
-    <property role="3GE5qa" value="rule.parameter" />
-    <property role="TrG5h" value="RuleParameterReference" />
+    <property role="3GE5qa" value="rule.input" />
+    <property role="TrG5h" value="RuleInputReference" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="6p0DfM0iCzc" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6p0DfM0ia8T" resolve="RuleParameterDeclaration" />
+      <ref role="20lvS9" node="6p0DfM0ia8T" resolve="RuleInputDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0oBcI">
@@ -425,6 +430,60 @@
     </node>
     <node concept="PrWs8" id="6ntBQ9KHkM6" role="PzmwI">
       <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5MHpiylEsuT">
+    <property role="TrG5h" value="RuleParameterDeclaration" />
+    <property role="3GE5qa" value="rule.parameter" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5MHpiylFYj$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="5MHpiylEsHY" role="PzmwI">
+      <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
+    </node>
+    <node concept="PrWs8" id="5MHpiylEsHZ" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="5MHpiylEsI0" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hqLv6T6" resolve="IResolveInfo" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5MHpiylG7gA">
+    <property role="3GE5qa" value="rule.parameter" />
+    <property role="TrG5h" value="RuleParameterBlock" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5MHpiylGFuy" role="PzmwI">
+      <ref role="PrY4T" to="tpee:i0zv2NF" resolve="IContainsStatementList" />
+    </node>
+    <node concept="PrWs8" id="5MHpiylGFuz" role="PzmwI">
+      <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
+    </node>
+    <node concept="1TJgyj" id="5MHpiylFI5Z" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5MHpiylEsuT" resolve="RuleParameterDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="5MHpiylGHFg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5MHpiylKSq8">
+    <property role="3GE5qa" value="rule.parameter" />
+    <property role="TrG5h" value="RuleParameterReference" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="5MHpiylKVev" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="declaration" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5MHpiylEsuT" resolve="RuleParameterDeclaration" />
     </node>
   </node>
 </model>

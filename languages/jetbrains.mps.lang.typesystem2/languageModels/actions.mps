@@ -335,7 +335,7 @@
             </node>
           </node>
           <node concept="2h1dTh" id="2E5lcNn1bNd" role="Cn2iK">
-            <property role="2h1i$Z" value="once" />
+            <property role="2h1i$Z" value="and discard" />
           </node>
         </node>
       </node>

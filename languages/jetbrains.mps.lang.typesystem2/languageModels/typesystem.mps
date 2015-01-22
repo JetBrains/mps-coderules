@@ -112,14 +112,14 @@
     </language>
   </registry>
   <node concept="1YbPZF" id="6p0DfM0iLb2">
-    <property role="TrG5h" value="typeof_RuleParameterDeclaration" />
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="TrG5h" value="typeof_RuleInputDeclaration" />
+    <property role="3GE5qa" value="rule.input" />
     <node concept="3clFbS" id="6p0DfM0iLgy" role="18ibNy">
       <node concept="1Z5TYs" id="6p0DfM0iLqJ" role="3cqZAp">
         <node concept="mw_s8" id="6p0DfM0iLqM" role="1ZfhK$">
           <node concept="1Z2H0r" id="6p0DfM0iLlM" role="mwGJk">
             <node concept="1YBJjd" id="6p0DfM0iLnf" role="1Z2MuG">
-              <ref role="1YBMHb" node="6p0DfM0iLg$" resolve="rpd" />
+              <ref role="1YBMHb" node="6p0DfM0iLg$" resolve="rid" />
             </node>
           </node>
         </node>
@@ -136,7 +136,7 @@
                     <ref role="1PxNhF" to="wq2x:7eGEHDlgPU4" resolve="Rule" />
                     <node concept="2OqwBi" id="6p0DfM0iSj6" role="1PxMeX">
                       <node concept="1YBJjd" id="6p0DfM0iSj7" role="2Oq$k0">
-                        <ref role="1YBMHb" node="6p0DfM0iLg$" resolve="rpd" />
+                        <ref role="1YBMHb" node="6p0DfM0iLg$" resolve="rid" />
                       </node>
                       <node concept="1mfA1w" id="6p0DfM0iSj8" role="2OqNvi" />
                     </node>
@@ -152,20 +152,20 @@
       </node>
     </node>
     <node concept="1YaCAy" id="6p0DfM0iLg$" role="1YuTPh">
-      <property role="TrG5h" value="rpd" />
-      <ref role="1YaFvo" to="wq2x:6p0DfM0ia8T" resolve="RuleParameterDeclaration" />
+      <property role="TrG5h" value="rid" />
+      <ref role="1YaFvo" to="wq2x:6p0DfM0ia8T" resolve="RuleInputDeclaration" />
     </node>
   </node>
   <node concept="1YbPZF" id="6p0DfM0iSNs">
-    <property role="TrG5h" value="typeof_RuleParameterReference" />
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="TrG5h" value="typeof_RuleInputReference" />
+    <property role="3GE5qa" value="rule.input" />
     <node concept="3clFbS" id="6p0DfM0iSNt" role="18ibNy">
       <node concept="1Z5TYs" id="6p0DfM0iSWv" role="3cqZAp">
         <node concept="mw_s8" id="6p0DfM0iSXG" role="1ZfhKB">
           <node concept="1Z2H0r" id="6p0DfM0iSXC" role="mwGJk">
             <node concept="2OqwBi" id="6p0DfM0iT1d" role="1Z2MuG">
               <node concept="1YBJjd" id="6p0DfM0iSYZ" role="2Oq$k0">
-                <ref role="1YBMHb" node="6p0DfM0iSNv" resolve="rpr" />
+                <ref role="1YBMHb" node="6p0DfM0iSNv" resolve="rir" />
               </node>
               <node concept="3TrEf2" id="6p0DfM0iTbE" role="2OqNvi">
                 <ref role="3Tt5mk" to="wq2x:6p0DfM0iCzc" />
@@ -176,15 +176,15 @@
         <node concept="mw_s8" id="6p0DfM0iSWy" role="1ZfhK$">
           <node concept="1Z2H0r" id="6p0DfM0iSSK" role="mwGJk">
             <node concept="1YBJjd" id="6p0DfM0iSUd" role="1Z2MuG">
-              <ref role="1YBMHb" node="6p0DfM0iSNv" resolve="rpr" />
+              <ref role="1YBMHb" node="6p0DfM0iSNv" resolve="rir" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="6p0DfM0iSNv" role="1YuTPh">
-      <property role="TrG5h" value="rpr" />
-      <ref role="1YaFvo" to="wq2x:6p0DfM0im$2" resolve="RuleParameterReference" />
+      <property role="TrG5h" value="rir" />
+      <ref role="1YaFvo" to="wq2x:6p0DfM0im$2" resolve="RuleInputReference" />
     </node>
   </node>
   <node concept="2sgARr" id="6ntBQ9KL7Lw">
@@ -224,6 +224,66 @@
     <node concept="1YaCAy" id="6ntBQ9KLBMa" role="35pZ6h">
       <property role="TrG5h" value="lvt" />
       <ref role="1YaFvo" to="wq2x:6Ng87FPV$_x" resolve="LogicVariableType" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5MHpiylKVB4">
+    <property role="TrG5h" value="typeof_RuleParameterReference" />
+    <property role="3GE5qa" value="rule.parameter" />
+    <node concept="3clFbS" id="5MHpiylKVB5" role="18ibNy">
+      <node concept="1Z5TYs" id="5MHpiylKW2e" role="3cqZAp">
+        <node concept="mw_s8" id="5MHpiylKW57" role="1ZfhKB">
+          <node concept="1Z2H0r" id="5MHpiylKW53" role="mwGJk">
+            <node concept="2OqwBi" id="5MHpiylKW8v" role="1Z2MuG">
+              <node concept="1YBJjd" id="5MHpiylKW5$" role="2Oq$k0">
+                <ref role="1YBMHb" node="5MHpiylKVB7" resolve="rpr" />
+              </node>
+              <node concept="3TrEf2" id="5MHpiylKWrZ" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:5MHpiylKVev" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5MHpiylKW2h" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5MHpiylKVXz" role="mwGJk">
+            <node concept="1YBJjd" id="5MHpiylKVZQ" role="1Z2MuG">
+              <ref role="1YBMHb" node="5MHpiylKVB7" resolve="rpr" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5MHpiylKVB7" role="1YuTPh">
+      <property role="TrG5h" value="rpr" />
+      <ref role="1YaFvo" to="wq2x:5MHpiylKSq8" resolve="RuleParameterReference" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5MHpiylSAgS">
+    <property role="TrG5h" value="typeof_RuleParameterDeclaration" />
+    <property role="3GE5qa" value="rule.parameter" />
+    <node concept="3clFbS" id="5MHpiylSAgT" role="18ibNy">
+      <node concept="1Z5TYs" id="5MHpiylSAxR" role="3cqZAp">
+        <node concept="mw_s8" id="5MHpiylSAzS" role="1ZfhKB">
+          <node concept="2OqwBi" id="5MHpiylSAAI" role="mwGJk">
+            <node concept="1YBJjd" id="5MHpiylSAzQ" role="2Oq$k0">
+              <ref role="1YBMHb" node="5MHpiylSAgV" resolve="rpd" />
+            </node>
+            <node concept="3TrEf2" id="5MHpiylSAQj" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:5MHpiylFYj$" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5MHpiylSAxU" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5MHpiylSAj$" role="mwGJk">
+            <node concept="1YBJjd" id="5MHpiylSAuz" role="1Z2MuG">
+              <ref role="1YBMHb" node="5MHpiylSAgV" resolve="rpd" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5MHpiylSAgV" role="1YuTPh">
+      <property role="TrG5h" value="rpd" />
+      <ref role="1YaFvo" to="wq2x:5MHpiylEsuT" resolve="RuleParameterDeclaration" />
     </node>
   </node>
 </model>
