@@ -1040,6 +1040,15 @@
                                         <property role="Xl_RC" value="stack" />
                                       </node>
                                     </node>
+                                    <node concept="2dOGH5" id="2q_78a9aBgB" role="1r8FgC">
+                                      <property role="Lv5iS" value="true" />
+                                      <node concept="Xl_RD" id="2q_78a9aBgC" role="2dOGIY">
+                                        <property role="Xl_RC" value="full" />
+                                      </node>
+                                      <node concept="Xl_RD" id="2q_78a9aBgD" role="2dOGIT">
+                                        <property role="Xl_RC" value="debug" />
+                                      </node>
+                                    </node>
                                     <node concept="2dOGH5" id="6XrX4sU0NeH" role="1r8FgC">
                                       <property role="Lv5iS" value="true" />
                                       <node concept="Xl_RD" id="6XrX4sU0XCd" role="2dOGIY">
