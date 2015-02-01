@@ -486,5 +486,26 @@
       <ref role="20lvS9" node="5MHpiylEsuT" resolve="RuleParameterDeclaration" />
     </node>
   </node>
+  <node concept="1TIwiD" id="2q_78a8IM1S">
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="JavaConstraint" />
+    <property role="34LRSv" value="java" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyi" id="2q_78a8IMIA" role="1TKVEl">
+      <property role="TrG5h" value="template" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2q_78a9fklE">
+    <property role="3GE5qa" value="constraint.expression" />
+    <property role="TrG5h" value="WildcardLogicVariable" />
+    <property role="34LRSv" value="_" />
+    <ref role="1TJDcQ" node="6p0DfM0evIr" resolve="LogicExpression" />
+    <node concept="1TJgyj" id="2q_78a9c7Ce" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="cardinality" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
 </model>
 

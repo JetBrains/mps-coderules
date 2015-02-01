@@ -414,5 +414,54 @@
       </node>
     </node>
   </node>
+  <node concept="3UOs0u" id="2q_78a9fmDm">
+    <property role="3GE5qa" value="constraint.expression" />
+    <property role="TrG5h" value="WildcardLogicVariable_setCardinality" />
+    <node concept="3UNGvq" id="2q_78a9fmDn" role="3UOs0v">
+      <property role="2uHTBK" value="ext_1_RTransform" />
+      <ref role="3UNGvu" to="wq2x:2q_78a9fklE" resolve="WildcardLogicVariable" />
+      <node concept="tYCnQ" id="2q_78a9fp4J" role="_1QTJ">
+        <ref role="uz4UX" to="wq2x:2q_78a9fklE" resolve="WildcardLogicVariable" />
+        <node concept="Cmt7Y" id="2q_78a9fpl0" role="uz6Si">
+          <node concept="Cnhdc" id="2q_78a9fpl2" role="Cncma">
+            <node concept="3clFbS" id="2q_78a9fpl4" role="2VODD2">
+              <node concept="3clFbF" id="2q_78a9fpqm" role="3cqZAp">
+                <node concept="2OqwBi" id="2q_78a9fqg3" role="3clFbG">
+                  <node concept="2OqwBi" id="2q_78a9fpti" role="2Oq$k0">
+                    <node concept="Cj7Ep" id="2q_78a9fpql" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="2q_78a9fq3$" role="2OqNvi">
+                      <ref role="3Tt5mk" to="wq2x:2q_78a9c7Ce" />
+                    </node>
+                  </node>
+                  <node concept="2DeJnY" id="2q_78a9fqM1" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="2q_78a9fr15" role="3cqZAp">
+                <node concept="Cj7Ep" id="2q_78a9fr13" role="3clFbG" />
+              </node>
+            </node>
+          </node>
+          <node concept="2h1dTh" id="2q_78a9fpnd" role="Cn2iK">
+            <property role="2h1i$Z" value=":" />
+          </node>
+        </node>
+      </node>
+      <node concept="3kRJcU" id="2q_78a9fmOI" role="3kShCk">
+        <node concept="3clFbS" id="2q_78a9fmOJ" role="2VODD2">
+          <node concept="3clFbF" id="2q_78a9fmZR" role="3cqZAp">
+            <node concept="2OqwBi" id="2q_78a9fodc" role="3clFbG">
+              <node concept="2OqwBi" id="2q_78a9fnvl" role="2Oq$k0">
+                <node concept="Cj7Ep" id="2q_78a9fmZQ" role="2Oq$k0" />
+                <node concept="3TrEf2" id="2q_78a9fnWJ" role="2OqNvi">
+                  <ref role="3Tt5mk" to="wq2x:2q_78a9c7Ce" />
+                </node>
+              </node>
+              <node concept="3w_OXm" id="2q_78a9foE4" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
