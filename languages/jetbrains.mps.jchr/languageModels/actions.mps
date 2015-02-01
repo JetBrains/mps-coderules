@@ -856,7 +856,7 @@
   <node concept="3UOs0u" id="$WpHq$E8n">
     <property role="TrG5h" value="Rule_addGuard" />
     <node concept="3UNGvq" id="$WpHq$E8o" role="3UOs0v">
-      <property role="7I3sp" value="left" />
+      <property role="2uHTBK" value="ext_1_RTransform" />
       <ref role="3UNGvu" to="vgt0:pmDhvH6AYs" resolve="Rule" />
       <node concept="tYCnQ" id="$WpHq$FC$" role="_1QTJ">
         <ref role="uz4UX" to="vgt0:pmDhvH6AYs" resolve="Rule" />
