@@ -28,6 +28,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
@@ -73,6 +76,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -547,6 +551,25 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2q_78a9qafZ" role="3acgRq">
+      <ref role="30HIoZ" to="5j4j:2q_78a8W4yS" resolve="WildcardTreeVariable" />
+      <node concept="gft3U" id="2q_78a9qct7" role="1lVwrX">
+        <node concept="2OqwBi" id="2q_78a9qd2R" role="gfFT$">
+          <node concept="1eOMI4" id="2q_78a9qcBl" role="2Oq$k0">
+            <node concept="2ShNRf" id="2q_78a9qcCp" role="1eOMHV">
+              <node concept="1pGfFk" id="2q_78a9qcOd" role="2ShVmc">
+                <ref role="37wK5l" to="oy3s:1GDBwhEEL82" resolve="TreeLogical" />
+                <node concept="10Nm6u" id="2q_78a9qcQ2" role="37wK5m" />
+                <node concept="10Nm6u" id="2q_78a9qcWL" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+          <node concept="liA8E" id="2q_78a9qdZJ" role="2OqNvi">
+            <ref role="37wK5l" to="oy3s:1Ns6gpY6DeD" resolve="toTreePart" />
           </node>
         </node>
       </node>

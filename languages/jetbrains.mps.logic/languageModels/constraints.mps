@@ -38,6 +38,11 @@
       </concept>
       <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
     <language id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp">
       <concept id="1222260469397" name="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" flags="nn" index="2kpEY9" />
       <concept id="1174482804200" name="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" flags="ng" index="1OClNT" />
@@ -63,6 +68,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="3qvzBqWDzqQ">
+    <property role="3GE5qa" value="node.value" />
     <ref role="1M2myG" to="5j4j:6$jH9oLmYJ_" resolve="ValueHolder" />
     <node concept="EnEH3" id="3qvzBqWDzrE" role="1MhHOB">
       <ref role="EomxK" to="5j4j:6$jH9oLmYKA" resolve="value" />

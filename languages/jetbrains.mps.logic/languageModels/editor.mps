@@ -354,7 +354,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="1pt0VTMw5TB">
-    <property role="3GE5qa" value="role.child" />
+    <property role="3GE5qa" value="role" />
     <ref role="1XX52x" to="5j4j:6$jH9oLmYEJ" resolve="ChildRole" />
     <node concept="3EZMnI" id="1pt0VTMw5TD" role="2wV5jI">
       <node concept="3F0A7n" id="1pt0VTMw5TY" role="3EZMnx">
@@ -495,7 +495,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="1pt0VTMw7ty">
-    <property role="3GE5qa" value="role.value" />
+    <property role="3GE5qa" value="role" />
     <ref role="1XX52x" to="5j4j:6$jH9oLmYI0" resolve="ValueRole" />
     <node concept="3EZMnI" id="1pt0VTMw7t$" role="2wV5jI">
       <node concept="3F0A7n" id="1pt0VTMw7tT" role="3EZMnx">
@@ -547,7 +547,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="1pt0VTMw9pG">
-    <property role="3GE5qa" value="role.value" />
+    <property role="3GE5qa" value="node.value" />
     <ref role="1XX52x" to="5j4j:6$jH9oLmYJ_" resolve="ValueHolder" />
     <node concept="3F0A7n" id="1pt0VTMw9vG" role="2wV5jI">
       <ref role="1NtTu8" to="5j4j:6$jH9oLmYKA" resolve="value" />
@@ -571,7 +571,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="1pt0VTMEFJ5">
-    <property role="3GE5qa" value="node" />
+    <property role="3GE5qa" value="node.variable" />
     <ref role="1XX52x" to="5j4j:1pt0VTMEFI$" resolve="Variable" />
     <node concept="3EZMnI" id="1pt0VTMEFJ7" role="2wV5jI">
       <node concept="3F0ifn" id="1pt0VTMEFJe" role="3EZMnx">
@@ -629,7 +629,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6SkxsM$41i2">
-    <property role="3GE5qa" value="node" />
+    <property role="3GE5qa" value="node.variable" />
     <ref role="1XX52x" to="5j4j:6SkxsM$40ZY" resolve="ExpressionVariable" />
     <node concept="3EZMnI" id="5lJXKGJes" role="2wV5jI">
       <node concept="3F0ifn" id="5lJXKGJet" role="3EZMnx">
@@ -687,7 +687,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="6dP_abdG2vL">
-    <property role="3GE5qa" value="node.generic" />
+    <property role="3GE5qa" value="node" />
     <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
     <node concept="2aJ2om" id="6dP_abdG2$T" role="CpUAK">
       <ref role="2$4xQ3" node="6dP_abdFyt9" resolve="GENERIC" />
@@ -2070,6 +2070,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3JgCwkq$W2k">
+    <property role="3GE5qa" value="node" />
     <ref role="1XX52x" to="5j4j:3JgCwkq$VNb" resolve="ExpressionNode" />
     <node concept="3EZMnI" id="3JgCwkq$WFE" role="2wV5jI">
       <node concept="3F0ifn" id="3JgCwkq$WFF" role="3EZMnx">
@@ -2104,6 +2105,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5PpdwMfQ2Fl">
+    <property role="3GE5qa" value="node.value" />
     <ref role="1XX52x" to="5j4j:5PpdwMfQ1CZ" resolve="ValueExpression" />
     <node concept="3EZMnI" id="5PpdwMfQ2S5" role="2wV5jI">
       <node concept="3F0ifn" id="5PpdwMfQ2S6" role="3EZMnx">
@@ -2135,6 +2137,17 @@
         </node>
       </node>
       <node concept="l2Vlx" id="5PpdwMfQ2Sf" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="2q_78a8W4FU">
+    <property role="3GE5qa" value="node.variable" />
+    <ref role="1XX52x" to="5j4j:2q_78a8W4yS" resolve="WildcardVariable" />
+    <node concept="3EZMnI" id="2q_78a9c7Qy" role="2wV5jI">
+      <node concept="3F0ifn" id="2q_78a9c7Sl" role="3EZMnx">
+        <property role="3F0ifm" value="_" />
+        <ref role="1k5W1q" to="tpen:hFD0yD_" resolve="VariableName" />
+      </node>
+      <node concept="l2Vlx" id="2q_78a9c7Q_" role="2iSdaV" />
     </node>
   </node>
 </model>
