@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.jchr/JCHR.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.jchr/JCHR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.logic/Logic.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.logic/Logic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solutions/jetbrains.mps.unification.tree/Term.iml" filepath="$PROJECT_DIR$/solutions/jetbrains.mps.unification.tree/Term.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker/samplechecker.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker/samplechecker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" />
+    </modules>
+  </component>
+</project>
