@@ -104,17 +104,10 @@
       <property role="TrG5h" value="exactMatch" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="1TJgyj" id="7eGEHDlgPUb" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="applicableConcept" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="6p0DfM0ie7H" role="1TKVEi">
+    <node concept="1TJgyj" id="5NuEpF1iiJF" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="input" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6p0DfM0ia8T" resolve="RuleInputDeclaration" />
+      <property role="20kJfa" value="inputSpecification" />
+      <ref role="20lvS9" node="5NuEpF1if3e" resolve="RuleInputSpecification" />
     </node>
     <node concept="1TJgyj" id="6p0DfM0bS7I" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -505,6 +498,23 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="cardinality" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5NuEpF1if3e">
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="RuleInputSpecification" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5NuEpF1iiA0" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="applicableConcept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="5NuEpF1ihrB" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="input" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6p0DfM0ia8T" resolve="RuleInputDeclaration" />
     </node>
   </node>
 </model>

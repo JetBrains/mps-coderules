@@ -871,11 +871,16 @@
                     <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
                     <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
                     <node concept="2OqwBi" id="6ntBQ9KM_jA" role="37wK5m">
-                      <node concept="37vLTw" id="6ntBQ9KM_a3" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6ntBQ9KM$Fp" resolve="rule" />
+                      <node concept="2OqwBi" id="5NuEpF1jBOR" role="2Oq$k0">
+                        <node concept="37vLTw" id="6ntBQ9KM_a3" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6ntBQ9KM$Fp" resolve="rule" />
+                        </node>
+                        <node concept="3TrEf2" id="5NuEpF1jCdF" role="2OqNvi">
+                          <ref role="3Tt5mk" to="wq2x:5NuEpF1iiJF" />
+                        </node>
                       </node>
-                      <node concept="3TrEf2" id="6ntBQ9KM_Kk" role="2OqNvi">
-                        <ref role="3Tt5mk" to="wq2x:6p0DfM0ie7H" />
+                      <node concept="3TrEf2" id="5NuEpF1jCoN" role="2OqNvi">
+                        <ref role="3Tt5mk" to="wq2x:5NuEpF1ihrB" />
                       </node>
                     </node>
                   </node>
