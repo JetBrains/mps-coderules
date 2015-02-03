@@ -82,15 +82,15 @@ public class Unification {
         private void union(Node s, Node t) {
             Integer ssize = getSize(s);
             Integer tsize = getSize(t);
+
+            // keep the order
             if (ssize < tsize) {
-                union(t, s);
-                return;
+                Node tmp = t; t = s; s = tmp;
             }
-            if (ssize == tsize && s.isVar() && t.isVar()) {
+            else if (ssize == tsize && s.isVar() && t.isVar()) {
                 // ensure proper order of variables in the substitution
                 if(s.asVar().compareTo(t.asVar()) < 0) {
-                    union(t, s);
-                    return;
+                    Node tmp = t; t = s; s = tmp;
                 }
             }
 
