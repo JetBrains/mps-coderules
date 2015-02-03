@@ -309,7 +309,15 @@ public class Unification {
         }
 
         private void addBinding(Var v, Node n) {
-            myBindings.addFirst(new Binding(v, n));
+            Binding bng;
+            if (n.isVar() && n.asVar().compareTo(v) < 0) {
+                bng = new Binding(n.asVar(), v);
+            }
+            else {
+                bng = new Binding(v, n);
+            }
+
+            myBindings.addFirst(bng);
         }
 
     }

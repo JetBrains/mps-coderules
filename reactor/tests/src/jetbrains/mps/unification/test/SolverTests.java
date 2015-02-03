@@ -39,7 +39,7 @@ public class SolverTests {
                 var("Y"),
                 var("X"),
 
-                bind(var("Y"), var("X"))
+                bind(var("X"), var("Y"))
         );
     }
 
@@ -69,11 +69,12 @@ public class SolverTests {
         );
         assertUnifiesWithBindings(
                 parse("a{b{c} Z Y X}"),
-                parse("a{Z Y X b{c}}"),
+                parse("a{Z Y X b{W}}"),
 
                 bind(var("X"), parse("b{c}")),
                 bind(var("Y"), parse("b{c}")),
-                bind(var("Z"), parse("b{c}"))
+                bind(var("Z"), parse("b{c}")),
+                bind(var("W"), parse("c"))
         );
     }
 
@@ -90,14 +91,14 @@ public class SolverTests {
                 parse("a{X}"),
                 parse("a{Y}"),
 
-                bind(var("Y"), var("X"))
+                bind(var("X"), var("Y"))
         );
         assertUnifiesWithBindings(
                 parse("a{b{X} c{Y}}"),
                 parse("a{b{V} c{W}}"),
 
-                bind(var("X"), var("V")),
-                bind(var("Y"), var("W"))
+                bind(var("V"), var("X")),
+                bind(var("W"), var("Y"))
         );
     }
 
@@ -167,6 +168,38 @@ public class SolverTests {
                 bind(var("X"), parseTerm("c")),
                 bind(var("Y"), parseTerm("d")),
                 bind(var("Z"), parseTerm("c"))
+        );
+    }
+
+    @Test
+    public void test10() throws Exception {
+        assertUnifiesWithBindings(
+                parseTerm("a{b{c Y} e{X} }"),
+                parseTerm("a{X      e{b{Z d}} }"),
+
+                bind(var("X"), parseTerm("b{c Y}")),
+                bind(var("Y"), parseTerm("d")),
+                bind(var("Z"), parseTerm("c"))
+        );
+    }
+
+    @Test
+    public void test11() throws Exception {
+        assertUnifiesWithBindings(
+                parseTerm("a{b{c d} e{f g{b{c d}}} }"),
+                parseTerm("a{X      e{f g{X     }} }"),
+
+                bind(var("X"), parseTerm("b{c d}"))
+        );
+    }
+
+    @Test
+    public void test12() throws Exception {
+        assertUnifiesWithBindings(
+                parse("node{name{foo} child{X}}"),
+                parse("node{name{foo} child{Y}}"),
+
+                bind(var("X"), var("Y"))
         );
     }
 
