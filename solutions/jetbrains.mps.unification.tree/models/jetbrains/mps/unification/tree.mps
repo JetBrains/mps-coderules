@@ -6,12 +6,13 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="jfki" ref="f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification@java_stub)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1107,7 +1108,7 @@
                       <ref role="3cqZAo" node="2q_78a93qsC" resolve="val" />
                     </node>
                     <node concept="liA8E" id="2q_78a93qsz" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
+                      <ref role="37wK5l" node="5JQSuNs$cd8" resolve="toString" />
                     </node>
                   </node>
                 </node>
@@ -3019,7 +3020,7 @@
       <node concept="3Tm1VV" id="uNmovXiEeA" role="1B3o_S" />
       <node concept="10Oyi0" id="uNmovXiEeC" role="3clF45" />
       <node concept="37vLTG" id="uNmovXiEeD" role="3clF46">
-        <property role="TrG5h" value="var" />
+        <property role="TrG5h" value="that" />
         <node concept="3uibUv" id="uNmovXiEeI" role="1tU5fm">
           <ref role="3uigEE" to="jfki:~Var" resolve="Var" />
         </node>
@@ -3028,27 +3029,27 @@
         <node concept="3clFbJ" id="uNmovXiIwy" role="3cqZAp">
           <node concept="3clFbS" id="uNmovXiIwz" role="3clFbx">
             <node concept="3cpWs6" id="1Ns6gpY57A1" role="3cqZAp">
-              <node concept="2OqwBi" id="1Ns6gpY5f7l" role="3cqZAk">
-                <node concept="2YIFZM" id="1Ns6gpY59rW" role="2Oq$k0">
+              <node concept="2OqwBi" id="7d9KVSzUzi6" role="3cqZAk">
+                <node concept="2YIFZM" id="7d9KVSzUzi7" role="2Oq$k0">
                   <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
                   <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                  <node concept="2OqwBi" id="1Ns6gpY5aJ1" role="37wK5m">
-                    <node concept="Xjq3P" id="1Ns6gpY5arV" role="2Oq$k0" />
-                    <node concept="liA8E" id="1Ns6gpY5bVY" role="2OqNvi">
+                  <node concept="2OqwBi" id="7d9KVSzUzi8" role="37wK5m">
+                    <node concept="Xjq3P" id="7d9KVSzUzi9" role="2Oq$k0" />
+                    <node concept="liA8E" id="7d9KVSzUzia" role="2OqNvi">
                       <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="1Ns6gpY5gxu" role="2OqNvi">
+                <node concept="liA8E" id="7d9KVSzUzib" role="2OqNvi">
                   <ref role="37wK5l" to="e2lb:~String.compareTo(java.lang.String):int" resolve="compareTo" />
-                  <node concept="2YIFZM" id="1Ns6gpY5hYa" role="37wK5m">
+                  <node concept="2YIFZM" id="7d9KVSzUzic" role="37wK5m">
                     <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
                     <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                    <node concept="2OqwBi" id="1Ns6gpY5j6T" role="37wK5m">
-                      <node concept="37vLTw" id="1Ns6gpY5j0J" role="2Oq$k0">
-                        <ref role="3cqZAo" node="uNmovXiEeD" resolve="var" />
+                    <node concept="2OqwBi" id="7d9KVSzUzid" role="37wK5m">
+                      <node concept="37vLTw" id="7d9KVSzUzie" role="2Oq$k0">
+                        <ref role="3cqZAo" node="uNmovXiEeD" resolve="that" />
                       </node>
-                      <node concept="liA8E" id="1Ns6gpY5k6H" role="2OqNvi">
+                      <node concept="liA8E" id="7d9KVSzUzif" role="2OqNvi">
                         <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
                       </node>
                     </node>
@@ -3057,21 +3058,27 @@
               </node>
             </node>
           </node>
-          <node concept="3fqX7Q" id="uNmovXiIwX" role="3clFbw">
-            <node concept="2ZW3vV" id="uNmovXiIOB" role="3fr31v">
-              <node concept="3uibUv" id="uNmovXiJae" role="2ZW6by">
-                <ref role="3uigEE" node="uNmovXiEd4" resolve="Variable" />
+          <node concept="3y3z36" id="7d9KVSzU4UF" role="3clFbw">
+            <node concept="2OqwBi" id="7d9KVSzSXAQ" role="3uHU7B">
+              <node concept="37vLTw" id="7d9KVSzSWLR" role="2Oq$k0">
+                <ref role="3cqZAo" node="uNmovXiEeD" resolve="that" />
               </node>
-              <node concept="37vLTw" id="uNmovXiIxF" role="2ZW6bz">
-                <ref role="3cqZAo" node="uNmovXiEeD" resolve="var" />
+              <node concept="liA8E" id="7d9KVSzSZKD" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7d9KVSzT3UU" role="3uHU7w">
+              <node concept="Xjq3P" id="7d9KVSzT3uq" role="2Oq$k0" />
+              <node concept="liA8E" id="7d9KVSzT5dx" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="uNmovXiLi0" role="3cqZAp">
           <node concept="2OqwBi" id="uNmovXiLq2" role="3clFbG">
-            <node concept="37vLTw" id="uNmovXiLhZ" role="2Oq$k0">
-              <ref role="3cqZAo" node="uNmovXiF5Z" resolve="name" />
+            <node concept="1rXfSq" id="7d9KVSzUJrY" role="2Oq$k0">
+              <ref role="37wK5l" node="uNmovXiEdQ" resolve="name" />
             </node>
             <node concept="liA8E" id="uNmovXiM2l" role="2OqNvi">
               <ref role="37wK5l" to="e2lb:~String.compareTo(java.lang.String):int" resolve="compareTo" />
@@ -3082,12 +3089,12 @@
                       <ref role="3uigEE" node="uNmovXiEd4" resolve="Variable" />
                     </node>
                     <node concept="37vLTw" id="uNmovXiMCz" role="10QFUP">
-                      <ref role="3cqZAo" node="uNmovXiEeD" resolve="var" />
+                      <ref role="3cqZAo" node="uNmovXiEeD" resolve="that" />
                     </node>
                   </node>
                 </node>
-                <node concept="2OwXpG" id="uNmovXiNVe" role="2OqNvi">
-                  <ref role="2Oxat5" node="uNmovXiF5Z" resolve="name" />
+                <node concept="liA8E" id="7d9KVSzUKq3" role="2OqNvi">
+                  <ref role="37wK5l" node="uNmovXiEdQ" resolve="name" />
                 </node>
               </node>
             </node>

@@ -15,6 +15,7 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/jetbrains.mps.logic.sandbox.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/runner/jetbrains.mps.logic.sandbox.runner.msd" folder="logic" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/test/jetbrains.mps.logic.test.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.sandbox.runner/jetbrains.mps.type.sandbox.runner.msd" folder="typechecking.types" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.sandbox/jetbrains.mps.type.sandbox.msd" folder="typechecking.types" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.solver/jetbrains.mps.type.solver.msd" folder="typechecking.types" />
