@@ -1662,6 +1662,26 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6lpwCiZiBbu" role="3cqZAp">
+          <node concept="37vLTI" id="6lpwCiZiC4w" role="3clFbG">
+            <node concept="2OqwBi" id="6lpwCiZiCo0" role="37vLTx">
+              <node concept="37vLTw" id="6lpwCiZiCmU" role="2Oq$k0">
+                <ref role="3cqZAo" node="ZqZbw4R6WI" resolve="rule" />
+              </node>
+              <node concept="liA8E" id="6lpwCiZjVTV" role="2OqNvi">
+                <ref role="37wK5l" to="nc4n:6lpwCiZj$RR" resolve="tag" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6lpwCiZiBo6" role="37vLTJ">
+              <node concept="37vLTw" id="6lpwCiZiBbs" role="2Oq$k0">
+                <ref role="3cqZAo" node="ZqZbw4RnVB" resolve="ruleNode" />
+              </node>
+              <node concept="3TrcHB" id="6lpwCiZiBDh" role="2OqNvi">
+                <ref role="3TsBF5" to="vgt0:pmDhvH6BuW" resolve="tag" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="4sVJFklJw7p" role="3cqZAp">
           <node concept="3cpWsn" id="4sVJFklJw7q" role="3cpWs9">
             <property role="TrG5h" value="keptHeadNode" />
@@ -1819,6 +1839,26 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6lpwCiZjWyI" role="3cqZAp">
+          <node concept="37vLTI" id="6lpwCiZjWyJ" role="3clFbG">
+            <node concept="2OqwBi" id="6lpwCiZjWyK" role="37vLTx">
+              <node concept="37vLTw" id="6lpwCiZjWyL" role="2Oq$k0">
+                <ref role="3cqZAo" node="ZqZbw4R6yu" resolve="rule" />
+              </node>
+              <node concept="liA8E" id="6lpwCiZjWyM" role="2OqNvi">
+                <ref role="37wK5l" to="nc4n:6lpwCiZj$RR" resolve="tag" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6lpwCiZjWyN" role="37vLTJ">
+              <node concept="37vLTw" id="6lpwCiZjWyO" role="2Oq$k0">
+                <ref role="3cqZAo" node="ZqZbw4Ro2z" resolve="ruleNode" />
+              </node>
+              <node concept="3TrcHB" id="6lpwCiZjWyP" role="2OqNvi">
+                <ref role="3TsBF5" to="vgt0:pmDhvH6BuW" resolve="tag" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="4sVJFklUQkc" role="3cqZAp">
           <node concept="3cpWsn" id="4sVJFklUQkd" role="3cpWs9">
             <property role="TrG5h" value="hreplacedHeadNode" />
@@ -1920,6 +1960,26 @@
               </node>
               <node concept="2DeJg1" id="ZqZbw4Ro9c" role="2OqNvi">
                 <ref role="1A0vxQ" to="vgt0:pmDhvH6BuV" resolve="PropagationRule" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6lpwCiZjXoI" role="3cqZAp">
+          <node concept="37vLTI" id="6lpwCiZjXoJ" role="3clFbG">
+            <node concept="2OqwBi" id="6lpwCiZjXoK" role="37vLTx">
+              <node concept="37vLTw" id="6lpwCiZjXoL" role="2Oq$k0">
+                <ref role="3cqZAo" node="ZqZbw4R6BG" resolve="rule" />
+              </node>
+              <node concept="liA8E" id="6lpwCiZjXoM" role="2OqNvi">
+                <ref role="37wK5l" to="nc4n:6lpwCiZj$RR" resolve="tag" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6lpwCiZjXoN" role="37vLTJ">
+              <node concept="37vLTw" id="6lpwCiZjXoO" role="2Oq$k0">
+                <ref role="3cqZAo" node="ZqZbw4Ro97" resolve="ruleNode" />
+              </node>
+              <node concept="3TrcHB" id="6lpwCiZjXoP" role="2OqNvi">
+                <ref role="3TsBF5" to="vgt0:pmDhvH6BuW" resolve="tag" />
               </node>
             </node>
           </node>
@@ -3785,7 +3845,7 @@
                         </node>
                       </node>
                       <node concept="2DeJg1" id="2q_78a90g2_" role="2OqNvi">
-                        <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="WildcardVariable" />
+                        <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="WildcardTreeVariable" />
                       </node>
                     </node>
                   </node>
@@ -3962,7 +4022,7 @@
                         </node>
                       </node>
                       <node concept="2DeJg1" id="2q_78a90t$G" role="2OqNvi">
-                        <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="WildcardVariable" />
+                        <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="WildcardTreeVariable" />
                       </node>
                     </node>
                   </node>
