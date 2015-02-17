@@ -517,5 +517,29 @@
       <ref role="20lvS9" node="6p0DfM0ia8T" resolve="RuleInputDeclaration" />
     </node>
   </node>
+  <node concept="1TIwiD" id="60B5zVESvAi">
+    <property role="3GE5qa" value="constraint.variable" />
+    <property role="TrG5h" value="LogicVariableConstraint" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyj" id="60B5zVESBfb" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="variable" />
+      <ref role="20lvS9" node="6p0DfM0evIr" resolve="LogicExpression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="60B5zVESBMM">
+    <property role="TrG5h" value="IsfreeVariableConstraint" />
+    <property role="3GE5qa" value="constraint.variable" />
+    <property role="34LRSv" value="isFree" />
+    <ref role="1TJDcQ" node="60B5zVESvAi" resolve="LogicVariableConstraint" />
+  </node>
+  <node concept="1TIwiD" id="60B5zVEVSFB">
+    <property role="3GE5qa" value="constraint.variable" />
+    <property role="TrG5h" value="IsboundVariableConstraint" />
+    <property role="34LRSv" value="isBound" />
+    <ref role="1TJDcQ" node="60B5zVESvAi" resolve="LogicVariableConstraint" />
+  </node>
 </model>
 

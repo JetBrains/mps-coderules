@@ -28,6 +28,7 @@
     <import index="9kr0" ref="r:0f58be42-48ea-45ab-99f8-158393a0f526(jetbrains.mps.typechecking.handler.producer)" />
     <import index="yuoi" ref="r:da4ad9c6-d9f4-46fe-9e8f-894315bef3a9(jetbrains.mps.lang.typesystem2.samplechecker.sample)" />
     <import index="5xh9" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" />
+    <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.variable)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -87,10 +88,6 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
-      </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -158,6 +155,7 @@
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
+        <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -174,6 +172,10 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
+        <child id="1206060619838" name="condition" index="3eO9$A" />
+        <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
@@ -203,15 +205,6 @@
       </concept>
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
-      </concept>
-      <concept id="1163670490218" name="jetbrains.mps.baseLanguage.structure.SwitchStatement" flags="nn" index="3KaCP$">
-        <child id="1163670592366" name="defaultBlock" index="3Kb1Dw" />
-        <child id="1163670766145" name="expression" index="3KbGdf" />
-        <child id="1163670772911" name="case" index="3KbHQx" />
-      </concept>
-      <concept id="1163670641947" name="jetbrains.mps.baseLanguage.structure.SwitchCase" flags="ng" index="3KbdKl">
-        <child id="1163670677455" name="expression" index="3Kbmr1" />
-        <child id="1163670683720" name="body" index="3Kbo56" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
@@ -380,13 +373,14 @@
                         <property role="1EzhhJ" value="false" />
                         <node concept="37vLTG" id="3Qp4N06byke" role="3clF46">
                           <property role="TrG5h" value="symbol" />
-                          <node concept="3uibUv" id="3Qp4N06bykf" role="1tU5fm">
-                            <ref role="3uigEE" to="nc4n:2fk6$tOpINk" resolve="BuiltinConstraintSymbol" />
+                          <node concept="3uibUv" id="54i3Fxd0k1k" role="1tU5fm">
+                            <ref role="3uigEE" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
                           </node>
                         </node>
                         <node concept="3uibUv" id="3Qp4N06bykg" role="3clF45">
                           <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
                           <node concept="3qTvmN" id="3Qp4N06bykh" role="11_B2D" />
+                          <node concept="3qTvmN" id="5$WbtTP065P" role="11_B2D" />
                         </node>
                         <node concept="3Tm1VV" id="3Qp4N06byki" role="1B3o_S" />
                         <node concept="3clFbS" id="3Qp4N06bykj" role="3clF47">
@@ -395,44 +389,88 @@
                               <property role="3SKdUp" value="TODO: implement me" />
                             </node>
                           </node>
-                          <node concept="3KaCP$" id="3Qp4N06bykm" role="3cqZAp">
-                            <node concept="37vLTw" id="3Qp4N06bykn" role="3KbGdf">
-                              <ref role="3cqZAo" node="3Qp4N06byke" resolve="symbol" />
+                          <node concept="3clFbJ" id="54i3Fxd0a$l" role="3cqZAp">
+                            <node concept="3clFbS" id="54i3Fxd0a$n" role="3clFbx">
+                              <node concept="3cpWs6" id="3Qp4N06byk$" role="3cqZAp">
+                                <node concept="10M0yZ" id="3Qp4N06byk_" role="3cqZAk">
+                                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                                  <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
+                                </node>
+                              </node>
+                              <node concept="3clFbH" id="54i3Fxd0a$m" role="3cqZAp" />
                             </node>
-                            <node concept="3clFbS" id="3Qp4N06byko" role="3Kb1Dw">
-                              <node concept="YS8fn" id="3Qp4N06bykp" role="3cqZAp">
-                                <node concept="2ShNRf" id="3Qp4N06bykq" role="YScLw">
-                                  <node concept="1pGfFk" id="3Qp4N06bykr" role="2ShVmc">
-                                    <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-                                    <node concept="3cpWs3" id="3Qp4N06byks" role="37wK5m">
-                                      <node concept="Xl_RD" id="3Qp4N06bykt" role="3uHU7w">
-                                        <property role="Xl_RC" value="'" />
-                                      </node>
-                                      <node concept="3cpWs3" id="3Qp4N06byku" role="3uHU7B">
-                                        <node concept="Xl_RD" id="3Qp4N06bykv" role="3uHU7B">
-                                          <property role="Xl_RC" value="uknown builtin constraint '" />
+                            <node concept="3clFbC" id="54i3Fxd0bSB" role="3clFbw">
+                              <node concept="37vLTw" id="54i3Fxd0bZz" role="3uHU7w">
+                                <ref role="3cqZAo" node="3Qp4N06byke" resolve="symbol" />
+                              </node>
+                              <node concept="10M0yZ" id="54i3Fxd0aNo" role="3uHU7B">
+                                <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                                <ref role="3cqZAo" to="nc4n:54i3FxcZMP2" resolve="EQUALS" />
+                              </node>
+                            </node>
+                            <node concept="3eNFk2" id="54i3Fxd0l1C" role="3eNLev">
+                              <node concept="3clFbS" id="54i3Fxd0l1E" role="3eOfB_">
+                                <node concept="3cpWs6" id="5$WbtTP0VxD" role="3cqZAp">
+                                  <node concept="10M0yZ" id="5$WbtTP1je9" role="3cqZAk">
+                                    <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalConstraint" />
+                                    <ref role="3cqZAo" to="xq5w:5$WbtTOYJJi" resolve="BOUND" />
+                                  </node>
+                                </node>
+                                <node concept="3clFbH" id="54i3Fxd0pAI" role="3cqZAp" />
+                              </node>
+                              <node concept="3clFbC" id="54i3Fxd0n0K" role="3eO9$A">
+                                <node concept="37vLTw" id="54i3Fxd0n0L" role="3uHU7w">
+                                  <ref role="3cqZAo" node="3Qp4N06byke" resolve="symbol" />
+                                </node>
+                                <node concept="10M0yZ" id="54i3Fxd0n0M" role="3uHU7B">
+                                  <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                                  <ref role="3cqZAo" to="nc4n:54i3FxcZO14" resolve="BOUND" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3eNFk2" id="54i3Fxd0oD5" role="3eNLev">
+                              <node concept="3clFbS" id="54i3Fxd0oD6" role="3eOfB_">
+                                <node concept="3cpWs6" id="5$WbtTP1jyU" role="3cqZAp">
+                                  <node concept="10M0yZ" id="5$WbtTP1jyV" role="3cqZAk">
+                                    <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalConstraint" />
+                                    <ref role="3cqZAo" to="xq5w:5$WbtTOYVUg" resolve="FREE" />
+                                  </node>
+                                </node>
+                                <node concept="3clFbH" id="54i3Fxd0uzF" role="3cqZAp" />
+                              </node>
+                              <node concept="3clFbC" id="54i3Fxd0oD9" role="3eO9$A">
+                                <node concept="37vLTw" id="54i3Fxd0oDa" role="3uHU7w">
+                                  <ref role="3cqZAo" node="3Qp4N06byke" resolve="symbol" />
+                                </node>
+                                <node concept="10M0yZ" id="54i3Fxd0oDb" role="3uHU7B">
+                                  <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                                  <ref role="3cqZAo" to="nc4n:54i3FxcZNJp" resolve="FREE" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="9aQIb" id="54i3Fxd0vve" role="9aQIa">
+                              <node concept="3clFbS" id="54i3Fxd0vvf" role="9aQI4">
+                                <node concept="YS8fn" id="3Qp4N06bykp" role="3cqZAp">
+                                  <node concept="2ShNRf" id="3Qp4N06bykq" role="YScLw">
+                                    <node concept="1pGfFk" id="3Qp4N06bykr" role="2ShVmc">
+                                      <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                                      <node concept="3cpWs3" id="3Qp4N06byks" role="37wK5m">
+                                        <node concept="Xl_RD" id="3Qp4N06bykt" role="3uHU7w">
+                                          <property role="Xl_RC" value="'" />
                                         </node>
-                                        <node concept="37vLTw" id="3Qp4N06bykw" role="3uHU7w">
-                                          <ref role="3cqZAo" node="3Qp4N06byke" resolve="symbol" />
+                                        <node concept="3cpWs3" id="3Qp4N06byku" role="3uHU7B">
+                                          <node concept="Xl_RD" id="3Qp4N06bykv" role="3uHU7B">
+                                            <property role="Xl_RC" value="uknown constraint symbol '" />
+                                          </node>
+                                          <node concept="37vLTw" id="3Qp4N06bykw" role="3uHU7w">
+                                            <ref role="3cqZAo" node="3Qp4N06byke" resolve="symbol" />
+                                          </node>
                                         </node>
                                       </node>
                                     </node>
                                   </node>
                                 </node>
-                              </node>
-                            </node>
-                            <node concept="3KbdKl" id="3Qp4N06bykx" role="3KbHQx">
-                              <node concept="Rm8GO" id="3Qp4N06byky" role="3Kbmr1">
-                                <ref role="Rm8GQ" to="nc4n:2fk6$tOpINP" resolve="EQUALS" />
-                                <ref role="1Px2BO" to="nc4n:2fk6$tOpINk" resolve="BuiltinConstraintSymbol" />
-                              </node>
-                              <node concept="3clFbS" id="3Qp4N06bykz" role="3Kbo56">
-                                <node concept="3cpWs6" id="3Qp4N06byk$" role="3cqZAp">
-                                  <node concept="10M0yZ" id="3Qp4N06byk_" role="3cqZAk">
-                                    <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-                                    <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
-                                  </node>
-                                </node>
+                                <node concept="3clFbH" id="54i3Fxd0wvd" role="3cqZAp" />
                               </node>
                             </node>
                           </node>
