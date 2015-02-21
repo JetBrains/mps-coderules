@@ -15,6 +15,7 @@
     <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="jo0n" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime.debug.graphical(jetbrains.mps.jchr.runtime/runtime.debug.graphical@java_stub)" />
+    <import index="5t0y" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime.debug(jetbrains.mps.jchr.runtime/runtime.debug@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -29,6 +30,12 @@
       <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
         <child id="1173175577737" name="index" index="AHEQo" />
         <child id="1173175590490" name="array" index="AHHXb" />
+      </concept>
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+      </concept>
+      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
+        <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
       <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
         <child id="1188220173759" name="item" index="2BsfMF" />
@@ -46,6 +53,7 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
+      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -69,7 +77,9 @@
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
-      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -88,6 +98,9 @@
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
+      <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
+        <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
+      </concept>
       <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
@@ -101,6 +114,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
@@ -117,8 +131,10 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
@@ -148,6 +164,12 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
+      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
+        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
@@ -210,11 +232,11 @@
           <node concept="3cpWsn" id="3Qp4N06bZni" role="3cpWs9">
             <property role="TrG5h" value="handler" />
             <node concept="1Kb3S_" id="3Qp4N06bZnj" role="1tU5fm">
-              <ref role="1Kaivj" to="uiwa:2FJl$qvpGCX" resolve="testHandler" />
+              <ref role="1Kaivj" to="uiwa:4iklERDcQwr" resolve="testHandler" />
             </node>
             <node concept="2ShNRf" id="3Qp4N06bZnk" role="33vP2m">
               <node concept="1KbMJY" id="3Qp4N06bZnl" role="2ShVmc">
-                <ref role="1Kajjj" to="uiwa:2FJl$qvpGCX" resolve="testHandler" />
+                <ref role="1Kajjj" to="uiwa:4iklERDcQwr" resolve="testHandler" />
                 <node concept="2OqwBi" id="3Qp4N06bZnm" role="1KkMwq">
                   <node concept="37vLTw" id="3Qp4N06bZnn" role="2Oq$k0">
                     <ref role="3cqZAo" node="3Qp4N06bZnb" resolve="farm" />
@@ -232,23 +254,37 @@
           </node>
         </node>
         <node concept="3clFbH" id="3Qp4N06bZnq" role="3cqZAp" />
-        <node concept="3clFbF" id="2q_78a9b57e" role="3cqZAp">
-          <node concept="2YIFZM" id="2q_78a9b9cL" role="3clFbG">
-            <ref role="37wK5l" to="jo0n:~GraphicalTracer.attachTo(runtime.Handler):boolean" resolve="attachTo" />
-            <ref role="1Pybhc" to="jo0n:~GraphicalTracer" resolve="GraphicalTracer" />
-            <node concept="37vLTw" id="2q_78a9b9Cd" role="37wK5m">
+        <node concept="3SKdUt" id="2QE4RCGlT8j" role="3cqZAp">
+          <node concept="3SKWN0" id="2QE4RCGlT8k" role="3SKWNk">
+            <node concept="3clFbF" id="2q_78a9b57e" role="3SKWNf">
+              <node concept="2YIFZM" id="2q_78a9b9cL" role="3clFbG">
+                <ref role="37wK5l" to="jo0n:~GraphicalTracer.attachTo(runtime.Handler):boolean" resolve="attachTo" />
+                <ref role="1Pybhc" to="jo0n:~GraphicalTracer" resolve="GraphicalTracer" />
+                <node concept="37vLTw" id="2q_78a9b9Cd" role="37wK5m">
+                  <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3XExYyWUV35" role="3cqZAp" />
+        <node concept="3clFbF" id="3XExYyWVIVb" role="3cqZAp">
+          <node concept="2YIFZM" id="3XExYyWVIVa" role="3clFbG">
+            <ref role="1Pybhc" node="3Qp4N06bZn0" resolve="TestHandlerRunner" />
+            <ref role="37wK5l" node="3XExYyWVIV6" resolve="attachTracerTo" />
+            <node concept="37vLTw" id="3XExYyWVIV9" role="37wK5m">
               <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2q_78a9b4BO" role="3cqZAp" />
+        <node concept="3clFbH" id="3XExYyWVnwm" role="3cqZAp" />
         <node concept="3clFbF" id="6qJjpCjqwbo" role="3cqZAp">
           <node concept="2OqwBi" id="6qJjpCjqwox" role="3clFbG">
             <node concept="37vLTw" id="6qJjpCjqwbm" role="2Oq$k0">
               <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
             </node>
             <node concept="1KczDs" id="6qJjpCjqw_S" role="2OqNvi">
-              <ref role="1KgAX_" to="uiwa:2FJl$qvpGD4" resolve="check" />
+              <ref role="1KgAX_" to="uiwa:4iklERDcQwE" resolve="check" />
               <node concept="Xl_RD" id="6qJjpCjtKec" role="1KcKQn">
                 <property role="Xl_RC" value="4438600004733396337(HelloWorld)" />
               </node>
@@ -261,7 +297,7 @@
               <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
             </node>
             <node concept="1KczDs" id="6lpwCiZ78Rj" role="2OqNvi">
-              <ref role="1KgAX_" to="uiwa:2FJl$qvpGD4" resolve="check" />
+              <ref role="1KgAX_" to="uiwa:4iklERDcQwE" resolve="check" />
               <node concept="Xl_RD" id="6lpwCiZ78Rk" role="1KcKQn">
                 <property role="Xl_RC" value="ClassConcept#6270176708469746366(Sample)" />
               </node>
@@ -335,7 +371,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1H8E3iB4Co3" role="jymVt" />
-    <node concept="2tJIrI" id="1H8E3iB4Cr8" role="jymVt" />
     <node concept="2YIFZL" id="1H8E3iB4zRw" role="jymVt">
       <property role="TrG5h" value="toText" />
       <node concept="3Tm6S6" id="1H8E3iB4zRx" role="1B3o_S" />
@@ -729,6 +764,131 @@
       <node concept="3Tm6S6" id="104EUzFhekD" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="3Qp4N06bZoq" role="jymVt" />
+    <node concept="2YIFZL" id="3XExYyWVIV6" role="jymVt">
+      <property role="TrG5h" value="attachTracerTo" />
+      <node concept="3Tm6S6" id="3XExYyWVIV7" role="1B3o_S" />
+      <node concept="3cqZAl" id="3XExYyWVIV8" role="3clF45" />
+      <node concept="37vLTG" id="3XExYyWVIV0" role="3clF46">
+        <property role="TrG5h" value="handler" />
+        <node concept="1Kb3S_" id="3XExYyWVIV1" role="1tU5fm">
+          <ref role="1Kaivj" to="uiwa:4iklERDcQwr" resolve="testHandler" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3XExYyWVIUA" role="3clF47">
+        <node concept="3cpWs8" id="3XExYyWVIUB" role="3cqZAp">
+          <node concept="3cpWsn" id="3XExYyWVIUC" role="3cpWs9">
+            <property role="TrG5h" value="tracer" />
+            <node concept="3uibUv" id="3XExYyWVIUD" role="1tU5fm">
+              <ref role="3uigEE" node="3XExYyWVj2K" resolve="TestHandlerRunner.MyGraphicalTracer" />
+            </node>
+            <node concept="2ShNRf" id="3XExYyWVIUE" role="33vP2m">
+              <node concept="1pGfFk" id="3XExYyWVIUF" role="2ShVmc">
+                <ref role="37wK5l" node="3XExYyWVjVp" resolve="TestHandlerRunner.MyGraphicalTracer" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3XExYyWVIUG" role="3cqZAp">
+          <node concept="2OqwBi" id="3XExYyWVIUH" role="3clFbG">
+            <node concept="1eOMI4" id="3XExYyWVIUI" role="2Oq$k0">
+              <node concept="10QFUN" id="3XExYyWVIUJ" role="1eOMHV">
+                <node concept="37vLTw" id="3XExYyWVIV3" role="10QFUP">
+                  <ref role="3cqZAo" node="3XExYyWVIV0" resolve="handler" />
+                </node>
+                <node concept="3uibUv" id="3XExYyWVIUL" role="10QFUM">
+                  <ref role="3uigEE" to="w2rx:~Handler" resolve="Handler" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="3XExYyWVIUM" role="2OqNvi">
+              <ref role="37wK5l" to="w2rx:~Handler.setTracer(runtime.debug.Tracer):void" resolve="setTracer" />
+              <node concept="2ShNRf" id="3XExYyWVIUN" role="37wK5m">
+                <node concept="1pGfFk" id="3XExYyWVIUO" role="2ShVmc">
+                  <ref role="37wK5l" to="5t0y:~InterruptableTracer.&lt;init&gt;(runtime.debug.InterruptableTracer$InterruptingTracer)" resolve="InterruptableTracer" />
+                  <node concept="37vLTw" id="3XExYyWVIUP" role="37wK5m">
+                    <ref role="3cqZAo" node="3XExYyWVIUC" resolve="tracer" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3XExYyWVIUQ" role="3cqZAp">
+          <node concept="2OqwBi" id="3XExYyWVIUR" role="3clFbG">
+            <node concept="37vLTw" id="3XExYyWVIUS" role="2Oq$k0">
+              <ref role="3cqZAo" node="3XExYyWVIUC" resolve="tracer" />
+            </node>
+            <node concept="liA8E" id="3XExYyWVIUT" role="2OqNvi">
+              <ref role="37wK5l" node="3XExYyWVk5h" resolve="init" />
+              <node concept="2OqwBi" id="3XExYyWVIUU" role="37wK5m">
+                <node concept="1eOMI4" id="3XExYyWVIUV" role="2Oq$k0">
+                  <node concept="10QFUN" id="3XExYyWVIUW" role="1eOMHV">
+                    <node concept="37vLTw" id="3XExYyWVIV2" role="10QFUP">
+                      <ref role="3cqZAo" node="3XExYyWVIV0" resolve="handler" />
+                    </node>
+                    <node concept="3uibUv" id="3XExYyWVIUY" role="10QFUM">
+                      <ref role="3uigEE" to="w2rx:~Handler" resolve="Handler" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="3XExYyWVIUZ" role="2OqNvi">
+                  <ref role="37wK5l" to="w2rx:~Handler.getTracerView():runtime.Handler" resolve="getTracerView" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1H8E3iB4Cr8" role="jymVt" />
+    <node concept="2tJIrI" id="3XExYyWVilq" role="jymVt" />
+    <node concept="312cEu" id="3XExYyWVj2K" role="jymVt">
+      <property role="2bfB8j" value="false" />
+      <property role="TrG5h" value="MyGraphicalTracer" />
+      <node concept="2tJIrI" id="3XExYyWVkuM" role="jymVt" />
+      <node concept="3clFbW" id="3XExYyWVjVp" role="jymVt">
+        <node concept="3cqZAl" id="3XExYyWVjVr" role="3clF45" />
+        <node concept="3Tm1VV" id="3XExYyWVjVs" role="1B3o_S" />
+        <node concept="3clFbS" id="3XExYyWVjVt" role="3clF47">
+          <node concept="XkiVB" id="3XExYyWVk22" role="3cqZAp">
+            <ref role="37wK5l" to="jo0n:~GraphicalTracer.&lt;init&gt;(java.lang.Class...)" resolve="GraphicalTracer" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3XExYyWVk3$" role="jymVt" />
+      <node concept="3clFb_" id="3XExYyWVk5h" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="init" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3XExYyWVkk9" role="1B3o_S" />
+        <node concept="3cqZAl" id="3XExYyWVk5k" role="3clF45" />
+        <node concept="37vLTG" id="3XExYyWVk5l" role="3clF46">
+          <property role="TrG5h" value="handler" />
+          <node concept="3uibUv" id="3XExYyWVk5m" role="1tU5fm">
+            <ref role="3uigEE" to="w2rx:~Handler" resolve="Handler" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="3XExYyWVk5n" role="3clF47">
+          <node concept="3clFbF" id="3XExYyWVk5r" role="3cqZAp">
+            <node concept="3nyPlj" id="3XExYyWVk5q" role="3clFbG">
+              <ref role="37wK5l" to="jo0n:~GraphicalTracer.init(runtime.Handler):void" resolve="init" />
+              <node concept="37vLTw" id="3XExYyWVk5p" role="37wK5m">
+                <ref role="3cqZAo" node="3XExYyWVk5l" resolve="handler" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="3XExYyWVk5o" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3XExYyWVkme" role="jymVt" />
+      <node concept="3Tm1VV" id="3XExYyWVj2L" role="1B3o_S" />
+      <node concept="3uibUv" id="3XExYyWVjQ4" role="1zkMxy">
+        <ref role="3uigEE" to="jo0n:~GraphicalTracer" resolve="GraphicalTracer" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3Qp4N06bZor" role="jymVt" />
     <node concept="3Tm1VV" id="3Qp4N06bZos" role="1B3o_S" />
   </node>
