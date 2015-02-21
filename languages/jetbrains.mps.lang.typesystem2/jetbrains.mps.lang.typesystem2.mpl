@@ -31,6 +31,7 @@
         <usedLanguage>9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)</usedLanguage>
         <usedLanguage>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</usedLanguage>
         <usedLanguage>c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.typesystem2)</usedLanguage>
+        <usedLanguage>35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)</usedLanguage>
       </usedLanguages>
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
@@ -53,6 +54,7 @@
         <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
         <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" fqName="jetbrains.mps.lang.typesystem" version="0" />
         <language id="c4803b19-6d89-4a3b-bf82-390769514add" fqName="jetbrains.mps.lang.typesystem2" version="0" />
+        <language id="35320f26-77cb-4c55-be9f-a97a27770af1" fqName="jetbrains.mps.logic" version="0" />
       </languageVersions>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
