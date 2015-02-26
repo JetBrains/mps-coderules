@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="mockito-core-2.0.3-beta">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/languages/jetbrains.mps.logic/test/lib/mockito-core-2.0.3-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/languages/jetbrains.mps.logic/test/lib/mockito-core-2.0.3-beta.jar!/" />
+    </SOURCES>
+  </library>
+</component>
