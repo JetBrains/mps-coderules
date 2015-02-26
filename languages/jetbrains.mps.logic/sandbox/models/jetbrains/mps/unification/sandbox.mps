@@ -93,10 +93,6 @@
       <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.ValueHolder" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
       </concept>
-      <concept id="7571593955706284481" name="jetbrains.mps.logic.structure.Symbol" flags="ng" index="1ojpPn" />
-      <concept id="1503029989441024" name="jetbrains.mps.logic.structure.AbstractNode" flags="ng" index="1KByzZ">
-        <child id="1503029989483908" name="symbol" index="1KAndV" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -138,19 +134,16 @@
           <node concept="1oi1Uc" id="5lJXKv5I8" role="1yrqR1">
             <node concept="1oi5UN" id="5lJXKv5N9" role="1oi0x0">
               <property role="2IF10e" value="CLASSIFIER_TYPE" />
-              <node concept="1ojpPn" id="5lJXKv5Ne" role="1KAndV" />
               <node concept="1oi5Wm" id="5lJXKv5Na" role="1ojpOf">
                 <property role="TrG5h" value="concept" />
                 <node concept="1oi5XN" id="5lJXKv5Nb" role="1oi5zu">
                   <property role="1oi5yK" value="ClassifierType" />
-                  <node concept="1ojpPn" id="5lJXKCdlK" role="1KAndV" />
                 </node>
               </node>
               <node concept="1oi5Wm" id="5lJXKv5Nc" role="1ojpOf">
                 <property role="TrG5h" value="classifier" />
                 <node concept="1oi5XN" id="5lJXKv5Nd" role="1oi5zu">
                   <property role="1oi5yK" value="Foo" />
-                  <node concept="1ojpPn" id="5lJXKCdlJ" role="1KAndV" />
                 </node>
               </node>
               <node concept="1oi5ST" id="5lJXKv621" role="1ojpOf">
@@ -160,7 +153,6 @@
                   <node concept="3FjdXv" id="cnjBgYE1yw" role="xgLMN">
                     <property role="TrG5h" value="T" />
                   </node>
-                  <node concept="1ojpPn" id="1Ns6gpY8rQY" role="1KAndV" />
                 </node>
               </node>
             </node>
@@ -175,19 +167,16 @@
           <node concept="1oi1Uc" id="5lJXK8Yo6" role="1yrqR1">
             <node concept="1oi5UN" id="5lJXK8Yo7" role="1oi0x0">
               <property role="2IF10e" value="CLASSIFIER_TYPE" />
-              <node concept="1ojpPn" id="5lJXK8Yo8" role="1KAndV" />
               <node concept="1oi5Wm" id="5lJXK8Yo9" role="1ojpOf">
                 <property role="TrG5h" value="concept" />
                 <node concept="1oi5XN" id="5lJXK8Yoa" role="1oi5zu">
                   <property role="1oi5yK" value="ClassifierType" />
-                  <node concept="1ojpPn" id="5lJXKCdlL" role="1KAndV" />
                 </node>
               </node>
               <node concept="1oi5Wm" id="5lJXK8Yob" role="1ojpOf">
                 <property role="TrG5h" value="classifier" />
                 <node concept="1oi5XN" id="5lJXK8Yoc" role="1oi5zu">
                   <property role="1oi5yK" value="Bar" />
-                  <node concept="1ojpPn" id="5lJXKCdlI" role="1KAndV" />
                 </node>
               </node>
               <node concept="1oi5ST" id="5lJXK8Yod" role="1ojpOf">
@@ -197,7 +186,6 @@
                   <node concept="3FjdXv" id="cnjBgYE1CB" role="xgLMN">
                     <property role="TrG5h" value="T" />
                   </node>
-                  <node concept="1ojpPn" id="1Ns6gpY8t0c" role="1KAndV" />
                 </node>
               </node>
             </node>
