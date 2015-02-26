@@ -3374,6 +3374,7 @@
   </node>
   <node concept="312cEu" id="5k_shARN7H1">
     <property role="TrG5h" value="LogicVariable" />
+    <property role="IEkAT" value="false" />
     <node concept="2tJIrI" id="5k_shARN7JU" role="jymVt" />
     <node concept="2YIFZL" id="5k_shARN93B" role="jymVt">
       <property role="TrG5h" value="withName" />
@@ -3631,6 +3632,9 @@
     </node>
     <node concept="3uibUv" id="104EUzFJLOU" role="1zkMxy">
       <ref role="3uigEE" to="ie8e:uNmovXiEd4" resolve="Variable" />
+    </node>
+    <node concept="2AHcQZ" id="7E86$tKu0Pc" role="2AJF6D">
+      <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
   <node concept="312cEu" id="7Oc59RS$wKP">
