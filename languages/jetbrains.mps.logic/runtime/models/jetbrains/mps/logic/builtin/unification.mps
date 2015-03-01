@@ -2893,6 +2893,23 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4U_yxogCsEV" role="jymVt" />
+    <node concept="3clFb_" id="677NV56hoec" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="name" />
+      <node concept="17QB3L" id="677NV56hoed" role="3clF45" />
+      <node concept="3Tm1VV" id="677NV56hoee" role="1B3o_S" />
+      <node concept="3clFbS" id="677NV56hoel" role="3clF47">
+        <node concept="3clFbF" id="677NV56hsBK" role="3cqZAp">
+          <node concept="1rXfSq" id="677NV56hsBJ" role="3clFbG">
+            <ref role="37wK5l" to="w2rx:~Logical.getName():java.lang.String" resolve="getName" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="677NV56hpJ0" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="677NV56hmM1" role="jymVt" />
     <node concept="3clFb_" id="dfChU1gcsX" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="findRoot" />
@@ -4171,6 +4188,23 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1H8E3iBdJUE" role="jymVt" />
+    <node concept="3clFb_" id="677NV56hurq" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="name" />
+      <node concept="17QB3L" id="677NV56hurr" role="3clF45" />
+      <node concept="3Tm1VV" id="677NV56hurs" role="1B3o_S" />
+      <node concept="3clFbS" id="677NV56hurx" role="3clF47">
+        <node concept="3clFbF" id="677NV56hwyi" role="3cqZAp">
+          <node concept="1rXfSq" id="677NV56hwyh" role="3clFbG">
+            <ref role="37wK5l" to="w2rx:~Logical.getName():java.lang.String" resolve="getName" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="677NV56hvR5" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="677NV56hva7" role="jymVt" />
     <node concept="3clFb_" id="dfChU1gi$L" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="findRoot" />

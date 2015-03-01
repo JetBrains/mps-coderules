@@ -16,25 +16,8 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
-        <child id="1068580123156" name="expression" index="3clFbG" />
-      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
-        <reference id="1107535924139" name="classifier" index="3uigEE" />
-      </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
-    </language>
-    <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
-      <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -50,22 +33,11 @@
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
-      <concept id="1175147569072" name="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" flags="ig" index="2sgdUx">
-        <property id="1175607673137" name="isWeak" index="2RFo0w" />
-        <child id="1175147624276" name="body" index="2sgrp5" />
-      </concept>
-      <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
-      <concept id="1201607707634" name="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule" flags="ig" index="35pCF_">
-        <child id="1201607798918" name="supertypeNode" index="35pZ6h" />
-      </concept>
       <concept id="1195213580585" name="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" flags="ig" index="18hYwZ">
         <child id="1195213635060" name="body" index="18ibNy" />
       </concept>
       <concept id="1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" flags="ig" index="1YaCAy">
         <reference id="1174642800329" name="concept" index="1YaFvo" />
-      </concept>
-      <concept id="1174642900584" name="jetbrains.mps.lang.typesystem.structure.PatternCondition" flags="ig" index="1Yb3XT">
-        <child id="1174642936809" name="pattern" index="1YbcFS" />
       </concept>
       <concept id="1174643105530" name="jetbrains.mps.lang.typesystem.structure.InferenceRule" flags="ig" index="1YbPZF" />
       <concept id="1174648085619" name="jetbrains.mps.lang.typesystem.structure.AbstractRule" flags="ng" index="1YuPPy">
@@ -185,45 +157,6 @@
     <node concept="1YaCAy" id="6p0DfM0iSNv" role="1YuTPh">
       <property role="TrG5h" value="rir" />
       <ref role="1YaFvo" to="wq2x:6p0DfM0im$2" resolve="RuleInputReference" />
-    </node>
-  </node>
-  <node concept="2sgARr" id="6ntBQ9KL7Lw">
-    <property role="2RFo0w" value="true" />
-    <property role="TrG5h" value="supertypesOf_LogicVariableType" />
-    <node concept="3clFbS" id="6ntBQ9KL7Lx" role="2sgrp5">
-      <node concept="3clFbF" id="6ntBQ9KL84d" role="3cqZAp">
-        <node concept="2c44tf" id="6ntBQ9KL84b" role="3clFbG">
-          <node concept="3uibUv" id="6ntBQ9KLgHx" role="2c44tc">
-            <ref role="3uigEE" to="nc4n:5k_shARN7H1" resolve="LogicVariable" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="6ntBQ9KL7Lz" role="1YuTPh">
-      <property role="TrG5h" value="lvt" />
-      <ref role="1YaFvo" to="wq2x:6Ng87FPV$_x" resolve="LogicVariableType" />
-    </node>
-  </node>
-  <node concept="35pCF_" id="6ntBQ9KLsxG">
-    <property role="TrG5h" value="LogicVariableType_supertypeOf_classifier_LogicVariable" />
-    <node concept="3clFbS" id="6ntBQ9KLsxI" role="2sgrp5">
-      <node concept="3SKdUt" id="6ntBQ9KLtdA" role="3cqZAp">
-        <node concept="3SKdUq" id="6ntBQ9KLtdC" role="3SKWNk">
-          <property role="3SKdUp" value="'nuff said" />
-        </node>
-      </node>
-    </node>
-    <node concept="1Yb3XT" id="6ntBQ9KLBEv" role="1YuTPh">
-      <property role="TrG5h" value="lv" />
-      <node concept="2DMOqp" id="6ntBQ9KLBEx" role="1YbcFS">
-        <node concept="3uibUv" id="6ntBQ9KLBG_" role="2DMOqq">
-          <ref role="3uigEE" to="nc4n:5k_shARN7H1" resolve="LogicVariable" />
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="6ntBQ9KLBMa" role="35pZ6h">
-      <property role="TrG5h" value="lvt" />
-      <ref role="1YaFvo" to="wq2x:6Ng87FPV$_x" resolve="LogicVariableType" />
     </node>
   </node>
   <node concept="1YbPZF" id="5MHpiylKVB4">
