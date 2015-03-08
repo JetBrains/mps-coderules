@@ -204,6 +204,16 @@ public class SolverTests {
     }
 
     @Test
+    public void test13() throws Exception {
+        assertUnifiesWithBindings(
+                parse("node{name{foo} child{node{name{bar}}}}"),
+                parse("node{name{foo} child{X}}"),
+
+                bind(var("X"), parseTerm("node{name{bar}}"))
+        );
+    }
+
+    @Test
     public void testFail1() throws Exception {
         assertUnifificationFails(
                 term("a"),
@@ -216,6 +226,14 @@ public class SolverTests {
         assertUnifificationFails(
                 parse("a{b c}"),
                 parse("a{X}")
+        );
+    }
+
+    @Test
+    public void testFail3() throws Exception {
+        assertUnifificationFails(
+                parse("node{name{X} child{abc}}"),
+                parse("node{name{foo} child{X}}")
         );
     }
 
