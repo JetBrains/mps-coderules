@@ -71,8 +71,8 @@
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="4310122986197990603" name="jetbrains.mps.logic.structure.ExpressionNode" flags="ng" index="xgLVe">
-        <child id="4310122986197991094" name="expression" index="xgLMN" />
+      <concept id="238586457668550951" name="jetbrains.mps.logic.structure.NodeSubstitution" flags="ng" index="22Ky0T">
+        <child id="238586457668550958" name="expression" index="22Ky0K" />
       </concept>
       <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
@@ -95,6 +95,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -149,9 +152,11 @@
               <node concept="1oi5ST" id="5lJXKv621" role="1ojpOf">
                 <property role="TrG5h" value="parameter" />
                 <property role="1oi5Z2" value="multiple" />
-                <node concept="xgLVe" id="1Ns6gpY8rQW" role="1oi5TL">
-                  <node concept="3FjdXv" id="cnjBgYE1yw" role="xgLMN">
-                    <property role="TrG5h" value="T" />
+                <node concept="1oi5UN" id="677NV56vfMA" role="1oi5TL">
+                  <node concept="22Ky0T" id="677NV56vfMB" role="lGtFl">
+                    <node concept="3FjdXv" id="cnjBgYE1yw" role="22Ky0K">
+                      <property role="TrG5h" value="T" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -182,9 +187,11 @@
               <node concept="1oi5ST" id="5lJXK8Yod" role="1ojpOf">
                 <property role="TrG5h" value="parameter" />
                 <property role="1oi5Z2" value="multiple" />
-                <node concept="xgLVe" id="1Ns6gpY8t0a" role="1oi5TL">
-                  <node concept="3FjdXv" id="cnjBgYE1CB" role="xgLMN">
-                    <property role="TrG5h" value="T" />
+                <node concept="1oi5UN" id="677NV56vfNo" role="1oi5TL">
+                  <node concept="22Ky0T" id="677NV56vfNp" role="lGtFl">
+                    <node concept="3FjdXv" id="cnjBgYE1CB" role="22Ky0K">
+                      <property role="TrG5h" value="T" />
+                    </node>
                   </node>
                 </node>
               </node>

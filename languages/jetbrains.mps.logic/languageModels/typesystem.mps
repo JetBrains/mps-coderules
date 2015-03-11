@@ -152,8 +152,8 @@
             <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
             <node concept="2pIpSj" id="1mP5b6jOrp7" role="2pJxcM">
               <ref role="2pIpSl" to="tpee:g7uigIF" />
-              <node concept="36bGnv" id="dfChU1uU1H" role="2pJxcZ">
-                <ref role="36bGnp" to="yg8f:dfChU1jXdE" resolve="ITreeLogical" />
+              <node concept="36bGnv" id="2S_ORi38S4f" role="2pJxcZ">
+                <ref role="36bGnp" to="yg8f:1mP5b6jQP$C" resolve="ILogical" />
               </node>
             </node>
           </node>
@@ -167,7 +167,7 @@
   </node>
   <node concept="35pCF_" id="dfChU1jsd3">
     <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="ITreeLogical_subtypeOf_logical" />
+    <property role="TrG5h" value="ILogical_subtypeOf_logical" />
     <node concept="3clFbS" id="dfChU1jsd4" role="2sgrp5">
       <node concept="3SKdUt" id="dfChU1jzdK" role="3cqZAp">
         <node concept="3SKdUq" id="dfChU1jzqi" role="3SKWNk">
@@ -191,11 +191,11 @@
               <node concept="1YBJjd" id="dfChU1jxh4" role="1Ub_4B">
                 <ref role="1YBMHb" node="dfChU1jtEr" resolve="ct" />
               </node>
-              <node concept="1Yb3XT" id="dfChU1kdib" role="1Ub_4A">
-                <property role="TrG5h" value="treeLogical" />
-                <node concept="2DMOqp" id="dfChU1kl43" role="1YbcFS">
-                  <node concept="3uibUv" id="dfChU1kmaS" role="2DMOqq">
-                    <ref role="3uigEE" to="yg8f:dfChU1jXdE" resolve="ITreeLogical" />
+              <node concept="1Yb3XT" id="2S_ORi36mSg" role="1Ub_4A">
+                <property role="TrG5h" value="il" />
+                <node concept="2DMOqp" id="2S_ORi36mSh" role="1YbcFS">
+                  <node concept="3uibUv" id="2S_ORi36mSi" role="2DMOqq">
+                    <ref role="3uigEE" to="yg8f:1mP5b6jQP$C" resolve="ILogical" />
                   </node>
                 </node>
               </node>

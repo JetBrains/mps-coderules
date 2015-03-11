@@ -151,8 +151,8 @@
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="7932111957678624766" name="jetbrains.mps.logic.structure.ExpressionVariable" flags="ng" index="3a18CM">
-        <child id="7932111957678625620" name="expression" index="3a19qo" />
+      <concept id="238586457668550951" name="jetbrains.mps.logic.structure.LogicalSubstitution" flags="ng" index="22Ky0T">
+        <child id="238586457668550958" name="expression" index="22Ky0K" />
       </concept>
       <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
@@ -176,6 +176,9 @@
       <concept id="1611448358170966948" name="jetbrains.mps.logic.structure.Variable" flags="ng" index="1$XVwq" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -744,9 +747,12 @@
                 <node concept="1oi5Wm" id="1pt0VTMEUHa" role="1ojpOf">
                   <property role="TrG5h" value="concept" />
                   <property role="1oi5Z2" value="single" />
-                  <node concept="3a18CM" id="5iubxWjkAbK" role="1oi5zu">
-                    <node concept="Xl_RD" id="5iubxWjkAeB" role="3a19qo">
-                      <property role="Xl_RC" value="BAR" />
+                  <node concept="1oi5XN" id="CCcKPljIyx" role="1oi5zu">
+                    <property role="1oi5yK" value="_" />
+                    <node concept="22Ky0T" id="CCcKPljIzp" role="lGtFl">
+                      <node concept="Xl_RD" id="CCcKPljIZa" role="22Ky0K">
+                        <property role="Xl_RC" value="BAR" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1181,13 +1187,16 @@
               <node concept="1oi5ST" id="5lJXKtbfs" role="1ojpOf">
                 <property role="TrG5h" value="parameter" />
                 <property role="1oi5Z2" value="multiple" />
-                <node concept="3a18CM" id="5lJXKtbft" role="1oi5TL">
-                  <node concept="2OqwBi" id="5lJXKtbfu" role="3a19qo">
-                    <node concept="37vLTw" id="5lJXKtbfv" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5lJXKtbfh" resolve="T" />
-                    </node>
-                    <node concept="liA8E" id="5lJXKtbfw" role="2OqNvi">
-                      <ref role="37wK5l" to="w2rx:~Logical.getName():java.lang.String" resolve="getName" />
+                <node concept="1$XVwq" id="CCcKPljNMj" role="1oi5TL">
+                  <property role="TrG5h" value="T" />
+                  <node concept="22Ky0T" id="CCcKPljNMt" role="lGtFl">
+                    <node concept="2OqwBi" id="5lJXKtbfu" role="22Ky0K">
+                      <node concept="37vLTw" id="5lJXKtbfv" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5lJXKtbfh" resolve="T" />
+                      </node>
+                      <node concept="liA8E" id="5lJXKtbfw" role="2OqNvi">
+                        <ref role="37wK5l" to="w2rx:~Logical.getName():java.lang.String" resolve="getName" />
+                      </node>
                     </node>
                   </node>
                 </node>
