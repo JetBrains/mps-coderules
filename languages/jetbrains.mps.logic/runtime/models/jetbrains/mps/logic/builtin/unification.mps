@@ -258,15 +258,10 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
-        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -3398,31 +3393,6 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="3HJTsBmPpFN" role="jymVt" />
-    <node concept="3clFb_" id="3HJTsBmPoly" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="findTree" />
-      <property role="IEkAT" value="false" />
-      <node concept="3uibUv" id="3HJTsBmPudg" role="3clF45">
-        <ref role="3uigEE" node="4U_yxogAknZ" resolve="TreeLogical" />
-      </node>
-      <node concept="3Tm1VV" id="3HJTsBmPol$" role="1B3o_S" />
-      <node concept="3clFbS" id="3HJTsBmPol_" role="3clF47">
-        <node concept="3clFbF" id="3HJTsBmPolA" role="3cqZAp">
-          <node concept="10QFUN" id="3HJTsBmPolB" role="3clFbG">
-            <node concept="3uibUv" id="3HJTsBmPuOo" role="10QFUM">
-              <ref role="3uigEE" node="4U_yxogAknZ" resolve="TreeLogical" />
-            </node>
-            <node concept="1rXfSq" id="3HJTsBmPolD" role="10QFUP">
-              <ref role="37wK5l" to="w2rx:~Logical.find():runtime.Logical" resolve="find" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3HJTsBmPvaY" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="1Ns6gpY6S29" role="jymVt" />
     <node concept="3clFb_" id="1Ns6gpY6DeD" role="jymVt">
       <property role="TrG5h" value="asTreePart" />
@@ -3504,84 +3474,7 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="7d$oK1$sHHt" role="jymVt" />
-    <node concept="3clFb_" id="7d$oK1$sGde" role="jymVt">
-      <property role="TrG5h" value="toTree" />
-      <property role="IEkAT" value="true" />
-      <node concept="3uibUv" id="7d$oK1$taMQ" role="3clF45">
-        <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-      </node>
-      <node concept="3Tm1VV" id="7d$oK1$sGdi" role="1B3o_S" />
-      <node concept="3clFbS" id="7d$oK1$sGdj" role="3clF47">
-        <node concept="3cpWs8" id="7d$oK1$sGdk" role="3cqZAp">
-          <node concept="3cpWsn" id="7d$oK1$sGdl" role="3cpWs9">
-            <property role="TrG5h" value="treeLogical" />
-            <node concept="3uibUv" id="3HJTsBmKsUd" role="1tU5fm">
-              <ref role="3uigEE" to="yg8f:dfChU1jXdE" resolve="ITreeLogical" />
-            </node>
-            <node concept="1rXfSq" id="7d$oK1$sGdn" role="33vP2m">
-              <ref role="37wK5l" node="dfChU1gcsX" resolve="findRoot" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7d$oK1$sGdo" role="3cqZAp">
-          <node concept="3cpWsn" id="7d$oK1$sGdp" role="3cpWs9">
-            <property role="TrG5h" value="value" />
-            <node concept="3uibUv" id="7d$oK1$sGdq" role="1tU5fm">
-              <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-            </node>
-            <node concept="2OqwBi" id="7d$oK1$sGdr" role="33vP2m">
-              <node concept="37vLTw" id="7d$oK1$sGds" role="2Oq$k0">
-                <ref role="3cqZAo" node="7d$oK1$sGdl" resolve="treeLogical" />
-              </node>
-              <node concept="liA8E" id="7d$oK1$sGdt" role="2OqNvi">
-                <ref role="37wK5l" to="yg8f:1mP5b6jQPMI" resolve="value" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7d$oK1$sGdu" role="3cqZAp">
-          <node concept="3y3z36" id="3HJTsBmTwtp" role="3clFbw">
-            <node concept="37vLTw" id="7d$oK1$sGdC" role="3uHU7B">
-              <ref role="3cqZAo" node="7d$oK1$sGdp" resolve="value" />
-            </node>
-            <node concept="10Nm6u" id="7d$oK1$sGdB" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="3HJTsBmTwtu" role="3clFbx">
-            <node concept="3cpWs6" id="3HJTsBmTxa0" role="3cqZAp">
-              <node concept="37vLTw" id="3HJTsBmTxRn" role="3cqZAk">
-                <ref role="3cqZAo" node="7d$oK1$sGdp" resolve="value" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3SKdUt" id="7d$oK1$sGdw" role="3cqZAp">
-          <node concept="3SKdUq" id="7d$oK1$sGdx" role="3SKWNk">
-            <property role="3SKdUp" value="construct a new tree variable" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="7d$oK1$sGdy" role="3cqZAp">
-          <node concept="2YIFZM" id="7d$oK1$t82i" role="3cqZAk">
-            <ref role="37wK5l" to="ie8e:5JQSuNsxMzt" resolve="create" />
-            <ref role="1Pybhc" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-            <node concept="2ShNRf" id="7d$oK1$sGdz" role="37wK5m">
-              <node concept="1pGfFk" id="7d$oK1$sGd$" role="2ShVmc">
-                <ref role="37wK5l" node="3HJTsBmSn3o" resolve="TreeLogical.TreeLogicalVar" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="P$JXv" id="3HJTsBmTvIL" role="lGtFl">
-        <node concept="TZ5HI" id="3HJTsBmTvIM" role="TZ5Hx">
-          <node concept="TZ5HA" id="3HJTsBmTvIN" role="3HnX3l" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3HJTsBmTvIO" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3HJTsBmDjkY" role="jymVt" />
+    <node concept="2tJIrI" id="6tTPqJYXEyR" role="jymVt" />
     <node concept="3clFb_" id="5NuEpF1xPNu" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="toString" />
@@ -3620,9 +3513,7 @@
         <node concept="3cpWs8" id="2QE4RCGhZVd" role="3cqZAp">
           <node concept="3cpWsn" id="2QE4RCGhZVe" role="3cpWs9">
             <property role="TrG5h" value="fullName" />
-            <node concept="3uibUv" id="2QE4RCGhZV8" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-            </node>
+            <node concept="17QB3L" id="6tTPqJZ13Gf" role="1tU5fm" />
             <node concept="3K4zz7" id="2QE4RCGhZVf" role="33vP2m">
               <node concept="1rXfSq" id="2QE4RCGhZVg" role="3K4E3e">
                 <ref role="37wK5l" to="w2rx:~Logical.getName():java.lang.String" resolve="getName" />
