@@ -856,7 +856,7 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="35Lj3TiM6tR" role="3cqZAp" />
+            <node concept="3clFbH" id="2ev$9JFwlPM" role="3cqZAp" />
             <node concept="3cpWs8" id="5L5h3brvIX2" role="3cqZAp">
               <node concept="3cpWsn" id="5L5h3brvIX3" role="3cpWs9">
                 <property role="TrG5h" value="deltaList" />
@@ -963,6 +963,12 @@
                             </node>
                           </node>
                           <node concept="3clFbH" id="35Lj3TiOSSe" role="3cqZAp" />
+                          <node concept="3SKdUt" id="2ev$9JF$mDT" role="3cqZAp">
+                            <node concept="3SKdUq" id="2ev$9JF$nf8" role="3SKWNk">
+                              <property role="3SKdUp" value="TODO: Re: -fixed -- see the comment to the TreeLogical class" />
+                            </node>
+                          </node>
+                          <node concept="3clFbH" id="2ev$9JF$oSM" role="3cqZAp" />
                           <node concept="3cpWs8" id="6XrX4sTXG6A" role="3cqZAp">
                             <node concept="3cpWsn" id="6XrX4sTXG6B" role="3cpWs9">
                               <property role="TrG5h" value="compileProcess" />
@@ -1012,7 +1018,7 @@
                                 <node concept="2LYoGL" id="6XrX4sTXG6D" role="2LYoGw">
                                   <ref role="2LYoGK" to="go48:14R2qyOBxc4" resolve="className" />
                                   <node concept="Xl_RD" id="6XrX4sTXG6E" role="2LYoGN">
-                                    <property role="Xl_RC" value="compiler.Main" />
+                                    <property role="Xl_RC" value="jetbrains.mps.jchr.patch.CompilerMain" />
                                   </node>
                                 </node>
                                 <node concept="2LYoGL" id="6XrX4sU0CAX" role="2LYoGw">
@@ -1052,6 +1058,15 @@
                                       </node>
                                       <node concept="Xl_RD" id="6XrX4sU0Ss0" role="2dOGIT">
                                         <property role="Xl_RC" value="output" />
+                                      </node>
+                                    </node>
+                                    <node concept="2dOGH5" id="2ev$9JFzGsK" role="1r8FgC">
+                                      <property role="Lv5iS" value="true" />
+                                      <node concept="Xl_RD" id="2ev$9JFzGsL" role="2dOGIY">
+                                        <property role="Xl_RC" value="jetbrains.mps.unification.tree.Tree" />
+                                      </node>
+                                      <node concept="Xl_RD" id="2ev$9JFzGsM" role="2dOGIT">
+                                        <property role="Xl_RC" value="fixed" />
                                       </node>
                                     </node>
                                     <node concept="1tenjt" id="6XrX4sU3tRL" role="1r8FgC">

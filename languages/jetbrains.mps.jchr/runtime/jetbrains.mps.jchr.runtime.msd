@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.jchr.runtime" uuid="b984ee52-f34d-4b6d-8812-866c1d3eae31" compileInMPS="true">
   <models>
-    <modelRoot contentPath="${module}" type="default" />
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="lib/KULeuven_JCHR.jar" />
+    </modelRoot>
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <stubModelEntries>
@@ -17,6 +19,7 @@
   </dependencies>
   <usedLanguages>
     <usedLanguage>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguage>
+    <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
