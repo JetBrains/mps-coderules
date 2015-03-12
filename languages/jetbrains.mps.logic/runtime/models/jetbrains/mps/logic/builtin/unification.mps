@@ -3761,6 +3761,48 @@
     <node concept="3uibUv" id="dfChU1k2Og" role="EKbjA">
       <ref role="3uigEE" to="yg8f:dfChU1jXdE" resolve="ITreeLogical" />
     </node>
+    <node concept="3UR2Jj" id="2ev$9JF$huc" role="lGtFl">
+      <node concept="TZ5HA" id="2ev$9JF$hud" role="TZ5H$">
+        <node concept="1dT_AC" id="2ev$9JF$hue" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="2ev$9JF$iKo" role="TZ5H$">
+        <node concept="1dT_AC" id="2ev$9JF$iKp" role="1dT_Ay">
+          <property role="1dT_AB" value="TODO: the existance of this class and the possibility to present a logical variable referring " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="2ev$9JF$iKi" role="TZ5H$">
+        <node concept="1dT_AC" id="2ev$9JF$iKj" role="1dT_Ay">
+          <property role="1dT_AB" value="to its instance effectively makes a Tree mutable, so it should be supported in reactive schemes, such" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="2ev$9JF$iLe" role="TZ5H$">
+        <node concept="1dT_AC" id="2ev$9JF$iLf" role="1dT_Ay">
+          <property role="1dT_AB" value="as a constraint occurrence. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="2ev$9JF$iLq" role="TZ5H$">
+        <node concept="1dT_AC" id="2ev$9JF$iLr" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="2ev$9JF$iLC" role="TZ5H$">
+        <node concept="1dT_AC" id="2ev$9JF$iLD" role="1dT_Ay">
+          <property role="1dT_AB" value="So far Tree has been treated as an immutable construct, constraints are matched with its instances as " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="2ev$9JF$iMa" role="TZ5H$">
+        <node concept="1dT_AC" id="2ev$9JF$iMb" role="1dT_Ay">
+          <property role="1dT_AB" value="with opaque objects. This may change in the future. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="2ev$9JF$iKM" role="TZ5H$">
+        <node concept="1dT_AC" id="2ev$9JF$iKN" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="2GO7tyJVmP4">
     <property role="TrG5h" value="UnificationBuiltinConstraint" />
