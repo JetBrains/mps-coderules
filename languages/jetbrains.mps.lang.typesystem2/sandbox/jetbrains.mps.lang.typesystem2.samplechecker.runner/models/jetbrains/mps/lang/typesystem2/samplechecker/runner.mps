@@ -4,6 +4,7 @@
   <languages>
     <use id="894463aa-8754-49c0-bf4b-6a32af66b376" name="jetbrains.mps.jchr" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="-1" />
   </languages>
   <imports>
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
@@ -189,6 +190,20 @@
         <reference id="1503029983918490" name="constraint" index="1KgAX_" />
       </concept>
     </language>
+    <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
+        <child id="7571593955706125526" name="root" index="1oi0x0" />
+      </concept>
+      <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Node" flags="ng" index="1oi5UN">
+        <child id="7571593955706284441" name="role" index="1ojpOf" />
+      </concept>
+      <concept id="7571593955706137472" name="jetbrains.mps.logic.structure.ValueRole" flags="ng" index="1oi5Wm">
+        <child id="7571593955706137672" name="contents" index="1oi5zu" />
+      </concept>
+      <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.ValueHolder" flags="ng" index="1oi5XN">
+        <property id="7571593955706137638" name="value" index="1oi5yK" />
+      </concept>
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -232,11 +247,11 @@
           <node concept="3cpWsn" id="3Qp4N06bZni" role="3cpWs9">
             <property role="TrG5h" value="handler" />
             <node concept="1Kb3S_" id="3Qp4N06bZnj" role="1tU5fm">
-              <ref role="1Kaivj" to="uiwa:677NV56zutI" resolve="testHandler" />
+              <ref role="1Kaivj" to="uiwa:2ev$9JFACFv" resolve="testHandler" />
             </node>
             <node concept="2ShNRf" id="3Qp4N06bZnk" role="33vP2m">
               <node concept="1KbMJY" id="3Qp4N06bZnl" role="2ShVmc">
-                <ref role="1Kajjj" to="uiwa:677NV56zutI" resolve="testHandler" />
+                <ref role="1Kajjj" to="uiwa:2ev$9JFACFv" resolve="testHandler" />
                 <node concept="2OqwBi" id="3Qp4N06bZnm" role="1KkMwq">
                   <node concept="37vLTw" id="3Qp4N06bZnn" role="2Oq$k0">
                     <ref role="3cqZAo" node="3Qp4N06bZnb" resolve="farm" />
@@ -278,15 +293,19 @@
           </node>
         </node>
         <node concept="3clFbH" id="3XExYyWVnwm" role="3cqZAp" />
-        <node concept="3clFbF" id="6qJjpCjqwbo" role="3cqZAp">
-          <node concept="2OqwBi" id="6qJjpCjqwox" role="3clFbG">
-            <node concept="37vLTw" id="6qJjpCjqwbm" role="2Oq$k0">
-              <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
-            </node>
-            <node concept="1KczDs" id="6qJjpCjqw_S" role="2OqNvi">
-              <ref role="1KgAX_" to="uiwa:677NV56zutX" resolve="check" />
-              <node concept="Xl_RD" id="6qJjpCjtKec" role="1KcKQn">
-                <property role="Xl_RC" value="4438600004733396337(HelloWorld)" />
+        <node concept="3SKdUt" id="6YyAPwCX3xw" role="3cqZAp">
+          <node concept="3SKWN0" id="6YyAPwCX3xx" role="3SKWNk">
+            <node concept="3clFbF" id="6qJjpCjqwbo" role="3SKWNf">
+              <node concept="2OqwBi" id="6qJjpCjqwox" role="3clFbG">
+                <node concept="37vLTw" id="6qJjpCjqwbm" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
+                </node>
+                <node concept="1KczDs" id="6qJjpCjqw_S" role="2OqNvi">
+                  <ref role="1KgAX_" to="uiwa:2ev$9JFACFI" resolve="check" />
+                  <node concept="Xl_RD" id="6qJjpCjtKec" role="1KcKQn">
+                    <property role="Xl_RC" value="4438600004733396337(HelloWorld)" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -297,9 +316,28 @@
               <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
             </node>
             <node concept="1KczDs" id="6lpwCiZ78Rj" role="2OqNvi">
-              <ref role="1KgAX_" to="uiwa:677NV56zutX" resolve="check" />
-              <node concept="Xl_RD" id="6lpwCiZ78Rk" role="1KcKQn">
-                <property role="Xl_RC" value="ClassConcept#6270176708469746366(Sample)" />
+              <ref role="1KgAX_" to="uiwa:2ev$9JFACFI" resolve="check" />
+              <node concept="1oi1Uc" id="6YyAPwCRevQ" role="1KcKQn">
+                <node concept="1oi5UN" id="6YyAPwCRevS" role="1oi0x0">
+                  <node concept="1oi5Wm" id="6YyAPwCRevU" role="1ojpOf">
+                    <property role="TrG5h" value="concept" />
+                    <node concept="1oi5XN" id="6YyAPwCRevV" role="1oi5zu">
+                      <property role="1oi5yK" value="ClassConcept" />
+                    </node>
+                  </node>
+                  <node concept="1oi5Wm" id="6YyAPwCRevW" role="1ojpOf">
+                    <property role="TrG5h" value="name" />
+                    <node concept="1oi5XN" id="6YyAPwCRevX" role="1oi5zu">
+                      <property role="1oi5yK" value="Sample" />
+                    </node>
+                  </node>
+                  <node concept="1oi5Wm" id="6YyAPwCRevY" role="1ojpOf">
+                    <property role="TrG5h" value="id" />
+                    <node concept="1oi5XN" id="6YyAPwCRevZ" role="1oi5zu">
+                      <property role="1oi5yK" value="6270176708469746366" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -771,7 +809,7 @@
       <node concept="37vLTG" id="3XExYyWVIV0" role="3clF46">
         <property role="TrG5h" value="handler" />
         <node concept="1Kb3S_" id="3XExYyWVIV1" role="1tU5fm">
-          <ref role="1Kaivj" to="uiwa:677NV56zutI" resolve="testHandler" />
+          <ref role="1Kaivj" to="uiwa:2ev$9JFACFv" resolve="testHandler" />
         </node>
       </node>
       <node concept="3clFbS" id="3XExYyWVIUA" role="3clF47">
