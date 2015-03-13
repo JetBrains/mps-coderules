@@ -9,27 +9,66 @@
   <imports>
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
+    <import index="xxzj" ref="b189d6c6-9397-4d64-88af-1ac73760a4f5/f:java_stub#b189d6c6-9397-4d64-88af-1ac73760a4f5#org.mockito(jetbrains.mps.logic.test/org.mockito@java_stub)" />
+    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="akdp" ref="b189d6c6-9397-4d64-88af-1ac73760a4f5/f:java_stub#b189d6c6-9397-4d64-88af-1ac73760a4f5#org.mockito.stubbing(jetbrains.mps.logic.test/org.mockito.stubbing@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
+      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
+        <child id="1070534760952" name="componentType" index="10Q1$1" />
+      </concept>
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
+        <child id="1214996921760" name="bound" index="3ztrMU" />
+      </concept>
+      <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
+        <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
+      </concept>
+      <concept id="1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" flags="in" index="16syzq">
+        <reference id="1109283546497" name="typeVariableDeclaration" index="16sUi3" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
+      <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1068580123133" name="returnType" index="3clF45" />
+        <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
+      </concept>
+      <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_" />
+      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
+        <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
@@ -45,13 +84,31 @@
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
+      <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
+      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
+        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="1171931690126" name="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" flags="ig" index="3s$Bmu">
@@ -1176,6 +1233,1001 @@
             </node>
             <node concept="37vLTw" id="2S_ORi38QgL" role="3tpDZB">
               <ref role="3cqZAo" node="2S_ORi38Qgq" resolve="a" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3s_ewN" id="2ev$9JFBIYd">
+    <property role="3s_ewP" value="TreeWalk" />
+    <node concept="2tJIrI" id="2ev$9JFEDVF" role="jymVt" />
+    <node concept="3clFb_" id="2ev$9JFEJ94" role="jymVt">
+      <property role="TrG5h" value="anyValues" />
+      <node concept="3uibUv" id="2ev$9JFEJ95" role="3clF45">
+        <ref role="3uigEE" to="ie8e:1msb0mq99GH" resolve="ValuesBranch" />
+        <node concept="16syzq" id="2ev$9JFEJ96" role="11_B2D">
+          <ref role="16sUi3" node="2ev$9JFEJ9e" resolve="T" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2ev$9JFEJ97" role="1B3o_S" />
+      <node concept="3clFbS" id="2ev$9JFEJ98" role="3clF47">
+        <node concept="3clFbF" id="2ev$9JFEJ99" role="3cqZAp">
+          <node concept="10QFUN" id="2ev$9JFEJ9a" role="3clFbG">
+            <node concept="3uibUv" id="2ev$9JFEJ9b" role="10QFUM">
+              <ref role="3uigEE" to="ie8e:1msb0mq99GH" resolve="ValuesBranch" />
+              <node concept="16syzq" id="2ev$9JFEJ9c" role="11_B2D">
+                <ref role="16sUi3" node="2ev$9JFEJ9e" resolve="T" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2ev$9JFEJ9d" role="10QFUP">
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+              <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16euLQ" id="2ev$9JFEJ9e" role="16eVyc">
+        <property role="TrG5h" value="T" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2ev$9JFEKIo" role="jymVt" />
+    <node concept="3clFb_" id="2ev$9JFEEfC" role="jymVt">
+      <property role="TrG5h" value="anyChildren" />
+      <node concept="3uibUv" id="2ev$9JFEFFy" role="3clF45">
+        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+        <node concept="16syzq" id="2ev$9JFEFN8" role="11_B2D">
+          <ref role="16sUi3" node="2ev$9JFEFzW" resolve="T" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2ev$9JFEEfF" role="1B3o_S" />
+      <node concept="3clFbS" id="2ev$9JFEEfG" role="3clF47">
+        <node concept="3clFbF" id="2ev$9JFEGHn" role="3cqZAp">
+          <node concept="10QFUN" id="2ev$9JFEGHp" role="3clFbG">
+            <node concept="3uibUv" id="2ev$9JFEGHq" role="10QFUM">
+              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+              <node concept="16syzq" id="2ev$9JFEHtY" role="11_B2D">
+                <ref role="16sUi3" node="2ev$9JFEFzW" resolve="T" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2ev$9JFEGHr" role="10QFUP">
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+              <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16euLQ" id="2ev$9JFEFzW" role="16eVyc">
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="2ev$9JFEFNp" role="3ztrMU">
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <node concept="3qTvmN" id="2ev$9JFEFNx" role="11_B2D" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2ev$9JFEIj6" role="jymVt" />
+    <node concept="3clFb_" id="2ev$9JFEHV1" role="jymVt">
+      <property role="TrG5h" value="anyList" />
+      <node concept="3uibUv" id="2ev$9JFEHV2" role="3clF45">
+        <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
+        <node concept="16syzq" id="2ev$9JFEHV3" role="11_B2D">
+          <ref role="16sUi3" node="2ev$9JFEHVb" resolve="T" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2ev$9JFEHV4" role="1B3o_S" />
+      <node concept="3clFbS" id="2ev$9JFEHV5" role="3clF47">
+        <node concept="3clFbF" id="2ev$9JFEHV6" role="3cqZAp">
+          <node concept="10QFUN" id="2ev$9JFEHV7" role="3clFbG">
+            <node concept="3uibUv" id="2ev$9JFEHV8" role="10QFUM">
+              <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
+              <node concept="16syzq" id="2ev$9JFEHV9" role="11_B2D">
+                <ref role="16sUi3" node="2ev$9JFEHVb" resolve="T" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2ev$9JFEHVa" role="10QFUP">
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+              <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16euLQ" id="2ev$9JFEHVb" role="16eVyc">
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="2ev$9JFEHVc" role="3ztrMU">
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <node concept="3qTvmN" id="2ev$9JFEHVd" role="11_B2D" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2ev$9JFEZB_" role="jymVt" />
+    <node concept="3clFb_" id="2ev$9JFF0nO" role="jymVt">
+      <property role="TrG5h" value="anyTreePartArray" />
+      <node concept="10Q1$e" id="2ev$9JFF0S3" role="3clF45">
+        <node concept="3uibUv" id="2ev$9JFF0R$" role="10Q1$1">
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2ev$9JFF0nR" role="1B3o_S" />
+      <node concept="3clFbS" id="2ev$9JFF0nS" role="3clF47">
+        <node concept="3clFbF" id="2ev$9JFF1GU" role="3cqZAp">
+          <node concept="10QFUN" id="2ev$9JFF1GW" role="3clFbG">
+            <node concept="10Q1$e" id="2ev$9JFF1GX" role="10QFUM">
+              <node concept="3uibUv" id="2ev$9JFF1GY" role="10Q1$1">
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2ev$9JFF1GZ" role="10QFUP">
+              <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2ev$9JFF2NQ" role="jymVt" />
+    <node concept="3clFb_" id="2ev$9JFF1SS" role="jymVt">
+      <property role="TrG5h" value="anyObjectArray" />
+      <node concept="10Q1$e" id="2ev$9JFF1ST" role="3clF45">
+        <node concept="3uibUv" id="2ev$9JFF3cm" role="10Q1$1">
+          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2ev$9JFF1SV" role="1B3o_S" />
+      <node concept="3clFbS" id="2ev$9JFF1SW" role="3clF47">
+        <node concept="3clFbF" id="2ev$9JFF1SX" role="3cqZAp">
+          <node concept="10QFUN" id="2ev$9JFF1SY" role="3clFbG">
+            <node concept="10Q1$e" id="2ev$9JFF1SZ" role="10QFUM">
+              <node concept="3uibUv" id="2ev$9JFF3sQ" role="10Q1$1">
+                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2ev$9JFF1T1" role="10QFUP">
+              <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2ev$9JFF7UY" role="jymVt" />
+    <node concept="3clFb_" id="2ev$9JFF8Wr" role="jymVt">
+      <property role="TrG5h" value="eqChildren" />
+      <node concept="37vLTG" id="2ev$9JFF9OQ" role="3clF46">
+        <property role="TrG5h" value="root" />
+        <node concept="3uibUv" id="2ev$9JFF9Wp" role="1tU5fm">
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <node concept="3qTvmN" id="2ev$9JFFac2" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="2ev$9JFF9Ok" role="3clF45">
+        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+        <node concept="16syzq" id="2ev$9JFF9OC" role="11_B2D">
+          <ref role="16sUi3" node="2ev$9JFF9NK" resolve="T" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2ev$9JFF8Wu" role="1B3o_S" />
+      <node concept="3clFbS" id="2ev$9JFF8Wv" role="3clF47">
+        <node concept="3clFbF" id="2ev$9JFFamF" role="3cqZAp">
+          <node concept="10QFUN" id="2ev$9JFFamH" role="3clFbG">
+            <node concept="3uibUv" id="2ev$9JFFamI" role="10QFUM">
+              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+              <node concept="16syzq" id="2ev$9JFFawN" role="11_B2D">
+                <ref role="16sUi3" node="2ev$9JFF9NK" resolve="T" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2ev$9JFFamJ" role="10QFUP">
+              <ref role="37wK5l" to="xxzj:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+              <node concept="37vLTw" id="2ev$9JFFa$M" role="37wK5m">
+                <ref role="3cqZAo" node="2ev$9JFF9OQ" resolve="root" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16euLQ" id="2ev$9JFF9NK" role="16eVyc">
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="2ev$9JFF9NL" role="3ztrMU">
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <node concept="3qTvmN" id="2ev$9JFF9NM" role="11_B2D" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2ev$9JFFbyX" role="jymVt" />
+    <node concept="3clFb_" id="2ev$9JFFaOx" role="jymVt">
+      <property role="TrG5h" value="eqValues" />
+      <node concept="37vLTG" id="2ev$9JFFaOy" role="3clF46">
+        <property role="TrG5h" value="root" />
+        <node concept="3uibUv" id="2ev$9JFFaOz" role="1tU5fm">
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <node concept="3qTvmN" id="2ev$9JFFaO$" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="2ev$9JFFaO_" role="3clF45">
+        <ref role="3uigEE" to="ie8e:1msb0mq99GH" resolve="ValuesBranch" />
+        <node concept="16syzq" id="2ev$9JFFaOA" role="11_B2D">
+          <ref role="16sUi3" node="2ev$9JFFaOJ" resolve="T" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2ev$9JFFaOB" role="1B3o_S" />
+      <node concept="3clFbS" id="2ev$9JFFaOC" role="3clF47">
+        <node concept="3clFbF" id="2ev$9JFFaOD" role="3cqZAp">
+          <node concept="10QFUN" id="2ev$9JFFaOE" role="3clFbG">
+            <node concept="3uibUv" id="2ev$9JFFaOF" role="10QFUM">
+              <ref role="3uigEE" to="ie8e:1msb0mq99GH" resolve="ValuesBranch" />
+              <node concept="16syzq" id="2ev$9JFFaOG" role="11_B2D">
+                <ref role="16sUi3" node="2ev$9JFFaOJ" resolve="T" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="2ev$9JFFaOH" role="10QFUP">
+              <ref role="37wK5l" to="xxzj:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+              <node concept="37vLTw" id="2ev$9JFFaOI" role="37wK5m">
+                <ref role="3cqZAo" node="2ev$9JFFaOy" resolve="root" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16euLQ" id="2ev$9JFFaOJ" role="16eVyc">
+        <property role="TrG5h" value="T" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="2ev$9JFBIYe" role="1B3o_S" />
+    <node concept="3s_gsd" id="2ev$9JFBIYf" role="3s_ewO">
+      <node concept="3s$Bmu" id="2ev$9JFBKE7" role="3s_gse">
+        <property role="3s$Bm0" value="empty" />
+        <node concept="3cqZAl" id="2ev$9JFBKE9" role="3clF45" />
+        <node concept="3Tm1VV" id="2ev$9JFBKEb" role="1B3o_S" />
+        <node concept="3clFbS" id="2ev$9JFBKEc" role="3clF47">
+          <node concept="3clFbH" id="2ev$9JFDTUq" role="3cqZAp" />
+          <node concept="3cpWs8" id="2ev$9JFBKEw" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFBKEx" role="3cpWs9">
+              <property role="TrG5h" value="tree" />
+              <node concept="3uibUv" id="2ev$9JFBKEy" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              </node>
+              <node concept="1oi1Uc" id="2ev$9JFBKEz" role="33vP2m">
+                <node concept="1oi5UN" id="2ev$9JFBKE$" role="1oi0x0" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFBKFj" role="3cqZAp" />
+          <node concept="3cpWs8" id="2ev$9JFBNlR" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFBNlS" role="3cpWs9">
+              <property role="TrG5h" value="mock" />
+              <node concept="3uibUv" id="2ev$9JFBNlQ" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:3JgCwkqiP3h" resolve="TreeWalk.Walker" />
+              </node>
+              <node concept="2YIFZM" id="2ev$9JFBNlT" role="33vP2m">
+                <ref role="37wK5l" to="xxzj:~Mockito.mock(java.lang.Class):java.lang.Object" resolve="mock" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="3VsKOn" id="2ev$9JFBNlU" role="37wK5m">
+                  <ref role="3VsUkX" to="ie8e:3JgCwkqiP3h" resolve="TreeWalk.Walker" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFD$a0" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFD_sZ" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFD$gY" role="2Oq$k0">
+                <ref role="37wK5l" to="xxzj:~Mockito.when(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="when" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="2OqwBi" id="2ev$9JFD_cy" role="37wK5m">
+                  <node concept="37vLTw" id="2ev$9JFD$lP" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ev$9JFBNlS" resolve="mock" />
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFD_nP" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:3JgCwkqmHc0" resolve="walkList" />
+                    <node concept="1rXfSq" id="2ev$9JFEITF" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFEHV1" resolve="anyList" />
+                    </node>
+                    <node concept="10QFUN" id="2ev$9JFD_pV" role="37wK5m">
+                      <node concept="3uibUv" id="2ev$9JFD_pW" role="10QFUM">
+                        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+                      </node>
+                      <node concept="2YIFZM" id="2ev$9JFD_pX" role="10QFUP">
+                        <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
+                        <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFDA_w" role="2OqNvi">
+                <ref role="37wK5l" to="akdp:~OngoingStubbing.thenReturn(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="thenReturn" />
+                <node concept="Rm8GO" id="2ev$9JFDAMR" role="37wK5m">
+                  <ref role="Rm8GQ" to="ie8e:2q_78a95hAO" resolve="STOP" />
+                  <ref role="1Px2BO" to="ie8e:2q_78a95hAL" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFD$3h" role="3cqZAp" />
+          <node concept="3clFbF" id="2ev$9JFBKZE" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFBL8Z" role="3clFbG">
+              <node concept="2ShNRf" id="2ev$9JFCM5m" role="2Oq$k0">
+                <node concept="1pGfFk" id="2ev$9JFCM5n" role="2ShVmc">
+                  <ref role="37wK5l" to="ie8e:47nvOnTQN6Q" resolve="TreeWalk" />
+                  <node concept="37vLTw" id="2ev$9JFCM5o" role="37wK5m">
+                    <ref role="3cqZAo" node="2ev$9JFBNlS" resolve="mock" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFBLg6" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:1hOy_Afq63K" resolve="walk" />
+                <node concept="2OqwBi" id="2ev$9JFBLi2" role="37wK5m">
+                  <node concept="37vLTw" id="2ev$9JFBLgX" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ev$9JFBKEx" resolve="tree" />
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFBLt3" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFBNGn" role="3cqZAp" />
+          <node concept="3clFbF" id="2ev$9JFCUkr" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFD8AJ" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFCUun" role="2Oq$k0">
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <node concept="37vLTw" id="2ev$9JFCU_6" role="37wK5m">
+                  <ref role="3cqZAo" node="2ev$9JFBNlS" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFD93F" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqmHc0" resolve="walkList" />
+                <node concept="10QFUN" id="2ev$9JFDJDT" role="37wK5m">
+                  <node concept="3uibUv" id="2ev$9JFDJDN" role="10QFUM">
+                    <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
+                  </node>
+                  <node concept="2YIFZM" id="2ev$9JFDJDP" role="10QFUP">
+                    <ref role="37wK5l" to="xxzj:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
+                    <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                    <node concept="2OqwBi" id="2ev$9JFDJDQ" role="37wK5m">
+                      <node concept="37vLTw" id="2ev$9JFDJDR" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2ev$9JFBKEx" resolve="tree" />
+                      </node>
+                      <node concept="liA8E" id="2ev$9JFDJDS" role="2OqNvi">
+                        <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="10QFUN" id="2ev$9JFD96P" role="37wK5m">
+                  <node concept="3uibUv" id="2ev$9JFD96Q" role="10QFUM">
+                    <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+                  </node>
+                  <node concept="2YIFZM" id="2ev$9JFD96R" role="10QFUP">
+                    <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
+                    <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="2ev$9JFDTdJ" role="3cqZAp">
+            <node concept="3SKdUq" id="2ev$9JFDTrD" role="3SKWNk">
+              <property role="3SKdUp" value="TODO: make sure endWalk is called" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="2ev$9JFDO03" role="3cqZAp">
+            <node concept="3SKWN0" id="2ev$9JFDO04" role="3SKWNk">
+              <node concept="3clFbF" id="2ev$9JFCMRW" role="3SKWNf">
+                <node concept="2OqwBi" id="2ev$9JFCN6D" role="3clFbG">
+                  <node concept="2YIFZM" id="2ev$9JFCN0S" role="2Oq$k0">
+                    <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                    <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                    <node concept="37vLTw" id="2ev$9JFCN5N" role="37wK5m">
+                      <ref role="3cqZAo" node="2ev$9JFBNlS" resolve="mock" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFCNyC" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:5s497Vr3IZm" resolve="endWalk" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3s$Bmu" id="2ev$9JFDT$b" role="3s_gse">
+        <property role="3s$Bm0" value="value" />
+        <node concept="3cqZAl" id="2ev$9JFDT$d" role="3clF45" />
+        <node concept="3Tm1VV" id="2ev$9JFDT$f" role="1B3o_S" />
+        <node concept="3clFbS" id="2ev$9JFDT$g" role="3clF47">
+          <node concept="3clFbH" id="2ev$9JFDVrL" role="3cqZAp" />
+          <node concept="3cpWs8" id="2ev$9JFE0Mt" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFE0Mu" role="3cpWs9">
+              <property role="TrG5h" value="val" />
+              <node concept="3uibUv" id="2ev$9JFE0Mv" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              </node>
+              <node concept="1oi1Uc" id="2ev$9JFE10R" role="33vP2m">
+                <node concept="1oi5Wm" id="2ev$9JFE11a" role="1oi0x0">
+                  <property role="TrG5h" value="foo" />
+                  <node concept="1oi5XN" id="2ev$9JFE11b" role="1oi5zu">
+                    <property role="1oi5yK" value="bar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="2ev$9JFDTTY" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFDTTZ" role="3cpWs9">
+              <property role="TrG5h" value="tree" />
+              <node concept="3uibUv" id="2ev$9JFDTU0" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              </node>
+              <node concept="1oi1Uc" id="2ev$9JFDTU1" role="33vP2m">
+                <node concept="1oi5UN" id="2ev$9JFDTU2" role="1oi0x0">
+                  <node concept="1oi5Wm" id="2ev$9JFDTU3" role="1ojpOf">
+                    <property role="TrG5h" value="foo" />
+                    <node concept="1oi5XN" id="2ev$9JFDTU4" role="1oi5zu">
+                      <property role="1oi5yK" value="bar" />
+                    </node>
+                    <node concept="22Ky0T" id="2ev$9JFE11l" role="lGtFl">
+                      <node concept="2OqwBi" id="2ev$9JFE54U" role="22Ky0K">
+                        <node concept="37vLTw" id="2ev$9JFE11P" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2ev$9JFE0Mu" resolve="val" />
+                        </node>
+                        <node concept="liA8E" id="2ev$9JFE5ai" role="2OqNvi">
+                          <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFDT_k" role="3cqZAp" />
+          <node concept="3cpWs8" id="2ev$9JFDVC5" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFDVC6" role="3cpWs9">
+              <property role="TrG5h" value="mock" />
+              <node concept="3uibUv" id="2ev$9JFDVC7" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:3JgCwkqiP3h" resolve="TreeWalk.Walker" />
+              </node>
+              <node concept="2YIFZM" id="2ev$9JFDVC8" role="33vP2m">
+                <ref role="37wK5l" to="xxzj:~Mockito.mock(java.lang.Class):java.lang.Object" resolve="mock" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="3VsKOn" id="2ev$9JFDVC9" role="37wK5m">
+                  <ref role="3VsUkX" to="ie8e:3JgCwkqiP3h" resolve="TreeWalk.Walker" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFE1bK" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFE1bL" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFE1bM" role="2Oq$k0">
+                <ref role="37wK5l" to="xxzj:~Mockito.when(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="when" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="2OqwBi" id="2ev$9JFE1bN" role="37wK5m">
+                  <node concept="37vLTw" id="2ev$9JFE1bO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ev$9JFDVC6" resolve="mock" />
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFE1bP" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                    <node concept="1rXfSq" id="2ev$9JFEHGh" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyChildren" />
+                    </node>
+                    <node concept="1rXfSq" id="2ev$9JFF3HG" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyTreePartArray" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFE1bW" role="2OqNvi">
+                <ref role="37wK5l" to="akdp:~OngoingStubbing.thenReturn(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="thenReturn" />
+                <node concept="Rm8GO" id="2ev$9JFE9Ih" role="37wK5m">
+                  <ref role="Rm8GQ" to="ie8e:2q_78a95hAM" resolve="WALK" />
+                  <ref role="1Px2BO" to="ie8e:2q_78a95hAL" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFDVCa" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFDVCb" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFDVCc" role="2Oq$k0">
+                <ref role="37wK5l" to="xxzj:~Mockito.when(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="when" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="2OqwBi" id="2ev$9JFDVCd" role="37wK5m">
+                  <node concept="37vLTw" id="2ev$9JFDVCe" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ev$9JFDVC6" resolve="mock" />
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFDVCf" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3$" resolve="walkValues" />
+                    <node concept="1rXfSq" id="2ev$9JFELEF" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFEJ94" resolve="anyValues" />
+                    </node>
+                    <node concept="1rXfSq" id="2ev$9JFF3Pt" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFF1SS" resolve="anyObjectArray" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFDVCm" role="2OqNvi">
+                <ref role="37wK5l" to="akdp:~OngoingStubbing.thenReturn(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="thenReturn" />
+                <node concept="Rm8GO" id="2ev$9JFDVCn" role="37wK5m">
+                  <ref role="Rm8GQ" to="ie8e:2q_78a95hAO" resolve="STOP" />
+                  <ref role="1Px2BO" to="ie8e:2q_78a95hAL" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFDVCo" role="3cqZAp" />
+          <node concept="3clFbF" id="2ev$9JFDVCp" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFDVCq" role="3clFbG">
+              <node concept="2ShNRf" id="2ev$9JFDVCr" role="2Oq$k0">
+                <node concept="1pGfFk" id="2ev$9JFDVCs" role="2ShVmc">
+                  <ref role="37wK5l" to="ie8e:47nvOnTQN6Q" resolve="TreeWalk" />
+                  <node concept="37vLTw" id="2ev$9JFDVCt" role="37wK5m">
+                    <ref role="3cqZAo" node="2ev$9JFDVC6" resolve="mock" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFDVCu" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:1hOy_Afq63K" resolve="walk" />
+                <node concept="2OqwBi" id="2ev$9JFDVCv" role="37wK5m">
+                  <node concept="37vLTw" id="2ev$9JFDVCw" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ev$9JFDTTZ" resolve="tree" />
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFDVCx" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFDVCy" role="3cqZAp" />
+          <node concept="3clFbF" id="2ev$9JFDVCz" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFDVC$" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFDVC_" role="2Oq$k0">
+                <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="37vLTw" id="2ev$9JFDVCA" role="37wK5m">
+                  <ref role="3cqZAo" node="2ev$9JFDVC6" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFDVCB" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <node concept="1rXfSq" id="2ev$9JFFcqm" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqChildren" />
+                  <node concept="2OqwBi" id="2ev$9JFFc$r" role="37wK5m">
+                    <node concept="37vLTw" id="2ev$9JFFcx8" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2ev$9JFDTTZ" resolve="tree" />
+                    </node>
+                    <node concept="liA8E" id="2ev$9JFFcN7" role="2OqNvi">
+                      <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1rXfSq" id="2ev$9JFF4eh" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyTreePartArray" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFEwbB" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFEwbC" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFEwbD" role="2Oq$k0">
+                <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="37vLTw" id="2ev$9JFEwbE" role="37wK5m">
+                  <ref role="3cqZAo" node="2ev$9JFDVC6" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFEwbF" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3$" resolve="walkValues" />
+                <node concept="1rXfSq" id="2ev$9JFFcWR" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFFaOx" resolve="eqValues" />
+                  <node concept="2OqwBi" id="2ev$9JFFd8b" role="37wK5m">
+                    <node concept="37vLTw" id="2ev$9JFFd2u" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2ev$9JFE0Mu" resolve="val" />
+                    </node>
+                    <node concept="liA8E" id="2ev$9JFFdlK" role="2OqNvi">
+                      <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1rXfSq" id="2ev$9JFF4ql" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF1SS" resolve="anyObjectArray" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFEqqZ" role="3cqZAp" />
+          <node concept="3SKdUt" id="2ev$9JFF57x" role="3cqZAp">
+            <node concept="3SKdUq" id="2ev$9JFF5$U" role="3SKWNk">
+              <property role="3SKdUp" value="TODO: only specific validations" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFEqKD" role="3cqZAp">
+            <node concept="2YIFZM" id="2ev$9JFEr5j" role="3clFbG">
+              <ref role="37wK5l" to="xxzj:~Mockito.verifyNoMoreInteractions(java.lang.Object...):void" resolve="verifyNoMoreInteractions" />
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+              <node concept="37vLTw" id="2ev$9JFErhz" role="37wK5m">
+                <ref role="3cqZAo" node="2ev$9JFDVC6" resolve="mock" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFEriu" role="3cqZAp" />
+          <node concept="3SKdUt" id="2ev$9JFDVCL" role="3cqZAp">
+            <node concept="3SKdUq" id="2ev$9JFDVCM" role="3SKWNk">
+              <property role="3SKdUp" value="TODO: make sure endWalk is called" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="2ev$9JFDVCN" role="3cqZAp">
+            <node concept="3SKWN0" id="2ev$9JFDVCO" role="3SKWNk">
+              <node concept="3clFbF" id="2ev$9JFDVCP" role="3SKWNf">
+                <node concept="2OqwBi" id="2ev$9JFDVCQ" role="3clFbG">
+                  <node concept="2YIFZM" id="2ev$9JFDVCR" role="2Oq$k0">
+                    <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                    <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                    <node concept="37vLTw" id="2ev$9JFDVCS" role="37wK5m">
+                      <ref role="3cqZAo" node="2ev$9JFDVC6" resolve="mock" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFDVCT" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:5s497Vr3IZm" resolve="endWalk" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3s$Bmu" id="2ev$9JFFqmj" role="3s_gse">
+        <property role="3s$Bm0" value="child" />
+        <node concept="3cqZAl" id="2ev$9JFFqmk" role="3clF45" />
+        <node concept="3Tm1VV" id="2ev$9JFFqml" role="1B3o_S" />
+        <node concept="3clFbS" id="2ev$9JFFqmm" role="3clF47">
+          <node concept="3clFbH" id="2ev$9JFFqmn" role="3cqZAp" />
+          <node concept="3cpWs8" id="2ev$9JFFvPC" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFFvPD" role="3cpWs9">
+              <property role="TrG5h" value="val" />
+              <node concept="3uibUv" id="2ev$9JFFvPE" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              </node>
+              <node concept="1oi1Uc" id="2ev$9JFFwjN" role="33vP2m">
+                <node concept="1oi5Wm" id="2ev$9JFFwk6" role="1oi0x0">
+                  <property role="TrG5h" value="bar" />
+                  <node concept="1oi5XN" id="2ev$9JFFwk7" role="1oi5zu">
+                    <property role="1oi5yK" value="text" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="2ev$9JFFqmo" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFFqmp" role="3cpWs9">
+              <property role="TrG5h" value="child" />
+              <node concept="3uibUv" id="2ev$9JFFqmq" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              </node>
+              <node concept="1oi1Uc" id="2ev$9JFFqmr" role="33vP2m">
+                <node concept="1oi5UN" id="2ev$9JFFs2v" role="1oi0x0">
+                  <node concept="1oi5Wm" id="2ev$9JFFs2w" role="1ojpOf">
+                    <property role="TrG5h" value="bar" />
+                    <node concept="1oi5XN" id="2ev$9JFFs2x" role="1oi5zu">
+                      <property role="1oi5yK" value="text" />
+                    </node>
+                    <node concept="22Ky0T" id="2ev$9JFFuTX" role="lGtFl">
+                      <node concept="2OqwBi" id="2ev$9JFFwl2" role="22Ky0K">
+                        <node concept="37vLTw" id="2ev$9JFFwkt" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2ev$9JFFvPD" resolve="val" />
+                        </node>
+                        <node concept="liA8E" id="2ev$9JFFwvw" role="2OqNvi">
+                          <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="2ev$9JFG2bs" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFG2bt" role="3cpWs9">
+              <property role="TrG5h" value="role" />
+              <node concept="3uibUv" id="2ev$9JFG2bu" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              </node>
+              <node concept="1oi1Uc" id="2ev$9JFG2OE" role="33vP2m">
+                <node concept="1oi5ST" id="2ev$9JFG2Pd" role="1oi0x0">
+                  <property role="TrG5h" value="foo" />
+                  <node concept="1oi5UN" id="2ev$9JFG2Pe" role="1oi5TL">
+                    <node concept="22Ky0T" id="2ev$9JFG2Pf" role="lGtFl">
+                      <node concept="2OqwBi" id="2ev$9JFG2Pg" role="22Ky0K">
+                        <node concept="37vLTw" id="2ev$9JFG2Ph" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2ev$9JFFqmp" resolve="child" />
+                        </node>
+                        <node concept="liA8E" id="2ev$9JFG2Pi" role="2OqNvi">
+                          <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="2ev$9JFFqmu" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFFqmv" role="3cpWs9">
+              <property role="TrG5h" value="tree" />
+              <node concept="3uibUv" id="2ev$9JFFqmw" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              </node>
+              <node concept="1oi1Uc" id="2ev$9JFFqmx" role="33vP2m">
+                <node concept="1oi5UN" id="2ev$9JFFqmy" role="1oi0x0">
+                  <node concept="1oi5ST" id="2ev$9JFFsam" role="1ojpOf">
+                    <property role="TrG5h" value="foo" />
+                    <node concept="1oi5UN" id="2ev$9JFFsaq" role="1oi5TL" />
+                    <node concept="22Ky0T" id="2ev$9JFG2QS" role="lGtFl">
+                      <node concept="2OqwBi" id="2ev$9JFG2RF" role="22Ky0K">
+                        <node concept="37vLTw" id="2ev$9JFG2R6" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2ev$9JFG2bt" resolve="role" />
+                        </node>
+                        <node concept="liA8E" id="2ev$9JFG3cp" role="2OqNvi">
+                          <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFFqmD" role="3cqZAp" />
+          <node concept="3cpWs8" id="2ev$9JFFqmE" role="3cqZAp">
+            <node concept="3cpWsn" id="2ev$9JFFqmF" role="3cpWs9">
+              <property role="TrG5h" value="mock" />
+              <node concept="3uibUv" id="2ev$9JFFqmG" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:3JgCwkqiP3h" resolve="TreeWalk.Walker" />
+              </node>
+              <node concept="2YIFZM" id="2ev$9JFFqmH" role="33vP2m">
+                <ref role="37wK5l" to="xxzj:~Mockito.mock(java.lang.Class):java.lang.Object" resolve="mock" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="3VsKOn" id="2ev$9JFFqmI" role="37wK5m">
+                  <ref role="3VsUkX" to="ie8e:3JgCwkqiP3h" resolve="TreeWalk.Walker" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFFqmJ" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFFqmK" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFFqmL" role="2Oq$k0">
+                <ref role="37wK5l" to="xxzj:~Mockito.when(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="when" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="2OqwBi" id="2ev$9JFFqmM" role="37wK5m">
+                  <node concept="37vLTw" id="2ev$9JFFqmN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFFqmO" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                    <node concept="1rXfSq" id="2ev$9JFFqmP" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyChildren" />
+                    </node>
+                    <node concept="1rXfSq" id="2ev$9JFFqmQ" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyTreePartArray" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFFqmR" role="2OqNvi">
+                <ref role="37wK5l" to="akdp:~OngoingStubbing.thenReturn(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="thenReturn" />
+                <node concept="Rm8GO" id="2ev$9JFFqmS" role="37wK5m">
+                  <ref role="Rm8GQ" to="ie8e:2q_78a95hAM" resolve="WALK" />
+                  <ref role="1Px2BO" to="ie8e:2q_78a95hAL" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFFqmT" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFFqmU" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFFqmV" role="2Oq$k0">
+                <ref role="37wK5l" to="xxzj:~Mockito.when(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="when" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="2OqwBi" id="2ev$9JFFqmW" role="37wK5m">
+                  <node concept="37vLTw" id="2ev$9JFFqmX" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFFqmY" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3$" resolve="walkValues" />
+                    <node concept="1rXfSq" id="2ev$9JFFqmZ" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFEJ94" resolve="anyValues" />
+                    </node>
+                    <node concept="1rXfSq" id="2ev$9JFFqn0" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFF1SS" resolve="anyObjectArray" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFFqn1" role="2OqNvi">
+                <ref role="37wK5l" to="akdp:~OngoingStubbing.thenReturn(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="thenReturn" />
+                <node concept="Rm8GO" id="2ev$9JFFqn2" role="37wK5m">
+                  <ref role="Rm8GQ" to="ie8e:2q_78a95hAO" resolve="STOP" />
+                  <ref role="1Px2BO" to="ie8e:2q_78a95hAL" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFFqn3" role="3cqZAp" />
+          <node concept="3clFbF" id="2ev$9JFFqn4" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFFqn5" role="3clFbG">
+              <node concept="2ShNRf" id="2ev$9JFFqn6" role="2Oq$k0">
+                <node concept="1pGfFk" id="2ev$9JFFqn7" role="2ShVmc">
+                  <ref role="37wK5l" to="ie8e:47nvOnTQN6Q" resolve="TreeWalk" />
+                  <node concept="37vLTw" id="2ev$9JFFqn8" role="37wK5m">
+                    <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFFqn9" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:1hOy_Afq63K" resolve="walk" />
+                <node concept="2OqwBi" id="2ev$9JFFqna" role="37wK5m">
+                  <node concept="37vLTw" id="2ev$9JFFqnb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2ev$9JFFqmv" resolve="tree" />
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFFqnc" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFFqnd" role="3cqZAp" />
+          <node concept="3clFbF" id="2ev$9JFFqne" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFFqnf" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFFqng" role="2Oq$k0">
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <node concept="37vLTw" id="2ev$9JFFqnh" role="37wK5m">
+                  <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFFqni" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <node concept="1rXfSq" id="2ev$9JFFqnj" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqChildren" />
+                  <node concept="2OqwBi" id="2ev$9JFFqnk" role="37wK5m">
+                    <node concept="37vLTw" id="2ev$9JFFqnl" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2ev$9JFFqmv" resolve="tree" />
+                    </node>
+                    <node concept="liA8E" id="2ev$9JFFqnm" role="2OqNvi">
+                      <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1rXfSq" id="2ev$9JFFqnn" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyTreePartArray" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFFBtS" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFFBtT" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFFBtU" role="2Oq$k0">
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <node concept="37vLTw" id="2ev$9JFFBtV" role="37wK5m">
+                  <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFFBtY" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <node concept="1rXfSq" id="2ev$9JFFBtZ" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqChildren" />
+                  <node concept="2OqwBi" id="2ev$9JFFBu0" role="37wK5m">
+                    <node concept="37vLTw" id="2ev$9JFG3wU" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2ev$9JFG2bt" resolve="role" />
+                    </node>
+                    <node concept="liA8E" id="2ev$9JFFBu2" role="2OqNvi">
+                      <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1rXfSq" id="2ev$9JFFBu3" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyTreePartArray" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFG0cu" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFG0cv" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFG0cw" role="2Oq$k0">
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <node concept="37vLTw" id="2ev$9JFG0cx" role="37wK5m">
+                  <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFG0cy" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <node concept="1rXfSq" id="2ev$9JFG0cz" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqChildren" />
+                  <node concept="2OqwBi" id="2ev$9JFG0c$" role="37wK5m">
+                    <node concept="37vLTw" id="2ev$9JFG0c_" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2ev$9JFFqmp" resolve="child" />
+                    </node>
+                    <node concept="liA8E" id="2ev$9JFG0cA" role="2OqNvi">
+                      <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1rXfSq" id="2ev$9JFG0cB" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyTreePartArray" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFFqno" role="3cqZAp">
+            <node concept="2OqwBi" id="2ev$9JFFqnp" role="3clFbG">
+              <node concept="2YIFZM" id="2ev$9JFFqnq" role="2Oq$k0">
+                <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                <node concept="37vLTw" id="2ev$9JFFqnr" role="37wK5m">
+                  <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2ev$9JFFqns" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3$" resolve="walkValues" />
+                <node concept="1rXfSq" id="2ev$9JFFqnt" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFFaOx" resolve="eqValues" />
+                  <node concept="2OqwBi" id="2ev$9JFFqnu" role="37wK5m">
+                    <node concept="37vLTw" id="2ev$9JFFwOg" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2ev$9JFFvPD" resolve="val" />
+                    </node>
+                    <node concept="liA8E" id="2ev$9JFFqnw" role="2OqNvi">
+                      <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1rXfSq" id="2ev$9JFFqnx" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF1SS" resolve="anyObjectArray" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFFqny" role="3cqZAp" />
+          <node concept="3SKdUt" id="2ev$9JFFqnz" role="3cqZAp">
+            <node concept="3SKdUq" id="2ev$9JFFqn$" role="3SKWNk">
+              <property role="3SKdUp" value="TODO: only specific validations" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ev$9JFFqn_" role="3cqZAp">
+            <node concept="2YIFZM" id="2ev$9JFFqnA" role="3clFbG">
+              <ref role="37wK5l" to="xxzj:~Mockito.verifyNoMoreInteractions(java.lang.Object...):void" resolve="verifyNoMoreInteractions" />
+              <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+              <node concept="37vLTw" id="2ev$9JFFqnB" role="37wK5m">
+                <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ev$9JFFqnC" role="3cqZAp" />
+          <node concept="3SKdUt" id="2ev$9JFFqnD" role="3cqZAp">
+            <node concept="3SKdUq" id="2ev$9JFFqnE" role="3SKWNk">
+              <property role="3SKdUp" value="TODO: make sure endWalk is called" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="2ev$9JFFqnF" role="3cqZAp">
+            <node concept="3SKWN0" id="2ev$9JFFqnG" role="3SKWNk">
+              <node concept="3clFbF" id="2ev$9JFFqnH" role="3SKWNf">
+                <node concept="2OqwBi" id="2ev$9JFFqnI" role="3clFbG">
+                  <node concept="2YIFZM" id="2ev$9JFFqnJ" role="2Oq$k0">
+                    <ref role="1Pybhc" to="xxzj:~Mockito" resolve="Mockito" />
+                    <ref role="37wK5l" to="xxzj:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                    <node concept="37vLTw" id="2ev$9JFFqnK" role="37wK5m">
+                      <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2ev$9JFFqnL" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:5s497Vr3IZm" resolve="endWalk" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

@@ -10,6 +10,7 @@
   </models>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/mockito-core-2.0.3-beta.jar" />
+    <stubModelEntry path="${module}/lib/objenesis-2.1.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
