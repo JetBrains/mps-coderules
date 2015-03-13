@@ -3474,7 +3474,74 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="6tTPqJYXEyR" role="jymVt" />
+    <node concept="2tJIrI" id="2ev$9JFO6zk" role="jymVt" />
+    <node concept="3clFb_" id="2ev$9JFO7gJ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="hashCode" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="2ev$9JFO7gK" role="1B3o_S" />
+      <node concept="10Oyi0" id="2ev$9JFO7gL" role="3clF45" />
+      <node concept="2AHcQZ" id="2ev$9JFO7gP" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="2ev$9JFO7gQ" role="3clF47">
+        <node concept="3SKdUt" id="2ev$9JFOlPY" role="3cqZAp">
+          <node concept="3SKdUq" id="2ev$9JFOmtb" role="3SKWNk">
+            <property role="3SKdUp" value="avoid recursing into the value as there might be an infinite loop" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2ev$9JFOazL" role="3cqZAp">
+          <node concept="3cpWsn" id="2ev$9JFOazM" role="3cpWs9">
+            <property role="TrG5h" value="value" />
+            <node concept="3uibUv" id="2ev$9JFOazI" role="1tU5fm">
+              <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+            </node>
+            <node concept="2OqwBi" id="2ev$9JFOazN" role="33vP2m">
+              <node concept="1rXfSq" id="2ev$9JFOazO" role="2Oq$k0">
+                <ref role="37wK5l" node="dfChU1gcsX" resolve="findRoot" />
+              </node>
+              <node concept="liA8E" id="2ev$9JFOazP" role="2OqNvi">
+                <ref role="37wK5l" node="3HJTsBmBZ0h" resolve="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="2ev$9JFOaLH" role="3cqZAp">
+          <node concept="1eOMI4" id="2ev$9JFOfB1" role="3cqZAk">
+            <node concept="3K4zz7" id="2ev$9JFOfB2" role="1eOMHV">
+              <node concept="3nyPlj" id="2ev$9JFOgeG" role="3K4GZi">
+                <ref role="37wK5l" node="3HJTsBmCeUf" resolve="hashCode" />
+              </node>
+              <node concept="3cpWs3" id="2ev$9JFOhVI" role="3K4E3e">
+                <node concept="3cmrfG" id="2ev$9JFOizR" role="3uHU7w">
+                  <property role="3cmrfH" value="29" />
+                </node>
+                <node concept="17qRlL" id="2ev$9JFOfB4" role="3uHU7B">
+                  <node concept="3cmrfG" id="2ev$9JFOfB5" role="3uHU7B">
+                    <property role="3cmrfH" value="23" />
+                  </node>
+                  <node concept="2YIFZM" id="2ev$9JFOfB6" role="3uHU7w">
+                    <ref role="37wK5l" to="e2lb:~System.identityHashCode(java.lang.Object):int" resolve="identityHashCode" />
+                    <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
+                    <node concept="37vLTw" id="2ev$9JFOfB7" role="37wK5m">
+                      <ref role="3cqZAo" node="2ev$9JFOazM" resolve="value" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3y3z36" id="2ev$9JFOfB8" role="3K4Cdx">
+                <node concept="10Nm6u" id="2ev$9JFOfB9" role="3uHU7w" />
+                <node concept="37vLTw" id="2ev$9JFOfBa" role="3uHU7B">
+                  <ref role="3cqZAo" node="2ev$9JFOazM" resolve="value" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2ev$9JFO5ru" role="jymVt" />
     <node concept="3clFb_" id="5NuEpF1xPNu" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="toString" />
@@ -3664,7 +3731,7 @@
                     <ref role="1HBi2w" node="4U_yxogAknZ" resolve="TreeLogical" />
                   </node>
                   <node concept="liA8E" id="3HJTsBmTo2d" role="2OqNvi">
-                    <ref role="37wK5l" node="3HJTsBmCeUf" resolve="hashCode" />
+                    <ref role="37wK5l" node="2ev$9JFO7gJ" resolve="hashCode" />
                   </node>
                 </node>
               </node>
