@@ -198,6 +198,9 @@
       <concept id="1179357154354" name="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression" flags="nn" index="2nawOw">
         <child id="1179357286898" name="inputExpression" index="2nb13w" />
       </concept>
+      <concept id="1174482753837" name="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" flags="ng" index="1OC9wW">
+        <property id="1174482761807" name="text" index="1OCb_u" />
+      </concept>
       <concept id="1174482804200" name="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" flags="ng" index="1OClNT" />
       <concept id="1174482808826" name="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" flags="ng" index="1OCmVF" />
       <concept id="1174484562151" name="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" flags="ng" index="1OJ37Q" />
@@ -211,6 +214,7 @@
       <concept id="1174510540317" name="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" flags="nn" index="1Qi9sc">
         <child id="1174510571016" name="regexp" index="1QigWp" />
       </concept>
+      <concept id="1174552240608" name="jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp" flags="ng" index="1SLe3L" />
       <concept id="1174554186090" name="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp" flags="ng" index="1SSD1V">
         <child id="1174557628217" name="part" index="1T5LoC" />
       </concept>
@@ -282,8 +286,15 @@
             <node concept="2nawOw" id="2E5lcNndpuB" role="3clFbG">
               <node concept="1Qi9sc" id="2E5lcNndpuD" role="1YN4dH">
                 <node concept="1OJ37Q" id="2E5lcNndqgq" role="1QigWp">
-                  <node concept="1SYyG9" id="2E5lcNndq4L" role="1OLpdg">
-                    <ref role="1SYXPG" to="tpfp:h5SV1SY" resolve="\p{Alpha}" />
+                  <node concept="1OJ37Q" id="2ev$9JFMFnJ" role="1OLpdg">
+                    <node concept="1SLe3L" id="2ev$9JFMG6J" role="1OLpdg">
+                      <node concept="1OC9wW" id="2ev$9JFMGbW" role="1OLDsb">
+                        <property role="1OCb_u" value="_" />
+                      </node>
+                    </node>
+                    <node concept="1SYyG9" id="2E5lcNndq4L" role="1OLqdY">
+                      <ref role="1SYXPG" to="tpfp:h5SV1SY" resolve="\p{Alpha}" />
+                    </node>
                   </node>
                   <node concept="1OCmVF" id="2E5lcNndqE8" role="1OLqdY">
                     <node concept="1SSJmt" id="2E5lcNndqgp" role="1OLDsb">
