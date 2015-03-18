@@ -740,8 +740,8 @@
                         <ref role="37wK5l" to="jfki:~Substitution.Binding.var()" resolve="var" />
                       </node>
                     </node>
-                    <node concept="liA8E" id="3JgCwkqBAVm" role="2OqNvi">
-                      <ref role="37wK5l" to="jfki:~Var.name()" resolve="name" />
+                    <node concept="liA8E" id="56MMu0Aw8Ta" role="2OqNvi">
+                      <ref role="37wK5l" to="jfki:~Node.symbol()" resolve="symbol" />
                     </node>
                   </node>
                 </node>

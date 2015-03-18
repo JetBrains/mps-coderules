@@ -13,8 +13,8 @@
     <import index="c87j" ref="r:db5d11a3-3c62-4a1b-ace3-b983df6a66b4(jetbrains.mps.type.inference.common)" />
     <import index="mqgp" ref="r:df98e090-e1cf-4263-9336-dc1ffd952995(jetbrains.mps.typechecking.builtin.conversion)" />
     <import index="7uia" ref="f:java_stub#a5478664-6b44-4c62-a9f7-434f8aa57eee#runtime(runtime@java_stub)" />
+    <import index="jfki" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification.tree/jetbrains.mps.unification@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
-    <import index="jfki" ref="f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -679,8 +679,12 @@
                   <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                 </node>
               </node>
-              <node concept="liA8E" id="7d$oK1$Bdj8" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+              <node concept="liA8E" id="56MMu0Ap1Z2" role="2OqNvi">
+                <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                <node concept="Rm8GO" id="56MMu0Ap21O" role="37wK5m">
+                  <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                  <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="7d$oK1$Bbf8" role="3uHU7B">
@@ -692,8 +696,12 @@
                   <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                 </node>
               </node>
-              <node concept="liA8E" id="7d$oK1$Bc6k" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+              <node concept="liA8E" id="56MMu0Ap8dj" role="2OqNvi">
+                <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                <node concept="Rm8GO" id="56MMu0Ap8dk" role="37wK5m">
+                  <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                  <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                </node>
               </node>
             </node>
           </node>
@@ -749,8 +757,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BiiZ" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                <node concept="liA8E" id="56MMu0AqiSo" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0AqiSp" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="7d$oK1$BiEd" role="3uHU7w">
@@ -762,8 +774,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BiEh" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+                <node concept="liA8E" id="56MMu0Ap7To" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0Ap7Tp" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -820,8 +836,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BrLy" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                <node concept="liA8E" id="56MMu0Aqjyf" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0Aqjyg" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="7d$oK1$BrLz" role="3uHU7B">
@@ -833,8 +853,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BrLB" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+                <node concept="liA8E" id="56MMu0Ap7zP" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0Ap7zQ" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -907,8 +931,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$B_9D" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                <node concept="liA8E" id="56MMu0Aqjea" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0Aqjeb" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="7d$oK1$B_9E" role="3uHU7B">
@@ -920,8 +948,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$B_9I" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                <node concept="liA8E" id="56MMu0AqjqQ" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0AqjqR" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1048,8 +1080,12 @@
                   <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                 </node>
               </node>
-              <node concept="liA8E" id="7d$oK1$BQco" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+              <node concept="liA8E" id="56MMu0Ap83i" role="2OqNvi">
+                <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                <node concept="Rm8GO" id="56MMu0Ap83j" role="37wK5m">
+                  <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                  <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="7d$oK1$BQcp" role="3uHU7B">
@@ -1061,8 +1097,12 @@
                   <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                 </node>
               </node>
-              <node concept="liA8E" id="7d$oK1$BQct" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+              <node concept="liA8E" id="56MMu0Ap7Jy" role="2OqNvi">
+                <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                <node concept="Rm8GO" id="56MMu0Ap7Jz" role="37wK5m">
+                  <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                  <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                </node>
               </node>
             </node>
           </node>
@@ -1119,8 +1159,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BQcO" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                <node concept="liA8E" id="56MMu0Aqj6W" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0Aqj6X" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="7d$oK1$BQcP" role="3uHU7w">
@@ -1132,8 +1176,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BQcT" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+                <node concept="liA8E" id="56MMu0Ap8ng" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0Ap8nh" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1191,8 +1239,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BQdg" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                <node concept="liA8E" id="56MMu0AqiZI" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0AqiZJ" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="7d$oK1$BQdh" role="3uHU7B">
@@ -1204,8 +1256,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BQdl" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+                <node concept="liA8E" id="56MMu0Ap7qM" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0Ap7qN" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1279,8 +1335,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BQdN" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                <node concept="liA8E" id="56MMu0AqjjC" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0AqjjD" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  </node>
                 </node>
               </node>
               <node concept="2OqwBi" id="7d$oK1$BQdO" role="3uHU7B">
@@ -1292,8 +1352,12 @@
                     <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
                   </node>
                 </node>
-                <node concept="liA8E" id="7d$oK1$BQdS" role="2OqNvi">
-                  <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                <node concept="liA8E" id="56MMu0ApUmr" role="2OqNvi">
+                  <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                  <node concept="Rm8GO" id="56MMu0ApUms" role="37wK5m">
+                    <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                    <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  </node>
                 </node>
               </node>
             </node>

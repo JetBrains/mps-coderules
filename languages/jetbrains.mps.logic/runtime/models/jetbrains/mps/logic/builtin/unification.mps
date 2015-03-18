@@ -803,8 +803,8 @@
             <node concept="3cpWs8" id="1Ns6gpY7SoW" role="3cqZAp">
               <node concept="3cpWsn" id="1Ns6gpY7SoX" role="3cpWs9">
                 <property role="TrG5h" value="bvar" />
-                <node concept="3uibUv" id="1Ns6gpY7SoU" role="1tU5fm">
-                  <ref role="3uigEE" to="jfki:~Var" resolve="Var" />
+                <node concept="3uibUv" id="56MMu0Aqrrr" role="1tU5fm">
+                  <ref role="3uigEE" to="jfki:~Node" resolve="Node" />
                 </node>
                 <node concept="2OqwBi" id="1Ns6gpY7SoY" role="33vP2m">
                   <node concept="37vLTw" id="1Ns6gpY7SoZ" role="2Oq$k0">
@@ -914,8 +914,12 @@
                         <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
                       </node>
                     </node>
-                    <node concept="liA8E" id="6SkxsMzEqaD" role="2OqNvi">
-                      <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+                    <node concept="liA8E" id="56MMu0Ap5n2" role="2OqNvi">
+                      <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                      <node concept="Rm8GO" id="56MMu0Ap5n3" role="37wK5m">
+                        <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                        <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                      </node>
                     </node>
                   </node>
                   <node concept="3eNFk2" id="6SkxsMzEv3z" role="3eNLev">
@@ -928,28 +932,27 @@
                           <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
                         </node>
                       </node>
-                      <node concept="liA8E" id="6SkxsMzEvgy" role="2OqNvi">
-                        <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                      <node concept="liA8E" id="56MMu0ApUkU" role="2OqNvi">
+                        <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                        <node concept="Rm8GO" id="56MMu0ApUkV" role="37wK5m">
+                          <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                          <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                        </node>
                       </node>
                     </node>
                     <node concept="3clFbS" id="6SkxsMzEv3_" role="3eOfB_">
                       <node concept="3cpWs8" id="1Ns6gpY7VW1" role="3cqZAp">
                         <node concept="3cpWsn" id="1Ns6gpY7VW2" role="3cpWs9">
                           <property role="TrG5h" value="nvar" />
-                          <node concept="3uibUv" id="1Ns6gpY7VW0" role="1tU5fm">
-                            <ref role="3uigEE" to="jfki:~Var" resolve="Var" />
+                          <node concept="3uibUv" id="56MMu0Aqrmr" role="1tU5fm">
+                            <ref role="3uigEE" to="jfki:~Node" resolve="Node" />
                           </node>
-                          <node concept="2OqwBi" id="1Ns6gpY7VW3" role="33vP2m">
-                            <node concept="2OqwBi" id="1Ns6gpY7VW4" role="2Oq$k0">
-                              <node concept="37vLTw" id="1Ns6gpY7VW5" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
-                              </node>
-                              <node concept="liA8E" id="1Ns6gpY7VW6" role="2OqNvi">
-                                <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
-                              </node>
+                          <node concept="2OqwBi" id="1Ns6gpY7VW4" role="33vP2m">
+                            <node concept="37vLTw" id="1Ns6gpY7VW5" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                             </node>
-                            <node concept="liA8E" id="1Ns6gpY7VW7" role="2OqNvi">
-                              <ref role="37wK5l" to="jfki:~Node.asVar()" resolve="asVar" />
+                            <node concept="liA8E" id="1Ns6gpY7VW6" role="2OqNvi">
+                              <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
                             </node>
                           </node>
                         </node>
@@ -1043,23 +1046,18 @@
                 <node concept="3clFbS" id="5p8T3QHDoXj" role="3eOfB_">
                   <node concept="3clFbJ" id="5p8T3QHDAFU" role="3cqZAp">
                     <node concept="3clFbS" id="5p8T3QHDAFW" role="3clFbx">
-                      <node concept="3cpWs8" id="5p8T3QHGX$v" role="3cqZAp">
-                        <node concept="3cpWsn" id="5p8T3QHGX$w" role="3cpWs9">
+                      <node concept="3cpWs8" id="56MMu0AoNE1" role="3cqZAp">
+                        <node concept="3cpWsn" id="56MMu0AoNE2" role="3cpWs9">
                           <property role="TrG5h" value="nterm" />
-                          <node concept="3uibUv" id="5p8T3QHGX$u" role="1tU5fm">
-                            <ref role="3uigEE" to="jfki:~Term" resolve="Term" />
+                          <node concept="3uibUv" id="56MMu0AoNDZ" role="1tU5fm">
+                            <ref role="3uigEE" to="jfki:~Node" resolve="Node" />
                           </node>
-                          <node concept="2OqwBi" id="5p8T3QHGX$x" role="33vP2m">
-                            <node concept="2OqwBi" id="5p8T3QHGX$y" role="2Oq$k0">
-                              <node concept="37vLTw" id="5p8T3QHGX$z" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
-                              </node>
-                              <node concept="liA8E" id="5p8T3QHGX$$" role="2OqNvi">
-                                <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
-                              </node>
+                          <node concept="2OqwBi" id="56MMu0AoNE3" role="33vP2m">
+                            <node concept="37vLTw" id="56MMu0AoNE4" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                             </node>
-                            <node concept="liA8E" id="5p8T3QHGX$_" role="2OqNvi">
-                              <ref role="37wK5l" to="jfki:~Node.asTerm()" resolve="asTerm" />
+                            <node concept="liA8E" id="56MMu0AoNE5" role="2OqNvi">
+                              <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
                             </node>
                           </node>
                         </node>
@@ -1079,10 +1077,10 @@
                                 <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
                                 <node concept="2OqwBi" id="5p8T3QHGZ1m" role="37wK5m">
                                   <node concept="37vLTw" id="5p8T3QHGZ1n" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="5p8T3QHGX$w" resolve="nterm" />
+                                    <ref role="3cqZAo" node="56MMu0AoNE2" resolve="nterm" />
                                   </node>
                                   <node concept="liA8E" id="5p8T3QHGZ1o" role="2OqNvi">
-                                    <ref role="37wK5l" to="jfki:~Term.symbol()" resolve="symbol" />
+                                    <ref role="37wK5l" to="jfki:~Node.symbol()" resolve="symbol" />
                                   </node>
                                 </node>
                               </node>
@@ -1130,7 +1128,11 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="5p8T3QHDB81" role="2OqNvi">
-                        <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+                        <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                        <node concept="Rm8GO" id="56MMu0AoMUp" role="37wK5m">
+                          <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                          <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                        </node>
                       </node>
                     </node>
                     <node concept="3eNFk2" id="5p8T3QHDB8O" role="3eNLev">
@@ -1143,28 +1145,27 @@
                             <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
                           </node>
                         </node>
-                        <node concept="liA8E" id="5p8T3QHDBu$" role="2OqNvi">
-                          <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+                        <node concept="liA8E" id="56MMu0ApUmr" role="2OqNvi">
+                          <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                          <node concept="Rm8GO" id="56MMu0ApUms" role="37wK5m">
+                            <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                            <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                          </node>
                         </node>
                       </node>
                       <node concept="3clFbS" id="5p8T3QHDB8Q" role="3eOfB_">
                         <node concept="3cpWs8" id="5p8T3QHDBTm" role="3cqZAp">
                           <node concept="3cpWsn" id="5p8T3QHDBTn" role="3cpWs9">
                             <property role="TrG5h" value="nvar" />
-                            <node concept="3uibUv" id="5p8T3QHDBQ4" role="1tU5fm">
-                              <ref role="3uigEE" to="jfki:~Var" resolve="Var" />
+                            <node concept="3uibUv" id="56MMu0AqrCf" role="1tU5fm">
+                              <ref role="3uigEE" to="jfki:~Node" resolve="Node" />
                             </node>
-                            <node concept="2OqwBi" id="5p8T3QHDBTo" role="33vP2m">
-                              <node concept="2OqwBi" id="5p8T3QHDBTp" role="2Oq$k0">
-                                <node concept="37vLTw" id="5p8T3QHDBTq" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
-                                </node>
-                                <node concept="liA8E" id="5p8T3QHDBTr" role="2OqNvi">
-                                  <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
-                                </node>
+                            <node concept="2OqwBi" id="5p8T3QHDBTp" role="33vP2m">
+                              <node concept="37vLTw" id="5p8T3QHDBTq" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                               </node>
-                              <node concept="liA8E" id="5p8T3QHDBTs" role="2OqNvi">
-                                <ref role="37wK5l" to="jfki:~Node.asVar()" resolve="asVar" />
+                              <node concept="liA8E" id="5p8T3QHDBTr" role="2OqNvi">
+                                <ref role="37wK5l" to="jfki:~Substitution.Binding.node()" resolve="node" />
                               </node>
                             </node>
                           </node>
@@ -2738,8 +2739,12 @@
             <node concept="37vLTw" id="6xYPVrpAeuZ" role="2Oq$k0">
               <ref role="3cqZAo" node="6xYPVrp$v6t" resolve="node" />
             </node>
-            <node concept="liA8E" id="6xYPVrpAgn2" role="2OqNvi">
-              <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+            <node concept="liA8E" id="56MMu0Ap5oY" role="2OqNvi">
+              <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+              <node concept="Rm8GO" id="56MMu0Ap5oZ" role="37wK5m">
+                <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+              </node>
             </node>
           </node>
           <node concept="3eNFk2" id="6xYPVrpAgRc" role="3eNLev">
@@ -2778,8 +2783,12 @@
               <node concept="37vLTw" id="6xYPVrpAiyh" role="2Oq$k0">
                 <ref role="3cqZAo" node="6xYPVrp$v6t" resolve="node" />
               </node>
-              <node concept="liA8E" id="6xYPVrpAklO" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+              <node concept="liA8E" id="56MMu0ApUC5" role="2OqNvi">
+                <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                <node concept="Rm8GO" id="56MMu0ApUC6" role="37wK5m">
+                  <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                  <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                </node>
               </node>
             </node>
           </node>
@@ -2833,8 +2842,12 @@
             <node concept="37vLTw" id="6xYPVrpAspT" role="2Oq$k0">
               <ref role="3cqZAo" node="6xYPVrpA0lw" resolve="node" />
             </node>
-            <node concept="liA8E" id="6xYPVrpAuju" role="2OqNvi">
-              <ref role="37wK5l" to="jfki:~Node.isTerm()" resolve="isTerm" />
+            <node concept="liA8E" id="56MMu0Ap1Z2" role="2OqNvi">
+              <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+              <node concept="Rm8GO" id="56MMu0Ap21O" role="37wK5m">
+                <ref role="Rm8GQ" to="jfki:~Node.FUN" resolve="FUN" />
+                <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="6xYPVrpA0lR" role="3clFbx">
@@ -2851,16 +2864,11 @@
                       <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
                       <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
                       <node concept="2OqwBi" id="6xYPVrpAEDK" role="37wK5m">
-                        <node concept="2OqwBi" id="6xYPVrpAG$0" role="2Oq$k0">
-                          <node concept="37vLTw" id="6xYPVrpAGy_" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6xYPVrpA0lw" resolve="node" />
-                          </node>
-                          <node concept="liA8E" id="6xYPVrpAGKP" role="2OqNvi">
-                            <ref role="37wK5l" to="jfki:~Node.asTerm()" resolve="asTerm" />
-                          </node>
+                        <node concept="37vLTw" id="6xYPVrpAGy_" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6xYPVrpA0lw" resolve="node" />
                         </node>
                         <node concept="liA8E" id="6xYPVrpAEDM" role="2OqNvi">
-                          <ref role="37wK5l" to="jfki:~Term.symbol()" resolve="symbol" />
+                          <ref role="37wK5l" to="jfki:~Node.symbol()" resolve="symbol" />
                         </node>
                       </node>
                     </node>
@@ -2952,8 +2960,12 @@
               <node concept="37vLTw" id="6xYPVrpAww9" role="2Oq$k0">
                 <ref role="3cqZAo" node="6xYPVrpA0lw" resolve="node" />
               </node>
-              <node concept="liA8E" id="6xYPVrpAxJU" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+              <node concept="liA8E" id="56MMu0ApUht" role="2OqNvi">
+                <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+                <node concept="Rm8GO" id="56MMu0ApUjt" role="37wK5m">
+                  <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+                  <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                </node>
               </node>
             </node>
           </node>

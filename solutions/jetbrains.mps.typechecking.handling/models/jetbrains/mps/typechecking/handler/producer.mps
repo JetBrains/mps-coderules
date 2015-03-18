@@ -3551,25 +3551,24 @@
             </node>
             <node concept="3clFbF" id="4sVJFklNhai" role="3cqZAp">
               <node concept="37vLTI" id="4sVJFklNln7" role="3clFbG">
-                <node concept="2OqwBi" id="4sVJFklNmbq" role="37vLTx">
-                  <node concept="2OqwBi" id="4sVJFklNlxY" role="2Oq$k0">
-                    <node concept="37vLTw" id="4sVJFklNlw$" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5s497VqXKRl" resolve="tbr" />
-                    </node>
-                    <node concept="liA8E" id="4sVJFklNlOX" role="2OqNvi">
-                      <ref role="37wK5l" to="jfki:~Node.asVar()" resolve="asVar" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4sVJFklNnA4" role="2OqNvi">
-                    <ref role="37wK5l" to="jfki:~Var.name()" resolve="name" />
-                  </node>
-                </node>
                 <node concept="2OqwBi" id="4sVJFklNkGk" role="37vLTJ">
                   <node concept="37vLTw" id="4sVJFklNkAO" role="2Oq$k0">
                     <ref role="3cqZAo" node="4sVJFklNkAI" resolve="varNode" />
                   </node>
                   <node concept="3TrcHB" id="4sVJFklNkU2" role="2OqNvi">
                     <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="56MMu0Aqu2g" role="37vLTx">
+                  <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+                  <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                  <node concept="2OqwBi" id="4sVJFklNmbq" role="37wK5m">
+                    <node concept="37vLTw" id="4sVJFklNlw$" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5s497VqXKRl" resolve="tbr" />
+                    </node>
+                    <node concept="liA8E" id="4sVJFklNnA4" role="2OqNvi">
+                      <ref role="37wK5l" to="jfki:~Node.symbol()" resolve="symbol" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3579,8 +3578,12 @@
             <node concept="37vLTw" id="4sVJFklMn7y" role="2Oq$k0">
               <ref role="3cqZAo" node="5s497VqXKRl" resolve="tbr" />
             </node>
-            <node concept="liA8E" id="4sVJFklMnxX" role="2OqNvi">
-              <ref role="37wK5l" to="jfki:~Node.isVar()" resolve="isVar" />
+            <node concept="liA8E" id="56MMu0ApUmr" role="2OqNvi">
+              <ref role="37wK5l" to="jfki:~Node.is(Kind)" resolve="is" />
+              <node concept="Rm8GO" id="56MMu0ApUms" role="37wK5m">
+                <ref role="1Px2BO" to="jfki:~Node.Kind" resolve="Node.Kind" />
+                <ref role="Rm8GQ" to="jfki:~Node.VAR" resolve="VAR" />
+              </node>
             </node>
           </node>
           <node concept="9aQIb" id="4sVJFklMnzF" role="9aQIa">
@@ -4749,18 +4752,22 @@
                   <node concept="3clFbH" id="2q_78a90oRv" role="3cqZAp" />
                 </node>
                 <node concept="2OqwBi" id="677NV56dk3K" role="3clFbw">
-                  <node concept="2OqwBi" id="677NV56dho9" role="2Oq$k0">
-                    <node concept="37vLTw" id="677NV56dguQ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="104EUzG3OTw" resolve="variable" />
-                    </node>
-                    <node concept="liA8E" id="677NV56djRJ" role="2OqNvi">
-                      <ref role="37wK5l" to="ie8e:uNmovXiEdQ" resolve="name" />
-                    </node>
-                  </node>
                   <node concept="liA8E" id="677NV56dlaq" role="2OqNvi">
                     <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
                     <node concept="Xl_RD" id="677NV56dlcE" role="37wK5m">
                       <property role="Xl_RC" value="$" />
+                    </node>
+                  </node>
+                  <node concept="2YIFZM" id="31Jz$8bZWnC" role="2Oq$k0">
+                    <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                    <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+                    <node concept="2OqwBi" id="31Jz$8bZWnD" role="37wK5m">
+                      <node concept="37vLTw" id="31Jz$8bZWnE" role="2Oq$k0">
+                        <ref role="3cqZAo" node="104EUzG3OTw" resolve="variable" />
+                      </node>
+                      <node concept="liA8E" id="31Jz$8bZWnF" role="2OqNvi">
+                        <ref role="37wK5l" to="ie8e:56MMu0Ark7d" resolve="symbol" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4842,12 +4849,16 @@
                             <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
-                        <node concept="2OqwBi" id="2q_78a8qgnc" role="37vLTx">
-                          <node concept="37vLTw" id="2q_78a8qgnd" role="2Oq$k0">
-                            <ref role="3cqZAo" node="104EUzG3OTw" resolve="variable" />
-                          </node>
-                          <node concept="liA8E" id="2q_78a8qgne" role="2OqNvi">
-                            <ref role="37wK5l" to="ie8e:uNmovXiEdQ" resolve="name" />
+                        <node concept="2YIFZM" id="31Jz$8bZPXE" role="37vLTx">
+                          <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+                          <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                          <node concept="2OqwBi" id="31Jz$8bZRWl" role="37wK5m">
+                            <node concept="37vLTw" id="31Jz$8bZQ4I" role="2Oq$k0">
+                              <ref role="3cqZAo" node="104EUzG3OTw" resolve="variable" />
+                            </node>
+                            <node concept="liA8E" id="31Jz$8bZT96" role="2OqNvi">
+                              <ref role="37wK5l" to="ie8e:56MMu0Ark7d" resolve="symbol" />
+                            </node>
                           </node>
                         </node>
                       </node>

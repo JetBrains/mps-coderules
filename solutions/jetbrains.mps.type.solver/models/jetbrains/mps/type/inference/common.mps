@@ -175,7 +175,7 @@
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="238586457668550951" name="jetbrains.mps.logic.structure.NodeSubstitution" flags="ng" index="22Ky0T">
+      <concept id="238586457668550951" name="jetbrains.mps.logic.structure.LogicalSubstitution" flags="ng" index="22Ky0T">
         <child id="238586457668550958" name="expression" index="22Ky0K" />
       </concept>
       <concept id="6726466946035358271" name="jetbrains.mps.logic.structure.ValueExpression" flags="ng" index="3iwiKN">
@@ -1301,8 +1301,8 @@
                         <ref role="37wK5l" to="jfki:~Substitution.Binding.var()" resolve="var" />
                       </node>
                     </node>
-                    <node concept="liA8E" id="3JgCwkqBAVm" role="2OqNvi">
-                      <ref role="37wK5l" to="jfki:~Var.name()" resolve="name" />
+                    <node concept="liA8E" id="56MMu0Awe2w" role="2OqNvi">
+                      <ref role="37wK5l" to="jfki:~Node.symbol()" resolve="symbol" />
                     </node>
                   </node>
                 </node>
