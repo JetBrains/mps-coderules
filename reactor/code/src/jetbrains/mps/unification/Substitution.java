@@ -32,15 +32,15 @@ public interface Substitution {
     Collection<Binding> bindings() ;
 
     public class Binding {
-        private Var myVar;
+        private Node myVar;
         private Node myNode;
 
-        public Binding(Var myVar, Node myNode) {
+        public Binding(Node myVar, Node myNode) {
             this.myVar = myVar;
             this.myNode = myNode;
         }
 
-        public Var var() {
+        public Node var() {
             return myVar;
         }
 

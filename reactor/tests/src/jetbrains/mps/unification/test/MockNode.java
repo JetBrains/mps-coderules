@@ -30,41 +30,73 @@ public abstract class MockNode implements Node {
     public MockNode() {
     }
 
-    public static Term term(Object sym, Node ... children) {
+    public static Node term(Object sym, Node ... children) {
         return new MockTerm(sym, children);
     }
 
-    public static Var var(String name) {
+    public static Node var(String name) {
         return new MockVar(name);
     }
 
-    public static class MockTerm extends MockNode implements Term {
+    public static Node ref(Node term) {
+        return new MockRef(term);
+    }
+
+    public static Node ref(TermLookup termLookup) {
+        return new MockRef(termLookup);
+    }
+
+    interface TermLookup {
+        Node lookupTerm();
+    }
+
+    @Override
+    public boolean isTerm() {
+        return is(Kind.FUN);
+    }
+
+    @Override
+    public Term asTerm() {
+        return (Term) this;
+    }
+
+    @Override
+    public boolean isVar() {
+        return is(Kind.VAR);
+    }
+
+    @Override
+    public Var asVar() {
+        return (Var) this;
+    }
+
+    @Override
+    public Object symbol() {
+        return null;
+    }
+
+    @Override
+    public Collection<? extends Node> children() {
+        return null;
+    }
+
+    @Override
+    public Node get() {
+        return this;
+    }
+
+    @Override
+    public int compareTo(Node node) {
+        return String.valueOf(symbol()).compareTo(String.valueOf(node.symbol()));
+    }
+
+    public static class MockTerm extends MockNode {
         private List<Node> myChildren;
         private Object mySymbol;
 
         public MockTerm(Object symbol, Node... children) {
             mySymbol = symbol;
             this.myChildren = Arrays.asList(children);
-        }
-
-        @Override
-        public boolean isTerm() {
-            return true;
-        }
-
-        @Override
-        public boolean isVar() {
-            return false;
-        }
-
-        @Override
-        public Term asTerm() {
-            return this;
-        }
-
-        @Override
-        public Var asVar() {
-            throw new IllegalStateException();
         }
 
         @Override
@@ -75,6 +107,11 @@ public abstract class MockNode implements Node {
         @Override
         public Collection<Node> children() {
             return Collections.unmodifiableList(myChildren);
+        }
+
+        @Override
+        public boolean is(Kind kind) {
+            return Kind.FUN == kind;
         }
 
         @Override
@@ -118,23 +155,13 @@ public abstract class MockNode implements Node {
         }
 
         @Override
-        public boolean isTerm() {
-            return false;
+        public Object symbol() {
+            return myName;
         }
 
         @Override
-        public boolean isVar() {
-            return true;
-        }
-
-        @Override
-        public Term asTerm() {
-            throw new IllegalStateException();
-        }
-
-        @Override
-        public Var asVar() {
-            return this;
+        public boolean is(Kind kind) {
+            return Kind.VAR == kind;
         }
 
         @Override
@@ -152,9 +179,53 @@ public abstract class MockNode implements Node {
             return ((MockVar)o).myName.equals(myName);
         }
 
+    }
+
+    public static class MockRef extends MockNode  {
+
+        private Node term;
+        private TermLookup termLookup;
+
+        public MockRef(Node term) {
+            this.term = term;
+        }
+
+        public MockRef(TermLookup termLookup) {
+            this.termLookup = termLookup;
+        }
+
         @Override
-        public int compareTo(Var var) {
-            return ((String)myName).compareTo((String)((MockVar)var).myName);
+        public final Node get() {
+            if (term == null && termLookup != null) {
+                term = termLookup.lookupTerm();
+                termLookup = null;
+            }
+            return term;
+        }
+
+        @Override
+        public boolean is(Kind kind) {
+            return Kind.REF == kind;
+        }
+
+        @Override
+        public String toString() {
+            Node t = get();
+            return t != null ? "^"+ t.symbol() : "^<NULL>";
+        }
+
+        @Override
+        public boolean equals(Object that) {
+            if (that == this) return true;
+            if (that == null || getClass() != that.getClass()) return false;
+
+            return get() == ((MockNode) that).get();
+        }
+
+        @Override
+        public int hashCode() {
+            Node t = get();
+            return t != null ? System.identityHashCode(t) : 0;
         }
     }
 }

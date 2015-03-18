@@ -19,10 +19,15 @@ package jetbrains.mps.unification;
 /**
  * A variable node. Has a name and must implement {@link java.lang.Comparable}.
  *
+ * @deprecated soon to be removed
  * @author Fedor Isakov
  */
-public interface Var extends Node, Comparable<Var> {
+@Deprecated
+public interface Var extends Node  {
 
+    Object symbol();
+
+    @Deprecated
     String name();
 
 }

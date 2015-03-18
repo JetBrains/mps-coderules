@@ -21,8 +21,10 @@ import java.util.Collection;
 /**
  * A term node. Has a symbol object and a read-only collection of children nodes.
  *
+ * @deprecated soon to be removed
  * @author Fedor Isakov
  */
+@Deprecated
 public interface Term extends Node {
 
     Object symbol();

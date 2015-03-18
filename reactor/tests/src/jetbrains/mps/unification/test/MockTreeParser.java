@@ -17,7 +17,7 @@
 package jetbrains.mps.unification.test;
 
 import jetbrains.mps.unification.Node;
-import jetbrains.mps.unification.Term;
+import jetbrains.mps.unification.Node;
 import jetbrains.mps.unification.Var;
 
 import java.util.*;
@@ -43,8 +43,8 @@ public class MockTreeParser {
         return nodes.get(0);
     }
 
-    public static Term parseTerm(String str) {
-        return (Term) parse(str);
+    public static Node parseTerm(String str) {
+        return (Node) parse(str);
     }
 
     public static Var parseVar(String str) {
@@ -55,13 +55,20 @@ public class MockTreeParser {
 
         private Token lastToken;
         private LinkedList<String> termsStack = new LinkedList<String>();
+        private LinkedList<Integer> termsLabelsStack = new LinkedList<Integer>();
         private LinkedList<List<Node>> childrenStack = new LinkedList<List<Node>>();
+        private int lastLabel = -1;
+        private Map<Integer, Node> termRefs = new HashMap<Integer, Node>();
+        // initialized on the parse finished
+        private LookupHelper lookupHelper = new LookupHelper();
 
         private List<Node> parse(String toParse) {
             parseNextToken(Token.START, null);
             loop(toParse);
             parseNextToken(Token.END, null);
             checkFinalState();
+            checkAllRefsExist();
+            lookupHelper.setTermRefs(Collections.unmodifiableMap(new HashMap<Integer, Node>(termRefs)));
             return Collections.unmodifiableList(childrenStack.pop());
         }
 
@@ -80,7 +87,7 @@ public class MockTreeParser {
                 // see if the last matching succeeded
                 assert matcher != null;
                 if (!matcher.lookingAt() && !matcher.hitEnd()) {
-                    throw new ParseException("unexpected input");
+                    throw new ParseException("unexpected input: '"+toParse+"'");
                 }
             } while (!matcher.hitEnd());
         }
@@ -103,6 +110,7 @@ public class MockTreeParser {
                     beginTerm(value);
                     break;
                 case VAR:
+                    checkLastTokenNotOneOf(Token.LABEL);
                     if (lastToken == Token.TERM) {
                         emptyTerm();
                     }
@@ -113,7 +121,7 @@ public class MockTreeParser {
                     beginChildren();
                     break;
                 case RBRACE:
-                    checkLastTokenOneOf(Token.TERM, Token.VAR, Token.RBRACE);
+                    checkLastTokenOneOf(Token.TERM, Token.VAR, Token.REF, Token.RBRACE);
                     if (lastToken == Token.TERM) {
                         emptyTerm();
                     }
@@ -122,15 +130,39 @@ public class MockTreeParser {
                     break;
                 case WHITESPACE:
                     return; // ignore
+                case LABEL:
+                    checkLastTokenNotOneOf(Token.LABEL);
+                    if (lastToken == Token.TERM) {
+                        emptyTerm();
+                    }
+                    lastLabel = Integer.parseInt(value.substring(1));
+                    break;
+                case REF:
+                    checkLastTokenNotOneOf(Token.LABEL);
+                    if (lastToken == Token.TERM) {
+                        emptyTerm();
+                    }
+                    addRef(value);
+                    break;
             }
             this.lastToken = token;
         }
 
         private void checkLastTokenOneOf(Token ... tokens) {
+            if (lastToken == Token.WHITESPACE) return;
             for (Token token : tokens) {
                 if (token == lastToken) return;
             }
-            throw new ParseException("parse error");
+            throw new ParseException("parse error: unexpected token '"+lastToken+"'");
+        }
+
+        private void checkLastTokenNotOneOf(Token ... tokens) {
+            if (lastToken == Token.WHITESPACE) return;
+            for (Token token : tokens) {
+                if (token == lastToken) {
+                    throw new ParseException("parse error: unexpected token '"+lastToken+"'");
+                }
+            }
         }
 
         private void checkFinalState() {
@@ -145,13 +177,28 @@ public class MockTreeParser {
             }
         }
 
+        private void checkAllRefsExist() {
+            for (Map.Entry<Integer, Node> e: termRefs.entrySet()) {
+                if (e.getValue() == null) {
+                    throw new ParseException("non-existing label '" + e.getKey() + "'");
+                }
+            }
+        }
+
         private void beginTerm(String name) {
             termsStack.push(name);
+            termsLabelsStack.push(lastLabel >= 0 ? lastLabel : null);
+            lastLabel = -1;
         }
 
         private void emptyTerm() {
-            String term = termsStack.pop();
-            childrenStack.peek().add(term(term));
+            String name = termsStack.pop();
+            Integer label = termsLabelsStack.pop();
+            Node newTerm = term(name);
+            childrenStack.peek().add(newTerm);
+            if (label != null) {
+                termRefs.put(label, newTerm);
+            }
         }
 
         private void beginChildren(){
@@ -159,13 +206,29 @@ public class MockTreeParser {
         }
 
         private void endChildren() {
-            String term = termsStack.pop();
             List<Node> children = childrenStack.pop();
-            childrenStack.peek().add(term(term, children.toArray(new Node[children.size()])));
+            String name = termsStack.pop();
+            Integer label = termsLabelsStack.pop();
+            Node newTerm = term(name, children.toArray(new Node[children.size()]));
+            childrenStack.peek().add(newTerm);
+            if (label != null) {
+                termRefs.put(label, newTerm);
+            }
         }
 
         private void addVar(String name) {
             childrenStack.peek().add(var(name));
+        }
+
+        private void addRef(String ref) {
+            final int label = Integer.parseInt(ref.substring(1));
+            if (termRefs.containsKey(label)) {
+                childrenStack.peek().add(ref(termRefs.get(label)));
+            }
+            else {
+                termRefs.put(label, null);
+                childrenStack.peek().add(ref(lookupHelper.lookup(label)));
+            }
         }
     }
 
@@ -176,7 +239,9 @@ public class MockTreeParser {
         VAR(Pattern.compile("[A-Z][a-zA-Z0-9_]*")),
         LBRACE(Pattern.compile("\\{")),
         RBRACE(Pattern.compile("\\}")),
-        WHITESPACE(Pattern.compile("\\s+"));
+        WHITESPACE(Pattern.compile("\\s+")),
+        LABEL(Pattern.compile("@[0-9]+")),
+        REF(Pattern.compile("\\^[0-9]+"));
 
         private Pattern pattern;
 
@@ -189,6 +254,30 @@ public class MockTreeParser {
         private ParseException(String s) {
             super(s);
         }
+    }
+
+    private static class LookupHelper {
+        private Map<Integer, Node> termRefs;
+
+        private void setTermRefs (Map<Integer, Node> termRefs) {
+            this.termRefs = termRefs;
+        }
+
+        public TermLookup lookup(final int label) {
+            return new TermLookup() {
+                @Override
+                public Node lookupTerm() {
+                    if (termRefs == null) {
+                        throw new IllegalStateException("call to uninitialized lookup");
+                    }
+                    if (!termRefs.containsKey(label)) {
+                        throw new IllegalStateException("non-existing label '" + label + "'");
+                    }
+                    return termRefs.get(label);
+                }
+            };
+        }
+
     }
 }
 

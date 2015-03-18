@@ -24,6 +24,7 @@ import jetbrains.mps.unification.Var;
 
 import java.util.*;
 
+import static jetbrains.mps.unification.test.AssertStructurallyEquivalent.assertEquivalent;
 import static org.junit.Assert.*;
 
 
@@ -32,27 +33,32 @@ import static org.junit.Assert.*;
  */
 public class AssertUnification {
 
-    public static Binding bind(Var v, Node n) {
+    public static final Comparator<Binding> BINDING_COMPARATOR = new Comparator<Binding>() {
+        @Override
+        public int compare(Binding a, Binding b) {
+            return a.var().compareTo(b.var());
+        }
+    };
+
+    public static Binding bind(Node v, Node n) {
         return new Binding(v, n);
     }
 
     public static void assertSameBindings(Collection<Binding> expected, Collection<Binding> actual) throws Exception {
-        Iterator<Binding> expIt = expected.iterator();
-        Iterator<Binding> actIt = actual.iterator();
-
-        Map<Var, Node> expMap = new HashMap<Var, Node>();
-        Map<Var, Node> actMap = new HashMap<Var, Node>();
+        ArrayList<Binding> expectedCopy = new ArrayList<Binding>(expected);
+        Collections.sort(expectedCopy, BINDING_COMPARATOR);
+        Iterator<Binding> expIt = expectedCopy.iterator();
+        ArrayList<Binding> actualCopy = new ArrayList<Binding>(actual);
+        Collections.sort(actualCopy, BINDING_COMPARATOR);
+        Iterator<Binding> actIt = actualCopy.iterator();
 
         while(expIt.hasNext() && actIt.hasNext()) {
             Binding expb = expIt.next();
             Binding actb = actIt.next();
 
-            expMap.put(expb.var(), expb.node());
-            actMap.put(actb.var(), actb.node());
+            assertEquals(expb.var(), actb.var());
+            assertEquivalent(expb.node(), actb.node());
         }
-
-        assertEquals(expMap, actMap);
-
         if(expIt.hasNext() || actIt.hasNext()) throw new Exception("mismatched number of bindings");
     }
 
@@ -72,7 +78,18 @@ public class AssertUnification {
         assertSameBindings(subs.bindings(), subs2.bindings());
     }
 
-    public static void assertUnifificationFails(Node s, Node t) throws Exception {
+    public static void assertUnifiesWithBindingsAsymm(Node s, Node t, Substitution.Binding ... bindings) throws Exception{
+        Substitution subs = Unification.unify(s, t);
+
+        assertTrue(subs.isSuccessful());
+        assertSameBindings(
+                Arrays.asList(
+                        bindings
+                ),
+                subs.bindings());
+    }
+
+    public static void assertUnificationFails(Node s, Node t) throws Exception {
         Substitution subs = Unification.unify(s, t);
 
         assertFalse(subs.isSuccessful());

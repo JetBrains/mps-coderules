@@ -16,19 +16,45 @@
 
 package jetbrains.mps.unification;
 
+import java.util.Collection;
+
 /**
- * Represents a node in a term DAG. A node can be either a an instance of
- * {@link Term} or {@link Var}.
+ * Represents a node in a term graph. The graph may contain cycles. A node in a term
+ * graph can be of three kinds: a variable, a function (possibly constant) and a reference.
+ * A reference must point to a function term.
+ *
+ * A term must implement {@link java.lang.Comparable}, but this is only really used for
+ * comparing the variables.
+ *
+ * Soon to be renamed to Term.
  *
  * @author Fedor Isakov
  */
-public interface Node {
+public interface Node extends Comparable<Node> {
 
+    @Deprecated
     boolean isTerm();
 
+    @Deprecated
     Term asTerm();
 
+    @Deprecated
     boolean isVar();
 
+    @Deprecated
     Var asVar();
+
+    Object symbol();
+
+    Collection<? extends Node> children();
+
+    Node get();
+
+    boolean is(Kind kind);
+
+    enum Kind {
+        FUN,
+        VAR,
+        REF
+    }
 }

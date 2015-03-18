@@ -214,8 +214,139 @@ public class SolverTests {
     }
 
     @Test
+    public void test14() throws Exception {
+        assertUnifiesWithBindings(
+                parse("f{X    g{a}}"),
+                parse("f{g{Y} g{Y}}"),
+
+                bind(var("X"), parseTerm("g{Y}")),
+                bind(var("Y"), parseTerm("a"))
+        );
+    }
+
+    @Test
+    public void test15() throws Exception {
+        assertUnifiesWithBindingsAsymm(
+                parse("h{X1       f{Y0 Y0} Y1}"),
+                parse("h{f{X0 X0} Y1       X1}"),
+
+                bind(var("X0"), parseVar("Y0")),
+                bind(var("X1"), parseTerm("f{Y0 Y0}")),
+                bind(var("Y1"), parseTerm("f{Y0 Y0}"))
+        );
+    }
+
+    @Test
+    public void test16() throws Exception {
+        // this test illustrates why the used algorithm is superior to recursive descent:
+        // the latter would have an exponential complexity because of "functional" form of
+        // substitution instead of the "triangular" form used here.
+
+        assertUnifiesWithBindingsAsymm(
+                parse("h{X1       X2       X3       X4       X5       X6       X7       X8       X9       " +
+                        "f{Y0 Y0} f{Y1 Y1} f{Y2 Y2} f{Y3 Y3} f{Y4 Y4} f{Y5 Y5} f{Y6 Y6} f{Y7 Y7} f{Y8 Y8} Y9}"),
+                parse("h{f{X0 X0} f{X1 X1} f{X2 X2} f{X3 X3} f{X4 X4} f{X5 X5} f{X6 X6} f{X7 X7} f{X8 X8} " +
+                        "Y1       Y2       Y3       Y4       Y5       Y6       Y7       Y8       Y9       X9}"),
+
+                bind(var("X0"), parseVar("Y0")),
+                bind(var("X1"), parseTerm("f{Y0 Y0}")),
+                bind(var("X2"), parseTerm("f{Y1 Y1}")),
+                bind(var("X3"), parseTerm("f{Y2 Y2}")),
+                bind(var("X4"), parseTerm("f{Y3 Y3}")),
+                bind(var("X5"), parseTerm("f{Y4 Y4}")),
+                bind(var("X6"), parseTerm("f{Y5 Y5}")),
+                bind(var("X7"), parseTerm("f{Y6 Y6}")),
+                bind(var("X8"), parseTerm("f{Y7 Y7}")),
+                bind(var("X9"), parseTerm("f{Y8 Y8}")),
+                bind(var("Y1"), parseTerm("f{Y0 Y0}")),
+                bind(var("Y2"), parseTerm("f{Y1 Y1}")),
+                bind(var("Y3"), parseTerm("f{Y2 Y2}")),
+                bind(var("Y4"), parseTerm("f{Y3 Y3}")),
+                bind(var("Y5"), parseTerm("f{Y4 Y4}")),
+                bind(var("Y6"), parseTerm("f{Y5 Y5}")),
+                bind(var("Y7"), parseTerm("f{Y6 Y6}")),
+                bind(var("Y8"), parseTerm("f{Y7 Y7}")),
+                bind(var("Y9"), parseTerm("f{Y8 Y8}"))
+        );
+    }
+
+    @Test
+    public void testCyclic() throws Exception {
+        assertUnifiesWithBindings(
+                parse("@1 a{b ^1}"),
+                parse("@2 a{b a{b ^2}}")
+
+        );
+        assertUnifiesWithBindings(
+                parse("@1 a{b    ^1}"),
+                parse("   a{b @3 a{b ^3}}")
+
+        );
+        assertUnifiesWithBindings(
+                parse("@1 a{b ^1}"),
+                parse("@2 a{b ^2}")
+        );
+    }
+
+    @Test
+    public void testCyclicVar() throws Exception {
+        assertUnifiesWithBindings(
+                parse("@1 a{b ^1}"),
+                parse("@1 a{b  X}"),
+
+                bind(var("X"), parse("@1 a{b ^1}"))
+        );
+        assertUnifiesWithBindings(
+                parse("@1 a{b ^1}"),
+                parse("X"),
+
+                bind(var("X"), parse("@1 a{b ^1}"))
+        );
+        assertUnifiesWithBindings(
+                parse("@1 a{^1 b c}"),
+                parse("X"),
+
+                bind(var("X"), parse("@1 a{^1 b c}"))
+        );
+        assertUnifiesWithBindings(
+                parse("@1 a{b ^1}"),
+                parse("@1 a{b a{b X}}"),
+
+                bind(var("X"), parse("@1 a{b ^1}"))
+        );
+    }
+
+    @Test
+    public void testCyclic_TermRewriting() throws Exception {
+        // The original problem is to unify two cyclic terms:
+        //
+        //          +->f              +--->f
+        //          |_/ \             |   / \
+        //              X             |  f   f<-+
+        //                            |_/ \ / \_|
+        //                                 Y
+        //
+        // -- which would be equivalent to the following:
+        //
+        //          "@1 f {^1 X}"     "@2 f {f {^2 Y} @3 f {Y ^3}}"
+        //
+        // Unfortunately, although the algorithm can successfully unify these
+        // two terms, no solution exists that is not recursive. That is,
+        // we cannot produce a list of variable bindings that do not include a
+        // variable itself in the substitution. Thus, we resort to a simplified test.
+
+        assertUnifiesWithBindings(
+                parse("@1 f {^1 X}"),
+                parse("@2 f {f {^2 Y} @3 f {Z ^3}}"),
+
+                bind(var("X"), parse("@1 f{Z ^1}")),
+                bind(var("Y"), parse("@1 f{Z ^1}"))
+        );
+    }
+
+    @Test
     public void testFail1() throws Exception {
-        assertUnifificationFails(
+        assertUnificationFails(
                 term("a"),
                 term("b")
         );
@@ -223,7 +354,7 @@ public class SolverTests {
 
     @Test
     public void testFail2() throws Exception {
-        assertUnifificationFails(
+        assertUnificationFails(
                 parse("a{b c}"),
                 parse("a{X}")
         );
@@ -231,10 +362,33 @@ public class SolverTests {
 
     @Test
     public void testFail3() throws Exception {
-        assertUnifificationFails(
+        assertUnificationFails(
                 parse("node{name{X} child{abc}}"),
                 parse("node{name{foo} child{X}}")
         );
     }
 
+    @Test
+    public void testFail4() throws Exception {
+        assertUnificationFails(
+                parse("f{a{X} Y      }"),
+                parse("f{Y    a{b{X}}}")
+        );
+    }
+
+    @Test
+    public void testFail5() throws Exception {
+        assertUnificationFails(
+                parse("f{X}"),
+                parse("X")
+        );
+    }
+
+    @Test
+    public void testFail6() throws Exception {
+        assertUnificationFails(
+                parse("f{f{X}}"),
+                parse("f{X}")
+        );
+    }
 }
