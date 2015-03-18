@@ -52,7 +52,7 @@ public interface Node extends Comparable<Node> {
 
     boolean is(Kind kind);
 
-    enum Kind {
+    public enum Kind {
         FUN,
         VAR,
         REF
