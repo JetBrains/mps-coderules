@@ -109,7 +109,7 @@ public class UnionFindTermGraphUnifier {
         }
         else if (ssize == tsize && s.is(Node.Kind.VAR) && t.is(Node.Kind.VAR)) {
             // ensure proper order of variables in the substitution
-            if(s.compareTo(t) < 0) {
+            if(t.compareTo(s) < 0) {
                 Node tmp = t; t = s; s = tmp;
             }
         }
@@ -179,7 +179,7 @@ public class UnionFindTermGraphUnifier {
         setAcyclic(z, true);
 
         Unification.SuccessfulSubstitution success = new Unification.SuccessfulSubstitution(substitution);
-        for (Var var : getVars(find(z))) {
+        for (Node var : getVars(find(z))) {
             if (var != z) {
                 success.addBinding(var, z.is(Node.Kind.REF) ? z.get() : z);
             }
@@ -215,15 +215,15 @@ public class UnionFindTermGraphUnifier {
         getData(n).mySchema = schema;
     }
 
-    private List<Var> getVars(Node n) {
+    private List<Node> getVars(Node n) {
         if (!hasData(n)) {
-            return n.is(Node.Kind.VAR) ? Collections.singletonList((Var)n) : Collections.<Var>emptyList();
+            return collectVars(n);
         }
         return getData(n).myVars;
     }
 
-    private void appendVars(Node n, List<Var> vars) {
-        List<Var> newVars = new ArrayList<Var>(getVars(n));
+    private void appendVars(Node n, List<Node> vars) {
+        List<Node> newVars = new ArrayList<Node>(getVars(n));
         newVars.addAll(vars);
         getData(n).myVars = newVars;
     }
@@ -250,6 +250,13 @@ public class UnionFindTermGraphUnifier {
         return myData.containsKey(n);
     }
 
+    private List<Node> collectVars(Node n) {
+        if (n.is(Node.Kind.VAR)) {
+            return Collections.singletonList(n);
+        }
+        return Collections.<Node>emptyList();
+    }
+
     private Data getData(Node n) {
         if (myData.containsKey(n)) return myData.get(n);
         Data data = new Data(n);
@@ -261,18 +268,18 @@ public class UnionFindTermGraphUnifier {
         return a == null ? b == null : a.equals(b);
     }
 
-    private static class Data {
+    private class Data {
         int mySize = 1;
         boolean myAcyclic = false;
         boolean myVisited = false;
-        List<Var> myVars;
+        List<Node> myVars;
 
         Node myClass;
         Node mySchema;
         Data(Node n) {
             myClass = n;
             mySchema = n;
-            myVars = n.is(Node.Kind.VAR) ? Collections.singletonList((Var)n) : Collections.<Var>emptyList();
+            myVars = collectVars(n);
         }
     }
 }
