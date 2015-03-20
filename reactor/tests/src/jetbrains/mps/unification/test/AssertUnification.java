@@ -20,7 +20,6 @@ import jetbrains.mps.unification.Substitution;
 import static jetbrains.mps.unification.Substitution.*;
 import jetbrains.mps.unification.Unification;
 import jetbrains.mps.unification.Node;
-import jetbrains.mps.unification.Var;
 
 import java.util.*;
 

@@ -17,8 +17,6 @@
 package jetbrains.mps.unification.test;
 
 import jetbrains.mps.unification.Node;
-import jetbrains.mps.unification.Term;
-import jetbrains.mps.unification.Var;
 
 import java.util.*;
 
@@ -48,26 +46,6 @@ public abstract class MockNode implements Node {
 
     interface TermLookup {
         Node lookupTerm();
-    }
-
-    @Override
-    public boolean isTerm() {
-        return is(Kind.FUN);
-    }
-
-    @Override
-    public Term asTerm() {
-        return (Term) this;
-    }
-
-    @Override
-    public boolean isVar() {
-        return is(Kind.VAR);
-    }
-
-    @Override
-    public Var asVar() {
-        return (Var) this;
     }
 
     @Override
@@ -142,16 +120,11 @@ public abstract class MockNode implements Node {
         }
     }
 
-    public static class MockVar extends MockNode implements Var {
+    public static class MockVar extends MockNode {
         private String myName;
 
         public MockVar(String name) {
             myName = name;
-        }
-
-        @Override
-        public String name() {
-            return myName;
         }
 
         @Override

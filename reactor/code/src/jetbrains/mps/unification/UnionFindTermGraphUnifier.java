@@ -24,7 +24,8 @@ import java.util.*;
  *
  * No recursive terms are allowed as a solution, meaning the "occurrs check" for variables
  * is performed on the input. However, cyclic terms are allowed as input and can be unified, producing
- * solutions bindind variables to cyclic terms.
+ * solutions binding variables to cyclic terms. Variables can also be passed by reference without altering the
+ * intuitive behaviour of the algorithm.
  *
  * If successful, the returned {@link Substitution} contains
  * the variable bindings.
@@ -67,11 +68,35 @@ public class UnionFindTermGraphUnifier {
         }
 
         // dereference REF nodes
-        zs = zs.is(Node.Kind.REF) ? zs.get() : zs;
-        zt = zt.is(Node.Kind.REF) ? zt.get() : zt;
+        Node ds = zs.is(Node.Kind.REF) ? zs.get() : zs;
+        Node dt = zt.is(Node.Kind.REF) ? zt.get() : zt;
+
+        if (ds.is(Node.Kind.VAR)) {
+            if (s != find(ds)) {
+                union(s, find(ds));
+            }
+            union(s, t);
+            return true;
+        }
+        else {
+            zs = ds;
+        }
+
+        if (dt.is(Node.Kind.VAR)) {
+            if (t != find(dt)) {
+                union(t, find(dt));
+            }
+            union(t, s);
+            return true;
+        }
+        else {
+            zt = dt;
+        }
 
         // use find 2nd time to account for dereferenced nodes
-        if (find(zs) == find(zt)) return true;
+        if (find(zs) == find(zt)) {
+            return true;
+        }
 
         if (zs.is(Node.Kind.FUN) && zt.is(Node.Kind.FUN))
         {
@@ -103,7 +128,7 @@ public class UnionFindTermGraphUnifier {
         int ssize = getSize(s);
         int tsize = getSize(t);
 
-        // keep the order
+        // keep the order: the smaller class gets inserted under the bigger one
         if (ssize < tsize) {
             Node tmp = t; t = s; s = tmp;
         }
@@ -118,9 +143,15 @@ public class UnionFindTermGraphUnifier {
 
         setSize(s, ssize + tsize);
         appendVars(s, getVars(t));
-        if (getSchema(s).is(Node.Kind.VAR)) {
-            setSchema(s, getSchema(t));
+
+        Node zs = getSchema(s);
+        Node zt = getSchema(t);
+        if (zs.is(Node.Kind.VAR)  ||
+            (zs.is(Node.Kind.REF) && zs.get().is(Node.Kind.VAR) && !zt.is(Node.Kind.VAR)))
+        {
+            setSchema(s, zt);
         }
+
         setRepresentative(t, s);
     }
 
@@ -164,6 +195,7 @@ public class UnionFindTermGraphUnifier {
 
             for (Node c : z.children()) {
                 substitution = findSolution(c, substitution);
+
                 if (!substitution.isSuccessful()) {
                     break;
                 }
@@ -181,7 +213,15 @@ public class UnionFindTermGraphUnifier {
         Unification.SuccessfulSubstitution success = new Unification.SuccessfulSubstitution(substitution);
         for (Node var : getVars(find(z))) {
             if (var != z) {
-                success.addBinding(var, z.is(Node.Kind.REF) ? z.get() : z);
+                Node val = z.is(Node.Kind.REF) ? z.get() : z;
+
+                // Keep the order of variables within a binding
+                if (val.is(Node.Kind.VAR) && val.compareTo(var) < 0) {
+                    success.addBinding(val, var);
+                }
+                else {
+                    success.addBinding(var, val);
+                }
             }
         }
 

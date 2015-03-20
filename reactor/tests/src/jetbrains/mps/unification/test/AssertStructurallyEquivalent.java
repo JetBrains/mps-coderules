@@ -57,10 +57,20 @@ public class AssertStructurallyEquivalent {
                     }, new NodeVisitor<Node>(Node.Kind.REF) {
                         @Override
                         public Collection<? extends Node> visit(Node ref) throws Exception {
-                            Integer label = signature.getLabel(ref.get());
-                            assertNotNull("not found label for '"+ref.get() + "'", label);
-                            signature.appendSignature("^").append(label);
-                            return Collections.emptyList();
+                            if (ref.get().is(Node.Kind.FUN)) {
+                                Integer label = signature.getLabel(ref.get());
+                                assertNotNull("not found label for '"+ref.get() + "'", label);
+                                signature.appendSignature("^").append(label);
+                                return Collections.emptyList();
+                            }
+                            else if (ref.get().is(Node.Kind.VAR)) {
+                                signature.appendSignature("^").append(ref.get().symbol());
+                                return Collections.emptyList();
+                            }
+                            else {
+                                throw new UnsupportedOperationException();
+                            }
+
                         }
                     })
                 );

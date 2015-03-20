@@ -95,21 +95,38 @@ public class ParserTests {
     public void testRef() throws Exception {
         LazyTermLookup termLookup = new LazyTermLookup();
         Node a = termLookup.term = term("a", ref(termLookup));
-        assertEquivalent(parse("@1a{^1}"),
+        assertEquivalent(
+                parse("@1a{^1}"),
                 a);
 
         Node b = term("b");
-        assertEquivalent(parse("a{@1b ^1}"),
+        assertEquivalent(
+                parse("a{@1b ^1}"),
                 term("a", b, ref(b)));
 
         Node c = term("c");
-        assertEquivalent(parse("a{^1 @1c}"),
+        assertEquivalent(
+                parse("a{^1 @1c}"),
                 term("a", ref(c), c));
 
         Node b1  = term("b");
         Node b2  = term("b");
-        assertEquivalent(parse("a{@2b ^1 ^2 @1b}"),
+        assertEquivalent(
+                parse("a{@2b ^1 ^2 @1b}"),
                 term("a", b2, ref(b1), ref(b2), b1));
+    }
+
+    @Test
+    public void testVarRef() throws Exception {
+        Node x = var("X");
+
+        assertEquivalent(
+                parse("^X"),
+                ref(x));
+        assertEquivalent(
+                parse("a{^X}"),
+                term("a", ref(x)));
+
     }
 
     @Test(expected = ComparisonFailure.class)

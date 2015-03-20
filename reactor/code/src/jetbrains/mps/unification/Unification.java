@@ -98,7 +98,7 @@ public class Unification {
         protected void addBinding(Node v, Node n) {
             Binding bng;
             if (n.is(Node.Kind.VAR) && n.compareTo(n) < 0) {
-                bng = new Binding((Var)n, v);
+                bng = new Binding(n, v);
             }
             else {
                 bng = new Binding(v, n);

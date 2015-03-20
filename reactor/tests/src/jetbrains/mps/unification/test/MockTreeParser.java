@@ -17,8 +17,6 @@
 package jetbrains.mps.unification.test;
 
 import jetbrains.mps.unification.Node;
-import jetbrains.mps.unification.Node;
-import jetbrains.mps.unification.Var;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -47,15 +45,15 @@ public class MockTreeParser {
         return (Node) parse(str);
     }
 
-    public static Var parseVar(String str) {
-        return (Var) parse(str);
+    public static Node parseVar(String str) {
+        return parse(str);
     }
 
     private static class RecursiveDescent {
 
         private Token lastToken;
         private LinkedList<String> termsStack = new LinkedList<String>();
-        private LinkedList<Integer> termsLabelsStack = new LinkedList<Integer>();
+        private LinkedList<Integer> termLabelsStack = new LinkedList<Integer>();
         private LinkedList<List<Node>> childrenStack = new LinkedList<List<Node>>();
         private int lastLabel = -1;
         private Map<Integer, Node> termRefs = new HashMap<Integer, Node>();
@@ -98,7 +96,7 @@ public class MockTreeParser {
                     childrenStack.push(new ArrayList<Node>());
                     break;
                 case END:
-                    checkLastTokenOneOf(Token.TERM, Token.VAR, Token.RBRACE);
+                    checkLastTokenOneOf(Token.TERM, Token.VAR, Token.VARREF, Token.RBRACE);
                     if (lastToken == Token.TERM) {
                         emptyTerm();
                     }
@@ -116,12 +114,19 @@ public class MockTreeParser {
                     }
                     addVar(value);
                     break;
+                case VARREF:
+                    checkLastTokenNotOneOf(Token.LABEL);
+                    if (lastToken == Token.TERM) {
+                        emptyTerm();
+                    }
+                    addVarRef(value.substring(1));
+                    break;
                 case LBRACE:
                     checkLastTokenOneOf(Token.TERM);
                     beginChildren();
                     break;
                 case RBRACE:
-                    checkLastTokenOneOf(Token.TERM, Token.VAR, Token.REF, Token.RBRACE);
+                    checkLastTokenOneOf(Token.TERM, Token.VAR, Token.VARREF, Token.REF, Token.RBRACE);
                     if (lastToken == Token.TERM) {
                         emptyTerm();
                     }
@@ -187,13 +192,13 @@ public class MockTreeParser {
 
         private void beginTerm(String name) {
             termsStack.push(name);
-            termsLabelsStack.push(lastLabel >= 0 ? lastLabel : null);
+            termLabelsStack.push(lastLabel >= 0 ? lastLabel : null);
             lastLabel = -1;
         }
 
         private void emptyTerm() {
             String name = termsStack.pop();
-            Integer label = termsLabelsStack.pop();
+            Integer label = termLabelsStack.pop();
             Node newTerm = term(name);
             childrenStack.peek().add(newTerm);
             if (label != null) {
@@ -208,7 +213,7 @@ public class MockTreeParser {
         private void endChildren() {
             List<Node> children = childrenStack.pop();
             String name = termsStack.pop();
-            Integer label = termsLabelsStack.pop();
+            Integer label = termLabelsStack.pop();
             Node newTerm = term(name, children.toArray(new Node[children.size()]));
             childrenStack.peek().add(newTerm);
             if (label != null) {
@@ -218,6 +223,10 @@ public class MockTreeParser {
 
         private void addVar(String name) {
             childrenStack.peek().add(var(name));
+        }
+
+        private void addVarRef(String name) {
+            childrenStack.peek().add(ref(var(name)));
         }
 
         private void addRef(String ref) {
@@ -241,7 +250,8 @@ public class MockTreeParser {
         RBRACE(Pattern.compile("\\}")),
         WHITESPACE(Pattern.compile("\\s+")),
         LABEL(Pattern.compile("@[0-9]+")),
-        REF(Pattern.compile("\\^[0-9]+"));
+        REF(Pattern.compile("\\^[0-9]+")),
+        VARREF(Pattern.compile("\\^[A-Z][a-zA-Z0-9_]*"));
 
         private Pattern pattern;
 

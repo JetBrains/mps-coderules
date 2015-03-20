@@ -16,6 +16,7 @@
 
 package jetbrains.mps.unification.test;
 
+import jetbrains.mps.unification.Node;
 import org.junit.Test;
 
 import static jetbrains.mps.unification.test.MockNode.*;
@@ -314,6 +315,42 @@ public class SolverTests {
 
                 bind(var("X"), parse("@1 a{b ^1}"))
         );
+    }
+
+    @Test
+    public void testVarRef() throws Exception {
+
+        assertUnifiesWithBindings(
+                parse("^X"),
+                parse("Y"),
+
+                bind(var("X"), var("Y"))
+        );
+        assertUnifiesWithBindings(
+                parse("a{b ^X}"),
+                parse("a{b c{d}}"),
+
+                bind(var("X"), parse("c{d}"))
+        );
+        assertUnifiesWithBindings(
+                parse("a{b c{X} ^X}"),
+                parse("a{b c{d} d}"),
+
+                bind(var("X"), parse("d"))
+        );
+        assertUnifiesWithBindings(
+                parse("a{b{d} c{X} ^X}"),
+                parse("a{b{^X} c{d} d}"),
+
+                bind(var("X"), parse("d"))
+        );
+        assertUnifiesWithBindings(
+                parse("a{b{d} c{X}}"),
+                parse("a{b{^X} c{d}}"),
+
+                bind(var("X"), parse("d"))
+        );
+
     }
 
     @Test
