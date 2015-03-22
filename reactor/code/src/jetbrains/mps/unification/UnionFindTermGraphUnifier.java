@@ -42,7 +42,7 @@ import java.util.*;
  */
 public class UnionFindTermGraphUnifier {
 
-    private Map<Object, Data> myData = new HashMap<Object, Data>();
+    private Map<Object, Data> myData = new IdentityHashMap<Object, Data>();
 
     public Substitution unify(Node a, Node b) {
         if (!unifClosure(a, b)) {
@@ -287,7 +287,16 @@ public class UnionFindTermGraphUnifier {
     }
 
     private boolean hasData(Node n) {
-        return myData.containsKey(n);
+        Object key = n.is(Node.Kind.VAR) ? String.valueOf(n.symbol()).intern() : n;
+        return myData.containsKey(key);
+    }
+
+    private Data getData(Node n) {
+        Object key = n.is(Node.Kind.VAR) ? String.valueOf(n.symbol()).intern() : n;
+        if (myData.containsKey(key)) return myData.get(key);
+        Data data = new Data(n);
+        myData.put(key, data);
+        return data;
     }
 
     private List<Node> collectVars(Node n) {
@@ -295,13 +304,6 @@ public class UnionFindTermGraphUnifier {
             return Collections.singletonList(n);
         }
         return Collections.<Node>emptyList();
-    }
-
-    private Data getData(Node n) {
-        if (myData.containsKey(n)) return myData.get(n);
-        Data data = new Data(n);
-        myData.put(n, data);
-        return data;
     }
 
     private boolean eq(Object a, Object b) {
