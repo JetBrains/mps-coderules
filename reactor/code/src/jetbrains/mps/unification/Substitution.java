@@ -25,13 +25,38 @@ import java.util.Collections;
  *
  * @author Fedor Isakov
  */
-public interface Substitution {
+public class Substitution {
 
-    boolean isSuccessful();
+    private boolean mySuccessful;
 
-    Collection<Binding> bindings() ;
+    private FailureCause myFailureCause;
 
-    public class Binding {
+    public Substitution(boolean successful) {
+        mySuccessful = successful;
+    }
+
+    public Substitution(FailureCause failCause) {
+        myFailureCause = failCause;
+        mySuccessful = false;
+    }
+
+    public boolean isSuccessful() {
+        return mySuccessful;
+    }
+
+    public  Collection<Binding> bindings() {
+        return Collections.emptyList();
+    }
+
+    public FailureCause failureCause() {
+        return myFailureCause;
+    }
+
+    public String toString() {
+        return myFailureCause != null ? "[" + myFailureCause + "]" : "[FAILED_SUBSTITUTION]";
+    }
+
+    public static class Binding {
         private Node myVar;
         private Node myNode;
 
@@ -46,6 +71,24 @@ public interface Substitution {
 
         public Node node() {
             return myNode;
+        }
+    }
+
+    public enum FailureCause {
+        CYCLE_DETECTED("cycle detected"),
+        UNRECONCILED_REF("unreconciled ref"),
+        SYMBOL_CLASH("symbol clash"),
+        UKNOWN("uknown");
+
+        private String myMessage;
+
+        FailureCause(String message) {
+            myMessage = message;
+        }
+
+        @Override
+        public String toString() {
+            return myMessage;
         }
     }
 

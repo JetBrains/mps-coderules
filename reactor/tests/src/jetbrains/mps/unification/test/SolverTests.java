@@ -16,12 +16,13 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.unification.Node;
 import org.junit.Test;
 
-import static jetbrains.mps.unification.test.MockNode.*;
-import static jetbrains.mps.unification.test.MockTreeParser.*;
+import static jetbrains.mps.unification.Substitution.FailureCause.*;
 import static jetbrains.mps.unification.test.AssertUnification.*;
+import static jetbrains.mps.unification.test.MockNode.term;
+import static jetbrains.mps.unification.test.MockNode.var;
+import static jetbrains.mps.unification.test.MockTreeParser.*;
 
 /**
  * Created by fyodor on 09.06.2014.
@@ -315,6 +316,13 @@ public class SolverTests {
 
                 bind(var("X"), parse("@1 a{b ^1}"))
         );
+        assertUnifiesWithBindings(
+                parse("a{X     c{X}                }"),
+                parse("a{b{Y}  c{@1 b{@2 c{b{^2}}}}}"),
+
+                bind(var("X"), parse("b{Y}")),
+                bind(var("Y"), parse("@1 c{b{^1}}"))
+        );
     }
 
     @Test
@@ -385,15 +393,15 @@ public class SolverTests {
     public void testFailConflict() throws Exception {
         assertUnificationFails(
                 term("a"),
-                term("b")
+                term("b"),
+
+                SYMBOL_CLASH
         );
         assertUnificationFails(
                 parse("node{name{X} child{abc}}"),
-                parse("node{name{foo} child{X}}")
-        );
-        assertUnificationFails(
-                parse("f{a{X} Y      }"),
-                parse("f{Y    a{b{X}}}")
+                parse("node{name{foo} child{X}}"),
+
+                SYMBOL_CLASH
         );
     }
 
@@ -409,20 +417,33 @@ public class SolverTests {
     public void testFailRecursive() throws Exception {
         assertUnificationFails(
                 parse("f{X}"),
-                parse("X")
+                parse("X"),
+
+                CYCLE_DETECTED
         );
         assertUnificationFails(
                 parse("f{f{X}}"),
-                parse("f{X}")
+                parse("f{X}"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                parse("f{a{X} Y      }"),
+                parse("f{Y    a{b{X}}}"),
+
+                CYCLE_DETECTED
         );
         assertUnificationFails(
                 parse("a{X     c{X}}"),
-                parse("a{b{Y}  Y   }")
+                parse("a{b{Y}  Y   }"),
 
+                CYCLE_DETECTED
         );
         assertUnificationFails (
                 parse("a{@1 b{c{^1}} @2 c{b{^2}}}"),
-                parse("a{   b{Y}        Y       }")
+                parse("a{   b{Y}        Y       }"),
+
+                UNRECONCILED_REF
         );
     }
 }

@@ -94,4 +94,11 @@ public class AssertUnification {
         assertFalse(subs.isSuccessful());
     }
 
+    public static void assertUnificationFails(Node s, Node t, FailureCause failureCause) throws Exception {
+        Substitution subs = Unification.unify(s, t);
+
+        assertFalse(subs.isSuccessful());
+        assertSame(failureCause, subs.failureCause());
+    }
+
 }

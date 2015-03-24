@@ -16,6 +16,8 @@
 
 package jetbrains.mps.unification;
 
+import jetbrains.mps.unification.Substitution.FailureCause;
+
 import java.util.*;
 
 /**
@@ -32,51 +34,31 @@ public class Unification {
         return dagUnifier.unify(a, b);
     }
 
-    protected static final Substitution FAILED_SUBSTITUTION = new Substitution() {
-        @Override
-        public boolean isSuccessful() {
-            return false;
-        }
+    protected static Substitution failedSubstitution(FailureCause failCause) {
+        return new Substitution(failCause);
+    }
 
-        @Override
-        public Collection<Binding> bindings() {
-            return Collections.emptyList();
-        }
-
-        @Override
-        public String toString() {
-            return "[FAILED_SUBSTITUTION]";
-        }
-    };
-
-    protected static final Substitution EMPTY_SUBSTITUTION = new Substitution() {
-        @Override
-        public boolean isSuccessful() {
-            return true;
-        }
-
-        @Override
-        public Collection<Binding> bindings() {
-            return Collections.emptyList();
-        }
-
+    protected static final Substitution EMPTY_SUBSTITUTION = new Substitution(true) {
         @Override
         public String toString() {
             return "[]";
         }
     };
 
-    protected static class SuccessfulSubstitution implements Substitution {
+    protected static final Substitution FAILED_SUBSTITUTION = new Substitution(FailureCause.UKNOWN) {
+        @Override
+        public String toString() {
+            return "[FAILED_SUBSTITUTION]";
+        }
+    };
+
+    protected static class SuccessfulSubstitution extends Substitution {
 
         private LinkedList<Binding> myBindings;
 
         protected SuccessfulSubstitution(Substitution substitution) {
+            super(true);
             this.myBindings = new LinkedList<Binding>(substitution.bindings());
-        }
-
-        @Override
-        public boolean isSuccessful() {
-            return true;
         }
 
         @Override
@@ -108,5 +90,4 @@ public class Unification {
         }
 
     }
-
 }

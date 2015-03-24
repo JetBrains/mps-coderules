@@ -16,11 +16,13 @@
 
 package jetbrains.mps.unification;
 
+import jetbrains.mps.unification.Substitution.FailureCause;
 import jetbrains.mps.unification.Unification.SuccessfulSubstitution;
 
 import java.util.*;
 
 import static jetbrains.mps.unification.Node.Kind.*;
+import static jetbrains.mps.unification.Substitution.FailureCause.*;
 import static jetbrains.mps.unification.Unification.*;
 
 /**
@@ -51,9 +53,11 @@ public class UnionFindTermGraphUnifier {
 
     private int myUnreconciledRefs = 0;
 
+    private FailureCause myFailureCause = UKNOWN;
+
     public Substitution unify(Node a, Node b) {
         if (!unifClosure(a, b)) {
-            return FAILED_SUBSTITUTION;
+            return failedSubstitution(myFailureCause);
         }
 
         return findSolution(a);
@@ -108,6 +112,7 @@ public class UnionFindTermGraphUnifier {
         if (zs.is(FUN) && zt.is(FUN))
         {
             if (!eq(zs.symbol(), zt.symbol())) {
+                myFailureCause = SYMBOL_CLASH;
                 return false; // symbol clash
             }
 
@@ -119,7 +124,9 @@ public class UnionFindTermGraphUnifier {
             Iterator<? extends Node> scit = zs.children().iterator();
             Iterator<? extends Node> tcit = zt.children().iterator();
             while (scit.hasNext() && tcit.hasNext()) {
-                if (!unifClosure(scit.next(), tcit.next())) return false;
+                if (!unifClosure(scit.next(), tcit.next())) {
+                    return false; // children mismatch
+                }
             }
 
             // fail if different children count
@@ -127,7 +134,7 @@ public class UnionFindTermGraphUnifier {
         }
         else {
             // something's wrong with the input
-            return false;
+            throw new IllegalStateException("invalid input");
         }
     }
 
@@ -194,7 +201,7 @@ public class UnionFindTermGraphUnifier {
             return substitution; // not part of a cycle
         }
         if (isVisited(z)) {
-            return FAILED_SUBSTITUTION; // there exists a cycle
+            return failedSubstitution(CYCLE_DETECTED); // there exists a cycle
         }
 
         int unreconciled = myUnreconciledRefs;
@@ -227,7 +234,7 @@ public class UnionFindTermGraphUnifier {
         for (Node var : getVars(find(z))) {
             if (var != z) {
                 if (myUnreconciledRefs != unreconciled) {
-                    return FAILED_SUBSTITUTION; // there's an unreconciled outward reference
+                    return failedSubstitution(UNRECONCILED_REF); // there's an unreconciled outward reference
                 }
 
                 Node val = z.is(REF) ? z.get() : z;
