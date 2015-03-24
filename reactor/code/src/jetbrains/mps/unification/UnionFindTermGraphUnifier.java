@@ -16,7 +16,12 @@
 
 package jetbrains.mps.unification;
 
+import jetbrains.mps.unification.Unification.SuccessfulSubstitution;
+
 import java.util.*;
+
+import static jetbrains.mps.unification.Node.Kind.*;
+import static jetbrains.mps.unification.Unification.*;
 
 /**
  * This is an implementation of the "near linear" algorithm for solving syntactic unification
@@ -44,9 +49,11 @@ public class UnionFindTermGraphUnifier {
 
     private Map<Object, Data> myData = new IdentityHashMap<Object, Data>();
 
+    private int myUnreconciledRefs = 0;
+
     public Substitution unify(Node a, Node b) {
         if (!unifClosure(a, b)) {
-            return Unification.FAILED_SUBSTITUTION;
+            return FAILED_SUBSTITUTION;
         }
 
         return findSolution(a);
@@ -62,16 +69,16 @@ public class UnionFindTermGraphUnifier {
         Node zt = getSchema(t);
 
         // a VAR always matches another node
-        if(zs.is(Node.Kind.VAR) || zt.is(Node.Kind.VAR)) {
+        if(zs.is(VAR) || zt.is(VAR)) {
             union(s, t);
             return true;
         }
 
         // dereference REF nodes
-        Node ds = zs.is(Node.Kind.REF) ? zs.get() : zs;
-        Node dt = zt.is(Node.Kind.REF) ? zt.get() : zt;
+        Node ds = zs.is(REF) ? zs.get() : zs;
+        Node dt = zt.is(REF) ? zt.get() : zt;
 
-        if (ds.is(Node.Kind.VAR)) {
+        if (ds.is(VAR)) {
             if (s != find(ds)) {
                 union(s, find(ds));
             }
@@ -82,7 +89,7 @@ public class UnionFindTermGraphUnifier {
             zs = ds;
         }
 
-        if (dt.is(Node.Kind.VAR)) {
+        if (dt.is(VAR)) {
             if (t != find(dt)) {
                 union(t, find(dt));
             }
@@ -98,14 +105,14 @@ public class UnionFindTermGraphUnifier {
             return true;
         }
 
-        if (zs.is(Node.Kind.FUN) && zt.is(Node.Kind.FUN))
+        if (zs.is(FUN) && zt.is(FUN))
         {
             if (!eq(zs.symbol(), zt.symbol())) {
                 return false; // symbol clash
             }
 
             // union REF nodes only to each other
-            if (s.is(Node.Kind.REF) == t.is(Node.Kind.REF)) {
+            if (s.is(REF) == t.is(REF)) {
                 union(s, t);
             }
 
@@ -132,7 +139,7 @@ public class UnionFindTermGraphUnifier {
         if (ssize < tsize) {
             Node tmp = t; t = s; s = tmp;
         }
-        else if (ssize == tsize && s.is(Node.Kind.VAR) && t.is(Node.Kind.VAR)) {
+        else if (ssize == tsize && s.is(VAR) && t.is(VAR)) {
             // ensure proper order of variables in the substitution
             if(t.compareTo(s) < 0) {
                 Node tmp = t; t = s; s = tmp;
@@ -146,8 +153,7 @@ public class UnionFindTermGraphUnifier {
 
         Node zs = getSchema(s);
         Node zt = getSchema(t);
-        if (zs.is(Node.Kind.VAR)  ||
-            (zs.is(Node.Kind.REF) && zs.get().is(Node.Kind.VAR) && !zt.is(Node.Kind.VAR)))
+        if (zs.is(VAR)  || (zs.is(REF) && zs.get().is(VAR) && !zt.is(VAR)))
         {
             setSchema(s, zt);
         }
@@ -177,7 +183,8 @@ public class UnionFindTermGraphUnifier {
     }
 
     private Substitution findSolution(Node s) {
-        return findSolution(s, Unification.EMPTY_SUBSTITUTION);
+        myUnreconciledRefs = 0;
+        return findSolution(s, EMPTY_SUBSTITUTION);
     }
 
     private Substitution findSolution(Node s, Substitution substitution) {
@@ -187,10 +194,11 @@ public class UnionFindTermGraphUnifier {
             return substitution; // not part of a cycle
         }
         if (isVisited(z)) {
-            return Unification.FAILED_SUBSTITUTION; // there exists a cycle
+            return FAILED_SUBSTITUTION; // there exists a cycle
         }
 
-        if (z.is(Node.Kind.FUN)) {
+        int unreconciled = myUnreconciledRefs;
+        if (z.is(FUN)) {
             setVisited(z, true);
 
             for (Node c : z.children()) {
@@ -208,21 +216,35 @@ public class UnionFindTermGraphUnifier {
             return substitution;
         }
 
+        if (isReferenced(z)) {
+            setReferenced(z, false);
+            myUnreconciledRefs--;
+        }
+
         setAcyclic(z, true);
 
-        Unification.SuccessfulSubstitution success = new Unification.SuccessfulSubstitution(substitution);
+        SuccessfulSubstitution success = new SuccessfulSubstitution(substitution);
         for (Node var : getVars(find(z))) {
             if (var != z) {
-                Node val = z.is(Node.Kind.REF) ? z.get() : z;
+                if (myUnreconciledRefs != unreconciled) {
+                    return FAILED_SUBSTITUTION; // there's an unreconciled outward reference
+                }
+
+                Node val = z.is(REF) ? z.get() : z;
 
                 // Keep the order of variables within a binding
-                if (val.is(Node.Kind.VAR) && val.compareTo(var) < 0) {
+                if (val.is(VAR) && val.compareTo(var) < 0) {
                     success.addBinding(val, var);
                 }
                 else {
                     success.addBinding(var, val);
                 }
             }
+        }
+
+        if (z.is(REF) && z.get().is(FUN)) {
+            setReferenced(z.get(), true);
+            myUnreconciledRefs++;
         }
 
         return success;
@@ -256,10 +278,7 @@ public class UnionFindTermGraphUnifier {
     }
 
     private List<Node> getVars(Node n) {
-        if (!hasData(n)) {
-            return collectVars(n);
-        }
-        return getData(n).myVars;
+        return hasData(n) ? getData(n).myVars : singletonVar(n);
     }
 
     private void appendVars(Node n, List<Node> vars) {
@@ -269,8 +288,7 @@ public class UnionFindTermGraphUnifier {
     }
 
     private boolean isAcyclic(Node n) {
-        if (!hasData(n)) return false;
-        return getData(n).myAcyclic;
+        return hasData(n) && getData(n).myAcyclic;
     }
 
     private void setAcyclic(Node n, boolean acyclic) {
@@ -278,50 +296,58 @@ public class UnionFindTermGraphUnifier {
     }
 
     private boolean isVisited(Node n) {
-        if (!hasData(n)) return false;
-        return getData(n).myVisited;
+        return hasData(n) && getData(n).myVisited;
     }
 
     private void setVisited(Node n, boolean visited) {
         getData(n).myVisited = visited;
     }
 
+    private boolean isReferenced(Node n) {
+        return hasData(n) && getData(n).myReferenced;
+    }
+
+    private void setReferenced(Node n, boolean referenced) {
+        getData(n).myReferenced = referenced;
+    }
+
     private boolean hasData(Node n) {
-        Object key = n.is(Node.Kind.VAR) ? String.valueOf(n.symbol()).intern() : n;
+        Object key = n.is(VAR) ? String.valueOf(n.symbol()).intern() : n;
         return myData.containsKey(key);
     }
 
     private Data getData(Node n) {
-        Object key = n.is(Node.Kind.VAR) ? String.valueOf(n.symbol()).intern() : n;
+        Object key = n.is(VAR) ? String.valueOf(n.symbol()).intern() : n;
         if (myData.containsKey(key)) return myData.get(key);
         Data data = new Data(n);
         myData.put(key, data);
         return data;
     }
 
-    private List<Node> collectVars(Node n) {
-        if (n.is(Node.Kind.VAR)) {
-            return Collections.singletonList(n);
-        }
-        return Collections.<Node>emptyList();
-    }
-
-    private boolean eq(Object a, Object b) {
+    private static boolean eq(Object a, Object b) {
         return a == null ? b == null : a.equals(b);
     }
 
-    private class Data {
+    private static List<Node> singletonVar(Node n) {
+        return n.is(VAR) ?
+            Collections.singletonList(n) :
+            Collections.<Node>emptyList();
+    }
+
+    private static class Data {
         int mySize = 1;
         boolean myAcyclic = false;
         boolean myVisited = false;
-        List<Node> myVars;
+        boolean myReferenced = false;
 
+        List<Node> myVars;
         Node myClass;
         Node mySchema;
+
         Data(Node n) {
             myClass = n;
             mySchema = n;
-            myVars = collectVars(n);
+            myVars = singletonVar(n);
         }
     }
 }

@@ -84,10 +84,11 @@ public class AssertStructurallyEquivalent {
 
     private static class Signature {
 
+        private NodeWalker[] walkers;
+
         private IdentityHashMap<Node, Integer> labels = new IdentityHashMap<Node, Integer>();
         private int label = 1;
         private StringBuilder signature = new StringBuilder();
-        private NodeWalker[] walkers;
 
         protected void label(Node node) {
             labels.put(node, label++);

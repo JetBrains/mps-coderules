@@ -382,31 +382,15 @@ public class SolverTests {
     }
 
     @Test
-    public void testFail1() throws Exception {
+    public void testFailConflict() throws Exception {
         assertUnificationFails(
                 term("a"),
                 term("b")
         );
-    }
-
-    @Test
-    public void testFail2() throws Exception {
-        assertUnificationFails(
-                parse("a{b c}"),
-                parse("a{X}")
-        );
-    }
-
-    @Test
-    public void testFail3() throws Exception {
         assertUnificationFails(
                 parse("node{name{X} child{abc}}"),
                 parse("node{name{foo} child{X}}")
         );
-    }
-
-    @Test
-    public void testFail4() throws Exception {
         assertUnificationFails(
                 parse("f{a{X} Y      }"),
                 parse("f{Y    a{b{X}}}")
@@ -414,18 +398,31 @@ public class SolverTests {
     }
 
     @Test
-    public void testFail5() throws Exception {
+    public void testFailCard() throws Exception {
         assertUnificationFails(
-                parse("f{X}"),
-                parse("X")
+                parse("a{b c}"),
+                parse("a{X}")
         );
     }
 
     @Test
-    public void testFail6() throws Exception {
+    public void testFailRecursive() throws Exception {
+        assertUnificationFails(
+                parse("f{X}"),
+                parse("X")
+        );
         assertUnificationFails(
                 parse("f{f{X}}"),
                 parse("f{X}")
+        );
+        assertUnificationFails(
+                parse("a{X     c{X}}"),
+                parse("a{b{Y}  Y   }")
+
+        );
+        assertUnificationFails (
+                parse("a{@1 b{c{^1}} @2 c{b{^2}}}"),
+                parse("a{   b{Y}        Y       }")
         );
     }
 }
