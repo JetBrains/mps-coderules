@@ -4550,7 +4550,7 @@
                         <node concept="liA8E" id="677NV56yw_Z" role="2OqNvi">
                           <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
                           <node concept="Xl_RD" id="677NV56ywEl" role="37wK5m">
-                            <property role="Xl_RC" value="$" />
+                            <property role="Xl_RC" value="_" />
                           </node>
                         </node>
                       </node>
@@ -4755,7 +4755,7 @@
                   <node concept="liA8E" id="677NV56dlaq" role="2OqNvi">
                     <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
                     <node concept="Xl_RD" id="677NV56dlcE" role="37wK5m">
-                      <property role="Xl_RC" value="$" />
+                      <property role="Xl_RC" value="_" />
                     </node>
                   </node>
                   <node concept="2YIFZM" id="31Jz$8bZWnC" role="2Oq$k0">
