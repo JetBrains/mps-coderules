@@ -74,8 +74,15 @@
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
@@ -286,6 +293,7 @@
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1175845471038" name="jetbrains.mps.baseLanguage.collections.structure.ReverseOperation" flags="nn" index="35Qw8J" />
       <concept id="1225711141656" name="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression" flags="nn" index="1y4W85">
         <child id="1225711182005" name="list" index="1y566C" />
         <child id="1225711191269" name="index" index="1y58nS" />
@@ -358,15 +366,49 @@
         <node concept="1nCR9W" id="35Lj3TiPjSW" role="gfFT$">
           <property role="1nD$Q0" value="handlerFqName" />
           <node concept="10Nm6u" id="5lJXKmGkw" role="2U2pNA">
-            <node concept="2b32R4" id="5lJXKmGoa" role="lGtFl">
-              <node concept="3JmXsc" id="5lJXKmGod" role="2P8S$">
-                <node concept="3clFbS" id="5lJXKmGoe" role="2VODD2">
-                  <node concept="3clFbF" id="5lJXKmGok" role="3cqZAp">
-                    <node concept="2OqwBi" id="5lJXKmGof" role="3clFbG">
-                      <node concept="3Tsc0h" id="5lJXKmGoi" role="2OqNvi">
+            <node concept="2b32R4" id="2h41Ezbw4Jm" role="lGtFl">
+              <node concept="3JmXsc" id="2h41Ezbw4Jq" role="2P8S$">
+                <node concept="3clFbS" id="2h41Ezbw4Ju" role="2VODD2">
+                  <node concept="3clFbJ" id="2h41EzbvSYc" role="3cqZAp">
+                    <node concept="3clFbS" id="2h41EzbvSYe" role="3clFbx">
+                      <node concept="3cpWs6" id="2h41EzbwrCP" role="3cqZAp">
+                        <node concept="2OqwBi" id="2h41Ezbwt1u" role="3cqZAk">
+                          <node concept="2OqwBi" id="2h41EzbwshS" role="2Oq$k0">
+                            <node concept="3Tsc0h" id="2h41EzbwshT" role="2OqNvi">
+                              <ref role="3TtcxE" to="vgt0:5lJXKlBV_" />
+                            </node>
+                            <node concept="30H73N" id="2h41EzbwshU" role="2Oq$k0" />
+                          </node>
+                          <node concept="35Qw8J" id="2h41EzbwufQ" role="2OqNvi" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="2h41EzbvTED" role="3clFbw">
+                      <node concept="2YIFZM" id="2h41EzbvTgK" role="2Oq$k0">
+                        <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+                        <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                        <node concept="2YIFZM" id="2h41EzbwgFW" role="37wK5m">
+                          <ref role="37wK5l" to="e2lb:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
+                          <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
+                          <node concept="Xl_RD" id="2h41EzbwgFX" role="37wK5m">
+                            <property role="Xl_RC" value="java.version" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="2h41EzbvUD8" role="2OqNvi">
+                        <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+                        <node concept="Xl_RD" id="2h41EzbvUNg" role="37wK5m">
+                          <property role="Xl_RC" value="1.8" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs6" id="2h41EzbwuL6" role="3cqZAp">
+                    <node concept="2OqwBi" id="2h41EzbwuZa" role="3cqZAk">
+                      <node concept="3Tsc0h" id="2h41EzbwuZb" role="2OqNvi">
                         <ref role="3TtcxE" to="vgt0:5lJXKlBV_" />
                       </node>
-                      <node concept="30H73N" id="5lJXKmGoj" role="2Oq$k0" />
+                      <node concept="30H73N" id="2h41EzbwuZc" role="2Oq$k0" />
                     </node>
                   </node>
                 </node>
