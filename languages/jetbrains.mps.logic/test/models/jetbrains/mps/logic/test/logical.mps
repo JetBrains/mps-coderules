@@ -582,36 +582,11 @@
             </node>
           </node>
           <node concept="3clFbH" id="1OShD0HU_Ia" role="3cqZAp" />
-          <node concept="3cpWs8" id="1OShD0HU_Go" role="3cqZAp">
-            <node concept="3cpWsn" id="1OShD0HU_Gp" role="3cpWs9">
-              <property role="TrG5h" value="c" />
-              <node concept="3uibUv" id="1OShD0HU_Gq" role="1tU5fm">
-                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-              </node>
-              <node concept="1oi1Uc" id="1OShD0HU_Gr" role="33vP2m">
-                <node concept="1oi5UN" id="1OShD0HU_Gs" role="1oi0x0">
-                  <node concept="1oi5ST" id="1OShD0HU_Gt" role="1ojpOf">
-                    <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="single" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="1OShD0HUzFT" role="3cqZAp" />
           <node concept="3vlDli" id="1OShD0HUzFU" role="3cqZAp">
             <node concept="37vLTw" id="1OShD0HUzFV" role="3tpDZA">
               <ref role="3cqZAo" node="1OShD0HUzFO" resolve="b" />
             </node>
             <node concept="37vLTw" id="1OShD0HUzFW" role="3tpDZB">
-              <ref role="3cqZAo" node="1OShD0HUzFH" resolve="a" />
-            </node>
-          </node>
-          <node concept="3vlDli" id="1OShD0HU_PH" role="3cqZAp">
-            <node concept="37vLTw" id="1OShD0HU_QC" role="3tpDZA">
-              <ref role="3cqZAo" node="1OShD0HU_Gp" resolve="c" />
-            </node>
-            <node concept="37vLTw" id="1OShD0HU_PJ" role="3tpDZB">
               <ref role="3cqZAo" node="1OShD0HUzFH" resolve="a" />
             </node>
           </node>
@@ -1480,7 +1455,6 @@
         <node concept="3cqZAl" id="2ev$9JFBKE9" role="3clF45" />
         <node concept="3Tm1VV" id="2ev$9JFBKEb" role="1B3o_S" />
         <node concept="3clFbS" id="2ev$9JFBKEc" role="3clF47">
-          <node concept="3clFbH" id="2ev$9JFDTUq" role="3cqZAp" />
           <node concept="3cpWs8" id="2ev$9JFBKEw" role="3cqZAp">
             <node concept="3cpWsn" id="2ev$9JFBKEx" role="3cpWs9">
               <property role="TrG5h" value="tree" />
@@ -1518,13 +1492,15 @@
                     <ref role="3cqZAo" node="2ev$9JFBNlS" resolve="mock" />
                   </node>
                   <node concept="liA8E" id="2ev$9JFD_nP" role="2OqNvi">
-                    <ref role="37wK5l" to="ie8e:3JgCwkqmHc0" resolve="walkList" />
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
                     <node concept="1rXfSq" id="2ev$9JFEITF" role="37wK5m">
-                      <ref role="37wK5l" node="2ev$9JFEHV1" resolve="anyList" />
+                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyChildren" />
                     </node>
                     <node concept="10QFUN" id="2ev$9JFD_pV" role="37wK5m">
-                      <node concept="3uibUv" id="2ev$9JFD_pW" role="10QFUM">
-                        <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+                      <node concept="10Q1$e" id="5cGCTtqzbda" role="10QFUM">
+                        <node concept="3uibUv" id="5cGCTtqzaDx" role="10Q1$1">
+                          <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+                        </node>
                       </node>
                       <node concept="2YIFZM" id="2ev$9JFD_pX" role="10QFUP">
                         <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
@@ -1578,10 +1554,10 @@
                 </node>
               </node>
               <node concept="liA8E" id="2ev$9JFD93F" role="2OqNvi">
-                <ref role="37wK5l" to="ie8e:3JgCwkqmHc0" resolve="walkList" />
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
                 <node concept="10QFUN" id="2ev$9JFDJDT" role="37wK5m">
-                  <node concept="3uibUv" id="2ev$9JFDJDN" role="10QFUM">
-                    <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
+                  <node concept="3uibUv" id="5cGCTtqzhLw" role="10QFUM">
+                    <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
                   </node>
                   <node concept="2YIFZM" id="2ev$9JFDJDP" role="10QFUP">
                     <ref role="37wK5l" to="xxzj:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
@@ -1597,8 +1573,10 @@
                   </node>
                 </node>
                 <node concept="10QFUN" id="2ev$9JFD96P" role="37wK5m">
-                  <node concept="3uibUv" id="2ev$9JFD96Q" role="10QFUM">
-                    <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+                  <node concept="10Q1$e" id="5cGCTtqzi2F" role="10QFUM">
+                    <node concept="3uibUv" id="5cGCTtqzhUK" role="10Q1$1">
+                      <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+                    </node>
                   </node>
                   <node concept="2YIFZM" id="2ev$9JFD96R" role="10QFUP">
                     <ref role="37wK5l" to="xxzj:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
