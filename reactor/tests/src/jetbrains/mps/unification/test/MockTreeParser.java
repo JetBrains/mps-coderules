@@ -231,7 +231,7 @@ public class MockTreeParser {
 
         private void addRef(String ref) {
             final int label = Integer.parseInt(ref.substring(1));
-            if (termRefs.containsKey(label)) {
+            if (termRefs.containsKey(label) && termRefs.get(label) != null) {
                 childrenStack.peek().add(ref(termRefs.get(label)));
             }
             else {

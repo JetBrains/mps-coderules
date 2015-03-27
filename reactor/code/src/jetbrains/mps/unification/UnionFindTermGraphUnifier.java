@@ -51,8 +51,6 @@ public class UnionFindTermGraphUnifier {
 
     private Map<Object, Data> myData = new IdentityHashMap<Object, Data>();
 
-    private int myUnreconciledRefs = 0;
-
     private FailureCause myFailureCause = UKNOWN;
 
     public Substitution unify(Node a, Node b) {
@@ -190,7 +188,6 @@ public class UnionFindTermGraphUnifier {
     }
 
     private Substitution findSolution(Node s) {
-        myUnreconciledRefs = 0;
         return findSolution(s, EMPTY_SUBSTITUTION);
     }
 
@@ -204,7 +201,6 @@ public class UnionFindTermGraphUnifier {
             return failedSubstitution(CYCLE_DETECTED); // there exists a cycle
         }
 
-        int unreconciled = myUnreconciledRefs;
         if (z.is(FUN)) {
             setVisited(z, true);
 
@@ -223,20 +219,11 @@ public class UnionFindTermGraphUnifier {
             return substitution;
         }
 
-        if (isReferenced(z)) {
-            setReferenced(z, false);
-            myUnreconciledRefs--;
-        }
-
         setAcyclic(z, true);
 
         SuccessfulSubstitution success = new SuccessfulSubstitution(substitution);
         for (Node var : getVars(find(z))) {
             if (var != z) {
-                if (myUnreconciledRefs != unreconciled) {
-                    return failedSubstitution(UNRECONCILED_REF); // there's an unreconciled outward reference
-                }
-
                 Node val = z.is(REF) ? z.get() : z;
 
                 // Keep the order of variables within a binding
@@ -249,13 +236,9 @@ public class UnionFindTermGraphUnifier {
             }
         }
 
-        if (z.is(REF) && z.get().is(FUN)) {
-            setReferenced(z.get(), true);
-            myUnreconciledRefs++;
-        }
-
         return success;
     }
+
 
     private int getSize(Node n) {
         if (!hasData(n)) return 1;
@@ -308,14 +291,6 @@ public class UnionFindTermGraphUnifier {
 
     private void setVisited(Node n, boolean visited) {
         getData(n).myVisited = visited;
-    }
-
-    private boolean isReferenced(Node n) {
-        return hasData(n) && getData(n).myReferenced;
-    }
-
-    private void setReferenced(Node n, boolean referenced) {
-        getData(n).myReferenced = referenced;
     }
 
     private boolean hasData(Node n) {

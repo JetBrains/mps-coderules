@@ -38,7 +38,18 @@ public class AssertStructurallyEquivalent {
                             signature.label(term);
                             return term.children();
                         }
-                    }),
+                    }
+                        ,
+                new NodeVisitor<Node>(Node.Kind.REF) {
+                    @Override
+                    public Collection<? extends Node> visit(Node ref) throws Exception {
+                        if (ref.get().is(Node.Kind.FUN)) {
+                            return Collections.singletonList(ref.get());
+                        }
+                        return Collections.emptyList();
+                    }
+                }
+                ),
                 // second pass
                 new NodeWalker(
                     new NodeVisitor<Node>(Node.Kind.FUN) {
@@ -59,9 +70,14 @@ public class AssertStructurallyEquivalent {
                         public Collection<? extends Node> visit(Node ref) throws Exception {
                             if (ref.get().is(Node.Kind.FUN)) {
                                 Integer label = signature.getLabel(ref.get());
-                                assertNotNull("not found label for '"+ref.get() + "'", label);
-                                signature.appendSignature("^").append(label);
-                                return Collections.emptyList();
+                                assertNotNull("not found label for '" + ref.get() + "'", label);
+                                if (signature.isTopLevel(ref.get())) {
+                                    signature.appendSignature("^").append(label);
+                                    return Collections.emptyList();
+                                }
+                                else {
+                                    return Collections.singletonList(ref.get());
+                                }
                             }
                             else if (ref.get().is(Node.Kind.VAR)) {
                                 signature.appendSignature("^").append(ref.get().symbol());
@@ -98,6 +114,8 @@ public class AssertStructurallyEquivalent {
             return labels.get(node);
         }
 
+        protected boolean isTopLevel(Node node) { return labels.get(node) == 1; }
+
         protected StringBuilder appendSignature(String str) {
             return signature.append(str);
         }
@@ -133,11 +151,15 @@ public class AssertStructurallyEquivalent {
             return kind;
         }
 
+
+
         public abstract Collection<? extends Node> visit(T t) throws Exception ;
 
     }
 
     private static class NodeWalker {
+
+        private static Object SINGLETON = new Object();
 
         private Map<Node.Kind, NodeVisitor<? extends Node>> visitorMap = new HashMap<Node.Kind, NodeVisitor<? extends Node>>();
 
@@ -148,9 +170,19 @@ public class AssertStructurallyEquivalent {
         }
 
         public void walk(Node node) throws Exception {
+            walk(node, new IdentityHashMap<Node, Object>());
+        }
+
+        private void walk(Node node, Map<Node, Object> visited) throws Exception {
+            if (node.is(Node.Kind.FUN)) {
+                visited.put(node, SINGLETON);
+            }
             Collection<? extends Node> children = switchClass(node);
             for (Node child : children) {
-                walk(child);
+                if (visited.containsKey(child)) {
+                    continue;
+                }
+                walk(child, visited);
             }
         }
 

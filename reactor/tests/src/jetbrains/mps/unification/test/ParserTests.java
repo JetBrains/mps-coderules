@@ -136,22 +136,6 @@ public class ParserTests {
                 term("a", ref(d), d));
     }
 
-    @Test(expected = ComparisonFailure.class)
-    public void testNotEquivalent2() throws Exception {
-        Node b1  = term("b");
-        Node b2  = term("b");
-        assertEquivalent(parse("a{@2b ^1 @1b ^2}"),
-                term("a", b2, ref(b2), b1, ref(b1)));
-    }
-
-    @Test(expected = ComparisonFailure.class)
-    public void testNotEquivalent3() throws Exception {
-        Node b1  = term("b");
-        Node b2  = term("b");
-        assertEquivalent(parse("a{@2b ^1 ^2 @1b}"),
-                term("a", b2, ref(b2), ref(b1), b1));
-    }
-
     @Test(expected = MockTreeParser.ParseException.class)
     public void testUnclosedFail() {
         parse("a{b ");

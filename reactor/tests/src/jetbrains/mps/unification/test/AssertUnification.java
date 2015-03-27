@@ -89,16 +89,25 @@ public class AssertUnification {
     }
 
     public static void assertUnificationFails(Node s, Node t) throws Exception {
-        Substitution subs = Unification.unify(s, t);
+        Substitution subs1 = Unification.unify(s, t);
 
-        assertFalse(subs.isSuccessful());
+        assertFalse(subs1.isSuccessful());
+
+        Substitution subs2 = Unification.unify(s, t);
+
+        assertFalse(subs2.isSuccessful());
     }
 
     public static void assertUnificationFails(Node s, Node t, FailureCause failureCause) throws Exception {
-        Substitution subs = Unification.unify(s, t);
+        Substitution subs1 = Unification.unify(s, t);
 
-        assertFalse(subs.isSuccessful());
-        assertSame(failureCause, subs.failureCause());
+        assertFalse(subs1.isSuccessful());
+        assertSame(failureCause, subs1.failureCause());
+
+        Substitution subs2 = Unification.unify(t, s);
+
+        assertFalse(subs2.isSuccessful());
+        assertSame(failureCause, subs2.failureCause());
     }
 
 }
