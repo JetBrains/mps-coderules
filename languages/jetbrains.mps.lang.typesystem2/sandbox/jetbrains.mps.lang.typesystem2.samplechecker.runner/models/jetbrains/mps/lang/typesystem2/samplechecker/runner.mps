@@ -8,7 +8,6 @@
   </languages>
   <imports>
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
-    <import index="uiwa" ref="r:834aed36-d663-4ac5-9f19-cf6ba3aaf1b2(jetbrains.mps.lang.typesystem2.samplechecker.chr)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
     <import index="w2rx" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" />
@@ -17,6 +16,7 @@
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="jo0n" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime.debug.graphical(jetbrains.mps.jchr.runtime/runtime.debug.graphical@java_stub)" />
     <import index="5t0y" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime.debug(jetbrains.mps.jchr.runtime/runtime.debug@java_stub)" />
+    <import index="7y3b" ref="r:6aac3fb5-0350-444e-8204-fb71b0589bdd(jetbrains.mps.lang.typesystem2.samplechecker.chr)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -262,11 +262,11 @@
           <node concept="3cpWsn" id="3Qp4N06bZni" role="3cpWs9">
             <property role="TrG5h" value="handler" />
             <node concept="1Kb3S_" id="3Qp4N06bZnj" role="1tU5fm">
-              <ref role="1Kaivj" to="uiwa:4ef1vBgAdis" resolve="testHandler" />
+              <ref role="1Kaivj" to="7y3b:12TFIqWxyQ7" resolve="testHandler" />
             </node>
             <node concept="2ShNRf" id="3Qp4N06bZnk" role="33vP2m">
               <node concept="1KbMJY" id="3Qp4N06bZnl" role="2ShVmc">
-                <ref role="1Kajjj" to="uiwa:4ef1vBgAdis" resolve="testHandler" />
+                <ref role="1Kajjj" to="7y3b:12TFIqWxyQ7" resolve="testHandler" />
                 <node concept="2OqwBi" id="3Qp4N06bZnm" role="1KkMwq">
                   <node concept="37vLTw" id="3Qp4N06bZnn" role="2Oq$k0">
                     <ref role="3cqZAo" node="3Qp4N06bZnb" resolve="farm" />
@@ -316,7 +316,7 @@
                   <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
                 </node>
                 <node concept="1KczDs" id="6qJjpCjqw_S" role="2OqNvi">
-                  <ref role="1KgAX_" to="uiwa:4ef1vBgAdiW" resolve="check" />
+                  <ref role="1KgAX_" to="7y3b:12TFIqWxyQB" resolve="check" />
                   <node concept="Xl_RD" id="6qJjpCjtKec" role="1KcKQn">
                     <property role="Xl_RC" value="4438600004733396337(HelloWorld)" />
                   </node>
@@ -331,7 +331,7 @@
               <ref role="3cqZAo" node="3Qp4N06bZni" resolve="handler" />
             </node>
             <node concept="1KczDs" id="6lpwCiZ78Rj" role="2OqNvi">
-              <ref role="1KgAX_" to="uiwa:4ef1vBgAdiW" resolve="check" />
+              <ref role="1KgAX_" to="7y3b:12TFIqWxyQB" resolve="check" />
               <node concept="1oi1Uc" id="6YyAPwCRevQ" role="1KcKQn">
                 <node concept="1oi5UN" id="6YyAPwCRevS" role="1oi0x0">
                   <node concept="1oi5Wm" id="6YyAPwCRevU" role="1ojpOf">
@@ -945,7 +945,7 @@
       <node concept="37vLTG" id="3XExYyWVIV0" role="3clF46">
         <property role="TrG5h" value="handler" />
         <node concept="1Kb3S_" id="3XExYyWVIV1" role="1tU5fm">
-          <ref role="1Kaivj" to="uiwa:4ef1vBgAdis" resolve="testHandler" />
+          <ref role="1Kaivj" to="7y3b:12TFIqWxyQ7" resolve="testHandler" />
         </node>
       </node>
       <node concept="3clFbS" id="3XExYyWVIUA" role="3clF47">
