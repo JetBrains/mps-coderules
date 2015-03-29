@@ -5,9 +5,6 @@
       <sourceRoot location="models" />
     </modelRoot>
   </models>
-  <stubModelEntries>
-    <stubModelEntry path="/Volumes/Sparky/Research/CHR/jetbrains.mps.jchr/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.handler/classes_jchr" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">b6db9382-d342-43fd-8051-5b6af3c0c80a(jetbrains.mps.lang.typesystem2.samplechecker.handler)</dependency>

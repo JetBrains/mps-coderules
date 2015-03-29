@@ -1412,7 +1412,7 @@
             <ref role="37wK5l" to="810:~Messages.showInfoMessage(java.lang.String,java.lang.String):void" resolve="showInfoMessage" />
             <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
             <node concept="Xl_RD" id="3Qp4N06byoI" role="37wK5m">
-              <property role="Xl_RC" value="Finished without errors" />
+              <property role="Xl_RC" value="OK -- collecting rules" />
             </node>
             <node concept="Xl_RD" id="3Qp4N06byoH" role="37wK5m">
               <property role="Xl_RC" value="Collect Rules" />
@@ -1434,70 +1434,88 @@
     <node concept="2XrIbr" id="12TFIqWsUfI" role="32lrUH">
       <property role="TrG5h" value="stepTwo" />
       <node concept="3clFbS" id="12TFIqWsUfJ" role="3clF47">
-        <node concept="3clFbF" id="7RDCjSXjQjS" role="3cqZAp">
-          <node concept="2YIFZM" id="7RDCjSXjRlr" role="3clFbG">
-            <ref role="37wK5l" node="7RDCjSXjQEP" resolve="make" />
-            <ref role="1Pybhc" node="7RDCjSXgvZa" resolve="MakeCollectedRules" />
-            <node concept="2OqwBi" id="7RDCjSXjSwA" role="37wK5m">
-              <node concept="2WthIp" id="7RDCjSXjSwD" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7RDCjSXjSwF" role="2OqNvi">
-                <ref role="2WH_rO" node="7iCFfvQBVbg" resolve="mpsProject" />
+        <node concept="3clFbJ" id="41ox5VnbJZ4" role="3cqZAp">
+          <node concept="3clFbS" id="41ox5VnbJZ6" role="3clFbx">
+            <node concept="3clFbF" id="41ox5VnbKwT" role="3cqZAp">
+              <node concept="2YIFZM" id="41ox5VnbKwU" role="3clFbG">
+                <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+                <ref role="37wK5l" to="810:~Messages.showWarningDialog(java.lang.String,java.lang.String):void" resolve="showWarningDialog" />
+                <node concept="Xl_RD" id="41ox5VnbKwV" role="37wK5m">
+                  <property role="Xl_RC" value="Could not start Make" />
+                </node>
+                <node concept="Xl_RD" id="41ox5VnbKwW" role="37wK5m">
+                  <property role="Xl_RC" value="Make Rules" />
+                </node>
               </node>
             </node>
-            <node concept="1bVj0M" id="7RDCjSXjSzD" role="37wK5m">
-              <node concept="3clFbS" id="7RDCjSXjSzF" role="1bW5cS">
-                <node concept="3clFbJ" id="7RDCjSXjTcD" role="3cqZAp">
-                  <node concept="3fqX7Q" id="12TFIqWuZEu" role="3clFbw">
-                    <node concept="2OqwBi" id="12TFIqWuZEv" role="3fr31v">
-                      <node concept="37vLTw" id="12TFIqWuZEw" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7RDCjSXjSY$" resolve="res" />
-                      </node>
-                      <node concept="liA8E" id="12TFIqWuZEx" role="2OqNvi">
-                        <ref role="37wK5l" to="i9so:17I1R__cQ6v" resolve="isSucessful" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="7RDCjSXjTyj" role="3clFbx">
-                    <node concept="3clFbF" id="7RDCjSXjT$h" role="3cqZAp">
-                      <node concept="2YIFZM" id="7RDCjSXjT$i" role="3clFbG">
-                        <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
-                        <ref role="37wK5l" to="810:~Messages.showWarningDialog(java.lang.String,java.lang.String):void" resolve="showWarningDialog" />
-                        <node concept="Xl_RD" id="7RDCjSXjVhZ" role="37wK5m">
-                          <property role="Xl_RC" value="Encountered errors" />
-                        </node>
-                        <node concept="Xl_RD" id="7RDCjSXjT$o" role="37wK5m">
-                          <property role="Xl_RC" value="Make Rules" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbH" id="12TFIqWuZC9" role="3cqZAp" />
-                <node concept="3clFbF" id="7RDCjSXjTvY" role="3cqZAp">
-                  <node concept="2YIFZM" id="7RDCjSXjTvZ" role="3clFbG">
-                    <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
-                    <ref role="37wK5l" to="810:~Messages.showInfoMessage(java.lang.String,java.lang.String):void" resolve="showInfoMessage" />
-                    <node concept="Xl_RD" id="7RDCjSXjTw0" role="37wK5m">
-                      <property role="Xl_RC" value="Finished without errors" />
-                    </node>
-                    <node concept="Xl_RD" id="7RDCjSXjTw1" role="37wK5m">
-                      <property role="Xl_RC" value="Make Rules" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="12TFIqWuZzT" role="3cqZAp">
-                  <node concept="2OqwBi" id="12TFIqWuZzN" role="3clFbG">
-                    <node concept="2WthIp" id="12TFIqWuZzQ" role="2Oq$k0" />
-                    <node concept="2XshWL" id="12TFIqWuZzS" role="2OqNvi">
-                      <ref role="2WH_rO" node="12TFIqWsVRB" resolve="stepThree" />
-                    </node>
-                  </node>
+            <node concept="3clFbH" id="41ox5VnbKyk" role="3cqZAp" />
+          </node>
+          <node concept="3fqX7Q" id="41ox5VnbKaq" role="3clFbw">
+            <node concept="2YIFZM" id="41ox5VnbKas" role="3fr31v">
+              <ref role="37wK5l" node="7RDCjSXjQEP" resolve="make" />
+              <ref role="1Pybhc" node="7RDCjSXgvZa" resolve="MakeCollectedRules" />
+              <node concept="2OqwBi" id="41ox5VnbKat" role="37wK5m">
+                <node concept="2WthIp" id="41ox5VnbKau" role="2Oq$k0" />
+                <node concept="1DTwFV" id="41ox5VnbKav" role="2OqNvi">
+                  <ref role="2WH_rO" node="7iCFfvQBVbg" resolve="mpsProject" />
                 </node>
               </node>
-              <node concept="37vLTG" id="7RDCjSXjSY$" role="1bW2Oz">
-                <property role="TrG5h" value="res" />
-                <node concept="3uibUv" id="7RDCjSXjT6_" role="1tU5fm">
-                  <ref role="3uigEE" to="i9so:17I1R__cQ5X" resolve="IResult" />
+              <node concept="1bVj0M" id="41ox5VnbKaw" role="37wK5m">
+                <node concept="3clFbS" id="41ox5VnbKax" role="1bW5cS">
+                  <node concept="3clFbJ" id="41ox5VnbKay" role="3cqZAp">
+                    <node concept="3fqX7Q" id="41ox5VnbKaz" role="3clFbw">
+                      <node concept="2OqwBi" id="41ox5VnbKa$" role="3fr31v">
+                        <node concept="37vLTw" id="41ox5VnbKa_" role="2Oq$k0">
+                          <ref role="3cqZAo" node="41ox5VnbKaP" resolve="res" />
+                        </node>
+                        <node concept="liA8E" id="41ox5VnbKaA" role="2OqNvi">
+                          <ref role="37wK5l" to="i9so:17I1R__cQ6v" resolve="isSucessful" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="41ox5VnbKaB" role="3clFbx">
+                      <node concept="3clFbF" id="41ox5VnbKaC" role="3cqZAp">
+                        <node concept="2YIFZM" id="41ox5VnbKaD" role="3clFbG">
+                          <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+                          <ref role="37wK5l" to="810:~Messages.showWarningDialog(java.lang.String,java.lang.String):void" resolve="showWarningDialog" />
+                          <node concept="Xl_RD" id="41ox5VnbKaE" role="37wK5m">
+                            <property role="Xl_RC" value="Encountered errors" />
+                          </node>
+                          <node concept="Xl_RD" id="41ox5VnbKaF" role="37wK5m">
+                            <property role="Xl_RC" value="Make Rules" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="41ox5VnbKaG" role="3cqZAp" />
+                  <node concept="3clFbF" id="41ox5VnbKaH" role="3cqZAp">
+                    <node concept="2YIFZM" id="41ox5VnbKaI" role="3clFbG">
+                      <ref role="37wK5l" to="810:~Messages.showInfoMessage(java.lang.String,java.lang.String):void" resolve="showInfoMessage" />
+                      <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+                      <node concept="Xl_RD" id="41ox5VnbKaJ" role="37wK5m">
+                        <property role="Xl_RC" value="OK -- making rules" />
+                      </node>
+                      <node concept="Xl_RD" id="41ox5VnbKaK" role="37wK5m">
+                        <property role="Xl_RC" value="Make Rules" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="41ox5VnbKaL" role="3cqZAp">
+                    <node concept="2OqwBi" id="41ox5VnbKaM" role="3clFbG">
+                      <node concept="2WthIp" id="41ox5VnbKaN" role="2Oq$k0" />
+                      <node concept="2XshWL" id="41ox5VnbKaO" role="2OqNvi">
+                        <ref role="2WH_rO" node="12TFIqWsVRB" resolve="stepThree" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="41ox5VnbKyI" role="3cqZAp" />
+                </node>
+                <node concept="37vLTG" id="41ox5VnbKaP" role="1bW2Oz">
+                  <property role="TrG5h" value="res" />
+                  <node concept="3uibUv" id="41ox5VnbKaQ" role="1tU5fm">
+                    <ref role="3uigEE" to="i9so:17I1R__cQ5X" resolve="IResult" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1715,7 +1733,7 @@
                   <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
                   <ref role="37wK5l" to="810:~Messages.showInfoMessage(java.lang.String,java.lang.String):void" resolve="showInfoMessage" />
                   <node concept="Xl_RD" id="12TFIqWuYUf" role="37wK5m">
-                    <property role="Xl_RC" value="Finished without errors" />
+                    <property role="Xl_RC" value="OK -- launched the rules" />
                   </node>
                   <node concept="Xl_RD" id="12TFIqWuYUg" role="37wK5m">
                     <property role="Xl_RC" value="Launch Rules" />
@@ -1855,7 +1873,7 @@
           </node>
         </node>
       </node>
-      <node concept="3cqZAl" id="7RDCjSXjNjW" role="3clF45" />
+      <node concept="10P_77" id="41ox5VnbI$T" role="3clF45" />
       <node concept="3Tm1VV" id="7RDCjSXjN75" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="7RDCjSXiqW3" role="jymVt" />
@@ -2001,6 +2019,11 @@
               </node>
             </node>
             <node concept="3clFbH" id="7RDCjSXl$O4" role="3cqZAp" />
+            <node concept="3SKdUt" id="41ox5VnbG1p" role="3cqZAp">
+              <node concept="3SKdUq" id="41ox5VnbG9_" role="3SKWNk">
+                <property role="3SKdUp" value="await the make results from a separate thread so as no to block the EDT" />
+              </node>
+            </node>
             <node concept="3clFbF" id="7RDCjSXnhQ$" role="3cqZAp">
               <node concept="2OqwBi" id="7RDCjSXnjl3" role="3clFbG">
                 <node concept="2ShNRf" id="7RDCjSXnhQw" role="2Oq$k0">
@@ -2023,14 +2046,6 @@
                         <node concept="3clFbS" id="7RDCjSXniGd" role="3clF47">
                           <node concept="SfApY" id="7RDCjSXk2C_" role="3cqZAp">
                             <node concept="3clFbS" id="7RDCjSXk2CB" role="SfCbr">
-                              <node concept="3clFbH" id="7RDCjSXlcKg" role="3cqZAp" />
-                              <node concept="34ab3g" id="7RDCjSXkJED" role="3cqZAp">
-                                <property role="35gtTG" value="warn" />
-                                <node concept="Xl_RD" id="7RDCjSXkJEG" role="34bqiv">
-                                  <property role="Xl_RC" value="*** WAITING FOR RESULT" />
-                                </node>
-                              </node>
-                              <node concept="3clFbH" id="7RDCjSXkJ$F" role="3cqZAp" />
                               <node concept="3cpWs8" id="7RDCjSXjMeF" role="3cqZAp">
                                 <node concept="3cpWsn" id="7RDCjSXjMeG" role="3cpWs9">
                                   <property role="TrG5h" value="res" />
@@ -2047,19 +2062,11 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="3clFbH" id="7RDCjSXkpxj" role="3cqZAp" />
-                              <node concept="34ab3g" id="7RDCjSXkpKg" role="3cqZAp">
-                                <property role="35gtTG" value="warn" />
-                                <node concept="3cpWs3" id="7RDCjSXkq9S" role="34bqiv">
-                                  <node concept="37vLTw" id="7RDCjSXkqbb" role="3uHU7w">
-                                    <ref role="3cqZAo" node="7RDCjSXjMeG" resolve="res" />
-                                  </node>
-                                  <node concept="Xl_RD" id="7RDCjSXkpKi" role="3uHU7B">
-                                    <property role="Xl_RC" value="*** RESULT: " />
-                                  </node>
+                              <node concept="3SKdUt" id="41ox5VnbFBa" role="3cqZAp">
+                                <node concept="3SKdUq" id="41ox5VnbFEl" role="3SKWNk">
+                                  <property role="3SKdUp" value="call the continuation from the EDT" />
                                 </node>
                               </node>
-                              <node concept="3clFbH" id="7RDCjSXkpCe" role="3cqZAp" />
                               <node concept="3clFbF" id="7RDCjSXjJy5" role="3cqZAp">
                                 <node concept="2YIFZM" id="7RDCjSXjL3O" role="3clFbG">
                                   <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
@@ -2117,6 +2124,22 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbH" id="41ox5VnbGlv" role="3cqZAp" />
+            <node concept="3cpWs6" id="41ox5VnbGyI" role="3cqZAp">
+              <node concept="3clFbT" id="41ox5VnbGMv" role="3cqZAk">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="41ox5VnbHj3" role="3cqZAp" />
+          </node>
+          <node concept="9aQIb" id="41ox5VnbHuN" role="9aQIa">
+            <node concept="3clFbS" id="41ox5VnbHuO" role="9aQI4">
+              <node concept="3cpWs6" id="41ox5VnbHGK" role="3cqZAp">
+                <node concept="3clFbT" id="41ox5VnbHI3" role="3cqZAk">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -2144,7 +2167,7 @@
           </node>
         </node>
       </node>
-      <node concept="3cqZAl" id="7RDCjSXirko" role="3clF45" />
+      <node concept="10P_77" id="41ox5VnbIkL" role="3clF45" />
       <node concept="3Tm6S6" id="7RDCjSXirl4" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="7RDCjSXg_hu" role="jymVt" />

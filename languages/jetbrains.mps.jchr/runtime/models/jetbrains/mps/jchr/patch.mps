@@ -23,6 +23,7 @@
     <import index="vyfj" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#compiler.CHRIntermediateForm.constraints.ud(jetbrains.mps.jchr.runtime/compiler.CHRIntermediateForm.constraints.ud@java_stub)" />
     <import index="p23n" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#compiler.CHRIntermediateForm.id(jetbrains.mps.jchr.runtime/compiler.CHRIntermediateForm.id@java_stub)" />
     <import index="12vg" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#compiler.CHRIntermediateForm.exceptions(jetbrains.mps.jchr.runtime/compiler.CHRIntermediateForm.exceptions@java_stub)" />
+    <import index="w50i" ref="r:4705c47f-1f99-4034-8b4c-899c3c0ef2b5(compiler.codeGeneration)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -216,6 +217,9 @@
       </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
+      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
+        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -686,22 +690,52 @@
                         <property role="3SKdUp" value="File[] generatedFiles = CodeGenerator.generateAllSourceFiles(cif);" />
                       </node>
                     </node>
-                    <node concept="3cpWs8" id="2ev$9JFs8KL" role="3cqZAp">
-                      <node concept="3cpWsn" id="2ev$9JFs8KK" role="3cpWs9">
+                    <node concept="3SKdUt" id="41ox5Vnaa7q" role="3cqZAp">
+                      <node concept="3SKWN0" id="41ox5Vnaa7r" role="3SKWNk">
+                        <node concept="3cpWs8" id="2ev$9JFs8KL" role="3SKWNf">
+                          <node concept="3cpWsn" id="2ev$9JFs8KK" role="3cpWs9">
+                            <property role="3TUv4t" value="false" />
+                            <property role="TrG5h" value="generatedFiles" />
+                            <node concept="10Q1$e" id="2ev$9JFs8KN" role="1tU5fm">
+                              <node concept="3uibUv" id="2ev$9JFs8KM" role="10Q1$1">
+                                <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+                              </node>
+                            </node>
+                            <node concept="2YIFZM" id="2ev$9JFu4fc" role="33vP2m">
+                              <ref role="1Pybhc" to="1z61:~CodeGeneration" resolve="CodeGeneration" />
+                              <ref role="37wK5l" to="1z61:~CodeGeneration.generateAllSourceFiles(compiler.CHRIntermediateForm.ICHRIntermediateForm,compiler.options.Options):java.io.File[]" resolve="generateAllSourceFiles" />
+                              <node concept="37vLTw" id="2ev$9JFs8KP" role="37wK5m">
+                                <ref role="3cqZAo" node="2ev$9JFs8JN" resolve="cif" />
+                              </node>
+                              <node concept="37vLTw" id="2ev$9JFs8KQ" role="37wK5m">
+                                <ref role="3cqZAo" node="2ev$9JFs8Jn" resolve="options" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3SKdUt" id="41ox5Vnb_cj" role="3cqZAp">
+                      <node concept="3SKdUq" id="41ox5Vnb_Fp" role="3SKWNk">
+                        <property role="3SKdUp" value="use the patched method which skips generation of tuple classes" />
+                      </node>
+                    </node>
+                    <node concept="3cpWs8" id="41ox5Vna92g" role="3cqZAp">
+                      <node concept="3cpWsn" id="41ox5Vna92h" role="3cpWs9">
                         <property role="3TUv4t" value="false" />
                         <property role="TrG5h" value="generatedFiles" />
-                        <node concept="10Q1$e" id="2ev$9JFs8KN" role="1tU5fm">
-                          <node concept="3uibUv" id="2ev$9JFs8KM" role="10Q1$1">
+                        <node concept="10Q1$e" id="41ox5Vna92i" role="1tU5fm">
+                          <node concept="3uibUv" id="41ox5Vna92j" role="10Q1$1">
                             <ref role="3uigEE" to="fxg7:~File" resolve="File" />
                           </node>
                         </node>
-                        <node concept="2YIFZM" id="2ev$9JFu4fc" role="33vP2m">
-                          <ref role="1Pybhc" to="1z61:~CodeGeneration" resolve="CodeGeneration" />
-                          <ref role="37wK5l" to="1z61:~CodeGeneration.generateAllSourceFiles(compiler.CHRIntermediateForm.ICHRIntermediateForm,compiler.options.Options):java.io.File[]" resolve="generateAllSourceFiles" />
-                          <node concept="37vLTw" id="2ev$9JFs8KP" role="37wK5m">
+                        <node concept="2YIFZM" id="41ox5Vna92k" role="33vP2m">
+                          <ref role="1Pybhc" to="w50i:41ox5Vn8Mb4" resolve="CodeGeneration2" />
+                          <ref role="37wK5l" to="w50i:41ox5Vn8Mb_" resolve="generateAllSourceFiles" />
+                          <node concept="37vLTw" id="41ox5Vna92l" role="37wK5m">
                             <ref role="3cqZAo" node="2ev$9JFs8JN" resolve="cif" />
                           </node>
-                          <node concept="37vLTw" id="2ev$9JFs8KQ" role="37wK5m">
+                          <node concept="37vLTw" id="41ox5Vna92m" role="37wK5m">
                             <ref role="3cqZAo" node="2ev$9JFs8Jn" resolve="options" />
                           </node>
                         </node>
@@ -881,7 +915,7 @@
                                   </node>
                                   <node concept="2OqwBi" id="2ev$9JFs8Ps" role="37wK5m">
                                     <node concept="37vLTw" id="2ev$9JFs8Pr" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="2ev$9JFs8KK" resolve="generatedFiles" />
+                                      <ref role="3cqZAo" node="41ox5Vna92h" resolve="generatedFiles" />
                                     </node>
                                     <node concept="1Rwk04" id="2ev$9JFs97T" role="2OqNvi" />
                                   </node>
@@ -925,7 +959,7 @@
                                 <node concept="liA8E" id="2ev$9JFs8PB" role="2OqNvi">
                                   <ref role="37wK5l" to="h23x:~JavaCompiler.compile(java.io.File...):void" resolve="compile" />
                                   <node concept="37vLTw" id="2ev$9JFs8LC" role="37wK5m">
-                                    <ref role="3cqZAo" node="2ev$9JFs8KK" resolve="generatedFiles" />
+                                    <ref role="3cqZAo" node="41ox5Vna92h" resolve="generatedFiles" />
                                   </node>
                                 </node>
                               </node>
@@ -1025,7 +1059,7 @@
                               <node concept="3clFbS" id="2ev$9JFs8Mi" role="3clFbx">
                                 <node concept="1DcWWT" id="2ev$9JFs8Ma" role="3cqZAp">
                                   <node concept="37vLTw" id="2ev$9JFs8Mh" role="1DdaDG">
-                                    <ref role="3cqZAo" node="2ev$9JFs8KK" resolve="generatedFiles" />
+                                    <ref role="3cqZAo" node="41ox5Vna92h" resolve="generatedFiles" />
                                   </node>
                                   <node concept="3cpWsn" id="2ev$9JFs8Me" role="1Duv9x">
                                     <property role="3TUv4t" value="false" />
