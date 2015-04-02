@@ -10,8 +10,8 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -135,8 +135,13 @@
     </node>
     <node concept="1TJgyj" id="5MHpiylGjt8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parameterBlock" />
-      <ref role="20lvS9" node="5MHpiylG7gA" resolve="RuleParameterBlock" />
+      <property role="20kJfa" value="iterateParameterBlock" />
+      <ref role="20lvS9" node="1zN1RIkNhnM" resolve="IterateParameterBlock" />
+    </node>
+    <node concept="1TJgyj" id="1zN1RIkQKTu" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="boundParameterBlock" />
+      <ref role="20lvS9" node="1zN1RIkQtcr" resolve="BoundParameterBlock" />
     </node>
     <node concept="PrWs8" id="6p0DfM0c$n_" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -374,6 +379,8 @@
   <node concept="1TIwiD" id="5MHpiylG7gA">
     <property role="3GE5qa" value="rule.parameter" />
     <property role="TrG5h" value="RuleParameterBlock" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5MHpiylGFuy" role="PzmwI">
       <ref role="PrY4T" to="tpee:i0zv2NF" resolve="IContainsStatementList" />
@@ -455,6 +462,16 @@
     <property role="TrG5h" value="IsboundVariableConstraint" />
     <property role="34LRSv" value="isBound" />
     <ref role="1TJDcQ" node="60B5zVESvAi" resolve="LogicVariableConstraint" />
+  </node>
+  <node concept="1TIwiD" id="1zN1RIkNhnM">
+    <property role="3GE5qa" value="rule.parameter" />
+    <property role="TrG5h" value="IterateParameterBlock" />
+    <ref role="1TJDcQ" node="5MHpiylG7gA" resolve="RuleParameterBlock" />
+  </node>
+  <node concept="1TIwiD" id="1zN1RIkQtcr">
+    <property role="3GE5qa" value="rule.parameter" />
+    <property role="TrG5h" value="BoundParameterBlock" />
+    <ref role="1TJDcQ" node="5MHpiylG7gA" resolve="RuleParameterBlock" />
   </node>
 </model>
 

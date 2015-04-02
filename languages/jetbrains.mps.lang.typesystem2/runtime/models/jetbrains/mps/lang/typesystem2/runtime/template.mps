@@ -334,14 +334,27 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1zN1RIkUglY" role="jymVt" />
+    <node concept="3clFb_" id="1zN1RIkUgGf" role="jymVt">
+      <property role="TrG5h" value="boundParam" />
+      <node concept="37vLTG" id="1zN1RIkUgHA" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="1zN1RIkUgHG" role="1tU5fm" />
+      </node>
+      <node concept="16syzq" id="1zN1RIkUgHz" role="3clF45">
+        <ref role="16sUi3" node="1zN1RIkUglW" resolve="S" />
+      </node>
+      <node concept="3Tm1VV" id="1zN1RIkUgGi" role="1B3o_S" />
+      <node concept="3clFbS" id="1zN1RIkUgGj" role="3clF47">
+        <node concept="3clFbF" id="1zN1RIkUgYp" role="3cqZAp">
+          <node concept="10Nm6u" id="1zN1RIkUgYo" role="3clFbG" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="5k_shARM_vc" role="jymVt" />
     <node concept="3clFb_" id="5k_shARMugD" role="jymVt">
       <property role="TrG5h" value="apply" />
       <property role="1EzhhJ" value="true" />
-      <node concept="37vLTG" id="5k_shARM_lS" role="3clF46">
-        <property role="TrG5h" value="input" />
-        <node concept="3Tqbb2" id="5k_shARM_oi" role="1tU5fm" />
-      </node>
       <node concept="A3Dl8" id="5MHpiylA_Go" role="3clF45">
         <node concept="3uibUv" id="5MHpiylA_Y$" role="A3Ik2">
           <ref role="3uigEE" to="nc4n:7eGEHDlc$ap" resolve="RuleBuilder" />
@@ -349,8 +362,17 @@
       </node>
       <node concept="3Tm1VV" id="5k_shARMugG" role="1B3o_S" />
       <node concept="3clFbS" id="5k_shARMugH" role="3clF47" />
+      <node concept="37vLTG" id="5k_shARM_lS" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="1zN1RIkUhmz" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="1zN1RIkUhm$" role="3clF46">
+        <property role="TrG5h" value="boundParam" />
+        <node concept="16syzq" id="1zN1RIkUix4" role="1tU5fm">
+          <ref role="16sUi3" node="1zN1RIkUglW" resolve="S" />
+        </node>
+      </node>
     </node>
-    <node concept="2tJIrI" id="7Oc59RSJZ5M" role="jymVt" />
     <node concept="2tJIrI" id="7Oc59RSJZ6z" role="jymVt" />
     <node concept="3clFb_" id="7Oc59RSK5Py" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -405,6 +427,9 @@
       <property role="TrG5h" value="name" />
       <node concept="3Tm6S6" id="12yN8DyKFsn" role="1B3o_S" />
       <node concept="17QB3L" id="12yN8DyKFsp" role="1tU5fm" />
+    </node>
+    <node concept="16euLQ" id="1zN1RIkUglW" role="16eVyc">
+      <property role="TrG5h" value="S" />
     </node>
   </node>
   <node concept="312cEu" id="6ntBQ9KIZRc">
@@ -1204,7 +1229,7 @@
     <node concept="3Tm1VV" id="6w6CYIRhcpb" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5MHpiyl$3OG">
-    <property role="TrG5h" value="AbstractParameterRuleTemplate" />
+    <property role="TrG5h" value="AbstractIteratingRuleTemplate" />
     <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="5MHpiyl$cC7" role="jymVt" />
     <node concept="3clFbW" id="5MHpiyl$cGF" role="jymVt">
@@ -1228,10 +1253,6 @@
       <property role="TrG5h" value="apply" />
       <property role="1EzhhJ" value="false" />
       <property role="DiZV1" value="true" />
-      <node concept="37vLTG" id="5MHpiyl_$Ut" role="3clF46">
-        <property role="TrG5h" value="input" />
-        <node concept="3Tqbb2" id="5MHpiyl_$Uu" role="1tU5fm" />
-      </node>
       <node concept="A3Dl8" id="5MHpiylAAmK" role="3clF45">
         <node concept="3uibUv" id="5MHpiylAAmM" role="A3Ik2">
           <ref role="3uigEE" to="nc4n:7eGEHDlc$ap" resolve="RuleBuilder" />
@@ -1268,6 +1289,9 @@
                       <node concept="37vLTw" id="5MHpiylCnU1" role="37wK5m">
                         <ref role="3cqZAo" node="5MHpiylCl3Z" resolve="p" />
                       </node>
+                      <node concept="37vLTw" id="1zN1RIkUj26" role="37wK5m">
+                        <ref role="3cqZAo" node="1zN1RIkUhmu" resolve="boundParam" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1284,7 +1308,7 @@
             </node>
           </node>
           <node concept="1rXfSq" id="5MHpiylCl44" role="1DdaDG">
-            <ref role="37wK5l" node="5MHpiyl$jD$" resolve="parameters" />
+            <ref role="37wK5l" node="5MHpiyl$jD$" resolve="iterateParam" />
             <node concept="37vLTw" id="5MHpiylCl45" role="37wK5m">
               <ref role="3cqZAo" node="5MHpiyl_$Ut" resolve="input" />
             </node>
@@ -1297,10 +1321,20 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="5MHpiyl_$Ut" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="1zN1RIkUhmt" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="1zN1RIkUhmu" role="3clF46">
+        <property role="TrG5h" value="boundParam" />
+        <node concept="16syzq" id="1zN1RIkUiIE" role="1tU5fm">
+          <ref role="16sUi3" node="1zN1RIkUh65" resolve="S" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="5MHpiyl_$Sy" role="jymVt" />
     <node concept="3clFb_" id="5MHpiyl$jD$" role="jymVt">
-      <property role="TrG5h" value="parameters" />
+      <property role="TrG5h" value="iterateParam" />
       <property role="1EzhhJ" value="true" />
       <node concept="37vLTG" id="5MHpiyl$ljO" role="3clF46">
         <property role="TrG5h" value="input" />
@@ -1328,6 +1362,12 @@
           <ref role="16sUi3" node="5MHpiyl_8Id" resolve="T" />
         </node>
       </node>
+      <node concept="37vLTG" id="1zN1RIkUjh8" role="3clF46">
+        <property role="TrG5h" value="boundParam" />
+        <node concept="16syzq" id="1zN1RIkUjhh" role="1tU5fm">
+          <ref role="16sUi3" node="1zN1RIkUh65" resolve="S" />
+        </node>
+      </node>
       <node concept="A3Dl8" id="5MHpiylABtG" role="3clF45">
         <node concept="3uibUv" id="5MHpiylABx$" role="A3Ik2">
           <ref role="3uigEE" to="nc4n:7eGEHDlc$ap" resolve="RuleBuilder" />
@@ -1340,6 +1380,12 @@
     <node concept="3Tm1VV" id="5MHpiyl$3OH" role="1B3o_S" />
     <node concept="3uibUv" id="5MHpiyl$co8" role="1zkMxy">
       <ref role="3uigEE" node="5k_shARMpxh" resolve="AbstractRuleTemplate" />
+      <node concept="16syzq" id="1zN1RIkUh6d" role="11_B2D">
+        <ref role="16sUi3" node="1zN1RIkUh65" resolve="S" />
+      </node>
+    </node>
+    <node concept="16euLQ" id="1zN1RIkUh65" role="16eVyc">
+      <property role="TrG5h" value="S" />
     </node>
     <node concept="16euLQ" id="5MHpiyl_8Id" role="16eVyc">
       <property role="TrG5h" value="T" />
