@@ -6,6 +6,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
   </languages>
   <imports>
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
@@ -17,7 +18,6 @@
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="jo0n" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime.debug.graphical(jetbrains.mps.jchr.runtime/runtime.debug.graphical@java_stub)" />
     <import index="5t0y" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime.debug(jetbrains.mps.jchr.runtime/runtime.debug@java_stub)" />
-    <import index="7y3b" ref="r:6aac3fb5-0350-444e-8204-fb71b0589bdd(jetbrains.mps.lang.typesystem2.samplechecker.chr)" />
     <import index="xqpa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
     <import index="ajxo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
   </imports>
@@ -273,9 +273,6 @@
         <node concept="3cpWs8" id="41ox5VnewK8" role="3cqZAp">
           <node concept="3cpWsn" id="41ox5VnewK9" role="3cpWs9">
             <property role="TrG5h" value="sample" />
-            <node concept="3uibUv" id="41ox5VnewK7" role="1tU5fm">
-              <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-            </node>
             <node concept="1oi1Uc" id="41ox5VnewKa" role="33vP2m">
               <node concept="1oi5UN" id="41ox5VnewKb" role="1oi0x0">
                 <node concept="1oi5Wm" id="41ox5VnewKc" role="1ojpOf">
@@ -287,16 +284,19 @@
                 <node concept="1oi5Wm" id="41ox5VnewKe" role="1ojpOf">
                   <property role="TrG5h" value="name" />
                   <node concept="1oi5XN" id="41ox5VnewKf" role="1oi5zu">
-                    <property role="1oi5yK" value="Sample" />
+                    <property role="1oi5yK" value="HelloWorld" />
                   </node>
                 </node>
                 <node concept="1oi5Wm" id="41ox5VnewKg" role="1ojpOf">
                   <property role="TrG5h" value="id" />
                   <node concept="1oi5XN" id="41ox5VnewKh" role="1oi5zu">
-                    <property role="1oi5yK" value="6270176708469746366" />
+                    <property role="1oi5yK" value="4438600004733396337" />
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="41ox5VnewK7" role="1tU5fm">
+              <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
             </node>
           </node>
         </node>

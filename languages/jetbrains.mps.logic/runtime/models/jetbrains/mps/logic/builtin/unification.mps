@@ -4392,12 +4392,11 @@
         <node concept="3cpWs8" id="5NuEpF1z8oh" role="3cqZAp">
           <node concept="3cpWsn" id="5NuEpF1z8oi" role="3cpWs9">
             <property role="TrG5h" value="repr" />
-            <node concept="3uibUv" id="5NuEpF1z8od" role="1tU5fm">
-              <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
-              <node concept="17QB3L" id="77AxcO5bvNo" role="11_B2D" />
+            <node concept="3uibUv" id="1zN1RIlpfOL" role="1tU5fm">
+              <ref role="3uigEE" node="1H8E3iB85PX" resolve="StringLogical" />
             </node>
             <node concept="1rXfSq" id="5NuEpF1z8oj" role="33vP2m">
-              <ref role="37wK5l" to="w2rx:~Logical.find():runtime.Logical" resolve="find" />
+              <ref role="37wK5l" node="dfChU1gi$L" resolve="findRoot" />
             </node>
           </node>
         </node>
@@ -4411,12 +4410,12 @@
                       <ref role="3cqZAo" node="5NuEpF1z8oi" resolve="repr" />
                     </node>
                     <node concept="liA8E" id="5NuEpF1zeJV" role="2OqNvi">
-                      <ref role="37wK5l" to="w2rx:~Logical.getName():java.lang.String" resolve="getName" />
+                      <ref role="37wK5l" node="3HJTsBmCy5P" resolve="name" />
                     </node>
                   </node>
                   <node concept="3cpWs3" id="5NuEpF1zcWy" role="3uHU7B">
                     <node concept="1rXfSq" id="5NuEpF1zc_Z" role="3uHU7B">
-                      <ref role="37wK5l" to="w2rx:~Logical.getName():java.lang.String" resolve="getName" />
+                      <ref role="37wK5l" node="3HJTsBmCy5P" resolve="name" />
                     </node>
                     <node concept="Xl_RD" id="5NuEpF1zcXi" role="3uHU7w">
                       <property role="Xl_RC" value=":" />
@@ -4424,7 +4423,7 @@
                   </node>
                 </node>
                 <node concept="1rXfSq" id="5NuEpF1zcvb" role="3K4E3e">
-                  <ref role="37wK5l" to="w2rx:~Logical.getName():java.lang.String" resolve="getName" />
+                  <ref role="37wK5l" node="3HJTsBmCy5P" resolve="name" />
                 </node>
                 <node concept="3clFbC" id="5NuEpF1zciC" role="3K4Cdx">
                   <node concept="37vLTw" id="5NuEpF1zckA" role="3uHU7w">
@@ -4436,7 +4435,7 @@
             </node>
             <node concept="2OqwBi" id="5NuEpF1zb3a" role="3K4E3e">
               <node concept="1rXfSq" id="5NuEpF1zaU6" role="2Oq$k0">
-                <ref role="37wK5l" to="w2rx:~Logical.getValue():java.lang.Object" resolve="getValue" />
+                <ref role="37wK5l" node="3HJTsBmBZ0h" resolve="value" />
               </node>
               <node concept="liA8E" id="5NuEpF1zbX_" role="2OqNvi">
                 <ref role="37wK5l" to="e2lb:~String.toString():java.lang.String" resolve="toString" />
@@ -4449,7 +4448,7 @@
                   <ref role="3cqZAo" node="5NuEpF1z8oi" resolve="repr" />
                 </node>
                 <node concept="liA8E" id="5NuEpF1zae5" role="2OqNvi">
-                  <ref role="37wK5l" to="w2rx:~Logical.getValue():java.lang.Object" resolve="getValue" />
+                  <ref role="37wK5l" node="3HJTsBmBZ0h" resolve="value" />
                 </node>
               </node>
             </node>

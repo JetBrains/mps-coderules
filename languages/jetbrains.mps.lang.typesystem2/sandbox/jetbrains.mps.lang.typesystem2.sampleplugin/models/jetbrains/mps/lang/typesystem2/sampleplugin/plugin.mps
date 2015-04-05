@@ -1669,10 +1669,51 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1zN1RIlfDRX" role="3cqZAp">
+          <node concept="3cpWsn" id="1zN1RIlfDS0" role="3cpWs9">
+            <property role="TrG5h" value="ok" />
+            <node concept="10P_77" id="1zN1RIlfDRV" role="1tU5fm" />
+            <node concept="3clFbT" id="1zN1RIlfDTq" role="33vP2m">
+              <property role="3clFbU" value="true" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1zN1RIlfDTs" role="3cqZAp" />
         <node concept="1QHqEK" id="12TFIqWw7JD" role="3cqZAp">
           <node concept="1QHqEC" id="12TFIqWw7JF" role="1QHqEI">
             <node concept="3clFbS" id="12TFIqWw7JH" role="1bW5cS">
               <node concept="SfApY" id="41ox5VnkNls" role="3cqZAp">
+                <node concept="TDmWw" id="1zN1RIlfccd" role="TEbGg">
+                  <node concept="3cpWsn" id="1zN1RIlfcce" role="TDEfY">
+                    <property role="TrG5h" value="fail" />
+                    <node concept="3uibUv" id="1zN1RIlfcHz" role="1tU5fm">
+                      <ref role="3uigEE" to="w2rx:~FailureException" resolve="FailureException" />
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="1zN1RIlfccg" role="TDEfX">
+                    <node concept="34ab3g" id="1zN1RIlfcHM" role="3cqZAp">
+                      <property role="35gtTG" value="warn" />
+                      <property role="34fQS0" value="true" />
+                      <node concept="Xl_RD" id="1zN1RIlfcHN" role="34bqiv">
+                        <property role="Xl_RC" value="failure during evaluation" />
+                      </node>
+                      <node concept="37vLTw" id="1zN1RIlfi0O" role="34bMjA">
+                        <ref role="3cqZAo" node="1zN1RIlfcce" resolve="fail" />
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="1zN1RIlfFkh" role="3cqZAp">
+                      <node concept="37vLTI" id="1zN1RIlfF_G" role="3clFbG">
+                        <node concept="3clFbT" id="1zN1RIlfFK7" role="37vLTx">
+                          <property role="3clFbU" value="false" />
+                        </node>
+                        <node concept="37vLTw" id="1zN1RIlfFkf" role="37vLTJ">
+                          <ref role="3cqZAo" node="1zN1RIlfDS0" resolve="ok" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbH" id="1zN1RIlfFWA" role="3cqZAp" />
+                  </node>
+                </node>
                 <node concept="3clFbS" id="41ox5VnkNlu" role="SfCbr">
                   <node concept="3clFbF" id="41ox5Vnrj9Q" role="3cqZAp">
                     <node concept="37vLTI" id="41ox5Vnrj9S" role="3clFbG">
@@ -1716,22 +1757,42 @@
                         <ref role="3cqZAo" node="41ox5VnkNlx" resolve="e" />
                       </node>
                     </node>
-                    <node concept="3clFbF" id="41ox5VnkTaS" role="3cqZAp">
-                      <node concept="2YIFZM" id="41ox5VnkTaT" role="3clFbG">
-                        <ref role="37wK5l" to="810:~Messages.showWarningDialog(java.lang.String,java.lang.String):void" resolve="showWarningDialog" />
-                        <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
-                        <node concept="Xl_RD" id="41ox5VnkTaU" role="37wK5m">
-                          <property role="Xl_RC" value="Encountered errors" />
+                    <node concept="3clFbF" id="1zN1RIlfEFG" role="3cqZAp">
+                      <node concept="37vLTI" id="1zN1RIlfF5j" role="3clFbG">
+                        <node concept="3clFbT" id="1zN1RIlfFg4" role="37vLTx">
+                          <property role="3clFbU" value="false" />
                         </node>
-                        <node concept="Xl_RD" id="41ox5VnkTaV" role="37wK5m">
-                          <property role="Xl_RC" value="Launch Rules" />
+                        <node concept="37vLTw" id="1zN1RIlfEFE" role="37vLTJ">
+                          <ref role="3cqZAo" node="1zN1RIlfDS0" resolve="ok" />
                         </node>
                       </node>
                     </node>
-                    <node concept="3cpWs6" id="41ox5VnkTaW" role="3cqZAp" />
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1zN1RIlfEAi" role="3cqZAp" />
+        <node concept="3clFbJ" id="1zN1RIlfE25" role="3cqZAp">
+          <node concept="3clFbS" id="1zN1RIlfE27" role="3clFbx">
+            <node concept="3clFbF" id="41ox5VnkTaS" role="3cqZAp">
+              <node concept="2YIFZM" id="41ox5VnkTaT" role="3clFbG">
+                <ref role="37wK5l" to="810:~Messages.showWarningDialog(java.lang.String,java.lang.String):void" resolve="showWarningDialog" />
+                <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+                <node concept="Xl_RD" id="41ox5VnkTaU" role="37wK5m">
+                  <property role="Xl_RC" value="Encountered errors" />
+                </node>
+                <node concept="Xl_RD" id="41ox5VnkTaV" role="37wK5m">
+                  <property role="Xl_RC" value="Launch Rules" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="41ox5VnkTaW" role="3cqZAp" />
+          </node>
+          <node concept="3fqX7Q" id="1zN1RIlfE3$" role="3clFbw">
+            <node concept="37vLTw" id="1zN1RIlfE3Q" role="3fr31v">
+              <ref role="3cqZAo" node="1zN1RIlfDS0" resolve="ok" />
             </node>
           </node>
         </node>
@@ -2739,44 +2800,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbH" id="3gJBs5sBhtq" role="3cqZAp" />
-                <node concept="34ab3g" id="3gJBs5sBhId" role="3cqZAp">
-                  <property role="35gtTG" value="info" />
-                  <node concept="3cpWs3" id="3gJBs5sBiFS" role="34bqiv">
-                    <node concept="3cpWs3" id="3gJBs5sBinG" role="3uHU7B">
-                      <node concept="3cpWs3" id="3gJBs5sBi89" role="3uHU7B">
-                        <node concept="Xl_RD" id="3gJBs5sBhIf" role="3uHU7B">
-                          <property role="Xl_RC" value="varname&gt; " />
-                        </node>
-                        <node concept="2OqwBi" id="3gJBs5sBib_" role="3uHU7w">
-                          <node concept="2OqwBi" id="3gJBs5sBibA" role="2Oq$k0">
-                            <node concept="37vLTw" id="3gJBs5sBibB" role="2Oq$k0">
-                              <ref role="3cqZAo" node="3gJBs5syUmY" resolve="typeLogical" />
-                            </node>
-                            <node concept="liA8E" id="3gJBs5sBibC" role="2OqNvi">
-                              <ref role="37wK5l" to="oy3s:dfChU1gcsX" resolve="findRoot" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="3gJBs5sBibD" role="2OqNvi">
-                            <ref role="37wK5l" to="oy3s:3HJTsBmCy5P" resolve="name" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="3gJBs5sBinV" role="3uHU7w">
-                        <property role="Xl_RC" value=" " />
-                      </node>
-                    </node>
-                    <node concept="AH0OO" id="3gJBs5sBiLF" role="3uHU7w">
-                      <node concept="3cmrfG" id="3gJBs5sBiLG" role="AHEQo">
-                        <property role="3cmrfH" value="1" />
-                      </node>
-                      <node concept="37vLTw" id="3gJBs5sBiLH" role="AHHXb">
-                        <ref role="3cqZAo" node="3gJBs5syUmR" resolve="args" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbH" id="3gJBs5sBhOL" role="3cqZAp" />
               </node>
               <node concept="2OqwBi" id="3gJBs5syUni" role="3clFbw">
                 <node concept="Xl_RD" id="3gJBs5syUnj" role="2Oq$k0">
@@ -3541,8 +3564,13 @@
             <node concept="3clFbS" id="41ox5Vnee8M" role="TDEfX">
               <node concept="3clFbF" id="41ox5VneSFr" role="3cqZAp">
                 <node concept="37vLTI" id="41ox5VneSFt" role="3clFbG">
-                  <node concept="37vLTw" id="41ox5VneSgD" role="37vLTx">
-                    <ref role="3cqZAo" node="41ox5Vnee8N" resolve="e" />
+                  <node concept="2OqwBi" id="1zN1RIlg3Ft" role="37vLTx">
+                    <node concept="37vLTw" id="41ox5VneSgD" role="2Oq$k0">
+                      <ref role="3cqZAo" node="41ox5Vnee8N" resolve="e" />
+                    </node>
+                    <node concept="liA8E" id="1zN1RIlg40a" role="2OqNvi">
+                      <ref role="37wK5l" to="xqpa:~InvocationTargetException.getCause():java.lang.Throwable" resolve="getCause" />
+                    </node>
                   </node>
                   <node concept="37vLTw" id="41ox5VneSFx" role="37vLTJ">
                     <ref role="3cqZAo" node="41ox5VneSgC" resolve="exception" />
@@ -3615,6 +3643,28 @@
               <node concept="3uibUv" id="41ox5Vnesqb" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~InstantiationException" resolve="InstantiationException" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1zN1RIlg4ZW" role="3cqZAp">
+          <node concept="3clFbS" id="1zN1RIlg4ZY" role="3clFbx">
+            <node concept="YS8fn" id="1zN1RIlg5pb" role="3cqZAp">
+              <node concept="10QFUN" id="1zN1RIlgapt" role="YScLw">
+                <node concept="37vLTw" id="1zN1RIlgaps" role="10QFUP">
+                  <ref role="3cqZAo" node="41ox5VneSgC" resolve="exception" />
+                </node>
+                <node concept="3uibUv" id="1zN1RIlgaxg" role="10QFUM">
+                  <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="1zN1RIlg5d9" role="3clFbw">
+            <node concept="3uibUv" id="1zN1RIlg5l0" role="2ZW6by">
+              <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
+            </node>
+            <node concept="37vLTw" id="1zN1RIlg51O" role="2ZW6bz">
+              <ref role="3cqZAo" node="41ox5VneSgC" resolve="exception" />
             </node>
           </node>
         </node>
