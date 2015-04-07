@@ -143,6 +143,11 @@
       <property role="20kJfa" value="boundParameterBlock" />
       <ref role="20lvS9" node="1zN1RIkQtcr" resolve="BoundParameterBlock" />
     </node>
+    <node concept="1TJgyj" id="tIwzd1EWC5" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="requiredNodeBlock" />
+      <ref role="20lvS9" node="tIwzd1EOs6" resolve="RequiredNodeBlock" />
+    </node>
     <node concept="PrWs8" id="6p0DfM0c$n_" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -340,15 +345,9 @@
     </node>
   </node>
   <node concept="1TIwiD" id="4laj_h9P4cy">
-    <property role="3GE5qa" value="rule" />
+    <property role="3GE5qa" value="rule.code" />
     <property role="TrG5h" value="Condition" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="4laj_h9P4gL" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="code" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
-    </node>
+    <ref role="1TJDcQ" node="tIwzd1_CMa" resolve="RuleCodeBlock" />
     <node concept="PrWs8" id="6ntBQ9KFIud" role="PzmwI">
       <ref role="PrY4T" to="tpee:i0zv2NF" resolve="IContainsStatementList" />
     </node>
@@ -358,7 +357,7 @@
   </node>
   <node concept="1TIwiD" id="5MHpiylEsuT">
     <property role="TrG5h" value="RuleParameterDeclaration" />
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5MHpiylFYj$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -377,11 +376,11 @@
     </node>
   </node>
   <node concept="1TIwiD" id="5MHpiylG7gA">
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <property role="TrG5h" value="RuleParameterBlock" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="tIwzd1_CMa" resolve="RuleCodeBlock" />
     <node concept="PrWs8" id="5MHpiylGFuy" role="PzmwI">
       <ref role="PrY4T" to="tpee:i0zv2NF" resolve="IContainsStatementList" />
     </node>
@@ -394,15 +393,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="5MHpiylEsuT" resolve="RuleParameterDeclaration" />
     </node>
-    <node concept="1TJgyj" id="5MHpiylGHFg" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="code" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5MHpiylKSq8">
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <property role="TrG5h" value="RuleParameterReference" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="5MHpiylKVev" role="1TKVEi">
@@ -464,14 +457,38 @@
     <ref role="1TJDcQ" node="60B5zVESvAi" resolve="LogicVariableConstraint" />
   </node>
   <node concept="1TIwiD" id="1zN1RIkNhnM">
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <property role="TrG5h" value="IterateParameterBlock" />
     <ref role="1TJDcQ" node="5MHpiylG7gA" resolve="RuleParameterBlock" />
   </node>
   <node concept="1TIwiD" id="1zN1RIkQtcr">
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <property role="TrG5h" value="BoundParameterBlock" />
     <ref role="1TJDcQ" node="5MHpiylG7gA" resolve="RuleParameterBlock" />
+  </node>
+  <node concept="1TIwiD" id="tIwzd1_CMa">
+    <property role="3GE5qa" value="rule.code" />
+    <property role="TrG5h" value="RuleCodeBlock" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="tIwzd1_VRv" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="PrWs8" id="tIwzd1_UDW" role="PzmwI">
+      <ref role="PrY4T" to="tpee:i0zv2NF" resolve="IContainsStatementList" />
+    </node>
+    <node concept="PrWs8" id="tIwzd1_UDX" role="PzmwI">
+      <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="tIwzd1EOs6">
+    <property role="3GE5qa" value="rule.code" />
+    <property role="TrG5h" value="RequiredNodeBlock" />
+    <ref role="1TJDcQ" node="tIwzd1_CMa" resolve="RuleCodeBlock" />
   </node>
 </model>
 

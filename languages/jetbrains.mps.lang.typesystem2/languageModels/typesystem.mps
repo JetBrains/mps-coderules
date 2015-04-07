@@ -16,7 +16,7 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
     </language>
@@ -161,7 +161,7 @@
   </node>
   <node concept="1YbPZF" id="5MHpiylKVB4">
     <property role="TrG5h" value="typeof_RuleParameterReference" />
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <node concept="3clFbS" id="5MHpiylKVB5" role="18ibNy">
       <node concept="1Z5TYs" id="5MHpiylKW2e" role="3cqZAp">
         <node concept="mw_s8" id="5MHpiylKW57" role="1ZfhKB">
@@ -192,7 +192,7 @@
   </node>
   <node concept="1YbPZF" id="5MHpiylSAgS">
     <property role="TrG5h" value="typeof_RuleParameterDeclaration" />
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <node concept="3clFbS" id="5MHpiylSAgT" role="18ibNy">
       <node concept="1Z5TYs" id="5MHpiylSAxR" role="3cqZAp">
         <node concept="mw_s8" id="5MHpiylSAzS" role="1ZfhKB">

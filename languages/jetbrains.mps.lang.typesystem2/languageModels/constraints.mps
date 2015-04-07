@@ -220,7 +220,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5MHpiylEtrK">
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <ref role="1M2myG" to="wq2x:5MHpiylEsuT" resolve="RuleParameterDeclaration" />
     <node concept="3EP7_v" id="5MHpiylEttA" role="1MtirG">
       <node concept="13QW63" id="5MHpiylEu44" role="3EP$qY">

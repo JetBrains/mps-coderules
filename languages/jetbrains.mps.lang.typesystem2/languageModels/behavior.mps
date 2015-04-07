@@ -135,25 +135,10 @@
     </language>
   </registry>
   <node concept="13h7C7" id="6ntBQ9KFIzq">
-    <property role="3GE5qa" value="rule" />
+    <property role="3GE5qa" value="rule.code" />
     <ref role="13h7C2" to="wq2x:4laj_h9P4cy" resolve="Condition" />
     <node concept="13hLZK" id="6ntBQ9KFIzr" role="13h7CW">
       <node concept="3clFbS" id="6ntBQ9KFIzs" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="6ntBQ9KFI_k" role="13h7CS">
-      <property role="TrG5h" value="isStatementListCompactable" />
-      <property role="13i0it" value="false" />
-      <property role="13i0iv" value="false" />
-      <ref role="13i0hy" to="tpek:i0zvp2S" resolve="isStatementListCompactable" />
-      <node concept="3Tm1VV" id="6ntBQ9KFI_p" role="1B3o_S" />
-      <node concept="3clFbS" id="6ntBQ9KFI_q" role="3clF47">
-        <node concept="3clFbF" id="6ntBQ9KFTBN" role="3cqZAp">
-          <node concept="3clFbT" id="6ntBQ9KFTBM" role="3clFbG">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="6ntBQ9KFI_r" role="3clF45" />
     </node>
     <node concept="13i0hz" id="6ntBQ9KHl13" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -169,92 +154,6 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="6ntBQ9KHl18" role="3clF45" />
-    </node>
-    <node concept="13i0hz" id="6ntBQ9KHl19" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="TrG5h" value="getBody" />
-      <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:i2fhZ_m" resolve="getBody" />
-      <node concept="3Tm1VV" id="6ntBQ9KHl1a" role="1B3o_S" />
-      <node concept="3clFbS" id="6ntBQ9KHl1d" role="3clF47">
-        <node concept="3clFbF" id="6ntBQ9KHl9t" role="3cqZAp">
-          <node concept="BsUDl" id="6ntBQ9KHl9s" role="3clFbG">
-            <ref role="37wK5l" to="tpek:i0zv5tb" resolve="getStatementList" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="6ntBQ9KHl1e" role="3clF45">
-        <ref role="ehGHo" to="tpee:fzclF80" resolve="StatementList" />
-      </node>
-    </node>
-    <node concept="13i0hz" id="6ntBQ9KHl1f" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="TrG5h" value="getThrowableTypes" />
-      <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:5op8ooRkkc7" resolve="getThrowableTypes" />
-      <node concept="3Tm1VV" id="6ntBQ9KHl1g" role="1B3o_S" />
-      <node concept="3clFbS" id="6ntBQ9KHl1j" role="3clF47">
-        <node concept="3clFbF" id="6ntBQ9KHl4a" role="3cqZAp">
-          <node concept="10Nm6u" id="6ntBQ9KHl49" role="3clFbG" />
-        </node>
-      </node>
-      <node concept="2I9FWS" id="6ntBQ9KHl1k" role="3clF45">
-        <ref role="2I9WkF" to="tpee:fz3vP1H" resolve="Type" />
-      </node>
-    </node>
-  </node>
-  <node concept="13h7C7" id="5MHpiylGFx8">
-    <property role="3GE5qa" value="rule.parameter" />
-    <ref role="13h7C2" to="wq2x:5MHpiylG7gA" resolve="RuleParameterBlock" />
-    <node concept="13hLZK" id="5MHpiylGFx9" role="13h7CW">
-      <node concept="3clFbS" id="5MHpiylGFxa" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="5MHpiylGFH_" role="13h7CS">
-      <property role="TrG5h" value="isStatementListCompactable" />
-      <property role="13i0it" value="false" />
-      <property role="13i0iv" value="false" />
-      <ref role="13i0hy" to="tpek:i0zvp2S" resolve="isStatementListCompactable" />
-      <node concept="3Tm1VV" id="5MHpiylGFHE" role="1B3o_S" />
-      <node concept="3clFbS" id="5MHpiylGFHF" role="3clF47">
-        <node concept="3clFbF" id="5MHpiylGFPu" role="3cqZAp">
-          <node concept="3clFbT" id="5MHpiylGFPt" role="3clFbG">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="5MHpiylGFHG" role="3clF45" />
-    </node>
-    <node concept="13i0hz" id="5MHpiylGF_l" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="TrG5h" value="getBody" />
-      <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:i2fhZ_m" resolve="getBody" />
-      <node concept="3Tm1VV" id="5MHpiylGF_m" role="1B3o_S" />
-      <node concept="3clFbS" id="5MHpiylGF_p" role="3clF47">
-        <node concept="3clFbF" id="5MHpiylGH$G" role="3cqZAp">
-          <node concept="BsUDl" id="5MHpiylGH$F" role="3clFbG">
-            <ref role="37wK5l" to="tpek:i0zv5tb" resolve="getStatementList" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="5MHpiylGF_q" role="3clF45">
-        <ref role="ehGHo" to="tpee:fzclF80" resolve="StatementList" />
-      </node>
-    </node>
-    <node concept="13i0hz" id="5MHpiylGF_r" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="TrG5h" value="getThrowableTypes" />
-      <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:5op8ooRkkc7" resolve="getThrowableTypes" />
-      <node concept="3Tm1VV" id="5MHpiylGF_s" role="1B3o_S" />
-      <node concept="3clFbS" id="5MHpiylGF_v" role="3clF47">
-        <node concept="3clFbF" id="5MHpiylGHB$" role="3cqZAp">
-          <node concept="10Nm6u" id="5MHpiylGHBz" role="3clFbG" />
-        </node>
-      </node>
-      <node concept="2I9FWS" id="5MHpiylGF_w" role="3clF45">
-        <ref role="2I9WkF" to="tpee:fz3vP1H" resolve="Type" />
-      </node>
     </node>
   </node>
   <node concept="13h7C7" id="5JTOzCQUVB8">
@@ -390,7 +289,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1zN1RIkNimz">
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <ref role="13h7C2" to="wq2x:1zN1RIkNhnM" resolve="IterateParameterBlock" />
     <node concept="13hLZK" id="1zN1RIkNim$" role="13h7CW">
       <node concept="3clFbS" id="1zN1RIkNim_" role="2VODD2" />
@@ -428,7 +327,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1zN1RIkQtdH">
-    <property role="3GE5qa" value="rule.parameter" />
+    <property role="3GE5qa" value="rule.code.parameter" />
     <ref role="13h7C2" to="wq2x:1zN1RIkQtcr" resolve="BoundParameterBlock" />
     <node concept="13hLZK" id="1zN1RIkQtdI" role="13h7CW">
       <node concept="3clFbS" id="1zN1RIkQtdJ" role="2VODD2" />
@@ -455,6 +354,84 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="1zN1RIkQtdP" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="tIwzd1_UE0">
+    <property role="3GE5qa" value="rule.code" />
+    <ref role="13h7C2" to="wq2x:tIwzd1_CMa" resolve="RuleCodeBlock" />
+    <node concept="13i0hz" id="5MHpiylGFH_" role="13h7CS">
+      <property role="TrG5h" value="isStatementListCompactable" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:i0zvp2S" resolve="isStatementListCompactable" />
+      <node concept="3Tm1VV" id="5MHpiylGFHE" role="1B3o_S" />
+      <node concept="3clFbS" id="5MHpiylGFHF" role="3clF47">
+        <node concept="3clFbF" id="5MHpiylGFPu" role="3cqZAp">
+          <node concept="3clFbT" id="5MHpiylGFPt" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="5MHpiylGFHG" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="5MHpiylGF_l" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="getBody" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:i2fhZ_m" resolve="getBody" />
+      <node concept="3Tm1VV" id="5MHpiylGF_m" role="1B3o_S" />
+      <node concept="3clFbS" id="5MHpiylGF_p" role="3clF47">
+        <node concept="3clFbF" id="5MHpiylGH$G" role="3cqZAp">
+          <node concept="BsUDl" id="5MHpiylGH$F" role="3clFbG">
+            <ref role="37wK5l" to="tpek:i0zv5tb" resolve="getStatementList" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5MHpiylGF_q" role="3clF45">
+        <ref role="ehGHo" to="tpee:fzclF80" resolve="StatementList" />
+      </node>
+    </node>
+    <node concept="13i0hz" id="5MHpiylGF_r" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="getThrowableTypes" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:5op8ooRkkc7" resolve="getThrowableTypes" />
+      <node concept="3Tm1VV" id="5MHpiylGF_s" role="1B3o_S" />
+      <node concept="3clFbS" id="5MHpiylGF_v" role="3clF47">
+        <node concept="3clFbF" id="5MHpiylGHB$" role="3cqZAp">
+          <node concept="10Nm6u" id="5MHpiylGHBz" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2I9FWS" id="5MHpiylGF_w" role="3clF45">
+        <ref role="2I9WkF" to="tpee:fz3vP1H" resolve="Type" />
+      </node>
+    </node>
+    <node concept="13hLZK" id="tIwzd1_UE1" role="13h7CW">
+      <node concept="3clFbS" id="tIwzd1_UE2" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="tIwzd1EOvC">
+    <property role="3GE5qa" value="rule.code" />
+    <ref role="13h7C2" to="wq2x:tIwzd1EOs6" resolve="RequiredNodeBlock" />
+    <node concept="13hLZK" id="tIwzd1EOvD" role="13h7CW">
+      <node concept="3clFbS" id="tIwzd1EOvE" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="tIwzd1EOvF" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="getExpectedRetType" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:i2fhBNC" resolve="getExpectedRetType" />
+      <node concept="3Tm1VV" id="tIwzd1EOvG" role="1B3o_S" />
+      <node concept="3clFbS" id="tIwzd1EOvJ" role="3clF47">
+        <node concept="3clFbF" id="tIwzd1EOLK" role="3cqZAp">
+          <node concept="2c44tf" id="tIwzd1EOLI" role="3clFbG">
+            <node concept="A3Dl8" id="tIwzd1Gzzm" role="2c44tc">
+              <node concept="3Tqbb2" id="tIwzd1Gzzo" role="A3Ik2" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="tIwzd1EOvK" role="3clF45" />
     </node>
   </node>
 </model>
