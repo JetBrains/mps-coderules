@@ -279,6 +279,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
@@ -466,19 +469,23 @@
               </node>
               <node concept="10Nm6u" id="1mP5b6jQkda" role="3uHU7w" />
             </node>
-            <node concept="3y3z36" id="1mP5b6jQkdb" role="3uHU7w">
-              <node concept="2OqwBi" id="1mP5b6jQkdc" role="3uHU7B">
-                <node concept="Xjq3P" id="1mP5b6jQkdd" role="2Oq$k0" />
-                <node concept="liA8E" id="1mP5b6jQkde" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="1mP5b6jQkdf" role="3uHU7w">
-                <node concept="37vLTw" id="1mP5b6jQkdg" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1mP5b6jQkdp" resolve="o" />
-                </node>
-                <node concept="liA8E" id="1mP5b6jQkdh" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
+            <node concept="3fqX7Q" id="4peSo3CNEEt" role="3uHU7w">
+              <node concept="1eOMI4" id="4peSo3CNEEv" role="3fr31v">
+                <node concept="2OqwBi" id="4peSo3CNEEw" role="1eOMHV">
+                  <node concept="3VsKOn" id="4peSo3CNEEx" role="2Oq$k0">
+                    <ref role="3VsUkX" node="2xQ7eRABXh4" resolve="Tree" />
+                  </node>
+                  <node concept="liA8E" id="4peSo3CNEEy" role="2OqNvi">
+                    <ref role="37wK5l" to="e2lb:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                    <node concept="2OqwBi" id="4peSo3CNEEz" role="37wK5m">
+                      <node concept="37vLTw" id="4peSo3CNEE$" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1mP5b6jQkdp" resolve="o" />
+                      </node>
+                      <node concept="liA8E" id="4peSo3CNEE_" role="2OqNvi">
+                        <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -11479,8 +11486,6 @@
       <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeWalk.Walker" />
     </node>
     <node concept="2tJIrI" id="5s497VqXx1L" role="jymVt" />
-    <node concept="2tJIrI" id="3gJBs5szZVy" role="jymVt" />
-    <node concept="2tJIrI" id="3gJBs5s$2k_" role="jymVt" />
     <node concept="2YIFZL" id="5s497VqXK1B" role="jymVt">
       <property role="TrG5h" value="prettyPrint" />
       <node concept="17QB3L" id="3_ALDc$_5nr" role="3clF45" />

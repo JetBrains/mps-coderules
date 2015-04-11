@@ -25,6 +25,7 @@
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
+    <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -6954,8 +6955,8 @@
       <ref role="30HIoZ" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
       <node concept="gft3U" id="7jC45KccKR9" role="1lVwrX">
         <node concept="2YIFZM" id="7jC45KccKZV" role="gfFT$">
-          <ref role="37wK5l" to="qiww:1lUeO1NbZUR" resolve="anchorTree" />
-          <ref role="1Pybhc" to="qiww:6ntBQ9KIZRc" resolve="AnchorUtil" />
+          <ref role="37wK5l" to="4t1t:4peSo3CD1Kr" resolve="anchorTree" />
+          <ref role="1Pybhc" to="4t1t:4peSo3CD1Kp" resolve="AnchorUtil" />
           <node concept="10Nm6u" id="7jC45KccL0o" role="37wK5m">
             <node concept="29HgVG" id="7jC45KccL0G" role="lGtFl">
               <node concept="3NFfHV" id="7jC45KccL0H" role="3NFExx">
