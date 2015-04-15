@@ -9857,10 +9857,10 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="6SZa6nhO8tl" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
-                      <node concept="Xl_RD" id="6SZa6nhO8zJ" role="37wK5m">
-                        <property role="Xl_RC" value="_" />
+                    <node concept="liA8E" id="4OKkcnf4sJ2" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~String.matches(java.lang.String):boolean" resolve="matches" />
+                      <node concept="Xl_RD" id="4OKkcnf4sJ3" role="37wK5m">
+                        <property role="Xl_RC" value="^__.*" />
                       </node>
                     </node>
                   </node>
