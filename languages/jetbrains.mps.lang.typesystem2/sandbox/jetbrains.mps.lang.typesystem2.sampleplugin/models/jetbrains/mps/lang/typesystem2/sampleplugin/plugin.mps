@@ -20,7 +20,6 @@
     <import index="nc4n" ref="r:2a1eb048-898c-47a3-863b-36b04c4b9f7c(jetbrains.mps.lang.typesystem2.runtime.rule)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="qiww" ref="r:7e0616dc-e55e-4c35-beca-da14b0c8f8bd(jetbrains.mps.lang.typesystem2.runtime.template)" />
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
     <import index="810" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
@@ -56,6 +55,7 @@
     <import index="nax5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.errors(MPS.Core/jetbrains.mps.errors@java_stub)" />
     <import index="l0n4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.errors.messageTargets(MPS.Core/jetbrains.mps.errors.messageTargets@java_stub)" />
     <import index="1d7m" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -432,7 +432,7 @@
           <node concept="3cpWsn" id="3Qp4N06byjA" role="3cpWs9">
             <property role="TrG5h" value="manifest" />
             <node concept="3uibUv" id="3Qp4N06byjB" role="1tU5fm">
-              <ref role="3uigEE" to="qiww:6w6CYIRh9BG" resolve="AbstractRuleTemplateManifest" />
+              <ref role="3uigEE" to="i348:4OKkcnfu_xe" resolve="AbstractRuleTemplateManifest" />
             </node>
             <node concept="2YIFZM" id="3Qp4N06byjC" role="33vP2m">
               <ref role="1Pybhc" node="3Qp4N06byjn" resolve="CollectRuleTemplates" />
@@ -1240,7 +1240,7 @@
       <property role="TrG5h" value="getRuleManifest" />
       <node concept="3Tm6S6" id="3Qp4N06bynR" role="1B3o_S" />
       <node concept="3uibUv" id="3Qp4N06bynS" role="3clF45">
-        <ref role="3uigEE" to="qiww:6w6CYIRh9BG" resolve="AbstractRuleTemplateManifest" />
+        <ref role="3uigEE" to="i348:4OKkcnfu_xe" resolve="AbstractRuleTemplateManifest" />
       </node>
       <node concept="37vLTG" id="3Qp4N06bynT" role="3clF46">
         <property role="TrG5h" value="model" />
@@ -1267,7 +1267,7 @@
           <node concept="3cpWsn" id="3Qp4N06byo3" role="3cpWs9">
             <property role="TrG5h" value="manifest" />
             <node concept="3uibUv" id="3Qp4N06byo4" role="1tU5fm">
-              <ref role="3uigEE" to="qiww:6w6CYIRh9BG" resolve="AbstractRuleTemplateManifest" />
+              <ref role="3uigEE" to="i348:4OKkcnfu_xe" resolve="AbstractRuleTemplateManifest" />
             </node>
             <node concept="10Nm6u" id="3Qp4N06byo5" role="33vP2m" />
           </node>
@@ -1280,14 +1280,14 @@
                 <node concept="3uibUv" id="3Qp4N06byoa" role="1tU5fm">
                   <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
                   <node concept="3uibUv" id="3Qp4N06byob" role="11_B2D">
-                    <ref role="3uigEE" to="qiww:6w6CYIRh9BG" resolve="AbstractRuleTemplateManifest" />
+                    <ref role="3uigEE" to="i348:4OKkcnfu_xe" resolve="AbstractRuleTemplateManifest" />
                   </node>
                 </node>
                 <node concept="10QFUN" id="3Qp4N06byoc" role="33vP2m">
                   <node concept="3uibUv" id="3Qp4N06byod" role="10QFUM">
                     <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
                     <node concept="3uibUv" id="3Qp4N06byoe" role="11_B2D">
-                      <ref role="3uigEE" to="qiww:6w6CYIRh9BG" resolve="AbstractRuleTemplateManifest" />
+                      <ref role="3uigEE" to="i348:4OKkcnfu_xe" resolve="AbstractRuleTemplateManifest" />
                     </node>
                   </node>
                   <node concept="2YIFZM" id="3Qp4N06byof" role="10QFUP">
@@ -2531,8 +2531,8 @@
               <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
             </node>
             <node concept="2YIFZM" id="1zN1RIkMMBr" role="33vP2m">
-              <ref role="37wK5l" to="4t1t:4peSo3CD1Kr" resolve="anchorTree" />
-              <ref role="1Pybhc" to="4t1t:4peSo3CD1Kp" resolve="AnchorUtil" />
+              <ref role="37wK5l" to="i348:4OKkcnfu_xq" resolve="anchorTree" />
+              <ref role="1Pybhc" to="i348:4OKkcnfu_xo" resolve="AnchorUtil" />
               <node concept="37vLTw" id="1zN1RIkMMBs" role="37wK5m">
                 <ref role="3cqZAo" node="1zN1RIkMJJI" resolve="root" />
               </node>

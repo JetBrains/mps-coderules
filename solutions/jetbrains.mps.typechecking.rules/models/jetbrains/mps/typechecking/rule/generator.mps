@@ -8,9 +8,9 @@
   </languages>
   <imports>
     <import index="138j" ref="r:d390cf6e-3a05-4c9d-8eb3-bcdfbfd3bf8f(jetbrains.mps.typechecking.rule.collection)" />
-    <import index="qiww" ref="r:7e0616dc-e55e-4c35-beca-da14b0c8f8bd(jetbrains.mps.lang.typesystem2.runtime.template)" />
     <import index="nc4n" ref="r:2a1eb048-898c-47a3-863b-36b04c4b9f7c(jetbrains.mps.lang.typesystem2.runtime.rule)" />
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
@@ -333,7 +333,7 @@
             <property role="TrG5h" value="allTemplates" />
             <node concept="A3Dl8" id="5NuEpF1qhgD" role="1tU5fm">
               <node concept="3uibUv" id="5NuEpF1qhgE" role="A3Ik2">
-                <ref role="3uigEE" to="qiww:5k_shARMpxh" resolve="AbstractRuleTemplate" />
+                <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractRuleTemplate" />
               </node>
             </node>
             <node concept="2OqwBi" id="5NuEpF1qhgF" role="33vP2m">
@@ -931,7 +931,7 @@
       <node concept="37vLTG" id="5ntLU8GlSnJ" role="3clF46">
         <property role="TrG5h" value="tpl" />
         <node concept="3uibUv" id="5ntLU8GlSnK" role="1tU5fm">
-          <ref role="3uigEE" to="qiww:5k_shARMpxh" resolve="AbstractRuleTemplate" />
+          <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractRuleTemplate" />
         </node>
       </node>
       <node concept="37vLTG" id="5ntLU8GlSnL" role="3clF46">
@@ -956,7 +956,7 @@
                   <ref role="3cqZAo" node="5ntLU8GlSnJ" resolve="tpl" />
                 </node>
                 <node concept="liA8E" id="5ntLU8GlSnG" role="2OqNvi">
-                  <ref role="37wK5l" to="qiww:5k_shARMugD" resolve="apply" />
+                  <ref role="37wK5l" to="i348:4OKkcnfu_wG" resolve="apply" />
                   <node concept="37vLTw" id="5ntLU8GlSnP" role="37wK5m">
                     <ref role="3cqZAo" node="5ntLU8GlSnL" resolve="node" />
                   </node>
@@ -965,7 +965,7 @@
                       <ref role="3cqZAo" node="5ntLU8GlSnJ" resolve="tpl" />
                     </node>
                     <node concept="liA8E" id="1zN1RIkYabs" role="2OqNvi">
-                      <ref role="37wK5l" to="qiww:1zN1RIkUgGf" resolve="boundParam" />
+                      <ref role="37wK5l" to="i348:4OKkcnfu_wz" resolve="boundParam" />
                       <node concept="37vLTw" id="1zN1RIkYad4" role="37wK5m">
                         <ref role="3cqZAo" node="5ntLU8GlSnL" resolve="node" />
                       </node>
@@ -1034,7 +1034,7 @@
         <property role="TrG5h" value="allTemplates" />
         <node concept="A3Dl8" id="tIwzd1I3Xn" role="1tU5fm">
           <node concept="3uibUv" id="tIwzd1I3Xo" role="A3Ik2">
-            <ref role="3uigEE" to="qiww:5k_shARMpxh" resolve="AbstractRuleTemplate" />
+            <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractRuleTemplate" />
           </node>
         </node>
       </node>
@@ -1143,7 +1143,7 @@
                                         <ref role="3cqZAo" node="tIwzd1I3Xj" resolve="tpl" />
                                       </node>
                                       <node concept="liA8E" id="tIwzd1I3X4" role="2OqNvi">
-                                        <ref role="37wK5l" to="qiww:7Oc59RSK5Py" resolve="toString" />
+                                        <ref role="37wK5l" to="i348:4OKkcnfu_wQ" resolve="toString" />
                                       </node>
                                     </node>
                                   </node>
@@ -1191,7 +1191,7 @@
                       <ref role="3cqZAo" node="tIwzd1I3Xj" resolve="tpl" />
                     </node>
                     <node concept="liA8E" id="tIwzd1Igsq" role="2OqNvi">
-                      <ref role="37wK5l" to="qiww:tIwzd1Gx3U" resolve="required" />
+                      <ref role="37wK5l" to="i348:4OKkcnfu_wp" resolve="required" />
                       <node concept="37vLTw" id="tIwzd1Z9kY" role="37wK5m">
                         <ref role="3cqZAo" node="tIwzd1I3Xp" resolve="node" />
                       </node>
@@ -1204,7 +1204,7 @@
           <node concept="3cpWsn" id="tIwzd1I3Xj" role="1Duv9x">
             <property role="TrG5h" value="tpl" />
             <node concept="3uibUv" id="tIwzd1I3Xk" role="1tU5fm">
-              <ref role="3uigEE" to="qiww:5k_shARMpxh" resolve="AbstractRuleTemplate" />
+              <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractRuleTemplate" />
             </node>
           </node>
           <node concept="37vLTw" id="tIwzd1I3Xs" role="1DdaDG">
@@ -1285,7 +1285,7 @@
               <property role="TrG5h" value="allTemplates" />
               <node concept="A3Dl8" id="5ntLU8GlzSt" role="1tU5fm">
                 <node concept="3uibUv" id="5ntLU8GlzSw" role="A3Ik2">
-                  <ref role="3uigEE" to="qiww:5k_shARMpxh" resolve="AbstractRuleTemplate" />
+                  <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractRuleTemplate" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5ntLU8GlzSK" role="33vP2m">

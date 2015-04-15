@@ -7,8 +7,8 @@
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="qiww" ref="r:7e0616dc-e55e-4c35-beca-da14b0c8f8bd(jetbrains.mps.lang.typesystem2.runtime.template)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.typesystem2.structure)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
@@ -56,7 +56,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -358,7 +358,7 @@
                   <node concept="3clFbF" id="1zN1RIlro2X" role="3cqZAp">
                     <node concept="3clFbC" id="1zN1RIlro2Y" role="3clFbG">
                       <node concept="3B5_sB" id="1zN1RIlro2Z" role="3uHU7w">
-                        <ref role="3B5MYn" to="qiww:77AxcO56PMa" resolve="RuleTemplateMethod" />
+                        <ref role="3B5MYn" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
                       </node>
                       <node concept="2OqwBi" id="1zN1RIlro30" role="3uHU7B">
                         <node concept="37vLTw" id="1zN1RIlro31" role="2Oq$k0">
@@ -497,7 +497,7 @@
                                 </node>
                               </node>
                               <node concept="3B5_sB" id="1zN1RIlsbm1" role="3uHU7w">
-                                <ref role="3B5MYn" to="qiww:77AxcO56PMa" resolve="RuleTemplateMethod" />
+                                <ref role="3B5MYn" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
                               </node>
                             </node>
                           </node>
@@ -648,8 +648,8 @@
                   <node concept="2OqwBi" id="1zN1RIlskwm" role="3clFbw">
                     <node concept="2OqwBi" id="1zN1RIlskpr" role="2Oq$k0">
                       <node concept="Rm8GO" id="1zN1RIlskps" role="2Oq$k0">
-                        <ref role="Rm8GQ" to="qiww:77AxcO56PM5" resolve="HEAD_KEPT" />
-                        <ref role="1Px2BO" to="qiww:77AxcO56PM4" resolve="RuleTemplateMehodKind" />
+                        <ref role="Rm8GQ" to="i348:4OKkcnfu_Ah" resolve="HEAD_KEPT" />
+                        <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                       </node>
                       <node concept="liA8E" id="1zN1RIlskpt" role="2OqNvi">
                         <ref role="37wK5l" to="e2lb:~Enum.name():java.lang.String" resolve="name" />
@@ -706,8 +706,8 @@
                     <node concept="2OqwBi" id="1zN1RIlsnks" role="3eO9$A">
                       <node concept="2OqwBi" id="1zN1RIlsnkt" role="2Oq$k0">
                         <node concept="Rm8GO" id="1zN1RIlsnoS" role="2Oq$k0">
-                          <ref role="Rm8GQ" to="qiww:77AxcO56PM6" resolve="HEAD_REPLACED" />
-                          <ref role="1Px2BO" to="qiww:77AxcO56PM4" resolve="RuleTemplateMehodKind" />
+                          <ref role="Rm8GQ" to="i348:4OKkcnfu_Ai" resolve="HEAD_REPLACED" />
+                          <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                         </node>
                         <node concept="liA8E" id="1zN1RIlsnkv" role="2OqNvi">
                           <ref role="37wK5l" to="e2lb:~Enum.name():java.lang.String" resolve="name" />
@@ -750,8 +750,8 @@
                     <node concept="2OqwBi" id="1zN1RIlsntE" role="3eO9$A">
                       <node concept="2OqwBi" id="1zN1RIlsntF" role="2Oq$k0">
                         <node concept="Rm8GO" id="1zN1RIlsn$x" role="2Oq$k0">
-                          <ref role="Rm8GQ" to="qiww:77AxcO56PM7" resolve="GUARD" />
-                          <ref role="1Px2BO" to="qiww:77AxcO56PM4" resolve="RuleTemplateMehodKind" />
+                          <ref role="Rm8GQ" to="i348:4OKkcnfu_Aj" resolve="GUARD" />
+                          <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                         </node>
                         <node concept="liA8E" id="1zN1RIlsntH" role="2OqNvi">
                           <ref role="37wK5l" to="e2lb:~Enum.name():java.lang.String" resolve="name" />
@@ -794,8 +794,8 @@
                     <node concept="2OqwBi" id="1zN1RIlsnBg" role="3eO9$A">
                       <node concept="2OqwBi" id="1zN1RIlsnBh" role="2Oq$k0">
                         <node concept="Rm8GO" id="1zN1RIlsnJ2" role="2Oq$k0">
-                          <ref role="Rm8GQ" to="qiww:77AxcO56PM8" resolve="BODY" />
-                          <ref role="1Px2BO" to="qiww:77AxcO56PM4" resolve="RuleTemplateMehodKind" />
+                          <ref role="Rm8GQ" to="i348:4OKkcnfu_Ak" resolve="BODY" />
+                          <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                         </node>
                         <node concept="liA8E" id="1zN1RIlsnBj" role="2OqNvi">
                           <ref role="37wK5l" to="e2lb:~Enum.name():java.lang.String" resolve="name" />
