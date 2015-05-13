@@ -248,7 +248,7 @@
     </node>
   </node>
   <node concept="37WguZ" id="2E5lcNn1UqB">
-    <property role="3GE5qa" value="rule.part" />
+    <property role="3GE5qa" value="rule.component" />
     <property role="TrG5h" value="Head_createNew" />
     <node concept="37WvkG" id="2E5lcNn1UqC" role="37WGs$">
       <ref role="37XkoT" to="wq2x:6p0DfM0a3gA" resolve="Head" />
