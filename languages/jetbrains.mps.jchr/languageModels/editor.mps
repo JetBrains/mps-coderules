@@ -1239,5 +1239,37 @@
       <property role="3F0ifm" value="_" />
     </node>
   </node>
+  <node concept="24kQdi" id="4EfgX2Esjtx">
+    <property role="3GE5qa" value="handler.constraints" />
+    <ref role="1XX52x" to="vgt0:4EfgX2EshHC" resolve="StaticMethodCallConstraint" />
+    <node concept="3EZMnI" id="4EfgX2Esj$g" role="2wV5jI">
+      <node concept="3F0A7n" id="4EfgX2Esj$_" role="3EZMnx">
+        <ref role="1NtTu8" to="vgt0:h5npUzI" resolve="fqClassName" />
+        <ref role="1k5W1q" to="tpen:hshUnm6" resolve="StaticMethod" />
+      </node>
+      <node concept="3F0ifn" id="4EfgX2Esj$F" role="3EZMnx">
+        <property role="3F0ifm" value="." />
+        <ref role="1k5W1q" to="tpen:hFDnyG9" resolve="Dot" />
+      </node>
+      <node concept="3F0A7n" id="4EfgX2EsjSK" role="3EZMnx">
+        <ref role="1NtTu8" to="vgt0:h5npL2N" resolve="methodName" />
+        <ref role="1k5W1q" to="tpen:hshUnm6" resolve="StaticMethod" />
+      </node>
+      <node concept="3F0ifn" id="4EfgX2EskfU" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F2HdR" id="4EfgX2Eskgk" role="3EZMnx">
+        <property role="2czwfO" value="," />
+        <ref role="1NtTu8" to="vgt0:hHp56YpiWP" />
+        <node concept="l2Vlx" id="4EfgX2Eskgm" role="2czzBx" />
+      </node>
+      <node concept="3F0ifn" id="4EfgX2Eskg6" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+      </node>
+      <node concept="l2Vlx" id="4EfgX2Esj$j" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 
