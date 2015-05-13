@@ -9,6 +9,7 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/jetbrains.mps.lang.typesystem2.mpl" folder="typesystem2" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/runtime/jetbrains.mps.lang.typesystem2.runtime.msd" folder="typesystem2.runtime" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem.sample/jetbrains.mps.lang.typesystem2.sample.msd" folder="typechecking.sample" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.handler.test/jetbrains.mps.lang.typesystem2.samplechecker.handler.test.msd" folder="typechecking.checker" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/jetbrains.mps.lang.typesystem2.samplechecker.handler.util.msd" folder="typechecking.checker" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.handler/jetbrains.mps.lang.typesystem2.samplechecker.handler.msd" folder="typechecking.checker" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/jetbrains.mps.lang.typesystem2.samplechecker.runner.msd" folder="typechecking.checker" />
