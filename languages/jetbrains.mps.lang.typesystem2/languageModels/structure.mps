@@ -108,6 +108,10 @@
       <property role="TrG5h" value="exactMatch" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="3x8pcoFsKIi" role="1TKVEl">
+      <property role="TrG5h" value="postProcess" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="5NuEpF1iiJF" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="inputSpecification" />
@@ -468,7 +472,7 @@
     <node concept="1TJgyj" id="4EfgX2EvGcc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
@@ -523,6 +527,12 @@
       <property role="20kJfa" value="host" />
       <ref role="20lvS9" node="7eGEHDlgPU4" resolve="Rule" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6infEALDvmn">
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="AssertExpressionConstraint" />
+    <property role="34LRSv" value="assert" />
+    <ref role="1TJDcQ" node="4EfgX2EvF4i" resolve="ExpressionConstraint" />
   </node>
 </model>
 
