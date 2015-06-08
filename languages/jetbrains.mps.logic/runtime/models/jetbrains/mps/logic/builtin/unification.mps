@@ -7437,5 +7437,693 @@
       </node>
     </node>
   </node>
+  <node concept="3HP615" id="6infEALA98Q">
+    <property role="TrG5h" value="AssertSolver" />
+    <node concept="2tJIrI" id="6infEALAaW4" role="jymVt" />
+    <node concept="3clFb_" id="6infEALAaWf" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="tellAssert" />
+      <node concept="37vLTG" id="6infEALAbaU" role="3clF46">
+        <property role="TrG5h" value="val" />
+        <node concept="3uibUv" id="6infEALAJy7" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="6infEALAaWh" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALAaWi" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALAaWj" role="3clF47" />
+      <node concept="2AHcQZ" id="6infEALAbJf" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Tells" resolve="JCHR_Tells" />
+        <node concept="2B6LJw" id="6infEALAbJg" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Tells.value()" resolve="value" />
+          <node concept="10M0yZ" id="6infEALACqu" role="2B70Vg">
+            <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALADHP" role="jymVt" />
+    <node concept="3clFb_" id="6infEALADHG" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="tellAssert" />
+      <node concept="37vLTG" id="6infEALADHH" role="3clF46">
+        <property role="TrG5h" value="logical" />
+        <node concept="3uibUv" id="6infEALADVW" role="1tU5fm">
+          <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+          <node concept="3uibUv" id="6infEALAEo5" role="11_B2D">
+            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="6infEALADHJ" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALADHK" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALADHL" role="3clF47" />
+      <node concept="2AHcQZ" id="6infEALADHM" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Tells" resolve="JCHR_Tells" />
+        <node concept="2B6LJw" id="6infEALADHN" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Tells.value()" resolve="value" />
+          <node concept="10M0yZ" id="6infEALADHO" role="2B70Vg">
+            <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAbl1" role="jymVt" />
+    <node concept="3clFb_" id="6infEALAblu" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="askAssert" />
+      <node concept="37vLTG" id="6infEALAb$A" role="3clF46">
+        <property role="TrG5h" value="val" />
+        <node concept="3uibUv" id="6infEALAJD0" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        </node>
+      </node>
+      <node concept="10P_77" id="6infEALB2Ar" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALAblx" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALAbly" role="3clF47" />
+      <node concept="2AHcQZ" id="6infEALAc0y" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Asks" resolve="JCHR_Asks" />
+        <node concept="2B6LJw" id="6infEALAc0z" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Asks.value()" resolve="value" />
+          <node concept="10M0yZ" id="6infEALACVN" role="2B70Vg">
+            <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAFgW" role="jymVt" />
+    <node concept="3clFb_" id="6infEALAFgN" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="askAssert" />
+      <node concept="37vLTG" id="6infEALAFgO" role="3clF46">
+        <property role="TrG5h" value="logical" />
+        <node concept="3uibUv" id="6infEALAFw7" role="1tU5fm">
+          <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+          <node concept="3uibUv" id="6infEALAFXw" role="11_B2D">
+            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6infEALB2E2" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALAFgR" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALAFgS" role="3clF47" />
+      <node concept="2AHcQZ" id="6infEALAFgT" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Asks" resolve="JCHR_Asks" />
+        <node concept="2B6LJw" id="6infEALAFgU" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Asks.value()" resolve="value" />
+          <node concept="10M0yZ" id="6infEALAFgV" role="2B70Vg">
+            <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAGQr" role="jymVt" />
+    <node concept="3Tm1VV" id="6infEALA98R" role="1B3o_S" />
+    <node concept="2AHcQZ" id="6infEALAaAS" role="2AJF6D">
+      <ref role="2AI5Lk" to="9sk9:~JCHR_Constraints" resolve="JCHR_Constraints" />
+      <node concept="2B6LJw" id="6infEALAaAT" role="2B76xF">
+        <ref role="2B6OnR" to="9sk9:~JCHR_Constraints.value()" resolve="value" />
+        <node concept="2BsdOp" id="6infEALAaAU" role="2B70Vg">
+          <node concept="2AHcQZ" id="6infEALAaAV" role="2BsfMF">
+            <ref role="2AI5Lk" to="9sk9:~JCHR_Constraint" resolve="JCHR_Constraint" />
+            <node concept="2B6LJw" id="6infEALAaAW" role="2B76xF">
+              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.identifier()" resolve="identifier" />
+              <node concept="10M0yZ" id="6infEALAaAX" role="2B70Vg">
+                <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+                <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+              </node>
+            </node>
+            <node concept="2B6LJw" id="6infEALAaAY" role="2B76xF">
+              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.arity()" resolve="arity" />
+              <node concept="3cmrfG" id="6infEALAaAZ" role="2B70Vg">
+                <property role="3cmrfH" value="1" />
+              </node>
+            </node>
+            <node concept="2B6LJw" id="6infEALAaB2" role="2B76xF">
+              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.idempotent()" resolve="idempotent" />
+              <node concept="Rm8GO" id="6infEALAaB3" role="2B70Vg">
+                <ref role="Rm8GQ" to="9sk9:~JCHR_Constraint$Value.YES" resolve="YES" />
+                <ref role="1Px2BO" to="9sk9:~JCHR_Constraint$Value" resolve="JCHR_Constraint.Value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="6infEALAfer">
+    <property role="TrG5h" value="AssertBuiltinConstraint" />
+    <node concept="2tJIrI" id="6infEALAgQp" role="jymVt" />
+    <node concept="Wx3nA" id="6infEALAgS7" role="jymVt">
+      <property role="TrG5h" value="ASSERT" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="6infEALAgT4" role="1B3o_S" />
+      <node concept="17QB3L" id="6infEALAgTf" role="1tU5fm" />
+      <node concept="Xl_RD" id="6infEALAgUt" role="33vP2m">
+        <property role="Xl_RC" value="assertThat" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAgV7" role="jymVt" />
+    <node concept="Wx3nA" id="6infEALAhFy" role="jymVt">
+      <property role="TrG5h" value="INSTANCE" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="6infEALCj4e" role="1B3o_S" />
+      <node concept="3uibUv" id="6infEALAhG$" role="1tU5fm">
+        <ref role="3uigEE" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+      </node>
+      <node concept="2ShNRf" id="6infEALAhIC" role="33vP2m">
+        <node concept="HV5vD" id="6infEALA$ut" role="2ShVmc">
+          <ref role="HV5vE" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALA$vr" role="jymVt" />
+    <node concept="3clFb_" id="6infEALA_r8" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="symbol" />
+      <node concept="17QB3L" id="6infEALA_r9" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALA_ra" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALA_rf" role="3clF47">
+        <node concept="3clFbF" id="6infEALA_Sq" role="3cqZAp">
+          <node concept="37vLTw" id="6infEALA_Sp" role="3clFbG">
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALA_ID" role="jymVt" />
+    <node concept="3clFb_" id="6infEALA_rg" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createSolver" />
+      <node concept="37vLTG" id="6infEALA_rh" role="3clF46">
+        <property role="TrG5h" value="scope" />
+        <node concept="3uibUv" id="6infEALA_ri" role="1tU5fm">
+          <ref role="3uigEE" to="yg8f:2GO7tyJS2HQ" resolve="SolverFarm" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="6infEALA_rp" role="3clF45">
+        <ref role="3uigEE" node="6infEALA98Q" resolve="AssertSolver" />
+      </node>
+      <node concept="3Tm1VV" id="6infEALA_rk" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALA_rq" role="3clF47">
+        <node concept="3clFbF" id="6infEALBIdH" role="3cqZAp">
+          <node concept="2ShNRf" id="6infEALBIdF" role="3clFbG">
+            <node concept="1pGfFk" id="6infEALBIF6" role="2ShVmc">
+              <ref role="37wK5l" node="6infEALANZc" resolve="AssertSolverImpl" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALA_Xl" role="jymVt" />
+    <node concept="3clFb_" id="6infEALA_rr" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="solverInterface" />
+      <node concept="3uibUv" id="6infEALA_rs" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
+        <node concept="3uibUv" id="6infEALA_rz" role="11_B2D">
+          <ref role="3uigEE" node="6infEALA98Q" resolve="AssertSolver" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6infEALA_ru" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALA_r$" role="3clF47">
+        <node concept="3clFbF" id="6infEALBJwm" role="3cqZAp">
+          <node concept="3VsKOn" id="6infEALBJwG" role="3clFbG">
+            <ref role="3VsUkX" node="6infEALA98Q" resolve="AssertSolver" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAA5_" role="jymVt" />
+    <node concept="3clFb_" id="6infEALA_rB" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="ask" />
+      <node concept="37vLTG" id="6infEALA_rC" role="3clF46">
+        <property role="TrG5h" value="solver" />
+        <node concept="3uibUv" id="6infEALA_rX" role="1tU5fm">
+          <ref role="3uigEE" node="6infEALA98Q" resolve="AssertSolver" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6infEALA_rE" role="3clF46">
+        <property role="TrG5h" value="arg" />
+        <node concept="8X2XB" id="6infEALA_rF" role="1tU5fm">
+          <node concept="3uibUv" id="6infEALA_rY" role="8Xvag">
+            <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+            <node concept="3uibUv" id="6infEALA_rZ" role="11_B2D">
+              <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6infEALA_rH" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALA_rI" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALA_s0" role="3clF47">
+        <node concept="3clFbF" id="6infEALA_s2" role="3cqZAp">
+          <node concept="3clFbT" id="6infEALA_s1" role="3clFbG" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAAdz" role="jymVt" />
+    <node concept="3clFb_" id="6infEALA_s3" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="tell" />
+      <node concept="3cqZAl" id="6infEALA_s4" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALA_s5" role="1B3o_S" />
+      <node concept="37vLTG" id="6infEALA_s7" role="3clF46">
+        <property role="TrG5h" value="solver" />
+        <node concept="3uibUv" id="6infEALA_sp" role="1tU5fm">
+          <ref role="3uigEE" node="6infEALA98Q" resolve="AssertSolver" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6infEALA_s9" role="3clF46">
+        <property role="TrG5h" value="arg" />
+        <node concept="8X2XB" id="6infEALA_sa" role="1tU5fm">
+          <node concept="3uibUv" id="6infEALA_sq" role="8Xvag">
+            <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+            <node concept="3uibUv" id="6infEALA_sr" role="11_B2D">
+              <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="6infEALA_ss" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="6infEALA_pw" role="jymVt" />
+    <node concept="3Tm1VV" id="6infEALAfes" role="1B3o_S" />
+    <node concept="3uibUv" id="6infEALAfjF" role="EKbjA">
+      <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
+      <node concept="3uibUv" id="6infEALAfs7" role="11_B2D">
+        <ref role="3uigEE" node="6infEALA98Q" resolve="AssertSolver" />
+      </node>
+      <node concept="3uibUv" id="6infEALAfs$" role="11_B2D">
+        <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+        <node concept="3uibUv" id="6infEALAfzG" role="11_B2D">
+          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="6infEALAKBG">
+    <property role="TrG5h" value="AssertSolverImpl" />
+    <node concept="2tJIrI" id="6infEALANSl" role="jymVt" />
+    <node concept="3clFbW" id="6infEALANZc" role="jymVt">
+      <node concept="3cqZAl" id="6infEALANZe" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALANZf" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALANZg" role="3clF47">
+        <node concept="1VxSAg" id="6infEALARU4" role="3cqZAp">
+          <ref role="37wK5l" node="6infEALAOYK" resolve="AssertSolverImpl" />
+          <node concept="2YIFZM" id="6infEALARU6" role="37wK5m">
+            <ref role="37wK5l" to="w2rx:~ConstraintSystem.get():runtime.ConstraintSystem" resolve="get" />
+            <ref role="1Pybhc" to="w2rx:~ConstraintSystem" resolve="ConstraintSystem" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALANTA" role="jymVt" />
+    <node concept="3clFbW" id="6infEALAOYK" role="jymVt">
+      <node concept="37vLTG" id="6infEALAPix" role="3clF46">
+        <property role="TrG5h" value="constraintSystem" />
+        <node concept="3uibUv" id="6infEALAPrf" role="1tU5fm">
+          <ref role="3uigEE" to="w2rx:~ConstraintSystem" resolve="ConstraintSystem" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="6infEALAOYM" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALAOYN" role="1B3o_S" />
+      <node concept="3clFbS" id="6infEALAOYO" role="3clF47">
+        <node concept="3clFbF" id="6infEALAQoJ" role="3cqZAp">
+          <node concept="37vLTI" id="6infEALAQoL" role="3clFbG">
+            <node concept="2OqwBi" id="6infEALAQoP" role="37vLTJ">
+              <node concept="Xjq3P" id="6infEALAQoS" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6infEALAQoO" role="2OqNvi">
+                <ref role="2Oxat5" node="6infEALAQoF" resolve="constraintSystem" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="6infEALAQoT" role="37vLTx">
+              <ref role="3cqZAo" node="6infEALAPix" resolve="constraintSystem" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAO4J" role="jymVt" />
+    <node concept="3Tm1VV" id="6infEALAKBH" role="1B3o_S" />
+    <node concept="3uibUv" id="6infEALAKLB" role="EKbjA">
+      <ref role="3uigEE" node="6infEALA98Q" resolve="AssertSolver" />
+    </node>
+    <node concept="3clFb_" id="6infEALAKQz" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="tellAssert" />
+      <node concept="37vLTG" id="6infEALAKQ$" role="3clF46">
+        <property role="TrG5h" value="val" />
+        <node concept="3uibUv" id="6infEALAKQ_" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="6infEALAKQA" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALAKQB" role="1B3o_S" />
+      <node concept="2AHcQZ" id="6infEALAKQD" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Tells" resolve="JCHR_Tells" />
+        <node concept="2B6LJw" id="6infEALAKQE" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Tells.value()" resolve="value" />
+          <node concept="10M0yZ" id="6infEALAKQF" role="2B70Vg">
+            <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="6infEALAKQG" role="3clF47">
+        <node concept="3clFbJ" id="6infEALBkC$" role="3cqZAp">
+          <node concept="3clFbS" id="6infEALBkC_" role="3clFbx">
+            <node concept="YS8fn" id="6infEALBkCA" role="3cqZAp">
+              <node concept="2ShNRf" id="6infEALBkCB" role="YScLw">
+                <node concept="1pGfFk" id="6infEALBkCC" role="2ShVmc">
+                  <ref role="37wK5l" to="w2rx:~FailureException.&lt;init&gt;(java.lang.String)" resolve="FailureException" />
+                  <node concept="Xl_RD" id="6infEALBkCD" role="37wK5m">
+                    <property role="Xl_RC" value="cannot assert false" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="6infEALBkHm" role="3clFbw">
+            <node concept="37vLTw" id="6infEALBl5n" role="3fr31v">
+              <ref role="3cqZAo" node="6infEALAKQ$" resolve="val" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6infEALATT4" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAU2t" role="jymVt" />
+    <node concept="3clFb_" id="6infEALAKQH" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="tellAssert" />
+      <node concept="37vLTG" id="6infEALAKQI" role="3clF46">
+        <property role="TrG5h" value="logical" />
+        <node concept="3uibUv" id="6infEALAKQJ" role="1tU5fm">
+          <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+          <node concept="3uibUv" id="6infEALAKQK" role="11_B2D">
+            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="6infEALAKQL" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALAKQM" role="1B3o_S" />
+      <node concept="2AHcQZ" id="6infEALAKQO" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Tells" resolve="JCHR_Tells" />
+        <node concept="2B6LJw" id="6infEALAKQP" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Tells.value()" resolve="value" />
+          <node concept="10M0yZ" id="6infEALAKQQ" role="2B70Vg">
+            <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="6infEALAKQR" role="3clF47">
+        <node concept="3clFbJ" id="6infEALBog8" role="3cqZAp">
+          <node concept="3clFbS" id="6infEALBog9" role="3clFbx">
+            <node concept="3clFbF" id="6infEALBoga" role="3cqZAp">
+              <node concept="2YIFZM" id="6infEALBogb" role="3clFbG">
+                <ref role="37wK5l" to="7uia:~ConstraintSystemUtil.queue(ConstraintSystem,Runnable)" resolve="queue" />
+                <ref role="1Pybhc" to="7uia:~ConstraintSystemUtil" resolve="ConstraintSystemUtil" />
+                <node concept="37vLTw" id="6infEALBogc" role="37wK5m">
+                  <ref role="3cqZAo" node="6infEALAQoF" resolve="constraintSystem" />
+                </node>
+                <node concept="1bVj0M" id="6infEALBogd" role="37wK5m">
+                  <node concept="3clFbS" id="6infEALBoge" role="1bW5cS">
+                    <node concept="3clFbF" id="6infEALBogf" role="3cqZAp">
+                      <node concept="1rXfSq" id="6infEALBogg" role="3clFbG">
+                        <ref role="37wK5l" node="6infEALAKQH" resolve="tellAssert" />
+                        <node concept="37vLTw" id="6infEALBooW" role="37wK5m">
+                          <ref role="3cqZAo" node="6infEALAKQI" resolve="logical" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="6infEALBogi" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="6infEALBogj" role="3clFbw">
+            <node concept="37vLTw" id="6infEALBogk" role="2Oq$k0">
+              <ref role="3cqZAo" node="6infEALAQoF" resolve="constraintSystem" />
+            </node>
+            <node concept="liA8E" id="6infEALBogl" role="2OqNvi">
+              <ref role="37wK5l" to="w2rx:~ConstraintSystem.isQueuing():boolean" resolve="isQueuing" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6infEALBoct" role="3cqZAp" />
+        <node concept="3cpWs8" id="6infEALBclm" role="3cqZAp">
+          <node concept="3cpWsn" id="6infEALBcln" role="3cpWs9">
+            <property role="TrG5h" value="repr" />
+            <node concept="3uibUv" id="6infEALBclo" role="1tU5fm">
+              <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+              <node concept="3uibUv" id="6infEALBclp" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6infEALBclq" role="33vP2m">
+              <node concept="37vLTw" id="6infEALBclr" role="2Oq$k0">
+                <ref role="3cqZAo" node="6infEALAKQI" resolve="logical" />
+              </node>
+              <node concept="liA8E" id="6infEALBcls" role="2OqNvi">
+                <ref role="37wK5l" node="3HJTsBn6rgQ" resolve="findRoot" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6infEALBcOh" role="3cqZAp">
+          <node concept="3clFbS" id="6infEALBcOj" role="3clFbx">
+            <node concept="YS8fn" id="6infEALBiaP" role="3cqZAp">
+              <node concept="2ShNRf" id="6infEALBiaQ" role="YScLw">
+                <node concept="1pGfFk" id="6infEALBiaR" role="2ShVmc">
+                  <ref role="37wK5l" to="w2rx:~FailureException.&lt;init&gt;(java.lang.String)" resolve="FailureException" />
+                  <node concept="Xl_RD" id="6infEALBjz_" role="37wK5m">
+                    <property role="Xl_RC" value="cannot assert false" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1Wc70l" id="6infEALBeKX" role="3clFbw">
+            <node concept="3fqX7Q" id="6infEALBeNq" role="3uHU7w">
+              <node concept="2OqwBi" id="6infEALBf3L" role="3fr31v">
+                <node concept="37vLTw" id="6infEALBePw" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
+                </node>
+                <node concept="liA8E" id="6infEALBgCV" role="2OqNvi">
+                  <ref role="37wK5l" node="3HJTsBmBZ0h" resolve="value" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6infEALBd3w" role="3uHU7B">
+              <node concept="37vLTw" id="6infEALBcQc" role="2Oq$k0">
+                <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
+              </node>
+              <node concept="liA8E" id="6infEALBeBH" role="2OqNvi">
+                <ref role="37wK5l" node="3HJTsBmC6RD" resolve="isBound" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6infEALBksI" role="3cqZAp" />
+        <node concept="3cpWs8" id="6infEALBscn" role="3cqZAp">
+          <node concept="3cpWsn" id="6infEALBsco" role="3cpWs9">
+            <property role="TrG5h" value="value" />
+            <node concept="3uibUv" id="6infEALBsce" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            </node>
+            <node concept="2OqwBi" id="6infEALBscp" role="33vP2m">
+              <node concept="37vLTw" id="6infEALBscq" role="2Oq$k0">
+                <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
+              </node>
+              <node concept="liA8E" id="6infEALBscr" role="2OqNvi">
+                <ref role="37wK5l" node="3HJTsBmBZ0h" resolve="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6infEALBsxX" role="3cqZAp">
+          <node concept="3clFbS" id="6infEALBsxZ" role="3clFbx">
+            <node concept="3clFbF" id="6infEALBtCI" role="3cqZAp">
+              <node concept="2OqwBi" id="6infEALBtMi" role="3clFbG">
+                <node concept="37vLTw" id="6infEALBtCG" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
+                </node>
+                <node concept="liA8E" id="6infEALBvmp" role="2OqNvi">
+                  <ref role="37wK5l" node="3HJTsBmK4yW" resolve="setValue" />
+                  <node concept="10M0yZ" id="6infEALBvoZ" role="37wK5m">
+                    <ref role="1PxDUh" to="e2lb:~Boolean" resolve="Boolean" />
+                    <ref role="3cqZAo" to="e2lb:~Boolean.TRUE" resolve="TRUE" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6infEALBvyD" role="3cqZAp">
+              <node concept="2OqwBi" id="6infEALBvHL" role="3clFbG">
+                <node concept="37vLTw" id="6infEALBvyB" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
+                </node>
+                <node concept="liA8E" id="6infEALBxhV" role="2OqNvi">
+                  <ref role="37wK5l" to="w2rx:~Logical.rehashAllAndDispose():void" resolve="rehashAllAndDispose" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="6infEALBxkx" role="3cqZAp" />
+            <node concept="3SKdUt" id="6infEALBxps" role="3cqZAp">
+              <node concept="3SKdUq" id="6infEALBxpt" role="3SKWNk">
+                <property role="3SKdUp" value="TODO: check the invariants of repr" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="6infEALBxpu" role="3cqZAp">
+              <node concept="2OqwBi" id="6infEALBxpv" role="3clFbG">
+                <node concept="37vLTw" id="6infEALBxwO" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
+                </node>
+                <node concept="liA8E" id="6infEALBxpx" role="2OqNvi">
+                  <ref role="37wK5l" node="3HJTsBmDhnk" resolve="reactivateAndClearObservers" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="6infEALBsL1" role="3clFbw">
+            <node concept="10Nm6u" id="6infEALBsO_" role="3uHU7w" />
+            <node concept="37vLTw" id="6infEALBsCh" role="3uHU7B">
+              <ref role="3cqZAo" node="6infEALBsco" resolve="value" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6infEALAU9q" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAUiN" role="jymVt" />
+    <node concept="3clFb_" id="6infEALAKQS" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="askAssert" />
+      <node concept="37vLTG" id="6infEALAKQT" role="3clF46">
+        <property role="TrG5h" value="val" />
+        <node concept="3uibUv" id="6infEALAKQU" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+        </node>
+      </node>
+      <node concept="10P_77" id="6infEALB3_x" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALAKQW" role="1B3o_S" />
+      <node concept="2AHcQZ" id="6infEALAKQY" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Asks" resolve="JCHR_Asks" />
+        <node concept="2B6LJw" id="6infEALAKQZ" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Asks.value()" resolve="value" />
+          <node concept="10M0yZ" id="6infEALAKR0" role="2B70Vg">
+            <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="6infEALAKR1" role="3clF47">
+        <node concept="3clFbF" id="6infEALB4$1" role="3cqZAp">
+          <node concept="37vLTw" id="6infEALB4$0" role="3clFbG">
+            <ref role="3cqZAo" node="6infEALAKQT" resolve="val" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6infEALAUt5" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAUAu" role="jymVt" />
+    <node concept="3clFb_" id="6infEALAKR2" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="askAssert" />
+      <node concept="37vLTG" id="6infEALAKR3" role="3clF46">
+        <property role="TrG5h" value="logical" />
+        <node concept="3uibUv" id="6infEALAKR4" role="1tU5fm">
+          <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+          <node concept="3uibUv" id="6infEALAKR5" role="11_B2D">
+            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="6infEALB3F8" role="3clF45" />
+      <node concept="3Tm1VV" id="6infEALAKR7" role="1B3o_S" />
+      <node concept="2AHcQZ" id="6infEALAKR9" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Asks" resolve="JCHR_Asks" />
+        <node concept="2B6LJw" id="6infEALAKRa" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Asks.value()" resolve="value" />
+          <node concept="10M0yZ" id="6infEALAKRb" role="2B70Vg">
+            <ref role="1PxDUh" node="6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="3cqZAo" node="6infEALAgS7" resolve="ASSERT" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="6infEALAKRc" role="3clF47">
+        <node concept="3cpWs8" id="6infEALBa$_" role="3cqZAp">
+          <node concept="3cpWsn" id="6infEALBa$A" role="3cpWs9">
+            <property role="TrG5h" value="repr" />
+            <node concept="3uibUv" id="6infEALBa$x" role="1tU5fm">
+              <ref role="3uigEE" node="3HJTsBmBSJa" resolve="AbstractLogical" />
+              <node concept="3uibUv" id="6infEALBa$$" role="11_B2D">
+                <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6infEALBa$B" role="33vP2m">
+              <node concept="37vLTw" id="6infEALBa$C" role="2Oq$k0">
+                <ref role="3cqZAo" node="6infEALAKR3" resolve="logical" />
+              </node>
+              <node concept="liA8E" id="6infEALBa$D" role="2OqNvi">
+                <ref role="37wK5l" node="3HJTsBn6rgQ" resolve="findRoot" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6infEALAYLT" role="3cqZAp">
+          <node concept="3clFbS" id="6infEALAYLV" role="3clFbx">
+            <node concept="3cpWs6" id="6infEALB1yd" role="3cqZAp">
+              <node concept="3clFbT" id="6infEALB1$I" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="6infEALAYNg" role="3clFbw">
+            <node concept="2OqwBi" id="6infEALAZ5t" role="3fr31v">
+              <node concept="37vLTw" id="6infEALBbmW" role="2Oq$k0">
+                <ref role="3cqZAo" node="6infEALBa$A" resolve="repr" />
+              </node>
+              <node concept="liA8E" id="6infEALB0GT" role="2OqNvi">
+                <ref role="37wK5l" node="3HJTsBmC6RD" resolve="isBound" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6infEALAYKA" role="3cqZAp" />
+        <node concept="3clFbF" id="6infEALAVvu" role="3cqZAp">
+          <node concept="2OqwBi" id="6infEALAVD2" role="3clFbG">
+            <node concept="37vLTw" id="6infEALBbtf" role="2Oq$k0">
+              <ref role="3cqZAo" node="6infEALBa$A" resolve="repr" />
+            </node>
+            <node concept="liA8E" id="6infEALAXgk" role="2OqNvi">
+              <ref role="37wK5l" node="3HJTsBmBZ0h" resolve="value" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6infEALAT0A" role="jymVt" />
+    <node concept="312cEg" id="6infEALAQoF" role="jymVt">
+      <property role="TrG5h" value="constraintSystem" />
+      <node concept="3Tm6S6" id="6infEALAQoG" role="1B3o_S" />
+      <node concept="3uibUv" id="6infEALAQoI" role="1tU5fm">
+        <ref role="3uigEE" to="w2rx:~ConstraintSystem" resolve="ConstraintSystem" />
+      </node>
+    </node>
+  </node>
 </model>
 
