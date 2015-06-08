@@ -147,7 +147,6 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -306,6 +305,10 @@
           <ref role="3uigEE" to="nc4n:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
         </node>
       </node>
+      <node concept="37vLTG" id="3x8pcoFuNwM" role="3clF46">
+        <property role="TrG5h" value="postProcess" />
+        <node concept="10P_77" id="3x8pcoFuOpV" role="1tU5fm" />
+      </node>
       <node concept="3uibUv" id="5NuEpF1pL7k" role="3clF45">
         <ref role="3uigEE" to="4t1t:7Oc59RSEjdb" resolve="Result" />
       </node>
@@ -336,7 +339,6 @@
               <node concept="1LlUBW" id="7t5VLKHaWTl" role="A3Ik2">
                 <node concept="3uibUv" id="1ffsG7c4WcZ" role="1Lm7xW">
                   <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
-                  <node concept="3qTvmN" id="1ffsG7c4WpX" role="11_B2D" />
                 </node>
                 <node concept="3uibUv" id="7t5VLKHaZmN" role="1Lm7xW">
                   <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
@@ -349,6 +351,9 @@
               </node>
               <node concept="liA8E" id="5NuEpF1qhgH" role="2OqNvi">
                 <ref role="37wK5l" to="138j:5NuEpF1qn9x" resolve="allTemplatesWithNoInput" />
+                <node concept="37vLTw" id="3x8pcoFuOQ9" role="37wK5m">
+                  <ref role="3cqZAo" node="3x8pcoFuNwM" resolve="postProcess" />
+                </node>
                 <node concept="2ShNRf" id="5NuEpF1qhgJ" role="37wK5m">
                   <node concept="2i4dXS" id="5NuEpF1qhgK" role="2ShVmc">
                     <node concept="3uibUv" id="5NuEpF1qhgL" role="HW$YZ">
@@ -1041,7 +1046,6 @@
           <node concept="1LlUBW" id="7t5VLKHawYT" role="A3Ik2">
             <node concept="3uibUv" id="1ffsG7c4WJ7" role="1Lm7xW">
               <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
-              <node concept="3qTvmN" id="1ffsG7c4YwD" role="11_B2D" />
             </node>
             <node concept="3uibUv" id="7t5VLKHayek" role="1Lm7xW">
               <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
@@ -1237,9 +1241,12 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="tIwzd1Igsq" role="2OqNvi">
-                      <ref role="37wK5l" to="i348:1ffsG7bWC2M" resolve="required" />
+                      <ref role="37wK5l" to="i348:2q0gzCFLe4l" resolve="required" />
                       <node concept="37vLTw" id="tIwzd1Z9kY" role="37wK5m">
                         <ref role="3cqZAo" node="tIwzd1I3Xp" resolve="node" />
+                      </node>
+                      <node concept="37vLTw" id="2q0gzCFMiDZ" role="37wK5m">
+                        <ref role="3cqZAo" node="7t5VLKHaCPm" resolve="boundParam" />
                       </node>
                     </node>
                   </node>
@@ -1252,7 +1259,6 @@
             <node concept="1LlUBW" id="7t5VLKHazo3" role="1tU5fm">
               <node concept="3uibUv" id="1ffsG7c4Zfy" role="1Lm7xW">
                 <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
-                <node concept="3qTvmN" id="1ffsG7c50Dt" role="11_B2D" />
               </node>
               <node concept="3uibUv" id="7t5VLKHa_uS" role="1Lm7xW">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
@@ -1339,7 +1345,6 @@
                 <node concept="1LlUBW" id="7t5VLKHavfN" role="A3Ik2">
                   <node concept="3uibUv" id="1ffsG7c5hrm" role="1Lm7xW">
                     <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
-                    <node concept="3qTvmN" id="1ffsG7c5hNk" role="11_B2D" />
                   </node>
                   <node concept="3uibUv" id="7t5VLKHaw07" role="1Lm7xW">
                     <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
