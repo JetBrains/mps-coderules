@@ -16,9 +16,6 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
-      <concept id="1219920932475" name="jetbrains.mps.baseLanguage.structure.VariableArityType" flags="in" index="8X2XB">
-        <child id="1219921048460" name="componentType" index="8Xvag" />
-      </concept>
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -119,7 +116,6 @@
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
       </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
-        <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
@@ -212,53 +208,6 @@
   </registry>
   <node concept="312cEu" id="5H6hZahmlon">
     <property role="TrG5h" value="LubSolver" />
-    <node concept="2tJIrI" id="5H6hZahmlo_" role="jymVt" />
-    <node concept="312cEu" id="5H6hZahrdZl" role="jymVt">
-      <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="ListBuilder" />
-      <node concept="2tJIrI" id="5H6hZahredo" role="jymVt" />
-      <node concept="2YIFZL" id="5H6hZahrhoq" role="jymVt">
-        <property role="TrG5h" value="asListContents" />
-        <node concept="37vLTG" id="5H6hZahrhq5" role="3clF46">
-          <property role="TrG5h" value="tp" />
-          <node concept="8X2XB" id="5H6hZahrhui" role="1tU5fm">
-            <node concept="3uibUv" id="5H6hZahrhqU" role="8Xvag">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-              <node concept="3qTvmN" id="5H6hZahrhs_" role="11_B2D" />
-            </node>
-          </node>
-        </node>
-        <node concept="3uibUv" id="5H6hZahroNp" role="3clF45">
-          <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-        </node>
-        <node concept="3Tm1VV" id="5H6hZahrhot" role="1B3o_S" />
-        <node concept="3clFbS" id="5H6hZahrhou" role="3clF47">
-          <node concept="3clFbF" id="5H6hZahrp2R" role="3cqZAp">
-            <node concept="1oi1Uc" id="5H6hZahrp6u" role="3clFbG">
-              <node concept="1oi5ST" id="5H6hZahrp6v" role="1oi0x0">
-                <property role="TrG5h" value="list" />
-                <node concept="KCUsM" id="5H6hZahrp6w" role="1oi5TL">
-                  <node concept="22Ky0T" id="5H6hZahrp6x" role="lGtFl">
-                    <node concept="2YIFZM" id="5H6hZahrp6y" role="22Ky0K">
-                      <ref role="1Pybhc" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
-                      <ref role="37wK5l" to="ie8e:3OPtF03lcom" resolve="create" />
-                      <node concept="Xl_RD" id="5H6hZahrp6z" role="37wK5m">
-                        <property role="Xl_RC" value="contents" />
-                      </node>
-                      <node concept="37vLTw" id="5H6hZahrp6$" role="37wK5m">
-                        <ref role="3cqZAo" node="5H6hZahrhq5" resolve="tp" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2tJIrI" id="5H6hZahrocC" role="jymVt" />
-      <node concept="3Tm1VV" id="5H6hZahrdZm" role="1B3o_S" />
-    </node>
     <node concept="2tJIrI" id="5H6hZahrdLM" role="jymVt" />
     <node concept="2YIFZL" id="5H6hZahmloU" role="jymVt">
       <property role="TrG5h" value="findLub" />
@@ -1046,8 +995,8 @@
             </node>
           </node>
           <node concept="3clFbS" id="5H6hZahsjFL" role="3clFbx">
-            <node concept="3cpWs6" id="5H6hZahsnSd" role="3cqZAp">
-              <node concept="3clFbT" id="5H6hZahsnSA" role="3cqZAk">
+            <node concept="3cpWs6" id="4JRKVCv29eV" role="3cqZAp">
+              <node concept="3clFbT" id="4JRKVCv2bHD" role="3cqZAk">
                 <property role="3clFbU" value="false" />
               </node>
             </node>

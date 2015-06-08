@@ -86,9 +86,6 @@
       <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
         <child id="1171981057159" name="condition" index="3vwVQn" />
       </concept>
-      <concept id="1171983834376" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" flags="nn" index="3vFxKo">
-        <child id="1171983854940" name="condition" index="3vFALc" />
-      </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.ListNode" flags="ng" index="KCUsM">
@@ -155,6 +152,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALT1" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALT2" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2hys" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2hyt" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2hyu" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2hyv" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2hyw" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALT3" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALT4" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -209,6 +220,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALTl" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALTm" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv896o" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv896p" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv896q" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv896r" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv896s" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALTn" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALTo" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -278,19 +303,68 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="7t5VLKGALTI" role="3cqZAp" />
-          <node concept="3vFxKo" id="7t5VLKGALTJ" role="3cqZAp">
-            <node concept="37vLTw" id="7t5VLKGALTK" role="3vFALc">
+          <node concept="3clFbH" id="4JRKVCv8abP" role="3cqZAp" />
+          <node concept="3vwNmj" id="4JRKVCv8a67" role="3cqZAp">
+            <node concept="37vLTw" id="4JRKVCv8a68" role="3vwVQn">
               <ref role="3cqZAo" node="7t5VLKGALT$" resolve="success" />
             </node>
           </node>
-          <node concept="3vFxKo" id="7t5VLKGALTL" role="3cqZAp">
-            <node concept="2OqwBi" id="7t5VLKGALTM" role="3vFALc">
-              <node concept="37vLTw" id="7t5VLKGALTN" role="2Oq$k0">
+          <node concept="3vwNmj" id="4JRKVCv8a69" role="3cqZAp">
+            <node concept="2OqwBi" id="4JRKVCv8a6a" role="3vwVQn">
+              <node concept="37vLTw" id="4JRKVCv8a6b" role="2Oq$k0">
                 <ref role="3cqZAo" node="7t5VLKGALTu" resolve="var" />
               </node>
-              <node concept="liA8E" id="7t5VLKGALTO" role="2OqNvi">
+              <node concept="liA8E" id="4JRKVCv8a6c" role="2OqNvi">
                 <ref role="37wK5l" to="oy3s:3HJTsBmC6RD" resolve="isBound" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="4JRKVCv8a6d" role="3cqZAp" />
+          <node concept="3cpWs8" id="4JRKVCv8a6e" role="3cqZAp">
+            <node concept="3cpWsn" id="4JRKVCv8a6f" role="3cpWs9">
+              <property role="TrG5h" value="expect" />
+              <node concept="3uibUv" id="4JRKVCv8a6g" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              </node>
+              <node concept="1oi1Uc" id="4JRKVCv8a6h" role="33vP2m">
+                <node concept="1oi5ST" id="4JRKVCv8a6i" role="1oi0x0">
+                  <property role="TrG5h" value="list" />
+                  <node concept="1oi5ST" id="4JRKVCv8a6j" role="1oi5TL">
+                    <property role="TrG5h" value="contents" />
+                    <node concept="KCUsM" id="4JRKVCv8a6k" role="1oi5TL">
+                      <node concept="1oi5UN" id="4JRKVCv8a6l" role="KCVpo">
+                        <node concept="1oi5Wm" id="4JRKVCv8a6m" role="1ojpOf">
+                          <property role="TrG5h" value="concept" />
+                          <node concept="1oi5XN" id="4JRKVCv8a6n" role="1oi5zu">
+                            <property role="1oi5yK" value="ClassifierType" />
+                          </node>
+                        </node>
+                        <node concept="1oi5Wm" id="4JRKVCv8a6o" role="1ojpOf">
+                          <property role="TrG5h" value="classifier" />
+                          <node concept="1oi5XN" id="4JRKVCv8a6p" role="1oi5zu">
+                            <property role="1oi5yK" value="Object" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="4JRKVCv8a6q" role="3cqZAp">
+            <node concept="2OqwBi" id="4JRKVCv8a6r" role="3clFbG">
+              <node concept="37vLTw" id="4JRKVCv8a6s" role="2Oq$k0">
+                <ref role="3cqZAo" node="7t5VLKGALSI" resolve="uni" />
+              </node>
+              <node concept="liA8E" id="4JRKVCv8a6t" role="2OqNvi">
+                <ref role="37wK5l" to="oy3s:4U_yxogCcGI" resolve="tellUni" />
+                <node concept="37vLTw" id="4JRKVCv8a6u" role="37wK5m">
+                  <ref role="3cqZAo" node="4JRKVCv8a6f" resolve="expect" />
+                </node>
+                <node concept="37vLTw" id="4JRKVCv8a6v" role="37wK5m">
+                  <ref role="3cqZAo" node="7t5VLKGALTu" resolve="var" />
+                </node>
               </node>
             </node>
           </node>
@@ -318,6 +392,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALU1" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALU2" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2hyK" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2hyL" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2hyM" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2hyN" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2hyO" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALU3" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALU4" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -372,6 +460,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALUl" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALUm" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2hz4" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2hz5" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2hz6" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2hz7" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2hz8" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALUn" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALUo" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -544,6 +646,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALVp" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALVq" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2hz$" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2hz_" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2hzA" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2hzB" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2hzC" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALVr" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALVs" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -598,6 +714,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALVH" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALVI" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2yIc" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2yId" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2yIe" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2yIf" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2yIg" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALVJ" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALVK" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -756,6 +886,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALWG" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALWH" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2ewH" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2ewI" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2ewJ" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2ewK" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2ewL" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALWI" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALWJ" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -810,6 +954,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALX0" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALX1" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2eCr" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2eCs" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2eCt" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2eCu" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2eCv" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALX2" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALX3" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -996,6 +1154,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALY9" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALYa" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2hzS" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2hzT" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2hzU" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2hzV" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2hzW" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALYb" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALYc" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -1032,6 +1204,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALYm" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALYn" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2h$c" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2h$d" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2h$e" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2h$f" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2h$g" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALYo" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALYp" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -1086,6 +1272,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALYE" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALYF" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2h$w" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2h$x" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2h$y" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2h$z" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2h$$" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALYG" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALYH" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -1136,6 +1336,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALYW" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALYX" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2h$T" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2h$U" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2h$V" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2h$W" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2h$X" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALYY" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALYZ" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
@@ -1172,6 +1386,20 @@
                         <node concept="1oi5ST" id="7t5VLKGALZ9" role="1oi5TL">
                           <property role="TrG5h" value="contents" />
                           <node concept="KCUsM" id="7t5VLKGALZa" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2h_d" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2h_e" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2h_f" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2h_g" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2h_h" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="1oi5UN" id="7t5VLKGALZb" role="KCVpo">
                               <node concept="1oi5Wm" id="7t5VLKGALZc" role="1ojpOf">
                                 <property role="TrG5h" value="concept" />
