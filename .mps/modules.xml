@@ -15,7 +15,7 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/jetbrains.mps.lang.typesystem2.samplechecker.runner.msd" folder="typechecking.checker" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.test/jetbrains.mps.lang.typesystem2.samplechecker.test.msd" folder="typechecking.checker" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker/jetbrains.mps.lang.typesystem2.samplechecker.msd" folder="typechecking.checker" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.sampleplugin/jetbrains.mps.lang.typesystem2.sampleplugin.msd" folder="typesystem2" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.sampleplugin/jetbrains.mps.lang.typesystem2.sampleplugin.msd" folder="typechecking.plugin" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/template/jetbrains.mps.lang.typesystem2.template.msd" folder="typesystem2.runtime" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
