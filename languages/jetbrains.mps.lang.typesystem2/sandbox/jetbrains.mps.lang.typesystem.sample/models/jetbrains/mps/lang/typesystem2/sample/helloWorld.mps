@@ -2,7 +2,7 @@
 <model ref="r:28026be8-9bf8-4f54-9319-0ca8a6d1299d(jetbrains.mps.lang.typesystem2.sample.helloWorld)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -27,7 +27,6 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
-      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
@@ -148,7 +147,9 @@
         <node concept="3clFbJ" id="4EfgX2EJmvH" role="3cqZAp">
           <node concept="3clFbS" id="4EfgX2EJmvJ" role="3clFbx">
             <node concept="3cpWs6" id="4EfgX2EJmxt" role="3cqZAp">
-              <node concept="10Nm6u" id="3x8pcoF$v$i" role="3cqZAk" />
+              <node concept="Xl_RD" id="6Kcfpq7_lrL" role="3cqZAk">
+                <property role="Xl_RC" value="asd" />
+              </node>
             </node>
           </node>
           <node concept="3clFbC" id="4EfgX2EJmCK" role="3clFbw">
