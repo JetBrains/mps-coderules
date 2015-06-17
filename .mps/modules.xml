@@ -23,12 +23,8 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/runner/jetbrains.mps.logic.sandbox.runner.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/test/jetbrains.mps.logic.test.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" folder="typechecking" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.sandbox.runner/jetbrains.mps.type.sandbox.runner.msd" folder="_obsolete.typechecking.types" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.sandbox/jetbrains.mps.type.sandbox.msd" folder="_obsolete.typechecking.types" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.type.solver/jetbrains.mps.type.solver.msd" folder="_obsolete.typechecking.types" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.handling/jetbrains.mps.typechecking.handling.msd" folder="typechecking.rule" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.rules/jetbrains.mps.typechecking.rules.msd" folder="typechecking.rule" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.solving/jetbrains.mps.typechecking.solving.msd" folder="_obsolete" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.unification.tree/jetbrains.mps.unification.tree.msd" folder="logic" />
     </projectModules>
   </component>
