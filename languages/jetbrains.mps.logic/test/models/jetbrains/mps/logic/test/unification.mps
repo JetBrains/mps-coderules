@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
   </languages>
   <imports>
@@ -244,7 +244,7 @@
                   <ref role="37wK5l" to="oy3s:1GDBwhEEL82" resolve="TreeLogical" />
                   <node concept="3cpWs3" id="5cGCTtqzpZa" role="37wK5m">
                     <node concept="Xl_RD" id="5cGCTtqzq15" role="3uHU7B">
-                      <property role="Xl_RC" value="_" />
+                      <property role="Xl_RC" value="__" />
                     </node>
                     <node concept="37vLTw" id="5cGCTtqzoJV" role="3uHU7w">
                       <ref role="3cqZAo" node="5cGCTtqzoJL" resolve="name" />
@@ -1174,7 +1174,7 @@
                   <ref role="37wK5l" to="oy3s:1GDBwhEEL82" resolve="TreeLogical" />
                   <node concept="3cpWs3" id="5cGCTtq$bCb" role="37wK5m">
                     <node concept="Xl_RD" id="5cGCTtq$bCc" role="3uHU7B">
-                      <property role="Xl_RC" value="_" />
+                      <property role="Xl_RC" value="__" />
                     </node>
                     <node concept="37vLTw" id="5cGCTtq$bCd" role="3uHU7w">
                       <ref role="3cqZAo" node="5cGCTtq$bC1" resolve="name" />
