@@ -2,7 +2,7 @@
 <model ref="r:2a1eb048-898c-47a3-863b-36b04c4b9f7c(jetbrains.mps.lang.typesystem2.runtime.rule)">
   <persistence version="9" />
   <languages>
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
@@ -12,6 +12,7 @@
     <import index="neyv" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#com.google.common.collect(MPS.Core/com.google.common.collect@java_stub)" />
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
+    <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3014,7 +3015,7 @@
     <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="7eGEHDldp9j" role="jymVt" />
     <node concept="3clFb_" id="2pvEdqupRiH" role="jymVt">
-      <property role="TrG5h" value="findSolver" />
+      <property role="TrG5h" value="findConstraint" />
       <property role="1EzhhJ" value="true" />
       <node concept="37vLTG" id="2pvEdqupSPs" role="3clF46">
         <property role="TrG5h" value="symbol" />
@@ -3022,10 +3023,8 @@
           <ref role="3uigEE" node="54i3FxcZHHF" resolve="ConstraintSymbol" />
         </node>
       </node>
-      <node concept="3uibUv" id="2pvEdqupRLi" role="3clF45">
-        <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
-        <node concept="3qTvmN" id="2pvEdqupS8R" role="11_B2D" />
-        <node concept="3qTvmN" id="5$WbtTP01p$" role="11_B2D" />
+      <node concept="3uibUv" id="4xBopTzusSG" role="3clF45">
+        <ref role="3uigEE" to="bspi:6Kcfpq7Bj7q" resolve="AutoConstraint" />
       </node>
       <node concept="3Tm1VV" id="2pvEdqupRiK" role="1B3o_S" />
       <node concept="3clFbS" id="2pvEdqupRiL" role="3clF47" />

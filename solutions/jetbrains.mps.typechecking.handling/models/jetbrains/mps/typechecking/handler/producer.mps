@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="894463aa-8754-49c0-bf4b-6a32af66b376" name="jetbrains.mps.jchr" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -31,6 +31,7 @@
     <import index="1f2y" ref="r:c2e9552f-aeab-4773-af70-c663afdf96a5(jetbrains.mps.jchr.behavior)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
+    <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1053,19 +1054,17 @@
           <node concept="3clFbS" id="2pvEdquv_2V" role="2LFqv$">
             <node concept="3cpWs8" id="2pvEdquvGYV" role="3cqZAp">
               <node concept="3cpWsn" id="2pvEdquvGYW" role="3cpWs9">
-                <property role="TrG5h" value="solverProxy" />
-                <node concept="3uibUv" id="2pvEdquvGYK" role="1tU5fm">
-                  <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
-                  <node concept="3qTvmN" id="2pvEdquvGYN" role="11_B2D" />
-                  <node concept="3qTvmN" id="6TSDCsOlWbo" role="11_B2D" />
+                <property role="TrG5h" value="autoConstraint" />
+                <node concept="3uibUv" id="4xBopTzuwmc" role="1tU5fm">
+                  <ref role="3uigEE" to="bspi:6Kcfpq7Bj7q" resolve="AutoConstraint" />
                 </node>
                 <node concept="2OqwBi" id="2pvEdquvGYX" role="33vP2m">
                   <node concept="37vLTw" id="2pvEdquvGYY" role="2Oq$k0">
                     <ref role="3cqZAo" node="2pvEdquvyhp" resolve="registry" />
                   </node>
-                  <node concept="liA8E" id="2pvEdquvGYZ" role="2OqNvi">
-                    <ref role="37wK5l" to="nc4n:2pvEdqupRiH" resolve="findSolver" />
-                    <node concept="37vLTw" id="2pvEdquvGZ0" role="37wK5m">
+                  <node concept="liA8E" id="4xBopTzva4g" role="2OqNvi">
+                    <ref role="37wK5l" to="nc4n:2pvEdqupRiH" resolve="findConstraint" />
+                    <node concept="37vLTw" id="4xBopTzvau3" role="37wK5m">
                       <ref role="3cqZAo" node="2pvEdquv_2Y" resolve="sym" />
                     </node>
                   </node>
@@ -1078,14 +1077,18 @@
                 <property role="TrG5h" value="solverIfc" />
                 <node concept="3uibUv" id="2pvEdqux97P" role="1tU5fm">
                   <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
-                  <node concept="3qTvmN" id="2pvEdqux97S" role="11_B2D" />
+                  <node concept="3qUE_q" id="4xBopTzuyo7" role="11_B2D">
+                    <node concept="3uibUv" id="4xBopTzuyAf" role="3qUE_r">
+                      <ref role="3uigEE" to="bspi:6Kcfpq7AYBh" resolve="Queryable" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="2OqwBi" id="2pvEdqux98e" role="33vP2m">
                   <node concept="37vLTw" id="2pvEdqux98f" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2pvEdquvGYW" resolve="solverProxy" />
+                    <ref role="3cqZAo" node="2pvEdquvGYW" resolve="autoConstraint" />
                   </node>
                   <node concept="liA8E" id="2pvEdqux98g" role="2OqNvi">
-                    <ref role="37wK5l" to="yg8f:2pvEdquwbIb" resolve="solverInterface" />
+                    <ref role="37wK5l" to="bspi:4xBopTzlOsG" resolve="solverClass" />
                   </node>
                 </node>
               </node>

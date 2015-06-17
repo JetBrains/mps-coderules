@@ -11,6 +11,7 @@
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
+    <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -165,9 +166,6 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
-      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
-        <reference id="1116615189566" name="classifier" index="3VsUkX" />
-      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
@@ -233,15 +231,15 @@
       <node concept="3Tm1VV" id="5H6hZahmloX" role="1B3o_S" />
       <node concept="3clFbS" id="5H6hZahmloY" role="3clF47">
         <node concept="3clFbH" id="5H6hZahmlqI" role="3cqZAp" />
-        <node concept="3cpWs8" id="5H6hZahn4jH" role="3cqZAp">
-          <node concept="3cpWsn" id="5H6hZahn4jI" role="3cpWs9">
-            <property role="TrG5h" value="farm" />
-            <node concept="3uibUv" id="5H6hZahn4jG" role="1tU5fm">
-              <ref role="3uigEE" to="yg8f:2GO7tyJS2HQ" resolve="SolverFarm" />
+        <node concept="3cpWs8" id="4xBopTztvti" role="3cqZAp">
+          <node concept="3cpWsn" id="4xBopTztvtj" role="3cpWs9">
+            <property role="TrG5h" value="computingSession" />
+            <node concept="3uibUv" id="4xBopTztvth" role="1tU5fm">
+              <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
-            <node concept="2YIFZM" id="5H6hZahn4jJ" role="33vP2m">
-              <ref role="1Pybhc" to="yg8f:2GO7tyJS2HQ" resolve="SolverFarm" />
-              <ref role="37wK5l" to="yg8f:3HJTsBn5mhY" resolve="getDefault" />
+            <node concept="2YIFZM" id="4xBopTztvtk" role="33vP2m">
+              <ref role="37wK5l" to="bspi:4xBopTzo4e1" resolve="getDefault" />
+              <ref role="1Pybhc" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
           </node>
         </node>
@@ -697,11 +695,11 @@
                     <property role="TrG5h" value="match" />
                     <node concept="10P_77" id="5H6hZahnprw" role="1tU5fm" />
                     <node concept="2OqwBi" id="5H6hZahnpsE" role="33vP2m">
-                      <node concept="37vLTw" id="5H6hZahnpsF" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5H6hZahn4jI" resolve="farm" />
+                      <node concept="37vLTw" id="4xBopTztzmi" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4xBopTztvtj" resolve="computingSession" />
                       </node>
                       <node concept="liA8E" id="5H6hZahnpsG" role="2OqNvi">
-                        <ref role="37wK5l" to="yg8f:2GO7tyJSjFd" resolve="ask" />
+                        <ref role="37wK5l" to="bspi:4xBopTznHV5" resolve="ask" />
                         <node concept="10M0yZ" id="5H6hZahnpsH" role="37wK5m">
                           <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
                           <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
@@ -1005,17 +1003,14 @@
         <node concept="3clFbH" id="5H6hZahoYYv" role="3cqZAp" />
         <node concept="3clFbF" id="5H6hZahpbYO" role="3cqZAp">
           <node concept="2OqwBi" id="5H6hZahpbZD" role="3clFbG">
-            <node concept="37vLTw" id="5H6hZahpbYM" role="2Oq$k0">
-              <ref role="3cqZAo" node="5H6hZahn4jI" resolve="farm" />
+            <node concept="37vLTw" id="4xBopTzt_1g" role="2Oq$k0">
+              <ref role="3cqZAo" node="4xBopTztvtj" resolve="computingSession" />
             </node>
             <node concept="liA8E" id="5H6hZahpc3J" role="2OqNvi">
-              <ref role="37wK5l" to="yg8f:2GO7tyJSk6b" resolve="tell" />
-              <node concept="2YIFZM" id="5H6hZahpcBZ" role="37wK5m">
-                <ref role="37wK5l" to="oy3s:3HJTsBn85n6" resolve="getInstance" />
-                <ref role="1Pybhc" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
-                <node concept="3VsKOn" id="5H6hZahpcIg" role="37wK5m">
-                  <ref role="3VsUkX" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-                </node>
+              <ref role="37wK5l" to="bspi:4xBopTznPKO" resolve="tell" />
+              <node concept="10M0yZ" id="4xBopTztd7s" role="37wK5m">
+                <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
               </node>
               <node concept="37vLTw" id="5H6hZahpcMG" role="37wK5m">
                 <ref role="3cqZAo" node="5H6hZahmlpn" resolve="result" />

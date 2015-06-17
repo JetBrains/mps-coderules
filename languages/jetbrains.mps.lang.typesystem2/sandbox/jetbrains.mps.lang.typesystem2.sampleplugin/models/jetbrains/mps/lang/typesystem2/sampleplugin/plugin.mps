@@ -61,6 +61,7 @@
     <import index="pdak" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.messages(MPS.Platform/jetbrains.mps.ide.messages@java_stub)" />
     <import index="iiw6" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
     <import index="bq0a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.messages(MPS.Core/jetbrains.mps.messages@java_stub)" />
+    <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
     <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -279,10 +280,6 @@
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
-      <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
-        <child id="1154542793668" name="componentType" index="3g7fb8" />
-        <child id="1154542803372" name="initValue" index="3g7hyw" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -538,7 +535,7 @@
                       <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
                       <node concept="3Tm1VV" id="3Qp4N06bykc" role="1B3o_S" />
                       <node concept="3clFb_" id="3Qp4N06bykd" role="jymVt">
-                        <property role="TrG5h" value="findSolver" />
+                        <property role="TrG5h" value="findConstraint" />
                         <property role="1EzhhJ" value="false" />
                         <node concept="37vLTG" id="3Qp4N06byke" role="3clF46">
                           <property role="TrG5h" value="symbol" />
@@ -546,10 +543,8 @@
                             <ref role="3uigEE" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
                           </node>
                         </node>
-                        <node concept="3uibUv" id="3Qp4N06bykg" role="3clF45">
-                          <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
-                          <node concept="3qTvmN" id="3Qp4N06bykh" role="11_B2D" />
-                          <node concept="3qTvmN" id="5$WbtTP065P" role="11_B2D" />
+                        <node concept="3uibUv" id="4xBopTzmkvo" role="3clF45">
+                          <ref role="3uigEE" to="bspi:6Kcfpq7Bj7q" resolve="AutoConstraint" />
                         </node>
                         <node concept="3Tm1VV" id="3Qp4N06byki" role="1B3o_S" />
                         <node concept="3clFbS" id="3Qp4N06bykj" role="3clF47">
@@ -663,6 +658,9 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                        <node concept="2AHcQZ" id="4xBopTzm0O5" role="2AJF6D">
+                          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
                         </node>
                       </node>
                     </node>
@@ -3732,52 +3730,36 @@
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="41ox5VndW1m" role="3clF47">
         <node concept="3clFbH" id="41ox5Vne48y" role="3cqZAp" />
-        <node concept="3cpWs8" id="4XdxyAO9U9q" role="3cqZAp">
-          <node concept="3cpWsn" id="4XdxyAO9U9r" role="3cpWs9">
-            <property role="TrG5h" value="proxies" />
-            <node concept="10Q1$e" id="4XdxyAO9U9e" role="1tU5fm">
-              <node concept="3uibUv" id="4XdxyAO9U9h" role="10Q1$1">
-                <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
-              </node>
+        <node concept="3cpWs8" id="4xBopTzsdV_" role="3cqZAp">
+          <node concept="3cpWsn" id="4xBopTzsdVA" role="3cpWs9">
+            <property role="TrG5h" value="newSession" />
+            <node concept="3uibUv" id="4xBopTzsdVr" role="1tU5fm">
+              <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
-            <node concept="2ShNRf" id="4XdxyAO9U9s" role="33vP2m">
-              <node concept="3g6Rrh" id="4XdxyAO9U9t" role="2ShVmc">
-                <node concept="10M0yZ" id="4XdxyAO9U9u" role="3g7hyw">
-                  <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
+            <node concept="2OqwBi" id="4xBopTzsdVB" role="33vP2m">
+              <node concept="2YIFZM" id="4xBopTzsdVC" role="2Oq$k0">
+                <ref role="37wK5l" to="bspi:6Kcfpq7BWKD" resolve="with" />
+                <ref role="1Pybhc" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
+                <node concept="10M0yZ" id="4xBopTzsdVD" role="37wK5m">
                   <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
                 </node>
-                <node concept="10M0yZ" id="4XdxyAOeeTB" role="3g7hyw">
+                <node concept="10M0yZ" id="4xBopTzsdVE" role="37wK5m">
                   <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
                   <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
                 </node>
-                <node concept="10M0yZ" id="4XdxyAOe5$V" role="3g7hyw">
-                  <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
+                <node concept="10M0yZ" id="4xBopTzsdVF" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:6infEALAhFy" resolve="INSTANCE" />
+                  <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
                 </node>
-                <node concept="3uibUv" id="4XdxyAO9U9v" role="3g7fb8">
-                  <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
-                </node>
+              </node>
+              <node concept="liA8E" id="4xBopTzsdVG" role="2OqNvi">
+                <ref role="37wK5l" to="bspi:6Kcfpq7Cgrc" resolve="newSession" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="41ox5Vne9hH" role="3cqZAp">
-          <node concept="3cpWsn" id="41ox5Vne9hI" role="3cpWs9">
-            <property role="TrG5h" value="farm" />
-            <node concept="2ShNRf" id="41ox5Vne9hJ" role="33vP2m">
-              <node concept="1pGfFk" id="41ox5Vne9hK" role="2ShVmc">
-                <ref role="37wK5l" to="yg8f:2GO7tyK97tX" resolve="SolverFarm" />
-                <node concept="37vLTw" id="4XdxyAOegER" role="37wK5m">
-                  <ref role="3cqZAo" node="4XdxyAO9U9r" resolve="proxies" />
-                </node>
-              </node>
-            </node>
-            <node concept="3uibUv" id="41ox5Vne9hN" role="1tU5fm">
-              <ref role="3uigEE" to="yg8f:2GO7tyJS2HQ" resolve="SolverFarm" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="41ox5Vne4N9" role="3cqZAp" />
+        <node concept="3clFbH" id="4xBopTzsckb" role="3cqZAp" />
         <node concept="3cpWs8" id="41ox5VneSgB" role="3cqZAp">
           <node concept="3cpWsn" id="41ox5VneSgC" role="3cpWs9">
             <property role="TrG5h" value="exception" />
@@ -3799,11 +3781,8 @@
                   <node concept="37vLTw" id="41ox5Vneabd" role="37wK5m">
                     <ref role="3cqZAo" node="41ox5Vne69N" resolve="handlerCls" />
                   </node>
-                  <node concept="37vLTw" id="4XdxyAO81qK" role="37wK5m">
-                    <ref role="3cqZAo" node="41ox5Vne9hI" resolve="farm" />
-                  </node>
-                  <node concept="37vLTw" id="4XdxyAO9U9w" role="37wK5m">
-                    <ref role="3cqZAo" node="4XdxyAO9U9r" resolve="proxies" />
+                  <node concept="37vLTw" id="4xBopTzsfuQ" role="37wK5m">
+                    <ref role="3cqZAo" node="4xBopTzsdVA" resolve="newSession" />
                   </node>
                   <node concept="3clFbT" id="41ox5Vneabi" role="37wK5m">
                     <property role="3clFbU" value="true" />
@@ -3918,6 +3897,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="4xBopTzsbXv" role="3cqZAp" />
         <node concept="3clFbJ" id="1zN1RIlg4ZW" role="3cqZAp">
           <node concept="3clFbS" id="1zN1RIlg4ZY" role="3clFbx">
             <node concept="YS8fn" id="1zN1RIlg5pb" role="3cqZAp">
@@ -4160,80 +4140,25 @@
           <node concept="3clFbS" id="4XdxyAO7SVX" role="2LFqv$">
             <node concept="3cpWs8" id="4XdxyAO8bB$" role="3cqZAp">
               <node concept="3cpWsn" id="4XdxyAO8bB_" role="3cpWs9">
-                <property role="TrG5h" value="proxy" />
-                <node concept="3uibUv" id="4XdxyAO8bBy" role="1tU5fm">
-                  <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
+                <property role="TrG5h" value="autoConstraint" />
+                <node concept="3uibUv" id="4xBopTzsiwb" role="1tU5fm">
+                  <ref role="3uigEE" to="bspi:6Kcfpq7Bj7q" resolve="AutoConstraint" />
                 </node>
-                <node concept="10Nm6u" id="4XdxyAO8bQS" role="33vP2m" />
-              </node>
-            </node>
-            <node concept="1Dw8fO" id="4XdxyAO89U6" role="3cqZAp">
-              <node concept="3clFbS" id="4XdxyAO89U8" role="2LFqv$">
-                <node concept="3clFbJ" id="4XdxyAO8diE" role="3cqZAp">
-                  <node concept="3clFbS" id="4XdxyAO8diG" role="3clFbx">
-                    <node concept="3clFbF" id="4XdxyAO8bHG" role="3cqZAp">
-                      <node concept="37vLTI" id="4XdxyAO8bHI" role="3clFbG">
-                        <node concept="AH0OO" id="4XdxyAO8bBA" role="37vLTx">
-                          <node concept="37vLTw" id="4XdxyAO8jVe" role="AHEQo">
-                            <ref role="3cqZAo" node="4XdxyAO89U9" resolve="j" />
-                          </node>
-                          <node concept="37vLTw" id="4XdxyAO8bBC" role="AHHXb">
-                            <ref role="3cqZAo" node="4XdxyAO6Dfh" resolve="solverProxies" />
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="4XdxyAO8bHM" role="37vLTJ">
-                          <ref role="3cqZAo" node="4XdxyAO8bB_" resolve="proxy" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3zACq4" id="4XdxyAOa0PE" role="3cqZAp" />
+                <node concept="2OqwBi" id="4xBopTzsMVj" role="33vP2m">
+                  <node concept="37vLTw" id="4xBopTzsMSX" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4xBopTzsgb1" resolve="computingSession" />
                   </node>
-                  <node concept="3clFbC" id="4XdxyAO8dOF" role="3clFbw">
-                    <node concept="AH0OO" id="4XdxyAO8jJ5" role="3uHU7w">
-                      <node concept="37vLTw" id="4XdxyAO8jLC" role="AHEQo">
+                  <node concept="liA8E" id="4xBopTzsN2B" role="2OqNvi">
+                    <ref role="37wK5l" to="bspi:4xBopTzsxxs" resolve="lookupAutoConstraint" />
+                    <node concept="AH0OO" id="4xBopTzsNgy" role="37wK5m">
+                      <node concept="37vLTw" id="4xBopTzsNjV" role="AHEQo">
                         <ref role="3cqZAo" node="4XdxyAO7SVY" resolve="i" />
                       </node>
-                      <node concept="37vLTw" id="4XdxyAO8j$N" role="AHHXb">
+                      <node concept="37vLTw" id="4xBopTzsN7c" role="AHHXb">
                         <ref role="3cqZAo" node="4XdxyAO8f9Y" resolve="declParams" />
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="4XdxyAO8dqL" role="3uHU7B">
-                      <node concept="AH0OO" id="4XdxyAO8dlC" role="2Oq$k0">
-                        <node concept="37vLTw" id="4XdxyAO8dn5" role="AHEQo">
-                          <ref role="3cqZAo" node="4XdxyAO89U9" resolve="j" />
-                        </node>
-                        <node concept="37vLTw" id="4XdxyAO8dk4" role="AHHXb">
-                          <ref role="3cqZAo" node="4XdxyAO6Dfh" resolve="solverProxies" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="4XdxyAO8dFK" role="2OqNvi">
-                        <ref role="37wK5l" to="yg8f:2pvEdquwbIb" resolve="solverInterface" />
-                      </node>
-                    </node>
                   </node>
-                </node>
-              </node>
-              <node concept="3cpWsn" id="4XdxyAO89U9" role="1Duv9x">
-                <property role="TrG5h" value="j" />
-                <node concept="10Oyi0" id="4XdxyAO8a10" role="1tU5fm" />
-                <node concept="3cmrfG" id="4XdxyAO8a7e" role="33vP2m">
-                  <property role="3cmrfH" value="0" />
-                </node>
-              </node>
-              <node concept="3eOVzh" id="4XdxyAO8atr" role="1Dwp0S">
-                <node concept="2OqwBi" id="4XdxyAO8aAP" role="3uHU7w">
-                  <node concept="37vLTw" id="4XdxyAO8auN" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4XdxyAO6Dfh" resolve="solverProxies" />
-                  </node>
-                  <node concept="1Rwk04" id="4XdxyAO8aR7" role="2OqNvi" />
-                </node>
-                <node concept="37vLTw" id="4XdxyAO8a8f" role="3uHU7B">
-                  <ref role="3cqZAo" node="4XdxyAO89U9" resolve="j" />
-                </node>
-              </node>
-              <node concept="3uNrnE" id="4XdxyAO8bax" role="1Dwrff">
-                <node concept="37vLTw" id="4XdxyAO8baz" role="2$L3a6">
-                  <ref role="3cqZAo" node="4XdxyAO89U9" resolve="j" />
                 </node>
               </node>
             </node>
@@ -4252,17 +4177,17 @@
                   <node concept="3y3z36" id="4XdxyAO8o0C" role="3K4Cdx">
                     <node concept="10Nm6u" id="4XdxyAO8o2k" role="3uHU7w" />
                     <node concept="37vLTw" id="4XdxyAO8nYM" role="3uHU7B">
-                      <ref role="3cqZAo" node="4XdxyAO8bB_" resolve="proxy" />
+                      <ref role="3cqZAo" node="4XdxyAO8bB_" resolve="autoConstraint" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="4XdxyAO7VHl" role="3K4E3e">
                     <node concept="37vLTw" id="4XdxyAO8bBD" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4XdxyAO8bB_" resolve="proxy" />
+                      <ref role="3cqZAo" node="4XdxyAO8bB_" resolve="autoConstraint" />
                     </node>
                     <node concept="liA8E" id="4XdxyAO7VY2" role="2OqNvi">
-                      <ref role="37wK5l" to="yg8f:2GO7tyJTT_8" resolve="createSolver" />
-                      <node concept="37vLTw" id="4XdxyAO8ksG" role="37wK5m">
-                        <ref role="3cqZAo" node="4XdxyAO86Bc" resolve="farm" />
+                      <ref role="37wK5l" to="bspi:6Kcfpq7Bj9q" resolve="solver" />
+                      <node concept="37vLTw" id="4xBopTzsiCA" role="37wK5m">
+                        <ref role="3cqZAo" node="4xBopTzsgb1" resolve="computingSession" />
                       </node>
                     </node>
                   </node>
@@ -4335,18 +4260,10 @@
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="4XdxyAO86Bc" role="3clF46">
-        <property role="TrG5h" value="farm" />
-        <node concept="3uibUv" id="4XdxyAO87le" role="1tU5fm">
-          <ref role="3uigEE" to="yg8f:2GO7tyJS2HQ" resolve="SolverFarm" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="4XdxyAO6Dfh" role="3clF46">
-        <property role="TrG5h" value="solverProxies" />
-        <node concept="10Q1$e" id="4XdxyAO7UMX" role="1tU5fm">
-          <node concept="3uibUv" id="4XdxyAO6GCH" role="10Q1$1">
-            <ref role="3uigEE" to="yg8f:2GO7tyJLLNE" resolve="SolverProxy" />
-          </node>
+      <node concept="37vLTG" id="4xBopTzsgb1" role="3clF46">
+        <property role="TrG5h" value="computingSession" />
+        <node concept="3uibUv" id="4xBopTzsgXB" role="1tU5fm">
+          <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
         </node>
       </node>
       <node concept="37vLTG" id="41ox5VndQtV" role="3clF46">
