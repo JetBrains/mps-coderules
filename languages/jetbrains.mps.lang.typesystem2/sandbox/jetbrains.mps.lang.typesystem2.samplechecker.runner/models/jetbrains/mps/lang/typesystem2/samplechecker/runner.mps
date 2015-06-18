@@ -23,6 +23,7 @@
     <import index="jfki" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification.tree/jetbrains.mps.unification@java_stub)" />
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
     <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
+    <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -393,67 +394,67 @@
           </node>
         </node>
         <node concept="3clFbH" id="41ox5VneLw6" role="3cqZAp" />
-        <node concept="3SKdUt" id="1e3DfAApl3c" role="3cqZAp">
-          <node concept="3SKWN0" id="1e3DfAApl3d" role="3SKWNk">
-            <node concept="3cpWs8" id="41ox5VnewK8" role="3SKWNf">
-              <node concept="3cpWsn" id="41ox5VnewK9" role="3cpWs9">
-                <property role="TrG5h" value="sample" />
-                <node concept="1oi1Uc" id="41ox5VnewKa" role="33vP2m">
-                  <node concept="1oi5UN" id="41ox5VnewKb" role="1oi0x0">
-                    <node concept="1oi5Wm" id="41ox5VnewKc" role="1ojpOf">
-                      <property role="TrG5h" value="concept" />
-                      <node concept="1oi5XN" id="41ox5VnewKd" role="1oi5zu">
-                        <property role="1oi5yK" value="ClassConcept" />
-                      </node>
-                    </node>
-                    <node concept="1oi5Wm" id="41ox5VnewKe" role="1ojpOf">
-                      <property role="TrG5h" value="name" />
-                      <node concept="1oi5XN" id="41ox5VnewKf" role="1oi5zu">
-                        <property role="1oi5yK" value="Sample" />
-                      </node>
-                    </node>
-                    <node concept="1oi5Wm" id="41ox5VnewKg" role="1ojpOf">
-                      <property role="TrG5h" value="id" />
-                      <node concept="1oi5XN" id="41ox5VnewKh" role="1oi5zu">
-                        <property role="1oi5yK" value="6270176708469746366" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3uibUv" id="41ox5VnewK7" role="1tU5fm">
-                  <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6KkyQm3UIHW" role="3cqZAp">
-          <node concept="3cpWsn" id="6KkyQm3UIHX" role="3cpWs9">
+        <node concept="3cpWs8" id="41ox5VnewK8" role="3cqZAp">
+          <node concept="3cpWsn" id="41ox5VnewK9" role="3cpWs9">
             <property role="TrG5h" value="sample" />
-            <node concept="1oi1Uc" id="6KkyQm3UIHY" role="33vP2m">
-              <node concept="1oi5UN" id="6KkyQm3UIHZ" role="1oi0x0">
-                <node concept="1oi5Wm" id="6KkyQm3UII0" role="1ojpOf">
+            <node concept="1oi1Uc" id="41ox5VnewKa" role="33vP2m">
+              <node concept="1oi5UN" id="41ox5VnewKb" role="1oi0x0">
+                <node concept="1oi5Wm" id="41ox5VnewKc" role="1ojpOf">
                   <property role="TrG5h" value="concept" />
-                  <node concept="1oi5XN" id="6KkyQm3UII1" role="1oi5zu">
+                  <node concept="1oi5XN" id="41ox5VnewKd" role="1oi5zu">
                     <property role="1oi5yK" value="ClassConcept" />
                   </node>
                 </node>
-                <node concept="1oi5Wm" id="6KkyQm3UII2" role="1ojpOf">
+                <node concept="1oi5Wm" id="41ox5VnewKe" role="1ojpOf">
                   <property role="TrG5h" value="name" />
-                  <node concept="1oi5XN" id="6KkyQm3UII3" role="1oi5zu">
-                    <property role="1oi5yK" value="HelloWorld" />
+                  <node concept="1oi5XN" id="41ox5VnewKf" role="1oi5zu">
+                    <property role="1oi5yK" value="Sample" />
                   </node>
                 </node>
-                <node concept="1oi5Wm" id="6KkyQm3UII4" role="1ojpOf">
+                <node concept="1oi5Wm" id="41ox5VnewKg" role="1ojpOf">
                   <property role="TrG5h" value="id" />
-                  <node concept="1oi5XN" id="6KkyQm3UII5" role="1oi5zu">
-                    <property role="1oi5yK" value="4438600004733396337" />
+                  <node concept="1oi5XN" id="41ox5VnewKh" role="1oi5zu">
+                    <property role="1oi5yK" value="6270176708469746366" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3uibUv" id="6KkyQm3UII6" role="1tU5fm">
+            <node concept="3uibUv" id="41ox5VnewK7" role="1tU5fm">
               <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5i7izgNftOQ" role="3cqZAp">
+          <node concept="3SKWN0" id="5i7izgNftOR" role="3SKWNk">
+            <node concept="3cpWs8" id="6KkyQm3UIHW" role="3SKWNf">
+              <node concept="3cpWsn" id="6KkyQm3UIHX" role="3cpWs9">
+                <property role="TrG5h" value="sample" />
+                <node concept="1oi1Uc" id="6KkyQm3UIHY" role="33vP2m">
+                  <node concept="1oi5UN" id="6KkyQm3UIHZ" role="1oi0x0">
+                    <node concept="1oi5Wm" id="6KkyQm3UII0" role="1ojpOf">
+                      <property role="TrG5h" value="concept" />
+                      <node concept="1oi5XN" id="6KkyQm3UII1" role="1oi5zu">
+                        <property role="1oi5yK" value="ClassConcept" />
+                      </node>
+                    </node>
+                    <node concept="1oi5Wm" id="6KkyQm3UII2" role="1ojpOf">
+                      <property role="TrG5h" value="name" />
+                      <node concept="1oi5XN" id="6KkyQm3UII3" role="1oi5zu">
+                        <property role="1oi5yK" value="HelloWorld" />
+                      </node>
+                    </node>
+                    <node concept="1oi5Wm" id="6KkyQm3UII4" role="1ojpOf">
+                      <property role="TrG5h" value="id" />
+                      <node concept="1oi5XN" id="6KkyQm3UII5" role="1oi5zu">
+                        <property role="1oi5yK" value="4438600004733396337" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3uibUv" id="6KkyQm3UII6" role="1tU5fm">
+                  <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -769,17 +770,25 @@
               <node concept="2YIFZM" id="4xBopTzsSwZ" role="2Oq$k0">
                 <ref role="37wK5l" to="bspi:6Kcfpq7BWKD" resolve="with" />
                 <ref role="1Pybhc" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
-                <node concept="10M0yZ" id="4xBopTzsSx0" role="37wK5m">
+                <node concept="10M0yZ" id="4xBopTzsdVD" role="37wK5m">
                   <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
                   <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
                 </node>
-                <node concept="10M0yZ" id="4xBopTzsSx1" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                <node concept="10M0yZ" id="4xBopTzsdVE" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
+                  <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
                 </node>
-                <node concept="10M0yZ" id="4xBopTzsSx2" role="37wK5m">
+                <node concept="10M0yZ" id="4xBopTzsdVF" role="37wK5m">
                   <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
                   <ref role="3cqZAo" to="oy3s:6infEALAhFy" resolve="INSTANCE" />
+                </node>
+                <node concept="10M0yZ" id="5i7izgNi7KH" role="37wK5m">
+                  <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
+                  <ref role="3cqZAo" to="xq5w:5$WbtTOYJJi" resolve="BOUND" />
+                </node>
+                <node concept="10M0yZ" id="5i7izgNincb" role="37wK5m">
+                  <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
+                  <ref role="3cqZAo" to="xq5w:5$WbtTOYVUg" resolve="FREE" />
                 </node>
               </node>
               <node concept="liA8E" id="4xBopTzsSx3" role="2OqNvi">
