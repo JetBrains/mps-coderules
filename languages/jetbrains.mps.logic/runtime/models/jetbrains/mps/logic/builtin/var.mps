@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.variable)">
+<model ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
@@ -12,6 +12,7 @@
     <import index="jfki" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification.tree/jetbrains.mps.unification@java_stub)" />
     <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="9sk9" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#annotations(jetbrains.mps.jchr.runtime/annotations@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -31,9 +32,17 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
+      </concept>
+      <concept id="1188220165133" name="jetbrains.mps.baseLanguage.structure.ArrayLiteral" flags="nn" index="2BsdOp">
+        <child id="1188220173759" name="item" index="2BsfMF" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -44,6 +53,10 @@
       </concept>
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
@@ -64,6 +77,9 @@
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -181,6 +197,16 @@
   </registry>
   <node concept="3HP615" id="60B5zVEZP8W">
     <property role="TrG5h" value="LogicalSolver" />
+    <node concept="2tJIrI" id="5i7izgNdC6s" role="jymVt" />
+    <node concept="Wx3nA" id="5i7izgNdCcB" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="LOGICAL" />
+      <node concept="3Tm1VV" id="5i7izgNdCcD" role="1B3o_S" />
+      <node concept="Xl_RD" id="5i7izgNdCeK" role="33vP2m">
+        <property role="Xl_RC" value="logical" />
+      </node>
+      <node concept="17QB3L" id="5i7izgNdCd8" role="1tU5fm" />
+    </node>
     <node concept="2tJIrI" id="60B5zVEZPqu" role="jymVt" />
     <node concept="3clFb_" id="60B5zVEZPu5" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -195,15 +221,55 @@
       <node concept="10P_77" id="60B5zVEZP_w" role="3clF45" />
       <node concept="3Tm1VV" id="60B5zVEZPu8" role="1B3o_S" />
       <node concept="3clFbS" id="60B5zVEZPu9" role="3clF47" />
+      <node concept="2AHcQZ" id="3HJTsBn4xCk" role="2AJF6D">
+        <ref role="2AI5Lk" to="9sk9:~JCHR_Asks" resolve="JCHR_Asks" />
+        <node concept="2B6LJw" id="3HJTsBn4xCl" role="2B76xF">
+          <ref role="2B6OnR" to="9sk9:~JCHR_Asks.value()" resolve="value" />
+          <node concept="37vLTw" id="5i7izgNdCLB" role="2B70Vg">
+            <ref role="3cqZAo" node="5i7izgNdCcB" resolve="LOGICAL" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="60B5zVEZPqz" role="jymVt" />
     <node concept="3Tm1VV" id="60B5zVEZP8X" role="1B3o_S" />
     <node concept="3uibUv" id="4xBopTzrcyn" role="3HQHJm">
       <ref role="3uigEE" to="bspi:6Kcfpq7AYBh" resolve="Queryable" />
     </node>
+    <node concept="2AHcQZ" id="3HJTsBn4BXb" role="2AJF6D">
+      <ref role="2AI5Lk" to="9sk9:~JCHR_Constraints" resolve="JCHR_Constraints" />
+      <node concept="2B6LJw" id="3HJTsBn4BXc" role="2B76xF">
+        <ref role="2B6OnR" to="9sk9:~JCHR_Constraints.value()" resolve="value" />
+        <node concept="2BsdOp" id="3HJTsBn4BXd" role="2B70Vg">
+          <node concept="2AHcQZ" id="3HJTsBn4BXe" role="2BsfMF">
+            <ref role="2AI5Lk" to="9sk9:~JCHR_Constraint" resolve="JCHR_Constraint" />
+            <node concept="2B6LJw" id="3HJTsBn4BXf" role="2B76xF">
+              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.identifier()" resolve="identifier" />
+              <node concept="10M0yZ" id="5i7izgNdEd0" role="2B70Vg">
+                <ref role="1PxDUh" node="60B5zVEZP8W" resolve="LogicalSolver" />
+                <ref role="3cqZAo" node="5i7izgNdCcB" resolve="LOGICAL" />
+              </node>
+            </node>
+            <node concept="2B6LJw" id="3HJTsBn4BXh" role="2B76xF">
+              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.arity()" resolve="arity" />
+              <node concept="3cmrfG" id="3HJTsBn4BXi" role="2B70Vg">
+                <property role="3cmrfH" value="1" />
+              </node>
+            </node>
+            <node concept="2B6LJw" id="3HJTsBn4BXl" role="2B76xF">
+              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.idempotent()" resolve="idempotent" />
+              <node concept="Rm8GO" id="3HJTsBn4BXm" role="2B70Vg">
+                <ref role="Rm8GQ" to="9sk9:~JCHR_Constraint$Value.YES" resolve="YES" />
+                <ref role="1Px2BO" to="9sk9:~JCHR_Constraint$Value" resolve="JCHR_Constraint.Value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="5$WbtTOYoMb">
-    <property role="TrG5h" value="LogicalConstraint" />
+    <property role="TrG5h" value="LogicalBuiltinConstraint" />
     <property role="1sVAO0" value="false" />
     <node concept="2tJIrI" id="5$WbtTOYpQU" role="jymVt" />
     <node concept="Wx3nA" id="5$WbtTOYJJi" role="jymVt">
@@ -211,11 +277,11 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="5$WbtTOYVEi" role="1B3o_S" />
       <node concept="3uibUv" id="5$WbtTOYK9H" role="1tU5fm">
-        <ref role="3uigEE" node="5$WbtTOYoMb" resolve="LogicalConstraint" />
+        <ref role="3uigEE" node="5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
       </node>
       <node concept="2ShNRf" id="5$WbtTOYKyw" role="33vP2m">
         <node concept="1pGfFk" id="5$WbtTOYRgm" role="2ShVmc">
-          <ref role="37wK5l" node="5$WbtTOYsLU" resolve="LogicalConstraint" />
+          <ref role="37wK5l" node="5$WbtTOYsLU" resolve="LogicalBuiltinConstraint" />
           <node concept="Xl_RD" id="5$WbtTOYRAf" role="37wK5m">
             <property role="Xl_RC" value="bound" />
           </node>
@@ -268,11 +334,11 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="5$WbtTOYVUh" role="1B3o_S" />
       <node concept="3uibUv" id="5$WbtTOYVUi" role="1tU5fm">
-        <ref role="3uigEE" node="5$WbtTOYoMb" resolve="LogicalConstraint" />
+        <ref role="3uigEE" node="5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
       </node>
       <node concept="2ShNRf" id="5$WbtTOYVUj" role="33vP2m">
         <node concept="1pGfFk" id="5$WbtTOYVUk" role="2ShVmc">
-          <ref role="37wK5l" node="5$WbtTOYsLU" resolve="LogicalConstraint" />
+          <ref role="37wK5l" node="5$WbtTOYsLU" resolve="LogicalBuiltinConstraint" />
           <node concept="Xl_RD" id="5$WbtTOYVUl" role="37wK5m">
             <property role="Xl_RC" value="free" />
           </node>

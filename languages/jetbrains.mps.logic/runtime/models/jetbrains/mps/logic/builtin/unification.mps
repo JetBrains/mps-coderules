@@ -8568,7 +8568,7 @@
       <node concept="3clFbS" id="4xBopTzs1yd" role="3clF47">
         <node concept="3clFbF" id="4xBopTzs52D" role="3cqZAp">
           <node concept="3nyPlj" id="4xBopTzs52C" role="3clFbG">
-            <ref role="37wK5l" to="bspi:6Kcfpq7Bs88" resolve="registerHandler" />
+            <ref role="37wK5l" to="bspi:6Kcfpq7Buzk" resolve="registerSolver" />
             <node concept="37vLTw" id="4xBopTzs5fC" role="37wK5m">
               <ref role="3cqZAo" node="4xBopTzs1y9" resolve="session" />
             </node>
