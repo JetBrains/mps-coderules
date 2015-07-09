@@ -2,7 +2,7 @@
 <model ref="r:d390cf6e-3a05-4c9d-8eb3-bcdfbfd3bf8f(jetbrains.mps.typechecking.rule.collection)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
@@ -169,11 +169,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -615,13 +613,13 @@
             <property role="1dT_AB" value="Recursively calls allTemplates on the delegates. " />
           </node>
         </node>
-        <node concept="TUZQ0" id="12yN8Dyv_NY" role="TUOzN">
+        <node concept="TUZQ0" id="12yN8Dyv_NY" role="3nqlJM">
           <property role="TUZQ4" value="node to search templates for" />
           <node concept="zr_55" id="12yN8Dyv_O0" role="zr_5Q">
             <ref role="zr_51" node="12yN8DyvzeF" resolve="node" />
           </node>
         </node>
-        <node concept="x79VA" id="12yN8Dyv_O1" role="x79VK">
+        <node concept="x79VA" id="12yN8Dyv_O1" role="3nqlJM">
           <property role="x79VB" value="all templates applicable to node" />
         </node>
       </node>
@@ -793,7 +791,7 @@
             <property role="1dT_AB" value="Recursively calls allTemplatesWithNoInput on the delegates. " />
           </node>
         </node>
-        <node concept="x79VA" id="5NuEpF1qnbD" role="x79VK">
+        <node concept="x79VA" id="5NuEpF1qnbD" role="3nqlJM">
           <property role="x79VB" value="all templates applicable to node" />
         </node>
       </node>

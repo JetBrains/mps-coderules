@@ -254,7 +254,7 @@
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -1092,7 +1092,9 @@
               <node concept="2OqwBi" id="4oAgtl420kN" role="2Oq$k0">
                 <node concept="1Q6Npb" id="4oAgtl42eZJ" role="2Oq$k0" />
                 <node concept="2SmgA7" id="4oAgtl420kP" role="2OqNvi">
-                  <ref role="2SmgA8" to="tpee:fz3vP1J" resolve="Expression" />
+                  <node concept="chp4Y" id="3FW0VdE5SRF" role="1dBWTz">
+                    <ref role="cht4Q" to="tpee:fz3vP1J" resolve="Expression" />
+                  </node>
                 </node>
               </node>
               <node concept="3zZkjj" id="4oAgtl420kQ" role="2OqNvi">
