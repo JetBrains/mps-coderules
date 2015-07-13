@@ -529,7 +529,7 @@
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
     <node concept="2rT7sh" id="7t5VLKH5rUl" role="2rTMjI">
-      <property role="TrG5h" value="condition_boundParameter_parameter" />
+      <property role="TrG5h" value="condition_boundValue_parameter" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
@@ -539,12 +539,12 @@
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
     <node concept="2rT7sh" id="2q0gzCFLL_k" role="2rTMjI">
-      <property role="TrG5h" value="required_boundParameter_parameter" />
+      <property role="TrG5h" value="required_boundValue_parameter" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
     <node concept="2rT7sh" id="tIwzd2fmlA" role="2rTMjI">
-      <property role="TrG5h" value="required_iterateParameter_parameter" />
+      <property role="TrG5h" value="required_iterateOver_parameter" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
@@ -554,22 +554,22 @@
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
     <node concept="2rT7sh" id="5MHpiylK7iY" role="2rTMjI">
-      <property role="TrG5h" value="apply_iterateParameter_parameter" />
+      <property role="TrG5h" value="apply_iterateOver_parameter" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
     <node concept="2rT7sh" id="1zN1RIkUWUb" role="2rTMjI">
-      <property role="TrG5h" value="apply_boundParameter_parameter" />
+      <property role="TrG5h" value="apply_boundValue_parameter" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
     <node concept="2rT7sh" id="5MHpiylMeJT" role="2rTMjI">
-      <property role="TrG5h" value="iterateParameter_input_parameter" />
+      <property role="TrG5h" value="iterateOver_input_parameter" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
     <node concept="2rT7sh" id="1zN1RIkZU1L" role="2rTMjI">
-      <property role="TrG5h" value="boundParameter_input_parameter" />
+      <property role="TrG5h" value="boundValue_input_parameter" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
       <ref role="2rTdP9" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
@@ -952,6 +952,24 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbH" id="8VaLZRCu50" role="3cqZAp" />
+          <node concept="3cpWs8" id="8VaLZRD9H0" role="3cqZAp">
+            <node concept="3cpWsn" id="8VaLZRD9H1" role="3cpWs9">
+              <property role="TrG5h" value="name" />
+              <node concept="17QB3L" id="8VaLZRD9GY" role="1tU5fm" />
+              <node concept="2YIFZM" id="8VaLZRDdFA" role="33vP2m">
+                <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+                <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                <node concept="2OqwBi" id="8VaLZRDe55" role="37wK5m">
+                  <node concept="30H73N" id="8VaLZRDdTB" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="8VaLZRDeou" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="8VaLZRDcH$" role="3cqZAp" />
           <node concept="3cpWs8" id="1ffsG7bRPRg" role="3cqZAp">
             <node concept="3cpWsn" id="1ffsG7bRPRh" role="3cpWs9">
               <property role="TrG5h" value="mappedNode" />
@@ -962,11 +980,8 @@
                 </node>
                 <node concept="liA8E" id="1ffsG7bRPRl" role="2OqNvi">
                   <ref role="37wK5l" to="53gy:~ConcurrentHashMap.putIfAbsent(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putIfAbsent" />
-                  <node concept="2OqwBi" id="1ffsG7bRPRm" role="37wK5m">
-                    <node concept="30H73N" id="1ffsG7bRPRn" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="1ffsG7bRPRo" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
+                  <node concept="37vLTw" id="8VaLZRD9H5" role="37wK5m">
+                    <ref role="3cqZAo" node="8VaLZRD9H1" resolve="name" />
                   </node>
                   <node concept="30H73N" id="1ffsG7bRPRp" role="37wK5m" />
                 </node>
@@ -987,11 +1002,8 @@
                     <node concept="30H73N" id="1ffsG7bRPRy" role="2k6f33" />
                     <node concept="3cpWs3" id="1ffsG7bRPRz" role="2k5Stb">
                       <node concept="3cpWs3" id="1ffsG7bRPR$" role="3uHU7B">
-                        <node concept="2OqwBi" id="1ffsG7bRPR_" role="3uHU7w">
-                          <node concept="30H73N" id="1ffsG7bRPRA" role="2Oq$k0" />
-                          <node concept="3TrcHB" id="1ffsG7bRPRB" role="2OqNvi">
-                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                          </node>
+                        <node concept="37vLTw" id="8VaLZRD9H6" role="3uHU7w">
+                          <ref role="3cqZAo" node="8VaLZRD9H1" resolve="name" />
                         </node>
                         <node concept="Xl_RD" id="1ffsG7bRPRC" role="3uHU7B">
                           <property role="Xl_RC" value="rule name collision \&quot;" />
@@ -1386,7 +1398,7 @@
                             <node concept="2OqwBi" id="5MHpiylMpV9" role="3clFbG">
                               <node concept="1iwH7S" id="5MHpiylMpVa" role="2Oq$k0" />
                               <node concept="1iwH70" id="5MHpiylMpVb" role="2OqNvi">
-                                <ref role="1iwH77" node="5MHpiylMeJT" resolve="iterateParameter_input_parameter" />
+                                <ref role="1iwH77" node="5MHpiylMeJT" resolve="iterateOver_input_parameter" />
                                 <node concept="2OqwBi" id="1ffsG7c1Z6K" role="1iwH7V">
                                   <node concept="30H73N" id="1ffsG7c1Z3K" role="2Oq$k0" />
                                   <node concept="2Xjw5R" id="1ffsG7c1Zq3" role="2OqNvi">
@@ -1452,7 +1464,7 @@
                             <node concept="2OqwBi" id="1zN1RIl00a6" role="3clFbG">
                               <node concept="1iwH7S" id="1zN1RIl00a7" role="2Oq$k0" />
                               <node concept="1iwH70" id="1zN1RIl00a8" role="2OqNvi">
-                                <ref role="1iwH77" node="1zN1RIkZU1L" resolve="boundParameter_input_parameter" />
+                                <ref role="1iwH77" node="1zN1RIkZU1L" resolve="boundValue_input_parameter" />
                                 <node concept="2OqwBi" id="1ffsG7c26Ac" role="1iwH7V">
                                   <node concept="30H73N" id="1ffsG7c26yM" role="2Oq$k0" />
                                   <node concept="2Xjw5R" id="1ffsG7c26Ta" role="2OqNvi">
@@ -1640,7 +1652,7 @@
                             <node concept="2OqwBi" id="1zN1RIkV5ud" role="3clFbG">
                               <node concept="1iwH7S" id="1zN1RIkV5ue" role="2Oq$k0" />
                               <node concept="1iwH70" id="1zN1RIkV5uf" role="2OqNvi">
-                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateParameter_parameter" />
+                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateOver_parameter" />
                                 <node concept="2OqwBi" id="1ffsG7c1IOx" role="1iwH7V">
                                   <node concept="30H73N" id="1ffsG7c1ILx" role="2Oq$k0" />
                                   <node concept="2Xjw5R" id="1ffsG7c1J7v" role="2OqNvi">
@@ -1713,7 +1725,7 @@
                             <node concept="2OqwBi" id="1zN1RIkV7XL" role="3clFbG">
                               <node concept="1iwH7S" id="1zN1RIkV7XM" role="2Oq$k0" />
                               <node concept="1iwH70" id="1zN1RIkV7XN" role="2OqNvi">
-                                <ref role="1iwH77" node="1zN1RIkUWUb" resolve="apply_boundParameter_parameter" />
+                                <ref role="1iwH77" node="1zN1RIkUWUb" resolve="apply_boundValue_parameter" />
                                 <node concept="2OqwBi" id="1ffsG7c1l2q" role="1iwH7V">
                                   <node concept="30H73N" id="1ffsG7c1kZq" role="2Oq$k0" />
                                   <node concept="2Xjw5R" id="1ffsG7c1llo" role="2OqNvi">
@@ -1786,7 +1798,7 @@
                             <node concept="2OqwBi" id="7t5VLKH6Raq" role="3clFbG">
                               <node concept="1iwH7S" id="7t5VLKH6Rar" role="2Oq$k0" />
                               <node concept="1iwH70" id="7t5VLKH6Ras" role="2OqNvi">
-                                <ref role="1iwH77" node="7t5VLKH5rUl" resolve="condition_boundParameter_parameter" />
+                                <ref role="1iwH77" node="7t5VLKH5rUl" resolve="condition_boundValue_parameter" />
                                 <node concept="2OqwBi" id="1ffsG7c0bAH" role="1iwH7V">
                                   <node concept="30H73N" id="1ffsG7c0bzH" role="2Oq$k0" />
                                   <node concept="2Xjw5R" id="1ffsG7c0bU0" role="2OqNvi">
@@ -1859,7 +1871,7 @@
                             <node concept="2OqwBi" id="tIwzd2frNO" role="3clFbG">
                               <node concept="1iwH7S" id="tIwzd2frNP" role="2Oq$k0" />
                               <node concept="1iwH70" id="tIwzd2frNQ" role="2OqNvi">
-                                <ref role="1iwH77" node="tIwzd2fmlA" resolve="required_iterateParameter_parameter" />
+                                <ref role="1iwH77" node="tIwzd2fmlA" resolve="required_iterateOver_parameter" />
                                 <node concept="2OqwBi" id="1ffsG7c1BfW" role="1iwH7V">
                                   <node concept="30H73N" id="1ffsG7c1BcW" role="2Oq$k0" />
                                   <node concept="2Xjw5R" id="1ffsG7c1ByU" role="2OqNvi">
@@ -1928,7 +1940,7 @@
                             <node concept="2OqwBi" id="7t5VLKH5EYf" role="3clFbG">
                               <node concept="1iwH7S" id="7t5VLKH5EYg" role="2Oq$k0" />
                               <node concept="1iwH70" id="7t5VLKH5EYh" role="2OqNvi">
-                                <ref role="1iwH77" node="1zN1RIkUWUb" resolve="apply_boundParameter_parameter" />
+                                <ref role="1iwH77" node="1zN1RIkUWUb" resolve="apply_boundValue_parameter" />
                                 <node concept="2OqwBi" id="1ffsG7c1ltu" role="1iwH7V">
                                   <node concept="30H73N" id="1ffsG7c1lqu" role="2Oq$k0" />
                                   <node concept="2Xjw5R" id="1ffsG7c1lKs" role="2OqNvi">
@@ -3013,7 +3025,7 @@
       <node concept="3Tm1VV" id="12yN8DyKLUC" role="1B3o_S" />
       <node concept="3clFbS" id="12yN8DyKLUD" role="3clF47">
         <node concept="XkiVB" id="12yN8DyKN30" role="3cqZAp">
-          <ref role="37wK5l" to="i348:4OKkcnfu_vK" resolve="AbstractRuleTemplate" />
+          <ref role="37wK5l" to="i348:4OKkcnfu_vK" resolve="AbstractConceptRuleTemplate" />
           <node concept="Xl_RD" id="12yN8DyKN3l" role="37wK5m">
             <property role="Xl_RC" value="name" />
             <node concept="17Uvod" id="12yN8DyKN3X" role="lGtFl">
@@ -3096,12 +3108,12 @@
         </node>
       </node>
       <node concept="37vLTG" id="2q0gzCFMa3p" role="3clF46">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="boundValue" />
         <node concept="3uibUv" id="2q0gzCFMa3q" role="1tU5fm">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2ZBi8u" id="2q0gzCFMa3r" role="lGtFl">
-          <ref role="2rW$FS" node="2q0gzCFLL_k" resolve="required_boundParameter_parameter" />
+          <ref role="2rW$FS" node="2q0gzCFLL_k" resolve="required_boundValue_parameter" />
         </node>
         <node concept="1W57fq" id="2q0gzCFMa3s" role="lGtFl">
           <node concept="3IZrLx" id="2q0gzCFMa3t" role="3IZSJc">
@@ -3121,7 +3133,7 @@
           </node>
           <node concept="gft3U" id="2q0gzCFMa3_" role="UU_$l">
             <node concept="37vLTG" id="2q0gzCFMa3A" role="gfFT$">
-              <property role="TrG5h" value="$noBoundParam$" />
+              <property role="TrG5h" value="$noBoundValue$" />
               <node concept="3uibUv" id="2q0gzCFMa3B" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
@@ -3419,7 +3431,7 @@
                     </node>
                   </node>
                   <node concept="37vLTw" id="1ffsG7ci1PT" role="37wK5m">
-                    <ref role="3cqZAo" node="1zN1RIkWsi2" resolve="bndParam" />
+                    <ref role="3cqZAo" node="1zN1RIkWsi2" resolve="boundValue" />
                     <node concept="1W57fq" id="1ffsG7ci1PU" role="lGtFl">
                       <node concept="3IZrLx" id="1ffsG7ci1PV" role="3IZSJc">
                         <node concept="3clFbS" id="1ffsG7ci1PW" role="2VODD2">
@@ -3449,7 +3461,7 @@
                             <node concept="2OqwBi" id="1ffsG7ci1Q9" role="3clFbG">
                               <node concept="1iwH7S" id="1ffsG7ci1Qa" role="2Oq$k0" />
                               <node concept="1iwH70" id="1ffsG7ci1Qb" role="2OqNvi">
-                                <ref role="1iwH77" node="1zN1RIkUWUb" resolve="apply_boundParameter_parameter" />
+                                <ref role="1iwH77" node="1zN1RIkUWUb" resolve="apply_boundValue_parameter" />
                                 <node concept="30H73N" id="1ffsG7ci1Qc" role="1iwH7V" />
                               </node>
                             </node>
@@ -3533,12 +3545,12 @@
         <node concept="3Tqbb2" id="1zN1RIkUhmw" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1zN1RIkWqKy" role="3clF46">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="boundValue" />
         <node concept="3uibUv" id="1zN1RIkWqLl" role="1tU5fm">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2ZBi8u" id="1ffsG7c1euu" role="lGtFl">
-          <ref role="2rW$FS" node="1zN1RIkUWUb" resolve="apply_boundParameter_parameter" />
+          <ref role="2rW$FS" node="1zN1RIkUWUb" resolve="apply_boundValue_parameter" />
         </node>
         <node concept="1W57fq" id="1zN1RIkWqLr" role="lGtFl">
           <node concept="3IZrLx" id="1zN1RIkWqLu" role="3IZSJc">
@@ -3558,7 +3570,7 @@
           </node>
           <node concept="gft3U" id="1zN1RIkWsgj" role="UU_$l">
             <node concept="37vLTG" id="1zN1RIkWsgp" role="gfFT$">
-              <property role="TrG5h" value="$noBoundParam$" />
+              <property role="TrG5h" value="$noBoundValue$" />
               <node concept="3uibUv" id="1zN1RIkWsgv" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
@@ -3591,7 +3603,7 @@
       <ref role="n9lRv" to="wq2x:7eGEHDlgPU4" resolve="Rule" />
     </node>
     <node concept="3uibUv" id="5MHpiyl_eoS" role="1zkMxy">
-      <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractRuleTemplate" />
+      <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractConceptRuleTemplate" />
       <node concept="3uibUv" id="1zN1RIkUYmz" role="11_B2D">
         <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         <node concept="1W57fq" id="1zN1RIkUYJ1" role="lGtFl">
@@ -4397,7 +4409,7 @@
       <node concept="37vLTG" id="6w6CYIRhnum" role="3clF46">
         <property role="TrG5h" value="templateCollector" />
         <node concept="3uibUv" id="6w6CYIRhnun" role="1tU5fm">
-          <ref role="3uigEE" to="i348:4OKkcnfu_A6" resolve="RuleTemplateCollector" />
+          <ref role="3uigEE" to="i348:4OKkcnfu_A6" resolve="ConceptRuleTemplateCollector" />
         </node>
       </node>
       <node concept="3cqZAl" id="6w6CYIRhnuo" role="3clF45" />
@@ -4471,7 +4483,7 @@
       <node concept="3Tm1VV" id="5MHpiylJzaq" role="1B3o_S" />
       <node concept="3clFbS" id="5MHpiylJzar" role="3clF47">
         <node concept="XkiVB" id="5MHpiylJzas" role="3cqZAp">
-          <ref role="37wK5l" to="i348:4OKkcnfu_tV" resolve="AbstractIteratingRuleTemplate" />
+          <ref role="37wK5l" to="i348:4OKkcnfu_tV" resolve="AbstractIteratingConceptRuleTemplate" />
           <node concept="Xl_RD" id="5MHpiylJzat" role="37wK5m">
             <property role="Xl_RC" value="name" />
             <node concept="17Uvod" id="5MHpiylJzau" role="lGtFl">
@@ -4502,13 +4514,13 @@
     </node>
     <node concept="2tJIrI" id="1zN1RIl3ICQ" role="jymVt" />
     <node concept="3clFb_" id="5MHpiylJEUt" role="jymVt">
-      <property role="TrG5h" value="iterateParam" />
+      <property role="TrG5h" value="iterateOver" />
       <property role="1EzhhJ" value="false" />
       <node concept="37vLTG" id="5MHpiylJEUu" role="3clF46">
         <property role="TrG5h" value="input" />
         <node concept="3Tqbb2" id="5MHpiylJEUv" role="1tU5fm" />
         <node concept="2ZBi8u" id="1ffsG7c1UPQ" role="lGtFl">
-          <ref role="2rW$FS" node="5MHpiylMeJT" resolve="iterateParameter_input_parameter" />
+          <ref role="2rW$FS" node="5MHpiylMeJT" resolve="iterateOver_input_parameter" />
         </node>
         <node concept="1W57fq" id="5NuEpF1mnRi" role="lGtFl">
           <node concept="3IZrLx" id="5NuEpF1mnRk" role="3IZSJc">
@@ -4670,12 +4682,12 @@
         </node>
       </node>
       <node concept="37vLTG" id="tIwzd2f0nW" role="3clF46">
-        <property role="TrG5h" value="input" />
+        <property role="TrG5h" value="iterateOver" />
         <node concept="16syzq" id="tIwzd2f8Lh" role="1tU5fm">
           <ref role="16sUi3" node="tIwzd2f2vj" resolve="T" />
         </node>
         <node concept="2ZBi8u" id="1ffsG7c1zc9" role="lGtFl">
-          <ref role="2rW$FS" node="tIwzd2fmlA" resolve="required_iterateParameter_parameter" />
+          <ref role="2rW$FS" node="tIwzd2fmlA" resolve="required_iterateOver_parameter" />
         </node>
         <node concept="1W57fq" id="tIwzd2f0nY" role="lGtFl">
           <node concept="3IZrLx" id="tIwzd2f0nZ" role="3IZSJc">
@@ -4695,7 +4707,7 @@
           </node>
           <node concept="gft3U" id="tIwzd2f0o7" role="UU_$l">
             <node concept="37vLTG" id="tIwzd2f0o8" role="gfFT$">
-              <property role="TrG5h" value="$no_itParam$" />
+              <property role="TrG5h" value="$noIterateOver$" />
               <node concept="3Tqbb2" id="tIwzd2f0o9" role="1tU5fm" />
             </node>
           </node>
@@ -4721,12 +4733,12 @@
         </node>
       </node>
       <node concept="37vLTG" id="2q0gzCFLUHn" role="3clF46">
-        <property role="TrG5h" value="bndParam" />
+        <property role="TrG5h" value="boundValue" />
         <node concept="3uibUv" id="2q0gzCFLUHo" role="1tU5fm">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2ZBi8u" id="2q0gzCFLUHp" role="lGtFl">
-          <ref role="2rW$FS" node="2q0gzCFLL_k" resolve="required_boundParameter_parameter" />
+          <ref role="2rW$FS" node="2q0gzCFLL_k" resolve="required_boundValue_parameter" />
         </node>
         <node concept="1W57fq" id="2q0gzCFLUHq" role="lGtFl">
           <node concept="3IZrLx" id="2q0gzCFLUHr" role="3IZSJc">
@@ -4746,7 +4758,7 @@
           </node>
           <node concept="gft3U" id="2q0gzCFLUHz" role="UU_$l">
             <node concept="37vLTG" id="2q0gzCFLUH$" role="gfFT$">
-              <property role="TrG5h" value="$noBoundParam$" />
+              <property role="TrG5h" value="$noBoundValue$" />
               <node concept="3uibUv" id="2q0gzCFLUH_" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
@@ -4882,12 +4894,12 @@
         </node>
       </node>
       <node concept="37vLTG" id="5MHpiylKftJ" role="3clF46">
-        <property role="TrG5h" value="itParam" />
+        <property role="TrG5h" value="iterateOver" />
         <node concept="16syzq" id="1ffsG7chnJM" role="1tU5fm">
           <ref role="16sUi3" node="tIwzd2f2vj" resolve="T" />
         </node>
         <node concept="2ZBi8u" id="1ffsG7c1EDm" role="lGtFl">
-          <ref role="2rW$FS" node="5MHpiylK7iY" resolve="apply_iterateParameter_parameter" />
+          <ref role="2rW$FS" node="5MHpiylK7iY" resolve="apply_iterateOver_parameter" />
         </node>
         <node concept="29HgVG" id="5MHpiylRpMn" role="lGtFl">
           <node concept="3NFfHV" id="5MHpiylRqAp" role="3NFExx">
@@ -4910,12 +4922,12 @@
         </node>
       </node>
       <node concept="37vLTG" id="1zN1RIkWsi2" role="3clF46">
-        <property role="TrG5h" value="bndParam" />
+        <property role="TrG5h" value="boundValue" />
         <node concept="3uibUv" id="1zN1RIkWsj0" role="1tU5fm">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2ZBi8u" id="1ffsG7c16kU" role="lGtFl">
-          <ref role="2rW$FS" node="1zN1RIkUWUb" resolve="apply_boundParameter_parameter" />
+          <ref role="2rW$FS" node="1zN1RIkUWUb" resolve="apply_boundValue_parameter" />
         </node>
         <node concept="1W57fq" id="1zN1RIkWsja" role="lGtFl">
           <node concept="3IZrLx" id="1zN1RIkWsjd" role="3IZSJc">
@@ -4935,7 +4947,7 @@
           </node>
           <node concept="gft3U" id="1zN1RIkWu11" role="UU_$l">
             <node concept="37vLTG" id="1zN1RIkWu17" role="gfFT$">
-              <property role="TrG5h" value="$noBoundParam$" />
+              <property role="TrG5h" value="$noBoundValue$" />
               <node concept="3uibUv" id="1zN1RIkWu1d" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
@@ -5174,7 +5186,7 @@
                     </node>
                   </node>
                   <node concept="37vLTw" id="1ffsG7chKPt" role="37wK5m">
-                    <ref role="3cqZAo" node="5MHpiylKftJ" resolve="itParam" />
+                    <ref role="3cqZAo" node="5MHpiylKftJ" resolve="iterateOver" />
                     <node concept="1ZhdrF" id="1ffsG7chKPu" role="lGtFl">
                       <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
                       <property role="2qtEX8" value="variableDeclaration" />
@@ -5184,7 +5196,7 @@
                             <node concept="2OqwBi" id="1ffsG7chKPy" role="3clFbG">
                               <node concept="1iwH7S" id="1ffsG7chKPz" role="2Oq$k0" />
                               <node concept="1iwH70" id="1ffsG7chKP$" role="2OqNvi">
-                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateParameter_parameter" />
+                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateOver_parameter" />
                                 <node concept="30H73N" id="1ffsG7chKP_" role="1iwH7V" />
                               </node>
                             </node>
@@ -5194,7 +5206,7 @@
                     </node>
                   </node>
                   <node concept="37vLTw" id="1ffsG7chKPA" role="37wK5m">
-                    <ref role="3cqZAo" node="1zN1RIkWsi2" resolve="bndParam" />
+                    <ref role="3cqZAo" node="1zN1RIkWsi2" resolve="boundValue" />
                     <node concept="1W57fq" id="1ffsG7chKPB" role="lGtFl">
                       <node concept="3IZrLx" id="1ffsG7chKPC" role="3IZSJc">
                         <node concept="3clFbS" id="1ffsG7chKPD" role="2VODD2">
@@ -5224,7 +5236,7 @@
                             <node concept="2OqwBi" id="1ffsG7chKPQ" role="3clFbG">
                               <node concept="1iwH7S" id="1ffsG7chKPR" role="2Oq$k0" />
                               <node concept="1iwH70" id="1ffsG7chKPS" role="2OqNvi">
-                                <ref role="1iwH77" node="1zN1RIkUWUb" resolve="apply_boundParameter_parameter" />
+                                <ref role="1iwH77" node="1zN1RIkUWUb" resolve="apply_boundValue_parameter" />
                                 <node concept="30H73N" id="1ffsG7chKPT" role="1iwH7V" />
                               </node>
                             </node>
@@ -5264,7 +5276,7 @@
       <ref role="n9lRv" to="wq2x:7eGEHDlgPU4" resolve="Rule" />
     </node>
     <node concept="3uibUv" id="5MHpiylJAY9" role="1zkMxy">
-      <ref role="3uigEE" to="i348:4OKkcnfu_tT" resolve="AbstractIteratingRuleTemplate" />
+      <ref role="3uigEE" to="i348:4OKkcnfu_tT" resolve="AbstractIteratingConceptRuleTemplate" />
       <node concept="3uibUv" id="1zN1RIkUM7b" role="11_B2D">
         <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         <node concept="1W57fq" id="1zN1RIkUNQj" role="lGtFl">
@@ -6230,7 +6242,7 @@
                             <node concept="2OqwBi" id="7gr_rom9LZn" role="3clFbG">
                               <node concept="1iwH7S" id="7gr_rom9LVm" role="2Oq$k0" />
                               <node concept="1iwH70" id="7gr_rom9M5n" role="2OqNvi">
-                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateParameter_parameter" />
+                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateOver_parameter" />
                                 <node concept="30H73N" id="1ffsG7c1KuI" role="1iwH7V" />
                               </node>
                             </node>
@@ -6604,7 +6616,7 @@
                             <node concept="2OqwBi" id="7gr_romac5J" role="3clFbG">
                               <node concept="1iwH7S" id="7gr_romac5K" role="2Oq$k0" />
                               <node concept="1iwH70" id="7gr_romac5L" role="2OqNvi">
-                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateParameter_parameter" />
+                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateOver_parameter" />
                                 <node concept="30H73N" id="1ffsG7c1Krw" role="1iwH7V" />
                               </node>
                             </node>
@@ -6768,7 +6780,7 @@
                             <node concept="2OqwBi" id="7gr_romb3bh" role="3clFbG">
                               <node concept="1iwH7S" id="7gr_romb3bi" role="2Oq$k0" />
                               <node concept="1iwH70" id="7gr_romb3bj" role="2OqNvi">
-                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateParameter_parameter" />
+                                <ref role="1iwH77" node="5MHpiylK7iY" resolve="apply_iterateOver_parameter" />
                                 <node concept="30H73N" id="1ffsG7c1KjC" role="1iwH7V" />
                               </node>
                             </node>
@@ -8335,7 +8347,7 @@
         <node concept="3Tm1VV" id="1zN1RIlD3HN" role="1B3o_S" />
         <node concept="3clFbS" id="1zN1RIlD3HO" role="3clF47">
           <node concept="XkiVB" id="1zN1RIlD4dI" role="3cqZAp">
-            <ref role="37wK5l" to="i348:4OKkcnfu_vK" resolve="AbstractRuleTemplate" />
+            <ref role="37wK5l" to="i348:4OKkcnfu_vK" resolve="AbstractConceptRuleTemplate" />
             <node concept="37vLTw" id="1zN1RIlDNQv" role="37wK5m">
               <ref role="3cqZAo" node="1zN1RIlDNO4" resolve="name" />
             </node>
@@ -8459,12 +8471,12 @@
           </node>
         </node>
         <node concept="37vLTG" id="7t5VLKH5oYW" role="3clF46">
-          <property role="TrG5h" value="bndParam" />
+          <property role="TrG5h" value="boundValue" />
           <node concept="3uibUv" id="7t5VLKH5oYX" role="1tU5fm">
             <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           </node>
           <node concept="2ZBi8u" id="1ffsG7c07R8" role="lGtFl">
-            <ref role="2rW$FS" node="7t5VLKH5rUl" resolve="condition_boundParameter_parameter" />
+            <ref role="2rW$FS" node="7t5VLKH5rUl" resolve="condition_boundValue_parameter" />
           </node>
           <node concept="1W57fq" id="7t5VLKH5oYY" role="lGtFl">
             <node concept="3IZrLx" id="7t5VLKH5oYZ" role="3IZSJc">
@@ -8484,7 +8496,7 @@
             </node>
             <node concept="gft3U" id="7t5VLKH5oZ7" role="UU_$l">
               <node concept="37vLTG" id="7t5VLKH5oZ8" role="gfFT$">
-                <property role="TrG5h" value="$noBoundParam$" />
+                <property role="TrG5h" value="$noBoundValue$" />
                 <node concept="3uibUv" id="7t5VLKH5oZ9" role="1tU5fm">
                   <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 </node>
@@ -8634,13 +8646,13 @@
       <node concept="2tJIrI" id="3x8pcoFtnMK" role="jymVt" />
       <node concept="2tJIrI" id="tIwzd1GEyF" role="jymVt" />
       <node concept="3clFb_" id="1zN1RIl3FX7" role="jymVt">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="boundValue" />
         <property role="1EzhhJ" value="false" />
         <node concept="37vLTG" id="1zN1RIl3FX8" role="3clF46">
           <property role="TrG5h" value="input" />
           <node concept="3Tqbb2" id="1zN1RIl3FX9" role="1tU5fm" />
           <node concept="2ZBi8u" id="1ffsG7c22Vi" role="lGtFl">
-            <ref role="2rW$FS" node="1zN1RIkZU1L" resolve="boundParameter_input_parameter" />
+            <ref role="2rW$FS" node="1zN1RIkZU1L" resolve="boundValue_input_parameter" />
           </node>
           <node concept="1W57fq" id="1zN1RIl3FXa" role="lGtFl">
             <node concept="3IZrLx" id="1zN1RIl3FXb" role="3IZSJc">
@@ -8767,7 +8779,7 @@
       <node concept="2tJIrI" id="1zN1RIl3F0$" role="jymVt" />
       <node concept="3Tm1VV" id="1zN1RIl3DtH" role="1B3o_S" />
       <node concept="3uibUv" id="1zN1RIl3Ef3" role="1zkMxy">
-        <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractRuleTemplate" />
+        <ref role="3uigEE" to="i348:4OKkcnfu_vI" resolve="AbstractConceptRuleTemplate" />
         <node concept="16syzq" id="1zN1RIlDdJ3" role="11_B2D">
           <ref role="16sUi3" node="1zN1RIlDdi2" resolve="S" />
         </node>
@@ -8863,12 +8875,12 @@
           </node>
         </node>
         <node concept="37vLTG" id="1ffsG7bOj0O" role="3clF46">
-          <property role="TrG5h" value="bndParam" />
+          <property role="TrG5h" value="boundValue" />
           <node concept="3uibUv" id="1ffsG7bOj0P" role="1tU5fm">
             <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
           </node>
           <node concept="2ZBi8u" id="1ffsG7c045g" role="lGtFl">
-            <ref role="2rW$FS" node="7t5VLKH5rUl" resolve="condition_boundParameter_parameter" />
+            <ref role="2rW$FS" node="7t5VLKH5rUl" resolve="condition_boundValue_parameter" />
           </node>
           <node concept="1W57fq" id="1ffsG7bOj0Q" role="lGtFl">
             <node concept="3IZrLx" id="1ffsG7bOj0R" role="3IZSJc">
@@ -8893,7 +8905,7 @@
             </node>
             <node concept="gft3U" id="1ffsG7bOj0Z" role="UU_$l">
               <node concept="37vLTG" id="1ffsG7bOj10" role="gfFT$">
-                <property role="TrG5h" value="$noBoundParam$" />
+                <property role="TrG5h" value="$noBoundValue$" />
                 <node concept="3uibUv" id="1ffsG7bOj11" role="1tU5fm">
                   <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
                 </node>
@@ -9096,12 +9108,12 @@
         </node>
       </node>
       <node concept="37vLTG" id="2q0gzCFM30T" role="3clF46">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="boundValue" />
         <node concept="3uibUv" id="2q0gzCFM30U" role="1tU5fm">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2ZBi8u" id="2q0gzCFM30V" role="lGtFl">
-          <ref role="2rW$FS" node="2q0gzCFLL_k" resolve="required_boundParameter_parameter" />
+          <ref role="2rW$FS" node="2q0gzCFLL_k" resolve="required_boundValue_parameter" />
         </node>
         <node concept="1W57fq" id="2q0gzCFM30W" role="lGtFl">
           <node concept="3IZrLx" id="2q0gzCFM30X" role="3IZSJc">
@@ -9126,7 +9138,7 @@
           </node>
           <node concept="gft3U" id="2q0gzCFM317" role="UU_$l">
             <node concept="37vLTG" id="2q0gzCFM318" role="gfFT$">
-              <property role="TrG5h" value="$noBoundParam$" />
+              <property role="TrG5h" value="$noBoundValue$" />
               <node concept="3uibUv" id="2q0gzCFM319" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
@@ -9459,12 +9471,12 @@
         <node concept="3Tqbb2" id="1ffsG7bOZtd" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1ffsG7bOZte" role="3clF46">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="boundValue" />
         <node concept="3uibUv" id="1ffsG7bOZtf" role="1tU5fm">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2ZBi8u" id="1ffsG7c1hgg" role="lGtFl">
-          <ref role="2rW$FS" node="1zN1RIkUWUb" resolve="apply_boundParameter_parameter" />
+          <ref role="2rW$FS" node="1zN1RIkUWUb" resolve="apply_boundValue_parameter" />
         </node>
         <node concept="1W57fq" id="1ffsG7bOZtg" role="lGtFl">
           <node concept="3IZrLx" id="1ffsG7bOZth" role="3IZSJc">
@@ -9489,7 +9501,7 @@
           </node>
           <node concept="gft3U" id="1ffsG7bOZtp" role="UU_$l">
             <node concept="37vLTG" id="1ffsG7bOZtq" role="gfFT$">
-              <property role="TrG5h" value="$noBoundParam$" />
+              <property role="TrG5h" value="$noBoundValue$" />
               <node concept="3uibUv" id="1ffsG7bOZtr" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
@@ -9819,7 +9831,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="1ffsG7bPzIm" role="3clF46">
-        <property role="TrG5h" value="input" />
+        <property role="TrG5h" value="iterateOver" />
         <node concept="16syzq" id="1ffsG7bPzIn" role="1tU5fm">
           <ref role="16sUi3" node="1ffsG7bPbaO" resolve="T" />
         </node>
@@ -9846,7 +9858,7 @@
           </node>
           <node concept="gft3U" id="1ffsG7bPzIx" role="UU_$l">
             <node concept="37vLTG" id="1ffsG7bPzIy" role="gfFT$">
-              <property role="TrG5h" value="$no_itParam$" />
+              <property role="TrG5h" value="$noIterateOver$" />
               <node concept="3Tqbb2" id="1ffsG7bPzIz" role="1tU5fm" />
             </node>
           </node>
@@ -9876,16 +9888,16 @@
           </node>
         </node>
         <node concept="2ZBi8u" id="1ffsG7c1$Ok" role="lGtFl">
-          <ref role="2rW$FS" node="tIwzd2fmlA" resolve="required_iterateParameter_parameter" />
+          <ref role="2rW$FS" node="tIwzd2fmlA" resolve="required_iterateOver_parameter" />
         </node>
       </node>
       <node concept="37vLTG" id="2q0gzCFLGKp" role="3clF46">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="boundValue" />
         <node concept="3uibUv" id="2q0gzCFLGKq" role="1tU5fm">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2ZBi8u" id="2q0gzCFLGKr" role="lGtFl">
-          <ref role="2rW$FS" node="2q0gzCFLL_k" resolve="required_boundParameter_parameter" />
+          <ref role="2rW$FS" node="2q0gzCFLL_k" resolve="required_boundValue_parameter" />
         </node>
         <node concept="1W57fq" id="2q0gzCFLGKs" role="lGtFl">
           <node concept="3IZrLx" id="2q0gzCFLGKt" role="3IZSJc">
@@ -9910,7 +9922,7 @@
           </node>
           <node concept="gft3U" id="2q0gzCFLGKB" role="UU_$l">
             <node concept="37vLTG" id="2q0gzCFLGKC" role="gfFT$">
-              <property role="TrG5h" value="$noBoundParam$" />
+              <property role="TrG5h" value="$noBoundValue$" />
               <node concept="3uibUv" id="2q0gzCFLGKD" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
@@ -10243,12 +10255,12 @@
         <node concept="3Tqbb2" id="1ffsG7bPGcl" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1ffsG7bPIGo" role="3clF46">
-        <property role="TrG5h" value="itParam" />
-        <node concept="3uibUv" id="1ffsG7bPIGp" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <property role="TrG5h" value="iterateOver" />
+        <node concept="16syzq" id="1PFbZN63cFb" role="1tU5fm">
+          <ref role="16sUi3" node="1ffsG7bPbaO" resolve="T" />
         </node>
         <node concept="2ZBi8u" id="1ffsG7c1Gi4" role="lGtFl">
-          <ref role="2rW$FS" node="5MHpiylK7iY" resolve="apply_iterateParameter_parameter" />
+          <ref role="2rW$FS" node="5MHpiylK7iY" resolve="apply_iterateOver_parameter" />
         </node>
         <node concept="29HgVG" id="1ffsG7bPIGq" role="lGtFl">
           <node concept="3NFfHV" id="1ffsG7bPIGr" role="3NFExx">
@@ -10276,12 +10288,12 @@
         </node>
       </node>
       <node concept="37vLTG" id="1ffsG7bPGcm" role="3clF46">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="boundValue" />
         <node concept="3uibUv" id="1ffsG7bPGcn" role="1tU5fm">
           <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
         </node>
         <node concept="2ZBi8u" id="1ffsG7c1aCV" role="lGtFl">
-          <ref role="2rW$FS" node="1zN1RIkUWUb" resolve="apply_boundParameter_parameter" />
+          <ref role="2rW$FS" node="1zN1RIkUWUb" resolve="apply_boundValue_parameter" />
         </node>
         <node concept="1W57fq" id="1ffsG7bPGco" role="lGtFl">
           <node concept="3IZrLx" id="1ffsG7bPGcp" role="3IZSJc">
@@ -10306,7 +10318,7 @@
           </node>
           <node concept="gft3U" id="1ffsG7bPGcz" role="UU_$l">
             <node concept="37vLTG" id="1ffsG7bPGc$" role="gfFT$">
-              <property role="TrG5h" value="$noBoundParam$" />
+              <property role="TrG5h" value="$noBoundValue$" />
               <node concept="3uibUv" id="1ffsG7bPGc_" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
               </node>
