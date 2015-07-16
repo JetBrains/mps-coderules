@@ -2042,7 +2042,7 @@
                         <ref role="37wK5l" node="61vfVfp5zwA" resolve="showEvents" />
                         <node concept="10M0yZ" id="61vfVfp5X6h" role="37wK5m">
                           <ref role="1PxDUh" node="4i4XGQZlbGA" resolve="MessageViewTracer" />
-                          <ref role="3cqZAo" node="61vfVfp5Q32" resolve="ONLY_FIRED" />
+                          <ref role="3cqZAo" node="61vfVfp5OZI" resolve="ALL" />
                         </node>
                       </node>
                     </node>
