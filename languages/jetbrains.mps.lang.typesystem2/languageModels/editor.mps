@@ -99,6 +99,7 @@
       <concept id="7667708318090725848" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem" flags="ln" index="1Bsynf" />
       <concept id="7667708318090877006" name="jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem" flags="ln" index="1Bt7hp" />
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
+        <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
         <reference id="1139959269582" name="actionMap" index="1ERwB7" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
@@ -1715,6 +1716,7 @@
     <ref role="1XX52x" to="wq2x:4EfgX2EvF4i" resolve="ExpressionConstraint" />
     <node concept="3EZMnI" id="4EfgX2EvGm$" role="2wV5jI">
       <node concept="3F1sOY" id="4EfgX2EvGGa" role="3EZMnx">
+        <property role="1cu_pB" value="2" />
         <ref role="1NtTu8" to="wq2x:4EfgX2EvGcc" />
       </node>
       <node concept="l2Vlx" id="4EfgX2EvGmB" role="2iSdaV" />
