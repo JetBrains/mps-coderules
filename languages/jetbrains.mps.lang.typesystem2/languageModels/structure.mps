@@ -297,12 +297,18 @@
     <property role="TrG5h" value="ParameterDeclarationStatement" />
     <property role="34LRSv" value="parameter" />
     <ref role="1TJDcQ" node="2E5lcNn8iYG" resolve="LogicVariableDeclarationStatement" />
+    <node concept="PrWs8" id="7ksQUDZoqiE" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2E5lcNn5Ub2">
     <property role="3GE5qa" value="constraint.variable" />
     <property role="TrG5h" value="LocalDeclarationStatement" />
     <property role="34LRSv" value="local" />
     <ref role="1TJDcQ" node="2E5lcNn8iYG" resolve="LogicVariableDeclarationStatement" />
+    <node concept="PrWs8" id="7ksQUDZoqiC" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2E5lcNn8iYG">
     <property role="3GE5qa" value="constraint.variable" />
