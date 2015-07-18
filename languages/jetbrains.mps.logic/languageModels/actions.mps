@@ -403,7 +403,7 @@
             </node>
           </node>
           <node concept="2h1dTh" id="7E86$tKsZ4o" role="Cn2iK">
-            <property role="2h1i$Z" value="_" />
+            <property role="2h1i$Z" value="[" />
           </node>
         </node>
       </node>
@@ -436,7 +436,7 @@
             </node>
           </node>
           <node concept="2h1dTh" id="7E86$tKtt1$" role="Cn2iK">
-            <property role="2h1i$Z" value=":" />
+            <property role="2h1i$Z" value="[" />
           </node>
         </node>
       </node>
