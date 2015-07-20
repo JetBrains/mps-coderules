@@ -321,6 +321,11 @@
     <property role="TrG5h" value="LogicalType" />
     <property role="34LRSv" value="logical" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="5zfvpQ71CIE" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="dataType" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
   </node>
   <node concept="1TIwiD" id="dfChU1zo4B">
     <property role="TrG5h" value="LogicalSubstitution" />
