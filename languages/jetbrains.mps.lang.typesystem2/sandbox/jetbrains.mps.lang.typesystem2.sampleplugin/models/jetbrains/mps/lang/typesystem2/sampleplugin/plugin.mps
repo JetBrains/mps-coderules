@@ -583,7 +583,7 @@
                               </node>
                               <node concept="10M0yZ" id="54i3Fxd0aNo" role="3uHU7B">
                                 <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
-                                <ref role="3cqZAo" to="nc4n:54i3FxcZMP2" resolve="EQUALS" />
+                                <ref role="3cqZAo" to="nc4n:54i3FxcZMP2" resolve="UNIFICATION" />
                               </node>
                             </node>
                             <node concept="3eNFk2" id="6infEALC1tE" role="3eNLev">
@@ -593,17 +593,37 @@
                                 </node>
                                 <node concept="10M0yZ" id="6infEALCied" role="3uHU7B">
                                   <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
-                                  <ref role="3cqZAo" to="nc4n:6infEALBQ$y" resolve="ASSERT" />
+                                  <ref role="3cqZAo" to="nc4n:2DKqMqO$zFW" resolve="EQUALS" />
                                 </node>
                               </node>
                               <node concept="3clFbS" id="6infEALC1tG" role="3eOfB_">
                                 <node concept="3cpWs6" id="6infEALCiAg" role="3cqZAp">
                                   <node concept="10M0yZ" id="6infEALCiHQ" role="3cqZAk">
+                                    <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                                    <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
+                                  </node>
+                                </node>
+                                <node concept="3clFbH" id="6infEALCisr" role="3cqZAp" />
+                              </node>
+                            </node>
+                            <node concept="3eNFk2" id="2DKqMqO$EoV" role="3eNLev">
+                              <node concept="3clFbC" id="2DKqMqO$EoW" role="3eO9$A">
+                                <node concept="37vLTw" id="2DKqMqO$EoX" role="3uHU7w">
+                                  <ref role="3cqZAo" node="3Qp4N06byke" resolve="symbol" />
+                                </node>
+                                <node concept="10M0yZ" id="2DKqMqO$EoY" role="3uHU7B">
+                                  <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                                  <ref role="3cqZAo" to="nc4n:6infEALBQ$y" resolve="ASSERT" />
+                                </node>
+                              </node>
+                              <node concept="3clFbS" id="2DKqMqO$EoZ" role="3eOfB_">
+                                <node concept="3cpWs6" id="2DKqMqO$Ep0" role="3cqZAp">
+                                  <node concept="10M0yZ" id="2DKqMqO$Ep1" role="3cqZAk">
                                     <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
                                     <ref role="3cqZAo" to="oy3s:6infEALAhFy" resolve="INSTANCE" />
                                   </node>
                                 </node>
-                                <node concept="3clFbH" id="6infEALCisr" role="3cqZAp" />
+                                <node concept="3clFbH" id="2DKqMqO$Ep2" role="3cqZAp" />
                               </node>
                             </node>
                             <node concept="3eNFk2" id="54i3Fxd0l1C" role="3eNLev">
@@ -991,12 +1011,45 @@
           </node>
         </node>
         <node concept="3clFbH" id="3xj1Uscsv_J" role="3cqZAp" />
-        <node concept="3clFbF" id="3xj1Usct36R" role="3cqZAp">
-          <node concept="2YIFZM" id="3xj1Usct36Q" role="3clFbG">
-            <ref role="1Pybhc" node="3Qp4N06byjn" resolve="CollectRuleTemplates" />
-            <ref role="37wK5l" node="3xj1Usct36M" resolve="produceRules" />
-            <node concept="37vLTw" id="3xj1Usct36P" role="37wK5m">
-              <ref role="3cqZAo" node="3xj1UscsvA0" resolve="handler" />
+        <node concept="SfApY" id="2DKqMqOy3ji" role="3cqZAp">
+          <node concept="3clFbS" id="2DKqMqOy3jk" role="SfCbr">
+            <node concept="3clFbF" id="3xj1Usct36R" role="3cqZAp">
+              <node concept="2YIFZM" id="3xj1Usct36Q" role="3clFbG">
+                <ref role="1Pybhc" node="3Qp4N06byjn" resolve="CollectRuleTemplates" />
+                <ref role="37wK5l" node="3xj1Usct36M" resolve="produceRules" />
+                <node concept="37vLTw" id="3xj1Usct36P" role="37wK5m">
+                  <ref role="3cqZAo" node="3xj1UscsvA0" resolve="handler" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="2DKqMqOy43Z" role="3cqZAp" />
+          </node>
+          <node concept="TDmWw" id="2DKqMqOy3jl" role="TEbGg">
+            <node concept="3cpWsn" id="2DKqMqOy3jn" role="TDEfY">
+              <property role="TrG5h" value="ex" />
+              <node concept="3uibUv" id="2DKqMqOy3Dz" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~RuntimeException" resolve="RuntimeException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="2DKqMqOy3jr" role="TDEfX">
+              <node concept="34ab3g" id="2DKqMqOy6NW" role="3cqZAp">
+                <property role="35gtTG" value="warn" />
+                <property role="34fQS0" value="true" />
+                <node concept="Xl_RD" id="2DKqMqOy6NY" role="34bqiv">
+                  <property role="Xl_RC" value="Error producing rules" />
+                </node>
+                <node concept="37vLTw" id="2DKqMqOy6O0" role="34bMjA">
+                  <ref role="3cqZAo" node="2DKqMqOy3jn" resolve="ex" />
+                </node>
+              </node>
+              <node concept="3clFbH" id="2DKqMqOy6Pe" role="3cqZAp" />
+              <node concept="3clFbF" id="2DKqMqOy62b" role="3cqZAp">
+                <node concept="3uNrnE" id="2DKqMqOy6Hz" role="3clFbG">
+                  <node concept="37vLTw" id="2DKqMqOy6H_" role="2$L3a6">
+                    <ref role="3cqZAo" node="3xj1UsctHLm" resolve="errors" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
