@@ -28,8 +28,8 @@ public abstract class MockTerm implements Term {
     public MockTerm() {
     }
 
-    public static Term term(Object sym, Term... children) {
-        return new MockFun(sym, children);
+    public static Term term(Object sym, Term... arguments) {
+        return new MockFun(sym, arguments);
     }
 
     public static Term var(String name) {
@@ -54,7 +54,7 @@ public abstract class MockTerm implements Term {
     }
 
     @Override
-    public Collection<? extends Term> children() {
+    public Collection<? extends Term> arguments() {
         return null;
     }
 
@@ -72,9 +72,9 @@ public abstract class MockTerm implements Term {
         private List<Term> myArgs;
         private Object mySymbol;
 
-        public MockFun(Object symbol, Term... children) {
+        public MockFun(Object symbol, Term... arguments) {
             mySymbol = symbol;
-            this.myArgs = Arrays.asList(children);
+            this.myArgs = Arrays.asList(arguments);
         }
 
         @Override
@@ -83,7 +83,7 @@ public abstract class MockTerm implements Term {
         }
 
         @Override
-        public Collection<Term> children() {
+        public Collection<Term> arguments() {
             return Collections.unmodifiableList(myArgs);
         }
 
@@ -98,9 +98,9 @@ public abstract class MockTerm implements Term {
             if (!myArgs.isEmpty()) {
                 sb.append("{");
                 String sep = "";
-                for (Term child : myArgs) {
+                for (Term arg : myArgs) {
                     sb.append(sep); sep = " ";
-                    sb.append(child.toString());
+                    sb.append(arg.toString());
                 }
                 sb.append("}");
             }

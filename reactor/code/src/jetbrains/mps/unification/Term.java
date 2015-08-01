@@ -32,7 +32,7 @@ public interface Term extends Comparable<Term> {
 
     Object symbol();
 
-    Collection<? extends Term> children();
+    Collection<? extends Term> arguments();
 
     Term get();
 

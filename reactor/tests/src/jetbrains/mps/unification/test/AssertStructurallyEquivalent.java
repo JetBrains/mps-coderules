@@ -36,7 +36,7 @@ public class AssertStructurallyEquivalent {
                         @Override
                         public Collection<? extends Term> visit(Term term) throws Exception {
                             signature.label(term);
-                            return term.children();
+                            return term.arguments();
                         }
                     }
                         ,
@@ -56,7 +56,7 @@ public class AssertStructurallyEquivalent {
                         @Override
                         public Collection<? extends Term> visit(Term term) throws Exception {
                             signature.appendSignature("@").append(signature.getLabel(term)).append(term.symbol());
-                            return term.children();
+                            return term.arguments();
                         }
                     },
                     new TermVisitor<Term>(Term.Kind.VAR) {
@@ -177,12 +177,12 @@ public class AssertStructurallyEquivalent {
             if (term.is(Term.Kind.FUN)) {
                 visited.put(term, SINGLETON);
             }
-            Collection<? extends Term> children = switchClass(term);
-            for (Term child : children) {
-                if (visited.containsKey(child)) {
+            Collection<? extends Term> arguments = switchClass(term);
+            for (Term arg : arguments) {
+                if (visited.containsKey(arg)) {
                     continue;
                 }
-                walk(child, visited);
+                walk(arg, visited);
             }
         }
 

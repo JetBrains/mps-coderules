@@ -54,7 +54,7 @@ public class MockTermsParser {
         private Token lastToken;
         private LinkedList<String> termsStack = new LinkedList<String>();
         private LinkedList<Integer> termLabelsStack = new LinkedList<Integer>();
-        private LinkedList<List<Term>> childrenStack = new LinkedList<List<Term>>();
+        private LinkedList<List<Term>> argumentsStack = new LinkedList<List<Term>>();
         private int lastLabel = -1;
         private Map<Integer, Term> termRefs = new HashMap<Integer, Term>();
         // initialized on the parse finished
@@ -67,7 +67,7 @@ public class MockTermsParser {
             checkFinalState();
             checkAllRefsExist();
             lookupHelper.setTermRefs(Collections.unmodifiableMap(new HashMap<Integer, Term>(termRefs)));
-            return Collections.unmodifiableList(childrenStack.pop());
+            return Collections.unmodifiableList(argumentsStack.pop());
         }
 
         private void loop(String toParse) {
@@ -93,7 +93,7 @@ public class MockTermsParser {
         private void parseNextToken(Token token, String value) {
             switch (token) {
                 case START:
-                    childrenStack.push(new ArrayList<Term>());
+                    argumentsStack.push(new ArrayList<Term>());
                     break;
                 case END:
                     checkLastTokenOneOf(Token.TERM, Token.VAR, Token.VARREF, Token.RBRACE);
@@ -171,13 +171,13 @@ public class MockTermsParser {
         }
 
         private void checkFinalState() {
-            if (childrenStack.size() != 1 || childrenStack.peek().isEmpty() || !termsStack.isEmpty()) {
+            if (argumentsStack.size() != 1 || argumentsStack.peek().isEmpty() || !termsStack.isEmpty()) {
                 throw new ParseException("unexpected end of input");
             }
         }
 
         private void checkCloseBraceState() {
-            if (childrenStack.isEmpty() || childrenStack.peek().isEmpty() || termsStack.isEmpty()) {
+            if (argumentsStack.isEmpty() || argumentsStack.peek().isEmpty() || termsStack.isEmpty()) {
                 throw new ParseException("unexpected closing brace");
             }
         }
@@ -200,43 +200,43 @@ public class MockTermsParser {
             String name = termsStack.pop();
             Integer label = termLabelsStack.pop();
             Term newTerm = term(name);
-            childrenStack.peek().add(newTerm);
+            argumentsStack.peek().add(newTerm);
             if (label != null) {
                 termRefs.put(label, newTerm);
             }
         }
 
         private void beginChildren(){
-            childrenStack.push(new ArrayList<Term>());
+            argumentsStack.push(new ArrayList<Term>());
         }
 
         private void endChildren() {
-            List<Term> children = childrenStack.pop();
+            List<Term> arguments = argumentsStack.pop();
             String name = termsStack.pop();
             Integer label = termLabelsStack.pop();
-            Term newTerm = term(name, children.toArray(new Term[children.size()]));
-            childrenStack.peek().add(newTerm);
+            Term newTerm = term(name, arguments.toArray(new Term[arguments.size()]));
+            argumentsStack.peek().add(newTerm);
             if (label != null) {
                 termRefs.put(label, newTerm);
             }
         }
 
         private void addVar(String name) {
-            childrenStack.peek().add(var(name));
+            argumentsStack.peek().add(var(name));
         }
 
         private void addVarRef(String name) {
-            childrenStack.peek().add(ref(var(name)));
+            argumentsStack.peek().add(ref(var(name)));
         }
 
         private void addRef(String ref) {
             final int label = Integer.parseInt(ref.substring(1));
             if (termRefs.containsKey(label) && termRefs.get(label) != null) {
-                childrenStack.peek().add(ref(termRefs.get(label)));
+                argumentsStack.peek().add(ref(termRefs.get(label)));
             }
             else {
                 termRefs.put(label, null);
-                childrenStack.peek().add(ref(lookupHelper.lookup(label)));
+                argumentsStack.peek().add(ref(lookupHelper.lookup(label)));
             }
         }
     }

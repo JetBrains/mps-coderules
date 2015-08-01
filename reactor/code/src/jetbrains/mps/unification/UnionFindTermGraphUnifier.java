@@ -119,15 +119,15 @@ public class UnionFindTermGraphUnifier {
                 union(s, t);
             }
 
-            Iterator<? extends Term> scit = zs.children().iterator();
-            Iterator<? extends Term> tcit = zt.children().iterator();
+            Iterator<? extends Term> scit = zs.arguments().iterator();
+            Iterator<? extends Term> tcit = zt.arguments().iterator();
             while (scit.hasNext() && tcit.hasNext()) {
                 if (!unifClosure(scit.next(), tcit.next())) {
-                    return false; // children mismatch
+                    return false; // arguments mismatch
                 }
             }
 
-            // fail if different children count
+            // fail if different arguments count
             return scit.hasNext() == tcit.hasNext();
         }
         else {
@@ -204,7 +204,7 @@ public class UnionFindTermGraphUnifier {
         if (z.is(FUN)) {
             setVisited(z, true);
 
-            for (Term c : z.children()) {
+            for (Term c : z.arguments()) {
                 substitution = findSolution(c, substitution);
 
                 if (!substitution.isSuccessful()) {
