@@ -982,7 +982,7 @@
                   </node>
                   <node concept="3clFb_" id="3OPtF03iXL6" role="jymVt">
                     <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="walkChild" />
+                    <property role="TrG5h" value="walkTerms" />
                     <node concept="3uibUv" id="3OPtF03iXL7" role="3clF45">
                       <ref role="3uigEE" to="ie8e:2q_78a95hAL" resolve="Action" />
                     </node>
@@ -994,7 +994,7 @@
                       </node>
                     </node>
                     <node concept="37vLTG" id="3OPtF03iXLd" role="3clF46">
-                      <property role="TrG5h" value="children" />
+                      <property role="TrG5h" value="args" />
                       <node concept="10Q1$e" id="3OPtF03iXLe" role="1tU5fm">
                         <node concept="3uibUv" id="3OPtF03iXLf" role="10Q1$1">
                           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
@@ -1015,7 +1015,7 @@
                                 <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                                 <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
                                 <node concept="37vLTw" id="47nvOnU74eF" role="37wK5m">
-                                  <ref role="3cqZAo" node="3OPtF03iXLd" resolve="children" />
+                                  <ref role="3cqZAo" node="3OPtF03iXLd" resolve="args" />
                                 </node>
                               </node>
                               <node concept="3cpWs3" id="47nvOnU50LQ" role="3uHU7B">
@@ -1121,7 +1121,7 @@
                       </node>
                     </node>
                     <node concept="37vLTG" id="3OPtF03j4fL" role="3clF46">
-                      <property role="TrG5h" value="children" />
+                      <property role="TrG5h" value="args" />
                       <node concept="3uibUv" id="3OPtF03j4fM" role="1tU5fm">
                         <ref role="3uigEE" to="33ny:~List" resolve="List" />
                         <node concept="3qUE_q" id="3OPtF03j4fN" role="11_B2D">
@@ -1142,7 +1142,7 @@
                             <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                             <node concept="3cpWs3" id="3JgCwkqmOIj" role="37wK5m">
                               <node concept="37vLTw" id="3OPtF03j6uQ" role="3uHU7w">
-                                <ref role="3cqZAo" node="3OPtF03j4fL" resolve="children" />
+                                <ref role="3cqZAo" node="3OPtF03j4fL" resolve="args" />
                               </node>
                               <node concept="3cpWs3" id="3JgCwkqmOIm" role="3uHU7B">
                                 <node concept="Xl_RD" id="3JgCwkqmOIn" role="3uHU7w">

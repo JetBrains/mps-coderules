@@ -1254,7 +1254,7 @@
     </node>
   </node>
   <node concept="3s_ewN" id="2ev$9JFBIYd">
-    <property role="3s_ewP" value="TreeWalk" />
+    <property role="3s_ewP" value="AtomWalk" />
     <node concept="2tJIrI" id="2ev$9JFEDVF" role="jymVt" />
     <node concept="3clFb_" id="2ev$9JFEJ94" role="jymVt">
       <property role="TrG5h" value="anyValues" />
@@ -1287,16 +1287,16 @@
     </node>
     <node concept="2tJIrI" id="2ev$9JFEKIo" role="jymVt" />
     <node concept="3clFb_" id="2ev$9JFEEfC" role="jymVt">
-      <property role="TrG5h" value="anyChildren" />
+      <property role="TrG5h" value="anyTerms" />
       <node concept="3uibUv" id="2ev$9JFEFFy" role="3clF45">
-        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
       </node>
       <node concept="3Tm1VV" id="2ev$9JFEEfF" role="1B3o_S" />
       <node concept="3clFbS" id="2ev$9JFEEfG" role="3clF47">
         <node concept="3clFbF" id="2ev$9JFEGHn" role="3cqZAp">
           <node concept="10QFUN" id="2ev$9JFEGHp" role="3clFbG">
             <node concept="3uibUv" id="2ev$9JFEGHq" role="10QFUM">
-              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
             </node>
             <node concept="2YIFZM" id="2ev$9JFEGHr" role="10QFUP">
               <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
@@ -1310,14 +1310,14 @@
     <node concept="3clFb_" id="2ev$9JFEHV1" role="jymVt">
       <property role="TrG5h" value="anyList" />
       <node concept="3uibUv" id="2ev$9JFEHV2" role="3clF45">
-        <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
+        <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
       </node>
       <node concept="3Tm1VV" id="2ev$9JFEHV4" role="1B3o_S" />
       <node concept="3clFbS" id="2ev$9JFEHV5" role="3clF47">
         <node concept="3clFbF" id="2ev$9JFEHV6" role="3cqZAp">
           <node concept="10QFUN" id="2ev$9JFEHV7" role="3clFbG">
             <node concept="3uibUv" id="2ev$9JFEHV8" role="10QFUM">
-              <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
+              <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
             </node>
             <node concept="2YIFZM" id="2ev$9JFEHVa" role="10QFUP">
               <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
@@ -1332,7 +1332,7 @@
       <property role="TrG5h" value="anyTreePartArray" />
       <node concept="10Q1$e" id="2ev$9JFF0S3" role="3clF45">
         <node concept="3uibUv" id="2ev$9JFF0R$" role="10Q1$1">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2ev$9JFF0nR" role="1B3o_S" />
@@ -1341,7 +1341,7 @@
           <node concept="10QFUN" id="2ev$9JFF1GW" role="3clFbG">
             <node concept="10Q1$e" id="2ev$9JFF1GX" role="10QFUM">
               <node concept="3uibUv" id="2ev$9JFF1GY" role="10Q1$1">
-                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
               </node>
             </node>
             <node concept="2YIFZM" id="2ev$9JFF1GZ" role="10QFUP">
@@ -1379,22 +1379,22 @@
     </node>
     <node concept="2tJIrI" id="2ev$9JFF7UY" role="jymVt" />
     <node concept="3clFb_" id="2ev$9JFF8Wr" role="jymVt">
-      <property role="TrG5h" value="eqChildren" />
+      <property role="TrG5h" value="eqTerms" />
       <node concept="37vLTG" id="2ev$9JFF9OQ" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="2ev$9JFF9Wp" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="3uibUv" id="2ev$9JFF9Ok" role="3clF45">
-        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
       </node>
       <node concept="3Tm1VV" id="2ev$9JFF8Wu" role="1B3o_S" />
       <node concept="3clFbS" id="2ev$9JFF8Wv" role="3clF47">
         <node concept="3clFbF" id="2ev$9JFFamF" role="3cqZAp">
           <node concept="10QFUN" id="2ev$9JFFamH" role="3clFbG">
             <node concept="3uibUv" id="2ev$9JFFamI" role="10QFUM">
-              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
             </node>
             <node concept="2YIFZM" id="2ev$9JFFamJ" role="10QFUP">
               <ref role="37wK5l" to="n4y8:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
@@ -1413,7 +1413,7 @@
       <node concept="37vLTG" id="2ev$9JFFaOy" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="2ev$9JFFaOz" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="3uibUv" id="2ev$9JFFaO_" role="3clF45">
@@ -1490,14 +1490,14 @@
                     <ref role="3cqZAo" node="2ev$9JFBNlS" resolve="mock" />
                   </node>
                   <node concept="liA8E" id="2ev$9JFD_nP" role="2OqNvi">
-                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                     <node concept="1rXfSq" id="2ev$9JFEITF" role="37wK5m">
-                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyChildren" />
+                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyTerms" />
                     </node>
                     <node concept="10QFUN" id="2ev$9JFD_pV" role="37wK5m">
                       <node concept="10Q1$e" id="5cGCTtqzbda" role="10QFUM">
                         <node concept="3uibUv" id="5cGCTtqzaDx" role="10Q1$1">
-                          <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+                          <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
                         </node>
                       </node>
                       <node concept="2YIFZM" id="2ev$9JFD_pX" role="10QFUP">
@@ -1552,10 +1552,10 @@
                 </node>
               </node>
               <node concept="liA8E" id="2ev$9JFD93F" role="2OqNvi">
-                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                 <node concept="10QFUN" id="2ev$9JFDJDT" role="37wK5m">
                   <node concept="3uibUv" id="5cGCTtqzhLw" role="10QFUM">
-                    <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+                    <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
                   </node>
                   <node concept="2YIFZM" id="2ev$9JFDJDP" role="10QFUP">
                     <ref role="37wK5l" to="n4y8:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
@@ -1573,7 +1573,7 @@
                 <node concept="10QFUN" id="2ev$9JFD96P" role="37wK5m">
                   <node concept="10Q1$e" id="5cGCTtqzi2F" role="10QFUM">
                     <node concept="3uibUv" id="5cGCTtqzhUK" role="10Q1$1">
-                      <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+                      <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
                     </node>
                   </node>
                   <node concept="2YIFZM" id="2ev$9JFD96R" role="10QFUP">
@@ -1685,9 +1685,9 @@
                     <ref role="3cqZAo" node="2ev$9JFDVC6" resolve="mock" />
                   </node>
                   <node concept="liA8E" id="2ev$9JFE1bP" role="2OqNvi">
-                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                     <node concept="1rXfSq" id="2ev$9JFEHGh" role="37wK5m">
-                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyChildren" />
+                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyTerms" />
                     </node>
                     <node concept="1rXfSq" id="2ev$9JFF3HG" role="37wK5m">
                       <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyTreePartArray" />
@@ -1768,9 +1768,9 @@
                 </node>
               </node>
               <node concept="liA8E" id="2ev$9JFDVCB" role="2OqNvi">
-                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                 <node concept="1rXfSq" id="2ev$9JFFcqm" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqChildren" />
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqTerms" />
                   <node concept="2OqwBi" id="2ev$9JFFc$r" role="37wK5m">
                     <node concept="37vLTw" id="2ev$9JFFcx8" role="2Oq$k0">
                       <ref role="3cqZAo" node="2ev$9JFDTTZ" resolve="tree" />
@@ -1982,9 +1982,9 @@
                     <ref role="3cqZAo" node="2ev$9JFFqmF" resolve="mock" />
                   </node>
                   <node concept="liA8E" id="2ev$9JFFqmO" role="2OqNvi">
-                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                     <node concept="1rXfSq" id="2ev$9JFFqmP" role="37wK5m">
-                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyChildren" />
+                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyTerms" />
                     </node>
                     <node concept="1rXfSq" id="2ev$9JFFqmQ" role="37wK5m">
                       <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyTreePartArray" />
@@ -2065,9 +2065,9 @@
                 </node>
               </node>
               <node concept="liA8E" id="2ev$9JFFqni" role="2OqNvi">
-                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                 <node concept="1rXfSq" id="2ev$9JFFqnj" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqChildren" />
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqTerms" />
                   <node concept="2OqwBi" id="2ev$9JFFqnk" role="37wK5m">
                     <node concept="37vLTw" id="2ev$9JFFqnl" role="2Oq$k0">
                       <ref role="3cqZAo" node="2ev$9JFFqmv" resolve="tree" />
@@ -2093,9 +2093,9 @@
                 </node>
               </node>
               <node concept="liA8E" id="2ev$9JFFBtY" role="2OqNvi">
-                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                 <node concept="1rXfSq" id="2ev$9JFFBtZ" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqChildren" />
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqTerms" />
                   <node concept="2OqwBi" id="2ev$9JFFBu0" role="37wK5m">
                     <node concept="37vLTw" id="2ev$9JFG3wU" role="2Oq$k0">
                       <ref role="3cqZAo" node="2ev$9JFG2bt" resolve="role" />
@@ -2121,9 +2121,9 @@
                 </node>
               </node>
               <node concept="liA8E" id="2ev$9JFG0cy" role="2OqNvi">
-                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkChild" />
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                 <node concept="1rXfSq" id="2ev$9JFG0cz" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqChildren" />
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqTerms" />
                   <node concept="2OqwBi" id="2ev$9JFG0c$" role="37wK5m">
                     <node concept="37vLTw" id="2ev$9JFG0c_" role="2Oq$k0">
                       <ref role="3cqZAo" node="2ev$9JFFqmp" resolve="child" />

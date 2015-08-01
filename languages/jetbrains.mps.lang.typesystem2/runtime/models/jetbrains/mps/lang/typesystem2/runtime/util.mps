@@ -1037,7 +1037,7 @@
     </node>
     <node concept="3clFb_" id="4peSo3CHzzR" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="walkChild" />
+      <property role="TrG5h" value="walkTerms" />
       <node concept="3uibUv" id="4peSo3CHzzS" role="3clF45">
         <ref role="3uigEE" to="ie8e:2q_78a95hAL" resolve="Action" />
       </node>
@@ -1049,7 +1049,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3CHzzY" role="3clF46">
-        <property role="TrG5h" value="children" />
+        <property role="TrG5h" value="arguments" />
         <node concept="10Q1$e" id="4peSo3CHzzZ" role="1tU5fm">
           <node concept="3uibUv" id="4peSo3CHz$0" role="10Q1$1">
             <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
@@ -1218,7 +1218,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3CHz$D" role="3clF46">
-        <property role="TrG5h" value="children" />
+        <property role="TrG5h" value="contents" />
         <node concept="3uibUv" id="4peSo3CHz$E" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3qUE_q" id="4peSo3CHz$F" role="11_B2D">
