@@ -16,36 +16,36 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static jetbrains.mps.unification.test.MockNode.*;
+import static jetbrains.mps.unification.test.MockTerm.*;
 
 /**
  * Created by fyodor on 10.06.2014.
  */
-public class MockTreeParser {
+public class MockTermsParser {
 
-    public static Collection<Node> parseAll(String str) {
+    public static Collection<Term> parseAll(String str) {
         return new RecursiveDescent().parse(str);
     }
 
-    public static Node parse(String str) {
-        List<Node> nodes = new RecursiveDescent().parse(str);
-        if (nodes.size() != 1) {
+    public static Term parse(String str) {
+        List<Term> terms = new RecursiveDescent().parse(str);
+        if (terms.size() != 1) {
             throw new IllegalArgumentException("expected single asTerm or asVar");
         }
-        return nodes.get(0);
+        return terms.get(0);
     }
 
-    public static Node parseTerm(String str) {
-        return (Node) parse(str);
+    public static Term parseTerm(String str) {
+        return parse(str);
     }
 
-    public static Node parseVar(String str) {
+    public static Term parseVar(String str) {
         return parse(str);
     }
 
@@ -54,19 +54,19 @@ public class MockTreeParser {
         private Token lastToken;
         private LinkedList<String> termsStack = new LinkedList<String>();
         private LinkedList<Integer> termLabelsStack = new LinkedList<Integer>();
-        private LinkedList<List<Node>> childrenStack = new LinkedList<List<Node>>();
+        private LinkedList<List<Term>> childrenStack = new LinkedList<List<Term>>();
         private int lastLabel = -1;
-        private Map<Integer, Node> termRefs = new HashMap<Integer, Node>();
+        private Map<Integer, Term> termRefs = new HashMap<Integer, Term>();
         // initialized on the parse finished
         private LookupHelper lookupHelper = new LookupHelper();
 
-        private List<Node> parse(String toParse) {
+        private List<Term> parse(String toParse) {
             parseNextToken(Token.START, null);
             loop(toParse);
             parseNextToken(Token.END, null);
             checkFinalState();
             checkAllRefsExist();
-            lookupHelper.setTermRefs(Collections.unmodifiableMap(new HashMap<Integer, Node>(termRefs)));
+            lookupHelper.setTermRefs(Collections.unmodifiableMap(new HashMap<Integer, Term>(termRefs)));
             return Collections.unmodifiableList(childrenStack.pop());
         }
 
@@ -93,7 +93,7 @@ public class MockTreeParser {
         private void parseNextToken(Token token, String value) {
             switch (token) {
                 case START:
-                    childrenStack.push(new ArrayList<Node>());
+                    childrenStack.push(new ArrayList<Term>());
                     break;
                 case END:
                     checkLastTokenOneOf(Token.TERM, Token.VAR, Token.VARREF, Token.RBRACE);
@@ -183,7 +183,7 @@ public class MockTreeParser {
         }
 
         private void checkAllRefsExist() {
-            for (Map.Entry<Integer, Node> e: termRefs.entrySet()) {
+            for (Map.Entry<Integer, Term> e: termRefs.entrySet()) {
                 if (e.getValue() == null) {
                     throw new ParseException("non-existing label '" + e.getKey() + "'");
                 }
@@ -199,7 +199,7 @@ public class MockTreeParser {
         private void emptyTerm() {
             String name = termsStack.pop();
             Integer label = termLabelsStack.pop();
-            Node newTerm = term(name);
+            Term newTerm = term(name);
             childrenStack.peek().add(newTerm);
             if (label != null) {
                 termRefs.put(label, newTerm);
@@ -207,14 +207,14 @@ public class MockTreeParser {
         }
 
         private void beginChildren(){
-            childrenStack.push(new ArrayList<Node>());
+            childrenStack.push(new ArrayList<Term>());
         }
 
         private void endChildren() {
-            List<Node> children = childrenStack.pop();
+            List<Term> children = childrenStack.pop();
             String name = termsStack.pop();
             Integer label = termLabelsStack.pop();
-            Node newTerm = term(name, children.toArray(new Node[children.size()]));
+            Term newTerm = term(name, children.toArray(new Term[children.size()]));
             childrenStack.peek().add(newTerm);
             if (label != null) {
                 termRefs.put(label, newTerm);
@@ -267,16 +267,16 @@ public class MockTreeParser {
     }
 
     private static class LookupHelper {
-        private Map<Integer, Node> termRefs;
+        private Map<Integer, Term> termRefs;
 
-        private void setTermRefs (Map<Integer, Node> termRefs) {
+        private void setTermRefs (Map<Integer, Term> termRefs) {
             this.termRefs = termRefs;
         }
 
         public TermLookup lookup(final int label) {
             return new TermLookup() {
                 @Override
-                public Node lookupTerm() {
+                public Term lookupTerm() {
                     if (termRefs == null) {
                         throw new IllegalStateException("call to uninitialized lookup");
                     }

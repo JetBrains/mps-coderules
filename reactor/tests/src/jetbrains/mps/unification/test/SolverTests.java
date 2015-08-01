@@ -16,15 +16,13 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
 import org.junit.Test;
 
 import static jetbrains.mps.unification.Substitution.FailureCause.*;
 import static jetbrains.mps.unification.test.AssertUnification.*;
-import static jetbrains.mps.unification.test.MockNode.ref;
-import static jetbrains.mps.unification.test.MockNode.term;
-import static jetbrains.mps.unification.test.MockNode.var;
-import static jetbrains.mps.unification.test.MockTreeParser.*;
+import static jetbrains.mps.unification.test.MockTerm.*;
+import static jetbrains.mps.unification.test.MockTermsParser.*;
 
 /**
  * Created by fyodor on 09.06.2014.
@@ -340,8 +338,8 @@ public class SolverTests {
 
     @Test
     public void testCyclicExt() throws Exception {
-        Node left = parse("@1 j{^1}");
-        Node right = term("j", term("j", ref(left)));
+        Term left = parse("@1 j{^1}");
+        Term right = term("j", term("j", ref(left)));
         assertUnifiesWithBindings(
                 left,
                 right

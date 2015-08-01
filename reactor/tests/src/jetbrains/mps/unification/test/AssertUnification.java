@@ -19,7 +19,7 @@ package jetbrains.mps.unification.test;
 import jetbrains.mps.unification.Substitution;
 import static jetbrains.mps.unification.Substitution.*;
 import jetbrains.mps.unification.Unification;
-import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
 
 import java.util.*;
 
@@ -39,7 +39,7 @@ public class AssertUnification {
         }
     };
 
-    public static Binding bind(Node v, Node n) {
+    public static Binding bind(Term v, Term n) {
         return new Binding(v, n);
     }
 
@@ -56,12 +56,12 @@ public class AssertUnification {
             Binding actb = actIt.next();
 
             assertEquals(expb.var(), actb.var());
-            assertEquivalent(expb.node(), actb.node());
+            assertEquivalent(expb.term(), actb.term());
         }
         if(expIt.hasNext() || actIt.hasNext()) throw new Exception("mismatched number of bindings");
     }
 
-    public static void assertUnifiesWithBindings(Node s, Node t, Substitution.Binding ... bindings) throws Exception{
+    public static void assertUnifiesWithBindings(Term s, Term t, Substitution.Binding ... bindings) throws Exception{
         Substitution subs = Unification.unify(s, t);
 
         assertTrue(subs.isSuccessful());
@@ -77,7 +77,7 @@ public class AssertUnification {
         assertSameBindings(subs.bindings(), subs2.bindings());
     }
 
-    public static void assertUnifiesWithBindingsAsymm(Node s, Node t, Substitution.Binding ... bindings) throws Exception{
+    public static void assertUnifiesWithBindingsAsymm(Term s, Term t, Substitution.Binding ... bindings) throws Exception{
         Substitution subs = Unification.unify(s, t);
 
         assertTrue(subs.isSuccessful());
@@ -88,7 +88,7 @@ public class AssertUnification {
                 subs.bindings());
     }
 
-    public static void assertUnificationFails(Node s, Node t) throws Exception {
+    public static void assertUnificationFails(Term s, Term t) throws Exception {
         Substitution subs1 = Unification.unify(s, t);
 
         assertFalse(subs1.isSuccessful());
@@ -98,7 +98,7 @@ public class AssertUnification {
         assertFalse(subs2.isSuccessful());
     }
 
-    public static void assertUnificationFails(Node s, Node t, FailureCause failureCause) throws Exception {
+    public static void assertUnificationFails(Term s, Term t, FailureCause failureCause) throws Exception {
         Substitution subs1 = Unification.unify(s, t);
 
         assertFalse(subs1.isSuccessful());

@@ -16,14 +16,14 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
 import org.junit.ComparisonFailure;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import static jetbrains.mps.unification.test.MockNode.*;
-import static jetbrains.mps.unification.test.MockTreeParser.*;
+import static jetbrains.mps.unification.test.MockTerm.*;
+import static jetbrains.mps.unification.test.MockTermsParser.*;
 import static jetbrains.mps.unification.test.AssertAll.*;
 import static jetbrains.mps.unification.test.AssertStructurallyEquivalent.*;
 
@@ -33,10 +33,10 @@ import static jetbrains.mps.unification.test.AssertStructurallyEquivalent.*;
 public class ParserTests {
 
     private static class LazyTermLookup implements TermLookup{
-        private Node term;
+        private Term term;
 
         @Override
-        public Node lookupTerm() {
+        public Term lookupTerm() {
             return term;
         }
     }
@@ -94,23 +94,23 @@ public class ParserTests {
     @Test
     public void testRef() throws Exception {
         LazyTermLookup termLookup = new LazyTermLookup();
-        Node a = termLookup.term = term("a", ref(termLookup));
+        Term a = termLookup.term = term("a", ref(termLookup));
         assertEquivalent(
                 parse("@1a{^1}"),
                 a);
 
-        Node b = term("b");
+        Term b = term("b");
         assertEquivalent(
                 parse("a{@1b ^1}"),
                 term("a", b, ref(b)));
 
-        Node c = term("c");
+        Term c = term("c");
         assertEquivalent(
                 parse("a{^1 @1c}"),
                 term("a", ref(c), c));
 
-        Node b1  = term("b");
-        Node b2  = term("b");
+        Term b1  = term("b");
+        Term b2  = term("b");
         assertEquivalent(
                 parse("a{@2b ^1 ^2 @1b}"),
                 term("a", b2, ref(b1), ref(b2), b1));
@@ -118,7 +118,7 @@ public class ParserTests {
 
     @Test
     public void testVarRef() throws Exception {
-        Node x = var("X");
+        Term x = var("X");
 
         assertEquivalent(
                 parse("^X"),
@@ -131,27 +131,27 @@ public class ParserTests {
 
     @Test(expected = ComparisonFailure.class)
     public void testNotEquivalent1() throws Exception {
-        Node d = term("d");
+        Term d = term("d");
         assertEquivalent(parse("a{^1 @1c}"),
                 term("a", ref(d), d));
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testUnclosedFail() {
         parse("a{b ");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testUnclosedFail2() {
         parse("a{X b");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testUnclosedFail3() {
         parse("a{{X b}");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testDoubleClosed() {
         parse("a{X b}}");
     }
@@ -166,32 +166,32 @@ public class ParserTests {
         parse("a b");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testEmptyFail() {
         parse("");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testEmptyChildrenFail() {
         parse("a{}");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testWrongStartFail() {
         parse("{a}");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testVarHasChilrenFail() {
         parse("X{a}");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testExtraSymbolFail() {
         parse("a}");
     }
 
-    @Test(expected = MockTreeParser.ParseException.class)
+    @Test(expected = MockTermsParser.ParseException.class)
     public void testNonExistingRefFail() {
         parse("a{b ^1}");
     }

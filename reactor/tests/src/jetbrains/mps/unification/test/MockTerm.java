@@ -16,36 +16,36 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
 
 import java.util.*;
 
 /**
  * Created by fyodor on 09.06.2014.
  */
-public abstract class MockNode implements Node {
+public abstract class MockTerm implements Term {
 
-    public MockNode() {
+    public MockTerm() {
     }
 
-    public static Node term(Object sym, Node ... children) {
-        return new MockTerm(sym, children);
+    public static Term term(Object sym, Term... children) {
+        return new MockFun(sym, children);
     }
 
-    public static Node var(String name) {
+    public static Term var(String name) {
         return new MockVar(name);
     }
 
-    public static Node ref(Node term) {
+    public static Term ref(Term term) {
         return new MockRef(term);
     }
 
-    public static Node ref(TermLookup termLookup) {
+    public static Term ref(TermLookup termLookup) {
         return new MockRef(termLookup);
     }
 
     interface TermLookup {
-        Node lookupTerm();
+        Term lookupTerm();
     }
 
     @Override
@@ -54,27 +54,27 @@ public abstract class MockNode implements Node {
     }
 
     @Override
-    public Collection<? extends Node> children() {
+    public Collection<? extends Term> children() {
         return null;
     }
 
     @Override
-    public Node get() {
+    public Term get() {
         return this;
     }
 
     @Override
-    public int compareTo(Node node) {
-        return String.valueOf(symbol()).compareTo(String.valueOf(node.symbol()));
+    public int compareTo(Term term) {
+        return String.valueOf(symbol()).compareTo(String.valueOf(term.symbol()));
     }
 
-    public static class MockTerm extends MockNode {
-        private List<Node> myChildren;
+    public static class MockFun extends MockTerm {
+        private List<Term> myArgs;
         private Object mySymbol;
 
-        public MockTerm(Object symbol, Node... children) {
+        public MockFun(Object symbol, Term... children) {
             mySymbol = symbol;
-            this.myChildren = Arrays.asList(children);
+            this.myArgs = Arrays.asList(children);
         }
 
         @Override
@@ -83,8 +83,8 @@ public abstract class MockNode implements Node {
         }
 
         @Override
-        public Collection<Node> children() {
-            return Collections.unmodifiableList(myChildren);
+        public Collection<Term> children() {
+            return Collections.unmodifiableList(myArgs);
         }
 
         @Override
@@ -95,10 +95,10 @@ public abstract class MockNode implements Node {
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder(String.valueOf(mySymbol));
-            if (!myChildren.isEmpty()) {
+            if (!myArgs.isEmpty()) {
                 sb.append("{");
                 String sep = "";
-                for (Node child : myChildren) {
+                for (Term child : myArgs) {
                     sb.append(sep); sep = " ";
                     sb.append(child.toString());
                 }
@@ -110,17 +110,17 @@ public abstract class MockNode implements Node {
         @Override
         public int hashCode() {
             int hash = 43 + mySymbol.hashCode();
-            return hash*19 + myChildren.hashCode();
+            return hash*19 + myArgs.hashCode();
         }
 
         @Override
         public boolean equals(Object o) {
-            return ((MockTerm)o).mySymbol.equals(mySymbol) &&
-                   ((MockTerm)o).myChildren.equals(myChildren);
+            return ((MockFun)o).mySymbol.equals(mySymbol) &&
+                   ((MockFun)o).myArgs.equals(myArgs);
         }
     }
 
-    public static class MockVar extends MockNode {
+    public static class MockVar extends MockTerm {
         private String myName;
 
         public MockVar(String name) {
@@ -154,12 +154,12 @@ public abstract class MockNode implements Node {
 
     }
 
-    public static class MockRef extends MockNode  {
+    public static class MockRef extends MockTerm {
 
-        private Node term;
+        private Term term;
         private TermLookup termLookup;
 
-        public MockRef(Node term) {
+        public MockRef(Term term) {
             this.term = term;
         }
 
@@ -168,7 +168,7 @@ public abstract class MockNode implements Node {
         }
 
         @Override
-        public final Node get() {
+        public final Term get() {
             if (term == null && termLookup != null) {
                 term = termLookup.lookupTerm();
                 termLookup = null;
@@ -183,7 +183,7 @@ public abstract class MockNode implements Node {
 
         @Override
         public String toString() {
-            Node t = get();
+            Term t = get();
             return t != null ? "^"+ t.symbol() : "^<NULL>";
         }
 
@@ -192,12 +192,12 @@ public abstract class MockNode implements Node {
             if (that == this) return true;
             if (that == null || getClass() != that.getClass()) return false;
 
-            return get() == ((MockNode) that).get();
+            return get() == ((MockTerm) that).get();
         }
 
         @Override
         public int hashCode() {
-            Node t = get();
+            Term t = get();
             return t != null ? System.identityHashCode(t) : 0;
         }
     }

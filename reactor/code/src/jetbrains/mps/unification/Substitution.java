@@ -57,20 +57,20 @@ public class Substitution {
     }
 
     public static class Binding {
-        private Node myVar;
-        private Node myNode;
+        private Term myVar;
+        private Term myTerm;
 
-        public Binding(Node myVar, Node myNode) {
+        public Binding(Term myVar, Term myTerm) {
             this.myVar = myVar;
-            this.myNode = myNode;
+            this.myTerm = myTerm;
         }
 
-        public Node var() {
+        public Term var() {
             return myVar;
         }
 
-        public Node node() {
-            return myNode;
+        public Term term() {
+            return myTerm;
         }
     }
 

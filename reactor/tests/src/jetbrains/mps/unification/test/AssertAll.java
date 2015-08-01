@@ -16,7 +16,7 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -28,8 +28,8 @@ import static org.junit.Assert.assertEquals;
  */
 public class AssertAll {
 
-    public static void assertEqualsAll(Collection<Node> parsed, Node ... nodes) {
-        assertEquals(parsed, Arrays.asList(nodes));
+    public static void assertEqualsAll(Collection<Term> parsed, Term... terms) {
+        assertEquals(parsed, Arrays.asList(terms));
     }
 
 }

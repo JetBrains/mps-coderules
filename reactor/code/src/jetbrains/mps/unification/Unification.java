@@ -28,7 +28,7 @@ import java.util.*;
  */
 public class Unification {
 
-    public static Substitution unify(Node a, Node b) {
+    public static Substitution unify(Term a, Term b) {
         UnionFindTermGraphUnifier dagUnifier = new UnionFindTermGraphUnifier();
 
         return dagUnifier.unify(a, b);
@@ -72,14 +72,14 @@ public class Unification {
             String sep = "";
             for (Binding b : myBindings) {
                 sb.append(sep); sep = ", ";
-                sb.append(b.var()).append(" -> ").append(b.node());
+                sb.append(b.var()).append(" -> ").append(b.term());
             }
             return sb.append("]").toString();
         }
 
-        protected void addBinding(Node v, Node n) {
+        protected void addBinding(Term v, Term n) {
             Binding bng;
-            if (n.is(Node.Kind.VAR) && n.compareTo(n) < 0) {
+            if (n.is(Term.Kind.VAR) && n.compareTo(n) < 0) {
                 bng = new Binding(n, v);
             }
             else {

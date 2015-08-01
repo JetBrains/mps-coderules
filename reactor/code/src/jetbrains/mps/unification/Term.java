@@ -26,17 +26,15 @@ import java.util.Collection;
  * A term must implement {@link java.lang.Comparable}, but this is only really used for
  * comparing the variables.
  *
- * Soon to be renamed to Term.
- *
  * @author Fedor Isakov
  */
-public interface Node extends Comparable<Node> {
+public interface Term extends Comparable<Term> {
 
     Object symbol();
 
-    Collection<? extends Node> children();
+    Collection<? extends Term> children();
 
-    Node get();
+    Term get();
 
     boolean is(Kind kind);
 

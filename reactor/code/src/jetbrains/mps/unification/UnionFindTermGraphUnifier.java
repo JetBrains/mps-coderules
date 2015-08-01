@@ -21,7 +21,7 @@ import jetbrains.mps.unification.Unification.SuccessfulSubstitution;
 
 import java.util.*;
 
-import static jetbrains.mps.unification.Node.Kind.*;
+import static jetbrains.mps.unification.Term.Kind.*;
 import static jetbrains.mps.unification.Substitution.FailureCause.*;
 import static jetbrains.mps.unification.Unification.*;
 
@@ -53,7 +53,7 @@ public class UnionFindTermGraphUnifier {
 
     private FailureCause myFailureCause = UKNOWN;
 
-    public Substitution unify(Node a, Node b) {
+    public Substitution unify(Term a, Term b) {
         if (!unifClosure(a, b)) {
             return failedSubstitution(myFailureCause);
         }
@@ -61,14 +61,14 @@ public class UnionFindTermGraphUnifier {
         return findSolution(a);
     }
 
-    private boolean unifClosure(Node s, Node t) {
+    private boolean unifClosure(Term s, Term t) {
         s = find(s);
         t = find(t);
 
         if (s == t) return true;
 
-        Node zs = getSchema(s);
-        Node zt = getSchema(t);
+        Term zs = getSchema(s);
+        Term zt = getSchema(t);
 
         // a VAR always matches another node
         if(zs.is(VAR) || zt.is(VAR)) {
@@ -77,8 +77,8 @@ public class UnionFindTermGraphUnifier {
         }
 
         // dereference REF nodes
-        Node ds = zs.is(REF) ? zs.get() : zs;
-        Node dt = zt.is(REF) ? zt.get() : zt;
+        Term ds = zs.is(REF) ? zs.get() : zs;
+        Term dt = zt.is(REF) ? zt.get() : zt;
 
         if (ds.is(VAR)) {
             if (s != find(ds)) {
@@ -119,8 +119,8 @@ public class UnionFindTermGraphUnifier {
                 union(s, t);
             }
 
-            Iterator<? extends Node> scit = zs.children().iterator();
-            Iterator<? extends Node> tcit = zt.children().iterator();
+            Iterator<? extends Term> scit = zs.children().iterator();
+            Iterator<? extends Term> tcit = zt.children().iterator();
             while (scit.hasNext() && tcit.hasNext()) {
                 if (!unifClosure(scit.next(), tcit.next())) {
                     return false; // children mismatch
@@ -136,18 +136,18 @@ public class UnionFindTermGraphUnifier {
         }
     }
 
-    private void union(Node s, Node t) {
+    private void union(Term s, Term t) {
         int ssize = getSize(s);
         int tsize = getSize(t);
 
         // keep the order: the smaller class gets inserted under the bigger one
         if (ssize < tsize) {
-            Node tmp = t; t = s; s = tmp;
+            Term tmp = t; t = s; s = tmp;
         }
         else if (ssize == tsize && s.is(VAR) && t.is(VAR)) {
             // ensure proper order of variables in the substitution
             if(t.compareTo(s) < 0) {
-                Node tmp = t; t = s; s = tmp;
+                Term tmp = t; t = s; s = tmp;
             }
         }
 
@@ -156,8 +156,8 @@ public class UnionFindTermGraphUnifier {
         setSize(s, ssize + tsize);
         appendVars(s, getVars(t));
 
-        Node zs = getSchema(s);
-        Node zt = getSchema(t);
+        Term zs = getSchema(s);
+        Term zt = getSchema(t);
         if (zs.is(VAR)  || (zs.is(REF) && zs.get().is(VAR) && !zt.is(VAR)))
         {
             setSchema(s, zt);
@@ -166,33 +166,33 @@ public class UnionFindTermGraphUnifier {
         setRepresentative(t, s);
     }
 
-    private Node find(Node s) {
-        Node node = getRepresentative(s);
-        if (node == s) {
+    private Term find(Term s) {
+        Term term = getRepresentative(s);
+        if (term == s) {
             return s;
         }
 
         // find representative and compress paths
 
-        List<Node> path = new ArrayList<Node>();
-        path.add(node);
-        for (Node t; (t = getRepresentative(node)) != node; ) {
+        List<Term> path = new ArrayList<Term>();
+        path.add(term);
+        for (Term t; (t = getRepresentative(term)) != term; ) {
             path.add(t);
-            node = t;
+            term = t;
         }
-        for (Node p : path) {
-            setRepresentative(p, node);
+        for (Term p : path) {
+            setRepresentative(p, term);
         }
 
-        return node;
+        return term;
     }
 
-    private Substitution findSolution(Node s) {
+    private Substitution findSolution(Term s) {
         return findSolution(s, EMPTY_SUBSTITUTION);
     }
 
-    private Substitution findSolution(Node s, Substitution substitution) {
-        Node z = getSchema(find(s));
+    private Substitution findSolution(Term s, Substitution substitution) {
+        Term z = getSchema(find(s));
 
         if (isAcyclic(z)) {
             return substitution; // not part of a cycle
@@ -204,7 +204,7 @@ public class UnionFindTermGraphUnifier {
         if (z.is(FUN)) {
             setVisited(z, true);
 
-            for (Node c : z.children()) {
+            for (Term c : z.children()) {
                 substitution = findSolution(c, substitution);
 
                 if (!substitution.isSuccessful()) {
@@ -222,9 +222,9 @@ public class UnionFindTermGraphUnifier {
         setAcyclic(z, true);
 
         SuccessfulSubstitution success = new SuccessfulSubstitution(substitution);
-        for (Node var : getVars(find(z))) {
+        for (Term var : getVars(find(z))) {
             if (var != z) {
-                Node val = z.is(REF) ? z.get() : z;
+                Term val = z.is(REF) ? z.get() : z;
 
                 // Keep the order of variables within a binding
                 if (val.is(VAR) && val.compareTo(var) < 0) {
@@ -240,65 +240,65 @@ public class UnionFindTermGraphUnifier {
     }
 
 
-    private int getSize(Node n) {
+    private int getSize(Term n) {
         if (!hasData(n)) return 1;
         return getData(n).mySize;
     }
 
-    private void setSize(Node n, int size) {
+    private void setSize(Term n, int size) {
         getData(n).mySize = size;
     }
 
-    private Node getRepresentative(Node n) {
+    private Term getRepresentative(Term n) {
         if (!hasData(n)) return n;
         return getData(n).myClass;
     }
 
-    private void setRepresentative(Node n, Node rep) {
+    private void setRepresentative(Term n, Term rep) {
         getData(n).myClass = rep;
     }
 
-    private Node getSchema(Node n) {
+    private Term getSchema(Term n) {
         if (!hasData(n)) return n;
         return getData(n).mySchema;
     }
 
-    private void setSchema(Node n, Node schema) {
+    private void setSchema(Term n, Term schema) {
         getData(n).mySchema = schema;
     }
 
-    private List<Node> getVars(Node n) {
+    private List<Term> getVars(Term n) {
         return hasData(n) ? getData(n).myVars : singletonVar(n);
     }
 
-    private void appendVars(Node n, List<Node> vars) {
-        List<Node> newVars = new ArrayList<Node>(getVars(n));
+    private void appendVars(Term n, List<Term> vars) {
+        List<Term> newVars = new ArrayList<Term>(getVars(n));
         newVars.addAll(vars);
         getData(n).myVars = newVars;
     }
 
-    private boolean isAcyclic(Node n) {
+    private boolean isAcyclic(Term n) {
         return hasData(n) && getData(n).myAcyclic;
     }
 
-    private void setAcyclic(Node n, boolean acyclic) {
+    private void setAcyclic(Term n, boolean acyclic) {
         getData(n).myAcyclic = acyclic;
     }
 
-    private boolean isVisited(Node n) {
+    private boolean isVisited(Term n) {
         return hasData(n) && getData(n).myVisited;
     }
 
-    private void setVisited(Node n, boolean visited) {
+    private void setVisited(Term n, boolean visited) {
         getData(n).myVisited = visited;
     }
 
-    private boolean hasData(Node n) {
+    private boolean hasData(Term n) {
         Object key = n.is(VAR) ? String.valueOf(n.symbol()).intern() : n;
         return myData.containsKey(key);
     }
 
-    private Data getData(Node n) {
+    private Data getData(Term n) {
         Object key = n.is(VAR) ? String.valueOf(n.symbol()).intern() : n;
         if (myData.containsKey(key)) return myData.get(key);
         Data data = new Data(n);
@@ -310,10 +310,10 @@ public class UnionFindTermGraphUnifier {
         return a == null ? b == null : a.equals(b);
     }
 
-    private static List<Node> singletonVar(Node n) {
+    private static List<Term> singletonVar(Term n) {
         return n.is(VAR) ?
             Collections.singletonList(n) :
-            Collections.<Node>emptyList();
+            Collections.<Term>emptyList();
     }
 
     private static class Data {
@@ -322,11 +322,11 @@ public class UnionFindTermGraphUnifier {
         boolean myVisited = false;
         boolean myReferenced = false;
 
-        List<Node> myVars;
-        Node myClass;
-        Node mySchema;
+        List<Term> myVars;
+        Term myClass;
+        Term mySchema;
 
-        Data(Node n) {
+        Data(Term n) {
             myClass = n;
             mySchema = n;
             myVars = singletonVar(n);

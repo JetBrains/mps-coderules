@@ -16,7 +16,7 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.unification.Node;
+import jetbrains.mps.unification.Term;
 import static org.junit.Assert.*;
 
 import java.util.*;
@@ -26,24 +26,24 @@ import java.util.*;
  */
 public class AssertStructurallyEquivalent {
 
-    public static void assertEquivalent(Node a, Node b) throws Exception {
+    public static void assertEquivalent(Term a, Term b) throws Exception {
 
         final Signature signature = new Signature();
         signature.setWalkers(
                 // first pass
-                new NodeWalker(
-                    new NodeVisitor<Node>(Node.Kind.FUN) {
+                new TermWalker(
+                    new TermVisitor<Term>(Term.Kind.FUN) {
                         @Override
-                        public Collection<? extends Node> visit(Node term) throws Exception {
+                        public Collection<? extends Term> visit(Term term) throws Exception {
                             signature.label(term);
                             return term.children();
                         }
                     }
                         ,
-                new NodeVisitor<Node>(Node.Kind.REF) {
+                new TermVisitor<Term>(Term.Kind.REF) {
                     @Override
-                    public Collection<? extends Node> visit(Node ref) throws Exception {
-                        if (ref.get().is(Node.Kind.FUN)) {
+                    public Collection<? extends Term> visit(Term ref) throws Exception {
+                        if (ref.get().is(Term.Kind.FUN)) {
                             return Collections.singletonList(ref.get());
                         }
                         return Collections.emptyList();
@@ -51,24 +51,24 @@ public class AssertStructurallyEquivalent {
                 }
                 ),
                 // second pass
-                new NodeWalker(
-                    new NodeVisitor<Node>(Node.Kind.FUN) {
+                new TermWalker(
+                    new TermVisitor<Term>(Term.Kind.FUN) {
                         @Override
-                        public Collection<? extends Node> visit(Node term) throws Exception {
+                        public Collection<? extends Term> visit(Term term) throws Exception {
                             signature.appendSignature("@").append(signature.getLabel(term)).append(term.symbol());
                             return term.children();
                         }
                     },
-                    new NodeVisitor<Node>(Node.Kind.VAR) {
+                    new TermVisitor<Term>(Term.Kind.VAR) {
                         @Override
-                        public Collection<? extends Node> visit(Node var) throws Exception {
+                        public Collection<? extends Term> visit(Term var) throws Exception {
                             signature.appendSignature("$").append(var.symbol());
                             return Collections.emptyList();
                         }
-                    }, new NodeVisitor<Node>(Node.Kind.REF) {
+                    }, new TermVisitor<Term>(Term.Kind.REF) {
                         @Override
-                        public Collection<? extends Node> visit(Node ref) throws Exception {
-                            if (ref.get().is(Node.Kind.FUN)) {
+                        public Collection<? extends Term> visit(Term ref) throws Exception {
+                            if (ref.get().is(Term.Kind.FUN)) {
                                 Integer label = signature.getLabel(ref.get());
                                 assertNotNull("not found label for '" + ref.get() + "'", label);
                                 if (signature.isTopLevel(ref.get())) {
@@ -79,7 +79,7 @@ public class AssertStructurallyEquivalent {
                                     return Collections.singletonList(ref.get());
                                 }
                             }
-                            else if (ref.get().is(Node.Kind.VAR)) {
+                            else if (ref.get().is(Term.Kind.VAR)) {
                                 signature.appendSignature("^").append(ref.get().symbol());
                                 return Collections.emptyList();
                             }
@@ -100,30 +100,30 @@ public class AssertStructurallyEquivalent {
 
     private static class Signature {
 
-        private NodeWalker[] walkers;
+        private TermWalker[] walkers;
 
-        private IdentityHashMap<Node, Integer> labels = new IdentityHashMap<Node, Integer>();
+        private IdentityHashMap<Term, Integer> labels = new IdentityHashMap<Term, Integer>();
         private int label = 1;
         private StringBuilder signature = new StringBuilder();
 
-        protected void label(Node node) {
-            labels.put(node, label++);
+        protected void label(Term term) {
+            labels.put(term, label++);
         }
 
-        protected Integer getLabel(Node node) {
-            return labels.get(node);
+        protected Integer getLabel(Term term) {
+            return labels.get(term);
         }
 
-        protected boolean isTopLevel(Node node) { return labels.get(node) == 1; }
+        protected boolean isTopLevel(Term term) { return labels.get(term) == 1; }
 
         protected StringBuilder appendSignature(String str) {
             return signature.append(str);
         }
 
-        public String getSignature (Node node) throws Exception {
+        public String getSignature (Term term) throws Exception {
             reset();
-            for (NodeWalker walker : walkers) {
-                walker.walk(node);
+            for (TermWalker walker : walkers) {
+                walker.walk(term);
             }
             return signature.toString();
         }
@@ -134,51 +134,51 @@ public class AssertStructurallyEquivalent {
             signature.setLength(0);
         }
 
-        protected void setWalkers(NodeWalker ... walkers) {
+        protected void setWalkers(TermWalker... walkers) {
             this.walkers = walkers;
         }
     }
 
-    private static abstract class NodeVisitor <T extends Node> {
+    private static abstract class TermVisitor<T extends Term> {
 
-        private Node.Kind kind;
+        private Term.Kind kind;
 
-        public NodeVisitor(Node.Kind kind) {
+        public TermVisitor(Term.Kind kind) {
             this.kind = kind;
         }
 
-        public Node.Kind applicableTo() {
+        public Term.Kind applicableTo() {
             return kind;
         }
 
 
 
-        public abstract Collection<? extends Node> visit(T t) throws Exception ;
+        public abstract Collection<? extends Term> visit(T t) throws Exception ;
 
     }
 
-    private static class NodeWalker {
+    private static class TermWalker {
 
         private static Object SINGLETON = new Object();
 
-        private Map<Node.Kind, NodeVisitor<? extends Node>> visitorMap = new HashMap<Node.Kind, NodeVisitor<? extends Node>>();
+        private Map<Term.Kind, TermVisitor<? extends Term>> visitorMap = new HashMap<Term.Kind, TermVisitor<? extends Term>>();
 
-        public NodeWalker(NodeVisitor<? extends Node>... visitors) {
-            for (NodeVisitor<? extends Node> visitor : visitors) {
+        public TermWalker(TermVisitor<? extends Term>... visitors) {
+            for (TermVisitor<? extends Term> visitor : visitors) {
                 visitorMap.put(visitor.applicableTo(), visitor);
             }
         }
 
-        public void walk(Node node) throws Exception {
-            walk(node, new IdentityHashMap<Node, Object>());
+        public void walk(Term term) throws Exception {
+            walk(term, new IdentityHashMap<Term, Object>());
         }
 
-        private void walk(Node node, Map<Node, Object> visited) throws Exception {
-            if (node.is(Node.Kind.FUN)) {
-                visited.put(node, SINGLETON);
+        private void walk(Term term, Map<Term, Object> visited) throws Exception {
+            if (term.is(Term.Kind.FUN)) {
+                visited.put(term, SINGLETON);
             }
-            Collection<? extends Node> children = switchClass(node);
-            for (Node child : children) {
+            Collection<? extends Term> children = switchClass(term);
+            for (Term child : children) {
                 if (visited.containsKey(child)) {
                     continue;
                 }
@@ -186,11 +186,11 @@ public class AssertStructurallyEquivalent {
             }
         }
 
-        private Collection<? extends Node> switchClass(Node node) throws Exception {
-            for (Map.Entry<Node.Kind, NodeVisitor<? extends Node>> e : visitorMap.entrySet()) {
-                if (node.is(e.getKey())) {
-                    NodeVisitor<Node> value = (NodeVisitor<Node>) e.getValue();
-                    return value.visit(node);
+        private Collection<? extends Term> switchClass(Term term) throws Exception {
+            for (Map.Entry<Term.Kind, TermVisitor<? extends Term>> e : visitorMap.entrySet()) {
+                if (term.is(e.getKey())) {
+                    TermVisitor<Term> value = (TermVisitor<Term>) e.getValue();
+                    return value.visit(term);
                 }
             }
             return Collections.emptyList();
