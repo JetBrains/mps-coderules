@@ -120,9 +120,7 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
-        <child id="1214996921760" name="bound" index="3ztrMU" />
-      </concept>
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ" />
       <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
         <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
       </concept>
@@ -4066,7 +4064,6 @@
         <property role="TrG5h" value="tbr" />
         <node concept="3uibUv" id="5s497VqXKRk" role="1tU5fm">
           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qTvmN" id="5s497VqXL3u" role="11_B2D" />
         </node>
       </node>
       <node concept="3cqZAl" id="4sVJFklM9TQ" role="3clF45" />
@@ -4118,9 +4115,6 @@
           <property role="TrG5h" value="cb" />
           <node concept="3uibUv" id="4sVJFklM5Ps" role="1tU5fm">
             <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
-            <node concept="16syzq" id="4sVJFklM5Pt" role="11_B2D">
-              <ref role="16sUi3" node="4sVJFklM5Py" resolve="T" />
-            </node>
           </node>
         </node>
         <node concept="37vLTG" id="4sVJFklM5Pu" role="3clF46">
@@ -4128,15 +4122,7 @@
           <node concept="10Q1$e" id="4sVJFklM5Pv" role="1tU5fm">
             <node concept="3uibUv" id="4sVJFklM5Pw" role="10Q1$1">
               <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-              <node concept="3qTvmN" id="4sVJFklM5Px" role="11_B2D" />
             </node>
-          </node>
-        </node>
-        <node concept="16euLQ" id="4sVJFklM5Py" role="16eVyc">
-          <property role="TrG5h" value="T" />
-          <node concept="3uibUv" id="4sVJFklM5Pz" role="3ztrMU">
-            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-            <node concept="3qTvmN" id="4sVJFklM5P$" role="11_B2D" />
           </node>
         </node>
         <node concept="3clFbS" id="4sVJFklM5P_" role="3clF47">
@@ -4616,9 +4602,6 @@
           <property role="TrG5h" value="listb" />
           <node concept="3uibUv" id="4sVJFklM5Q7" role="1tU5fm">
             <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
-            <node concept="16syzq" id="4sVJFklM5Q8" role="11_B2D">
-              <ref role="16sUi3" node="4sVJFklM5Qe" resolve="T" />
-            </node>
           </node>
         </node>
         <node concept="37vLTG" id="4sVJFklM5Q9" role="3clF46">
@@ -4628,16 +4611,8 @@
             <node concept="3qUE_q" id="4sVJFklM5Qb" role="11_B2D">
               <node concept="3uibUv" id="4sVJFklM5Qc" role="3qUE_r">
                 <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-                <node concept="3qTvmN" id="4sVJFklM5Qd" role="11_B2D" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="16euLQ" id="4sVJFklM5Qe" role="16eVyc">
-          <property role="TrG5h" value="T" />
-          <node concept="3uibUv" id="4sVJFklM5Qf" role="3ztrMU">
-            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-            <node concept="3qTvmN" id="4sVJFklM5Qg" role="11_B2D" />
           </node>
         </node>
         <node concept="3clFbS" id="4sVJFklM5Qh" role="3clF47">

@@ -97,9 +97,7 @@
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
-        <child id="1214996921760" name="bound" index="3ztrMU" />
-      </concept>
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ" />
       <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
         <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
       </concept>
@@ -785,7 +783,6 @@
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="4peSo3CHBGl" role="1tU5fm">
           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qTvmN" id="4peSo3CIumo" role="11_B2D" />
         </node>
       </node>
       <node concept="3clFbS" id="4peSo3CHB5z" role="3clF47">
@@ -842,7 +839,6 @@
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="4peSo3D04j9" role="1tU5fm">
           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qTvmN" id="4peSo3D04ja" role="11_B2D" />
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3D075N" role="3clF46">
@@ -903,7 +899,6 @@
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="4peSo3CIJRQ" role="1tU5fm">
           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qTvmN" id="4peSo3CIJRR" role="11_B2D" />
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3D1wUl" role="3clF46">
@@ -1051,9 +1046,6 @@
         <property role="TrG5h" value="cb" />
         <node concept="3uibUv" id="4peSo3CHzzW" role="1tU5fm">
           <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
-          <node concept="16syzq" id="4peSo3CHzzX" role="11_B2D">
-            <ref role="16sUi3" node="4peSo3CHz$2" resolve="T" />
-          </node>
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3CHzzY" role="3clF46">
@@ -1061,15 +1053,7 @@
         <node concept="10Q1$e" id="4peSo3CHzzZ" role="1tU5fm">
           <node concept="3uibUv" id="4peSo3CHz$0" role="10Q1$1">
             <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-            <node concept="3qTvmN" id="4peSo3CHz$1" role="11_B2D" />
           </node>
-        </node>
-      </node>
-      <node concept="16euLQ" id="4peSo3CHz$2" role="16eVyc">
-        <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="4peSo3CHz$3" role="3ztrMU">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qTvmN" id="4peSo3CHz$4" role="11_B2D" />
         </node>
       </node>
       <node concept="3clFbS" id="4peSo3CHz$5" role="3clF47">
@@ -1231,9 +1215,6 @@
         <property role="TrG5h" value="listb" />
         <node concept="3uibUv" id="4peSo3CHz$B" role="1tU5fm">
           <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
-          <node concept="16syzq" id="4peSo3CHz$C" role="11_B2D">
-            <ref role="16sUi3" node="4peSo3CHz$I" resolve="T" />
-          </node>
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3CHz$D" role="3clF46">
@@ -1243,16 +1224,8 @@
           <node concept="3qUE_q" id="4peSo3CHz$F" role="11_B2D">
             <node concept="3uibUv" id="4peSo3CHz$G" role="3qUE_r">
               <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-              <node concept="3qTvmN" id="4peSo3CHz$H" role="11_B2D" />
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="16euLQ" id="4peSo3CHz$I" role="16eVyc">
-        <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="4peSo3CHz$J" role="3ztrMU">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qTvmN" id="4peSo3CHz$K" role="11_B2D" />
         </node>
       </node>
       <node concept="3clFbS" id="4peSo3CHz$L" role="3clF47">

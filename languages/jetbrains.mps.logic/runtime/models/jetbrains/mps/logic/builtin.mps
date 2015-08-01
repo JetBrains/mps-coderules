@@ -142,9 +142,6 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
-      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
-        <child id="1171903916107" name="bound" index="3qUE_r" />
-      </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -250,7 +247,6 @@
       <property role="TrG5h" value="asTreePart" />
       <node concept="3uibUv" id="7jC45Kci98f" role="3clF45">
         <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-        <node concept="3qTvmN" id="7jC45Kci98g" role="11_B2D" />
       </node>
       <node concept="3Tm1VV" id="7jC45Kci98h" role="1B3o_S" />
       <node concept="3clFbS" id="7jC45Kci98i" role="3clF47" />
@@ -1071,7 +1067,6 @@
       <node concept="10Q1$e" id="677NV565VLO" role="3clF45">
         <node concept="3uibUv" id="677NV565VLD" role="10Q1$1">
           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qTvmN" id="677NV565VMh" role="11_B2D" />
         </node>
       </node>
       <node concept="3Tm1VV" id="677NV565VC5" role="1B3o_S" />
@@ -1082,7 +1077,6 @@
             <node concept="10Q1$e" id="677NV565Z2E" role="1tU5fm">
               <node concept="3uibUv" id="677NV565Z2H" role="10Q1$1">
                 <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-                <node concept="3qTvmN" id="677NV565Z7u" role="11_B2D" />
               </node>
             </node>
             <node concept="2ShNRf" id="677NV565Z2O" role="33vP2m">
@@ -1242,11 +1236,6 @@
                             <property role="TrG5h" value="root" />
                             <node concept="3uibUv" id="4peSo3CLYi8" role="1tU5fm">
                               <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-                              <node concept="3qUE_q" id="4peSo3CLYi9" role="11_B2D">
-                                <node concept="3uibUv" id="573vQv1py55" role="3qUE_r">
-                                  <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
-                                </node>
-                              </node>
                             </node>
                           </node>
                           <node concept="3uibUv" id="4peSo3CLYib" role="3clF45">
@@ -1378,11 +1367,6 @@
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="1bm7a6FhRBF" role="1tU5fm">
           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qUE_q" id="1bm7a6FklL$" role="11_B2D">
-            <node concept="3uibUv" id="573vQv1py8l" role="3qUE_r">
-              <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
-            </node>
-          </node>
         </node>
       </node>
       <node concept="3uibUv" id="4peSo3CLatH" role="3clF45">
@@ -1418,11 +1402,6 @@
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="4peSo3CLb7v" role="1tU5fm">
           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
-          <node concept="3qUE_q" id="4peSo3CLb7w" role="11_B2D">
-            <node concept="3uibUv" id="573vQv1pygk" role="3qUE_r">
-              <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
-            </node>
-          </node>
         </node>
       </node>
       <node concept="3uibUv" id="4peSo3CLb5N" role="3clF45">
