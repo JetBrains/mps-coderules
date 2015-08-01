@@ -8,11 +8,11 @@
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
-    <import index="w2rx" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" />
-    <import index="jfki" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification.tree/jetbrains.mps.unification@java_stub)" />
+    <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
+    <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.unification.tree/)" />
     <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="9sk9" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#annotations(jetbrains.mps.jchr.runtime/annotations@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="f8dg" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:annotations(jetbrains.mps.jchr.runtime/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -214,7 +214,7 @@
       <node concept="37vLTG" id="60B5zVEZPI_" role="3clF46">
         <property role="TrG5h" value="logical" />
         <node concept="3uibUv" id="60B5zVF0xHu" role="1tU5fm">
-          <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+          <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
           <node concept="3qTvmN" id="60B5zVF0$iI" role="11_B2D" />
         </node>
       </node>
@@ -222,9 +222,9 @@
       <node concept="3Tm1VV" id="60B5zVEZPu8" role="1B3o_S" />
       <node concept="3clFbS" id="60B5zVEZPu9" role="3clF47" />
       <node concept="2AHcQZ" id="3HJTsBn4xCk" role="2AJF6D">
-        <ref role="2AI5Lk" to="9sk9:~JCHR_Asks" resolve="JCHR_Asks" />
+        <ref role="2AI5Lk" to="f8dg:~JCHR_Asks" resolve="JCHR_Asks" />
         <node concept="2B6LJw" id="3HJTsBn4xCl" role="2B76xF">
-          <ref role="2B6OnR" to="9sk9:~JCHR_Asks.value()" resolve="value" />
+          <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="37vLTw" id="5i7izgNdCLB" role="2B70Vg">
             <ref role="3cqZAo" node="5i7izgNdCcB" resolve="LOGICAL" />
           </node>
@@ -237,30 +237,30 @@
       <ref role="3uigEE" to="bspi:6Kcfpq7AYBh" resolve="Queryable" />
     </node>
     <node concept="2AHcQZ" id="3HJTsBn4BXb" role="2AJF6D">
-      <ref role="2AI5Lk" to="9sk9:~JCHR_Constraints" resolve="JCHR_Constraints" />
+      <ref role="2AI5Lk" to="f8dg:~JCHR_Constraints" resolve="JCHR_Constraints" />
       <node concept="2B6LJw" id="3HJTsBn4BXc" role="2B76xF">
-        <ref role="2B6OnR" to="9sk9:~JCHR_Constraints.value()" resolve="value" />
+        <ref role="2B6OnR" to="f8dg:~JCHR_Constraints.value()" resolve="value" />
         <node concept="2BsdOp" id="3HJTsBn4BXd" role="2B70Vg">
           <node concept="2AHcQZ" id="3HJTsBn4BXe" role="2BsfMF">
-            <ref role="2AI5Lk" to="9sk9:~JCHR_Constraint" resolve="JCHR_Constraint" />
+            <ref role="2AI5Lk" to="f8dg:~JCHR_Constraint" resolve="JCHR_Constraint" />
             <node concept="2B6LJw" id="3HJTsBn4BXf" role="2B76xF">
-              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.identifier()" resolve="identifier" />
+              <ref role="2B6OnR" to="f8dg:~JCHR_Constraint.identifier()" resolve="identifier" />
               <node concept="10M0yZ" id="5i7izgNdEd0" role="2B70Vg">
                 <ref role="1PxDUh" node="60B5zVEZP8W" resolve="LogicalSolver" />
                 <ref role="3cqZAo" node="5i7izgNdCcB" resolve="LOGICAL" />
               </node>
             </node>
             <node concept="2B6LJw" id="3HJTsBn4BXh" role="2B76xF">
-              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.arity()" resolve="arity" />
+              <ref role="2B6OnR" to="f8dg:~JCHR_Constraint.arity()" resolve="arity" />
               <node concept="3cmrfG" id="3HJTsBn4BXi" role="2B70Vg">
                 <property role="3cmrfH" value="1" />
               </node>
             </node>
             <node concept="2B6LJw" id="3HJTsBn4BXl" role="2B76xF">
-              <ref role="2B6OnR" to="9sk9:~JCHR_Constraint.idempotent()" resolve="idempotent" />
+              <ref role="2B6OnR" to="f8dg:~JCHR_Constraint.idempotent()" resolve="idempotent" />
               <node concept="Rm8GO" id="3HJTsBn4BXm" role="2B70Vg">
-                <ref role="Rm8GQ" to="9sk9:~JCHR_Constraint$Value.YES" resolve="YES" />
-                <ref role="1Px2BO" to="9sk9:~JCHR_Constraint$Value" resolve="JCHR_Constraint.Value" />
+                <ref role="Rm8GQ" to="f8dg:~JCHR_Constraint$Value.YES" resolve="YES" />
+                <ref role="1Px2BO" to="f8dg:~JCHR_Constraint$Value" resolve="JCHR_Constraint.Value" />
               </node>
             </node>
           </node>
@@ -289,7 +289,7 @@
             <node concept="YeOm9" id="5$WbtTOYSAi" role="2ShVmc">
               <node concept="1Y3b0j" id="5$WbtTOYSAl" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 <ref role="1Y3XeK" node="4xBopTzrd8Y" resolve="LogicalSolverImpl" />
                 <node concept="3Tm1VV" id="5$WbtTOYSAm" role="1B3o_S" />
                 <node concept="2tJIrI" id="5$WbtTOYTPO" role="jymVt" />
@@ -299,7 +299,7 @@
                   <node concept="37vLTG" id="5$WbtTOYBh2" role="3clF46">
                     <property role="TrG5h" value="logical" />
                     <node concept="3uibUv" id="5$WbtTOYBh3" role="1tU5fm">
-                      <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+                      <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
                       <node concept="3qTvmN" id="5$WbtTOYBh4" role="11_B2D" />
                     </node>
                   </node>
@@ -312,13 +312,13 @@
                           <ref role="3cqZAo" node="5$WbtTOYBh2" resolve="logical" />
                         </node>
                         <node concept="liA8E" id="5$WbtTOYeNE" role="2OqNvi">
-                          <ref role="37wK5l" to="w2rx:~Logical.isNonVar():boolean" resolve="isNonVar" />
+                          <ref role="37wK5l" to="eifs:~Logical.isNonVar():boolean" resolve="isNonVar" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="2AHcQZ" id="5$WbtTOYUm2" role="2AJF6D">
-                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                 </node>
                 <node concept="2tJIrI" id="5$WbtTOYU8g" role="jymVt" />
@@ -346,7 +346,7 @@
             <node concept="YeOm9" id="5$WbtTOYVUn" role="2ShVmc">
               <node concept="1Y3b0j" id="5$WbtTOYVUo" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 <ref role="1Y3XeK" node="4xBopTzrd8Y" resolve="LogicalSolverImpl" />
                 <node concept="3Tm1VV" id="5$WbtTOYVUp" role="1B3o_S" />
                 <node concept="2tJIrI" id="5$WbtTOYVUq" role="jymVt" />
@@ -356,7 +356,7 @@
                   <node concept="37vLTG" id="5$WbtTOYVUs" role="3clF46">
                     <property role="TrG5h" value="logical" />
                     <node concept="3uibUv" id="5$WbtTOYVUt" role="1tU5fm">
-                      <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+                      <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
                       <node concept="3qTvmN" id="5$WbtTOYVUu" role="11_B2D" />
                     </node>
                   </node>
@@ -369,13 +369,13 @@
                           <ref role="3cqZAo" node="5$WbtTOYVUs" resolve="logical" />
                         </node>
                         <node concept="liA8E" id="5$WbtTOYVU_" role="2OqNvi">
-                          <ref role="37wK5l" to="w2rx:~Logical.isVar():boolean" resolve="isVar" />
+                          <ref role="37wK5l" to="eifs:~Logical.isVar():boolean" resolve="isVar" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="2AHcQZ" id="5$WbtTOYVUA" role="2AJF6D">
-                    <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                 </node>
                 <node concept="2tJIrI" id="5$WbtTOYVUB" role="jymVt" />
@@ -429,7 +429,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="solverClass" />
       <node concept="3uibUv" id="4xBopTzr9Jl" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Class" resolve="Class" />
+        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
         <node concept="3qUE_q" id="4xBopTzr9Jm" role="11_B2D">
           <node concept="3uibUv" id="4xBopTzr9Jn" role="3qUE_r">
             <ref role="3uigEE" to="bspi:6Kcfpq7AYBh" resolve="Queryable" />
@@ -445,7 +445,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4xBopTzrlec" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="5$WbtTOYxH4" role="jymVt" />
@@ -474,7 +474,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="4xBopTzrlOA" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="4xBopTzrane" role="jymVt" />
@@ -491,7 +491,7 @@
       </node>
       <node concept="3clFbS" id="4xBopTzr9JJ" role="3clF47" />
       <node concept="2AHcQZ" id="4xBopTzrm7K" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="4xBopTzraCY" role="jymVt" />
@@ -530,7 +530,7 @@
             <node concept="YS8fn" id="5k_shARO2Xr" role="3cqZAp">
               <node concept="2ShNRf" id="5k_shARO2ZW" role="YScLw">
                 <node concept="1pGfFk" id="5k_shAROcb3" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~NullPointerException.&lt;init&gt;()" resolve="NullPointerException" />
+                  <ref role="37wK5l" to="wyt6:~NullPointerException.&lt;init&gt;()" resolve="NullPointerException" />
                 </node>
               </node>
             </node>
@@ -575,7 +575,7 @@
             <node concept="YS8fn" id="5k_shAROdww" role="3cqZAp">
               <node concept="2ShNRf" id="5k_shAROdxH" role="YScLw">
                 <node concept="1pGfFk" id="5k_shAROdLN" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~NullPointerException.&lt;init&gt;()" resolve="NullPointerException" />
+                  <ref role="37wK5l" to="wyt6:~NullPointerException.&lt;init&gt;()" resolve="NullPointerException" />
                 </node>
               </node>
             </node>
@@ -592,7 +592,7 @@
             <node concept="YS8fn" id="5k_shAROeGr" role="3cqZAp">
               <node concept="2ShNRf" id="5k_shAROeHC" role="YScLw">
                 <node concept="1pGfFk" id="5k_shAROeZ2" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;()" resolve="IllegalArgumentException" />
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;()" resolve="IllegalArgumentException" />
                 </node>
               </node>
             </node>
@@ -717,7 +717,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="5k_shARO1h4" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="7d9KVSzUPIj" role="jymVt" />
@@ -790,7 +790,7 @@
         <property role="TrG5h" value="arg" />
         <node concept="8X2XB" id="4xBopTzrdcC" role="1tU5fm">
           <node concept="3uibUv" id="4xBopTzrdcD" role="8Xvag">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
@@ -802,7 +802,7 @@
             <node concept="YS8fn" id="4xBopTzmCt6" role="3cqZAp">
               <node concept="2ShNRf" id="4xBopTzmCt7" role="YScLw">
                 <node concept="1pGfFk" id="4xBopTzmCt8" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
                   <node concept="Xl_RD" id="4xBopTzmCt9" role="37wK5m">
                     <property role="Xl_RC" value="invalid arguments count" />
                   </node>
@@ -826,7 +826,7 @@
           <node concept="3cpWsn" id="4xBopTzrf7t" role="3cpWs9">
             <property role="TrG5h" value="logical" />
             <node concept="3uibUv" id="4xBopTzrf7m" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
             <node concept="AH0OO" id="4xBopTzrf7u" role="33vP2m">
               <node concept="3cmrfG" id="4xBopTzrf7v" role="AHEQo">
@@ -843,7 +843,7 @@
             <node concept="YS8fn" id="4xBopTznan2" role="3cqZAp">
               <node concept="2ShNRf" id="4xBopTznan3" role="YScLw">
                 <node concept="1pGfFk" id="4xBopTznan4" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
                   <node concept="Xl_RD" id="4xBopTznan5" role="37wK5m">
                     <property role="Xl_RC" value="invalid arguments" />
                   </node>
@@ -855,7 +855,7 @@
             <node concept="1eOMI4" id="4xBopTzrfdG" role="3fr31v">
               <node concept="2ZW3vV" id="4xBopTzrfeP" role="1eOMHV">
                 <node concept="3uibUv" id="4xBopTzrgee" role="2ZW6by">
-                  <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+                  <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
                 </node>
                 <node concept="37vLTw" id="4xBopTzrfeh" role="2ZW6bz">
                   <ref role="3cqZAo" node="4xBopTzrf7t" resolve="logical" />
@@ -870,7 +870,7 @@
             <ref role="37wK5l" node="60B5zVEZPu5" resolve="ask" />
             <node concept="10QFUN" id="4xBopTzrggH" role="37wK5m">
               <node concept="3uibUv" id="4xBopTzrggE" role="10QFUM">
-                <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+                <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
                 <node concept="3qTvmN" id="4xBopTzrggF" role="11_B2D" />
               </node>
               <node concept="37vLTw" id="4xBopTzrggG" role="10QFUP">
@@ -895,7 +895,7 @@
         <property role="TrG5h" value="arg" />
         <node concept="8X2XB" id="4xBopTzrdcP" role="1tU5fm">
           <node concept="3uibUv" id="4xBopTzrdcQ" role="8Xvag">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
@@ -907,7 +907,7 @@
             <node concept="YS8fn" id="4xBopTzrgkg" role="3cqZAp">
               <node concept="2ShNRf" id="4xBopTzrgkh" role="YScLw">
                 <node concept="1pGfFk" id="4xBopTzrgki" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
                   <node concept="Xl_RD" id="4xBopTzrgkj" role="37wK5m">
                     <property role="Xl_RC" value="invalid arguments count" />
                   </node>
@@ -931,7 +931,7 @@
           <node concept="3cpWsn" id="4xBopTzrgkq" role="3cpWs9">
             <property role="TrG5h" value="logical" />
             <node concept="3uibUv" id="4xBopTzrgkr" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
             <node concept="AH0OO" id="4xBopTzrgks" role="33vP2m">
               <node concept="3cmrfG" id="4xBopTzrgkt" role="AHEQo">
@@ -948,7 +948,7 @@
             <node concept="YS8fn" id="4xBopTzrgkx" role="3cqZAp">
               <node concept="2ShNRf" id="4xBopTzrgky" role="YScLw">
                 <node concept="1pGfFk" id="4xBopTzrgkz" role="2ShVmc">
-                  <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
                   <node concept="Xl_RD" id="4xBopTzrgk$" role="37wK5m">
                     <property role="Xl_RC" value="invalid arguments" />
                   </node>
@@ -960,7 +960,7 @@
             <node concept="1eOMI4" id="4xBopTzrgkA" role="3fr31v">
               <node concept="2ZW3vV" id="4xBopTzrgkB" role="1eOMHV">
                 <node concept="3uibUv" id="4xBopTzrgkC" role="2ZW6by">
-                  <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+                  <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
                 </node>
                 <node concept="37vLTw" id="4xBopTzrgkD" role="2ZW6bz">
                   <ref role="3cqZAo" node="4xBopTzrgkq" resolve="logical" />
@@ -975,7 +975,7 @@
             <node concept="YS8fn" id="4xBopTzrhL9" role="3cqZAp">
               <node concept="2ShNRf" id="6infEALBkCB" role="YScLw">
                 <node concept="1pGfFk" id="6infEALBkCC" role="2ShVmc">
-                  <ref role="37wK5l" to="w2rx:~FailureException.&lt;init&gt;(java.lang.String)" resolve="FailureException" />
+                  <ref role="37wK5l" to="eifs:~FailureException.&lt;init&gt;(java.lang.String)" resolve="FailureException" />
                   <node concept="Xl_RD" id="6infEALBkCD" role="37wK5m">
                     <property role="Xl_RC" value="logical bound state is inconsistent" />
                   </node>
@@ -988,7 +988,7 @@
               <ref role="37wK5l" node="60B5zVEZPu5" resolve="ask" />
               <node concept="10QFUN" id="4xBopTzrhHI" role="37wK5m">
                 <node concept="3uibUv" id="4xBopTzrhHJ" role="10QFUM">
-                  <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+                  <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
                   <node concept="3qTvmN" id="4xBopTzrhHK" role="11_B2D" />
                 </node>
                 <node concept="37vLTw" id="4xBopTzrhHL" role="10QFUP">

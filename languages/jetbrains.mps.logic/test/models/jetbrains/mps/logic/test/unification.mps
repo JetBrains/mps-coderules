@@ -7,12 +7,12 @@
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
   </languages>
   <imports>
-    <import index="w2rx" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" />
-    <import index="xxzj" ref="b189d6c6-9397-4d64-88af-1ac73760a4f5/f:java_stub#b189d6c6-9397-4d64-88af-1ac73760a4f5#org.mockito(jetbrains.mps.logic.test/org.mockito@java_stub)" />
+    <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
+    <import index="n4y8" ref="b189d6c6-9397-4d64-88af-1ac73760a4f5/java:org.mockito(jetbrains.mps.logic.test/)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
-    <import index="jfki" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/f:java_stub#7526e0cf-1ce7-46f8-a555-9eca1e06c23b#jetbrains.mps.unification(jetbrains.mps.unification.tree/jetbrains.mps.unification@java_stub)" />
+    <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.unification.tree/)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
   </imports>
   <registry>
@@ -174,7 +174,7 @@
       <property role="TrG5h" value="constraintSystem" />
       <node concept="3Tm6S6" id="71LvIRuyoUG" role="1B3o_S" />
       <node concept="3uibUv" id="71LvIRuz57H" role="1tU5fm">
-        <ref role="3uigEE" to="w2rx:~ConstraintSystem" resolve="ConstraintSystem" />
+        <ref role="3uigEE" to="eifs:~ConstraintSystem" resolve="ConstraintSystem" />
       </node>
     </node>
     <node concept="312cEg" id="fHk0tWuntB" role="jymVt">
@@ -1044,7 +1044,7 @@
             </node>
             <node concept="2ShNRf" id="fHk0tWuNK3" role="37vLTx">
               <node concept="1pGfFk" id="fHk0tWuNK2" role="2ShVmc">
-                <ref role="37wK5l" to="w2rx:~ConstraintSystem.&lt;init&gt;()" resolve="ConstraintSystem" />
+                <ref role="37wK5l" to="eifs:~ConstraintSystem.&lt;init&gt;()" resolve="ConstraintSystem" />
               </node>
             </node>
           </node>
@@ -1055,7 +1055,7 @@
               <ref role="3cqZAo" node="71LvIRuyoUF" resolve="constraintSystem" />
             </node>
             <node concept="liA8E" id="fHk0tWuNVy" role="2OqNvi">
-              <ref role="37wK5l" to="w2rx:~ConstraintSystem.setQueuing(boolean):void" resolve="setQueuing" />
+              <ref role="37wK5l" to="eifs:~ConstraintSystem.setQueuing(boolean):void" resolve="setQueuing" />
               <node concept="3clFbT" id="fHk0tWuNX6" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
@@ -1089,7 +1089,7 @@
       <property role="TrG5h" value="constraintSystem" />
       <node concept="3Tm6S6" id="1OShD0Ift_P" role="1B3o_S" />
       <node concept="3uibUv" id="1OShD0Ift_Q" role="1tU5fm">
-        <ref role="3uigEE" to="w2rx:~ConstraintSystem" resolve="ConstraintSystem" />
+        <ref role="3uigEE" to="eifs:~ConstraintSystem" resolve="ConstraintSystem" />
       </node>
     </node>
     <node concept="312cEg" id="1OShD0Ift_R" role="jymVt">
@@ -1887,7 +1887,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtqzXR9" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.get()" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
             <node concept="2OqwBi" id="5cGCTtqzVZP" role="3tpDZB">
@@ -1908,7 +1908,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtqzWC9" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.get()" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
           </node>
@@ -2143,7 +2143,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtq$7s_" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.get()" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
             <node concept="2OqwBi" id="5cGCTtq$5_x" role="3tpDZB">
@@ -2164,7 +2164,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtq$6dM" role="2OqNvi">
-                <ref role="37wK5l" to="jfki:~Node.get()" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
           </node>
@@ -2639,6 +2639,14 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="1oi5UN" id="1H1f_zsIp3E" role="KCVpo">
+                        <node concept="1oi5Wm" id="1H1f_zsIp3F" role="1ojpOf">
+                          <property role="TrG5h" value="name" />
+                          <node concept="1oi5XN" id="1H1f_zsIp3G" role="1oi5zu">
+                            <property role="1oi5yK" value="baz" />
+                          </node>
+                        </node>
+                      </node>
                       <node concept="1oi5UN" id="1OShD0Ig2iH" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0Ig2iI" role="1ojpOf">
                           <property role="TrG5h" value="name" />
@@ -2687,6 +2695,14 @@
                           <property role="TrG5h" value="name" />
                           <node concept="1oi5XN" id="1OShD0Ig2j0" role="1oi5zu">
                             <property role="1oi5yK" value="bar" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="1oi5UN" id="1H1f_zsIrmt" role="KCVpo">
+                        <node concept="1oi5Wm" id="1H1f_zsIrmu" role="1ojpOf">
+                          <property role="TrG5h" value="name" />
+                          <node concept="1oi5XN" id="1H1f_zsIrmv" role="1oi5zu">
+                            <property role="1oi5yK" value="baz" />
                           </node>
                         </node>
                       </node>
@@ -3047,7 +3063,7 @@
             </node>
             <node concept="2ShNRf" id="1OShD0IftOs" role="37vLTx">
               <node concept="1pGfFk" id="1OShD0IftOt" role="2ShVmc">
-                <ref role="37wK5l" to="w2rx:~ConstraintSystem.&lt;init&gt;()" resolve="ConstraintSystem" />
+                <ref role="37wK5l" to="eifs:~ConstraintSystem.&lt;init&gt;()" resolve="ConstraintSystem" />
               </node>
             </node>
           </node>
@@ -3058,7 +3074,7 @@
               <ref role="3cqZAo" node="1OShD0Ift_O" resolve="constraintSystem" />
             </node>
             <node concept="liA8E" id="1OShD0IftOx" role="2OqNvi">
-              <ref role="37wK5l" to="w2rx:~ConstraintSystem.setQueuing(boolean):void" resolve="setQueuing" />
+              <ref role="37wK5l" to="eifs:~ConstraintSystem.setQueuing(boolean):void" resolve="setQueuing" />
               <node concept="3clFbT" id="1OShD0IftOy" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
