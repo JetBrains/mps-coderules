@@ -282,7 +282,7 @@
           <node concept="3cpWsn" id="5H6hZahmo9v" role="3cpWs9">
             <property role="TrG5h" value="leftVal" />
             <node concept="3uibUv" id="5H6hZahmo9t" role="1tU5fm">
-              <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
             </node>
             <node concept="2OqwBi" id="5H6hZahmo9w" role="33vP2m">
               <node concept="2OqwBi" id="5H6hZahmo9x" role="2Oq$k0">
@@ -303,7 +303,7 @@
           <node concept="3cpWsn" id="5H6hZahmr3v" role="3cpWs9">
             <property role="TrG5h" value="rightVal" />
             <node concept="3uibUv" id="5H6hZahmr3p" role="1tU5fm">
-              <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
             </node>
             <node concept="2OqwBi" id="5H6hZahmr3w" role="33vP2m">
               <node concept="2OqwBi" id="5H6hZahmr3x" role="2Oq$k0">
@@ -358,7 +358,7 @@
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3qUE_q" id="5H6hZahmJ3$" role="11_B2D">
                 <node concept="3uibUv" id="5H6hZahmJ3_" role="3qUE_r">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -366,13 +366,8 @@
               <node concept="2YIFZM" id="5H6hZahmJ4a" role="2Oq$k0">
                 <ref role="1Pybhc" to="ie8e:3JgCwkqd3K7" resolve="Finders" />
                 <ref role="37wK5l" to="ie8e:3OPtF03pX11" resolve="findList" />
-                <node concept="2OqwBi" id="5H6hZahmJ4b" role="37wK5m">
-                  <node concept="37vLTw" id="5H6hZahmJ4c" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5H6hZahmo9v" resolve="leftVal" />
-                  </node>
-                  <node concept="liA8E" id="5H6hZahmJ4d" role="2OqNvi">
-                    <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
-                  </node>
+                <node concept="37vLTw" id="5H6hZahmJ4c" role="37wK5m">
+                  <ref role="3cqZAo" node="5H6hZahmo9v" resolve="leftVal" />
                 </node>
                 <node concept="Xl_RD" id="5H6hZahmJ4e" role="37wK5m">
                   <property role="Xl_RC" value="list" />
@@ -394,7 +389,7 @@
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3qUE_q" id="5H6hZahmK7i" role="11_B2D">
                 <node concept="3uibUv" id="5H6hZahmK7j" role="3qUE_r">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -402,13 +397,8 @@
               <node concept="2YIFZM" id="5H6hZahmK7s" role="2Oq$k0">
                 <ref role="37wK5l" to="ie8e:3OPtF03pX11" resolve="findList" />
                 <ref role="1Pybhc" to="ie8e:3JgCwkqd3K7" resolve="Finders" />
-                <node concept="2OqwBi" id="5H6hZahmK7t" role="37wK5m">
-                  <node concept="37vLTw" id="5H6hZahmK7u" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5H6hZahmr3v" resolve="rightVal" />
-                  </node>
-                  <node concept="liA8E" id="5H6hZahmK7v" role="2OqNvi">
-                    <ref role="37wK5l" to="ie8e:2xQ7eRACJS8" resolve="root" />
-                  </node>
+                <node concept="37vLTw" id="5H6hZahmK7u" role="37wK5m">
+                  <ref role="3cqZAo" node="5H6hZahmr3v" resolve="rightVal" />
                 </node>
                 <node concept="Xl_RD" id="5H6hZahmK7w" role="37wK5m">
                   <property role="Xl_RC" value="list" />
@@ -472,14 +462,14 @@
             <node concept="3uibUv" id="5H6hZahnZG6" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="5H6hZahnZPo" role="11_B2D">
-                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
               </node>
             </node>
             <node concept="2ShNRf" id="5H6hZahnYQY" role="33vP2m">
               <node concept="1pGfFk" id="5H6hZahnYQZ" role="2ShVmc">
                 <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
                 <node concept="3uibUv" id="5H6hZahnYR0" role="1pMfVU">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -493,7 +483,7 @@
               <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
               <node concept="3qUE_q" id="5H6hZahmMWd" role="11_B2D">
                 <node concept="3uibUv" id="5H6hZahmMWe" role="3qUE_r">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -514,7 +504,7 @@
               <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
               <node concept="3qUE_q" id="5H6hZahmQjR" role="11_B2D">
                 <node concept="3uibUv" id="5H6hZahmQjS" role="3qUE_r">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -533,7 +523,7 @@
           <node concept="3cpWsn" id="5H6hZahmUVF" role="3cpWs9">
             <property role="TrG5h" value="nextPathLeft" />
             <node concept="3uibUv" id="5H6hZahmUVG" role="1tU5fm">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
             </node>
             <node concept="2OqwBi" id="5H6hZahmUVI" role="33vP2m">
               <node concept="37vLTw" id="5H6hZahmUVJ" role="2Oq$k0">
@@ -549,7 +539,7 @@
           <node concept="3cpWsn" id="5H6hZahmVAN" role="3cpWs9">
             <property role="TrG5h" value="nextPathRight" />
             <node concept="3uibUv" id="5H6hZahmVAO" role="1tU5fm">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
             </node>
             <node concept="2OqwBi" id="5H6hZahmVAQ" role="33vP2m">
               <node concept="37vLTw" id="5H6hZahmVAR" role="2Oq$k0">
@@ -577,7 +567,7 @@
                   <ref role="3uigEE" to="33ny:~List" resolve="List" />
                   <node concept="3qUE_q" id="5H6hZahnxrh" role="11_B2D">
                     <node concept="3uibUv" id="5H6hZahnxri" role="3qUE_r">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                   </node>
                 </node>
@@ -608,7 +598,7 @@
                   <ref role="3uigEE" to="33ny:~List" resolve="List" />
                   <node concept="3qUE_q" id="5H6hZahnxrv" role="11_B2D">
                     <node concept="3uibUv" id="5H6hZahnxrw" role="3qUE_r">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                   </node>
                 </node>
@@ -640,7 +630,7 @@
                   <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
                   <node concept="3qUE_q" id="5H6hZahnDZJ" role="11_B2D">
                     <node concept="3uibUv" id="5H6hZahnDZK" role="3qUE_r">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                   </node>
                 </node>
@@ -661,7 +651,7 @@
                   <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
                   <node concept="3qUE_q" id="5H6hZahnHqw" role="11_B2D">
                     <node concept="3uibUv" id="5H6hZahnHqx" role="3qUE_r">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                   </node>
                 </node>
@@ -680,7 +670,7 @@
               <node concept="3cpWsn" id="5H6hZahnqqr" role="3cpWs9">
                 <property role="TrG5h" value="lastMatch" />
                 <node concept="3uibUv" id="5H6hZahnqo0" role="1tU5fm">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
                 <node concept="10Nm6u" id="5H6hZahnrmr" role="33vP2m" />
               </node>
@@ -691,7 +681,7 @@
                   <node concept="3cpWsn" id="5H6hZahnLIH" role="3cpWs9">
                     <property role="TrG5h" value="nextLeft" />
                     <node concept="3uibUv" id="5H6hZahnLII" role="1tU5fm">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                     <node concept="2OqwBi" id="5H6hZahnLIK" role="33vP2m">
                       <node concept="37vLTw" id="5H6hZahnLIL" role="2Oq$k0">
@@ -707,7 +697,7 @@
                   <node concept="3cpWsn" id="5H6hZahnMGS" role="3cpWs9">
                     <property role="TrG5h" value="nextRight" />
                     <node concept="3uibUv" id="5H6hZahnMGT" role="1tU5fm">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                     <node concept="2OqwBi" id="5H6hZahnMGV" role="33vP2m">
                       <node concept="37vLTw" id="5H6hZahnMGW" role="2Oq$k0">
@@ -734,19 +724,11 @@
                           <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
                           <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
                         </node>
-                        <node concept="2YIFZM" id="5H6hZahnpsI" role="37wK5m">
-                          <ref role="1Pybhc" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-                          <ref role="37wK5l" to="ie8e:5JQSuNsxMzt" resolve="create" />
-                          <node concept="37vLTw" id="5H6hZahnNc0" role="37wK5m">
-                            <ref role="3cqZAo" node="5H6hZahnLIH" resolve="nextLeft" />
-                          </node>
+                        <node concept="37vLTw" id="6r6omRle21L" role="37wK5m">
+                          <ref role="3cqZAo" node="5H6hZahnLIH" resolve="nextLeft" />
                         </node>
-                        <node concept="2YIFZM" id="5H6hZahnpsK" role="37wK5m">
-                          <ref role="37wK5l" to="ie8e:5JQSuNsxMzt" resolve="create" />
-                          <ref role="1Pybhc" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-                          <node concept="37vLTw" id="5H6hZahnNfo" role="37wK5m">
-                            <ref role="3cqZAo" node="5H6hZahnMGS" resolve="nextRight" />
-                          </node>
+                        <node concept="37vLTw" id="6r6omRle23D" role="37wK5m">
+                          <ref role="3cqZAo" node="5H6hZahnMGS" resolve="nextRight" />
                         </node>
                       </node>
                     </node>
@@ -1154,7 +1136,7 @@
                 <node concept="3uibUv" id="2DKqMqOyH_E" role="11_B2D">
                   <ref role="3uigEE" to="33ny:~List" resolve="List" />
                   <node concept="3uibUv" id="2DKqMqOyH_F" role="11_B2D">
-                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
@@ -1167,7 +1149,7 @@
                   <node concept="3uibUv" id="2DKqMqOyVcQ" role="11_B2D">
                     <ref role="3uigEE" to="33ny:~List" resolve="List" />
                     <node concept="3uibUv" id="2DKqMqOyVcR" role="11_B2D">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                   </node>
                 </node>
@@ -1196,7 +1178,7 @@
                 <node concept="3uibUv" id="2DKqMqOyIQS" role="11_B2D">
                   <ref role="3uigEE" to="33ny:~List" resolve="List" />
                   <node concept="3uibUv" id="2DKqMqOyIQT" role="11_B2D">
-                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
@@ -1209,7 +1191,7 @@
                   <node concept="3uibUv" id="2DKqMqOyX3M" role="11_B2D">
                     <ref role="3uigEE" to="33ny:~List" resolve="List" />
                     <node concept="3uibUv" id="2DKqMqOyX3N" role="11_B2D">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                   </node>
                 </node>
@@ -1236,7 +1218,7 @@
               <node concept="3uibUv" id="2DKqMqOtWlv" role="11_B2D">
                 <ref role="3uigEE" to="33ny:~List" resolve="List" />
                 <node concept="3uibUv" id="2DKqMqOtWxx" role="11_B2D">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -1263,7 +1245,7 @@
               <node concept="3uibUv" id="2DKqMqOtXi$" role="11_B2D">
                 <ref role="3uigEE" to="33ny:~List" resolve="List" />
                 <node concept="3uibUv" id="2DKqMqOtXu3" role="11_B2D">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -1352,14 +1334,14 @@
             <node concept="3uibUv" id="2DKqMqOtrS2" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="2DKqMqOtrS3" role="11_B2D">
-                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
               </node>
             </node>
             <node concept="2ShNRf" id="2DKqMqOtrS5" role="33vP2m">
               <node concept="1pGfFk" id="2DKqMqOtrS6" role="2ShVmc">
                 <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
                 <node concept="3uibUv" id="2DKqMqOtrS7" role="1pMfVU">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -1374,7 +1356,7 @@
               <node concept="3uibUv" id="2DKqMqOu2zB" role="11_B2D">
                 <ref role="3uigEE" to="33ny:~List" resolve="List" />
                 <node concept="3uibUv" id="2DKqMqOu2zC" role="11_B2D">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -1396,7 +1378,7 @@
               <node concept="3uibUv" id="2DKqMqOu8OQ" role="11_B2D">
                 <ref role="3uigEE" to="33ny:~List" resolve="List" />
                 <node concept="3uibUv" id="2DKqMqOu8OR" role="11_B2D">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -1417,7 +1399,7 @@
             <node concept="3uibUv" id="2DKqMqOugdl" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="2DKqMqOugds" role="11_B2D">
-                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
               </node>
             </node>
             <node concept="2OqwBi" id="2DKqMqOugeg" role="33vP2m">
@@ -1436,7 +1418,7 @@
             <node concept="3uibUv" id="2DKqMqOul1H" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~List" resolve="List" />
               <node concept="3uibUv" id="2DKqMqOul1O" role="11_B2D">
-                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
               </node>
             </node>
             <node concept="2OqwBi" id="2DKqMqOul31" role="33vP2m">
@@ -1459,7 +1441,7 @@
                 <node concept="3uibUv" id="2DKqMqOuuBK" role="1tU5fm">
                   <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
                   <node concept="3uibUv" id="2DKqMqOuuBR" role="11_B2D">
-                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="2DKqMqOuuDd" role="33vP2m">
@@ -1478,7 +1460,7 @@
                 <node concept="3uibUv" id="2DKqMqOuwXH" role="1tU5fm">
                   <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
                   <node concept="3uibUv" id="2DKqMqOuwXO" role="11_B2D">
-                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="2DKqMqOuwYo" role="33vP2m">
@@ -1496,7 +1478,7 @@
               <node concept="3cpWsn" id="2DKqMqOuxKC" role="3cpWs9">
                 <property role="TrG5h" value="lastMatch" />
                 <node concept="3uibUv" id="2DKqMqOuxKD" role="1tU5fm">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
                 <node concept="10Nm6u" id="2DKqMqOuxKF" role="33vP2m" />
               </node>
@@ -1507,7 +1489,7 @@
                   <node concept="3cpWsn" id="2DKqMqOuxKJ" role="3cpWs9">
                     <property role="TrG5h" value="nextLeft" />
                     <node concept="3uibUv" id="2DKqMqOuxKK" role="1tU5fm">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                     <node concept="2OqwBi" id="2DKqMqOuxKM" role="33vP2m">
                       <node concept="37vLTw" id="2DKqMqOuxKN" role="2Oq$k0">
@@ -1523,7 +1505,7 @@
                   <node concept="3cpWsn" id="2DKqMqOuxKQ" role="3cpWs9">
                     <property role="TrG5h" value="nextRight" />
                     <node concept="3uibUv" id="2DKqMqOuxKR" role="1tU5fm">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                     </node>
                     <node concept="2OqwBi" id="2DKqMqOuxKT" role="33vP2m">
                       <node concept="37vLTw" id="2DKqMqOuxKU" role="2Oq$k0">
@@ -1550,19 +1532,11 @@
                           <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
                           <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
                         </node>
-                        <node concept="2YIFZM" id="2DKqMqOuxL4" role="37wK5m">
-                          <ref role="37wK5l" to="ie8e:5JQSuNsxMzt" resolve="create" />
-                          <ref role="1Pybhc" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-                          <node concept="37vLTw" id="2DKqMqOuxL5" role="37wK5m">
-                            <ref role="3cqZAo" node="2DKqMqOuxKJ" resolve="nextLeft" />
-                          </node>
+                        <node concept="37vLTw" id="6r6omRle1Yg" role="37wK5m">
+                          <ref role="3cqZAo" node="2DKqMqOuxKJ" resolve="nextLeft" />
                         </node>
-                        <node concept="2YIFZM" id="2DKqMqOuxL6" role="37wK5m">
-                          <ref role="37wK5l" to="ie8e:5JQSuNsxMzt" resolve="create" />
-                          <ref role="1Pybhc" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
-                          <node concept="37vLTw" id="2DKqMqOuxL7" role="37wK5m">
-                            <ref role="3cqZAo" node="2DKqMqOuxKQ" resolve="nextRight" />
-                          </node>
+                        <node concept="37vLTw" id="6r6omRle208" role="37wK5m">
+                          <ref role="3cqZAo" node="2DKqMqOuxKQ" resolve="nextRight" />
                         </node>
                       </node>
                     </node>
@@ -1923,12 +1897,12 @@
         <node concept="3uibUv" id="5H6hZahoMS7" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3uibUv" id="5H6hZahoMSO" role="11_B2D">
-            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="5H6hZahs_Lp" role="3clF45">
-        <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+        <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
       </node>
       <node concept="3Tm6S6" id="5H6hZahoMQB" role="1B3o_S" />
       <node concept="3clFbS" id="5H6hZahoMlA" role="3clF47">
@@ -1937,7 +1911,7 @@
             <property role="TrG5h" value="array" />
             <node concept="10Q1$e" id="5H6hZahszJ9" role="1tU5fm">
               <node concept="3uibUv" id="5H6hZahszJa" role="10Q1$1">
-                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
               </node>
             </node>
             <node concept="2ShNRf" id="5H6hZahszJb" role="33vP2m">
@@ -1953,7 +1927,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="5H6hZahszJh" role="3$_nBY">
-                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -2043,13 +2017,13 @@
       <node concept="37vLTG" id="5H6hZahoy$v" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="5H6hZahoy$J" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="37vLTG" id="5H6hZahoyA2" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="5H6hZahoyAl" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="10Oyi0" id="5H6hZahoy$s" role="3clF45" />
@@ -2095,7 +2069,7 @@
         <property role="TrG5h" value="component" />
         <node concept="8X2XB" id="2DKqMqOstvZ" role="1tU5fm">
           <node concept="3uibUv" id="2DKqMqOssKq" role="8Xvag">
-            <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
           </node>
         </node>
       </node>
@@ -2127,7 +2101,7 @@
         <node concept="3uibUv" id="2DKqMqOsrn4" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3uibUv" id="2DKqMqOsrob" role="11_B2D">
-            <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
           </node>
         </node>
       </node>
@@ -2149,7 +2123,7 @@
                   <ref role="3cqZAo" node="2DKqMqOsrmz" resolve="component" />
                 </node>
                 <node concept="3uibUv" id="2DKqMqOsv7K" role="1pMfVU">
-                  <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                 </node>
               </node>
             </node>
@@ -2163,7 +2137,7 @@
       <node concept="3uibUv" id="2DKqMqOsrU$" role="3clF45">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="2DKqMqOsrX5" role="11_B2D">
-          <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2DKqMqOsrRy" role="1B3o_S" />
@@ -2186,7 +2160,7 @@
       <node concept="3uibUv" id="2DKqMqOsrkN" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="2DKqMqOsrla" role="11_B2D">
-          <ref role="3uigEE" to="ie8e:2xQ7eRABXh4" resolve="Tree" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
     </node>

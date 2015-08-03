@@ -8,19 +8,19 @@
   </languages>
   <imports>
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
-    <import index="t6w" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
+    <import index="i51s" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
-    <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="9a8" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-    <import index="jsgz" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
-    <import index="ejnv" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
-    <import index="nu8v" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
-    <import index="srng" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
+    <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
+    <import index="5ueo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.style(MPS.Editor/)" />
+    <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
-    <import index="1t7x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
-    <import index="qe67" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" />
+    <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -718,11 +718,11 @@
                 </node>
                 <node concept="2OqwBi" id="7ksQUDZtGpb" role="3K4Cdx">
                   <node concept="2YIFZM" id="7ksQUDZtGpc" role="2Oq$k0">
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
-                    <ref role="1Pybhc" to="qe67:~StyleRegistry" resolve="StyleRegistry" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
+                    <ref role="1Pybhc" to="hox0:~StyleRegistry" resolve="StyleRegistry" />
                   </node>
                   <node concept="liA8E" id="7ksQUDZtGpd" role="2OqNvi">
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
                   </node>
                 </node>
               </node>
@@ -745,11 +745,11 @@
                 </node>
                 <node concept="2OqwBi" id="7ksQUDZtGpl" role="3K4Cdx">
                   <node concept="2YIFZM" id="7ksQUDZtGpm" role="2Oq$k0">
-                    <ref role="1Pybhc" to="qe67:~StyleRegistry" resolve="StyleRegistry" />
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
+                    <ref role="1Pybhc" to="hox0:~StyleRegistry" resolve="StyleRegistry" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
                   </node>
                   <node concept="liA8E" id="7ksQUDZtGpn" role="2OqNvi">
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
                   </node>
                 </node>
               </node>
@@ -778,11 +778,11 @@
                 </node>
                 <node concept="2OqwBi" id="7ksQUDZx8WZ" role="3K4Cdx">
                   <node concept="2YIFZM" id="7ksQUDZx8X0" role="2Oq$k0">
-                    <ref role="1Pybhc" to="qe67:~StyleRegistry" resolve="StyleRegistry" />
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
+                    <ref role="1Pybhc" to="hox0:~StyleRegistry" resolve="StyleRegistry" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
                   </node>
                   <node concept="liA8E" id="7ksQUDZx8X1" role="2OqNvi">
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
                   </node>
                 </node>
               </node>
@@ -808,11 +808,11 @@
                 </node>
                 <node concept="2OqwBi" id="7ksQUDZuyNy" role="3K4Cdx">
                   <node concept="2YIFZM" id="7ksQUDZuyNz" role="2Oq$k0">
-                    <ref role="1Pybhc" to="qe67:~StyleRegistry" resolve="StyleRegistry" />
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
+                    <ref role="1Pybhc" to="hox0:~StyleRegistry" resolve="StyleRegistry" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
                   </node>
                   <node concept="liA8E" id="7ksQUDZuyN$" role="2OqNvi">
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
                   </node>
                 </node>
               </node>
@@ -835,11 +835,11 @@
                 </node>
                 <node concept="2OqwBi" id="7ksQUDZuyNG" role="3K4Cdx">
                   <node concept="2YIFZM" id="7ksQUDZuyNH" role="2Oq$k0">
-                    <ref role="1Pybhc" to="qe67:~StyleRegistry" resolve="StyleRegistry" />
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
+                    <ref role="1Pybhc" to="hox0:~StyleRegistry" resolve="StyleRegistry" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.getInstance():jetbrains.mps.openapi.editor.style.StyleRegistry" resolve="getInstance" />
                   </node>
                   <node concept="liA8E" id="7ksQUDZuyNI" role="2OqNvi">
-                    <ref role="37wK5l" to="qe67:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
+                    <ref role="37wK5l" to="hox0:~StyleRegistry.isDarkTheme():boolean" resolve="isDarkTheme" />
                   </node>
                 </node>
               </node>
@@ -853,7 +853,7 @@
     </node>
   </node>
   <node concept="2ABfQD" id="6dP_abdFxyH">
-    <property role="TrG5h" value="TreeHints" />
+    <property role="TrG5h" value="NodeHints" />
     <node concept="2BsEeg" id="6dP_abdFyt9" role="2ABdcP">
       <property role="2gpH_U" value="true" />
       <property role="TrG5h" value="GENERIC" />
@@ -1128,7 +1128,7 @@
                   <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
                 </node>
                 <node concept="liA8E" id="6dP_abdUlpZ" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="2OqwBi" id="6dP_abdUo8U" role="37wK5m">
                     <node concept="1PxgMI" id="6dP_abdUo8V" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
@@ -1176,7 +1176,7 @@
                       <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
                     </node>
                     <node concept="liA8E" id="38jpnomXF7$" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="2OqwBi" id="38jpnomXF7_" role="37wK5m">
                         <node concept="1PxgMI" id="38jpnomXF7A" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
@@ -1392,7 +1392,7 @@
                   <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
                 </node>
                 <node concept="liA8E" id="25SygBrhI1Y" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                   <node concept="2OqwBi" id="25SygBrhI1Z" role="37wK5m">
                     <node concept="1PxgMI" id="25SygBrhI20" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
@@ -1443,7 +1443,7 @@
                     <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
                   </node>
                   <node concept="liA8E" id="6MozwwzUpNh" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                     <node concept="2OqwBi" id="6MozwwzUpNi" role="37wK5m">
                       <node concept="1PxgMI" id="6MozwwzUpNj" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
@@ -1499,7 +1499,7 @@
                             <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
                           </node>
                           <node concept="liA8E" id="3qvzBqWD4Vp" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="3qvzBqWD4Vq" role="37wK5m">
                               <node concept="1PxgMI" id="3qvzBqWD4Vr" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
@@ -1881,7 +1881,7 @@
                             <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
                           </node>
                           <node concept="liA8E" id="38jpnomX3jK" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="38jpnomX3jL" role="37wK5m">
                               <node concept="1PxgMI" id="38jpnomX3jM" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
@@ -1984,7 +1984,7 @@
                             <ref role="3f7u_j" to="5j4j:25SygBrhNIm" />
                           </node>
                           <node concept="liA8E" id="3qvzBqW$FvM" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="3qvzBqW$FvN" role="37wK5m">
                               <node concept="1PxgMI" id="3qvzBqW$FvO" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
@@ -2086,7 +2086,7 @@
                             <ref role="3f7u_j" to="5j4j:6MozwwzUqt8" />
                           </node>
                           <node concept="liA8E" id="3qvzBqW_MPH" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="3qvzBqW_MPI" role="37wK5m">
                               <node concept="1PxgMI" id="3qvzBqW_MPJ" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
@@ -2161,7 +2161,7 @@
                 <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
               </node>
               <node concept="liA8E" id="35Lj3Timzy$" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="2OqwBi" id="35Lj3Timzy_" role="37wK5m">
                   <node concept="1PxgMI" id="35Lj3TimzyA" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
@@ -2210,7 +2210,7 @@
                 <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
               </node>
               <node concept="liA8E" id="35Lj3TimM_J" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="2OqwBi" id="35Lj3TimM_K" role="37wK5m">
                   <node concept="1PxgMI" id="35Lj3TimM_L" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
@@ -2633,11 +2633,11 @@
       <property role="TrG5h" value="SKY" />
       <node concept="3Tm1VV" id="7ksQUDZpwht" role="1B3o_S" />
       <node concept="3uibUv" id="7ksQUDZpwhO" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="2ShNRf" id="7ksQUDZpwrN" role="33vP2m">
         <node concept="1pGfFk" id="7ksQUDZpwrK" role="2ShVmc">
-          <ref role="37wK5l" to="1t7x:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
+          <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
           <node concept="3cmrfG" id="7ksQUDZpwwj" role="37wK5m">
             <property role="3cmrfH" value="229" />
           </node>
@@ -2662,11 +2662,11 @@
       <property role="TrG5h" value="DIRT" />
       <node concept="3Tm1VV" id="7ksQUDZpxld" role="1B3o_S" />
       <node concept="3uibUv" id="7ksQUDZpxle" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="2ShNRf" id="7ksQUDZpxlf" role="33vP2m">
         <node concept="1pGfFk" id="7ksQUDZpxlg" role="2ShVmc">
-          <ref role="37wK5l" to="1t7x:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
+          <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
           <node concept="3cmrfG" id="7ksQUDZpxlh" role="37wK5m">
             <property role="3cmrfH" value="62" />
           </node>
@@ -2691,11 +2691,11 @@
       <property role="TrG5h" value="DAY" />
       <node concept="3Tm1VV" id="7ksQUDZuyXC" role="1B3o_S" />
       <node concept="3uibUv" id="7ksQUDZuyXD" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="2ShNRf" id="7ksQUDZuyXE" role="33vP2m">
         <node concept="1pGfFk" id="7ksQUDZuyXF" role="2ShVmc">
-          <ref role="37wK5l" to="1t7x:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
+          <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
           <node concept="3cmrfG" id="7ksQUDZuyXG" role="37wK5m">
             <property role="3cmrfH" value="255" />
           </node>
@@ -2720,11 +2720,11 @@
       <property role="TrG5h" value="NIGHT" />
       <node concept="3Tm1VV" id="7ksQUDZuzA2" role="1B3o_S" />
       <node concept="3uibUv" id="7ksQUDZuzA3" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="2ShNRf" id="7ksQUDZuzA4" role="33vP2m">
         <node concept="1pGfFk" id="7ksQUDZuzA5" role="2ShVmc">
-          <ref role="37wK5l" to="1t7x:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
+          <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
           <node concept="3cmrfG" id="7ksQUDZuzA6" role="37wK5m">
             <property role="3cmrfH" value="43" />
           </node>
@@ -2749,11 +2749,11 @@
       <property role="TrG5h" value="CALM" />
       <node concept="3Tm1VV" id="7ksQUDZx7BN" role="1B3o_S" />
       <node concept="3uibUv" id="7ksQUDZx7BO" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="2ShNRf" id="7ksQUDZx7BP" role="33vP2m">
         <node concept="1pGfFk" id="7ksQUDZx7BQ" role="2ShVmc">
-          <ref role="37wK5l" to="1t7x:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
+          <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
           <node concept="3cmrfG" id="7ksQUDZx7BR" role="37wK5m">
             <property role="3cmrfH" value="69" />
           </node>
@@ -2778,11 +2778,11 @@
       <property role="TrG5h" value="STORM" />
       <node concept="3Tm1VV" id="7ksQUDZx8vx" role="1B3o_S" />
       <node concept="3uibUv" id="7ksQUDZx8vy" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="2ShNRf" id="7ksQUDZx8vz" role="33vP2m">
         <node concept="1pGfFk" id="7ksQUDZx8v$" role="2ShVmc">
-          <ref role="37wK5l" to="1t7x:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
+          <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
           <node concept="3cmrfG" id="7ksQUDZx8v_" role="37wK5m">
             <property role="3cmrfH" value="169" />
           </node>
@@ -2807,11 +2807,11 @@
       <property role="TrG5h" value="DELFG" />
       <node concept="3Tm1VV" id="7ksQUDZy5Fi" role="1B3o_S" />
       <node concept="3uibUv" id="7ksQUDZy5Fj" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="2ShNRf" id="7ksQUDZy5Fk" role="33vP2m">
         <node concept="1pGfFk" id="7ksQUDZy5Fl" role="2ShVmc">
-          <ref role="37wK5l" to="1t7x:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
+          <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
           <node concept="3cmrfG" id="7ksQUDZy5Fm" role="37wK5m">
             <property role="3cmrfH" value="195" />
           </node>
@@ -2836,11 +2836,11 @@
       <property role="TrG5h" value="DELBG" />
       <node concept="3Tm1VV" id="7ksQUDZy66o" role="1B3o_S" />
       <node concept="3uibUv" id="7ksQUDZy66p" role="1tU5fm">
-        <ref role="3uigEE" to="1t7x:~Color" resolve="Color" />
+        <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
       </node>
       <node concept="2ShNRf" id="7ksQUDZy66q" role="33vP2m">
         <node concept="1pGfFk" id="7ksQUDZy66r" role="2ShVmc">
-          <ref role="37wK5l" to="1t7x:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
+          <ref role="37wK5l" to="z60i:~Color.&lt;init&gt;(int,int,int)" resolve="Color" />
           <node concept="3cmrfG" id="7ksQUDZy66s" role="37wK5m">
             <property role="3cmrfH" value="240" />
           </node>

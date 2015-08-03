@@ -239,7 +239,7 @@
   </node>
   <node concept="1TIwiD" id="2q_78a8W4yS">
     <property role="3GE5qa" value="node.variable" />
-    <property role="TrG5h" value="WildcardTreeVariable" />
+    <property role="TrG5h" value="WildcardVariable" />
     <property role="34LRSv" value="_" />
     <ref role="1TJDcQ" node="6SkxsM$4k7r" resolve="AbstractVariable" />
   </node>
