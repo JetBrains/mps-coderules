@@ -11,7 +11,6 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -158,14 +157,6 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1pt0VTMEFI$">
-    <property role="TrG5h" value="Variable" />
-    <property role="3GE5qa" value="node.variable" />
-    <ref role="1TJDcQ" node="6SkxsM$4k7r" resolve="AbstractVariable" />
-    <node concept="PrWs8" id="1pt0VTMEFI_" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="6SkxsM$4k7r">
     <property role="TrG5h" value="AbstractVariable" />
     <property role="R5$K7" value="true" />
@@ -224,18 +215,6 @@
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="node" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
-  <node concept="1TIwiD" id="5PpdwMfQ1CZ">
-    <property role="TrG5h" value="ValueExpression" />
-    <property role="3GE5qa" value="node.value" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="AbstractNode" />
-    <node concept="1TJgyj" id="5PpdwMfQ2z_" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="expression" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="asaX9" id="677NV56sTmy" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="2q_78a8W4yS">
     <property role="3GE5qa" value="node.variable" />

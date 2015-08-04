@@ -8,7 +8,7 @@
   <imports>
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -255,7 +255,7 @@
                             <ref role="3f7vo2" to="5j4j:6dP_abdUiHO" resolve="StandardRole" />
                           </node>
                           <node concept="liA8E" id="3qvzBqWDqD4" role="2OqNvi">
-                            <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="3qvzBqWDqD5" role="37wK5m">
                               <node concept="1PxgMI" id="3qvzBqWDqD6" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
@@ -411,7 +411,7 @@
   </node>
   <node concept="3UOs0u" id="7E86$tKtoxK">
     <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="LogicalVariableDeclaratin_addCardinality" />
+    <property role="TrG5h" value="LogicalVariableDeclaration_addCardinality" />
     <node concept="3UNGvq" id="7E86$tKtoxL" role="3UOs0v">
       <ref role="3UNGvu" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
       <node concept="tYCnQ" id="7E86$tKtsvh" role="_1QTJ">
