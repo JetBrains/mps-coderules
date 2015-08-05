@@ -8,11 +8,11 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="h23x" ref="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#util(jetbrains.mps.jchr.runtime/util@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
+    <import index="562q" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:util(jetbrains.mps.jchr.runtime/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -118,8 +118,8 @@
         <node concept="3FjOyl" id="$WpHqBrfb" role="3Fi0N9">
           <ref role="3Fjozs" node="$WpHqxVt7" resolve="gcd" />
           <node concept="2YIFZM" id="2d$asJMxnXx" role="3Fjozc">
-            <ref role="1Pybhc" to="h23x:~ArithmeticsUtils" resolve="ArithmeticsUtils" />
-            <ref role="37wK5l" to="h23x:~ArithmeticsUtils.sub(long,long):long" resolve="sub" />
+            <ref role="1Pybhc" to="562q:~ArithmeticsUtils" resolve="ArithmeticsUtils" />
+            <ref role="37wK5l" to="562q:~ArithmeticsUtils.sub(long,long):long" resolve="sub" />
             <node concept="3FjdXv" id="2d$asJMxnXL" role="37wK5m">
               <property role="TrG5h" value="M" />
             </node>

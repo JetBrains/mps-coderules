@@ -9,7 +9,7 @@
   <imports>
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
+    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
     <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
@@ -246,19 +246,19 @@
       <node concept="37vLTG" id="5H6hZahmlpn" role="3clF46">
         <property role="TrG5h" value="result" />
         <node concept="3uibUv" id="5H6hZahmlpB" role="1tU5fm">
-          <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="TreeLogical" />
+          <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
         </node>
       </node>
       <node concept="37vLTG" id="5H6hZahmlpH" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="5H6hZahmlqj" role="1tU5fm">
-          <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="TreeLogical" />
+          <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
         </node>
       </node>
       <node concept="37vLTG" id="5H6hZahmlpT" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="5H6hZahmlqy" role="1tU5fm">
-          <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="TreeLogical" />
+          <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
         </node>
       </node>
       <node concept="10P_77" id="5H6hZahmlpi" role="3clF45" />
@@ -1029,7 +1029,7 @@
               </node>
               <node concept="2ShNRf" id="5H6hZahpnpU" role="37wK5m">
                 <node concept="1pGfFk" id="5H6hZahpnJ_" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="TreeLogical" />
+                  <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
                   <node concept="1rXfSq" id="5H6hZahpnTD" role="37wK5m">
                     <ref role="37wK5l" node="5H6hZahoMly" resolve="buildLub" />
                     <node concept="37vLTw" id="5H6hZahpo7W" role="37wK5m">
@@ -1107,7 +1107,7 @@
       <node concept="37vLTG" id="2DKqMqOtbJf" role="3clF46">
         <property role="TrG5h" value="result" />
         <node concept="3uibUv" id="2DKqMqOtbJ$" role="1tU5fm">
-          <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="TreeLogical" />
+          <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
         </node>
       </node>
       <node concept="37vLTG" id="2DKqMqOyREC" role="3clF46">
@@ -1837,7 +1837,7 @@
               </node>
               <node concept="2ShNRf" id="2DKqMqOuA1l" role="37wK5m">
                 <node concept="1pGfFk" id="2DKqMqOuA1m" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="TreeLogical" />
+                  <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
                   <node concept="1rXfSq" id="2DKqMqOuA1n" role="37wK5m">
                     <ref role="37wK5l" node="5H6hZahoMly" resolve="buildLub" />
                     <node concept="37vLTw" id="2DKqMqOuA1o" role="37wK5m">

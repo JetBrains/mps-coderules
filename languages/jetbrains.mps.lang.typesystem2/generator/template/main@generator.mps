@@ -28,7 +28,7 @@
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.typesystem2.behavior)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
+    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
@@ -7953,7 +7953,7 @@
       <ref role="30HIoZ" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
       <node concept="gft3U" id="7jC45KccKR9" role="1lVwrX">
         <node concept="2YIFZM" id="7jC45KccKZV" role="gfFT$">
-          <ref role="37wK5l" to="i348:4OKkcnfu_xq" resolve="anchorTree" />
+          <ref role="37wK5l" to="i348:4OKkcnfu_xq" resolve="anchorAtom" />
           <ref role="1Pybhc" to="i348:4OKkcnfu_xo" resolve="AnchorUtil" />
           <node concept="10Nm6u" id="7jC45KccL0o" role="37wK5m">
             <node concept="29HgVG" id="7jC45KccL0G" role="lGtFl">

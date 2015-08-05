@@ -7,7 +7,7 @@
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="3o3z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.collect(MPS.Core/)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
+    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.unification.tree/)" />
   </imports>
@@ -782,7 +782,7 @@
       <node concept="37vLTG" id="4peSo3CHB$z" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="4peSo3CHBGl" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="3clFbS" id="4peSo3CHB5z" role="3clF47">
@@ -838,7 +838,7 @@
       <node concept="37vLTG" id="4peSo3D04j8" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="4peSo3D04j9" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3D075N" role="3clF46">
@@ -898,7 +898,7 @@
       <node concept="37vLTG" id="4peSo3CIJRP" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="4peSo3CIJRQ" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3D1wUl" role="3clF46">
@@ -953,7 +953,7 @@
                 <node concept="2OqwBi" id="4peSo3CIJSb" role="3clFbG">
                   <node concept="2ShNRf" id="4peSo3CIJSc" role="2Oq$k0">
                     <node concept="1pGfFk" id="4peSo3CIJSd" role="2ShVmc">
-                      <ref role="37wK5l" to="ie8e:47nvOnTQN6Q" resolve="TreeWalk" />
+                      <ref role="37wK5l" to="ie8e:47nvOnTQN6Q" resolve="AtomWalk" />
                       <node concept="2ShNRf" id="4peSo3CINyv" role="37wK5m">
                         <node concept="1pGfFk" id="4peSo3CINPP" role="2ShVmc">
                           <ref role="37wK5l" node="4peSo3CIw3p" resolve="NodePrinter" />
@@ -1033,7 +1033,7 @@
     <node concept="2tJIrI" id="4peSo3CIBGi" role="jymVt" />
     <node concept="3Tm1VV" id="4peSo3CHy8E" role="1B3o_S" />
     <node concept="3uibUv" id="4peSo3CHzrM" role="EKbjA">
-      <ref role="3uigEE" to="ie8e:3JgCwkqiP3h" resolve="TreeWalk.Walker" />
+      <ref role="3uigEE" to="ie8e:3JgCwkqiP3h" resolve="AtomWalk.Walker" />
     </node>
     <node concept="3clFb_" id="4peSo3CHzzR" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -1045,14 +1045,14 @@
       <node concept="37vLTG" id="4peSo3CHzzV" role="3clF46">
         <property role="TrG5h" value="cb" />
         <node concept="3uibUv" id="4peSo3CHzzW" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="ChildrenBranch" />
+          <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3CHzzY" role="3clF46">
         <property role="TrG5h" value="arguments" />
         <node concept="10Q1$e" id="4peSo3CHzzZ" role="1tU5fm">
           <node concept="3uibUv" id="4peSo3CHz$0" role="10Q1$1">
-            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
           </node>
         </node>
       </node>
@@ -1214,7 +1214,7 @@
       <node concept="37vLTG" id="4peSo3CHz$A" role="3clF46">
         <property role="TrG5h" value="listb" />
         <node concept="3uibUv" id="4peSo3CHz$B" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListBranch" />
+          <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3CHz$D" role="3clF46">
@@ -1223,7 +1223,7 @@
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3qUE_q" id="4peSo3CHz$F" role="11_B2D">
             <node concept="3uibUv" id="4peSo3CHz$G" role="3qUE_r">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="ITreePart" />
+              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
             </node>
           </node>
         </node>
@@ -1356,7 +1356,7 @@
       <node concept="37vLTG" id="4peSo3CHz$c" role="3clF46">
         <property role="TrG5h" value="valb" />
         <node concept="3uibUv" id="4peSo3CHz$d" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1msb0mq99GH" resolve="ValuesBranch" />
+          <ref role="3uigEE" to="ie8e:1msb0mq99GH" resolve="ValueFunc" />
           <node concept="16syzq" id="4peSo3CHz$e" role="11_B2D">
             <ref role="16sUi3" node="4peSo3CHz$i" resolve="V" />
           </node>
@@ -1481,7 +1481,7 @@
       <node concept="37vLTG" id="4peSo3CHz$q" role="3clF46">
         <property role="TrG5h" value="varb" />
         <node concept="3uibUv" id="4peSo3CHz$r" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:uNmovXiSQ6" resolve="VariableBranch" />
+          <ref role="3uigEE" to="ie8e:uNmovXiSQ6" resolve="VariableFunc" />
         </node>
       </node>
       <node concept="37vLTG" id="4peSo3CHz$s" role="3clF46">

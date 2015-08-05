@@ -8,10 +8,10 @@
   </languages>
   <imports>
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
-    <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="w2rx" ref="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -71,7 +71,7 @@
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="238586457668550951" name="jetbrains.mps.logic.structure.NodeSubstitution" flags="ng" index="22Ky0T">
+      <concept id="238586457668550951" name="jetbrains.mps.logic.structure.LogicalSubstitution" flags="ng" index="22Ky0T">
         <child id="238586457668550958" name="expression" index="22Ky0K" />
       </concept>
       <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
@@ -212,13 +212,13 @@
     <node concept="3Fjoy3" id="6SkxsMzGX8n" role="3FishY">
       <property role="TrG5h" value="typeOf" />
       <node concept="3uibUv" id="5lJXK8WSR" role="3FjoyS">
-        <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+        <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
         <node concept="3uibUv" id="5lJXK9TNl" role="11_B2D">
-          <ref role="3uigEE" to="e2lb:~Integer" resolve="Integer" />
+          <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
         </node>
       </node>
       <node concept="3uibUv" id="6SkxsM$2LsP" role="3FjoyS">
-        <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="TreeLogical" />
+        <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
       </node>
     </node>
     <node concept="3Tm1VV" id="6SkxsMzGW43" role="1B3o_S" />
@@ -229,7 +229,7 @@
     </node>
     <node concept="3a1Aqs" id="5oZZzbri1IF" role="3a1Ab0">
       <node concept="3uibUv" id="5oZZzbri1N5" role="3a1Sq8">
-        <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="TreeLogical" />
+        <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
       </node>
       <node concept="3FjdXv" id="5oZZzbri1OT" role="3a1BCA">
         <property role="TrG5h" value="T" />

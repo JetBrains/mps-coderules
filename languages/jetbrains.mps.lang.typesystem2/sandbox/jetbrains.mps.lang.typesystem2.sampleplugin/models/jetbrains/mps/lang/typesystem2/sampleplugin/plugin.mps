@@ -42,7 +42,7 @@
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.unification.tree)" />
+    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -2950,7 +2950,7 @@
               <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
             </node>
             <node concept="2YIFZM" id="1zN1RIkMMBr" role="33vP2m">
-              <ref role="37wK5l" to="i348:4OKkcnfu_xq" resolve="anchorTree" />
+              <ref role="37wK5l" to="i348:4OKkcnfu_xq" resolve="anchorAtom" />
               <ref role="1Pybhc" to="i348:4OKkcnfu_xo" resolve="AnchorUtil" />
               <node concept="37vLTw" id="1zN1RIkMMBs" role="37wK5m">
                 <ref role="3cqZAo" node="1zN1RIkMJJI" resolve="root" />
