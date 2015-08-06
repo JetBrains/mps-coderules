@@ -21,11 +21,11 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/jetbrains.mps.logic.sandbox.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/runner/jetbrains.mps.logic.sandbox.runner.msd" folder="logic" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/solutions/jetbrains.mps.logic.atom/jetbrains.mps.logic.atom.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/test/jetbrains.mps.logic.test.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" folder="typechecking" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.handling/jetbrains.mps.typechecking.handling.msd" folder="typechecking.rule" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.rules/jetbrains.mps.typechecking.rules.msd" folder="typechecking.rule" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.unification.tree/jetbrains.mps.unification.tree.msd" folder="logic" />
     </projectModules>
   </component>
 </project>

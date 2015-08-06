@@ -12,7 +12,7 @@
     <dependency reexport="false">26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.typesystem2.runtime)</dependency>
     <dependency reexport="false">35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)</dependency>
     <dependency reexport="false">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
-    <dependency reexport="true">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.unification.tree)</dependency>
+    <dependency reexport="true">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">65557aaa-5381-435d-b705-3f8d546e0f40(jetbrains.mps.ide.java.basePlatform)</dependency>
     <dependency reexport="false">df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</dependency>
