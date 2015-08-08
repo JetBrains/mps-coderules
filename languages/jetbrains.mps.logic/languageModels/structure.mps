@@ -73,13 +73,13 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="root" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="AbstractNode" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYC_">
     <property role="TrG5h" value="Node" />
-    <property role="3GE5qa" value="node" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="AbstractNode" />
+    <property role="3GE5qa" value="atom" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
     <node concept="1TJgyi" id="6dP_abdQoiG" role="1TKVEl">
       <property role="TrG5h" value="kind" />
       <ref role="AX2Wp" node="6dP_abdQnLY" resolve="NodeKind" />
@@ -96,7 +96,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="role" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="AbstractNode" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
     <node concept="1TJgyi" id="6$jH9oLmYHk" role="1TKVEl">
       <property role="TrG5h" value="cardinality" />
       <ref role="AX2Wp" node="6$jH9oLmYG0" resolve="Cardinality" />
@@ -113,7 +113,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="AbstractNode" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
     </node>
   </node>
   <node concept="AxPO7" id="6$jH9oLmYG0">
@@ -137,13 +137,13 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="AbstractNode" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYJ_">
-    <property role="TrG5h" value="ValueHolder" />
-    <property role="3GE5qa" value="node.value" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="AbstractNode" />
+    <property role="TrG5h" value="Value" />
+    <property role="3GE5qa" value="atom" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
     <node concept="1TJgyi" id="6$jH9oLmYKA" role="1TKVEl">
       <property role="TrG5h" value="value" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -151,23 +151,16 @@
   </node>
   <node concept="1TIwiD" id="6$jH9oLnyB1">
     <property role="TrG5h" value="Symbol" />
-    <property role="3GE5qa" value="node" />
+    <property role="3GE5qa" value="atom" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6$jH9oLnyBN" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="6SkxsM$4k7r">
-    <property role="TrG5h" value="AbstractVariable" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="3GE5qa" value="node.variable" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="AbstractNode" />
-  </node>
   <node concept="AxPO7" id="6dP_abdQnLY">
     <property role="TrG5h" value="NodeKind" />
     <property role="3lZH7k" value="derive_from_presentation" />
-    <property role="3GE5qa" value="node" />
+    <property role="3GE5qa" value="atom" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="1dOf$WH0KX6" role="M5hS2">
       <property role="1uS6qo" value="inherit" />
@@ -210,22 +203,22 @@
     </node>
   </node>
   <node concept="1TIwiD" id="5lJXKARS0">
-    <property role="TrG5h" value="AbstractNode" />
+    <property role="TrG5h" value="Atom" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="3GE5qa" value="node" />
+    <property role="3GE5qa" value="atom" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2q_78a8W4yS">
-    <property role="3GE5qa" value="node.variable" />
-    <property role="TrG5h" value="WildcardVariable" />
+    <property role="3GE5qa" value="atom" />
+    <property role="TrG5h" value="Wildcard" />
     <property role="34LRSv" value="_" />
-    <ref role="1TJDcQ" node="6SkxsM$4k7r" resolve="AbstractVariable" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
   </node>
   <node concept="1TIwiD" id="7E86$tKskWj">
     <property role="TrG5h" value="LogicalValue" />
     <property role="3GE5qa" value="logical" />
-    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalExpression" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalClause" />
     <node concept="1TJgyj" id="7E86$tKsqnr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="code" />
@@ -234,18 +227,17 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7E86$tKsl45">
-    <property role="TrG5h" value="LogicalExpression" />
+    <property role="TrG5h" value="LogicalClause" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="logical" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="7E86$tKsHeX">
     <property role="3GE5qa" value="logical" />
     <property role="TrG5h" value="AbstractLogicalVariable" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalExpression" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalClause" />
     <node concept="1TJgyj" id="7E86$tKsJfa" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="index" />
@@ -307,8 +299,9 @@
     </node>
   </node>
   <node concept="1TIwiD" id="dfChU1zo4B">
-    <property role="TrG5h" value="LogicalSubstitution" />
-    <property role="3GE5qa" value="node" />
+    <property role="TrG5h" value="Splice" />
+    <property role="3GE5qa" value="atom" />
+    <property role="34LRSv" value="Node Expression" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyj" id="dfChU1zo4I" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -317,9 +310,9 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="M6xJ_" id="dfChU1zo4C" role="lGtFl">
-      <property role="Hh88m" value="substitute" />
+      <property role="Hh88m" value="splice" />
       <node concept="trNpa" id="dfChU1zo4E" role="EQaZv">
-        <ref role="trN6q" node="5lJXKARS0" resolve="AbstractNode" />
+        <ref role="trN6q" node="5lJXKARS0" resolve="Atom" />
       </node>
       <node concept="tn0Fv" id="dfChU1zo4G" role="HhnKV">
         <property role="tnX3d" value="false" />
@@ -327,14 +320,14 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1OShD0HAY6y">
-    <property role="3GE5qa" value="node" />
-    <property role="TrG5h" value="ListNode" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="AbstractNode" />
+    <property role="3GE5qa" value="atom" />
+    <property role="TrG5h" value="List" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
     <node concept="1TJgyj" id="1OShD0HAZ38" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="AbstractNode" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
     </node>
   </node>
 </model>

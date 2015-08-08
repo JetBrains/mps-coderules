@@ -7821,8 +7821,8 @@
               <node concept="3cpWs8" id="6w6CYIRa8Cx" role="3cqZAp">
                 <node concept="3cpWsn" id="6w6CYIRa8Cy" role="3cpWs9">
                   <property role="TrG5h" value="logic" />
-                  <node concept="3uibUv" id="5JTOzCR3QGi" role="1tU5fm">
-                    <ref role="3uigEE" to="yg8f:dfChU1jXdE" resolve="IAtomLogical" />
+                  <node concept="3uibUv" id="1JvIcZJqAFt" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
@@ -7882,8 +7882,8 @@
                 <node concept="3cpWsn" id="6w6CYIRafNe" role="3cpWs9">
                   <property role="TrG5h" value="logic" />
                   <node concept="10Q1$e" id="6w6CYIRafSN" role="1tU5fm">
-                    <node concept="3uibUv" id="5JTOzCR3QK$" role="10Q1$1">
-                      <ref role="3uigEE" to="yg8f:dfChU1jXdE" resolve="IAtomLogical" />
+                    <node concept="3uibUv" id="1JvIcZJqAI5" role="10Q1$1">
+                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                     </node>
                   </node>
                 </node>
@@ -7999,7 +7999,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="5JTOzCReMdn" role="3acgRq">
-      <ref role="30HIoZ" to="wq2x:6p0DfM0pKSO" resolve="LogicExpressionWrapper" />
+      <ref role="30HIoZ" to="wq2x:6p0DfM0pKSO" resolve="LogicalExpression" />
       <node concept="14YyZ8" id="5JTOzCReP5P" role="1lVwrX">
         <node concept="14ZrTv" id="5JTOzCReP5V" role="14ZwWg">
           <node concept="30G5F_" id="5JTOzCReP5W" role="150hEN">

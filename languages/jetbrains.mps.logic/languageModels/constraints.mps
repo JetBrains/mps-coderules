@@ -237,8 +237,8 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="3qvzBqWDzqQ">
-    <property role="3GE5qa" value="node.value" />
-    <ref role="1M2myG" to="5j4j:6$jH9oLmYJ_" resolve="ValueHolder" />
+    <property role="3GE5qa" value="atom" />
+    <ref role="1M2myG" to="5j4j:6$jH9oLmYJ_" resolve="Value" />
     <node concept="EnEH3" id="3qvzBqWDzrE" role="1MhHOB">
       <ref role="EomxK" to="5j4j:6$jH9oLmYKA" resolve="value" />
       <node concept="QB0g5" id="3qvzBqWDzrG" role="QCWH9">

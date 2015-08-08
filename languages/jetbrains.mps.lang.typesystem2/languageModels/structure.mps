@@ -94,7 +94,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="argument" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalExpression" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
     </node>
   </node>
   <node concept="1TIwiD" id="7eGEHDlgPU4">
@@ -191,7 +191,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="argument" />
       <property role="20lbJX" value="1..n" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalExpression" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0asb7">
@@ -255,23 +255,23 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="assignee" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalExpression" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
     </node>
     <node concept="1TJgyj" id="6p0DfM0oEna" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalExpression" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0pKSO">
-    <property role="TrG5h" value="LogicExpressionWrapper" />
+    <property role="TrG5h" value="LogicalExpression" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="6p0DfM0pQge" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="expression" />
+      <property role="20kJfa" value="clause" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalExpression" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
     </node>
   </node>
   <node concept="1TIwiD" id="2E5lcNn01_F">
@@ -289,7 +289,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="assignedType" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalExpression" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
     </node>
   </node>
   <node concept="1TIwiD" id="2E5lcNn5kn6">
@@ -426,7 +426,7 @@
     <node concept="1TJgyj" id="60B5zVESBfb" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="variable" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalExpression" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
     </node>
   </node>
   <node concept="1TIwiD" id="60B5zVESBMM">
