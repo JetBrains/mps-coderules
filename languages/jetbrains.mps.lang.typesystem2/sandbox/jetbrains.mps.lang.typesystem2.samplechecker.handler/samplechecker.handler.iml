@@ -8,9 +8,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Term" />
     <orderEntry type="module" module-name="Logic" />
     <orderEntry type="library" name="jchr" level="project" />
     <orderEntry type="module" module-name="samplechecker.handler.util" />
+    <orderEntry type="module" module-name="Atom" />
   </component>
 </module>

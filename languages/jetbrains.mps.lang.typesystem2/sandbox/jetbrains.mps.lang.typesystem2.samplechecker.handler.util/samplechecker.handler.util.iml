@@ -8,8 +8,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Logic" />
-    <orderEntry type="module" module-name="Term" />
     <orderEntry type="module" module-name="typesystem2.runtime" />
     <orderEntry type="library" name="jchr" level="project" />
+    <orderEntry type="module" module-name="Atom" />
   </component>
 </module>

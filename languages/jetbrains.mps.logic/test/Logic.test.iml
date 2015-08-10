@@ -20,6 +20,6 @@
     </orderEntry>
     <orderEntry type="library" name="jchr" level="project" />
     <orderEntry type="module" module-name="Logic" scope="TEST" />
-    <orderEntry type="module" module-name="Term" scope="TEST" />
+    <orderEntry type="module" module-name="Atom" scope="TEST" />
   </component>
 </module>

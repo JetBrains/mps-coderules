@@ -17,8 +17,8 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="Logic" scope="TEST" />
-    <orderEntry type="module" module-name="Term" scope="TEST" />
     <orderEntry type="module" module-name="samplechecker.handler.util" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="jchr" level="project" />
+    <orderEntry type="module" module-name="Atom" scope="TEST" />
   </component>
 </module>
