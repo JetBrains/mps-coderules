@@ -1506,7 +1506,7 @@
   </node>
   <node concept="2DaZZR" id="3Qp4N06byoy" />
   <node concept="sE7Ow" id="3Qp4N06byoz">
-    <property role="TrG5h" value="TestRuleTemplate" />
+    <property role="TrG5h" value="MarkTypes" />
     <property role="2uzpH1" value="Mark Types" />
     <property role="72QZ$" value="true" />
     <node concept="2XrIbr" id="12TFIqWsK4U" role="32lrUH">
@@ -2487,7 +2487,7 @@
     <property role="TrG5h" value="TestRuleTemplateGroup" />
     <node concept="ftmFs" id="2Rw7mr8T79R" role="ftER_">
       <node concept="tCFHf" id="2Rw7mr8T7aK" role="ftvYc">
-        <ref role="tCJdB" node="3Qp4N06byoz" resolve="TestRuleTemplate" />
+        <ref role="tCJdB" node="3Qp4N06byoz" resolve="MarkTypes" />
       </node>
       <node concept="tCFHf" id="41ox5VnrVW_" role="ftvYc">
         <ref role="tCJdB" node="41ox5VnrUX7" resolve="ClearMarks" />

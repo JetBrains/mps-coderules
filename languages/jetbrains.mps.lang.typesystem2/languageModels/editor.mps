@@ -1177,9 +1177,6 @@
     <node concept="3EZMnI" id="6p0DfM0pRaY" role="2wV5jI">
       <node concept="3F0ifn" id="7nuzzkr4kdj" role="3EZMnx">
         <property role="3F0ifm" value="«" />
-        <node concept="11L4FC" id="7nuzzkr4orS" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
         <node concept="11LMrY" id="7nuzzkr4otD" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -1194,9 +1191,6 @@
       <node concept="3F0ifn" id="7nuzzkr4kdr" role="3EZMnx">
         <property role="3F0ifm" value="»" />
         <node concept="11L4FC" id="7nuzzkr4ouE" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="7nuzzkr4ouF" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
         <node concept="VechU" id="7nuzzkr4ouG" role="3F10Kt">
