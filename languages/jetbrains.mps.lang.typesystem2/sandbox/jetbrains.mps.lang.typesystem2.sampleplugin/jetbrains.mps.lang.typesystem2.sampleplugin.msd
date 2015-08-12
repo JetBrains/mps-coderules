@@ -8,10 +8,10 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)</dependency>
-    <dependency reexport="false">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
+    <dependency reexport="true">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
     <dependency reexport="false">742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)</dependency>
     <dependency reexport="false">c7366fe8-43b9-446d-82b3-5cfc76e71f17(jetbrains.mps.typechecking.rules)</dependency>
-    <dependency reexport="false">b984ee52-f34d-4b6d-8812-866c1d3eae31(jetbrains.mps.jchr.runtime)</dependency>
+    <dependency reexport="true">b984ee52-f34d-4b6d-8812-866c1d3eae31(jetbrains.mps.jchr.runtime)</dependency>
     <dependency reexport="false">0d017abe-6cd7-4206-86d5-bfa557885b07(jetbrains.mps.typechecking.handling)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
     <dependency reexport="false">26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.typesystem2.runtime)</dependency>

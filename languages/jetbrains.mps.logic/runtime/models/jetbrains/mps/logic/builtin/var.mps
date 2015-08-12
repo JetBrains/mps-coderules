@@ -460,6 +460,12 @@
           <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
         </node>
       </node>
+      <node concept="37vLTG" id="24Vro6cR_QP" role="3clF46">
+        <property role="TrG5h" value="tracer" />
+        <node concept="3uibUv" id="24Vro6cR_S2" role="1tU5fm">
+          <ref role="3uigEE" to="bspi:24Vro6cQnrj" resolve="ComputingTracer" />
+        </node>
+      </node>
       <node concept="3clFbS" id="4xBopTzr9JA" role="3clF47">
         <node concept="3clFbF" id="4xBopTzrjSy" role="3cqZAp">
           <node concept="3nyPlj" id="4xBopTzrjSx" role="3clFbG">
