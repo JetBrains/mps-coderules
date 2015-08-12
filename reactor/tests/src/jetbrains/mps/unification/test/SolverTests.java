@@ -464,13 +464,17 @@ public class SolverTests {
                 term("a"),
                 term("b"),
 
-                SYMBOL_CLASH
+                SYMBOL_CLASH,
+                "a",
+                "b"
         );
         assertUnificationFails(
                 parse("node{name{X} child{abc}}"),
                 parse("node{name{foo} child{X}}"),
 
-                SYMBOL_CLASH
+                SYMBOL_CLASH,
+                "abc",
+                "foo"
         );
     }
 

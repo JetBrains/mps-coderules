@@ -53,9 +53,11 @@ public class UnionFindTermGraphUnifier {
 
     private FailureCause myFailureCause = UKNOWN;
 
+    private Object[] myFailureDetails = null;
+
     public Substitution unify(Term a, Term b) {
         if (!unifClosure(a, b)) {
-            return failedSubstitution(myFailureCause);
+            return failedSubstitution(myFailureCause, myFailureDetails);
         }
 
         return findSolution(a);
@@ -111,6 +113,7 @@ public class UnionFindTermGraphUnifier {
         {
             if (!eq(zs.symbol(), zt.symbol())) {
                 myFailureCause = SYMBOL_CLASH;
+                myFailureDetails = new Object[]{zs.symbol(), zt.symbol()};
                 return false; // symbol clash
             }
 

@@ -16,6 +16,7 @@
 
 package jetbrains.mps.unification;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -29,14 +30,19 @@ public class Substitution {
 
     private boolean mySuccessful;
 
-    private FailureCause myFailureCause;
+    private Failure myFailure;
 
     public Substitution(boolean successful) {
         mySuccessful = successful;
     }
 
     public Substitution(FailureCause failCause) {
-        myFailureCause = failCause;
+        myFailure = new Failure(failCause);
+        mySuccessful = false;
+    }
+
+    public Substitution(FailureCause failCause, Object... details) {
+        myFailure = new Failure(failCause, details);
         mySuccessful = false;
     }
 
@@ -49,15 +55,21 @@ public class Substitution {
     }
 
     public FailureCause failureCause() {
-        return myFailureCause;
+        return myFailure != null ? myFailure.getCause() : null;
+    }
+
+    public Object[] failureDetails() {
+        return myFailure != null ? myFailure.getDetails() : null;
     }
 
     public String toString() {
-        return myFailureCause != null ? "[" + myFailureCause + "]" : "[FAILED_SUBSTITUTION]";
+        return myFailure != null ? "[" + String.valueOf(myFailure) + "]" : "[FAILED_SUBSTITUTION]";
     }
 
     public static class Binding {
+
         private Term myVar;
+
         private Term myTerm;
 
         public Binding(Term myVar, Term myTerm) {
@@ -71,6 +83,36 @@ public class Substitution {
 
         public Term term() {
             return myTerm;
+        }
+    }
+
+
+    public static class Failure {
+
+        private FailureCause myCause;
+
+        private Object[] myDetails;
+
+        public Failure(FailureCause cause) {
+            this.myCause = cause;
+        }
+
+        public Failure(FailureCause cause, Object... details) {
+            this.myCause = cause;
+            this.myDetails = details;
+        }
+
+        public FailureCause getCause() {
+            return myCause;
+        }
+
+        public Object[] getDetails() {
+            return myDetails;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(myCause) + (myDetails != null ? Arrays.asList(myDetails) : "");
         }
     }
 

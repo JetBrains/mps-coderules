@@ -25,6 +25,7 @@ import java.util.*;
 
 import static jetbrains.mps.unification.test.AssertStructurallyEquivalent.assertEquivalent;
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 
 /**
@@ -110,4 +111,19 @@ public class AssertUnification {
         assertSame(failureCause, subs2.failureCause());
     }
 
+    public static void assertUnificationFails(Term s, Term t, FailureCause failureCause, Object... details) throws Exception {
+        Substitution subs1 = Unification.unify(s, t);
+
+        assertFalse(subs1.isSuccessful());
+        assertSame(failureCause, subs1.failureCause());
+        assertArrayEquals(details, subs1.failureDetails());
+
+        Substitution subs2 = Unification.unify(t, s);
+
+        assertFalse(subs2.isSuccessful());
+        assertSame(failureCause, subs1.failureCause());
+        // dont test for details: may be in different order
+    }
+
 }
+

@@ -38,6 +38,10 @@ public class Unification {
         return new Substitution(failCause);
     }
 
+    protected static Substitution failedSubstitution(FailureCause failCause, Object... details) {
+        return new Substitution(failCause, details);
+    }
+
     protected static final Substitution EMPTY_SUBSTITUTION = new Substitution(true) {
         @Override
         public String toString() {
