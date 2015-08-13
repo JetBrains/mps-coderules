@@ -70,6 +70,10 @@
       <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
         <child id="1207145201301" name="reference" index="ftvYc" />
       </concept>
+      <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
+        <property id="1207318242773" name="modifiers" index="pLAjc" />
+        <property id="1207318242774" name="keycode" index="pLAjf" />
+      </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
@@ -91,6 +95,15 @@
         <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
       <concept id="1205681243813" name="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" flags="in" index="2ScWuX" />
+      <concept id="1562714432501166198" name="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" flags="lg" index="Zd509">
+        <child id="1562714432501166206" name="keystroke" index="Zd501" />
+      </concept>
+      <concept id="1562714432501166197" name="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" flags="ng" index="Zd50a">
+        <child id="1562714432501166199" name="shortcutChange" index="Zd508" />
+      </concept>
+      <concept id="6193305307616715384" name="jetbrains.mps.lang.plugin.structure.ShortcutChange" flags="lg" index="1bYyw_">
+        <reference id="6193305307616734326" name="action" index="1bYAoF" />
+      </concept>
       <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
       <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
         <reference id="1217252646389" name="key" index="1DUlNI" />
@@ -2374,15 +2387,13 @@
     </node>
     <node concept="tnohg" id="3Qp4N06byo$" role="tncku">
       <node concept="3clFbS" id="3Qp4N06byo_" role="2VODD2">
-        <node concept="3cpWs8" id="41ox5VnnK08" role="3cqZAp">
-          <node concept="3cpWsn" id="41ox5VnnK09" role="3cpWs9">
-            <property role="TrG5h" value="component" />
-            <node concept="3uibUv" id="41ox5VnnK04" role="1tU5fm">
-              <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
-            </node>
-            <node concept="2OqwBi" id="41ox5VnnK0a" role="33vP2m">
-              <node concept="2WthIp" id="41ox5VnnK0b" role="2Oq$k0" />
-              <node concept="1DTwFV" id="41ox5VnnK0c" role="2OqNvi">
+        <node concept="3clFbF" id="3NRKQ2BK6ed" role="3cqZAp">
+          <node concept="2YIFZM" id="3NRKQ2BK6ee" role="3clFbG">
+            <ref role="1Pybhc" node="41ox5VnpFrR" resolve="MarkTypesAndErrors" />
+            <ref role="37wK5l" node="41ox5VnrNu5" resolve="clearAll" />
+            <node concept="2OqwBi" id="3NRKQ2BK6ef" role="37wK5m">
+              <node concept="2WthIp" id="3NRKQ2BK6eg" role="2Oq$k0" />
+              <node concept="1DTwFV" id="3NRKQ2BK6eh" role="2OqNvi">
                 <ref role="2WH_rO" node="41ox5VnnCZG" resolve="editorComponent" />
               </node>
             </node>
@@ -2494,7 +2505,7 @@
         <ref role="tCJdB" node="3Qp4N06byoz" resolve="MarkTypes" />
       </node>
       <node concept="tCFHf" id="41ox5VnrVW_" role="ftvYc">
-        <ref role="tCJdB" node="41ox5VnrUX7" resolve="ClearMarks" />
+        <ref role="tCJdB" node="41ox5VnrUX7" resolve="ClearTypes" />
       </node>
     </node>
     <node concept="tT9cl" id="2Rw7mr8T789" role="2f5YQi">
@@ -5010,7 +5021,7 @@
     </node>
   </node>
   <node concept="sE7Ow" id="41ox5VnrUX7">
-    <property role="TrG5h" value="ClearMarks" />
+    <property role="TrG5h" value="ClearTypes" />
     <property role="2uzpH1" value="Clear Types" />
     <node concept="1DS2jV" id="41ox5VnrVtS" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
@@ -5903,6 +5914,16 @@
         <node concept="uiWXb" id="61vfVfp5Fhw" role="37wK5m">
           <ref role="uiZuM" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="Zd50a" id="3NRKQ2BK6Oq">
+    <property role="TrG5h" value="TypingKeymap" />
+    <node concept="Zd509" id="3NRKQ2BK6Ot" role="Zd508">
+      <ref role="1bYAoF" node="3Qp4N06byoz" resolve="MarkTypes" />
+      <node concept="pLAjd" id="3NRKQ2BK6Ov" role="Zd501">
+        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjf" value="VK_F7" />
       </node>
     </node>
   </node>
