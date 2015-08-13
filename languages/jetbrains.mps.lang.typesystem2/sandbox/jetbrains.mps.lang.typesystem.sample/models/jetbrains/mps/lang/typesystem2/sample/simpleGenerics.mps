@@ -119,8 +119,8 @@
         </node>
         <node concept="3uibUv" id="7yvZ58P0VbL" role="11_B2D">
           <ref role="3uigEE" node="7yvZ58OTEhb" resolve="SimpleGenerics.List" />
-          <node concept="16syzq" id="7yvZ58P0VdW" role="11_B2D">
-            <ref role="16sUi3" node="7yvZ58OTE6Y" resolve="V" />
+          <node concept="16syzq" id="1687aasaG8E" role="11_B2D">
+            <ref role="16sUi3" node="7yvZ58OTE5_" resolve="K" />
           </node>
         </node>
       </node>
@@ -164,8 +164,8 @@
               </node>
               <node concept="3uibUv" id="7yvZ58P6mHC" role="11_B2D">
                 <ref role="3uigEE" node="7yvZ58OTEhb" resolve="SimpleGenerics.List" />
-                <node concept="3uibUv" id="2BnJViikSen" role="11_B2D">
-                  <ref role="3uigEE" node="7yvZ58Pa7FA" resolve="SimpleGenerics.Str" />
+                <node concept="3uibUv" id="1687aas9Vxe" role="11_B2D">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
               </node>
             </node>
