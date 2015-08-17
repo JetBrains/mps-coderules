@@ -8,6 +8,7 @@
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
+    <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1870,6 +1871,21 @@
       <node concept="3Tm1VV" id="24Vro6cQCzr" role="1B3o_S" />
       <node concept="3clFbS" id="24Vro6cQCzs" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="7FtwPOZHF$M" role="jymVt" />
+    <node concept="3clFb_" id="7FtwPOZHe8P" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="remainingConstraint" />
+      <node concept="37vLTG" id="7FtwPOZHe8Q" role="3clF46">
+        <property role="TrG5h" value="constraint" />
+        <node concept="3uibUv" id="7FtwPOZHrA1" role="1tU5fm">
+          <ref role="3uigEE" to="eifs:~IConstraint" resolve="IConstraint" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="7FtwPOZHe8V" role="3clF45" />
+      <node concept="3Tm1VV" id="7FtwPOZHe8W" role="1B3o_S" />
+      <node concept="3clFbS" id="7FtwPOZHe8X" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="7FtwPOZHF_O" role="jymVt" />
     <node concept="2tJIrI" id="24Vro6cQoAO" role="jymVt" />
     <node concept="Wx3nA" id="24Vro6cS5rK" role="jymVt">
       <property role="3TUv4t" value="true" />
@@ -1923,6 +1939,19 @@
               <node concept="3cqZAl" id="24Vro6cS5T7" role="3clF45" />
               <node concept="3Tm1VV" id="24Vro6cS5T8" role="1B3o_S" />
               <node concept="3clFbS" id="24Vro6cS5Ta" role="3clF47" />
+            </node>
+            <node concept="3clFb_" id="7FtwPOZHG0u" role="jymVt">
+              <property role="1EzhhJ" value="false" />
+              <property role="TrG5h" value="remainingConstraint" />
+              <node concept="37vLTG" id="7FtwPOZHG0v" role="3clF46">
+                <property role="TrG5h" value="constraint" />
+                <node concept="3uibUv" id="7FtwPOZHG0w" role="1tU5fm">
+                  <ref role="3uigEE" to="eifs:~IConstraint" resolve="IConstraint" />
+                </node>
+              </node>
+              <node concept="3cqZAl" id="7FtwPOZHG0x" role="3clF45" />
+              <node concept="3Tm1VV" id="7FtwPOZHG0y" role="1B3o_S" />
+              <node concept="3clFbS" id="7FtwPOZHG0_" role="3clF47" />
             </node>
           </node>
         </node>
