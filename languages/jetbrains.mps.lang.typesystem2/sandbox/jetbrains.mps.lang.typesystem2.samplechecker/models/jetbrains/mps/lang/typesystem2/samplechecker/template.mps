@@ -10845,16 +10845,45 @@
       <property role="TrG5h" value="equalsExpression" />
       <node concept="3Aq9E8" id="1PFbZN6tO4K" role="3otmyu">
         <node concept="3clFbS" id="1PFbZN6tO4Q" role="3Aqf5P">
-          <node concept="3Aqczg" id="1PFbZN6xtLV" role="3cqZAp">
-            <node concept="3wWvb2" id="1PFbZN6xtM3" role="3Aqpz8">
-              <node concept="3clFbT" id="1PFbZN6xtM2" role="3wWo3s">
-                <property role="3clFbU" value="true" />
+          <node concept="3SKdUt" id="3g$8GQBNC_v" role="3cqZAp">
+            <node concept="3SKdUq" id="3g$8GQBNC_w" role="3SKWNk">
+              <property role="3SKdUp" value="todo: check compatibility" />
+            </node>
+          </node>
+          <node concept="3X$Joe" id="5bC6UNlJKZR" role="3cqZAp">
+            <node concept="aZer4" id="5bC6UNlJKZZ" role="3XD1gS">
+              <property role="TrG5h" value="ResultType" />
+            </node>
+          </node>
+          <node concept="3Aqczg" id="5bC6UNlJL2x" role="3cqZAp">
+            <node concept="3A8Hvi" id="5bC6UNlJL2r" role="3Aqpz8">
+              <node concept="a7P8L" id="5bC6UNlJL2J" role="3A8wtg">
+                <ref role="a7OzE" node="5bC6UNlJKZZ" resolve="ResultType" />
+              </node>
+              <node concept="aYllk" id="5bC6UNlIYzX" role="3A8w4Q">
+                <node concept="1oi1Uc" id="5bC6UNlIYzY" role="aYrYs">
+                  <node concept="1oi5UN" id="5bC6UNlIYzZ" role="1oi0x0">
+                    <node concept="1oi5Wm" id="5bC6UNlIY$0" role="1ojpOf">
+                      <property role="TrG5h" value="concept" />
+                      <node concept="1oi5XN" id="5bC6UNlIY$1" role="1oi5zu">
+                        <property role="1oi5yK" value="BooleanType" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
-          <node concept="3SKdUt" id="5bC6UNl_uvc" role="3cqZAp">
-            <node concept="3SKdUq" id="5bC6UNl_uvi" role="3SKWNk">
-              <property role="3SKdUp" value="todo" />
+          <node concept="3Aqczg" id="5bC6UNlIY4G" role="3cqZAp">
+            <node concept="3XxkQB" id="5bC6UNlIY4$" role="3Aqpz8">
+              <node concept="aYllk" id="5bC6UNlIY4C" role="3XxmmS">
+                <node concept="3A2sRY" id="5bC6UNlIYzS" role="aYrYs">
+                  <ref role="3A2yKK" node="1PFbZN6tQXC" resolve="ee" />
+                </node>
+              </node>
+              <node concept="a7P8L" id="5bC6UNlJL0d" role="3Xxm5W">
+                <ref role="a7OzE" node="5bC6UNlJKZZ" resolve="ResultType" />
+              </node>
             </node>
           </node>
         </node>
