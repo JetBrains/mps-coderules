@@ -142,6 +142,9 @@
       <property role="20kJfa" value="boundParameterBlock" />
       <ref role="20lvS9" node="1zN1RIkQtcr" resolve="BoundParameterBlock" />
     </node>
+    <node concept="PrWs8" id="5bC6UNl$TEw" role="PzmwI">
+      <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="ICanBeCommented" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3d3">
     <property role="TrG5h" value="RuleComponent" />

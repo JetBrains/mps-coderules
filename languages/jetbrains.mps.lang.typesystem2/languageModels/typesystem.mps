@@ -15,6 +15,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -74,7 +75,6 @@
         <child id="1206060619838" name="condition" index="3eO9$A" />
         <child id="1206060644605" name="statementList" index="3eOfB_" />
       </concept>
-      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -883,7 +883,7 @@
         <node concept="1YBJjd" id="5bC6UNlu9T$" role="2OEOjV">
           <ref role="1YBMHb" node="5bC6UNlu6wh" resolve="constraintDeclaration" />
         </node>
-        <node concept="1Wc70l" id="5bC6UNl$FQV" role="2MkoU_">
+        <node concept="22lmx$" id="5bC6UNlB$Eu" role="2MkoU_">
           <node concept="3clFbC" id="5bC6UNlu7iA" role="3uHU7B">
             <node concept="2OqwBi" id="5bC6UNlu6yu" role="3uHU7B">
               <node concept="1YBJjd" id="5bC6UNlu6wl" role="2Oq$k0">
@@ -905,7 +905,7 @@
               <node concept="34oBXx" id="5bC6UNlu9QL" role="2OqNvi" />
             </node>
           </node>
-          <node concept="3eOSWO" id="5bC6UNl$Iai" role="3uHU7w">
+          <node concept="3clFbC" id="5bC6UNlB$JQ" role="3uHU7w">
             <node concept="2OqwBi" id="5bC6UNl$Gs2" role="3uHU7B">
               <node concept="2OqwBi" id="5bC6UNl$Gs3" role="2Oq$k0">
                 <node concept="1YBJjd" id="5bC6UNl$Gs4" role="2Oq$k0">

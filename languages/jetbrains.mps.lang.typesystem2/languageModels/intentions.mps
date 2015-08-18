@@ -80,7 +80,7 @@
   <node concept="2S6QgY" id="1CgWc1TyAgc">
     <property role="TrG5h" value="AddComment" />
     <property role="3GE5qa" value="comment" />
-    <ref role="2ZfgGC" to="wq2x:6p0DfM0asBO" resolve="ConstraintDeclaration" />
+    <ref role="2ZfgGC" to="wq2x:1CgWc1Tyjkz" resolve="ICanBeCommented" />
     <node concept="2S6ZIM" id="1CgWc1TyAgd" role="2ZfVej">
       <node concept="3clFbS" id="1CgWc1TyAge" role="2VODD2">
         <node concept="3clFbF" id="1CgWc1TyBK7" role="3cqZAp">
