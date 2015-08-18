@@ -1693,6 +1693,54 @@
   <node concept="AVZre" id="3Qp4N06bUEa">
     <property role="TrG5h" value="TypeConstructor" />
     <property role="3GE5qa" value="type" />
+    <node concept="AVZhu" id="3g$8GQBQp90" role="3ArX_J">
+      <property role="TrG5h" value="booleanType" />
+      <node concept="3Aq9E8" id="3g$8GQBQp91" role="3otmyu">
+        <node concept="3clFbS" id="3g$8GQBQp92" role="3Aqf5P">
+          <node concept="3Aqczg" id="3g$8GQBQp93" role="3cqZAp">
+            <node concept="3A8Hvi" id="3g$8GQBQp94" role="3Aqpz8">
+              <node concept="aYllk" id="3g$8GQBQp95" role="3A8w4Q">
+                <node concept="1oi1Uc" id="3g$8GQBQp96" role="aYrYs">
+                  <node concept="1oi5UN" id="3g$8GQBQp97" role="1oi0x0">
+                    <node concept="1oi5Wm" id="3g$8GQBQp98" role="1ojpOf">
+                      <property role="TrG5h" value="concept" />
+                      <node concept="1oi5XN" id="3g$8GQBQp99" role="1oi5zu">
+                        <property role="1oi5yK" value="BooleanType" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="a7P8L" id="3g$8GQBQp9c" role="3A8wtg">
+                <ref role="a7OzE" node="3g$8GQBQp9g" resolve="BooleanType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Aq93q" id="3g$8GQBQp9d" role="3orSU4">
+        <property role="3ArMco" value="false" />
+        <node concept="3clFbS" id="3g$8GQBQp9e" role="3Aqf5P">
+          <node concept="3X$14a" id="3g$8GQBQp9f" role="3cqZAp">
+            <node concept="aZer4" id="3g$8GQBQp9g" role="3XD1gS">
+              <property role="TrG5h" value="BooleanType" />
+            </node>
+          </node>
+          <node concept="3Aqczg" id="3g$8GQBQp9h" role="3cqZAp">
+            <node concept="AVZhr" id="3g$8GQBQp9i" role="3Aqpz8">
+              <node concept="aYllk" id="3g$8GQBQp9j" role="2pcbIn">
+                <node concept="3TUQnm" id="3g$8GQBQp9k" role="aYrYs">
+                  <ref role="3TV0OU" to="tpee:f_0P_4Y" resolve="BooleanType" />
+                </node>
+              </node>
+              <node concept="a7P8L" id="3g$8GQBQp9l" role="3A07fg">
+                <ref role="a7OzE" node="3g$8GQBQp9g" resolve="BooleanType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="AVZhu" id="1PFbZN6rzPM" role="3ArX_J">
       <property role="TrG5h" value="intType" />
       <node concept="3Aq9E8" id="1PFbZN6rzPS" role="3otmyu">
