@@ -9,8 +9,8 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.typesystem2.structure)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -452,7 +452,7 @@
                 <node concept="2Xjw5R" id="1zN1RIls311" role="2OqNvi">
                   <node concept="3gmYPX" id="1zN1RIls3uE" role="1xVPHs">
                     <node concept="3gn64h" id="1zN1RIls3uK" role="3gmYPZ">
-                      <ref role="3gnhBz" to="wq2x:6p0DfM0a3d3" resolve="RulePart" />
+                      <ref role="3gnhBz" to="wq2x:6p0DfM0a3d3" resolve="RuleComponent" />
                     </node>
                     <node concept="3gn64h" id="1zN1RIls3uQ" role="3gmYPZ">
                       <ref role="3gnhBz" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
@@ -652,11 +652,11 @@
                         <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                       </node>
                       <node concept="liA8E" id="1zN1RIlskpt" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~Enum.name():java.lang.String" resolve="name" />
+                        <ref role="37wK5l" to="wyt6:~Enum.name():java.lang.String" resolve="name" />
                       </node>
                     </node>
                     <node concept="liA8E" id="1zN1RIlsm1c" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="2OqwBi" id="1zN1RIlsmbm" role="37wK5m">
                         <node concept="37vLTw" id="1zN1RIlsm31" role="2Oq$k0">
                           <ref role="3cqZAo" node="1zN1RIls0zx" resolve="methKind" />
@@ -710,11 +710,11 @@
                           <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                         </node>
                         <node concept="liA8E" id="1zN1RIlsnkv" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~Enum.name():java.lang.String" resolve="name" />
+                          <ref role="37wK5l" to="wyt6:~Enum.name():java.lang.String" resolve="name" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1zN1RIlsnkw" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="1zN1RIlsnkx" role="37wK5m">
                           <node concept="37vLTw" id="1zN1RIlsnky" role="2Oq$k0">
                             <ref role="3cqZAo" node="1zN1RIls0zx" resolve="methKind" />
@@ -754,11 +754,11 @@
                           <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                         </node>
                         <node concept="liA8E" id="1zN1RIlsntH" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~Enum.name():java.lang.String" resolve="name" />
+                          <ref role="37wK5l" to="wyt6:~Enum.name():java.lang.String" resolve="name" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1zN1RIlsntI" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="1zN1RIlsntJ" role="37wK5m">
                           <node concept="37vLTw" id="1zN1RIlsntK" role="2Oq$k0">
                             <ref role="3cqZAo" node="1zN1RIls0zx" resolve="methKind" />
@@ -798,11 +798,11 @@
                           <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
                         </node>
                         <node concept="liA8E" id="1zN1RIlsnBj" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~Enum.name():java.lang.String" resolve="name" />
+                          <ref role="37wK5l" to="wyt6:~Enum.name():java.lang.String" resolve="name" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1zN1RIlsnBk" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                        <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                         <node concept="2OqwBi" id="1zN1RIlsnBl" role="37wK5m">
                           <node concept="37vLTw" id="1zN1RIlsnBm" role="2Oq$k0">
                             <ref role="3cqZAo" node="1zN1RIls0zx" resolve="methKind" />

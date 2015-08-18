@@ -504,7 +504,7 @@
       <concept id="7368070394767065799" name="jetbrains.mps.lang.typesystem2.structure.Solver" flags="ng" index="3AqmoV">
         <child id="7368070394767068701" name="template" index="3AqmFx" />
       </concept>
-      <concept id="7368070394767067636" name="jetbrains.mps.lang.typesystem2.structure.ConstraintTemplate" flags="ng" index="3AqmO8">
+      <concept id="7368070394767067636" name="jetbrains.mps.lang.typesystem2.structure.ConstraintDeclaration" flags="ng" index="3AqmO8">
         <property id="7368070394767096851" name="arity" index="3AqDzJ" />
       </concept>
       <concept id="7368070394767045637" name="jetbrains.mps.lang.typesystem2.structure.UserConstraint" flags="ng" index="3Aqt3T">

@@ -16,7 +16,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
-    <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -185,7 +185,7 @@
                       <node concept="2Xjw5R" id="1ffsG7bMjZC" role="2OqNvi">
                         <node concept="1xMEDy" id="1ffsG7bMjZE" role="1xVPHs">
                           <node concept="chp4Y" id="1ffsG7bMk4U" role="ri$Ld">
-                            <ref role="cht4Q" to="wq2x:1ffsG7bLeN5" resolve="RuleFragment" />
+                            <ref role="cht4Q" to="wq2x:1ffsG7bLeN5" resolve="RulePart" />
                           </node>
                         </node>
                         <node concept="1xIGOp" id="1ffsG7bMked" role="1xVPHs" />
@@ -216,8 +216,8 @@
                   <ref role="1Y3XeK" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
                   <ref role="37wK5l" to="o8zo:4IP40Bi3e_T" resolve="ListScope" />
                   <node concept="2YIFZM" id="6ntBQ9KM$lM" role="37wK5m">
-                    <ref role="37wK5l" to="k7g3:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
-                    <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                    <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                    <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
                     <node concept="2OqwBi" id="6ntBQ9KM_jA" role="37wK5m">
                       <node concept="2OqwBi" id="5NuEpF1jBOR" role="2Oq$k0">
                         <node concept="37vLTw" id="6ntBQ9KM_a3" role="2Oq$k0">

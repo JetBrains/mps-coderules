@@ -10,7 +10,7 @@
   </languages>
   <imports>
     <import index="wcmu" ref="r:1070fac4-bb22-4bb6-b0bf-ec58df816edc(jetbrains.mps.typechecking.annotation.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" implicit="true" />
   </imports>
@@ -171,11 +171,11 @@
           <node concept="3cpWsn" id="7KcYPxpVjXq" role="3cpWs9">
             <property role="TrG5h" value="text" />
             <node concept="3uibUv" id="7KcYPxpVjXo" role="1tU5fm">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
             <node concept="2YIFZM" id="7KcYPxpVjXr" role="33vP2m">
-              <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
-              <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
               <node concept="2OqwBi" id="7KcYPxpVjXs" role="37wK5m">
                 <node concept="2Sf5sV" id="7KcYPxpVjXt" role="2Oq$k0" />
                 <node concept="3JvlWi" id="7KcYPxpVjXu" role="2OqNvi" />

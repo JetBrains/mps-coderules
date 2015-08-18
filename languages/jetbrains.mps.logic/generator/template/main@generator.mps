@@ -521,7 +521,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="4OKkcneVYzR" role="3acgRq">
-      <ref role="30HIoZ" to="5j4j:2q_78a8W4yS" resolve="WildcardVariable" />
+      <ref role="30HIoZ" to="5j4j:2q_78a8W4yS" resolve="Wildcard" />
       <node concept="14YyZ8" id="4OKkcneVZCA" role="1lVwrX">
         <node concept="14ZrTv" id="4OKkcneVZCG" role="14ZwWg">
           <node concept="30G5F_" id="4OKkcneVZCH" role="150hEN">

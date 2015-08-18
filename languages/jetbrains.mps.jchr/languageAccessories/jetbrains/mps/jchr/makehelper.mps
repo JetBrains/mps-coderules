@@ -5,7 +5,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="yo81" ref="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
   </imports>
   <registry>
@@ -61,7 +61,7 @@
       <property role="3dDGau" value="false" />
       <property role="TrG5h" value="clsOutput" />
       <node concept="3uibUv" id="35Lj3TiB$UB" role="2lK19J">
-        <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+        <ref role="3uigEE" to="guwi:~File" resolve="File" />
       </node>
     </node>
     <node concept="2lGYhJ" id="35Lj3TiB$UC" role="2pHZQ9">
@@ -69,7 +69,7 @@
       <property role="TrG5h" value="handlerFiles" />
       <node concept="_YKpA" id="35Lj3TiB$UD" role="2lK19J">
         <node concept="3uibUv" id="35Lj3TiB$UE" role="_ZDj9">
-          <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+          <ref role="3uigEE" to="guwi:~File" resolve="File" />
         </node>
       </node>
     </node>
@@ -78,7 +78,7 @@
       <property role="TrG5h" value="classpath" />
       <node concept="_YKpA" id="35Lj3TiB$UG" role="2lK19J">
         <node concept="3uibUv" id="35Lj3TiB$UH" role="_ZDj9">
-          <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+          <ref role="3uigEE" to="guwi:~File" resolve="File" />
         </node>
       </node>
     </node>

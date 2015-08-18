@@ -10,12 +10,23 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
+        <property id="6054523464626875854" name="value" index="tnX3d" />
+      </concept>
+      <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
+        <reference id="6054523464627965081" name="concept" index="trN6q" />
+      </concept>
+      <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
+        <property id="7588428831955550663" name="role" index="Hh88m" />
+        <child id="7588428831947959310" name="attributed" index="EQaZv" />
+        <child id="7588428831955550186" name="multiple" index="HhnKV" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
@@ -23,6 +34,7 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -185,7 +197,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="template" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6p0DfM0asBO" resolve="ConstraintTemplate" />
+      <ref role="20lvS9" node="6p0DfM0asBO" resolve="ConstraintDeclaration" />
     </node>
     <node concept="1TJgyj" id="6p0DfM0et2r" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -204,7 +216,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="template" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="6p0DfM0asBO" resolve="ConstraintTemplate" />
+      <ref role="20lvS9" node="6p0DfM0asBO" resolve="ConstraintDeclaration" />
     </node>
     <node concept="PrWs8" id="6p0DfM0au4g" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -212,14 +224,23 @@
   </node>
   <node concept="1TIwiD" id="6p0DfM0asBO">
     <property role="3GE5qa" value="constraint.template" />
-    <property role="TrG5h" value="ConstraintTemplate" />
+    <property role="TrG5h" value="ConstraintDeclaration" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6p0DfM0azKj" role="1TKVEl">
       <property role="TrG5h" value="arity" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="PrWs8" id="6p0DfM0ayqk" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="1TJgyj" id="1CgWc1TyPxy" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameters" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1CgWc1TyPXm" resolve="ConstraintParameterDeclaration" />
+    </node>
+    <node concept="PrWs8" id="1CgWc1TyDEK" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="1CgWc1TyDEQ" role="PzmwI">
+      <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="ICanBeCommented" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0ia8T">
@@ -544,6 +565,36 @@
     <property role="TrG5h" value="AssertExpressionConstraint" />
     <property role="34LRSv" value="assert" />
     <ref role="1TJDcQ" node="4EfgX2EvF4i" resolve="ExpressionConstraint" />
+  </node>
+  <node concept="1TIwiD" id="1CgWc1Tyjkw">
+    <property role="TrG5h" value="Comment" />
+    <property role="3GE5qa" value="comment" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyi" id="1CgWc1Tyjk$" role="1TKVEl">
+      <property role="TrG5h" value="comment" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="M6xJ_" id="1CgWc1Tyjkx" role="lGtFl">
+      <property role="Hh88m" value="comment" />
+      <node concept="trNpa" id="1CgWc1TyjkA" role="EQaZv">
+        <ref role="trN6q" node="1CgWc1Tyjkz" resolve="ICanBeCommented" />
+      </node>
+      <node concept="tn0Fv" id="1CgWc1T$9d6" role="HhnKV">
+        <property role="tnX3d" value="false" />
+      </node>
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1CgWc1Tyjkz">
+    <property role="TrG5h" value="ICanBeCommented" />
+    <property role="3GE5qa" value="comment" />
+  </node>
+  <node concept="1TIwiD" id="1CgWc1TyPXm">
+    <property role="3GE5qa" value="constraint.template" />
+    <property role="TrG5h" value="ConstraintParameterDeclaration" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1CgWc1TyPXw" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
 </model>
 

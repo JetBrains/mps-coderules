@@ -12,12 +12,12 @@
   <imports>
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.lang.typesystem2.samplechecker.template)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="qqyk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.tuples.runtime(MPS.Core/jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="j8ec" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.baseLanguage.tuples.runtime(MPS.Core/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -227,7 +227,7 @@
             <property role="TrG5h" value="xs" />
             <node concept="_YKpA" id="7t5VLKGSekg" role="1tU5fm">
               <node concept="3uibUv" id="7t5VLKGSp_W" role="_ZDj9">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
             <node concept="2OqwBi" id="7t5VLKGSemC" role="33vP2m">
@@ -246,7 +246,7 @@
             <property role="TrG5h" value="ys" />
             <node concept="_YKpA" id="7t5VLKGSeo5" role="1tU5fm">
               <node concept="3uibUv" id="7t5VLKGSpB4" role="_ZDj9">
-                <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
             <node concept="2OqwBi" id="7t5VLKGSeo7" role="33vP2m">
@@ -366,13 +366,13 @@
       <node concept="37vLTG" id="7t5VLKGS9Qm" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="7t5VLKGSbQe" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="37vLTG" id="7t5VLKGS9QN" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="7t5VLKGSbSL" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3Tm6S6" id="7t5VLKGS9Rr" role="1B3o_S" />
@@ -385,7 +385,7 @@
             <node concept="10Nm6u" id="7t5VLKGSh2D" role="3K4GZi" />
             <node concept="2ZW3vV" id="7t5VLKGSgOK" role="3K4Cdx">
               <node concept="3uibUv" id="7t5VLKGSgOL" role="2ZW6by">
-                <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+                <ref role="3uigEE" to="33ny:~List" resolve="List" />
               </node>
               <node concept="37vLTw" id="7t5VLKGSgOM" role="2ZW6bz">
                 <ref role="3cqZAo" node="7t5VLKGSckg" resolve="o" />
@@ -394,7 +394,7 @@
             <node concept="10QFUN" id="7t5VLKGSh0X" role="3K4E3e">
               <node concept="_YKpA" id="7t5VLKGSh0Y" role="10QFUM">
                 <node concept="3uibUv" id="7t5VLKGSpz1" role="_ZDj9">
-                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
               </node>
               <node concept="37vLTw" id="7t5VLKGSh10" role="10QFUP">
@@ -406,14 +406,14 @@
       </node>
       <node concept="_YKpA" id="7t5VLKGSck4" role="3clF45">
         <node concept="3uibUv" id="7t5VLKGSpr1" role="_ZDj9">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3Tm6S6" id="7t5VLKGSck1" role="1B3o_S" />
       <node concept="37vLTG" id="7t5VLKGSckg" role="3clF46">
         <property role="TrG5h" value="o" />
         <node concept="3uibUv" id="7t5VLKGSckf" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
     </node>
@@ -422,7 +422,7 @@
       <node concept="37vLTG" id="7t5VLKGSfgU" role="3clF46">
         <property role="TrG5h" value="o" />
         <node concept="3uibUv" id="7t5VLKGSfh1" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3clFbS" id="7t5VLKGSeXl" role="3clF47">
@@ -431,7 +431,7 @@
             <node concept="10Nm6u" id="7t5VLKGShlA" role="3K4GZi" />
             <node concept="2ZW3vV" id="7t5VLKGShcf" role="3K4Cdx">
               <node concept="3uibUv" id="7t5VLKGShcg" role="2ZW6by">
-                <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
               </node>
               <node concept="37vLTw" id="7t5VLKGShch" role="2ZW6bz">
                 <ref role="3cqZAo" node="7t5VLKGSfgU" resolve="o" />
@@ -651,7 +651,7 @@
                 <ref role="37wK5l" to="kqnc:5H6hZahiCgu" resolve="allSubtypePathsTo" />
                 <ref role="1Pybhc" to="kqnc:tIwzd2cJHD" resolve="SubclassingUtil" />
                 <node concept="3B5_sB" id="4JRKVCv9xP4" role="37wK5m">
-                  <ref role="3B5MYn" to="e2lb:~String" resolve="String" />
+                  <ref role="3B5MYn" to="wyt6:~String" resolve="String" />
                 </node>
               </node>
             </node>
@@ -746,7 +746,7 @@
         <node concept="1nCR9W" id="7t5VLKGTkLF" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv8f92" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="7t5VLKGTkUn" role="3HumAs">
             <ref role="3uigEE" node="7t5VLKGGqF7" resolve="Container.I" />
@@ -758,7 +758,7 @@
         <node concept="1nCR9W" id="7t5VLKGTkW3" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv8f9O" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="7t5VLKGTl50" role="3HumAs">
             <ref role="3uigEE" node="7t5VLKGB10f" resolve="Container.A" />
@@ -780,7 +780,7 @@
         <node concept="1nCR9W" id="7t5VLKGTGnX" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv8faA" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="7t5VLKGTGnY" role="3HumAs">
             <ref role="3uigEE" node="7t5VLKGGqZh" resolve="Container.K" />
@@ -789,7 +789,7 @@
         <node concept="1nCR9W" id="7t5VLKGTGnZ" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv8fbq" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="7t5VLKGTGo0" role="3HumAs">
             <ref role="3uigEE" node="7t5VLKGGqF7" resolve="Container.I" />
@@ -804,7 +804,7 @@
         <node concept="1nCR9W" id="7t5VLKGTGo3" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv8fch" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="7t5VLKGTGo4" role="3HumAs">
             <ref role="3uigEE" node="7t5VLKGB10f" resolve="Container.A" />
@@ -829,49 +829,49 @@
         <node concept="1nCR9W" id="4JRKVCv8K69" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv8K6a" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="4JRKVCv9wxb" role="3HumAs">
-            <ref role="3uigEE" to="fxg7:~Serializable" resolve="Serializable" />
+            <ref role="3uigEE" to="guwi:~Serializable" resolve="Serializable" />
           </node>
           <node concept="3uibUv" id="4JRKVCv9wI_" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
         <node concept="1nCR9W" id="4JRKVCv8K6c" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv8K6d" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="4JRKVCv9wJR" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Comparable" resolve="Comparable" />
+            <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
             <node concept="3uibUv" id="4JRKVCvcS53" role="11_B2D">
-              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
           </node>
           <node concept="3uibUv" id="4JRKVCv9wKg" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
         <node concept="1nCR9W" id="4JRKVCv8K6h" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv8K6i" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="4JRKVCv9wLP" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~CharSequence" resolve="CharSequence" />
+            <ref role="3uigEE" to="wyt6:~CharSequence" resolve="CharSequence" />
           </node>
           <node concept="3uibUv" id="4JRKVCv9wMh" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
         <node concept="1nCR9W" id="4JRKVCv9wNK" role="2U24H$">
           <property role="1nD$Q0" value="_" />
           <node concept="3uibUv" id="4JRKVCv9wNL" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
           <node concept="3uibUv" id="4JRKVCv9wNN" role="3HumAs">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
         <node concept="3cqZAl" id="4JRKVCv8K6m" role="32Mpfj" />

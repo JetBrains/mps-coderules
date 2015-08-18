@@ -14,8 +14,8 @@
     <import index="ha02" ref="r:09e53496-6477-45e7-abd5-eaf3fac3b360(jetbrains.mps.logic.behavior)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.typesystem2.structure)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -50,6 +50,7 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -430,7 +431,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="4EfgX2E$Utd" role="2OqNvi">
-                              <ref role="37wK5l" to="ec5l:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                              <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
                             </node>
                           </node>
                           <node concept="Xl_RD" id="4EfgX2EE6bk" role="3uHU7w">
@@ -463,8 +464,8 @@
             <node concept="3clFbS" id="4EfgX2E$N54" role="3Kbo56">
               <node concept="3cpWs6" id="3x8pcoFehB0" role="3cqZAp">
                 <node concept="2YIFZM" id="3x8pcoFeoo8" role="3cqZAk">
-                  <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                  <ref role="37wK5l" to="e2lb:~String.valueOf(boolean):java.lang.String" resolve="valueOf" />
+                  <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                  <ref role="37wK5l" to="wyt6:~String.valueOf(boolean):java.lang.String" resolve="valueOf" />
                   <node concept="2OqwBi" id="3x8pcoFej2u" role="37wK5m">
                     <node concept="1PxgMI" id="3x8pcoFejIl" role="2Oq$k0">
                       <ref role="1PxNhF" to="tpee:fzclF81" resolve="BooleanConstant" />
@@ -626,6 +627,28 @@
     </node>
     <node concept="13hLZK" id="1ffsG7bN0rG" role="13h7CW">
       <node concept="3clFbS" id="1ffsG7bN0rH" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1CgWc1TyELS">
+    <property role="3GE5qa" value="constraint.template" />
+    <ref role="13h7C2" to="wq2x:6p0DfM0asBO" resolve="ConstraintDeclaration" />
+    <node concept="13i0hz" id="1CgWc1TyEM4" role="13h7CS">
+      <property role="TrG5h" value="getArity" />
+      <node concept="3Tm1VV" id="1CgWc1TyEM5" role="1B3o_S" />
+      <node concept="3clFbS" id="1CgWc1TyEM6" role="3clF47">
+        <node concept="3clFbF" id="1CgWc1TyEMg" role="3cqZAp">
+          <node concept="2OqwBi" id="1CgWc1TyEOV" role="3clFbG">
+            <node concept="13iPFW" id="1CgWc1TyEMf" role="2Oq$k0" />
+            <node concept="3TrcHB" id="1CgWc1TyF9M" role="2OqNvi">
+              <ref role="3TsBF5" to="wq2x:6p0DfM0azKj" resolve="arity" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10Oyi0" id="1CgWc1TyEMc" role="3clF45" />
+    </node>
+    <node concept="13hLZK" id="1CgWc1TyELT" role="13h7CW">
+      <node concept="3clFbS" id="1CgWc1TyELU" role="2VODD2" />
     </node>
   </node>
 </model>

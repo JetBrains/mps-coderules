@@ -13,10 +13,10 @@
     <import index="tp2u" ref="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
+    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -28,6 +28,7 @@
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
         <child id="1233141163694" name="separatorStyle" index="sWeuL" />
       </concept>
+      <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
@@ -45,6 +46,7 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
+      <concept id="1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" flags="ng" index="2SsqMj" />
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
       </concept>
@@ -258,18 +260,29 @@
   </registry>
   <node concept="24kQdi" id="6p0DfM0bngw">
     <property role="3GE5qa" value="constraint.template" />
-    <ref role="1XX52x" to="wq2x:6p0DfM0asBO" resolve="ConstraintTemplate" />
+    <ref role="1XX52x" to="wq2x:6p0DfM0asBO" resolve="ConstraintDeclaration" />
     <node concept="3EZMnI" id="6p0DfM0brAq" role="2wV5jI">
       <node concept="3F0A7n" id="6p0DfM0brDT" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <ref role="1k5W1q" to="tpen:hshUnm6" resolve="StaticMethod" />
       </node>
       <node concept="3F0ifn" id="6p0DfM0brFJ" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F2HdR" id="1CgWc1TzfCk" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:1CgWc1TyPxy" />
+        <node concept="l2Vlx" id="1CgWc1TzfCm" role="2czzBx" />
+      </node>
+      <node concept="3F0ifn" id="1CgWc1TzfCx" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+      </node>
+      <node concept="3F0ifn" id="1CgWc1TzfEr" role="3EZMnx">
         <property role="3F0ifm" value="/" />
       </node>
-      <node concept="3F0A7n" id="6p0DfM0brIp" role="3EZMnx">
+      <node concept="3F0A7n" id="1CgWc1TzfEF" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:6p0DfM0azKj" resolve="arity" />
-        <ref role="1k5W1q" to="tpen:hrRWGGt" resolve="StaticField" />
       </node>
       <node concept="l2Vlx" id="6p0DfM0brAt" role="2iSdaV" />
     </node>
@@ -2176,6 +2189,35 @@
         </node>
       </node>
       <node concept="l2Vlx" id="5zfvpQ72h2p" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1CgWc1Tyjl0">
+    <property role="3GE5qa" value="comment" />
+    <ref role="1XX52x" to="wq2x:1CgWc1Tyjkw" resolve="Comment" />
+    <node concept="3EZMnI" id="1CgWc1Tyjla" role="2wV5jI">
+      <node concept="3EZMnI" id="1CgWc1TyjlD" role="3EZMnx">
+        <node concept="VPM3Z" id="1CgWc1TyjlF" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="1CgWc1TyjlO" role="3EZMnx">
+          <property role="3F0ifm" value="//" />
+          <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+        </node>
+        <node concept="3F0A7n" id="1CgWc1Tyjm0" role="3EZMnx">
+          <ref role="1NtTu8" to="wq2x:1CgWc1Tyjk$" resolve="comment" />
+          <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+        </node>
+        <node concept="l2Vlx" id="1CgWc1TyjlI" role="2iSdaV" />
+      </node>
+      <node concept="2SsqMj" id="1CgWc1Tyjm4" role="3EZMnx" />
+      <node concept="2iRkQZ" id="1CgWc1Tyjld" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1CgWc1Tz5p9">
+    <property role="3GE5qa" value="constraint.template" />
+    <ref role="1XX52x" to="wq2x:1CgWc1TyPXm" resolve="ConstraintParameterDeclaration" />
+    <node concept="3F0A7n" id="1CgWc1Tz5pk" role="2wV5jI">
+      <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
     </node>
   </node>
 </model>

@@ -6,12 +6,12 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="snqe" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#compiler.CHRIntermediateForm(jetbrains.mps.jchr.runtime/compiler.CHRIntermediateForm@java_stub)" />
-    <import index="wtyy" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#compiler.options(jetbrains.mps.jchr.runtime/compiler.options@java_stub)" />
-    <import index="1z61" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#compiler.codeGeneration(jetbrains.mps.jchr.runtime/compiler.codeGeneration@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="j58b" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:compiler.CHRIntermediateForm(jetbrains.mps.jchr.runtime/)" />
+    <import index="i827" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:compiler.options(jetbrains.mps.jchr.runtime/)" />
+    <import index="b504" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:compiler.codeGeneration(jetbrains.mps.jchr.runtime/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -142,32 +142,32 @@
         <property role="TrG5h" value="cif" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="41ox5Vn9Agv" role="1tU5fm">
-          <ref role="3uigEE" to="snqe:~ICHRIntermediateForm" resolve="ICHRIntermediateForm" />
+          <ref role="3uigEE" to="j58b:~ICHRIntermediateForm" resolve="ICHRIntermediateForm" />
         </node>
       </node>
       <node concept="37vLTG" id="41ox5Vn8MbC" role="3clF46">
         <property role="TrG5h" value="options" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="41ox5Vn9FwB" role="1tU5fm">
-          <ref role="3uigEE" to="wtyy:~Options" resolve="Options" />
+          <ref role="3uigEE" to="i827:~Options" resolve="Options" />
         </node>
       </node>
       <node concept="3uibUv" id="41ox5Vn8MbE" role="Sfmx6">
-        <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
+        <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
       </node>
       <node concept="3uibUv" id="41ox5Vn9Lah" role="Sfmx6">
-        <ref role="3uigEE" to="1z61:~GenerationException" resolve="GenerationException" />
+        <ref role="3uigEE" to="b504:~GenerationException" resolve="GenerationException" />
       </node>
       <node concept="3clFbS" id="41ox5Vn8MbG" role="3clF47">
         <node concept="3cpWs8" id="41ox5Vn9NNd" role="3cqZAp">
           <node concept="3cpWsn" id="41ox5Vn9NNe" role="3cpWs9">
             <property role="TrG5h" value="tuple" />
             <node concept="3uibUv" id="41ox5Vn9NNf" role="1tU5fm">
-              <ref role="3uigEE" to="1z61:~CodeGeneration$Tuple" resolve="CodeGeneration.Tuple" />
+              <ref role="3uigEE" to="b504:~CodeGeneration$Tuple" resolve="CodeGeneration.Tuple" />
             </node>
             <node concept="2YIFZM" id="41ox5Vn9Oft" role="33vP2m">
-              <ref role="37wK5l" to="1z61:~CodeGeneration.doGenerateHandlerSourceFile(compiler.CHRIntermediateForm.ICHRIntermediateForm,compiler.options.Options):compiler.codeGeneration.CodeGeneration$Tuple" resolve="doGenerateHandlerSourceFile" />
-              <ref role="1Pybhc" to="1z61:~CodeGeneration" resolve="CodeGeneration" />
+              <ref role="37wK5l" to="b504:~CodeGeneration.doGenerateHandlerSourceFile(compiler.CHRIntermediateForm.ICHRIntermediateForm,compiler.options.Options):compiler.codeGeneration.CodeGeneration$Tuple" resolve="doGenerateHandlerSourceFile" />
+              <ref role="1Pybhc" to="b504:~CodeGeneration" resolve="CodeGeneration" />
               <node concept="37vLTw" id="41ox5Vn9SKv" role="37wK5m">
                 <ref role="3cqZAo" node="41ox5Vn8MbA" resolve="cif" />
               </node>
@@ -183,7 +183,7 @@
             <property role="TrG5h" value="result" />
             <node concept="10Q1$e" id="41ox5Vn8Mcv" role="1tU5fm">
               <node concept="3uibUv" id="41ox5Vn8Mcu" role="10Q1$1">
-                <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+                <ref role="3uigEE" to="guwi:~File" resolve="File" />
               </node>
             </node>
             <node concept="2ShNRf" id="41ox5Vn8McA" role="33vP2m">
@@ -194,7 +194,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="41ox5Vn8Mcw" role="3$_nBY">
-                  <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+                  <ref role="3uigEE" to="guwi:~File" resolve="File" />
                 </node>
               </node>
             </node>
@@ -215,7 +215,7 @@
                 <ref role="3cqZAo" node="41ox5Vn9NNe" resolve="tuple" />
               </node>
               <node concept="2OwXpG" id="41ox5Vn8Md7" role="2OqNvi">
-                <ref role="2Oxat5" to="1z61:~CodeGeneration$Tuple.generatedFile" resolve="generatedFile" />
+                <ref role="2Oxat5" to="b504:~CodeGeneration$Tuple.generatedFile" resolve="generatedFile" />
               </node>
             </node>
           </node>
@@ -229,7 +229,7 @@
       <node concept="3Tm1VV" id="41ox5Vn8McQ" role="1B3o_S" />
       <node concept="10Q1$e" id="41ox5Vn8McS" role="3clF45">
         <node concept="3uibUv" id="41ox5Vn9$30" role="10Q1$1">
-          <ref role="3uigEE" to="fxg7:~File" resolve="File" />
+          <ref role="3uigEE" to="guwi:~File" resolve="File" />
         </node>
       </node>
     </node>
@@ -249,7 +249,7 @@
           <node concept="92FcH" id="41ox5Vnb5g_" role="qph3F">
             <node concept="TZ5HA" id="41ox5Vnb5gB" role="2XjZqd" />
             <node concept="VXe08" id="41ox5VnbwmN" role="92FcQ">
-              <ref role="VXe09" to="1z61:~CodeGeneration" resolve="CodeGeneration" />
+              <ref role="VXe09" to="b504:~CodeGeneration" resolve="CodeGeneration" />
             </node>
           </node>
         </node>

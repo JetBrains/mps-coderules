@@ -17,6 +17,7 @@
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" fqName="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
+    <language id="0b80a2e8-f9f1-47b3-823f-56eb115bca42" fqName="jetbrains.mps.typechecking.annotation" version="0" />
   </languageVersions>
 </solution>
 

@@ -6,9 +6,9 @@
     <use id="0b80a2e8-f9f1-47b3-823f-56eb115bca42" name="jetbrains.mps.typechecking.annotation" version="0" />
   </languages>
   <imports>
-    <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -108,11 +108,11 @@
         <node concept="3clFbF" id="3Qp4N06bAlV" role="3cqZAp">
           <node concept="2OqwBi" id="3Qp4N06bAlW" role="3clFbG">
             <node concept="10M0yZ" id="3Qp4N06bAlX" role="2Oq$k0">
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
             </node>
             <node concept="liA8E" id="3Qp4N06bAlY" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="Xl_RD" id="3Qp4N06bAlZ" role="37wK5m">
                 <property role="Xl_RC" value="Hello, world!" />
               </node>
@@ -123,11 +123,11 @@
         <node concept="3clFbF" id="3xj1Usc_LDz" role="3cqZAp">
           <node concept="2OqwBi" id="6flDoy9UcrU" role="3clFbG">
             <node concept="2YIFZM" id="3xj1Usc_M0M" role="2Oq$k0">
-              <ref role="1Pybhc" to="e2lb:~System" resolve="System" />
-              <ref role="37wK5l" to="e2lb:~System.getenv():java.util.Map" resolve="getenv" />
+              <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+              <ref role="37wK5l" to="wyt6:~System.getenv():java.util.Map" resolve="getenv" />
             </node>
             <node concept="liA8E" id="6flDoy9UcGV" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+              <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
               <node concept="Xl_RD" id="6flDoy9UcNr" role="37wK5m">
                 <property role="Xl_RC" value="MPS_HOME" />
               </node>
@@ -141,7 +141,7 @@
     <node concept="3clFb_" id="7t5VLKHf_4i" role="jymVt">
       <property role="TrG5h" value="greeet" />
       <node concept="3uibUv" id="4JRKVCv7Fdc" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3Tm1VV" id="7t5VLKHf_4l" role="1B3o_S" />
       <node concept="3clFbS" id="7t5VLKHf_4m" role="3clF47">

@@ -5,7 +5,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -377,7 +377,7 @@
             <node concept="3cpWsn" id="61vfVfp6HSN" role="3cpWs9">
               <property role="TrG5h" value="a" />
               <node concept="3uibUv" id="61vfVfp6HSO" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
               <node concept="1rXfSq" id="61vfVfp6IkS" role="33vP2m">
                 <ref role="37wK5l" node="61vfVfp6I3A" resolve="f" />
@@ -388,10 +388,10 @@
                     <property role="Xl_RC" value="a" />
                   </node>
                   <node concept="3uibUv" id="61vfVfp6IsZ" role="3PaCim">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                   </node>
                   <node concept="3uibUv" id="61vfVfp6IJf" role="3PaCim">
-                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="61vfVfp6IUo" role="37wK5m">
@@ -628,7 +628,7 @@
           <property role="TrG5h" value="o" />
           <property role="3TUv4t" value="false" />
           <node concept="3uibUv" id="61vfVfpb5xK" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3clFbS" id="61vfVfpb5xL" role="3clF47">
@@ -729,7 +729,7 @@
           <property role="TrG5h" value="o" />
           <property role="3TUv4t" value="true" />
           <node concept="3uibUv" id="61vfVfpb5ys" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
         <node concept="3clFbS" id="61vfVfpb5yt" role="3clF47">
@@ -739,7 +739,7 @@
                 <ref role="3cqZAo" node="61vfVfpb5yr" resolve="o" />
               </node>
               <node concept="liA8E" id="61vfVfpb5$U" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~Object.hashCode():int" resolve="hashCode" />
+                <ref role="37wK5l" to="wyt6:~Object.hashCode():int" resolve="hashCode" />
               </node>
             </node>
           </node>
@@ -780,7 +780,7 @@
         </node>
         <node concept="3Tm1VV" id="61vfVfpb5yI" role="1B3o_S" />
         <node concept="3uibUv" id="61vfVfpb5yJ" role="3clF45">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3Tm6S6" id="61vfVfpb8yH" role="1B3o_S" />
@@ -950,7 +950,7 @@
                   <ref role="3cqZAo" node="61vfVfpb5yN" resolve="myValue" />
                 </node>
                 <node concept="liA8E" id="61vfVfpb5_7" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
                 </node>
               </node>
             </node>
@@ -958,7 +958,7 @@
         </node>
         <node concept="3Tm1VV" id="61vfVfpb5zM" role="1B3o_S" />
         <node concept="3uibUv" id="61vfVfpb5zN" role="3clF45">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3Tm6S6" id="61vfVfpb8UY" role="1B3o_S" />
@@ -993,7 +993,7 @@
           <property role="TrG5h" value="string" />
           <property role="3TUv4t" value="true" />
           <node concept="3uibUv" id="61vfVfpb5zX" role="1tU5fm">
-            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
           </node>
         </node>
         <node concept="3clFbS" id="61vfVfpb5zY" role="3clF47">
@@ -1046,7 +1046,7 @@
             <node concept="10P_77" id="61vfVfpb5$i" role="10Q1$1" />
           </node>
           <node concept="3uibUv" id="61vfVfpb5$k" role="11_B2D">
-            <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
           </node>
         </node>
       </node>
@@ -1067,7 +1067,7 @@
                     <ref role="3uigEE" node="61vfVfpb5zQ" resolve="ComplexTypeErasure.PsiField" />
                   </node>
                   <node concept="3uibUv" id="61vfVfpb5$s" role="11_B2D">
-                    <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                    <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                   </node>
                 </node>
               </node>
@@ -1080,7 +1080,7 @@
                       <ref role="3uigEE" node="61vfVfpb5zQ" resolve="ComplexTypeErasure.PsiField" />
                     </node>
                     <node concept="3uibUv" id="61vfVfpb5$w" role="11_B2D">
-                      <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                      <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                     </node>
                   </node>
                 </node>
@@ -1097,7 +1097,7 @@
                   <ref role="3uigEE" node="61vfVfpb5zQ" resolve="ComplexTypeErasure.PsiField" />
                 </node>
                 <node concept="3uibUv" id="61vfVfpb5$_" role="11_B2D">
-                  <ref role="3uigEE" to="e2lb:~Boolean" resolve="Boolean" />
+                  <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
                 </node>
               </node>
               <node concept="2OqwBi" id="61vfVfpb5_k" role="33vP2m">

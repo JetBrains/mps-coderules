@@ -9,10 +9,10 @@
   <imports>
     <import index="vgt0" ref="r:f36c95e5-e428-4945-91ae-1005e20c7971(jetbrains.mps.jchr.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="w2rx" ref="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" />
-    <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -763,7 +763,7 @@
           <node concept="TSZUe" id="2q_78a8gkTX" role="2OqNvi">
             <node concept="2c44tf" id="2q_78a8gnrj" role="25WWJ7">
               <node concept="3uibUv" id="2q_78a9bbiG" role="2c44tc">
-                <ref role="3uigEE" to="w2rx:~Handler" resolve="Handler" />
+                <ref role="3uigEE" to="eifs:~Handler" resolve="Handler" />
               </node>
             </node>
           </node>
@@ -877,7 +877,7 @@
               <property role="TrG5h" value="logical" />
               <node concept="2DMOqp" id="5lJXKhhjx" role="1YbcFS">
                 <node concept="3uibUv" id="5lJXKhhqD" role="2DMOqq">
-                  <ref role="3uigEE" to="w2rx:~Logical" resolve="Logical" />
+                  <ref role="3uigEE" to="eifs:~Logical" resolve="Logical" />
                   <node concept="33vP2l" id="5lJXKhhrF" role="11_B2D">
                     <node concept="2DMOqr" id="5lJXKhhOf" role="lGtFl">
                       <property role="2DMOqs" value="T" />
@@ -938,10 +938,10 @@
         <node concept="mw_s8" id="5lJXKlagi" role="1ZfhKB">
           <node concept="2c44tf" id="5lJXKlage" role="mwGJk">
             <node concept="3uibUv" id="5lJXKlazM" role="2c44tc">
-              <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+              <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
               <node concept="3qUE_q" id="5lJXKtCV8" role="11_B2D">
                 <node concept="3uibUv" id="5lJXKtD0w" role="3qUE_r">
-                  <ref role="3uigEE" to="w2rx:~IConstraint" resolve="IConstraint" />
+                  <ref role="3uigEE" to="eifs:~IConstraint" resolve="IConstraint" />
                 </node>
               </node>
             </node>

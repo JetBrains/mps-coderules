@@ -9,10 +9,10 @@
   <imports>
     <import index="3ypq" ref="r:ecf59ef9-2b17-40ee-91aa-e7999d4518f0(jetbrains.mps.unification.sandbox)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
-    <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <import index="w2rx" ref="f:java_stub#b984ee52-f34d-4b6d-8812-866c1d3eae31#runtime(jetbrains.mps.jchr.runtime/runtime@java_stub)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -139,7 +139,7 @@
       <concept id="7571593955706137472" name="jetbrains.mps.logic.structure.ValueRole" flags="ng" index="1oi5Wm">
         <child id="7571593955706137672" name="contents" index="1oi5zu" />
       </concept>
-      <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.ValueHolder" flags="ng" index="1oi5XN">
+      <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.Value" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
       </concept>
     </language>
@@ -283,10 +283,10 @@
           <node concept="3cpWsn" id="5lJXKtFNm" role="3cpWs9">
             <property role="TrG5h" value="allTypeOf" />
             <node concept="3uibUv" id="5lJXKtFN1" role="1tU5fm">
-              <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+              <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
               <node concept="3qUE_q" id="5lJXKtFN8" role="11_B2D">
                 <node concept="3uibUv" id="5lJXKtFN9" role="3qUE_r">
-                  <ref role="3uigEE" to="w2rx:~IConstraint" resolve="IConstraint" />
+                  <ref role="3uigEE" to="eifs:~IConstraint" resolve="IConstraint" />
                 </node>
               </node>
             </node>
@@ -308,7 +308,7 @@
                 <property role="TrG5h" value="toargs" />
                 <node concept="10Q1$e" id="5lJXKtK9o" role="1tU5fm">
                   <node concept="3uibUv" id="5lJXKtK9r" role="10Q1$1">
-                    <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="5lJXKtK9u" role="33vP2m">
@@ -316,7 +316,7 @@
                     <ref role="3cqZAo" node="5lJXKtIkf" resolve="to" />
                   </node>
                   <node concept="liA8E" id="5lJXKtK9w" role="2OqNvi">
-                    <ref role="37wK5l" to="w2rx:~IConstraint.getArguments():java.lang.Object[]" resolve="getArguments" />
+                    <ref role="37wK5l" to="eifs:~IConstraint.getArguments():java.lang.Object[]" resolve="getArguments" />
                   </node>
                 </node>
               </node>
@@ -324,11 +324,11 @@
             <node concept="3clFbF" id="5lJXKt5lT" role="3cqZAp">
               <node concept="2OqwBi" id="5lJXKt5lU" role="3clFbG">
                 <node concept="10M0yZ" id="5lJXKt5lV" role="2Oq$k0">
-                  <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                  <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
                 </node>
                 <node concept="liA8E" id="5lJXKt5lW" role="2OqNvi">
-                  <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                   <node concept="3cpWs3" id="5lJXKtKGZ" role="37wK5m">
                     <node concept="AH0OO" id="5lJXKtLxd" role="3uHU7w">
                       <node concept="3cmrfG" id="5lJXKtLxq" role="AHEQo">
@@ -364,7 +364,7 @@
           <node concept="3cpWsn" id="5lJXKtIkf" role="1Duv9x">
             <property role="TrG5h" value="to" />
             <node concept="3uibUv" id="5lJXKtIF1" role="1tU5fm">
-              <ref role="3uigEE" to="w2rx:~IConstraint" resolve="IConstraint" />
+              <ref role="3uigEE" to="eifs:~IConstraint" resolve="IConstraint" />
             </node>
           </node>
           <node concept="37vLTw" id="5lJXKtIkl" role="1DdaDG">

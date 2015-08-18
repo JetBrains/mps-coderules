@@ -5018,7 +5018,7 @@
                           </node>
                         </node>
                         <node concept="2DeJg1" id="4OKkcnf58do" role="2OqNvi">
-                          <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="WildcardVariable" />
+                          <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="Wildcard" />
                         </node>
                       </node>
                     </node>
@@ -5423,7 +5423,7 @@
                         </node>
                       </node>
                       <node concept="2DeJg1" id="2q_78a90g2_" role="2OqNvi">
-                        <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="WildcardVariable" />
+                        <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="Wildcard" />
                       </node>
                     </node>
                   </node>
@@ -5615,7 +5615,7 @@
                         </node>
                       </node>
                       <node concept="2DeJg1" id="2q_78a90t$G" role="2OqNvi">
-                        <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="WildcardVariable" />
+                        <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="Wildcard" />
                       </node>
                     </node>
                   </node>
@@ -5809,7 +5809,7 @@
                           </node>
                         </node>
                         <node concept="2DeJg1" id="4JRKVCvgY3h" role="2OqNvi">
-                          <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="WildcardVariable" />
+                          <ref role="1A0vxQ" to="5j4j:2q_78a8W4yS" resolve="Wildcard" />
                         </node>
                       </node>
                     </node>

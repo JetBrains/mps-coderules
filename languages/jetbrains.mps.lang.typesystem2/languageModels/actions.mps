@@ -10,9 +10,9 @@
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.typesystem2.structure)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="ymbg" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.constraints(MPS.Core/jetbrains.mps.smodel.constraints@java_stub)" />
-    <import index="vyt2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.scope(MPS.Core/jetbrains.mps.scope@java_stub)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="ykok" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.constraints(MPS.Core/)" />
+    <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -268,7 +268,7 @@
     <node concept="3FOIzC" id="2E5lcNmZayb" role="3FOPby">
       <ref role="3FOWKa" to="tpee:fz3vP1J" resolve="Expression" />
       <node concept="tYCnQ" id="2E5lcNmZdbU" role="tZc4B">
-        <ref role="uz4UX" to="wq2x:6p0DfM0pKSO" resolve="LogicExpressionWrapper" />
+        <ref role="uz4UX" to="wq2x:6p0DfM0pKSO" resolve="LogicalExpression" />
         <node concept="uMFAO" id="7ksQUDZs6LK" role="uz6Si">
           <node concept="3Tqbb2" id="7ksQUDZsaPa" role="uMOYW" />
           <node concept="uSIkt" id="7ksQUDZs6LO" role="uTubQ">
@@ -277,12 +277,12 @@
                 <node concept="3cpWsn" id="7ksQUDZr_QK" role="3cpWs9">
                   <property role="TrG5h" value="lew" />
                   <node concept="3Tqbb2" id="7ksQUDZr_QI" role="1tU5fm">
-                    <ref role="ehGHo" to="wq2x:6p0DfM0pKSO" resolve="LogicExpressionWrapper" />
+                    <ref role="ehGHo" to="wq2x:6p0DfM0pKSO" resolve="LogicalExpression" />
                   </node>
                   <node concept="2OqwBi" id="7ksQUDZr_QL" role="33vP2m">
                     <node concept="1Q6Npb" id="7ksQUDZr_QM" role="2Oq$k0" />
                     <node concept="15TzpJ" id="7ksQUDZswYj" role="2OqNvi">
-                      <ref role="I8UWU" to="wq2x:6p0DfM0pKSO" resolve="LogicExpressionWrapper" />
+                      <ref role="I8UWU" to="wq2x:6p0DfM0pKSO" resolve="LogicalExpression" />
                     </node>
                   </node>
                 </node>
@@ -351,11 +351,11 @@
                 <node concept="3cpWsn" id="7ksQUDZstKW" role="3cpWs9">
                   <property role="TrG5h" value="srd" />
                   <node concept="3uibUv" id="7ksQUDZstKS" role="1tU5fm">
-                    <ref role="3uigEE" to="ymbg:~ReferenceDescriptor" resolve="ReferenceDescriptor" />
+                    <ref role="3uigEE" to="ykok:~ReferenceDescriptor" resolve="ReferenceDescriptor" />
                   </node>
                   <node concept="2YIFZM" id="7ksQUDZstKX" role="33vP2m">
-                    <ref role="37wK5l" to="ymbg:~ModelConstraints.getSmartReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,java.lang.String,int,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getSmartReferenceDescriptor" />
-                    <ref role="1Pybhc" to="ymbg:~ModelConstraints" resolve="ModelConstraints" />
+                    <ref role="37wK5l" to="ykok:~ModelConstraints.getSmartReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,java.lang.String,int,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getSmartReferenceDescriptor" />
+                    <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
                     <node concept="3bvxqY" id="7ksQUDZstKY" role="37wK5m" />
                     <node concept="prKvN" id="7ksQUDZstKZ" role="37wK5m">
                       <ref role="prhl4" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
@@ -381,11 +381,11 @@
                         <ref role="3cqZAo" node="7ksQUDZstKW" resolve="srd" />
                       </node>
                       <node concept="liA8E" id="7ksQUDZsE0Y" role="2OqNvi">
-                        <ref role="37wK5l" to="ymbg:~ReferenceDescriptor.getScope():jetbrains.mps.scope.Scope" resolve="getScope" />
+                        <ref role="37wK5l" to="ykok:~ReferenceDescriptor.getScope():jetbrains.mps.scope.Scope" resolve="getScope" />
                       </node>
                     </node>
                     <node concept="liA8E" id="7ksQUDZsbek" role="2OqNvi">
-                      <ref role="37wK5l" to="vyt2:~Scope.getAvailableElements(java.lang.String):java.lang.Iterable" resolve="getAvailableElements" />
+                      <ref role="37wK5l" to="35tq:~Scope.getAvailableElements(java.lang.String):java.lang.Iterable" resolve="getAvailableElements" />
                       <node concept="Xl_RD" id="7ksQUDZsbel" role="37wK5m">
                         <property role="Xl_RC" value="" />
                       </node>
@@ -526,7 +526,7 @@
     <node concept="3FOIzC" id="1PFbZN6vSAN" role="3FOPby">
       <ref role="3FOWKa" to="wq2x:4EfgX2EvF4i" resolve="ExpressionConstraint" />
       <node concept="z64au" id="7ksQUDZtc7u" role="tZc4B">
-        <ref role="z65TK" to="wq2x:6p0DfM0pKSO" resolve="LogicExpressionWrapper" />
+        <ref role="z65TK" to="wq2x:6p0DfM0pKSO" resolve="LogicalExpression" />
       </node>
       <node concept="tYCnQ" id="1PFbZN6vSB$" role="tZc4B">
         <ref role="uz4UX" to="wq2x:4EfgX2EvF4i" resolve="ExpressionConstraint" />

@@ -8,10 +8,10 @@
   </languages>
   <imports>
     <import index="dmyu" ref="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)" />
-    <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="zrid" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="yy4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textGen(MPS.Core/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="1f2y" ref="r:c2e9552f-aeab-4773-af70-c663afdf96a5(jetbrains.mps.jchr.behavior)" />
     <import index="vgt0" ref="r:f36c95e5-e428-4945-91ae-1005e20c7971(jetbrains.mps.jchr.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -253,10 +253,10 @@
             <node concept="2OqwBi" id="1kcpyXxFI5D" role="33vP2m">
               <node concept="1_6nNH" id="1kcpyXxFI5E" role="2Oq$k0" />
               <node concept="liA8E" id="1kcpyXxFI5F" role="2OqNvi">
-                <ref role="37wK5l" to="zrid:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
+                <ref role="37wK5l" to="yy4t:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
                 <node concept="10M0yZ" id="1kcpyXxFI5G" role="37wK5m">
-                  <ref role="1PxDUh" to="zrid:~TextGenBuffer" resolve="TextGenBuffer" />
-                  <ref role="3cqZAo" to="zrid:~TextGenBuffer.TOP" resolve="TOP" />
+                  <ref role="1PxDUh" to="yy4t:~TextGenBuffer" resolve="TextGenBuffer" />
+                  <ref role="3cqZAo" to="yy4t:~TextGenBuffer.TOP" resolve="TOP" />
                 </node>
               </node>
             </node>
@@ -267,7 +267,7 @@
           <node concept="2OqwBi" id="1kcpyXxFI5J" role="3clFbG">
             <node concept="1_6nNH" id="1kcpyXxFI5K" role="2Oq$k0" />
             <node concept="liA8E" id="1kcpyXxFI5L" role="2OqNvi">
-              <ref role="37wK5l" to="zrid:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
+              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
               <node concept="Xl_RD" id="1kcpyXxFIob" role="37wK5m">
                 <property role="Xl_RC" value="package " />
               </node>
@@ -278,7 +278,7 @@
           <node concept="2OqwBi" id="1kcpyXxFI5V" role="3clFbG">
             <node concept="1_6nNH" id="1kcpyXxFI5W" role="2Oq$k0" />
             <node concept="liA8E" id="1kcpyXxFI5X" role="2OqNvi">
-              <ref role="37wK5l" to="zrid:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
+              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
               <node concept="1JECQ7" id="1kcpyXxFIOw" role="37wK5m">
                 <ref role="1JF1rN" to="dmyu:hXZAS9u" resolve="getPackageName" />
                 <node concept="37vLTw" id="1kcpyXxFIOx" role="1JF4iq">
@@ -292,7 +292,7 @@
           <node concept="2OqwBi" id="1kcpyXxFI60" role="3clFbG">
             <node concept="1_6nNH" id="1kcpyXxFI61" role="2Oq$k0" />
             <node concept="liA8E" id="1kcpyXxFI62" role="2OqNvi">
-              <ref role="37wK5l" to="zrid:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
+              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
               <node concept="Xl_RD" id="1kcpyXxFI63" role="37wK5m">
                 <property role="Xl_RC" value=";\n" />
               </node>
@@ -304,7 +304,7 @@
           <node concept="2OqwBi" id="1kcpyXxFI66" role="3clFbG">
             <node concept="1_6nNH" id="1kcpyXxFI67" role="2Oq$k0" />
             <node concept="liA8E" id="1kcpyXxFI68" role="2OqNvi">
-              <ref role="37wK5l" to="zrid:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
+              <ref role="37wK5l" to="yy4t:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
               <node concept="37vLTw" id="1kcpyXxFI69" role="37wK5m">
                 <ref role="3cqZAo" node="1kcpyXxFI5B" resolve="currPartId" />
               </node>
@@ -1079,8 +1079,8 @@
           </node>
           <node concept="l9hG8" id="6SkxsMzSUQf" role="lcghm">
             <node concept="2YIFZM" id="6SkxsMzT7vU" role="lb14g">
-              <ref role="37wK5l" to="msyo:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
-              <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+              <ref role="37wK5l" to="18ew:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
+              <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
               <node concept="2OqwBi" id="6SkxsMzSVlH" role="37wK5m">
                 <node concept="2OqwBi" id="6SkxsMzSUQg" role="2Oq$k0">
                   <node concept="117lpO" id="6SkxsMzSUQh" role="2Oq$k0" />

@@ -287,7 +287,7 @@
               </node>
               <node concept="1mIQ4w" id="7mm1a3r6X5y" role="2OqNvi">
                 <node concept="chp4Y" id="7mm1a3r6X5P" role="cj9EA">
-                  <ref role="cht4Q" to="5j4j:6$jH9oLmYJ_" resolve="ValueHolder" />
+                  <ref role="cht4Q" to="5j4j:6$jH9oLmYJ_" resolve="Value" />
                 </node>
               </node>
             </node>
@@ -301,7 +301,7 @@
             <node concept="25OxAV" id="7mm1a3r6y7z" role="2OqNvi" />
           </node>
           <node concept="28GBK8" id="7mm1a3r6wqs" role="3uHU7B">
-            <ref role="28GBKb" to="5j4j:dfChU1zo4B" resolve="LogicalSubstitution" />
+            <ref role="28GBKb" to="5j4j:dfChU1zo4B" resolve="Splice" />
             <ref role="28H3Ia" to="5j4j:dfChU1zo4I" />
           </node>
         </node>

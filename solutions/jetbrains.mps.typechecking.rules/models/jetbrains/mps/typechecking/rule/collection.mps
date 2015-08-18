@@ -8,7 +8,7 @@
   </languages>
   <imports>
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -195,7 +195,7 @@
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -256,7 +256,7 @@
       <node concept="37vLTG" id="12yN8DyL4MP" role="3clF46">
         <property role="TrG5h" value="token" />
         <node concept="3uibUv" id="12yN8DyL5r3" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3cqZAl" id="6fdr4UgfyCN" role="3clF45" />
@@ -293,7 +293,7 @@
                 <node concept="3THzug" id="12yN8DyFl3u" role="3rHrn6" />
                 <node concept="3vKaQO" id="12yN8DyFl3v" role="3rHtpV">
                   <node concept="3uibUv" id="1ffsG7c4kC3" role="3O5elw">
-                    <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                    <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                   </node>
                 </node>
               </node>
@@ -343,10 +343,10 @@
       <node concept="A3Dl8" id="6fdr4UgfxqC" role="3clF45">
         <node concept="1LlUBW" id="7t5VLKHa5QV" role="A3Ik2">
           <node concept="3uibUv" id="1ffsG7c4ezn" role="1Lm7xW">
-            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
           </node>
           <node concept="3uibUv" id="7t5VLKHa8iL" role="1Lm7xW">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
@@ -358,10 +358,10 @@
             <node concept="_YKpA" id="12yN8DyvAUd" role="1tU5fm">
               <node concept="1LlUBW" id="7t5VLKHacJO" role="_ZDj9">
                 <node concept="3uibUv" id="1ffsG7c4ntm" role="1Lm7xW">
-                  <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                  <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                 </node>
                 <node concept="3uibUv" id="7t5VLKHafvy" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -369,10 +369,10 @@
               <node concept="Tc6Ow" id="12yN8DyvD72" role="2ShVmc">
                 <node concept="1LlUBW" id="7t5VLKHa9fr" role="HW$YZ">
                   <node concept="3uibUv" id="1ffsG7c4r9t" role="1Lm7xW">
-                    <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                    <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                   </node>
                   <node concept="3uibUv" id="7t5VLKHabQB" role="1Lm7xW">
-                    <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
@@ -457,7 +457,7 @@
                     <property role="TrG5h" value="matching" />
                     <node concept="3vKaQO" id="12yN8DyD$_b" role="1tU5fm">
                       <node concept="3uibUv" id="1ffsG7c4xd9" role="3O5elw">
-                        <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                        <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                       </node>
                     </node>
                     <node concept="3EllGN" id="12yN8DywoJa" role="33vP2m">
@@ -501,7 +501,7 @@
                       <node concept="3cpWsn" id="7t5VLKHasyA" role="3cpWs9">
                         <property role="TrG5h" value="boundParam" />
                         <node concept="3uibUv" id="7t5VLKHasyz" role="1tU5fm">
-                          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                         </node>
                         <node concept="1rXfSq" id="7t5VLKHasyB" role="33vP2m">
                           <ref role="37wK5l" node="7t5VLKHagn3" resolve="getPrameter" />
@@ -552,7 +552,7 @@
                   <node concept="3cpWsn" id="12yN8DyDOdM" role="1Duv9x">
                     <property role="TrG5h" value="tpl" />
                     <node concept="3uibUv" id="1ffsG7c4uLt" role="1tU5fm">
-                      <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                      <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="12yN8DyDOdR" role="1DdaDG">
@@ -642,10 +642,10 @@
       <node concept="A3Dl8" id="5NuEpF1qn9B" role="3clF45">
         <node concept="1LlUBW" id="7t5VLKHaWTl" role="A3Ik2">
           <node concept="3uibUv" id="1ffsG7c4bl4" role="1Lm7xW">
-            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
           </node>
           <node concept="3uibUv" id="7t5VLKHaZmN" role="1Lm7xW">
-            <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
@@ -657,10 +657,10 @@
             <node concept="_YKpA" id="5NuEpF1qn9H" role="1tU5fm">
               <node concept="1LlUBW" id="7t5VLKHb0SG" role="_ZDj9">
                 <node concept="3uibUv" id="1ffsG7c4_ll" role="1Lm7xW">
-                  <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                  <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                 </node>
                 <node concept="3uibUv" id="7t5VLKHb0SI" role="1Lm7xW">
-                  <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -668,10 +668,10 @@
               <node concept="Tc6Ow" id="5NuEpF1qn9K" role="2ShVmc">
                 <node concept="1LlUBW" id="7t5VLKHb1Xg" role="HW$YZ">
                   <node concept="3uibUv" id="1ffsG7c4CSJ" role="1Lm7xW">
-                    <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                    <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                   </node>
                   <node concept="3uibUv" id="7t5VLKHb1Xi" role="1Lm7xW">
-                    <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                   </node>
                 </node>
               </node>
@@ -686,7 +686,7 @@
                 <property role="TrG5h" value="matching" />
                 <node concept="3vKaQO" id="5NuEpF1qnan" role="1tU5fm">
                   <node concept="3uibUv" id="1ffsG7c4Fce" role="3O5elw">
-                    <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                    <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                   </node>
                 </node>
                 <node concept="3EllGN" id="5NuEpF1qnap" role="33vP2m">
@@ -738,7 +738,7 @@
               <node concept="3cpWsn" id="5NuEpF1qnaO" role="1Duv9x">
                 <property role="TrG5h" value="tpl" />
                 <node concept="3uibUv" id="1ffsG7c4G83" role="1tU5fm">
-                  <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                  <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                 </node>
               </node>
               <node concept="37vLTw" id="5NuEpF1qnaQ" role="1DdaDG">
@@ -811,8 +811,8 @@
               <node concept="3cpWs3" id="12yN8DyLiXM" role="3uHU7B">
                 <node concept="3cpWs3" id="12yN8DyLjfC" role="3uHU7B">
                   <node concept="2YIFZM" id="12yN8DyLjnT" role="3uHU7w">
-                    <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
-                    <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                    <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                     <node concept="37vLTw" id="12yN8DyLjvN" role="37wK5m">
                       <ref role="3cqZAo" node="12yN8DyL5uo" resolve="myToken" />
                     </node>
@@ -820,10 +820,10 @@
                   <node concept="3cpWs3" id="7Oc59RSEaWh" role="3uHU7B">
                     <node concept="2OqwBi" id="7Oc59RSEbhU" role="3uHU7B">
                       <node concept="1rXfSq" id="7Oc59RSEaXF" role="2Oq$k0">
-                        <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
+                        <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
                       </node>
                       <node concept="liA8E" id="7Oc59RSEbW0" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~Class.getSimpleName():java.lang.String" resolve="getSimpleName" />
+                        <ref role="37wK5l" to="wyt6:~Class.getSimpleName():java.lang.String" resolve="getSimpleName" />
                       </node>
                     </node>
                     <node concept="Xl_RD" id="12yN8DyLiXS" role="3uHU7w">
@@ -849,7 +849,7 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="12yN8DyLgBe" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="12yN8DywF8F" role="jymVt" />
@@ -858,7 +858,7 @@
       <node concept="37vLTG" id="7t5VLKHagn4" role="3clF46">
         <property role="TrG5h" value="template" />
         <node concept="3uibUv" id="1ffsG7c4zvP" role="1tU5fm">
-          <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+          <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
           <node concept="3qTvmN" id="1ffsG7c4zHD" role="11_B2D" />
         </node>
       </node>
@@ -867,7 +867,7 @@
         <node concept="3Tqbb2" id="7t5VLKHagn7" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="7t5VLKHajO1" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
       <node concept="3Tm6S6" id="7t5VLKHagn9" role="1B3o_S" />
       <node concept="3clFbS" id="7t5VLKHagna" role="3clF47">
@@ -882,7 +882,7 @@
               <ref role="3cqZAo" node="7t5VLKHagn4" resolve="template" />
             </node>
             <node concept="liA8E" id="7t5VLKHagng" role="2OqNvi">
-              <ref role="37wK5l" to="i348:1ffsG7bW$2q" resolve="boundParam" />
+              <ref role="37wK5l" to="i348:1ffsG7bW$2q" resolve="boundValue" />
               <node concept="37vLTw" id="7t5VLKHagnh" role="37wK5m">
                 <ref role="3cqZAo" node="7t5VLKHagn6" resolve="node" />
               </node>
@@ -897,7 +897,7 @@
       <node concept="37vLTG" id="12yN8DywN3_" role="3clF46">
         <property role="TrG5h" value="template" />
         <node concept="3uibUv" id="1ffsG7c4Iob" role="1tU5fm">
-          <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+          <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
         </node>
       </node>
       <node concept="37vLTG" id="12yN8DywO11" role="3clF46">
@@ -907,7 +907,7 @@
       <node concept="37vLTG" id="7t5VLKHaq7G" role="3clF46">
         <property role="TrG5h" value="boundParam" />
         <node concept="3uibUv" id="7t5VLKHaqOW" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="10P_77" id="12yN8DywJJa" role="3clF45" />
@@ -942,7 +942,7 @@
       <node concept="37vLTG" id="3x8pcoFuEO$" role="3clF46">
         <property role="TrG5h" value="template" />
         <node concept="3uibUv" id="3x8pcoFuEO_" role="1tU5fm">
-          <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+          <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
         </node>
       </node>
       <node concept="37vLTG" id="3x8pcoFuHl$" role="3clF46">
@@ -952,7 +952,7 @@
       <node concept="37vLTG" id="3x8pcoFuEOC" role="3clF46">
         <property role="TrG5h" value="boundParam" />
         <node concept="3uibUv" id="3x8pcoFuEOD" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="10P_77" id="3x8pcoFuEOE" role="3clF45" />
@@ -1007,7 +1007,7 @@
         <node concept="37vLTG" id="6fdr4Ugfypr" role="3clF46">
           <property role="TrG5h" value="ruleTemplate" />
           <node concept="3uibUv" id="1ffsG7c3XH9" role="1tU5fm">
-            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
             <node concept="3qTvmN" id="1ffsG7c3XTU" role="11_B2D" />
           </node>
         </node>
@@ -1019,7 +1019,7 @@
               <property role="TrG5h" value="templates" />
               <node concept="3vKaQO" id="12yN8DyF8dz" role="1tU5fm">
                 <node concept="3uibUv" id="1ffsG7c4i2u" role="3O5elw">
-                  <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                  <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                 </node>
               </node>
               <node concept="3EllGN" id="12yN8DyF8dE" role="33vP2m">
@@ -1046,7 +1046,7 @@
                       <node concept="2ShNRf" id="12yN8DyFd3p" role="37vLTx">
                         <node concept="Tc6Ow" id="12yN8DyFgDP" role="2ShVmc">
                           <node concept="3uibUv" id="1ffsG7c4k6n" role="HW$YZ">
-                            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+                            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
                           </node>
                         </node>
                       </node>
@@ -1095,7 +1095,7 @@
       <node concept="2tJIrI" id="12yN8DyFtSY" role="jymVt" />
       <node concept="3Tm6S6" id="12yN8DyF9w7" role="1B3o_S" />
       <node concept="3uibUv" id="6fdr4Ugfypy" role="EKbjA">
-        <ref role="3uigEE" to="i348:4OKkcnfu_A6" resolve="RuleTemplateCollector" />
+        <ref role="3uigEE" to="i348:4OKkcnfu_A6" resolve="ConceptRuleTemplateCollector" />
       </node>
     </node>
     <node concept="2tJIrI" id="6fdr4UgfynW" role="jymVt" />
@@ -1106,7 +1106,7 @@
         <node concept="3THzug" id="12yN8Dywani" role="3rvQeY" />
         <node concept="3vKaQO" id="12yN8DyDzne" role="3rvSg0">
           <node concept="3uibUv" id="1ffsG7c47Mm" role="3O5elw">
-            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ApplicableToConcept" />
+            <ref role="3uigEE" to="i348:1ffsG7bWxcy" resolve="ConceptRuleTemplate" />
           </node>
         </node>
       </node>
@@ -1118,7 +1118,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="12yN8DyL5up" role="1B3o_S" />
       <node concept="3uibUv" id="12yN8DyL5ur" role="1tU5fm">
-        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
     </node>
   </node>
