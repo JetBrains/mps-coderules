@@ -218,6 +218,10 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1144195091934" name="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" flags="nn" index="1BlSNk">
+        <reference id="1144195362400" name="conceptOfParent" index="1BmUXE" />
+        <reference id="1144195396777" name="linkInParent" index="1Bn3mz" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1931,6 +1935,20 @@
                         <node concept="3clFbH" id="tIwzd1KZVN" role="3cqZAp" />
                         <node concept="1DcWWT" id="tIwzd1KZVO" role="3cqZAp">
                           <node concept="3clFbS" id="tIwzd1KZVP" role="2LFqv$">
+                            <node concept="3clFbJ" id="3g$8GQCjqwD" role="3cqZAp">
+                              <node concept="3clFbS" id="3g$8GQCjqwF" role="3clFbx">
+                                <node concept="3N13vt" id="3g$8GQCjqQk" role="3cqZAp" />
+                              </node>
+                              <node concept="2OqwBi" id="3g$8GQCjqAU" role="3clFbw">
+                                <node concept="37vLTw" id="3g$8GQCjq$K" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="tIwzd1KZWc" resolve="ch" />
+                                </node>
+                                <node concept="1BlSNk" id="3g$8GQCjqI4" role="2OqNvi">
+                                  <ref role="1BmUXE" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                                  <ref role="1Bn3mz" to="tpck:4uZwTti3__2" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="3clFbJ" id="tIwzd1KZVQ" role="3cqZAp">
                               <property role="TyiWK" value="true" />
                               <property role="TyiWL" value="false" />
