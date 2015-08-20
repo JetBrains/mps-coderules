@@ -219,7 +219,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -986,7 +985,9 @@
       <node concept="37vLTG" id="1e3DfAArnOm" role="3clF46">
         <property role="TrG5h" value="nlists" />
         <node concept="_YKpA" id="1e3DfAArnOn" role="1tU5fm">
-          <node concept="2I9FWS" id="1e3DfAArnOo" role="_ZDj9" />
+          <node concept="_YKpA" id="2shrukT_lYx" role="_ZDj9">
+            <node concept="3Tqbb2" id="2shrukT_ml1" role="_ZDj9" />
+          </node>
         </node>
       </node>
       <node concept="3uibUv" id="1e3DfAArnOp" role="3clF45">
@@ -1054,7 +1055,9 @@
           </node>
           <node concept="3cpWsn" id="1e3DfAArnOR" role="1Duv9x">
             <property role="TrG5h" value="nlist" />
-            <node concept="2I9FWS" id="1e3DfAArnOS" role="1tU5fm" />
+            <node concept="_YKpA" id="2shrukT_mE_" role="1tU5fm">
+              <node concept="3Tqbb2" id="2shrukT_mEA" role="_ZDj9" />
+            </node>
           </node>
           <node concept="37vLTw" id="1e3DfAArnOT" role="1DdaDG">
             <ref role="3cqZAo" node="1e3DfAArnOm" resolve="nlists" />
@@ -1088,7 +1091,9 @@
       <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="1e3DfAArnP4" role="3clF46">
         <property role="TrG5h" value="nlist" />
-        <node concept="2I9FWS" id="1e3DfAArnP5" role="1tU5fm" />
+        <node concept="_YKpA" id="2shrukT_n08" role="1tU5fm">
+          <node concept="3Tqbb2" id="2shrukT_n09" role="_ZDj9" />
+        </node>
       </node>
       <node concept="3uibUv" id="1e3DfAArnP6" role="3clF45">
         <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
@@ -1190,7 +1195,9 @@
       <node concept="37vLTG" id="2DKqMqOrPnz" role="3clF46">
         <property role="TrG5h" value="nlists" />
         <node concept="_YKpA" id="2DKqMqOrPn$" role="1tU5fm">
-          <node concept="2I9FWS" id="2DKqMqOrPn_" role="_ZDj9" />
+          <node concept="_YKpA" id="2shrukT_nmn" role="_ZDj9">
+            <node concept="3Tqbb2" id="2shrukT_nmo" role="_ZDj9" />
+          </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="2DKqMqOrPnB" role="1B3o_S" />
@@ -1299,7 +1306,9 @@
           </node>
           <node concept="3cpWsn" id="2DKqMqOrPo4" role="1Duv9x">
             <property role="TrG5h" value="nodes" />
-            <node concept="2I9FWS" id="2DKqMqOrPo5" role="1tU5fm" />
+            <node concept="_YKpA" id="2shrukT_nKK" role="1tU5fm">
+              <node concept="3Tqbb2" id="2shrukT_nKL" role="_ZDj9" />
+            </node>
           </node>
           <node concept="37vLTw" id="2DKqMqOrPo6" role="1DdaDG">
             <ref role="3cqZAo" node="2DKqMqOrPnz" resolve="nlists" />
