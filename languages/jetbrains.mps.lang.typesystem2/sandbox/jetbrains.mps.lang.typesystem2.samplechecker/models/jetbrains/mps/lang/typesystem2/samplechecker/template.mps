@@ -215,9 +215,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
-    <language id="894463aa-8754-49c0-bf4b-6a32af66b376" name="jetbrains.mps.jchr">
-      <concept id="2784663291565478535" name="jetbrains.mps.jchr.structure.WildcardLogicVariable" flags="ng" index="2IsoS5" />
-    </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
         <child id="1235746996653" name="function" index="2SgG2M" />
@@ -5095,9 +5092,6 @@
                       <property role="TrG5h" value="cid" />
                       <node concept="1oi5XN" id="2shrukTOP5_" role="1oi5zu">
                         <property role="1oi5yK" value="_" />
-                        <node concept="22Ky0T" id="2shrukTOP5A" role="lGtFl">
-                          <node concept="2IsoS5" id="2shrukTOP5B" role="22Ky0K" />
-                        </node>
                       </node>
                     </node>
                   </node>
@@ -5140,9 +5134,6 @@
                       <property role="TrG5h" value="cid" />
                       <node concept="1oi5XN" id="2shrukTOP5W" role="1oi5zu">
                         <property role="1oi5yK" value="_" />
-                        <node concept="22Ky0T" id="2shrukTOP5X" role="lGtFl">
-                          <node concept="2IsoS5" id="2shrukTOP5Y" role="22Ky0K" />
-                        </node>
                       </node>
                     </node>
                   </node>
@@ -5469,9 +5460,6 @@
                       <property role="TrG5h" value="cid" />
                       <node concept="1oi5XN" id="2shrukTONlA" role="1oi5zu">
                         <property role="1oi5yK" value="_" />
-                        <node concept="22Ky0T" id="2shrukTONlB" role="lGtFl">
-                          <node concept="2IsoS5" id="2shrukTONlC" role="22Ky0K" />
-                        </node>
                       </node>
                     </node>
                   </node>
@@ -5522,9 +5510,6 @@
                       <property role="TrG5h" value="cid" />
                       <node concept="1oi5XN" id="2shrukTONkl" role="1oi5zu">
                         <property role="1oi5yK" value="_" />
-                        <node concept="22Ky0T" id="2shrukTONkm" role="lGtFl">
-                          <node concept="2IsoS5" id="2shrukTONlj" role="22Ky0K" />
-                        </node>
                       </node>
                     </node>
                   </node>
@@ -12716,18 +12701,12 @@
                       <property role="TrG5h" value="classifier" />
                       <node concept="1oi5XN" id="5i7izgNfyq7" role="1oi5zu">
                         <property role="1oi5yK" value="_" />
-                        <node concept="22Ky0T" id="5i7izgNfyq8" role="lGtFl">
-                          <node concept="2IsoS5" id="2shrukTOQxt" role="22Ky0K" />
-                        </node>
                       </node>
                     </node>
                     <node concept="1oi5Wm" id="5i7izgNfyqb" role="1ojpOf">
                       <property role="TrG5h" value="cid" />
                       <node concept="1oi5XN" id="5i7izgNfyqc" role="1oi5zu">
                         <property role="1oi5yK" value="_" />
-                        <node concept="22Ky0T" id="5i7izgNfyqd" role="lGtFl">
-                          <node concept="2IsoS5" id="2shrukTOQxy" role="22Ky0K" />
-                        </node>
                       </node>
                     </node>
                   </node>
@@ -12759,18 +12738,12 @@
                       <property role="TrG5h" value="classifier" />
                       <node concept="1oi5XN" id="5i7izgNfyqs" role="1oi5zu">
                         <property role="1oi5yK" value="_" />
-                        <node concept="22Ky0T" id="5i7izgNfyqt" role="lGtFl">
-                          <node concept="2IsoS5" id="2shrukTOQxA" role="22Ky0K" />
-                        </node>
                       </node>
                     </node>
                     <node concept="1oi5Wm" id="5i7izgNfyqw" role="1ojpOf">
                       <property role="TrG5h" value="cid" />
                       <node concept="1oi5XN" id="5i7izgNfyqx" role="1oi5zu">
                         <property role="1oi5yK" value="_" />
-                        <node concept="22Ky0T" id="5i7izgNfyqy" role="lGtFl">
-                          <node concept="2IsoS5" id="2shrukTOQxF" role="22Ky0K" />
-                        </node>
                       </node>
                     </node>
                   </node>
