@@ -1252,7 +1252,7 @@
                   <node concept="1oi5Wm" id="2S_ORi38QgE" role="1ojpOf">
                     <property role="TrG5h" value="bar" />
                     <node concept="1oi5XN" id="2S_ORi38QgF" role="1oi5zu">
-                      <property role="1oi5yK" value="_" />
+                      <property role="1oi5yK" value="" />
                       <node concept="22Ky0T" id="2S_ORi38QgG" role="lGtFl">
                         <node concept="37vLTw" id="2S_ORi38QgH" role="22Ky0K">
                           <ref role="3cqZAo" node="2S_ORi38Qgi" resolve="val" />
