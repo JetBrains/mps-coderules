@@ -1784,6 +1784,54 @@
   <node concept="AVZre" id="3Qp4N06bUEa">
     <property role="TrG5h" value="TypeConstructor" />
     <property role="3GE5qa" value="type" />
+    <node concept="AVZhu" id="2shrukTKqEN" role="3ArX_J">
+      <property role="TrG5h" value="voidType" />
+      <node concept="3Aq9E8" id="2shrukTKqEO" role="3otmyu">
+        <node concept="3clFbS" id="2shrukTKqEP" role="3Aqf5P">
+          <node concept="3Aqczg" id="2shrukTKqEQ" role="3cqZAp">
+            <node concept="3A8Hvi" id="2shrukTKqER" role="3Aqpz8">
+              <node concept="aYllk" id="2shrukTKqES" role="3A8w4Q">
+                <node concept="1oi1Uc" id="2shrukTKqET" role="aYrYs">
+                  <node concept="1oi5UN" id="2shrukTKqEU" role="1oi0x0">
+                    <node concept="1oi5Wm" id="2shrukTKqEV" role="1ojpOf">
+                      <property role="TrG5h" value="concept" />
+                      <node concept="1oi5XN" id="2shrukTKqEW" role="1oi5zu">
+                        <property role="1oi5yK" value="VoidType" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="a7P8L" id="2shrukTKqEX" role="3A8wtg">
+                <ref role="a7OzE" node="2shrukTKqF1" resolve="VoidType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Aq93q" id="2shrukTKqEY" role="3orSU4">
+        <property role="3ArMco" value="false" />
+        <node concept="3clFbS" id="2shrukTKqEZ" role="3Aqf5P">
+          <node concept="3X$14a" id="2shrukTKqF0" role="3cqZAp">
+            <node concept="aZer4" id="2shrukTKqF1" role="3XD1gS">
+              <property role="TrG5h" value="VoidType" />
+            </node>
+          </node>
+          <node concept="3Aqczg" id="2shrukTKqF2" role="3cqZAp">
+            <node concept="AVZhr" id="2shrukTKqF3" role="3Aqpz8">
+              <node concept="aYllk" id="2shrukTKqF4" role="2pcbIn">
+                <node concept="3TUQnm" id="2shrukTKqF5" role="aYrYs">
+                  <ref role="3TV0OU" to="tpee:fzcqZ_H" resolve="VoidType" />
+                </node>
+              </node>
+              <node concept="a7P8L" id="2shrukTKqF6" role="3A07fg">
+                <ref role="a7OzE" node="2shrukTKqF1" resolve="VoidType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="AVZhu" id="3g$8GQBQp90" role="3ArX_J">
       <property role="TrG5h" value="booleanType" />
       <node concept="3Aq9E8" id="3g$8GQBQp91" role="3otmyu">
