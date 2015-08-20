@@ -3378,14 +3378,47 @@
     <node concept="3AqmO8" id="3Qp4N06bUPr" role="3AqmFx">
       <property role="TrG5h" value="ubound" />
       <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="2shrukTJt3f" role="1zAUyy">
+        <property role="TrG5h" value="typeForWhichBoundIs" />
+      </node>
+      <node concept="1zAUYm" id="2shrukTJt3h" role="1zAUyy">
+        <property role="TrG5h" value="upperBound" />
+      </node>
+      <node concept="1zAsnw" id="2shrukTJt3b" role="lGtFl">
+        <node concept="3SKdUq" id="2shrukTJt3p" role="27qylF">
+          <property role="3SKdUp" value="presence of this constraint in pool indicates that type has upper bound" />
+        </node>
+      </node>
     </node>
     <node concept="3AqmO8" id="3Qp4N06bUPs" role="3AqmFx">
       <property role="TrG5h" value="lbound" />
       <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="2shrukTJt3k" role="1zAUyy">
+        <property role="TrG5h" value="typeForWhichBoundIs" />
+      </node>
+      <node concept="1zAUYm" id="2shrukTJt3m" role="1zAUyy">
+        <property role="TrG5h" value="lowerBound" />
+      </node>
+      <node concept="1zAsnw" id="2shrukTJt3r" role="lGtFl">
+        <node concept="3SKdUq" id="2shrukTJt3v" role="27qylF">
+          <property role="3SKdUp" value="presence of this constraint in pool indicates that type has lower bound" />
+        </node>
+      </node>
     </node>
     <node concept="3AqmO8" id="3Qp4N06bUPt" role="3AqmFx">
       <property role="TrG5h" value="varname" />
       <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="2shrukTHOAq" role="1zAUyy">
+        <property role="TrG5h" value="variable" />
+      </node>
+      <node concept="1zAUYm" id="2shrukTHOAs" role="1zAUyy">
+        <property role="TrG5h" value="name" />
+      </node>
+      <node concept="1zAsnw" id="2shrukTJtQS" role="lGtFl">
+        <node concept="3SKdUq" id="2shrukTJtQT" role="27qylF">
+          <property role="3SKdUp" value="presence of this constraint in pool indicates that its first argument is Java typesystem variable with some name" />
+        </node>
+      </node>
     </node>
     <node concept="3AqmO8" id="3Qp4N06bUPu" role="3AqmFx">
       <property role="TrG5h" value="convertsTo" />
@@ -3417,13 +3450,21 @@
         </node>
       </node>
     </node>
-    <node concept="3AqmO8" id="3Qp4N06bUPv" role="3AqmFx">
-      <property role="TrG5h" value="typedecl" />
-      <property role="3AqDzJ" value="2" />
-    </node>
     <node concept="3AqmO8" id="5MHpiylyjXa" role="3AqmFx">
       <property role="TrG5h" value="promote" />
       <property role="3AqDzJ" value="4" />
+      <node concept="1zAUYm" id="2shrukTJsq$" role="1zAUyy">
+        <property role="TrG5h" value="subNodeRefClassifier" />
+      </node>
+      <node concept="1zAUYm" id="2shrukTJsqA" role="1zAUyy">
+        <property role="TrG5h" value="superNodeRefClassifier" />
+      </node>
+      <node concept="1zAUYm" id="2shrukTJsqD" role="1zAUyy">
+        <property role="TrG5h" value="subClassifierType" />
+      </node>
+      <node concept="1zAUYm" id="2shrukTJsqH" role="1zAUyy">
+        <property role="TrG5h" value="superClassifierType" />
+      </node>
     </node>
     <node concept="3AqmO8" id="2q0gzCFHesp" role="3AqmFx">
       <property role="TrG5h" value="lub" />
@@ -3440,6 +3481,17 @@
     <node concept="3AqmO8" id="29pT9jNTsse" role="3AqmFx">
       <property role="TrG5h" value="boundCopy" />
       <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="2shrukTJu$0" role="1zAUyy">
+        <property role="TrG5h" value="from" />
+      </node>
+      <node concept="1zAUYm" id="2shrukTJu$2" role="1zAUyy">
+        <property role="TrG5h" value="to" />
+      </node>
+      <node concept="1zAsnw" id="2shrukTJu$5" role="lGtFl">
+        <node concept="3SKdUq" id="2shrukTJu$6" role="27qylF">
+          <property role="3SKdUp" value="bounds of first argument are also bounds of argument" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="AVZre" id="6qJjpCjlmVR">
