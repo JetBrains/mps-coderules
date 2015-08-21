@@ -608,5 +608,84 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1pPth$m5o9D">
+    <property role="TrG5h" value="TypeTerm" />
+    <property role="3GE5qa" value="type" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1pPth$m5oa9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="feature" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="1pPth$m5oa5" resolve="TypeFeature" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1pPth$m5oa5">
+    <property role="3GE5qa" value="type.feature" />
+    <property role="TrG5h" value="TypeFeature" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1pPth$m5oa7" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1pPth$m5oa6">
+    <property role="3GE5qa" value="type.feature" />
+    <property role="TrG5h" value="ListTypeFeature" />
+    <property role="34LRSv" value="list" />
+    <ref role="1TJDcQ" node="1pPth$m5oa5" resolve="TypeFeature" />
+  </node>
+  <node concept="1TIwiD" id="1pPth$m5oae">
+    <property role="3GE5qa" value="type.feature" />
+    <property role="TrG5h" value="StringTypeFeature" />
+    <property role="34LRSv" value="string" />
+    <ref role="1TJDcQ" node="1pPth$m5oa5" resolve="TypeFeature" />
+    <node concept="1TJgyi" id="2N2MQGCKV7J" role="1TKVEl">
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1pPth$m5oaG">
+    <property role="3GE5qa" value="type.feature" />
+    <property role="TrG5h" value="ReferenceTypeFeature" />
+    <property role="34LRSv" value="reference" />
+    <ref role="1TJDcQ" node="1pPth$m5oa5" resolve="TypeFeature" />
+  </node>
+  <node concept="1TIwiD" id="1pPth$m5oaL">
+    <property role="3GE5qa" value="type.feature" />
+    <property role="TrG5h" value="ChildTypeFeature" />
+    <property role="34LRSv" value="child" />
+    <ref role="1TJDcQ" node="1pPth$m5oa5" resolve="TypeFeature" />
+  </node>
+  <node concept="1TIwiD" id="1pPth$m5B4X">
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="TypeTable" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="type table" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1pPth$m5B4Y" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1pPth$m5Bbz" resolve="TypeDeclaration" />
+    </node>
+    <node concept="PrWs8" id="1pPth$m5B55" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1pPth$m5Bbz">
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="TypeDeclaration" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1pPth$m5BbA" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="term" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1pPth$m5o9D" resolve="TypeTerm" />
+    </node>
+    <node concept="PrWs8" id="1pPth$m5Bb$" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
 </model>
 
