@@ -78,7 +78,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYC_">
-    <property role="TrG5h" value="Node" />
+    <property role="TrG5h" value="Compound" />
     <property role="3GE5qa" value="atom" />
     <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
     <node concept="1TJgyi" id="6dP_abdQoiG" role="1TKVEl">

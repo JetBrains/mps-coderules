@@ -297,7 +297,7 @@
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST" />
-      <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Node" flags="ng" index="1oi5UN" />
+      <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Compound" flags="ng" index="1oi5UN" />
       <concept id="7571593955706137472" name="jetbrains.mps.logic.structure.ValueRole" flags="ng" index="1oi5Wm" />
       <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.Value" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
@@ -595,7 +595,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="1OShD0H_kUK" role="3acgRq">
-      <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+      <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
       <node concept="gft3U" id="1OShD0H_nFb" role="1lVwrX">
         <node concept="1oi5UN" id="1OShD0H_nFh" role="gfFT$">
           <node concept="1sPUBX" id="1OShD0H_nFl" role="lGtFl">
@@ -734,7 +734,7 @@
                   </node>
                   <node concept="hTh3S" id="35Lj3TiRMJO" role="1xVPHs">
                     <node concept="3gn64h" id="35Lj3TiRN1c" role="hTh3Z">
-                      <ref role="3gnhBz" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+                      <ref role="3gnhBz" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
                     </node>
                   </node>
                 </node>
@@ -1694,7 +1694,7 @@
     <property role="3GE5qa" value="switch" />
     <node concept="3aamgX" id="1OShD0H_fcx" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+      <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
       <node concept="30G5F_" id="1OShD0H_fWS" role="30HLyM">
         <node concept="3clFbS" id="1OShD0H_fWT" role="2VODD2">
           <node concept="3clFbF" id="1OShD0H_g7v" role="3cqZAp">
@@ -1735,7 +1735,7 @@
     </node>
     <node concept="3aamgX" id="6SZa6nhEX$a" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+      <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
       <node concept="gft3U" id="6SZa6nhEX$b" role="1lVwrX">
         <node concept="2YIFZM" id="6SZa6nhEZg2" role="gfFT$">
           <ref role="37wK5l" to="ie8e:5JQSuNsxhfn" resolve="create" />

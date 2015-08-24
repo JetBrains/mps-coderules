@@ -854,7 +854,7 @@
   </node>
   <node concept="24kQdi" id="6dP_abdG2vL">
     <property role="3GE5qa" value="atom" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="2aJ2om" id="6dP_abdG2$T" role="CpUAK">
       <ref role="2$4xQ3" node="6dP_abdFyt9" resolve="GENERIC" />
     </node>
@@ -911,7 +911,7 @@
   <node concept="PKFIW" id="6dP_abdQqhT">
     <property role="TrG5h" value="Node_Inspector" />
     <property role="3GE5qa" value="atom" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="3EZMnI" id="6dP_abdQqoF" role="2wV5jI">
       <node concept="3F0ifn" id="6dP_abdR3F1" role="3EZMnx">
         <property role="3F0ifm" value="show as:" />
@@ -924,7 +924,7 @@
   </node>
   <node concept="24kQdi" id="6dP_abdQWZZ">
     <property role="3GE5qa" value="atom" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="PMmxH" id="6dP_abdQXdF" role="6VMZX">
       <ref role="PMmxG" node="6dP_abdQqhT" resolve="Node_Inspector" />
     </node>
@@ -935,7 +935,7 @@
   <node concept="PKFIW" id="6dP_abdRe7A">
     <property role="TrG5h" value="Node_GENERIC" />
     <property role="3GE5qa" value="atom.generic" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="3EZMnI" id="6dP_abdReN_" role="2wV5jI">
       <node concept="3F0ifn" id="6dP_abdReNA" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -1089,7 +1089,7 @@
   <node concept="PKFIW" id="6dP_abdU8FR">
     <property role="TrG5h" value="Node_CONCEPT_INSTANCE" />
     <property role="3GE5qa" value="atom.conceptInstance" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="3EZMnI" id="6dP_abdU8FS" role="2wV5jI">
       <node concept="3F2HdR" id="6dP_abdUhAq" role="3EZMnx">
         <property role="2czwfO" value="," />
@@ -1297,7 +1297,7 @@
   </node>
   <node concept="24kQdi" id="1dOf$WGVWsS">
     <property role="3GE5qa" value="atom.conceptInstance" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="2aJ2om" id="1dOf$WGW6cZ" role="CpUAK">
       <ref role="2$4xQ3" node="6dP_abdTZPC" resolve="CONCEPT_INSTANCE" />
     </node>
@@ -1354,7 +1354,7 @@
   <node concept="PKFIW" id="25SygBrhI1O">
     <property role="TrG5h" value="Node_CLASSIFIER_TYPE" />
     <property role="3GE5qa" value="atom.classifierType" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="3EZMnI" id="25SygBrhI1P" role="2wV5jI">
       <node concept="3F2HdR" id="25SygBrhI1Q" role="3EZMnx">
         <ref role="1NtTu8" to="5j4j:6$jH9oLnyAp" />
@@ -1509,7 +1509,7 @@
   </node>
   <node concept="24kQdi" id="25SygBrjB10">
     <property role="3GE5qa" value="atom.classifierType" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="2aJ2om" id="25SygBrjB4q" role="CpUAK">
       <ref role="2$4xQ3" node="25SygBrhtsk" resolve="CLASSIFIER_TYPE" />
     </node>
@@ -1566,7 +1566,7 @@
   <node concept="PKFIW" id="45hxFudhNQ$">
     <property role="TrG5h" value="Node_Switch" />
     <property role="3GE5qa" value="atom" />
-    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1XX52x" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="3EZMnI" id="6dP_abdQX9j" role="2wV5jI">
       <node concept="3EZMnI" id="6dP_abdRnko" role="3EZMnx">
         <node concept="VPM3Z" id="6dP_abdRnkq" role="3F10Kt">
@@ -1800,7 +1800,7 @@
   <node concept="1h_SRR" id="38jpnomWVAh">
     <property role="3GE5qa" value="atom.conceptInstance" />
     <property role="TrG5h" value="Node_concept_INSERT" />
-    <ref role="1h_SK9" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1h_SK9" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="1hA7zw" id="38jpnomWVAi" role="1h_SK8">
       <property role="1hAc7j" value="insert_action_id" />
       <node concept="1hAIg9" id="38jpnomWVAj" role="1hA7z_">
@@ -1903,7 +1903,7 @@
   <node concept="1h_SRR" id="3qvzBqW$CPb">
     <property role="3GE5qa" value="atom.classifierType" />
     <property role="TrG5h" value="Node_classifier_INSERT" />
-    <ref role="1h_SK9" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1h_SK9" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="1hA7zw" id="3qvzBqW$CPi" role="1h_SK8">
       <property role="1hAc7j" value="insert_action_id" />
       <node concept="1hAIg9" id="3qvzBqW$CPj" role="1hA7z_">
@@ -2006,7 +2006,7 @@
   <node concept="1h_SRR" id="3qvzBqW_MPf">
     <property role="3GE5qa" value="atom.classifierType" />
     <property role="TrG5h" value="Node_parameter_INSERT" />
-    <ref role="1h_SK9" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="1h_SK9" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="1hA7zw" id="3qvzBqW_MPg" role="1h_SK8">
       <property role="1hAc7j" value="insert_action_id" />
       <node concept="1hAIg9" id="3qvzBqW_MPh" role="1hA7z_">
@@ -2119,7 +2119,7 @@
                 <node concept="2OqwBi" id="35Lj3Tim$h8" role="3clFbG">
                   <node concept="1PxgMI" id="35Lj3Tim$b7" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1PxNhF" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+                    <ref role="1PxNhF" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
                     <node concept="2OqwBi" id="35Lj3TimzW2" role="1PxMeX">
                       <node concept="2OqwBi" id="35Lj3TimzEI" role="2Oq$k0">
                         <node concept="0IXxy" id="35Lj3TimzD_" role="2Oq$k0" />
@@ -2168,7 +2168,7 @@
                 <node concept="2OqwBi" id="35Lj3TimM__" role="3clFbG">
                   <node concept="1PxgMI" id="35Lj3TimM_A" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1PxNhF" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+                    <ref role="1PxNhF" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
                     <node concept="2OqwBi" id="35Lj3TimM_B" role="1PxMeX">
                       <node concept="2OqwBi" id="35Lj3TimM_C" role="2Oq$k0">
                         <node concept="0IXxy" id="35Lj3TimM_D" role="2Oq$k0" />

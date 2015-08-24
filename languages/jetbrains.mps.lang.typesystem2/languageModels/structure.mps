@@ -609,7 +609,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5o9D">
-    <property role="TrG5h" value="TypeTerm" />
+    <property role="TrG5h" value="TypeTermTemplate" />
     <property role="3GE5qa" value="type" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1pPth$m5oa9" role="1TKVEi">
@@ -681,10 +681,24 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="term" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="1pPth$m5o9D" resolve="TypeTerm" />
+      <ref role="20lvS9" node="1pPth$m5o9D" resolve="TypeTermTemplate" />
     </node>
     <node concept="PrWs8" id="1pPth$m5Bb$" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2CEQDIDRX6M">
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="TypeTerm" />
+    <ref role="1TJDcQ" to="5j4j:6$jH9oLmUCq" resolve="Ast" />
+    <node concept="1TJgyj" id="2CEQDIDTdBu" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="template" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1pPth$m5Bbz" resolve="TypeDeclaration" />
+    </node>
+    <node concept="PrWs8" id="2CEQDIDXzlI" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
 </model>

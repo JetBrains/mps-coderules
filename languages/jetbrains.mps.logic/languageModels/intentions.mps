@@ -156,7 +156,7 @@
     <property role="TrG5h" value="Node_ShowAs" />
     <property role="2ZfUl0" value="true" />
     <property role="3GE5qa" value="atom" />
-    <ref role="2ZfgGC" to="5j4j:6$jH9oLmYC_" resolve="Node" />
+    <ref role="2ZfgGC" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="1jPt1T" id="5A$IBX$aTJw" role="2ZfVej">
       <node concept="3clFbS" id="5A$IBX$aTJx" role="2VODD2">
         <node concept="3clFbF" id="5A$IBX$cXCh" role="3cqZAp">
