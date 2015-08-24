@@ -666,6 +666,12 @@
           <ref role="1wgcnl" to="tpen:aeM1BF$GT0" />
         </node>
       </node>
+      <node concept="34QqEe" id="6SKZg6H42CM" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+      <node concept="VPM3Z" id="6SKZg6H45Aw" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+      </node>
     </node>
     <node concept="14StLt" id="7ksQUDZy5i9" role="V601i">
       <property role="TrG5h" value="SubstitutedBrackets" />
@@ -2469,8 +2475,25 @@
         <node concept="11L4FC" id="dfChU1zop7" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
+        <node concept="11LMrY" id="6SKZg6H3umA" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
         <node concept="VechU" id="4kX17XeTdV$" role="3F10Kt">
           <property role="Vb096" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="6SKZg6H3NpH" role="3EZMnx">
+        <property role="3F0ifm" value="@" />
+        <node concept="11L4FC" id="6SKZg6H3Nvh" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="11LMrY" id="6SKZg6H3Nx1" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3Xmtl4" id="6SKZg6H40rl" role="3F10Kt">
+          <node concept="1wgc9g" id="6SKZg6H40rm" role="3XvnJa">
+            <ref role="1wgcnl" node="7ksQUDZy5cR" resolve="Substituted" />
+          </node>
         </node>
       </node>
       <node concept="3EZMnI" id="1OShD0HxxT1" role="3EZMnx">
