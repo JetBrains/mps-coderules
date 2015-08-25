@@ -120,6 +120,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -193,6 +194,23 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2SaL7w" id="1j288BfpBGP" role="2ZfVeh">
+      <node concept="3clFbS" id="1j288BfpBGQ" role="2VODD2">
+        <node concept="3clFbF" id="1j288BfpBVz" role="3cqZAp">
+          <node concept="2OqwBi" id="1j288BfpCqk" role="3clFbG">
+            <node concept="2OqwBi" id="1j288BfpBZr" role="2Oq$k0">
+              <node concept="2Sf5sV" id="1j288BfpBVy" role="2Oq$k0" />
+              <node concept="3CFZ6_" id="1j288BfpCfk" role="2OqNvi">
+                <node concept="3CFYIy" id="1j288BfpClq" role="3CFYIz">
+                  <ref role="3CFYIx" to="wq2x:1CgWc1Tyjkw" resolve="Comment" />
+                </node>
+              </node>
+            </node>
+            <node concept="3w_OXm" id="1j288BfpCLU" role="2OqNvi" />
           </node>
         </node>
       </node>
