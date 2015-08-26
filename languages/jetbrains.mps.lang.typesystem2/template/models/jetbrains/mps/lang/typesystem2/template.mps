@@ -430,7 +430,10 @@
             </node>
             <node concept="2ShNRf" id="1ffsG7cgSXB" role="33vP2m">
               <node concept="1pGfFk" id="1ffsG7cgSXC" role="2ShVmc">
-                <ref role="37wK5l" to="nc4n:7eGEHDlc$ar" resolve="RuleBuilder" />
+                <ref role="37wK5l" to="nc4n:6lpwCiZjdph" resolve="RuleBuilder" />
+                <node concept="Xl_RD" id="3KXGt7WsVjO" role="37wK5m">
+                  <property role="Xl_RC" value="FIXME: fragment iterating" />
+                </node>
               </node>
             </node>
           </node>
@@ -541,7 +544,7 @@
     </node>
     <node concept="2tJIrI" id="1ffsG7chRVv" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7chQb$" role="jymVt">
-      <property role="TrG5h" value="applyToParts" />
+      <property role="TrG5h" value="applyToFragment" />
       <node concept="37vLTG" id="1ffsG7chQb_" role="3clF46">
         <property role="TrG5h" value="input" />
         <node concept="3Tqbb2" id="1ffsG7chQbA" role="1tU5fm" />
@@ -570,7 +573,10 @@
             </node>
             <node concept="2ShNRf" id="1ffsG7chQbN" role="33vP2m">
               <node concept="1pGfFk" id="1ffsG7chQbO" role="2ShVmc">
-                <ref role="37wK5l" to="nc4n:7eGEHDlc$ar" resolve="RuleBuilder" />
+                <ref role="37wK5l" to="nc4n:6lpwCiZjdph" resolve="RuleBuilder" />
+                <node concept="Xl_RD" id="3KXGt7WsVsz" role="37wK5m">
+                  <property role="Xl_RC" value="FIXME: fragment" />
+                </node>
               </node>
             </node>
           </node>
@@ -2169,6 +2175,11 @@
     <node concept="3clFb_" id="1ffsG7bWCVq" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="apply" />
+      <node concept="A3Dl8" id="1ffsG7bWD3H" role="3clF45">
+        <node concept="3uibUv" id="1ffsG7bWD4a" role="A3Ik2">
+          <ref role="3uigEE" to="nc4n:7eGEHDlc$ap" resolve="RuleBuilder" />
+        </node>
+      </node>
       <node concept="37vLTG" id="1ffsG7bWDGk" role="3clF46">
         <property role="TrG5h" value="input" />
         <node concept="3Tqbb2" id="1ffsG7bWDP4" role="1tU5fm" />
@@ -2177,11 +2188,6 @@
         <property role="TrG5h" value="boundValue" />
         <node concept="16syzq" id="1ffsG7bWE6B" role="1tU5fm">
           <ref role="16sUi3" node="1ffsG7bWA35" resolve="S" />
-        </node>
-      </node>
-      <node concept="A3Dl8" id="1ffsG7bWD3H" role="3clF45">
-        <node concept="3uibUv" id="1ffsG7bWD4a" role="A3Ik2">
-          <ref role="3uigEE" to="nc4n:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ffsG7bWCVt" role="1B3o_S" />
@@ -2509,6 +2515,11 @@
     <node concept="3clFb_" id="1ffsG7bXfck" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="apply" />
+      <node concept="A3Dl8" id="1ffsG7bXfPY" role="3clF45">
+        <node concept="3uibUv" id="1ffsG7bXfQn" role="A3Ik2">
+          <ref role="3uigEE" to="nc4n:7eGEHDlc$ap" resolve="RuleBuilder" />
+        </node>
+      </node>
       <node concept="37vLTG" id="1ffsG7bXg4k" role="3clF46">
         <property role="TrG5h" value="input" />
         <node concept="3Tqbb2" id="1ffsG7bXghu" role="1tU5fm" />
@@ -2523,11 +2534,6 @@
         <property role="TrG5h" value="boundValue" />
         <node concept="16syzq" id="1ffsG7bXh86" role="1tU5fm">
           <ref role="16sUi3" node="1ffsG7bXcDV" resolve="S" />
-        </node>
-      </node>
-      <node concept="A3Dl8" id="1ffsG7bXfPY" role="3clF45">
-        <node concept="3uibUv" id="1ffsG7bXfQn" role="A3Ik2">
-          <ref role="3uigEE" to="nc4n:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ffsG7bXfcn" role="1B3o_S" />
