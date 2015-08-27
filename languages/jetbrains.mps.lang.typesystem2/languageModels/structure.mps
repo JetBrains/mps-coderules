@@ -131,11 +131,13 @@
     <node concept="1TJgyi" id="3x8pcoFsKIi" role="1TKVEl">
       <property role="TrG5h" value="postProcess" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <node concept="asaX9" id="3KXGt7WVuy3" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="5NuEpF1iiJF" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="inputSpecification" />
       <ref role="20lvS9" node="5NuEpF1if3e" resolve="RuleInputSpecification" />
+      <node concept="asaX9" id="6wQEDbCCPAr" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="5MHpiylGjt8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -528,6 +530,11 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6wQEDbCCPyR" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="input" />
+      <ref role="20lvS9" node="5NuEpF1if3e" resolve="RuleInputSpecification" />
+    </node>
     <node concept="1TJgyj" id="1ffsG7bh6Cz" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="requiredNodeBlock" />
