@@ -148,6 +148,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="boundParameterBlock" />
       <ref role="20lvS9" node="1zN1RIkQtcr" resolve="BoundParameterBlock" />
+      <node concept="asaX9" id="6wQEDbCIWty" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="5bC6UNl$TEw" role="PzmwI">
       <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="ICanBeCommented" />
@@ -539,6 +540,11 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="requiredNodeBlock" />
       <ref role="20lvS9" node="tIwzd1EOs6" resolve="RequiredNodeBlock" />
+    </node>
+    <node concept="1TJgyj" id="6wQEDbCHGnY" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="letBlock" />
+      <ref role="20lvS9" node="1zN1RIkQtcr" resolve="BoundParameterBlock" />
     </node>
     <node concept="1TJgyj" id="1ffsG7bnJXK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
