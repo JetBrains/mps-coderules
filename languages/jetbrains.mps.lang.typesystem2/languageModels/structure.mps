@@ -119,6 +119,11 @@
     <property role="3GE5qa" value="rule" />
     <property role="34LRSv" value="template" />
     <ref role="1TJDcQ" node="4EfgX2ET3GH" resolve="AbstractRule" />
+    <node concept="1TJgyj" id="3KXGt7WSNcl" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="condition" />
+      <ref role="20lvS9" node="4laj_h9P4cy" resolve="Condition" />
+    </node>
     <node concept="1TJgyi" id="1ffsG7bAGF$" role="1TKVEl">
       <property role="TrG5h" value="exactMatch" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
@@ -532,6 +537,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="applyCondition" />
       <ref role="20lvS9" node="4laj_h9P4cy" resolve="Condition" />
+      <node concept="asaX9" id="3KXGt7WSRHz" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="1ffsG7bCfL5" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
