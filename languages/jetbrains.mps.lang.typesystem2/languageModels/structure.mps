@@ -558,18 +558,6 @@
       <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1ffsG7bLeN5">
-    <property role="3GE5qa" value="rule" />
-    <property role="TrG5h" value="RulePart" />
-    <property role="34LRSv" value="template part" />
-    <ref role="1TJDcQ" node="4EfgX2ET3GH" resolve="AbstractRule" />
-    <node concept="1TJgyj" id="1ffsG7bLfTr" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="host" />
-      <ref role="20lvS9" node="7eGEHDlgPU4" resolve="Rule" />
-    </node>
-    <node concept="asaX9" id="3g$8GQBXsMN" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="6infEALDvmn">
     <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="AssertExpressionConstraint" />
