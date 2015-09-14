@@ -3,10 +3,11 @@
   <persistence version="9" />
   <languages>
     <use id="894463aa-8754-49c0-bf4b-6a32af66b376" name="jetbrains.mps.jchr" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
   </languages>
   <imports>
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
@@ -234,9 +235,6 @@
       </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -467,10 +465,10 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="2yOynGf2MDb" role="3cqZAp">
-          <node concept="3SKWN0" id="2yOynGf2MDc" role="3SKWNk">
-            <node concept="3clFbH" id="41ox5VnijEW" role="3SKWNf" />
-          </node>
+        <node concept="1X3_iC" id="3U_KxQf9kfw" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbH" id="41ox5VnijEW" role="8Wnug" />
         </node>
         <node concept="3cpWs8" id="41ox5VnfMip" role="3cqZAp">
           <node concept="3cpWsn" id="41ox5VnfMiq" role="3cpWs9">
@@ -1287,15 +1285,15 @@
         <node concept="3clFbH" id="41ox5VndQcp" role="3cqZAp" />
         <node concept="3clFbJ" id="41ox5VndQUy" role="3cqZAp">
           <node concept="3clFbS" id="41ox5VndQU$" role="3clFbx">
-            <node concept="3SKdUt" id="41ox5VndRCT" role="3cqZAp">
-              <node concept="3SKWN0" id="41ox5VndRCU" role="3SKWNk">
-                <node concept="3clFbF" id="41ox5VndRCV" role="3SKWNf">
-                  <node concept="2YIFZM" id="41ox5VndRCW" role="3clFbG">
-                    <ref role="1Pybhc" to="stuq:~GraphicalTracer" resolve="GraphicalTracer" />
-                    <ref role="37wK5l" to="stuq:~GraphicalTracer.attachTo(runtime.Handler):boolean" resolve="attachTo" />
-                    <node concept="37vLTw" id="41ox5VndRCX" role="37wK5m">
-                      <ref role="3cqZAo" node="41ox5VndPlt" resolve="handler" />
-                    </node>
+            <node concept="1X3_iC" id="3U_KxQf9kfx" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3clFbF" id="41ox5VndRCV" role="8Wnug">
+                <node concept="2YIFZM" id="41ox5VndRCW" role="3clFbG">
+                  <ref role="1Pybhc" to="stuq:~GraphicalTracer" resolve="GraphicalTracer" />
+                  <ref role="37wK5l" to="stuq:~GraphicalTracer.attachTo(runtime.Handler):boolean" resolve="attachTo" />
+                  <node concept="37vLTw" id="41ox5VndRCX" role="37wK5m">
+                    <ref role="3cqZAo" node="41ox5VndPlt" resolve="handler" />
                   </node>
                 </node>
               </node>
@@ -1306,15 +1304,15 @@
                 <property role="3SKdUp" value="don't stop on every constraint rule evaluation" />
               </node>
             </node>
-            <node concept="3SKdUt" id="6KkyQm46sJq" role="3cqZAp">
-              <node concept="3SKWN0" id="6KkyQm46sJr" role="3SKWNk">
-                <node concept="3clFbF" id="3XExYyWVIVb" role="3SKWNf">
-                  <node concept="2YIFZM" id="3XExYyWVIVa" role="3clFbG">
-                    <ref role="1Pybhc" node="3Qp4N06bZn0" resolve="TestHandlerRunner" />
-                    <ref role="37wK5l" node="41ox5VnjQJx" resolve="attachTracerTo" />
-                    <node concept="37vLTw" id="3XExYyWVIV9" role="37wK5m">
-                      <ref role="3cqZAo" node="41ox5VndPlt" resolve="handler" />
-                    </node>
+            <node concept="1X3_iC" id="3U_KxQf9kfy" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3clFbF" id="3XExYyWVIVb" role="8Wnug">
+                <node concept="2YIFZM" id="3XExYyWVIVa" role="3clFbG">
+                  <ref role="1Pybhc" node="3Qp4N06bZn0" resolve="TestHandlerRunner" />
+                  <ref role="37wK5l" node="41ox5VnjQJx" resolve="attachTracerTo" />
+                  <node concept="37vLTw" id="3XExYyWVIV9" role="37wK5m">
+                    <ref role="3cqZAo" node="41ox5VndPlt" resolve="handler" />
                   </node>
                 </node>
               </node>

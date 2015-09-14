@@ -2,8 +2,9 @@
 <model ref="r:7cfc11bd-0eab-44f3-9a01-2ee2a709c6d3(jetbrains.mps.jchr.patch)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -218,9 +219,6 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -248,6 +246,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -690,26 +695,26 @@
                         <property role="3SKdUp" value="File[] generatedFiles = CodeGenerator.generateAllSourceFiles(cif);" />
                       </node>
                     </node>
-                    <node concept="3SKdUt" id="41ox5Vnaa7q" role="3cqZAp">
-                      <node concept="3SKWN0" id="41ox5Vnaa7r" role="3SKWNk">
-                        <node concept="3cpWs8" id="2ev$9JFs8KL" role="3SKWNf">
-                          <node concept="3cpWsn" id="2ev$9JFs8KK" role="3cpWs9">
-                            <property role="3TUv4t" value="false" />
-                            <property role="TrG5h" value="generatedFiles" />
-                            <node concept="10Q1$e" id="2ev$9JFs8KN" role="1tU5fm">
-                              <node concept="3uibUv" id="2ev$9JFs8KM" role="10Q1$1">
-                                <ref role="3uigEE" to="guwi:~File" resolve="File" />
-                              </node>
+                    <node concept="1X3_iC" id="3U_KxQf9aA3" role="lGtFl">
+                      <property role="3V$3am" value="statement" />
+                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                      <node concept="3cpWs8" id="2ev$9JFs8KL" role="8Wnug">
+                        <node concept="3cpWsn" id="2ev$9JFs8KK" role="3cpWs9">
+                          <property role="3TUv4t" value="false" />
+                          <property role="TrG5h" value="generatedFiles" />
+                          <node concept="10Q1$e" id="2ev$9JFs8KN" role="1tU5fm">
+                            <node concept="3uibUv" id="2ev$9JFs8KM" role="10Q1$1">
+                              <ref role="3uigEE" to="guwi:~File" resolve="File" />
                             </node>
-                            <node concept="2YIFZM" id="2ev$9JFu4fc" role="33vP2m">
-                              <ref role="1Pybhc" to="b504:~CodeGeneration" resolve="CodeGeneration" />
-                              <ref role="37wK5l" to="b504:~CodeGeneration.generateAllSourceFiles(compiler.CHRIntermediateForm.ICHRIntermediateForm,compiler.options.Options):java.io.File[]" resolve="generateAllSourceFiles" />
-                              <node concept="37vLTw" id="2ev$9JFs8KP" role="37wK5m">
-                                <ref role="3cqZAo" node="2ev$9JFs8JN" resolve="cif" />
-                              </node>
-                              <node concept="37vLTw" id="2ev$9JFs8KQ" role="37wK5m">
-                                <ref role="3cqZAo" node="2ev$9JFs8Jn" resolve="options" />
-                              </node>
+                          </node>
+                          <node concept="2YIFZM" id="2ev$9JFu4fc" role="33vP2m">
+                            <ref role="1Pybhc" to="b504:~CodeGeneration" resolve="CodeGeneration" />
+                            <ref role="37wK5l" to="b504:~CodeGeneration.generateAllSourceFiles(compiler.CHRIntermediateForm.ICHRIntermediateForm,compiler.options.Options):java.io.File[]" resolve="generateAllSourceFiles" />
+                            <node concept="37vLTw" id="2ev$9JFs8KP" role="37wK5m">
+                              <ref role="3cqZAo" node="2ev$9JFs8JN" resolve="cif" />
+                            </node>
+                            <node concept="37vLTw" id="2ev$9JFs8KQ" role="37wK5m">
+                              <ref role="3cqZAo" node="2ev$9JFs8Jn" resolve="options" />
                             </node>
                           </node>
                         </node>

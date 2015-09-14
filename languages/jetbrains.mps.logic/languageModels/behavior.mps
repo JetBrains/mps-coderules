@@ -72,6 +72,7 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -83,7 +84,7 @@
         <child id="5944356402132808753" name="case" index="1_3QMm" />
         <child id="5944356402132808752" name="expression" index="1_3QMn" />
       </concept>
-      <concept id="5944356402132808754" name="jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase" flags="ng" index="1_3QMl">
+      <concept id="5944356402132808754" name="jetbrains.mps.lang.smodel.structure.SubconceptCase" flags="ng" index="1_3QMl">
         <child id="1163670677455" name="concept" index="3Kbmr1" />
         <child id="1163670683720" name="body" index="3Kbo56" />
       </concept>
@@ -158,8 +159,11 @@
           </node>
         </node>
         <node concept="1_3QMa" id="6Sag3Ksyion" role="3cqZAp">
-          <node concept="37vLTw" id="6Sag3KsyiIc" role="1_3QMn">
-            <ref role="3cqZAo" node="7MlQDeOyTih" resolve="atom" />
+          <node concept="2OqwBi" id="3U_KxQf9l_b" role="1_3QMn">
+            <node concept="37vLTw" id="3U_KxQf9l_c" role="2Oq$k0">
+              <ref role="3cqZAo" node="7MlQDeOyTih" resolve="atom" />
+            </node>
+            <node concept="2yIwOk" id="3U_KxQf9l_d" role="2OqNvi" />
           </node>
           <node concept="1_3QMl" id="6Sag3KsyiIv" role="1_3QMm">
             <node concept="3gn64h" id="6Sag3KsyiIN" role="3Kbmr1">

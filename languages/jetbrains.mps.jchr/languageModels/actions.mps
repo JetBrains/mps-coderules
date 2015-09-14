@@ -226,6 +226,7 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -254,7 +255,7 @@
         <child id="5944356402132808753" name="case" index="1_3QMm" />
         <child id="5944356402132808752" name="expression" index="1_3QMn" />
       </concept>
-      <concept id="5944356402132808754" name="jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase" flags="ng" index="1_3QMl">
+      <concept id="5944356402132808754" name="jetbrains.mps.lang.smodel.structure.SubconceptCase" flags="ng" index="1_3QMl">
         <child id="1163670677455" name="concept" index="3Kbmr1" />
         <child id="1163670683720" name="body" index="3Kbo56" />
       </concept>
@@ -1695,7 +1696,10 @@
           <node concept="D1tK2" id="5lJXK0fhw" role="D0eUe">
             <node concept="3clFbS" id="5lJXK0fhx" role="2VODD2">
               <node concept="1_3QMa" id="5lJXK5WDm" role="3cqZAp">
-                <node concept="Cj7Ep" id="5lJXK6uzo" role="1_3QMn" />
+                <node concept="2OqwBi" id="3U_KxQf996P" role="1_3QMn">
+                  <node concept="Cj7Ep" id="3U_KxQf996Q" role="2Oq$k0" />
+                  <node concept="2yIwOk" id="3U_KxQf996R" role="2OqNvi" />
+                </node>
                 <node concept="1_3QMl" id="5lJXK5WUj" role="1_3QMm">
                   <node concept="3gn64h" id="5lJXK5X5a" role="3Kbmr1">
                     <ref role="3gnhBz" to="vgt0:pmDhvH6Bv5" resolve="SimplificationRule" />
