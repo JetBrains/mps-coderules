@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -150,6 +150,12 @@
       <ref role="20lvS9" node="1zN1RIkQtcr" resolve="BoundParameterBlock" />
       <node concept="asaX9" id="6wQEDbCIWty" role="lGtFl" />
     </node>
+    <node concept="1TJgyj" id="6wQEDbCLoaZ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="includeClause" />
+      <ref role="20lvS9" node="6wQEDbCL4Fi" resolve="IncludeFragmentClause" />
+    </node>
     <node concept="PrWs8" id="5bC6UNl$TEw" role="PzmwI">
       <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="ICanBeCommented" />
     </node>
@@ -165,6 +171,9 @@
       <property role="20kJfa" value="code" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="PrWs8" id="3PWU9gizUQY" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3gA">
@@ -707,6 +716,30 @@
     <node concept="PrWs8" id="2CEQDIDXzlI" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6wQEDbCL4Fi">
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="IncludeFragmentClause" />
+    <property role="34LRSv" value="include" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6wQEDbCL4Fp" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="argument" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="6wQEDbCL4Fj" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="fragment" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6wQEDbCHt15" resolve="Fragment" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6wQEDbCHt15">
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="Fragment" />
+    <property role="34LRSv" value="fragment" />
+    <ref role="1TJDcQ" node="4EfgX2ET3GH" resolve="AbstractRule" />
   </node>
 </model>
 

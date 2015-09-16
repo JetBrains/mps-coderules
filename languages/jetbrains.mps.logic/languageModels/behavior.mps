@@ -73,9 +73,6 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
-      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
-        <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
-      </concept>
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
       </concept>
@@ -108,6 +105,11 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
+        <child id="1151689745422" name="elementType" index="A3Ik2" />
+      </concept>
+    </language>
   </registry>
   <node concept="13h7C7" id="7E86$tKAuhI">
     <property role="3GE5qa" value="logical" />
@@ -117,8 +119,10 @@
       <property role="13i0it" value="true" />
       <property role="TrG5h" value="exportedLogicalVariable" />
       <node concept="3Tm1VV" id="7E86$tKAujK" role="1B3o_S" />
-      <node concept="2I9FWS" id="7E86$tKAuon" role="3clF45">
-        <ref role="2I9WkF" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+      <node concept="A3Dl8" id="3PWU9gi$5Wx" role="3clF45">
+        <node concept="3Tqbb2" id="3PWU9gi$5WL" role="A3Ik2">
+          <ref role="ehGHo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+        </node>
       </node>
       <node concept="3clFbS" id="7E86$tKAujM" role="3clF47">
         <node concept="3clFbF" id="7E86$tKAuA2" role="3cqZAp">
