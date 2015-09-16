@@ -175,6 +175,12 @@
     <node concept="PrWs8" id="3PWU9gizUQY" role="PzmwI">
       <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
     </node>
+    <node concept="1TJgyj" id="PB1R3Y7EcX" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="PB1R3Y7Ed7" resolve="RulePartParameterDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3gA">
     <property role="TrG5h" value="Head" />
@@ -363,16 +369,8 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
-    <node concept="1TJgyj" id="2E5lcNn8k3O" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="declaration" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="5zfvpQ72gqq" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="dataType" />
-      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="PrWs8" id="75vUFrS_9Sh" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:75vUFrS_9Sg" resolve="LogicalVariableDeclarationContainer" />
     </node>
   </node>
   <node concept="1TIwiD" id="4laj_h9P4cy">
@@ -740,6 +738,14 @@
     <property role="TrG5h" value="Fragment" />
     <property role="34LRSv" value="fragment" />
     <ref role="1TJDcQ" node="4EfgX2ET3GH" resolve="AbstractRule" />
+  </node>
+  <node concept="1TIwiD" id="PB1R3Y7Ed7">
+    <property role="3GE5qa" value="constraint.variable" />
+    <property role="TrG5h" value="RulePartParameterDeclaration" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="75vUFrS_flD" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:75vUFrS_9Sg" resolve="LogicalVariableDeclarationContainer" />
+    </node>
   </node>
 </model>
 

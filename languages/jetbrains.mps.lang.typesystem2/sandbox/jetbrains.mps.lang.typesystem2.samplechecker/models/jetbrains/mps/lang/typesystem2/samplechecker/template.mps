@@ -249,6 +249,10 @@
         <child id="238586457668550958" name="expression" index="22Ky0K" />
       </concept>
       <concept id="1564179198502666296" name="jetbrains.mps.logic.structure.LogicalType" flags="ig" index="26uTi9" />
+      <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
+        <child id="6399471711045617306" name="dataType" index="3vLBG7" />
+        <child id="3063948360254832884" name="declaration" index="3XD1gS" />
+      </concept>
       <concept id="8829335963593820278" name="jetbrains.mps.logic.structure.LogicalVariableReference" flags="ng" index="a7P8L">
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
@@ -509,6 +513,7 @@
       </concept>
       <concept id="7368070394766963523" name="jetbrains.mps.lang.typesystem2.structure.RuleComponent" flags="ng" index="3Aq9uZ">
         <child id="7368070394766972297" name="code" index="3Aqf5P" />
+        <child id="965748826975413053" name="parameter" index="3Nuqhd" />
       </concept>
       <concept id="7368070394766966158" name="jetbrains.mps.lang.typesystem2.structure.Guard" flags="ng" index="3Aq9_M" />
       <concept id="7368070394766966388" name="jetbrains.mps.lang.typesystem2.structure.Body" flags="ng" index="3Aq9E8" />
@@ -526,16 +531,13 @@
         <reference id="7368070394767091750" name="template" index="3AqCNq" />
         <child id="7368070394768117915" name="argument" index="3AunhB" />
       </concept>
+      <concept id="965748826975413063" name="jetbrains.mps.lang.typesystem2.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
       <concept id="3063948360252660075" name="jetbrains.mps.lang.typesystem2.structure.TypeofConstraint" flags="ng" index="3XxkQB">
         <child id="3063948360252667312" name="assignedType" index="3Xxm5W" />
         <child id="3063948360252666228" name="anchor" index="3XxmmS" />
       </concept>
       <concept id="3063948360254047686" name="jetbrains.mps.lang.typesystem2.structure.ParameterDeclarationStatement" flags="ng" index="3X$14a" />
       <concept id="3063948360254202562" name="jetbrains.mps.lang.typesystem2.structure.LocalDeclarationStatement" flags="ng" index="3X$Joe" />
-      <concept id="3063948360254828460" name="jetbrains.mps.lang.typesystem2.structure.LogicVariableDeclarationStatement" flags="ng" index="3XD7Hw">
-        <child id="6399471711045617306" name="dataType" index="3vLBG7" />
-        <child id="3063948360254832884" name="declaration" index="3XD1gS" />
-      </concept>
     </language>
   </registry>
   <node concept="AVZre" id="3Qp4N06bUAA">

@@ -356,13 +356,13 @@
     </node>
     <node concept="2tJIrI" id="3x8pcoFtf2t" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7bXs66" role="jymVt">
-      <property role="TrG5h" value="boundValue" />
+      <property role="TrG5h" value="letValue" />
       <node concept="37vLTG" id="1ffsG7bXs67" role="3clF46">
         <property role="TrG5h" value="input" />
         <node concept="3Tqbb2" id="1ffsG7bXs68" role="1tU5fm" />
       </node>
       <node concept="16syzq" id="1ffsG7bXs69" role="3clF45">
-        <ref role="16sUi3" node="4OKkcnfu_vG" resolve="S" />
+        <ref role="16sUi3" node="4OKkcnfu_vG" resolve="Let" />
       </node>
       <node concept="3Tm1VV" id="1ffsG7bXs6a" role="1B3o_S" />
       <node concept="3clFbS" id="1ffsG7bXs6b" role="3clF47">
@@ -380,7 +380,7 @@
       <node concept="3uibUv" id="1ffsG7bVaZg" role="3clF45">
         <ref role="3uigEE" node="1ffsG7bV945" resolve="Iterating" />
         <node concept="16syzq" id="1ffsG7bVhyI" role="11_B2D">
-          <ref role="16sUi3" node="4OKkcnfu_vH" resolve="T" />
+          <ref role="16sUi3" node="4OKkcnfu_vH" resolve="Iter" />
         </node>
       </node>
       <node concept="3Tm1VV" id="8VaLZRGVER" role="1B3o_S" />
@@ -396,6 +396,7 @@
     <node concept="2tJIrI" id="8VaLZRGZ8t" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7cguKY" role="jymVt">
       <property role="TrG5h" value="applyToParts" />
+      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="1ffsG7cgVrH" role="3clF46">
         <property role="TrG5h" value="input" />
         <node concept="3Tqbb2" id="1ffsG7cgVrI" role="1tU5fm" />
@@ -403,13 +404,13 @@
       <node concept="37vLTG" id="1ffsG7cgVrJ" role="3clF46">
         <property role="TrG5h" value="iterateOver" />
         <node concept="16syzq" id="1ffsG7cgVrK" role="1tU5fm">
-          <ref role="16sUi3" node="4OKkcnfu_vH" resolve="T" />
+          <ref role="16sUi3" node="4OKkcnfu_vH" resolve="Iter" />
         </node>
       </node>
       <node concept="37vLTG" id="1ffsG7cgVrL" role="3clF46">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="1ffsG7cgVrM" role="1tU5fm">
-          <ref role="16sUi3" node="4OKkcnfu_vG" resolve="S" />
+          <ref role="16sUi3" node="4OKkcnfu_vG" resolve="Let" />
         </node>
       </node>
       <node concept="3uibUv" id="1ffsG7cgQ0y" role="3clF45">
@@ -449,27 +450,36 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="PB1R3Yer9C" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="3Tm1VV" id="4OKkcnfu_vD" role="1B3o_S" />
     <node concept="3uibUv" id="4OKkcnfu_vE" role="1zkMxy">
       <ref role="3uigEE" node="1ffsG7bX1MS" resolve="BaseIteratingRuleTemplate" />
       <node concept="16syzq" id="4OKkcnfu_vF" role="11_B2D">
-        <ref role="16sUi3" node="4OKkcnfu_vG" resolve="S" />
+        <ref role="16sUi3" node="4OKkcnfu_vG" resolve="Let" />
       </node>
       <node concept="16syzq" id="1ffsG7bXqav" role="11_B2D">
-        <ref role="16sUi3" node="4OKkcnfu_vH" resolve="T" />
+        <ref role="16sUi3" node="4OKkcnfu_vH" resolve="Iter" />
+      </node>
+      <node concept="16syzq" id="PB1R3YelJy" role="11_B2D">
+        <ref role="16sUi3" node="PB1R3YekIA" resolve="Logical" />
       </node>
     </node>
     <node concept="16euLQ" id="4OKkcnfu_vG" role="16eVyc">
-      <property role="TrG5h" value="S" />
+      <property role="TrG5h" value="Let" />
     </node>
     <node concept="16euLQ" id="4OKkcnfu_vH" role="16eVyc">
-      <property role="TrG5h" value="T" />
+      <property role="TrG5h" value="Iter" />
+    </node>
+    <node concept="16euLQ" id="PB1R3YekIA" role="16eVyc">
+      <property role="TrG5h" value="Logical" />
     </node>
     <node concept="3uibUv" id="67SsWaEn6P_" role="EKbjA">
       <ref role="3uigEE" node="1ffsG7bV945" resolve="Iterating" />
       <node concept="16syzq" id="67SsWaEn7S7" role="11_B2D">
-        <ref role="16sUi3" node="4OKkcnfu_vH" resolve="T" />
+        <ref role="16sUi3" node="4OKkcnfu_vH" resolve="Iter" />
       </node>
     </node>
   </node>
@@ -524,13 +534,13 @@
     </node>
     <node concept="2tJIrI" id="3x8pcoFtje6" role="jymVt" />
     <node concept="3clFb_" id="4OKkcnfu_wz" role="jymVt">
-      <property role="TrG5h" value="boundValue" />
+      <property role="TrG5h" value="letValue" />
       <node concept="37vLTG" id="4OKkcnfu_w$" role="3clF46">
         <property role="TrG5h" value="input" />
         <node concept="3Tqbb2" id="4OKkcnfu_w_" role="1tU5fm" />
       </node>
       <node concept="16syzq" id="4OKkcnfu_wA" role="3clF45">
-        <ref role="16sUi3" node="4OKkcnfu_xd" resolve="S" />
+        <ref role="16sUi3" node="4OKkcnfu_xd" resolve="Let" />
       </node>
       <node concept="3Tm1VV" id="4OKkcnfu_wB" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_wC" role="3clF47">
@@ -543,16 +553,44 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1ffsG7chRVv" role="jymVt" />
+    <node concept="3clFb_" id="PB1R3YsDCl" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="logicalVar" />
+      <node concept="37vLTG" id="PB1R3YsDCm" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="PB1R3YsDCn" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="PB1R3YsDCo" role="3clF46">
+        <property role="TrG5h" value="letVal" />
+        <node concept="16syzq" id="PB1R3YsDCy" role="1tU5fm">
+          <ref role="16sUi3" node="4OKkcnfu_xd" resolve="Let" />
+        </node>
+      </node>
+      <node concept="16syzq" id="PB1R3YsDCz" role="3clF45">
+        <ref role="16sUi3" node="PB1R3Yejeo" resolve="Logical" />
+      </node>
+      <node concept="3Tm1VV" id="PB1R3YsDCr" role="1B3o_S" />
+      <node concept="3clFbS" id="PB1R3YsDC$" role="3clF47">
+        <node concept="3clFbF" id="PB1R3YsDOJ" role="3cqZAp">
+          <node concept="10Nm6u" id="PB1R3YsDOI" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="PB1R3YsDPu" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="PB1R3YsDXx" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7chQb$" role="jymVt">
       <property role="TrG5h" value="applyToFragment" />
+      <property role="IEkAT" value="false" />
       <node concept="37vLTG" id="1ffsG7chQb_" role="3clF46">
         <property role="TrG5h" value="input" />
         <node concept="3Tqbb2" id="1ffsG7chQbA" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1ffsG7chQbD" role="3clF46">
-        <property role="TrG5h" value="boundParam" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="1ffsG7chQbE" role="1tU5fm">
-          <ref role="16sUi3" node="4OKkcnfu_xd" resolve="S" />
+          <ref role="16sUi3" node="4OKkcnfu_xd" resolve="Let" />
         </node>
       </node>
       <node concept="3uibUv" id="1ffsG7chQbF" role="3clF45">
@@ -592,16 +630,25 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="PB1R3YejyM" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="2tJIrI" id="1ffsG7cfHgp" role="jymVt" />
     <node concept="3Tm1VV" id="4OKkcnfu_x9" role="1B3o_S" />
     <node concept="16euLQ" id="4OKkcnfu_xd" role="16eVyc">
-      <property role="TrG5h" value="S" />
+      <property role="TrG5h" value="Let" />
+    </node>
+    <node concept="16euLQ" id="PB1R3Yejeo" role="16eVyc">
+      <property role="TrG5h" value="Logical" />
     </node>
     <node concept="3uibUv" id="1ffsG7bUchI" role="1zkMxy">
       <ref role="3uigEE" node="1ffsG7bUbCM" resolve="BaseRuleTemplate" />
       <node concept="16syzq" id="1ffsG7bUsVy" role="11_B2D">
-        <ref role="16sUi3" node="4OKkcnfu_xd" resolve="S" />
+        <ref role="16sUi3" node="4OKkcnfu_xd" resolve="Let" />
+      </node>
+      <node concept="16syzq" id="PB1R3Yejsu" role="11_B2D">
+        <ref role="16sUi3" node="PB1R3Yejeo" resolve="Logical" />
       </node>
     </node>
   </node>
@@ -1847,6 +1894,7 @@
         <node concept="3uibUv" id="1ffsG7c3Xt2" role="1tU5fm">
           <ref role="3uigEE" node="1ffsG7bW_V4" resolve="RuleTemplate" />
           <node concept="3qTvmN" id="1ffsG7c3XtK" role="11_B2D" />
+          <node concept="3qTvmN" id="PB1R3YeEbl" role="11_B2D" />
         </node>
       </node>
       <node concept="3cqZAl" id="4OKkcnfu_Ab" role="3clF45" />
@@ -1960,9 +2008,9 @@
         <node concept="3Tqbb2" id="1ffsG7bUm$D" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1ffsG7bUm$E" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="1ffsG7bUnik" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bUbY4" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bUbY4" resolve="Let" />
         </node>
       </node>
       <node concept="10P_77" id="1ffsG7bUm$G" role="3clF45" />
@@ -1986,9 +2034,9 @@
         <node concept="3Tqbb2" id="1ffsG7bUnFp" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="2q0gzCFOCXd" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="2q0gzCFOD8v" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bUbY4" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bUbY4" resolve="Let" />
         </node>
       </node>
       <node concept="A3Dl8" id="1ffsG7bUnFq" role="3clF45">
@@ -2005,6 +2053,33 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1ffsG7bUnZW" role="jymVt" />
+    <node concept="3clFb_" id="75vUFrSIQhr" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="logicalVar" />
+      <node concept="37vLTG" id="75vUFrSIQhs" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="75vUFrSIQht" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="75vUFrSIQhu" role="3clF46">
+        <property role="TrG5h" value="letVal" />
+        <node concept="16syzq" id="75vUFrSIQhz" role="1tU5fm">
+          <ref role="16sUi3" node="1ffsG7bUbY4" resolve="Let" />
+        </node>
+      </node>
+      <node concept="16syzq" id="75vUFrSIQh$" role="3clF45">
+        <ref role="16sUi3" node="PB1R3Yeimy" resolve="Logical" />
+      </node>
+      <node concept="3Tm1VV" id="75vUFrSIQhx" role="1B3o_S" />
+      <node concept="3clFbS" id="75vUFrSIQh_" role="3clF47">
+        <node concept="3clFbF" id="75vUFrSIQGI" role="3cqZAp">
+          <node concept="10Nm6u" id="75vUFrSIQGH" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="75vUFrSIQHj" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="75vUFrSIQ8c" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7bUgP4" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="toString" />
@@ -2060,12 +2135,18 @@
       <node concept="17QB3L" id="1ffsG7bUbIO" role="1tU5fm" />
     </node>
     <node concept="16euLQ" id="1ffsG7bUbY4" role="16eVyc">
-      <property role="TrG5h" value="S" />
+      <property role="TrG5h" value="Let" />
+    </node>
+    <node concept="16euLQ" id="PB1R3Yeimy" role="16eVyc">
+      <property role="TrG5h" value="Logical" />
     </node>
     <node concept="3uibUv" id="1ffsG7bWFot" role="EKbjA">
       <ref role="3uigEE" node="1ffsG7bW_V4" resolve="RuleTemplate" />
       <node concept="16syzq" id="1ffsG7bWGME" role="11_B2D">
-        <ref role="16sUi3" node="1ffsG7bUbY4" resolve="S" />
+        <ref role="16sUi3" node="1ffsG7bUbY4" resolve="Let" />
+      </node>
+      <node concept="16syzq" id="PB1R3YeiLp" role="11_B2D">
+        <ref role="16sUi3" node="PB1R3Yeimy" resolve="Logical" />
       </node>
     </node>
   </node>
@@ -2134,6 +2215,20 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1ffsG7bWA39" role="jymVt" />
+    <node concept="3clFb_" id="1ffsG7bW$2q" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="letValue" />
+      <node concept="37vLTG" id="1ffsG7bW_ia" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="1ffsG7bW_q1" role="1tU5fm" />
+      </node>
+      <node concept="16syzq" id="1ffsG7bW$av" role="3clF45">
+        <ref role="16sUi3" node="1ffsG7bWA35" resolve="Let" />
+      </node>
+      <node concept="3Tm1VV" id="1ffsG7bW$2t" role="1B3o_S" />
+      <node concept="3clFbS" id="1ffsG7bW$2u" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="PB1R3YsIZx" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7bWA3o" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="isApplicable" />
@@ -2142,9 +2237,9 @@
         <node concept="3Tqbb2" id="1ffsG7bWBtT" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1ffsG7bWB_$" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="1ffsG7bWBHn" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bWA35" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bWA35" resolve="Let" />
         </node>
       </node>
       <node concept="10P_77" id="1ffsG7bWAbc" role="3clF45" />
@@ -2165,13 +2260,33 @@
         <node concept="3Tqbb2" id="2q0gzCFLe4r" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="2q0gzCFLeij" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="2q0gzCFLezl" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bWA35" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bWA35" resolve="Let" />
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="1ffsG7bWCTe" role="jymVt" />
+    <node concept="3clFb_" id="PB1R3YsCm9" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="logicalVar" />
+      <node concept="37vLTG" id="PB1R3YsCma" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="PB1R3YsCmb" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="PB1R3YsD6L" role="3clF46">
+        <property role="TrG5h" value="letVal" />
+        <node concept="16syzq" id="PB1R3YsDiE" role="1tU5fm">
+          <ref role="16sUi3" node="1ffsG7bWA35" resolve="Let" />
+        </node>
+      </node>
+      <node concept="16syzq" id="PB1R3YsDuK" role="3clF45">
+        <ref role="16sUi3" node="PB1R3YehXt" resolve="Logical" />
+      </node>
+      <node concept="3Tm1VV" id="PB1R3YsCmd" role="1B3o_S" />
+      <node concept="3clFbS" id="PB1R3YsCme" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="PB1R3YsHTd" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7bWCVq" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="apply" />
@@ -2185,32 +2300,27 @@
         <node concept="3Tqbb2" id="1ffsG7bWDP4" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1ffsG7bWDXM" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="1ffsG7bWE6B" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bWA35" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bWA35" resolve="Let" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="PB1R3Yihc0" role="3clF46">
+        <property role="TrG5h" value="logicVal" />
+        <node concept="16syzq" id="PB1R3Yihwl" role="1tU5fm">
+          <ref role="16sUi3" node="PB1R3YehXt" resolve="Logical" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ffsG7bWCVt" role="1B3o_S" />
       <node concept="3clFbS" id="1ffsG7bWCVu" role="3clF47" />
     </node>
-    <node concept="2tJIrI" id="1ffsG7bWEfD" role="jymVt" />
-    <node concept="3clFb_" id="1ffsG7bW$2q" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="boundValue" />
-      <node concept="37vLTG" id="1ffsG7bW_ia" role="3clF46">
-        <property role="TrG5h" value="input" />
-        <node concept="3Tqbb2" id="1ffsG7bW_q1" role="1tU5fm" />
-      </node>
-      <node concept="16syzq" id="1ffsG7bW$av" role="3clF45">
-        <ref role="16sUi3" node="1ffsG7bWA35" resolve="S" />
-      </node>
-      <node concept="3Tm1VV" id="1ffsG7bW$2t" role="1B3o_S" />
-      <node concept="3clFbS" id="1ffsG7bW$2u" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="67SsWaEm0IA" role="jymVt" />
+    <node concept="2tJIrI" id="PB1R3Yh6WC" role="jymVt" />
     <node concept="3Tm1VV" id="1ffsG7bW_V5" role="1B3o_S" />
     <node concept="16euLQ" id="1ffsG7bWA35" role="16eVyc">
-      <property role="TrG5h" value="S" />
+      <property role="TrG5h" value="Let" />
+    </node>
+    <node concept="16euLQ" id="PB1R3YehXt" role="16eVyc">
+      <property role="TrG5h" value="Logical" />
     </node>
   </node>
   <node concept="312cEu" id="1ffsG7bX1MS">
@@ -2243,9 +2353,9 @@
         <node concept="3Tqbb2" id="1ffsG7bX6rg" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="2q0gzCFLfF$" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="2q0gzCFLggJ" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bX2zU" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Let" />
         </node>
       </node>
       <node concept="A3Dl8" id="1ffsG7bX6rh" role="3clF45">
@@ -2281,7 +2391,7 @@
                         <ref role="3cqZAo" node="1ffsG7bX6rA" resolve="it" />
                       </node>
                       <node concept="37vLTw" id="2q0gzCFMpJA" role="37wK5m">
-                        <ref role="3cqZAo" node="2q0gzCFLfF$" resolve="boundValue" />
+                        <ref role="3cqZAo" node="2q0gzCFLfF$" resolve="letVal" />
                       </node>
                     </node>
                   </node>
@@ -2295,7 +2405,7 @@
           <node concept="3cpWsn" id="1ffsG7bX6rA" role="1Duv9x">
             <property role="TrG5h" value="it" />
             <node concept="16syzq" id="1ffsG7bX6rB" role="1tU5fm">
-              <ref role="16sUi3" node="1ffsG7bX2$8" resolve="T" />
+              <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
             </node>
           </node>
           <node concept="2OqwBi" id="1ffsG7bX6rC" role="1DdaDG">
@@ -2331,13 +2441,13 @@
       <node concept="37vLTG" id="1ffsG7bX6rO" role="3clF46">
         <property role="TrG5h" value="iterateOver" />
         <node concept="16syzq" id="1ffsG7bX6rP" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bX2$8" resolve="T" />
+          <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
         </node>
       </node>
       <node concept="37vLTG" id="2q0gzCFLZia" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="2q0gzCFLZLQ" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bX2zU" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Let" />
         </node>
       </node>
       <node concept="A3Dl8" id="1ffsG7bX6rQ" role="3clF45">
@@ -2354,6 +2464,39 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1ffsG7bX6rW" role="jymVt" />
+    <node concept="3clFb_" id="PB1R3YsKTE" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="logicalVar" />
+      <node concept="37vLTG" id="PB1R3YsKTF" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="PB1R3YsKTG" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="PB1R3YsKTH" role="3clF46">
+        <property role="TrG5h" value="iterateOver" />
+        <node concept="16syzq" id="PB1R3YsKTT" role="1tU5fm">
+          <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="PB1R3YsKTJ" role="3clF46">
+        <property role="TrG5h" value="letVal" />
+        <node concept="16syzq" id="PB1R3YsKTU" role="1tU5fm">
+          <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Let" />
+        </node>
+      </node>
+      <node concept="16syzq" id="PB1R3YsKTV" role="3clF45">
+        <ref role="16sUi3" node="PB1R3Yeoc6" resolve="Logical" />
+      </node>
+      <node concept="3Tm1VV" id="PB1R3YsKTM" role="1B3o_S" />
+      <node concept="3clFbS" id="PB1R3YsKTW" role="3clF47">
+        <node concept="3clFbF" id="PB1R3YsLYO" role="3cqZAp">
+          <node concept="10Nm6u" id="PB1R3YsLYN" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="PB1R3YsLZH" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="PB1R3YsLsX" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7bX6rX" role="jymVt">
       <property role="TrG5h" value="apply" />
       <property role="1EzhhJ" value="false" />
@@ -2395,7 +2538,10 @@
                         <ref role="3cqZAo" node="1ffsG7bX6sk" resolve="p" />
                       </node>
                       <node concept="37vLTw" id="1ffsG7bX6si" role="37wK5m">
-                        <ref role="3cqZAo" node="1ffsG7bX6sv" resolve="boundValue" />
+                        <ref role="3cqZAo" node="1ffsG7bX6sv" resolve="letVal" />
+                      </node>
+                      <node concept="37vLTw" id="PB1R3YijIb" role="37wK5m">
+                        <ref role="3cqZAo" node="PB1R3Yhg58" resolve="logicVal" />
                       </node>
                     </node>
                   </node>
@@ -2409,7 +2555,7 @@
           <node concept="3cpWsn" id="1ffsG7bX6sk" role="1Duv9x">
             <property role="TrG5h" value="p" />
             <node concept="16syzq" id="1ffsG7bX6sl" role="1tU5fm">
-              <ref role="16sUi3" node="1ffsG7bX2$8" resolve="T" />
+              <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
             </node>
           </node>
           <node concept="2OqwBi" id="1ffsG7bX6sm" role="1DdaDG">
@@ -2436,9 +2582,15 @@
         <node concept="3Tqbb2" id="1ffsG7bX6su" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1ffsG7bX6sv" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="1ffsG7bX6sw" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bX2zU" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Let" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="PB1R3Yhg58" role="3clF46">
+        <property role="TrG5h" value="logicVal" />
+        <node concept="16syzq" id="PB1R3Yhgzc" role="1tU5fm">
+          <ref role="16sUi3" node="PB1R3Yeoc6" resolve="Logical" />
         </node>
       </node>
       <node concept="2AHcQZ" id="1ffsG7bX6sx" role="2AJF6D">
@@ -2450,22 +2602,31 @@
     <node concept="3uibUv" id="1ffsG7bX2a9" role="1zkMxy">
       <ref role="3uigEE" node="1ffsG7bUbCM" resolve="BaseRuleTemplate" />
       <node concept="16syzq" id="1ffsG7bX2$t" role="11_B2D">
-        <ref role="16sUi3" node="1ffsG7bX2zU" resolve="S" />
+        <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Let" />
+      </node>
+      <node concept="16syzq" id="PB1R3YepTQ" role="11_B2D">
+        <ref role="16sUi3" node="PB1R3Yeoc6" resolve="Logical" />
       </node>
     </node>
     <node concept="16euLQ" id="1ffsG7bX2zU" role="16eVyc">
-      <property role="TrG5h" value="S" />
+      <property role="TrG5h" value="Let" />
     </node>
     <node concept="16euLQ" id="1ffsG7bX2$8" role="16eVyc">
-      <property role="TrG5h" value="T" />
+      <property role="TrG5h" value="Iter" />
+    </node>
+    <node concept="16euLQ" id="PB1R3Yeoc6" role="16eVyc">
+      <property role="TrG5h" value="Logical" />
     </node>
     <node concept="3uibUv" id="1ffsG7bXiAl" role="EKbjA">
       <ref role="3uigEE" node="1ffsG7bXcuq" resolve="IteratingRuleTemplate" />
       <node concept="16syzq" id="1ffsG7bXj_H" role="11_B2D">
-        <ref role="16sUi3" node="1ffsG7bX2zU" resolve="S" />
+        <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Let" />
       </node>
       <node concept="16syzq" id="1ffsG7bXklu" role="11_B2D">
-        <ref role="16sUi3" node="1ffsG7bX2$8" resolve="T" />
+        <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
+      </node>
+      <node concept="16syzq" id="PB1R3YesMz" role="11_B2D">
+        <ref role="16sUi3" node="PB1R3Yeoc6" resolve="Logical" />
       </node>
     </node>
   </node>
@@ -2481,7 +2642,7 @@
       <node concept="3uibUv" id="8VaLZRH3qA" role="3clF45">
         <ref role="3uigEE" node="1ffsG7bV945" resolve="Iterating" />
         <node concept="16syzq" id="8VaLZRH3s1" role="11_B2D">
-          <ref role="16sUi3" node="1ffsG7bXcDZ" resolve="T" />
+          <ref role="16sUi3" node="1ffsG7bXcDZ" resolve="Iter" />
         </node>
       </node>
     </node>
@@ -2496,13 +2657,13 @@
       <node concept="37vLTG" id="2q0gzCFLipW" role="3clF46">
         <property role="TrG5h" value="iterateOver" />
         <node concept="16syzq" id="2q0gzCFLipX" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bXcDZ" resolve="T" />
+          <ref role="16sUi3" node="1ffsG7bXcDZ" resolve="Iter" />
         </node>
       </node>
       <node concept="37vLTG" id="2q0gzCFLiOj" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="2q0gzCFLj1D" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bXcDV" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bXcDV" resolve="Let" />
         </node>
       </node>
       <node concept="A3Dl8" id="2q0gzCFLipY" role="3clF45">
@@ -2510,6 +2671,32 @@
       </node>
       <node concept="3Tm1VV" id="2q0gzCFLiq0" role="1B3o_S" />
       <node concept="3clFbS" id="2q0gzCFLiq1" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="PB1R3YsH4i" role="jymVt" />
+    <node concept="3clFb_" id="PB1R3YsGQb" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="logicalVar" />
+      <node concept="37vLTG" id="PB1R3YsGQc" role="3clF46">
+        <property role="TrG5h" value="input" />
+        <node concept="3Tqbb2" id="PB1R3YsGQd" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="PB1R3YsKr4" role="3clF46">
+        <property role="TrG5h" value="iterateOver" />
+        <node concept="16syzq" id="PB1R3YsKr5" role="1tU5fm">
+          <ref role="16sUi3" node="1ffsG7bXcDZ" resolve="Iter" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="PB1R3YsGQe" role="3clF46">
+        <property role="TrG5h" value="letVal" />
+        <node concept="16syzq" id="PB1R3YsGQf" role="1tU5fm">
+          <ref role="16sUi3" node="1ffsG7bXcDV" resolve="Let" />
+        </node>
+      </node>
+      <node concept="16syzq" id="PB1R3YsGQg" role="3clF45">
+        <ref role="16sUi3" node="PB1R3Yes1w" resolve="Logical" />
+      </node>
+      <node concept="3Tm1VV" id="PB1R3YsGQh" role="1B3o_S" />
+      <node concept="3clFbS" id="PB1R3YsGQi" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="1ffsG7bXfbD" role="jymVt" />
     <node concept="3clFb_" id="1ffsG7bXfck" role="jymVt">
@@ -2527,13 +2714,19 @@
       <node concept="37vLTG" id="1ffsG7bXguM" role="3clF46">
         <property role="TrG5h" value="iterateOver" />
         <node concept="16syzq" id="1ffsG7bXgG3" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bXcDZ" resolve="T" />
+          <ref role="16sUi3" node="1ffsG7bXcDZ" resolve="Iter" />
         </node>
       </node>
       <node concept="37vLTG" id="1ffsG7bXgUJ" role="3clF46">
-        <property role="TrG5h" value="boundValue" />
+        <property role="TrG5h" value="letVal" />
         <node concept="16syzq" id="1ffsG7bXh86" role="1tU5fm">
-          <ref role="16sUi3" node="1ffsG7bXcDV" resolve="S" />
+          <ref role="16sUi3" node="1ffsG7bXcDV" resolve="Let" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="PB1R3YiiBz" role="3clF46">
+        <property role="TrG5h" value="logicVal" />
+        <node concept="16syzq" id="PB1R3YiiHS" role="1tU5fm">
+          <ref role="16sUi3" node="PB1R3Yes1w" resolve="Logical" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ffsG7bXfcn" role="1B3o_S" />
@@ -2542,15 +2735,21 @@
     <node concept="2tJIrI" id="1ffsG7bXdrD" role="jymVt" />
     <node concept="3Tm1VV" id="1ffsG7bXcur" role="1B3o_S" />
     <node concept="16euLQ" id="1ffsG7bXcDV" role="16eVyc">
-      <property role="TrG5h" value="S" />
+      <property role="TrG5h" value="Let" />
     </node>
     <node concept="16euLQ" id="1ffsG7bXcDZ" role="16eVyc">
-      <property role="TrG5h" value="T" />
+      <property role="TrG5h" value="Iter" />
+    </node>
+    <node concept="16euLQ" id="PB1R3Yes1w" role="16eVyc">
+      <property role="TrG5h" value="Logical" />
     </node>
     <node concept="3uibUv" id="1ffsG7bXcPu" role="3HQHJm">
       <ref role="3uigEE" node="1ffsG7bW_V4" resolve="RuleTemplate" />
       <node concept="16syzq" id="1ffsG7bXdfH" role="11_B2D">
-        <ref role="16sUi3" node="1ffsG7bXcDV" resolve="S" />
+        <ref role="16sUi3" node="1ffsG7bXcDV" resolve="Let" />
+      </node>
+      <node concept="16syzq" id="PB1R3Yes1D" role="11_B2D">
+        <ref role="16sUi3" node="PB1R3Yes1w" resolve="Logical" />
       </node>
     </node>
   </node>

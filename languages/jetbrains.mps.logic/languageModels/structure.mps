@@ -332,5 +332,20 @@
       <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
     </node>
   </node>
+  <node concept="PlHQZ" id="75vUFrS_9Sg">
+    <property role="3GE5qa" value="constraint.variable" />
+    <property role="TrG5h" value="LogicalVariableDeclarationContainer" />
+    <node concept="1TJgyj" id="2E5lcNn8k3O" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="declaration" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="5zfvpQ72gqq" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="dataType" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+  </node>
 </model>
 
