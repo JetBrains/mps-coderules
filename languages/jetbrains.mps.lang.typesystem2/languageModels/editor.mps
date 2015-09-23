@@ -2448,17 +2448,6 @@
           </node>
         </node>
       </node>
-      <node concept="3F0ifn" id="6wQEDbCL4Gf" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
-      </node>
-      <node concept="3F1sOY" id="6wQEDbCL4GT" role="3EZMnx">
-        <ref role="1NtTu8" to="wq2x:6wQEDbCL4Fp" />
-      </node>
-      <node concept="3F0ifn" id="6wQEDbCL4GD" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
-        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
-      </node>
       <node concept="l2Vlx" id="6wQEDbCL4FA" role="2iSdaV" />
     </node>
   </node>

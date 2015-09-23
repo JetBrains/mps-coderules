@@ -130,6 +130,22 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="6YKq674fNYS" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="availableLogicalVariable" />
+      <node concept="3Tm1VV" id="6YKq674fNYT" role="1B3o_S" />
+      <node concept="A3Dl8" id="6YKq674fNYU" role="3clF45">
+        <node concept="3Tqbb2" id="6YKq674fNYV" role="A3Ik2">
+          <ref role="ehGHo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="6YKq674fNYW" role="3clF47">
+        <node concept="3clFbF" id="6YKq674fNYX" role="3cqZAp">
+          <node concept="10Nm6u" id="6YKq674fNYY" role="3clFbG" />
+        </node>
+      </node>
+    </node>
     <node concept="13hLZK" id="7E86$tKAuhJ" role="13h7CW">
       <node concept="3clFbS" id="7E86$tKAuhK" role="2VODD2" />
     </node>

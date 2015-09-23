@@ -651,8 +651,8 @@
                                           <ref role="3cqZAo" node="6Ng87FPZcve" resolve="container" />
                                         </node>
                                       </node>
-                                      <node concept="2qgKlT" id="3PWU9gi_g4H" role="2OqNvi">
-                                        <ref role="37wK5l" to="ha02:7E86$tKAujJ" resolve="exportedLogicalVariable" />
+                                      <node concept="2qgKlT" id="6YKq674hz7i" role="2OqNvi">
+                                        <ref role="37wK5l" to="ha02:6YKq674fNYS" resolve="availableLogicalVariable" />
                                       </node>
                                     </node>
                                     <node concept="ANE8D" id="3PWU9gi_g4I" role="2OqNvi" />

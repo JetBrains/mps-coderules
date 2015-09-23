@@ -152,7 +152,7 @@
     </node>
     <node concept="1TJgyj" id="6wQEDbCLoaZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20lbJX" value="0..n" />
+      <property role="20lbJX" value="0..1" />
       <property role="20kJfa" value="includeClause" />
       <ref role="20lvS9" node="6wQEDbCL4Fi" resolve="IncludeFragmentClause" />
     </node>
@@ -562,7 +562,7 @@
     <node concept="1TJgyj" id="1ffsG7bCfL5" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="head" />
-      <property role="20lbJX" value="1..n" />
+      <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="6p0DfM0a3gA" resolve="Head" />
     </node>
     <node concept="1TJgyj" id="1ffsG7bFM2v" role="1TKVEi">
@@ -574,7 +574,7 @@
     <node concept="1TJgyj" id="1ffsG7bIxDv" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="body" />
-      <property role="20lbJX" value="1..n" />
+      <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="6p0DfM0a3TO" resolve="Body" />
     </node>
     <node concept="PrWs8" id="3NRKQ2BIeUB" role="PzmwI">
@@ -720,12 +720,6 @@
     <property role="TrG5h" value="IncludeFragmentClause" />
     <property role="34LRSv" value="include" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="6wQEDbCL4Fp" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20lbJX" value="1" />
-      <property role="20kJfa" value="argument" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
     <node concept="1TJgyj" id="6wQEDbCL4Fj" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="fragment" />
