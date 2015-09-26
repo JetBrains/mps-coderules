@@ -377,7 +377,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5NuEpF1qhgM" role="3cqZAp" />
         <node concept="3clFbF" id="tIwzd1ImVB" role="3cqZAp">
           <node concept="1rXfSq" id="tIwzd1ImV_" role="3clFbG">
             <ref role="37wK5l" node="tIwzd1I3Xv" resolve="applyTemplates" />
@@ -452,24 +451,49 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5ntLU8Gm2U7" role="3cqZAp" />
+        <node concept="3SKdUt" id="2JQZWxFb3w_" role="3cqZAp">
+          <node concept="3SKdUq" id="2JQZWxFb4lU" role="3SKWNk">
+            <property role="3SKdUp" value="walk the AST and apply templates" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2JQZWxFb1vW" role="3cqZAp">
+          <node concept="3cpWsn" id="2JQZWxFb1vX" role="3cpWs9">
+            <property role="TrG5h" value="required_visited" />
+            <node concept="1LlUBW" id="2JQZWxFb1vF" role="1tU5fm">
+              <node concept="3vKaQO" id="2JQZWxFb1vU" role="1Lm7xW">
+                <node concept="3Tqbb2" id="2JQZWxFb1vV" role="3O5elw" />
+              </node>
+              <node concept="3vKaQO" id="2JQZWxFb1vS" role="1Lm7xW">
+                <node concept="3Tqbb2" id="2JQZWxFb1vT" role="3O5elw" />
+              </node>
+            </node>
+            <node concept="1rXfSq" id="2JQZWxFb1vY" role="33vP2m">
+              <ref role="37wK5l" node="tIwzd1LouZ" resolve="walk" />
+              <node concept="37vLTw" id="2JQZWxFb1vZ" role="37wK5m">
+                <ref role="3cqZAo" node="7Oc59RSzYH5" resolve="handler" />
+              </node>
+              <node concept="37vLTw" id="2JQZWxFb1w0" role="37wK5m">
+                <ref role="3cqZAo" node="7Oc59RS_8eX" resolve="errors" />
+              </node>
+              <node concept="37vLTw" id="2JQZWxFb1w1" role="37wK5m">
+                <ref role="3cqZAo" node="12yN8DyNqcH" resolve="root" />
+              </node>
+              <node concept="3clFbT" id="2JQZWxFb1w2" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2JQZWxFb5kF" role="3cqZAp">
+          <node concept="3SKdUq" id="2JQZWxFb6a2" role="3SKWNk">
+            <property role="3SKdUp" value="process the required roots" />
+          </node>
+        </node>
         <node concept="3clFbF" id="tIwzd1MM29" role="3cqZAp">
           <node concept="1rXfSq" id="tIwzd1MM28" role="3clFbG">
             <ref role="37wK5l" node="tIwzd1MM22" resolve="generateRequired" />
-            <node concept="1rXfSq" id="tIwzd1MX9A" role="37wK5m">
-              <ref role="37wK5l" node="tIwzd1LouZ" resolve="walk" />
-              <node concept="37vLTw" id="tIwzd1MX9B" role="37wK5m">
-                <ref role="3cqZAo" node="7Oc59RSzYH5" resolve="handler" />
-              </node>
-              <node concept="37vLTw" id="tIwzd1MX9C" role="37wK5m">
-                <ref role="3cqZAo" node="7Oc59RS_8eX" resolve="errors" />
-              </node>
-              <node concept="37vLTw" id="tIwzd1MX9D" role="37wK5m">
-                <ref role="3cqZAo" node="12yN8DyNqcH" resolve="root" />
-              </node>
-              <node concept="3clFbT" id="tIwzd1MX9E" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
+            <node concept="37vLTw" id="2JQZWxFb1w3" role="37wK5m">
+              <ref role="3cqZAo" node="2JQZWxFb1vX" resolve="required_visited" />
             </node>
             <node concept="37vLTw" id="tIwzd1MM26" role="37wK5m">
               <ref role="3cqZAo" node="7Oc59RSzYH5" resolve="handler" />
@@ -538,24 +562,49 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="3cHjmmLLyCq" role="3cqZAp" />
+        <node concept="3SKdUt" id="2JQZWxFb7fN" role="3cqZAp">
+          <node concept="3SKdUq" id="2JQZWxFb7fO" role="3SKWNk">
+            <property role="3SKdUp" value="walk the AST and apply templates" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2JQZWxFb6p8" role="3cqZAp">
+          <node concept="3cpWsn" id="2JQZWxFb6p9" role="3cpWs9">
+            <property role="TrG5h" value="required_visited" />
+            <node concept="1LlUBW" id="2JQZWxFb6oN" role="1tU5fm">
+              <node concept="3vKaQO" id="2JQZWxFb6p0" role="1Lm7xW">
+                <node concept="3Tqbb2" id="2JQZWxFb6p1" role="3O5elw" />
+              </node>
+              <node concept="3vKaQO" id="2JQZWxFb6p2" role="1Lm7xW">
+                <node concept="3Tqbb2" id="2JQZWxFb6p3" role="3O5elw" />
+              </node>
+            </node>
+            <node concept="1rXfSq" id="2JQZWxFb6pa" role="33vP2m">
+              <ref role="37wK5l" node="tIwzd1LouZ" resolve="walk" />
+              <node concept="37vLTw" id="2JQZWxFb6pb" role="37wK5m">
+                <ref role="3cqZAo" node="3cHjmmLLyCe" resolve="handler" />
+              </node>
+              <node concept="37vLTw" id="2JQZWxFb6pc" role="37wK5m">
+                <ref role="3cqZAo" node="3cHjmmLLyCk" resolve="errors" />
+              </node>
+              <node concept="37vLTw" id="2JQZWxFb6pd" role="37wK5m">
+                <ref role="3cqZAo" node="3cHjmmLLyCc" resolve="root" />
+              </node>
+              <node concept="3clFbT" id="2JQZWxFb6pe" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2JQZWxFb9Ig" role="3cqZAp">
+          <node concept="3SKdUq" id="2JQZWxFb9Ih" role="3SKWNk">
+            <property role="3SKdUp" value="process the required roots" />
+          </node>
+        </node>
         <node concept="3clFbF" id="tIwzd1MUHp" role="3cqZAp">
           <node concept="1rXfSq" id="tIwzd1MUHq" role="3clFbG">
             <ref role="37wK5l" node="tIwzd1MM22" resolve="generateRequired" />
-            <node concept="1rXfSq" id="tIwzd1MVyh" role="37wK5m">
-              <ref role="37wK5l" node="tIwzd1LouZ" resolve="walk" />
-              <node concept="37vLTw" id="tIwzd1MVyi" role="37wK5m">
-                <ref role="3cqZAo" node="3cHjmmLLyCe" resolve="handler" />
-              </node>
-              <node concept="37vLTw" id="tIwzd1MVyj" role="37wK5m">
-                <ref role="3cqZAo" node="3cHjmmLLyCk" resolve="errors" />
-              </node>
-              <node concept="37vLTw" id="tIwzd1MVyk" role="37wK5m">
-                <ref role="3cqZAo" node="3cHjmmLLyCc" resolve="root" />
-              </node>
-              <node concept="3clFbT" id="tIwzd1MVyl" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
+            <node concept="37vLTw" id="2JQZWxFb6pf" role="37wK5m">
+              <ref role="3cqZAo" node="2JQZWxFb6p9" resolve="required_visited" />
             </node>
             <node concept="37vLTw" id="tIwzd1MUHs" role="37wK5m">
               <ref role="3cqZAo" node="3cHjmmLLyCe" resolve="handler" />
