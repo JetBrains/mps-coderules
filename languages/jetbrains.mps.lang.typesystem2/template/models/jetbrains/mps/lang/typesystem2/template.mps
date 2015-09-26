@@ -92,6 +92,10 @@
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
@@ -159,6 +163,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
       </concept>
@@ -2654,7 +2659,77 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="1ffsG7bXbBq" role="jymVt" />
+    <node concept="2tJIrI" id="452KZTbwlFS" role="jymVt" />
+    <node concept="3clFb_" id="452KZTbwmcF" role="jymVt">
+      <property role="TrG5h" value="prototype" />
+      <property role="1EzhhJ" value="false" />
+      <node concept="3uibUv" id="452KZTbwmcG" role="3clF45">
+        <ref role="3uigEE" node="1ffsG7bXcuq" resolve="IteratingRuleTemplate" />
+        <node concept="3qUtgH" id="452KZTbwmcH" role="11_B2D">
+          <node concept="16syzq" id="452KZTbwmcN" role="3qUvdb">
+            <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Context" />
+          </node>
+        </node>
+        <node concept="16syzq" id="452KZTbwpmR" role="11_B2D">
+          <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="452KZTbwmcJ" role="1B3o_S" />
+      <node concept="3clFbS" id="452KZTbwmcO" role="3clF47">
+        <node concept="3clFbF" id="452KZTbwmcR" role="3cqZAp">
+          <node concept="10QFUN" id="452KZTbwp_X" role="3clFbG">
+            <node concept="3nyPlj" id="452KZTbwp_W" role="10QFUP">
+              <ref role="37wK5l" node="2JQZWxFbti8" resolve="prototype" />
+            </node>
+            <node concept="3uibUv" id="452KZTbwq5G" role="10QFUM">
+              <ref role="3uigEE" node="1ffsG7bXcuq" resolve="IteratingRuleTemplate" />
+              <node concept="3qUtgH" id="452KZTbwq5H" role="11_B2D">
+                <node concept="16syzq" id="452KZTbwq5I" role="3qUvdb">
+                  <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Context" />
+                </node>
+              </node>
+              <node concept="16syzq" id="452KZTbwq5J" role="11_B2D">
+                <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="452KZTbwmcP" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="452KZTbwqIb" role="jymVt" />
+    <node concept="3clFb_" id="452KZTbwree" role="jymVt">
+      <property role="TrG5h" value="prototype" />
+      <property role="1EzhhJ" value="false" />
+      <node concept="3cqZAl" id="452KZTbwref" role="3clF45" />
+      <node concept="3Tmbuc" id="452KZTbwreg" role="1B3o_S" />
+      <node concept="37vLTG" id="452KZTbwreo" role="3clF46">
+        <property role="TrG5h" value="prototype" />
+        <node concept="3uibUv" id="452KZTbwtwY" role="1tU5fm">
+          <ref role="3uigEE" node="1ffsG7bXcuq" resolve="IteratingRuleTemplate" />
+          <node concept="3qUtgH" id="452KZTbwtwZ" role="11_B2D">
+            <node concept="16syzq" id="452KZTbwtx0" role="3qUvdb">
+              <ref role="16sUi3" node="1ffsG7bX2zU" resolve="Context" />
+            </node>
+          </node>
+          <node concept="16syzq" id="452KZTbwtx1" role="11_B2D">
+            <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="452KZTbwret" role="3clF47">
+        <node concept="3clFbF" id="452KZTbwrex" role="3cqZAp">
+          <node concept="3nyPlj" id="452KZTbwrew" role="3clFbG">
+            <ref role="37wK5l" node="2JQZWxFc1xW" resolve="prototype" />
+            <node concept="37vLTw" id="452KZTbwrev" role="37wK5m">
+              <ref role="3cqZAo" node="452KZTbwreo" resolve="prototype" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="1ffsG7bX1MT" role="1B3o_S" />
     <node concept="3uibUv" id="1ffsG7bX2a9" role="1zkMxy">
       <ref role="3uigEE" node="1ffsG7bUbCM" resolve="BaseRuleTemplate" />
