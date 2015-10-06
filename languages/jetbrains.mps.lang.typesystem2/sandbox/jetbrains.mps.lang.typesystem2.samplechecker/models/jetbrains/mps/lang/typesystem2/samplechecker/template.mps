@@ -11,8 +11,8 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -214,6 +214,7 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
         <child id="1235746996653" name="function" index="2SgG2M" />
         <child id="1235747002942" name="parameter" index="2SgHGx" />
@@ -6561,10 +6562,10 @@
         <node concept="3cpWs8" id="1zN1RIl8gwS" role="3cqZAp">
           <node concept="3cpWsn" id="1zN1RIl8gwT" role="3cpWs9">
             <property role="TrG5h" value="typeWalker" />
-            <node concept="1ajhzC" id="1zN1RIl8gwU" role="1tU5fm">
-              <node concept="26uTi9" id="1zN1RIl8gwV" role="1ajw0F" />
-              <node concept="3Tqbb2" id="1zN1RIl8gwW" role="1ajw0F" />
-              <node concept="3cqZAl" id="1zN1RIl8gwX" role="1ajl9A" />
+            <node concept="9cv3F" id="3LzT4PMaPHX" role="1tU5fm">
+              <node concept="26uTi9" id="3LzT4PMaPHY" role="1ajw0F" />
+              <node concept="3Tqbb2" id="3LzT4PMaPHZ" role="1ajw0F" />
+              <node concept="3cqZAl" id="3LzT4PMaPI0" role="1ajl9A" />
             </node>
             <node concept="10Nm6u" id="1zN1RIl8gwY" role="33vP2m" />
           </node>
@@ -6819,10 +6820,10 @@
         <node concept="3cpWs8" id="7mm1a3qNU50" role="3cqZAp">
           <node concept="3cpWsn" id="7mm1a3qNU51" role="3cpWs9">
             <property role="TrG5h" value="typeWalker" />
-            <node concept="1ajhzC" id="7mm1a3qNU52" role="1tU5fm">
-              <node concept="26uTi9" id="7mm1a3qNU53" role="1ajw0F" />
-              <node concept="3Tqbb2" id="7mm1a3qNU54" role="1ajw0F" />
-              <node concept="3cqZAl" id="7mm1a3qNU55" role="1ajl9A" />
+            <node concept="9cv3F" id="3LzT4PMaQ49" role="1tU5fm">
+              <node concept="26uTi9" id="3LzT4PMaQ4a" role="1ajw0F" />
+              <node concept="3Tqbb2" id="3LzT4PMaQ4b" role="1ajw0F" />
+              <node concept="3cqZAl" id="3LzT4PMaQ4c" role="1ajl9A" />
             </node>
             <node concept="10Nm6u" id="7mm1a3qNU56" role="33vP2m" />
           </node>

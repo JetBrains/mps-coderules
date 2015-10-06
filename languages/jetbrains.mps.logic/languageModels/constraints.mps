@@ -148,6 +148,7 @@
       <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
         <child id="1235746996653" name="function" index="2SgG2M" />
         <child id="1235747002942" name="parameter" index="2SgHGx" />
@@ -465,9 +466,9 @@
           <node concept="3cpWs8" id="6Ng87FPZcv5" role="3cqZAp">
             <node concept="3cpWsn" id="6Ng87FPZcv6" role="3cpWs9">
               <property role="TrG5h" value="parentScope" />
-              <node concept="1ajhzC" id="6Ng87FPZcv7" role="1tU5fm">
-                <node concept="3Tqbb2" id="6Ng87FPZcv8" role="1ajw0F" />
-                <node concept="3uibUv" id="6Ng87FPZcv9" role="1ajl9A">
+              <node concept="9cv3F" id="3LzT4PMaM2V" role="1tU5fm">
+                <node concept="3Tqbb2" id="3LzT4PMaM2W" role="1ajw0F" />
+                <node concept="3uibUv" id="3LzT4PMaM2X" role="1ajl9A">
                   <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
                 </node>
               </node>

@@ -2,8 +2,8 @@
 <model ref="r:f36c95e5-e428-4945-91ae-1005e20c7971(jetbrains.mps.jchr.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18,6 +18,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -53,6 +54,7 @@
     <property role="TrG5h" value="Handler" />
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="handler" />
+    <property role="1pbfSe" value="210745570" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="1TJgyi" id="5lJXKmiM$" role="1TKVEl">
       <property role="TrG5h" value="classname" />
@@ -89,6 +91,7 @@
   <node concept="1TIwiD" id="pmDhvH6uQ2">
     <property role="TrG5h" value="UserConstraint" />
     <property role="3GE5qa" value="handler.constraints" />
+    <property role="1pbfSe" value="210726247" />
     <ref role="1TJDcQ" node="5dz6b540Jzm" resolve="AbstractConstraint" />
     <node concept="1TJgyj" id="pmDhvH6MRr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -108,6 +111,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="210692941" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="pmDhvH7GDW" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -131,6 +135,7 @@
     <property role="34LRSv" value="==&gt;" />
     <property role="R4oN_" value="propagation rule" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="210690862" />
     <ref role="1TJDcQ" node="pmDhvH6AYs" resolve="Rule" />
     <node concept="1TJgyj" id="pmDhvH7EB6" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -144,6 +149,7 @@
     <property role="34LRSv" value="&lt;=&gt;" />
     <property role="R4oN_" value="simplification rule" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="210690852" />
     <ref role="1TJDcQ" node="pmDhvH6AYs" resolve="Rule" />
     <node concept="1TJgyj" id="pmDhvH7GEp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -157,6 +163,7 @@
     <property role="34LRSv" value="&lt;=&gt;" />
     <property role="R4oN_" value="simpagation rule" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="210690843" />
     <ref role="1TJDcQ" node="pmDhvH6AYs" resolve="Rule" />
     <node concept="1TJgyj" id="pmDhvH7GFm" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -174,6 +181,7 @@
   <node concept="1TIwiD" id="pmDhvH6BD8">
     <property role="TrG5h" value="LogicVariable" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="210690209" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="pmDhvH6MQ7" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -185,6 +193,7 @@
   <node concept="1TIwiD" id="pmDhvH6MQk">
     <property role="TrG5h" value="ConstraintDeclaration" />
     <property role="3GE5qa" value="handler" />
+    <property role="1pbfSe" value="210644309" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="pmDhvH6MQJ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -199,6 +208,7 @@
   <node concept="1TIwiD" id="pmDhvH7E_m">
     <property role="TrG5h" value="Head" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="210416019" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="pmDhvH7E_n" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -210,6 +220,7 @@
   <node concept="1TIwiD" id="pmDhvH7EBt">
     <property role="TrG5h" value="Body" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="210415884" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="pmDhvH7EBu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -221,6 +232,7 @@
   <node concept="1TIwiD" id="pmDhvH7ECa">
     <property role="TrG5h" value="Guard" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="210415839" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="pmDhvH7GBk" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -232,6 +244,7 @@
   <node concept="1TIwiD" id="6SkxsMzH1tK">
     <property role="TrG5h" value="SolverDeclaration" />
     <property role="3GE5qa" value="handler" />
+    <property role="1pbfSe" value="298360124" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6SkxsMzH1PB" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -243,6 +256,7 @@
   <node concept="1TIwiD" id="6SkxsMzMUMd">
     <property role="TrG5h" value="BuiltinConstraint" />
     <property role="3GE5qa" value="handler.constraints" />
+    <property role="1pbfSe" value="299905625" />
     <ref role="1TJDcQ" node="5dz6b540Jzm" resolve="AbstractConstraint" />
     <node concept="1TJgyi" id="6SkxsMzN4ze" role="1TKVEl">
       <property role="TrG5h" value="index" />
@@ -264,6 +278,7 @@
   <node concept="1TIwiD" id="6SkxsM$4Idg">
     <property role="TrG5h" value="LocalDeclaration" />
     <property role="3GE5qa" value="handler.rules" />
+    <property role="1pbfSe" value="304572700" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6SkxsM$4Kd4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -281,6 +296,7 @@
   <node concept="1TIwiD" id="35Lj3Tj7dO2">
     <property role="TrG5h" value="InfixBuitinConstraint" />
     <property role="3GE5qa" value="handler.constraints" />
+    <property role="1pbfSe" value="2071058112" />
     <ref role="1TJDcQ" node="5dz6b540Jzm" resolve="AbstractConstraint" />
     <node concept="1TJgyi" id="35Lj3Tj7nqC" role="1TKVEl">
       <property role="TrG5h" value="index" />
@@ -308,6 +324,7 @@
   <node concept="1TIwiD" id="5lJXKamzq">
     <property role="TrG5h" value="HandlerType" />
     <property role="3GE5qa" value="handlerType" />
+    <property role="1pbfSe" value="1882111961" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
     <node concept="1TJgyj" id="5lJXKb74G" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -321,6 +338,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="handlerType.operations" />
+    <property role="1pbfSe" value="1882117594" />
     <ref role="1TJDcQ" node="5lJXKhI_g" resolve="ConstraintOperation" />
     <node concept="1TJgyj" id="5lJXKd_HC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -333,6 +351,7 @@
     <property role="TrG5h" value="HandlerCreator" />
     <property role="34LRSv" value="handler" />
     <property role="3GE5qa" value="handlerType.operations" />
+    <property role="1pbfSe" value="1882182656" />
     <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
     <node concept="1TJgyj" id="5lJXKlBV_" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -354,12 +373,14 @@
     <property role="TrG5h" value="TellConstraintOperation" />
     <property role="34LRSv" value="tell" />
     <property role="3GE5qa" value="handlerType.operations" />
+    <property role="1pbfSe" value="1883030434" />
     <ref role="1TJDcQ" node="5lJXKanVr" resolve="ParameterizedConstraintOperation" />
   </node>
   <node concept="1TIwiD" id="5lJXKhB3b">
     <property role="TrG5h" value="AllConstraintsOperation" />
     <property role="34LRSv" value="all" />
     <property role="3GE5qa" value="handlerType.operations" />
+    <property role="1pbfSe" value="1884014538" />
     <ref role="1TJDcQ" node="5lJXKhI_g" resolve="ConstraintOperation" />
   </node>
   <node concept="1TIwiD" id="5lJXKhI_g">
@@ -367,6 +388,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="handlerType.operations" />
+    <property role="1pbfSe" value="1884045391" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5lJXKhIHH" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
@@ -394,18 +416,21 @@
     <property role="TrG5h" value="AbstractConstraint" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="1754918521" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="2q_78a8P9a7">
     <property role="3GE5qa" value="handler.rules" />
     <property role="TrG5h" value="WildcardLogicVariable" />
     <property role="34LRSv" value="_" />
+    <property role="1pbfSe" value="1350979831" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="asaX9" id="6r6omRlnrom" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="4EfgX2EshHC">
     <property role="3GE5qa" value="handler.constraints" />
     <property role="TrG5h" value="StaticMethodCallConstraint" />
+    <property role="1pbfSe" value="184525000" />
     <ref role="1TJDcQ" node="5dz6b540Jzm" resolve="AbstractConstraint" />
     <node concept="1TJgyj" id="hHp56YpiWP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

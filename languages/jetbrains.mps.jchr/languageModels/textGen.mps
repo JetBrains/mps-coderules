@@ -24,7 +24,6 @@
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -38,11 +37,7 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -69,6 +64,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -102,12 +98,14 @@
         <property id="1237305576108" name="value" index="lacIc" />
       </concept>
       <concept id="1237306079178" name="jetbrains.mps.lang.textGen.structure.AppendOperation" flags="nn" index="lc7rE">
+        <reference id="3135747254706172356" name="textArea" index="2dFDx7" />
         <child id="1237306115446" name="part" index="lcghm" />
       </concept>
       <concept id="1233670071145" name="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" flags="ig" index="WtQ9Q">
         <reference id="1233670257997" name="conceptDeclaration" index="WuzLi" />
         <child id="1233749296504" name="textGenBlock" index="11c4hB" />
         <child id="7991274449437422201" name="extension" index="33IsuW" />
+        <child id="3147320813467893228" name="layout" index="3znZDQ" />
       </concept>
       <concept id="1233748055915" name="jetbrains.mps.lang.textGen.structure.NodeParameter" flags="nn" index="117lpO" />
       <concept id="1233749247888" name="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" flags="in" index="11bSqf" />
@@ -124,7 +122,11 @@
       <concept id="1236188139846" name="jetbrains.mps.lang.textGen.structure.WithIndentOperation" flags="nn" index="3izx1p">
         <child id="1236188238861" name="list" index="3izTki" />
       </concept>
-      <concept id="1234351783410" name="jetbrains.mps.lang.textGen.structure.BufferParameter" flags="nn" index="1_6nNH" />
+      <concept id="3147320813467893194" name="jetbrains.mps.lang.textGen.structure.LayoutPart" flags="ng" index="3znZDg" />
+      <concept id="3147320813467893193" name="jetbrains.mps.lang.textGen.structure.TextUnitLayout" flags="ng" index="3znZDj">
+        <reference id="3147320813467893197" name="active" index="3znZDn" />
+        <child id="3147320813467893195" name="parts" index="3znZDh" />
+      </concept>
       <concept id="1234529062040" name="jetbrains.mps.lang.textGen.structure.UtilityMethodCall" flags="nn" index="1JECQ7">
         <reference id="1234529163244" name="function" index="1JF1rN" />
         <child id="1234529174917" name="parameter" index="1JF4iq" />
@@ -238,6 +240,21 @@
         </node>
       </node>
     </node>
+    <node concept="3znZDj" id="78ax$kliRMZ" role="3znZDQ">
+      <ref role="3znZDn" node="78ax$kliRRk" resolve="BODY" />
+      <node concept="3znZDg" id="78ax$kliRN0" role="3znZDh">
+        <property role="TrG5h" value="HEADER" />
+      </node>
+      <node concept="3znZDg" id="78ax$kliRRd" role="3znZDh">
+        <property role="TrG5h" value="IMPORTS" />
+      </node>
+      <node concept="3znZDg" id="78ax$kliRRg" role="3znZDh">
+        <property role="TrG5h" value="SEPARATOR" />
+      </node>
+      <node concept="3znZDg" id="78ax$kliRRk" role="3znZDh">
+        <property role="TrG5h" value="BODY" />
+      </node>
+    </node>
   </node>
   <node concept="1bsvg0" id="1kcpyXxAXb9">
     <property role="TrG5h" value="JCHRTextGen" />
@@ -246,70 +263,32 @@
       <property role="TrG5h" value="fileHeader" />
       <node concept="3cqZAl" id="1kcpyXxBknd" role="3clF45" />
       <node concept="3clFbS" id="1kcpyXxBkne" role="3clF47">
-        <node concept="3cpWs8" id="1kcpyXxFI5A" role="3cqZAp">
-          <node concept="3cpWsn" id="1kcpyXxFI5B" role="3cpWs9">
-            <property role="TrG5h" value="currPartId" />
-            <node concept="10Oyi0" id="1kcpyXxFI5C" role="1tU5fm" />
-            <node concept="2OqwBi" id="1kcpyXxFI5D" role="33vP2m">
-              <node concept="1_6nNH" id="1kcpyXxFI5E" role="2Oq$k0" />
-              <node concept="liA8E" id="1kcpyXxFI5F" role="2OqNvi">
-                <ref role="37wK5l" to="yy4t:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
-                <node concept="10M0yZ" id="1kcpyXxFI5G" role="37wK5m">
-                  <ref role="1PxDUh" to="yy4t:~TextGenBuffer" resolve="TextGenBuffer" />
-                  <ref role="3cqZAo" to="yy4t:~TextGenBuffer.TOP" resolve="TOP" />
+        <node concept="lc7rE" id="i0uAwxl" role="3cqZAp">
+          <ref role="2dFDx7" to="dmyu:3DQwDJfhrW5" resolve="HEADER" />
+          <node concept="l9hG8" id="i0uAwxn" role="lcghm">
+            <node concept="3cpWs3" id="hXZXtBa" role="lb14g">
+              <node concept="Xl_RD" id="hXZXtOa" role="3uHU7w">
+                <property role="Xl_RC" value=";" />
+              </node>
+              <node concept="3cpWs3" id="hXZXqvR" role="3uHU7B">
+                <node concept="Xl_RD" id="hXZXoDF" role="3uHU7B">
+                  <property role="Xl_RC" value="package " />
+                </node>
+                <node concept="1JECQ7" id="hXZXsvn" role="3uHU7w">
+                  <ref role="1JF1rN" to="dmyu:hXZAS9u" resolve="getPackageName" />
+                  <node concept="37vLTw" id="78ax$klglRM" role="1JF4iq">
+                    <ref role="3cqZAo" node="1kcpyXxBnYb" resolve="handler" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
+          <node concept="l8MVK" id="i0uAwxo" role="lcghm" />
+          <node concept="l8MVK" id="i0uAwxC" role="lcghm" />
         </node>
-        <node concept="3clFbH" id="1kcpyXxFI5H" role="3cqZAp" />
-        <node concept="3clFbF" id="1kcpyXxFI5I" role="3cqZAp">
-          <node concept="2OqwBi" id="1kcpyXxFI5J" role="3clFbG">
-            <node concept="1_6nNH" id="1kcpyXxFI5K" role="2Oq$k0" />
-            <node concept="liA8E" id="1kcpyXxFI5L" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
-              <node concept="Xl_RD" id="1kcpyXxFIob" role="37wK5m">
-                <property role="Xl_RC" value="package " />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1kcpyXxFI5U" role="3cqZAp">
-          <node concept="2OqwBi" id="1kcpyXxFI5V" role="3clFbG">
-            <node concept="1_6nNH" id="1kcpyXxFI5W" role="2Oq$k0" />
-            <node concept="liA8E" id="1kcpyXxFI5X" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
-              <node concept="1JECQ7" id="1kcpyXxFIOw" role="37wK5m">
-                <ref role="1JF1rN" to="dmyu:hXZAS9u" resolve="getPackageName" />
-                <node concept="37vLTw" id="1kcpyXxFIOx" role="1JF4iq">
-                  <ref role="3cqZAo" node="1kcpyXxBnYb" resolve="handler" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1kcpyXxFI5Z" role="3cqZAp">
-          <node concept="2OqwBi" id="1kcpyXxFI60" role="3clFbG">
-            <node concept="1_6nNH" id="1kcpyXxFI61" role="2Oq$k0" />
-            <node concept="liA8E" id="1kcpyXxFI62" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.append(java.lang.String):void" resolve="append" />
-              <node concept="Xl_RD" id="1kcpyXxFI63" role="37wK5m">
-                <property role="Xl_RC" value=";\n" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="1kcpyXxFI64" role="3cqZAp" />
-        <node concept="3clFbF" id="1kcpyXxFI65" role="3cqZAp">
-          <node concept="2OqwBi" id="1kcpyXxFI66" role="3clFbG">
-            <node concept="1_6nNH" id="1kcpyXxFI67" role="2Oq$k0" />
-            <node concept="liA8E" id="1kcpyXxFI68" role="2OqNvi">
-              <ref role="37wK5l" to="yy4t:~TextGenBuffer.selectPart(int):int" resolve="selectPart" />
-              <node concept="37vLTw" id="1kcpyXxFI69" role="37wK5m">
-                <ref role="3cqZAo" node="1kcpyXxFI5B" resolve="currPartId" />
-              </node>
-            </node>
-          </node>
+        <node concept="lc7rE" id="v0458vuV4P" role="3cqZAp">
+          <ref role="2dFDx7" to="dmyu:6iQNTbBmlDm" resolve="SEPARATOR" />
+          <node concept="l8MVK" id="v0458vuV5b" role="lcghm" />
         </node>
       </node>
       <node concept="37vLTG" id="1kcpyXxBnYb" role="3clF46">
