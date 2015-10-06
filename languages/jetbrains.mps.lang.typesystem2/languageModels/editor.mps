@@ -2232,7 +2232,7 @@
         <ref role="1NtTu8" to="wq2x:2CEQDIDTdBu" />
         <node concept="1sVBvm" id="6SKZg6H4nsg" role="1sWHZn">
           <node concept="3F0ifn" id="6SKZg6H4nsJ" role="2wV5jI">
-            <property role="3F0ifm" value=":" />
+            <property role="3F0ifm" value="◊" />
           </node>
         </node>
       </node>
