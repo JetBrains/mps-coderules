@@ -200,7 +200,7 @@
     </language>
   </registry>
   <node concept="1YbPZF" id="1pt0VTMFfZC">
-    <property role="TrG5h" value="typeof_Ast" />
+    <property role="TrG5h" value="typeof_AtomExpression" />
     <node concept="3clFbS" id="1pt0VTMFg58" role="18ibNy">
       <node concept="1Z5TYs" id="1pt0VTMFg9O" role="3cqZAp">
         <node concept="mw_s8" id="1pt0VTMFgab" role="1ZfhKB">
@@ -221,7 +221,7 @@
     </node>
     <node concept="1YaCAy" id="1pt0VTMFg5X" role="1YuTPh">
       <property role="TrG5h" value="ast" />
-      <ref role="1YaFvo" to="5j4j:6$jH9oLmUCq" resolve="Ast" />
+      <ref role="1YaFvo" to="5j4j:6$jH9oLmUCq" resolve="AtomExpression" />
     </node>
   </node>
   <node concept="2sgARr" id="1mP5b6jNJDj">

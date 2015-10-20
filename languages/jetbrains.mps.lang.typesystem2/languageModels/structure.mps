@@ -751,9 +751,9 @@
   </node>
   <node concept="1TIwiD" id="2CEQDIDRX6M">
     <property role="3GE5qa" value="type" />
-    <property role="TrG5h" value="TypeTerm" />
+    <property role="TrG5h" value="TypeTermExpression" />
     <property role="1pbfSe" value="737498035" />
-    <ref role="1TJDcQ" to="5j4j:6$jH9oLmUCq" resolve="Ast" />
+    <ref role="1TJDcQ" to="5j4j:6$jH9oLmUCq" resolve="AtomExpression" />
     <node concept="1TJgyj" id="2CEQDIDTdBu" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="template" />

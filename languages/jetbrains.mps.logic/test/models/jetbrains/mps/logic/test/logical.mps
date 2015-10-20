@@ -1385,6 +1385,37 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5YVX0wIlgwQ" role="jymVt" />
+    <node concept="3clFb_" id="5YVX0wIlg09" role="jymVt">
+      <property role="TrG5h" value="anyAtomList" />
+      <node concept="3uibUv" id="5YVX0wIlh32" role="3clF45">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3qUE_q" id="5YVX0wIlh5r" role="11_B2D">
+          <node concept="3uibUv" id="5YVX0wIlh7_" role="3qUE_r">
+            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5YVX0wIlg0c" role="1B3o_S" />
+      <node concept="3clFbS" id="5YVX0wIlg0d" role="3clF47">
+        <node concept="3clFbF" id="5YVX0wIlg0e" role="3cqZAp">
+          <node concept="10QFUN" id="5YVX0wIlg0f" role="3clFbG">
+            <node concept="2YIFZM" id="5YVX0wIlg0i" role="10QFUP">
+              <ref role="37wK5l" to="n4y8:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
+              <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+            </node>
+            <node concept="3uibUv" id="5YVX0wIlhe5" role="10QFUM">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3qUE_q" id="5YVX0wIlhe6" role="11_B2D">
+                <node concept="3uibUv" id="5YVX0wIlhe7" role="3qUE_r">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="2ev$9JFF2NQ" role="jymVt" />
     <node concept="3clFb_" id="2ev$9JFF1SS" role="jymVt">
       <property role="TrG5h" value="anyObjectArray" />
@@ -1434,6 +1465,36 @@
               <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
               <node concept="37vLTw" id="2ev$9JFFa$M" role="37wK5m">
                 <ref role="3cqZAo" node="2ev$9JFF9OQ" resolve="root" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5YVX0wIlnoW" role="jymVt" />
+    <node concept="3clFb_" id="5YVX0wIlmGu" role="jymVt">
+      <property role="TrG5h" value="eqList" />
+      <node concept="37vLTG" id="5YVX0wIlmGv" role="3clF46">
+        <property role="TrG5h" value="root" />
+        <node concept="3uibUv" id="5YVX0wIlmGw" role="1tU5fm">
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="5YVX0wIlo0b" role="3clF45">
+        <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
+      </node>
+      <node concept="3Tm1VV" id="5YVX0wIlmGy" role="1B3o_S" />
+      <node concept="3clFbS" id="5YVX0wIlmGz" role="3clF47">
+        <node concept="3clFbF" id="5YVX0wIlmG$" role="3cqZAp">
+          <node concept="10QFUN" id="5YVX0wIlmG_" role="3clFbG">
+            <node concept="3uibUv" id="5YVX0wIlo0W" role="10QFUM">
+              <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
+            </node>
+            <node concept="2YIFZM" id="5YVX0wIlmGB" role="10QFUP">
+              <ref role="37wK5l" to="n4y8:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
+              <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+              <node concept="37vLTw" id="5YVX0wIlmGC" role="37wK5m">
+                <ref role="3cqZAo" node="5YVX0wIlmGv" resolve="root" />
               </node>
             </node>
           </node>
@@ -1527,17 +1588,6 @@
                     <node concept="1rXfSq" id="2ev$9JFEITF" role="37wK5m">
                       <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyTerms" />
                     </node>
-                    <node concept="10QFUN" id="2ev$9JFD_pV" role="37wK5m">
-                      <node concept="10Q1$e" id="5cGCTtqzbda" role="10QFUM">
-                        <node concept="3uibUv" id="5cGCTtqzaDx" role="10Q1$1">
-                          <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
-                        </node>
-                      </node>
-                      <node concept="2YIFZM" id="2ev$9JFD_pX" role="10QFUP">
-                        <ref role="37wK5l" to="n4y8:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
-                        <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
-                      </node>
-                    </node>
                   </node>
                 </node>
               </node>
@@ -1591,17 +1641,6 @@
                     <node concept="37vLTw" id="2ev$9JFDJDR" role="37wK5m">
                       <ref role="3cqZAo" node="2ev$9JFBKEx" resolve="atom" />
                     </node>
-                  </node>
-                </node>
-                <node concept="10QFUN" id="2ev$9JFD96P" role="37wK5m">
-                  <node concept="10Q1$e" id="5cGCTtqzi2F" role="10QFUM">
-                    <node concept="3uibUv" id="5cGCTtqzhUK" role="10Q1$1">
-                      <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
-                    </node>
-                  </node>
-                  <node concept="2YIFZM" id="2ev$9JFD96R" role="10QFUP">
-                    <ref role="37wK5l" to="n4y8:~Matchers.anyObject():java.lang.Object" resolve="anyObject" />
-                    <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
                   </node>
                 </node>
               </node>
@@ -1707,9 +1746,6 @@
                     <node concept="1rXfSq" id="2ev$9JFEHGh" role="37wK5m">
                       <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyTerms" />
                     </node>
-                    <node concept="1rXfSq" id="2ev$9JFF3HG" role="37wK5m">
-                      <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyAtomArray" />
-                    </node>
                   </node>
                 </node>
               </node>
@@ -1735,9 +1771,6 @@
                     <ref role="37wK5l" to="ie8e:3JgCwkqiP3$" resolve="walkValues" />
                     <node concept="1rXfSq" id="2ev$9JFELEF" role="37wK5m">
                       <ref role="37wK5l" node="2ev$9JFEJ94" resolve="anyValues" />
-                    </node>
-                    <node concept="1rXfSq" id="2ev$9JFF3Pt" role="37wK5m">
-                      <ref role="37wK5l" node="2ev$9JFF1SS" resolve="anyObjectArray" />
                     </node>
                   </node>
                 </node>
@@ -1788,9 +1821,6 @@
                     <ref role="3cqZAo" node="2ev$9JFDTTZ" resolve="atom" />
                   </node>
                 </node>
-                <node concept="1rXfSq" id="2ev$9JFF4eh" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyAtomArray" />
-                </node>
               </node>
             </node>
           </node>
@@ -1810,9 +1840,6 @@
                   <node concept="37vLTw" id="2ev$9JFFd2u" role="37wK5m">
                     <ref role="3cqZAo" node="2ev$9JFE0Mu" resolve="val" />
                   </node>
-                </node>
-                <node concept="1rXfSq" id="2ev$9JFF4ql" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF1SS" resolve="anyObjectArray" />
                 </node>
               </node>
             </node>
@@ -1974,9 +2001,6 @@
                     <node concept="1rXfSq" id="2ev$9JFFqmP" role="37wK5m">
                       <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyTerms" />
                     </node>
-                    <node concept="1rXfSq" id="2ev$9JFFqmQ" role="37wK5m">
-                      <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyAtomArray" />
-                    </node>
                   </node>
                 </node>
               </node>
@@ -2002,9 +2026,6 @@
                     <ref role="37wK5l" to="ie8e:3JgCwkqiP3$" resolve="walkValues" />
                     <node concept="1rXfSq" id="2ev$9JFFqmZ" role="37wK5m">
                       <ref role="37wK5l" node="2ev$9JFEJ94" resolve="anyValues" />
-                    </node>
-                    <node concept="1rXfSq" id="2ev$9JFFqn0" role="37wK5m">
-                      <ref role="37wK5l" node="2ev$9JFF1SS" resolve="anyObjectArray" />
                     </node>
                   </node>
                 </node>
@@ -2055,9 +2076,6 @@
                     <ref role="3cqZAo" node="2ev$9JFFqmv" resolve="atom" />
                   </node>
                 </node>
-                <node concept="1rXfSq" id="2ev$9JFFqnn" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyAtomArray" />
-                </node>
               </node>
             </node>
           </node>
@@ -2077,9 +2095,6 @@
                   <node concept="37vLTw" id="2ev$9JFG3wU" role="37wK5m">
                     <ref role="3cqZAo" node="2ev$9JFG2bt" resolve="role" />
                   </node>
-                </node>
-                <node concept="1rXfSq" id="2ev$9JFFBu3" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyAtomArray" />
                 </node>
               </node>
             </node>
@@ -2101,9 +2116,6 @@
                     <ref role="3cqZAo" node="2ev$9JFFqmp" resolve="child" />
                   </node>
                 </node>
-                <node concept="1rXfSq" id="2ev$9JFG0cB" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF0nO" resolve="anyAtomArray" />
-                </node>
               </node>
             </node>
           </node>
@@ -2123,9 +2135,6 @@
                   <node concept="37vLTw" id="2ev$9JFFwOg" role="37wK5m">
                     <ref role="3cqZAo" node="2ev$9JFFvPD" resolve="val" />
                   </node>
-                </node>
-                <node concept="1rXfSq" id="2ev$9JFFqnx" role="37wK5m">
-                  <ref role="37wK5l" node="2ev$9JFF1SS" resolve="anyObjectArray" />
                 </node>
               </node>
             </node>
@@ -2164,6 +2173,493 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="2ev$9JFFqnL" role="2OqNvi">
+                  <ref role="37wK5l" to="ie8e:5s497Vr3IZm" resolve="endWalk" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3s$Bmu" id="5YVX0wIjRSt" role="3s_gse">
+        <property role="3s$Bm0" value="list" />
+        <node concept="3cqZAl" id="5YVX0wIjRSu" role="3clF45" />
+        <node concept="3Tm1VV" id="5YVX0wIjRSv" role="1B3o_S" />
+        <node concept="3clFbS" id="5YVX0wIjRSw" role="3clF47">
+          <node concept="3clFbH" id="5YVX0wIjRSx" role="3cqZAp" />
+          <node concept="3cpWs8" id="5YVX0wIjZEW" role="3cqZAp">
+            <node concept="3cpWsn" id="5YVX0wIjZEX" role="3cpWs9">
+              <property role="TrG5h" value="first" />
+              <node concept="3uibUv" id="5YVX0wIjZEV" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+              </node>
+              <node concept="1oi1Uc" id="5YVX0wIjZEY" role="33vP2m">
+                <node concept="1oi5UN" id="5YVX0wIjZEZ" role="1oi0x0">
+                  <node concept="1oi5Wm" id="5YVX0wIjZF0" role="1ojpOf">
+                    <property role="TrG5h" value="concept" />
+                    <node concept="1oi5XN" id="5YVX0wIjZF1" role="1oi5zu">
+                      <property role="1oi5yK" value="ClassifierType" />
+                    </node>
+                  </node>
+                  <node concept="1oi5Wm" id="5YVX0wIjZF2" role="1ojpOf">
+                    <property role="TrG5h" value="classifier" />
+                    <node concept="1oi5XN" id="5YVX0wIjZF3" role="1oi5zu">
+                      <property role="1oi5yK" value="Object" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="5YVX0wIk0aQ" role="3cqZAp">
+            <node concept="3cpWsn" id="5YVX0wIk0aR" role="3cpWs9">
+              <property role="TrG5h" value="second" />
+              <node concept="3uibUv" id="5YVX0wIk0aS" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+              </node>
+              <node concept="1oi1Uc" id="5YVX0wIk0aT" role="33vP2m">
+                <node concept="1oi5UN" id="5YVX0wIk0rb" role="1oi0x0">
+                  <node concept="1oi5Wm" id="5YVX0wIk0rc" role="1ojpOf">
+                    <property role="TrG5h" value="concept" />
+                    <node concept="1oi5XN" id="5YVX0wIk0rd" role="1oi5zu">
+                      <property role="1oi5yK" value="ClassifierType" />
+                    </node>
+                  </node>
+                  <node concept="1oi5Wm" id="5YVX0wIk0re" role="1ojpOf">
+                    <property role="TrG5h" value="classifier" />
+                    <node concept="1oi5XN" id="5YVX0wIk0rf" role="1oi5zu">
+                      <property role="1oi5yK" value="Iterable" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="5YVX0wIk0rC" role="3cqZAp">
+            <node concept="3cpWsn" id="5YVX0wIk0rD" role="3cpWs9">
+              <property role="TrG5h" value="third" />
+              <node concept="3uibUv" id="5YVX0wIk0rE" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+              </node>
+              <node concept="1oi1Uc" id="5YVX0wIk0rF" role="33vP2m">
+                <node concept="1oi5UN" id="5YVX0wIk0FV" role="1oi0x0">
+                  <node concept="1oi5Wm" id="5YVX0wIk0FW" role="1ojpOf">
+                    <property role="TrG5h" value="concept" />
+                    <node concept="1oi5XN" id="5YVX0wIk0FX" role="1oi5zu">
+                      <property role="1oi5yK" value="ClassifierType" />
+                    </node>
+                  </node>
+                  <node concept="1oi5Wm" id="5YVX0wIk0FY" role="1ojpOf">
+                    <property role="TrG5h" value="classifier" />
+                    <node concept="1oi5XN" id="5YVX0wIk0FZ" role="1oi5zu">
+                      <property role="1oi5yK" value="List" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="5YVX0wIk0GC" role="3cqZAp" />
+          <node concept="3cpWs8" id="5YVX0wIlrxo" role="3cqZAp">
+            <node concept="3cpWsn" id="5YVX0wIlrxp" role="3cpWs9">
+              <property role="TrG5h" value="contents" />
+              <node concept="3uibUv" id="5YVX0wIlrxk" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+              </node>
+              <node concept="1oi1Uc" id="5YVX0wIlrxq" role="33vP2m">
+                <node concept="1oi5ST" id="5YVX0wIlrxr" role="1oi0x0">
+                  <property role="TrG5h" value="contents" />
+                  <node concept="KCUsM" id="5YVX0wIlrxs" role="1oi5TL">
+                    <node concept="1oi5ST" id="5YVX0wIlrxt" role="KCVpo">
+                      <property role="TrG5h" value="list" />
+                      <node concept="1oi5ST" id="5YVX0wIlrxu" role="1oi5TL">
+                        <property role="TrG5h" value="contents" />
+                        <node concept="KCUsM" id="5YVX0wIlrxv" role="1oi5TL">
+                          <node concept="1oi5UN" id="5YVX0wIlrxw" role="KCVpo">
+                            <node concept="1oi5Wm" id="5YVX0wIlrxx" role="1ojpOf">
+                              <property role="TrG5h" value="concept" />
+                              <node concept="1oi5XN" id="5YVX0wIlrxy" role="1oi5zu">
+                                <property role="1oi5yK" value="ClassifierType" />
+                              </node>
+                            </node>
+                            <node concept="1oi5Wm" id="5YVX0wIlrxz" role="1ojpOf">
+                              <property role="TrG5h" value="classifier" />
+                              <node concept="1oi5XN" id="5YVX0wIlrx$" role="1oi5zu">
+                                <property role="1oi5yK" value="Object" />
+                              </node>
+                            </node>
+                            <node concept="22Ky0T" id="5YVX0wIlrx_" role="lGtFl">
+                              <node concept="37vLTw" id="5YVX0wIlrxA" role="22Ky0K">
+                                <ref role="3cqZAo" node="5YVX0wIjZEX" resolve="first" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="1oi5UN" id="5YVX0wIlrxB" role="KCVpo">
+                            <node concept="1oi5Wm" id="5YVX0wIlrxC" role="1ojpOf">
+                              <property role="TrG5h" value="concept" />
+                              <node concept="1oi5XN" id="5YVX0wIlrxD" role="1oi5zu">
+                                <property role="1oi5yK" value="ClassifierType" />
+                              </node>
+                            </node>
+                            <node concept="1oi5Wm" id="5YVX0wIlrxE" role="1ojpOf">
+                              <property role="TrG5h" value="classifier" />
+                              <node concept="1oi5XN" id="5YVX0wIlrxF" role="1oi5zu">
+                                <property role="1oi5yK" value="Iterable" />
+                              </node>
+                            </node>
+                            <node concept="22Ky0T" id="5YVX0wIlrxG" role="lGtFl">
+                              <node concept="37vLTw" id="5YVX0wIlrxH" role="22Ky0K">
+                                <ref role="3cqZAo" node="5YVX0wIk0aR" resolve="second" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="1oi5UN" id="5YVX0wIlrxI" role="KCVpo">
+                            <node concept="1oi5Wm" id="5YVX0wIlrxJ" role="1ojpOf">
+                              <property role="TrG5h" value="concept" />
+                              <node concept="1oi5XN" id="5YVX0wIlrxK" role="1oi5zu">
+                                <property role="1oi5yK" value="ClassifierType" />
+                              </node>
+                            </node>
+                            <node concept="1oi5Wm" id="5YVX0wIlrxL" role="1ojpOf">
+                              <property role="TrG5h" value="classifier" />
+                              <node concept="1oi5XN" id="5YVX0wIlrxM" role="1oi5zu">
+                                <property role="1oi5yK" value="List" />
+                              </node>
+                            </node>
+                            <node concept="22Ky0T" id="5YVX0wIlrxN" role="lGtFl">
+                              <node concept="37vLTw" id="5YVX0wIlrxO" role="22Ky0K">
+                                <ref role="3cqZAo" node="5YVX0wIk0rD" resolve="third" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="5YVX0wIjYcy" role="3cqZAp">
+            <node concept="3cpWsn" id="7t5VLKGALW_" role="3cpWs9">
+              <property role="TrG5h" value="toWalk" />
+              <node concept="3uibUv" id="7t5VLKGALWA" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+              </node>
+              <node concept="1oi1Uc" id="7t5VLKGALWB" role="33vP2m">
+                <node concept="1oi5ST" id="7t5VLKGALWC" role="1oi0x0">
+                  <property role="TrG5h" value="list" />
+                  <node concept="1oi5ST" id="7t5VLKGALWD" role="1oi5TL">
+                    <property role="TrG5h" value="contents" />
+                    <node concept="KCUsM" id="7t5VLKGALWE" role="1oi5TL">
+                      <node concept="1oi5ST" id="7t5VLKGALWF" role="KCVpo">
+                        <property role="TrG5h" value="list" />
+                        <node concept="1oi5ST" id="7t5VLKGALWG" role="1oi5TL">
+                          <property role="TrG5h" value="contents" />
+                          <node concept="KCUsM" id="7t5VLKGALWH" role="1oi5TL">
+                            <node concept="1oi5UN" id="4JRKVCv2ewH" role="KCVpo">
+                              <node concept="1oi5Wm" id="4JRKVCv2ewI" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="4JRKVCv2ewJ" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="4JRKVCv2ewK" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="4JRKVCv2ewL" role="1oi5zu">
+                                  <property role="1oi5yK" value="Object" />
+                                </node>
+                              </node>
+                              <node concept="22Ky0T" id="5YVX0wIk0Wq" role="lGtFl">
+                                <node concept="37vLTw" id="5YVX0wIk0WC" role="22Ky0K">
+                                  <ref role="3cqZAo" node="5YVX0wIjZEX" resolve="first" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="1oi5UN" id="7t5VLKGALWI" role="KCVpo">
+                              <node concept="1oi5Wm" id="7t5VLKGALWJ" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="7t5VLKGALWK" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="7t5VLKGALWL" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="7t5VLKGALWM" role="1oi5zu">
+                                  <property role="1oi5yK" value="Iterable" />
+                                </node>
+                              </node>
+                              <node concept="22Ky0T" id="5YVX0wIk0WM" role="lGtFl">
+                                <node concept="37vLTw" id="5YVX0wIk0X0" role="22Ky0K">
+                                  <ref role="3cqZAo" node="5YVX0wIk0aR" resolve="second" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="1oi5UN" id="7t5VLKGALWN" role="KCVpo">
+                              <node concept="1oi5Wm" id="7t5VLKGALWO" role="1ojpOf">
+                                <property role="TrG5h" value="concept" />
+                                <node concept="1oi5XN" id="7t5VLKGALWP" role="1oi5zu">
+                                  <property role="1oi5yK" value="ClassifierType" />
+                                </node>
+                              </node>
+                              <node concept="1oi5Wm" id="7t5VLKGALWQ" role="1ojpOf">
+                                <property role="TrG5h" value="classifier" />
+                                <node concept="1oi5XN" id="7t5VLKGALWR" role="1oi5zu">
+                                  <property role="1oi5yK" value="List" />
+                                </node>
+                              </node>
+                              <node concept="22Ky0T" id="5YVX0wIk0X9" role="lGtFl">
+                                <node concept="37vLTw" id="5YVX0wIk0Xn" role="22Ky0K">
+                                  <ref role="3cqZAo" node="5YVX0wIk0rD" resolve="third" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="22Ky0T" id="5YVX0wIls8l" role="lGtFl">
+                      <node concept="37vLTw" id="5YVX0wIls8J" role="22Ky0K">
+                        <ref role="3cqZAo" node="5YVX0wIlrxp" resolve="contents" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="5YVX0wIjSQC" role="3cqZAp" />
+          <node concept="3clFbH" id="5YVX0wIjRT2" role="3cqZAp" />
+          <node concept="3cpWs8" id="5YVX0wIjRT3" role="3cqZAp">
+            <node concept="3cpWsn" id="5YVX0wIjRT4" role="3cpWs9">
+              <property role="TrG5h" value="mock" />
+              <node concept="3uibUv" id="5YVX0wIjRT5" role="1tU5fm">
+                <ref role="3uigEE" to="ie8e:3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+              </node>
+              <node concept="2YIFZM" id="5YVX0wIjRT6" role="33vP2m">
+                <ref role="37wK5l" to="n4y8:~Mockito.mock(java.lang.Class):java.lang.Object" resolve="mock" />
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <node concept="3VsKOn" id="5YVX0wIjRT7" role="37wK5m">
+                  <ref role="3VsUkX" to="ie8e:3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5YVX0wIjRT8" role="3cqZAp">
+            <node concept="2OqwBi" id="5YVX0wIjRT9" role="3clFbG">
+              <node concept="2YIFZM" id="5YVX0wIjRTa" role="2Oq$k0">
+                <ref role="37wK5l" to="n4y8:~Mockito.when(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="when" />
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <node concept="2OqwBi" id="5YVX0wIjRTb" role="37wK5m">
+                  <node concept="37vLTw" id="5YVX0wIjRTc" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                  </node>
+                  <node concept="liA8E" id="5YVX0wIjRTd" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
+                    <node concept="1rXfSq" id="5YVX0wIjRTe" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFEEfC" resolve="anyTerms" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5YVX0wIjRTg" role="2OqNvi">
+                <ref role="37wK5l" to="98:~OngoingStubbing.thenReturn(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="thenReturn" />
+                <node concept="Rm8GO" id="5YVX0wIjRTh" role="37wK5m">
+                  <ref role="Rm8GQ" to="ie8e:2q_78a95hAM" resolve="WALK" />
+                  <ref role="1Px2BO" to="ie8e:2q_78a95hAL" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5YVX0wIleMN" role="3cqZAp">
+            <node concept="2OqwBi" id="5YVX0wIleMO" role="3clFbG">
+              <node concept="2YIFZM" id="5YVX0wIleMP" role="2Oq$k0">
+                <ref role="37wK5l" to="n4y8:~Mockito.when(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="when" />
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <node concept="2OqwBi" id="5YVX0wIleMQ" role="37wK5m">
+                  <node concept="37vLTw" id="5YVX0wIleMR" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                  </node>
+                  <node concept="liA8E" id="5YVX0wIleMS" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:3JgCwkqmHc0" resolve="walkList" />
+                    <node concept="1rXfSq" id="5YVX0wIleMT" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFEHV1" resolve="anyList" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5YVX0wIleMV" role="2OqNvi">
+                <ref role="37wK5l" to="98:~OngoingStubbing.thenReturn(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="thenReturn" />
+                <node concept="Rm8GO" id="5YVX0wIleMW" role="37wK5m">
+                  <ref role="Rm8GQ" to="ie8e:2q_78a95hAM" resolve="WALK" />
+                  <ref role="1Px2BO" to="ie8e:2q_78a95hAL" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5YVX0wIlkDU" role="3cqZAp">
+            <node concept="2OqwBi" id="5YVX0wIlkDV" role="3clFbG">
+              <node concept="2YIFZM" id="5YVX0wIlkDW" role="2Oq$k0">
+                <ref role="37wK5l" to="n4y8:~Mockito.when(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="when" />
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <node concept="2OqwBi" id="5YVX0wIlkDX" role="37wK5m">
+                  <node concept="37vLTw" id="5YVX0wIlkDY" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                  </node>
+                  <node concept="liA8E" id="5YVX0wIlkDZ" role="2OqNvi">
+                    <ref role="37wK5l" to="ie8e:3JgCwkqiP3$" resolve="walkValues" />
+                    <node concept="1rXfSq" id="5YVX0wIlkE0" role="37wK5m">
+                      <ref role="37wK5l" node="2ev$9JFEJ94" resolve="anyValues" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5YVX0wIlkE2" role="2OqNvi">
+                <ref role="37wK5l" to="98:~OngoingStubbing.thenReturn(java.lang.Object):org.mockito.stubbing.OngoingStubbing" resolve="thenReturn" />
+                <node concept="Rm8GO" id="5YVX0wIlkVS" role="37wK5m">
+                  <ref role="Rm8GQ" to="ie8e:2q_78a95hAN" resolve="CONTINUE" />
+                  <ref role="1Px2BO" to="ie8e:2q_78a95hAL" resolve="Action" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="5YVX0wIjRTs" role="3cqZAp" />
+          <node concept="3clFbF" id="5YVX0wIjRTt" role="3cqZAp">
+            <node concept="2OqwBi" id="5YVX0wIjRTu" role="3clFbG">
+              <node concept="2ShNRf" id="5YVX0wIjRTv" role="2Oq$k0">
+                <node concept="1pGfFk" id="5YVX0wIjRTw" role="2ShVmc">
+                  <ref role="37wK5l" to="ie8e:47nvOnTQN6Q" resolve="AtomWalk" />
+                  <node concept="37vLTw" id="5YVX0wIjRTx" role="37wK5m">
+                    <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5YVX0wIjRTy" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:1hOy_Afq63K" resolve="walk" />
+                <node concept="37vLTw" id="5YVX0wIk2jv" role="37wK5m">
+                  <ref role="3cqZAo" node="7t5VLKGALW_" resolve="toWalk" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="5YVX0wIjRT$" role="3cqZAp" />
+          <node concept="3clFbF" id="5YVX0wIjRT_" role="3cqZAp">
+            <node concept="2OqwBi" id="5YVX0wIjRTA" role="3clFbG">
+              <node concept="2YIFZM" id="5YVX0wIjRTB" role="2Oq$k0">
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <ref role="37wK5l" to="n4y8:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <node concept="37vLTw" id="5YVX0wIjRTC" role="37wK5m">
+                  <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5YVX0wIjRTD" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
+                <node concept="1rXfSq" id="5YVX0wIjRTE" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqTerms" />
+                  <node concept="37vLTw" id="5YVX0wIk2kr" role="37wK5m">
+                    <ref role="3cqZAo" node="5YVX0wIjZEX" resolve="first" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5YVX0wIjRTH" role="3cqZAp">
+            <node concept="2OqwBi" id="5YVX0wIjRTI" role="3clFbG">
+              <node concept="2YIFZM" id="5YVX0wIjRTJ" role="2Oq$k0">
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <ref role="37wK5l" to="n4y8:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <node concept="37vLTw" id="5YVX0wIjRTK" role="37wK5m">
+                  <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5YVX0wIjRTL" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
+                <node concept="1rXfSq" id="5YVX0wIjRTM" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqTerms" />
+                  <node concept="37vLTw" id="5YVX0wIk2l_" role="37wK5m">
+                    <ref role="3cqZAo" node="5YVX0wIk0aR" resolve="second" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5YVX0wIjRTP" role="3cqZAp">
+            <node concept="2OqwBi" id="5YVX0wIjRTQ" role="3clFbG">
+              <node concept="2YIFZM" id="5YVX0wIjRTR" role="2Oq$k0">
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <ref role="37wK5l" to="n4y8:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <node concept="37vLTw" id="5YVX0wIjRTS" role="37wK5m">
+                  <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5YVX0wIjRTT" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
+                <node concept="1rXfSq" id="5YVX0wIjRTU" role="37wK5m">
+                  <ref role="37wK5l" node="2ev$9JFF8Wr" resolve="eqTerms" />
+                  <node concept="37vLTw" id="5YVX0wIk2mI" role="37wK5m">
+                    <ref role="3cqZAo" node="5YVX0wIk0rD" resolve="third" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5YVX0wIlmmx" role="3cqZAp">
+            <node concept="2OqwBi" id="5YVX0wIlmmy" role="3clFbG">
+              <node concept="2YIFZM" id="5YVX0wIlmmz" role="2Oq$k0">
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <ref role="37wK5l" to="n4y8:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                <node concept="37vLTw" id="5YVX0wIlmm$" role="37wK5m">
+                  <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5YVX0wIlmm_" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqmHc0" resolve="walkList" />
+                <node concept="1rXfSq" id="5YVX0wIlmmA" role="37wK5m">
+                  <ref role="37wK5l" node="5YVX0wIlmGu" resolve="eqList" />
+                  <node concept="37vLTw" id="5YIOneOKcWw" role="37wK5m">
+                    <ref role="3cqZAo" node="5YVX0wIlrxp" resolve="contents" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="5YVX0wIjRU5" role="3cqZAp" />
+          <node concept="3SKdUt" id="5YVX0wIjRU6" role="3cqZAp">
+            <node concept="3SKdUq" id="5YVX0wIjRU7" role="3SKWNk">
+              <property role="3SKdUp" value="TODO: only specific validations" />
+            </node>
+          </node>
+          <node concept="1X3_iC" id="5YIOneOKhkO" role="lGtFl">
+            <property role="3V$3am" value="statement" />
+            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+            <node concept="3clFbF" id="5YVX0wIjRU8" role="8Wnug">
+              <node concept="2YIFZM" id="5YVX0wIjRU9" role="3clFbG">
+                <ref role="37wK5l" to="n4y8:~Mockito.verifyNoMoreInteractions(java.lang.Object...):void" resolve="verifyNoMoreInteractions" />
+                <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                <node concept="37vLTw" id="5YVX0wIjRUa" role="37wK5m">
+                  <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="5YVX0wIjRUb" role="3cqZAp" />
+          <node concept="3SKdUt" id="5YVX0wIjRUc" role="3cqZAp">
+            <node concept="3SKdUq" id="5YVX0wIjRUd" role="3SKWNk">
+              <property role="3SKdUp" value="TODO: make sure endWalk is called" />
+            </node>
+          </node>
+          <node concept="1X3_iC" id="5YVX0wIjRUe" role="lGtFl">
+            <property role="3V$3am" value="statement" />
+            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+            <node concept="3clFbF" id="5YVX0wIjRUf" role="8Wnug">
+              <node concept="2OqwBi" id="5YVX0wIjRUg" role="3clFbG">
+                <node concept="2YIFZM" id="5YVX0wIjRUh" role="2Oq$k0">
+                  <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
+                  <ref role="37wK5l" to="n4y8:~Mockito.verify(java.lang.Object):java.lang.Object" resolve="verify" />
+                  <node concept="37vLTw" id="5YVX0wIjRUi" role="37wK5m">
+                    <ref role="3cqZAo" node="5YVX0wIjRT4" resolve="mock" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="5YVX0wIjRUj" role="2OqNvi">
                   <ref role="37wK5l" to="ie8e:5s497Vr3IZm" resolve="endWalk" />
                 </node>
               </node>
