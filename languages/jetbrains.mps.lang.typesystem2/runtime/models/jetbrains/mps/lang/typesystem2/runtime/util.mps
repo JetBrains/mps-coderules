@@ -1045,7 +1045,7 @@
       <node concept="37vLTG" id="4peSo3CHzzV" role="3clF46">
         <property role="TrG5h" value="cb" />
         <node concept="3uibUv" id="4peSo3CHzzW" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
+          <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
         </node>
       </node>
       <node concept="3clFbS" id="4peSo3CHz$5" role="3clF47">
@@ -1119,8 +1119,26 @@
               </node>
             </node>
           </node>
-          <node concept="9aQIb" id="4peSo3CJH3F" role="9aQIa">
-            <node concept="3clFbS" id="4peSo3CJH3G" role="9aQI4">
+          <node concept="3eNFk2" id="6infEALqiR1" role="3eNLev">
+            <node concept="3fqX7Q" id="3t7_2FgUSoq" role="3eO9$A">
+              <node concept="2OqwBi" id="3t7_2FgUSos" role="3fr31v">
+                <node concept="Xl_RD" id="3t7_2FgUSot" role="2Oq$k0">
+                  <property role="Xl_RC" value="parameter" />
+                </node>
+                <node concept="liA8E" id="3t7_2FgUSou" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <node concept="2OqwBi" id="3t7_2FgUSov" role="37wK5m">
+                    <node concept="37vLTw" id="3t7_2FgUSow" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4peSo3CHzzV" resolve="cb" />
+                    </node>
+                    <node concept="liA8E" id="3t7_2FgUSox" role="2OqNvi">
+                      <ref role="37wK5l" to="ie8e:1R$Cm9qGRoH" resolve="symbol" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="6infEALqiR3" role="3eOfB_">
               <node concept="3SKdUt" id="4peSo3CJHoK" role="3cqZAp">
                 <node concept="3SKdUq" id="4peSo3CJHoO" role="3SKWNk">
                   <property role="3SKdUp" value="FIXME: implement" />
@@ -1133,42 +1151,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="3eNFk2" id="6infEALqiR1" role="3eNLev">
-            <node concept="2OqwBi" id="6infEALqwLw" role="3eO9$A">
-              <node concept="Xl_RD" id="6infEALqw5D" role="2Oq$k0">
-                <property role="Xl_RC" value="list" />
-              </node>
-              <node concept="liA8E" id="6infEALqxmg" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="2OqwBi" id="6infEALqxCn" role="37wK5m">
-                  <node concept="37vLTw" id="6infEALqxu1" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4peSo3CHzzV" resolve="cb" />
-                  </node>
-                  <node concept="liA8E" id="6infEALqymR" role="2OqNvi">
-                    <ref role="37wK5l" to="ie8e:1R$Cm9qGRoH" resolve="symbol" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbS" id="6infEALqiR3" role="3eOfB_">
-              <node concept="3clFbF" id="6infEALspV4" role="3cqZAp">
-                <node concept="2OqwBi" id="6infEALspV5" role="3clFbG">
-                  <node concept="37vLTw" id="6infEALspV6" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4peSo3CIVXA" resolve="formatStack" />
-                  </node>
-                  <node concept="liA8E" id="6infEALspV7" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~LinkedList.push(java.lang.Object):void" resolve="push" />
-                    <node concept="2ShNRf" id="6infEALspV8" role="37wK5m">
-                      <node concept="HV5vD" id="6infEALsqxC" role="2ShVmc">
-                        <ref role="HV5vE" node="6infEALscX8" resolve="NodePrinter.ListFormatter" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbH" id="6infEALqynD" role="3cqZAp" />
             </node>
           </node>
         </node>
@@ -1204,100 +1186,36 @@
       </node>
       <node concept="3Tm1VV" id="4peSo3CHz$$" role="1B3o_S" />
       <node concept="3clFbS" id="4peSo3CHz$L" role="3clF47">
-        <node concept="3SKdUt" id="4peSo3CK1xn" role="3cqZAp">
-          <node concept="3SKdUq" id="4peSo3CK1$9" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME: the constants must be extracted" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="4peSo3CK1oz" role="3cqZAp">
-          <node concept="3clFbS" id="4peSo3CK1o$" role="3clFbx">
-            <node concept="3clFbF" id="4peSo3CPC4k" role="3cqZAp">
-              <node concept="2OqwBi" id="4peSo3CPHs4" role="3clFbG">
-                <node concept="2OqwBi" id="4peSo3CPCDw" role="2Oq$k0">
-                  <node concept="37vLTw" id="4peSo3CPC4i" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4peSo3CIVXA" resolve="formatStack" />
-                  </node>
-                  <node concept="liA8E" id="4peSo3CPHaS" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~LinkedList.peek():java.lang.Object" resolve="peek" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="4peSo3CQr9o" role="2OqNvi">
-                  <ref role="37wK5l" node="6infEALrJVZ" resolve="listStart" />
-                </node>
-              </node>
+        <node concept="3clFbF" id="3t7_2FgScY9" role="3cqZAp">
+          <node concept="2OqwBi" id="3t7_2FgScYa" role="3clFbG">
+            <node concept="37vLTw" id="3t7_2FgScYb" role="2Oq$k0">
+              <ref role="3cqZAo" node="4peSo3CIVXA" resolve="formatStack" />
             </node>
-            <node concept="3clFbH" id="4peSo3CPC2V" role="3cqZAp" />
-          </node>
-          <node concept="2OqwBi" id="4peSo3CK2wc" role="3clFbw">
-            <node concept="Xl_RD" id="4peSo3CK1pg" role="2Oq$k0">
-              <property role="Xl_RC" value="parameter" />
-            </node>
-            <node concept="liA8E" id="4peSo3CK3cd" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-              <node concept="2OqwBi" id="4peSo3CK3ni" role="37wK5m">
-                <node concept="37vLTw" id="4peSo3CK3dw" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4peSo3CHz$A" resolve="listb" />
-                </node>
-                <node concept="liA8E" id="4peSo3CK4Yf" role="2OqNvi">
-                  <ref role="37wK5l" to="ie8e:1R$Cm9qGRoH" resolve="symbol" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="9aQIb" id="4peSo3CK2dl" role="9aQIa">
-            <node concept="3clFbS" id="4peSo3CK2dm" role="9aQI4">
-              <node concept="3SKdUt" id="4peSo3CK2gc" role="3cqZAp">
-                <node concept="3SKdUq" id="4peSo3CK2gd" role="3SKWNk">
-                  <property role="3SKdUp" value="FIXME: implement" />
-                </node>
-              </node>
-              <node concept="YS8fn" id="4peSo3CK2ge" role="3cqZAp">
-                <node concept="2ShNRf" id="4peSo3CK2gf" role="YScLw">
-                  <node concept="1pGfFk" id="4peSo3CK2gg" role="2ShVmc">
-                    <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3eNFk2" id="6infEALsrsE" role="3eNLev">
-            <node concept="3clFbS" id="6infEALsrsG" role="3eOfB_">
-              <node concept="3clFbF" id="6infEALss1Z" role="3cqZAp">
-                <node concept="2OqwBi" id="6infEALss20" role="3clFbG">
-                  <node concept="2OqwBi" id="6infEALss21" role="2Oq$k0">
-                    <node concept="37vLTw" id="6infEALss22" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4peSo3CIVXA" resolve="formatStack" />
-                    </node>
-                    <node concept="liA8E" id="6infEALss23" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~LinkedList.peek():java.lang.Object" resolve="peek" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="6infEALss24" role="2OqNvi">
-                    <ref role="37wK5l" node="6infEALrJVZ" resolve="listStart" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbH" id="6infEALssCc" role="3cqZAp" />
-            </node>
-            <node concept="2OqwBi" id="6infEALsrEr" role="3eO9$A">
-              <node concept="Xl_RD" id="6infEALsrEs" role="2Oq$k0">
-                <property role="Xl_RC" value="contents" />
-              </node>
-              <node concept="liA8E" id="6infEALsrEt" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="2OqwBi" id="6infEALsrEu" role="37wK5m">
-                  <node concept="37vLTw" id="6infEALsrEv" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4peSo3CHz$A" resolve="listb" />
-                  </node>
-                  <node concept="liA8E" id="6infEALsrEw" role="2OqNvi">
-                    <ref role="37wK5l" to="ie8e:1R$Cm9qGRoH" resolve="symbol" />
-                  </node>
+            <node concept="liA8E" id="3t7_2FgScYc" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~LinkedList.push(java.lang.Object):void" resolve="push" />
+              <node concept="2ShNRf" id="3t7_2FgScYd" role="37wK5m">
+                <node concept="HV5vD" id="3t7_2FgScYe" role="2ShVmc">
+                  <ref role="HV5vE" node="6infEALscX8" resolve="NodePrinter.ListFormatter" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="4peSo3CKlD2" role="3cqZAp" />
+        <node concept="3clFbF" id="4peSo3CPC4k" role="3cqZAp">
+          <node concept="2OqwBi" id="4peSo3CPHs4" role="3clFbG">
+            <node concept="2OqwBi" id="4peSo3CPCDw" role="2Oq$k0">
+              <node concept="37vLTw" id="4peSo3CPC4i" role="2Oq$k0">
+                <ref role="3cqZAo" node="4peSo3CIVXA" resolve="formatStack" />
+              </node>
+              <node concept="liA8E" id="4peSo3CPHaS" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~LinkedList.peek():java.lang.Object" resolve="peek" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4peSo3CQr9o" role="2OqNvi">
+              <ref role="37wK5l" node="6infEALrJVZ" resolve="listStart" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4peSo3CKaIY" role="3cqZAp">
           <node concept="2OqwBi" id="4peSo3CKbj0" role="3clFbG">
             <node concept="37vLTw" id="4peSo3CKaIW" role="2Oq$k0">

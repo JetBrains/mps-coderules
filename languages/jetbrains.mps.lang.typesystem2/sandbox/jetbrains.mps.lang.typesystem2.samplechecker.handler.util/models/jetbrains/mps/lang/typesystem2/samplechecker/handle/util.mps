@@ -221,7 +221,7 @@
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.AtomExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
@@ -372,9 +372,6 @@
                 <node concept="Xl_RD" id="5H6hZahmJ4e" role="37wK5m">
                   <property role="Xl_RC" value="list" />
                 </node>
-                <node concept="Xl_RD" id="5H6hZahqBye" role="37wK5m">
-                  <property role="Xl_RC" value="contents" />
-                </node>
               </node>
               <node concept="liA8E" id="5H6hZahmJ4g" role="2OqNvi">
                 <ref role="37wK5l" to="ie8e:3OPtF03nYWm" resolve="result" />
@@ -402,9 +399,6 @@
                 </node>
                 <node concept="Xl_RD" id="5H6hZahmK7w" role="37wK5m">
                   <property role="Xl_RC" value="list" />
-                </node>
-                <node concept="Xl_RD" id="5H6hZahqFV7" role="37wK5m">
-                  <property role="Xl_RC" value="contents" />
                 </node>
               </node>
               <node concept="liA8E" id="5H6hZahmK7y" role="2OqNvi">
@@ -581,9 +575,6 @@
                     <node concept="Xl_RD" id="5H6hZahnxrp" role="37wK5m">
                       <property role="Xl_RC" value="list" />
                     </node>
-                    <node concept="Xl_RD" id="5H6hZahqI5t" role="37wK5m">
-                      <property role="Xl_RC" value="contents" />
-                    </node>
                   </node>
                   <node concept="liA8E" id="5H6hZahnxrr" role="2OqNvi">
                     <ref role="37wK5l" to="ie8e:3OPtF03nYWm" resolve="result" />
@@ -611,9 +602,6 @@
                     </node>
                     <node concept="Xl_RD" id="5H6hZahnxrB" role="37wK5m">
                       <property role="Xl_RC" value="list" />
-                    </node>
-                    <node concept="Xl_RD" id="5H6hZahqJhY" role="37wK5m">
-                      <property role="Xl_RC" value="contents" />
                     </node>
                   </node>
                   <node concept="liA8E" id="5H6hZahnxrD" role="2OqNvi">
@@ -1994,14 +1982,11 @@
           <node concept="1oi1Uc" id="5H6hZahsAIB" role="3clFbG">
             <node concept="1oi5ST" id="5H6hZahsAIC" role="1oi0x0">
               <property role="TrG5h" value="list" />
-              <node concept="1oi5ST" id="5H6hZahsAID" role="1oi5TL">
-                <property role="TrG5h" value="contents" />
-                <node concept="KCUsM" id="5H6hZahsAIE" role="1oi5TL">
-                  <node concept="1oi5UN" id="5H6hZahsAIF" role="KCVpo">
-                    <node concept="22Ky0T" id="5H6hZahsAIG" role="lGtFl">
-                      <node concept="37vLTw" id="5H6hZahsAIH" role="22Ky0K">
-                        <ref role="3cqZAo" node="5H6hZahszJ8" resolve="array" />
-                      </node>
+              <node concept="KCUsM" id="3t7_2FgGWG9" role="1oi5TL">
+                <node concept="1oi5UN" id="3t7_2FgGWGj" role="KCVpo">
+                  <node concept="22Ky0T" id="3t7_2FgGWGG" role="lGtFl">
+                    <node concept="37vLTw" id="3t7_2FgGWGW" role="22Ky0K">
+                      <ref role="3cqZAo" node="5H6hZahszJ8" resolve="array" />
                     </node>
                   </node>
                 </node>

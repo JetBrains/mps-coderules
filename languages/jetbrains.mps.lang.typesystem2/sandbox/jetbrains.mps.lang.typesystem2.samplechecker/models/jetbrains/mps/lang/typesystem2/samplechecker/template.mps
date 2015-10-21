@@ -273,7 +273,7 @@
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.AtomExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
@@ -457,7 +457,7 @@
       <concept id="7509376976634006226" name="jetbrains.mps.lang.typesystem2.structure.IncludeFragmentClause" flags="ng" index="20WI10">
         <reference id="7509376976634006227" name="fragment" index="20WI11" />
       </concept>
-      <concept id="3038481260719624626" name="jetbrains.mps.lang.typesystem2.structure.TypeTerm" flags="ng" index="23XgGD">
+      <concept id="3038481260719624626" name="jetbrains.mps.lang.typesystem2.structure.TypeTermExpression" flags="ng" index="23XgGD">
         <reference id="3038481260719954398" name="template" index="23Nwd5" />
       </concept>
       <concept id="6928531011217292466" name="jetbrains.mps.lang.typesystem2.structure.IsfreeVariableConstraint" flags="ng" index="2aLmEc" />
@@ -3111,15 +3111,12 @@
                 <node concept="1oi1Uc" id="4JRKVCveqCl" role="aYrYs">
                   <node concept="1oi5ST" id="4JRKVCveqCm" role="1oi0x0">
                     <property role="TrG5h" value="list" />
-                    <node concept="1oi5ST" id="4JRKVCveqCn" role="1oi5TL">
-                      <property role="TrG5h" value="contents" />
-                      <node concept="KCUsM" id="4JRKVCveqCo" role="1oi5TL">
-                        <node concept="1oi5UN" id="4JRKVCverKv" role="KCVpo">
-                          <node concept="22Ky0T" id="4JRKVCverKx" role="lGtFl">
-                            <node concept="3A9UF8" id="4JRKVCverKz" role="22Ky0K">
-                              <node concept="a7P8L" id="4JRKVCverKB" role="3A9W3M">
-                                <ref role="a7OzE" node="4JRKVCveqBy" resolve="LubType" />
-                              </node>
+                    <node concept="KCUsM" id="4JRKVCveqCo" role="1oi5TL">
+                      <node concept="1oi5UN" id="4JRKVCverKv" role="KCVpo">
+                        <node concept="22Ky0T" id="4JRKVCverKx" role="lGtFl">
+                          <node concept="3A9UF8" id="4JRKVCverKz" role="22Ky0K">
+                            <node concept="a7P8L" id="4JRKVCverKB" role="3A9W3M">
+                              <ref role="a7OzE" node="4JRKVCveqBy" resolve="LubType" />
                             </node>
                           </node>
                         </node>
@@ -3143,15 +3140,12 @@
                 <node concept="1oi1Uc" id="4JRKVCvfiDe" role="aYrYs">
                   <node concept="1oi5ST" id="4JRKVCvfiDf" role="1oi0x0">
                     <property role="TrG5h" value="list" />
-                    <node concept="1oi5ST" id="4JRKVCvfiDg" role="1oi5TL">
-                      <property role="TrG5h" value="contents" />
-                      <node concept="KCUsM" id="4JRKVCvfiDh" role="1oi5TL">
-                        <node concept="1oi5UN" id="4JRKVCvfiDi" role="KCVpo">
-                          <node concept="22Ky0T" id="4JRKVCvfiDj" role="lGtFl">
-                            <node concept="3A9UF8" id="4JRKVCvfiDk" role="22Ky0K">
-                              <node concept="a7P8L" id="4JRKVCvfiDl" role="3A9W3M">
-                                <ref role="a7OzE" node="4JRKVCveqBy" resolve="LubType" />
-                              </node>
+                    <node concept="KCUsM" id="4JRKVCvfiDh" role="1oi5TL">
+                      <node concept="1oi5UN" id="4JRKVCvfiDi" role="KCVpo">
+                        <node concept="22Ky0T" id="4JRKVCvfiDj" role="lGtFl">
+                          <node concept="3A9UF8" id="4JRKVCvfiDk" role="22Ky0K">
+                            <node concept="a7P8L" id="4JRKVCvfiDl" role="3A9W3M">
+                              <ref role="a7OzE" node="4JRKVCveqBy" resolve="LubType" />
                             </node>
                           </node>
                         </node>
