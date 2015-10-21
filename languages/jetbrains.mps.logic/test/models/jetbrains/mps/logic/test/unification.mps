@@ -149,7 +149,7 @@
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.AtomExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
@@ -157,9 +157,6 @@
       </concept>
       <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Compound" flags="ng" index="1oi5UN">
         <child id="7571593955706284441" name="role" index="1ojpOf" />
-      </concept>
-      <concept id="7571593955706137189" name="jetbrains.mps.logic.structure.Role" flags="ng" index="1oi5VN">
-        <property id="7571593955706137428" name="cardinality" index="1oi5Z2" />
       </concept>
       <concept id="7571593955706137472" name="jetbrains.mps.logic.structure.ValueRole" flags="ng" index="1oi5Wm">
         <child id="7571593955706137672" name="contents" index="1oi5zu" />
@@ -489,13 +486,14 @@
                 <node concept="1oi5UN" id="21Zu7ABunhQ" role="1oi0x0">
                   <node concept="1oi5ST" id="21Zu7ABunA9" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="677NV56vfMM" role="1oi5TL">
-                      <node concept="22Ky0T" id="677NV56vfMN" role="lGtFl">
-                        <node concept="1rXfSq" id="21Zu7ABuxPJ" role="22Ky0K">
-                          <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
-                          <node concept="Xl_RD" id="21Zu7ABuxQL" role="37wK5m">
-                            <property role="Xl_RC" value="X" />
+                    <node concept="KCUsM" id="3t7_2FgoIyK" role="1oi5TL">
+                      <node concept="1oi5UN" id="677NV56vfMM" role="KCVpo">
+                        <node concept="22Ky0T" id="677NV56vfMN" role="lGtFl">
+                          <node concept="1rXfSq" id="21Zu7ABuxPJ" role="22Ky0K">
+                            <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
+                            <node concept="Xl_RD" id="21Zu7ABuxQL" role="37wK5m">
+                              <property role="Xl_RC" value="X" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -521,13 +519,14 @@
                 <node concept="1oi5UN" id="21Zu7ABunhZ" role="1oi0x0">
                   <node concept="1oi5ST" id="21Zu7ABunH2" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="677NV56vfMG" role="1oi5TL">
-                      <node concept="22Ky0T" id="677NV56vfMH" role="lGtFl">
-                        <node concept="1rXfSq" id="21Zu7ABuxSN" role="22Ky0K">
-                          <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
-                          <node concept="Xl_RD" id="21Zu7ABuxTP" role="37wK5m">
-                            <property role="Xl_RC" value="Y" />
+                    <node concept="KCUsM" id="3t7_2FgoIyV" role="1oi5TL">
+                      <node concept="1oi5UN" id="677NV56vfMG" role="KCVpo">
+                        <node concept="22Ky0T" id="677NV56vfMH" role="lGtFl">
+                          <node concept="1rXfSq" id="21Zu7ABuxSN" role="22Ky0K">
+                            <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
+                            <node concept="Xl_RD" id="21Zu7ABuxTP" role="37wK5m">
+                              <property role="Xl_RC" value="Y" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -578,12 +577,13 @@
                 <node concept="1oi5UN" id="21Zu7ABupTw" role="1oi0x0">
                   <node concept="1oi5ST" id="21Zu7ABupTx" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="21Zu7ABuqdD" role="1oi5TL">
-                      <node concept="1oi5Wm" id="21Zu7ABuqdL" role="1ojpOf">
-                        <property role="TrG5h" value="name" />
-                        <node concept="1oi5XN" id="21Zu7ABuqdR" role="1oi5zu">
-                          <property role="1oi5yK" value="bar" />
+                    <node concept="KCUsM" id="3t7_2FgoIyJ" role="1oi5TL">
+                      <node concept="1oi5UN" id="21Zu7ABuqdD" role="KCVpo">
+                        <node concept="1oi5Wm" id="21Zu7ABuqdL" role="1ojpOf">
+                          <property role="TrG5h" value="name" />
+                          <node concept="1oi5XN" id="21Zu7ABuqdR" role="1oi5zu">
+                            <property role="1oi5yK" value="bar" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -608,13 +608,14 @@
                 <node concept="1oi5UN" id="21Zu7ABupTG" role="1oi0x0">
                   <node concept="1oi5ST" id="21Zu7ABupTH" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="677NV56vfN$" role="1oi5TL">
-                      <node concept="22Ky0T" id="677NV56vfN_" role="lGtFl">
-                        <node concept="1rXfSq" id="21Zu7ABuxYK" role="22Ky0K">
-                          <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
-                          <node concept="Xl_RD" id="21Zu7ABuxZM" role="37wK5m">
-                            <property role="Xl_RC" value="X" />
+                    <node concept="KCUsM" id="3t7_2FgoIyU" role="1oi5TL">
+                      <node concept="1oi5UN" id="677NV56vfN$" role="KCVpo">
+                        <node concept="22Ky0T" id="677NV56vfN_" role="lGtFl">
+                          <node concept="1rXfSq" id="21Zu7ABuxYK" role="22Ky0K">
+                            <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
+                            <node concept="Xl_RD" id="21Zu7ABuxZM" role="37wK5m">
+                              <property role="Xl_RC" value="X" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -665,7 +666,6 @@
                 <node concept="1oi5UN" id="1OShD0I0umr" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0I0ums" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0I0uMG" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0I0umt" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0I0umu" role="1ojpOf">
@@ -705,7 +705,6 @@
                 <node concept="1oi5UN" id="1OShD0I0umA" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0I0umB" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="677NV56vfNk" role="1oi5TL">
                       <node concept="22Ky0T" id="677NV56vfNl" role="lGtFl">
                         <node concept="1rXfSq" id="1OShD0I0umD" role="22Ky0K">
@@ -762,7 +761,6 @@
                 <node concept="1oi5UN" id="1OShD0I168S" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0I168T" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0I168U" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0I168V" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0I168W" role="1ojpOf">
@@ -802,7 +800,6 @@
                 <node concept="1oi5UN" id="1OShD0I16sz" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0I16s$" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0I16s_" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0I16sA" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0I16sB" role="1ojpOf">
@@ -869,7 +866,6 @@
                 <node concept="1oi5UN" id="1OShD0I1vDa" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0I1vDb" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0I1vDc" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0I1vDd" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0I1vDe" role="1ojpOf">
@@ -909,7 +905,6 @@
                 <node concept="1oi5UN" id="1OShD0I1vDp" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0I1vDq" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0I1vDr" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0I1vDs" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0I1vDt" role="1ojpOf">
@@ -981,7 +976,6 @@
                 <node concept="1oi5UN" id="1OShD0If5uH" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0If5uI" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0If5uJ" role="1oi5TL" />
                   </node>
                   <node concept="1oi5Wm" id="1OShD0If5uQ" role="1ojpOf">
@@ -1004,7 +998,6 @@
                 <node concept="1oi5UN" id="1OShD0If5uW" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0If5uX" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0If5uY" role="1oi5TL">
                       <node concept="1oi5UN" id="677NV56y2bC" role="KCVpo">
                         <node concept="22Ky0T" id="677NV56y2bD" role="lGtFl">
@@ -1316,7 +1309,6 @@
                 <node concept="1oi5UN" id="1OShD0IfuGz" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IfuG$" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="677NV56vfNe" role="1oi5TL">
                       <node concept="22Ky0T" id="677NV56vfNf" role="lGtFl">
                         <node concept="37vLTw" id="1OShD0IfHOH" role="22Ky0K">
@@ -1359,7 +1351,6 @@
                 <node concept="1oi5UN" id="1OShD0IfuGI" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IfuGJ" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="677NV56vfNM" role="1oi5TL">
                       <node concept="22Ky0T" id="677NV56vfNN" role="lGtFl">
                         <node concept="37vLTw" id="1OShD0IfHU1" role="22Ky0K">
@@ -1452,7 +1443,6 @@
                 <node concept="1oi5UN" id="3HJTsBn443j" role="1oi0x0">
                   <node concept="1oi5ST" id="3HJTsBn443k" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="3HJTsBn443l" role="1oi5TL">
                       <node concept="1oi5Wm" id="3HJTsBn44Vy" role="1ojpOf">
                         <property role="TrG5h" value="bar" />
@@ -1487,7 +1477,6 @@
                 <node concept="1oi5UN" id="3HJTsBn443z" role="1oi0x0">
                   <node concept="1oi5ST" id="3HJTsBn443$" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="3HJTsBn443_" role="1oi5TL">
                       <node concept="1oi5Wm" id="3HJTsBn4507" role="1ojpOf">
                         <property role="TrG5h" value="bar" />
@@ -1578,7 +1567,6 @@
                 <node concept="1oi5UN" id="4XqG8ivynhT" role="1oi0x0">
                   <node concept="1oi5ST" id="4XqG8ivynhU" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="4XqG8ivynhV" role="1oi5TL">
                       <node concept="1oi5Wm" id="4XqG8ivynhW" role="1ojpOf">
                         <property role="TrG5h" value="bar" />
@@ -1613,7 +1601,6 @@
                 <node concept="1oi5UN" id="4XqG8ivy$Mh" role="1oi0x0">
                   <node concept="1oi5ST" id="4XqG8ivy$Mi" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="4XqG8ivy$Mj" role="1oi5TL">
                       <node concept="1oi5Wm" id="4XqG8ivy$Mk" role="1ojpOf">
                         <property role="TrG5h" value="bar" />
@@ -1775,7 +1762,6 @@
                 <node concept="1oi5UN" id="1OShD0IfNC8" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IfNC9" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="1OShD0IfNCa" role="1oi5TL">
                       <node concept="1oi5Wm" id="1OShD0IfNCb" role="1ojpOf">
                         <property role="TrG5h" value="name" />
@@ -1819,7 +1805,6 @@
                 <node concept="1oi5UN" id="1OShD0IfNCj" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IfNCk" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="677NV56vfNA" role="1oi5TL">
                       <node concept="22Ky0T" id="677NV56vfNB" role="lGtFl">
                         <node concept="37vLTw" id="1OShD0IfO6K" role="22Ky0K">
@@ -1862,7 +1847,6 @@
                 <node concept="1oi5UN" id="1OShD0IfOZ_" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IfOZA" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="677NV56vfNu" role="1oi5TL">
                       <node concept="22Ky0T" id="677NV56vfNv" role="lGtFl">
                         <node concept="37vLTw" id="1OShD0IfPjo" role="22Ky0K">
@@ -2030,7 +2014,6 @@
                 <node concept="1oi5UN" id="4XqG8ivylR2" role="1oi0x0">
                   <node concept="1oi5ST" id="4XqG8ivylR3" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="4XqG8ivylR4" role="1oi5TL">
                       <node concept="1oi5Wm" id="4XqG8ivylR5" role="1ojpOf">
                         <property role="TrG5h" value="name" />
@@ -2074,7 +2057,6 @@
                 <node concept="1oi5UN" id="4XqG8ivylRi" role="1oi0x0">
                   <node concept="1oi5ST" id="4XqG8ivylRj" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="4XqG8ivylRk" role="1oi5TL">
                       <node concept="22Ky0T" id="4XqG8ivylRl" role="lGtFl">
                         <node concept="37vLTw" id="4XqG8ivylRm" role="22Ky0K">
@@ -2118,7 +2100,6 @@
                 <node concept="1oi5UN" id="4XqG8ivylRy" role="1oi0x0">
                   <node concept="1oi5ST" id="4XqG8ivylRz" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="1oi5UN" id="4XqG8ivylR$" role="1oi5TL">
                       <node concept="22Ky0T" id="4XqG8ivylR_" role="lGtFl">
                         <node concept="37vLTw" id="4XqG8ivylRA" role="22Ky0K">
@@ -2286,7 +2267,6 @@
                 <node concept="1oi5UN" id="1OShD0IfW$_" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IfW$A" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0IfW$B" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0IfW$C" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0IfW$D" role="1ojpOf">
@@ -2340,7 +2320,6 @@
                 <node concept="1oi5UN" id="1OShD0IfW$O" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IfW$P" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0IfW$Q" role="1oi5TL">
                       <node concept="1oi5UN" id="677NV56y2bs" role="KCVpo">
                         <node concept="22Ky0T" id="677NV56y2bt" role="lGtFl">
@@ -2462,7 +2441,6 @@
                 <node concept="1oi5UN" id="1OShD0IgkRx" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IgkRy" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0IgkRz" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0IgkR$" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0IgkR_" role="1ojpOf">
@@ -2538,7 +2516,6 @@
                 <node concept="1oi5UN" id="1OShD0IgkRP" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0IgkRQ" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0IgkRR" role="1oi5TL">
                       <node concept="1oi5UN" id="677NV56y2by" role="KCVpo">
                         <node concept="22Ky0T" id="677NV56y2bz" role="lGtFl">
@@ -2676,7 +2653,6 @@
                 <node concept="1oi5UN" id="1OShD0Ig2iB" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0Ig2iC" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0Ig2iD" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0Ig2iE" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0Ig2iF" role="1ojpOf">
@@ -2746,7 +2722,6 @@
                 <node concept="1oi5UN" id="1OShD0Ig2iV" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0Ig2iW" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0Ig2iX" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0Ig2iY" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0Ig2iZ" role="1ojpOf">
@@ -2864,7 +2839,6 @@
                 <node concept="1oi5UN" id="1OShD0Ig9w7" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0Ig9w8" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0Ig9w9" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0Ig9wa" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0Ig9wb" role="1ojpOf">
@@ -2915,7 +2889,6 @@
                 <node concept="1oi5UN" id="1OShD0Ig9wm" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0Ig9wn" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0Ig9wo" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0Ig9wp" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0Ig9wq" role="1ojpOf">
@@ -3016,7 +2989,6 @@
                 <node concept="1oi5UN" id="1OShD0Igi9o" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0Igi9p" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0Igi9q" role="1oi5TL" />
                   </node>
                   <node concept="1oi5Wm" id="1OShD0Igi9r" role="1ojpOf">
@@ -3050,7 +3022,6 @@
                 <node concept="1oi5UN" id="1OShD0Igi9x" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0Igi9y" role="1ojpOf">
                     <property role="TrG5h" value="child" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0Igi9z" role="1oi5TL">
                       <node concept="1oi5UN" id="677NV56y2bA" role="KCVpo">
                         <node concept="22Ky0T" id="677NV56y2bB" role="lGtFl">

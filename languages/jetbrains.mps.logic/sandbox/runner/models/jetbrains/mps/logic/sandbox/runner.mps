@@ -123,7 +123,10 @@
       </concept>
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
+      <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
+        <child id="2105510410850136264" name="contents" index="KCVpo" />
+      </concept>
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.AtomExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
@@ -132,9 +135,6 @@
       <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Compound" flags="ng" index="1oi5UN">
         <property id="7166797808989209772" name="kind" index="2IF10e" />
         <child id="7571593955706284441" name="role" index="1ojpOf" />
-      </concept>
-      <concept id="7571593955706137189" name="jetbrains.mps.logic.structure.Role" flags="ng" index="1oi5VN">
-        <property id="7571593955706137428" name="cardinality" index="1oi5Z2" />
       </concept>
       <concept id="7571593955706137472" name="jetbrains.mps.logic.structure.ValueRole" flags="ng" index="1oi5Wm">
         <child id="7571593955706137672" name="contents" index="1oi5zu" />
@@ -209,18 +209,19 @@
                   </node>
                   <node concept="1oi5ST" id="5lJXKv6Ge" role="1ojpOf">
                     <property role="TrG5h" value="parameter" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="5lJXKv6H_" role="1oi5TL">
-                      <node concept="1oi5Wm" id="5lJXKv6HA" role="1ojpOf">
-                        <property role="TrG5h" value="concept" />
-                        <node concept="1oi5XN" id="5lJXKv6HB" role="1oi5zu">
-                          <property role="1oi5yK" value="ClassifierType" />
+                    <node concept="KCUsM" id="3t7_2FgoIyR" role="1oi5TL">
+                      <node concept="1oi5UN" id="5lJXKv6H_" role="KCVpo">
+                        <node concept="1oi5Wm" id="5lJXKv6HA" role="1ojpOf">
+                          <property role="TrG5h" value="concept" />
+                          <node concept="1oi5XN" id="5lJXKv6HB" role="1oi5zu">
+                            <property role="1oi5yK" value="ClassifierType" />
+                          </node>
                         </node>
-                      </node>
-                      <node concept="1oi5Wm" id="5lJXKv6HC" role="1ojpOf">
-                        <property role="TrG5h" value="classifier" />
-                        <node concept="1oi5XN" id="5lJXKv6HD" role="1oi5zu">
-                          <property role="1oi5yK" value="String" />
+                        <node concept="1oi5Wm" id="5lJXKv6HC" role="1ojpOf">
+                          <property role="TrG5h" value="classifier" />
+                          <node concept="1oi5XN" id="5lJXKv6HD" role="1oi5zu">
+                            <property role="1oi5yK" value="String" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -245,18 +246,19 @@
                   <property role="2IF10e" value="CLASSIFIER_TYPE" />
                   <node concept="1oi5ST" id="5lJXKt5l$" role="1ojpOf">
                     <property role="TrG5h" value="parameter" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="5lJXKt5l_" role="1oi5TL">
-                      <node concept="1oi5Wm" id="5lJXKt5lB" role="1ojpOf">
-                        <property role="TrG5h" value="concept" />
-                        <node concept="1oi5XN" id="5lJXKt5lC" role="1oi5zu">
-                          <property role="1oi5yK" value="ClassifierType" />
+                    <node concept="KCUsM" id="3t7_2FgoIyM" role="1oi5TL">
+                      <node concept="1oi5UN" id="5lJXKt5l_" role="KCVpo">
+                        <node concept="1oi5Wm" id="5lJXKt5lB" role="1ojpOf">
+                          <property role="TrG5h" value="concept" />
+                          <node concept="1oi5XN" id="5lJXKt5lC" role="1oi5zu">
+                            <property role="1oi5yK" value="ClassifierType" />
+                          </node>
                         </node>
-                      </node>
-                      <node concept="1oi5Wm" id="5lJXKt5lD" role="1ojpOf">
-                        <property role="TrG5h" value="classifier" />
-                        <node concept="1oi5XN" id="5lJXKt5lE" role="1oi5zu">
-                          <property role="1oi5yK" value="String" />
+                        <node concept="1oi5Wm" id="5lJXKt5lD" role="1ojpOf">
+                          <property role="TrG5h" value="classifier" />
+                          <node concept="1oi5XN" id="5lJXKt5lE" role="1oi5zu">
+                            <property role="1oi5yK" value="String" />
+                          </node>
                         </node>
                       </node>
                     </node>

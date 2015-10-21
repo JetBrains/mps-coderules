@@ -102,10 +102,6 @@
     <property role="3GE5qa" value="role" />
     <property role="1pbfSe" value="1703960837" />
     <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
-    <node concept="1TJgyi" id="6$jH9oLmYHk" role="1TKVEl">
-      <property role="TrG5h" value="cardinality" />
-      <ref role="AX2Wp" node="6$jH9oLmYG0" resolve="Cardinality" />
-    </node>
     <node concept="PrWs8" id="6$jH9oLmYEr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -120,19 +116,6 @@
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
-    </node>
-  </node>
-  <node concept="AxPO7" id="6$jH9oLmYG0">
-    <property role="TrG5h" value="Cardinality" />
-    <property role="3GE5qa" value="role" />
-    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
-    <node concept="M4N5e" id="6$jH9oLmYG1" role="M5hS2">
-      <property role="1uS6qv" value="single" />
-      <property role="1uS6qo" value="single" />
-    </node>
-    <node concept="M4N5e" id="6$jH9oLmYGZ" role="M5hS2">
-      <property role="1uS6qv" value="multiple" />
-      <property role="1uS6qo" value="multiple" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYI0">

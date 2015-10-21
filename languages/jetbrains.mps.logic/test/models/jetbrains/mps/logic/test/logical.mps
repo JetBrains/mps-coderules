@@ -172,7 +172,7 @@
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.Ast" flags="ng" index="1oi1Uc">
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.AtomExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
@@ -180,9 +180,6 @@
       </concept>
       <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Compound" flags="ng" index="1oi5UN">
         <child id="7571593955706284441" name="role" index="1ojpOf" />
-      </concept>
-      <concept id="7571593955706137189" name="jetbrains.mps.logic.structure.Role" flags="ng" index="1oi5VN">
-        <property id="7571593955706137428" name="cardinality" index="1oi5Z2" />
       </concept>
       <concept id="7571593955706137472" name="jetbrains.mps.logic.structure.ValueRole" flags="ng" index="1oi5Wm">
         <child id="7571593955706137672" name="contents" index="1oi5zu" />
@@ -385,20 +382,21 @@
                 <node concept="1oi5UN" id="1mP5b6jQND9" role="1oi0x0">
                   <node concept="1oi5ST" id="1mP5b6jQNDa" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="1mP5b6jQNDb" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1mP5b6jQNDd" role="1ojpOf">
-                        <property role="TrG5h" value="bar" />
-                        <node concept="1oi5XN" id="1mP5b6jQNDe" role="1oi5zu">
-                          <property role="1oi5yK" value="salam" />
+                    <node concept="KCUsM" id="3t7_2FgoIyQ" role="1oi5TL">
+                      <node concept="1oi5UN" id="1mP5b6jQNDb" role="KCVpo">
+                        <node concept="1oi5Wm" id="1mP5b6jQNDd" role="1ojpOf">
+                          <property role="TrG5h" value="bar" />
+                          <node concept="1oi5XN" id="1mP5b6jQNDe" role="1oi5zu">
+                            <property role="1oi5yK" value="salam" />
+                          </node>
                         </node>
                       </node>
-                    </node>
-                    <node concept="1oi5UN" id="1mP5b6jQNYq" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1mP5b6jQNYs" role="1ojpOf">
-                        <property role="TrG5h" value="baz" />
-                        <node concept="1oi5XN" id="1mP5b6jQNYt" role="1oi5zu">
-                          <property role="1oi5yK" value="dunya" />
+                      <node concept="1oi5UN" id="1mP5b6jQNYq" role="KCVpo">
+                        <node concept="1oi5Wm" id="1mP5b6jQNYs" role="1ojpOf">
+                          <property role="TrG5h" value="baz" />
+                          <node concept="1oi5XN" id="1mP5b6jQNYt" role="1oi5zu">
+                            <property role="1oi5yK" value="dunya" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -418,20 +416,21 @@
                 <node concept="1oi5UN" id="1mP5b6jQNDm" role="1oi0x0">
                   <node concept="1oi5ST" id="1mP5b6jQNDn" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="1mP5b6jQNYD" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1mP5b6jQNYE" role="1ojpOf">
-                        <property role="TrG5h" value="bar" />
-                        <node concept="1oi5XN" id="1mP5b6jQNYF" role="1oi5zu">
-                          <property role="1oi5yK" value="salam" />
+                    <node concept="KCUsM" id="3t7_2FgoIyN" role="1oi5TL">
+                      <node concept="1oi5UN" id="1mP5b6jQNYD" role="KCVpo">
+                        <node concept="1oi5Wm" id="1mP5b6jQNYE" role="1ojpOf">
+                          <property role="TrG5h" value="bar" />
+                          <node concept="1oi5XN" id="1mP5b6jQNYF" role="1oi5zu">
+                            <property role="1oi5yK" value="salam" />
+                          </node>
                         </node>
                       </node>
-                    </node>
-                    <node concept="1oi5UN" id="1mP5b6jQNDo" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1mP5b6jQNDp" role="1ojpOf">
-                        <property role="TrG5h" value="baz" />
-                        <node concept="1oi5XN" id="1mP5b6jQNDq" role="1oi5zu">
-                          <property role="1oi5yK" value="dunya" />
+                      <node concept="1oi5UN" id="1mP5b6jQNDo" role="KCVpo">
+                        <node concept="1oi5Wm" id="1mP5b6jQNDp" role="1ojpOf">
+                          <property role="TrG5h" value="baz" />
+                          <node concept="1oi5XN" id="1mP5b6jQNDq" role="1oi5zu">
+                            <property role="1oi5yK" value="dunya" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -467,7 +466,6 @@
                 <node concept="1oi5UN" id="1OShD0HUxWp" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0HUxWq" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0HUy1h" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0HUxWr" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0HUxWs" role="1ojpOf">
@@ -502,20 +500,21 @@
                 <node concept="1oi5UN" id="1OShD0HUxWA" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0HUxWB" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="1OShD0HUxWC" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1OShD0HUxWD" role="1ojpOf">
-                        <property role="TrG5h" value="bar" />
-                        <node concept="1oi5XN" id="1OShD0HUxWE" role="1oi5zu">
-                          <property role="1oi5yK" value="salam" />
+                    <node concept="KCUsM" id="3t7_2FgoIyG" role="1oi5TL">
+                      <node concept="1oi5UN" id="1OShD0HUxWC" role="KCVpo">
+                        <node concept="1oi5Wm" id="1OShD0HUxWD" role="1ojpOf">
+                          <property role="TrG5h" value="bar" />
+                          <node concept="1oi5XN" id="1OShD0HUxWE" role="1oi5zu">
+                            <property role="1oi5yK" value="salam" />
+                          </node>
                         </node>
                       </node>
-                    </node>
-                    <node concept="1oi5UN" id="1OShD0HUxWF" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1OShD0HUxWG" role="1ojpOf">
-                        <property role="TrG5h" value="baz" />
-                        <node concept="1oi5XN" id="1OShD0HUxWH" role="1oi5zu">
-                          <property role="1oi5yK" value="dunya" />
+                      <node concept="1oi5UN" id="1OShD0HUxWF" role="KCVpo">
+                        <node concept="1oi5Wm" id="1OShD0HUxWG" role="1ojpOf">
+                          <property role="TrG5h" value="baz" />
+                          <node concept="1oi5XN" id="1OShD0HUxWH" role="1oi5zu">
+                            <property role="1oi5yK" value="dunya" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -551,7 +550,7 @@
                 <node concept="1oi5UN" id="1mP5b6jQOBo" role="1oi0x0">
                   <node concept="1oi5ST" id="1mP5b6jQOBp" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="multiple" />
+                    <node concept="KCUsM" id="3t7_2FgoIyS" role="1oi5TL" />
                   </node>
                 </node>
               </node>
@@ -568,7 +567,7 @@
                 <node concept="1oi5UN" id="1mP5b6jQOBE" role="1oi0x0">
                   <node concept="1oi5ST" id="1mP5b6jQOBF" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="multiple" />
+                    <node concept="KCUsM" id="3t7_2FgoIyH" role="1oi5TL" />
                   </node>
                 </node>
               </node>
@@ -601,7 +600,7 @@
                 <node concept="1oi5UN" id="1OShD0HUzFK" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0HUzFL" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="multiple" />
+                    <node concept="KCUsM" id="3t7_2FgoIyI" role="1oi5TL" />
                   </node>
                 </node>
               </node>
@@ -618,7 +617,6 @@
                 <node concept="1oi5UN" id="1OShD0HUzFR" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0HUzFS" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0HUzKT" role="1oi5TL" />
                   </node>
                 </node>
@@ -769,20 +767,21 @@
                 <node concept="1oi5UN" id="1OShD0HAz40" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0HAz41" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="1OShD0HAz42" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1OShD0HAz43" role="1ojpOf">
-                        <property role="TrG5h" value="bar" />
-                        <node concept="1oi5XN" id="1OShD0HAz44" role="1oi5zu">
-                          <property role="1oi5yK" value="abc" />
+                    <node concept="KCUsM" id="3t7_2FgoIyL" role="1oi5TL">
+                      <node concept="1oi5UN" id="1OShD0HAz42" role="KCVpo">
+                        <node concept="1oi5Wm" id="1OShD0HAz43" role="1ojpOf">
+                          <property role="TrG5h" value="bar" />
+                          <node concept="1oi5XN" id="1OShD0HAz44" role="1oi5zu">
+                            <property role="1oi5yK" value="abc" />
+                          </node>
                         </node>
                       </node>
-                    </node>
-                    <node concept="1oi5UN" id="1OShD0HA$2k" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1OShD0HA$2l" role="1ojpOf">
-                        <property role="TrG5h" value="qux" />
-                        <node concept="1oi5XN" id="1OShD0HA$2m" role="1oi5zu">
-                          <property role="1oi5yK" value="xyz" />
+                      <node concept="1oi5UN" id="1OShD0HA$2k" role="KCVpo">
+                        <node concept="1oi5Wm" id="1OShD0HA$2l" role="1ojpOf">
+                          <property role="TrG5h" value="qux" />
+                          <node concept="1oi5XN" id="1OShD0HA$2m" role="1oi5zu">
+                            <property role="1oi5yK" value="xyz" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -802,19 +801,20 @@
                 <node concept="1oi5UN" id="1OShD0HAz4a" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0HAz4b" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="multiple" />
-                    <node concept="1oi5UN" id="1OShD0HA$hg" role="1oi5TL">
-                      <node concept="1oi5Wm" id="1OShD0HA$hh" role="1ojpOf">
-                        <property role="TrG5h" value="bar" />
-                        <node concept="1oi5XN" id="1OShD0HA$hi" role="1oi5zu">
-                          <property role="1oi5yK" value="abc" />
+                    <node concept="KCUsM" id="3t7_2FgoIyT" role="1oi5TL">
+                      <node concept="1oi5UN" id="1OShD0HA$hg" role="KCVpo">
+                        <node concept="1oi5Wm" id="1OShD0HA$hh" role="1ojpOf">
+                          <property role="TrG5h" value="bar" />
+                          <node concept="1oi5XN" id="1OShD0HA$hi" role="1oi5zu">
+                            <property role="1oi5yK" value="abc" />
+                          </node>
                         </node>
                       </node>
-                    </node>
-                    <node concept="1oi5UN" id="1OShD0HAz4c" role="1oi5TL">
-                      <node concept="22Ky0T" id="1OShD0HAz4d" role="lGtFl">
-                        <node concept="37vLTw" id="1OShD0HAz4e" role="22Ky0K">
-                          <ref role="3cqZAo" node="1OShD0HAz3N" resolve="Node" />
+                      <node concept="1oi5UN" id="1OShD0HAz4c" role="KCVpo">
+                        <node concept="22Ky0T" id="1OShD0HAz4d" role="lGtFl">
+                          <node concept="37vLTw" id="1OShD0HAz4e" role="22Ky0K">
+                            <ref role="3cqZAo" node="1OShD0HAz3N" resolve="Node" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -886,7 +886,6 @@
                 <node concept="1oi5UN" id="1OShD0HRNoS" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0HRNoT" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0HRNEK" role="1oi5TL">
                       <node concept="1oi5UN" id="1OShD0HRNFa" role="KCVpo">
                         <node concept="1oi5Wm" id="1OShD0HRNFb" role="1ojpOf">
@@ -921,7 +920,6 @@
                 <node concept="1oi5UN" id="1OShD0HRNp5" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0HRNp6" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0HRNQR" role="1oi5TL">
                       <node concept="22Ky0T" id="1OShD0HTdYX" role="lGtFl">
                         <node concept="37vLTw" id="1OShD0HTdZb" role="22Ky0K">
@@ -980,7 +978,6 @@
                 <node concept="1oi5UN" id="1OShD0Ifj4B" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0Ifj4C" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0Ifj4D" role="1oi5TL" />
                   </node>
                 </node>
@@ -998,7 +995,6 @@
                 <node concept="1oi5UN" id="1OShD0Ifj4P" role="1oi0x0">
                   <node concept="1oi5ST" id="1OShD0Ifj4Q" role="1ojpOf">
                     <property role="TrG5h" value="foo" />
-                    <property role="1oi5Z2" value="single" />
                     <node concept="KCUsM" id="1OShD0Ifj4R" role="1oi5TL">
                       <node concept="22Ky0T" id="1OShD0Ifj4S" role="lGtFl">
                         <node concept="37vLTw" id="1OShD0Ifj4T" role="22Ky0K">
@@ -1322,14 +1318,14 @@
     <node concept="3clFb_" id="2ev$9JFEEfC" role="jymVt">
       <property role="TrG5h" value="anyTerms" />
       <node concept="3uibUv" id="2ev$9JFEFFy" role="3clF45">
-        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
+        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
       </node>
       <node concept="3Tm1VV" id="2ev$9JFEEfF" role="1B3o_S" />
       <node concept="3clFbS" id="2ev$9JFEEfG" role="3clF47">
         <node concept="3clFbF" id="2ev$9JFEGHn" role="3cqZAp">
           <node concept="10QFUN" id="2ev$9JFEGHp" role="3clFbG">
             <node concept="3uibUv" id="2ev$9JFEGHq" role="10QFUM">
-              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
+              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
             </node>
             <node concept="2YIFZM" id="2ev$9JFEGHr" role="10QFUP">
               <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
@@ -1451,14 +1447,14 @@
         </node>
       </node>
       <node concept="3uibUv" id="2ev$9JFF9Ok" role="3clF45">
-        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
+        <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
       </node>
       <node concept="3Tm1VV" id="2ev$9JFF8Wu" role="1B3o_S" />
       <node concept="3clFbS" id="2ev$9JFF8Wv" role="3clF47">
         <node concept="3clFbF" id="2ev$9JFFamF" role="3cqZAp">
           <node concept="10QFUN" id="2ev$9JFFamH" role="3clFbG">
             <node concept="3uibUv" id="2ev$9JFFamI" role="10QFUM">
-              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
+              <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
             </node>
             <node concept="2YIFZM" id="2ev$9JFFamJ" role="10QFUP">
               <ref role="37wK5l" to="n4y8:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
@@ -1633,7 +1629,7 @@
                 <ref role="37wK5l" to="ie8e:3JgCwkqiP3p" resolve="walkTerms" />
                 <node concept="10QFUN" id="2ev$9JFDJDT" role="37wK5m">
                   <node concept="3uibUv" id="5cGCTtqzhLw" role="10QFUM">
-                    <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="TermFunc" />
+                    <ref role="3uigEE" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
                   </node>
                   <node concept="2YIFZM" id="2ev$9JFDJDP" role="10QFUP">
                     <ref role="37wK5l" to="n4y8:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
