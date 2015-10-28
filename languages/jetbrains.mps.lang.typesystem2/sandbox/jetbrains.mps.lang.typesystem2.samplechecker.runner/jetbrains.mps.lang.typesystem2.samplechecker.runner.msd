@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.typesystem2.samplechecker.runner" uuid="c246f30f-e11c-4dc1-80c6-154d0aebc8b3" compileInMPS="true">
+<solution name="jetbrains.mps.lang.typesystem2.samplechecker.runner" uuid="c246f30f-e11c-4dc1-80c6-154d0aebc8b3" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -35,5 +35,18 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" fqName="jetbrains.mps.logic" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
+    <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
+    <module reference="b984ee52-f34d-4b6d-8812-866c1d3eae31(jetbrains.mps.jchr.runtime)" version="0" />
+    <module reference="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.typesystem2.runtime)" version="0" />
+    <module reference="3ddddf69-9ff0-426b-9365-51ae7356fb82(jetbrains.mps.lang.typesystem2.sample)" version="0" />
+    <module reference="b6db9382-d342-43fd-8051-5b6af3c0c80a(jetbrains.mps.lang.typesystem2.samplechecker.handler)" version="0" />
+    <module reference="c246f30f-e11c-4dc1-80c6-154d0aebc8b3(jetbrains.mps.lang.typesystem2.samplechecker.runner)" version="0" />
+    <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
+    <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
+  </dependencyVersions>
 </solution>
 

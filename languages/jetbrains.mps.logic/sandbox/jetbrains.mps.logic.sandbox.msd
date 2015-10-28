@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.logic.sandbox" uuid="eaa96e7c-030a-4e4f-8ae7-a24dff1e0572" compileInMPS="true">
+<solution name="jetbrains.mps.logic.sandbox" uuid="eaa96e7c-030a-4e4f-8ae7-a24dff1e0572" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -41,5 +41,12 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" fqName="jetbrains.mps.logic" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="b984ee52-f34d-4b6d-8812-866c1d3eae31(jetbrains.mps.jchr.runtime)" version="0" />
+    <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
+    <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
+    <module reference="eaa96e7c-030a-4e4f-8ae7-a24dff1e0572(jetbrains.mps.logic.sandbox)" version="0" />
+  </dependencyVersions>
 </solution>
 

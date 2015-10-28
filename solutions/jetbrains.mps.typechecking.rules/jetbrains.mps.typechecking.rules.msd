@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.typechecking.rules" uuid="c7366fe8-43b9-446d-82b3-5cfc76e71f17" compileInMPS="true">
+<solution name="jetbrains.mps.typechecking.rules" uuid="c7366fe8-43b9-446d-82b3-5cfc76e71f17" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -51,5 +51,18 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" fqName="jetbrains.mps.lang.typesystem" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
+    <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
+    <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
+    <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
+    <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
+    <module reference="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.typesystem2.runtime)" version="0" />
+    <module reference="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.typesystem2.template)" version="0" />
+    <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
+    <module reference="c7366fe8-43b9-446d-82b3-5cfc76e71f17(jetbrains.mps.typechecking.rules)" version="0" />
+  </dependencyVersions>
 </solution>
 
