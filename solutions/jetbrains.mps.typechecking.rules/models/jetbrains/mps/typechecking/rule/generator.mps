@@ -12,9 +12,9 @@
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -379,7 +379,7 @@
         </node>
         <node concept="3clFbF" id="tIwzd1ImVB" role="3cqZAp">
           <node concept="1rXfSq" id="tIwzd1ImV_" role="3clFbG">
-            <ref role="37wK5l" node="tIwzd1I3Xv" resolve="applyTemplates" />
+            <ref role="37wK5l" node="tIwzd1I3Xv" resolve="applyAndCollectRequired" />
             <node concept="37vLTw" id="tIwzd1I_8I" role="37wK5m">
               <ref role="3cqZAo" node="5NuEpF1qhgC" resolve="allTemplates" />
             </node>
@@ -1146,7 +1146,7 @@
     </node>
     <node concept="2tJIrI" id="5ntLU8Glzbb" role="jymVt" />
     <node concept="3clFb_" id="tIwzd1I3Xv" role="jymVt">
-      <property role="TrG5h" value="applyTemplates" />
+      <property role="TrG5h" value="applyAndCollectRequired" />
       <node concept="3Tm6S6" id="tIwzd1I3Xw" role="1B3o_S" />
       <node concept="3vKaQO" id="tIwzd1JBnD" role="3clF45">
         <node concept="3Tqbb2" id="tIwzd1JBnF" role="3O5elw" />
@@ -1554,7 +1554,7 @@
           <node concept="3clFbF" id="tIwzd1JpeR" role="3cqZAp">
             <node concept="1Ls8ON" id="tIwzd1JpeP" role="3clFbG">
               <node concept="1rXfSq" id="tIwzd1I3X_" role="1Lso8e">
-                <ref role="37wK5l" node="tIwzd1I3Xv" resolve="applyTemplates" />
+                <ref role="37wK5l" node="tIwzd1I3Xv" resolve="applyAndCollectRequired" />
                 <node concept="37vLTw" id="tIwzd1I3Xz" role="37wK5m">
                   <ref role="3cqZAo" node="5ntLU8GlzSJ" resolve="allTemplates" />
                 </node>
