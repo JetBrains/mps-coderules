@@ -2178,7 +2178,7 @@
                           <node concept="1oi5Wm" id="3KV3FXk2oIY" role="1ojpOf">
                             <property role="TrG5h" value="classifier" />
                             <node concept="1oi5XN" id="3KV3FXk2oIZ" role="1oi5zu">
-                              <property role="1oi5yK" value="Long" />
+                              <property role="1oi5yK" value="Double" />
                             </node>
                           </node>
                         </node>
