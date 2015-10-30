@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mps-{closures,collections}">
+    <CLASSES>
+      <root url="jar:///Applications/MPS 3.3 EAP.app/Contents/lib/mps-closures.jar!/" />
+      <root url="jar:///Applications/MPS 3.3 EAP.app/Contents/lib/mps-collections.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
