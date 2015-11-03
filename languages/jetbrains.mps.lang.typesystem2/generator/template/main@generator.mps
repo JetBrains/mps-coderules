@@ -3472,6 +3472,11 @@
         <node concept="14ZrTv" id="2DKqMqO$mEo" role="14ZwWg">
           <node concept="30G5F_" id="2DKqMqO$mEp" role="150hEN">
             <node concept="3clFbS" id="2DKqMqO$mEq" role="2VODD2">
+              <node concept="3SKdUt" id="1_iD3HAeVNO" role="3cqZAp">
+                <node concept="3SKdUq" id="1_iD3HAeVQY" role="3SKWNk">
+                  <property role="3SKdUp" value="FIXME: need a separate constraint for equality. don't mix unification and eq" />
+                </node>
+              </node>
               <node concept="3clFbF" id="2c3nq4GQMOa" role="3cqZAp">
                 <node concept="22lmx$" id="2c3nq4GQQNO" role="3clFbG">
                   <node concept="2YFouu" id="2c3nq4GQRRR" role="3uHU7w">
