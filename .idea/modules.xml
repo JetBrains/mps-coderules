@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/runtime/typesystem2.runtime.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/runtime/typesystem2.runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem.sample/typesystem2.sandbox.sample.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem.sample/typesystem2.sandbox.sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/test/jetbrains.mps.lang.typesystem2.test/typesystem2.test.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/test/jetbrains.mps.lang.typesystem2.test/typesystem2.test.iml" />
     </modules>
   </component>
 </project>
