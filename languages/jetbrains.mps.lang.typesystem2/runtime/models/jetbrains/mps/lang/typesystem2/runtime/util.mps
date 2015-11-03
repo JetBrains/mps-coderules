@@ -956,10 +956,8 @@
                           <node concept="37vLTw" id="4peSo3CINVt" role="37wK5m">
                             <ref role="3cqZAo" node="4peSo3CIJRS" resolve="sb" />
                           </node>
-                          <node concept="2ShNRf" id="4peSo3D0NgM" role="37wK5m">
-                            <node concept="HV5vD" id="4peSo3D0N_6" role="2ShVmc">
-                              <ref role="HV5vE" node="3gJBs5s$bxr" resolve="NodePrinter.DefaultVariableSymbol" />
-                            </node>
+                          <node concept="37vLTw" id="5_6ImQYJS0a" role="37wK5m">
+                            <ref role="3cqZAo" node="4peSo3D1wUl" resolve="variableSymbol" />
                           </node>
                         </node>
                       </node>
