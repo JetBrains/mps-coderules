@@ -390,12 +390,21 @@
             </node>
           </node>
           <node concept="3clFbS" id="3KV3FXjZMUD" role="3clFbx">
+            <node concept="3clFbF" id="5_6ImQZ8n1E" role="3cqZAp">
+              <node concept="2YIFZM" id="5_6ImQZ8n8A" role="3clFbG">
+                <ref role="37wK5l" to="yg8f:5_6ImQZ8ja0" resolve="fail" />
+                <ref role="1Pybhc" to="yg8f:5_6ImQZ8j9D" resolve="SolverUtil" />
+                <node concept="Xl_RD" id="5_6ImQZ8nfH" role="37wK5m">
+                  <property role="Xl_RC" value="could not find LUB" />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs6" id="3KV3FXjZMUE" role="3cqZAp">
               <node concept="3clFbT" id="3KV3FXjZMUF" role="3cqZAk">
                 <property role="3clFbU" value="false" />
               </node>
             </node>
-            <node concept="3clFbH" id="3KV3FXk0uiD" role="3cqZAp" />
+            <node concept="3clFbH" id="5_6ImQZ8n8S" role="3cqZAp" />
           </node>
           <node concept="9aQIb" id="3KV3FXk0tjw" role="9aQIa">
             <node concept="3clFbS" id="3KV3FXk0tjx" role="9aQI4">
@@ -1630,7 +1639,7 @@
     <property role="TrG5h" value="SubtypePathSolver" />
     <node concept="2tJIrI" id="3KV3FXk1fFS" role="jymVt" />
     <node concept="2YIFZL" id="3KV3FXk1fGe" role="jymVt">
-      <property role="TrG5h" value="findSubtypePath" />
+      <property role="TrG5h" value="findSubtypingPath" />
       <node concept="37vLTG" id="3KV3FXk1fGz" role="3clF46">
         <property role="TrG5h" value="result" />
         <node concept="3uibUv" id="3KV3FXk1fGJ" role="1tU5fm">
@@ -1763,8 +1772,17 @@
         <node concept="3clFbH" id="3KV3FXk1jbh" role="3cqZAp" />
         <node concept="3clFbJ" id="3KV3FXk1kIP" role="3cqZAp">
           <node concept="3clFbS" id="3KV3FXk1kIR" role="3clFbx">
-            <node concept="3cpWs6" id="3KV3FXk1lze" role="3cqZAp">
-              <node concept="3clFbT" id="3KV3FXk1lBH" role="3cqZAk">
+            <node concept="3clFbF" id="5_6ImQZ8rNY" role="3cqZAp">
+              <node concept="2YIFZM" id="5_6ImQZ8rNZ" role="3clFbG">
+                <ref role="1Pybhc" to="yg8f:5_6ImQZ8j9D" resolve="SolverUtil" />
+                <ref role="37wK5l" to="yg8f:5_6ImQZ8ja0" resolve="fail" />
+                <node concept="Xl_RD" id="5_6ImQZ8rO0" role="37wK5m">
+                  <property role="Xl_RC" value="could not find subtyping path" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="5_6ImQZ8rO1" role="3cqZAp">
+              <node concept="3clFbT" id="5_6ImQZ8rO2" role="3cqZAk">
                 <property role="3clFbU" value="false" />
               </node>
             </node>
@@ -1829,7 +1847,7 @@
       <node concept="P$JXv" id="3KV3FXk1Zlo" role="lGtFl">
         <node concept="TZ5HA" id="3KV3FXk1Zlp" role="TZ5H$">
           <node concept="1dT_AC" id="3KV3FXk1Zlq" role="1dT_Ay">
-            <property role="1dT_AB" value="Finds the shortest path among those specified in " />
+            <property role="1dT_AB" value="Find the shortest path among those specified in " />
           </node>
           <node concept="1dT_AA" id="3KV3FXk1ZsS" role="1dT_Ay">
             <node concept="VVOAv" id="3KV3FXk1ZsY" role="qph3F">
@@ -1858,7 +1876,7 @@
             </node>
           </node>
           <node concept="1dT_AC" id="3KV3FXk1Zts" role="1dT_Ay">
-            <property role="1dT_AB" value="." />
+            <property role="1dT_AB" value=". Then reverse the path so that it becomes a supertypes path." />
           </node>
         </node>
         <node concept="TZ5HA" id="3KV3FXk1ZtF" role="TZ5H$">
@@ -1938,7 +1956,12 @@
             </node>
           </node>
           <node concept="1dT_AC" id="3KV3FXk28AY" role="1dT_Ay">
-            <property role="1dT_AB" value=" contains the shortest path originating at " />
+            <property role="1dT_AB" value=" contains the shortest path originating at the type in question" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5_6ImQZlA11" role="TZ5H$">
+          <node concept="1dT_AC" id="5_6ImQZlA12" role="1dT_Ay">
+            <property role="1dT_AB" value="and ending at " />
           </node>
           <node concept="1dT_AA" id="3KV3FXk28Ce" role="1dT_Ay">
             <node concept="VVOAv" id="3KV3FXk28Cu" role="qph3F">
@@ -2188,6 +2211,15 @@
             <node concept="3clFbH" id="3KV3FXk1KHA" role="3cqZAp" />
             <node concept="3clFbJ" id="3KV3FXk1R1l" role="3cqZAp">
               <node concept="3clFbS" id="3KV3FXk1R1n" role="3clFbx">
+                <node concept="3clFbF" id="5_6ImQZl_Vo" role="3cqZAp">
+                  <node concept="2YIFZM" id="5_6ImQZl_Y0" role="3clFbG">
+                    <ref role="37wK5l" to="33ny:~Collections.reverse(java.util.List):void" resolve="reverse" />
+                    <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                    <node concept="37vLTw" id="5_6ImQZl_Z7" role="37wK5m">
+                      <ref role="3cqZAo" node="3KV3FXk1Lsq" resolve="candidatePath" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="3KV3FXk1U$D" role="3cqZAp">
                   <node concept="37vLTI" id="3KV3FXk1UFS" role="3clFbG">
                     <node concept="37vLTw" id="3KV3FXk1UH3" role="37vLTx">

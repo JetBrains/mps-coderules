@@ -11,6 +11,7 @@
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.unification.tree/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -124,6 +125,7 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -1212,6 +1214,32 @@
     </node>
     <node concept="2tJIrI" id="46l0wJhtOHe" role="jymVt" />
     <node concept="3Tm1VV" id="46l0wJhtODA" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="5_6ImQZ8j9D">
+    <property role="TrG5h" value="SolverUtil" />
+    <node concept="2tJIrI" id="5_6ImQZ8j9N" role="jymVt" />
+    <node concept="2YIFZL" id="5_6ImQZ8ja0" role="jymVt">
+      <property role="TrG5h" value="fail" />
+      <node concept="3cqZAl" id="5_6ImQZ8ja2" role="3clF45" />
+      <node concept="3Tm1VV" id="5_6ImQZ8ja3" role="1B3o_S" />
+      <node concept="3clFbS" id="5_6ImQZ8ja4" role="3clF47">
+        <node concept="YS8fn" id="5_6ImQZ8jaz" role="3cqZAp">
+          <node concept="2ShNRf" id="5_6ImQZ8jaX" role="YScLw">
+            <node concept="1pGfFk" id="5_6ImQZ8l0Z" role="2ShVmc">
+              <ref role="37wK5l" to="eifs:~FailureException.&lt;init&gt;(java.lang.String)" resolve="FailureException" />
+              <node concept="37vLTw" id="5_6ImQZ8l2j" role="37wK5m">
+                <ref role="3cqZAo" node="5_6ImQZ8l1u" resolve="message" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5_6ImQZ8l1u" role="3clF46">
+        <property role="TrG5h" value="message" />
+        <node concept="17QB3L" id="5_6ImQZ8l1t" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="5_6ImQZ8j9E" role="1B3o_S" />
   </node>
 </model>
 
