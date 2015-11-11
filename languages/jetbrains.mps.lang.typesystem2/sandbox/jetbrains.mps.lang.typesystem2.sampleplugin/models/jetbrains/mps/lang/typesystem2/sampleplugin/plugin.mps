@@ -2509,10 +2509,7 @@
                   <node concept="liA8E" id="41ox5VndUbN" role="2OqNvi">
                     <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
                     <node concept="Xl_RD" id="41ox5VndUbO" role="37wK5m">
-                      <property role="Xl_RC" value="tellCheck" />
-                    </node>
-                    <node concept="3VsKOn" id="41ox5VndUbP" role="37wK5m">
-                      <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                      <property role="Xl_RC" value="tellMain" />
                     </node>
                   </node>
                 </node>
@@ -2527,9 +2524,6 @@
                   <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
                   <node concept="37vLTw" id="41ox5VndUYO" role="37wK5m">
                     <ref role="3cqZAo" node="41ox5Vneabb" resolve="handler" />
-                  </node>
-                  <node concept="37vLTw" id="41ox5Vnednh" role="37wK5m">
-                    <ref role="3cqZAo" node="41ox5VnecVQ" resolve="atomToCheck" />
                   </node>
                 </node>
               </node>
@@ -4499,6 +4493,15 @@
   </node>
   <node concept="312cEu" id="4i4XGQZlbGA">
     <property role="TrG5h" value="MessageViewTracer" />
+    <node concept="Wx3nA" id="2$F5QpuoU$X" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="TAB_NAME" />
+      <node concept="3Tm6S6" id="2$F5QpuoU$U" role="1B3o_S" />
+      <node concept="17QB3L" id="2$F5QpuoU$V" role="1tU5fm" />
+      <node concept="Xl_RD" id="2$F5QpuoU$W" role="33vP2m">
+        <property role="Xl_RC" value="Constraint" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="4i4XGQZmEEY" role="jymVt" />
     <node concept="Wx3nA" id="61vfVfp5OZI" role="jymVt">
       <property role="TrG5h" value="ALL" />
@@ -4622,8 +4625,8 @@
             </node>
             <node concept="liA8E" id="61vfVfp4hDh" role="2OqNvi">
               <ref role="37wK5l" to="57ty:~MessagesViewTool.clear(java.lang.String):void" resolve="clear" />
-              <node concept="Xl_RD" id="61vfVfp4Tny" role="37wK5m">
-                <property role="Xl_RC" value="JCHR" />
+              <node concept="37vLTw" id="2$F5QpuoU_3" role="37wK5m">
+                <ref role="3cqZAo" node="2$F5QpuoU$X" resolve="TAB_NAME" />
               </node>
             </node>
           </node>
@@ -4724,8 +4727,8 @@
               <node concept="37vLTw" id="623frvFBjyk" role="37wK5m">
                 <ref role="3cqZAo" node="623frvFBjyf" resolve="msg" />
               </node>
-              <node concept="Xl_RD" id="623frvFBgMW" role="37wK5m">
-                <property role="Xl_RC" value="JCHR" />
+              <node concept="37vLTw" id="2$F5QpuoU_9" role="37wK5m">
+                <ref role="3cqZAo" node="2$F5QpuoU$X" resolve="TAB_NAME" />
               </node>
             </node>
           </node>
@@ -5515,8 +5518,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="Xl_RD" id="4i4XGQZnOgL" role="37wK5m">
-                <property role="Xl_RC" value="Constraint" />
+              <node concept="37vLTw" id="2$F5QpuoU_f" role="37wK5m">
+                <ref role="3cqZAo" node="2$F5QpuoU$X" resolve="TAB_NAME" />
               </node>
             </node>
           </node>
