@@ -14,11 +14,11 @@
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="qgy9" ref="r:5195f849-566d-46a3-bb0a-7ae9911e2652(jetbrains.mps.logic.editor)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
-    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
+    <import index="qgy9" ref="r:5195f849-566d-46a3-bb0a-7ae9911e2652(jetbrains.mps.logic.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -597,15 +597,10 @@
                 <property role="VOm3f" value="true" />
               </node>
             </node>
-            <node concept="3F2HdR" id="6wQEDbCLGSM" role="3EZMnx">
+            <node concept="3F1sOY" id="5Ii$nZP0k3L" role="3EZMnx">
               <ref role="1NtTu8" to="wq2x:6wQEDbCLoaZ" />
-              <node concept="ljvvj" id="6wQEDbCLGTo" role="3F10Kt">
+              <node concept="ljvvj" id="5Ii$nZP0k4q" role="3F10Kt">
                 <property role="VOm3f" value="true" />
-              </node>
-              <node concept="2iRkQZ" id="6wQEDbCMBJo" role="2czzBx" />
-              <node concept="3F0ifn" id="6wQEDbCLGTr" role="2czzBI">
-                <property role="3F0ifm" value="" />
-                <property role="ilYzB" value="with no fragments" />
               </node>
             </node>
             <node concept="3F1sOY" id="1zN1RIkQKV0" role="3EZMnx">
@@ -2226,7 +2221,7 @@
   </node>
   <node concept="24kQdi" id="2CEQDIDTdJz">
     <property role="3GE5qa" value="type" />
-    <ref role="1XX52x" to="wq2x:2CEQDIDRX6M" resolve="TypeTerm" />
+    <ref role="1XX52x" to="wq2x:2CEQDIDRX6M" resolve="TypeTermExpression" />
     <node concept="3EZMnI" id="1pt0VTMv4B6" role="2wV5jI">
       <node concept="1iCGBv" id="6SKZg6H4nse" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:2CEQDIDTdBu" />

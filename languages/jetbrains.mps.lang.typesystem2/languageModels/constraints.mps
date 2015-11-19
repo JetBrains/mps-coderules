@@ -241,14 +241,14 @@
             <node concept="3cpWsn" id="5MHpiylEu47" role="3cpWs9">
               <property role="TrG5h" value="rule" />
               <node concept="3Tqbb2" id="5MHpiylEu48" role="1tU5fm">
-                <ref role="ehGHo" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
+                <ref role="ehGHo" to="wq2x:7eGEHDlgPU4" resolve="Rule" />
               </node>
               <node concept="2OqwBi" id="5MHpiylEu49" role="33vP2m">
                 <node concept="2rP1CM" id="5MHpiylEu4a" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="5MHpiylEu4b" role="2OqNvi">
                   <node concept="1xMEDy" id="5MHpiylEu4c" role="1xVPHs">
-                    <node concept="chp4Y" id="5nh5pPDwZW6" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:4EfgX2ET3GH" resolve="AbstractRule" />
+                    <node concept="chp4Y" id="5Ii$nZP0jzP" role="ri$Ld">
+                      <ref role="cht4Q" to="wq2x:7eGEHDlgPU4" resolve="Rule" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="5MHpiylEu4e" role="1xVPHs" />
