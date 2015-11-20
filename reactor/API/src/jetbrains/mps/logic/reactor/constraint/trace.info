@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/2394628030058821331">
+    <file name="ComputingTracer.java">
+      <node id="2394628030058889702" at="8,0,9,0" concept="5" trace="askSuccess#(Ljetbrains/mps/logic/reactor/constraint/AutoConstraint;null)V" />
+      <node id="2394628030058891476" at="10,0,11,0" concept="5" trace="askFailure#(Ljetbrains/mps/logic/reactor/constraint/AutoConstraint;null)V" />
+      <scope id="2394628030058889702" at="8,0,9,0">
+        <var name="args" id="2394628030058890766" />
+        <var name="autoConstraint" id="2394628030058890707" />
+      </scope>
+      <scope id="2394628030058891476" at="10,0,11,0">
+        <var name="args" id="2394628030058891479" />
+        <var name="autoConstraint" id="2394628030058891477" />
+      </scope>
+      <unit id="2394628030058821331" at="6,0,13,0" name="jetbrains.mps.logic.reactor.constraint.ComputingTracer" />
+    </file>
+  </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546273004">
+    <file name="Instructible.java">
+      <node id="7785665572546273471" at="8,0,9,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/constraint/Constraint;null)V" />
+      <scope id="7785665572546273471" at="8,0,9,0">
+        <var name="arg" id="7785665572546274393" />
+        <var name="constraint" id="5217246026231831102" />
+      </scope>
+      <unit id="7785665572546273004" at="6,0,11,0" name="jetbrains.mps.logic.reactor.constraint.Instructible" />
+    </file>
+  </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546275793">
+    <file name="Queryable.java">
+      <node id="7785665572546276256" at="8,0,9,0" concept="5" trace="ask#(Ljetbrains/mps/logic/reactor/constraint/AutoConstraint;null)Z" />
+      <scope id="7785665572546276256" at="8,0,9,0">
+        <var name="arg" id="7785665572546277217" />
+        <var name="autoConstraint" id="5217246026231849983" />
+      </scope>
+      <unit id="7785665572546275793" at="6,0,11,0" name="jetbrains.mps.logic.reactor.constraint.Queryable" />
+    </file>
+  </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546282176">
+    <file name="ComputingSession.java">
+      <node id="7785665572546537045" at="16,69,17,45" concept="7" />
+      <node id="2394628030058887824" at="20,52,21,25" concept="1" />
+      <node id="7785665572546551385" at="26,44,27,40" concept="1" />
+      <node id="2394628030058826206" at="30,72,31,27" concept="1" />
+      <node id="2394628030058830503" at="31,27,32,18" concept="7" />
+      <node id="7785665572546617944" at="35,42,36,62" concept="6" />
+      <node id="7785665572546654867" at="37,38,38,33" concept="1" />
+      <node id="7785665572546655075" at="39,7,40,21" concept="7" />
+      <node id="7785665572546549222" at="43,0,44,0" concept="2" trace="items" />
+      <node id="2394628030058826202" at="44,0,45,0" concept="2" trace="tracer" />
+      <node id="5217246026231909736" at="48,68,49,46" concept="6" />
+      <node id="3113146058921147309" at="50,25,51,89" concept="10" />
+      <node id="5217246026231915015" at="52,5,53,0" concept="8" />
+      <node id="5217246026231915802" at="53,0,54,43" concept="7" />
+      <node id="5217246026231937543" at="57,58,58,47" concept="6" />
+      <node id="5217246026231938307" at="59,26,60,84" concept="10" />
+      <node id="5217246026231939616" at="61,5,62,0" concept="8" />
+      <node id="5217246026231940146" at="62,0,63,34" concept="1" />
+      <node id="5217246026233198367" at="68,62,69,26" concept="7" />
+      <node id="5217246026233198386" at="71,5,72,16" concept="7" />
+      <node id="5217246026233178759" at="77,61,78,26" concept="7" />
+      <node id="5217246026233191067" at="80,5,81,16" concept="7" />
+      <node id="7785665572546314459" at="85,46,86,67" concept="10" />
+      <node id="7785665572546321112" at="87,5,88,36" concept="7" />
+      <node id="7785665572546325981" at="92,45,93,67" concept="10" />
+      <node id="7785665572546325992" at="94,5,95,35" concept="7" />
+      <node id="7785665572546331232" at="98,84,99,43" concept="1" />
+      <node id="7785665572546333582" at="102,81,103,39" concept="1" />
+      <node id="3113146058921098945" at="106,0,107,0" concept="2" trace="handlers" />
+      <node id="7785665572546302065" at="108,0,109,0" concept="2" trace="solvers" />
+      <node id="2394628030058867716" at="110,0,111,0" concept="2" trace="tracer" />
+      <node id="7785665572546530345" at="16,0,19,0" concept="9" trace="with#(null)Ljetbrains/mps/logic/reactor/constraint/ComputingSession/Builder;" />
+      <node id="7785665572546474667" at="20,0,23,0" concept="0" trace="ComputingSession#(Ljetbrains/mps/logic/reactor/constraint/ComputingTracer;)V" />
+      <node id="7785665572546531299" at="26,0,29,0" concept="0" trace="Builder#(null)V" />
+      <node id="7785665572546618363" at="36,62,39,7" concept="3" />
+      <node id="5217246026231909836" at="49,46,52,5" concept="4" />
+      <node id="5217246026231937636" at="58,47,61,5" concept="4" />
+      <node id="5217246026233198365" at="67,71,70,7" concept="4" />
+      <node id="5217246026233173468" at="76,71,79,7" concept="4" />
+      <node id="7785665572546312340" at="84,57,87,5" concept="4" />
+      <node id="7785665572546325979" at="91,57,94,5" concept="4" />
+      <node id="7785665572546291885" at="98,0,101,0" concept="5" trace="registerHandler#(Ljetbrains/mps/logic/reactor/constraint/Constraint;Ljetbrains/mps/logic/reactor/constraint/Instructible;)V" />
+      <node id="7785665572546292859" at="102,0,105,0" concept="5" trace="registerSolver#(Ljetbrains/mps/logic/reactor/constraint/AutoConstraint;Ljetbrains/mps/logic/reactor/constraint/Queryable;)V" />
+      <node id="2394628030058805485" at="30,0,34,0" concept="5" trace="withTracer#(Ljetbrains/mps/logic/reactor/constraint/ComputingTracer;)Ljetbrains/mps/logic/reactor/constraint/ComputingSession/Builder;" />
+      <node id="5217246026233198363" at="66,54,71,5" concept="3" />
+      <node id="5217246026233172453" at="75,62,80,5" concept="3" />
+      <node id="7785665572546284968" at="84,0,90,0" concept="5" trace="handler#(Ljetbrains/mps/logic/reactor/constraint/Constraint;)Ljetbrains/mps/logic/reactor/constraint/Instructible;" />
+      <node id="7785665572546285620" at="91,0,97,0" concept="5" trace="solver#(Ljetbrains/mps/logic/reactor/constraint/AutoConstraint;)Ljetbrains/mps/logic/reactor/constraint/Queryable;" />
+      <node id="7785665572546610892" at="35,0,42,0" concept="5" trace="newSession#()Ljetbrains/mps/logic/reactor/constraint/ComputingSession;" />
+      <node id="5217246026231897797" at="48,0,56,0" concept="5" trace="ask#(Ljetbrains/mps/logic/reactor/constraint/AutoConstraint;null)Z" />
+      <node id="5217246026231929908" at="57,0,65,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/constraint/Constraint;null)V" />
+      <node id="5217246026233138983" at="66,0,74,0" concept="5" trace="lookupConstraint#(Ljava/lang/Class;)Ljetbrains/mps/logic/reactor/constraint/Constraint;" />
+      <node id="5217246026233157724" at="75,0,83,0" concept="5" trace="lookupAutoConstraint#(Ljava/lang/Class;)Ljetbrains/mps/logic/reactor/constraint/AutoConstraint;" />
+      <scope id="7785665572546530349" at="16,69,17,45" />
+      <scope id="7785665572546474671" at="20,52,21,25" />
+      <scope id="7785665572546531302" at="26,44,27,40" />
+      <scope id="7785665572546618365" at="37,38,38,33" />
+      <scope id="5217246026231909838" at="50,25,51,89" />
+      <scope id="5217246026231937638" at="59,26,60,84" />
+      <scope id="5217246026233198366" at="68,62,69,26" />
+      <scope id="5217246026233173469" at="77,61,78,26" />
+      <scope id="7785665572546312341" at="85,46,86,67" />
+      <scope id="7785665572546325980" at="92,45,93,67" />
+      <scope id="7785665572546291889" at="98,84,99,43" />
+      <scope id="7785665572546292862" at="102,81,103,39" />
+      <scope id="2394628030058805489" at="30,72,32,18" />
+      <scope id="7785665572546530345" at="16,0,19,0">
+        <var name="cst" id="7785665572546531671" />
+      </scope>
+      <scope id="7785665572546474667" at="20,0,23,0">
+        <var name="tracer" id="2394628030058885505" />
+      </scope>
+      <scope id="7785665572546531299" at="26,0,29,0">
+        <var name="item" id="7785665572546532046" />
+      </scope>
+      <scope id="7785665572546618363" at="36,62,39,7">
+        <var name="ci" id="7785665572546618367" />
+      </scope>
+      <scope id="5217246026233198364" at="67,71,70,7" />
+      <scope id="5217246026233172455" at="76,71,79,7" />
+      <scope id="7785665572546291885" at="98,0,101,0">
+        <var name="constraint" id="7785665572546292483" />
+        <var name="instructible" id="7785665572546292614" />
+      </scope>
+      <scope id="7785665572546292859" at="102,0,105,0">
+        <var name="constraint" id="7785665572546292863" />
+        <var name="queryable" id="7785665572546292865" />
+      </scope>
+      <scope id="2394628030058805485" at="30,0,34,0">
+        <var name="tracer" id="2394628030058811857" />
+      </scope>
+      <scope id="7785665572546284972" at="84,57,88,36" />
+      <scope id="7785665572546285625" at="91,57,95,35" />
+      <scope id="7785665572546610895" at="35,42,40,21">
+        <var name="session" id="7785665572546617945" />
+      </scope>
+      <scope id="5217246026233198363" at="66,54,71,5">
+        <var name="e" id="5217246026233198379" />
+      </scope>
+      <scope id="5217246026233172453" at="75,62,80,5">
+        <var name="e" id="5217246026233172457" />
+      </scope>
+      <scope id="5217246026231897801" at="48,68,54,43">
+        <var name="solver" id="5217246026231909737" />
+      </scope>
+      <scope id="5217246026231929912" at="57,58,63,34">
+        <var name="handler" id="5217246026231937544" />
+      </scope>
+      <scope id="5217246026233138987" at="66,54,72,16" />
+      <scope id="5217246026233157731" at="75,62,81,16" />
+      <scope id="7785665572546284968" at="84,0,90,0">
+        <var name="constraint" id="7785665572546285221" />
+      </scope>
+      <scope id="7785665572546285620" at="91,0,97,0">
+        <var name="constraint" id="7785665572546285621" />
+      </scope>
+      <scope id="7785665572546610892" at="35,0,42,0" />
+      <scope id="5217246026231897797" at="48,0,56,0">
+        <var name="arg" id="5217246026231906313" />
+        <var name="autoConstraint" id="5217246026231904980" />
+      </scope>
+      <scope id="5217246026231929908" at="57,0,65,0">
+        <var name="arg" id="5217246026231935273" />
+        <var name="constraint" id="5217246026231933720" />
+      </scope>
+      <scope id="5217246026233138983" at="66,0,74,0">
+        <var name="clazz" id="5217246026233155818" />
+      </scope>
+      <scope id="5217246026233157724" at="75,0,83,0">
+        <var name="clazz" id="5217246026233157725" />
+      </scope>
+      <unit id="7785665572546518411" at="24,0,46,0" name="jetbrains.mps.logic.reactor.constraint.ComputingSession$Builder" />
+      <unit id="7785665572546282176" at="14,0,112,0" name="jetbrains.mps.logic.reactor.constraint.ComputingSession" />
+    </file>
+  </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546285342">
+    <file name="AbstractConstraint.java">
+      <node id="7785665572546468921" at="11,55,12,25" concept="1" />
+      <node id="7785665572546374506" at="12,25,13,23" concept="1" />
+      <node id="7785665572546286911" at="16,24,17,18" concept="7" />
+      <node id="5217246026233294697" at="20,26,21,18" concept="7" />
+      <node id="7785665572546377911" at="24,22,25,17" concept="7" />
+      <node id="7785665572546421514" at="28,57,29,43" concept="7" />
+      <node id="7785665572546421645" at="32,53,33,46" concept="7" />
+      <node id="5217246026233310452" at="36,0,37,0" concept="5" trace="solverClass#()Ljava/lang/Class;" />
+      <node id="5217246026233035232" at="38,55,39,25" concept="7" />
+      <node id="7785665572546318932" at="43,28,44,18" concept="7" />
+      <node id="7785665572546684117" at="47,36,48,29" concept="7" />
+      <node id="7785665572546684168" at="51,44,52,33" concept="7" />
+      <node id="7785665572546404455" at="55,87,56,58" concept="1" />
+      <node id="7785665572546406620" at="59,80,60,58" concept="1" />
+      <node id="5217246026234681809" at="60,58,61,55" concept="1" />
+      <node id="7785665572546293515" at="66,20,67,18" concept="7" />
+      <node id="7785665572546293521" at="69,55,70,19" concept="7" />
+      <node id="7785665572546293534" at="71,5,72,0" concept="8" />
+      <node id="7785665572546293535" at="72,0,73,53" concept="6" />
+      <node id="7785665572546293553" at="74,92,75,19" concept="7" />
+      <node id="7785665572546293569" at="76,5,77,0" concept="8" />
+      <node id="7785665572546293570" at="77,0,78,16" concept="7" />
+      <node id="7785665572546293577" at="82,25,83,20" concept="6" />
+      <node id="7785665572546293590" at="83,20,84,87" concept="1" />
+      <node id="7785665572546293602" at="84,87,85,18" concept="7" />
+      <node id="7785665572546286813" at="88,0,89,0" concept="2" trace="symbol" />
+      <node id="7785665572546374502" at="89,0,90,0" concept="2" trace="arity" />
+      <node id="7785665572546286014" at="16,0,19,0" concept="5" trace="name#()Ljava/lang/String;" />
+      <node id="5217246026233294693" at="20,0,23,0" concept="5" trace="symbol#()Ljava/lang/String;" />
+      <node id="7785665572546375951" at="24,0,27,0" concept="5" trace="arity#()I" />
+      <node id="7785665572546416798" at="28,0,31,0" concept="5" trace="handler#(Ljetbrains/mps/logic/reactor/constraint/ComputingSession;)Ljetbrains/mps/logic/reactor/constraint/Instructible;" />
+      <node id="7785665572546421640" at="32,0,35,0" concept="5" trace="solver#(Ljetbrains/mps/logic/reactor/constraint/ComputingSession;)Ljetbrains/mps/logic/reactor/constraint/Queryable;" />
+      <node id="5217246026233026711" at="38,0,41,0" concept="5" trace="handlerClass#()Ljava/lang/Class;" />
+      <node id="7785665572546678499" at="47,0,50,0" concept="5" trace="asConstraint#()Ljetbrains/mps/logic/reactor/constraint/Constraint;" />
+      <node id="7785665572546684164" at="51,0,54,0" concept="5" trace="asAutoConstraint#()Ljetbrains/mps/logic/reactor/constraint/AutoConstraint;" />
+      <node id="7785665572546396680" at="55,0,58,0" concept="5" trace="registerHandler#(Ljetbrains/mps/logic/reactor/constraint/ComputingSession;Ljetbrains/mps/logic/reactor/constraint/Instructible;)V" />
+      <node id="7785665572546293513" at="65,35,68,5" concept="4" />
+      <node id="7785665572546293519" at="68,5,71,5" concept="4" />
+      <node id="7785665572546293551" at="73,53,76,5" concept="4" />
+      <node id="7785665572546286535" at="11,0,15,0" concept="0" trace="AbstractConstraint#(Ljava/lang/String;I)V" />
+      <node id="7785665572546318121" at="42,0,46,0" concept="5" trace="toString#()Ljava/lang/String;" />
+      <node id="7785665572546406612" at="59,0,63,0" concept="5" trace="registerSolver#(Ljetbrains/mps/logic/reactor/constraint/ComputingSession;Ljetbrains/mps/logic/reactor/constraint/Queryable;)V" />
+      <node id="7785665572546293572" at="81,0,87,0" concept="5" trace="hashCode#()I" />
+      <node id="7785665572546293509" at="64,0,80,0" concept="5" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="7785665572546286018" at="16,24,17,18" />
+      <scope id="5217246026233294696" at="20,26,21,18" />
+      <scope id="7785665572546375955" at="24,22,25,17" />
+      <scope id="7785665572546416802" at="28,57,29,43" />
+      <scope id="7785665572546421644" at="32,53,33,46" />
+      <scope id="5217246026233310452" at="36,0,37,0" />
+      <scope id="5217246026233026719" at="38,55,39,25" />
+      <scope id="7785665572546318125" at="43,28,44,18" />
+      <scope id="7785665572546678503" at="47,36,48,29" />
+      <scope id="7785665572546684167" at="51,44,52,33" />
+      <scope id="7785665572546396684" at="55,87,56,58" />
+      <scope id="7785665572546293514" at="66,20,67,18" />
+      <scope id="7785665572546293520" at="69,55,70,19" />
+      <scope id="7785665572546293552" at="74,92,75,19" />
+      <scope id="7785665572546286539" at="11,55,13,23" />
+      <scope id="7785665572546406619" at="59,80,61,55" />
+      <scope id="7785665572546286014" at="16,0,19,0" />
+      <scope id="5217246026233294693" at="20,0,23,0" />
+      <scope id="7785665572546375951" at="24,0,27,0" />
+      <scope id="7785665572546416798" at="28,0,31,0">
+        <var name="session" id="7785665572546420663" />
+      </scope>
+      <scope id="7785665572546421640" at="32,0,35,0">
+        <var name="session" id="7785665572546421641" />
+      </scope>
+      <scope id="5217246026233026711" at="38,0,41,0" />
+      <scope id="7785665572546678499" at="47,0,50,0" />
+      <scope id="7785665572546684164" at="51,0,54,0" />
+      <scope id="7785665572546396680" at="55,0,58,0">
+        <var name="instructible" id="7785665572546403644" />
+        <var name="session" id="7785665572546402854" />
+      </scope>
+      <scope id="7785665572546293575" at="82,25,85,18">
+        <var name="result" id="7785665572546293578" />
+      </scope>
+      <scope id="7785665572546286535" at="11,0,15,0">
+        <var name="arity" id="7785665572546374206" />
+        <var name="symbol" id="7785665572546286568" />
+      </scope>
+      <scope id="7785665572546318121" at="42,0,46,0" />
+      <scope id="7785665572546406612" at="59,0,63,0">
+        <var name="queryable" id="7785665572546406615" />
+        <var name="session" id="7785665572546406613" />
+      </scope>
+      <scope id="7785665572546293572" at="81,0,87,0" />
+      <scope id="7785665572546293512" at="65,35,78,16">
+        <var name="that" id="7785665572546293536" />
+      </scope>
+      <scope id="7785665572546293509" at="64,0,80,0">
+        <var name="o" id="7785665572546293541" />
+      </scope>
+      <unit id="7785665572546285342" at="9,0,91,0" name="jetbrains.mps.logic.reactor.constraint.AbstractConstraint" />
+    </file>
+  </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546345623">
+    <file name="Constraint.java">
+      <node id="7785665572546347414" at="11,0,12,0" concept="5" trace="handler#(Ljetbrains/mps/logic/reactor/constraint/ComputingSession;)Ljetbrains/mps/logic/reactor/constraint/Instructible;" />
+      <node id="5217246026231400064" at="13,0,14,0" concept="5" trace="handlerClass#()Ljava/lang/Class;" />
+      <node id="7785665572546348904" at="15,0,16,0" concept="5" trace="name#()Ljava/lang/String;" />
+      <node id="7785665572546348096" at="17,0,18,0" concept="5" trace="arity#()I" />
+      <scope id="7785665572546347414" at="11,0,12,0">
+        <var name="session" id="7785665572546347688" />
+      </scope>
+      <scope id="5217246026231400064" at="13,0,14,0" />
+      <scope id="7785665572546348904" at="15,0,16,0" />
+      <scope id="7785665572546348096" at="17,0,18,0" />
+      <unit id="7785665572546345623" at="9,0,20,0" name="jetbrains.mps.logic.reactor.constraint.Constraint" />
+    </file>
+  </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546359770">
+    <file name="AutoConstraint.java">
+      <node id="7785665572546359898" at="11,0,12,0" concept="5" trace="solver#(Ljetbrains/mps/logic/reactor/constraint/ComputingSession;)Ljetbrains/mps/logic/reactor/constraint/Queryable;" />
+      <node id="5217246026231400236" at="13,0,14,0" concept="5" trace="solverClass#()Ljava/lang/Class;" />
+      <node id="7785665572546360338" at="15,0,16,0" concept="5" trace="symbol#()Ljava/lang/String;" />
+      <node id="7785665572546360681" at="17,0,18,0" concept="5" trace="arity#()I" />
+      <scope id="7785665572546359898" at="11,0,12,0">
+        <var name="session" id="7785665572546484646" />
+      </scope>
+      <scope id="5217246026231400236" at="13,0,14,0" />
+      <scope id="7785665572546360338" at="15,0,16,0" />
+      <scope id="7785665572546360681" at="17,0,18,0" />
+      <unit id="7785665572546359770" at="9,0,20,0" name="jetbrains.mps.logic.reactor.constraint.AutoConstraint" />
+    </file>
+  </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546627183">
+    <file name="ComputingItem.java">
+      <node id="7785665572546628938" at="11,0,12,0" concept="5" trace="init#(Ljetbrains/mps/logic/reactor/constraint/ComputingSession;Ljetbrains/mps/logic/reactor/constraint/ComputingTracer;)V" />
+      <node id="7785665572546629316" at="13,0,14,0" concept="5" trace="dispose#(Ljetbrains/mps/logic/reactor/constraint/ComputingSession;)V" />
+      <scope id="7785665572546628938" at="11,0,12,0">
+        <var name="session" id="7785665572546629183" />
+        <var name="tracer" id="2394628030059142581" />
+      </scope>
+      <scope id="7785665572546629316" at="13,0,14,0">
+        <var name="session" id="7785665572546629320" />
+      </scope>
+      <unit id="7785665572546627183" at="9,0,16,0" name="jetbrains.mps.logic.reactor.constraint.ComputingItem" />
+    </file>
+  </root>
+</debug-info>
+

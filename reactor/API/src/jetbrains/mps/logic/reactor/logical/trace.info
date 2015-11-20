@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/1564179198503508264">
+    <file name="ILogical.java">
+      <node id="7045828502339522708" at="8,0,9,0" concept="3" trace="name#()Ljava/lang/String;" />
+      <node id="2966490507992539037" at="10,0,11,0" concept="3" trace="name#(Ljetbrains/mps/logic/reactor/logical/NamingContext;)Ljava/lang/String;" />
+      <node id="238586457663160034" at="12,0,13,0" concept="3" trace="findRoot#()Ljetbrains/mps/logic/reactor/logical/ILogical;" />
+      <node id="1564179198503509166" at="14,0,15,0" concept="3" trace="value#()null" />
+      <node id="1564179198503509045" at="16,0,17,0" concept="3" trace="isBound#()Z" />
+      <node id="3058061960962299083" at="18,0,19,0" concept="3" trace="isWildcard#()Z" />
+      <scope id="7045828502339522708" at="8,0,9,0" />
+      <scope id="2966490507992539037" at="10,0,11,0">
+        <var name="namingContext" id="2966490507992541231" />
+      </scope>
+      <scope id="238586457663160034" at="12,0,13,0" />
+      <scope id="1564179198503509166" at="14,0,15,0" />
+      <scope id="1564179198503509045" at="16,0,17,0" />
+      <scope id="3058061960962299083" at="18,0,19,0" />
+      <unit id="1564179198503508264" at="6,0,21,0" name="jetbrains.mps.logic.reactor.logical.ILogical" />
+    </file>
+  </root>
+  <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/2966490507992442162">
+    <file name="NamingContext.java">
+      <node id="2966490507992493081" at="12,47,13,60" concept="0" />
+      <node id="2966490507992496215" at="14,5,15,37" concept="5" />
+      <node id="7788002923752702358" at="18,42,19,41" concept="4" />
+      <node id="7788002923752701639" at="19,41,20,38" concept="5" />
+      <node id="7788002923752672045" at="23,51,24,82" concept="4" />
+      <node id="7788002923752674066" at="24,82,25,36" concept="0" />
+      <node id="7788002923752668035" at="25,36,26,13" concept="5" />
+      <node id="2966490507992442764" at="29,0,30,0" concept="1" trace="uniqueCounters" />
+      <node id="2966490507992487240" at="31,0,32,0" concept="1" trace="cachedUnique" />
+      <node id="2966490507992491063" at="11,46,14,5" concept="2" />
+      <node id="2966490507992478411" at="18,0,22,0" concept="3" trace="makeUnique#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7788002923752647499" at="23,0,28,0" concept="3" trace="getAndIncrementCounter#(Ljava/lang/String;)I" />
+      <node id="2966490507992442243" at="11,0,17,0" concept="3" trace="uniqueName#(Ljetbrains/mps/logic/reactor/logical/ILogical;)Ljava/lang/String;" />
+      <scope id="2966490507992491064" at="12,47,13,60" />
+      <scope id="2966490507992478415" at="18,42,20,38">
+        <var name="c" id="7788002923752702359" />
+      </scope>
+      <scope id="7788002923752647503" at="23,51,26,13">
+        <var name="c" id="7788002923752672046" />
+      </scope>
+      <scope id="2966490507992442247" at="11,46,15,37" />
+      <scope id="2966490507992478411" at="18,0,22,0">
+        <var name="name" id="2966490507992482288" />
+      </scope>
+      <scope id="7788002923752647499" at="23,0,28,0">
+        <var name="name" id="7788002923752648441" />
+      </scope>
+      <scope id="2966490507992442243" at="11,0,17,0">
+        <var name="logical" id="2966490507992442616" />
+      </scope>
+      <unit id="2966490507992442162" at="9,0,34,0" name="jetbrains.mps.logic.reactor.logical.NamingContext" />
+    </file>
+  </root>
+  <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/4725685633777355365">
+    <file name="ILogicalVar.java">
+      <node id="4725685633777390939" at="8,0,9,0" concept="3" trace="logical#()Ljetbrains/mps/logic/reactor/logical/ILogical;" />
+      <scope id="4725685633777390939" at="8,0,9,0" />
+      <unit id="4725685633777355365" at="6,0,11,0" name="jetbrains.mps.logic.reactor.logical.ILogicalVar" />
+    </file>
+  </root>
+</debug-info>
+
