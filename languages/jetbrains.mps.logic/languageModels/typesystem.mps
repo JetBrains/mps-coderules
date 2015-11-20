@@ -17,6 +17,7 @@
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.typesystem2.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -236,8 +237,8 @@
             <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
             <node concept="2pIpSj" id="1mP5b6jOrp7" role="2pJxcM">
               <ref role="2pIpSl" to="tpee:g7uigIF" />
-              <node concept="36bGnv" id="2S_ORi38S4f" role="2pJxcZ">
-                <ref role="36bGnp" to="yg8f:1mP5b6jQP$C" resolve="ILogical" />
+              <node concept="36bGnv" id="2s5CcPapXkh" role="2pJxcZ">
+                <ref role="36bGnp" to="45ys:1mP5b6jQP$C" resolve="ILogical" />
               </node>
             </node>
           </node>
@@ -279,7 +280,7 @@
                 <property role="TrG5h" value="il" />
                 <node concept="2DMOqp" id="2S_ORi36mSh" role="1YbcFS">
                   <node concept="3uibUv" id="2S_ORi36mSi" role="2DMOqq">
-                    <ref role="3uigEE" to="yg8f:1mP5b6jQP$C" resolve="ILogical" />
+                    <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="ILogical" />
                   </node>
                 </node>
               </node>
@@ -596,7 +597,7 @@
                     </node>
                     <node concept="2c44tf" id="5Ii$nZP52Ws" role="3JuZjQ">
                       <node concept="3uibUv" id="5Ii$nZP52XC" role="2c44tc">
-                        <ref role="3uigEE" to="yg8f:7jC45KcfYla" resolve="IStringLogical" />
+                        <ref role="3uigEE" to="45ys:7jC45KcfYla" resolve="IStringLogical" />
                       </node>
                     </node>
                   </node>

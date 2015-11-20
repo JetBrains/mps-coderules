@@ -19,6 +19,7 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/template/jetbrains.mps.lang.typesystem2.template.msd" folder="typesystem2.runtime" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/test/jetbrains.mps.lang.typesystem2.test/jetbrains.mps.lang.typesystem2.test.msd" folder="typesystem2" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/reactor/jetbrains.mps.logic.reactor.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/jetbrains.mps.logic.sandbox.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic/sandbox/runner/jetbrains.mps.logic.sandbox.runner.msd" folder="logic" />

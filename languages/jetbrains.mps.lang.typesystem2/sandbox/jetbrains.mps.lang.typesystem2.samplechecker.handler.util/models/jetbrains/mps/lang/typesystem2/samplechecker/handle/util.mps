@@ -12,8 +12,8 @@
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
-    <import index="bspi" ref="r:b094f86e-558c-4295-8b38-f6a26ad07b4f(jetbrains.mps.logic.constraint)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -342,11 +342,11 @@
           <node concept="3cpWsn" id="3KV3FXk0r_f" role="3cpWs9">
             <property role="TrG5h" value="computingSession" />
             <node concept="3uibUv" id="3KV3FXk0r_d" role="1tU5fm">
-              <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
+              <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
             <node concept="2YIFZM" id="3KV3FXk0r_g" role="33vP2m">
-              <ref role="37wK5l" to="bspi:4xBopTzo4e1" resolve="getDefault" />
-              <ref role="1Pybhc" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
+              <ref role="37wK5l" to="qrld:4xBopTzo4e1" resolve="getDefault" />
+              <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
           </node>
         </node>
@@ -414,7 +414,7 @@
                     <ref role="3cqZAo" node="3KV3FXk0r_f" resolve="computingSession" />
                   </node>
                   <node concept="liA8E" id="3KV3FXjZMUJ" role="2OqNvi">
-                    <ref role="37wK5l" to="bspi:4xBopTznPKO" resolve="tell" />
+                    <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                     <node concept="10M0yZ" id="3KV3FXjZMUK" role="37wK5m">
                       <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
                       <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
@@ -1471,7 +1471,7 @@
       <node concept="37vLTG" id="3KV3FXjZFT2" role="3clF46">
         <property role="TrG5h" value="computingSession" />
         <node concept="3uibUv" id="3KV3FXjZFTc" role="1tU5fm">
-          <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
+          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
         </node>
       </node>
       <node concept="3cqZAl" id="3KV3FXjZFyd" role="3clF45" />
@@ -1731,11 +1731,11 @@
           <node concept="3cpWsn" id="3KV3FXk1jrP" role="3cpWs9">
             <property role="TrG5h" value="computingSession" />
             <node concept="3uibUv" id="3KV3FXk1jrQ" role="1tU5fm">
-              <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
+              <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
             <node concept="2YIFZM" id="3KV3FXk1jrR" role="33vP2m">
-              <ref role="1Pybhc" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
-              <ref role="37wK5l" to="bspi:4xBopTzo4e1" resolve="getDefault" />
+              <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+              <ref role="37wK5l" to="qrld:4xBopTzo4e1" resolve="getDefault" />
             </node>
           </node>
         </node>
@@ -1812,7 +1812,7 @@
                     <ref role="3cqZAo" node="3KV3FXk1jrP" resolve="computingSession" />
                   </node>
                   <node concept="liA8E" id="3KV3FXk1m3b" role="2OqNvi">
-                    <ref role="37wK5l" to="bspi:4xBopTznPKO" resolve="tell" />
+                    <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                     <node concept="10M0yZ" id="3KV3FXk1m3c" role="37wK5m">
                       <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
                       <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
@@ -2337,7 +2337,7 @@
       <node concept="37vLTG" id="3KV3FXk1jlA" role="3clF46">
         <property role="TrG5h" value="computingSession" />
         <node concept="3uibUv" id="3KV3FXk1jl_" role="1tU5fm">
-          <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
+          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
         </node>
       </node>
     </node>
@@ -2532,7 +2532,7 @@
               <ref role="3cqZAo" node="3KV3FXjZFTt" resolve="computingSession" />
             </node>
             <node concept="liA8E" id="3KV3FXjZkQX" role="2OqNvi">
-              <ref role="37wK5l" to="bspi:4xBopTznHV5" resolve="ask" />
+              <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
               <node concept="10M0yZ" id="3KV3FXjZkQY" role="37wK5m">
                 <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
                 <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
@@ -2645,7 +2645,7 @@
       <node concept="37vLTG" id="3KV3FXk1u5_" role="3clF46">
         <property role="TrG5h" value="computingSession" />
         <node concept="3uibUv" id="3KV3FXk1u5$" role="1tU5fm">
-          <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
+          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
         </node>
       </node>
     </node>
@@ -2654,7 +2654,7 @@
       <property role="TrG5h" value="computingSession" />
       <node concept="3Tmbuc" id="3KV3FXk1ru9" role="1B3o_S" />
       <node concept="3uibUv" id="3KV3FXjZFTw" role="1tU5fm">
-        <ref role="3uigEE" to="bspi:6Kcfpq7B0b0" resolve="ComputingSession" />
+        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
       </node>
     </node>
   </node>

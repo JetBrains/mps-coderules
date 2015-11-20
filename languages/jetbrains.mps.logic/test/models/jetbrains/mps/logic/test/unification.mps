@@ -15,6 +15,7 @@
     <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.unification.tree/)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1765,7 +1766,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5p8T3QHH7gN" role="3clF45">
-        <ref role="3uigEE" to="yg8f:1mP5b6jQP$C" resolve="ILogical" />
+        <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="ILogical" />
         <node concept="3qTvmN" id="5p8T3QHH7uW" role="11_B2D" />
       </node>
       <node concept="3Tm6S6" id="1OShD0IfFaJ" role="1B3o_S" />
@@ -1778,12 +1779,12 @@
                   <ref role="3cqZAo" node="1OShD0IfFeh" resolve="var" />
                 </node>
                 <node concept="3uibUv" id="5p8T3QHH6C_" role="10QFUM">
-                  <ref role="3uigEE" to="yg8f:46l0wJhtOD_" resolve="ILogicalVar" />
+                  <ref role="3uigEE" to="45ys:46l0wJhtOD_" resolve="ILogicalVar" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="1OShD0IfFh7" role="2OqNvi">
-              <ref role="37wK5l" to="yg8f:46l0wJhtXlr" resolve="logical" />
+              <ref role="37wK5l" to="45ys:46l0wJhtXlr" resolve="logical" />
             </node>
           </node>
         </node>
@@ -1908,7 +1909,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1OShD0IfIGc" role="2OqNvi">
-                <ref role="37wK5l" to="yg8f:dfChU1eNVy" resolve="findRoot" />
+                <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
               </node>
             </node>
             <node concept="2OqwBi" id="1OShD0IfI6R" role="3tpDZB">
@@ -1919,7 +1920,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1OShD0IfIj2" role="2OqNvi">
-                <ref role="37wK5l" to="yg8f:dfChU1eNVy" resolve="findRoot" />
+                <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
               </node>
             </node>
           </node>
@@ -2039,11 +2040,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3HJTsBn466m" role="2OqNvi">
-                  <ref role="37wK5l" to="yg8f:dfChU1eNVy" resolve="findRoot" />
+                  <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
                 </node>
               </node>
               <node concept="liA8E" id="3HJTsBn466n" role="2OqNvi">
-                <ref role="37wK5l" to="yg8f:1mP5b6jQPMI" resolve="value" />
+                <ref role="37wK5l" to="45ys:1mP5b6jQPMI" resolve="value" />
               </node>
             </node>
           </node>
@@ -2226,11 +2227,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="4XqG8ivynir" role="2OqNvi">
-                  <ref role="37wK5l" to="yg8f:dfChU1eNVy" resolve="findRoot" />
+                  <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
                 </node>
               </node>
               <node concept="liA8E" id="4XqG8ivynis" role="2OqNvi">
-                <ref role="37wK5l" to="yg8f:1mP5b6jQPMI" resolve="value" />
+                <ref role="37wK5l" to="45ys:1mP5b6jQPMI" resolve="value" />
               </node>
             </node>
           </node>
@@ -2422,11 +2423,11 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1OShD0IfPnL" role="2OqNvi">
-                    <ref role="37wK5l" to="yg8f:dfChU1eNVy" resolve="findRoot" />
+                    <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5cGCTtqzX8u" role="2OqNvi">
-                  <ref role="37wK5l" to="yg8f:7jC45Kci98e" resolve="asAtom" />
+                  <ref role="37wK5l" to="45ys:7jC45Kci98e" resolve="asAtom" />
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtqzXR9" role="2OqNvi">
@@ -2443,11 +2444,11 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1OShD0IfPnP" role="2OqNvi">
-                    <ref role="37wK5l" to="yg8f:dfChU1eNVy" resolve="findRoot" />
+                    <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5cGCTtqzVUp" role="2OqNvi">
-                  <ref role="37wK5l" to="yg8f:7jC45Kci98e" resolve="asAtom" />
+                  <ref role="37wK5l" to="45ys:7jC45Kci98e" resolve="asAtom" />
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtqzWC9" role="2OqNvi">
@@ -2675,11 +2676,11 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="4XqG8ivylRV" role="2OqNvi">
-                    <ref role="37wK5l" to="yg8f:dfChU1eNVy" resolve="findRoot" />
+                    <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5cGCTtq$6HX" role="2OqNvi">
-                  <ref role="37wK5l" to="yg8f:7jC45Kci98e" resolve="asAtom" />
+                  <ref role="37wK5l" to="45ys:7jC45Kci98e" resolve="asAtom" />
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtq$7s_" role="2OqNvi">
@@ -2696,11 +2697,11 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="4XqG8ivylRZ" role="2OqNvi">
-                    <ref role="37wK5l" to="yg8f:dfChU1eNVy" resolve="findRoot" />
+                    <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5cGCTtq$5w5" role="2OqNvi">
-                  <ref role="37wK5l" to="yg8f:7jC45Kci98e" resolve="asAtom" />
+                  <ref role="37wK5l" to="45ys:7jC45Kci98e" resolve="asAtom" />
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtq$6dM" role="2OqNvi">
