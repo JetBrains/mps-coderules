@@ -3099,7 +3099,7 @@
             <node concept="10Nm6u" id="2DKqMqOqCwM" role="37wK5m" />
             <node concept="10Nm6u" id="2DKqMqOqCAM" role="37wK5m" />
             <node concept="3VsKOn" id="2DKqMqOquNo" role="37wK5m">
-              <ref role="3VsUkX" to="45ys:dfChU1jXdE" resolve="IAtomLogical" />
+              <ref role="3VsUkX" to="yg8f:dfChU1jXdE" resolve="IAtomLogical" />
             </node>
             <node concept="37vLTw" id="2DKqMqOqM5K" role="37wK5m">
               <ref role="3cqZAo" node="2DKqMqOqLKG" resolve="wildcard" />
@@ -3138,7 +3138,7 @@
               <ref role="3cqZAo" node="2DKqMqOq_P$" resolve="name" />
             </node>
             <node concept="3VsKOn" id="2DKqMqOq_PM" role="37wK5m">
-              <ref role="3VsUkX" to="45ys:dfChU1jXdE" resolve="IAtomLogical" />
+              <ref role="3VsUkX" to="yg8f:dfChU1jXdE" resolve="IAtomLogical" />
             </node>
             <node concept="3clFbT" id="2DKqMqOqCOD" role="37wK5m">
               <property role="3clFbU" value="false" />
@@ -3164,7 +3164,7 @@
             <node concept="10Nm6u" id="2DKqMqOqDeN" role="37wK5m" />
             <node concept="10Nm6u" id="2DKqMqOqDeO" role="37wK5m" />
             <node concept="3VsKOn" id="2DKqMqOqDeP" role="37wK5m">
-              <ref role="3VsUkX" to="45ys:7jC45KcfYla" resolve="IStringLogical" />
+              <ref role="3VsUkX" to="yg8f:7jC45KcfYla" resolve="IStringLogical" />
             </node>
             <node concept="37vLTw" id="2DKqMqOqL6q" role="37wK5m">
               <ref role="3cqZAo" node="2DKqMqOqKXp" resolve="wildcard" />
@@ -3205,7 +3205,7 @@
               <ref role="3cqZAo" node="2DKqMqOquSo" resolve="name" />
             </node>
             <node concept="3VsKOn" id="2DKqMqOquSA" role="37wK5m">
-              <ref role="3VsUkX" to="45ys:7jC45KcfYla" resolve="IStringLogical" />
+              <ref role="3VsUkX" to="yg8f:7jC45KcfYla" resolve="IStringLogical" />
             </node>
             <node concept="3clFbT" id="2DKqMqOqLHX" role="37wK5m">
               <property role="3clFbU" value="false" />
@@ -3240,7 +3240,7 @@
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qUE_q" id="2DKqMqOqtjw" role="11_B2D">
             <node concept="3uibUv" id="2DKqMqOqtuZ" role="3qUE_r">
-              <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="ILogical" />
+              <ref role="3uigEE" to="yg8f:qubcdt1pkm" resolve="ILogicalExt" />
               <node concept="16syzq" id="2DKqMqOqunj" role="11_B2D">
                 <ref role="16sUi3" node="2DKqMqOqtG3" resolve="T" />
               </node>

@@ -344,9 +344,22 @@
             <node concept="3uibUv" id="3KV3FXk0r_d" role="1tU5fm">
               <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
-            <node concept="2YIFZM" id="3KV3FXk0r_g" role="33vP2m">
-              <ref role="37wK5l" to="qrld:4xBopTzo4e1" resolve="getDefault" />
-              <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+            <node concept="2OqwBi" id="qubcdttNHJ" role="33vP2m">
+              <node concept="2YIFZM" id="qubcdttM82" role="2Oq$k0">
+                <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
+                <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+                <node concept="10M0yZ" id="4xBopTzqK2f" role="37wK5m">
+                  <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
+                  <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                </node>
+                <node concept="10M0yZ" id="4xBopTzqK8e" role="37wK5m">
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
+                </node>
+              </node>
+              <node concept="liA8E" id="qubcdttNOm" role="2OqNvi">
+                <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+              </node>
             </node>
           </node>
         </node>
@@ -1733,9 +1746,22 @@
             <node concept="3uibUv" id="3KV3FXk1jrQ" role="1tU5fm">
               <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
-            <node concept="2YIFZM" id="3KV3FXk1jrR" role="33vP2m">
-              <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
-              <ref role="37wK5l" to="qrld:4xBopTzo4e1" resolve="getDefault" />
+            <node concept="2OqwBi" id="qubcdttPMq" role="33vP2m">
+              <node concept="2YIFZM" id="qubcdttPAv" role="2Oq$k0">
+                <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
+                <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+                <node concept="10M0yZ" id="qubcdttPFv" role="37wK5m">
+                  <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                  <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
+                </node>
+                <node concept="10M0yZ" id="qubcdttPFy" role="37wK5m">
+                  <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                </node>
+              </node>
+              <node concept="liA8E" id="qubcdttPUh" role="2OqNvi">
+                <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+              </node>
             </node>
           </node>
         </node>

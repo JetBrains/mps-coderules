@@ -237,8 +237,8 @@
             <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
             <node concept="2pIpSj" id="1mP5b6jOrp7" role="2pJxcM">
               <ref role="2pIpSl" to="tpee:g7uigIF" />
-              <node concept="36bGnv" id="2s5CcPapXkh" role="2pJxcZ">
-                <ref role="36bGnp" to="45ys:1mP5b6jQP$C" resolve="ILogical" />
+              <node concept="36bGnv" id="qubcdtmy3m" role="2pJxcZ">
+                <ref role="36bGnp" to="yg8f:qubcdt1pkm" resolve="ILogicalExt" />
               </node>
             </node>
           </node>
@@ -597,7 +597,7 @@
                     </node>
                     <node concept="2c44tf" id="5Ii$nZP52Ws" role="3JuZjQ">
                       <node concept="3uibUv" id="5Ii$nZP52XC" role="2c44tc">
-                        <ref role="3uigEE" to="45ys:7jC45KcfYla" resolve="IStringLogical" />
+                        <ref role="3uigEE" to="yg8f:7jC45KcfYla" resolve="IStringLogical" />
                       </node>
                     </node>
                   </node>
