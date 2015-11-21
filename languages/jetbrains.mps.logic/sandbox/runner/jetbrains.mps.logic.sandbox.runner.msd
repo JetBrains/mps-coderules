@@ -11,12 +11,6 @@
     <dependency reexport="false">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
     <dependency reexport="false">eaa96e7c-030a-4e4f-8ae7-a24dff1e0572(jetbrains.mps.logic.sandbox)</dependency>
   </dependencies>
-  <usedLanguages>
-    <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
-    <usedLanguage>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguage>
-    <usedLanguage>894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)</usedLanguage>
-    <usedLanguage>35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)</usedLanguage>
-  </usedLanguages>
   <languageVersions>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="3" />
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" fqName="jetbrains.mps.baseLanguage.blTypes" version="0" />
