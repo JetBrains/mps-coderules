@@ -18,7 +18,6 @@
   <imports>
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="bdf1" ref="r:22d5f1f3-a483-4725-abc3-c5e9c2c56292(jetbrains.mps.typechecking.rule.generator)" />
-    <import index="nc4n" ref="r:2a1eb048-898c-47a3-863b-36b04c4b9f7c(jetbrains.mps.lang.typesystem2.runtime.rule)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
@@ -67,6 +66,7 @@
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.lang.typesystem2.samplechecker.template)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
+    <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.rule)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -533,13 +533,13 @@
       <property role="TrG5h" value="createRulesHandler" />
       <node concept="3Tm1VV" id="4boqC9dMnh$" role="1B3o_S" />
       <node concept="3uibUv" id="4boqC9dMlhv" role="3clF45">
-        <ref role="3uigEE" to="nc4n:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+        <ref role="3uigEE" to="i8dg:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
       </node>
       <node concept="3clFbS" id="4boqC9dMlgg" role="3clF47">
         <node concept="3cpWs6" id="4boqC9dMlhp" role="3cqZAp">
           <node concept="2ShNRf" id="4boqC9dMlgm" role="3cqZAk">
             <node concept="1pGfFk" id="4boqC9dMlgn" role="2ShVmc">
-              <ref role="37wK5l" to="nc4n:7eGEHDlcF69" resolve="ConstraintRulesHandler" />
+              <ref role="37wK5l" to="i8dg:7eGEHDlcF69" resolve="ConstraintRulesHandler" />
               <node concept="3cpWs3" id="4boqC9dNrXk" role="37wK5m">
                 <node concept="Xl_RD" id="4boqC9dNs3q" role="3uHU7B">
                   <property role="Xl_RC" value="typechecking" />
@@ -552,7 +552,7 @@
                 <node concept="YeOm9" id="4boqC9dMlgq" role="2ShVmc">
                   <node concept="1Y3b0j" id="4boqC9dMlgr" role="YeSDq">
                     <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="nc4n:7eGEHDldgwf" resolve="ConstraintRegistry" />
+                    <ref role="1Y3XeK" to="i8dg:7eGEHDldgwf" resolve="ConstraintRegistry" />
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                     <node concept="3Tm1VV" id="4boqC9dMlgs" role="1B3o_S" />
                     <node concept="3clFb_" id="4boqC9dMlgt" role="jymVt">
@@ -561,7 +561,7 @@
                       <node concept="37vLTG" id="4boqC9dMlgu" role="3clF46">
                         <property role="TrG5h" value="symbol" />
                         <node concept="3uibUv" id="4boqC9dMlgv" role="1tU5fm">
-                          <ref role="3uigEE" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                          <ref role="3uigEE" to="i8dg:54i3FxcZHHF" resolve="ConstraintSymbol" />
                         </node>
                       </node>
                       <node concept="3uibUv" id="4boqC9dMlgw" role="3clF45">
@@ -589,8 +589,8 @@
                               <ref role="3cqZAo" node="4boqC9dMlgu" resolve="symbol" />
                             </node>
                             <node concept="10M0yZ" id="4boqC9dMlgG" role="3uHU7B">
-                              <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
-                              <ref role="3cqZAo" to="nc4n:54i3FxcZMP2" resolve="UNIFICATION" />
+                              <ref role="1PxDUh" to="i8dg:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                              <ref role="3cqZAo" to="i8dg:54i3FxcZMP2" resolve="UNIFICATION" />
                             </node>
                           </node>
                           <node concept="3eNFk2" id="4boqC9dMlgH" role="3eNLev">
@@ -599,8 +599,8 @@
                                 <ref role="3cqZAo" node="4boqC9dMlgu" resolve="symbol" />
                               </node>
                               <node concept="10M0yZ" id="4boqC9dMlgK" role="3uHU7B">
-                                <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
-                                <ref role="3cqZAo" to="nc4n:2DKqMqO$zFW" resolve="EQUALS" />
+                                <ref role="1PxDUh" to="i8dg:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                                <ref role="3cqZAo" to="i8dg:2DKqMqO$zFW" resolve="EQUALS" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="4boqC9dMlgL" role="3eOfB_">
@@ -619,8 +619,8 @@
                                 <ref role="3cqZAo" node="4boqC9dMlgu" resolve="symbol" />
                               </node>
                               <node concept="10M0yZ" id="4boqC9dMlgS" role="3uHU7B">
-                                <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
-                                <ref role="3cqZAo" to="nc4n:6infEALBQ$y" resolve="ASSERT" />
+                                <ref role="1PxDUh" to="i8dg:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                                <ref role="3cqZAo" to="i8dg:6infEALBQ$y" resolve="ASSERT" />
                               </node>
                             </node>
                             <node concept="3clFbS" id="4boqC9dMlgT" role="3eOfB_">
@@ -648,8 +648,8 @@
                                 <ref role="3cqZAo" node="4boqC9dMlgu" resolve="symbol" />
                               </node>
                               <node concept="10M0yZ" id="4boqC9dMlh4" role="3uHU7B">
-                                <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
-                                <ref role="3cqZAo" to="nc4n:54i3FxcZO14" resolve="BOUND" />
+                                <ref role="1PxDUh" to="i8dg:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                                <ref role="3cqZAo" to="i8dg:54i3FxcZO14" resolve="BOUND" />
                               </node>
                             </node>
                           </node>
@@ -668,8 +668,8 @@
                                 <ref role="3cqZAo" node="4boqC9dMlgu" resolve="symbol" />
                               </node>
                               <node concept="10M0yZ" id="4boqC9dMlhc" role="3uHU7B">
-                                <ref role="1PxDUh" to="nc4n:54i3FxcZHHF" resolve="ConstraintSymbol" />
-                                <ref role="3cqZAo" to="nc4n:54i3FxcZNJp" resolve="FREE" />
+                                <ref role="1PxDUh" to="i8dg:54i3FxcZHHF" resolve="ConstraintSymbol" />
+                                <ref role="3cqZAo" to="i8dg:54i3FxcZNJp" resolve="FREE" />
                               </node>
                             </node>
                           </node>
@@ -730,7 +730,7 @@
       <node concept="37vLTG" id="4boqC9dMoIo" role="3clF46">
         <property role="TrG5h" value="handler" />
         <node concept="3uibUv" id="4boqC9dMpvu" role="1tU5fm">
-          <ref role="3uigEE" to="nc4n:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+          <ref role="3uigEE" to="i8dg:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
         </node>
       </node>
       <node concept="10Oyi0" id="3xj1Uscu7dI" role="3clF45" />
@@ -817,7 +817,7 @@
       <node concept="37vLTG" id="3xj1UscsvA0" role="3clF46">
         <property role="TrG5h" value="handler" />
         <node concept="3uibUv" id="3xj1UscsvA1" role="1tU5fm">
-          <ref role="3uigEE" to="nc4n:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+          <ref role="3uigEE" to="i8dg:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
         </node>
       </node>
       <node concept="3clFbS" id="3xj1UscsvyC" role="3clF47">
@@ -825,11 +825,11 @@
           <node concept="3cpWsn" id="7nkyKX7mVqS" role="3cpWs9">
             <property role="TrG5h" value="main" />
             <node concept="3uibUv" id="7nkyKX7mVqP" role="1tU5fm">
-              <ref role="3uigEE" to="nc4n:7eGEHDlc$ap" resolve="RuleBuilder" />
+              <ref role="3uigEE" to="i8dg:7eGEHDlc$ap" resolve="RuleBuilder" />
             </node>
             <node concept="2ShNRf" id="7nkyKX7mVqT" role="33vP2m">
               <node concept="1pGfFk" id="7nkyKX7mVqU" role="2ShVmc">
-                <ref role="37wK5l" to="nc4n:6lpwCiZjdph" resolve="RuleBuilder" />
+                <ref role="37wK5l" to="i8dg:6lpwCiZjdph" resolve="RuleBuilder" />
                 <node concept="Xl_RD" id="7nkyKX7mVqV" role="37wK5m">
                   <property role="Xl_RC" value="main" />
                 </node>
@@ -843,10 +843,10 @@
               <ref role="3cqZAo" node="7nkyKX7mVqS" resolve="main" />
             </node>
             <node concept="liA8E" id="7nkyKX7sUg2" role="2OqNvi">
-              <ref role="37wK5l" to="nc4n:7eGEHDlc$bq" resolve="appendHeadReplaced" />
+              <ref role="37wK5l" to="i8dg:7eGEHDlc$bq" resolve="appendHeadReplaced" />
               <node concept="2YIFZM" id="7nkyKX7sWMr" role="37wK5m">
-                <ref role="37wK5l" to="nc4n:7nkyKX7sUU5" resolve="singleton" />
-                <ref role="1Pybhc" to="nc4n:7eGEHDlc$f7" resolve="UserConstraint" />
+                <ref role="37wK5l" to="i8dg:7nkyKX7sUU5" resolve="singleton" />
+                <ref role="1Pybhc" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
                 <node concept="Xl_RD" id="7nkyKX7sWT3" role="37wK5m">
                   <property role="Xl_RC" value="main" />
                 </node>
@@ -2032,11 +2032,11 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="7dgRGU4oAmR" role="2OqNvi">
-                    <ref role="37wK5l" to="nc4n:7eGEHDlc$8G" resolve="symbol" />
+                    <ref role="37wK5l" to="i8dg:7eGEHDlc$8G" resolve="symbol" />
                   </node>
                 </node>
                 <node concept="liA8E" id="7dgRGU4oBJU" role="2OqNvi">
-                  <ref role="37wK5l" to="nc4n:54i3FxcZMvt" resolve="symbol" />
+                  <ref role="37wK5l" to="i8dg:54i3FxcZMvt" resolve="symbol" />
                 </node>
               </node>
             </node>
@@ -6294,7 +6294,7 @@
                           <node concept="3cpWsn" id="1pPth$l_ZeP" role="3cpWs9">
                             <property role="TrG5h" value="rh" />
                             <node concept="3uibUv" id="1pPth$l_ZeQ" role="1tU5fm">
-                              <ref role="3uigEE" to="nc4n:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+                              <ref role="3uigEE" to="i8dg:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
                             </node>
                             <node concept="2YIFZM" id="1pPth$l_Zf6" role="33vP2m">
                               <ref role="1Pybhc" node="3Qp4N06byjn" resolve="CollectRuleTemplates" />
@@ -6446,13 +6446,13 @@
         <node concept="3Tmbuc" id="1pPth$lE7PF" role="1B3o_S" />
         <node concept="_YKpA" id="1pPth$lE8zt" role="1tU5fm">
           <node concept="3uibUv" id="1pPth$lE8WH" role="_ZDj9">
-            <ref role="3uigEE" to="nc4n:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+            <ref role="3uigEE" to="i8dg:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
           </node>
         </node>
         <node concept="2ShNRf" id="1pPth$lGhrs" role="33vP2m">
           <node concept="Tc6Ow" id="1pPth$lGhro" role="2ShVmc">
             <node concept="3uibUv" id="1pPth$lGhrp" role="HW$YZ">
-              <ref role="3uigEE" to="nc4n:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+              <ref role="3uigEE" to="i8dg:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
             </node>
           </node>
         </node>
@@ -6534,7 +6534,7 @@
                             <node concept="3cpWsn" id="1pPth$lEdgG" role="1Duv9x">
                               <property role="TrG5h" value="rh" />
                               <node concept="3uibUv" id="1pPth$lEdgK" role="1tU5fm">
-                                <ref role="3uigEE" to="nc4n:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+                                <ref role="3uigEE" to="i8dg:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
                               </node>
                             </node>
                             <node concept="2OqwBi" id="1pPth$lEdgL" role="1DdaDG">

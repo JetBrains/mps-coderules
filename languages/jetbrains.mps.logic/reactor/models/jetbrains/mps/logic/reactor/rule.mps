@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:2a1eb048-898c-47a3-863b-36b04c4b9f7c(jetbrains.mps.lang.typesystem2.runtime.rule)">
+<model ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.rule)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
@@ -420,8 +420,8 @@
       <node concept="3clFbS" id="2q_78a8wJVJ" role="3clF47">
         <node concept="3clFbF" id="2q_78a8wKl6" role="3cqZAp">
           <node concept="Rm8GO" id="2q_78a8wKp4" role="3clFbG">
-            <ref role="Rm8GQ" node="2q_78a8w7CL" resolve="BUILTIN" />
             <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+            <ref role="Rm8GQ" node="2q_78a8w7CL" resolve="BUILTIN" />
           </node>
         </node>
       </node>
@@ -1198,8 +1198,8 @@
             <node concept="3clFbF" id="7eGEHDlc$ct" role="3cqZAp">
               <node concept="37vLTI" id="7eGEHDlc$cu" role="3clFbG">
                 <node concept="Rm8GO" id="7eGEHDlc$cv" role="37vLTx">
-                  <ref role="Rm8GQ" node="7eGEHDlc$a5" resolve="SIMPAGATION" />
                   <ref role="1Px2BO" node="7eGEHDlc$a2" resolve="ConstraintRule.Kind" />
+                  <ref role="Rm8GQ" node="7eGEHDlc$a5" resolve="SIMPAGATION" />
                 </node>
                 <node concept="37vLTw" id="7eGEHDlc$cw" role="37vLTJ">
                   <ref role="3cqZAo" node="7eGEHDlc$cp" resolve="kind" />
@@ -1235,8 +1235,8 @@
               <node concept="3clFbF" id="7eGEHDlc$cG" role="3cqZAp">
                 <node concept="37vLTI" id="7eGEHDlc$cH" role="3clFbG">
                   <node concept="Rm8GO" id="7eGEHDlc$cI" role="37vLTx">
-                    <ref role="Rm8GQ" node="7eGEHDlc$a3" resolve="SIMPLIFICATION" />
                     <ref role="1Px2BO" node="7eGEHDlc$a2" resolve="ConstraintRule.Kind" />
+                    <ref role="Rm8GQ" node="7eGEHDlc$a3" resolve="SIMPLIFICATION" />
                   </node>
                   <node concept="37vLTw" id="7eGEHDlc$cJ" role="37vLTJ">
                     <ref role="3cqZAo" node="7eGEHDlc$cp" resolve="kind" />
@@ -1274,8 +1274,8 @@
                     <ref role="3cqZAo" node="7eGEHDlc$cp" resolve="kind" />
                   </node>
                   <node concept="Rm8GO" id="7eGEHDlc$cX" role="37vLTx">
-                    <ref role="Rm8GQ" node="7eGEHDlc$a4" resolve="PROPAGATION" />
                     <ref role="1Px2BO" node="7eGEHDlc$a2" resolve="ConstraintRule.Kind" />
+                    <ref role="Rm8GQ" node="7eGEHDlc$a4" resolve="PROPAGATION" />
                   </node>
                 </node>
               </node>
@@ -1930,8 +1930,8 @@
             <node concept="1pGfFk" id="7nkyKX7sUUf" role="2ShVmc">
               <ref role="37wK5l" node="7eGEHDlc$gd" resolve="UserConstraint" />
               <node concept="2YIFZM" id="7nkyKX7sUUg" role="37wK5m">
-                <ref role="37wK5l" node="54i3FxcZQAb" resolve="user" />
                 <ref role="1Pybhc" node="54i3FxcZHHF" resolve="ConstraintSymbol" />
+                <ref role="37wK5l" node="54i3FxcZQAb" resolve="user" />
                 <node concept="37vLTw" id="7nkyKX7sUUh" role="37wK5m">
                   <ref role="3cqZAo" node="7nkyKX7sUU6" resolve="id" />
                 </node>
@@ -1967,8 +1967,8 @@
             <node concept="1pGfFk" id="7eGEHDlc$fj" role="2ShVmc">
               <ref role="37wK5l" node="7eGEHDlc$gd" resolve="UserConstraint" />
               <node concept="2YIFZM" id="54i3Fxd3mGn" role="37wK5m">
-                <ref role="37wK5l" node="54i3FxcZQAb" resolve="user" />
                 <ref role="1Pybhc" node="54i3FxcZHHF" resolve="ConstraintSymbol" />
+                <ref role="37wK5l" node="54i3FxcZQAb" resolve="user" />
                 <node concept="37vLTw" id="54i3Fxd3mIZ" role="37wK5m">
                   <ref role="3cqZAo" node="7eGEHDlc$fa" resolve="id" />
                 </node>
@@ -2147,8 +2147,8 @@
       <node concept="3clFbS" id="2q_78a8wLY8" role="3clF47">
         <node concept="3clFbF" id="2q_78a8wM$p" role="3cqZAp">
           <node concept="Rm8GO" id="2q_78a8wMBx" role="3clFbG">
-            <ref role="Rm8GQ" node="2q_78a8w7_0" resolve="USER" />
             <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+            <ref role="Rm8GQ" node="2q_78a8w7_0" resolve="USER" />
           </node>
         </node>
       </node>
@@ -3318,8 +3318,8 @@
         <node concept="3KaCP$" id="2q_78a8woly" role="3cqZAp">
           <node concept="3KbdKl" id="2q_78a8wpxw" role="3KbHQx">
             <node concept="Rm8GO" id="2q_78a8wq4B" role="3Kbmr1">
-              <ref role="Rm8GQ" node="2q_78a8w7_0" resolve="USER" />
               <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+              <ref role="Rm8GQ" node="2q_78a8w7_0" resolve="USER" />
             </node>
             <node concept="3clFbS" id="2q_78a8wpxy" role="3Kbo56">
               <node concept="3clFbJ" id="7eGEHDleMeh" role="3cqZAp">
@@ -3480,8 +3480,8 @@
           </node>
           <node concept="3KbdKl" id="2q_78a8wq6P" role="3KbHQx">
             <node concept="Rm8GO" id="2q_78a8wqzH" role="3Kbmr1">
-              <ref role="Rm8GQ" node="2q_78a8w7CL" resolve="BUILTIN" />
               <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+              <ref role="Rm8GQ" node="2q_78a8w7CL" resolve="BUILTIN" />
             </node>
             <node concept="3clFbS" id="2q_78a8wq6R" role="3Kbo56">
               <node concept="3clFbJ" id="2pvEdquuzfg" role="3cqZAp">
@@ -3543,8 +3543,8 @@
           </node>
           <node concept="3KbdKl" id="2q_78a8wqAU" role="3KbHQx">
             <node concept="Rm8GO" id="2q_78a8wr4j" role="3Kbmr1">
-              <ref role="Rm8GQ" node="2q_78a8w7Gi" resolve="JAVA" />
               <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+              <ref role="Rm8GQ" node="2q_78a8w7Gi" resolve="JAVA" />
             </node>
             <node concept="3clFbS" id="2q_78a8wqAW" role="3Kbo56">
               <node concept="3SKdUt" id="2q_78a8wu9n" role="3cqZAp">
@@ -3757,8 +3757,8 @@
         <node concept="3KaCP$" id="2q_78a8wfad" role="3cqZAp">
           <node concept="3KbdKl" id="2q_78a8wgD5" role="3KbHQx">
             <node concept="Rm8GO" id="2q_78a8whzU" role="3Kbmr1">
-              <ref role="Rm8GQ" node="2q_78a8w7_0" resolve="USER" />
               <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+              <ref role="Rm8GQ" node="2q_78a8w7_0" resolve="USER" />
             </node>
             <node concept="3clFbS" id="2q_78a8wgD7" role="3Kbo56">
               <node concept="3clFbF" id="7eGEHDleQCQ" role="3cqZAp">
@@ -3815,8 +3815,8 @@
           </node>
           <node concept="3KbdKl" id="54i3FxcRZJ3" role="3KbHQx">
             <node concept="Rm8GO" id="54i3FxcS0Jr" role="3Kbmr1">
-              <ref role="Rm8GQ" node="54i3FxcPBmn" resolve="LOGICAL" />
               <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+              <ref role="Rm8GQ" node="54i3FxcPBmn" resolve="LOGICAL" />
             </node>
             <node concept="3clFbS" id="54i3FxcRZJ5" role="3Kbo56">
               <node concept="3SKdUt" id="54i3FxcTXVn" role="3cqZAp">
@@ -3828,8 +3828,8 @@
           </node>
           <node concept="3KbdKl" id="2q_78a8whB4" role="3KbHQx">
             <node concept="Rm8GO" id="2q_78a8wi6O" role="3Kbmr1">
-              <ref role="Rm8GQ" node="2q_78a8w7CL" resolve="BUILTIN" />
               <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+              <ref role="Rm8GQ" node="2q_78a8w7CL" resolve="BUILTIN" />
             </node>
             <node concept="3clFbS" id="2q_78a8whB6" role="3Kbo56">
               <node concept="3clFbF" id="2pvEdquvhE0" role="3cqZAp">
@@ -3856,8 +3856,8 @@
           </node>
           <node concept="3KbdKl" id="2q_78a8wi9s" role="3KbHQx">
             <node concept="Rm8GO" id="2q_78a8wiCH" role="3Kbmr1">
-              <ref role="Rm8GQ" node="2q_78a8w7Gi" resolve="JAVA" />
               <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+              <ref role="Rm8GQ" node="2q_78a8w7Gi" resolve="JAVA" />
             </node>
             <node concept="3clFbS" id="2q_78a8wi9u" role="3Kbo56">
               <node concept="3SKdUt" id="2q_78a8wmp_" role="3cqZAp">
@@ -4435,8 +4435,8 @@
         <node concept="XkiVB" id="2q_78a8ye2g" role="3cqZAp">
           <ref role="37wK5l" node="7eGEHDlc$8m" resolve="AbstractConstraint" />
           <node concept="2YIFZM" id="54i3Fxd3yN7" role="37wK5m">
-            <ref role="37wK5l" node="54i3FxcZQAb" resolve="user" />
             <ref role="1Pybhc" node="54i3FxcZHHF" resolve="ConstraintSymbol" />
+            <ref role="37wK5l" node="54i3FxcZQAb" resolve="user" />
             <node concept="37vLTw" id="54i3Fxd3yQA" role="37wK5m">
               <ref role="3cqZAo" node="2q_78a8ycgG" resolve="template" />
             </node>
@@ -4464,8 +4464,8 @@
       <node concept="3clFbS" id="2q_78a8ybC8" role="3clF47">
         <node concept="3clFbF" id="2q_78a8yeBR" role="3cqZAp">
           <node concept="Rm8GO" id="2q_78a8yeEP" role="3clFbG">
-            <ref role="Rm8GQ" node="2q_78a8w7Gi" resolve="JAVA" />
             <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+            <ref role="Rm8GQ" node="2q_78a8w7Gi" resolve="JAVA" />
           </node>
         </node>
       </node>
@@ -4590,8 +4590,8 @@
       <node concept="3clFbS" id="54i3FxcPT8b" role="3clF47">
         <node concept="3clFbF" id="54i3FxcPTeA" role="3cqZAp">
           <node concept="Rm8GO" id="54i3FxcPThf" role="3clFbG">
-            <ref role="Rm8GQ" node="54i3FxcPBmn" resolve="LOGICAL" />
             <ref role="1Px2BO" node="2q_78a8w76g" resolve="ConstraintKind" />
+            <ref role="Rm8GQ" node="54i3FxcPBmn" resolve="LOGICAL" />
           </node>
         </node>
       </node>
