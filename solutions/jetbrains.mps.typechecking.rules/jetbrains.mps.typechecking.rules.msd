@@ -11,6 +11,7 @@
     <dependency reexport="false">ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.typesystem2.template)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="false">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
+    <dependency reexport="false">0d017abe-6cd7-4206-86d5-bfa557885b07(jetbrains.mps.typechecking.handling)</dependency>
   </dependencies>
   <usedDevKits>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
@@ -61,6 +62,7 @@
     <module reference="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.typesystem2.template)" version="0" />
     <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
+    <module reference="0d017abe-6cd7-4206-86d5-bfa557885b07(jetbrains.mps.typechecking.handling)" version="0" />
     <module reference="c7366fe8-43b9-446d-82b3-5cfc76e71f17(jetbrains.mps.typechecking.rules)" version="0" />
   </dependencyVersions>
 </solution>

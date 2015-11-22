@@ -20,6 +20,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.rule)" />
+    <import index="z054" ref="r:ffe6dee4-3b51-482f-93a8-7b16b0c154a5(jetbrains.mps.logic.reactor.constraint.occurrence)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1549,7 +1550,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="4OKkcnfu_zr" role="3clF45">
-        <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+        <ref role="3uigEE" to="z054:7eGEHDlc$f7" resolve="ConstraintOccurrence" />
       </node>
       <node concept="3Tm1VV" id="4OKkcnfu_zs" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_zt" role="3clF47">
@@ -1580,8 +1581,8 @@
         <node concept="3clFbH" id="4OKkcnfu_zC" role="3cqZAp" />
         <node concept="3clFbF" id="4OKkcnfu_zD" role="3cqZAp">
           <node concept="2YIFZM" id="4OKkcnfu_zE" role="3clFbG">
-            <ref role="37wK5l" to="i8dg:5k_shAROPJX" resolve="nary" />
-            <ref role="1Pybhc" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+            <ref role="37wK5l" to="z054:5k_shAROPJX" resolve="nary" />
+            <ref role="1Pybhc" to="z054:7eGEHDlc$f7" resolve="ConstraintOccurrence" />
             <node concept="3cpWs3" id="4OKkcnfu_zF" role="37wK5m">
               <node concept="2OqwBi" id="4OKkcnfu_zG" role="3uHU7w">
                 <node concept="37vLTw" id="4OKkcnfu_zH" role="2Oq$k0">
@@ -1636,14 +1637,14 @@
         </node>
       </node>
       <node concept="3uibUv" id="4OKkcnfu_zY" role="3clF45">
-        <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+        <ref role="3uigEE" to="z054:7eGEHDlc$f7" resolve="ConstraintOccurrence" />
       </node>
       <node concept="3Tm1VV" id="4OKkcnfu_zZ" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_$0" role="3clF47">
         <node concept="3clFbF" id="4OKkcnfu_$1" role="3cqZAp">
           <node concept="2YIFZM" id="4OKkcnfu_$2" role="3clFbG">
-            <ref role="37wK5l" to="i8dg:5k_shAROPJX" resolve="nary" />
-            <ref role="1Pybhc" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+            <ref role="37wK5l" to="z054:5k_shAROPJX" resolve="nary" />
+            <ref role="1Pybhc" to="z054:7eGEHDlc$f7" resolve="ConstraintOccurrence" />
             <node concept="3cpWs3" id="4OKkcnfu_$3" role="37wK5m">
               <node concept="2OqwBi" id="4OKkcnfu_$4" role="3uHU7w">
                 <node concept="37vLTw" id="4OKkcnfu_$5" role="2Oq$k0">
@@ -1687,14 +1688,14 @@
         </node>
       </node>
       <node concept="3uibUv" id="4OKkcnfu_$i" role="3clF45">
-        <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+        <ref role="3uigEE" to="z054:7eGEHDlc$f7" resolve="ConstraintOccurrence" />
       </node>
       <node concept="3Tm1VV" id="4OKkcnfu_$j" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_$k" role="3clF47">
         <node concept="3clFbF" id="4OKkcnfu_$l" role="3cqZAp">
           <node concept="2YIFZM" id="4OKkcnfu_$m" role="3clFbG">
-            <ref role="37wK5l" to="i8dg:7eGEHDlc$fn" resolve="binary" />
-            <ref role="1Pybhc" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+            <ref role="37wK5l" to="z054:7eGEHDlc$fn" resolve="binary" />
+            <ref role="1Pybhc" to="z054:7eGEHDlc$f7" resolve="ConstraintOccurrence" />
             <node concept="Xl_RD" id="4OKkcnfu_$n" role="37wK5m">
               <property role="Xl_RC" value="typeOf" />
             </node>
