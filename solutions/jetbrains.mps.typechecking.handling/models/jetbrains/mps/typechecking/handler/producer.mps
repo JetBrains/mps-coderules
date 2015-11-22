@@ -704,36 +704,17 @@
         <node concept="3clFbH" id="ZqZbw4S77u" role="3cqZAp" />
         <node concept="1DcWWT" id="ZqZbw4S7uk" role="3cqZAp">
           <node concept="3clFbS" id="ZqZbw4S7ul" role="2LFqv$">
-            <node concept="3cpWs8" id="ZqZbw4Sb44" role="3cqZAp">
-              <node concept="3cpWsn" id="ZqZbw4Sb45" role="3cpWs9">
-                <property role="TrG5h" value="cstProt" />
-                <node concept="3uibUv" id="ZqZbw4SAys" role="1tU5fm">
-                  <ref role="3uigEE" to="i8dg:ZqZbw4Sq7t" resolve="ConstraintPrototype" />
-                </node>
-                <node concept="2OqwBi" id="ZqZbw4Sb46" role="33vP2m">
-                  <node concept="37vLTw" id="ZqZbw4Sb47" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4sVJFklVhem" resolve="registry" />
-                  </node>
-                  <node concept="liA8E" id="ZqZbw4Sb48" role="2OqNvi">
-                    <ref role="37wK5l" to="i8dg:ZqZbw4RMM4" resolve="getConstraintPrototype" />
-                    <node concept="37vLTw" id="ZqZbw4Sb49" role="37wK5m">
-                      <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="id" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbJ" id="ZqZbw4SlQO" role="3cqZAp">
               <node concept="3clFbS" id="ZqZbw4SlQR" role="3clFbx">
                 <node concept="3N13vt" id="ZqZbw4Sm9a" role="3cqZAp" />
               </node>
               <node concept="3fqX7Q" id="ZqZbw4Sm9v" role="3clFbw">
                 <node concept="2OqwBi" id="ZqZbw4Sm9w" role="3fr31v">
-                  <node concept="37vLTw" id="ZqZbw4Sm9x" role="2Oq$k0">
-                    <ref role="3cqZAo" node="ZqZbw4Sb45" resolve="cstProt" />
+                  <node concept="37vLTw" id="30XHGaP5cji" role="2Oq$k0">
+                    <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="sym" />
                   </node>
                   <node concept="liA8E" id="ZqZbw4Sm9y" role="2OqNvi">
-                    <ref role="37wK5l" to="i8dg:ZqZbw4SBz1" resolve="isUser" />
+                    <ref role="37wK5l" to="i8dg:30XHGaP4dWo" resolve="isUser" />
                   </node>
                 </node>
               </node>
@@ -766,7 +747,7 @@
                   <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
                   <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                   <node concept="37vLTw" id="ZqZbw4SkC2" role="37wK5m">
-                    <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="id" />
+                    <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="sym" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="ZqZbw4Siu$" role="37vLTJ">
@@ -789,17 +770,19 @@
                     <node concept="3qTvmN" id="aFQeb4cqyM" role="11_B2D" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="aFQeb4cqz6" role="33vP2m">
-                  <node concept="37vLTw" id="aFQeb4cqz7" role="2Oq$k0">
-                    <ref role="3cqZAo" node="ZqZbw4Sb45" resolve="cstProt" />
+                <node concept="2OqwBi" id="30XHGaP5COu" role="33vP2m">
+                  <node concept="37vLTw" id="30XHGaP5COv" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4sVJFklVhem" resolve="registry" />
                   </node>
-                  <node concept="liA8E" id="aFQeb4cqz8" role="2OqNvi">
-                    <ref role="37wK5l" to="i8dg:aFQeb4cm4X" resolve="argType" />
+                  <node concept="liA8E" id="30XHGaP5COw" role="2OqNvi">
+                    <ref role="37wK5l" to="i8dg:ZqZbw4RMM4" resolve="getUserConstraintArgTypes" />
+                    <node concept="37vLTw" id="30XHGaP5COx" role="37wK5m">
+                      <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="sym" />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="aFQeb4cryr" role="3cqZAp" />
             <node concept="1Dw8fO" id="ZqZbw4Smyy" role="3cqZAp">
               <node concept="3clFbS" id="ZqZbw4Smy_" role="2LFqv$">
                 <node concept="3cpWs8" id="ZqZbw4SMAc" role="3cqZAp">
@@ -1011,13 +994,11 @@
                 </node>
               </node>
               <node concept="3eOVzh" id="ZqZbw4Sn1y" role="1Dwp0S">
-                <node concept="2OqwBi" id="ZqZbw4Sn$0" role="3uHU7w">
-                  <node concept="37vLTw" id="ZqZbw4Sn2b" role="2Oq$k0">
-                    <ref role="3cqZAo" node="ZqZbw4Sb45" resolve="cstProt" />
+                <node concept="2OqwBi" id="30XHGaP5Dw5" role="3uHU7w">
+                  <node concept="37vLTw" id="30XHGaP5Dkh" role="2Oq$k0">
+                    <ref role="3cqZAo" node="aFQeb4cqz5" resolve="argType" />
                   </node>
-                  <node concept="liA8E" id="ZqZbw4SnQd" role="2OqNvi">
-                    <ref role="37wK5l" to="i8dg:ZqZbw4SsgS" resolve="arity" />
-                  </node>
+                  <node concept="1Rwk04" id="30XHGaP5DKY" role="2OqNvi" />
                 </node>
                 <node concept="37vLTw" id="ZqZbw4SmBM" role="3uHU7B">
                   <ref role="3cqZAo" node="ZqZbw4SmyC" resolve="i" />
@@ -1037,7 +1018,7 @@
                 </node>
                 <node concept="3EllGN" id="4sVJFklJjsR" role="37vLTJ">
                   <node concept="37vLTw" id="4sVJFklJjwX" role="3ElVtu">
-                    <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="id" />
+                    <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="sym" />
                   </node>
                   <node concept="37vLTw" id="4sVJFklJgjQ" role="3ElQJh">
                     <ref role="3cqZAo" node="4sVJFklJd6X" resolve="constraintDeclarations" />
@@ -1047,9 +1028,9 @@
             </node>
           </node>
           <node concept="3cpWsn" id="ZqZbw4S7uo" role="1Duv9x">
-            <property role="TrG5h" value="id" />
-            <node concept="3uibUv" id="ZqZbw4S7us" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            <property role="TrG5h" value="sym" />
+            <node concept="3uibUv" id="30XHGaP5aIv" role="1tU5fm">
+              <ref role="3uigEE" to="i8dg:54i3FxcZHHF" resolve="ConstraintSymbol" />
             </node>
           </node>
           <node concept="2OqwBi" id="ZqZbw4S7ut" role="1DdaDG">
@@ -1057,7 +1038,7 @@
               <ref role="3cqZAo" node="4sVJFklVhem" resolve="registry" />
             </node>
             <node concept="liA8E" id="ZqZbw4S7uv" role="2OqNvi">
-              <ref role="37wK5l" to="i8dg:ZqZbw4RIlL" resolve="userConstraintIds" />
+              <ref role="37wK5l" to="i8dg:ZqZbw4RIlL" resolve="userConstraintSymbols" />
             </node>
           </node>
         </node>
@@ -1701,7 +1682,7 @@
                 <property role="TrG5h" value="headKept" />
                 <node concept="A3Dl8" id="4sVJFklIUcf" role="1tU5fm">
                   <node concept="3uibUv" id="4sVJFklIUcg" role="A3Ik2">
-                    <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+                    <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraintOccurrence" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="4sVJFklIUch" role="33vP2m">
@@ -1719,7 +1700,7 @@
                 <property role="TrG5h" value="headReplaced" />
                 <node concept="A3Dl8" id="4sVJFklIUcm" role="1tU5fm">
                   <node concept="3uibUv" id="4sVJFklIUcn" role="A3Ik2">
-                    <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+                    <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraintOccurrence" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="4sVJFklIUco" role="33vP2m">
@@ -1937,7 +1918,7 @@
                   <node concept="3cpWsn" id="16gGH0V$_vo" role="1Duv9x">
                     <property role="TrG5h" value="gcst" />
                     <node concept="3uibUv" id="16gGH0V$_vs" role="1tU5fm">
-                      <ref role="3uigEE" to="i8dg:7eGEHDlc$8k" resolve="AbstractConstraint" />
+                      <ref role="3uigEE" to="i8dg:7eGEHDlc$8k" resolve="AbstractConstraintOccurrence" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="16gGH0V$_vt" role="1DdaDG">
@@ -2030,7 +2011,7 @@
               <node concept="3cpWsn" id="16gGH0V$Cdl" role="1Duv9x">
                 <property role="TrG5h" value="cst" />
                 <node concept="3uibUv" id="16gGH0V$Cdp" role="1tU5fm">
-                  <ref role="3uigEE" to="i8dg:7eGEHDlc$8k" resolve="AbstractConstraint" />
+                  <ref role="3uigEE" to="i8dg:7eGEHDlc$8k" resolve="AbstractConstraintOccurrence" />
                 </node>
               </node>
               <node concept="2OqwBi" id="16gGH0V$Cdq" role="1DdaDG">
@@ -2201,7 +2182,7 @@
           <node concept="3cpWsn" id="ZqZbw4Rtys" role="1Duv9x">
             <property role="TrG5h" value="uc" />
             <node concept="3uibUv" id="ZqZbw4Rtyt" role="1tU5fm">
-              <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+              <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraintOccurrence" />
             </node>
           </node>
           <node concept="2OqwBi" id="5dz6b540hpd" role="1DdaDG">
@@ -2245,7 +2226,7 @@
           <node concept="3cpWsn" id="ZqZbw4Rryz" role="1Duv9x">
             <property role="TrG5h" value="uc" />
             <node concept="3uibUv" id="ZqZbw4Rry$" role="1tU5fm">
-              <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+              <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraintOccurrence" />
             </node>
           </node>
           <node concept="2OqwBi" id="5dz6b540gPg" role="1DdaDG">
@@ -2387,7 +2368,7 @@
           <node concept="3cpWsn" id="ZqZbw4RpXh" role="1Duv9x">
             <property role="TrG5h" value="uc" />
             <node concept="3uibUv" id="ZqZbw4RpXl" role="1tU5fm">
-              <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+              <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraintOccurrence" />
             </node>
           </node>
           <node concept="2OqwBi" id="5dz6b540fmO" role="1DdaDG">
@@ -2529,7 +2510,7 @@
           <node concept="3cpWsn" id="ZqZbw4RoTd" role="1Duv9x">
             <property role="TrG5h" value="uc" />
             <node concept="3uibUv" id="ZqZbw4RoTh" role="1tU5fm">
-              <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+              <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraintOccurrence" />
             </node>
           </node>
           <node concept="2OqwBi" id="5dz6b540gaJ" role="1DdaDG">
@@ -2567,7 +2548,7 @@
       <node concept="37vLTG" id="4sVJFklUH4P" role="3clF46">
         <property role="TrG5h" value="uc" />
         <node concept="3uibUv" id="4sVJFklUH4Q" role="1tU5fm">
-          <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraint" />
+          <ref role="3uigEE" to="i8dg:7eGEHDlc$f7" resolve="UserConstraintOccurrence" />
         </node>
       </node>
       <node concept="37vLTG" id="2$F5Qpuu6te" role="3clF46">
@@ -2675,7 +2656,7 @@
       <node concept="37vLTG" id="2q_78a8lUlQ" role="3clF46">
         <property role="TrG5h" value="cst" />
         <node concept="3uibUv" id="2q_78a8lUlR" role="1tU5fm">
-          <ref role="3uigEE" to="i8dg:7eGEHDlc$8k" resolve="AbstractConstraint" />
+          <ref role="3uigEE" to="i8dg:7eGEHDlc$8k" resolve="AbstractConstraintOccurrence" />
         </node>
       </node>
       <node concept="37vLTG" id="2$F5QputWVE" role="3clF46">
@@ -2948,7 +2929,7 @@
                       <node concept="1eOMI4" id="3x8pcoFhzv6" role="2Oq$k0">
                         <node concept="10QFUN" id="3x8pcoFhzv7" role="1eOMHV">
                           <node concept="3uibUv" id="3x8pcoFhzv8" role="10QFUM">
-                            <ref role="3uigEE" to="i8dg:2q_78a8ybuo" resolve="JavaConstraint" />
+                            <ref role="3uigEE" to="i8dg:2q_78a8ybuo" resolve="JavaConstraintOccurrence" />
                           </node>
                           <node concept="37vLTw" id="3x8pcoFhzv9" role="10QFUP">
                             <ref role="3cqZAo" node="2q_78a8lUlQ" resolve="cst" />
@@ -3113,7 +3094,7 @@
                         <node concept="1eOMI4" id="2q_78a8lUmL" role="2Oq$k0">
                           <node concept="10QFUN" id="2q_78a8lUmM" role="1eOMHV">
                             <node concept="3uibUv" id="2q_78a8lUmN" role="10QFUM">
-                              <ref role="3uigEE" to="i8dg:7eGEHDlc$71" resolve="BuiltinConstraint" />
+                              <ref role="3uigEE" to="i8dg:7eGEHDlc$71" resolve="BuiltinConstraintOccurrence" />
                             </node>
                             <node concept="37vLTw" id="2q_78a8lUmO" role="10QFUP">
                               <ref role="3cqZAo" node="2q_78a8lUlQ" resolve="cst" />

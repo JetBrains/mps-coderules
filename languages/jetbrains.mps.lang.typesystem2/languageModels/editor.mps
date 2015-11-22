@@ -1471,16 +1471,6 @@
       <node concept="l2Vlx" id="5MHpiylKVos" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="2q_78a8IMQO">
-    <property role="3GE5qa" value="constraint" />
-    <ref role="1XX52x" to="wq2x:2q_78a8IM1S" resolve="JavaConstraint" />
-    <node concept="3EZMnI" id="2q_78a8IMYs" role="2wV5jI">
-      <node concept="3F0A7n" id="2q_78a8IN0f" role="3EZMnx">
-        <ref role="1NtTu8" to="wq2x:2q_78a8IMIA" resolve="template" />
-      </node>
-      <node concept="l2Vlx" id="2q_78a8IMYv" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="5NuEpF1iiTM">
     <property role="3GE5qa" value="rule" />
     <ref role="1XX52x" to="wq2x:5NuEpF1if3e" resolve="RuleInputSpecification" />

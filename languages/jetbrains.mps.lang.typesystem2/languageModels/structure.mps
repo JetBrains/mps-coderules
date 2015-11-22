@@ -459,18 +459,6 @@
       <ref role="20lvS9" node="5MHpiylEsuT" resolve="RuleParameterDeclaration" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2q_78a8IM1S">
-    <property role="3GE5qa" value="constraint" />
-    <property role="TrG5h" value="JavaConstraint" />
-    <property role="34LRSv" value="java" />
-    <property role="1pbfSe" value="1352647430" />
-    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
-    <node concept="1TJgyi" id="2q_78a8IMIA" role="1TKVEl">
-      <property role="TrG5h" value="template" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="asaX9" id="4EfgX2EvG9q" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="5NuEpF1if3e">
     <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="RuleInputSpecification" />
