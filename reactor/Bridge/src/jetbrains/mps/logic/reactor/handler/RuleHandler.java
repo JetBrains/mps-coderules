@@ -19,6 +19,9 @@ public abstract class RuleHandler {
 
     public abstract void setRules(@NotNull Iterable<? extends Rule> rules);
 
+    @NotNull
+    public abstract Iterable<? extends Rule> rules();
+
     /**
      * SPI
      */

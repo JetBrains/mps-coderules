@@ -22,6 +22,10 @@ class RuleHandlerImpl : RuleHandler() {
         }
     }
 
+    override fun rules(): MutableIterable<Rule> {
+       return myRules
+    }
+
     companion object {
         fun init() {
             setOurCompanion (object : RuleHandler.Companion {
