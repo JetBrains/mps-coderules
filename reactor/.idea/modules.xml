@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/API/API.iml" filepath="$PROJECT_DIR$/API/API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bridge/Bridge.iml" filepath="$PROJECT_DIR$/Bridge/Bridge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Core/Core.iml" filepath="$PROJECT_DIR$/Core/Core.iml" />
     </modules>
   </component>
 </project>

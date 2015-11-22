@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <root nodeRef="r:ffe6dee4-3b51-482f-93a8-7b16b0c154a5(jetbrains.mps.logic.reactor.constraint.occurrence)/2784663291559965072">
+    <file name="ConstraintKind.java">
+      <unit id="2784663291559965072" at="6,0,14,0" name="jetbrains.mps.logic.reactor.constraint.occurrence.ConstraintKind" />
+    </file>
+  </root>
+  <root nodeRef="r:ffe6dee4-3b51-482f-93a8-7b16b0c154a5(jetbrains.mps.logic.reactor.constraint.occurrence)/2784663291560507288">
+    <file name="JavaConstraintOccurrence.java">
+      <node id="2784663291563981107" at="9,80,10,56" concept="5" />
+      <node id="2784663291560517776" at="13,69,14,64" concept="8" />
+      <node id="2784663291560520183" at="17,32,18,31" concept="5" />
+      <node id="2784663291562781538" at="21,32,22,36" concept="5" />
+      <node id="2784663291563981098" at="9,0,12,0" concept="7" trace="nary#(Ljava/lang/String;null)Ljetbrains/mps/logic/reactor/constraint/occurrence/JavaConstraintOccurrence;" />
+      <node id="2784663291560508578" at="13,0,16,0" concept="0" trace="JavaConstraintOccurrence#(Ljava/lang/String;null)V" />
+      <node id="2784663291560507908" at="17,0,20,0" concept="4" trace="kind#()Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintKind;" />
+      <node id="2784663291562776140" at="21,0,24,0" concept="4" trace="toJavaString#()Ljava/lang/String;" />
+      <scope id="2784663291563981106" at="9,80,10,56" />
+      <scope id="2784663291560508582" at="13,69,14,64" />
+      <scope id="2784663291560507912" at="17,32,18,31" />
+      <scope id="2784663291562776144" at="21,32,22,36" />
+      <scope id="2784663291563981098" at="9,0,12,0">
+        <var name="args" id="2784663291563981101" />
+        <var name="template" id="2784663291563981099" />
+      </scope>
+      <scope id="2784663291560508578" at="13,0,16,0">
+        <var name="args" id="2784663291560510671" />
+        <var name="template" id="2784663291560510508" />
+      </scope>
+      <scope id="2784663291560507908" at="17,0,20,0" />
+      <scope id="2784663291562776140" at="21,0,24,0" />
+      <unit id="2784663291560507288" at="7,0,26,0" name="jetbrains.mps.logic.reactor.constraint.occurrence.JavaConstraintOccurrence" />
+    </file>
+  </root>
+  <root nodeRef="r:ffe6dee4-3b51-482f-93a8-7b16b0c154a5(jetbrains.mps.logic.reactor.constraint.occurrence)/5841747851378918959">
+    <file name="LogicalConstraintOccurence.java">
+      <node id="5841747851379152189" at="10,66,11,84" concept="5" />
+      <node id="5841747851379166327" at="14,65,15,83" concept="5" />
+      <node id="5841747851378925055" at="18,79,19,27" concept="8" />
+      <node id="5841747851378922406" at="22,32,23,34" concept="5" />
+      <node id="5841747851379151158" at="10,0,13,0" concept="7" trace="bound#(Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/constraint/occurrence/LogicalConstraintOccurence;" />
+      <node id="5841747851379166321" at="14,0,17,0" concept="7" trace="free#(Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/constraint/occurrence/LogicalConstraintOccurence;" />
+      <node id="5841747851378924851" at="18,0,21,0" concept="0" trace="LogicalConstraintOccurence#(Ljetbrains/mps/logic/reactor/constraint/ConstraintSymbol;Ljava/lang/Object;)V" />
+      <node id="5841747851378921991" at="22,0,25,0" concept="4" trace="kind#()Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintKind;" />
+      <scope id="5841747851379151162" at="10,66,11,84" />
+      <scope id="5841747851379166326" at="14,65,15,83" />
+      <scope id="5841747851378924855" at="18,79,19,27" />
+      <scope id="5841747851378921995" at="22,32,23,34" />
+      <scope id="5841747851379151158" at="10,0,13,0">
+        <var name="logical" id="5841747851379151823" />
+      </scope>
+      <scope id="5841747851379166321" at="14,0,17,0">
+        <var name="logical" id="5841747851379166322" />
+      </scope>
+      <scope id="5841747851378924851" at="18,0,21,0">
+        <var name="logical" id="5841747851378925889" />
+        <var name="symbol" id="5841747851378925673" />
+      </scope>
+      <scope id="5841747851378921991" at="22,0,25,0" />
+      <unit id="5841747851378918959" at="8,0,27,0" name="jetbrains.mps.logic.reactor.constraint.occurrence.LogicalConstraintOccurence" />
+    </file>
+  </root>
+  <root nodeRef="r:ffe6dee4-3b51-482f-93a8-7b16b0c154a5(jetbrains.mps.logic.reactor.constraint.occurrence)/8335224865064894913">
+    <file name="BuiltinConstraintOccurrence.java">
+      <node id="2581717380588396588" at="10,30,11,59" concept="9" />
+      <node id="2581717380588402908" at="12,5,13,0" concept="6" />
+      <node id="8335224865064894923" at="13,0,14,56" concept="5" />
+      <node id="2581717380588403000" at="18,30,19,59" concept="9" />
+      <node id="2581717380588405966" at="20,5,21,0" concept="6" />
+      <node id="8335224865064894939" at="21,0,22,63" concept="5" />
+      <node id="2784663291560133958" at="26,32,27,34" concept="5" />
+      <node id="8335224865064894991" at="30,79,31,23" concept="8" />
+      <node id="2581717380588393974" at="9,90,12,5" concept="3" />
+      <node id="2581717380588402998" at="17,103,20,5" concept="3" />
+      <node id="8335224865064894982" at="30,0,33,0" concept="0" trace="BuiltinConstraintOccurrence#(Ljetbrains/mps/logic/reactor/constraint/ConstraintSymbol;null)V" />
+      <node id="2784663291560132331" at="25,0,29,0" concept="4" trace="kind#()Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintKind;" />
+      <node id="8335224865064894915" at="9,0,16,0" concept="7" trace="unitary#(Ljetbrains/mps/logic/reactor/constraint/ConstraintSymbol;Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/constraint/occurrence/BuiltinConstraintOccurrence;" />
+      <node id="8335224865064894929" at="17,0,24,0" concept="7" trace="binary#(Ljetbrains/mps/logic/reactor/constraint/ConstraintSymbol;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/constraint/occurrence/BuiltinConstraintOccurrence;" />
+      <scope id="2581717380588393977" at="10,30,11,59" />
+      <scope id="2581717380588402999" at="18,30,19,59" />
+      <scope id="2784663291560132335" at="26,32,27,34" />
+      <scope id="8335224865064894990" at="30,79,31,23" />
+      <scope id="8335224865064894982" at="30,0,33,0">
+        <var name="arg" id="8335224865064894985" />
+        <var name="symbol" id="8335224865064894983" />
+      </scope>
+      <scope id="2784663291560132331" at="25,0,29,0" />
+      <scope id="8335224865064894922" at="9,90,14,56" />
+      <scope id="8335224865064894938" at="17,103,22,63" />
+      <scope id="8335224865064894915" at="9,0,16,0">
+        <var name="arg" id="8335224865064894918" />
+        <var name="symbol" id="8335224865064894916" />
+      </scope>
+      <scope id="8335224865064894929" at="17,0,24,0">
+        <var name="arg1" id="8335224865064894932" />
+        <var name="arg2" id="8335224865064894934" />
+        <var name="symbol" id="8335224865064894930" />
+      </scope>
+      <unit id="8335224865064894913" at="7,0,35,0" name="jetbrains.mps.logic.reactor.constraint.occurrence.BuiltinConstraintOccurrence" />
+    </file>
+  </root>
+  <root nodeRef="r:ffe6dee4-3b51-482f-93a8-7b16b0c154a5(jetbrains.mps.logic.reactor.constraint.occurrence)/8335224865064894996">
+    <file name="AbstractConstraintOccurrence.java">
+      <node id="8335224865064895007" at="12,82,13,25" concept="1" />
+      <node id="8335224865064895013" at="13,25,14,19" concept="1" />
+      <node id="8335224865064895024" at="17,36,18,18" concept="5" />
+      <node id="8335224865064895046" at="21,35,22,102" concept="5" />
+      <node id="2784663291559977205" at="25,0,26,0" concept="4" trace="kind#()Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintKind;" />
+      <node id="9010599623176893011" at="28,28,29,79" concept="5" />
+      <node id="8335224865064895067" at="32,0,33,0" concept="2" trace="symbol" />
+      <node id="8335224865064895070" at="33,0,34,0" concept="2" trace="arg" />
+      <node id="8335224865064895020" at="17,0,20,0" concept="4" trace="symbol#()Ljetbrains/mps/logic/reactor/constraint/ConstraintSymbol;" />
+      <node id="8335224865064895041" at="21,0,24,0" concept="4" trace="arguments#()Ljava/util/List;" />
+      <node id="8335224865064894998" at="12,0,16,0" concept="0" trace="AbstractConstraintOccurrence#(Ljetbrains/mps/logic/reactor/constraint/ConstraintSymbol;null)V" />
+      <node id="9010599623176891835" at="27,0,31,0" concept="4" trace="toString#()Ljava/lang/String;" />
+      <scope id="8335224865064895023" at="17,36,18,18" />
+      <scope id="8335224865064895045" at="21,35,22,102" />
+      <scope id="2784663291559977205" at="25,0,26,0" />
+      <scope id="9010599623176891839" at="28,28,29,79" />
+      <scope id="8335224865064895006" at="12,82,14,19" />
+      <scope id="8335224865064895020" at="17,0,20,0" />
+      <scope id="8335224865064895041" at="21,0,24,0" />
+      <scope id="8335224865064894998" at="12,0,16,0">
+        <var name="arg" id="8335224865064895001" />
+        <var name="symbol" id="8335224865064894999" />
+      </scope>
+      <scope id="9010599623176891835" at="27,0,31,0" />
+      <unit id="8335224865064894996" at="10,0,35,0" name="jetbrains.mps.logic.reactor.constraint.occurrence.AbstractConstraintOccurrence" />
+    </file>
+  </root>
+  <root nodeRef="r:ffe6dee4-3b51-482f-93a8-7b16b0c154a5(jetbrains.mps.logic.reactor.constraint.occurrence)/8335224865064895431">
+    <file name="ConstraintOccurrence.java">
+      <node id="8490564095239761549" at="9,59,10,68" concept="5" />
+      <node id="8335224865064895441" at="13,69,14,73" concept="5" />
+      <node id="8335224865064895457" at="17,82,18,80" concept="5" />
+      <node id="8335224865064895476" at="21,96,22,86" concept="5" />
+      <node id="6135434422634372105" at="25,70,26,84" concept="5" />
+      <node id="2784663291560143129" at="30,32,31,31" concept="5" />
+      <node id="8335224865064895510" at="34,73,35,24" concept="8" />
+      <node id="8490564095239761541" at="9,0,12,0" concept="7" trace="singleton#(Ljava/lang/String;)Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintOccurrence;" />
+      <node id="8335224865064895433" at="13,0,16,0" concept="7" trace="unitary#(Ljava/lang/String;Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintOccurrence;" />
+      <node id="8335224865064895447" at="17,0,20,0" concept="7" trace="binary#(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintOccurrence;" />
+      <node id="8335224865064895464" at="21,0,24,0" concept="7" trace="ternary#(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintOccurrence;" />
+      <node id="6135434422634372093" at="25,0,28,0" concept="7" trace="nary#(Ljava/lang/String;null)Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintOccurrence;" />
+      <node id="8335224865064895501" at="34,0,37,0" concept="0" trace="ConstraintOccurrence#(Ljetbrains/mps/logic/reactor/constraint/ConstraintSymbol;null)V" />
+      <node id="2784663291560140676" at="29,0,33,0" concept="4" trace="kind#()Ljetbrains/mps/logic/reactor/constraint/occurrence/ConstraintKind;" />
+      <scope id="8490564095239761548" at="9,59,10,68" />
+      <scope id="8335224865064895440" at="13,69,14,73" />
+      <scope id="8335224865064895456" at="17,82,18,80" />
+      <scope id="8335224865064895475" at="21,96,22,86" />
+      <scope id="6135434422634372104" at="25,70,26,84" />
+      <scope id="2784663291560140680" at="30,32,31,31" />
+      <scope id="8335224865064895509" at="34,73,35,24" />
+      <scope id="8490564095239761541" at="9,0,12,0">
+        <var name="id" id="8490564095239761542" />
+      </scope>
+      <scope id="8335224865064895433" at="13,0,16,0">
+        <var name="arg" id="8335224865064895436" />
+        <var name="id" id="8335224865064895434" />
+      </scope>
+      <scope id="8335224865064895447" at="17,0,20,0">
+        <var name="arg1" id="8335224865064895450" />
+        <var name="arg2" id="8335224865064895452" />
+        <var name="id" id="8335224865064895448" />
+      </scope>
+      <scope id="8335224865064895464" at="21,0,24,0">
+        <var name="arg1" id="8335224865064895467" />
+        <var name="arg2" id="8335224865064895469" />
+        <var name="arg3" id="8335224865064895471" />
+        <var name="id" id="8335224865064895465" />
+      </scope>
+      <scope id="6135434422634372093" at="25,0,28,0">
+        <var name="args" id="6135434422634376039" />
+        <var name="id" id="6135434422634372094" />
+      </scope>
+      <scope id="8335224865064895501" at="34,0,37,0">
+        <var name="args" id="8335224865064895504" />
+        <var name="symbol" id="8335224865064895502" />
+      </scope>
+      <scope id="2784663291560140676" at="29,0,33,0" />
+      <unit id="8335224865064895431" at="7,0,39,0" name="jetbrains.mps.logic.reactor.constraint.occurrence.ConstraintOccurrence" />
+    </file>
+  </root>
+  <root nodeRef="r:ffe6dee4-3b51-482f-93a8-7b16b0c154a5(jetbrains.mps.logic.reactor.constraint.occurrence)/9010599623176680927">
+    <file name="InvalidConstraintException.java">
+      <node id="9010599623176682194" at="8,53,9,19" concept="8" />
+      <node id="9010599623176682617" at="12,67,13,23" concept="8" />
+      <node id="9010599623176682144" at="8,0,11,0" concept="0" trace="InvalidConstraintException#(Ljava/lang/String;)V" />
+      <node id="9010599623176682613" at="12,0,15,0" concept="0" trace="InvalidConstraintException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
+      <scope id="9010599623176682148" at="8,53,9,19" />
+      <scope id="9010599623176682616" at="12,67,13,23" />
+      <scope id="9010599623176682144" at="8,0,11,0">
+        <var name="message" id="9010599623176682158" />
+      </scope>
+      <scope id="9010599623176682613" at="12,0,15,0">
+        <var name="ex" id="9010599623176682960" />
+        <var name="message" id="9010599623176682619" />
+      </scope>
+      <unit id="9010599623176680927" at="6,0,17,0" name="jetbrains.mps.logic.reactor.constraint.occurrence.InvalidConstraintException" />
+    </file>
+  </root>
+</debug-info>
+

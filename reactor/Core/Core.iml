@@ -7,6 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="com.google.collections:google-collections:1.0" level="project" />
+    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
+    <orderEntry type="module" module-name="API" />
+    <orderEntry type="module" module-name="Bridge" />
   </component>
 </module>

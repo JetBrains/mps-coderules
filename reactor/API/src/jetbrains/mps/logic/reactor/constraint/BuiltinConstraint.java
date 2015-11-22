@@ -6,7 +6,7 @@ package jetbrains.mps.logic.reactor.constraint;
 /**
  * A constraint that is provided by a solver. Can be either told or asked for a constraint. 
  */
-public interface AutoConstraint extends Constraint {
+public interface BuiltinConstraint extends Constraint {
 
   public Queryable solver(ComputingSession session);
 

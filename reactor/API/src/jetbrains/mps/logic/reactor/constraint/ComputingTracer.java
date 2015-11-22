@@ -5,8 +5,8 @@ package jetbrains.mps.logic.reactor.constraint;
 
 public interface ComputingTracer {
 
-  public void askSuccess(AutoConstraint autoConstraint, Object... args);
+  public void askSuccess(BuiltinConstraint autoConstraint, Object... args);
 
-  public void askFailure(AutoConstraint autoConstraint, Object... args);
+  public void askFailure(BuiltinConstraint autoConstraint, Object... args);
 
 }

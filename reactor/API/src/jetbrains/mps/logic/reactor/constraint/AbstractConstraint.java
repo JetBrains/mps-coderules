@@ -48,8 +48,8 @@ public abstract class AbstractConstraint implements ComputingItem {
     return (Constraint) this;
   }
 
-  public AutoConstraint asAutoConstraint() {
-    return (AutoConstraint) this;
+  public BuiltinConstraint asAutoConstraint() {
+    return (BuiltinConstraint) this;
   }
 
   protected void registerHandler(ComputingSession session, Instructible instructible) {

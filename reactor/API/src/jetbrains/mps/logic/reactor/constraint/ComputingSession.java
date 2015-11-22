@@ -45,7 +45,7 @@ public class ComputingSession {
   }
 
 
-  public boolean ask(AutoConstraint autoConstraint, Object... arg) {
+  public boolean ask(BuiltinConstraint autoConstraint, Object... arg) {
     Queryable solver = solver(autoConstraint);
     if (solver == null) {
       throw new IllegalStateException("no solver for '" + autoConstraint.symbol() + "'");
@@ -72,8 +72,8 @@ public class ComputingSession {
     return null;
   }
 
-  public AutoConstraint lookupAutoConstraint(Class<?> clazz) {
-    for (Map.Entry<AutoConstraint, Queryable> e : solvers.entrySet()) {
+  public BuiltinConstraint lookupAutoConstraint(Class<?> clazz) {
+    for (Map.Entry<BuiltinConstraint, Queryable> e : solvers.entrySet()) {
       if (clazz.isAssignableFrom(e.getKey().solverClass())) {
         return e.getKey();
       }
@@ -88,7 +88,7 @@ public class ComputingSession {
     return handlers.get(constraint);
   }
 
-  protected Queryable solver(AutoConstraint constraint) {
+  protected Queryable solver(BuiltinConstraint constraint) {
     if (!(solvers.containsKey(constraint))) {
       throw new IllegalStateException("no handler: " + constraint);
     }
@@ -99,13 +99,13 @@ public class ComputingSession {
     handlers.put(constraint, instructible);
   }
 
-  protected void registerSolver(AutoConstraint constraint, Queryable queryable) {
+  protected void registerSolver(BuiltinConstraint constraint, Queryable queryable) {
     solvers.put(constraint, queryable);
   }
 
   private Map<Constraint, Instructible> handlers = new HashMap<Constraint, Instructible>();
 
-  private Map<AutoConstraint, Queryable> solvers = new HashMap<AutoConstraint, Queryable>();
+  private Map<BuiltinConstraint, Queryable> solvers = new HashMap<BuiltinConstraint, Queryable>();
 
   private final ComputingTracer tracer;
 }
