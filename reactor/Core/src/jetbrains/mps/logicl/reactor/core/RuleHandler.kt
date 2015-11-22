@@ -5,19 +5,29 @@ package jetbrains.mps.logicl.reactor.core
  */
 
 import jetbrains.mps.logic.reactor.handler.RuleHandler
+import jetbrains.mps.logic.reactor.rule.Rule
+import java.util.*
 
 class FactoryImpl : RuleHandler.Factory {
-    override fun newHandler(): RuleHandler = HandlerImpl()
+    override fun newHandler(): RuleHandler = RuleHandlerImpl()
 }
 
-class HandlerImpl : RuleHandler() {
+class RuleHandlerImpl : RuleHandler() {
 
-    fun init() {
-        ourCompanion = object : Companion {
-            override fun createFactory(): Factory = FactoryImpl()
+    val myRules = ArrayList<Rule>()
+
+    override fun setRules(rules: Iterable<Rule>) {
+        for (rule in rules) {
+            myRules.add(rule)
         }
     }
 
-
-
+    companion object {
+        fun init() {
+            setOurCompanion (object : RuleHandler.Companion {
+                override fun createFactory(): Factory = FactoryImpl()
+            })
+        }
+    }
 }
+

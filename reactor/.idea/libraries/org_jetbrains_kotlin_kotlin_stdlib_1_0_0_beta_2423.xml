@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-2423" type="repository">
+    <properties maven-id="org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-2423" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../DotFolder/M2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.0.0-beta-2423/kotlin-stdlib-1.0.0-beta-2423.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../DotFolder/M2/repository/org/jetbrains/kotlin/kotlin-runtime/1.0.0-beta-2423/kotlin-runtime-1.0.0-beta-2423.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
