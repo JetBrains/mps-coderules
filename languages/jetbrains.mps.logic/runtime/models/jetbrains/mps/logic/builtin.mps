@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1238,9 +1238,9 @@
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="askSuccess" />
               <node concept="37vLTG" id="24Vro6cS5SR" role="3clF46">
-                <property role="TrG5h" value="autoConstraint" />
-                <node concept="3uibUv" id="24Vro6cS5SS" role="1tU5fm">
-                  <ref role="3uigEE" to="qrld:6Kcfpq7Bj7q" resolve="AutoConstraint" />
+                <property role="TrG5h" value="predicateSymbol" />
+                <node concept="3uibUv" id="5uFPQ7C61lQ" role="1tU5fm">
+                  <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                 </node>
               </node>
               <node concept="37vLTG" id="24Vro6cS5ST" role="3clF46">
@@ -1259,9 +1259,9 @@
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="askFailure" />
               <node concept="37vLTG" id="24Vro6cS5T2" role="3clF46">
-                <property role="TrG5h" value="autoConstraint" />
-                <node concept="3uibUv" id="24Vro6cS5T3" role="1tU5fm">
-                  <ref role="3uigEE" to="qrld:6Kcfpq7Bj7q" resolve="AutoConstraint" />
+                <property role="TrG5h" value="predicateSymbol" />
+                <node concept="3uibUv" id="5uFPQ7C61sP" role="1tU5fm">
+                  <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                 </node>
               </node>
               <node concept="37vLTG" id="24Vro6cS5T4" role="3clF46">

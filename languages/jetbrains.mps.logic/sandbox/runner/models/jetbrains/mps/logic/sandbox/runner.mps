@@ -4,7 +4,7 @@
   <languages>
     <use id="894463aa-8754-49c0-bf4b-6a32af66b376" name="jetbrains.mps.jchr" version="-1" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="3ypq" ref="r:ecf59ef9-2b17-40ee-91aa-e7999d4518f0(jetbrains.mps.unification.sandbox)" />
@@ -13,6 +13,8 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
+    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
+    <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.constraint)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -36,9 +38,13 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
@@ -174,7 +180,25 @@
                 <ref role="1Kajjj" to="3ypq:6SkxsMzGW42" resolve="typeOf" />
                 <node concept="2ShNRf" id="5lJXKt5le" role="1KkMwq">
                   <node concept="1pGfFk" id="5lJXKt5lf" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:4U_yxogDDy9" resolve="UnificationSolverImpl" />
+                    <ref role="37wK5l" to="95zw:3HJTsBn5KhD" resolve="UnificationSolverImpl" />
+                    <node concept="2OqwBi" id="qubcdtu07G" role="37wK5m">
+                      <node concept="2YIFZM" id="qubcdttZMi" role="2Oq$k0">
+                        <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
+                        <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+                        <node concept="10M0yZ" id="qubcdttZN1" role="37wK5m">
+                          <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                          <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+                        </node>
+                        <node concept="10M0yZ" id="qubcdttZN4" role="37wK5m">
+                          <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+                          <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="qubcdtu0th" role="2OqNvi">
+                        <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+                      </node>
+                    </node>
+                    <node concept="10Nm6u" id="5uFPQ7CmtB4" role="37wK5m" />
                   </node>
                 </node>
               </node>

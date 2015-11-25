@@ -14,6 +14,8 @@
     <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
+    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
+    <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.constraint)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -288,7 +290,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3KV3FXjZHhM" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:3HJTsBmBZ0h" resolve="value" />
+                <ref role="37wK5l" to="95zw:3HJTsBmBZ0h" resolve="value" />
               </node>
             </node>
           </node>
@@ -309,7 +311,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3KV3FXjZHhU" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:3HJTsBmBZ0h" resolve="value" />
+                <ref role="37wK5l" to="95zw:3HJTsBmBZ0h" resolve="value" />
               </node>
             </node>
           </node>
@@ -338,27 +340,19 @@
           </node>
         </node>
         <node concept="3clFbH" id="3KV3FXjZHi6" role="3cqZAp" />
-        <node concept="3cpWs8" id="3KV3FXk0r_e" role="3cqZAp">
-          <node concept="3cpWsn" id="3KV3FXk0r_f" role="3cpWs9">
+        <node concept="3cpWs8" id="5uFPQ7ClQgq" role="3cqZAp">
+          <node concept="3cpWsn" id="5uFPQ7ClQgr" role="3cpWs9">
             <property role="TrG5h" value="computingSession" />
-            <node concept="3uibUv" id="3KV3FXk0r_d" role="1tU5fm">
+            <node concept="3uibUv" id="5uFPQ7ClQgn" role="1tU5fm">
               <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
-            <node concept="2OqwBi" id="qubcdttNHJ" role="33vP2m">
-              <node concept="2YIFZM" id="qubcdttM82" role="2Oq$k0">
-                <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
-                <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
-                <node concept="10M0yZ" id="4xBopTzqK2f" role="37wK5m">
-                  <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
-                  <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
-                </node>
-                <node concept="10M0yZ" id="4xBopTzqK8e" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-                  <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
-                </node>
+            <node concept="2OqwBi" id="5uFPQ7ClQgs" role="33vP2m">
+              <node concept="2YIFZM" id="5uFPQ7ClQgt" role="2Oq$k0">
+                <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
+                <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
               </node>
-              <node concept="liA8E" id="qubcdttNOm" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+              <node concept="liA8E" id="5uFPQ7ClQgu" role="2OqNvi">
+                <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
               </node>
             </node>
           </node>
@@ -377,7 +371,7 @@
                 <node concept="1pGfFk" id="3KV3FXk0plg" role="2ShVmc">
                   <ref role="37wK5l" node="3KV3FXjZFyb" resolve="LubSolver" />
                   <node concept="37vLTw" id="3KV3FXk0r_h" role="37wK5m">
-                    <ref role="3cqZAo" node="3KV3FXk0r_f" resolve="computingSession" />
+                    <ref role="3cqZAo" node="5uFPQ7ClQgr" resolve="computingSession" />
                   </node>
                 </node>
               </node>
@@ -424,13 +418,13 @@
               <node concept="3clFbF" id="3KV3FXjZMUG" role="3cqZAp">
                 <node concept="2OqwBi" id="3KV3FXjZMUH" role="3clFbG">
                   <node concept="37vLTw" id="3KV3FXk0rYO" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3KV3FXk0r_f" resolve="computingSession" />
+                    <ref role="3cqZAo" node="5uFPQ7ClQgr" resolve="computingSession" />
                   </node>
                   <node concept="liA8E" id="3KV3FXjZMUJ" role="2OqNvi">
                     <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                     <node concept="10M0yZ" id="3KV3FXjZMUK" role="37wK5m">
                       <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
-                      <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
                     </node>
                     <node concept="37vLTw" id="3KV3FXjZMUL" role="37wK5m">
                       <ref role="3cqZAo" node="5H6hZahmlpn" resolve="result" />
@@ -1690,7 +1684,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3KV3FXk1h3Z" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:3HJTsBmBZ0h" resolve="value" />
+                <ref role="37wK5l" to="95zw:3HJTsBmBZ0h" resolve="value" />
               </node>
             </node>
           </node>
@@ -1711,7 +1705,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3KV3FXk1iAp" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:3HJTsBmBZ0h" resolve="value" />
+                <ref role="37wK5l" to="95zw:3HJTsBmBZ0h" resolve="value" />
               </node>
             </node>
           </node>
@@ -1740,27 +1734,19 @@
           </node>
         </node>
         <node concept="3clFbH" id="3KV3FXk1j8I" role="3cqZAp" />
-        <node concept="3cpWs8" id="3KV3FXk1jrO" role="3cqZAp">
-          <node concept="3cpWsn" id="3KV3FXk1jrP" role="3cpWs9">
+        <node concept="3cpWs8" id="5uFPQ7ClVCJ" role="3cqZAp">
+          <node concept="3cpWsn" id="5uFPQ7ClVCK" role="3cpWs9">
             <property role="TrG5h" value="computingSession" />
-            <node concept="3uibUv" id="3KV3FXk1jrQ" role="1tU5fm">
+            <node concept="3uibUv" id="5uFPQ7ClVCL" role="1tU5fm">
               <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
             </node>
-            <node concept="2OqwBi" id="qubcdttPMq" role="33vP2m">
-              <node concept="2YIFZM" id="qubcdttPAv" role="2Oq$k0">
-                <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
-                <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
-                <node concept="10M0yZ" id="qubcdttPFv" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
-                  <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
-                </node>
-                <node concept="10M0yZ" id="qubcdttPFy" role="37wK5m">
-                  <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-                </node>
+            <node concept="2OqwBi" id="5uFPQ7ClVCM" role="33vP2m">
+              <node concept="2YIFZM" id="5uFPQ7ClVCN" role="2Oq$k0">
+                <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
+                <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
               </node>
-              <node concept="liA8E" id="qubcdttPUh" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+              <node concept="liA8E" id="5uFPQ7ClVCO" role="2OqNvi">
+                <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
               </node>
             </node>
           </node>
@@ -1779,7 +1765,7 @@
                 <node concept="1pGfFk" id="3KV3FXk1kuc" role="2ShVmc">
                   <ref role="37wK5l" node="3KV3FXk1jky" resolve="SubtypePathSolver" />
                   <node concept="37vLTw" id="3KV3FXk1kud" role="37wK5m">
-                    <ref role="3cqZAo" node="3KV3FXk1jrP" resolve="computingSession" />
+                    <ref role="3cqZAo" node="5uFPQ7ClVCK" resolve="computingSession" />
                   </node>
                 </node>
               </node>
@@ -1835,13 +1821,13 @@
               <node concept="3clFbF" id="3KV3FXk1m38" role="3cqZAp">
                 <node concept="2OqwBi" id="3KV3FXk1m39" role="3clFbG">
                   <node concept="37vLTw" id="3KV3FXk1m3a" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3KV3FXk1jrP" resolve="computingSession" />
+                    <ref role="3cqZAo" node="5uFPQ7ClVCK" resolve="computingSession" />
                   </node>
                   <node concept="liA8E" id="3KV3FXk1m3b" role="2OqNvi">
                     <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                     <node concept="10M0yZ" id="3KV3FXk1m3c" role="37wK5m">
                       <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
-                      <ref role="3cqZAo" to="oy3s:3HJTsBn4kQs" resolve="INSTANCE" />
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
                     </node>
                     <node concept="37vLTw" id="3KV3FXk1m3d" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk1fGz" resolve="result" />
@@ -2559,9 +2545,9 @@
             </node>
             <node concept="liA8E" id="3KV3FXjZkQX" role="2OqNvi">
               <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
-              <node concept="10M0yZ" id="3KV3FXjZkQY" role="37wK5m">
+              <node concept="10M0yZ" id="5uFPQ7C5ZbN" role="37wK5m">
                 <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-                <ref role="3cqZAo" to="oy3s:2GO7tyJY8Rr" resolve="INSTANCE" />
+                <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
               </node>
               <node concept="37vLTw" id="3KV3FXjZkRO" role="37wK5m">
                 <ref role="3cqZAo" node="3KV3FXjZkR1" resolve="nextLeft" />

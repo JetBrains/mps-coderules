@@ -11,6 +11,7 @@
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
+    <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.constraint)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -226,7 +227,7 @@
     <node concept="3Tm1VV" id="6SkxsMzGW43" role="1B3o_S" />
     <node concept="3dC9aW" id="6SkxsMzHm6O" role="3dC3og">
       <node concept="3uibUv" id="6SkxsMzHm9x" role="3dC9yF">
-        <ref role="3uigEE" to="oy3s:6njqcfQVO0n" resolve="UnificationSolver" />
+        <ref role="3uigEE" to="95zw:6njqcfQVO0n" resolve="UnificationSolver" />
       </node>
     </node>
     <node concept="3a1Aqs" id="5oZZzbri1IF" role="3a1Ab0">

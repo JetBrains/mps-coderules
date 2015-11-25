@@ -4,7 +4,7 @@
   <languages>
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
@@ -16,6 +16,8 @@
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
+    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
+    <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.constraint)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -40,6 +42,9 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
@@ -193,7 +198,7 @@
       <property role="TrG5h" value="unificationSolver" />
       <node concept="3Tm6S6" id="fHk0tWuntC" role="1B3o_S" />
       <node concept="3uibUv" id="fHk0tWun$f" role="1tU5fm">
-        <ref role="3uigEE" to="oy3s:6njqcfQVO0n" resolve="UnificationSolver" />
+        <ref role="3uigEE" to="95zw:6njqcfQVO0n" resolve="UnificationSolver" />
       </node>
     </node>
     <node concept="2tJIrI" id="21Zu7ABuukF" role="jymVt" />
@@ -333,7 +338,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="fHk0tWuttq" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="fHk0tWuKfb" role="37wK5m">
                   <ref role="3cqZAo" node="fHk0tWu_Mt" resolve="a" />
                 </node>
@@ -394,7 +399,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="21Zu7ABuiLQ" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="21Zu7ABuiLR" role="37wK5m">
                   <ref role="3cqZAo" node="21Zu7ABuiLB" resolve="a" />
                 </node>
@@ -463,7 +468,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="53iOybEHDaW" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="53iOybEHDaX" role="37wK5m">
                   <ref role="3cqZAo" node="53iOybEHDaF" resolve="a" />
                 </node>
@@ -554,7 +559,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="21Zu7ABuni8" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="21Zu7ABuni9" role="37wK5m">
                   <ref role="3cqZAo" node="21Zu7ABunhN" resolve="a" />
                 </node>
@@ -643,7 +648,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="21Zu7ABupTS" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="21Zu7ABupTT" role="37wK5m">
                   <ref role="3cqZAo" node="21Zu7ABupTt" resolve="a" />
                 </node>
@@ -738,7 +743,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0I0umL" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="1OShD0I0umM" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0I0umo" resolve="a" />
                 </node>
@@ -843,7 +848,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0I169i" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="1OShD0I169j" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0I168P" resolve="a" />
                 </node>
@@ -953,7 +958,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0I1vDC" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="1OShD0I1vDD" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0I1vD7" resolve="a" />
                 </node>
@@ -1030,7 +1035,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0If5ve" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="1OShD0If5vf" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0If5uE" resolve="a" />
                 </node>
@@ -1202,7 +1207,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="5_6ImQYXMfD" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="5_6ImQYXMli" role="37wK5m">
                   <ref role="3cqZAo" node="5_6ImQYXLG2" resolve="list1" />
                 </node>
@@ -1218,7 +1223,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="5_6ImQYXMr0" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="5_6ImQYXMvo" role="37wK5m">
                   <ref role="3cqZAo" node="5_6ImQYXM2W" resolve="head" />
                 </node>
@@ -1271,7 +1276,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="5_6ImQYXMzm" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="5_6ImQYXMBW" role="37wK5m">
                   <ref role="3cqZAo" node="5_6ImQYXM86" resolve="tail" />
                 </node>
@@ -1393,7 +1398,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="5_6ImQYY3sd" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="5_6ImQYY3se" role="37wK5m">
                   <ref role="3cqZAo" node="5_6ImQYY3r$" resolve="list1" />
                 </node>
@@ -1409,7 +1414,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="5_6ImQYY3sj" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="5_6ImQYY3sk" role="37wK5m">
                   <ref role="3cqZAo" node="5_6ImQYY3rO" resolve="head" />
                 </node>
@@ -1437,7 +1442,7 @@
                 <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="5_6ImQYY3sD" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="5_6ImQYY3sE" role="37wK5m">
                   <ref role="3cqZAo" node="5_6ImQYY3rT" resolve="tail" />
                 </node>
@@ -1537,7 +1542,7 @@
                   <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
                 </node>
                 <node concept="liA8E" id="5_6ImQYY8ZW" role="2OqNvi">
-                  <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                  <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                   <node concept="37vLTw" id="5_6ImQYY8ZX" role="37wK5m">
                     <ref role="3cqZAo" node="5_6ImQYY68i" resolve="list1" />
                   </node>
@@ -1582,10 +1587,28 @@
           <node concept="37vLTI" id="fHk0tWuoPJ" role="3clFbG">
             <node concept="2ShNRf" id="fHk0tWuoQm" role="37vLTx">
               <node concept="1pGfFk" id="fHk0tWutdI" role="2ShVmc">
-                <ref role="37wK5l" to="oy3s:4U_yxogDEZX" resolve="UnificationSolverImpl" />
+                <ref role="37wK5l" to="95zw:5p8T3QHGKJ7" resolve="UnificationSolverImpl" />
+                <node concept="2OqwBi" id="qubcdtu0uA" role="37wK5m">
+                  <node concept="2YIFZM" id="qubcdtu0uB" role="2Oq$k0">
+                    <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
+                    <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+                    <node concept="10M0yZ" id="qubcdtu0uC" role="37wK5m">
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+                      <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                    </node>
+                    <node concept="10M0yZ" id="qubcdtu0uD" role="37wK5m">
+                      <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="qubcdtu0uE" role="2OqNvi">
+                    <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="fHk0tWutiw" role="37wK5m">
                   <ref role="3cqZAo" node="71LvIRuyoUF" resolve="constraintSystem" />
                 </node>
+                <node concept="10Nm6u" id="5uFPQ7Cmdko" role="37wK5m" />
               </node>
             </node>
             <node concept="37vLTw" id="fHk0tWuoLQ" role="37vLTJ">
@@ -1612,7 +1635,7 @@
       <property role="TrG5h" value="unificationSolver" />
       <node concept="3Tm6S6" id="1OShD0Ift_S" role="1B3o_S" />
       <node concept="3uibUv" id="1OShD0Ift_T" role="1tU5fm">
-        <ref role="3uigEE" to="oy3s:6njqcfQVO0n" resolve="UnificationSolver" />
+        <ref role="3uigEE" to="95zw:6njqcfQVO0n" resolve="UnificationSolver" />
       </node>
     </node>
     <node concept="2tJIrI" id="1OShD0Ifu78" role="jymVt" />
@@ -1894,7 +1917,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IfuGT" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="1OShD0IfuGU" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfuGw" resolve="a" />
                 </node>
@@ -2021,7 +2044,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="3HJTsBn443I" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="3HJTsBn443J" role="37wK5m">
                   <ref role="3cqZAo" node="3HJTsBn443g" resolve="a" />
                 </node>
@@ -2192,7 +2215,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="7FuqS$4k5oZ" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="7FuqS$4k5p0" role="37wK5m">
                   <ref role="3cqZAo" node="4XqG8ivyni3" resolve="c" />
                 </node>
@@ -2209,7 +2232,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="4XqG8ivynih" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="4XqG8ivynii" role="37wK5m">
                   <ref role="3cqZAo" node="4XqG8ivynhQ" resolve="a" />
                 </node>
@@ -2252,7 +2275,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="4XqG8ivyBc3" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="4XqG8ivyBl_" role="37wK5m">
                   <ref role="3cqZAo" node="4XqG8ivyni3" resolve="c" />
                 </node>
@@ -2390,7 +2413,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IfOft" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="1OShD0IfOfu" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfNC5" resolve="a" />
                 </node>
@@ -2406,7 +2429,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IfS$J" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="1OShD0IfU27" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfNCg" resolve="b" />
                 </node>
@@ -2504,7 +2527,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IfR26" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="1OShD0IfRhN" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfO_f" resolve="s" />
                 </node>
@@ -2643,7 +2666,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="4XqG8ivylRH" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="4XqG8ivylRI" role="37wK5m">
                   <ref role="3cqZAo" node="4XqG8ivylQZ" resolve="a" />
                 </node>
@@ -2659,7 +2682,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="4XqG8ivylRN" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="4XqG8ivylRO" role="37wK5m">
                   <ref role="3cqZAo" node="4XqG8ivylRf" resolve="b" />
                 </node>
@@ -2757,7 +2780,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="4XqG8ivylSj" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="4XqG8ivylSk" role="37wK5m">
                   <ref role="3cqZAo" node="4XqG8ivylS2" resolve="s" />
                 </node>
@@ -2873,7 +2896,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IfXZu" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="1OShD0IfXZv" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfW$y" resolve="a" />
                 </node>
@@ -2931,7 +2954,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IfW_3" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="37vLTw" id="1OShD0IfYy1" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfYmM" resolve="s" />
                 </node>
@@ -3076,7 +3099,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IgkS3" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="1OShD0IgkS4" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IgkRu" resolve="a" />
                 </node>
@@ -3099,7 +3122,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IgkSq" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="1oi1Uc" id="1OShD0IgnVn" role="37wK5m">
                   <node concept="1oi5UN" id="1OShD0IgnVo" role="1oi0x0">
                     <node concept="1oi5Wm" id="1OShD0IgnVp" role="1ojpOf">
@@ -3130,7 +3153,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IglY$" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="1oi1Uc" id="1OShD0Igoee" role="37wK5m">
                   <node concept="1oi5UN" id="1OShD0Igoef" role="1oi0x0">
                     <node concept="1oi5Wm" id="1OShD0Igoeg" role="1ojpOf">
@@ -3283,7 +3306,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IgaFP" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="1OShD0IgaFQ" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0Ig2i$" resolve="a" />
                 </node>
@@ -3306,7 +3329,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IgaFt" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="1oi1Uc" id="1OShD0IgmzL" role="37wK5m">
                   <node concept="KCUsM" id="1OShD0IgmzM" role="1oi0x0">
                     <node concept="1oi5UN" id="1OShD0IgmzN" role="KCVpo">
@@ -3450,7 +3473,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0Ig2j9" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="1OShD0Ig2ja" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0Ig9w4" resolve="a" />
                 </node>
@@ -3473,7 +3496,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0Ig2jv" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="1oi1Uc" id="1OShD0Igngn" role="37wK5m">
                   <node concept="KCUsM" id="1OShD0Igngo" role="1oi0x0" />
                 </node>
@@ -3567,7 +3590,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IgiRI" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAlI6" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAlI6" resolve="tellUni" />
                 <node concept="37vLTw" id="1OShD0IgiRJ" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0Igi9l" resolve="a" />
                 </node>
@@ -3590,7 +3613,7 @@
                 <ref role="3cqZAo" node="1OShD0Ift_R" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="1OShD0IgiS3" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4OsiK2BAnTP" resolve="askUni" />
+                <ref role="37wK5l" to="95zw:4OsiK2BAnTP" resolve="askUni" />
                 <node concept="1oi1Uc" id="1OShD0IgnvY" role="37wK5m">
                   <node concept="KCUsM" id="1OShD0IgnvZ" role="1oi0x0" />
                 </node>
@@ -3640,10 +3663,28 @@
           <node concept="37vLTI" id="1OShD0IftO$" role="3clFbG">
             <node concept="2ShNRf" id="1OShD0IftO_" role="37vLTx">
               <node concept="1pGfFk" id="1OShD0IftOA" role="2ShVmc">
-                <ref role="37wK5l" to="oy3s:4U_yxogDEZX" resolve="UnificationSolverImpl" />
+                <ref role="37wK5l" to="95zw:5p8T3QHGKJ7" resolve="UnificationSolverImpl" />
+                <node concept="2OqwBi" id="5uFPQ7CmmaS" role="37wK5m">
+                  <node concept="2YIFZM" id="5uFPQ7CmmaT" role="2Oq$k0">
+                    <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+                    <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
+                    <node concept="10M0yZ" id="5uFPQ7CmmaU" role="37wK5m">
+                      <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+                    </node>
+                    <node concept="10M0yZ" id="5uFPQ7CmmaV" role="37wK5m">
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+                      <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5uFPQ7CmmaW" role="2OqNvi">
+                    <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="1OShD0IftOB" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0Ift_O" resolve="constraintSystem" />
                 </node>
+                <node concept="10Nm6u" id="5uFPQ7Cmmhq" role="37wK5m" />
               </node>
             </node>
             <node concept="37vLTw" id="1OShD0IftOC" role="37vLTJ">
@@ -3667,14 +3708,14 @@
       <property role="TrG5h" value="unificationSolver" />
       <node concept="3Tm6S6" id="3K_0akS$LOl" role="1B3o_S" />
       <node concept="3uibUv" id="3K_0akS$LOm" role="1tU5fm">
-        <ref role="3uigEE" to="oy3s:6njqcfQVO0n" resolve="UnificationSolver" />
+        <ref role="3uigEE" to="95zw:6njqcfQVO0n" resolve="UnificationSolver" />
       </node>
     </node>
     <node concept="312cEg" id="3K_0akS$Mx8" role="jymVt">
       <property role="TrG5h" value="eqSolver" />
       <node concept="3Tm6S6" id="3K_0akS$Mx6" role="1B3o_S" />
       <node concept="3uibUv" id="3K_0akS$Mx7" role="1tU5fm">
-        <ref role="3uigEE" to="oy3s:3HJTsBn4ogZ" resolve="EqualsSolverImpl" />
+        <ref role="3uigEE" to="95zw:3HJTsBn4ogZ" resolve="EqualsSolverImpl" />
       </node>
     </node>
     <node concept="2tJIrI" id="3K_0akS$LPO" role="jymVt" />
@@ -3796,7 +3837,7 @@
                 <ref role="3cqZAo" node="3K_0akS$LOk" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS_faY" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4U_yxogCdjW" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4U_yxogCdjW" resolve="tellUni" />
                 <node concept="37vLTw" id="3K_0akS_fco" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS$O11" resolve="y1" />
                 </node>
@@ -3813,7 +3854,7 @@
                 <ref role="3cqZAo" node="3K_0akS$LOk" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS$NrP" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4U_yxogCe_U" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4U_yxogCe_U" resolve="tellUni" />
                 <node concept="37vLTw" id="3K_0akS$OfN" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS$NRr" resolve="x1" />
                 </node>
@@ -3845,7 +3886,7 @@
                 <ref role="3cqZAo" node="3K_0akS$Mx8" resolve="eqSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS$OWu" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:3HJTsBn4V_Q" resolve="tellEq" />
+                <ref role="37wK5l" to="95zw:3HJTsBn4V_Q" resolve="tellEq" />
                 <node concept="37vLTw" id="3K_0akS$PlX" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS$OxL" resolve="w1" />
                 </node>
@@ -3907,7 +3948,7 @@
                 <ref role="3cqZAo" node="3K_0akS$LOk" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS$WLA" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4U_yxogCdjW" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4U_yxogCdjW" resolve="tellUni" />
                 <node concept="37vLTw" id="3K_0akS_ccT" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS_bIv" resolve="p1" />
                 </node>
@@ -3934,7 +3975,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="6HT7BWBPd0Y" role="2OqNvi">
-                  <ref role="37wK5l" to="oy3s:3HJTsBmBZ0h" resolve="value" />
+                  <ref role="37wK5l" to="95zw:3HJTsBmBZ0h" resolve="value" />
                 </node>
               </node>
             </node>
@@ -4132,7 +4173,7 @@
                 <ref role="3cqZAo" node="3K_0akS$LOk" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS_pCT" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4U_yxogCdjW" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4U_yxogCdjW" resolve="tellUni" />
                 <node concept="37vLTw" id="3K_0akS_pCU" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS_pCE" resolve="y1" />
                 </node>
@@ -4163,7 +4204,7 @@
                 <ref role="3cqZAo" node="3K_0akS$Mx8" resolve="eqSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS_pDd" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:3HJTsBn4V_Q" resolve="tellEq" />
+                <ref role="37wK5l" to="95zw:3HJTsBn4V_Q" resolve="tellEq" />
                 <node concept="37vLTw" id="3K_0akS_pDe" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS_pD5" resolve="w1" />
                 </node>
@@ -4226,7 +4267,7 @@
                 <ref role="3cqZAo" node="3K_0akS$LOk" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS_pDB" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4U_yxogCdjW" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4U_yxogCdjW" resolve="tellUni" />
                 <node concept="37vLTw" id="3K_0akS_pDC" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS_pDi" resolve="p1" />
                 </node>
@@ -4243,7 +4284,7 @@
                 <ref role="3cqZAo" node="3K_0akS$LOk" resolve="unificationSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS_pD0" role="2OqNvi">
-                <ref role="37wK5l" to="oy3s:4U_yxogCe_U" resolve="tellUni" />
+                <ref role="37wK5l" to="95zw:4U_yxogCe_U" resolve="tellUni" />
                 <node concept="37vLTw" id="3K_0akS_pD1" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS_pC_" resolve="x1" />
                 </node>
@@ -4270,7 +4311,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="6HT7BWBPhwR" role="2OqNvi">
-                  <ref role="37wK5l" to="oy3s:3HJTsBmBZ0h" resolve="value" />
+                  <ref role="37wK5l" to="95zw:3HJTsBmBZ0h" resolve="value" />
                 </node>
               </node>
             </node>
@@ -4441,10 +4482,28 @@
           <node concept="37vLTI" id="3K_0akS$LUB" role="3clFbG">
             <node concept="2ShNRf" id="3K_0akS$LUC" role="37vLTx">
               <node concept="1pGfFk" id="3K_0akS$LUD" role="2ShVmc">
-                <ref role="37wK5l" to="oy3s:4U_yxogDEZX" resolve="UnificationSolverImpl" />
+                <ref role="37wK5l" to="95zw:5p8T3QHGKJ7" resolve="UnificationSolverImpl" />
+                <node concept="2OqwBi" id="5uFPQ7CmmzI" role="37wK5m">
+                  <node concept="2YIFZM" id="5uFPQ7CmmzJ" role="2Oq$k0">
+                    <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+                    <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
+                    <node concept="10M0yZ" id="5uFPQ7CmmzK" role="37wK5m">
+                      <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+                    </node>
+                    <node concept="10M0yZ" id="5uFPQ7CmmzL" role="37wK5m">
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+                      <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="5uFPQ7CmmzM" role="2OqNvi">
+                    <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="3K_0akS$LUE" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS$LOh" resolve="constraintSystem" />
                 </node>
+                <node concept="10Nm6u" id="5uFPQ7CmmD4" role="37wK5m" />
               </node>
             </node>
             <node concept="37vLTw" id="3K_0akS$LUF" role="37vLTJ">
@@ -4456,7 +4515,24 @@
           <node concept="37vLTI" id="3K_0akS$Mxi" role="3clFbG">
             <node concept="2ShNRf" id="3K_0akS$Mxm" role="37vLTx">
               <node concept="1pGfFk" id="3K_0akS$Mxn" role="2ShVmc">
-                <ref role="37wK5l" to="oy3s:3HJTsBn5jeB" resolve="EqualsSolverImpl" />
+                <ref role="37wK5l" to="95zw:5p8T3QHE69j" resolve="EqualsSolverImpl" />
+                <node concept="2OqwBi" id="qubcdttUBY" role="37wK5m">
+                  <node concept="2YIFZM" id="qubcdttUlY" role="2Oq$k0">
+                    <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+                    <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
+                    <node concept="10M0yZ" id="4xBopTzqK2f" role="37wK5m">
+                      <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+                    </node>
+                    <node concept="10M0yZ" id="4xBopTzqK8e" role="37wK5m">
+                      <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+                      <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="qubcdttUF$" role="2OqNvi">
+                    <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+                  </node>
+                </node>
                 <node concept="37vLTw" id="3K_0akS$Mxo" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS$LOh" resolve="constraintSystem" />
                 </node>
