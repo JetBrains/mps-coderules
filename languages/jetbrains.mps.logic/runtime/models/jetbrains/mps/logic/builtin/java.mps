@@ -40,12 +40,7 @@
       </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
-      <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
-        <child id="1164991057263" name="throwable" index="YScLw" />
-      </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
@@ -189,15 +184,8 @@
             <property role="3SKdUp" value="FIXME: implement me" />
           </node>
         </node>
-        <node concept="YS8fn" id="5uFPQ7Cjcze" role="3cqZAp">
-          <node concept="2ShNRf" id="5uFPQ7Cjc$3" role="YScLw">
-            <node concept="1pGfFk" id="5uFPQ7CjcGN" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
-              <node concept="Xl_RD" id="5uFPQ7CjcHH" role="37wK5m">
-                <property role="Xl_RC" value="not implemented" />
-              </node>
-            </node>
-          </node>
+        <node concept="3clFbF" id="5mr7UHclimT" role="3cqZAp">
+          <node concept="10Nm6u" id="5mr7UHclimR" role="3clFbG" />
         </node>
       </node>
       <node concept="2AHcQZ" id="4xBopTzrlec" role="2AJF6D">

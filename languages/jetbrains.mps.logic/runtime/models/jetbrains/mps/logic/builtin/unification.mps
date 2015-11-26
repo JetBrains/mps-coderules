@@ -1167,9 +1167,6 @@
       <node concept="3clFbS" id="4xBopTzmopB" role="3clF47">
         <node concept="XkiVB" id="4xBopTzmoNB" role="3cqZAp">
           <ref role="37wK5l" to="qrld:6Kcfpq7B1f7" resolve="AbstractPredicate" />
-          <node concept="37vLTw" id="5uFPQ7C29mz" role="37wK5m">
-            <ref role="3cqZAo" node="5uFPQ7C29mw" resolve="UNI_SYM" />
-          </node>
           <node concept="37vLTw" id="5uFPQ7C29Rp" role="37wK5m">
             <ref role="3cqZAo" node="5uFPQ7C29xx" resolve="left" />
           </node>
@@ -1936,9 +1933,6 @@
       <node concept="3clFbS" id="4xBopTzo_Q5" role="3clF47">
         <node concept="XkiVB" id="4xBopTzoAs2" role="3cqZAp">
           <ref role="37wK5l" to="qrld:6Kcfpq7B1f7" resolve="AbstractPredicate" />
-          <node concept="37vLTw" id="5uFPQ7C23RY" role="37wK5m">
-            <ref role="3cqZAo" node="5uFPQ7C23RV" resolve="EQ_SYM" />
-          </node>
           <node concept="37vLTw" id="5uFPQ7C24EQ" role="37wK5m">
             <ref role="3cqZAo" node="5uFPQ7C24iY" resolve="left" />
           </node>
@@ -2054,9 +2048,6 @@
       <node concept="3clFbS" id="4xBopTzrPWp" role="3clF47">
         <node concept="XkiVB" id="4xBopTzrQgb" role="3cqZAp">
           <ref role="37wK5l" to="qrld:6Kcfpq7B1f7" resolve="AbstractPredicate" />
-          <node concept="37vLTw" id="5uFPQ7BZnLE" role="37wK5m">
-            <ref role="3cqZAo" node="5uFPQ7BZnLB" resolve="ASSERT_SYM" />
-          </node>
           <node concept="37vLTw" id="5uFPQ7C25fP" role="37wK5m">
             <ref role="3cqZAo" node="5uFPQ7C251x" resolve="expression" />
           </node>

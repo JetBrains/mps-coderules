@@ -726,19 +726,20 @@
             </node>
             <node concept="3clFbF" id="ZqZbw4Sir2" role="3cqZAp">
               <node concept="37vLTI" id="ZqZbw4SjaZ" role="3clFbG">
-                <node concept="2YIFZM" id="ZqZbw4SkvJ" role="37vLTx">
-                  <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
-                  <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                  <node concept="37vLTw" id="ZqZbw4SkC2" role="37wK5m">
-                    <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="sym" />
-                  </node>
-                </node>
                 <node concept="2OqwBi" id="ZqZbw4Siu$" role="37vLTJ">
                   <node concept="37vLTw" id="ZqZbw4Sir0" role="2Oq$k0">
                     <ref role="3cqZAo" node="ZqZbw4SgSk" resolve="cdeclNode" />
                   </node>
                   <node concept="3TrcHB" id="ZqZbw4SiM0" role="2OqNvi">
                     <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3ec9Qj4Ph$E" role="37vLTx">
+                  <node concept="37vLTw" id="ZqZbw4SkC2" role="2Oq$k0">
+                    <ref role="3cqZAo" node="ZqZbw4S7uo" resolve="sym" />
+                  </node>
+                  <node concept="liA8E" id="3ec9Qj4PhBb" role="2OqNvi">
+                    <ref role="37wK5l" to="qrld:54i3FxcZMvt" resolve="id" />
                   </node>
                 </node>
               </node>
@@ -2988,7 +2989,7 @@
                             </node>
                             <node concept="liA8E" id="5uFPQ7BM_qD" role="2OqNvi">
                               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                              <node concept="2OqwBi" id="5uFPQ7BM_qE" role="37wK5m">
+                              <node concept="2OqwBi" id="3ec9Qj4KInG" role="37wK5m">
                                 <node concept="2OqwBi" id="5uFPQ7BM_qF" role="2Oq$k0">
                                   <node concept="37vLTw" id="5uFPQ7BRz7x" role="2Oq$k0">
                                     <ref role="3cqZAo" node="5uFPQ7BMz7a" resolve="pred" />
@@ -2997,8 +2998,8 @@
                                     <ref role="37wK5l" to="qrld:6Kcfpq7Bjgi" resolve="symbol" />
                                   </node>
                                 </node>
-                                <node concept="liA8E" id="5uFPQ7BM_qI" role="2OqNvi">
-                                  <ref role="37wK5l" to="qrld:5uFPQ7B$$w_" resolve="toString" />
+                                <node concept="liA8E" id="3ec9Qj4KItp" role="2OqNvi">
+                                  <ref role="37wK5l" to="qrld:54i3FxcZMvt" resolve="id" />
                                 </node>
                               </node>
                             </node>

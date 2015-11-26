@@ -144,7 +144,6 @@
   <node concept="312cEu" id="5$WbtTOYoMb">
     <property role="TrG5h" value="LogicalBuiltinConstraint" />
     <property role="1sVAO0" value="false" />
-    <node concept="2tJIrI" id="7ISVfSJpRF" role="jymVt" />
     <node concept="2tJIrI" id="5$WbtTOYpQU" role="jymVt" />
     <node concept="Wx3nA" id="5uFPQ7C26$b" role="jymVt">
       <property role="TrG5h" value="BOUND_SYM" />
@@ -157,7 +156,7 @@
         <node concept="1pGfFk" id="5uFPQ7C26X5" role="2ShVmc">
           <ref role="37wK5l" to="qrld:5uFPQ7B$$fT" resolve="PredicateSymbol" />
           <node concept="Xl_RD" id="5uFPQ7C272B" role="37wK5m">
-            <property role="Xl_RC" value="bound" />
+            <property role="Xl_RC" value="isNonVar" />
           </node>
           <node concept="3cmrfG" id="5uFPQ7C276T" role="37wK5m">
             <property role="3cmrfH" value="1" />
@@ -177,7 +176,7 @@
         <node concept="1pGfFk" id="5uFPQ7C279C" role="2ShVmc">
           <ref role="37wK5l" to="qrld:5uFPQ7B$$fT" resolve="PredicateSymbol" />
           <node concept="Xl_RD" id="5uFPQ7C279D" role="37wK5m">
-            <property role="Xl_RC" value="free" />
+            <property role="Xl_RC" value="isVar" />
           </node>
           <node concept="3cmrfG" id="5uFPQ7C279E" role="37wK5m">
             <property role="3cmrfH" value="1" />
