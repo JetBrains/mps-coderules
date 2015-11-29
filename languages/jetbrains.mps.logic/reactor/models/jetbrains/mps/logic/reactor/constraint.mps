@@ -175,6 +175,7 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -1485,6 +1486,20 @@
       <node concept="3clFbS" id="5uFPQ7B_aTG" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="5uFPQ7B_aZ9" role="jymVt" />
+    <node concept="3clFb_" id="78CwJJcOwWR" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="argumentTypes" />
+      <node concept="3uibUv" id="78CwJJcOxpB" role="3clF45">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="78CwJJcOxzF" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="78CwJJcOx$p" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="78CwJJcOwWU" role="1B3o_S" />
+      <node concept="3clFbS" id="78CwJJcOwWV" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="78CwJJcOwxN" role="jymVt" />
     <node concept="3Tm1VV" id="6Kcfpq7BfEo" role="1B3o_S" />
     <node concept="3uibUv" id="5uFPQ7B$Pog" role="3HQHJm">
       <ref role="3uigEE" node="5uFPQ7B$Pn9" resolve="AndItem" />
@@ -2476,6 +2491,84 @@
                 <ref role="3cqZAo" node="5uFPQ7BZuef" resolve="arguments" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="78CwJJcOxO4" role="jymVt" />
+    <node concept="3clFb_" id="78CwJJcOxDH" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="argumentTypes" />
+      <node concept="3uibUv" id="78CwJJcOxDI" role="3clF45">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="78CwJJcOxDJ" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="78CwJJcOxDK" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="78CwJJcOxDL" role="1B3o_S" />
+      <node concept="3clFbS" id="78CwJJcOxDN" role="3clF47">
+        <node concept="3cpWs8" id="78CwJJcO$LY" role="3cqZAp">
+          <node concept="3cpWsn" id="78CwJJcO$LZ" role="3cpWs9">
+            <property role="TrG5h" value="types" />
+            <node concept="3uibUv" id="78CwJJcO$LM" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+              <node concept="3uibUv" id="78CwJJcO$LS" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                <node concept="3qTvmN" id="78CwJJcO$LT" role="11_B2D" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="78CwJJcO$M0" role="33vP2m">
+              <node concept="1pGfFk" id="78CwJJcO$M1" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(int)" resolve="ArrayList" />
+                <node concept="2OqwBi" id="78CwJJcO$M2" role="37wK5m">
+                  <node concept="37vLTw" id="78CwJJcO$M3" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5uFPQ7BZuef" resolve="arguments" />
+                  </node>
+                  <node concept="1Rwk04" id="78CwJJcO$M4" role="2OqNvi" />
+                </node>
+                <node concept="3uibUv" id="78CwJJcO$M5" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                  <node concept="3qTvmN" id="78CwJJcO$M6" role="11_B2D" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="78CwJJcO_52" role="3cqZAp">
+          <node concept="3clFbS" id="78CwJJcO_54" role="2LFqv$">
+            <node concept="3clFbF" id="78CwJJcO_ku" role="3cqZAp">
+              <node concept="2OqwBi" id="78CwJJcO_ok" role="3clFbG">
+                <node concept="37vLTw" id="78CwJJcO_ks" role="2Oq$k0">
+                  <ref role="3cqZAo" node="78CwJJcO$LZ" resolve="types" />
+                </node>
+                <node concept="liA8E" id="78CwJJcO_AW" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="2OqwBi" id="78CwJJcO_HO" role="37wK5m">
+                    <node concept="37vLTw" id="78CwJJcO_G3" role="2Oq$k0">
+                      <ref role="3cqZAo" node="78CwJJcO_55" resolve="arg" />
+                    </node>
+                    <node concept="liA8E" id="78CwJJcO_ND" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="78CwJJcO_55" role="1Duv9x">
+            <property role="TrG5h" value="arg" />
+            <node concept="3uibUv" id="78CwJJcO_9N" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            </node>
+          </node>
+          <node concept="37vLTw" id="78CwJJcO_hl" role="1DdaDG">
+            <ref role="3cqZAo" node="5uFPQ7BZuef" resolve="arguments" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="78CwJJcOAQH" role="3cqZAp">
+          <node concept="37vLTw" id="78CwJJcOAQF" role="3clFbG">
+            <ref role="3cqZAo" node="78CwJJcO$LZ" resolve="types" />
           </node>
         </node>
       </node>
