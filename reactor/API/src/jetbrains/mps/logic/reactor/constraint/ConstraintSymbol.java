@@ -6,69 +6,19 @@ package jetbrains.mps.logic.reactor.constraint;
 /**
  * TODO: move to the constraint model
  */
-public class ConstraintSymbol {
+public class ConstraintSymbol extends Symbol {
 
   public static ConstraintSymbol symbol(String id, int arity) {
-    return new ConstraintSymbol(id, arity, false);
+    return new ConstraintSymbol(id, arity);
   }
 
-  public static ConstraintSymbol builtinSymbol(String id, int arity) {
-    return new ConstraintSymbol(id, arity, true);
-  }
-
-  private ConstraintSymbol(String id, int arity, boolean builtin) {
-    this.id = id;
-    this.arity = arity;
-    this.builtin = builtin;
-  }
-
-  public String id() {
-    return id;
-  }
-
-  public int arity() {
-    return arity;
-  }
-
-  public boolean isBuiltin() {
-    return builtin;
+  public ConstraintSymbol(String id, int arity) {
+    super(id, arity);
   }
 
   @Override
   public String toString() {
-    return id;
+    return id() + "/" + arity();
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || this.getClass() != o.getClass()) {
-      return false;
-    }
-
-    ConstraintSymbol that = (ConstraintSymbol) o;
-    if ((id != null ? !(id.equals(that.id)) : that.id != null)) {
-      return false;
-    }
-    if (arity != that.arity) {
-      return false;
-    }
-
-    return true;
-  }
-
-  @Override
-  public int hashCode() {
-    int result = 17;
-    result = 43 * result + ((id != null ? String.valueOf(id).hashCode() : 0));
-    result = 31 * result + 37 * arity;
-    return result;
-  }
-
-  private String id;
-  private int arity;
-
-  private boolean builtin;
 }

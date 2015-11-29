@@ -1,5 +1,4 @@
-import jetbrains.mps.logic.reactor.constraint.occurrence.AbstractConstraintOccurrence
-import jetbrains.mps.logic.reactor.constraint.occurrence.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.constraint.*
 import jetbrains.mps.logic.reactor.rule.Rule
 import jetbrains.mps.logic.reactor.rule.RuleBuilder
 import java.util.*
@@ -18,56 +17,56 @@ fun rule(tag: String, vararg component:RB.() -> Unit): Rule {
 }
 
 fun headKept(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendHeadKept( * buildConjunction(ConstraintOccurrence::class.java, content).toArray())
+    appendHeadKept( * buildConjunction(Constraint::class.java, content).toArray())
 }
 fun headReplaced(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendHeadKept( * buildConjunction(ConstraintOccurrence::class.java, content).toArray())
+    appendHeadKept( * buildConjunction(Constraint::class.java, content).toArray())
 }
 fun guard(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendGuard( * buildConjunction(AbstractConstraintOccurrence::class.java, content).toArray())
+    appendGuard( * buildConjunction(AndItem::class.java, content).toArray())
 }
 fun body(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendBody( * buildConjunction(AbstractConstraintOccurrence::class.java, content).toArray())
+    appendBody( * buildConjunction(AndItem::class.java, content).toArray())
 }
 
 fun constraint(id: String): ConjBuilder.() -> Unit = {
-    add(ConstraintOccurrence.singleton(id))
+    add(AbstractConstraint(ConstraintSymbol.symbol(id, 0)))
 }
 fun constraint(id: String, arg: Any): ConjBuilder.() -> Unit = {
-    add(ConstraintOccurrence.unitary(id, arg))
+    add(AbstractConstraint(ConstraintSymbol.symbol(id, 1), arg))
 }
 fun constraint(id: String, arg1: Any, arg2: Any): ConjBuilder.() -> Unit = {
-    add(ConstraintOccurrence.binary(id, arg1, arg2))
+    add(AbstractConstraint(ConstraintSymbol.symbol(id, 2), arg1, arg2))
 }
 fun constraint(id: String, arg1: Any, arg2: Any, arg3: Any): ConjBuilder.() -> Unit = {
-    add(ConstraintOccurrence.ternary(id, arg1, arg2, arg3))
+    add(AbstractConstraint(ConstraintSymbol.symbol(id, 3), arg1, arg2, arg3))
 }
 fun constraint(id: String, args: Array<out Any>): ConjBuilder.() -> Unit = {
-    add(ConstraintOccurrence.nary(id, * args))
+    add(AbstractConstraint(ConstraintSymbol.symbol(id, args.size), * args))
 }
 
 class RB(tag: String) : RuleBuilder(tag) {}
 
-class ConjBuilder (val type: Class<out AbstractConstraintOccurrence>) {
-    val constraints = ArrayList<AbstractConstraintOccurrence>()
-    fun add(constraint: AbstractConstraintOccurrence): Unit {
+class ConjBuilder (val type: Class<out AndItem>) {
+    val constraints = ArrayList<AndItem>()
+    fun add(constraint: AndItem): Unit {
         if (!type.isAssignableFrom(constraint.javaClass))
             throw IllegalArgumentException("unexpected constraint class '${constraint.javaClass}'")
         constraints.add(constraint)
     }
-    fun <T : AbstractConstraintOccurrence> toArray(): Array<T> =
-        if (ConstraintOccurrence::class.java.isAssignableFrom(type))
-            Array<ConstraintOccurrence>(constraints.size) {
-                constraints.get(it) as ConstraintOccurrence
+    fun <T : AndItem> toArray(): Array<T> =
+        if (Constraint::class.java.isAssignableFrom(type))
+            Array<Constraint>(constraints.size) {
+                constraints.get(it) as Constraint
             } as Array<T>
         else
-            Array<AbstractConstraintOccurrence>(constraints.size) {
+            Array<AndItem>(constraints.size) {
                 constraints.get(it)
             } as Array<T>
 }
 
-private fun
-    buildConjunction(type: Class<out AbstractConstraintOccurrence>, content: Array<out ConjBuilder.() -> Unit>): ConjBuilder
+private fun buildConjunction(type: Class<out AndItem>,
+                             content: Array<out ConjBuilder.() -> Unit>): ConjBuilder
 {
     var conjBuilder = ConjBuilder(type)
     for (c in content) {
