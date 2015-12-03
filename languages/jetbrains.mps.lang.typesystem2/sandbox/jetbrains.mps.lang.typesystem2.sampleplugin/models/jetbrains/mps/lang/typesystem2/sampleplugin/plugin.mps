@@ -1729,22 +1729,22 @@
         <node concept="3g6Rrh" id="5mr7UHcboy8" role="2ShVmc">
           <node concept="10M0yZ" id="5mr7UHcboyR" role="3g7hyw">
             <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboyX" role="3g7hyw">
             <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboz3" role="3g7hyw">
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
             <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboz9" role="3g7hyw">
-            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
+            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
             <ref role="3cqZAo" to="xq5w:5uFPQ7C26$b" resolve="BOUND_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcbozf" role="3g7hyw">
-            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
+            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
             <ref role="3cqZAo" to="xq5w:5uFPQ7C279$" resolve="FREE_SYM" />
           </node>
           <node concept="3uibUv" id="5mr7UHcbqo2" role="3g7fb8">
@@ -5820,6 +5820,11 @@
                                 </node>
                                 <node concept="37vLTw" id="78CwJJcTyX1" role="3uHU7w">
                                   <ref role="3cqZAo" node="78CwJJcTyWt" resolve="nameHint" />
+                                </node>
+                              </node>
+                              <node concept="2ShNRf" id="2tcGHBEvatL" role="37wK5m">
+                                <node concept="HV5vD" id="2tcGHBEvatM" role="2ShVmc">
+                                  <ref role="HV5vE" to="95zw:7ISVfSIxNO" resolve="JchrSolver" />
                                 </node>
                               </node>
                             </node>

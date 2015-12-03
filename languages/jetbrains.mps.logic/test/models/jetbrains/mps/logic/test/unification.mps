@@ -1610,27 +1610,49 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="2tcGHBEiyPe" role="3cqZAp">
+          <node concept="3cpWsn" id="2tcGHBEiyPf" role="3cpWs9">
+            <property role="TrG5h" value="symbols" />
+            <node concept="3uibUv" id="2tcGHBEiyPc" role="1tU5fm">
+              <ref role="3uigEE" to="95zw:7ISVfSIxNO" resolve="JchrSolver" />
+            </node>
+            <node concept="2ShNRf" id="2tcGHBEiyPg" role="33vP2m">
+              <node concept="HV5vD" id="2tcGHBEiB2V" role="2ShVmc">
+                <ref role="HV5vE" to="95zw:7ISVfSIxNO" resolve="JchrSolver" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2tcGHBEi$SM" role="3cqZAp">
+          <node concept="3SKdUq" id="2tcGHBEi$SO" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: why create new solvers?" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2tcGHBEiyVs" role="3cqZAp">
+          <node concept="2OqwBi" id="2tcGHBEiyYu" role="3clFbG">
+            <node concept="37vLTw" id="2tcGHBEiyVq" role="2Oq$k0">
+              <ref role="3cqZAo" node="2tcGHBEiyPf" resolve="symbols" />
+            </node>
+            <node concept="liA8E" id="2tcGHBEiz1l" role="2OqNvi">
+              <ref role="37wK5l" to="qrld:2tcGHBEeol1" resolve="init" />
+              <node concept="10M0yZ" id="qubcdttZN1" role="37wK5m">
+                <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+                <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+              </node>
+              <node concept="10M0yZ" id="qubcdttZN4" role="37wK5m">
+                <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+                <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="fHk0tWuoLS" role="3cqZAp">
           <node concept="37vLTI" id="fHk0tWuoPJ" role="3clFbG">
             <node concept="2ShNRf" id="fHk0tWuoQm" role="37vLTx">
               <node concept="1pGfFk" id="fHk0tWutdI" role="2ShVmc">
                 <ref role="37wK5l" to="95zw:5p8T3QHGKJ7" resolve="UnificationSolverImpl" />
-                <node concept="2OqwBi" id="qubcdtu0uA" role="37wK5m">
-                  <node concept="2YIFZM" id="qubcdtu0uB" role="2Oq$k0">
-                    <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
-                    <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
-                    <node concept="10M0yZ" id="qubcdtu0uC" role="37wK5m">
-                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
-                      <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
-                    </node>
-                    <node concept="10M0yZ" id="qubcdtu0uD" role="37wK5m">
-                      <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-                      <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="qubcdtu0uE" role="2OqNvi">
-                    <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
-                  </node>
+                <node concept="37vLTw" id="2tcGHBEiyPi" role="37wK5m">
+                  <ref role="3cqZAo" node="2tcGHBEiyPf" resolve="symbols" />
                 </node>
                 <node concept="37vLTw" id="fHk0tWutiw" role="37wK5m">
                   <ref role="3cqZAo" node="71LvIRuyoUF" resolve="constraintSystem" />
@@ -1651,15 +1673,7 @@
   </node>
   <node concept="3s_ewN" id="1OShD0IfsNp">
     <property role="3s_ewP" value="TellUniSolver" />
-    <node concept="312cEg" id="1OShD0Ift_O" role="jymVt">
-      <property role="TrG5h" value="constraintSystem" />
-      <node concept="3Tm6S6" id="1OShD0Ift_P" role="1B3o_S" />
-      <node concept="3uibUv" id="1OShD0Ift_Q" role="1tU5fm">
-        <ref role="3uigEE" to="eifs:~ConstraintSystem" resolve="ConstraintSystem" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5jPBdKMIHL" role="jymVt" />
-    <node concept="2tJIrI" id="1OShD0Ifu78" role="jymVt" />
+    <node concept="2tJIrI" id="2tcGHBEipQe" role="jymVt" />
     <node concept="3clFb_" id="1OShD0Ifu8d" role="jymVt">
       <property role="TrG5h" value="var" />
       <node concept="37vLTG" id="1OShD0Ifu8e" role="3clF46">
@@ -1940,13 +1954,13 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdK_voQ" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdK_vsV" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdK_vv8" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNF6V" role="37wK5m">
@@ -2077,13 +2091,13 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNFjm" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNFjn" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNFjo" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNFjp" role="37wK5m">
@@ -2258,13 +2272,13 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNFBa" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNFBb" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNFBc" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNFBd" role="37wK5m">
@@ -2285,13 +2299,13 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNFL8" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNFL9" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNFLa" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNFLb" role="37wK5m">
@@ -2338,13 +2352,13 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNG7g" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNG7h" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNG7i" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNGcw" role="37wK5m">
@@ -2486,14 +2500,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNGmi" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNGmj" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNGmk" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNGml" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfNC5" resolve="a" />
@@ -2512,14 +2526,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNGuE" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNGuF" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNGuG" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNGCr" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfNCg" resolve="b" />
@@ -2620,14 +2634,14 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNGSC" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNGSD" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNGSE" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNGZw" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IfO_f" resolve="s" />
@@ -2769,13 +2783,13 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNHhX" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNHhY" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNHhZ" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNHH2" role="37wK5m">
@@ -2795,14 +2809,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNH9v" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNH9w" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNH9x" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNH9y" role="37wK5m">
                   <ref role="3cqZAo" node="4XqG8ivylRf" resolve="b" />
@@ -2903,14 +2917,14 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNHSE" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNHSF" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNHSG" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNHSH" role="37wK5m">
                   <ref role="3cqZAo" node="4XqG8ivylS2" resolve="s" />
@@ -3029,13 +3043,13 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNHZC" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNHZD" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNHZE" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNHZF" role="37wK5m">
@@ -3097,13 +3111,13 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNI3L" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNI3M" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNI3N" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNI3O" role="37wK5m">
@@ -3252,14 +3266,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNI6S" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNI6T" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNI6U" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNI6V" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0IgkRu" resolve="a" />
@@ -3284,14 +3298,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNIc1" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNIc2" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNIc3" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="1oi1Uc" id="5jPBdKNIh_" role="37wK5m">
                   <node concept="1oi5UN" id="5jPBdKNIhA" role="1oi0x0">
@@ -3324,14 +3338,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNInq" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNInr" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNIns" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="1oi1Uc" id="5jPBdKNIv1" role="37wK5m">
                   <node concept="1oi5UN" id="5jPBdKNIv2" role="1oi0x0">
@@ -3487,14 +3501,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNIGb" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNIGc" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNIGd" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNIGe" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0Ig2i$" resolve="a" />
@@ -3519,14 +3533,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNIJO" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNIJP" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNIJQ" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="1oi1Uc" id="5jPBdKNIPU" role="37wK5m">
                   <node concept="KCUsM" id="5jPBdKNIPV" role="1oi0x0">
@@ -3673,13 +3687,13 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNJ04" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNJ05" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNJ06" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNJ07" role="37wK5m">
@@ -3705,13 +3719,13 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNJ3p" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNJ3q" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNJ3r" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="1oi1Uc" id="5jPBdKNJ96" role="37wK5m">
@@ -3809,14 +3823,14 @@
                   <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNJfv" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNJfw" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                 <node concept="10M0yZ" id="5jPBdKNJfx" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                 </node>
                 <node concept="37vLTw" id="5jPBdKNJfy" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0Igi9l" resolve="a" />
@@ -3841,13 +3855,13 @@
                   <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
                 </node>
                 <node concept="liA8E" id="5jPBdKNJiC" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="computingSession" />
+                  <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
                 </node>
               </node>
               <node concept="liA8E" id="5jPBdKNJiD" role="2OqNvi">
                 <ref role="37wK5l" to="qrld:4xBopTznHV5" resolve="ask" />
                 <node concept="10M0yZ" id="5jPBdKNJiE" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
                 <node concept="1oi1Uc" id="5jPBdKNJnX" role="37wK5m">
@@ -3888,10 +3902,10 @@
                 <ref role="37wK5l" to="rchb:5uFPQ7Bwu9Q" resolve="withPredicates" />
                 <node concept="10M0yZ" id="5jPBdK_uXa" role="37wK5m">
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
-                  <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
                 </node>
                 <node concept="10M0yZ" id="5jPBdK_uXd" role="37wK5m">
-                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                  <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                   <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                 </node>
               </node>
@@ -4697,27 +4711,49 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="2tcGHBEi$8m" role="3cqZAp">
+          <node concept="3cpWsn" id="2tcGHBEi$8n" role="3cpWs9">
+            <property role="TrG5h" value="symbols" />
+            <node concept="3uibUv" id="2tcGHBEi$8k" role="1tU5fm">
+              <ref role="3uigEE" to="95zw:7ISVfSIxNO" resolve="JchrSolver" />
+            </node>
+            <node concept="2ShNRf" id="2tcGHBEi$8o" role="33vP2m">
+              <node concept="HV5vD" id="2tcGHBEiBt8" role="2ShVmc">
+                <ref role="HV5vE" to="95zw:7ISVfSIxNO" resolve="JchrSolver" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2tcGHBEi$gx" role="3cqZAp">
+          <node concept="2OqwBi" id="2tcGHBEi$kw" role="3clFbG">
+            <node concept="37vLTw" id="2tcGHBEi$gv" role="2Oq$k0">
+              <ref role="3cqZAo" node="2tcGHBEi$8n" resolve="symbols" />
+            </node>
+            <node concept="liA8E" id="2tcGHBEi$nn" role="2OqNvi">
+              <ref role="37wK5l" to="qrld:2tcGHBEeol1" resolve="init" />
+              <node concept="10M0yZ" id="2tcGHBEe$iM" role="37wK5m">
+                <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+                <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+              </node>
+              <node concept="10M0yZ" id="2tcGHBEe$iN" role="37wK5m">
+                <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+                <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2tcGHBEi$_e" role="3cqZAp">
+          <node concept="3SKdUq" id="2tcGHBEi$_g" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: why create new solvers?" />
+          </node>
+        </node>
         <node concept="3clFbF" id="3K_0akS$LUA" role="3cqZAp">
           <node concept="37vLTI" id="3K_0akS$LUB" role="3clFbG">
             <node concept="2ShNRf" id="3K_0akS$LUC" role="37vLTx">
               <node concept="1pGfFk" id="3K_0akS$LUD" role="2ShVmc">
                 <ref role="37wK5l" to="95zw:5p8T3QHGKJ7" resolve="UnificationSolverImpl" />
-                <node concept="2OqwBi" id="5uFPQ7CmmzI" role="37wK5m">
-                  <node concept="2YIFZM" id="5uFPQ7CmmzJ" role="2Oq$k0">
-                    <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
-                    <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
-                    <node concept="10M0yZ" id="5uFPQ7CmmzK" role="37wK5m">
-                      <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
-                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
-                    </node>
-                    <node concept="10M0yZ" id="5uFPQ7CmmzL" role="37wK5m">
-                      <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                      <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="5uFPQ7CmmzM" role="2OqNvi">
-                    <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
-                  </node>
+                <node concept="37vLTw" id="2tcGHBEi$vU" role="37wK5m">
+                  <ref role="3cqZAo" node="2tcGHBEi$8n" resolve="symbols" />
                 </node>
                 <node concept="37vLTw" id="3K_0akS$LUE" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS$LOh" resolve="constraintSystem" />
@@ -4735,22 +4771,8 @@
             <node concept="2ShNRf" id="3K_0akS$Mxm" role="37vLTx">
               <node concept="1pGfFk" id="3K_0akS$Mxn" role="2ShVmc">
                 <ref role="37wK5l" to="95zw:5p8T3QHE69j" resolve="EqualsSolverImpl" />
-                <node concept="2OqwBi" id="qubcdttUBY" role="37wK5m">
-                  <node concept="2YIFZM" id="qubcdttUlY" role="2Oq$k0">
-                    <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
-                    <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
-                    <node concept="10M0yZ" id="4xBopTzqK2f" role="37wK5m">
-                      <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
-                      <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
-                    </node>
-                    <node concept="10M0yZ" id="4xBopTzqK8e" role="37wK5m">
-                      <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                      <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="qubcdttUF$" role="2OqNvi">
-                    <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
-                  </node>
+                <node concept="37vLTw" id="2tcGHBEi$8q" role="37wK5m">
+                  <ref role="3cqZAo" node="2tcGHBEi$8n" resolve="symbols" />
                 </node>
                 <node concept="37vLTw" id="3K_0akS$Mxo" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS$LOh" resolve="constraintSystem" />
@@ -4841,51 +4863,39 @@
             <node concept="2OqwBi" id="5jPBdK_qYN" role="37vLTJ">
               <node concept="Xjq3P" id="5jPBdK_qYQ" role="2Oq$k0" />
               <node concept="2OwXpG" id="5jPBdK_qYM" role="2OqNvi">
-                <ref role="2Oxat5" node="5jPBdK_qYD" resolve="computingSession" />
+                <ref role="2Oxat5" node="5jPBdK_qYD" resolve="sessionSolver" />
               </node>
             </node>
             <node concept="37vLTw" id="5jPBdK_qYR" role="37vLTx">
-              <ref role="3cqZAo" node="5jPBdK_qV5" resolve="computingSession" />
+              <ref role="3cqZAo" node="5jPBdK_qV5" resolve="sessionSolver" />
             </node>
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="5jPBdK_qV5" role="3clF46">
-        <property role="TrG5h" value="computingSession" />
+        <property role="TrG5h" value="sessionSolver" />
         <node concept="3uibUv" id="5jPBdK_qV4" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="5jPBdK_qFR" role="jymVt" />
-    <node concept="3clFb_" id="5jPBdK_dWv" role="jymVt">
-      <property role="TrG5h" value="computingTracer" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="3uibUv" id="5jPBdK_dWw" role="3clF45">
-        <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="ComputingTracer" />
-      </node>
-      <node concept="3Tm1VV" id="5jPBdK_dWx" role="1B3o_S" />
-      <node concept="3clFbS" id="5jPBdK_dWz" role="3clF47">
-        <node concept="3clFbF" id="5jPBdK_dW_" role="3cqZAp">
-          <node concept="10Nm6u" id="5jPBdK_dW$" role="3clFbG" />
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="5jPBdK_dWA" role="jymVt">
-      <property role="TrG5h" value="computingSession" />
+      <property role="TrG5h" value="sessionSolver" />
       <property role="1EzhhJ" value="false" />
       <node concept="3uibUv" id="5jPBdK_dWB" role="3clF45">
-        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
       </node>
       <node concept="3Tm1VV" id="5jPBdK_dWC" role="1B3o_S" />
       <node concept="3clFbS" id="5jPBdK_dWE" role="3clF47">
         <node concept="3clFbF" id="5jPBdK_r6i" role="3cqZAp">
           <node concept="37vLTw" id="5jPBdK_r6h" role="3clFbG">
-            <ref role="3cqZAo" node="5jPBdK_qYD" resolve="computingSession" />
+            <ref role="3cqZAo" node="5jPBdK_qYD" resolve="sessionSolver" />
           </node>
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="2tcGHBEzo4L" role="jymVt" />
     <node concept="3clFb_" id="5jPBdK_dX1" role="jymVt">
       <property role="TrG5h" value="constraintSymbols" />
       <property role="1EzhhJ" value="false" />
@@ -5032,42 +5042,29 @@
         </node>
         <node concept="3Tm1VV" id="5jPBdK_npM" role="1B3o_S" />
         <node concept="3clFbS" id="5jPBdK_npO" role="3clF47">
-          <node concept="3cpWs8" id="5jPBdK_DfG" role="3cqZAp">
-            <node concept="3cpWsn" id="5jPBdK_DfH" role="3cpWs9">
+          <node concept="3cpWs8" id="2tcGHBEewJ$" role="3cqZAp">
+            <node concept="3cpWsn" id="2tcGHBEewJ_" role="3cpWs9">
               <property role="TrG5h" value="csession" />
-              <node concept="3uibUv" id="5jPBdK_DfB" role="1tU5fm">
-                <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+              <node concept="3uibUv" id="2tcGHBEewJt" role="1tU5fm">
+                <ref role="3uigEE" to="95zw:7ISVfSIxNO" resolve="JchrSolver" />
               </node>
-              <node concept="2OqwBi" id="5jPBdK_DfI" role="33vP2m">
-                <node concept="2YIFZM" id="5jPBdK_DfJ" role="2Oq$k0">
-                  <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
-                  <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
-                  <node concept="37vLTw" id="5jPBdK_DfK" role="37wK5m">
-                    <ref role="3cqZAo" node="5jPBdK_qdB" resolve="predicateSymbols" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="5jPBdK_DfL" role="2OqNvi">
-                  <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+              <node concept="2ShNRf" id="2tcGHBEewJA" role="33vP2m">
+                <node concept="HV5vD" id="2tcGHBEiBda" role="2ShVmc">
+                  <ref role="HV5vE" to="95zw:7ISVfSIxNO" resolve="JchrSolver" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="3clFbF" id="5jPBdK_B63" role="3cqZAp">
             <node concept="2OqwBi" id="5jPBdK_Bcd" role="3clFbG">
-              <node concept="2ShNRf" id="5jPBdK_BqZ" role="2Oq$k0">
-                <node concept="1pGfFk" id="5jPBdK_Br0" role="2ShVmc">
-                  <ref role="37wK5l" to="95zw:5mr7UHch7og" resolve="Symbols" />
-                  <node concept="37vLTw" id="5jPBdK_DCR" role="37wK5m">
-                    <ref role="3cqZAo" node="5jPBdK_DfH" resolve="csession" />
-                  </node>
-                  <node concept="10Nm6u" id="5jPBdK_DIc" role="37wK5m" />
-                </node>
+              <node concept="37vLTw" id="2tcGHBEewJE" role="2Oq$k0">
+                <ref role="3cqZAo" node="2tcGHBEewJ_" resolve="csession" />
               </node>
               <node concept="liA8E" id="5jPBdK_Bhd" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:5jPBdK__lx" resolve="registerSymbols" />
-                <node concept="2OqwBi" id="5jPBdK_Bie" role="37wK5m">
-                  <node concept="Xjq3P" id="5jPBdK_DL6" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="5jPBdK_Ep_" role="2OqNvi">
+                <ref role="37wK5l" to="qrld:2tcGHBEeol1" resolve="init" />
+                <node concept="2OqwBi" id="2tcGHBEex4W" role="37wK5m">
+                  <node concept="Xjq3P" id="2tcGHBEex4X" role="2Oq$k0" />
+                  <node concept="2OwXpG" id="2tcGHBEex4Y" role="2OqNvi">
                     <ref role="2Oxat5" node="5jPBdK_qdB" resolve="predicateSymbols" />
                   </node>
                 </node>
@@ -5083,7 +5080,7 @@
                 <node concept="1pGfFk" id="5jPBdK_qS9" role="2ShVmc">
                   <ref role="37wK5l" node="5jPBdK_qM0" resolve="TestingEvaluationSession" />
                   <node concept="37vLTw" id="5jPBdK_DfM" role="37wK5m">
-                    <ref role="3cqZAo" node="5jPBdK_DfH" resolve="csession" />
+                    <ref role="3cqZAo" node="2tcGHBEewJ_" resolve="csession" />
                   </node>
                 </node>
               </node>
@@ -5149,10 +5146,10 @@
       <ref role="3uigEE" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
     </node>
     <node concept="312cEg" id="5jPBdK_qYD" role="jymVt">
-      <property role="TrG5h" value="computingSession" />
+      <property role="TrG5h" value="sessionSolver" />
       <node concept="3Tm6S6" id="5jPBdK_qYE" role="1B3o_S" />
       <node concept="3uibUv" id="5jPBdK_qYG" role="1tU5fm">
-        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
       </node>
     </node>
   </node>

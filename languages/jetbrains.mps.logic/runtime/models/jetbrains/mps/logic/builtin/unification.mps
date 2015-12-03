@@ -1091,7 +1091,7 @@
     </node>
   </node>
   <node concept="312cEu" id="2GO7tyJVmP4">
-    <property role="TrG5h" value="UnificationBuiltinConstraint" />
+    <property role="TrG5h" value="UnificationPredicate" />
     <node concept="2tJIrI" id="5uFPQ7C29se" role="jymVt" />
     <node concept="3Tm1VV" id="2GO7tyJVmP5" role="1B3o_S" />
     <node concept="Wx3nA" id="2GO7tyJVob2" role="jymVt">
@@ -1134,21 +1134,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2GO7tyJVqjK" role="jymVt" />
-    <node concept="Wx3nA" id="5uFPQ7C5uqZ" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="QUERYABLE" />
-      <node concept="3Tm1VV" id="5uFPQ7C5uqV" role="1B3o_S" />
-      <node concept="3uibUv" id="5uFPQ7C5uqW" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-        <node concept="3uibUv" id="5uFPQ7C5uqX" role="11_B2D">
-          <ref role="3uigEE" to="95zw:6njqcfQVO0n" resolve="UnificationSolver" />
-        </node>
-      </node>
-      <node concept="3VsKOn" id="5uFPQ7C5uqY" role="33vP2m">
-        <ref role="3VsUkX" to="95zw:6njqcfQVO0n" resolve="UnificationSolver" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2GO7tyJY8Fs" role="jymVt" />
     <node concept="3clFbW" id="4xBopTzmopz" role="jymVt">
       <node concept="37vLTG" id="5uFPQ7C29xx" role="3clF46">
         <property role="TrG5h" value="left" />
@@ -1177,30 +1162,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4xBopTzmo93" role="jymVt" />
-    <node concept="3clFb_" id="4xBopTzmp95" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="solverClass" />
-      <node concept="3uibUv" id="4xBopTzmp96" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-        <node concept="3qUE_q" id="4xBopTzmp97" role="11_B2D">
-          <node concept="3uibUv" id="4xBopTzmp98" role="3qUE_r">
-            <ref role="3uigEE" to="qrld:6Kcfpq7AYBh" resolve="Queryable" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4xBopTzmp99" role="1B3o_S" />
-      <node concept="3clFbS" id="4xBopTzmp9c" role="3clF47">
-        <node concept="3clFbF" id="4xBopTztl0s" role="3cqZAp">
-          <node concept="37vLTw" id="5uFPQ7C5ur2" role="3clFbG">
-            <ref role="3cqZAo" node="5uFPQ7C5uqZ" resolve="QUERYABLE" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4xBopTznCo5" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4xBopTzmpnW" role="jymVt" />
     <node concept="3clFb_" id="7ISVfSJpsU" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="symbol" />
@@ -1858,7 +1819,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3HJTsBn4kk_">
-    <property role="TrG5h" value="EqualsBuiltinConstraint" />
+    <property role="TrG5h" value="EqualsPredicate" />
     <node concept="2tJIrI" id="7ISVfSJmTL" role="jymVt" />
     <node concept="Wx3nA" id="3HJTsBn4kQi" role="jymVt">
       <property role="TrG5h" value="EQ" />
@@ -1900,21 +1861,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3HJTsBn4kJ_" role="jymVt" />
-    <node concept="Wx3nA" id="5uFPQ7C5vo9" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="QUERYABLE" />
-      <node concept="3Tm1VV" id="5uFPQ7C5vo5" role="1B3o_S" />
-      <node concept="3uibUv" id="5uFPQ7C5vo6" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-        <node concept="3uibUv" id="5uFPQ7C5vo7" role="11_B2D">
-          <ref role="3uigEE" to="95zw:3HJTsBn4mEA" resolve="EqualsSolver" />
-        </node>
-      </node>
-      <node concept="3VsKOn" id="5uFPQ7C5vo8" role="33vP2m">
-        <ref role="3VsUkX" to="95zw:3HJTsBn4mEA" resolve="EqualsSolver" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3HJTsBn4kQx" role="jymVt" />
     <node concept="3clFbW" id="4xBopTzo_Q1" role="jymVt">
       <node concept="37vLTG" id="5uFPQ7C24iY" role="3clF46">
         <property role="TrG5h" value="left" />
@@ -1943,30 +1889,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4xBopTzo_yK" role="jymVt" />
-    <node concept="3clFb_" id="4xBopTzopJj" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="solverClass" />
-      <node concept="3uibUv" id="4xBopTzopJk" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-        <node concept="3qUE_q" id="4xBopTzopJl" role="11_B2D">
-          <node concept="3uibUv" id="4xBopTzopJm" role="3qUE_r">
-            <ref role="3uigEE" to="qrld:6Kcfpq7AYBh" resolve="Queryable" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4xBopTzopJn" role="1B3o_S" />
-      <node concept="3clFbS" id="4xBopTzopJp" role="3clF47">
-        <node concept="3clFbF" id="4xBopTzorXt" role="3cqZAp">
-          <node concept="37vLTw" id="5uFPQ7C5voc" role="3clFbG">
-            <ref role="3cqZAo" node="5uFPQ7C5vo9" resolve="QUERYABLE" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4xBopTzorrq" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5uFPQ7ClJr0" role="jymVt" />
     <node concept="3clFb_" id="5uFPQ7BZaxa" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="symbol" />
@@ -1989,7 +1911,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6infEALAfer">
-    <property role="TrG5h" value="AssertBuiltinConstraint" />
+    <property role="TrG5h" value="AssertPredicate" />
     <node concept="2tJIrI" id="5uFPQ7BZo0w" role="jymVt" />
     <node concept="Wx3nA" id="6infEALAgS7" role="jymVt">
       <property role="TrG5h" value="ASSERT" />
@@ -2021,21 +1943,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6infEALAgQp" role="jymVt" />
-    <node concept="Wx3nA" id="5uFPQ7C5wj5" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="QUERYABLE" />
-      <node concept="3Tm1VV" id="5uFPQ7C5wj1" role="1B3o_S" />
-      <node concept="3uibUv" id="5uFPQ7C5wj2" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-        <node concept="3uibUv" id="5uFPQ7C5wj3" role="11_B2D">
-          <ref role="3uigEE" to="95zw:6infEALA98Q" resolve="AssertSolver" />
-        </node>
-      </node>
-      <node concept="3VsKOn" id="5uFPQ7C5wj4" role="33vP2m">
-        <ref role="3VsUkX" to="95zw:6infEALA98Q" resolve="AssertSolver" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4xBopTzrPN8" role="jymVt" />
     <node concept="3clFbW" id="4xBopTzrPWl" role="jymVt">
       <node concept="37vLTG" id="5uFPQ7C251x" role="3clF46">
         <property role="TrG5h" value="expression" />
@@ -2055,30 +1962,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4xBopTzrQOJ" role="jymVt" />
-    <node concept="3clFb_" id="4xBopTzs1xV" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="solverClass" />
-      <node concept="3uibUv" id="4xBopTzs1xW" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-        <node concept="3qUE_q" id="4xBopTzs1xX" role="11_B2D">
-          <node concept="3uibUv" id="4xBopTzs1xY" role="3qUE_r">
-            <ref role="3uigEE" to="qrld:6Kcfpq7AYBh" resolve="Queryable" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4xBopTzs1xZ" role="1B3o_S" />
-      <node concept="3clFbS" id="4xBopTzs1y2" role="3clF47">
-        <node concept="3clFbF" id="4xBopTzs3gC" role="3cqZAp">
-          <node concept="37vLTw" id="5uFPQ7C5wj8" role="3clFbG">
-            <ref role="3cqZAo" node="5uFPQ7C5wj5" resolve="QUERYABLE" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4xBopTzs4eK" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7ISVfSJpjm" role="jymVt" />
     <node concept="3clFb_" id="7ISVfSJpfI" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="symbol" />
