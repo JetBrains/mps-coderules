@@ -1,7 +1,7 @@
 import jetbrains.mps.logic.reactor.program.PlanningSession
 import jetbrains.mps.logic.reactor.rule.InvalidConstraintException
 import jetbrains.mps.logic.reactor.rule.InvalidRuleException
-import jetbrains.mps.logicl.reactor.core.ReactorPlanningSession
+import jetbrains.mps.logic.reactor.core.ReactorPlanningSession
 import org.junit.Before
 import org.junit.BeforeClass
 import org.junit.Test
@@ -23,11 +23,10 @@ class Simple {
     }
 
     @Before fun beforeTest() {
-        session = PlanningSession.newSession("test")
+        session = PlanningSession.newSession("test", null)
     }
 
     lateinit var session:PlanningSession
-
 
     @Test fun empty() {
         session.addRules(ArrayList())

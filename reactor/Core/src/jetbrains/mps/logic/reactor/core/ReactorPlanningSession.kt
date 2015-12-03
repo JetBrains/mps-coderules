@@ -1,4 +1,4 @@
-package jetbrains.mps.logicl.reactor.core
+package jetbrains.mps.logic.reactor.core
 
 /**
  * @author Fedor Isakov
@@ -12,15 +12,16 @@ import java.util.*
 import java.util.Collections.*
 
 
-class ReactorPlanningSession(val name: String) : PlanningSession() {
+class ReactorPlanningSession(val name: String, val sessionSolver: SessionSolver) : PlanningSession() {
 
-    class FactoryImpl : PlanningSession.Factory {
-        override fun create(name: String): PlanningSession = ReactorPlanningSession(name)
+    class FactoryImpl : Factory {
+        override fun create(name: String, sessionSolver: SessionSolver): PlanningSession =
+                ReactorPlanningSession(name, sessionSolver)
     }
 
     private val myRules = ArrayList<Rule>()
 
-    private val myRegistry = ConstraintRegistry()
+    private val myRegistry = ConstraintRegistry(sessionSolver)
 
     override fun name(): String = name
 
@@ -61,9 +62,10 @@ class ReactorPlanningSession(val name: String) : PlanningSession() {
             clearFactory(ourFactory)
         }
     }
+
 }
 
-private class ConstraintRegistry {
+private class ConstraintRegistry(val sessionSolver: SessionSolver) {
 
     private val myConstraintArgTypes = HashMap<ConstraintSymbol, List<Class<*>>>()
 
@@ -93,7 +95,7 @@ private class ConstraintRegistry {
                     }
                 }
             }
-            is Predicate  ->  {
+            is Predicate ->  {
                 // nothing
             }
             else          -> throw InvalidConstraintException("unknown item: ${item}")
@@ -103,7 +105,7 @@ private class ConstraintRegistry {
     fun introduce(item: AndItem) {
         when(item) {
             is Constraint -> myConstraintArgTypes.put(item.symbol(), item.argumentTypes())
-            is Predicate  -> myPredicateSolvers.put(item.symbol(), item.solverClass())
+            is Predicate -> myPredicateSolvers.put(item.symbol(), sessionSolver.solverClass(item.symbol()))
             else          -> throw InvalidConstraintException("unknown item: ${item}")
         }
     }
