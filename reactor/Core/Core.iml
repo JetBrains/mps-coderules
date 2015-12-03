@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="API" exported="" />
     <orderEntry type="library" scope="RUNTIME" name="org.jetbrains.kotlin:kotlin-runtime:1.0.0-beta-2423" level="project" />
     <orderEntry type="library" name="com.intellij:annotations:12.0" level="project" />
+    <orderEntry type="library" name="com.github.andrewoma.dexx:dexx-collections:0.2" level="project" />
   </component>
 </module>
