@@ -7627,11 +7627,6 @@
           </node>
         </node>
       </node>
-      <node concept="1zAsnw" id="1j288BfprzH" role="lGtFl">
-        <node concept="3SKdUq" id="1j288BfprzI" role="27qylF">
-          <property role="3SKdUp" value="todo: enable return check when lub computation will work" />
-        </node>
-      </node>
       <node concept="2t___k" id="1ffsG7bsOzd" role="20_v8_">
         <ref role="2t_S0q" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
         <node concept="3A20r5" id="1ffsG7bsOze" role="2t_VXX">
