@@ -499,6 +499,12 @@
     <node concept="2tJIrI" id="5uFPQ7Bwt4d" role="jymVt" />
     <node concept="2YIFZL" id="7ISVfSIwfH" role="jymVt">
       <property role="TrG5h" value="newSession" />
+      <node concept="37vLTG" id="6X5F0NgIkLY" role="3clF46">
+        <property role="TrG5h" value="program" />
+        <node concept="3uibUv" id="6X5F0NgIkO$" role="1tU5fm">
+          <ref role="3uigEE" node="5uFPQ7BvNzE" resolve="PlanningSession" />
+        </node>
+      </node>
       <node concept="3uibUv" id="7ISVfSIw_G" role="3clF45">
         <ref role="3uigEE" node="5uFPQ7Bwt8Z" resolve="EvaluationSession.Config" />
       </node>
@@ -531,6 +537,9 @@
             </node>
             <node concept="liA8E" id="5mr7UHcbuzj" role="2OqNvi">
               <ref role="37wK5l" node="5mr7UHcbuF5" resolve="createConfig" />
+              <node concept="37vLTw" id="6X5F0NgIuxk" role="37wK5m">
+                <ref role="3cqZAo" node="6X5F0NgIkLY" resolve="program" />
+              </node>
             </node>
           </node>
         </node>
@@ -770,6 +779,12 @@
       <node concept="3clFb_" id="5mr7UHcbuF5" role="jymVt">
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="createConfig" />
+        <node concept="37vLTG" id="6X5F0NgIqn1" role="3clF46">
+          <property role="TrG5h" value="program" />
+          <node concept="3uibUv" id="6X5F0NgIqpx" role="1tU5fm">
+            <ref role="3uigEE" node="5uFPQ7BvNzE" resolve="PlanningSession" />
+          </node>
+        </node>
         <node concept="3uibUv" id="5mr7UHcbuIP" role="3clF45">
           <ref role="3uigEE" node="5uFPQ7Bwt8Z" resolve="EvaluationSession.Config" />
         </node>

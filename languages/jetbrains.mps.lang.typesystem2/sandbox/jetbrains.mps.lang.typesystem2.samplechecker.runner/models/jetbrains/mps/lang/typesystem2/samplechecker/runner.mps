@@ -260,24 +260,24 @@
       <node concept="2ShNRf" id="5mr7UHcbowK" role="33vP2m">
         <node concept="3g6Rrh" id="5mr7UHcboy8" role="2ShVmc">
           <node concept="10M0yZ" id="5mr7UHcboyR" role="3g7hyw">
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
             <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboyX" role="3g7hyw">
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsBuiltinConstraint" />
+            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
             <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboz3" role="3g7hyw">
             <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
+            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboz9" role="3g7hyw">
             <ref role="3cqZAo" to="xq5w:5uFPQ7C26$b" resolve="BOUND_SYM" />
-            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
+            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcbozf" role="3g7hyw">
             <ref role="3cqZAo" to="xq5w:5uFPQ7C279$" resolve="FREE_SYM" />
-            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
+            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
           </node>
           <node concept="3uibUv" id="5mr7UHcbqo2" role="3g7fb8">
             <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
@@ -452,6 +452,7 @@
                   <node concept="2YIFZM" id="5mr7UHcbsDX" role="2Oq$k0">
                     <ref role="37wK5l" to="rchb:7ISVfSIwfH" resolve="newSession" />
                     <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
+                    <node concept="10Nm6u" id="6X5F0NgIn0C" role="37wK5m" />
                   </node>
                   <node concept="liA8E" id="5mr7UHcbsDY" role="2OqNvi">
                     <ref role="37wK5l" to="rchb:5mr7UHcbbR2" resolve="withParam" />

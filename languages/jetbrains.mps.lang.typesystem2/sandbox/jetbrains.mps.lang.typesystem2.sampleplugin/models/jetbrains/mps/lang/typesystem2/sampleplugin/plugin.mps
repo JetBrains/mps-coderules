@@ -1973,34 +1973,21 @@
               <node concept="2OqwBi" id="5mr7UHcbsDU" role="2Oq$k0">
                 <node concept="2OqwBi" id="5mr7UHcbsDV" role="2Oq$k0">
                   <node concept="2OqwBi" id="5jPBdKSAEU" role="2Oq$k0">
-                    <node concept="2OqwBi" id="1ggxSI7ySc8" role="2Oq$k0">
-                      <node concept="2OqwBi" id="5mr7UHcbsDW" role="2Oq$k0">
-                        <node concept="2YIFZM" id="5mr7UHcbsDX" role="2Oq$k0">
-                          <ref role="37wK5l" to="rchb:7ISVfSIwfH" resolve="newSession" />
-                          <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
-                        </node>
-                        <node concept="liA8E" id="5mr7UHcbsDY" role="2OqNvi">
-                          <ref role="37wK5l" to="rchb:5mr7UHcbbR2" resolve="withParam" />
-                          <node concept="Xl_RD" id="5mr7UHcbsDZ" role="37wK5m">
-                            <property role="Xl_RC" value="jchr.handler.class" />
-                          </node>
-                          <node concept="37vLTw" id="5mr7UHcbsE0" role="37wK5m">
-                            <ref role="3cqZAo" node="41ox5Vnki5N" resolve="handlerCls" />
-                          </node>
+                    <node concept="2OqwBi" id="5mr7UHcbsDW" role="2Oq$k0">
+                      <node concept="2YIFZM" id="5mr7UHcbsDX" role="2Oq$k0">
+                        <ref role="37wK5l" to="rchb:7ISVfSIwfH" resolve="newSession" />
+                        <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
+                        <node concept="37vLTw" id="6X5F0NgIpqc" role="37wK5m">
+                          <ref role="3cqZAo" node="6X5F0Ngiil4" resolve="program" />
                         </node>
                       </node>
-                      <node concept="liA8E" id="1ggxSI7yShU" role="2OqNvi">
+                      <node concept="liA8E" id="5mr7UHcbsDY" role="2OqNvi">
                         <ref role="37wK5l" to="rchb:5mr7UHcbbR2" resolve="withParam" />
-                        <node concept="Xl_RD" id="1ggxSI7yShV" role="37wK5m">
-                          <property role="Xl_RC" value="session.solver" />
+                        <node concept="Xl_RD" id="5mr7UHcbsDZ" role="37wK5m">
+                          <property role="Xl_RC" value="jchr.handler.class" />
                         </node>
-                        <node concept="2OqwBi" id="6X5F0NginmB" role="37wK5m">
-                          <node concept="37vLTw" id="6X5F0Ngin1_" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6X5F0Ngiil4" resolve="program" />
-                          </node>
-                          <node concept="liA8E" id="6X5F0Ngi$$S" role="2OqNvi">
-                            <ref role="37wK5l" to="rchb:6X5F0Ngip_N" resolve="sessionSolver" />
-                          </node>
+                        <node concept="37vLTw" id="5mr7UHcbsE0" role="37wK5m">
+                          <ref role="3cqZAo" node="41ox5Vnki5N" resolve="handlerCls" />
                         </node>
                       </node>
                     </node>
