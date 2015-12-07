@@ -5425,7 +5425,115 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6ps95k_Hh92" role="jymVt" />
+    <node concept="3clFb_" id="6ps95k_HipW" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="ask" />
+      <node concept="37vLTG" id="6ps95k_HipX" role="3clF46">
+        <property role="TrG5h" value="predicateSymbol" />
+        <node concept="3uibUv" id="6ps95k_HGBq" role="1tU5fm">
+          <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6ps95k_HipZ" role="3clF46">
+        <property role="TrG5h" value="args" />
+        <node concept="8X2XB" id="6ps95k_Hiq0" role="1tU5fm">
+          <node concept="3uibUv" id="6ps95k_Hiq1" role="8Xvag">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="6ps95k_Hiq2" role="3clF45" />
+      <node concept="3Tm1VV" id="6ps95k_Hiq3" role="1B3o_S" />
+      <node concept="3clFbS" id="6ps95k_Hiq4" role="3clF47">
+        <node concept="3clFbF" id="6ps95k_Hiq5" role="3cqZAp">
+          <node concept="1rXfSq" id="6ps95k_Hiq6" role="3clFbG">
+            <ref role="37wK5l" node="4i4XGQZmbIk" resolve="displayInfo" />
+            <node concept="Rm8GO" id="6ps95k_HmAg" role="37wK5m">
+              <ref role="Rm8GQ" node="6ps95k_Hk8b" resolve="ASK" />
+              <ref role="1Px2BO" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
+            </node>
+            <node concept="3cpWs3" id="6ps95k_Hiq8" role="37wK5m">
+              <node concept="2YIFZM" id="6ps95k_Hiq9" role="3uHU7w">
+                <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                <node concept="37vLTw" id="6ps95k_Hiqa" role="37wK5m">
+                  <ref role="3cqZAo" node="6ps95k_HipZ" resolve="args" />
+                </node>
+              </node>
+              <node concept="3cpWs3" id="6ps95k_Hiqb" role="3uHU7B">
+                <node concept="3cpWs3" id="6ps95k_Hiqc" role="3uHU7B">
+                  <node concept="Xl_RD" id="6ps95k_Hiqd" role="3uHU7B">
+                    <property role="Xl_RC" value="[???] /ask/ " />
+                  </node>
+                  <node concept="37vLTw" id="6ps95k_Hiqe" role="3uHU7w">
+                    <ref role="3cqZAo" node="6ps95k_HipX" resolve="predicateSymbol" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="6ps95k_Hiqf" role="3uHU7w">
+                  <property role="Xl_RC" value=" " />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="24Vro6cQTLX" role="jymVt" />
+    <node concept="3clFb_" id="6ps95k_GFQ1" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="tell" />
+      <node concept="37vLTG" id="6ps95k_GFQ2" role="3clF46">
+        <property role="TrG5h" value="symbol" />
+        <node concept="3uibUv" id="6ps95k_HfRs" role="1tU5fm">
+          <ref role="3uigEE" to="qrld:5uFPQ7B$mzX" resolve="Symbol" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6ps95k_GFQ4" role="3clF46">
+        <property role="TrG5h" value="args" />
+        <node concept="8X2XB" id="6ps95k_GFQ5" role="1tU5fm">
+          <node concept="3uibUv" id="6ps95k_GFQ6" role="8Xvag">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="6ps95k_GFQ7" role="3clF45" />
+      <node concept="3Tm1VV" id="6ps95k_GFQ8" role="1B3o_S" />
+      <node concept="3clFbS" id="6ps95k_GFQ9" role="3clF47">
+        <node concept="3clFbF" id="6ps95k_GFQa" role="3cqZAp">
+          <node concept="1rXfSq" id="6ps95k_GFQb" role="3clFbG">
+            <ref role="37wK5l" node="4i4XGQZmbIk" resolve="displayInfo" />
+            <node concept="Rm8GO" id="6ps95k_GPW_" role="37wK5m">
+              <ref role="Rm8GQ" node="6ps95k_GOS3" resolve="TELL" />
+              <ref role="1Px2BO" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
+            </node>
+            <node concept="3cpWs3" id="6ps95k_GFQd" role="37wK5m">
+              <node concept="2YIFZM" id="6ps95k_GFQe" role="3uHU7w">
+                <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                <node concept="37vLTw" id="6ps95k_GFQf" role="37wK5m">
+                  <ref role="3cqZAo" node="6ps95k_GFQ4" resolve="args" />
+                </node>
+              </node>
+              <node concept="3cpWs3" id="6ps95k_GFQg" role="3uHU7B">
+                <node concept="3cpWs3" id="6ps95k_GFQh" role="3uHU7B">
+                  <node concept="Xl_RD" id="6ps95k_GFQi" role="3uHU7B">
+                    <property role="Xl_RC" value="[!!!] /tell/ " />
+                  </node>
+                  <node concept="37vLTw" id="6ps95k_GFQj" role="3uHU7w">
+                    <ref role="3cqZAo" node="6ps95k_GFQ2" resolve="symbol" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="6ps95k_GFQk" role="3uHU7w">
+                  <property role="Xl_RC" value=" " />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6ps95k_GF9b" role="jymVt" />
     <node concept="3clFb_" id="24Vro6cQSyU" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="askFailure" />
@@ -5890,6 +5998,14 @@
       </node>
       <node concept="QsSxf" id="24Vro6cQUIt" role="Qtgdg">
         <property role="TrG5h" value="ASK_FAILURE" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+      </node>
+      <node concept="QsSxf" id="6ps95k_Hk8b" role="Qtgdg">
+        <property role="TrG5h" value="ASK" />
+        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+      </node>
+      <node concept="QsSxf" id="6ps95k_GOS3" role="Qtgdg">
+        <property role="TrG5h" value="TELL" />
         <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       </node>
       <node concept="QsSxf" id="7FtwPOZH$aW" role="Qtgdg">
@@ -7138,6 +7254,14 @@
                                   <ref role="Rm8GQ" node="61vfVfp5uU4" resolve="FIRED" />
                                   <ref role="1Px2BO" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
                                 </node>
+                                <node concept="Rm8GO" id="5DGJrujYOTG" role="37wK5m">
+                                  <ref role="Rm8GQ" node="24Vro6cQUo9" resolve="ASK_SUCCESS" />
+                                  <ref role="1Px2BO" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
+                                </node>
+                                <node concept="Rm8GO" id="6ps95k_Kfft" role="37wK5m">
+                                  <ref role="Rm8GQ" node="24Vro6cQUIt" resolve="ASK_FAILURE" />
+                                  <ref role="1Px2BO" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -7157,6 +7281,9 @@
                                         <ref role="3cqZAo" node="4pWvZ2nh4hX" resolve="rh" />
                                       </node>
                                       <node concept="37vLTw" id="4pWvZ2nhNEP" role="37wK5m">
+                                        <ref role="3cqZAo" node="4pWvZ2nh4hs" resolve="tracer" />
+                                      </node>
+                                      <node concept="37vLTw" id="5DGJruk3LLv" role="37wK5m">
                                         <ref role="3cqZAo" node="4pWvZ2nh4hs" resolve="tracer" />
                                       </node>
                                     </node>
@@ -7627,6 +7754,14 @@
                       </node>
                       <node concept="Rm8GO" id="4pWvZ2ohnak" role="37wK5m">
                         <ref role="Rm8GQ" node="61vfVfp5uEI" resolve="REMOVED" />
+                        <ref role="1Px2BO" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
+                      </node>
+                      <node concept="Rm8GO" id="4wd1IUyYRGx" role="37wK5m">
+                        <ref role="Rm8GQ" node="24Vro6cQUIt" resolve="ASK_FAILURE" />
+                        <ref role="1Px2BO" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
+                      </node>
+                      <node concept="Rm8GO" id="4wd1IUyYTde" role="37wK5m">
+                        <ref role="Rm8GQ" node="24Vro6cQUo9" resolve="ASK_SUCCESS" />
                         <ref role="1Px2BO" node="61vfVfp5tJN" resolve="MessageViewTracer.Event" />
                       </node>
                     </node>
