@@ -560,6 +560,19 @@
       <node concept="3Tm1VV" id="4OKkcnfu_xk" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_xl" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="1ggxSI7z1Os" role="jymVt" />
+    <node concept="3clFb_" id="1ggxSI7z1S5" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="javaExpressionSolver" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="1ggxSI7z1S8" role="3clF47" />
+      <node concept="3Tm1VV" id="1ggxSI7z1OS" role="1B3o_S" />
+      <node concept="3uibUv" id="1ggxSI7z1Pj" role="3clF45">
+        <ref role="3uigEE" to="qrld:6Kcfpq7AYBh" resolve="Queryable" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="4OKkcnfu_xm" role="jymVt" />
     <node concept="3Tm1VV" id="4OKkcnfu_xn" role="1B3o_S" />
   </node>
