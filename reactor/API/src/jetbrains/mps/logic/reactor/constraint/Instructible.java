@@ -5,6 +5,6 @@ package jetbrains.mps.logic.reactor.constraint;
 
 public interface Instructible {
 
-  public void tell(Symbol symbol, Object... arg);
+  public void tell(Symbol symbol, Object... args);
 
 }

@@ -5,12 +5,18 @@ package jetbrains.mps.logic.reactor.constraint;
 
 public class JavaPredicateSymbol extends PredicateSymbol {
 
-  public JavaPredicateSymbol(String expression, int arity) {
-    super(expression, arity);
+  public static final JavaPredicateSymbol EXPRESSION0 = new JavaPredicateSymbol(1);
+
+  public static final JavaPredicateSymbol EXPRESSION1 = new JavaPredicateSymbol(2);
+
+  public static final JavaPredicateSymbol EXPRESSION2 = new JavaPredicateSymbol(3);
+
+  public static final JavaPredicateSymbol EXPRESSION3 = new JavaPredicateSymbol(4);
+
+  private static final String EXPRESSION = "expression";
+
+  public JavaPredicateSymbol(int arity) {
+    super(EXPRESSION, arity);
   }
 
-  @Override
-  public String toString() {
-    return "J:" + id() + "/" + arity();
-  }
 }

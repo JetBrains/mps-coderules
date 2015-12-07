@@ -5,6 +5,6 @@ package jetbrains.mps.logic.reactor.constraint;
 
 public interface Queryable extends Instructible {
 
-  public boolean ask(PredicateSymbol predicateSymbol, Object... arg);
+  public boolean ask(PredicateSymbol predicateSymbol, Object... args);
 
 }

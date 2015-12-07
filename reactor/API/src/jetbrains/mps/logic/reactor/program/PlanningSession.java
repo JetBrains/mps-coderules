@@ -22,6 +22,8 @@ public abstract class PlanningSession {
 
   public abstract String name();
 
+  public abstract SessionSolver sessionSolver();
+
   public abstract Iterable<ConstraintSymbol> constraintSymbols();
 
   public abstract List<Class<?>> constraintArgumentTypes(ConstraintSymbol constraintSymbol);

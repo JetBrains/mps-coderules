@@ -20,11 +20,11 @@ public abstract class EvaluationSession {
     return ourBackend.current();
   }
 
-  public static EvaluationSession.Config newSession() {
+  public static EvaluationSession.Config newSession(PlanningSession program) {
     if (ourBackend == null) {
       throw new IllegalStateException("no backend");
     }
-    return ourBackend.createConfig();
+    return ourBackend.createConfig(program);
   }
 
   public static abstract class Config {
@@ -64,7 +64,7 @@ public abstract class EvaluationSession {
 
     public EvaluationSession current();
 
-    public EvaluationSession.Config createConfig();
+    public EvaluationSession.Config createConfig(PlanningSession program);
 
   }
 
