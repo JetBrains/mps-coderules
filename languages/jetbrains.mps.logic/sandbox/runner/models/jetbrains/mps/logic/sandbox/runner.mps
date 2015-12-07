@@ -24,9 +24,6 @@
         <child id="1173175577737" name="index" index="AHEQo" />
         <child id="1173175590490" name="array" index="AHHXb" />
       </concept>
-      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
-        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -173,11 +170,11 @@
           <node concept="3cpWsn" id="2tcGHBEiwI3" role="3cpWs9">
             <property role="TrG5h" value="symbols" />
             <node concept="3uibUv" id="2tcGHBEiwHZ" role="1tU5fm">
-              <ref role="3uigEE" to="95zw:7ISVfSIxNO" resolve="Symbols" />
+              <ref role="3uigEE" to="95zw:7ISVfSIxNO" resolve="JchrSolver" />
             </node>
             <node concept="2ShNRf" id="2tcGHBEiwI4" role="33vP2m">
-              <node concept="HV5vD" id="2tcGHBEiAJP" role="2ShVmc">
-                <ref role="HV5vE" to="95zw:7ISVfSIxNO" resolve="Symbols" />
+              <node concept="1pGfFk" id="1ggxSI7$PTT" role="2ShVmc">
+                <ref role="37wK5l" to="95zw:1ggxSI7xi4I" resolve="JchrSolver" />
               </node>
             </node>
           </node>

@@ -86,6 +86,9 @@
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
@@ -194,6 +197,19 @@
       <node concept="3clFbS" id="78CwJJcTOB8" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="78CwJJcTNZo" role="jymVt" />
+    <node concept="3clFb_" id="6X5F0Ngip_N" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="sessionSolver" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6X5F0Ngip_Q" role="3clF47" />
+      <node concept="3Tm1VV" id="6X5F0NgipwC" role="1B3o_S" />
+      <node concept="3uibUv" id="6X5F0NgipzS" role="3clF45">
+        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6X5F0Ngiptw" role="jymVt" />
     <node concept="3clFb_" id="78CwJJcOw2K" role="jymVt">
       <property role="TrG5h" value="constraintSymbols" />
       <property role="1EzhhJ" value="true" />
