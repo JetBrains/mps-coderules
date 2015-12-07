@@ -10,9 +10,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="junit:junit:4.12" level="project" />
     <orderEntry type="module" module-name="Core" scope="TEST" />
-    <orderEntry type="library" scope="RUNTIME" name="org.jetbrains.kotlin:kotlin-runtime:1.0.0-beta-2423" level="project" />
-    <orderEntry type="library" name="org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-2423" level="project" />
     <orderEntry type="library" name="com.intellij:annotations:12.0" level="project" />
     <orderEntry type="library" name="com.github.andrewoma.dexx:dexx-collections:0.2" level="project" />
+    <orderEntry type="library" name="org.jetbrains.kotlin:kotlin-runtime:1.0.0-beta-3595" level="project" />
+    <orderEntry type="library" name="org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-3595" level="project" />
   </component>
 </module>
