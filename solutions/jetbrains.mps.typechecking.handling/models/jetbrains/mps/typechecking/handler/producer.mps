@@ -37,7 +37,6 @@
     <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.rule)" />
     <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
-    <import index="e2ud" ref="r:86a12676-9e8d-407a-83b6-a911ff5a7cf8(jetbrains.mps.logic.builtin.java)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3278,7 +3277,7 @@
                       <node concept="1eOMI4" id="6X5F0Ngya6i" role="2Oq$k0">
                         <node concept="10QFUN" id="6X5F0Ngya6f" role="1eOMHV">
                           <node concept="3uibUv" id="6X5F0Ngybpi" role="10QFUM">
-                            <ref role="3uigEE" to="e2ud:5$WbtTOYoMb" resolve="JavaPredicate" />
+                            <ref role="3uigEE" to="qrld:5$WbtTOYoMb" resolve="JavaPredicate" />
                           </node>
                           <node concept="37vLTw" id="6X5F0Ngybsx" role="10QFUP">
                             <ref role="3cqZAo" node="5uFPQ7BMz7a" resolve="pred" />
@@ -3286,7 +3285,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="6X5F0NgybyT" role="2OqNvi">
-                        <ref role="37wK5l" to="e2ud:6X5F0Ngy7Gy" resolve="id" />
+                        <ref role="37wK5l" to="qrld:6X5F0Ngy7Gy" resolve="id" />
                       </node>
                     </node>
                   </node>

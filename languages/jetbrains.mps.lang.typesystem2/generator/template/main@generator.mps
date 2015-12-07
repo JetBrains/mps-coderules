@@ -41,7 +41,6 @@
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
-    <import index="e2ud" ref="r:86a12676-9e8d-407a-83b6-a911ff5a7cf8(jetbrains.mps.logic.builtin.java)" />
     <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
@@ -3933,7 +3932,7 @@
           <node concept="3clFbF" id="2KSgAgV9K3T" role="3cqZAp">
             <node concept="2ShNRf" id="2KSgAgV9K3P" role="3clFbG">
               <node concept="1pGfFk" id="2KSgAgV9SF8" role="2ShVmc">
-                <ref role="37wK5l" to="e2ud:5$WbtTOYsLU" resolve="JavaPredicate" />
+                <ref role="37wK5l" to="qrld:5$WbtTOYsLU" resolve="JavaPredicate" />
                 <node concept="2ShNRf" id="2KSgAgV9AfS" role="37wK5m">
                   <node concept="1pGfFk" id="2KSgAgV9Bmp" role="2ShVmc">
                     <ref role="37wK5l" to="qrld:5uFPQ7BMJfy" resolve="JavaPredicateSymbol" />
