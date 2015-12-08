@@ -49,6 +49,10 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
+        <child id="1153952416686" name="body" index="2GV8ay" />
+        <child id="1153952429843" name="finallyBody" index="2GVbov" />
+      </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
       </concept>
@@ -145,7 +149,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
@@ -870,33 +874,38 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="5jPBdKDJak" role="3cqZAp">
-            <node concept="2OqwBi" id="5jPBdKDJdj" role="3clFbG">
-              <node concept="37vLTw" id="5jPBdKDJai" role="2Oq$k0">
-                <ref role="3cqZAo" node="7ISVfSIfHc" resolve="newSession" />
+          <node concept="2GUZhq" id="1hx15taNIIp" role="3cqZAp">
+            <node concept="3clFbS" id="1hx15taNIIr" role="2GV8ay">
+              <node concept="3clFbF" id="5jPBdKDJak" role="3cqZAp">
+                <node concept="2OqwBi" id="5jPBdKDJdj" role="3clFbG">
+                  <node concept="37vLTw" id="5jPBdKDJai" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7ISVfSIfHc" resolve="newSession" />
+                  </node>
+                  <node concept="liA8E" id="5jPBdKDJgs" role="2OqNvi">
+                    <ref role="37wK5l" node="5jPBdKD_B1" resolve="launchHandler" />
+                  </node>
+                </node>
               </node>
-              <node concept="liA8E" id="5jPBdKDJgs" role="2OqNvi">
-                <ref role="37wK5l" node="5jPBdKD_B1" resolve="launchHandler" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="5jPBdKJvYE" role="3cqZAp">
-            <node concept="2OqwBi" id="5jPBdKJw1X" role="3clFbG">
-              <node concept="37vLTw" id="5jPBdKJvYC" role="2Oq$k0">
-                <ref role="3cqZAo" node="5jPBdKClOJ" resolve="ourBackend" />
-              </node>
-              <node concept="liA8E" id="5jPBdKJw5M" role="2OqNvi">
-                <ref role="37wK5l" node="5jPBdKJwB7" resolve="sessionDeactivated" />
-                <node concept="37vLTw" id="5jPBdKJw9O" role="37wK5m">
+              <node concept="3cpWs6" id="1hx15taNJ2x" role="3cqZAp">
+                <node concept="37vLTw" id="1hx15taNJju" role="3cqZAk">
                   <ref role="3cqZAo" node="7ISVfSIfHc" resolve="newSession" />
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="3clFbH" id="5jPBdKJygc" role="3cqZAp" />
-          <node concept="3clFbF" id="7ISVfSIfF0" role="3cqZAp">
-            <node concept="37vLTw" id="7ISVfSIfHf" role="3clFbG">
-              <ref role="3cqZAo" node="7ISVfSIfHc" resolve="newSession" />
+            <node concept="3clFbS" id="1hx15taNIIs" role="2GVbov">
+              <node concept="3clFbF" id="5jPBdKJvYE" role="3cqZAp">
+                <node concept="2OqwBi" id="5jPBdKJw1X" role="3clFbG">
+                  <node concept="37vLTw" id="1hx15taNIVM" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5jPBdKClOJ" resolve="ourBackend" />
+                  </node>
+                  <node concept="liA8E" id="5jPBdKJw5M" role="2OqNvi">
+                    <ref role="37wK5l" node="5jPBdKJwB7" resolve="sessionDeactivated" />
+                    <node concept="37vLTw" id="5jPBdKJw9O" role="37wK5m">
+                      <ref role="3cqZAo" node="7ISVfSIfHc" resolve="newSession" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
