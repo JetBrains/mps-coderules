@@ -1,8 +1,12 @@
 package jetbrains.mps.logic.reactor.core
 
+import com.github.andrewoma.dexx.collection.ConsList
+import com.github.andrewoma.dexx.collection.List as PList
+import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
 import jetbrains.mps.logic.reactor.constraint.*
-import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
 import jetbrains.mps.logic.reactor.program.EvaluationSession
+import jetbrains.mps.logic.reactor.program.PlanningSession
+import jetbrains.mps.logic.reactor.rule.Rule
 import java.util.*
 
 /**
@@ -10,13 +14,13 @@ import java.util.*
  */
 
 
-private class ReactorEvaluationSession(val sessionSolver: SessionSolver) : EvaluationSession() {
+class ReactorEvaluationSession(val program: PlanningSession) : EvaluationSession() {
 
-    class Config : EvaluationSession.Config() {
+    class Config(val program: PlanningSession) : EvaluationSession.Config() {
 
-        val myPredicateSymbols  = ArrayList<PredicateSymbol>()
+        val myPredicateSymbols = ArrayList<PredicateSymbol>()
         val myParameters = HashMap<String, Any?>()
-        var myComputingTracer : ComputingTracer? = null
+        var myComputingTracer: ComputingTracer? = null
 
         override fun withPredicates(vararg predicateSymbols: PredicateSymbol): EvaluationSession.Config {
             myPredicateSymbols.addAll(Arrays.asList(* predicateSymbols))
@@ -38,18 +42,27 @@ private class ReactorEvaluationSession(val sessionSolver: SessionSolver) : Evalu
             if (session != null) throw IllegalStateException("session already active")
 
             val predicateSymbols = myPredicateSymbols.toArray<PredicateSymbol>(arrayOfNulls(myPredicateSymbols.size))
-            val sessionSolver = ReactorSessionSolver()
+            val sessionSolver = program.sessionSolver()
             sessionSolver.init(myComputingTracer, * predicateSymbols)
 
-            session = ReactorEvaluationSession(sessionSolver)
+            session = ReactorEvaluationSession(program)
             ourBackend.ourSession.set(session)
+
+            session.launch()
+
             return session
         }
     }
 
-    override fun sessionSolver(): SessionSolver? {
-        throw UnsupportedOperationException()
+    fun launch() {
+
+
+
     }
+
+
+
+    override fun sessionSolver(): SessionSolver = program.sessionSolver()
 
     override fun constraintSymbols(): MutableIterable<ConstraintSymbol>? {
         throw UnsupportedOperationException()
@@ -69,7 +82,7 @@ private class ReactorEvaluationSession(val sessionSolver: SessionSolver) : Evalu
 
         override fun current(): EvaluationSession = ourSession.get() ?: throw IllegalStateException("no session")
 
-        override fun createConfig(): EvaluationSession.Config = Config()
+        override fun createConfig(program: PlanningSession): EvaluationSession.Config = Config(program)
     }
 
     companion object {
@@ -79,7 +92,7 @@ private class ReactorEvaluationSession(val sessionSolver: SessionSolver) : Evalu
             setBackend(ourBackend)
         }
 
-        fun deinit () {
+        fun deinit() {
             clearBackend(ourBackend)
         }
     }

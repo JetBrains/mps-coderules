@@ -25,6 +25,8 @@ class ReactorPlanningSession(val name: String, val sessionSolver: SessionSolver)
 
     override fun name(): String = name
 
+    override fun sessionSolver(): SessionSolver= sessionSolver
+
     override fun constraintSymbols(): Iterable<ConstraintSymbol> =
             myRegistry.constraintSymbols()
 
@@ -114,7 +116,7 @@ private class ConstraintRegistry(val sessionSolver: SessionSolver) {
             unmodifiableSet(myConstraintArgTypes.keys)
 
     fun constraintArgTypes(symbol: ConstraintSymbol): List<Class<*>> =
-            unmodifiableList(myConstraintArgTypes.getOrDefault(symbol, emptyList()))
+            unmodifiableList(myConstraintArgTypes.getOrDefault(symbol, Collections.emptyList()))
 
     fun predicateSymbols(): Iterable<PredicateSymbol> =
             unmodifiableSet(myPredicateSolvers.keys)

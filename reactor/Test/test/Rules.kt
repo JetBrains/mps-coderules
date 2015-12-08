@@ -20,7 +20,7 @@ fun headKept(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
     appendHeadKept( * buildConjunction(Constraint::class.java, content).toArray())
 }
 fun headReplaced(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendHeadKept( * buildConjunction(Constraint::class.java, content).toArray())
+    appendHeadReplaced( * buildConjunction(Constraint::class.java, content).toArray())
 }
 fun guard(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
     appendGuard( * buildConjunction(AndItem::class.java, content).toArray())
@@ -30,19 +30,32 @@ fun body(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
 }
 
 fun constraint(id: String): ConjBuilder.() -> Unit = {
-    add(AbstractConstraint(ConstraintSymbol.symbol(id, 0)))
+    add(TestConstraint(ConstraintSymbol.symbol(id, 0)))
 }
 fun constraint(id: String, arg: Any): ConjBuilder.() -> Unit = {
-    add(AbstractConstraint(ConstraintSymbol.symbol(id, 1), arg))
+    add(TestConstraint(ConstraintSymbol.symbol(id, 1), arg))
 }
 fun constraint(id: String, arg1: Any, arg2: Any): ConjBuilder.() -> Unit = {
-    add(AbstractConstraint(ConstraintSymbol.symbol(id, 2), arg1, arg2))
+    add(TestConstraint(ConstraintSymbol.symbol(id, 2), arg1, arg2))
 }
 fun constraint(id: String, arg1: Any, arg2: Any, arg3: Any): ConjBuilder.() -> Unit = {
-    add(AbstractConstraint(ConstraintSymbol.symbol(id, 3), arg1, arg2, arg3))
+    add(TestConstraint(ConstraintSymbol.symbol(id, 3), arg1, arg2, arg3))
 }
 fun constraint(id: String, args: Array<out Any>): ConjBuilder.() -> Unit = {
-    add(AbstractConstraint(ConstraintSymbol.symbol(id, args.size), * args))
+    add(TestConstraint(ConstraintSymbol.symbol(id, args.size), * args))
+}
+
+fun expression(id: String): ConjBuilder.() -> Unit = {
+    add(JavaPredicate(JavaPredicateSymbol(0), id))
+}
+fun expression(id: String, arg: Any): ConjBuilder.() -> Unit = {
+    add(JavaPredicate(JavaPredicateSymbol(1), id, arg))
+}
+fun expression(id: String, arg1: Any, arg2: Any): ConjBuilder.() -> Unit = {
+    add(JavaPredicate(JavaPredicateSymbol(2), id, arg1, arg2))
+}
+fun expression(id: String, arg1: Any, arg2: Any, arg3: Any): ConjBuilder.() -> Unit = {
+    add(JavaPredicate(JavaPredicateSymbol(3), id, arg1, arg2, arg3))
 }
 
 class RB(tag: String) : RuleBuilder(tag) {}
@@ -75,3 +88,31 @@ private fun buildConjunction(type: Class<out AndItem>,
     return conjBuilder
 }
 
+data class TestOccurrence(val arguments : List<Any>, val constraint : Constraint) : ConstraintOccurrence {
+
+    constructor(id: String, vararg args: Any) :
+        this(listOf(* args), TestConstraint(ConstraintSymbol.symbol(id, args.size))) {}
+
+    constructor(constraint: Constraint) : this(constraint.arguments(), constraint) {}
+
+    override fun constraint(): Constraint = constraint
+
+    override fun arguments(): List<Any> = arguments
+
+    override fun toString(): String = "#${constraint().symbol()}(${arguments().joinToString()})"
+
+}
+
+data class TestConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>) : Constraint {
+
+    constructor(symbol: ConstraintSymbol, vararg args: Any) : this(symbol, listOf(* args)) {}
+
+    override fun arguments(): List<Any> = arguments
+
+    override fun symbol(): ConstraintSymbol = symbol
+
+    override fun argumentTypes(): List<Class<*>> = arguments.map { arg -> arg.javaClass }
+
+    override fun toString(): String = "${symbol()}(${arguments().joinToString()})"
+
+}

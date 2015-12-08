@@ -2,6 +2,7 @@ import jetbrains.mps.logic.reactor.program.PlanningSession
 import jetbrains.mps.logic.reactor.rule.InvalidConstraintException
 import jetbrains.mps.logic.reactor.rule.InvalidRuleException
 import jetbrains.mps.logic.reactor.core.ReactorPlanningSession
+import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
 import org.junit.Before
 import org.junit.BeforeClass
 import org.junit.Test
@@ -14,7 +15,7 @@ import kotlin.test.expect
  * @author Fedor Isakov
  */
 
-class Simple {
+class TestPlanningSession {
 
     companion object {
         @BeforeClass @JvmStatic fun setup() {
@@ -23,10 +24,10 @@ class Simple {
     }
 
     @Before fun beforeTest() {
-        session = PlanningSession.newSession("test", null)
+        session = PlanningSession.newSession("test", ReactorSessionSolver())
     }
 
-    lateinit var session:PlanningSession
+    lateinit var session: PlanningSession
 
     @Test fun empty() {
         session.addRules(ArrayList())
