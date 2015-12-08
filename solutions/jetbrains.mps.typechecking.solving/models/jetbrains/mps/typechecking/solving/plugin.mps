@@ -37,6 +37,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.lang.typesystem2.samplechecker.template)" />
     <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.logic.atom/)" />
+    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -776,8 +777,8 @@
                       </node>
                       <node concept="3cpWsn" id="4pWvZ2nh4hX" role="1Duv9x">
                         <property role="TrG5h" value="rh" />
-                        <node concept="3uibUv" id="4pWvZ2nh4hY" role="1tU5fm">
-                          <ref role="3uigEE" to="9kr0:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+                        <node concept="3uibUv" id="65oL76bX6ve" role="1tU5fm">
+                          <ref role="3uigEE" to="rchb:5uFPQ7BvNzE" resolve="PlanningSession" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="4pWvZ2nh4hZ" role="1DdaDG">

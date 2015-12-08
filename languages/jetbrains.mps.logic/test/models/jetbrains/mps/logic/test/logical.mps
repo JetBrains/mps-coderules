@@ -172,7 +172,9 @@
       <concept id="238586457668550951" name="jetbrains.mps.logic.structure.Splice" flags="ng" index="22Ky0T">
         <child id="238586457668550958" name="expression" index="22Ky0K" />
       </concept>
-      <concept id="1564179198502666296" name="jetbrains.mps.logic.structure.LogicalType" flags="ig" index="26uTi9" />
+      <concept id="1564179198502666296" name="jetbrains.mps.logic.structure.LogicalType" flags="ig" index="26uTi9">
+        <child id="6399471711045454762" name="dataType" index="3vMvoR" />
+      </concept>
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
@@ -1355,7 +1357,11 @@
           <node concept="3cpWs8" id="2S_ORi38Qgh" role="3cqZAp">
             <node concept="3cpWsn" id="2S_ORi38Qgi" role="3cpWs9">
               <property role="TrG5h" value="val" />
-              <node concept="26uTi9" id="2S_ORi38Qgj" role="1tU5fm" />
+              <node concept="26uTi9" id="2S_ORi38Qgj" role="1tU5fm">
+                <node concept="3uibUv" id="6X5F0NgnwWF" role="3vMvoR">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
+              </node>
               <node concept="2ShNRf" id="2S_ORi38Qgk" role="33vP2m">
                 <node concept="1pGfFk" id="2S_ORi38QCR" role="2ShVmc">
                   <ref role="37wK5l" to="oy3s:1GDBwhEE__7" resolve="StringLogical" />

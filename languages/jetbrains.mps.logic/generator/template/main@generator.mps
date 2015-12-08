@@ -298,6 +298,9 @@
         <child id="1178870894644" name="pattern" index="1Ub_4A" />
         <child id="1178870894645" name="nodeToCoerce" index="1Ub_4B" />
       </concept>
+      <concept id="1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" flags="ig" index="1YaCAy">
+        <reference id="1174642800329" name="concept" index="1YaFvo" />
+      </concept>
       <concept id="1174642900584" name="jetbrains.mps.lang.typesystem.structure.PatternCondition" flags="ig" index="1Yb3XT">
         <child id="1174642936809" name="pattern" index="1YbcFS" />
       </concept>
@@ -1810,6 +1813,21 @@
               <node concept="3uibUv" id="dfChU1kjs$" role="1tU5fm">
                 <ref role="3uigEE" to="yg8f:qubcdt1pkm" resolve="ILogicalExt" />
                 <node concept="raruj" id="dfChU1koS6" role="lGtFl" />
+                <node concept="29HgVG" id="1sCZQVfbz8D" role="lGtFl">
+                  <node concept="3NFfHV" id="1sCZQVfbz8E" role="3NFExx">
+                    <node concept="3clFbS" id="1sCZQVfbz8F" role="2VODD2">
+                      <node concept="3clFbF" id="1sCZQVfbzSC" role="3cqZAp">
+                        <node concept="1UaxmW" id="1sCZQVfbzS_" role="3clFbG">
+                          <node concept="30H73N" id="1sCZQVfbzUq" role="1Ub_4B" />
+                          <node concept="1YaCAy" id="1sCZQVfb$2l" role="1Ub_4A">
+                            <property role="TrG5h" value="classifierType" />
+                            <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

@@ -26,6 +26,7 @@
     <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="t5kh" ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.lang.typesystem2.sampleplugin.plugin)" />
+    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1960,7 +1961,7 @@
                 <node concept="3clFbF" id="4pWvZ2oa_4t" role="3cqZAp">
                   <node concept="37vLTI" id="4pWvZ2oa_8g" role="3clFbG">
                     <node concept="10M0yZ" id="4pWvZ2oa_qr" role="37vLTx">
-                      <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
+                      <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
                       <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
                     </node>
                     <node concept="37vLTw" id="4pWvZ2oa_4r" role="37vLTJ">
@@ -2590,7 +2591,7 @@
                 <node concept="liA8E" id="4pWvZ2ojA85" role="2OqNvi">
                   <ref role="37wK5l" to="qrld:4xBopTznPKO" resolve="tell" />
                   <node concept="10M0yZ" id="4pWvZ2ojA9U" role="37wK5m">
-                    <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
+                    <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
                     <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
                   </node>
                   <node concept="3M$PaV" id="4pWvZ2ojAdd" role="37wK5m">
@@ -2661,8 +2662,8 @@
       <property role="TrG5h" value="myConstraintRulesHandler" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="4pWvZ2nHHT0" role="1B3o_S" />
-      <node concept="3uibUv" id="4pWvZ2nHM6o" role="1tU5fm">
-        <ref role="3uigEE" to="9kr0:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+      <node concept="3uibUv" id="65oL76bXosI" role="1tU5fm">
+        <ref role="3uigEE" to="rchb:5uFPQ7BvNzE" resolve="PlanningSession" />
       </node>
     </node>
     <node concept="312cEg" id="4pWvZ2nh_ow" role="jymVt">
@@ -2689,15 +2690,15 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="4pWvZ2nR9t0" role="1B3o_S" />
       <node concept="3uibUv" id="4pWvZ2nRbGM" role="1tU5fm">
-        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
+        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
       </node>
     </node>
     <node concept="2tJIrI" id="4pWvZ2n32bk" role="jymVt" />
     <node concept="3clFbW" id="4pWvZ2n32bg" role="jymVt">
       <node concept="37vLTG" id="4pWvZ2n32bo" role="3clF46">
         <property role="TrG5h" value="handler" />
-        <node concept="3uibUv" id="4pWvZ2n32bp" role="1tU5fm">
-          <ref role="3uigEE" to="9kr0:7eGEHDlcEJ0" resolve="ConstraintRulesHandler" />
+        <node concept="3uibUv" id="65oL76bXa_P" role="1tU5fm">
+          <ref role="3uigEE" to="rchb:5uFPQ7BvNzE" resolve="PlanningSession" />
         </node>
       </node>
       <node concept="37vLTG" id="4pWvZ2nbjkz" role="3clF46">
@@ -2736,89 +2737,35 @@
           </node>
         </node>
         <node concept="3clFbH" id="4pWvZ2nRe42" role="3cqZAp" />
-        <node concept="3clFbF" id="4pWvZ2nRe7p" role="3cqZAp">
-          <node concept="37vLTI" id="4pWvZ2nReaQ" role="3clFbG">
-            <node concept="2OqwBi" id="4pWvZ2nRir8" role="37vLTx">
-              <node concept="2OqwBi" id="6ps95k_IAZp" role="2Oq$k0">
-                <node concept="2YIFZM" id="4pWvZ2nReeQ" role="2Oq$k0">
-                  <ref role="37wK5l" to="qrld:6Kcfpq7BWKD" resolve="with" />
-                  <ref role="1Pybhc" to="qrld:6Kcfpq7B0b0" resolve="ComputingSession" />
-                  <node concept="10M0yZ" id="4pWvZ2nRlqd" role="37wK5m">
-                    <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
-                    <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
-                  </node>
-                  <node concept="10M0yZ" id="4pWvZ2nRioj" role="37wK5m">
-                    <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-                    <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="6ps95k_IB1I" role="2OqNvi">
-                  <ref role="37wK5l" to="qrld:24Vro6cQjzH" resolve="withTracer" />
-                  <node concept="37vLTw" id="6ps95k_IB6x" role="37wK5m">
-                    <ref role="3cqZAo" node="5DGJruk3GHs" resolve="computingTracer" />
-                  </node>
-                </node>
-              </node>
-              <node concept="liA8E" id="4pWvZ2nRitJ" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:6Kcfpq7Cgrc" resolve="newSession" />
+        <node concept="3clFbF" id="65oL76bXhbB" role="3cqZAp">
+          <node concept="37vLTI" id="65oL76bXhgm" role="3clFbG">
+            <node concept="2ShNRf" id="65oL76bXhhT" role="37vLTx">
+              <node concept="1pGfFk" id="65oL76bXkWP" role="2ShVmc">
+                <ref role="37wK5l" to="95zw:1ggxSI7xi4I" resolve="JchrSolver" />
               </node>
             </node>
-            <node concept="37vLTw" id="4pWvZ2nRe7n" role="37vLTJ">
+            <node concept="37vLTw" id="65oL76bXhb_" role="37vLTJ">
               <ref role="3cqZAo" node="4pWvZ2nRbJ$" resolve="mySession" />
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="4pWvZ2onM$d" role="3cqZAp">
-          <node concept="3cpWsn" id="4pWvZ2onM$e" role="3cpWs9">
-            <property role="TrG5h" value="symbols" />
-            <node concept="3uibUv" id="4pWvZ2onM$b" role="1tU5fm">
-              <ref role="3uigEE" to="95zw:7ISVfSIxNO" resolve="Symbols" />
+        <node concept="3clFbF" id="65oL76bXmt_" role="3cqZAp">
+          <node concept="2OqwBi" id="65oL76bXmxC" role="3clFbG">
+            <node concept="37vLTw" id="65oL76bXmtz" role="2Oq$k0">
+              <ref role="3cqZAo" node="4pWvZ2nRbJ$" resolve="mySession" />
             </node>
-            <node concept="2ShNRf" id="4pWvZ2onM$f" role="33vP2m">
-              <node concept="1pGfFk" id="4pWvZ2onM$g" role="2ShVmc">
-                <ref role="37wK5l" to="95zw:5mr7UHch7og" resolve="Symbols" />
-                <node concept="37vLTw" id="4pWvZ2onM$h" role="37wK5m">
-                  <ref role="3cqZAo" node="4pWvZ2nRbJ$" resolve="mySession" />
-                </node>
-                <node concept="37vLTw" id="5DGJruk3GP4" role="37wK5m">
-                  <ref role="3cqZAo" node="5DGJruk3GHs" resolve="computingTracer" />
-                </node>
+            <node concept="liA8E" id="65oL76bXlAz" role="2OqNvi">
+              <ref role="37wK5l" to="qrld:2tcGHBEix86" resolve="init" />
+              <node concept="37vLTw" id="65oL76bXlD9" role="37wK5m">
+                <ref role="3cqZAo" node="5DGJruk3GHs" resolve="computingTracer" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4pWvZ2onLSp" role="3cqZAp">
-          <node concept="2OqwBi" id="4pWvZ2onLXY" role="3clFbG">
-            <node concept="37vLTw" id="4pWvZ2onMGf" role="2Oq$k0">
-              <ref role="3cqZAo" node="4pWvZ2onM$e" resolve="symbols" />
-            </node>
-            <node concept="liA8E" id="4pWvZ2onM20" role="2OqNvi">
-              <ref role="37wK5l" to="95zw:5jPBdK__lx" resolve="registerSymbols" />
-              <node concept="10M0yZ" id="4pWvZ2onM2A" role="37wK5m">
+              <node concept="10M0yZ" id="65oL76bXlIy" role="37wK5m">
                 <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
-                <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertBuiltinConstraint" />
+                <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
               </node>
-              <node concept="10M0yZ" id="4pWvZ2nRv1S" role="37wK5m">
+              <node concept="10M0yZ" id="65oL76bXlIJ" role="37wK5m">
                 <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-                <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationBuiltinConstraint" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3N6oMviSiSe" role="3cqZAp">
-          <node concept="2OqwBi" id="3N6oMviSiSf" role="3clFbG">
-            <node concept="37vLTw" id="3N6oMviSiSg" role="2Oq$k0">
-              <ref role="3cqZAo" node="4pWvZ2onM$e" resolve="symbols" />
-            </node>
-            <node concept="liA8E" id="3N6oMviSiSh" role="2OqNvi">
-              <ref role="37wK5l" to="95zw:5jPBdK__lx" resolve="registerSymbols" />
-              <node concept="10M0yZ" id="3N6oMviSs7D" role="37wK5m">
-                <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
-                <ref role="3cqZAo" to="xq5w:5uFPQ7C279$" resolve="FREE_SYM" />
-              </node>
-              <node concept="10M0yZ" id="3N6oMviSs9g" role="37wK5m">
-                <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalBuiltinConstraint" />
-                <ref role="3cqZAo" to="xq5w:5uFPQ7C26$b" resolve="BOUND_SYM" />
+                <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
               </node>
             </node>
           </node>
@@ -4270,7 +4217,7 @@
                   <ref role="3cqZAo" node="4pWvZ2nHHSZ" resolve="myConstraintRulesHandler" />
                 </node>
                 <node concept="liA8E" id="4pWvZ2nHTcD" role="2OqNvi">
-                  <ref role="37wK5l" to="9kr0:ZqZbw4Qln6" resolve="rules" />
+                  <ref role="37wK5l" to="rchb:78CwJJcTsEO" resolve="rules" />
                 </node>
               </node>
             </node>
