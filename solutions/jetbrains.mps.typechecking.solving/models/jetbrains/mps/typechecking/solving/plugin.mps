@@ -131,7 +131,9 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
+        <reference id="1182955020723" name="classConcept" index="1HBi2w" />
+      </concept>
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -693,9 +695,30 @@
                         </node>
                         <node concept="liA8E" id="4pWvZ2nh4hB" role="2OqNvi">
                           <ref role="37wK5l" to="t5kh:61vfVfp5zwA" resolve="showEvents" />
-                          <node concept="Rm8GO" id="4pWvZ2nh4hC" role="37wK5m">
+                          <node concept="Rm8GO" id="1XX620Laz_K" role="37wK5m">
+                            <ref role="Rm8GQ" to="t5kh:61vfVfp5uMw" resolve="TRIGGERED" />
                             <ref role="1Px2BO" to="t5kh:61vfVfp5tJN" resolve="MessageViewTracer.Event" />
-                            <ref role="Rm8GQ" to="t5kh:61vfVfp5uU4" resolve="FIRED" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbH" id="1XX620Laxg$" role="3cqZAp" />
+                    <node concept="3cpWs8" id="1XX620LaxZm" role="3cqZAp">
+                      <node concept="3cpWsn" id="3Qp4N06byjA" role="3cpWs9">
+                        <property role="TrG5h" value="manifest" />
+                        <node concept="3uibUv" id="3Qp4N06byjB" role="1tU5fm">
+                          <ref role="3uigEE" to="i348:4OKkcnfu_xe" resolve="AbstractRuleTemplateManifest" />
+                        </node>
+                        <node concept="2YIFZM" id="3Qp4N06byjC" role="33vP2m">
+                          <ref role="1Pybhc" to="t5kh:3Qp4N06byjn" resolve="CollectRuleTemplates" />
+                          <ref role="37wK5l" to="t5kh:3Qp4N06bynQ" resolve="getRuleManifest" />
+                          <node concept="2OqwBi" id="1pPth$lGtu2" role="37wK5m">
+                            <node concept="Xjq3P" id="1pPth$lGtu3" role="2Oq$k0">
+                              <ref role="1HBi2w" node="1isQzel_J8z" resolve="TypeHelper" />
+                            </node>
+                            <node concept="liA8E" id="1pPth$lGtu4" role="2OqNvi">
+                              <ref role="37wK5l" to="t5kh:1pPth$lA58k" resolve="templatesModel" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -714,6 +737,14 @@
                                 <ref role="37wK5l" to="uppo:4pWvZ2n32bg" resolve="ChrSolver" />
                                 <node concept="37vLTw" id="4pWvZ2nhNEO" role="37wK5m">
                                   <ref role="3cqZAo" node="4pWvZ2nh4hX" resolve="rh" />
+                                </node>
+                                <node concept="2OqwBi" id="1XX620La_lB" role="37wK5m">
+                                  <node concept="37vLTw" id="1XX620La_48" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="3Qp4N06byjA" resolve="manifest" />
+                                  </node>
+                                  <node concept="liA8E" id="1XX620La_C$" role="2OqNvi">
+                                    <ref role="37wK5l" to="i348:1ggxSI7z1S5" resolve="javaExpressionSolver" />
+                                  </node>
                                 </node>
                                 <node concept="37vLTw" id="4pWvZ2nhNEP" role="37wK5m">
                                   <ref role="3cqZAo" node="4pWvZ2nh4hs" resolve="tracer" />
