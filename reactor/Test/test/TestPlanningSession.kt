@@ -35,18 +35,20 @@ class TestPlanningSession {
 
     @Test(expected = InvalidRuleException::class)
     fun emptyBody() {
-        session.addRules(arrayListOf(
+        program(
             rule("foo",
                 headKept(
                     constraint("bar")
-                ))
-        ))
-        assertEquals(session.rules().count(), 1)
+                ))).run {
+
+            session.addRules(rules)
+            assertEquals(session.rules().count(), 1)
+        }
     }
 
     @Test
     fun replace() {
-        session.addRules(arrayListOf(
+        program(
             rule("foo",
                 headReplaced(
                     constraint("bar")
@@ -63,22 +65,26 @@ class TestPlanningSession {
                 ),
                 body(
                     constraint("blah")
-                ))
-        ))
-        assertEquals(session.rules().count(), 2)
+                ))).run {
+
+            session.addRules(rules)
+            assertEquals(session.rules().count(), 2)
+        }
     }
 
     @Test(expected = InvalidConstraintException::class)
     fun fail() {
-        session.addRules(arrayListOf(
+        program(
             rule("foo",
                 headReplaced(
                     constraint("bar", 1)
                 ),
                 body(
                     constraint("bar", "1")
-                ))
-        ))
+                ))).run {
+
+            session.addRules(rules)
+        }
     }
 }
 

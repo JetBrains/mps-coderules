@@ -11,16 +11,19 @@ import java.util.*
 
 class RuleHandler {
 
+    private val sessionSolver: SessionSolver
     private val occurrenceFactory: (Constraint) -> ConstraintOccurrence
     private val rules : MutableList<Rule> = ArrayList<Rule>()
     private val stored : MutableList<ConstraintOccurrence> = ArrayList<ConstraintOccurrence>()
 
     constructor(
+        sessionSolver: SessionSolver,
         programRules: Iterable<Rule>,
         occurrenceFactory: (Constraint) -> ConstraintOccurrence,
         // for testing purposes only
         occurrences: Iterable<ConstraintOccurrence>? = null)
     {
+        this.sessionSolver = sessionSolver
         this.occurrenceFactory = occurrenceFactory
         this.rules.addAll(programRules)
         if (occurrences != null) {
@@ -51,15 +54,26 @@ class RuleHandler {
         stored.remove(occ)
     }
 
-    private fun activate(item: AndItem): Boolean {
-        return when(item) {
-            is Constraint   -> process(activate(item))
-            is Predicate    -> true
-            else            -> throw IllegalArgumentException("unknown item ${item}")
+    private fun activate(item: AndItem) {
+        when(item) {
+            is Constraint       -> process(activate(item))
+            is Predicate        -> tellPredicate(item)
+            else                -> throw IllegalArgumentException("unknown item ${item}")
         }
     }
 
     private fun activate(constraint: Constraint): ConstraintOccurrence = occurrenceFactory(constraint)
+
+    private fun tellPredicate(predicate: Predicate) {
+        when (predicate.symbol()) {
+            is JavaPredicateSymbol  -> evalJava(predicate)
+            else                    -> TODO()
+        }
+    }
+
+    private fun evalJava(expr: Predicate) {
+        sessionSolver.tell(expr.symbol(), * expr.arguments().toTypedArray())
+    }
 
     fun lookupMatches(occ: ConstraintOccurrence): Iterable<PartialMatch> {
         val partialMatches = rules.flatMap { r ->

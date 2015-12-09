@@ -27,16 +27,16 @@ class TestBasicProgram {
     }
 
     @Before fun beforeTest() {
-        program = PlanningSession.newSession("test", ReactorSessionSolver())
-        evalConfig = EvaluationSession.newSession(program)
+        planningSession = PlanningSession.newSession("test", ReactorSessionSolver())
+        evalConfig = EvaluationSession.newSession(planningSession)
     }
 
-    lateinit var program: PlanningSession
+    lateinit var planningSession: PlanningSession
     lateinit var evalConfig: EvaluationSession.Config
 
     @Test
     fun replace() {
-        program.addRules(arrayListOf(
+        program(
             rule("main",
                 headReplaced(
                     constraint("main")
@@ -50,12 +50,11 @@ class TestBasicProgram {
                 ),
                 body(
                     constraint("bar")
-                ))
-        ))
-        assertEquals(program.rules().count(), 2)
-        val session = evalConfig.start()
+                ))).run {
 
-
-
+            planningSession.addRules(rules)
+            assertEquals(planningSession.rules().count(), 2)
+            val session = evalConfig.start()
+        }
     }
 }
