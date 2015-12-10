@@ -65,14 +65,7 @@ class RuleHandler {
     private fun activate(constraint: Constraint): ConstraintOccurrence = occurrenceFactory(constraint)
 
     private fun tellPredicate(predicate: Predicate) {
-        when (predicate.symbol()) {
-            is JavaPredicateSymbol  -> evalJava(predicate)
-            else                    -> TODO()
-        }
-    }
-
-    private fun evalJava(expr: Predicate) {
-        sessionSolver.tell(expr.symbol(), * expr.arguments().toTypedArray())
+        sessionSolver.tell(predicate.symbol(), * predicate.arguments().toTypedArray())
     }
 
     fun lookupMatches(occ: ConstraintOccurrence): Iterable<PartialMatch> {

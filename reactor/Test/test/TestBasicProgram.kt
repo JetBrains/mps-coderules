@@ -1,3 +1,6 @@
+import jetbrains.mps.logic.reactor.constraint.PredicateSymbol
+import jetbrains.mps.logic.reactor.constraint.Queryable
+import jetbrains.mps.logic.reactor.constraint.Symbol
 import jetbrains.mps.logic.reactor.core.ReactorEvaluationSession
 import jetbrains.mps.logic.reactor.core.ReactorPlanningSession
 import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
@@ -26,8 +29,13 @@ class TestBasicProgram {
         }
     }
 
+    val dummySolver = object : Queryable {
+        override fun ask(predicateSymbol: PredicateSymbol?, vararg args: Any?): Boolean = TODO()
+        override fun tell(symbol: Symbol?, vararg args: Any?) = TODO()
+    }
+
     @Before fun beforeTest() {
-        planningSession = PlanningSession.newSession("test", ReactorSessionSolver())
+        planningSession = PlanningSession.newSession("test", ReactorSessionSolver(dummySolver, dummySolver))
         evalConfig = EvaluationSession.newSession(planningSession)
     }
 

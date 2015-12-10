@@ -1,8 +1,6 @@
-import jetbrains.mps.logic.reactor.constraint.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.constraint.JavaPredicateSymbol
-import jetbrains.mps.logic.reactor.constraint.Queryable
-import jetbrains.mps.logic.reactor.constraint.SessionSolver
+import jetbrains.mps.logic.reactor.constraint.*
 import jetbrains.mps.logic.reactor.core.RuleHandler
+import jetbrains.mps.logic.reactor.logical.ILogical
 import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
 import org.junit.Before
 import org.junit.BeforeClass
@@ -18,13 +16,12 @@ import kotlin.test.assertTrue
 
 class TestRuleHandler {
 
-    fun occurrence(id: String, vararg args: Any) : TestOccurrence = TestOccurrence(id, * args)
-
-    fun sessionSolver(exprSolver: Queryable) : SessionSolver =
-        ReactorSessionSolver(exprSolver).apply { init(JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
+    fun sessionSolver(exprSolver: Queryable, equalsSolver: Queryable) : SessionSolver =
+        ReactorSessionSolver(exprSolver, equalsSolver).apply {
+            init(PredicateSymbol("equals",2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
     fun Program.handler(vararg occurrences: ConstraintOccurrence): RuleHandler =
-        RuleHandler(sessionSolver(env.expressionSolver()), rules, occurrenceFactory(), listOf(* occurrences))
+        RuleHandler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, occurrenceFactory(), listOf(* occurrences))
 
     companion object {
         @BeforeClass @JvmStatic fun setup() {
@@ -135,7 +132,7 @@ class TestRuleHandler {
                     constraint("bar")
                 ))).run {
 
-            val matches = handler(TestOccurrence("aux")).lookupMatches(occurrence("main"))
+            val matches = handler(occurrence("aux")).lookupMatches(occurrence("main"))
 
             assertFalse { matches.any { m -> m.isPartial() } }
             assertEquals(rules, matches.map { m -> m.rule })
@@ -252,9 +249,72 @@ class TestRuleHandler {
                 ))).run {
 
             val result = handler().process(occurrence("main"))
-
             assertEquals("value", test)
+        }
+    }
 
+    @Test
+    fun paramExpression() {
+        var test : String = "not initialized"
+        program(
+            rule("main",
+                headKept(
+                    constraint("main")
+                ),
+                body(
+                    expression ({ v -> test = v as String; true }, "value")
+                ))).run {
+
+            val result = handler().process(occurrence("main"))
+            assertEquals("value", test)
+        }
+    }
+
+    @Test
+    fun basicLogical() {
+        var test : String? = "not initialized"
+        val x = logical("x")
+        x.value = "expected"
+        program(
+            rule("main",
+                headKept(
+                    constraint("main")
+                ),
+                body(
+                    expression ({ v -> test = (v as ILogical<String>).value(); true }, x)
+                ))).run {
+
+            val result = handler().process(occurrence("main"))
+            assertEquals("expected", test)
+        }
+    }
+
+    @Test
+    fun logicalCopy() {
+        var test : String? = "not initialized"
+        val (x,y) = logical("x", "y")
+        x.value = "expected"
+        program(
+            rule("main",
+                headKept(
+                    constraint("main")
+                ),
+                body(
+                    equals(x, y),
+                    constraint("next")
+                )),
+            rule("aux",
+                headKept(
+                    constraint("next")
+                ),
+                body(
+                    expression ({ v -> test = getValue(v) as String; true }, y)
+                ))).run {
+
+            handler().apply { process(occurrence("main")) }.run {
+                assertEquals(setOf(occurrence("main"), occurrence("next")), occurrences())
+            }
+            assertEquals("expected", test)
         }
     }
 
