@@ -94,6 +94,10 @@ class ConjBuilder {
             Array<Constraint>(constraints.size) {
                 constraints.get(it) as Constraint
             } as Array<T>
+        else if (Predicate::class.java.isAssignableFrom(type))
+            Array<Predicate>(constraints.size) {
+                constraints.get(it) as Predicate
+            } as Array<T>
         else
             Array<AndItem>(constraints.size) {
                 constraints.get(it)

@@ -35,7 +35,7 @@ class RuleHandler {
 
     fun process(active: ConstraintOccurrence): Boolean {
         stored.add(active)
-        val match = lookupMatches(active).find { pm -> pm.isGuardSatisfied() }
+        val match = lookupMatches(active).find { pm -> pm.rule.guard().all { prd -> askPredicate(prd) } }
 
         if (match != null) {
             for ((cst, occ) in match.discarded) {
@@ -63,6 +63,10 @@ class RuleHandler {
     }
 
     private fun activate(constraint: Constraint): ConstraintOccurrence = occurrenceFactory(constraint)
+
+    private fun askPredicate(predicate: Predicate): Boolean {
+        return sessionSolver.ask(predicate.symbol(), * predicate.arguments().toTypedArray())
+    }
 
     private fun tellPredicate(predicate: Predicate) {
         sessionSolver.tell(predicate.symbol(), * predicate.arguments().toTypedArray())
@@ -132,7 +136,6 @@ class RuleHandler {
     }
 
 }
-
 /**
  * True iff the constraint matches the occurrence.
  */

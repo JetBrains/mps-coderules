@@ -41,17 +41,16 @@ class TestRuleHandler {
                 ),
                 body(
                     constraint("foo")
-                ))).run {
-
-            val main = rules.first()
-
-            val matches = handler().lookupMatches(occurrence("main"))
-            val match = matches.single()
-            assertFalse(match.isPartial())
-            assertEquals(match.rule, main)
-            assertTrue(match.kept.isEmpty)
-            val (cst, occ) = match.discarded.single()
-            assert(cst.symbol().id() == "main")
+                ))
+        ).run {
+            handler().lookupMatches(occurrence("main")).let { matches ->
+                val match = matches.single()
+                assertFalse(match.isPartial())
+                assertEquals(match.rule, rules.first())
+                assertTrue(match.kept.isEmpty)
+                val (cst, occ) = match.discarded.single()
+                assert(cst.symbol().id() == "main")
+            }
         }
     }
 
@@ -71,15 +70,16 @@ class TestRuleHandler {
                 ),
                 body(
                     constraint("bar")
-                ))).run {
-
-            val matches = handler().lookupMatches(occurrence("main"))
-            assertFalse { matches.any { m -> m.isPartial() } }
-            assertEquals(rules, matches.map { m -> m.rule })
-            matches.forEach { m -> assertTrue { m.kept.size() + m.discarded.size() == 1 } }
-            matches.flatMap { m -> m.kept + m.discarded }.forEach { pair ->
-                val (cst, occ) = pair
-                assert(cst.symbol().id() == "main")
+                ))
+        ).run {
+            handler().lookupMatches(occurrence("main")).let { matches ->
+                assertFalse { matches.any { m -> m.isPartial() } }
+                assertEquals(rules, matches.map { m -> m.rule })
+                matches.forEach { m -> assertTrue { m.kept.size() + m.discarded.size() == 1 } }
+                matches.flatMap { m -> m.kept + m.discarded }.forEach { pair ->
+                    val (cst, occ) = pair
+                    assert(cst.symbol().id() == "main")
+                }
             }
         }
     }
@@ -103,11 +103,12 @@ class TestRuleHandler {
                 ),
                 body(
                     constraint("bar")
-                ))).run {
-
-            val matches = handler().lookupMatches(occurrence("main"))
-            assertFalse { matches.any { m -> m.isPartial() } }
-            assertEquals(rules.drop(1), matches.map { m -> m.rule })
+                ))
+        ).run {
+            handler().lookupMatches(occurrence("main")).let { matches ->
+                assertFalse { matches.any { m -> m.isPartial() } }
+                assertEquals(rules.drop(1), matches.map { m -> m.rule })
+            }
         }
     }
 
@@ -130,12 +131,12 @@ class TestRuleHandler {
                 ),
                 body(
                     constraint("bar")
-                ))).run {
-
-            val matches = handler(occurrence("aux")).lookupMatches(occurrence("main"))
-
-            assertFalse { matches.any { m -> m.isPartial() } }
-            assertEquals(rules, matches.map { m -> m.rule })
+                ))
+        ).run {
+            handler(occurrence("aux")).lookupMatches(occurrence("main")).let { matches ->
+                assertFalse { matches.any { m -> m.isPartial() } }
+                assertEquals(rules, matches.map { m -> m.rule })
+            }
         }
     }
 
@@ -155,11 +156,12 @@ class TestRuleHandler {
                 ),
                 body(
                     constraint("bar")
-                ))).run {
-
-            val matches = handler().lookupMatches(occurrence("main", "bar"))
-            assertFalse { matches.any { m -> m.isPartial() } }
-            assertEquals(rules.drop(1), matches.map { m -> m.rule })
+                ))
+        ).run {
+            handler().lookupMatches(occurrence("main", "bar")).let { matches ->
+                assertFalse { matches.any { m -> m.isPartial() } }
+                assertEquals(rules.drop(1), matches.map { m -> m.rule })
+            }
         }
     }
 
@@ -179,10 +181,11 @@ class TestRuleHandler {
                 ),
                 body(
                     constraint("bar")
-                ))).run {
-
-            val matches = handler().lookupMatches(occurrence("main", "qux"))
-            assertFalse(matches.any())
+                ))
+        ).run {
+            handler().lookupMatches(occurrence("main", "qux")).let { matches ->
+                assertFalse(matches.any())
+            }
         }
     }
 
@@ -195,14 +198,11 @@ class TestRuleHandler {
                 ),
                 body(
                     constraint("foo")
-                ))).run {
-
-            val rh = handler()
-            val result = rh.process(occurrence("main"))
-
-            val occurrences = rh.occurrences()
-            val expected = setOf(occurrence("main"), occurrence("foo"))
-            assertEquals(expected, occurrences)
+                ))
+        ).run {
+            handler().apply { process(occurrence("main")) }.let { rh ->
+                assertEquals(setOf(occurrence("main"), occurrence("foo")), rh.occurrences())
+            }
         }
     }
 
@@ -225,14 +225,11 @@ class TestRuleHandler {
                 ),
                 body(
                     constraint("bar")
-                ))).run {
-
-            val rh = handler()
-            val result = rh.process(occurrence("main"))
-
-            val occurrences = rh.occurrences()
-            val expected = setOf(occurrence("bar"), occurrence("foo"))
-            assertEquals(expected, occurrences)
+                ))
+        ).run {
+            handler().apply { process(occurrence("main")) }.let { rh ->
+                assertEquals(setOf(occurrence("bar"), occurrence("foo")), rh.occurrences())
+            }
         }
     }
 
@@ -246,9 +243,9 @@ class TestRuleHandler {
                 ),
                 body(
                     expression {  -> test = "value"; true }
-                ))).run {
-
-            val result = handler().process(occurrence("main"))
+                ))
+        ).run {
+            handler().process(occurrence("main"))
             assertEquals("value", test)
         }
     }
@@ -263,9 +260,9 @@ class TestRuleHandler {
                 ),
                 body(
                     expression ({ v -> test = v as String; true }, "value")
-                ))).run {
-
-            val result = handler().process(occurrence("main"))
+                ))
+        ).run {
+            handler().process(occurrence("main"))
             assertEquals("value", test)
         }
     }
@@ -282,9 +279,9 @@ class TestRuleHandler {
                 ),
                 body(
                     expression ({ v -> test = (v as ILogical<String>).value(); true }, x)
-                ))).run {
-
-            val result = handler().process(occurrence("main"))
+                ))
+        ).run {
+            handler().process(occurrence("main"))
             assertEquals("expected", test)
         }
     }
@@ -309,12 +306,44 @@ class TestRuleHandler {
                 ),
                 body(
                     expression ({ v -> test = getValue(v) as String; true }, y)
-                ))).run {
-
-            handler().apply { process(occurrence("main")) }.run {
-                assertEquals(setOf(occurrence("main"), occurrence("next")), occurrences())
+                ))
+        ).run {
+            handler().apply { process(occurrence("main")) }.let { rh ->
+                assertEquals(setOf(occurrence("main"), occurrence("next")), rh.occurrences())
+                assertEquals("expected", test)
             }
-            assertEquals("expected", test)
+        }
+    }
+
+    @Test
+    fun basicGuard() {
+        var test1 : String = "not initialized 1"
+        var test2 : String = "not initialized 2"
+        program(
+            rule("main1",
+                headKept(
+                    constraint("main")
+                ),
+                guard(
+                    expression {  -> false }
+                ),
+                body(
+                    expression {  -> test1 = "not expected"; true }
+                )),
+            rule("main2",
+                headKept(
+                    constraint("main")
+                ),
+                guard(
+                    expression {  -> true }
+                ),
+                body(
+                    expression {  -> test2 = "expected"; true }
+                ))
+        ).run {
+            handler().process(occurrence("main"))
+            assertEquals("not initialized 1", test1)
+            assertEquals("expected", test2)
         }
     }
 
