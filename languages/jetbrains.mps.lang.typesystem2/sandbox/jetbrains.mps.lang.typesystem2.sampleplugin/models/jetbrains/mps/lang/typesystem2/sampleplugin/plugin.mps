@@ -9,9 +9,6 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="0" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
@@ -605,16 +602,8 @@
             <node concept="2ShNRf" id="7nkyKX7mVqT" role="33vP2m">
               <node concept="1pGfFk" id="7nkyKX7mVqU" role="2ShVmc">
                 <ref role="37wK5l" to="i8dg:6lpwCiZjdph" resolve="RuleBuilder" />
-                <node concept="2OqwBi" id="4pWvZ2n6xEA" role="37wK5m">
-                  <node concept="3fl2lp" id="4pWvZ2n6xu8" role="2Oq$k0">
-                    <ref role="3fl3PK" to="kqnc:7nkyKX7rINS" resolve="main" />
-                    <node concept="3B5_sB" id="4pWvZ2n6xiF" role="3fl3PI">
-                      <ref role="3B5MYn" to="kqnc:3Qp4N06bUPp" resolve="StandardConstraints" />
-                    </node>
-                  </node>
-                  <node concept="3TrcHB" id="4pWvZ2n8jRx" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                  </node>
+                <node concept="Xl_RD" id="7nkyKX7mVqV" role="37wK5m">
+                  <property role="Xl_RC" value="main" />
                 </node>
               </node>
             </node>
@@ -633,16 +622,8 @@
                   <node concept="2YIFZM" id="5uFPQ7CgepP" role="37wK5m">
                     <ref role="37wK5l" to="qrld:54i3FxcZQAb" resolve="symbol" />
                     <ref role="1Pybhc" to="qrld:54i3FxcZHHF" resolve="ConstraintSymbol" />
-                    <node concept="2OqwBi" id="4pWvZ2n7sTW" role="37wK5m">
-                      <node concept="3fl2lp" id="4pWvZ2n7sTX" role="2Oq$k0">
-                        <ref role="3fl3PK" to="kqnc:7nkyKX7rINS" resolve="main" />
-                        <node concept="3B5_sB" id="4pWvZ2n7sTY" role="3fl3PI">
-                          <ref role="3B5MYn" to="kqnc:3Qp4N06bUPp" resolve="StandardConstraints" />
-                        </node>
-                      </node>
-                      <node concept="3TrcHB" id="4pWvZ2n7sTZ" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                      </node>
+                    <node concept="Xl_RD" id="5uFPQ7Cgf$i" role="37wK5m">
+                      <property role="Xl_RC" value="main" />
                     </node>
                     <node concept="3cmrfG" id="5uFPQ7CgeEK" role="37wK5m">
                       <property role="3cmrfH" value="0" />
