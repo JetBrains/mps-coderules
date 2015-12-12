@@ -18,6 +18,34 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Annotation profile for Test" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="Test" />
+      </profile>
+      <profile default="false" name="Annotation profile for Core" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="Core" />
+      </profile>
+      <profile default="false" name="Annotation profile for API" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="API" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="API" target="1.6" />
+      <module name="Core" target="1.6" />
+      <module name="main" target="1.5" />
+      <module name="Reactor" target="1.5" />
+      <module name="Test" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -69,7 +69,7 @@ class ReactorPlanningSession(val name: String, val sessionSolver: SessionSolver)
 
 private class ConstraintRegistry(val sessionSolver: SessionSolver) {
 
-    private val myConstraintArgTypes = HashMap<ConstraintSymbol, List<Class<*>>>()
+    private val myConstraintArgTypes = HashMap<ConstraintSymbol, List<Class<*>>>().withDefault { Collections.emptyList() }
 
     private val myPredicateSolvers = HashMap<PredicateSymbol, Class<out Queryable>>()
 
@@ -116,11 +116,11 @@ private class ConstraintRegistry(val sessionSolver: SessionSolver) {
             unmodifiableSet(myConstraintArgTypes.keys)
 
     fun constraintArgTypes(symbol: ConstraintSymbol): List<Class<*>> =
-            unmodifiableList(myConstraintArgTypes.getOrDefault(symbol, Collections.emptyList()))
+            unmodifiableList(myConstraintArgTypes.getOrImplicitDefault(symbol))
 
     fun predicateSymbols(): Iterable<PredicateSymbol> =
             unmodifiableSet(myPredicateSolvers.keys)
 
     fun solverClass(symbol: PredicateSymbol): Class<out Queryable> =
-            myPredicateSolvers.getOrDefault(symbol, throw NoSuchElementException())
+            myPredicateSolvers.getOrImplicitDefault(symbol)
 }

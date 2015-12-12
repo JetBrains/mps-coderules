@@ -3,6 +3,7 @@ import jetbrains.mps.logic.reactor.logical.ILogical
 import jetbrains.mps.logic.reactor.logical.NamingContext
 import jetbrains.mps.logic.reactor.rule.Rule
 import jetbrains.mps.logic.reactor.rule.RuleBuilder
+import jetbrains.mps.unification.Term
 import java.util.*
 
 /**
@@ -68,7 +69,9 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestOccurrence(id, * args)
 
-class RB(tag: String, val env: Environment?) : RuleBuilder(tag) {}
+class RB(tag: String, val env: Environment?) : RuleBuilder(tag) {
+
+}
 
 class ConjBuilder {
     val constraints = ArrayList<AndItem>()
