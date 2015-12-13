@@ -6,30 +6,34 @@
     <modelVersion>4.0.0</modelVersion>
 
 
+    <properties>
+        <reactor.version>0.1</reactor.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <kotlin.version>1.0.0-beta-3595</kotlin.version>
+        <junit.version>4.12</junit.version>
+        <maven.version>3.2</maven.version>
+    </properties>
+
     <groupId>jetbrains.mps.logic.reactor</groupId>
     <artifactId>main</artifactId>
-    <version>0.1</version>
+    <version>${reactor.version}</version>
     <packaging>pom</packaging>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-runtime</artifactId>
-            <version>1.0.0-beta-3595</version>
+            <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>1.0.0-beta-3595</version>
+            <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-maven-plugin</artifactId>
-            <version>1.0.0-beta-3595</version>
+            <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.collections</groupId>
