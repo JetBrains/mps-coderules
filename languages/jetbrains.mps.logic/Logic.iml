@@ -10,5 +10,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jchr" level="project" />
     <orderEntry type="module" module-name="Atom" />
+    <orderEntry type="module" module-name="Logic.reactor" />
+    <orderEntry type="module" module-name="Logic.jchr" />
   </component>
 </module>

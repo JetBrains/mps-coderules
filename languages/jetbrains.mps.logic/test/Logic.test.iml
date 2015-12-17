@@ -22,5 +22,6 @@
     <orderEntry type="module" module-name="Logic" scope="TEST" />
     <orderEntry type="module" module-name="Atom" scope="TEST" />
     <orderEntry type="library" name="mps-{closures,collections}" level="project" />
+    <orderEntry type="module" module-name="Logic.jchr" scope="TEST" />
   </component>
 </module>
