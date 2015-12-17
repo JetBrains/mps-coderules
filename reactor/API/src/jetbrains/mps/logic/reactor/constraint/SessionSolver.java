@@ -11,20 +11,23 @@ import java.util.HashMap;
 public abstract class SessionSolver implements Instructible, Queryable {
 
   public void init(PredicateSymbol... predicateSymbols) {
-    registerSymbols(null, predicateSymbols);
+    registerSymbols(predicateSymbols);
   }
 
   public void init(ComputingTracer computingTracer, PredicateSymbol... predicateSymbols) {
-    registerSymbols(computingTracer, predicateSymbols);
+    tracer = computingTracer;
+    init(predicateSymbols);
   }
 
   @Override
   public boolean ask(PredicateSymbol predicateSymbol, Object... arg) {
+    tracer.ask(predicateSymbol, arg);
     return solver(predicateSymbol).ask(predicateSymbol, arg);
   }
 
   @Override
   public void tell(Symbol symbol, Object... arg) {
+    tracer.tell(symbol, arg);
     handler(symbol).tell(symbol, arg);
   }
 
@@ -50,9 +53,9 @@ public abstract class SessionSolver implements Instructible, Queryable {
     return solver((PredicateSymbol) symbol);
   }
 
-  private void registerSymbols(ComputingTracer computingTracer, PredicateSymbol... predicateSymbols) {
+  private void registerSymbols(PredicateSymbol... predicateSymbols) {
     for (PredicateSymbol symbol : predicateSymbols) {
-      registerSymbol(symbol, computingTracer);
+      registerSymbol(symbol, tracer);
     }
   }
 
@@ -64,4 +67,5 @@ public abstract class SessionSolver implements Instructible, Queryable {
   }
 
   private Map<PredicateSymbol, Queryable> solvers = new HashMap<PredicateSymbol, Queryable>();
+  private ComputingTracer tracer = ComputingTracer.NULL;
 }

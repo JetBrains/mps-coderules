@@ -8,11 +8,19 @@ import java.util.IdentityHashMap;
 
 public class NamingContext {
 
-  public String uniqueName(ILogical logical) {
-    if (!(cachedUnique.containsKey(logical))) {
-      cachedUnique.put(logical, makeUnique(logical.name()));
+  public String uniqueName(Logical logical) {
+    return cachedOrMakeUnique(logical, logical.name());
+  }
+
+  public String uniqueName(LogicalPattern logical) {
+    return cachedOrMakeUnique(logical, logical.name());
+  }
+
+  private String cachedOrMakeUnique(Object named, String name) {
+    if (!(cachedUnique.containsKey(named))) {
+      cachedUnique.put(named, makeUnique(name));
     }
-    return cachedUnique.get(logical);
+    return cachedUnique.get(named);
   }
 
   private String makeUnique(String name) {
@@ -28,6 +36,6 @@ public class NamingContext {
 
   private Map<String, Integer> uniqueCounters = new HashMap<String, Integer>();
 
-  private Map<ILogical, String> cachedUnique = new IdentityHashMap<ILogical, String>();
+  private Map<Object, String> cachedUnique = new IdentityHashMap<Object, String>();
 
 }

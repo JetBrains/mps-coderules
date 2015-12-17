@@ -9,6 +9,22 @@ public interface ComputingTracer {
 
   public void askFailure(PredicateSymbol predicateSymbol, Object... args);
 
+  public void ask(PredicateSymbol predicateSymbol, Object... args);
+
+  public void tell(Symbol symbol, Object... args);
+
   public void reportFailure(String message);
 
+  public static final ComputingTracer NULL = new ComputingTracer() {
+    public void askSuccess(PredicateSymbol predicateSymbol, Object... args) {
+    }
+    public void askFailure(PredicateSymbol predicateSymbol, Object... args) {
+    }
+    public void ask(PredicateSymbol predicateSymbol, Object... args) {
+    }
+    public void tell(Symbol symbol, Object... args) {
+    }
+    public void reportFailure(String message) {
+    }
+  };
 }
