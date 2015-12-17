@@ -44,7 +44,7 @@
       <module name="API" target="1.6" />
       <module name="Core" target="1.6" />
       <module name="main" target="1.5" />
-      <module name="Reactor" target="1.5" />
+      <module name="Reactor" target="1.6" />
       <module name="Test" target="1.6" />
     </bytecodeTargetLevel>
   </component>
