@@ -8,8 +8,9 @@
   </languages>
   <imports>
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -22,6 +23,7 @@
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
+        <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
       </concept>
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
     </language>
@@ -248,6 +250,100 @@
     </node>
     <node concept="13hLZK" id="75vUFrSLzLQ" role="13h7CW">
       <node concept="3clFbS" id="75vUFrSLzLR" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="7FFmDVAL6VV">
+    <property role="3GE5qa" value="atom" />
+    <ref role="13h7C2" to="5j4j:5lJXKARS0" resolve="Atom" />
+    <node concept="13i0hz" id="7FFmDVAL6VY" role="13h7CS">
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="runtimeType" />
+      <node concept="3Tm1VV" id="7FFmDVAL6VZ" role="1B3o_S" />
+      <node concept="3clFbS" id="7FFmDVAL6W0" role="3clF47">
+        <node concept="3clFbF" id="7FFmDVALaOi" role="3cqZAp">
+          <node concept="3B5_sB" id="7FFmDVALaOh" role="3clFbG">
+            <ref role="3B5MYn" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="7FFmDVALaMW" role="3clF45">
+        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+      </node>
+    </node>
+    <node concept="13hLZK" id="7FFmDVAL6VW" role="13h7CW">
+      <node concept="3clFbS" id="7FFmDVAL6VX" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="7FFmDVAL6Y2">
+    <property role="3GE5qa" value="atom" />
+    <ref role="13h7C2" to="5j4j:6$jH9oLmYJ_" resolve="Value" />
+    <node concept="13hLZK" id="7FFmDVAL6Y3" role="13h7CW">
+      <node concept="3clFbS" id="7FFmDVAL6Y4" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="7FFmDVAL6Y5" role="13h7CS">
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="runtimeType" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="7FFmDVAL6VY" resolve="runtimeType" />
+      <node concept="3Tm1VV" id="7FFmDVAL6Y6" role="1B3o_S" />
+      <node concept="3clFbS" id="7FFmDVAL6Yd" role="3clF47">
+        <node concept="3clFbF" id="7FFmDVALaxd" role="3cqZAp">
+          <node concept="3B5_sB" id="7FFmDVALaxc" role="3clFbG">
+            <ref role="3B5MYn" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="7FFmDVALaqA" role="3clF45">
+        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="7FFmDVAL750">
+    <property role="3GE5qa" value="atom" />
+    <ref role="13h7C2" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
+    <node concept="13hLZK" id="7FFmDVAL751" role="13h7CW">
+      <node concept="3clFbS" id="7FFmDVAL752" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="7FFmDVAL753" role="13h7CS">
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="runtimeType" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="7FFmDVAL6VY" resolve="runtimeType" />
+      <node concept="3Tm1VV" id="7FFmDVAL754" role="1B3o_S" />
+      <node concept="3clFbS" id="7FFmDVAL75b" role="3clF47">
+        <node concept="3clFbF" id="7FFmDVALaK9" role="3cqZAp">
+          <node concept="3B5_sB" id="7FFmDVALaK8" role="3clFbG">
+            <ref role="3B5MYn" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="7FFmDVALaH6" role="3clF45">
+        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="7FFmDVAL79i">
+    <property role="3GE5qa" value="atom" />
+    <ref role="13h7C2" to="5j4j:1OShD0HAY6y" resolve="List" />
+    <node concept="13hLZK" id="7FFmDVAL79j" role="13h7CW">
+      <node concept="3clFbS" id="7FFmDVAL79k" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="7FFmDVAL79l" role="13h7CS">
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="runtimeType" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="7FFmDVAL6VY" resolve="runtimeType" />
+      <node concept="3Tm1VV" id="7FFmDVAL79m" role="1B3o_S" />
+      <node concept="3clFbS" id="7FFmDVAL79t" role="3clF47">
+        <node concept="3clFbF" id="7FFmDVALaDE" role="3cqZAp">
+          <node concept="3B5_sB" id="7FFmDVALaDD" role="3clFbG">
+            <ref role="3B5MYn" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="7FFmDVALaAb" role="3clF45">
+        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+      </node>
     </node>
   </node>
 </model>

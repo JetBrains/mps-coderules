@@ -351,5 +351,12 @@
       <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7HUwyZb1HXL">
+    <property role="3GE5qa" value="logical" />
+    <property role="TrG5h" value="MultiLogicalType" />
+    <property role="34LRSv" value="multiLogical" />
+    <property role="1pbfSe" value="1182884256" />
+    <ref role="1TJDcQ" node="1mP5b6jNC0S" resolve="LogicalType" />
+  </node>
 </model>
 
