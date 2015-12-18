@@ -1,5 +1,4 @@
 import jetbrains.mps.logic.reactor.constraint.*
-import jetbrains.mps.logic.reactor.logical.ILogical
 import jetbrains.mps.logic.reactor.logical.NamingContext
 import jetbrains.mps.logic.reactor.rule.Rule
 import jetbrains.mps.logic.reactor.rule.RuleBuilder
@@ -123,11 +122,11 @@ private data class TestOccurrence(val arguments : List<Any>, val constraint : Co
     constructor(id: String, vararg args: Any) :
         this(listOf(* args), TestConstraint(ConstraintSymbol.symbol(id, args.size))) {}
 
-    constructor(constraint: Constraint) : this(constraint.arguments(), constraint) {}
+    constructor(constraint: Constraint) : this(constraint.arguments().map { it ?: TODO() }, constraint) {}
 
     override fun constraint(): Constraint = constraint
 
-    override fun arguments(): List<Any> = arguments
+    override fun arguments(): Collection<Any> = arguments
 
     override fun toString(): String = "#${constraint().symbol()}(${arguments().joinToString()})"
 

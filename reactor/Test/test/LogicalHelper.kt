@@ -2,8 +2,10 @@ import jetbrains.mps.logic.reactor.constraint.Predicate
 import jetbrains.mps.logic.reactor.constraint.PredicateSymbol
 import jetbrains.mps.logic.reactor.constraint.Queryable
 import jetbrains.mps.logic.reactor.constraint.Symbol
-import jetbrains.mps.logic.reactor.logical.ILogical
+import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.logical.NamingContext
+import java.util.*
 
 /**
  * @author Fedor Isakov
@@ -11,113 +13,23 @@ import jetbrains.mps.logic.reactor.logical.NamingContext
 
 
 fun logical(name: String) = TestLogical<Any>(name)
+
 fun logical(name1: String, name2: String) = Pair(TestLogical<Any>(name1), TestLogical<Any>(name2))
+
 fun logical(name1: String, name2: String, name3: String) = Triple(TestLogical<Any>(name1), TestLogical<Any>(name2), TestLogical<Any>(name3))
+
+fun logicalPattern(name: String) = TestLogicalPattern(name, Object::class.java)
+
+fun logicalPattern(name1: String, name2: String) = Pair(TestLogicalPattern(name1, Object::class.java), TestLogicalPattern(name2, Object::class.java))
+
+fun logicalPattern(name1: String, name2: String, name3: String) = Triple(TestLogicalPattern(name1, Object::class.java), TestLogicalPattern(name2, Object::class.java), TestLogicalPattern(name3, Object::class.java))
+
 fun setValue(logical: Any, value: Any) { (logical as TestLogical<Any>).find().value = value }
+
 fun getValue(logical: Any) = (logical as TestLogical<Any>).find().value()
 
-class EqualsSolver  : Queryable {
-    override fun ask(predicateSymbol: PredicateSymbol?, vararg args: Any?): Boolean {
-        if (args.size != 2) ERROR("arity mismatch")
-        val left = args[0]
-        val right = args[1]
 
-        return if (left is TestLogical<*> && right is TestLogical<*>) {
-            ask_logical_logical(left, right)
-        }
-        else if (left is TestLogical<*>) {
-            ask_logical_value(left, right)
-        }
-        else if (right is TestLogical<*>) {
-            ask_value_logical(left, right)
-        }
-        else {
-            ask_value_value(left, right)
-        }
-    }
-
-    override fun tell(symbol: Symbol, vararg args: Any) {
-        if (args.size != 2) ERROR("arity mismatch")
-        val left = args[0]
-        val right = args[1]
-        if (left is TestLogical<*> && right is TestLogical<*>) {
-            tell_logical_logical(left, right)
-        }
-        else if (left is TestLogical<*>) {
-            tell_logical_value(left, right)
-        }
-        else if (right is TestLogical<*>) {
-            tell_value_logical(left, right)
-        }
-        else {
-            tell_value_value(left, right)
-        }
-    }
-
-    fun ask_logical_logical(left: TestLogical<*>,  right: TestLogical<*>): Boolean {
-        return left.isBound && right.isBound && left.findRoot().value() == right.findRoot().value()
-    }
-
-    fun ask_logical_value(left: TestLogical<*>,  right: Any?): Boolean {
-        return left.isBound && left.findRoot().value() == right
-    }
-
-    fun ask_value_logical(left: Any?,  right: TestLogical<*>): Boolean {
-        return right.isBound && right.findRoot().value() == left
-    }
-
-    fun ask_value_value(left: Any?,  right: Any?): Boolean {
-        return left == right
-    }
-
-    fun tell_logical_logical(left: TestLogical<*>,  right: TestLogical<*>) {
-        if (left.isBound && right.isBound) {
-            check (left.find().value == right.find().value)
-            left.union(right)
-        }
-        else if (left.isBound) {
-            right.union(left)
-        }
-        else if (right.isBound) {
-            left.union(right)
-        }
-        else {
-            left.union(right)
-        }
-    }
-
-    fun tell_logical_value(left: TestLogical<*>,  right: Any?) {
-        if (left.isBound) {
-            check(left.find().value == right)
-        }
-        else {
-            // TODO hack!
-            (left.find() as TestLogical<Any>).value = right
-        }
-    }
-
-    fun tell_value_logical(left: Any?,  right: TestLogical<*>) {
-        if (right.isBound) {
-            check(right.find().value == left)
-        }
-        else {
-            // TODO: hack!
-            (right.find() as TestLogical<Any>).value = left
-        }
-    }
-    fun tell_value_value(left: Any?,  right: Any?) {
-        check(left == right)
-    }
-
-    private fun check(condition: Boolean) {
-        if (!condition) throw IllegalStateException()
-    }
-
-    private fun ERROR(msg: String) : Nothing = throw IllegalArgumentException(msg)
-}
-
-
-data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogical<T>?) : ILogical<T> {
+data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogical<T>?) : Logical<T> {
 
     constructor(name: String) : this(name, null, null) {}
 
@@ -127,7 +39,9 @@ data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogic
         throw UnsupportedOperationException()
     }
 
-    override fun findRoot(): ILogical<T> = find()
+    override fun pattern(): LogicalPattern = TODO()
+
+    override fun findRoot(): Logical<T> = find()
 
     override fun value(): T? = value
 
@@ -151,6 +65,28 @@ data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogic
         if (find() != other.find()) find().parent = other
     }
 }
+
+data class TestLogicalPattern(val name: String, val type: Class<*>) : LogicalPattern {
+
+    companion object {
+        val random = Random()
+    }
+
+    var wildcard = false
+
+    constructor(type: Class<*>) : this("_${random.nextInt()}", type) {
+        wildcard = true
+    }
+
+    override fun name(): String = name
+
+    override fun name(namingContext: NamingContext?): String? = TODO()
+
+    override fun isWildcard(): Boolean = wildcard
+
+    override fun type(): Class<*> = type
+}
+
 
 data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
 
