@@ -103,5 +103,14 @@
       <unit id="8897567155601467909" at="6,0,15,0" name="jetbrains.mps.logic.reactor.logical.MultiLogicalPattern" />
     </file>
   </root>
+  <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/8907901911298493091">
+    <file name="LogicalContext.java">
+      <node id="8907901911298493118" at="8,0,9,0" concept="3" trace="valueFor#(Ljetbrains/mps/logic/reactor/logical/LogicalPattern;)Ljava/lang/Object;" />
+      <scope id="8907901911298493118" at="8,0,9,0">
+        <var name="logicalPattern" id="8907901911298493173" />
+      </scope>
+      <unit id="8907901911298493091" at="6,0,11,0" name="jetbrains.mps.logic.reactor.logical.LogicalContext" />
+    </file>
+  </root>
 </debug-info>
 

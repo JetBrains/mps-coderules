@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.logic.reactor.logical.LogicalPattern;
+import jetbrains.mps.logic.reactor.logical.LogicalContext;
 
 public class AbstractConstraint implements Constraint {
 
@@ -34,6 +35,11 @@ public class AbstractConstraint implements Constraint {
       }
     }
     return types;
+  }
+
+  public ConstraintOccurrence occurrence(LogicalContext context) {
+    // FIXME: implement me 
+    throw new UnsupportedOperationException("not implemented");
   }
 
   private ConstraintSymbol symbol;
