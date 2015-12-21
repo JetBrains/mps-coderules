@@ -594,5 +594,26 @@
       <ref role="3uigEE" node="7HUwyZauJhz" resolve="LogicalPattern" />
     </node>
   </node>
+  <node concept="3HP615" id="7IvepusY4Ez">
+    <property role="TrG5h" value="LogicalContext" />
+    <node concept="2tJIrI" id="7IvepusY4EL" role="jymVt" />
+    <node concept="3clFb_" id="7IvepusY4EY" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="valueFor" />
+      <node concept="37vLTG" id="7IvepusY4FP" role="3clF46">
+        <property role="TrG5h" value="logicalPattern" />
+        <node concept="3uibUv" id="7IvepusY4G3" role="1tU5fm">
+          <ref role="3uigEE" node="7HUwyZauJhz" resolve="LogicalPattern" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="7IvepusY4Fi" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      </node>
+      <node concept="3Tm1VV" id="7IvepusY4F1" role="1B3o_S" />
+      <node concept="3clFbS" id="7IvepusY4F2" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="7IvepusY4EQ" role="jymVt" />
+    <node concept="3Tm1VV" id="7IvepusY4E$" role="1B3o_S" />
+  </node>
 </model>
 

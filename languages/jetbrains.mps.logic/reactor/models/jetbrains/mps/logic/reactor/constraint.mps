@@ -194,6 +194,12 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -1196,6 +1202,23 @@
       <node concept="3Tm1VV" id="78CwJJcOwWU" role="1B3o_S" />
       <node concept="3clFbS" id="78CwJJcOwWV" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="7IvepusY5hO" role="jymVt" />
+    <node concept="3clFb_" id="7IvepusY5jA" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="occurrence" />
+      <node concept="37vLTG" id="7IvepusY5kK" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="7IvepusY5lC" role="1tU5fm">
+          <ref role="3uigEE" to="45ys:7IvepusY4Ez" resolve="LogicalContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="7IvepusY5jD" role="3clF47" />
+      <node concept="3Tm1VV" id="7IvepusY5jE" role="1B3o_S" />
+      <node concept="3uibUv" id="7IvepusY5iM" role="3clF45">
+        <ref role="3uigEE" node="5uFPQ7BZac$" resolve="ConstraintOccurrence" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="78CwJJcOwxN" role="jymVt" />
     <node concept="3Tm1VV" id="6Kcfpq7BfEo" role="1B3o_S" />
     <node concept="3uibUv" id="5uFPQ7B$Pog" role="3HQHJm">
@@ -1205,16 +1228,6 @@
       <node concept="TZ5HA" id="6Kcfpq7C_QQ" role="TZ5H$">
         <node concept="1dT_AC" id="6Kcfpq7C_QR" role="1dT_Ay">
           <property role="1dT_AB" value="A constraint provided by a handler. Can only be told." />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="5uFPQ7BvQOC" role="TZ5H$">
-        <node concept="1dT_AC" id="5uFPQ7BvQOD" role="1dT_Ay">
-          <property role="1dT_AB" value="FIXME: should be merely a factory for ConstraintOccurrence's" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="5uFPQ7BvRQ$" role="TZ5H$">
-        <node concept="1dT_AC" id="5uFPQ7BvRQ_" role="1dT_Ay">
-          <property role="1dT_AB" value="FIXME: should be provided by the session (from ConstraintSymbol)" />
         </node>
       </node>
     </node>
@@ -2318,6 +2331,39 @@
         <node concept="3clFbF" id="78CwJJcOAQH" role="3cqZAp">
           <node concept="37vLTw" id="78CwJJcOAQF" role="3clFbG">
             <ref role="3cqZAo" node="78CwJJcO$LZ" resolve="types" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7IvepusY5Hm" role="jymVt" />
+    <node concept="3clFb_" id="7IvepusY6iw" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="occurrence" />
+      <node concept="37vLTG" id="7IvepusY6ix" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="7IvepusY6iy" role="1tU5fm">
+          <ref role="3uigEE" to="45ys:7IvepusY4Ez" resolve="LogicalContext" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7IvepusY6i$" role="1B3o_S" />
+      <node concept="3uibUv" id="7IvepusY6i_" role="3clF45">
+        <ref role="3uigEE" node="5uFPQ7BZac$" resolve="ConstraintOccurrence" />
+      </node>
+      <node concept="3clFbS" id="7IvepusY6iA" role="3clF47">
+        <node concept="3SKdUt" id="49L2l3F7HGG" role="3cqZAp">
+          <node concept="3SKdUq" id="49L2l3F7HGI" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: implement me" />
+          </node>
+        </node>
+        <node concept="YS8fn" id="49L2l3F7Gx7" role="3cqZAp">
+          <node concept="2ShNRf" id="49L2l3F7GxA" role="YScLw">
+            <node concept="1pGfFk" id="49L2l3F7HEo" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
+              <node concept="Xl_RD" id="49L2l3F7HEV" role="37wK5m">
+                <property role="Xl_RC" value="not implemented" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
