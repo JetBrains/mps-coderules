@@ -90,7 +90,6 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -198,6 +197,12 @@
       <node concept="3Tm1VV" id="7HUwyZaOd62" role="1B3o_S" />
       <node concept="3uibUv" id="7HUwyZaOd4F" role="3clF45">
         <ref role="3uigEE" node="7HUwyZauJhz" resolve="LogicalPattern" />
+        <node concept="3uibUv" id="49L2l3FdnyX" role="11_B2D">
+          <ref role="3uigEE" node="1mP5b6jQP$C" resolve="Logical" />
+          <node concept="16syzq" id="49L2l3FdnzY" role="11_B2D">
+            <ref role="16sUi3" node="1mP5b6jQPCW" resolve="T" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="7HUwyZaOcXk" role="jymVt" />
@@ -540,13 +545,18 @@
       <property role="TrG5h" value="type" />
       <node concept="3uibUv" id="7HUwyZaC3XA" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-        <node concept="3qTvmN" id="7HUwyZaC3XH" role="11_B2D" />
+        <node concept="16syzq" id="49L2l3F7I8L" role="11_B2D">
+          <ref role="16sUi3" node="49L2l3F7I8l" resolve="V" />
+        </node>
       </node>
       <node concept="3Tm1VV" id="7HUwyZaC3Qa" role="1B3o_S" />
       <node concept="3clFbS" id="7HUwyZaC3Qb" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="7HUwyZaC3Pw" role="jymVt" />
     <node concept="3Tm1VV" id="7HUwyZauJh$" role="1B3o_S" />
+    <node concept="16euLQ" id="49L2l3F7I8l" role="16eVyc">
+      <property role="TrG5h" value="V" />
+    </node>
   </node>
   <node concept="3HP615" id="7HUwyZaNIC5">
     <property role="TrG5h" value="MultiLogicalPattern" />
@@ -573,6 +583,9 @@
       <node concept="3Tm1VV" id="7HUwyZaNHYD" role="1B3o_S" />
       <node concept="3uibUv" id="7HUwyZaNIPg" role="3clF45">
         <ref role="3uigEE" node="7HUwyZauJhz" resolve="LogicalPattern" />
+        <node concept="16syzq" id="49L2l3F82XS" role="11_B2D">
+          <ref role="16sUi3" node="49L2l3F82WZ" resolve="V" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="7HUwyZbfyU2" role="jymVt" />
@@ -592,6 +605,12 @@
     <node concept="3Tm1VV" id="7HUwyZaNIC6" role="1B3o_S" />
     <node concept="3uibUv" id="7HUwyZaNICL" role="3HQHJm">
       <ref role="3uigEE" node="7HUwyZauJhz" resolve="LogicalPattern" />
+      <node concept="16syzq" id="49L2l3F82Xp" role="11_B2D">
+        <ref role="16sUi3" node="49L2l3F82WZ" resolve="V" />
+      </node>
+    </node>
+    <node concept="16euLQ" id="49L2l3F82WZ" role="16eVyc">
+      <property role="TrG5h" value="V" />
     </node>
   </node>
   <node concept="3HP615" id="7IvepusY4Ez">
@@ -604,13 +623,19 @@
         <property role="TrG5h" value="logicalPattern" />
         <node concept="3uibUv" id="7IvepusY4G3" role="1tU5fm">
           <ref role="3uigEE" node="7HUwyZauJhz" resolve="LogicalPattern" />
+          <node concept="16syzq" id="49L2l3Fdntd" role="11_B2D">
+            <ref role="16sUi3" node="49L2l3Fdns_" resolve="V" />
+          </node>
         </node>
       </node>
-      <node concept="3uibUv" id="7IvepusY4Fi" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      <node concept="16syzq" id="49L2l3FdnsR" role="3clF45">
+        <ref role="16sUi3" node="49L2l3Fdns_" resolve="V" />
       </node>
       <node concept="3Tm1VV" id="7IvepusY4F1" role="1B3o_S" />
       <node concept="3clFbS" id="7IvepusY4F2" role="3clF47" />
+      <node concept="16euLQ" id="49L2l3Fdns_" role="16eVyc">
+        <property role="TrG5h" value="V" />
+      </node>
     </node>
     <node concept="2tJIrI" id="7IvepusY4EQ" role="jymVt" />
     <node concept="3Tm1VV" id="7IvepusY4E$" role="1B3o_S" />

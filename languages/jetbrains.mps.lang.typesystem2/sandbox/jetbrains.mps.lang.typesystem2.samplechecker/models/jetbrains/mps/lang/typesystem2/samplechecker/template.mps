@@ -165,7 +165,9 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -11679,6 +11681,9 @@
                 <node concept="3VsKOn" id="7HUwyZb3dUq" role="37wK5m">
                   <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
                 </node>
+                <node concept="3uibUv" id="49L2l3F81fF" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
               </node>
             </node>
           </node>
@@ -11697,6 +11702,9 @@
                 </node>
                 <node concept="3VsKOn" id="7HUwyZb3dWM" role="37wK5m">
                   <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+                </node>
+                <node concept="3uibUv" id="49L2l3F81m$" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
               </node>
             </node>
@@ -11773,6 +11781,9 @@
                 </node>
                 <node concept="3VsKOn" id="7HUwyZb3fv0" role="37wK5m">
                   <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+                </node>
+                <node concept="3uibUv" id="49L2l3F81t0" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
               </node>
             </node>
@@ -11867,6 +11878,9 @@
                 <node concept="3VsKOn" id="7HUwyZb3fsJ" role="37wK5m">
                   <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
                 </node>
+                <node concept="3uibUv" id="49L2l3F81zv" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
               </node>
             </node>
           </node>
@@ -11885,6 +11899,9 @@
                 </node>
                 <node concept="3VsKOn" id="7HUwyZb3fqv" role="37wK5m">
                   <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+                </node>
+                <node concept="3uibUv" id="49L2l3F81Ei" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
               </node>
             </node>
