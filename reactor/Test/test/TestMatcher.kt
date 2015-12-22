@@ -16,9 +16,9 @@ class TestMatcher {
     fun Program.matcher(vararg occurrence: ConstraintOccurrence): Matcher {
         val stored = occurrence.toList()
         return object : Matcher(rules) {
-            override fun findOccurrences(constraint: Constraint, predicate: (ConstraintOccurrence) -> Boolean):
+            override fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):
                 Iterable<ConstraintOccurrence> =
-                    stored.filter { co -> constraint.matches(co) && predicate(co) }
+                    stored.filter { co -> constraint.matches(co) && acceptable(co) }
         }
     }
 
@@ -209,9 +209,18 @@ class TestMatcher {
                 assertFalse(matches.any())
             }
 
+            // same parameter -- 4 matches (all permutations)
+            matcher(occurrence("foo", 42)).lookupMatches(occurrence("foo", 42)).let { matches ->
+                assertEquals(4, matches.count())
+                assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
+            }
+
             matcher(occurrence("foo", 42)).lookupMatches(occurrence("foo", 16)).let { matches ->
                 assertEquals(2, matches.count())
                 assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() })
+                matches.map { m -> setOf(M, N).map { lp -> m.logicalContext().valueFor(lp) } }.forEach { vals ->
+                    assertEquals<Any>(setOf(42, 16), vals.toSet())
+                }
                 assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
             }
 
@@ -219,13 +228,17 @@ class TestMatcher {
             x.find().value = 123
             y.find().value = 456
 
-            matcher().lookupMatches(occurrence("foo", x)).let { matches ->
-                assertFalse(matches.any())
-            }
-
             matcher(occurrence("foo", x)).lookupMatches(occurrence("foo", y)).let { matches ->
                 assertEquals(2, matches.count())
                 assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() })
+                assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
+            }
+
+            val (v, w) = logical("v", "w")
+            w.find().union(v)
+
+            matcher(occurrence("foo", v)).lookupMatches(occurrence("foo", w)).let { matches ->
+                assertEquals(4, matches.count())
                 assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
             }
         }

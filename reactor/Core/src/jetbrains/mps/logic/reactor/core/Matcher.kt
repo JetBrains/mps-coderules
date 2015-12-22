@@ -4,11 +4,13 @@ import com.github.andrewoma.dexx.collection.ConsList
 import jetbrains.mps.logic.reactor.constraint.Constraint
 import jetbrains.mps.logic.reactor.constraint.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.rule.Rule
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
 import java.lang.String
+import java.util.*
 
 /**
  * @author Fedor Isakov
@@ -43,7 +45,7 @@ abstract class Matcher(val rules: Collection<Rule>) {
         return matchesFromKept + matchesFromDiscarded
     }
 
-    abstract fun findOccurrences(constraint: Constraint, predicate: (ConstraintOccurrence) -> Boolean):
+    abstract fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):
         Iterable<ConstraintOccurrence>
 
 }
@@ -54,6 +56,7 @@ class PartialMatch(val rule: Rule) {
         private set
     var discarded = ConsList.empty<Pair<Constraint, ConstraintOccurrence>>()
         private set
+    private lateinit var logicalContext : LogicalContext
 
     private constructor(
         original : PartialMatch,
@@ -63,8 +66,6 @@ class PartialMatch(val rule: Rule) {
         kept = if (keep != null) original.kept.append(keep) else original.kept
         discarded = if (discard != null) original.discarded.append(discard) else original.discarded
     }
-
-    fun clone() : PartialMatch = PartialMatch(this, null, null)
 
     fun keep (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, Pair(constraint, occ), null)
 
@@ -85,48 +86,62 @@ class PartialMatch(val rule: Rule) {
     fun isGuardSatisfied() : Boolean = true
 
     fun matches(): Boolean {
-        return Unification.unify(this.toMatchTerm(), this.rule.toMatchTerm()).isSuccessful
+        val subst = Unification.unify(PartialMatchTerm(this), RuleTerm(this.rule))
+        if (!subst.isSuccessful) return false
+
+        // only one parameter of the unification can contain variables,
+        // thus triangular form never has variables on the right hand side
+        this.logicalContext = object: LogicalContext {
+
+            val var2val = subst.bindings().map { b ->
+                (b.`var`().symbol() as LogicalPattern).to(b.term().toValue()) }.toMap()
+
+            override fun valueFor(logicalPattern: LogicalPattern): Any? = var2val[logicalPattern]
+        }
+
+        return true
     }
+
+    fun logicalContext(): LogicalContext = logicalContext ?: throw IllegalStateException("no logical context")
 }
+
+
 
 /**
  * True iff the constraint matches the occurrence.
  */
 fun Constraint.matches(that: ConstraintOccurrence): Boolean {
-    return Unification.unify(this.toMatchTerm(), that.toMatchTerm()).isSuccessful
+    return Unification.unify(ConstraintTerm(this), ConstraintOccurrenceTerm(that)).isSuccessful
 }
 
-fun PartialMatch.toMatchTerm(): Term = PartialMatchTerm(this)
-
-class PartialMatchTerm(pm : PartialMatch) :
-    Function(pm.rule.tag(), pm.occurrences().map { co -> co.toMatchTerm() }) {}
-
-fun Rule.toMatchTerm(): Term = RuleTerm(this)
-
+/** Function term with arguments == constraints converted to terms. May contain variables. */
 class RuleTerm(rule: Rule) :
     Function(rule.tag(), (rule.headKept() + rule.headReplaced()).map { c -> ConstraintTerm(c) }) {}
 
-fun Constraint.toMatchTerm(): Term = ConstraintTerm(this)
-
+/** Function term with arguments == constraint arguments converted to terms.
+ *  LogicalPattern arguments are term variables.
+ *  Everything else is either a term or a constant wrapping the value. */
 class ConstraintTerm(constraint: Constraint) :
     Function(constraint.symbol(),
-        constraint.arguments().map { a -> if (a is LogicalPattern) Variable(a) else Constant(a!!) }) {}
+        constraint.arguments().map { arg -> if (arg is LogicalPattern) Variable(arg) else asTerm(arg) }) {}
 
-fun ConstraintOccurrence.toMatchTerm(): Term = ConstraintOccurrenceTerm(this)
+/** Function term with arguments == terms corresponding to constraint occurrences. Never contains variables. */
+class PartialMatchTerm(pm : PartialMatch) :
+    Function(pm.rule.tag(), pm.occurrences().map { co -> ConstraintOccurrenceTerm(co) }) {}
 
+/** Function term with arguments == constraint occurrence arguments converted to terms.
+ *  Logical arguments are either terms/values (bound), or constants wrapping the logical itself (unbound).
+ *  Everything else is either a term or a constant wrapping the value.
+ *  Never contains variable terms. */
 class ConstraintOccurrenceTerm(occurrence: ConstraintOccurrence) :
     Function(occurrence.constraint().symbol(),
-        occurrence.arguments().map { co -> asTerm(co) }) {}
+        occurrence.arguments().map { arg -> if (arg is Logical<*>) arg.toTerm() else asTerm(arg) }) {}
 
-fun asTerm(arg: Any?): Term {
-    return when(arg) {
-        is Logical<*> -> arg.toTerm()
-        is Term -> arg
-        else          -> Constant(arg!!)
-    }
-}
+fun asTerm(arg: Any?): Term = if (arg is Term) arg else Constant(arg!!)
 
-fun Logical<*>.toTerm(): Term = if (isBound) asTerm(findRoot().value()) else Constant(findRoot().value())
+fun Logical<*>.toTerm(): Term = if (isBound) asTerm(findRoot().value()) else Constant(findRoot())
+
+fun Term.toValue(): Any? = if (this is Constant) this.symbol() else this
 
 abstract class TermImpl(val symbol: Any) : Term {
 

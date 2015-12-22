@@ -21,7 +21,7 @@ class TestHandler {
             init(PredicateSymbol("equals",2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
     fun Program.handler(vararg occurrences: ConstraintOccurrence): Handler =
-        Handler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, occurrenceFactory(), listOf(* occurrences))
+        Handler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, listOf(* occurrences))
 
     companion object {
         @BeforeClass @JvmStatic fun setup() {
@@ -45,7 +45,9 @@ class TestHandler {
                 ))
         ).run {
             handler().apply { process(occurrence("main")) }.let { rh ->
-                assertEquals(setOf(occurrence("main"), occurrence("foo")), rh.occurrences())
+                assertEquals(
+                    setOf(ConstraintSymbol("main", 0), ConstraintSymbol("foo", 0)),
+                    rh.occurrences().map { it.constraint().symbol() }.toSet())
             }
         }
     }
@@ -72,7 +74,9 @@ class TestHandler {
                 ))
         ).run {
             handler().apply { process(occurrence("main")) }.let { rh ->
-                assertEquals(setOf(occurrence("bar"), occurrence("foo")), rh.occurrences())
+                assertEquals(
+                    setOf(ConstraintSymbol("bar", 0), ConstraintSymbol("foo", 0)),
+                    rh.occurrences().map { it.constraint().symbol() }.toSet())
             }
         }
     }
@@ -153,7 +157,9 @@ class TestHandler {
                 ))
         ).run {
             handler().apply { process(occurrence("main")) }.let { rh ->
-                assertEquals(setOf(occurrence("main"), occurrence("next")), rh.occurrences())
+                assertEquals(
+                    setOf(ConstraintSymbol("main", 0), ConstraintSymbol("next", 0)),
+                    rh.occurrences().map { it.constraint().symbol() }.toSet())
                 assertEquals("expected", test)
             }
         }

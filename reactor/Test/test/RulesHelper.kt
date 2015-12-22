@@ -1,8 +1,9 @@
 import jetbrains.mps.logic.reactor.constraint.*
-import jetbrains.mps.logic.reactor.logical.NamingContext
+import jetbrains.mps.logic.reactor.core.HandlingContext
+import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.rule.Rule
 import jetbrains.mps.logic.reactor.rule.RuleBuilder
-import jetbrains.mps.unification.Term
 import java.util.*
 
 /**
@@ -11,7 +12,6 @@ import java.util.*
 
 
 class Program(val env: Environment, val rules: List<Rule>) {
-    fun occurrenceFactory() : (Constraint) -> ConstraintOccurrence = { cst -> TestOccurrence(cst) }
 }
 
 class Environment() {
@@ -66,7 +66,7 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
     add(TestEqPredicate(left, right))
 }
 
-fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestOccurrence(id, * args)
+fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestConstraintOccurrence(id, * args)
 
 class RB(tag: String, val env: Environment?) : RuleBuilder(tag) {
 
@@ -117,21 +117,6 @@ private fun buildConjunction(type: Class<out AndItem>,
     return conjBuilder
 }
 
-private data class TestOccurrence(val arguments : List<Any>, val constraint : Constraint) : ConstraintOccurrence {
-
-    constructor(id: String, vararg args: Any) :
-        this(listOf(* args), TestConstraint(ConstraintSymbol.symbol(id, args.size))) {}
-
-    constructor(constraint: Constraint) : this(constraint.arguments().map { it ?: TODO() }, constraint) {}
-
-    override fun constraint(): Constraint = constraint
-
-    override fun arguments(): Collection<Any> = arguments
-
-    override fun toString(): String = "#${constraint().symbol()}(${arguments().joinToString()})"
-
-}
-
 private data class TestConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>) : Constraint {
 
     constructor(symbol: ConstraintSymbol, vararg args: Any) : this(symbol, listOf(* args)) {}
@@ -142,6 +127,31 @@ private data class TestConstraint(val symbol: ConstraintSymbol, val arguments: L
 
     override fun argumentTypes(): List<Class<*>> = arguments.map { arg -> arg.javaClass }
 
+    override fun occurrence(context: LogicalContext): ConstraintOccurrence {
+        return TestConstraintOccurrence(this,
+            arguments.map { arg -> if (arg is LogicalPattern) context.valueFor(arg) else arg }.toList())
+    }
+
     override fun toString(): String = "${symbol()}(${arguments().joinToString()})"
+
+}
+
+private data class TestConstraintOccurrence(val constraint: Constraint, val arguments: List<Any>, val id: Int) : ConstraintOccurrence {
+
+    companion object {
+        val random = Random()
+    }
+
+    constructor(constraint: Constraint, arguments: List<Any>) :
+        this(constraint, arguments, random.nextInt()) {}
+
+    constructor(id: String, vararg args: Any) :
+        this(TestConstraint(ConstraintSymbol.symbol(id, args.size)), listOf(* args), random.nextInt()) {}
+
+    override fun constraint(): Constraint = constraint
+
+    override fun arguments(): Collection<Any> = arguments
+
+    override fun toString(): String = "#${constraint().symbol()}(${arguments().joinToString()})#${id}"
 
 }
