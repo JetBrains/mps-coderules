@@ -224,7 +224,7 @@ class TestMatcher {
                 assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
             }
 
-            val (x, y) = logical("x", "y")
+            val (x, y) = logical<Int>("x", "y")
             x.find().value = 123
             y.find().value = 456
 
@@ -234,7 +234,7 @@ class TestMatcher {
                 assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
             }
 
-            val (v, w) = logical("v", "w")
+            val (v, w) = logical<Int>("v", "w")
             w.find().union(v)
 
             matcher(occurrence("foo", v)).lookupMatches(occurrence("foo", w)).let { matches ->

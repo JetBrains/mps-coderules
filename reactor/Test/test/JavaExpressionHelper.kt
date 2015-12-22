@@ -1,4 +1,5 @@
 import jetbrains.mps.logic.reactor.constraint.*
+import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import java.util.*
 
 /**
@@ -7,19 +8,35 @@ import java.util.*
 
 
 fun expression(body: () -> Boolean): ConjBuilder.() -> Unit = {
-    add(TestJavaPredicate(JavaPredicateSymbol(1), body))
+    add(JavaPredicateSymbol(1).withCode(body))
 }
 
-fun expression(body: (Any) -> Boolean, arg1: Any): ConjBuilder.() -> Unit = {
-    add(TestJavaPredicate(JavaPredicateSymbol(2), body, arg1))
+fun <X> expression(body: (X) -> Boolean, x: X): ConjBuilder.() -> Unit = {
+    add(JavaPredicateSymbol(2).withCode(body, x))
 }
 
-fun expression(body: (Any, Any) -> Boolean, arg1: Any, arg2: Any): ConjBuilder.() -> Unit = {
-    add(TestJavaPredicate(JavaPredicateSymbol(3), body, arg1, arg2))
+fun <X, Y> expression(body: (X, Y) -> Boolean, x: X, y: Y): ConjBuilder.() -> Unit = {
+    add(JavaPredicateSymbol(3).withCode(body, x, y))
 }
 
-fun expression(body: (Any, Any, Any) -> Boolean, arg1: Any, arg2: Any, arg3: Any): ConjBuilder.() -> Unit = {
-    add(TestJavaPredicate(JavaPredicateSymbol(4), body, arg1, arg2, arg3))
+fun <X, Y, Z> expression(body: (X, Y, Z) -> Boolean, x: X, y: Y, z: Z): ConjBuilder.() -> Unit = {
+    add(JavaPredicateSymbol(4).withCode(body, x, y, z))
+}
+
+fun statement(body: () -> Unit): ConjBuilder.() -> Unit = {
+    add(JavaPredicateSymbol(1).withCode { body.invoke(); true  })
+}
+
+fun <X> statement(body: (X) -> Unit, x: X): ConjBuilder.() -> Unit = {
+    add(JavaPredicateSymbol(2).withCode({ x -> body.invoke(x); true }, x))
+}
+
+fun <X, Y> statement(body: (X, Y) -> Unit, x: X, y: Y): ConjBuilder.() -> Unit = {
+    add(JavaPredicateSymbol(3).withCode({ x, y -> body.invoke(x, y); true }, x, y))
+}
+
+fun <X, Y, Z> statement(body: (X, Y, Z) -> Unit, x: X, y: Y, z: Z): ConjBuilder.() -> Unit = {
+    add(JavaPredicateSymbol(4).withCode({ x, y, z -> body.invoke(x, y, z); true }, x, y, z))
 }
 
 class ExpressionSolver : Queryable {
@@ -44,63 +61,65 @@ class ExpressionSolver : Queryable {
         }
     }
 
-    private val javaPredicates = HashMap<Any, TestJavaPredicate>()
+    private val javaPredicates = HashMap<Int, TestJavaPredicate>()
 
     private fun addJavaPredicate(javaPredicate: TestJavaPredicate) {
-        javaPredicates[javaPredicate.args[0]] = javaPredicate
+        javaPredicates[javaPredicate.args[0] as Int] = javaPredicate
     }
 
     private fun ERROR(msg: String) : Nothing = throw IllegalArgumentException(msg)
 }
 
-private interface JavaExpression {
-    fun invoke(args: List<Any>): Boolean
+interface JavaExpression {
+    fun invoke(args: List<*>): Boolean
 }
 
+data class TestJavaPredicate(val symbol: JavaPredicateSymbol, val expr: JavaExpression, val args: List<*>) : Predicate {
+
+    override fun arguments(): List<*> = args
+
+    override fun symbol(): PredicateSymbol = symbol
+
+}
+
+private fun JavaPredicateSymbol.withCode(code: () -> Boolean) =
+    TestJavaPredicate(this, JavaExpression0(code), listOf(System.identityHashCode(code)))
+
+private fun <X> JavaPredicateSymbol.withCode(code: (X) -> Boolean, x: X) =
+    TestJavaPredicate(this, JavaExpression1(code), listOf(System.identityHashCode(code), x))
+
+private fun <X, Y> JavaPredicateSymbol.withCode(code: (X, Y) -> Boolean, x: X, y: Y) =
+    TestJavaPredicate(this, JavaExpression2(code), listOf(System.identityHashCode(code), x, y))
+
+private fun <X, Y, Z> JavaPredicateSymbol.withCode(code: (X, Y, Z) -> Boolean, x: X, y: Y, z: Z) =
+    TestJavaPredicate(this, JavaExpression3(code), listOf(System.identityHashCode(code), x, y, z))
+
+
 private class JavaExpression0(val code: () -> Boolean) : JavaExpression {
-    override fun invoke(args: List<Any>): Boolean {
+    override fun invoke(args: List<*>): Boolean {
         if (args.size != 0) throw IllegalArgumentException("arity mismatch")
         return code()
     }
 }
 
-private class JavaExpression1(val code: (Any) -> Boolean) : JavaExpression {
-    override fun invoke(args: List<Any>): Boolean {
+private class JavaExpression1<X>(val code: (X) -> Boolean) : JavaExpression {
+    override fun invoke(args: List<*>): Boolean {
         if (args.size != 1) throw IllegalArgumentException("arity mismatch")
-        return code(args[0])
+        return code(args[0] as X)
     }
 }
 
-private class JavaExpression2(val code: (Any, Any) -> Boolean) : JavaExpression {
-    override fun invoke(args: List<Any>): Boolean {
+private class JavaExpression2<X,Y>(val code: (X, Y) -> Boolean) : JavaExpression {
+    override fun invoke(args: List<*>): Boolean {
         if (args.size != 2) throw IllegalArgumentException("arity mismatch")
-        return code(args[0], args[1])
+        return code(args[0] as X, args[1] as Y)
     }
 }
 
-private class JavaExpression3(val code: (Any, Any, Any) -> Boolean) : JavaExpression {
-    override fun invoke(args: List<Any>): Boolean {
+private class JavaExpression3<X,Y,Z>(val code: (X, Y, Z) -> Boolean) : JavaExpression {
+    override fun invoke(args: List<*>): Boolean {
         if (args.size != 3) throw IllegalArgumentException("arity mismatch")
-        return code(args[0], args[1], args[2])
+        return code(args[0] as X, args[1] as Y, args[2] as Z)
     }
 }
 
-private data class TestJavaPredicate(val symbol: JavaPredicateSymbol, val expr: JavaExpression, val args: List<Any>) : Predicate {
-
-    constructor(symbol: JavaPredicateSymbol, code: () -> Boolean) :
-        this(symbol, JavaExpression0(code), listOf(System.identityHashCode(code))) {}
-
-    constructor(symbol: JavaPredicateSymbol, code: (Any) -> Boolean, arg1: Any) :
-        this(symbol, JavaExpression1(code), listOf(System.identityHashCode(code), arg1)) {}
-
-    constructor(symbol: JavaPredicateSymbol, code: (Any, Any) -> Boolean, arg1: Any, arg2: Any) :
-        this(symbol, JavaExpression2(code), listOf(System.identityHashCode(code), arg1, arg2)) {}
-
-    constructor(symbol: JavaPredicateSymbol, code: (Any, Any, Any) -> Boolean, arg1: Any, arg2: Any, arg3: Any) :
-        this(symbol, JavaExpression3(code), listOf(System.identityHashCode(code), arg1, arg2, arg3)) {}
-
-    override fun arguments(): List<Any> = args
-
-    override fun symbol(): PredicateSymbol = symbol
-
-}

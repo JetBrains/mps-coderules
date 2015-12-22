@@ -90,7 +90,7 @@ class TestHandler {
                     constraint("main")
                 ),
                 body(
-                    expression {  -> test = "value"; true }
+                    statement { test = "value" }
                 ))
         ).run {
             handler().process(occurrence("main"))
@@ -107,7 +107,7 @@ class TestHandler {
                     constraint("main")
                 ),
                 body(
-                    expression ({ v -> test = v as String; true }, "value")
+                    statement ({ v -> test = v }, "value")
                 ))
         ).run {
             handler().process(occurrence("main"))
@@ -118,7 +118,7 @@ class TestHandler {
     @Test
     fun basicLogical() {
         var test : String? = "not initialized"
-        val x = logical("x")
+        val x = logical<String>("x")
         x.value = "expected"
         program(
             rule("main",
@@ -126,7 +126,7 @@ class TestHandler {
                     constraint("main")
                 ),
                 body(
-                    expression ({ v -> test = (v as Logical<String>).value(); true }, x)
+                    statement ({ v -> test = v.get() }, x)
                 ))
         ).run {
             handler().process(occurrence("main"))
@@ -137,7 +137,7 @@ class TestHandler {
     @Test
     fun logicalCopy() {
         var test : String? = "not initialized"
-        val (x,y) = logical("x", "y")
+        val (x,y) = logical<String>("x", "y")
         x.value = "expected"
         program(
             rule("main",
@@ -153,7 +153,7 @@ class TestHandler {
                     constraint("next")
                 ),
                 body(
-                    expression ({ v -> test = getValue(v) as String; true }, y)
+                    statement ({ v -> test = v.get() }, y)
                 ))
         ).run {
             handler().apply { process(occurrence("main")) }.let { rh ->
@@ -175,26 +175,42 @@ class TestHandler {
                     constraint("main")
                 ),
                 guard(
-                    expression {  -> false }
+                    expression { false }
                 ),
                 body(
-                    expression {  -> test1 = "not expected"; true }
+                    statement {  test1 = "not expected" }
                 )),
             rule("main2",
                 headKept(
                     constraint("main")
                 ),
                 guard(
-                    expression {  -> true }
+                    expression {  true }
                 ),
                 body(
-                    expression {  -> test2 = "expected"; true }
+                    statement { test2 = "expected" }
                 ))
         ).run {
             handler().process(occurrence("main"))
             assertEquals("not initialized 1", test1)
             assertEquals("expected", test2)
         }
+    }
+
+    @Test
+    fun basicLogicalPattern() {
+        val (X, Y) = logicalPattern("X", "Y")
+        program(
+            rule("rule1",
+                headKept(
+                    constraint("foo", X)
+                ),
+                body(
+                    expression { true },
+                    constraint("bar", Y)
+                )
+            )
+         )
     }
 
 }

@@ -68,20 +68,18 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestConstraintOccurrence(id, * args)
 
-class RB(tag: String, val env: Environment?) : RuleBuilder(tag) {
+class RB(tag: String, val env: Environment) : RuleBuilder(tag) {
 
 }
 
 class ConjBuilder {
     val constraints = ArrayList<AndItem>()
     val type: Class<out AndItem>
-    val _env: Environment?
     val env: Environment
-        get() { return _env ?: throw IllegalStateException("no enviroment") }
 
-    constructor(type: Class<out AndItem>, env: Environment?) {
+    constructor(type: Class<out AndItem>, env: Environment) {
         this.type = type
-        this._env = env
+        this.env = env
     }
 
     fun add(item: AndItem): Unit {
@@ -107,7 +105,7 @@ class ConjBuilder {
 }
 
 private fun buildConjunction(type: Class<out AndItem>,
-                             env: Environment?,
+                             env: Environment,
                              content: Array<out ConjBuilder.() -> Unit>): ConjBuilder
 {
     var conjBuilder = ConjBuilder(type, env)

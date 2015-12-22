@@ -12,11 +12,11 @@ import java.util.*
  */
 
 
-fun logical(name: String) = TestLogical<Any>(name)
+fun <T: Any> logical(name: String) = TestLogical<T>(name)
 
-fun logical(name1: String, name2: String) = Pair(TestLogical<Any>(name1), TestLogical<Any>(name2))
+fun <T: Any> logical(name1: String, name2: String) = Pair(TestLogical<T>(name1), TestLogical<T>(name2))
 
-fun logical(name1: String, name2: String, name3: String) = Triple(TestLogical<Any>(name1), TestLogical<Any>(name2), TestLogical<Any>(name3))
+fun <T: Any> logical(name1: String, name2: String, name3: String) = Triple(TestLogical<T>(name1), TestLogical<T>(name2), TestLogical<T>(name3))
 
 fun logicalPattern(name: String) = TestLogicalPattern(name, Object::class.java)
 
@@ -24,10 +24,11 @@ fun logicalPattern(name1: String, name2: String) = Pair(TestLogicalPattern(name1
 
 fun logicalPattern(name1: String, name2: String, name3: String) = Triple(TestLogicalPattern(name1, Object::class.java), TestLogicalPattern(name2, Object::class.java), TestLogicalPattern(name3, Object::class.java))
 
-fun setValue(logical: Any, value: Any) { (logical as TestLogical<Any>).find().value = value }
+fun <T: Any> Logical<T>.get(): T = findRoot().value()
 
-fun getValue(logical: Any) = (logical as TestLogical<Any>).find().value()
-
+fun <T: Any> TestLogical<T>.set(t: T) {
+    find().value = t
+}
 
 data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogical<T>?) : Logical<T> {
 
