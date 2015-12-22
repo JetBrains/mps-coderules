@@ -17,6 +17,6 @@ public interface Logical<T> {
 
   public boolean isWildcard();
 
-  public LogicalPattern pattern();
+  public LogicalPattern<Logical<T>> pattern();
 
 }

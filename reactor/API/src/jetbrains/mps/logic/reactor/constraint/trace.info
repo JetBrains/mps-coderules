@@ -75,6 +75,15 @@
       <unit id="2394628030058821331" at="6,0,31,0" name="jetbrains.mps.logic.reactor.constraint.ComputingTracer" />
     </file>
   </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/4787618122020806150">
+    <file name="PredicateInvocation.java">
+      <node id="4787618122020806193" at="9,0,10,0" concept="6" trace="predicate#()Ljetbrains/mps/logic/reactor/constraint/Predicate;" />
+      <node id="4787618122020806252" at="11,0,12,0" concept="6" trace="arguments#()Ljava/util/Collection;" />
+      <scope id="4787618122020806193" at="9,0,10,0" />
+      <scope id="4787618122020806252" at="11,0,12,0" />
+      <unit id="4787618122020806150" at="7,0,14,0" name="jetbrains.mps.logic.reactor.constraint.PredicateInvocation" />
+    </file>
+  </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/5841747851381496683">
     <file name="ConstraintSymbol.java">
       <node id="5841747851381535271" at="11,63,12,43" concept="8" />
@@ -253,27 +262,34 @@
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/6430064801446726795">
     <file name="JavaPredicate.java">
-      <node id="139299000606887712" at="8,0,9,0" concept="3" trace="symbol" />
-      <node id="5217246026232796153" at="10,88,11,16" concept="13" />
-      <node id="8018003882641225596" at="11,16,12,17" concept="2" />
-      <node id="139299000606887724" at="12,17,13,34" concept="2" />
-      <node id="8018003882641226818" at="16,22,17,14" concept="8" />
-      <node id="139299000606888682" at="20,35,21,18" concept="8" />
-      <node id="8018003882641225592" at="23,0,24,0" concept="3" trace="id" />
-      <node id="8018003882641226530" at="16,0,19,0" concept="6" trace="id#()Ljava/lang/String;" />
-      <node id="139299000606887318" at="20,0,23,0" concept="6" trace="symbol#()Ljetbrains/mps/logic/reactor/constraint/PredicateSymbol;" />
-      <node id="6430064801446743162" at="10,0,15,0" concept="1" trace="JavaPredicate#(Ljetbrains/mps/logic/reactor/constraint/JavaPredicateSymbol;Ljava/lang/String;null)V" />
-      <scope id="8018003882641226533" at="16,22,17,14" />
-      <scope id="139299000606887323" at="20,35,21,18" />
-      <scope id="6430064801446743166" at="10,88,13,34" />
-      <scope id="8018003882641226530" at="16,0,19,0" />
-      <scope id="139299000606887318" at="20,0,23,0" />
-      <scope id="6430064801446743162" at="10,0,15,0">
+      <node id="139299000606887712" at="9,0,10,0" concept="3" trace="symbol" />
+      <node id="5217246026232796153" at="11,88,12,16" concept="13" />
+      <node id="8018003882641225596" at="12,16,13,17" concept="2" />
+      <node id="139299000606887724" at="13,17,14,34" concept="2" />
+      <node id="8018003882641226818" at="17,22,18,14" concept="8" />
+      <node id="139299000606888682" at="21,35,22,18" concept="8" />
+      <node id="4787618122020808997" at="26,72,27,27" concept="9" />
+      <node id="4787618122020807548" at="27,27,28,63" concept="14" />
+      <node id="8018003882641225592" at="31,0,32,0" concept="3" trace="id" />
+      <node id="8018003882641226530" at="17,0,20,0" concept="6" trace="id#()Ljava/lang/String;" />
+      <node id="139299000606887318" at="21,0,24,0" concept="6" trace="symbol#()Ljetbrains/mps/logic/reactor/constraint/PredicateSymbol;" />
+      <node id="6430064801446743162" at="11,0,16,0" concept="1" trace="JavaPredicate#(Ljetbrains/mps/logic/reactor/constraint/JavaPredicateSymbol;Ljava/lang/String;null)V" />
+      <node id="4787618122020807122" at="25,0,30,0" concept="6" trace="invocation#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;)Ljetbrains/mps/logic/reactor/constraint/PredicateInvocation;" />
+      <scope id="8018003882641226533" at="17,22,18,14" />
+      <scope id="139299000606887323" at="21,35,22,18" />
+      <scope id="4787618122020807129" at="26,72,28,63" />
+      <scope id="6430064801446743166" at="11,88,14,34" />
+      <scope id="8018003882641226530" at="17,0,20,0" />
+      <scope id="139299000606887318" at="21,0,24,0" />
+      <scope id="6430064801446743162" at="11,0,16,0">
         <var name="args" id="6317379717826377214" />
         <var name="id" id="8018003882641225446" />
         <var name="predicateSymbol" id="3186369734621192611" />
       </scope>
-      <unit id="6430064801446726795" at="6,0,25,0" name="jetbrains.mps.logic.reactor.constraint.JavaPredicate" />
+      <scope id="4787618122020807122" at="25,0,30,0">
+        <var name="logicalContext" id="4787618122020807126" />
+      </scope>
+      <unit id="6430064801446726795" at="7,0,33,0" name="jetbrains.mps.logic.reactor.constraint.JavaPredicate" />
     </file>
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546273004">
@@ -463,9 +479,13 @@
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)/7785665572546359770">
     <file name="Predicate.java">
-      <node id="7785665572546360338" at="11,0,12,0" concept="6" trace="symbol#()Ljetbrains/mps/logic/reactor/constraint/PredicateSymbol;" />
-      <scope id="7785665572546360338" at="11,0,12,0" />
-      <unit id="7785665572546359770" at="9,0,14,0" name="jetbrains.mps.logic.reactor.constraint.Predicate" />
+      <node id="7785665572546360338" at="12,0,13,0" concept="6" trace="symbol#()Ljetbrains/mps/logic/reactor/constraint/PredicateSymbol;" />
+      <node id="4787618122020806675" at="14,0,15,0" concept="6" trace="invocation#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;)Ljetbrains/mps/logic/reactor/constraint/PredicateInvocation;" />
+      <scope id="7785665572546360338" at="12,0,13,0" />
+      <scope id="4787618122020806675" at="14,0,15,0">
+        <var name="logicalContext" id="4787618122020806809" />
+      </scope>
+      <unit id="7785665572546359770" at="10,0,17,0" name="jetbrains.mps.logic.reactor.constraint.Predicate" />
     </file>
   </root>
 </debug-info>

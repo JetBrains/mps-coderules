@@ -5,6 +5,6 @@ package jetbrains.mps.logic.reactor.logical;
 
 public interface LogicalContext {
 
-  public Object valueFor(LogicalPattern logicalPattern);
+  public <V> V valueFor(LogicalPattern<V> logicalPattern);
 
 }
