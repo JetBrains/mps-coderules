@@ -182,6 +182,12 @@
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
@@ -993,7 +999,37 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="7HUwyZaPlVS" role="jymVt" />
+    <node concept="2tJIrI" id="3qvisX5EBAy" role="jymVt" />
+    <node concept="3clFb_" id="3qvisX5EBUS" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="instance" />
+      <node concept="3Tm1VV" id="3qvisX5EBUU" role="1B3o_S" />
+      <node concept="3uibUv" id="3qvisX5EBUV" role="3clF45">
+        <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
+        <node concept="16syzq" id="3qvisX5EBUX" role="11_B2D">
+          <ref role="16sUi3" node="49L2l3F7Igu" resolve="V" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3qvisX5EBUY" role="3clF47">
+        <node concept="3SKdUt" id="3qvisX5EDNp" role="3cqZAp">
+          <node concept="3SKdUq" id="3qvisX5EDNr" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: implement me" />
+          </node>
+        </node>
+        <node concept="YS8fn" id="3qvisX5ECtO" role="3cqZAp">
+          <node concept="2ShNRf" id="3qvisX5ECuZ" role="YScLw">
+            <node concept="1pGfFk" id="3qvisX5EDJ5" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
+              <node concept="Xl_RD" id="3qvisX5EDKq" role="37wK5m">
+                <property role="Xl_RC" value="not implemented" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3qvisX5EBKH" role="jymVt" />
     <node concept="3Tm1VV" id="7HUwyZaPe5Z" role="1B3o_S" />
     <node concept="3uibUv" id="7HUwyZaPelp" role="EKbjA">
       <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
