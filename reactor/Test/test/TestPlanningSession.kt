@@ -6,13 +6,12 @@ import jetbrains.mps.logic.reactor.rule.InvalidConstraintException
 import jetbrains.mps.logic.reactor.rule.InvalidRuleException
 import jetbrains.mps.logic.reactor.core.ReactorPlanningSession
 import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.BeforeClass
 import org.junit.Test
 import java.util.*
 import kotlin.reflect.KClass
-import kotlin.test.assertEquals
-import kotlin.test.expect
 
 /**
  * @author Fedor Isakov

@@ -6,11 +6,8 @@ import jetbrains.mps.logic.reactor.core.ReactorPlanningSession
 import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
 import jetbrains.mps.logic.reactor.program.EvaluationSession
 import jetbrains.mps.logic.reactor.program.PlanningSession
-import org.junit.AfterClass
-import org.junit.Before
-import org.junit.BeforeClass
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.junit.*
+import org.junit.Assert.*
 
 /**
  * @author Fedor Isakov
