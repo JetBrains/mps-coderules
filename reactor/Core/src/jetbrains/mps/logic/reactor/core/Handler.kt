@@ -47,14 +47,8 @@ class Handler {
                 discard(occ)
             }
 
-            val lc = object: LogicalContext {
-                override fun valueFor(logicalPattern: LogicalPattern?): Any? {
-                    throw UnsupportedOperationException()
-                }
-            }
-
             for (item in match.rule.body()) {
-                activate(item, lc)
+                activate(item, match.logicalContext())
             }
 
             return false
@@ -69,7 +63,7 @@ class Handler {
     private fun activate(item: AndItem, logicalContext: LogicalContext) {
         when(item) {
             is Constraint       -> process(item.occurrence(logicalContext))
-            is Predicate        -> tellPredicate(item)
+            is Predicate        -> tellPredicate(item.invocation(logicalContext))
             else                -> throw IllegalArgumentException("unknown item ${item}")
         }
     }
@@ -77,13 +71,14 @@ class Handler {
     private fun askPredicate(predicate: Predicate): Boolean =
         sessionSolver.ask(predicate.symbol(), * predicate.arguments().toTypedArray())
 
-    private fun tellPredicate(predicate: Predicate) =
-        sessionSolver.tell(predicate.symbol(), * predicate.arguments().toTypedArray())
+    private fun tellPredicate(invocation: PredicateInvocation) {
+        sessionSolver.tell(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+    }
 
 }
 
 interface HandlingContext {
 
-    fun substitute(logicalPattern: LogicalPattern) : Any
+    fun substitute(logicalPattern: LogicalPattern<*>) : Any
 
 }

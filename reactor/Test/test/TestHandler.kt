@@ -1,6 +1,7 @@
 import jetbrains.mps.logic.reactor.constraint.*
 import jetbrains.mps.logic.reactor.core.Handler
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
 import org.junit.Before
 import org.junit.BeforeClass
@@ -100,18 +101,19 @@ class TestHandler {
 
     @Test
     fun paramExpression() {
-        var test : String = "not initialized"
+        var test = logical<String>("X")
+        //"not initialized"
         program(
             rule("main",
                 headKept(
                     constraint("main")
                 ),
                 body(
-                    statement ({ v -> test = v }, "value")
+                    statement ({ test.set("value") })
                 ))
         ).run {
             handler().process(occurrence("main"))
-            assertEquals("value", test)
+            assertEquals("value", test.get())
         }
     }
 
@@ -126,7 +128,7 @@ class TestHandler {
                     constraint("main")
                 ),
                 body(
-                    statement ({ v -> test = v.get() }, x)
+                    statement ({ test = x.get() } )
                 ))
         ).run {
             handler().process(occurrence("main"))
@@ -153,7 +155,7 @@ class TestHandler {
                     constraint("next")
                 ),
                 body(
-                    statement ({ v -> test = v.get() }, y)
+                    statement ({ test = y.get() })
                 ))
         ).run {
             handler().apply { process(occurrence("main")) }.let { rh ->
@@ -199,18 +201,20 @@ class TestHandler {
 
     @Test
     fun basicLogicalPattern() {
-        val (X, Y) = logicalPattern("X", "Y")
+        val (X, Y) = logicalPattern<String>("X", "Y")
         program(
             rule("rule1",
                 headKept(
                     constraint("foo", X)
                 ),
                 body(
-                    expression { true },
+                    statement({ f -> println(f) }, X),
                     constraint("bar", Y)
                 )
             )
-         )
+        ).handler().run {
+            process(occurrence("foo", logical<Int>("a")))
+        }
     }
 
 }

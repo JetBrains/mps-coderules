@@ -83,8 +83,6 @@ class PartialMatch(val rule: Rule) {
         rule.headKept().map { cst -> (kept.find { p -> p.first === cst }?.second) ?: TODO() } +
             rule.headReplaced().map { cst -> discarded.find { p -> p.first === cst }?.second ?: TODO() }
 
-    fun isGuardSatisfied() : Boolean = true
-
     fun matches(): Boolean {
         val subst = Unification.unify(PartialMatchTerm(this), RuleTerm(this.rule))
         if (!subst.isSuccessful) return false
@@ -93,16 +91,25 @@ class PartialMatch(val rule: Rule) {
         // thus triangular form never has variables on the right hand side
         this.logicalContext = object: LogicalContext {
 
-            val var2val = subst.bindings().map { b ->
-                (b.`var`().symbol() as LogicalPattern).to(b.term().toValue()) }.toMap()
+            val var2val: MutableMap<LogicalPattern<*>, Any?> = HashMap(subst.bindings().map { b ->
+                (b.`var`().symbol() as LogicalPattern<Any>).to(b.term().toValue()) }.toMap())
 
-            override fun valueFor(logicalPattern: LogicalPattern): Any? = var2val[logicalPattern]
+            override fun <V : Any?> valueFor(logicalPattern: LogicalPattern<V>): V {
+                if (var2val.containsKey(logicalPattern)) {
+                    return var2val[logicalPattern] as V
+                }
+                else {
+                    val logical = logicalPattern.instance()
+                    var2val.put(logicalPattern, logical)
+                    return logical as V
+                }
+            }
         }
 
         return true
     }
 
-    fun logicalContext(): LogicalContext = logicalContext ?: throw IllegalStateException("no logical context")
+    fun logicalContext(): LogicalContext = logicalContext
 }
 
 
@@ -123,7 +130,7 @@ class RuleTerm(rule: Rule) :
  *  Everything else is either a term or a constant wrapping the value. */
 class ConstraintTerm(constraint: Constraint) :
     Function(constraint.symbol(),
-        constraint.arguments().map { arg -> if (arg is LogicalPattern) Variable(arg) else asTerm(arg) }) {}
+        constraint.arguments().map { arg -> if (arg is LogicalPattern<*>) Variable(arg) else asTerm(arg) }) {}
 
 /** Function term with arguments == terms corresponding to constraint occurrences. Never contains variables. */
 class PartialMatchTerm(pm : PartialMatch) :

@@ -1,5 +1,4 @@
 import jetbrains.mps.logic.reactor.constraint.*
-import jetbrains.mps.logic.reactor.core.HandlingContext
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.rule.Rule
@@ -68,6 +67,9 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestConstraintOccurrence(id, * args)
 
+fun AndItem.argumentValues(context: LogicalContext): List<Any> =
+    arguments().map { arg -> if (arg is LogicalPattern<*>) context.valueFor(arg) else arg!! }.toList()
+
 class RB(tag: String, val env: Environment) : RuleBuilder(tag) {
 
 }
@@ -125,10 +127,8 @@ private data class TestConstraint(val symbol: ConstraintSymbol, val arguments: L
 
     override fun argumentTypes(): List<Class<*>> = arguments.map { arg -> arg.javaClass }
 
-    override fun occurrence(context: LogicalContext): ConstraintOccurrence {
-        return TestConstraintOccurrence(this,
-            arguments.map { arg -> if (arg is LogicalPattern) context.valueFor(arg) else arg }.toList())
-    }
+    override fun occurrence(context: LogicalContext): ConstraintOccurrence =
+        TestConstraintOccurrence(this, argumentValues(context))
 
     override fun toString(): String = "${symbol()}(${arguments().joinToString()})"
 
