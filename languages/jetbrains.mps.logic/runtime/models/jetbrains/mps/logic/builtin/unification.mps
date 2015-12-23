@@ -1212,6 +1212,43 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="49L2l3Fhvjr" role="jymVt" />
+    <node concept="3clFb_" id="49L2l3Fhvlv" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="invocation" />
+      <node concept="3Tm1VV" id="49L2l3Fhvlw" role="1B3o_S" />
+      <node concept="3uibUv" id="49L2l3Fhvlx" role="3clF45">
+        <ref role="3uigEE" to="qrld:49L2l3FhtS6" resolve="PredicateInvocation" />
+      </node>
+      <node concept="37vLTG" id="49L2l3Fhvly" role="3clF46">
+        <property role="TrG5h" value="logicalContext" />
+        <node concept="3uibUv" id="49L2l3Fhvlz" role="1tU5fm">
+          <ref role="3uigEE" to="45ys:7IvepusY4Ez" resolve="LogicalContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="49L2l3Fhvl$" role="3clF47">
+        <node concept="3SKdUt" id="49L2l3Fhvl_" role="3cqZAp">
+          <node concept="3SKdUq" id="49L2l3FhvlA" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: implement me" />
+          </node>
+        </node>
+        <node concept="YS8fn" id="49L2l3FhvlB" role="3cqZAp">
+          <node concept="2ShNRf" id="49L2l3FhvlC" role="YScLw">
+            <node concept="1pGfFk" id="49L2l3FhvlD" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
+              <node concept="Xl_RD" id="49L2l3FhvlE" role="37wK5m">
+                <property role="Xl_RC" value="not implemented" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="49L2l3FhvlF" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="49L2l3Fhvk2" role="jymVt" />
     <node concept="3uibUv" id="4xBopTzmmAx" role="1zkMxy">
       <ref role="3uigEE" to="qrld:6Kcfpq7B0Wu" resolve="AbstractPredicate" />
     </node>
@@ -1977,6 +2014,42 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4xBopTzop_B" role="jymVt" />
+    <node concept="3clFb_" id="49L2l3FhuEm" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="invocation" />
+      <node concept="3Tm1VV" id="49L2l3FhuEn" role="1B3o_S" />
+      <node concept="3uibUv" id="49L2l3FhuEo" role="3clF45">
+        <ref role="3uigEE" to="qrld:49L2l3FhtS6" resolve="PredicateInvocation" />
+      </node>
+      <node concept="37vLTG" id="49L2l3FhuEp" role="3clF46">
+        <property role="TrG5h" value="logicalContext" />
+        <node concept="3uibUv" id="49L2l3FhuEq" role="1tU5fm">
+          <ref role="3uigEE" to="45ys:7IvepusY4Ez" resolve="LogicalContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="49L2l3FhuEr" role="3clF47">
+        <node concept="3SKdUt" id="49L2l3FhuEs" role="3cqZAp">
+          <node concept="3SKdUq" id="49L2l3FhuEt" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: implement me" />
+          </node>
+        </node>
+        <node concept="YS8fn" id="49L2l3FhuEu" role="3cqZAp">
+          <node concept="2ShNRf" id="49L2l3FhuEv" role="YScLw">
+            <node concept="1pGfFk" id="49L2l3FhuEw" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
+              <node concept="Xl_RD" id="49L2l3FhuEx" role="37wK5m">
+                <property role="Xl_RC" value="not implemented" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="49L2l3FhuEy" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="49L2l3FhuDv" role="jymVt" />
     <node concept="3Tm1VV" id="3HJTsBn4kkA" role="1B3o_S" />
     <node concept="3uibUv" id="4xBopTzozPs" role="1zkMxy">
       <ref role="3uigEE" to="qrld:6Kcfpq7B0Wu" resolve="AbstractPredicate" />
@@ -2050,6 +2123,41 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4xBopTzs2O5" role="jymVt" />
+    <node concept="3clFb_" id="49L2l3Fhu7i" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="invocation" />
+      <node concept="3Tm1VV" id="49L2l3Fhu7k" role="1B3o_S" />
+      <node concept="3uibUv" id="49L2l3Fhu7l" role="3clF45">
+        <ref role="3uigEE" to="qrld:49L2l3FhtS6" resolve="PredicateInvocation" />
+      </node>
+      <node concept="37vLTG" id="49L2l3Fhu7m" role="3clF46">
+        <property role="TrG5h" value="logicalContext" />
+        <node concept="3uibUv" id="49L2l3Fhu7n" role="1tU5fm">
+          <ref role="3uigEE" to="45ys:7IvepusY4Ez" resolve="LogicalContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="49L2l3Fhu7p" role="3clF47">
+        <node concept="3SKdUt" id="49L2l3Fhu$_" role="3cqZAp">
+          <node concept="3SKdUq" id="49L2l3Fhu$B" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: implement me" />
+          </node>
+        </node>
+        <node concept="YS8fn" id="49L2l3FhudW" role="3cqZAp">
+          <node concept="2ShNRf" id="49L2l3FhueP" role="YScLw">
+            <node concept="1pGfFk" id="49L2l3Fhuwo" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
+              <node concept="Xl_RD" id="49L2l3Fhuxr" role="37wK5m">
+                <property role="Xl_RC" value="not implemented" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="49L2l3Fhu_e" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="6infEALAfes" role="1B3o_S" />
     <node concept="3uibUv" id="4xBopTzrP0O" role="1zkMxy">
       <ref role="3uigEE" to="qrld:6Kcfpq7B0Wu" resolve="AbstractPredicate" />
