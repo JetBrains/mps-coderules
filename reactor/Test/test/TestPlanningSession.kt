@@ -1,11 +1,13 @@
 import jetbrains.mps.logic.reactor.constraint.PredicateSymbol
 import jetbrains.mps.logic.reactor.constraint.Queryable
 import jetbrains.mps.logic.reactor.constraint.Symbol
+import jetbrains.mps.logic.reactor.core.ReactorEvaluationSession
 import jetbrains.mps.logic.reactor.program.PlanningSession
 import jetbrains.mps.logic.reactor.rule.InvalidConstraintException
 import jetbrains.mps.logic.reactor.rule.InvalidRuleException
 import jetbrains.mps.logic.reactor.core.ReactorPlanningSession
 import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
+import org.junit.AfterClass
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.BeforeClass
@@ -22,6 +24,9 @@ class TestPlanningSession {
     companion object {
         @BeforeClass @JvmStatic fun setup() {
             ReactorPlanningSession.init();
+        }
+        @AfterClass @JvmStatic fun teardown() {
+            ReactorPlanningSession.deinit();
         }
     }
 

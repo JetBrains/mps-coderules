@@ -202,18 +202,28 @@ class TestHandler {
         val (X, Y) = logicalPattern<String>("X", "Y")
         program(
             rule("rule1",
-                headKept(
+                headReplaced(
                     constraint("foo", X)
                 ),
                 body(
-                    statement({ f -> println(f) }, X),
+                    equals(X, Y),
                     constraint("bar", Y)
                 )
             )
         ).handler().run {
-            process(occurrence("foo", logical<Int>("a")))
+            val a = logical<String>("a")
+            a.set("value")
+            process(occurrence("foo", a))
+            assertEquals(1, occurrences().size)
+            val co = occurrences().first()
+            assertEquals(ConstraintSymbol("bar",1), co.constraint().symbol())
+            assertEquals(1, co.arguments().size)
+            val arg = co.arguments().first()
+            assertNotEquals(a, arg)
+            assertEquals(a.get(), (arg as Logical<String>).get())
         }
     }
+
 
 }
 

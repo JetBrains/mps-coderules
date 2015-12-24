@@ -20,19 +20,19 @@ class ReactorEvaluationSession(val program: PlanningSession) : EvaluationSession
 
         val myPredicateSymbols = ArrayList<PredicateSymbol>()
         val myParameters = HashMap<String, Any?>()
-        var myComputingTracer: ComputingTracer? = null
+        var myComputingTracer: ComputingTracer = ComputingTracer.NULL
 
         override fun withPredicates(vararg predicateSymbols: PredicateSymbol): EvaluationSession.Config {
             myPredicateSymbols.addAll(Arrays.asList(* predicateSymbols))
             return this
         }
 
-        override fun withTrace(computingTracer: ComputingTracer?): EvaluationSession.Config {
+        override fun withTrace(computingTracer: ComputingTracer): EvaluationSession.Config {
             myComputingTracer = computingTracer
             return this
         }
 
-        override fun withParam(key: String, param: Any?): EvaluationSession.Config {
+        override fun withParam(key: String, param: Any): EvaluationSession.Config {
             myParameters.put(key, param)
             return this
         }
@@ -48,33 +48,31 @@ class ReactorEvaluationSession(val program: PlanningSession) : EvaluationSession
             session = ReactorEvaluationSession(program)
             ourBackend.ourSession.set(session)
 
-            session.launch()
+            session.launch(myParameters["main"] as ConstraintOccurrence)
 
             return session
         }
     }
 
-    fun launch() {
+    lateinit var handler: Handler
 
-
-
+    fun launch(main: ConstraintOccurrence) {
+        this.handler = Handler(sessionSolver(), program.rules())
+        handler.process(main)
+        // FIXME: shutdown the session properly
+        ourBackend.ourSession.set(null)
     }
-
-
 
     override fun sessionSolver(): SessionSolver = program.sessionSolver()
 
-    override fun constraintSymbols(): MutableIterable<ConstraintSymbol>? {
-        throw UnsupportedOperationException()
-    }
+    override fun constraintSymbols(): Iterable<ConstraintSymbol> =
+        handler.occurrences().map { co -> co.constraint().symbol() }.toSet()
 
-    override fun constraintOccurrences(): MutableIterable<ConstraintOccurrence>? {
-        throw UnsupportedOperationException()
-    }
+    override fun constraintOccurrences(): Iterable<ConstraintOccurrence> =
+        handler.occurrences()
 
-    override fun constraintOccurrences(symbol: ConstraintSymbol?): MutableIterable<ConstraintOccurrence>? {
-        throw UnsupportedOperationException()
-    }
+    override fun constraintOccurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
+        handler.occurrences().filter { co -> co.constraint().symbol() == symbol }
 
     private class Backend : EvaluationSession.Backend {
 

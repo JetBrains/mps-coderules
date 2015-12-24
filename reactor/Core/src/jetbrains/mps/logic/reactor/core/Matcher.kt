@@ -137,7 +137,7 @@ class PartialMatchTerm(pm : PartialMatch) :
     Function(pm.rule.tag(), pm.occurrences().map { co -> ConstraintOccurrenceTerm(co) }) {}
 
 /** Function term with arguments == constraint occurrence arguments converted to terms.
- *  Logical arguments are either terms/values (bound), or constants wrapping the logical itself (unbound).
+ *  Logical arguments are constants wrapping the logical itself.
  *  Everything else is either a term or a constant wrapping the value.
  *  Never contains variable terms. */
 class ConstraintOccurrenceTerm(occurrence: ConstraintOccurrence) :
@@ -146,7 +146,7 @@ class ConstraintOccurrenceTerm(occurrence: ConstraintOccurrence) :
 
 fun asTerm(arg: Any?): Term = if (arg is Term) arg else Constant(arg!!)
 
-fun Logical<*>.toTerm(): Term = if (isBound) asTerm(findRoot().value()) else Constant(findRoot())
+fun Logical<*>.toTerm(): Term = Constant(findRoot())
 
 fun Term.toValue(): Any? = if (this is Constant) this.symbol() else this
 

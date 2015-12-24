@@ -1,6 +1,8 @@
 import jetbrains.mps.logic.reactor.constraint.PredicateSymbol
 import jetbrains.mps.logic.reactor.constraint.Queryable
 import jetbrains.mps.logic.reactor.constraint.Symbol
+import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.program.EvaluationSession
 
 class EqualsSolver  : Queryable {
 
@@ -101,4 +103,8 @@ class EqualsSolver  : Queryable {
     }
 
     private fun ERROR(msg: String) : Nothing = throw IllegalArgumentException(msg)
+}
+
+infix fun <T : Any> Logical<T>.eq(value: T) {
+    EvaluationSession.current().sessionSolver().tell(PredicateSymbol("equals", 2), this, value)
 }
