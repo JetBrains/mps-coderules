@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="jchr">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/lib" />
+        <root url="file://$PROJECT_DIR$/jchr/languages/jetbrains.mps.jchr/runtime/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/lib" />
-      <root url="jar://$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/lib/KULeuven_JCHR.zip!/JCHR v1.6.0" />
+        <root url="file://$PROJECT_DIR$/jchr/languages/jetbrains.mps.jchr/runtime/lib" />
+        <root url="jar://$PROJECT_DIR$/jchr/languages/jetbrains.mps.jchr/runtime/lib/KULeuven_JCHR.zip!/JCHR v1.6.0" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/lib" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/languages/jetbrains.mps.jchr/runtime/lib" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/jchr/languages/jetbrains.mps.jchr/runtime/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/jchr/languages/jetbrains.mps.jchr/runtime/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

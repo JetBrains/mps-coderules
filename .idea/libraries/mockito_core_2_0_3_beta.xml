@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="mockito-core-2.0.3-beta">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/languages/jetbrains.mps.logic/test/lib/mockito-core-2.0.3-beta.jar!/" />
-      <root url="jar://$PROJECT_DIR$/languages/jetbrains.mps.logic/test/lib/objenesis-2.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.test/lib/mockito-core-2.0.3-beta.jar!/" />
+        <root url="jar://$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.test/lib/objenesis-2.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/languages/jetbrains.mps.logic/test/lib/mockito-core-2.0.3-beta.jar!/" />
+        <root url="jar://$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.test/lib/mockito-core-2.0.3-beta.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.logic/solutions/jetbrains.mps.logic.atom/Atom.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.logic/solutions/jetbrains.mps.logic.atom/Atom.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.jchr/JCHR.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.jchr/JCHR.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.logic/Logic.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.logic/Logic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.logic/jchr/Logic.jchr.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.logic/jchr/Logic.jchr.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.logic/reactor/Logic.reactor.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.logic/reactor/Logic.reactor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker/jetbrains.mps.lang.typesystem2.samplechecker.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker/jetbrains.mps.lang.typesystem2.samplechecker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.handler/samplechecker.handler.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.handler/samplechecker.handler.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/samplechecker.handler.util.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/samplechecker.handler.util.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/runtime/typesystem2.runtime.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/runtime/typesystem2.runtime.iml" />
-      <module fileurl="file://$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem.sample/typesystem2.sandbox.sample.iml" filepath="$PROJECT_DIR$/languages/jetbrains.mps.lang.typesystem2/sandbox/jetbrains.mps.lang.typesystem.sample/typesystem2.sandbox.sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.atom/Atom.iml" filepath="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.atom/Atom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jchr/languages/jetbrains.mps.jchr/JCHR.iml" filepath="$PROJECT_DIR$/jchr/languages/jetbrains.mps.jchr/JCHR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/Logic.iml" filepath="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/Logic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.jchr/Logic.jchr.iml" filepath="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.jchr/Logic.jchr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.reactor/Logic.reactor.iml" filepath="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.reactor/Logic.reactor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker/jetbrains.mps.lang.typesystem2.samplechecker.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker/jetbrains.mps.lang.typesystem2.samplechecker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler/samplechecker.handler.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler/samplechecker.handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/samplechecker.handler.util.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/samplechecker.handler.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/typesystem2/languages/jetbrains.mps.lang.typesystem2/runtime/typesystem2.runtime.iml" filepath="$PROJECT_DIR$/typesystem2/languages/jetbrains.mps.lang.typesystem2/runtime/typesystem2.runtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem.sample/typesystem2.sandbox.sample.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem.sample/typesystem2.sandbox.sample.iml" />
     </modules>
   </component>
 </project>

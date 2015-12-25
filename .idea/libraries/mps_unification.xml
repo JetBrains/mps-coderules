@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="mps-unification">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/languages/jetbrains.mps.logic/solutions/jetbrains.mps.logic.atom/imports/mps-unification/lib" />
+      <root url="file://$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.atom/imports/mps-unification/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://$PROJECT_DIR$/languages/jetbrains.mps.logic/solutions/jetbrains.mps.logic.atom/imports/mps-unification/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.atom/imports/mps-unification/lib" recursive="false" />
   </library>
 </component>
