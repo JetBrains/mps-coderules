@@ -10,9 +10,6 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" name="junit:junit:4.12" level="project" />
-    <orderEntry type="library" name="com.intellij:annotations:12.0" level="project" />
-    <orderEntry type="library" name="com.github.andrewoma.dexx:dexx-collections:0.2" level="project" />
     <orderEntry type="library" name="code-1.0" level="project" />
     <orderEntry type="module" module-name="API" />
     <orderEntry type="module" module-name="Core" />

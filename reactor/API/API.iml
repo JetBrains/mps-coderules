@@ -9,8 +9,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="com.google.collections:google-collections:1.0" level="project" />
-    <orderEntry type="library" name="com.intellij:annotations:12.0" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-runtime:1.0.0-beta-4583" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-4583" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-maven-plugin:1.0.0-beta-4583" level="project" />
