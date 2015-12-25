@@ -150,6 +150,6 @@ private data class TestConstraintOccurrence(val constraint: Constraint, val argu
 
     override fun arguments(): Collection<Any> = arguments
 
-    override fun toString(): String = "#${constraint().symbol()}(${arguments().joinToString()})#${id}"
+    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
 
 }

@@ -40,7 +40,7 @@ class Handler {
                     stored.filter { co -> constraint.matches(co) && acceptable(co) }
         }
 
-        val match = matcher.lookupMatches(active).find { pm -> pm.rule.guard().all { prd -> askPredicate(prd) } }
+        val match = matcher.lookupMatches(active).find { pm -> pm.rule.checkGuard(pm.logicalContext()) }
 
         if (match != null) {
             for ((cst, occ) in match.discarded) {
@@ -68,17 +68,14 @@ class Handler {
         }
     }
 
-    private fun askPredicate(predicate: Predicate): Boolean =
-        sessionSolver.ask(predicate.symbol(), * predicate.arguments().toTypedArray())
+    private fun Rule.checkGuard(logicalContext: LogicalContext): Boolean =
+        guard().all { prd -> askPredicate(prd.invocation(logicalContext)) }
+
+    private fun askPredicate(invocation: PredicateInvocation): Boolean =
+        sessionSolver.ask(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
 
     private fun tellPredicate(invocation: PredicateInvocation) {
         sessionSolver.tell(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
     }
-
-}
-
-interface HandlingContext {
-
-    fun substitute(logicalPattern: LogicalPattern<*>) : Any
 
 }

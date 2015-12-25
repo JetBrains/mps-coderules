@@ -80,10 +80,47 @@ class TestProgram {
             )
         ).session("logicalValue").run {
             assertEquals(setOf(ConstraintSymbol("foo", 1), ConstraintSymbol("bar", 1)), constraintSymbols())
+            assertEquals(2, constraintOccurrences().count())
             val yval = constraintOccurrences(ConstraintSymbol("bar", 1)).first().arguments().first()
             assertEquals(66, (yval as Logical<Int>).get())
         }
     }
 
+    @Test
+    fun simpleProgram() {
+        val (X, Y) = logicalPattern<Int>("X", "Y")
+
+        program(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    statement({ x -> x.set(5) }, X),
+                    constraint("val", X)
+                )
+            ),
+            rule("dec",
+                headReplaced(
+                    constraint("val", X)
+                ),
+                guard(
+                    expression({ x -> x.get() > 0 }, X)
+                ),
+                body(
+                    constraint("trail", X),
+                    statement({ x, y -> y.set(x.get() - 1)}, X, Y),
+                    constraint("val", Y)
+                )
+            )
+        ).session("dec").run {
+            assertEquals(setOf(ConstraintSymbol("val", 1), ConstraintSymbol("trail", 1)), constraintSymbols())
+            assertEquals(1, constraintOccurrences(ConstraintSymbol.symbol("val", 1)).count())
+            val a = constraintOccurrences(ConstraintSymbol.symbol("val", 1)).first().arguments().first()
+            assertEquals(0, (a as Logical<Int>).get())
+            assertEquals(5, constraintOccurrences(ConstraintSymbol.symbol("trail", 1)).count())
+            println(constraintOccurrences(ConstraintSymbol.symbol("trail", 1)))
+        }
+    }
 
 }

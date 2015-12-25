@@ -30,8 +30,11 @@ inline fun <reified T: Any> logicalPattern(name1: String, name2: String, name3: 
 
 fun <T: Any> Logical<T>.get(): T = findRoot().value()
 
-fun <T: Any> TestLogical<T>.set(t: T) {
-    find().value = t
+fun <T: Any> Logical<T>.set(t: T) {
+    if (this is TestLogical<T>)
+        find().value = t
+    else
+        throw IllegalStateException("unexpected receiver $this")
 }
 
 data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogical<T>?) : Logical<T> {
@@ -69,6 +72,8 @@ data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogic
     fun union(other: TestLogical<T>) {
         if (find() != other.find()) find().parent = other
     }
+
+    override fun toString(): String = "$name(^${parent?.name ?: null})=$value"
 }
 
 data class TestLogicalPattern<T>(val name: String, val type: Class<T>) : LogicalPattern<T> {
