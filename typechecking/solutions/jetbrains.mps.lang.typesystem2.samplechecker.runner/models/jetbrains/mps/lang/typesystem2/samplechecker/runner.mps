@@ -17,9 +17,7 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="stuq" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime.debug.graphical(jetbrains.mps.jchr.runtime/)" />
     <import index="iawt" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime.debug(jetbrains.mps.jchr.runtime/)" />
-    <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
-    <import index="4t1t" ref="r:703839e2-c38f-4b71-8602-72ccb87dd74e(jetbrains.mps.lang.typesystem2.runtime.util)" />
     <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
@@ -27,6 +25,8 @@
     <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.rule)" />
     <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.predicate)" />
     <import index="stgg" ref="r:fcdb37a4-4602-4a05-8d91-e439430734b8(jetbrains.mps.logic.jchr.program)" />
+    <import index="7ub6" ref="r:b533b427-da69-49d8-9c93-4ea32433b66e(jetbrains.mps.lang.typesystem2.runtime)" />
+    <import index="poio" ref="r:023e4571-f779-4131-9ae1-88b3dd330e93(jetbrains.mps.lang.typesystem2.samplechecker.util)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -426,8 +426,8 @@
                               <property role="Xl_RC" value="{" />
                             </node>
                             <node concept="2YIFZM" id="6r6omRld9JU" role="3uHU7w">
-                              <ref role="1Pybhc" to="4t1t:4peSo3CHy8D" resolve="NodePrinter" />
-                              <ref role="37wK5l" to="4t1t:4peSo3CHBfF" resolve="print" />
+                              <ref role="37wK5l" to="poio:4peSo3CHBfF" resolve="print" />
+                              <ref role="1Pybhc" to="poio:4peSo3CHy8D" resolve="NodePrinter" />
                               <node concept="37vLTw" id="6r6omRld9Qi" role="37wK5m">
                                 <ref role="3cqZAo" node="6r6omRld9An" resolve="atom" />
                               </node>
@@ -1003,8 +1003,8 @@
                         </node>
                       </node>
                       <node concept="2YIFZM" id="1jo82tq2Chl" role="3K4E3e">
-                        <ref role="1Pybhc" to="4t1t:4peSo3CHy8D" resolve="NodePrinter" />
-                        <ref role="37wK5l" to="4t1t:4peSo3D04j7" resolve="print" />
+                        <ref role="1Pybhc" to="poio:4peSo3CHy8D" resolve="NodePrinter" />
+                        <ref role="37wK5l" to="poio:4peSo3D04j7" resolve="print" />
                         <node concept="2YIFZM" id="1jo82tq2Chm" role="37wK5m">
                           <ref role="37wK5l" to="ie8e:6HT7BWBOXr$" resolve="ground" />
                           <ref role="1Pybhc" to="ie8e:6HT7BWBOXme" resolve="AtomUtil" />
@@ -1485,7 +1485,7 @@
       </node>
       <node concept="3Tm6S6" id="5kEUewdD8xu" role="1B3o_S" />
       <node concept="3uibUv" id="4peSo3D1gxU" role="1zkMxy">
-        <ref role="3uigEE" to="4t1t:3gJBs5s$bxr" resolve="NodePrinter.DefaultVariableSymbol" />
+        <ref role="3uigEE" to="poio:3gJBs5s$bxr" resolve="NodePrinter.DefaultVariableSymbol" />
       </node>
     </node>
     <node concept="2tJIrI" id="1jo82tq2nKr" role="jymVt" />
