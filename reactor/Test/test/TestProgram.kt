@@ -123,4 +123,51 @@ class TestProgram {
         }
     }
 
+    @Test
+    fun gcd() {
+        val (M, N, TMP) = logicalPattern<Int>("M", "N", "TMP")
+        program(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    statement({ m, n -> m.set(21); n.set(35) }, M, N),
+                    constraint("gcd", M),
+                    constraint("gcd", N)
+                )
+            ),
+            rule("trivial",
+                headReplaced(
+                    constraint("gcd", M)
+                ),
+                guard(
+                    expression({ x -> x.get() == 0 }, M)
+                ),
+                body(
+                    statement {  } // nothing
+                )
+            ),
+            rule("step",
+                headKept(
+                    constraint("gcd", N)
+                ),
+                headReplaced(
+                    constraint("gcd", M)
+                ),
+                guard(
+                    expression({ m, n -> m.get() >= n.get()}, M, N)
+                ),
+                body(
+                    statement({ m, n, tmp -> tmp.set(m.get() - n.get())}, M, N, TMP),
+                    constraint("gcd", TMP)
+                )
+            )
+        ).session("gcd").run {
+            assertEquals(1, constraintOccurrences().count())
+            val arg = constraintOccurrences().first().arguments().first()
+            assertEquals(7, (arg as Logical<Int>).get())
+        }
+    }
+
 }

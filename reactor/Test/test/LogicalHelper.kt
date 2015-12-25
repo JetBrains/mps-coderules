@@ -10,6 +10,8 @@ import java.util.*
  */
 
 
+fun <T: Any> anon(value: T) = TestLogical(value)
+
 fun <T: Any> logical(name: String) = TestLogical<T>(name)
 
 fun <T: Any> logical(name1: String, name2: String) = Pair(TestLogical<T>(name1), TestLogical<T>(name2))
@@ -38,6 +40,12 @@ fun <T: Any> Logical<T>.set(t: T) {
 }
 
 data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogical<T>?) : Logical<T> {
+
+    companion object {
+        var anonIdx = 0
+    }
+
+    constructor(value: T) : this("$${anonIdx++}", value, null)
 
     constructor(name: String) : this(name, null, null) {}
 
