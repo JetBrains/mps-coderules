@@ -12,7 +12,6 @@
     <orderEntry type="library" name="jchr" level="project" />
     <orderEntry type="library" name="log4j" level="project" />
     <orderEntry type="module" module-name="samplechecker.handler" />
-    <orderEntry type="module" module-name="typesystem2.runtime" />
     <orderEntry type="module" module-name="Atom" />
     <orderEntry type="module" module-name="Logic.reactor" />
     <orderEntry type="module" module-name="Logic.jchr" />

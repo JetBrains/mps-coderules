@@ -11,7 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler/samplechecker.handler.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler/samplechecker.handler.iml" />
       <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/samplechecker.handler.util.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/samplechecker.handler.util.iml" />
       <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.runner/samplechecker.runner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/typesystem2/languages/jetbrains.mps.lang.typesystem2/runtime/typesystem2.runtime.iml" filepath="$PROJECT_DIR$/typesystem2/languages/jetbrains.mps.lang.typesystem2/runtime/typesystem2.runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem.sample/typesystem2.sandbox.sample.iml" filepath="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem.sample/typesystem2.sandbox.sample.iml" />
     </modules>
   </component>
