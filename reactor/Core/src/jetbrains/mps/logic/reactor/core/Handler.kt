@@ -31,8 +31,8 @@ class Handler {
 
     fun occurrences(): Set<ConstraintOccurrence> = stored.toSet()
 
-    fun process(active: ConstraintOccurrence): Boolean {
-        stored.add(active)
+    fun process(active: ConstraintOccurrence) {
+        store(active)
 
         val matcher = object : Matcher(rules) {
             override fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):
@@ -40,9 +40,10 @@ class Handler {
                     stored.filter { co -> constraint.matches(co) && acceptable(co) }
         }
 
-        val match = matcher.lookupMatches(active).find { pm -> pm.rule.checkGuard(pm.logicalContext()) }
+        for (match in matcher.lookupMatches(active).filter { pm -> pm.rule.checkGuard(pm.logicalContext()) }) {
+            if (!active.isAlive()) return
+            if (match.occurrences().any{ co -> !co.isAlive() }) continue
 
-        if (match != null) {
             for ((cst, occ) in match.discarded) {
                 discard(occ)
             }
@@ -50,10 +51,11 @@ class Handler {
             for (item in match.rule.body()) {
                 activate(item, match.logicalContext())
             }
-
-            return false
         }
-        else return true
+    }
+
+    private fun store(occ: ConstraintOccurrence) {
+        stored.add(occ)
     }
 
     private fun discard(occ: ConstraintOccurrence) {
@@ -77,5 +79,8 @@ class Handler {
     private fun tellPredicate(invocation: PredicateInvocation) {
         sessionSolver.tell(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
     }
+
+    private fun ConstraintOccurrence.isAlive(): Boolean =
+        stored.contains(this)
 
 }

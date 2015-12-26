@@ -224,6 +224,57 @@ class TestHandler {
         }
     }
 
+    @Test
+    fun occurrenceTerminated() {
+        program(
+            rule("first",
+                headKept( constraint("foo") ),          body( constraint("expected1") )
+            ),
+            rule("second",
+                headKept( constraint("foo") ),          body( constraint("bar") )
+            ),
+            rule("third",
+                headKept( constraint("foo") ),          body( constraint("unexpected") )
+            ),
+            rule("fourth",
+                headReplaced(   constraint("bar"),
+                                constraint("foo") ),
+                                                        body( constraint("expected2") )
+            )
+        ).handler().run {
+            process(occurrence("foo"))
+            assertEquals(
+                setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0)),
+                occurrences().map { co -> co.constraint().symbol() }.toSet())
+        }
+    }
+
+    @Test
+    fun occurrenceKeptActive() {
+        program(
+            rule("first",
+                headKept( constraint("foo") ),          body( constraint("bar") )
+            ),
+            rule("second",
+                headReplaced( constraint("foo") ),      body( constraint("expected1") )
+            ),
+            rule("third",
+                headReplaced( constraint("foo") ),      body( constraint("unexpected") )
+            ),
+            rule("fourth",
+                headKept( constraint("foo") ),
+                headReplaced( constraint("bar") ),
+                                                        body( constraint("expected2") )
+            )
+        ).handler().run {
+            process(occurrence("foo"))
+            assertEquals(
+                setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0)),
+                occurrences().map { co -> co.constraint().symbol() }.toSet())
+        }
+    }
+
+
 
 }
 
