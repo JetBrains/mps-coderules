@@ -121,8 +121,8 @@ class TestProgram {
                                                                 constraint("gcd", N) )
             ),
             rule("trivial",
-                headReplaced( constraint("gcd", M) ),   guard( expression({ x -> x.get() == 0 }, M) ),
-                                                        body( statement {  }  /*nothing*/ )
+                headReplaced( constraint("gcd", M) ),   guard(  expression({ x -> x.get() == 0 }, M) ),
+                                                        body(   statement {  }  /*nothing*/ )
             ),
             rule("step",
                 headKept( constraint("gcd", N) ),
@@ -137,6 +137,36 @@ class TestProgram {
             val arg = constraintOccurrences().first().arguments().first()
             assertEquals(7, (arg as Logical<Int>).get())
         }
+    }
+
+
+    @Test
+    fun primes() {
+        val (M, N) = logicalPattern<Int>("M", "N")
+        program(
+            rule("main",
+                headReplaced( constraint("main") ),     body(   statement({ n -> n.set(10) }, N),
+                                                                constraint("prime", N)  )
+            ),
+            rule("gen",
+                headKept( constraint("prime", N)),      guard(  expression({ n -> n.get() > 2 }, N)),
+                                                        body(   statement({ m, n -> m.set(n.get() - 1) }, M, N),
+                                                                constraint("prime", M)  )
+            ),
+            rule("sift",
+                headKept( constraint("prime", M)),
+                headReplaced( constraint("prime", N)),
+                                                        guard(  expression({ m, n -> (n.get() % m.get()) == 0 }, M, N)),
+                                                        body(   statement { } /* nothing */     )
+            )
+        ).session("primes").run {
+            assertEquals(4, constraintOccurrences().count())
+            assertEquals(setOf(2,3,5,7),                constraintOccurrences(ConstraintSymbol.symbol("prime", 1)).
+                                                            flatMap { co -> co.arguments() }.
+                                                            map { a -> (a as Logical<Int>).findRoot().value() }.
+                                                            toSet())
+        }
+
     }
 
 }
