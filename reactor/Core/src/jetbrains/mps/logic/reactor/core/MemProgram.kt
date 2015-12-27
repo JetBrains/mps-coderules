@@ -4,28 +4,20 @@ package jetbrains.mps.logic.reactor.core
  * @author Fedor Isakov
  */
 
-import jetbrains.mps.logic.reactor.constraint.*
-import jetbrains.mps.logic.reactor.program.PlanningSession
-import jetbrains.mps.logic.reactor.rule.InvalidConstraintException
-import jetbrains.mps.logic.reactor.rule.Rule
+import jetbrains.mps.logic.reactor.evaluation.Queryable
+import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.program.*
 import java.util.*
 import java.util.Collections.*
 
 
-class ReactorPlanningSession(val name: String, val sessionSolver: SessionSolver) : PlanningSession() {
-
-    class FactoryImpl : Factory {
-        override fun create(name: String, sessionSolver: SessionSolver): PlanningSession =
-                ReactorPlanningSession(name, sessionSolver)
-    }
+class MemProgram(val name: String, val sessionSolver: SessionSolver) : Program() {
 
     private val myRules = ArrayList<Rule>()
 
     private val myRegistry = ConstraintRegistry(sessionSolver)
 
     override fun name(): String = name
-
-    override fun sessionSolver(): SessionSolver= sessionSolver
 
     override fun constraintSymbols(): Iterable<ConstraintSymbol> =
             myRegistry.constraintSymbols()
@@ -36,8 +28,7 @@ class ReactorPlanningSession(val name: String, val sessionSolver: SessionSolver)
     override fun predicateSymbols(): Iterable<PredicateSymbol> =
             myRegistry.predicateSymbols()
 
-    override fun solverClass(predicateSymbol: PredicateSymbol): Class<out Queryable>? =
-            myRegistry.solverClass(predicateSymbol)
+    fun sessionSolver(): SessionSolver = sessionSolver
 
     override fun addRule(rule: Rule) {
         myRegistry.update(rule)
@@ -52,19 +43,6 @@ class ReactorPlanningSession(val name: String, val sessionSolver: SessionSolver)
     }
 
     override fun rules(): Iterable<Rule> = unmodifiableCollection(myRules)
-
-    companion object {
-        val ourFactory = FactoryImpl()
-
-        fun init() {
-            setFactory(ourFactory)
-        }
-
-        fun deinit() {
-            clearFactory(ourFactory)
-        }
-    }
-
 }
 
 private class ConstraintRegistry(val sessionSolver: SessionSolver) {

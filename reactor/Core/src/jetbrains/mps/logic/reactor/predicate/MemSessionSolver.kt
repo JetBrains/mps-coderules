@@ -1,16 +1,20 @@
 package jetbrains.mps.logic.reactor.predicate
 
-import jetbrains.mps.logic.reactor.constraint.*
+import jetbrains.mps.logic.reactor.evaluation.ComputingTracer
+import jetbrains.mps.logic.reactor.evaluation.JavaPredicateSymbol
+import jetbrains.mps.logic.reactor.evaluation.Queryable
+import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.program.PredicateSymbol
 
 /**
  * @author Fedor Isakov
  */
 
-class ReactorSessionSolver(val expressionSolver: Queryable, val equalsSolver: Queryable) : SessionSolver() {
+class MemSessionSolver(val expressionSolver: Queryable, val equalsSolver: Queryable) : SessionSolver() {
 
     override fun solverClass(predicateSymbol: PredicateSymbol): Class<out Queryable> {
         return when (predicateSymbol) {
-            is JavaPredicateSymbol         -> expressionSolver.javaClass
+            is JavaPredicateSymbol -> expressionSolver.javaClass
             PredicateSymbol("equals", 2)   -> equalsSolver.javaClass
             else                           -> throw UnsupportedOperationException("not implemented")
         }

@@ -3,10 +3,13 @@ package jetbrains.mps.logic.reactor.core
 import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.List as PList
 import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
-import jetbrains.mps.logic.reactor.constraint.*
-import jetbrains.mps.logic.reactor.program.EvaluationSession
-import jetbrains.mps.logic.reactor.program.PlanningSession
-import jetbrains.mps.logic.reactor.rule.Rule
+import jetbrains.mps.logic.reactor.evaluation.ComputingTracer
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.PredicateSymbol
+import jetbrains.mps.logic.reactor.program.Program
 import java.util.*
 
 /**
@@ -14,9 +17,9 @@ import java.util.*
  */
 
 
-class ReactorEvaluationSession(val program: PlanningSession) : EvaluationSession() {
+class MemEvaluationSession : EvaluationSession {
 
-    class Config(val program: PlanningSession) : EvaluationSession.Config() {
+    private class Config(val program: MemProgram) : EvaluationSession.Config() {
 
         val myPredicateSymbols = ArrayList<PredicateSymbol>()
         val myParameters = HashMap<String, Any?>()
@@ -45,7 +48,7 @@ class ReactorEvaluationSession(val program: PlanningSession) : EvaluationSession
             val sessionSolver = program.sessionSolver()
             sessionSolver.init(myComputingTracer, * predicateSymbols)
 
-            session = ReactorEvaluationSession(program)
+            session = MemEvaluationSession(program)
             ourBackend.ourSession.set(session)
 
             session.launch(myParameters["main"] as ConstraintOccurrence)
@@ -54,7 +57,13 @@ class ReactorEvaluationSession(val program: PlanningSession) : EvaluationSession
         }
     }
 
+    val program: MemProgram
+
     lateinit var handler: Handler
+
+    private constructor(program: Program): super() {
+        this.program = program as MemProgram
+    }
 
     fun launch(main: ConstraintOccurrence) {
         this.handler = Handler(sessionSolver(), program.rules())
@@ -76,11 +85,11 @@ class ReactorEvaluationSession(val program: PlanningSession) : EvaluationSession
 
     private class Backend : EvaluationSession.Backend {
 
-        val ourSession = ThreadLocal<ReactorEvaluationSession>()
+        val ourSession = ThreadLocal<MemEvaluationSession>()
 
         override fun current(): EvaluationSession = ourSession.get() ?: throw IllegalStateException("no session")
 
-        override fun createConfig(program: PlanningSession): EvaluationSession.Config = Config(program)
+        override fun createConfig(program: Program): EvaluationSession.Config = Config(program as MemProgram)
     }
 
     companion object {

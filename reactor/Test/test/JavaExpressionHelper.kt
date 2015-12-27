@@ -1,7 +1,13 @@
-import jetbrains.mps.logic.reactor.constraint.*
+import jetbrains.mps.logic.reactor.evaluation.JavaPredicateSymbol
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
+import jetbrains.mps.logic.reactor.program.AndItem
+import jetbrains.mps.logic.reactor.program.Predicate
+import jetbrains.mps.logic.reactor.program.PredicateSymbol
+import jetbrains.mps.logic.reactor.program.Symbol
 import java.util.*
 
 /**
@@ -95,14 +101,6 @@ data class TestJavaPredicate(val symbol: JavaPredicateSymbol, val expr: JavaExpr
 
     override fun symbol(): PredicateSymbol = symbol
 
-    override fun invocation(logicalContext: LogicalContext): PredicateInvocation {
-        return object: PredicateInvocation {
-
-            override fun predicate(): Predicate = this@TestJavaPredicate
-
-            override fun arguments(): Collection<Any> = argumentValues(logicalContext)
-        }
-    }
 }
 
 

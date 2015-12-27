@@ -7,8 +7,6 @@ public interface Logical<T> {
 
   public String name();
 
-  public String name(NamingContext namingContext);
-
   public Logical<T> findRoot();
 
   public T value();

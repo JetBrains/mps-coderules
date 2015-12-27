@@ -1,12 +1,7 @@
-import jetbrains.mps.logic.reactor.constraint.PredicateSymbol
-import jetbrains.mps.logic.reactor.constraint.Queryable
-import jetbrains.mps.logic.reactor.constraint.Symbol
-import jetbrains.mps.logic.reactor.core.ReactorEvaluationSession
-import jetbrains.mps.logic.reactor.program.PlanningSession
-import jetbrains.mps.logic.reactor.rule.InvalidConstraintException
-import jetbrains.mps.logic.reactor.rule.InvalidRuleException
-import jetbrains.mps.logic.reactor.core.ReactorPlanningSession
-import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
+import jetbrains.mps.logic.reactor.core.MemProgram
+import jetbrains.mps.logic.reactor.evaluation.Queryable
+import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
+import jetbrains.mps.logic.reactor.program.*
 import org.junit.AfterClass
 import org.junit.Assert.*
 import org.junit.Before
@@ -19,16 +14,7 @@ import kotlin.reflect.KClass
  * @author Fedor Isakov
  */
 
-class TestPlanningSession {
-
-    companion object {
-        @BeforeClass @JvmStatic fun setup() {
-            ReactorPlanningSession.init();
-        }
-        @AfterClass @JvmStatic fun teardown() {
-            ReactorPlanningSession.deinit();
-        }
-    }
+class TestProgramBuilder {
 
     val dummySolver = object : Queryable {
         override fun ask(predicateSymbol: PredicateSymbol?, vararg args: Any?): Boolean = TODO()
@@ -36,13 +22,13 @@ class TestPlanningSession {
     }
 
     @Before fun beforeTest() {
-        session = PlanningSession.newSession("test", ReactorSessionSolver(dummySolver, dummySolver))
+        program = MemProgram("test", MemSessionSolver(dummySolver, dummySolver))
     }
 
-    lateinit var session: PlanningSession
+    lateinit var program: Program
 
     @Test fun empty() {
-        session.addRules(ArrayList())
+        program.addRules(ArrayList())
     }
 
     @Test(expected = InvalidRuleException::class)
@@ -53,8 +39,8 @@ class TestPlanningSession {
                     constraint("bar")
                 ))).run {
 
-            session.addRules(rules)
-            assertEquals(session.rules().count(), 1)
+            program.addRules(rules)
+            assertEquals(program.rules().count(), 1)
         }
     }
 
@@ -79,8 +65,8 @@ class TestPlanningSession {
                     constraint("blah")
                 ))).run {
 
-            session.addRules(rules)
-            assertEquals(session.rules().count(), 2)
+            program.addRules(rules)
+            assertEquals(program.rules().count(), 2)
         }
     }
 
@@ -95,7 +81,7 @@ class TestPlanningSession {
                     constraint("bar", "1")
                 ))).run {
 
-            session.addRules(rules)
+            program.addRules(rules)
         }
     }
 }

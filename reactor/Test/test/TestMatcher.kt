@@ -1,7 +1,7 @@
-import jetbrains.mps.logic.reactor.constraint.Constraint
-import jetbrains.mps.logic.reactor.constraint.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.core.Matcher
 import jetbrains.mps.logic.reactor.core.matches
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.program.Constraint
 import org.junit.Assert.*
 import org.junit.Test
 
@@ -11,7 +11,7 @@ import org.junit.Test
 
 class TestMatcher {
 
-    fun Program.matcher(vararg occurrence: ConstraintOccurrence): Matcher {
+    fun ProgramBuilder.matcher(vararg occurrence: ConstraintOccurrence): Matcher {
         val stored = occurrence.toList()
         return object : Matcher(rules) {
             override fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):

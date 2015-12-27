@@ -1,8 +1,8 @@
-import jetbrains.mps.logic.reactor.constraint.PredicateSymbol
-import jetbrains.mps.logic.reactor.constraint.Queryable
-import jetbrains.mps.logic.reactor.constraint.Symbol
+import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.program.EvaluationSession
+import jetbrains.mps.logic.reactor.program.PredicateSymbol
+import jetbrains.mps.logic.reactor.program.Symbol
 
 class EqualsSolver  : Queryable {
 

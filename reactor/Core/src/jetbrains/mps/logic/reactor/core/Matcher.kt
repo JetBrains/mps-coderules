@@ -1,12 +1,12 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.ConsList
-import jetbrains.mps.logic.reactor.constraint.Constraint
-import jetbrains.mps.logic.reactor.constraint.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
-import jetbrains.mps.logic.reactor.rule.Rule
+import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
 import java.lang.String

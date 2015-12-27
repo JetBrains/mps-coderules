@@ -1,8 +1,7 @@
-import jetbrains.mps.logic.reactor.constraint.*
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
-import jetbrains.mps.logic.reactor.rule.Rule
-import jetbrains.mps.logic.reactor.rule.RuleBuilder
+import jetbrains.mps.logic.reactor.program.*
 import java.util.*
 
 /**
@@ -10,7 +9,7 @@ import java.util.*
  */
 
 
-class Program(val env: Environment, val rules: List<Rule>) {
+class ProgramBuilder(val env: Environment, val rules: List<Rule>) {
 }
 
 class Environment() {
@@ -18,7 +17,7 @@ class Environment() {
     val expressionSolver = ExpressionSolver()
 }
 
-fun program(vararg ruleBuilders : Environment.() -> Rule): Program {
+fun program(vararg ruleBuilders : Environment.() -> Rule): ProgramBuilder {
     val env = Environment()
     val rules = ArrayList<Rule>()
     with (env) {
@@ -26,7 +25,7 @@ fun program(vararg ruleBuilders : Environment.() -> Rule): Program {
             rules.add(rb())
         }
     }
-    return Program(env, rules)
+    return ProgramBuilder(env, rules)
 }
 
 fun rule(tag: String, vararg component:RB.() -> Unit): Environment.() -> Rule = {
@@ -66,9 +65,6 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 }
 
 fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestConstraintOccurrence(id, * args)
-
-fun AndItem.argumentValues(context: LogicalContext): List<Any> =
-    arguments().map { arg -> if (arg is LogicalPattern<*>) context.valueFor(arg) else arg!! }.toList()
 
 class RB(tag: String, val env: Environment) : RuleBuilder(tag) {
 
@@ -126,9 +122,6 @@ private data class TestConstraint(val symbol: ConstraintSymbol, val arguments: L
     override fun symbol(): ConstraintSymbol = symbol
 
     override fun argumentTypes(): List<Class<*>> = arguments.map { arg -> arg.javaClass }
-
-    override fun occurrence(context: LogicalContext): ConstraintOccurrence =
-        TestConstraintOccurrence(this, argumentValues(context))
 
     override fun toString(): String = "${symbol()}(${arguments().joinToString()})"
 

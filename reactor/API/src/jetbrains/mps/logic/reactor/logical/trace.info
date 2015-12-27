@@ -9,22 +9,18 @@
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/1564179198503508264">
     <file name="Logical.java">
       <node id="7045828502339522708" at="8,0,9,0" concept="3" trace="name#()Ljava/lang/String;" />
-      <node id="2966490507992539037" at="10,0,11,0" concept="3" trace="name#(Ljetbrains/mps/logic/reactor/logical/NamingContext;)Ljava/lang/String;" />
-      <node id="238586457663160034" at="12,0,13,0" concept="3" trace="findRoot#()Ljetbrains/mps/logic/reactor/logical/Logical;" />
-      <node id="1564179198503509166" at="14,0,15,0" concept="3" trace="value#()null" />
-      <node id="1564179198503509045" at="16,0,17,0" concept="3" trace="isBound#()Z" />
-      <node id="3058061960962299083" at="18,0,19,0" concept="3" trace="isWildcard#()Z" />
-      <node id="8897567155601592702" at="20,0,21,0" concept="3" trace="pattern#()Ljetbrains/mps/logic/reactor/logical/LogicalPattern;" />
+      <node id="238586457663160034" at="10,0,11,0" concept="3" trace="findRoot#()Ljetbrains/mps/logic/reactor/logical/Logical;" />
+      <node id="1564179198503509166" at="12,0,13,0" concept="3" trace="value#()null" />
+      <node id="1564179198503509045" at="14,0,15,0" concept="3" trace="isBound#()Z" />
+      <node id="3058061960962299083" at="16,0,17,0" concept="3" trace="isWildcard#()Z" />
+      <node id="8897567155601592702" at="18,0,19,0" concept="3" trace="pattern#()Ljetbrains/mps/logic/reactor/logical/LogicalPattern;" />
       <scope id="7045828502339522708" at="8,0,9,0" />
-      <scope id="2966490507992539037" at="10,0,11,0">
-        <var name="namingContext" id="2966490507992541231" />
-      </scope>
-      <scope id="238586457663160034" at="12,0,13,0" />
-      <scope id="1564179198503509166" at="14,0,15,0" />
-      <scope id="1564179198503509045" at="16,0,17,0" />
-      <scope id="3058061960962299083" at="18,0,19,0" />
-      <scope id="8897567155601592702" at="20,0,21,0" />
-      <unit id="1564179198503508264" at="6,0,23,0" name="jetbrains.mps.logic.reactor.logical.Logical" />
+      <scope id="238586457663160034" at="10,0,11,0" />
+      <scope id="1564179198503509166" at="12,0,13,0" />
+      <scope id="1564179198503509045" at="14,0,15,0" />
+      <scope id="3058061960962299083" at="16,0,17,0" />
+      <scope id="8897567155601592702" at="18,0,19,0" />
+      <unit id="1564179198503508264" at="6,0,21,0" name="jetbrains.mps.logic.reactor.logical.Logical" />
     </file>
   </root>
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/2966490507992442162">

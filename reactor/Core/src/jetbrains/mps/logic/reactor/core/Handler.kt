@@ -1,9 +1,11 @@
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.constraint.*
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
-import jetbrains.mps.logic.reactor.rule.Rule
+import jetbrains.mps.logic.reactor.program.*
 import java.util.*
 
 /**
@@ -82,5 +84,40 @@ class Handler {
 
     private fun ConstraintOccurrence.isAlive(): Boolean =
         stored.contains(this)
+
+}
+
+private fun AndItem.argumentValues(context: LogicalContext): List<Any> =
+    arguments().map { arg -> if (arg is LogicalPattern<*>) context.valueFor(arg) else arg!! }.toList()
+
+
+private fun Constraint.occurrence(context: LogicalContext): ConstraintOccurrence =
+    ReactorConstraintOccurrence(this, argumentValues(context))
+
+
+private fun Predicate.invocation(logicalContext: LogicalContext): PredicateInvocation {
+    return object: PredicateInvocation {
+
+        override fun predicate(): Predicate = this@invocation
+
+        override fun arguments(): Collection<Any> = argumentValues(logicalContext)
+    }
+}
+
+
+private data class ReactorConstraintOccurrence(val constraint: Constraint, val arguments: List<Any>, val id: Int) : ConstraintOccurrence {
+
+    companion object {
+        val random = Random()
+    }
+
+    constructor(constraint: Constraint, arguments: List<Any>) :
+        this(constraint, arguments, random.nextInt()) {}
+
+    override fun constraint(): Constraint = constraint
+
+    override fun arguments(): Collection<Any> = arguments
+
+    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
 
 }

@@ -1,8 +1,10 @@
-import jetbrains.mps.logic.reactor.constraint.*
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.logical.NamingContext
+import jetbrains.mps.logic.reactor.program.Predicate
+import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import java.util.*
 
 /**
@@ -50,10 +52,6 @@ data class TestLogical<T>(val name: String, var value: T?, var parent: TestLogic
     constructor(name: String) : this(name, null, null) {}
 
     override fun name(): String = name
-
-    override fun name(namingContext: NamingContext?): String? {
-        throw UnsupportedOperationException()
-    }
 
     override fun pattern(): LogicalPattern<Logical<T>> = TODO()
 
@@ -115,12 +113,4 @@ data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
 
     override fun symbol(): PredicateSymbol = PredicateSymbol("equals", 2)
 
-    override fun invocation(logicalContext: LogicalContext): PredicateInvocation {
-        return object: PredicateInvocation {
-
-            override fun predicate(): Predicate = this@TestEqPredicate
-
-            override fun arguments(): Collection<Any> = argumentValues(logicalContext)
-        }
-    }
 }

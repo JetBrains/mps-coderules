@@ -1,8 +1,13 @@
-import jetbrains.mps.logic.reactor.constraint.*
 import jetbrains.mps.logic.reactor.core.Handler
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.JavaPredicateSymbol
+import jetbrains.mps.logic.reactor.evaluation.Queryable
+import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
-import jetbrains.mps.logic.reactor.predicate.ReactorSessionSolver
+import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.BeforeClass
@@ -16,10 +21,10 @@ import org.junit.Test
 class TestHandler {
 
     fun sessionSolver(exprSolver: Queryable, equalsSolver: Queryable) : SessionSolver =
-        ReactorSessionSolver(exprSolver, equalsSolver).apply {
-            init(PredicateSymbol("equals",2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
+        MemSessionSolver(exprSolver, equalsSolver).apply {
+            init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
-    fun Program.handler(vararg occurrences: ConstraintOccurrence): Handler =
+    fun ProgramBuilder.handler(vararg occurrences: ConstraintOccurrence): Handler =
         Handler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, listOf(* occurrences))
 
     companion object {
