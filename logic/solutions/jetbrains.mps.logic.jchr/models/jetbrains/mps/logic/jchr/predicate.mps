@@ -10,7 +10,7 @@
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="f8dg" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:annotations(jetbrains.mps.jchr.runtime/)" />
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
-    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
+    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
     <import index="eift" ref="a5478664-6b44-4c62-a9f7-434f8aa57eee/java:runtime(jetbrains.mps.logic.runtime/)" />
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.logic.atom/)" />
@@ -19,6 +19,7 @@
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
+    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -447,7 +448,7 @@
       <node concept="37vLTG" id="4xBopTzrRGx" role="3clF46">
         <property role="TrG5h" value="predicateSymbol" />
         <node concept="3uibUv" id="5uFPQ7C5NGw" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzrRGz" role="3clF46">
@@ -584,7 +585,7 @@
       <node concept="37vLTG" id="4xBopTzrRGI" role="3clF46">
         <property role="TrG5h" value="symbol" />
         <node concept="3uibUv" id="5uFPQ7Cb6br" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$mzX" resolve="Symbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$mzX" resolve="Symbol" />
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzrRGK" role="3clF46">
@@ -1190,7 +1191,7 @@
       <node concept="37vLTG" id="4xBopTznuZi" role="3clF46">
         <property role="TrG5h" value="predicateSymbol" />
         <node concept="3uibUv" id="5uFPQ7C5VkG" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzmx3f" role="3clF46">
@@ -1486,7 +1487,7 @@
       <node concept="37vLTG" id="4xBopTzp2Tv" role="3clF46">
         <property role="TrG5h" value="symbol" />
         <node concept="3uibUv" id="5uFPQ7Cb4Wh" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$mzX" resolve="Symbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$mzX" resolve="Symbol" />
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzmx3q" role="3clF46">
@@ -5395,7 +5396,7 @@
       <node concept="37vLTG" id="4xBopTzoSXx" role="3clF46">
         <property role="TrG5h" value="predicateSymbol" />
         <node concept="3uibUv" id="5uFPQ7C5OCi" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzoSXz" role="3clF46">
@@ -5688,7 +5689,7 @@
       <node concept="37vLTG" id="4xBopTzoSXI" role="3clF46">
         <property role="TrG5h" value="symbol" />
         <node concept="3uibUv" id="5uFPQ7Cb80z" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$mzX" resolve="Symbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$mzX" resolve="Symbol" />
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzoSXK" role="3clF46">
@@ -7516,7 +7517,7 @@
       <node concept="37vLTG" id="4xBopTzrdc_" role="3clF46">
         <property role="TrG5h" value="predicateSymbol" />
         <node concept="3uibUv" id="5uFPQ7C5SNu" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzrdcB" role="3clF46">
@@ -7621,7 +7622,7 @@
       <node concept="37vLTG" id="4xBopTzrdcM" role="3clF46">
         <property role="TrG5h" value="symbol" />
         <node concept="3uibUv" id="5uFPQ7Cb3l3" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$mzX" resolve="Symbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$mzX" resolve="Symbol" />
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzrdcO" role="3clF46">
@@ -7964,35 +7965,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2$F5QputFlO" role="jymVt" />
-    <node concept="3clFb_" id="2$F5QputGuG" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="name" />
-      <node concept="17QB3L" id="2$F5QputGuH" role="3clF45" />
-      <node concept="3Tm1VV" id="2$F5QputGuI" role="1B3o_S" />
-      <node concept="37vLTG" id="2$F5QputGuK" role="3clF46">
-        <property role="TrG5h" value="namingContext" />
-        <node concept="3uibUv" id="2s5CcPafNKa" role="1tU5fm">
-          <ref role="3uigEE" to="45ys:2$F5QputikM" resolve="NamingContext" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="2$F5QputGuP" role="3clF47">
-        <node concept="3clFbF" id="2$F5QputK8y" role="3cqZAp">
-          <node concept="2OqwBi" id="2$F5QputKbf" role="3clFbG">
-            <node concept="37vLTw" id="2$F5QputK8x" role="2Oq$k0">
-              <ref role="3cqZAo" node="2$F5QputGuK" resolve="namingContext" />
-            </node>
-            <node concept="liA8E" id="2$F5QputKkL" role="2OqNvi">
-              <ref role="37wK5l" to="45ys:2$F5Qputim3" resolve="uniqueName" />
-              <node concept="Xjq3P" id="2$F5QputKnk" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2$F5QputJue" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3HJTsBmCvU3" role="jymVt" />
     <node concept="3clFb_" id="3HJTsBmBZ0h" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
@@ -8652,7 +8624,7 @@
       <node concept="37vLTG" id="7ISVfSIJee" role="3clF46">
         <property role="TrG5h" value="symbol" />
         <node concept="3uibUv" id="2tcGHBEei$8" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
         </node>
       </node>
       <node concept="37vLTG" id="2tcGHBEisRf" role="3clF46">
@@ -8674,7 +8646,7 @@
                   <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
                   <node concept="10QFUN" id="7ISVfSIYFl" role="37wK5m">
                     <node concept="3uibUv" id="7ISVfSIYFj" role="10QFUM">
-                      <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                      <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                     </node>
                     <node concept="37vLTw" id="7ISVfSIYFk" role="10QFUP">
                       <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
@@ -8700,7 +8672,7 @@
               <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
             </node>
             <node concept="liA8E" id="7ISVfSIJyd" role="2OqNvi">
-              <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+              <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
               <node concept="37vLTw" id="7ISVfSIJzc" role="37wK5m">
                 <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
               </node>
@@ -8713,7 +8685,7 @@
                 <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
               </node>
               <node concept="liA8E" id="7ISVfSIJAs" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+                <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
                 <node concept="37vLTw" id="7ISVfSIJBV" role="37wK5m">
                   <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
                 </node>
@@ -8727,7 +8699,7 @@
                     <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
                     <node concept="10QFUN" id="7ISVfSIYOz" role="37wK5m">
                       <node concept="3uibUv" id="7ISVfSIYO$" role="10QFUM">
-                        <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                        <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                       </node>
                       <node concept="37vLTw" id="7ISVfSIYO_" role="10QFUP">
                         <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
@@ -8752,7 +8724,7 @@
                 <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
               </node>
               <node concept="liA8E" id="7ISVfSIJIa" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+                <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
                 <node concept="37vLTw" id="7ISVfSIJJb" role="37wK5m">
                   <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
                 </node>
@@ -8766,7 +8738,7 @@
                     <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
                     <node concept="10QFUN" id="7ISVfSIZhq" role="37wK5m">
                       <node concept="3uibUv" id="7ISVfSIZhr" role="10QFUM">
-                        <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                        <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                       </node>
                       <node concept="37vLTw" id="7ISVfSIZhs" role="10QFUP">
                         <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
@@ -8790,7 +8762,7 @@
                 <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
               </node>
               <node concept="liA8E" id="7ISVfSIJJH" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+                <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
                 <node concept="37vLTw" id="7ISVfSIJJI" role="37wK5m">
                   <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
                 </node>
@@ -8804,7 +8776,7 @@
                     <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
                     <node concept="10QFUN" id="7ISVfSJ2Pa" role="37wK5m">
                       <node concept="3uibUv" id="7ISVfSJ2Pb" role="10QFUM">
-                        <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                        <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                       </node>
                       <node concept="37vLTw" id="7ISVfSJ2Pc" role="10QFUP">
                         <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
@@ -8828,7 +8800,7 @@
                 <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
               </node>
               <node concept="liA8E" id="7ISVfSJ2Gg" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+                <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
                 <node concept="37vLTw" id="7ISVfSJ2Gh" role="37wK5m">
                   <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
                 </node>
@@ -8842,7 +8814,7 @@
                     <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
                     <node concept="10QFUN" id="7ISVfSJ30r" role="37wK5m">
                       <node concept="3uibUv" id="7ISVfSJ30s" role="10QFUM">
-                        <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                        <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                       </node>
                       <node concept="37vLTw" id="7ISVfSJ30t" role="10QFUP">
                         <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
@@ -8889,7 +8861,7 @@
                     <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
                     <node concept="10QFUN" id="1ggxSI7qGPT" role="37wK5m">
                       <node concept="3uibUv" id="1ggxSI7qGPU" role="10QFUM">
-                        <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                        <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                       </node>
                       <node concept="37vLTw" id="1ggxSI7qGPV" role="10QFUP">
                         <ref role="3cqZAo" node="7ISVfSIJee" resolve="symbol" />
@@ -8946,7 +8918,7 @@
       <node concept="37vLTG" id="2tcGHBEvbMH" role="3clF46">
         <property role="TrG5h" value="symbol" />
         <node concept="3uibUv" id="2tcGHBEvbMI" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
         </node>
       </node>
       <node concept="3uibUv" id="2tcGHBEvcMg" role="3clF45">
@@ -8975,7 +8947,7 @@
               <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
             </node>
             <node concept="liA8E" id="2tcGHBEvbN5" role="2OqNvi">
-              <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+              <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
               <node concept="37vLTw" id="2tcGHBEvbN6" role="37wK5m">
                 <ref role="3cqZAo" node="2tcGHBEvbMH" resolve="symbol" />
               </node>
@@ -8988,7 +8960,7 @@
                 <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
               </node>
               <node concept="liA8E" id="2tcGHBEvbNa" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+                <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
                 <node concept="37vLTw" id="2tcGHBEvbNb" role="37wK5m">
                   <ref role="3cqZAo" node="2tcGHBEvbMH" resolve="symbol" />
                 </node>
@@ -9010,7 +8982,7 @@
                 <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
               </node>
               <node concept="liA8E" id="2tcGHBEvbNr" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+                <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
                 <node concept="37vLTw" id="2tcGHBEvbNs" role="37wK5m">
                   <ref role="3cqZAo" node="2tcGHBEvbMH" resolve="symbol" />
                 </node>
@@ -9032,7 +9004,7 @@
                 <ref role="3cqZAo" to="xq5w:5uFPQ7C26$b" resolve="BOUND_SYM" />
               </node>
               <node concept="liA8E" id="2tcGHBEvbNF" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+                <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
                 <node concept="37vLTw" id="2tcGHBEvbNG" role="37wK5m">
                   <ref role="3cqZAo" node="2tcGHBEvbMH" resolve="symbol" />
                 </node>
@@ -9054,7 +9026,7 @@
                 <ref role="3cqZAo" to="xq5w:5uFPQ7C279$" resolve="FREE_SYM" />
               </node>
               <node concept="liA8E" id="2tcGHBEvbNV" role="2OqNvi">
-                <ref role="37wK5l" to="qrld:54i3Fxd17bK" resolve="equals" />
+                <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
                 <node concept="37vLTw" id="2tcGHBEvbNW" role="37wK5m">
                   <ref role="3cqZAo" node="2tcGHBEvbMH" resolve="symbol" />
                 </node>
@@ -9570,7 +9542,7 @@
       <node concept="37vLTG" id="1ggxSI7qrgi" role="3clF46">
         <property role="TrG5h" value="symbol" />
         <node concept="3uibUv" id="1ggxSI7qrgj" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$mzX" resolve="Symbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$mzX" resolve="Symbol" />
         </node>
       </node>
       <node concept="37vLTG" id="1ggxSI7qrgk" role="3clF46">
@@ -9609,7 +9581,7 @@
       <node concept="37vLTG" id="1ggxSI7qrgu" role="3clF46">
         <property role="TrG5h" value="predicateSymbol" />
         <node concept="3uibUv" id="1ggxSI7qrgv" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+          <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
         </node>
       </node>
       <node concept="37vLTG" id="1ggxSI7qrgw" role="3clF46">

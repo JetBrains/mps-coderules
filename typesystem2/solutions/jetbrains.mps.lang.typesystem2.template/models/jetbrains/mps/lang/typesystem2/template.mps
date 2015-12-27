@@ -20,7 +20,8 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.rule)" />
-    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
+    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
+    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1426,11 +1427,11 @@
       <property role="TrG5h" value="TYPEOF_SYM" />
       <node concept="3Tm1VV" id="5uFPQ7ClELk" role="1B3o_S" />
       <node concept="3uibUv" id="5uFPQ7CgjLN" role="1tU5fm">
-        <ref role="3uigEE" to="qrld:54i3FxcZHHF" resolve="ConstraintSymbol" />
+        <ref role="3uigEE" to="rchb:54i3FxcZHHF" resolve="ConstraintSymbol" />
       </node>
       <node concept="2ShNRf" id="5uFPQ7CgjLO" role="33vP2m">
         <node concept="1pGfFk" id="5uFPQ7CgjLP" role="2ShVmc">
-          <ref role="37wK5l" to="qrld:54i3FxcZMv0" resolve="ConstraintSymbol" />
+          <ref role="37wK5l" to="rchb:54i3FxcZMv0" resolve="ConstraintSymbol" />
           <node concept="Xl_RD" id="5uFPQ7CgjLQ" role="37wK5m">
             <property role="Xl_RC" value="typeOf" />
           </node>
@@ -1470,7 +1471,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5uFPQ7CgmtH" role="3clF45">
-        <ref role="3uigEE" to="qrld:6Kcfpq7BfEn" resolve="Constraint" />
+        <ref role="3uigEE" to="rchb:6Kcfpq7BfEn" resolve="Constraint" />
       </node>
       <node concept="3Tm1VV" id="4OKkcnfu_zs" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_zt" role="3clF47">
@@ -1528,11 +1529,11 @@
           <node concept="3cpWsn" id="5uFPQ7Cgm9v" role="3cpWs9">
             <property role="TrG5h" value="symbol" />
             <node concept="3uibUv" id="5uFPQ7Cgm8Y" role="1tU5fm">
-              <ref role="3uigEE" to="qrld:54i3FxcZHHF" resolve="ConstraintSymbol" />
+              <ref role="3uigEE" to="rchb:54i3FxcZHHF" resolve="ConstraintSymbol" />
             </node>
             <node concept="2ShNRf" id="5uFPQ7Cgm9w" role="33vP2m">
               <node concept="1pGfFk" id="5uFPQ7Cgm9x" role="2ShVmc">
-                <ref role="37wK5l" to="qrld:54i3FxcZMv0" resolve="ConstraintSymbol" />
+                <ref role="37wK5l" to="rchb:54i3FxcZMv0" resolve="ConstraintSymbol" />
                 <node concept="3cpWs3" id="5uFPQ7Cgm9y" role="37wK5m">
                   <node concept="2OqwBi" id="5uFPQ7Cgm9z" role="3uHU7w">
                     <node concept="37vLTw" id="5uFPQ7Cgm9$" role="2Oq$k0">
@@ -1557,7 +1558,7 @@
         <node concept="3clFbF" id="5uFPQ7CglJe" role="3cqZAp">
           <node concept="2ShNRf" id="5uFPQ7CglJa" role="3clFbG">
             <node concept="1pGfFk" id="5uFPQ7Cgm6w" role="2ShVmc">
-              <ref role="37wK5l" to="qrld:5uFPQ7BZtsU" resolve="AbstractConstraint" />
+              <ref role="37wK5l" to="rchb:5uFPQ7BZtsU" resolve="AbstractConstraint" />
               <node concept="37vLTw" id="5uFPQ7Cgmlp" role="37wK5m">
                 <ref role="3cqZAo" node="5uFPQ7Cgm9v" resolve="symbol" />
               </node>
@@ -1593,7 +1594,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5uFPQ7Cgns8" role="3clF45">
-        <ref role="3uigEE" to="qrld:6Kcfpq7BfEn" resolve="Constraint" />
+        <ref role="3uigEE" to="rchb:6Kcfpq7BfEn" resolve="Constraint" />
       </node>
       <node concept="3Tm1VV" id="4OKkcnfu_zZ" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_$0" role="3clF47">
@@ -1623,11 +1624,11 @@
           <node concept="3cpWsn" id="5uFPQ7CgmNl" role="3cpWs9">
             <property role="TrG5h" value="symbol" />
             <node concept="3uibUv" id="5uFPQ7CgmNm" role="1tU5fm">
-              <ref role="3uigEE" to="qrld:54i3FxcZHHF" resolve="ConstraintSymbol" />
+              <ref role="3uigEE" to="rchb:54i3FxcZHHF" resolve="ConstraintSymbol" />
             </node>
             <node concept="2ShNRf" id="5uFPQ7CgmNn" role="33vP2m">
               <node concept="1pGfFk" id="5uFPQ7CgmNo" role="2ShVmc">
-                <ref role="37wK5l" to="qrld:54i3FxcZMv0" resolve="ConstraintSymbol" />
+                <ref role="37wK5l" to="rchb:54i3FxcZMv0" resolve="ConstraintSymbol" />
                 <node concept="3cpWs3" id="5uFPQ7CgmNp" role="37wK5m">
                   <node concept="2OqwBi" id="5uFPQ7CgmNq" role="3uHU7w">
                     <node concept="37vLTw" id="5uFPQ7Cgn59" role="2Oq$k0">
@@ -1652,7 +1653,7 @@
         <node concept="3clFbF" id="5uFPQ7Cgn82" role="3cqZAp">
           <node concept="2ShNRf" id="5uFPQ7Cgn83" role="3clFbG">
             <node concept="1pGfFk" id="5uFPQ7Cgn84" role="2ShVmc">
-              <ref role="37wK5l" to="qrld:5uFPQ7BZtsU" resolve="AbstractConstraint" />
+              <ref role="37wK5l" to="rchb:5uFPQ7BZtsU" resolve="AbstractConstraint" />
               <node concept="37vLTw" id="5uFPQ7Cgn85" role="37wK5m">
                 <ref role="3cqZAo" node="5uFPQ7CgmNl" resolve="symbol" />
               </node>
@@ -1680,14 +1681,14 @@
         </node>
       </node>
       <node concept="3uibUv" id="5uFPQ7CgkmB" role="3clF45">
-        <ref role="3uigEE" to="qrld:6Kcfpq7BfEn" resolve="Constraint" />
+        <ref role="3uigEE" to="rchb:6Kcfpq7BfEn" resolve="Constraint" />
       </node>
       <node concept="3Tm1VV" id="4OKkcnfu_$j" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_$k" role="3clF47">
         <node concept="3clFbF" id="5uFPQ7CgfVP" role="3cqZAp">
           <node concept="2ShNRf" id="5uFPQ7CgfVL" role="3clFbG">
             <node concept="1pGfFk" id="5uFPQ7CgkhI" role="2ShVmc">
-              <ref role="37wK5l" to="qrld:5uFPQ7BZtsU" resolve="AbstractConstraint" />
+              <ref role="37wK5l" to="rchb:5uFPQ7BZtsU" resolve="AbstractConstraint" />
               <node concept="37vLTw" id="5uFPQ7Cgkii" role="37wK5m">
                 <ref role="3cqZAo" node="5uFPQ7CgjLS" resolve="TYPEOF_SYM" />
               </node>
@@ -2433,7 +2434,7 @@
       <property role="TrG5h" value="apply" />
       <node concept="A3Dl8" id="1ffsG7bWD3H" role="3clF45">
         <node concept="3uibUv" id="1ffsG7bWD4a" role="A3Ik2">
-          <ref role="3uigEE" to="i8dg:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="1ffsG7bWDGk" role="3clF46">
@@ -2662,7 +2663,7 @@
       <property role="DiZV1" value="true" />
       <node concept="A3Dl8" id="1ffsG7bX6rY" role="3clF45">
         <node concept="3uibUv" id="1ffsG7bX6rZ" role="A3Ik2">
-          <ref role="3uigEE" to="i8dg:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ffsG7bX6s0" role="1B3o_S" />
@@ -2672,7 +2673,7 @@
             <property role="TrG5h" value="result" />
             <node concept="A3Dl8" id="1ffsG7bX6s4" role="1tU5fm">
               <node concept="3uibUv" id="1ffsG7bX6s5" role="A3Ik2">
-                <ref role="3uigEE" to="i8dg:7eGEHDlc$ap" resolve="RuleBuilder" />
+                <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
               </node>
             </node>
             <node concept="10Nm6u" id="1ffsG7bX6s6" role="33vP2m" />
@@ -3021,7 +3022,7 @@
       <property role="TrG5h" value="apply" />
       <node concept="A3Dl8" id="1ffsG7bXfPY" role="3clF45">
         <node concept="3uibUv" id="1ffsG7bXfQn" role="A3Ik2">
-          <ref role="3uigEE" to="i8dg:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="1ffsG7bXg4k" role="3clF46">

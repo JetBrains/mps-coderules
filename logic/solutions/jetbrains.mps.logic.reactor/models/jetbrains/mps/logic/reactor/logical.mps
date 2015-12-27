@@ -132,20 +132,6 @@
       <node concept="3Tm1VV" id="677NV56hh2n" role="1B3o_S" />
       <node concept="3clFbS" id="677NV56hh2o" role="3clF47" />
     </node>
-    <node concept="2tJIrI" id="2$F5QputC_u" role="jymVt" />
-    <node concept="3clFb_" id="2$F5QputDYt" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="name" />
-      <node concept="17QB3L" id="2$F5QputEqV" role="3clF45" />
-      <node concept="3Tm1VV" id="2$F5QputDYx" role="1B3o_S" />
-      <node concept="3clFbS" id="2$F5QputDYy" role="3clF47" />
-      <node concept="37vLTG" id="2$F5QputEwJ" role="3clF46">
-        <property role="TrG5h" value="namingContext" />
-        <node concept="3uibUv" id="2$F5QputEwI" role="1tU5fm">
-          <ref role="3uigEE" node="2$F5QputikM" resolve="NamingContext" />
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="677NV56hgHJ" role="jymVt" />
     <node concept="3clFb_" id="dfChU1eNVy" role="jymVt">
       <property role="1EzhhJ" value="true" />

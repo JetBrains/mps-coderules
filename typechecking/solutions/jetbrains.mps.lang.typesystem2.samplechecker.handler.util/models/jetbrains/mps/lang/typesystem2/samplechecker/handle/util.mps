@@ -12,7 +12,7 @@
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
+    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
     <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.predicate)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
@@ -357,11 +357,11 @@
             </node>
             <node concept="2OqwBi" id="5uFPQ7ClQgs" role="33vP2m">
               <node concept="2YIFZM" id="5uFPQ7ClQgt" role="2Oq$k0">
-                <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
-                <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
+                <ref role="1Pybhc" to="qrld:5uFPQ7BvN_d" resolve="EvaluationSession" />
+                <ref role="37wK5l" to="qrld:5uFPQ7Bwt5n" resolve="current" />
               </node>
               <node concept="liA8E" id="5uFPQ7ClQgu" role="2OqNvi">
-                <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
+                <ref role="37wK5l" to="qrld:5uFPQ7ClOzA" resolve="sessionSolver" />
               </node>
             </node>
           </node>
@@ -1760,11 +1760,11 @@
             </node>
             <node concept="2OqwBi" id="5uFPQ7ClVCM" role="33vP2m">
               <node concept="2YIFZM" id="5uFPQ7ClVCN" role="2Oq$k0">
-                <ref role="1Pybhc" to="rchb:5uFPQ7BvN_d" resolve="EvaluationSession" />
-                <ref role="37wK5l" to="rchb:5uFPQ7Bwt5n" resolve="current" />
+                <ref role="1Pybhc" to="qrld:5uFPQ7BvN_d" resolve="EvaluationSession" />
+                <ref role="37wK5l" to="qrld:5uFPQ7Bwt5n" resolve="current" />
               </node>
               <node concept="liA8E" id="5uFPQ7ClVCO" role="2OqNvi">
-                <ref role="37wK5l" to="rchb:5uFPQ7ClOzA" resolve="sessionSolver" />
+                <ref role="37wK5l" to="qrld:5uFPQ7ClOzA" resolve="sessionSolver" />
               </node>
             </node>
           </node>

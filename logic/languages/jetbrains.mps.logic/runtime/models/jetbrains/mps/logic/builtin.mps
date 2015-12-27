@@ -14,8 +14,9 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
-    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.constraint)" />
+    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
     <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.rule)" />
+    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -660,7 +661,7 @@
               <node concept="37vLTG" id="24Vro6cS5SR" role="3clF46">
                 <property role="TrG5h" value="predicateSymbol" />
                 <node concept="3uibUv" id="5uFPQ7C61lQ" role="1tU5fm">
-                  <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                  <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                 </node>
               </node>
               <node concept="37vLTG" id="24Vro6cS5ST" role="3clF46">
@@ -681,7 +682,7 @@
               <node concept="37vLTG" id="24Vro6cS5T2" role="3clF46">
                 <property role="TrG5h" value="predicateSymbol" />
                 <node concept="3uibUv" id="5uFPQ7C61sP" role="1tU5fm">
-                  <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                  <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                 </node>
               </node>
               <node concept="37vLTG" id="24Vro6cS5T4" role="3clF46">
@@ -702,7 +703,7 @@
               <node concept="37vLTG" id="6ps95k_HMH7" role="3clF46">
                 <property role="TrG5h" value="predicateSymbol" />
                 <node concept="3uibUv" id="6ps95k_HMH8" role="1tU5fm">
-                  <ref role="3uigEE" to="qrld:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                  <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
                 </node>
               </node>
               <node concept="37vLTG" id="6ps95k_HMH9" role="3clF46">
@@ -723,7 +724,7 @@
               <node concept="37vLTG" id="6ps95k_HMHj" role="3clF46">
                 <property role="TrG5h" value="symbol" />
                 <node concept="3uibUv" id="6ps95k_HMHk" role="1tU5fm">
-                  <ref role="3uigEE" to="qrld:5uFPQ7B$mzX" resolve="Symbol" />
+                  <ref role="3uigEE" to="rchb:5uFPQ7B$mzX" resolve="Symbol" />
                 </node>
               </node>
               <node concept="37vLTG" id="6ps95k_HMHl" role="3clF46">
