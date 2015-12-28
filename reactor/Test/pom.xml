@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jetbrains.mps.logic.reactor</groupId>
-        <artifactId>main</artifactId>
+        <groupId>jetbrains.mps.logic.memreactor</groupId>
+        <artifactId>memreactor-main</artifactId>
         <version>0.1</version>
         <relativePath>..</relativePath>
     </parent>
@@ -16,13 +16,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>jetbrains.mps.logic.reactor</groupId>
-            <artifactId>api</artifactId>
+            <groupId>jetbrains.mps.logic.memreactor</groupId>
+            <artifactId>memreactor-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
-            <groupId>jetbrains.mps.logic.reactor</groupId>
-            <artifactId>core</artifactId>
+            <groupId>jetbrains.mps.logic.memreactor</groupId>
+            <artifactId>memreactor-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
