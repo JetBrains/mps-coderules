@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.logic.reactor" uuid="bbf5c548-7111-4a53-a117-cdefc664cf34" moduleVersion="0" compileInMPS="true">
+<solution name="jetbrains.mps.logic.reactor" uuid="bbf5c548-7111-4a53-a117-cdefc664cf34" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="lib/memreactor-core-0.1.jar" />
+    </modelRoot>
   </models>
+  <stubModelEntries>
+    <stubModelEntry path="${module}/lib/memreactor-core-0.1.jar" />
+    <stubModelEntry path="${module}/lib/dexx-collections-0.2.jar" />
+    <stubModelEntry path="${module}/lib/google-collections-1.0.jar" />
+    <stubModelEntry path="${module}/lib/kotlin-runtime-1.0.0-beta-4583.jar" />
+    <stubModelEntry path="${module}/lib/kotlin-stdlib-1.0.0-beta-4583.jar" />
+    <stubModelEntry path="${module}/lib/code-1.0.jar" />
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
