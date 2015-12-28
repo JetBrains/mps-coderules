@@ -2818,6 +2818,32 @@
           </node>
         </node>
         <node concept="3clFbH" id="5uFPQ7BM_lX" role="3cqZAp" />
+        <node concept="3cpWs8" id="7K4Mb_JrlNi" role="3cqZAp">
+          <node concept="3cpWsn" id="7K4Mb_JrlNj" role="3cpWs9">
+            <property role="TrG5h" value="argumentToProcess" />
+            <node concept="3uibUv" id="7K4Mb_JrlN9" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3qTvmN" id="7K4Mb_JrlNc" role="11_B2D" />
+            </node>
+            <node concept="2ShNRf" id="7K4Mb_JrthJ" role="33vP2m">
+              <node concept="1pGfFk" id="7K4Mb_JrxOV" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
+                <node concept="2OqwBi" id="7K4Mb_JrlNk" role="37wK5m">
+                  <node concept="37vLTw" id="7K4Mb_JrlNl" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5uFPQ7BMz7a" resolve="pred" />
+                  </node>
+                  <node concept="liA8E" id="7K4Mb_JrlNm" role="2OqNvi">
+                    <ref role="37wK5l" to="rchb:5uFPQ7B_b06" resolve="arguments" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="7K4Mb_Jrykl" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="7K4Mb_JrnnF" role="3cqZAp" />
         <node concept="3clFbJ" id="5uFPQ7BM$w0" role="3cqZAp">
           <node concept="3clFbS" id="5uFPQ7BM$w1" role="3clFbx">
             <node concept="3cpWs8" id="5uFPQ7BM_pF" role="3cqZAp">
@@ -2872,13 +2898,8 @@
                   <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
                   <node concept="3qTvmN" id="7HUwyZaBV0g" role="11_B2D" />
                 </node>
-                <node concept="2OqwBi" id="7HUwyZaBV0n" role="33vP2m">
-                  <node concept="37vLTw" id="7HUwyZaBV0o" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5uFPQ7BMz7a" resolve="pred" />
-                  </node>
-                  <node concept="liA8E" id="7HUwyZaBV0p" role="2OqNvi">
-                    <ref role="37wK5l" to="rchb:5uFPQ7B_b06" resolve="arguments" />
-                  </node>
+                <node concept="37vLTw" id="7K4Mb_JrlNo" role="33vP2m">
+                  <ref role="3cqZAo" node="7K4Mb_JrlNj" resolve="argumentToProcess" />
                 </node>
               </node>
             </node>
@@ -3052,7 +3073,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="2KSgAgVghfY" role="3cqZAp" />
             <node concept="3SKdUt" id="2KSgAgVgg62" role="3cqZAp">
               <node concept="3SKdUq" id="2KSgAgVgg64" role="3SKWNk">
                 <property role="3SKdUp" value="return early" />
@@ -3152,6 +3172,19 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="7K4Mb_JrDL6" role="3cqZAp">
+                <node concept="2OqwBi" id="7K4Mb_JrDSO" role="3clFbG">
+                  <node concept="37vLTw" id="7K4Mb_JrDL4" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7K4Mb_JrlNj" resolve="argumentToProcess" />
+                  </node>
+                  <node concept="liA8E" id="7K4Mb_JrE8A" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~List.remove(int):java.lang.Object" resolve="remove" />
+                    <node concept="3cmrfG" id="7K4Mb_JrEct" role="37wK5m">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbH" id="2KSgAgVccHh" role="3cqZAp" />
             </node>
             <node concept="2ZW3vV" id="2KSgAgVcb7F" role="3eO9$A">
@@ -3228,7 +3261,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="2tcGHBEqVdZ" role="3cqZAp" />
             </node>
           </node>
         </node>
@@ -3262,13 +3294,8 @@
               <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
-          <node concept="2OqwBi" id="5uFPQ7BMFc6" role="1DdaDG">
-            <node concept="37vLTw" id="5uFPQ7BMHFn" role="2Oq$k0">
-              <ref role="3cqZAo" node="5uFPQ7BMz7a" resolve="pred" />
-            </node>
-            <node concept="liA8E" id="5uFPQ7BMFc8" role="2OqNvi">
-              <ref role="37wK5l" to="rchb:5uFPQ7B_b06" resolve="arguments" />
-            </node>
+          <node concept="37vLTw" id="7K4Mb_JrlNn" role="1DdaDG">
+            <ref role="3cqZAo" node="7K4Mb_JrlNj" resolve="argumentToProcess" />
           </node>
         </node>
         <node concept="3clFbH" id="5uFPQ7BMFc9" role="3cqZAp" />
