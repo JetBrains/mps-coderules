@@ -32,8 +32,8 @@
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
-    <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
+    <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3056,8 +3056,8 @@
           <node concept="22lmx$" id="5uFPQ7BM$Om" role="3clFbw">
             <node concept="3clFbC" id="5uFPQ7BM_cv" role="3uHU7w">
               <node concept="10M0yZ" id="5uFPQ7BM_iX" role="3uHU7w">
-                <ref role="3cqZAo" to="cxk7:5uFPQ7C26$b" resolve="BOUND_SYM" />
                 <ref role="1PxDUh" to="cxk7:5$WbtTOYoMb" resolve="LogicalPredicate" />
+                <ref role="3cqZAo" to="cxk7:5uFPQ7C26$b" resolve="BOUND_SYM" />
               </node>
               <node concept="2OqwBi" id="5uFPQ7BM$WD" role="3uHU7B">
                 <node concept="37vLTw" id="5uFPQ7BM$Sa" role="2Oq$k0">
@@ -3078,8 +3078,8 @@
                 </node>
               </node>
               <node concept="10M0yZ" id="5uFPQ7BM$Lq" role="3uHU7w">
-                <ref role="3cqZAo" to="cxk7:5uFPQ7C279$" resolve="FREE_SYM" />
                 <ref role="1PxDUh" to="cxk7:5$WbtTOYoMb" resolve="LogicalPredicate" />
+                <ref role="3cqZAo" to="cxk7:5uFPQ7C279$" resolve="FREE_SYM" />
               </node>
             </node>
           </node>
@@ -6181,7 +6181,6 @@
     <node concept="2tJIrI" id="2$F5QpusDTq" role="jymVt" />
     <node concept="2tJIrI" id="7eGEHDlcFnM" role="jymVt" />
     <node concept="2tJIrI" id="aFQeb4jL0Y" role="jymVt" />
-    <node concept="3Tm1VV" id="7eGEHDlcEJ1" role="1B3o_S" />
     <node concept="312cEg" id="7Oc59RSE6Qy" role="jymVt">
       <property role="TrG5h" value="name" />
       <node concept="3Tm6S6" id="7Oc59RSE6Qz" role="1B3o_S" />
@@ -6197,6 +6196,7 @@
         </node>
       </node>
     </node>
+    <node concept="3Tm1VV" id="7eGEHDlcEJ1" role="1B3o_S" />
     <node concept="312cEg" id="2tcGHBEqGgM" role="jymVt">
       <property role="TrG5h" value="sessionSolver" />
       <node concept="3Tm6S6" id="2tcGHBEqGgN" role="1B3o_S" />
@@ -6315,8 +6315,8 @@
     <node concept="2tJIrI" id="78CwJJcXbSO" role="jymVt" />
     <node concept="3clFb_" id="7eGEHDldpbj" role="jymVt">
       <property role="TrG5h" value="checkValidConstraint" />
-      <node concept="3Tmbuc" id="5rhZO$U00JE" role="1B3o_S" />
       <node concept="3cqZAl" id="7Oc59RSHNKF" role="3clF45" />
+      <node concept="3Tmbuc" id="5rhZO$U00JE" role="1B3o_S" />
       <node concept="3clFbS" id="7eGEHDldpbn" role="3clF47">
         <node concept="3clFbJ" id="5uFPQ7BEi6d" role="3cqZAp">
           <node concept="3clFbS" id="5uFPQ7BEi6f" role="3clFbx">
@@ -6652,7 +6652,6 @@
     <node concept="3Tm1VV" id="78CwJJcQpM4" role="1B3o_S" />
     <node concept="3clFb_" id="7eGEHDlefwa" role="jymVt">
       <property role="TrG5h" value="introduceConstraint" />
-      <node concept="3Tmbuc" id="5rhZO$U01k6" role="1B3o_S" />
       <node concept="3cqZAl" id="7Oc59RSHdhK" role="3clF45" />
       <node concept="3clFbS" id="7eGEHDlefwc" role="3clF47">
         <node concept="3clFbF" id="7Oc59RSHTjZ" role="3cqZAp">
@@ -6799,6 +6798,7 @@
       <node concept="3uibUv" id="7Oc59RSHLFV" role="Sfmx6">
         <ref role="3uigEE" to="rchb:7Oc59RSHJnv" resolve="InvalidConstraintException" />
       </node>
+      <node concept="3Tmbuc" id="5rhZO$U01k6" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="1zN1RIlmLd2" role="jymVt" />
     <node concept="2tJIrI" id="2pvEdquu$2W" role="jymVt" />
