@@ -2752,7 +2752,7 @@
       <node concept="37vLTG" id="5DGJruk3GHs" role="3clF46">
         <property role="TrG5h" value="computingTracer" />
         <node concept="3uibUv" id="5DGJruk3GLy" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="ComputingTracer" />
+          <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="EvaluationTrace" />
         </node>
       </node>
       <node concept="3cqZAl" id="4pWvZ2n32bh" role="3clF45" />

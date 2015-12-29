@@ -299,7 +299,7 @@
       <node concept="37vLTG" id="2tcGHBEix87" role="3clF46">
         <property role="TrG5h" value="computingTracer" />
         <node concept="3uibUv" id="2tcGHBEix88" role="1tU5fm">
-          <ref role="3uigEE" node="24Vro6cQnrj" resolve="ComputingTracer" />
+          <ref role="3uigEE" node="24Vro6cQnrj" resolve="EvaluationTrace" />
         </node>
       </node>
       <node concept="37vLTG" id="2tcGHBEix89" role="3clF46">
@@ -454,6 +454,20 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2tcGHBEqIuN" role="jymVt" />
+    <node concept="3clFb_" id="6MYr6JwonCY" role="jymVt">
+      <property role="TrG5h" value="queueIfBusy" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="6MYr6JwoqdW" role="3clF46">
+        <property role="TrG5h" value="runnable" />
+        <node concept="3uibUv" id="6MYr6Jwoq$S" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="10P_77" id="6MYr6JwookG" role="3clF45" />
+      <node concept="3Tm1VV" id="6MYr6JwonD1" role="1B3o_S" />
+      <node concept="3clFbS" id="6MYr6JwonD2" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="6MYr6Jwol33" role="jymVt" />
     <node concept="3clFb_" id="4xBopTzsxxs" role="jymVt">
       <property role="TrG5h" value="lookupQueryable" />
       <node concept="37vLTG" id="4xBopTzsxxt" role="3clF46">
@@ -581,7 +595,7 @@
       <node concept="37vLTG" id="2tcGHBEivC2" role="3clF46">
         <property role="TrG5h" value="computingTracer" />
         <node concept="3uibUv" id="2tcGHBEivRX" role="1tU5fm">
-          <ref role="3uigEE" node="24Vro6cQnrj" resolve="ComputingTracer" />
+          <ref role="3uigEE" node="24Vro6cQnrj" resolve="EvaluationTrace" />
         </node>
       </node>
     </node>
@@ -783,10 +797,10 @@
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="65oL76bXbYK" role="1B3o_S" />
       <node concept="3uibUv" id="65oL76bXcI6" role="1tU5fm">
-        <ref role="3uigEE" node="24Vro6cQnrj" resolve="ComputingTracer" />
+        <ref role="3uigEE" node="24Vro6cQnrj" resolve="EvaluationTrace" />
       </node>
       <node concept="10M0yZ" id="4ut_d$0E9$D" role="33vP2m">
-        <ref role="1PxDUh" node="24Vro6cQnrj" resolve="ComputingTracer" />
+        <ref role="1PxDUh" node="24Vro6cQnrj" resolve="EvaluationTrace" />
         <ref role="3cqZAo" node="4ut_d$0E9Px" resolve="NULL" />
       </node>
     </node>
@@ -801,7 +815,7 @@
   </node>
   <node concept="3HP615" id="24Vro6cQnrj">
     <property role="2bfB8j" value="true" />
-    <property role="TrG5h" value="ComputingTracer" />
+    <property role="TrG5h" value="EvaluationTrace" />
     <node concept="2tJIrI" id="24Vro6cQoAz" role="jymVt" />
     <node concept="3clFb_" id="24Vro6cQC7A" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -911,7 +925,7 @@
         <node concept="YeOm9" id="4ut_d$0EaY6" role="2ShVmc">
           <node concept="1Y3b0j" id="4ut_d$0EaY9" role="YeSDq">
             <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" node="24Vro6cQnrj" resolve="ComputingTracer" />
+            <ref role="1Y3XeK" node="24Vro6cQnrj" resolve="EvaluationTrace" />
             <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
             <node concept="3Tm1VV" id="4ut_d$0EaYa" role="1B3o_S" />
             <node concept="3clFb_" id="4ut_d$0EaYb" role="jymVt">
@@ -1013,7 +1027,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="4ut_d$0E9Re" role="1tU5fm">
-        <ref role="3uigEE" node="24Vro6cQnrj" resolve="ComputingTracer" />
+        <ref role="3uigEE" node="24Vro6cQnrj" resolve="EvaluationTrace" />
       </node>
     </node>
     <node concept="3Tm1VV" id="24Vro6cQnrk" role="1B3o_S" />
@@ -1390,7 +1404,7 @@
         <node concept="37vLTG" id="5mr7UHcbrGT" role="3clF46">
           <property role="TrG5h" value="computingTracer" />
           <node concept="3uibUv" id="5mr7UHcbrPY" role="1tU5fm">
-            <ref role="3uigEE" node="24Vro6cQnrj" resolve="ComputingTracer" />
+            <ref role="3uigEE" node="24Vro6cQnrj" resolve="EvaluationTrace" />
           </node>
         </node>
         <node concept="3uibUv" id="5uFPQ7Bwvia" role="3clF45">

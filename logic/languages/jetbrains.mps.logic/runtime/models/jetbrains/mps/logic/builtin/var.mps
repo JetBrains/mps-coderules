@@ -90,6 +90,12 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
@@ -164,7 +170,7 @@
                 <ref role="3cqZAo" node="5uFPQ7C26$b" resolve="BOUND_SYM" />
               </node>
               <node concept="2ShNRf" id="7ISVfSJ1Y4" role="37wK5m">
-                <node concept="HV5vD" id="7ISVfSJ2b9" role="2ShVmc">
+                <node concept="HV5vD" id="6MYr6Jx1HSb" role="2ShVmc">
                   <ref role="HV5vE" to="95zw:7ISVfSJ0DF" resolve="LogicalSolverImpl.Bound" />
                 </node>
               </node>
@@ -220,8 +226,8 @@
       </node>
       <node concept="37vLTG" id="5$WbtTOYsN0" role="3clF46">
         <property role="TrG5h" value="solver" />
-        <node concept="3uibUv" id="5$WbtTOYsQC" role="1tU5fm">
-          <ref role="3uigEE" to="95zw:60B5zVEZP8W" resolve="LogicalSolver" />
+        <node concept="3uibUv" id="6MYr6Jx1HSZ" role="1tU5fm">
+          <ref role="3uigEE" to="qrld:6Kcfpq7AYBh" resolve="Queryable" />
         </node>
       </node>
       <node concept="37vLTG" id="5uFPQ7C28iX" role="3clF46">
@@ -237,6 +243,11 @@
           <ref role="37wK5l" to="rchb:6Kcfpq7B1f7" resolve="AbstractPredicate" />
           <node concept="37vLTw" id="5uFPQ7C28G6" role="37wK5m">
             <ref role="3cqZAo" node="5uFPQ7C28iX" resolve="logical" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6MYr6Jx1IMd" role="3cqZAp">
+          <node concept="3SKdUq" id="6MYr6Jx1IMf" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: WTF solver???" />
           </node>
         </node>
         <node concept="3clFbF" id="7ISVfSJpBS" role="3cqZAp">

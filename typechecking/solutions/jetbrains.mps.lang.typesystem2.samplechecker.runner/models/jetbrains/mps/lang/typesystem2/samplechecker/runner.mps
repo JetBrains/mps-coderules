@@ -493,12 +493,16 @@
             </node>
             <node concept="2ShNRf" id="7FFmDVAIsS7" role="33vP2m">
               <node concept="1pGfFk" id="7FFmDVAIsS8" role="2ShVmc">
-                <ref role="37wK5l" to="95zw:1ggxSI7xM_O" resolve="JchrSolver" />
+                <ref role="37wK5l" to="95zw:6MYr6Jwp7cE" resolve="JchrSolver" />
                 <node concept="1nCR9W" id="7FFmDVAIwUu" role="37wK5m">
                   <property role="1nD$Q0" value="jetbrains.mps.lang.typesystem2.samplechecker.template.ExpressionSolver" />
                   <node concept="3uibUv" id="7FFmDVAIxfB" role="2lIhxL">
                     <ref role="3uigEE" to="95zw:2KSgAgVhoMB" resolve="ExpressionSolver" />
                   </node>
+                </node>
+                <node concept="2YIFZM" id="6MYr6Jwoy_g" role="37wK5m">
+                  <ref role="37wK5l" to="eifs:~ConstraintSystem.get():runtime.ConstraintSystem" resolve="get" />
+                  <ref role="1Pybhc" to="eifs:~ConstraintSystem" resolve="ConstraintSystem" />
                 </node>
               </node>
             </node>

@@ -933,7 +933,7 @@
         <node concept="37vLTG" id="5mr7UHcbrGT" role="3clF46">
           <property role="TrG5h" value="computingTracer" />
           <node concept="3uibUv" id="5mr7UHcbrPY" role="1tU5fm">
-            <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="ComputingTracer" />
+            <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="EvaluationTrace" />
           </node>
         </node>
         <node concept="3uibUv" id="5uFPQ7Bwvia" role="3clF45">
@@ -1124,7 +1124,7 @@
         <property role="TrG5h" value="computingTracer" />
         <node concept="3Tmbuc" id="5mr7UHcbtYG" role="1B3o_S" />
         <node concept="3uibUv" id="5mr7UHcbs2D" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="ComputingTracer" />
+          <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="EvaluationTrace" />
         </node>
       </node>
       <node concept="2tJIrI" id="5mr7UHcbDBk" role="jymVt" />
@@ -1450,7 +1450,7 @@
       <node concept="37vLTG" id="7feMCq_d4AN" role="3clF46">
         <property role="TrG5h" value="computingTracer" />
         <node concept="3uibUv" id="7feMCq_d4MB" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="ComputingTracer" />
+          <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="EvaluationTrace" />
         </node>
       </node>
       <node concept="37vLTG" id="5jPBdKDv53" role="3clF46">
@@ -1936,7 +1936,7 @@
                 </node>
                 <node concept="2OqwBi" id="4xBopTzsMVj" role="33vP2m">
                   <node concept="37vLTw" id="4xBopTzsMSX" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4xBopTzsgb1" resolve="computingSession" />
+                    <ref role="3cqZAo" node="4xBopTzsgb1" resolve="sessionSolver" />
                   </node>
                   <node concept="liA8E" id="4xBopTzsN2B" role="2OqNvi">
                     <ref role="37wK5l" to="qrld:4xBopTzsxxs" resolve="lookupQueryable" />
@@ -2034,7 +2034,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="4xBopTzsgb1" role="3clF46">
-        <property role="TrG5h" value="computingSession" />
+        <property role="TrG5h" value="sessionSolver" />
         <node concept="3uibUv" id="4xBopTzsgXB" role="1tU5fm">
           <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
         </node>
@@ -2087,7 +2087,7 @@
       <property role="TrG5h" value="computingTracer" />
       <node concept="3Tm6S6" id="7feMCq_d56h" role="1B3o_S" />
       <node concept="3uibUv" id="7feMCq_d56j" role="1tU5fm">
-        <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="ComputingTracer" />
+        <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="EvaluationTrace" />
       </node>
     </node>
   </node>

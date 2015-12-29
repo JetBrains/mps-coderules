@@ -2200,7 +2200,7 @@
       <node concept="37vLTG" id="24Vro6cQKgF" role="3clF46">
         <property role="TrG5h" value="cstracer" />
         <node concept="3uibUv" id="qubcdtxFI2" role="1tU5fm">
-          <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="ComputingTracerExt" />
+          <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
         </node>
       </node>
       <node concept="37vLTG" id="6HT7BWBUumb" role="3clF46">
@@ -4370,7 +4370,7 @@
       <ref role="3uigEE" to="iawt:~Tracer" resolve="Tracer" />
     </node>
     <node concept="3uibUv" id="qubcdtxCp8" role="EKbjA">
-      <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="ComputingTracerExt" />
+      <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
     </node>
     <node concept="3clFb_" id="4i4XGQZlmRQ" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -6173,7 +6173,7 @@
                             </node>
                             <node concept="2ShNRf" id="6X5F0Ngi13z" role="33vP2m">
                               <node concept="1pGfFk" id="6X5F0Ngi13$" role="2ShVmc">
-                                <ref role="37wK5l" to="95zw:1ggxSI7xM_O" resolve="JchrSolver" />
+                                <ref role="37wK5l" to="95zw:6MYr6Jwp7cE" resolve="JchrSolver" />
                                 <node concept="2OqwBi" id="6X5F0Ngi13_" role="37wK5m">
                                   <node concept="37vLTw" id="6X5F0Ngi13A" role="2Oq$k0">
                                     <ref role="3cqZAo" node="3Qp4N06byjA" resolve="manifest" />
@@ -6181,6 +6181,10 @@
                                   <node concept="liA8E" id="6X5F0Ngi13B" role="2OqNvi">
                                     <ref role="37wK5l" to="i348:1ggxSI7z1S5" resolve="javaExpressionSolver" />
                                   </node>
+                                </node>
+                                <node concept="2YIFZM" id="6MYr6Jwp1GJ" role="37wK5m">
+                                  <ref role="37wK5l" to="eifs:~ConstraintSystem.get():runtime.ConstraintSystem" resolve="get" />
+                                  <ref role="1Pybhc" to="eifs:~ConstraintSystem" resolve="ConstraintSystem" />
                                 </node>
                               </node>
                             </node>

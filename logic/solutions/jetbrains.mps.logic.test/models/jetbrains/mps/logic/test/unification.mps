@@ -1615,7 +1615,10 @@
             </node>
             <node concept="2ShNRf" id="2tcGHBEiyPg" role="33vP2m">
               <node concept="1pGfFk" id="1ggxSI7$Ov9" role="2ShVmc">
-                <ref role="37wK5l" to="95zw:1ggxSI7xi4I" resolve="JchrSolver" />
+                <ref role="37wK5l" to="95zw:6MYr6Jwp62r" resolve="JchrSolver" />
+                <node concept="37vLTw" id="6MYr6JwotS8" role="37wK5m">
+                  <ref role="3cqZAo" node="71LvIRuyoUF" resolve="constraintSystem" />
+                </node>
               </node>
             </node>
           </node>
@@ -1647,12 +1650,9 @@
           <node concept="37vLTI" id="fHk0tWuoPJ" role="3clFbG">
             <node concept="2ShNRf" id="fHk0tWuoQm" role="37vLTx">
               <node concept="1pGfFk" id="fHk0tWutdI" role="2ShVmc">
-                <ref role="37wK5l" to="95zw:5p8T3QHGKJ7" resolve="UnificationSolverImpl" />
+                <ref role="37wK5l" to="95zw:6MYr6JwUN9q" resolve="JchrUnificationSolverImpl" />
                 <node concept="37vLTw" id="2tcGHBEiyPi" role="37wK5m">
                   <ref role="3cqZAo" node="2tcGHBEiyPf" resolve="symbols" />
-                </node>
-                <node concept="37vLTw" id="fHk0tWutiw" role="37wK5m">
-                  <ref role="3cqZAo" node="71LvIRuyoUF" resolve="constraintSystem" />
                 </node>
                 <node concept="10Nm6u" id="5uFPQ7Cmdko" role="37wK5m" />
               </node>
@@ -3945,8 +3945,8 @@
     <node concept="312cEg" id="3K_0akS$Mx8" role="jymVt">
       <property role="TrG5h" value="eqSolver" />
       <node concept="3Tm6S6" id="3K_0akS$Mx6" role="1B3o_S" />
-      <node concept="3uibUv" id="3K_0akS$Mx7" role="1tU5fm">
-        <ref role="3uigEE" to="95zw:3HJTsBn4ogZ" resolve="EqualsSolverImpl" />
+      <node concept="3uibUv" id="6MYr6JwZKR$" role="1tU5fm">
+        <ref role="3uigEE" to="95zw:3HJTsBn4mEA" resolve="EqualsSolver" />
       </node>
     </node>
     <node concept="2tJIrI" id="3K_0akS$LPO" role="jymVt" />
@@ -4117,7 +4117,7 @@
                 <ref role="3cqZAo" node="3K_0akS$Mx8" resolve="eqSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS$OWu" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBn4V_Q" resolve="tellEq" />
+                <ref role="37wK5l" to="95zw:3HJTsBn4xBY" resolve="tellEq" />
                 <node concept="37vLTw" id="3K_0akS$PlX" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS$OxL" resolve="w1" />
                 </node>
@@ -4435,7 +4435,7 @@
                 <ref role="3cqZAo" node="3K_0akS$Mx8" resolve="eqSolver" />
               </node>
               <node concept="liA8E" id="3K_0akS_pDd" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBn4V_Q" resolve="tellEq" />
+                <ref role="37wK5l" to="95zw:3HJTsBn4xBY" resolve="tellEq" />
                 <node concept="37vLTw" id="3K_0akS_pDe" role="37wK5m">
                   <ref role="3cqZAo" node="3K_0akS_pD5" resolve="w1" />
                 </node>
@@ -4717,7 +4717,10 @@
             </node>
             <node concept="2ShNRf" id="2tcGHBEi$8o" role="33vP2m">
               <node concept="1pGfFk" id="1ggxSI7$PyQ" role="2ShVmc">
-                <ref role="37wK5l" to="95zw:1ggxSI7xi4I" resolve="JchrSolver" />
+                <ref role="37wK5l" to="95zw:6MYr6Jwp62r" resolve="JchrSolver" />
+                <node concept="37vLTw" id="6MYr6Jwovf7" role="37wK5m">
+                  <ref role="3cqZAo" node="3K_0akS$LOh" resolve="constraintSystem" />
+                </node>
               </node>
             </node>
           </node>
@@ -4749,12 +4752,9 @@
           <node concept="37vLTI" id="3K_0akS$LUB" role="3clFbG">
             <node concept="2ShNRf" id="3K_0akS$LUC" role="37vLTx">
               <node concept="1pGfFk" id="3K_0akS$LUD" role="2ShVmc">
-                <ref role="37wK5l" to="95zw:5p8T3QHGKJ7" resolve="UnificationSolverImpl" />
+                <ref role="37wK5l" to="95zw:6MYr6JwUN9q" resolve="JchrUnificationSolverImpl" />
                 <node concept="37vLTw" id="2tcGHBEi$vU" role="37wK5m">
                   <ref role="3cqZAo" node="2tcGHBEi$8n" resolve="symbols" />
-                </node>
-                <node concept="37vLTw" id="3K_0akS$LUE" role="37wK5m">
-                  <ref role="3cqZAo" node="3K_0akS$LOh" resolve="constraintSystem" />
                 </node>
                 <node concept="10Nm6u" id="5uFPQ7CmmD4" role="37wK5m" />
               </node>
@@ -4768,12 +4768,9 @@
           <node concept="37vLTI" id="3K_0akS$Mxi" role="3clFbG">
             <node concept="2ShNRf" id="3K_0akS$Mxm" role="37vLTx">
               <node concept="1pGfFk" id="3K_0akS$Mxn" role="2ShVmc">
-                <ref role="37wK5l" to="95zw:5p8T3QHE69j" resolve="EqualsSolverImpl" />
+                <ref role="37wK5l" to="95zw:6MYr6JwUnSg" resolve="JchrEqualsSolverImpl" />
                 <node concept="37vLTw" id="2tcGHBEi$8q" role="37wK5m">
                   <ref role="3cqZAo" node="2tcGHBEi$8n" resolve="symbols" />
-                </node>
-                <node concept="37vLTw" id="3K_0akS$Mxo" role="37wK5m">
-                  <ref role="3cqZAo" node="3K_0akS$LOh" resolve="constraintSystem" />
                 </node>
               </node>
             </node>
@@ -5021,7 +5018,7 @@
         <node concept="37vLTG" id="5jPBdK_npt" role="3clF46">
           <property role="TrG5h" value="computingTracer" />
           <node concept="3uibUv" id="5jPBdK_npu" role="1tU5fm">
-            <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="ComputingTracer" />
+            <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="EvaluationTrace" />
           </node>
         </node>
         <node concept="3uibUv" id="5jPBdK_npv" role="3clF45">
@@ -5073,7 +5070,11 @@
               </node>
               <node concept="2ShNRf" id="2tcGHBEewJA" role="33vP2m">
                 <node concept="1pGfFk" id="1ggxSI7$OLj" role="2ShVmc">
-                  <ref role="37wK5l" to="95zw:1ggxSI7xi4I" resolve="JchrSolver" />
+                  <ref role="37wK5l" to="95zw:6MYr6Jwp62r" resolve="JchrSolver" />
+                  <node concept="2YIFZM" id="6MYr6Jwourn" role="37wK5m">
+                    <ref role="37wK5l" to="eifs:~ConstraintSystem.get():runtime.ConstraintSystem" resolve="get" />
+                    <ref role="1Pybhc" to="eifs:~ConstraintSystem" resolve="ConstraintSystem" />
+                  </node>
                 </node>
               </node>
             </node>
