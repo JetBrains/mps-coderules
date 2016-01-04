@@ -250,6 +250,15 @@
       <node concept="3clFbS" id="78CwJJcTOB8" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="78CwJJcTNZo" role="jymVt" />
+    <node concept="3clFb_" id="6MYr6JxCg84" role="jymVt">
+      <property role="TrG5h" value="sessionSolver" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="3uibUv" id="6MYr6JxCgaO" role="3clF45">
+        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
+      </node>
+      <node concept="3Tm1VV" id="6MYr6JxCg87" role="1B3o_S" />
+      <node concept="3clFbS" id="6MYr6JxCg88" role="3clF47" />
+    </node>
     <node concept="2tJIrI" id="6X5F0Ngiptw" role="jymVt" />
     <node concept="3clFb_" id="78CwJJcOw2K" role="jymVt">
       <property role="TrG5h" value="constraintSymbols" />
