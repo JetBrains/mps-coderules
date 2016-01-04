@@ -5008,26 +5008,6 @@
       <node concept="3cqZAl" id="1hOy_Afq63M" role="3clF45" />
       <node concept="3Tm1VV" id="1hOy_Afq63N" role="1B3o_S" />
       <node concept="3clFbS" id="1hOy_Afq63O" role="3clF47">
-        <node concept="3clFbJ" id="3_ALDc$xVzc" role="3cqZAp">
-          <node concept="3clFbS" id="3_ALDc$xVzf" role="3clFbx">
-            <node concept="3SKdUt" id="xBj3CwD3WV" role="3cqZAp">
-              <node concept="3SKdUq" id="xBj3CwD3Z_" role="3SKWNk">
-                <property role="3SKdUp" value="TODO: Walk non-branches?" />
-              </node>
-            </node>
-            <node concept="3cpWs6" id="3_ALDc$ybPN" role="3cqZAp" />
-          </node>
-          <node concept="3fqX7Q" id="3_ALDc$xXMP" role="3clFbw">
-            <node concept="2ZW3vV" id="3_ALDc$y748" role="3fr31v">
-              <node concept="3uibUv" id="104EUzGgb$l" role="2ZW6by">
-                <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
-              </node>
-              <node concept="37vLTw" id="3_ALDc$y72n" role="2ZW6bz">
-                <ref role="3cqZAo" node="1hOy_Afq6Lg" resolve="tp" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="47nvOnTVVsM" role="3cqZAp">
           <node concept="2OqwBi" id="47nvOnTVXoy" role="3clFbG">
             <node concept="37vLTw" id="47nvOnTVVsK" role="2Oq$k0">
