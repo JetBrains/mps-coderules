@@ -15,7 +15,7 @@
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
-    <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.rule)" />
+    <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.predicate)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
   </imports>
   <registry>
@@ -786,7 +786,7 @@
     <node concept="2tJIrI" id="qubcdtxJFT" role="jymVt" />
     <node concept="3Tm1VV" id="qubcdtxBiS" role="1B3o_S" />
     <node concept="3uibUv" id="qubcdtxBjm" role="3HQHJm">
-      <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="ComputingTracer" />
+      <ref role="3uigEE" to="qrld:24Vro6cQnrj" resolve="EvaluationTrace" />
     </node>
   </node>
   <node concept="3HP615" id="46l0wJhtOD_">
