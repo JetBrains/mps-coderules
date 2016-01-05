@@ -10,42 +10,45 @@ import jetbrains.mps.logic.reactor.program.*
 import java.util.*
 import java.util.Collections.*
 
+class MemProgramBuilder(val sessionSolver: SessionSolver) : ProgramBuilder() {
 
-class MemProgram(val name: String, val sessionSolver: SessionSolver) : Program() {
+    private val rules = ArrayList<Rule>()
 
-    private val myRules = ArrayList<Rule>()
+    private val registry = ConstraintRegistry(sessionSolver)
 
-    private val myRegistry = ConstraintRegistry(sessionSolver)
+    override fun program(name: String, sessionSolver: SessionSolver): Program = MemProgram(name, ArrayList(rules), sessionSolver, registry)
+
+    override fun addRule(rule: Rule) {
+        registry.update(rule)
+        rules.add(rule)
+    }
+
+    override fun constraint(symbol: ConstraintSymbol, vararg args: Any?): Constraint = TODO()
+
+    override fun predicate(symbol: PredicateSymbol, vararg args: Any?): Predicate = TODO()
+
+}
+
+class MemProgram(val name: String, val myRules : List<Rule>, val sessionSolver: SessionSolver, val registry: ConstraintRegistry) : Program() {
 
     override fun name(): String = name
 
     override fun constraintSymbols(): Iterable<ConstraintSymbol> =
-            myRegistry.constraintSymbols()
+        registry.constraintSymbols()
 
     override fun constraintArgumentTypes(constraintSymbol: ConstraintSymbol): List<Class<*>> =
-            myRegistry.constraintArgTypes(constraintSymbol)
+        registry.constraintArgTypes(constraintSymbol)
 
     override fun predicateSymbols(): Iterable<PredicateSymbol> =
-            myRegistry.predicateSymbols()
+        registry.predicateSymbols()
 
-    fun sessionSolver(): SessionSolver = sessionSolver
-
-    override fun addRule(rule: Rule) {
-        myRegistry.update(rule)
-        myRules.add(rule)
-    }
-
-    override fun addRules(rules: Collection<Rule>) {
-        for (r in rules) {
-            myRegistry.update(r)
-        }
-        myRules.addAll(rules)
-    }
+    override fun sessionSolver(): SessionSolver = sessionSolver
 
     override fun rules(): Iterable<Rule> = unmodifiableCollection(myRules)
 }
 
-private class ConstraintRegistry(val sessionSolver: SessionSolver) {
+
+class ConstraintRegistry(val sessionSolver: SessionSolver) {
 
     private val myConstraintArgTypes = HashMap<ConstraintSymbol, List<Class<*>>>().withDefault { Collections.emptyList() }
 
@@ -102,3 +105,4 @@ private class ConstraintRegistry(val sessionSolver: SessionSolver) {
     fun solverClass(symbol: PredicateSymbol): Class<out Queryable> =
             myPredicateSolvers.getOrImplicitDefault(symbol)
 }
+

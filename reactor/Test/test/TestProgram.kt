@@ -1,10 +1,11 @@
 import jetbrains.mps.logic.reactor.core.MemEvaluationSession
 import jetbrains.mps.logic.reactor.core.MemProgram
+import jetbrains.mps.logic.reactor.core.MemProgramBuilder
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import org.junit.*
 import org.junit.Assert.*
@@ -24,10 +25,11 @@ class TestProgram {
         }
     }
 
-    fun ProgramBuilder.session(name: String): EvaluationSession {
-        val planningSession = MemProgram(name, MemSessionSolver(env.expressionSolver, env.equalsSolver))
-        planningSession.addRules(rules)
-        return EvaluationSession.newSession(planningSession).
+    fun Builder.session(name: String): EvaluationSession {
+        val sessionSolver = MemSessionSolver(env.expressionSolver, env.equalsSolver)
+        val programBuilder = MemProgramBuilder(sessionSolver)
+        rules.forEach { r -> programBuilder.addRule(r) }
+        return EvaluationSession.newSession(programBuilder.program(name, sessionSolver)).
             withPredicates(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3).
             withParam("main", occurrence("main")).start()
     }

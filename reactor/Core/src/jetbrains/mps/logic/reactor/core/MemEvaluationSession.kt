@@ -3,7 +3,7 @@ package jetbrains.mps.logic.reactor.core
 import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.List as PList
 import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
-import jetbrains.mps.logic.reactor.evaluation.ComputingTracer
+import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
@@ -23,15 +23,15 @@ class MemEvaluationSession : EvaluationSession {
 
         val myPredicateSymbols = ArrayList<PredicateSymbol>()
         val myParameters = HashMap<String, Any?>()
-        var myComputingTracer: ComputingTracer = ComputingTracer.NULL
+        var myEvaluationTrace: EvaluationTrace = EvaluationTrace.NULL
 
         override fun withPredicates(vararg predicateSymbols: PredicateSymbol): EvaluationSession.Config {
             myPredicateSymbols.addAll(Arrays.asList(* predicateSymbols))
             return this
         }
 
-        override fun withTrace(computingTracer: ComputingTracer): EvaluationSession.Config {
-            myComputingTracer = computingTracer
+        override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
+            myEvaluationTrace = computingTracer
             return this
         }
 
@@ -46,7 +46,7 @@ class MemEvaluationSession : EvaluationSession {
 
             val predicateSymbols = myPredicateSymbols.toArray<PredicateSymbol>(arrayOfNulls(myPredicateSymbols.size))
             val sessionSolver = program.sessionSolver()
-            sessionSolver.init(myComputingTracer, * predicateSymbols)
+            sessionSolver.init(myEvaluationTrace, * predicateSymbols)
 
             session = MemEvaluationSession(program)
             ourBackend.ourSession.set(session)

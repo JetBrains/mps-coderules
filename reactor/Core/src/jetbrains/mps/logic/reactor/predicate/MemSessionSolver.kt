@@ -1,16 +1,16 @@
 package jetbrains.mps.logic.reactor.predicate
 
-import jetbrains.mps.logic.reactor.evaluation.ComputingTracer
-import jetbrains.mps.logic.reactor.evaluation.JavaPredicateSymbol
+import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 
 /**
  * @author Fedor Isakov
  */
 
-class MemSessionSolver(val expressionSolver: Queryable, val equalsSolver: Queryable) : SessionSolver() {
+open class MemSessionSolver(val expressionSolver: Queryable, val equalsSolver: Queryable) : SessionSolver() {
 
     override fun solverClass(predicateSymbol: PredicateSymbol): Class<out Queryable> {
         return when (predicateSymbol) {
@@ -20,7 +20,7 @@ class MemSessionSolver(val expressionSolver: Queryable, val equalsSolver: Querya
         }
     }
 
-    override fun registerSymbol(predicateSymbol: PredicateSymbol, computingTracer: ComputingTracer?) {
+    override fun registerSymbol(predicateSymbol: PredicateSymbol, computingTracer: EvaluationTrace?) {
         when (predicateSymbol) {
             is JavaPredicateSymbol         -> registerSolver(predicateSymbol, expressionSolver)
             PredicateSymbol("equals", 2)   -> registerSolver(predicateSymbol, equalsSolver)
@@ -28,4 +28,7 @@ class MemSessionSolver(val expressionSolver: Queryable, val equalsSolver: Querya
         }
     }
 
+    override fun queueIfBusy(runnable: Runnable): Boolean = false
+
+    override fun fail(message: String) = throw IllegalStateException (message)
 }

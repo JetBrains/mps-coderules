@@ -1,4 +1,5 @@
 import jetbrains.mps.logic.reactor.core.MemProgram
+import jetbrains.mps.logic.reactor.core.MemProgramBuilder
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.*
@@ -21,15 +22,12 @@ class TestProgramBuilder {
         override fun tell(symbol: Symbol?, vararg args: Any?) = TODO()
     }
 
+    val sessionSolver = MemSessionSolver(dummySolver, dummySolver)
+
     @Before fun beforeTest() {
-        program = MemProgram("test", MemSessionSolver(dummySolver, dummySolver))
+        builder = MemProgramBuilder(sessionSolver)
     }
-
-    lateinit var program: Program
-
-    @Test fun empty() {
-        program.addRules(ArrayList())
-    }
+    lateinit var builder: ProgramBuilder
 
     @Test(expected = InvalidRuleException::class)
     fun emptyBody() {
@@ -39,8 +37,8 @@ class TestProgramBuilder {
                     constraint("bar")
                 ))).run {
 
-            program.addRules(rules)
-            assertEquals(program.rules().count(), 1)
+            builder.addRules(rules)
+            assertEquals(builder.program("test", sessionSolver).rules().count(), 1)
         }
     }
 
@@ -65,8 +63,8 @@ class TestProgramBuilder {
                     constraint("blah")
                 ))).run {
 
-            program.addRules(rules)
-            assertEquals(program.rules().count(), 2)
+            builder.addRules(rules)
+            assertEquals(builder.program("test", sessionSolver).rules().count(), 2)
         }
     }
 
@@ -81,7 +79,7 @@ class TestProgramBuilder {
                     constraint("bar", "1")
                 ))).run {
 
-            program.addRules(rules)
+            builder.addRules(rules)
         }
     }
 }

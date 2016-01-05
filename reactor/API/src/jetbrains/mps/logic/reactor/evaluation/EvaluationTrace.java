@@ -5,7 +5,7 @@ package jetbrains.mps.logic.reactor.evaluation;
 import jetbrains.mps.logic.reactor.program.PredicateSymbol;
 import jetbrains.mps.logic.reactor.program.Symbol;
 
-public interface ComputingTracer {
+public interface EvaluationTrace {
 
   public void askSuccess(PredicateSymbol predicateSymbol, Object... args);
 
@@ -17,7 +17,7 @@ public interface ComputingTracer {
 
   public void reportFailure(String message);
 
-  public static final ComputingTracer NULL = new ComputingTracer() {
+  public static final EvaluationTrace NULL = new EvaluationTrace() {
     public void askSuccess(PredicateSymbol predicateSymbol, Object... args) {
     }
     public void askFailure(PredicateSymbol predicateSymbol, Object... args) {

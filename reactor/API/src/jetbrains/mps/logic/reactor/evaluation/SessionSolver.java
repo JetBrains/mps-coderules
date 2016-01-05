@@ -16,7 +16,7 @@ public abstract class SessionSolver implements Instructible, Queryable {
     registerSymbols(predicateSymbols);
   }
 
-  public void init(ComputingTracer computingTracer, PredicateSymbol... predicateSymbols) {
+  public void init(EvaluationTrace computingTracer, PredicateSymbol... predicateSymbols) {
     tracer = computingTracer;
     init(predicateSymbols);
   }
@@ -33,6 +33,10 @@ public abstract class SessionSolver implements Instructible, Queryable {
     handler(symbol).tell(symbol, arg);
   }
 
+  public abstract boolean queueIfBusy(Runnable runnable);
+
+  public abstract void fail(String message);
+
   public Queryable lookupQueryable(Class<?> clazz) {
     for (Map.Entry<PredicateSymbol, Queryable> e : solvers.entrySet()) {
       Queryable queryable = e.getValue();
@@ -45,7 +49,7 @@ public abstract class SessionSolver implements Instructible, Queryable {
 
   public abstract Class<? extends Queryable> solverClass(PredicateSymbol predicateSymbol);
 
-  protected abstract void registerSymbol(PredicateSymbol predicateSymbol, ComputingTracer computingTracer);
+  protected abstract void registerSymbol(PredicateSymbol predicateSymbol, EvaluationTrace computingTracer);
 
   protected void registerSolver(PredicateSymbol constraint, Queryable queryable) {
     solvers.put(constraint, queryable);
@@ -69,5 +73,5 @@ public abstract class SessionSolver implements Instructible, Queryable {
   }
 
   private Map<PredicateSymbol, Queryable> solvers = new HashMap<PredicateSymbol, Queryable>();
-  private ComputingTracer tracer = ComputingTracer.NULL;
+  private EvaluationTrace tracer = EvaluationTrace.NULL;
 }

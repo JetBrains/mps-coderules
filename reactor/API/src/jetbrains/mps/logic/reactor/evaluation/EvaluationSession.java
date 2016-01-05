@@ -29,7 +29,7 @@ public abstract class EvaluationSession {
 
     public abstract EvaluationSession.Config withPredicates(PredicateSymbol... predicateSymbols);
 
-    public abstract EvaluationSession.Config withTrace(ComputingTracer computingTracer);
+    public abstract EvaluationSession.Config withTrace(EvaluationTrace computingTracer);
 
     public abstract EvaluationSession.Config withParam(String key, Object param);
 

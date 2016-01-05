@@ -9,7 +9,11 @@ import java.util.*
  */
 
 
-class ProgramBuilder(val env: Environment, val rules: List<Rule>) {
+fun ProgramBuilder.addRules(rules: List<Rule>) {
+    rules.forEach { r -> addRule(r) }
+}
+
+class Builder(val env: Environment, val rules: List<Rule>) {
 }
 
 class Environment() {
@@ -17,7 +21,7 @@ class Environment() {
     val expressionSolver = ExpressionSolver()
 }
 
-fun program(vararg ruleBuilders : Environment.() -> Rule): ProgramBuilder {
+fun program(vararg ruleBuilders : Environment.() -> Rule): Builder {
     val env = Environment()
     val rules = ArrayList<Rule>()
     with (env) {
@@ -25,7 +29,7 @@ fun program(vararg ruleBuilders : Environment.() -> Rule): ProgramBuilder {
             rules.add(rb())
         }
     }
-    return ProgramBuilder(env, rules)
+    return Builder(env, rules)
 }
 
 fun rule(tag: String, vararg component:RB.() -> Unit): Environment.() -> Rule = {

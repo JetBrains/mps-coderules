@@ -71,6 +71,46 @@
       <unit id="2966490507992442162" at="9,0,42,0" name="jetbrains.mps.logic.reactor.logical.NamingContext" />
     </file>
   </root>
+  <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/7835819612255545383">
+    <file name="SolverLogical.java">
+      <node id="4650394911992714457" at="8,0,9,0" concept="3" trace="findRoot#()Ljetbrains/mps/logic/reactor/logical/SolverLogical;" />
+      <node id="7835819612255550928" at="10,0,11,0" concept="3" trace="setParent#(Ljetbrains/mps/logic/reactor/logical/SolverLogical;)V" />
+      <node id="7835819612255551865" at="12,0,13,0" concept="3" trace="setValue#(null)V" />
+      <node id="7835819612255552356" at="14,0,15,0" concept="3" trace="rank#()I" />
+      <node id="7835819612255553266" at="16,0,17,0" concept="3" trace="incRank#()V" />
+      <node id="7835819612255553702" at="18,0,19,0" concept="3" trace="mergeObservers#(Ljetbrains/mps/logic/reactor/logical/SolverLogical;)V" />
+      <scope id="4650394911992714457" at="8,0,9,0" />
+      <scope id="7835819612255550928" at="10,0,11,0">
+        <var name="parent" id="7835819612255551146" />
+      </scope>
+      <scope id="7835819612255551865" at="12,0,13,0">
+        <var name="newValue" id="7835819612255552078" />
+      </scope>
+      <scope id="7835819612255552356" at="14,0,15,0" />
+      <scope id="7835819612255553266" at="16,0,17,0" />
+      <scope id="7835819612255553702" at="18,0,19,0">
+        <var name="mergeFrom" id="7835819612255553981" />
+      </scope>
+      <unit id="7835819612255545383" at="6,0,21,0" name="jetbrains.mps.logic.reactor.logical.SolverLogical" />
+    </file>
+  </root>
+  <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/7835819612256812298">
+    <file name="LogicalUnification.java">
+      <node id="7835819612256815740" at="9,0,10,0" concept="3" trace="asRoot#(null)null" />
+      <node id="7835819612256819308" at="11,0,12,0" concept="3" trace="logical#(null)Ljetbrains/mps/logic/reactor/logical/SolverLogical;" />
+      <node id="7835819612261255414" at="13,0,14,0" concept="3" trace="isLogical#(Ljetbrains/mps/unification/Term;)Z" />
+      <scope id="7835819612256815740" at="9,0,10,0">
+        <var name="term" id="7835819612256818579" />
+      </scope>
+      <scope id="7835819612256819308" at="11,0,12,0">
+        <var name="var" id="7835819612256826805" />
+      </scope>
+      <scope id="7835819612261255414" at="13,0,14,0">
+        <var name="term" id="7835819612261256408" />
+      </scope>
+      <unit id="7835819612256812298" at="7,0,16,0" name="jetbrains.mps.logic.reactor.logical.LogicalUnification" />
+    </file>
+  </root>
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/8897567155595965539">
     <file name="LogicalPattern.java">
       <node id="8897567155595965722" at="8,0,9,0" concept="3" trace="name#()Ljava/lang/String;" />
