@@ -51,7 +51,12 @@ class MemEvaluationSession : EvaluationSession {
             session = MemEvaluationSession(program)
             ourBackend.ourSession.set(session)
 
-            session.launch(myParameters["main"] as ConstraintOccurrence)
+            try {
+                session.launch(myParameters["main"] as ConstraintOccurrence)
+            }
+            finally {
+                ourBackend.ourSession.set(null)
+            }
 
             return session
         }
