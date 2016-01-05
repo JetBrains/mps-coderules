@@ -272,16 +272,16 @@
       <node concept="2ShNRf" id="5mr7UHcbowK" role="33vP2m">
         <node concept="3g6Rrh" id="5mr7UHcboy8" role="2ShVmc">
           <node concept="10M0yZ" id="5mr7UHcboyR" role="3g7hyw">
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
-            <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:5uFPQ7C29mw" resolve="UNI_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboyX" role="3g7hyw">
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
-            <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:5uFPQ7C23RV" resolve="EQ_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboz3" role="3g7hyw">
-            <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboz9" role="3g7hyw">
             <ref role="3cqZAo" to="xq5w:5uFPQ7C26$b" resolve="BOUND_SYM" />
@@ -483,11 +483,11 @@
             </node>
             <node concept="2ShNRf" id="7FFmDVAIsS7" role="33vP2m">
               <node concept="1pGfFk" id="7FFmDVAIsS8" role="2ShVmc">
-                <ref role="37wK5l" to="95zw:6MYr6Jwp7cE" resolve="JchrSolver" />
+                <ref role="37wK5l" to="95zw:6MYr6Jwp7cE" resolve="JchrSessionSolver" />
                 <node concept="1nCR9W" id="7FFmDVAIwUu" role="37wK5m">
                   <property role="1nD$Q0" value="jetbrains.mps.lang.typesystem2.samplechecker.template.ExpressionSolver" />
                   <node concept="3uibUv" id="7FFmDVAIxfB" role="2lIhxL">
-                    <ref role="3uigEE" to="95zw:2KSgAgVhoMB" resolve="ExpressionSolver" />
+                    <ref role="3uigEE" to="95zw:2KSgAgVhoMB" resolve="JchrExpressionSolver" />
                   </node>
                 </node>
                 <node concept="2YIFZM" id="6MYr6Jwoy_g" role="37wK5m">

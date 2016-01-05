@@ -21,6 +21,7 @@
     <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
     <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.predicate)" />
+    <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.logic.atom/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -112,7 +113,9 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ" />
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
+        <child id="1214996921760" name="bound" index="3ztrMU" />
+      </concept>
       <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
         <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
       </concept>
@@ -262,8 +265,8 @@
         <node concept="2B6LJw" id="6infEALAbJg" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6infEALACqu" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
           </node>
         </node>
       </node>
@@ -289,8 +292,8 @@
         <node concept="2B6LJw" id="6infEALADHN" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6infEALADHO" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
           </node>
         </node>
       </node>
@@ -313,8 +316,8 @@
         <node concept="2B6LJw" id="6infEALAc0z" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6infEALACVN" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
           </node>
         </node>
       </node>
@@ -340,8 +343,8 @@
         <node concept="2B6LJw" id="6infEALAFgU" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6infEALAFgV" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
           </node>
         </node>
       </node>
@@ -358,8 +361,8 @@
             <node concept="2B6LJw" id="6infEALAaAW" role="2B76xF">
               <ref role="2B6OnR" to="f8dg:~JCHR_Constraint.identifier()" resolve="identifier" />
               <node concept="10M0yZ" id="6infEALAaAX" role="2B70Vg">
-                <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-                <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+                <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+                <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
               </node>
             </node>
             <node concept="2B6LJw" id="6infEALAaAY" role="2B76xF">
@@ -409,8 +412,8 @@
         <node concept="2B6LJw" id="4OsiK2BAnsG" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="4OsiK2BALzP" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -439,8 +442,8 @@
         <node concept="2B6LJw" id="4U_yxogCcGR" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="4U_yxogCcGS" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -469,8 +472,8 @@
         <node concept="2B6LJw" id="4U_yxogCdk5" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="4U_yxogCdk6" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -499,8 +502,8 @@
         <node concept="2B6LJw" id="4U_yxogCeA3" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="4U_yxogCeA4" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -529,8 +532,8 @@
         <node concept="2B6LJw" id="4OsiK2BAoUv" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="4OsiK2BALAQ" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -559,8 +562,8 @@
         <node concept="2B6LJw" id="4U_yxogC9UQ" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="4U_yxogC9UR" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -589,8 +592,8 @@
         <node concept="2B6LJw" id="4U_yxogCan6" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="4U_yxogCan7" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -619,8 +622,8 @@
         <node concept="2B6LJw" id="4U_yxogCbuM" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="4U_yxogCbuN" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -636,8 +639,8 @@
             <node concept="2B6LJw" id="6njqcfQWwea" role="2B76xF">
               <ref role="2B6OnR" to="f8dg:~JCHR_Constraint.identifier()" resolve="identifier" />
               <node concept="10M0yZ" id="4OsiK2BALdr" role="2B70Vg">
-                <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-                <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+                <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+                <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
               </node>
             </node>
             <node concept="2B6LJw" id="6njqcfQWwks" role="2B76xF">
@@ -649,8 +652,8 @@
             <node concept="2B6LJw" id="35Lj3Tj3LGP" role="2B76xF">
               <ref role="2B6OnR" to="f8dg:~JCHR_Constraint.infix()" resolve="infix" />
               <node concept="10M0yZ" id="5lJXKvHNj" role="2B70Vg">
-                <ref role="3cqZAo" to="oy3s:2GO7tyJVob6" resolve="INFIX_UNI" />
-                <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+                <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+                <ref role="3cqZAo" to="i8dg:2GO7tyJVob6" resolve="INFIX_UNI" />
               </node>
             </node>
             <node concept="2B6LJw" id="6njqcfQWwzK" role="2B76xF">
@@ -694,8 +697,8 @@
         <node concept="2B6LJw" id="3HJTsBn4xBt" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="3HJTsBn4EEH" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -724,8 +727,8 @@
         <node concept="2B6LJw" id="3HJTsBn4xBF" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="3HJTsBn4F8f" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -754,8 +757,8 @@
         <node concept="2B6LJw" id="3HJTsBn4xBT" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="3HJTsBn4Fuw" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -784,8 +787,8 @@
         <node concept="2B6LJw" id="3HJTsBn4xC7" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="3HJTsBn4FOM" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -814,8 +817,8 @@
         <node concept="2B6LJw" id="3HJTsBn4xCl" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="3HJTsBn4Gb3" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -844,8 +847,8 @@
         <node concept="2B6LJw" id="3HJTsBn4xCz" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="3HJTsBn4Gxk" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -874,8 +877,8 @@
         <node concept="2B6LJw" id="3HJTsBn4xCL" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="3HJTsBn4GR_" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -904,8 +907,8 @@
         <node concept="2B6LJw" id="3HJTsBn4xCZ" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="3HJTsBn4HdQ" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -922,8 +925,8 @@
             <node concept="2B6LJw" id="3HJTsBn4BXf" role="2B76xF">
               <ref role="2B6OnR" to="f8dg:~JCHR_Constraint.identifier()" resolve="identifier" />
               <node concept="10M0yZ" id="3HJTsBn4BXg" role="2B70Vg">
-                <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-                <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+                <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+                <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
               </node>
             </node>
             <node concept="2B6LJw" id="3HJTsBn4BXh" role="2B76xF">
@@ -935,8 +938,8 @@
             <node concept="2B6LJw" id="3HJTsBn4BXj" role="2B76xF">
               <ref role="2B6OnR" to="f8dg:~JCHR_Constraint.infix()" resolve="infix" />
               <node concept="10M0yZ" id="3HJTsBn4BXk" role="2B70Vg">
-                <ref role="3cqZAo" to="oy3s:3HJTsBn4kQn" resolve="INFIX_EQ" />
-                <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+                <ref role="3cqZAo" to="i8dg:3HJTsBn4kQn" resolve="INFIX_EQ" />
+                <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
               </node>
             </node>
             <node concept="2B6LJw" id="3HJTsBn4BXl" role="2B76xF">
@@ -2312,8 +2315,8 @@
           </node>
           <node concept="2OqwBi" id="7ISVfSIJwN" role="3clFbw">
             <node concept="10M0yZ" id="7ISVfSIJ9U" role="2Oq$k0">
-              <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
-              <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+              <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+              <ref role="3cqZAo" to="i8dg:5uFPQ7C29mw" resolve="UNI_SYM" />
             </node>
             <node concept="liA8E" id="7ISVfSIJyd" role="2OqNvi">
               <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
@@ -2325,8 +2328,8 @@
           <node concept="3eNFk2" id="7ISVfSIJml" role="3eNLev">
             <node concept="2OqwBi" id="7ISVfSIJ_2" role="3eO9$A">
               <node concept="10M0yZ" id="7ISVfSIJrd" role="2Oq$k0">
-                <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
-                <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+                <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+                <ref role="3cqZAo" to="i8dg:5uFPQ7C23RV" resolve="EQ_SYM" />
               </node>
               <node concept="liA8E" id="7ISVfSIJAs" role="2OqNvi">
                 <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
@@ -2364,8 +2367,8 @@
           <node concept="3eNFk2" id="7ISVfSIJuG" role="3eNLev">
             <node concept="2OqwBi" id="7ISVfSIJGK" role="3eO9$A">
               <node concept="10M0yZ" id="7ISVfSIJCI" role="2Oq$k0">
-                <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
-                <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+                <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
+                <ref role="3cqZAo" to="i8dg:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
               </node>
               <node concept="liA8E" id="7ISVfSIJIa" role="2OqNvi">
                 <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
@@ -2588,8 +2591,8 @@
           </node>
           <node concept="2OqwBi" id="2tcGHBEvbN3" role="3clFbw">
             <node concept="10M0yZ" id="2tcGHBEvbN4" role="2Oq$k0">
-              <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
-              <ref role="3cqZAo" to="oy3s:5uFPQ7C29mw" resolve="UNI_SYM" />
+              <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+              <ref role="3cqZAo" to="i8dg:5uFPQ7C29mw" resolve="UNI_SYM" />
             </node>
             <node concept="liA8E" id="2tcGHBEvbN5" role="2OqNvi">
               <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
@@ -2601,8 +2604,8 @@
           <node concept="3eNFk2" id="2tcGHBEvbN7" role="3eNLev">
             <node concept="2OqwBi" id="2tcGHBEvbN8" role="3eO9$A">
               <node concept="10M0yZ" id="2tcGHBEvbN9" role="2Oq$k0">
-                <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
-                <ref role="3cqZAo" to="oy3s:5uFPQ7C23RV" resolve="EQ_SYM" />
+                <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+                <ref role="3cqZAo" to="i8dg:5uFPQ7C23RV" resolve="EQ_SYM" />
               </node>
               <node concept="liA8E" id="2tcGHBEvbNa" role="2OqNvi">
                 <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
@@ -2623,8 +2626,8 @@
           <node concept="3eNFk2" id="2tcGHBEvbNo" role="3eNLev">
             <node concept="2OqwBi" id="2tcGHBEvbNp" role="3eO9$A">
               <node concept="10M0yZ" id="2tcGHBEvbNq" role="2Oq$k0">
-                <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
-                <ref role="3cqZAo" to="oy3s:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
+                <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
+                <ref role="3cqZAo" to="i8dg:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
               </node>
               <node concept="liA8E" id="2tcGHBEvbNr" role="2OqNvi">
                 <ref role="37wK5l" to="rchb:54i3Fxd17bK" resolve="equals" />
@@ -3552,8 +3555,8 @@
         <node concept="2B6LJw" id="6MYr6JwQTfn" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwQTfo" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -3597,8 +3600,8 @@
         <node concept="2B6LJw" id="6MYr6JwQTfz" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwQTf$" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -3650,8 +3653,8 @@
         <node concept="2B6LJw" id="6MYr6JwQTfJ" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwQTfK" role="2B70Vg">
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -3703,8 +3706,8 @@
         <node concept="2B6LJw" id="6MYr6JwQTfV" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwQTfW" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -3764,8 +3767,8 @@
         <node concept="2B6LJw" id="6MYr6JwR2u5" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwR2u6" role="2B70Vg">
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -3809,8 +3812,8 @@
         <node concept="2B6LJw" id="6MYr6JwR2uj" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwR2uk" role="2B70Vg">
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -3862,8 +3865,8 @@
         <node concept="2B6LJw" id="6MYr6JwR2ux" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwR2uy" role="2B70Vg">
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -3915,8 +3918,8 @@
         <node concept="2B6LJw" id="6MYr6JwR2uJ" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwR2uK" role="2B70Vg">
-            <ref role="1PxDUh" to="oy3s:3HJTsBn4kk_" resolve="EqualsPredicate" />
-            <ref role="3cqZAo" to="oy3s:3HJTsBn4kQi" resolve="EQ" />
+            <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:3HJTsBn4kQi" resolve="EQ" />
           </node>
         </node>
       </node>
@@ -3985,6 +3988,11 @@
       <node concept="3clFbS" id="6MYr6JwUN9u" role="3clF47">
         <node concept="XkiVB" id="6MYr6JwUNyc" role="3cqZAp">
           <ref role="37wK5l" to="i8dg:5p8T3QHGKJ7" resolve="UnificationSolver" />
+          <node concept="2ShNRf" id="6MYr6JwBJ5i" role="37wK5m">
+            <node concept="HV5vD" id="3FIATxbQj1_" role="2ShVmc">
+              <ref role="HV5vE" node="3FIATxbQg8C" resolve="JchrLogicalUnification" />
+            </node>
+          </node>
           <node concept="37vLTw" id="6MYr6JwUNLn" role="37wK5m">
             <ref role="3cqZAo" node="6MYr6JwUNaP" resolve="sessionSolver" />
           </node>
@@ -4017,8 +4025,8 @@
         <node concept="2B6LJw" id="6MYr6JwItZT" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwItZU" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -4062,8 +4070,8 @@
         <node concept="2B6LJw" id="6MYr6JwIu05" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwIu06" role="2B70Vg">
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -4107,8 +4115,8 @@
         <node concept="2B6LJw" id="6MYr6JwIu0h" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwIu0i" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -4152,8 +4160,8 @@
         <node concept="2B6LJw" id="6MYr6JwIu0t" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwIu0u" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -4197,8 +4205,8 @@
         <node concept="2B6LJw" id="6MYr6JwUNOk" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwUNOl" role="2B70Vg">
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -4242,8 +4250,8 @@
         <node concept="2B6LJw" id="6MYr6JwUNOJ" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwUNOK" role="2B70Vg">
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -4287,8 +4295,8 @@
         <node concept="2B6LJw" id="6MYr6JwUNPa" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwUNPb" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -4332,8 +4340,8 @@
         <node concept="2B6LJw" id="6MYr6JwUNP_" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwUNPA" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:2GO7tyJVob2" resolve="UNI" />
-            <ref role="1PxDUh" to="oy3s:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:2GO7tyJVob2" resolve="UNI" />
           </node>
         </node>
       </node>
@@ -4401,8 +4409,8 @@
         <node concept="2B6LJw" id="6MYr6JwZYHm" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwZYHn" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
           </node>
         </node>
       </node>
@@ -4437,8 +4445,8 @@
         <node concept="2B6LJw" id="6MYr6JwZYHy" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Tells.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwZYHz" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
           </node>
         </node>
       </node>
@@ -4470,8 +4478,8 @@
         <node concept="2B6LJw" id="6MYr6JwZYHH" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwZYHI" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
           </node>
         </node>
       </node>
@@ -4506,8 +4514,8 @@
         <node concept="2B6LJw" id="6MYr6JwZYHV" role="2B76xF">
           <ref role="2B6OnR" to="f8dg:~JCHR_Asks.value()" resolve="value" />
           <node concept="10M0yZ" id="6MYr6JwZYHW" role="2B70Vg">
-            <ref role="3cqZAo" to="oy3s:6infEALAgS7" resolve="ASSERT" />
-            <ref role="1PxDUh" to="oy3s:6infEALAfer" resolve="AssertPredicate" />
+            <ref role="3cqZAo" to="i8dg:6infEALAgS7" resolve="ASSERT" />
+            <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
           </node>
         </node>
       </node>
@@ -4635,6 +4643,135 @@
     </node>
     <node concept="2tJIrI" id="6MYr6Jx1DXJ" role="jymVt" />
     <node concept="3Tm1VV" id="6MYr6Jx1C5x" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="3FIATxbQg8C">
+    <property role="TrG5h" value="JchrLogicalUnification" />
+    <node concept="2tJIrI" id="3FIATxbQgKW" role="jymVt" />
+    <node concept="3clFb_" id="3FIATxbQg$x" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="asRoot" />
+      <node concept="37vLTG" id="3FIATxbQg$y" role="3clF46">
+        <property role="TrG5h" value="term" />
+        <node concept="16syzq" id="3FIATxbQg$z" role="1tU5fm">
+          <ref role="16sUi3" node="3FIATxbQg$A" resolve="TERM" />
+        </node>
+      </node>
+      <node concept="16syzq" id="3FIATxbQg$$" role="3clF45">
+        <ref role="16sUi3" node="3FIATxbQg$A" resolve="TERM" />
+      </node>
+      <node concept="3Tm1VV" id="3FIATxbQg$_" role="1B3o_S" />
+      <node concept="16euLQ" id="3FIATxbQg$A" role="16eVyc">
+        <property role="TrG5h" value="TERM" />
+        <node concept="3uibUv" id="3FIATxbQg$B" role="3ztrMU">
+          <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3FIATxbQg$C" role="3clF47">
+        <node concept="3clFbF" id="3FIATxbQg$D" role="3cqZAp">
+          <node concept="10QFUN" id="3FIATxbQg$E" role="3clFbG">
+            <node concept="2OqwBi" id="3FIATxbQg$F" role="10QFUP">
+              <node concept="1eOMI4" id="3FIATxbQg$G" role="2Oq$k0">
+                <node concept="10QFUN" id="3FIATxbQg$H" role="1eOMHV">
+                  <node concept="37vLTw" id="3FIATxbQg$I" role="10QFUP">
+                    <ref role="3cqZAo" node="3FIATxbQg$y" resolve="term" />
+                  </node>
+                  <node concept="3uibUv" id="3FIATxbQg$J" role="10QFUM">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="3FIATxbQg$K" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:2QE4RCGndD7" resolve="asRoot" />
+              </node>
+            </node>
+            <node concept="16syzq" id="3FIATxbQg$L" role="10QFUM">
+              <ref role="16sUi3" node="3FIATxbQg$A" resolve="TERM" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3FIATxbQg$M" role="jymVt" />
+    <node concept="3clFb_" id="3FIATxbQg$N" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="logical" />
+      <node concept="37vLTG" id="3FIATxbQg$O" role="3clF46">
+        <property role="TrG5h" value="var" />
+        <node concept="16syzq" id="3FIATxbQg$P" role="1tU5fm">
+          <ref role="16sUi3" node="3FIATxbQg$T" resolve="TERM" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="3FIATxbQg$Q" role="3clF45">
+        <ref role="3uigEE" to="i8dg:6MYr6JwxYwB" resolve="SolverLogical" />
+        <node concept="16syzq" id="3FIATxbQg$R" role="11_B2D">
+          <ref role="16sUi3" node="3FIATxbQg$T" resolve="TERM" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3FIATxbQg$S" role="1B3o_S" />
+      <node concept="16euLQ" id="3FIATxbQg$T" role="16eVyc">
+        <property role="TrG5h" value="TERM" />
+        <node concept="3uibUv" id="3FIATxbQg$U" role="3ztrMU">
+          <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3FIATxbQg$V" role="3clF47">
+        <node concept="3clFbF" id="3FIATxbQg$W" role="3cqZAp">
+          <node concept="10QFUN" id="3FIATxbQg$X" role="3clFbG">
+            <node concept="2OqwBi" id="3FIATxbQg$Y" role="10QFUP">
+              <node concept="1eOMI4" id="3FIATxbQg$Z" role="2Oq$k0">
+                <node concept="10QFUN" id="3FIATxbQg_0" role="1eOMHV">
+                  <node concept="37vLTw" id="3FIATxbQg_1" role="10QFUP">
+                    <ref role="3cqZAo" node="3FIATxbQg$O" resolve="var" />
+                  </node>
+                  <node concept="3uibUv" id="3FIATxbQg_2" role="10QFUM">
+                    <ref role="3uigEE" to="yg8f:46l0wJhtOD_" resolve="ILogicalVar" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="3FIATxbQg_3" role="2OqNvi">
+                <ref role="37wK5l" to="yg8f:46l0wJhtXlr" resolve="logical" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="3FIATxbQg_4" role="10QFUM">
+              <ref role="3uigEE" to="i8dg:6MYr6JwxYwB" resolve="SolverLogical" />
+              <node concept="16syzq" id="3FIATxbQg_5" role="11_B2D">
+                <ref role="16sUi3" node="3FIATxbQg$T" resolve="TERM" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3FIATxbQg_6" role="jymVt" />
+    <node concept="3clFb_" id="3FIATxbQg_7" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isLogical" />
+      <node concept="37vLTG" id="3FIATxbQg_8" role="3clF46">
+        <property role="TrG5h" value="term" />
+        <node concept="3uibUv" id="3FIATxbQg_9" role="1tU5fm">
+          <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
+        </node>
+      </node>
+      <node concept="10P_77" id="3FIATxbQg_a" role="3clF45" />
+      <node concept="3Tm1VV" id="3FIATxbQg_b" role="1B3o_S" />
+      <node concept="3clFbS" id="3FIATxbQg_c" role="3clF47">
+        <node concept="3clFbF" id="3FIATxbQg_d" role="3cqZAp">
+          <node concept="2ZW3vV" id="3FIATxbQg_e" role="3clFbG">
+            <node concept="3uibUv" id="3FIATxbQg_f" role="2ZW6by">
+              <ref role="3uigEE" to="yg8f:46l0wJhtOD_" resolve="ILogicalVar" />
+            </node>
+            <node concept="37vLTw" id="3FIATxbQg_g" role="2ZW6bz">
+              <ref role="3cqZAo" node="3FIATxbQg_8" resolve="term" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3FIATxbQg$v" role="jymVt" />
+    <node concept="3Tm1VV" id="3FIATxbQg8D" role="1B3o_S" />
+    <node concept="3uibUv" id="3FIATxbQg97" role="EKbjA">
+      <ref role="3uigEE" to="i8dg:6MYr6JwANOa" resolve="LogicalUnification" />
+    </node>
   </node>
 </model>
 
