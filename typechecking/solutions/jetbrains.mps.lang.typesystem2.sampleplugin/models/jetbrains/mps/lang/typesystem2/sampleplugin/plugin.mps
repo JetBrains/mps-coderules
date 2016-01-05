@@ -22,6 +22,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="9kr0" ref="r:0f58be42-48ea-45ab-99f8-158393a0f526(jetbrains.mps.typechecking.handler.producer)" />
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
+    <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" />
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
@@ -54,13 +55,12 @@
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.lang.typesystem2.samplechecker.template)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
+    <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.predicate)" />
     <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.predicate)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
     <import index="stgg" ref="r:fcdb37a4-4602-4a05-8d91-e439430734b8(jetbrains.mps.logic.jchr.program)" />
     <import index="7ub6" ref="r:b533b427-da69-49d8-9c93-4ea32433b66e(jetbrains.mps.lang.typesystem2.runtime)" />
     <import index="poio" ref="r:023e4571-f779-4131-9ae1-88b3dd330e93(jetbrains.mps.lang.typesystem2.samplechecker.util)" />
-    <import index="i8dg" ref="r:e8529b97-a186-4c32-8f12-771b2a92b55a(jetbrains.mps.logic.reactor.predicate)" />
-    <import index="xq5w" ref="r:729bada4-05fa-458f-8bf8-28b9cb978726(jetbrains.mps.logic.builtin.var)" />
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
@@ -1713,40 +1713,40 @@
       <node concept="2ShNRf" id="5mr7UHcbowK" role="33vP2m">
         <node concept="3g6Rrh" id="5mr7UHcboy8" role="2ShVmc">
           <node concept="10M0yZ" id="5mr7UHcboyR" role="3g7hyw">
-            <ref role="3cqZAo" to="i8dg:5uFPQ7C29mw" resolve="UNI_SYM" />
             <ref role="1PxDUh" to="i8dg:2GO7tyJVmP4" resolve="UnificationPredicate" />
+            <ref role="3cqZAo" to="i8dg:5uFPQ7C29mw" resolve="UNI_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboyX" role="3g7hyw">
-            <ref role="3cqZAo" to="i8dg:5uFPQ7C23RV" resolve="EQ_SYM" />
             <ref role="1PxDUh" to="i8dg:3HJTsBn4kk_" resolve="EqualsPredicate" />
+            <ref role="3cqZAo" to="i8dg:5uFPQ7C23RV" resolve="EQ_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboz3" role="3g7hyw">
             <ref role="1PxDUh" to="i8dg:6infEALAfer" resolve="AssertPredicate" />
             <ref role="3cqZAo" to="i8dg:5uFPQ7BZnLB" resolve="ASSERT_SYM" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcboz9" role="3g7hyw">
-            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
             <ref role="3cqZAo" to="xq5w:5uFPQ7C26$b" resolve="BOUND_SYM" />
+            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
           </node>
           <node concept="10M0yZ" id="5mr7UHcbozf" role="3g7hyw">
-            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
             <ref role="3cqZAo" to="xq5w:5uFPQ7C279$" resolve="FREE_SYM" />
+            <ref role="1PxDUh" to="xq5w:5$WbtTOYoMb" resolve="LogicalPredicate" />
           </node>
           <node concept="10M0yZ" id="1ggxSI7vXEc" role="3g7hyw">
-            <ref role="3cqZAo" to="qrld:1ggxSI7vUYU" resolve="EXPRESSION0" />
             <ref role="1PxDUh" to="qrld:5uFPQ7BMJeJ" resolve="JavaPredicateSymbol" />
+            <ref role="3cqZAo" to="qrld:1ggxSI7vUYU" resolve="EXPRESSION0" />
           </node>
           <node concept="10M0yZ" id="1ggxSI7vXSW" role="3g7hyw">
-            <ref role="3cqZAo" to="qrld:1ggxSI7vV1O" resolve="EXPRESSION1" />
             <ref role="1PxDUh" to="qrld:5uFPQ7BMJeJ" resolve="JavaPredicateSymbol" />
+            <ref role="3cqZAo" to="qrld:1ggxSI7vV1O" resolve="EXPRESSION1" />
           </node>
           <node concept="10M0yZ" id="1ggxSI7vY7W" role="3g7hyw">
-            <ref role="3cqZAo" to="qrld:1ggxSI7vV3x" resolve="EXPRESSION2" />
             <ref role="1PxDUh" to="qrld:5uFPQ7BMJeJ" resolve="JavaPredicateSymbol" />
+            <ref role="3cqZAo" to="qrld:1ggxSI7vV3x" resolve="EXPRESSION2" />
           </node>
           <node concept="10M0yZ" id="1ggxSI7vYn6" role="3g7hyw">
-            <ref role="3cqZAo" to="qrld:1ggxSI7vV5$" resolve="EXPRESSION3" />
             <ref role="1PxDUh" to="qrld:5uFPQ7BMJeJ" resolve="JavaPredicateSymbol" />
+            <ref role="3cqZAo" to="qrld:1ggxSI7vV5$" resolve="EXPRESSION3" />
           </node>
           <node concept="3uibUv" id="5mr7UHcbqo2" role="3g7fb8">
             <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
