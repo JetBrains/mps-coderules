@@ -1,7 +1,7 @@
 import jetbrains.mps.logic.reactor.core.MemEvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
+import solver.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol

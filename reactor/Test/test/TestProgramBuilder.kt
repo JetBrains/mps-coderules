@@ -1,5 +1,5 @@
 import jetbrains.mps.logic.reactor.evaluation.Queryable
-import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
+import solver.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.*
 import org.junit.AfterClass
 import org.junit.Assert.*

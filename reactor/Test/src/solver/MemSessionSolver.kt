@@ -1,4 +1,4 @@
-package jetbrains.mps.logic.reactor.predicate
+package solver
 
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.Queryable
@@ -15,15 +15,15 @@ open class MemSessionSolver(val expressionSolver: Queryable, val equalsSolver: Q
     override fun solverClass(predicateSymbol: PredicateSymbol): Class<out Queryable> {
         return when (predicateSymbol) {
             is JavaPredicateSymbol -> expressionSolver.javaClass
-            PredicateSymbol("equals", 2)   -> equalsSolver.javaClass
+            PredicateSymbol("equals", 2) -> equalsSolver.javaClass
             else                           -> throw UnsupportedOperationException("not implemented")
         }
     }
 
     override fun registerSymbol(predicateSymbol: PredicateSymbol, computingTracer: EvaluationTrace?) {
         when (predicateSymbol) {
-            is JavaPredicateSymbol         -> registerSolver(predicateSymbol, expressionSolver)
-            PredicateSymbol("equals", 2)   -> registerSolver(predicateSymbol, equalsSolver)
+            is JavaPredicateSymbol -> registerSolver(predicateSymbol, expressionSolver)
+            PredicateSymbol("equals", 2) -> registerSolver(predicateSymbol, equalsSolver)
             else                           -> throw UnsupportedOperationException("not implemented")
         }
     }

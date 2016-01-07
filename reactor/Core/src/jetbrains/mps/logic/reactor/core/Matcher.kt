@@ -99,7 +99,7 @@ class PartialMatch(val rule: Rule) {
                     return var2val[logicalPattern] as V
                 }
                 else {
-                    val logical = logicalPattern.instance()
+                    val logical = logicalPattern.logical()
                     var2val.put(logicalPattern, logical)
                     return logical as V
                 }

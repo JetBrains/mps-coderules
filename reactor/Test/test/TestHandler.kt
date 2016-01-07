@@ -4,7 +4,7 @@ import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
-import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
+import solver.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
@@ -124,7 +124,7 @@ class TestHandler {
     fun basicLogical() {
         var test : String? = "not initialized"
         val x = logical<String>("x")
-        x.value = "expected"
+        x.setValue("expected")
         program(
             rule("main",
                 headKept(
@@ -143,7 +143,7 @@ class TestHandler {
     fun logicalCopy() {
         var test : String? = "not initialized"
         val (x,y) = logical<String>("x", "y")
-        x.value = "expected"
+        x.setValue("expected")
         program(
             rule("main",
                 headKept(

@@ -1,6 +1,8 @@
 import jetbrains.mps.logic.reactor.core.Matcher
+import jetbrains.mps.logic.reactor.core.logical
 import jetbrains.mps.logic.reactor.core.matches
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
 import org.junit.Assert.*
 import org.junit.Test
@@ -180,7 +182,7 @@ class TestMatcher {
     @Test
     fun logicalPattern() {
         val (A, B, C) = logicalPattern<String>("A", "B", "C")
-        val b = B.instance()
+        val b = B.logical()
 
         program(
             rule("main",
@@ -194,7 +196,8 @@ class TestMatcher {
         ).matcher().lookupMatches(occurrence("foo", "blah", b)).first().run {
             assertEquals("blah", logicalContext().valueFor(A))
             assertSame(b, logicalContext().valueFor(B))
-            assertEquals(C.instance(), logicalContext().valueFor(C))
+            assertEquals(C.logical().name(), (logicalContext().valueFor(C) as Logical<*>).name())
+            assertEquals(C.logical().pattern(), (logicalContext().valueFor(C) as Logical<*>).pattern())
         }
 
     }
@@ -255,7 +258,8 @@ class TestMatcher {
             }
 
             val (v, w) = logical<Int>("v", "w")
-            w.find().union(v)
+            // FIXME: use rank!!!
+            w.findRoot().setParent(v)
 
             matcher(occurrence("foo", v)).lookupMatches(occurrence("foo", w)).let { matches ->
                 assertEquals(4, matches.count())

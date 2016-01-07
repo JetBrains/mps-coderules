@@ -1,6 +1,7 @@
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.SolverLogical
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Symbol
 
@@ -11,13 +12,13 @@ class EqualsSolver  : Queryable {
         val left = args[0]
         val right = args[1]
 
-        return if (left is TestLogical<*> && right is TestLogical<*>) {
+        return if (left is SolverLogical<*> && right is SolverLogical<*>) {
             ask_logical_logical(left, right)
         }
-        else if (left is TestLogical<*>) {
+        else if (left is SolverLogical<*>) {
             ask_logical_value(left, right)
         }
-        else if (right is TestLogical<*>) {
+        else if (right is SolverLogical<*>) {
             ask_value_logical(left, right)
         }
         else {
@@ -29,29 +30,29 @@ class EqualsSolver  : Queryable {
         if (args.size != 2) ERROR("arity mismatch")
         val left = args[0]
         val right = args[1]
-        if (left is TestLogical<*> && right is TestLogical<*>) {
+        if (left is SolverLogical<*> && right is SolverLogical<*>) {
             tell_logical_logical(left, right)
         }
-        else if (left is TestLogical<*>) {
-            tell_logical_value(left, right)
+        else if (left is SolverLogical<*>) {
+            tell_logical_value(left as SolverLogical<Any>, right)
         }
-        else if (right is TestLogical<*>) {
-            tell_value_logical(left, right)
+        else if (right is SolverLogical<*>) {
+            tell_value_logical(left, right as SolverLogical<Any>)
         }
         else {
             tell_value_value(left, right)
         }
     }
 
-    fun ask_logical_logical(left: TestLogical<*>, right: TestLogical<*>): Boolean {
+    fun ask_logical_logical(left: SolverLogical<*>, right: SolverLogical<*>): Boolean {
         return left.isBound && right.isBound && left.findRoot().value() == right.findRoot().value()
     }
 
-    fun ask_logical_value(left: TestLogical<*>, right: Any?): Boolean {
+    fun ask_logical_value(left: SolverLogical<*>, right: Any?): Boolean {
         return left.isBound && left.findRoot().value() == right
     }
 
-    fun ask_value_logical(left: Any?,  right: TestLogical<*>): Boolean {
+    fun ask_value_logical(left: Any?,  right: SolverLogical<*>): Boolean {
         return right.isBound && right.findRoot().value() == left
     }
 
@@ -59,39 +60,38 @@ class EqualsSolver  : Queryable {
         return left == right
     }
 
-    fun tell_logical_logical(left: TestLogical<*>, right: TestLogical<*>) {
+    fun tell_logical_logical(left: SolverLogical<*>, right: SolverLogical<*>) {
         if (left.isBound && right.isBound) {
-            check (left.find().value == right.find().value)
-            left.union(right)
+            check (left.findRoot().value() == right.findRoot().value())
+            // FIXME: use rank!!!
+            left.setParent(right)
         }
         else if (left.isBound) {
-            right.union(left)
+            right.setParent(left)
         }
         else if (right.isBound) {
-            left.union(right)
+            left.setParent(right)
         }
         else {
-            left.union(right)
+            left.setParent(right)
         }
     }
 
-    fun tell_logical_value(left: TestLogical<*>, right: Any?) {
+    fun <T> tell_logical_value(left: SolverLogical<T>, right: T) {
         if (left.isBound) {
-            check(left.find().value == right)
+            check(left.findRoot().value() == right)
         }
         else {
-            // TODO hack!
-            (left.find() as TestLogical<Any>).value = right
+            left.findRoot().setValue(right)
         }
     }
 
-    fun tell_value_logical(left: Any?,  right: TestLogical<*>) {
+    fun <T> tell_value_logical(left: T,  right: SolverLogical<T>) {
         if (right.isBound) {
-            check(right.find().value == left)
+            check(right.findRoot().value() == left)
         }
         else {
-            // TODO: hack!
-            (right.find() as TestLogical<Any>).value = left
+            right.findRoot().setValue(left)
         }
     }
     fun tell_value_value(left: Any?,  right: Any?) {

@@ -1,5 +1,5 @@
 
-package jetbrains.mps.logic.reactor.predicate
+package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
@@ -9,6 +9,8 @@ import jetbrains.mps.logic.reactor.logical.SolverLogical
  * @author Fedor Isakov
  */
 
+fun <V> LogicalPattern<V>.logical(): Logical<V> = MemLogical<V>(name())
+
 class MemLogical<T> : SolverLogical<T> {
 
     companion object {
@@ -16,6 +18,8 @@ class MemLogical<T> : SolverLogical<T> {
     }
 
     val name: String
+
+    var pattern: LogicalPattern<T>? = null
 
     var _parent: MemLogical<T>? = null
 
@@ -32,6 +36,11 @@ class MemLogical<T> : SolverLogical<T> {
         this.name = name
     }
 
+    constructor(pattern: LogicalPattern<T>) {
+        this.pattern = pattern
+        this.name = pattern.name()
+    }
+
     override fun name(): String = name
 
     override fun value(): T? = _value
@@ -40,11 +49,13 @@ class MemLogical<T> : SolverLogical<T> {
 
     override fun isWildcard(): Boolean = TODO()
 
-    override fun pattern(): LogicalPattern<Logical<T>> = TODO()
+    override fun pattern(): LogicalPattern<T>? = pattern
 
     override fun findRoot(): SolverLogical<T> = find()
 
-    override fun setParent(parent: SolverLogical<T>) { this._parent = parent as MemLogical<T> }
+    override fun setParent(parent: SolverLogical<T>) {
+        this._parent = parent as MemLogical<T>
+    }
 
     override fun setValue(newValue: T) { this._value = newValue }
 
