@@ -24,7 +24,7 @@ class TestHandler {
         MemSessionSolver(exprSolver, equalsSolver).apply {
             init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
-    fun Builder.handler(vararg occurrences: ConstraintOccurrence): Handler =
+    private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Handler =
         Handler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, listOf(* occurrences))
 
     companion object {

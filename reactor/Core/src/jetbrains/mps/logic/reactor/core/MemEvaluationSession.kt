@@ -19,7 +19,7 @@ import java.util.*
 
 class MemEvaluationSession : EvaluationSession {
 
-    private class Config(val program: MemProgram) : EvaluationSession.Config() {
+    private class Config(val program: Program) : EvaluationSession.Config() {
 
         val myPredicateSymbols = ArrayList<PredicateSymbol>()
         val myParameters = HashMap<String, Any?>()
@@ -62,12 +62,12 @@ class MemEvaluationSession : EvaluationSession {
         }
     }
 
-    val program: MemProgram
+    val program: Program
 
     lateinit var handler: Handler
 
     private constructor(program: Program): super() {
-        this.program = program as MemProgram
+        this.program = program
     }
 
     fun launch(main: ConstraintOccurrence) {
@@ -94,7 +94,7 @@ class MemEvaluationSession : EvaluationSession {
 
         override fun current(): EvaluationSession = ourSession.get() ?: throw IllegalStateException("no session")
 
-        override fun createConfig(program: Program): EvaluationSession.Config = Config(program as MemProgram)
+        override fun createConfig(program: Program): EvaluationSession.Config = Config(program)
     }
 
     companion object {

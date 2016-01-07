@@ -1,5 +1,3 @@
-import jetbrains.mps.logic.reactor.core.MemProgram
-import jetbrains.mps.logic.reactor.core.MemProgramBuilder
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.*
@@ -25,26 +23,31 @@ class TestProgramBuilder {
     val sessionSolver = MemSessionSolver(dummySolver, dummySolver)
 
     @Before fun beforeTest() {
-        builder = MemProgramBuilder(sessionSolver)
+        programBuilder = MemProgramBuilder(sessionSolver)
     }
-    lateinit var builder: ProgramBuilder
+
+    lateinit var programBuilder: ProgramBuilder
+
+    private fun ProgramBuilder.addRules(rules: List<Rule>) {
+        rules.forEach { r -> addRule(r) }
+    }
 
     @Test(expected = InvalidRuleException::class)
     fun emptyBody() {
-        program(
+        program(programBuilder,
             rule("foo",
                 headKept(
                     constraint("bar")
                 ))).run {
 
-            builder.addRules(rules)
-            assertEquals(builder.program("test", sessionSolver).rules().count(), 1)
+            programBuilder.addRules(rules)
+            assertEquals(programBuilder.program("test", sessionSolver).rules().count(), 1)
         }
     }
 
     @Test
     fun replace() {
-        program(
+        program(programBuilder,
             rule("foo",
                 headReplaced(
                     constraint("bar")
@@ -63,14 +66,14 @@ class TestProgramBuilder {
                     constraint("blah")
                 ))).run {
 
-            builder.addRules(rules)
-            assertEquals(builder.program("test", sessionSolver).rules().count(), 2)
+            programBuilder.addRules(rules)
+            assertEquals(programBuilder.program("test", sessionSolver).rules().count(), 2)
         }
     }
 
     @Test(expected = InvalidConstraintException::class)
     fun fail() {
-        program(
+        program(programBuilder,
             rule("foo",
                 headReplaced(
                     constraint("bar", 1)
@@ -79,11 +82,10 @@ class TestProgramBuilder {
                     constraint("bar", "1")
                 ))).run {
 
-            builder.addRules(rules)
+            programBuilder.addRules(rules)
         }
     }
 }
-
 
 
 

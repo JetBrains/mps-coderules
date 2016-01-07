@@ -1,6 +1,4 @@
 import jetbrains.mps.logic.reactor.core.MemEvaluationSession
-import jetbrains.mps.logic.reactor.core.MemProgram
-import jetbrains.mps.logic.reactor.core.MemProgramBuilder
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.predicate.MemSessionSolver
@@ -25,7 +23,7 @@ class TestProgram {
         }
     }
 
-    fun Builder.session(name: String): EvaluationSession {
+    private fun Builder.session(name: String): EvaluationSession {
         val sessionSolver = MemSessionSolver(env.expressionSolver, env.equalsSolver)
         val programBuilder = MemProgramBuilder(sessionSolver)
         rules.forEach { r -> programBuilder.addRule(r) }

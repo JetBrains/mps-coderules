@@ -1,5 +1,3 @@
-package jetbrains.mps.logic.reactor.core
-
 /**
  * @author Fedor Isakov
  */
@@ -7,6 +5,7 @@ package jetbrains.mps.logic.reactor.core
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.program.*
+import program.MemConstraint
 import java.util.*
 import java.util.Collections.*
 
@@ -23,7 +22,7 @@ class MemProgramBuilder(val sessionSolver: SessionSolver) : ProgramBuilder() {
         rules.add(rule)
     }
 
-    override fun constraint(symbol: ConstraintSymbol, vararg args: Any?): Constraint = TODO()
+    override fun constraint(symbol: ConstraintSymbol, vararg args: Any): Constraint = MemConstraint(symbol, listOf(* args))
 
     override fun predicate(symbol: PredicateSymbol, vararg args: Any?): Predicate = TODO()
 

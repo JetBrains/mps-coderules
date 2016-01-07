@@ -11,7 +11,7 @@ import org.junit.Test
 
 class TestMatcher {
 
-    fun Builder.matcher(vararg occurrence: ConstraintOccurrence): Matcher {
+    private fun Builder.matcher(vararg occurrence: ConstraintOccurrence): Matcher {
         val stored = occurrence.toList()
         return object : Matcher(rules) {
             override fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):

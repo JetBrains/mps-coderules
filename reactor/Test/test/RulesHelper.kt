@@ -2,27 +2,31 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.*
+import program.MemConstraint
+import program.MemConstraintOccurrence
 import java.util.*
 
 /**
  * @author Fedor Isakov
  */
 
-
-fun ProgramBuilder.addRules(rules: List<Rule>) {
-    rules.forEach { r -> addRule(r) }
-}
-
 class Builder(val env: Environment, val rules: List<Rule>) {
 }
 
-class Environment() {
+class Environment(val programBuilder: ProgramBuilder? = null) {
     val equalsSolver = EqualsSolver()
     val expressionSolver = ExpressionSolver()
 }
 
 fun program(vararg ruleBuilders : Environment.() -> Rule): Builder {
-    val env = Environment()
+    return builder(Environment(), ruleBuilders)
+}
+
+fun program(pb: ProgramBuilder, vararg ruleBuilders : Environment.() -> Rule): Builder {
+    return builder(Environment(pb), ruleBuilders)
+}
+
+private fun builder(env: Environment, ruleBuilders: Array<out Environment.() -> Rule>): Builder {
     val rules = ArrayList<Rule>()
     with (env) {
         for (rb in ruleBuilders) {
@@ -61,14 +65,15 @@ fun body(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
 }
 
 fun constraint(id: String, vararg args: Any): ConjBuilder.() -> Unit = {
-    add(TestConstraint(ConstraintSymbol(id, args.size), * args))
+    add(createConstraint(args, id))
 }
+
 
 fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
     add(TestEqPredicate(left, right))
 }
 
-fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestConstraintOccurrence(id, * args)
+fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = MemConstraintOccurrence(id, * args)
 
 class RB(tag: String, val env: Environment) : RuleBuilder(tag) {
 
@@ -83,6 +88,13 @@ class ConjBuilder {
         this.type = type
         this.env = env
     }
+
+    fun createConstraint(args: Array<out Any>, id: String): Constraint {
+        return env.programBuilder ?.
+            constraint(ConstraintSymbol(id, args.size), * args)     ?:
+            MemConstraint(ConstraintSymbol(id, args.size), * args)
+    }
+
 
     fun add(item: AndItem): Unit {
         if (!type.isAssignableFrom(item.javaClass))
@@ -115,38 +127,4 @@ private fun buildConjunction(type: Class<out AndItem>,
         conjBuilder.c()
     }
     return conjBuilder
-}
-
-private data class TestConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>) : Constraint {
-
-    constructor(symbol: ConstraintSymbol, vararg args: Any) : this(symbol, listOf(* args)) {}
-
-    override fun arguments(): List<Any> = arguments
-
-    override fun symbol(): ConstraintSymbol = symbol
-
-    override fun argumentTypes(): List<Class<*>> = arguments.map { arg -> arg.javaClass }
-
-    override fun toString(): String = "${symbol()}(${arguments().joinToString()})"
-
-}
-
-private data class TestConstraintOccurrence(val constraint: Constraint, val arguments: List<Any>, val id: Int) : ConstraintOccurrence {
-
-    companion object {
-        val random = Random()
-    }
-
-    constructor(constraint: Constraint, arguments: List<Any>) :
-        this(constraint, arguments, random.nextInt()) {}
-
-    constructor(id: String, vararg args: Any) :
-        this(TestConstraint(ConstraintSymbol.symbol(id, args.size)), listOf(* args), random.nextInt()) {}
-
-    override fun constraint(): Constraint = constraint
-
-    override fun arguments(): Collection<Any> = arguments
-
-    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
-
 }
