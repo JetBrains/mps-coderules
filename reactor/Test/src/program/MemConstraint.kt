@@ -23,22 +23,3 @@ data class MemConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>)
 
 }
 
-data class MemConstraintOccurrence(val constraint: Constraint, val arguments: List<Any>, val id: Int) : ConstraintOccurrence {
-
-    companion object {
-        val random = Random()
-    }
-
-    constructor(constraint: Constraint, arguments: List<Any>) :
-    this(constraint, arguments, random.nextInt()) {}
-
-    constructor(id: String, vararg args: Any) :
-    this(MemConstraint(ConstraintSymbol.symbol(id, args.size)), listOf(* args), random.nextInt()) {}
-
-    override fun constraint(): Constraint = constraint
-
-    override fun arguments(): Collection<Any> = arguments
-
-    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
-
-}

@@ -1,3 +1,5 @@
+package solver
+
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -74,6 +76,8 @@ class EqualsSolver  : Queryable {
         }
         else {
             left.setParent(right)
+            // the representative has all the observers
+            right.mergeObservers(left);
         }
     }
 
@@ -94,6 +98,7 @@ class EqualsSolver  : Queryable {
             right.findRoot().setValue(left)
         }
     }
+
     fun tell_value_value(left: Any?,  right: Any?) {
         check(left == right)
     }
@@ -107,4 +112,8 @@ class EqualsSolver  : Queryable {
 
 infix fun <T : Any> Logical<T>.eq(value: T) {
     EvaluationSession.current().sessionSolver().tell(PredicateSymbol("equals", 2), this, value)
+}
+
+infix fun <T : Any> Logical<T>.eq(other: Logical<T>) {
+    EvaluationSession.current().sessionSolver().tell(PredicateSymbol("equals", 2), this, other)
 }

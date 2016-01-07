@@ -72,7 +72,7 @@ class MemEvaluationSession : EvaluationSession {
 
     fun launch(main: ConstraintOccurrence) {
         this.handler = Handler(sessionSolver(), program.rules())
-        handler.process(main)
+        handler.queue(main)
         // FIXME: shutdown the session properly
         ourBackend.ourSession.set(null)
     }

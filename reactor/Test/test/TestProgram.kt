@@ -7,6 +7,7 @@ import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import org.junit.*
 import org.junit.Assert.*
+import solver.eq
 
 /**
  * @author Fedor Isakov

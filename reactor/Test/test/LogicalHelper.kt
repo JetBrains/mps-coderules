@@ -33,6 +33,8 @@ inline fun <reified T: Any> logicalPattern(name1: String, name2: String, name3: 
 
 fun <T: Any> Logical<T>.get(): T = findRoot().value()
 
+fun <T: Any> Logical<T>.getNullable(): T? = findRoot().value()
+
 fun <T: Any> Logical<T>.set(t: T) {
     if (this is SolverLogical<T>)
         findRoot().setValue(t)

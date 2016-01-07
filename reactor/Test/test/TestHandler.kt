@@ -20,12 +20,16 @@ import org.junit.Test
 
 class TestHandler {
 
-    fun sessionSolver(exprSolver: Queryable, equalsSolver: Queryable) : SessionSolver =
+    private fun sessionSolver(exprSolver: Queryable, equalsSolver: Queryable) : SessionSolver =
         MemSessionSolver(exprSolver, equalsSolver).apply {
             init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
     private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Handler =
         Handler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, listOf(* occurrences))
+
+    private fun <T : Any> Handler.eq(left: Logical<T>, right: Logical<T>) {
+        sessionSolver.tell(PredicateSymbol("equals", 2), left, right)
+    }
 
     companion object {
         @BeforeClass @JvmStatic fun setup() {
@@ -48,7 +52,7 @@ class TestHandler {
                     constraint("foo")
                 ))
         ).run {
-            handler().apply { process(occurrence("main")) }.let { rh ->
+            handler().apply { queue(occurrence("main")) }.let { rh ->
                 assertEquals(
                     setOf(ConstraintSymbol("main", 0), ConstraintSymbol("foo", 0)),
                     rh.occurrences().map { it.constraint().symbol() }.toSet())
@@ -77,7 +81,7 @@ class TestHandler {
                     constraint("bar")
                 ))
         ).run {
-            handler().apply { process(occurrence("main")) }.let { rh ->
+            handler().apply { queue(occurrence("main")) }.let { rh ->
                 assertEquals(
                     setOf(ConstraintSymbol("bar", 0), ConstraintSymbol("foo", 0)),
                     rh.occurrences().map { it.constraint().symbol() }.toSet())
@@ -97,7 +101,7 @@ class TestHandler {
                     statement { test = "value" }
                 ))
         ).run {
-            handler().process(occurrence("main"))
+            handler().queue(occurrence("main"))
             assertEquals("value", test)
         }
     }
@@ -115,7 +119,7 @@ class TestHandler {
                     statement ({ test.set("value") })
                 ))
         ).run {
-            handler().process(occurrence("main"))
+            handler().queue(occurrence("main"))
             assertEquals("value", test.get())
         }
     }
@@ -134,7 +138,7 @@ class TestHandler {
                     statement ({ test = x.get() } )
                 ))
         ).run {
-            handler().process(occurrence("main"))
+            handler().queue(occurrence("main"))
             assertEquals("expected", test)
         }
     }
@@ -161,7 +165,7 @@ class TestHandler {
                     statement ({ test = y.get() })
                 ))
         ).run {
-            handler().apply { process(occurrence("main")) }.let { rh ->
+            handler().apply { queue(occurrence("main")) }.let { rh ->
                 assertEquals(
                     setOf(ConstraintSymbol("main", 0), ConstraintSymbol("next", 0)),
                     rh.occurrences().map { it.constraint().symbol() }.toSet())
@@ -196,7 +200,7 @@ class TestHandler {
                     statement { test2 = "expected" }
                 ))
         ).run {
-            handler().process(occurrence("main"))
+            handler().queue(occurrence("main"))
             assertEquals("not initialized 1", test1)
             assertEquals("expected", test2)
         }
@@ -218,7 +222,7 @@ class TestHandler {
         ).handler().run {
             val a = logical<String>("a")
             a.set("value")
-            process(occurrence("foo", a))
+            queue(occurrence("foo", a))
             assertEquals(1, occurrences().size)
             val co = occurrences().first()
             assertEquals(ConstraintSymbol("bar",1), co.constraint().symbol())
@@ -247,7 +251,7 @@ class TestHandler {
                                                         body( constraint("expected2") )
             )
         ).handler().run {
-            process(occurrence("foo"))
+            queue(occurrence("foo"))
             assertEquals(
                 setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0)),
                 occurrences().map { co -> co.constraint().symbol() }.toSet())
@@ -272,12 +276,138 @@ class TestHandler {
                                                         body( constraint("expected2") )
             )
         ).handler().run {
-            process(occurrence("foo"))
+            queue(occurrence("foo"))
             assertEquals(
                 setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0)),
                 occurrences().map { co -> co.constraint().symbol() }.toSet())
         }
     }
+
+    @Test
+    fun occurrenceReactivated() {
+        val X = logicalPattern<Int>("X")
+        program(
+            rule("zeroth",
+                headKept( constraint("foo") ),          body( statement({ x -> x.set(999) }, X),
+                                                              constraint("bar", X))
+            ),
+            rule("first",
+                headKept( constraint("foo") ),
+                                                        body( constraint("bar", X),
+                                                              constraint("qux", X))
+            ),
+            rule("second",
+                headReplaced( constraint("qux", X) ),
+                                                        body( constraint("expected1"),
+                                                              statement({ x -> x.set(123) }, X))
+            ),
+            rule("third",
+                headReplaced( constraint("foo") ),
+                                                        body( constraint("unexpected"))
+            ),
+            rule("fourth",
+                headReplaced( constraint("foo") ),
+                headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 123 }, X)),
+                                                        body( constraint("expected2") )
+            ),
+            rule("fifth",
+                headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 999 }, X)),
+                                                        body( constraint("expected3", X))
+            )
+        ).handler().run {
+            queue(occurrence("foo"))
+            assertEquals(3, occurrences().count())
+            assertEquals(
+                setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0), ConstraintSymbol("expected3", 1)),
+                occurrences().map { co -> co.constraint().symbol() }.toSet())
+            val ex3 = occurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("expected3", 1) }.first()
+            assertEquals(999, (ex3.arguments().first() as Logical<Int>).value())
+        }
+    }
+
+    @Test
+    fun occurrenceReactivatedAfterUnion() {
+        val (X, Y) = logicalPattern<Int>("X", "Y")
+        var handler : Handler? = null
+        program(
+            rule("first",
+                headKept( constraint("foo") ),
+                                                        body( constraint("bar", X),
+                                                              constraint("qux", Y),
+                                                              statement({ x, y -> handler!!.eq(x, y) }, X, Y))
+            ),
+            rule("second",
+                headReplaced( constraint("qux", Y) ),
+                                                        body( constraint("expected1"),
+                                                              statement({ y -> y.set(123) }, Y))
+            ),
+            rule("third",
+                headReplaced( constraint("foo") ),
+                                                        body( constraint("unexpected"))
+            ),
+            rule("fourth",
+                headReplaced( constraint("foo") ),
+                headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 123 }, X)),
+                                                        body( constraint("expected2") )
+            ),
+            rule("fifth",
+                headKept( constraint("bar", X) ),
+                                                        body( constraint("expected3", X))
+            )
+        ).handler().run {
+            handler = this
+            queue(occurrence("foo"))
+            assertEquals(3, occurrences().count())
+            assertEquals(
+                setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0), ConstraintSymbol("expected3", 1)),
+                occurrences().map { co -> co.constraint().symbol() }.toSet())
+            val ex3 = occurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("expected3", 1) }.first()
+            assertEquals(null, (ex3.arguments().first() as Logical<Int>).value())
+        }
+    }
+
+    @Test
+    fun occurrenceReactivatedAfterUnionUnbound() {
+        val (X, Y) = logicalPattern<Int>("X", "Y")
+        var handler : Handler? = null
+        program(
+            rule("first",
+                headKept( constraint("foo") ),
+                                                        body( constraint("bar", X),
+                                                              statement({ x, y -> handler!!.eq(x, y) }, X, Y),
+                                                              constraint("qux", Y))
+            ),
+            rule("second",
+                headReplaced( constraint("qux", Y) ),
+                                                        body( constraint("expected1"),
+                                                              statement({ y -> y.set(123) }, Y))
+            ),
+            rule("third",
+                headReplaced( constraint("foo") ),
+                                                        body( constraint("unexpected"))
+            ),
+            rule("fourth",
+                headReplaced( constraint("foo") ),
+                headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 123 }, X)),
+                                                        body( constraint("expected2") )
+            ),
+            rule("fifth",
+                headKept( constraint("bar", X) ),
+                                                        body( constraint("expected3", X))
+            )
+        ).handler().run {
+            handler = this
+            queue(occurrence("foo"))
+            assertEquals(3, occurrences().count())
+            assertEquals(
+                setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0), ConstraintSymbol("expected3", 1)),
+                occurrences().map { co -> co.constraint().symbol() }.toSet())
+            val ex3 = occurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("expected3", 1) }.first()
+            assertEquals(null, (ex3.arguments().first() as Logical<Int>).value())
+        }
+    }
+
+
 
 
 }
