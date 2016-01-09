@@ -440,16 +440,11 @@
                     <node concept="37vLTw" id="3KV3FXjZMUL" role="37wK5m">
                       <ref role="3cqZAo" node="5H6hZahmlpn" resolve="result" />
                     </node>
-                    <node concept="2ShNRf" id="3KV3FXjZMUM" role="37wK5m">
-                      <node concept="1pGfFk" id="3KV3FXjZMUN" role="2ShVmc">
-                        <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                        <node concept="2YIFZM" id="3KV3FXk1qgA" role="37wK5m">
-                          <ref role="1Pybhc" node="3KV3FXk1mCr" resolve="AbstractSolver" />
-                          <ref role="37wK5l" node="5H6hZahoMly" resolve="buildResult" />
-                          <node concept="37vLTw" id="3KV3FXjZMUP" role="37wK5m">
-                            <ref role="3cqZAo" node="3KV3FXk0pld" resolve="resultList" />
-                          </node>
-                        </node>
+                    <node concept="2YIFZM" id="3KV3FXk1qgA" role="37wK5m">
+                      <ref role="37wK5l" node="5H6hZahoMly" resolve="buildResult" />
+                      <ref role="1Pybhc" node="3KV3FXk1mCr" resolve="AbstractSolver" />
+                      <node concept="37vLTw" id="3KV3FXjZMUP" role="37wK5m">
+                        <ref role="3cqZAo" node="3KV3FXk0pld" resolve="resultList" />
                       </node>
                     </node>
                   </node>
@@ -1852,16 +1847,11 @@
                     <node concept="37vLTw" id="3KV3FXk1m3d" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk1fGz" resolve="result" />
                     </node>
-                    <node concept="2ShNRf" id="3KV3FXk1m3e" role="37wK5m">
-                      <node concept="1pGfFk" id="3KV3FXk1m3f" role="2ShVmc">
-                        <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                        <node concept="2YIFZM" id="3KV3FXk1m8m" role="37wK5m">
-                          <ref role="37wK5l" node="5H6hZahoMly" resolve="buildResult" />
-                          <ref role="1Pybhc" node="3KV3FXk1mCr" resolve="AbstractSolver" />
-                          <node concept="37vLTw" id="3KV3FXk1m3h" role="37wK5m">
-                            <ref role="3cqZAo" node="3KV3FXk1ku9" resolve="resultList" />
-                          </node>
-                        </node>
+                    <node concept="2YIFZM" id="3KV3FXk1m8m" role="37wK5m">
+                      <ref role="1Pybhc" node="3KV3FXk1mCr" resolve="AbstractSolver" />
+                      <ref role="37wK5l" node="5H6hZahoMly" resolve="buildResult" />
+                      <node concept="37vLTw" id="3KV3FXk1m3h" role="37wK5m">
+                        <ref role="3cqZAo" node="3KV3FXk1ku9" resolve="resultList" />
                       </node>
                     </node>
                   </node>
