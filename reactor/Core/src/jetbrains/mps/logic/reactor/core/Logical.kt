@@ -70,23 +70,65 @@ class MemLogical<T> : SolverLogical<T> {
 
     override fun findRoot(): SolverLogical<T> = find()
 
-    override fun setParent(parent: SolverLogical<T>) {
+    override fun setValue(newValue: T) {
+        this._value = newValue
+        notifyObservers()
+    }
+
+    override fun union(other: SolverLogical<T>, reconciler: SolverLogical.ValueReconciler<T>) {
+        val leftRepr = this.find()
+        val rightRepr = (other as MemLogical<T>).find()
+
+        // invariant: leftRepr.rank > rightRepr.rank
+        if (leftRepr.rank() < rightRepr.rank()) {
+            rightRepr.union(leftRepr, reconciler);
+            return;
+
+        } else if (leftRepr.rank() == rightRepr.rank()) {
+            leftRepr.incRank();
+        }
+
+        rightRepr.setParent(leftRepr);
+
+        val leftVal = leftRepr.value();
+        val rightVal = rightRepr.value();
+
+        if (leftVal == null && rightVal != null) {
+            // var ground
+            leftRepr.setValue(rightVal);
+
+        } else if (leftVal != null && rightVal == null) {
+            // ground var
+            // rightRepr.setValue(leftRepr.value());
+            // TODO: no need to copy the value
+            rightRepr.notifyObservers();
+
+        } else if (leftVal == null && rightVal == null) {
+            // var var
+            leftRepr.mergeObservers(rightRepr);
+
+        } else {
+            // ground ground
+            reconciler.reconcile(leftVal, rightVal);
+        }
+    }
+
+    override fun union(other: SolverLogical<T>) {
+        union(other, { a, b -> if (a != b) throw IllegalStateException("$a does not equal to $b")})
+    }
+
+    private fun setParent(parent: SolverLogical<T>) {
         this._parent = parent as MemLogical<T>
         if (find().isBound) {
             notifyObservers()
         }
     }
 
-    override fun setValue(newValue: T) {
-        this._value = newValue
-        notifyObservers()
-    }
+    private fun rank(): Int = rank
 
-    override fun rank(): Int = rank
+    private fun incRank() { rank++ }
 
-    override fun incRank() { rank++ }
-
-    override fun mergeObservers(mergeFrom: SolverLogical<T>) {
+    private fun mergeObservers(mergeFrom: SolverLogical<T>) {
         val other = mergeFrom as MemLogical<T>
         observers.addAll(other.observers)
         other.observers.clear()

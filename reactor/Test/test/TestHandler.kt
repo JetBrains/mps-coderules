@@ -362,7 +362,7 @@ class TestHandler {
                 setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0), ConstraintSymbol("expected3", 1)),
                 occurrences().map { co -> co.constraint().symbol() }.toSet())
             val ex3 = occurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("expected3", 1) }.first()
-            assertEquals(null, (ex3.arguments().first() as Logical<Int>).value())
+            assertEquals(123, (ex3.arguments().first() as Logical<Int>).value())
         }
     }
 
@@ -403,7 +403,7 @@ class TestHandler {
                 setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0), ConstraintSymbol("expected3", 1)),
                 occurrences().map { co -> co.constraint().symbol() }.toSet())
             val ex3 = occurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("expected3", 1) }.first()
-            assertEquals(null, (ex3.arguments().first() as Logical<Int>).value())
+            assertEquals(123, (ex3.arguments().first() as Logical<Int>).value())
         }
     }
 

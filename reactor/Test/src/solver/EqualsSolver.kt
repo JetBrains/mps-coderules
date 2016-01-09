@@ -33,7 +33,7 @@ class EqualsSolver  : Queryable {
         val left = args[0]
         val right = args[1]
         if (left is SolverLogical<*> && right is SolverLogical<*>) {
-            tell_logical_logical(left, right)
+            tell_logical_logical(left as SolverLogical<Any>, right as SolverLogical<Any>)
         }
         else if (left is SolverLogical<*>) {
             tell_logical_value(left as SolverLogical<Any>, right)
@@ -62,23 +62,15 @@ class EqualsSolver  : Queryable {
         return left == right
     }
 
-    fun tell_logical_logical(left: SolverLogical<*>, right: SolverLogical<*>) {
-        if (left.isBound && right.isBound) {
-            check (left.findRoot().value() == right.findRoot().value())
-            // FIXME: use rank!!!
-            left.setParent(right)
-        }
-        else if (left.isBound) {
-            right.setParent(left)
-        }
-        else if (right.isBound) {
-            left.setParent(right)
-        }
-        else {
-            left.setParent(right)
-            // the representative has all the observers
-            right.mergeObservers(left);
-        }
+    fun <T> tell_logical_logical(left: SolverLogical<T>, right: SolverLogical<T>) {
+        if (left == right) return
+
+        val leftRepr = left.findRoot()
+        val rightRepr = right.findRoot()
+
+        if (leftRepr == rightRepr) return
+
+        leftRepr.union(rightRepr, { a, b -> tell_value_value(a, b)})
     }
 
     fun <T> tell_logical_value(left: SolverLogical<T>, right: T) {

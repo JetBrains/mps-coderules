@@ -7,10 +7,25 @@ public interface Logical<T> {
 
   public String name();
 
+  /**
+   * Returns the representative logical instance. 
+   * 
+   * TODO: rename to 'find()'
+   */
   public Logical<T> findRoot();
 
+  /**
+   * Returns the value associated with this logical instance. 
+   * Can be null. 
+   * Only the logical instance that is a representative can have value that is not null.
+   * 
+   * FIXME: must return the representative's value
+   */
   public T value();
 
+  /**
+   * True iff the representative has a non-null value.
+   */
   public boolean isBound();
 
   public boolean isWildcard();

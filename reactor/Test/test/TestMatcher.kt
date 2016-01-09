@@ -258,8 +258,7 @@ class TestMatcher {
             }
 
             val (v, w) = logical<Int>("v", "w")
-            // FIXME: use rank!!!
-            w.findRoot().setParent(v)
+            w.findRoot().union(v)
 
             matcher(occurrence("foo", v)).lookupMatches(occurrence("foo", w)).let { matches ->
                 assertEquals(4, matches.count())
