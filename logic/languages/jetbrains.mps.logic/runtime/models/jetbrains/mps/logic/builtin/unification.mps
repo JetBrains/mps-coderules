@@ -391,11 +391,8 @@
       <node concept="3Tm1VV" id="7HUwyZaOeBJ" role="1B3o_S" />
       <node concept="3uibUv" id="7HUwyZaOeBK" role="3clF45">
         <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
-        <node concept="3uibUv" id="49L2l3Fdqf5" role="11_B2D">
-          <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
-          <node concept="3uibUv" id="49L2l3Fdqv8" role="11_B2D">
-            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
-          </node>
+        <node concept="3uibUv" id="20WMLipvJgu" role="11_B2D">
+          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
       </node>
       <node concept="3clFbS" id="7HUwyZaOeBR" role="3clF47">

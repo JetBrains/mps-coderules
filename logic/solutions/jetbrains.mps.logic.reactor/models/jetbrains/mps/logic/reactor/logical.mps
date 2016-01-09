@@ -93,6 +93,7 @@
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
       </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
@@ -121,7 +122,38 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
+        <child id="3106559687488741665" name="line" index="2Xj1qM" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -149,6 +181,26 @@
       </node>
       <node concept="3Tm1VV" id="dfChU1eNV_" role="1B3o_S" />
       <node concept="3clFbS" id="dfChU1eNVA" role="3clF47" />
+      <node concept="P$JXv" id="20WMLipvC0g" role="lGtFl">
+        <node concept="TZ5HA" id="20WMLipvC0h" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipvC0i" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the representative logical instance. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipCwTD" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipCwTE" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipCwSk" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipw525" role="1dT_Ay">
+            <property role="1dT_AB" value="TODO: rename to 'find()'" />
+          </node>
+          <node concept="1dT_AC" id="20WMLipCwSl" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="dfChU1eNUX" role="jymVt" />
     <node concept="3clFb_" id="1mP5b6jQPMI" role="jymVt">
@@ -160,6 +212,33 @@
       <node concept="16syzq" id="1mP5b6jQPMn" role="3clF45">
         <ref role="16sUi3" node="1mP5b6jQPCW" resolve="T" />
       </node>
+      <node concept="P$JXv" id="20WMLipvrd$" role="lGtFl">
+        <node concept="TZ5HA" id="20WMLipvrd_" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipvrdA" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the value associated with this logical instance. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipvtfz" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipvtf$" role="1dT_Ay">
+            <property role="1dT_AB" value="Can be null. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipvtfD" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipvtfE" role="1dT_Ay">
+            <property role="1dT_AB" value="Only the logical instance that is a representative can have value that is not null." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipvRYX" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipvRYY" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipvSos" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipvSot" role="1dT_Ay">
+            <property role="1dT_AB" value="FIXME: must return the representative's value" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="1mP5b6jQPM2" role="jymVt" />
     <node concept="3clFb_" id="1mP5b6jQPKP" role="jymVt">
@@ -168,6 +247,13 @@
       <node concept="10P_77" id="1mP5b6jQPLl" role="3clF45" />
       <node concept="3Tm1VV" id="1mP5b6jQPKS" role="1B3o_S" />
       <node concept="3clFbS" id="1mP5b6jQPKT" role="3clF47" />
+      <node concept="P$JXv" id="20WMLipv_O2" role="lGtFl">
+        <node concept="TZ5HA" id="20WMLipv_O3" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipv_O4" role="1dT_Ay">
+            <property role="1dT_AB" value="True iff the representative has a non-null value." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="7jC45Kci9hZ" role="jymVt" />
     <node concept="3clFb_" id="2DKqMqOiHjb" role="jymVt">
@@ -188,11 +274,8 @@
       <node concept="3Tm1VV" id="7HUwyZaOd62" role="1B3o_S" />
       <node concept="3uibUv" id="7HUwyZaOd4F" role="3clF45">
         <ref role="3uigEE" node="7HUwyZauJhz" resolve="LogicalPattern" />
-        <node concept="3uibUv" id="49L2l3FdnyX" role="11_B2D">
-          <ref role="3uigEE" node="1mP5b6jQP$C" resolve="Logical" />
-          <node concept="16syzq" id="49L2l3FdnzY" role="11_B2D">
-            <ref role="16sUi3" node="1mP5b6jQPCW" resolve="T" />
-          </node>
+        <node concept="16syzq" id="20WMLipvHQ$" role="11_B2D">
+          <ref role="16sUi3" node="1mP5b6jQPCW" resolve="T" />
         </node>
       </node>
     </node>
@@ -659,26 +742,123 @@
       </node>
       <node concept="3Tm1VV" id="429xoyqB1js" role="1B3o_S" />
       <node concept="3clFbS" id="429xoyqB1jt" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="6MYr6JwzrGZ" role="jymVt" />
-    <node concept="3clFb_" id="6MYr6JwxZRg" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="setParent" />
-      <node concept="3clFbS" id="6MYr6JwxZRj" role="3clF47" />
-      <node concept="3Tm1VV" id="6MYr6JwxZRk" role="1B3o_S" />
-      <node concept="3cqZAl" id="6MYr6JwxZR2" role="3clF45" />
-      <node concept="37vLTG" id="6MYr6JwxZUE" role="3clF46">
-        <property role="TrG5h" value="parent" />
-        <node concept="3uibUv" id="6MYr6JwxZUD" role="1tU5fm">
-          <ref role="3uigEE" node="6MYr6JwxYwB" resolve="SolverLogical" />
-          <node concept="16syzq" id="6MYr6Jwy00T" role="11_B2D">
-            <ref role="16sUi3" node="6MYr6JwxYR6" resolve="T" />
+      <node concept="P$JXv" id="20WMLipvdb2" role="lGtFl">
+        <node concept="TZ5HA" id="20WMLipvdb3" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipvdb4" role="1dT_Ay">
+            <property role="1dT_AB" value="Covariant override." />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="6MYr6Jwy04i" role="jymVt" />
+    <node concept="2tJIrI" id="20WMLipvO7K" role="jymVt" />
+    <node concept="3clFb_" id="20WMLipvYTD" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="union" />
+      <node concept="3clFbS" id="20WMLipvYTG" role="3clF47" />
+      <node concept="3Tm1VV" id="20WMLipvYTH" role="1B3o_S" />
+      <node concept="3cqZAl" id="20WMLipvXXM" role="3clF45" />
+      <node concept="37vLTG" id="20WMLipvZYi" role="3clF46">
+        <property role="TrG5h" value="other" />
+        <node concept="3uibUv" id="20WMLipvZYh" role="1tU5fm">
+          <ref role="3uigEE" node="6MYr6JwxYwB" resolve="SolverLogical" />
+          <node concept="16syzq" id="20WMLipw0I7" role="11_B2D">
+            <ref role="16sUi3" node="6MYr6JwxYR6" resolve="T" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="20WMLipwvci" role="3clF46">
+        <property role="TrG5h" value="reconciler" />
+        <node concept="3uibUv" id="20WMLipwvPf" role="1tU5fm">
+          <ref role="3uigEE" node="20WMLipwnLy" resolve="SolverLogical.ValueReconciler" />
+          <node concept="16syzq" id="20WMLipwwCe" role="11_B2D">
+            <ref role="16sUi3" node="6MYr6JwxYR6" resolve="T" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="20WMLipw3de" role="lGtFl">
+        <node concept="TZ5HA" id="20WMLipw3dn" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipw3do" role="1dT_Ay">
+            <property role="1dT_AB" value="Unions two equivalence classes of logicals. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipw4Ad" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipw4Ae" role="1dT_Ay">
+            <property role="1dT_AB" value="Both the receiver and the " />
+          </node>
+          <node concept="1dT_AA" id="20WMLipw4AO" role="1dT_Ay">
+            <node concept="VVOAv" id="20WMLipw4Bc" role="qph3F">
+              <node concept="TZ5HA" id="20WMLipw4Be" role="2Xj1qM">
+                <node concept="1dT_AC" id="20WMLipw4B_" role="1dT_Ay">
+                  <property role="1dT_AB" value="other" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="20WMLipw4AN" role="1dT_Ay">
+            <property role="1dT_AB" value=" parameter are expected to be representatives." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipw4$T" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipw4$U" role="1dT_Ay">
+            <property role="1dT_AB" value="The one with the highest rank becomes the representative for the new class." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="20WMLipwu8B" role="jymVt" />
+    <node concept="3clFb_" id="20WMLipwsV4" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="union" />
+      <node concept="3clFbS" id="20WMLipwsV5" role="3clF47" />
+      <node concept="3Tm1VV" id="20WMLipwsV6" role="1B3o_S" />
+      <node concept="3cqZAl" id="20WMLipwsV7" role="3clF45" />
+      <node concept="37vLTG" id="20WMLipwsV8" role="3clF46">
+        <property role="TrG5h" value="other" />
+        <node concept="3uibUv" id="20WMLipwsV9" role="1tU5fm">
+          <ref role="3uigEE" node="6MYr6JwxYwB" resolve="SolverLogical" />
+          <node concept="16syzq" id="20WMLipwsVa" role="11_B2D">
+            <ref role="16sUi3" node="6MYr6JwxYR6" resolve="T" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="20WMLipwsVb" role="lGtFl">
+        <node concept="TZ5HA" id="20WMLipwsVc" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipwsVd" role="1dT_Ay">
+            <property role="1dT_AB" value="Calls " />
+          </node>
+          <node concept="1dT_AA" id="20WMLipwz1f" role="1dT_Ay">
+            <node concept="92FcH" id="20WMLipwzsF" role="qph3F">
+              <node concept="TZ5HA" id="20WMLipwzsH" role="2XjZqd" />
+              <node concept="VXe0Z" id="20WMLipwAdm" role="92FcQ">
+                <ref role="VXe0S" node="20WMLipvYTD" resolve="union" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="20WMLipwz1e" role="1dT_Ay">
+            <property role="1dT_AB" value=" with the default value reconciler." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="20WMLipwFsv" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipwFsw" role="1dT_Ay">
+            <property role="1dT_AB" value="The default reconciler throws " />
+          </node>
+          <node concept="1dT_AA" id="20WMLipwFsF" role="1dT_Ay">
+            <node concept="92FcH" id="20WMLipwFsL" role="qph3F">
+              <node concept="TZ5HA" id="20WMLipwFsN" role="2XjZqd" />
+              <node concept="VXe08" id="20WMLipwHMk" role="92FcQ">
+                <ref role="VXe09" to="wyt6:~IllegalArgumentException" resolve="IllegalArgumentException" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="20WMLipwFsE" role="1dT_Ay">
+            <property role="1dT_AB" value=" if the two values are not equal." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="20WMLipvX1X" role="jymVt" />
     <node concept="3clFb_" id="6MYr6Jwy05T" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="2aFKle" value="false" />
@@ -692,44 +872,45 @@
           <ref role="16sUi3" node="6MYr6JwxYR6" resolve="T" />
         </node>
       </node>
-    </node>
-    <node concept="2tJIrI" id="6MYr6JwxYYZ" role="jymVt" />
-    <node concept="3clFb_" id="6MYr6Jwy0d$" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="rank" />
-      <node concept="3clFbS" id="6MYr6Jwy0dB" role="3clF47" />
-      <node concept="3Tm1VV" id="6MYr6Jwy0dC" role="1B3o_S" />
-      <node concept="10Oyi0" id="6MYr6Jwy0d8" role="3clF45" />
-    </node>
-    <node concept="2tJIrI" id="6MYr6JwxYZ4" role="jymVt" />
-    <node concept="3clFb_" id="6MYr6Jwy0rM" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="incRank" />
-      <node concept="3clFbS" id="6MYr6Jwy0rP" role="3clF47" />
-      <node concept="3Tm1VV" id="6MYr6Jwy0rQ" role="1B3o_S" />
-      <node concept="3cqZAl" id="6MYr6Jwy0j4" role="3clF45" />
-    </node>
-    <node concept="2tJIrI" id="6MYr6Jwy0hW" role="jymVt" />
-    <node concept="3clFb_" id="6MYr6Jwy0yA" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="mergeObservers" />
-      <node concept="3clFbS" id="6MYr6Jwy0yD" role="3clF47" />
-      <node concept="3Tm1VV" id="6MYr6Jwy0yE" role="1B3o_S" />
-      <node concept="3cqZAl" id="6MYr6Jwy0xr" role="3clF45" />
-      <node concept="37vLTG" id="6MYr6Jwy0AX" role="3clF46">
-        <property role="TrG5h" value="mergeFrom" />
-        <node concept="3uibUv" id="6MYr6Jwy0AW" role="1tU5fm">
-          <ref role="3uigEE" node="6MYr6JwxYwB" resolve="SolverLogical" />
-          <node concept="16syzq" id="6MYr6Jwy0HG" role="11_B2D">
-            <ref role="16sUi3" node="6MYr6JwxYR6" resolve="T" />
+      <node concept="P$JXv" id="20WMLipviCp" role="lGtFl">
+        <node concept="TZ5HA" id="20WMLipviCq" role="TZ5H$">
+          <node concept="1dT_AC" id="20WMLipviCr" role="1dT_Ay">
+            <property role="1dT_AB" value="Should only be called on a representative. " />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="6MYr6Jwy0wa" role="jymVt" />
+    <node concept="2tJIrI" id="6MYr6Jwy0hW" role="jymVt" />
+    <node concept="3HP615" id="20WMLipwnLy" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="ValueReconciler" />
+      <node concept="2tJIrI" id="20WMLipwpsa" role="jymVt" />
+      <node concept="3clFb_" id="20WMLipwqq1" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="TrG5h" value="reconcile" />
+        <node concept="37vLTG" id="20WMLipwrvJ" role="3clF46">
+          <property role="TrG5h" value="valueA" />
+          <node concept="16syzq" id="20WMLipwssf" role="1tU5fm">
+            <ref role="16sUi3" node="20WMLipwrDF" resolve="T" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="20WMLipwsA8" role="3clF46">
+          <property role="TrG5h" value="valueB" />
+          <node concept="16syzq" id="20WMLipwsKa" role="1tU5fm">
+            <ref role="16sUi3" node="20WMLipwrDF" resolve="T" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="20WMLipwqq3" role="3clF45" />
+        <node concept="3Tm1VV" id="20WMLipwqq4" role="1B3o_S" />
+        <node concept="3clFbS" id="20WMLipwqq5" role="3clF47" />
+      </node>
+      <node concept="2tJIrI" id="20WMLipwpV3" role="jymVt" />
+      <node concept="3Tm1VV" id="20WMLipwnLz" role="1B3o_S" />
+      <node concept="16euLQ" id="20WMLipwrDF" role="16eVyc">
+        <property role="TrG5h" value="T" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="20WMLipwmJv" role="jymVt" />
     <node concept="3uibUv" id="6MYr6JwxYAu" role="3HQHJm">
       <ref role="3uigEE" node="1mP5b6jQP$C" resolve="Logical" />
       <node concept="16syzq" id="6MYr6JwxYRr" role="11_B2D">
