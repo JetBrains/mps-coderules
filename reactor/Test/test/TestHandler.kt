@@ -25,7 +25,7 @@ class TestHandler {
             init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
     private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Handler =
-        Handler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, listOf(* occurrences))
+        Handler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, occurrences = listOf(* occurrences))
 
     private fun <T : Any> Handler.eq(left: Logical<T>, right: Logical<T>) {
         sessionSolver.tell(PredicateSymbol("equals", 2), left, right)

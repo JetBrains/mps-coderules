@@ -2,6 +2,7 @@ package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.ConsList
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalPattern
@@ -50,7 +51,7 @@ abstract class Matcher(val rules: Collection<Rule>) {
 
 }
 
-class PartialMatch(val rule: Rule) {
+class PartialMatch(val rule: Rule) : MatchRule {
 
     var kept = ConsList.empty<Pair<Constraint, ConstraintOccurrence>>()
         private set
@@ -110,6 +111,13 @@ class PartialMatch(val rule: Rule) {
     }
 
     fun logicalContext(): LogicalContext = logicalContext
+
+    override fun rule(): Rule = rule
+
+    override fun matchHeadKept(): Iterable<ConstraintOccurrence> = kept.map { p -> p.second }
+
+    override fun matchHeadReplaced(): Iterable<ConstraintOccurrence> = discarded.map { p -> p.second }
+
 }
 
 

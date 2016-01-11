@@ -77,7 +77,7 @@ class MemLogical<T> : SolverLogical<T> {
 
     override fun union(other: SolverLogical<T>, reconciler: SolverLogical.ValueReconciler<T>) {
         val leftRepr = this.find()
-        val rightRepr = (other as MemLogical<T>).find()
+            val rightRepr = (other as MemLogical<T>).find()
 
         // invariant: leftRepr.rank > rightRepr.rank
         if (leftRepr.rank() < rightRepr.rank()) {

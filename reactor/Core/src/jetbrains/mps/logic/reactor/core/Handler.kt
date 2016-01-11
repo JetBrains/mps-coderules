@@ -1,6 +1,7 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -17,19 +18,25 @@ class Handler {
 
     val sessionSolver: SessionSolver
 
-    private val rules : MutableList<Rule> = ArrayList<Rule>()
+    val trace: EvaluationTrace
 
-    private val stored : MutableList<ConstraintOccurrence> = ArrayList<ConstraintOccurrence>()
+    private val rules = ArrayList<Rule>()
 
-    private val activeQueue : Queue<ConstraintOccurrence> = LinkedList<ConstraintOccurrence>()
+    private val stored = ArrayList<ConstraintOccurrence>()
+
+    private val activeQueue = LinkedList<ConstraintOccurrence>()
+
+    private val activationStack = LinkedList<PartialMatch>()
 
     constructor(
         sessionSolver: SessionSolver,
         programRules: Iterable<Rule>,
+        trace: EvaluationTrace = EvaluationTrace.NULL,
         // for testing purposes only
         occurrences: Iterable<ConstraintOccurrence>? = null)
     {
         this.sessionSolver = sessionSolver
+        this.trace = trace
         this.rules.addAll(programRules)
         if (occurrences != null) {
             this.stored.addAll(occurrences)
@@ -37,6 +44,18 @@ class Handler {
     }
 
     fun occurrences(): Set<ConstraintOccurrence> = stored.toSet()
+
+    fun tell(constraint: Constraint) {
+        try {
+            queue(constraint.occurrence(this, noLogicalContext))
+        }
+        catch (t: Throwable) {
+            for (pm in activationStack) {
+                trace.trigger(pm)
+            }
+            throw t
+        }
+    }
 
     fun queue(occurrence: ConstraintOccurrence) {
         activeQueue.add(occurrence)
@@ -48,6 +67,10 @@ class Handler {
     private fun process(active: ConstraintOccurrence) {
         if (!active.isStored()) {
             store(active)
+            trace.activate(active)
+        }
+        else {
+            trace.reactivate(active)
         }
 
         val matcher = object : Matcher(rules) {
@@ -57,16 +80,27 @@ class Handler {
         }
 
         for (match in matcher.lookupMatches(active).filter { pm -> pm.rule.checkGuard(pm.logicalContext()) }) {
-            if (!active.isStored()) return
+            if (!active.isStored()) break
             if (match.occurrences().any{ co -> !co.isStored() }) continue
+
+            activationStack.push(match)
+            trace.trigger(match)
 
             for ((cst, occ) in match.discarded) {
                 discard(occ)
+                trace.discard(occ)
             }
 
             for (item in match.rule.body()) {
                 activate(item, match.logicalContext())
             }
+
+            trace.exit(match.rule)
+            activationStack.pop()
+        }
+
+        if (active.isStored()) {
+            trace.suspend(active)
         }
     }
 
@@ -108,6 +142,10 @@ private fun AndItem.argumentValues(context: LogicalContext): List<Any> =
 
 private fun Constraint.occurrence(handler: Handler, context: LogicalContext): ConstraintOccurrence =
     MemConstraintOccurrence(handler, this, argumentValues(context))
+
+private val noLogicalContext: LogicalContext = object: LogicalContext {
+    override fun <V : Any?> valueFor(logicalPattern: LogicalPattern<V>): V? = null
+}
 
 
 private fun Predicate.invocation(logicalContext: LogicalContext): PredicateInvocation {

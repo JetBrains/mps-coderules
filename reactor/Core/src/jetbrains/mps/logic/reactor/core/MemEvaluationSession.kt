@@ -7,6 +7,7 @@ import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Program
@@ -48,11 +49,11 @@ class MemEvaluationSession : EvaluationSession {
             val sessionSolver = program.sessionSolver()
             sessionSolver.init(myEvaluationTrace, * predicateSymbols)
 
-            session = MemEvaluationSession(program)
+            session = MemEvaluationSession(program, myEvaluationTrace)
             ourBackend.ourSession.set(session)
 
             try {
-                session.launch(myParameters["main"] as ConstraintOccurrence)
+                session.launch(myParameters["main"] as Constraint)
             }
             finally {
                 ourBackend.ourSession.set(null)
@@ -64,15 +65,18 @@ class MemEvaluationSession : EvaluationSession {
 
     val program: Program
 
+    val trace: EvaluationTrace
+
     lateinit var handler: Handler
 
-    private constructor(program: Program): super() {
+    private constructor(program: Program, trace: EvaluationTrace): super() {
         this.program = program
+        this.trace = trace
     }
 
-    fun launch(main: ConstraintOccurrence) {
-        this.handler = Handler(sessionSolver(), program.rules())
-        handler.queue(main)
+    fun launch(main: Constraint) {
+        this.handler = Handler(sessionSolver(), program.rules(), trace)
+        handler.tell(main)
         // FIXME: shutdown the session properly
         ourBackend.ourSession.set(null)
     }

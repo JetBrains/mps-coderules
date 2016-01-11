@@ -7,6 +7,7 @@ import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import org.junit.*
 import org.junit.Assert.*
+import program.MemConstraint
 import solver.eq
 
 /**
@@ -30,7 +31,7 @@ class TestProgram {
         rules.forEach { r -> programBuilder.addRule(r) }
         return EvaluationSession.newSession(programBuilder.program(name, sessionSolver)).
             withPredicates(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3).
-            withParam("main", occurrence("main")).start()
+            withParam("main", MemConstraint(ConstraintSymbol("main", 0))).start()
     }
 
     @Test
