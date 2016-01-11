@@ -185,6 +185,11 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
+      </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -628,6 +633,22 @@
               </node>
             </node>
             <node concept="3clFbS" id="5_6ImQY3GdM" role="3eOfB_">
+              <node concept="3cpWs8" id="63ioh_TT1_9" role="3cqZAp">
+                <node concept="3cpWsn" id="63ioh_TT1_a" role="3cpWs9">
+                  <property role="TrG5h" value="peek" />
+                  <node concept="3uibUv" id="63ioh_TT1_3" role="1tU5fm">
+                    <ref role="3uigEE" node="6infEALqzXA" resolve="NodePrinter.Formatter" />
+                  </node>
+                  <node concept="2OqwBi" id="63ioh_TT1_b" role="33vP2m">
+                    <node concept="37vLTw" id="63ioh_TT1_c" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4peSo3CIVXA" resolve="formatStack" />
+                    </node>
+                    <node concept="liA8E" id="63ioh_TT1_d" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~LinkedList.peek():java.lang.Object" resolve="peek" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbF" id="6XxJ1FLXNhS" role="3cqZAp">
                 <node concept="2OqwBi" id="6XxJ1FLXNhT" role="3clFbG">
                   <node concept="37vLTw" id="6XxJ1FLXNhU" role="2Oq$k0">
@@ -638,17 +659,23 @@
                     <node concept="2ShNRf" id="6XxJ1FLYIVq" role="37wK5m">
                       <node concept="1pGfFk" id="6XxJ1FLYJmt" role="2ShVmc">
                         <ref role="37wK5l" node="6XxJ1FLXDlP" resolve="NodePrinter.NodeFormatter" />
-                        <node concept="2OqwBi" id="6XxJ1FLYIjo" role="37wK5m">
-                          <node concept="2OqwBi" id="6XxJ1FLYGnp" role="2Oq$k0">
-                            <node concept="37vLTw" id="6XxJ1FLYFVp" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4peSo3CIVXA" resolve="formatStack" />
-                            </node>
-                            <node concept="liA8E" id="6XxJ1FLYI7j" role="2OqNvi">
-                              <ref role="37wK5l" to="33ny:~LinkedList.peek():java.lang.Object" resolve="peek" />
+                        <node concept="3K4zz7" id="63ioh_TT2cr" role="37wK5m">
+                          <node concept="37vLTw" id="63ioh_TT2oC" role="3K4GZi">
+                            <ref role="3cqZAo" node="6XxJ1FLYfHw" resolve="NO_PARAMS" />
+                          </node>
+                          <node concept="3y3z36" id="63ioh_TT21N" role="3K4Cdx">
+                            <node concept="10Nm6u" id="63ioh_TT27b" role="3uHU7w" />
+                            <node concept="37vLTw" id="63ioh_TT1Wz" role="3uHU7B">
+                              <ref role="3cqZAo" node="63ioh_TT1_a" resolve="peek" />
                             </node>
                           </node>
-                          <node concept="liA8E" id="6XxJ1FLYN8c" role="2OqNvi">
-                            <ref role="37wK5l" node="6XxJ1FLYJFR" resolve="getSeparators" />
+                          <node concept="2OqwBi" id="6XxJ1FLYIjo" role="3K4E3e">
+                            <node concept="37vLTw" id="63ioh_TT1_e" role="2Oq$k0">
+                              <ref role="3cqZAo" node="63ioh_TT1_a" resolve="peek" />
+                            </node>
+                            <node concept="liA8E" id="6XxJ1FLYN8c" role="2OqNvi">
+                              <ref role="37wK5l" node="6XxJ1FLYJFR" resolve="getSeparators" />
+                            </node>
                           </node>
                         </node>
                       </node>
