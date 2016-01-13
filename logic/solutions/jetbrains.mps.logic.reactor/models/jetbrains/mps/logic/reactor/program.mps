@@ -349,6 +349,25 @@
       <node concept="3clFbS" id="6Kcfpq7Bjgm" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="6Kcfpq7Bjku" role="jymVt" />
+    <node concept="3clFb_" id="4TCblo5TXaZ" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="invocationArguments" />
+      <node concept="37vLTG" id="4TCblo5TXb0" role="3clF46">
+        <property role="TrG5h" value="logicalContext" />
+        <node concept="3uibUv" id="4TCblo5TXb1" role="1tU5fm">
+          <ref role="3uigEE" to="45ys:7IvepusY4Ez" resolve="LogicalContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4TCblo5TXb2" role="3clF47" />
+      <node concept="3Tm1VV" id="4TCblo5TXb3" role="1B3o_S" />
+      <node concept="3uibUv" id="4TCblo5TXb4" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <node concept="3qTvmN" id="4TCblo5TXb5" role="11_B2D" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4TCblo5TW7x" role="jymVt" />
+    <node concept="2tJIrI" id="4TCblo5TXdG" role="jymVt" />
     <node concept="3Tm1VV" id="6Kcfpq7Bj7r" role="1B3o_S" />
     <node concept="3uibUv" id="5uFPQ7B_ama" role="3HQHJm">
       <ref role="3uigEE" node="5uFPQ7B$Pn9" resolve="AndItem" />
@@ -397,6 +416,23 @@
         <node concept="1dT_AC" id="6Kcfpq7C_QR" role="1dT_Ay">
           <property role="1dT_AB" value="A constraint provided by a handler. Can only be told." />
         </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="4TCblo5M5qP" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="occurrenceArguments" />
+      <node concept="37vLTG" id="4TCblo5Nrp7" role="3clF46">
+        <property role="TrG5h" value="logicalContext" />
+        <node concept="3uibUv" id="4TCblo5Nrr2" role="1tU5fm">
+          <ref role="3uigEE" to="45ys:7IvepusY4Ez" resolve="LogicalContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4TCblo5M5qS" role="3clF47" />
+      <node concept="3Tm1VV" id="4TCblo5M5qT" role="1B3o_S" />
+      <node concept="3uibUv" id="4TCblo5M5pS" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <node concept="3qTvmN" id="4TCblo5M5qH" role="11_B2D" />
       </node>
     </node>
   </node>

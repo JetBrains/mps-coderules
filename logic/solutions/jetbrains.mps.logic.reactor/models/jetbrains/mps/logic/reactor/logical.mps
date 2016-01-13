@@ -706,7 +706,7 @@
     <node concept="2tJIrI" id="7IvepusY4EL" role="jymVt" />
     <node concept="3clFb_" id="7IvepusY4EY" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="valueFor" />
+      <property role="TrG5h" value="variable" />
       <node concept="37vLTG" id="7IvepusY4FP" role="3clF46">
         <property role="TrG5h" value="logicalPattern" />
         <node concept="3uibUv" id="7IvepusY4G3" role="1tU5fm">
@@ -716,8 +716,11 @@
           </node>
         </node>
       </node>
-      <node concept="16syzq" id="49L2l3FdnsR" role="3clF45">
-        <ref role="16sUi3" node="49L2l3Fdns_" resolve="V" />
+      <node concept="3uibUv" id="4TCblo5LRy4" role="3clF45">
+        <ref role="3uigEE" node="1mP5b6jQP$C" resolve="Logical" />
+        <node concept="16syzq" id="4TCblo5LRyo" role="11_B2D">
+          <ref role="16sUi3" node="49L2l3Fdns_" resolve="V" />
+        </node>
       </node>
       <node concept="3Tm1VV" id="7IvepusY4F1" role="1B3o_S" />
       <node concept="3clFbS" id="7IvepusY4F2" role="3clF47" />
