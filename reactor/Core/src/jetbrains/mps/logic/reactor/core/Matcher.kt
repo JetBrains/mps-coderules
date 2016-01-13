@@ -88,22 +88,31 @@ class PartialMatch(val rule: Rule) : MatchRule {
         val subst = Unification.unify(PartialMatchTerm(this), RuleTerm(this.rule))
         if (!subst.isSuccessful) return false
 
+        // variables come from LogicalPattern instances in rules
+        // any successful binding results in either new Logical with associated value,
+        // or a new value for a Logical already existing in this context
+
         // only one parameter of the unification can contain variables,
         // thus triangular form never has variables on the right hand side
         this.logicalContext = object: LogicalContext {
 
-            val var2val: MutableMap<LogicalPattern<*>, Any?> = HashMap(subst.bindings().map { b ->
+            // invariant: the variables in substitution bindings can only be instances of LogicalPattern
+            val pattern2value: MutableMap<LogicalPattern<*>, Any?> = HashMap(subst.bindings().map { b ->
                 (b.`var`().symbol() as LogicalPattern<Any>).to(b.term().toValue()) }.toMap())
 
-            override fun <V : Any?> valueFor(logicalPattern: LogicalPattern<V>): V {
-                if (var2val.containsKey(logicalPattern)) {
-                    return var2val[logicalPattern] as V
+            val pattern2logical: MutableMap<LogicalPattern<*>, Logical<*>> = HashMap()
+
+            override fun <V : Any> variable(logicalPattern: LogicalPattern<V>): Logical<V> {
+                if (!pattern2logical.containsKey(logicalPattern)) {
+                    if (pattern2value.containsKey(logicalPattern)) {
+                        val value = pattern2value[logicalPattern]
+                        pattern2logical[logicalPattern] = if (value is Logical<*>) value else MemLogical(value)
+                    }
+                    else {
+                        pattern2logical[logicalPattern] = logicalPattern.logical()
+                    }
                 }
-                else {
-                    val logical = logicalPattern.logical()
-                    var2val.put(logicalPattern, logical)
-                    return logical as V
-                }
+                return pattern2logical[logicalPattern] as Logical<V>
             }
         }
 
@@ -125,9 +134,8 @@ class PartialMatch(val rule: Rule) : MatchRule {
 /**
  * True iff the constraint matches the occurrence.
  */
-fun Constraint.matches(that: ConstraintOccurrence): Boolean {
-    return Unification.unify(ConstraintTerm(this), ConstraintOccurrenceTerm(that)).isSuccessful
-}
+fun Constraint.matches(that: ConstraintOccurrence): Boolean =
+    Unification.unify(ConstraintTerm(this), ConstraintOccurrenceTerm(that)).isSuccessful
 
 /** Function term with arguments == constraints converted to terms. May contain variables. */
 class RuleTerm(rule: Rule) :
@@ -150,9 +158,10 @@ class PartialMatchTerm(pm : PartialMatch) :
  *  Never contains variable terms. */
 class ConstraintOccurrenceTerm(occurrence: ConstraintOccurrence) :
     Function(occurrence.constraint().symbol(),
-        occurrence.arguments().map { arg -> if (arg is Logical<*>) arg.toTerm() else asTerm(arg) }) {}
+        occurrence.arguments().map { arg ->
+            if (arg is Logical<*>) arg.toTerm() else asTerm(arg) }) {}
 
-fun asTerm(arg: Any?): Term = if (arg is Term) arg else Constant(arg!!)
+fun asTerm(arg: Any?): Term = if (arg is Term && !arg.`is`(Term.Kind.VAR)) arg else Constant(arg!!)
 
 fun Logical<*>.toTerm(): Term = Constant(findRoot())
 
@@ -163,10 +172,10 @@ abstract class TermImpl(val symbol: Any) : Term {
     override fun symbol() = symbol
 
     override fun compareTo(other: Term): Int {
-        if (other.javaClass == this.javaClass) {
-            return String.valueOf(symbol).compareTo(String.valueOf(symbol))
-        }
-        else TODO()
+        return if (this.javaClass == other.javaClass)
+            String.valueOf(symbol).compareTo(String.valueOf(symbol))
+        else
+            String.valueOf(this.javaClass).compareTo(String.valueOf(other.javaClass))
     }
 }
 
