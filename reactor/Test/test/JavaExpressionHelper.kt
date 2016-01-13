@@ -97,6 +97,10 @@ data class TestJavaPredicate(val symbol: JavaPredicateSymbol, val expr: JavaExpr
 
     override fun symbol(): PredicateSymbol = symbol
 
+    override fun invocationArguments(logicalContext: LogicalContext): Collection<*> = args.map { a ->
+        if (a is LogicalPattern<*>) logicalContext.variable(a)
+        else a
+    }
 }
 
 

@@ -1,6 +1,8 @@
 package program
 
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import java.util.*
@@ -14,6 +16,11 @@ data class MemConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>)
     constructor(symbol: ConstraintSymbol, vararg args: Any) : this(symbol, listOf(* args)) {}
 
     override fun arguments(): List<Any> = arguments
+
+    override fun occurrenceArguments(logicalContext: LogicalContext): Collection<*> = arguments.map { a ->
+        if (a is LogicalPattern<*>) logicalContext.variable(a)
+        else a
+    }
 
     override fun symbol(): ConstraintSymbol = symbol
 

@@ -194,10 +194,10 @@ class TestMatcher {
                 )
             )
         ).matcher().lookupMatches(occurrence("foo", "blah", b)).first().run {
-            assertEquals("blah", logicalContext().valueFor(A))
-            assertSame(b, logicalContext().valueFor(B))
-            assertEquals(C.logical().name(), (logicalContext().valueFor(C) as Logical<*>).name())
-            assertEquals(C.logical().pattern(), (logicalContext().valueFor(C) as Logical<*>).pattern())
+            assertEquals("blah", logicalContext().variable(A).findRoot().value())
+            assertSame(b, logicalContext().variable(B))
+            assertEquals(C.logical().name(), logicalContext().variable(C).name())
+            assertEquals(C.logical().pattern(), logicalContext().variable(C).pattern())
         }
 
     }
@@ -241,7 +241,8 @@ class TestMatcher {
             matcher(occurrence("foo", 42)).lookupMatches(occurrence("foo", 16)).let { matches ->
                 assertEquals(2, matches.count())
                 assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() })
-                matches.map { m -> setOf(M, N).map { lp -> m.logicalContext().valueFor(lp) } }.forEach { vals ->
+                matches.map { m -> setOf(M, N).map { lp ->
+                    m.logicalContext().variable(lp).findRoot().value() } }.forEach { vals ->
                     assertEquals(setOf(42, 16), vals.toSet())
                 }
                 assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })

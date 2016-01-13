@@ -136,26 +136,19 @@ class Handler {
 
 }
 
-private fun AndItem.argumentValues(context: LogicalContext): List<Any> =
-    arguments().map { arg -> if (arg is LogicalPattern<*>) context.valueFor(arg) else arg!! }.toList()
-
-
-private fun Constraint.occurrence(handler: Handler, context: LogicalContext): ConstraintOccurrence =
-    MemConstraintOccurrence(handler, this, argumentValues(context))
-
 private val noLogicalContext: LogicalContext = object: LogicalContext {
-    override fun <V : Any?> valueFor(logicalPattern: LogicalPattern<V>): V? = null
+    override fun <V : Any> variable(logicalPattern: LogicalPattern<V>): Logical<V> = TODO()
 }
 
+private fun Constraint.occurrence(handler: Handler, context: LogicalContext): ConstraintOccurrence =
+    MemConstraintOccurrence(handler, this, occurrenceArguments(context))
 
-private fun Predicate.invocation(logicalContext: LogicalContext): PredicateInvocation {
-    return object: PredicateInvocation {
+private fun Predicate.invocation(logicalContext: LogicalContext): PredicateInvocation = object: PredicateInvocation {
 
         override fun predicate(): Predicate = this@invocation
 
-        override fun arguments(): Collection<Any> = argumentValues(logicalContext)
+        override fun arguments(): Collection<*> = invocationArguments(logicalContext)
     }
-}
 
 fun ConstraintOccurrence.terminate() {
     if (this is MemConstraintOccurrence) {
@@ -163,7 +156,7 @@ fun ConstraintOccurrence.terminate() {
     }
 }
 
-private data class MemConstraintOccurrence(val handler: Handler, val constraint: Constraint, val arguments: List<Any>, val id: Int) :
+private data class MemConstraintOccurrence(val handler: Handler, val constraint: Constraint, val arguments: List<*>, val id: Int) :
     ConstraintOccurrence,
     LogicalValueObserver
 {
@@ -174,8 +167,8 @@ private data class MemConstraintOccurrence(val handler: Handler, val constraint:
         val random = Random()
     }
 
-    constructor(handler: Handler, constraint: Constraint, arguments: List<Any>) :
-        this(handler, constraint, arguments, random.nextInt())
+    constructor(handler: Handler, constraint: Constraint, arguments: Collection<*>) :
+        this(handler, constraint, ArrayList(arguments), random.nextInt())
     {
         for (a in arguments) {
             if (a is Logical<*>) {
@@ -186,7 +179,7 @@ private data class MemConstraintOccurrence(val handler: Handler, val constraint:
 
     override fun constraint(): Constraint = constraint
 
-    override fun arguments(): Collection<Any> = arguments
+    override fun arguments(): Collection<*> = arguments
 
     override fun valueUpdated(logical: Logical<*>) {
         handler.queue(this)

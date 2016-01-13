@@ -26,6 +26,8 @@ internal fun Logical<*>.removeObserver(observer: LogicalValueObserver) {
 
 fun <V> LogicalPattern<V>.logical(): Logical<V> = MemLogical<V>(name())
 
+fun <V> LogicalPattern<V>.logical(value: V): Logical<V> = MemLogical<V>(name(), value)
+
 class MemLogical<T> : SolverLogical<T> {
 
     companion object {
@@ -51,6 +53,11 @@ class MemLogical<T> : SolverLogical<T> {
 
     constructor(name: String) {
         this.name = name
+    }
+
+    constructor(name: String, value: T) {
+        this.name = name
+        this._value = value
     }
 
     constructor(pattern: LogicalPattern<T>) {

@@ -49,4 +49,9 @@ data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
 
     override fun symbol(): PredicateSymbol = PredicateSymbol("equals", 2)
 
+    override fun invocationArguments(logicalContext: LogicalContext): Collection<*> = listOf(left, right).map { a ->
+        if (a is LogicalPattern<*>) logicalContext.variable(a)
+        else a
+    }
+
 }
