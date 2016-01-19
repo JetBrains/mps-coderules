@@ -2,8 +2,8 @@
 <model ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification()" />
@@ -168,7 +168,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -436,20 +436,20 @@
       <node concept="37vLTG" id="56MMu0AqCg3" role="3clF46">
         <property role="TrG5h" value="kind" />
         <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="573vQv1kkok" role="1tU5fm">
-          <ref role="3uigEE" to="yt73:~Term.Kind" resolve="Term.Kind" />
+        <node concept="3uibUv" id="18cJbc0HQOh" role="1tU5fm">
+          <ref role="3uigEE" to="yt73:~Term$Kind" resolve="Term.Kind" />
         </node>
       </node>
       <node concept="10P_77" id="56MMu0AqCg6" role="3clF45" />
       <node concept="3clFbS" id="56MMu0AqCg8" role="3clF47">
         <node concept="3clFbF" id="56MMu0AqDhG" role="3cqZAp">
           <node concept="3clFbC" id="56MMu0AqDoI" role="3clFbG">
+            <node concept="Rm8GO" id="18cJbc0HQQz" role="3uHU7B">
+              <ref role="Rm8GQ" to="yt73:~Term$Kind.FUN" resolve="FUN" />
+              <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+            </node>
             <node concept="37vLTw" id="56MMu0AqD_r" role="3uHU7w">
               <ref role="3cqZAo" node="56MMu0AqCg3" resolve="kind" />
-            </node>
-            <node concept="Rm8GO" id="573vQv1kkz2" role="3uHU7B">
-              <ref role="Rm8GQ" to="yt73:~Term.FUN" resolve="FUN" />
-              <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
             </node>
           </node>
         </node>
@@ -508,7 +508,7 @@
                     <ref role="3cqZAo" node="56MMu0Ar0iQ" resolve="node" />
                   </node>
                   <node concept="liA8E" id="56MMu0Ar9Q5" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
+                    <ref role="37wK5l" to="yt73:~Term.symbol():java.lang.Object" resolve="symbol" />
                   </node>
                 </node>
               </node>
@@ -1525,20 +1525,20 @@
       <node concept="37vLTG" id="1pPMb_vk4Mq" role="3clF46">
         <property role="TrG5h" value="kind" />
         <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="573vQv1l02_" role="1tU5fm">
-          <ref role="3uigEE" to="yt73:~Term.Kind" resolve="Term.Kind" />
+        <node concept="3uibUv" id="18cJbc0HRDO" role="1tU5fm">
+          <ref role="3uigEE" to="yt73:~Term$Kind" resolve="Term.Kind" />
         </node>
       </node>
       <node concept="10P_77" id="1pPMb_vk4Mt" role="3clF45" />
       <node concept="3clFbS" id="1pPMb_vk4Mv" role="3clF47">
         <node concept="3clFbF" id="56MMu0AoGpA" role="3cqZAp">
           <node concept="3clFbC" id="56MMu0AoGG2" role="3clFbG">
+            <node concept="Rm8GO" id="18cJbc0HREm" role="3uHU7B">
+              <ref role="Rm8GQ" to="yt73:~Term$Kind.FUN" resolve="FUN" />
+              <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+            </node>
             <node concept="37vLTw" id="56MMu0AoGH8" role="3uHU7w">
               <ref role="3cqZAo" node="1pPMb_vk4Mq" resolve="kind" />
-            </node>
-            <node concept="Rm8GO" id="573vQv1l0fq" role="3uHU7B">
-              <ref role="Rm8GQ" to="yt73:~Term.FUN" resolve="FUN" />
-              <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
             </node>
           </node>
         </node>
@@ -1626,7 +1626,7 @@
                     <ref role="3cqZAo" node="56MMu0AqMKr" resolve="node" />
                   </node>
                   <node concept="liA8E" id="56MMu0AqSsI" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
+                    <ref role="37wK5l" to="yt73:~Term.symbol():java.lang.Object" resolve="symbol" />
                   </node>
                 </node>
               </node>
@@ -3028,19 +3028,19 @@
         <property role="TrG5h" value="kind" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="573vQv1lmdE" role="1tU5fm">
-          <ref role="3uigEE" to="yt73:~Term.Kind" resolve="Term.Kind" />
+          <ref role="3uigEE" to="yt73:~Term$Kind" resolve="Term.Kind" />
         </node>
       </node>
       <node concept="10P_77" id="56MMu0Ark7H" role="3clF45" />
       <node concept="3clFbS" id="56MMu0Ark7K" role="3clF47">
         <node concept="3clFbF" id="56MMu0ArqpV" role="3cqZAp">
           <node concept="3clFbC" id="56MMu0ArqJ4" role="3clFbG">
+            <node concept="Rm8GO" id="18cJbc0HVY6" role="3uHU7B">
+              <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
+              <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+            </node>
             <node concept="37vLTw" id="56MMu0ArqYY" role="3uHU7w">
               <ref role="3cqZAo" node="56MMu0Ark7E" resolve="kind" />
-            </node>
-            <node concept="Rm8GO" id="573vQv1lmk7" role="3uHU7B">
-              <ref role="Rm8GQ" to="yt73:~Term.VAR" resolve="VAR" />
-              <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
             </node>
           </node>
         </node>
@@ -3132,7 +3132,7 @@
                     <ref role="3cqZAo" node="56MMu0Ark7R" resolve="that" />
                   </node>
                   <node concept="liA8E" id="56MMu0AruFG" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
+                    <ref role="37wK5l" to="yt73:~Term.symbol():java.lang.Object" resolve="symbol" />
                   </node>
                 </node>
               </node>
@@ -8918,8 +8918,8 @@
         <node concept="37vLTG" id="5j6rs$cJVAw" role="3clF46">
           <property role="TrG5h" value="kind" />
           <property role="3TUv4t" value="false" />
-          <node concept="3uibUv" id="573vQv1n9YN" role="1tU5fm">
-            <ref role="3uigEE" to="yt73:~Term.Kind" resolve="Term.Kind" />
+          <node concept="3uibUv" id="18cJbc0HTiq" role="1tU5fm">
+            <ref role="3uigEE" to="yt73:~Term$Kind" resolve="Term.Kind" />
           </node>
         </node>
         <node concept="10P_77" id="5j6rs$cJVAy" role="3clF45" />
@@ -8929,12 +8929,12 @@
         <node concept="3clFbS" id="5j6rs$cJVAG" role="3clF47">
           <node concept="3clFbF" id="5j6rs$cK9x8" role="3cqZAp">
             <node concept="3clFbC" id="5j6rs$cK9Tw" role="3clFbG">
+              <node concept="Rm8GO" id="18cJbc0HTj6" role="3uHU7B">
+                <ref role="Rm8GQ" to="yt73:~Term$Kind.REF" resolve="REF" />
+                <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+              </node>
               <node concept="37vLTw" id="5j6rs$cK9WI" role="3uHU7w">
                 <ref role="3cqZAo" node="5j6rs$cJVAw" resolve="kind" />
-              </node>
-              <node concept="Rm8GO" id="573vQv1naJI" role="3uHU7B">
-                <ref role="Rm8GQ" to="yt73:~Term.REF" resolve="REF" />
-                <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
               </node>
             </node>
           </node>
@@ -8946,10 +8946,10 @@
         <property role="TrG5h" value="get" />
         <property role="DiZV1" value="false" />
         <property role="od$2w" value="false" />
-        <node concept="3Tm1VV" id="5j6rs$cKt1P" role="1B3o_S" />
         <node concept="3uibUv" id="3H0z$hTunKp" role="3clF45">
           <ref role="3uigEE" node="uNmovXiEd4" resolve="Variable" />
         </node>
+        <node concept="3Tm1VV" id="5j6rs$cKt1P" role="1B3o_S" />
         <node concept="2AHcQZ" id="5j6rs$cKt1U" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
@@ -9331,10 +9331,10 @@
                   <ref role="3cqZAo" node="3gJBs5s$T2T" resolve="tbr" />
                 </node>
                 <node concept="liA8E" id="3gJBs5s$T2E" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Term.is(Kind)" resolve="is" />
-                  <node concept="Rm8GO" id="573vQv1nxni" role="37wK5m">
-                    <ref role="Rm8GQ" to="yt73:~Term.VAR" resolve="VAR" />
-                    <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
+                  <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
+                  <node concept="Rm8GO" id="18cJbc0HUZa" role="37wK5m">
+                    <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
+                    <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
                   </node>
                 </node>
               </node>
@@ -11501,9 +11501,9 @@
                                         </node>
                                         <node concept="liA8E" id="6HT7BWBPa_D" role="2OqNvi">
                                           <ref role="37wK5l" node="56MMu0Ark7C" resolve="is" />
-                                          <node concept="Rm8GO" id="6HT7BWBPaIr" role="37wK5m">
-                                            <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                                            <ref role="Rm8GQ" to="yt73:~Term.REF" resolve="REF" />
+                                          <node concept="Rm8GO" id="18cJbc0HQfe" role="37wK5m">
+                                            <ref role="Rm8GQ" to="yt73:~Term$Kind.REF" resolve="REF" />
+                                            <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
                                           </node>
                                         </node>
                                       </node>
@@ -11557,7 +11557,7 @@
                           <ref role="3cqZAo" node="6HT7BWBPa9P" resolve="atom" />
                         </node>
                         <node concept="liA8E" id="6HT7BWBRA2_" role="2OqNvi">
-                          <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
+                          <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
                         </node>
                       </node>
                       <node concept="3uibUv" id="6HT7BWBRA2A" role="10QFUM">

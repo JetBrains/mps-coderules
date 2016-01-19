@@ -820,7 +820,7 @@
                           <ref role="3cqZAo" node="4pWvZ2nh4h9" resolve="prev" />
                         </node>
                         <node concept="liA8E" id="1isQzelAbCY" role="2OqNvi">
-                          <ref role="37wK5l" to="t5kh:1isQzelAao_" resolve="getRuleHandlers" />
+                          <ref role="37wK5l" to="t5kh:1isQzelAao_" resolve="getPrograms" />
                         </node>
                       </node>
                     </node>
@@ -1065,7 +1065,7 @@
                                           </node>
                                         </node>
                                         <node concept="liA8E" id="4pWvZ2nE$2w" role="2OqNvi">
-                                          <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
+                                          <ref role="37wK5l" to="yt73:~Term.symbol():java.lang.Object" resolve="symbol" />
                                         </node>
                                       </node>
                                       <node concept="3uibUv" id="4pWvZ2nE$o3" role="10QFUM">
@@ -1101,7 +1101,7 @@
                                         </node>
                                       </node>
                                       <node concept="liA8E" id="4pWvZ2nEDAS" role="2OqNvi">
-                                        <ref role="37wK5l" to="yt73:~Term.arguments()" resolve="arguments" />
+                                        <ref role="37wK5l" to="yt73:~Term.arguments():java.util.Collection" resolve="arguments" />
                                       </node>
                                     </node>
                                   </node>

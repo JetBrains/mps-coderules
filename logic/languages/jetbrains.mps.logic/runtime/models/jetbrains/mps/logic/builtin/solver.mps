@@ -3649,7 +3649,7 @@
             </node>
             <node concept="2YIFZM" id="7K4Mb_J$cID" role="33vP2m">
               <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(Term,Term)" resolve="unify" />
+              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
               <node concept="37vLTw" id="7K4Mb_J$cIE" role="37wK5m">
                 <ref role="3cqZAo" node="6GYQG_SpvAH" resolve="leftVal" />
               </node>
@@ -3709,7 +3709,7 @@
                 <ref role="3cqZAo" node="7K4Mb_J$cIB" resolve="subs" />
               </node>
               <node concept="liA8E" id="6SkxsMzEepC" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
+                <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
               </node>
             </node>
           </node>
@@ -3729,7 +3729,7 @@
                     <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                   </node>
                   <node concept="liA8E" id="1Ns6gpY7Sp0" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                    <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                   </node>
                 </node>
               </node>
@@ -3795,7 +3795,7 @@
                             <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                           </node>
                           <node concept="liA8E" id="6MYr6JwS1$p" role="2OqNvi">
-                            <ref role="37wK5l" to="yt73:~Substitution.Binding.term()" resolve="term" />
+                            <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
                           </node>
                         </node>
                       </node>
@@ -3810,14 +3810,14 @@
                     <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                   </node>
                   <node concept="liA8E" id="6SkxsMzFMgY" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.Binding.term()" resolve="term" />
+                    <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
                   </node>
                 </node>
                 <node concept="liA8E" id="56MMu0Ap5n2" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Term.is(Kind)" resolve="is" />
+                  <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
                   <node concept="Rm8GO" id="573vQv1oO8g" role="37wK5m">
-                    <ref role="Rm8GQ" to="yt73:~Term.FUN" resolve="FUN" />
-                    <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
+                    <ref role="Rm8GQ" to="yt73:~Term$Kind.FUN" resolve="FUN" />
+                    <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
                   </node>
                 </node>
               </node>
@@ -3828,14 +3828,14 @@
                       <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                     </node>
                     <node concept="liA8E" id="6SkxsMzFMD8" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.Binding.term()" resolve="term" />
+                      <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
                     </node>
                   </node>
                   <node concept="liA8E" id="56MMu0ApUkU" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Term.is(Kind)" resolve="is" />
+                    <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
                     <node concept="Rm8GO" id="56MMu0ApUkV" role="37wK5m">
-                      <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                      <ref role="Rm8GQ" to="yt73:~Term.VAR" resolve="VAR" />
+                      <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+                      <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
                     </node>
                   </node>
                 </node>
@@ -3857,7 +3857,7 @@
                               <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6MYr6JwSbtd" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution.Binding.term()" resolve="term" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
                             </node>
                           </node>
                         </node>
@@ -3872,7 +3872,7 @@
           <node concept="3cpWsn" id="6SkxsMzDp28" role="1Duv9x">
             <property role="TrG5h" value="bnd" />
             <node concept="3uibUv" id="6SkxsMzDp2c" role="1tU5fm">
-              <ref role="3uigEE" to="yt73:~Substitution.Binding" resolve="Substitution.Binding" />
+              <ref role="3uigEE" to="yt73:~Substitution$Binding" resolve="Substitution.Binding" />
             </node>
           </node>
           <node concept="2OqwBi" id="6SkxsMzDp2d" role="1DdaDG">
@@ -3880,7 +3880,7 @@
               <ref role="3cqZAo" node="7K4Mb_J$cIB" resolve="subs" />
             </node>
             <node concept="liA8E" id="6SkxsMzDp2f" role="2OqNvi">
-              <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
+              <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
             </node>
           </node>
         </node>
@@ -4269,7 +4269,7 @@
             </node>
             <node concept="2YIFZM" id="7K4Mb_J$cIX" role="33vP2m">
               <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(Term,Term)" resolve="unify" />
+              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
               <node concept="37vLTw" id="7K4Mb_J$cIY" role="37wK5m">
                 <ref role="3cqZAo" node="6GYQG_SpvAT" resolve="leftVal" />
               </node>
@@ -4319,7 +4319,7 @@
                 <ref role="3cqZAo" node="7K4Mb_J$cIV" resolve="subs" />
               </node>
               <node concept="liA8E" id="6xYPVrp_rZ_" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
+                <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
               </node>
             </node>
           </node>
@@ -4351,7 +4351,7 @@
                               <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6xYPVrp_rZY" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                             </node>
                           </node>
                         </node>
@@ -4361,7 +4361,7 @@
                           <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                         </node>
                         <node concept="liA8E" id="6xYPVrp_s02" role="2OqNvi">
-                          <ref role="37wK5l" to="yt73:~Substitution.Binding.term()" resolve="term" />
+                          <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
                         </node>
                       </node>
                     </node>
@@ -4379,7 +4379,7 @@
                       <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                     </node>
                     <node concept="liA8E" id="7FFmDVAMd63" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                      <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                     </node>
                   </node>
                 </node>
@@ -4389,7 +4389,7 @@
           <node concept="3cpWsn" id="6xYPVrp_s03" role="1Duv9x">
             <property role="TrG5h" value="bnd" />
             <node concept="3uibUv" id="6xYPVrp_s04" role="1tU5fm">
-              <ref role="3uigEE" to="yt73:~Substitution.Binding" resolve="Substitution.Binding" />
+              <ref role="3uigEE" to="yt73:~Substitution$Binding" resolve="Substitution.Binding" />
             </node>
           </node>
           <node concept="2OqwBi" id="6xYPVrp_s05" role="1DdaDG">
@@ -4397,7 +4397,7 @@
               <ref role="3cqZAo" node="7K4Mb_J$cIV" resolve="subs" />
             </node>
             <node concept="liA8E" id="6xYPVrp_s07" role="2OqNvi">
-              <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
+              <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
             </node>
           </node>
         </node>
@@ -4584,7 +4584,7 @@
             </node>
             <node concept="2YIFZM" id="7K4Mb_J$cJX" role="33vP2m">
               <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(Term,Term)" resolve="unify" />
+              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
               <node concept="37vLTw" id="7K4Mb_J$cJY" role="37wK5m">
                 <ref role="3cqZAo" node="7K4Mb_J$cJD" resolve="left1" />
               </node>
@@ -4634,7 +4634,7 @@
                 <ref role="3cqZAo" node="7K4Mb_J$cJV" resolve="subs" />
               </node>
               <node concept="liA8E" id="6xYPVrp_lH1" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
+                <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
               </node>
             </node>
           </node>
@@ -4652,7 +4652,7 @@
                     <ref role="3cqZAo" node="6xYPVrp_lH_" resolve="bnd" />
                   </node>
                   <node concept="liA8E" id="6xYPVrp_lHh" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                    <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="6xYPVrp_lHi" role="3uHU7w">
@@ -4685,7 +4685,7 @@
                               <ref role="3cqZAo" node="6xYPVrp_lH_" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6xYPVrp_lHw" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                             </node>
                           </node>
                         </node>
@@ -4695,7 +4695,7 @@
                           <ref role="3cqZAo" node="6xYPVrp_lH_" resolve="bnd" />
                         </node>
                         <node concept="liA8E" id="6xYPVrp_lH$" role="2OqNvi">
-                          <ref role="37wK5l" to="yt73:~Substitution.Binding.term()" resolve="term" />
+                          <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
                         </node>
                       </node>
                     </node>
@@ -4713,7 +4713,7 @@
                       <ref role="3cqZAo" node="6xYPVrp_lH_" resolve="bnd" />
                     </node>
                     <node concept="liA8E" id="7FFmDVAJ$YY" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                      <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                     </node>
                   </node>
                 </node>
@@ -4723,7 +4723,7 @@
           <node concept="3cpWsn" id="6xYPVrp_lH_" role="1Duv9x">
             <property role="TrG5h" value="bnd" />
             <node concept="3uibUv" id="6xYPVrp_lHA" role="1tU5fm">
-              <ref role="3uigEE" to="yt73:~Substitution.Binding" resolve="Substitution.Binding" />
+              <ref role="3uigEE" to="yt73:~Substitution$Binding" resolve="Substitution.Binding" />
             </node>
           </node>
           <node concept="2OqwBi" id="6xYPVrp_lHB" role="1DdaDG">
@@ -4731,7 +4731,7 @@
               <ref role="3cqZAo" node="7K4Mb_J$cJV" resolve="subs" />
             </node>
             <node concept="liA8E" id="6xYPVrp_lHD" role="2OqNvi">
-              <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
+              <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
             </node>
           </node>
         </node>
@@ -5005,7 +5005,7 @@
             </node>
             <node concept="2YIFZM" id="7K4Mb_J$cJx" role="33vP2m">
               <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(Term,Term)" resolve="unify" />
+              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
               <node concept="37vLTw" id="7K4Mb_J$cJy" role="37wK5m">
                 <ref role="3cqZAo" node="7K4Mb_J$cJ5" resolve="left1" />
               </node>
@@ -5055,7 +5055,7 @@
                 <ref role="3cqZAo" node="7K4Mb_J$cJv" resolve="subs" />
               </node>
               <node concept="liA8E" id="6xYPVrp$5Os" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
+                <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
               </node>
             </node>
           </node>
@@ -5077,7 +5077,7 @@
                       <ref role="3cqZAo" node="6xYPVrp_5wy" resolve="bnd" />
                     </node>
                     <node concept="liA8E" id="6xYPVrp_7dq" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                      <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                     </node>
                   </node>
                 </node>
@@ -5087,7 +5087,7 @@
                       <ref role="3cqZAo" node="6xYPVrp_5wy" resolve="bnd" />
                     </node>
                     <node concept="liA8E" id="6xYPVrp_6qV" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                      <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="6xYPVrp_6Bj" role="3uHU7w">
@@ -5121,7 +5121,7 @@
                               <ref role="3cqZAo" node="6xYPVrp_5wy" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6xYPVrp_7R4" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                             </node>
                           </node>
                         </node>
@@ -5131,7 +5131,7 @@
                           <ref role="3cqZAo" node="6xYPVrp_5wy" resolve="bnd" />
                         </node>
                         <node concept="liA8E" id="6xYPVrp_8db" role="2OqNvi">
-                          <ref role="37wK5l" to="yt73:~Substitution.Binding.term()" resolve="term" />
+                          <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
                         </node>
                       </node>
                     </node>
@@ -5149,7 +5149,7 @@
                       <ref role="3cqZAo" node="6xYPVrp_5wy" resolve="bnd" />
                     </node>
                     <node concept="liA8E" id="7FFmDVAJE94" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.Binding.var()" resolve="var" />
+                      <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
                     </node>
                   </node>
                 </node>
@@ -5159,7 +5159,7 @@
           <node concept="3cpWsn" id="6xYPVrp_5wy" role="1Duv9x">
             <property role="TrG5h" value="bnd" />
             <node concept="3uibUv" id="6xYPVrp_5wA" role="1tU5fm">
-              <ref role="3uigEE" to="yt73:~Substitution.Binding" resolve="Substitution.Binding" />
+              <ref role="3uigEE" to="yt73:~Substitution$Binding" resolve="Substitution.Binding" />
             </node>
           </node>
           <node concept="2OqwBi" id="6xYPVrp_5wB" role="1DdaDG">
@@ -5167,7 +5167,7 @@
               <ref role="3cqZAo" node="7K4Mb_J$cJv" resolve="subs" />
             </node>
             <node concept="liA8E" id="6xYPVrp_5wD" role="2OqNvi">
-              <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
+              <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
             </node>
           </node>
         </node>
@@ -5327,10 +5327,10 @@
               <ref role="3cqZAo" node="6xYPVrp$v6t" resolve="node" />
             </node>
             <node concept="liA8E" id="56MMu0Ap5oY" role="2OqNvi">
-              <ref role="37wK5l" to="yt73:~Term.is(Kind)" resolve="is" />
+              <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
               <node concept="Rm8GO" id="56MMu0Ap5oZ" role="37wK5m">
-                <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                <ref role="Rm8GQ" to="yt73:~Term.FUN" resolve="FUN" />
+                <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+                <ref role="Rm8GQ" to="yt73:~Term$Kind.FUN" resolve="FUN" />
               </node>
             </node>
           </node>
@@ -5370,10 +5370,10 @@
                 <ref role="3cqZAo" node="6xYPVrp$v6t" resolve="node" />
               </node>
               <node concept="liA8E" id="56MMu0ApUC5" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.is(Kind)" resolve="is" />
+                <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
                 <node concept="Rm8GO" id="56MMu0ApUC6" role="37wK5m">
-                  <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                  <ref role="Rm8GQ" to="yt73:~Term.VAR" resolve="VAR" />
+                  <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+                  <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
                 </node>
               </node>
             </node>
@@ -5433,11 +5433,11 @@
                   <ref role="3cqZAo" node="1MWQR5SpMLu" resolve="subs" />
                 </node>
                 <node concept="liA8E" id="1MWQR5SpML5" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Substitution.failureCause()" resolve="failureCause" />
+                  <ref role="37wK5l" to="yt73:~Substitution.failureCause():jetbrains.mps.unification.Substitution$FailureCause" resolve="failureCause" />
                 </node>
               </node>
               <node concept="liA8E" id="1MWQR5SpML6" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Substitution.FailureCause.toString()" resolve="toString" />
+                <ref role="37wK5l" to="yt73:~Substitution$FailureCause.toString():java.lang.String" resolve="toString" />
               </node>
             </node>
           </node>
@@ -5457,7 +5457,7 @@
                       <ref role="3cqZAo" node="1MWQR5SpMLu" resolve="subs" />
                     </node>
                     <node concept="liA8E" id="1MWQR5SpMLf" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.failureDetails()" resolve="failureDetails" />
+                      <ref role="37wK5l" to="yt73:~Substitution.failureDetails():java.lang.Object[]" resolve="failureDetails" />
                     </node>
                   </node>
                 </node>
@@ -5470,15 +5470,15 @@
           <node concept="1Wc70l" id="1MWQR5SpMLh" role="3clFbw">
             <node concept="3clFbC" id="1MWQR5SpMLi" role="3uHU7B">
               <node concept="Rm8GO" id="1MWQR5SpMLj" role="3uHU7w">
-                <ref role="1Px2BO" to="yt73:~Substitution.FailureCause" resolve="Substitution.FailureCause" />
-                <ref role="Rm8GQ" to="yt73:~Substitution.SYMBOL_CLASH" resolve="SYMBOL_CLASH" />
+                <ref role="1Px2BO" to="yt73:~Substitution$FailureCause" resolve="Substitution.FailureCause" />
+                <ref role="Rm8GQ" to="yt73:~Substitution$FailureCause.SYMBOL_CLASH" resolve="SYMBOL_CLASH" />
               </node>
               <node concept="2OqwBi" id="1MWQR5SpMLk" role="3uHU7B">
                 <node concept="37vLTw" id="1MWQR5SpMLx" role="2Oq$k0">
                   <ref role="3cqZAo" node="1MWQR5SpMLu" resolve="subs" />
                 </node>
                 <node concept="liA8E" id="1MWQR5SpMLm" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Substitution.failureCause()" resolve="failureCause" />
+                  <ref role="37wK5l" to="yt73:~Substitution.failureCause():jetbrains.mps.unification.Substitution$FailureCause" resolve="failureCause" />
                 </node>
               </node>
             </node>
@@ -5489,7 +5489,7 @@
                   <ref role="3cqZAo" node="1MWQR5SpMLu" resolve="subs" />
                 </node>
                 <node concept="liA8E" id="1MWQR5SpMLr" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Substitution.failureDetails()" resolve="failureDetails" />
+                  <ref role="37wK5l" to="yt73:~Substitution.failureDetails():java.lang.Object[]" resolve="failureDetails" />
                 </node>
               </node>
             </node>

@@ -122,7 +122,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -809,7 +809,7 @@
           <property role="TrG5h" value="kind" />
           <property role="3TUv4t" value="false" />
           <node concept="3uibUv" id="573vQv1pfmQ" role="1tU5fm">
-            <ref role="3uigEE" to="yt73:~Term.Kind" resolve="Term.Kind" />
+            <ref role="3uigEE" to="yt73:~Term$Kind" resolve="Term.Kind" />
           </node>
         </node>
         <node concept="10P_77" id="2h41EzbwS8U" role="3clF45" />
@@ -822,8 +822,8 @@
                     <ref role="3cqZAo" node="2h41EzbwS8R" resolve="kind" />
                   </node>
                   <node concept="Rm8GO" id="2h41EzbxTzV" role="3uHU7B">
-                    <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                    <ref role="Rm8GQ" to="yt73:~Term.REF" resolve="REF" />
+                    <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+                    <ref role="Rm8GQ" to="yt73:~Term$Kind.REF" resolve="REF" />
                   </node>
                 </node>
               </node>
@@ -840,8 +840,8 @@
                       <ref role="3cqZAo" node="2h41EzbwS8R" resolve="kind" />
                     </node>
                     <node concept="Rm8GO" id="2h41EzbxXxv" role="3uHU7B">
-                      <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                      <ref role="Rm8GQ" to="yt73:~Term.VAR" resolve="VAR" />
+                      <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+                      <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
                     </node>
                   </node>
                 </node>
@@ -1376,7 +1376,7 @@
         <property role="TrG5h" value="kind" />
         <property role="3TUv4t" value="false" />
         <node concept="3uibUv" id="4TCblo5MQHj" role="1tU5fm">
-          <ref role="3uigEE" to="yt73:~Term.Kind" resolve="Term.Kind" />
+          <ref role="3uigEE" to="yt73:~Term$Kind" resolve="Term.Kind" />
         </node>
       </node>
       <node concept="10P_77" id="4TCblo5MQHk" role="3clF45" />
@@ -1389,8 +1389,8 @@
                   <ref role="3cqZAo" node="4TCblo5MQHi" resolve="kind" />
                 </node>
                 <node concept="Rm8GO" id="4TCblo5MQHr" role="3uHU7B">
-                  <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                  <ref role="Rm8GQ" to="yt73:~Term.REF" resolve="REF" />
+                  <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+                  <ref role="Rm8GQ" to="yt73:~Term$Kind.REF" resolve="REF" />
                 </node>
               </node>
             </node>
@@ -1412,8 +1412,8 @@
                     <ref role="3cqZAo" node="4TCblo5MQHi" resolve="kind" />
                   </node>
                   <node concept="Rm8GO" id="4TCblo5MQHz" role="3uHU7B">
-                    <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                    <ref role="Rm8GQ" to="yt73:~Term.VAR" resolve="VAR" />
+                    <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+                    <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
                   </node>
                 </node>
               </node>

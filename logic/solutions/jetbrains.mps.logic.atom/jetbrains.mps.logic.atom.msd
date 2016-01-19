@@ -4,13 +4,14 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
-    <modelRoot contentPath="${module}" type="java_source_stubs">
-      <sourceRoot location="imports/mps-unification/code/src" />
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="lib/unification-lib-1.0.2.jar" />
     </modelRoot>
   </models>
-  <sourcePath>
-    <source path="${module}/imports/mps-unification/code/src" />
-  </sourcePath>
+  <stubModelEntries>
+    <stubModelEntry path="${module}/lib/unification-lib-1.0.2.jar" />
+  </stubModelEntries>
+  <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>

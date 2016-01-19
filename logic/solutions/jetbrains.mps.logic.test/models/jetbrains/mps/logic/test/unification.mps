@@ -2,9 +2,9 @@
 <model ref="r:82cec6f7-ddec-440c-961c-1c598267be42(jetbrains.mps.logic.test.unification)">
   <persistence version="9" />
   <languages>
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
@@ -98,7 +98,7 @@
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -2495,7 +2495,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtqzXR9" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
               </node>
             </node>
             <node concept="2OqwBi" id="5cGCTtqzVZP" role="3tpDZB">
@@ -2516,7 +2516,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtqzWC9" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
               </node>
             </node>
           </node>
@@ -2778,7 +2778,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtq$7s_" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
               </node>
             </node>
             <node concept="2OqwBi" id="5cGCTtq$5_x" role="3tpDZB">
@@ -2799,7 +2799,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5cGCTtq$6dM" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
               </node>
             </node>
           </node>
@@ -4176,7 +4176,7 @@
                     <ref role="3cqZAo" node="6HT7BWBPd0T" resolve="value" />
                   </node>
                   <node concept="liA8E" id="3K_0akS_wH1" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Term.arguments()" resolve="arguments" />
+                    <ref role="37wK5l" to="yt73:~Term.arguments():java.util.Collection" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3K_0akS_wH2" role="2OqNvi">
@@ -4512,7 +4512,7 @@
                     <ref role="3cqZAo" node="6HT7BWBPhwM" resolve="value" />
                   </node>
                   <node concept="liA8E" id="3K_0akS_pDV" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Term.arguments()" resolve="arguments" />
+                    <ref role="37wK5l" to="yt73:~Term.arguments():java.util.Collection" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3K_0akS_pDW" role="2OqNvi">

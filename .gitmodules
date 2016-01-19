@@ -1,3 +1,0 @@
-[submodule "mps--unification"]
-	path = logic/solutions/jetbrains.mps.logic.atom/imports/mps-unification
-	url = git@github.com:fisakov/mps-unification.git

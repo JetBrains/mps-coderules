@@ -423,10 +423,10 @@
           </node>
           <node concept="2OqwBi" id="4peSo3CIJS4" role="3clFbw">
             <node concept="liA8E" id="4peSo3CIJS5" role="2OqNvi">
-              <ref role="37wK5l" to="yt73:~Term.is(Kind)" resolve="is" />
+              <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
               <node concept="Rm8GO" id="4peSo3CIJS6" role="37wK5m">
-                <ref role="1Px2BO" to="yt73:~Term.Kind" resolve="Term.Kind" />
-                <ref role="Rm8GQ" to="yt73:~Term.VAR" resolve="VAR" />
+                <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
+                <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
               </node>
             </node>
             <node concept="37vLTw" id="4peSo3CIJS7" role="2Oq$k0">
