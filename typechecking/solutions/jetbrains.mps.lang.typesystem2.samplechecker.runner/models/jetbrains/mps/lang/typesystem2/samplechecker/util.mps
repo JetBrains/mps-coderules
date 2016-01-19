@@ -2100,13 +2100,8 @@
             <node concept="2YIFZM" id="4peSo3D16mZ" role="3clFbG">
               <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <node concept="2OqwBi" id="3gJBs5s$Dma" role="37wK5m">
-                <node concept="37vLTw" id="3gJBs5s$DhY" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3gJBs5s$cVL" resolve="variable" />
-                </node>
-                <node concept="liA8E" id="3gJBs5s$DF$" role="2OqNvi">
-                  <ref role="37wK5l" to="ie8e:56MMu0Ark7d" resolve="symbol" />
-                </node>
+              <node concept="37vLTw" id="3gJBs5s$DhY" role="37wK5m">
+                <ref role="3cqZAo" node="3gJBs5s$cVL" resolve="variable" />
               </node>
             </node>
           </node>
