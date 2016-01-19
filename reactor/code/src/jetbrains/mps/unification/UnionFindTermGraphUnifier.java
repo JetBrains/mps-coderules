@@ -79,8 +79,8 @@ public class UnionFindTermGraphUnifier {
         }
 
         // dereference REF nodes
-        Term ds = zs.is(REF) ? zs.get() : zs;
-        Term dt = zt.is(REF) ? zt.get() : zt;
+        Term ds = deref(zs);
+        Term dt = deref(zt);
 
         if (ds.is(VAR)) {
             if (s != find(ds)) {
@@ -139,6 +139,14 @@ public class UnionFindTermGraphUnifier {
         }
     }
 
+    private Term deref(Term zs) {
+        Term tmp = zs;
+        while (tmp.is(REF)) {
+            tmp = tmp.get();
+        }
+        return tmp;
+    }
+
     private void union(Term s, Term t) {
         int ssize = getSize(s);
         int tsize = getSize(t);
@@ -161,7 +169,7 @@ public class UnionFindTermGraphUnifier {
 
         Term zs = getSchema(s);
         Term zt = getSchema(t);
-        if (zs.is(VAR)  || (zs.is(REF) && zs.get().is(VAR) && !zt.is(VAR)))
+        if (zs.is(VAR)  || (zs.is(REF) && deref(zs).is(VAR) && !zt.is(VAR)))
         {
             setSchema(s, zt);
         }
@@ -227,7 +235,7 @@ public class UnionFindTermGraphUnifier {
         SuccessfulSubstitution success = new SuccessfulSubstitution(substitution);
         for (Term var : getVars(find(z))) {
             if (var != z) {
-                Term val = z.is(REF) ? z.get() : z;
+                Term val = deref(z);
 
                 // Keep the order of variables within a binding
                 if (val.is(VAR) && val.compareTo(var) < 0) {
@@ -297,11 +305,13 @@ public class UnionFindTermGraphUnifier {
     }
 
     private boolean hasData(Term n) {
+        // TODO: publish the requirements for symbols or drop this hack!
         Object key = n.is(VAR) ? String.valueOf(n.symbol()).intern() : n;
         return myData.containsKey(key);
     }
 
     private Data getData(Term n) {
+        // TODO: publish the requirements for symbols or drop this hack!
         Object key = n.is(VAR) ? String.valueOf(n.symbol()).intern() : n;
         if (myData.containsKey(key)) return myData.get(key);
         Data data = new Data(n);

@@ -43,6 +43,12 @@ public class SolverTests {
 
                 bind(var("X"), var("Y"))
         );
+        assertUnifiesWithBindings(
+                parse("a{Y}"),
+                parse("a{X}"),
+
+                bind(var("X"), var("Y"))
+        );
     }
 
     @Test
