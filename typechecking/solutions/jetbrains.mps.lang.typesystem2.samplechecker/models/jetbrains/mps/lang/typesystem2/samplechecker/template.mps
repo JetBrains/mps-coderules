@@ -139,7 +139,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -700,12 +700,16 @@
                       <node concept="1oi5XN" id="5YVX0wIi26O" role="1oi5zu">
                         <property role="1oi5yK" value="" />
                         <node concept="22Ky0T" id="5YVX0wIi26P" role="lGtFl">
-                          <node concept="2OqwBi" id="5YVX0wIi26Q" role="22Ky0K">
-                            <node concept="3A2sRY" id="5YVX0wIi26R" role="2Oq$k0">
-                              <ref role="3A2yKK" node="1PFbZN6fTO$" resolve="intConst" />
-                            </node>
-                            <node concept="3TrcHB" id="5YVX0wIi26S" role="2OqNvi">
-                              <ref role="3TsBF5" to="tpee:fzcmrcl" resolve="value" />
+                          <node concept="2YIFZM" id="4TCblo6f1Pa" role="22Ky0K">
+                            <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                            <ref role="37wK5l" to="wyt6:~String.valueOf(int):java.lang.String" resolve="valueOf" />
+                            <node concept="2OqwBi" id="5YVX0wIi26Q" role="37wK5m">
+                              <node concept="3A2sRY" id="5YVX0wIi26R" role="2Oq$k0">
+                                <ref role="3A2yKK" node="1PFbZN6fTO$" resolve="intConst" />
+                              </node>
+                              <node concept="3TrcHB" id="5YVX0wIi26S" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpee:fzcmrcl" resolve="value" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -7583,18 +7587,6 @@
                     </node>
                     <node concept="a7P8L" id="4EfgX2EH6Nr" role="3AunhB">
                       <ref role="a7OzE" node="4EfgX2EGdUV" resolve="Declared" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3Aqczg" id="4EfgX2EIeO4" role="3cqZAp">
-                  <node concept="3XxkQB" id="4EfgX2EIeTp" role="3Aqpz8">
-                    <node concept="a7P8L" id="4EfgX2EIeTE" role="3Xxm5W">
-                      <ref role="a7OzE" node="4EfgX2EFWN9" resolve="Inferred" />
-                    </node>
-                    <node concept="aYllk" id="4EfgX2EIeTt" role="3XxmmS">
-                      <node concept="3A2sRY" id="4EfgX2EIeT_" role="aYrYs">
-                        <ref role="3A2yKK" node="1ffsG7bsOze" resolve="bmd" />
-                      </node>
                     </node>
                   </node>
                 </node>
