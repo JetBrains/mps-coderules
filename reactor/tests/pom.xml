@@ -7,7 +7,7 @@
     <parent>
         <groupId>jetbrains.mps.unification</groupId>
         <artifactId>main</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <relativePath>..</relativePath>
     </parent>
 
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>jetbrains.mps.unification</groupId>
             <artifactId>unification-lib</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </dependency>
     </dependencies>
 
