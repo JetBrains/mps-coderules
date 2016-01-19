@@ -31,7 +31,7 @@ fun <V> LogicalPattern<V>.logical(value: V): Logical<V> = MemLogical<V>(name(), 
 class MemLogical<T> : SolverLogical<T> {
 
     companion object {
-        var anonIdx = 0
+        var lastIdx = 0
     }
 
     val name: String
@@ -47,22 +47,22 @@ class MemLogical<T> : SolverLogical<T> {
     internal val observers = ArrayList<LogicalValueObserver>()
 
     constructor(value: T) {
-        this.name = "$${anonIdx++}"
+        this.name = "$${++lastIdx}"
         this._value = value
     }
 
     constructor(name: String) {
-        this.name = name
+        this.name = "${name}_${++lastIdx}"
     }
 
     constructor(name: String, value: T) {
-        this.name = name
+        this.name = "${name}_${++lastIdx}"
         this._value = value
     }
 
     constructor(pattern: LogicalPattern<T>) {
         this.pattern = pattern
-        this.name = pattern.name()
+        this.name = "${pattern.name()}_${++lastIdx}"
     }
 
     override fun name(): String = name
@@ -84,7 +84,7 @@ class MemLogical<T> : SolverLogical<T> {
 
     override fun union(other: SolverLogical<T>, reconciler: SolverLogical.ValueReconciler<T>) {
         val leftRepr = this.find()
-            val rightRepr = (other as MemLogical<T>).find()
+        val rightRepr = (other as MemLogical<T>).find()
 
         // invariant: leftRepr.rank > rightRepr.rank
         if (leftRepr.rank() < rightRepr.rank()) {
@@ -95,7 +95,7 @@ class MemLogical<T> : SolverLogical<T> {
             leftRepr.incRank();
         }
 
-        rightRepr.setParent(leftRepr);
+        rightRepr._parent = leftRepr
 
         val leftVal = leftRepr.value();
         val rightVal = rightRepr.value();
@@ -122,13 +122,6 @@ class MemLogical<T> : SolverLogical<T> {
 
     override fun union(other: SolverLogical<T>) {
         union(other, { a, b -> if (a != b) throw IllegalStateException("$a does not equal to $b")})
-    }
-
-    private fun setParent(parent: SolverLogical<T>) {
-        this._parent = parent as MemLogical<T>
-        if (find().isBound) {
-            notifyObservers()
-        }
     }
 
     private fun rank(): Int = rank
@@ -159,6 +152,8 @@ class MemLogical<T> : SolverLogical<T> {
         }
     }
 
-    override fun toString(): String = "$name(^${_parent?.name ?: null})=$_value"
+    override fun toString(): String =
+        if (_parent != null) "${name}(^${_parent.toString()})"
+        else "${name}=$_value"
 
 }

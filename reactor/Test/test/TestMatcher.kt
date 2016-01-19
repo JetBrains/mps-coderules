@@ -196,7 +196,6 @@ class TestMatcher {
         ).matcher().lookupMatches(occurrence("foo", "blah", b)).first().run {
             assertEquals("blah", logicalContext().variable(A).findRoot().value())
             assertSame(b, logicalContext().variable(B))
-            assertEquals(C.logical().name(), logicalContext().variable(C).name())
             assertEquals(C.logical().pattern(), logicalContext().variable(C).pattern())
         }
 
