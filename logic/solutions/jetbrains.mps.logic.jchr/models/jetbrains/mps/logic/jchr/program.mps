@@ -16,7 +16,8 @@
     <import index="iawt" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime.debug(jetbrains.mps.jchr.runtime/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="9kr0" ref="r:0f58be42-48ea-45ab-99f8-158393a0f526(jetbrains.mps.typechecking.handler.producer)" />
+    <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
+    <import index="dlzn" ref="r:37f5cc5e-5928-4049-bb1c-5c7a5459b1fe(jetbrains.mps.typechecking.handler.producer)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2169,7 +2170,7 @@
       <node concept="3Tm6S6" id="429xoyqap6L" role="1B3o_S" />
       <node concept="3clFbS" id="5mr7UHccgNv" role="3clF47">
         <node concept="XkiVB" id="5mr7UHccgQU" role="3cqZAp">
-          <ref role="37wK5l" to="9kr0:5uFPQ7BZtsU" resolve="AbstractConstraint" />
+          <ref role="37wK5l" to="yg8f:5uFPQ7BZtsU" resolve="AbstractConstraint" />
           <node concept="37vLTw" id="5mr7UHccgV4" role="37wK5m">
             <ref role="3cqZAo" node="5mr7UHccgR4" resolve="constraintSymbol" />
           </node>
@@ -2182,7 +2183,7 @@
     <node concept="2tJIrI" id="5mr7UHccgXY" role="jymVt" />
     <node concept="3Tm1VV" id="5mr7UHccgL_" role="1B3o_S" />
     <node concept="3uibUv" id="5mr7UHccgMF" role="1zkMxy">
-      <ref role="3uigEE" to="9kr0:5uFPQ7BZsAX" resolve="AbstractConstraint" />
+      <ref role="3uigEE" to="yg8f:5uFPQ7BZsAX" resolve="AbstractConstraint" />
     </node>
     <node concept="3uibUv" id="5mr7UHcclM3" role="EKbjA">
       <ref role="3uigEE" to="qrld:5uFPQ7BZac$" resolve="ConstraintOccurrence" />
@@ -2222,7 +2223,7 @@
                 <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;(java.lang.String)" resolve="StringBuilder" />
                 <node concept="2OqwBi" id="5jPBdKP5SP" role="37wK5m">
                   <node concept="1rXfSq" id="5jPBdKP5Qq" role="2Oq$k0">
-                    <ref role="37wK5l" to="9kr0:5uFPQ7BZsCD" resolve="symbol" />
+                    <ref role="37wK5l" to="yg8f:5uFPQ7BZsCD" resolve="symbol" />
                   </node>
                   <node concept="liA8E" id="5jPBdKP5Wb" role="2OqNvi">
                     <ref role="37wK5l" to="rchb:54i3FxcZMvt" resolve="id" />
@@ -2299,7 +2300,7 @@
             </node>
           </node>
           <node concept="1rXfSq" id="5jPBdKP4AZ" role="1DdaDG">
-            <ref role="37wK5l" to="9kr0:5uFPQ7BZsCK" resolve="arguments" />
+            <ref role="37wK5l" to="yg8f:5uFPQ7BZsCK" resolve="arguments" />
           </node>
         </node>
         <node concept="3clFbF" id="5jPBdKP5kB" role="3cqZAp">

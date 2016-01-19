@@ -20,7 +20,6 @@
     <import index="iawt" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime.debug(jetbrains.mps.jchr.runtime/)" />
     <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.lang.typesystem2.samplechecker.template)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="9kr0" ref="r:0f58be42-48ea-45ab-99f8-158393a0f526(jetbrains.mps.typechecking.handler.producer)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="t5kh" ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.lang.typesystem2.sampleplugin.plugin)" />
@@ -28,6 +27,7 @@
     <import index="vgt0" ref="r:f36c95e5-e428-4945-91ae-1005e20c7971(jetbrains.mps.jchr.structure)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
+    <import index="dlzn" ref="r:37f5cc5e-5928-4049-bb1c-5c7a5459b1fe(jetbrains.mps.typechecking.handler.producer)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2761,7 +2761,7 @@
                     <ref role="37wK5l" node="4pWvZ2nKWeS" resolve="constraintToTerm" />
                     <node concept="2ShNRf" id="4pWvZ2n8tQN" role="37wK5m">
                       <node concept="1pGfFk" id="4pWvZ2n8vS2" role="2ShVmc">
-                        <ref role="37wK5l" to="9kr0:5uFPQ7BZtsU" resolve="AbstractConstraint" />
+                        <ref role="37wK5l" to="yg8f:5uFPQ7BZtsU" resolve="AbstractConstraint" />
                         <node concept="2YIFZM" id="5uFPQ7CgepP" role="37wK5m">
                           <ref role="37wK5l" to="rchb:54i3FxcZQAb" resolve="symbol" />
                           <ref role="1Pybhc" to="rchb:54i3FxcZHHF" resolve="ConstraintSymbol" />
