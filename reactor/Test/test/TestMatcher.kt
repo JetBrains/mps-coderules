@@ -4,6 +4,7 @@ import jetbrains.mps.logic.reactor.core.matches
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.Assert.*
 import org.junit.Test
 
@@ -15,11 +16,12 @@ class TestMatcher {
 
     private fun Builder.matcher(vararg occurrence: ConstraintOccurrence): Matcher {
         val stored = occurrence.toList()
-        return object : Matcher(rules) {
+        val aux = object : Matcher.AuxOccurrences {
             override fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):
                 Iterable<ConstraintOccurrence> =
                     stored.filter { co -> constraint.matches(co) && acceptable(co) }
         }
+        return Matcher(rules, aux)
     }
 
     @Test
@@ -64,7 +66,7 @@ class TestMatcher {
         ).matcher().run{
             lookupMatches(occurrence("main")).let { matches ->
                 assertFalse(matches.any { m -> m.isPartial() })
-                assertEquals(rules, matches.map { m -> m.rule })
+                assertEquals(rules.toSet(), matches.map { m -> m.rule }.toSet())
                 matches.forEach { m -> assertTrue(m.kept.size() + m.discarded.size() == 1) }
                 matches.flatMap { m -> m.kept + m.discarded }.forEach { pair ->
                     val (cst, occ) = pair
@@ -97,7 +99,7 @@ class TestMatcher {
         ).matcher().run{
             lookupMatches(occurrence("main")).let { matches ->
                 assertFalse(matches.any { m -> m.isPartial() })
-                assertEquals(rules.drop(1), matches.map { m -> m.rule })
+                assertEquals(rules.drop(1).toSet(), matches.map { m -> m.rule }.toSet())
             }
         }
     }
@@ -125,7 +127,7 @@ class TestMatcher {
         ).matcher(occurrence("aux")).run {
             lookupMatches(occurrence("main")).let { matches ->
                 assertFalse(matches.any { m -> m.isPartial() })
-                assertEquals(rules, matches.map { m -> m.rule })
+                assertEquals(rules.toSet(), matches.map { m -> m.rule }.toSet())
             }
         }
     }

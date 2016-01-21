@@ -17,125 +17,185 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-abstract class Matcher(val rules: Collection<Rule>) {
+class Matcher {
+
+    interface AuxOccurrences {
+
+        fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):
+            Iterable<ConstraintOccurrence>
+
+    }
+
+    val rules: RuleIndex
+    val aux: AuxOccurrences
+    val profiler: Profiler?
+
+    constructor(rules: Collection<Rule>, aux: AuxOccurrences, profiler: Profiler? = null) {
+        this.rules = RuleIndex(rules)
+        this.aux = aux
+        this.profiler = profiler
+    }
 
     fun lookupMatches(occ: ConstraintOccurrence): Iterable<PartialMatch> {
-        val partialMatches = rules.flatMap { r ->
-            val matchedKept = r.headKept().filter { cst -> cst.matches(occ) }
-            val matchedDiscarded = r.headReplaced().filter { cst -> cst.matches(occ) }
+        return profiler.profile<Iterable<PartialMatch>>("lookupMatches", {
 
-            matchedKept.map { cst -> PartialMatch(r).keep(cst, occ) } +
-                matchedDiscarded.map { cst -> PartialMatch(r).discard(cst, occ) }
-        }
-        return partialMatches.flatMap { pm -> completeMatch(pm) }.filter { pm ->  pm.matches() }
+            val partialMatches = rules.forSymbol(occ.constraint().symbol())?.flatMap { r ->
+                val matchedKept = r.headKept().filter { cst -> cst.matches(occ) }
+                val matchedDiscarded = r.headReplaced().filter { cst -> cst.matches(occ) }
+
+                matchedKept.map { cst -> PartialMatch(r).keep(cst, occ) } +
+                    matchedDiscarded.map { cst -> PartialMatch(r).discard(cst, occ) }
+            }
+
+            partialMatches?.flatMap { pm -> completeMatch(pm) }?.filter { pm -> pm.matches() } ?: emptyList()
+
+        })
     }
 
     private fun completeMatch(match: PartialMatch) : Iterable<PartialMatch> {
         if (!match.isPartial()) return listOf(match)
 
-        val keptToSatisfy = match.rule.headKept().filter { cst -> !match.kept.any { p -> cst === p.first } }
-        val matchesFromKept = keptToSatisfy.flatMap { cst ->
-            findOccurrences(cst, { occ -> !match.hasOccurrence(occ) }).flatMap { occ -> completeMatch(match.keep(cst, occ)) }
+        return profiler.profile<Iterable<PartialMatch>>("completeMatch", {
+
+            val keptToSatisfy = match.rule.headKept().filter { cst -> !match.kept.any { p -> cst === p.first } }
+            val matchesFromKept = keptToSatisfy.flatMap { cst ->
+                aux.findOccurrences(cst, { occ ->
+                    profiler.profile<Boolean>("acceptable", {
+
+                        !match.hasOccurrence(occ)
+
+                    })
+                }).flatMap { occ -> completeMatch(match.keep(cst, occ)) }
+            }
+
+            val discardedToSatisfy = match.rule.headReplaced().filter { cst -> !match.discarded.any { p -> cst === p.first } }
+            val matchesFromDiscarded = discardedToSatisfy.flatMap { cst ->
+                aux.findOccurrences(cst, { occ ->
+                    profiler.profile<Boolean>("acceptable", {
+
+                        !match.hasOccurrence(occ)
+
+                    })
+                }).flatMap { occ -> completeMatch(match.discard(cst, occ)) }
+            }
+
+            matchesFromKept + matchesFromDiscarded
+
+        })
+    }
+
+    inner class PartialMatch(val rule: Rule) : MatchRule {
+
+        var kept = ConsList.empty<Pair<Constraint, ConstraintOccurrence>>()
+            private set
+        var discarded = ConsList.empty<Pair<Constraint, ConstraintOccurrence>>()
+            private set
+        private lateinit var logicalContext : LogicalContext
+
+        private constructor(
+            original : PartialMatch,
+            keep: Pair<Constraint, ConstraintOccurrence>?,
+            discard: Pair<Constraint, ConstraintOccurrence>?) : this(original.rule)
+        {
+            kept = if (keep != null) original.kept.append(keep) else original.kept
+            discarded = if (discard != null) original.discarded.append(discard) else original.discarded
         }
 
-        val discardedToSatisfy = match.rule.headReplaced().filter { cst -> !match.discarded.any { p -> cst === p.first } }
-        val matchesFromDiscarded = discardedToSatisfy.flatMap { cst ->
-            findOccurrences(cst, { occ -> !match.hasOccurrence(occ) }).flatMap { occ -> completeMatch(match.discard(cst, occ)) }
+        fun keep (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, Pair(constraint, occ), null)
+
+        fun discard (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, null, Pair(constraint, occ))
+
+        fun hasOccurrence(occ: ConstraintOccurrence): Boolean {
+//            return profiler.profile<Boolean>("hasOccurrence", {
+
+                return kept.any { p -> p.second === occ } || discarded.any { p -> p.second === occ }
+
+//            })
         }
 
-        return matchesFromKept + matchesFromDiscarded
-    }
+        fun isPartial() : Boolean {
+//            return profiler.profile<Boolean>("isPartial", {
 
-    abstract fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):
-        Iterable<ConstraintOccurrence>
+                return rule.headKept().any { cst -> !kept.any { p -> p.first === cst } } ||
+                       rule.headReplaced().any { cst -> !discarded.any { p -> p.first === cst } }
 
-}
+//            })
+        }
 
-class PartialMatch(val rule: Rule) : MatchRule {
+        fun occurrences(): Collection<ConstraintOccurrence> {
+//            return profiler.profile<Collection<ConstraintOccurrence>>("occurrences", {
 
-    var kept = ConsList.empty<Pair<Constraint, ConstraintOccurrence>>()
-        private set
-    var discarded = ConsList.empty<Pair<Constraint, ConstraintOccurrence>>()
-        private set
-    private lateinit var logicalContext : LogicalContext
+                return rule.headKept().map { cst -> (kept.find { p -> p.first === cst }?.second) ?: TODO() } +
+                       rule.headReplaced().map { cst -> discarded.find { p -> p.first === cst }?.second ?: TODO() }
 
-    private constructor(
-        original : PartialMatch,
-        keep: Pair<Constraint, ConstraintOccurrence>?,
-        discard: Pair<Constraint, ConstraintOccurrence>?) : this(original.rule)
-    {
-        kept = if (keep != null) original.kept.append(keep) else original.kept
-        discarded = if (discard != null) original.discarded.append(discard) else original.discarded
-    }
+//            })
+        }
 
-    fun keep (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, Pair(constraint, occ), null)
+        fun matches(): Boolean {
+            return profiler.profile<Boolean>("matches", {
 
-    fun discard (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, null, Pair(constraint, occ))
+                val subst = Unification.unify(PartialMatchTerm(this), RuleTerm(this.rule))
+                if (!subst.isSuccessful) return false
 
-    fun hasOccurrence(occ: ConstraintOccurrence): Boolean {
-        return kept.any { p -> p.second === occ} || discarded.any { p -> p.second === occ }
-    }
+                // variables come from LogicalPattern instances in rules
+                // any successful binding results in either new Logical with associated value,
+                // or a new value for a Logical already existing in this context
 
-    fun isPartial() : Boolean =
-        rule.headKept().any { cst -> !kept.any { p -> p.first === cst } } ||
-            rule.headReplaced().any { cst -> !discarded.any { p -> p.first === cst } }
+                // only one parameter of the unification can contain variables,
+                // thus triangular form never has variables on the right hand side
+                this.logicalContext = object: LogicalContext {
 
-    fun occurrences(): Collection<ConstraintOccurrence> =
-        rule.headKept().map { cst -> (kept.find { p -> p.first === cst }?.second) ?: TODO() } +
-            rule.headReplaced().map { cst -> discarded.find { p -> p.first === cst }?.second ?: TODO() }
+                    // invariant: the variables in substitution bindings can only be instances of LogicalPattern
+                    val pattern2value: MutableMap<LogicalPattern<*>, Any?> = HashMap(subst.bindings().map { b ->
+                        (b.`var`().symbol() as LogicalPattern<Any>).to(b.term().toValue()) }.toMap())
 
-    fun matches(): Boolean {
-        val subst = Unification.unify(PartialMatchTerm(this), RuleTerm(this.rule))
-        if (!subst.isSuccessful) return false
+                    val pattern2logical: MutableMap<LogicalPattern<*>, Logical<*>> = HashMap()
 
-        // variables come from LogicalPattern instances in rules
-        // any successful binding results in either new Logical with associated value,
-        // or a new value for a Logical already existing in this context
-
-        // only one parameter of the unification can contain variables,
-        // thus triangular form never has variables on the right hand side
-        this.logicalContext = object: LogicalContext {
-
-            // invariant: the variables in substitution bindings can only be instances of LogicalPattern
-            val pattern2value: MutableMap<LogicalPattern<*>, Any?> = HashMap(subst.bindings().map { b ->
-                (b.`var`().symbol() as LogicalPattern<Any>).to(b.term().toValue()) }.toMap())
-
-            val pattern2logical: MutableMap<LogicalPattern<*>, Logical<*>> = HashMap()
-
-            override fun <V : Any> variable(logicalPattern: LogicalPattern<V>): Logical<V> {
-                if (!pattern2logical.containsKey(logicalPattern)) {
-                    if (pattern2value.containsKey(logicalPattern)) {
-                        val value = pattern2value[logicalPattern]
-                        pattern2logical[logicalPattern] = if (value is Logical<*>) value else MemLogical(value)
-                    }
-                    else {
-                        pattern2logical[logicalPattern] = logicalPattern.logical()
+                    override fun <V : Any> variable(logicalPattern: LogicalPattern<V>): Logical<V> {
+                        if (!pattern2logical.containsKey(logicalPattern)) {
+                            if (pattern2value.containsKey(logicalPattern)) {
+                                val value = pattern2value[logicalPattern]
+                                pattern2logical[logicalPattern] = if (value is Logical<*>) value else MemLogical(value)
+                            }
+                            else {
+                                pattern2logical[logicalPattern] = logicalPattern.logical()
+                            }
+                        }
+                        return pattern2logical[logicalPattern] as Logical<V>
                     }
                 }
-                return pattern2logical[logicalPattern] as Logical<V>
-            }
+                return true
+
+            })
         }
 
-        return true
+        fun logicalContext(): LogicalContext = logicalContext
+
+        override fun rule(): Rule = rule
+
+        override fun matchHeadKept(): Iterable<ConstraintOccurrence> = kept.map { p -> p.second }
+
+        override fun matchHeadReplaced(): Iterable<ConstraintOccurrence> = discarded.map { p -> p.second }
+
     }
 
-    fun logicalContext(): LogicalContext = logicalContext
-
-    override fun rule(): Rule = rule
-
-    override fun matchHeadKept(): Iterable<ConstraintOccurrence> = kept.map { p -> p.second }
-
-    override fun matchHeadReplaced(): Iterable<ConstraintOccurrence> = discarded.map { p -> p.second }
-
 }
+
 
 
 
 /**
  * True iff the constraint matches the occurrence.
  */
-fun Constraint.matches(that: ConstraintOccurrence): Boolean =
-    Unification.unify(ConstraintTerm(this), ConstraintOccurrenceTerm(that)).isSuccessful
+fun Constraint.matches(that: ConstraintOccurrence, profiler: Profiler? = null): Boolean {
+    val constraintTerm = ConstraintTerm(this)
+    val constraintOccurrenceTerm = ConstraintOccurrenceTerm(that)
+    return profiler.profile<Boolean>("unifyConstraintOccurrence", {
+
+        return Unification.unify(constraintTerm, constraintOccurrenceTerm).isSuccessful
+
+    })
+}
 
 /** Function term with arguments == constraints converted to terms. May contain variables. */
 class RuleTerm(rule: Rule) :
@@ -149,7 +209,7 @@ class ConstraintTerm(constraint: Constraint) :
         constraint.arguments().map { arg -> if (arg is LogicalPattern<*>) Variable(arg) else asTerm(arg) }) {}
 
 /** Function term with arguments == terms corresponding to constraint occurrences. Never contains variables. */
-class PartialMatchTerm(pm : PartialMatch) :
+class PartialMatchTerm(pm : Matcher.PartialMatch) :
     Function(pm.rule.tag(), pm.occurrences().map { co -> ConstraintOccurrenceTerm(co) }) {}
 
 /** Function term with arguments == constraint occurrence arguments converted to terms.

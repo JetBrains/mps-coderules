@@ -52,11 +52,14 @@ class MemEvaluationSession : EvaluationSession {
             session = MemEvaluationSession(program, myEvaluationTrace)
             ourBackend.ourSession.set(session)
 
+            val durations = myParameters.get("profiling.data") as MutableMap<String, String>?
+            val profiler = durations?.let{ Profiler() }
             try {
-                session.launch(myParameters["main"] as Constraint)
+                session.launch(myParameters["main"] as Constraint, profiler)
             }
             finally {
                 ourBackend.ourSession.set(null)
+                profiler?.formattedData()?.entries?.forEach { e -> durations?.put(e.key, e.value) }
             }
 
             return session
@@ -74,11 +77,9 @@ class MemEvaluationSession : EvaluationSession {
         this.trace = trace
     }
 
-    fun launch(main: Constraint) {
-        this.handler = Handler(sessionSolver(), program.rules(), trace)
+    fun launch(main: Constraint, profiler: Profiler?) {
+        this.handler = Handler(sessionSolver(), program.rules(), trace, profiler)
         handler.tell(main)
-        // FIXME: shutdown the session properly
-        ourBackend.ourSession.set(null)
     }
 
     override fun sessionSolver(): SessionSolver = program.sessionSolver()

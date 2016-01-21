@@ -14,36 +14,43 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class Handler {
+class Handler : Matcher.AuxOccurrences {
 
     val sessionSolver: SessionSolver
 
     val trace: EvaluationTrace
 
+    val profiler: Profiler?
+
     private val rules = ArrayList<Rule>()
 
-    private val stored = ArrayList<ConstraintOccurrence>()
+    private val occurrenceStore = OccurrenceStore()
 
     private val activeQueue = LinkedList<ConstraintOccurrence>()
 
-    private val activationStack = LinkedList<PartialMatch>()
+    private val activationStack = LinkedList<Matcher.PartialMatch>()
+
+    private val matcher: Matcher
 
     constructor(
         sessionSolver: SessionSolver,
         programRules: Iterable<Rule>,
         trace: EvaluationTrace = EvaluationTrace.NULL,
+        profiler: Profiler? = null,
         // for testing purposes only
         occurrences: Iterable<ConstraintOccurrence>? = null)
     {
         this.sessionSolver = sessionSolver
         this.trace = trace
+        this.profiler = profiler
         this.rules.addAll(programRules)
+        this.matcher = Matcher(rules, this, profiler)
         if (occurrences != null) {
-            this.stored.addAll(occurrences)
+            this.occurrenceStore.addAll(occurrences)
         }
     }
 
-    fun occurrences(): Set<ConstraintOccurrence> = stored.toSet()
+    fun occurrences(): Set<ConstraintOccurrence> = occurrenceStore.allOccurrences().toSet()
 
     fun tell(constraint: Constraint) {
         try {
@@ -64,75 +71,96 @@ class Handler {
         }
     }
 
-    private fun process(active: ConstraintOccurrence) {
-        if (!active.isStored()) {
-            store(active)
-            trace.activate(active)
-        }
-        else {
-            trace.reactivate(active)
-        }
+    override fun findOccurrences(
+                    constraint: Constraint,
+                    acceptable: (ConstraintOccurrence) -> Boolean): Iterable<ConstraintOccurrence>
+    {
+        return profiler.profile<Iterable<ConstraintOccurrence>>("findOccurrences", {
+            return occurrenceStore.allFor(constraint).filter {
 
-        val matcher = object : Matcher(rules) {
-            override fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):
-                Iterable<ConstraintOccurrence> =
-                    stored.filter { co -> constraint.matches(co) && acceptable(co) }
-        }
+                co -> constraint.matches(co, profiler) && acceptable(co)
 
-        for (match in matcher.lookupMatches(active).filter { pm -> pm.rule.checkGuard(pm.logicalContext()) }) {
-            if (!active.isStored()) break
-            if (match.occurrences().any{ co -> !co.isStored() }) continue
-
-            activationStack.push(match)
-            trace.trigger(match)
-
-            for ((cst, occ) in match.discarded) {
-                discard(occ)
-                trace.discard(occ)
             }
 
-            for (item in match.rule.body()) {
-                activate(item, match.logicalContext())
-            }
-
-            trace.exit(match.rule)
-            activationStack.pop()
-        }
-
-        if (active.isStored()) {
-            trace.suspend(active)
-        }
+        })
     }
 
     private fun store(occ: ConstraintOccurrence) {
-        stored.add(occ)
+        occurrenceStore.add(occ)
     }
 
     private fun discard(occ: ConstraintOccurrence) {
-        stored.remove(occ)
+        occurrenceStore.remove(occ)
         occ.terminate()
     }
 
     private fun activate(item: AndItem, logicalContext: LogicalContext) {
-        when(item) {
-            is Constraint       -> process(item.occurrence(this@Handler, logicalContext))
-            is Predicate        -> tellPredicate(item.invocation(logicalContext))
-            else                -> throw IllegalArgumentException("unknown item ${item}")
-        }
+        profiler.profile("activate", {
+
+            when (item) {
+                is Constraint -> process(item.occurrence(this@Handler, logicalContext))
+                is Predicate -> tellPredicate(item.invocation(logicalContext))
+                else -> throw IllegalArgumentException("unknown item ${item}")
+            }
+
+        })
+    }
+
+    private fun process(active: ConstraintOccurrence) {
+        profiler.profile("process_${active.constraint().symbol()}", {
+
+            if (!active.isStored()) {
+                store(active)
+                trace.activate(active)
+            } else {
+                trace.reactivate(active)
+            }
+
+            for (match in matcher.lookupMatches(active).filter { pm -> pm.rule.checkGuard(pm.logicalContext()) }) {
+                if (!active.isStored()) break
+                if (match.occurrences().any { co -> !co.isStored() }) continue
+
+                activationStack.push(match)
+                trace.trigger(match)
+
+                for ((cst, occ) in match.discarded) {
+                    discard(occ)
+                    trace.discard(occ)
+                }
+
+                for (item in match.rule.body()) {
+                    activate(item, match.logicalContext())
+                }
+
+                trace.exit(match.rule)
+                activationStack.pop()
+            }
+
+            if (active.isStored()) {
+                trace.suspend(active)
+            }
+
+        })
     }
 
     private fun Rule.checkGuard(logicalContext: LogicalContext): Boolean =
-        guard().all { prd -> askPredicate(prd.invocation(logicalContext)) }
+        profiler.profile<Boolean>("checkGuard", {
+            return guard().all { prd -> askPredicate(prd.invocation(logicalContext)) }
+        })
 
     private fun askPredicate(invocation: PredicateInvocation): Boolean =
-        sessionSolver.ask(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+        profiler.profile<Boolean>("ask_${invocation.predicate().symbol()}", {
+            return sessionSolver.ask(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+        })
 
     private fun tellPredicate(invocation: PredicateInvocation) {
-        sessionSolver.tell(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+        profiler.profile("tell_${invocation.predicate().symbol()}", {
+            sessionSolver.tell(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+        })
     }
 
     private fun ConstraintOccurrence.isStored(): Boolean =
-        stored.contains(this)
+        occurrenceStore.isStored(this)
 
 }
 
