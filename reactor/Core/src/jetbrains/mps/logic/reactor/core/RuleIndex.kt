@@ -1,5 +1,7 @@
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Rule
@@ -44,3 +46,4 @@ class RuleIndex : Iterable<Rule> {
     }
 
 }
+

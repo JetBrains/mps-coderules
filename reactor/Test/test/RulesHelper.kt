@@ -4,6 +4,7 @@ import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.*
 import program.MemConstraint
 import TestConstraintOccurrence
+import jetbrains.mps.logic.reactor.core.StoreItem
 import solver.EqualsSolver
 import java.util.*
 
@@ -130,21 +131,28 @@ private fun buildConjunction(type: Class<out AndItem>,
     return conjBuilder
 }
 
-data class TestConstraintOccurrence(val constraint: Constraint, val arguments: List<Any>, val id: Int) : ConstraintOccurrence {
+data class TestConstraintOccurrence(val constraint: Constraint, val arguments: List<Any>, val id: Int) :
+    ConstraintOccurrence,
+    StoreItem
+{
+    override var alive: Boolean = true
+
+    override var stored: Boolean = false
 
     companion object {
         val random = Random()
     }
 
-    constructor(constraint: Constraint, arguments: List<Any>) :
-    this(constraint, arguments, random.nextInt()) {}
-
     constructor(id: String, vararg args: Any) :
-    this(MemConstraint(ConstraintSymbol.symbol(id, args.size)), listOf(* args), random.nextInt()) {}
+        this(MemConstraint(ConstraintSymbol.symbol(id, args.size)), listOf(* args), random.nextInt()) {}
 
     override fun constraint(): Constraint = constraint
 
     override fun arguments(): Collection<Any> = arguments
+
+    override fun terminate() {
+        this.alive = false
+    }
 
     override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
 

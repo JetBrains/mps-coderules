@@ -1,6 +1,10 @@
 package jetbrains.mps.logic.reactor.core
 
+import com.github.andrewoma.dexx.collection.ConsList
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import java.util.*
@@ -9,50 +13,147 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class OccurrenceStore {
+fun Constraint.occurrence(handler: Handler, context: LogicalContext): ConstraintOccurrence =
+    MemConstraintOccurrence(handler, this, occurrenceArguments(context))
 
-    val symbol2list = HashMap<ConstraintSymbol, MutableList<ConstraintOccurrence>>()
+fun ConstraintOccurrence.isStored(): Boolean =
+    // TODO: superfluous cast
+    (this as StoreItem).stored
 
-    fun addAll(all: Iterable<ConstraintOccurrence>): Unit {
+interface StoreItem {
+    var alive: Boolean
+    var stored: Boolean
+    fun terminate(): Unit
+}
+
+class OccurrenceStore : LogicalObserver {
+
+    val symbol2occurrences = HashMap<ConstraintSymbol, ConsList<ConstraintOccurrence>>()
+
+    val logical2occurrences = HashMap<Logical<*>, ConsList<ConstraintOccurrence>>()
+
+    override fun valueUpdated(logical: Logical<*>) { /* ignore */ }
+
+    override fun parentUpdated(logical: Logical<*>) {
+        // TODO: should we care about the order in which occurrences are stored?
+        logical2occurrences[logical]?.let { toMerge ->
+            var newList = logical2occurrences[logical.findRoot()] ?: emptyConsList()
+            for (log in toMerge) {
+                newList = newList.prepend(log)
+            }
+            logical2occurrences[logical.findRoot()] = newList
+        }
+        logical2occurrences.remove(logical)
+    }
+
+    fun storeAll(all: Iterable<ConstraintOccurrence>): Unit {
         for(occ in all) {
-            add(occ)
+            store(occ)
         }
     }
 
-    fun add(occ: ConstraintOccurrence): Unit {
+    fun store(occ: ConstraintOccurrence): Unit {
         val symbol = occ.constraint().symbol()
-        if (!symbol2list.containsKey(symbol)) {
-            symbol2list[symbol] = ArrayList<ConstraintOccurrence>()
+
+        symbol2occurrences[symbol] =
+            symbol2occurrences[symbol]?.prepend(occ) ?: cons(occ)
+
+        for (arg in occ.arguments()) {
+            when (arg) {
+                is Logical<*>               -> {
+                    logical2occurrences[arg] =
+                        logical2occurrences[arg]?.prepend(occ) ?: cons(occ)
+                }
+                else                        -> { /* TODO: support indexing by value */ }
+            }
         }
-        symbol2list[symbol]!!.add(occ)
+
+        // TODO: superfluous cast
+        (occ as StoreItem).stored = true
     }
 
-    fun remove(occ: ConstraintOccurrence): Unit {
+    fun discard(occ: ConstraintOccurrence): Unit {
         val symbol = occ.constraint().symbol()
-        if (symbol2list.containsKey(symbol)) {
-            symbol2list[symbol]!!.remove(occ)
+
+        symbol2occurrences[symbol].remove(occ)?.let { newList ->
+            symbol2occurrences[symbol] = newList
+        }
+
+        for (arg in occ.arguments()) {
+            when (arg) {
+                is Logical<*>               -> {
+                    logical2occurrences[arg].remove(occ)?. let { newList ->
+                        logical2occurrences[arg] = newList
+                    }
+                }
+                else                        -> { /* TODO: support indexing by value */ }
+            }
+        }
+
+
+        // TODO: superfluous cast
+        (occ as StoreItem).stored = false
+        occ.terminate()
+    }
+
+    fun forSymbol(symbol: ConstraintSymbol): Sequence<ConstraintOccurrence> {
+        val list = symbol2occurrences[symbol] ?: emptyConsList()
+        return list.asSequence().filter { co -> co.isStored() }
+    }
+
+    fun forLogical(ptr: Logical<*>): Sequence<ConstraintOccurrence> {
+        val list = logical2occurrences[ptr] ?: emptyConsList()
+        return list.asSequence().filter { co -> co.isStored() }
+    }
+
+    fun allOccurrences(): Sequence<ConstraintOccurrence> =
+        symbol2occurrences.values.flatMap { it }.filter { co -> co.isStored() }.asSequence()
+
+}
+
+private data class MemConstraintOccurrence(val handler: Handler, val constraint: Constraint, val arguments: List<*>, val id: Int) :
+    ConstraintOccurrence,
+    LogicalObserver,
+    StoreItem
+{
+
+    override var alive = true
+
+    override var stored = false
+
+    companion object {
+        val random = Random()
+    }
+
+    constructor(handler: Handler, constraint: Constraint, arguments: Collection<*>) :
+    this(handler, constraint, ArrayList(arguments), random.nextInt())
+    {
+        for (a in arguments) {
+            if (a is Logical<*>) {
+                a.addObserver(this)
+            }
         }
     }
 
-    fun isStored(occ: ConstraintOccurrence): Boolean {
-        val symbol = occ.constraint().symbol()
-        if (symbol2list.containsKey(symbol)) {
-            return symbol2list[symbol]!!.contains(occ)
-        }
-        else
-            return false
+    override fun constraint(): Constraint = constraint
+
+    override fun arguments(): Collection<*> = arguments
+
+    override fun valueUpdated(logical: Logical<*>) {
+        handler.queue(this)
     }
 
-    fun allFor(cst: Constraint): Iterable<ConstraintOccurrence> {
-        val symbol = cst.symbol()
-        if (symbol2list.containsKey(symbol)) {
-            return symbol2list[symbol]!!
+    override fun parentUpdated(logical: Logical<*>) { /* ignore */ }
+
+    override fun terminate() {
+        for (a in arguments) {
+            if (a is Logical<*>) {
+                a.removeObserver(this)
+            }
         }
-        else
-            return emptyList()
+        alive = false
     }
 
-    fun allOccurrences(): Iterable<ConstraintOccurrence> =
-        symbol2list.values.flatMap { it }
+    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
 
 }

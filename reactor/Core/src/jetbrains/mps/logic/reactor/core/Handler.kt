@@ -28,9 +28,11 @@ class Handler : Matcher.AuxOccurrences {
 
     private val activeQueue = LinkedList<ConstraintOccurrence>()
 
-    private val activationStack = LinkedList<Matcher.PartialMatch>()
+    private val activationStack = LinkedList<PartialMatch>()
 
     private val matcher: Matcher
+
+    private var processing = false
 
     constructor(
         sessionSolver: SessionSolver,
@@ -46,7 +48,7 @@ class Handler : Matcher.AuxOccurrences {
         this.rules.addAll(programRules)
         this.matcher = Matcher(rules, this, profiler)
         if (occurrences != null) {
-            this.occurrenceStore.addAll(occurrences)
+            this.occurrenceStore.storeAll(occurrences)
         }
     }
 
@@ -72,36 +74,19 @@ class Handler : Matcher.AuxOccurrences {
     }
 
     override fun findOccurrences(
-                    constraint: Constraint,
-                    acceptable: (ConstraintOccurrence) -> Boolean): Iterable<ConstraintOccurrence>
+                    symbol: ConstraintSymbol,
+                    logicals: Iterable<Logical<*>>,
+                    acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
     {
-        return profiler.profile<Iterable<ConstraintOccurrence>>("findOccurrences", {
-            return occurrenceStore.allFor(constraint).filter {
+        return profiler.profile<Sequence<ConstraintOccurrence>>("findOccurrences", {
 
-                co -> constraint.matches(co, profiler) && acceptable(co)
+            // first, try the logicals, then symbol
+            val fromLogicals = logicals.asSequence().
+                flatMap { log -> occurrenceStore.forLogical(log) }.
+                filter { co -> co.constraint().symbol() == symbol }
 
-            }
-
-        })
-    }
-
-    private fun store(occ: ConstraintOccurrence) {
-        occurrenceStore.add(occ)
-    }
-
-    private fun discard(occ: ConstraintOccurrence) {
-        occurrenceStore.remove(occ)
-        occ.terminate()
-    }
-
-    private fun activate(item: AndItem, logicalContext: LogicalContext) {
-        profiler.profile("activate", {
-
-            when (item) {
-                is Constraint -> process(item.occurrence(this@Handler, logicalContext))
-                is Predicate -> tellPredicate(item.invocation(logicalContext))
-                else -> throw IllegalArgumentException("unknown item ${item}")
-            }
+            (if (fromLogicals.any()) fromLogicals else occurrenceStore.forSymbol(symbol)).
+                filter { acceptable(it) }
 
         })
     }
@@ -110,7 +95,7 @@ class Handler : Matcher.AuxOccurrences {
         profiler.profile("process_${active.constraint().symbol()}", {
 
             if (!active.isStored()) {
-                store(active)
+                occurrenceStore.store(active)
                 trace.activate(active)
             } else {
                 trace.reactivate(active)
@@ -124,12 +109,16 @@ class Handler : Matcher.AuxOccurrences {
                 trace.trigger(match)
 
                 for ((cst, occ) in match.discarded) {
-                    discard(occ)
+                    occurrenceStore.discard(occ)
                     trace.discard(occ)
                 }
 
                 for (item in match.rule.body()) {
-                    activate(item, match.logicalContext())
+                    when (item) {
+                        is Constraint -> process(item.occurrence(this@Handler, match.logicalContext()))
+                        is Predicate -> tellPredicate(item.invocation(match.logicalContext()))
+                        else -> throw IllegalArgumentException("unknown item ${item}")
+                    }
                 }
 
                 trace.exit(match.rule)
@@ -145,22 +134,25 @@ class Handler : Matcher.AuxOccurrences {
 
     private fun Rule.checkGuard(logicalContext: LogicalContext): Boolean =
         profiler.profile<Boolean>("checkGuard", {
+
             return guard().all { prd -> askPredicate(prd.invocation(logicalContext)) }
+
         })
 
     private fun askPredicate(invocation: PredicateInvocation): Boolean =
         profiler.profile<Boolean>("ask_${invocation.predicate().symbol()}", {
+
             return sessionSolver.ask(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+
         })
 
     private fun tellPredicate(invocation: PredicateInvocation) {
         profiler.profile("tell_${invocation.predicate().symbol()}", {
+
             sessionSolver.tell(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+
         })
     }
-
-    private fun ConstraintOccurrence.isStored(): Boolean =
-        occurrenceStore.isStored(this)
 
 }
 
@@ -168,62 +160,9 @@ private val noLogicalContext: LogicalContext = object: LogicalContext {
     override fun <V : Any> variable(logicalPattern: LogicalPattern<V>): Logical<V> = TODO()
 }
 
-private fun Constraint.occurrence(handler: Handler, context: LogicalContext): ConstraintOccurrence =
-    MemConstraintOccurrence(handler, this, occurrenceArguments(context))
-
 private fun Predicate.invocation(logicalContext: LogicalContext): PredicateInvocation = object: PredicateInvocation {
 
         override fun predicate(): Predicate = this@invocation
 
         override fun arguments(): Collection<*> = invocationArguments(logicalContext)
     }
-
-fun ConstraintOccurrence.terminate() {
-    if (this is MemConstraintOccurrence) {
-        _terminate()
-    }
-}
-
-private data class MemConstraintOccurrence(val handler: Handler, val constraint: Constraint, val arguments: List<*>, val id: Int) :
-    ConstraintOccurrence,
-    LogicalValueObserver
-{
-
-    var alive = true
-
-    companion object {
-        val random = Random()
-    }
-
-    constructor(handler: Handler, constraint: Constraint, arguments: Collection<*>) :
-        this(handler, constraint, ArrayList(arguments), random.nextInt())
-    {
-        for (a in arguments) {
-            if (a is Logical<*>) {
-                a.addObserver(this)
-            }
-        }
-    }
-
-    override fun constraint(): Constraint = constraint
-
-    override fun arguments(): Collection<*> = arguments
-
-    override fun valueUpdated(logical: Logical<*>) {
-        handler.queue(this)
-    }
-
-
-    fun _terminate() {
-        for (a in arguments) {
-            if (a is Logical<*>) {
-                a.removeObserver(this)
-            }
-        }
-        alive = false
-    }
-
-
-    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
-
-}

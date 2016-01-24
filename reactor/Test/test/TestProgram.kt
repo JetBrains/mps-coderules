@@ -108,7 +108,6 @@ class TestProgram {
             val a = constraintOccurrences(ConstraintSymbol.symbol("val", 1)).first().arguments().first()
             assertEquals(0, (a as Logical<Int>).get())
             assertEquals(5, constraintOccurrences(ConstraintSymbol.symbol("trail", 1)).count())
-            println(constraintOccurrences(ConstraintSymbol.symbol("trail", 1)))
         }
     }
 

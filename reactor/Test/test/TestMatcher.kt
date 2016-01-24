@@ -3,6 +3,7 @@ import jetbrains.mps.logic.reactor.core.logical
 import jetbrains.mps.logic.reactor.core.matches
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.Assert.*
@@ -15,11 +16,15 @@ import org.junit.Test
 class TestMatcher {
 
     private fun Builder.matcher(vararg occurrence: ConstraintOccurrence): Matcher {
+
         val stored = occurrence.toList()
+
         val aux = object : Matcher.AuxOccurrences {
-            override fun findOccurrences(constraint: Constraint, acceptable: (ConstraintOccurrence) -> Boolean):
-                Iterable<ConstraintOccurrence> =
-                    stored.filter { co -> constraint.matches(co) && acceptable(co) }
+            override fun findOccurrences(
+                            symbol: ConstraintSymbol,
+                            logicals: Iterable<Logical<*>>,
+                            acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence> =
+                stored.filter { co -> co.constraint().symbol() == symbol && acceptable(co) }.asSequence()
         }
         return Matcher(rules, aux)
     }
@@ -68,7 +73,7 @@ class TestMatcher {
                 assertFalse(matches.any { m -> m.isPartial() })
                 assertEquals(rules.toSet(), matches.map { m -> m.rule }.toSet())
                 matches.forEach { m -> assertTrue(m.kept.size() + m.discarded.size() == 1) }
-                matches.flatMap { m -> m.kept + m.discarded }.forEach { pair ->
+                matches.flatMap { m -> (m.kept + m.discarded).asSequence() }.forEach { pair ->
                     val (cst, occ) = pair
                     assert(cst.symbol().id() == "main")
                 }
@@ -152,7 +157,7 @@ class TestMatcher {
         ).matcher().run{
             lookupMatches(occurrence("main", "bar")).let { matches ->
                 assertFalse(matches.any { m -> m.isPartial() })
-                assertEquals(rules.drop(1), matches.map { m -> m.rule })
+                assertEquals(rules.drop(1), matches.map { m -> m.rule }.toList())
             }
         }
     }
@@ -241,7 +246,7 @@ class TestMatcher {
 
             matcher(occurrence("foo", 42)).lookupMatches(occurrence("foo", 16)).let { matches ->
                 assertEquals(2, matches.count())
-                assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() })
+                assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() }.toList())
                 matches.map { m -> setOf(M, N).map { lp ->
                     m.logicalContext().variable(lp).findRoot().value() } }.forEach { vals ->
                     assertEquals(setOf(42, 16), vals.toSet())
@@ -255,7 +260,7 @@ class TestMatcher {
 
             matcher(occurrence("foo", x)).lookupMatches(occurrence("foo", y)).let { matches ->
                 assertEquals(2, matches.count())
-                assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() })
+                assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() }.toList())
                 assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
             }
 
