@@ -61,8 +61,9 @@ class OccurrenceStore : LogicalObserver {
         for (arg in occ.arguments()) {
             when (arg) {
                 is Logical<*>               -> {
-                    logical2occurrences[arg] =
-                        logical2occurrences[arg]?.prepend(occ) ?: cons(occ)
+                    logical2occurrences[arg.findRoot()] =
+                        logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ)
+                    arg.addObserver(this)
                 }
                 else                        -> { /* TODO: support indexing by value */ }
             }
@@ -82,14 +83,14 @@ class OccurrenceStore : LogicalObserver {
         for (arg in occ.arguments()) {
             when (arg) {
                 is Logical<*>               -> {
-                    logical2occurrences[arg].remove(occ)?. let { newList ->
-                        logical2occurrences[arg] = newList
+                    logical2occurrences[arg.findRoot()].remove(occ)?. let { newList ->
+                        logical2occurrences[arg.findRoot()] = newList
                     }
+                    // TODO: remove observer?
                 }
                 else                        -> { /* TODO: support indexing by value */ }
             }
         }
-
 
         // TODO: superfluous cast
         (occ as StoreItem).stored = false
@@ -102,7 +103,7 @@ class OccurrenceStore : LogicalObserver {
     }
 
     fun forLogical(ptr: Logical<*>): Sequence<ConstraintOccurrence> {
-        val list = logical2occurrences[ptr] ?: emptyConsList()
+        val list = logical2occurrences[ptr.findRoot()] ?: emptyConsList()
         return list.asSequence().filter { co -> co.isStored() }
     }
 

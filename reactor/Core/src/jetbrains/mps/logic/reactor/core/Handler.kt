@@ -80,13 +80,17 @@ class Handler : Matcher.AuxOccurrences {
     {
         return profiler.profile<Sequence<ConstraintOccurrence>>("findOccurrences", {
 
-            // first, try the logicals, then symbol
-            val fromLogicals = logicals.asSequence().
-                flatMap { log -> occurrenceStore.forLogical(log) }.
-                filter { co -> co.constraint().symbol() == symbol }
+            val occs = if (!logicals.any()) {
+                occurrenceStore.forSymbol(symbol)
 
-            (if (fromLogicals.any()) fromLogicals else occurrenceStore.forSymbol(symbol)).
-                filter { acceptable(it) }
+            }
+            else {
+                logicals.asSequence().
+                    flatMap { log -> occurrenceStore.forLogical(log) }.
+                    filter { co -> co.constraint().symbol() == symbol }
+            }
+
+            occs.filter { acceptable(it) }
 
         })
     }

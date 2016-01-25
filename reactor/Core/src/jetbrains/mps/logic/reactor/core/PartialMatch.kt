@@ -40,7 +40,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         for ((ptr, log) in pair.first.arguments().zip(pair.second.arguments())) {
             if (ptr is LogicalPattern<*> && log is Logical<*>) {
                 val logSet = pattern2logical.get(ptr)
-                this.pattern2logical = pattern2logical.put(ptr, logSet?.add(log) ?: Sets.of(log))
+                this.pattern2logical = pattern2logical.put(ptr, logSet?.add(log.findRoot()) ?: Sets.of(log.findRoot()))
             }
         }
     }
