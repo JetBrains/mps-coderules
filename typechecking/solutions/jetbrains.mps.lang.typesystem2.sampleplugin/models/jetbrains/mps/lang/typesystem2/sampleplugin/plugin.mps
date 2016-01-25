@@ -220,7 +220,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
-      <concept id="1070534513062" name="jetbrains.mps.baseLanguage.structure.DoubleType" flags="in" index="10P55v" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
@@ -261,8 +260,8 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
-      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
-        <property id="1113006610751" name="value" index="$nhwW" />
+      <concept id="4269842503726207156" name="jetbrains.mps.baseLanguage.structure.LongLiteral" flags="nn" index="1adDum">
+        <property id="4269842503726207157" name="value" index="1adDun" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
@@ -6220,9 +6219,9 @@
             </node>
             <node concept="liA8E" id="1pPth$lO5sb" role="2OqNvi">
               <ref role="37wK5l" node="1pPth$lLWAw" resolve="execute" />
-              <node concept="2YIFZM" id="1pPth$lO6eJ" role="37wK5m">
+              <node concept="2YIFZM" id="2S1TqeBI3He" role="37wK5m">
+                <ref role="37wK5l" to="wyt6:~System.nanoTime():long" resolve="nanoTime" />
                 <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                <ref role="37wK5l" to="wyt6:~System.currentTimeMillis():long" resolve="currentTimeMillis" />
               </node>
               <node concept="10Nm6u" id="1pPth$lO5Nv" role="37wK5m" />
             </node>
@@ -6409,21 +6408,21 @@
           <node concept="3cpWs8" id="7dgRGU4MD7I" role="3cqZAp">
             <node concept="3cpWsn" id="7dgRGU4MD7J" role="3cpWs9">
               <property role="TrG5h" value="elapsed" />
-              <node concept="10P55v" id="7dgRGU4MD7K" role="1tU5fm" />
-              <node concept="FJ1c_" id="7dgRGU4MD7L" role="33vP2m">
-                <node concept="3b6qkQ" id="7dgRGU4MD7M" role="3uHU7w">
-                  <property role="$nhwW" value="1000." />
-                </node>
+              <node concept="3cpWsb" id="2S1TqeBI2M7" role="1tU5fm" />
+              <node concept="FJ1c_" id="2S1TqeBIznw" role="33vP2m">
                 <node concept="1eOMI4" id="7dgRGU4MD7N" role="3uHU7B">
                   <node concept="3cpWsd" id="7dgRGU4MD7O" role="1eOMHV">
                     <node concept="37vLTw" id="7dgRGU4MD7P" role="3uHU7w">
                       <ref role="3cqZAo" node="1pPth$lLkEu" resolve="time" />
                     </node>
-                    <node concept="2YIFZM" id="7dgRGU4MD7Q" role="3uHU7B">
-                      <ref role="37wK5l" to="wyt6:~System.currentTimeMillis():long" resolve="currentTimeMillis" />
+                    <node concept="2YIFZM" id="2S1TqeBI2RF" role="3uHU7B">
+                      <ref role="37wK5l" to="wyt6:~System.nanoTime():long" resolve="nanoTime" />
                       <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
                     </node>
                   </node>
+                </node>
+                <node concept="1adDum" id="2S1TqeBI3A$" role="3uHU7w">
+                  <property role="1adDun" value="1000000L" />
                 </node>
               </node>
             </node>
@@ -6440,7 +6439,7 @@
                   <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                   <node concept="3cpWs3" id="7dgRGU4MD7W" role="37wK5m">
                     <node concept="Xl_RD" id="7dgRGU4MD7X" role="3uHU7w">
-                      <property role="Xl_RC" value=" -- %s (took %2.2f sec.)\n" />
+                      <property role="Xl_RC" value=" -- %s (took %2$Ts.%2$TLs)\n" />
                     </node>
                     <node concept="1eOMI4" id="7dgRGU4MD7Y" role="3uHU7B">
                       <node concept="3K4zz7" id="7dgRGU4MD7Z" role="1eOMHV">
@@ -6475,9 +6474,9 @@
                   </node>
                   <node concept="liA8E" id="7dgRGU4MD8a" role="2OqNvi">
                     <ref role="37wK5l" node="1pPth$lLWAw" resolve="execute" />
-                    <node concept="2YIFZM" id="7dgRGU4MD8b" role="37wK5m">
+                    <node concept="2YIFZM" id="2S1TqeBI3Fr" role="37wK5m">
+                      <ref role="37wK5l" to="wyt6:~System.nanoTime():long" resolve="nanoTime" />
                       <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                      <ref role="37wK5l" to="wyt6:~System.currentTimeMillis():long" resolve="currentTimeMillis" />
                     </node>
                     <node concept="Xjq3P" id="7dgRGU4MD8c" role="37wK5m" />
                   </node>
