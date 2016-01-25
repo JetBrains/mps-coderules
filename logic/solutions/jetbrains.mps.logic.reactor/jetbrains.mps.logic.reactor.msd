@@ -12,8 +12,8 @@
     <stubModelEntry path="${module}/lib/memreactor-core-0.1.jar" />
     <stubModelEntry path="${module}/lib/dexx-collections-0.2.jar" />
     <stubModelEntry path="${module}/lib/google-collections-1.0.jar" />
-    <stubModelEntry path="${module}/lib/kotlin-runtime-1.0.0-beta-4583.jar" />
-    <stubModelEntry path="${module}/lib/kotlin-stdlib-1.0.0-beta-4583.jar" />
+    <stubModelEntry path="${module}/lib/kotlin-stdlib-1.0.0-rc-1007.jar" />
+    <stubModelEntry path="${module}/lib/kotlin-runtime-1.0.0-rc-1007.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
