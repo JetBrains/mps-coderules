@@ -74,21 +74,19 @@ class Handler : Matcher.AuxOccurrences {
     }
 
     override fun findOccurrences(
-                    symbol: ConstraintSymbol,
-                    logicals: Iterable<Logical<*>>,
-                    acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
+        symbol: ConstraintSymbol,
+        logicals: Iterable<Logical<*>>,
+        values: Iterable<Any>,
+        acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
     {
         return profiler.profile<Sequence<ConstraintOccurrence>>("findOccurrences", {
 
-            val occs = if (!logicals.any()) {
+            val occs = if (!logicals.any() && !values.any())
                 occurrenceStore.forSymbol(symbol)
-
-            }
-            else {
-                logicals.asSequence().
-                    flatMap { log -> occurrenceStore.forLogical(log) }.
+            else
+                (logicals.asSequence().flatMap { log -> occurrenceStore.forLogical(log) } +
+                 values.asSequence().flatMap { value -> occurrenceStore.forValue(value) }).
                     filter { co -> co.constraint().symbol() == symbol }
-            }
 
             occs.filter { acceptable(it) }
 

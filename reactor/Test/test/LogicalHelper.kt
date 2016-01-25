@@ -1,3 +1,4 @@
+import jetbrains.mps.logic.reactor.core.LogicalObserver
 import jetbrains.mps.logic.reactor.core.MemLogical
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.logical.*
@@ -42,6 +43,26 @@ fun <T: Any> Logical<T>.set(t: T) {
         throw IllegalStateException("unexpected receiver $this")
 }
 
+data class MockObserverEvent(val logical: Logical<*>, val event: String) {}
+
+fun value(logical: Logical<*>) = MockObserverEvent(logical, "value")
+
+fun parent(logical: Logical<*>) = MockObserverEvent(logical, "parent")
+
+class MockObserver : LogicalObserver {
+
+    val events = ArrayList<MockObserverEvent>()
+
+    override fun valueUpdated(logical: Logical<*>) { events.add(value(logical))}
+
+    override fun parentUpdated(logical: Logical<*>) { events.add(parent(logical))}
+
+    fun getAndClearEvents(): Set<MockObserverEvent> {
+        val tmp = ArrayList(events)
+        events.clear()
+        return tmp.toSet()
+    }
+}
 
 data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
 

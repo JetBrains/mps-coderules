@@ -32,6 +32,8 @@ class OccurrenceStore : LogicalObserver {
 
     val logical2occurrences = HashMap<Logical<*>, ConsList<ConstraintOccurrence>>()
 
+    val value2occurrences = HashMap<Any, ConsList<ConstraintOccurrence>>()
+
     override fun valueUpdated(logical: Logical<*>) { /* ignore */ }
 
     override fun parentUpdated(logical: Logical<*>) {
@@ -65,7 +67,10 @@ class OccurrenceStore : LogicalObserver {
                         logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ)
                     arg.addObserver(this)
                 }
-                else                        -> { /* TODO: support indexing by value */ }
+                else                        -> {
+                    value2occurrences[arg!!] =
+                        value2occurrences[arg]?.prepend(occ) ?: cons(occ)
+                }
             }
         }
 
@@ -88,7 +93,11 @@ class OccurrenceStore : LogicalObserver {
                     }
                     // TODO: remove observer?
                 }
-                else                        -> { /* TODO: support indexing by value */ }
+                else                        -> {
+                    value2occurrences[arg!!].remove(occ)?. let { newList ->
+                        value2occurrences[arg] = newList
+                    }
+                }
             }
         }
 
@@ -104,6 +113,11 @@ class OccurrenceStore : LogicalObserver {
 
     fun forLogical(ptr: Logical<*>): Sequence<ConstraintOccurrence> {
         val list = logical2occurrences[ptr.findRoot()] ?: emptyConsList()
+        return list.asSequence().filter { co -> co.isStored() }
+    }
+
+    fun forValue(value: Any): Sequence<ConstraintOccurrence> {
+        val list = value2occurrences[value] ?: emptyConsList()
         return list.asSequence().filter { co -> co.isStored() }
     }
 

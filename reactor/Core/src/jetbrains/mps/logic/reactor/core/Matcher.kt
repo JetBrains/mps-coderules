@@ -21,9 +21,10 @@ class Matcher {
     interface AuxOccurrences {
 
         fun findOccurrences(
-                symbol: ConstraintSymbol,
-                logicals: Iterable<Logical<*>>,
-                acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
+            symbol: ConstraintSymbol,
+            logicals: Iterable<Logical<*>>,
+            values: Iterable<Any> = emptyList(),
+            acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
 
     }
 

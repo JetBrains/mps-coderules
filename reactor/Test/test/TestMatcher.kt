@@ -21,10 +21,11 @@ class TestMatcher {
 
         val aux = object : Matcher.AuxOccurrences {
             override fun findOccurrences(
-                            symbol: ConstraintSymbol,
-                            logicals: Iterable<Logical<*>>,
-                            acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence> =
-                stored.filter { co -> co.constraint().symbol() == symbol && acceptable(co) }.asSequence()
+                symbol: ConstraintSymbol,
+                logicals: Iterable<Logical<*>>,
+                values: Iterable<Any>,
+                acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence> =
+                    stored.filter { co -> co.constraint().symbol() == symbol && acceptable(co) }.asSequence()
         }
         return Matcher(rules, aux)
     }

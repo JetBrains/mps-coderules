@@ -10,34 +10,14 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-data class MockObserverEvent(val logical: Logical<*>, val event: String) {}
 
-fun value(logical: Logical<*>) = MockObserverEvent(logical, "value")
-
-fun parent(logical: Logical<*>) = MockObserverEvent(logical, "parent")
-
-class MockObserver : LogicalObserver {
-
-    val events = ArrayList<MockObserverEvent>()
-
-    override fun valueUpdated(logical: Logical<*>) { events.add(value(logical))}
-
-    override fun parentUpdated(logical: Logical<*>) { events.add(parent(logical))}
-
-    fun getAndClearEvents(): Set<MockObserverEvent> {
-        val tmp = ArrayList(events)
-        events.clear()
-        return tmp.toSet()
-    }
-}
-
-class TestLogical {
+class TestLogicalObserver {
 
     @Test
     fun mergeObservers() {
-        val foo = MemLogical<String>(name = "foo")
-        val bar = MemLogical<String>(name = "bar")
-        val bazz = MemLogical<String>(name = "bazz")
+        val foo = logical<String>(name = "foo")
+        val bar = logical<String>(name = "bar")
+        val bazz = logical<String>(name = "bazz")
 
         val obs = MockObserver()
         foo.addObserver(obs)

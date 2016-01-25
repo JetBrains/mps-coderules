@@ -11,7 +11,7 @@ import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.unification.Unification
-import java.util.HashMap
+import java.util.*
 
 /**
  * @author Fedor Isakov
@@ -68,13 +68,16 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
     }
 
     fun findOccurrences(aux: Matcher.AuxOccurrences, cst: Constraint): Sequence<ConstraintOccurrence> {
-        val logicals = cst.arguments().flatMap { arg ->
+        val logicals = HashSet<Logical<*>>()
+        val values = HashSet<Any>()
+
+        for (arg in cst.arguments()) {
             if (arg is LogicalPattern<*>)
-                pattern2logical.get(arg)?.toList() ?: emptyList()
+                pattern2logical.get(arg)?.let { logSet -> logicals.addAll(logSet) }
             else
-                emptyList()
+                values.add(arg!!)
         }
-        return aux.findOccurrences(cst.symbol(), logicals, { occ -> !hasOccurrence(occ) })
+        return aux.findOccurrences(cst.symbol(), logicals, values, { occ -> !hasOccurrence(occ) })
     }
 
     fun keep (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, Pair(constraint, occ), null)
