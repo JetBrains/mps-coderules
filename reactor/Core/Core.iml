@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="AutoImportedSourceRoots">
+    <option name="directories">
+      <list>
+        <option value="$MODULE_DIR$/src" />
+      </list>
+    </option>
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -13,9 +20,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="code-1.0" level="project" />
     <orderEntry type="module" module-name="API" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-runtime:1.0.0-beta-4583" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.0.0-beta-4583" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-maven-plugin:1.0.0-beta-4583" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-runtime:1.0.0-rc-1007" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.0.0-rc-1007" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-maven-plugin:1.0.0-rc-1007" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-core:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-model:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-settings:3.0.5" level="project" />
@@ -40,7 +47,7 @@
     <orderEntry type="library" name="Maven: org.sonatype.plexus:plexus-cipher:1.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-api:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.4" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-compiler:1.0.0-beta-4583" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-compiler:1.0.0-rc-1007" level="project" />
     <orderEntry type="library" name="Maven: com.google.collections:google-collections:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.andrewoma.dexx:dexx-collections:0.2" level="project" />
     <orderEntry type="library" name="Maven: com.intellij:annotations:12.0" level="project" />

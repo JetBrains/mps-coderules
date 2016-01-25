@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jetbrains.kotlin:kotlin-maven-plugin:1.0.0-rc-1007">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-maven-plugin/1.0.0-rc-1007/kotlin-maven-plugin-1.0.0-rc-1007.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-maven-plugin/1.0.0-rc-1007/kotlin-maven-plugin-1.0.0-rc-1007-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-maven-plugin/1.0.0-rc-1007/kotlin-maven-plugin-1.0.0-rc-1007-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
