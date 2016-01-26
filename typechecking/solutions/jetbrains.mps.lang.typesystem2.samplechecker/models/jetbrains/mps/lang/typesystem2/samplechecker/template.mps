@@ -139,7 +139,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -11511,6 +11511,11 @@
               <property role="3SKdUp" value="induction on List" />
             </node>
           </node>
+          <node concept="3X$Joe" id="6OUp3PsSMHm" role="3cqZAp">
+            <node concept="aZer4" id="6OUp3PsSMHn" role="3XD1gS">
+              <property role="TrG5h" value="TailSubtypingPath" />
+            </node>
+          </node>
           <node concept="3X$Joe" id="1_iD3HA2IFf" role="3cqZAp">
             <node concept="aZer4" id="1_iD3HA2IFg" role="3XD1gS">
               <property role="TrG5h" value="TailCap" />
@@ -11518,8 +11523,8 @@
             <node concept="aZer4" id="5_6ImQYYNkj" role="3XD1gS">
               <property role="TrG5h" value="TailStub" />
             </node>
-            <node concept="aZer4" id="5_6ImQYYc6p" role="3XD1gS">
-              <property role="TrG5h" value="TailSubtypingPath" />
+            <node concept="3uibUv" id="6OUp3PsRZ9G" role="3vLBG7">
+              <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
             </node>
           </node>
           <node concept="3Aqczg" id="5_6ImQYXIdY" role="3cqZAp">
@@ -11579,7 +11584,7 @@
                 </node>
               </node>
               <node concept="a7P8L" id="5_6ImQYYcGF" role="3A8wtg">
-                <ref role="a7OzE" node="5_6ImQYYc6p" resolve="TailSubtypingPath" />
+                <ref role="a7OzE" node="6OUp3PsSMHn" resolve="TailSubtypingPath" />
               </node>
             </node>
           </node>
@@ -11593,7 +11598,7 @@
                 <ref role="a7OzE" node="1_iD3HA2IEU" resolve="Supertype" />
               </node>
               <node concept="a7P8L" id="5_6ImQYYdj4" role="3AunhB">
-                <ref role="a7OzE" node="5_6ImQYYc6p" resolve="TailSubtypingPath" />
+                <ref role="a7OzE" node="6OUp3PsSMHn" resolve="TailSubtypingPath" />
               </node>
             </node>
           </node>

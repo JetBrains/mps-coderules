@@ -1226,7 +1226,7 @@
       <node concept="3Tm1VV" id="7HUwyZbdPnu" role="1B3o_S" />
       <node concept="3clFbS" id="7HUwyZbdPny" role="3clF47">
         <node concept="3clFbF" id="7HUwyZbdW0Q" role="3cqZAp">
-          <node concept="2OqwBi" id="7HUwyZbdW7Q" role="3clFbG">
+          <node concept="2OqwBi" id="6OUp3PsSKto" role="3clFbG">
             <node concept="2OqwBi" id="7HUwyZbdW2l" role="2Oq$k0">
               <node concept="37vLTw" id="7HUwyZbdW0P" role="2Oq$k0">
                 <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="logicalPattern" />
@@ -1235,9 +1235,9 @@
                 <ref role="37wK5l" to="45ys:7HUwyZaC3Q7" resolve="type" />
               </node>
             </node>
-            <node concept="liA8E" id="7HUwyZbdW_w" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
-              <node concept="37vLTw" id="7HUwyZbdWCq" role="37wK5m">
+            <node concept="liA8E" id="6OUp3PsSKJ7" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="37vLTw" id="6OUp3PsSKQb" role="37wK5m">
                 <ref role="3cqZAo" node="7HUwyZbdPnp" resolve="klass" />
               </node>
             </node>
@@ -1518,7 +1518,7 @@
           <node concept="3eNFk2" id="4TCblo5Pf7O" role="3eNLev">
             <node concept="3clFbS" id="4TCblo5Pf7P" role="3eOfB_">
               <node concept="3cpWs6" id="4TCblo5PgQh" role="3cqZAp">
-                <node concept="2OqwBi" id="4TCblo5Pjsx" role="3cqZAk">
+                <node concept="2OqwBi" id="6OUp3PsSGSl" role="3cqZAk">
                   <node concept="2OqwBi" id="4TCblo5PiAX" role="2Oq$k0">
                     <node concept="2OqwBi" id="4TCblo5PhFQ" role="2Oq$k0">
                       <node concept="37vLTw" id="4TCblo5Phlx" role="2Oq$k0">
@@ -1532,9 +1532,9 @@
                       <ref role="37wK5l" to="45ys:7HUwyZaC3Q7" resolve="type" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="4TCblo5Pkbz" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
-                    <node concept="37vLTw" id="4TCblo5PlbG" role="37wK5m">
+                  <node concept="liA8E" id="6OUp3PsSHqC" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                    <node concept="37vLTw" id="6OUp3PsSJNn" role="37wK5m">
                       <ref role="3cqZAo" node="4TCblo5MWaD" resolve="klass" />
                     </node>
                   </node>
