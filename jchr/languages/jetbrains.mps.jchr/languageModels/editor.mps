@@ -2,9 +2,9 @@
 <model ref="r:801c1956-3093-47d7-a245-104463aeabb7(jetbrains.mps.jchr.editor)">
   <persistence version="9" />
   <languages>
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="0272d3b4-4cc8-481e-9e2f-07793fbfcb41" name="jetbrains.mps.lang.editor.table" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="0272d3b4-4cc8-481e-9e2f-07793fbfcb41" name="jetbrains.mps.lang.editor.table" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1298,7 +1298,7 @@
         <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="3F0A7n" id="2KSgAgVcjDN" role="3EZMnx">
-        <ref role="1NtTu8" to="vgt0:2KSgAgVcjDt" resolve="symbolId" />
+        <ref role="1NtTu8" to="vgt0:2KSgAgVcjDt" resolve="expressionId" />
       </node>
       <node concept="3EZMnI" id="2KSgAgVfUe0" role="3EZMnx">
         <node concept="VPM3Z" id="2KSgAgVfUe2" role="3F10Kt">

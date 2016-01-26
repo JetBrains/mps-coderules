@@ -2,8 +2,8 @@
 <model ref="r:04847532-40d8-4c13-804f-12fbbdc25fa9(jetbrains.mps.lang.typesystem2.actions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18,8 +18,8 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="hy7p" ref="r:01ee26d6-df00-4ffb-931c-1ddec5984886(jetbrains.mps.lang.typesystem2.util)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -794,7 +794,7 @@
     <node concept="3FOIzC" id="2N2MQGCIMbf" role="3FOPby">
       <ref role="3FOWKa" to="tpee:fz3vP1J" resolve="Expression" />
       <node concept="tYCnQ" id="2N2MQGCIMsI" role="tZc4B">
-        <ref role="uz4UX" to="wq2x:2CEQDIDRX6M" resolve="TypeTerm" />
+        <ref role="uz4UX" to="wq2x:2CEQDIDRX6M" resolve="TypeTermExpression" />
         <node concept="uMFAO" id="2N2MQGCIMsK" role="uz6Si">
           <node concept="3Tqbb2" id="2N2MQGCJ4jR" role="uMOYW">
             <ref role="ehGHo" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
@@ -805,12 +805,12 @@
                 <node concept="3cpWsn" id="2CEQDIDTvVK" role="3cpWs9">
                   <property role="TrG5h" value="term" />
                   <node concept="3Tqbb2" id="2CEQDIDTvVH" role="1tU5fm">
-                    <ref role="ehGHo" to="wq2x:2CEQDIDRX6M" resolve="TypeTerm" />
+                    <ref role="ehGHo" to="wq2x:2CEQDIDRX6M" resolve="TypeTermExpression" />
                   </node>
                   <node concept="2ShNRf" id="2CEQDIDTvVL" role="33vP2m">
                     <node concept="2fJWfE" id="2CEQDIDTvVM" role="2ShVmc">
                       <node concept="3Tqbb2" id="2CEQDIDTvVN" role="3zrR0E">
-                        <ref role="ehGHo" to="wq2x:2CEQDIDRX6M" resolve="TypeTerm" />
+                        <ref role="ehGHo" to="wq2x:2CEQDIDRX6M" resolve="TypeTermExpression" />
                       </node>
                     </node>
                   </node>
