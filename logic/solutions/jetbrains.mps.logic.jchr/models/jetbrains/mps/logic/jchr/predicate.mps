@@ -1702,10 +1702,10 @@
     <node concept="3clFb_" id="7HUwyZaOeBH" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="pattern" />
+      <property role="TrG5h" value="metaLogical" />
       <node concept="3Tm1VV" id="7HUwyZaOeBJ" role="1B3o_S" />
       <node concept="3uibUv" id="7HUwyZaOeBK" role="3clF45">
-        <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
+        <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
         <node concept="16syzq" id="20WMLipvJNV" role="11_B2D">
           <ref role="16sUi3" node="3HJTsBmBSUN" resolve="T" />
         </node>

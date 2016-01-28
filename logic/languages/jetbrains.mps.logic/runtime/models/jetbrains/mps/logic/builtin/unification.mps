@@ -399,10 +399,10 @@
     <node concept="3clFb_" id="7HUwyZaOeBH" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="pattern" />
+      <property role="TrG5h" value="metaLogical" />
       <node concept="3Tm1VV" id="7HUwyZaOeBJ" role="1B3o_S" />
       <node concept="3uibUv" id="7HUwyZaOeBK" role="3clF45">
-        <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
+        <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
         <node concept="3uibUv" id="20WMLipvJgu" role="11_B2D">
           <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
         </node>
@@ -1127,7 +1127,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7HUwyZbdMWH">
-    <property role="TrG5h" value="LogicalPatternAtom" />
+    <property role="TrG5h" value="MetaLogicalAtom" />
     <node concept="2tJIrI" id="7HUwyZbdN_B" role="jymVt" />
     <node concept="3clFbW" id="7HUwyZbdNAd" role="jymVt">
       <node concept="3cqZAl" id="7HUwyZbdNAf" role="3clF45" />
@@ -1137,7 +1137,7 @@
           <ref role="37wK5l" to="ie8e:uNmovXiEVu" resolve="Variable" />
           <node concept="2OqwBi" id="7HUwyZbdOYl" role="37wK5m">
             <node concept="37vLTw" id="7HUwyZbdOWP" role="2Oq$k0">
-              <ref role="3cqZAo" node="7HUwyZbdNBn" resolve="logicalPattern" />
+              <ref role="3cqZAo" node="7HUwyZbdNBn" resolve="metaLogical" />
             </node>
             <node concept="liA8E" id="7HUwyZbdOZR" role="2OqNvi">
               <ref role="37wK5l" to="45ys:7HUwyZauJkq" resolve="name" />
@@ -1149,39 +1149,39 @@
             <node concept="2OqwBi" id="7HUwyZbdNBI" role="37vLTJ">
               <node concept="Xjq3P" id="7HUwyZbdNBL" role="2Oq$k0" />
               <node concept="2OwXpG" id="7HUwyZbdNBH" role="2OqNvi">
-                <ref role="2Oxat5" node="7HUwyZbdNB$" resolve="logicalPattern" />
+                <ref role="2Oxat5" node="7HUwyZbdNB$" resolve="metaLogical" />
               </node>
             </node>
             <node concept="37vLTw" id="7HUwyZbdNBM" role="37vLTx">
-              <ref role="3cqZAo" node="7HUwyZbdNBn" resolve="logicalPattern" />
+              <ref role="3cqZAo" node="7HUwyZbdNBn" resolve="metaLogical" />
             </node>
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="7HUwyZbdNBn" role="3clF46">
-        <property role="TrG5h" value="logicalPattern" />
+        <property role="TrG5h" value="metaLogical" />
         <node concept="3uibUv" id="7HUwyZbdNBm" role="1tU5fm">
-          <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
+          <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="7HUwyZbdN_E" role="jymVt" />
     <node concept="3clFb_" id="514BAS_Xsp_" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="pattern" />
+      <property role="TrG5h" value="metaLogical" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="514BAS_XspC" role="3clF47">
         <node concept="3clFbF" id="514BAS_XsAX" role="3cqZAp">
           <node concept="37vLTw" id="514BAS_XsAW" role="3clFbG">
-            <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="logicalPattern" />
+            <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="514BAS_Xsj_" role="1B3o_S" />
       <node concept="3uibUv" id="514BAS_Xswm" role="3clF45">
-        <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
+        <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
       </node>
     </node>
     <node concept="2tJIrI" id="514BAS_XsdE" role="jymVt" />
@@ -1195,7 +1195,7 @@
         <node concept="3clFbF" id="7HUwyZbdP6z" role="3cqZAp">
           <node concept="2OqwBi" id="7HUwyZbdP82" role="3clFbG">
             <node concept="37vLTw" id="7HUwyZbdP6y" role="2Oq$k0">
-              <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="logicalPattern" />
+              <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
             </node>
             <node concept="liA8E" id="7HUwyZbdPaE" role="2OqNvi">
               <ref role="37wK5l" to="45ys:7HUwyZauJox" resolve="isWildcard" />
@@ -1229,7 +1229,7 @@
           <node concept="2OqwBi" id="6OUp3PsSKto" role="3clFbG">
             <node concept="2OqwBi" id="7HUwyZbdW2l" role="2Oq$k0">
               <node concept="37vLTw" id="7HUwyZbdW0P" role="2Oq$k0">
-                <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="logicalPattern" />
+                <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
               </node>
               <node concept="liA8E" id="7HUwyZbdW4K" role="2OqNvi">
                 <ref role="37wK5l" to="45ys:7HUwyZaC3Q7" resolve="type" />
@@ -1254,10 +1254,10 @@
       <ref role="3uigEE" to="ie8e:uNmovXiEd4" resolve="Variable" />
     </node>
     <node concept="312cEg" id="7HUwyZbdNB$" role="jymVt">
-      <property role="TrG5h" value="logicalPattern" />
+      <property role="TrG5h" value="metaLogical" />
       <node concept="3Tm6S6" id="7HUwyZbdNB_" role="1B3o_S" />
       <node concept="3uibUv" id="7HUwyZbdNBB" role="1tU5fm">
-        <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
+        <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
       </node>
     </node>
   </node>
@@ -1525,7 +1525,7 @@
                         <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
                       </node>
                       <node concept="liA8E" id="4TCblo5Pi8Z" role="2OqNvi">
-                        <ref role="37wK5l" to="45ys:7HUwyZaOd5Y" resolve="pattern" />
+                        <ref role="37wK5l" to="45ys:7HUwyZaOd5Y" resolve="metaLogical" />
                       </node>
                     </node>
                     <node concept="liA8E" id="4TCblo5Pj6t" role="2OqNvi">
@@ -1549,7 +1549,7 @@
                   <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
                 </node>
                 <node concept="liA8E" id="4TCblo5PfRq" role="2OqNvi">
-                  <ref role="37wK5l" to="45ys:7HUwyZaOd5Y" resolve="pattern" />
+                  <ref role="37wK5l" to="45ys:7HUwyZaOd5Y" resolve="metaLogical" />
                 </node>
               </node>
             </node>
