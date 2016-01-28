@@ -21,6 +21,7 @@
     <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.logic.atom/)" />
     <import index="3o3z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.collect(MPS.Core/)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
+    <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -606,13 +607,13 @@
       <node concept="37vLTG" id="7nkyKX7m7wP" role="3clF46">
         <property role="TrG5h" value="main" />
         <node concept="3uibUv" id="7nkyKX7m8gn" role="1tU5fm">
-          <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="78CwJJcPpB$" role="3clF46">
         <property role="TrG5h" value="programBuilder" />
         <node concept="3uibUv" id="5rhZO$TYMMQ" role="1tU5fm">
-          <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+          <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
         </node>
       </node>
     </node>
@@ -659,7 +660,7 @@
                     <ref role="3cqZAo" node="7nkyKX7m8kI" resolve="main" />
                   </node>
                   <node concept="liA8E" id="7nkyKX7nlpe" role="2OqNvi">
-                    <ref role="37wK5l" to="rchb:7eGEHDlc$ck" resolve="toRule" />
+                    <ref role="37wK5l" to="nz6g:7eGEHDlc$ck" resolve="toRule" />
                   </node>
                 </node>
               </node>
@@ -670,7 +671,7 @@
                   <ref role="3cqZAo" node="78CwJJcPpPx" resolve="programBuilder" />
                 </node>
                 <node concept="liA8E" id="7nkyKX7nlVs" role="2OqNvi">
-                  <ref role="37wK5l" to="rchb:5uFPQ7BvNSW" resolve="addRule" />
+                  <ref role="37wK5l" to="nz6g:5uFPQ7BvNSW" resolve="addRule" />
                   <node concept="37vLTw" id="7nkyKX7nmaO" role="37wK5m">
                     <ref role="3cqZAo" node="7nkyKX7nlpb" resolve="rule" />
                   </node>
@@ -1418,7 +1419,7 @@
       <node concept="3Tm6S6" id="5ntLU8GlSnV" role="1B3o_S" />
       <node concept="A3Dl8" id="5MHpiylC8T$" role="3clF45">
         <node concept="3uibUv" id="5MHpiylCa5h" role="A3Ik2">
-          <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="5ntLU8GlSnJ" role="3clF46">
@@ -1644,7 +1645,7 @@
                           <ref role="3cqZAo" node="7nkyKX7m8kI" resolve="main" />
                         </node>
                         <node concept="liA8E" id="7nkyKX7mwk9" role="2OqNvi">
-                          <ref role="37wK5l" to="rchb:77AxcO4ZwMR" resolve="merge" />
+                          <ref role="37wK5l" to="nz6g:77AxcO4ZwMR" resolve="merge" />
                           <node concept="2GrUjf" id="7nkyKX7mwtE" role="37wK5m">
                             <ref role="2Gs0qQ" node="tIwzd1I3Xb" resolve="builder" />
                           </node>
@@ -1659,7 +1660,7 @@
                         <ref role="2Gs0qQ" node="tIwzd1I3Xb" resolve="builder" />
                       </node>
                       <node concept="liA8E" id="7nkyKX7mvSb" role="2OqNvi">
-                        <ref role="37wK5l" to="rchb:7nkyKX7mcq7" resolve="hasHead" />
+                        <ref role="37wK5l" to="nz6g:7nkyKX7mcq7" resolve="hasHead" />
                       </node>
                     </node>
                   </node>
@@ -1678,7 +1679,7 @@
                             <ref role="2Gs0qQ" node="tIwzd1I3Xb" resolve="builder" />
                           </node>
                           <node concept="liA8E" id="tIwzd1I3WF" role="2OqNvi">
-                            <ref role="37wK5l" to="rchb:7eGEHDlc$ck" resolve="toRule" />
+                            <ref role="37wK5l" to="nz6g:7eGEHDlc$ck" resolve="toRule" />
                           </node>
                         </node>
                       </node>
@@ -1689,7 +1690,7 @@
                           <ref role="3cqZAo" node="78CwJJcPpPx" resolve="programBuilder" />
                         </node>
                         <node concept="liA8E" id="tIwzd1I3WJ" role="2OqNvi">
-                          <ref role="37wK5l" to="rchb:5uFPQ7BvNSW" resolve="addRule" />
+                          <ref role="37wK5l" to="nz6g:5uFPQ7BvNSW" resolve="addRule" />
                           <node concept="37vLTw" id="tIwzd1I3WK" role="37wK5m">
                             <ref role="3cqZAo" node="tIwzd1I3WB" resolve="rule" />
                           </node>
@@ -2185,14 +2186,14 @@
       <property role="TrG5h" value="main" />
       <node concept="3Tm6S6" id="7nkyKX7m8kJ" role="1B3o_S" />
       <node concept="3uibUv" id="7nkyKX7m8kL" role="1tU5fm">
-        <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
+        <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
       </node>
     </node>
     <node concept="312cEg" id="78CwJJcPpPx" role="jymVt">
       <property role="TrG5h" value="programBuilder" />
       <node concept="3Tm6S6" id="78CwJJcPpPy" role="1B3o_S" />
       <node concept="3uibUv" id="5rhZO$TYMSw" role="1tU5fm">
-        <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+        <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
       </node>
     </node>
   </node>

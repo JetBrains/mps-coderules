@@ -34,6 +34,7 @@
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
+    <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -5004,7 +5005,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="2ev$9JFBkUG" role="2OqNvi">
-                          <ref role="37wK5l" to="45ys:7HUwyZauJkv" resolve="name" />
+                          <ref role="37wK5l" to="yg8f:7HUwyZaPenC" resolve="name" />
                           <node concept="37vLTw" id="2$F5QputVYO" role="37wK5m">
                             <ref role="3cqZAo" node="2$F5QputLbm" resolve="namingContext" />
                           </node>
@@ -7282,7 +7283,7 @@
     </node>
     <node concept="2tJIrI" id="429xoypV6tp" role="jymVt" />
     <node concept="3uibUv" id="5rhZO$TZ4o4" role="1zkMxy">
-      <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+      <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
     </node>
     <node concept="3clFb_" id="7eGEHDldbFC" role="jymVt">
       <property role="TrG5h" value="updateConstraintRegistry" />

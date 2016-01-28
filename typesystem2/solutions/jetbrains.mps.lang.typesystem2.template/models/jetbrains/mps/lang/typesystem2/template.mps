@@ -22,6 +22,7 @@
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
+    <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1444,7 +1445,7 @@
       <node concept="37vLTG" id="429xoypVJkH" role="3clF46">
         <property role="TrG5h" value="programBuilder" />
         <node concept="3uibUv" id="429xoypVJq6" role="1tU5fm">
-          <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+          <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="4OKkcnfu_zi" role="3clF46">
@@ -1567,7 +1568,7 @@
               <ref role="3cqZAo" node="429xoypVJkH" resolve="programBuilder" />
             </node>
             <node concept="liA8E" id="429xoypVJCT" role="2OqNvi">
-              <ref role="37wK5l" to="rchb:429xoypUIfy" resolve="constraint" />
+              <ref role="37wK5l" to="nz6g:429xoypUIfy" resolve="constraint" />
               <node concept="37vLTw" id="429xoypVJDi" role="37wK5m">
                 <ref role="3cqZAo" node="5uFPQ7Cgm9v" resolve="symbol" />
               </node>
@@ -1585,7 +1586,7 @@
       <node concept="37vLTG" id="429xoypVJK0" role="3clF46">
         <property role="TrG5h" value="programBuilder" />
         <node concept="3uibUv" id="429xoypVJRX" role="1tU5fm">
-          <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+          <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="4OKkcnfu_zR" role="3clF46">
@@ -1671,7 +1672,7 @@
               <ref role="3cqZAo" node="429xoypVJK0" resolve="programBuilder" />
             </node>
             <node concept="liA8E" id="429xoypVKbf" role="2OqNvi">
-              <ref role="37wK5l" to="rchb:429xoypUIfy" resolve="constraint" />
+              <ref role="37wK5l" to="nz6g:429xoypUIfy" resolve="constraint" />
               <node concept="37vLTw" id="429xoypVKcg" role="37wK5m">
                 <ref role="3cqZAo" node="5uFPQ7CgmNl" resolve="symbol" />
               </node>
@@ -1689,7 +1690,7 @@
       <node concept="37vLTG" id="429xoypVKhx" role="3clF46">
         <property role="TrG5h" value="programBuilder" />
         <node concept="3uibUv" id="429xoypVKiL" role="1tU5fm">
-          <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+          <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="4OKkcnfu_$e" role="3clF46">
@@ -1715,7 +1716,7 @@
               <ref role="3cqZAo" node="429xoypVKhx" resolve="programBuilder" />
             </node>
             <node concept="liA8E" id="429xoypVKmz" role="2OqNvi">
-              <ref role="37wK5l" to="rchb:429xoypUIfy" resolve="constraint" />
+              <ref role="37wK5l" to="nz6g:429xoypUIfy" resolve="constraint" />
               <node concept="37vLTw" id="429xoypVKmT" role="37wK5m">
                 <ref role="3cqZAo" node="5uFPQ7CgjLS" resolve="TYPEOF_SYM" />
               </node>
@@ -2461,7 +2462,7 @@
       <property role="TrG5h" value="apply" />
       <node concept="A3Dl8" id="1ffsG7bWD3H" role="3clF45">
         <node concept="3uibUv" id="1ffsG7bWD4a" role="A3Ik2">
-          <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="1ffsG7bWDGk" role="3clF46">
@@ -2477,7 +2478,7 @@
       <node concept="37vLTG" id="429xoypKTkl" role="3clF46">
         <property role="TrG5h" value="programBuilder" />
         <node concept="3uibUv" id="429xoypKTDO" role="1tU5fm">
-          <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+          <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ffsG7bWCVt" role="1B3o_S" />
@@ -2696,7 +2697,7 @@
       <property role="DiZV1" value="true" />
       <node concept="A3Dl8" id="1ffsG7bX6rY" role="3clF45">
         <node concept="3uibUv" id="1ffsG7bX6rZ" role="A3Ik2">
-          <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ffsG7bX6s0" role="1B3o_S" />
@@ -2706,7 +2707,7 @@
             <property role="TrG5h" value="result" />
             <node concept="A3Dl8" id="1ffsG7bX6s4" role="1tU5fm">
               <node concept="3uibUv" id="1ffsG7bX6s5" role="A3Ik2">
-                <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
+                <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
               </node>
             </node>
             <node concept="10Nm6u" id="1ffsG7bX6s6" role="33vP2m" />
@@ -2801,7 +2802,7 @@
       <node concept="37vLTG" id="429xoypKZd0" role="3clF46">
         <property role="TrG5h" value="programBuilder" />
         <node concept="3uibUv" id="429xoypKZPN" role="1tU5fm">
-          <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+          <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
         </node>
       </node>
       <node concept="2AHcQZ" id="1ffsG7bX6sx" role="2AJF6D">
@@ -3064,7 +3065,7 @@
       <property role="TrG5h" value="apply" />
       <node concept="A3Dl8" id="1ffsG7bXfPY" role="3clF45">
         <node concept="3uibUv" id="1ffsG7bXfQn" role="A3Ik2">
-          <ref role="3uigEE" to="rchb:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="1ffsG7bXg4k" role="3clF46">
@@ -3086,7 +3087,7 @@
       <node concept="37vLTG" id="429xoypL1IZ" role="3clF46">
         <property role="TrG5h" value="programBuilder" />
         <node concept="3uibUv" id="429xoypL1Vu" role="1tU5fm">
-          <ref role="3uigEE" to="rchb:5rhZO$TYGJG" resolve="ProgramBuilder" />
+          <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1ffsG7bXfcn" role="1B3o_S" />
