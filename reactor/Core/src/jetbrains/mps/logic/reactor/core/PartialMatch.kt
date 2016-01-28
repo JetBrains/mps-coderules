@@ -7,7 +7,7 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
-import jetbrains.mps.logic.reactor.logical.LogicalPattern
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.unification.Unification
@@ -23,7 +23,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         private set
     var discarded = emptyConsList<Pair<Constraint, ConstraintOccurrence>>()
         private set
-    var pattern2logical = Maps.of<LogicalPattern<*>, PersSet<Logical<*>>>()
+    var meta2logical = Maps.of<MetaLogical<*>, PersSet<Logical<*>>>()
         private set
     private lateinit var logicalContext : LogicalContext
 
@@ -35,12 +35,12 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         this.kept = if (keep != null) original.kept.prepend(keep) else original.kept
         this.discarded = if (discard != null) original.discarded.prepend(discard) else original.discarded
 
-        this.pattern2logical = original.pattern2logical
+        this.meta2logical = original.meta2logical
         val pair = keep ?: discard!!
         for ((ptr, log) in pair.first.arguments().zip(pair.second.arguments())) {
-            if (ptr is LogicalPattern<*> && log is Logical<*>) {
-                val logSet = pattern2logical.get(ptr)
-                this.pattern2logical = pattern2logical.put(ptr, logSet?.add(log.findRoot()) ?: Sets.of(log.findRoot()))
+            if (ptr is MetaLogical<*> && log is Logical<*>) {
+                val logSet = meta2logical.get(ptr)
+                this.meta2logical = meta2logical.put(ptr, logSet?.add(log.findRoot()) ?: Sets.of(log.findRoot()))
             }
         }
     }
@@ -72,8 +72,8 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         val values = HashSet<Any>()
 
         for (arg in cst.arguments()) {
-            if (arg is LogicalPattern<*>)
-                pattern2logical.get(arg)?.let { logSet -> logicals.addAll(logSet) }
+            if (arg is MetaLogical<*>)
+                meta2logical.get(arg)?.let { logSet -> logicals.addAll(logSet) }
             else
                 values.add(arg!!)
         }
@@ -120,7 +120,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
                 return false
             }
 
-            // variables come from LogicalPattern instances in rules
+            // variables come from MetaLogical instances in rules
             // any successful binding results in either new Logical with associated value,
             // or a new value for a Logical already existing in this context
 
@@ -128,24 +128,24 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
             // thus triangular form never has variables on the right hand side
             this.logicalContext = object: LogicalContext {
 
-                // invariant: the variables in substitution bindings can only be instances of LogicalPattern
-                val ptr2val: MutableMap<LogicalPattern<*>, Any?> = HashMap(subst.bindings().map { b ->
-                    (b.`var`().symbol() as LogicalPattern<Any>).to(b.term().toValue())
+                // invariant: the variables in substitution bindings can only be instances of MetaLogical
+                val ptr2val: MutableMap<MetaLogical<*>, Any?> = HashMap(subst.bindings().map { b ->
+                    (b.`var`().symbol() as MetaLogical<Any>).to(b.term().toValue())
                 }.toMap())
 
-                val ptr2log: MutableMap<LogicalPattern<*>, Logical<*>> = HashMap()
+                val ptr2log: MutableMap<MetaLogical<*>, Logical<*>> = HashMap()
 
-                override fun <V : Any> variable(logicalPattern: LogicalPattern<V>): Logical<V> {
-                    if (!ptr2log.containsKey(logicalPattern)) {
-                        if (ptr2val.containsKey(logicalPattern)) {
-                            val value = ptr2val[logicalPattern]
-                            ptr2log[logicalPattern] = if (value is Logical<*>) value else MemLogical(value)
+                override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V> {
+                    if (!ptr2log.containsKey(metaLogical)) {
+                        if (ptr2val.containsKey(metaLogical)) {
+                            val value = ptr2val[metaLogical]
+                            ptr2log[metaLogical] = if (value is Logical<*>) value else MemLogical(value)
                         }
                         else {
-                            ptr2log[logicalPattern] = logicalPattern.logical()
+                            ptr2log[metaLogical] = metaLogical.logical()
                         }
                     }
-                    return ptr2log[logicalPattern] as Logical<V>
+                    return ptr2log[metaLogical] as Logical<V>
                 }
             }
             return true

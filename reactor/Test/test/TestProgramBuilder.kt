@@ -26,9 +26,9 @@ class TestProgramBuilder {
         programBuilder = MemProgramBuilder(sessionSolver)
     }
 
-    lateinit var programBuilder: ProgramBuilder
+    lateinit var programBuilder: MemProgramBuilder
 
-    private fun ProgramBuilder.addRules(rules: List<Rule>) {
+    private fun MemProgramBuilder.addRules(rules: List<Rule>) {
         rules.forEach { r -> addRule(r) }
     }
 

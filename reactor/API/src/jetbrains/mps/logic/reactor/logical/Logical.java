@@ -30,6 +30,6 @@ public interface Logical<T> {
 
   public boolean isWildcard();
 
-  public LogicalPattern<T> pattern();
+  public MetaLogical<T> metaLogical();
 
 }

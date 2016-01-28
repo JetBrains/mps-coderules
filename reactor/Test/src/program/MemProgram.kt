@@ -9,23 +9,68 @@ import program.MemConstraint
 import java.util.*
 import java.util.Collections.*
 
-class MemProgramBuilder(val sessionSolver: SessionSolver) : ProgramBuilder() {
+class MemProgramBuilder(val sessionSolver: SessionSolver)  {
 
     private val rules = ArrayList<Rule>()
 
     private val registry = ConstraintRegistry(sessionSolver)
 
-    override fun program(name: String, sessionSolver: SessionSolver): Program = MemProgram(name, ArrayList(rules), sessionSolver, registry)
+    fun program(name: String, sessionSolver: SessionSolver): Program = MemProgram(name, ArrayList(rules), sessionSolver, registry)
 
-    override fun addRule(rule: Rule) {
+    fun addRule(rule: Rule) {
         registry.update(rule)
         rules.add(rule)
     }
 
-    override fun constraint(symbol: ConstraintSymbol, vararg args: Any): Constraint = MemConstraint(symbol, listOf(* args))
+    fun constraint(symbol: ConstraintSymbol, vararg args: Any): Constraint = MemConstraint(symbol, listOf(* args))
 
-    override fun predicate(symbol: PredicateSymbol, vararg args: Any?): Predicate = TODO()
+    fun predicate(symbol: PredicateSymbol, vararg args: Any?): Predicate = TODO()
 
+}
+
+open class RuleBuilder(val tag: String) {
+    val kept = ArrayList<Constraint>()
+    val replaced = ArrayList<Constraint>()
+    val guard = ArrayList<Predicate>()
+    val body = ArrayList<AndItem>()
+
+    fun appendHeadKept(vararg cst: Constraint) {
+        kept.addAll(cst)
+    }
+    fun appendHeadReplaced(vararg cst: Constraint) {
+        replaced.addAll(cst)
+    }
+    fun appendGuard(vararg prd: Predicate) {
+        guard.addAll(prd)
+    }
+    fun appendBody(vararg andItem: AndItem) {
+        body.addAll(andItem)
+    }
+    fun toRule(): Rule = MemRule(tag, kept, replaced, guard, body)
+}
+
+class MemRule(
+    val tag: String,
+    val kept: Collection<Constraint>,
+    val replaced: Collection<Constraint>,
+    val guard: Collection<Predicate>,
+    val body: Collection<AndItem>) : Rule() {
+
+    override fun kind(): Kind = TODO()
+
+    override fun tag(): String = tag
+
+    override fun headKept(): Iterable<Constraint> = kept
+
+    override fun headReplaced(): Iterable<Constraint> = replaced
+
+    override fun guard(): Iterable<Predicate> = guard
+
+    override fun body(): Iterable<AndItem> = body
+
+    override fun all(): Iterable<AndItem> =
+        if (body.isEmpty()) throw InvalidRuleException("no body")
+        else (kept + replaced).map { it as AndItem } + guard + body
 }
 
 class MemProgram(val name: String, val myRules : List<Rule>, val sessionSolver: SessionSolver, val registry: ConstraintRegistry) : Program() {

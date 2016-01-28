@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/1564179198503508264">
     <file name="Logical.java">
-      <node id="7045828502339522708" at="8,0,9,0" concept="3" trace="name#()Ljava/lang/String;" />
-      <node id="238586457663160034" at="15,0,16,0" concept="3" trace="findRoot#()Ljetbrains/mps/logic/reactor/logical/Logical;" />
-      <node id="1564179198503509166" at="24,0,25,0" concept="3" trace="value#()null" />
-      <node id="1564179198503509045" at="29,0,30,0" concept="3" trace="isBound#()Z" />
-      <node id="3058061960962299083" at="31,0,32,0" concept="3" trace="isWildcard#()Z" />
-      <node id="8897567155601592702" at="33,0,34,0" concept="3" trace="pattern#()Ljetbrains/mps/logic/reactor/logical/LogicalPattern;" />
+      <node id="7045828502339522708" at="8,0,9,0" concept="4" trace="name#()Ljava/lang/String;" />
+      <node id="238586457663160034" at="15,0,16,0" concept="4" trace="findRoot#()Ljetbrains/mps/logic/reactor/logical/Logical;" />
+      <node id="1564179198503509166" at="24,0,25,0" concept="4" trace="value#()null" />
+      <node id="1564179198503509045" at="29,0,30,0" concept="4" trace="isBound#()Z" />
+      <node id="3058061960962299083" at="31,0,32,0" concept="4" trace="isWildcard#()Z" />
+      <node id="8897567155601592702" at="33,0,34,0" concept="4" trace="metaLogical#()Ljetbrains/mps/logic/reactor/logical/MetaLogical;" />
       <scope id="7045828502339522708" at="8,0,9,0" />
       <scope id="238586457663160034" at="15,0,16,0" />
       <scope id="1564179198503509166" at="24,0,25,0" />
@@ -23,61 +26,13 @@
       <unit id="1564179198503508264" at="6,0,36,0" name="jetbrains.mps.logic.reactor.logical.Logical" />
     </file>
   </root>
-  <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/2966490507992442162">
-    <file name="NamingContext.java">
-      <node id="8897567155601872170" at="11,45,12,55" concept="5" />
-      <node id="8897567155601877662" at="15,52,16,55" concept="5" />
-      <node id="8897567155601872137" at="20,45,21,48" concept="0" />
-      <node id="8897567155601872149" at="22,5,23,35" concept="5" />
-      <node id="7788002923752702358" at="26,42,27,41" concept="4" />
-      <node id="7788002923752701639" at="27,41,28,38" concept="5" />
-      <node id="7788002923752672045" at="31,51,32,82" concept="4" />
-      <node id="7788002923752674066" at="32,82,33,36" concept="0" />
-      <node id="7788002923752668035" at="33,36,34,13" concept="5" />
-      <node id="2966490507992442764" at="37,0,38,0" concept="1" trace="uniqueCounters" />
-      <node id="2966490507992487240" at="39,0,40,0" concept="1" trace="cachedUnique" />
-      <node id="2966490507992442243" at="11,0,14,0" concept="3" trace="uniqueName#(Ljetbrains/mps/logic/reactor/logical/Logical;)Ljava/lang/String;" />
-      <node id="8897567155601877656" at="15,0,18,0" concept="3" trace="uniqueName#(Ljetbrains/mps/logic/reactor/logical/LogicalPattern;)Ljava/lang/String;" />
-      <node id="8897567155601872135" at="19,64,22,5" concept="2" />
-      <node id="2966490507992478411" at="26,0,30,0" concept="3" trace="makeUnique#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="7788002923752647499" at="31,0,36,0" concept="3" trace="getAndIncrementCounter#(Ljava/lang/String;)I" />
-      <node id="8897567155601872164" at="19,0,25,0" concept="3" trace="cachedOrMakeUnique#(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="2966490507992442247" at="11,45,12,55" />
-      <scope id="8897567155601877661" at="15,52,16,55" />
-      <scope id="8897567155601872136" at="20,45,21,48" />
-      <scope id="2966490507992478415" at="26,42,28,38">
-        <var name="c" id="7788002923752702359" />
-      </scope>
-      <scope id="2966490507992442243" at="11,0,14,0">
-        <var name="logical" id="2966490507992442616" />
-      </scope>
-      <scope id="8897567155601877656" at="15,0,18,0">
-        <var name="logical" id="8897567155601877657" />
-      </scope>
-      <scope id="7788002923752647503" at="31,51,34,13">
-        <var name="c" id="7788002923752672046" />
-      </scope>
-      <scope id="8897567155601872134" at="19,64,23,35" />
-      <scope id="2966490507992478411" at="26,0,30,0">
-        <var name="name" id="2966490507992482288" />
-      </scope>
-      <scope id="7788002923752647499" at="31,0,36,0">
-        <var name="name" id="7788002923752648441" />
-      </scope>
-      <scope id="8897567155601872164" at="19,0,25,0">
-        <var name="name" id="8897567155601872156" />
-        <var name="named" id="8897567155601872154" />
-      </scope>
-      <unit id="2966490507992442162" at="9,0,42,0" name="jetbrains.mps.logic.reactor.logical.NamingContext" />
-    </file>
-  </root>
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/7835819612255545383">
     <file name="SolverLogical.java">
-      <node id="4650394911992714457" at="11,0,12,0" concept="3" trace="findRoot#()Ljetbrains/mps/logic/reactor/logical/SolverLogical;" />
-      <node id="2322954797151415913" at="18,0,19,0" concept="3" trace="union#(Ljetbrains/mps/logic/reactor/logical/SolverLogical;Ljetbrains/mps/logic/reactor/logical/SolverLogical/ValueReconciler;)V" />
-      <node id="2322954797151538884" at="24,0,25,0" concept="3" trace="union#(Ljetbrains/mps/logic/reactor/logical/SolverLogical;)V" />
-      <node id="7835819612255551865" at="29,0,30,0" concept="3" trace="setValue#(null)V" />
-      <node id="2322954797151528577" at="33,0,34,0" concept="3" trace="reconcile#(nullnull)V" />
+      <node id="4650394911992714457" at="11,0,12,0" concept="4" trace="findRoot#()Ljetbrains/mps/logic/reactor/logical/SolverLogical;" />
+      <node id="2322954797151415913" at="18,0,19,0" concept="4" trace="union#(Ljetbrains/mps/logic/reactor/logical/SolverLogical;Ljetbrains/mps/logic/reactor/logical/SolverLogical/ValueReconciler;)V" />
+      <node id="2322954797151538884" at="24,0,25,0" concept="4" trace="union#(Ljetbrains/mps/logic/reactor/logical/SolverLogical;)V" />
+      <node id="7835819612255551865" at="29,0,30,0" concept="4" trace="setValue#(null)V" />
+      <node id="2322954797151528577" at="33,0,34,0" concept="4" trace="reconcile#(nullnull)V" />
       <scope id="4650394911992714457" at="11,0,12,0" />
       <scope id="2322954797151415913" at="18,0,19,0">
         <var name="other" id="2322954797151420306" />
@@ -99,9 +54,9 @@
   </root>
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/7835819612256812298">
     <file name="LogicalUnification.java">
-      <node id="7835819612256815740" at="9,0,10,0" concept="3" trace="asRoot#(null)null" />
-      <node id="7835819612256819308" at="11,0,12,0" concept="3" trace="logical#(null)Ljetbrains/mps/logic/reactor/logical/SolverLogical;" />
-      <node id="7835819612261255414" at="13,0,14,0" concept="3" trace="isLogical#(Ljetbrains/mps/unification/Term;)Z" />
+      <node id="7835819612256815740" at="9,0,10,0" concept="4" trace="asRoot#(null)null" />
+      <node id="7835819612256819308" at="11,0,12,0" concept="4" trace="logical#(null)Ljetbrains/mps/logic/reactor/logical/SolverLogical;" />
+      <node id="7835819612261255414" at="13,0,14,0" concept="4" trace="isLogical#(Ljetbrains/mps/unification/Term;)Z" />
       <scope id="7835819612256815740" at="9,0,10,0">
         <var name="term" id="7835819612256818579" />
       </scope>
@@ -115,40 +70,90 @@
     </file>
   </root>
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/8897567155595965539">
-    <file name="LogicalPattern.java">
-      <node id="8897567155595965722" at="8,0,9,0" concept="3" trace="name#()Ljava/lang/String;" />
-      <node id="8897567155595965727" at="10,0,11,0" concept="3" trace="name#(Ljetbrains/mps/logic/reactor/logical/NamingContext;)Ljava/lang/String;" />
-      <node id="8897567155595965985" at="12,0,13,0" concept="3" trace="isWildcard#()Z" />
-      <node id="8897567155598409095" at="14,0,15,0" concept="3" trace="type#()Ljava/lang/Class;" />
-      <node id="3935945753920958541" at="16,0,17,0" concept="3" trace="instance#()Ljetbrains/mps/logic/reactor/logical/Logical;" />
-      <scope id="8897567155595965722" at="8,0,9,0" />
-      <scope id="8897567155595965727" at="10,0,11,0">
-        <var name="namingContext" id="8897567155595965731" />
+    <file name="MetaLogical.java">
+      <node id="8499880265522559267" at="8,0,9,0" concept="7" trace="WILDCARD" />
+      <node id="8499880265522559281" at="10,50,11,21" concept="1" />
+      <node id="8499880265522559287" at="11,21,12,21" concept="1" />
+      <node id="8499880265522559301" at="15,37,16,69" concept="1" />
+      <node id="8499880265522559309" at="16,69,17,21" concept="1" />
+      <node id="8499880265522559315" at="17,21,18,25" concept="1" />
+      <node id="8499880265524914186" at="21,24,22,16" concept="6" />
+      <node id="8499880265524914478" at="25,31,26,20" concept="6" />
+      <node id="8499880265524914776" at="29,26,30,16" concept="6" />
+      <node id="8499880265522559381" at="33,0,34,0" concept="2" trace="name" />
+      <node id="8499880265522559384" at="34,0,35,0" concept="2" trace="type" />
+      <node id="8499880265522559388" at="35,0,36,0" concept="2" trace="wildcard" />
+      <node id="8897567155595965722" at="21,0,24,0" concept="4" trace="name#()Ljava/lang/String;" />
+      <node id="8897567155595965985" at="25,0,28,0" concept="4" trace="isWildcard#()Z" />
+      <node id="8897567155598409095" at="29,0,32,0" concept="4" trace="type#()Ljava/lang/Class;" />
+      <node id="8499880265522559272" at="10,0,14,0" concept="0" trace="MetaLogical#(Ljava/lang/String;Ljava/lang/Class;)V" />
+      <node id="8499880265522559294" at="15,0,20,0" concept="0" trace="MetaLogical#(Ljava/lang/Class;)V" />
+      <scope id="8897567155595965725" at="21,24,22,16" />
+      <scope id="8897567155595965986" at="25,31,26,20" />
+      <scope id="8897567155598409099" at="29,26,30,16" />
+      <scope id="8499880265522559280" at="10,50,12,21" />
+      <scope id="8499880265522559300" at="15,37,18,25" />
+      <scope id="8897567155595965722" at="21,0,24,0" />
+      <scope id="8897567155595965985" at="25,0,28,0" />
+      <scope id="8897567155598409095" at="29,0,32,0" />
+      <scope id="8499880265522559272" at="10,0,14,0">
+        <var name="name" id="8499880265522559273" />
+        <var name="type" id="8499880265522559275" />
       </scope>
-      <scope id="8897567155595965985" at="12,0,13,0" />
-      <scope id="8897567155598409095" at="14,0,15,0" />
-      <scope id="3935945753920958541" at="16,0,17,0" />
-      <unit id="8897567155595965539" at="6,0,19,0" name="jetbrains.mps.logic.reactor.logical.LogicalPattern" />
+      <scope id="8499880265522559294" at="15,0,20,0">
+        <var name="type" id="8499880265522559295" />
+      </scope>
+      <unit id="8897567155595965539" at="6,0,38,0" name="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     </file>
   </root>
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/8897567155601467909">
-    <file name="MultiLogicalPattern.java">
-      <node id="8897567155598413823" at="8,0,9,0" concept="3" trace="cardinality#()I" />
-      <node id="8897567155601465253" at="10,0,11,0" concept="3" trace="patternAt#(I)Ljetbrains/mps/logic/reactor/logical/LogicalPattern;" />
-      <node id="8897567155608760084" at="12,0,13,0" concept="3" trace="toArray#()[Ljetbrains/mps/logic/reactor/logical/LogicalPattern;" />
-      <scope id="8897567155598413823" at="8,0,9,0" />
-      <scope id="8897567155601465253" at="10,0,11,0">
+    <file name="MultiMetaLogical.java">
+      <node id="8499880265522563072" at="10,72,11,22" concept="8" />
+      <node id="8499880265522563075" at="11,22,12,35" concept="1" />
+      <node id="8499880265522563081" at="12,35,13,11" concept="1" />
+      <node id="8499880265524939109" at="16,28,17,23" concept="6" />
+      <node id="8499880265522563105" at="20,44,21,33" concept="6" />
+      <node id="8499880265522563116" at="24,34,25,55" concept="5" />
+      <node id="8499880265522563125" at="25,55,26,39" concept="6" />
+      <node id="8499880265522563140" at="30,43,31,75" concept="1" />
+      <node id="8499880265522563167" at="35,0,36,0" concept="2" trace="cardinality" />
+      <node id="8499880265522563171" at="36,0,37,0" concept="2" trace="metaLogicals" />
+      <node id="8897567155598413823" at="16,0,19,0" concept="4" trace="cardinality#()I" />
+      <node id="8897567155601465253" at="20,0,23,0" concept="4" trace="logicalAt#(I)Ljetbrains/mps/logic/reactor/logical/MetaLogical;" />
+      <node id="8499880265522563133" at="29,23,32,5" concept="3" />
+      <node id="8897567155608760084" at="24,0,28,0" concept="4" trace="toArray#()[Ljetbrains/mps/logic/reactor/logical/MetaLogical;" />
+      <node id="8499880265522563068" at="10,0,15,0" concept="0" trace="MultiMetaLogical#(Ljava/lang/String;Ljava/lang/Class;I)V" />
+      <node id="8499880265522563131" at="29,0,34,0" concept="4" trace="init#()V" />
+      <scope id="8897567155598413824" at="16,28,17,23" />
+      <scope id="8897567155601465256" at="20,44,21,33" />
+      <scope id="8499880265522563139" at="30,43,31,75" />
+      <scope id="8897567155608760087" at="24,34,26,39">
+        <var name="array" id="8499880265522563117" />
+      </scope>
+      <scope id="8499880265522563071" at="10,72,13,11" />
+      <scope id="8897567155598413823" at="16,0,19,0" />
+      <scope id="8897567155601465253" at="20,0,23,0">
         <var name="idx" id="8897567155601468783" />
       </scope>
-      <scope id="8897567155608760084" at="12,0,13,0" />
-      <unit id="8897567155601467909" at="6,0,15,0" name="jetbrains.mps.logic.reactor.logical.MultiLogicalPattern" />
+      <scope id="8499880265522563132" at="29,23,32,5" />
+      <scope id="8499880265522563133" at="29,23,32,5">
+        <var name="i" id="8499880265522563136" />
+      </scope>
+      <scope id="8897567155608760084" at="24,0,28,0" />
+      <scope id="8499880265522563068" at="10,0,15,0">
+        <var name="cardinality" id="8499880265522563088" />
+        <var name="name" id="8499880265522563083" />
+        <var name="type" id="8499880265522563085" />
+      </scope>
+      <scope id="8499880265522563131" at="29,0,34,0" />
+      <unit id="8897567155601467909" at="8,0,38,0" name="jetbrains.mps.logic.reactor.logical.MultiMetaLogical" />
     </file>
   </root>
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/8907901911298493091">
     <file name="LogicalContext.java">
-      <node id="8907901911298493118" at="8,0,9,0" concept="3" trace="variable#(Ljetbrains/mps/logic/reactor/logical/LogicalPattern;)Ljetbrains/mps/logic/reactor/logical/Logical;" />
+      <node id="8907901911298493118" at="8,0,9,0" concept="4" trace="variable#(Ljetbrains/mps/logic/reactor/logical/MetaLogical;)Ljetbrains/mps/logic/reactor/logical/Logical;" />
       <scope id="8907901911298493118" at="8,0,9,0">
-        <var name="logicalPattern" id="8907901911298493173" />
+        <var name="metaLogical" id="8907901911298493173" />
       </scope>
       <unit id="8907901911298493091" at="6,0,11,0" name="jetbrains.mps.logic.reactor.logical.LogicalContext" />
     </file>

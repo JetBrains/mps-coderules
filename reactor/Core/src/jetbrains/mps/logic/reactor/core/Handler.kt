@@ -6,7 +6,7 @@ import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
-import jetbrains.mps.logic.reactor.logical.LogicalPattern
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
 import java.util.*
 
@@ -159,7 +159,7 @@ class Handler : Matcher.AuxOccurrences {
 }
 
 private val noLogicalContext: LogicalContext = object: LogicalContext {
-    override fun <V : Any> variable(logicalPattern: LogicalPattern<V>): Logical<V> = TODO()
+    override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V> = TODO()
 }
 
 private fun Predicate.invocation(logicalContext: LogicalContext): PredicateInvocation = object: PredicateInvocation {

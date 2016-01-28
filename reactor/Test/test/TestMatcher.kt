@@ -3,7 +3,6 @@ import jetbrains.mps.logic.reactor.core.logical
 import jetbrains.mps.logic.reactor.core.matches
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.Assert.*
@@ -188,8 +187,8 @@ class TestMatcher {
     }
 
     @Test
-    fun logicalPattern() {
-        val (A, B, C) = logicalPattern<String>("A", "B", "C")
+    fun metaLogical() {
+        val (A, B, C) = metaLogical<String>("A", "B", "C")
         val b = B.logical()
 
         program(
@@ -204,14 +203,14 @@ class TestMatcher {
         ).matcher().lookupMatches(occurrence("foo", "blah", b)).first().run {
             assertEquals("blah", logicalContext().variable(A).findRoot().value())
             assertSame(b, logicalContext().variable(B))
-            assertEquals(C.logical().pattern(), logicalContext().variable(C).pattern())
+            assertEquals(C.logical().metaLogical(), logicalContext().variable(C).metaLogical())
         }
 
     }
 
     @Test
-    fun matchLogicalPattern() {
-        val (M, N) = logicalPattern<Int>("M", "N")
+    fun matchMetaLogical() {
+        val (M, N) = metaLogical<Int>("M", "N")
 
         program(
             rule("main1",

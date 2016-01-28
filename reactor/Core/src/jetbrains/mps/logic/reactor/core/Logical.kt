@@ -2,8 +2,7 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.LogicalPattern
-import jetbrains.mps.logic.reactor.logical.NamingContext
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.logical.SolverLogical
 import java.util.*
 
@@ -29,9 +28,9 @@ fun Logical<*>.removeObserver(observer: LogicalObserver) {
     (this as MemLogical<*>).parentObservers.removeAll { p -> p.second == observer }
 }
 
-fun <V> LogicalPattern<V>.logical(): Logical<V> = MemLogical<V>(name())
+fun <V> MetaLogical<V>.logical(): Logical<V> = MemLogical<V>(this)
 
-fun <V> LogicalPattern<V>.logical(value: V): Logical<V> = MemLogical<V>(name(), value)
+fun <V> MetaLogical<V>.logical(value: V): Logical<V> = MemLogical<V>(name(), value)
 
 class MemLogical<T> : SolverLogical<T> {
 
@@ -41,7 +40,7 @@ class MemLogical<T> : SolverLogical<T> {
 
     val name: String
 
-    val pattern: LogicalPattern<T>
+    val metaLogical: MetaLogical<T>
 
     var _parent: MemLogical<T>? = null
 
@@ -55,24 +54,24 @@ class MemLogical<T> : SolverLogical<T> {
 
     constructor(value: T) {
         this.name = "$${++lastIdx}"
-        this.pattern = DefaultLogicalPattern<T>(name)
+        this.metaLogical = DefaultMetaLogical<T>(name)
         this._value = value
     }
 
     constructor(name: String) {
         this.name = "${name}_${++lastIdx}"
-        this.pattern = DefaultLogicalPattern<T>(name)
+        this.metaLogical = DefaultMetaLogical<T>(name)
     }
 
     constructor(name: String, value: T) {
         this.name = "${name}_${++lastIdx}"
-        this.pattern = DefaultLogicalPattern<T>(name)
+        this.metaLogical = DefaultMetaLogical<T>(name)
         this._value = value
     }
 
-    constructor(pattern: LogicalPattern<T>) {
-        this.pattern = pattern
-        this.name = "${pattern.name()}_${++lastIdx}"
+    constructor(metaLogical: MetaLogical<T>) {
+        this.metaLogical = metaLogical
+        this.name = "${metaLogical.name()}_${++lastIdx}"
     }
 
     override fun name(): String = name
@@ -83,7 +82,7 @@ class MemLogical<T> : SolverLogical<T> {
 
     override fun isWildcard(): Boolean = TODO()
 
-    override fun pattern(): LogicalPattern<T> = pattern
+    override fun metaLogical(): MetaLogical<T> = metaLogical
 
     override fun findRoot(): SolverLogical<T> = find()
 
@@ -187,13 +186,9 @@ class MemLogical<T> : SolverLogical<T> {
 
 }
 
-data class DefaultLogicalPattern<V> (val name: String) : LogicalPattern<V> {
+class DefaultMetaLogical<V> (val name: String) : MetaLogical<V>(name, Object::class.java as Class<V>) {
 
     override fun name(): String? {
-        throw UnsupportedOperationException()
-    }
-
-    override fun name(namingContext: NamingContext?): String? {
         throw UnsupportedOperationException()
     }
 
@@ -205,7 +200,4 @@ data class DefaultLogicalPattern<V> (val name: String) : LogicalPattern<V> {
         throw UnsupportedOperationException()
     }
 
-    override fun instance(): Logical<V>? {
-        throw UnsupportedOperationException()
-    }
 }

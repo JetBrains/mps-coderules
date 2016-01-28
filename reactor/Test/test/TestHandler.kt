@@ -3,7 +3,6 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import solver.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
@@ -207,8 +206,8 @@ class TestHandler {
     }
 
     @Test
-    fun basicLogicalPattern() {
-        val (X, Y) = logicalPattern<String>("X", "Y")
+    fun basicMetaLogical() {
+        val (X, Y) = metaLogical<String>("X", "Y")
         program(
             rule("rule1",
                 headReplaced(
@@ -285,7 +284,7 @@ class TestHandler {
 
     @Test
     fun occurrenceReactivated() {
-        val X = logicalPattern<Int>("X")
+        val X = metaLogical<Int>("X")
         program(
             rule("zeroth",
                 headKept( constraint("foo") ),          body( statement({ x -> x.set(999) }, X),
@@ -327,7 +326,7 @@ class TestHandler {
 
     @Test
     fun occurrenceReactivatedAfterUnion() {
-        val (X, Y) = logicalPattern<Int>("X", "Y")
+        val (X, Y) = metaLogical<Int>("X", "Y")
         var handler : Handler? = null
         program(
             rule("first",
@@ -368,7 +367,7 @@ class TestHandler {
 
     @Test
     fun occurrenceReactivatedAfterUnionUnbound() {
-        val (X, Y) = logicalPattern<Int>("X", "Y")
+        val (X, Y) = metaLogical<Int>("X", "Y")
         var handler : Handler? = null
         program(
             rule("first",

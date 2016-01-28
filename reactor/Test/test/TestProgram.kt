@@ -59,7 +59,7 @@ class TestProgram {
 
     @Test
     fun logicalValue() {
-        val (X, Y, Z) = logicalPattern<Int>("X", "Y", "Z")
+        val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
         program(
             rule("main",
                 headReplaced(
@@ -89,7 +89,7 @@ class TestProgram {
 
     @Test
     fun simpleProgram() {
-        val (X, Y) = logicalPattern<Int>("X", "Y")
+        val (X, Y) = metaLogical<Int>("X", "Y")
 
         program(
             rule("main",
@@ -113,7 +113,7 @@ class TestProgram {
 
     @Test
     fun gcd() {
-        val (M, N, TMP) = logicalPattern<Int>("M", "N", "TMP")
+        val (M, N, TMP) = metaLogical<Int>("M", "N", "TMP")
         program(
             rule("main",
                 headReplaced( constraint("main") ),     body(   statement({ m, n -> m.set(21); n.set(35) }, M, N),
@@ -142,7 +142,7 @@ class TestProgram {
 
     @Test
     fun primes() {
-        val (M, N) = logicalPattern<Int>("M", "N")
+        val (M, N) = metaLogical<Int>("M", "N")
         program(
             rule("main",
                 headReplaced( constraint("main") ),     body(   statement({ n -> n.set(10) }, N),

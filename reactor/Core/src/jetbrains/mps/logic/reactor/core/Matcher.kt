@@ -4,7 +4,7 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
-import jetbrains.mps.logic.reactor.logical.LogicalPattern
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Rule
@@ -78,11 +78,11 @@ class RuleTerm(rule: Rule) :
     Function(rule.tag(), (rule.headKept() + rule.headReplaced()).map { c -> ConstraintTerm(c) }) {}
 
 /** Function term with arguments == constraint arguments converted to terms.
- *  LogicalPattern arguments are term variables.
+ *  MetaLogical arguments are term variables.
  *  Everything else is either a term or a constant wrapping the value. */
 class ConstraintTerm(constraint: Constraint) :
     Function(constraint.symbol(),
-        constraint.arguments().map { arg -> if (arg is LogicalPattern<*>) Variable(arg) else asTerm(arg) }) {}
+        constraint.arguments().map { arg -> if (arg is MetaLogical<*>) Variable(arg) else asTerm(arg) }) {}
 
 /** Function term with arguments == terms corresponding to constraint occurrences. Never contains variables. */
 class PartialMatchTerm(pm : PartialMatch) :

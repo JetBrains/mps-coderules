@@ -1,6 +1,5 @@
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.LogicalContext
-import jetbrains.mps.logic.reactor.logical.LogicalPattern
 import jetbrains.mps.logic.reactor.program.*
 import program.MemConstraint
 import TestConstraintOccurrence
@@ -15,7 +14,7 @@ import java.util.*
 class Builder(val env: Environment, val rules: List<Rule>) {
 }
 
-class Environment(val programBuilder: ProgramBuilder? = null) {
+class Environment(val programBuilder: MemProgramBuilder? = null) {
     val equalsSolver = EqualsSolver()
     val expressionSolver = ExpressionSolver()
 }
@@ -24,7 +23,7 @@ fun program(vararg ruleBuilders : Environment.() -> Rule): Builder {
     return builder(Environment(), ruleBuilders)
 }
 
-fun program(pb: ProgramBuilder, vararg ruleBuilders : Environment.() -> Rule): Builder {
+fun program(pb: MemProgramBuilder, vararg ruleBuilders : Environment.() -> Rule): Builder {
     return builder(Environment(pb), ruleBuilders)
 }
 

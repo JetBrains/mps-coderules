@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -13,15 +11,14 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/5841747851381496683">
     <file name="ConstraintSymbol.java">
-      <node id="5841747851381535271" at="11,63,12,43" concept="8" />
-      <node id="6317379717814129922" at="15,49,16,21" concept="12" />
-      <node id="5841747851383361011" at="20,28,21,32" concept="8" />
-      <node id="5841747851381533067" at="11,0,14,0" concept="11" trace="symbol#(Ljava/lang/String;I)Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;" />
-      <node id="5841747851381516224" at="15,0,18,0" concept="1" trace="ConstraintSymbol#(Ljava/lang/String;I)V" />
-      <node id="5841747851383347181" at="19,0,23,0" concept="6" trace="toString#()Ljava/lang/String;" />
+      <node id="5841747851381535271" at="11,63,12,43" concept="6" />
+      <node id="6317379717814129922" at="15,49,16,21" concept="10" />
+      <node id="5841747851383361011" at="20,28,21,32" concept="6" />
+      <node id="5841747851381533067" at="11,0,14,0" concept="9" trace="symbol#(Ljava/lang/String;I)Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;" />
+      <node id="5841747851381516224" at="15,0,18,0" concept="0" trace="ConstraintSymbol#(Ljava/lang/String;I)V" />
+      <node id="5841747851383347181" at="19,0,23,0" concept="4" trace="toString#()Ljava/lang/String;" />
       <scope id="5841747851381533071" at="11,63,12,43" />
       <scope id="5841747851381516231" at="15,49,16,21" />
       <scope id="5841747851383347185" at="20,28,21,32" />
@@ -37,38 +34,14 @@
       <unit id="5841747851381496683" at="9,0,25,0" name="jetbrains.mps.logic.reactor.program.ConstraintSymbol" />
     </file>
   </root>
-  <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/6256062047364762604">
-    <file name="ProgramBuilder.java">
-      <node id="6256062047364914798" at="9,0,10,0" concept="6" trace="program#(Ljava/lang/String;Ljetbrains/mps/logic/reactor/evaluation/SessionSolver;)Ljetbrains/mps/logic/reactor/program/Program;" />
-      <node id="6317379717812928060" at="11,0,12,0" concept="6" trace="addRule#(Ljetbrains/mps/logic/reactor/program/Rule;)V" />
-      <node id="4650394911981102050" at="13,0,14,0" concept="6" trace="constraint#(Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;null)Ljetbrains/mps/logic/reactor/program/Constraint;" />
-      <node id="4650394911981149223" at="15,0,16,0" concept="6" trace="predicate#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)Ljetbrains/mps/logic/reactor/program/Predicate;" />
-      <scope id="6256062047364914798" at="9,0,10,0">
-        <var name="name" id="6256062047364914961" />
-        <var name="sessionSolver" id="6256062047364915075" />
-      </scope>
-      <scope id="6317379717812928060" at="11,0,12,0">
-        <var name="rule" id="6317379717812951187" />
-      </scope>
-      <scope id="4650394911981102050" at="13,0,14,0">
-        <var name="args" id="4650394911981133069" />
-        <var name="symbol" id="4650394911981121116" />
-      </scope>
-      <scope id="4650394911981149223" at="15,0,16,0">
-        <var name="args" id="4650394911981149226" />
-        <var name="symbol" id="4650394911981149224" />
-      </scope>
-      <unit id="6256062047364762604" at="7,0,18,0" name="jetbrains.mps.logic.reactor.program.ProgramBuilder" />
-    </file>
-  </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/6317379717812926698">
     <file name="Program.java">
-      <node id="8225968737378322884" at="10,0,11,0" concept="6" trace="name#()Ljava/lang/String;" />
-      <node id="7835819612273967620" at="12,0,13,0" concept="6" trace="sessionSolver#()Ljetbrains/mps/logic/reactor/evaluation/SessionSolver;" />
-      <node id="8225968737376927920" at="14,0,15,0" concept="6" trace="constraintSymbols#()Ljava/lang/Iterable;" />
-      <node id="6317379717812927967" at="16,0,17,0" concept="6" trace="constraintArgumentTypes#(Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;)Ljava/util/List;" />
-      <node id="8225968737376996320" at="18,0,19,0" concept="6" trace="predicateSymbols#()Ljava/lang/Iterable;" />
-      <node id="8225968737378224820" at="20,0,21,0" concept="6" trace="rules#()Ljava/lang/Iterable;" />
+      <node id="8225968737378322884" at="10,0,11,0" concept="4" trace="name#()Ljava/lang/String;" />
+      <node id="7835819612273967620" at="12,0,13,0" concept="4" trace="sessionSolver#()Ljetbrains/mps/logic/reactor/evaluation/SessionSolver;" />
+      <node id="8225968737376927920" at="14,0,15,0" concept="4" trace="constraintSymbols#()Ljava/lang/Iterable;" />
+      <node id="6317379717812927967" at="16,0,17,0" concept="4" trace="constraintArgumentTypes#(Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;)Ljava/util/List;" />
+      <node id="8225968737376996320" at="18,0,19,0" concept="4" trace="predicateSymbols#()Ljava/lang/Iterable;" />
+      <node id="8225968737378224820" at="20,0,21,0" concept="4" trace="rules#()Ljava/lang/Iterable;" />
       <scope id="8225968737378322884" at="10,0,11,0" />
       <scope id="7835819612273967620" at="12,0,13,0" />
       <scope id="8225968737376927920" at="14,0,15,0" />
@@ -82,33 +55,33 @@
   </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/6317379717814118653">
     <file name="Symbol.java">
-      <node id="6317379717814129293" at="8,42,9,17" concept="2" />
-      <node id="6317379717814157703" at="9,17,10,23" concept="2" />
-      <node id="5841747851381516257" at="13,22,14,14" concept="8" />
-      <node id="5841747851381516264" at="17,22,18,17" concept="8" />
-      <node id="5841747851381863229" at="22,25,23,20" concept="7" />
-      <node id="5841747851381863242" at="23,20,24,78" concept="2" />
-      <node id="5841747851381863258" at="24,78,25,38" concept="2" />
-      <node id="5841747851381863262" at="25,38,26,18" concept="8" />
-      <node id="5841747851381863158" at="31,20,32,18" concept="8" />
-      <node id="5841747851381863164" at="34,55,35,19" concept="8" />
-      <node id="5841747851381863177" at="36,5,37,0" concept="9" />
-      <node id="5841747851381863178" at="37,0,38,29" concept="7" />
-      <node id="5841747851381863196" at="39,67,40,19" concept="8" />
-      <node id="5841747851381863219" at="42,30,43,19" concept="8" />
-      <node id="5841747851381863221" at="44,5,45,0" concept="9" />
-      <node id="5841747851381863222" at="45,0,46,16" concept="8" />
-      <node id="5841747851381516267" at="49,0,50,0" concept="3" trace="id" />
-      <node id="5841747851381516270" at="50,0,51,0" concept="3" trace="arity" />
-      <node id="5841747851381516253" at="13,0,16,0" concept="6" trace="id#()Ljava/lang/String;" />
-      <node id="5841747851381516260" at="17,0,20,0" concept="6" trace="arity#()I" />
-      <node id="5841747851381863156" at="30,35,33,5" concept="5" />
-      <node id="5841747851381863162" at="33,5,36,5" concept="5" />
-      <node id="5841747851381863194" at="38,29,41,5" concept="5" />
-      <node id="5841747851381863214" at="41,5,44,5" concept="5" />
-      <node id="6317379717814128471" at="8,0,12,0" concept="1" trace="Symbol#(Ljava/lang/String;I)V" />
-      <node id="5841747851381863224" at="21,0,28,0" concept="6" trace="hashCode#()I" />
-      <node id="5841747851381863152" at="29,0,48,0" concept="6" trace="equals#(Ljava/lang/Object;)Z" />
+      <node id="6317379717814129293" at="8,42,9,17" concept="1" />
+      <node id="6317379717814157703" at="9,17,10,23" concept="1" />
+      <node id="5841747851381516257" at="13,22,14,14" concept="6" />
+      <node id="5841747851381516264" at="17,22,18,17" concept="6" />
+      <node id="5841747851381863229" at="22,25,23,20" concept="5" />
+      <node id="5841747851381863242" at="23,20,24,78" concept="1" />
+      <node id="5841747851381863258" at="24,78,25,38" concept="1" />
+      <node id="5841747851381863262" at="25,38,26,18" concept="6" />
+      <node id="5841747851381863158" at="31,20,32,18" concept="6" />
+      <node id="5841747851381863164" at="34,55,35,19" concept="6" />
+      <node id="5841747851381863177" at="36,5,37,0" concept="7" />
+      <node id="5841747851381863178" at="37,0,38,29" concept="5" />
+      <node id="5841747851381863196" at="39,67,40,19" concept="6" />
+      <node id="5841747851381863219" at="42,30,43,19" concept="6" />
+      <node id="5841747851381863221" at="44,5,45,0" concept="7" />
+      <node id="5841747851381863222" at="45,0,46,16" concept="6" />
+      <node id="5841747851381516267" at="49,0,50,0" concept="2" trace="id" />
+      <node id="5841747851381516270" at="50,0,51,0" concept="2" trace="arity" />
+      <node id="5841747851381516253" at="13,0,16,0" concept="4" trace="id#()Ljava/lang/String;" />
+      <node id="5841747851381516260" at="17,0,20,0" concept="4" trace="arity#()I" />
+      <node id="5841747851381863156" at="30,35,33,5" concept="3" />
+      <node id="5841747851381863162" at="33,5,36,5" concept="3" />
+      <node id="5841747851381863194" at="38,29,41,5" concept="3" />
+      <node id="5841747851381863214" at="41,5,44,5" concept="3" />
+      <node id="6317379717814128471" at="8,0,12,0" concept="0" trace="Symbol#(Ljava/lang/String;I)V" />
+      <node id="5841747851381863224" at="21,0,28,0" concept="4" trace="hashCode#()I" />
+      <node id="5841747851381863152" at="29,0,48,0" concept="4" trace="equals#(Ljava/lang/Object;)Z" />
       <scope id="5841747851381516256" at="13,22,14,14" />
       <scope id="5841747851381516263" at="17,22,18,17" />
       <scope id="5841747851381863157" at="31,20,32,18" />
@@ -137,10 +110,10 @@
   </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/6317379717814173903">
     <file name="PredicateSymbol.java">
-      <node id="6317379717823619735" at="8,48,9,21" concept="12" />
-      <node id="6317379717814175785" at="13,28,14,34" concept="8" />
-      <node id="6317379717814174713" at="8,0,11,0" concept="1" trace="PredicateSymbol#(Ljava/lang/String;I)V" />
-      <node id="6317379717814175781" at="12,0,16,0" concept="6" trace="toString#()Ljava/lang/String;" />
+      <node id="6317379717823619735" at="8,48,9,21" concept="10" />
+      <node id="6317379717814175785" at="13,28,14,34" concept="6" />
+      <node id="6317379717814174713" at="8,0,11,0" concept="0" trace="PredicateSymbol#(Ljava/lang/String;I)V" />
+      <node id="6317379717814175781" at="12,0,16,0" concept="4" trace="toString#()Ljava/lang/String;" />
       <scope id="6317379717814174717" at="8,48,9,21" />
       <scope id="6317379717814175784" at="13,28,14,34" />
       <scope id="6317379717814174713" at="8,0,11,0">
@@ -153,8 +126,8 @@
   </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/6317379717814244809">
     <file name="AndItem.java">
-      <node id="6317379717815747154" at="9,0,10,0" concept="6" trace="symbol#()Ljetbrains/mps/logic/reactor/program/Symbol;" />
-      <node id="6317379717814333446" at="11,0,12,0" concept="6" trace="arguments#()Ljava/util/Collection;" />
+      <node id="6317379717815747154" at="9,0,10,0" concept="4" trace="symbol#()Ljetbrains/mps/logic/reactor/program/Symbol;" />
+      <node id="6317379717814333446" at="11,0,12,0" concept="4" trace="arguments#()Ljava/util/Collection;" />
       <scope id="6317379717815747154" at="9,0,10,0" />
       <scope id="6317379717814333446" at="11,0,12,0" />
       <unit id="6317379717814244809" at="7,0,14,0" name="jetbrains.mps.logic.reactor.program.AndItem" />
@@ -162,13 +135,13 @@
   </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/6317379717817889711">
     <file name="JavaPredicateSymbol.java">
-      <node id="1445804513729425338" at="8,0,9,0" concept="10" trace="EXPRESSION0" />
-      <node id="1445804513729425524" at="10,0,11,0" concept="10" trace="EXPRESSION1" />
-      <node id="1445804513729425633" at="12,0,13,0" concept="10" trace="EXPRESSION2" />
-      <node id="1445804513729425764" at="14,0,15,0" concept="10" trace="EXPRESSION3" />
-      <node id="1445804513728312018" at="16,0,17,0" concept="10" trace="EXPRESSION" />
-      <node id="6317379717817889916" at="18,41,19,29" concept="12" />
-      <node id="6317379717817889762" at="18,0,21,0" concept="1" trace="JavaPredicateSymbol#(I)V" />
+      <node id="1445804513729425338" at="8,0,9,0" concept="8" trace="EXPRESSION0" />
+      <node id="1445804513729425524" at="10,0,11,0" concept="8" trace="EXPRESSION1" />
+      <node id="1445804513729425633" at="12,0,13,0" concept="8" trace="EXPRESSION2" />
+      <node id="1445804513729425764" at="14,0,15,0" concept="8" trace="EXPRESSION3" />
+      <node id="1445804513728312018" at="16,0,17,0" concept="8" trace="EXPRESSION" />
+      <node id="6317379717817889916" at="18,41,19,29" concept="10" />
+      <node id="6317379717817889762" at="18,0,21,0" concept="0" trace="JavaPredicateSymbol#(I)V" />
       <scope id="6317379717817889766" at="18,41,19,29" />
       <scope id="6317379717817889762" at="18,0,21,0">
         <var name="arity" id="6317379717817890807" />
@@ -178,9 +151,9 @@
   </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/7785665572546345623">
     <file name="Constraint.java">
-      <node id="6317379717814333032" at="14,0,15,0" concept="6" trace="symbol#()Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;" />
-      <node id="8225968737376931639" at="16,0,17,0" concept="6" trace="argumentTypes#()Ljava/util/List;" />
-      <node id="5649815580023740085" at="18,0,19,0" concept="6" trace="occurrenceArguments#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;)Ljava/util/Collection;" />
+      <node id="6317379717814333032" at="14,0,15,0" concept="4" trace="symbol#()Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;" />
+      <node id="8225968737376931639" at="16,0,17,0" concept="4" trace="argumentTypes#()Ljava/util/List;" />
+      <node id="5649815580023740085" at="18,0,19,0" concept="4" trace="occurrenceArguments#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;)Ljava/util/Collection;" />
       <scope id="6317379717814333032" at="14,0,15,0" />
       <scope id="8225968737376931639" at="16,0,17,0" />
       <scope id="5649815580023740085" at="18,0,19,0">
@@ -191,8 +164,8 @@
   </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/7785665572546359770">
     <file name="Predicate.java">
-      <node id="7785665572546360338" at="13,0,14,0" concept="6" trace="symbol#()Ljetbrains/mps/logic/reactor/program/PredicateSymbol;" />
-      <node id="5649815580025803455" at="15,0,16,0" concept="6" trace="invocationArguments#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;)Ljava/util/Collection;" />
+      <node id="7785665572546360338" at="13,0,14,0" concept="4" trace="symbol#()Ljetbrains/mps/logic/reactor/program/PredicateSymbol;" />
+      <node id="5649815580025803455" at="15,0,16,0" concept="4" trace="invocationArguments#(Ljetbrains/mps/logic/reactor/logical/LogicalContext;)Ljava/util/Collection;" />
       <scope id="7785665572546360338" at="13,0,14,0" />
       <scope id="5649815580025803455" at="15,0,16,0">
         <var name="logicalContext" id="5649815580025803456" />
@@ -202,13 +175,13 @@
   </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/8335224865064895074">
     <file name="Rule.java">
-      <node id="8335224865064895076" at="8,0,9,0" concept="6" trace="kind#()Ljetbrains/mps/logic/reactor/program/Rule/Kind;" />
-      <node id="7303011777414843895" at="10,0,11,0" concept="6" trace="tag#()Ljava/lang/String;" />
-      <node id="8335224865064895081" at="12,0,13,0" concept="6" trace="headKept#()Ljava/lang/Iterable;" />
-      <node id="8335224865064895087" at="14,0,15,0" concept="6" trace="headReplaced#()Ljava/lang/Iterable;" />
-      <node id="8335224865064895093" at="16,0,17,0" concept="6" trace="guard#()Ljava/lang/Iterable;" />
-      <node id="8335224865064895099" at="18,0,19,0" concept="6" trace="body#()Ljava/lang/Iterable;" />
-      <node id="8335224865065122390" at="20,0,21,0" concept="6" trace="all#()Ljava/lang/Iterable;" />
+      <node id="8335224865064895076" at="8,0,9,0" concept="4" trace="kind#()Ljetbrains/mps/logic/reactor/program/Rule/Kind;" />
+      <node id="7303011777414843895" at="10,0,11,0" concept="4" trace="tag#()Ljava/lang/String;" />
+      <node id="8335224865064895081" at="12,0,13,0" concept="4" trace="headKept#()Ljava/lang/Iterable;" />
+      <node id="8335224865064895087" at="14,0,15,0" concept="4" trace="headReplaced#()Ljava/lang/Iterable;" />
+      <node id="8335224865064895093" at="16,0,17,0" concept="4" trace="guard#()Ljava/lang/Iterable;" />
+      <node id="8335224865064895099" at="18,0,19,0" concept="4" trace="body#()Ljava/lang/Iterable;" />
+      <node id="8335224865065122390" at="20,0,21,0" concept="4" trace="all#()Ljava/lang/Iterable;" />
       <scope id="8335224865064895076" at="8,0,9,0" />
       <scope id="7303011777414843895" at="10,0,11,0" />
       <scope id="8335224865064895081" at="12,0,13,0" />
@@ -220,186 +193,12 @@
       <unit id="8335224865064895074" at="6,0,30,0" name="jetbrains.mps.logic.reactor.program.Rule" />
     </file>
   </root>
-  <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/8335224865064895129">
-    <file name="RuleBuilder.java">
-      <node id="7303011777414773402" at="12,34,13,19" concept="2" />
-      <node id="8335224865064895145" at="17,43,18,24" concept="2" />
-      <node id="8335224865064895162" at="19,5,20,16" concept="8" />
-      <node id="8335224865064895174" at="24,43,25,25" concept="2" />
-      <node id="8335224865064895191" at="26,5,27,16" concept="8" />
-      <node id="8335224865064895200" at="31,42,32,31" concept="2" />
-      <node id="8335224865064895217" at="33,5,34,16" concept="8" />
-      <node id="8335224865064895229" at="38,42,39,27" concept="2" />
-      <node id="8335224865064895246" at="40,5,41,16" concept="8" />
-      <node id="8490564095238015565" at="44,28,45,61" concept="8" />
-      <node id="8490564095238043833" at="48,29,49,30" concept="8" />
-      <node id="8490564095238045470" at="52,28,53,29" concept="8" />
-      <node id="2966490507992344509" at="56,50,57,19" concept="2" />
-      <node id="8207393387016330175" at="57,19,58,16" concept="8" />
-      <node id="8335224865064895256" at="61,88,62,55" concept="7" />
-      <node id="8335224865064895261" at="63,61,64,71" concept="2" />
-      <node id="4340821131296540362" at="64,71,65,0" concept="9" />
-      <node id="8335224865064895276" at="66,43,67,74" concept="2" />
-      <node id="4340821131296540379" at="67,74,68,0" concept="9" />
-      <node id="8335224865064895290" at="69,39,70,71" concept="2" />
-      <node id="4340821131296540396" at="70,71,71,0" concept="9" />
-      <node id="8335224865064895296" at="72,12,73,82" concept="13" />
-      <node id="8335224865064895300" at="74,5,75,0" concept="9" />
-      <node id="8335224865064895303" at="76,25,77,82" concept="13" />
-      <node id="8335224865064895310" at="78,5,79,0" concept="9" />
-      <node id="8335224865064895311" at="79,0,80,54" concept="2" />
-      <node id="8335224865064895316" at="80,54,81,62" concept="2" />
-      <node id="8335224865064895321" at="81,62,82,48" concept="2" />
-      <node id="8335224865064895326" at="82,48,83,46" concept="2" />
-      <node id="8335224865064895331" at="83,46,84,0" concept="9" />
-      <node id="8335224865064895332" at="84,0,85,43" concept="8" />
-      <node id="4340821131296552508" at="89,28,90,115" concept="8" />
-      <node id="2966490507992344455" at="94,44,95,37" concept="7" />
-      <node id="2966490507992344461" at="95,37,96,0" concept="9" />
-      <node id="2966490507992344462" at="96,0,97,48" concept="2" />
-      <node id="2966490507992344469" at="97,48,98,40" concept="2" />
-      <node id="2966490507992344476" at="98,40,99,34" concept="2" />
-      <node id="2966490507992344483" at="99,34,100,32" concept="2" />
-      <node id="8335224865064895343" at="106,82,107,23" concept="2" />
-      <node id="7303011777414821015" at="107,23,108,21" concept="2" />
-      <node id="8335224865064895356" at="111,65,112,18" concept="8" />
-      <node id="7303011777414878706" at="116,25,117,17" concept="8" />
-      <node id="8335224865064895366" at="121,44,122,22" concept="8" />
-      <node id="8335224865064895374" at="126,48,127,26" concept="8" />
-      <node id="8335224865064895382" at="131,40,132,19" concept="8" />
-      <node id="8335224865064895390" at="136,37,137,18" concept="8" />
-      <node id="8335224865065270680" at="141,36,142,67" concept="8" />
-      <node id="8335224865064895393" at="145,0,146,0" concept="3" trace="kind" />
-      <node id="7303011777414821011" at="146,0,147,0" concept="3" trace="tag" />
-      <node id="7303011777414773398" at="149,0,150,0" concept="3" trace="tag" />
-      <node id="8335224865064895397" at="150,0,151,0" concept="3" trace="headKept" />
-      <node id="8335224865064895405" at="151,0,152,0" concept="3" trace="headReplaced" />
-      <node id="8335224865064895413" at="152,0,153,0" concept="3" trace="guard" />
-      <node id="8335224865064895421" at="153,0,154,0" concept="3" trace="body" />
-      <node id="8335224865064895294" at="72,10,74,5" concept="0" />
-      <node id="7303011777414747729" at="12,0,15,0" concept="1" trace="RuleBuilder#(Ljava/lang/String;)V" />
-      <node id="8335224865064895143" at="16,50,19,5" concept="4" />
-      <node id="8335224865064895172" at="23,53,26,5" concept="4" />
-      <node id="8335224865064895198" at="30,60,33,5" concept="4" />
-      <node id="8335224865064895227" at="37,56,40,5" concept="4" />
-      <node id="8490564095237998215" at="44,0,47,0" concept="6" trace="hasHead#()Z" />
-      <node id="8490564095238019402" at="48,0,51,0" concept="6" trace="hasGuard#()Z" />
-      <node id="8490564095238045466" at="52,0,55,0" concept="6" trace="hasBody#()Z" />
-      <node id="8335224865064895301" at="75,0,78,5" concept="5" />
-      <node id="8335224865064895352" at="111,0,114,0" concept="6" trace="kind#()Ljetbrains/mps/logic/reactor/program/Rule/Kind;" />
-      <node id="8207393387016228023" at="56,0,60,0" concept="6" trace="merge#(null)Ljetbrains/mps/logic/reactor/program/RuleBuilder;" />
-      <node id="4340821131296548229" at="88,0,92,0" concept="6" trace="toString#()Ljava/lang/String;" />
-      <node id="8335224865064895339" at="106,0,110,0" concept="1" trace="Rule#(Ljetbrains/mps/logic/reactor/program/Rule/Kind;Ljava/lang/String;)V" />
-      <node id="7303011777414858647" at="115,0,119,0" concept="6" trace="tag#()Ljava/lang/String;" />
-      <node id="8335224865064895361" at="120,0,124,0" concept="6" trace="headKept#()Ljava/lang/Iterable;" />
-      <node id="8335224865064895369" at="125,0,129,0" concept="6" trace="headReplaced#()Ljava/lang/Iterable;" />
-      <node id="8335224865064895377" at="130,0,134,0" concept="6" trace="guard#()Ljava/lang/Iterable;" />
-      <node id="8335224865064895385" at="135,0,139,0" concept="6" trace="body#()Ljava/lang/Iterable;" />
-      <node id="8335224865065133958" at="140,0,144,0" concept="6" trace="all#()Ljava/lang/Iterable;" />
-      <node id="8335224865064895136" at="16,0,22,0" concept="6" trace="appendBody#(null)Ljetbrains/mps/logic/reactor/program/RuleBuilder;" />
-      <node id="8335224865064895165" at="23,0,29,0" concept="6" trace="appendGuard#(null)Ljetbrains/mps/logic/reactor/program/RuleBuilder;" />
-      <node id="8335224865064895194" at="30,0,36,0" concept="6" trace="appendHeadReplaced#(null)Ljetbrains/mps/logic/reactor/program/RuleBuilder;" />
-      <node id="8335224865064895223" at="37,0,43,0" concept="6" trace="appendHeadKept#(null)Ljetbrains/mps/logic/reactor/program/RuleBuilder;" />
-      <node id="2966490507992344450" at="93,46,101,5" concept="4" />
-      <node id="2966490507992344504" at="93,0,103,0" concept="6" trace="doMerge#(null)V" />
-      <node id="8335224865064895259" at="62,55,74,5" concept="5" />
-      <node id="8335224865064895252" at="61,0,87,0" concept="6" trace="toRule#()Ljetbrains/mps/logic/reactor/program/Rule;" />
-      <scope id="7303011777414747732" at="12,34,13,19" />
-      <scope id="8335224865064895144" at="17,43,18,24" />
-      <scope id="8335224865064895173" at="24,43,25,25" />
-      <scope id="8335224865064895199" at="31,42,32,31" />
-      <scope id="8335224865064895228" at="38,42,39,27" />
-      <scope id="8490564095237998219" at="44,28,45,61" />
-      <scope id="8490564095238019405" at="48,29,49,30" />
-      <scope id="8490564095238045469" at="52,28,53,29" />
-      <scope id="8335224865064895295" at="72,12,73,82" />
-      <scope id="8335224865064895302" at="76,25,77,82" />
-      <scope id="4340821131296548233" at="89,28,90,115" />
-      <scope id="8335224865064895355" at="111,65,112,18" />
-      <scope id="7303011777414858651" at="116,25,117,17" />
-      <scope id="8335224865064895365" at="121,44,122,22" />
-      <scope id="8335224865064895373" at="126,48,127,26" />
-      <scope id="8335224865064895381" at="131,40,132,19" />
-      <scope id="8335224865064895389" at="136,37,137,18" />
-      <scope id="8335224865065133963" at="141,36,142,67" />
-      <scope id="8207393387016228026" at="56,50,58,16" />
-      <scope id="8335224865064895260" at="63,61,65,0" />
-      <scope id="8335224865064895275" at="66,43,68,0" />
-      <scope id="8335224865064895289" at="69,39,71,0" />
-      <scope id="8335224865064895342" at="106,82,108,21" />
-      <scope id="7303011777414747729" at="12,0,15,0">
-        <var name="tag" id="7303011777414773101" />
-      </scope>
-      <scope id="8335224865064895143" at="16,50,19,5">
-        <var name="i" id="8335224865064895152" />
-      </scope>
-      <scope id="8335224865064895172" at="23,53,26,5">
-        <var name="i" id="8335224865064895181" />
-      </scope>
-      <scope id="8335224865064895198" at="30,60,33,5">
-        <var name="i" id="8335224865064895207" />
-      </scope>
-      <scope id="8335224865064895227" at="37,56,40,5">
-        <var name="i" id="8335224865064895236" />
-      </scope>
-      <scope id="8490564095237998215" at="44,0,47,0" />
-      <scope id="8490564095238019402" at="48,0,51,0" />
-      <scope id="8490564095238045466" at="52,0,55,0" />
-      <scope id="8335224865064895352" at="111,0,114,0" />
-      <scope id="8335224865064895142" at="16,50,20,16" />
-      <scope id="8335224865064895171" at="23,53,27,16" />
-      <scope id="8335224865064895197" at="30,60,34,16" />
-      <scope id="8335224865064895226" at="37,56,41,16" />
-      <scope id="8207393387016228023" at="56,0,60,0">
-        <var name="other" id="8207393387016238232" />
-      </scope>
-      <scope id="4340821131296548229" at="88,0,92,0" />
-      <scope id="8335224865064895339" at="106,0,110,0">
-        <var name="kind" id="8335224865064895349" />
-        <var name="tag" id="7303011777414819208" />
-      </scope>
-      <scope id="7303011777414858647" at="115,0,119,0" />
-      <scope id="8335224865064895361" at="120,0,124,0" />
-      <scope id="8335224865064895369" at="125,0,129,0" />
-      <scope id="8335224865064895377" at="130,0,134,0" />
-      <scope id="8335224865064895385" at="135,0,139,0" />
-      <scope id="8335224865065133958" at="140,0,144,0" />
-      <scope id="8335224865064895136" at="16,0,22,0">
-        <var name="item" id="8335224865064895137" />
-      </scope>
-      <scope id="8335224865064895165" at="23,0,29,0">
-        <var name="pred" id="8335224865064895166" />
-      </scope>
-      <scope id="8335224865064895194" at="30,0,36,0">
-        <var name="cst" id="8335224865064895219" />
-      </scope>
-      <scope id="8335224865064895223" at="37,0,43,0">
-        <var name="cst" id="8335224865064895248" />
-      </scope>
-      <scope id="2966490507992344454" at="94,44,100,32">
-        <var name="toMerge" id="2966490507992344456" />
-      </scope>
-      <scope id="2966490507992344449" at="93,46,101,5" />
-      <scope id="2966490507992344450" at="93,46,101,5">
-        <var name="i" id="2966490507992344451" />
-      </scope>
-      <scope id="2966490507992344504" at="93,0,103,0">
-        <var name="other" id="2966490507992344497" />
-      </scope>
-      <scope id="8335224865064895255" at="61,88,85,43">
-        <var name="kind" id="8335224865064895257" />
-      </scope>
-      <scope id="8335224865064895252" at="61,0,87,0" />
-      <unit id="8335224865064895337" at="104,0,148,0" name="jetbrains.mps.logic.reactor.program.RuleBuilder$Rule" />
-      <unit id="8335224865064895129" at="10,0,155,0" name="jetbrains.mps.logic.reactor.program.RuleBuilder" />
-    </file>
-  </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/9010599623174261813">
     <file name="InvalidRuleException.java">
-      <node id="9010599623174265602" at="8,47,9,19" concept="12" />
-      <node id="9010599623174269829" at="12,68,13,30" concept="12" />
-      <node id="9010599623174265548" at="8,0,11,0" concept="1" trace="InvalidRuleException#(Ljava/lang/String;)V" />
-      <node id="9010599623174269823" at="12,0,15,0" concept="1" trace="InvalidRuleException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
+      <node id="9010599623174265602" at="8,47,9,19" concept="10" />
+      <node id="9010599623174269829" at="12,68,13,30" concept="10" />
+      <node id="9010599623174265548" at="8,0,11,0" concept="0" trace="InvalidRuleException#(Ljava/lang/String;)V" />
+      <node id="9010599623174269823" at="12,0,15,0" concept="0" trace="InvalidRuleException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
       <scope id="9010599623174265552" at="8,47,9,19" />
       <scope id="9010599623174269828" at="12,68,13,30" />
       <scope id="9010599623174265548" at="8,0,11,0">
@@ -414,10 +213,10 @@
   </root>
   <root nodeRef="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)/9010599623176680927">
     <file name="InvalidConstraintException.java">
-      <node id="9010599623176682194" at="8,53,9,19" concept="12" />
-      <node id="9010599623176682617" at="12,67,13,23" concept="12" />
-      <node id="9010599623176682144" at="8,0,11,0" concept="1" trace="InvalidConstraintException#(Ljava/lang/String;)V" />
-      <node id="9010599623176682613" at="12,0,15,0" concept="1" trace="InvalidConstraintException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
+      <node id="9010599623176682194" at="8,53,9,19" concept="10" />
+      <node id="9010599623176682617" at="12,67,13,23" concept="10" />
+      <node id="9010599623176682144" at="8,0,11,0" concept="0" trace="InvalidConstraintException#(Ljava/lang/String;)V" />
+      <node id="9010599623176682613" at="12,0,15,0" concept="0" trace="InvalidConstraintException#(Ljava/lang/String;Ljava/lang/Throwable;)V" />
       <scope id="9010599623176682148" at="8,53,9,19" />
       <scope id="9010599623176682616" at="12,67,13,23" />
       <scope id="9010599623176682144" at="8,0,11,0">
