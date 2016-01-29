@@ -13,15 +13,13 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.logic.atom/)" />
     <import index="3o3z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.collect(MPS.Core/)" />
-    <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
+    <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.builtin.program)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -612,8 +610,8 @@
       </node>
       <node concept="37vLTG" id="78CwJJcPpB$" role="3clF46">
         <property role="TrG5h" value="programBuilder" />
-        <node concept="3uibUv" id="5rhZO$TYMMQ" role="1tU5fm">
-          <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
+        <node concept="3uibUv" id="7nPD14O1E93" role="1tU5fm">
+          <ref role="3uigEE" to="7n8k:5rhZO$TYZJM" resolve="ChrProgramBuilder" />
         </node>
       </node>
     </node>
@@ -671,7 +669,7 @@
                   <ref role="3cqZAo" node="78CwJJcPpPx" resolve="programBuilder" />
                 </node>
                 <node concept="liA8E" id="7nkyKX7nlVs" role="2OqNvi">
-                  <ref role="37wK5l" to="nz6g:5uFPQ7BvNSW" resolve="addRule" />
+                  <ref role="37wK5l" to="7n8k:7eGEHDlcF9o" resolve="addRule" />
                   <node concept="37vLTw" id="7nkyKX7nmaO" role="37wK5m">
                     <ref role="3cqZAo" node="7nkyKX7nlpb" resolve="rule" />
                   </node>
@@ -1463,9 +1461,6 @@
                   <node concept="37vLTw" id="7t5VLKHaIFO" role="37wK5m">
                     <ref role="3cqZAo" node="7t5VLKHaEJH" resolve="boundParam" />
                   </node>
-                  <node concept="37vLTw" id="429xoypKSb3" role="37wK5m">
-                    <ref role="3cqZAo" node="78CwJJcPpPx" resolve="programBuilder" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -1690,7 +1685,7 @@
                           <ref role="3cqZAo" node="78CwJJcPpPx" resolve="programBuilder" />
                         </node>
                         <node concept="liA8E" id="tIwzd1I3WJ" role="2OqNvi">
-                          <ref role="37wK5l" to="nz6g:5uFPQ7BvNSW" resolve="addRule" />
+                          <ref role="37wK5l" to="7n8k:7eGEHDlcF9o" resolve="addRule" />
                           <node concept="37vLTw" id="tIwzd1I3WK" role="37wK5m">
                             <ref role="3cqZAo" node="tIwzd1I3WB" resolve="rule" />
                           </node>
@@ -2192,8 +2187,8 @@
     <node concept="312cEg" id="78CwJJcPpPx" role="jymVt">
       <property role="TrG5h" value="programBuilder" />
       <node concept="3Tm6S6" id="78CwJJcPpPy" role="1B3o_S" />
-      <node concept="3uibUv" id="5rhZO$TYMSw" role="1tU5fm">
-        <ref role="3uigEE" to="nz6g:5rhZO$TYGJG" resolve="ProgramBuilder" />
+      <node concept="3uibUv" id="7nPD14O1EYG" role="1tU5fm">
+        <ref role="3uigEE" to="7n8k:5rhZO$TYZJM" resolve="ChrProgramBuilder" />
       </node>
     </node>
   </node>
