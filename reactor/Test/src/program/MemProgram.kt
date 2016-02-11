@@ -141,12 +141,10 @@ class ConstraintRegistry(val sessionSolver: SessionSolver) {
             unmodifiableSet(myConstraintArgTypes.keys)
 
     fun constraintArgTypes(symbol: ConstraintSymbol): List<Class<*>> =
-            unmodifiableList(myConstraintArgTypes.getOrImplicitDefault(symbol))
+            unmodifiableList(myConstraintArgTypes.getOrPut(symbol, { emptyList() }))
 
     fun predicateSymbols(): Iterable<PredicateSymbol> =
             unmodifiableSet(myPredicateSolvers.keys)
 
-    fun solverClass(symbol: PredicateSymbol): Class<out Queryable> =
-            myPredicateSolvers.getOrImplicitDefault(symbol)
 }
 
