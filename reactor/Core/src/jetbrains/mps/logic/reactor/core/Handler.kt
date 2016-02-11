@@ -59,9 +59,6 @@ class Handler : Matcher.AuxOccurrences {
             queue(constraint.occurrence(this, noLogicalContext))
         }
         catch (t: Throwable) {
-            for (pm in activationStack) {
-                trace.trigger(pm)
-            }
             throw t
         }
     }
