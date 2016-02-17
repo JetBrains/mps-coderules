@@ -10197,9 +10197,7 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbT" id="Nob1E3AwQ9" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
+                    <node concept="3clFbT" id="Nob1E3AwQ9" role="37wK5m" />
                     <node concept="3Tm1VV" id="Nob1E3AwQa" role="1B3o_S" />
                     <node concept="3clFb_" id="Nob1E3AwQb" role="jymVt">
                       <property role="TrG5h" value="toggleState" />
@@ -11373,6 +11371,10 @@
           <node concept="Tc6Ow" id="Nob1E3A0o7" role="2ShVmc">
             <node concept="3uibUv" id="Nob1E3A0o8" role="HW$YZ">
               <ref role="3uigEE" node="5X6ji59xezw" resolve="ActivationTrace.TraceEvent" />
+            </node>
+            <node concept="Rm8GO" id="2zBk6uIiY4G" role="HW$Y0">
+              <ref role="1Px2BO" node="5X6ji59xezw" resolve="ActivationTrace.TraceEvent" />
+              <ref role="Rm8GQ" node="Nob1E3AkVd" resolve="MATCH_DETAILS" />
             </node>
           </node>
         </node>
@@ -13695,12 +13697,91 @@
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="3cmrfG" id="4VwaB4Lw3r4" role="37wK5m">
-                                  <property role="3cmrfH" value="0" />
+                                <node concept="3cpWsd" id="2zBk6uIiEKJ" role="37wK5m">
+                                  <node concept="10QFUN" id="2zBk6uIiEKK" role="3uHU7w">
+                                    <node concept="2OqwBi" id="2zBk6uIiEKL" role="10QFUP">
+                                      <node concept="37vLTw" id="2zBk6uIiEKM" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="4VwaB4Lw3qM" resolve="cellRect" />
+                                      </node>
+                                      <node concept="liA8E" id="2zBk6uIiEKN" role="2OqNvi">
+                                        <ref role="37wK5l" to="z60i:~Rectangle.getY():double" resolve="getY" />
+                                      </node>
+                                    </node>
+                                    <node concept="10Oyi0" id="2zBk6uIiEKO" role="10QFUM" />
+                                  </node>
+                                  <node concept="1ZRNhn" id="2zBk6uIiEKP" role="3uHU7B">
+                                    <node concept="1rXfSq" id="2zBk6uIiEKQ" role="2$L3a6">
+                                      <ref role="37wK5l" to="dxuu:~JComponent.getY():int" resolve="getY" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
                           </node>
+                          <node concept="3clFbJ" id="2zBk6uIgI6I" role="3cqZAp">
+                            <node concept="3clFbS" id="2zBk6uIgI6K" role="3clFbx">
+                              <node concept="3cpWs8" id="2zBk6uIhBe8" role="3cqZAp">
+                                <node concept="3cpWsn" id="2zBk6uIhBe9" role="3cpWs9">
+                                  <property role="TrG5h" value="treeCellRect" />
+                                  <node concept="3uibUv" id="2zBk6uIhBe3" role="1tU5fm">
+                                    <ref role="3uigEE" to="z60i:~Rectangle" resolve="Rectangle" />
+                                  </node>
+                                  <node concept="2OqwBi" id="2zBk6uIhBea" role="33vP2m">
+                                    <node concept="1rXfSq" id="2zBk6uIhBeb" role="2Oq$k0">
+                                      <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
+                                    </node>
+                                    <node concept="liA8E" id="2zBk6uIhBec" role="2OqNvi">
+                                      <ref role="37wK5l" to="dxuu:~JTree.getRowBounds(int):java.awt.Rectangle" resolve="getRowBounds" />
+                                      <node concept="37vLTw" id="2zBk6uIhBed" role="37wK5m">
+                                        <ref role="3cqZAo" node="4VwaB4Lw3pm" resolve="row" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbF" id="2zBk6uIhDDC" role="3cqZAp">
+                                <node concept="2OqwBi" id="2zBk6uIhDFe" role="3clFbG">
+                                  <node concept="37vLTw" id="2zBk6uIhDDA" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4VwaB4Lw3pf" resolve="p" />
+                                  </node>
+                                  <node concept="liA8E" id="2zBk6uIhDMd" role="2OqNvi">
+                                    <ref role="37wK5l" to="z60i:~Point.translate(int,int):void" resolve="translate" />
+                                    <node concept="1ZRNhn" id="2zBk6uIhXGk" role="37wK5m">
+                                      <node concept="10QFUN" id="2zBk6uIhJyt" role="2$L3a6">
+                                        <node concept="10Oyi0" id="2zBk6uIhJyp" role="10QFUM" />
+                                        <node concept="2OqwBi" id="2zBk6uIhJyq" role="10QFUP">
+                                          <node concept="37vLTw" id="2zBk6uIhJyr" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="2zBk6uIhBe9" resolve="treeCellRect" />
+                                          </node>
+                                          <node concept="liA8E" id="2zBk6uIhJys" role="2OqNvi">
+                                            <ref role="37wK5l" to="z60i:~Rectangle.getX():double" resolve="getX" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3cmrfG" id="2zBk6uIhIpA" role="37wK5m">
+                                      <property role="3cmrfH" value="0" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="2zBk6uIioPI" role="3clFbw">
+                              <node concept="3VsKOn" id="2zBk6uIioPJ" role="2Oq$k0">
+                                <ref role="3VsUkX" to="u30n:~TreeTableModel" resolve="TreeTableModel" />
+                              </node>
+                              <node concept="liA8E" id="2zBk6uIioPK" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                                <node concept="1rXfSq" id="2zBk6uIioPL" role="37wK5m">
+                                  <ref role="37wK5l" to="dxuu:~JTable.getColumnClass(int):java.lang.Class" resolve="getColumnClass" />
+                                  <node concept="37vLTw" id="2zBk6uIioPM" role="37wK5m">
+                                    <ref role="3cqZAo" node="4VwaB4Lw3pu" resolve="column" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbH" id="2zBk6uIgZZ$" role="3cqZAp" />
                           <node concept="3clFbJ" id="4VwaB4Lw3r5" role="3cqZAp">
                             <node concept="3clFbS" id="4VwaB4Lw3r6" role="3clFbx">
                               <node concept="3clFbF" id="4VwaB4Lw3r7" role="3cqZAp">
@@ -14103,6 +14184,69 @@
                                     <node concept="1rXfSq" id="5pDu2jaWkQZ" role="2$L3a6">
                                       <ref role="37wK5l" to="dxuu:~JComponent.getY():int" resolve="getY" />
                                     </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="2zBk6uIiEct" role="3cqZAp">
+                            <node concept="3clFbS" id="2zBk6uIiEcu" role="3clFbx">
+                              <node concept="3cpWs8" id="2zBk6uIiEcv" role="3cqZAp">
+                                <node concept="3cpWsn" id="2zBk6uIiEcw" role="3cpWs9">
+                                  <property role="TrG5h" value="treeCellRect" />
+                                  <node concept="3uibUv" id="2zBk6uIiEcx" role="1tU5fm">
+                                    <ref role="3uigEE" to="z60i:~Rectangle" resolve="Rectangle" />
+                                  </node>
+                                  <node concept="2OqwBi" id="2zBk6uIiEcy" role="33vP2m">
+                                    <node concept="1rXfSq" id="2zBk6uIiEcz" role="2Oq$k0">
+                                      <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
+                                    </node>
+                                    <node concept="liA8E" id="2zBk6uIiEc$" role="2OqNvi">
+                                      <ref role="37wK5l" to="dxuu:~JTree.getRowBounds(int):java.awt.Rectangle" resolve="getRowBounds" />
+                                      <node concept="37vLTw" id="2zBk6uIiEc_" role="37wK5m">
+                                        <ref role="3cqZAo" node="5pDu2jaTS9$" resolve="row" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbF" id="2zBk6uIiEcA" role="3cqZAp">
+                                <node concept="2OqwBi" id="2zBk6uIiEcB" role="3clFbG">
+                                  <node concept="37vLTw" id="2zBk6uIiEcC" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5pDu2jaTS9u" resolve="p" />
+                                  </node>
+                                  <node concept="liA8E" id="2zBk6uIiEcD" role="2OqNvi">
+                                    <ref role="37wK5l" to="z60i:~Point.translate(int,int):void" resolve="translate" />
+                                    <node concept="1ZRNhn" id="2zBk6uIiEcE" role="37wK5m">
+                                      <node concept="10QFUN" id="2zBk6uIiEcF" role="2$L3a6">
+                                        <node concept="10Oyi0" id="2zBk6uIiEcG" role="10QFUM" />
+                                        <node concept="2OqwBi" id="2zBk6uIiEcH" role="10QFUP">
+                                          <node concept="37vLTw" id="2zBk6uIiEcI" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="2zBk6uIiEcw" resolve="treeCellRect" />
+                                          </node>
+                                          <node concept="liA8E" id="2zBk6uIiEcJ" role="2OqNvi">
+                                            <ref role="37wK5l" to="z60i:~Rectangle.getX():double" resolve="getX" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3cmrfG" id="2zBk6uIiEcK" role="37wK5m">
+                                      <property role="3cmrfH" value="0" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="2zBk6uIiEcL" role="3clFbw">
+                              <node concept="3VsKOn" id="2zBk6uIiEcM" role="2Oq$k0">
+                                <ref role="3VsUkX" to="u30n:~TreeTableModel" resolve="TreeTableModel" />
+                              </node>
+                              <node concept="liA8E" id="2zBk6uIiEcN" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                                <node concept="1rXfSq" id="2zBk6uIiEcO" role="37wK5m">
+                                  <ref role="37wK5l" to="dxuu:~JTable.getColumnClass(int):java.lang.Class" resolve="getColumnClass" />
+                                  <node concept="37vLTw" id="2zBk6uIiEcP" role="37wK5m">
+                                    <ref role="3cqZAo" node="5pDu2jaTS9D" resolve="column" />
                                   </node>
                                 </node>
                               </node>
