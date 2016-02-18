@@ -138,6 +138,7 @@
         <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
+      <concept id="1174663118805" name="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" flags="nn" index="1ZobV4" />
       <concept id="1174665551739" name="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" flags="ng" index="1ZxtTE" />
       <concept id="1174666260556" name="jetbrains.mps.lang.typesystem.structure.TypeVarReference" flags="nn" index="1Z$b5t">
         <reference id="1174666276259" name="typeVarDeclaration" index="1Z$eMM" />
@@ -210,7 +211,7 @@
       <node concept="3clFbF" id="7HUwyZb13M4" role="3cqZAp">
         <node concept="2c44tf" id="7HUwyZb13M2" role="3clFbG">
           <node concept="3uibUv" id="7HUwyZb13MN" role="2c44tc">
-            <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
+            <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
           </node>
         </node>
       </node>
@@ -250,7 +251,7 @@
                 <property role="TrG5h" value="il" />
                 <node concept="2DMOqp" id="2S_ORi36mSh" role="1YbcFS">
                   <node concept="3uibUv" id="7HUwyZb3e5O" role="2DMOqq">
-                    <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="LogicalPattern" />
+                    <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
                   </node>
                 </node>
               </node>
@@ -599,23 +600,23 @@
                         <property role="3SKdUp" value="string by default" />
                       </node>
                     </node>
-                    <node concept="1Z5TYs" id="7dgRGU4$_z6" role="3cqZAp">
+                    <node concept="1ZobV4" id="2zBk6uIp8Po" role="3cqZAp">
                       <property role="3wDh2S" value="true" />
-                      <node concept="mw_s8" id="7dgRGU4$_Hl" role="1ZfhKB">
-                        <node concept="2c44tf" id="7dgRGU4$_Hh" role="mwGJk">
-                          <node concept="17QB3L" id="7dgRGU4$_HC" role="2c44tc" />
-                        </node>
-                      </node>
-                      <node concept="mw_s8" id="7dgRGU4A0xz" role="1ZfhK$">
-                        <node concept="1Z2H0r" id="7dgRGU4A0xx" role="mwGJk">
-                          <node concept="2OqwBi" id="7dgRGU4A0zN" role="1Z2MuG">
-                            <node concept="1YBJjd" id="7dgRGU4A0xO" role="2Oq$k0">
+                      <node concept="mw_s8" id="2zBk6uIp8Pt" role="1ZfhK$">
+                        <node concept="1Z2H0r" id="2zBk6uIp8Pu" role="mwGJk">
+                          <node concept="2OqwBi" id="2zBk6uIp8Pv" role="1Z2MuG">
+                            <node concept="1YBJjd" id="2zBk6uIp8Pw" role="2Oq$k0">
                               <ref role="1YBMHb" node="7dgRGU4$_60" resolve="splice" />
                             </node>
-                            <node concept="3TrEf2" id="7dgRGU4A0KD" role="2OqNvi">
+                            <node concept="3TrEf2" id="2zBk6uIp8Px" role="2OqNvi">
                               <ref role="3Tt5mk" to="5j4j:dfChU1zo4I" />
                             </node>
                           </node>
+                        </node>
+                      </node>
+                      <node concept="mw_s8" id="2zBk6uIp8Pq" role="1ZfhKB">
+                        <node concept="2c44tf" id="2zBk6uIp8Pr" role="mwGJk">
+                          <node concept="17QB3L" id="2zBk6uIp8Ps" role="2c44tc" />
                         </node>
                       </node>
                     </node>
@@ -696,7 +697,7 @@
       <node concept="3clFbF" id="7HUwyZb1IYI" role="3cqZAp">
         <node concept="2c44tf" id="7HUwyZb1IYG" role="3clFbG">
           <node concept="3uibUv" id="7HUwyZb1IZt" role="2c44tc">
-            <ref role="3uigEE" to="45ys:7HUwyZaNIC5" resolve="MultiLogicalPattern" />
+            <ref role="3uigEE" to="45ys:7HUwyZaNIC5" resolve="MultiMetaLogical" />
           </node>
         </node>
       </node>

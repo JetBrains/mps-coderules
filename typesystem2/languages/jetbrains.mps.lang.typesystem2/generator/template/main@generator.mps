@@ -44,6 +44,7 @@
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="4r4j" ref="r:94702bd0-f623-44e8-af0a-f2730f7d2518(jetbrains.mps.lang.typesystem2.samplechecker.handle.util)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
@@ -7408,8 +7409,8 @@
       <ref role="30HIoZ" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
       <node concept="gft3U" id="7jC45KccKR9" role="1lVwrX">
         <node concept="2YIFZM" id="7jC45KccKZV" role="gfFT$">
-          <ref role="37wK5l" to="i348:4OKkcnfu_xq" resolve="anchorAtom" />
-          <ref role="1Pybhc" to="i348:4OKkcnfu_xo" resolve="AnchorUtil" />
+          <ref role="1Pybhc" to="4r4j:4OKkcnfu_xo" resolve="AnchorUtil" />
+          <ref role="37wK5l" to="4r4j:4OKkcnfu_xq" resolve="anchorAtom" />
           <node concept="10Nm6u" id="7jC45KccL0o" role="37wK5m">
             <node concept="29HgVG" id="7jC45KccL0G" role="lGtFl">
               <node concept="3NFfHV" id="7jC45KccL0H" role="3NFExx">
