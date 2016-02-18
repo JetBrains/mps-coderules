@@ -13,7 +13,6 @@
       <modulePath path="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.test/jetbrains.mps.logic.test.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.handling/jetbrains.mps.typechecking.handling.msd" folder="typechecking.template.handler.chr" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.solving/jetbrains.mps.typechecking.solving.msd" folder="typechecking.onthefly" />
       <modulePath path="$PROJECT_DIR$/typechecking/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" folder="typechecking.annotation" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem.sample/jetbrains.mps.lang.typesystem2.sample.msd" folder="typechecking.sample" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler.test/jetbrains.mps.lang.typesystem2.samplechecker.handler.test.msd" folder="typechecking.template.handler" />
