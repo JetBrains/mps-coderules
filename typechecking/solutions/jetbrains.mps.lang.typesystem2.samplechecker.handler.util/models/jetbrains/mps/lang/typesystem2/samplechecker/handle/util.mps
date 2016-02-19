@@ -80,6 +80,10 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
+        <child id="1081256993305" name="classType" index="2ZW6by" />
+        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -88,6 +92,10 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
+      </concept>
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
@@ -3019,8 +3027,8 @@
             <property role="TrG5h" value="finder" />
             <node concept="3uibUv" id="6_UQWSXaWAS" role="1tU5fm">
               <ref role="3uigEE" to="ie8e:3JgCwkqkUKX" resolve="Finders.IValueFinder" />
-              <node concept="3uibUv" id="6_UQWSXb0NN" role="11_B2D">
-                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              <node concept="3uibUv" id="6_UQWSXjAm2" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
             <node concept="2YIFZM" id="6_UQWSXaWAY" role="33vP2m">
@@ -3035,10 +3043,15 @@
               <node concept="Xl_RD" id="6_UQWSXaWB1" role="37wK5m">
                 <property role="Xl_RC" value="id" />
               </node>
-              <node concept="3uibUv" id="6_UQWSXb2VW" role="3PaCim">
-                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              <node concept="3uibUv" id="6_UQWSXjApI" role="3PaCim">
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6_UQWSXjCST" role="3cqZAp">
+          <node concept="3SKdUq" id="6_UQWSXjCSV" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: finders should be able to handle a situation of the value being a logical" />
           </node>
         </node>
         <node concept="3clFbJ" id="6_UQWSXaXav" role="3cqZAp">
@@ -3052,12 +3065,17 @@
                 <node concept="2YIFZM" id="6_UQWSXb0Hc" role="33vP2m">
                   <ref role="37wK5l" to="w1kc:~SNodePointer.deserialize(java.lang.String):org.jetbrains.mps.openapi.model.SNodeReference" resolve="deserialize" />
                   <ref role="1Pybhc" to="w1kc:~SNodePointer" resolve="SNodePointer" />
-                  <node concept="2OqwBi" id="6_UQWSXb0Hd" role="37wK5m">
-                    <node concept="37vLTw" id="6_UQWSXb0He" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6_UQWSXaWAX" resolve="finder" />
+                  <node concept="10QFUN" id="6_UQWSXjAxf" role="37wK5m">
+                    <node concept="3uibUv" id="6_UQWSXjAxb" role="10QFUM">
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                     </node>
-                    <node concept="liA8E" id="6_UQWSXb0Hf" role="2OqNvi">
-                      <ref role="37wK5l" to="ie8e:3JgCwkqkUL2" resolve="result" />
+                    <node concept="2OqwBi" id="6_UQWSXjAxc" role="10QFUP">
+                      <node concept="37vLTw" id="6_UQWSXjAxd" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6_UQWSXaWAX" resolve="finder" />
+                      </node>
+                      <node concept="liA8E" id="6_UQWSXjAxe" role="2OqNvi">
+                        <ref role="37wK5l" to="ie8e:3JgCwkqkUL2" resolve="result" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -3069,12 +3087,27 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="6_UQWSXaXn0" role="3clFbw">
-            <node concept="37vLTw" id="6_UQWSXaXn1" role="2Oq$k0">
-              <ref role="3cqZAo" node="6_UQWSXaWAX" resolve="finder" />
+          <node concept="1Wc70l" id="6_UQWSXjAai" role="3clFbw">
+            <node concept="2OqwBi" id="6_UQWSXaXn0" role="3uHU7B">
+              <node concept="37vLTw" id="6_UQWSXaXn1" role="2Oq$k0">
+                <ref role="3cqZAo" node="6_UQWSXaWAX" resolve="finder" />
+              </node>
+              <node concept="liA8E" id="6_UQWSXaXn2" role="2OqNvi">
+                <ref role="37wK5l" to="ie8e:3JgCwkqkUKY" resolve="found" />
+              </node>
             </node>
-            <node concept="liA8E" id="6_UQWSXaXn2" role="2OqNvi">
-              <ref role="37wK5l" to="ie8e:3JgCwkqkUKY" resolve="found" />
+            <node concept="2ZW3vV" id="6_UQWSXjAtE" role="3uHU7w">
+              <node concept="3uibUv" id="6_UQWSXjAvk" role="2ZW6by">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="6_UQWSXjAat" role="2ZW6bz">
+                <node concept="37vLTw" id="6_UQWSXjAau" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6_UQWSXaWAX" resolve="finder" />
+                </node>
+                <node concept="liA8E" id="6_UQWSXjAav" role="2OqNvi">
+                  <ref role="37wK5l" to="ie8e:3JgCwkqkUL2" resolve="result" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
