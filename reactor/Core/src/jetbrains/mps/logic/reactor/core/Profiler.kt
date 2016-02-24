@@ -46,6 +46,10 @@ class Profiler {
         }.toMap()
     }
 
+    fun clear() {
+        tokenStack.clear()
+    }
+
 }
 
 class Token(val name: String, val id: Int) {
