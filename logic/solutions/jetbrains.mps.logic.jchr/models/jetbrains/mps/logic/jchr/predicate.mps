@@ -1932,7 +1932,7 @@
       <property role="TrG5h" value="T" />
     </node>
     <node concept="3uibUv" id="3HJTsBmBTqG" role="EKbjA">
-      <ref role="3uigEE" to="yg8f:qubcdt1pkm" resolve="LogicalExt" />
+      <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
       <node concept="16syzq" id="3HJTsBmBTr8" role="11_B2D">
         <ref role="16sUi3" node="3HJTsBmBSUN" resolve="T" />
       </node>

@@ -527,7 +527,7 @@
                     </node>
                     <node concept="2c44tf" id="6MYr6Jy87W1" role="3JuZjQ">
                       <node concept="3uibUv" id="6MYr6Jy87W2" role="2c44tc">
-                        <ref role="3uigEE" to="yg8f:qubcdt1pkm" resolve="LogicalExt" />
+                        <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
                         <node concept="3uibUv" id="6MYr6Jy87W3" role="11_B2D">
                           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                         </node>

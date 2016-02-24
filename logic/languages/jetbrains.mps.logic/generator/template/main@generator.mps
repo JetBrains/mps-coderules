@@ -24,7 +24,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="ha02" ref="r:09e53496-6477-45e7-abd5-eaf3fac3b360(jetbrains.mps.logic.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -284,7 +283,6 @@
       <concept id="1803469493727536395" name="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" flags="ng" index="hTh3S">
         <child id="1803469493727536396" name="concept" index="hTh3Z" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -506,7 +504,7 @@
               <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2YIFZM" id="7nPD14NONtQ" role="37wK5m">
                 <ref role="37wK5l" to="nz6g:7nPD14NOHGU" resolve="wildcardMetaLogical" />
-                <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="ProgramFactory" />
                 <node concept="3VsKOn" id="7nPD14NONvH" role="37wK5m">
                   <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
                 </node>
@@ -520,7 +518,7 @@
             <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2YIFZM" id="7nPD14NONnQ" role="37wK5m">
               <ref role="37wK5l" to="nz6g:7nPD14NOHGU" resolve="wildcardMetaLogical" />
-              <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+              <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="ProgramFactory" />
               <node concept="3VsKOn" id="7nPD14NONpR" role="37wK5m">
                 <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
               </node>
@@ -1579,8 +1577,8 @@
                 <node concept="1Yb3XT" id="514BAS_YAHo" role="1Ub_4A">
                   <property role="TrG5h" value="dummy" />
                   <node concept="2DMOqp" id="514BAS_YAHp" role="1YbcFS">
-                    <node concept="3uibUv" id="514BAS_YBB4" role="2DMOqq">
-                      <ref role="3uigEE" to="yg8f:qubcdt1pkm" resolve="LogicalExt" />
+                    <node concept="3uibUv" id="3mz2_dYrgHu" role="2DMOqq">
+                      <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
                     </node>
                   </node>
                 </node>
@@ -1595,42 +1593,18 @@
           <node concept="3cpWs8" id="514BAS_YBDu" role="3cqZAp">
             <node concept="3cpWsn" id="514BAS_YBDv" role="3cpWs9">
               <property role="TrG5h" value="logical" />
-              <node concept="3uibUv" id="514BAS_YBGL" role="1tU5fm">
-                <ref role="3uigEE" to="yg8f:qubcdt1pkm" resolve="LogicalExt" />
+              <node concept="3uibUv" id="3mz2_dYuqQi" role="1tU5fm">
+                <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
               </node>
             </node>
           </node>
           <node concept="3clFbF" id="514BAS_YBDx" role="3cqZAp">
             <node concept="2YIFZM" id="514BAS_YBDy" role="3clFbG">
               <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
-              <ref role="37wK5l" to="yg8f:7FFmDVAK9bb" resolve="asAtom" />
+              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asAtom" />
               <node concept="37vLTw" id="514BAS_YBDz" role="37wK5m">
                 <ref role="3cqZAo" node="514BAS_YBDv" resolve="logical" />
                 <node concept="29HgVG" id="514BAS_YBD$" role="lGtFl" />
-              </node>
-              <node concept="3VsKOn" id="7FFmDVAKa2E" role="37wK5m">
-                <ref role="3VsUkX" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
-                <node concept="1ZhdrF" id="7FFmDVALaiM" role="lGtFl">
-                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612/1116615189566" />
-                  <property role="2qtEX8" value="classifier" />
-                  <node concept="3$xsQk" id="7FFmDVALaiN" role="3$ytzL">
-                    <node concept="3clFbS" id="7FFmDVALaiO" role="2VODD2">
-                      <node concept="3clFbF" id="7FFmDVALer8" role="3cqZAp">
-                        <node concept="2OqwBi" id="7FFmDVALexa" role="3clFbG">
-                          <node concept="2OqwBi" id="7FFmDVALesF" role="2Oq$k0">
-                            <node concept="1iwH7S" id="7FFmDVALer7" role="2Oq$k0" />
-                            <node concept="3cR$yn" id="7FFmDVALeu1" role="2OqNvi">
-                              <ref role="3cRzXn" node="7FFmDVALe4e" resolve="atom" />
-                            </node>
-                          </node>
-                          <node concept="2qgKlT" id="7FFmDVALe$J" role="2OqNvi">
-                            <ref role="37wK5l" to="ha02:7FFmDVAL6VY" resolve="runtimeType" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
               <node concept="raruj" id="514BAS_YBD_" role="lGtFl" />
             </node>
