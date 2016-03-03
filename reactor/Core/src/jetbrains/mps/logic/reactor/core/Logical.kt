@@ -104,27 +104,31 @@ class MemLogical<T> : SolverLogical<T> {
             thisRepr.incRank();
         }
 
-        otherRepr.setParent(thisRepr)
-        thisRepr.mergeParentObservers(otherRepr)
-
         val thisVal = thisRepr.value();
         val otherVal = otherRepr.value();
 
+        // first copy the value
         if (thisVal == null && otherVal != null) {
             // var ground
             thisRepr.setValue(otherVal);
+            // TODO: clear the value in the "other" logical after union
 
         } else if (thisVal != null && otherVal == null) {
             // ground var
-            // otherRepr.setValue(thisRepr.value());
             // TODO: no need to copy the value
-            otherRepr.notifyValueUpdated();
+            otherRepr.setValue(thisVal);
+        }
 
-        } else if (thisVal == null && otherVal == null) {
+        // then set parent
+        otherRepr.setParent(thisRepr)
+        thisRepr.mergeParentObservers(otherRepr)
+
+        // last, reconcile the values/merge observers
+        if (thisVal == null && otherVal == null) {
             // var var
             thisRepr.mergeValueObservers(otherRepr);
 
-        } else {
+        } else if (thisVal != null && otherVal != null) {
             // ground ground
             reconciler.reconcile(thisVal, otherVal);
         }

@@ -166,11 +166,41 @@ class TestProgram {
         ).session("reactivateOnUnion").run {
             assertEquals(setOf( ConstraintSymbol("foo", 2),
                                 ConstraintSymbol("capture", 1),
-                                ConstraintSymbol("replaced", 0)), constraintSymbols())
+                                ConstraintSymbol("replaced", 0)),
+                         constraintSymbols())
             assertEquals(1, constraintOccurrences(ConstraintSymbol("foo", 2)).count())
             // FIXME: this count should be 2 instead as per the "activation history" feature
             assertEquals(3, constraintOccurrences(ConstraintSymbol("capture", 1)).count())
             assertEquals(1, constraintOccurrences(ConstraintSymbol("replaced", 0)).count())
+        }
+    }
+
+    @Test
+    fun reactivateOnUnionKeepValue() {
+        val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
+
+        program(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   statement({ x, y -> x eq y }, X, Y),  // rank(X) = 1
+                                                                    statement({ z -> z.set(42) }, Z),
+                                                                    constraint("foo", Z),
+                                                                    statement({ x, z -> x eq z }, X, Z) )
+            ),
+            rule("capture_foo_free",
+                headKept( constraint("foo", X) ),           guard(  expression({x -> x.getNullable() == null }, X) ),
+                                                            body(   constraint("free") )
+            ),
+            rule("capture_foo_assigned",
+                headKept( constraint("foo", X) ),           guard(  expression({x -> x.getNullable() != null }, X) ),
+                                                            body(   constraint("assigned") )
+            )
+        ).session("reactivateOnUnionKeepValue").run {
+            assertEquals(setOf( ConstraintSymbol("foo", 1),
+                                ConstraintSymbol("assigned", 0)),
+                         constraintSymbols())
+            assertEquals(1, constraintOccurrences(ConstraintSymbol("foo", 1)).count())
+            // FIXME: this count should be 1 instead as per the "activation history" feature (??? not sure)
+            assertEquals(2, constraintOccurrences(ConstraintSymbol("assigned", 0)).count())
         }
     }
 
