@@ -100,7 +100,8 @@ class Handler : Matcher.AuxOccurrences {
                 trace.reactivate(active)
             }
 
-            for (match in matcher.lookupMatches(active).filter { pm -> pm.rule.checkGuard(pm.logicalContext()) }) {
+            val lookupMatches = matcher.lookupMatches(active)
+            for (match in lookupMatches.filter { pm -> pm.rule.checkGuard(pm.logicalContext()) }) {
                 if (!active.isStored()) break
                 if (match.occurrences().any { co -> !co.isStored() }) continue
 

@@ -157,7 +157,9 @@ private data class MemConstraintOccurrence(val handler: Handler, val constraint:
         handler.queue(this)
     }
 
-    override fun parentUpdated(logical: Logical<*>) { /* ignore */ }
+    override fun parentUpdated(logical: Logical<*>) {
+        handler.queue(this)
+    }
 
     override fun terminate() {
         for (a in arguments) {

@@ -47,6 +47,7 @@ class EqualsSolver  : Queryable {
     }
 
     fun ask_logical_logical(left: SolverLogical<*>, right: SolverLogical<*>): Boolean {
+        if (left.findRoot() == right.findRoot()) return true
         return left.isBound && right.isBound && left.findRoot().value() == right.findRoot().value()
     }
 
@@ -108,4 +109,8 @@ infix fun <T : Any> Logical<T>.eq(value: T) {
 
 infix fun <T : Any> Logical<T>.eq(other: Logical<T>) {
     EvaluationSession.current().sessionSolver().tell(PredicateSymbol("equals", 2), this, other)
+}
+
+infix fun <T : Any> Logical<T>.is_eq(other: Logical<T>): Boolean {
+    return EvaluationSession.current().sessionSolver().ask(PredicateSymbol("equals", 2), this, other)
 }

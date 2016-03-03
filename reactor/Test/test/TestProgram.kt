@@ -9,6 +9,7 @@ import org.junit.*
 import org.junit.Assert.*
 import program.MemConstraint
 import solver.eq
+import solver.is_eq
 
 /**
  * @author Fedor Isakov
@@ -108,6 +109,68 @@ class TestProgram {
             val a = constraintOccurrences(ConstraintSymbol.symbol("val", 1)).first().arguments().first()
             assertEquals(0, (a as Logical<Int>).get())
             assertEquals(5, constraintOccurrences(ConstraintSymbol.symbol("trail", 1)).count())
+        }
+    }
+
+    @Test
+    fun correctRulesOrder() {
+        val X= metaLogical<Int>("X")
+
+        program(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(1) }, X),
+                                                                    constraint("bar"),
+                                                                    constraint("foo", X) )
+            ),
+            rule("foo_if_zero",
+                headReplaced( constraint("foo", X) ),       guard(  expression({ x -> x.get() == 0 }, X) ),
+                                                            body(   constraint("foo_zero") )
+            ),
+            rule("foo_and_bar",
+                headReplaced( constraint("foo", X) ),
+                headKept( constraint("bar") ),
+                                                            body(   constraint("foo_and_bar") )
+            ),
+            rule("foo_if_non_zero",
+                headReplaced( constraint("foo", X) ),
+                                                            guard(  expression({ x -> x.get() != 0 }, X) ),
+                                                            body(   constraint("foo_non_zero") )
+            )
+        ).session("correctRulesOrder").run {
+            assertEquals(setOf(ConstraintSymbol("bar", 0), ConstraintSymbol("foo_and_bar", 0)), constraintSymbols())
+            assertEquals(1, constraintOccurrences(ConstraintSymbol("foo_and_bar", 0)).count())
+            assertEquals(1, constraintOccurrences(ConstraintSymbol("bar", 0)).count())
+        }
+    }
+
+    @Test
+    fun reactivateOnUnion() {
+        val (X,Y) = metaLogical<Int>("X", "Y")
+        val S = metaLogical<String>("S")
+
+        program(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   constraint("foo", X, S),
+                                                                    constraint("foo", Y, S),
+                                                                    statement({ x, y -> x eq y }, X, Y) )
+            ),
+            rule("capture_foo",
+                headKept( constraint("foo", X, S) ),
+                                                            body(   constraint("capture", S) )
+            ),
+            rule("capture_foo_foo",
+                headKept( constraint("foo", X, S) ),
+                headReplaced( constraint("foo", Y, S) ),    guard(  expression({x, y -> x is_eq y }, X, Y)),
+                                                            body(   constraint("replaced") )
+            )
+        ).session("reactivateOnUnion").run {
+            assertEquals(setOf( ConstraintSymbol("foo", 2),
+                                ConstraintSymbol("capture", 1),
+                                ConstraintSymbol("replaced", 0)), constraintSymbols())
+            assertEquals(1, constraintOccurrences(ConstraintSymbol("foo", 2)).count())
+            // FIXME: this count should be 2 instead as per the "activation history" feature
+            assertEquals(3, constraintOccurrences(ConstraintSymbol("capture", 1)).count())
+            assertEquals(1, constraintOccurrences(ConstraintSymbol("replaced", 0)).count())
         }
     }
 
