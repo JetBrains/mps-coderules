@@ -125,7 +125,7 @@ class OccurrenceStore : LogicalObserver {
 
 }
 
-private data class MemConstraintOccurrence(val handler: Handler, val constraint: Constraint, val arguments: List<*>, val id: Int) :
+private data class MemConstraintOccurrence(val handler: Handler, val constraint: Constraint, val arguments: List<*>) :
     ConstraintOccurrence,
     LogicalObserver,
     StoreItem
@@ -135,12 +135,8 @@ private data class MemConstraintOccurrence(val handler: Handler, val constraint:
 
     override var stored = false
 
-    companion object {
-        val random = Random()
-    }
-
     constructor(handler: Handler, constraint: Constraint, arguments: Collection<*>) :
-    this(handler, constraint, ArrayList(arguments), random.nextInt())
+    this(handler, constraint, ArrayList(arguments))
     {
         for (a in arguments) {
             if (a is Logical<*>) {

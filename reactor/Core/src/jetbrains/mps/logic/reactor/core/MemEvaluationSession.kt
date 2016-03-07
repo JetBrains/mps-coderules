@@ -86,13 +86,13 @@ class MemEvaluationSession : EvaluationSession {
     override fun sessionSolver(): SessionSolver = program.sessionSolver()
 
     override fun constraintSymbols(): Iterable<ConstraintSymbol> =
-        handler.occurrences().map { co -> co.constraint().symbol() }.toSet()
+        handler.constraintSymbols()
 
     override fun constraintOccurrences(): Iterable<ConstraintOccurrence> =
-        handler.occurrences()
+        handler.allOccurrences()
 
     override fun constraintOccurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
-        handler.occurrences().filter { co -> co.constraint().symbol() == symbol }
+        handler.occurrences(symbol)
 
     private class Backend : EvaluationSession.Backend {
 

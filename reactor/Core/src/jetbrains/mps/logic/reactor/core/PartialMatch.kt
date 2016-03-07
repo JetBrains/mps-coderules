@@ -45,7 +45,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         }
     }
 
-    fun completeMatch(aux: Matcher.AuxOccurrences) : Sequence<PartialMatch> {
+    fun completeMatch(aux: Matcher.AuxOccurrencesLookup) : Sequence<PartialMatch> {
         if (!isPartial()) return sequenceOf(this)
 
         return profiler.profile<Sequence<PartialMatch>>("completeMatch", {
@@ -67,7 +67,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         })
     }
 
-    fun findOccurrences(aux: Matcher.AuxOccurrences, cst: Constraint): Sequence<ConstraintOccurrence> {
+    fun findOccurrences(aux: Matcher.AuxOccurrencesLookup, cst: Constraint): Sequence<ConstraintOccurrence> {
         val logicals = HashSet<Logical<*>>()
         val values = HashSet<Any>()
 
@@ -77,7 +77,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
             else
                 values.add(arg!!)
         }
-        return aux.findOccurrences(cst.symbol(), logicals, values, { occ -> !hasOccurrence(occ) })
+        return aux.lookupAuxOccurrences(cst.symbol(), logicals, values, { occ -> !hasOccurrence(occ) })
     }
 
     fun keep (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, Pair(constraint, occ), null)
@@ -152,6 +152,8 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
 
         })
     }
+
+    fun isPropagation(): Boolean = !kept.isEmpty && discarded.isEmpty
 
     fun logicalContext(): LogicalContext = logicalContext
 

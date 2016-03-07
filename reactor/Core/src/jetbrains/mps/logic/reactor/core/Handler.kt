@@ -14,7 +14,7 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class Handler : Matcher.AuxOccurrences {
+class Handler : Matcher.AuxOccurrencesLookup {
 
     val sessionSolver: SessionSolver
 
@@ -52,7 +52,14 @@ class Handler : Matcher.AuxOccurrences {
         }
     }
 
-    fun occurrences(): Set<ConstraintOccurrence> = occurrenceStore.allOccurrences().toSet()
+    fun allOccurrences(): Set<ConstraintOccurrence> =
+        occurrenceStore.allOccurrences().toSet()
+
+    fun constraintSymbols(): Set<ConstraintSymbol> =
+        occurrenceStore.allOccurrences().map { co -> co.constraint().symbol() }.toSet()
+
+    fun occurrences(symbol: ConstraintSymbol): Set<ConstraintOccurrence> =
+        occurrenceStore.allOccurrences().filter { co -> co.constraint().symbol() == symbol }.toSet()
 
     fun tell(constraint: Constraint) {
         try {
@@ -70,7 +77,7 @@ class Handler : Matcher.AuxOccurrences {
         }
     }
 
-    override fun findOccurrences(
+    override fun lookupAuxOccurrences(
         symbol: ConstraintSymbol,
         logicals: Iterable<Logical<*>>,
         values: Iterable<Any>,
@@ -107,6 +114,7 @@ class Handler : Matcher.AuxOccurrences {
 
                 activationStack.push(match)
                 trace.trigger(match)
+                matcher.recordPropagation(match)
 
                 for ((cst, occ) in match.discarded) {
                     occurrenceStore.discard(occ)

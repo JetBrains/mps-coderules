@@ -18,8 +18,8 @@ class TestMatcher {
 
         val stored = occurrence.toList()
 
-        val aux = object : Matcher.AuxOccurrences {
-            override fun findOccurrences(
+        val aux = object : Matcher.AuxOccurrencesLookup {
+            override fun lookupAuxOccurrences(
                 symbol: ConstraintSymbol,
                 logicals: Iterable<Logical<*>>,
                 values: Iterable<Any>,
