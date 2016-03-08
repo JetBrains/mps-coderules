@@ -21,7 +21,7 @@ class RuleIndex : Iterable<Rule> {
         buildIndex(rules)
     }
 
-    fun forSymbol(symbol: ConstraintSymbol): Iterable<Rule>? = symbol2rules[symbol]
+    fun forConstraint(symbol: ConstraintSymbol): Iterable<Rule>? = symbol2rules[symbol]
 
     override fun iterator(): Iterator<Rule> = rules.iterator()
 

@@ -89,7 +89,7 @@ class Token(val name: String, val id: Int) {
 inline fun Profiler?.profile(name: String, proc: () -> Unit): Unit {
     val tok = this?.start(name)
     try {
-        proc.invoke()
+        proc()
     }
     finally {
         this?.end(tok)
@@ -99,7 +99,7 @@ inline fun Profiler?.profile(name: String, proc: () -> Unit): Unit {
 inline fun <R> Profiler?.profile(name: String, function: () -> R): R {
     val tok = this?.start(name)
     try {
-        return function.invoke()
+        return function()
     }
     finally {
         this?.end(tok)

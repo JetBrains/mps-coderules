@@ -14,6 +14,7 @@ import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
+import java.util.*
 
 /**
  * @author Fedor Isakov
@@ -45,18 +46,22 @@ class Matcher {
     fun lookupMatches(occ: ConstraintOccurrence): Sequence<PartialMatch> {
         return profiler.profile<Sequence<PartialMatch>>("lookupMatches", {
 
-            val partialMatches = rules.forSymbol(occ.constraint().symbol())?.asSequence()?.flatMap { r ->
-                val matchedKept = r.headKept().filter { cst -> cst.matches(occ) }.asSequence()
-                val matchedDiscarded = r.headReplaced().filter { cst -> cst.matches(occ) }.asSequence()
+            val matchingRules = rules.forConstraint(occ.constraint().symbol())
+            val partialMatches = matchingRules?.asSequence()?.flatMap { rule ->
 
-                matchedKept.map { cst -> PartialMatch(r, profiler).keep(cst, occ) } +
-                    matchedDiscarded.map { cst -> PartialMatch(r, profiler).discard(cst, occ) }
+                rule.headKept().asSequence().filter { cst ->
+                    cst.symbol() == occ.constraint().symbol() && cst.matches(occ, profiler) }.map { cst ->
+                    PartialMatch(rule, profiler).keep(cst, occ) } +
+
+                rule.headReplaced().asSequence().filter { cst ->
+                    cst.symbol() == occ.constraint().symbol() && cst.matches(occ, profiler) }.map { cst ->
+                    PartialMatch(rule, profiler).discard(cst, occ) }
+
             }
 
-            partialMatches?.flatMap { pm ->
-                pm.completeMatch(auxLookup) }?.filter { pm ->
-                pm.matches() && !propHistory.isRecorded(pm) } ?: emptySequence<PartialMatch>()
+            val fullMatches = partialMatches?.flatMap { pm -> pm.completeMatch(auxLookup) }
 
+            fullMatches?.filter { pm -> !propHistory.isRecorded(pm) && pm.matches() } ?: emptySequence()
         })
     }
 
@@ -92,7 +97,7 @@ private class PropagationHistory {
 
 }
 
-private class IdWrapper<T>(val wrapped: T) {
+class IdWrapper<T>(val wrapped: T) {
 
     val idHash = System.identityHashCode(wrapped)
 

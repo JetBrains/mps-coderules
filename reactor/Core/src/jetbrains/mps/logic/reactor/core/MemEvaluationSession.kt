@@ -59,8 +59,10 @@ class MemEvaluationSession : EvaluationSession {
             }
             finally {
                 ourBackend.ourSession.set(null)
-                profiler?.formattedData()?.entries?.forEach { e -> durations?.put(e.key, e.value) }
-                profiler?.clear()
+                profiler?.run {
+                    formattedData().entries.forEach { e -> durations?.put(e.key, e.value) }
+                    clear()
+                }
             }
 
             return session

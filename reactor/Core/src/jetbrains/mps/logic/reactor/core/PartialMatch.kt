@@ -23,6 +23,8 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         private set
     var discarded = emptyConsList<Pair<Constraint, ConstraintOccurrence>>()
         private set
+    var matched = emptyConsList<IdWrapper<Constraint>>()
+        private set
     var meta2logical = Maps.of<MetaLogical<*>, PersSet<Logical<*>>>()
         private set
     private lateinit var logicalContext : LogicalContext
@@ -34,7 +36,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
     {
         this.kept = if (keep != null) original.kept.prepend(keep) else original.kept
         this.discarded = if (discard != null) original.discarded.prepend(discard) else original.discarded
-
+        this.matched = original.matched.prepend(IdWrapper((keep?.first ?: discard?.first)!!)) // exactly one is not null
         this.meta2logical = original.meta2logical
         val pair = keep ?: discard!!
         for ((ptr, log) in pair.first.arguments().zip(pair.second.arguments())) {
@@ -50,24 +52,22 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
 
         return profiler.profile<Sequence<PartialMatch>>("completeMatch", {
 
-            val matchesFromKept =
-                rule.headKept().
-                    filter { cst -> !kept.any { p -> cst === p.first } }.
-                    asSequence().
-                    flatMap { cst -> findOccurrences(aux, cst).flatMap { occ -> keep(cst, occ).completeMatch(aux) } }
+            rule.headKept().asSequence().filter { cst -> !matched.contains(IdWrapper(cst)) }.flatMap { cst ->
+                lookupAuxOccurrences(aux, cst).flatMap { occ ->
+                    keep(cst, occ).completeMatch(aux)
+                }
+            } +
 
-            val matchesFromDiscarded =
-                rule.headReplaced().
-                    filter { cst -> !discarded.any { p -> cst === p.first } }.
-                    asSequence().
-                    flatMap { cst -> findOccurrences(aux, cst).flatMap { occ -> discard(cst, occ).completeMatch(aux) } }
-
-            matchesFromKept + matchesFromDiscarded
+            rule.headReplaced().asSequence().filter { cst ->!matched.contains(IdWrapper(cst)) }.flatMap { cst ->
+                lookupAuxOccurrences(aux, cst).flatMap { occ ->
+                    discard(cst, occ).completeMatch(aux)
+                }
+            }
 
         })
     }
 
-    fun findOccurrences(aux: Matcher.AuxOccurrencesLookup, cst: Constraint): Sequence<ConstraintOccurrence> {
+    fun lookupAuxOccurrences(aux: Matcher.AuxOccurrencesLookup, cst: Constraint): Sequence<ConstraintOccurrence> {
         val logicals = HashSet<Logical<*>>()
         val values = HashSet<Any>()
 
