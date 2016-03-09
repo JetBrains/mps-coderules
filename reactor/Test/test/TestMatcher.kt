@@ -273,4 +273,64 @@ class TestMatcher {
             }
         }
     }
+
+    @Test
+    fun matchOccurrenceArguments() {
+        val (M, N) = metaLogical<Int>("M", "N")
+        val (O, P) = metaLogical<Int>("O", "P")
+
+        program(
+            rule("select_A_x",
+                headKept(
+                    constraint("foo", "A", M)
+                ),
+                headReplaced(
+                    constraint("foo", "A", N)
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_A_B",
+                headReplaced(
+                    constraint("foo", "A", "B")
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_x_B",
+                headKept(
+                    constraint("foo", M, "B")
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_B_x",
+                headKept(
+                    constraint("foo", "B", M)
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_ALL",
+                headKept(
+                    constraint("foo", O, P)
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                ))
+        ).matcher().rules.run {
+            val x = logical<Any>("X")
+
+            assertEquals(
+                listOf(byTag("select_A_x"), byTag("select_A_B"), byTag("select_x_B"), byTag("select_ALL")),
+                forOccurrence(occurrence("foo", "A", x)).toList())
+            assertEquals(
+                listOf(byTag("select_x_B"), byTag("select_B_x"), byTag("select_ALL")),
+                forOccurrence(occurrence("foo", "B", x)).toList())
+            assertEquals(
+                listOf(byTag("select_B_x"), byTag("select_ALL")),
+                forOccurrence(occurrence("foo", "B", "C")).toList())
+
+        }
+    }
 }

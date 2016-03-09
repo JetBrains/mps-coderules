@@ -2,19 +2,15 @@ package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.Maps
-import com.github.andrewoma.dexx.collection.List as PersList
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
-import java.util.*
+import com.github.andrewoma.dexx.collection.List as PersList
 
 /**
  * @author Fedor Isakov
@@ -46,8 +42,8 @@ class Matcher {
     fun lookupMatches(occ: ConstraintOccurrence): Sequence<PartialMatch> {
         return profiler.profile<Sequence<PartialMatch>>("lookupMatches", {
 
-            val matchingRules = rules.forConstraint(occ.constraint().symbol())
-            val partialMatches = matchingRules?.asSequence()?.flatMap { rule ->
+            val matchingRules = rules.forOccurrence(occ)
+            val partialMatches = matchingRules.asSequence().flatMap { rule ->
 
                 rule.headKept().asSequence().filter { cst ->
                     cst.symbol() == occ.constraint().symbol() && cst.matches(occ, profiler) }.map { cst ->
@@ -59,9 +55,9 @@ class Matcher {
 
             }
 
-            val fullMatches = partialMatches?.flatMap { pm -> pm.completeMatch(auxLookup) }
+            val fullMatches = partialMatches.flatMap { pm -> pm.completeMatch(auxLookup) }
 
-            fullMatches?.filter { pm -> !propHistory.isRecorded(pm) && pm.matches() } ?: emptySequence()
+            fullMatches.filter { pm -> !propHistory.isRecorded(pm) && pm.matches() }
         })
     }
 
