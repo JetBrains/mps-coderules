@@ -23,7 +23,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         private set
     var discarded = emptyConsList<Pair<Constraint, ConstraintOccurrence>>()
         private set
-    var matched = emptyConsList<IdWrapper<Constraint>>()
+    var matched = Sets.of<IdWrapper<Constraint>>()
         private set
     var meta2logical = Maps.of<MetaLogical<*>, PersSet<Logical<*>>>()
         private set
@@ -36,7 +36,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
     {
         this.kept = if (keep != null) original.kept.prepend(keep) else original.kept
         this.discarded = if (discard != null) original.discarded.prepend(discard) else original.discarded
-        this.matched = original.matched.prepend(IdWrapper((keep?.first ?: discard?.first)!!)) // exactly one is not null
+        this.matched = original.matched.add(IdWrapper((keep?.first ?: discard?.first)!!)) // exactly one is not null
         this.meta2logical = original.meta2logical
         val pair = keep ?: discard!!
         for ((ptr, log) in pair.first.arguments().zip(pair.second.arguments())) {
@@ -68,16 +68,20 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
     }
 
     fun lookupAuxOccurrences(aux: Matcher.AuxOccurrencesLookup, cst: Constraint): Sequence<ConstraintOccurrence> {
-        val logicals = HashSet<Logical<*>>()
-        val values = HashSet<Any>()
+        return profiler.profile<Sequence<ConstraintOccurrence>>("lookupAuxOccurrences", {
 
-        for (arg in cst.arguments()) {
-            if (arg is MetaLogical<*>)
-                meta2logical.get(arg)?.let { logSet -> logicals.addAll(logSet) }
-            else
-                values.add(arg!!)
-        }
-        return aux.lookupAuxOccurrences(cst.symbol(), logicals, values, { occ -> !hasOccurrence(occ) })
+            val logicals = HashSet<Logical<*>>()
+            val values = HashSet<Any>()
+
+            for (arg in cst.arguments()) {
+                if (arg is MetaLogical<*>)
+                    meta2logical.get(arg)?.let { logSet -> logicals.addAll(logSet) }
+                else
+                    values.add(arg!!)
+            }
+            aux.lookupAuxOccurrences(cst.symbol(), logicals, values, { occ -> !hasOccurrence(occ) })
+
+        })
     }
 
     fun keep (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, Pair(constraint, occ), null)
@@ -85,11 +89,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
     fun discard (constraint: Constraint, occ: ConstraintOccurrence) = PartialMatch(this, null, Pair(constraint, occ))
 
     fun hasOccurrence(occ: ConstraintOccurrence): Boolean {
-        //            return profiler.profile<Boolean>("hasOccurrence", {
-
         return kept.any { p -> p.second === occ } || discarded.any { p -> p.second === occ }
-
-        //            })
     }
 
     fun isPartial() : Boolean {
@@ -102,14 +102,10 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
     }
 
     fun occurrences(): Collection<ConstraintOccurrence> {
-        //            return profiler.profile<Collection<ConstraintOccurrence>>("occurrences", {
-
-        return  rule.headKept().
-                map { cst -> kept.find { p -> p.first === cst }?.second ?: throw IllegalStateException() }      +
-                rule.headReplaced().
-                map { cst -> discarded.find { p -> p.first === cst }?.second ?: throw IllegalStateException() }
-
-        //            })
+        return  rule.headKept().map { cst ->
+                    kept.find { p -> p.first === cst }?.second ?: throw IllegalStateException() }      +
+                rule.headReplaced().map { cst ->
+                    discarded.find { p -> p.first === cst }?.second ?: throw IllegalStateException() }
     }
 
     fun matches(): Boolean {
