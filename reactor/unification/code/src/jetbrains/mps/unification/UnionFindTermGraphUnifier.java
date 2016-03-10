@@ -16,8 +16,10 @@
 
 package jetbrains.mps.unification;
 
+import com.github.andrewoma.dexx.collection.ConsList;
 import jetbrains.mps.unification.Substitution.FailureCause;
 import jetbrains.mps.unification.Unification.SuccessfulSubstitution;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -165,7 +167,7 @@ public class UnionFindTermGraphUnifier {
         // union s and t classes by moving t under s
 
         setSize(s, ssize + tsize);
-        appendVars(s, getVars(t));
+        prependVars(s, getVars(t));
 
         Term zs = getSchema(s);
         Term zt = getSchema(t);
@@ -278,13 +280,15 @@ public class UnionFindTermGraphUnifier {
         getData(n).mySchema = schema;
     }
 
-    private List<Term> getVars(Term n) {
+    private ConsList<Term> getVars(Term n) {
         return hasData(n) ? getData(n).myVars : singletonVar(n);
     }
 
-    private void appendVars(Term n, List<Term> vars) {
-        List<Term> newVars = new ArrayList<Term>(getVars(n));
-        newVars.addAll(vars);
+    private void prependVars(Term n, ConsList<Term> vars) {
+        ConsList<Term> newVars = getVars(n);
+        for (Term v: vars) {
+            newVars = newVars.prepend(v);
+        }
         getData(n).myVars = newVars;
     }
 
@@ -304,45 +308,80 @@ public class UnionFindTermGraphUnifier {
         getData(n).myVisited = visited;
     }
 
-    private boolean hasData(Term n) {
+    private boolean hasData(Term term) {
         // TODO: publish the requirements for symbols or drop this hack!
-        Object key = n.is(VAR) ? String.valueOf(n.symbol()).intern() : n;
-        return myData.containsKey(key);
+        if (myData.get(term) != null) return true;
+
+        // try the identity key and see if another variable term with matching symbol has data
+        Object key = termIdentity(term);
+        if (term == key) return false;
+
+        if (myData.containsKey(key)) {
+            Data value = myData.get(key);
+            myData.put(term, value);
+            return value != null;
+        }
+
+        return false;
     }
 
-    private Data getData(Term n) {
+    private Data getData(Term term) {
         // TODO: publish the requirements for symbols or drop this hack!
-        Object key = n.is(VAR) ? String.valueOf(n.symbol()).intern() : n;
-        if (myData.containsKey(key)) return myData.get(key);
-        Data data = new Data(n);
-        myData.put(key, data);
+        Data data = myData.get(term);
+        if (data != null) {
+            return data;
+        }
+
+        // try the identity key to see if another variable with matching symbol has data
+        Object key = termIdentity(term);
+        if (term != key && myData.containsKey(key)) {
+            data = myData.get(key);
+            myData.put(term, data);
+            if (data != null) {
+                return data;
+            }
+        }
+
+        data = new Data(term);
+        myData.put(term, data);
+        if (term != key) {
+            myData.put(key, data);
+        }
         return data;
+    }
+
+    /**
+     * An object to uniquely identify this term.
+     * Variables with matching symbols are all treated as a single term.
+     */
+    @NotNull
+    private Object termIdentity(Term term) {
+        return term.is(VAR) ? String.valueOf(term.symbol()).intern() : term;
     }
 
     private static boolean eq(Object a, Object b) {
         return a == null ? b == null : a.equals(b);
     }
 
-    private static List<Term> singletonVar(Term n) {
+    private static ConsList<Term> singletonVar(Term n) {
         return n.is(VAR) ?
-            Collections.singletonList(n) :
-            Collections.<Term>emptyList();
+                ConsList.<Term>empty().prepend(n) :
+                ConsList.<Term>empty();
     }
 
     private static class Data {
         int mySize = 1;
         boolean myAcyclic = false;
         boolean myVisited = false;
-        boolean myReferenced = false;
 
-        List<Term> myVars;
+        ConsList<Term> myVars;
         Term myClass;
         Term mySchema;
 
-        Data(Term n) {
-            myClass = n;
-            mySchema = n;
-            myVars = singletonVar(n);
+        Data(Term term) {
+            myClass = term;
+            mySchema = term;
+            myVars = singletonVar(term);
         }
     }
 }

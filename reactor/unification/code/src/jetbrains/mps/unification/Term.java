@@ -30,15 +30,30 @@ import java.util.Collection;
  */
 public interface Term extends Comparable<Term> {
 
+    /**
+     * A symbol corresponding to the function/constant name or the variable name.
+     * TODO: what is the meaning of symbol in case of a reference term?
+     * NOTE: two variable terms are treated as the same term if their symbols match.
+     */
     Object symbol();
 
+    /**
+     * Arguments of a function term.
+     */
     Collection<? extends Term> arguments();
 
+    /**
+     * For a reference term, returns the term this term is referring to.
+     * For function and variable terms return this term.
+     */
     Term get();
 
+    /**
+     * The kind of this term: function, variable or reference.
+     */
     boolean is(Kind kind);
 
-    public enum Kind {
+    enum Kind {
         FUN,
         VAR,
         REF

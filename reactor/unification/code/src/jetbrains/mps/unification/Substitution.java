@@ -22,7 +22,8 @@ import java.util.Collections;
 
 /**
  * The result of unification, either successful or not. If successful, contains a read-only collection
- * of {@link Binding} instances.
+ * of {@link Binding} instances. The result is presented in a "triangular form", which means the bindings may
+ * transitively bind variables. No cycles are allowed in the returned bindings.
  *
  * @author Fedor Isakov
  */
@@ -66,6 +67,10 @@ public class Substitution {
         return myFailure != null ? "[" + String.valueOf(myFailure) + "]" : "[FAILED_SUBSTITUTION]";
     }
 
+    /**
+     * Represents a variable binding in case of a successful unification.
+     * A variable may be bound to either a function term or another variable.
+     */
     public static class Binding {
 
         private Term myVar;
