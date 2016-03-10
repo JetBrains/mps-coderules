@@ -5,14 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jetbrains.mps.unification</groupId>
-        <artifactId>main</artifactId>
-        <version>1.0.2</version>
-        <relativePath>..</relativePath>
+        <groupId>jetbrains.mps.logic.memreactor</groupId>
+        <artifactId>memreactor-main</artifactId>
+        <version>0.1</version>
+        <relativePath>../..</relativePath>
     </parent>
 
     <artifactId>unification-lib</artifactId>
     <packaging>jar</packaging>
+    <version>1.0.2</version>
 
     <build>
         <sourceDirectory>${basedir}/src/</sourceDirectory>

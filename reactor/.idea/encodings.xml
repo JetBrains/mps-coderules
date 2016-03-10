@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/API" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unification/code" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unification/tests" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

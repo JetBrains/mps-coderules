@@ -1,5 +1,8 @@
 .idea/workspace.xml
 out
+unification/code/target/*
+unification/tests/target/*
+unification/out
 API/target/*
 Core/target/*
 Test/target/*

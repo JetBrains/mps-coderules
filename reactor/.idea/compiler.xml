@@ -39,6 +39,20 @@
         <processorPath useClasspath="true" />
         <module name="Test" />
       </profile>
+      <profile default="false" name="Annotation profile for tests" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="tests" />
+      </profile>
+      <profile default="false" name="Annotation profile for unification-lib" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="unification-lib" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="API" target="1.6" />
@@ -46,6 +60,8 @@
       <module name="main" target="1.5" />
       <module name="Reactor" target="1.6" />
       <module name="Test" target="1.6" />
+      <module name="tests" target="1.6" />
+      <module name="unification-lib" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

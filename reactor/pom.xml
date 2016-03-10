@@ -9,6 +9,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.version>1.0.0-rc-1050</kotlin.version>
+        <unification.version>1.0.2</unification.version>
     </properties>
 
     <groupId>jetbrains.mps.logic.memreactor</groupId>
@@ -24,10 +25,6 @@
     </pluginRepositories>
 
     <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
         <repository>
             <id>kotlin-eap</id>
             <url>https://dl.bintray.com/kotlin/kotlin-eap</url>
@@ -64,11 +61,6 @@
             <groupId>com.intellij</groupId>
             <artifactId>annotations</artifactId>
             <version>12.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.fisakov.mps-unification</groupId>
-            <artifactId>unification-lib</artifactId>
-            <version>1.0.2</version>
         </dependency>
     </dependencies>
 
@@ -120,6 +112,8 @@
 
 
     <modules>
+        <module>unification/code</module>
+        <module>unification/tests</module>
         <module>API</module>
         <module>Core</module>
         <module>Test</module>

@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/Core/Core.iml" filepath="$PROJECT_DIR$/Core/Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/Reactor.iml" filepath="$PROJECT_DIR$/Reactor.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unification/tests/tests.iml" filepath="$PROJECT_DIR$/unification/tests/tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unification/code/unification-lib.iml" filepath="$PROJECT_DIR$/unification/code/unification-lib.iml" />
     </modules>
   </component>
 </project>
