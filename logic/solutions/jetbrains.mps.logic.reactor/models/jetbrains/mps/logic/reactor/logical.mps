@@ -21,6 +21,12 @@
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+      </concept>
+      <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
+        <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -497,6 +503,27 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7nPD14NXMHM" role="jymVt" />
+    <node concept="3clFb_" id="6XBR7US9Exp" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="toString" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="6XBR7US9Exq" role="1B3o_S" />
+      <node concept="3uibUv" id="6XBR7US9Exs" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="6XBR7US9Ext" role="3clF47">
+        <node concept="3clFbF" id="6XBR7US9EUp" role="3cqZAp">
+          <node concept="37vLTw" id="6XBR7US9EUo" role="3clFbG">
+            <ref role="3cqZAo" node="7nPD14NONAl" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6XBR7US9Exu" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6XBR7US9ELi" role="jymVt" />
     <node concept="312cEg" id="7nPD14NONAl" role="jymVt">
       <property role="TrG5h" value="name" />
       <node concept="3Tm6S6" id="7nPD14NONAm" role="1B3o_S" />
@@ -679,7 +706,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="7nPD14NXQ7k" role="jymVt" />
+    <node concept="2tJIrI" id="6XBR7US9FHD" role="jymVt" />
     <node concept="3clFb_" id="7nPD14NOOwV" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="init" />
