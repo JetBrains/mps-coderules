@@ -2662,7 +2662,7 @@
                           </node>
                           <node concept="3cpWs3" id="5mr7UHcbKet" role="3uHU7B">
                             <node concept="Xl_RD" id="5mr7UHcbKeu" role="3uHU7B">
-                              <property role="Xl_RC" value="Typechecking" />
+                              <property role="Xl_RC" value="Types" />
                             </node>
                             <node concept="37vLTw" id="5mr7UHcbKeM" role="3uHU7w">
                               <ref role="3cqZAo" node="5mr7UHcbKeJ" resolve="name" />
