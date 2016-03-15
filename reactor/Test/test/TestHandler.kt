@@ -2,6 +2,7 @@ import jetbrains.mps.logic.reactor.core.Handler
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.evaluation.Solver
 import jetbrains.mps.logic.reactor.logical.Logical
 import solver.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
@@ -21,7 +22,7 @@ import solver.is_eq
 
 class TestHandler {
 
-    private fun sessionSolver(exprSolver: Queryable, equalsSolver: Queryable) : SessionSolver =
+    private fun sessionSolver(exprSolver: Solver, equalsSolver: Solver) : SessionSolver =
         MemSessionSolver(exprSolver, equalsSolver).apply {
             init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 

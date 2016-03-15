@@ -15,7 +15,13 @@ public class JavaPredicateSymbol extends PredicateSymbol {
 
   private static final String EXPRESSION = "expression";
 
-  public JavaPredicateSymbol(int arity) {
+  private static JavaPredicateSymbol[] KNOWN_SYMBOLS = {EXPRESSION0, EXPRESSION1, EXPRESSION2, EXPRESSION3};
+
+  public static JavaPredicateSymbol withArity(int arity) {
+    return KNOWN_SYMBOLS[arity];
+  }
+
+  private JavaPredicateSymbol(int arity) {
     super(EXPRESSION, arity);
   }
 

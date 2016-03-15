@@ -1,4 +1,6 @@
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.Queryable
+import jetbrains.mps.logic.reactor.evaluation.Solver
 import solver.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.*
 import org.junit.AfterClass
@@ -15,15 +17,16 @@ import kotlin.reflect.KClass
 
 class TestProgramBuilder {
 
-    val dummySolver = object : Queryable {
-        override fun ask(predicateSymbol: PredicateSymbol?, vararg args: Any?): Boolean = TODO()
-        override fun tell(symbol: Symbol?, vararg args: Any?) = TODO()
+    val dummySolver = object : Solver {
+        override fun predicate(predicateSymbol: PredicateSymbol?, vararg args: Any?): Predicate? = TODO()
+        override fun ask(invocation: PredicateInvocation?): Boolean = TODO()
+        override fun tell(invocation: PredicateInvocation?) = TODO()
     }
 
     val sessionSolver = MemSessionSolver(dummySolver, dummySolver)
 
     @Before fun beforeTest() {
-        programBuilder = MemProgramBuilder(sessionSolver)
+        programBuilder = MemProgramBuilder(ConstraintRegistry(sessionSolver))
     }
 
     lateinit var programBuilder: MemProgramBuilder
@@ -41,7 +44,8 @@ class TestProgramBuilder {
                 ))).run {
 
             programBuilder.addRules(rules)
-            assertEquals(programBuilder.program("test", sessionSolver).rules().count(), 1)
+            assertEquals(programBuilder.program("test").rules().count(), 1)
+            assertEquals(programBuilder.program("test").rules().count(), 1)
         }
     }
 
@@ -67,7 +71,7 @@ class TestProgramBuilder {
                 ))).run {
 
             programBuilder.addRules(rules)
-            assertEquals(programBuilder.program("test", sessionSolver).rules().count(), 2)
+            assertEquals(programBuilder.program("test").rules().count(), 2)
         }
     }
 

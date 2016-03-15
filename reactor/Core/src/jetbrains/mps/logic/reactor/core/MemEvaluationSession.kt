@@ -41,15 +41,14 @@ class MemEvaluationSession : EvaluationSession {
             return this
         }
 
-        override fun start(): EvaluationSession {
+        override fun start(sessionSolver: SessionSolver): EvaluationSession {
             var session = ourBackend.ourSession.get()
             if (session != null) throw IllegalStateException("session already active")
 
             val predicateSymbols = myPredicateSymbols.toArray<PredicateSymbol>(arrayOfNulls(myPredicateSymbols.size))
-            val sessionSolver = program.sessionSolver()
             sessionSolver.init(myEvaluationTrace, * predicateSymbols)
 
-            session = MemEvaluationSession(program, myEvaluationTrace)
+            session = MemEvaluationSession(program, sessionSolver, myEvaluationTrace)
             ourBackend.ourSession.set(session)
 
             val durations = myParameters.get("profiling.data") as MutableMap<String, String>?
@@ -70,13 +69,14 @@ class MemEvaluationSession : EvaluationSession {
     }
 
     val program: Program
-
+    val sessionSolver: SessionSolver
     val trace: EvaluationTrace
 
     lateinit var handler: Handler
 
-    private constructor(program: Program, trace: EvaluationTrace): super() {
+    private constructor(program: Program, sessionSolver: SessionSolver, trace: EvaluationTrace): super() {
         this.program = program
+        this.sessionSolver = sessionSolver
         this.trace = trace
     }
 
@@ -85,7 +85,7 @@ class MemEvaluationSession : EvaluationSession {
         handler.tell(main)
     }
 
-    override fun sessionSolver(): SessionSolver = program.sessionSolver()
+    override fun sessionSolver(): SessionSolver = sessionSolver
 
     override fun constraintSymbols(): Iterable<ConstraintSymbol> =
         handler.constraintSymbols()

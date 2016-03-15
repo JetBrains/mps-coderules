@@ -32,8 +32,6 @@ class Handler : Matcher.AuxOccurrencesLookup {
 
     private val matcher: Matcher
 
-    private var processing = false
-
     constructor(
         sessionSolver: SessionSolver,
         programRules: Iterable<Rule>,
@@ -108,9 +106,12 @@ class Handler : Matcher.AuxOccurrencesLookup {
             }
 
             val lookupMatches = matcher.lookupMatches(active)
-            for (match in lookupMatches.filter { pm -> pm.rule.checkGuard(pm.logicalContext()) }) {
-                if (!active.isStored()) break
+            for (match in lookupMatches) {
+                trace.trying(match)
+                if (!match.rule.checkGuard(match.logicalContext(), trace)) continue
                 if (match.occurrences().any { co -> !co.isStored() }) continue
+                // FIXME: paranoid check. should be isAlive() instead
+                if (!active.isStored()) break
 
                 activationStack.push(match)
                 trace.trigger(match)
@@ -124,15 +125,16 @@ class Handler : Matcher.AuxOccurrencesLookup {
                 for (item in match.rule.body()) {
                     when (item) {
                         is Constraint -> process(item.occurrence(this@Handler, match.logicalContext()))
-                        is Predicate -> tellPredicate(item.invocation(match.logicalContext()))
+                        is Predicate -> tellPredicate(item.invocation(match.logicalContext()), trace)
                         else -> throw IllegalArgumentException("unknown item ${item}")
                     }
                 }
 
-                trace.exit(match.rule)
+                trace.finish(match)
                 activationStack.pop()
             }
 
+            // FIXME: should be isAlive()
             if (active.isStored()) {
                 trace.suspend(active)
             }
@@ -140,24 +142,29 @@ class Handler : Matcher.AuxOccurrencesLookup {
         })
     }
 
-    private fun Rule.checkGuard(logicalContext: LogicalContext): Boolean =
+    private fun Rule.checkGuard(logicalContext: LogicalContext, trace: EvaluationTrace): Boolean =
         profiler.profile<Boolean>("checkGuard", {
 
-            return guard().all { prd -> askPredicate(prd.invocation(logicalContext)) }
+            return guard().all { prd -> askPredicate(prd.invocation(logicalContext), trace) }
 
         })
 
-    private fun askPredicate(invocation: PredicateInvocation): Boolean =
+    private fun askPredicate(invocation: PredicateInvocation, trace: EvaluationTrace): Boolean =
         profiler.profile<Boolean>("ask_${invocation.predicate().symbol()}", {
 
-            return sessionSolver.ask(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+            // TODO: provide SessionSolver as part of evaluation session
+            val result = sessionSolver.ask(invocation)
+//            trace.ask(result, invocation)
+            return result
 
         })
 
-    private fun tellPredicate(invocation: PredicateInvocation) {
+    private fun tellPredicate(invocation: PredicateInvocation, trace: EvaluationTrace) {
         profiler.profile("tell_${invocation.predicate().symbol()}", {
 
-            sessionSolver.tell(invocation.predicate().symbol(), * invocation.arguments().toTypedArray())
+            // TODO: provide SessionSolver as part of evaluation session
+//            trace.tell(invocation)
+            sessionSolver.tell(invocation)
 
         })
     }
@@ -172,5 +179,5 @@ private fun Predicate.invocation(logicalContext: LogicalContext): PredicateInvoc
 
         override fun predicate(): Predicate = this@invocation
 
-        override fun arguments(): Collection<*> = invocationArguments(logicalContext)
+        override fun arguments(): List<*> = invocationArguments(logicalContext).toList()
     }

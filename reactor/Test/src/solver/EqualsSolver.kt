@@ -1,47 +1,50 @@
 package solver
 
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.Queryable
+import jetbrains.mps.logic.reactor.evaluation.Solver
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.logical.SolverLogical
+import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Symbol
 
-class EqualsSolver  : Queryable {
+class EqualsSolver  : Solver {
 
-    override fun ask(predicateSymbol: PredicateSymbol?, vararg args: Any?): Boolean {
-        if (args.size != 2) ERROR("arity mismatch")
-        val left = args[0]
-        val right = args[1]
+    override fun predicate(predicateSymbol: PredicateSymbol, vararg args: Any): Predicate =
+        TestEqPredicate(args[0], args[1])
 
+    override fun ask(invocation: PredicateInvocation): Boolean {
+        return _ask(invocation.arguments().get(0), invocation.arguments().get(1))
+    }
+
+    private fun _ask(left: Any?, right: Any?): Boolean {
         return if (left is SolverLogical<*> && right is SolverLogical<*>) {
             ask_logical_logical(left, right)
-        }
-        else if (left is SolverLogical<*>) {
+        } else if (left is SolverLogical<*>) {
             ask_logical_value(left, right)
-        }
-        else if (right is SolverLogical<*>) {
+        } else if (right is SolverLogical<*>) {
             ask_value_logical(left, right)
-        }
-        else {
+        } else {
             ask_value_value(left, right)
         }
     }
 
-    override fun tell(symbol: Symbol, vararg args: Any) {
-        if (args.size != 2) ERROR("arity mismatch")
-        val left = args[0]
-        val right = args[1]
+    override fun tell(invocation: PredicateInvocation) {
+        _tell(invocation.arguments().get(0), invocation.arguments().get(1))
+    }
+
+    private fun _tell(left: Any?, right: Any?) {
         if (left is SolverLogical<*> && right is SolverLogical<*>) {
             tell_logical_logical(left as SolverLogical<Any>, right as SolverLogical<Any>)
-        }
-        else if (left is SolverLogical<*>) {
+        } else if (left is SolverLogical<*>) {
             tell_logical_value(left as SolverLogical<Any>, right)
-        }
-        else if (right is SolverLogical<*>) {
+        } else if (right is SolverLogical<*>) {
             tell_value_logical(left, right as SolverLogical<Any>)
-        }
-        else {
+        } else {
             tell_value_value(left, right)
         }
     }
@@ -74,7 +77,7 @@ class EqualsSolver  : Queryable {
         leftRepr.union(rightRepr, { a, b -> tell_value_value(a, b)})
     }
 
-    fun <T> tell_logical_value(left: SolverLogical<T>, right: T) {
+    fun <T> tell_logical_value(left: SolverLogical<T>, right: T?) {
         if (left.isBound) {
             check(left.findRoot().value() == right)
         }
@@ -83,7 +86,7 @@ class EqualsSolver  : Queryable {
         }
     }
 
-    fun <T> tell_value_logical(left: T,  right: SolverLogical<T>) {
+    fun <T> tell_value_logical(left: T?,  right: SolverLogical<T>) {
         if (right.isBound) {
             check(right.findRoot().value() == left)
         }
@@ -113,4 +116,17 @@ infix fun <T : Any> Logical<T>.eq(other: Logical<T>) {
 
 infix fun <T : Any> Logical<T>.is_eq(other: Logical<T>): Boolean {
     return EvaluationSession.current().sessionSolver().ask(PredicateSymbol("equals", 2), this, other)
+}
+
+data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
+
+    override fun arguments(): List<Any> = listOf(left, right)
+
+    override fun symbol(): PredicateSymbol = PredicateSymbol("equals", 2)
+
+    override fun invocationArguments(logicalContext: LogicalContext): Collection<*> = listOf(left, right).map { a ->
+        if (a is MetaLogical<*>) logicalContext.variable(a)
+        else a
+    }
+
 }

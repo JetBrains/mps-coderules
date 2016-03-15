@@ -9,13 +9,11 @@ import program.MemConstraint
 import java.util.*
 import java.util.Collections.*
 
-class MemProgramBuilder(val sessionSolver: SessionSolver)  {
+class MemProgramBuilder(val registry: ConstraintRegistry)  {
 
     private val rules = ArrayList<Rule>()
 
-    private val registry = ConstraintRegistry(sessionSolver)
-
-    fun program(name: String, sessionSolver: SessionSolver): Program = MemProgram(name, ArrayList(rules), sessionSolver, registry)
+    fun program(name: String): Program = MemProgram(name, ArrayList(rules), registry)
 
     fun addRule(rule: Rule) {
         registry.update(rule)
@@ -73,7 +71,7 @@ class MemRule(
         else (kept + replaced).map { it as AndItem } + guard + body
 }
 
-class MemProgram(val name: String, val myRules : List<Rule>, val sessionSolver: SessionSolver, val registry: ConstraintRegistry) : Program() {
+class MemProgram(val name: String, val myRules : List<Rule>, val registry: ConstraintRegistry) : Program() {
 
     override fun name(): String = name
 
@@ -85,8 +83,6 @@ class MemProgram(val name: String, val myRules : List<Rule>, val sessionSolver: 
 
     override fun predicateSymbols(): Iterable<PredicateSymbol> =
         registry.predicateSymbols()
-
-    override fun sessionSolver(): SessionSolver = sessionSolver
 
     override fun rules(): Iterable<Rule> = unmodifiableCollection(myRules)
 }

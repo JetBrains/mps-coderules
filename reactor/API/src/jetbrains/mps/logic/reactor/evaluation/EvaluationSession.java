@@ -33,7 +33,7 @@ public abstract class EvaluationSession {
 
     public abstract EvaluationSession.Config withParam(String key, Object param);
 
-    public abstract EvaluationSession start();
+    public abstract EvaluationSession start(SessionSolver sessionSolver);
   }
 
   public abstract SessionSolver sessionSolver();

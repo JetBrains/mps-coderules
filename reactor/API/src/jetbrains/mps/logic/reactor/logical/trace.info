@@ -80,17 +80,20 @@
       <node id="8499880265524914186" at="21,24,22,16" concept="6" />
       <node id="8499880265524914478" at="25,31,26,20" concept="6" />
       <node id="8499880265524914776" at="29,26,30,16" concept="6" />
-      <node id="8499880265522559381" at="33,0,34,0" concept="2" trace="name" />
-      <node id="8499880265522559384" at="34,0,35,0" concept="2" trace="type" />
-      <node id="8499880265522559388" at="35,0,36,0" concept="2" trace="wildcard" />
+      <node id="8027627297624731289" at="34,28,35,16" concept="6" />
+      <node id="8499880265522559381" at="38,0,39,0" concept="2" trace="name" />
+      <node id="8499880265522559384" at="39,0,40,0" concept="2" trace="type" />
+      <node id="8499880265522559388" at="40,0,41,0" concept="2" trace="wildcard" />
       <node id="8897567155595965722" at="21,0,24,0" concept="4" trace="name#()Ljava/lang/String;" />
       <node id="8897567155595965985" at="25,0,28,0" concept="4" trace="isWildcard#()Z" />
       <node id="8897567155598409095" at="29,0,32,0" concept="4" trace="type#()Ljava/lang/Class;" />
       <node id="8499880265522559272" at="10,0,14,0" concept="0" trace="MetaLogical#(Ljava/lang/String;Ljava/lang/Class;)V" />
+      <node id="8027627297624729689" at="33,0,37,0" concept="4" trace="toString#()Ljava/lang/String;" />
       <node id="8499880265522559294" at="15,0,20,0" concept="0" trace="MetaLogical#(Ljava/lang/Class;)V" />
       <scope id="8897567155595965725" at="21,24,22,16" />
       <scope id="8897567155595965986" at="25,31,26,20" />
       <scope id="8897567155598409099" at="29,26,30,16" />
+      <scope id="8027627297624729693" at="34,28,35,16" />
       <scope id="8499880265522559280" at="10,50,12,21" />
       <scope id="8499880265522559300" at="15,37,18,25" />
       <scope id="8897567155595965722" at="21,0,24,0" />
@@ -100,10 +103,11 @@
         <var name="name" id="8499880265522559273" />
         <var name="type" id="8499880265522559275" />
       </scope>
+      <scope id="8027627297624729689" at="33,0,37,0" />
       <scope id="8499880265522559294" at="15,0,20,0">
         <var name="type" id="8499880265522559295" />
       </scope>
-      <unit id="8897567155595965539" at="6,0,38,0" name="jetbrains.mps.logic.reactor.logical.MetaLogical" />
+      <unit id="8897567155595965539" at="6,0,43,0" name="jetbrains.mps.logic.reactor.logical.MetaLogical" />
     </file>
   </root>
   <root nodeRef="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)/8897567155601467909">

@@ -5,6 +5,7 @@ import program.MemConstraint
 import TestConstraintOccurrence
 import jetbrains.mps.logic.reactor.core.StoreItem
 import solver.EqualsSolver
+import solver.TestEqPredicate
 import java.util.*
 
 /**
@@ -147,7 +148,7 @@ data class TestConstraintOccurrence(val constraint: Constraint, val arguments: L
 
     override fun constraint(): Constraint = constraint
 
-    override fun arguments(): Collection<Any> = arguments
+    override fun arguments(): List<Any> = arguments
 
     override fun terminate() {
         this.alive = false

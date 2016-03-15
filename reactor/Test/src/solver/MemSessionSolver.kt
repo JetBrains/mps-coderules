@@ -3,6 +3,7 @@ package solver
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.evaluation.Solver
 import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 
@@ -10,7 +11,7 @@ import jetbrains.mps.logic.reactor.program.PredicateSymbol
  * @author Fedor Isakov
  */
 
-open class MemSessionSolver(val expressionSolver: Queryable, val equalsSolver: Queryable) : SessionSolver() {
+open class MemSessionSolver(val expressionSolver: Solver, val equalsSolver: Solver) : SessionSolver() {
 
     override fun solverClass(predicateSymbol: PredicateSymbol): Class<out Queryable> {
         return when (predicateSymbol) {

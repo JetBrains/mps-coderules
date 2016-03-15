@@ -63,15 +63,3 @@ class MockObserver : LogicalObserver {
     }
 }
 
-data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
-
-    override fun arguments(): List<Any> = listOf(left, right)
-
-    override fun symbol(): PredicateSymbol = PredicateSymbol("equals", 2)
-
-    override fun invocationArguments(logicalContext: LogicalContext): Collection<*> = listOf(left, right).map { a ->
-        if (a is MetaLogical<*>) logicalContext.variable(a)
-        else a
-    }
-
-}

@@ -28,11 +28,11 @@ class TestProgram {
 
     private fun Builder.session(name: String): EvaluationSession {
         val sessionSolver = MemSessionSolver(env.expressionSolver, env.equalsSolver)
-        val programBuilder = MemProgramBuilder(sessionSolver)
+        val programBuilder = MemProgramBuilder(ConstraintRegistry(sessionSolver))
         rules.forEach { r -> programBuilder.addRule(r) }
-        return EvaluationSession.newSession(programBuilder.program(name, sessionSolver)).
+        return EvaluationSession.newSession(programBuilder.program(name)).
             withPredicates(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3).
-            withParam("main", MemConstraint(ConstraintSymbol("main", 0))).start()
+            withParam("main", MemConstraint(ConstraintSymbol("main", 0))).start(sessionSolver)
     }
 
     @Test

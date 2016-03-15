@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -7,45 +8,58 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/2394628030058821331">
     <file name="EvaluationTrace.java">
-      <node id="1568093847249272547" at="11,0,12,0" concept="4" trace="activate#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
-      <node id="1568093847249273983" at="13,0,14,0" concept="4" trace="reactivate#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
-      <node id="1568093847249274899" at="15,0,16,0" concept="4" trace="suspend#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
-      <node id="1568093847249275822" at="17,0,18,0" concept="4" trace="discard#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
-      <node id="1568093847249552578" at="19,0,20,0" concept="4" trace="trigger#(Ljetbrains/mps/logic/reactor/evaluation/MatchRule;)V" />
-      <node id="1568093847249559176" at="21,0,22,0" concept="4" trace="exit#(Ljetbrains/mps/logic/reactor/program/Rule;)V" />
-      <node id="2394628030058889702" at="23,0,24,0" concept="4" trace="askSuccess#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
-      <node id="2394628030058891476" at="25,0,26,0" concept="4" trace="askFailure#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
-      <node id="7375810237849470390" at="27,0,28,0" concept="4" trace="ask#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
-      <node id="7375810237849456124" at="29,0,30,0" concept="4" trace="tell#(Ljetbrains/mps/logic/reactor/program/Symbol;null)V" />
-      <node id="8344829839210112466" at="31,0,32,0" concept="4" trace="reportFailure#(Ljava/lang/String;)V" />
-      <node id="1568093847249278110" at="35,0,37,0" concept="4" trace="activate#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
-      <node id="1568093847249278118" at="37,0,39,0" concept="4" trace="reactivate#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
-      <node id="1568093847249278126" at="39,0,41,0" concept="4" trace="suspend#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
-      <node id="1568093847249278134" at="41,0,43,0" concept="4" trace="discard#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
-      <node id="1568093847249562172" at="43,0,45,0" concept="4" trace="trigger#(Ljetbrains/mps/logic/reactor/evaluation/MatchRule;)V" />
-      <node id="1568093847249562180" at="45,0,47,0" concept="4" trace="exit#(Ljetbrains/mps/logic/reactor/program/Rule;)V" />
-      <node id="5160444407776325515" at="47,0,49,0" concept="4" trace="askSuccess#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
-      <node id="5160444407776325526" at="49,0,51,0" concept="4" trace="askFailure#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
-      <node id="5160444407776325537" at="51,0,53,0" concept="4" trace="ask#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
-      <node id="5160444407776325548" at="53,0,55,0" concept="4" trace="tell#(Ljetbrains/mps/logic/reactor/program/Symbol;null)V" />
-      <node id="5160444407776325559" at="55,0,57,0" concept="4" trace="reportFailure#(Ljava/lang/String;)V" />
-      <node id="5160444407776320865" at="33,0,58,0" concept="7" trace="NULL" />
-      <scope id="1568093847249278117" at="35,59,35,59" />
-      <scope id="1568093847249278125" at="37,61,37,61" />
-      <scope id="1568093847249278133" at="39,58,39,58" />
-      <scope id="1568093847249278141" at="41,58,41,58" />
-      <scope id="1568093847249562179" at="43,46,43,46" />
-      <scope id="1568093847249562187" at="45,33,45,33" />
-      <scope id="5160444407776325524" at="47,77,47,77" />
-      <scope id="5160444407776325535" at="49,77,49,77" />
-      <scope id="5160444407776325546" at="51,70,51,70" />
-      <scope id="5160444407776325557" at="53,53,53,53" />
-      <scope id="5160444407776325565" at="55,47,55,47" />
+      <node id="1568093847249272547" at="11,0,12,0" concept="5" trace="activate#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
+      <node id="1568093847249273983" at="13,0,14,0" concept="5" trace="reactivate#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
+      <node id="1568093847249274899" at="15,0,16,0" concept="5" trace="suspend#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
+      <node id="1568093847249275822" at="17,0,18,0" concept="5" trace="discard#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
+      <node id="1568093847249552578" at="19,0,20,0" concept="5" trace="trying#(Ljetbrains/mps/logic/reactor/evaluation/MatchRule;)V" />
+      <node id="3363149567546654801" at="21,0,22,0" concept="5" trace="trigger#(Ljetbrains/mps/logic/reactor/evaluation/MatchRule;)V" />
+      <node id="3363149567546659619" at="23,0,24,0" concept="5" trace="finish#(Ljetbrains/mps/logic/reactor/evaluation/MatchRule;)V" />
+      <node id="3363149567546696093" at="28,0,29,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/evaluation/PredicateInvocation;)V" />
+      <node id="3363149567546698865" at="30,0,31,0" concept="5" trace="ask#(ZLjetbrains/mps/logic/reactor/evaluation/PredicateInvocation;)V" />
+      <node id="8344829839210112466" at="44,0,45,0" concept="5" trace="reportFailure#(Ljava/lang/String;)V" />
+      <node id="1568093847249559176" at="25,0,27,0" concept="5" trace="exit#(Ljetbrains/mps/logic/reactor/program/Rule;)V" />
+      <node id="2394628030058889702" at="32,0,34,0" concept="5" trace="askSuccess#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
+      <node id="2394628030058891476" at="35,0,37,0" concept="5" trace="askFailure#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
+      <node id="7375810237849470390" at="38,0,40,0" concept="5" trace="ask#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
+      <node id="7375810237849456124" at="41,0,43,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/program/Symbol;null)V" />
+      <node id="1568093847249278110" at="48,0,50,0" concept="5" trace="activate#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
+      <node id="1568093847249278118" at="50,0,52,0" concept="5" trace="reactivate#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
+      <node id="1568093847249278126" at="52,0,54,0" concept="5" trace="suspend#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
+      <node id="1568093847249278134" at="54,0,56,0" concept="5" trace="discard#(Ljetbrains/mps/logic/reactor/evaluation/ConstraintOccurrence;)V" />
+      <node id="3363149567546683107" at="56,0,58,0" concept="5" trace="trying#(Ljetbrains/mps/logic/reactor/evaluation/MatchRule;)V" />
+      <node id="1568093847249562172" at="58,0,60,0" concept="5" trace="trigger#(Ljetbrains/mps/logic/reactor/evaluation/MatchRule;)V" />
+      <node id="3363149567546683115" at="60,0,62,0" concept="5" trace="finish#(Ljetbrains/mps/logic/reactor/evaluation/MatchRule;)V" />
+      <node id="1568093847249562180" at="62,0,64,0" concept="5" trace="exit#(Ljetbrains/mps/logic/reactor/program/Rule;)V" />
+      <node id="3363149567546702045" at="64,0,66,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/evaluation/PredicateInvocation;)V" />
+      <node id="3363149567546702053" at="66,0,68,0" concept="5" trace="ask#(ZLjetbrains/mps/logic/reactor/evaluation/PredicateInvocation;)V" />
+      <node id="5160444407776325515" at="68,0,70,0" concept="5" trace="askSuccess#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
+      <node id="5160444407776325526" at="70,0,72,0" concept="5" trace="askFailure#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
+      <node id="5160444407776325537" at="72,0,74,0" concept="5" trace="ask#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)V" />
+      <node id="5160444407776325548" at="74,0,76,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/program/Symbol;null)V" />
+      <node id="5160444407776325559" at="76,0,78,0" concept="5" trace="reportFailure#(Ljava/lang/String;)V" />
+      <node id="5160444407776320865" at="46,0,80,0" concept="9" trace="NULL" />
+      <scope id="1568093847249278117" at="48,59,48,59" />
+      <scope id="1568093847249278125" at="50,61,50,61" />
+      <scope id="1568093847249278133" at="52,58,52,58" />
+      <scope id="1568093847249278141" at="54,58,54,58" />
+      <scope id="3363149567546683114" at="56,45,56,45" />
+      <scope id="1568093847249562179" at="58,46,58,46" />
+      <scope id="3363149567546683122" at="60,45,60,45" />
+      <scope id="1568093847249562187" at="62,33,62,33" />
+      <scope id="3363149567546702052" at="64,54,64,54" />
+      <scope id="3363149567546702062" at="66,69,66,69" />
+      <scope id="5160444407776325524" at="68,77,68,77" />
+      <scope id="5160444407776325535" at="70,77,70,77" />
+      <scope id="5160444407776325546" at="72,70,72,70" />
+      <scope id="5160444407776325557" at="74,53,74,53" />
+      <scope id="5160444407776325565" at="76,47,76,47" />
       <scope id="1568093847249272547" at="11,0,12,0">
         <var name="occurrence" id="1568093847249273451" />
       </scope>
@@ -61,73 +75,99 @@
       <scope id="1568093847249552578" at="19,0,20,0">
         <var name="matchRule" id="6976745534798433645" />
       </scope>
-      <scope id="1568093847249559176" at="21,0,22,0">
+      <scope id="3363149567546654801" at="21,0,22,0">
+        <var name="matchRule" id="3363149567546654802" />
+      </scope>
+      <scope id="3363149567546659619" at="23,0,24,0">
+        <var name="matchRule" id="3363149567546682377" />
+      </scope>
+      <scope id="3363149567546696093" at="28,0,29,0">
+        <var name="invocation" id="3363149567546697590" />
+      </scope>
+      <scope id="3363149567546698865" at="30,0,31,0">
+        <var name="invocation" id="3363149567546698866" />
+        <var name="result" id="3363149567546700611" />
+      </scope>
+      <scope id="8344829839210112466" at="44,0,45,0">
+        <var name="message" id="8344829839210112700" />
+      </scope>
+      <scope id="1568093847249559176" at="25,0,27,0">
         <var name="rule" id="1568093847249559177" />
       </scope>
-      <scope id="2394628030058889702" at="23,0,24,0">
+      <scope id="2394628030058889702" at="32,0,34,0">
         <var name="args" id="2394628030058890766" />
         <var name="predicateSymbol" id="2394628030058890707" />
       </scope>
-      <scope id="2394628030058891476" at="25,0,26,0">
+      <scope id="2394628030058891476" at="35,0,37,0">
         <var name="args" id="2394628030058891479" />
         <var name="predicateSymbol" id="2394628030058891477" />
       </scope>
-      <scope id="7375810237849470390" at="27,0,28,0">
+      <scope id="7375810237849470390" at="38,0,40,0">
         <var name="args" id="7375810237849470393" />
         <var name="predicateSymbol" id="7375810237849470391" />
       </scope>
-      <scope id="7375810237849456124" at="29,0,30,0">
+      <scope id="7375810237849456124" at="41,0,43,0">
         <var name="args" id="7375810237849456127" />
         <var name="symbol" id="7375810237849456125" />
       </scope>
-      <scope id="8344829839210112466" at="31,0,32,0">
-        <var name="message" id="8344829839210112700" />
-      </scope>
-      <scope id="1568093847249278110" at="35,0,37,0">
+      <scope id="1568093847249278110" at="48,0,50,0">
         <var name="occurrence" id="1568093847249278111" />
       </scope>
-      <scope id="1568093847249278118" at="37,0,39,0">
+      <scope id="1568093847249278118" at="50,0,52,0">
         <var name="occurrence" id="1568093847249278119" />
       </scope>
-      <scope id="1568093847249278126" at="39,0,41,0">
+      <scope id="1568093847249278126" at="52,0,54,0">
         <var name="occurrence" id="1568093847249278127" />
       </scope>
-      <scope id="1568093847249278134" at="41,0,43,0">
+      <scope id="1568093847249278134" at="54,0,56,0">
         <var name="occurrence" id="1568093847249278135" />
       </scope>
-      <scope id="1568093847249562172" at="43,0,45,0">
+      <scope id="3363149567546683107" at="56,0,58,0">
+        <var name="matchRule" id="3363149567546683108" />
+      </scope>
+      <scope id="1568093847249562172" at="58,0,60,0">
         <var name="matchRule" id="1568093847249562173" />
       </scope>
-      <scope id="1568093847249562180" at="45,0,47,0">
+      <scope id="3363149567546683115" at="60,0,62,0">
+        <var name="matchRule" id="3363149567546683116" />
+      </scope>
+      <scope id="1568093847249562180" at="62,0,64,0">
         <var name="rule" id="1568093847249562181" />
       </scope>
-      <scope id="5160444407776325515" at="47,0,49,0">
+      <scope id="3363149567546702045" at="64,0,66,0">
+        <var name="invocation" id="3363149567546702046" />
+      </scope>
+      <scope id="3363149567546702053" at="66,0,68,0">
+        <var name="invocation" id="3363149567546702056" />
+        <var name="result" id="3363149567546702054" />
+      </scope>
+      <scope id="5160444407776325515" at="68,0,70,0">
         <var name="args" id="5160444407776325518" />
         <var name="predicateSymbol" id="5160444407776325516" />
       </scope>
-      <scope id="5160444407776325526" at="49,0,51,0">
+      <scope id="5160444407776325526" at="70,0,72,0">
         <var name="args" id="5160444407776325529" />
         <var name="predicateSymbol" id="5160444407776325527" />
       </scope>
-      <scope id="5160444407776325537" at="51,0,53,0">
+      <scope id="5160444407776325537" at="72,0,74,0">
         <var name="args" id="5160444407776325540" />
         <var name="predicateSymbol" id="5160444407776325538" />
       </scope>
-      <scope id="5160444407776325548" at="53,0,55,0">
+      <scope id="5160444407776325548" at="74,0,76,0">
         <var name="args" id="5160444407776325551" />
         <var name="symbol" id="5160444407776325549" />
       </scope>
-      <scope id="5160444407776325559" at="55,0,57,0">
+      <scope id="5160444407776325559" at="76,0,78,0">
         <var name="message" id="5160444407776325560" />
       </scope>
-      <unit id="5160444407776325513" at="33,49,57,3" name="jetbrains.mps.logic.reactor.evaluation.EvaluationTrace$1" />
-      <unit id="2394628030058821331" at="9,0,59,0" name="jetbrains.mps.logic.reactor.evaluation.EvaluationTrace" />
+      <unit id="5160444407776325513" at="46,49,79,3" name="jetbrains.mps.logic.reactor.evaluation.EvaluationTrace$1" />
+      <unit id="2394628030058821331" at="9,0,81,0" name="jetbrains.mps.logic.reactor.evaluation.EvaluationTrace" />
     </file>
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/4787618122020806150">
     <file name="PredicateInvocation.java">
-      <node id="4787618122020806193" at="10,0,11,0" concept="4" trace="predicate#()Ljetbrains/mps/logic/reactor/program/Predicate;" />
-      <node id="4787618122020806252" at="12,0,13,0" concept="4" trace="arguments#()Ljava/util/Collection;" />
+      <node id="4787618122020806193" at="10,0,11,0" concept="5" trace="predicate#()Ljetbrains/mps/logic/reactor/program/Predicate;" />
+      <node id="4787618122020806252" at="12,0,13,0" concept="5" trace="arguments#()Ljava/util/List;" />
       <scope id="4787618122020806193" at="10,0,11,0" />
       <scope id="4787618122020806252" at="12,0,13,0" />
       <unit id="4787618122020806150" at="8,0,15,0" name="jetbrains.mps.logic.reactor.evaluation.PredicateInvocation" />
@@ -135,33 +175,33 @@
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/6317379717812926797">
     <file name="EvaluationSession.java">
-      <node id="6317379717813100052" at="15,29,16,52" concept="9" />
-      <node id="6317379717813100659" at="17,5,18,32" concept="6" />
-      <node id="6168558935191972039" at="22,29,23,52" concept="9" />
-      <node id="6168558935191972049" at="24,5,25,44" concept="6" />
-      <node id="6317379717813101174" at="30,0,31,0" concept="4" trace="withPredicates#(null)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
-      <node id="6317379717813105701" at="32,0,33,0" concept="4" trace="withTrace#(Ljetbrains/mps/logic/reactor/evaluation/EvaluationTrace;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
-      <node id="6168558935191895490" at="34,0,35,0" concept="4" trace="withParam#(Ljava/lang/String;Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
-      <node id="139299000606649873" at="36,0,37,0" concept="4" trace="start#()Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession;" />
-      <node id="6317379717827086566" at="39,0,40,0" concept="4" trace="sessionSolver#()Ljetbrains/mps/logic/reactor/evaluation/SessionSolver;" />
-      <node id="6317379717812938932" at="41,0,42,0" concept="4" trace="constraintSymbols#()Ljava/lang/Iterable;" />
-      <node id="6317379717812938847" at="43,0,44,0" concept="4" trace="constraintOccurrences#()Ljava/lang/Iterable;" />
-      <node id="6168558935192236908" at="45,0,46,0" concept="4" trace="constraintOccurrences#(Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;)Ljava/lang/Iterable;" />
-      <node id="6317379717813102752" at="48,29,49,66" concept="9" />
-      <node id="6317379717813102233" at="50,5,51,25" concept="0" />
-      <node id="95655808403437439" at="55,32,56,56" concept="9" />
-      <node id="95655808403437449" at="57,5,58,22" concept="0" />
-      <node id="6317379717813098484" at="63,0,64,0" concept="4" trace="current#()Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession;" />
-      <node id="6168558935191972549" at="65,0,66,0" concept="4" trace="createConfig#(Ljetbrains/mps/logic/reactor/program/Program;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
-      <node id="6317379717813099242" at="69,0,70,0" concept="7" trace="ourBackend" />
-      <node id="6317379717813099888" at="14,45,17,5" concept="3" />
-      <node id="6168558935191972037" at="21,70,24,5" concept="3" />
-      <node id="6317379717813102551" at="47,71,50,5" concept="3" />
-      <node id="95655808403437437" at="54,73,57,5" concept="3" />
-      <node id="6317379717813096791" at="14,0,20,0" concept="8" trace="current#()Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession;" />
-      <node id="139299000606655469" at="21,0,27,0" concept="8" trace="newSession#(Ljetbrains/mps/logic/reactor/program/Program;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
-      <node id="6317379717813098786" at="47,0,53,0" concept="8" trace="setBackend#(Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Backend;)V" />
-      <node id="95655808403436479" at="54,0,60,0" concept="8" trace="clearBackend#(Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Backend;)V" />
+      <node id="6317379717813100052" at="15,29,16,52" concept="11" />
+      <node id="6317379717813100659" at="17,5,18,32" concept="7" />
+      <node id="6168558935191972039" at="22,29,23,52" concept="11" />
+      <node id="6168558935191972049" at="24,5,25,44" concept="7" />
+      <node id="6317379717813101174" at="30,0,31,0" concept="5" trace="withPredicates#(null)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
+      <node id="6317379717813105701" at="32,0,33,0" concept="5" trace="withTrace#(Ljetbrains/mps/logic/reactor/evaluation/EvaluationTrace;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
+      <node id="6168558935191895490" at="34,0,35,0" concept="5" trace="withParam#(Ljava/lang/String;Ljava/lang/Object;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
+      <node id="3363149567557374122" at="36,0,37,0" concept="5" trace="start#(Ljetbrains/mps/logic/reactor/evaluation/SessionSolver;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession;" />
+      <node id="6317379717827086566" at="39,0,40,0" concept="5" trace="sessionSolver#()Ljetbrains/mps/logic/reactor/evaluation/SessionSolver;" />
+      <node id="6317379717812938932" at="41,0,42,0" concept="5" trace="constraintSymbols#()Ljava/lang/Iterable;" />
+      <node id="6317379717812938847" at="43,0,44,0" concept="5" trace="constraintOccurrences#()Ljava/lang/Iterable;" />
+      <node id="6168558935192236908" at="45,0,46,0" concept="5" trace="constraintOccurrences#(Ljetbrains/mps/logic/reactor/program/ConstraintSymbol;)Ljava/lang/Iterable;" />
+      <node id="6317379717813102752" at="48,29,49,66" concept="11" />
+      <node id="6317379717813102233" at="50,5,51,25" concept="1" />
+      <node id="95655808403437439" at="55,32,56,56" concept="11" />
+      <node id="95655808403437449" at="57,5,58,22" concept="1" />
+      <node id="6317379717813098484" at="63,0,64,0" concept="5" trace="current#()Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession;" />
+      <node id="6168558935191972549" at="65,0,66,0" concept="5" trace="createConfig#(Ljetbrains/mps/logic/reactor/program/Program;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
+      <node id="6317379717813099242" at="69,0,70,0" concept="9" trace="ourBackend" />
+      <node id="6317379717813099888" at="14,45,17,5" concept="4" />
+      <node id="6168558935191972037" at="21,70,24,5" concept="4" />
+      <node id="6317379717813102551" at="47,71,50,5" concept="4" />
+      <node id="95655808403437437" at="54,73,57,5" concept="4" />
+      <node id="6317379717813096791" at="14,0,20,0" concept="10" trace="current#()Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession;" />
+      <node id="139299000606655469" at="21,0,27,0" concept="10" trace="newSession#(Ljetbrains/mps/logic/reactor/program/Program;)Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Config;" />
+      <node id="6317379717813098786" at="47,0,53,0" concept="10" trace="setBackend#(Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Backend;)V" />
+      <node id="95655808403436479" at="54,0,60,0" concept="10" trace="clearBackend#(Ljetbrains/mps/logic/reactor/evaluation/EvaluationSession/Backend;)V" />
       <scope id="6317379717813099889" at="15,29,16,52" />
       <scope id="6168558935191972038" at="22,29,23,52" />
       <scope id="6317379717813101174" at="30,0,31,0">
@@ -174,7 +214,9 @@
         <var name="key" id="6168558935191897683" />
         <var name="param" id="6168558935191897958" />
       </scope>
-      <scope id="139299000606649873" at="36,0,37,0" />
+      <scope id="3363149567557374122" at="36,0,37,0">
+        <var name="sessionSolver" id="3363149567557374361" />
+      </scope>
       <scope id="6317379717827086566" at="39,0,40,0" />
       <scope id="6317379717812938932" at="41,0,42,0" />
       <scope id="6317379717812938847" at="43,0,44,0" />
@@ -208,8 +250,8 @@
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/6317379717821145892">
     <file name="ConstraintOccurrence.java">
-      <node id="6317379717821145919" at="10,0,11,0" concept="4" trace="constraint#()Ljetbrains/mps/logic/reactor/program/Constraint;" />
-      <node id="6317379717821146080" at="12,0,13,0" concept="4" trace="arguments#()Ljava/util/Collection;" />
+      <node id="6317379717821145919" at="10,0,11,0" concept="5" trace="constraint#()Ljetbrains/mps/logic/reactor/program/Constraint;" />
+      <node id="6317379717821146080" at="12,0,13,0" concept="5" trace="arguments#()Ljava/util/List;" />
       <scope id="6317379717821145919" at="10,0,11,0" />
       <scope id="6317379717821146080" at="12,0,13,0" />
       <unit id="6317379717821145892" at="8,0,15,0" name="jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence" />
@@ -217,137 +259,190 @@
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/6976745534798407019">
     <file name="MatchRule.java">
-      <node id="6976745534798407051" at="9,0,10,0" concept="4" trace="rule#()Ljetbrains/mps/logic/reactor/program/Rule;" />
-      <node id="6976745534798407110" at="11,0,12,0" concept="4" trace="matchHeadKept#()Ljava/lang/Iterable;" />
-      <node id="6976745534798407558" at="13,0,14,0" concept="4" trace="matchHeadReplaced#()Ljava/lang/Iterable;" />
+      <node id="6976745534798407051" at="9,0,10,0" concept="5" trace="rule#()Ljetbrains/mps/logic/reactor/program/Rule;" />
+      <node id="6976745534798407110" at="11,0,12,0" concept="5" trace="matchHeadKept#()Ljava/lang/Iterable;" />
+      <node id="6976745534798407558" at="13,0,14,0" concept="5" trace="matchHeadReplaced#()Ljava/lang/Iterable;" />
       <scope id="6976745534798407051" at="9,0,10,0" />
       <scope id="6976745534798407110" at="11,0,12,0" />
       <scope id="6976745534798407558" at="13,0,14,0" />
       <unit id="6976745534798407019" at="7,0,16,0" name="jetbrains.mps.logic.reactor.evaluation.MatchRule" />
     </file>
   </root>
+  <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/7728771328120100825">
+    <file name="Solver.java">
+      <unit id="7728771328120100825" at="7,0,9,0" name="jetbrains.mps.logic.reactor.evaluation.Solver" />
+    </file>
+  </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/7785665572546273004">
     <file name="Instructible.java">
-      <node id="7785665572546273471" at="9,0,10,0" concept="4" trace="tell#(Ljetbrains/mps/logic/reactor/program/Symbol;null)V" />
-      <scope id="7785665572546273471" at="9,0,10,0">
-        <var name="args" id="7785665572546274393" />
-        <var name="symbol" id="5217246026231831102" />
+      <node id="3363149567549910458" at="8,0,9,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/evaluation/PredicateInvocation;)V" />
+      <scope id="3363149567549910458" at="8,0,9,0">
+        <var name="invocation" id="3363149567549910612" />
       </scope>
-      <unit id="7785665572546273004" at="7,0,12,0" name="jetbrains.mps.logic.reactor.evaluation.Instructible" />
+      <unit id="7785665572546273004" at="6,0,11,0" name="jetbrains.mps.logic.reactor.evaluation.Instructible" />
     </file>
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/7785665572546275793">
     <file name="Queryable.java">
-      <node id="7785665572546276256" at="9,0,10,0" concept="4" trace="ask#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)Z" />
-      <scope id="7785665572546276256" at="9,0,10,0">
-        <var name="args" id="7785665572546277217" />
-        <var name="predicateSymbol" id="5217246026231849983" />
+      <node id="3363149567549910804" at="8,0,9,0" concept="5" trace="ask#(Ljetbrains/mps/logic/reactor/evaluation/PredicateInvocation;)Z" />
+      <scope id="3363149567549910804" at="8,0,9,0">
+        <var name="invocation" id="3363149567549911069" />
       </scope>
-      <unit id="7785665572546275793" at="7,0,12,0" name="jetbrains.mps.logic.reactor.evaluation.Queryable" />
+      <unit id="7785665572546275793" at="6,0,11,0" name="jetbrains.mps.logic.reactor.evaluation.Queryable" />
     </file>
   </root>
   <root nodeRef="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)/7785665572546282176">
     <file name="SessionSolver.java">
-      <node id="2831834914716488778" at="15,57,16,38" concept="0" />
-      <node id="7014572411587984891" at="19,90,20,29" concept="0" />
-      <node id="7014572411587985397" at="20,29,21,27" concept="0" />
-      <node id="7014572411587974457" at="25,70,26,37" concept="0" />
-      <node id="5217246026231915802" at="26,37,27,61" concept="6" />
-      <node id="7014572411587972642" at="31,50,32,29" concept="0" />
-      <node id="5217246026231940146" at="32,29,33,38" concept="0" />
-      <node id="7835819612253026878" at="36,0,37,0" concept="4" trace="queueIfBusy#(Ljava/lang/Runnable;)Z" />
-      <node id="3724831866538106796" at="38,0,39,0" concept="4" trace="fail#(Ljava/lang/String;)V" />
-      <node id="6317379717822079128" at="41,72,42,41" concept="5" />
-      <node id="5217246026233178759" at="43,57,44,25" concept="6" />
-      <node id="5217246026233191067" at="46,5,47,16" concept="6" />
-      <node id="2831834914719725967" at="50,0,51,0" concept="4" trace="solverClass#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;)Ljava/lang/Class;" />
-      <node id="2831834914716457503" at="52,0,53,0" concept="4" trace="registerSymbol#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;Ljetbrains/mps/logic/reactor/evaluation/EvaluationTrace;)V" />
-      <node id="7785665572546333582" at="54,82,55,39" concept="0" />
-      <node id="2831834914716388776" at="58,47,59,44" concept="6" />
-      <node id="95655808403401608" at="63,53,64,37" concept="0" />
-      <node id="7785665572546325981" at="69,50,70,72" concept="9" />
-      <node id="7785665572546325992" at="71,5,72,40" concept="6" />
-      <node id="7785665572546302065" at="75,0,76,0" concept="1" trace="solvers" />
-      <node id="7014572411587970459" at="76,0,77,0" concept="1" trace="tracer" />
-      <node id="2831834914716484929" at="15,0,18,0" concept="4" trace="init#(null)V" />
-      <node id="5217246026233173468" at="42,41,45,7" concept="3" />
-      <node id="7785665572546292859" at="54,0,57,0" concept="4" trace="registerSolver#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;Ljetbrains/mps/logic/reactor/evaluation/Queryable;)V" />
-      <node id="7785665572546284968" at="58,0,61,0" concept="4" trace="handler#(Ljetbrains/mps/logic/reactor/program/Symbol;)Ljetbrains/mps/logic/reactor/evaluation/Instructible;" />
-      <node id="6168558935193484641" at="62,69,65,5" concept="2" />
-      <node id="7785665572546325979" at="68,61,71,5" concept="3" />
-      <node id="2831834914717569542" at="19,0,23,0" concept="4" trace="init#(Ljetbrains/mps/logic/reactor/evaluation/EvaluationTrace;null)V" />
-      <node id="5217246026231897797" at="24,0,29,0" concept="4" trace="ask#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)Z" />
-      <node id="5217246026231929908" at="30,0,35,0" concept="4" trace="tell#(Ljetbrains/mps/logic/reactor/program/Symbol;null)V" />
-      <node id="95655808403395937" at="62,0,67,0" concept="4" trace="registerSymbols#(null)V" />
-      <node id="5217246026233172453" at="40,52,46,5" concept="2" />
-      <node id="7785665572546285620" at="68,0,74,0" concept="4" trace="solver#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;)Ljetbrains/mps/logic/reactor/evaluation/Queryable;" />
-      <node id="5217246026233157724" at="40,0,49,0" concept="4" trace="lookupQueryable#(Ljava/lang/Class;)Ljetbrains/mps/logic/reactor/evaluation/Queryable;" />
-      <scope id="2831834914716484932" at="15,57,16,38" />
-      <scope id="7835819612253026878" at="36,0,37,0">
+      <node id="2831834914716488778" at="18,57,19,38" concept="1" />
+      <node id="7014572411587984891" at="22,90,23,29" concept="1" />
+      <node id="7014572411587985397" at="23,29,24,27" concept="1" />
+      <node id="3363149567550414683" at="28,54,29,77" concept="6" />
+      <node id="3363149567550414116" at="29,77,30,35" concept="1" />
+      <node id="3363149567550416932" at="30,35,31,18" concept="7" />
+      <node id="7728771328121471038" at="37,71,38,44" concept="6" />
+      <node id="7728771328121471045" at="38,44,39,66" concept="6" />
+      <node id="7728771328121471055" at="39,66,40,103" concept="6" />
+      <node id="7728771328126535745" at="40,103,41,0" concept="8" />
+      <node id="5217246026231915802" at="41,0,42,51" concept="7" />
+      <node id="3363149567550424405" at="46,52,47,28" concept="1" />
+      <node id="3363149567550423403" at="47,28,48,62" concept="1" />
+      <node id="7728771328121395765" at="54,51,55,53" concept="6" />
+      <node id="7728771328121399126" at="55,53,56,75" concept="6" />
+      <node id="7728771328121463787" at="56,75,57,103" concept="6" />
+      <node id="7728771328121511891" at="57,103,58,0" concept="8" />
+      <node id="7728771328121465285" at="58,0,59,28" concept="1" />
+      <node id="7835819612253026878" at="62,0,63,0" concept="5" trace="queueIfBusy#(Ljava/lang/Runnable;)Z" />
+      <node id="3724831866538106796" at="64,0,65,0" concept="5" trace="fail#(Ljava/lang/String;)V" />
+      <node id="6317379717822079128" at="67,69,68,41" concept="6" />
+      <node id="5217246026233178759" at="69,57,70,25" concept="7" />
+      <node id="5217246026233191067" at="72,5,73,16" concept="7" />
+      <node id="2831834914719725967" at="76,0,77,0" concept="5" trace="solverClass#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;)Ljava/lang/Class;" />
+      <node id="2831834914716457503" at="78,0,79,0" concept="5" trace="registerSymbol#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;Ljetbrains/mps/logic/reactor/evaluation/EvaluationTrace;)V" />
+      <node id="7785665572546333582" at="80,76,81,36" concept="1" />
+      <node id="2831834914716388776" at="84,47,85,44" concept="7" />
+      <node id="95655808403401608" at="89,53,90,37" concept="1" />
+      <node id="7785665572546325981" at="95,50,96,72" concept="11" />
+      <node id="7785665572546325992" at="97,5,98,40" concept="7" />
+      <node id="7728771328121437336" at="103,58,104,33" concept="1" />
+      <node id="7728771328121438910" at="104,33,105,23" concept="1" />
+      <node id="7728771328121439355" at="108,34,109,23" concept="7" />
+      <node id="7728771328121440180" at="112,32,113,18" concept="7" />
+      <node id="7728771328121437332" at="116,0,117,0" concept="2" trace="predicate" />
+      <node id="7728771328121438905" at="117,0,118,0" concept="2" trace="args" />
+      <node id="7785665572546302065" at="120,0,121,0" concept="2" trace="solvers" />
+      <node id="7014572411587970459" at="121,0,122,0" concept="2" trace="tracer" />
+      <node id="2831834914716484929" at="18,0,21,0" concept="5" trace="init#(null)V" />
+      <node id="5217246026233173468" at="68,41,71,7" concept="4" />
+      <node id="7785665572546292859" at="80,0,83,0" concept="5" trace="registerSolver#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;Ljetbrains/mps/logic/reactor/evaluation/Solver;)V" />
+      <node id="7785665572546284968" at="84,0,87,0" concept="5" trace="handler#(Ljetbrains/mps/logic/reactor/program/Symbol;)Ljetbrains/mps/logic/reactor/evaluation/Instructible;" />
+      <node id="6168558935193484641" at="88,69,91,5" concept="3" />
+      <node id="7785665572546325979" at="94,58,97,5" concept="4" />
+      <node id="7728771328121436383" at="108,0,111,0" concept="5" trace="predicate#()Ljetbrains/mps/logic/reactor/program/Predicate;" />
+      <node id="7728771328121436390" at="112,0,115,0" concept="5" trace="arguments#()Ljava/util/List;" />
+      <node id="2831834914717569542" at="22,0,26,0" concept="5" trace="init#(Ljetbrains/mps/logic/reactor/evaluation/EvaluationTrace;null)V" />
+      <node id="7728771328121436895" at="103,0,107,0" concept="0" trace="Invocation#(Ljetbrains/mps/logic/reactor/program/Predicate;Ljava/util/List;)V" />
+      <node id="3363149567550418752" at="45,0,50,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/evaluation/PredicateInvocation;)V" />
+      <node id="95655808403395937" at="88,0,93,0" concept="5" trace="registerSymbols#(null)V" />
+      <node id="3363149567550406684" at="27,0,33,0" concept="5" trace="ask#(Ljetbrains/mps/logic/reactor/evaluation/PredicateInvocation;)Z" />
+      <node id="5217246026233172453" at="66,52,72,5" concept="3" />
+      <node id="7785665572546285620" at="94,0,100,0" concept="5" trace="solver#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;)Ljetbrains/mps/logic/reactor/evaluation/Solver;" />
+      <node id="5217246026231897797" at="37,0,44,0" concept="5" trace="ask#(Ljetbrains/mps/logic/reactor/program/PredicateSymbol;null)Z" />
+      <node id="5217246026231929908" at="54,0,61,0" concept="5" trace="tell#(Ljetbrains/mps/logic/reactor/program/Symbol;null)V" />
+      <node id="5217246026233157724" at="66,0,75,0" concept="5" trace="lookupQueryable#(Ljava/lang/Class;)Ljetbrains/mps/logic/reactor/evaluation/Queryable;" />
+      <scope id="2831834914716484932" at="18,57,19,38" />
+      <scope id="7835819612253026878" at="62,0,63,0">
         <var name="runnable" id="7835819612253037436" />
       </scope>
-      <scope id="3724831866538106796" at="38,0,39,0">
+      <scope id="3724831866538106796" at="64,0,65,0">
         <var name="message" id="3724831866538109748" />
       </scope>
-      <scope id="5217246026233173469" at="43,57,44,25" />
-      <scope id="2831834914719725967" at="50,0,51,0">
+      <scope id="5217246026233173469" at="69,57,70,25" />
+      <scope id="2831834914719725967" at="76,0,77,0">
         <var name="predicateSymbol" id="2831834914719727576" />
       </scope>
-      <scope id="2831834914716457503" at="52,0,53,0">
+      <scope id="2831834914716457503" at="78,0,79,0">
         <var name="computingTracer" id="2831834914717563394" />
         <var name="predicateSymbol" id="2831834914716459800" />
       </scope>
-      <scope id="7785665572546292862" at="54,82,55,39" />
-      <scope id="7785665572546284972" at="58,47,59,44" />
-      <scope id="6168558935193484643" at="63,53,64,37" />
-      <scope id="7785665572546325980" at="69,50,70,72" />
-      <scope id="2831834914717569548" at="19,90,21,27" />
-      <scope id="5217246026231897801" at="25,70,27,61" />
-      <scope id="5217246026231929912" at="31,50,33,38" />
-      <scope id="2831834914716484929" at="15,0,18,0">
+      <scope id="7785665572546292862" at="80,76,81,36" />
+      <scope id="7785665572546284972" at="84,47,85,44" />
+      <scope id="6168558935193484643" at="89,53,90,37" />
+      <scope id="7785665572546325980" at="95,50,96,72" />
+      <scope id="7728771328121436387" at="108,34,109,23" />
+      <scope id="7728771328121436395" at="112,32,113,18" />
+      <scope id="2831834914717569548" at="22,90,24,27" />
+      <scope id="3363149567550418758" at="46,52,48,62" />
+      <scope id="7728771328121436899" at="103,58,105,23" />
+      <scope id="2831834914716484929" at="18,0,21,0">
         <var name="predicateSymbols" id="2831834914717547255" />
       </scope>
-      <scope id="7785665572546292859" at="54,0,57,0">
-        <var name="constraint" id="7785665572546292863" />
-        <var name="queryable" id="7785665572546292865" />
+      <scope id="3363149567550406690" at="28,54,31,18">
+        <var name="result" id="3363149567550414684" />
       </scope>
-      <scope id="7785665572546284968" at="58,0,61,0">
+      <scope id="7785665572546292859" at="80,0,83,0">
+        <var name="constraint" id="7785665572546292863" />
+        <var name="solver" id="7785665572546292865" />
+      </scope>
+      <scope id="7785665572546284968" at="84,0,87,0">
         <var name="symbol" id="7785665572546285221" />
       </scope>
-      <scope id="6168558935193484641" at="62,69,65,5">
+      <scope id="6168558935193484641" at="88,69,91,5">
         <var name="symbol" id="6168558935193484645" />
       </scope>
-      <scope id="95655808403395941" at="62,69,65,5" />
-      <scope id="2831834914717569542" at="19,0,23,0">
-        <var name="computingTracer" id="2831834914717569543" />
+      <scope id="95655808403395941" at="88,69,91,5" />
+      <scope id="7728771328121436383" at="108,0,111,0" />
+      <scope id="7728771328121436390" at="112,0,115,0" />
+      <scope id="2831834914717569542" at="22,0,26,0">
+        <var name="evaluationTrace" id="2831834914717569543" />
         <var name="predicateSymbols" id="2831834914717569545" />
       </scope>
-      <scope id="5217246026233172455" at="41,72,45,7">
+      <scope id="5217246026233172455" at="67,69,71,7">
         <var name="queryable" id="6317379717822079129" />
       </scope>
-      <scope id="7785665572546285625" at="68,61,72,40" />
-      <scope id="5217246026231897797" at="24,0,29,0">
-        <var name="arg" id="5217246026231906313" />
-        <var name="predicateSymbol" id="5217246026231904980" />
+      <scope id="7785665572546285625" at="94,58,98,40" />
+      <scope id="7728771328121436895" at="103,0,107,0">
+        <var name="args" id="7728771328121438371" />
+        <var name="predicate" id="7728771328121437096" />
       </scope>
-      <scope id="5217246026231929908" at="30,0,35,0">
-        <var name="arg" id="5217246026231935273" />
-        <var name="symbol" id="5217246026231933720" />
+      <scope id="5217246026231897801" at="37,71,42,51">
+        <var name="invocation" id="7728771328121471056" />
+        <var name="predicate" id="7728771328121471046" />
+        <var name="solver" id="7728771328121471039" />
       </scope>
-      <scope id="95655808403395937" at="62,0,67,0">
+      <scope id="3363149567550418752" at="45,0,50,0">
+        <var name="invocation" id="3363149567550418756" />
+      </scope>
+      <scope id="5217246026231929912" at="54,51,59,28">
+        <var name="invocation" id="7728771328121463788" />
+        <var name="predicate" id="7728771328121399127" />
+        <var name="solver" id="7728771328121395766" />
+      </scope>
+      <scope id="95655808403395937" at="88,0,93,0">
         <var name="predicateSymbols" id="2831834914717550247" />
       </scope>
-      <scope id="5217246026233172453" at="40,52,46,5">
+      <scope id="3363149567550406684" at="27,0,33,0">
+        <var name="invocation" id="3363149567550406685" />
+      </scope>
+      <scope id="5217246026233172453" at="66,52,72,5">
         <var name="e" id="5217246026233172457" />
       </scope>
-      <scope id="7785665572546285620" at="68,0,74,0">
+      <scope id="7785665572546285620" at="94,0,100,0">
         <var name="predicateSymbol" id="7785665572546285621" />
       </scope>
-      <scope id="5217246026233157731" at="40,52,47,16" />
-      <scope id="5217246026233157724" at="40,0,49,0">
+      <scope id="5217246026231897797" at="37,0,44,0">
+        <var name="args" id="5217246026231906313" />
+        <var name="predicateSymbol" id="5217246026231904980" />
+      </scope>
+      <scope id="5217246026231929908" at="54,0,61,0">
+        <var name="args" id="5217246026231935273" />
+        <var name="symbol" id="5217246026231933720" />
+      </scope>
+      <scope id="5217246026233157731" at="66,52,73,16" />
+      <scope id="5217246026233157724" at="66,0,75,0">
         <var name="clazz" id="5217246026233157725" />
       </scope>
-      <unit id="7785665572546282176" at="13,0,78,0" name="jetbrains.mps.logic.reactor.evaluation.SessionSolver" />
+      <unit id="7728771328121434191" at="101,0,119,0" name="jetbrains.mps.logic.reactor.evaluation.SessionSolver$Invocation" />
+      <unit id="7785665572546282176" at="16,0,123,0" name="jetbrains.mps.logic.reactor.evaluation.SessionSolver" />
     </file>
   </root>
 </debug-info>

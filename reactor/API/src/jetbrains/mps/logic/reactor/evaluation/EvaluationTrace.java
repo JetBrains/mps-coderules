@@ -16,16 +16,29 @@ public interface EvaluationTrace {
 
   public void discard(ConstraintOccurrence occurrence);
 
+  public void trying(MatchRule matchRule);
+
   public void trigger(MatchRule matchRule);
 
+  public void finish(MatchRule matchRule);
+
+  @Deprecated
   public void exit(Rule rule);
 
+  public void tell(PredicateInvocation invocation);
+
+  public void ask(boolean result, PredicateInvocation invocation);
+
+  @Deprecated
   public void askSuccess(PredicateSymbol predicateSymbol, Object... args);
 
+  @Deprecated
   public void askFailure(PredicateSymbol predicateSymbol, Object... args);
 
+  @Deprecated
   public void ask(PredicateSymbol predicateSymbol, Object... args);
 
+  @Deprecated
   public void tell(Symbol symbol, Object... args);
 
   public void reportFailure(String message);
@@ -40,9 +53,17 @@ public interface EvaluationTrace {
     }
     public void discard(ConstraintOccurrence occurrence) {
     }
+    public void trying(MatchRule matchRule) {
+    }
     public void trigger(MatchRule matchRule) {
     }
+    public void finish(MatchRule matchRule) {
+    }
     public void exit(Rule rule) {
+    }
+    public void tell(PredicateInvocation invocation) {
+    }
+    public void ask(boolean result, PredicateInvocation invocation) {
     }
     public void askSuccess(PredicateSymbol predicateSymbol, Object... args) {
     }
@@ -54,5 +75,6 @@ public interface EvaluationTrace {
     }
     public void reportFailure(String message) {
     }
+
   };
 }

@@ -30,6 +30,11 @@ public class MetaLogical<V> {
     return type;
   }
 
+  @Override
+  public String toString() {
+    return name;
+  }
+
   private String name;
   private Class<V> type;
   private boolean wildcard = false;
