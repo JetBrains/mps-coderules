@@ -397,6 +397,12 @@
           <ref role="3uigEE" to="rchb:5uFPQ7BvNzE" resolve="Program" />
         </node>
       </node>
+      <node concept="37vLTG" id="2UGjFq4PcMy" role="3clF46">
+        <property role="TrG5h" value="sessionSolver" />
+        <node concept="3uibUv" id="2UGjFq4PgJD" role="1tU5fm">
+          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
+        </node>
+      </node>
       <node concept="3cqZAl" id="ZqZbw4Qjv9" role="3clF45" />
       <node concept="3Tm1VV" id="ZqZbw4Qjva" role="1B3o_S" />
       <node concept="3clFbS" id="ZqZbw4Qjvb" role="3clF47">
@@ -417,6 +423,19 @@
                   <ref role="3cqZAo" node="78CwJJcTKEU" resolve="program" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2UGjFq4PgJS" role="3cqZAp">
+          <node concept="37vLTI" id="2UGjFq4PgJU" role="3clFbG">
+            <node concept="2OqwBi" id="2UGjFq4PgJY" role="37vLTJ">
+              <node concept="Xjq3P" id="2UGjFq4PgK1" role="2Oq$k0" />
+              <node concept="2OwXpG" id="2UGjFq4PgJX" role="2OqNvi">
+                <ref role="2Oxat5" node="2UGjFq4PgJO" resolve="sessionSolver" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2UGjFq4PgK2" role="37vLTx">
+              <ref role="3cqZAo" node="2UGjFq4PcMy" resolve="sessionSolver" />
             </node>
           </node>
         </node>
@@ -912,13 +931,8 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="78CwJJcPfJy" role="33vP2m">
-                  <node concept="2OqwBi" id="506k$zeTqbL" role="2Oq$k0">
-                    <node concept="37vLTw" id="78CwJJcTRVV" role="2Oq$k0">
-                      <ref role="3cqZAo" node="78CwJJcTKM2" resolve="program" />
-                    </node>
-                    <node concept="liA8E" id="506k$zeTqv2" role="2OqNvi">
-                      <ref role="37wK5l" to="7n8k:6X5F0NgiqA5" resolve="sessionSolver" />
-                    </node>
+                  <node concept="37vLTw" id="2UGjFq4Pjox" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2UGjFq4PgJO" resolve="sessionSolver" />
                   </node>
                   <node concept="liA8E" id="78CwJJcPfJB" role="2OqNvi">
                     <ref role="37wK5l" to="qrld:2tcGHBEqJAf" resolve="solverClass" />
@@ -3178,13 +3192,8 @@
                   <node concept="2oxUTD" id="5uFPQ7BMEHf" role="2OqNvi">
                     <node concept="3EllGN" id="5uFPQ7BMEHg" role="2oxUTC">
                       <node concept="2OqwBi" id="7ISVfSJHZy" role="3ElVtu">
-                        <node concept="2OqwBi" id="506k$zeTrip" role="2Oq$k0">
-                          <node concept="37vLTw" id="2tcGHBEqW67" role="2Oq$k0">
-                            <ref role="3cqZAo" node="78CwJJcTKM2" resolve="program" />
-                          </node>
-                          <node concept="liA8E" id="506k$zeTroS" role="2OqNvi">
-                            <ref role="37wK5l" to="7n8k:6X5F0NgiqA5" resolve="sessionSolver" />
-                          </node>
+                        <node concept="37vLTw" id="2UGjFq4PjU6" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2UGjFq4PgJO" resolve="sessionSolver" />
                         </node>
                         <node concept="liA8E" id="7ISVfSJI4X" role="2OqNvi">
                           <ref role="37wK5l" to="qrld:2tcGHBEqJAf" resolve="solverClass" />
@@ -3852,6 +3861,13 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="ZqZbw4Qhn0" role="1B3o_S" />
+    <node concept="312cEg" id="2UGjFq4PgJO" role="jymVt">
+      <property role="TrG5h" value="sessionSolver" />
+      <node concept="3Tm6S6" id="2UGjFq4PgJP" role="1B3o_S" />
+      <node concept="3uibUv" id="2UGjFq4PgJR" role="1tU5fm">
+        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="4sVJFklM5v4">
     <property role="TrG5h" value="AtomProducer" />

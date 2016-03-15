@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
@@ -276,12 +277,6 @@
         <property role="TrG5h" value="name" />
         <node concept="17QB3L" id="5rhZO$TZiL3" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="5rhZO$TZiL4" role="3clF46">
-        <property role="TrG5h" value="sessionSolver" />
-        <node concept="3uibUv" id="5rhZO$TZiL5" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
-        </node>
-      </node>
       <node concept="3uibUv" id="5rhZO$U0jE9" role="3clF45">
         <ref role="3uigEE" to="rchb:5uFPQ7BvNzE" resolve="Program" />
       </node>
@@ -300,9 +295,6 @@
                 <node concept="37vLTw" id="5rhZO$TZRBt" role="37wK5m">
                   <ref role="3cqZAo" node="5rhZO$TZNO3" resolve="rules" />
                 </node>
-              </node>
-              <node concept="37vLTw" id="5rhZO$TZlRs" role="37wK5m">
-                <ref role="3cqZAo" node="5rhZO$TZiL4" resolve="sessionSolver" />
               </node>
               <node concept="37vLTw" id="5rhZO$TZmsR" role="37wK5m">
                 <ref role="3cqZAo" node="7eGEHDldhr$" resolve="registry" />
@@ -826,12 +818,6 @@
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="2tcGHBEqG6O" role="3clF46">
-        <property role="TrG5h" value="sessionSolver" />
-        <node concept="3uibUv" id="2tcGHBEqGdJ" role="1tU5fm">
-          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
-        </node>
-      </node>
       <node concept="37vLTG" id="5rhZO$TZmur" role="3clF46">
         <property role="TrG5h" value="constraintRegistry" />
         <node concept="3uibUv" id="5rhZO$TZm$4" role="1tU5fm">
@@ -869,19 +855,6 @@
               <node concept="2OwXpG" id="5rhZO$TZN8u" role="2OqNvi">
                 <ref role="2Oxat5" node="7eGEHDlcFpc" resolve="rules" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2tcGHBEqGgQ" role="3cqZAp">
-          <node concept="37vLTI" id="2tcGHBEqGgS" role="3clFbG">
-            <node concept="2OqwBi" id="2tcGHBEqGgW" role="37vLTJ">
-              <node concept="Xjq3P" id="2tcGHBEqGgZ" role="2Oq$k0" />
-              <node concept="2OwXpG" id="2tcGHBEqGgV" role="2OqNvi">
-                <ref role="2Oxat5" node="2tcGHBEqGgM" resolve="sessionSolver" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="2tcGHBEqGh0" role="37vLTx">
-              <ref role="3cqZAo" node="2tcGHBEqG6O" resolve="sessionSolver" />
             </node>
           </node>
         </node>
@@ -925,11 +898,19 @@
         <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
       </node>
       <node concept="3clFbS" id="6X5F0NgiqA9" role="3clF47">
-        <node concept="3clFbF" id="6X5F0NgiwQo" role="3cqZAp">
-          <node concept="37vLTw" id="6X5F0NgiwQn" role="3clFbG">
-            <ref role="3cqZAo" node="2tcGHBEqGgM" resolve="sessionSolver" />
+        <node concept="YS8fn" id="2UGjFq4KXWH" role="3cqZAp">
+          <node concept="2ShNRf" id="2UGjFq4KXX3" role="YScLw">
+            <node concept="1pGfFk" id="2UGjFq4KY9j" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;(java.lang.String)" resolve="UnsupportedOperationException" />
+              <node concept="Xl_RD" id="2UGjFq4KYvL" role="37wK5m">
+                <property role="Xl_RC" value="search for session solver elsewhere" />
+              </node>
+            </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="2UGjFq4KY$w" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="6X5F0NgiwUs" role="jymVt" />
@@ -1140,13 +1121,7 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="2tcGHBEqGgM" role="jymVt">
-      <property role="TrG5h" value="sessionSolver" />
-      <node concept="3Tm6S6" id="2tcGHBEqGgN" role="1B3o_S" />
-      <node concept="3uibUv" id="2tcGHBEqGgP" role="1tU5fm">
-        <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
-      </node>
-    </node>
+    <node concept="2tJIrI" id="2UGjFq4KV3U" role="jymVt" />
     <node concept="312cEg" id="5rhZO$TZnaE" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />

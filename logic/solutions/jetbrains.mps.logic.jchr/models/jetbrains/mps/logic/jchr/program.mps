@@ -301,36 +301,21 @@
           <ref role="3uigEE" node="5mr7UHcbv_1" resolve="JchrEvaluationSession.Config" />
         </node>
       </node>
+      <node concept="37vLTG" id="2UGjFq4L6qm" role="3clF46">
+        <property role="TrG5h" value="sessionSolver" />
+        <node concept="3uibUv" id="2UGjFq4L6FD" role="1tU5fm">
+          <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
+        </node>
+      </node>
       <node concept="3uibUv" id="7ISVfSIeJI" role="3clF45">
         <ref role="3uigEE" node="7ISVfSIedQ" resolve="JchrEvaluationSession" />
       </node>
       <node concept="3Tm6S6" id="7ISVfSIeUM" role="1B3o_S" />
       <node concept="3clFbS" id="7ISVfSIeJ0" role="3clF47">
-        <node concept="3cpWs8" id="2tcGHBEeeWq" role="3cqZAp">
-          <node concept="3cpWsn" id="2tcGHBEeeWr" role="3cpWs9">
-            <property role="TrG5h" value="solver" />
-            <node concept="3uibUv" id="6X5F0Ngi_lx" role="1tU5fm">
-              <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
-            </node>
-            <node concept="2OqwBi" id="6X5F0NgMoyF" role="33vP2m">
-              <node concept="2OqwBi" id="506k$zf2_r0" role="2Oq$k0">
-                <node concept="37vLTw" id="506k$zf2_r1" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7ISVfSIeK_" resolve="config" />
-                </node>
-                <node concept="2OwXpG" id="506k$zf2_r2" role="2OqNvi">
-                  <ref role="2Oxat5" node="6X5F0NgIrGR" resolve="program" />
-                </node>
-              </node>
-              <node concept="liA8E" id="6X5F0NgMoAY" role="2OqNvi">
-                <ref role="37wK5l" to="rchb:6MYr6JxCg84" resolve="sessionSolver" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5jPBdK_B63" role="3cqZAp">
           <node concept="2OqwBi" id="5jPBdK_Bcd" role="3clFbG">
-            <node concept="37vLTw" id="2tcGHBEeeW$" role="2Oq$k0">
-              <ref role="3cqZAo" node="2tcGHBEeeWr" resolve="solver" />
+            <node concept="37vLTw" id="2UGjFq4L7mp" role="2Oq$k0">
+              <ref role="3cqZAo" node="2UGjFq4L6qm" resolve="sessionSolver" />
             </node>
             <node concept="liA8E" id="5jPBdK_Bhd" role="2OqNvi">
               <ref role="37wK5l" to="qrld:2tcGHBEix86" resolve="init" />
@@ -358,14 +343,14 @@
           <node concept="2ShNRf" id="7ISVfSIeOF" role="3clFbG">
             <node concept="1pGfFk" id="7ISVfSIeUk" role="2ShVmc">
               <ref role="37wK5l" node="7ISVfSIeTk" resolve="JchrEvaluationSession" />
-              <node concept="37vLTw" id="2tcGHBEefc_" role="37wK5m">
-                <ref role="3cqZAo" node="2tcGHBEeeWr" resolve="solver" />
+              <node concept="37vLTw" id="2UGjFq4L7mo" role="37wK5m">
+                <ref role="3cqZAo" node="2UGjFq4L6qm" resolve="sessionSolver" />
               </node>
               <node concept="2ShNRf" id="5mr7UHcc2yd" role="37wK5m">
                 <node concept="1pGfFk" id="5mr7UHcc2ye" role="2ShVmc">
                   <ref role="37wK5l" node="5mr7UHcaVkq" resolve="JchrHandlerLauncher" />
-                  <node concept="37vLTw" id="2tcGHBEeg5l" role="37wK5m">
-                    <ref role="3cqZAo" node="2tcGHBEeeWr" resolve="solver" />
+                  <node concept="37vLTw" id="2UGjFq4L7mn" role="37wK5m">
+                    <ref role="3cqZAo" node="2UGjFq4L6qm" resolve="sessionSolver" />
                   </node>
                   <node concept="2OqwBi" id="7feMCq_ddlK" role="37wK5m">
                     <node concept="37vLTw" id="7feMCq_ddlL" role="2Oq$k0">
@@ -777,13 +762,20 @@
         </node>
       </node>
       <node concept="2tJIrI" id="6X5F0NgIqOL" role="jymVt" />
-      <node concept="3clFb_" id="7ISVfSIuSh" role="jymVt">
+      <node concept="3clFb_" id="2UGjFq4L1_B" role="jymVt">
         <property role="TrG5h" value="start" />
-        <node concept="3uibUv" id="7ISVfSIv24" role="3clF45">
+        <property role="1EzhhJ" value="false" />
+        <node concept="37vLTG" id="2UGjFq4L1_C" role="3clF46">
+          <property role="TrG5h" value="sessionSolver" />
+          <node concept="3uibUv" id="2UGjFq4L1_D" role="1tU5fm">
+            <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
+          </node>
+        </node>
+        <node concept="3uibUv" id="2UGjFq4L1_E" role="3clF45">
           <ref role="3uigEE" to="qrld:5uFPQ7BvN_d" resolve="EvaluationSession" />
         </node>
-        <node concept="3Tm1VV" id="7ISVfSIuSk" role="1B3o_S" />
-        <node concept="3clFbS" id="7ISVfSIuSl" role="3clF47">
+        <node concept="3Tm1VV" id="2UGjFq4L1_F" role="1B3o_S" />
+        <node concept="3clFbS" id="2UGjFq4L1_H" role="3clF47">
           <node concept="3cpWs8" id="7ISVfSIfLo" role="3cqZAp">
             <node concept="3cpWsn" id="7ISVfSIfLp" role="3cpWs9">
               <property role="TrG5h" value="session" />
@@ -831,6 +823,9 @@
               <node concept="1rXfSq" id="7ISVfSIfHd" role="33vP2m">
                 <ref role="37wK5l" node="7ISVfSIeIW" resolve="create" />
                 <node concept="Xjq3P" id="5mr7UHcbBii" role="37wK5m" />
+                <node concept="37vLTw" id="2UGjFq4L6ay" role="37wK5m">
+                  <ref role="3cqZAo" node="2UGjFq4L1_C" resolve="sessionSolver" />
+                </node>
               </node>
             </node>
           </node>
@@ -883,8 +878,11 @@
             </node>
           </node>
         </node>
+        <node concept="2AHcQZ" id="2UGjFq4L3$g" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
       </node>
-      <node concept="2tJIrI" id="5jPBdK_iKa" role="jymVt" />
+      <node concept="2tJIrI" id="2UGjFq4L3hf" role="jymVt" />
       <node concept="3clFb_" id="5uFPQ7Bwu9Q" role="jymVt">
         <property role="TrG5h" value="withPredicates" />
         <node concept="37vLTG" id="5uFPQ7BwufO" role="3clF46">

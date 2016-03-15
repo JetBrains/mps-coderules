@@ -610,8 +610,6 @@
   </node>
   <node concept="312cEu" id="6infEALAfer">
     <property role="TrG5h" value="AssertPredicate" />
-    <node concept="2tJIrI" id="5uFPQ7BZo0w" role="jymVt" />
-    <node concept="2tJIrI" id="6infEALAgV7" role="jymVt" />
     <node concept="2tJIrI" id="6infEALAgQp" role="jymVt" />
     <node concept="3clFbW" id="4xBopTzrPWl" role="jymVt">
       <node concept="37vLTG" id="5uFPQ7C251x" role="3clF46">
@@ -683,7 +681,6 @@
   </node>
   <node concept="312cEu" id="3HJTsBn4kk_">
     <property role="TrG5h" value="EqualsPredicate" />
-    <node concept="2tJIrI" id="7ISVfSJmTL" role="jymVt" />
     <node concept="2tJIrI" id="3HJTsBn4kQm" role="jymVt" />
     <node concept="Wx3nA" id="3HJTsBn4kQn" role="jymVt">
       <property role="TrG5h" value="INFIX_EQ" />
@@ -694,8 +691,7 @@
         <property role="Xl_RC" value="==" />
       </node>
     </node>
-    <node concept="2tJIrI" id="3HJTsBn4kQr" role="jymVt" />
-    <node concept="2tJIrI" id="3HJTsBn4kJ_" role="jymVt" />
+    <node concept="2tJIrI" id="2UGjFq4gG5y" role="jymVt" />
     <node concept="3clFbW" id="4xBopTzo_Q1" role="jymVt">
       <node concept="37vLTG" id="5uFPQ7C24iY" role="3clF46">
         <property role="TrG5h" value="left" />

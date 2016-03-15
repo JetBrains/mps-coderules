@@ -5,6 +5,7 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" name="jetbrains.mps.baseLanguage.extensionMethods" version="0" />
   </languages>
   <imports>
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
@@ -3944,7 +3945,8 @@
               </node>
             </node>
             <node concept="liA8E" id="5jPBdK_v1h" role="2OqNvi">
-              <ref role="37wK5l" to="qrld:7ISVfSIuSh" resolve="start" />
+              <ref role="37wK5l" to="qrld:2UGjFq4L12E" resolve="start" />
+              <node concept="10Nm6u" id="2UGjFq4LcSH" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -5114,14 +5116,20 @@
           </node>
         </node>
       </node>
-      <node concept="3clFb_" id="5jPBdK_npK" role="jymVt">
+      <node concept="3clFb_" id="2UGjFq4L4SC" role="jymVt">
         <property role="TrG5h" value="start" />
         <property role="1EzhhJ" value="false" />
-        <node concept="3uibUv" id="5jPBdK_npL" role="3clF45">
+        <node concept="37vLTG" id="2UGjFq4L4SD" role="3clF46">
+          <property role="TrG5h" value="sessionSolver" />
+          <node concept="3uibUv" id="2UGjFq4L4SE" role="1tU5fm">
+            <ref role="3uigEE" to="qrld:6Kcfpq7B0b0" resolve="SessionSolver" />
+          </node>
+        </node>
+        <node concept="3uibUv" id="2UGjFq4L4SF" role="3clF45">
           <ref role="3uigEE" to="qrld:5uFPQ7BvN_d" resolve="EvaluationSession" />
         </node>
-        <node concept="3Tm1VV" id="5jPBdK_npM" role="1B3o_S" />
-        <node concept="3clFbS" id="5jPBdK_npO" role="3clF47">
+        <node concept="3Tm1VV" id="2UGjFq4L4SG" role="1B3o_S" />
+        <node concept="3clFbS" id="2UGjFq4L4SI" role="3clF47">
           <node concept="3cpWs8" id="2tcGHBEewJ$" role="3cqZAp">
             <node concept="3cpWsn" id="2tcGHBEewJ_" role="3cpWs9">
               <property role="TrG5h" value="csession" />
