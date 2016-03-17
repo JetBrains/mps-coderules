@@ -107,11 +107,15 @@ class Handler : Matcher.AuxOccurrencesLookup {
 
             val lookupMatches = matcher.lookupMatches(active)
             for (match in lookupMatches) {
-                trace.trying(match)
-                if (!match.rule.checkGuard(match.logicalContext(), trace)) continue
-                if (match.occurrences().any { co -> !co.isStored() }) continue
                 // FIXME: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
+                if (match.occurrences().any { co -> !co.isStored() }) continue
+
+                trace.trying(match)
+                if (!match.rule.checkGuard(match.logicalContext(), trace)) {
+                    trace.reject(match)
+                    continue
+                }
 
                 activationStack.push(match)
                 trace.trigger(match)
