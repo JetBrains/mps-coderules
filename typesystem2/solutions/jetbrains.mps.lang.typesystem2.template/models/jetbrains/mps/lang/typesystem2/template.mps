@@ -233,8 +233,8 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -1466,7 +1466,7 @@
     <node concept="3clFb_" id="1ffsG7bWxkw" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="applicableConcept" />
-      <node concept="3THzug" id="1ffsG7bWxJb" role="3clF45" />
+      <node concept="3bZ5Sz" id="YGS68MZRvy" role="3clF45" />
       <node concept="3Tm1VV" id="1ffsG7bWxkz" role="1B3o_S" />
       <node concept="3clFbS" id="1ffsG7bWxk$" role="3clF47" />
     </node>
