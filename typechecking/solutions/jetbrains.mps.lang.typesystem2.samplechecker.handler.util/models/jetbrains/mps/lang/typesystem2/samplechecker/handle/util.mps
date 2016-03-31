@@ -275,6 +275,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -2944,10 +2945,10 @@
                     <ref role="3cqZAo" node="1e3DfAArnPc" resolve="array" />
                   </node>
                 </node>
-                <node concept="2YIFZM" id="2zBk6uIkbPX" role="37vLTx">
+                <node concept="2YIFZM" id="YGS68Nhrja" role="37vLTx">
+                  <ref role="37wK5l" node="YGS68N6Tbl" resolve="anchorAtom" />
                   <ref role="1Pybhc" node="4OKkcnfu_xo" resolve="AnchorUtil" />
-                  <ref role="37wK5l" node="4OKkcnfu_xq" resolve="anchorAtom" />
-                  <node concept="37vLTw" id="2zBk6uIkbPY" role="37wK5m">
+                  <node concept="37vLTw" id="YGS68Nhrjb" role="37wK5m">
                     <ref role="3cqZAo" node="1e3DfAArnP_" resolve="node" />
                   </node>
                 </node>
@@ -2989,8 +2990,8 @@
     <node concept="2YIFZL" id="4OKkcnfu_xq" role="jymVt">
       <property role="TrG5h" value="anchorAtom" />
       <node concept="37vLTG" id="4OKkcnfu_xr" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="4OKkcnfu_xs" role="1tU5fm" />
+        <property role="TrG5h" value="concept" />
+        <node concept="3bZ5Sz" id="YGS68N6TkG" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="4OKkcnfu_xt" role="3clF45">
         <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
@@ -3001,8 +3002,36 @@
           <node concept="2YIFZM" id="4OKkcnfu_xy" role="3clFbG">
             <ref role="37wK5l" node="4OKkcnfu_x_" resolve="anchor" />
             <ref role="1Pybhc" node="4OKkcnfu_xo" resolve="AnchorUtil" />
-            <node concept="37vLTw" id="4OKkcnfu_xz" role="37wK5m">
-              <ref role="3cqZAo" node="4OKkcnfu_xr" resolve="node" />
+            <node concept="2OqwBi" id="YGS68N6TnA" role="37wK5m">
+              <node concept="37vLTw" id="4OKkcnfu_xz" role="2Oq$k0">
+                <ref role="3cqZAo" node="4OKkcnfu_xr" resolve="concept" />
+              </node>
+              <node concept="liA8E" id="YGS68N6Tqd" role="2OqNvi">
+                <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="YGS68N6TfG" role="jymVt" />
+    <node concept="2YIFZL" id="YGS68N6Tbl" role="jymVt">
+      <property role="TrG5h" value="anchorAtom" />
+      <node concept="37vLTG" id="YGS68N6Tbm" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="YGS68N6Tbn" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="YGS68N6Tbo" role="3clF45">
+        <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+      </node>
+      <node concept="3Tm1VV" id="YGS68N6Tbp" role="1B3o_S" />
+      <node concept="3clFbS" id="YGS68N6Tbq" role="3clF47">
+        <node concept="3clFbF" id="YGS68N6Tbr" role="3cqZAp">
+          <node concept="2YIFZM" id="YGS68N6Tbs" role="3clFbG">
+            <ref role="37wK5l" node="4OKkcnfu_x_" resolve="anchor" />
+            <ref role="1Pybhc" node="4OKkcnfu_xo" resolve="AnchorUtil" />
+            <node concept="37vLTw" id="YGS68N6Tbt" role="37wK5m">
+              <ref role="3cqZAo" node="YGS68N6Tbm" resolve="node" />
             </node>
           </node>
         </node>

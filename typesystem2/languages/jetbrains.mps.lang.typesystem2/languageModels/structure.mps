@@ -11,8 +11,8 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -90,6 +90,12 @@
     <property role="34LRSv" value="new type" />
     <property role="1pbfSe" value="923793061" />
     <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyj" id="YGS68N6UU4" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="typeDeclaration" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="1pPth$m5Bbz" resolve="TypeDeclaration" />
+    </node>
     <node concept="1TJgyj" id="6p0DfM0gdsG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="typeVar" />
@@ -99,7 +105,7 @@
     <node concept="1TJgyj" id="6Ng87FPS9JH" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="typeConcept" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
     </node>
     <node concept="1TJgyj" id="6p0DfM0gvH4" role="1TKVEi">
@@ -727,6 +733,10 @@
     <property role="TrG5h" value="TypeDeclaration" />
     <property role="1pbfSe" value="747366396" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5MFgGQnlLNJ" role="1TKVEi">
+      <property role="20kJfa" value="conceptDeclaraton" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
     <node concept="1TJgyj" id="1pPth$m5BbA" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="term" />
