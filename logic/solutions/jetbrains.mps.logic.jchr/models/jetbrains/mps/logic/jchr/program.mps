@@ -163,9 +163,6 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
-        <child id="1079359253376" name="expression" index="1eOMHV" />
-      </concept>
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -1648,29 +1645,6 @@
         <node concept="3clFbH" id="7feMCq_c0I4" role="3cqZAp" />
         <node concept="3clFbJ" id="7feMCq_c1nB" role="3cqZAp">
           <node concept="3clFbS" id="7feMCq_c1nD" role="3clFbx">
-            <node concept="3cpWs8" id="7feMCq_c3KS" role="3cqZAp">
-              <node concept="3cpWsn" id="7feMCq_c3KT" role="3cpWs9">
-                <property role="TrG5h" value="message" />
-                <node concept="3uibUv" id="7feMCq_c3KN" role="1tU5fm">
-                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                </node>
-                <node concept="2OqwBi" id="7feMCq_c3KU" role="33vP2m">
-                  <node concept="1eOMI4" id="7feMCq_c3KV" role="2Oq$k0">
-                    <node concept="10QFUN" id="7feMCq_c3KW" role="1eOMHV">
-                      <node concept="3uibUv" id="7feMCq_c3KX" role="10QFUM">
-                        <ref role="3uigEE" to="eifs:~FailureException" resolve="FailureException" />
-                      </node>
-                      <node concept="37vLTw" id="7feMCq_c3KY" role="10QFUP">
-                        <ref role="3cqZAo" node="41ox5VneSgC" resolve="exception" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="7feMCq_c3KZ" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbJ" id="7feMCq_d5O3" role="3cqZAp">
               <node concept="3clFbS" id="7feMCq_d5O5" role="3clFbx">
                 <node concept="3clFbF" id="7feMCq_d6yU" role="3cqZAp">
@@ -1679,9 +1653,14 @@
                       <ref role="3cqZAo" node="7feMCq_d56g" resolve="computingTracer" />
                     </node>
                     <node concept="liA8E" id="7feMCq_d6Sw" role="2OqNvi">
-                      <ref role="37wK5l" to="qrld:7feMCq_cIni" resolve="reportFailure" />
-                      <node concept="37vLTw" id="7feMCq_d7dp" role="37wK5m">
-                        <ref role="3cqZAo" node="7feMCq_c3KT" resolve="message" />
+                      <ref role="37wK5l" to="qrld:7vxJ_H4th$o" resolve="failure" />
+                      <node concept="2ShNRf" id="7vxJ_H4u2Pw" role="37wK5m">
+                        <node concept="1pGfFk" id="7vxJ_H4u2Pn" role="2ShVmc">
+                          <ref role="37wK5l" to="qrld:7vxJ_H4qqnq" resolve="EvaluationFailureException" />
+                          <node concept="37vLTw" id="7vxJ_H4u2QX" role="37wK5m">
+                            <ref role="3cqZAo" node="41ox5VneSgC" resolve="exception" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
