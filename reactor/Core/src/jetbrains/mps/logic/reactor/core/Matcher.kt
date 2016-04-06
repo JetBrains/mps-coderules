@@ -18,28 +18,16 @@ import com.github.andrewoma.dexx.collection.List as PersList
 
 class Matcher {
 
-    interface AuxOccurrencesLookup {
-
-        fun lookupAuxOccurrences(
-            symbol: ConstraintSymbol,
-            logicals: Iterable<Logical<*>>,
-            values: Iterable<Any> = emptyList(),
-            acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
-
-    }
-
     val rules: RuleIndex
-    private val auxLookup: AuxOccurrencesLookup
-    private val profiler: Profiler?
-    private val propHistory = PropagationHistory()
 
-    constructor(rules: Collection<Rule>, aux: AuxOccurrencesLookup, profiler: Profiler? = null) {
+    private val profiler: Profiler?
+
+    constructor(rules: Iterable<Rule>, profiler: Profiler? = null) {
         this.rules = RuleIndex(rules)
-        this.auxLookup = aux
         this.profiler = profiler
     }
 
-    fun lookupMatches(occ: ConstraintOccurrence): Sequence<PartialMatch> {
+    fun lookupMatches(occ: ConstraintOccurrence, aux: OccurrenceIndex, propHistory: PropagationHistory): Sequence<PartialMatch> {
         return profiler.profile<Sequence<PartialMatch>>("lookupMatches", {
 
             val matchingRules = rules.forOccurrence(occ)
@@ -55,40 +43,10 @@ class Matcher {
 
             }
 
-            val fullMatches = partialMatches.flatMap { pm -> pm.completeMatch(auxLookup) }
+            val fullMatches = partialMatches.flatMap { pm -> pm.completeMatch(aux) }
 
             fullMatches.filter { pm -> !propHistory.isRecorded(pm) && pm.matches() }
         })
-    }
-
-    fun recordPropagation(pm: PartialMatch) = propHistory.record(pm)
-
-}
-
-private class PropagationHistory {
-
-    var recordedPropagation = Maps.of<Rule, PersList<List<IdWrapper<ConstraintOccurrence>>>>()
-
-    fun isRecorded(pm: PartialMatch): Boolean {
-        if (!pm.isPropagation()) return false
-        val test = pm.kept.map { pair -> IdWrapper(pair.second) }.sortedBy { idOcc -> idOcc.idHash }.toList()
-
-        return recordedPropagation.get(pm.rule)?.let { hist ->
-            hist.any { recorded ->
-                recorded == test
-            }            // use the reference equality via IdWrapper
-        } ?: false
-    }
-
-    fun record(pm: PartialMatch): PartialMatch {
-        if (pm.isPropagation()) {
-            val idOccs = pm.kept.map { pair -> IdWrapper(pair.second) }.sortedBy { id -> id.idHash }.toList()
-
-            val hist = recordedPropagation.get(pm.rule) ?: ConsList.empty<List<IdWrapper<ConstraintOccurrence>>>()
-
-            recordedPropagation = recordedPropagation.put(pm.rule, hist.prepend(idOccs))
-        }
-        return pm
     }
 
 }

@@ -1,6 +1,5 @@
-import jetbrains.mps.logic.reactor.core.Matcher
-import jetbrains.mps.logic.reactor.core.logical
-import jetbrains.mps.logic.reactor.core.matches
+import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -14,19 +13,22 @@ import org.junit.Test
 
 class TestMatcher {
 
-    private fun Builder.matcher(vararg occurrence: ConstraintOccurrence): Matcher {
+    private val propHistory = PropagationHistory()
+
+    private fun Builder.matcher(vararg occurrence: ConstraintOccurrence): Pair<Matcher, OccurrenceIndex> {
 
         val stored = occurrence.toList()
 
-        val aux = object : Matcher.AuxOccurrencesLookup {
-            override fun lookupAuxOccurrences(
+        val aux = object : OccurrenceIndex {
+            override fun lookupOccurrences(
                 symbol: ConstraintSymbol,
                 logicals: Iterable<Logical<*>>,
                 values: Iterable<Any>,
                 acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence> =
                     stored.filter { co -> co.constraint().symbol() == symbol && acceptable(co) }.asSequence()
         }
-        return Matcher(rules, aux)
+
+        return Matcher(rules).to(aux)
     }
 
     @Test
@@ -39,14 +41,16 @@ class TestMatcher {
                 body(
                     constraint("foo")
                 ))
-        ).matcher().run{
-            lookupMatches(occurrence("main")).let { matches ->
-                val match = matches.single()
-                assertFalse(match.isPartial())
-                assertEquals(match.rule, rules.first())
-                assertTrue(match.kept.isEmpty)
-                val (cst, occ) = match.discarded.single()
-                assert(cst.symbol().id() == "main")
+        ).let { builder ->
+            builder.matcher().run {
+                first.lookupMatches(occurrence("main"), second, propHistory).let { matches ->
+                    val match = matches.single()
+                    assertFalse(match.isPartial())
+                    assertEquals(match.rule, builder.rules.first())
+                    assertTrue(match.kept.isEmpty)
+                    val (cst, occ) = match.discarded.single()
+                    assert(cst.symbol().id() == "main")
+                }
             }
         }
     }
@@ -68,14 +72,16 @@ class TestMatcher {
                 body(
                     constraint("bar")
                 ))
-        ).matcher().run{
-            lookupMatches(occurrence("main")).let { matches ->
-                assertFalse(matches.any { m -> m.isPartial() })
-                assertEquals(rules.toSet(), matches.map { m -> m.rule }.toSet())
-                matches.forEach { m -> assertTrue(m.kept.size() + m.discarded.size() == 1) }
-                matches.flatMap { m -> (m.kept + m.discarded).asSequence() }.forEach { pair ->
-                    val (cst, occ) = pair
-                    assert(cst.symbol().id() == "main")
+        ).let { builder ->
+            builder.matcher().run {
+                first.lookupMatches(occurrence("main"), second, propHistory).let { matches ->
+                    assertFalse(matches.any { m -> m.isPartial() })
+                    assertEquals(builder.rules.toSet(), matches.map { m -> m.rule }.toSet())
+                    matches.forEach { m -> assertTrue(m.kept.size() + m.discarded.size() == 1) }
+                    matches.flatMap { m -> (m.kept + m.discarded).asSequence() }.forEach { pair ->
+                        val (cst, occ) = pair
+                        assert(cst.symbol().id() == "main")
+                    }
                 }
             }
         }
@@ -101,10 +107,12 @@ class TestMatcher {
                 body(
                     constraint("bar")
                 ))
-        ).matcher().run{
-            lookupMatches(occurrence("main")).let { matches ->
-                assertFalse(matches.any { m -> m.isPartial() })
-                assertEquals(rules.drop(1).toSet(), matches.map { m -> m.rule }.toSet())
+        ).let { builder ->
+            builder.matcher().run {
+                first.lookupMatches(occurrence("main"), second, propHistory).let { matches ->
+                    assertFalse(matches.any { m -> m.isPartial() })
+                    assertEquals(builder.rules.drop(1).toSet(), matches.map { m -> m.rule }.toSet())
+                }
             }
         }
     }
@@ -129,10 +137,12 @@ class TestMatcher {
                 body(
                     constraint("bar")
                 ))
-        ).matcher(occurrence("aux")).run {
-            lookupMatches(occurrence("main")).let { matches ->
-                assertFalse(matches.any { m -> m.isPartial() })
-                assertEquals(rules.toSet(), matches.map { m -> m.rule }.toSet())
+        ).let { builder ->
+            builder.matcher(occurrence("aux")).run {
+                first.lookupMatches(occurrence("main"), second, propHistory).let { matches ->
+                    assertFalse(matches.any { m -> m.isPartial() })
+                    assertEquals(builder.rules.toSet(), matches.map { m -> m.rule }.toSet())
+                }
             }
         }
     }
@@ -154,10 +164,12 @@ class TestMatcher {
                 body(
                     constraint("bar")
                 ))
-        ).matcher().run{
-            lookupMatches(occurrence("main", "bar")).let { matches ->
-                assertFalse(matches.any { m -> m.isPartial() })
-                assertEquals(rules.drop(1), matches.map { m -> m.rule }.toList())
+        ).let { builder ->
+            builder.matcher().run{
+                first.lookupMatches(occurrence("main", "bar"), second, propHistory).let { matches ->
+                    assertFalse(matches.any { m -> m.isPartial() })
+                    assertEquals(builder.rules.drop(1), matches.map { m -> m.rule }.toList())
+                }
             }
         }
     }
@@ -180,7 +192,7 @@ class TestMatcher {
                     constraint("bar")
                 ))
         ).matcher().run{
-            lookupMatches(occurrence("main", "qux")).let { matches ->
+            first.lookupMatches(occurrence("main", "qux"), second, propHistory).let { matches ->
                 assertFalse(matches.any())
             }
         }
@@ -200,10 +212,12 @@ class TestMatcher {
                     constraint("bar", B)
                 )
             )
-        ).matcher().lookupMatches(occurrence("foo", "blah", b)).first().run {
-            assertEquals("blah", logicalContext().variable(A).findRoot().value())
-            assertSame(b, logicalContext().variable(B))
-            assertEquals(C.logical().metaLogical(), logicalContext().variable(C).metaLogical())
+        ).matcher().run {
+            first.lookupMatches(occurrence("foo", "blah", b), second, propHistory).first().run {
+                assertEquals("blah", logicalContext().variable(A).findRoot().value())
+                assertSame(b, logicalContext().variable(B))
+                assertEquals(C.logical().metaLogical(), logicalContext().variable(C).metaLogical())
+            }
         }
 
     }
@@ -234,42 +248,55 @@ class TestMatcher {
                     constraint("bar")
                 ))
         ).run {
-            matcher().lookupMatches(occurrence("foo", 1)).let { matches ->
-                assertFalse(matches.any())
-            }
-
-            // same parameter -- 4 matches (all permutations)
-            matcher(occurrence("foo", 42)).lookupMatches(occurrence("foo", 42)).let { matches ->
-                assertEquals(4, matches.count())
-                assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
-            }
-
-            matcher(occurrence("foo", 42)).lookupMatches(occurrence("foo", 16)).let { matches ->
-                assertEquals(2, matches.count())
-                assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() }.toList())
-                matches.map { m -> setOf(M, N).map { lp ->
-                    m.logicalContext().variable(lp).findRoot().value() } }.forEach { vals ->
-                    assertEquals(setOf(42, 16), vals.toSet())
+            matcher().run {
+                first.lookupMatches(occurrence("foo", 1), second, propHistory).let { matches ->
+                    assertFalse(matches.any())
                 }
-                assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
             }
+
+                // same parameter -- 4 matches (all permutations)
+             matcher(occurrence("foo", 42)).run {
+                 first.lookupMatches(occurrence("foo", 42), second, propHistory).let { matches ->
+                     assertEquals(4, matches.count())
+                     assertTrue(matches.all { m -> m.occurrences().toSet().size == 2 })
+                 }
+             }
+
+             matcher(occurrence("foo", 42)).run {
+                 first.lookupMatches(occurrence("foo", 16), second, propHistory).let { matches ->
+                     assertEquals(2, matches.count())
+                     assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() }.toList())
+                     matches.map { m ->
+                         setOf(M, N).map { lp ->
+                             m.logicalContext().variable(lp).findRoot().value()
+                         }
+                     }.forEach { vals ->
+                         assertEquals(setOf(42, 16), vals.toSet())
+                     }
+                     assertTrue(matches.all { m -> m.occurrences().toSet().size == 2 })
+                 }
+             }
 
             val (x, y) = logical<Int>("x", "y")
             x.set(123)
             y.set(456)
 
-            matcher(occurrence("foo", x)).lookupMatches(occurrence("foo", y)).let { matches ->
-                assertEquals(2, matches.count())
-                assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() }.toList())
-                assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
+            matcher(occurrence("foo", x)).run {
+                first.lookupMatches(occurrence("foo", y), second, propHistory).let { matches ->
+                    assertEquals(2, matches.count())
+                    assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() }.toList())
+                    assertTrue(matches.all { m -> m.occurrences().toSet().size == 2 })
+                }
             }
 
             val (v, w) = logical<Int>("v", "w")
             w.findRoot().union(v)
 
-            matcher(occurrence("foo", v)).lookupMatches(occurrence("foo", w)).let { matches ->
-                assertEquals(4, matches.count())
-                assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
+            matcher(occurrence("foo", v)).run {
+                first.lookupMatches(occurrence("foo", w), second, propHistory).let { matches ->
+                    assertEquals(4, matches.count())
+                    assertTrue(matches.all{ m -> m.occurrences().toSet().size == 2 })
+                }
             }
         }
     }
@@ -318,7 +345,7 @@ class TestMatcher {
                                                                 body(
                                                                     constraint("bar")
                                                                 ))
-        ).matcher().rules.run {
+        ).matcher().first.rules.run {
             val x = logical<Any>("X")
 
             assertEquals(

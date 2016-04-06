@@ -47,7 +47,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         }
     }
 
-    fun completeMatch(aux: Matcher.AuxOccurrencesLookup) : Sequence<PartialMatch> {
+    fun completeMatch(aux: OccurrenceIndex) : Sequence<PartialMatch> {
         if (!isPartial()) return sequenceOf(this)
 
         return profiler.profile<Sequence<PartialMatch>>("completeMatch", {
@@ -67,7 +67,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
         })
     }
 
-    fun lookupAuxOccurrences(aux: Matcher.AuxOccurrencesLookup, cst: Constraint): Sequence<ConstraintOccurrence> {
+    fun lookupAuxOccurrences(aux: OccurrenceIndex, cst: Constraint): Sequence<ConstraintOccurrence> {
         return profiler.profile<Sequence<ConstraintOccurrence>>("lookupAuxOccurrences", {
 
             val logicals = HashSet<Logical<*>>()
@@ -79,7 +79,7 @@ class PartialMatch(val rule: Rule, val profiler: Profiler? = null) : MatchRule {
                 else
                     values.add(arg!!)
             }
-            aux.lookupAuxOccurrences(cst.symbol(), logicals, values, { occ -> !hasOccurrence(occ) })
+            aux.lookupOccurrences(cst.symbol(), logicals, values, { occ -> !hasOccurrence(occ) })
 
         })
     }

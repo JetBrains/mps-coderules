@@ -14,23 +14,19 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class Handler : Matcher.AuxOccurrencesLookup {
+class Handler {
 
     val sessionSolver: SessionSolver
 
-    val trace: EvaluationTrace
-
-    val profiler: Profiler?
-
-    private val rules = ArrayList<Rule>()
-
     private val occurrenceStore = OccurrenceStore()
 
-    private val activeQueue = LinkedList<ConstraintOccurrence>()
-
-    private val activationStack = LinkedList<PartialMatch>()
+    private val propHistory = PropagationHistory()
 
     private val matcher: Matcher
+
+    private val trace: EvaluationTrace
+
+    private val profiler: Profiler?
 
     constructor(
         sessionSolver: SessionSolver,
@@ -43,8 +39,7 @@ class Handler : Matcher.AuxOccurrencesLookup {
         this.sessionSolver = sessionSolver
         this.trace = trace
         this.profiler = profiler
-        this.rules.addAll(programRules)
-        this.matcher = Matcher(rules, this, profiler)
+        this.matcher = Matcher(programRules, profiler)
         if (occurrences != null) {
             this.occurrenceStore.storeAll(occurrences)
         }
@@ -69,30 +64,7 @@ class Handler : Matcher.AuxOccurrencesLookup {
     }
 
     fun queue(occurrence: ConstraintOccurrence) {
-        activeQueue.add(occurrence)
-        while (activeQueue.isNotEmpty()) {
-            process(activeQueue.poll())
-        }
-    }
-
-    override fun lookupAuxOccurrences(
-        symbol: ConstraintSymbol,
-        logicals: Iterable<Logical<*>>,
-        values: Iterable<Any>,
-        acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
-    {
-        return profiler.profile<Sequence<ConstraintOccurrence>>("findOccurrences", {
-
-            val occs = if (!logicals.any() && !values.any())
-                occurrenceStore.forSymbol(symbol)
-            else
-                (logicals.asSequence().flatMap { log -> occurrenceStore.forLogical(log) } +
-                 values.asSequence().flatMap { value -> occurrenceStore.forValue(value) }).
-                    filter { co -> co.constraint().symbol() == symbol }
-
-            occs.filter { acceptable(it) }
-
-        })
+        process(occurrence)
     }
 
     private fun process(active: ConstraintOccurrence) {
@@ -105,7 +77,7 @@ class Handler : Matcher.AuxOccurrencesLookup {
                 trace.reactivate(active)
             }
 
-            val lookupMatches = matcher.lookupMatches(active)
+            val lookupMatches = matcher.lookupMatches(active, occurrenceStore, propHistory)
             for (match in lookupMatches) {
                 // FIXME: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
@@ -117,9 +89,8 @@ class Handler : Matcher.AuxOccurrencesLookup {
                     continue
                 }
 
-                activationStack.push(match)
                 trace.trigger(match)
-                matcher.recordPropagation(match)
+                propHistory.record(match)
 
                 for ((cst, occ) in match.discarded) {
                     occurrenceStore.discard(occ)
@@ -135,7 +106,6 @@ class Handler : Matcher.AuxOccurrencesLookup {
                 }
 
                 trace.finish(match)
-                activationStack.pop()
             }
 
             // FIXME: should be isAlive()

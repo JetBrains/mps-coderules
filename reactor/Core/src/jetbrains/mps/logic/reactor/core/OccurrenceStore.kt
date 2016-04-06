@@ -25,7 +25,17 @@ interface StoreItem {
     fun terminate(): Unit
 }
 
-class OccurrenceStore : LogicalObserver {
+interface OccurrenceIndex {
+
+    fun lookupOccurrences(
+        symbol: ConstraintSymbol,
+        logicals: Iterable<Logical<*>>,
+        values: Iterable<Any> = emptyList(),
+        acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
+
+}
+
+class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
     val symbol2occurrences = HashMap<ConstraintSymbol, ConsList<ConstraintOccurrence>>()
 
@@ -120,8 +130,25 @@ class OccurrenceStore : LogicalObserver {
         return list.asSequence().filter { co -> co.isStored() }
     }
 
-    fun allOccurrences(): Sequence<ConstraintOccurrence> =
-        symbol2occurrences.values.flatMap { it }.filter { co -> co.isStored() }.asSequence()
+    fun allOccurrences(): Sequence<ConstraintOccurrence> {
+        return symbol2occurrences.values.flatMap { it }.filter { co -> co.isStored() }.asSequence()
+    }
+
+    override fun lookupOccurrences(
+        symbol: ConstraintSymbol,
+        logicals: Iterable<Logical<*>>,
+        values: Iterable<Any>,
+        acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
+    {
+        val occs = if (!logicals.any() && !values.any())
+            forSymbol(symbol)
+        else
+            (logicals.asSequence().flatMap { log -> forLogical(log) } +
+                values.asSequence().flatMap { value -> forValue(value) }).
+                filter { co -> co.constraint().symbol() == symbol }
+
+        return occs.filter { acceptable(it) }
+    }
 
 }
 

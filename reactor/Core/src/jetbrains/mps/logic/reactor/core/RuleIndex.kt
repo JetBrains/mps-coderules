@@ -18,7 +18,7 @@ class RuleIndex : Iterable<Rule> {
 
     private val tag2rule = LinkedHashMap<String, Rule>()
 
-    constructor(rules: Collection<Rule>) {
+    constructor(rules: Iterable<Rule>) {
         for (r in rules) {
             tag2rule[r.tag()] = r
         }
@@ -33,7 +33,7 @@ class RuleIndex : Iterable<Rule> {
 
     override fun iterator(): Iterator<Rule> = tag2rule.values.iterator()
 
-    private fun buildIndex(rules: Collection<Rule>) {
+    private fun buildIndex(rules: Iterable<Rule>) {
         for (r in rules) {
             for (c in r.headKept()) {
                 updateIndex(c, r)
