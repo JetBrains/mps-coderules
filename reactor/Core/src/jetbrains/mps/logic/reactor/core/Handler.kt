@@ -20,7 +20,7 @@ class Handler {
 
     private val occurrenceStore = OccurrenceStore()
 
-    private val propHistory = PropagationHistory()
+    private var propHistory = PropagationHistory()
 
     private val matcher: Matcher
 
@@ -79,7 +79,7 @@ class Handler {
 
             val lookupMatches = matcher.lookupMatches(active, occurrenceStore, propHistory)
             for (match in lookupMatches) {
-                // FIXME: paranoid check. should be isAlive() instead
+                // TODO: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
                 if (match.occurrences().any { co -> !co.isStored() }) continue
 
@@ -90,25 +90,39 @@ class Handler {
                 }
 
                 trace.trigger(match)
-                propHistory.record(match)
-
                 for ((cst, occ) in match.discarded) {
                     occurrenceStore.discard(occ)
                     trace.discard(occ)
                 }
 
+                // propHistory is now functional (persistent)
+                // we must reassign the field on every rule triggering
+                // and store on the stack the last value before rule activation in order to undo in case of failure
+                val savedPropHistory = propHistory
+                this.propHistory = propHistory.record(match)
+
                 for (item in match.rule.body()) {
-                    when (item) {
-                        is Constraint -> process(item.occurrence(this@Handler, match.logicalContext()))
-                        is Predicate -> tellPredicate(item.invocation(match.logicalContext()), trace)
-                        else -> throw IllegalArgumentException("unknown item ${item}")
+                    try {
+                        when (item) {
+                            is Constraint -> process(item.occurrence(this@Handler, match.logicalContext()))
+                            is Predicate -> tellPredicate(item.invocation(match.logicalContext()), trace)
+                            else -> throw IllegalArgumentException("unknown item ${item}")
+                        }
+                    }
+                    catch (ex: Throwable) {
+                        // abrupt termination: restore the state
+                        this.propHistory = savedPropHistory
+                        throw ex
+                    }
+                    finally {
+
                     }
                 }
 
                 trace.finish(match)
             }
 
-            // FIXME: should be isAlive()
+            // TODO: should be isAlive()
             if (active.isStored()) {
                 trace.suspend(active)
             }
