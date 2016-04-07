@@ -1,19 +1,17 @@
 import jetbrains.mps.logic.reactor.core.Handler
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.Queryable
+import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
-import jetbrains.mps.logic.reactor.evaluation.Solver
 import jetbrains.mps.logic.reactor.logical.Logical
-import solver.MemSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
-import org.junit.Assert.*
-import org.junit.Before
-import org.junit.BeforeClass
-import org.junit.Test
-import solver.eq
-import solver.is_eq
+import jetbrains.mps.logic.reactor.program.Program
+import org.junit.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotEquals
+import solver.EqualsSolver
+import solver.MemSessionSolver
 
 /**
  * @author Fedor Isakov
@@ -22,30 +20,54 @@ import solver.is_eq
 
 class TestHandler {
 
-    private fun sessionSolver(exprSolver: Solver, equalsSolver: Solver) : SessionSolver =
-        MemSessionSolver(exprSolver, equalsSolver).apply {
-            init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
-
-    private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Handler =
-        Handler(sessionSolver(env.expressionSolver, env.equalsSolver), rules, occurrences = listOf(* occurrences))
-
-    private fun <T : Any> Handler.eq(left: Logical<T>, right: Logical<T>) {
-        sessionSolver.tell(PredicateSymbol("equals", 2), left, right)
-    }
-
-    private fun <T : Any> Handler.is_eq(left: Logical<T>, right: Logical<T>): Boolean {
-        return sessionSolver.ask(PredicateSymbol("equals", 2), left, right)
-    }
-
-    companion object {
-        @BeforeClass @JvmStatic fun setup() {
-
-        }
-    }
-
     @Before fun beforeTest() {
     }
 
+    @After fun afterTest() {
+        MockSession.deinit()
+    }
+
+    private class MockSession(val solver: SessionSolver) : EvaluationSession() {
+        override fun sessionSolver(): SessionSolver = solver
+        override fun constraintSymbols(): MutableIterable<ConstraintSymbol> = TODO()
+        override fun constraintOccurrences(): MutableIterable<ConstraintOccurrence> = TODO()
+        override fun constraintOccurrences(symbol: ConstraintSymbol?): MutableIterable<ConstraintOccurrence> = TODO()
+
+        class MockBackend(val session: MockSession) : Backend {
+            override fun current(): EvaluationSession = session
+            override fun createConfig(program: Program): Config = TODO()
+        }
+
+        companion object {
+            private lateinit var ourBackend : MockBackend
+
+            fun init(solver: SessionSolver) {
+                ourBackend = MockBackend(MockSession(solver))
+                setBackend(ourBackend)
+            }
+
+            fun deinit() {
+                clearBackend(ourBackend)
+            }
+        }
+    }
+
+    private fun sessionSolver(expressionSolver: ExpressionSolver, equalsSolver: EqualsSolver): SessionSolver =
+        MemSessionSolver(expressionSolver, equalsSolver).apply {
+            init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
+
+    private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Handler {
+        MockSession.init(sessionSolver(env.expressionSolver, env.equalsSolver))
+        return Handler(rules, occurrences = listOf(* occurrences))
+    }
+
+    private fun <T : Any> eq(left: Logical<T>, right: Logical<T>) {
+        EvaluationSession.current().sessionSolver().tell(PredicateSymbol("equals", 2), left, right)
+    }
+
+    private fun <T : Any> is_eq(left: Logical<T>, right: Logical<T>): Boolean {
+        return EvaluationSession.current().sessionSolver().ask(PredicateSymbol("equals", 2), left, right)
+    }
 
     @Test
     fun processSingle() {
@@ -171,10 +193,11 @@ class TestHandler {
                     statement ({ test = y.get() })
                 ))
         ).run {
-            handler().apply { queue(occurrence("main")) }.let { rh ->
+            handler().apply {
+                queue(occurrence("main"))
                 assertEquals(
                     setOf(ConstraintSymbol("main", 0), ConstraintSymbol("next", 0)),
-                    rh.allOccurrences().map { it.constraint().symbol() }.toSet())
+                    allOccurrences().map { it.constraint().symbol() }.toSet())
                 assertEquals("expected", test)
             }
         }
@@ -334,13 +357,12 @@ class TestHandler {
     @Test
     fun occurrenceReactivatedAfterUnion() {
         val (X, Y) = metaLogical<Int>("X", "Y")
-        var handler : Handler? = null
         program(
             rule("first",
                 headKept( constraint("foo") ),
                                                         body( constraint("bar", X),
                                                               constraint("qux", Y),
-                                                              statement({ x, y -> handler!!.eq(x, y) }, X, Y))
+                                                              statement({ x, y -> eq(x, y) }, X, Y))
             ),
             rule("second",
                 headReplaced( constraint("qux", Y) ),
@@ -361,7 +383,6 @@ class TestHandler {
                                                         body( constraint("expected3", X))
             )
         ).handler().run {
-            handler = this
             queue(occurrence("foo"))
             assertEquals(3, allOccurrences().count())
             assertEquals(
@@ -375,12 +396,11 @@ class TestHandler {
     @Test
     fun occurrenceReactivatedAfterUnionUnbound() {
         val (X, Y) = metaLogical<Int>("X", "Y")
-        var handler : Handler? = null
         program(
             rule("first",
                 headKept( constraint("foo") ),
                                                         body( constraint("bar", X),
-                                                              statement({ x, y -> handler!!.eq(x, y) }, X, Y),
+                                                              statement({ x, y -> eq(x, y) }, X, Y),
                                                               constraint("qux", Y))
             ),
             rule("second",
@@ -402,7 +422,6 @@ class TestHandler {
                                                         body( constraint("expected3", X))
             )
         ).handler().run {
-            handler = this
             queue(occurrence("foo"))
             assertEquals(3, allOccurrences().count())
             assertEquals(setOf( ConstraintSymbol("expected1", 0),
@@ -457,7 +476,7 @@ class TestHandler {
                 headReplaced( constraint("main") ),         body(   statement({ c -> c.set(0) }, C),
                                                                     constraint("foo", X, C),
                                                                     constraint("foo", Y, C),
-                                                                    statement({ x, y -> handler!!.eq(x, y) }, X, Y) )
+                                                                    statement({ x, y -> eq(x, y) }, X, Y) )
             ),
             rule("capture_foo",
                 headKept( constraint("foo", X, C) ),
@@ -466,7 +485,7 @@ class TestHandler {
             ),
             rule("capture_foo_foo",
                 headKept( constraint("foo", X, C) ),
-                headReplaced( constraint("foo", Y, C) ),    guard(  expression({x, y ->  handler!!.is_eq(x, y) }, X, Y)),
+                headReplaced( constraint("foo", Y, C) ),    guard(  expression({x, y ->  is_eq(x, y) }, X, Y)),
                                                             body(   constraint("replaced") )
             )
         ).handler().run {
@@ -485,14 +504,13 @@ class TestHandler {
     @Test
     fun propagationHistory() {
         val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
-        var handler : Handler? = null
         program(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x, y -> handler!!.eq(x, y) }, X, Y),  // rank(X) = 1
+                headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
                                                                     constraint("foo", Y),
                                                                     constraint("bar", Z),
                                                                     // update Z's parent
-                                                                    statement({ x, z -> handler!!.eq(x, z) }, X, Z) )
+                                                                    statement({ x, z -> eq(x, z) }, X, Z) )
             ),
             rule("foobar",
                 headKept( constraint("foo", X) ),
@@ -500,7 +518,6 @@ class TestHandler {
                                                             body(   constraint("foobar") )
             )
         ).handler().run {
-            handler = this
             queue(occurrence("main"))
             assertEquals(setOf( ConstraintSymbol("foo", 1),
                                 ConstraintSymbol("bar", 1),
@@ -515,13 +532,12 @@ class TestHandler {
     @Test
     fun reactivateOnUnionKeepValue() {
         val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
-        var handler : Handler? = null
         program(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x, y -> handler!!.eq(x, y) }, X, Y),  // rank(X) = 1
+                headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
                                                                     statement({ z -> z.set(42) }, Z),
                                                                     constraint("foo", Z),
-                                                                    statement({ x, z -> handler!!.eq(x, z) }, X, Z) )
+                                                                    statement({ x, z -> eq(x, z) }, X, Z) )
             ),
             rule("capture_foo_free",
                 headKept( constraint("foo", X) ),           guard(  expression({ x -> x.getNullable() == null }, X) ),
@@ -532,7 +548,6 @@ class TestHandler {
                                                             body(   constraint("assigned") )
             )
         ).handler().run {
-            handler = this
             queue(occurrence("main"))
             assertEquals(setOf( ConstraintSymbol("foo", 1),
                                 ConstraintSymbol("assigned", 0)),

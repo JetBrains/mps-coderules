@@ -1,9 +1,6 @@
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
-import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
-import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -16,8 +13,6 @@ import java.util.*
 
 class Handler {
 
-    val sessionSolver: SessionSolver
-
     private val occurrenceStore = OccurrenceStore()
 
     private var propHistory = PropagationHistory()
@@ -29,14 +24,12 @@ class Handler {
     private val profiler: Profiler?
 
     constructor(
-        sessionSolver: SessionSolver,
         programRules: Iterable<Rule>,
         trace: EvaluationTrace = EvaluationTrace.NULL,
         profiler: Profiler? = null,
         // for testing purposes only
         occurrences: Iterable<ConstraintOccurrence>? = null)
     {
-        this.sessionSolver = sessionSolver
         this.trace = trace
         this.profiler = profiler
         this.matcher = Matcher(programRules, profiler)
@@ -141,7 +134,7 @@ class Handler {
         profiler.profile<Boolean>("ask_${invocation.predicate().symbol()}", {
 
             // TODO: provide SessionSolver as part of evaluation session
-            val result = sessionSolver.ask(invocation)
+            val result = EvaluationSession.current().sessionSolver().ask(invocation)
 //            trace.ask(result, invocation)
             return result
 
@@ -152,7 +145,7 @@ class Handler {
 
             // TODO: provide SessionSolver as part of evaluation session
 //            trace.tell(invocation)
-            sessionSolver.tell(invocation)
+            EvaluationSession.current().sessionSolver().tell(invocation)
 
         })
     }

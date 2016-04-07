@@ -81,7 +81,7 @@ class MemEvaluationSession : EvaluationSession {
     }
 
     fun launch(main: Constraint, profiler: Profiler?) {
-        this.handler = Handler(sessionSolver(), program.rules(), trace, profiler)
+        this.handler = Handler(program.rules(), trace, profiler)
         handler.tell(main)
     }
 
