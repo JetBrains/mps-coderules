@@ -1,20 +1,130 @@
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.evaluation.*
+import com.github.andrewoma.dexx.collection.ConsList
+import com.github.andrewoma.dexx.collection.Sets
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
-import jetbrains.mps.logic.reactor.program.*
+import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.Predicate
+import jetbrains.mps.logic.reactor.program.Rule
 import java.util.*
 
 /**
  * @author Fedor Isakov
  */
 
+class FrameStack : LogicalObserver  {
+
+    lateinit var current: HandlerFrame
+
+    val observing = HashSet<IdWrapper<Logical<*>>>()
+
+    constructor() {
+        this.current = HandlerFrame(this)
+    }
+
+    fun push(): HandlerFrame {
+        val frame = HandlerFrame(this, current)
+        this.current = frame
+        return frame
+    }
+
+    fun reset(frame: HandlerFrame): Unit {
+        this.current = frame
+    }
+
+    fun addObserver(logical: Logical<*>) {
+        val token = IdWrapper(logical)
+        if (!observing.contains(token)) {
+            logical.addObserver(this)
+            observing.add(token)
+        }
+    }
+
+    fun removeObserver(logical: Logical<*>) {
+        // NOP
+        // yes, keep listening, the updates are still filtered down the stream
+    }
+
+    override fun valueUpdated(logical: Logical<*>) {
+        current.valueUpdated(logical)
+    }
+
+    override fun parentUpdated(logical: Logical<*>) {
+        current.parentUpdated(logical)
+    }
+}
+
+
+class HandlerFrame : LogicalObserver, LogicalObserverProxy
+{
+    val prev: HandlerFrame?
+
+    val store: OccurrenceStore
+
+    private var stack: FrameStack
+
+    private lateinit var observerList: ConsList<Pair<Logical<*>, LogicalObserver>>
+
+    constructor(stack: FrameStack, prev: HandlerFrame? = null)
+    {
+        this.stack = stack
+        this.prev = prev
+        this.observerList = prev?.observerList ?: ConsList.empty()
+        this.store = OccurrenceStore(prev?.store ?: OccurrenceStore(this), this)
+    }
+
+    override fun addObserver(logical: Logical<*>, obs: LogicalObserver) {
+        if (!observerList.any { obs -> obs.first === logical }) {               // referential equality!
+            stack.addObserver(logical)
+        }
+        this.observerList = observerList.prepend(logical.to(obs))
+    }
+
+    override fun removeObserver(logical: Logical<*>, obs: LogicalObserver) {
+        this.observerList = observerList.remove(logical.to(obs))!!
+        if (!observerList.any { obs -> obs.first === logical }) {               // referential equality!
+            stack.removeObserver(logical)
+        }
+    }
+
+    override fun valueUpdated(logical: Logical<*>) {
+        for (obs in observerList) {
+            if (obs.first === logical) {                                        // referential equality!
+                obs.second.valueUpdated(logical)
+            }
+        }
+    }
+
+    override fun parentUpdated(logical: Logical<*>) {
+        for (obs in observerList) {
+            if (obs.first === logical) {                                        // referential equality!
+                obs.second.parentUpdated(logical)
+            }
+        }
+    }
+
+}
+
+
 class Handler {
 
-    private val occurrenceStore = OccurrenceStore()
+    companion object {
+        lateinit var current: Handler
+            private set
+    }
 
+//    private val occurrenceStore = OccurrenceStore()
+
+    private val frameStack = FrameStack()
+
+    // persistent (functional) object. reassigned on update
     private var propHistory = PropagationHistory()
 
     private val matcher: Matcher
@@ -34,22 +144,23 @@ class Handler {
         this.profiler = profiler
         this.matcher = Matcher(programRules, profiler)
         if (occurrences != null) {
-            this.occurrenceStore.storeAll(occurrences)
+            frameStack.current.store.storeAll(occurrences)
         }
+        current = this
     }
 
     fun allOccurrences(): Set<ConstraintOccurrence> =
-        occurrenceStore.allOccurrences().toSet()
+        frameStack.current.store.allOccurrences().toSet()
 
     fun constraintSymbols(): Set<ConstraintSymbol> =
-        occurrenceStore.allOccurrences().map { co -> co.constraint().symbol() }.toSet()
+        frameStack.current.store.allOccurrences().map { co -> co.constraint().symbol() }.toSet()
 
     fun occurrences(symbol: ConstraintSymbol): Set<ConstraintOccurrence> =
-        occurrenceStore.allOccurrences().filter { co -> co.constraint().symbol() == symbol }.toSet()
+        frameStack.current.store.allOccurrences().filter { co -> co.constraint().symbol() == symbol }.toSet()
 
     fun tell(constraint: Constraint) {
         try {
-            queue(constraint.occurrence(this, noLogicalContext))
+            queue(constraint.occurrence(frameStack.current, noLogicalContext))
         }
         catch (t: Throwable) {
             throw t
@@ -63,14 +174,15 @@ class Handler {
     private fun process(active: ConstraintOccurrence) {
         profiler.profile("process_${active.constraint().symbol()}", {
 
+            val occStore = frameStack.current.store
             if (!active.isStored()) {
-                occurrenceStore.store(active)
+                occStore.store(active)
                 trace.activate(active)
             } else {
                 trace.reactivate(active)
             }
 
-            val lookupMatches = matcher.lookupMatches(active, occurrenceStore, propHistory)
+            val lookupMatches = matcher.lookupMatches(active, occStore, propHistory)
             for (match in lookupMatches) {
                 // TODO: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
@@ -84,7 +196,7 @@ class Handler {
 
                 trace.trigger(match)
                 for ((cst, occ) in match.discarded) {
-                    occurrenceStore.discard(occ)
+                    occStore.discard(occ)
                     trace.discard(occ)
                 }
 
@@ -94,10 +206,13 @@ class Handler {
                 val savedPropHistory = propHistory
                 this.propHistory = propHistory.record(match)
 
+                val savedFrame = frameStack.current
+                frameStack.push()
+
                 for (item in match.rule.body()) {
                     try {
                         when (item) {
-                            is Constraint -> process(item.occurrence(this@Handler, match.logicalContext()))
+                            is Constraint -> process(item.occurrence(frameStack.current, match.logicalContext()))
                             is Predicate -> tellPredicate(item.invocation(match.logicalContext()), trace)
                             else -> throw IllegalArgumentException("unknown item ${item}")
                         }
@@ -105,6 +220,9 @@ class Handler {
                     catch (ex: Throwable) {
                         // abrupt termination: restore the state
                         this.propHistory = savedPropHistory
+
+                        frameStack.reset(savedFrame)
+
                         throw ex
                     }
                     finally {

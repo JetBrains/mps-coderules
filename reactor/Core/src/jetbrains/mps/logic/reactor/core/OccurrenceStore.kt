@@ -1,7 +1,10 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.ConsList
+import com.github.andrewoma.dexx.collection.Maps
+import com.github.andrewoma.dexx.collection.Map as PersMap
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -12,8 +15,8 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-fun Constraint.occurrence(handler: Handler, context: LogicalContext): ConstraintOccurrence =
-    MemConstraintOccurrence(handler, this, occurrenceArguments(context))
+fun Constraint.occurrence(proxy: LogicalObserverProxy, context: LogicalContext): ConstraintOccurrence =
+    MemConstraintOccurrence(proxy, this, occurrenceArguments(context))
 
 fun ConstraintOccurrence.isStored(): Boolean =
     // TODO: superfluous cast
@@ -37,11 +40,28 @@ interface OccurrenceIndex {
 
 class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
-    val symbol2occurrences = HashMap<ConstraintSymbol, ConsList<ConstraintOccurrence>>()
+    val proxy: LogicalObserverProxy
 
-    val logical2occurrences = HashMap<Logical<*>, ConsList<ConstraintOccurrence>>()
+    lateinit var symbol2occurrences: PersMap<ConstraintSymbol, ConsList<ConstraintOccurrence>>
 
-    val value2occurrences = HashMap<Any, ConsList<ConstraintOccurrence>>()
+    lateinit var logical2occurrences: PersMap<Logical<*>, ConsList<ConstraintOccurrence>>
+
+    lateinit var value2occurrences: PersMap<Any, ConsList<ConstraintOccurrence>>
+
+    constructor(copyFrom: OccurrenceStore, proxy: LogicalObserverProxy)
+    {
+        this.proxy = proxy
+        this.symbol2occurrences = copyFrom.symbol2occurrences
+        this.logical2occurrences = copyFrom.logical2occurrences
+        this.value2occurrences = copyFrom.value2occurrences
+    }
+
+    constructor(proxy: LogicalObserverProxy) {
+        this.proxy = proxy
+        this.symbol2occurrences = Maps.of()
+        this.logical2occurrences = Maps.of()
+        this.value2occurrences = Maps.of()
+    }
 
     override fun valueUpdated(logical: Logical<*>) { /* ignore */ }
 
@@ -52,9 +72,10 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
             for (log in toMerge) {
                 newList = newList.prepend(log)
             }
-            logical2occurrences[logical.findRoot()] = newList
+            this.logical2occurrences = logical2occurrences.put(logical.findRoot(), newList)
         }
-        logical2occurrences.remove(logical)
+
+        this.logical2occurrences = logical2occurrences.remove(logical)
     }
 
     fun storeAll(all: Iterable<ConstraintOccurrence>): Unit {
@@ -66,19 +87,21 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
     fun store(occ: ConstraintOccurrence): Unit {
         val symbol = occ.constraint().symbol()
 
-        symbol2occurrences[symbol] =
-            symbol2occurrences[symbol]?.prepend(occ) ?: cons(occ)
+        this.symbol2occurrences = symbol2occurrences.put(symbol,
+            symbol2occurrences[symbol]?.prepend(occ) ?: cons(occ))
 
         for (arg in occ.arguments()) {
             when (arg) {
                 is Logical<*>               -> {
-                    logical2occurrences[arg.findRoot()] =
-                        logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ)
-                    arg.addObserver(this)
+                    this.logical2occurrences = logical2occurrences.put(arg.findRoot(),
+                        logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ))
+
+                    proxy.addObserver(arg, this)
+
                 }
                 else                        -> {
-                    value2occurrences[arg!!] =
-                        value2occurrences[arg]?.prepend(occ) ?: cons(occ)
+                    this.value2occurrences = value2occurrences.put(arg!!,
+                        value2occurrences[arg]?.prepend(occ) ?: cons(occ))
                 }
             }
         }
@@ -91,20 +114,20 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         val symbol = occ.constraint().symbol()
 
         symbol2occurrences[symbol].remove(occ)?.let { newList ->
-            symbol2occurrences[symbol] = newList
+            this.symbol2occurrences = symbol2occurrences.put(symbol, newList)
         }
 
         for (arg in occ.arguments()) {
             when (arg) {
                 is Logical<*>               -> {
                     logical2occurrences[arg.findRoot()].remove(occ)?. let { newList ->
-                        logical2occurrences[arg.findRoot()] = newList
+                        this.logical2occurrences = logical2occurrences.put(arg.findRoot(), newList)
                     }
                     // TODO: remove observer?
                 }
                 else                        -> {
                     value2occurrences[arg!!].remove(occ)?. let { newList ->
-                        value2occurrences[arg] = newList
+                        this.value2occurrences = value2occurrences.put(arg, newList)
                     }
                 }
             }
@@ -113,6 +136,10 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         // TODO: superfluous cast
         (occ as StoreItem).stored = false
         occ.terminate()
+    }
+
+    fun allOccurrences(): Sequence<ConstraintOccurrence> {
+        return symbol2occurrences.values().flatMap { it }.filter { co -> co.isStored() }.asSequence()
     }
 
     fun forSymbol(symbol: ConstraintSymbol): Sequence<ConstraintOccurrence> {
@@ -128,10 +155,6 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
     fun forValue(value: Any): Sequence<ConstraintOccurrence> {
         val list = value2occurrences[value] ?: emptyConsList()
         return list.asSequence().filter { co -> co.isStored() }
-    }
-
-    fun allOccurrences(): Sequence<ConstraintOccurrence> {
-        return symbol2occurrences.values.flatMap { it }.filter { co -> co.isStored() }.asSequence()
     }
 
     override fun lookupOccurrences(
@@ -152,7 +175,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
 }
 
-private data class MemConstraintOccurrence(val handler: Handler, val constraint: Constraint, val arguments: List<*>) :
+private data class MemConstraintOccurrence(val proxy: LogicalObserverProxy, val constraint: Constraint, val arguments: List<*>) :
     ConstraintOccurrence,
     LogicalObserver,
     StoreItem
@@ -162,12 +185,12 @@ private data class MemConstraintOccurrence(val handler: Handler, val constraint:
 
     override var stored = false
 
-    constructor(handler: Handler, constraint: Constraint, arguments: Collection<*>) :
-    this(handler, constraint, ArrayList(arguments))
+    constructor(proxy: LogicalObserverProxy, constraint: Constraint, arguments: Collection<*>) :
+        this(proxy, constraint, ArrayList(arguments))
     {
         for (a in arguments) {
             if (a is Logical<*>) {
-                a.addObserver(this)
+                proxy.addObserver(a, this)
             }
         }
     }
@@ -177,17 +200,17 @@ private data class MemConstraintOccurrence(val handler: Handler, val constraint:
     override fun arguments(): List<*> = arguments
 
     override fun valueUpdated(logical: Logical<*>) {
-        handler.queue(this)
+        Handler.current.queue(this)
     }
 
     override fun parentUpdated(logical: Logical<*>) {
-        handler.queue(this)
+        Handler.current.queue(this)
     }
 
     override fun terminate() {
         for (a in arguments) {
             if (a is Logical<*>) {
-                a.removeObserver(this)
+                proxy.removeObserver(a, this)
             }
         }
         alive = false

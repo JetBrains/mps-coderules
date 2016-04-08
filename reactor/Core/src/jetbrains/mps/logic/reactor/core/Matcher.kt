@@ -1,12 +1,9 @@
 package jetbrains.mps.logic.reactor.core
 
-import com.github.andrewoma.dexx.collection.ConsList
-import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
@@ -48,22 +45,6 @@ class Matcher {
             fullMatches.filter { pm -> !propHistory.isRecorded(pm) && pm.matches() }
         })
     }
-
-}
-
-class IdWrapper<T>(val wrapped: T) {
-
-    val idHash = System.identityHashCode(wrapped)
-
-    override fun hashCode(): Int = idHash
-
-    override fun equals(other: Any?): Boolean {
-        if (other is IdWrapper<*>)
-            return this.wrapped === other.wrapped // referential equality!
-        return false
-    }
-
-    override fun toString(): String = "${wrapped.toString()} #$idHash"
 
 }
 
