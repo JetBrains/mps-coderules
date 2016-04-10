@@ -15,8 +15,8 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-fun Constraint.occurrence(proxy: LogicalObserverProxy, context: LogicalContext): ConstraintOccurrence =
-    MemConstraintOccurrence(proxy, this, occurrenceArguments(context))
+fun Constraint.occurrence(frameStack: FrameStack, context: LogicalContext): ConstraintOccurrence =
+    MemConstraintOccurrence(frameStack, this, occurrenceArguments(context))
 
 fun ConstraintOccurrence.isStored(): Boolean =
     // TODO: superfluous cast
@@ -175,7 +175,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
 }
 
-private data class MemConstraintOccurrence(val proxy: LogicalObserverProxy, val constraint: Constraint, val arguments: List<*>) :
+private data class MemConstraintOccurrence(val frameStack: FrameStack, val constraint: Constraint, val arguments: List<*>) :
     ConstraintOccurrence,
     LogicalObserver,
     StoreItem
@@ -185,12 +185,12 @@ private data class MemConstraintOccurrence(val proxy: LogicalObserverProxy, val 
 
     override var stored = false
 
-    constructor(proxy: LogicalObserverProxy, constraint: Constraint, arguments: Collection<*>) :
-        this(proxy, constraint, ArrayList(arguments))
+    constructor(frameStack: FrameStack, constraint: Constraint, arguments: Collection<*>) :
+        this(frameStack, constraint, ArrayList(arguments))
     {
         for (a in arguments) {
             if (a is Logical<*>) {
-                proxy.addObserver(a, this)
+                frameStack.current.addObserver(a, this)
             }
         }
     }
@@ -210,7 +210,7 @@ private data class MemConstraintOccurrence(val proxy: LogicalObserverProxy, val 
     override fun terminate() {
         for (a in arguments) {
             if (a is Logical<*>) {
-                proxy.removeObserver(a, this)
+                frameStack.current.removeObserver(a, this)
             }
         }
         alive = false

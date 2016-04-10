@@ -1,5 +1,6 @@
 import jetbrains.mps.logic.reactor.core.Handler
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -8,8 +9,7 @@ import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Program
 import org.junit.*
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotEquals
+import org.junit.Assert.*
 import solver.EqualsSolver
 import solver.MemSessionSolver
 
@@ -529,6 +529,43 @@ class TestHandler {
         }
     }
 
+
+    @Test
+    fun removeObserver() {
+        val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
+        program(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
+                                                                    statement({ x -> x.set(42) }, X),
+                                                                    constraint("match", Z, X),
+                                                                    constraint("trigger", Z)                )
+            ),
+            rule("trigger",
+                headReplaced( constraint("trigger", X) ),
+                                                            body(   constraint("foobar", X) )
+            ),
+            rule("nofoobar",
+                headReplaced( constraint("foobar", X),
+                              constraint("match", X, Y) ),
+                                                            body(   constraint("expected"),
+                                                                    constraint("blah"),
+                                                                    statement({ x, z -> eq(x, z) }, X, Y) )
+            ),
+            rule("blah",
+                headReplaced( constraint("blah") ),
+                headReplaced( constraint("foobar", X) ),
+                                                            body(   constraint("unexpected") )
+            )
+        ).handler().run {
+            queue(occurrence("main"))
+            assertEquals(setOf( ConstraintSymbol("blah", 0),
+                                ConstraintSymbol("expected", 0)),
+                         constraintSymbols())
+            assertEquals(1, occurrences(ConstraintSymbol("blah", 0)).count())
+            assertEquals(1, occurrences(ConstraintSymbol("expected", 0)).count())
+        }
+    }
+
     @Test
     fun reactivateOnUnionKeepValue() {
         val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
@@ -557,6 +594,76 @@ class TestHandler {
         }
     }
 
+    @Test
+    fun firstAlternative() {
+        val (X, Y) = metaLogical<Int>("X", "Y")
+
+        program(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
+                                                                    statement({ y -> y.set(7) }, Y),
+                                                                    constraint("aux", X, Y) )
+            ),
+            rule("aux",
+                headReplaced( constraint("aux", X, Y) ),    body(       equals(X, Y),
+                                                                        constraint("expected") ),
+                                                            altBody(    constraint("unexpected") )
+            )
+        ).handler().run {
+            queue(occurrence("main"))
+            assertEquals(setOf(ConstraintSymbol("expected", 0)), constraintSymbols())
+            assertEquals(1, occurrences(ConstraintSymbol.symbol("expected", 0)).count())
+        }
+    }
+
+    @Test
+    fun secondAlternative() {
+        val (X, Y) = metaLogical<Int>("X", "Y")
+
+        program(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
+                                                                    statement({ y -> y.set(13) }, Y),
+                                                                    constraint("aux", X, Y) )
+            ),
+            rule("aux",
+                headReplaced( constraint("aux", X, Y) ),    body(       equals(X, Y),
+                                                                        constraint("unexpected") ),
+                                                            altBody(    constraint("expected") )
+            )
+        ).handler().run {
+            queue(occurrence("main"))
+            assertEquals(setOf(ConstraintSymbol("expected", 0)), constraintSymbols())
+            assertEquals(1, occurrences(ConstraintSymbol.symbol("expected", 0)).count())
+        }
+    }
+
+    @Test(expected = EvaluationFailureException::class)
+    fun lastAlternativeFail() {
+        val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
+
+        program(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
+                                                                    statement({ y -> y.set(13) }, Y),
+                                                                    statement({ z -> z.set(17) }, Z),
+                                                                    constraint("aux", X, Y, Z) )
+            ),
+            rule("aux",
+                headReplaced( constraint("aux", X, Y, Z) ), body(       equals(X, Y),
+                                                                        constraint("unexpected1") ),
+                                                            altBody(    equals(X, Z),
+                                                                        constraint("unexpected2") )
+            )
+        ).handler().run {
+            try {
+                queue(occurrence("main"))
+            }
+            finally {
+                assertEquals(emptySet<ConstraintSymbol>(), constraintSymbols())
+            }
+        }
+    }
 
 
 }

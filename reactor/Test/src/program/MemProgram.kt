@@ -30,7 +30,7 @@ open class RuleBuilder(val tag: String) {
     val kept = ArrayList<Constraint>()
     val replaced = ArrayList<Constraint>()
     val guard = ArrayList<Predicate>()
-    val body = ArrayList<AndItem>()
+    val body = ArrayList<ArrayList<AndItem>>()
 
     fun appendHeadKept(vararg cst: Constraint) {
         kept.addAll(cst)
@@ -41,8 +41,9 @@ open class RuleBuilder(val tag: String) {
     fun appendGuard(vararg prd: Predicate) {
         guard.addAll(prd)
     }
-    fun appendBody(vararg andItem: AndItem) {
-        body.addAll(andItem)
+    fun appendBody(alt: Boolean, vararg andItem: AndItem) {
+        if (alt || body.isEmpty()) body.add(ArrayList<AndItem>())
+        body.last().addAll(andItem)
     }
     fun toRule(): Rule = MemRule(tag, kept, replaced, guard, body)
 }
@@ -52,7 +53,7 @@ class MemRule(
     val kept: Collection<Constraint>,
     val replaced: Collection<Constraint>,
     val guard: Collection<Predicate>,
-    val body: Collection<AndItem>) : Rule() {
+    val body: Collection<Collection<AndItem>>) : Rule() {
 
     override fun kind(): Kind = TODO()
 
@@ -64,11 +65,13 @@ class MemRule(
 
     override fun guard(): Iterable<Predicate> = guard
 
-    override fun body(): Iterable<AndItem> = body
+    override fun body(): Iterable<AndItem> = body.first()
+
+    override fun bodyAlternation(): Iterable<Iterable<AndItem>> = body
 
     override fun all(): Iterable<AndItem> =
         if (body.isEmpty()) throw InvalidRuleException("no body")
-        else (kept + replaced).map { it as AndItem } + guard + body
+        else (kept + replaced).map { it as AndItem } + guard + body.flatten()
 }
 
 class MemProgram(val name: String, val myRules : List<Rule>, val registry: ConstraintRegistry) : Program() {

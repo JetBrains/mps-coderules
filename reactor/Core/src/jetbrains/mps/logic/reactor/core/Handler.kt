@@ -2,10 +2,7 @@ package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.Sets
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
-import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -160,7 +157,7 @@ class Handler {
 
     fun tell(constraint: Constraint) {
         try {
-            queue(constraint.occurrence(frameStack.current, noLogicalContext))
+            queue(constraint.occurrence(frameStack, noLogicalContext))
         }
         catch (t: Throwable) {
             throw t
@@ -174,15 +171,14 @@ class Handler {
     private fun process(active: ConstraintOccurrence) {
         profiler.profile("process_${active.constraint().symbol()}", {
 
-            val occStore = frameStack.current.store
             if (!active.isStored()) {
-                occStore.store(active)
+                frameStack.current.store.store(active)
                 trace.activate(active)
             } else {
                 trace.reactivate(active)
             }
 
-            val lookupMatches = matcher.lookupMatches(active, occStore, propHistory)
+            val lookupMatches = matcher.lookupMatches(active, frameStack.current.store, propHistory)
             for (match in lookupMatches) {
                 // TODO: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
@@ -195,39 +191,55 @@ class Handler {
                 }
 
                 trace.trigger(match)
+
                 for ((cst, occ) in match.discarded) {
-                    occStore.discard(occ)
+                    frameStack.current.store.discard(occ)
                     trace.discard(occ)
                 }
 
-                // propHistory is now functional (persistent)
-                // we must reassign the field on every rule triggering
-                // and store on the stack the last value before rule activation in order to undo in case of failure
-                val savedPropHistory = propHistory
-                this.propHistory = propHistory.record(match)
+                var failure: EvaluationFailureException? = null
 
-                val savedFrame = frameStack.current
-                frameStack.push()
+                for (body in match.rule.bodyAlternation()) {
+                    if (failure != null) {
+                        trace.retry(match)
+                        failure = null
+                    }
 
-                for (item in match.rule.body()) {
+                    // propHistory is now functional (persistent)
+                    // we must reassign the field on every rule triggering
+                    // and store on the stack the last value before rule activation in order to undo in case of failure
+                    val savedPropHistory = propHistory
+                    this.propHistory = propHistory.record(match)
+
+                    val savedFrame = frameStack.current
+                    frameStack.push()
+
                     try {
-                        when (item) {
-                            is Constraint -> process(item.occurrence(frameStack.current, match.logicalContext()))
-                            is Predicate -> tellPredicate(item.invocation(match.logicalContext()), trace)
-                            else -> throw IllegalArgumentException("unknown item ${item}")
+                        for (item in body) {
+                            when (item) {
+                                is Constraint -> process(item.occurrence(frameStack, match.logicalContext()))
+                                is Predicate -> tellPredicate(item.invocation(match.logicalContext()), trace)
+                                else -> throw IllegalArgumentException("unknown item ${item}")
+                            }
                         }
                     }
-                    catch (ex: Throwable) {
+                    catch (ex: EvaluationFailureException) {
+                        failure = ex
+
                         // abrupt termination: restore the state
                         this.propHistory = savedPropHistory
 
                         frameStack.reset(savedFrame)
-
-                        throw ex
                     }
-                    finally {
 
+                    if (failure == null) {
+                        // normal termination: skip the other alternatives
+                        break
                     }
+                }
+
+                if (failure != null) {
+                    throw failure
                 }
 
                 trace.finish(match)

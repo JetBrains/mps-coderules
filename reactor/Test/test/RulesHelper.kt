@@ -63,7 +63,11 @@ fun guard(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
 }
 
 fun body(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendBody( * buildConjunction(AndItem::class.java, env, content).toArray())
+    appendBody(false, * buildConjunction(AndItem::class.java, env, content).toArray())
+}
+
+fun altBody(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
+    appendBody(true, * buildConjunction(AndItem::class.java, env, content).toArray())
 }
 
 fun constraint(id: String, vararg args: Any): ConjBuilder.() -> Unit = {

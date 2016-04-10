@@ -1,9 +1,6 @@
 package solver
 
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
-import jetbrains.mps.logic.reactor.evaluation.Queryable
-import jetbrains.mps.logic.reactor.evaluation.Solver
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -100,7 +97,7 @@ class EqualsSolver  : Solver {
     }
 
     private fun check(condition: Boolean) {
-        if (!condition) throw IllegalStateException()
+        if (!condition) throw EvaluationFailureException("condition is not satisfied")
     }
 
     private fun ERROR(msg: String) : Nothing = throw IllegalArgumentException(msg)
