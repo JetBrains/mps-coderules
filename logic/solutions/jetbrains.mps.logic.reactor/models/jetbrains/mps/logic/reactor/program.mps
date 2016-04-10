@@ -144,6 +144,9 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -516,8 +519,29 @@
       </node>
       <node concept="3Tm1VV" id="7eGEHDlc$9Y" role="1B3o_S" />
       <node concept="3clFbS" id="7eGEHDlc$9Z" role="3clF47" />
+      <node concept="2AHcQZ" id="TYqmVPFYGv" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
-    <node concept="2tJIrI" id="7eGEHDldrJd" role="jymVt" />
+    <node concept="2tJIrI" id="TYqmVPFWXY" role="jymVt" />
+    <node concept="3clFb_" id="TYqmVPFWVP" role="jymVt">
+      <property role="TrG5h" value="bodyAlternation" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="3uibUv" id="TYqmVPFWVQ" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+        <node concept="3qUE_q" id="2_NfR5wkJA_" role="11_B2D">
+          <node concept="3uibUv" id="TYqmVPFYK7" role="3qUE_r">
+            <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+            <node concept="3uibUv" id="TYqmVPFYL1" role="11_B2D">
+              <ref role="3uigEE" node="5uFPQ7B$Pn9" resolve="AndItem" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="TYqmVPFWVS" role="1B3o_S" />
+      <node concept="3clFbS" id="TYqmVPFWVT" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="TYqmVPFWUX" role="jymVt" />
     <node concept="3clFb_" id="7eGEHDldrDm" role="jymVt">
       <property role="TrG5h" value="all" />
       <property role="1EzhhJ" value="true" />

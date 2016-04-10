@@ -152,6 +152,7 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
@@ -1246,6 +1247,41 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="7eGEHDldApc" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="TYqmVPFZAf" role="jymVt" />
+      <node concept="3clFb_" id="TYqmVPG0r5" role="jymVt">
+        <property role="TrG5h" value="bodyAlternation" />
+        <property role="1EzhhJ" value="false" />
+        <node concept="3uibUv" id="TYqmVPG0r6" role="3clF45">
+          <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+          <node concept="3uibUv" id="TYqmVPG0r7" role="11_B2D">
+            <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+            <node concept="3uibUv" id="TYqmVPG0r8" role="11_B2D">
+              <ref role="3uigEE" to="rchb:5uFPQ7B$Pn9" resolve="AndItem" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="TYqmVPG0r9" role="1B3o_S" />
+        <node concept="3clFbS" id="TYqmVPG0rc" role="3clF47">
+          <node concept="3clFbF" id="TYqmVPG1WQ" role="3cqZAp">
+            <node concept="2YIFZM" id="TYqmVPG1Zs" role="3clFbG">
+              <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+              <node concept="37vLTw" id="TYqmVPG239" role="37wK5m">
+                <ref role="3cqZAo" node="7eGEHDlc$eX" resolve="body" />
+              </node>
+              <node concept="3uibUv" id="TYqmVPG2ho" role="3PaCim">
+                <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+                <node concept="3uibUv" id="TYqmVPG2hp" role="11_B2D">
+                  <ref role="3uigEE" to="rchb:5uFPQ7B$Pn9" resolve="AndItem" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="TYqmVPG0OZ" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
