@@ -19,12 +19,17 @@ public interface EvaluationTrace {
 
   public void trigger(MatchRule matchRule);
 
+  public void retry(MatchRule matchRule);
+
   public void finish(MatchRule matchRule);
 
   public void tell(PredicateInvocation invocation);
 
   public void ask(boolean result, PredicateInvocation invocation);
 
+  public void failure(EvaluationFailureException fail);
+
+  @Deprecated
   public void reportFailure(String message);
 
   public static final EvaluationTrace NULL = new EvaluationTrace() {
@@ -43,11 +48,15 @@ public interface EvaluationTrace {
     }
     public void trigger(MatchRule matchRule) {
     }
+    public void retry(MatchRule matchRule) {
+    }
     public void finish(MatchRule matchRule) {
     }
     public void tell(PredicateInvocation invocation) {
     }
     public void ask(boolean result, PredicateInvocation invocation) {
+    }
+    public void failure(EvaluationFailureException fail) {
     }
     public void reportFailure(String message) {
     }

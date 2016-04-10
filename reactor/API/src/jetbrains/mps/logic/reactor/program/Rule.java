@@ -15,7 +15,10 @@ public abstract class Rule {
 
   public abstract Iterable<Predicate> guard();
 
+  @Deprecated
   public abstract Iterable<AndItem> body();
+
+  public abstract Iterable<? extends Iterable<AndItem>> bodyAlternation();
 
   public abstract Iterable<AndItem> all();
 
