@@ -16,6 +16,7 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
@@ -206,6 +207,7 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -266,6 +268,7 @@
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
       </concept>
+      <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
@@ -726,9 +729,31 @@
     <property role="3GE5qa" value="rule.component" />
     <ref role="1XX52x" to="wq2x:6p0DfM0a3TO" resolve="Body" />
     <node concept="3EZMnI" id="6p0DfM0cTe0" role="2wV5jI">
-      <node concept="3F0ifn" id="6p0DfM0cTeX" role="3EZMnx">
-        <property role="3F0ifm" value="produce" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      <node concept="1QoScp" id="2_NfR5wjBnC" role="3EZMnx">
+        <property role="1QpmdY" value="true" />
+        <node concept="pkWqt" id="2_NfR5wjBnF" role="3e4ffs">
+          <node concept="3clFbS" id="2_NfR5wjBnH" role="2VODD2">
+            <node concept="3clFbF" id="2_NfR5wjBv2" role="3cqZAp">
+              <node concept="3clFbC" id="2_NfR5wjC5c" role="3clFbG">
+                <node concept="3cmrfG" id="2_NfR5wjC7t" role="3uHU7w">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="2OqwBi" id="2_NfR5wjBy5" role="3uHU7B">
+                  <node concept="pncrf" id="2_NfR5wjBv1" role="2Oq$k0" />
+                  <node concept="2bSWHS" id="2_NfR5wjBGv" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="2_NfR5wjCdH" role="1QoVPY">
+          <property role="3F0ifm" value="alt produce" />
+          <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
+        </node>
+        <node concept="3F0ifn" id="6p0DfM0cTeX" role="1QoS34">
+          <property role="3F0ifm" value="produce" />
+          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        </node>
       </node>
       <node concept="3EZMnI" id="75vUFrSLnH1" role="3EZMnx">
         <node concept="VPM3Z" id="75vUFrSLnH2" role="3F10Kt">

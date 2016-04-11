@@ -30,6 +30,7 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
+      <concept id="1153422305557" name="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" flags="nn" index="2dkUwp" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
@@ -1208,6 +1209,87 @@
     <node concept="1YaCAy" id="7feMCq_1rIC" role="1YuTPh">
       <property role="TrG5h" value="ruleCodeBlock" />
       <ref role="1YaFvo" to="wq2x:tIwzd1_CMa" resolve="RuleCodeBlock" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="2_NfR5wjCgJ">
+    <property role="TrG5h" value="check_Fragment" />
+    <property role="3GE5qa" value="rule" />
+    <node concept="3clFbS" id="2_NfR5wjCgK" role="18ibNy">
+      <node concept="2Mj0R9" id="2_NfR5wjCgQ" role="3cqZAp">
+        <node concept="2dkUwp" id="2_NfR5wjG0v" role="2MkoU_">
+          <node concept="3cmrfG" id="2_NfR5wjG2w" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
+          </node>
+          <node concept="2OqwBi" id="2_NfR5wjD5u" role="3uHU7B">
+            <node concept="2OqwBi" id="2_NfR5wjCkx" role="2Oq$k0">
+              <node concept="1YBJjd" id="2_NfR5wjCha" role="2Oq$k0">
+                <ref role="1YBMHb" node="2_NfR5wjCgM" resolve="fragment" />
+              </node>
+              <node concept="3Tsc0h" id="2_NfR5wjCrh" role="2OqNvi">
+                <ref role="3TtcxE" to="wq2x:1ffsG7bIxDv" />
+              </node>
+            </node>
+            <node concept="34oBXx" id="2_NfR5wjEXY" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="Xl_RD" id="2_NfR5wjG4R" role="2MkJ7o">
+          <property role="Xl_RC" value="alternation is not supported for fragment" />
+        </node>
+        <node concept="1YBJjd" id="2_NfR5wjG9K" role="2OEOjV">
+          <ref role="1YBMHb" node="2_NfR5wjCgM" resolve="fragment" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="2_NfR5wjCgM" role="1YuTPh">
+      <property role="TrG5h" value="fragment" />
+      <ref role="1YaFvo" to="wq2x:6wQEDbCHt15" resolve="Fragment" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="2_NfR5wnk6G">
+    <property role="TrG5h" value="check_Rule" />
+    <property role="3GE5qa" value="rule" />
+    <node concept="3clFbS" id="2_NfR5wnk6H" role="18ibNy">
+      <node concept="2Mj0R9" id="2_NfR5wnk$d" role="3cqZAp">
+        <node concept="22lmx$" id="2_NfR5wnp$G" role="2MkoU_">
+          <node concept="2dkUwp" id="2_NfR5wnk$e" role="3uHU7w">
+            <node concept="3cmrfG" id="2_NfR5wnk$f" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="2_NfR5wnk$g" role="3uHU7B">
+              <node concept="2OqwBi" id="2_NfR5wnk$h" role="2Oq$k0">
+                <node concept="1YBJjd" id="2_NfR5wnkCZ" role="2Oq$k0">
+                  <ref role="1YBMHb" node="2_NfR5wnk6J" resolve="rule" />
+                </node>
+                <node concept="3Tsc0h" id="2_NfR5wnk$j" role="2OqNvi">
+                  <ref role="3TtcxE" to="wq2x:1ffsG7bIxDv" />
+                </node>
+              </node>
+              <node concept="34oBXx" id="2_NfR5wnk$k" role="2OqNvi" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2_NfR5wnpD5" role="3uHU7B">
+            <node concept="2OqwBi" id="2_NfR5wnpD6" role="2Oq$k0">
+              <node concept="1YBJjd" id="2_NfR5wnpD7" role="2Oq$k0">
+                <ref role="1YBMHb" node="2_NfR5wnk6J" resolve="rule" />
+              </node>
+              <node concept="3TrEf2" id="2_NfR5wnpD8" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:6wQEDbCCPyR" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="2_NfR5wnpJD" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="Xl_RD" id="2_NfR5wnk$l" role="2MkJ7o">
+          <property role="Xl_RC" value="alternation is not supported for rule with no input" />
+        </node>
+        <node concept="1YBJjd" id="2_NfR5wnkGc" role="2OEOjV">
+          <ref role="1YBMHb" node="2_NfR5wnk6J" resolve="rule" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="2_NfR5wnk6J" role="1YuTPh">
+      <property role="TrG5h" value="rule" />
+      <ref role="1YaFvo" to="wq2x:7eGEHDlgPU4" resolve="Rule" />
     </node>
   </node>
 </model>
