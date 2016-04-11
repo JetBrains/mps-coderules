@@ -4746,6 +4746,27 @@
               </node>
             </node>
           </node>
+          <node concept="aZer4" id="136nqBWsbWG" role="3XD1gS">
+            <property role="TrG5h" value="ParamTypePtr" />
+            <node concept="aYllk" id="136nqBWscc$" role="aZjLW">
+              <node concept="2OqwBi" id="136nqBWshdz" role="aYrYs">
+                <node concept="2OqwBi" id="136nqBWsdDg" role="2Oq$k0">
+                  <node concept="2OqwBi" id="136nqBWscfm" role="2Oq$k0">
+                    <node concept="3A2sRY" id="136nqBWsccL" role="2Oq$k0">
+                      <ref role="3A2yKK" node="136nqBWrTYV" resolve="imc" />
+                    </node>
+                    <node concept="3TrEf2" id="136nqBWsdmj" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpee:fz7wK6H" />
+                    </node>
+                  </node>
+                  <node concept="3Tsc0h" id="136nqBWsfqA" role="2OqNvi">
+                    <ref role="3TtcxE" to="tpee:fzclF7Y" />
+                  </node>
+                </node>
+                <node concept="34oBXx" id="136nqBWsqz8" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="3clFbS" id="6YKq674s84j" role="3Aqf5P">
           <node concept="3SKdUt" id="3jXBvmTlN5y" role="3cqZAp">
@@ -4812,33 +4833,7 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="3Aq9E8" id="136nqBWrTcU" role="3otmyu">
-        <node concept="3NuqgR" id="136nqBWsbWF" role="3Nuqhd">
-          <node concept="aZer4" id="136nqBWsbWG" role="3XD1gS">
-            <property role="TrG5h" value="ParamTypePtr" />
-            <node concept="aYllk" id="136nqBWscc$" role="aZjLW">
-              <node concept="2OqwBi" id="136nqBWshdz" role="aYrYs">
-                <node concept="2OqwBi" id="136nqBWsdDg" role="2Oq$k0">
-                  <node concept="2OqwBi" id="136nqBWscfm" role="2Oq$k0">
-                    <node concept="3A2sRY" id="136nqBWsccL" role="2Oq$k0">
-                      <ref role="3A2yKK" node="136nqBWrTYV" resolve="imc" />
-                    </node>
-                    <node concept="3TrEf2" id="136nqBWsdmj" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:fz7wK6H" />
-                    </node>
-                  </node>
-                  <node concept="3Tsc0h" id="136nqBWsfqA" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:fzclF7Y" />
-                  </node>
-                </node>
-                <node concept="34oBXx" id="136nqBWsqz8" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbS" id="136nqBWrTd0" role="3Aqf5P">
+          <node concept="3clFbH" id="2_NfR5wjzqe" role="3cqZAp" />
           <node concept="3SKdUt" id="3jXBvmTlNLu" role="3cqZAp">
             <node concept="3SKdUq" id="3jXBvmTlNLw" role="3SKWNk">
               <property role="3SKdUp" value="construct a type pattern for each parameter using type variables from the declaration" />
@@ -5627,18 +5622,7 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="3Aq9E8" id="5nh5pPDxpBn" role="3otmyu">
-        <node concept="3NuqgR" id="5nh5pPDxqe6" role="3Nuqhd">
-          <node concept="aZer4" id="5nh5pPDxqe7" role="3XD1gS">
-            <property role="TrG5h" value="RetType" />
-          </node>
-          <node concept="aZer4" id="13kcg0CWlY" role="3XD1gS">
-            <property role="TrG5h" value="RetTypeCap" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="5nh5pPDxpBo" role="3Aqf5P">
+          <node concept="3clFbH" id="2_NfR5wj$lC" role="3cqZAp" />
           <node concept="3cpWs8" id="3jXBvmTmPCE" role="3cqZAp">
             <node concept="3cpWsn" id="3jXBvmTmPCF" role="3cpWs9">
               <property role="TrG5h" value="typeVarMap" />
@@ -5722,6 +5706,14 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3NuqgR" id="5nh5pPDxqe6" role="3Nuqhd">
+          <node concept="aZer4" id="5nh5pPDxqe7" role="3XD1gS">
+            <property role="TrG5h" value="RetType" />
+          </node>
+          <node concept="aZer4" id="13kcg0CWlY" role="3XD1gS">
+            <property role="TrG5h" value="RetTypeCap" />
           </node>
         </node>
       </node>
