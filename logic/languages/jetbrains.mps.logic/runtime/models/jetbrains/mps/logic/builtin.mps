@@ -625,7 +625,7 @@
         <node concept="YS8fn" id="5_6ImQZ8jaz" role="3cqZAp">
           <node concept="2ShNRf" id="5_6ImQZ8jaX" role="YScLw">
             <node concept="1pGfFk" id="5_6ImQZ8l0Z" role="2ShVmc">
-              <ref role="37wK5l" to="eifs:~FailureException.&lt;init&gt;(java.lang.String)" resolve="FailureException" />
+              <ref role="37wK5l" to="qrld:7vxJ_H4qql2" resolve="EvaluationFailureException" />
               <node concept="37vLTw" id="5_6ImQZ8l2j" role="37wK5m">
                 <ref role="3cqZAo" node="5_6ImQZ8l1u" resolve="message" />
               </node>
