@@ -28,6 +28,7 @@
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
+    <import index="7ub6" ref="r:b533b427-da69-49d8-9c93-4ea32433b66e(jetbrains.mps.lang.typesystem2.runtime)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -3535,12 +3536,32 @@
       </node>
       <node concept="2caHhw" id="2q0gzCFIXgS" role="20w6XG">
         <node concept="3clFbS" id="2q0gzCFIXgT" role="16YjZG">
-          <node concept="3clFbF" id="2q0gzCFIXiz" role="3cqZAp">
-            <node concept="2YIFZM" id="2q0gzCFKkDh" role="3clFbG">
-              <ref role="37wK5l" node="5H6hZahiCgu" resolve="allSubtypePathsTo" />
-              <ref role="1Pybhc" node="tIwzd2cJHD" resolve="SubclassingUtil" />
-              <node concept="3A2sRY" id="2q0gzCFKkDi" role="37wK5m">
+          <node concept="3clFbF" id="2tjs8VC3ft$" role="3cqZAp">
+            <node concept="2YIFZM" id="2tjs8VC3ft_" role="3clFbG">
+              <ref role="37wK5l" to="7ub6:2tjs8VC2Blb" resolve="getOrPut" />
+              <ref role="1Pybhc" to="7ub6:2tjs8VC0K0m" resolve="Memoizer" />
+              <node concept="3A2sRY" id="2tjs8VC3ftA" role="37wK5m">
                 <ref role="3A2yKK" node="2q0gzCFIV7W" resolve="cls" />
+              </node>
+              <node concept="1bVj0M" id="2tjs8VC3ftB" role="37wK5m">
+                <node concept="3clFbS" id="2tjs8VC3ftC" role="1bW5cS">
+                  <node concept="3clFbF" id="2tjs8VC3ftD" role="3cqZAp">
+                    <node concept="2YIFZM" id="2tjs8VC3ftE" role="3clFbG">
+                      <ref role="1Pybhc" node="tIwzd2cJHD" resolve="SubclassingUtil" />
+                      <ref role="37wK5l" node="5H6hZahiCgu" resolve="allSubtypePathsTo" />
+                      <node concept="3A2sRY" id="2tjs8VC3ftF" role="37wK5m">
+                        <ref role="3A2yKK" node="2q0gzCFIV7W" resolve="cls" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="_YKpA" id="2tjs8VC3ftG" role="3PaCim">
+                <node concept="_YKpA" id="2tjs8VC3ftH" role="_ZDj9">
+                  <node concept="3Tqbb2" id="2tjs8VC3ftI" role="_ZDj9">
+                    <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -3922,12 +3943,32 @@
       </node>
       <node concept="2caHhw" id="2jjvHNv9zRI" role="20w6XG">
         <node concept="3clFbS" id="2jjvHNv9zRJ" role="16YjZG">
-          <node concept="3clFbF" id="2jjvHNv9zRK" role="3cqZAp">
-            <node concept="2YIFZM" id="2jjvHNv9zRL" role="3clFbG">
-              <ref role="1Pybhc" node="tIwzd2cJHD" resolve="SubclassingUtil" />
-              <ref role="37wK5l" node="5H6hZahiCgu" resolve="allSubtypePathsTo" />
-              <node concept="3A2sRY" id="2jjvHNv9zRM" role="37wK5m">
+          <node concept="3clFbF" id="2tjs8VC2uel" role="3cqZAp">
+            <node concept="2YIFZM" id="2tjs8VC2XGZ" role="3clFbG">
+              <ref role="37wK5l" to="7ub6:2tjs8VC2Blb" resolve="getOrPut" />
+              <ref role="1Pybhc" to="7ub6:2tjs8VC0K0m" resolve="Memoizer" />
+              <node concept="3A2sRY" id="2tjs8VC2Zq6" role="37wK5m">
                 <ref role="3A2yKK" node="2jjvHNv9zxF" resolve="cls" />
+              </node>
+              <node concept="1bVj0M" id="2tjs8VC39Q_" role="37wK5m">
+                <node concept="3clFbS" id="2tjs8VC39QB" role="1bW5cS">
+                  <node concept="3clFbF" id="2tjs8VC3aJG" role="3cqZAp">
+                    <node concept="2YIFZM" id="2tjs8VC30jX" role="3clFbG">
+                      <ref role="1Pybhc" node="tIwzd2cJHD" resolve="SubclassingUtil" />
+                      <ref role="37wK5l" node="5H6hZahiCgu" resolve="allSubtypePathsTo" />
+                      <node concept="3A2sRY" id="2tjs8VC30jY" role="37wK5m">
+                        <ref role="3A2yKK" node="2jjvHNv9zxF" resolve="cls" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="_YKpA" id="2tjs8VC35VJ" role="3PaCim">
+                <node concept="_YKpA" id="2tjs8VC35VK" role="_ZDj9">
+                  <node concept="3Tqbb2" id="2tjs8VC35VL" role="_ZDj9">
+                    <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
