@@ -16,7 +16,6 @@
 
 package jetbrains.mps.unification;
 
-import com.github.andrewoma.dexx.collection.ConsList;
 import jetbrains.mps.unification.Substitution.FailureCause;
 import jetbrains.mps.unification.Unification.SuccessfulSubstitution;
 import org.jetbrains.annotations.NotNull;
@@ -187,7 +186,7 @@ public class UnionFindTermGraphUnifier {
 
         // find representative and compress paths
 
-        List<Term> path = new ArrayList<Term>();
+        List<Term> path = new ArrayList<Term>(4);
         path.add(term);
         for (Term t; (t = getRepresentative(term)) != term; ) {
             path.add(t);
@@ -232,7 +231,7 @@ public class UnionFindTermGraphUnifier {
             return substitution;
         }
 
-        setAcyclic(z, true);
+        setAcyclic(z);
 
         SuccessfulSubstitution success = new SuccessfulSubstitution(substitution);
         for (Term var : getVars(find(z))) {
@@ -259,7 +258,10 @@ public class UnionFindTermGraphUnifier {
     }
 
     private void setSize(Term n, int size) {
-        getData(n).mySize = size;
+        // monotonically increasing value
+        if (size > 1) {
+            getData(n).mySize = size;
+        }
     }
 
     private Term getRepresentative(Term n) {
@@ -280,24 +282,24 @@ public class UnionFindTermGraphUnifier {
         getData(n).mySchema = schema;
     }
 
-    private ConsList<Term> getVars(Term n) {
-        return hasData(n) ? getData(n).myVars : singletonVar(n);
+    private List<Term> getVars(Term n) {
+        return hasData(n) ? getData(n).myVars : singletonVar    (n);
     }
 
-    private void prependVars(Term n, ConsList<Term> vars) {
-        ConsList<Term> newVars = getVars(n);
-        for (Term v: vars) {
-            newVars = newVars.prepend(v);
-        }
-        getData(n).myVars = newVars;
+    private void prependVars(Term t, List<Term> vars) {
+        if (vars.isEmpty()) return;
+
+        ArrayList<Term> newVars = new ArrayList<Term>(vars);
+        newVars.addAll(getVars(t));
+        getData(t).myVars = newVars;
     }
 
     private boolean isAcyclic(Term n) {
         return hasData(n) && getData(n).myAcyclic;
     }
 
-    private void setAcyclic(Term n, boolean acyclic) {
-        getData(n).myAcyclic = acyclic;
+    private void setAcyclic(Term n) {
+        getData(n).myAcyclic = true;
     }
 
     private boolean isVisited(Term n) {
@@ -309,37 +311,34 @@ public class UnionFindTermGraphUnifier {
     }
 
     private boolean hasData(Term term) {
-        // TODO: publish the requirements for symbols or drop this hack!
-        if (myData.get(term) != null) return true;
+        Data data = myData.get(term);
+        if (data != null) return true;
 
+        // TODO: publish the requirements for symbols or drop this hack!
         // try the identity key and see if another variable term with matching symbol has data
         Object key = termIdentity(term);
         if (term == key) return false;
 
-        if (myData.containsKey(key)) {
-            Data value = myData.get(key);
-            myData.put(term, value);
-            return value != null;
+        if ((data = myData.get(key)) != null) {
+            myData.put(term, data);
+            return true;
         }
 
         return false;
     }
 
     private Data getData(Term term) {
-        // TODO: publish the requirements for symbols or drop this hack!
         Data data = myData.get(term);
         if (data != null) {
             return data;
         }
 
+        // TODO: publish the requirements for symbols or drop this hack!
         // try the identity key to see if another variable with matching symbol has data
         Object key = termIdentity(term);
-        if (term != key && myData.containsKey(key)) {
-            data = myData.get(key);
+        if (term != key && (data = myData.get(key)) != null) {
             myData.put(term, data);
-            if (data != null) {
-                return data;
-            }
+            return data;
         }
 
         data = new Data(term);
@@ -363,10 +362,10 @@ public class UnionFindTermGraphUnifier {
         return a == null ? b == null : a.equals(b);
     }
 
-    private static ConsList<Term> singletonVar(Term n) {
-        return n.is(VAR) ?
-                ConsList.<Term>empty().prepend(n) :
-                ConsList.<Term>empty();
+    private static List<Term> singletonVar(Term t) {
+        return t.is(VAR) ?
+                Collections.singletonList(t) :
+                Collections.<Term>emptyList();
     }
 
     private static class Data {
@@ -374,7 +373,7 @@ public class UnionFindTermGraphUnifier {
         boolean myAcyclic = false;
         boolean myVisited = false;
 
-        ConsList<Term> myVars;
+        List<Term> myVars;
         Term myClass;
         Term mySchema;
 
