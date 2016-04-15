@@ -10,7 +10,6 @@
   </models>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/unification-lib-1.0.2.jar" />
-    <stubModelEntry path="${module}/lib/dexx-collections-0.2.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
