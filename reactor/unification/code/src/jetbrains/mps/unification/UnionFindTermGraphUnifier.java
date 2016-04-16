@@ -18,7 +18,6 @@ package jetbrains.mps.unification;
 
 import jetbrains.mps.unification.Substitution.FailureCause;
 import jetbrains.mps.unification.Unification.SuccessfulSubstitution;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -50,40 +49,34 @@ import static jetbrains.mps.unification.Unification.*;
  */
 public class UnionFindTermGraphUnifier {
 
-    private Map<Object, Data> myData = new IdentityHashMap<Object, Data>();
-
-    private FailureCause myFailureCause = UKNOWN;
-
-    private Object[] myFailureDetails = null;
-
     public Substitution unify(Term a, Term b) {
-        if (!unifClosure(a, b)) {
-            return failedSubstitution(myFailureCause, myFailureDetails);
+        if (unifClosure(toInner(a), toInner(b))) {
+            return findSolution(toInner(a));
         }
 
-        return findSolution(a);
+        return failedSubstitution(myFailureCause, myFailureDetails);
     }
 
-    private boolean unifClosure(Term s, Term t) {
+    private boolean unifClosure(InnerTerm s, InnerTerm t) {
         s = find(s);
         t = find(t);
 
         if (s == t) return true;
 
-        Term zs = getSchema(s);
-        Term zt = getSchema(t);
+        InnerTerm zs = s.mySchema;
+        InnerTerm zt = t.mySchema;
 
         // a VAR always matches another node
-        if(zs.is(VAR) || zt.is(VAR)) {
+        if(zs.myOrigin.is(VAR) || zt.myOrigin.is(VAR)) {
             union(s, t);
             return true;
         }
 
         // dereference REF nodes
-        Term ds = deref(zs);
-        Term dt = deref(zt);
+        InnerTerm ds = deref(zs);
+        InnerTerm dt = deref(zt);
 
-        if (ds.is(VAR)) {
+        if (ds.myOrigin.is(VAR)) {
             if (s != find(ds)) {
                 union(s, find(ds));
             }
@@ -94,7 +87,7 @@ public class UnionFindTermGraphUnifier {
             zs = ds;
         }
 
-        if (dt.is(VAR)) {
+        if (dt.myOrigin.is(VAR)) {
             if (t != find(dt)) {
                 union(t, find(dt));
             }
@@ -110,23 +103,23 @@ public class UnionFindTermGraphUnifier {
             return true;
         }
 
-        if (zs.is(FUN) && zt.is(FUN))
+        if (zs.myOrigin.is(FUN) && zt.myOrigin.is(FUN))
         {
-            if (!eq(zs.symbol(), zt.symbol())) {
+            if (!eq(zs.myOrigin.symbol(), zt.myOrigin.symbol())) {
                 myFailureCause = SYMBOL_CLASH;
-                myFailureDetails = new Object[]{zs.symbol(), zt.symbol()};
+                myFailureDetails = new Object[]{zs.myOrigin.symbol(), zt.myOrigin.symbol()};
                 return false; // symbol clash
             }
 
             // union REF nodes only to each other
-            if (s.is(REF) == t.is(REF)) {
+            if (s.myOrigin.is(REF) == t.myOrigin.is(REF)) {
                 union(s, t);
             }
 
-            Iterator<? extends Term> scit = zs.arguments().iterator();
-            Iterator<? extends Term> tcit = zt.arguments().iterator();
+            Iterator<? extends Term> scit = zs.myOrigin.arguments().iterator();
+            Iterator<? extends Term> tcit = zt.myOrigin.arguments().iterator();
             while (scit.hasNext() && tcit.hasNext()) {
-                if (!unifClosure(scit.next(), tcit.next())) {
+                if (!unifClosure(toInner(scit.next()), toInner(tcit.next()))) {
                     return false; // arguments mismatch
                 }
             }
@@ -140,114 +133,106 @@ public class UnionFindTermGraphUnifier {
         }
     }
 
-    private Term deref(Term zs) {
-        Term tmp = zs;
-        while (tmp.is(REF)) {
-            tmp = tmp.get();
-        }
-        return tmp;
-    }
-
-    private void union(Term s, Term t) {
-        int ssize = getSize(s);
-        int tsize = getSize(t);
+    private void union(InnerTerm s, InnerTerm t) {
+        int ssize = s.mySize;
+        int tsize = t.mySize;
 
         // keep the order: the smaller class gets inserted under the bigger one
         if (ssize < tsize) {
-            Term tmp = t; t = s; s = tmp;
+            InnerTerm tmp = t; t = s; s = tmp;
         }
-        else if (ssize == tsize && s.is(VAR) && t.is(VAR)) {
+        else if (ssize == tsize && s.myOrigin.is(VAR) && t.myOrigin.is(VAR)) {
             // ensure proper order of variables in the substitution
-            if(t.compareTo(s) < 0) {
-                Term tmp = t; t = s; s = tmp;
+            if(t.myOrigin.compareTo(s.myOrigin) < 0) {
+                InnerTerm tmp = t; t = s; s = tmp;
             }
         }
 
         // union s and t classes by moving t under s
 
-        setSize(s, ssize + tsize);
-        prependVars(s, getVars(t));
+        s.mySize = ssize + tsize;
+        prependVars(s, t.myVars);
 
-        Term zs = getSchema(s);
-        Term zt = getSchema(t);
-        if (zs.is(VAR)  || (zs.is(REF) && deref(zs).is(VAR) && !zt.is(VAR)))
+        InnerTerm zs = s.mySchema;
+        InnerTerm zt = t.mySchema;
+        if (zs.myOrigin.is(VAR)  || (zs.myOrigin.is(REF) && deref(zs).myOrigin.is(VAR) && !zt.myOrigin.is(VAR)))
         {
-            setSchema(s, zt);
+            s.mySchema = zt;
         }
 
-        setRepresentative(t, s);
+        t.myClass = s;
     }
 
-    private Term find(Term s) {
-        Term term = getRepresentative(s);
-        if (term == s) {
-            return s;
+    private InnerTerm find(InnerTerm term) {
+        InnerTerm repr = term.myClass;
+        if (repr == term) {
+            return term;
         }
 
         // find representative and compress paths
 
-        List<Term> path = new ArrayList<Term>(4);
-        path.add(term);
-        for (Term t; (t = getRepresentative(term)) != term; ) {
+        List<InnerTerm> path = new ArrayList<InnerTerm>(4);
+        path.add(term.myClass);
+        for (InnerTerm t; (t = term.myClass) != repr; ) {
             path.add(t);
-            term = t;
+            repr = t;
         }
-        for (Term p : path) {
-            setRepresentative(p, term);
+        for (InnerTerm p : path) {
+            p.myClass = repr;
         }
 
-        return term;
+        return repr;
     }
 
-    private Substitution findSolution(Term s) {
+    private Substitution findSolution(InnerTerm s) {
         return findSolution(s, EMPTY_SUBSTITUTION);
     }
 
-    private Substitution findSolution(Term s, Substitution substitution) {
-        Term z = getSchema(find(s));
+    private Substitution findSolution(InnerTerm s, Substitution substitution) {
+        InnerTerm z = find(s).mySchema;
 
-        if (isAcyclic(z)) {
+        if (z.myAcyclic) {
             return substitution; // not part of a cycle
         }
-        if (isVisited(z)) {
+        if (z.myVisited) {
             return failedSubstitution(CYCLE_DETECTED); // there exists a cycle
         }
 
-        if (z.is(FUN)) {
-            setVisited(z, true);
+        if (z.myOrigin.is(FUN)) {
+            z.myVisited = true;
 
-            for (Term c : z.arguments()) {
-                substitution = findSolution(c, substitution);
+            for (Term c : z.myOrigin.arguments()) {
+                substitution = findSolution(toInner(c), substitution);
 
                 if (!substitution.isSuccessful()) {
                     break;
                 }
             }
 
-            setVisited(z, false);
+            z.myVisited = false;
         }
 
         if (!substitution.isSuccessful()) {
             return substitution;
         }
 
-        setAcyclic(z);
+        z.myAcyclic = true;
 
         // avoid unnecessary instantiation
         SuccessfulSubstitution success =
                 (substitution instanceof SuccessfulSubstitution) ?
                 (SuccessfulSubstitution) substitution : new SuccessfulSubstitution(substitution);
 
-        for (Term var : getVars(find(z))) {
+        for (InnerTerm var : find(z).myVars) {
             if (var != z) {
-                Term val = deref(z);
+                InnerTerm trg = deref(z);
 
                 // Keep the order of variables within a binding
-                if (val.is(VAR) && val.compareTo(var) < 0) {
-                    success.addBinding(val, var);
+                if (trg.myOrigin.is(VAR) && trg.myOrigin.compareTo(var.myOrigin) < 0) {
+                    success.addBinding(trg.myOrigin, var.myOrigin);
                 }
                 else {
-                    success.addBinding(var, val);
+                    success.addBinding(var.myOrigin, trg.myOrigin);
                 }
             }
         }
@@ -255,135 +240,59 @@ public class UnionFindTermGraphUnifier {
         return success;
     }
 
-    private int getSize(Term n) {
-        if (!hasData(n)) return 1;
-        return getData(n).mySize;
-    }
-
-    private void setSize(Term n, int size) {
-        // monotonically increasing value
-        if (size > 1) {
-            getData(n).mySize = size;
-        }
-    }
-
-    private Term getRepresentative(Term n) {
-        if (!hasData(n)) return n;
-        return getData(n).myClass;
-    }
-
-    private void setRepresentative(Term n, Term rep) {
-        getData(n).myClass = rep;
-    }
-
-    private Term getSchema(Term n) {
-        if (!hasData(n)) return n;
-        return getData(n).mySchema;
-    }
-
-    private void setSchema(Term n, Term schema) {
-        getData(n).mySchema = schema;
-    }
-
-    private List<Term> getVars(Term n) {
-        return hasData(n) ? getData(n).myVars : singletonVar    (n);
-    }
-
-    private void prependVars(Term t, List<Term> vars) {
+    private void prependVars(InnerTerm t, List<InnerTerm> vars) {
         if (vars.isEmpty()) return;
 
-        ArrayList<Term> newVars = new ArrayList<Term>(vars);
-        newVars.addAll(getVars(t));
-        getData(t).myVars = newVars;
+        ArrayList<InnerTerm> newVars = new ArrayList<InnerTerm>(vars);
+        newVars.addAll(t.myVars);
+        t.myVars = newVars;
     }
 
-    private boolean isAcyclic(Term n) {
-        return hasData(n) && getData(n).myAcyclic;
-    }
-
-    private void setAcyclic(Term n) {
-        getData(n).myAcyclic = true;
-    }
-
-    private boolean isVisited(Term n) {
-        return hasData(n) && getData(n).myVisited;
-    }
-
-    private void setVisited(Term n, boolean visited) {
-        getData(n).myVisited = visited;
-    }
-
-    private boolean hasData(Term term) {
-        Data data = myData.get(term);
-        if (data != null) return true;
-
-        // TODO: publish the requirements for symbols or drop this hack!
-        // try the identity key and see if another variable term with matching symbol has data
-        Object key = termIdentity(term);
-        if (term == key) return false;
-
-        if ((data = myData.get(key)) != null) {
-            myData.put(term, data);
-            return true;
+    private InnerTerm deref(InnerTerm zs) {
+        InnerTerm tmp = zs;
+        while (tmp.myOrigin.is(REF)) {
+            tmp = toInner(tmp.myOrigin.get());
         }
-
-        return false;
+        return tmp;
     }
 
-    private Data getData(Term term) {
-        Data data = myData.get(term);
-        if (data != null) {
-            return data;
+    private InnerTerm toInner(Term term) {
+        // Variables with matching symbols are all treated as a single term.
+        Object key = term.is(VAR) ? String.valueOf(term.symbol()).intern() : term;
+        InnerTerm innerTerm = myTermCache.get(key);
+        if (innerTerm == null) {
+            myTermCache.put(key, (innerTerm = new InnerTerm(term)));
         }
-
-        // TODO: publish the requirements for symbols or drop this hack!
-        // try the identity key to see if another variable with matching symbol has data
-        Object key = termIdentity(term);
-        if (term != key && (data = myData.get(key)) != null) {
-            myData.put(term, data);
-            return data;
-        }
-
-        data = new Data(term);
-        myData.put(term, data);
-        if (term != key) {
-            myData.put(key, data);
-        }
-        return data;
+        return innerTerm;
     }
 
-    /**
-     * An object to uniquely identify this term.
-     * Variables with matching symbols are all treated as a single term.
-     */
-    @NotNull
-    private Object termIdentity(Term term) {
-        return term.is(VAR) ? String.valueOf(term.symbol()).intern() : term;
-    }
+    private Map<Object, InnerTerm> myTermCache = new IdentityHashMap<Object, InnerTerm>();
+
+    private FailureCause myFailureCause = UKNOWN;
+
+    private Object[] myFailureDetails = null;
 
     private static boolean eq(Object a, Object b) {
         return a == null ? b == null : a.equals(b);
     }
 
-    private static List<Term> singletonVar(Term t) {
-        return t.is(VAR) ?
-                Collections.singletonList(t) :
-                Collections.<Term>emptyList();
-    }
+    private static class InnerTerm {
+        InnerTerm(Term term) {
+            this.myOrigin = term;
+            this.myClass = this;
+            this.mySchema = this;
+            this.myVars = myOrigin.is(VAR) ?
+                                Collections.singletonList(this) :
+                                Collections.<InnerTerm>emptyList();
+        }
 
-    private static class Data {
         int mySize = 1;
         boolean myAcyclic = false;
         boolean myVisited = false;
-
-        List<Term> myVars;
-        Term myClass;
-        Term mySchema;
-
-        Data(Term term) {
-            myClass = term;
-            mySchema = term;
-            myVars = singletonVar(term);
-        }
+        List<InnerTerm> myVars;
+        Term myOrigin;
+        InnerTerm myClass;
+        InnerTerm mySchema;
     }
+
 }

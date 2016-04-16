@@ -82,15 +82,7 @@ public class Unification {
         }
 
         protected void addBinding(Term v, Term n) {
-            Binding bng;
-            if (n.is(Term.Kind.VAR) && n.compareTo(n) < 0) {
-                bng = new Binding(n, v);
-            }
-            else {
-                bng = new Binding(v, n);
-            }
-
-            myBindings.addFirst(bng);
+            myBindings.addFirst(new Binding(v, n));
         }
 
     }
