@@ -233,7 +233,11 @@ public class UnionFindTermGraphUnifier {
 
         setAcyclic(z);
 
-        SuccessfulSubstitution success = new SuccessfulSubstitution(substitution);
+        // avoid unnecessary instantiation
+        SuccessfulSubstitution success =
+                (substitution instanceof SuccessfulSubstitution) ?
+                (SuccessfulSubstitution) substitution : new SuccessfulSubstitution(substitution);
+
         for (Term var : getVars(find(z))) {
             if (var != z) {
                 Term val = deref(z);
@@ -250,7 +254,6 @@ public class UnionFindTermGraphUnifier {
 
         return success;
     }
-
 
     private int getSize(Term n) {
         if (!hasData(n)) return 1;

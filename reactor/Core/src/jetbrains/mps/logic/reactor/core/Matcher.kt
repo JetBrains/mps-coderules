@@ -96,7 +96,7 @@ abstract class TermImpl(val symbol: Any) : Term {
     override fun symbol() = symbol
 
     override fun compareTo(other: Term): Int {
-        return if (this.javaClass == other.javaClass)
+        return if (this.javaClass === other.javaClass)
             symbol.toString().compareTo(symbol.toString())
         else
             this.javaClass.toString().compareTo(other.javaClass.toString())
@@ -107,7 +107,7 @@ open class Function(symbol: Any, val arguments: List<out Term>) : TermImpl(symbo
 
     override fun arguments(): Collection<out Term> = arguments
 
-    override fun `is`(kind: Term.Kind?): Boolean = (kind == Term.Kind.FUN)
+    override fun `is`(kind: Term.Kind?): Boolean = (kind === Term.Kind.FUN)
 
     override fun get(): Term = this
 }
@@ -118,7 +118,7 @@ class Variable(symbol: Any) : TermImpl(symbol) {
 
     override fun arguments(): Collection<out Term> = emptyList()
 
-    override fun `is`(kind: Term.Kind): Boolean = (kind == Term.Kind.VAR)
+    override fun `is`(kind: Term.Kind): Boolean = (kind === Term.Kind.VAR)
 
     override fun get(): Term = TODO()
 }
