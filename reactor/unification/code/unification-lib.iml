@@ -9,9 +9,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-runtime:1.0.0-rc-1050" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.0.0-rc-1050" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-maven-plugin:1.0.0-rc-1050" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-runtime:1.0.1-2" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.0.1-2" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-maven-plugin:1.0.1-2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-core:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-model:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-settings:3.0.5" level="project" />
@@ -36,7 +36,7 @@
     <orderEntry type="library" name="Maven: org.sonatype.plexus:plexus-cipher:1.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-api:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.4" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-compiler:1.0.0-rc-1050" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-compiler:1.0.1-2" level="project" />
     <orderEntry type="library" name="Maven: com.google.collections:google-collections:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.andrewoma.dexx:dexx-collections:0.2" level="project" />
     <orderEntry type="library" name="Maven: com.intellij:annotations:12.0" level="project" />
