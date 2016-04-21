@@ -124,7 +124,7 @@ class Handler {
     // persistent (functional) object. reassigned on update
     private var propHistory = PropagationHistory()
 
-    private val matcher: Matcher
+    val ruleIndex: RuleIndex
 
     private val trace: EvaluationTrace
 
@@ -137,9 +137,9 @@ class Handler {
         // for testing purposes only
         occurrences: Iterable<ConstraintOccurrence>? = null)
     {
+        this.ruleIndex = RuleIndex(programRules)
         this.trace = trace
         this.profiler = profiler
-        this.matcher = Matcher(programRules, profiler)
         if (occurrences != null) {
             frameStack.current.store.storeAll(occurrences)
         }
@@ -169,7 +169,7 @@ class Handler {
     }
 
     private fun process(active: ConstraintOccurrence) {
-        profiler.profile("process_${active.constraint().symbol()}", {
+        profiler.profile("process_${active.constraint().symbol()}") {
 
             if (!active.isStored()) {
                 frameStack.current.store.store(active)
@@ -178,21 +178,23 @@ class Handler {
                 trace.reactivate(active)
             }
 
-            val lookupMatches = matcher.lookupMatches(active, frameStack.current.store, propHistory)
-            for (match in lookupMatches) {
+            for (match in Matcher(ruleIndex, active, frameStack.current.store, profiler)) {
                 // TODO: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
-                if (match.occurrences().any { co -> !co.isStored() }) continue
+                if (!match.successful) continue
+                // FIXME: move this check elsewhere
+                if ((match.keptOccurrences + match.discardedOccurrences).any { co -> !co.isStored() }) continue
+                if (propHistory.isRecorded(match)) continue
 
                 trace.trying(match)
-                if (!match.rule.checkGuard(match.logicalContext(), trace)) {
+                if (!match.rule.checkGuard(match.logicalContext, trace)) {
                     trace.reject(match)
                     continue
                 }
 
                 trace.trigger(match)
 
-                for ((cst, occ) in match.discarded) {
+                for (occ in match.discardedOccurrences) {
                     frameStack.current.store.discard(occ)
                     trace.discard(occ)
                 }
@@ -217,8 +219,8 @@ class Handler {
                     try {
                         for (item in body) {
                             when (item) {
-                                is Constraint -> process(item.occurrence(frameStack, match.logicalContext()))
-                                is Predicate -> tellPredicate(item.invocation(match.logicalContext()), trace)
+                                is Constraint -> process(item.occurrence(frameStack, match.logicalContext))
+                                is Predicate -> tellPredicate(item.invocation(match.logicalContext), trace)
                                 else -> throw IllegalArgumentException("unknown item ${item}")
                             }
                         }
@@ -250,15 +252,15 @@ class Handler {
                 trace.suspend(active)
             }
 
-        })
+        }
     }
 
     private fun Rule.checkGuard(logicalContext: LogicalContext, trace: EvaluationTrace): Boolean =
-        profiler.profile<Boolean>("checkGuard", {
+        profiler.profile<Boolean>("checkGuard") {
 
             return guard().all { prd -> askPredicate(prd.invocation(logicalContext), trace) }
 
-        })
+        }
 
     private fun askPredicate(invocation: PredicateInvocation, trace: EvaluationTrace): Boolean =
         profiler.profile<Boolean>("ask_${invocation.predicate().symbol()}", {
@@ -271,13 +273,13 @@ class Handler {
         })
 
     private fun tellPredicate(invocation: PredicateInvocation, trace: EvaluationTrace) {
-        profiler.profile("tell_${invocation.predicate().symbol()}", {
+        profiler.profile("tell_${invocation.predicate().symbol()}") {
 
             // TODO: provide SessionSolver as part of evaluation session
 //            trace.tell(invocation)
             EvaluationSession.current().sessionSolver().tell(invocation)
 
-        })
+        }
     }
 
 }

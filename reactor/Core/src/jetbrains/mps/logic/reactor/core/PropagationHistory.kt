@@ -7,7 +7,7 @@ import com.github.andrewoma.dexx.collection.List as PersList
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.program.Rule
 
-class PropagationHistory {
+internal class PropagationHistory {
 
     val recordedPropagation : PersMap<Rule, PersList<List<IdWrapper<ConstraintOccurrence>>>>
 
@@ -19,20 +19,18 @@ class PropagationHistory {
         this.recordedPropagation = recorded
     }
 
-    fun isRecorded(pm: PartialMatch): Boolean {
-        if (!pm.isPropagation()) return false
-        val test = pm.kept.map { pair -> IdWrapper(pair.second) }.sortedBy { idOcc -> idOcc.idHash }.toList()
+    fun isRecorded(m: Match): Boolean {
+        if (!m.isPropagation) return false
+        val test = m.keptOccurrences.map { occ -> IdWrapper(occ) }.sortedBy { idOcc -> idOcc.idHash }.toList()
 
-        return recordedPropagation.get(pm.rule)?.let { hist ->
-            hist.any { recorded ->
-                recorded == test
-            }            // use the reference equality via IdWrapper
+        return recordedPropagation.get(m.rule)?.let { hist ->
+            hist.any { recorded -> recorded == test }            // use the reference equality via IdWrapper
         } ?: false
     }
 
-    fun record(pm: PartialMatch): PropagationHistory {
-        if (pm.isPropagation()) {
-            val idOccs = pm.kept.map { pair -> IdWrapper(pair.second) }.sortedBy { id -> id.idHash }.toList()
+    fun record(pm: Match): PropagationHistory {
+        if (pm.isPropagation) {
+            val idOccs = pm.keptOccurrences.map { occ -> IdWrapper(occ) }.sortedBy { id -> id.idHash }.toList()
 
             val hist = recordedPropagation.get(pm.rule) ?: ConsList.empty<List<IdWrapper<ConstraintOccurrence>>>()
 

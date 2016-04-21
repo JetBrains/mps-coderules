@@ -4,7 +4,6 @@ import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.Maps
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -30,11 +29,11 @@ interface StoreItem {
 
 interface OccurrenceIndex {
 
-    fun lookupOccurrences(
-        symbol: ConstraintSymbol,
-        logicals: Iterable<Logical<*>>,
-        values: Iterable<Any> = emptyList(),
-        acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
+    fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence>
+
+    fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence>
+
+    fun forValue(value: Any): Iterable<ConstraintOccurrence>
 
 }
 
@@ -92,17 +91,14 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
         for (arg in occ.arguments()) {
             when (arg) {
-                is Logical<*>               -> {
-                    this.logical2occurrences = logical2occurrences.put(arg.findRoot(),
-                        logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ))
+                is Logical<*>               ->  {
+                                                    this.logical2occurrences = logical2occurrences.put(arg.findRoot(),
+                                                        logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ))
+                                                    proxy.addObserver(arg, this)
+                                                }
 
-                    proxy.addObserver(arg, this)
-
-                }
-                else                        -> {
-                    this.value2occurrences = value2occurrences.put(arg!!,
-                        value2occurrences[arg]?.prepend(occ) ?: cons(occ))
-                }
+                is Any                      ->  this.value2occurrences = value2occurrences.put(arg,
+                                                    value2occurrences[arg]?.prepend(occ) ?: cons(occ))
             }
         }
 
@@ -119,17 +115,14 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
         for (arg in occ.arguments()) {
             when (arg) {
-                is Logical<*>               -> {
-                    logical2occurrences[arg.findRoot()].remove(occ)?. let { newList ->
-                        this.logical2occurrences = logical2occurrences.put(arg.findRoot(), newList)
-                    }
-                    // TODO: remove observer?
-                }
-                else                        -> {
-                    value2occurrences[arg!!].remove(occ)?. let { newList ->
-                        this.value2occurrences = value2occurrences.put(arg, newList)
-                    }
-                }
+                is Logical<*>               ->  logical2occurrences[arg.findRoot()].remove(occ)?. let { newList ->
+                                                    this.logical2occurrences = logical2occurrences.put(arg.findRoot(), newList)
+                                                }
+                                                // TODO: remove observer?
+
+                is Any                      ->  value2occurrences[arg].remove(occ)?. let { newList ->
+                                                    this.value2occurrences = value2occurrences.put(arg, newList)
+                                                }
             }
         }
 
@@ -142,35 +135,19 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         return symbol2occurrences.values().flatMap { it }.filter { co -> co.isStored() }.asSequence()
     }
 
-    fun forSymbol(symbol: ConstraintSymbol): Sequence<ConstraintOccurrence> {
+    override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> {
         val list = symbol2occurrences[symbol] ?: emptyConsList()
-        return list.asSequence().filter { co -> co.isStored() }
+        return list.filter { co -> co.isStored() }
     }
 
-    fun forLogical(ptr: Logical<*>): Sequence<ConstraintOccurrence> {
-        val list = logical2occurrences[ptr.findRoot()] ?: emptyConsList()
-        return list.asSequence().filter { co -> co.isStored() }
+    override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> {
+        val list = logical2occurrences[logical.findRoot()] ?: emptyConsList()
+        return list.filter { co -> co.isStored() }
     }
 
-    fun forValue(value: Any): Sequence<ConstraintOccurrence> {
+    override fun forValue(value: Any): Iterable<ConstraintOccurrence> {
         val list = value2occurrences[value] ?: emptyConsList()
-        return list.asSequence().filter { co -> co.isStored() }
-    }
-
-    override fun lookupOccurrences(
-        symbol: ConstraintSymbol,
-        logicals: Iterable<Logical<*>>,
-        values: Iterable<Any>,
-        acceptable: (ConstraintOccurrence) -> Boolean): Sequence<ConstraintOccurrence>
-    {
-        val occs = if (!logicals.any() && !values.any())
-            forSymbol(symbol)
-        else
-            (logicals.asSequence().flatMap { log -> forLogical(log) } +
-                values.asSequence().flatMap { value -> forValue(value) }).
-                filter { co -> co.constraint().symbol() == symbol }
-
-        return occs.filter { acceptable(it) }
+        return list.filter { co -> co.isStored() }
     }
 
 }

@@ -1,6 +1,7 @@
 import com.github.andrewoma.dexx.collection.ConsList
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
+import org.jetbrains.kotlin.utils.addToStdlib.singletonList
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -49,26 +50,26 @@ class TestOccurrenceStore {
 
         val main = occurrence("main", foo)
         occstore.store(main)
-        assertEquals(sequenceOf(main), occstore.forLogical(foo))
+        assertEquals(listOf(main), occstore.forLogical(foo))
 
         bar.union(foo)
-        assertEquals(sequenceOf(main), occstore.forLogical(foo))
-        assertEquals(sequenceOf(main), occstore.forLogical(bar))
+        assertEquals(listOf(main), occstore.forLogical(foo))
+        assertEquals(listOf(main), occstore.forLogical(bar))
 
         val bazz = logical<String>("bazz")
         val main2 = occurrence("main", bazz)
         occstore.store(main2)
-        assertEquals(sequenceOf(main2), occstore.forLogical(bazz))
+        assertEquals(listOf(main2), occstore.forLogical(bazz))
 
         bazz.union(bar)
-        assertEquals(sequenceOf(main, main2), occstore.forLogical(bazz))
+        assertEquals(setOf(main, main2), occstore.forLogical(bazz).toSet())
         assertEquals(occstore.forLogical(foo), occstore.forLogical(bazz))
         assertEquals(occstore.forLogical(bar), occstore.forLogical(bazz))
 
         occstore.discard(main)
-        assertEquals(sequenceOf(main2), occstore.forLogical(foo))
-        assertEquals(sequenceOf(main2), occstore.forLogical(bar))
-        assertEquals(sequenceOf(main2), occstore.forLogical(bazz))
+        assertEquals(listOf(main2), occstore.forLogical(foo))
+        assertEquals(listOf(main2), occstore.forLogical(bar))
+        assertEquals(listOf(main2), occstore.forLogical(bazz))
     }
 
     @Test
@@ -79,7 +80,7 @@ class TestOccurrenceStore {
         val main = occurrence("main", value)
         occstore.store(main)
 
-        assertEquals(sequenceOf(main), occstore.forValue(value))
+        assertEquals(listOf(main), occstore.forValue(value))
     }
 
 
