@@ -1,7 +1,6 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.Maps
-import com.github.andrewoma.dexx.collection.Sets
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -11,7 +10,6 @@ import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Unification
 import java.util.*
 import com.github.andrewoma.dexx.collection.Map as PersMap
-import com.github.andrewoma.dexx.collection.Set as PersSet
 
 /**
  * @author Fedor Isakov
@@ -28,18 +26,18 @@ internal class MatchTrie(val rule: Rule,
 
     val discardedConstraints = rule.headReplaced().toCollection(ArrayList(4))
 
-    val roots: List<MatchTrieNode> by lazy(LazyThreadSafetyMode.NONE) {
+    private val roots: List<MatchTrieNode> by lazy(LazyThreadSafetyMode.NONE) {
         ArrayList<MatchTrieNode>(4).apply {
             profiler.profile("initMatchTrie") {
 
                 val slots = keptConstraints.size + discardedConstraints.size
                 for ((idx, cst) in keptConstraints.withIndex()) {
-                    if (cst.symbol() == activeOcc.constraint().symbol() && cst.matches(activeOcc, profiler)) {
+                    if (cst.symbol() == activeOcc.constraint().symbol()) {
                         add(MatchTrieNode(null, slots - 1, true, cst, activeOcc, idx))
                     }
                 }
                 for ((idx, cst) in discardedConstraints.withIndex()) {
-                    if (cst.symbol() == activeOcc.constraint().symbol() && cst.matches(activeOcc, profiler)) {
+                    if (cst.symbol() == activeOcc.constraint().symbol()) {
                         add(MatchTrieNode(null, slots - 1, false, cst, activeOcc, idx))
                     }
                 }
@@ -101,12 +99,12 @@ internal class MatchTrie(val rule: Rule,
         }
     }
 
-    inner class MatchTrieNode(val parent: MatchTrieNode?,
-                              val vacantSlots: Int,
-                              val keepConstraint: Boolean,
-                              val constraint: Constraint,
-                              val occurrence: ConstraintOccurrence,
-                              val index: Int)
+    private inner class MatchTrieNode(val parent: MatchTrieNode?,
+                                      val vacantSlots: Int,
+                                      val keepConstraint: Boolean,
+                                      val constraint: Constraint,
+                                      val occurrence: ConstraintOccurrence,
+                                      val index: Int)
     {
 
         var isMatched: Boolean = false
@@ -140,13 +138,23 @@ internal class MatchTrie(val rule: Rule,
             else                parentMatch.discard(occurrence, index)
         }
 
-        val meta2logical: PersMap<MetaLogical<*>, PersSet<Logical<*>>> by lazy(LazyThreadSafetyMode.NONE) {
+        val meta2logical: PersMap<MetaLogical<*>, List<Logical<*>>> by lazy(LazyThreadSafetyMode.NONE) {
             var map = parent?.meta2logical ?: Maps.of()
 
             for ((cstArg, occArg) in constraint.arguments().zip(occurrence.arguments())) {
                 if (cstArg is MetaLogical<*> && occArg is Logical<*>) {
-                    val set = map.get(cstArg)
-                    map = map.put(cstArg, set?.add(occArg.findRoot()) ?: Sets.of(occArg.findRoot()))
+                    val metaLogical = cstArg
+                    val logical = occArg.findRoot()
+                    val orig = map.get(metaLogical)
+                    if (orig != null && !orig.contains(logical)) {
+                        val copy = ArrayList<Logical<*>>(Math.max(4, orig.size + 1))
+                        copy.addAll(orig)
+                        copy.add(logical)
+                        map = map.put(metaLogical, copy)
+                    }
+                    else if (orig == null) {
+                        map = map.put(metaLogical, listOf(logical))
+                    }
                 }
             }
 
