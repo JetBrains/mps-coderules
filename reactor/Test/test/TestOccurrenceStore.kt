@@ -1,7 +1,5 @@
-import com.github.andrewoma.dexx.collection.ConsList
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
-import org.jetbrains.kotlin.utils.addToStdlib.singletonList
 import org.junit.Test
 import org.junit.Assert.*
 

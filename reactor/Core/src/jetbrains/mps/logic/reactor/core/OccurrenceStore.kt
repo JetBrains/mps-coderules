@@ -71,10 +71,8 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
             for (log in toMerge) {
                 newList = newList.prepend(log)
             }
-            this.logical2occurrences = logical2occurrences.put(logical.findRoot(), newList)
+            this.logical2occurrences = logical2occurrences.remove(logical).put(logical.findRoot(), newList)
         }
-
-        this.logical2occurrences = logical2occurrences.remove(logical)
     }
 
     fun storeAll(all: Iterable<ConstraintOccurrence>): Unit {
@@ -91,11 +89,11 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
         for (arg in occ.arguments()) {
             when (arg) {
-                is Logical<*>               ->  {
-                                                    this.logical2occurrences = logical2occurrences.put(arg.findRoot(),
-                                                        logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ))
-                                                    proxy.addObserver(arg, this)
-                                                }
+                is Logical<*>   ->  {
+                                        this.logical2occurrences = logical2occurrences.put(arg.findRoot(),
+                                            logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ))
+                                        proxy.addObserver(arg, this)
+                                    }
 
                 is Any                      ->  this.value2occurrences = value2occurrences.put(arg,
                                                     value2occurrences[arg]?.prepend(occ) ?: cons(occ))
@@ -115,14 +113,16 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
         for (arg in occ.arguments()) {
             when (arg) {
-                is Logical<*>               ->  logical2occurrences[arg.findRoot()].remove(occ)?. let { newList ->
-                                                    this.logical2occurrences = logical2occurrences.put(arg.findRoot(), newList)
-                                                }
-                                                // TODO: remove observer?
+                is Logical<*>   ->  {
+                                        logical2occurrences[arg.findRoot()].remove(occ)?.let { newList ->
+                                            this.logical2occurrences = logical2occurrences.put(arg.findRoot(), newList)
+                                        }
+                                        // TODO: remove observer?
+                                    }
 
-                is Any                      ->  value2occurrences[arg].remove(occ)?. let { newList ->
-                                                    this.value2occurrences = value2occurrences.put(arg, newList)
-                                                }
+                is Any          ->  value2occurrences[arg].remove(occ)?. let { newList ->
+                                        this.value2occurrences = value2occurrences.put(arg, newList)
+                                    }
             }
         }
 
@@ -132,7 +132,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
     }
 
     fun allOccurrences(): Sequence<ConstraintOccurrence> {
-        return symbol2occurrences.values().flatMap { it }.filter { co -> co.isStored() }.asSequence()
+        return symbol2occurrences.values().flatten().filter { co -> co.isStored() }.asSequence()
     }
 
     override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> {
@@ -144,6 +144,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         val list = logical2occurrences[logical.findRoot()] ?: emptyConsList()
         return list.filter { co -> co.isStored() }
     }
+
 
     override fun forValue(value: Any): Iterable<ConstraintOccurrence> {
         val list = value2occurrences[value] ?: emptyConsList()
