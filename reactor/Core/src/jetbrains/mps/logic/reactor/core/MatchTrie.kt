@@ -27,12 +27,12 @@ internal class MatchTrie(val rule: Rule,
             profiler.profile("initMatchTrie") {
 
                 for ((idx, cst) in keptConstraints.withIndex()) {
-                    if (cst.symbol() == activeOcc.constraint().symbol()) {
+                    if (cst.matches(activeOcc)) {
                         add(MatchTrieNode(null, true, cst, activeOcc, idx))
                     }
                 }
                 for ((idx, cst) in discardedConstraints.withIndex()) {
-                    if (cst.symbol() == activeOcc.constraint().symbol()) {
+                    if (cst.matches(activeOcc)) {
                         add(MatchTrieNode(null, false, cst, activeOcc, idx))
                     }
                 }
@@ -78,6 +78,10 @@ internal class MatchTrie(val rule: Rule,
                     continue
                 }
                 val mtn = it.next()
+                if (mtn.parent?.isMatched ?: false) {
+                    stack.pop()
+                    continue
+                }
                 if (mtn.isMatched) {
                     continue
                 }
@@ -142,7 +146,7 @@ internal class MatchTrie(val rule: Rule,
         val vacantSlots: BitSet by lazy(LazyThreadSafetyMode.NONE) {
             val result = BitSet()
             result.set(0, keptConstraints.size + discardedConstraints.size)
-            fold(result) { bits, mtn ->
+            foldNodes(result) { bits, mtn ->
                 val slot = if (mtn.keepConstraint) mtn.index else mtn.index + keptConstraints.size
                 bits.clear(slot)
                 bits
@@ -169,8 +173,15 @@ internal class MatchTrie(val rule: Rule,
             val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
             val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
 
-            return lookupAuxOccurrences(nextCst).map { auxOcc ->
-                MatchTrieNode(this, keep, nextCst, auxOcc, nextIdx)
+            val (success, lookupAuxOccurrences) = lookupAuxOccurrences(nextCst)
+            if (!success) {
+                forEachNode { mtn -> mtn.isMatched = true }
+                return emptyList()
+            }
+            else {
+                return lookupAuxOccurrences.map { auxOcc ->
+                    MatchTrieNode(this, keep, nextCst, auxOcc, nextIdx)
+                }
             }
         }
 
@@ -184,8 +195,15 @@ internal class MatchTrie(val rule: Rule,
             val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
             val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
 
-            return lookupAuxOccurrences(nextCst).map { auxOcc ->
-                MatchTrieNode(parent, keep, nextCst, auxOcc, nextIdx)
+            val (success, lookupAuxOccurrences) = lookupAuxOccurrences(nextCst)
+            if (!success) {
+                forEachNode { mtn -> mtn.isMatched = true }
+                return emptyList()
+            }
+            else {
+                return lookupAuxOccurrences.map { auxOcc ->
+                    MatchTrieNode(parent, keep, nextCst, auxOcc, nextIdx)
+                }
             }
         }
 
@@ -228,42 +246,48 @@ internal class MatchTrie(val rule: Rule,
         }
 
         private fun instances(meta: MetaLogical<*>): Iterable<Logical<*>>? =
-            fold(ArrayList<Logical<*>>()) { list, mtn -> mtn.collectInstances(meta, list) }
+            foldNodes(ArrayList<Logical<*>>()) { list, mtn -> mtn.collectInstances(meta, list) }
 
-        private fun lookupAuxOccurrences(cst: Constraint): Iterable<ConstraintOccurrence> {
-            return profiler.profile<Iterable<ConstraintOccurrence>>("lookupAuxOccurrences") {
+        // the first component indicates that the results (if any) have been looked up
+        // if false, it means no results could have potentially been found at all,
+        // so it's useless to attempt again with the same input
+        private fun lookupAuxOccurrences(cst: Constraint): Pair<Boolean, Iterable<ConstraintOccurrence>> {
+            return profiler.profile<Pair<Boolean, Iterable<ConstraintOccurrence>>> ("lookupAuxOccurrences") {
 
                 val cache = ArrayList<ConstraintOccurrence>(4)
                 for (arg in cst.arguments()) {
                     when (arg) {
-                        is MetaLogical<*>       ->  instances(arg)?.forEach { log ->
-                                                        cache.addAll(aux.forLogical(log))
-                                                    }
+                        is MetaLogical<*>   ->  instances(arg)?.forEach { log ->
+                                                    cache.addAll(aux.forLogical(log).filter {occ -> cst.matches(occ)})
+                                                }
 
-                        is Any                  ->  cache.addAll(aux.forValue(arg))
+                        is Any              ->  cache.addAll(aux.forValue(arg).filter {occ -> cst.matches(occ)})
                     }
                 }
                 if (cache.isNotEmpty()) {
-                    cache.filter { occ -> occ.constraint().symbol() == cst.symbol() && !hasOccurrence(occ) }
+                    true.to(cache.filter { occ -> occ.constraint().symbol() == cst.symbol() && !hasOccurrence(occ) })
                 }
                 else if (cst.arguments().all { a -> a is MetaLogical<*> }) {
-                    aux.forSymbol(cst.symbol()).filter { occ -> !hasOccurrence(occ) }
+                    true.to(aux.forSymbol(cst.symbol()).filter { occ -> !hasOccurrence(occ) })
                 }
                 else {
                     // all candidate occurrences should have been found by this time; if not, then there's none
-                    emptyList()
+                    false.to(emptyList())
                 }
 
             }
         }
 
         private fun hasOccurrence(occ: ConstraintOccurrence): Boolean =
-            any { mtn -> mtn.occurrence == occ }
+            anyNode { mtn -> mtn.occurrence == occ }
 
-        private inline fun any(predicate: (MatchTrieNode) -> Boolean): Boolean =
-            fold(false) { b, mtn -> b || predicate(mtn) }
+        private inline fun anyNode(predicate: (MatchTrieNode) -> Boolean): Boolean =
+            foldNodes(false) { b, mtn -> b || predicate(mtn) }
 
-        private inline fun <T> fold(start: T, step: (T, MatchTrieNode) -> T): T {
+        private inline fun forEachNode(proc: (MatchTrieNode) -> Unit) =
+            foldNodes(Unit) { b, mtn -> proc(mtn) }
+
+        private inline fun <T> foldNodes(start: T, step: (T, MatchTrieNode) -> T): T {
             var mtn: MatchTrieNode? = this
             var curr = start
             while(mtn != null) {
