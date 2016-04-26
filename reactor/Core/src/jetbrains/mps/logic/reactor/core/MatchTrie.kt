@@ -1,13 +1,10 @@
 package jetbrains.mps.logic.reactor.core
 
-import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.unification.Substitution
-import jetbrains.mps.unification.Unification
 import java.util.*
 import com.github.andrewoma.dexx.collection.Map as PersMap
 
@@ -29,15 +26,14 @@ internal class MatchTrie(val rule: Rule,
         ArrayList<MatchTrieNode>(4).apply {
             profiler.profile("initMatchTrie") {
 
-                val slots = keptConstraints.size + discardedConstraints.size
                 for ((idx, cst) in keptConstraints.withIndex()) {
                     if (cst.symbol() == activeOcc.constraint().symbol()) {
-                        add(MatchTrieNode(null, slots - 1, true, cst, activeOcc, idx))
+                        add(MatchTrieNode(null, true, cst, activeOcc, idx))
                     }
                 }
                 for ((idx, cst) in discardedConstraints.withIndex()) {
                     if (cst.symbol() == activeOcc.constraint().symbol()) {
-                        add(MatchTrieNode(null, slots - 1, false, cst, activeOcc, idx))
+                        add(MatchTrieNode(null, false, cst, activeOcc, idx))
                     }
                 }
 
@@ -99,7 +95,6 @@ internal class MatchTrie(val rule: Rule,
     }
 
     private inner class MatchTrieNode(val parent: MatchTrieNode?,
-                                      val vacantSlots: Int,
                                       val keepConstraint: Boolean,
                                       val constraint: Constraint,
                                       val occurrence: ConstraintOccurrence,
@@ -107,55 +102,98 @@ internal class MatchTrie(val rule: Rule,
     {
 
         var isMatched: Boolean = false
-            set(value) {
-                field = value
-                if (value && nextSibling == null) {
-                    parent?.isMatched = value
+
+        val firstChild: MatchTrieNode? by lazy(LazyThreadSafetyMode.NONE) {
+            var first: MatchTrieNode? = null
+            var prev: MatchTrieNode? = null
+            for (next in firstChildrenBatch()) {
+                if (first == null) {
+                    first = next
                 }
-                else if (!value) {
-                    parent?.isMatched = value
-                }
+                prev?._nextSibling = next
+                prev = next
             }
+            first
+        }
 
-        var nextSibling: MatchTrieNode? = null
+        var _nextSibling: MatchTrieNode? = null
 
-        var firstChild: MatchTrieNode? = null
-
-        private fun initChildren(): Unit {
-            if (firstChild != null) {
-                return
+        val nextSibling: MatchTrieNode? by lazy(LazyThreadSafetyMode.NONE) {
+            if (_nextSibling != null) {
+                _nextSibling
             }
-            var prevSibling: MatchTrieNode? = null
-
-            for (idx in 0..keptConstraints.size-1) if (!hasIndex(true, idx)) {
-                for (auxOcc in lookupAuxOccurrences(keptConstraints[idx])) {
-                    val next = keepAt(keptConstraints[idx], auxOcc, idx)
-                    if (firstChild == null) {
-                        this.firstChild = next
+            else {
+                var first: MatchTrieNode? = null
+                var prev: MatchTrieNode? = null
+                var prevSlot = if (keepConstraint) index else index + keptConstraints.size
+                while (first == null && prevSlot < keptConstraints.size + discardedConstraints.size) {
+                    for (next in nextSiblingBatch(prevSlot++)) {
+                        if (first == null) {
+                            first = next
+                        }
+                        prev?._nextSibling = next
+                        prev = next
                     }
-                    prevSibling?.nextSibling = next
-                    prevSibling = next
                 }
+                first
             }
-            for (idx in 0..discardedConstraints.size-1) if (!hasIndex(false, idx)) {
-                for (auxOcc in lookupAuxOccurrences(discardedConstraints[idx])) {
-                    val next = discardAt(discardedConstraints[idx], auxOcc, idx)
-                    if (firstChild == null) {
-                        this.firstChild = next
-                    }
-                    prevSibling?.nextSibling = next
-                    prevSibling = next
-                }
+        }
+
+        val vacantSlots: BitSet by lazy(LazyThreadSafetyMode.NONE) {
+            val result = BitSet()
+            result.set(0, keptConstraints.size + discardedConstraints.size)
+            fold(result) { bits, mtn ->
+                val slot = if (mtn.keepConstraint) mtn.index else mtn.index + keptConstraints.size
+                bits.clear(slot)
+                bits
+            }
+            result
+        }
+
+        val isLeaf: Boolean
+            get() = vacantSlots.isEmpty
+
+        val match: PartialMatch by lazy(LazyThreadSafetyMode.NONE) {
+            val parentMatch = parent?.match ?: PartialMatch(rule, keptConstraints.size, discardedConstraints.size)
+            if (keepConstraint) parentMatch.keep(occurrence, index)
+            else                parentMatch.discard(occurrence, index)
+        }
+
+        private fun firstChildrenBatch(): Iterable<MatchTrieNode> {
+            val nextSlot = vacantSlots.nextSetBit(0)
+            if (nextSlot < 0) {
+                return emptyList()
+            }
+
+            val keep = nextSlot < keptConstraints.size
+            val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
+            val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
+
+            return lookupAuxOccurrences(nextCst).map { auxOcc ->
+                MatchTrieNode(this, keep, nextCst, auxOcc, nextIdx)
+            }
+        }
+
+        private fun nextSiblingBatch(prevSlot: Int): Iterable<MatchTrieNode> {
+            val nextSlot = parent?.vacantSlots?.nextSetBit(prevSlot + 1) ?: 0
+            if (nextSlot < 0) {
+                return emptyList()
+            }
+
+            val keep = nextSlot < keptConstraints.size
+            val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
+            val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
+
+            return lookupAuxOccurrences(nextCst).map { auxOcc ->
+                MatchTrieNode(parent, keep, nextCst, auxOcc, nextIdx)
             }
         }
 
         fun children(): Iterator<MatchTrieNode> =
-            if (vacantSlots == 0)   {
+            if (isLeaf)   {
                 emptyList<MatchTrieNode>().iterator()
             }
             else {
-                initChildren()
-
                 object: Iterator<MatchTrieNode> {
                     var next: MatchTrieNode? = firstChild
 
@@ -174,37 +212,23 @@ internal class MatchTrie(val rule: Rule,
                 }
             }
 
-        val isLeaf: Boolean
-            get() = vacantSlots == 0
-
-        val match: PartialMatch by lazy(LazyThreadSafetyMode.NONE) {
-            val parentMatch = parent?.match ?: PartialMatch(rule, keptConstraints.size, discardedConstraints.size)
-            if (keepConstraint) parentMatch.keep(occurrence, index)
-            else                parentMatch.discard(occurrence, index)
-        }
-
-        val meta2logical: PersMap<MetaLogical<*>, List<Logical<*>>> by lazy(LazyThreadSafetyMode.NONE) {
-            var map = parent?.meta2logical ?: Maps.of()
-
-            for ((cstArg, occArg) in constraint.arguments().zip(occurrence.arguments())) {
-                if (cstArg is MetaLogical<*> && occArg is Logical<*>) {
-                    val metaLogical = cstArg
-                    val logical = occArg.findRoot()
-                    val orig = map.get(metaLogical)
-                    if (orig != null && !orig.contains(logical)) {
-                        val copy = ArrayList<Logical<*>>(Math.max(4, orig.size + 1))
-                        copy.addAll(orig)
-                        copy.add(logical)
-                        map = map.put(metaLogical, copy)
-                    }
-                    else if (orig == null) {
-                        map = map.put(metaLogical, listOf(logical))
+        private fun collectInstances(meta: MetaLogical<*>, list: ArrayList<Logical<*>>): ArrayList<Logical<*>> {
+            val cstArgIt = constraint.arguments().iterator()
+            val occArgIt = occurrence.arguments().iterator()
+            while (cstArgIt.hasNext() && occArgIt.hasNext()) {
+                val cstArg = cstArgIt.next()
+                val occArg = occArgIt.next()
+                if (cstArg == meta && occArg is Logical<*>) {
+                    if (!list.contains(occArg)) {
+                        list.add(occArg)
                     }
                 }
             }
-
-            map
+            return list
         }
+
+        private fun instances(meta: MetaLogical<*>): Iterable<Logical<*>>? =
+            fold(ArrayList<Logical<*>>()) { list, mtn -> mtn.collectInstances(meta, list) }
 
         private fun lookupAuxOccurrences(cst: Constraint): Iterable<ConstraintOccurrence> {
             return profiler.profile<Iterable<ConstraintOccurrence>>("lookupAuxOccurrences") {
@@ -212,7 +236,7 @@ internal class MatchTrie(val rule: Rule,
                 val cache = ArrayList<ConstraintOccurrence>(4)
                 for (arg in cst.arguments()) {
                     when (arg) {
-                        is MetaLogical<*>       ->  meta2logical.get(arg)?.forEach { log ->
+                        is MetaLogical<*>       ->  instances(arg)?.forEach { log ->
                                                         cache.addAll(aux.forLogical(log))
                                                     }
 
@@ -222,8 +246,12 @@ internal class MatchTrie(val rule: Rule,
                 if (cache.isNotEmpty()) {
                     cache.filter { occ -> occ.constraint().symbol() == cst.symbol() && !hasOccurrence(occ) }
                 }
-                else {
+                else if (cst.arguments().all { a -> a is MetaLogical<*> }) {
                     aux.forSymbol(cst.symbol()).filter { occ -> !hasOccurrence(occ) }
+                }
+                else {
+                    // all candidate occurrences should have been found by this time; if not, then there's none
+                    emptyList()
                 }
 
             }
@@ -232,76 +260,20 @@ internal class MatchTrie(val rule: Rule,
         private fun hasOccurrence(occ: ConstraintOccurrence): Boolean =
             any { mtn -> mtn.occurrence == occ }
 
-        private fun hasIndex(keep: Boolean, idx: Int): Boolean =
-            any { mtn -> mtn.index == idx && mtn.keepConstraint == keep }
+        private inline fun any(predicate: (MatchTrieNode) -> Boolean): Boolean =
+            fold(false) { b, mtn -> b || predicate(mtn) }
 
-        private inline fun any(predicate: (MatchTrieNode) -> Boolean): Boolean {
+        private inline fun <T> fold(start: T, step: (T, MatchTrieNode) -> T): T {
             var mtn: MatchTrieNode? = this
+            var curr = start
             while(mtn != null) {
-                if (predicate(mtn)) return true
+                curr = step(curr, mtn)
                 mtn = mtn.parent
             }
-            return false
+            return curr
         }
-
-        private fun keepAt(cst: Constraint, occ: ConstraintOccurrence, idx: Int) =
-            MatchTrieNode(this, vacantSlots - 1, true, cst, occ, idx)
-
-        private fun discardAt(cst: Constraint, occ: ConstraintOccurrence, idx: Int) =
-            MatchTrieNode(this, vacantSlots - 1,false, cst, occ, idx)
 
     }
 
 }
 
-internal class PartialMatch(val rule: Rule) {
-
-    internal lateinit var keptOccurrences: Array<ConstraintOccurrence?>
-        private set
-
-    internal lateinit var discardedOccurrences: Array<ConstraintOccurrence?>
-        private set
-
-    private lateinit var substitution: Substitution
-
-    constructor(rule: Rule, keptSize: Int, discardedSize: Int) :
-    this(rule)
-    {
-        this.keptOccurrences = arrayOfNulls(keptSize)
-        this.discardedOccurrences = arrayOfNulls(discardedSize)
-    }
-
-
-    fun complete(profiler: Profiler? = null): Match {
-        return profiler.profile<Match>("matches_${rule.tag()}") {
-
-            val kept = keptOccurrences.asList() as List<ConstraintOccurrence>
-            val discarded = discardedOccurrences.asList() as List<ConstraintOccurrence>
-
-            this.substitution = Unification.unify(MatchTerm(rule, kept, discarded), RuleTerm(rule))
-            if (substitution.isSuccessful) {
-                Match(rule, substitution, kept, discarded)
-            }
-            else
-                Match(rule, substitution, emptyList(), emptyList())
-
-        }
-    }
-
-    internal fun keep(occ: ConstraintOccurrence, idx: Int): PartialMatch {
-        val match = PartialMatch(rule)
-        match.keptOccurrences = this.keptOccurrences.copyOf()
-        match.keptOccurrences[idx] = occ
-        match.discardedOccurrences = this.discardedOccurrences
-        return match
-    }
-
-    internal fun discard(occ: ConstraintOccurrence, idx: Int): PartialMatch {
-        val match = PartialMatch(rule)
-        match.keptOccurrences = this.keptOccurrences
-        match.discardedOccurrences = this.discardedOccurrences.copyOf()
-        match.discardedOccurrences[idx] = occ
-        return match
-    }
-
-}

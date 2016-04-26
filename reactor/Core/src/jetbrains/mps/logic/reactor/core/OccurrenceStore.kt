@@ -62,7 +62,16 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         this.value2occurrences = Maps.of()
     }
 
-    override fun valueUpdated(logical: Logical<*>) { /* ignore */ }
+    override fun valueUpdated(logical: Logical<*>) {
+        logical2occurrences[logical.findRoot()]?.let { toMerge ->
+            val value = logical.findRoot().value()
+            var newList = value2occurrences[value] ?: emptyConsList()
+            for (occ in toMerge) {
+                newList = newList.prepend(occ)
+            }
+            this.value2occurrences = value2occurrences.put(value, newList)
+        }
+    }
 
     override fun parentUpdated(logical: Logical<*>) {
         // TODO: should we care about the order in which occurrences are stored?
