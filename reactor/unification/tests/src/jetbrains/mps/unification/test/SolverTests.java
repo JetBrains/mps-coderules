@@ -464,6 +464,46 @@ public class SolverTests {
         );
     }
 
+
+    @Test
+    public void testUnifyExternalRef() throws Exception {
+        Term termRef = ref(parse("f {a f{b f{c d}}}"));
+        Term varRef = ref(var("TAIL"));
+
+        Term a = term("g", termRef);
+        Term b = term("g", term("f", var("HEAD"), varRef));
+
+        assertUnifiesWithBindings(
+                a,
+                b,
+
+                bind(var("HEAD"), parse("a")),
+                bind(var("TAIL"), parse("f{b f{c d}}"))
+        );
+    }
+
+    @Test
+    public void testUnifyExternalRef2() throws Exception {
+        Term list = parse("f {a f{b f{c d}}}");
+        Term termRef = ref(list);
+        Term varRef = ref(var("TAIL"));
+
+
+        Term a = term("g", termRef);
+        Term aa = term("h", a, list);
+        Term b = term("g", term("f", var("HEAD"), varRef));
+        Term bb = term("h", b, var("LIST"));
+
+        assertUnifiesWithBindings(
+                aa,
+                bb,
+
+                bind(var("LIST"), parse("f {a f{b f{c d}}}")),
+                bind(var("HEAD"), parse("a")),
+                bind(var("TAIL"), parse("f{b f{c d}}"))
+        );
+    }
+
     @Test
     public void testFailConflict() throws Exception {
         assertUnificationFails(

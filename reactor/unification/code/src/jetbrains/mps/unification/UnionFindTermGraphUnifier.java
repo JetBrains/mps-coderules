@@ -51,7 +51,8 @@ public class UnionFindTermGraphUnifier {
 
     public Substitution unify(Term a, Term b) {
         if (unifClosure(toInner(a), toInner(b))) {
-            return findSolution(toInner(a));
+            Substitution solution = findSolution(toInner(a));
+            return solution;
         }
 
         return failedSubstitution(myFailureCause, myFailureDetails);
@@ -77,24 +78,22 @@ public class UnionFindTermGraphUnifier {
         InnerTerm dt = deref(zt);
 
         if (ds.myOrigin.is(VAR)) {
-            if (s != find(ds)) {
-                union(s, find(ds));
-            }
+            union(s, find(ds));
             union(s, t);
             return true;
         }
-        else {
+        else
+        {
             zs = ds;
         }
 
         if (dt.myOrigin.is(VAR)) {
-            if (t != find(dt)) {
-                union(t, find(dt));
-            }
+            union(t, find(dt));
             union(t, s);
             return true;
         }
-        else {
+        else
+        {
             zt = dt;
         }
 
@@ -155,7 +154,8 @@ public class UnionFindTermGraphUnifier {
 
         InnerTerm zs = s.mySchema;
         InnerTerm zt = t.mySchema;
-        if (zs.myOrigin.is(VAR)  || (zs.myOrigin.is(REF) && deref(zs).myOrigin.is(VAR) && !zt.myOrigin.is(VAR)))
+        if (zs.myOrigin.is(VAR)  ||
+            (zs.myOrigin.is(REF) && !zt.myOrigin.is(VAR)))
         {
             s.mySchema = zt;
         }
@@ -185,7 +185,12 @@ public class UnionFindTermGraphUnifier {
     }
 
     private Substitution findSolution(InnerTerm s) {
-        return findSolution(s, EMPTY_SUBSTITUTION);
+        mySolutionQueue.add(s);
+        Substitution solution = EMPTY_SUBSTITUTION;
+        while(!mySolutionQueue.isEmpty() && solution.isSuccessful()) {
+            solution = findSolution(mySolutionQueue.removeFirst(), solution);
+        }
+        return solution;
     }
 
     private Substitution findSolution(InnerTerm s, Substitution substitution) {
@@ -210,6 +215,13 @@ public class UnionFindTermGraphUnifier {
             }
 
             z.myVisited = false;
+
+        }
+        else if(z.myOrigin.is(REF)) {
+            InnerTerm trg = deref(z);
+            if (!trg.myAcyclic) {
+                mySolutionQueue.add(trg);
+            }
         }
 
         if (!substitution.isSuccessful()) {
@@ -269,6 +281,8 @@ public class UnionFindTermGraphUnifier {
     private Map<Object, InnerTerm> myTermCache = new IdentityHashMap<Object, InnerTerm>();
 
     private FailureCause myFailureCause = UKNOWN;
+
+    private LinkedList<InnerTerm> mySolutionQueue = new LinkedList<InnerTerm>();
 
     private Object[] myFailureDetails = null;
 
