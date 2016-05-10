@@ -5,6 +5,8 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.Profiler
+import jetbrains.mps.logic.reactor.util.profile
 import java.util.*
 import com.github.andrewoma.dexx.collection.Map as PersMap
 

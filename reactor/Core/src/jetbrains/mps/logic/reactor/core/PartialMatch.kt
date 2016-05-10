@@ -2,6 +2,8 @@ package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.Profiler
+import jetbrains.mps.logic.reactor.util.profile
 import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Unification
 

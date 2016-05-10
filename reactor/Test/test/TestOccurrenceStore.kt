@@ -1,5 +1,6 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.util.emptyConsList
 import org.junit.Test
 import org.junit.Assert.*
 

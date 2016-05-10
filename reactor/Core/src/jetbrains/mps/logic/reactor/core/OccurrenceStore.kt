@@ -8,6 +8,9 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.util.cons
+import jetbrains.mps.logic.reactor.util.emptyConsList
+import jetbrains.mps.logic.reactor.util.remove
 import java.util.*
 
 /**

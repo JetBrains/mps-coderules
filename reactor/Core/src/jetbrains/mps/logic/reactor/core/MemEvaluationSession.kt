@@ -11,6 +11,7 @@ import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Program
+import jetbrains.mps.logic.reactor.util.Profiler
 import java.util.*
 
 /**

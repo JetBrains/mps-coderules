@@ -10,6 +10,10 @@ import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.IdWrapper
+import jetbrains.mps.logic.reactor.util.Profiler
+import jetbrains.mps.logic.reactor.util.profile
+import jetbrains.mps.logic.reactor.util.remove
 import java.util.*
 
 /**

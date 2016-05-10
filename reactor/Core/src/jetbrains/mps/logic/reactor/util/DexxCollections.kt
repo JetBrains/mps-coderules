@@ -1,4 +1,4 @@
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.util
 
 import com.github.andrewoma.dexx.collection.ConsList
 

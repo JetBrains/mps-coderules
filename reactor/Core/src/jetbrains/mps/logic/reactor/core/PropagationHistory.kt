@@ -6,6 +6,7 @@ import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.List as PersList
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.IdWrapper
 
 internal class PropagationHistory {
 

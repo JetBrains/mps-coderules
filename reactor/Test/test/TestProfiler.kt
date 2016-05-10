@@ -1,5 +1,5 @@
-import jetbrains.mps.logic.reactor.core.Profiler
-import jetbrains.mps.logic.reactor.core.profile
+import jetbrains.mps.logic.reactor.util.Profiler
+import jetbrains.mps.logic.reactor.util.profile
 import org.junit.Test
 import org.junit.Assert.*
 

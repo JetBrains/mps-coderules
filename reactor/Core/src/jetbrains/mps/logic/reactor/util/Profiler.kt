@@ -1,4 +1,4 @@
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.util
 
 import java.util.*
 
@@ -33,7 +33,7 @@ class Profiler {
 
     // name -> (duration, freq)
     fun rawProfilingData(): Map<String, Pair<Long,Int>> {
-        val name2duration = HashMap<String, Pair<Long,Int>>()
+        val name2duration = HashMap<String, Pair<Long, Int>>()
         tokenStack.peek().mergeDurations(name2duration)
         return name2duration
     }

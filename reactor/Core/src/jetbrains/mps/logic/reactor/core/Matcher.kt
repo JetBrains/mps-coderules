@@ -7,6 +7,8 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.Profiler
+import jetbrains.mps.logic.reactor.util.profile
 import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
