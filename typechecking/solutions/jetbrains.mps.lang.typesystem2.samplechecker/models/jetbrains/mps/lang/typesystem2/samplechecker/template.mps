@@ -3592,20 +3592,6 @@
           </node>
         </node>
       </node>
-      <node concept="cBwPQ" id="2jjvHNv9JyV" role="30RCb4">
-        <node concept="3clFbS" id="2jjvHNv9JyW" role="16YjZG">
-          <node concept="3clFbF" id="2jjvHNv9JyX" role="3cqZAp">
-            <node concept="3y3z36" id="2jjvHNv9JLq" role="3clFbG">
-              <node concept="3A2sRY" id="2jjvHNv9Jz0" role="3uHU7B">
-                <ref role="3A2yKK" node="2q0gzCFIV7W" resolve="cls" />
-              </node>
-              <node concept="3B5_sB" id="2jjvHNv9JyZ" role="3uHU7w">
-                <ref role="3B5MYn" to="wyt6:~Boolean" resolve="Boolean" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="AVZhu" id="7nkyKX6XUlR" role="3ArX_J">
       <property role="TrG5h" value="findSubtypePaths_NullType" />
