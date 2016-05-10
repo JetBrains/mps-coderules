@@ -79,7 +79,8 @@ class TestMatcher {
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.toSet(), matches.map { m -> m.rule }.toSet())
                     matches.forEach { m -> assertTrue(m.keptOccurrences.size + m.discardedOccurrences.size == 1) }
-                    matches.flatMap { m -> (m.keptOccurrences.toList() + m.discardedOccurrences.toList()) }.forEach { occ ->
+                    matches.flatMap { m ->
+                        (m.keptOccurrences.toList() + m.discardedOccurrences.toList()) }.forEach { occ ->
                         assert(occ.constraint().symbol().id() == "main")
                     }
                 }

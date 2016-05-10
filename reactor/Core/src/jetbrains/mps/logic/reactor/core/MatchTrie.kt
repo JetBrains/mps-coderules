@@ -15,35 +15,44 @@ import com.github.andrewoma.dexx.collection.Map as PersMap
 internal class MatchTrie(val rule: Rule,
                          val activeOcc: ConstraintOccurrence,
                          val aux: OccurrenceIndex,
-                         val profiler: Profiler?) : Sequence<PartialMatch>
+                         val profiler: Profiler?) : Iterable<PartialMatch>
 {
 
     val keptConstraints = rule.headKept().toCollection(ArrayList(4))
 
     val discardedConstraints = rule.headReplaced().toCollection(ArrayList(4))
 
-    private val roots: List<MatchTrieNode> by lazy(LazyThreadSafetyMode.NONE) {
-        ArrayList<MatchTrieNode>(4).apply {
-            profiler.profile("initMatchTrie") {
+    private val firstRoot: MatchTrieNode? by lazy(LazyThreadSafetyMode.NONE) {
+        profiler.profile<MatchTrieNode?>("initMatchTrie") {
 
-                for ((idx, cst) in keptConstraints.withIndex()) {
-                    if (cst.matches(activeOcc)) {
-                        add(MatchTrieNode(null, true, cst, activeOcc, idx))
+            var first: MatchTrieNode? = null
+            var prev: MatchTrieNode? = null
+            for ((idx, cst) in keptConstraints.withIndex()) {
+                if (cst.matches(activeOcc)) {
+                    val next = MatchTrieNode(null, true, cst, activeOcc, idx)
+                    if (first == null) {
+                        first = next
                     }
+                    prev?._nextSibling = next
+                    prev = next
                 }
-                for ((idx, cst) in discardedConstraints.withIndex()) {
-                    if (cst.matches(activeOcc)) {
-                        add(MatchTrieNode(null, false, cst, activeOcc, idx))
-                    }
-                }
-
             }
+            for ((idx, cst) in discardedConstraints.withIndex()) {
+                if (cst.matches(activeOcc)) {
+                    val next = MatchTrieNode(null, false, cst, activeOcc, idx)
+                    if (first == null) {
+                        first = next
+                    }
+                    prev?._nextSibling = next
+                    prev = next
+                }
+            }
+            first
+
         }
     }
 
     override fun iterator() = object : Iterator<PartialMatch> {
-
-        val stack = LinkedList<Iterator<MatchTrieNode>>()
 
         var next: PartialMatch? = null
 
@@ -68,29 +77,24 @@ internal class MatchTrie(val rule: Rule,
 
 
         private fun calcNext(): PartialMatch? {
-            stack.clear()
-            stack.push(roots.iterator())
+            if (firstRoot == null) {
+                return null
+            }
+            var mtn: MatchTrieNode? = firstRoot
 
-            while(stack.isNotEmpty()) {
-                val it = stack.peek()
-                if (!it.hasNext()) {
-                    stack.pop()
-                    continue
+            while (mtn != null) {
+                if (mtn.isSeen) {
+                    if (mtn.nextSibling == null) {
+                        mtn.parent?.isSeen = true
+                    }
+                    mtn = mtn.nextSibling ?: mtn.parent
                 }
-                val mtn = it.next()
-                if (mtn.parent?.isMatched ?: false) {
-                    stack.pop()
-                    continue
-                }
-                if (mtn.isMatched) {
-                    continue
-                }
-                if (mtn.isLeaf) {
-                    mtn.isMatched = true
+                else if (mtn.isLeaf) {
+                    mtn.isSeen = true
                     return mtn.match
                 }
                 else {
-                    stack.push(mtn.children())
+                    mtn = mtn.firstChild
                 }
             }
 
@@ -105,43 +109,48 @@ internal class MatchTrie(val rule: Rule,
                                       val index: Int)
     {
 
-        var isMatched: Boolean = false
+        var isSeen: Boolean = false
 
-        val firstChild: MatchTrieNode? by lazy(LazyThreadSafetyMode.NONE) {
-            var first: MatchTrieNode? = null
-            var prev: MatchTrieNode? = null
-            for (next in firstChildrenBatch()) {
-                if (first == null) {
-                    first = next
-                }
-                prev?._nextSibling = next
-                prev = next
-            }
-            first
-        }
+        var _firstChild: MatchTrieNode? = null
 
-        var _nextSibling: MatchTrieNode? = null
-
-        val nextSibling: MatchTrieNode? by lazy(LazyThreadSafetyMode.NONE) {
-            if (_nextSibling != null) {
-                _nextSibling
-            }
-            else {
-                var first: MatchTrieNode? = null
-                var prev: MatchTrieNode? = null
-                var prevSlot = if (keepConstraint) index else index + keptConstraints.size
-                while (first == null && prevSlot < keptConstraints.size + discardedConstraints.size) {
-                    for (next in nextSiblingBatch(prevSlot++)) {
+        val firstChild: MatchTrieNode?
+            get() {
+                if (_firstChild == null) {
+                    var first: MatchTrieNode? = null
+                    var prev: MatchTrieNode? = null
+                    for (next in firstChildrenBatch()) {
                         if (first == null) {
                             first = next
                         }
                         prev?._nextSibling = next
                         prev = next
                     }
+                    this._firstChild = first
                 }
-                first
+                return _firstChild
             }
-        }
+
+        var _nextSibling: MatchTrieNode? = null
+
+        val nextSibling: MatchTrieNode?
+            get() {
+                if (_nextSibling == null && parent != null) {
+                    var first: MatchTrieNode? = null
+                    var prev: MatchTrieNode? = null
+                    var prevSlot = if (keepConstraint) index else index + keptConstraints.size
+                    while (first == null && prevSlot < keptConstraints.size + discardedConstraints.size) {
+                        for (next in nextSiblingBatch(prevSlot++)) {
+                            if (first == null) {
+                                first = next
+                            }
+                            prev?._nextSibling = next
+                            prev = next
+                        }
+                    }
+                    this._nextSibling = first
+                }
+                return _nextSibling
+            }
 
         val vacantSlots: BitSet by lazy(LazyThreadSafetyMode.NONE) {
             val result = BitSet()
@@ -173,16 +182,14 @@ internal class MatchTrie(val rule: Rule,
             val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
             val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
 
-            val (success, lookupAuxOccurrences) = lookupAuxOccurrences(nextCst)
-            if (!success) {
-                forEachNode { mtn -> mtn.isMatched = true }
-                return emptyList()
-            }
-            else {
-                return lookupAuxOccurrences.map { auxOcc ->
-                    MatchTrieNode(this, keep, nextCst, auxOcc, nextIdx)
-                }
-            }
+            val (result, auxOccurrences) = lookupAuxOccurrences(nextCst)
+            when (result) {
+                Result.DEFINITIVE   ->  parent
+                Result.NONE         ->  this
+                Result.INCONCLUSIVE ->  null
+            }?.forEachNode { mtn -> mtn.isSeen = true }
+
+            return auxOccurrences.map { auxOcc -> MatchTrieNode(this, keep, nextCst, auxOcc, nextIdx) }
         }
 
         private fun nextSiblingBatch(prevSlot: Int): Iterable<MatchTrieNode> {
@@ -195,40 +202,15 @@ internal class MatchTrie(val rule: Rule,
             val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
             val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
 
-            val (success, lookupAuxOccurrences) = lookupAuxOccurrences(nextCst)
-            if (!success) {
-                forEachNode { mtn -> mtn.isMatched = true }
-                return emptyList()
-            }
-            else {
-                return lookupAuxOccurrences.map { auxOcc ->
-                    MatchTrieNode(parent, keep, nextCst, auxOcc, nextIdx)
-                }
-            }
+            val (result, auxOccurrences) = lookupAuxOccurrences(nextCst)
+            when (result) {
+                Result.DEFINITIVE   ->  parent
+                Result.NONE         ->  this
+                Result.INCONCLUSIVE ->  null
+            }?.forEachNode { mtn -> mtn.isSeen = true }
+
+            return auxOccurrences.map { auxOcc -> MatchTrieNode(parent, keep, nextCst, auxOcc, nextIdx) }
         }
-
-        fun children(): Iterator<MatchTrieNode> =
-            if (isLeaf)   {
-                emptyList<MatchTrieNode>().iterator()
-            }
-            else {
-                object: Iterator<MatchTrieNode> {
-                    var next: MatchTrieNode? = firstChild
-
-                    override fun hasNext(): Boolean = next != null
-
-                    override fun next(): MatchTrieNode {
-                        val tmp = next
-                        if (tmp != null)  {
-                            this.next = next?.nextSibling
-                            return tmp
-                        }
-                        else {
-                            throw NoSuchElementException()
-                        }
-                    }
-                }
-            }
 
         private fun collectInstances(meta: MetaLogical<*>, list: ArrayList<Logical<*>>): ArrayList<Logical<*>> {
             val cstArgIt = constraint.arguments().iterator()
@@ -248,11 +230,12 @@ internal class MatchTrie(val rule: Rule,
         private fun instances(meta: MetaLogical<*>): Iterable<Logical<*>>? =
             foldNodes(ArrayList<Logical<*>>()) { list, mtn -> mtn.collectInstances(meta, list) }
 
-        // the first component indicates that the results (if any) have been looked up
-        // if false, it means no results could have potentially been found at all,
-        // so it's useless to attempt again with the same input
-        private fun lookupAuxOccurrences(cst: Constraint): Pair<Boolean, Iterable<ConstraintOccurrence>> {
-            return profiler.profile<Pair<Boolean, Iterable<ConstraintOccurrence>>> ("lookupAuxOccurrences") {
+        // the first component indicates the quality of the result:
+        // DEFINITIVE indicates the only possible matches were returned
+        // INCONCLUSIVE may yield some (ir-)relevant results
+        // NONE means no results could have been found at all, so it's useless to attempt again with the same input
+        private fun lookupAuxOccurrences(cst: Constraint): Pair<Result, Iterable<ConstraintOccurrence>> {
+            return profiler.profile<Pair<Result, Iterable<ConstraintOccurrence>>> ("lookupAuxOccurrences") {
 
                 val cache = ArrayList<ConstraintOccurrence>(4)
                 for (arg in cst.arguments()) {
@@ -265,14 +248,14 @@ internal class MatchTrie(val rule: Rule,
                     }
                 }
                 if (cache.isNotEmpty()) {
-                    true.to(cache.filter { occ -> occ.constraint().symbol() == cst.symbol() && !hasOccurrence(occ) })
+                    Result.DEFINITIVE.to(cache.filter { occ -> occ.constraint().symbol() == cst.symbol() && !hasOccurrence(occ) })
                 }
                 else if (cst.arguments().all { a -> a is MetaLogical<*> }) {
-                    true.to(aux.forSymbol(cst.symbol()).filter { occ -> !hasOccurrence(occ) })
+                    Result.INCONCLUSIVE.to(aux.forSymbol(cst.symbol()).filter { occ -> !hasOccurrence(occ) })
                 }
                 else {
                     // all candidate occurrences should have been found by this time; if not, then there's none
-                    false.to(emptyList())
+                    Result.NONE.to(emptyList())
                 }
 
             }
@@ -297,6 +280,12 @@ internal class MatchTrie(val rule: Rule,
             return curr
         }
 
+    }
+
+    enum class Result {
+        DEFINITIVE,
+        INCONCLUSIVE,
+        NONE
     }
 
 }

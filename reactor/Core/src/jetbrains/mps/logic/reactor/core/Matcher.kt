@@ -21,8 +21,7 @@ import com.github.andrewoma.dexx.collection.List as PersList
 class Matcher(val ruleIndex: RuleIndex,
               val activeOcc: ConstraintOccurrence,
               val aux: OccurrenceIndex,
-              val profiler: Profiler? = null) :
-    Iterable<Match>
+              val profiler: Profiler? = null) : Iterable<Match>
 {
 
     private val matchTries: List<MatchTrie> by lazy(LazyThreadSafetyMode.NONE) {
@@ -35,8 +34,40 @@ class Matcher(val ruleIndex: RuleIndex,
         }
     }
 
-    override fun iterator(): Iterator<Match> = matchTries.asSequence().flatten().map { pm -> pm.complete(profiler) }.iterator()
+    override fun iterator() = object : Iterator<Match> {
 
+        val triesIt: Iterator<MatchTrie> = matchTries.iterator()
+
+        var pmIt: Iterator<PartialMatch>? = null
+
+        var nextMatch: Match? = null
+
+        override fun hasNext(): Boolean {
+            calcNext()
+            return nextMatch != null
+        }
+
+        override fun next(): Match {
+            calcNext()
+            val tmp = nextMatch
+            this.nextMatch = null
+            return tmp ?: throw NoSuchElementException()
+        }
+
+        private fun calcNext() {
+            if (nextMatch == null) {
+                while (pmIt == null || !(pmIt!!.hasNext())) {
+                    if (!triesIt.hasNext()) {
+                        return
+                    }
+                    pmIt = triesIt.next().iterator()
+                }
+                if (pmIt!!.hasNext()) {
+                    this.nextMatch = pmIt!!.next().complete(profiler)
+                }
+            }
+        }
+    }
 }
 
 
