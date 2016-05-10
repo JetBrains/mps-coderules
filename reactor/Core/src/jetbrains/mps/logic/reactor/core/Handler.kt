@@ -1,7 +1,8 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.ConsList
-import com.github.andrewoma.dexx.collection.Sets
+import com.github.andrewoma.dexx.collection.Maps
+import com.github.andrewoma.dexx.collection.Map as PersMap
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
@@ -10,10 +11,7 @@ import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.logic.reactor.util.IdWrapper
-import jetbrains.mps.logic.reactor.util.Profiler
-import jetbrains.mps.logic.reactor.util.profile
-import jetbrains.mps.logic.reactor.util.remove
+import jetbrains.mps.logic.reactor.util.*
 import java.util.*
 
 /**
@@ -71,42 +69,47 @@ class HandlerFrame : LogicalObserver, LogicalObserverProxy
 
     private var stack: FrameStack
 
-    private lateinit var observerList: ConsList<Pair<Logical<*>, LogicalObserver>>
+    private lateinit var observers: PersMap<IdWrapper<Logical<*>>, ConsList<LogicalObserver>>
 
     constructor(stack: FrameStack, prev: HandlerFrame? = null)
     {
         this.stack = stack
         this.prev = prev
-        this.observerList = prev?.observerList ?: ConsList.empty()
+        this.observers = prev?.observers ?: Maps.of()
         this.store = OccurrenceStore(prev?.store ?: OccurrenceStore(this), this)
     }
 
     override fun addObserver(logical: Logical<*>, obs: LogicalObserver) {
-        if (!observerList.any { obs -> obs.first === logical }) {               // referential equality!
+        val logicalId = IdWrapper(logical)
+        if (!observers.containsKey(logicalId)) {
             stack.addObserver(logical)
         }
-        this.observerList = observerList.prepend(logical.to(obs))
+        this.observers = observers.put(logicalId,
+            observers[logicalId]?.prepend(obs) ?: cons(obs))
     }
 
     override fun removeObserver(logical: Logical<*>, obs: LogicalObserver) {
-        this.observerList = observerList.remove(logical.to(obs))!!
-        if (!observerList.any { obs -> obs.first === logical }) {               // referential equality!
-            stack.removeObserver(logical)
+        val logicalId = IdWrapper(logical)
+        observers[logicalId].remove(obs)?.let { newList ->
+            this.observers = observers.put(logicalId, newList)
+            if (newList.isEmpty) {
+                stack.removeObserver(logical)
+            }
         }
     }
 
     override fun valueUpdated(logical: Logical<*>) {
-        for (obs in observerList) {
-            if (obs.first === logical) {                                        // referential equality!
-                obs.second.valueUpdated(logical)
+        observers[IdWrapper(logical)]?.let { list ->
+            for (obs in list) {
+                obs.valueUpdated(logical)
             }
         }
     }
 
     override fun parentUpdated(logical: Logical<*>) {
-        for (obs in observerList) {
-            if (obs.first === logical) {                                        // referential equality!
-                obs.second.parentUpdated(logical)
+        observers[IdWrapper(logical)]?.let { list ->
+            for (obs in list) {
+                obs.parentUpdated(logical)
             }
         }
     }

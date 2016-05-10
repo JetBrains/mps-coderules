@@ -107,8 +107,8 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
                                         proxy.addObserver(arg, this)
                                     }
 
-                is Any                      ->  this.value2occurrences = value2occurrences.put(arg,
-                                                    value2occurrences[arg]?.prepend(occ) ?: cons(occ))
+                is Any          ->  this.value2occurrences = value2occurrences.put(arg,
+                                        value2occurrences[arg]?.prepend(occ) ?: cons(occ))
             }
         }
 
