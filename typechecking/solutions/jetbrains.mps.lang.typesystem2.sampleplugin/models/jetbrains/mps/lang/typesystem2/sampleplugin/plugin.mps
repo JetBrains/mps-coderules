@@ -885,6 +885,12 @@
           </node>
         </node>
         <node concept="3clFbH" id="2tjs8VC4U08" role="3cqZAp" />
+        <node concept="3clFbF" id="2k2r9bMcGD4" role="3cqZAp">
+          <node concept="2YIFZM" id="2k2r9bMcHfV" role="3clFbG">
+            <ref role="37wK5l" to="7ub6:2k2r9bMbV$8" resolve="init" />
+            <ref role="1Pybhc" to="7ub6:2tjs8VC0K0m" resolve="Memoizer" />
+          </node>
+        </node>
         <node concept="3clFbF" id="2tjs8VC4NEW" role="3cqZAp">
           <node concept="2YIFZM" id="2tjs8VC4NU7" role="3clFbG">
             <ref role="37wK5l" to="7ub6:2tjs8VC1byF" resolve="push" />
@@ -1007,6 +1013,12 @@
             <node concept="3clFbF" id="2tjs8VC4Q$O" role="3cqZAp">
               <node concept="2YIFZM" id="2tjs8VC4QN9" role="3clFbG">
                 <ref role="37wK5l" to="7ub6:2tjs8VC1f3O" resolve="pop" />
+                <ref role="1Pybhc" to="7ub6:2tjs8VC0K0m" resolve="Memoizer" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="2k2r9bMcIim" role="3cqZAp">
+              <node concept="2YIFZM" id="2k2r9bMcIRE" role="3clFbG">
+                <ref role="37wK5l" to="7ub6:2k2r9bMbWB2" resolve="dispose" />
                 <ref role="1Pybhc" to="7ub6:2tjs8VC0K0m" resolve="Memoizer" />
               </node>
             </node>
@@ -10239,6 +10251,16 @@
                       <ref role="37wK5l" node="5X6ji59z7r_" resolve="getTabComponent" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="7$Xw2YtK268" role="3cqZAp">
+              <node concept="2OqwBi" id="7$Xw2YtK2mZ" role="3clFbG">
+                <node concept="37vLTw" id="7$Xw2YtK266" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3mz2_dYCM0h" resolve="tab" />
+                </node>
+                <node concept="liA8E" id="7$Xw2YtL2mn" role="2OqNvi">
+                  <ref role="37wK5l" node="7$Xw2YtK9YB" resolve="clear" />
                 </node>
               </node>
             </node>
@@ -24262,6 +24284,47 @@
       </node>
     </node>
     <node concept="2tJIrI" id="YGS68MEtF4" role="jymVt" />
+    <node concept="3clFb_" id="7$Xw2YtK9YB" role="jymVt">
+      <property role="TrG5h" value="clear" />
+      <node concept="3cqZAl" id="7$Xw2YtK9YD" role="3clF45" />
+      <node concept="3Tm1VV" id="7$Xw2YtK9YE" role="1B3o_S" />
+      <node concept="3clFbS" id="7$Xw2YtK9YF" role="3clF47">
+        <node concept="3clFbF" id="7$Xw2YtKg4L" role="3cqZAp">
+          <node concept="37vLTI" id="7$Xw2YtKomM" role="3clFbG">
+            <node concept="10Nm6u" id="7$Xw2YtKrfb" role="37vLTx" />
+            <node concept="2OqwBi" id="7$Xw2YtKj63" role="37vLTJ">
+              <node concept="Xjq3P" id="7$Xw2YtKg4K" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7$Xw2YtKlIz" role="2OqNvi">
+                <ref role="2Oxat5" node="5X6ji59z9v8" resolve="tabPanel" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7$Xw2YtKxoq" role="3cqZAp">
+          <node concept="37vLTI" id="7$Xw2YtKEr4" role="3clFbG">
+            <node concept="10Nm6u" id="7$Xw2YtKHmK" role="37vLTx" />
+            <node concept="2OqwBi" id="7$Xw2YtK$n7" role="37vLTJ">
+              <node concept="Xjq3P" id="7$Xw2YtKxoo" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7$Xw2YtKBw$" role="2OqNvi">
+                <ref role="2Oxat5" node="Nob1E3$O98" resolve="activationTreeTable" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7$Xw2YtKNzF" role="3cqZAp">
+          <node concept="37vLTI" id="7$Xw2YtKW2t" role="3clFbG">
+            <node concept="10Nm6u" id="7$Xw2YtKZ8P" role="37vLTx" />
+            <node concept="2OqwBi" id="7$Xw2YtKQh1" role="37vLTJ">
+              <node concept="Xjq3P" id="7$Xw2YtKNzD" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7$Xw2YtKTbX" role="2OqNvi">
+                <ref role="2Oxat5" node="6QkkSolbdUA" resolve="storeTreeTable" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7$Xw2YtK6r9" role="jymVt" />
     <node concept="3clFb_" id="Nob1E3zyyJ" role="jymVt">
       <property role="TrG5h" value="createTabPanel" />
       <node concept="37vLTG" id="Nob1E3C9mb" role="3clF46">
