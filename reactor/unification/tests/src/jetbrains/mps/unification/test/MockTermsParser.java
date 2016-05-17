@@ -199,7 +199,7 @@ public class MockTermsParser {
         private void emptyTerm() {
             String name = termsStack.pop();
             Integer label = termLabelsStack.pop();
-            Term newTerm = term(name);
+            Term newTerm = MockTerm.term(name);
             argumentsStack.peek().add(newTerm);
             if (label != null) {
                 termRefs.put(label, newTerm);
@@ -214,7 +214,7 @@ public class MockTermsParser {
             List<Term> arguments = argumentsStack.pop();
             String name = termsStack.pop();
             Integer label = termLabelsStack.pop();
-            Term newTerm = term(name, arguments.toArray(new Term[arguments.size()]));
+            Term newTerm = MockTerm.term(name, arguments.toArray(new Term[arguments.size()]));
             argumentsStack.peek().add(newTerm);
             if (label != null) {
                 termRefs.put(label, newTerm);
@@ -222,21 +222,21 @@ public class MockTermsParser {
         }
 
         private void addVar(String name) {
-            argumentsStack.peek().add(var(name));
+            argumentsStack.peek().add(MockTerm.var(name));
         }
 
         private void addVarRef(String name) {
-            argumentsStack.peek().add(ref(var(name)));
+            argumentsStack.peek().add(MockTerm.ref(MockTerm.var(name)));
         }
 
         private void addRef(String ref) {
             final int label = Integer.parseInt(ref.substring(1));
             if (termRefs.containsKey(label) && termRefs.get(label) != null) {
-                argumentsStack.peek().add(ref(termRefs.get(label)));
+                argumentsStack.peek().add(MockTerm.ref(termRefs.get(label)));
             }
             else {
                 termRefs.put(label, null);
-                argumentsStack.peek().add(ref(lookupHelper.lookup(label)));
+                argumentsStack.peek().add(MockTerm.ref(lookupHelper.lookup(label)));
             }
         }
     }
