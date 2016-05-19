@@ -5,6 +5,7 @@ import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.ConsList.empty
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Maps
+import com.github.andrewoma.dexx.collection.Vector as PersVector
 import jetbrains.mps.logic.reactor.util.cons
 import jetbrains.mps.logic.reactor.util.remove
 import jetbrains.mps.unification.Term
@@ -20,8 +21,9 @@ import java.util.*
  * The method `put` returns a new `TermTrie` updated to contain the new association. Likewise, the method
  * `remove` returns the updated `TermTrie` without the association.
  *
- * To access the stored values, the method `lookupValues` returns all values associated with the term passed
- * as an argument. The method `allValues` returns all stored values.
+ * To access the stored values, the method `lookupValues` returns all values associated with terms, with values having
+ * multiple cardinality returned only once. The method `allValues` returns all stored values. The values are always
+ * returned in the order they were added.
  *
  * Term variables are supported: a variable matches any term, including other variable. No terms unification is
  * performed.
@@ -34,6 +36,10 @@ class TermTrie<T> {
 
     private lateinit var root: SymNode<T>
 
+    private lateinit var value2index: PersMap<T, Int>
+
+    private lateinit var values: PersVector<T>
+
     private companion object {
 
         private val WILDCARD = object : Any() {
@@ -44,34 +50,53 @@ class TermTrie<T> {
 
     constructor() {
         this.root = SymNode<T>(WILDCARD, null)
+        this.value2index = Maps.of()
+        this.values = PersVector.empty()
     }
 
-    private constructor(root: SymNode<T>) {
+    private constructor(root: SymNode<T>, val2ids: PersMap<T, Int>, vals: PersVector<T>) {
         this.root = root
+        this.value2index = val2ids
+        this.values = vals
     }
 
     fun put(term: Term, value: T): TermTrie<T> {
+        var newIndex = value2index
+        var newValues = values
+
+        val valueIdx = value2index[value] ?: run {
+            newValues = values.append(value)
+            val idx = newValues.size() - 1
+            newIndex = value2index.put(value, idx)
+            idx
+        }
+
         val newNode = root.leftOrDefault(symbolOrWildcard(term))
-        return TermTrie(root.putLeft(putValue(newNode, term, value)))
+        return TermTrie(root.putLeft(putValue(newNode, term, valueIdx)), newIndex, newValues)
     }
 
     fun remove(term: Term, value: T): TermTrie<T> {
+        val valueIdx = value2index[value]
+        if (valueIdx == null) {
+            return this
+        }
         return root.left[symbolOrWildcard(term)]?.let { found ->
-            return TermTrie(root.putLeft(removeValue(found, term, value)))
+            // TODO: remove the value from the index
+            return TermTrie(root.putLeft(removeValue(found, term, valueIdx)), value2index, values)
         } ?: this
     }
 
     fun lookupValues(term: Term): Iterable<T> {
-        val include = ArrayList<T>()
+        val includeIndices:  SortedSet<Int> = TreeSet<Int>()
 
         val block: (SymNode<T>) -> Unit = { match ->
             matching(term, match) { node, matched, term ->
                 if (matched) {
                     if (term?.`is`(Term.Kind.VAR) ?: false) {
-                        all(node) {  include.addAll(it.values) }
+                        all(node) { includeIndices.addAll(it.valueIndices) }
 
                     } else {
-                        include.addAll(node.values)
+                        includeIndices.addAll(node.valueIndices)
                     }
                 }
                 else {
@@ -87,31 +112,31 @@ class TermTrie<T> {
             root.left[WILDCARD]?.let(block)
         }
 
-        return include
+        return includeIndices.map { idx -> values.get(idx) }
     }
 
     fun allValues(): Iterable<T> {
-        val include = ArrayList<T>()
+        val includeIndices:  SortedSet<Int> = TreeSet<Int>()
 
         all(root) { node ->
-            include.addAll(node.values)
+            includeIndices.addAll(node.valueIndices)
         }
 
-        return include
+        return includeIndices.map { idx -> values.get(idx) }
     }
 
-    private fun putValue(node: SymNode<T>, term: Term, value: T): SymNode<T> {
+    private fun putValue(node: SymNode<T>, term: Term, valueIdx: Int): SymNode<T> {
         val arguments = term.arguments()
         return if (arguments.isNotEmpty()) {
             val argList = arguments.toList()
             val arg = argList[0]
-            val prev = putValue(node.leftOrDefault(symbolOrWildcard(arg)), arg, value)
+            val prev = putValue(node.leftOrDefault(symbolOrWildcard(arg)), arg, valueIdx)
 
             if (argList.size > 1) {
-                node.putLeft(putNextArgValue(prev, argList.subList(1, argList.size), value))
+                node.putLeft(putNextArgValue(prev, argList.subList(1, argList.size), valueIdx))
 
             } else if (arg.arguments().isEmpty()) {
-                node.putLeft(prev.putValue(value))
+                node.putLeft(prev.putValueIndex(valueIdx))
 
             } else {
                 node.putLeft(prev)
@@ -122,18 +147,18 @@ class TermTrie<T> {
         }
     }
 
-    private fun putNextArgValue(prev: SymNode<T>, argList: List<Term>, value: T): SymNode<T> {
+    private fun putNextArgValue(prev: SymNode<T>, argList: List<Term>, valueIdx: Int): SymNode<T> {
         // invariant: the base case is to be processed elsewhere
         assert(argList.isNotEmpty())
 
         val arg = argList[0]
-        val next = putValue(prev.rightOrDefault(symbolOrWildcard(arg)), arg, value)
+        val next = putValue(prev.rightOrDefault(symbolOrWildcard(arg)), arg, valueIdx)
 
         return if (argList.size > 1) {
-            prev.putRight(putNextArgValue(next, argList.subList(1, argList.size), value))
+            prev.putRight(putNextArgValue(next, argList.subList(1, argList.size), valueIdx))
 
         } else if (arg.arguments().isEmpty()) {
-            prev.putRight(next.putValue(value))
+            prev.putRight(next.putValueIndex(valueIdx))
 
         } else {
             prev.putRight(next)
@@ -141,20 +166,20 @@ class TermTrie<T> {
     }
 
 
-    private fun removeValue(node: SymNode<T>, term: Term, value: T): SymNode<T> {
+    private fun removeValue(node: SymNode<T>, term: Term, valueIdx: Int): SymNode<T> {
         val arguments = term.arguments()
         return if (arguments.isNotEmpty()) {
             val argList = arguments.toList()
             val arg = argList[0]
             node.left[symbolOrWildcard(arg)]?.let { found ->
 
-                val prev = removeValue(found, arg, value)
+                val prev = removeValue(found, arg, valueIdx)
 
                 if (argList.size > 1) {
-                    node.putLeft(removeNextArgValue(prev, argList.subList(1, argList.size), value))
+                    node.putLeft(removeNextArgValue(prev, argList.subList(1, argList.size), valueIdx))
 
                 } else if (arg.arguments().isEmpty()) {
-                    node.putLeft(prev.removeValue(value))
+                    node.putLeft(prev.removeValueIndex(valueIdx))
 
                 } else {
                     node.putLeft(prev)
@@ -167,20 +192,20 @@ class TermTrie<T> {
         }
     }
 
-    private fun removeNextArgValue(prev: SymNode<T>, argList: List<Term>, value: T): SymNode<T> {
+    private fun removeNextArgValue(prev: SymNode<T>, argList: List<Term>, valueIdx: Int): SymNode<T> {
         // invariant: the base case is to be processed elsewhere
         assert(argList.isNotEmpty())
 
         val arg = argList[0]
         return prev.right[symbolOrWildcard(arg)]?.let { found ->
 
-            val next = removeValue(found, arg, value)
+            val next = removeValue(found, arg, valueIdx)
 
             if (argList.size > 1) {
-                prev.putRight(removeNextArgValue(next, argList.subList(1, argList.size), value))
+                prev.putRight(removeNextArgValue(next, argList.subList(1, argList.size), valueIdx))
 
             } else if (arg.arguments().isEmpty()) {
-                prev.putRight(next.removeValue(value))
+                prev.putRight(next.removeValueIndex(valueIdx))
 
             } else {
                 prev.putRight(next)
@@ -264,22 +289,22 @@ class TermTrie<T> {
 
         lateinit var right: PersMap<Any, SymNode<T>>
 
-        lateinit var values: ConsList<T>
+        lateinit var valueIndices: ConsList<Int>
 
-        constructor(sym: Any, setValue: T?) :
+        constructor(sym: Any, setValueIndex: Int?) :
             this(sym)
         {
             this.left = Maps.of()
             this.right = Maps.of()
-            this.values = if (setValue != null) cons(setValue) else empty()
+            this.valueIndices = if (setValueIndex != null) cons(setValueIndex) else empty()
         }
 
-        constructor(copyFrom: SymNode<T>, newValues: ConsList<T>) :
+        constructor(copyFrom: SymNode<T>, newValues: ConsList<Int>) :
             this(copyFrom.symbol)
         {
             this.left = copyFrom.left
             this.right = copyFrom.right
-            this.values = newValues
+            this.valueIndices = newValues
         }
 
         constructor(copyFrom: SymNode<T>, setLeft: PersMap<Any, SymNode<T>>, setRight: PersMap<Any, SymNode<T>>) :
@@ -287,12 +312,12 @@ class TermTrie<T> {
         {
             this.left = setLeft
             this.right = setRight
-            this.values = copyFrom.values
+            this.valueIndices = copyFrom.valueIndices
         }
 
-        fun putValue(newValue: T): SymNode<T> = SymNode(this, values.prepend(newValue))
+        fun putValueIndex(newValueIndex: Int): SymNode<T> = SymNode(this, valueIndices.prepend(newValueIndex))
 
-        fun removeValue(oldValue: T): SymNode<T> = SymNode(this, values.remove(oldValue)!!)
+        fun removeValueIndex(oldValueIndex: Int): SymNode<T> = SymNode(this, valueIndices.remove(oldValueIndex)!!)
 
         fun putLeft(node: SymNode<T>): SymNode<T> {
             val newLeft = left.put(node.symbol, node)
