@@ -55,7 +55,7 @@ public abstract class MockTerm implements Term {
 
     @Override
     public Collection<? extends Term> arguments() {
-        return null;
+        return Collections.emptyList();
     }
 
     @Override

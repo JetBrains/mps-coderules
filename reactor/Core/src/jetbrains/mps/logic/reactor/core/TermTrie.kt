@@ -23,6 +23,9 @@ import java.util.*
  * To access the stored values, the method `lookupValues` returns all values associated with the term passed
  * as an argument. The method `allValues` returns all stored values.
  *
+ * Term variables are supported: a variable matches any term, including other variable. No terms unification is
+ * performed.
+ *
  * Internally the data is represented in a kind of binary tree, with each node's `left` being a map of symbol to first
  * argument (as in term's argument), and `right` being also a map of symbol to next sibling argument in its parent.
  *
@@ -31,8 +34,16 @@ class TermTrie<T> {
 
     private lateinit var root: SymNode<T>
 
+    private companion object {
+
+        private val WILDCARD = object : Any() {
+            override fun toString() = "WILDCARD"
+        }
+
+    }
+
     constructor() {
-        this.root = SymNode<T>(Any(), null)
+        this.root = SymNode<T>(WILDCARD, null)
     }
 
     private constructor(root: SymNode<T>) {
@@ -40,12 +51,12 @@ class TermTrie<T> {
     }
 
     fun put(term: Term, value: T): TermTrie<T> {
-        val newNode = root.leftOrDefault(term.symbol())
+        val newNode = root.leftOrDefault(symbolOrWildcard(term))
         return TermTrie(root.putLeft(putValue(newNode, term, value)))
     }
 
     fun remove(term: Term, value: T): TermTrie<T> {
-        return root.left[term.symbol()]?.let { found ->
+        return root.left[symbolOrWildcard(term)]?.let { found ->
             return TermTrie(root.putLeft(removeValue(found, term, value)))
         } ?: this
     }
@@ -53,12 +64,27 @@ class TermTrie<T> {
     fun lookupValues(term: Term): Iterable<T> {
         val include = ArrayList<T>()
 
-        root.left[term.symbol()]?.let { match ->
-            matching(term, match) { node, matched ->
+        val block: (SymNode<T>) -> Unit = { match ->
+            matching(term, match) { node, matched, term ->
                 if (matched) {
-                    include.addAll(node.values)
+                    if (term?.`is`(Term.Kind.VAR) ?: false) {
+                        all(node) {  include.addAll(it.values) }
+
+                    } else {
+                        include.addAll(node.values)
+                    }
+                }
+                else {
+                    // TODO: exclude mismatched?
                 }
             }
+        }
+        if (term.`is`(Term.Kind.VAR)) {
+            root.left.values().forEach(block)
+
+        } else {
+            root.left[term.symbol()]?.let(block)
+            root.left[WILDCARD]?.let(block)
         }
 
         return include
@@ -79,7 +105,7 @@ class TermTrie<T> {
         return if (arguments.isNotEmpty()) {
             val argList = arguments.toList()
             val arg = argList[0]
-            val prev = putValue(node.leftOrDefault(arg.symbol()), arg, value)
+            val prev = putValue(node.leftOrDefault(symbolOrWildcard(arg)), arg, value)
 
             if (argList.size > 1) {
                 node.putLeft(putNextArgValue(prev, argList.subList(1, argList.size), value))
@@ -96,13 +122,12 @@ class TermTrie<T> {
         }
     }
 
-
     private fun putNextArgValue(prev: SymNode<T>, argList: List<Term>, value: T): SymNode<T> {
         // invariant: the base case is to be processed elsewhere
         assert(argList.isNotEmpty())
 
         val arg = argList[0]
-        val next = putValue(prev.rightOrDefault(arg.symbol()), arg, value)
+        val next = putValue(prev.rightOrDefault(symbolOrWildcard(arg)), arg, value)
 
         return if (argList.size > 1) {
             prev.putRight(putNextArgValue(next, argList.subList(1, argList.size), value))
@@ -115,12 +140,13 @@ class TermTrie<T> {
         }
     }
 
+
     private fun removeValue(node: SymNode<T>, term: Term, value: T): SymNode<T> {
         val arguments = term.arguments()
         return if (arguments.isNotEmpty()) {
             val argList = arguments.toList()
             val arg = argList[0]
-            node.left[arg.symbol()]?.let { found ->
+            node.left[symbolOrWildcard(arg)]?.let { found ->
 
                 val prev = removeValue(found, arg, value)
 
@@ -146,7 +172,7 @@ class TermTrie<T> {
         assert(argList.isNotEmpty())
 
         val arg = argList[0]
-        return prev.right[arg.symbol()]?.let { found ->
+        return prev.right[symbolOrWildcard(arg)]?.let { found ->
 
             val next = removeValue(found, arg, value)
 
@@ -163,33 +189,62 @@ class TermTrie<T> {
         } ?: prev
     }
 
-
-    private fun matching(term: Term, node: SymNode<T>, proc: (node: SymNode<T>, matched: Boolean) -> Unit) {
+    private fun matching(term: Term, node: SymNode<T>, proc: (node: SymNode<T>, matched: Boolean, term: Term?) -> Unit) {
         val arguments = term.arguments()
         if (arguments.isNotEmpty()) {
-            var last: SymNode<T>? = null
+            var lastList = ArrayList<SymNode<T>>(4)
+            var nextList = ArrayList<SymNode<T>>(4)
 
             for (arg in arguments) {
                 val sym = arg.symbol()
 
-                val next = if (last != null) last.right[sym] else node.left[sym]
-                if (next != null) {
-                    proc(node, true)
-                    matching(arg, next, proc)
+                if (arg.`is`(Term.Kind.VAR)) {
+                    if (lastList.isNotEmpty()) {
+                        for (last in lastList) {
+                            last.right.values().forEach { nextList.add(it) }
+                        }
+
+                    } else {
+                        node.left.values().forEach { nextList.add(it) }
+                    }
 
                 } else {
-                    proc(node, false)
+                    if (lastList.isNotEmpty()) {
+                        for (last in lastList) {
+                            last.right[sym]?.let { nextList.add(it) }
+                            last.right[WILDCARD]?.let { nextList.add(it) }
+                        }
+
+                    } else {
+                        node.left[sym]?.let { nextList.add(it) }
+                        node.left[WILDCARD]?.let { nextList.add(it) }
+                    }
+                }
+
+                if (nextList.isNotEmpty()) {
+                    for (next in nextList) {
+                        matching(arg, next, proc)
+                    }
+
+                } else {
+                    proc(node, false, null)
                     break
                 }
-                last = next
+
+                val tmp = lastList
+                lastList = nextList
+                nextList = tmp
+                nextList.clear()
             }
 
         } else {
-            proc(node, node.symbol == term.symbol())
+            proc(node, node.symbol == term.symbol() || node.symbol == WILDCARD || term.`is`(Term.Kind.VAR), term)
         }
     }
 
+
     private fun all(node: SymNode<T>, proc: (node: SymNode<T>) -> Unit) {
+        proc(node)
         for (first in node.left.values()) {
             proc(first)
             all(first, proc)
@@ -200,6 +255,8 @@ class TermTrie<T> {
             }
         }
     }
+
+    private fun symbolOrWildcard(term: Term) = if (term.`is`(Term.Kind.VAR)) WILDCARD else term.symbol()
 
     private class SymNode<T>(val symbol: Any) {
 
