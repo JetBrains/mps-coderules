@@ -171,9 +171,9 @@ class TestTermTrie {
 
     @Test
     fun testWildcardVariable() {
-        val t1 = parse("a{X c}")
+        val t1 = parse("a{X c{d e}}")
         val t2 = parse("a{b Y}")
-        val t3 = parse("a{c Y}")
+        val t3 = parse("a{X Y}")
         val t4 = parse("f{g h{Z k{l m{o p} n}}}")
         val t5 = parse("f{Z h{i q            }}")
 
@@ -185,7 +185,8 @@ class TestTermTrie {
             put(t5, "blah")
         } } } } }
 
-        assertEquals(setOf("foo", "bar", "bazz"), trie1.lookupValues(parse("a{X c}")).toSet())
+        assertEquals(setOf("foo", "bar", "bazz"), trie1.lookupValues(parse("a{X c{d e}}")).toSet())
+        assertEquals(setOf("foo", "bar", "bazz"), trie1.lookupValues(parse("a{b Y}")).toSet())
         assertEquals(setOf("foo", "bazz"), trie1.lookupValues(parse("a{c Y}")).toSet())
         assertEquals(setOf("foo", "bar", "bazz"), trie1.lookupValues(parse("a{X Y}")).toSet())
         assertEquals(setOf("foo", "bar", "bazz", "qux", "blah"), trie1.lookupValues(parse("Z")).toSet())

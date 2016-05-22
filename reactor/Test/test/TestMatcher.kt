@@ -4,6 +4,9 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.unification.test.MockTermsParser
+import jetbrains.mps.unification.test.MockTermsParser.parse
+import org.jetbrains.kotlin.js.parser.parse
 import org.junit.Assert.*
 import org.junit.Test
 
@@ -363,6 +366,59 @@ class TestMatcher {
             assertEquals(
                 listOf(byTag("select_B_x"), byTag("select_ALL")),
                 forOccurrence(occurrence("foo", "B", "C")).toList())
+
+        }
+    }
+
+
+    @Test
+    fun matchOccurrenceTermArguments() {
+        val (M, N) = metaLogical<Int>("M", "N")
+        val (O, P) = metaLogical<Int>("O", "P")
+
+        program(
+            rule("select_fg_x",
+                headKept(
+                    constraint("foo", parse("f{g}"), M)
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_abX_x",
+                headKept(
+                    constraint("foo", parse("a{b X}"), M)
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_aYcde_x",
+                headKept(
+                    constraint("foo", parse("a{Y c{d e}}"), M)
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_aYcdd_fg",
+                headKept(
+                    constraint("foo", parse("a{Y c{d d}}"), parse("f{g}"))
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                ))
+        ).matcher().first.run {
+
+            assertEquals(
+                listOf(byTag("select_fg_x")),
+                forOccurrence(occurrence("foo", parse("f{g}"), parse("u"))).toList())
+            assertEquals(
+                listOf(byTag("select_fg_x")),
+                forOccurrence(occurrence("foo", parse("f{Z}"), parse("u"))).toList())
+            assertEquals(
+                listOf(byTag("select_abX_x"), byTag("select_aYcde_x")),
+                forOccurrence(occurrence("foo", parse("a{b c{d Z}}"), parse("u"))).toList())
+            assertEquals(
+                listOf(byTag("select_aYcdd_fg")),
+                forOccurrence(occurrence("foo", parse("a{d c{d d}}"), parse("f{g}"))).toList())
 
         }
     }

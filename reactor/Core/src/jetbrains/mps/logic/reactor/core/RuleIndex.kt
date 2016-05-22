@@ -6,6 +6,7 @@ import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.unification.Term
 import java.util.*
 
 /**
@@ -60,13 +61,16 @@ private class ValueIndex(val symbol: ConstraintSymbol) {
 
     val rules = ArrayList<Rule>()
 
-    val selectors = ArrayList<MutableMap<Any, BitSet>>()
+    val anySelectors = ArrayList<MutableMap<Any, BitSet>>()
+
+    val termSelectors = ArrayList<TermTrie<Int>>()
 
     val wildcardSelectors = ArrayList<BitSet>()
 
     init {
         for (idx in 1..symbol.arity()) {
-            selectors.add(HashMap<Any, BitSet>())
+            anySelectors.add(HashMap())
+            termSelectors.add(TermTrie())
             wildcardSelectors.add(BitSet())
         }
     }
@@ -79,17 +83,23 @@ private class ValueIndex(val symbol: ConstraintSymbol) {
         }
 
         for ((idx, arg) in cst.arguments().withIndex()) {
-            val value2indices = selectors[idx]
+            val value2indices = anySelectors[idx]
             when (arg) {
                 is MetaLogical<*>   -> {
                     // all values should be accepted by a meta logical
                     wildcardSelectors[idx].set(bit)
                 }
+                is Term             -> {
+                    termSelectors.set(idx, termSelectors[idx].put(arg, bit))
+                }
                 is Any              -> {
                     val bitset = value2indices.getOrPut(arg) { BitSet() }
                     bitset.set(bit)
                 }
-                else                -> { /* never happens */ }
+                else                -> {
+                    /* never happens */
+                    throw NullPointerException()
+                }
             }
         }
     }
@@ -103,21 +113,33 @@ private class ValueIndex(val symbol: ConstraintSymbol) {
         ruleIndices.set(0, upToBit)
 
         for ((idx, arg) in occ.arguments().withIndex()) {
-            val value2indices = selectors[idx]
-
+            val value2indices = anySelectors[idx]
+            val termIndices = termSelectors[idx]
+            val wildcardIndices = wildcardSelectors[idx]
             when (arg) {
-                is Logical<*>   -> {
+                is Logical<*>       -> {
                     // ALL values must be selected for a logical
                 }
+                is Term             -> {
+                    val bits = wildcardIndices.clone() as BitSet
+                    for (i in termIndices.lookupValues(arg)) {
+                        bits.set(i)
+                    }
+                    ruleIndices.and(bits)
+                }
                 is Any              -> {
-                    val wildcardIndices = wildcardSelectors[idx].clone() as BitSet
                     if (value2indices.containsKey(arg)) {
                         // ensure only rules with either matching values or wildcard arguments get selected
-                        wildcardIndices.or(value2indices[arg])
+                        val bits = wildcardIndices.clone() as BitSet
+                        bits.or(value2indices[arg])
+                        ruleIndices.and(bits)
+                    } else {
+                        ruleIndices.and(wildcardIndices)
                     }
-                    ruleIndices.and(wildcardIndices)
                 }
                 else -> {
+                    /* never happens */
+                    throw NullPointerException()
                 }
             }
         }

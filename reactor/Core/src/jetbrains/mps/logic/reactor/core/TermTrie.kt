@@ -251,6 +251,10 @@ class TermTrie<T> {
                         matching(arg, next, proc)
                     }
 
+                } else if(lastList.isEmpty()) {
+                    proc(node, node.symbol == term.symbol() || node.symbol == WILDCARD, null)
+                    break
+
                 } else {
                     proc(node, false, null)
                     break
