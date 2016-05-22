@@ -1,6 +1,9 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.util.emptyConsList
+import jetbrains.mps.unification.test.MockTermsParser
+import jetbrains.mps.unification.test.MockTermsParser.parse
+import org.jetbrains.kotlin.js.parser.parse
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -82,9 +85,17 @@ class TestOccurrenceStore {
         assertEquals(listOf(main), occstore.forValue(value))
     }
 
+    @Test
+    fun testTermIndex () {
+        val occstore = OccurrenceStore(mockProxy)
 
-    fun <T> assertEquals(a: Sequence<T>, b: Sequence<T>) {
-        assertEquals(a.toSet(), b.toSet())
+        val foo = occurrence("foo", parse("a{b c}"))
+        occstore.store(foo)
+
+        // TODO: more tests
+        assertEquals(listOf(foo), occstore.forTerm(parse("a{b c}")))
+        assertEquals(listOf(foo), occstore.forTerm(parse("a{b Y}")))
+        assertEquals(listOf(foo), occstore.forTerm(parse("Z")))
     }
 
 }

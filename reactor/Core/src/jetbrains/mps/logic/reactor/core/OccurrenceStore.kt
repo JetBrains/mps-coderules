@@ -11,6 +11,7 @@ import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.util.cons
 import jetbrains.mps.logic.reactor.util.emptyConsList
 import jetbrains.mps.logic.reactor.util.remove
+import jetbrains.mps.unification.Term
 import java.util.*
 
 /**
@@ -36,6 +37,8 @@ interface OccurrenceIndex {
 
     fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence>
 
+    fun forTerm(term: Term): Iterable<ConstraintOccurrence>
+
     fun forValue(value: Any): Iterable<ConstraintOccurrence>
 
 }
@@ -48,6 +51,8 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
     lateinit var logical2occurrences: PersMap<Logical<*>, ConsList<ConstraintOccurrence>>
 
+    lateinit var term2occurrences: TermTrie<ConstraintOccurrence>
+
     lateinit var value2occurrences: PersMap<Any, ConsList<ConstraintOccurrence>>
 
     constructor(copyFrom: OccurrenceStore, proxy: LogicalObserverProxy)
@@ -55,6 +60,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         this.proxy = proxy
         this.symbol2occurrences = copyFrom.symbol2occurrences
         this.logical2occurrences = copyFrom.logical2occurrences
+        this.term2occurrences = copyFrom.term2occurrences
         this.value2occurrences = copyFrom.value2occurrences
     }
 
@@ -62,17 +68,31 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         this.proxy = proxy
         this.symbol2occurrences = Maps.of()
         this.logical2occurrences = Maps.of()
+        this.term2occurrences = TermTrie()
         this.value2occurrences = Maps.of()
     }
 
     override fun valueUpdated(logical: Logical<*>) {
         logical2occurrences[logical.findRoot()]?.let { toMerge ->
             val value = logical.findRoot().value()
-            var newList = value2occurrences[value] ?: emptyConsList()
-            for (occ in toMerge) {
-                newList = newList.prepend(occ)
+            when (value) {
+                is Term     -> {
+                    for (occ in toMerge) {
+                        this.term2occurrences = term2occurrences.put(value, occ)
+                    }
+                }
+                is Any      -> {
+                    var newList = value2occurrences[value] ?: emptyConsList()
+                    for (occ in toMerge) {
+                        newList = newList.prepend(occ)
+                    }
+                    this.value2occurrences = value2occurrences.put(value, newList)
+                }
+                else        -> {
+                    // never happens
+                    throw NullPointerException()
+                }
             }
-            this.value2occurrences = value2occurrences.put(value, newList)
         }
     }
 
@@ -101,14 +121,22 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
         for (arg in occ.arguments()) {
             when (arg) {
-                is Logical<*>   ->  {
-                                        this.logical2occurrences = logical2occurrences.put(arg.findRoot(),
-                                            logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ))
-                                        proxy.addObserver(arg, this)
-                                    }
-
-                is Any          ->  this.value2occurrences = value2occurrences.put(arg,
-                                        value2occurrences[arg]?.prepend(occ) ?: cons(occ))
+                is Logical<*>   -> {
+                    this.logical2occurrences = logical2occurrences.put(arg.findRoot(),
+                        logical2occurrences[arg.findRoot()]?.prepend(occ) ?: cons(occ))
+                    proxy.addObserver(arg, this)
+                }
+                is Term         -> {
+                    this.term2occurrences = term2occurrences.put(arg, occ)
+                }
+                is Any          -> {
+                    this.value2occurrences = value2occurrences.put(arg,
+                        value2occurrences[arg]?.prepend(occ) ?: cons(occ))
+                }
+                else            -> {
+                    // never happens
+                    throw NullPointerException()
+                }
             }
         }
 
@@ -125,16 +153,20 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
         for (arg in occ.arguments()) {
             when (arg) {
-                is Logical<*>   ->  {
-                                        logical2occurrences[arg.findRoot()].remove(occ)?.let { newList ->
-                                            this.logical2occurrences = logical2occurrences.put(arg.findRoot(), newList)
-                                        }
-                                        // TODO: remove observer?
-                                    }
-
-                is Any          ->  value2occurrences[arg].remove(occ)?. let { newList ->
-                                        this.value2occurrences = value2occurrences.put(arg, newList)
-                                    }
+                is Logical<*>   -> {
+                    logical2occurrences[arg.findRoot()].remove(occ)?.let { newList ->
+                        this.logical2occurrences = logical2occurrences.put(arg.findRoot(), newList)
+                    }
+                    // TODO: remove observer?
+                }
+                is Term         -> {
+                    this.term2occurrences = term2occurrences.remove(arg, occ)
+                }
+                is Any          ->  {
+                    value2occurrences[arg].remove(occ)?. let { newList ->
+                        this.value2occurrences = value2occurrences.put(arg, newList)
+                    }
+                }
             }
         }
 
@@ -157,6 +189,9 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         return list.filter { co -> co.isStored() }
     }
 
+    override fun forTerm(term: Term): Iterable<ConstraintOccurrence> {
+        return term2occurrences.lookupValues(term)
+    }
 
     override fun forValue(value: Any): Iterable<ConstraintOccurrence> {
         val list = value2occurrences[value] ?: emptyConsList()

@@ -4,6 +4,7 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTermsParser
 import jetbrains.mps.unification.test.MockTermsParser.parse
 import org.jetbrains.kotlin.js.parser.parse
@@ -25,6 +26,8 @@ class TestMatcher {
                 stored.filter { co -> co.constraint().symbol() == symbol }
 
             override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> = emptyList()
+
+            override fun forTerm(term: Term): Iterable<ConstraintOccurrence> = emptyList()
 
             override fun forValue(value: Any): Iterable<ConstraintOccurrence> = emptyList()
         }
