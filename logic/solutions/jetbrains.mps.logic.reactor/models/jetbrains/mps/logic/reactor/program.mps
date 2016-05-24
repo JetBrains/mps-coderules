@@ -179,6 +179,7 @@
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -395,6 +396,42 @@
         <node concept="3qTvmN" id="4TCblo5M5qH" role="11_B2D" />
       </node>
     </node>
+    <node concept="2tJIrI" id="4sSe4$oZtfm" role="jymVt" />
+    <node concept="3clFb_" id="4sSe4$oZtuv" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="patternPredicates" />
+      <node concept="3uibUv" id="4sSe4$oZtHO" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <node concept="3qUE_q" id="4sSe4$oZu9a" role="11_B2D">
+          <node concept="3uibUv" id="4sSe4$oZumo" role="3qUE_r">
+            <ref role="3uigEE" node="6Kcfpq7Bj7q" resolve="Predicate" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4sSe4$oZtuy" role="1B3o_S" />
+      <node concept="3clFbS" id="4sSe4$oZtuz" role="3clF47" />
+      <node concept="P$JXv" id="4sSe4$oZw72" role="lGtFl">
+        <node concept="TZ5HA" id="4sSe4$oZw73" role="TZ5H$">
+          <node concept="1dT_AC" id="4sSe4$oZw74" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the collection of predicates that need to be applied after a successful match of this collection by a" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4sSe4$oZCyB" role="TZ5H$">
+          <node concept="1dT_AC" id="4sSe4$oZCyC" role="1dT_Ay">
+            <property role="1dT_AB" value="rule's head. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4sSe4$oZDYi" role="TZ5H$">
+          <node concept="1dT_AC" id="4sSe4$oZEbq" role="1dT_Ay">
+            <property role="1dT_AB" value="This method only returns meaningful results for constraints that serve as patterns in a rule's head. " />
+          </node>
+          <node concept="1dT_AC" id="4sSe4$oZDYj" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4sSe4$oYwIg" role="jymVt" />
   </node>
   <node concept="312cEu" id="7Oc59RSHJnv">
     <property role="TrG5h" value="InvalidConstraintException" />

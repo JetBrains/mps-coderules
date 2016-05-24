@@ -18,6 +18,7 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="dlzn" ref="r:37f5cc5e-5928-4049-bb1c-5c7a5459b1fe(jetbrains.mps.typechecking.handler.producer)" />
+    <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2153,6 +2154,18 @@
           </node>
           <node concept="37vLTw" id="5mr7UHccgX2" role="37wK5m">
             <ref role="3cqZAo" node="5mr7UHccgSi" resolve="args" />
+          </node>
+          <node concept="2ShNRf" id="4sSe4$oSSCq" role="37wK5m">
+            <node concept="3$_iS1" id="4sSe4$oSSCo" role="2ShVmc">
+              <node concept="3uibUv" id="4sSe4$oSSCp" role="3$_nBY">
+                <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
+              </node>
+              <node concept="3$GHV9" id="4sSe4$oSTzC" role="3$GQph">
+                <node concept="3cmrfG" id="4sSe4$oSTGJ" role="3$I4v7">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
