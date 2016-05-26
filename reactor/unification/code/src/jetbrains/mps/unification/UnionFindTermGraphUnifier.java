@@ -49,6 +49,12 @@ import static jetbrains.mps.unification.Unification.*;
  */
 public class UnionFindTermGraphUnifier {
 
+    public UnionFindTermGraphUnifier() {}
+
+    public UnionFindTermGraphUnifier(TermWrapper wrapper) {
+        this.wrapper = wrapper;
+    }
+
     public Substitution unify(Term a, Term b) {
         if (unifClosure(toInner(a), toInner(b))) {
             Substitution solution = findSolution(toInner(a));
@@ -241,10 +247,10 @@ public class UnionFindTermGraphUnifier {
 
                 // Keep the order of variables within a binding
                 if (trg.myOrigin.is(VAR) && trg.myOrigin.compareTo(var.myOrigin) < 0) {
-                    success.addBinding(trg.myOrigin, var.myOrigin);
+                    success.addBinding(fromInner(trg), fromInner(var));
                 }
                 else {
-                    success.addBinding(var.myOrigin, trg.myOrigin);
+                    success.addBinding(fromInner(var), fromInner(trg));
                 }
             }
         }
@@ -273,10 +279,16 @@ public class UnionFindTermGraphUnifier {
         Object key = term.is(VAR) ? String.valueOf(term.symbol()).intern() : term;
         InnerTerm innerTerm = myTermCache.get(key);
         if (innerTerm == null) {
-            myTermCache.put(key, (innerTerm = new InnerTerm(term)));
+            myTermCache.put(key, (innerTerm = new InnerTerm(wrapper.wrap(term))));
         }
         return innerTerm;
     }
+
+    private Term fromInner(InnerTerm innerTerm) {
+        return wrapper.unwrap(innerTerm.myOrigin);
+    }
+
+    private TermWrapper wrapper = TermWrapper.ID;
 
     private Map<Object, InnerTerm> myTermCache = new IdentityHashMap<Object, InnerTerm>();
 

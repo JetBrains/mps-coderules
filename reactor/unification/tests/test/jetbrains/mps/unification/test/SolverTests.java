@@ -17,7 +17,12 @@
 package jetbrains.mps.unification.test;
 
 import jetbrains.mps.unification.Term;
+import jetbrains.mps.unification.TermWrapper;
+import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
+
+import java.util.Collection;
+import java.util.Collections;
 
 import static jetbrains.mps.unification.Substitution.FailureCause.*;
 import static jetbrains.mps.unification.test.AssertUnification.*;
@@ -501,6 +506,55 @@ public class SolverTests {
                 bind(var("LIST"), parse("f {a f{b f{c d}}}")),
                 bind(var("HEAD"), parse("a")),
                 bind(var("TAIL"), parse("f{b f{c d}}"))
+        );
+    }
+
+    @Test
+    public void testWrapper() throws Exception {
+        Term t1 = parse("a{b c{X}}");
+        Term t2 = parse("a{X c{Y}}");
+        Term p1 = parse("a{META c{d}}");
+        Term p2 = parse("a{b c{META}}");
+
+        class Wrapper implements Term {
+            Term wrapped;
+
+            Wrapper(Term term)                                          { this.wrapped = term; }
+            @Override public Object symbol()                            { return wrapped; }
+            @Override public Collection<? extends Term> arguments()     { return Collections.emptyList(); }
+            @Override public Term get()                                 {  return this; }
+            @Override public boolean is(Kind kind)                      { return Kind.FUN == kind; }
+            @Override public int compareTo(@NotNull Term other) {
+                return String.valueOf(symbol()).compareTo(String.valueOf(other.symbol()));
+            }
+
+        }
+
+        TermWrapper wrapper = new TermWrapper() {
+            @Override
+            public Term wrap(Term orig) {
+                return (orig.is(Kind.VAR) && "META".equals(orig.symbol())) ? new Wrapper(orig) : orig;
+            }
+
+            @Override
+            public Term unwrap(Term maybeWrapper) {
+                return maybeWrapper instanceof Wrapper ? ((Wrapper)maybeWrapper).wrapped : maybeWrapper;
+            }
+        };
+
+        assertUnifiesWithBindings(t1, p1,
+                bind(var("META"), parse("b")),
+                bind(var("X"), parse("d"))
+        );
+        assertUnificationFails(t1, p1, wrapper);
+
+        assertUnifiesWithBindings(t1, p2, wrapper,
+                bind(var("X"), parse("META"))
+        );
+
+        assertUnifiesWithBindings(t2, p2, wrapper,
+                bind(var("X"), parse("b")),
+                bind(var("Y"), parse("META"))
         );
     }
 

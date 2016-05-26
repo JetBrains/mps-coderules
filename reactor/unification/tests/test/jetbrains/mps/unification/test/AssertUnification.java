@@ -18,6 +18,8 @@ package jetbrains.mps.unification.test;
 
 import jetbrains.mps.unification.Substitution;
 import static jetbrains.mps.unification.Substitution.*;
+
+import jetbrains.mps.unification.TermWrapper;
 import jetbrains.mps.unification.Unification;
 import jetbrains.mps.unification.Term;
 
@@ -78,6 +80,22 @@ public class AssertUnification {
         assertSameBindings(subs.bindings(), subs2.bindings());
     }
 
+    public static void assertUnifiesWithBindings(Term s, Term t, TermWrapper wrapper, Substitution.Binding ... bindings) throws Exception{
+        Substitution subs = Unification.unify(s, t, wrapper);
+
+        assertTrue(subs.isSuccessful());
+        assertSameBindings(
+                Arrays.asList(
+                        bindings
+                ),
+                subs.bindings());
+
+        Substitution subs2 = Unification.unify(t, s, wrapper);
+
+        assertTrue(subs2.isSuccessful());
+        assertSameBindings(subs.bindings(), subs2.bindings());
+    }
+
     public static void assertUnifiesWithBindingsAsymm(Term s, Term t, Substitution.Binding ... bindings) throws Exception{
         Substitution subs = Unification.unify(s, t);
 
@@ -95,6 +113,16 @@ public class AssertUnification {
         assertFalse(subs1.isSuccessful());
 
         Substitution subs2 = Unification.unify(s, t);
+
+        assertFalse(subs2.isSuccessful());
+    }
+
+    public static void assertUnificationFails(Term s, Term t, TermWrapper wrapper) throws Exception {
+        Substitution subs1 = Unification.unify(s, t, wrapper);
+
+        assertFalse(subs1.isSuccessful());
+
+        Substitution subs2 = Unification.unify(s, t, wrapper);
 
         assertFalse(subs2.isSuccessful());
     }

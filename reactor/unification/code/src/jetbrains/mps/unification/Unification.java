@@ -34,6 +34,12 @@ public class Unification {
         return dagUnifier.unify(a, b);
     }
 
+    public static Substitution unify(Term a, Term b, TermWrapper wrapper) {
+        UnionFindTermGraphUnifier dagUnifier = new UnionFindTermGraphUnifier(wrapper);
+
+        return dagUnifier.unify(a, b);
+    }
+
     protected static Substitution failedSubstitution(FailureCause failCause) {
         return new Substitution(failCause);
     }
