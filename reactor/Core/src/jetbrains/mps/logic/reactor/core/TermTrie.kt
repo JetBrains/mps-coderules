@@ -5,6 +5,7 @@ import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.ConsList.empty
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Maps
+import jetbrains.mps.logic.reactor.util.IdWrapper
 import com.github.andrewoma.dexx.collection.Vector as PersVector
 import jetbrains.mps.logic.reactor.util.cons
 import jetbrains.mps.logic.reactor.util.remove
@@ -40,6 +41,8 @@ class TermTrie<T> {
 
     private lateinit var values: PersVector<T>
 
+    private lateinit var term2token: PersMap<IdWrapper<Term>, ValueToken<T>>
+
     private companion object {
 
         private val WILDCARD = object : Any() {
@@ -52,55 +55,67 @@ class TermTrie<T> {
         this.root = SymNode<T>(WILDCARD, null)
         this.value2index = Maps.of()
         this.values = PersVector.empty()
+        this.term2token = Maps.of()
     }
 
-    private constructor(root: SymNode<T>, val2ids: PersMap<T, Int>, vals: PersVector<T>) {
+    private constructor(root: SymNode<T>, val2ids: PersMap<T, Int>, vals: PersVector<T>, toks: PersMap<IdWrapper<Term>, ValueToken<T>>) {
         this.root = root
         this.value2index = val2ids
         this.values = vals
+        this.term2token = toks
     }
 
     fun put(term: Term, value: T): TermTrie<T> {
-        var newIndex = value2index
+        var newVal2Index = value2index
         var newValues = values
 
-        val valueIdx = value2index[value] ?: run {
+        val tok = ValueToken(value)
+        val newTokens = term2token.put(IdWrapper(term), tok)
+
+        if (!value2index.containsKey(value)) {
             newValues = values.append(value)
-            val idx = newValues.size() - 1
-            newIndex = value2index.put(value, idx)
-            idx
+            newVal2Index = value2index.put(value, newValues.size() - 1)
         }
 
         val newNode = root.leftOrDefault(symbolOrWildcard(term))
-        return TermTrie(root.putLeft(putValue(newNode, term, valueIdx)), newIndex, newValues)
+        return TermTrie(root.putLeft(putValue(newNode, term, tok)), newVal2Index, newValues, newTokens)
     }
 
     fun remove(term: Term, value: T): TermTrie<T> {
         val valueIdx = value2index[value]
-        if (valueIdx == null) {
+        val tok = term2token[IdWrapper(term)]
+        if (valueIdx == null || tok == null) {
             return this
         }
         return root.left[symbolOrWildcard(term)]?.let { found ->
             // TODO: remove the value from the index
-            return TermTrie(root.putLeft(removeValue(found, term, valueIdx)), value2index, values)
+            val newTokens = term2token.remove(IdWrapper(term))
+            val newTermTrie = TermTrie(root.putLeft(removeValue(found, term, tok)), value2index, values, newTokens)
+            // invariant: the token must be stored and removed the same number of times
+            assert(tok.storedCount() == 0)
+            return newTermTrie
         } ?: this
     }
 
     fun lookupValues(term: Term): Iterable<T> {
-        val includeIndices:  SortedSet<Int> = TreeSet<Int>()
+        val tokenViews = HashMap<ValueToken<T>, Int>()
 
         val block: (SymNode<T>) -> Unit = { match ->
             matching(term, match) { node, matched, term ->
                 if (matched) {
                     if (term?.`is`(Term.Kind.VAR) ?: false) {
-                        all(node) { includeIndices.addAll(it.valueIndices) }
-
+                        all(node) { n ->
+                            for (tok in n.valueTokens) {
+                                val count = tokenViews.getOrElse(tok) { 0 }
+                                tokenViews.put(tok, count + 1)
+                            }
+                        }
                     } else {
-                        includeIndices.addAll(node.valueIndices)
+                        for (tok in node.valueTokens) {
+                            val count = tokenViews.getOrElse(tok) { 0 }
+                            tokenViews.put(tok, count + 1)
+                        }
                     }
-                }
-                else {
-                    // TODO: exclude mismatched?
                 }
             }
         }
@@ -112,32 +127,49 @@ class TermTrie<T> {
             root.left[WILDCARD]?.let(block)
         }
 
-        return includeIndices.map { idx -> values.get(idx) }
+        val indices = ArrayList<Int>(4)
+        for ((tok, count) in tokenViews) {
+            if (tok.storedCount() == count) {
+                indices.add(value2index[tok.value]!!)
+            }
+        }
+        indices.sort()
+
+        return indices.map { idx -> values.get(idx) }
     }
 
     fun allValues(): Iterable<T> {
-        val includeIndices:  SortedSet<Int> = TreeSet<Int>()
+        val tokenViews = HashMap<ValueToken<T>, Int>()
 
-        all(root) { node ->
-            includeIndices.addAll(node.valueIndices)
+        all(root) { n ->
+            for (tok in n.valueTokens) {
+                val count = tokenViews.getOrElse(tok) { 0 }
+                tokenViews.put(tok, count + 1)
+            }
         }
 
-        return includeIndices.map { idx -> values.get(idx) }
+        val indices = ArrayList<Int>(4)
+        for ((tok, count) in tokenViews) {
+            if (tok.storedCount() == count) {
+                indices.add(value2index[tok.value]!!)
+            }
+        }
+        indices.sort()
+
+        return indices.map { idx -> values.get(idx) }
     }
 
-    private fun putValue(node: SymNode<T>, term: Term, valueIdx: Int): SymNode<T> {
+    private fun putValue(node: SymNode<T>, term: Term, valueToken: ValueToken<T>): SymNode<T> {
         val arguments = term.arguments()
         return if (arguments.isNotEmpty()) {
             val argList = arguments.toList()
             val arg = argList[0]
-            val prev = putValue(node.leftOrDefault(symbolOrWildcard(arg)), arg, valueIdx)
+            val prev = putValue(node.leftOrDefault(symbolOrWildcard(arg)), arg, valueToken).let { p ->
+                if (arg.arguments().isEmpty()) p.putValueToken(valueToken) else p
+            }
 
             if (argList.size > 1) {
-                node.putLeft(putNextArgValue(prev, argList.subList(1, argList.size), valueIdx))
-
-            } else if (arg.arguments().isEmpty()) {
-                node.putLeft(prev.putValueIndex(valueIdx))
-
+                node.putLeft(putNextArgValue(prev, argList.subList(1, argList.size), valueToken))
             } else {
                 node.putLeft(prev)
             }
@@ -147,18 +179,17 @@ class TermTrie<T> {
         }
     }
 
-    private fun putNextArgValue(prev: SymNode<T>, argList: List<Term>, valueIdx: Int): SymNode<T> {
+    private fun putNextArgValue(prev: SymNode<T>, argList: List<Term>, valueToken: ValueToken<T>): SymNode<T> {
         // invariant: the base case is to be processed elsewhere
         assert(argList.isNotEmpty())
 
         val arg = argList[0]
-        val next = putValue(prev.rightOrDefault(symbolOrWildcard(arg)), arg, valueIdx)
+        val next = putValue(prev.rightOrDefault(symbolOrWildcard(arg)), arg, valueToken).let { n ->
+            if (arg.arguments().isEmpty()) n.putValueToken(valueToken) else n
+        }
 
         return if (argList.size > 1) {
-            prev.putRight(putNextArgValue(next, argList.subList(1, argList.size), valueIdx))
-
-        } else if (arg.arguments().isEmpty()) {
-            prev.putRight(next.putValueIndex(valueIdx))
+            prev.putRight(putNextArgValue(next, argList.subList(1, argList.size), valueToken))
 
         } else {
             prev.putRight(next)
@@ -166,20 +197,19 @@ class TermTrie<T> {
     }
 
 
-    private fun removeValue(node: SymNode<T>, term: Term, valueIdx: Int): SymNode<T> {
+    private fun removeValue(node: SymNode<T>, term: Term, valueToken: ValueToken<T>): SymNode<T> {
         val arguments = term.arguments()
         return if (arguments.isNotEmpty()) {
             val argList = arguments.toList()
             val arg = argList[0]
             node.left[symbolOrWildcard(arg)]?.let { found ->
 
-                val prev = removeValue(found, arg, valueIdx)
+                val prev = removeValue(found, arg, valueToken).let { p ->
+                    if (arg.arguments().isEmpty()) p.removeValueToken(valueToken) else p
+                }
 
                 if (argList.size > 1) {
-                    node.putLeft(removeNextArgValue(prev, argList.subList(1, argList.size), valueIdx))
-
-                } else if (arg.arguments().isEmpty()) {
-                    node.putLeft(prev.removeValueIndex(valueIdx))
+                    node.putLeft(removeNextArgValue(prev, argList.subList(1, argList.size), valueToken))
 
                 } else {
                     node.putLeft(prev)
@@ -192,20 +222,19 @@ class TermTrie<T> {
         }
     }
 
-    private fun removeNextArgValue(prev: SymNode<T>, argList: List<Term>, valueIdx: Int): SymNode<T> {
+    private fun removeNextArgValue(prev: SymNode<T>, argList: List<Term>, valueToken: ValueToken<T>): SymNode<T> {
         // invariant: the base case is to be processed elsewhere
         assert(argList.isNotEmpty())
 
         val arg = argList[0]
         return prev.right[symbolOrWildcard(arg)]?.let { found ->
 
-            val next = removeValue(found, arg, valueIdx)
+            val next = removeValue(found, arg, valueToken).let { n ->
+                if (arg.arguments().isEmpty()) n.removeValueToken(valueToken) else n
+            }
 
             if (argList.size > 1) {
-                prev.putRight(removeNextArgValue(next, argList.subList(1, argList.size), valueIdx))
-
-            } else if (arg.arguments().isEmpty()) {
-                prev.putRight(next.removeValueIndex(valueIdx))
+                prev.putRight(removeNextArgValue(next, argList.subList(1, argList.size), valueToken))
 
             } else {
                 prev.putRight(next)
@@ -252,7 +281,7 @@ class TermTrie<T> {
                     }
 
                 } else if(lastList.isEmpty()) {
-                    proc(node, node.symbol == term.symbol() || node.symbol == WILDCARD, null)
+                    proc(node, node.symbol == WILDCARD || term.`is`(Term.Kind.VAR), null)
                     break
 
                 } else {
@@ -275,17 +304,37 @@ class TermTrie<T> {
     private fun all(node: SymNode<T>, proc: (node: SymNode<T>) -> Unit) {
         proc(node)
         for (first in node.left.values()) {
-            proc(first)
-            all(first, proc)
+            _all(first, proc)
+        }
+    }
 
-            for (next in first.right.values()) {
-                proc(next)
-                all(next, proc)
-            }
+    private fun _all(node: SymNode<T>, proc: (node: SymNode<T>) -> Unit) {
+        proc(node)
+        for (first in node.left.values()) {
+            _all(first, proc)
+        }
+        for (next in node.right.values()) {
+            _all(next, proc)
         }
     }
 
     private fun symbolOrWildcard(term: Term) = if (term.`is`(Term.Kind.VAR)) WILDCARD else term.symbol()
+
+    private class ValueToken<T>(val value: T) {
+
+        private var count: Int = 0
+
+        fun stored(): Unit {
+            count++
+        }
+
+        fun removed(): Unit {
+            count--
+        }
+
+        fun storedCount(): Int = count
+    }
+
 
     private class SymNode<T>(val symbol: Any) {
 
@@ -293,22 +342,22 @@ class TermTrie<T> {
 
         lateinit var right: PersMap<Any, SymNode<T>>
 
-        lateinit var valueIndices: ConsList<Int>
+        lateinit var valueTokens: ConsList<ValueToken<T>>
 
-        constructor(sym: Any, setValueIndex: Int?) :
+        constructor(sym: Any, setValueIndex: ValueToken<T>?) :
             this(sym)
         {
             this.left = Maps.of()
             this.right = Maps.of()
-            this.valueIndices = if (setValueIndex != null) cons(setValueIndex) else empty()
+            this.valueTokens = if (setValueIndex != null) cons(setValueIndex) else empty()
         }
 
-        constructor(copyFrom: SymNode<T>, newValues: ConsList<Int>) :
+        constructor(copyFrom: SymNode<T>, newValues: ConsList<ValueToken<T>>) :
             this(copyFrom.symbol)
         {
             this.left = copyFrom.left
             this.right = copyFrom.right
-            this.valueIndices = newValues
+            this.valueTokens = newValues
         }
 
         constructor(copyFrom: SymNode<T>, setLeft: PersMap<Any, SymNode<T>>, setRight: PersMap<Any, SymNode<T>>) :
@@ -316,12 +365,18 @@ class TermTrie<T> {
         {
             this.left = setLeft
             this.right = setRight
-            this.valueIndices = copyFrom.valueIndices
+            this.valueTokens = copyFrom.valueTokens
         }
 
-        fun putValueIndex(newValueIndex: Int): SymNode<T> = SymNode(this, valueIndices.prepend(newValueIndex))
+        fun putValueToken(token: ValueToken<T>): SymNode<T> {
+            token.stored()
+            return SymNode(this, valueTokens.prepend(token))
+        }
 
-        fun removeValueIndex(oldValueIndex: Int): SymNode<T> = SymNode(this, valueIndices.remove(oldValueIndex)!!)
+        fun removeValueToken(token: ValueToken<T>): SymNode<T> {
+            token.removed()
+            return SymNode(this, valueTokens.remove(token)!!)
+        }
 
         fun putLeft(node: SymNode<T>): SymNode<T> {
             val newLeft = left.put(node.symbol, node)
