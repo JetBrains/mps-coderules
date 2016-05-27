@@ -5,6 +5,7 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.Predicate
 import java.util.*
 
 /**
@@ -21,6 +22,8 @@ data class MemConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>)
         if (a is MetaLogical<*>) logicalContext.variable(a)
         else a
     }
+
+    override fun patternPredicates(): Collection<Predicate> = emptyList()
 
     override fun symbol(): ConstraintSymbol = symbol
 

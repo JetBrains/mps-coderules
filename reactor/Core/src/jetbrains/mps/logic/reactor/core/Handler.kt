@@ -6,6 +6,7 @@ import com.github.andrewoma.dexx.collection.Map as PersMap
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.LogicalUnification
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
@@ -194,6 +195,11 @@ class Handler {
                 if (propHistory.isRecorded(match)) continue
 
                 trace.trying(match)
+
+                for (prd in match.patternPredicates) {
+                    tellPredicate(prd.invocation(match.logicalContext), trace)
+                }
+
                 if (!match.rule.checkGuard(match.logicalContext, trace)) {
                     trace.reject(match)
                     continue

@@ -31,7 +31,8 @@ internal class PartialMatch(val rule: Rule) {
             val kept = keptOccurrences.asList() as List<ConstraintOccurrence>
             val discarded = discardedOccurrences.asList() as List<ConstraintOccurrence>
 
-            this.substitution = Unification.unify(MatchTerm(rule, kept, discarded), RuleTerm(rule))
+            this.substitution = Unification.unify(MatchTerm(rule, kept, discarded), RuleTerm(rule), MatchTermWrapper())
+
             if (substitution.isSuccessful) {
                 Match(rule, substitution, kept, discarded)
             }

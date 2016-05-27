@@ -425,4 +425,44 @@ class TestMatcher {
 
         }
     }
+
+
+    @Test
+    fun matchTermArguments() {
+        program(
+            rule("select_abcde",
+                headKept(
+                    constraint("foo", parse("a{b{h} c{d e}}"))
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_abcdf",
+                headKept(
+                    constraint("foo", parse("a{b{h} c{d f}}"))
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                )),
+            rule("select_agcde",
+                headKept(
+                    constraint("foo", parse("a{g{h} c{d e}}"))
+                ),
+                                                                body(
+                                                                    constraint("bar")
+                                                                ))
+        ).matcher().first.run {
+
+            assertEquals(
+                listOf(byTag("select_abcde")),
+                forOccurrence(occurrence("foo", parse("a{b{h} c{d e}}"))).toList())
+            assertEquals(
+                listOf(byTag("select_abcdf")),
+                forOccurrence(occurrence("foo", parse("a{b{h} c{d f}}"))).toList())
+            assertEquals(
+                listOf(byTag("select_agcde")),
+                forOccurrence(occurrence("foo", parse("a{g{h} c{d e}}"))).toList())
+
+        }
+    }
 }

@@ -6,11 +6,13 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Term
+import jetbrains.mps.unification.TermWrapper
 import jetbrains.mps.unification.Unification
 import java.util.*
 import com.github.andrewoma.dexx.collection.List as PersList
@@ -83,9 +85,9 @@ class Match(val rule: Rule,
         object : LogicalContext {
 
             // invariant: the variables in substitution bindings can only be instances of MetaLogical
-            val meta2value = HashMap<MetaLogical<*>, Any?>(substitution.bindings().map { b ->
+            val meta2value = substitution.bindings().map { b ->
                 (b.`var`().symbol() as MetaLogical<Any>).to(b.term().toValue())
-            }.toMap())
+            }.toMap(HashMap<MetaLogical<*>, Any?>())
 
             val meta2logical = HashMap<MetaLogical<*>, Logical<*>>()
 
@@ -102,6 +104,10 @@ class Match(val rule: Rule,
             }
 
         }
+    }
+
+    val patternPredicates: List<Predicate> by lazy(LazyThreadSafetyMode.NONE) {
+        (rule.headKept() + rule.headReplaced()).flatMap { constraint -> constraint.patternPredicates() }.toList()
     }
 
     val successful: Boolean
@@ -122,25 +128,32 @@ class Match(val rule: Rule,
  * True iff the constraint matches the occurrence.
  */
 fun Constraint.matches(that: ConstraintOccurrence, profiler: Profiler? = null): Boolean {
-    val constraintTerm = ConstraintTerm(this)
+    val constraintTerm = ConstraintPatternTerm(this)
     val constraintOccurrenceTerm = ConstraintOccurrenceTerm(that)
     return profiler.profile<Boolean>("unifyConstraintOccurrence") {
 
-        return Unification.unify(constraintTerm, constraintOccurrenceTerm).isSuccessful
+        return Unification.unify(constraintTerm, constraintOccurrenceTerm, MatchTermWrapper()).isSuccessful
 
     }
 }
 
 /** Function term with arguments == constraints converted to terms. May contain variables. */
 class RuleTerm(rule: Rule) :
-    Function(rule.tag(), (rule.headKept() + rule.headReplaced()).map { c -> ConstraintTerm(c) }) {}
+    Function(
+        rule.tag(),
+        (rule.headKept() + rule.headReplaced()).map { c -> ConstraintPatternTerm(c) }) {}
 
 /** Function term with arguments == constraint arguments converted to terms.
  *  MetaLogical arguments are term variables.
  *  Everything else is either a term or a constant wrapping the value. */
-class ConstraintTerm(constraint: Constraint) :
-    Function(constraint.symbol(),
-        constraint.arguments().map { arg -> if (arg is MetaLogical<*>) Variable(arg) else asTerm(arg) }) {}
+class ConstraintPatternTerm(constraint: Constraint) :
+    Function(
+        constraint.symbol(),
+        constraint.arguments().map  { arg -> when (arg) {
+                                                is MetaLogical<*>   -> Variable(arg)
+                                                else                -> arg.asTerm()
+                                            }
+                                    }) {}
 
 /** Function term with arguments == terms corresponding to constraint occurrences. Never contains variables. */
 class MatchTerm(rule: Rule, kept: List<ConstraintOccurrence>, discarded: List<ConstraintOccurrence>) :
@@ -151,14 +164,36 @@ class MatchTerm(rule: Rule, kept: List<ConstraintOccurrence>, discarded: List<Co
  *  Everything else is either a term or a constant wrapping the value.
  *  Never contains variable terms. */
 class ConstraintOccurrenceTerm(occurrence: ConstraintOccurrence) :
-    Function(occurrence.constraint().symbol(),
-        occurrence.arguments().map { arg ->
-            if (arg is Logical<*>) arg.toTerm() else asTerm(arg) }) {}
+    Function(
+        occurrence.constraint().symbol(),
+        occurrence.arguments().map { arg -> when (arg) {
+                                                is Logical<*>       ->  if (arg.isBound) arg.findRoot().value().asTerm()
+                                                                        else             Constant(arg.findRoot())
+                                                else                ->  arg.asTerm()
+                                            }
+                                    }) {}
 
-fun asTerm(arg: Any?): Term = if (arg is Term && !arg.`is`(Term.Kind.VAR)) arg else Constant(arg!!)
+class MatchTermWrapper : TermWrapper {
 
-fun Logical<*>.toTerm(): Term = Constant(findRoot())
+    override fun wrap(orig: Term): Term =
+        if (orig.`is`(Term.Kind.VAR))   when (orig.symbol()) {
+                                            is MetaLogical<*>   -> orig
+                                            else                -> WrapConstant(orig)
+                                        }
+        else orig
 
+    override fun unwrap(wrapper: Term): Term =
+        if (wrapper is WrapConstant) wrapper.symbol() else wrapper
+
+}
+
+fun Any?.asTerm(): Term = when(this) {
+    is Term             -> this              // wrapped before unification
+    is Any              -> Constant(this)
+    else                -> throw NullPointerException()
+}
+
+// FIXME: "unpacking" the logicals
 fun Term.toValue(): Any? = if (this is Constant) this.symbol() else this
 
 abstract class TermImpl(val symbol: Any) : Term {
@@ -183,6 +218,10 @@ open class Function(symbol: Any, val arguments: List<Term>) : TermImpl(symbol) {
 }
 
 class Constant(symbol: Any) : Function(symbol, emptyList()) {}
+
+class WrapConstant(symbol: Term) : Function(symbol, emptyList()) {
+    override fun symbol(): Term = super.symbol() as Term
+}
 
 class Variable(symbol: Any) : TermImpl(symbol) {
 
