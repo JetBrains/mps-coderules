@@ -229,6 +229,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -1333,6 +1336,37 @@
                 </node>
                 <node concept="37vLTw" id="7HUwyZbi3rn" role="2ZW6bz">
                   <ref role="3cqZAo" node="78CwJJcO_55" resolve="arg" />
+                </node>
+              </node>
+              <node concept="3eNFk2" id="4sSe4$prurd" role="3eNLev">
+                <node concept="2ZW3vV" id="4sSe4$prvtz" role="3eO9$A">
+                  <node concept="3uibUv" id="4sSe4$ps1yr" role="2ZW6by">
+                    <ref role="3uigEE" to="ie8e:1msb0mq9ID4" resolve="Func" />
+                  </node>
+                  <node concept="37vLTw" id="4sSe4$prv0k" role="2ZW6bz">
+                    <ref role="3cqZAo" node="78CwJJcO_55" resolve="arg" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="4sSe4$prurf" role="3eOfB_">
+                  <node concept="3SKdUt" id="4sSe4$prxfA" role="3cqZAp">
+                    <node concept="3SKdUq" id="4sSe4$prxfC" role="3SKWNk">
+                      <property role="3SKdUp" value="FIXME: need a way to find the interface class of the argument " />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="4sSe4$prGBU" role="3cqZAp">
+                    <node concept="2OqwBi" id="4sSe4$prHi8" role="3clFbG">
+                      <node concept="37vLTw" id="4sSe4$prGBS" role="2Oq$k0">
+                        <ref role="3cqZAo" node="78CwJJcO$LZ" resolve="types" />
+                      </node>
+                      <node concept="liA8E" id="4sSe4$prIpP" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                        <node concept="3VsKOn" id="4sSe4$prJvo" role="37wK5m">
+                          <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="4sSe4$prwMh" role="3cqZAp" />
                 </node>
               </node>
               <node concept="9aQIb" id="7HUwyZbi4Sk" role="9aQIa">

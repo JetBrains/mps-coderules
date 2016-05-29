@@ -175,6 +175,12 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
@@ -616,13 +622,13 @@
       <node concept="3clFbS" id="7HUwyZbdNAh" role="3clF47">
         <node concept="XkiVB" id="7HUwyZbdOUD" role="3cqZAp">
           <ref role="37wK5l" to="ie8e:uNmovXiEVu" resolve="Variable" />
-          <node concept="2OqwBi" id="7HUwyZbdOYl" role="37wK5m">
-            <node concept="37vLTw" id="7HUwyZbdOWP" role="2Oq$k0">
-              <ref role="3cqZAo" node="7HUwyZbdNBn" resolve="metaLogical" />
-            </node>
-            <node concept="liA8E" id="7HUwyZbdOZR" role="2OqNvi">
-              <ref role="37wK5l" to="45ys:7HUwyZauJkq" resolve="name" />
-            </node>
+          <node concept="37vLTw" id="7HUwyZbdOWP" role="37wK5m">
+            <ref role="3cqZAo" node="7HUwyZbdNBn" resolve="metaLogical" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4sSe4$pxFOq" role="3cqZAp">
+          <node concept="3SKdUq" id="4sSe4$pxFOs" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: superfluous field" />
           </node>
         </node>
         <node concept="3clFbF" id="7HUwyZbdNBC" role="3cqZAp">
@@ -730,6 +736,30 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7HUwyZbdNCL" role="jymVt" />
+    <node concept="3clFb_" id="4sSe4$psaDX" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="toString" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="4sSe4$psaDY" role="1B3o_S" />
+      <node concept="17QB3L" id="4sSe4$psaDZ" role="3clF45" />
+      <node concept="2AHcQZ" id="4sSe4$psaE7" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFbS" id="4sSe4$psaE8" role="3clF47">
+        <node concept="3clFbF" id="4sSe4$pscgI" role="3cqZAp">
+          <node concept="2OqwBi" id="4sSe4$pscAv" role="3clFbG">
+            <node concept="37vLTw" id="4sSe4$pscgH" role="2Oq$k0">
+              <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
+            </node>
+            <node concept="liA8E" id="4sSe4$pscXp" role="2OqNvi">
+              <ref role="37wK5l" to="45ys:6XBR7US9Exp" resolve="toString" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4sSe4$psb5H" role="jymVt" />
     <node concept="3Tm1VV" id="7HUwyZbdMWI" role="1B3o_S" />
     <node concept="3uibUv" id="7HUwyZbdN_j" role="1zkMxy">
       <ref role="3uigEE" to="ie8e:uNmovXiEd4" resolve="Variable" />
@@ -771,13 +801,13 @@
       <node concept="3clFbS" id="4TCblo5ML4M" role="3clF47">
         <node concept="XkiVB" id="4TCblo5MOl_" role="3cqZAp">
           <ref role="37wK5l" to="ie8e:uNmovXiEVu" resolve="Variable" />
-          <node concept="2OqwBi" id="4TCblo5MOzE" role="37wK5m">
-            <node concept="37vLTw" id="4TCblo5MOwN" role="2Oq$k0">
-              <ref role="3cqZAo" node="4TCblo5MNMf" resolve="logical" />
-            </node>
-            <node concept="liA8E" id="4TCblo5MOAh" role="2OqNvi">
-              <ref role="37wK5l" to="45ys:677NV56hh2k" resolve="name" />
-            </node>
+          <node concept="37vLTw" id="4TCblo5MOwN" role="37wK5m">
+            <ref role="3cqZAo" node="4TCblo5MNMf" resolve="logical" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4sSe4$pxIbF" role="3cqZAp">
+          <node concept="3SKdUq" id="4sSe4$pxIbH" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: superfluous field" />
           </node>
         </node>
         <node concept="3clFbF" id="4TCblo5MPbq" role="3cqZAp">
