@@ -2777,5 +2777,22 @@
     </node>
     <node concept="3Tm1VV" id="7ksQUDZtHkt" role="1B3o_S" />
   </node>
+  <node concept="24kQdi" id="4sSe4$p4oOX">
+    <property role="3GE5qa" value="logical" />
+    <ref role="1XX52x" to="5j4j:4sSe4$p4oOM" resolve="AssignedLogicalVariable" />
+    <node concept="3EZMnI" id="4sSe4$p4oOZ" role="2wV5jI">
+      <node concept="3F1sOY" id="4sSe4$p4oPk" role="3EZMnx">
+        <ref role="1NtTu8" to="5j4j:4sSe4$p4oON" />
+      </node>
+      <node concept="3F0ifn" id="4sSe4$p4oPc" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+        <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
+      </node>
+      <node concept="3F1sOY" id="4sSe4$p4oP6" role="3EZMnx">
+        <ref role="1NtTu8" to="5j4j:4sSe4$p4oOP" />
+      </node>
+      <node concept="l2Vlx" id="4sSe4$p4oP2" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

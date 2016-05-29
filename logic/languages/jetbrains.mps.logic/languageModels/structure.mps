@@ -358,5 +358,23 @@
     <property role="1pbfSe" value="1182884256" />
     <ref role="1TJDcQ" node="1mP5b6jNC0S" resolve="LogicalType" />
   </node>
+  <node concept="1TIwiD" id="4sSe4$p4oOM">
+    <property role="1pbfSe" value="1615447419" />
+    <property role="3GE5qa" value="logical" />
+    <property role="TrG5h" value="AssignedLogicalVariable" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalClause" />
+    <node concept="1TJgyj" id="4sSe4$p4oON" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="variable" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7E86$tKsHeX" resolve="AbstractLogicalVariable" />
+    </node>
+    <node concept="1TJgyj" id="4sSe4$p4oOP" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7E86$tKskWj" resolve="LogicalValue" />
+    </node>
+  </node>
 </model>
 
