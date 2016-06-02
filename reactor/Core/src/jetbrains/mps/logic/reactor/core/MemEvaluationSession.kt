@@ -18,8 +18,13 @@ import java.util.*
  * @author Fedor Isakov
  */
 
+interface SessionObjects {
 
-class MemEvaluationSession : EvaluationSession {
+    fun handler(): Handler
+
+}
+
+class MemEvaluationSession : EvaluationSession, SessionObjects {
 
     private class Config(val program: Program) : EvaluationSession.Config() {
 
@@ -85,6 +90,8 @@ class MemEvaluationSession : EvaluationSession {
         this.handler = Handler(program.rules(), trace, profiler)
         handler.tell(main)
     }
+
+    override fun handler() = handler
 
     override fun sessionSolver(): SessionSolver = sessionSolver
 

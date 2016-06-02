@@ -4,6 +4,7 @@ import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.Maps
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -225,11 +226,11 @@ private data class MemConstraintOccurrence(val frameStack: FrameStack, val const
     override fun arguments(): List<*> = arguments
 
     override fun valueUpdated(logical: Logical<*>) {
-        Handler.current.queue(this)
+        (EvaluationSession.current() as SessionObjects).handler().queue(this)
     }
 
     override fun parentUpdated(logical: Logical<*>) {
-        Handler.current.queue(this)
+        (EvaluationSession.current() as SessionObjects).handler().queue(this)
     }
 
     override fun terminate() {

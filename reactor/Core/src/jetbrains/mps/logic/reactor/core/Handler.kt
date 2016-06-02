@@ -120,13 +120,6 @@ class HandlerFrame : LogicalObserver, LogicalObserverProxy
 
 class Handler {
 
-    companion object {
-        lateinit var current: Handler
-            private set
-    }
-
-//    private val occurrenceStore = OccurrenceStore()
-
     private val frameStack = FrameStack()
 
     // persistent (functional) object. reassigned on update
@@ -151,7 +144,6 @@ class Handler {
         if (occurrences != null) {
             frameStack.current.store.storeAll(occurrences)
         }
-        current = this
     }
 
     fun allOccurrences(): Set<ConstraintOccurrence> =

@@ -1,4 +1,5 @@
 import jetbrains.mps.logic.reactor.core.Handler
+import jetbrains.mps.logic.reactor.core.SessionObjects
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
@@ -27,7 +28,9 @@ class TestHandler {
         MockSession.deinit()
     }
 
-    private class MockSession(val solver: SessionSolver) : EvaluationSession() {
+    private class MockSession(val solver: SessionSolver) : EvaluationSession(), SessionObjects {
+        lateinit var handler: Handler
+        override fun handler(): Handler = handler
         override fun sessionSolver(): SessionSolver = solver
         override fun constraintSymbols(): MutableIterable<ConstraintSymbol> = TODO()
         override fun constraintOccurrences(): MutableIterable<ConstraintOccurrence> = TODO()
@@ -39,7 +42,7 @@ class TestHandler {
         }
 
         companion object {
-            private lateinit var ourBackend : MockBackend
+            lateinit var ourBackend : MockBackend
 
             fun init(solver: SessionSolver) {
                 ourBackend = MockBackend(MockSession(solver))
@@ -58,7 +61,9 @@ class TestHandler {
 
     private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Handler {
         MockSession.init(sessionSolver(env.expressionSolver, env.equalsSolver))
-        return Handler(rules, occurrences = listOf(* occurrences))
+        val handler = Handler(rules, occurrences = listOf(* occurrences))
+        MockSession.ourBackend.session.handler = handler
+        return handler
     }
 
     private fun <T : Any> eq(left: Logical<T>, right: Logical<T>) {
