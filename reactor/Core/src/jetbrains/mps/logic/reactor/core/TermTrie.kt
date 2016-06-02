@@ -35,13 +35,9 @@ class TermTrie<T> {
 
     private lateinit var root: SymNode<T>
 
-    private lateinit var value2index: PersMap<T, Int>
+    private lateinit var tokens: PersVector<ValueToken<T>>
 
-    private lateinit var values: PersVector<T>
-
-    private lateinit var tokenVector: PersVector<ValueToken<T>>
-
-    private lateinit var tokens: PersMap<IdWrapper<T>, ValueToken<T>>
+    private lateinit var value2token: PersMap<IdWrapper<T>, ValueToken<T>>
 
     private companion object {
 
@@ -53,44 +49,30 @@ class TermTrie<T> {
 
     constructor() {
         this.root = SymNode<T>(WILDCARD)
-        this.value2index = Maps.of()
-        this.values = PersVector.empty()
-        this.tokens = Maps.of()
-        this.tokenVector = PersVector.empty()
+        this.value2token = Maps.of()
+        this.tokens = PersVector.empty()
     }
 
-    private constructor(root: SymNode<T>, val2ids: PersMap<T, Int>, vals: PersVector<T>, toks: PersMap<IdWrapper<T>, ValueToken<T>>, tokvec: PersVector<ValueToken<T>>) {
+    private constructor(root: SymNode<T>, toks: PersMap<IdWrapper<T>, ValueToken<T>>, tokvec: PersVector<ValueToken<T>>) {
         this.root = root
-        this.value2index = val2ids
-        this.values = vals
-        this.tokens = toks
-        this.tokenVector = tokvec
+        this.value2token = toks
+        this.tokens = tokvec
     }
 
     fun put(term: Term, value: T): TermTrie<T> {
-        var newVal2Index = value2index
-        var newValues = values
-
-       val index = value2index[value] ?: run {
-            newValues = values.append(value)
-            val idx = newValues.size() - 1
-            newVal2Index = value2index.put(value, idx)
-            idx
-        }
-
-        val tok = ValueToken(value, index, tokenVector.size())
-        val newTokens = tokens.put(IdWrapper(value), tok)
+        val tok = ValueToken(value, tokens.size())
+        val newTokens = value2token.put(IdWrapper(value), tok)
 
         val newNode = root.leftOrDefault(symbolOrWildcard(term)).putValueToken(tok, term.arguments().isEmpty())
-        return TermTrie(root.putLeft(putValue(newNode, term, tok)), newVal2Index, newValues, newTokens, tokenVector.append(tok))
+        return TermTrie(root.putLeft(putValue(newNode, term, tok)), newTokens, tokens.append(tok))
     }
 
     fun remove(term: Term, value: T): TermTrie<T> {
-        return tokens[IdWrapper(value)]?.let { tok ->
+        return value2token[IdWrapper(value)]?.let { tok ->
             root.left[symbolOrWildcard(term)]?.let { found ->
                 // TODO: remove the value from the index
-                val newTokens = tokens.remove(IdWrapper(value))
-                val newTermTrie = TermTrie(root.putLeft(removeValue(found.removeValueToken(tok, term.arguments().isEmpty()), term, tok)), value2index, values, newTokens, tokenVector)
+                val newTokens = value2token.remove(IdWrapper(value))
+                val newTermTrie = TermTrie(root.putLeft(removeValue(found.removeValueToken(tok, term.arguments().isEmpty()), term, tok)), newTokens, tokens)
                 // invariant: the token must be stored and removed the same number of times
                 assert(tok.storedCount() == 0)
                 return newTermTrie
@@ -126,30 +108,7 @@ class TermTrie<T> {
             root.left[WILDCARD]?.let(block)
         }
 
-        val indices = selectIndices(tokenBitsetList)
-        return indices.map { idx -> values.get(idx) }
-    }
-
-    private fun selectIndices(tokenBitsetList: ArrayList<BitSet>): ArrayList<Int> {
-        val indices = ArrayList<Int>(4)
-        val bits = Array<Int>(tokenBitsetList.size) { idx -> tokenBitsetList[idx].nextSetBit(0) }
-        while (true) {
-            bits.filter { it >= 0 }.min()?.let { minbit ->
-                val count = bits.sumBy { if (it == minbit) 1 else 0 }
-                val tok = tokenVector[minbit]
-                if (count == tok.storedCount()) {
-                    indices.add(tok.index)
-                }
-
-                for (idx in 0..bits.size - 1) {
-                    if (bits[idx] == minbit) {
-                        bits[idx] = tokenBitsetList[idx].nextSetBit(minbit + 1)
-                    }
-                }
-            } ?: break
-        }
-        indices.sort()
-        return indices
+        return selectFromTokens(tokenBitsetList)
     }
 
     fun allValues(): Iterable<T> {
@@ -159,8 +118,28 @@ class TermTrie<T> {
             tokenBitsetList.add(n.tokenBitset)
         }
 
-        val indices = selectIndices(tokenBitsetList)
-        return indices.map { idx -> values.get(idx) }
+        return selectFromTokens(tokenBitsetList)
+    }
+
+    private fun selectFromTokens(tokenBitsetList: ArrayList<BitSet>): Iterable<T> {
+        val selected = ArrayList<T>()
+        val bits = Array<Int>(tokenBitsetList.size) { idx -> tokenBitsetList[idx].nextSetBit(0) }
+        while (true) {
+            bits.filter { it >= 0 }.min()?.let { minbit ->
+                val count = bits.sumBy { if (it == minbit) 1 else 0 }
+                val tok = tokens[minbit]
+                if (count == tok.storedCount()) {
+                    selected.add(tok.value)
+                }
+
+                for (idx in 0..bits.size - 1) {
+                    if (bits[idx] == minbit) {
+                        bits[idx] = tokenBitsetList[idx].nextSetBit(minbit + 1)
+                    }
+                }
+            } ?: break
+        }
+        return selected
     }
 
     private fun putValue(node: SymNode<T>, term: Term, tok: ValueToken<T>): SymNode<T> {
@@ -340,7 +319,7 @@ class TermTrie<T> {
         }
     }
 
-    private class ValueToken<T>(val value: T, val index: Int, val tokIndex: Int) {
+    private class ValueToken<T>(val value: T, val tokIndex: Int) {
 
         private var count: Int = 0
 
