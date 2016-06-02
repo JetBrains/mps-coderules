@@ -14,6 +14,7 @@ import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.TermWrapper
 import jetbrains.mps.unification.Unification
+import org.jetbrains.kotlin.container.topologicalSort
 import java.util.*
 import com.github.andrewoma.dexx.collection.List as PersList
 
@@ -29,10 +30,12 @@ class Matcher(val ruleIndex: RuleIndex,
 {
 
     private val matchTries: List<MatchTrie> by lazy(LazyThreadSafetyMode.NONE) {
-        ArrayList<MatchTrie>(4).apply {
+        profiler.profile<List<MatchTrie>>("lookupRules_${activeOcc.constraint().symbol()}") {
 
-            for(rule in  ruleIndex.forOccurrence(activeOcc)) {
-                add(MatchTrie(rule, activeOcc, aux, profiler))
+            ArrayList<MatchTrie>(4).apply {
+                for(rule in  ruleIndex.forOccurrence(activeOcc).toList()) {
+                    add(MatchTrie(rule, activeOcc, aux, profiler))
+                }
             }
 
         }

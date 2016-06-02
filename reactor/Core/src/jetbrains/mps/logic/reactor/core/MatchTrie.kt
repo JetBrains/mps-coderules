@@ -238,7 +238,7 @@ internal class MatchTrie(val rule: Rule,
         // INCONCLUSIVE may yield some (ir-)relevant results
         // NONE means no results could have been found at all, so it's useless to attempt again with the same input
         private fun lookupAuxOccurrences(cst: Constraint): Pair<Result, Iterable<ConstraintOccurrence>> {
-            return profiler.profile<Pair<Result, Iterable<ConstraintOccurrence>>> ("lookupAuxOccurrences") {
+            return profiler.profile<Pair<Result, Iterable<ConstraintOccurrence>>> ("lookupAux_${cst.symbol()}") {
 
                 val cache = ArrayList<ConstraintOccurrence>(4)
                 for (arg in cst.arguments()) {
