@@ -510,6 +510,22 @@ public class SolverTests {
     }
 
     @Test
+    public void testUnifyExternalRef3() throws Exception {
+        Term empty = parse("f {nil}");
+        Term varRef = ref(var("TAIL"));
+
+        Term aa = term("g", empty);
+        Term bb = term("g", term("f", varRef));
+
+        assertUnifiesWithBindings(
+                aa,
+                bb,
+
+                bind(var("TAIL"), parse("nil"))
+        );
+    }
+
+    @Test
     public void testWrapper() throws Exception {
         Term t1 = parse("a{b c{X}}");
         Term t2 = parse("a{X c{Y}}");

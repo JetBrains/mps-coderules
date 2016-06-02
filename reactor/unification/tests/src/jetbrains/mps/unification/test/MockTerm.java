@@ -168,6 +168,11 @@ public abstract class MockTerm implements Term {
         }
 
         @Override
+        public Object symbol() {
+            return "^";
+        }
+
+        @Override
         public final Term get() {
             if (term == null && termLookup != null) {
                 term = termLookup.lookupTerm();

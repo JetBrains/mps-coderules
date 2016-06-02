@@ -109,30 +109,34 @@ private class ValueIndex(val symbol: ConstraintSymbol) {
 
         // initially select all rules
         val upToBit = rules.size
-        val ruleIndices = BitSet()
+        val ruleIndices = BitSet(rules.size)
         ruleIndices.set(0, upToBit)
 
         for ((idx, arg) in occ.arguments().withIndex()) {
             val value2indices = anySelectors[idx]
             val termIndices = termSelectors[idx]
             val wildcardIndices = wildcardSelectors[idx]
-            when (arg) {
-                is Logical<*>       -> {
-                    // ALL values must be selected for a logical
-                }
+            if (arg is Logical<*> && !arg.isBound) {
+                // ALL values must be selected for a free logical
+                continue
+            }
+
+            val argVal = if (arg is Logical<*>) arg.findRoot().value() else arg
+            when (argVal) {
                 is Term             -> {
                     val bits = wildcardIndices.clone() as BitSet
-                    for (i in termIndices.lookupValues(arg)) {
+                    for (i in termIndices.lookupValues(argVal)) {
                         bits.set(i)
                     }
                     ruleIndices.and(bits)
                 }
                 is Any              -> {
-                    if (value2indices.containsKey(arg)) {
+                    if (value2indices.containsKey(argVal)) {
                         // ensure only rules with either matching values or wildcard arguments get selected
                         val bits = wildcardIndices.clone() as BitSet
-                        bits.or(value2indices[arg])
+                        bits.or(value2indices[argVal])
                         ruleIndices.and(bits)
+
                     } else {
                         ruleIndices.and(wildcardIndices)
                     }
@@ -142,9 +146,19 @@ private class ValueIndex(val symbol: ConstraintSymbol) {
                     throw NullPointerException()
                 }
             }
+
+            if (ruleIndices.isEmpty) {
+                break
+            }
         }
 
-        return rules.filterIndexed { idx, rule -> ruleIndices.get(idx) }
+        val result = ArrayList<Rule>(ruleIndices.cardinality())
+        var next = ruleIndices.nextSetBit(0)
+        while (next >= 0) {
+            result.add(rules.get(next))
+            next = ruleIndices.nextSetBit(next+1)
+        }
+        return result
     }
 
 }

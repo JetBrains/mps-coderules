@@ -7,6 +7,7 @@ import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
+import jetbrains.mps.unification.Term
 import java.util.*
 import com.github.andrewoma.dexx.collection.Map as PersMap
 
@@ -245,6 +246,8 @@ internal class MatchTrie(val rule: Rule,
                         is MetaLogical<*>   ->  instances(arg)?.forEach { log ->
                                                     cache.addAll(aux.forLogical(log).filter {occ -> cst.matches(occ)})
                                                 }
+
+                        is Term             ->  cache.addAll(aux.forTerm(arg).filter {occ -> cst.matches(occ)})
 
                         is Any              ->  cache.addAll(aux.forValue(arg).filter {occ -> cst.matches(occ)})
                     }

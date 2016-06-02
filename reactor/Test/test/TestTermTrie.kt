@@ -1,4 +1,7 @@
 import jetbrains.mps.logic.reactor.core.TermTrie
+import jetbrains.mps.unification.Term
+import jetbrains.mps.unification.test.MockTerm
+import jetbrains.mps.unification.test.MockTerm.*
 import jetbrains.mps.unification.test.MockTermsParser
 import jetbrains.mps.unification.test.MockTermsParser.parse
 import org.junit.Test
@@ -224,4 +227,24 @@ class TestTermTrie {
         assertEquals(listOf("foo", "bazz", "qux", "blah"), trie3.lookupValues(parse("a{X c}")).toList())
     }
 
+    @Test
+    fun testRefTerm() {
+        val emptyList = parse("f {nil}")
+        val varRef = MockRef(MockVar("TAIL"))
+
+        val pattern = MockFun("g", MockFun("h"), MockFun("f", varRef))
+
+        val trie1 = TermTrie<Any>().run {
+            put(parse("g {h f {a nil}}"), "bar").run {
+            put(parse("g {h f {a f {b nil}}}"), "bazz").run {
+            put(pattern, "foo").run {
+            put(parse("g {h foo {nil}}"), "qux")
+        } } } }
+
+        val key = MockFun("g", MockFun("h"), emptyList)
+
+        assertEquals(listOf("qux"), trie1.lookupValues(parse("g {h foo {nil}}")).toList())
+        assertEquals(listOf("foo"), trie1.lookupValues(key).toList())
+
+    }
 }
