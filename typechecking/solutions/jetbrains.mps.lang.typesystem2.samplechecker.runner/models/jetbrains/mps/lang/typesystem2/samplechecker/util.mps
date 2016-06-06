@@ -637,19 +637,23 @@
             </node>
             <node concept="3clFbH" id="4peSo3CJHeA" role="3cqZAp" />
           </node>
-          <node concept="2OqwBi" id="4peSo3CJD0t" role="3clFbw">
-            <node concept="Xl_RD" id="4peSo3CJCKN" role="2Oq$k0">
-              <property role="Xl_RC" value="node" />
-            </node>
-            <node concept="liA8E" id="4peSo3CJEby" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-              <node concept="2OqwBi" id="4peSo3CJEmY" role="37wK5m">
-                <node concept="37vLTw" id="4peSo3CJEcE" role="2Oq$k0">
+          <node concept="2OqwBi" id="29_L5zQVjlV" role="3clFbw">
+            <node concept="2YIFZM" id="29_L5zQVcOM" role="2Oq$k0">
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <node concept="2OqwBi" id="29_L5zQVerA" role="37wK5m">
+                <node concept="37vLTw" id="29_L5zQVerB" role="2Oq$k0">
                   <ref role="3cqZAo" node="4peSo3CHzzV" resolve="cb" />
                 </node>
-                <node concept="liA8E" id="4peSo3CJFNB" role="2OqNvi">
+                <node concept="liA8E" id="29_L5zQVerC" role="2OqNvi">
                   <ref role="37wK5l" to="ie8e:1R$Cm9qGRoH" resolve="symbol" />
                 </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="29_L5zQVl1Z" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+              <node concept="Xl_RD" id="29_L5zQVmIe" role="37wK5m">
+                <property role="Xl_RC" value="node" />
               </node>
             </node>
           </node>

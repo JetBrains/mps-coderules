@@ -100,6 +100,7 @@
     <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification()" />
     <import index="e2ly" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui.tree(MPS.IDEA/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" implicit="true" />
   </imports>
@@ -19355,6 +19356,21 @@
     <property role="TrG5h" value="AbstractFormatter" />
     <property role="1sVAO0" value="false" />
     <node concept="2tJIrI" id="HV6urVB9iC" role="jymVt" />
+    <node concept="312cEg" id="29_L5zQUghA" role="jymVt">
+      <property role="TrG5h" value="nodePattern" />
+      <node concept="3Tm6S6" id="29_L5zQUghB" role="1B3o_S" />
+      <node concept="3uibUv" id="29_L5zQUhmb" role="1tU5fm">
+        <ref role="3uigEE" to="ni5j:~Pattern" resolve="Pattern" />
+      </node>
+      <node concept="2YIFZM" id="29_L5zQUldO" role="33vP2m">
+        <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
+        <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
+        <node concept="Xl_RD" id="29_L5zQUlTG" role="37wK5m">
+          <property role="Xl_RC" value="node.*" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="29_L5zQU1yi" role="jymVt" />
     <node concept="3clFb_" id="HV6urVB_vb" role="jymVt">
       <property role="TrG5h" value="extractReference" />
       <property role="DiZV1" value="false" />
@@ -19374,8 +19390,8 @@
                   <node concept="37vLTw" id="HV6urVDdLJ" role="37wK5m">
                     <ref role="3cqZAo" node="4pWvZ2njjOw" resolve="anchor" />
                   </node>
-                  <node concept="Xl_RD" id="HV6urVDdLK" role="37wK5m">
-                    <property role="Xl_RC" value="node" />
+                  <node concept="37vLTw" id="29_L5zQUoTN" role="37wK5m">
+                    <ref role="3cqZAo" node="29_L5zQUghA" resolve="nodePattern" />
                   </node>
                   <node concept="Xl_RD" id="HV6urVDdLL" role="37wK5m">
                     <property role="Xl_RC" value="id" />
