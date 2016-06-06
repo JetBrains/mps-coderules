@@ -1,12 +1,11 @@
 package jetbrains.mps.logic.reactor.core
 
-
 import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.ConsList.empty
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Maps
-import jetbrains.mps.logic.reactor.util.IdWrapper
-import com.github.andrewoma.dexx.collection.Vector as PersVector
+import jetbrains.mps.logic.reactor.util.cons
+import jetbrains.mps.logic.reactor.util.remove
 import jetbrains.mps.unification.Term
 import java.util.*
 
@@ -15,29 +14,25 @@ import java.util.*
  */
 
 /**
- * A persistent map-like structure to keep values associated with terms.
+ * A persistent map-like structure to keep multiple values associated with a single term.
  *
- * The method `put` returns a new `TermTrie` updated to contain the new association. Likewise, the method
- * `remove` returns the updated `TermTrie` without the association.
+ * The method `put` returns a new instance updated to contain the new association. Likewise, the method
+ * `remove` returns the new instance updated to remove the association.
  *
- * To access the stored values, the method `lookupValues` returns all values associated with terms, with values having
- * multiple cardinality returned only once. The method `allValues` returns all stored values. The values are always
- * returned in the order they were added.
+ * Term variables are supported: a variable matches any term, including other variable. All variables are treated
+ * as "wildcards", so the subsequent unification of the query term and the key does not necessarily succeeds.
  *
- * Term variables are supported: a variable matches any term, including other variable. No terms unification is
- * performed.
+ * To access the stored values, the method `lookupValues` returns all values associated with terms.
+ * The method `allValues` returns all stored values. Neither method makes any guarantees about the cardinality or
+ * the order of the values returned.
  *
- * Internally the data is represented in a kind of binary tree, with each node's `left` being a map of symbol to first
- * argument (as in term's argument), and `right` being also a map of symbol to next sibling argument in its parent.
+ * The implementation is based on the structure called "discrimination tree" as described in the chapter 26 of [1].
+ *
+ * [1] Alan Robinson and Andrei Voronkov (Eds.). 2001. Handbook of Automated Reasoning.
+ * Elsevier Sci. Pub. B. V., Amsterdam, The Netherlands, The Netherlands.
  *
  */
-class TermTrie<T> {
-
-    private lateinit var root: SymNode<T>
-
-    private lateinit var tokens: PersVector<ValueToken<T>>
-
-    private lateinit var value2token: PersMap<IdWrapper<T>, ValueToken<T>>
+class TermTrie<T>() {
 
     private companion object {
 
@@ -47,256 +42,113 @@ class TermTrie<T> {
 
     }
 
-    constructor() {
-        this.root = SymNode<T>(WILDCARD)
-        this.value2token = Maps.of()
-        this.tokens = PersVector.empty()
+    private lateinit var root: PathNode<T>
+
+    init {
+        root = PathNode(WILDCARD, 1)
     }
 
-    private constructor(root: SymNode<T>, toks: PersMap<IdWrapper<T>, ValueToken<T>>, tokvec: PersVector<ValueToken<T>>) {
-        this.root = root
-        this.value2token = toks
-        this.tokens = tokvec
+    private constructor(setRoot: PathNode<T>) : this() {
+        this.root = setRoot
     }
 
-    fun put(term: Term, value: T): TermTrie<T> {
-        val tok = ValueToken(value, tokens.size())
-        val newTokens = value2token.put(IdWrapper(value), tok)
+    fun put(term: Term, value: T): TermTrie<T> = TermTrie(putValue(root, value, term, emptyList()))
 
-        val newNode = root.leftOrDefault(symbolOrWildcard(term)).putValueToken(tok, term.arguments().isEmpty())
-        return TermTrie(root.putLeft(putValue(newNode, term, tok)), newTokens, tokens.append(tok))
-    }
-
-    fun remove(term: Term, value: T): TermTrie<T> {
-        return value2token[IdWrapper(value)]?.let { tok ->
-            root.left[symbolOrWildcard(term)]?.let { found ->
-                // TODO: remove the value from the index
-                val newTokens = value2token.remove(IdWrapper(value))
-                val newTermTrie = TermTrie(root.putLeft(removeValue(found.removeValueToken(tok, term.arguments().isEmpty()), term, tok)), newTokens, tokens)
-                // invariant: the token must be stored and removed the same number of times
-                assert(tok.storedCount() == 0)
-                return newTermTrie
-            }
-        } ?: this
-    }
+    fun remove(term: Term, value: T): TermTrie<T> = TermTrie(removeValue(root, value, term, emptyList()))
 
     fun lookupValues(term: Term): Iterable<T> {
-        val tokenBitsetList = ArrayList<BitSet>()
-
-        val derefTerm = deref(term)
-        val block: (SymNode<T>) -> Unit = { match ->
-            matching(derefTerm, match) { node, matched, term, leaf ->
-
-                if (matched) {
-                    if (term?.`is`(Term.Kind.VAR) ?: false) {
-                        all(node) { n ->
-                            tokenBitsetList.add(n.tokenBitset)
-                        }
-
-                    } else {
-                        tokenBitsetList.add(node.tokenBitset)
-                    }
-                }
-            }
-        }
-
-        if (derefTerm.`is`(Term.Kind.VAR)) {
-            root.left.values().forEach(block)
-
-        } else {
-            root.left[derefTerm.symbol()]?.let(block)
-            root.left[WILDCARD]?.let(block)
-        }
-
-        return selectFromTokens(tokenBitsetList)
+        val result = ArrayList<T>()
+        visitMatching(root, term, emptyList()) { value -> result.add(value) }
+        return result
     }
 
     fun allValues(): Iterable<T> {
-        val tokenBitsetList = ArrayList<BitSet>()
-
-        all(root) { n ->
-            tokenBitsetList.add(n.tokenBitset)
-        }
-
-        return selectFromTokens(tokenBitsetList)
+        val result = ArrayList<T>()
+        visitAll(root, { value -> result.add(value) })
+        return result
     }
 
-    private fun selectFromTokens(tokenBitsetList: ArrayList<BitSet>): Iterable<T> {
-        val selected = ArrayList<T>()
-        val bits = Array<Int>(tokenBitsetList.size) { idx -> tokenBitsetList[idx].nextSetBit(0) }
-        while (true) {
-            bits.filter { it >= 0 }.min()?.let { minbit ->
-                val count = bits.sumBy { if (it == minbit) 1 else 0 }
-                val tok = tokens[minbit]
-                if (count == tok.storedCount()) {
-                    selected.add(tok.value)
-                }
+    private fun putValue(node: PathNode<T>, value: T, term: Term, tail: List<Term>): PathNode<T> {
+        val deref = deref(term)
+        val arguments = deref.arguments()
+        val newTail = arguments + tail
 
-                for (idx in 0..bits.size - 1) {
-                    if (bits[idx] == minbit) {
-                        bits[idx] = tokenBitsetList[idx].nextSetBit(minbit + 1)
-                    }
-                }
-            } ?: break
+        val nextNode = node.nextOrDefault(symbolOrWildcard(deref)) { sym -> PathNode(sym, arguments.size) }
+
+        //invariant: terms arity is fixed
+        assert(nextNode.arity == arguments.size)
+
+        return if (newTail.isEmpty()) {
+            node.putNext(nextNode.addValue(value))
+
+        } else {
+            node.putNext(putValue(nextNode, value, newTail.first(), newTail.drop(1)))
         }
-        return selected
     }
 
-    private fun putValue(node: SymNode<T>, term: Term, tok: ValueToken<T>): SymNode<T> {
-        val arguments = term.arguments()
-        return if (arguments.isNotEmpty()) {
-            val argList = arguments.toList()
-            val arg = deref(argList[0])
-            val leaf = arg.arguments().isEmpty()
-            val prev = putValue(node.leftOrDefault(symbolOrWildcard(arg)).putValueToken(tok, leaf),
-                                arg,
-                                tok)
+    private fun removeValue(node: PathNode<T>, value: T, term: Term, tail: List<Term>): PathNode<T> {
+        val deref = deref(term)
+        val arguments = deref.arguments()
+        val newTail = arguments + tail
 
-            if (argList.size > 1) {
-                node.putLeft(putNextValue(prev, argList.subList(1, argList.size), tok))
+        return node.next[symbolOrWildcard(deref)]?.let { nextNode ->
+
+            //invariant: terms arity is fixed
+            assert(nextNode.arity == arguments.size)
+
+            return if (newTail.isEmpty()) {
+                val newNext = nextNode.removeValue(value)
+                if (newNext.values.isEmpty) {
+                    node.removeNext(newNext)
+
+                } else {
+                    node.putNext(newNext)
+                }
 
             } else {
-                node.putLeft(prev)
-            }
-
-        } else {
-            node
-        }
-    }
-
-    private fun putNextValue(prev: SymNode<T>, argList: List<Term>, tok: ValueToken<T>): SymNode<T> {
-        // invariant: the base case is to be processed elsewhere
-        assert(argList.isNotEmpty())
-
-        val arg = deref(argList[0])
-        val leaf = arg.arguments().isEmpty()
-        val next = putValue(prev.rightOrDefault(symbolOrWildcard(arg)).putValueToken(tok, leaf),
-                            arg,
-                            tok)
-
-        return if (argList.size > 1) {
-            prev.putRight(putNextValue(next, argList.subList(1, argList.size), tok))
-
-        } else {
-            prev.putRight(next)
-        }
-    }
-
-
-    private fun removeValue(node: SymNode<T>, term: Term, tok: ValueToken<T>): SymNode<T> {
-        val arguments = term.arguments()
-        return if (arguments.isNotEmpty()) {
-            val argList = arguments.toList()
-            val arg = deref(argList[0])
-            node.left[symbolOrWildcard(arg)]?.let { found ->
-
-                val prev = removeValue(found.removeValueToken(tok, arg.arguments().isEmpty()), arg, tok)
-                if (argList.size > 1) {
-                    node.putLeft(removeNextArgValue(prev, argList.subList(1, argList.size), tok))
+                val newNext = removeValue(nextNode, value, newTail.first(), newTail.drop(1))
+                if (newNext.next.isEmpty) {
+                    node.removeNext(nextNode)
 
                 } else {
-                    node.putLeft(prev)
+                    node.putNext(newNext)
                 }
+            }
 
-            } ?: node
-
-        } else {
-            node
-        }
+        } ?: node
     }
 
-    private fun removeNextArgValue(prev: SymNode<T>, argList: List<Term>, tok: ValueToken<T>): SymNode<T> {
-        // invariant: the base case is to be processed elsewhere
-        assert(argList.isNotEmpty())
-
-        val arg = deref(argList[0])
-        return prev.right[symbolOrWildcard(arg)]?.let { found ->
-
-            val next = removeValue(found.removeValueToken(tok, arg.arguments().isEmpty()), arg, tok)
-            if (argList.size > 1) {
-                prev.putRight(removeNextArgValue(next, argList.subList(1, argList.size), tok))
+    private fun visitMatching(node: PathNode<T>, term: Term, tail: List<Term>, visitor: (T) -> Unit) {
+        val deref = deref(term)
+        val sym = symbolOrWildcard(deref)
+        if (sym == WILDCARD) {
+            if (tail.size > 0) {
+                node.skipNext().forEach { visitMatching(it, tail.first(), tail.drop(1), visitor) }
 
             } else {
-                prev.putRight(next)
-            }
-
-        } ?: prev
-    }
-
-    private fun matching(term: Term,
-                         node: SymNode<T>,
-                         proc: (node: SymNode<T>, matched: Boolean, term: Term?, leaf: Boolean) -> Unit)
-    {
-        val matching = node.symbol == term.symbol() || node.symbol == WILDCARD || term.`is`(Term.Kind.VAR)
-        if (!matching) {
-            return
-        }
-
-        val arguments = term.arguments()
-        if (arguments.isNotEmpty()) {
-            var lastList: Iterable<SymNode<T>>? = null
-
-            for ((idx, arg) in arguments.map { deref(it) }.withIndex()) {
-                val sym = arg.symbol()
-                val nextList = if (arg.`is`(Term.Kind.VAR)) {
-                    if (idx > 0) {
-                        lastList?.flatMap { it.right.values() } ?: emptyList()
-
-                    } else {
-                        node.left.values()
-                    }
-
-                } else {
-                    if (idx > 0) {
-                        lastList?.flatMap { listOfNotNull(it.right[sym], it.right[WILDCARD]) } ?: emptyList()
-
-                    } else {
-                        listOfNotNull(node.left[sym], node.left[WILDCARD])
-                    }
-                }
-
-                if (nextList.iterator().hasNext()) {
-                    for (next in nextList) {
-                        matching(arg, next, proc)
-                    }
-
-                } else {
-                    if (idx == 0 && node.symbol == WILDCARD) {
-                        proc(node, node.symbol == WILDCARD, term, false)
-                        break
-
-                    } else {
-//                    proc(node, false, null, false)
-                        break
-                    }
-
-                }
-
-                lastList = nextList
+                node.next.values().forEach { visitAll(it, visitor) }
             }
 
         } else {
-            proc(node, matching, term, true)
+            node.next[sym]?.let { nn ->
+                nn.values.forEach(visitor)
+                val newTail = deref.arguments() + tail
+                if (newTail.isNotEmpty()) {
+                    visitMatching(nn, newTail.first(), newTail.drop(1), visitor)
+                }
+            }
+            node.next[WILDCARD]?.let { nn ->
+                nn.values.forEach(visitor)
+                if (tail.isNotEmpty()) {
+                    visitMatching(nn, tail.first(), tail.drop(1), visitor)
+                }
+            }
         }
     }
 
-
-    private fun all(node: SymNode<T>, proc: (node: SymNode<T>) -> Unit) {
-        proc(node)
-        for (first in node.left.values()) {
-            _all(first, proc)
-        }
-    }
-
-
-    private fun _all(node: SymNode<T>, proc: (node: SymNode<T>) -> Unit) {
-        proc(node)
-        for (first in node.left.values()) {
-            _all(first, proc)
-        }
-        for (next in node.right.values()) {
-            _all(next, proc)
-        }
+    private fun visitAll(node: PathNode<T>, visitor: (T) -> Unit) {
+        node.values.forEach(visitor)
+        node.next.values().forEach { visitAll(it, visitor) }
     }
 
     private fun deref(term: Term): Term {
@@ -311,100 +163,68 @@ class TermTrie<T> {
         return if (term.`is`(Term.Kind.VAR)) {
             WILDCARD
 
-        } else if (term.`is`(Term.Kind.REF) && term.get().`is`(Term.Kind.VAR)) {
-            WILDCARD
-
         } else {
             term.symbol()
         }
     }
 
-    private class ValueToken<T>(val value: T, val tokIndex: Int) {
+    private class PathNode<T>(val symbol: Any, val arity: Int) {
 
-        private var count: Int = 0
+        lateinit var next: PersMap<Any, PathNode<T>>
 
-        fun stored(): Unit {
-            count++
-        }
-
-        fun removed(): Unit {
-            count--
-        }
-
-        fun storedCount(): Int = count
-    }
-
-
-    private class SymNode<T>(val symbol: Any) {
-
-        lateinit var left: PersMap<Any, SymNode<T>>
-
-        lateinit var right: PersMap<Any, SymNode<T>>
-
-        lateinit var tokenBitset: BitSet
+        lateinit var values: ConsList<T>
 
         init {
-            this.left = Maps.of()
-            this.right = Maps.of()
-            this.tokenBitset = BitSet()
+            this.next = Maps.of()
+            this.values = empty()
         }
 
-        private constructor(copyFrom: SymNode<T>,tok: ValueToken<T>?) :
-            this(copyFrom.symbol)
+        private constructor(symbol: Any, arity: Int, next: PersMap<Any, PathNode<T>>, values: ConsList<T>) :
+        this(symbol, arity)
         {
-            this.left = copyFrom.left
-            this.right = copyFrom.right
-            this.tokenBitset = copyFrom.tokenBitset.clone() as BitSet
-            tok?.let { tokenBitset.set(it.tokIndex) }
+            this.next = next
+            this.values = values
         }
 
-        private constructor(copyFrom: SymNode<T>, setLeft: PersMap<Any, SymNode<T>>, setRight: PersMap<Any, SymNode<T>>) :
-            this(copyFrom.symbol)
-        {
-            this.left = setLeft
-            this.right = setRight
-            this.tokenBitset = copyFrom.tokenBitset.clone() as BitSet
+        private constructor(copyFrom: PathNode<T>) :
+        this(copyFrom.symbol, copyFrom.arity, copyFrom.next, copyFrom.values)
+
+        private constructor(copyFrom: PathNode<T>, setValues: ConsList<T>) :
+        this(copyFrom.symbol, copyFrom.arity, copyFrom.next, setValues)
+
+        private constructor(copyFrom: PathNode<T>, setNext: PersMap<Any, PathNode<T>>) : this(copyFrom) {
+            this.next = setNext
         }
 
-        fun putValueToken(token: ValueToken<T>, leaf: Boolean): SymNode<T> {
-            if (leaf) {
-                token.stored()
-                return SymNode(this, token)
+        fun next(): Iterable<PathNode<T>> = next.values()
+
+        fun skipNext(): Iterable<PathNode<T>> = next(0)
+
+        private fun next(skip: Int): Iterable<PathNode<T>> = next().flatMap { nn ->
+            val newSkip = skip + nn.arity
+            if (newSkip == 0) {
+                listOf(nn)
 
             } else {
-                return SymNode(this, null)
+                nn.next(newSkip - 1)
             }
         }
 
-        fun removeValueToken(token: ValueToken<T>, leaf: Boolean): SymNode<T> {
-            if (leaf) {
-                token.removed()
-                return SymNode(this, token)
+        fun putNext(node: PathNode<T>): PathNode<T> = PathNode(this, next.put(node.symbol, node))
 
-            } else {
-                return SymNode(this, null)
-            }
-        }
+        fun removeNext(node: PathNode<T>): PathNode<T> = PathNode(this, next.remove(node.symbol))
 
-        fun putLeft(node: SymNode<T>): SymNode<T> {
-            val newLeft = left.put(node.symbol, node)
-            return SymNode(this, newLeft, right)
-        }
+        fun addValue(value: T): PathNode<T> = PathNode(this, values.prepend(value))
 
-        fun putRight(node: SymNode<T>): SymNode<T> {
-            val newRight = right.put(node.symbol, node)
-            return SymNode(this, left, newRight)
-        }
+        fun removeValue(value: T): PathNode<T> = PathNode(this, values.remove(value)!!)
 
-        fun leftOrDefault(sym: Any): SymNode<T> {
-            return left[sym] ?: SymNode<T>(sym)
-        }
-
-        fun rightOrDefault(sym: Any): SymNode<T> {
-            return right[sym] ?: SymNode<T>(sym)
+        fun nextOrDefault(symbol: Any,
+                          default: (sym: Any) -> PathNode<T>): PathNode<T>
+        {
+            return next[symbol] ?: default(symbol)
         }
 
     }
 
-}
 
+}
