@@ -171,6 +171,10 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
@@ -201,8 +205,6 @@
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
-        <reference id="1140138128738" name="concept" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
@@ -567,8 +569,8 @@
                                       <node concept="2OqwBi" id="6Ng87FPZcvV" role="3clFbG">
                                         <node concept="1PxgMI" id="6Ng87FPZcvW" role="2Oq$k0">
                                           <property role="1BlNFB" value="true" />
-                                          <ref role="1PxNhF" to="tpck:h0TrEE$" resolve="INamedConcept" />
-                                          <node concept="37vLTw" id="6Ng87FPZcvX" role="1PxMeX">
+                                          <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                                          <node concept="37vLTw" id="6Ng87FPZcvX" role="1m5AlR">
                                             <ref role="3cqZAo" node="6Ng87FPZcvR" resolve="child" />
                                           </node>
                                         </node>
@@ -650,8 +652,8 @@
                                   <node concept="2OqwBi" id="3PWU9gi_g4D" role="37wK5m">
                                     <node concept="2OqwBi" id="3PWU9gi_g4E" role="2Oq$k0">
                                       <node concept="1PxgMI" id="3PWU9gi_g4F" role="2Oq$k0">
-                                        <ref role="1PxNhF" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
-                                        <node concept="37vLTw" id="3PWU9gi_g4G" role="1PxMeX">
+                                        <ref role="1m5ApE" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+                                        <node concept="37vLTw" id="3PWU9gi_g4G" role="1m5AlR">
                                           <ref role="3cqZAo" node="6Ng87FPZcve" resolve="container" />
                                         </node>
                                       </node>
@@ -676,8 +678,8 @@
                                         <node concept="2OqwBi" id="3PWU9gi_g4R" role="3clFbG">
                                           <node concept="1PxgMI" id="3PWU9gi_g4S" role="2Oq$k0">
                                             <property role="1BlNFB" value="true" />
-                                            <ref role="1PxNhF" to="tpck:h0TrEE$" resolve="INamedConcept" />
-                                            <node concept="37vLTw" id="3PWU9gi_g4T" role="1PxMeX">
+                                            <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                                            <node concept="37vLTw" id="3PWU9gi_g4T" role="1m5AlR">
                                               <ref role="3cqZAo" node="3PWU9gi_g4N" resolve="child" />
                                             </node>
                                           </node>
