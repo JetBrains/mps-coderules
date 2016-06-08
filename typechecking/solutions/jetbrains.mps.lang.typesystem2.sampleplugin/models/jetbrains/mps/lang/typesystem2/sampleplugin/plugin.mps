@@ -3916,6 +3916,23 @@
           </node>
         </node>
         <node concept="3clFbH" id="41ox5VnqM$z" role="3cqZAp" />
+        <node concept="3cpWs8" id="3BRW86d0$L5" role="3cqZAp">
+          <node concept="3cpWsn" id="3BRW86d0$L6" role="3cpWs9">
+            <property role="TrG5h" value="messageList" />
+            <node concept="_YKpA" id="3BRW86d0$KX" role="1tU5fm">
+              <node concept="3uibUv" id="3BRW86d0$L0" role="_ZDj9">
+                <ref role="3uigEE" to="kpve:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="3BRW86d0$L7" role="33vP2m">
+              <node concept="Tc6Ow" id="3BRW86d0$L8" role="2ShVmc">
+                <node concept="3uibUv" id="3BRW86d0$L9" role="HW$YZ">
+                  <ref role="3uigEE" to="kpve:~SimpleEditorMessage" resolve="SimpleEditorMessage" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="41ox5VnqI$h" role="3cqZAp">
           <node concept="3clFbS" id="41ox5VnqI$j" role="2LFqv$">
             <node concept="3cpWs8" id="2zBk6uIq161" role="3cqZAp">
@@ -3961,40 +3978,28 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="41ox5VnqUqD" role="3cqZAp" />
-            <node concept="3clFbF" id="41ox5VnqScg" role="3cqZAp">
-              <node concept="2OqwBi" id="41ox5VnqSf1" role="3clFbG">
-                <node concept="37vLTw" id="41ox5VnqSce" role="2Oq$k0">
-                  <ref role="3cqZAo" node="41ox5VnqGca" resolve="highlightManager" />
+            <node concept="3clFbF" id="3BRW86d0HYk" role="3cqZAp">
+              <node concept="2OqwBi" id="3BRW86d0Jvv" role="3clFbG">
+                <node concept="37vLTw" id="3BRW86d0HYi" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3BRW86d0$L6" resolve="messageList" />
                 </node>
-                <node concept="liA8E" id="41ox5VnqSv1" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~NodeHighlightManager.mark(jetbrains.mps.openapi.editor.message.SimpleEditorMessage):void" resolve="mark" />
-                  <node concept="2ShNRf" id="41ox5VnqSwq" role="37wK5m">
-                    <node concept="1pGfFk" id="41ox5VnqTlu" role="2ShVmc">
+                <node concept="TSZUe" id="3BRW86d0KXB" role="2OqNvi">
+                  <node concept="2ShNRf" id="3BRW86d0MnH" role="25WWJ7">
+                    <node concept="1pGfFk" id="3BRW86d0MnI" role="2ShVmc">
                       <ref role="37wK5l" node="41ox5VnqPPQ" resolve="MarkPlugin.TypeMessage" />
-                      <node concept="37vLTw" id="41ox5VnqTnn" role="37wK5m">
+                      <node concept="37vLTw" id="3BRW86d0MnJ" role="37wK5m">
                         <ref role="3cqZAo" node="2zBk6uIq162" resolve="node" />
                       </node>
-                      <node concept="2OqwBi" id="41ox5VnqTqj" role="37wK5m">
-                        <node concept="37vLTw" id="41ox5VnqToA" role="2Oq$k0">
+                      <node concept="2OqwBi" id="3BRW86d0MnK" role="37wK5m">
+                        <node concept="37vLTw" id="3BRW86d0MnL" role="2Oq$k0">
                           <ref role="3cqZAo" node="41ox5VnqI$l" resolve="e" />
                         </node>
-                        <node concept="liA8E" id="41ox5VnqU2m" role="2OqNvi">
+                        <node concept="liA8E" id="3BRW86d0MnM" role="2OqNvi">
                           <ref role="37wK5l" to="33ny:~Map$Entry.getValue():java.lang.Object" resolve="getValue" />
                         </node>
                       </node>
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="62MNP_kVxbH" role="3cqZAp">
-              <node concept="2OqwBi" id="62MNP_kVxrM" role="3clFbG">
-                <node concept="37vLTw" id="62MNP_kVxbF" role="2Oq$k0">
-                  <ref role="3cqZAo" node="41ox5VnqGca" resolve="highlightManager" />
-                </node>
-                <node concept="liA8E" id="62MNP_kVxtW" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~NodeHighlightManager.repaintAndRebuildEditorMessages():void" resolve="repaintAndRebuildEditorMessages" />
                 </node>
               </node>
             </node>
@@ -4015,6 +4020,30 @@
             </node>
             <node concept="liA8E" id="41ox5VnqLeU" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Map.entrySet():java.util.Set" resolve="entrySet" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3BRW86d0S$h" role="3cqZAp" />
+        <node concept="3clFbF" id="41ox5VnqScg" role="3cqZAp">
+          <node concept="2OqwBi" id="41ox5VnqSf1" role="3clFbG">
+            <node concept="37vLTw" id="41ox5VnqSce" role="2Oq$k0">
+              <ref role="3cqZAo" node="41ox5VnqGca" resolve="highlightManager" />
+            </node>
+            <node concept="liA8E" id="41ox5VnqSv1" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~NodeHighlightManager.mark(java.util.List):void" resolve="mark" />
+              <node concept="37vLTw" id="3BRW86d0OXZ" role="37wK5m">
+                <ref role="3cqZAo" node="3BRW86d0$L6" resolve="messageList" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="62MNP_kVxbH" role="3cqZAp">
+          <node concept="2OqwBi" id="62MNP_kVxrM" role="3clFbG">
+            <node concept="37vLTw" id="62MNP_kVxbF" role="2Oq$k0">
+              <ref role="3cqZAo" node="41ox5VnqGca" resolve="highlightManager" />
+            </node>
+            <node concept="liA8E" id="62MNP_kVxtW" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~NodeHighlightManager.repaintAndRebuildEditorMessages():void" resolve="repaintAndRebuildEditorMessages" />
             </node>
           </node>
         </node>
