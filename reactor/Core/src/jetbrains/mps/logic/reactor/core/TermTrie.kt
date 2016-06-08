@@ -91,27 +91,37 @@ class TermTrie<T>() {
         val arguments = deref.arguments()
         val newTail = arguments + tail
 
-        return node.next[symbolOrWildcard(deref)]?.let { nextNode ->
+        return node.next(symbolOrWildcard(deref))?.let { nextNode ->
 
             //invariant: terms arity is fixed
             assert(nextNode.arity == arguments.size)
 
             return if (newTail.isEmpty()) {
                 val newNext = nextNode.removeValue(value)
-                if (newNext.values.isEmpty) {
-                    node.removeNext(newNext)
+                if (newNext != nextNode) {
+                    if (!newNext.hasValues()) {
+                        node.removeNext(newNext)
+
+                    } else {
+                        node.putNext(newNext)
+                    }
 
                 } else {
-                    node.putNext(newNext)
+                    node
                 }
 
             } else {
                 val newNext = removeValue(nextNode, value, newTail.first(), newTail.drop(1))
-                if (newNext.next.isEmpty) {
-                    node.removeNext(nextNode)
+                if (newNext !== nextNode) {
+                    if (!newNext.hasNext()) {
+                        node.removeNext(nextNode)
+
+                    } else {
+                        node.putNext(newNext)
+                    }
 
                 } else {
-                    node.putNext(newNext)
+                    node
                 }
             }
 
@@ -123,22 +133,22 @@ class TermTrie<T>() {
         val sym = symbolOrWildcard(deref)
         if (sym == WILDCARD) {
             if (tail.size > 0) {
-                node.skipNext().forEach { visitMatching(it, tail.first(), tail.drop(1), visitor) }
+                node.skipAllNext().forEach { visitMatching(it, tail.first(), tail.drop(1), visitor) }
 
             } else {
-                node.next.values().forEach { visitAll(it, visitor) }
+                node.allNext().forEach { visitAll(it, visitor) }
             }
 
         } else {
-            node.next[sym]?.let { nn ->
-                nn.values.forEach(visitor)
+            node.next(sym)?.let { nn ->
+                nn.values().forEach(visitor)
                 val newTail = deref.arguments() + tail
                 if (newTail.isNotEmpty()) {
                     visitMatching(nn, newTail.first(), newTail.drop(1), visitor)
                 }
             }
-            node.next[WILDCARD]?.let { nn ->
-                nn.values.forEach(visitor)
+            node.next(WILDCARD)?.let { nn ->
+                nn.values().forEach(visitor)
                 if (tail.isNotEmpty()) {
                     visitMatching(nn, tail.first(), tail.drop(1), visitor)
                 }
@@ -147,8 +157,8 @@ class TermTrie<T>() {
     }
 
     private fun visitAll(node: PathNode<T>, visitor: (T) -> Unit) {
-        node.values.forEach(visitor)
-        node.next.values().forEach { visitAll(it, visitor) }
+        node.values().forEach(visitor)
+        node.allNext().forEach { visitAll(it, visitor) }
     }
 
     private fun deref(term: Term): Term {
@@ -170,43 +180,50 @@ class TermTrie<T>() {
 
     private class PathNode<T>(val symbol: Any, val arity: Int) {
 
-        lateinit var next: PersMap<Any, PathNode<T>>
+        private lateinit var next: PersMap<Any, PathNode<T>>
 
-        lateinit var values: ConsList<T>
+        private lateinit var values: IdentitySet<T>
 
         init {
             this.next = Maps.of()
-            this.values = empty()
+            this.values = emptySet()
         }
 
-        private constructor(symbol: Any, arity: Int, next: PersMap<Any, PathNode<T>>, values: ConsList<T>) :
-        this(symbol, arity)
+        private constructor(symbol: Any, arity: Int, next: PersMap<Any, PathNode<T>>, values: IdentitySet<T>) :
+            this(symbol, arity)
         {
             this.next = next
             this.values = values
         }
 
         private constructor(copyFrom: PathNode<T>) :
-        this(copyFrom.symbol, copyFrom.arity, copyFrom.next, copyFrom.values)
+            this(copyFrom.symbol, copyFrom.arity, copyFrom.next, copyFrom.values)
 
-        private constructor(copyFrom: PathNode<T>, setValues: ConsList<T>) :
-        this(copyFrom.symbol, copyFrom.arity, copyFrom.next, setValues)
+        private constructor(copyFrom: PathNode<T>, setValues: IdentitySet<T>) :
+            this(copyFrom.symbol, copyFrom.arity, copyFrom.next, setValues)
 
-        private constructor(copyFrom: PathNode<T>, setNext: PersMap<Any, PathNode<T>>) : this(copyFrom) {
-            this.next = setNext
-        }
+        private constructor(copyFrom: PathNode<T>, setNext: PersMap<Any, PathNode<T>>) :
+            this(copyFrom.symbol, copyFrom.arity, setNext, copyFrom.values)
 
-        fun next(): Iterable<PathNode<T>> = next.values()
+        fun values(): Iterable<T> = values
 
-        fun skipNext(): Iterable<PathNode<T>> = next(0)
+        fun hasValues(): Boolean = !values.isEmpty
 
-        private fun next(skip: Int): Iterable<PathNode<T>> = next().flatMap { nn ->
+        fun next(symbol: Any): PathNode<T>? = next[symbol]
+
+        fun hasNext(): Boolean = !next.isEmpty
+
+        fun allNext(): Iterable<PathNode<T>> = next.values()
+
+        fun skipAllNext(): Iterable<PathNode<T>> = allNext(0)
+
+        private fun allNext(skip: Int): Iterable<PathNode<T>> = allNext().flatMap { nn ->
             val newSkip = skip + nn.arity
             if (newSkip == 0) {
                 listOf(nn)
 
             } else {
-                nn.next(newSkip - 1)
+                nn.allNext(newSkip - 1)
             }
         }
 
@@ -214,9 +231,9 @@ class TermTrie<T>() {
 
         fun removeNext(node: PathNode<T>): PathNode<T> = PathNode(this, next.remove(node.symbol))
 
-        fun addValue(value: T): PathNode<T> = PathNode(this, values.prepend(value))
+        fun addValue(value: T): PathNode<T> = PathNode(this, values.add(value))
 
-        fun removeValue(value: T): PathNode<T> = PathNode(this, values.remove(value)!!)
+        fun removeValue(value: T): PathNode<T> = PathNode(this, values.remove(value))
 
         fun nextOrDefault(symbol: Any,
                           default: (sym: Any) -> PathNode<T>): PathNode<T>
