@@ -914,11 +914,6 @@
       </node>
       <node concept="3Tm6S6" id="2N2MQGCJ_na" role="1B3o_S" />
       <node concept="3clFbS" id="2N2MQGCJ_lW" role="3clF47">
-        <node concept="3SKdUt" id="2N2MQGCJ_WC" role="3cqZAp">
-          <node concept="3SKdUq" id="2N2MQGCJ_WZ" role="3SKWNk">
-            <property role="3SKdUp" value="using deprecated operation because of unresolved issue MPS-21969" />
-          </node>
-        </node>
         <node concept="1_3QMa" id="2N2MQGCJ_p1" role="3cqZAp">
           <node concept="1_3QMl" id="2N2MQGCJ_V1" role="1_3QMm">
             <node concept="3gn64h" id="2N2MQGCJ_X6" role="3Kbmr1">
