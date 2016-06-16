@@ -1,14 +1,14 @@
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.util
 
 import com.github.andrewoma.dexx.collection.DerivedKeyHashMap
 import com.github.andrewoma.dexx.collection.KeyFunction
 import com.github.andrewoma.dexx.collection.internal.base.AbstractSet
 
-class IdentitySet<E> : AbstractSet<E> {
+class IdHashSet<E> : AbstractSet<E> {
 
     companion object {
 
-        val EMPTY_SET = IdentitySet<Any>()
+        val EMPTY_SET = IdHashSet<Any>()
 
         private fun <E> idkey(value: E) = System.identityHashCode(value)
 
@@ -26,11 +26,11 @@ class IdentitySet<E> : AbstractSet<E> {
         this.store = setStore
     }
 
-    override fun add(value: E): IdentitySet<E> = IdentitySet(store.put(idkey(value), value))
+    override fun add(value: E): IdHashSet<E> = IdHashSet(store.put(idkey(value), value))
 
     override fun contains(value: E): Boolean = store.containsKey(idkey(value))
 
-    override fun remove(value: E): IdentitySet<E> = IdentitySet(store.remove(idkey(value)))
+    override fun remove(value: E): IdHashSet<E> = IdHashSet(store.remove(idkey(value)))
 
     override fun iterator(): MutableIterator<E> = object: MutableIterator<E> {
 
@@ -47,6 +47,6 @@ class IdentitySet<E> : AbstractSet<E> {
 
 }
 
-fun <E> emptySet(): IdentitySet<E> = IdentitySet.EMPTY_SET as IdentitySet<E>
+fun <E> emptySet(): IdHashSet<E> = IdHashSet.EMPTY_SET as IdHashSet<E>
 
-fun <E> singletonSet(e: E): IdentitySet<E> = emptySet<E>().add(e)
+fun <E> singletonSet(e: E): IdHashSet<E> = emptySet<E>().add(e)

@@ -4,7 +4,9 @@ import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.ConsList.empty
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Maps
+import jetbrains.mps.logic.reactor.util.IdHashSet
 import jetbrains.mps.logic.reactor.util.cons
+import jetbrains.mps.logic.reactor.util.emptySet
 import jetbrains.mps.logic.reactor.util.remove
 import jetbrains.mps.unification.Term
 import java.util.*
@@ -182,14 +184,14 @@ class TermTrie<T>() {
 
         private lateinit var next: PersMap<Any, PathNode<T>>
 
-        private lateinit var values: IdentitySet<T>
+        private lateinit var values: IdHashSet<T>
 
         init {
             this.next = Maps.of()
             this.values = emptySet()
         }
 
-        private constructor(symbol: Any, arity: Int, next: PersMap<Any, PathNode<T>>, values: IdentitySet<T>) :
+        private constructor(symbol: Any, arity: Int, next: PersMap<Any, PathNode<T>>, values: IdHashSet<T>) :
             this(symbol, arity)
         {
             this.next = next
@@ -199,7 +201,7 @@ class TermTrie<T>() {
         private constructor(copyFrom: PathNode<T>) :
             this(copyFrom.symbol, copyFrom.arity, copyFrom.next, copyFrom.values)
 
-        private constructor(copyFrom: PathNode<T>, setValues: IdentitySet<T>) :
+        private constructor(copyFrom: PathNode<T>, setValues: IdHashSet<T>) :
             this(copyFrom.symbol, copyFrom.arity, copyFrom.next, setValues)
 
         private constructor(copyFrom: PathNode<T>, setNext: PersMap<Any, PathNode<T>>) :
