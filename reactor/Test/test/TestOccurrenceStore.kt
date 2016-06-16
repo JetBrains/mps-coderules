@@ -1,5 +1,7 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol
 import jetbrains.mps.logic.reactor.util.emptyConsList
 import jetbrains.mps.unification.test.MockTermsParser
 import jetbrains.mps.unification.test.MockTermsParser.parse
@@ -13,18 +15,20 @@ import org.junit.Assert.*
 
 class TestOccurrenceStore {
 
-    object mockProxy : LogicalObserverProxy, LogicalObserver {
+    class MockProxy(val _store: () -> OccurrenceStore) : LogicalObserver, StoreHolder {
 
         private var observerList = emptyConsList<Pair<Logical<*>, LogicalObserver>>()
 
-        override fun addObserver(logical: Logical<*>, obs: LogicalObserver) {
+        override fun store(): OccurrenceStore = _store()
+
+        override fun addObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver)  {
             if (!observerList.any { obs -> obs.first === logical }) {               // referential equality!
                 logical.addObserver(this)
             }
-            this.observerList = observerList.prepend(logical.to(obs))
+            this.observerList = observerList.prepend(logical.to(obs(this)))
         }
 
-        override fun removeObserver(logical: Logical<*>, obs: LogicalObserver) = TODO()
+        override fun removeObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver) = TODO()
 
         override fun valueUpdated(logical: Logical<*>) {
             for (obs in observerList) {
@@ -45,7 +49,8 @@ class TestOccurrenceStore {
 
     @Test
     fun testMergeLogicals() {
-        val occstore = OccurrenceStore(mockProxy)
+        var occstore : OccurrenceStore? = null
+        occstore = OccurrenceStore { MockProxy {  occstore!! } }
 
         val foo = logical<String>("foo")
         val bar = logical<String>("bar")
@@ -53,6 +58,7 @@ class TestOccurrenceStore {
         val main = occurrence("main", foo)
         occstore.store(main)
         assertEquals(listOf(main), occstore.forLogical(foo))
+        assertEquals(listOf(main), occstore.forSymbol(symbol("main", 1)))
 
         bar.union(foo)
         assertEquals(listOf(main), occstore.forLogical(foo))
@@ -76,7 +82,8 @@ class TestOccurrenceStore {
 
     @Test
     fun testValueIndex () {
-        val occstore = OccurrenceStore(mockProxy)
+        var occstore : OccurrenceStore? = null
+        occstore = OccurrenceStore { MockProxy {  occstore!! } }
 
         val value = "foobar"
         val main = occurrence("main", value)
@@ -87,7 +94,8 @@ class TestOccurrenceStore {
 
     @Test
     fun testTermIndex () {
-        val occstore = OccurrenceStore(mockProxy)
+        var occstore : OccurrenceStore? = null
+        occstore = OccurrenceStore { MockProxy {  occstore!! } }
 
         val foo = occurrence("foo", parse("a{b c}"))
         occstore.store(foo)

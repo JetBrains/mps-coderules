@@ -19,7 +19,8 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class FrameStack : LogicalObserver  {
+
+class FrameStack : LogicalObserver {
 
     lateinit var current: HandlerFrame
 
@@ -61,8 +62,17 @@ class FrameStack : LogicalObserver  {
     }
 }
 
+interface StoreHolder {
 
-class HandlerFrame : LogicalObserver, LogicalObserverProxy
+    fun store(): OccurrenceStore
+
+    fun addObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver)
+
+    fun removeObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver)
+}
+
+
+class HandlerFrame : LogicalObserver, StoreHolder
 {
     val prev: HandlerFrame?
 
@@ -70,17 +80,18 @@ class HandlerFrame : LogicalObserver, LogicalObserverProxy
 
     private var stack: FrameStack
 
-    private lateinit var observers: PersMap<IdWrapper<Logical<*>>, ConsList<LogicalObserver>>
+    private lateinit var observers: PersMap<IdWrapper<Logical<*>>, ConsList<(StoreHolder) -> LogicalObserver>>
 
-    constructor(stack: FrameStack, prev: HandlerFrame? = null)
-    {
+    constructor(stack: FrameStack, prev: HandlerFrame? = null) {
         this.stack = stack
         this.prev = prev
         this.observers = prev?.observers ?: Maps.of()
-        this.store = OccurrenceStore(prev?.store ?: OccurrenceStore(this), this)
+        this.store = OccurrenceStore(prev?.store ?: OccurrenceStore { stack.current }, { stack.current })
     }
 
-    override fun addObserver(logical: Logical<*>, obs: LogicalObserver) {
+    override fun store() = store
+
+    override fun addObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver) {
         val logicalId = IdWrapper(logical)
         if (!observers.containsKey(logicalId)) {
             stack.addObserver(logical)
@@ -89,7 +100,7 @@ class HandlerFrame : LogicalObserver, LogicalObserverProxy
             observers[logicalId]?.prepend(obs) ?: cons(obs))
     }
 
-    override fun removeObserver(logical: Logical<*>, obs: LogicalObserver) {
+    override fun removeObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver) {
         val logicalId = IdWrapper(logical)
         observers[logicalId].remove(obs)?.let { newList ->
             this.observers = observers.put(logicalId, newList)
@@ -102,7 +113,7 @@ class HandlerFrame : LogicalObserver, LogicalObserverProxy
     override fun valueUpdated(logical: Logical<*>) {
         observers[IdWrapper(logical)]?.let { list ->
             for (obs in list) {
-                obs.valueUpdated(logical)
+                obs(this).valueUpdated(logical)
             }
         }
     }
@@ -110,7 +121,7 @@ class HandlerFrame : LogicalObserver, LogicalObserverProxy
     override fun parentUpdated(logical: Logical<*>) {
         observers[IdWrapper(logical)]?.let { list ->
             for (obs in list) {
-                obs.parentUpdated(logical)
+                obs(this).parentUpdated(logical)
             }
         }
     }
@@ -157,7 +168,7 @@ class Handler {
 
     fun tell(constraint: Constraint) {
         try {
-            queue(constraint.occurrence(frameStack, noLogicalContext))
+            queue(constraint.occurrence({ frameStack.current }, noLogicalContext))
         }
         catch (t: Throwable) {
             throw t
@@ -169,6 +180,8 @@ class Handler {
     }
 
     private fun process(active: ConstraintOccurrence) {
+        assert(active.isAlive())
+
         profiler.profile("process_${active.constraint().symbol()}") {
 
             if (!active.isStored()) {
@@ -224,7 +237,7 @@ class Handler {
                     try {
                         for (item in body) {
                             when (item) {
-                                is Constraint -> process(item.occurrence(frameStack, match.logicalContext))
+                                is Constraint -> process(item.occurrence({ frameStack.current }, match.logicalContext))
                                 is Predicate -> tellPredicate(item.invocation(match.logicalContext), trace)
                                 else -> throw IllegalArgumentException("unknown item ${item}")
                             }

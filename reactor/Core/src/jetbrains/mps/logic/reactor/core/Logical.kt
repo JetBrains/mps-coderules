@@ -18,14 +18,6 @@ interface LogicalObserver {
 
 }
 
-interface LogicalObserverProxy {
-
-    fun addObserver(logical: Logical<*>, obs: LogicalObserver)
-
-    fun removeObserver(logical: Logical<*>, obs: LogicalObserver)
-
-}
-
 fun Logical<*>.addObserver(observer: LogicalObserver) {
     (this as MemLogical<*>).valueObservers.add(this.to(observer))
     (this as MemLogical<*>).parentObservers.add(this.to(observer))

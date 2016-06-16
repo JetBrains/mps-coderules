@@ -21,8 +21,8 @@ import com.github.andrewoma.dexx.collection.Vector as PersVector
  * @author Fedor Isakov
  */
 
-fun Constraint.occurrence(frameStack: FrameStack, context: LogicalContext): ConstraintOccurrence =
-    MemConstraintOccurrence(frameStack, this, occurrenceArguments(context))
+fun Constraint.occurrence(currentFrame: () -> HandlerFrame, context: LogicalContext): ConstraintOccurrence =
+    MemConstraintOccurrence(currentFrame, this, occurrenceArguments(context))
 
 fun ConstraintOccurrence.isStored(): Boolean =
     // TODO: superfluous cast
@@ -50,29 +50,32 @@ interface OccurrenceIndex {
 
 }
 
+/**
+ * TODO: make this class persistent.
+ */
 class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
-    val proxy: LogicalObserverProxy
+    val currentFrame: () -> StoreHolder
 
-    lateinit var symbol2occurrences: PersMap<ConstraintSymbol, IdentitySet<ConstraintOccurrence>>
+    lateinit var symbol2occurrences: PersMap<ConstraintSymbol, IdHashSet<ConstraintOccurrence>>
 
-    lateinit var logical2occurrences: PersMap<Logical<*>, IdentitySet<ConstraintOccurrence>>
+    lateinit var logical2occurrences: PersMap<IdWrapper<Logical<*>>, IdHashSet<ConstraintOccurrence>>
 
     lateinit var term2occurrences: TermTrie<ConstraintOccurrence>
 
-    lateinit var value2occurrences: PersMap<Any, IdentitySet<ConstraintOccurrence>>
+    lateinit var value2occurrences: PersMap<Any, IdHashSet<ConstraintOccurrence>>
 
-    constructor(copyFrom: OccurrenceStore, proxy: LogicalObserverProxy)
+    constructor(copyFrom: OccurrenceStore, currentFrame: () -> StoreHolder)
     {
-        this.proxy = proxy
+        this.currentFrame = currentFrame
         this.symbol2occurrences = copyFrom.symbol2occurrences
         this.logical2occurrences = copyFrom.logical2occurrences
         this.term2occurrences = copyFrom.term2occurrences
         this.value2occurrences = copyFrom.value2occurrences
     }
 
-    constructor(proxy: LogicalObserverProxy) {
-        this.proxy = proxy
+    constructor(currentFrame: () -> StoreHolder) {
+        this.currentFrame = currentFrame
         this.symbol2occurrences = Maps.of()
         this.logical2occurrences = Maps.of()
         this.term2occurrences = TermTrie()
@@ -80,7 +83,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
     }
 
     override fun valueUpdated(logical: Logical<*>) {
-        logical2occurrences[logical.findRoot()]?.let { toMerge ->
+        logical2occurrences[IdWrapper(logical.findRoot())]?.let { toMerge ->
             val value = logical.findRoot().value()
             when (value) {
                 is Term     -> {
@@ -105,12 +108,16 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
     override fun parentUpdated(logical: Logical<*>) {
         // TODO: should we care about the order in which occurrences are stored?
-        logical2occurrences[logical]?.let { toMerge ->
-            var newSet = logical2occurrences[logical.findRoot()] ?: emptySet()
+        val logicalId = IdWrapper(logical)
+        logical2occurrences[logicalId]?.let { toMerge ->
+            val rootId = IdWrapper(logical.findRoot())
+            var newSet = logical2occurrences[rootId] ?: emptySet()
             for (log in toMerge) {
                 newSet = newSet.add(log)
             }
-            this.logical2occurrences = logical2occurrences.remove(logical).put(logical.findRoot(), newSet)
+            this.logical2occurrences = logical2occurrences.remove(logicalId).put(rootId, newSet)
+            assert(logical2occurrences.containsKey(rootId))
+            assert(!logical2occurrences.containsKey(logicalId))
         }
     }
 
@@ -129,9 +136,10 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         for (arg in occ.arguments()) {
             when (arg) {
                 is Logical<*>   -> {
-                    this.logical2occurrences = logical2occurrences.put(arg.findRoot(),
-                        logical2occurrences[arg.findRoot()]?.add(occ) ?: singletonSet(occ))
-                    proxy.addObserver(arg, this)
+                    val argId = IdWrapper(arg.findRoot())
+                    this.logical2occurrences = logical2occurrences.put(argId,
+                        logical2occurrences[argId]?.add(occ) ?: singletonSet(occ))
+                    currentFrame().addObserver(arg) { frame -> frame.store() }
                 }
                 is Term         -> {
                     this.term2occurrences = term2occurrences.put(arg, occ)
@@ -161,8 +169,14 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
         for (arg in occ.arguments()) {
             when (arg) {
                 is Logical<*>   -> {
-                    logical2occurrences[arg.findRoot()]?.remove(occ)?.let { newList ->
-                        this.logical2occurrences = logical2occurrences.put(arg.findRoot(), newList)
+                    val argId = IdWrapper(arg.findRoot())
+                    logical2occurrences[argId]?.remove(occ)?.let { newList ->
+                        this.logical2occurrences = if (newList.isEmpty) {
+                            logical2occurrences.remove(argId)
+
+                        } else {
+                            logical2occurrences.put(argId, newList)
+                        }
                     }
                 }
                 is Term         -> {
@@ -192,7 +206,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
     }
 
     override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> {
-        return (logical2occurrences[logical.findRoot()] ?: emptySet()).filter { co -> co.isStored() }
+        return (logical2occurrences[IdWrapper(logical.findRoot())] ?: emptySet()).filter { co -> co.isStored() }
     }
 
     override fun forTerm(term: Term): Iterable<ConstraintOccurrence> {
@@ -205,7 +219,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
 }
 
-private data class MemConstraintOccurrence(val frameStack: FrameStack, val constraint: Constraint, val arguments: List<*>) :
+private data class MemConstraintOccurrence(val currentFrame: () -> HandlerFrame, val constraint: Constraint, val arguments: List<*>) :
     ConstraintOccurrence,
     LogicalObserver,
     StoreItem
@@ -215,12 +229,12 @@ private data class MemConstraintOccurrence(val frameStack: FrameStack, val const
 
     override var stored = false
 
-    constructor(frameStack: FrameStack, constraint: Constraint, arguments: Collection<*>) :
-        this(frameStack, constraint, ArrayList(arguments))
+    constructor(currentFrame: () -> HandlerFrame, constraint: Constraint, arguments: Collection<*>) :
+        this(currentFrame, constraint, ArrayList(arguments))
     {
         for (a in arguments) {
             if (a is Logical<*>) {
-                frameStack.current.addObserver(a, this)
+                currentFrame().addObserver(a) { this }
             }
         }
     }
@@ -230,17 +244,21 @@ private data class MemConstraintOccurrence(val frameStack: FrameStack, val const
     override fun arguments(): List<*> = arguments
 
     override fun valueUpdated(logical: Logical<*>) {
-        (EvaluationSession.current() as SessionObjects).handler().queue(this)
+        if (alive) {
+            (EvaluationSession.current() as SessionObjects).handler().queue(this)
+        }
     }
 
     override fun parentUpdated(logical: Logical<*>) {
-        (EvaluationSession.current() as SessionObjects).handler().queue(this)
+        if (alive) {
+            (EvaluationSession.current() as SessionObjects).handler().queue(this)
+        }
     }
 
     override fun terminate() {
         for (a in arguments) {
             if (a is Logical<*>) {
-                frameStack.current.removeObserver(a, this)
+                currentFrame().removeObserver(a) { this }
             }
         }
         alive = false
