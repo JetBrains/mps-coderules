@@ -2099,26 +2099,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3yhgKRJI89$" role="3cqZAp">
-          <node concept="2OqwBi" id="3yhgKRJI89_" role="3clFbG">
-            <node concept="37vLTw" id="3yhgKRJI89A" role="2Oq$k0">
-              <ref role="3cqZAo" node="7dgRGU4oxoq" resolve="result" />
-            </node>
-            <node concept="TSZUe" id="3yhgKRJI89B" role="2OqNvi">
-              <node concept="2OqwBi" id="3yhgKRJI89C" role="25WWJ7">
-                <node concept="3fl2lp" id="3yhgKRJI89D" role="2Oq$k0">
-                  <ref role="3fl3PK" to="kqnc:3yhgKRISq8r" resolve="fresh" />
-                  <node concept="3B5_sB" id="3yhgKRJI89E" role="3fl3PI">
-                    <ref role="3B5MYn" to="kqnc:3Qp4N06bUPp" resolve="StandardConstraints" />
-                  </node>
-                </node>
-                <node concept="3TrcHB" id="3yhgKRJI89F" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7dgRGU4ot2Y" role="3cqZAp">
           <node concept="2OqwBi" id="7dgRGU4oxFW" role="3clFbG">
             <node concept="37vLTw" id="7dgRGU4oxou" role="2Oq$k0">
