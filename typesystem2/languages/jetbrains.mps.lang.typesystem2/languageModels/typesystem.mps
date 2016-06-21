@@ -492,8 +492,8 @@
                     <node concept="3gn64h" id="1zN1RIls3uK" role="3gmYPZ">
                       <ref role="3gnhBz" to="wq2x:6p0DfM0a3d3" resolve="RuleComponent" />
                     </node>
-                    <node concept="3gn64h" id="1zN1RIls3uQ" role="3gmYPZ">
-                      <ref role="3gnhBz" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+                    <node concept="3gn64h" id="3yhgKRI6pQ8" role="3gmYPZ">
+                      <ref role="3gnhBz" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -512,7 +512,7 @@
                   <node concept="2OqwBi" id="1zN1RIlsblO" role="33vP2m">
                     <node concept="2OqwBi" id="1zN1RIlsblP" role="2Oq$k0">
                       <node concept="1PxgMI" id="1zN1RIlsblQ" role="2Oq$k0">
-                        <ref role="1m5ApE" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+                        <ref role="1m5ApE" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                         <node concept="37vLTw" id="1zN1RIlsblR" role="1m5AlR">
                           <ref role="3cqZAo" node="1zN1RIls30Y" resolve="context" />
                         </node>
@@ -633,8 +633,8 @@
                 <ref role="3cqZAo" node="1zN1RIls30Y" resolve="context" />
               </node>
               <node concept="1mIQ4w" id="1zN1RIls3Ux" role="2OqNvi">
-                <node concept="chp4Y" id="1zN1RIls3UA" role="cj9EA">
-                  <ref role="cht4Q" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+                <node concept="chp4Y" id="3yhgKRI6qLo" role="cj9EA">
+                  <ref role="cht4Q" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                 </node>
               </node>
             </node>
@@ -870,7 +870,7 @@
                   <node concept="3clFbS" id="1zN1RIlsepO" role="3clFbx">
                     <node concept="2MkqsV" id="1zN1RIlserd" role="3cqZAp">
                       <node concept="Xl_RD" id="1zN1RIlsere" role="2MkJ7o">
-                        <property role="Xl_RC" value="incompatible called method kind" />
+                        <property role="Xl_RC" value="incompatible method kind" />
                       </node>
                       <node concept="1YBJjd" id="1zN1RIlserf" role="2OEOjV">
                         <ref role="1YBMHb" node="1zN1RIlrgxK" resolve="baseMethodCall" />
