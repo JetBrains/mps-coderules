@@ -104,6 +104,14 @@
         </node>
       </node>
     </node>
+    <node concept="1qefOq" id="5DSQNPPS8V8" role="1SKRRt">
+      <node concept="3uibUv" id="5DSQNPPS8V9" role="1qenE9">
+        <ref role="3uigEE" to="f6t6:3yhgKRJ29Qs" resolve="Variance" />
+        <node concept="3xLA65" id="5DSQNPPS8Va" role="lGtFl">
+          <property role="TrG5h" value="Test_Variance" />
+        </node>
+      </node>
+    </node>
     <node concept="1LZb2c" id="1N_0WA5DT8G" role="1SL9yI">
       <property role="TrG5h" value="Sample" />
       <node concept="3cqZAl" id="1N_0WA5DT8H" role="3clF45" />
@@ -150,6 +158,32 @@
           </node>
           <node concept="3_1$Yv" id="1N_0WA5J$AU" role="3_9lra">
             <node concept="Xl_RD" id="1N_0WA5J$AV" role="3_1BAH">
+              <property role="Xl_RC" value="error while typechecking" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="5DSQNPPS8E8" role="1SL9yI">
+      <property role="TrG5h" value="Variance" />
+      <node concept="3cqZAl" id="5DSQNPPS8E9" role="3clF45" />
+      <node concept="3clFbS" id="5DSQNPPS8Ea" role="3clF47">
+        <node concept="3ykFI1" id="5DSQNPPS8Eb" role="3cqZAp">
+          <node concept="2YIFZM" id="5DSQNPPS8Ec" role="3ykU8v">
+            <ref role="1Pybhc" to="84wp:1N_0WA5JxZO" resolve="LaunchTypechecking" />
+            <ref role="37wK5l" to="84wp:1N_0WA5Jy0j" resolve="typecheckingErrors" />
+            <node concept="2OqwBi" id="5DSQNPPS8Ed" role="37wK5m">
+              <node concept="3xONca" id="5DSQNPPS96G" role="2Oq$k0">
+                <ref role="3xOPvv" node="5DSQNPPS8Va" resolve="Test_Variance" />
+              </node>
+              <node concept="3TrEf2" id="5DSQNPPS8Ef" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:g7uigIF" />
+              </node>
+            </node>
+            <node concept="1jxXqW" id="5DSQNPPS8Eg" role="37wK5m" />
+          </node>
+          <node concept="3_1$Yv" id="5DSQNPPS8Eh" role="3_9lra">
+            <node concept="Xl_RD" id="5DSQNPPS8Ei" role="3_1BAH">
               <property role="Xl_RC" value="error while typechecking" />
             </node>
           </node>
