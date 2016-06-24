@@ -5,34 +5,34 @@ package jetbrains.mps.logic.reactor.evaluation;
 
 public interface EvaluationTrace {
 
-  public void activate(ConstraintOccurrence occurrence);
+  void activate(ConstraintOccurrence occurrence);
 
-  public void reactivate(ConstraintOccurrence occurrence);
+  void reactivate(ConstraintOccurrence occurrence);
 
-  public void suspend(ConstraintOccurrence occurrence);
+  void suspend(ConstraintOccurrence occurrence);
 
-  public void discard(ConstraintOccurrence occurrence);
+  void discard(ConstraintOccurrence occurrence);
 
-  public void trying(MatchRule matchRule);
+  void trying(MatchRule matchRule);
 
-  public void reject(MatchRule matchRule);
+  void reject(MatchRule matchRule);
 
-  public void trigger(MatchRule matchRule);
+  void trigger(MatchRule matchRule);
 
-  public void retry(MatchRule matchRule);
+  void retry(MatchRule matchRule);
 
-  public void finish(MatchRule matchRule);
+  void finish(MatchRule matchRule);
 
-  public void tell(PredicateInvocation invocation);
+  void tell(PredicateInvocation invocation);
 
-  public void ask(boolean result, PredicateInvocation invocation);
+  void ask(boolean result, PredicateInvocation invocation);
 
-  public void failure(EvaluationFailureException fail);
+  void failure(EvaluationFailureException fail);
 
   @Deprecated
-  public void reportFailure(String message);
+  void reportFailure(String message);
 
-  public static final EvaluationTrace NULL = new EvaluationTrace() {
+  EvaluationTrace NULL = new EvaluationTrace() {
 
     public void activate(ConstraintOccurrence occurrence) {
     }

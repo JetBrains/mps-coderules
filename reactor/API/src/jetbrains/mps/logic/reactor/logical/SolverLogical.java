@@ -8,29 +8,29 @@ public interface SolverLogical<T> extends Logical<T> {
   /**
    * Covariant override.
    */
-  public SolverLogical<T> findRoot();
+  SolverLogical<T> findRoot();
 
   /**
    * Unions two equivalence classes of logicals. 
    * Both the receiver and the {@code other} parameter are expected to be representatives.
    * The one with the highest rank becomes the representative for the new class.
    */
-  public void union(SolverLogical<T> other, SolverLogical.ValueReconciler<T> reconciler);
+  void union(SolverLogical<T> other, SolverLogical.ValueReconciler<T> reconciler);
 
   /**
    * Calls {@link jetbrains.mps.logic.reactor.logical.SolverLogical#union(SolverLogical<T>, SolverLogical.ValueReconciler<T>) } with the default value reconciler.
    * The default reconciler throws {@link java.lang.IllegalArgumentException } if the two values are not equal.
    */
-  public void union(SolverLogical<T> other);
+  void union(SolverLogical<T> other);
 
   /**
    * Should only be called on a representative. 
    */
-  public void setValue(T newValue);
+  void setValue(T newValue);
 
-  public static interface ValueReconciler<T> {
+  static interface ValueReconciler<T> {
 
-    public void reconcile(T valueA, T valueB);
+    void reconcile(T valueA, T valueB);
 
   }
 

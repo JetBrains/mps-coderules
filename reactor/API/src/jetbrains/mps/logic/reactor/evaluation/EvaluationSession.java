@@ -60,9 +60,9 @@ public abstract class EvaluationSession {
 
   protected static interface Backend {
 
-    public EvaluationSession current();
+    EvaluationSession current();
 
-    public EvaluationSession.Config createConfig(Program program);
+    EvaluationSession.Config createConfig(Program program);
 
   }
 

@@ -10,9 +10,9 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext;
  */
 public interface Predicate extends AndItem {
 
-  public PredicateSymbol symbol();
+  PredicateSymbol symbol();
 
-  public Collection<?> invocationArguments(LogicalContext logicalContext);
+  Collection<?> invocationArguments(LogicalContext logicalContext);
 
 
 }

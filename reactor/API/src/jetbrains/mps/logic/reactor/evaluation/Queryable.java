@@ -5,6 +5,6 @@ package jetbrains.mps.logic.reactor.evaluation;
 
 public interface Queryable extends Instructible {
 
-  public boolean ask(PredicateInvocation invocation);
+  boolean ask(PredicateInvocation invocation);
 
 }

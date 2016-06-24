@@ -6,10 +6,10 @@ import jetbrains.mps.unification.Term;
 
 public interface LogicalUnification {
 
-  public <TERM extends Term> TERM asRoot(TERM term);
+  <TERM extends Term> TERM asRoot(TERM term);
 
-  public <TERM extends Term> SolverLogical<TERM> logical(TERM var);
+  <TERM extends Term> SolverLogical<TERM> logical(TERM var);
 
-  public boolean isLogical(Term term);
+  boolean isLogical(Term term);
 
 }

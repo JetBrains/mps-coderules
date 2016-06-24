@@ -5,14 +5,14 @@ package jetbrains.mps.logic.reactor.logical;
 
 public interface Logical<T> {
 
-  public String name();
+  String name();
 
   /**
    * Returns the representative logical instance. 
    * 
    * TODO: rename to 'find()'
    */
-  public Logical<T> findRoot();
+  Logical<T> findRoot();
 
   /**
    * Returns the value associated with this logical instance. 
@@ -21,15 +21,15 @@ public interface Logical<T> {
    * 
    * FIXME: must return the representative's value
    */
-  public T value();
+  T value();
 
   /**
    * True iff the representative has a non-null value.
    */
-  public boolean isBound();
+  boolean isBound();
 
-  public boolean isWildcard();
+  boolean isWildcard();
 
-  public MetaLogical<T> metaLogical();
+  MetaLogical<T> metaLogical();
 
 }

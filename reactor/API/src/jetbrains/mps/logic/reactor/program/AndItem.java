@@ -6,8 +6,8 @@ import java.util.Collection;
 
 public interface AndItem {
 
-  public Symbol symbol();
+  Symbol symbol();
 
-  public Collection<?> arguments();
+  Collection<?> arguments();
 
 }

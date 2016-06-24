@@ -5,6 +5,6 @@ package jetbrains.mps.logic.reactor.program;
 
 public interface PredicateFactory {
 
-  public Predicate predicate(PredicateSymbol predicateSymbol, Object... args);
+  Predicate predicate(PredicateSymbol predicateSymbol, Object... args);
 
 }

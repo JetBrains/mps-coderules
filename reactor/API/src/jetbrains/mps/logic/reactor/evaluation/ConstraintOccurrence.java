@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface ConstraintOccurrence {
 
-  public Constraint constraint();
+  Constraint constraint();
 
-  public List<?> arguments();
+  List<?> arguments();
 
 }

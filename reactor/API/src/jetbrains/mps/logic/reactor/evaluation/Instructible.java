@@ -5,6 +5,6 @@ package jetbrains.mps.logic.reactor.evaluation;
 
 public interface Instructible {
 
-  public void tell(PredicateInvocation invocation);
+  void tell(PredicateInvocation invocation);
 
 }

@@ -6,10 +6,10 @@ import jetbrains.mps.logic.reactor.program.Rule;
 
 public interface MatchRule {
 
-  public Rule rule();
+  Rule rule();
 
-  public Iterable<ConstraintOccurrence> matchHeadKept();
+  Iterable<ConstraintOccurrence> matchHeadKept();
 
-  public Iterable<ConstraintOccurrence> matchHeadReplaced();
+  Iterable<ConstraintOccurrence> matchHeadReplaced();
 
 }

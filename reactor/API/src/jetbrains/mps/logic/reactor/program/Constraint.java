@@ -11,17 +11,17 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext;
  */
 public interface Constraint extends AndItem {
 
-  public ConstraintSymbol symbol();
+  ConstraintSymbol symbol();
 
-  public List<Class<?>> argumentTypes();
+  List<Class<?>> argumentTypes();
 
-  public Collection<?> occurrenceArguments(LogicalContext logicalContext);
+  Collection<?> occurrenceArguments(LogicalContext logicalContext);
 
   /**
    * Returns the collection of predicates that need to be applied after a successful match of this collection by a
    * rule's head. 
    * This method only returns meaningful results for constraints that serve as patterns in a rule's head. 
    */
-  public Collection<? extends Predicate> patternPredicates();
+  Collection<? extends Predicate> patternPredicates();
 
 }

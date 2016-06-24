@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface PredicateInvocation {
 
-  public Predicate predicate();
+  Predicate predicate();
 
-  public List<?> arguments();
+  List<?> arguments();
 
 }
