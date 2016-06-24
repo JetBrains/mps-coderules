@@ -5171,12 +5171,12 @@
                     <ref role="3cqZAo" node="3FIATxbQg$O" resolve="var" />
                   </node>
                   <node concept="3uibUv" id="3FIATxbQg_2" role="10QFUM">
-                    <ref role="3uigEE" to="yg8f:46l0wJhtOD_" resolve="ILogicalVar" />
+                    <ref role="3uigEE" to="45ys:46l0wJhtOD_" resolve="LogicalOwner" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="3FIATxbQg_3" role="2OqNvi">
-                <ref role="37wK5l" to="yg8f:46l0wJhtXlr" resolve="logical" />
+                <ref role="37wK5l" to="45ys:46l0wJhtXlr" resolve="logical" />
               </node>
             </node>
             <node concept="3uibUv" id="3FIATxbQg_4" role="10QFUM">
@@ -5205,7 +5205,7 @@
         <node concept="3clFbF" id="3FIATxbQg_d" role="3cqZAp">
           <node concept="2ZW3vV" id="3FIATxbQg_e" role="3clFbG">
             <node concept="3uibUv" id="3FIATxbQg_f" role="2ZW6by">
-              <ref role="3uigEE" to="yg8f:46l0wJhtOD_" resolve="ILogicalVar" />
+              <ref role="3uigEE" to="45ys:46l0wJhtOD_" resolve="LogicalOwner" />
             </node>
             <node concept="37vLTw" id="3FIATxbQg_g" role="2ZW6bz">
               <ref role="3cqZAo" node="3FIATxbQg_8" resolve="term" />

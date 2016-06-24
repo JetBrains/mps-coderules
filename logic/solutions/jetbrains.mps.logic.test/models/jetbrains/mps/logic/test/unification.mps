@@ -1878,12 +1878,12 @@
                   <ref role="3cqZAo" node="1OShD0IfFeh" resolve="var" />
                 </node>
                 <node concept="3uibUv" id="qubcdt9I3s" role="10QFUM">
-                  <ref role="3uigEE" to="yg8f:46l0wJhtOD_" resolve="ILogicalVar" />
+                  <ref role="3uigEE" to="45ys:46l0wJhtOD_" resolve="LogicalOwner" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="qubcdt9I3t" role="2OqNvi">
-              <ref role="37wK5l" to="yg8f:46l0wJhtXlr" resolve="logical" />
+              <ref role="37wK5l" to="45ys:46l0wJhtXlr" resolve="logical" />
             </node>
           </node>
         </node>

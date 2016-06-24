@@ -133,6 +133,7 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -1116,6 +1117,22 @@
     </node>
     <node concept="2tJIrI" id="6MYr6JwSESa" role="jymVt" />
     <node concept="3Tm1VV" id="6MYr6JwANOb" role="1B3o_S" />
+  </node>
+  <node concept="3HP615" id="46l0wJhtOD_">
+    <property role="TrG5h" value="LogicalOwner" />
+    <node concept="2tJIrI" id="7HUwyZaOczR" role="jymVt" />
+    <node concept="3clFb_" id="46l0wJhtXlr" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="logical" />
+      <node concept="3uibUv" id="46l0wJhtXpb" role="3clF45">
+        <ref role="3uigEE" node="1mP5b6jQP$C" resolve="Logical" />
+        <node concept="3qTvmN" id="46l0wJhtXxO" role="11_B2D" />
+      </node>
+      <node concept="3Tm1VV" id="46l0wJhtXlu" role="1B3o_S" />
+      <node concept="3clFbS" id="46l0wJhtXlv" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="46l0wJhtOHe" role="jymVt" />
+    <node concept="3Tm1VV" id="46l0wJhtODA" role="1B3o_S" />
   </node>
 </model>
 

@@ -1173,7 +1173,7 @@
       <ref role="3uigEE" to="ie8e:uNmovXiEd4" resolve="Variable" />
     </node>
     <node concept="3uibUv" id="4TCblo5MKQV" role="EKbjA">
-      <ref role="3uigEE" to="yg8f:46l0wJhtOD_" resolve="ILogicalVar" />
+      <ref role="3uigEE" to="45ys:46l0wJhtOD_" resolve="LogicalOwner" />
     </node>
     <node concept="16euLQ" id="4TCblo5MNXi" role="16eVyc">
       <property role="TrG5h" value="T" />
