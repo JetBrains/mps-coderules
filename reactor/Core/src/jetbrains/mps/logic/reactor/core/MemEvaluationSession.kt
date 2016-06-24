@@ -58,16 +58,17 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
             ourBackend.ourSession.set(session)
 
             val durations = myParameters.get("profiling.data") as MutableMap<String, String>?
-            val profiler = durations?.let{ Profiler() }
+            val profiler = durations?.let { Profiler() }
             try {
                 session.launch(myParameters["main"] as Constraint, profiler)
             }
             finally {
                 ourBackend.ourSession.set(null)
-                profiler?.run {
-                    formattedData().entries.forEach { e -> durations?.put(e.key, e.value) }
-                    clear()
-                }
+            }
+
+            profiler?.run {
+                formattedData().entries.forEach { e -> durations?.put(e.key, e.value) }
+                clear()
             }
 
             return session
