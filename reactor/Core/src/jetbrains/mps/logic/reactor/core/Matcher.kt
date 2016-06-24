@@ -4,6 +4,7 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Predicate
@@ -62,7 +63,7 @@ class Matcher(val ruleIndex: RuleIndex,
         }
 
         private fun calcNext() {
-            if (nextMatch == null) {
+            while (nextMatch == null || !nextMatch!!.successful) {
                 while (pmIt == null || !(pmIt!!.hasNext())) {
                     if (!triesIt.hasNext()) {
                         return
@@ -98,7 +99,11 @@ class Match(val rule: Rule,
                 if (!meta2logical.containsKey(metaLogical)) {
                     if (meta2value.containsKey(metaLogical)) {
                         val value = meta2value[metaLogical]
-                        meta2logical[metaLogical] = if (value is Logical<*>) value else MemLogical(value)
+                        meta2logical[metaLogical] = when (value) {
+                            is Logical<*>   -> value
+                            is LogicalOwner -> value.logical()
+                            else            -> MemLogical(value)
+                        }
                     } else {
                         meta2logical[metaLogical] = metaLogical.logical()
                     }
