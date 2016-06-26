@@ -473,28 +473,27 @@ class TestHandler {
 
     @Test
     fun reactivateOnUnion() {
-        val (X,Y) = metaLogical<Int>("X", "Y")
-        val (C,D) = metaLogical<Int>("C", "D")
-        var handler : Handler? = null
+        val (X1,Y1,Z1) = metaLogical<Int>("X1", "Y1", "Z1")
+        val (X2,Y2,Z2) = metaLogical<Int>("X2", "Y2", "Z2")
+        val (X3,Y3,Z3) = metaLogical<Int>("X3", "Y3", "Z3")
         program(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ c -> c.set(0) }, C),
-                                                                    constraint("foo", X, C),
-                                                                    constraint("foo", Y, C),
-                                                                    statement({ x, y -> eq(x, y) }, X, Y) )
+                headReplaced( constraint("main") ),         body(   statement({ z -> z.set(0) }, Z1),
+                                                                    constraint("foo", X1, Z1),
+                                                                    constraint("foo", Y1, Z1),
+                                                                    statement({ x, y -> eq(x, y) }, X1, Y1) )
             ),
             rule("capture_foo",
-                headKept( constraint("foo", X, C) ),
-                                                            body(   statement({ c, d -> d.set(c.get() + 1) }, C, D),
-                                                                    constraint("capture", D) )
+                headKept( constraint("foo", X2, Y2) ),
+                                                            body(   statement({ y, z -> z.set(y.get() + 1) }, Y2, Z2),
+                                                                    constraint("capture", Z2) )
             ),
             rule("capture_foo_foo",
-                headKept( constraint("foo", X, C) ),
-                headReplaced( constraint("foo", Y, C) ),    guard(  expression({x, y ->  is_eq(x, y) }, X, Y)),
+                headKept( constraint("foo", X3, Z3) ),
+                headReplaced( constraint("foo", Y3, Z3) ),  guard(  expression({ x, y ->  is_eq(x, y) }, X3, Y3)),
                                                             body(   constraint("replaced") )
             )
         ).handler().run {
-            handler = this
             queue(occurrence("main"))
             assertEquals(setOf( ConstraintSymbol("foo", 2),
                                 ConstraintSymbol("capture", 1),
@@ -537,28 +536,31 @@ class TestHandler {
 
     @Test
     fun removeObserver() {
-        val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
+        val (X1,Y1,Z1) = metaLogical<Int>("X1", "Y1", "Z1")
+        val X2 = metaLogical<Int>("X2")
+        val (X3,Y3) = metaLogical<Int>("X3", "Y3")
+        val X4 = metaLogical<Int>("X4")
         program(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
-                                                                    statement({ x -> x.set(42) }, X),
-                                                                    constraint("match", Z, X),
-                                                                    constraint("trigger", Z)                )
+                headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X1, Y1),  // rank(X) = 1
+                                                                    statement({ x -> x.set(42) }, X1),
+                                                                    constraint("match", Z1, X1),
+                                                                    constraint("trigger", Z1)                )
             ),
             rule("trigger",
-                headReplaced( constraint("trigger", X) ),
-                                                            body(   constraint("foobar", X) )
+                headReplaced( constraint("trigger", X2) ),
+                                                            body(   constraint("foobar", X2) )
             ),
             rule("nofoobar",
-                headReplaced( constraint("foobar", X),
-                              constraint("match", X, Y) ),
+                headReplaced( constraint("foobar", X3),
+                              constraint("match", X3, Y3) ),
                                                             body(   constraint("expected"),
                                                                     constraint("blah"),
-                                                                    statement({ x, z -> eq(x, z) }, X, Y) )
+                                                                    statement({ x, z -> eq(x, z) }, X3, Y3) )
             ),
             rule("blah",
                 headReplaced( constraint("blah") ),
-                headReplaced( constraint("foobar", X) ),
+                headReplaced( constraint("foobar", X4) ),
                                                             body(   constraint("unexpected") )
             )
         ).handler().run {

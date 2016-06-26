@@ -25,11 +25,16 @@ class TestMatcher {
             override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
                 stored.filter { co -> co.constraint().symbol() == symbol }
 
-            override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> = emptyList()
+            override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> =
+                stored.filter { co ->
+                    co.arguments().filter {
+                        it is Logical<*> }.any {
+                        (it as Logical<*>).findRoot() == logical.findRoot() } }
 
-            override fun forTerm(term: Term): Iterable<ConstraintOccurrence> = emptyList()
+            override fun forTerm(term: Term): Iterable<ConstraintOccurrence> = TODO()
 
-            override fun forValue(value: Any): Iterable<ConstraintOccurrence> = emptyList()
+            override fun forValue(value: Any): Iterable<ConstraintOccurrence> =
+                stored.filter { co -> co.arguments().contains(value) }
         }
 
         return RuleIndex(rules).to(aux)

@@ -115,7 +115,8 @@ class Match(val rule: Rule,
     }
 
     val patternPredicates: List<Predicate> by lazy(LazyThreadSafetyMode.NONE) {
-        (rule.headKept() + rule.headReplaced()).flatMap { constraint -> constraint.patternPredicates() }.toList()
+        (rule.headKept() + rule.headReplaced()).zip(keptOccurrences + discardedOccurrences).flatMap { p ->
+            p.first.patternPredicates(p.second.arguments()) }.toList()
     }
 
     val successful: Boolean
@@ -157,11 +158,7 @@ class RuleTerm(rule: Rule) :
 class ConstraintPatternTerm(constraint: Constraint) :
     Function(
         constraint.symbol(),
-        constraint.arguments().map  { arg -> when (arg) {
-                                                is MetaLogical<*>   -> Variable(arg)
-                                                else                -> arg.asTerm()
-                                            }
-                                    }) {}
+        constraint.arguments().mapIndexed { idx: Int, arg: Any? -> arg.asTerm() }) {}
 
 /** Function term with arguments == terms corresponding to constraint occurrences. Never contains variables. */
 class MatchTerm(rule: Rule, kept: List<ConstraintOccurrence>, discarded: List<ConstraintOccurrence>) :
@@ -174,28 +171,50 @@ class MatchTerm(rule: Rule, kept: List<ConstraintOccurrence>, discarded: List<Co
 class ConstraintOccurrenceTerm(occurrence: ConstraintOccurrence) :
     Function(
         occurrence.constraint().symbol(),
-        occurrence.arguments().map { arg -> when (arg) {
-                                                is Logical<*>       ->  if (arg.isBound) arg.findRoot().value().asTerm()
-                                                                        else             Constant(arg.findRoot())
-                                                else                ->  arg.asTerm()
-                                            }
-                                    }) {}
+        occurrence.arguments().mapIndexed { idx: Int, arg: Any? -> arg.asTerm() }) {}
 
-class MatchTermWrapper : TermWrapper {
+
+/** Wraps the terms for the internal representation of the unification algorithm.
+ *  When unifying constraint and occurrence terms we are interested in bindings of the meta logicals,
+ *  so these are represented as variables.
+ *  In addition, the logicals are either represented as constants (unbound ones) or their values.
+ *  When unwrapping, the reverse transformation takes place, so that the unification result binds meta logicals
+ *  to logicals, and not to their values. */
+class MatchTermWrapper() : TermWrapper {
 
     override fun wrap(orig: Term): Term =
-        if (orig.`is`(Term.Kind.VAR))   when (orig.symbol()) {
-                                            is MetaLogical<*>   -> orig
-                                            else                -> WrapConstant(orig)
-                                        }
-        else orig
+        if (orig.`is`(Term.Kind.VAR)) {
+            val symbol = orig.symbol()
+            when (symbol) {
+                is MetaLogical<*>   ->  orig
+                is Logical<*>       ->  symbol.let { logical ->
+                                            if (logical.isBound && logical.findRoot().value() is Term) {
+                                                WrapGroundLogical(logical as Logical<Term>)
 
-    override fun unwrap(wrapper: Term): Term =
-        if (wrapper is WrapConstant) wrapper.symbol() else wrapper
+                                            } else {
+                                                WrapFreeLogical(logical)
+                                            }
+                                        }
+                else                ->  WrapConstant(orig)
+            }
+
+        } else {
+            orig
+        }
+
+    override fun unwrap(wrapper: Term): Term = when (wrapper) {
+        is WrapConstant         -> wrapper.orig
+        is WrapFreeLogical      -> Constant(wrapper.logical)
+        is WrapGroundLogical    -> Constant(wrapper.logical)
+        else                    -> wrapper
+    }
 
 }
 
-fun Any?.asTerm(): Term = when(this) {
+fun Any?.asTerm(): Term = when (this) {
+    is MetaLogical<*>   -> Variable(this)
+    is Logical<*>       -> Variable(this)
+//    is Logical<*>       ->  if (this.isBound) this.findRoot().value().asTerm() else Constant(this.findRoot())
     is Term             -> this              // wrapped before unification
     is Any              -> Constant(this)
     else                -> throw NullPointerException()
@@ -227,9 +246,13 @@ open class Function(symbol: Any, val arguments: List<Term>) : TermImpl(symbol) {
 
 class Constant(symbol: Any) : Function(symbol, emptyList()) {}
 
-class WrapConstant(symbol: Term) : Function(symbol, emptyList()) {
-    override fun symbol(): Term = super.symbol() as Term
-}
+class WrapConstant(val orig: Term) : Function(orig, emptyList()) {}
+
+class WrapFreeLogical(val logical: Logical<*>) : Function(logical.findRoot(), emptyList()) {}
+
+class WrapGroundLogical(val logical: Logical<Term>) :
+        Function(logical.findRoot().value().symbol(),
+                 logical.findRoot().value().arguments().toList()) {}
 
 class Variable(symbol: Any) : TermImpl(symbol) {
 
