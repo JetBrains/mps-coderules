@@ -23,7 +23,7 @@ data class MemConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>)
         else a
     }
 
-    override fun patternPredicates(): Collection<Predicate> = emptyList()
+    override fun patternPredicates(args: Collection<*>): Collection<Predicate> = emptyList()
 
     override fun symbol(): ConstraintSymbol = symbol
 

@@ -22,6 +22,6 @@ public interface Constraint extends AndItem {
    * rule's head. 
    * This method only returns meaningful results for constraints that serve as patterns in a rule's head. 
    */
-  Collection<? extends Predicate> patternPredicates();
+  Collection<? extends Predicate> patternPredicates(Collection<?> occurrenceArgs);
 
 }
