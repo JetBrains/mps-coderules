@@ -56,7 +56,7 @@ internal class MatchTrie(val rule: Rule,
             var first: MatchTrieNode? = null
             var prev: MatchTrieNode? = null
             for ((idx, cst) in keptConstraints.withIndex()) {
-                if (cst.matches(activeOcc, profiler)) {
+                if (cst.symbol() == activeOcc.constraint().symbol()) {
                     val next = MatchTrieNode(null, true, cst, activeOcc, idx)
                     if (first == null) {
                         first = next
@@ -66,7 +66,7 @@ internal class MatchTrie(val rule: Rule,
                 }
             }
             for ((idx, cst) in discardedConstraints.withIndex()) {
-                if (cst.matches(activeOcc, profiler)) {
+                if (cst.symbol() == activeOcc.constraint().symbol()) {
                     val next = MatchTrieNode(null, false, cst, activeOcc, idx)
                     if (first == null) {
                         first = next

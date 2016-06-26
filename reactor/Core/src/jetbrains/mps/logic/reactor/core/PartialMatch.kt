@@ -26,7 +26,7 @@ internal class PartialMatch(val rule: Rule) {
 
 
     fun complete(profiler: Profiler? = null): Match {
-        return profiler.profile<Match>("matches_${rule.tag()}") {
+        return profiler.profile<Match>("matchesRule_${rule.tag()}") {
 
             val kept = keptOccurrences.asList() as List<ConstraintOccurrence>
             val discarded = discardedOccurrences.asList() as List<ConstraintOccurrence>

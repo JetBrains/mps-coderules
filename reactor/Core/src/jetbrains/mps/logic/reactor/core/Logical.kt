@@ -87,8 +87,10 @@ class MemLogical<T> : SolverLogical<T> {
     override fun findRoot(): SolverLogical<T> = find()
 
     override fun setValue(newValue: T) {
-        this._value = newValue
-        notifyValueUpdated()
+        if (_value !== newValue) {
+            this._value = newValue
+            notifyValueUpdated()
+        }
     }
 
     override fun union(other: SolverLogical<T>, reconciler: SolverLogical.ValueReconciler<T>) {

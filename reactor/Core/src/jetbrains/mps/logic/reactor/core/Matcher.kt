@@ -9,6 +9,7 @@ import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.LazyIterable
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 import jetbrains.mps.unification.Substitution
@@ -23,61 +24,24 @@ import com.github.andrewoma.dexx.collection.List as PersList
  * @author Fedor Isakov
  */
 
-
 class Matcher(val ruleIndex: RuleIndex,
               val activeOcc: ConstraintOccurrence,
               val aux: OccurrenceIndex,
               val profiler: Profiler? = null) : Iterable<Match>
 {
 
-    private val matchTries: List<MatchTrie> by lazy(LazyThreadSafetyMode.NONE) {
-        profiler.profile<List<MatchTrie>>("lookupRules_${activeOcc.constraint().symbol()}") {
-
-            ArrayList<MatchTrie>(4).apply {
-                for(rule in  ruleIndex.forOccurrence(activeOcc).toList()) {
-                    add(MatchTrie(rule, activeOcc, aux, profiler))
-                }
-            }
-
+    private val matchTries: LazyIterable<Rule, MatchTrie> by lazy(LazyThreadSafetyMode.NONE) {
+        LazyIterable<Rule, MatchTrie> (ruleIndex.forOccurrence(activeOcc).toList()) { rule ->
+            MatchTrie(rule, activeOcc, aux, profiler)
         }
     }
 
-    override fun iterator() = object : Iterator<Match> {
+    override fun iterator() =   matchTries.asSequence().flatMap { matchTrie ->
+                                matchTrie.asSequence() }.map { partialMatch ->
+                                partialMatch.complete(profiler) }.filter { match ->
+                                match.successful }.iterator()
 
-        val triesIt: Iterator<MatchTrie> = matchTries.iterator()
-
-        var pmIt: Iterator<PartialMatch>? = null
-
-        var nextMatch: Match? = null
-
-        override fun hasNext(): Boolean {
-            calcNext()
-            return nextMatch != null
-        }
-
-        override fun next(): Match {
-            calcNext()
-            val tmp = nextMatch
-            this.nextMatch = null
-            return tmp ?: throw NoSuchElementException()
-        }
-
-        private fun calcNext() {
-            while (nextMatch == null || !nextMatch!!.successful) {
-                while (pmIt == null || !(pmIt!!.hasNext())) {
-                    if (!triesIt.hasNext()) {
-                        return
-                    }
-                    pmIt = triesIt.next().iterator()
-                }
-                if (pmIt!!.hasNext()) {
-                    this.nextMatch = pmIt!!.next().complete(profiler)
-                }
-            }
-        }
-    }
 }
-
 
 class Match(val rule: Rule,
             val substitution: Substitution,
@@ -131,19 +95,6 @@ class Match(val rule: Rule,
 
     override fun matchHeadReplaced(): Iterable<ConstraintOccurrence> = discardedOccurrences
 
-}
-
-/**
- * True iff the constraint matches the occurrence.
- */
-fun Constraint.matches(that: ConstraintOccurrence, profiler: Profiler? = null): Boolean {
-    val constraintTerm = ConstraintPatternTerm(this)
-    val constraintOccurrenceTerm = ConstraintOccurrenceTerm(that)
-    return profiler.profile<Boolean>("unifyConstraintOccurrence") {
-
-        return Unification.unify(constraintTerm, constraintOccurrenceTerm, MatchTermWrapper()).isSuccessful
-
-    }
 }
 
 /** Function term with arguments == constraints converted to terms. May contain variables. */

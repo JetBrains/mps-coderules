@@ -276,7 +276,7 @@ public class UnionFindTermGraphUnifier {
 
     private InnerTerm toInner(Term term) {
         // Variables with matching symbols are all treated as a single term.
-        Object key = term.is(VAR) ? String.valueOf(term.symbol()).intern() : term;
+        Object key = term.is(VAR) ? idSymbol(term.symbol()) : term;
         InnerTerm innerTerm = myTermCache.get(key);
         if (innerTerm == null) {
             myTermCache.put(key, (innerTerm = new InnerTerm(wrapper.wrap(term))));
@@ -286,6 +286,15 @@ public class UnionFindTermGraphUnifier {
 
     private Term fromInner(InnerTerm innerTerm) {
         return wrapper.unwrap(innerTerm.myOrigin);
+    }
+
+    private Object idSymbol(Object symbol) {
+        if (symbol instanceof String) {
+            return ((String) symbol).intern();
+
+        } else {
+            return symbol;
+        }
     }
 
     private TermWrapper wrapper = TermWrapper.ID;
