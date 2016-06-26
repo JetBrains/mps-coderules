@@ -400,6 +400,13 @@
     <node concept="3clFb_" id="4sSe4$oZtuv" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="patternPredicates" />
+      <node concept="37vLTG" id="6v0X_XJLN7q" role="3clF46">
+        <property role="TrG5h" value="occurrenceArgs" />
+        <node concept="3uibUv" id="6v0X_XJLNp1" role="1tU5fm">
+          <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+          <node concept="3qTvmN" id="6v0X_XJLNPD" role="11_B2D" />
+        </node>
+      </node>
       <node concept="3uibUv" id="4sSe4$oZtHO" role="3clF45">
         <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
         <node concept="3qUE_q" id="4sSe4$oZu9a" role="11_B2D">
