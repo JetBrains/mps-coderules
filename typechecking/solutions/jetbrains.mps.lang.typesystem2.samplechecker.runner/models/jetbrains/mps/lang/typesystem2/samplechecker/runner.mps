@@ -23,7 +23,7 @@
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
     <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.predicate)" />
     <import index="stgg" ref="r:fcdb37a4-4602-4a05-8d91-e439430734b8(jetbrains.mps.logic.jchr.program)" />
-    <import index="7ub6" ref="r:b533b427-da69-49d8-9c93-4ea32433b66e(jetbrains.mps.lang.typesystem2.runtime)" />
+    <import index="7ub6" ref="r:b533b427-da69-49d8-9c93-4ea32433b66e(jetbrains.mps.lang.typesystem2.generation)" />
     <import index="poio" ref="r:023e4571-f779-4131-9ae1-88b3dd330e93(jetbrains.mps.lang.typesystem2.samplechecker.util)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
