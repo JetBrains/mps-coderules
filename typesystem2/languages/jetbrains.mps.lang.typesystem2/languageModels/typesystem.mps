@@ -16,6 +16,7 @@
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="hy7p" ref="r:01ee26d6-df00-4ffb-931c-1ddec5984886(jetbrains.mps.lang.typesystem2.util)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.typesystem2.behavior)" implicit="true" />
@@ -40,6 +41,9 @@
       <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -96,6 +100,9 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -122,6 +129,10 @@
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
+      <concept id="1175147569072" name="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" flags="ig" index="2sgdUx">
+        <child id="1175147624276" name="body" index="2sgrp5" />
+      </concept>
+      <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
       <concept id="1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" flags="nn" index="2Mj0R9">
         <child id="1175517761460" name="condition" index="2MkoU_" />
       </concept>
@@ -185,6 +196,9 @@
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
+      <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
+        <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
@@ -1420,6 +1434,51 @@
     <node concept="1YaCAy" id="1hX44vMMkU_" role="1YuTPh">
       <property role="TrG5h" value="codeBlock" />
       <ref role="1YaFvo" to="wq2x:1hX44vMFoce" resolve="CodeBlock" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="18kNIl0FAIT">
+    <property role="TrG5h" value="typeof_LogicalSubstitutionCreator" />
+    <property role="3GE5qa" value="constraint.typespecific" />
+    <node concept="3clFbS" id="18kNIl0FAIU" role="18ibNy">
+      <node concept="1Z5TYs" id="18kNIl0FBY5" role="3cqZAp">
+        <node concept="mw_s8" id="18kNIl0FBYp" role="1ZfhKB">
+          <node concept="2ShNRf" id="18kNIl0FBYl" role="mwGJk">
+            <node concept="3zrR0B" id="18kNIl0FC5O" role="2ShVmc">
+              <node concept="3Tqbb2" id="18kNIl0FC5Q" role="3zrR0E">
+                <ref role="ehGHo" to="wq2x:18kNIl0F2$k" resolve="LogicalSubstitutionType" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="18kNIl0FBY8" role="1ZfhK$">
+          <node concept="1Z2H0r" id="18kNIl0FAJ6" role="mwGJk">
+            <node concept="1YBJjd" id="18kNIl0FAKQ" role="1Z2MuG">
+              <ref role="1YBMHb" node="18kNIl0FAIW" resolve="lsc" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="18kNIl0FAIW" role="1YuTPh">
+      <property role="TrG5h" value="lsc" />
+      <ref role="1YaFvo" to="wq2x:18kNIl0F1t4" resolve="LogicalSubstitutionCreator" />
+    </node>
+  </node>
+  <node concept="2sgARr" id="18kNIl0HEHx">
+    <property role="3GE5qa" value="constraint.typespecific" />
+    <property role="TrG5h" value="substitution_subtypeOf_runtimeClass" />
+    <node concept="3clFbS" id="18kNIl0HEHy" role="2sgrp5">
+      <node concept="3clFbF" id="18kNIl0HEOh" role="3cqZAp">
+        <node concept="2c44tf" id="18kNIl0HEOf" role="3clFbG">
+          <node concept="3uibUv" id="18kNIl0HEPg" role="2c44tc">
+            <ref role="3uigEE" to="nz6g:18kNIl0r2ay" resolve="LogicalSubstitution" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="18kNIl0HEH$" role="1YuTPh">
+      <property role="TrG5h" value="lst" />
+      <ref role="1YaFvo" to="wq2x:18kNIl0F2$k" resolve="LogicalSubstitutionType" />
     </node>
   </node>
 </model>

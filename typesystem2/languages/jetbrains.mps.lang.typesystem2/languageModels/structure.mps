@@ -92,11 +92,11 @@
     <property role="3GE5qa" value="constraint.typespecific" />
     <property role="34LRSv" value="new type" />
     <property role="EcuMT" value="8335224865066016385" />
-    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <ref role="1TJDcQ" node="18kNIl0mxXI" resolve="PseudoConstraint" />
     <node concept="1TJgyj" id="YGS68N6UU4" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="typeDeclaration" />
-      <property role="20lbJX" value="0..1" />
+      <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1129524318932020868" />
       <ref role="20lvS9" node="1pPth$m5Bbz" resolve="TypeDeclaration" />
     </node>
@@ -106,13 +106,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7368070394768578348" />
       <ref role="20lvS9" to="5j4j:7E86$tKsHeX" resolve="AbstractLogicalVariable" />
-    </node>
-    <node concept="1TJgyj" id="6Ng87FPS9JH" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="typeConcept" />
-      <property role="20lbJX" value="0..1" />
-      <property role="IQ2ns" value="7840802663735270381" />
-      <ref role="20lvS9" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
     </node>
     <node concept="1TJgyj" id="6p0DfM0gvH4" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -124,9 +117,15 @@
     <node concept="1TJgyj" id="6p0DfM0gSN1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="argument" />
-      <property role="20lbJX" value="0..n" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="7368070394768755905" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+      <ref role="20lvS9" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
+    </node>
+    <node concept="1TJgyj" id="18kNIl0OYEq" role="1TKVEi">
+      <property role="IQ2ns" value="1302893676247378586" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="substitution" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="7eGEHDlgPU4">
@@ -347,7 +346,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0oBcI">
-    <property role="3GE5qa" value="constraint.typespecific" />
+    <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="AssignConstraint" />
     <property role="EcuMT" value="7368070394770780974" />
     <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
@@ -893,6 +892,61 @@
       <property role="IQ2ns" value="535508562359074271" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="18kNIl0jL2T">
+    <property role="EcuMT" value="1302893676238672057" />
+    <property role="3GE5qa" value="constraint.typespecific" />
+    <property role="TrG5h" value="AsTypeConstraint" />
+    <property role="34LRSv" value="as type" />
+    <ref role="1TJDcQ" node="18kNIl0mxXI" resolve="PseudoConstraint" />
+    <node concept="1TJgyj" id="18kNIl0jL_z" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="typeVar" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="1302893676238674275" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsHeX" resolve="AbstractLogicalVariable" />
+    </node>
+    <node concept="1TJgyj" id="18kNIl0jL3E" role="1TKVEi">
+      <property role="IQ2ns" value="1302893676238672106" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="origin" />
+      <ref role="20lvS9" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
+    </node>
+    <node concept="1TJgyj" id="18kNIl0PNUA" role="1TKVEi">
+      <property role="IQ2ns" value="1302893676247596710" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="substitution" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="18kNIl0mxXI">
+    <property role="EcuMT" value="1302893676239396718" />
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="PseudoConstraint" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+  </node>
+  <node concept="1TIwiD" id="18kNIl0F1t4">
+    <property role="EcuMT" value="1302893676244768580" />
+    <property role="3GE5qa" value="constraint.typespecific" />
+    <property role="TrG5h" value="LogicalSubstitutionCreator" />
+    <property role="34LRSv" value="substitution" />
+    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
+    <node concept="1TJgyj" id="18kNIl0F1xB" role="1TKVEi">
+      <property role="IQ2ns" value="1302893676244768871" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="anchor" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="18kNIl0F2$k">
+    <property role="EcuMT" value="1302893676244773140" />
+    <property role="3GE5qa" value="constraint.typespecific" />
+    <property role="TrG5h" value="LogicalSubstitutionType" />
+    <property role="34LRSv" value="substitution" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
 </model>
 
