@@ -14,7 +14,6 @@
     <import index="j44f" ref="r:0908786d-1897-49e0-bece-5a5d4968324f(jetbrains.mps.jchr.typesystem)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
-    <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.typesystem2.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -285,7 +284,7 @@
                     <ref role="1YBMHb" node="2c3nq4GQw_H" resolve="lvr" />
                   </node>
                   <node concept="3TrEf2" id="2c3nq4GQKRj" role="2OqNvi">
-                    <ref role="3Tt5mk" to="5j4j:7E86$tK_PaH" />
+                    <ref role="3Tt5mk" to="5j4j:7E86$tK_PaH" resolve="declaration" />
                   </node>
                 </node>
               </node>
@@ -299,7 +298,7 @@
               <ref role="1YBMHb" node="2c3nq4GQw_H" resolve="lvr" />
             </node>
             <node concept="3TrEf2" id="7dgRGU4B5pQ" role="2OqNvi">
-              <ref role="3Tt5mk" to="5j4j:7E86$tKsJfa" />
+              <ref role="3Tt5mk" to="5j4j:7E86$tKsJfa" resolve="index" />
             </node>
           </node>
           <node concept="3w_OXm" id="7dgRGU4B5O8" role="2OqNvi" />
@@ -317,7 +316,7 @@
                       <ref role="1YBMHb" node="2c3nq4GQw_H" resolve="lvr" />
                     </node>
                     <node concept="3TrEf2" id="7dgRGU4B6GF" role="2OqNvi">
-                      <ref role="3Tt5mk" to="5j4j:7E86$tK_PaH" />
+                      <ref role="3Tt5mk" to="5j4j:7E86$tK_PaH" resolve="declaration" />
                     </node>
                   </node>
                 </node>
@@ -398,7 +397,7 @@
                           </node>
                         </node>
                         <node concept="3TrEf2" id="2c3nq4GQKmT" role="2OqNvi">
-                          <ref role="3Tt5mk" to="5j4j:5zfvpQ72gqq" />
+                          <ref role="3Tt5mk" to="5j4j:5zfvpQ72gqq" resolve="dataType" />
                         </node>
                       </node>
                     </node>
@@ -414,7 +413,7 @@
               <ref role="1YBMHb" node="2c3nq4GQKig" resolve="lvd" />
             </node>
             <node concept="3TrEf2" id="7dgRGU4AfTp" role="2OqNvi">
-              <ref role="3Tt5mk" to="5j4j:7E86$tKtioV" />
+              <ref role="3Tt5mk" to="5j4j:7E86$tKtioV" resolve="cardinality" />
             </node>
           </node>
           <node concept="3w_OXm" id="7dgRGU4Agit" role="2OqNvi" />
@@ -446,7 +445,7 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="7dgRGU4Agts" role="2OqNvi">
-                            <ref role="3Tt5mk" to="5j4j:5zfvpQ72gqq" />
+                            <ref role="3Tt5mk" to="5j4j:5zfvpQ72gqq" resolve="dataType" />
                           </node>
                         </node>
                       </node>
@@ -611,7 +610,7 @@
                               <ref role="1YBMHb" node="7dgRGU4$_60" resolve="splice" />
                             </node>
                             <node concept="3TrEf2" id="2zBk6uIp8Px" role="2OqNvi">
-                              <ref role="3Tt5mk" to="5j4j:dfChU1zo4I" />
+                              <ref role="3Tt5mk" to="5j4j:dfChU1zo4I" resolve="expression" />
                             </node>
                           </node>
                         </node>
@@ -632,7 +631,7 @@
                   <ref role="1YBMHb" node="7dgRGU4$_60" resolve="splice" />
                 </node>
                 <node concept="3TrEf2" id="7dgRGU4_YUb" role="2OqNvi">
-                  <ref role="3Tt5mk" to="5j4j:dfChU1zo4I" />
+                  <ref role="3Tt5mk" to="5j4j:dfChU1zo4I" resolve="expression" />
                 </node>
               </node>
             </node>
