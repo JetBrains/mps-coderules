@@ -2033,7 +2033,7 @@
           </node>
         </node>
         <node concept="Xl_RD" id="4peSo3CQ8ZE" role="37wK5m">
-          <property role="Xl_RC" value="WildcardType" />
+          <property role="Xl_RC" value="WildCardType" />
         </node>
       </node>
       <node concept="QsSxf" id="4peSo3CQ94y" role="Qtgdg">
