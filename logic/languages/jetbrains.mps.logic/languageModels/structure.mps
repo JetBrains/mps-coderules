@@ -395,7 +395,7 @@
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5131913661993028917" />
-      <ref role="20lvS9" node="7E86$tKskWj" resolve="LogicalValue" />
+      <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalClause" />
     </node>
   </node>
 </model>

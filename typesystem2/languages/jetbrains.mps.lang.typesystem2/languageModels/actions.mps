@@ -140,9 +140,11 @@
       <concept id="1177497140107" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" flags="nn" index="Cj7Ep" />
       <concept id="1177498013932" name="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" flags="ng" index="Cmt7Y">
         <child id="1177498166690" name="matchingText" index="Cn2iK" />
+        <child id="1177498182537" name="descriptionText" index="Cn6ar" />
         <child id="1177498207384" name="handler" index="Cncma" />
       </concept>
       <concept id="1177498227294" name="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" flags="in" index="Cnhdc" />
+      <concept id="767145758118872833" name="jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation" flags="nn" index="2DeJg1" />
       <concept id="767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" flags="nn" index="2DeJnY" />
       <concept id="1180134965967" name="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart" flags="ng" index="35xCft">
         <reference id="1180135092669" name="concept" index="35y72J" />
@@ -247,6 +249,7 @@
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
+      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
     </language>
   </registry>
   <node concept="3FK_9_" id="6p0DfM0ptZb">
@@ -1295,6 +1298,58 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3UOs0u" id="1L74NXFO1Dj">
+    <property role="3GE5qa" value="type.term" />
+    <property role="TrG5h" value="TypeTerm_addOverride" />
+    <node concept="3UNGvq" id="1L74NXFO1Dk" role="3UOs0v">
+      <property role="2uHTBK" value="ext_1_RTransform" />
+      <ref role="3UNGvu" to="wq2x:1L74NXElX0R" resolve="TypeTerm" />
+      <node concept="3kRJcU" id="1L74NXFO1Dl" role="3kShCk">
+        <node concept="3clFbS" id="1L74NXFO1Dm" role="2VODD2">
+          <node concept="3clFbF" id="1L74NXFO1Kv" role="3cqZAp">
+            <node concept="2OqwBi" id="1L74NXFO3X1" role="3clFbG">
+              <node concept="2OqwBi" id="1L74NXFO20k" role="2Oq$k0">
+                <node concept="Cj7Ep" id="1L74NXFO1Ku" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="1L74NXFO2nJ" role="2OqNvi">
+                  <ref role="3TtcxE" to="wq2x:1L74NXFNj2L" resolve="override" />
+                </node>
+              </node>
+              <node concept="1v1jN8" id="1L74NXFO6fV" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="tYCnQ" id="1L74NXFOc9r" role="_1QTJ">
+        <ref role="uz4UX" to="wq2x:1L74NXElX0R" resolve="TypeTerm" />
+        <node concept="Cmt7Y" id="1L74NXFOctf" role="uz6Si">
+          <node concept="Cnhdc" id="1L74NXFOcth" role="Cncma">
+            <node concept="3clFbS" id="1L74NXFOctj" role="2VODD2">
+              <node concept="3clFbF" id="1L74NXFOcwR" role="3cqZAp">
+                <node concept="2OqwBi" id="1L74NXFOews" role="3clFbG">
+                  <node concept="2OqwBi" id="1L74NXFOcFq" role="2Oq$k0">
+                    <node concept="Cj7Ep" id="1L74NXFOcwQ" role="2Oq$k0" />
+                    <node concept="3Tsc0h" id="1L74NXFOcYY" role="2OqNvi">
+                      <ref role="3TtcxE" to="wq2x:1L74NXFNj2L" resolve="override" />
+                    </node>
+                  </node>
+                  <node concept="2DeJg1" id="1L74NXFOgPd" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="1L74NXFOh1C" role="3cqZAp">
+                <node concept="Cj7Ep" id="1L74NXFOh1A" role="3clFbG" />
+              </node>
+            </node>
+          </node>
+          <node concept="2h1dTh" id="1L74NXFOcwD" role="Cn2iK">
+            <property role="2h1i$Z" value="{" />
+          </node>
+          <node concept="2h1dTh" id="1L74NXFOcwL" role="Cn6ar">
+            <property role="2h1i$Z" value="specify overrides" />
           </node>
         </node>
       </node>

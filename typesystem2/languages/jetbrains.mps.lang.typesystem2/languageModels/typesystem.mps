@@ -1054,7 +1054,7 @@
   </node>
   <node concept="18kY7G" id="67SsWaEdTGN">
     <property role="TrG5h" value="check_TypeTerm" />
-    <property role="3GE5qa" value="type" />
+    <property role="3GE5qa" value="type.term" />
     <node concept="3clFbS" id="67SsWaEdTGO" role="18ibNy">
       <node concept="3clFbJ" id="67SsWaEeEwV" role="3cqZAp">
         <node concept="3clFbS" id="67SsWaEeEwX" role="3clFbx">
@@ -1631,7 +1631,7 @@
   </node>
   <node concept="1YbPZF" id="3TnYLtqfmDB">
     <property role="TrG5h" value="typeof_ContextParameterReference" />
-    <property role="3GE5qa" value="type" />
+    <property role="3GE5qa" value="type.code.with" />
     <node concept="3clFbS" id="3TnYLtqfmDC" role="18ibNy">
       <node concept="1Z5TYs" id="3TnYLtqfmXq" role="3cqZAp">
         <node concept="mw_s8" id="3TnYLtqfmXG" role="1ZfhKB">
