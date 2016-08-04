@@ -1964,7 +1964,7 @@
       <node concept="P$JXv" id="3KV3FXk1Zlo" role="lGtFl">
         <node concept="TZ5HA" id="3KV3FXk1Zlp" role="TZ5H$">
           <node concept="1dT_AC" id="3KV3FXk1Zlq" role="1dT_Ay">
-            <property role="1dT_AB" value="Find the shortest path among those specified in " />
+            <property role="1dT_AB" value="Find the shortest subtyping path among those specified in " />
           </node>
           <node concept="1dT_AA" id="3KV3FXk1ZsS" role="1dT_Ay">
             <node concept="VVOAv" id="3KV3FXk1ZsY" role="qph3F">
@@ -1976,12 +1976,12 @@
             </node>
           </node>
           <node concept="1dT_AC" id="3KV3FXk1ZsR" role="1dT_Ay">
-            <property role="1dT_AB" value=" parameter that starts with the term in" />
+            <property role="1dT_AB" value=" parameter," />
           </node>
         </node>
-        <node concept="TZ5HA" id="3KV3FXk1Zt6" role="TZ5H$">
-          <node concept="1dT_AC" id="3KV3FXk1Zt7" role="1dT_Ay">
-            <property role="1dT_AB" value="" />
+        <node concept="TZ5HA" id="4gW0vesPy43" role="TZ5H$">
+          <node concept="1dT_AC" id="4gW0vesPy44" role="1dT_Ay">
+            <property role="1dT_AB" value="which starts with the type term in " />
           </node>
           <node concept="1dT_AA" id="3KV3FXk1Ztt" role="1dT_Ay">
             <node concept="VVOAv" id="3KV3FXk1Ztz" role="qph3F">
@@ -1993,7 +1993,12 @@
             </node>
           </node>
           <node concept="1dT_AC" id="3KV3FXk1Zts" role="1dT_Ay">
-            <property role="1dT_AB" value=". Then reverse the path so that it becomes a supertypes path." />
+            <property role="1dT_AB" value=". " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4gW0vesPy77" role="TZ5H$">
+          <node concept="1dT_AC" id="4gW0vesPy78" role="1dT_Ay">
+            <property role="1dT_AB" value="Then reverse the path so that it becomes a supertypes path." />
           </node>
         </node>
         <node concept="TZ5HA" id="3KV3FXk1ZtF" role="TZ5H$">
@@ -3247,7 +3252,7 @@
                       </node>
                     </node>
                     <node concept="3TrEf2" id="6infEALx4sK" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                      <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                     </node>
                   </node>
                   <node concept="3TrcHB" id="6infEALx4sL" role="2OqNvi">
@@ -3271,7 +3276,7 @@
                           </node>
                         </node>
                         <node concept="3TrEf2" id="4JRKVCvd_0q" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                          <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                         </node>
                       </node>
                     </node>
@@ -3300,7 +3305,7 @@
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="5_6ImQZjqKY" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:g91_B6F" />
+                    <ref role="3TtcxE" to="tpee:g91_B6F" resolve="parameter" />
                   </node>
                 </node>
               </node>
