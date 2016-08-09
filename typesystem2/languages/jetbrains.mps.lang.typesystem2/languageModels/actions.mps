@@ -1346,7 +1346,7 @@
             </node>
           </node>
           <node concept="2h1dTh" id="1L74NXFOcwD" role="Cn2iK">
-            <property role="2h1i$Z" value="{" />
+            <property role="2h1i$Z" value="[" />
           </node>
           <node concept="2h1dTh" id="1L74NXFOcwL" role="Cn6ar">
             <property role="2h1i$Z" value="specify overrides" />
