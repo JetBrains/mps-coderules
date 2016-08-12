@@ -4,7 +4,7 @@
   <languages>
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -510,7 +510,7 @@
                 <ref role="3cqZAo" node="4sSe4$p4w5G" resolve="alv" />
               </node>
               <node concept="3TrEf2" id="4sSe4$p4wkM" role="2OqNvi">
-                <ref role="3Tt5mk" to="5j4j:4sSe4$p4oON" />
+                <ref role="3Tt5mk" to="5j4j:4sSe4$p4oON" resolve="variable" />
               </node>
             </node>
           </node>
@@ -529,7 +529,7 @@
                 <ref role="3cqZAo" node="4sSe4$p4w5G" resolve="alv" />
               </node>
               <node concept="3TrEf2" id="4sSe4$p4x9l" role="2OqNvi">
-                <ref role="3Tt5mk" to="5j4j:4sSe4$p4oOP" />
+                <ref role="3Tt5mk" to="5j4j:4sSe4$p4oOP" resolve="value" />
               </node>
             </node>
           </node>
