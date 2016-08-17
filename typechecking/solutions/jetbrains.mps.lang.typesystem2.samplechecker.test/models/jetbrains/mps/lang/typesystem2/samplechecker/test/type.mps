@@ -10,7 +10,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.lang.typesystem2.samplechecker.template)" />
+    <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.lang.typesystem2.sampleLang.types)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
@@ -494,7 +494,7 @@
                     <ref role="3xOPvv" node="7t5VLKGT7IR" resolve="expected_C" />
                   </node>
                   <node concept="3Tsc0h" id="7t5VLKGThbb" role="2OqNvi">
-                    <ref role="3TtcxE" to="tp68:hHp56YpiWP" />
+                    <ref role="3TtcxE" to="tp68:hHp56YpiWP" resolve="actualArgument" />
                   </node>
                 </node>
                 <node concept="3$u5V9" id="7t5VLKGThbc" role="2OqNvi">
@@ -509,7 +509,7 @@
                             </node>
                           </node>
                           <node concept="3Tsc0h" id="7t5VLKGThbj" role="2OqNvi">
-                            <ref role="3TtcxE" to="tp68:i3HumyW" />
+                            <ref role="3TtcxE" to="tp68:i3HumyW" resolve="parameter" />
                           </node>
                         </node>
                       </node>
@@ -579,7 +579,7 @@
                     <ref role="3xOPvv" node="7t5VLKGTGo8" resolve="expected_D" />
                   </node>
                   <node concept="3Tsc0h" id="7t5VLKGTHek" role="2OqNvi">
-                    <ref role="3TtcxE" to="tp68:hHp56YpiWP" />
+                    <ref role="3TtcxE" to="tp68:hHp56YpiWP" resolve="actualArgument" />
                   </node>
                 </node>
                 <node concept="3$u5V9" id="7t5VLKGTHel" role="2OqNvi">
@@ -594,7 +594,7 @@
                             </node>
                           </node>
                           <node concept="3Tsc0h" id="7t5VLKGTHes" role="2OqNvi">
-                            <ref role="3TtcxE" to="tp68:i3HumyW" />
+                            <ref role="3TtcxE" to="tp68:i3HumyW" resolve="parameter" />
                           </node>
                         </node>
                       </node>
@@ -664,7 +664,7 @@
                     <ref role="3xOPvv" node="4JRKVCv8K6n" resolve="expected_String" />
                   </node>
                   <node concept="3Tsc0h" id="4JRKVCv9wTw" role="2OqNvi">
-                    <ref role="3TtcxE" to="tp68:hHp56YpiWP" />
+                    <ref role="3TtcxE" to="tp68:hHp56YpiWP" resolve="actualArgument" />
                   </node>
                 </node>
                 <node concept="3$u5V9" id="4JRKVCv9wTx" role="2OqNvi">
@@ -679,7 +679,7 @@
                             </node>
                           </node>
                           <node concept="3Tsc0h" id="4JRKVCv9wTC" role="2OqNvi">
-                            <ref role="3TtcxE" to="tp68:i3HumyW" />
+                            <ref role="3TtcxE" to="tp68:i3HumyW" resolve="parameter" />
                           </node>
                         </node>
                       </node>

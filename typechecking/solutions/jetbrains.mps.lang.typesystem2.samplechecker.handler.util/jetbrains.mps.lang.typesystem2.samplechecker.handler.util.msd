@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.typesystem2.samplechecker.handler.util" uuid="9c4ae21e-62e0-4110-95b7-191b357a42d2" moduleVersion="0" compileInMPS="true">
+<solution name="jetbrains.mps.lang.typesystem2.samplechecker.handler.util" uuid="9c4ae21e-62e0-4110-95b7-191b357a42d2" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
