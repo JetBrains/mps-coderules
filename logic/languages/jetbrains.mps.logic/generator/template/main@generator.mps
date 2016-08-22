@@ -4,7 +4,6 @@
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
@@ -262,12 +261,6 @@
       <concept id="1174642900584" name="jetbrains.mps.lang.typesystem.structure.PatternCondition" flags="ig" index="1Yb3XT">
         <child id="1174642936809" name="pattern" index="1YbcFS" />
       </concept>
-    </language>
-    <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.AtomExpression" flags="ng" index="1oi1Uc">
-        <child id="7571593955706125526" name="root" index="1oi0x0" />
-      </concept>
-      <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Compound" flags="ng" index="1oi5UN" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
@@ -1194,10 +1187,9 @@
       </node>
       <node concept="3Tm1VV" id="35Lj3TiRjRe" role="1B3o_S" />
       <node concept="3clFbS" id="35Lj3TiRjRf" role="3clF47">
-        <node concept="3clFbF" id="35Lj3TiSoNN" role="3cqZAp">
-          <node concept="1oi1Uc" id="35Lj3TiSoNH" role="3clFbG">
-            <node concept="1oi5UN" id="35Lj3TiSoNJ" role="1oi0x0" />
-            <node concept="xERo3" id="35Lj3TiT8Id" role="lGtFl">
+        <node concept="3clFbF" id="4pNU3yqbFhP" role="3cqZAp">
+          <node concept="10Nm6u" id="4pNU3yqbFhN" role="3clFbG">
+            <node concept="xERo3" id="4pNU3yqbFnX" role="lGtFl">
               <ref role="xH3mL" node="35Lj3TiT1Wl" resolve="Ast_Builder" />
             </node>
           </node>
