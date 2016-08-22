@@ -15601,10 +15601,11 @@
                         </node>
                         <node concept="3NFfHV" id="7nPD14NOKAX" role="1sPUBK">
                           <node concept="3clFbS" id="7nPD14NOKAY" role="2VODD2">
-                            <node concept="3clFbF" id="7nPD14NOKAZ" role="3cqZAp">
-                              <node concept="2OqwBi" id="7nPD14NOKB0" role="3clFbG">
-                                <node concept="1iwH7S" id="7nPD14NOKB1" role="2Oq$k0" />
-                                <node concept="1KSxxD" id="7nPD14NOKB2" role="2OqNvi" />
+                            <node concept="3clFbF" id="65DJywF7hmH" role="3cqZAp">
+                              <node concept="2c44tf" id="65DJywF7hmF" role="3clFbG">
+                                <node concept="3VsKOn" id="65DJywF7ht1" role="2c44tc">
+                                  <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -15618,10 +15619,11 @@
                         <node concept="30H73N" id="7nPD14NOKPR" role="v9R3O" />
                         <node concept="3NFfHV" id="7nPD14NOKPS" role="1sPUBK">
                           <node concept="3clFbS" id="7nPD14NOKPT" role="2VODD2">
-                            <node concept="3clFbF" id="7nPD14NOKPU" role="3cqZAp">
-                              <node concept="2OqwBi" id="7nPD14NOKPV" role="3clFbG">
-                                <node concept="1iwH7S" id="7nPD14NOKPW" role="2Oq$k0" />
-                                <node concept="1KSxxD" id="7nPD14NOKPX" role="2OqNvi" />
+                            <node concept="3clFbF" id="65DJywF17Nr" role="3cqZAp">
+                              <node concept="2c44tf" id="65DJywF17Nn" role="3clFbG">
+                                <node concept="3uibUv" id="65DJywF18Ca" role="2c44tc">
+                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -16898,7 +16900,7 @@
     <node concept="j$LIH" id="1sCZQVfjxvr" role="jxRDz">
       <node concept="1lLz0L" id="1sCZQVfjxvs" role="1lHHLF">
         <property role="1lMjX7" value="error" />
-        <property role="1lLB17" value="unsupported variable class" />
+        <property role="1lLB17" value="invalid usage" />
       </node>
     </node>
   </node>
@@ -17099,6 +17101,12 @@
       <property role="TrG5h" value="variable" />
       <node concept="3Tqbb2" id="49L2l3F7WoE" role="1N15GL">
         <ref role="ehGHo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+      </node>
+    </node>
+    <node concept="j$LIH" id="65DJywF5lSX" role="jxRDz">
+      <node concept="1lLz0L" id="65DJywF5lT9" role="1lHHLF">
+        <property role="1lMjX7" value="error" />
+        <property role="1lLB17" value="invalid usage" />
       </node>
     </node>
   </node>
