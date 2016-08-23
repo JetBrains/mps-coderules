@@ -7,3 +7,4 @@
 .mps/workspace.xml
 .idea/workspace.xml
 out
+build/*
