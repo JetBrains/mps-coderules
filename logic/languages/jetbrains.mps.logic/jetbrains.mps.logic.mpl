@@ -16,9 +16,7 @@
       <external-templates />
       <dependencies>
         <dependency reexport="false">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)</dependency>
-        <dependency reexport="false">3805ea9c-bac0-45ea-9157-1b3b93c1c0cc(jetbrains.mps.jchr#456733934405380506)</dependency>
         <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-        <dependency reexport="false">894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)</dependency>
         <dependency reexport="false">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
       </dependencies>
       <usedDevKits>
@@ -49,9 +47,6 @@
         <module reference="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" version="0" />
         <module reference="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" version="0" />
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
-        <module reference="894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)" version="0" />
-        <module reference="3805ea9c-bac0-45ea-9157-1b3b93c1c0cc(jetbrains.mps.jchr#456733934405380506)" version="0" />
-        <module reference="b984ee52-f34d-4b6d-8812-866c1d3eae31(jetbrains.mps.jchr.runtime)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
@@ -59,7 +54,6 @@
         <module reference="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" version="0" />
         <module reference="85f64970-3326-4ea7-966e-1ac904686424(jetbrains.mps.logic#6626732309150416985)" version="0" />
         <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
-        <module reference="760652ad-c01a-495e-9510-ed51532f617b(jetbrains.mps.logic.jchr)" version="0" />
         <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
         <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
       </dependencyVersions>
@@ -93,7 +87,6 @@
     <dependency reexport="false">e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="false">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
-    <dependency reexport="false">894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)</dependency>
     <dependency reexport="false">35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)</dependency>
     <dependency reexport="false">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
   </dependencies>
@@ -138,8 +131,6 @@
     <module reference="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" version="0" />
     <module reference="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
-    <module reference="894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)" version="0" />
-    <module reference="b984ee52-f34d-4b6d-8812-866c1d3eae31(jetbrains.mps.jchr.runtime)" version="0" />
     <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
@@ -147,7 +138,6 @@
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
     <module reference="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" version="0" />
     <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
-    <module reference="760652ad-c01a-495e-9510-ed51532f617b(jetbrains.mps.logic.jchr)" version="0" />
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
   </dependencyVersions>
@@ -156,7 +146,6 @@
   </runtime>
   <extendedLanguages>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
-    <extendedLanguage>894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)</extendedLanguage>
   </extendedLanguages>
 </language>
 

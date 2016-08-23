@@ -8,7 +8,6 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)</dependency>
-    <dependency reexport="false">121937e8-9efc-4551-81fc-50dc0319618e(jetbrains.mps.lang.typesystem2.samplechecker)</dependency>
     <dependency reexport="false">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">9c4ae21e-62e0-4110-95b7-191b357a42d2(jetbrains.mps.lang.typesystem2.samplechecker.handler.util)</dependency>
@@ -46,17 +45,14 @@
     <module reference="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
     <module reference="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" version="0" />
-    <module reference="b984ee52-f34d-4b6d-8812-866c1d3eae31(jetbrains.mps.jchr.runtime)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
     <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
     <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.lang.typesystem2.sampleLang)" version="0" />
-    <module reference="121937e8-9efc-4551-81fc-50dc0319618e(jetbrains.mps.lang.typesystem2.samplechecker)" version="0" />
     <module reference="9c4ae21e-62e0-4110-95b7-191b357a42d2(jetbrains.mps.lang.typesystem2.samplechecker.handler.util)" version="0" />
     <module reference="fec0c515-766a-48ae-a50a-45de7ad21bd9(jetbrains.mps.lang.typesystem2.samplechecker.test)" version="0" />
     <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
-    <module reference="760652ad-c01a-495e-9510-ed51532f617b(jetbrains.mps.logic.jchr)" version="0" />
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
   </dependencyVersions>

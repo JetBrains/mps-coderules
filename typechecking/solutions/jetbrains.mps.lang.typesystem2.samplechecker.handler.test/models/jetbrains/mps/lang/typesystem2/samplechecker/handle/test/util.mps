@@ -7,16 +7,12 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="4r4j" ref="r:94702bd0-f623-44e8-af0a-f2730f7d2518(jetbrains.mps.lang.typesystem2.samplechecker.handle.util)" />
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
-    <import index="95zw" ref="r:f3ff7852-b9dd-4760-b213-a8a031c77d0e(jetbrains.mps.logic.jchr.predicate)" />
-    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
-    <import index="stgg" ref="r:fcdb37a4-4602-4a05-8d91-e439430734b8(jetbrains.mps.logic.jchr.program)" />
     <import index="mqqo" ref="r:82cec6f7-ddec-440c-961c-1c598267be42(jetbrains.mps.logic.test.unification)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
-    <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
+    <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -71,9 +67,12 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
@@ -254,14 +253,20 @@
           <node concept="3cpWs8" id="7t5VLKGALTt" role="3cqZAp">
             <node concept="3cpWsn" id="7t5VLKGALTu" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="7t5VLKGALTv" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7dtr" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7jXZ" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
               <node concept="2ShNRf" id="7t5VLKGALTw" role="33vP2m">
-                <node concept="1pGfFk" id="7t5VLKGALTx" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="7t5VLKGALTy" role="37wK5m">
+                <node concept="1pGfFk" id="6yEjedm7cy2" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7cQw" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7hYU" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
@@ -279,7 +284,7 @@
                 </node>
                 <node concept="2ShNRf" id="7t5VLKGALTC" role="37wK5m">
                   <node concept="1pGfFk" id="7t5VLKGALTD" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
                     <node concept="37vLTw" id="7t5VLKGALTE" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALSU" resolve="left" />
                     </node>
@@ -287,7 +292,7 @@
                 </node>
                 <node concept="2ShNRf" id="7t5VLKGALTF" role="37wK5m">
                   <node concept="1pGfFk" id="7t5VLKGALTG" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
                     <node concept="37vLTw" id="7t5VLKGALTH" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALTe" resolve="right" />
                     </node>
@@ -308,7 +313,7 @@
                 <ref role="3cqZAo" node="7t5VLKGALTu" resolve="var" />
               </node>
               <node concept="liA8E" id="4JRKVCv8a6c" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -500,44 +505,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="7t5VLKGALUx" role="3cqZAp" />
-          <node concept="3cpWs8" id="7t5VLKGALUy" role="3cqZAp">
-            <node concept="3cpWsn" id="7t5VLKGALUz" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7RDT" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7RDU" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="7t5VLKGALU$" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7RDV" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7RDW" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="7t5VLKGALU_" role="33vP2m">
-                <node concept="1pGfFk" id="7t5VLKGALUA" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="7t5VLKGALUB" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7RDX" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7RDY" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7RDZ" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7RE0" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="7t5VLKGALUC" role="3cqZAp">
-            <node concept="3cpWsn" id="7t5VLKGALUD" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7RE1" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7RE2" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="7t5VLKGALUE" role="1tU5fm" />
-              <node concept="2YIFZM" id="7t5VLKGALUF" role="33vP2m">
+              <node concept="10P_77" id="6yEjedm7RE3" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7RE4" role="33vP2m">
                 <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="7t5VLKGALUG" role="37wK5m">
-                  <ref role="3cqZAo" node="7t5VLKGALUz" resolve="var" />
+                <node concept="37vLTw" id="6yEjedm7RE5" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7RDU" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="7t5VLKGALUH" role="37wK5m">
-                  <node concept="1pGfFk" id="7t5VLKGALUI" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="7t5VLKGALUJ" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7RE6" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7RE7" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7RE8" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALTU" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="7t5VLKGALUK" role="37wK5m">
-                  <node concept="1pGfFk" id="7t5VLKGALUL" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="7t5VLKGALUM" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7RE9" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7REa" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7REb" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALUe" resolve="right" />
                     </node>
                   </node>
@@ -548,16 +559,16 @@
           <node concept="3clFbH" id="7t5VLKGALUN" role="3cqZAp" />
           <node concept="3vwNmj" id="7t5VLKGALUO" role="3cqZAp">
             <node concept="37vLTw" id="7t5VLKGALUP" role="3vwVQn">
-              <ref role="3cqZAo" node="7t5VLKGALUD" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7RE2" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="7t5VLKGALUQ" role="3cqZAp">
             <node concept="2OqwBi" id="7t5VLKGALUR" role="3vwVQn">
               <node concept="37vLTw" id="7t5VLKGALUS" role="2Oq$k0">
-                <ref role="3cqZAo" node="7t5VLKGALUz" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7RDU" resolve="var" />
               </node>
               <node concept="liA8E" id="7t5VLKGALUT" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -612,7 +623,7 @@
                   <ref role="3cqZAo" node="7t5VLKGALUW" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_vXp" role="37wK5m">
-                  <ref role="3cqZAo" node="7t5VLKGALUz" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7RDU" resolve="var" />
                 </node>
               </node>
             </node>
@@ -735,44 +746,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="7t5VLKGALVO" role="3cqZAp" />
-          <node concept="3cpWs8" id="7t5VLKGALVP" role="3cqZAp">
-            <node concept="3cpWsn" id="7t5VLKGALVQ" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7ovE" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7ovF" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="7t5VLKGALVR" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7ovG" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7ovH" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="7t5VLKGALVS" role="33vP2m">
-                <node concept="1pGfFk" id="7t5VLKGALVT" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="7t5VLKGALVU" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7ovI" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7ovJ" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7ovK" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7ovL" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="7t5VLKGALVV" role="3cqZAp">
-            <node concept="3cpWsn" id="7t5VLKGALVW" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7ovM" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7ovN" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="7t5VLKGALVX" role="1tU5fm" />
-              <node concept="2YIFZM" id="7t5VLKGALVY" role="33vP2m">
-                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+              <node concept="10P_77" id="6yEjedm7ovO" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7ovP" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="7t5VLKGALVZ" role="37wK5m">
-                  <ref role="3cqZAo" node="7t5VLKGALVQ" resolve="var" />
+                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+                <node concept="37vLTw" id="6yEjedm7ovQ" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7ovF" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="7t5VLKGALW0" role="37wK5m">
-                  <node concept="1pGfFk" id="7t5VLKGALW1" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="7t5VLKGALW2" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7ovR" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7ovS" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7ovT" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALVi" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="7t5VLKGALW3" role="37wK5m">
-                  <node concept="1pGfFk" id="7t5VLKGALW4" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="7t5VLKGALW5" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7ovU" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7ovV" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7ovW" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALVA" resolve="right" />
                     </node>
                   </node>
@@ -783,16 +800,16 @@
           <node concept="3clFbH" id="7t5VLKGALW6" role="3cqZAp" />
           <node concept="3vwNmj" id="7t5VLKGALW7" role="3cqZAp">
             <node concept="37vLTw" id="7t5VLKGALW8" role="3vwVQn">
-              <ref role="3cqZAo" node="7t5VLKGALVW" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7ovN" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="7t5VLKGALW9" role="3cqZAp">
             <node concept="2OqwBi" id="7t5VLKGALWa" role="3vwVQn">
               <node concept="37vLTw" id="7t5VLKGALWb" role="2Oq$k0">
-                <ref role="3cqZAo" node="7t5VLKGALVQ" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7ovF" resolve="var" />
               </node>
               <node concept="liA8E" id="7t5VLKGALWc" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -847,7 +864,7 @@
                   <ref role="3cqZAo" node="7t5VLKGALWf" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_wcg" role="37wK5m">
-                  <ref role="3cqZAo" node="7t5VLKGALVQ" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7ovF" resolve="var" />
                 </node>
               </node>
             </node>
@@ -998,44 +1015,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="7t5VLKGALXh" role="3cqZAp" />
-          <node concept="3cpWs8" id="7t5VLKGALXi" role="3cqZAp">
-            <node concept="3cpWsn" id="7t5VLKGALXj" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7saE" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7saF" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="7t5VLKGALXk" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7saG" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7saH" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="7t5VLKGALXl" role="33vP2m">
-                <node concept="1pGfFk" id="7t5VLKGALXm" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="7t5VLKGALXn" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7saI" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7saJ" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7saK" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7saL" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="7t5VLKGALXo" role="3cqZAp">
-            <node concept="3cpWsn" id="7t5VLKGALXp" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7saM" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7saN" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="7t5VLKGALXq" role="1tU5fm" />
-              <node concept="2YIFZM" id="7t5VLKGALXr" role="33vP2m">
-                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+              <node concept="10P_77" id="6yEjedm7saO" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7saP" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="7t5VLKGALXs" role="37wK5m">
-                  <ref role="3cqZAo" node="7t5VLKGALXj" resolve="var" />
+                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+                <node concept="37vLTw" id="6yEjedm7saQ" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7saF" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="7t5VLKGALXt" role="37wK5m">
-                  <node concept="1pGfFk" id="7t5VLKGALXu" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="7t5VLKGALXv" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7saR" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7saS" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7saT" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALW_" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="7t5VLKGALXw" role="37wK5m">
-                  <node concept="1pGfFk" id="7t5VLKGALXx" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="7t5VLKGALXy" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7saU" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7saV" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7saW" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALWT" resolve="right" />
                     </node>
                   </node>
@@ -1046,16 +1069,16 @@
           <node concept="3clFbH" id="7t5VLKGALXz" role="3cqZAp" />
           <node concept="3vwNmj" id="7t5VLKGALX$" role="3cqZAp">
             <node concept="37vLTw" id="7t5VLKGALX_" role="3vwVQn">
-              <ref role="3cqZAo" node="7t5VLKGALXp" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7saN" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="7t5VLKGALXA" role="3cqZAp">
             <node concept="2OqwBi" id="7t5VLKGALXB" role="3vwVQn">
               <node concept="37vLTw" id="7t5VLKGALXC" role="2Oq$k0">
-                <ref role="3cqZAo" node="7t5VLKGALXj" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7saF" resolve="var" />
               </node>
               <node concept="liA8E" id="7t5VLKGALXD" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -1110,7 +1133,7 @@
                   <ref role="3cqZAo" node="7t5VLKGALXG" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_w_m" role="37wK5m">
-                  <ref role="3cqZAo" node="7t5VLKGALXj" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7saF" resolve="var" />
                 </node>
               </node>
             </node>
@@ -1402,44 +1425,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="7t5VLKGALZl" role="3cqZAp" />
-          <node concept="3cpWs8" id="7t5VLKGALZm" role="3cqZAp">
-            <node concept="3cpWsn" id="7t5VLKGALZn" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7vK3" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7vK4" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="7t5VLKGALZo" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7vK5" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7vK6" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="7t5VLKGALZp" role="33vP2m">
-                <node concept="1pGfFk" id="7t5VLKGALZq" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="7t5VLKGALZr" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7vK7" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7vK8" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7vK9" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7vKa" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="7t5VLKGALZs" role="3cqZAp">
-            <node concept="3cpWsn" id="7t5VLKGALZt" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7vKb" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7vKc" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="7t5VLKGALZu" role="1tU5fm" />
-              <node concept="2YIFZM" id="7t5VLKGALZv" role="33vP2m">
-                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+              <node concept="10P_77" id="6yEjedm7vKd" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7vKe" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="7t5VLKGALZw" role="37wK5m">
-                  <ref role="3cqZAo" node="7t5VLKGALZn" resolve="var" />
+                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+                <node concept="37vLTw" id="6yEjedm7vKf" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7vK4" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="7t5VLKGALZx" role="37wK5m">
-                  <node concept="1pGfFk" id="7t5VLKGALZy" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="7t5VLKGALZz" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7vKg" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7vKh" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7vKi" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALY2" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="7t5VLKGALZ$" role="37wK5m">
-                  <node concept="1pGfFk" id="7t5VLKGALZ_" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="7t5VLKGALZA" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7vKj" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7vKk" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7vKl" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALYz" resolve="right" />
                     </node>
                   </node>
@@ -1447,19 +1476,19 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="7t5VLKGALZB" role="3cqZAp" />
+          <node concept="3clFbH" id="6yEjedm7vHC" role="3cqZAp" />
           <node concept="3vwNmj" id="7t5VLKGALZC" role="3cqZAp">
             <node concept="37vLTw" id="7t5VLKGALZD" role="3vwVQn">
-              <ref role="3cqZAo" node="7t5VLKGALZt" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7vKc" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="7t5VLKGALZE" role="3cqZAp">
             <node concept="2OqwBi" id="7t5VLKGALZF" role="3vwVQn">
               <node concept="37vLTw" id="7t5VLKGALZG" role="2Oq$k0">
-                <ref role="3cqZAo" node="7t5VLKGALZn" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7vK4" resolve="var" />
               </node>
               <node concept="liA8E" id="7t5VLKGALZH" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -1528,7 +1557,7 @@
                   <ref role="3cqZAo" node="7t5VLKGALZK" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_wPy" role="37wK5m">
-                  <ref role="3cqZAo" node="7t5VLKGALZn" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7vK4" resolve="var" />
                 </node>
               </node>
             </node>
@@ -1899,44 +1928,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="3hfdu5cNgsb" role="3cqZAp" />
-          <node concept="3cpWs8" id="3hfdu5cNgsc" role="3cqZAp">
-            <node concept="3cpWsn" id="3hfdu5cNgsd" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7zh9" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7zha" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="3hfdu5cNgse" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7zhb" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7zhc" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="3hfdu5cNgsf" role="33vP2m">
-                <node concept="1pGfFk" id="3hfdu5cNgsg" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="3hfdu5cNgsh" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7zhd" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7zhe" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7zhf" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7zhg" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="3hfdu5cNgsi" role="3cqZAp">
-            <node concept="3cpWsn" id="3hfdu5cNgsj" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7zhh" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7zhi" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="3hfdu5cNgsk" role="1tU5fm" />
-              <node concept="2YIFZM" id="3hfdu5cNgsl" role="33vP2m">
-                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+              <node concept="10P_77" id="6yEjedm7zhj" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7zhk" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="3hfdu5cNgsm" role="37wK5m">
-                  <ref role="3cqZAo" node="3hfdu5cNgsd" resolve="var" />
+                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+                <node concept="37vLTw" id="6yEjedm7zhl" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7zha" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="3hfdu5cNgsn" role="37wK5m">
-                  <node concept="1pGfFk" id="3hfdu5cNgso" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3hfdu5cNgsp" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7zhm" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7zhn" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7zho" role="37wK5m">
                       <ref role="3cqZAo" node="3hfdu5cNgqA" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="3hfdu5cNgsq" role="37wK5m">
-                  <node concept="1pGfFk" id="3hfdu5cNgsr" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3hfdu5cNgss" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7zhp" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7zhq" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7zhr" role="37wK5m">
                       <ref role="3cqZAo" node="3hfdu5cNgre" resolve="right" />
                     </node>
                   </node>
@@ -1947,16 +1982,16 @@
           <node concept="3clFbH" id="3hfdu5cNgst" role="3cqZAp" />
           <node concept="3vwNmj" id="3hfdu5cNgsu" role="3cqZAp">
             <node concept="37vLTw" id="3hfdu5cNgsv" role="3vwVQn">
-              <ref role="3cqZAo" node="3hfdu5cNgsj" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7zhi" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="3hfdu5cNgsw" role="3cqZAp">
             <node concept="2OqwBi" id="3hfdu5cNgsx" role="3vwVQn">
               <node concept="37vLTw" id="3hfdu5cNgsy" role="2Oq$k0">
-                <ref role="3cqZAo" node="3hfdu5cNgsd" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7zha" resolve="var" />
               </node>
               <node concept="liA8E" id="3hfdu5cNgsz" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -2005,7 +2040,7 @@
                   <ref role="3cqZAo" node="3hfdu5cNgsA" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_x7H" role="37wK5m">
-                  <ref role="3cqZAo" node="3hfdu5cNgsd" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7zha" resolve="var" />
                 </node>
               </node>
             </node>
@@ -2433,44 +2468,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="3KV3FXk2oK1" role="3cqZAp" />
-          <node concept="3cpWs8" id="3KV3FXk2oK2" role="3cqZAp">
-            <node concept="3cpWsn" id="3KV3FXk2oK3" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7AXW" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7AXX" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="3KV3FXk2oK4" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7AXY" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7AXZ" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="3KV3FXk2oK5" role="33vP2m">
-                <node concept="1pGfFk" id="3KV3FXk2oK6" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="3KV3FXk2oK7" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7AY0" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7AY1" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7AY2" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7AY3" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="3KV3FXk2oK8" role="3cqZAp">
-            <node concept="3cpWsn" id="3KV3FXk2oK9" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7AY4" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7AY5" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="3KV3FXk2oKa" role="1tU5fm" />
-              <node concept="2YIFZM" id="3KV3FXk2oKb" role="33vP2m">
-                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+              <node concept="10P_77" id="6yEjedm7AY6" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7AY7" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="3KV3FXk2oKc" role="37wK5m">
-                  <ref role="3cqZAo" node="3KV3FXk2oK3" resolve="var" />
+                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+                <node concept="37vLTw" id="6yEjedm7AY8" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7AXX" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="3KV3FXk2oKd" role="37wK5m">
-                  <node concept="1pGfFk" id="3KV3FXk2oKe" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3KV3FXk2oKf" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7AY9" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7AYa" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7AYb" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk2oHN" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="3KV3FXk2oKg" role="37wK5m">
-                  <node concept="1pGfFk" id="3KV3FXk2oKh" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3KV3FXk2oKi" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7AYc" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7AYd" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7AYe" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk2oJ1" resolve="right" />
                     </node>
                   </node>
@@ -2481,16 +2522,16 @@
           <node concept="3clFbH" id="3KV3FXk2oKj" role="3cqZAp" />
           <node concept="3vwNmj" id="3KV3FXk2oKk" role="3cqZAp">
             <node concept="37vLTw" id="3KV3FXk2oKl" role="3vwVQn">
-              <ref role="3cqZAo" node="3KV3FXk2oK9" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7AY5" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="3KV3FXk2oKm" role="3cqZAp">
             <node concept="2OqwBi" id="3KV3FXk2oKn" role="3vwVQn">
               <node concept="37vLTw" id="3KV3FXk2oKo" role="2Oq$k0">
-                <ref role="3cqZAo" node="3KV3FXk2oK3" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7AXX" resolve="var" />
               </node>
               <node concept="liA8E" id="3KV3FXk2oKp" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -2539,7 +2580,7 @@
                   <ref role="3cqZAo" node="3KV3FXk2oKs" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_xqX" role="37wK5m">
-                  <ref role="3cqZAo" node="3KV3FXk2oK3" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7AXX" resolve="var" />
                 </node>
               </node>
             </node>
@@ -2888,44 +2929,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="3hfdu5cN_Mq" role="3cqZAp" />
-          <node concept="3cpWs8" id="3hfdu5cN_Mr" role="3cqZAp">
-            <node concept="3cpWsn" id="3hfdu5cN_Ms" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7Eju" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7Ejv" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="3hfdu5cN_Mt" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7Ejw" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7Ejx" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="3hfdu5cN_Mu" role="33vP2m">
-                <node concept="1pGfFk" id="3hfdu5cN_Mv" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="3hfdu5cN_Mw" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7Ejy" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7Ejz" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7Ej$" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7Ej_" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="3hfdu5cN_Mx" role="3cqZAp">
-            <node concept="3cpWsn" id="3hfdu5cN_My" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7EjA" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7EjB" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="3hfdu5cN_Mz" role="1tU5fm" />
-              <node concept="2YIFZM" id="3hfdu5cN_M$" role="33vP2m">
-                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+              <node concept="10P_77" id="6yEjedm7EjC" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7EjD" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="3hfdu5cN_M_" role="37wK5m">
-                  <ref role="3cqZAo" node="3hfdu5cN_Ms" resolve="var" />
+                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+                <node concept="37vLTw" id="6yEjedm7EjE" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7Ejv" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="3hfdu5cN_MA" role="37wK5m">
-                  <node concept="1pGfFk" id="3hfdu5cN_MB" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3hfdu5cN_MC" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7EjF" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7EjG" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7EjH" role="37wK5m">
                       <ref role="3cqZAo" node="3hfdu5cN_JW" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="3hfdu5cN_MD" role="37wK5m">
-                  <node concept="1pGfFk" id="3hfdu5cN_ME" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3hfdu5cN_MF" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7EjI" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7EjJ" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7EjK" role="37wK5m">
                       <ref role="3cqZAo" node="3hfdu5cN_KU" resolve="right" />
                     </node>
                   </node>
@@ -2936,16 +2983,16 @@
           <node concept="3clFbH" id="3hfdu5cN_MG" role="3cqZAp" />
           <node concept="3vwNmj" id="3hfdu5cN_MH" role="3cqZAp">
             <node concept="37vLTw" id="3hfdu5cN_MI" role="3vwVQn">
-              <ref role="3cqZAo" node="3hfdu5cN_My" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7EjB" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="3hfdu5cN_MJ" role="3cqZAp">
             <node concept="2OqwBi" id="3hfdu5cN_MK" role="3vwVQn">
               <node concept="37vLTw" id="3hfdu5cN_ML" role="2Oq$k0">
-                <ref role="3cqZAo" node="3hfdu5cN_Ms" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7Ejv" resolve="var" />
               </node>
               <node concept="liA8E" id="3hfdu5cN_MM" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -2994,7 +3041,7 @@
                   <ref role="3cqZAo" node="3hfdu5cN_MP" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_xIq" role="37wK5m">
-                  <ref role="3cqZAo" node="3hfdu5cN_Ms" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7Ejv" resolve="var" />
                 </node>
               </node>
             </node>
@@ -3347,44 +3394,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="3KV3FXjXcr1" role="3cqZAp" />
-          <node concept="3cpWs8" id="3KV3FXjXcr2" role="3cqZAp">
-            <node concept="3cpWsn" id="3KV3FXjXcr3" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7HxM" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7HxN" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="3KV3FXjXcr4" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7HxO" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7HxP" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="3KV3FXjXcr5" role="33vP2m">
-                <node concept="1pGfFk" id="3KV3FXjXcr6" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="3KV3FXjXcr7" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7HxQ" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7HxR" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7HxS" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7HxT" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="3KV3FXjXcr8" role="3cqZAp">
-            <node concept="3cpWsn" id="3KV3FXjXcr9" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7HxU" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7HxV" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="3KV3FXjXcra" role="1tU5fm" />
-              <node concept="2YIFZM" id="3KV3FXjXcrb" role="33vP2m">
-                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+              <node concept="10P_77" id="6yEjedm7HxW" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7HxX" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="3KV3FXjXcrc" role="37wK5m">
-                  <ref role="3cqZAo" node="3KV3FXjXcr3" resolve="var" />
+                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+                <node concept="37vLTw" id="6yEjedm7HxY" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7HxN" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="3KV3FXjXcrd" role="37wK5m">
-                  <node concept="1pGfFk" id="3KV3FXjXcre" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3KV3FXjXcrf" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7HxZ" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7Hy0" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7Hy1" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXjXcpc" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="3KV3FXjXcrg" role="37wK5m">
-                  <node concept="1pGfFk" id="3KV3FXjXcrh" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3KV3FXjXcri" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7Hy2" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7Hy3" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7Hy4" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXjXcq7" resolve="right" />
                     </node>
                   </node>
@@ -3395,16 +3448,16 @@
           <node concept="3clFbH" id="3KV3FXjXcrj" role="3cqZAp" />
           <node concept="3vwNmj" id="3KV3FXjXcrk" role="3cqZAp">
             <node concept="37vLTw" id="3KV3FXjXcrl" role="3vwVQn">
-              <ref role="3cqZAo" node="3KV3FXjXcr9" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7HxV" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="3KV3FXjXcrm" role="3cqZAp">
             <node concept="2OqwBi" id="3KV3FXjXcrn" role="3vwVQn">
               <node concept="37vLTw" id="3KV3FXjXcro" role="2Oq$k0">
-                <ref role="3cqZAo" node="3KV3FXjXcr3" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7HxN" resolve="var" />
               </node>
               <node concept="liA8E" id="3KV3FXjXcrp" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -3473,7 +3526,7 @@
                   <ref role="3cqZAo" node="3KV3FXjXcrs" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_y14" role="37wK5m">
-                  <ref role="3cqZAo" node="3KV3FXjXcr3" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7HxN" resolve="var" />
                 </node>
               </node>
             </node>
@@ -3702,44 +3755,50 @@
             </node>
           </node>
           <node concept="3clFbH" id="3KV3FXk18P3" role="3cqZAp" />
-          <node concept="3cpWs8" id="3KV3FXk18P4" role="3cqZAp">
-            <node concept="3cpWsn" id="3KV3FXk18P5" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7KDB" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7KDC" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="3KV3FXk18P6" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7KDD" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7KDE" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="3KV3FXk18P7" role="33vP2m">
-                <node concept="1pGfFk" id="3KV3FXk18P8" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="3KV3FXk18P9" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7KDF" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7KDG" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7KDH" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7KDI" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="3KV3FXk18Pa" role="3cqZAp">
-            <node concept="3cpWsn" id="3KV3FXk18Pb" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7KDJ" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7KDK" role="3cpWs9">
               <property role="TrG5h" value="success" />
-              <node concept="10P_77" id="3KV3FXk18Pc" role="1tU5fm" />
-              <node concept="2YIFZM" id="3KV3FXk18Pd" role="33vP2m">
-                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+              <node concept="10P_77" id="6yEjedm7KDL" role="1tU5fm" />
+              <node concept="2YIFZM" id="6yEjedm7KDM" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:5H6hZahmloU" resolve="findLub" />
-                <node concept="37vLTw" id="3KV3FXk18Pe" role="37wK5m">
-                  <ref role="3cqZAo" node="3KV3FXk18P5" resolve="var" />
+                <ref role="1Pybhc" to="4r4j:5H6hZahmlon" resolve="LubSolver" />
+                <node concept="37vLTw" id="6yEjedm7KDN" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7KDC" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="3KV3FXk18Pf" role="37wK5m">
-                  <node concept="1pGfFk" id="3KV3FXk18Pg" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3KV3FXk18Ph" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7KDO" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7KDP" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7KDQ" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk18Nd" resolve="left" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="3KV3FXk18Pi" role="37wK5m">
-                  <node concept="1pGfFk" id="3KV3FXk18Pj" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3KV3FXk18Pk" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7KDR" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7KDS" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7KDT" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk18O5" resolve="right" />
                     </node>
                   </node>
@@ -3750,16 +3809,16 @@
           <node concept="3clFbH" id="3KV3FXk18Pl" role="3cqZAp" />
           <node concept="3vwNmj" id="3KV3FXk18Pm" role="3cqZAp">
             <node concept="37vLTw" id="3KV3FXk18Pn" role="3vwVQn">
-              <ref role="3cqZAo" node="3KV3FXk18Pb" resolve="success" />
+              <ref role="3cqZAo" node="6yEjedm7KDK" resolve="success" />
             </node>
           </node>
           <node concept="3vwNmj" id="3KV3FXk18Po" role="3cqZAp">
             <node concept="2OqwBi" id="3KV3FXk18Pp" role="3vwVQn">
               <node concept="37vLTw" id="3KV3FXk18Pq" role="2Oq$k0">
-                <ref role="3cqZAo" node="3KV3FXk18P5" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7KDC" resolve="var" />
               </node>
               <node concept="liA8E" id="3KV3FXk18Pr" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -3814,7 +3873,7 @@
                   <ref role="3cqZAo" node="3KV3FXk18Pu" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_yjb" role="37wK5m">
-                  <ref role="3cqZAo" node="3KV3FXk18P5" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7KDC" resolve="var" />
                 </node>
               </node>
             </node>
@@ -4072,17 +4131,23 @@
             </node>
           </node>
           <node concept="3clFbH" id="3KV3FXk2bpW" role="3cqZAp" />
-          <node concept="3cpWs8" id="3KV3FXk2bpX" role="3cqZAp">
-            <node concept="3cpWsn" id="3KV3FXk2bpY" role="3cpWs9">
+          <node concept="3cpWs8" id="6yEjedm7VYv" role="3cqZAp">
+            <node concept="3cpWsn" id="6yEjedm7VYw" role="3cpWs9">
               <property role="TrG5h" value="var" />
-              <node concept="3uibUv" id="3KV3FXk2bpZ" role="1tU5fm">
-                <ref role="3uigEE" to="oy3s:4U_yxogAknZ" resolve="AtomLogical" />
+              <node concept="3uibUv" id="6yEjedm7VYx" role="1tU5fm">
+                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <node concept="3uibUv" id="6yEjedm7VYy" role="11_B2D">
+                  <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                </node>
               </node>
-              <node concept="2ShNRf" id="3KV3FXk2bq0" role="33vP2m">
-                <node concept="1pGfFk" id="3KV3FXk2bq1" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:6SkxsM$96Z2" resolve="AtomLogical" />
-                  <node concept="Xl_RD" id="3KV3FXk2bq2" role="37wK5m">
+              <node concept="2ShNRf" id="6yEjedm7VYz" role="33vP2m">
+                <node concept="1pGfFk" id="6yEjedm7VY$" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <node concept="Xl_RD" id="6yEjedm7VY_" role="37wK5m">
                     <property role="Xl_RC" value="var" />
+                  </node>
+                  <node concept="3uibUv" id="6yEjedm7VYA" role="1pMfVU">
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
                   </node>
                 </node>
               </node>
@@ -4095,21 +4160,21 @@
               <node concept="2YIFZM" id="3KV3FXk2bPE" role="33vP2m">
                 <ref role="37wK5l" to="4r4j:3KV3FXk1fGe" resolve="findSubtypingPath" />
                 <ref role="1Pybhc" to="4r4j:3KV3FXk1fjd" resolve="SubtypePathSolver" />
-                <node concept="37vLTw" id="3KV3FXk2bPF" role="37wK5m">
-                  <ref role="3cqZAo" node="3KV3FXk2bpY" resolve="var" />
+                <node concept="37vLTw" id="6yEjedm7XtE" role="37wK5m">
+                  <ref role="3cqZAo" node="6yEjedm7VYw" resolve="var" />
                 </node>
-                <node concept="2ShNRf" id="3KV3FXk2bPG" role="37wK5m">
-                  <node concept="1pGfFk" id="3KV3FXk2bPH" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3KV3FXk2bPI" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7XtF" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7XtG" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7Xvm" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk2boN" resolve="fullPaths" />
                     </node>
                   </node>
                 </node>
-                <node concept="2ShNRf" id="3KV3FXk2bPJ" role="37wK5m">
-                  <node concept="1pGfFk" id="3KV3FXk2bPK" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:6SkxsM$2Uu7" resolve="AtomLogical" />
-                    <node concept="37vLTw" id="3KV3FXk2bPL" role="37wK5m">
+                <node concept="2ShNRf" id="6yEjedm7XtI" role="37wK5m">
+                  <node concept="1pGfFk" id="6yEjedm7XtJ" role="2ShVmc">
+                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <node concept="37vLTw" id="6yEjedm7XAR" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk2bpF" resolve="startFrom" />
                     </node>
                   </node>
@@ -4126,10 +4191,10 @@
           <node concept="3vwNmj" id="3KV3FXk2bqh" role="3cqZAp">
             <node concept="2OqwBi" id="3KV3FXk2bqi" role="3vwVQn">
               <node concept="37vLTw" id="3KV3FXk2bqj" role="2Oq$k0">
-                <ref role="3cqZAo" node="3KV3FXk2bpY" resolve="var" />
+                <ref role="3cqZAo" node="6yEjedm7VYw" resolve="var" />
               </node>
               <node concept="liA8E" id="3KV3FXk2bqk" role="2OqNvi">
-                <ref role="37wK5l" to="95zw:3HJTsBmC6RD" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -4220,7 +4285,7 @@
                   <ref role="3cqZAo" node="3KV3FXk2bqn" resolve="expect" />
                 </node>
                 <node concept="37vLTw" id="5jPBdK_R$Z" role="37wK5m">
-                  <ref role="3cqZAo" node="3KV3FXk2bpY" resolve="var" />
+                  <ref role="3cqZAo" node="6yEjedm7VYw" resolve="var" />
                 </node>
               </node>
             </node>
