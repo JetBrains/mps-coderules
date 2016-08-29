@@ -15,6 +15,7 @@
     <language slang="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" version="2" />
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
+    <language slang="l:0fda14cc-a416-4c81-869a-2175d8b3325d:jetbrains.mps.lang.typesystem2.sampleLang" version="0" />
     <language slang="l:0b80a2e8-f9f1-47b3-823f-56eb115bca42:jetbrains.mps.typechecking.annotation" version="0" />
   </languageVersions>
   <dependencyVersions>
