@@ -80,7 +80,7 @@ class MemLogical<T> : SolverLogical<T> {
 
     override fun isBound(): Boolean = find()._value != null
 
-    override fun isWildcard(): Boolean = TODO()
+    override fun isWildcard(): Boolean = metaLogical.isWildcard
 
     override fun metaLogical(): MetaLogical<T> = metaLogical
 
@@ -192,18 +192,4 @@ class MemLogical<T> : SolverLogical<T> {
 
 }
 
-class DefaultMetaLogical<V> (val name: String) : MetaLogical<V>(name, Object::class.java as Class<V>) {
-
-    override fun name(): String? {
-        throw UnsupportedOperationException()
-    }
-
-    override fun isWildcard(): Boolean {
-        throw UnsupportedOperationException()
-    }
-
-    override fun type(): Class<V>? {
-        throw UnsupportedOperationException()
-    }
-
-}
+class DefaultMetaLogical<V> (val name: String) : MetaLogical<V>(name, Object::class.java as Class<V>) {}
