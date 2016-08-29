@@ -20,6 +20,7 @@
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1628,8 +1629,8 @@
               <node concept="1pGfFk" id="fHk0tWutdI" role="2ShVmc">
                 <ref role="37wK5l" to="mqqo:6yEjedm5WI7" resolve="TestingUnificationSolver" />
                 <node concept="2ShNRf" id="6yEjedm5KqE" role="37wK5m">
-                  <node concept="HV5vD" id="6yEjedm5KE4" role="2ShVmc">
-                    <ref role="HV5vE" to="45ys:3F6vMxqplHq" resolve="LogicalUnification.Default" />
+                  <node concept="HV5vD" id="4xTpErjR48y" role="2ShVmc">
+                    <ref role="HV5vE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="2tcGHBEiyPi" role="37wK5m">
@@ -5390,8 +5391,8 @@
               <node concept="1pGfFk" id="6yEjedm8fRJ" role="2ShVmc">
                 <ref role="37wK5l" to="mqqo:6yEjedm5WI7" resolve="TestingUnificationSolver" />
                 <node concept="2ShNRf" id="6yEjedm8fRK" role="37wK5m">
-                  <node concept="HV5vD" id="6yEjedm8fRL" role="2ShVmc">
-                    <ref role="HV5vE" to="45ys:3F6vMxqplHq" resolve="LogicalUnification.Default" />
+                  <node concept="HV5vD" id="4xTpErjR4MA" role="2ShVmc">
+                    <ref role="HV5vE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="6yEjedm8fRM" role="37wK5m">

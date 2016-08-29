@@ -12,6 +12,7 @@
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1217,8 +1218,8 @@
                     <node concept="1pGfFk" id="7ISVfSIWk9" role="2ShVmc">
                       <ref role="37wK5l" to="omn0:5p8T3QHGKJ7" resolve="UnificationSolver" />
                       <node concept="2ShNRf" id="3F6vMxqobJ8" role="37wK5m">
-                        <node concept="HV5vD" id="3F6vMxqpo6z" role="2ShVmc">
-                          <ref role="HV5vE" to="45ys:3F6vMxqplHq" resolve="LogicalUnification.Default" />
+                        <node concept="HV5vD" id="4xTpErjR3Gk" role="2ShVmc">
+                          <ref role="HV5vE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
                         </node>
                       </node>
                       <node concept="Xjq3P" id="2tcGHBEecLr" role="37wK5m" />
