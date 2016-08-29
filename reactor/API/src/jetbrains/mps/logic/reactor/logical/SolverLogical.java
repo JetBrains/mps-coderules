@@ -28,7 +28,7 @@ public interface SolverLogical<T> extends Logical<T> {
    */
   void setValue(T newValue);
 
-  static interface ValueReconciler<T> {
+  interface ValueReconciler<T> {
 
     void reconcile(T valueA, T valueB);
 

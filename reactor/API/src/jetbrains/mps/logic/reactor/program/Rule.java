@@ -22,11 +22,10 @@ public abstract class Rule {
 
   public abstract Iterable<AndItem> all();
 
-  public static   enum Kind {
+  public enum Kind {
     SIMPLIFICATION(),
     PROPAGATION(),
-    SIMPAGATION();
-
+    SIMPAGATION()
   }
 
 }

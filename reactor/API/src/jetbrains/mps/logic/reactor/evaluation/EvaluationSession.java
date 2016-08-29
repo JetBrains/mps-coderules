@@ -58,7 +58,7 @@ public abstract class EvaluationSession {
     ourBackend = null;
   }
 
-  protected static interface Backend {
+  protected interface Backend {
 
     EvaluationSession current();
 
