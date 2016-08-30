@@ -3903,7 +3903,7 @@
                                 </node>
                                 <node concept="1BlSNk" id="3g$8GQCjqI4" role="2OqNvi">
                                   <ref role="1BmUXE" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                                  <ref role="1Bn3mz" to="tpck:4uZwTti3__2" />
+                                  <ref role="1Bn3mz" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
                                 </node>
                               </node>
                             </node>
@@ -4899,9 +4899,6 @@
         <node concept="3clFbF" id="1hX44vNnpfY" role="3cqZAp">
           <node concept="1rXfSq" id="1hX44vNnpfX" role="3clFbG">
             <ref role="37wK5l" node="1hX44vNnpfT" resolve="collectTypes" />
-            <node concept="37vLTw" id="1hX44vNnpfW" role="37wK5m">
-              <ref role="3cqZAo" node="1hX44vNlSPE" resolve="typeManifest" />
-            </node>
           </node>
         </node>
       </node>
@@ -4934,12 +4931,6 @@
       <property role="TrG5h" value="collectTypes" />
       <node concept="3Tm6S6" id="1hX44vNnpfU" role="1B3o_S" />
       <node concept="3cqZAl" id="1hX44vNnpfV" role="3clF45" />
-      <node concept="37vLTG" id="1hX44vNnpfO" role="3clF46">
-        <property role="TrG5h" value="typeManifest" />
-        <node concept="3uibUv" id="1hX44vNnpfP" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractTypeManifest" />
-        </node>
-      </node>
       <node concept="3clFbS" id="1hX44vNnpfH" role="3clF47">
         <node concept="3SKdUt" id="1hX44vNnqZn" role="3cqZAp">
           <node concept="3SKdUq" id="1hX44vNnqZp" role="3SKWNk">
@@ -4948,8 +4939,8 @@
         </node>
         <node concept="3clFbF" id="1hX44vNnpfI" role="3cqZAp">
           <node concept="2OqwBi" id="1hX44vNnpfJ" role="3clFbG">
-            <node concept="37vLTw" id="1hX44vNnpfQ" role="2Oq$k0">
-              <ref role="3cqZAo" node="1hX44vNnpfO" resolve="typeManifest" />
+            <node concept="37vLTw" id="159_25Mmht6" role="2Oq$k0">
+              <ref role="3cqZAo" node="1hX44vNniCj" resolve="typeManifest" />
             </node>
             <node concept="liA8E" id="1hX44vNnpfL" role="2OqNvi">
               <ref role="37wK5l" to="psr6:1pPth$m7IW6" resolve="collectTypeTables" />

@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
@@ -195,6 +196,12 @@
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1402,44 +1409,65 @@
           <node concept="3eNFk2" id="1ggxSI7qGPJ" role="3eNLev">
             <node concept="3clFbS" id="1ggxSI7qGPO" role="3eOfB_">
               <node concept="3clFbJ" id="1ggxSI7xGoB" role="3cqZAp">
-                <node concept="3clFbS" id="1ggxSI7xGoD" role="3clFbx">
-                  <node concept="YS8fn" id="1ggxSI7xGvh" role="3cqZAp">
-                    <node concept="2ShNRf" id="1ggxSI7xGwU" role="YScLw">
-                      <node concept="1pGfFk" id="1ggxSI7xGLe" role="2ShVmc">
-                        <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-                        <node concept="Xl_RD" id="1ggxSI7xGM3" role="37wK5m">
-                          <property role="Xl_RC" value="no java expression solver" />
+                <node concept="3y3z36" id="4psy6tqsyWz" role="3clFbw">
+                  <node concept="37vLTw" id="3F6vMxqoq$n" role="3uHU7B">
+                    <ref role="3cqZAo" node="3F6vMxqo1jQ" resolve="myJavaExpressionSolver" />
+                  </node>
+                  <node concept="10Nm6u" id="1ggxSI7xGtI" role="3uHU7w" />
+                </node>
+                <node concept="3clFbS" id="4psy6tqsyWC" role="3clFbx">
+                  <node concept="3clFbF" id="1ggxSI7qGPP" role="3cqZAp">
+                    <node concept="2OqwBi" id="1ggxSI7qGPQ" role="3clFbG">
+                      <node concept="Xjq3P" id="1ggxSI7qGPR" role="2Oq$k0" />
+                      <node concept="liA8E" id="1ggxSI7qGPS" role="2OqNvi">
+                        <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
+                        <node concept="10QFUN" id="1ggxSI7qGPT" role="37wK5m">
+                          <node concept="3uibUv" id="1ggxSI7qGPU" role="10QFUM">
+                            <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                          </node>
+                          <node concept="37vLTw" id="1ggxSI7qGPV" role="10QFUP">
+                            <ref role="3cqZAo" node="3F6vMxqo28U" resolve="symbol" />
+                          </node>
+                        </node>
+                        <node concept="2ShNRf" id="1ggxSI7qGPW" role="37wK5m">
+                          <node concept="1pGfFk" id="1ggxSI7xcbQ" role="2ShVmc">
+                            <ref role="37wK5l" to="omn0:6MYr6Jx1c2W" resolve="JavaSolver" />
+                            <node concept="37vLTw" id="3F6vMxqosAS" role="37wK5m">
+                              <ref role="3cqZAo" node="3F6vMxqo1jQ" resolve="myJavaExpressionSolver" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFbH" id="4psy6tqsz7l" role="3cqZAp" />
                 </node>
-                <node concept="3clFbC" id="1ggxSI7xGsE" role="3clFbw">
-                  <node concept="10Nm6u" id="1ggxSI7xGtI" role="3uHU7w" />
-                  <node concept="37vLTw" id="3F6vMxqoq$n" role="3uHU7B">
-                    <ref role="3cqZAo" node="3F6vMxqo1jQ" resolve="myJavaExpressionSolver" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbH" id="1ggxSI7xGPS" role="3cqZAp" />
-              <node concept="3clFbF" id="1ggxSI7qGPP" role="3cqZAp">
-                <node concept="2OqwBi" id="1ggxSI7qGPQ" role="3clFbG">
-                  <node concept="Xjq3P" id="1ggxSI7qGPR" role="2Oq$k0" />
-                  <node concept="liA8E" id="1ggxSI7qGPS" role="2OqNvi">
-                    <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
-                    <node concept="10QFUN" id="1ggxSI7qGPT" role="37wK5m">
-                      <node concept="3uibUv" id="1ggxSI7qGPU" role="10QFUM">
-                        <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
-                      </node>
-                      <node concept="37vLTw" id="1ggxSI7qGPV" role="10QFUP">
-                        <ref role="3cqZAo" node="3F6vMxqo28U" resolve="symbol" />
+                <node concept="9aQIb" id="4psy6tqsyWA" role="9aQIa">
+                  <node concept="3clFbS" id="1ggxSI7xGoD" role="9aQI4">
+                    <node concept="34ab3g" id="4psy6tqszIR" role="3cqZAp">
+                      <property role="35gtTG" value="warn" />
+                      <node concept="Xl_RD" id="4psy6tqszKo" role="34bqiv">
+                        <property role="Xl_RC" value="no java expression solver" />
                       </node>
                     </node>
-                    <node concept="2ShNRf" id="1ggxSI7qGPW" role="37wK5m">
-                      <node concept="1pGfFk" id="1ggxSI7xcbQ" role="2ShVmc">
-                        <ref role="37wK5l" to="omn0:6MYr6Jx1c2W" resolve="JavaSolver" />
-                        <node concept="37vLTw" id="3F6vMxqosAS" role="37wK5m">
-                          <ref role="3cqZAo" node="3F6vMxqo1jQ" resolve="myJavaExpressionSolver" />
+                    <node concept="3clFbF" id="4psy6tqszLW" role="3cqZAp">
+                      <node concept="2OqwBi" id="4psy6tqszLX" role="3clFbG">
+                        <node concept="Xjq3P" id="4psy6tqszLY" role="2Oq$k0" />
+                        <node concept="liA8E" id="4psy6tqszLZ" role="2OqNvi">
+                          <ref role="37wK5l" to="qrld:6Kcfpq7B2LV" resolve="registerSolver" />
+                          <node concept="10QFUN" id="4psy6tqszM0" role="37wK5m">
+                            <node concept="3uibUv" id="4psy6tqszM1" role="10QFUM">
+                              <ref role="3uigEE" to="rchb:5uFPQ7B$$3f" resolve="PredicateSymbol" />
+                            </node>
+                            <node concept="37vLTw" id="4psy6tqszM2" role="10QFUP">
+                              <ref role="3cqZAo" node="3F6vMxqo28U" resolve="symbol" />
+                            </node>
+                          </node>
+                          <node concept="2ShNRf" id="4psy6tqszM3" role="37wK5m">
+                            <node concept="HV5vD" id="4psy6tqs$qr" role="2ShVmc">
+                              <ref role="HV5vE" to="omn0:4psy6tqstt4" resolve="NoSolver" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
