@@ -172,7 +172,7 @@
   <node concept="3dkpOd" id="5A$IBX$aTJv">
     <property role="TrG5h" value="Node_ShowAs" />
     <property role="2ZfUl0" value="true" />
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <ref role="2ZfgGC" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
     <node concept="1jPt1T" id="5A$IBX$aTJw" role="2ZfVej">
       <node concept="3clFbS" id="5A$IBX$aTJx" role="2VODD2">
@@ -269,9 +269,9 @@
     </node>
   </node>
   <node concept="3dkpOd" id="6dMt3c55sJy">
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="TrG5h" value="Node_splice" />
-    <ref role="2ZfgGC" to="5j4j:5lJXKARS0" resolve="Atom" />
+    <ref role="2ZfgGC" to="5j4j:5lJXKARS0" resolve="TreeForm" />
     <node concept="2S6ZIM" id="6dMt3c55sJz" role="2ZfVej">
       <node concept="3clFbS" id="6dMt3c55sJ$" role="2VODD2">
         <node concept="3clFbF" id="6dMt3c55vc4" role="3cqZAp">
@@ -367,7 +367,7 @@
     </node>
   </node>
   <node concept="2S6QgY" id="1_iD3HA2fYt">
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="TrG5h" value="Node_unsplice" />
     <ref role="2ZfgGC" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="2S6ZIM" id="1_iD3HA2fYu" role="2ZfVej">

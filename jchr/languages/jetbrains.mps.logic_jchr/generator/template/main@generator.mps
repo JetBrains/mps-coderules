@@ -504,7 +504,7 @@
                 <node concept="2Rf3mk" id="35Lj3TiRM7X" role="2OqNvi">
                   <node concept="1xMEDy" id="35Lj3TiRM7Z" role="1xVPHs">
                     <node concept="chp4Y" id="35Lj3TiRMkw" role="ri$Ld">
-                      <ref role="cht4Q" to="5j4j:6$jH9oLmUCq" resolve="AtomExpression" />
+                      <ref role="cht4Q" to="5j4j:6$jH9oLmUCq" resolve="TreeFormExpression" />
                     </node>
                   </node>
                   <node concept="hTh3S" id="35Lj3TiRMJO" role="1xVPHs">
@@ -590,11 +590,11 @@
     </node>
     <node concept="2rT7sh" id="35Lj3TiRCeh" role="2rTMjI">
       <property role="TrG5h" value="Ast_Method" />
-      <ref role="2rTdP9" to="5j4j:6$jH9oLmUCq" resolve="AtomExpression" />
+      <ref role="2rTdP9" to="5j4j:6$jH9oLmUCq" resolve="TreeFormExpression" />
       <ref role="2rZz_L" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
     </node>
     <node concept="3aamgX" id="1pt0VTMwlBi" role="3acgRq">
-      <ref role="30HIoZ" to="5j4j:6$jH9oLmUCq" resolve="AtomExpression" />
+      <ref role="30HIoZ" to="5j4j:6$jH9oLmUCq" resolve="TreeFormExpression" />
       <node concept="30G5F_" id="6yEjedms0FZ" role="30HLyM">
         <node concept="3clFbS" id="6yEjedms0G0" role="2VODD2">
           <node concept="3clFbF" id="6yEjedms0G6" role="3cqZAp">
@@ -701,7 +701,7 @@
     </node>
     <node concept="3aamgX" id="4lNgnaL7Fky" role="3acgRq">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="5j4j:5lJXKARS0" resolve="Atom" />
+      <ref role="30HIoZ" to="5j4j:5lJXKARS0" resolve="TreeForm" />
       <node concept="30G5F_" id="4lNgnaL7FI9" role="30HLyM">
         <node concept="3clFbS" id="4lNgnaL7FIa" role="2VODD2">
           <node concept="3clFbF" id="4lNgnaL7FJf" role="3cqZAp">
@@ -722,7 +722,7 @@
       <node concept="gft3U" id="4lNgnaL7G96" role="1lVwrX">
         <node concept="10Nm6u" id="4lNgnaL7G97" role="gfFT$">
           <node concept="1sPUBX" id="4lNgnaL7G98" role="lGtFl">
-            <ref role="v9R2y" to="ouxx:677NV56thjr" resolve="Expression_logical2atom" />
+            <ref role="v9R2y" to="ouxx:677NV56thjr" resolve="Expression_logical2treeform" />
             <node concept="30H73N" id="7FFmDVALefy" role="v9R3O" />
             <node concept="3NFfHV" id="4lNgnaL7G99" role="1sPUBK">
               <node concept="3clFbS" id="4lNgnaL7G9a" role="2VODD2">

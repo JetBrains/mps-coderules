@@ -72,7 +72,7 @@
     </language>
   </registry>
   <node concept="1TIwiD" id="6$jH9oLmUCq">
-    <property role="TrG5h" value="AtomExpression" />
+    <property role="TrG5h" value="TreeFormExpression" />
     <property role="EcuMT" value="7571593955706120730" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="6$jH9oLmVNm" role="1TKVEi">
@@ -80,14 +80,14 @@
       <property role="20kJfa" value="root" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7571593955706125526" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYC_">
     <property role="TrG5h" value="Compound" />
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="EcuMT" value="7571593955706137125" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
     <node concept="1TJgyi" id="6dP_abdQoiG" role="1TKVEl">
       <property role="TrG5h" value="kind" />
       <property role="IQ2nx" value="7166797808989209772" />
@@ -107,7 +107,7 @@
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="role" />
     <property role="EcuMT" value="7571593955706137189" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
     <node concept="PrWs8" id="6$jH9oLmYEr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -122,7 +122,7 @@
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="7571593955706137319" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYI0">
@@ -135,14 +135,14 @@
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="7571593955706137672" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYJ_">
     <property role="TrG5h" value="Value" />
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="EcuMT" value="7571593955706137573" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
     <node concept="1TJgyi" id="6$jH9oLmYKA" role="1TKVEl">
       <property role="TrG5h" value="value" />
       <property role="IQ2nx" value="7571593955706137638" />
@@ -151,7 +151,7 @@
   </node>
   <node concept="1TIwiD" id="6$jH9oLnyB1">
     <property role="TrG5h" value="Symbol" />
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="EcuMT" value="7571593955706284481" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6$jH9oLnyBN" role="PzmwI">
@@ -161,7 +161,7 @@
   <node concept="AxPO7" id="6dP_abdQnLY">
     <property role="TrG5h" value="NodeKind" />
     <property role="3lZH7k" value="derive_from_presentation" />
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="1dOf$WH0KX6" role="M5hS2">
       <property role="1uS6qo" value="inherit" />
@@ -204,19 +204,19 @@
     </node>
   </node>
   <node concept="1TIwiD" id="5lJXKARS0">
-    <property role="TrG5h" value="Atom" />
+    <property role="TrG5h" value="TreeForm" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="EcuMT" value="1503029989441024" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2q_78a8W4yS">
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="TrG5h" value="Wildcard" />
     <property role="34LRSv" value="_" />
     <property role="EcuMT" value="2784663291567294648" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
   </node>
   <node concept="1TIwiD" id="7E86$tKskWj">
     <property role="TrG5h" value="LogicalValue" />
@@ -319,7 +319,7 @@
   </node>
   <node concept="1TIwiD" id="dfChU1zo4B">
     <property role="TrG5h" value="Splice" />
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="34LRSv" value="Node Expression" />
     <property role="EcuMT" value="238586457668550951" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
@@ -333,7 +333,7 @@
     <node concept="M6xJ_" id="dfChU1zo4C" role="lGtFl">
       <property role="Hh88m" value="splice" />
       <node concept="trNpa" id="dfChU1zo4E" role="EQaZv">
-        <ref role="trN6q" node="5lJXKARS0" resolve="Atom" />
+        <ref role="trN6q" node="5lJXKARS0" resolve="TreeForm" />
       </node>
       <node concept="tn0Fv" id="dfChU1zo4G" role="HhnKV">
         <property role="tnX3d" value="false" />
@@ -341,16 +341,16 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1OShD0HAY6y">
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <property role="TrG5h" value="List" />
     <property role="EcuMT" value="2105510410850132386" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="Atom" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
     <node concept="1TJgyj" id="1OShD0HAZ38" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="2105510410850136264" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="Atom" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
     </node>
   </node>
   <node concept="PlHQZ" id="75vUFrS_9Sg">

@@ -269,7 +269,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="3qvzBqWDzqQ">
-    <property role="3GE5qa" value="atom" />
+    <property role="3GE5qa" value="treeform" />
     <ref role="1M2myG" to="5j4j:6$jH9oLmYJ_" resolve="Value" />
     <node concept="EnEH3" id="3qvzBqWDzrE" role="1MhHOB">
       <ref role="EomxK" to="5j4j:6$jH9oLmYKA" resolve="value" />
@@ -464,7 +464,7 @@
     <property role="3GE5qa" value="logical" />
     <ref role="1M2myG" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
     <node concept="1N5Pfh" id="7E86$tK_SGg" role="1Mr941">
-      <ref role="1N5Vy1" to="5j4j:7E86$tK_PaH" />
+      <ref role="1N5Vy1" to="5j4j:7E86$tK_PaH" resolve="declaration" />
       <node concept="13QW63" id="7E86$tK_SKn" role="1N6uqs">
         <node concept="3clFbS" id="7E86$tK_SKp" role="2VODD2">
           <node concept="3clFbH" id="7E86$tKA3v8" role="3cqZAp" />
