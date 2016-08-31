@@ -15,7 +15,7 @@
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
-    <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
+    <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -328,7 +328,7 @@
               <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="7nPD14NOHH4" role="37wK5m">
                 <node concept="1pGfFk" id="7nPD14NOHH5" role="2ShVmc">
-                  <ref role="37wK5l" to="45ys:7nPD14NON$Y" resolve="MetaLogical" />
+                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
                   <node concept="3VsKOn" id="2Dg5bSg3QiY" role="37wK5m">
                     <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
                   </node>
@@ -343,7 +343,7 @@
             <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2ShNRf" id="2Dg5bSg3RdY" role="37wK5m">
               <node concept="1pGfFk" id="2Dg5bSg3RdZ" role="2ShVmc">
-                <ref role="37wK5l" to="45ys:7nPD14NON$Y" resolve="MetaLogical" />
+                <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
                 <node concept="3VsKOn" id="2Dg5bSg3Rjh" role="37wK5m">
                   <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
@@ -907,7 +907,7 @@
             <node concept="3cpWsn" id="1mP5b6jOPFT" role="3cpWs9">
               <property role="TrG5h" value="lv" />
               <node concept="3uibUv" id="dfChU1kjs$" role="1tU5fm">
-                <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
+                <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
                 <node concept="raruj" id="dfChU1koS6" role="lGtFl" />
                 <node concept="29HgVG" id="1sCZQVfbz8D" role="lGtFl">
                   <node concept="3NFfHV" id="1sCZQVfbz8E" role="3NFExx">
@@ -938,7 +938,7 @@
             <node concept="3cpWsn" id="7HUwyZb1KbI" role="3cpWs9">
               <property role="TrG5h" value="lv" />
               <node concept="3uibUv" id="7HUwyZb1KbJ" role="1tU5fm">
-                <ref role="3uigEE" to="45ys:7HUwyZaNIC5" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
                 <node concept="raruj" id="7HUwyZb1KbK" role="lGtFl" />
                 <node concept="29HgVG" id="7HUwyZb1KbL" role="lGtFl">
                   <node concept="3NFfHV" id="7HUwyZb1KbM" role="3NFExx">
@@ -979,7 +979,7 @@
             <node concept="3cpWsn" id="677NV56tBWz" role="3cpWs9">
               <property role="TrG5h" value="mlp" />
               <node concept="3uibUv" id="7HUwyZb7bp_" role="1tU5fm">
-                <ref role="3uigEE" to="45ys:7HUwyZaNIC5" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
               </node>
             </node>
           </node>
@@ -1028,7 +1028,7 @@
                   <property role="TrG5h" value="dummy" />
                   <node concept="2DMOqp" id="7HUwyZb7b4f" role="1YbcFS">
                     <node concept="3uibUv" id="7HUwyZb7b4g" role="2DMOqq">
-                      <ref role="3uigEE" to="45ys:7HUwyZaNIC5" resolve="MultiMetaLogical" />
+                      <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
                     </node>
                   </node>
                 </node>
@@ -1051,7 +1051,7 @@
             <node concept="3cpWsn" id="677NV56tAlm" role="3cpWs9">
               <property role="TrG5h" value="logical" />
               <node concept="3uibUv" id="7HUwyZb7bYW" role="1tU5fm">
-                <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
+                <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
               </node>
             </node>
           </node>
@@ -1095,7 +1095,7 @@
                   <property role="TrG5h" value="dummy" />
                   <node concept="2DMOqp" id="7HUwyZb7bxR" role="1YbcFS">
                     <node concept="3uibUv" id="7HUwyZb7bxS" role="2DMOqq">
-                      <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
+                      <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
                     </node>
                   </node>
                 </node>
@@ -1136,7 +1136,7 @@
                   <property role="TrG5h" value="dummy" />
                   <node concept="2DMOqp" id="514BAS_YAHp" role="1YbcFS">
                     <node concept="3uibUv" id="3mz2_dYrgHu" role="2DMOqq">
-                      <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
+                      <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
                     </node>
                   </node>
                 </node>
@@ -1152,7 +1152,7 @@
             <node concept="3cpWsn" id="514BAS_YBDv" role="3cpWs9">
               <property role="TrG5h" value="logical" />
               <node concept="3uibUv" id="3mz2_dYuqQi" role="1tU5fm">
-                <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
+                <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
               </node>
             </node>
           </node>
@@ -1281,7 +1281,7 @@
             <node concept="3cpWsn" id="6dMt3c5appH" role="3cpWs9">
               <property role="TrG5h" value="multiMetaLogical" />
               <node concept="3uibUv" id="7HUwyZaNQoy" role="1tU5fm">
-                <ref role="3uigEE" to="45ys:7HUwyZaNIC5" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
               </node>
             </node>
           </node>
@@ -1343,7 +1343,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="7HUwyZaNQGE" role="2OqNvi">
-                <ref role="37wK5l" to="45ys:7HUwyZaNHY_" resolve="logicalAt" />
+                <ref role="37wK5l" to="bj13:~MultiMetaLogical.logicalAt(int):jetbrains.mps.logic.reactor.logical.MetaLogical" resolve="logicalAt" />
                 <node concept="3cmrfG" id="7HUwyZaNQHA" role="37wK5m">
                   <property role="3cmrfH" value="0" />
                   <node concept="29HgVG" id="7HUwyZaNQHB" role="lGtFl">
@@ -1392,7 +1392,7 @@
             <node concept="3cpWsn" id="6dMt3c5aqjp" role="3cpWs9">
               <property role="TrG5h" value="metaLogical" />
               <node concept="3uibUv" id="7HUwyZaNHmx" role="1tU5fm">
-                <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
+                <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
               </node>
             </node>
           </node>

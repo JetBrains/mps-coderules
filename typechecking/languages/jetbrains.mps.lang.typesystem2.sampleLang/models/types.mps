@@ -20,7 +20,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="4r4j" ref="r:94702bd0-f623-44e8-af0a-f2730f7d2518(jetbrains.mps.lang.typesystem2.samplechecker.handle.util)" />
-    <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
+    <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="7ub6" ref="r:b533b427-da69-49d8-9c93-4ea32433b66e(jetbrains.mps.lang.typesystem2.generation)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
@@ -4334,7 +4334,7 @@
                   <node concept="1eOMI4" id="3jXBvmTFgtH" role="2Oq$k0">
                     <node concept="10QFUN" id="3jXBvmTFgtI" role="1eOMHV">
                       <node concept="3uibUv" id="3jXBvmTFgtJ" role="10QFUM">
-                        <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
+                        <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
                       </node>
                       <node concept="3A9UF8" id="3jXBvmTFgtK" role="10QFUP">
                         <node concept="a7P8L" id="3jXBvmTFgtL" role="3A9W3M">
@@ -4344,14 +4344,14 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3jXBvmTFgtM" role="2OqNvi">
-                    <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
+                    <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="3jXBvmTFgtN" role="3uHU7B">
                   <node concept="1eOMI4" id="3jXBvmTFgtO" role="2Oq$k0">
                     <node concept="10QFUN" id="3jXBvmTFgtP" role="1eOMHV">
                       <node concept="3uibUv" id="3jXBvmTFgtQ" role="10QFUM">
-                        <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
+                        <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
                       </node>
                       <node concept="3A9UF8" id="3jXBvmTFgtR" role="10QFUP">
                         <node concept="a7P8L" id="3jXBvmTFgtS" role="3A9W3M">
@@ -4361,7 +4361,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3jXBvmTFgtT" role="2OqNvi">
-                    <ref role="37wK5l" to="45ys:dfChU1eNVy" resolve="findRoot" />
+                    <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
                   </node>
                 </node>
               </node>

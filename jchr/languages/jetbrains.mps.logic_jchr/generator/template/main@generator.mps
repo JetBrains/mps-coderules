@@ -23,7 +23,7 @@
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
-    <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
+    <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
   </imports>
   <registry>
@@ -674,7 +674,7 @@
               <ref role="37wK5l" to="yg8f:7HUwyZb7chj" resolve="asTreeForm" />
               <node concept="2ShNRf" id="7nPD14NOHH4" role="37wK5m">
                 <node concept="1pGfFk" id="7nPD14NOHH5" role="2ShVmc">
-                  <ref role="37wK5l" to="45ys:7nPD14NON$Y" resolve="MetaLogical" />
+                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
                   <node concept="3VsKOn" id="2Dg5bSg3QiY" role="37wK5m">
                     <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
                   </node>
@@ -689,7 +689,7 @@
             <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2ShNRf" id="2Dg5bSg3RdY" role="37wK5m">
               <node concept="1pGfFk" id="2Dg5bSg3RdZ" role="2ShVmc">
-                <ref role="37wK5l" to="45ys:7nPD14NON$Y" resolve="MetaLogical" />
+                <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
                 <node concept="3VsKOn" id="2Dg5bSg3Rjh" role="37wK5m">
                   <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>

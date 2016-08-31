@@ -15,7 +15,7 @@
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
+    <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="3o3z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.collect(MPS.Core/)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
@@ -714,7 +714,7 @@
               <node concept="3cpWsn" id="7nkyKX7nlpb" role="3cpWs9">
                 <property role="TrG5h" value="rule" />
                 <node concept="3uibUv" id="7nkyKX7nlp9" role="1tU5fm">
-                  <ref role="3uigEE" to="rchb:7eGEHDlc$9y" resolve="Rule" />
+                  <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
                 </node>
                 <node concept="2OqwBi" id="7nkyKX7nlpc" role="33vP2m">
                   <node concept="37vLTw" id="7nkyKX7nlpd" role="2Oq$k0">
@@ -745,7 +745,7 @@
             <node concept="3cpWsn" id="7nkyKX7nl0T" role="TDEfY">
               <property role="TrG5h" value="e" />
               <node concept="3uibUv" id="7nkyKX7nmdZ" role="1tU5fm">
-                <ref role="3uigEE" to="rchb:7Oc59RS$wKP" resolve="InvalidRuleException" />
+                <ref role="3uigEE" to="av0y:~InvalidRuleException" resolve="InvalidRuleException" />
               </node>
             </node>
             <node concept="3clFbS" id="7nkyKX7nl0X" role="TDEfX">
@@ -1733,7 +1733,7 @@
                       <node concept="3cpWsn" id="tIwzd1I3WB" role="3cpWs9">
                         <property role="TrG5h" value="rule" />
                         <node concept="3uibUv" id="tIwzd1I3WC" role="1tU5fm">
-                          <ref role="3uigEE" to="rchb:7eGEHDlc$9y" resolve="Rule" />
+                          <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
                         </node>
                         <node concept="2OqwBi" id="tIwzd1I3WD" role="33vP2m">
                           <node concept="2GrUjf" id="tIwzd1I3WE" role="2Oq$k0">
@@ -1865,7 +1865,7 @@
                     <node concept="3cpWsn" id="tIwzd1I3X5" role="TDEfY">
                       <property role="TrG5h" value="e" />
                       <node concept="3uibUv" id="tIwzd1I3X6" role="1tU5fm">
-                        <ref role="3uigEE" to="rchb:7Oc59RS$wKP" resolve="InvalidRuleException" />
+                        <ref role="3uigEE" to="av0y:~InvalidRuleException" resolve="InvalidRuleException" />
                       </node>
                     </node>
                   </node>

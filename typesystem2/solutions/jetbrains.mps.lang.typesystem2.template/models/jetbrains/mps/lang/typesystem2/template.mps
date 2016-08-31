@@ -18,8 +18,8 @@
     <import index="ouhv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.annotation(JDK/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
-    <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
+    <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
+    <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
@@ -516,7 +516,7 @@
       <node concept="3clFbS" id="1ggxSI7z1S8" role="3clF47" />
       <node concept="3Tm1VV" id="1ggxSI7z1OS" role="1B3o_S" />
       <node concept="3uibUv" id="1ggxSI7z1Pj" role="3clF45">
-        <ref role="3uigEE" to="qrld:6Kcfpq7AYBh" resolve="Queryable" />
+        <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
       </node>
     </node>
     <node concept="2tJIrI" id="4OKkcnfu_xm" role="jymVt" />
@@ -530,11 +530,11 @@
       <property role="TrG5h" value="TYPEOF_SYM" />
       <node concept="3Tm1VV" id="5uFPQ7ClELk" role="1B3o_S" />
       <node concept="3uibUv" id="5uFPQ7CgjLN" role="1tU5fm">
-        <ref role="3uigEE" to="rchb:54i3FxcZHHF" resolve="ConstraintSymbol" />
+        <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
       </node>
       <node concept="2ShNRf" id="5uFPQ7CgjLO" role="33vP2m">
         <node concept="1pGfFk" id="5uFPQ7CgjLP" role="2ShVmc">
-          <ref role="37wK5l" to="rchb:54i3FxcZMv0" resolve="ConstraintSymbol" />
+          <ref role="37wK5l" to="av0y:~ConstraintSymbol.&lt;init&gt;(java.lang.String,int)" resolve="ConstraintSymbol" />
           <node concept="Xl_RD" id="5uFPQ7CgjLQ" role="37wK5m">
             <property role="Xl_RC" value="typeOf" />
           </node>
@@ -560,7 +560,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5uFPQ7CgkmB" role="3clF45">
-        <ref role="3uigEE" to="rchb:6Kcfpq7BfEn" resolve="Constraint" />
+        <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
       </node>
       <node concept="3Tm1VV" id="4OKkcnfu_$j" role="1B3o_S" />
       <node concept="3clFbS" id="4OKkcnfu_$k" role="3clF47">

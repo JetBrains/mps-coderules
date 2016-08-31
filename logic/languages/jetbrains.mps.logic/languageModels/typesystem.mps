@@ -9,7 +9,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
+    <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -212,8 +212,8 @@
     <node concept="3clFbS" id="1mP5b6jNJDk" role="2sgrp5">
       <node concept="3clFbF" id="7HUwyZb13M4" role="3cqZAp">
         <node concept="2c44tf" id="7HUwyZb13M2" role="3clFbG">
-          <node concept="3uibUv" id="7HUwyZb13MN" role="2c44tc">
-            <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
+          <node concept="3uibUv" id="1HG00HGaSgq" role="2c44tc">
+            <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
           </node>
         </node>
       </node>
@@ -253,7 +253,7 @@
                 <property role="TrG5h" value="il" />
                 <node concept="2DMOqp" id="2S_ORi36mSh" role="1YbcFS">
                   <node concept="3uibUv" id="7HUwyZb3e5O" role="2DMOqq">
-                    <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
+                    <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
                   </node>
                 </node>
               </node>
@@ -437,7 +437,7 @@
                     </node>
                     <node concept="2c44tf" id="6MYr6Jy87W1" role="3JuZjQ">
                       <node concept="3uibUv" id="6MYr6Jy87W2" role="2c44tc">
-                        <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
+                        <ref role="3uigEE" to="bj13:1mP5b6jQP$C" resolve="Logical" />
                         <node concept="3uibUv" id="6MYr6Jy87W3" role="11_B2D">
                           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                         </node>
@@ -608,8 +608,8 @@
     <node concept="3clFbS" id="7HUwyZb1IYz" role="2sgrp5">
       <node concept="3clFbF" id="7HUwyZb1IYI" role="3cqZAp">
         <node concept="2c44tf" id="7HUwyZb1IYG" role="3clFbG">
-          <node concept="3uibUv" id="7HUwyZb1IZt" role="2c44tc">
-            <ref role="3uigEE" to="45ys:7HUwyZaNIC5" resolve="MultiMetaLogical" />
+          <node concept="3uibUv" id="1HG00HGaTIh" role="2c44tc">
+            <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
           </node>
         </node>
       </node>

@@ -549,6 +549,27 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="1wCqu1rzjdE" role="3bR37C">
+          <node concept="1BurEX" id="1wCqu1rzjdF" role="1SiIV1">
+            <node concept="55IIr" id="1wCqu1rzjd$" role="1BurEY">
+              <node concept="2Ry0Ak" id="1wCqu1rzjd_" role="iGT6I">
+                <property role="2Ry0Am" value="logic" />
+                <node concept="2Ry0Ak" id="1wCqu1rzjdA" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="1wCqu1rzjdB" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                    <node concept="2Ry0Ak" id="1wCqu1rzjdC" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="1wCqu1rzjdD" role="2Ry0An">
+                        <property role="2Ry0Am" value="memreactor-api-0.1.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="7BVjoXzUx6$" role="3989C9">
@@ -648,12 +669,6 @@
           <node concept="3bR9La" id="7BVjoXzUxWG" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7BVjoXzUxWH" role="3bR37C">
-          <node concept="3bR9La" id="7BVjoXzUxWI" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7BVjoXzUx6U" resolve="jetbrains.mps.lang.typesystem2" />
           </node>
         </node>
         <node concept="1SiIV0" id="7BVjoXzUxWJ" role="3bR37C">
@@ -1465,6 +1480,27 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="1wCqu1rzjjK" role="3bR37C">
+          <node concept="1BurEX" id="1wCqu1rzjjL" role="1SiIV1">
+            <node concept="55IIr" id="1wCqu1rzjjE" role="1BurEY">
+              <node concept="2Ry0Ak" id="1wCqu1rzjjF" role="iGT6I">
+                <property role="2Ry0Am" value="logic" />
+                <node concept="2Ry0Ak" id="1wCqu1rzjjG" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="1wCqu1rzjjH" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                    <node concept="2Ry0Ak" id="1wCqu1rzjjI" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="1wCqu1rzjjJ" role="2Ry0An">
+                        <property role="2Ry0Am" value="memreactor-api-0.1.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="7Ant4WkHLpc" role="3989C9">
@@ -1660,12 +1696,6 @@
           <node concept="3bR9La" id="7Ant4WkHLqd" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7Ant4WkHLqe" role="3bR37C">
-          <node concept="3bR9La" id="7Ant4WkHLqf" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Ant4WkHLpI" resolve="jetbrains.mps.lang.typesystem2" />
           </node>
         </node>
         <node concept="1SiIV0" id="7Ant4WkHLqg" role="3bR37C">
