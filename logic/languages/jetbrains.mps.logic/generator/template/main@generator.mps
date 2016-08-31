@@ -345,7 +345,7 @@
               <node concept="1pGfFk" id="2Dg5bSg3RdZ" role="2ShVmc">
                 <ref role="37wK5l" to="45ys:7nPD14NON$Y" resolve="MetaLogical" />
                 <node concept="3VsKOn" id="2Dg5bSg3Rjh" role="37wK5m">
-                  <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
             </node>
@@ -405,7 +405,7 @@
       <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
       <node concept="gft3U" id="29_L5zQWy8k" role="1lVwrX">
         <node concept="2YIFZM" id="29_L5zQWy8l" role="gfFT$">
-          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="CompositeNode" />
           <ref role="37wK5l" to="ie8e:5JQSuNsxhfn" resolve="create" />
           <node concept="Xl_RD" id="29_L5zQWy8m" role="37wK5m">
             <property role="Xl_RC" value="node" />
@@ -593,7 +593,7 @@
       <ref role="30HIoZ" to="5j4j:6$jH9oLmYEJ" resolve="ChildRole" />
       <node concept="gft3U" id="6UqNvvALIHq" role="1lVwrX">
         <node concept="2YIFZM" id="6UqNvvALIHr" role="gfFT$">
-          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="CompositeNode" />
           <ref role="37wK5l" to="ie8e:5JQSuNsxhfn" resolve="create" />
           <node concept="Xl_RD" id="6UqNvvALIHs" role="37wK5m">
             <property role="Xl_RC" value="name" />
@@ -773,7 +773,7 @@
       <ref role="30HIoZ" to="5j4j:1OShD0HAY6y" resolve="List" />
       <node concept="gft3U" id="6UqNvvALHva" role="1lVwrX">
         <node concept="2YIFZM" id="6UqNvvALHvb" role="gfFT$">
-          <ref role="1Pybhc" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
+          <ref role="1Pybhc" to="ie8e:3OPtF03lco4" resolve="ListNode" />
           <ref role="37wK5l" to="ie8e:1OShD0HS45f" resolve="createList" />
           <node concept="10Nm6u" id="7HUwyZb7cIG" role="37wK5m">
             <node concept="2b32R4" id="7HUwyZb7cIH" role="lGtFl">

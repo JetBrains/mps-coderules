@@ -559,11 +559,11 @@
       <node concept="37vLTG" id="3OPtF02UImY" role="3clF46">
         <property role="TrG5h" value="mapper" />
         <node concept="3uibUv" id="3OPtF02UImZ" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+          <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02UIn0" role="3clF45">
-        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
       </node>
       <node concept="3Tm1VV" id="3OPtF02UIn2" role="1B3o_S" />
       <node concept="3clFbS" id="3OPtF02UIn9" role="3clF47">
@@ -603,7 +603,7 @@
       <node concept="37vLTG" id="dfChU1lVFJ" role="3clF46">
         <property role="TrG5h" value="parent" />
         <node concept="3uibUv" id="dfChU1lVFK" role="1tU5fm">
-          <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+          <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
         </node>
       </node>
       <node concept="3cqZAl" id="dfChU1lVFM" role="3clF45" />
@@ -626,7 +626,7 @@
       <node concept="37vLTG" id="104EUzFOQG9" role="3clF46">
         <property role="TrG5h" value="visitor" />
         <node concept="3uibUv" id="104EUzFOQGa" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
       <node concept="3uibUv" id="104EUzFOQGb" role="3clF45">
@@ -693,7 +693,7 @@
       <property role="TrG5h" value="V" />
     </node>
     <node concept="3uibUv" id="104EUzFNZ6w" role="EKbjA">
-      <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+      <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
     </node>
     <node concept="3clFb_" id="1mP5b6jQ__L" role="jymVt">
       <property role="TrG5h" value="equals" />
@@ -901,7 +901,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1msb0mq99GH">
-    <property role="TrG5h" value="ValueFunc" />
+    <property role="TrG5h" value="ValueNode" />
     <node concept="3Tm1VV" id="1msb0mq99GI" role="1B3o_S" />
     <node concept="2tJIrI" id="5JQSuNsx59n" role="jymVt" />
     <node concept="2YIFZL" id="6cHSm2DiUE1" role="jymVt">
@@ -921,7 +921,7 @@
         <property role="TrG5h" value="terms" />
         <node concept="8X2XB" id="6cHSm2Dj6fi" role="1tU5fm">
           <node concept="3uibUv" id="6cHSm2DiZDH" role="8Xvag">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -990,7 +990,7 @@
         <node concept="3clFbF" id="6cHSm2DiUEa" role="3cqZAp">
           <node concept="2ShNRf" id="6cHSm2DiUEb" role="3clFbG">
             <node concept="1pGfFk" id="6cHSm2DiUEc" role="2ShVmc">
-              <ref role="37wK5l" node="1msb0mq99PP" resolve="ValueFunc" />
+              <ref role="37wK5l" node="1msb0mq99PP" resolve="ValueNode" />
               <node concept="16syzq" id="6cHSm2DiUEd" role="1pMfVU">
                 <ref role="16sUi3" node="6cHSm2DiUE2" resolve="V" />
               </node>
@@ -1013,7 +1013,7 @@
       </node>
       <node concept="3Tm1VV" id="6cHSm2DiUEh" role="1B3o_S" />
       <node concept="3uibUv" id="6cHSm2DiUEi" role="3clF45">
-        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
         <node concept="16syzq" id="6cHSm2DiUEj" role="11_B2D">
           <ref role="16sUi3" node="6cHSm2DiUE2" resolve="V" />
         </node>
@@ -1024,7 +1024,7 @@
       <node concept="3cqZAl" id="1msb0mq99PQ" role="3clF45" />
       <node concept="3clFbS" id="1msb0mq99PS" role="3clF47">
         <node concept="XkiVB" id="1msb0mq9YEk" role="3cqZAp">
-          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Func" />
+          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Node" />
           <node concept="37vLTw" id="1R$Cm9qHaIM" role="37wK5m">
             <ref role="3cqZAo" node="1msb0mq99VR" resolve="symbolPath" />
           </node>
@@ -1047,7 +1047,7 @@
         <property role="TrG5h" value="values" />
         <node concept="10Q1$e" id="5BGv8yzwnHg" role="1tU5fm">
           <node concept="3uibUv" id="6cHSm2DiTyM" role="10Q1$1">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -1102,7 +1102,7 @@
               <node concept="3cpWsn" id="5YIOneOMGa4" role="3cpWs9">
                 <property role="TrG5h" value="ch" />
                 <node concept="3uibUv" id="5YIOneOMGa5" role="1tU5fm">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
                 <node concept="AH0OO" id="5YIOneOMGa6" role="33vP2m">
                   <node concept="37vLTw" id="5YIOneOMGa7" role="AHEQo">
@@ -1223,7 +1223,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="copyRecursively" />
       <node concept="3uibUv" id="1bm7a6EZOQ6" role="3clF45">
-        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
         <node concept="16syzq" id="1bm7a6EZRhu" role="11_B2D">
           <ref role="16sUi3" node="1msb0mq99K4" resolve="V" />
         </node>
@@ -1232,7 +1232,7 @@
       <node concept="3clFbS" id="1bm7a6EXT8i" role="3clF47">
         <node concept="3clFbF" id="1bm7a6EXU3e" role="3cqZAp">
           <node concept="2YIFZM" id="1bm7a6EXU99" role="3clFbG">
-            <ref role="1Pybhc" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="1Pybhc" node="1msb0mq99GH" resolve="ValueNode" />
             <ref role="37wK5l" node="6cHSm2DiUE1" resolve="create" />
             <node concept="1rXfSq" id="1OShD0HF7nU" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qGRoH" resolve="symbol" />
@@ -1254,7 +1254,7 @@
       <node concept="37vLTG" id="3OPtF02TY7L" role="3clF46">
         <property role="TrG5h" value="mapper" />
         <node concept="3uibUv" id="3OPtF02TY7M" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+          <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
         </node>
       </node>
       <node concept="3Tm1VV" id="3OPtF02TY7P" role="1B3o_S" />
@@ -1275,7 +1275,7 @@
           <node concept="3cpWsn" id="4sgxfjnBLNe" role="3cpWs9">
             <property role="TrG5h" value="lastArg" />
             <node concept="3uibUv" id="4sgxfjnBLNf" role="1tU5fm">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
             <node concept="10Nm6u" id="4sgxfjnBLNg" role="33vP2m" />
           </node>
@@ -1287,7 +1287,7 @@
               <node concept="3cpWsn" id="4sgxfjnBLNl" role="3cpWs9">
                 <property role="TrG5h" value="arg" />
                 <node concept="3uibUv" id="4sgxfjnBLNm" role="1tU5fm">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
                 <node concept="AH0OO" id="bUIfhjJNrA" role="33vP2m">
                   <node concept="37vLTw" id="bUIfhjJNZm" role="AHEQo">
@@ -1380,7 +1380,7 @@
             <property role="TrG5h" value="values" />
             <node concept="10Q1$e" id="4sgxfjnBLNT" role="1tU5fm">
               <node concept="3uibUv" id="4sgxfjnBLNU" role="10Q1$1">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
             <node concept="2ShNRf" id="4sgxfjnBLNV" role="33vP2m">
@@ -1394,7 +1394,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="4sgxfjnBLNZ" role="3$_nBY">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
             </node>
@@ -1529,7 +1529,7 @@
         </node>
         <node concept="3clFbF" id="3OPtF02Uiiw" role="3cqZAp">
           <node concept="2YIFZM" id="3OPtF02UiXe" role="3clFbG">
-            <ref role="1Pybhc" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="1Pybhc" node="1msb0mq99GH" resolve="ValueNode" />
             <ref role="37wK5l" node="6cHSm2DiUE1" resolve="create" />
             <node concept="1rXfSq" id="1OShD0HF70Q" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qGRoH" resolve="symbol" />
@@ -1541,7 +1541,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02V_L3" role="3clF45">
-        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
         <node concept="16syzq" id="3OPtF02V_L4" role="11_B2D">
           <ref role="16sUi3" node="1msb0mq99K4" resolve="V" />
         </node>
@@ -1554,7 +1554,7 @@
       <node concept="37vLTG" id="47nvOnTS3tv" role="3clF46">
         <property role="TrG5h" value="visitor" />
         <node concept="3uibUv" id="3JgCwkqhJK9" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02YXD2" role="3clF45">
@@ -1674,7 +1674,7 @@
           <node concept="3cpWsn" id="2q_78a93qsC" role="1Duv9x">
             <property role="TrG5h" value="val" />
             <node concept="3uibUv" id="6cHSm2DjgfN" role="1tU5fm">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
           <node concept="1rXfSq" id="2q_78a93qsE" role="1DdaDG">
@@ -1709,15 +1709,15 @@
       <property role="TrG5h" value="V" />
     </node>
     <node concept="3uibUv" id="1msb0mq9VxT" role="1zkMxy">
-      <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+      <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
     </node>
   </node>
   <node concept="312cEu" id="1msb0mq9ID4">
-    <property role="TrG5h" value="Func" />
+    <property role="TrG5h" value="Node" />
     <property role="1sVAO0" value="true" />
     <node concept="3Tm1VV" id="1msb0mq9ID5" role="1B3o_S" />
     <node concept="3uibUv" id="104EUzGgROM" role="EKbjA">
-      <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+      <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
     </node>
     <node concept="2tJIrI" id="6$jH9oLc2sE" role="jymVt" />
     <node concept="3clFbW" id="1msb0mq9JZ8" role="jymVt">
@@ -1774,7 +1774,7 @@
         <property role="TrG5h" value="arguments" />
         <node concept="10Q1$e" id="1msb0mq9K4Q" role="1tU5fm">
           <node concept="3uibUv" id="3H0z$hTtmtl" role="10Q1$1">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -1794,7 +1794,7 @@
         <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
         <node concept="3qUE_q" id="3H0z$hTtspr" role="11_B2D">
           <node concept="3uibUv" id="3H0z$hTtswN" role="3qUE_r">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -1945,7 +1945,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="copyRecursively" />
       <node concept="3uibUv" id="1bm7a6EZcE2" role="3clF45">
-        <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+        <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
       </node>
       <node concept="3Tm1VV" id="1bm7a6EYD0z" role="1B3o_S" />
       <node concept="3clFbS" id="1bm7a6EYD0A" role="3clF47" />
@@ -1960,11 +1960,11 @@
       <node concept="37vLTG" id="3OPtF02TqPC" role="3clF46">
         <property role="TrG5h" value="mapper" />
         <node concept="3uibUv" id="3OPtF02TqPD" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+          <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02Tu6P" role="3clF45">
-        <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+        <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
       </node>
       <node concept="3Tm1VV" id="3OPtF02TqPG" role="1B3o_S" />
       <node concept="3clFbS" id="3OPtF02TqPP" role="3clF47" />
@@ -2001,7 +2001,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="2QE4RCGnD6S" role="3clF45">
-        <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+        <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
       </node>
       <node concept="2AHcQZ" id="2QE4RCGnDKs" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
@@ -2014,7 +2014,7 @@
       <node concept="37vLTG" id="dfChU1lNtY" role="3clF46">
         <property role="TrG5h" value="parent" />
         <node concept="3uibUv" id="dfChU1lNtZ" role="1tU5fm">
-          <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+          <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
         </node>
       </node>
       <node concept="3cqZAl" id="dfChU1lNu1" role="3clF45" />
@@ -2147,11 +2147,11 @@
           <node concept="3cpWsn" id="1mP5b6jP_If" role="3cpWs9">
             <property role="TrG5h" value="that" />
             <node concept="3uibUv" id="1mP5b6jP_Ig" role="1tU5fm">
-              <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+              <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
             </node>
             <node concept="10QFUN" id="1mP5b6jP_Ih" role="33vP2m">
               <node concept="3uibUv" id="1mP5b6jP_Ii" role="10QFUM">
-                <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+                <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
               </node>
               <node concept="37vLTw" id="1mP5b6jP_Ij" role="10QFUP">
                 <ref role="3cqZAo" node="1mP5b6jP_Ik" resolve="o" />
@@ -2402,7 +2402,7 @@
       <node concept="3Tmbuc" id="1bm7a6EXJmm" role="1B3o_S" />
       <node concept="10Q1$e" id="1bm7a6EXKLY" role="3clF45">
         <node concept="3uibUv" id="3H0z$hTtvcM" role="10Q1$1">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
     </node>
@@ -2433,7 +2433,7 @@
         <node concept="10Oyi0" id="6$jH9oLbMMK" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3H0z$hTtvlF" role="3clF45">
-        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
       </node>
       <node concept="3Tmbuc" id="6$jH9oLbKCq" role="1B3o_S" />
       <node concept="3clFbS" id="6$jH9oLbK0r" role="3clF47">
@@ -2455,7 +2455,7 @@
       <node concept="3Tmbuc" id="bUIfhjJIVQ" role="1B3o_S" />
       <node concept="10Q1$e" id="5JQSuNswjSV" role="1tU5fm">
         <node concept="3uibUv" id="3H0z$hTttJ3" role="10Q1$1">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
     </node>
@@ -2478,10 +2478,10 @@
     </node>
   </node>
   <node concept="312cEu" id="5JQSuNswOXL">
-    <property role="TrG5h" value="StemFunc" />
+    <property role="TrG5h" value="CompositeNode" />
     <node concept="3Tm1VV" id="5JQSuNswOXM" role="1B3o_S" />
     <node concept="3uibUv" id="5JQSuNswOY9" role="1zkMxy">
-      <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+      <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
     </node>
     <node concept="2tJIrI" id="5JQSuNsxgT7" role="jymVt" />
     <node concept="2YIFZL" id="5JQSuNsxhfn" role="jymVt">
@@ -2498,7 +2498,7 @@
         <property role="TrG5h" value="terms" />
         <node concept="8X2XB" id="5JQSuNsxh_S" role="1tU5fm">
           <node concept="3uibUv" id="5JQSuNsxhtQ" role="8Xvag">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -2583,11 +2583,11 @@
           <node concept="3cpWsn" id="1R$Cm9qGVi$" role="3cpWs9">
             <property role="TrG5h" value="br" />
             <node concept="3uibUv" id="1R$Cm9qGVio" role="1tU5fm">
-              <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+              <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
             </node>
             <node concept="2ShNRf" id="1R$Cm9qGVi_" role="33vP2m">
               <node concept="1pGfFk" id="1R$Cm9qGViA" role="2ShVmc">
-                <ref role="37wK5l" node="5JQSuNswP2z" resolve="StemFunc" />
+                <ref role="37wK5l" node="5JQSuNswP2z" resolve="CompositeNode" />
                 <node concept="37vLTw" id="6$jH9oLdIkd" role="37wK5m">
                   <ref role="3cqZAo" node="6$jH9oLdIka" resolve="path" />
                 </node>
@@ -2620,7 +2620,7 @@
           <node concept="3cpWsn" id="1R$Cm9qGVt9" role="1Duv9x">
             <property role="TrG5h" value="ch" />
             <node concept="3uibUv" id="1R$Cm9qGVEy" role="1tU5fm">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
           <node concept="37vLTw" id="1R$Cm9qGWcp" role="1DdaDG">
@@ -2635,7 +2635,7 @@
       </node>
       <node concept="3Tm1VV" id="5JQSuNsxh5a" role="1B3o_S" />
       <node concept="3uibUv" id="5JQSuNsxhdt" role="3clF45">
-        <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+        <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
       </node>
     </node>
     <node concept="2tJIrI" id="5JQSuNsxgYt" role="jymVt" />
@@ -2643,7 +2643,7 @@
       <node concept="3cqZAl" id="5JQSuNswP2$" role="3clF45" />
       <node concept="3clFbS" id="5JQSuNswP2A" role="3clF47">
         <node concept="XkiVB" id="5JQSuNswQer" role="3cqZAp">
-          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Func" />
+          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Node" />
           <node concept="37vLTw" id="1R$Cm9qH7KO" role="37wK5m">
             <ref role="3cqZAo" node="5JQSuNswP3S" resolve="symbolPath" />
           </node>
@@ -2666,7 +2666,7 @@
         <property role="TrG5h" value="terms" />
         <node concept="10Q1$e" id="5JQSuNswQ9p" role="1tU5fm">
           <node concept="3uibUv" id="dfChU1lAUt" role="10Q1$1">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -2680,7 +2680,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="copyRecursively" />
       <node concept="3uibUv" id="1bm7a6EZ0kf" role="3clF45">
-        <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+        <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
       </node>
       <node concept="3Tm1VV" id="1bm7a6EY4Ic" role="1B3o_S" />
       <node concept="3clFbS" id="1bm7a6EY4Ih" role="3clF47">
@@ -2689,7 +2689,7 @@
             <property role="TrG5h" value="copy" />
             <node concept="10Q1$e" id="1bm7a6F2ReC" role="1tU5fm">
               <node concept="3uibUv" id="dfChU1mp8C" role="10Q1$1">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
             <node concept="2ShNRf" id="1bm7a6F2ReN" role="33vP2m">
@@ -2703,7 +2703,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="dfChU1moFh" role="3$_nBY">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
             </node>
@@ -2764,7 +2764,7 @@
         <node concept="3clFbF" id="1bm7a6EY9N8" role="3cqZAp">
           <node concept="2YIFZM" id="1bm7a6EYa5i" role="3clFbG">
             <ref role="37wK5l" node="5JQSuNsxhfn" resolve="create" />
-            <ref role="1Pybhc" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="1Pybhc" node="5JQSuNswOXL" resolve="CompositeNode" />
             <node concept="1rXfSq" id="1OShD0HEWkI" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qGRoH" resolve="symbol" />
             </node>
@@ -2785,7 +2785,7 @@
       <node concept="37vLTG" id="3OPtF02T_i4" role="3clF46">
         <property role="TrG5h" value="mapper" />
         <node concept="3uibUv" id="3OPtF02T_i5" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+          <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
         </node>
       </node>
       <node concept="3Tm1VV" id="3OPtF02T_i8" role="1B3o_S" />
@@ -2806,7 +2806,7 @@
           <node concept="3cpWsn" id="4sgxfjnB7NY" role="3cpWs9">
             <property role="TrG5h" value="lastArg" />
             <node concept="3uibUv" id="4sgxfjnB7NZ" role="1tU5fm">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
             <node concept="10Nm6u" id="4sgxfjnB9tj" role="33vP2m" />
           </node>
@@ -2818,7 +2818,7 @@
               <node concept="3cpWsn" id="4sgxfjnBevF" role="3cpWs9">
                 <property role="TrG5h" value="arg" />
                 <node concept="3uibUv" id="4sgxfjnBevB" role="1tU5fm">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
                 <node concept="AH0OO" id="bUIfhjJZSW" role="33vP2m">
                   <node concept="37vLTw" id="bUIfhjJZB7" role="AHHXb">
@@ -2911,7 +2911,7 @@
             <property role="TrG5h" value="copy" />
             <node concept="10Q1$e" id="3OPtF02TEoJ" role="1tU5fm">
               <node concept="3uibUv" id="1OShD0HXz2S" role="10Q1$1">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
             <node concept="2ShNRf" id="3OPtF02TEoL" role="33vP2m">
@@ -2925,7 +2925,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="1OShD0HY4e9" role="3$_nBY">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
             </node>
@@ -3060,7 +3060,7 @@
         </node>
         <node concept="3clFbF" id="3OPtF02TEp9" role="3cqZAp">
           <node concept="2YIFZM" id="1OShD0HXM0v" role="3clFbG">
-            <ref role="1Pybhc" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="1Pybhc" node="5JQSuNswOXL" resolve="CompositeNode" />
             <ref role="37wK5l" node="5JQSuNsxhfn" resolve="create" />
             <node concept="1rXfSq" id="1OShD0HXM0w" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qGRoH" resolve="symbol" />
@@ -3072,7 +3072,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="1OShD0HXE6k" role="3clF45">
-        <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+        <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
       </node>
     </node>
     <node concept="2tJIrI" id="47nvOnTRJ2E" role="jymVt" />
@@ -3082,7 +3082,7 @@
       <node concept="37vLTG" id="47nvOnTRK6r" role="3clF46">
         <property role="TrG5h" value="visitor" />
         <node concept="3uibUv" id="3JgCwkqhww$" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02YOLj" role="3clF45">
@@ -3136,7 +3136,7 @@
     <node concept="3UR2Jj" id="5lJXKwWWB" role="lGtFl">
       <node concept="TZ5HA" id="5lJXKwWWC" role="TZ5H$">
         <node concept="1dT_AC" id="5lJXKwWWD" role="1dT_Ay">
-          <property role="1dT_AB" value="The &quot;framework&quot; branch, that is a branch that allows only other branches as its children. An example " />
+          <property role="1dT_AB" value="The &quot;framework&quot; node, that is a node that allows only other nodes as its children. An example " />
         </node>
       </node>
       <node concept="TZ5HA" id="5lJXKwXZy" role="TZ5H$">
@@ -3146,7 +3146,7 @@
       </node>
       <node concept="TZ5HA" id="5lJXKwZsB" role="TZ5H$">
         <node concept="1dT_AC" id="5lJXKwZsC" role="1dT_Ay">
-          <property role="1dT_AB" value="here are branches too." />
+          <property role="1dT_AB" value="here are nodes too." />
         </node>
       </node>
     </node>
@@ -3265,7 +3265,7 @@
         </node>
         <node concept="3clFbF" id="5JQSuNsxbY4" role="3cqZAp">
           <node concept="2YIFZM" id="5JQSuNsxbYI" role="3clFbG">
-            <ref role="1Pybhc" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="1Pybhc" node="1msb0mq99GH" resolve="ValueNode" />
             <ref role="37wK5l" node="6cHSm2DiUE1" resolve="create" />
             <node concept="16syzq" id="uNmovXiRyh" role="3PaCim">
               <ref role="16sUi3" node="53iOybEKVf$" resolve="V" />
@@ -3281,7 +3281,7 @@
       </node>
       <node concept="3Tm1VV" id="5JQSuNsx4HC" role="1B3o_S" />
       <node concept="3uibUv" id="5JQSuNsx4HR" role="3clF45">
-        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
         <node concept="16syzq" id="53iOybEKVXJ" role="11_B2D">
           <ref role="16sUi3" node="53iOybEKVf$" resolve="V" />
         </node>
@@ -3310,7 +3310,7 @@
       <node concept="3clFbS" id="6cHSm2DiB$Y" role="3clF47">
         <node concept="3clFbF" id="6cHSm2DiB_w" role="3cqZAp">
           <node concept="2YIFZM" id="6cHSm2DiB_x" role="3clFbG">
-            <ref role="1Pybhc" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="1Pybhc" node="1msb0mq99GH" resolve="ValueNode" />
             <ref role="37wK5l" node="6cHSm2DiUE1" resolve="create" />
             <node concept="16syzq" id="6cHSm2DiB_y" role="3PaCim">
               <ref role="16sUi3" node="6cHSm2DiB_C" resolve="T" />
@@ -3326,7 +3326,7 @@
       </node>
       <node concept="3Tm1VV" id="6cHSm2DiB__" role="1B3o_S" />
       <node concept="3uibUv" id="6cHSm2DiB_A" role="3clF45">
-        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+        <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
         <node concept="16syzq" id="6cHSm2DiB_B" role="11_B2D">
           <ref role="16sUi3" node="6cHSm2DiB_C" resolve="T" />
         </node>
@@ -3334,7 +3334,7 @@
       <node concept="16euLQ" id="6cHSm2DiB_C" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="6cHSm2DiMip" role="3ztrMU">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
     </node>
@@ -3423,7 +3423,7 @@
         </node>
         <node concept="3clFbF" id="uNmovXjx0L" role="3cqZAp">
           <node concept="2YIFZM" id="uNmovXjx0M" role="3clFbG">
-            <ref role="1Pybhc" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="1Pybhc" node="uNmovXiSQ6" resolve="VariableNode" />
             <ref role="37wK5l" node="uNmovXj0Sl" resolve="create" />
             <node concept="37vLTw" id="uNmovXjx0N" role="37wK5m">
               <ref role="3cqZAo" node="uNmovXjpEC" resolve="symbol" />
@@ -3436,7 +3436,7 @@
       </node>
       <node concept="3Tm1VV" id="uNmovXiRmW" role="1B3o_S" />
       <node concept="3uibUv" id="uNmovXjpC8" role="3clF45">
-        <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+        <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
       </node>
       <node concept="37vLTG" id="uNmovXjpEC" role="3clF46">
         <property role="TrG5h" value="symbol" />
@@ -3462,7 +3462,7 @@
     <property role="TrG5h" value="Variable" />
     <node concept="3Tm1VV" id="uNmovXiEd5" role="1B3o_S" />
     <node concept="3uibUv" id="1bm7a6F1kuO" role="EKbjA">
-      <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+      <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
     </node>
     <node concept="2tJIrI" id="uNmovXiELu" role="jymVt" />
     <node concept="2YIFZL" id="uNmovXiPrH" role="jymVt">
@@ -3592,7 +3592,7 @@
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qUE_q" id="6Sag3KsvboK" role="11_B2D">
             <node concept="3uibUv" id="6Sag3Ksvbx5" role="3qUE_r">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -3615,7 +3615,7 @@
             <node concept="92FcH" id="6OUp3PsUjSh" role="qph3F">
               <node concept="TZ5HA" id="6OUp3PsUjSj" role="2XjZqd" />
               <node concept="VXe08" id="6OUp3PsUmmU" role="92FcQ">
-                <ref role="VXe09" node="5JQSuNswOXL" resolve="StemFunc" />
+                <ref role="VXe09" node="5JQSuNswOXL" resolve="CompositeNode" />
               </node>
             </node>
           </node>
@@ -3822,11 +3822,11 @@
       <node concept="37vLTG" id="3OPtF02ULUO" role="3clF46">
         <property role="TrG5h" value="mapper" />
         <node concept="3uibUv" id="3OPtF02ULUP" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+          <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02ULUQ" role="3clF45">
-        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
       </node>
       <node concept="3Tm1VV" id="3OPtF02ULUS" role="1B3o_S" />
       <node concept="3clFbS" id="3OPtF02ULUY" role="3clF47">
@@ -3863,7 +3863,7 @@
       <node concept="37vLTG" id="dfChU1m0qN" role="3clF46">
         <property role="TrG5h" value="parent" />
         <node concept="3uibUv" id="dfChU1m0qO" role="1tU5fm">
-          <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+          <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
         </node>
       </node>
       <node concept="3cqZAl" id="dfChU1m0qQ" role="3clF45" />
@@ -3886,7 +3886,7 @@
       <node concept="37vLTG" id="104EUzFOWtI" role="3clF46">
         <property role="TrG5h" value="visitor" />
         <node concept="3uibUv" id="104EUzFOWtJ" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
       <node concept="3uibUv" id="104EUzFOWtK" role="3clF45">
@@ -4088,10 +4088,10 @@
     </node>
   </node>
   <node concept="312cEu" id="uNmovXiSQ6">
-    <property role="TrG5h" value="VariableFunc" />
+    <property role="TrG5h" value="VariableNode" />
     <node concept="3Tm1VV" id="uNmovXiSQ7" role="1B3o_S" />
     <node concept="3uibUv" id="uNmovXiTJU" role="1zkMxy">
-      <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+      <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
     </node>
     <node concept="2tJIrI" id="uNmovXiU1L" role="jymVt" />
     <node concept="2YIFZL" id="uNmovXj0Sl" role="jymVt">
@@ -4116,7 +4116,7 @@
         <node concept="3clFbF" id="uNmovXj0St" role="3cqZAp">
           <node concept="2ShNRf" id="uNmovXj0Su" role="3clFbG">
             <node concept="1pGfFk" id="uNmovXj0Sv" role="2ShVmc">
-              <ref role="37wK5l" node="uNmovXiUjX" resolve="VariableFunc" />
+              <ref role="37wK5l" node="uNmovXiUjX" resolve="VariableNode" />
               <node concept="2YIFZM" id="6$jH9oLdFwL" role="37wK5m">
                 <ref role="37wK5l" node="1R$Cm9qEBDL" resolve="create" />
                 <ref role="1Pybhc" node="1R$Cm9qEqLU" resolve="Path" />
@@ -4133,7 +4133,7 @@
       </node>
       <node concept="3Tm1VV" id="uNmovXj0Sz" role="1B3o_S" />
       <node concept="3uibUv" id="uNmovXj0S$" role="3clF45">
-        <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+        <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
       </node>
     </node>
     <node concept="2tJIrI" id="uNmovXiYkR" role="jymVt" />
@@ -4141,7 +4141,7 @@
       <node concept="3cqZAl" id="uNmovXiUjY" role="3clF45" />
       <node concept="3clFbS" id="uNmovXiUk0" role="3clF47">
         <node concept="XkiVB" id="uNmovXiZm2" role="3cqZAp">
-          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Func" />
+          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Node" />
           <node concept="37vLTw" id="1R$Cm9qHdqU" role="37wK5m">
             <ref role="3cqZAo" node="uNmovXiUR1" resolve="symbolPath" />
           </node>
@@ -4279,13 +4279,13 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="copyRecursively" />
       <node concept="3uibUv" id="1bm7a6EZL18" role="3clF45">
-        <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+        <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
       </node>
       <node concept="3Tm1VV" id="1bm7a6EXEaO" role="1B3o_S" />
       <node concept="3clFbS" id="1bm7a6EXEaT" role="3clF47">
         <node concept="3clFbF" id="1bm7a6EXPjz" role="3cqZAp">
           <node concept="2YIFZM" id="1bm7a6EXPoQ" role="3clFbG">
-            <ref role="1Pybhc" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="1Pybhc" node="uNmovXiSQ6" resolve="VariableNode" />
             <ref role="37wK5l" node="uNmovXj0Sl" resolve="create" />
             <node concept="1rXfSq" id="1OShD0HF8LH" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qGRoH" resolve="symbol" />
@@ -4307,11 +4307,11 @@
       <node concept="37vLTG" id="3OPtF02UnMK" role="3clF46">
         <property role="TrG5h" value="mapper" />
         <node concept="3uibUv" id="3OPtF02UnML" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+          <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
         </node>
       </node>
       <node concept="3uibUv" id="5s497VqKvnu" role="3clF45">
-        <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+        <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
       </node>
       <node concept="3Tm1VV" id="3OPtF02UnMO" role="1B3o_S" />
       <node concept="2AHcQZ" id="3OPtF02UnMQ" role="2AJF6D">
@@ -4398,7 +4398,7 @@
         <node concept="3clFbF" id="3OPtF02UDkD" role="3cqZAp">
           <node concept="2YIFZM" id="3OPtF02UDuZ" role="3clFbG">
             <ref role="37wK5l" node="uNmovXj0Sl" resolve="create" />
-            <ref role="1Pybhc" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="1Pybhc" node="uNmovXiSQ6" resolve="VariableNode" />
             <node concept="1rXfSq" id="1OShD0HF92A" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qGRoH" resolve="symbol" />
             </node>
@@ -4416,7 +4416,7 @@
       <node concept="37vLTG" id="47nvOnTSfYc" role="3clF46">
         <property role="TrG5h" value="visitor" />
         <node concept="3uibUv" id="3JgCwkqhKOZ" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02YZi_" role="3clF45">
@@ -4565,7 +4565,7 @@
           <node concept="3cpWsn" id="2q_78a93wx1" role="1Duv9x">
             <property role="TrG5h" value="var" />
             <node concept="3uibUv" id="3H0z$hTu$Xl" role="1tU5fm">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
           <node concept="1rXfSq" id="2q_78a93wx4" role="1DdaDG">
@@ -5062,13 +5062,13 @@
     </node>
   </node>
   <node concept="3HP615" id="1bm7a6EXvsP">
-    <property role="TrG5h" value="Atom" />
+    <property role="TrG5h" value="TreeForm" />
     <node concept="2tJIrI" id="1bm7a6EXvMM" role="jymVt" />
     <node concept="3clFb_" id="1bm7a6EXvNI" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="copyRecursively" />
       <node concept="3uibUv" id="1bm7a6FcGgl" role="3clF45">
-        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
       </node>
       <node concept="3Tm1VV" id="1bm7a6EXvNL" role="1B3o_S" />
       <node concept="3clFbS" id="1bm7a6EXvNM" role="3clF47" />
@@ -5080,11 +5080,11 @@
       <node concept="37vLTG" id="3OPtF02TkqL" role="3clF46">
         <property role="TrG5h" value="mapper" />
         <node concept="3uibUv" id="3OPtF02Tk$O" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+          <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02TkeC" role="3clF45">
-        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
       </node>
       <node concept="3Tm1VV" id="3OPtF02Tjpu" role="1B3o_S" />
       <node concept="3clFbS" id="3OPtF02Tjpv" role="3clF47" />
@@ -5097,7 +5097,7 @@
       <node concept="3clFbS" id="2QE4RCGndDa" role="3clF47" />
       <node concept="3Tm1VV" id="2QE4RCGndDb" role="1B3o_S" />
       <node concept="3uibUv" id="2QE4RCGndw1" role="3clF45">
-        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
       </node>
     </node>
     <node concept="2tJIrI" id="dfChU1lDK8" role="jymVt" />
@@ -5107,7 +5107,7 @@
       <node concept="37vLTG" id="dfChU1lHv$" role="3clF46">
         <property role="TrG5h" value="parent" />
         <node concept="3uibUv" id="dfChU1lIPj" role="1tU5fm">
-          <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+          <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
         </node>
       </node>
       <node concept="3cqZAl" id="dfChU1lFHn" role="3clF45" />
@@ -5121,7 +5121,7 @@
       <node concept="37vLTG" id="104EUzFOBnE" role="3clF46">
         <property role="TrG5h" value="visitor" />
         <node concept="3uibUv" id="104EUzFOBnF" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
       <node concept="3uibUv" id="104EUzFOBnG" role="3clF45">
@@ -5149,13 +5149,13 @@
         <node concept="37vLTG" id="3OPtF02TgVl" role="3clF46">
           <property role="TrG5h" value="tp" />
           <node concept="3uibUv" id="5s497VqCJhY" role="1tU5fm">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
         <node concept="3Tm1VV" id="3OPtF02TgQw" role="1B3o_S" />
         <node concept="3clFbS" id="3OPtF02TgQx" role="3clF47" />
         <node concept="3uibUv" id="5s497VqO5R3" role="3clF45">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="2tJIrI" id="3OPtF02TdWb" role="jymVt" />
@@ -5177,7 +5177,7 @@
         <node concept="37vLTG" id="104EUzFOARI" role="3clF46">
           <property role="TrG5h" value="terms" />
           <node concept="3uibUv" id="104EUzFOARJ" role="1tU5fm">
-            <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
       </node>
@@ -5188,7 +5188,7 @@
         <node concept="37vLTG" id="104EUzFOARQ" role="3clF46">
           <property role="TrG5h" value="values" />
           <node concept="3uibUv" id="104EUzFOARR" role="1tU5fm">
-            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
             <node concept="16syzq" id="104EUzFOARS" role="11_B2D">
               <ref role="16sUi3" node="104EUzFOARW" resolve="V" />
             </node>
@@ -5211,7 +5211,7 @@
         <node concept="37vLTG" id="104EUzFOARZ" role="3clF46">
           <property role="TrG5h" value="variables" />
           <node concept="3uibUv" id="104EUzFOAS0" role="1tU5fm">
-            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
           </node>
         </node>
         <node concept="3uibUv" id="104EUzFOAS1" role="3clF45">
@@ -5232,7 +5232,7 @@
         <node concept="37vLTG" id="104EUzFOAS9" role="3clF46">
           <property role="TrG5h" value="list" />
           <node concept="3uibUv" id="104EUzFOASa" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
       </node>
@@ -5288,7 +5288,7 @@
           <node concept="37vLTG" id="6HT7BWBQcNP" role="3clF46">
             <property role="TrG5h" value="terms" />
             <node concept="3uibUv" id="6HT7BWBQcNQ" role="1tU5fm">
-              <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+              <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
             </node>
           </node>
           <node concept="3clFbS" id="6HT7BWBQcNR" role="3clF47">
@@ -5306,7 +5306,7 @@
           <node concept="37vLTG" id="6HT7BWBQcNV" role="3clF46">
             <property role="TrG5h" value="values" />
             <node concept="3uibUv" id="6HT7BWBQcNW" role="1tU5fm">
-              <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+              <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
               <node concept="16syzq" id="6HT7BWBQcNX" role="11_B2D">
                 <ref role="16sUi3" node="6HT7BWBQcO1" resolve="V" />
               </node>
@@ -5335,7 +5335,7 @@
           <node concept="37vLTG" id="6HT7BWBQcO6" role="3clF46">
             <property role="TrG5h" value="variables" />
             <node concept="3uibUv" id="6HT7BWBQcO7" role="1tU5fm">
-              <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+              <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
             </node>
           </node>
           <node concept="3uibUv" id="6HT7BWBQcO8" role="3clF45">
@@ -5361,7 +5361,7 @@
           <node concept="37vLTG" id="6HT7BWBQcOj" role="3clF46">
             <property role="TrG5h" value="list" />
             <node concept="3uibUv" id="6HT7BWBQcOk" role="1tU5fm">
-              <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+              <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
             </node>
           </node>
           <node concept="3clFbS" id="6HT7BWBQcOl" role="3clF47">
@@ -5425,7 +5425,7 @@
         </node>
         <node concept="3Tm1VV" id="6HT7BWBQcxw" role="1B3o_S" />
         <node concept="3uibUv" id="6HT7BWBQcHt" role="EKbjA">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
       <node concept="2tJIrI" id="104EUzG8L8d" role="jymVt" />
@@ -5437,7 +5437,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1hOy_Afq4Fn">
-    <property role="TrG5h" value="AtomWalk" />
+    <property role="TrG5h" value="TreeFormWalk" />
     <node concept="2tJIrI" id="47nvOnU4JVV" role="jymVt" />
     <node concept="3HP615" id="3JgCwkqiP3h" role="jymVt">
       <property role="TrG5h" value="Walker" />
@@ -5453,7 +5453,7 @@
         <node concept="37vLTG" id="3JgCwkqiP3t" role="3clF46">
           <property role="TrG5h" value="cb" />
           <node concept="3uibUv" id="5YIOneOLnpq" role="1tU5fm">
-            <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
       </node>
@@ -5472,7 +5472,7 @@
         <node concept="37vLTG" id="3JgCwkqiP3C" role="3clF46">
           <property role="TrG5h" value="valb" />
           <node concept="3uibUv" id="5YIOneONkT5" role="1tU5fm">
-            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
             <node concept="16syzq" id="5YIOneONkT6" role="11_B2D">
               <ref role="16sUi3" node="3JgCwkqiP3H" resolve="V" />
             </node>
@@ -5491,7 +5491,7 @@
         <node concept="37vLTG" id="3JgCwkqiP3N" role="3clF46">
           <property role="TrG5h" value="varb" />
           <node concept="3uibUv" id="5YIOneOSlWp" role="1tU5fm">
-            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
           </node>
         </node>
       </node>
@@ -5507,7 +5507,7 @@
         <node concept="37vLTG" id="3JgCwkqmHc4" role="3clF46">
           <property role="TrG5h" value="listb" />
           <node concept="3uibUv" id="5YIOneOU7$m" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
       </node>
@@ -5570,7 +5570,7 @@
         <node concept="37vLTG" id="2ev$9JFHHx3" role="3clF46">
           <property role="TrG5h" value="cb" />
           <node concept="3uibUv" id="2ev$9JFHHx4" role="1tU5fm">
-            <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
         <node concept="3clFbS" id="2ev$9JFHHxd" role="3clF47">
@@ -5603,7 +5603,7 @@
         <node concept="37vLTG" id="2ev$9JFHHxk" role="3clF46">
           <property role="TrG5h" value="valb" />
           <node concept="3uibUv" id="5YIOneONkSP" role="1tU5fm">
-            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
             <node concept="16syzq" id="5YIOneONlbt" role="11_B2D">
               <ref role="16sUi3" node="2ev$9JFHHxq" resolve="V" />
             </node>
@@ -5628,7 +5628,7 @@
         <node concept="37vLTG" id="2ev$9JFHHxy" role="3clF46">
           <property role="TrG5h" value="varb" />
           <node concept="3uibUv" id="5YIOneOSlWi" role="1tU5fm">
-            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
           </node>
         </node>
       </node>
@@ -5650,7 +5650,7 @@
         <node concept="37vLTG" id="2ev$9JFHHxI" role="3clF46">
           <property role="TrG5h" value="listb" />
           <node concept="3uibUv" id="5YIOneOU7$e" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
       </node>
@@ -5708,7 +5708,7 @@
       </node>
       <node concept="3Tm1VV" id="2ev$9JFHDN0" role="1B3o_S" />
       <node concept="3uibUv" id="2ev$9JFHGVP" role="EKbjA">
-        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeFormWalk.Walker" />
       </node>
     </node>
     <node concept="2tJIrI" id="3JgCwkqhoku" role="jymVt" />
@@ -5733,7 +5733,7 @@
       <node concept="37vLTG" id="47nvOnTQN9E" role="3clF46">
         <property role="TrG5h" value="walker" />
         <node concept="3uibUv" id="3JgCwkqj7Js" role="1tU5fm">
-          <ref role="3uigEE" node="3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+          <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeFormWalk.Walker" />
         </node>
       </node>
     </node>
@@ -5743,7 +5743,7 @@
       <node concept="37vLTG" id="1hOy_Afq6Lg" role="3clF46">
         <property role="TrG5h" value="tp" />
         <node concept="3uibUv" id="1hOy_AfqoVv" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3cqZAl" id="1hOy_Afq63M" role="3clF45" />
@@ -5780,7 +5780,7 @@
                   <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
                   <node concept="3qUE_q" id="47nvOnTToTV" role="11_B2D">
                     <node concept="3uibUv" id="47nvOnTTpNL" role="3qUE_r">
-                      <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                      <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                     </node>
                   </node>
                 </node>
@@ -5847,7 +5847,7 @@
                     <node concept="3cpWsn" id="7d$oK1$HfcP" role="3cpWs9">
                       <property role="TrG5h" value="next" />
                       <node concept="3uibUv" id="7d$oK1$HfcQ" role="1tU5fm">
-                        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                       </node>
                       <node concept="2OqwBi" id="7d$oK1$HfcS" role="33vP2m">
                         <node concept="37vLTw" id="7d$oK1$HfcT" role="2Oq$k0">
@@ -5898,7 +5898,7 @@
       <node concept="37vLTG" id="47nvOnTQNVL" role="3clF46">
         <property role="TrG5h" value="terms" />
         <node concept="3uibUv" id="47nvOnTQNVM" role="1tU5fm">
-          <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
         </node>
       </node>
       <node concept="3clFbS" id="47nvOnTQNVR" role="3clF47">
@@ -5997,7 +5997,7 @@
       <node concept="37vLTG" id="3OPtF03nbZw" role="3clF46">
         <property role="TrG5h" value="lf" />
         <node concept="3uibUv" id="3OPtF03nbZx" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
       </node>
       <node concept="3clFbS" id="3OPtF03nbZA" role="3clF47">
@@ -6100,7 +6100,7 @@
       <node concept="37vLTG" id="47nvOnTQNVy" role="3clF46">
         <property role="TrG5h" value="vb" />
         <node concept="3uibUv" id="47nvOnTQNVz" role="1tU5fm">
-          <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+          <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
           <node concept="16syzq" id="47nvOnTQNV$" role="11_B2D">
             <ref role="16sUi3" node="47nvOnTQNVB" resolve="V" />
           </node>
@@ -6298,7 +6298,7 @@
       <node concept="37vLTG" id="47nvOnTQNVX" role="3clF46">
         <property role="TrG5h" value="vb" />
         <node concept="3uibUv" id="47nvOnTQNVY" role="1tU5fm">
-          <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+          <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF02ZgRq" role="3clF45">
@@ -6470,7 +6470,7 @@
     <node concept="3clFb_" id="3JgCwkqnB43" role="jymVt">
       <property role="TrG5h" value="walker" />
       <node concept="3uibUv" id="3JgCwkqnN3O" role="3clF45">
-        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeFormWalk.Walker" />
       </node>
       <node concept="3Tmbuc" id="3JgCwkqnKcG" role="1B3o_S" />
       <node concept="3clFbS" id="3JgCwkqnB47" role="3clF47">
@@ -6504,7 +6504,7 @@
       <property role="TrG5h" value="walker" />
       <node concept="3Tm6S6" id="47nvOnTQNCB" role="1B3o_S" />
       <node concept="3uibUv" id="3JgCwkqj19S" role="1tU5fm">
-        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeFormWalk.Walker" />
       </node>
     </node>
     <node concept="2tJIrI" id="47nvOnTQQhN" role="jymVt" />
@@ -6517,7 +6517,7 @@
           <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
           <node concept="3qUE_q" id="47nvOnTTkCz" role="11_B2D">
             <node concept="3uibUv" id="47nvOnTQTwl" role="3qUE_r">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -6529,7 +6529,7 @@
             <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
             <node concept="3qUE_q" id="47nvOnTTwAd" role="11_B2D">
               <node concept="3uibUv" id="47nvOnTTwAe" role="3qUE_r">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
           </node>
@@ -6539,7 +6539,7 @@
     <node concept="2tJIrI" id="1hOy_Afq6Rc" role="jymVt" />
     <node concept="3Tm1VV" id="1hOy_Afq4Fo" role="1B3o_S" />
     <node concept="3uibUv" id="3JgCwkqhFHO" role="EKbjA">
-      <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+      <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
     </node>
   </node>
   <node concept="312cEu" id="3JgCwkqd3K7">
@@ -6565,7 +6565,7 @@
       <node concept="16euLQ" id="5s497VqA14z" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="5s497VqA1Tk" role="3ztrMU">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
     </node>
@@ -6590,7 +6590,7 @@
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="result" />
         <node concept="3uibUv" id="3OPtF03gFpS" role="3clF45">
-          <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
         </node>
         <node concept="3Tm1VV" id="3OPtF03gFks" role="1B3o_S" />
         <node concept="3clFbS" id="3OPtF03gFkt" role="3clF47" />
@@ -6611,7 +6611,7 @@
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3qUE_q" id="3OPtF03nYWo" role="11_B2D">
             <node concept="3uibUv" id="3OPtF03nYWp" role="3qUE_r">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -6650,7 +6650,7 @@
       <node concept="37vLTG" id="3OPtF03hjym" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="3OPtF03hjCw" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="3OPtF03hjJa" role="3clF46">
@@ -6686,7 +6686,7 @@
           <node concept="2OqwBi" id="3OPtF03isrf" role="3clFbG">
             <node concept="2ShNRf" id="3OPtF03isbr" role="2Oq$k0">
               <node concept="1pGfFk" id="3OPtF03ism_" role="2ShVmc">
-                <ref role="37wK5l" node="47nvOnTQN6Q" resolve="AtomWalk" />
+                <ref role="37wK5l" node="47nvOnTQN6Q" resolve="TreeFormWalk" />
                 <node concept="37vLTw" id="3OPtF03isou" role="37wK5m">
                   <ref role="3cqZAo" node="3OPtF03irY$" resolve="finder" />
                 </node>
@@ -6716,7 +6716,7 @@
       <node concept="37vLTG" id="3OPtF03pX12" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="3OPtF03pX13" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="3OPtF03pX15" role="3clF46">
@@ -6757,7 +6757,7 @@
           <node concept="2OqwBi" id="3OPtF03pX1i" role="3clFbG">
             <node concept="2ShNRf" id="3OPtF03pX1j" role="2Oq$k0">
               <node concept="1pGfFk" id="3OPtF03pX1k" role="2ShVmc">
-                <ref role="37wK5l" node="47nvOnTQN6Q" resolve="AtomWalk" />
+                <ref role="37wK5l" node="47nvOnTQN6Q" resolve="TreeFormWalk" />
                 <node concept="37vLTw" id="3OPtF03pX1l" role="37wK5m">
                   <ref role="3cqZAo" node="3OPtF03pX1c" resolve="finder" />
                 </node>
@@ -6784,7 +6784,7 @@
       <node concept="37vLTG" id="3JgCwkqd8vb" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="3AEuFq_Ridy" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="3JgCwkqd8vd" role="3clF46">
@@ -6834,7 +6834,7 @@
           <node concept="2OqwBi" id="3JgCwkqd8vq" role="3clFbG">
             <node concept="2ShNRf" id="3JgCwkqd8vr" role="2Oq$k0">
               <node concept="1pGfFk" id="3JgCwkqd8vs" role="2ShVmc">
-                <ref role="37wK5l" node="47nvOnTQN6Q" resolve="AtomWalk" />
+                <ref role="37wK5l" node="47nvOnTQN6Q" resolve="TreeFormWalk" />
                 <node concept="37vLTw" id="3JgCwkqd8vt" role="37wK5m">
                   <ref role="3cqZAo" node="3JgCwkqd8vk" resolve="finder" />
                 </node>
@@ -6886,7 +6886,7 @@
           <node concept="3uibUv" id="3OPtF03ipIx" role="1tU5fm">
             <ref role="3uigEE" node="3OPtF03axxl" resolve="Finders.Condition" />
             <node concept="3uibUv" id="5s497VqA51K" role="11_B2D">
-              <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+              <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
             </node>
           </node>
         </node>
@@ -6902,7 +6902,7 @@
         <node concept="37vLTG" id="3OPtF03hrN3" role="3clF46">
           <property role="TrG5h" value="cb" />
           <node concept="3uibUv" id="3OPtF03hrN4" role="1tU5fm">
-            <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
         <node concept="3clFbS" id="3OPtF03hrNd" role="3clF47">
@@ -6986,7 +6986,7 @@
         <node concept="37vLTG" id="3OPtF03qfYR" role="3clF46">
           <property role="TrG5h" value="listb" />
           <node concept="3uibUv" id="5YIOneOU7$h" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
       </node>
@@ -7015,7 +7015,7 @@
         <node concept="37vLTG" id="3OPtF03hrNk" role="3clF46">
           <property role="TrG5h" value="valb" />
           <node concept="3uibUv" id="5YIOneONkSV" role="1tU5fm">
-            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
             <node concept="16syzq" id="5YIOneONkSW" role="11_B2D">
               <ref role="16sUi3" node="3OPtF03hrNq" resolve="V" />
             </node>
@@ -7044,7 +7044,7 @@
         <node concept="37vLTG" id="3OPtF03hrNy" role="3clF46">
           <property role="TrG5h" value="varb" />
           <node concept="3uibUv" id="5YIOneOSlWk" role="1tU5fm">
-            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
           </node>
         </node>
       </node>
@@ -7117,7 +7117,7 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="result" />
         <node concept="3uibUv" id="3OPtF03hrNF" role="3clF45">
-          <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
         </node>
         <node concept="3Tm1VV" id="3OPtF03hrNH" role="1B3o_S" />
         <node concept="3clFbS" id="3OPtF03hrNJ" role="3clF47">
@@ -7161,7 +7161,7 @@
         <property role="TrG5h" value="result" />
         <node concept="3Tm6S6" id="3OPtF03htyA" role="1B3o_S" />
         <node concept="3uibUv" id="3OPtF03htIL" role="1tU5fm">
-          <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
         </node>
       </node>
       <node concept="312cEg" id="3OPtF03huAJ" role="jymVt">
@@ -7170,7 +7170,7 @@
         <node concept="3uibUv" id="3OPtF03huNP" role="1tU5fm">
           <ref role="3uigEE" node="3OPtF03axxl" resolve="Finders.Condition" />
           <node concept="3uibUv" id="5s497VqA6Sq" role="11_B2D">
-            <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+            <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
           </node>
         </node>
       </node>
@@ -7178,11 +7178,11 @@
       <node concept="16euLQ" id="3OPtF03hrbY" role="16eVyc">
         <property role="TrG5h" value="T" />
         <node concept="3uibUv" id="3OPtF03hreJ" role="3ztrMU">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF03hrvE" role="EKbjA">
-        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeFormWalk.Walker" />
       </node>
       <node concept="3uibUv" id="3OPtF03hrHZ" role="EKbjA">
         <ref role="3uigEE" node="3OPtF03gqwb" resolve="Finders.ITermFinder" />
@@ -7254,7 +7254,7 @@
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3qUE_q" id="3OPtF03oA1_" role="11_B2D">
             <node concept="3uibUv" id="3OPtF03oA1A" role="3qUE_r">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -7385,7 +7385,7 @@
         <node concept="37vLTG" id="3OPtF03oA1L" role="3clF46">
           <property role="TrG5h" value="listb" />
           <node concept="3uibUv" id="5YIOneOU7$l" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
       </node>
@@ -7400,7 +7400,7 @@
         <node concept="37vLTG" id="3OPtF03oA2_" role="3clF46">
           <property role="TrG5h" value="cb" />
           <node concept="3uibUv" id="3OPtF03oA2A" role="1tU5fm">
-            <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
         <node concept="3clFbS" id="3OPtF03oA2J" role="3clF47">
@@ -7508,7 +7508,7 @@
         <node concept="37vLTG" id="3OPtF03oA3b" role="3clF46">
           <property role="TrG5h" value="valb" />
           <node concept="3uibUv" id="5YIOneONkT3" role="1tU5fm">
-            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
             <node concept="16syzq" id="5YIOneONkT4" role="11_B2D">
               <ref role="16sUi3" node="3OPtF03oA3h" resolve="V" />
             </node>
@@ -7537,7 +7537,7 @@
         <node concept="37vLTG" id="3OPtF03oA3E" role="3clF46">
           <property role="TrG5h" value="varb" />
           <node concept="3uibUv" id="5YIOneOSlWo" role="1tU5fm">
-            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
           </node>
         </node>
       </node>
@@ -7568,7 +7568,7 @@
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3qUE_q" id="3OPtF03oA4b" role="11_B2D">
             <node concept="3uibUv" id="3OPtF03oA4c" role="3qUE_r">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -7588,13 +7588,13 @@
       </node>
       <node concept="3Tmbuc" id="3OPtF03oA4i" role="1B3o_S" />
       <node concept="3uibUv" id="3OPtF03oGCx" role="EKbjA">
-        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeFormWalk.Walker" />
       </node>
       <node concept="3uibUv" id="3OPtF03oA4k" role="EKbjA">
         <ref role="3uigEE" node="3OPtF03nYWl" resolve="Finders.IListFinder" />
       </node>
       <node concept="3uibUv" id="3t7_2FgCYaL" role="1zkMxy">
-        <ref role="3uigEE" node="2ev$9JFHDMZ" resolve="AtomWalk.IdleWalker" />
+        <ref role="3uigEE" node="2ev$9JFHDMZ" resolve="TreeFormWalk.IdleWalker" />
       </node>
     </node>
     <node concept="2tJIrI" id="3OPtF03pMbF" role="jymVt" />
@@ -7690,7 +7690,7 @@
         <node concept="37vLTG" id="3OPtF03cqRf" role="3clF46">
           <property role="TrG5h" value="cb" />
           <node concept="3uibUv" id="3OPtF03cqRg" role="1tU5fm">
-            <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
         <node concept="3clFbS" id="3OPtF03cqRo" role="3clF47">
@@ -7773,7 +7773,7 @@
         <node concept="37vLTG" id="3OPtF03qnsi" role="3clF46">
           <property role="TrG5h" value="listb" />
           <node concept="3uibUv" id="5YIOneOU7$g" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
       </node>
@@ -7890,7 +7890,7 @@
         <node concept="37vLTG" id="3OPtF03cGBG" role="3clF46">
           <property role="TrG5h" value="valb" />
           <node concept="3uibUv" id="5YIOneONkST" role="1tU5fm">
-            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
             <node concept="16syzq" id="5YIOneONkSU" role="11_B2D">
               <ref role="16sUi3" node="3OPtF03cGBM" resolve="V" />
             </node>
@@ -7982,7 +7982,7 @@
         <node concept="37vLTG" id="3OPtF03cWxj" role="3clF46">
           <property role="TrG5h" value="varb" />
           <node concept="3uibUv" id="5YIOneOSlWj" role="1tU5fm">
-            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
           </node>
         </node>
       </node>
@@ -8089,7 +8089,7 @@
       </node>
       <node concept="3Tm6S6" id="3OPtF03pQuW" role="1B3o_S" />
       <node concept="3uibUv" id="3JgCwkqk8Dw" role="EKbjA">
-        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+        <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeFormWalk.Walker" />
       </node>
       <node concept="3uibUv" id="3JgCwkqkWe0" role="EKbjA">
         <ref role="3uigEE" node="3JgCwkqkUKX" resolve="Finders.IValueFinder" />
@@ -8227,7 +8227,7 @@
     <node concept="3Tm1VV" id="3JgCwkqd3K8" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3OPtF03lco4">
-    <property role="TrG5h" value="ListFunc" />
+    <property role="TrG5h" value="ListNode" />
     <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="3OPtF03lcol" role="jymVt" />
     <node concept="2YIFZL" id="1OShD0HS45f" role="jymVt">
@@ -8236,12 +8236,12 @@
         <property role="TrG5h" value="elements" />
         <node concept="8X2XB" id="1OShD0HSHQT" role="1tU5fm">
           <node concept="3uibUv" id="1OShD0HSc66" role="8Xvag">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="1OShD0HS7CO" role="3clF45">
-        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
       </node>
       <node concept="3Tm1VV" id="1OShD0HS45i" role="1B3o_S" />
       <node concept="3clFbS" id="1OShD0HS45j" role="3clF47">
@@ -8264,13 +8264,13 @@
       <node concept="37vLTG" id="1OShD0HH7Kl" role="3clF46">
         <property role="TrG5h" value="head" />
         <node concept="3uibUv" id="3H0z$hTtGFH" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="1OShD0HH8we" role="3clF46">
         <property role="TrG5h" value="tail" />
         <node concept="3uibUv" id="1OShD0HH909" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
       </node>
       <node concept="3Tm6S6" id="3t7_2Fg$$N9" role="1B3o_S" />
@@ -8279,11 +8279,11 @@
           <node concept="3cpWsn" id="1OShD0HHaVQ" role="3cpWs9">
             <property role="TrG5h" value="cons" />
             <node concept="3uibUv" id="1OShD0HHaVR" role="1tU5fm">
-              <ref role="3uigEE" node="3OPtF03lcvH" resolve="ListFunc.Cons" />
+              <ref role="3uigEE" node="3OPtF03lcvH" resolve="ListNode.Cons" />
             </node>
             <node concept="2ShNRf" id="1OShD0HHaVT" role="33vP2m">
               <node concept="1pGfFk" id="1OShD0HHaVU" role="2ShVmc">
-                <ref role="37wK5l" node="3OPtF03lcvJ" resolve="ListFunc.Cons" />
+                <ref role="37wK5l" node="3OPtF03lcvJ" resolve="ListNode.Cons" />
                 <node concept="37vLTw" id="1OShD0HHaVV" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0HH7Kl" resolve="head" />
                 </node>
@@ -8328,7 +8328,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="1OShD0HH3oG" role="3clF45">
-        <ref role="3uigEE" node="3OPtF03lcvH" resolve="ListFunc.Cons" />
+        <ref role="3uigEE" node="3OPtF03lcvH" resolve="ListNode.Cons" />
       </node>
     </node>
     <node concept="2tJIrI" id="1OShD0I3zFc" role="jymVt" />
@@ -8346,11 +8346,11 @@
           <node concept="3cpWsn" id="1OShD0I3vRC" role="3cpWs9">
             <property role="TrG5h" value="alias" />
             <node concept="3uibUv" id="1OShD0I3JjP" role="1tU5fm">
-              <ref role="3uigEE" node="1OShD0I20qU" resolve="ListFunc.Alias" />
+              <ref role="3uigEE" node="1OShD0I20qU" resolve="ListNode.Alias" />
             </node>
             <node concept="2ShNRf" id="1OShD0I3vRF" role="33vP2m">
               <node concept="1pGfFk" id="1OShD0I3vRG" role="2ShVmc">
-                <ref role="37wK5l" node="1OShD0I20qW" resolve="ListFunc.Alias" />
+                <ref role="37wK5l" node="1OShD0I20qW" resolve="ListNode.Alias" />
                 <node concept="37vLTw" id="1OShD0I3vRH" role="37wK5m">
                   <ref role="3cqZAo" node="1OShD0I3vRv" resolve="var" />
                 </node>
@@ -8379,7 +8379,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="1OShD0I40pS" role="3clF45">
-        <ref role="3uigEE" node="1OShD0I20qU" resolve="ListFunc.Alias" />
+        <ref role="3uigEE" node="1OShD0I20qU" resolve="ListNode.Alias" />
       </node>
     </node>
     <node concept="2tJIrI" id="1OShD0HRYaK" role="jymVt" />
@@ -8391,7 +8391,7 @@
         <property role="TrG5h" value="elements" />
         <node concept="10Q1$e" id="3OPtF03lcoP" role="1tU5fm">
           <node concept="3uibUv" id="3H0z$hTtP2m" role="10Q1$1">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -8410,7 +8410,7 @@
             <node concept="3cpWs6" id="5cGCTtqwSTO" role="3cqZAp">
               <node concept="10QFUN" id="5cGCTtqwU3b" role="3cqZAk">
                 <node concept="3uibUv" id="5cGCTtqwU38" role="10QFUM">
-                  <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+                  <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
                 </node>
                 <node concept="AH0OO" id="5cGCTtqwZBu" role="10QFUP">
                   <node concept="3cmrfG" id="5cGCTtqx046" role="AHEQo">
@@ -8426,7 +8426,7 @@
           <node concept="1Wc70l" id="5cGCTtqwPf4" role="3clFbw">
             <node concept="2ZW3vV" id="5cGCTtqwRCJ" role="3uHU7w">
               <node concept="3uibUv" id="5cGCTtqwRM6" role="2ZW6by">
-                <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+                <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
               </node>
               <node concept="AH0OO" id="5cGCTtqwQpn" role="2ZW6bz">
                 <node concept="3cmrfG" id="5cGCTtqwQxI" role="AHEQo">
@@ -8475,7 +8475,7 @@
                   </node>
                 </node>
                 <node concept="3uibUv" id="3H0z$hTtPPK" role="1tU5fm">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
             </node>
@@ -8483,10 +8483,10 @@
               <node concept="3cpWsn" id="1OShD0HG9s2" role="3cpWs9">
                 <property role="TrG5h" value="tail" />
                 <node concept="3uibUv" id="1OShD0HG9rK" role="1tU5fm">
-                  <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+                  <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
                 </node>
                 <node concept="2YIFZM" id="1OShD0HG9s3" role="33vP2m">
-                  <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListFunc" />
+                  <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListNode" />
                   <ref role="37wK5l" node="3OPtF03lcoL" resolve="createList" />
                   <node concept="37vLTw" id="1OShD0HG9s5" role="37wK5m">
                     <ref role="3cqZAo" node="3OPtF03lcoO" resolve="elements" />
@@ -8534,11 +8534,11 @@
                 <node concept="3cpWsn" id="3OPtF03lcpQ" role="3cpWs9">
                   <property role="TrG5h" value="nil" />
                   <node concept="3uibUv" id="3OPtF03lcpR" role="1tU5fm">
-                    <ref role="3uigEE" node="3OPtF03lcyJ" resolve="ListFunc.Nil" />
+                    <ref role="3uigEE" node="3OPtF03lcyJ" resolve="ListNode.Nil" />
                   </node>
                   <node concept="2ShNRf" id="3OPtF03lcpT" role="33vP2m">
                     <node concept="1pGfFk" id="3OPtF03lcpU" role="2ShVmc">
-                      <ref role="37wK5l" node="3OPtF03lcyL" resolve="ListFunc.Nil" />
+                      <ref role="37wK5l" node="3OPtF03lcyL" resolve="ListNode.Nil" />
                     </node>
                   </node>
                 </node>
@@ -8564,7 +8564,7 @@
                     </node>
                   </node>
                   <node concept="3uibUv" id="3H0z$hTtR1m" role="1tU5fm">
-                    <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                    <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                   </node>
                 </node>
               </node>
@@ -8615,10 +8615,10 @@
                       <node concept="3cpWsn" id="1OShD0IbQqK" role="3cpWs9">
                         <property role="TrG5h" value="tail" />
                         <node concept="3uibUv" id="1OShD0IbQqL" role="1tU5fm">
-                          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+                          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
                         </node>
                         <node concept="2YIFZM" id="1OShD0IbQqN" role="33vP2m">
-                          <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListFunc" />
+                          <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListNode" />
                           <ref role="37wK5l" node="3OPtF03lcoL" resolve="createList" />
                           <node concept="37vLTw" id="1OShD0IbQqO" role="37wK5m">
                             <ref role="3cqZAo" node="3OPtF03lcoO" resolve="elements" />
@@ -8668,7 +8668,7 @@
       </node>
       <node concept="3Tm6S6" id="3OPtF03lcq6" role="1B3o_S" />
       <node concept="3uibUv" id="3OPtF03lcq7" role="3clF45">
-        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
       </node>
     </node>
     <node concept="2tJIrI" id="6HT7BWBQJVg" role="jymVt" />
@@ -8687,7 +8687,7 @@
               <node concept="liA8E" id="6HT7BWBQWBM" role="2OqNvi">
                 <ref role="37wK5l" node="6Sag3Ksv6No" resolve="canRepresent" />
                 <node concept="3VsKOn" id="6HT7BWBQXfZ" role="37wK5m">
-                  <ref role="3VsUkX" node="3OPtF03lco4" resolve="ListFunc" />
+                  <ref role="3VsUkX" node="3OPtF03lco4" resolve="ListNode" />
                 </node>
               </node>
             </node>
@@ -8716,7 +8716,7 @@
       <node concept="3cqZAl" id="3OPtF03lcrV" role="3clF45" />
       <node concept="3clFbS" id="3OPtF03lcrW" role="3clF47">
         <node concept="XkiVB" id="3OPtF03lcrX" role="3cqZAp">
-          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Func" />
+          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Node" />
           <node concept="37vLTw" id="3OPtF03lcrY" role="37wK5m">
             <ref role="3cqZAo" node="3OPtF03lcs8" resolve="symbolPath" />
           </node>
@@ -8729,7 +8729,7 @@
                 <ref role="3cqZAo" node="3OPtF03lcsc" resolve="tail" />
               </node>
               <node concept="3uibUv" id="3OPtF03lcs6" role="3g7fb8">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
           </node>
@@ -8763,13 +8763,13 @@
       <node concept="37vLTG" id="3OPtF03lcsa" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="3H0z$hTtTvx" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="3OPtF03lcsc" role="3clF46">
         <property role="TrG5h" value="tail" />
         <node concept="3uibUv" id="3OPtF03lcsd" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
       </node>
     </node>
@@ -8778,14 +8778,14 @@
       <node concept="3cqZAl" id="3OPtF03lcsh" role="3clF45" />
       <node concept="3clFbS" id="3OPtF03lcsi" role="3clF47">
         <node concept="XkiVB" id="3OPtF03lcsj" role="3cqZAp">
-          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Func" />
+          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Node" />
           <node concept="37vLTw" id="3OPtF03lcsk" role="37wK5m">
             <ref role="3cqZAo" node="3OPtF03lcss" resolve="symbolPath" />
           </node>
           <node concept="2ShNRf" id="3OPtF03lcso" role="37wK5m">
             <node concept="3g6Rrh" id="3OPtF03lcsp" role="2ShVmc">
               <node concept="3uibUv" id="3OPtF03lcsq" role="3g7fb8">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
           </node>
@@ -8807,7 +8807,7 @@
       <node concept="3cqZAl" id="1OShD0I2Mcq" role="3clF45" />
       <node concept="3clFbS" id="1OShD0I2Mcr" role="3clF47">
         <node concept="XkiVB" id="1OShD0I2Mcs" role="3cqZAp">
-          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Func" />
+          <ref role="37wK5l" node="1msb0mq9JZ8" resolve="Node" />
           <node concept="37vLTw" id="1OShD0I2Mct" role="37wK5m">
             <ref role="3cqZAo" node="1OShD0I2Mc_" resolve="symbolPath" />
           </node>
@@ -8817,7 +8817,7 @@
                 <ref role="3cqZAo" node="1OShD0I2RTL" resolve="value" />
               </node>
               <node concept="3uibUv" id="1OShD0I2Mcz" role="3g7fb8">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
           </node>
@@ -8841,7 +8841,7 @@
       <node concept="37vLTG" id="1OShD0I2RTL" role="3clF46">
         <property role="TrG5h" value="value" />
         <node concept="3uibUv" id="3H0z$hTtUqT" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
     </node>
@@ -8853,7 +8853,7 @@
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3qUE_q" id="5YIOneOT4dd" role="11_B2D">
           <node concept="3uibUv" id="5YIOneOT4dn" role="3qUE_r">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -8865,14 +8865,14 @@
             <node concept="3uibUv" id="5YIOneOT7XS" role="1tU5fm">
               <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
               <node concept="3uibUv" id="5YIOneOT7XV" role="11_B2D">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
             <node concept="2ShNRf" id="5YIOneOT7XY" role="33vP2m">
               <node concept="1pGfFk" id="5YIOneOT7XZ" role="2ShVmc">
                 <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
                 <node concept="3uibUv" id="5YIOneOT7Y0" role="1pMfVU">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
             </node>
@@ -8910,7 +8910,7 @@
       <node concept="37vLTG" id="3OPtF03lcur" role="3clF46">
         <property role="TrG5h" value="visitor" />
         <node concept="3uibUv" id="3OPtF03lcus" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
       <node concept="3uibUv" id="3OPtF03lcut" role="3clF45">
@@ -8939,7 +8939,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="copyRecursively" />
       <node concept="3uibUv" id="3t7_2Fh5pfx" role="3clF45">
-        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
       </node>
       <node concept="3Tm1VV" id="3t7_2Fh5nOg" role="1B3o_S" />
       <node concept="2AHcQZ" id="3t7_2Fh5nOi" role="2AJF6D">
@@ -8954,11 +8954,11 @@
       <node concept="37vLTG" id="3t7_2Fh5nOn" role="3clF46">
         <property role="TrG5h" value="mapper" />
         <node concept="3uibUv" id="3t7_2Fh5nOo" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+          <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
         </node>
       </node>
       <node concept="3uibUv" id="3t7_2Fh5sxc" role="3clF45">
-        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
       </node>
       <node concept="3Tm1VV" id="3t7_2Fh5nOq" role="1B3o_S" />
       <node concept="2AHcQZ" id="3t7_2Fh5nOs" role="2AJF6D">
@@ -9062,7 +9062,7 @@
           <node concept="3cpWsn" id="2q_78a92HDJ" role="1Duv9x">
             <property role="TrG5h" value="br" />
             <node concept="3uibUv" id="3H0z$hTtZCT" role="1tU5fm">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
           <node concept="1rXfSq" id="2q_78a92HDM" role="1DdaDG">
@@ -9130,7 +9130,7 @@
         <node concept="3uibUv" id="3OPtF03lcvl" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3uibUv" id="3H0z$hTu13J" role="11_B2D">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -9156,14 +9156,14 @@
     <node concept="3clFb_" id="3OPtF03lcvw" role="jymVt">
       <property role="TrG5h" value="tip" />
       <node concept="3uibUv" id="3OPtF03lcvx" role="3clF45">
-        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
       </node>
       <node concept="3Tmbuc" id="3t7_2Fg_9v$" role="1B3o_S" />
       <node concept="3clFbS" id="3OPtF03lcv$" role="3clF47">
         <node concept="3clFbF" id="3OPtF03lcv_" role="3cqZAp">
           <node concept="10QFUN" id="3OPtF03lcvB" role="3clFbG">
             <node concept="3uibUv" id="3OPtF03lcvC" role="10QFUM">
-              <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+              <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
             </node>
             <node concept="1rXfSq" id="3OPtF03lcvE" role="10QFUP">
               <ref role="37wK5l" node="6$jH9oLbK0n" resolve="argAt" />
@@ -9186,25 +9186,25 @@
         <node concept="37vLTG" id="3OPtF03lcvK" role="3clF46">
           <property role="TrG5h" value="head" />
           <node concept="3uibUv" id="3H0z$hTu5rB" role="1tU5fm">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
         <node concept="37vLTG" id="3OPtF03lcvO" role="3clF46">
           <property role="TrG5h" value="tail" />
           <node concept="3uibUv" id="3OPtF03lcvP" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
         <node concept="3cqZAl" id="3OPtF03lcvR" role="3clF45" />
         <node concept="3clFbS" id="3OPtF03lcvS" role="3clF47">
           <node concept="XkiVB" id="3OPtF03lcvT" role="3cqZAp">
-            <ref role="37wK5l" node="3OPtF03lcrU" resolve="ListFunc" />
+            <ref role="37wK5l" node="3OPtF03lcrU" resolve="ListNode" />
             <node concept="2YIFZM" id="3OPtF03lcvU" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qEBDL" resolve="create" />
               <ref role="1Pybhc" node="1R$Cm9qEqLU" resolve="Path" />
               <node concept="Rm8GO" id="1OShD0HGB9i" role="37wK5m">
                 <ref role="Rm8GQ" node="3OPtF03lc$8" resolve="CONS" />
-                <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListFunc.Symbols" />
+                <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListNode.Symbols" />
               </node>
             </node>
             <node concept="37vLTw" id="3OPtF03lcvY" role="37wK5m">
@@ -9222,7 +9222,7 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="copyRecursively" />
         <node concept="3uibUv" id="3OPtF03lcwb" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lcvH" resolve="ListFunc.Cons" />
+          <ref role="3uigEE" node="3OPtF03lcvH" resolve="ListNode.Cons" />
         </node>
         <node concept="3Tm1VV" id="3OPtF03lcwd" role="1B3o_S" />
         <node concept="2AHcQZ" id="3OPtF03lcwe" role="2AJF6D">
@@ -9233,7 +9233,7 @@
             <node concept="3cpWsn" id="3OPtF03lcwh" role="3cpWs9">
               <property role="TrG5h" value="headCopy" />
               <node concept="3uibUv" id="3H0z$hTu6uc" role="1tU5fm">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
               <node concept="2OqwBi" id="1OShD0HKGvi" role="33vP2m">
                 <node concept="1rXfSq" id="1OShD0HKGvj" role="2Oq$k0">
@@ -9249,7 +9249,7 @@
             <node concept="3cpWsn" id="3OPtF03lcwp" role="3cpWs9">
               <property role="TrG5h" value="tailCopy" />
               <node concept="3uibUv" id="3OPtF03lcwq" role="1tU5fm">
-                <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+                <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
               </node>
               <node concept="2OqwBi" id="3OPtF03lcws" role="33vP2m">
                 <node concept="1rXfSq" id="3OPtF03lcwt" role="2Oq$k0">
@@ -9264,7 +9264,7 @@
           <node concept="3clFbF" id="1OShD0HKRKf" role="3cqZAp">
             <node concept="2YIFZM" id="1OShD0HKRKh" role="3clFbG">
               <ref role="37wK5l" node="1OShD0HGZnt" resolve="createCons" />
-              <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListFunc" />
+              <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListNode" />
               <node concept="37vLTw" id="1OShD0HKRKi" role="37wK5m">
                 <ref role="3cqZAo" node="3OPtF03lcwh" resolve="headCopy" />
               </node>
@@ -9282,7 +9282,7 @@
         <node concept="37vLTG" id="3OPtF03lcwM" role="3clF46">
           <property role="TrG5h" value="mapper" />
           <node concept="3uibUv" id="3OPtF03lcwN" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+            <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
           </node>
         </node>
         <node concept="3Tm1VV" id="3OPtF03lcwO" role="1B3o_S" />
@@ -9305,7 +9305,7 @@
                 </node>
               </node>
               <node concept="3uibUv" id="3H0z$hTuaUu" role="1tU5fm">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
           </node>
@@ -9313,7 +9313,7 @@
             <node concept="3cpWsn" id="3OPtF03lcx1" role="3cpWs9">
               <property role="TrG5h" value="tailMap" />
               <node concept="3uibUv" id="3OPtF03lcx2" role="1tU5fm">
-                <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+                <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
               </node>
               <node concept="2OqwBi" id="3OPtF03lcx4" role="33vP2m">
                 <node concept="1rXfSq" id="3OPtF03lcx5" role="2Oq$k0">
@@ -9331,7 +9331,7 @@
           <node concept="3clFbF" id="1OShD0HKNbM" role="3cqZAp">
             <node concept="2YIFZM" id="1OShD0HKNbO" role="3clFbG">
               <ref role="37wK5l" node="1OShD0HGZnt" resolve="createCons" />
-              <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListFunc" />
+              <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListNode" />
               <node concept="37vLTw" id="1OShD0HKNbP" role="37wK5m">
                 <ref role="3cqZAo" node="3OPtF03lcwS" resolve="headMap" />
               </node>
@@ -9342,7 +9342,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="3OPtF03lcxp" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lcvH" resolve="ListFunc.Cons" />
+          <ref role="3uigEE" node="3OPtF03lcvH" resolve="ListNode.Cons" />
         </node>
       </node>
       <node concept="2tJIrI" id="3OPtF03lcxr" role="jymVt" />
@@ -9373,7 +9373,7 @@
                 </node>
                 <node concept="Rm8GO" id="1OShD0I5481" role="3uHU7w">
                   <ref role="Rm8GQ" node="3OPtF03lc$8" resolve="CONS" />
-                  <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListFunc.Symbols" />
+                  <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListNode.Symbols" />
                 </node>
               </node>
             </node>
@@ -9392,7 +9392,7 @@
           <node concept="3uibUv" id="3OPtF03lcxQ" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~List" resolve="List" />
             <node concept="3uibUv" id="3H0z$hTugCA" role="11_B2D">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -9435,7 +9435,7 @@
         <property role="TrG5h" value="tip" />
         <property role="1EzhhJ" value="false" />
         <node concept="3uibUv" id="3t7_2Fg_ebD" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
         <node concept="3Tmbuc" id="3t7_2Fg_ebE" role="1B3o_S" />
         <node concept="3clFbS" id="3t7_2Fg_ebL" role="3clF47">
@@ -9465,7 +9465,7 @@
         </node>
         <node concept="3Tm6S6" id="3OPtF03lcyc" role="1B3o_S" />
         <node concept="3uibUv" id="3H0z$hTuhjD" role="3clF45">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="2tJIrI" id="3OPtF03lcye" role="jymVt" />
@@ -9484,20 +9484,20 @@
                 </node>
               </node>
               <node concept="3uibUv" id="3OPtF03lcyl" role="10QFUM">
-                <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+                <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3Tm6S6" id="3OPtF03lcyn" role="1B3o_S" />
         <node concept="3uibUv" id="3OPtF03lcyo" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
       </node>
       <node concept="2tJIrI" id="3OPtF03lcyq" role="jymVt" />
       <node concept="3Tm1VV" id="3OPtF03lcyB" role="1B3o_S" />
       <node concept="3uibUv" id="3OPtF03lcyC" role="1zkMxy">
-        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
       </node>
     </node>
     <node concept="2tJIrI" id="3OPtF03lcyI" role="jymVt" />
@@ -9511,13 +9511,13 @@
         <node concept="3cqZAl" id="3OPtF03lcyM" role="3clF45" />
         <node concept="3clFbS" id="3OPtF03lcyN" role="3clF47">
           <node concept="XkiVB" id="3OPtF03lcyO" role="3cqZAp">
-            <ref role="37wK5l" node="3OPtF03lcsg" resolve="ListFunc" />
+            <ref role="37wK5l" node="3OPtF03lcsg" resolve="ListNode" />
             <node concept="2YIFZM" id="3OPtF03lcyP" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qEBDL" resolve="create" />
               <ref role="1Pybhc" node="1R$Cm9qEqLU" resolve="Path" />
               <node concept="Rm8GO" id="3OPtF03lcyQ" role="37wK5m">
                 <ref role="Rm8GQ" node="3OPtF03lc$7" resolve="NIL" />
-                <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListFunc.Symbols" />
+                <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListNode.Symbols" />
               </node>
             </node>
           </node>
@@ -9536,13 +9536,13 @@
           <node concept="3clFbF" id="3OPtF03lcz5" role="3cqZAp">
             <node concept="2ShNRf" id="3OPtF03lcz6" role="3clFbG">
               <node concept="1pGfFk" id="3OPtF03lcz7" role="2ShVmc">
-                <ref role="37wK5l" node="3OPtF03lcyL" resolve="ListFunc.Nil" />
+                <ref role="37wK5l" node="3OPtF03lcyL" resolve="ListNode.Nil" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3uibUv" id="3OPtF03lcz9" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lcyJ" resolve="ListFunc.Nil" />
+          <ref role="3uigEE" node="3OPtF03lcyJ" resolve="ListNode.Nil" />
         </node>
       </node>
       <node concept="2tJIrI" id="3OPtF03lczb" role="jymVt" />
@@ -9552,7 +9552,7 @@
         <node concept="37vLTG" id="3OPtF03lczd" role="3clF46">
           <property role="TrG5h" value="mapper" />
           <node concept="3uibUv" id="3OPtF03lcze" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+            <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
           </node>
         </node>
         <node concept="3Tm1VV" id="3OPtF03lczf" role="1B3o_S" />
@@ -9563,13 +9563,13 @@
           <node concept="3clFbF" id="3OPtF03lczi" role="3cqZAp">
             <node concept="2ShNRf" id="3OPtF03lczj" role="3clFbG">
               <node concept="1pGfFk" id="3OPtF03lczk" role="2ShVmc">
-                <ref role="37wK5l" node="3OPtF03lcyL" resolve="ListFunc.Nil" />
+                <ref role="37wK5l" node="3OPtF03lcyL" resolve="ListNode.Nil" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3uibUv" id="3OPtF03lczm" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lcyJ" resolve="ListFunc.Nil" />
+          <ref role="3uigEE" node="3OPtF03lcyJ" resolve="ListNode.Nil" />
         </node>
       </node>
       <node concept="2tJIrI" id="3OPtF03lczo" role="jymVt" />
@@ -9596,7 +9596,7 @@
         <property role="TrG5h" value="tip" />
         <property role="1EzhhJ" value="false" />
         <node concept="3uibUv" id="3t7_2Fg_g6M" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
         <node concept="3Tmbuc" id="3t7_2Fg_g6N" role="1B3o_S" />
         <node concept="3clFbS" id="3t7_2Fg_g6U" role="3clF47">
@@ -9617,7 +9617,7 @@
           <node concept="3uibUv" id="3OPtF03lczS" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~List" resolve="List" />
             <node concept="3uibUv" id="3H0z$hTujbW" role="11_B2D">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -9636,7 +9636,7 @@
       </node>
       <node concept="3Tm1VV" id="3OPtF03lc$0" role="1B3o_S" />
       <node concept="3uibUv" id="3OPtF03lc$3" role="1zkMxy">
-        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
       </node>
     </node>
     <node concept="2tJIrI" id="1OShD0I256B" role="jymVt" />
@@ -9656,13 +9656,13 @@
         <node concept="3cqZAl" id="1OShD0I20qX" role="3clF45" />
         <node concept="3clFbS" id="1OShD0I20qY" role="3clF47">
           <node concept="XkiVB" id="1OShD0I20qZ" role="3cqZAp">
-            <ref role="37wK5l" node="1OShD0I2Mcp" resolve="ListFunc" />
+            <ref role="37wK5l" node="1OShD0I2Mcp" resolve="ListNode" />
             <node concept="2YIFZM" id="1OShD0I20r0" role="37wK5m">
               <ref role="37wK5l" node="1R$Cm9qEBDL" resolve="create" />
               <ref role="1Pybhc" node="1R$Cm9qEqLU" resolve="Path" />
               <node concept="Rm8GO" id="1OShD0I2j4m" role="37wK5m">
                 <ref role="Rm8GQ" node="1OShD0I1R$K" resolve="ALIAS" />
-                <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListFunc.Symbols" />
+                <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListNode.Symbols" />
               </node>
             </node>
             <node concept="37vLTw" id="1OShD0I2mpa" role="37wK5m">
@@ -9677,7 +9677,7 @@
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="copyRecursively" />
         <node concept="3uibUv" id="1OShD0I2Zn0" role="3clF45">
-          <ref role="3uigEE" node="1OShD0I20qU" resolve="ListFunc.Alias" />
+          <ref role="3uigEE" node="1OShD0I20qU" resolve="ListNode.Alias" />
         </node>
         <node concept="3Tm1VV" id="1OShD0I2Zn2" role="1B3o_S" />
         <node concept="2AHcQZ" id="1OShD0I2Zn3" role="2AJF6D">
@@ -9703,7 +9703,7 @@
           <node concept="3clFbF" id="1OShD0I7YSW" role="3cqZAp">
             <node concept="2YIFZM" id="1OShD0I7YSY" role="3clFbG">
               <ref role="37wK5l" node="1OShD0I3vRu" resolve="createAlias" />
-              <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListFunc" />
+              <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListNode" />
               <node concept="37vLTw" id="1OShD0I7YSZ" role="37wK5m">
                 <ref role="3cqZAo" node="1OShD0I2Zn6" resolve="varCopy" />
               </node>
@@ -9718,7 +9718,7 @@
         <node concept="37vLTG" id="1OShD0I2Znq" role="3clF46">
           <property role="TrG5h" value="mapper" />
           <node concept="3uibUv" id="1OShD0I2Znr" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+            <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
           </node>
         </node>
         <node concept="3Tm1VV" id="1OShD0I2Zns" role="1B3o_S" />
@@ -9728,9 +9728,9 @@
         <node concept="3clFbS" id="1OShD0I2Znu" role="3clF47">
           <node concept="3cpWs8" id="6HT7BWBOytl" role="3cqZAp">
             <node concept="3cpWsn" id="6HT7BWBOytm" role="3cpWs9">
-              <property role="TrG5h" value="atom" />
+              <property role="TrG5h" value="tf" />
               <node concept="3uibUv" id="6HT7BWBOytj" role="1tU5fm">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
               <node concept="2OqwBi" id="6HT7BWBOytn" role="33vP2m">
                 <node concept="37vLTw" id="6HT7BWBOyto" role="2Oq$k0">
@@ -9750,13 +9750,13 @@
               <node concept="3cpWs6" id="6HT7BWBOznG" role="3cqZAp">
                 <node concept="2YIFZM" id="1OShD0I7__u" role="3cqZAk">
                   <ref role="37wK5l" node="1OShD0I3vRu" resolve="createAlias" />
-                  <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListFunc" />
+                  <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListNode" />
                   <node concept="10QFUN" id="6HT7BWBOIM8" role="37wK5m">
                     <node concept="3uibUv" id="6HT7BWBOIM6" role="10QFUM">
                       <ref role="3uigEE" node="uNmovXiEd4" resolve="Variable" />
                     </node>
                     <node concept="37vLTw" id="6HT7BWBOIM7" role="10QFUP">
-                      <ref role="3cqZAo" node="6HT7BWBOytm" resolve="atom" />
+                      <ref role="3cqZAo" node="6HT7BWBOytm" resolve="tf" />
                     </node>
                   </node>
                 </node>
@@ -9768,7 +9768,7 @@
                 <ref role="3uigEE" node="uNmovXiEd4" resolve="Variable" />
               </node>
               <node concept="37vLTw" id="6HT7BWBOz67" role="2ZW6bz">
-                <ref role="3cqZAo" node="6HT7BWBOytm" resolve="atom" />
+                <ref role="3cqZAo" node="6HT7BWBOytm" resolve="tf" />
               </node>
             </node>
             <node concept="3eNFk2" id="6HT7BWBOAfD" role="3eNLev">
@@ -9776,9 +9776,9 @@
                 <node concept="3cpWs6" id="6HT7BWBOC5z" role="3cqZAp">
                   <node concept="2YIFZM" id="6HT7BWBOGwz" role="3cqZAk">
                     <ref role="37wK5l" node="1OShD0HS45f" resolve="createList" />
-                    <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListFunc" />
+                    <ref role="1Pybhc" node="3OPtF03lco4" resolve="ListNode" />
                     <node concept="37vLTw" id="6HT7BWBOGw$" role="37wK5m">
-                      <ref role="3cqZAo" node="6HT7BWBOytm" resolve="atom" />
+                      <ref role="3cqZAo" node="6HT7BWBOytm" resolve="tf" />
                     </node>
                   </node>
                 </node>
@@ -9786,10 +9786,10 @@
               </node>
               <node concept="2ZW3vV" id="6HT7BWBOAYX" role="3eO9$A">
                 <node concept="3uibUv" id="6HT7BWBOExh" role="2ZW6by">
-                  <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+                  <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
                 </node>
                 <node concept="37vLTw" id="6HT7BWBOARN" role="2ZW6bz">
-                  <ref role="3cqZAo" node="6HT7BWBOytm" resolve="atom" />
+                  <ref role="3cqZAo" node="6HT7BWBOytm" resolve="tf" />
                 </node>
               </node>
             </node>
@@ -9801,7 +9801,7 @@
                       <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
                       <node concept="3cpWs3" id="6HT7BWBONr_" role="37wK5m">
                         <node concept="37vLTw" id="6HT7BWBONt3" role="3uHU7w">
-                          <ref role="3cqZAo" node="6HT7BWBOytm" resolve="atom" />
+                          <ref role="3cqZAo" node="6HT7BWBOytm" resolve="tf" />
                         </node>
                         <node concept="Xl_RD" id="6HT7BWBONfA" role="3uHU7B">
                           <property role="Xl_RC" value="unexpected map result: " />
@@ -9815,7 +9815,7 @@
           </node>
         </node>
         <node concept="3uibUv" id="6HT7BWBOHkC" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
       </node>
       <node concept="2tJIrI" id="1OShD0I2ZnQ" role="jymVt" />
@@ -9892,7 +9892,7 @@
             <node concept="3cpWs3" id="1OShD0I61XL" role="3clFbG">
               <node concept="Rm8GO" id="1OShD0I64yC" role="3uHU7B">
                 <ref role="Rm8GQ" node="1OShD0I1R$K" resolve="ALIAS" />
-                <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListFunc.Symbols" />
+                <ref role="1Px2BO" node="3OPtF03lc$6" resolve="ListNode.Symbols" />
               </node>
               <node concept="2YIFZM" id="1OShD0I2Zo1" role="3uHU7w">
                 <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
@@ -9917,7 +9917,7 @@
           <node concept="3uibUv" id="1OShD0I2Zo9" role="1tU5fm">
             <ref role="3uigEE" to="33ny:~List" resolve="List" />
             <node concept="3uibUv" id="3H0z$hTuqdU" role="11_B2D">
-              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -9947,7 +9947,7 @@
         <property role="TrG5h" value="tip" />
         <property role="1EzhhJ" value="false" />
         <node concept="3uibUv" id="3t7_2Fg_is5" role="3clF45">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
         <node concept="3Tmbuc" id="3t7_2Fg_is6" role="1B3o_S" />
         <node concept="3clFbS" id="3t7_2Fg_isd" role="3clF47">
@@ -9961,7 +9961,7 @@
       </node>
       <node concept="3Tm1VV" id="1OShD0I20rI" role="1B3o_S" />
       <node concept="3uibUv" id="1OShD0I20rM" role="1zkMxy">
-        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+        <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
       </node>
     </node>
     <node concept="2tJIrI" id="3OPtF03lc$5" role="jymVt" />
@@ -10013,21 +10013,21 @@
       <node concept="2tJIrI" id="1OShD0I1Zul" role="jymVt" />
       <node concept="QsSxf" id="3OPtF03lc$7" role="Qtgdg">
         <property role="TrG5h" value="NIL" />
-        <ref role="37wK5l" node="1OShD0I1UxM" resolve="ListFunc.Symbols" />
+        <ref role="37wK5l" node="1OShD0I1UxM" resolve="ListNode.Symbols" />
         <node concept="Xl_RD" id="1OShD0I20hE" role="37wK5m">
           <property role="Xl_RC" value="NIL" />
         </node>
       </node>
       <node concept="QsSxf" id="3OPtF03lc$8" role="Qtgdg">
         <property role="TrG5h" value="CONS" />
-        <ref role="37wK5l" node="1OShD0I1UxM" resolve="ListFunc.Symbols" />
+        <ref role="37wK5l" node="1OShD0I1UxM" resolve="ListNode.Symbols" />
         <node concept="Xl_RD" id="1OShD0I20lu" role="37wK5m">
           <property role="Xl_RC" value=":" />
         </node>
       </node>
       <node concept="QsSxf" id="1OShD0I1R$K" role="Qtgdg">
         <property role="TrG5h" value="ALIAS" />
-        <ref role="37wK5l" node="1OShD0I1UxM" resolve="ListFunc.Symbols" />
+        <ref role="37wK5l" node="1OShD0I1UxM" resolve="ListNode.Symbols" />
         <node concept="Xl_RD" id="1OShD0I20pU" role="37wK5m">
           <property role="Xl_RC" value="&amp;" />
         </node>
@@ -10042,14 +10042,14 @@
     <node concept="2tJIrI" id="3OPtF03lc$a" role="jymVt" />
     <node concept="3Tm1VV" id="3OPtF03lc_V" role="1B3o_S" />
     <node concept="3uibUv" id="3OPtF03lc_Z" role="1zkMxy">
-      <ref role="3uigEE" node="1msb0mq9ID4" resolve="Func" />
+      <ref role="3uigEE" node="1msb0mq9ID4" resolve="Node" />
     </node>
   </node>
   <node concept="312cEu" id="5s497VqXwA7">
     <property role="TrG5h" value="PrettyPrinter" />
     <node concept="3Tm1VV" id="5s497VqXwA8" role="1B3o_S" />
     <node concept="3uibUv" id="5s497VqXwGs" role="EKbjA">
-      <ref role="3uigEE" node="3JgCwkqiP3h" resolve="AtomWalk.Walker" />
+      <ref role="3uigEE" node="3JgCwkqiP3h" resolve="TreeFormWalk.Walker" />
     </node>
     <node concept="2tJIrI" id="5s497VqXx1L" role="jymVt" />
     <node concept="2YIFZL" id="5s497VqXK1B" role="jymVt">
@@ -10094,7 +10094,7 @@
       <node concept="37vLTG" id="5s497VqXKRl" role="3clF46">
         <property role="TrG5h" value="tbr" />
         <node concept="3uibUv" id="5s497VqXKRk" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="5s497VrdmAW" role="3clF46">
@@ -10148,7 +10148,7 @@
       <node concept="37vLTG" id="3gJBs5s$Nca" role="3clF46">
         <property role="TrG5h" value="tbr" />
         <node concept="3uibUv" id="3gJBs5s$Ncb" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="3gJBs5s$Ncd" role="3clF46">
@@ -10158,7 +10158,7 @@
       <node concept="37vLTG" id="3gJBs5s$P_F" role="3clF46">
         <property role="TrG5h" value="symbolProvider" />
         <node concept="3uibUv" id="3gJBs5s$PN2" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
     </node>
@@ -10170,7 +10170,7 @@
       <node concept="37vLTG" id="3gJBs5s$T2T" role="3clF46">
         <property role="TrG5h" value="tbr" />
         <node concept="3uibUv" id="3gJBs5s$T2U" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="3gJBs5s$T2W" role="3clF46">
@@ -10253,7 +10253,7 @@
                     <node concept="2OqwBi" id="3gJBs5s$T2J" role="3clFbG">
                       <node concept="2ShNRf" id="3gJBs5s$T2K" role="2Oq$k0">
                         <node concept="1pGfFk" id="3gJBs5s$T2L" role="2ShVmc">
-                          <ref role="37wK5l" node="47nvOnTQN6Q" resolve="AtomWalk" />
+                          <ref role="37wK5l" node="47nvOnTQN6Q" resolve="TreeFormWalk" />
                           <node concept="37vLTw" id="3gJBs5s$T4b" role="37wK5m">
                             <ref role="3cqZAo" node="3gJBs5s$T2W" resolve="printer" />
                           </node>
@@ -10390,7 +10390,7 @@
       <node concept="37vLTG" id="3gJBs5s$5nP" role="3clF46">
         <property role="TrG5h" value="symbolProvider" />
         <node concept="3uibUv" id="3gJBs5s$5uo" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
         </node>
       </node>
     </node>
@@ -10423,7 +10423,7 @@
       <node concept="37vLTG" id="5s497VqXwH_" role="3clF46">
         <property role="TrG5h" value="cb" />
         <node concept="3uibUv" id="5s497VqXwHA" role="1tU5fm">
-          <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
         </node>
       </node>
       <node concept="3clFbS" id="5s497VqXwHJ" role="3clF47">
@@ -10572,7 +10572,7 @@
       <node concept="37vLTG" id="5s497VqXwNd" role="3clF46">
         <property role="TrG5h" value="listb" />
         <node concept="3uibUv" id="5YIOneOU7$k" role="1tU5fm">
-          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+          <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
         </node>
       </node>
     </node>
@@ -10667,7 +10667,7 @@
       <node concept="37vLTG" id="5s497VqXwMN" role="3clF46">
         <property role="TrG5h" value="valb" />
         <node concept="3uibUv" id="5YIOneONkT1" role="1tU5fm">
-          <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+          <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
           <node concept="16syzq" id="5YIOneONkT2" role="11_B2D">
             <ref role="16sUi3" node="5s497VqXwMT" resolve="V" />
           </node>
@@ -10795,7 +10795,7 @@
       <node concept="37vLTG" id="5s497VqXwN1" role="3clF46">
         <property role="TrG5h" value="varb" />
         <node concept="3uibUv" id="5YIOneOSlWn" role="1tU5fm">
-          <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+          <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
         </node>
       </node>
     </node>
@@ -11464,7 +11464,7 @@
         <node concept="37vLTG" id="3gJBs5s$cUV" role="3clF46">
           <property role="TrG5h" value="terms" />
           <node concept="3uibUv" id="3gJBs5s$cUW" role="1tU5fm">
-            <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
         <node concept="3clFbS" id="3gJBs5s$cV1" role="3clF47">
@@ -11486,7 +11486,7 @@
         <node concept="37vLTG" id="3gJBs5s$cV5" role="3clF46">
           <property role="TrG5h" value="values" />
           <node concept="3uibUv" id="3gJBs5s$cV6" role="1tU5fm">
-            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
             <node concept="16syzq" id="3gJBs5s$cV7" role="11_B2D">
               <ref role="16sUi3" node="3gJBs5s$cVb" resolve="V" />
             </node>
@@ -11518,7 +11518,7 @@
         <node concept="37vLTG" id="3gJBs5s$cVg" role="3clF46">
           <property role="TrG5h" value="variables" />
           <node concept="3uibUv" id="3gJBs5s$cVh" role="1tU5fm">
-            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
           </node>
         </node>
         <node concept="3uibUv" id="3gJBs5s$cVi" role="3clF45">
@@ -11548,7 +11548,7 @@
         <node concept="37vLTG" id="3gJBs5s$cVs" role="3clF46">
           <property role="TrG5h" value="list" />
           <node concept="3uibUv" id="3gJBs5s$cVt" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
         <node concept="3clFbS" id="3gJBs5s$cVy" role="3clF47">
@@ -11619,7 +11619,7 @@
       </node>
       <node concept="3Tm1VV" id="3gJBs5s$bxs" role="1B3o_S" />
       <node concept="3uibUv" id="3gJBs5s$cLm" role="EKbjA">
-        <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+        <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
       </node>
     </node>
     <node concept="2tJIrI" id="5s497VqXz0L" role="jymVt" />
@@ -11684,7 +11684,7 @@
       <property role="TrG5h" value="symbolProvider" />
       <node concept="3Tm6S6" id="3gJBs5s$5vW" role="1B3o_S" />
       <node concept="3uibUv" id="3gJBs5s$5vY" role="1tU5fm">
-        <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+        <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
       </node>
     </node>
   </node>
@@ -11749,9 +11749,9 @@
                           <property role="TrG5h" value="doPrint" />
                           <property role="1EzhhJ" value="false" />
                           <node concept="37vLTG" id="6r6omRlcrc7" role="3clF46">
-                            <property role="TrG5h" value="atom" />
+                            <property role="TrG5h" value="tf" />
                             <node concept="3uibUv" id="6r6omRlcrc8" role="1tU5fm">
-                              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                              <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                             </node>
                           </node>
                           <node concept="17QB3L" id="6r6omRlcrc9" role="3clF45" />
@@ -11762,7 +11762,7 @@
                                 <ref role="37wK5l" node="5s497VqXK1B" resolve="prettyPrint" />
                                 <ref role="1Pybhc" node="5s497VqXwA7" resolve="PrettyPrinter" />
                                 <node concept="37vLTw" id="6r6omRld6tO" role="37wK5m">
-                                  <ref role="3cqZAo" node="6r6omRlcrc7" resolve="atom" />
+                                  <ref role="3cqZAo" node="6r6omRlcrc7" resolve="tf" />
                                 </node>
                                 <node concept="3cmrfG" id="6r6omRld6yn" role="37wK5m">
                                   <property role="3cmrfH" value="0" />
@@ -11888,7 +11888,7 @@
       <node concept="37vLTG" id="6r6omRlcouK" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="6r6omRlcouL" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="17QB3L" id="6r6omRlcpy3" role="3clF45" />
@@ -11922,7 +11922,7 @@
       <node concept="37vLTG" id="4peSo3CLb7u" role="3clF46">
         <property role="TrG5h" value="root" />
         <node concept="3uibUv" id="4peSo3CLb7v" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="17QB3L" id="6r6omRlcoY5" role="3clF45" />
@@ -11942,9 +11942,9 @@
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="canMap" />
         <node concept="37vLTG" id="6HT7BWBOcP5" role="3clF46">
-          <property role="TrG5h" value="atom" />
+          <property role="TrG5h" value="tf" />
           <node concept="3uibUv" id="6HT7BWBOfNy" role="1tU5fm">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
         <node concept="10P_77" id="6HT7BWBOc_Y" role="3clF45" />
@@ -11955,21 +11955,21 @@
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="map" />
         <node concept="37vLTG" id="3OPtF037E1D" role="3clF46">
-          <property role="TrG5h" value="atom" />
+          <property role="TrG5h" value="tf" />
           <node concept="3uibUv" id="6HT7BWBOfXe" role="1tU5fm">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
         <node concept="37vLTG" id="3OPtF037G3a" role="3clF46">
           <property role="TrG5h" value="fallback" />
           <node concept="3uibUv" id="3OPtF037G8i" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+            <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
           </node>
         </node>
         <node concept="3Tm1VV" id="3OPtF037E1F" role="1B3o_S" />
         <node concept="3clFbS" id="3OPtF037E1G" role="3clF47" />
         <node concept="3uibUv" id="5s497VqzFLM" role="3clF45">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3Tm1VV" id="3OPtF031GQf" role="1B3o_S" />
@@ -11984,14 +11984,14 @@
         </node>
       </node>
       <node concept="3uibUv" id="5s497Vq$6sF" role="3clF45">
-        <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+        <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
       </node>
       <node concept="3Tm1VV" id="5s497VqteR9" role="1B3o_S" />
       <node concept="3clFbS" id="5s497VqteRa" role="3clF47">
         <node concept="3clFbF" id="5s497Vqtqbd" role="3cqZAp">
           <node concept="2ShNRf" id="5s497Vqtqbb" role="3clFbG">
             <node concept="1pGfFk" id="5s497VqtqE8" role="2ShVmc">
-              <ref role="37wK5l" node="5s497VqqLbx" resolve="Mappers.AtomMapper" />
+              <ref role="37wK5l" node="5s497VqqLbx" resolve="Mappers.TreeFormMapper" />
               <node concept="37vLTw" id="5s497VqtqM2" role="37wK5m">
                 <ref role="3cqZAo" node="5s497VqtgPx" resolve="delegate" />
               </node>
@@ -12003,7 +12003,7 @@
     <node concept="2tJIrI" id="5s497VqtbE$" role="jymVt" />
     <node concept="312cEu" id="5s497VqqJkg" role="jymVt">
       <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="AtomMapper" />
+      <property role="TrG5h" value="TreeFormMapper" />
       <node concept="2tJIrI" id="5s497VqqL8s" role="jymVt" />
       <node concept="3clFbW" id="5s497VqqLbx" role="jymVt">
         <node concept="37vLTG" id="5s497Vqr3WN" role="3clF46">
@@ -12037,18 +12037,18 @@
         <node concept="37vLTG" id="5s497VqDhXa" role="3clF46">
           <property role="TrG5h" value="tp" />
           <node concept="3uibUv" id="5s497VqDhXb" role="1tU5fm">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
         <node concept="3Tm1VV" id="5s497VqDhXd" role="1B3o_S" />
         <node concept="3uibUv" id="5s497VqDhXf" role="3clF45">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
         <node concept="3clFbS" id="5s497VqDhXh" role="3clF47">
           <node concept="3cpWs6" id="5s497VquB$d" role="3cqZAp">
             <node concept="10QFUN" id="6HT7BWBO8S2" role="3cqZAk">
               <node concept="3uibUv" id="6HT7BWBO8RX" role="10QFUM">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
               <node concept="2OqwBi" id="6HT7BWBO8RY" role="10QFUP">
                 <node concept="37vLTw" id="6HT7BWBO8RZ" role="2Oq$k0">
@@ -12077,7 +12077,7 @@
         <node concept="37vLTG" id="5s497VqraRx" role="3clF46">
           <property role="TrG5h" value="terms" />
           <node concept="3uibUv" id="5s497VqraRy" role="1tU5fm">
-            <ref role="3uigEE" node="5JQSuNswOXL" resolve="StemFunc" />
+            <ref role="3uigEE" node="5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
         <node concept="3clFbS" id="5s497VqraRB" role="3clF47">
@@ -12105,7 +12105,7 @@
         <node concept="37vLTG" id="5s497VqraS2" role="3clF46">
           <property role="TrG5h" value="list" />
           <node concept="3uibUv" id="5s497VqraS3" role="1tU5fm">
-            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListFunc" />
+            <ref role="3uigEE" node="3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
         <node concept="3clFbS" id="5s497VqraS8" role="3clF47">
@@ -12129,7 +12129,7 @@
         <node concept="37vLTG" id="5s497VqraRF" role="3clF46">
           <property role="TrG5h" value="values" />
           <node concept="3uibUv" id="5s497VqraRG" role="1tU5fm">
-            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueFunc" />
+            <ref role="3uigEE" node="1msb0mq99GH" resolve="ValueNode" />
             <node concept="16syzq" id="5s497VqraRH" role="11_B2D">
               <ref role="16sUi3" node="5s497VqraRL" resolve="V" />
             </node>
@@ -12197,7 +12197,7 @@
         <node concept="37vLTG" id="5s497VqraRQ" role="3clF46">
           <property role="TrG5h" value="variables" />
           <node concept="3uibUv" id="5s497VqraRR" role="1tU5fm">
-            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableFunc" />
+            <ref role="3uigEE" node="uNmovXiSQ6" resolve="VariableNode" />
           </node>
         </node>
         <node concept="3uibUv" id="5s497VqraRS" role="3clF45">
@@ -12258,9 +12258,9 @@
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
         <node concept="37vLTG" id="6HT7BWBOiW5" role="3clF46">
-          <property role="TrG5h" value="atom" />
+          <property role="TrG5h" value="tf" />
           <node concept="3uibUv" id="6HT7BWBOkDZ" role="1tU5fm">
-            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
         <node concept="3clFbS" id="6HT7BWBOiVL" role="3clF47">
@@ -12274,7 +12274,7 @@
                   <node concept="liA8E" id="6HT7BWBOiVR" role="2OqNvi">
                     <ref role="37wK5l" node="3OPtF037E1C" resolve="map" />
                     <node concept="37vLTw" id="6HT7BWBOiW8" role="37wK5m">
-                      <ref role="3cqZAo" node="6HT7BWBOiW5" resolve="atom" />
+                      <ref role="3cqZAo" node="6HT7BWBOiW5" resolve="tf" />
                     </node>
                     <node concept="Xjq3P" id="6HT7BWBOiVT" role="37wK5m" />
                   </node>
@@ -12289,7 +12289,7 @@
               <node concept="liA8E" id="6HT7BWBOiVW" role="2OqNvi">
                 <ref role="37wK5l" node="6HT7BWBOcmA" resolve="canMap" />
                 <node concept="37vLTw" id="6HT7BWBOiW9" role="37wK5m">
-                  <ref role="3cqZAo" node="6HT7BWBOiW5" resolve="atom" />
+                  <ref role="3cqZAo" node="6HT7BWBOiW5" resolve="tf" />
                 </node>
               </node>
             </node>
@@ -12297,7 +12297,7 @@
               <node concept="3clFbS" id="6HT7BWBOiVZ" role="9aQI4">
                 <node concept="3cpWs6" id="6HT7BWBOiW0" role="3cqZAp">
                   <node concept="37vLTw" id="6HT7BWBOiW7" role="3cqZAk">
-                    <ref role="3cqZAo" node="6HT7BWBOiW5" resolve="atom" />
+                    <ref role="3cqZAo" node="6HT7BWBOiW5" resolve="tf" />
                   </node>
                 </node>
               </node>
@@ -12308,10 +12308,10 @@
       <node concept="2tJIrI" id="6HT7BWBOksZ" role="jymVt" />
       <node concept="3Tm6S6" id="5s497VqtaGv" role="1B3o_S" />
       <node concept="3uibUv" id="5s497VqqKLX" role="EKbjA">
-        <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+        <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
       </node>
       <node concept="3uibUv" id="5s497VqqKYG" role="EKbjA">
-        <ref role="3uigEE" node="104EUzFOARB" resolve="Atom.Visitor" />
+        <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
       </node>
       <node concept="312cEg" id="5s497VqrarK" role="jymVt">
         <property role="TrG5h" value="delegate" />
@@ -12325,7 +12325,7 @@
     <node concept="3Tm1VV" id="3OPtF02T8yy" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="6HT7BWBOXme">
-    <property role="TrG5h" value="AtomUtil" />
+    <property role="TrG5h" value="TreeFormUtil" />
     <node concept="2tJIrI" id="1jo82tq2GcC" role="jymVt" />
     <node concept="2YIFZL" id="6HT7BWBOXr$" role="jymVt">
       <property role="TrG5h" value="ground" />
@@ -12333,9 +12333,9 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="37vLTG" id="6HT7BWBOXuV" role="3clF46">
-        <property role="TrG5h" value="atom" />
+        <property role="TrG5h" value="tf" />
         <node concept="3uibUv" id="6HT7BWBOXvt" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3clFbS" id="6HT7BWBOXna" role="3clF47">
@@ -12347,14 +12347,14 @@
             <node concept="liA8E" id="6HT7BWBPbjK" role="2OqNvi">
               <ref role="37wK5l" node="3OPtF02TgQt" resolve="map" />
               <node concept="37vLTw" id="6HT7BWBPbkG" role="37wK5m">
-                <ref role="3cqZAo" node="6HT7BWBOXuV" resolve="atom" />
+                <ref role="3cqZAo" node="6HT7BWBOXuV" resolve="tf" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="6HT7BWBOXnN" role="3clF45">
-        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+        <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
       </node>
       <node concept="3Tm1VV" id="6HT7BWBOXn9" role="1B3o_S" />
     </node>
@@ -12378,9 +12378,9 @@
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="canMap" />
               <node concept="37vLTG" id="6HT7BWBPa9J" role="3clF46">
-                <property role="TrG5h" value="atom" />
+                <property role="TrG5h" value="tf" />
                 <node concept="3uibUv" id="6HT7BWBPa9K" role="1tU5fm">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="10P_77" id="6HT7BWBPa9L" role="3clF45" />
@@ -12401,7 +12401,7 @@
                               <ref role="3uigEE" node="uNmovXiEd4" resolve="Variable" />
                             </node>
                             <node concept="37vLTw" id="4sSe4$pxm8E" role="10QFUP">
-                              <ref role="3cqZAo" node="6HT7BWBPa9J" resolve="atom" />
+                              <ref role="3cqZAo" node="6HT7BWBPa9J" resolve="tf" />
                             </node>
                           </node>
                         </node>
@@ -12420,7 +12420,7 @@
                       <ref role="3uigEE" node="uNmovXiEd4" resolve="Variable" />
                     </node>
                     <node concept="37vLTw" id="4sSe4$pxkXa" role="2ZW6bz">
-                      <ref role="3cqZAo" node="6HT7BWBPa9J" resolve="atom" />
+                      <ref role="3cqZAo" node="6HT7BWBPa9J" resolve="tf" />
                     </node>
                   </node>
                 </node>
@@ -12436,20 +12436,20 @@
               <property role="1EzhhJ" value="false" />
               <property role="TrG5h" value="map" />
               <node concept="37vLTG" id="6HT7BWBPa9P" role="3clF46">
-                <property role="TrG5h" value="atom" />
+                <property role="TrG5h" value="tf" />
                 <node concept="3uibUv" id="6HT7BWBPa9Q" role="1tU5fm">
-                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="37vLTG" id="6HT7BWBPa9R" role="3clF46">
                 <property role="TrG5h" value="fallback" />
                 <node concept="3uibUv" id="6HT7BWBPa9S" role="1tU5fm">
-                  <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+                  <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
                 </node>
               </node>
               <node concept="3Tm1VV" id="6HT7BWBPa9T" role="1B3o_S" />
               <node concept="3uibUv" id="6HT7BWBPa9U" role="3clF45">
-                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
               </node>
               <node concept="3clFbS" id="6HT7BWBPa9V" role="3clF47">
                 <node concept="3clFbJ" id="4sSe4$pxtYI" role="3cqZAp">
@@ -12463,19 +12463,19 @@
                       <node concept="3cpWsn" id="6HT7BWBRA2x" role="3cpWs9">
                         <property role="TrG5h" value="val" />
                         <node concept="3uibUv" id="6HT7BWBRA2u" role="1tU5fm">
-                          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                         </node>
                         <node concept="10QFUN" id="6HT7BWBRA2y" role="33vP2m">
                           <node concept="2OqwBi" id="6HT7BWBRA2z" role="10QFUP">
                             <node concept="37vLTw" id="6HT7BWBRA2$" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6HT7BWBPa9P" resolve="atom" />
+                              <ref role="3cqZAo" node="6HT7BWBPa9P" resolve="tf" />
                             </node>
                             <node concept="liA8E" id="6HT7BWBRA2_" role="2OqNvi">
                               <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
                             </node>
                           </node>
                           <node concept="3uibUv" id="6HT7BWBRA2A" role="10QFUM">
-                            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="Atom" />
+                            <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
                           </node>
                         </node>
                       </node>
@@ -12500,7 +12500,7 @@
                       <ref role="3uigEE" node="uNmovXiEd4" resolve="Variable" />
                     </node>
                     <node concept="37vLTw" id="4sSe4$pxub8" role="2ZW6bz">
-                      <ref role="3cqZAo" node="6HT7BWBPa9P" resolve="atom" />
+                      <ref role="3cqZAo" node="6HT7BWBPa9P" resolve="tf" />
                     </node>
                   </node>
                   <node concept="9aQIb" id="4sSe4$pxw$3" role="9aQIa">
@@ -12508,7 +12508,7 @@
                       <node concept="3cpWs6" id="4sSe4$pxwZo" role="3cqZAp">
                         <node concept="2OqwBi" id="4sSe4$px$xJ" role="3cqZAk">
                           <node concept="37vLTw" id="4sSe4$px$l6" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6HT7BWBPa9P" resolve="atom" />
+                            <ref role="3cqZAo" node="6HT7BWBPa9P" resolve="tf" />
                           </node>
                           <node concept="liA8E" id="4sSe4$px$Jr" role="2OqNvi">
                             <ref role="37wK5l" node="3OPtF02Tjpr" resolve="mapRecursively" />
@@ -12533,7 +12533,7 @@
       <property role="TrG5h" value="GROUND_MAPPER" />
       <node concept="3Tm6S6" id="1jo82tq2G6J" role="1B3o_S" />
       <node concept="3uibUv" id="1jo82tq2G6K" role="1tU5fm">
-        <ref role="3uigEE" node="3OPtF02TdNT" resolve="Atom.Mapper" />
+        <ref role="3uigEE" node="3OPtF02TdNT" resolve="TreeForm.Mapper" />
       </node>
       <node concept="2YIFZM" id="1jo82tq2G6L" role="33vP2m">
         <ref role="37wK5l" node="5s497VqteR6" resolve="mapper" />

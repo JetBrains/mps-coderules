@@ -304,7 +304,7 @@
     <property role="TrG5h" value="Stuff" />
     <node concept="2tJIrI" id="35Lj3TiRjxl" role="jymVt" />
     <node concept="2YIFZL" id="35Lj3TiRjRb" role="jymVt">
-      <property role="TrG5h" value="atom" />
+      <property role="TrG5h" value="treeForm" />
       <node concept="37vLTG" id="35Lj3TiRke1" role="3clF46">
         <property role="TrG5h" value="param" />
         <node concept="3uibUv" id="35Lj3TiRkkj" role="1tU5fm">
@@ -482,7 +482,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="35Lj3TiSq77" role="3clF45">
-        <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+        <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
       </node>
       <node concept="3Tm1VV" id="35Lj3TiRjRe" role="1B3o_S" />
       <node concept="3clFbS" id="35Lj3TiRjRf" role="3clF47">
@@ -617,7 +617,7 @@
       <node concept="gft3U" id="35Lj3TiR81W" role="1lVwrX">
         <node concept="2YIFZM" id="6yEjedmrPFl" role="gfFT$">
           <ref role="1Pybhc" node="35Lj3TiR8No" resolve="Stuff" />
-          <ref role="37wK5l" node="35Lj3TiRjRb" resolve="atom" />
+          <ref role="37wK5l" node="35Lj3TiRjRb" resolve="treeForm" />
           <node concept="10Nm6u" id="35Lj3TiSD25" role="37wK5m">
             <node concept="2b32R4" id="35Lj3TiSFbs" role="lGtFl">
               <node concept="3JmXsc" id="35Lj3TiSFbu" role="2P8S$">
@@ -671,7 +671,7 @@
           <node concept="gft3U" id="4OKkcneWb1C" role="150oIE">
             <node concept="2YIFZM" id="7HUwyZbd5nK" role="gfFT$">
               <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
-              <ref role="37wK5l" to="yg8f:7HUwyZb7chj" resolve="asAtom" />
+              <ref role="37wK5l" to="yg8f:7HUwyZb7chj" resolve="asTreeForm" />
               <node concept="2ShNRf" id="7nPD14NOHH4" role="37wK5m">
                 <node concept="1pGfFk" id="7nPD14NOHH5" role="2ShVmc">
                   <ref role="37wK5l" to="45ys:7nPD14NON$Y" resolve="MetaLogical" />
@@ -685,13 +685,13 @@
         </node>
         <node concept="gft3U" id="4OKkcneWczK" role="14YRTM">
           <node concept="2YIFZM" id="7HUwyZbd5Au" role="gfFT$">
-            <ref role="37wK5l" to="yg8f:7HUwyZb7chj" resolve="asAtom" />
+            <ref role="37wK5l" to="yg8f:7HUwyZb7chj" resolve="asTreeForm" />
             <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2ShNRf" id="2Dg5bSg3RdY" role="37wK5m">
               <node concept="1pGfFk" id="2Dg5bSg3RdZ" role="2ShVmc">
                 <ref role="37wK5l" to="45ys:7nPD14NON$Y" resolve="MetaLogical" />
                 <node concept="3VsKOn" id="2Dg5bSg3Rjh" role="37wK5m">
-                  <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                  <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
             </node>
@@ -752,7 +752,7 @@
       <node concept="gft3U" id="29_L5zQWy8k" role="1lVwrX">
         <node concept="2YIFZM" id="29_L5zQWy8l" role="gfFT$">
           <ref role="37wK5l" to="ie8e:5JQSuNsxhfn" resolve="create" />
-          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="CompositeNode" />
           <node concept="Xl_RD" id="29_L5zQWy8m" role="37wK5m">
             <property role="Xl_RC" value="node" />
             <node concept="17Uvod" id="29_L5zQWJXC" role="lGtFl">
@@ -939,7 +939,7 @@
       <ref role="30HIoZ" to="5j4j:6$jH9oLmYEJ" resolve="ChildRole" />
       <node concept="gft3U" id="6UqNvvALIHq" role="1lVwrX">
         <node concept="2YIFZM" id="6UqNvvALIHr" role="gfFT$">
-          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="StemFunc" />
+          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="CompositeNode" />
           <ref role="37wK5l" to="ie8e:5JQSuNsxhfn" resolve="create" />
           <node concept="Xl_RD" id="6UqNvvALIHs" role="37wK5m">
             <property role="Xl_RC" value="name" />
@@ -1119,7 +1119,7 @@
       <ref role="30HIoZ" to="5j4j:1OShD0HAY6y" resolve="List" />
       <node concept="gft3U" id="6UqNvvALHva" role="1lVwrX">
         <node concept="2YIFZM" id="6UqNvvALHvb" role="gfFT$">
-          <ref role="1Pybhc" to="ie8e:3OPtF03lco4" resolve="ListFunc" />
+          <ref role="1Pybhc" to="ie8e:3OPtF03lco4" resolve="ListNode" />
           <ref role="37wK5l" to="ie8e:1OShD0HS45f" resolve="createList" />
           <node concept="10Nm6u" id="7HUwyZb7cIG" role="37wK5m">
             <node concept="2b32R4" id="7HUwyZb7cIH" role="lGtFl">

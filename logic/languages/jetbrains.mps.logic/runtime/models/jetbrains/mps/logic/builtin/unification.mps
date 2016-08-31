@@ -166,7 +166,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="7HUwyZbdMWH">
-    <property role="TrG5h" value="MetaLogicalAtom" />
+    <property role="TrG5h" value="MetaLogicalTreeForm" />
     <node concept="2tJIrI" id="7HUwyZbdN_B" role="jymVt" />
     <node concept="3clFbW" id="7HUwyZbdNAd" role="jymVt">
       <node concept="3cqZAl" id="7HUwyZbdNAf" role="3clF45" />
@@ -256,7 +256,7 @@
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qUE_q" id="7HUwyZbdPnr" role="11_B2D">
             <node concept="3uibUv" id="7HUwyZbdPns" role="3qUE_r">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -325,7 +325,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4TCblo5MJ1m">
-    <property role="TrG5h" value="LogicalAtom" />
+    <property role="TrG5h" value="LogicalTreeForm" />
     <node concept="2tJIrI" id="4TCblo5MOJG" role="jymVt" />
     <node concept="312cEg" id="4TCblo5MOOn" role="jymVt">
       <property role="TrG5h" value="logical" />
@@ -538,7 +538,7 @@
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qUE_q" id="4TCblo5MWaF" role="11_B2D">
             <node concept="3uibUv" id="4TCblo5MWaG" role="3qUE_r">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -682,7 +682,7 @@
           <node concept="3fqX7Q" id="4TCblo5N6Ds" role="3clFbw">
             <node concept="2ZW3vV" id="4TCblo5N6QY" role="3fr31v">
               <node concept="3uibUv" id="4TCblo5N6YK" role="2ZW6by">
-                <ref role="3uigEE" node="4TCblo5MJ1m" resolve="LogicalAtom" />
+                <ref role="3uigEE" node="4TCblo5MJ1m" resolve="LogicalTreeForm" />
               </node>
               <node concept="37vLTw" id="4TCblo5N6Ff" role="2ZW6bz">
                 <ref role="3cqZAo" node="4TCblo5N1M1" resolve="that" />
@@ -707,7 +707,7 @@
                       <ref role="3cqZAo" node="4TCblo5N1M1" resolve="that" />
                     </node>
                     <node concept="3uibUv" id="4TCblo5N9Mf" role="10QFUM">
-                      <ref role="3uigEE" node="4TCblo5MJ1m" resolve="LogicalAtom" />
+                      <ref role="3uigEE" node="4TCblo5MJ1m" resolve="LogicalTreeForm" />
                     </node>
                   </node>
                 </node>
@@ -766,7 +766,7 @@
                     <ref role="3cqZAo" node="3FIATxbQg$y" resolve="term" />
                   </node>
                   <node concept="3uibUv" id="3FIATxbQg$J" role="10QFUM">
-                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="Atom" />
+                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
                   </node>
                 </node>
               </node>
