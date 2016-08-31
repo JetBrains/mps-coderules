@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.logic_jchr#7541925065276733821" uuid="cb3e3296-69e1-4dcd-88e8-1ece22a0de60">
+    <generator name="" generatorUID="jetbrains.mps.logic_jchr#7541925065276733821" uuid="cb3e3296-69e1-4dcd-88e8-1ece22a0de60">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -16,7 +16,6 @@
       <external-templates />
       <dependencies>
         <dependency reexport="false">894463aa-8754-49c0-bf4b-6a32af66b376(jetbrains.mps.jchr)</dependency>
-        <dependency reexport="false">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)</dependency>
         <dependency reexport="false">85f64970-3326-4ea7-966e-1ac904686424(jetbrains.mps.logic#6626732309150416985)</dependency>
         <dependency reexport="false">35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)</dependency>
         <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
@@ -61,7 +60,6 @@
         <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
         <module reference="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" version="0" />
         <module reference="85f64970-3326-4ea7-966e-1ac904686424(jetbrains.mps.logic#6626732309150416985)" version="0" />
-        <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
         <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
         <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
         <module reference="cd9dfc9b-6796-491f-83c8-b3448018e7f5(jetbrains.mps.logic_jchr)" version="0" />

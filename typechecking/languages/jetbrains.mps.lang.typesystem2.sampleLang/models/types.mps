@@ -21,9 +21,9 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="4r4j" ref="r:94702bd0-f623-44e8-af0a-f2730f7d2518(jetbrains.mps.lang.typesystem2.samplechecker.handle.util)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="7ub6" ref="r:b533b427-da69-49d8-9c93-4ea32433b66e(jetbrains.mps.lang.typesystem2.generation)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -1909,7 +1909,7 @@
             <node concept="3A8Hvi" id="2q0gzCFJ8ut" role="3Aqpz8">
               <node concept="aYllk" id="2q0gzCFJ8uD" role="3A8w4Q">
                 <node concept="2YIFZM" id="2p$DpYKVPA6" role="aYrYs">
-                  <ref role="37wK5l" to="4r4j:1e3DfAArnOl" resolve="listOfListsAtom" />
+                  <ref role="37wK5l" to="4r4j:1e3DfAArnOl" resolve="listOfLists" />
                   <ref role="1Pybhc" to="4r4j:2zBk6uIjXRS" resolve="Lists" />
                   <node concept="39rIew" id="2p$DpYKVPA7" role="37wK5m">
                     <ref role="39rHqR" node="2q0gzCFIXgU" resolve="subtypePaths" />
@@ -2092,7 +2092,7 @@
             <node concept="3A8Hvi" id="7nkyKX6XUm2" role="3Aqpz8">
               <node concept="aYllk" id="7nkyKX6XUm3" role="3A8w4Q">
                 <node concept="2YIFZM" id="7nkyKX6XUm4" role="aYrYs">
-                  <ref role="37wK5l" to="4r4j:1e3DfAArnOl" resolve="listOfListsAtom" />
+                  <ref role="37wK5l" to="4r4j:1e3DfAArnOl" resolve="listOfLists" />
                   <ref role="1Pybhc" to="4r4j:2zBk6uIjXRS" resolve="Lists" />
                   <node concept="2ShNRf" id="7nkyKX6Yp1J" role="37wK5m">
                     <node concept="Tc6Ow" id="7nkyKX6Yr5n" role="2ShVmc">
@@ -2266,7 +2266,7 @@
             <node concept="3A8Hvi" id="2jjvHNv9yAj" role="3Aqpz8">
               <node concept="aYllk" id="2jjvHNv9yAk" role="3A8w4Q">
                 <node concept="2YIFZM" id="2jjvHNv9yAl" role="aYrYs">
-                  <ref role="37wK5l" to="4r4j:1e3DfAArnOl" resolve="listOfListsAtom" />
+                  <ref role="37wK5l" to="4r4j:1e3DfAArnOl" resolve="listOfLists" />
                   <ref role="1Pybhc" to="4r4j:2zBk6uIjXRS" resolve="Lists" />
                   <node concept="37vLTw" id="2jjvHNvcjbs" role="37wK5m">
                     <ref role="3cqZAo" node="2jjvHNvaKEe" resolve="paths" />
@@ -8182,7 +8182,7 @@
               <property role="TrG5h" value="Tn" />
             </node>
             <node concept="3uibUv" id="7km57Pk837W" role="3vLBG7">
-              <ref role="3uigEE" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+              <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
             </node>
           </node>
           <node concept="3Aqczg" id="5NuEpF1vdPk" role="3cqZAp">
@@ -9351,7 +9351,7 @@
               <property role="TrG5h" value="Name" />
             </node>
             <node concept="3uibUv" id="4gW0vesN6Yg" role="3vLBG7">
-              <ref role="3uigEE" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+              <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
             </node>
           </node>
           <node concept="3Aqczg" id="4gW0vesJrTr" role="3cqZAp">
@@ -9993,7 +9993,7 @@
               <property role="TrG5h" value="TailStub" />
             </node>
             <node concept="3uibUv" id="6OUp3PsRZ9G" role="3vLBG7">
-              <ref role="3uigEE" to="ie8e:3OPtF03lco4" resolve="ListNode" />
+              <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
             </node>
           </node>
           <node concept="3Aqczg" id="7LZcKzBwTPI" role="3cqZAp">
@@ -10205,7 +10205,7 @@
             <property role="TrG5h" value="Name" />
           </node>
           <node concept="3uibUv" id="6MYr6Jxmmuf" role="3vLBG7">
-            <ref role="3uigEE" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+            <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
           </node>
         </node>
         <node concept="3clFbS" id="5_6ImQYgAiD" role="3Aqf5P">
@@ -10229,7 +10229,7 @@
             <property role="TrG5h" value="Name2" />
           </node>
           <node concept="3uibUv" id="6MYr6JxmmXN" role="3vLBG7">
-            <ref role="3uigEE" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+            <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
           </node>
         </node>
         <node concept="3clFbS" id="5_6ImQYgAiH" role="3Aqf5P">

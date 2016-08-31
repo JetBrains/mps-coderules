@@ -28,7 +28,6 @@
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.typesystem2.behavior)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.typesystem2.type)" />
     <import index="cx9y" ref="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
@@ -49,6 +48,7 @@
     <import index="ucur" ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" />
     <import index="ba7m" ref="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.aspect.generator.template.main@generator)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.typesystem2.aspect)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
@@ -6852,7 +6852,7 @@
         </node>
         <node concept="gft3U" id="7jC45KccKR9" role="14YRTM">
           <node concept="2YIFZM" id="7jC45KccKZV" role="gfFT$">
-            <ref role="37wK5l" to="4r4j:4OKkcnfu_xq" resolve="anchorAtom" />
+            <ref role="37wK5l" to="4r4j:4OKkcnfu_xq" resolve="anchorTreeForm" />
             <ref role="1Pybhc" to="4r4j:4OKkcnfu_xo" resolve="AnchorUtil" />
             <node concept="10Nm6u" id="7jC45KccL0o" role="37wK5m">
               <node concept="29HgVG" id="7jC45KccL0G" role="lGtFl">
@@ -6878,7 +6878,7 @@
       <ref role="30HIoZ" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
       <node concept="gft3U" id="YGS68NawGs" role="1lVwrX">
         <node concept="2YIFZM" id="YGS68NawZA" role="gfFT$">
-          <ref role="37wK5l" to="4r4j:4OKkcnfu_xq" resolve="anchorAtom" />
+          <ref role="37wK5l" to="4r4j:4OKkcnfu_xq" resolve="anchorTreeForm" />
           <ref role="1Pybhc" to="4r4j:4OKkcnfu_xo" resolve="AnchorUtil" />
           <node concept="10Nm6u" id="YGS68NawZB" role="37wK5m">
             <node concept="29HgVG" id="YGS68NawZC" role="lGtFl">
@@ -9724,7 +9724,7 @@
                                 </node>
                               </node>
                               <node concept="3uibUv" id="1L74NXGlUxQ" role="3clF45">
-                                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+                                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                               </node>
                               <node concept="3Tmbuc" id="1L74NXGlU7F" role="1B3o_S" />
                               <node concept="3clFbS" id="1L74NXGlGt6" role="3clF47">
@@ -10465,7 +10465,7 @@
             </node>
           </node>
           <node concept="3uibUv" id="1L74NXG5Fnm" role="3clF45">
-            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
           </node>
           <node concept="3Tmbuc" id="1L74NXG5G7o" role="1B3o_S" />
           <node concept="3clFbS" id="1L74NXG5FfZ" role="3clF47">
@@ -11225,7 +11225,7 @@
         <node concept="3clFb_" id="1L74NXEvZZv" role="jymVt">
           <property role="TrG5h" value="typeTerm" />
           <node concept="3uibUv" id="4gW0vesTxMA" role="3clF45">
-            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
           </node>
           <node concept="3Tm1VV" id="1L74NXEUsh1" role="1B3o_S" />
           <node concept="3clFbS" id="1L74NXEvZZz" role="3clF47">
@@ -11300,7 +11300,7 @@
             </node>
           </node>
           <node concept="3uibUv" id="4gW0vesTAtz" role="3clF45">
-            <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
           </node>
           <node concept="3Tm1VV" id="1L74NXFPMn6" role="1B3o_S" />
           <node concept="3clFbS" id="1L74NXFPMn9" role="3clF47">
@@ -11742,7 +11742,7 @@
           <node concept="3clFb_" id="1L74NXFZxBo" role="jymVt">
             <property role="TrG5h" value="feature" />
             <node concept="3uibUv" id="1L74NXFZxOu" role="3clF45">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
             </node>
             <node concept="3Tm1VV" id="1L74NXFZxBr" role="1B3o_S" />
             <node concept="3clFbS" id="1L74NXFZxBs" role="3clF47">
@@ -16756,7 +16756,7 @@
           </node>
           <node concept="1Koe21" id="1sCZQVfjxug" role="150oIE">
             <node concept="3VsKOn" id="1sCZQVfjxuh" role="1Koe22">
-              <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
               <node concept="raruj" id="1sCZQVfjxui" role="lGtFl" />
             </node>
           </node>
@@ -16784,7 +16784,7 @@
                   </node>
                   <node concept="2c44tf" id="6MYr6JxnB0K" role="3JuZjQ">
                     <node concept="3uibUv" id="6MYr6JxnB0L" role="2c44tc">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+                      <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                     </node>
                   </node>
                 </node>
@@ -16793,7 +16793,7 @@
           </node>
           <node concept="1Koe21" id="6MYr6JxnB0M" role="150oIE">
             <node concept="3VsKOn" id="6MYr6JxnB0N" role="1Koe22">
-              <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
               <node concept="raruj" id="6MYr6JxnB0O" role="lGtFl" />
               <node concept="1ZhdrF" id="6MYr6JxnBgh" role="lGtFl">
                 <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612/1116615189566" />
@@ -16963,7 +16963,7 @@
           </node>
           <node concept="1Koe21" id="49L2l3F7Wp7" role="150oIE">
             <node concept="3uibUv" id="49L2l3F7WC9" role="1Koe22">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
               <node concept="raruj" id="49L2l3F7WCe" role="lGtFl" />
             </node>
           </node>
@@ -16991,7 +16991,7 @@
                   </node>
                   <node concept="2c44tf" id="6MYr6Jxp5Pc" role="3JuZjQ">
                     <node concept="3uibUv" id="6MYr6Jxp5Pd" role="2c44tc">
-                      <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+                      <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                     </node>
                   </node>
                 </node>
@@ -17000,7 +17000,7 @@
           </node>
           <node concept="1Koe21" id="6MYr6Jxp5Pe" role="150oIE">
             <node concept="3uibUv" id="6MYr6Jxp5Pf" role="1Koe22">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
               <node concept="raruj" id="6MYr6Jxp5Pg" role="lGtFl" />
               <node concept="29HgVG" id="6MYr6Jxp6cC" role="lGtFl">
                 <node concept="3NFfHV" id="6MYr6Jxp6cD" role="3NFExx">

@@ -7,8 +7,8 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -196,7 +196,7 @@
             <node concept="3clFbS" id="6Sag3KsyiIx" role="3Kbo56">
               <node concept="3cpWs6" id="6Sag3KsyiJ4" role="3cqZAp">
                 <node concept="3B5_sB" id="6Sag3Ksyj85" role="3cqZAk">
-                  <ref role="3B5MYn" to="ie8e:3OPtF03lco4" resolve="ListNode" />
+                  <ref role="3B5MYn" to="6exd:3OPtF03lco4" resolve="ListNode" />
                 </node>
               </node>
             </node>
@@ -208,7 +208,7 @@
             <node concept="3clFbS" id="6Sag3KsyjtO" role="3Kbo56">
               <node concept="3cpWs6" id="6Sag3KsyjNN" role="3cqZAp">
                 <node concept="3B5_sB" id="6Sag3KsyjNO" role="3cqZAk">
-                  <ref role="3B5MYn" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+                  <ref role="3B5MYn" to="6exd:2xQ7eRAD2dj" resolve="Value" />
                 </node>
               </node>
             </node>
@@ -216,7 +216,7 @@
         </node>
         <node concept="3clFbF" id="6Sag3KsyjWy" role="3cqZAp">
           <node concept="3B5_sB" id="7MlQDeOyUrC" role="3clFbG">
-            <ref role="3B5MYn" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3B5MYn" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -264,7 +264,7 @@
       <node concept="3clFbS" id="7FFmDVAL6W0" role="3clF47">
         <node concept="3clFbF" id="7FFmDVALaOi" role="3cqZAp">
           <node concept="3B5_sB" id="7FFmDVALaOh" role="3clFbG">
-            <ref role="3B5MYn" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3B5MYn" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
           </node>
         </node>
       </node>
@@ -291,7 +291,7 @@
       <node concept="3clFbS" id="7FFmDVAL6Yd" role="3clF47">
         <node concept="3clFbF" id="7FFmDVALaxd" role="3cqZAp">
           <node concept="3B5_sB" id="7FFmDVALaxc" role="3clFbG">
-            <ref role="3B5MYn" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+            <ref role="3B5MYn" to="6exd:2xQ7eRAD2dj" resolve="Value" />
           </node>
         </node>
       </node>
@@ -315,7 +315,7 @@
       <node concept="3clFbS" id="7FFmDVAL75b" role="3clF47">
         <node concept="3clFbF" id="7FFmDVALaK9" role="3cqZAp">
           <node concept="3B5_sB" id="7FFmDVALaK8" role="3clFbG">
-            <ref role="3B5MYn" to="ie8e:5JQSuNswOXL" resolve="CompositeNode" />
+            <ref role="3B5MYn" to="6exd:5JQSuNswOXL" resolve="CompositeNode" />
           </node>
         </node>
       </node>
@@ -339,7 +339,7 @@
       <node concept="3clFbS" id="7FFmDVAL79t" role="3clF47">
         <node concept="3clFbF" id="7FFmDVALaDE" role="3cqZAp">
           <node concept="3B5_sB" id="7FFmDVALaDD" role="3clFbG">
-            <ref role="3B5MYn" to="ie8e:3OPtF03lco4" resolve="ListNode" />
+            <ref role="3B5MYn" to="6exd:3OPtF03lco4" resolve="ListNode" />
           </node>
         </node>
       </node>

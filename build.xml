@@ -354,45 +354,6 @@
       <zipfileset file="${basedir}/logic/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/logic-languages-jetbrains.mps.logic-runtime-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.logic.atom.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.logic.atom.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.logic.atom.jar/META-INF/module.xml">
-      <module namespace="jetbrains.mps.logic.atom" type="solution" uuid="7526e0cf-1ce7-46f8-a555-9eca1e06c23b">
-        <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
-          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
-          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
-          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
-          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
-          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
-          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
-          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
-          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
-          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
-        </dependencies>
-        <library jar="../lib/unification-lib-1.0.2.jar" />
-        <sources jar="jetbrains.mps.logic.atom-src.jar" descriptor="jetbrains.mps.logic.atom.msd" />
-      </module>
-    </echoxml>
-    <jar destfile="${build.tmp}/default/samplechecker.zip/samplechecker/languages/jetbrains.mps.logic.atom.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
-      <fileset dir="${basedir}/logic/solutions/jetbrains.mps.logic.atom" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/logic/solutions/jetbrains.mps.logic.atom/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.logic.atom.jar" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/logic-solutions-jetbrains.mps.logic.atom-models">
-      <fileset dir="${basedir}/logic/solutions/jetbrains.mps.logic.atom/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.tmp}/default/samplechecker.zip/samplechecker/languages/jetbrains.mps.logic.atom-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/logic/solutions/jetbrains.mps.logic.atom/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-        <exclude name="**/checkpoints" />
-        <exclude name="**/*.mps" />
-      </fileset>
-      <zipfileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/jetbrains.mps.logic.atom.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/logic-solutions-jetbrains.mps.logic.atom-models" prefix="module/models" />
-    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.logic.reactor.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.logic.reactor.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.logic.reactor.jar/META-INF/module.xml">
@@ -406,6 +367,7 @@
         <library jar="../lib/google-collections-1.0.jar" />
         <library jar="../lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <library jar="../lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <library jar="../lib/unification-lib-1.0.2.jar" />
         <sources jar="jetbrains.mps.logic.reactor-src.jar" descriptor="jetbrains.mps.logic.reactor.msd" />
       </module>
     </echoxml>
@@ -429,7 +391,6 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/logic-solutions-jetbrains.mps.logic.reactor-models" prefix="module/models" />
     </jar>
     <zip destfile="${build.layout}/samplechecker.zip">
-      <zipfileset dir="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib" prefix="samplechecker/lib" />
       <zipfileset dir="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib" prefix="samplechecker/lib" />
       <fileset dir="${build.tmp}/default/samplechecker.zip" />
     </zip>
@@ -447,7 +408,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic#6626732309150416985, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.lang.typesystem2, java.compile.jetbrains.mps.lang.typesystem2#4578927328670739933, java.compile.java.modules.cycle.2, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.sampleplugin, java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic#6626732309150416985, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.lang.typesystem2, java.compile.jetbrains.mps.lang.typesystem2#4578927328670739933, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.sampleplugin, java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
   
   <target name="processResources" />
   
@@ -539,7 +500,6 @@
       <library file="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <chunk>
         <module file="${basedir}/logic/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" />
-        <module file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/jetbrains.mps.logic.atom.msd" />
         <module file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" />
         <module file="${basedir}/logic/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" />
       </chunk>
@@ -563,7 +523,7 @@
   
   <target name="makeDependents" />
   
-  <target name="java.compile.jetbrains.mps.logic" depends="java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.logic" depends="java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
     <mkdir dir="${basedir}/logic/languages/jetbrains.mps.logic/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -572,18 +532,17 @@
         <path location="${basedir}/logic/languages/jetbrains.mps.logic/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
@@ -591,12 +550,12 @@
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -618,7 +577,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.logic#6626732309150416985" depends="java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.logic#6626732309150416985" depends="java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic.reactor, fetchDependencies">
     <mkdir dir="${basedir}/logic/languages/jetbrains.mps.logic/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic#6626732309150416985" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic#6626732309150416985" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -644,14 +603,13 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -672,46 +630,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.java.modules.cycle.1" depends="java.compile.jetbrains.mps.logic.atom, fetchDependencies">
-    <mkdir dir="${build.tmp}/java.modules.cycle.1" />
-    <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" encoding="utf8" nowarn="true" includeantruntime="false">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/logic/languages/jetbrains.mps.logic/runtime/source_gen" />
-        <path location="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/jdom.jar" />
-        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.5.2.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
-      </classpath>
-    </javac>
-  </target>
-  
-  <target name="java.compile.jetbrains.mps.logic.runtime" depends="java.compile.jetbrains.mps.logic.atom, java.compile.java.modules.cycle.1, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.logic.runtime" depends="java.compile.jetbrains.mps.logic.reactor, fetchDependencies">
     <mkdir dir="${basedir}/logic/languages/jetbrains.mps.logic/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.runtime" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -720,24 +639,24 @@
         <path location="${basedir}/logic/languages/jetbrains.mps.logic/runtime/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -746,12 +665,11 @@
         <fileset file="${artifacts.mps}/lib/asm-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.5.2.jar" />
-        <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.logic.reactor" depends="java.compile.jetbrains.mps.logic.atom, java.compile.java.modules.cycle.1, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.logic.reactor" depends="fetchDependencies">
     <mkdir dir="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.reactor" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -760,58 +678,23 @@
         <path location="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/jdom.jar" />
-        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.5.2.jar" />
-        <pathelement path="${build.tmp}/java.modules.cycle.1" />
-      </classpath>
-    </javac>
-  </target>
-  
-  <target name="java.compile.jetbrains.mps.logic.atom" depends="fetchDependencies">
-    <mkdir dir="${basedir}/logic/solutions/jetbrains.mps.logic.atom/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.atom" fork="true" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/logic/solutions/jetbrains.mps.logic.atom/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -824,7 +707,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem2" depends="java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem2" depends="java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
     <mkdir dir="${basedir}/typesystem2/languages/jetbrains.mps.lang.typesystem2/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -853,15 +736,14 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -891,7 +773,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem2#4578927328670739933" depends="java.compile.jetbrains.mps.lang.typesystem2, java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem2#4578927328670739933" depends="java.compile.jetbrains.mps.lang.typesystem2, java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
     <mkdir dir="${basedir}/typesystem2/languages/jetbrains.mps.lang.typesystem2/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2#4578927328670739933" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2#4578927328670739933" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -921,15 +803,14 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.template" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -958,9 +839,9 @@
     </javac>
   </target>
   
-  <target name="java.compile.java.modules.cycle.2" depends="java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
-    <mkdir dir="${build.tmp}/java.modules.cycle.2" />
-    <javac destdir="${build.tmp}/java.modules.cycle.2" fork="true" encoding="utf8" nowarn="true" includeantruntime="false">
+  <target name="java.compile.java.modules.cycle.1" depends="java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
+    <mkdir dir="${build.tmp}/java.modules.cycle.1" />
+    <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" encoding="utf8" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/typesystem2/solutions/jetbrains.mps.lang.typesystem2.template/source_gen" />
@@ -978,12 +859,12 @@
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
@@ -1001,14 +882,13 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem2.template" depends="java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem2.template" depends="java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${basedir}/typesystem2/solutions/jetbrains.mps.lang.typesystem2.template/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.template" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.template" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -1029,15 +909,14 @@
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
@@ -1054,12 +933,12 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem2.runtime" depends="java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, java.compile.java.modules.cycle.2, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem2.runtime" depends="java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${basedir}/typesystem2/languages/jetbrains.mps.lang.typesystem2/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.runtime" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.runtime" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -1080,15 +959,14 @@
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -1104,12 +982,12 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <pathelement path="${build.tmp}/java.modules.cycle.2" />
+        <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem2.sampleplugin" depends="java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem2.sampleplugin" depends="java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
     <mkdir dir="${basedir}/typechecking/solutions/jetbrains.mps.lang.typesystem2.sampleplugin/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.sampleplugin" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.sampleplugin" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -1138,17 +1016,16 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -1169,7 +1046,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util" depends="java.compile.jetbrains.mps.logic.atom, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem2.samplechecker.handler.util" depends="java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
     <mkdir dir="${basedir}/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.samplechecker.handler.util" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -1178,26 +1055,25 @@
         <path location="${basedir}/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.atom" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
-        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.atom/lib/unification-lib-1.0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/memreactor-core-0.1.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/dexx-collections-0.2.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/google-collections-1.0.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
         <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+        <fileset file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib/unification-lib-1.0.2.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -1221,7 +1097,6 @@
   <target name="cleanSources">
     <delete dir="${basedir}/logic/languages/jetbrains.mps.logic/source_gen" />
     <delete dir="${basedir}/logic/languages/jetbrains.mps.logic/generator/source_gen" />
-    <delete dir="${basedir}/logic/solutions/jetbrains.mps.logic.atom/source_gen" />
     <delete dir="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/source_gen" />
     <delete dir="${basedir}/logic/languages/jetbrains.mps.logic/runtime/source_gen" />
     <delete dir="${basedir}/typesystem2/languages/jetbrains.mps.lang.typesystem2/source_gen" />

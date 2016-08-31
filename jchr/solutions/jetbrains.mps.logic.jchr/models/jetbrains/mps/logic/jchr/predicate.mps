@@ -11,15 +11,15 @@
     <import index="f8dg" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:annotations(jetbrains.mps.jchr.runtime/)" />
     <import index="eifs" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime(jetbrains.mps.jchr.runtime/)" />
     <import index="qrld" ref="r:2a79c8aa-e372-4c00-8d71-5d7f3db517e4(jetbrains.mps.logic.reactor.evaluation)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="9js4" ref="b984ee52-f34d-4b6d-8812-866c1d3eae31/java:runtime.hash(jetbrains.mps.jchr.runtime/)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="rchb" ref="r:f43ee4a0-488a-425a-87a0-594ab3b0d15f(jetbrains.mps.logic.reactor.program)" />
-    <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.logic.atom/)" />
+    <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="eift" ref="c3941617-f429-4b63-b06e-42126b247dcb/java:runtime(jetbrains.mps.logic_jchr.runtime/)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -417,13 +417,13 @@
       <node concept="37vLTG" id="4OsiK2BAm0x" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="4OsiK2BAm4d" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="4OsiK2BAm7X" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="4OsiK2BAm87" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3cqZAl" id="4OsiK2BAlI8" role="3clF45" />
@@ -447,7 +447,7 @@
       <node concept="37vLTG" id="4U_yxogCcGJ" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="4U_yxogCcGK" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="4U_yxogCcGL" role="3clF46">
@@ -483,7 +483,7 @@
       <node concept="37vLTG" id="4U_yxogCdjX" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="4U_yxogCdjY" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3cqZAl" id="4U_yxogCdk1" role="3clF45" />
@@ -537,13 +537,13 @@
       <node concept="37vLTG" id="4OsiK2BAohR" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="4OsiK2BAohS" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="4OsiK2BAohT" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="4OsiK2BAohU" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="10P_77" id="4U_yxogCa6w" role="3clF45" />
@@ -567,7 +567,7 @@
       <node concept="37vLTG" id="4U_yxogC9UI" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="4U_yxogC9UJ" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="4U_yxogC9UK" role="3clF46">
@@ -603,7 +603,7 @@
       <node concept="37vLTG" id="4U_yxogCamY" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="4U_yxogCamZ" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="10P_77" id="4U_yxogCch8" role="3clF45" />
@@ -4459,13 +4459,13 @@
       <node concept="37vLTG" id="6MYr6JwItZL" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="6MYr6JwItZM" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="6MYr6JwItZN" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="6MYr6JwItZO" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3cqZAl" id="6MYr6JwItZP" role="3clF45" />
@@ -4504,7 +4504,7 @@
       <node concept="37vLTG" id="6MYr6JwItZX" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="6MYr6JwItZY" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="6MYr6JwItZZ" role="3clF46">
@@ -4555,7 +4555,7 @@
       <node concept="37vLTG" id="6MYr6JwIu0b" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="6MYr6JwIu0c" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3cqZAl" id="6MYr6JwIu0d" role="3clF45" />
@@ -4639,13 +4639,13 @@
       <node concept="37vLTG" id="6MYr6JwUNOd" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="6MYr6JwUNOe" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="6MYr6JwUNOf" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="6MYr6JwUNOg" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="10P_77" id="6MYr6JwUNOh" role="3clF45" />
@@ -4684,7 +4684,7 @@
       <node concept="37vLTG" id="6MYr6JwUNOC" role="3clF46">
         <property role="TrG5h" value="left" />
         <node concept="3uibUv" id="6MYr6JwUNOD" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="37vLTG" id="6MYr6JwUNOE" role="3clF46">
@@ -4735,7 +4735,7 @@
       <node concept="37vLTG" id="6MYr6JwUNP5" role="3clF46">
         <property role="TrG5h" value="right" />
         <node concept="3uibUv" id="6MYr6JwUNP6" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="10P_77" id="6MYr6JwUNP7" role="3clF45" />
@@ -5127,12 +5127,12 @@
                     <ref role="3cqZAo" node="3FIATxbQg$y" resolve="term" />
                   </node>
                   <node concept="3uibUv" id="3FIATxbQg$J" role="10QFUM">
-                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="3FIATxbQg$K" role="2OqNvi">
-                <ref role="37wK5l" to="ie8e:2QE4RCGndD7" resolve="asRoot" />
+                <ref role="37wK5l" to="6exd:2QE4RCGndD7" resolve="asRoot" />
               </node>
             </node>
             <node concept="16syzq" id="3FIATxbQg$L" role="10QFUM">
@@ -5325,7 +5325,7 @@
       <node concept="37vLTG" id="6SkxsM$2XXX" role="3clF46">
         <property role="TrG5h" value="tf" />
         <node concept="3uibUv" id="6SkxsM$2XXW" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
     </node>
@@ -5354,7 +5354,7 @@
       <node concept="37vLTG" id="1GDBwhEEL88" role="3clF46">
         <property role="TrG5h" value="tf" />
         <node concept="3uibUv" id="1GDBwhEEL89" role="1tU5fm">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
     </node>
@@ -5427,7 +5427,7 @@
       <node concept="3uibUv" id="6yEjedmaeEx" role="3clF45">
         <ref role="3uigEE" to="45ys:7HUwyZauJhz" resolve="MetaLogical" />
         <node concept="3uibUv" id="20WMLipvJgu" role="11_B2D">
-          <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
       <node concept="3clFbS" id="6yEjedmaeEy" role="3clF47">
@@ -5473,7 +5473,7 @@
             <node concept="3uibUv" id="7HUwyZazx80" role="1tU5fm">
               <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
               <node concept="3uibUv" id="7HUwyZazx81" role="11_B2D">
-                <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
             <node concept="1rXfSq" id="5NuEpF1xSw$" role="33vP2m">
@@ -5485,7 +5485,7 @@
           <node concept="3cpWsn" id="3v$7B1Kczo1" role="3cpWs9">
             <property role="TrG5h" value="value" />
             <node concept="3uibUv" id="3v$7B1KcznY" role="1tU5fm">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
             </node>
             <node concept="2OqwBi" id="3v$7B1Kczo2" role="33vP2m">
               <node concept="37vLTw" id="3v$7B1Kczo3" role="2Oq$k0">
@@ -5572,13 +5572,13 @@
     <node concept="3uibUv" id="4U_yxogB8or" role="1zkMxy">
       <ref role="3uigEE" node="3HJTsBmBSJa" resolve="JchrLogical" />
       <node concept="3uibUv" id="4U_yxogB8yy" role="11_B2D">
-        <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
       </node>
     </node>
     <node concept="3uibUv" id="7HUwyZazx8k" role="EKbjA">
       <ref role="3uigEE" to="45ys:1mP5b6jQP$C" resolve="Logical" />
       <node concept="3uibUv" id="7HUwyZazx8l" role="11_B2D">
-        <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
       </node>
     </node>
     <node concept="3UR2Jj" id="2ev$9JF$huc" role="lGtFl">

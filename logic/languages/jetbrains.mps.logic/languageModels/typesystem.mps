@@ -6,11 +6,11 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -188,7 +188,7 @@
         <node concept="mw_s8" id="1pt0VTMFgab" role="1ZfhKB">
           <node concept="2c44tf" id="1pt0VTMFga7" role="mwGJk">
             <node concept="3uibUv" id="6r6omRlboX3" role="2c44tc">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -395,7 +395,7 @@
                   </node>
                   <node concept="2c44tf" id="5Ii$nZP2GwS" role="3JuZjQ">
                     <node concept="3uibUv" id="5Ii$nZP2GxX" role="2c44tc">
-                      <ref role="3uigEE" to="ie8e:uNmovXiEd4" resolve="Variable" />
+                      <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
                     </node>
                   </node>
                 </node>
@@ -414,7 +414,7 @@
                     </node>
                     <node concept="2c44tf" id="5Ii$nZP52Ws" role="3JuZjQ">
                       <node concept="3uibUv" id="6MYr6Jy880T" role="2c44tc">
-                        <ref role="3uigEE" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+                        <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
                         <node concept="3uibUv" id="6MYr6Jy8824" role="11_B2D">
                           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                         </node>

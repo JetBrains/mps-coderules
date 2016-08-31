@@ -6,6 +6,7 @@
     </modelRoot>
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="lib/memreactor-core-0.1.jar" />
+      <sourceRoot location="lib/unification-lib-1.0.2.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
@@ -14,12 +15,12 @@
     <stubModelEntry path="${module}/lib/google-collections-1.0.jar" />
     <stubModelEntry path="${module}/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
     <stubModelEntry path="${module}/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
+    <stubModelEntry path="${module}/lib/unification-lib-1.0.2.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
-    <dependency reexport="false">7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)</dependency>
     <dependency reexport="false">498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)</dependency>
   </dependencies>
   <languageVersions>
@@ -36,7 +37,6 @@
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" version="0" />
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
-    <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
   </dependencyVersions>
 </solution>

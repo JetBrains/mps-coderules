@@ -1318,7 +1318,7 @@
                                     <node concept="2dOGH5" id="2ev$9JFzGsK" role="1r8FgC">
                                       <property role="Lv5iS" value="true" />
                                       <node concept="Xl_RD" id="2ev$9JFzGsL" role="2dOGIY">
-                                        <property role="Xl_RC" value="jetbrains.mps.logic.atom.TreeForm" />
+                                        <property role="Xl_RC" value="jetbrains.mps.logic.treeform.TreeForm" />
                                       </node>
                                       <node concept="Xl_RD" id="2ev$9JFzGsM" role="2dOGIT">
                                         <property role="Xl_RC" value="fixed" />

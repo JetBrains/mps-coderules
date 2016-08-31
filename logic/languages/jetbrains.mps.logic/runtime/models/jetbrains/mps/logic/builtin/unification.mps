@@ -7,10 +7,10 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
-    <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.logic.atom/)" />
+    <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -173,7 +173,7 @@
       <node concept="3Tm1VV" id="7HUwyZbdNAg" role="1B3o_S" />
       <node concept="3clFbS" id="7HUwyZbdNAh" role="3clF47">
         <node concept="XkiVB" id="7HUwyZbdOUD" role="3cqZAp">
-          <ref role="37wK5l" to="ie8e:uNmovXiEVu" resolve="Variable" />
+          <ref role="37wK5l" to="6exd:uNmovXiEVu" resolve="Variable" />
           <node concept="37vLTw" id="7HUwyZbdOWP" role="37wK5m">
             <ref role="3cqZAo" node="7HUwyZbdNBn" resolve="metaLogical" />
           </node>
@@ -256,7 +256,7 @@
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qUE_q" id="7HUwyZbdPnr" role="11_B2D">
             <node concept="3uibUv" id="7HUwyZbdPns" role="3qUE_r">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -314,7 +314,7 @@
     <node concept="2tJIrI" id="4sSe4$psb5H" role="jymVt" />
     <node concept="3Tm1VV" id="7HUwyZbdMWI" role="1B3o_S" />
     <node concept="3uibUv" id="7HUwyZbdN_j" role="1zkMxy">
-      <ref role="3uigEE" to="ie8e:uNmovXiEd4" resolve="Variable" />
+      <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
     </node>
     <node concept="312cEg" id="7HUwyZbdNB$" role="jymVt">
       <property role="TrG5h" value="metaLogical" />
@@ -352,7 +352,7 @@
       <node concept="3Tm1VV" id="4TCblo5ML4L" role="1B3o_S" />
       <node concept="3clFbS" id="4TCblo5ML4M" role="3clF47">
         <node concept="XkiVB" id="4TCblo5MOl_" role="3cqZAp">
-          <ref role="37wK5l" to="ie8e:uNmovXiEVu" resolve="Variable" />
+          <ref role="37wK5l" to="6exd:uNmovXiEVu" resolve="Variable" />
           <node concept="37vLTw" id="4TCblo5MOwN" role="37wK5m">
             <ref role="3cqZAo" node="4TCblo5MNMf" resolve="logical" />
           </node>
@@ -538,7 +538,7 @@
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qUE_q" id="4TCblo5MWaF" role="11_B2D">
             <node concept="3uibUv" id="4TCblo5MWaG" role="3qUE_r">
-              <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
             </node>
           </node>
         </node>
@@ -722,7 +722,7 @@
     </node>
     <node concept="3Tm1VV" id="4TCblo5MJ1n" role="1B3o_S" />
     <node concept="3uibUv" id="4TCblo5MK_c" role="1zkMxy">
-      <ref role="3uigEE" to="ie8e:uNmovXiEd4" resolve="Variable" />
+      <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
     </node>
     <node concept="3uibUv" id="4TCblo5MKQV" role="EKbjA">
       <ref role="3uigEE" to="45ys:46l0wJhtOD_" resolve="LogicalOwner" />
@@ -766,12 +766,12 @@
                     <ref role="3cqZAo" node="3FIATxbQg$y" resolve="term" />
                   </node>
                   <node concept="3uibUv" id="3FIATxbQg$J" role="10QFUM">
-                    <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="3FIATxbQg$K" role="2OqNvi">
-                <ref role="37wK5l" to="ie8e:2QE4RCGndD7" resolve="asRoot" />
+                <ref role="37wK5l" to="6exd:2QE4RCGndD7" resolve="asRoot" />
               </node>
             </node>
             <node concept="16syzq" id="3FIATxbQg$L" role="10QFUM">

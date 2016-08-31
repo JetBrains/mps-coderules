@@ -19,12 +19,12 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="vgt0" ref="r:f36c95e5-e428-4945-91ae-1005e20c7971(jetbrains.mps.jchr.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="ie8e" ref="r:ab2605ab-b4bc-4e80-a8ca-19a4a8465c01(jetbrains.mps.logic.atom)" />
     <import index="ouxx" ref="r:727775a3-16ae-4b9f-80a6-9ef3207ffa6a(jetbrains.mps.logic.generator.template.main@generator)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="45ys" ref="r:7365f7fe-12e6-4229-8901-f6dc6d5df03f(jetbrains.mps.logic.reactor.logical)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -482,7 +482,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="35Lj3TiSq77" role="3clF45">
-        <ref role="3uigEE" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
       </node>
       <node concept="3Tm1VV" id="35Lj3TiRjRe" role="1B3o_S" />
       <node concept="3clFbS" id="35Lj3TiRjRf" role="3clF47">
@@ -691,7 +691,7 @@
               <node concept="1pGfFk" id="2Dg5bSg3RdZ" role="2ShVmc">
                 <ref role="37wK5l" to="45ys:7nPD14NON$Y" resolve="MetaLogical" />
                 <node concept="3VsKOn" id="2Dg5bSg3Rjh" role="37wK5m">
-                  <ref role="3VsUkX" to="ie8e:1bm7a6EXvsP" resolve="TreeForm" />
+                  <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
             </node>
@@ -751,8 +751,8 @@
       <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
       <node concept="gft3U" id="29_L5zQWy8k" role="1lVwrX">
         <node concept="2YIFZM" id="29_L5zQWy8l" role="gfFT$">
-          <ref role="37wK5l" to="ie8e:5JQSuNsxhfn" resolve="create" />
-          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="CompositeNode" />
+          <ref role="37wK5l" to="6exd:5JQSuNsxhfn" resolve="create" />
+          <ref role="1Pybhc" to="6exd:5JQSuNswOXL" resolve="CompositeNode" />
           <node concept="Xl_RD" id="29_L5zQWy8m" role="37wK5m">
             <property role="Xl_RC" value="node" />
             <node concept="17Uvod" id="29_L5zQWJXC" role="lGtFl">
@@ -878,8 +878,8 @@
       <ref role="30HIoZ" to="5j4j:6$jH9oLmYI0" resolve="ValueRole" />
       <node concept="gft3U" id="6UqNvvALIUa" role="1lVwrX">
         <node concept="2YIFZM" id="6UqNvvALIUb" role="gfFT$">
-          <ref role="1Pybhc" to="ie8e:5JQSuNsx4Gq" resolve="Builder" />
-          <ref role="37wK5l" to="ie8e:5JQSuNsx4I5" resolve="value" />
+          <ref role="1Pybhc" to="6exd:5JQSuNsx4Gq" resolve="Builder" />
+          <ref role="37wK5l" to="6exd:5JQSuNsx4I5" resolve="value" />
           <node concept="Xl_RD" id="6UqNvvALIUc" role="37wK5m">
             <property role="Xl_RC" value="name" />
             <node concept="17Uvod" id="6UqNvvALIUd" role="lGtFl">
@@ -939,8 +939,8 @@
       <ref role="30HIoZ" to="5j4j:6$jH9oLmYEJ" resolve="ChildRole" />
       <node concept="gft3U" id="6UqNvvALIHq" role="1lVwrX">
         <node concept="2YIFZM" id="6UqNvvALIHr" role="gfFT$">
-          <ref role="1Pybhc" to="ie8e:5JQSuNswOXL" resolve="CompositeNode" />
-          <ref role="37wK5l" to="ie8e:5JQSuNsxhfn" resolve="create" />
+          <ref role="1Pybhc" to="6exd:5JQSuNswOXL" resolve="CompositeNode" />
+          <ref role="37wK5l" to="6exd:5JQSuNsxhfn" resolve="create" />
           <node concept="Xl_RD" id="6UqNvvALIHs" role="37wK5m">
             <property role="Xl_RC" value="name" />
             <node concept="17Uvod" id="6UqNvvALIHt" role="lGtFl">
@@ -1066,8 +1066,8 @@
           </node>
           <node concept="gft3U" id="6UqNvvALHUZ" role="150oIE">
             <node concept="2YIFZM" id="6UqNvvALHV0" role="gfFT$">
-              <ref role="37wK5l" to="ie8e:5JQSuNsxb_I" resolve="create" />
-              <ref role="1Pybhc" to="ie8e:2xQ7eRAD2dj" resolve="Value" />
+              <ref role="37wK5l" to="6exd:5JQSuNsxb_I" resolve="create" />
+              <ref role="1Pybhc" to="6exd:2xQ7eRAD2dj" resolve="Value" />
               <node concept="Xl_RD" id="6UqNvvALHV1" role="37wK5m">
                 <property role="Xl_RC" value="value" />
                 <node concept="17Uvod" id="6UqNvvALHV2" role="lGtFl">
@@ -1119,8 +1119,8 @@
       <ref role="30HIoZ" to="5j4j:1OShD0HAY6y" resolve="List" />
       <node concept="gft3U" id="6UqNvvALHva" role="1lVwrX">
         <node concept="2YIFZM" id="6UqNvvALHvb" role="gfFT$">
-          <ref role="1Pybhc" to="ie8e:3OPtF03lco4" resolve="ListNode" />
-          <ref role="37wK5l" to="ie8e:1OShD0HS45f" resolve="createList" />
+          <ref role="1Pybhc" to="6exd:3OPtF03lco4" resolve="ListNode" />
+          <ref role="37wK5l" to="6exd:1OShD0HS45f" resolve="createList" />
           <node concept="10Nm6u" id="7HUwyZb7cIG" role="37wK5m">
             <node concept="2b32R4" id="7HUwyZb7cIH" role="lGtFl">
               <node concept="3JmXsc" id="7HUwyZb7cII" role="2P8S$">

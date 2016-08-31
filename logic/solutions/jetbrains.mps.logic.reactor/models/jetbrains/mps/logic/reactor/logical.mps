@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="yt73" ref="7526e0cf-1ce7-46f8-a555-9eca1e06c23b/java:jetbrains.mps.unification(jetbrains.mps.logic.atom/)" />
+    <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1071,7 +1071,7 @@
       <node concept="3clFbS" id="6MYr6JwAOE0" role="3clF47" />
       <node concept="16euLQ" id="6MYr6JwB0_J" role="16eVyc">
         <property role="TrG5h" value="TERM" />
-        <node concept="3uibUv" id="6MYr6JwB0G$" role="3ztrMU">
+        <node concept="3uibUv" id="7IX7qCc9wOJ" role="3ztrMU">
           <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
         </node>
       </node>
@@ -1096,7 +1096,7 @@
       <node concept="3clFbS" id="6MYr6JwAPxK" role="3clF47" />
       <node concept="16euLQ" id="6MYr6JwAQYt" role="16eVyc">
         <property role="TrG5h" value="TERM" />
-        <node concept="3uibUv" id="6MYr6JwAQYZ" role="3ztrMU">
+        <node concept="3uibUv" id="7IX7qCc9wRy" role="3ztrMU">
           <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
         </node>
       </node>
@@ -1107,7 +1107,7 @@
       <property role="TrG5h" value="isLogical" />
       <node concept="37vLTG" id="6MYr6JwRKNo" role="3clF46">
         <property role="TrG5h" value="term" />
-        <node concept="3uibUv" id="6MYr6JwRKRJ" role="1tU5fm">
+        <node concept="3uibUv" id="7IX7qCc9wSf" role="1tU5fm">
           <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
         </node>
       </node>

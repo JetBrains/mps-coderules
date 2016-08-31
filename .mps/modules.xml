@@ -14,7 +14,6 @@
       <modulePath path="$PROJECT_DIR$/jchr/solutions/jetbrains.mps.logic.jchr/jetbrains.mps.logic.jchr.msd" folder="jchr" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
-      <modulePath path="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.atom/jetbrains.mps.logic.atom.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.test/jetbrains.mps.logic.test.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/typechecking/languages/jetbrains.mps.lang.typesystem2.sampleLang/jetbrains.mps.lang.typesystem2.sampleLang.mpl" folder="typechecking.sample" />
