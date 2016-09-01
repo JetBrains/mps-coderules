@@ -58,7 +58,6 @@
     <module reference="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae(jetbrains.mps.lang.typesystem2.sampleplugin)" version="0" />
     <module reference="b862404f-c80a-47af-9def-0ba8676f9fa5(jetbrains.mps.lang.typesystem2.sampleplugin.jchr)" version="0" />
     <module reference="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" version="0" />
-    <module reference="7526e0cf-1ce7-46f8-a555-9eca1e06c23b(jetbrains.mps.logic.atom)" version="0" />
     <module reference="760652ad-c01a-495e-9510-ed51532f617b(jetbrains.mps.logic.jchr)" version="0" />
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
