@@ -244,7 +244,7 @@
   <node concept="3dkpOd" id="2CEQDIE0t1p">
     <property role="TrG5h" value="Ast_replaceWith_TypeTerm" />
     <property role="2ZfUl0" value="true" />
-    <ref role="2ZfgGC" to="5j4j:6$jH9oLmUCq" resolve="AtomExpression" />
+    <ref role="2ZfgGC" to="5j4j:6$jH9oLmUCq" resolve="TreeFormExpression" />
     <node concept="2S6ZIM" id="2CEQDIE0t1q" role="2ZfVej">
       <node concept="3clFbS" id="2CEQDIE0t1r" role="2VODD2">
         <node concept="3clFbF" id="2CEQDIE0Eqx" role="3cqZAp">
@@ -268,7 +268,7 @@
           <node concept="3cpWsn" id="2CEQDIE0GfX" role="3cpWs9">
             <property role="TrG5h" value="ast" />
             <node concept="3Tqbb2" id="2CEQDIE0Gf$" role="1tU5fm">
-              <ref role="ehGHo" to="5j4j:6$jH9oLmUCq" resolve="AtomExpression" />
+              <ref role="ehGHo" to="5j4j:6$jH9oLmUCq" resolve="TreeFormExpression" />
             </node>
             <node concept="2Sf5sV" id="2CEQDIE0GfY" role="33vP2m" />
           </node>

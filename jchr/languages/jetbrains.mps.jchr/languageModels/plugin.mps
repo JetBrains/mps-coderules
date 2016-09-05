@@ -1220,7 +1220,7 @@
                           <node concept="3clFbH" id="35Lj3TiOSSe" role="3cqZAp" />
                           <node concept="3SKdUt" id="2ev$9JF$mDT" role="3cqZAp">
                             <node concept="3SKdUq" id="2ev$9JF$nf8" role="3SKWNk">
-                              <property role="3SKdUp" value="TODO: Re: -fixed -- see the comment to the AtomLogical class" />
+                              <property role="3SKdUp" value="TODO: Re: -fixed -- see the comment to the TreeFormLogical class" />
                             </node>
                           </node>
                           <node concept="3clFbH" id="2ev$9JF$oSM" role="3cqZAp" />

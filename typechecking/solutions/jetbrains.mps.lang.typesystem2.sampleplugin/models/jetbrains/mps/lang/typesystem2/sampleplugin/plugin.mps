@@ -20555,7 +20555,7 @@
                                 <node concept="3clFbS" id="6HT7BWBQdTN" role="3clF47">
                                   <node concept="3SKdUt" id="3mz2_dYc$aX" role="3cqZAp">
                                     <node concept="3SKdUq" id="3mz2_dYc$aZ" role="3SKWNk">
-                                      <property role="3SKdUp" value="FIXME: there should be a clear contract for instances of Atom that wrap logicals" />
+                                      <property role="3SKdUp" value="FIXME: there should be a clear contract for instances of TreeForm that wrap logicals" />
                                     </node>
                                   </node>
                                   <node concept="3clFbF" id="3mz2_dYcxjf" role="3cqZAp">

@@ -175,7 +175,7 @@
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.AtomExpression" flags="ng" index="1oi1Uc">
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.TreeFormExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
@@ -310,7 +310,7 @@
               <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="5cGCTtqzoJT" role="37wK5m">
                 <node concept="1pGfFk" id="6yEjedm5xLL" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="MemLogical" />
                   <node concept="2ShNRf" id="6yEjedm6$x1" role="37wK5m">
                     <node concept="1pGfFk" id="6yEjedm6$Su" role="2ShVmc">
                       <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />

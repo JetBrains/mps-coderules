@@ -842,7 +842,7 @@
     <property role="3GE5qa" value="type.term" />
     <property role="TrG5h" value="TypeTermExpression" />
     <property role="EcuMT" value="3038481260719624626" />
-    <ref role="1TJDcQ" to="5j4j:6$jH9oLmUCq" resolve="AtomExpression" />
+    <ref role="1TJDcQ" to="5j4j:6$jH9oLmUCq" resolve="TreeFormExpression" />
     <node concept="1TJgyj" id="2CEQDIDTdBu" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="template" />
@@ -1293,7 +1293,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="5j4j:5lJXKARS0" resolve="Atom" />
+      <ref role="20lvS9" to="5j4j:5lJXKARS0" resolve="TreeForm" />
     </node>
   </node>
 </model>

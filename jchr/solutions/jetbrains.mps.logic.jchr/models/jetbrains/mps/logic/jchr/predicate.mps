@@ -5594,7 +5594,7 @@
       </node>
       <node concept="TZ5HA" id="2ev$9JF$iKi" role="TZ5H$">
         <node concept="1dT_AC" id="2ev$9JF$iKj" role="1dT_Ay">
-          <property role="1dT_AB" value="to its instance effectively makes an Atom mutable, so it should be supported in reactive schemes, such" />
+          <property role="1dT_AB" value="to its instance effectively makes a TreeForm mutable, so it should be supported in reactive schemes, such" />
         </node>
       </node>
       <node concept="TZ5HA" id="2ev$9JF$iLe" role="TZ5H$">
@@ -5609,7 +5609,7 @@
       </node>
       <node concept="TZ5HA" id="2ev$9JF$iLC" role="TZ5H$">
         <node concept="1dT_AC" id="2ev$9JF$iLD" role="1dT_Ay">
-          <property role="1dT_AB" value="So far Atom has been treated as an immutable construct, constraints are matched with its instances as " />
+          <property role="1dT_AB" value="So far TreeForm has been treated as an immutable construct, constraints are matched with its instances as " />
         </node>
       </node>
       <node concept="TZ5HA" id="2ev$9JF$iMa" role="TZ5H$">
