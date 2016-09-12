@@ -828,6 +828,13 @@
       <property role="IQ2ns" value="1618328391714763494" />
       <ref role="20lvS9" node="1pPth$m5o9D" resolve="TypeTermTemplate" />
     </node>
+    <node concept="1TJgyj" id="2V8TwD0$Z8f" role="1TKVEi">
+      <property role="IQ2ns" value="3371197252794315279" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="recovery" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2V8TwD0$Yds" resolve="RecoveryBlock" />
+    </node>
     <node concept="PrWs8" id="1pPth$m5Bb$" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
@@ -1294,6 +1301,35 @@
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" to="5j4j:5lJXKARS0" resolve="TreeForm" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2V8TwD0$Yds">
+    <property role="EcuMT" value="3371197252794311516" />
+    <property role="3GE5qa" value="type.code" />
+    <property role="TrG5h" value="RecoveryBlock" />
+    <ref role="1TJDcQ" node="1hX44vMFoce" resolve="CodeBlock" />
+  </node>
+  <node concept="1TIwiD" id="2V8TwD0E9Wq">
+    <property role="EcuMT" value="3371197252795670298" />
+    <property role="3GE5qa" value="type.term" />
+    <property role="TrG5h" value="TypeFeatureExpression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="2V8TwD0E9Wr" role="1TKVEi">
+      <property role="IQ2ns" value="3371197252795670299" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="feature" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1pPth$m5oa5" resolve="TypeFeature" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2V8TwD148$8">
+    <property role="EcuMT" value="3371197252802480392" />
+    <property role="3GE5qa" value="type.term" />
+    <property role="TrG5h" value="RecoverOperation" />
+    <property role="34LRSv" value="recover" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="2V8TwD148BA" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
 </model>

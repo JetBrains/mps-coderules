@@ -2980,6 +2980,15 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3F1sOY" id="2V8TwD0$Z9e" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:2V8TwD0$Z8f" resolve="recovery" />
+        <node concept="lj46D" id="2V8TwD0$Z9F" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pVoyu" id="2V8TwD0$Z9G" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
       <node concept="l2Vlx" id="1pPth$m609c" role="2iSdaV" />
     </node>
   </node>
@@ -6152,6 +6161,66 @@
   </node>
   <node concept="3p36aQ" id="4hPXq9JmeBn">
     <ref role="aqKnT" to="wq2x:7IysFeA7WUr" resolve="TypeConceptExpression" />
+  </node>
+  <node concept="24kQdi" id="2V8TwD0$Ydv">
+    <property role="3GE5qa" value="type.code" />
+    <ref role="1XX52x" to="wq2x:2V8TwD0$Yds" resolve="RecoveryBlock" />
+    <node concept="3EZMnI" id="2V8TwD0$Ydx" role="2wV5jI">
+      <node concept="3F0ifn" id="2V8TwD0$YdC" role="3EZMnx">
+        <property role="3F0ifm" value="recovery" />
+        <node concept="pVoyu" id="2V8TwD0$YdM" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="2V8TwD0$YdI" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
+      </node>
+      <node concept="PMmxH" id="2V8TwD0$Z76" role="3EZMnx">
+        <ref role="PMmxG" node="1hX44vMKXy$" resolve="CodeBlockComponent" />
+        <node concept="pVoyu" id="2V8TwD0$Z81" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="2V8TwD0$Z82" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="2V8TwD0$Z83" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="2V8TwD0$YdT" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
+      </node>
+      <node concept="l2Vlx" id="2V8TwD0$Yd$" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="2V8TwD0E9WS">
+    <property role="3GE5qa" value="type.term" />
+    <ref role="1XX52x" to="wq2x:2V8TwD0E9Wq" resolve="TypeFeatureExpression" />
+    <node concept="3EZMnI" id="2V8TwD0E9WU" role="2wV5jI">
+      <node concept="1iCGBv" id="2V8TwD0E9X1" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:2V8TwD0E9Wr" resolve="feature" />
+        <ref role="1k5W1q" node="1iWwVK2_Eea" resolve="TypeFeature" />
+        <node concept="1sVBvm" id="2V8TwD0E9X3" role="1sWHZn">
+          <node concept="3F0A7n" id="2V8TwD0E9Xa" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="2V8TwD0E9WX" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4cKdPpqE390">
+    <property role="3GE5qa" value="type.term" />
+    <ref role="1XX52x" to="wq2x:2V8TwD148$8" resolve="RecoverOperation" />
+    <node concept="3EZMnI" id="4cKdPpqE392" role="2wV5jI">
+      <node concept="PMmxH" id="4cKdPpqF4Pi" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="l2Vlx" id="4cKdPpqE395" role="2iSdaV" />
+    </node>
   </node>
 </model>
 

@@ -1660,5 +1660,53 @@
       <ref role="1YaFvo" to="wq2x:3TnYLtqfh$J" resolve="ContextParameterReference" />
     </node>
   </node>
+  <node concept="1YbPZF" id="2V8TwD0F1h0">
+    <property role="TrG5h" value="typeof_TypeFeatureExpression" />
+    <property role="3GE5qa" value="type.term" />
+    <node concept="3clFbS" id="2V8TwD0F1h1" role="18ibNy">
+      <node concept="1Z5TYs" id="2V8TwD0F1t5" role="3cqZAp">
+        <node concept="mw_s8" id="2V8TwD0F1tp" role="1ZfhKB">
+          <node concept="2c44tf" id="2V8TwD0F1tl" role="mwGJk">
+            <node concept="17QB3L" id="2V8TwD0F1tJ" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="2V8TwD0F1t8" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2V8TwD0F1j3" role="mwGJk">
+            <node concept="1YBJjd" id="2V8TwD0F1ms" role="1Z2MuG">
+              <ref role="1YBMHb" node="2V8TwD0F1h3" resolve="tfe" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="2V8TwD0F1h3" role="1YuTPh">
+      <property role="TrG5h" value="tfe" />
+      <ref role="1YaFvo" to="wq2x:2V8TwD0E9Wq" resolve="TypeFeatureExpression" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="4cKdPpqE8LC">
+    <property role="TrG5h" value="typeof_RecoverOperation" />
+    <property role="3GE5qa" value="type.term" />
+    <node concept="3clFbS" id="4cKdPpqE8LD" role="18ibNy">
+      <node concept="1Z5TYs" id="4cKdPpqE8Ui" role="3cqZAp">
+        <node concept="mw_s8" id="4cKdPpqE8UA" role="1ZfhKB">
+          <node concept="2c44tf" id="4cKdPpqE8Uy" role="mwGJk">
+            <node concept="3Tqbb2" id="4cKdPpqE8UW" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="4cKdPpqE8Ul" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4cKdPpqE8LM" role="mwGJk">
+            <node concept="1YBJjd" id="4cKdPpqE8Ny" role="1Z2MuG">
+              <ref role="1YBMHb" node="4cKdPpqE8LF" resolve="ro" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4cKdPpqE8LF" role="1YuTPh">
+      <property role="TrG5h" value="ro" />
+      <ref role="1YaFvo" to="wq2x:2V8TwD148$8" resolve="RecoverOperation" />
+    </node>
+  </node>
 </model>
 

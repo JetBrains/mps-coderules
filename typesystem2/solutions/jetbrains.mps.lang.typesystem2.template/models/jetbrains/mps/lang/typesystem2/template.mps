@@ -23,6 +23,7 @@
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.typesystem2.aspect)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -166,7 +167,6 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
         <child id="1107880067339" name="method" index="3MN40a" />
       </concept>
-      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="1171903862077" name="jetbrains.mps.baseLanguage.structure.LowerBoundType" flags="in" index="3qUtgH">
         <child id="1171903869531" name="bound" index="3qUvdb" />
       </concept>
@@ -499,7 +499,7 @@
       <node concept="37vLTG" id="4OKkcnfu_xh" role="3clF46">
         <property role="TrG5h" value="templateCollector" />
         <node concept="3uibUv" id="4OKkcnfu_xi" role="1tU5fm">
-          <ref role="3uigEE" node="4OKkcnfu_A6" resolve="RuleTemplateCollector" />
+          <ref role="3uigEE" to="fqlx:4OKkcnfu_A6" resolve="RuleTemplateCollector" />
         </node>
       </node>
       <node concept="3cqZAl" id="4OKkcnfu_xj" role="3clF45" />
@@ -856,26 +856,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="4OKkcnfu_A5" role="1B3o_S" />
-  </node>
-  <node concept="3HP615" id="4OKkcnfu_A6">
-    <property role="TrG5h" value="RuleTemplateCollector" />
-    <node concept="2tJIrI" id="4OKkcnfu_A7" role="jymVt" />
-    <node concept="3clFb_" id="4OKkcnfu_A8" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="addTemplate" />
-      <node concept="37vLTG" id="4OKkcnfu_A9" role="3clF46">
-        <property role="TrG5h" value="ruleTemplate" />
-        <node concept="3uibUv" id="1ffsG7c3Xt2" role="1tU5fm">
-          <ref role="3uigEE" node="1ffsG7bW_V4" resolve="RuleTemplate" />
-          <node concept="3qTvmN" id="1ffsG7c3XtK" role="11_B2D" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="4OKkcnfu_Ab" role="3clF45" />
-      <node concept="3Tm1VV" id="4OKkcnfu_Ac" role="1B3o_S" />
-      <node concept="3clFbS" id="4OKkcnfu_Ad" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="4OKkcnfu_Ae" role="jymVt" />
-    <node concept="3Tm1VV" id="4OKkcnfu_Af" role="1B3o_S" />
   </node>
   <node concept="Qs71p" id="4OKkcnfu_Ag">
     <property role="TrG5h" value="RuleTemplateMehodKind" />
