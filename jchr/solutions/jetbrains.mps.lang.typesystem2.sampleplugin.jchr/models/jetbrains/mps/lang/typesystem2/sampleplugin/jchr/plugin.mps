@@ -6812,8 +6812,8 @@
         <property role="TrG5h" value="showTrace" />
         <node concept="10P_77" id="3F6vMxqcJVt" role="1tU5fm" />
       </node>
-      <node concept="3uibUv" id="3F6vMxqcJV_" role="3clF45">
-        <ref role="3uigEE" to="t5kh:1pPth$lAzAx" resolve="TypecheckingHelper.Step" />
+      <node concept="3uibUv" id="363KUOxRQyq" role="3clF45">
+        <ref role="3uigEE" to="t5kh:1pPth$lBNWG" resolve="TypecheckingHelper.RunTypechecking" />
       </node>
       <node concept="3Tm1VV" id="3F6vMxqcJVA" role="1B3o_S" />
       <node concept="3clFbS" id="3F6vMxqcJVB" role="3clF47">
