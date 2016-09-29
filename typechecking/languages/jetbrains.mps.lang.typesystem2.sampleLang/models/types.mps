@@ -10,7 +10,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -8716,14 +8716,19 @@
                 <node concept="2YIFZM" id="1hX44vMO9KX" role="3clFbG">
                   <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
                   <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                  <node concept="2OqwBi" id="1hX44vMObi5" role="37wK5m">
-                    <node concept="2JrnkZ" id="1hX44vMOb4z" role="2Oq$k0">
-                      <node concept="3tDTZT" id="7IysFeA96R7" role="2JrQYb">
-                        <ref role="3tDTNw" node="7IysFeA8Vu2" resolve="tvd" />
+                  <node concept="2OqwBi" id="_04VjStECh" role="37wK5m">
+                    <node concept="2OqwBi" id="1hX44vMObi5" role="2Oq$k0">
+                      <node concept="2JrnkZ" id="1hX44vMOb4z" role="2Oq$k0">
+                        <node concept="3tDTZT" id="7IysFeA96R7" role="2JrQYb">
+                          <ref role="3tDTNw" node="7IysFeA8Vu2" resolve="tvd" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="1hX44vMObGm" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
                       </node>
                     </node>
-                    <node concept="liA8E" id="1hX44vMObGm" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                    <node concept="liA8E" id="_04VjStEWb" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
                     </node>
                   </node>
                 </node>
@@ -10351,23 +10356,23 @@
           <node concept="3Aqczg" id="1L74NXGNJ21" role="3cqZAp">
             <node concept="3A8Hvi" id="1L74NXGNJ22" role="3Aqpz8">
               <node concept="1Q4cc8" id="1L74NXGNJHs" role="3A8w4Q">
-                <ref role="1Q4cdn" node="E1U1n2RerC" resolve="classifierType" />
+                <ref role="1Q4cdn" node="E1U1n2RerC" />
                 <node concept="1Q7qz5" id="1L74NXGNJHQ" role="1Q7vaU">
                   <node concept="1Q7q5z" id="1L74NXGNKl4" role="1Q7qz4">
-                    <ref role="1Q7tcy" node="7IysFeA1iSO" resolve="cls" />
+                    <ref role="1Q7tcy" node="7IysFeA1iSO" />
                     <node concept="3A2sRY" id="1L74NXGNKl8" role="1KxKwY">
-                      <ref role="3A2yKK" node="1_iD3HA2IF4" resolve="cls" />
+                      <ref role="3A2yKK" node="1_iD3HA2IF4" />
                     </node>
                   </node>
                 </node>
                 <node concept="1RziaG" id="1L74NXGNKle" role="1Ryyee">
-                  <ref role="1RzibV" node="E1U1n2Rf4_" resolve="parameter" />
+                  <ref role="1RzibV" node="E1U1n2Rf4_" />
                   <node concept="3AP2Rn" id="1L74NXGNKlf" role="1RzmR7">
                     <node concept="3clFbS" id="1L74NXGNKlg" role="16YjZG">
                       <node concept="3clFbF" id="1L74NXGNKlt" role="3cqZAp">
                         <node concept="3A9UF8" id="1L74NXGNKlv" role="3clFbG">
                           <node concept="a7P8L" id="1L74NXGNKlw" role="3A9W3M">
-                            <ref role="a7OzE" node="1_iD3HA2IFE" resolve="SubtypeParams" />
+                            <ref role="a7OzE" node="1_iD3HA2IFE" />
                           </node>
                         </node>
                       </node>
@@ -10376,7 +10381,7 @@
                 </node>
               </node>
               <node concept="a7P8L" id="1L74NXGNJ2s" role="3A8wtg">
-                <ref role="a7OzE" node="1_iD3HA2IET" resolve="Subtype" />
+                <ref role="a7OzE" node="1_iD3HA2IET" />
               </node>
             </node>
           </node>
