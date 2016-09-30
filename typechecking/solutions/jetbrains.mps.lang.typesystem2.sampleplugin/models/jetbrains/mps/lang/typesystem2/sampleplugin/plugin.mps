@@ -85,6 +85,7 @@
     <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.typesystem2.type)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.typesystem2.aspect)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="ddhc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide(MPS.IDEA/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" implicit="true" />
   </imports>
@@ -481,6 +482,7 @@
         <child id="1163670683720" name="body" index="3Kbo56" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -16555,12 +16557,12 @@
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="font" />
       <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="3WU9yfA8xE3" role="1tU5fm">
+        <ref role="3uigEE" to="z60i:~Font" resolve="Font" />
+      </node>
       <node concept="2YIFZM" id="_04VjSDB5Y" role="33vP2m">
         <ref role="37wK5l" to="g1qu:~UIUtil.getButtonFont():java.awt.Font" resolve="getButtonFont" />
         <ref role="1Pybhc" to="g1qu:~UIUtil" resolve="UIUtil" />
-      </node>
-      <node concept="3uibUv" id="3WU9yfA8xE3" role="1tU5fm">
-        <ref role="3uigEE" to="z60i:~Font" resolve="Font" />
       </node>
       <node concept="3Tm6S6" id="3WU9yfA8$dS" role="1B3o_S" />
     </node>
@@ -23453,43 +23455,7 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="Nob1E3zyyd" role="3cqZAp">
-          <node concept="3cpWsn" id="Nob1E3zyye" role="3cpWs9">
-            <property role="TrG5h" value="toolbar" />
-            <node concept="3uibUv" id="Nob1E3zyyf" role="1tU5fm">
-              <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
-            </node>
-            <node concept="1rXfSq" id="Nob1E3_nQe" role="33vP2m">
-              <ref role="37wK5l" node="Nob1E3_nQb" resolve="createToolbar" />
-              <node concept="37vLTw" id="Nob1E3ClkL" role="37wK5m">
-                <ref role="3cqZAo" node="Nob1E3C9mb" resolve="tool" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="Nob1E3zyym" role="3cqZAp">
-          <node concept="2OqwBi" id="Nob1E3zyyn" role="3clFbG">
-            <node concept="37vLTw" id="Nob1E3zyyo" role="2Oq$k0">
-              <ref role="3cqZAo" node="Nob1E3zyy0" resolve="tabPanel" />
-            </node>
-            <node concept="liA8E" id="Nob1E3zyyp" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
-              <node concept="2OqwBi" id="Nob1E3zyyq" role="37wK5m">
-                <node concept="37vLTw" id="Nob1E3zyyr" role="2Oq$k0">
-                  <ref role="3cqZAo" node="Nob1E3zyye" resolve="toolbar" />
-                </node>
-                <node concept="liA8E" id="Nob1E3zyys" role="2OqNvi">
-                  <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
-                </node>
-              </node>
-              <node concept="10M0yZ" id="Nob1E3zyyt" role="37wK5m">
-                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
-                <ref role="3cqZAo" to="z60i:~BorderLayout.WEST" resolve="WEST" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="6QkkSolq9Qa" role="3cqZAp" />
+        <node concept="3clFbH" id="4n$QnzZBQWp" role="3cqZAp" />
         <node concept="3clFbF" id="6QkkSolpYaK" role="3cqZAp">
           <node concept="37vLTI" id="6QkkSolq1QL" role="3clFbG">
             <node concept="37vLTw" id="6QkkSolpYaI" role="37vLTJ">
@@ -23544,6 +23510,92 @@
           </node>
         </node>
         <node concept="3clFbH" id="3ZNrYIhL019" role="3cqZAp" />
+        <node concept="3cpWs8" id="4n$QnzZCbcd" role="3cqZAp">
+          <node concept="3cpWsn" id="4n$QnzZCbce" role="3cpWs9">
+            <property role="TrG5h" value="toolbars" />
+            <node concept="3uibUv" id="4n$QnzZCbc9" role="1tU5fm">
+              <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
+            </node>
+            <node concept="2ShNRf" id="4n$QnzZCbcf" role="33vP2m">
+              <node concept="1pGfFk" id="4n$QnzZCbcg" role="2ShVmc">
+                <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
+                <node concept="2ShNRf" id="4n$QnzZCbch" role="37wK5m">
+                  <node concept="1pGfFk" id="4n$QnzZCbci" role="2ShVmc">
+                    <ref role="37wK5l" to="z60i:~BorderLayout.&lt;init&gt;()" resolve="BorderLayout" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n$QnzZCylt" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZCBOU" role="3clFbG">
+            <node concept="37vLTw" id="4n$QnzZCylr" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZCbce" resolve="toolbars" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZCDA8" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+              <node concept="2OqwBi" id="4n$QnzZDm4X" role="37wK5m">
+                <node concept="1rXfSq" id="4n$QnzZCFbP" role="2Oq$k0">
+                  <ref role="37wK5l" node="4n$QnzZDmTN" resolve="createControlToolbar" />
+                  <node concept="37vLTw" id="4n$QnzZCFbQ" role="37wK5m">
+                    <ref role="3cqZAo" node="Nob1E3C9mb" resolve="tool" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="4n$QnzZDmMC" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="10M0yZ" id="4n$QnzZCEVe" role="37wK5m">
+                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+                <ref role="3cqZAo" to="z60i:~BorderLayout.WEST" resolve="WEST" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n$QnzZF8wa" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZF8wb" role="3clFbG">
+            <node concept="37vLTw" id="4n$QnzZF8wc" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZCbce" resolve="toolbars" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZF8wd" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+              <node concept="2OqwBi" id="4n$QnzZF8we" role="37wK5m">
+                <node concept="1rXfSq" id="4n$QnzZF8wf" role="2Oq$k0">
+                  <ref role="37wK5l" node="Nob1E3_nQb" resolve="createFilterToolbar" />
+                  <node concept="37vLTw" id="4n$QnzZF8wg" role="37wK5m">
+                    <ref role="3cqZAo" node="Nob1E3C9mb" resolve="tool" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="4n$QnzZF8wh" role="2OqNvi">
+                  <ref role="37wK5l" to="qkt:~ActionToolbar.getComponent():javax.swing.JComponent" resolve="getComponent" />
+                </node>
+              </node>
+              <node concept="10M0yZ" id="4n$QnzZF8wi" role="37wK5m">
+                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+                <ref role="3cqZAo" to="z60i:~BorderLayout.EAST" resolve="EAST" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="Nob1E3zyym" role="3cqZAp">
+          <node concept="2OqwBi" id="Nob1E3zyyn" role="3clFbG">
+            <node concept="37vLTw" id="Nob1E3zyyo" role="2Oq$k0">
+              <ref role="3cqZAo" node="Nob1E3zyy0" resolve="tabPanel" />
+            </node>
+            <node concept="liA8E" id="Nob1E3zyyp" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component,java.lang.Object):void" resolve="add" />
+              <node concept="37vLTw" id="4n$QnzZCsGH" role="37wK5m">
+                <ref role="3cqZAo" node="4n$QnzZCbce" resolve="toolbars" />
+              </node>
+              <node concept="10M0yZ" id="Nob1E3zyyt" role="37wK5m">
+                <ref role="1PxDUh" to="z60i:~BorderLayout" resolve="BorderLayout" />
+                <ref role="3cqZAo" to="z60i:~BorderLayout.WEST" resolve="WEST" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6QkkSolq9Qa" role="3cqZAp" />
         <node concept="3cpWs8" id="Nob1E3zyyv" role="3cqZAp">
           <node concept="3cpWsn" id="Nob1E3zyyw" role="3cpWs9">
             <property role="TrG5h" value="activationScrpane" />
@@ -23650,7 +23702,7 @@
     </node>
     <node concept="2tJIrI" id="Nob1E3_p0b" role="jymVt" />
     <node concept="3clFb_" id="Nob1E3_nQb" role="jymVt">
-      <property role="TrG5h" value="createToolbar" />
+      <property role="TrG5h" value="createFilterToolbar" />
       <node concept="37vLTG" id="Nob1E3ChVy" role="3clF46">
         <property role="TrG5h" value="tool" />
         <node concept="1xUVSX" id="Nob1E3ChVz" role="1tU5fm">
@@ -23855,321 +23907,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="2T1p0CFWHrZ" role="3cqZAp" />
-        <node concept="3cpWs8" id="7vxJ_H4vrtX" role="3cqZAp">
-          <node concept="3cpWsn" id="7vxJ_H4vrtY" role="3cpWs9">
-            <property role="TrG5h" value="goToError" />
-            <node concept="3uibUv" id="7vxJ_H4vrtS" role="1tU5fm">
-              <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
-            </node>
-            <node concept="2ShNRf" id="7vxJ_H4vrtZ" role="33vP2m">
-              <node concept="YeOm9" id="7vxJ_H4vwUv" role="2ShVmc">
-                <node concept="1Y3b0j" id="7vxJ_H4vwUy" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="qkt:~AnAction" resolve="AnAction" />
-                  <ref role="37wK5l" to="qkt:~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolve="AnAction" />
-                  <node concept="3Tm1VV" id="7vxJ_H4vwUz" role="1B3o_S" />
-                  <node concept="Xl_RD" id="7vxJ_H4vru1" role="37wK5m">
-                    <property role="Xl_RC" value="Goto Error" />
-                  </node>
-                  <node concept="Xl_RD" id="7vxJ_H4vru2" role="37wK5m">
-                    <property role="Xl_RC" value="Goto First Error" />
-                  </node>
-                  <node concept="10M0yZ" id="7vxJ_H4vru3" role="37wK5m">
-                    <ref role="1PxDUh" to="l7us:~MPSIcons$Small" resolve="MPSIcons.Small" />
-                    <ref role="3cqZAo" to="l7us:~MPSIcons$Small.Error" resolve="Error" />
-                  </node>
-                  <node concept="3clFb_" id="7vxJ_H4vx3M" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="actionPerformed" />
-                    <property role="DiZV1" value="false" />
-                    <property role="od$2w" value="false" />
-                    <node concept="3Tm1VV" id="7vxJ_H4vx3N" role="1B3o_S" />
-                    <node concept="3cqZAl" id="7vxJ_H4vx3P" role="3clF45" />
-                    <node concept="37vLTG" id="7vxJ_H4vx3Q" role="3clF46">
-                      <property role="TrG5h" value="event" />
-                      <node concept="3uibUv" id="7vxJ_H4vx3R" role="1tU5fm">
-                        <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
-                      </node>
-                    </node>
-                    <node concept="3clFbS" id="7vxJ_H4vx3T" role="3clF47">
-                      <node concept="3cpWs8" id="7vxJ_H4vBsn" role="3cqZAp">
-                        <node concept="3cpWsn" id="7vxJ_H4vBso" role="3cpWs9">
-                          <property role="TrG5h" value="tableModel" />
-                          <node concept="3uibUv" id="7vxJ_H4vBsk" role="1tU5fm">
-                            <ref role="3uigEE" node="3ZNrYIhIMAH" resolve="IndexedTreeTableModel" />
-                          </node>
-                          <node concept="2OqwBi" id="7vxJ_H4vBsp" role="33vP2m">
-                            <node concept="37vLTw" id="7vxJ_H4vBsq" role="2Oq$k0">
-                              <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
-                            </node>
-                            <node concept="liA8E" id="7vxJ_H4vBsr" role="2OqNvi">
-                              <ref role="37wK5l" node="6QkkSol7XsK" resolve="getTableModel" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cpWs8" id="7vxJ_H4xG0z" role="3cqZAp">
-                        <node concept="3cpWsn" id="7vxJ_H4xG0$" role="3cpWs9">
-                          <property role="TrG5h" value="failurePaths" />
-                          <node concept="3uibUv" id="7vxJ_H4xG0f" role="1tU5fm">
-                            <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                            <node concept="3uibUv" id="7vxJ_H4xG0m" role="11_B2D">
-                              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                              <node concept="3uibUv" id="7vxJ_H4xG0n" role="11_B2D">
-                                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="7vxJ_H4xG0_" role="33vP2m">
-                            <node concept="37vLTw" id="7vxJ_H4xG0A" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7vxJ_H4vBso" resolve="tableModel" />
-                            </node>
-                            <node concept="liA8E" id="7vxJ_H4xG0B" role="2OqNvi">
-                              <ref role="37wK5l" node="7vxJ_H4vD3N" resolve="lookupPathsToIndexed" />
-                              <node concept="Rm8GO" id="7vxJ_H4xG0C" role="37wK5m">
-                                <ref role="1Px2BO" node="7vxJ_H4vErE" resolve="IndexedTreeTableModel.Kind" />
-                                <ref role="Rm8GQ" node="7vxJ_H4vE$j" resolve="FAILURE" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbJ" id="7vxJ_H4wvFB" role="3cqZAp">
-                        <node concept="3clFbS" id="7vxJ_H4wvFD" role="3clFbx">
-                          <node concept="3cpWs8" id="7vxJ_H4wPl2" role="3cqZAp">
-                            <node concept="3cpWsn" id="7vxJ_H4wPl3" role="3cpWs9">
-                              <property role="TrG5h" value="firstPath" />
-                              <node concept="3uibUv" id="7vxJ_H4xInq" role="1tU5fm">
-                                <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                                <node concept="3uibUv" id="7vxJ_H4xJ10" role="11_B2D">
-                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                </node>
-                              </node>
-                              <node concept="1y4W85" id="7vxJ_H4wPl4" role="33vP2m">
-                                <node concept="3cmrfG" id="7vxJ_H4wPl5" role="1y58nS">
-                                  <property role="3cmrfH" value="0" />
-                                </node>
-                                <node concept="37vLTw" id="7vxJ_H4xHu0" role="1y566C">
-                                  <ref role="3cqZAo" node="7vxJ_H4xG0$" resolve="failurePaths" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3cpWs8" id="7vxJ_H4zrjz" role="3cqZAp">
-                            <node concept="3cpWsn" id="7vxJ_H4zrj$" role="3cpWs9">
-                              <property role="TrG5h" value="path" />
-                              <node concept="3uibUv" id="7vxJ_H4zrjg" role="1tU5fm">
-                                <ref role="3uigEE" to="rgfa:~TreePath" resolve="TreePath" />
-                              </node>
-                              <node concept="2ShNRf" id="7vxJ_H4zrj_" role="33vP2m">
-                                <node concept="1pGfFk" id="7vxJ_H4zrjA" role="2ShVmc">
-                                  <ref role="37wK5l" to="rgfa:~TreePath.&lt;init&gt;(java.lang.Object[])" resolve="TreePath" />
-                                  <node concept="2OqwBi" id="7vxJ_H4zrjB" role="37wK5m">
-                                    <node concept="37vLTw" id="7vxJ_H4zrjC" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="7vxJ_H4wPl3" resolve="firstPath" />
-                                    </node>
-                                    <node concept="liA8E" id="7vxJ_H4zrjD" role="2OqNvi">
-                                      <ref role="37wK5l" to="33ny:~List.toArray():java.lang.Object[]" resolve="toArray" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3cpWs8" id="7vxJ_H4DpBY" role="3cqZAp">
-                            <node concept="3cpWsn" id="7vxJ_H4DpBZ" role="3cpWs9">
-                              <property role="TrG5h" value="tree" />
-                              <node concept="3uibUv" id="7vxJ_H4DpBX" role="1tU5fm">
-                                <ref role="3uigEE" to="u30n:~TreeTableTree" resolve="TreeTableTree" />
-                              </node>
-                              <node concept="2OqwBi" id="7vxJ_H4DpC0" role="33vP2m">
-                                <node concept="37vLTw" id="7vxJ_H4DpC1" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
-                                </node>
-                                <node concept="liA8E" id="7vxJ_H4DpC2" role="2OqNvi">
-                                  <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="7vxJ_H4wyUZ" role="3cqZAp">
-                            <node concept="2OqwBi" id="7vxJ_H4wAIR" role="3clFbG">
-                              <node concept="37vLTw" id="7vxJ_H4DpC3" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7vxJ_H4DpBZ" resolve="tree" />
-                              </node>
-                              <node concept="liA8E" id="7vxJ_H4wBFs" role="2OqNvi">
-                                <ref role="37wK5l" to="dxuu:~JTree.makeVisible(javax.swing.tree.TreePath):void" resolve="makeVisible" />
-                                <node concept="37vLTw" id="7vxJ_H4zrjE" role="37wK5m">
-                                  <ref role="3cqZAo" node="7vxJ_H4zrj$" resolve="path" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3cpWs8" id="7vxJ_H4DpUR" role="3cqZAp">
-                            <node concept="3cpWsn" id="7vxJ_H4DpUS" role="3cpWs9">
-                              <property role="TrG5h" value="row" />
-                              <node concept="10Oyi0" id="7vxJ_H4DpTR" role="1tU5fm" />
-                              <node concept="2OqwBi" id="7vxJ_H4DpUT" role="33vP2m">
-                                <node concept="37vLTw" id="7vxJ_H4DpUU" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="7vxJ_H4DpBZ" resolve="tree" />
-                                </node>
-                                <node concept="liA8E" id="7vxJ_H4DpUV" role="2OqNvi">
-                                  <ref role="37wK5l" to="dxuu:~JTree.getRowForPath(javax.swing.tree.TreePath):int" resolve="getRowForPath" />
-                                  <node concept="37vLTw" id="7vxJ_H4DpUW" role="37wK5m">
-                                    <ref role="3cqZAo" node="7vxJ_H4zrj$" resolve="path" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3cpWs8" id="7vxJ_H4D$aw" role="3cqZAp">
-                            <node concept="3cpWsn" id="7vxJ_H4D$ax" role="3cpWs9">
-                              <property role="TrG5h" value="rect" />
-                              <node concept="3uibUv" id="7vxJ_H4D$av" role="1tU5fm">
-                                <ref role="3uigEE" to="z60i:~Rectangle" resolve="Rectangle" />
-                              </node>
-                              <node concept="2OqwBi" id="7vxJ_H4D$ay" role="33vP2m">
-                                <node concept="37vLTw" id="7vxJ_H4D$az" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
-                                </node>
-                                <node concept="liA8E" id="7vxJ_H4D$a$" role="2OqNvi">
-                                  <ref role="37wK5l" to="dxuu:~JTable.getCellRect(int,int,boolean):java.awt.Rectangle" resolve="getCellRect" />
-                                  <node concept="37vLTw" id="7vxJ_H4D$a_" role="37wK5m">
-                                    <ref role="3cqZAo" node="7vxJ_H4DpUS" resolve="row" />
-                                  </node>
-                                  <node concept="3cmrfG" id="7vxJ_H4D$aA" role="37wK5m">
-                                    <property role="3cmrfH" value="0" />
-                                  </node>
-                                  <node concept="3clFbT" id="7vxJ_H4D$aB" role="37wK5m">
-                                    <property role="3clFbU" value="false" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="7vxJ_H4D_dm" role="3cqZAp">
-                            <node concept="2OqwBi" id="7vxJ_H4D_KN" role="3clFbG">
-                              <node concept="37vLTw" id="7vxJ_H4D_dk" role="2Oq$k0">
-                                <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
-                              </node>
-                              <node concept="liA8E" id="7vxJ_H4DBxy" role="2OqNvi">
-                                <ref role="37wK5l" to="dxuu:~JComponent.scrollRectToVisible(java.awt.Rectangle):void" resolve="scrollRectToVisible" />
-                                <node concept="37vLTw" id="7vxJ_H4DBW8" role="37wK5m">
-                                  <ref role="3cqZAo" node="7vxJ_H4D$ax" resolve="rect" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3fqX7Q" id="7vxJ_H4wy8z" role="3clFbw">
-                          <node concept="2OqwBi" id="7vxJ_H4wy8_" role="3fr31v">
-                            <node concept="37vLTw" id="7vxJ_H4xH3b" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7vxJ_H4xG0$" resolve="failurePaths" />
-                            </node>
-                            <node concept="liA8E" id="7vxJ_H4wy8B" role="2OqNvi">
-                              <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="7vxJ_H4vxeJ" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                  <node concept="2tJIrI" id="7vxJ_H4yR68" role="jymVt" />
-                  <node concept="3clFb_" id="7vxJ_H4yRso" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="update" />
-                    <property role="DiZV1" value="false" />
-                    <property role="od$2w" value="false" />
-                    <node concept="3Tm1VV" id="7vxJ_H4yRsp" role="1B3o_S" />
-                    <node concept="3cqZAl" id="7vxJ_H4yRsr" role="3clF45" />
-                    <node concept="37vLTG" id="7vxJ_H4yRss" role="3clF46">
-                      <property role="TrG5h" value="event" />
-                      <node concept="3uibUv" id="7vxJ_H4yRst" role="1tU5fm">
-                        <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
-                      </node>
-                    </node>
-                    <node concept="3clFbS" id="7vxJ_H4yRsv" role="3clF47">
-                      <node concept="3cpWs8" id="7vxJ_H4yW01" role="3cqZAp">
-                        <node concept="3cpWsn" id="7vxJ_H4yW02" role="3cpWs9">
-                          <property role="TrG5h" value="tableModel" />
-                          <node concept="3uibUv" id="7vxJ_H4yW03" role="1tU5fm">
-                            <ref role="3uigEE" node="3ZNrYIhIMAH" resolve="IndexedTreeTableModel" />
-                          </node>
-                          <node concept="2OqwBi" id="7vxJ_H4yW04" role="33vP2m">
-                            <node concept="37vLTw" id="7vxJ_H4yW05" role="2Oq$k0">
-                              <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
-                            </node>
-                            <node concept="liA8E" id="7vxJ_H4yW06" role="2OqNvi">
-                              <ref role="37wK5l" node="6QkkSol7XsK" resolve="getTableModel" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cpWs8" id="7vxJ_H4yW07" role="3cqZAp">
-                        <node concept="3cpWsn" id="7vxJ_H4yW08" role="3cpWs9">
-                          <property role="TrG5h" value="failurePaths" />
-                          <node concept="3uibUv" id="7vxJ_H4yW09" role="1tU5fm">
-                            <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                            <node concept="3uibUv" id="7vxJ_H4yW0a" role="11_B2D">
-                              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                              <node concept="3uibUv" id="7vxJ_H4yW0b" role="11_B2D">
-                                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="7vxJ_H4yW0c" role="33vP2m">
-                            <node concept="37vLTw" id="7vxJ_H4yW0d" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7vxJ_H4yW02" resolve="tableModel" />
-                            </node>
-                            <node concept="liA8E" id="7vxJ_H4yW0e" role="2OqNvi">
-                              <ref role="37wK5l" node="7vxJ_H4vD3N" resolve="lookupPathsToIndexed" />
-                              <node concept="Rm8GO" id="7vxJ_H4yW0f" role="37wK5m">
-                                <ref role="1Px2BO" node="7vxJ_H4vErE" resolve="IndexedTreeTableModel.Kind" />
-                                <ref role="Rm8GQ" node="7vxJ_H4vE$j" resolve="FAILURE" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="7vxJ_H4yVim" role="3cqZAp">
-                        <node concept="2OqwBi" id="7vxJ_H4yWKY" role="3clFbG">
-                          <node concept="2OqwBi" id="7vxJ_H4yYXj" role="2Oq$k0">
-                            <node concept="37vLTw" id="7vxJ_H4yYXk" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7vxJ_H4yRss" resolve="event" />
-                            </node>
-                            <node concept="liA8E" id="7vxJ_H4yYXl" role="2OqNvi">
-                              <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="7vxJ_H4yWOA" role="2OqNvi">
-                            <ref role="37wK5l" to="qkt:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
-                            <node concept="3fqX7Q" id="7vxJ_H4yYUN" role="37wK5m">
-                              <node concept="2OqwBi" id="7vxJ_H4yYUP" role="3fr31v">
-                                <node concept="37vLTw" id="7vxJ_H4yYUQ" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="7vxJ_H4yW08" resolve="failurePaths" />
-                                </node>
-                                <node concept="liA8E" id="7vxJ_H4yYUR" role="2OqNvi">
-                                  <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="7vxJ_H4yRsw" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7vxJ_H4vfwE" role="3cqZAp" />
         <node concept="3cpWs8" id="YGS68MPVLQ" role="3cqZAp">
           <node concept="3cpWsn" id="YGS68MPVLR" role="3cpWs9">
             <property role="TrG5h" value="group" />
@@ -24183,24 +23920,7 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="YGS68MPqOF" role="3cqZAp">
-          <node concept="2OqwBi" id="YGS68MP_Y$" role="3clFbG">
-            <node concept="37vLTw" id="YGS68MQa33" role="2Oq$k0">
-              <ref role="3cqZAo" node="YGS68MPVLR" resolve="group" />
-            </node>
-            <node concept="liA8E" id="YGS68MPBVg" role="2OqNvi">
-              <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
-              <node concept="2ShNRf" id="YGS68MPBYf" role="37wK5m">
-                <node concept="1pGfFk" id="YGS68MPBYg" role="2ShVmc">
-                  <ref role="37wK5l" to="71xd:~CloseAction.&lt;init&gt;(jetbrains.mps.ide.tools.BaseTool)" resolve="CloseAction" />
-                  <node concept="37vLTw" id="YGS68MPBYh" role="37wK5m">
-                    <ref role="3cqZAo" node="Nob1E3ChVy" resolve="tool" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+        <node concept="3clFbH" id="4n$QnzZJBFJ" role="3cqZAp" />
         <node concept="3clFbF" id="YGS68MPEI0" role="3cqZAp">
           <node concept="2OqwBi" id="YGS68MPGWI" role="3clFbG">
             <node concept="37vLTw" id="YGS68MPEHY" role="2Oq$k0">
@@ -24299,19 +24019,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7vxJ_H4ylWc" role="3cqZAp">
-          <node concept="2OqwBi" id="7vxJ_H4ylWd" role="3clFbG">
-            <node concept="37vLTw" id="7vxJ_H4ylWe" role="2Oq$k0">
-              <ref role="3cqZAo" node="YGS68MPVLR" resolve="group" />
-            </node>
-            <node concept="liA8E" id="7vxJ_H4ylWf" role="2OqNvi">
-              <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
-              <node concept="37vLTw" id="7vxJ_H4yqHS" role="37wK5m">
-                <ref role="3cqZAo" node="7vxJ_H4vrtY" resolve="goToError" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="YGS68MPojK" role="3cqZAp" />
         <node concept="3cpWs6" id="Nob1E3_nQ7" role="3cqZAp">
           <node concept="2OqwBi" id="Nob1E3_nQ1" role="3cqZAk">
@@ -24325,10 +24032,479 @@
                 <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
                 <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
               </node>
-              <node concept="37vLTw" id="Nob1E3_nQ5" role="37wK5m">
+              <node concept="37vLTw" id="4n$QnzZBoZF" role="37wK5m">
                 <ref role="3cqZAo" node="YGS68MPVLR" resolve="group" />
               </node>
               <node concept="3clFbT" id="Nob1E3_nQ6" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4n$QnzZDzlO" role="jymVt" />
+    <node concept="3clFb_" id="4n$QnzZDmTN" role="jymVt">
+      <property role="TrG5h" value="createControlToolbar" />
+      <node concept="37vLTG" id="4n$QnzZDmTO" role="3clF46">
+        <property role="TrG5h" value="tool" />
+        <node concept="1xUVSX" id="4n$QnzZDmTP" role="1tU5fm">
+          <ref role="1xYkEM" node="7nPD14N9j9s" resolve="TraceTool" />
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="4n$QnzZDmTQ" role="1B3o_S" />
+      <node concept="3uibUv" id="4n$QnzZDmTR" role="3clF45">
+        <ref role="3uigEE" to="qkt:~ActionToolbar" resolve="ActionToolbar" />
+      </node>
+      <node concept="3clFbS" id="4n$QnzZDmTS" role="3clF47">
+        <node concept="3clFbH" id="4n$QnzZDmV1" role="3cqZAp" />
+        <node concept="3cpWs8" id="4n$QnzZDmV2" role="3cqZAp">
+          <node concept="3cpWsn" id="4n$QnzZDmV3" role="3cpWs9">
+            <property role="TrG5h" value="goToError" />
+            <node concept="3uibUv" id="4n$QnzZDmV4" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
+            </node>
+            <node concept="2ShNRf" id="4n$QnzZDmV5" role="33vP2m">
+              <node concept="YeOm9" id="4n$QnzZDmV6" role="2ShVmc">
+                <node concept="1Y3b0j" id="4n$QnzZDmV7" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="qkt:~AnAction" resolve="AnAction" />
+                  <ref role="37wK5l" to="qkt:~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolve="AnAction" />
+                  <node concept="3Tm1VV" id="4n$QnzZDmV8" role="1B3o_S" />
+                  <node concept="Xl_RD" id="4n$QnzZDmV9" role="37wK5m">
+                    <property role="Xl_RC" value="Goto Error" />
+                  </node>
+                  <node concept="Xl_RD" id="4n$QnzZDmVa" role="37wK5m">
+                    <property role="Xl_RC" value="Goto First Error" />
+                  </node>
+                  <node concept="10M0yZ" id="4n$QnzZDmVb" role="37wK5m">
+                    <ref role="1PxDUh" to="l7us:~MPSIcons$Small" resolve="MPSIcons.Small" />
+                    <ref role="3cqZAo" to="l7us:~MPSIcons$Small.Error" resolve="Error" />
+                  </node>
+                  <node concept="3clFb_" id="4n$QnzZDmVc" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="actionPerformed" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="4n$QnzZDmVd" role="1B3o_S" />
+                    <node concept="3cqZAl" id="4n$QnzZDmVe" role="3clF45" />
+                    <node concept="37vLTG" id="4n$QnzZDmVf" role="3clF46">
+                      <property role="TrG5h" value="event" />
+                      <node concept="3uibUv" id="4n$QnzZDmVg" role="1tU5fm">
+                        <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="4n$QnzZDmVh" role="3clF47">
+                      <node concept="3cpWs8" id="4n$QnzZDmVi" role="3cqZAp">
+                        <node concept="3cpWsn" id="4n$QnzZDmVj" role="3cpWs9">
+                          <property role="TrG5h" value="tableModel" />
+                          <node concept="3uibUv" id="4n$QnzZDmVk" role="1tU5fm">
+                            <ref role="3uigEE" node="3ZNrYIhIMAH" resolve="IndexedTreeTableModel" />
+                          </node>
+                          <node concept="2OqwBi" id="4n$QnzZDmVl" role="33vP2m">
+                            <node concept="37vLTw" id="4n$QnzZDmVm" role="2Oq$k0">
+                              <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                            </node>
+                            <node concept="liA8E" id="4n$QnzZDmVn" role="2OqNvi">
+                              <ref role="37wK5l" node="6QkkSol7XsK" resolve="getTableModel" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWs8" id="4n$QnzZDmVo" role="3cqZAp">
+                        <node concept="3cpWsn" id="4n$QnzZDmVp" role="3cpWs9">
+                          <property role="TrG5h" value="failurePaths" />
+                          <node concept="3uibUv" id="4n$QnzZDmVq" role="1tU5fm">
+                            <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                            <node concept="3uibUv" id="4n$QnzZDmVr" role="11_B2D">
+                              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                              <node concept="3uibUv" id="4n$QnzZDmVs" role="11_B2D">
+                                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="4n$QnzZDmVt" role="33vP2m">
+                            <node concept="37vLTw" id="4n$QnzZDmVu" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4n$QnzZDmVj" resolve="tableModel" />
+                            </node>
+                            <node concept="liA8E" id="4n$QnzZDmVv" role="2OqNvi">
+                              <ref role="37wK5l" node="7vxJ_H4vD3N" resolve="lookupPathsToIndexed" />
+                              <node concept="Rm8GO" id="4n$QnzZDmVw" role="37wK5m">
+                                <ref role="1Px2BO" node="7vxJ_H4vErE" resolve="IndexedTreeTableModel.Kind" />
+                                <ref role="Rm8GQ" node="7vxJ_H4vE$j" resolve="FAILURE" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="4n$QnzZDmVx" role="3cqZAp">
+                        <node concept="3clFbS" id="4n$QnzZDmVy" role="3clFbx">
+                          <node concept="3cpWs8" id="4n$QnzZDmVz" role="3cqZAp">
+                            <node concept="3cpWsn" id="4n$QnzZDmV$" role="3cpWs9">
+                              <property role="TrG5h" value="firstPath" />
+                              <node concept="3uibUv" id="4n$QnzZDmV_" role="1tU5fm">
+                                <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                                <node concept="3uibUv" id="4n$QnzZDmVA" role="11_B2D">
+                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                                </node>
+                              </node>
+                              <node concept="1y4W85" id="4n$QnzZDmVB" role="33vP2m">
+                                <node concept="3cmrfG" id="4n$QnzZDmVC" role="1y58nS">
+                                  <property role="3cmrfH" value="0" />
+                                </node>
+                                <node concept="37vLTw" id="4n$QnzZDmVD" role="1y566C">
+                                  <ref role="3cqZAo" node="4n$QnzZDmVp" resolve="failurePaths" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="4n$QnzZDmVE" role="3cqZAp">
+                            <node concept="3cpWsn" id="4n$QnzZDmVF" role="3cpWs9">
+                              <property role="TrG5h" value="path" />
+                              <node concept="3uibUv" id="4n$QnzZDmVG" role="1tU5fm">
+                                <ref role="3uigEE" to="rgfa:~TreePath" resolve="TreePath" />
+                              </node>
+                              <node concept="2ShNRf" id="4n$QnzZDmVH" role="33vP2m">
+                                <node concept="1pGfFk" id="4n$QnzZDmVI" role="2ShVmc">
+                                  <ref role="37wK5l" to="rgfa:~TreePath.&lt;init&gt;(java.lang.Object[])" resolve="TreePath" />
+                                  <node concept="2OqwBi" id="4n$QnzZDmVJ" role="37wK5m">
+                                    <node concept="37vLTw" id="4n$QnzZDmVK" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="4n$QnzZDmV$" resolve="firstPath" />
+                                    </node>
+                                    <node concept="liA8E" id="4n$QnzZDmVL" role="2OqNvi">
+                                      <ref role="37wK5l" to="33ny:~List.toArray():java.lang.Object[]" resolve="toArray" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="4n$QnzZDmVM" role="3cqZAp">
+                            <node concept="3cpWsn" id="4n$QnzZDmVN" role="3cpWs9">
+                              <property role="TrG5h" value="tree" />
+                              <node concept="3uibUv" id="4n$QnzZDmVO" role="1tU5fm">
+                                <ref role="3uigEE" to="u30n:~TreeTableTree" resolve="TreeTableTree" />
+                              </node>
+                              <node concept="2OqwBi" id="4n$QnzZDmVP" role="33vP2m">
+                                <node concept="37vLTw" id="4n$QnzZDmVQ" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                                </node>
+                                <node concept="liA8E" id="4n$QnzZDmVR" role="2OqNvi">
+                                  <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="4n$QnzZDmVS" role="3cqZAp">
+                            <node concept="2OqwBi" id="4n$QnzZDmVT" role="3clFbG">
+                              <node concept="37vLTw" id="4n$QnzZDmVU" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4n$QnzZDmVN" resolve="tree" />
+                              </node>
+                              <node concept="liA8E" id="4n$QnzZDmVV" role="2OqNvi">
+                                <ref role="37wK5l" to="dxuu:~JTree.makeVisible(javax.swing.tree.TreePath):void" resolve="makeVisible" />
+                                <node concept="37vLTw" id="4n$QnzZDmVW" role="37wK5m">
+                                  <ref role="3cqZAo" node="4n$QnzZDmVF" resolve="path" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="4n$QnzZDmVX" role="3cqZAp">
+                            <node concept="3cpWsn" id="4n$QnzZDmVY" role="3cpWs9">
+                              <property role="TrG5h" value="row" />
+                              <node concept="10Oyi0" id="4n$QnzZDmVZ" role="1tU5fm" />
+                              <node concept="2OqwBi" id="4n$QnzZDmW0" role="33vP2m">
+                                <node concept="37vLTw" id="4n$QnzZDmW1" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4n$QnzZDmVN" resolve="tree" />
+                                </node>
+                                <node concept="liA8E" id="4n$QnzZDmW2" role="2OqNvi">
+                                  <ref role="37wK5l" to="dxuu:~JTree.getRowForPath(javax.swing.tree.TreePath):int" resolve="getRowForPath" />
+                                  <node concept="37vLTw" id="4n$QnzZDmW3" role="37wK5m">
+                                    <ref role="3cqZAo" node="4n$QnzZDmVF" resolve="path" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWs8" id="4n$QnzZDmW4" role="3cqZAp">
+                            <node concept="3cpWsn" id="4n$QnzZDmW5" role="3cpWs9">
+                              <property role="TrG5h" value="rect" />
+                              <node concept="3uibUv" id="4n$QnzZDmW6" role="1tU5fm">
+                                <ref role="3uigEE" to="z60i:~Rectangle" resolve="Rectangle" />
+                              </node>
+                              <node concept="2OqwBi" id="4n$QnzZDmW7" role="33vP2m">
+                                <node concept="37vLTw" id="4n$QnzZDmW8" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                                </node>
+                                <node concept="liA8E" id="4n$QnzZDmW9" role="2OqNvi">
+                                  <ref role="37wK5l" to="dxuu:~JTable.getCellRect(int,int,boolean):java.awt.Rectangle" resolve="getCellRect" />
+                                  <node concept="37vLTw" id="4n$QnzZDmWa" role="37wK5m">
+                                    <ref role="3cqZAo" node="4n$QnzZDmVY" resolve="row" />
+                                  </node>
+                                  <node concept="3cmrfG" id="4n$QnzZDmWb" role="37wK5m">
+                                    <property role="3cmrfH" value="0" />
+                                  </node>
+                                  <node concept="3clFbT" id="4n$QnzZDmWc" role="37wK5m">
+                                    <property role="3clFbU" value="false" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="4n$QnzZDmWd" role="3cqZAp">
+                            <node concept="2OqwBi" id="4n$QnzZDmWe" role="3clFbG">
+                              <node concept="37vLTw" id="4n$QnzZDmWf" role="2Oq$k0">
+                                <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                              </node>
+                              <node concept="liA8E" id="4n$QnzZDmWg" role="2OqNvi">
+                                <ref role="37wK5l" to="dxuu:~JComponent.scrollRectToVisible(java.awt.Rectangle):void" resolve="scrollRectToVisible" />
+                                <node concept="37vLTw" id="4n$QnzZDmWh" role="37wK5m">
+                                  <ref role="3cqZAo" node="4n$QnzZDmW5" resolve="rect" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3fqX7Q" id="4n$QnzZDmWi" role="3clFbw">
+                          <node concept="2OqwBi" id="4n$QnzZDmWj" role="3fr31v">
+                            <node concept="37vLTw" id="4n$QnzZDmWk" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4n$QnzZDmVp" resolve="failurePaths" />
+                            </node>
+                            <node concept="liA8E" id="4n$QnzZDmWl" role="2OqNvi">
+                              <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="4n$QnzZDmWm" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
+                  <node concept="2tJIrI" id="4n$QnzZDmWn" role="jymVt" />
+                  <node concept="3clFb_" id="4n$QnzZDmWo" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="update" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="4n$QnzZDmWp" role="1B3o_S" />
+                    <node concept="3cqZAl" id="4n$QnzZDmWq" role="3clF45" />
+                    <node concept="37vLTG" id="4n$QnzZDmWr" role="3clF46">
+                      <property role="TrG5h" value="event" />
+                      <node concept="3uibUv" id="4n$QnzZDmWs" role="1tU5fm">
+                        <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="4n$QnzZDmWt" role="3clF47">
+                      <node concept="3cpWs8" id="4n$QnzZDmWu" role="3cqZAp">
+                        <node concept="3cpWsn" id="4n$QnzZDmWv" role="3cpWs9">
+                          <property role="TrG5h" value="tableModel" />
+                          <node concept="3uibUv" id="4n$QnzZDmWw" role="1tU5fm">
+                            <ref role="3uigEE" node="3ZNrYIhIMAH" resolve="IndexedTreeTableModel" />
+                          </node>
+                          <node concept="2OqwBi" id="4n$QnzZDmWx" role="33vP2m">
+                            <node concept="37vLTw" id="4n$QnzZDmWy" role="2Oq$k0">
+                              <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                            </node>
+                            <node concept="liA8E" id="4n$QnzZDmWz" role="2OqNvi">
+                              <ref role="37wK5l" node="6QkkSol7XsK" resolve="getTableModel" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWs8" id="4n$QnzZDmW$" role="3cqZAp">
+                        <node concept="3cpWsn" id="4n$QnzZDmW_" role="3cpWs9">
+                          <property role="TrG5h" value="failurePaths" />
+                          <node concept="3uibUv" id="4n$QnzZDmWA" role="1tU5fm">
+                            <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                            <node concept="3uibUv" id="4n$QnzZDmWB" role="11_B2D">
+                              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                              <node concept="3uibUv" id="4n$QnzZDmWC" role="11_B2D">
+                                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="4n$QnzZDmWD" role="33vP2m">
+                            <node concept="37vLTw" id="4n$QnzZDmWE" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4n$QnzZDmWv" resolve="tableModel" />
+                            </node>
+                            <node concept="liA8E" id="4n$QnzZDmWF" role="2OqNvi">
+                              <ref role="37wK5l" node="7vxJ_H4vD3N" resolve="lookupPathsToIndexed" />
+                              <node concept="Rm8GO" id="4n$QnzZDmWG" role="37wK5m">
+                                <ref role="1Px2BO" node="7vxJ_H4vErE" resolve="IndexedTreeTableModel.Kind" />
+                                <ref role="Rm8GQ" node="7vxJ_H4vE$j" resolve="FAILURE" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="4n$QnzZDmWH" role="3cqZAp">
+                        <node concept="2OqwBi" id="4n$QnzZDmWI" role="3clFbG">
+                          <node concept="2OqwBi" id="4n$QnzZDmWJ" role="2Oq$k0">
+                            <node concept="37vLTw" id="4n$QnzZDmWK" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4n$QnzZDmWr" resolve="event" />
+                            </node>
+                            <node concept="liA8E" id="4n$QnzZDmWL" role="2OqNvi">
+                              <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="4n$QnzZDmWM" role="2OqNvi">
+                            <ref role="37wK5l" to="qkt:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
+                            <node concept="3fqX7Q" id="4n$QnzZDmWN" role="37wK5m">
+                              <node concept="2OqwBi" id="4n$QnzZDmWO" role="3fr31v">
+                                <node concept="37vLTw" id="4n$QnzZDmWP" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4n$QnzZDmW_" resolve="failurePaths" />
+                                </node>
+                                <node concept="liA8E" id="4n$QnzZDmWQ" role="2OqNvi">
+                                  <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="4n$QnzZDmWR" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4n$QnzZDmWS" role="3cqZAp" />
+        <node concept="3cpWs8" id="4n$QnzZDmWT" role="3cqZAp">
+          <node concept="3cpWsn" id="4n$QnzZDmWU" role="3cpWs9">
+            <property role="TrG5h" value="group" />
+            <node concept="3uibUv" id="4n$QnzZDmWV" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~DefaultActionGroup" resolve="DefaultActionGroup" />
+            </node>
+            <node concept="2ShNRf" id="4n$QnzZDmWW" role="33vP2m">
+              <node concept="1pGfFk" id="4n$QnzZDmWX" role="2ShVmc">
+                <ref role="37wK5l" to="qkt:~DefaultActionGroup.&lt;init&gt;()" resolve="DefaultActionGroup" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4n$QnzZJxGs" role="3cqZAp" />
+        <node concept="3clFbF" id="4n$QnzZDmXF" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZDmXG" role="3clFbG">
+            <node concept="37vLTw" id="4n$QnzZDmXH" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZDmXI" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
+              <node concept="37vLTw" id="4n$QnzZDmXJ" role="37wK5m">
+                <ref role="3cqZAo" node="4n$QnzZDmV3" resolve="goToError" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n$QnzZH8B6" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZHeaz" role="3clFbG">
+            <node concept="37vLTw" id="4n$QnzZH8B4" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZHlu3" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
+              <node concept="2OqwBi" id="4n$QnzZHnWj" role="37wK5m">
+                <node concept="2YIFZM" id="4n$QnzZHnQY" role="2Oq$k0">
+                  <ref role="37wK5l" to="ddhc:~CommonActionsManager.getInstance():com.intellij.ide.CommonActionsManager" resolve="getInstance" />
+                  <ref role="1Pybhc" to="ddhc:~CommonActionsManager" resolve="CommonActionsManager" />
+                </node>
+                <node concept="liA8E" id="4n$QnzZHo5a" role="2OqNvi">
+                  <ref role="37wK5l" to="ddhc:~CommonActionsManager.createExpandAllAction(com.intellij.ide.TreeExpander,javax.swing.JComponent):com.intellij.openapi.actionSystem.AnAction" resolve="createExpandAllAction" />
+                  <node concept="2ShNRf" id="4n$QnzZHpSr" role="37wK5m">
+                    <node concept="1pGfFk" id="4n$QnzZN3hE" role="2ShVmc">
+                      <ref role="37wK5l" node="4n$QnzZKysM" resolve="TreeTableExpander" />
+                      <node concept="37vLTw" id="4n$QnzZOis$" role="37wK5m">
+                        <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="4n$QnzZP0o2" role="37wK5m">
+                    <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n$QnzZHyq9" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZHyqa" role="3clFbG">
+            <node concept="37vLTw" id="4n$QnzZHyqb" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZHyqc" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
+              <node concept="2OqwBi" id="4n$QnzZHyqd" role="37wK5m">
+                <node concept="2YIFZM" id="4n$QnzZHyqe" role="2Oq$k0">
+                  <ref role="37wK5l" to="ddhc:~CommonActionsManager.getInstance():com.intellij.ide.CommonActionsManager" resolve="getInstance" />
+                  <ref role="1Pybhc" to="ddhc:~CommonActionsManager" resolve="CommonActionsManager" />
+                </node>
+                <node concept="liA8E" id="4n$QnzZHyqf" role="2OqNvi">
+                  <ref role="37wK5l" to="ddhc:~CommonActionsManager.createCollapseAllAction(com.intellij.ide.TreeExpander,javax.swing.JComponent):com.intellij.openapi.actionSystem.AnAction" resolve="createCollapseAllAction" />
+                  <node concept="2ShNRf" id="4n$QnzZHyqg" role="37wK5m">
+                    <node concept="1pGfFk" id="4n$QnzZKMKi" role="2ShVmc">
+                      <ref role="37wK5l" node="4n$QnzZKysM" resolve="TreeTableExpander" />
+                      <node concept="37vLTw" id="4n$QnzZOiPk" role="37wK5m">
+                        <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="4n$QnzZP0EA" role="37wK5m">
+                    <ref role="3cqZAo" node="Nob1E3$O98" resolve="activationTreeTable" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n$QnzZDmWY" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZDmWZ" role="3clFbG">
+            <node concept="37vLTw" id="4n$QnzZDmX0" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZDmX1" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
+              <node concept="2ShNRf" id="4n$QnzZDmX2" role="37wK5m">
+                <node concept="1pGfFk" id="4n$QnzZDmX3" role="2ShVmc">
+                  <ref role="37wK5l" to="71xd:~CloseAction.&lt;init&gt;(jetbrains.mps.ide.tools.BaseTool)" resolve="CloseAction" />
+                  <node concept="37vLTw" id="4n$QnzZDmX4" role="37wK5m">
+                    <ref role="3cqZAo" node="4n$QnzZDmTO" resolve="tool" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n$QnzZDmXu" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZDmXv" role="3clFbG">
+            <node concept="37vLTw" id="4n$QnzZDmXw" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZDmXx" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~DefaultActionGroup.addSeparator():void" resolve="addSeparator" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4n$QnzZDmXK" role="3cqZAp" />
+        <node concept="3cpWs6" id="4n$QnzZDmXL" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZDmXM" role="3cqZAk">
+            <node concept="2YIFZM" id="4n$QnzZDmXN" role="2Oq$k0">
+              <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZDmXO" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolve="createActionToolbar" />
+              <node concept="10M0yZ" id="4n$QnzZDmXP" role="37wK5m">
+                <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+                <ref role="3cqZAo" to="qkt:~ActionPlaces.UNKNOWN" resolve="UNKNOWN" />
+              </node>
+              <node concept="37vLTw" id="4n$QnzZDmXQ" role="37wK5m">
+                <ref role="3cqZAo" node="4n$QnzZDmWU" resolve="group" />
+              </node>
+              <node concept="3clFbT" id="4n$QnzZDmXR" role="37wK5m">
                 <property role="3clFbU" value="false" />
               </node>
             </node>
@@ -33495,6 +33671,238 @@
       <node concept="3Tm6S6" id="4peSo3D0HuO" role="1B3o_S" />
       <node concept="3uibUv" id="4peSo3D17Iw" role="1tU5fm">
         <ref role="3uigEE" node="3gJBs5s$bxr" resolve="NodePrinter.DefaultVariableSymbol" />
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="4n$QnzZKysF">
+    <property role="TrG5h" value="TreeTableExpander" />
+    <property role="2bfB8j" value="true" />
+    <property role="1sVAO0" value="false" />
+    <property role="1EXbeo" value="false" />
+    <property role="3GE5qa" value="trace" />
+    <node concept="3Tm1VV" id="4n$QnzZKysG" role="1B3o_S" />
+    <node concept="3uibUv" id="4n$QnzZKysH" role="EKbjA">
+      <ref role="3uigEE" to="ddhc:~TreeExpander" resolve="TreeExpander" />
+    </node>
+    <node concept="2tJIrI" id="4n$QnzZKC13" role="jymVt" />
+    <node concept="3clFbW" id="4n$QnzZKysM" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3cqZAl" id="4n$QnzZKysN" role="3clF45" />
+      <node concept="37vLTG" id="4n$QnzZKysO" role="3clF46">
+        <property role="TrG5h" value="treeTable" />
+        <property role="3TUv4t" value="true" />
+        <node concept="2AHcQZ" id="4n$QnzZKysP" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+        <node concept="3uibUv" id="4n$QnzZNMy1" role="1tU5fm">
+          <ref role="3uigEE" to="u30n:~TreeTable" resolve="TreeTable" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4n$QnzZKysR" role="3clF47">
+        <node concept="3clFbF" id="4n$QnzZKysS" role="3cqZAp">
+          <node concept="37vLTI" id="4n$QnzZKysT" role="3clFbG">
+            <node concept="37vLTw" id="4n$QnzZKysU" role="37vLTJ">
+              <ref role="3cqZAo" node="4n$QnzZKysI" resolve="myTreeTable" />
+            </node>
+            <node concept="37vLTw" id="4n$QnzZKysV" role="37vLTx">
+              <ref role="3cqZAo" node="4n$QnzZKysO" resolve="treeTable" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4n$QnzZKysW" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4n$QnzZKD0z" role="jymVt" />
+    <node concept="3clFb_" id="4n$QnzZKysX" role="jymVt">
+      <property role="TrG5h" value="expandAll" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4n$QnzZKysY" role="3clF47">
+        <node concept="3clFbF" id="4n$QnzZKysZ" role="3cqZAp">
+          <node concept="2YIFZM" id="4n$QnzZKytT" role="3clFbG">
+            <ref role="1Pybhc" to="e2ly:~TreeUtil" resolve="TreeUtil" />
+            <ref role="37wK5l" to="e2ly:~TreeUtil.expandAll(javax.swing.JTree):void" resolve="expandAll" />
+            <node concept="2OqwBi" id="4n$QnzZNR6I" role="37wK5m">
+              <node concept="37vLTw" id="4n$QnzZK_ww" role="2Oq$k0">
+                <ref role="3cqZAo" node="4n$QnzZKysI" resolve="myTreeTable" />
+              </node>
+              <node concept="liA8E" id="4n$QnzZNUQK" role="2OqNvi">
+                <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n$QnzZKyt2" role="3cqZAp">
+          <node concept="1rXfSq" id="4n$QnzZKyt3" role="3clFbG">
+            <ref role="37wK5l" node="4n$QnzZKytm" resolve="showSelectionCentered" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4n$QnzZKyt4" role="1B3o_S" />
+      <node concept="3cqZAl" id="4n$QnzZKyt5" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="4n$QnzZKDiU" role="jymVt" />
+    <node concept="3clFb_" id="4n$QnzZKyt6" role="jymVt">
+      <property role="TrG5h" value="canExpand" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4n$QnzZKyt7" role="3clF47">
+        <node concept="3cpWs6" id="4n$QnzZKyt8" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZKytX" role="3cqZAk">
+            <node concept="37vLTw" id="4n$QnzZK_QA" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZKysI" resolve="myTreeTable" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZKytY" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Component.isShowing():boolean" resolve="isShowing" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4n$QnzZKyta" role="1B3o_S" />
+      <node concept="10P_77" id="4n$QnzZKytb" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="4n$QnzZKD_i" role="jymVt" />
+    <node concept="3clFb_" id="4n$QnzZKytc" role="jymVt">
+      <property role="TrG5h" value="collapseAll" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4n$QnzZKytd" role="3clF47">
+        <node concept="3clFbF" id="4n$QnzZKyte" role="3cqZAp">
+          <node concept="2YIFZM" id="4n$QnzZKyu1" role="3clFbG">
+            <ref role="1Pybhc" to="e2ly:~TreeUtil" resolve="TreeUtil" />
+            <ref role="37wK5l" to="e2ly:~TreeUtil.collapseAll(javax.swing.JTree,int):void" resolve="collapseAll" />
+            <node concept="2OqwBi" id="4n$QnzZNXth" role="37wK5m">
+              <node concept="37vLTw" id="4n$QnzZKAmM" role="2Oq$k0">
+                <ref role="3cqZAo" node="4n$QnzZKysI" resolve="myTreeTable" />
+              </node>
+              <node concept="liA8E" id="4n$QnzZO1dp" role="2OqNvi">
+                <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="4n$QnzZKyth" role="37wK5m">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4n$QnzZKyti" role="3cqZAp">
+          <node concept="1rXfSq" id="4n$QnzZKytj" role="3clFbG">
+            <ref role="37wK5l" node="4n$QnzZKytm" resolve="showSelectionCentered" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4n$QnzZKytk" role="1B3o_S" />
+      <node concept="3cqZAl" id="4n$QnzZKytl" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="4n$QnzZKDRF" role="jymVt" />
+    <node concept="3clFb_" id="4n$QnzZKytm" role="jymVt">
+      <property role="TrG5h" value="showSelectionCentered" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4n$QnzZKytn" role="3clF47">
+        <node concept="3cpWs8" id="4n$QnzZKytp" role="3cqZAp">
+          <node concept="3cpWsn" id="4n$QnzZKyto" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="rowz" />
+            <node concept="10Q1$e" id="4n$QnzZKytr" role="1tU5fm">
+              <node concept="10Oyi0" id="4n$QnzZKytq" role="10Q1$1" />
+            </node>
+            <node concept="2OqwBi" id="4n$QnzZKyu5" role="33vP2m">
+              <node concept="2OqwBi" id="4n$QnzZO39u" role="2Oq$k0">
+                <node concept="37vLTw" id="4n$QnzZKAFB" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4n$QnzZKysI" resolve="myTreeTable" />
+                </node>
+                <node concept="liA8E" id="4n$QnzZO76Y" role="2OqNvi">
+                  <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4n$QnzZKyu6" role="2OqNvi">
+                <ref role="37wK5l" to="dxuu:~JTree.getSelectionRows():int[]" resolve="getSelectionRows" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4n$QnzZKytt" role="3cqZAp">
+          <node concept="1Wc70l" id="4n$QnzZKytu" role="3clFbw">
+            <node concept="3y3z36" id="4n$QnzZKytv" role="3uHU7B">
+              <node concept="37vLTw" id="4n$QnzZKytw" role="3uHU7B">
+                <ref role="3cqZAo" node="4n$QnzZKyto" resolve="rowz" />
+              </node>
+              <node concept="10Nm6u" id="4n$QnzZKytx" role="3uHU7w" />
+            </node>
+            <node concept="3eOSWO" id="4n$QnzZKyty" role="3uHU7w">
+              <node concept="2OqwBi" id="4n$QnzZKyua" role="3uHU7B">
+                <node concept="37vLTw" id="4n$QnzZKyu9" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4n$QnzZKyto" resolve="rowz" />
+                </node>
+                <node concept="1Rwk04" id="4n$QnzZKz4X" role="2OqNvi" />
+              </node>
+              <node concept="3cmrfG" id="4n$QnzZKyt$" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="4n$QnzZKytA" role="3clFbx">
+            <node concept="3clFbF" id="4n$QnzZKytB" role="3cqZAp">
+              <node concept="2YIFZM" id="4n$QnzZKyue" role="3clFbG">
+                <ref role="1Pybhc" to="e2ly:~TreeUtil" resolve="TreeUtil" />
+                <ref role="37wK5l" to="e2ly:~TreeUtil.showRowCentered(javax.swing.JTree,int,boolean):com.intellij.openapi.util.ActionCallback" resolve="showRowCentered" />
+                <node concept="2OqwBi" id="4n$QnzZO90g" role="37wK5m">
+                  <node concept="37vLTw" id="4n$QnzZKB8e" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4n$QnzZKysI" resolve="myTreeTable" />
+                  </node>
+                  <node concept="liA8E" id="4n$QnzZOcLu" role="2OqNvi">
+                    <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
+                  </node>
+                </node>
+                <node concept="AH0OO" id="4n$QnzZKytE" role="37wK5m">
+                  <node concept="37vLTw" id="4n$QnzZKytF" role="AHHXb">
+                    <ref role="3cqZAo" node="4n$QnzZKyto" resolve="rowz" />
+                  </node>
+                  <node concept="3cmrfG" id="4n$QnzZKytG" role="AHEQo">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                </node>
+                <node concept="3clFbT" id="4n$QnzZKytH" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="4n$QnzZKytI" role="1B3o_S" />
+      <node concept="3cqZAl" id="4n$QnzZKytJ" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="4n$QnzZKEa5" role="jymVt" />
+    <node concept="3clFb_" id="4n$QnzZKytK" role="jymVt">
+      <property role="TrG5h" value="canCollapse" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4n$QnzZKytL" role="3clF47">
+        <node concept="3cpWs6" id="4n$QnzZKytM" role="3cqZAp">
+          <node concept="2OqwBi" id="4n$QnzZKyui" role="3cqZAk">
+            <node concept="37vLTw" id="4n$QnzZKBt_" role="2Oq$k0">
+              <ref role="3cqZAo" node="4n$QnzZKysI" resolve="myTreeTable" />
+            </node>
+            <node concept="liA8E" id="4n$QnzZKyuj" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~Component.isShowing():boolean" resolve="isShowing" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4n$QnzZKytO" role="1B3o_S" />
+      <node concept="10P_77" id="4n$QnzZKytP" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="4n$QnzZKEsw" role="jymVt" />
+    <node concept="312cEg" id="4n$QnzZKysI" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myTreeTable" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="4n$QnzZKysL" role="1B3o_S" />
+      <node concept="3uibUv" id="4n$QnzZNNB3" role="1tU5fm">
+        <ref role="3uigEE" to="u30n:~TreeTable" resolve="TreeTable" />
       </node>
     </node>
   </node>
