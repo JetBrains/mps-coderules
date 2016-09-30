@@ -664,6 +664,7 @@
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <library file="${artifacts.mps}/lib/mps-workbench.jar" />
       <library file="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
+      <library file="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
@@ -1422,6 +1423,7 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar" />
       </classpath>
     </javac>
   </target>
@@ -1725,6 +1727,8 @@
       <pathelement location="${artifacts.mps}/lib/mps-test.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-tool.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-tuples.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-workbench.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />

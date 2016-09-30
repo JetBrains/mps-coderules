@@ -1013,6 +1013,18 @@
             <ref role="3bR37D" node="7Ant4Wk$48A" resolve="jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
           </node>
         </node>
+        <node concept="1SiIV0" id="6i42QSs2bfI" role="3bR37C">
+          <node concept="3bR9La" id="6i42QSs2bfJ" role="1SiIV1">
+            <property role="3bR36h" value="true" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6i42QSs2bfK" role="3bR37C">
+          <node concept="3bR9La" id="6i42QSs2bfL" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:4vCqlNf_1Yi" resolve="jetbrains.mps.lang.typesystem.devkit.pluginSolution" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7Ant4Wk$48A" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -2086,6 +2098,18 @@
           <node concept="3bR9La" id="7Ant4WkHLsl" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Ant4WkHLsm" resolve="jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6i42QSs2blM" role="3bR37C">
+          <node concept="3bR9La" id="6i42QSs2blN" role="1SiIV1">
+            <property role="3bR36h" value="true" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6i42QSs2blO" role="3bR37C">
+          <node concept="3bR9La" id="6i42QSs2blP" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:4vCqlNf_1Yi" resolve="jetbrains.mps.lang.typesystem.devkit.pluginSolution" />
           </node>
         </node>
       </node>

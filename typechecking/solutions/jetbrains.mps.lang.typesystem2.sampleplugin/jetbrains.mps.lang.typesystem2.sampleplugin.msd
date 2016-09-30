@@ -23,6 +23,8 @@
     <dependency reexport="false">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
     <dependency reexport="false">35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)</dependency>
     <dependency reexport="false">9c4ae21e-62e0-4110-95b7-191b357a42d2(jetbrains.mps.lang.typesystem2.samplechecker.handler.util)</dependency>
+    <dependency reexport="true">bfbdd672-7ff5-403f-af4f-16da5226f34c(jetbrains.mps.findUsages.runtime)</dependency>
+    <dependency reexport="false">64bcb807-f98e-4fa4-b07d-2b9f9d2f2ad3(jetbrains.mps.lang.typesystem.devkit.pluginSolution)</dependency>
   </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
@@ -57,11 +59,13 @@
     <module reference="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" version="0" />
     <module reference="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
+    <module reference="bfbdd672-7ff5-403f-af4f-16da5226f34c(jetbrains.mps.findUsages.runtime)" version="0" />
     <module reference="5b1f863d-65a0-41a6-a801-33896be24202(jetbrains.mps.ide.editor)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
     <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
+    <module reference="64bcb807-f98e-4fa4-b07d-2b9f9d2f2ad3(jetbrains.mps.lang.typesystem.devkit.pluginSolution)" version="0" />
     <module reference="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.typesystem2.runtime)" version="0" />
     <module reference="9c4ae21e-62e0-4110-95b7-191b357a42d2(jetbrains.mps.lang.typesystem2.samplechecker.handler.util)" version="0" />
     <module reference="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae(jetbrains.mps.lang.typesystem2.sampleplugin)" version="0" />

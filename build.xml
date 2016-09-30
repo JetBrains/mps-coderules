@@ -500,6 +500,7 @@
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <library file="${artifacts.mps}/lib/mps-workbench.jar" />
       <library file="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
+      <library file="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar" />
       <chunk>
         <module file="${basedir}/logic/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" />
         <module file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" />
@@ -1054,6 +1055,7 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar" />
       </classpath>
     </javac>
   </target>
