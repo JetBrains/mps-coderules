@@ -8,8 +8,6 @@
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="f6t6" ref="r:9993217f-5bfa-4281-bc47-527677747cb2(jetbrains.mps.lang.typesystem2.sample.bounds)" />
-    <import index="84wp" ref="r:dfdbef38-4e11-48e8-9622-22e284fc6feb(jetbrains.mps.lang.typesystem2.sample@tests)" />
     <import index="waaz" ref="r:5669dd77-177e-474f-8fb2-c015a8eb4306(jetbrains.mps.lang.typesystem2.sample.simpleGenerics)" />
     <import index="t5kh" ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.lang.typesystem2.sampleplugin.plugin)" />
   </imports>
@@ -85,7 +83,7 @@
     </language>
   </registry>
   <node concept="2XOHcx" id="1N_0WA5DT60">
-    <property role="2XOHcw" value="${mps_home}" />
+    <property role="2XOHcw" value="${logic_home}" />
   </node>
   <node concept="1lH9Xt" id="1N_0WA5DT3k">
     <property role="TrG5h" value="Typechecking" />

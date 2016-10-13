@@ -10,8 +10,6 @@
   <imports>
     <import index="7rut" ref="r:b1bec7fa-733c-4182-bbd4-b266e3d7e6db(jetbrains.mps.lang.typesystem2.sample.bounds.bad)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="f6t6" ref="r:9993217f-5bfa-4281-bc47-527677747cb2(jetbrains.mps.lang.typesystem2.sample.bounds)" />
-    <import index="84wp" ref="r:dfdbef38-4e11-48e8-9622-22e284fc6feb(jetbrains.mps.lang.typesystem2.sample@tests)" />
     <import index="t5kh" ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.lang.typesystem2.sampleplugin.plugin)" />
   </imports>
   <registry>
@@ -157,7 +155,7 @@
     </node>
   </node>
   <node concept="2XOHcx" id="1N_0WA5DT60">
-    <property role="2XOHcw" value="${mps_home}" />
+    <property role="2XOHcw" value="${logic_home}" />
   </node>
 </model>
 
