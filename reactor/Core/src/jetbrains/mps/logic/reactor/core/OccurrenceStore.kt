@@ -134,19 +134,21 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
             symbol2occurrences[symbol]?.add(occ) ?: singletonSet(occ))
 
         for (arg in occ.arguments()) {
-            when (arg) {
+            val value = if (arg is Logical<*> && arg.isBound) arg.findRoot().value() else arg
+            when (value) {
                 is Logical<*>   -> {
-                    val argId = IdWrapper(arg.findRoot())
+                    // free logical
+                    val argId = IdWrapper(value.findRoot())
                     this.logical2occurrences = logical2occurrences.put(argId,
                         logical2occurrences[argId]?.add(occ) ?: singletonSet(occ))
-                    currentFrame().addObserver(arg) { frame -> frame.store() }
+                    currentFrame().addObserver(value) { frame -> frame.store() }
                 }
                 is Term         -> {
-                    this.term2occurrences = term2occurrences.put(arg, occ)
+                    this.term2occurrences = term2occurrences.put(value, occ)
                 }
                 is Any          -> {
-                    this.value2occurrences = value2occurrences.put(arg,
-                        value2occurrences[arg]?.add(occ) ?: singletonSet(occ))
+                    this.value2occurrences = value2occurrences.put(value,
+                        value2occurrences[value]?.add(occ) ?: singletonSet(occ))
                 }
                 else            -> {
                     // never happens
@@ -206,7 +208,17 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
     }
 
     override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> {
-        return (logical2occurrences[IdWrapper(logical.findRoot())] ?: emptySet()).filter { co -> co.isStored() }
+        return if (logical.isBound) {
+            val value = logical.findRoot().value()
+            when (value) {
+                is Term     -> forTerm(value)
+                is Any      -> forValue(value)
+                else        -> throw NullPointerException()
+            }
+
+        } else {
+            (logical2occurrences[IdWrapper(logical.findRoot())] ?: emptySet()).filter { co -> co.isStored() }
+        }
     }
 
     override fun forTerm(term: Term): Iterable<ConstraintOccurrence> {
