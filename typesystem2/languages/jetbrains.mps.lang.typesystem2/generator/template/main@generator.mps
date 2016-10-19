@@ -53,6 +53,7 @@
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
   </imports>
   <registry>
@@ -10263,6 +10264,23 @@
       </node>
       <node concept="3Tm1VV" id="4KRwoelAz6d" role="1B3o_S" />
       <node concept="3clFbS" id="1GNw78$a435" role="3clF47">
+        <node concept="3clFbJ" id="3OHEjDeJDLQ" role="3cqZAp">
+          <node concept="3clFbS" id="3OHEjDeJDLS" role="3clFbx">
+            <node concept="YS8fn" id="3OHEjDeJFga" role="3cqZAp">
+              <node concept="2ShNRf" id="3OHEjDeJFkh" role="YScLw">
+                <node concept="1pGfFk" id="3OHEjDeJLa_" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~NullPointerException.&lt;init&gt;()" resolve="NullPointerException" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="3OHEjDeJF0e" role="3clFbw">
+            <node concept="10Nm6u" id="3OHEjDeJF12" role="3uHU7w" />
+            <node concept="37vLTw" id="3OHEjDeJEBr" role="3uHU7B">
+              <ref role="3cqZAo" node="1GNw78$a431" resolve="typeConcept" />
+            </node>
+          </node>
+        </node>
         <node concept="1_3QMa" id="1GNw78$a436" role="3cqZAp">
           <node concept="1pnPoh" id="1GNw78$a437" role="1_3QMm">
             <node concept="3gn64h" id="1GNw78$a438" role="1pnPq6">
@@ -10345,8 +10363,18 @@
           <node concept="2ShNRf" id="1GNw78$a43B" role="YScLw">
             <node concept="1pGfFk" id="1GNw78$a43C" role="2ShVmc">
               <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-              <node concept="Xl_RD" id="1GNw78$a43D" role="37wK5m">
-                <property role="Xl_RC" value="invalid type concept" />
+              <node concept="3cpWs3" id="3OHEjDeH5tr" role="37wK5m">
+                <node concept="2OqwBi" id="3OHEjDeH6F7" role="3uHU7w">
+                  <node concept="37vLTw" id="3OHEjDeH6jP" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1GNw78$a431" resolve="typeConcept" />
+                  </node>
+                  <node concept="liA8E" id="3OHEjDeH6WA" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="1GNw78$a43D" role="3uHU7B">
+                  <property role="Xl_RC" value="invalid type concept: " />
+                </node>
               </node>
             </node>
           </node>
