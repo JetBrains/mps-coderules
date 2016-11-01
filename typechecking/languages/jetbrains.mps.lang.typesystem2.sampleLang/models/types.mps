@@ -22,11 +22,10 @@
     <import index="4r4j" ref="r:94702bd0-f623-44e8-af0a-f2730f7d2518(jetbrains.mps.lang.typesystem2.samplechecker.handle.util)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
-    <import index="7ub6" ref="r:b533b427-da69-49d8-9c93-4ea32433b66e(jetbrains.mps.lang.typesystem2.generation)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.typechecking)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -2094,9 +2093,9 @@
         </node>
         <node concept="3clFbS" id="2q0gzCFIXgT" role="16YjZG">
           <node concept="3clFbF" id="2tjs8VC3ft$" role="3cqZAp">
-            <node concept="2YIFZM" id="2tjs8VC3ft_" role="3clFbG">
-              <ref role="37wK5l" to="7ub6:2tjs8VC2Blb" resolve="getOrPut" />
-              <ref role="1Pybhc" to="7ub6:2tjs8VC0K0m" resolve="Memoizer" />
+            <node concept="2YIFZM" id="2FXL1yZvCpQ" role="3clFbG">
+              <ref role="37wK5l" to="hano:2tjs8VC2Blb" resolve="getOrPut" />
+              <ref role="1Pybhc" to="hano:2tjs8VC0K0m" resolve="Memoizer" />
               <node concept="3A2sRY" id="2tjs8VC3ftA" role="37wK5m">
                 <ref role="3A2yKK" node="2q0gzCFIV7W" resolve="cls" />
               </node>
@@ -2407,9 +2406,9 @@
         </node>
         <node concept="3clFbS" id="2jjvHNv9zRJ" role="16YjZG">
           <node concept="3clFbF" id="2tjs8VC2uel" role="3cqZAp">
-            <node concept="2YIFZM" id="2tjs8VC2XGZ" role="3clFbG">
-              <ref role="37wK5l" to="7ub6:2tjs8VC2Blb" resolve="getOrPut" />
-              <ref role="1Pybhc" to="7ub6:2tjs8VC0K0m" resolve="Memoizer" />
+            <node concept="2YIFZM" id="2FXL1yZvCpR" role="3clFbG">
+              <ref role="37wK5l" to="hano:2tjs8VC2Blb" resolve="getOrPut" />
+              <ref role="1Pybhc" to="hano:2tjs8VC0K0m" resolve="Memoizer" />
               <node concept="3A2sRY" id="2tjs8VC2Zq6" role="37wK5m">
                 <ref role="3A2yKK" node="2jjvHNv9zxF" resolve="cls" />
               </node>
