@@ -11,13 +11,13 @@
   <imports>
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.typesystem2.type)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -297,9 +297,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="2hteS6Cndm9" role="3clF46">
-        <property role="TrG5h" value="mpsproject" />
-        <node concept="3uibUv" id="2hteS6Cndma" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="3GlpCDS_m$F" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
       <node concept="3uibUv" id="2hteS6Cndt5" role="3clF45">
@@ -317,13 +317,8 @@
               <node concept="2YIFZM" id="2hteS6Cndmi" role="2Oq$k0">
                 <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
                 <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                <node concept="2OqwBi" id="2hteS6Cndmj" role="37wK5m">
-                  <node concept="37vLTw" id="2hteS6Cndmk" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2hteS6Cndm9" resolve="mpsproject" />
-                  </node>
-                  <node concept="liA8E" id="2hteS6Cndml" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                  </node>
+                <node concept="37vLTw" id="2hteS6Cndmk" role="37wK5m">
+                  <ref role="3cqZAo" node="2hteS6Cndm9" resolve="repository" />
                 </node>
               </node>
               <node concept="liA8E" id="2hteS6Cndmm" role="2OqNvi">
