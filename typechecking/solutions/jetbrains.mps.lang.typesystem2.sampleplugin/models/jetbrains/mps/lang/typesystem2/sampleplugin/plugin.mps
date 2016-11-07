@@ -4822,12 +4822,17 @@
                         <node concept="2ShNRf" id="3GlpCDSzA$U" role="37vLTx">
                           <node concept="1pGfFk" id="3GlpCDSzA$V" role="2ShVmc">
                             <ref role="37wK5l" to="hano:3GlpCDSychS" resolve="TemplatesApplication" />
-                            <node concept="2OqwBi" id="3GlpCDSzA$W" role="37wK5m">
-                              <node concept="Xjq3P" id="3GlpCDSzA$X" role="2Oq$k0">
-                                <ref role="1HBi2w" node="1pPth$l_TFV" resolve="TypecheckingHelper" />
+                            <node concept="2OqwBi" id="6QH_LDt8BRg" role="37wK5m">
+                              <node concept="2OqwBi" id="3GlpCDSzA$W" role="2Oq$k0">
+                                <node concept="Xjq3P" id="3GlpCDSzA$X" role="2Oq$k0">
+                                  <ref role="1HBi2w" node="1pPth$l_TFV" resolve="TypecheckingHelper" />
+                                </node>
+                                <node concept="2OwXpG" id="3GlpCDSzA$Y" role="2OqNvi">
+                                  <ref role="2Oxat5" node="1pPth$lA2Na" resolve="mpsProject" />
+                                </node>
                               </node>
-                              <node concept="2OwXpG" id="3GlpCDSzA$Y" role="2OqNvi">
-                                <ref role="2Oxat5" node="1pPth$lA2Na" resolve="mpsProject" />
+                              <node concept="liA8E" id="6QH_LDt8DvY" role="2OqNvi">
+                                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                               </node>
                             </node>
                           </node>

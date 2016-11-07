@@ -165,7 +165,6 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
-      <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -341,7 +340,7 @@
         </node>
       </node>
       <node concept="3cqZAl" id="2zU3cYqyg0Y" role="3clF45" />
-      <node concept="3Tmbuc" id="2zU3cYqyvgN" role="1B3o_S" />
+      <node concept="3Tm1VV" id="6$7vuu2xw$0" role="1B3o_S" />
       <node concept="3clFbS" id="2zU3cYqyaCd" role="3clF47">
         <node concept="3clFbF" id="2zU3cYqyaX5" role="3cqZAp">
           <node concept="2OqwBi" id="2zU3cYqycW6" role="3clFbG">
@@ -361,6 +360,13 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="6$7vuu2xyFT" role="lGtFl">
+        <node concept="TZ5HA" id="6$7vuu2xyFU" role="TZ5H$">
+          <node concept="1dT_AC" id="6$7vuu2xyFV" role="1dT_Ay">
+            <property role="1dT_AB" value="Made public only for tests." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="2zU3cYqyg8C" role="jymVt" />
     <node concept="2YIFZL" id="2zU3cYqyg2V" role="jymVt">
@@ -372,7 +378,7 @@
         </node>
       </node>
       <node concept="3cqZAl" id="2zU3cYqyg2Y" role="3clF45" />
-      <node concept="3Tmbuc" id="2zU3cYqyvio" role="1B3o_S" />
+      <node concept="3Tm1VV" id="6$7vuu2xw$l" role="1B3o_S" />
       <node concept="3clFbS" id="2zU3cYqyg30" role="3clF47">
         <node concept="3cpWs8" id="2zU3cYqykZ4" role="3cqZAp">
           <node concept="3cpWsn" id="2zU3cYqykZ5" role="3cpWs9">
@@ -421,11 +427,18 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="6$7vuu2x$ze" role="lGtFl">
+        <node concept="TZ5HA" id="6$7vuu2x$zf" role="TZ5H$">
+          <node concept="1dT_AC" id="6$7vuu2x$zg" role="1dT_Ay">
+            <property role="1dT_AB" value="Made public only for tests." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="2zU3cYqyfSs" role="jymVt" />
     <node concept="3clFbW" id="2zU3cYqyeVe" role="jymVt">
       <node concept="3cqZAl" id="2zU3cYqyeVg" role="3clF45" />
-      <node concept="3Tm1VV" id="2zU3cYqyeVh" role="1B3o_S" />
+      <node concept="3Tm6S6" id="6$7vuu2vnJv" role="1B3o_S" />
       <node concept="3clFbS" id="2zU3cYqyeVi" role="3clF47">
         <node concept="3clFbF" id="2zU3cYqyfkU" role="3cqZAp">
           <node concept="37vLTI" id="2zU3cYqyfkW" role="3clFbG">
