@@ -20,6 +20,7 @@
     <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
+    <import index="wr1s" ref="r:0f9ddbb6-f761-4bd7-8dde-1e5300bd28c2(jetbrains.mps.lang.project.editor)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -3064,9 +3065,15 @@
       <node concept="3F0ifn" id="2N2MQGCLx6$" role="3EZMnx">
         <property role="3F0ifm" value=":" />
       </node>
-      <node concept="PMmxH" id="2N2MQGCLx6_" role="3EZMnx">
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      <node concept="PMmxH" id="2L20jGt8dZ2" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+      </node>
+      <node concept="3F0ifn" id="2L20jGt8dZ3" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+      </node>
+      <node concept="3F1sOY" id="2L20jGt8dZ4" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:2L20jGt8dYg" resolve="getter" />
       </node>
       <node concept="l2Vlx" id="2N2MQGCLx6A" role="2iSdaV" />
     </node>

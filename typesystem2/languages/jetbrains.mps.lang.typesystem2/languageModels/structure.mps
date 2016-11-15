@@ -771,6 +771,13 @@
     <property role="34LRSv" value="child" />
     <property role="EcuMT" value="1618328391714702001" />
     <ref role="1TJDcQ" node="1pPth$m5oa5" resolve="TypeFeature" />
+    <node concept="1TJgyj" id="2L20jGt8dYg" role="1TKVEi">
+      <property role="IQ2ns" value="3189112839535124368" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="getter" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="1hX44vMEjQg" resolve="GetterBlock" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5B4X">
     <property role="3GE5qa" value="type" />
