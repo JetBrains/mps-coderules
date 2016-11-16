@@ -3746,6 +3746,20 @@
       <node concept="3Tqbb2" id="Ya9Z$kRbop" role="3clF45" />
       <node concept="3Tm1VV" id="Ya9Z$kRb7r" role="1B3o_S" />
       <node concept="3clFbS" id="Ya9Z$kRb7s" role="3clF47">
+        <node concept="3clFbJ" id="5YVpdhetVW9" role="3cqZAp">
+          <node concept="3clFbS" id="5YVpdhetVWb" role="3clFbx">
+            <node concept="3cpWs6" id="5YVpdhetWjv" role="3cqZAp">
+              <node concept="10Nm6u" id="5YVpdhetWkj" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="5YVpdhetWhk" role="3clFbw">
+            <node concept="10Nm6u" id="5YVpdhetWi7" role="3uHU7w" />
+            <node concept="37vLTw" id="5YVpdhetW2p" role="3uHU7B">
+              <ref role="3cqZAo" node="Ya9Z$kRbee" resolve="typeTerm" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5YVpdhetWkD" role="3cqZAp" />
         <node concept="3cpWs8" id="Ya9Z$kTxJw" role="3cqZAp">
           <node concept="3cpWsn" id="Ya9Z$kTxJx" role="3cpWs9">
             <property role="TrG5h" value="typeTemplate" />
@@ -4150,9 +4164,7 @@
                             </node>
                             <node concept="3clFbS" id="2V8TwD0TN_v" role="3eOfB_">
                               <node concept="3cpWs6" id="2V8TwD0TN_w" role="3cqZAp">
-                                <node concept="37vLTw" id="2V8TwD0TN_x" role="3cqZAk">
-                                  <ref role="3cqZAo" node="2V8TwD0TN_7" resolve="wrapped" />
-                                </node>
+                                <node concept="10Nm6u" id="5YVpdheCu_V" role="3cqZAk" />
                               </node>
                               <node concept="3clFbH" id="2V8TwD0TN_y" role="3cqZAp" />
                             </node>
@@ -4296,28 +4308,38 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="2V8TwD0MBKl" role="3cqZAp">
-              <node concept="2OqwBi" id="2V8TwD0MCyV" role="3clFbG">
-                <node concept="1eOMI4" id="2V8TwD0MCpU" role="2Oq$k0">
-                  <node concept="10QFUN" id="2V8TwD0MCpR" role="1eOMHV">
-                    <node concept="3uibUv" id="2V8TwD0MCOR" role="10QFUM">
-                      <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+            <node concept="3clFbJ" id="5YVpdheCCi9" role="3cqZAp">
+              <node concept="3clFbS" id="5YVpdheCCib" role="3clFbx">
+                <node concept="3clFbF" id="2V8TwD0MBKl" role="3cqZAp">
+                  <node concept="2OqwBi" id="2V8TwD0MCyV" role="3clFbG">
+                    <node concept="1eOMI4" id="2V8TwD0MCpU" role="2Oq$k0">
+                      <node concept="10QFUN" id="2V8TwD0MCpR" role="1eOMHV">
+                        <node concept="3uibUv" id="2V8TwD0MCOR" role="10QFUM">
+                          <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                        </node>
+                        <node concept="37vLTw" id="2V8TwD0P8k3" role="10QFUP">
+                          <ref role="3cqZAo" node="2V8TwD0P8jU" resolve="logical" />
+                        </node>
+                      </node>
                     </node>
-                    <node concept="37vLTw" id="2V8TwD0P8k3" role="10QFUP">
-                      <ref role="3cqZAo" node="2V8TwD0P8jU" resolve="logical" />
+                    <node concept="liA8E" id="2V8TwD0MDdI" role="2OqNvi">
+                      <ref role="37wK5l" to="zx3l:~MemLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                      <node concept="2OqwBi" id="2V8TwD0TWSC" role="37wK5m">
+                        <node concept="37vLTw" id="2V8TwD0TWGz" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2V8TwD0TUrT" resolve="valueTerm" />
+                        </node>
+                        <node concept="liA8E" id="2V8TwD0TXas" role="2OqNvi">
+                          <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="2V8TwD0MDdI" role="2OqNvi">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.setValue(java.lang.Object):void" resolve="setValue" />
-                  <node concept="2OqwBi" id="2V8TwD0TWSC" role="37wK5m">
-                    <node concept="37vLTw" id="2V8TwD0TWGz" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2V8TwD0TUrT" resolve="valueTerm" />
-                    </node>
-                    <node concept="liA8E" id="2V8TwD0TXas" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
-                    </node>
-                  </node>
+              </node>
+              <node concept="3y3z36" id="5YVpdheCC$Z" role="3clFbw">
+                <node concept="10Nm6u" id="5YVpdheCCAi" role="3uHU7w" />
+                <node concept="37vLTw" id="5YVpdheCCox" role="3uHU7B">
+                  <ref role="3cqZAo" node="2V8TwD0TUrT" resolve="valueTerm" />
                 </node>
               </node>
             </node>
