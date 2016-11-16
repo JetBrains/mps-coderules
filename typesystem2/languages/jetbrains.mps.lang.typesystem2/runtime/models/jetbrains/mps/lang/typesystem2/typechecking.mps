@@ -7945,9 +7945,6 @@
                                     <ref role="37wK5l" node="4n$Qn$018my" resolve="typeTemplates" />
                                   </node>
                                 </node>
-                                <node concept="37vLTw" id="6QH_LDtbV7a" role="37wK5m">
-                                  <ref role="3cqZAo" node="6QH_LDtbL9R" resolve="typesModel" />
-                                </node>
                               </node>
                             </node>
                           </node>
@@ -7974,7 +7971,7 @@
                                       <ref role="3cqZAo" node="6QH_LDtbV71" resolve="recoverySession" />
                                     </node>
                                     <node concept="liA8E" id="6QH_LDtdbzD" role="2OqNvi">
-                                      <ref role="37wK5l" to="nz6g:Ya9Z$kRb7o" resolve="recover" />
+                                      <ref role="37wK5l" to="nz6g:5YVpdheCZfk" resolve="recoverRoot" />
                                       <node concept="2OqwBi" id="6QH_LDtdbzE" role="37wK5m">
                                         <node concept="37vLTw" id="6QH_LDtdbzF" role="2Oq$k0">
                                           <ref role="3cqZAo" node="6QH_LDtbV7q" resolve="e" />
@@ -7982,6 +7979,9 @@
                                         <node concept="liA8E" id="6QH_LDtdbzG" role="2OqNvi">
                                           <ref role="37wK5l" to="33ny:~Map$Entry.getValue():java.lang.Object" resolve="getValue" />
                                         </node>
+                                      </node>
+                                      <node concept="37vLTw" id="5YVpdheDjc8" role="37wK5m">
+                                        <ref role="3cqZAo" node="6QH_LDtbL9R" resolve="typesModel" />
                                       </node>
                                     </node>
                                   </node>

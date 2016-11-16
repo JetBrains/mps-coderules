@@ -160,12 +160,7 @@
       </concept>
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
-      <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
-      <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
-        <reference id="1205756909548" name="member" index="2WH_rO" />
-      </concept>
       <concept id="1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" flags="ng" index="2XrIbr" />
-      <concept id="1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" flags="nn" index="2XshWL" />
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
@@ -881,12 +876,6 @@
                   </node>
                   <node concept="liA8E" id="6QH_LDtbV79" role="2OqNvi">
                     <ref role="37wK5l" to="hano:4n$Qn$018my" resolve="typeTemplates" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="6$7vuu2vwNB" role="37wK5m">
-                  <node concept="2WthIp" id="6$7vuu2vwNE" role="2Oq$k0" />
-                  <node concept="2XshWL" id="6$7vuu2vwNG" role="2OqNvi">
-                    <ref role="2WH_rO" node="6$7vuu2vnWT" resolve="sinkModel" />
                   </node>
                 </node>
               </node>
