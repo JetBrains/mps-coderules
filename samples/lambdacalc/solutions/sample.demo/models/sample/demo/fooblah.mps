@@ -20,7 +20,7 @@
       <concept id="8739282858702982568" name="sample.fooblin.structure.Doc" flags="ng" index="1DVIrt">
         <child id="8739282858702982571" name="clause" index="1DVIru" />
       </concept>
-      <concept id="8739282858702982546" name="sample.fooblin.structure.VarType" flags="ng" index="1DVIrB">
+      <concept id="8739282858702982546" name="sample.fooblin.structure.BindVar" flags="ng" index="1DVIrB">
         <child id="8739282858702982547" name="var" index="1DVIrA" />
       </concept>
       <concept id="8739282858702982543" name="sample.fooblin.structure.Abs" flags="ng" index="1DVIrU">
@@ -29,6 +29,9 @@
       </concept>
       <concept id="8739282858702985712" name="sample.fooblin.structure.NumConst" flags="ng" index="1DVJa5">
         <property id="8739282858702985713" name="value" index="1DVJa4" />
+      </concept>
+      <concept id="8739282858702985676" name="sample.fooblin.structure.StringConst" flags="ng" index="1DVJaT">
+        <property id="8739282858702985677" name="value" index="1DVJaS" />
       </concept>
       <concept id="8739282858702985614" name="sample.fooblin.structure.LetClause" flags="ng" index="1DVJbV">
         <child id="8739282858702985617" name="expr" index="1DVJb$" />
@@ -40,12 +43,54 @@
     <property role="TrG5h" value="Demo1" />
     <node concept="1DVJbV" id="7_8aRkgE06X" role="1DVIru">
       <node concept="1DVIoH" id="7_8aRkgE06Z" role="1DVJbU">
-        <property role="TrG5h" value="x" />
+        <property role="TrG5h" value="v" />
       </node>
       <node concept="1DVJa5" id="7_8aRkgE076" role="1DVJb$">
         <property role="1DVJa4" value="2" />
       </node>
     </node>
+    <node concept="1DVJbV" id="44a9n8Es6Qy" role="1DVIru">
+      <node concept="1DVIoH" id="44a9n8Es6Q$" role="1DVJbU">
+        <property role="TrG5h" value="w" />
+      </node>
+      <node concept="1DVIo5" id="4ZByBOoFgQW" role="1DVJb$">
+        <node concept="1DVIrU" id="4ZByBOoFgQ_" role="1DVIo4">
+          <node concept="1DVIrB" id="4ZByBOoFgQH" role="1DVIr_">
+            <node concept="1DVIoH" id="4ZByBOoFgQx" role="1DVIrA">
+              <property role="TrG5h" value="y" />
+            </node>
+          </node>
+          <node concept="1DVIoH" id="4rRw8_Avoyv" role="1DVIrw">
+            <property role="TrG5h" value="y" />
+          </node>
+        </node>
+        <node concept="1DVIo5" id="6siydCyjxU0" role="1DVIo8">
+          <node concept="1DVJaT" id="6siydCyjxUp" role="1DVIo8">
+            <property role="1DVJaS" value="asd" />
+          </node>
+          <node concept="1DVIrU" id="44a9n8Es6R8" role="1DVIo4">
+            <node concept="1DVIrB" id="44a9n8Es6Rg" role="1DVIr_">
+              <node concept="1DVIoH" id="44a9n8Es6R4" role="1DVIrA">
+                <property role="TrG5h" value="x" />
+              </node>
+            </node>
+            <node concept="1DVIrU" id="4rRw8_Avoz9" role="1DVIrw">
+              <node concept="1DVIoH" id="4rRw8_Avozu" role="1DVIrw">
+                <property role="TrG5h" value="x" />
+              </node>
+              <node concept="1DVIrB" id="4rRw8_Avozh" role="1DVIr_">
+                <node concept="1DVIoH" id="4rRw8_Avoz5" role="1DVIrA">
+                  <property role="TrG5h" value="z" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1DVIrt" id="1PL$JmLA85j">
+    <property role="TrG5h" value="Demo2" />
     <node concept="1DVJbV" id="7_8aRkgHLyo" role="1DVIru">
       <node concept="1DVIoH" id="7_8aRkgHLyq" role="1DVJbU">
         <property role="TrG5h" value="Y" />
