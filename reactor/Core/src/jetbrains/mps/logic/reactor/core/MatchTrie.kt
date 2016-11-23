@@ -103,7 +103,6 @@ internal class MatchTrie(val rule: Rule,
             throw NoSuchElementException()
         }
 
-
         private fun calcNext(): PartialMatch? {
             if (firstRoot == null) {
                 return null
@@ -122,7 +121,10 @@ internal class MatchTrie(val rule: Rule,
                     return mtn.match
                 }
                 else {
-                    mtn = mtn.firstChild
+                    if (mtn.firstChild == null) {
+                        mtn.isSeen = true
+                    }
+                    mtn = mtn.firstChild ?: mtn
                 }
             }
 

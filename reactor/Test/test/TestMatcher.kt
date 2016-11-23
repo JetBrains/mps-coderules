@@ -1,13 +1,10 @@
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.unification.Term
-import jetbrains.mps.unification.test.MockTermsParser
+import jetbrains.mps.unification.Unification
 import jetbrains.mps.unification.test.MockTermsParser.parse
-import org.jetbrains.kotlin.js.parser.parse
 import org.junit.Assert.*
 import org.junit.Test
 
@@ -27,11 +24,13 @@ class TestMatcher {
 
             override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> =
                 stored.filter { co ->
-                    co.arguments().filter {
-                        it is Logical<*> }.any {
-                        (it as Logical<*>).findRoot() == logical.findRoot() } }
+                    co.arguments().any { it is Logical<*> && it.isBound && it.findRoot() == logical.findRoot() }
+                }
 
-            override fun forTerm(term: Term): Iterable<ConstraintOccurrence> = TODO()
+            override fun forTerm(term: Term): Iterable<ConstraintOccurrence> =
+                stored.filter { co ->
+                    co.arguments().any { it is Term && Unification.unify(it, term).isSuccessful  }
+                }
 
             override fun forValue(value: Any): Iterable<ConstraintOccurrence> =
                 stored.filter { co -> co.arguments().contains(value) }
@@ -311,7 +310,7 @@ class TestMatcher {
             matcher(occurrence("foo", v)).run {
                 Matcher(first, occurrence("foo", w), second).matching().let { matches ->
                     assertTrue(matches.all {m -> m.successful})
-                    assertEquals(4, matches.count())
+                    assertEquals(2, matches.count())
                     assertTrue(matches.all{ m -> m.allOccurrences().toSet().size == 2 })
                 }
             }
@@ -378,7 +377,6 @@ class TestMatcher {
         }
     }
 
-
     @Test
     fun matchOccurrenceTermArguments() {
         val (M, N) = metaLogical<Int>("M", "N")
@@ -431,7 +429,6 @@ class TestMatcher {
         }
     }
 
-
     @Test
     fun matchTermArguments() {
         program(
@@ -470,4 +467,35 @@ class TestMatcher {
 
         }
     }
+
+    @Test
+    fun matchConstraintsWrongOrder() {
+
+        val (b, c) = metaLogical<String>("b", "c")
+        val (x, y) = metaLogical<String>("x", "y")
+
+        val program = program(
+            rule("foo2",
+                headKept(
+                    constraint("foo", b, parse("a{b}")),
+                    constraint("foo", c, parse("a{c}"))
+                ),
+                                                                body(
+                                                                    constraint("done")
+                                                                )
+            )
+        )
+
+        program.matcher(occurrence("foo", x, parse("a{c}"))).run {
+            Matcher(first, occurrence("foo", y, parse("a{b}")), second).matching().let { matches ->
+                assertEquals("foo2", matches.single().rule.tag())
+            }
+        }
+        program.matcher(occurrence("foo", x, parse("a{b}"))).run {
+            Matcher(first, occurrence("foo", y, parse("a{c}")), second).matching().let { matches ->
+                assertEquals("foo2", matches.single().rule.tag())
+            }
+        }
+    }
+
 }
