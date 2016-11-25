@@ -21,12 +21,12 @@ class TestTermTrie {
         val t3 = parse("f{g h{i k{l m{o p} n}}}")
         val t4 = parse("f{g h{i q            }}")
 
-        val trie1 = TermTrie<Any>().run {
-            put(t1, "foo").run {
-            put(t2, "bar").run {
-            put(t3, "qux").run {
-            put(t4, "blah")
-        } } } }
+        val trie1 = TermTrie<Any>().runs(
+            { put(t1, "foo") },
+            { put(t2, "bar") },
+            { put(t3, "qux") },
+            { put(t4, "blah") }
+        )
 
         assertEquals(setOf("foo", "bar", "qux", "blah"), trie1.allValues().toSet())
         assertEquals(setOf("bar"), trie1.lookupValues(t2).toSet())
@@ -52,12 +52,12 @@ class TestTermTrie {
         val t3 = parse("f{g h{i k{l m{o p} n}}}")
         val t4 = parse("f{g h{i q            }}")
 
-        val trie1 = TermTrie<Any>().run {
-            put(t1, "foo").run {
-            put(t2, "bar").run {
-            put(t3, "qux").run {
-            put(t4, "blah")
-        } } } }
+        val trie1 = TermTrie<Any>().runs(
+            { put(t1, "foo") },
+            { put(t2, "bar") },
+            { put(t3, "qux") },
+            { put(t4, "blah") }
+        )
 
         assertEquals(setOf("foo", "bar", "qux", "blah"), trie1.allValues().toSet())
         assertEquals(setOf("bar"), trie1.lookupValues(t2).toSet())
@@ -83,10 +83,10 @@ class TestTermTrie {
         val t1 = parse("a{b c}")
         val t2 = parse("a{b d}")
 
-        val trie1 = TermTrie<Any>().run {
-            put(t1, "foo").run {
-            put(t2, "bar")
-        } }
+        val trie1 = TermTrie<Any>().runs(
+            { put(t1, "foo") },
+            { put(t2, "bar") }
+        )
 
         assertEquals(setOf("foo", "bar"), trie1.allValues().toSet())
         assertEquals(setOf("foo"), trie1.lookupValues(t1).toSet())
@@ -118,13 +118,13 @@ class TestTermTrie {
         val t4 = parse("f{g{X b} X}")
         val t5 = parse("f{X Y}")
 
-        val tt = TermTrie<String>().run {
-            put(t1, "t1").run {
-            put(t2, "t2").run {
-            put(t3, "t3").run {
-            put(t4, "t4").run {
-            put(t5, "t5")
-        } } } } }
+        val tt = TermTrie<String>().runs(
+            { put(t1, "t1") },
+            { put(t2, "t2") },
+            { put(t3, "t3") },
+            { put(t4, "t4") },
+            { put(t5, "t5") }
+        )
 
         assertEquals(setOf("t3", "t5"), tt.lookupValues(parse("f{g{b c} a}")).toSet())
         assertEquals(setOf("t3", "t4", "t5"), tt.lookupValues(parse("f{g{b X} a}")).toSet())
@@ -142,10 +142,10 @@ class TestTermTrie {
         val t1 = parse("a{b c}")
         val t2 = parse("b{c d}")
 
-        val trie1 = TermTrie<Any>().run {
-            put(t1, "foo").run {
-            put(t2, "bar")
-        } }
+        val trie1 = TermTrie<Any>().runs (
+            { put(t1, "foo") },
+            { put(t2, "bar") }
+        )
 
         assertEquals(setOf("foo"), trie1.lookupValues(parse("a{b c d}")).toSet())
         assertEquals(setOf("bar"), trie1.lookupValues(parse("b{c d e}")).toSet())
@@ -159,10 +159,10 @@ class TestTermTrie {
         val t1 = parse("a{X c}")
         val t2 = parse("b{c Y}")
 
-        val trie1 = TermTrie<Any>().run {
-            put(t1, "foo").run {
-            put(t2, "bar")
-        } }
+        val trie1 = TermTrie<Any>().runs(
+            { put(t1, "foo") },
+            { put(t2, "bar") }
+        )
 
         assertEquals(setOf("foo"), trie1.lookupValues(parse("a{b c}")).toSet())
         assertEquals(setOf("foo"), trie1.lookupValues(parse("a{b c d}")).toSet())
@@ -185,12 +185,12 @@ class TestTermTrie {
         val t3 = parse("f{g h{i k{l m{o p} n}}}")
         val t4 = parse("f{g h{i q            }}")
 
-        val trie1 = TermTrie<Any>().run {
-            put(t1, "foo").run {
-            put(t2, "bar").run {
-            put(t3, "qux").run {
-            put(t4, "blah")
-        } } } }
+        val trie1 = TermTrie<Any>().runs(
+            { put(t1, "foo") },
+            { put(t2, "bar") },
+            { put(t3, "qux") },
+            { put(t4, "blah") }
+        )
 
         assertEquals(setOf("foo"), trie1.lookupValues(parse("a{X c}")).toSet())
         assertEquals(setOf("foo"), trie1.lookupValues(parse("a{b Y}")).toSet())
@@ -209,13 +209,13 @@ class TestTermTrie {
         val t4 = parse("f{g h{Z k{l m{o p} n}}}")
         val t5 = parse("f{Z h{i q            }}")
 
-        val trie1 = TermTrie<Any>().run {
-            put(t1, "foo").run {
-            put(t2, "bar").run {
-            put(t3, "bazz").run {
-            put(t4, "qux").run {
-            put(t5, "blah")
-        } } } } }
+        val trie1 = TermTrie<Any>().runs(
+            { put(t1, "foo") },
+            { put(t2, "bar") },
+            { put(t3, "bazz") },
+            { put(t4, "qux") },
+            { put(t5, "blah") }
+        )
 
         assertEquals(setOf("foo", "bar", "bazz"), trie1.lookupValues(parse("a{X c{d e}}")).toSet())
         assertEquals(setOf("foo", "bar", "bazz"), trie1.lookupValues(parse("a{b Y}")).toSet())
@@ -238,12 +238,12 @@ class TestTermTrie {
         val t3 = parse("a{c Y}")
         val t4 = parse("a{X Y}")
 
-        val trie1 = TermTrie<Any>().run {
-            put(t1, "foo").run {
-            put(t2, "bar").run {
-            put(t3, "bazz").run {
-            put(t4, "qux")
-        } } } }
+        val trie1 = TermTrie<Any>().runs(
+            { put(t1, "foo") },
+            { put(t2, "bar") },
+            { put(t3, "bazz") },
+            { put(t4, "qux") }
+        )
 
         // value order/cardinality no longer maintained
         assertEquals(setOf("foo", "bar", "qux"), trie1.lookupValues(parse("a{b X}")).toSet())
@@ -259,22 +259,63 @@ class TestTermTrie {
 
     @Test
     fun testRefTerm() {
-        val list = parse("f {c nil}")
         val varRef = MockRef(MockVar("TAIL"))
-
         val pattern = MockFun("g", MockFun("h"), MockFun("f", varRef, MockFun("nil")))
-
-        val trie1 = TermTrie<Any>().run {
-            put(parse("g {h f {a nil}}"), "bar").run {
-            put(parse("g {h f {a f {b nil}}}"), "bazz").run {
-            put(pattern, "foo").run {
-            put(parse("g {h foo {nil}}"), "qux")
-        } } } }
-
-        val key = MockFun("g", MockFun("h"), list)
+        val trie1 = TermTrie<Any>().runs(
+            { put(parse("g {h f {a nil}}"), "bar") },
+            { put(parse("g {h f {a f {b nil}}}"), "bazz") },
+            { put(pattern, "foo") },
+            { put(parse("g {h foo {nil}}"), "qux") }
+        )
 
         assertEquals(listOf("qux"), trie1.lookupValues(parse("g {h foo {nil}}")).toList())
+
+        val key = MockFun("g", MockFun("h"), parse("f {c nil}"))
         assertEquals(listOf("foo"), trie1.lookupValues(key).toList())
+    }
+
+    @Test
+    fun testRefList() {
+        val trie = TermTrie<Any>().runs(
+            {  put(parse("f{X Y}"), "foo") },
+            {  put(parse("f{a Z}"), "bar") },
+            {  put(parse("f{a f{b W}}"), "bazz") }
+        )
+
+        val f = parse("f {b nil}")
+        val key = MockFun("f", parse("a"), MockRef(MockRef(f)))
+        assertEquals(setOf("foo", "bar", "bazz"), trie.lookupValues(key).toSet())
+    }
+
+
+    @Test
+    fun testCyclicTerm() {
+        val trie = TermTrie<Any>().runs(
+            { put(parse("cst{ @1 n{ a{b c} d{^1} } }"), "foo") },
+            { put(parse("cst{ n{ @2 a{b ^2} d{e} } }"), "bar") }
+        )
+
+        assertEquals(setOf("foo", "bar"), trie.lookupValues(parse("cst{ N }")).toSet())
+        assertEquals(setOf("foo", "bar"), trie.lookupValues(parse("cst{ n{ X Y } }")).toSet())
+        assertEquals(setOf("foo", "bar"), trie.lookupValues(parse("cst{ n{ X d{Z} } }")).toSet())
+        assertEquals(setOf("foo", "bar"), trie.lookupValues(parse("cst{ n{ a{b W} V } }")).toSet())
+        assertEquals(listOf("bar"), trie.lookupValues(parse("cst{ n{ @1 a{b ^1} V } }")))
+        assertEquals(listOf("foo"), trie.lookupValues(parse("cst{ @1 n{ a{b S} d{^1} } }")))
+
+        val trie2 = trie.runs(
+            { remove(parse("cst{ n{ @2 a{b ^2} d{e} } }"), "bar") }
+        )
+        assertEquals(emptyList<String>(), trie2.lookupValues(parse("cst{ n{ @1 a{b ^1} V } }")))
+        assertEquals(listOf("foo"), trie2.lookupValues(parse("cst{ @1 n{ a{b S} d{^1} } }")))
 
     }
+
+    fun <T> T.runs(vararg blocks: T.() -> T): T {
+        var t = this
+        for (blk in blocks) {
+            t = t.blk()
+        }
+        return t
+    }
+
 }

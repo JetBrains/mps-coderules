@@ -4,10 +4,7 @@ import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.ConsList.empty
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Maps
-import jetbrains.mps.logic.reactor.util.IdHashSet
-import jetbrains.mps.logic.reactor.util.cons
-import jetbrains.mps.logic.reactor.util.emptySet
-import jetbrains.mps.logic.reactor.util.remove
+import jetbrains.mps.logic.reactor.util.*
 import jetbrains.mps.unification.Term
 import java.util.*
 
@@ -54,13 +51,13 @@ class TermTrie<T>() {
         this.root = setRoot
     }
 
-    fun put(term: Term, value: T): TermTrie<T> = TermTrie(putValue(root, value, term, emptyList()))
+    fun put(term: Term, value: T): TermTrie<T> = TermTrie(putValue(root, value, IdHashSet(), term, empty()))
 
-    fun remove(term: Term, value: T): TermTrie<T> = TermTrie(removeValue(root, value, term, emptyList()))
+    fun remove(term: Term, value: T): TermTrie<T> = TermTrie(removeValue(root, value, IdHashSet(), term, empty()))
 
     fun lookupValues(term: Term): Iterable<T> {
         val result = ArrayList<T>()
-        visitMatching(root, term, emptyList()) { value -> result.add(value) }
+        visitMatching(root, IdHashSet(), term, empty()) { value -> result.add(value) }
         return result
     }
 
@@ -70,10 +67,10 @@ class TermTrie<T>() {
         return result
     }
 
-    private fun putValue(node: PathNode<T>, value: T, term: Term, tail: List<Term>): PathNode<T> {
-        val deref = deref(term)
+    private fun putValue(node: PathNode<T>, value: T, seen: IdHashSet<Term>, term: Term, tail: ConsList<Term>): PathNode<T> {
+        val deref = if (seen.contains(deref(term))) term else deref(term)
         val arguments = deref.arguments()
-        val newTail = arguments + tail
+        val newTail = arguments.reversed().fold(tail) { list, t -> list.prepend(t) }
 
         val nextNode = node.nextOrDefault(symbolOrWildcard(deref)) { sym -> PathNode(sym, arguments.size) }
 
@@ -84,21 +81,21 @@ class TermTrie<T>() {
             node.putNext(nextNode.addValue(value))
 
         } else {
-            node.putNext(putValue(nextNode, value, newTail.first(), newTail.drop(1)))
+            node.putNext(putValue(nextNode, value, seen.add(term), newTail.first()!!, newTail.drop(1)))
         }
     }
 
-    private fun removeValue(node: PathNode<T>, value: T, term: Term, tail: List<Term>): PathNode<T> {
-        val deref = deref(term)
+    private fun removeValue(node: PathNode<T>, value: T, seen: IdHashSet<Term>, term: Term, tail: ConsList<Term>): PathNode<T> {
+        val deref = if (seen.contains(deref(term))) term else deref(term)
         val arguments = deref.arguments()
-        val newTail = arguments + tail
+        val newTail = arguments.reversed().fold(tail) { list, t -> list.prepend(t) }
 
         return node.next(symbolOrWildcard(deref))?.let { nextNode ->
 
             //invariant: terms arity is fixed
             assert(nextNode.arity == arguments.size)
 
-            return if (newTail.isEmpty()) {
+            return if (newTail.isEmpty) {
                 val newNext = nextNode.removeValue(value)
                 if (newNext != nextNode) {
                     if (!newNext.hasValues()) {
@@ -113,7 +110,7 @@ class TermTrie<T>() {
                 }
 
             } else {
-                val newNext = removeValue(nextNode, value, newTail.first(), newTail.drop(1))
+                val newNext = removeValue(nextNode, value, seen.add(term), newTail.first()!!, newTail.drop(1))
                 if (newNext !== nextNode) {
                     if (!newNext.hasNext()) {
                         node.removeNext(nextNode)
@@ -130,12 +127,12 @@ class TermTrie<T>() {
         } ?: node
     }
 
-    private fun visitMatching(node: PathNode<T>, term: Term, tail: List<Term>, visitor: (T) -> Unit) {
-        val deref = deref(term)
+    private fun visitMatching(node: PathNode<T>, seen: IdHashSet<Term>, term: Term, tail: ConsList<Term>, visitor: (T) -> Unit) {
+        val deref =  if (seen.contains(deref(term))) term else deref(term)
         val sym = symbolOrWildcard(deref)
         if (sym == WILDCARD) {
-            if (tail.size > 0) {
-                node.skipAllNext().forEach { visitMatching(it, tail.first(), tail.drop(1), visitor) }
+            if (!tail.isEmpty) {
+                node.skipAllNext().forEach { visitMatching(it, seen.add(term), tail.first()!!, tail.drop(1), visitor) }
 
             } else {
                 node.allNext().forEach { visitAll(it, visitor) }
@@ -144,15 +141,15 @@ class TermTrie<T>() {
         } else {
             node.next(sym)?.let { nn ->
                 nn.values().forEach(visitor)
-                val newTail = deref.arguments() + tail
-                if (newTail.isNotEmpty()) {
-                    visitMatching(nn, newTail.first(), newTail.drop(1), visitor)
+                val newTail = deref.arguments().reversed().fold(tail) { list, t -> list.prepend(t) }
+                if (!newTail.isEmpty) {
+                    visitMatching(nn, seen.add(term), newTail.first()!!, newTail.drop(1), visitor)
                 }
             }
             node.next(WILDCARD)?.let { nn ->
                 nn.values().forEach(visitor)
-                if (tail.isNotEmpty()) {
-                    visitMatching(nn, tail.first(), tail.drop(1), visitor)
+                if (!tail.isEmpty) {
+                    visitMatching(nn, seen.add(term), tail.first()!!, tail.drop(1), visitor)
                 }
             }
         }
