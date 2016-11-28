@@ -448,6 +448,10 @@
             <ref role="3cqZAo" to="cxk7:5uFPQ7C279$" resolve="FREE_SYM" />
             <ref role="1PxDUh" to="cxk7:5$WbtTOYoMb" resolve="LogicalPredicate" />
           </node>
+          <node concept="10M0yZ" id="7rf49Ngo$U5" role="3g7hyw">
+            <ref role="1PxDUh" to="cxk7:7rf49NgkbDQ" resolve="NotPredicate" />
+            <ref role="3cqZAo" to="cxk7:7rf49Ngke3n" resolve="NOT_SYM" />
+          </node>
           <node concept="10M0yZ" id="1ggxSI7vXEc" role="3g7hyw">
             <ref role="1PxDUh" to="av0y:~JavaPredicateSymbol" resolve="JavaPredicateSymbol" />
             <ref role="3cqZAo" to="av0y:~JavaPredicateSymbol.EXPRESSION0" resolve="EXPRESSION0" />

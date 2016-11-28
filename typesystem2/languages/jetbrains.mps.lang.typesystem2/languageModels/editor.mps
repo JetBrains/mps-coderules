@@ -6229,5 +6229,24 @@
       <node concept="l2Vlx" id="4cKdPpqE395" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="7rf49Ngk1D_">
+    <property role="3GE5qa" value="constraint" />
+    <ref role="1XX52x" to="wq2x:7rf49Ngk1cK" resolve="NotConstraint" />
+    <node concept="3EZMnI" id="7rf49Ngk1Ea" role="2wV5jI">
+      <node concept="PMmxH" id="7rf49Ngk1Ek" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="7rf49Ngk1Ep" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="7rf49Ngk1EF" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:7rf49Ngk1Dz" resolve="predicate" />
+      </node>
+      <node concept="3F0ifn" id="7rf49Ngk1Ex" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+      <node concept="l2Vlx" id="7rf49Ngk1Ed" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

@@ -1339,5 +1339,19 @@
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7rf49Ngk1cK">
+    <property role="EcuMT" value="8561079682350453552" />
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="NotConstraint" />
+    <property role="34LRSv" value="not" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyj" id="7rf49Ngk1Dz" role="1TKVEi">
+      <property role="IQ2ns" value="8561079682350455395" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="predicate" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    </node>
+  </node>
 </model>
 

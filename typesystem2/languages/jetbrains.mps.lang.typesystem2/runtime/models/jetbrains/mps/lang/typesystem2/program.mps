@@ -2609,6 +2609,11 @@
       </node>
       <node concept="3Tm1VV" id="4sSe4$oM2Bu" role="1B3o_S" />
       <node concept="3clFbS" id="4sSe4$oM2Bv" role="3clF47">
+        <node concept="3SKdUt" id="7rf49NgpNhe" role="3cqZAp">
+          <node concept="3SKdUq" id="7rf49NgpNhg" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME the predicate symbols must not be hardcoded!" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="429xoypW6DU" role="3cqZAp">
           <node concept="3clFbS" id="429xoypW6DV" role="3clFbx">
             <node concept="3cpWs6" id="429xoypW6N_" role="3cqZAp">
@@ -2789,6 +2794,39 @@
               <ref role="1PxDUh" to="cxk7:5$WbtTOYoMb" resolve="LogicalPredicate" />
             </node>
             <node concept="37vLTw" id="429xoypWe94" role="3uHU7B">
+              <ref role="3cqZAo" node="4sSe4$oM2YO" resolve="symbol" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7rf49NgpNI2" role="3cqZAp">
+          <node concept="3clFbS" id="7rf49NgpNI3" role="3clFbx">
+            <node concept="3cpWs6" id="7rf49NgpNI4" role="3cqZAp">
+              <node concept="2ShNRf" id="7rf49NgpPss" role="3cqZAk">
+                <node concept="1pGfFk" id="7rf49NgpQeO" role="2ShVmc">
+                  <ref role="37wK5l" to="cxk7:7rf49NgkbFA" resolve="NotPredicate" />
+                  <node concept="10QFUN" id="7rf49NgpSHW" role="37wK5m">
+                    <node concept="3uibUv" id="7rf49NgpSHS" role="10QFUM">
+                      <ref role="3uigEE" to="av0y:~Predicate" resolve="Predicate" />
+                    </node>
+                    <node concept="AH0OO" id="7rf49NgpSHT" role="10QFUP">
+                      <node concept="3cmrfG" id="7rf49NgpSHU" role="AHEQo">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="37vLTw" id="7rf49NgpSHV" role="AHHXb">
+                        <ref role="3cqZAo" node="4sSe4$oM2EL" resolve="args" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="7rf49NgpNI9" role="3clFbw">
+            <node concept="10M0yZ" id="7rf49NgpNIa" role="3uHU7w">
+              <ref role="1PxDUh" to="cxk7:7rf49NgkbDQ" resolve="NotPredicate" />
+              <ref role="3cqZAo" to="cxk7:7rf49Ngke3n" resolve="NOT_SYM" />
+            </node>
+            <node concept="37vLTw" id="7rf49NgpNIb" role="3uHU7B">
               <ref role="3cqZAo" node="4sSe4$oM2YO" resolve="symbol" />
             </node>
           </node>
