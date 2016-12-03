@@ -4998,6 +4998,38 @@
             </node>
             <node concept="9aQIb" id="6i42QSsn53n" role="9aQIa">
               <node concept="3clFbS" id="6i42QSsn53o" role="9aQI4">
+                <node concept="34ab3g" id="1zsTePWYw3q" role="3cqZAp">
+                  <property role="35gtTG" value="warn" />
+                  <property role="34fQS0" value="true" />
+                  <node concept="Xl_RD" id="1zsTePWYw3s" role="34bqiv">
+                    <property role="Xl_RC" value="Error while applying templates" />
+                  </node>
+                  <node concept="2OqwBi" id="1zsTePWZJHx" role="34bMjA">
+                    <node concept="2OqwBi" id="1zsTePWYMZ9" role="2Oq$k0">
+                      <node concept="1eOMI4" id="1zsTePWYLLp" role="2Oq$k0">
+                        <node concept="10QFUN" id="1zsTePWYLLm" role="1eOMHV">
+                          <node concept="A3Dl8" id="1zsTePWYMcF" role="10QFUM">
+                            <node concept="3uibUv" id="1zsTePWZJwH" role="A3Ik2">
+                              <ref role="3uigEE" to="hano:6i42QSs$lgC" resolve="Result.ReportedError" />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="1zsTePWYLLr" role="10QFUP">
+                            <node concept="37vLTw" id="1zsTePWYLLs" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6i42QSslQlQ" resolve="result" />
+                            </node>
+                            <node concept="liA8E" id="1zsTePWYLLt" role="2OqNvi">
+                              <ref role="37wK5l" to="hano:7Oc59RSEnG3" resolve="errors" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="1uHKPH" id="1zsTePWYNlK" role="2OqNvi" />
+                    </node>
+                    <node concept="liA8E" id="1zsTePWZJWj" role="2OqNvi">
+                      <ref role="37wK5l" to="hano:6i42QSs$lhc" resolve="exception" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="6i42QSsn5Dz" role="3cqZAp">
                   <node concept="1rXfSq" id="6i42QSsn5Dy" role="3clFbG">
                     <ref role="37wK5l" node="7dgRGU4MD7E" resolve="done" />
@@ -5187,6 +5219,83 @@
             </node>
           </node>
           <node concept="3clFbH" id="1pPth$l_ZjA" role="3cqZAp" />
+          <node concept="3clFbH" id="15BaR5AfZgm" role="3cqZAp" />
+          <node concept="3cpWs8" id="15BaR5Ag1Hn" role="3cqZAp">
+            <node concept="3cpWsn" id="15BaR5Ag1Ho" role="3cpWs9">
+              <property role="TrG5h" value="startTime" />
+              <property role="3TUv4t" value="true" />
+              <node concept="3cpWsb" id="15BaR5Ag1Hm" role="1tU5fm" />
+              <node concept="2YIFZM" id="15BaR5Ag1Hp" role="33vP2m">
+                <ref role="37wK5l" to="wyt6:~System.currentTimeMillis():long" resolve="currentTimeMillis" />
+                <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="15BaR5AfXAh" role="3cqZAp">
+            <node concept="3cpWsn" id="15BaR5AfXAi" role="3cpWs9">
+              <property role="TrG5h" value="timeoutBreaker" />
+              <property role="3TUv4t" value="true" />
+              <node concept="3uibUv" id="15BaR5AfXAg" role="1tU5fm">
+                <ref role="3uigEE" to="yg8f:15BaR5AeJIv" resolve="EvaluationTraceExt.Stub" />
+              </node>
+              <node concept="2ShNRf" id="15BaR5AfXAj" role="33vP2m">
+                <node concept="YeOm9" id="15BaR5AfXAk" role="2ShVmc">
+                  <node concept="1Y3b0j" id="15BaR5AfXAl" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="1Y3XeK" to="yg8f:15BaR5AeJIv" resolve="EvaluationTraceExt.Stub" />
+                    <node concept="3Tm1VV" id="15BaR5AfXAm" role="1B3o_S" />
+                    <node concept="3clFb_" id="15BaR5AfXAn" role="jymVt">
+                      <property role="1EzhhJ" value="false" />
+                      <property role="TrG5h" value="activate" />
+                      <node concept="37vLTG" id="15BaR5AfXAo" role="3clF46">
+                        <property role="TrG5h" value="occurrence" />
+                        <node concept="3uibUv" id="15BaR5AfXAp" role="1tU5fm">
+                          <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
+                        </node>
+                      </node>
+                      <node concept="3cqZAl" id="15BaR5AfXAq" role="3clF45" />
+                      <node concept="3Tm1VV" id="15BaR5AfXAr" role="1B3o_S" />
+                      <node concept="2AHcQZ" id="15BaR5AfXAs" role="2AJF6D">
+                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                      </node>
+                      <node concept="3clFbS" id="15BaR5AfXAt" role="3clF47">
+                        <node concept="3clFbJ" id="15BaR5Ag45b" role="3cqZAp">
+                          <node concept="3eOSWO" id="15BaR5Ag7X4" role="3clFbw">
+                            <node concept="3cmrfG" id="15BaR5Ag8zh" role="3uHU7w">
+                              <property role="3cmrfH" value="30000" />
+                            </node>
+                            <node concept="3cpWsd" id="15BaR5Ag5qW" role="3uHU7B">
+                              <node concept="2YIFZM" id="15BaR5Ag4Jr" role="3uHU7B">
+                                <ref role="37wK5l" to="wyt6:~System.currentTimeMillis():long" resolve="currentTimeMillis" />
+                                <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                              </node>
+                              <node concept="37vLTw" id="15BaR5Ag6Dh" role="3uHU7w">
+                                <ref role="3cqZAo" node="15BaR5Ag1Ho" resolve="startTime" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="15BaR5Ag45d" role="3clFbx">
+                            <node concept="YS8fn" id="15BaR5Agate" role="3cqZAp">
+                              <node concept="2ShNRf" id="15BaR5Agb3s" role="YScLw">
+                                <node concept="1pGfFk" id="15BaR5AgfCO" role="2ShVmc">
+                                  <ref role="37wK5l" to="w7la:~EvaluationFailureException.&lt;init&gt;(java.lang.String)" resolve="EvaluationFailureException" />
+                                  <node concept="Xl_RD" id="15BaR5Aggjh" role="37wK5m">
+                                    <property role="Xl_RC" value="Timeout" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="15BaR5Af4Rw" role="3cqZAp" />
           <node concept="1QHqEK" id="1pPth$l_ZjB" role="3cqZAp">
             <node concept="1QHqEC" id="1pPth$l_ZjC" role="1QHqEI">
               <node concept="3clFbS" id="1pPth$l_ZjD" role="1bW5cS">
@@ -5291,6 +5400,9 @@
                             <node concept="37vLTw" id="6nJA6bpEMia" role="37wK5m">
                               <ref role="3cqZAo" node="3F6vMxqv_px" resolve="msgtrace" />
                             </node>
+                            <node concept="37vLTw" id="15BaR5Agkh5" role="37wK5m">
+                              <ref role="3cqZAo" node="15BaR5AfXAi" resolve="timeoutBreaker" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -5309,6 +5421,9 @@
                               <ref role="37wK5l" node="7nPD14NbIzp" resolve="MultiTrace" />
                               <node concept="37vLTw" id="3F6vMxqwfvo" role="37wK5m">
                                 <ref role="3cqZAo" node="3F6vMxqv_px" resolve="msgtrace" />
+                              </node>
+                              <node concept="37vLTw" id="15BaR5Agi_D" role="37wK5m">
+                                <ref role="3cqZAo" node="15BaR5AfXAi" resolve="timeoutBreaker" />
                               </node>
                             </node>
                           </node>
@@ -5381,7 +5496,7 @@
                         </node>
                         <node concept="2ShNRf" id="HV6urVFQut" role="33vP2m">
                           <node concept="1pGfFk" id="HV6urVFQuu" role="2ShVmc">
-                            <ref role="37wK5l" to="hano:HV6urVFjOl" resolve="ProgramEvaluator" />
+                            <ref role="37wK5l" to="hano:4F3SXIF5Xa$" resolve="ProgramEvaluator" />
                             <node concept="1rXfSq" id="3F6vMxqmw$o" role="37wK5m">
                               <ref role="37wK5l" node="3F6vMxql$1A" resolve="createSessionSolver" />
                               <node concept="2OqwBi" id="2UGjFq4Lxla" role="37wK5m">
@@ -5392,6 +5507,9 @@
                                   <ref role="2Oxat5" node="3F6vMxqlTiX" resolve="expressionSolver" />
                                 </node>
                               </node>
+                            </node>
+                            <node concept="3clFbT" id="4F3SXIF6Vsi" role="37wK5m">
+                              <property role="3clFbU" value="true" />
                             </node>
                           </node>
                         </node>
