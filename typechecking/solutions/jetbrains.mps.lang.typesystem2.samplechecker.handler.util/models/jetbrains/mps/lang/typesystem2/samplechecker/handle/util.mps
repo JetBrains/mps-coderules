@@ -693,7 +693,7 @@
             </node>
           </node>
           <node concept="1dT_AC" id="3KV3FXk13Ip" role="1dT_Ay">
-            <property role="1dT_AB" value=" parameter is bound to the list of elements of the LUB intersection type." />
+            <property role="1dT_AB" value=" parameter is bound to the list of elements of the LUB type." />
           </node>
         </node>
         <node concept="TZ5HA" id="5H6hZahoJTr" role="TZ5H$">
@@ -1583,7 +1583,7 @@
     <node concept="2tJIrI" id="3KV3FXjZF4v" role="jymVt" />
     <node concept="3clFbW" id="3KV3FXjZFyb" role="jymVt">
       <node concept="37vLTG" id="3KV3FXjZFT2" role="3clF46">
-        <property role="TrG5h" value="computingSession" />
+        <property role="TrG5h" value="sessionSolver" />
         <node concept="3uibUv" id="3KV3FXjZFTc" role="1tU5fm">
           <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
         </node>
@@ -1594,7 +1594,7 @@
         <node concept="XkiVB" id="3KV3FXk1ucM" role="3cqZAp">
           <ref role="37wK5l" node="3KV3FXk1tGv" resolve="AbstractSolver" />
           <node concept="37vLTw" id="3KV3FXk1udj" role="37wK5m">
-            <ref role="3cqZAo" node="3KV3FXjZFT2" resolve="computingSession" />
+            <ref role="3cqZAo" node="3KV3FXjZFT2" resolve="sessionSolver" />
           </node>
         </node>
       </node>
