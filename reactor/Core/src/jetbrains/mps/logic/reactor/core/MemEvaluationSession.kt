@@ -1,12 +1,9 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.ConsList
+import jetbrains.mps.logic.reactor.evaluation.*
 import com.github.andrewoma.dexx.collection.List as PList
 import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
-import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
@@ -63,12 +60,16 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
                 session.launch(myParameters["main"] as Constraint, profiler)
             }
             finally {
+                try {
+                    profiler?.run {
+                        formattedData().entries.forEach { e -> durations?.put(e.key, e.value) }
+                        clear()
+                    }
+                }
+                catch (t: Throwable) {
+                    // avoid nested failure
+                }
                 ourBackend.ourSession.set(null)
-            }
-
-            profiler?.run {
-                formattedData().entries.forEach { e -> durations?.put(e.key, e.value) }
-                clear()
             }
 
             return session
