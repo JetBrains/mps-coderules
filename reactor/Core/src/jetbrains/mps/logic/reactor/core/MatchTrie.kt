@@ -28,26 +28,26 @@ internal class MatchTrie(val rule: Rule,
     val relatedSlots = ArrayList<BitSet>()
 
     init {
-        val meta2slots = HashMap<MetaLogical<*>, BitSet>()
-        (keptConstraints + discardedConstraints).forEachIndexed { slot, cst ->
-            cst.arguments().forEach { arg ->
-                if (arg is MetaLogical<*>) {
-                    val bs = meta2slots[arg] ?: BitSet().apply { meta2slots[arg] = this }
-                    bs.set(slot)
+            val meta2slots = HashMap<MetaLogical<*>, BitSet>()
+            (keptConstraints + discardedConstraints).forEachIndexed { slot, cst ->
+                cst.arguments().forEach { arg ->
+                    if (arg is MetaLogical<*>) {
+                        val bs = meta2slots[arg] ?: BitSet().apply { meta2slots[arg] = this }
+                        bs.set(slot)
+                    }
                 }
             }
-        }
 
-        (keptConstraints + discardedConstraints).forEachIndexed { slot, cst ->
-            val bs = BitSet()
-            cst.arguments().forEach { arg ->
-                if (arg is MetaLogical<*>) {
-                    bs.or(meta2slots[arg])
+            (keptConstraints + discardedConstraints).forEachIndexed { slot, cst ->
+                val bs = BitSet()
+                cst.arguments().forEach { arg ->
+                    if (arg is MetaLogical<*>) {
+                        bs.or(meta2slots[arg])
+                    }
                 }
+                bs.clear(slot)
+                relatedSlots.add(bs)
             }
-            bs.clear(slot)
-            relatedSlots.add(bs)
-        }
      }
 
     private val firstRoot: MatchTrieNode? by lazy(LazyThreadSafetyMode.NONE) {
@@ -148,7 +148,7 @@ internal class MatchTrie(val rule: Rule,
                 if (_firstChild == null) {
                     var first: MatchTrieNode? = null
                     var prev: MatchTrieNode? = null
-                    for (next in firstChildrenBatch()) {
+                    for (next in calcChildren()) {
                         if (first == null) {
                             first = next
                         }
@@ -163,24 +163,7 @@ internal class MatchTrie(val rule: Rule,
         var _nextSibling: MatchTrieNode? = null
 
         val nextSibling: MatchTrieNode?
-            get() {
-                if (_nextSibling == null && parent != null) {
-                    var first: MatchTrieNode? = null
-                    var prev: MatchTrieNode? = null
-                    var prevSlot = if (keepConstraint) index else index + keptConstraints.size
-                    while (first == null && prevSlot < keptConstraints.size + discardedConstraints.size) {
-                        for (next in nextSiblingBatch(prevSlot++)) {
-                            if (first == null) {
-                                first = next
-                            }
-                            prev?._nextSibling = next
-                            prev = next
-                        }
-                    }
-                    this._nextSibling = first
-                }
-                return _nextSibling
-            }
+            get() = _nextSibling
 
         val vacantSlots: BitSet by lazy(LazyThreadSafetyMode.NONE) {
             val result = BitSet()
@@ -208,7 +191,7 @@ internal class MatchTrie(val rule: Rule,
             else                parentMatch.discard(occurrence, index)
         }
 
-        private fun firstChildrenBatch(): Iterable<MatchTrieNode> {
+        private fun calcChildren(): Iterable<MatchTrieNode> {
             val nextSlots = if (!relatedFirstVacantSlots.isEmpty) relatedFirstVacantSlots else vacantSlots
             val nextSlot = nextSlots.nextSetBit(0)
             if (nextSlot < 0) {
@@ -227,30 +210,6 @@ internal class MatchTrie(val rule: Rule,
             }?.forEachNode { mtn -> mtn.isSeen = true }
 
             return auxOccurrences.map { auxOcc -> MatchTrieNode(this, keep, nextCst, auxOcc, nextIdx) }
-        }
-
-        private fun nextSiblingBatch(prevSlot: Int): Iterable<MatchTrieNode> {
-            val nextSlot = parent?.let { p ->
-                val parentNextSlots = if (!p.relatedFirstVacantSlots.isEmpty) p.relatedFirstVacantSlots else p.vacantSlots
-                parentNextSlots.nextSetBit(prevSlot + 1)
-            } ?: 0
-
-            if (nextSlot < 0) {
-                return emptyList()
-            }
-
-            val keep = nextSlot < keptConstraints.size
-            val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
-            val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
-
-            val (result, auxOccurrences) = lookupAuxOccurrences(nextCst)
-            when (result) {
-                Result.DEFINITIVE   ->  parent
-                Result.NONE         ->  this
-                Result.INCONCLUSIVE ->  null
-            }?.forEachNode { mtn -> mtn.isSeen = true }
-
-            return auxOccurrences.map { auxOcc -> MatchTrieNode(parent, keep, nextCst, auxOcc, nextIdx) }
         }
 
         private fun collectMetaInstances(meta: Collection<*>, list: ArrayList<Any>): ArrayList<Any> {
@@ -272,38 +231,35 @@ internal class MatchTrie(val rule: Rule,
         private fun lookupAuxOccurrences(cst: Constraint): Pair<Result, Iterable<ConstraintOccurrence>> {
             return profiler.profile<Pair<Result, Iterable<ConstraintOccurrence>>> ("lookupAux_${cst.symbol()}") {
 
-                val instances = metaInstances(cst.arguments())
-                val values = instances.filter { arg ->
-                    arg is Logical<*> && arg.isBound }.map { arg ->
-                    (arg as Logical<*>).findRoot().value() }
-                val args = ArrayList(instances + values +
-                                     cst.arguments().filter { arg -> !(arg is MetaLogical<*>) })
-                val cache = ArrayList<ConstraintOccurrence>(4)
-
-                for (arg in args) {
+                val fromArgs = ArrayList<ConstraintOccurrence>(4)
+                for (arg in metaInstances(cst.arguments()) + cst.arguments().filter { arg -> !(arg is MetaLogical<*>) }) {
                     when (arg) {
-                        is Logical<*>   ->  cache.addAll(aux.forLogical(arg))
+                        is Logical<*>   ->  fromArgs.addAll(aux.forLogical(arg))
 
-                        is Term         ->  cache.addAll(aux.forTerm(arg))
+                        is Term         ->  fromArgs.addAll(aux.forTerm(arg))
 
-                        is Any          ->  cache.addAll(aux.forValue(arg))
+                        is Any          ->  fromArgs.addAll(aux.forValue(arg))
                     }
                 }
-                if (cache.isNotEmpty()) {
-                    Result.DEFINITIVE.to(cache.filter { occ -> occ.constraint().symbol() == cst.symbol() && !hasOccurrence(occ) })
+                if (fromArgs.isNotEmpty()) {
+                    Result.DEFINITIVE.to(fromArgs.filter { occ -> occ.constraint().symbol() == cst.symbol() && !hasOccurrence(occ) })
 
                 } else {
-                    val hasRelated = relatedFirstVacantSlots == vacantSlots
-                    val allArgsMetaLogicals = cst.arguments().all { a -> a is MetaLogical<*> }
-                    val noArgs = cst.arguments().isEmpty()
+                    return profiler.profile<Pair<Result, Iterable<ConstraintOccurrence>>> ("lookupAux_default_${cst.symbol()}") {
 
-                    if (noArgs || (allArgsMetaLogicals && !hasRelated)) {
-                        Result.INCONCLUSIVE.to(aux.forSymbol(cst.symbol()).filter { occ -> !hasOccurrence(occ) })
+                        val hasRelated = relatedFirstVacantSlots == vacantSlots
+                        val allArgsMetaLogicals = cst.arguments().all { a -> a is MetaLogical<*> }
+                        val noArgs = cst.arguments().isEmpty()
 
-                    }
-                    else {
-                        // all candidate occurrences should have been found by this time; if not, then there's none
-                        Result.NONE.to(emptyList())
+                        if (noArgs || (allArgsMetaLogicals && !hasRelated)) {
+                            Result.INCONCLUSIVE.to(aux.forSymbol(cst.symbol()).filter { occ -> !hasOccurrence(occ) })
+
+                        }
+                        else {
+                            // all candidate occurrences should have been found by this time; if not, then there's none
+                            Result.NONE.to(emptyList())
+                        }
+
                     }
                 }
             }
