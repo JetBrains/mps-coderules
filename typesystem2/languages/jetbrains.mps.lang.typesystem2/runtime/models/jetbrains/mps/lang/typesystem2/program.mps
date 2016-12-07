@@ -2974,17 +2974,9 @@
                             <ref role="3cqZAo" node="1eKXYsjwh9P" resolve="typeTemplate" />
                           </node>
                           <node concept="liA8E" id="4KRwoelDHKF" role="2OqNvi">
-                            <ref role="37wK5l" to="psr6:1eKXYsjvsWF" resolve="bindType" />
-                            <node concept="2OqwBi" id="4KRwoelDKh1" role="37wK5m">
-                              <node concept="37vLTw" id="1eKXYsjwpqU" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1eKXYsjwh9P" resolve="typeTemplate" />
-                              </node>
-                              <node concept="liA8E" id="4KRwoelDM3p" role="2OqNvi">
-                                <ref role="37wK5l" to="psr6:1eKXYsjvsWg" resolve="withNode" />
-                                <node concept="37vLTw" id="1eKXYsjwpDL" role="37wK5m">
-                                  <ref role="3cqZAo" node="18kNIl1x7Wn" resolve="typeNode" />
-                                </node>
-                              </node>
+                            <ref role="37wK5l" to="psr6:60NbDCXG$nh" resolve="bindType" />
+                            <node concept="37vLTw" id="60NbDCXGVru" role="37wK5m">
+                              <ref role="3cqZAo" node="18kNIl1x7Wn" resolve="typeNode" />
                             </node>
                             <node concept="37vLTw" id="4KRwoelDN6E" role="37wK5m">
                               <ref role="3cqZAo" node="18kNIl1wWhK" resolve="typevar" />
@@ -3289,7 +3281,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="1L74NXGis41" role="jymVt" />
+    <node concept="2tJIrI" id="60NbDCXJZ2H" role="jymVt" />
     <node concept="3clFb_" id="1L74NXF7OB0" role="jymVt">
       <property role="TrG5h" value="typePattern" />
       <node concept="37vLTG" id="1L74NXF7OB1" role="3clF46">
