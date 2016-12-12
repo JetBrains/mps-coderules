@@ -32,17 +32,22 @@ class Profiler {
     }
 
     // name -> (duration, freq)
-    fun rawProfilingData(): Map<String, Pair<Long,Int>> {
-        val name2duration = HashMap<String, Pair<Long, Int>>()
+    fun rawProfilingData(): Map<String, DurFreq> {
+        val name2duration = HashMap<String, DurFreq>(1000)
         tokenStack.peek().mergeDurations(name2duration)
         return name2duration
     }
 
     fun formattedData(): Map<String, String> {
-        return rawProfilingData().entries.sortedBy { e -> -(e.value.first) }.map { e ->
-            val (dur, freq) = e.value
-            val millis= dur / 1000000
-            e.key.to("%1\$Ts.%1\$TLs (%2\$d times)".format(millis, freq))
+        val entries = rawProfilingData().entries.toMutableList()
+        val sum = entries.asSequence().fold(0L) { acc, e -> acc + (e.value.dur/1000000) }
+        var toReport = (sum * 0.98).toLong()
+        // sort in-pace descending
+        Collections.sort(entries) { e1, e2 -> if (e2.value.dur < e1.value.dur) -1 else 1 }
+        return entries.asSequence().takeWhile { e -> toReport > 0 && e.value.dur / 1000000 > 0}.map { e ->
+            val millis= e.value.dur / 1000000
+            toReport -= millis
+            e.key.to("%1\$Ts.%1\$TLs (%2\$d times)".format(millis, e.value.freq))
         }.toMap()
     }
 
@@ -74,16 +79,22 @@ class Token(val name: String, val id: Int) {
 
     private fun ownDuration(): Long? = duration()?.minus(children.map { ch -> ch.duration() ?: 0 }.sum())
 
-    fun mergeDurations(name2duration: MutableMap<String, Pair<Long,Int>>) {
-        children.groupBy { ch -> ch.name }.entries.forEach { e ->
-            val (dur, freq) = name2duration[e.key] ?: Pair(0L, 0)
-            name2duration[e.key] = (dur + e.value.map { ch -> ch.ownDuration() ?: 0 }.sum()).to(freq + e.value.size)
+    fun mergeDurations(name2durFreq: MutableMap<String, DurFreq>) {
+        children.forEach { ch ->
+            val durFreq = name2durFreq.getOrPut(ch.name) { DurFreq() }
+            ch.ownDuration()?.let { dur -> durFreq.dur += dur }
+            durFreq.freq += 1
         }
         for (c in children) {
-            c.mergeDurations(name2duration)
+            c.mergeDurations(name2durFreq)
         }
     }
 
+}
+
+class DurFreq {
+    var dur: Long = 0L
+    var freq: Int = 0
 }
 
 inline fun Profiler?.profile(name: String, proc: () -> Unit): Unit {
