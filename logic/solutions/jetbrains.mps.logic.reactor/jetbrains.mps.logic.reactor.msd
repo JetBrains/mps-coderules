@@ -12,12 +12,11 @@
   </models>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/memreactor-core-0.1.jar" />
-    <stubModelEntry path="${module}/lib/dexx-collections-0.2.jar" />
-    <stubModelEntry path="${module}/lib/google-collections-1.0.jar" />
-    <stubModelEntry path="${module}/lib/kotlin-runtime-1.0.0-rc-1050.jar" />
-    <stubModelEntry path="${module}/lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
     <stubModelEntry path="${module}/lib/unification-lib-1.0.2.jar" />
     <stubModelEntry path="${module}/lib/memreactor-api-0.1.jar" />
+    <stubModelEntry path="${module}/lib/kotlin-stdlib-1.0.5.jar" />
+    <stubModelEntry path="${module}/lib/kotlin-runtime-1.0.5.jar" />
+    <stubModelEntry path="${module}/lib/collection-0.6.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
