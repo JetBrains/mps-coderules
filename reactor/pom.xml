@@ -8,7 +8,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.0.1-2</kotlin.version>
+        <kotlin.version>1.0.5</kotlin.version>
         <unification.version>1.0.2</unification.version>
     </properties>
 
@@ -48,14 +48,9 @@
             <version>${kotlin.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.google.collections</groupId>
-            <artifactId>google-collections</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
             <groupId>com.github.andrewoma.dexx</groupId>
-            <artifactId>dexx-collections</artifactId>
-            <version>0.2</version>
+            <artifactId>collection</artifactId>
+            <version>0.6</version>
         </dependency>
         <dependency>
             <groupId>com.intellij</groupId>
