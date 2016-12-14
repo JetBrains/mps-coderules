@@ -1,6 +1,7 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
@@ -30,6 +31,11 @@ class TestMatcher {
             override fun forTerm(term: Term): Iterable<ConstraintOccurrence> =
                 stored.filter { co ->
                     co.arguments().any { it is Term && Unification.unify(it, term).isSuccessful  }
+                }
+
+            override fun forTermAndConstraint(term: Term, cst: Constraint): Iterable<ConstraintOccurrence> =
+                stored.filter { co ->
+                    co.constraint().symbol() == cst.symbol() && co.arguments().any { it is Term && Unification.unify(it, term).isSuccessful  }
                 }
 
             override fun forValue(value: Any): Iterable<ConstraintOccurrence> =

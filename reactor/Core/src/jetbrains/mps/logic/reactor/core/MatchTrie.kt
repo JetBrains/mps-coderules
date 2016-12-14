@@ -236,7 +236,7 @@ internal class MatchTrie(val rule: Rule,
                     when (arg) {
                         is Logical<*>   ->  fromArgs.addAll(aux.forLogical(arg))
 
-                        is Term         ->  fromArgs.addAll(aux.forTerm(arg))
+                        is Term         ->  fromArgs.addAll(aux.forTermAndConstraint(arg, cst))
 
                         is Any          ->  fromArgs.addAll(aux.forValue(arg))
                     }

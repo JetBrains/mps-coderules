@@ -46,6 +46,8 @@ interface OccurrenceIndex {
 
     fun forTerm(term: Term): Iterable<ConstraintOccurrence>
 
+    fun forTermAndConstraint(term: Term, cst: Constraint): Iterable<ConstraintOccurrence>
+
     fun forValue(value: Any): Iterable<ConstraintOccurrence>
 
 }
@@ -57,13 +59,13 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
     val currentFrame: () -> StoreHolder
 
-    lateinit var symbol2occurrences: PersMap<ConstraintSymbol, IdHashSet<ConstraintOccurrence>>
+    var symbol2occurrences: PersMap<ConstraintSymbol, IdHashSet<ConstraintOccurrence>>
 
-    lateinit var logical2occurrences: PersMap<IdWrapper<Logical<*>>, IdHashSet<ConstraintOccurrence>>
+    var logical2occurrences: PersMap<IdWrapper<Logical<*>>, IdHashSet<ConstraintOccurrence>>
 
-    lateinit var term2occurrences: TermTrie<ConstraintOccurrence>
+    var term2occurrences: TermTrie<ConstraintOccurrence>
 
-    lateinit var value2occurrences: PersMap<Any, IdHashSet<ConstraintOccurrence>>
+    var value2occurrences: PersMap<Any, IdHashSet<ConstraintOccurrence>>
 
     constructor(copyFrom: OccurrenceStore, currentFrame: () -> StoreHolder)
     {
@@ -88,7 +90,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
             when (value) {
                 is Term     -> {
                     for (occ in toMerge) {
-                        this.term2occurrences = term2occurrences.put(value, occ)
+                        this.term2occurrences = term2occurrences.put(value.withConstraint(occ.constraint()), occ)
                     }
                 }
                 is Any      -> {
@@ -144,7 +146,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
                     currentFrame().addObserver(value) { frame -> frame.store() }
                 }
                 is Term         -> {
-                    this.term2occurrences = term2occurrences.put(value, occ)
+                    this.term2occurrences = term2occurrences.put(value.withConstraint(occ.constraint()), occ)
                 }
                 is Any          -> {
                     this.value2occurrences = value2occurrences.put(value,
@@ -222,14 +224,36 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
     }
 
     override fun forTerm(term: Term): Iterable<ConstraintOccurrence> {
-        return term2occurrences.lookupValues(term).filter { it.isStored() }
+        return term2occurrences.lookupValues(term.withAny()).filter { it.isStored() }
+    }
+
+    override fun forTermAndConstraint(term: Term, cst: Constraint): Iterable<ConstraintOccurrence> {
+        return term2occurrences.lookupValues(term.withConstraint(cst)).filter { it.isStored() }
     }
 
     override fun forValue(value: Any): Iterable<ConstraintOccurrence> {
         return (value2occurrences[value] ?: emptySet()).filter { co -> co.isStored() }
     }
 
+    private fun Term.withConstraint(cst: Constraint): Term = Function(CONSTRAINT, listOf(Function(cst.symbol(), emptyList()), this))
+
+    private fun Term.withAny(): Term = Function(CONSTRAINT, listOf(Variable(ANY), this))
+
+    private companion object {
+
+        private val CONSTRAINT = object : Any() {
+            override fun toString(): String = "CONSTRAINT"
+        }
+
+        private val ANY = object : Any() {
+            override fun toString(): String = "ANY"
+        }
+
+    }
+
 }
+
+
 
 private data class MemConstraintOccurrence(val currentFrame: () -> HandlerFrame, val constraint: Constraint, val arguments: List<*>) :
     ConstraintOccurrence,
