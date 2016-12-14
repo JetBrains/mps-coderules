@@ -47,7 +47,14 @@ class Profiler {
         return entries.asSequence().takeWhile { e -> toReport > 0 && e.value.dur / 1000000 > 0}.map { e ->
             val millis= e.value.dur / 1000000
             toReport -= millis
-            e.key.to("%1\$Ts.%1\$TLs (%2\$d times)".format(millis, e.value.freq))
+
+            val parents = e.value.parents.entries.toMutableList()
+            //sort in-place descending
+            Collections.sort(parents) { e1, e2 -> e2.value - e1.value }
+            val sb = StringBuilder("%1\$Ts.%1\$TLs (%2\$d times)".format(millis, e.value.freq))
+            parents.forEach { e -> sb.append("\n    -- ${e.key} (${e.value} times)") }
+
+            e.key.to(sb.toString())
         }.toMap()
     }
 
@@ -84,6 +91,7 @@ class Token(val name: String, val id: Int) {
             val durFreq = name2durFreq.getOrPut(ch.name) { DurFreq() }
             ch.ownDuration()?.let { dur -> durFreq.dur += dur }
             durFreq.freq += 1
+            durFreq.parents.set(name, 1 + durFreq.parents.getOrElse(name) {0})
         }
         for (c in children) {
             c.mergeDurations(name2durFreq)
@@ -95,6 +103,7 @@ class Token(val name: String, val id: Int) {
 class DurFreq {
     var dur: Long = 0L
     var freq: Int = 0
+    val parents: MutableMap<String, Int> = HashMap()
 }
 
 inline fun Profiler?.profile(name: String, proc: () -> Unit): Unit {
