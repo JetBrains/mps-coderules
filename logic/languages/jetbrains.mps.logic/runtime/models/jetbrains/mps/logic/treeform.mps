@@ -10120,9 +10120,6 @@
             <node concept="2ShNRf" id="5s497VqXMV_" role="33vP2m">
               <node concept="1pGfFk" id="5s497VqXMVA" role="2ShVmc">
                 <ref role="37wK5l" node="5s497VqXLBS" resolve="PrettyPrinter" />
-                <node concept="37vLTw" id="5s497VrdM$F" role="37wK5m">
-                  <ref role="3cqZAo" node="5s497VrdmAW" resolve="indentLevel" />
-                </node>
               </node>
             </node>
           </node>
@@ -10146,72 +10143,8 @@
           <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
         </node>
       </node>
-      <node concept="37vLTG" id="5s497VrdmAW" role="3clF46">
-        <property role="TrG5h" value="indentLevel" />
-        <node concept="10Oyi0" id="5s497VrdmUa" role="1tU5fm" />
-      </node>
     </node>
     <node concept="2tJIrI" id="3gJBs5s$Otl" role="jymVt" />
-    <node concept="2YIFZL" id="3gJBs5s$Nbp" role="jymVt">
-      <property role="TrG5h" value="prettyPrint" />
-      <node concept="17QB3L" id="3gJBs5s$Nbq" role="3clF45" />
-      <node concept="3Tm1VV" id="3gJBs5s$Nbr" role="1B3o_S" />
-      <node concept="3clFbS" id="3gJBs5s$Nbs" role="3clF47">
-        <node concept="3SKdUt" id="3gJBs5s$Nbt" role="3cqZAp">
-          <node concept="3SKdUq" id="3gJBs5s$Nbu" role="3SKWNk">
-            <property role="3SKdUp" value="TODO: non-branches?" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="3gJBs5s$Nbv" role="3cqZAp">
-          <node concept="3cpWsn" id="3gJBs5s$Nbw" role="3cpWs9">
-            <property role="TrG5h" value="printer" />
-            <node concept="3uibUv" id="3gJBs5s$Nbx" role="1tU5fm">
-              <ref role="3uigEE" node="5s497VqXwA7" resolve="PrettyPrinter" />
-            </node>
-            <node concept="2ShNRf" id="3gJBs5s$Nby" role="33vP2m">
-              <node concept="1pGfFk" id="3gJBs5s$Nbz" role="2ShVmc">
-                <ref role="37wK5l" node="3gJBs5s$3kZ" resolve="PrettyPrinter" />
-                <node concept="37vLTw" id="3gJBs5s$Nb$" role="37wK5m">
-                  <ref role="3cqZAo" node="3gJBs5s$Ncd" resolve="indentLevel" />
-                </node>
-                <node concept="37vLTw" id="3gJBs5s$RxZ" role="37wK5m">
-                  <ref role="3cqZAo" node="3gJBs5s$P_F" resolve="symbolProvider" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="3gJBs5s$T4q" role="3cqZAp">
-          <node concept="2YIFZM" id="3gJBs5s$T4p" role="3cqZAk">
-            <ref role="1Pybhc" node="5s497VqXwA7" resolve="PrettyPrinter" />
-            <ref role="37wK5l" node="3gJBs5s$T4k" resolve="doPrettyPrint" />
-            <node concept="37vLTw" id="3gJBs5s$T4n" role="37wK5m">
-              <ref role="3cqZAo" node="3gJBs5s$Nca" resolve="tbr" />
-            </node>
-            <node concept="37vLTw" id="3gJBs5s$T4o" role="37wK5m">
-              <ref role="3cqZAo" node="3gJBs5s$Nbw" resolve="printer" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="3gJBs5s$Nca" role="3clF46">
-        <property role="TrG5h" value="tbr" />
-        <node concept="3uibUv" id="3gJBs5s$Ncb" role="1tU5fm">
-          <ref role="3uigEE" node="1bm7a6EXvsP" resolve="TreeForm" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="3gJBs5s$Ncd" role="3clF46">
-        <property role="TrG5h" value="indentLevel" />
-        <node concept="10Oyi0" id="3gJBs5s$Nce" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="3gJBs5s$P_F" role="3clF46">
-        <property role="TrG5h" value="symbolProvider" />
-        <node concept="3uibUv" id="3gJBs5s$PN2" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3gJBs5s$UzN" role="jymVt" />
     <node concept="2YIFZL" id="3gJBs5s$T4k" role="jymVt">
       <property role="TrG5h" value="doPrettyPrint" />
       <node concept="3Tm6S6" id="3gJBs5s$T4l" role="1B3o_S" />
@@ -10363,26 +10296,9 @@
     </node>
     <node concept="2tJIrI" id="5s497VqXL6G" role="jymVt" />
     <node concept="3clFbW" id="5s497VqXLBS" role="jymVt">
-      <node concept="37vLTG" id="5s497VrdkhT" role="3clF46">
-        <property role="TrG5h" value="indentLevel" />
-        <node concept="10Oyi0" id="5s497VrdkhS" role="1tU5fm" />
-      </node>
       <node concept="3cqZAl" id="5s497VqXLBU" role="3clF45" />
       <node concept="3Tm6S6" id="5s497VqYqp7" role="1B3o_S" />
       <node concept="3clFbS" id="5s497VqXLBW" role="3clF47">
-        <node concept="3clFbF" id="5s497VrdkFO" role="3cqZAp">
-          <node concept="37vLTI" id="5s497Vrdl9p" role="3clFbG">
-            <node concept="37vLTw" id="5s497Vrdlm7" role="37vLTx">
-              <ref role="3cqZAo" node="5s497VrdkhT" resolve="indentLevel" />
-            </node>
-            <node concept="2OqwBi" id="5s497VrdkGk" role="37vLTJ">
-              <node concept="Xjq3P" id="5s497VrdkFN" role="2Oq$k0" />
-              <node concept="2OwXpG" id="5s497VrdkQc" role="2OqNvi">
-                <ref role="2Oxat5" node="5s497VqXzcI" resolve="indentLevel" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3gJBs5s$iOV" role="3cqZAp">
           <node concept="37vLTI" id="3gJBs5s$jah" role="3clFbG">
             <node concept="2ShNRf" id="3gJBs5s$jbC" role="37vLTx">
@@ -10401,49 +10317,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3gJBs5s$4mV" role="jymVt" />
-    <node concept="3clFbW" id="3gJBs5s$3kZ" role="jymVt">
-      <node concept="3cqZAl" id="3gJBs5s$3l0" role="3clF45" />
-      <node concept="3Tm6S6" id="3gJBs5s$3l1" role="1B3o_S" />
-      <node concept="3clFbS" id="3gJBs5s$3l2" role="3clF47">
-        <node concept="3clFbF" id="3gJBs5s$gns" role="3cqZAp">
-          <node concept="37vLTI" id="3gJBs5s$gnt" role="3clFbG">
-            <node concept="37vLTw" id="3gJBs5s$iGL" role="37vLTx">
-              <ref role="3cqZAo" node="3gJBs5s$3l9" resolve="indentLevel" />
-            </node>
-            <node concept="2OqwBi" id="3gJBs5s$gnv" role="37vLTJ">
-              <node concept="Xjq3P" id="3gJBs5s$gnw" role="2Oq$k0" />
-              <node concept="2OwXpG" id="3gJBs5s$gnx" role="2OqNvi">
-                <ref role="2Oxat5" node="5s497VqXzcI" resolve="indentLevel" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3gJBs5s$5vZ" role="3cqZAp">
-          <node concept="37vLTI" id="3gJBs5s$5w1" role="3clFbG">
-            <node concept="2OqwBi" id="3gJBs5s$5w5" role="37vLTJ">
-              <node concept="Xjq3P" id="3gJBs5s$5w8" role="2Oq$k0" />
-              <node concept="2OwXpG" id="3gJBs5s$5w4" role="2OqNvi">
-                <ref role="2Oxat5" node="3gJBs5s$5vV" resolve="symbolProvider" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="3gJBs5s$5w9" role="37vLTx">
-              <ref role="3cqZAo" node="3gJBs5s$5nP" resolve="symbolProvider" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="3gJBs5s$3l9" role="3clF46">
-        <property role="TrG5h" value="indentLevel" />
-        <node concept="10Oyi0" id="3gJBs5s$3la" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="3gJBs5s$5nP" role="3clF46">
-        <property role="TrG5h" value="symbolProvider" />
-        <node concept="3uibUv" id="3gJBs5s$5uo" role="1tU5fm">
-          <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5s497VqXx2G" role="jymVt" />
     <node concept="3clFb_" id="5s497VqXNEj" role="jymVt">
       <property role="TrG5h" value="toString" />
       <node concept="17QB3L" id="3_ALDc$_5np" role="3clF45" />
@@ -11440,7 +11313,7 @@
       </node>
       <node concept="3Tm6S6" id="5s497Vr0Kqj" role="1B3o_S" />
       <node concept="3clFbW" id="5s497Vr0EFQ" role="jymVt">
-        <node concept="3Tm1VV" id="5s497Vr0EFT" role="1B3o_S" />
+        <node concept="3Tm6S6" id="262rtspU0WW" role="1B3o_S" />
         <node concept="37vLTG" id="5s497Vr0ENY" role="3clF46">
           <property role="TrG5h" value="value" />
           <node concept="17QB3L" id="3_ALDc$_5nt" role="1tU5fm" />
@@ -11736,6 +11609,7 @@
         <ref role="3uigEE" node="104EUzFOARB" resolve="TreeForm.Visitor" />
       </node>
     </node>
+    <node concept="2tJIrI" id="262rtspU0ZZ" role="jymVt" />
   </node>
   <node concept="Qs71p" id="2q_78a95hAL">
     <property role="TrG5h" value="Action" />
@@ -11812,9 +11686,6 @@
                                 <ref role="1Pybhc" node="5s497VqXwA7" resolve="PrettyPrinter" />
                                 <node concept="37vLTw" id="6r6omRld6tO" role="37wK5m">
                                   <ref role="3cqZAo" node="6r6omRlcrc7" resolve="tf" />
-                                </node>
-                                <node concept="3cmrfG" id="6r6omRld6yn" role="37wK5m">
-                                  <property role="3cmrfH" value="0" />
                                 </node>
                               </node>
                             </node>
