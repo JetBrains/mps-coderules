@@ -144,31 +144,11 @@
       <property role="IQ2nx" value="1427485783569910500" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="3x8pcoFsKIi" role="1TKVEl">
-      <property role="TrG5h" value="postProcess" />
-      <property role="IQ2nx" value="4055602266742393746" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-      <node concept="asaX9" id="3KXGt7WVuy3" role="lGtFl" />
-    </node>
-    <node concept="1TJgyj" id="5NuEpF1iiJF" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="inputSpecification" />
-      <property role="IQ2ns" value="6691972578451991531" />
-      <ref role="20lvS9" node="5NuEpF1if3e" resolve="RuleInputSpecification" />
-      <node concept="asaX9" id="6wQEDbCCPAr" role="lGtFl" />
-    </node>
     <node concept="1TJgyj" id="5MHpiylGjt8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="iterateParameterBlock" />
       <property role="IQ2ns" value="6678105047444830024" />
       <ref role="20lvS9" node="1zN1RIkNhnM" resolve="IterateParameterBlock" />
-    </node>
-    <node concept="1TJgyj" id="1zN1RIkQKTu" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="boundParameterBlock" />
-      <property role="IQ2ns" value="1797788903610715742" />
-      <ref role="20lvS9" node="1zN1RIkQtcr" resolve="BoundParameterBlock" />
-      <node concept="asaX9" id="6wQEDbCIWty" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="6wQEDbCLoaZ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

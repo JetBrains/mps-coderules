@@ -476,7 +476,6 @@
         <child id="7368070394768755905" name="argument" index="3A0MwX" />
       </concept>
       <concept id="8335224865066016388" name="jetbrains.mps.lang.typesystem2.structure.Rule" flags="ng" index="AVZhu">
-        <property id="4055602266742393746" name="postProcess" index="jeQXk" />
         <property id="1427485783569910500" name="exactMatch" index="3olrw_" />
         <child id="7509376976634086079" name="includeClause" index="20WMwH" />
         <child id="4340821131304055573" name="condition" index="30RCb4" />
@@ -11889,7 +11888,6 @@
     </node>
     <node concept="AVZhu" id="5_6ImQYeKB8" role="3ArX_J">
       <property role="TrG5h" value="dpromote_failed" />
-      <property role="jeQXk" value="true" />
       <node concept="3Aq93q" id="5_6ImQYeLqn" role="3orSU4">
         <property role="3ArMco" value="false" />
         <node concept="3NuqgR" id="5_6ImQYeLqt" role="3Nuqhd">
@@ -12669,7 +12667,6 @@
     </node>
     <node concept="AVZhu" id="2CsZ2XTe9a" role="3ArX_J">
       <property role="TrG5h" value="coerceRef_classifierType_refl" />
-      <property role="jeQXk" value="true" />
       <node concept="3Aq9_M" id="2CsZ2XTgUm" role="3oo59u">
         <node concept="3clFbS" id="2CsZ2XTgUn" role="3Aqf5P">
           <node concept="3Aqczg" id="4j2EcMOKKTB" role="3cqZAp">
@@ -12763,7 +12760,6 @@
     </node>
     <node concept="AVZhu" id="2CsZ2XTgYl" role="3ArX_J">
       <property role="TrG5h" value="coerceRef_arrayType_refl" />
-      <property role="jeQXk" value="true" />
       <node concept="3Aq9_M" id="2CsZ2XTgYm" role="3oo59u">
         <node concept="3clFbS" id="2CsZ2XTgYn" role="3Aqf5P">
           <node concept="3Aqczg" id="4j2EcMOKKV8" role="3cqZAp">
@@ -12857,7 +12853,6 @@
     </node>
     <node concept="AVZhu" id="7DXHbsZvTBE" role="3ArX_J">
       <property role="TrG5h" value="coerceRef_typevar_refl" />
-      <property role="jeQXk" value="true" />
       <node concept="3Aq9_M" id="7DXHbsZvTBF" role="3oo59u">
         <node concept="3clFbS" id="7DXHbsZvTBG" role="3Aqf5P">
           <node concept="3Aqczg" id="7DXHbsZvTBH" role="3cqZAp">
@@ -12956,7 +12951,6 @@
     </node>
     <node concept="AVZhu" id="4j2EcMOKKYb" role="3ArX_J">
       <property role="TrG5h" value="coerceRef_variable_refl" />
-      <property role="jeQXk" value="true" />
       <node concept="3Aq93q" id="4j2EcMOKL01" role="3orSU4">
         <property role="3ArMco" value="false" />
         <node concept="3NuqgR" id="4j2EcMOKL02" role="3Nuqhd">
@@ -13024,7 +13018,6 @@
     </node>
     <node concept="AVZhu" id="4j2EcMONQO7" role="3ArX_J">
       <property role="TrG5h" value="coerceRef_catchall" />
-      <property role="jeQXk" value="true" />
       <node concept="3Aq93q" id="4j2EcMONQO8" role="3orSU4">
         <property role="3ArMco" value="false" />
         <node concept="3NuqgR" id="4j2EcMONQO9" role="3Nuqhd">
@@ -13424,7 +13417,6 @@
     </node>
     <node concept="AVZhu" id="L5gj21VPK5" role="3ArX_J">
       <property role="TrG5h" value="capture_id" />
-      <property role="jeQXk" value="true" />
       <node concept="3Aq9E8" id="L5gj21VPMx" role="3otmyu">
         <node concept="3clFbS" id="L5gj21VPMy" role="3Aqf5P">
           <node concept="3Aqczg" id="L5gj21VPMC" role="3cqZAp">
