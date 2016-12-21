@@ -28615,16 +28615,9 @@
               </node>
             </node>
             <node concept="liA8E" id="3YJ7yg2N55j" role="2OqNvi">
-              <ref role="37wK5l" to="fqlx:6fdr4UgfuGk" resolve="allTemplates" />
+              <ref role="37wK5l" to="hano:6fdr4UgfuGk" resolve="allTemplates" />
               <node concept="37vLTw" id="3YJ7yg2N7pX" role="37wK5m">
                 <ref role="3cqZAo" node="4n$QnzZQnen" resolve="node" />
-              </node>
-              <node concept="2ShNRf" id="3YJ7yg2N7XC" role="37wK5m">
-                <node concept="2i4dXS" id="3YJ7yg2NacW" role="2ShVmc">
-                  <node concept="3uibUv" id="3YJ7yg2NbHo" role="HW$YZ">
-                    <ref role="3uigEE" to="fqlx:6fdr4UgftiG" resolve="RuleTemplateCollection" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
