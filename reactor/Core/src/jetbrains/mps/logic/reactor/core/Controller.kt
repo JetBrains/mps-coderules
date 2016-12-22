@@ -22,21 +22,21 @@ import java.util.*
 
 class FrameStack : LogicalObserver {
 
-    lateinit var current: HandlerFrame
+    lateinit var current: Frame
 
     val observing = HashSet<IdWrapper<Logical<*>>>()
 
     constructor() {
-        this.current = HandlerFrame(this)
+        this.current = Frame(this)
     }
 
-    fun push(): HandlerFrame {
-        val frame = HandlerFrame(this, current)
+    fun push(): Frame {
+        val frame = Frame(this, current)
         this.current = frame
         return frame
     }
 
-    fun reset(frame: HandlerFrame): Unit {
+    fun reset(frame: Frame): Unit {
         this.current = frame
     }
 
@@ -64,7 +64,7 @@ class FrameStack : LogicalObserver {
 
 interface StoreHolder {
 
-    fun store(): OccurrenceStore
+    fun store(): Store
 
     fun addObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver)
 
@@ -72,21 +72,21 @@ interface StoreHolder {
 }
 
 
-class HandlerFrame : LogicalObserver, StoreHolder
+class Frame : LogicalObserver, StoreHolder
 {
-    val prev: HandlerFrame?
+    val prev: Frame?
 
-    val store: OccurrenceStore
+    val store: Store
 
     private var stack: FrameStack
 
     private lateinit var observers: PersMap<IdWrapper<Logical<*>>, ConsList<(StoreHolder) -> LogicalObserver>>
 
-    constructor(stack: FrameStack, prev: HandlerFrame? = null) {
+    constructor(stack: FrameStack, prev: Frame? = null) {
         this.stack = stack
         this.prev = prev
         this.observers = prev?.observers ?: Maps.of()
-        this.store = OccurrenceStore(prev?.store ?: OccurrenceStore { stack.current }, { stack.current })
+        this.store = Store(prev?.store ?: Store { stack.current }, { stack.current })
     }
 
     override fun store() = store
@@ -129,7 +129,7 @@ class HandlerFrame : LogicalObserver, StoreHolder
 }
 
 
-class Handler {
+class Controller {
 
     private val frameStack = FrameStack()
 
@@ -166,7 +166,7 @@ class Handler {
     fun occurrences(symbol: ConstraintSymbol): Set<ConstraintOccurrence> =
         frameStack.current.store.allOccurrences().filter { co -> co.constraint().symbol() == symbol }.toSet()
 
-    fun tell(constraint: Constraint) {
+    fun activate(constraint: Constraint) {
         try {
             queue(constraint.occurrence({ frameStack.current }, noLogicalContext))
         }

@@ -17,7 +17,7 @@ import java.util.*
 
 interface SessionObjects {
 
-    fun handler(): Handler
+    fun handler(): Controller
 
 }
 
@@ -80,7 +80,7 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
     val sessionSolver: SessionSolver
     val trace: EvaluationTrace
 
-    lateinit var handler: Handler
+    lateinit var controller: Controller
 
     private constructor(program: Program, sessionSolver: SessionSolver, trace: EvaluationTrace): super() {
         this.program = program
@@ -89,22 +89,22 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
     }
 
     fun launch(main: Constraint, profiler: Profiler?) {
-        this.handler = Handler(program.rules(), trace, profiler)
-        handler.tell(main)
+        this.controller = Controller(program.rules(), trace, profiler)
+        controller.activate(main)
     }
 
-    override fun handler() = handler
+    override fun handler() = controller
 
     override fun sessionSolver(): SessionSolver = sessionSolver
 
     override fun constraintSymbols(): Iterable<ConstraintSymbol> =
-        handler.constraintSymbols()
+        controller.constraintSymbols()
 
     override fun constraintOccurrences(): Iterable<ConstraintOccurrence> =
-        handler.allOccurrences()
+        controller.allOccurrences()
 
     override fun constraintOccurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
-        handler.occurrences(symbol)
+        controller.occurrences(symbol)
 
     private class Backend : EvaluationSession.Backend {
 

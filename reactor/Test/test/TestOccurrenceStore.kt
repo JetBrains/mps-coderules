@@ -14,11 +14,11 @@ import org.junit.Before
 
 class TestOccurrenceStore {
 
-    class MockProxy(val _store: () -> OccurrenceStore) : LogicalObserver, StoreHolder {
+    class MockProxy(val _store: () -> Store) : LogicalObserver, StoreHolder {
 
         private var observerList = emptyConsList<Pair<Logical<*>, LogicalObserver>>()
 
-        override fun store(): OccurrenceStore = _store()
+        override fun store(): Store = _store()
 
         override fun addObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver)  {
             if (!observerList.any { obs -> obs.first === logical }) {               // referential equality!
@@ -46,11 +46,11 @@ class TestOccurrenceStore {
         }
     }
 
-    lateinit var occstore: OccurrenceStore
+    lateinit var occstore: Store
 
     @Before
     fun setup() {
-        occstore = OccurrenceStore { MockProxy {  occstore } }
+        occstore = Store { MockProxy {  occstore } }
     }
 
     @Test

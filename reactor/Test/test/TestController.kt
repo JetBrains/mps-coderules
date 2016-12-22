@@ -1,4 +1,4 @@
-import jetbrains.mps.logic.reactor.core.Handler
+import jetbrains.mps.logic.reactor.core.Controller
 import jetbrains.mps.logic.reactor.core.SessionObjects
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException
@@ -19,7 +19,7 @@ import solver.MemSessionSolver
  */
 
 
-class TestHandler {
+class TestController {
 
     @Before fun beforeTest() {
     }
@@ -29,8 +29,8 @@ class TestHandler {
     }
 
     private class MockSession(val solver: SessionSolver) : EvaluationSession(), SessionObjects {
-        lateinit var handler: Handler
-        override fun handler(): Handler = handler
+        lateinit var controller: Controller
+        override fun handler(): Controller = controller
         override fun sessionSolver(): SessionSolver = solver
         override fun constraintSymbols(): MutableIterable<ConstraintSymbol> = TODO()
         override fun constraintOccurrences(): MutableIterable<ConstraintOccurrence> = TODO()
@@ -59,10 +59,10 @@ class TestHandler {
         MemSessionSolver(expressionSolver, equalsSolver).apply {
             init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
-    private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Handler {
+    private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Controller {
         MockSession.init(sessionSolver(env.expressionSolver, env.equalsSolver))
-        val handler = Handler(rules, occurrences = listOf(* occurrences))
-        MockSession.ourBackend.session.handler = handler
+        val handler = Controller(rules, occurrences = listOf(* occurrences))
+        MockSession.ourBackend.session.controller = handler
         return handler
     }
 

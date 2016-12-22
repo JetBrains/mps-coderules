@@ -21,8 +21,8 @@ import com.github.andrewoma.dexx.collection.Vector as PersVector
  * @author Fedor Isakov
  */
 
-fun Constraint.occurrence(currentFrame: () -> HandlerFrame, context: LogicalContext): ConstraintOccurrence =
-    MemConstraintOccurrence(currentFrame, this, occurrenceArguments(context))
+fun Constraint.occurrence(currentFrame: () -> Frame, context: LogicalContext): ConstraintOccurrence =
+    Occurrence(currentFrame, this, occurrenceArguments(context))
 
 fun ConstraintOccurrence.isStored(): Boolean =
     // TODO: superfluous cast
@@ -55,7 +55,7 @@ interface OccurrenceIndex {
 /**
  * TODO: make this class persistent.
  */
-class OccurrenceStore : LogicalObserver, OccurrenceIndex {
+class Store : LogicalObserver, OccurrenceIndex {
 
     val currentFrame: () -> StoreHolder
 
@@ -67,7 +67,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
     var value2occurrences: PersMap<Any, IdHashSet<ConstraintOccurrence>>
 
-    constructor(copyFrom: OccurrenceStore, currentFrame: () -> StoreHolder)
+    constructor(copyFrom: Store, currentFrame: () -> StoreHolder)
     {
         this.currentFrame = currentFrame
         this.symbol2occurrences = copyFrom.symbol2occurrences
@@ -255,7 +255,7 @@ class OccurrenceStore : LogicalObserver, OccurrenceIndex {
 
 
 
-private data class MemConstraintOccurrence(val currentFrame: () -> HandlerFrame, val constraint: Constraint, val arguments: List<*>) :
+private data class Occurrence(val currentFrame: () -> Frame, val constraint: Constraint, val arguments: List<*>) :
     ConstraintOccurrence,
     LogicalObserver,
     StoreItem
@@ -265,7 +265,7 @@ private data class MemConstraintOccurrence(val currentFrame: () -> HandlerFrame,
 
     override var stored = false
 
-    constructor(currentFrame: () -> HandlerFrame, constraint: Constraint, arguments: Collection<*>) :
+    constructor(currentFrame: () -> Frame, constraint: Constraint, arguments: Collection<*>) :
         this(currentFrame, constraint, ArrayList(arguments))
     {
         for (a in arguments) {
