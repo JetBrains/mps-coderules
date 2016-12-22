@@ -88,6 +88,8 @@ class MemProgram(val name: String, val myRules : List<Rule>, val registry: Const
         registry.predicateSymbols()
 
     override fun rules(): Iterable<Rule> = unmodifiableCollection(myRules)
+
+    override fun handlers(): MutableIterable<Handler> = TODO()
 }
 
 

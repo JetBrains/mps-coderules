@@ -14,7 +14,13 @@ public abstract class Program {
 
   public abstract Iterable<PredicateSymbol> predicateSymbols();
 
+  /**
+   * @deprecated use handlers().foreach{ yieldAll it.rules() }
+   * @return
+   */
+  @Deprecated
   public abstract Iterable<Rule> rules();
 
+  public abstract Iterable<Handler> handlers();
 
 }
