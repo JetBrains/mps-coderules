@@ -1,7 +1,7 @@
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
-import program.MemConstraint
+import program.MockConstraint
 import TestConstraintOccurrence
 import jetbrains.mps.logic.reactor.core.StoreItem
 import solver.EqualsSolver
@@ -15,7 +15,7 @@ import java.util.*
 class Builder(val env: Environment, val rules: List<Rule>) {
 }
 
-class Environment(val programBuilder: MemProgramBuilder? = null) {
+class Environment(val programBuilder: ProgramBuilder? = null) {
     val equalsSolver = EqualsSolver()
     val expressionSolver = ExpressionSolver()
 }
@@ -24,7 +24,7 @@ fun program(vararg ruleBuilders : Environment.() -> Rule): Builder {
     return builder(Environment(), ruleBuilders)
 }
 
-fun program(pb: MemProgramBuilder, vararg ruleBuilders : Environment.() -> Rule): Builder {
+fun program(pb: ProgramBuilder, vararg ruleBuilders : Environment.() -> Rule): Builder {
     return builder(Environment(pb), ruleBuilders)
 }
 
@@ -98,7 +98,7 @@ class ConjBuilder {
     fun createConstraint(args: Array<out Any>, id: String): Constraint {
         return env.programBuilder ?.
             constraint(ConstraintSymbol(id, args.size), * args)     ?:
-            MemConstraint(ConstraintSymbol(id, args.size), * args)
+            MockConstraint(ConstraintSymbol(id, args.size), * args)
     }
 
 
@@ -148,7 +148,7 @@ data class TestConstraintOccurrence(val constraint: Constraint, val arguments: L
     }
 
     constructor(id: String, vararg args: Any) :
-        this(MemConstraint(ConstraintSymbol.symbol(id, args.size)), listOf(* args), random.nextInt()) {}
+        this(MockConstraint(ConstraintSymbol.symbol(id, args.size)), listOf(* args), random.nextInt()) {}
 
     override fun constraint(): Constraint = constraint
 

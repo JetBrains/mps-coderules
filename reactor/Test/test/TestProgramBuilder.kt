@@ -1,7 +1,7 @@
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.Solver
-import solver.MemSessionSolver
+import solver.MockSessionSolver
 import jetbrains.mps.logic.reactor.program.*
 import org.junit.AfterClass
 import org.junit.Assert.*
@@ -23,15 +23,15 @@ class TestProgramBuilder {
         override fun tell(invocation: PredicateInvocation?) = TODO()
     }
 
-    val sessionSolver = MemSessionSolver(dummySolver, dummySolver)
+    val sessionSolver = MockSessionSolver(dummySolver, dummySolver)
 
     @Before fun beforeTest() {
-        programBuilder = MemProgramBuilder(ConstraintRegistry(sessionSolver))
+        programBuilder = ProgramBuilder(ConstraintRegistry(sessionSolver))
     }
 
-    lateinit var programBuilder: MemProgramBuilder
+    lateinit var programBuilder: ProgramBuilder
 
-    private fun MemProgramBuilder.addRules(rules: List<Rule>) {
+    private fun ProgramBuilder.addRules(rules: List<Rule>) {
         rules.forEach { r -> addRule(r) }
     }
 

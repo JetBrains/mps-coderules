@@ -12,7 +12,7 @@ import jetbrains.mps.logic.reactor.program.Program
 import org.junit.*
 import org.junit.Assert.*
 import solver.EqualsSolver
-import solver.MemSessionSolver
+import solver.MockSessionSolver
 
 /**
  * @author Fedor Isakov
@@ -56,7 +56,7 @@ class TestController {
     }
 
     private fun sessionSolver(expressionSolver: ExpressionSolver, equalsSolver: EqualsSolver): SessionSolver =
-        MemSessionSolver(expressionSolver, equalsSolver).apply {
+        MockSessionSolver(expressionSolver, equalsSolver).apply {
             init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
     private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Controller {

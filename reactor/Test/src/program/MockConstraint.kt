@@ -12,7 +12,7 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-data class MemConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>) : Constraint {
+data class MockConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>) : Constraint {
 
     constructor(symbol: ConstraintSymbol, vararg args: Any) : this(symbol, listOf(* args)) {}
 

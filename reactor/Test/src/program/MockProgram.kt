@@ -5,24 +5,22 @@
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.program.*
-import program.MemConstraint
+import program.MockConstraint
 import java.util.*
 import java.util.Collections.*
 
-class MemProgramBuilder(val registry: ConstraintRegistry)  {
+class ProgramBuilder(val registry: ConstraintRegistry)  {
 
     private val rules = ArrayList<Rule>()
 
-    fun program(name: String): Program = MemProgram(name, ArrayList(rules), registry)
+    fun program(name: String): Program = MockProgram(name, ArrayList(rules), registry)
 
     fun addRule(rule: Rule) {
         registry.update(rule)
         rules.add(rule)
     }
 
-    fun constraint(symbol: ConstraintSymbol, vararg args: Any): Constraint = MemConstraint(symbol, listOf(* args))
-
-    fun predicate(symbol: PredicateSymbol, vararg args: Any?): Predicate = TODO()
+    fun constraint(symbol: ConstraintSymbol, vararg args: Any): Constraint = MockConstraint(symbol, listOf(* args))
 
 }
 
@@ -45,10 +43,10 @@ open class RuleBuilder(val tag: String) {
         if (alt || body.isEmpty()) body.add(ArrayList<AndItem>())
         body.last().addAll(andItem)
     }
-    fun toRule(): Rule = MemRule(tag, kept, replaced, guard, body)
+    fun toRule(): Rule = MockRule(tag, kept, replaced, guard, body)
 }
 
-class MemRule(
+class MockRule(
     val tag: String,
     val kept: Collection<Constraint>,
     val replaced: Collection<Constraint>,
@@ -74,7 +72,7 @@ class MemRule(
         else (kept + replaced).map { it as AndItem } + guard + body.flatten()
 }
 
-class MemProgram(val name: String, val myRules : List<Rule>, val registry: ConstraintRegistry) : Program() {
+class MockProgram(val name: String, val myRules : List<Rule>, val registry: ConstraintRegistry) : Program() {
 
     override fun name(): String = name
 

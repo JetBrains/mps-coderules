@@ -11,7 +11,7 @@ import jetbrains.mps.logic.reactor.program.PredicateSymbol
  * @author Fedor Isakov
  */
 
-open class MemSessionSolver(val expressionSolver: Solver, val equalsSolver: Solver) : SessionSolver() {
+open class MockSessionSolver(val expressionSolver: Solver, val equalsSolver: Solver) : SessionSolver() {
 
     override fun solverClass(predicateSymbol: PredicateSymbol): Class<out Queryable> {
         return when (predicateSymbol) {
