@@ -4822,7 +4822,7 @@
                         </node>
                         <node concept="2ShNRf" id="3GlpCDSzA$U" role="37vLTx">
                           <node concept="1pGfFk" id="3GlpCDSzA$V" role="2ShVmc">
-                            <ref role="37wK5l" to="hano:3GlpCDSychS" resolve="TemplatesApplication" />
+                            <ref role="37wK5l" to="hano:3GlpCDSychS" resolve="TemplateApplicator" />
                             <node concept="2OqwBi" id="6QH_LDt8BRg" role="37wK5m">
                               <node concept="2OqwBi" id="3GlpCDSzA$W" role="2Oq$k0">
                                 <node concept="Xjq3P" id="3GlpCDSzA$X" role="2Oq$k0">
@@ -5116,7 +5116,7 @@
         <property role="TrG5h" value="templatesApplication" />
         <node concept="3Tmbuc" id="3GlpCDSzJZW" role="1B3o_S" />
         <node concept="3uibUv" id="3GlpCDSzA$D" role="1tU5fm">
-          <ref role="3uigEE" to="hano:3GlpCDSxTG7" resolve="TemplatesApplication" />
+          <ref role="3uigEE" to="hano:3GlpCDSxTG7" resolve="TemplateApplicator" />
         </node>
       </node>
     </node>
