@@ -15,43 +15,9 @@ import org.junit.Test
 
 class TestMatcher {
 
-    private fun Builder.matcher(vararg occurrence: ConstraintOccurrence): Pair<RuleIndex, OccurrenceIndex> {
-
-        val stored = occurrence.toList()
-
-        val aux = object : OccurrenceIndex {
-            override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
-                stored.filter { co -> co.constraint().symbol() == symbol }
-
-            override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> =
-                stored.filter { co ->
-                    co.arguments().any { it is Logical<*> && it.isBound && it.findRoot() == logical.findRoot() }
-                }
-
-            override fun forTerm(term: Term): Iterable<ConstraintOccurrence> =
-                stored.filter { co ->
-                    co.arguments().any { it is Term && Unification.unify(it, term).isSuccessful  }
-                }
-
-            override fun forTermAndConstraint(term: Term, cst: Constraint): Iterable<ConstraintOccurrence> =
-                stored.filter { co ->
-                    co.constraint().symbol() == cst.symbol() && co.arguments().any { it is Term && Unification.unify(it, term).isSuccessful  }
-                }
-
-            override fun forValue(value: Any): Iterable<ConstraintOccurrence> =
-                stored.filter { co -> co.arguments().contains(value) }
-        }
-
-        return RuleIndex(rules).to(aux)
-    }
-
-    private fun Match.allOccurrences() = (keptOccurrences + discardedOccurrences)
-
-    private fun Matcher.matching() = this.filter { m -> m.successful }
-
     @Test
     fun matchSingle() {
-        program(
+        programWithRules(
             rule("main",
                 headReplaced(
                     constraint("main")
@@ -60,7 +26,7 @@ class TestMatcher {
                     constraint("foo")
                 ))
         ).let { builder ->
-            builder.matcher().run {
+            builder.indices().run {
                 Matcher(first, occurrence("main"), second).matching().let { matches ->
                     val match = matches.single()
                     assertEquals(match.rule, builder.rules.first())
@@ -74,7 +40,7 @@ class TestMatcher {
 
     @Test
     fun matchDiscardedKept() {
-        program(
+        programWithRules(
             rule("main1",
                 headReplaced(
                     constraint("main")
@@ -90,7 +56,7 @@ class TestMatcher {
                     constraint("bar")
                 ))
         ).let { builder ->
-            builder.matcher().run {
+            builder.indices().run {
                 Matcher(first, occurrence("main"), second).matching().let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.toSet(), matches.map { m -> m.rule }.toSet())
@@ -106,7 +72,7 @@ class TestMatcher {
 
     @Test
     fun matchComplementMissing() {
-        program(
+        programWithRules(
             rule("main1",
                 headKept(
                     constraint("main")
@@ -125,7 +91,7 @@ class TestMatcher {
                     constraint("bar")
                 ))
         ).let { builder ->
-            builder.matcher().run {
+            builder.indices().run {
                 Matcher(first, occurrence("main"), second).matching().let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.drop(1).toSet(), matches.map { m -> m.rule }.toSet())
@@ -136,7 +102,7 @@ class TestMatcher {
 
     @Test
     fun matchComplementPresent() {
-        program(
+        programWithRules(
             rule("main1",
                 headKept(
                     constraint("main")
@@ -155,7 +121,7 @@ class TestMatcher {
                     constraint("bar")
                 ))
         ).let { builder ->
-            builder.matcher(occurrence("aux")).run {
+            builder.indices(occurrence("aux")).run {
                 Matcher(first, occurrence("main"), second).matching().let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.toSet(), matches.map { m -> m.rule }.toSet())
@@ -166,7 +132,7 @@ class TestMatcher {
 
     @Test
     fun matchArgument() {
-        program(
+        programWithRules(
             rule("main1",
                 headKept(
                     constraint("main", "foo")
@@ -182,7 +148,7 @@ class TestMatcher {
                     constraint("bar")
                 ))
         ).let { builder ->
-            builder.matcher().run{
+            builder.indices().run{
                 Matcher(first, occurrence("main", "bar"), second).matching().let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.drop(1), matches.map { m -> m.rule }.toList())
@@ -193,7 +159,7 @@ class TestMatcher {
 
     @Test
     fun noMatchArgument() {
-        program(
+        programWithRules(
             rule("main1",
                 headKept(
                     constraint("main", "foo")
@@ -208,9 +174,37 @@ class TestMatcher {
                 body(
                     constraint("bar")
                 ))
-        ).matcher().run{
+        ).indices().run{
             Matcher(first, occurrence("main", "qux"), second).matching().let { matches ->
                 assertFalse(matches.any())
+            }
+        }
+    }
+
+    @Test
+    fun multipleHandlers() {
+        programWithHandlers(
+            handler("handler1", ConstraintSymbol("foo", 0),
+                rule("main1",
+                    headKept(
+                        constraint("foo")
+                    ))
+                ),
+            handler("handler2", ConstraintSymbol("bar", 0),
+                rule("main2",
+                    headKept(
+                        constraint("bar")
+                    ))
+                )
+        ).indices().run {
+            Matcher(first, occurrence("qux"), second).matching().let { matches ->
+                assertFalse(matches.any())
+            }
+            Matcher(first, occurrence("foo"), second).matching().let { matches ->
+                assertSame(1, matches.size)
+            }
+            Matcher(first, occurrence("bar"), second).matching().let { matches ->
+                assertSame(1, matches.size)
             }
         }
     }
@@ -220,7 +214,7 @@ class TestMatcher {
         val (A, B, C) = metaLogical<String>("A", "B", "C")
         val b = B.logical()
 
-        program(
+        programWithRules(
             rule("main",
                 headKept(
                     constraint("foo", A, B)
@@ -229,7 +223,7 @@ class TestMatcher {
                     constraint("bar", B)
                 )
             )
-        ).matcher().run {
+        ).indices().run {
             Matcher(first, occurrence("foo", "blah", b), second).first().run {
                 assert(successful)
                 assertEquals("blah", logicalContext.variable(A).findRoot().value())
@@ -244,7 +238,7 @@ class TestMatcher {
     fun matchMetaLogical() {
         val (M, N) = metaLogical<Int>("M", "N")
 
-        program(
+        programWithRules(
             rule("main1",
                 headKept(
                     constraint("foo", M)
@@ -266,14 +260,14 @@ class TestMatcher {
                     constraint("bar")
                 ))
         ).run {
-            matcher().run {
+            indices().run {
                 Matcher(first, occurrence("foo", 1), second).matching().let { matches ->
                     assertFalse(matches.any())
                 }
             }
 
                 // same parameter -- 4 matches (all permutations)
-             matcher(occurrence("foo", 42)).run {
+             indices(occurrence("foo", 42)).run {
                  Matcher(first, occurrence("foo", 42), second).matching().let { matches ->
                      assertTrue(matches.all {m -> m.successful})
                      assertEquals(4, matches.count())
@@ -281,7 +275,7 @@ class TestMatcher {
                  }
              }
 
-             matcher(occurrence("foo", 42)).run {
+             indices(occurrence("foo", 42)).run {
                  Matcher(first, occurrence("foo", 16), second).matching().let { matches ->
                      assertTrue(matches.all {m -> m.successful})
                      assertEquals(2, matches.count())
@@ -301,7 +295,7 @@ class TestMatcher {
             x.set(123)
             y.set(456)
 
-            matcher(occurrence("foo", x)).run {
+            indices(occurrence("foo", x)).run {
                 Matcher(first, occurrence("foo", y), second).matching().let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(2, matches.count())
@@ -313,7 +307,7 @@ class TestMatcher {
             val (v, w) = logical<Int>("v", "w")
             w.findRoot().union(v)
 
-            matcher(occurrence("foo", v)).run {
+            indices(occurrence("foo", v)).run {
                 Matcher(first, occurrence("foo", w), second).matching().let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(2, matches.count())
@@ -328,7 +322,7 @@ class TestMatcher {
         val (M, N) = metaLogical<Int>("M", "N")
         val (O, P) = metaLogical<Int>("O", "P")
 
-        program(
+        programWithRules(
             rule("select_A_x",
                 headKept(
                     constraint("foo", "A", M)
@@ -367,7 +361,7 @@ class TestMatcher {
                                                                 body(
                                                                     constraint("bar")
                                                                 ))
-        ).matcher().first.run {
+        ).indices().first.run {
             val x = logical<Any>("X")
 
             assertEquals(
@@ -388,7 +382,7 @@ class TestMatcher {
         val (M, N) = metaLogical<Int>("M", "N")
         val (O, P) = metaLogical<Int>("O", "P")
 
-        program(
+        programWithRules(
             rule("select_fg_x",
                 headKept(
                     constraint("foo", parse("f{g}"), M)
@@ -417,7 +411,7 @@ class TestMatcher {
                                                                 body(
                                                                     constraint("bar")
                                                                 ))
-        ).matcher().first.run {
+        ).indices().first.run {
 
             assertEquals(
                 listOf(byTag("select_fg_x")),
@@ -437,7 +431,7 @@ class TestMatcher {
 
     @Test
     fun matchTermArguments() {
-        program(
+        programWithRules(
             rule("select_abcde",
                 headKept(
                     constraint("foo", parse("a{b{h} c{d e}}"))
@@ -459,7 +453,7 @@ class TestMatcher {
                                                                 body(
                                                                     constraint("bar")
                                                                 ))
-        ).matcher().first.run {
+        ).indices().first.run {
 
             assertEquals(
                 listOf(byTag("select_abcde")),
@@ -480,7 +474,7 @@ class TestMatcher {
         val (b, c) = metaLogical<String>("b", "c")
         val (x, y) = metaLogical<String>("x", "y")
 
-        val program = program(
+        val program = programWithRules(
             rule("foo2",
                 headKept(
                     constraint("foo", b, parse("a{b}")),
@@ -492,16 +486,50 @@ class TestMatcher {
             )
         )
 
-        program.matcher(occurrence("foo", x, parse("a{c}"))).run {
+        program.indices(occurrence("foo", x, parse("a{c}"))).run {
             Matcher(first, occurrence("foo", y, parse("a{b}")), second).matching().let { matches ->
                 assertEquals("foo2", matches.single().rule.tag())
             }
         }
-        program.matcher(occurrence("foo", x, parse("a{b}"))).run {
+        program.indices(occurrence("foo", x, parse("a{b}"))).run {
             Matcher(first, occurrence("foo", y, parse("a{c}")), second).matching().let { matches ->
                 assertEquals("foo2", matches.single().rule.tag())
             }
         }
     }
+
+    private fun Builder.indices(vararg occurrence: ConstraintOccurrence): Pair<RuleIndex, OccurrenceIndex> {
+
+        val stored = occurrence.toList()
+
+        val aux = object : OccurrenceIndex {
+            override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
+                stored.filter { co -> co.constraint().symbol() == symbol }
+
+            override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> =
+                stored.filter { co ->
+                    co.arguments().any { it is Logical<*> && it.isBound && it.findRoot() == logical.findRoot() }
+                }
+
+            override fun forTerm(term: Term): Iterable<ConstraintOccurrence> =
+                stored.filter { co ->
+                    co.arguments().any { it is Term && Unification.unify(it, term).isSuccessful  }
+                }
+
+            override fun forTermAndConstraint(term: Term, cst: Constraint): Iterable<ConstraintOccurrence> =
+                stored.filter { co ->
+                    co.constraint().symbol() == cst.symbol() && co.arguments().any { it is Term && Unification.unify(it, term).isSuccessful  }
+                }
+
+            override fun forValue(value: Any): Iterable<ConstraintOccurrence> =
+                stored.filter { co -> co.arguments().contains(value) }
+        }
+
+        return RuleIndex(handlers).to(aux)
+    }
+
+    private fun Match.allOccurrences() = (keptOccurrences + discardedOccurrences)
+
+    private fun Matcher.matching() = this.filter { m -> m.successful }
 
 }

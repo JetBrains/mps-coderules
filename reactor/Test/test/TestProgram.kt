@@ -29,7 +29,9 @@ class TestProgram {
     private fun Builder.session(name: String): EvaluationSession {
         val sessionSolver = MockSessionSolver(env.expressionSolver, env.equalsSolver)
         val programBuilder = ProgramBuilder(ConstraintRegistry(sessionSolver))
-        rules.forEach { r -> programBuilder.addRule(r) }
+        for (h in handlers) {
+            programBuilder.addHandler(h)
+        }
         return EvaluationSession.newSession(programBuilder.program(name)).
             withPredicates(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3).
             withParam("main", MockConstraint(ConstraintSymbol("main", 0))).start(sessionSolver)
@@ -37,7 +39,7 @@ class TestProgram {
 
     @Test
     fun replace() {
-        program(
+        programWithRules(
             rule("main",
                 headReplaced(
                     constraint("main")
@@ -61,7 +63,7 @@ class TestProgram {
     @Test
     fun logicalValue() {
         val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
-        program(
+        programWithRules(
             rule("main",
                 headReplaced(
                     constraint("main")
@@ -92,7 +94,7 @@ class TestProgram {
     fun simpleProgram() {
         val (X, Y) = metaLogical<Int>("X", "Y")
 
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ x -> x.set(5) }, X),
                                                                     constraint("val", X) )
@@ -115,7 +117,7 @@ class TestProgram {
     @Test
     fun gcd() {
         val (M, N, TMP) = metaLogical<Int>("M", "N", "TMP")
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),     body(   statement({ m, n -> m.set(21); n.set(35) }, M, N),
                                                                 constraint("gcd", M),
@@ -144,7 +146,7 @@ class TestProgram {
     @Test
     fun primes() {
         val (M, N) = metaLogical<Int>("M", "N")
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),     body(   statement({ n -> n.set(10) }, N),
                                                                 constraint("prime", N)  )

@@ -5,6 +5,7 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.Handler
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.unification.Term
 import java.util.*
@@ -15,39 +16,55 @@ import java.util.*
 
 class RuleIndex : Iterable<Rule> {
 
-    private val symbol2valueIndex = HashMap<ConstraintSymbol, ValueIndex>()
+    private val allSymbol2valueIndex = HashMap<ConstraintSymbol, ValueIndex>()
+
+    private val primarySymbol2valueIndex = HashMap<ConstraintSymbol, ValueIndex>()
 
     private val tag2rule = LinkedHashMap<String, Rule>()
 
-    constructor(rules: Iterable<Rule>) {
-        for (r in rules) {
-            tag2rule[r.tag()] = r
+    constructor(handlers: Iterable<Handler>) {
+        for (h in handlers) {
+            for (r in h.rules()) {
+                tag2rule[r.tag()] = r
+            }
         }
-        buildIndex(rules)
+        buildIndex(handlers)
     }
 
     fun byTag(tag: String): Rule? = tag2rule[tag]
 
     fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> {
-        return symbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?: emptyList()
+        val primary = primarySymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?: emptyList()
+        val all = allSymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?: emptyList()
+        return primary + all
     }
 
     override fun iterator(): Iterator<Rule> = tag2rule.values.iterator()
 
-    private fun buildIndex(rules: Iterable<Rule>) {
-        for (r in rules) {
-            for (c in r.headKept()) {
-                updateIndex(c, r)
+    private fun buildIndex(handlers: Iterable<Handler>) {
+        for (h in handlers) {
+            val primaryValueIdx = h.primarySymbol()?.let { symbol ->
+                allSymbol2valueIndex.getOrPut(symbol) { ValueIndex(symbol) }
             }
-            for (c in r.headReplaced()) {
-                updateIndex(c, r)
+            for (r in h.rules()) {
+                for (c in r.headKept()) {
+                    if (c.symbol() == h.primarySymbol()) {
+                        primaryValueIdx?.update(r, c)
+
+                    } else if (h.primarySymbol() == null) {
+                        allSymbol2valueIndex.getOrPut(c.symbol()) { ValueIndex(c.symbol()) }.update(r, c)
+                    }
+                }
+                for (c in r.headReplaced()) {
+                    if (c.symbol() == h.primarySymbol()) {
+                        primaryValueIdx?.update(r, c)
+
+                    } else if (h.primarySymbol() == null) {
+                        allSymbol2valueIndex.getOrPut(c.symbol()) { ValueIndex(c.symbol()) }.update(r, c)
+                    }
+                }
             }
         }
-    }
-
-    private fun updateIndex(cst: Constraint, rule: Rule) {
-        val valueIdx = symbol2valueIndex.getOrPut(cst.symbol()) { ValueIndex(cst.symbol()) }
-        valueIdx.update(rule, cst)
     }
 
 }

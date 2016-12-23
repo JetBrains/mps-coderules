@@ -5,23 +5,36 @@
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.program.*
+import org.omg.CORBA.Environment
 import program.MockConstraint
 import java.util.*
 import java.util.Collections.*
 
 class ProgramBuilder(val registry: ConstraintRegistry)  {
 
-    private val rules = ArrayList<Rule>()
+    private val handlers = ArrayList<Handler>()
 
-    fun program(name: String): Program = MockProgram(name, ArrayList(rules), registry)
-
-    fun addRule(rule: Rule) {
-        registry.update(rule)
-        rules.add(rule)
+    fun addHandler(handler: Handler) {
+        for (r in handler.rules()) {
+            registry.update(r)
+        }
+        handlers.add(handler)
     }
 
     fun constraint(symbol: ConstraintSymbol, vararg args: Any): Constraint = MockConstraint(symbol, listOf(* args))
 
+    fun program(name: String): Program = MockProgram(name, handlers, registry)
+
+}
+
+open class HandlerBuilder(val name: String, val primary: ConstraintSymbol?) {
+    val rules = ArrayList<Rule>()
+
+    fun appendRule(rule: Rule) {
+        rules.add(rule)
+    }
+
+    fun toHandler(): Handler = MockHandler(name, primary, rules)
 }
 
 open class RuleBuilder(val tag: String) {
@@ -44,6 +57,18 @@ open class RuleBuilder(val tag: String) {
         body.last().addAll(andItem)
     }
     fun toRule(): Rule = MockRule(tag, kept, replaced, guard, body)
+}
+
+class MockHandler(
+    val name: String,
+    val primary: ConstraintSymbol?,
+    val rules: List<Rule>) : Handler() {
+
+    override fun name(): String = name
+
+    override fun primarySymbol(): ConstraintSymbol? = primary
+
+    override fun rules(): Iterable<Rule> = rules
 }
 
 class MockRule(
@@ -72,7 +97,7 @@ class MockRule(
         else (kept + replaced).map { it as AndItem } + guard + body.flatten()
 }
 
-class MockProgram(val name: String, val myRules : List<Rule>, val registry: ConstraintRegistry) : Program() {
+class MockProgram(val name: String, val handlers: List<Handler>, val registry: ConstraintRegistry) : Program() {
 
     override fun name(): String = name
 
@@ -85,9 +110,9 @@ class MockProgram(val name: String, val myRules : List<Rule>, val registry: Cons
     override fun predicateSymbols(): Iterable<PredicateSymbol> =
         registry.predicateSymbols()
 
-    override fun rules(): Iterable<Rule> = unmodifiableCollection(myRules)
+    override fun rules(): Iterable<Rule> = handlers.flatMap { it.rules() }
 
-    override fun handlers(): MutableIterable<Handler> = TODO()
+    override fun handlers(): Iterable<Handler> = unmodifiableCollection(handlers)
 }
 
 

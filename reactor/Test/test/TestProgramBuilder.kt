@@ -31,19 +31,15 @@ class TestProgramBuilder {
 
     lateinit var programBuilder: ProgramBuilder
 
-    private fun ProgramBuilder.addRules(rules: List<Rule>) {
-        rules.forEach { r -> addRule(r) }
-    }
-
     @Test(expected = InvalidRuleException::class)
     fun emptyBody() {
-        program(programBuilder,
+        programWithRules(programBuilder,
             rule("foo",
                 headKept(
                     constraint("bar")
                 ))).run {
 
-            programBuilder.addRules(rules)
+            programBuilder.addHandler(MockHandler("test", null, rules))
             assertEquals(programBuilder.program("test").rules().count(), 1)
             assertEquals(programBuilder.program("test").rules().count(), 1)
         }
@@ -51,7 +47,7 @@ class TestProgramBuilder {
 
     @Test
     fun replace() {
-        program(programBuilder,
+        programWithRules(programBuilder,
             rule("foo",
                 headReplaced(
                     constraint("bar")
@@ -70,14 +66,14 @@ class TestProgramBuilder {
                     constraint("blah")
                 ))).run {
 
-            programBuilder.addRules(rules)
+            programBuilder.addHandler(MockHandler("test", null, rules))
             assertEquals(programBuilder.program("test").rules().count(), 2)
         }
     }
 
     @Test(expected = InvalidConstraintException::class)
     fun fail() {
-        program(programBuilder,
+        programWithRules(programBuilder,
             rule("foo",
                 headReplaced(
                     constraint("bar", 1)
@@ -86,7 +82,7 @@ class TestProgramBuilder {
                     constraint("bar", "1")
                 ))).run {
 
-            programBuilder.addRules(rules)
+            programBuilder.addHandler(MockHandler("test", null, rules))
         }
     }
 }

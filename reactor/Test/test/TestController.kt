@@ -61,7 +61,7 @@ class TestController {
 
     private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Controller {
         MockSession.init(sessionSolver(env.expressionSolver, env.equalsSolver))
-        val handler = Controller(rules, occurrences = listOf(* occurrences))
+        val handler = Controller(handlers, occurrences = listOf(* occurrences))
         MockSession.ourBackend.session.controller = handler
         return handler
     }
@@ -76,7 +76,7 @@ class TestController {
 
     @Test
     fun processSingle() {
-        program(
+        programWithRules(
             rule("main1",
                 headKept(
                     constraint("main")
@@ -95,7 +95,7 @@ class TestController {
 
     @Test
     fun processReplaced() {
-        program(
+        programWithRules(
             rule("main1",
                 headKept(
                     constraint("main")
@@ -125,7 +125,7 @@ class TestController {
     @Test
     fun basicExpression() {
         var test : String = "not initialized"
-        program(
+        programWithRules(
             rule("main",
                 headKept(
                     constraint("main")
@@ -143,7 +143,7 @@ class TestController {
     fun paramExpression() {
         var test = logical<String>("X")
         //"not initialized"
-        program(
+        programWithRules(
             rule("main",
                 headKept(
                     constraint("main")
@@ -162,7 +162,7 @@ class TestController {
         var test : String? = "not initialized"
         val x = logical<String>("x")
         x.setValue("expected")
-        program(
+        programWithRules(
             rule("main",
                 headKept(
                     constraint("main")
@@ -181,7 +181,7 @@ class TestController {
         var test : String? = "not initialized"
         val (x,y) = logical<String>("x", "y")
         x.setValue("expected")
-        program(
+        programWithRules(
             rule("main",
                 headKept(
                     constraint("main")
@@ -212,7 +212,7 @@ class TestController {
     fun basicGuard() {
         var test1 : String = "not initialized 1"
         var test2 : String = "not initialized 2"
-        program(
+        programWithRules(
             rule("main1",
                 headKept(
                     constraint("main")
@@ -243,7 +243,7 @@ class TestController {
     @Test
     fun basicMetaLogical() {
         val (X, Y) = metaLogical<String>("X", "Y")
-        program(
+        programWithRules(
             rule("rule1",
                 headReplaced(
                     constraint("foo", X)
@@ -269,7 +269,7 @@ class TestController {
 
     @Test
     fun occurrenceTerminated() {
-        program(
+        programWithRules(
             rule("first",
                 headKept( constraint("foo") ),          body( constraint("expected1") )
             ),
@@ -294,7 +294,7 @@ class TestController {
 
     @Test
     fun occurrenceKeptActive() {
-        program(
+        programWithRules(
             rule("first",
                 headKept( constraint("foo") ),          body( constraint("bar") )
             ),
@@ -320,7 +320,7 @@ class TestController {
     @Test
     fun occurrenceReactivated() {
         val X = metaLogical<Int>("X")
-        program(
+        programWithRules(
             rule("zeroth",
                 headKept( constraint("foo") ),          body( statement({ x -> x.set(999) }, X),
                                                               constraint("bar", X))
@@ -362,7 +362,7 @@ class TestController {
     @Test
     fun occurrenceReactivatedAfterUnion() {
         val (X, Y) = metaLogical<Int>("X", "Y")
-        program(
+        programWithRules(
             rule("first",
                 headKept( constraint("foo") ),
                                                         body( constraint("bar", X),
@@ -401,7 +401,7 @@ class TestController {
     @Test
     fun occurrenceReactivatedAfterUnionUnbound() {
         val (X, Y) = metaLogical<Int>("X", "Y")
-        program(
+        programWithRules(
             rule("first",
                 headKept( constraint("foo") ),
                                                         body( constraint("bar", X),
@@ -443,7 +443,7 @@ class TestController {
     fun correctRulesOrder() {
         val X= metaLogical<Int>("X")
 
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ x -> x.set(1) }, X),
                                                                     constraint("bar"),
@@ -476,7 +476,7 @@ class TestController {
         val (X1,Y1,Z1) = metaLogical<Int>("X1", "Y1", "Z1")
         val (X2,Y2,Z2) = metaLogical<Int>("X2", "Y2", "Z2")
         val (X3,Y3,Z3) = metaLogical<Int>("X3", "Y3", "Z3")
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ z -> z.set(0) }, Z1),
                                                                     constraint("foo", X1, Z1),
@@ -508,7 +508,7 @@ class TestController {
     @Test
     fun propagationHistory() {
         val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
                                                                     constraint("foo", Y),
@@ -540,7 +540,7 @@ class TestController {
         val X2 = metaLogical<Int>("X2")
         val (X3,Y3) = metaLogical<Int>("X3", "Y3")
         val X4 = metaLogical<Int>("X4")
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X1, Y1),  // rank(X) = 1
                                                                     statement({ x -> x.set(42) }, X1),
@@ -576,7 +576,7 @@ class TestController {
     @Test
     fun reactivateOnUnionKeepValue() {
         val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
                                                                     statement({ z -> z.set(42) }, Z),
@@ -605,7 +605,7 @@ class TestController {
     fun firstAlternative() {
         val (X, Y) = metaLogical<Int>("X", "Y")
 
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
                                                                     statement({ y -> y.set(7) }, Y),
@@ -627,7 +627,7 @@ class TestController {
     fun secondAlternative() {
         val (X, Y) = metaLogical<Int>("X", "Y")
 
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
                                                                     statement({ y -> y.set(13) }, Y),
@@ -649,7 +649,7 @@ class TestController {
     fun lastAlternativeFail() {
         val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
 
-        program(
+        programWithRules(
             rule("main",
                 headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
                                                                     statement({ y -> y.set(13) }, Y),

@@ -4,6 +4,7 @@ import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
 import TestConstraintOccurrence
 import jetbrains.mps.logic.reactor.core.StoreItem
+import org.jetbrains.kotlin.codegen.inline.getNewFieldsToGenerate
 import solver.EqualsSolver
 import solver.TestEqPredicate
 import java.util.*
@@ -12,7 +13,11 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class Builder(val env: Environment, val rules: List<Rule>) {
+class Builder(val env: Environment, val handlers: List<Handler>) {
+    @Deprecated(message = "use handlers")
+    val rules: List<Rule>
+        get() = handlers.flatMap { it.rules() }
+
 }
 
 class Environment(val programBuilder: ProgramBuilder? = null) {
@@ -20,34 +25,46 @@ class Environment(val programBuilder: ProgramBuilder? = null) {
     val expressionSolver = ExpressionSolver()
 }
 
-fun program(vararg ruleBuilders : Environment.() -> Rule): Builder {
-    return builder(Environment(), ruleBuilders)
+fun programWithRules(vararg ruleBuilders : Environment.() -> Rule): Builder {
+    return programWithRules(Environment(), ruleBuilders)
 }
 
-fun program(pb: ProgramBuilder, vararg ruleBuilders : Environment.() -> Rule): Builder {
-    return builder(Environment(pb), ruleBuilders)
+fun programWithRules(pb: ProgramBuilder, vararg ruleBuilders : Environment.() -> Rule): Builder {
+    return programWithRules(Environment(pb), ruleBuilders)
 }
 
-private fun builder(env: Environment, ruleBuilders: Array<out Environment.() -> Rule>): Builder {
-    val rules = ArrayList<Rule>()
+private fun programWithRules(env: Environment, ruleBuilders: Array<out Environment.() -> Rule>): Builder {
+    return builder(env, arrayOf(handler("test", null, * ruleBuilders)))
+}
+
+fun programWithHandlers(vararg handlerBuilders : Environment.() -> Handler): Builder {
+    return builder(Environment(), handlerBuilders)
+}
+
+private fun builder(env: Environment, handlerBlocks: Array<out Environment.() -> Handler>): Builder {
+    val handlers = ArrayList<Handler>()
     with (env) {
-        for (rb in ruleBuilders) {
-            rules.add(rb())
+        for (block in handlerBlocks) {
+            handlers.add(block())
         }
     }
-    return Builder(env, rules)
+    return Builder(env, handlers)
+}
+
+fun handler(name: String, primary: ConstraintSymbol?, vararg ruleBlocks: Environment.() -> Rule): Environment.() -> Handler = {
+    val hb = HandlerBuilder(name, primary)
+    for (block in ruleBlocks) {
+        hb.appendRule(this.block())
+    }
+    hb.toHandler()
 }
 
 fun rule(tag: String, vararg component:RB.() -> Unit): Environment.() -> Rule = {
-    rule(tag, this, * component)
-}
-
-fun rule(tag: String, env: Environment, vararg component:RB.() -> Unit): Rule {
-    val rb = RB(tag, env)
+    val rb = RB(this, tag)
     for (cmp in component) {
         rb.cmp()
     }
-    return rb.toRule()
+    rb.toRule()
 }
 
 fun headKept(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
@@ -81,26 +98,18 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestConstraintOccurrence(id, * args)
 
-class RB(tag: String, val env: Environment) : RuleBuilder(tag) {
+class RB(val env: Environment, tag: String) : RuleBuilder(tag) {
 
 }
 
-class ConjBuilder {
+class ConjBuilder(val type: Class<out AndItem>, val env: Environment) {
     val constraints = ArrayList<AndItem>()
-    val type: Class<out AndItem>
-    val env: Environment
-
-    constructor(type: Class<out AndItem>, env: Environment) {
-        this.type = type
-        this.env = env
-    }
 
     fun createConstraint(args: Array<out Any>, id: String): Constraint {
         return env.programBuilder ?.
             constraint(ConstraintSymbol(id, args.size), * args)     ?:
             MockConstraint(ConstraintSymbol(id, args.size), * args)
     }
-
 
     fun add(item: AndItem): Unit {
         if (!type.isAssignableFrom(item.javaClass))
@@ -109,6 +118,7 @@ class ConjBuilder {
         env.expressionSolver.addMaybeJavaPredicate(item)
     }
 
+    @Suppress("UNCHECKED_CAST")
     fun <T : AndItem> toArray(): Array<T> =
         if (Constraint::class.java.isAssignableFrom(type))
             Array<Constraint>(constraints.size) {
@@ -128,7 +138,7 @@ private fun buildConjunction(type: Class<out AndItem>,
                              env: Environment,
                              content: Array<out ConjBuilder.() -> Unit>): ConjBuilder
 {
-    var conjBuilder = ConjBuilder(type, env)
+    val conjBuilder = ConjBuilder(type, env)
     for (c in content) {
         conjBuilder.c()
     }

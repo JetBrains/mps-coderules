@@ -8,10 +8,7 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalUnification
 import jetbrains.mps.logic.reactor.logical.MetaLogical
-import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.Predicate
-import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.*
 import java.util.*
 
@@ -143,13 +140,13 @@ class Controller {
     private val profiler: Profiler?
 
     constructor(
-        programRules: Iterable<Rule>,
+        handlers: Iterable<Handler>,
         trace: EvaluationTrace = EvaluationTrace.NULL,
         profiler: Profiler? = null,
         // for testing purposes only
         occurrences: Iterable<ConstraintOccurrence>? = null)
     {
-        this.ruleIndex = RuleIndex(programRules)
+        this.ruleIndex = RuleIndex(handlers)
         this.trace = trace
         this.profiler = profiler
         if (occurrences != null) {

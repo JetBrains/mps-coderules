@@ -89,7 +89,7 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
     }
 
     fun launch(main: Constraint, profiler: Profiler?) {
-        this.controller = Controller(program.rules(), trace, profiler)
+        this.controller = Controller(program.handlers(), trace, profiler)
         controller.activate(main)
     }
 
