@@ -16,9 +16,7 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -276,9 +274,6 @@
       <property role="TrG5h" value="arity" />
       <property role="IQ2nx" value="7368070394767096851" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-      <node concept="asaX9" id="5bC6UNlv7_E" role="lGtFl">
-        <property role="YLQ7P" value="use getArity() behavior method (derived from parameter number)" />
-      </node>
     </node>
     <node concept="1TJgyj" id="1CgWc1TyPxy" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

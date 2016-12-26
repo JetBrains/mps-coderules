@@ -17,7 +17,6 @@
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.typesystem2.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -929,63 +928,6 @@
       <ref role="1YaFvo" to="tpee:fz7wK6G" resolve="BaseMethodCall" />
     </node>
   </node>
-  <node concept="18kY7G" id="5bC6UNlu6we">
-    <property role="TrG5h" value="check_ConstraintDeclaration" />
-    <property role="3GE5qa" value="constraint.template" />
-    <node concept="3clFbS" id="5bC6UNlu6wf" role="18ibNy">
-      <node concept="2Mj0R9" id="5bC6UNlu6MS" role="3cqZAp">
-        <node concept="Xl_RD" id="5bC6UNlu9V9" role="2MkJ7o">
-          <property role="Xl_RC" value="Arity must correspond with number of parameters" />
-        </node>
-        <node concept="1YBJjd" id="5bC6UNlu9T$" role="2OEOjV">
-          <ref role="1YBMHb" node="5bC6UNlu6wh" resolve="constraintDeclaration" />
-        </node>
-        <node concept="22lmx$" id="5bC6UNlB$Eu" role="2MkoU_">
-          <node concept="3clFbC" id="5bC6UNlu7iA" role="3uHU7B">
-            <node concept="2OqwBi" id="5bC6UNlu6yu" role="3uHU7B">
-              <node concept="1YBJjd" id="5bC6UNlu6wl" role="2Oq$k0">
-                <ref role="1YBMHb" node="5bC6UNlu6wh" resolve="constraintDeclaration" />
-              </node>
-              <node concept="3TrcHB" id="5bC6UNlu6H5" role="2OqNvi">
-                <ref role="3TsBF5" to="wq2x:6p0DfM0azKj" resolve="arity" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="5bC6UNlu8x_" role="3uHU7w">
-              <node concept="2OqwBi" id="5bC6UNlu7rx" role="2Oq$k0">
-                <node concept="1YBJjd" id="5bC6UNlu7jL" role="2Oq$k0">
-                  <ref role="1YBMHb" node="5bC6UNlu6wh" resolve="constraintDeclaration" />
-                </node>
-                <node concept="3Tsc0h" id="5bC6UNlu7AW" role="2OqNvi">
-                  <ref role="3TtcxE" to="wq2x:1CgWc1TyPxy" resolve="parameters" />
-                </node>
-              </node>
-              <node concept="34oBXx" id="5bC6UNlu9QL" role="2OqNvi" />
-            </node>
-          </node>
-          <node concept="3clFbC" id="5bC6UNlB$JQ" role="3uHU7w">
-            <node concept="2OqwBi" id="5bC6UNl$Gs2" role="3uHU7B">
-              <node concept="2OqwBi" id="5bC6UNl$Gs3" role="2Oq$k0">
-                <node concept="1YBJjd" id="5bC6UNl$Gs4" role="2Oq$k0">
-                  <ref role="1YBMHb" node="5bC6UNlu6wh" resolve="constraintDeclaration" />
-                </node>
-                <node concept="3Tsc0h" id="5bC6UNl$Gs5" role="2OqNvi">
-                  <ref role="3TtcxE" to="wq2x:1CgWc1TyPxy" resolve="parameters" />
-                </node>
-              </node>
-              <node concept="34oBXx" id="5bC6UNl$Gs6" role="2OqNvi" />
-            </node>
-            <node concept="3cmrfG" id="5bC6UNl$I8d" role="3uHU7w">
-              <property role="3cmrfH" value="0" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="5bC6UNlu6wh" role="1YuTPh">
-      <property role="TrG5h" value="constraintDeclaration" />
-      <ref role="1YaFvo" to="wq2x:6p0DfM0asBO" resolve="ConstraintDeclaration" />
-    </node>
-  </node>
   <node concept="18kY7G" id="5bC6UNlv2MQ">
     <property role="TrG5h" value="check_UserConstraint" />
     <property role="3GE5qa" value="constraint" />
@@ -1001,8 +943,8 @@
                 <ref role="3Tt5mk" to="wq2x:6p0DfM0aywA" resolve="template" />
               </node>
             </node>
-            <node concept="2qgKlT" id="5bC6UNlv7yy" role="2OqNvi">
-              <ref role="37wK5l" to="x5bw:1CgWc1TyEM4" resolve="getArity" />
+            <node concept="3TrcHB" id="2vGNdoJFSZz" role="2OqNvi">
+              <ref role="3TsBF5" to="wq2x:6p0DfM0azKj" resolve="arity" />
             </node>
           </node>
           <node concept="2OqwBi" id="5bC6UNlv3z0" role="3uHU7B">

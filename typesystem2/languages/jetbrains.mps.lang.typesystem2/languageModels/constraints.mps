@@ -100,6 +100,12 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
@@ -109,12 +115,21 @@
       <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
+      <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
+        <reference id="1147467295099" name="applicableProperty" index="EomxK" />
+        <child id="1147468630220" name="propertyGetter" index="EtsB7" />
+        <child id="1152963095733" name="propertySetter" index="1LXaQT" />
+      </concept>
+      <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
+      <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
       <concept id="1159285995602" name="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope" flags="ng" index="3EP7_v">
         <child id="1159286114227" name="searchScopeFactory" index="3EP$qY" />
       </concept>
+      <concept id="1152959968041" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" flags="in" index="1LLf8_" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213101058038" name="defaultScope" index="1MtirG" />
         <child id="1213106463729" name="canBeChild" index="1MLUbF" />
@@ -198,6 +213,7 @@
       </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
     </language>
   </registry>
   <node concept="1M2fIO" id="6ntBQ9KM5bM">
@@ -1046,6 +1062,37 @@
               <node concept="2qgKlT" id="4cKdPpqF98h" role="2OqNvi">
                 <ref role="37wK5l" to="tpek:7GulAc9z0dN" resolve="getOperandType" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="2vGNdoJFT55">
+    <property role="3GE5qa" value="constraint.template" />
+    <ref role="1M2myG" to="wq2x:6p0DfM0asBO" resolve="ConstraintDeclaration" />
+    <node concept="EnEH3" id="2vGNdoJFT56" role="1MhHOB">
+      <ref role="EomxK" to="wq2x:6p0DfM0azKj" resolve="arity" />
+      <node concept="Eqf_E" id="2vGNdoJFT58" role="EtsB7">
+        <node concept="3clFbS" id="2vGNdoJFT59" role="2VODD2">
+          <node concept="3clFbF" id="2vGNdoJFTmc" role="3cqZAp">
+            <node concept="2OqwBi" id="2vGNdoJFWAa" role="3clFbG">
+              <node concept="2OqwBi" id="2vGNdoJFTDI" role="2Oq$k0">
+                <node concept="EsrRn" id="2vGNdoJFTmb" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="2vGNdoJFUe5" role="2OqNvi">
+                  <ref role="3TtcxE" to="wq2x:1CgWc1TyPxy" resolve="parameters" />
+                </node>
+              </node>
+              <node concept="34oBXx" id="2vGNdoJFZxL" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1LLf8_" id="2vGNdoJFZPZ" role="1LXaQT">
+        <node concept="3clFbS" id="2vGNdoJFZQ0" role="2VODD2">
+          <node concept="3SKdUt" id="2vGNdoJG0a_" role="3cqZAp">
+            <node concept="3SKdUq" id="2vGNdoJG0aB" role="3SKWNk">
+              <property role="3SKdUp" value="can't be set" />
             </node>
           </node>
         </node>

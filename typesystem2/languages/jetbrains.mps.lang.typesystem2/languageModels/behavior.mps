@@ -71,7 +71,6 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -742,28 +741,6 @@
     </node>
     <node concept="13hLZK" id="1ffsG7bN0rG" role="13h7CW">
       <node concept="3clFbS" id="1ffsG7bN0rH" role="2VODD2" />
-    </node>
-  </node>
-  <node concept="13h7C7" id="1CgWc1TyELS">
-    <property role="3GE5qa" value="constraint.template" />
-    <ref role="13h7C2" to="wq2x:6p0DfM0asBO" resolve="ConstraintDeclaration" />
-    <node concept="13i0hz" id="1CgWc1TyEM4" role="13h7CS">
-      <property role="TrG5h" value="getArity" />
-      <node concept="3Tm1VV" id="1CgWc1TyEM5" role="1B3o_S" />
-      <node concept="3clFbS" id="1CgWc1TyEM6" role="3clF47">
-        <node concept="3clFbF" id="1CgWc1TyEMg" role="3cqZAp">
-          <node concept="2OqwBi" id="1CgWc1TyEOV" role="3clFbG">
-            <node concept="13iPFW" id="1CgWc1TyEMf" role="2Oq$k0" />
-            <node concept="3TrcHB" id="1CgWc1TyF9M" role="2OqNvi">
-              <ref role="3TsBF5" to="wq2x:6p0DfM0azKj" resolve="arity" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="10Oyi0" id="1CgWc1TyEMc" role="3clF45" />
-    </node>
-    <node concept="13hLZK" id="1CgWc1TyELT" role="13h7CW">
-      <node concept="3clFbS" id="1CgWc1TyELU" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="3PWU9gizUU7">
