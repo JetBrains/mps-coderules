@@ -81,6 +81,13 @@
       <property role="IQ2ns" value="7368070394767441299" />
       <ref role="20lvS9" node="4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
+    <node concept="1TJgyj" id="2vGNdoJLd0q" role="1TKVEi">
+      <property role="IQ2ns" value="2876899482279399450" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="primary" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2vGNdoJLd0b" resolve="ConstraintReference" />
+    </node>
     <node concept="PrWs8" id="6p0DfM0au2d" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -1326,6 +1333,19 @@
       <property role="20kJfa" value="predicate" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2vGNdoJLd0b">
+    <property role="EcuMT" value="2876899482279399435" />
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="ConstraintReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2vGNdoJLd0c" role="1TKVEi">
+      <property role="IQ2ns" value="2876899482279399436" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="constraint" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6p0DfM0asBO" resolve="ConstraintDeclaration" />
     </node>
   </node>
 </model>

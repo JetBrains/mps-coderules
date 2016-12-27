@@ -2043,9 +2043,11 @@
     <node concept="2tJIrI" id="4MqhgXUN1OI" role="jymVt" />
     <node concept="3clFb_" id="4MqhgXU9lmo" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="primary" />
-      <node concept="3uibUv" id="4MqhgXU9ln3" role="3clF45">
-        <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
+      <property role="TrG5h" value="primarySymbols" />
+      <node concept="A3Dl8" id="2vGNdoJH8yh" role="3clF45">
+        <node concept="3uibUv" id="2vGNdoJH8yj" role="A3Ik2">
+          <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
+        </node>
       </node>
       <node concept="3Tm1VV" id="4MqhgXU9lmr" role="1B3o_S" />
       <node concept="3clFbS" id="4MqhgXU9lms" role="3clF47" />
