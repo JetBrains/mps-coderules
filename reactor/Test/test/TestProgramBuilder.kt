@@ -39,7 +39,7 @@ class TestProgramBuilder {
                     constraint("bar")
                 ))).run {
 
-            programBuilder.addHandler(MockHandler("test", null, rules))
+            programBuilder.addHandler(MockHandler("test", emptyList(), rules))
             assertEquals(programBuilder.program("test").rules().count(), 1)
             assertEquals(programBuilder.program("test").rules().count(), 1)
         }
@@ -66,7 +66,7 @@ class TestProgramBuilder {
                     constraint("blah")
                 ))).run {
 
-            programBuilder.addHandler(MockHandler("test", null, rules))
+            programBuilder.addHandler(MockHandler("test", emptyList(), rules))
             assertEquals(programBuilder.program("test").rules().count(), 2)
         }
     }
@@ -82,7 +82,7 @@ class TestProgramBuilder {
                     constraint("bar", "1")
                 ))).run {
 
-            programBuilder.addHandler(MockHandler("test", null, rules))
+            programBuilder.addHandler(MockHandler("test", emptyList(), rules))
         }
     }
 }

@@ -27,7 +27,7 @@ class ProgramBuilder(val registry: ConstraintRegistry)  {
 
 }
 
-open class HandlerBuilder(val name: String, val primary: ConstraintSymbol?) {
+open class HandlerBuilder(val name: String, val primary: Iterable<ConstraintSymbol>) {
     val rules = ArrayList<Rule>()
 
     fun appendRule(rule: Rule) {
@@ -61,12 +61,12 @@ open class RuleBuilder(val tag: String) {
 
 class MockHandler(
     val name: String,
-    val primary: ConstraintSymbol?,
+    val primary: Iterable<ConstraintSymbol>,
     val rules: List<Rule>) : Handler() {
 
     override fun name(): String = name
 
-    override fun primarySymbol(): ConstraintSymbol? = primary
+    override fun primarySymbols(): Iterable<ConstraintSymbol> = primary
 
     override fun rules(): Iterable<Rule> = rules
 }

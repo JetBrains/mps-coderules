@@ -7,7 +7,7 @@ public abstract class Handler {
 
     public abstract String name();
 
-    public abstract ConstraintSymbol primarySymbol();
+    public abstract Iterable<ConstraintSymbol> primarySymbols();
 
     public abstract Iterable<Rule> rules();
 

@@ -184,13 +184,13 @@ class TestMatcher {
     @Test
     fun multipleHandlers() {
         programWithHandlers(
-            handler("handler1", ConstraintSymbol("foo", 0),
+            handler("handler1", listOf(ConstraintSymbol("foo", 0)),
                 rule("main1",
                     headKept(
                         constraint("foo")
                     ))
                 ),
-            handler("handler2", ConstraintSymbol("bar", 0),
+            handler("handler2", listOf(ConstraintSymbol("bar", 0)),
                 rule("main2",
                     headKept(
                         constraint("bar")

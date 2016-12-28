@@ -33,35 +33,30 @@ class RuleIndex : Iterable<Rule> {
 
     fun byTag(tag: String): Rule? = tag2rule[tag]
 
-    fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> {
-        val primary = primarySymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?: emptyList()
-        val all = allSymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?: emptyList()
-        return primary + all
-    }
+    fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> =
+        primarySymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?:
+            (allSymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?: emptyList())
 
     override fun iterator(): Iterator<Rule> = tag2rule.values.iterator()
 
     private fun buildIndex(handlers: Iterable<Handler>) {
+        // first, init the primary symbols value index
+        handlers
+            .flatMap { h -> h.primarySymbols() }
+            .forEach { symbol -> primarySymbol2valueIndex.getOrPut(symbol) { ValueIndex(symbol) } }
+
         for (h in handlers) {
-            val primaryValueIdx = h.primarySymbol()?.let { symbol ->
-                allSymbol2valueIndex.getOrPut(symbol) { ValueIndex(symbol) }
-            }
+            val hPrimSyms = h.primarySymbols().toSet()
             for (r in h.rules()) {
-                for (c in r.headKept()) {
-                    if (c.symbol() == h.primarySymbol()) {
-                        primaryValueIdx?.update(r, c)
-
-                    } else if (h.primarySymbol() == null) {
-                        allSymbol2valueIndex.getOrPut(c.symbol()) { ValueIndex(c.symbol()) }.update(r, c)
+                for (c in (r.headKept() + r.headReplaced())) {
+                    val symbol = c.symbol()
+                    if (symbol in hPrimSyms) {
+                        primarySymbol2valueIndex[symbol]?.update(r, c)
                     }
-                }
-                for (c in r.headReplaced()) {
-                    if (c.symbol() == h.primarySymbol()) {
-                        primaryValueIdx?.update(r, c)
-
-                    } else if (h.primarySymbol() == null) {
-                        allSymbol2valueIndex.getOrPut(c.symbol()) { ValueIndex(c.symbol()) }.update(r, c)
+                    else if (hPrimSyms.isEmpty()) {
+                        allSymbol2valueIndex.getOrPut(symbol) { ValueIndex(symbol) }.update(r, c)
                     }
+                    // else ignore the constraint -- it's not meant to be processed by this handler, as it is not a primary
                 }
             }
         }

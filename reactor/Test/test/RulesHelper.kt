@@ -34,7 +34,7 @@ fun programWithRules(pb: ProgramBuilder, vararg ruleBuilders : Environment.() ->
 }
 
 private fun programWithRules(env: Environment, ruleBuilders: Array<out Environment.() -> Rule>): Builder {
-    return builder(env, arrayOf(handler("test", null, * ruleBuilders)))
+    return builder(env, arrayOf(handler("test", emptyList(), * ruleBuilders)))
 }
 
 fun programWithHandlers(vararg handlerBuilders : Environment.() -> Handler): Builder {
@@ -51,7 +51,7 @@ private fun builder(env: Environment, handlerBlocks: Array<out Environment.() ->
     return Builder(env, handlers)
 }
 
-fun handler(name: String, primary: ConstraintSymbol?, vararg ruleBlocks: Environment.() -> Rule): Environment.() -> Handler = {
+fun handler(name: String, primary: Iterable<ConstraintSymbol>, vararg ruleBlocks: Environment.() -> Rule): Environment.() -> Handler = {
     val hb = HandlerBuilder(name, primary)
     for (block in ruleBlocks) {
         hb.appendRule(this.block())
