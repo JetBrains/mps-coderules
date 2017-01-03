@@ -1,18 +1,13 @@
 import jetbrains.mps.logic.reactor.core.Controller
 import jetbrains.mps.logic.reactor.core.SessionObjects
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
-import jetbrains.mps.logic.reactor.program.PredicateSymbol
-import jetbrains.mps.logic.reactor.program.Program
+import jetbrains.mps.logic.reactor.program.*
 import org.junit.*
 import org.junit.Assert.*
 import solver.EqualsSolver
 import solver.MockSessionSolver
+import solver.TestEqPredicate
 
 /**
  * @author Fedor Isakov
@@ -32,6 +27,7 @@ class TestController {
         lateinit var controller: Controller
         override fun handler(): Controller = controller
         override fun sessionSolver(): SessionSolver = solver
+        override fun storeView(): StoreView = TODO()
         override fun constraintSymbols(): MutableIterable<ConstraintSymbol> = TODO()
         override fun constraintOccurrences(): MutableIterable<ConstraintOccurrence> = TODO()
         override fun constraintOccurrences(symbol: ConstraintSymbol?): MutableIterable<ConstraintOccurrence> = TODO()
@@ -59,7 +55,7 @@ class TestController {
         MockSessionSolver(expressionSolver, equalsSolver).apply {
             init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
-    private fun Builder.handler(vararg occurrences: ConstraintOccurrence): Controller {
+    private fun Builder.controller(vararg occurrences: ConstraintOccurrence): Controller {
         MockSession.init(sessionSolver(env.expressionSolver, env.equalsSolver))
         val handler = Controller(handlers, occurrences = listOf(* occurrences))
         MockSession.ourBackend.session.controller = handler
@@ -85,10 +81,10 @@ class TestController {
                     constraint("foo")
                 ))
         ).run {
-            handler().apply { queue(occurrence("main")) }.let { rh ->
+            controller().evaluate(occurrence("main")).let { view ->
                 assertEquals(
                     setOf(ConstraintSymbol("main", 0), ConstraintSymbol("foo", 0)),
-                    rh.allOccurrences().map { it.constraint().symbol() }.toSet())
+                    view.allOccurrences().map { it.constraint().symbol() }.toSet())
             }
         }
     }
@@ -114,10 +110,10 @@ class TestController {
                     constraint("bar")
                 ))
         ).run {
-            handler().apply { queue(occurrence("main")) }.let { rh ->
+            controller().evaluate(occurrence("main")).let { view ->
                 assertEquals(
                     setOf(ConstraintSymbol("bar", 0), ConstraintSymbol("foo", 0)),
-                    rh.allOccurrences().map { it.constraint().symbol() }.toSet())
+                    view.allOccurrences().map { it.constraint().symbol() }.toSet())
             }
         }
     }
@@ -134,7 +130,7 @@ class TestController {
                     statement { test = "value" }
                 ))
         ).run {
-            handler().queue(occurrence("main"))
+            controller().evaluate(occurrence("main"))
             assertEquals("value", test)
         }
     }
@@ -152,7 +148,7 @@ class TestController {
                     statement ({ test.set("value") })
                 ))
         ).run {
-            handler().queue(occurrence("main"))
+            controller().evaluate(occurrence("main"))
             assertEquals("value", test.get())
         }
     }
@@ -171,7 +167,7 @@ class TestController {
                     statement ({ test = x.get() } )
                 ))
         ).run {
-            handler().queue(occurrence("main"))
+            controller().evaluate(occurrence("main"))
             assertEquals("expected", test)
         }
     }
@@ -198,8 +194,7 @@ class TestController {
                     statement ({ test = y.get() })
                 ))
         ).run {
-            handler().apply {
-                queue(occurrence("main"))
+            controller().evaluate(occurrence("main")).run {
                 assertEquals(
                     setOf(ConstraintSymbol("main", 0), ConstraintSymbol("next", 0)),
                     allOccurrences().map { it.constraint().symbol() }.toSet())
@@ -234,7 +229,7 @@ class TestController {
                     statement { test2 = "expected" }
                 ))
         ).run {
-            handler().queue(occurrence("main"))
+            controller().evaluate(occurrence("main"))
             assertEquals("not initialized 1", test1)
             assertEquals("expected", test2)
         }
@@ -243,6 +238,7 @@ class TestController {
     @Test
     fun basicMetaLogical() {
         val (X, Y) = metaLogical<String>("X", "Y")
+        val a = logical<String>("a")
         programWithRules(
             rule("rule1",
                 headReplaced(
@@ -253,11 +249,9 @@ class TestController {
                     constraint("bar", Y)
                 )
             )
-        ).handler().run {
-            val a = logical<String>("a")
-            a.set("value")
-            queue(occurrence("foo", a))
-            assertEquals(1, allOccurrences().size)
+        ).controller().apply {
+            a.set("value") }.evaluate(occurrence("foo", a)).run {
+            assertSame(1, allOccurrences().toList().size)
             val co = allOccurrences().first()
             assertEquals(ConstraintSymbol("bar",1), co.constraint().symbol())
             assertEquals(1, co.arguments().size)
@@ -284,8 +278,7 @@ class TestController {
                                 constraint("foo") ),
                                                         body( constraint("expected2") )
             )
-        ).handler().run {
-            queue(occurrence("foo"))
+        ).controller().evaluate(occurrence("foo")).run {
             assertEquals(
                 setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0)),
                 allOccurrences().map { co -> co.constraint().symbol() }.toSet())
@@ -309,8 +302,7 @@ class TestController {
                 headReplaced( constraint("bar") ),
                                                         body( constraint("expected2") )
             )
-        ).handler().run {
-            queue(occurrence("foo"))
+        ).controller().evaluate(occurrence("foo")).run {
             assertEquals(
                 setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0)),
                 allOccurrences().map { co -> co.constraint().symbol() }.toSet())
@@ -348,8 +340,7 @@ class TestController {
                 headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 999 }, X)),
                                                         body( constraint("expected3", X))
             )
-        ).handler().run {
-            queue(occurrence("foo"))
+        ).controller().evaluate(occurrence("foo")).run {
             assertEquals(3, allOccurrences().count())
             assertEquals(
                 setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0), ConstraintSymbol("expected3", 1)),
@@ -387,8 +378,7 @@ class TestController {
                 headKept( constraint("bar", X) ),
                                                         body( constraint("expected3", X))
             )
-        ).handler().run {
-            queue(occurrence("foo"))
+        ).controller().evaluate(occurrence("foo")).run {
             assertEquals(3, allOccurrences().count())
             assertEquals(
                 setOf(ConstraintSymbol("expected1", 0), ConstraintSymbol("expected2", 0), ConstraintSymbol("expected3", 1)),
@@ -426,8 +416,7 @@ class TestController {
                 headKept( constraint("bar", X) ),
                                                         body( constraint("expected3", X))
             )
-        ).handler().run {
-            queue(occurrence("foo"))
+        ).controller().evaluate(occurrence("foo")).run {
             assertEquals(3, allOccurrences().count())
             assertEquals(setOf( ConstraintSymbol("expected1", 0),
                                 ConstraintSymbol("expected2", 0),
@@ -463,8 +452,7 @@ class TestController {
                                                             guard(  expression({ x -> x.get() != 0 }, X) ),
                                                             body(   constraint("foo_non_zero") )
             )
-        ).handler().run {
-            queue(occurrence("main"))
+        ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf(ConstraintSymbol("bar", 0), ConstraintSymbol("foo_and_bar", 0)), constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol("foo_and_bar", 0)).count())
             assertEquals(1, occurrences(ConstraintSymbol("bar", 0)).count())
@@ -493,8 +481,7 @@ class TestController {
                 headReplaced( constraint("foo", Y3, Z3) ),  guard(  expression({ x, y ->  is_eq(x, y) }, X3, Y3)),
                                                             body(   constraint("replaced") )
             )
-        ).handler().run {
-            queue(occurrence("main"))
+        ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf( ConstraintSymbol("foo", 2),
                                 ConstraintSymbol("capture", 1),
                                 ConstraintSymbol("replaced", 0)),
@@ -521,8 +508,7 @@ class TestController {
                 headKept( constraint("bar", Y) ),
                                                             body(   constraint("foobar") )
             )
-        ).handler().run {
-            queue(occurrence("main"))
+        ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf( ConstraintSymbol("foo", 1),
                                 ConstraintSymbol("bar", 1),
                                 ConstraintSymbol("foobar", 0)),
@@ -563,8 +549,7 @@ class TestController {
                 headReplaced( constraint("foobar", X4) ),
                                                             body(   constraint("unexpected") )
             )
-        ).handler().run {
-            queue(occurrence("main"))
+        ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf( ConstraintSymbol("blah", 0),
                                 ConstraintSymbol("expected", 0)),
                          constraintSymbols())
@@ -591,8 +576,7 @@ class TestController {
                 headKept( constraint("foo", X) ),           guard(  expression({ x -> x.getNullable() != null }, X) ),
                                                             body(   constraint("assigned") )
             )
-        ).handler().run {
-            queue(occurrence("main"))
+        ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf( ConstraintSymbol("foo", 1),
                                 ConstraintSymbol("assigned", 0)),
                          constraintSymbols())
@@ -616,8 +600,7 @@ class TestController {
                                                                         constraint("expected") ),
                                                             altBody(    constraint("unexpected") )
             )
-        ).handler().run {
-            queue(occurrence("main"))
+        ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf(ConstraintSymbol("expected", 0)), constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol.symbol("expected", 0)).count())
         }
@@ -638,8 +621,7 @@ class TestController {
                                                                         constraint("unexpected") ),
                                                             altBody(    constraint("expected") )
             )
-        ).handler().run {
-            queue(occurrence("main"))
+        ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf(ConstraintSymbol("expected", 0)), constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol.symbol("expected", 0)).count())
         }
@@ -662,12 +644,12 @@ class TestController {
                                                             altBody(    equals(X, Z),
                                                                         constraint("unexpected2") )
             )
-        ).handler().run {
+        ).controller().run {
             try {
-                queue(occurrence("main"))
+                evaluate(occurrence("main"))
             }
             finally {
-                assertEquals(emptySet<ConstraintSymbol>(), constraintSymbols())
+                assertEquals(emptySet<ConstraintSymbol>(), storeView().constraintSymbols())
             }
         }
     }

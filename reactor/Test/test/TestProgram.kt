@@ -9,7 +9,6 @@ import org.junit.*
 import org.junit.Assert.*
 import program.MockConstraint
 import solver.eq
-import solver.is_eq
 
 /**
  * @author Fedor Isakov

@@ -6,6 +6,7 @@ import com.github.andrewoma.dexx.collection.Maps
 import com.github.andrewoma.dexx.collection.internal.base.AbstractSet
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -205,6 +206,8 @@ class Store : LogicalObserver, OccurrenceIndex {
         return symbol2occurrences.values().flatten().filter { co -> co.isStored() }.asSequence()
     }
 
+    fun view(): StoreView = StoreViewImpl(allOccurrences())
+
     override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> {
         return (symbol2occurrences[symbol] ?: emptySet()).filter { co -> co.isStored() }
     }
@@ -253,7 +256,20 @@ class Store : LogicalObserver, OccurrenceIndex {
 
 }
 
+class StoreViewImpl(occurrences: Sequence<ConstraintOccurrence>) : StoreView {
 
+    val allOccurrences = occurrences.toSet()
+
+    val allSymbols = allOccurrences.map { co -> co.constraint().symbol() }.toSet()
+
+    override fun constraintSymbols(): Iterable<ConstraintSymbol> = allSymbols
+
+    override fun allOccurrences(): Iterable<ConstraintOccurrence> = allOccurrences
+
+    override fun occurrences(symbol: ConstraintSymbol?): Iterable<ConstraintOccurrence> =
+        allOccurrences.filter { co -> co.constraint().symbol() == symbol }.toSet()
+
+}
 
 private data class Occurrence(val currentFrame: () -> Frame, val constraint: Constraint, val arguments: List<*>) :
     ConstraintOccurrence,
@@ -281,13 +297,13 @@ private data class Occurrence(val currentFrame: () -> Frame, val constraint: Con
 
     override fun valueUpdated(logical: Logical<*>) {
         if (alive) {
-            (EvaluationSession.current() as SessionObjects).handler().queue(this)
+            (EvaluationSession.current() as SessionObjects).handler().reactivate(this)
         }
     }
 
     override fun parentUpdated(logical: Logical<*>) {
         if (alive) {
-            (EvaluationSession.current() as SessionObjects).handler().queue(this)
+            (EvaluationSession.current() as SessionObjects).handler().reactivate(this)
         }
     }
 

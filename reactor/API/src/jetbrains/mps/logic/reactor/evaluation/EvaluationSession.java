@@ -34,15 +34,27 @@ public abstract class EvaluationSession {
     public abstract EvaluationSession.Config withParam(String key, Object param);
 
     public abstract EvaluationSession start(SessionSolver sessionSolver);
+
   }
 
   public abstract SessionSolver sessionSolver();
 
-  public abstract Iterable<ConstraintSymbol> constraintSymbols();
+  public abstract StoreView storeView();
 
-  public abstract Iterable<ConstraintOccurrence> constraintOccurrences();
+  @Deprecated
+  public Iterable<ConstraintSymbol> constraintSymbols() {
+      throw new UnsupportedOperationException();
+  }
 
-  public abstract Iterable<ConstraintOccurrence> constraintOccurrences(ConstraintSymbol symbol);
+  @Deprecated
+  public Iterable<ConstraintOccurrence> constraintOccurrences() {
+      throw new UnsupportedOperationException();
+  }
+
+  @Deprecated
+  public Iterable<ConstraintOccurrence> constraintOccurrences(ConstraintSymbol symbol) {
+      throw new UnsupportedOperationException();
+  }
 
   protected static void setBackend(EvaluationSession.Backend backend) {
     if (ourBackend != null) {

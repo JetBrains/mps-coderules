@@ -154,26 +154,31 @@ class Controller {
         }
     }
 
-    fun allOccurrences(): Set<ConstraintOccurrence> =
-        frameStack.current.store.allOccurrences().toSet()
-
-    fun constraintSymbols(): Set<ConstraintSymbol> =
-        frameStack.current.store.allOccurrences().map { co -> co.constraint().symbol() }.toSet()
-
-    fun occurrences(symbol: ConstraintSymbol): Set<ConstraintOccurrence> =
-        frameStack.current.store.allOccurrences().filter { co -> co.constraint().symbol() == symbol }.toSet()
+    fun storeView(): StoreView =
+        frameStack.current.store.view()
 
     fun activate(constraint: Constraint) {
         try {
-            queue(constraint.occurrence({ frameStack.current }, noLogicalContext))
+            process(constraint.occurrence({ frameStack.current }, noLogicalContext))
         }
         catch (t: Throwable) {
             throw t
         }
     }
 
-    fun queue(occurrence: ConstraintOccurrence) {
+    fun reactivate(occurrence: ConstraintOccurrence) {
+        try {
+            process(occurrence)
+        }
+        catch (t: Throwable) {
+            throw t
+        }
+    }
+
+    /** For tests only */
+    fun evaluate(occurrence: ConstraintOccurrence): StoreView {
         process(occurrence)
+        return storeView()
     }
 
     private fun process(active: ConstraintOccurrence) {
