@@ -1633,13 +1633,6 @@
                     <ref role="HV5vE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="2tcGHBEiyPi" role="37wK5m">
-                  <ref role="3cqZAo" node="2tcGHBEiyPf" resolve="symbols" />
-                </node>
-                <node concept="10M0yZ" id="5rhZO$U4FIT" role="37wK5m">
-                  <ref role="1PxDUh" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
-                  <ref role="3cqZAo" to="yg8f:24Vro6cS5rK" resolve="NULL" />
-                </node>
               </node>
             </node>
             <node concept="37vLTw" id="fHk0tWuoLQ" role="37vLTJ">
@@ -1756,7 +1749,7 @@
               <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asTreeForm" />
               <node concept="2ShNRf" id="6yEjedm71hw" role="37wK5m">
                 <node concept="1pGfFk" id="6yEjedm71hx" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="MemLogical" />
                   <node concept="2ShNRf" id="6yEjedm71hy" role="37wK5m">
                     <node concept="1pGfFk" id="6yEjedm71hz" role="2ShVmc">
                       <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
@@ -1793,7 +1786,7 @@
               <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="7nuzzkr25az" role="37wK5m">
                 <node concept="1pGfFk" id="7nuzzkr25a$" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String,java.lang.Object)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="MemLogical" />
                   <node concept="2ShNRf" id="6yEjedm9JNO" role="37wK5m">
                     <node concept="1pGfFk" id="6yEjedm9KbK" role="2ShVmc">
                       <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
@@ -4602,7 +4595,7 @@
         <node concept="3clFbF" id="6yEjedm8Fwv" role="3cqZAp">
           <node concept="2ShNRf" id="6yEjedm8Fww" role="3clFbG">
             <node concept="1pGfFk" id="6yEjedm8Fwx" role="2ShVmc">
-              <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+              <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="MemLogical" />
               <node concept="10QFUN" id="6yEjedm9wbU" role="37wK5m">
                 <node concept="3uibUv" id="6yEjedm9wg_" role="10QFUM">
                   <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
@@ -5395,13 +5388,6 @@
                     <ref role="HV5vE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="6yEjedm8fRM" role="37wK5m">
-                  <ref role="3cqZAo" node="6yEjedm8eks" resolve="symbols" />
-                </node>
-                <node concept="10M0yZ" id="6yEjedm8fRN" role="37wK5m">
-                  <ref role="1PxDUh" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
-                  <ref role="3cqZAo" to="yg8f:24Vro6cS5rK" resolve="NULL" />
-                </node>
               </node>
             </node>
           </node>
@@ -5409,11 +5395,8 @@
         <node concept="3clFbF" id="3K_0akS$Mxh" role="3cqZAp">
           <node concept="37vLTI" id="3K_0akS$Mxi" role="3clFbG">
             <node concept="2ShNRf" id="3K_0akS$Mxm" role="37vLTx">
-              <node concept="1pGfFk" id="3K_0akS$Mxn" role="2ShVmc">
-                <ref role="37wK5l" to="mqqo:6yEjedm8sAV" resolve="TestingEqualsSolver" />
-                <node concept="37vLTw" id="6yEjedm8g4D" role="37wK5m">
-                  <ref role="3cqZAo" node="6yEjedm8eks" resolve="symbols" />
-                </node>
+              <node concept="HV5vD" id="5jCHAT1JqUG" role="2ShVmc">
+                <ref role="HV5vE" to="mqqo:6yEjedm8s$A" resolve="TestingEqualsSolver" />
               </node>
             </node>
             <node concept="37vLTw" id="3K_0akS$MRU" role="37vLTJ">

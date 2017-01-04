@@ -954,11 +954,16 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="3GlpCDSF4ls" role="37vLTx">
-                  <node concept="37vLTw" id="3GlpCDSF4lt" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationSession" />
+                  <node concept="2OqwBi" id="5jCHAT1QTrY" role="2Oq$k0">
+                    <node concept="37vLTw" id="3GlpCDSF4lt" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationSession" />
+                    </node>
+                    <node concept="liA8E" id="5jCHAT1QTDv" role="2OqNvi">
+                      <ref role="37wK5l" to="w7la:~EvaluationSession.storeView():jetbrains.mps.logic.reactor.evaluation.StoreView" resolve="storeView" />
+                    </node>
                   </node>
                   <node concept="liA8E" id="3GlpCDSF4lu" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~EvaluationSession.constraintOccurrences():java.lang.Iterable" resolve="constraintOccurrences" />
+                    <ref role="37wK5l" to="w7la:~StoreView.allOccurrences():java.lang.Iterable" resolve="allOccurrences" />
                   </node>
                 </node>
               </node>
@@ -1115,6 +1120,22 @@
           </node>
         </node>
         <node concept="3clFbH" id="3F6vMxqrhDU" role="3cqZAp" />
+        <node concept="3cpWs8" id="5jCHAT1QROE" role="3cqZAp">
+          <node concept="3cpWsn" id="5jCHAT1QROF" role="3cpWs9">
+            <property role="TrG5h" value="storeView" />
+            <node concept="3uibUv" id="5jCHAT1QROC" role="1tU5fm">
+              <ref role="3uigEE" to="w7la:~StoreView" resolve="StoreView" />
+            </node>
+            <node concept="2OqwBi" id="5jCHAT1QROG" role="33vP2m">
+              <node concept="37vLTw" id="5jCHAT1QROH" role="2Oq$k0">
+                <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationSession" />
+              </node>
+              <node concept="liA8E" id="5jCHAT1QROI" role="2OqNvi">
+                <ref role="37wK5l" to="w7la:~EvaluationSession.storeView():jetbrains.mps.logic.reactor.evaluation.StoreView" resolve="storeView" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="5mr7UHcc5Jm" role="3cqZAp">
           <node concept="3clFbS" id="5mr7UHcc5Jo" role="2LFqv$">
             <node concept="1DcWWT" id="5mr7UHccsMF" role="3cqZAp">
@@ -1187,11 +1208,11 @@
                 </node>
               </node>
               <node concept="2OqwBi" id="5mr7UHcctx2" role="1DdaDG">
-                <node concept="37vLTw" id="5mr7UHcctpr" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationSession" />
+                <node concept="37vLTw" id="5jCHAT1QT8_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5jCHAT1QROF" resolve="storeView" />
                 </node>
                 <node concept="liA8E" id="5mr7UHcct$i" role="2OqNvi">
-                  <ref role="37wK5l" to="w7la:~EvaluationSession.constraintOccurrences(jetbrains.mps.logic.reactor.program.ConstraintSymbol):java.lang.Iterable" resolve="constraintOccurrences" />
+                  <ref role="37wK5l" to="w7la:~StoreView.occurrences(jetbrains.mps.logic.reactor.program.ConstraintSymbol):java.lang.Iterable" resolve="occurrences" />
                   <node concept="37vLTw" id="5mr7UHcctGr" role="37wK5m">
                     <ref role="3cqZAo" node="5mr7UHcc5Jp" resolve="cs" />
                   </node>
@@ -1206,11 +1227,11 @@
             </node>
           </node>
           <node concept="2OqwBi" id="5mr7UHcc6Lo" role="1DdaDG">
-            <node concept="37vLTw" id="5mr7UHcc6_i" role="2Oq$k0">
-              <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationSession" />
+            <node concept="37vLTw" id="5jCHAT1QROJ" role="2Oq$k0">
+              <ref role="3cqZAo" node="5jCHAT1QROF" resolve="storeView" />
             </node>
             <node concept="liA8E" id="5mr7UHcc6U$" role="2OqNvi">
-              <ref role="37wK5l" to="w7la:~EvaluationSession.constraintSymbols():java.lang.Iterable" resolve="constraintSymbols" />
+              <ref role="37wK5l" to="w7la:~StoreView.constraintSymbols():java.lang.Iterable" resolve="constraintSymbols" />
             </node>
           </node>
         </node>
