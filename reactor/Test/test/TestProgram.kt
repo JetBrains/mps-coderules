@@ -1,5 +1,6 @@
 import jetbrains.mps.logic.reactor.core.MemEvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import solver.MockSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
@@ -25,15 +26,16 @@ class TestProgram {
         }
     }
 
-    private fun Builder.session(name: String): EvaluationSession {
+    private fun Builder.session(name: String): StoreView {
         val sessionSolver = MockSessionSolver(env.expressionSolver, env.equalsSolver)
         val programBuilder = ProgramBuilder(ConstraintRegistry(sessionSolver))
         for (h in handlers) {
             programBuilder.addHandler(h)
         }
-        return EvaluationSession.newSession(programBuilder.program(name)).
+        val session = EvaluationSession.newSession(programBuilder.program(name)).
             withPredicates(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3).
             withParam("main", MockConstraint(ConstraintSymbol("main", 0))).start(sessionSolver)
+        return session.storeView()
     }
 
     @Test
@@ -83,8 +85,8 @@ class TestProgram {
             )
         ).session("logicalValue").run {
             assertEquals(setOf(ConstraintSymbol("foo", 1), ConstraintSymbol("bar", 1)), constraintSymbols())
-            assertEquals(2, constraintOccurrences().count())
-            val yval = constraintOccurrences(ConstraintSymbol("bar", 1)).first().arguments().first()
+            assertEquals(2, allOccurrences().count())
+            val yval = occurrences(ConstraintSymbol("bar", 1)).first().arguments().first()
             assertEquals(66, (yval as Logical<Int>).get())
         }
     }
@@ -106,10 +108,10 @@ class TestProgram {
             )
         ).session("dec").run {
             assertEquals(setOf(ConstraintSymbol("val", 1), ConstraintSymbol("trail", 1)), constraintSymbols())
-            assertEquals(1, constraintOccurrences(ConstraintSymbol.symbol("val", 1)).count())
-            val a = constraintOccurrences(ConstraintSymbol.symbol("val", 1)).first().arguments().first()
+            assertEquals(1, occurrences(ConstraintSymbol.symbol("val", 1)).count())
+            val a = occurrences(ConstraintSymbol.symbol("val", 1)).first().arguments().first()
             assertEquals(0, (a as Logical<Int>).get())
-            assertEquals(5, constraintOccurrences(ConstraintSymbol.symbol("trail", 1)).count())
+            assertEquals(5, occurrences(ConstraintSymbol.symbol("trail", 1)).count())
         }
     }
 
@@ -135,8 +137,8 @@ class TestProgram {
                 )
             )
         ).session("gcd").run {
-            assertEquals(1, constraintOccurrences().count())
-            val arg = constraintOccurrences().first().arguments().first()
+            assertEquals(1, allOccurrences().count())
+            val arg = allOccurrences().first().arguments().first()
             assertEquals(7, (arg as Logical<Int>).get())
         }
     }
@@ -162,8 +164,8 @@ class TestProgram {
                                                         body(   statement { } /* nothing */     )
             )
         ).session("primes").run {
-            assertEquals(4, constraintOccurrences().count())
-            assertEquals(setOf(2,3,5,7),                constraintOccurrences(ConstraintSymbol.symbol("prime", 1)).
+            assertEquals(4, allOccurrences().count())
+            assertEquals(setOf(2,3,5,7),                occurrences(ConstraintSymbol.symbol("prime", 1)).
                                                             flatMap { co -> co.arguments() }.
                                                             map { a -> (a as Logical<Int>).findRoot().value() }.
                                                             toSet())

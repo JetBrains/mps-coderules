@@ -1,9 +1,6 @@
 package solver
 
-import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
-import jetbrains.mps.logic.reactor.evaluation.Queryable
-import jetbrains.mps.logic.reactor.evaluation.SessionSolver
-import jetbrains.mps.logic.reactor.evaluation.Solver
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 
@@ -29,7 +26,4 @@ open class MockSessionSolver(val expressionSolver: Solver, val equalsSolver: Sol
         }
     }
 
-    override fun queueIfBusy(runnable: Runnable): Boolean = false
-
-    override fun fail(message: String) = throw IllegalStateException (message)
 }

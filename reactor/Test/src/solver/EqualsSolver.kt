@@ -100,7 +100,6 @@ class EqualsSolver  : Solver {
         if (!condition) throw EvaluationFailureException("condition is not satisfied")
     }
 
-    private fun ERROR(msg: String) : Nothing = throw IllegalArgumentException(msg)
 }
 
 infix fun <T : Any> Logical<T>.eq(value: T) {

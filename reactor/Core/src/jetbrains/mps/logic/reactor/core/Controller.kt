@@ -286,7 +286,7 @@ class Controller {
         profiler.profile<Boolean>("ask_${invocation.predicate().symbol()}", {
 
             // TODO: provide SessionSolver as part of evaluation session
-            val result = EvaluationSession.current().sessionSolver().ask(invocation)
+            val result = EvaluationSession.current().sessionQueryable().ask(invocation)
 //            trace.ask(result, invocation)
             return result
 
@@ -297,7 +297,7 @@ class Controller {
 
             // TODO: provide SessionSolver as part of evaluation session
 //            trace.tell(invocation)
-            EvaluationSession.current().sessionSolver().tell(invocation)
+            EvaluationSession.current().sessionInstructible().tell(invocation)
 
         }
     }

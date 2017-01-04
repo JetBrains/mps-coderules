@@ -27,10 +27,9 @@ class TestController {
         lateinit var controller: Controller
         override fun handler(): Controller = controller
         override fun sessionSolver(): SessionSolver = solver
+        override fun sessionInstructible(): Instructible = solver
+        override fun sessionQueryable(): Queryable = solver
         override fun storeView(): StoreView = TODO()
-        override fun constraintSymbols(): MutableIterable<ConstraintSymbol> = TODO()
-        override fun constraintOccurrences(): MutableIterable<ConstraintOccurrence> = TODO()
-        override fun constraintOccurrences(symbol: ConstraintSymbol?): MutableIterable<ConstraintOccurrence> = TODO()
 
         class MockBackend(val session: MockSession) : Backend {
             override fun current(): EvaluationSession = session

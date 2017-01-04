@@ -97,17 +97,12 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
 
     override fun sessionSolver(): SessionSolver = sessionSolver
 
+    override fun sessionInstructible(): Instructible = sessionSolver
+
+    override fun sessionQueryable(): Queryable = sessionSolver
+
     override fun storeView(): StoreView =
         controller.storeView()
-
-    override fun constraintSymbols(): Iterable<ConstraintSymbol> =
-        storeView().constraintSymbols()
-
-    override fun constraintOccurrences(): Iterable<ConstraintOccurrence> =
-        storeView().allOccurrences()
-
-    override fun constraintOccurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
-        storeView().occurrences(symbol)
 
     private class Backend : EvaluationSession.Backend {
 

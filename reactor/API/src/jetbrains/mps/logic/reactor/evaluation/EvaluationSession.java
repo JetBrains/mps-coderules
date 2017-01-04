@@ -39,22 +39,11 @@ public abstract class EvaluationSession {
 
   public abstract SessionSolver sessionSolver();
 
+  public abstract Instructible sessionInstructible();
+
+  public abstract Queryable sessionQueryable();
+
   public abstract StoreView storeView();
-
-  @Deprecated
-  public Iterable<ConstraintSymbol> constraintSymbols() {
-      throw new UnsupportedOperationException();
-  }
-
-  @Deprecated
-  public Iterable<ConstraintOccurrence> constraintOccurrences() {
-      throw new UnsupportedOperationException();
-  }
-
-  @Deprecated
-  public Iterable<ConstraintOccurrence> constraintOccurrences(ConstraintSymbol symbol) {
-      throw new UnsupportedOperationException();
-  }
 
   protected static void setBackend(EvaluationSession.Backend backend) {
     if (ourBackend != null) {

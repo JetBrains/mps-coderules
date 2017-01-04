@@ -59,20 +59,7 @@ public abstract class SessionSolver implements Instructible, Queryable {
     solver.tell(invocation);
   }
 
-  public abstract boolean queueIfBusy(Runnable runnable);
-
-  public abstract void fail(String message);
-
-  public Queryable lookupQueryable(Class<?> clazz) {
-    for (Map.Entry<PredicateSymbol, Solver> e : solvers.entrySet()) {
-      Queryable queryable = e.getValue();
-      if (clazz.isAssignableFrom(queryable.getClass())) {
-        return queryable;
-      }
-    }
-    return null;
-  }
-
+  @Deprecated
   public abstract Class<? extends Queryable> solverClass(PredicateSymbol predicateSymbol);
 
   protected abstract void registerSymbol(PredicateSymbol predicateSymbol, EvaluationTrace computingTracer);
@@ -119,4 +106,5 @@ public abstract class SessionSolver implements Instructible, Queryable {
 
   private Map<PredicateSymbol, Solver> solvers = new HashMap<PredicateSymbol, Solver>();
   private EvaluationTrace tracer = EvaluationTrace.NULL;
+
 }
