@@ -482,8 +482,8 @@
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="1ggxSI7z1S8" role="3clF47" />
       <node concept="3Tm1VV" id="1ggxSI7z1OS" role="1B3o_S" />
-      <node concept="3uibUv" id="1ggxSI7z1Pj" role="3clF45">
-        <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
+      <node concept="3uibUv" id="5jCHAT2vM0V" role="3clF45">
+        <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
       </node>
     </node>
     <node concept="2tJIrI" id="4OKkcnfu_xm" role="jymVt" />

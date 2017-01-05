@@ -44,6 +44,7 @@
     <import index="ba7m" ref="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.aspect.generator.template.main@generator)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.typesystem2.aspect)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
@@ -3946,8 +3947,8 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3Tm1VV" id="1ggxSI7z25J" role="1B3o_S" />
-      <node concept="3uibUv" id="1ggxSI7z25K" role="3clF45">
-        <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
+      <node concept="3uibUv" id="5jCHAT2vJrl" role="3clF45">
+        <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
       </node>
       <node concept="3clFbS" id="1ggxSI7z25L" role="3clF47">
         <node concept="3clFbF" id="1ggxSI7z28i" role="3cqZAp">
@@ -14520,7 +14521,7 @@
   <node concept="312cEu" id="1sCZQVeRJry">
     <property role="TrG5h" value="ExpressionSolver" />
     <property role="3GE5qa" value="expression" />
-    <node concept="2tJIrI" id="1sCZQVeRJsO" role="jymVt" />
+    <node concept="2tJIrI" id="5jCHAT24Luj" role="jymVt" />
     <node concept="3clFb_" id="2UGjFq4p$z9" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="ask" />
@@ -15051,6 +15052,9 @@
     <node concept="n94m4" id="1sCZQVeRJr$" role="lGtFl" />
     <node concept="3uibUv" id="6H279bUVoh4" role="EKbjA">
       <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
+    </node>
+    <node concept="3uibUv" id="5jCHAT2PtwH" role="1zkMxy">
+      <ref role="3uigEE" to="yg8f:5jCHAT2EKLb" resolve="AbstractLogicSolver" />
     </node>
   </node>
   <node concept="bUwia" id="1sCZQVeRS5H">

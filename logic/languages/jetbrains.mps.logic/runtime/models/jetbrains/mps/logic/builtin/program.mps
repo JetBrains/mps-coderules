@@ -1012,6 +1012,187 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5jCHAT2R0T$" role="jymVt" />
+    <node concept="3clFb_" id="5jCHAT2QZ9K" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="occurrenceArguments" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="5jCHAT2QZ9L" role="1B3o_S" />
+      <node concept="3uibUv" id="5jCHAT2QZ9N" role="3clF45">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3qTvmN" id="5jCHAT2QZ9O" role="11_B2D" />
+      </node>
+      <node concept="37vLTG" id="5jCHAT2QZ9P" role="3clF46">
+        <property role="TrG5h" value="constraint" />
+        <node concept="3uibUv" id="5jCHAT2QZ9Q" role="1tU5fm">
+          <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5jCHAT2QZ9R" role="3clF46">
+        <property role="TrG5h" value="logicalContext" />
+        <node concept="3uibUv" id="5jCHAT2QZ9S" role="1tU5fm">
+          <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5jCHAT2QZ9T" role="3clF47">
+        <node concept="3cpWs8" id="4TCblo5Nofp" role="3cqZAp">
+          <node concept="3cpWsn" id="4TCblo5Nofq" role="3cpWs9">
+            <property role="TrG5h" value="res" />
+            <node concept="3uibUv" id="4TCblo5Noff" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+              <node concept="3uibUv" id="4TCblo5Nofi" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="4TCblo5Nofr" role="33vP2m">
+              <node concept="1pGfFk" id="4TCblo5Nofs" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(int)" resolve="ArrayList" />
+                <node concept="2OqwBi" id="4TCblo5Noft" role="37wK5m">
+                  <node concept="2OqwBi" id="5jCHAT2R4gj" role="2Oq$k0">
+                    <node concept="37vLTw" id="5jCHAT2R4td" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5jCHAT2QZ9P" resolve="constraint" />
+                    </node>
+                    <node concept="liA8E" id="5jCHAT2R4gm" role="2OqNvi">
+                      <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="4TCblo5Zn2F" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="4TCblo5Nofw" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="4TCblo5NoSa" role="3cqZAp">
+          <node concept="3clFbS" id="4TCblo5NoSc" role="2LFqv$">
+            <node concept="3clFbJ" id="4TCblo5Npl3" role="3cqZAp">
+              <node concept="3eNFk2" id="4TCblo5Z7hN" role="3eNLev">
+                <node concept="2ZW3vV" id="4TCblo5Z7_w" role="3eO9$A">
+                  <node concept="3uibUv" id="4TCblo5Z7CL" role="2ZW6by">
+                    <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+                  </node>
+                  <node concept="37vLTw" id="4TCblo5Z7xU" role="2ZW6bz">
+                    <ref role="3cqZAo" node="4TCblo5NoSd" resolve="a" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="4TCblo5Z7hP" role="3eOfB_">
+                  <node concept="3clFbF" id="4TCblo5Z7IR" role="3cqZAp">
+                    <node concept="2OqwBi" id="4TCblo5Z7IS" role="3clFbG">
+                      <node concept="37vLTw" id="4TCblo5Z7IT" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4TCblo5Nofq" resolve="res" />
+                      </node>
+                      <node concept="liA8E" id="4TCblo5Z7IU" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                        <node concept="2OqwBi" id="4TCblo5Z8fU" role="37wK5m">
+                          <node concept="37vLTw" id="4TCblo5Z86K" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5jCHAT2QZ9R" resolve="logicalContext" />
+                          </node>
+                          <node concept="liA8E" id="4TCblo5Z8s6" role="2OqNvi">
+                            <ref role="37wK5l" to="bj13:~LogicalContext.variable(jetbrains.mps.logic.reactor.logical.MetaLogical):jetbrains.mps.logic.reactor.logical.Logical" resolve="variable" />
+                            <node concept="10QFUN" id="4TCblo5Z8y1" role="37wK5m">
+                              <node concept="37vLTw" id="4TCblo5Z97c" role="10QFUP">
+                                <ref role="3cqZAo" node="4TCblo5NoSd" resolve="a" />
+                              </node>
+                              <node concept="3uibUv" id="4TCblo5Z8NB" role="10QFUM">
+                                <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+                                <node concept="3uibUv" id="4TCblo5Z9P0" role="11_B2D">
+                                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="4TCblo5Z7FY" role="3cqZAp" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="4TCblo5Npl5" role="3clFbx">
+                <node concept="3clFbF" id="4TCblo5NpB6" role="3cqZAp">
+                  <node concept="2OqwBi" id="4TCblo5NpQT" role="3clFbG">
+                    <node concept="37vLTw" id="4TCblo5NpB4" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4TCblo5Nofq" resolve="res" />
+                    </node>
+                    <node concept="liA8E" id="4TCblo5NqAb" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                      <node concept="2YIFZM" id="4TCblo5Nr7d" role="37wK5m">
+                        <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
+                        <ref role="37wK5l" to="yg8f:4TCblo5NqWF" resolve="instantiateMetaLogicals" />
+                        <node concept="10QFUN" id="4TCblo5Nskr" role="37wK5m">
+                          <node concept="3uibUv" id="4TCblo5Nskp" role="10QFUM">
+                            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                          </node>
+                          <node concept="37vLTw" id="4TCblo5NsuL" role="10QFUP">
+                            <ref role="3cqZAo" node="4TCblo5NoSd" resolve="a" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="4TCblo5NsHZ" role="37wK5m">
+                          <ref role="3cqZAo" node="5jCHAT2QZ9R" resolve="logicalContext" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="4TCblo5Yuzk" role="3cqZAp" />
+              </node>
+              <node concept="2ZW3vV" id="4TCblo5NptX" role="3clFbw">
+                <node concept="3uibUv" id="4TCblo5NpxS" role="2ZW6by">
+                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                </node>
+                <node concept="37vLTw" id="4TCblo5Nppi" role="2ZW6bz">
+                  <ref role="3cqZAo" node="4TCblo5NoSd" resolve="a" />
+                </node>
+              </node>
+              <node concept="9aQIb" id="4TCblo5NsUE" role="9aQIa">
+                <node concept="3clFbS" id="4TCblo5NsUF" role="9aQI4">
+                  <node concept="3clFbF" id="4TCblo5Nt4I" role="3cqZAp">
+                    <node concept="2OqwBi" id="4TCblo5Ntkx" role="3clFbG">
+                      <node concept="37vLTw" id="4TCblo5Nt4H" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4TCblo5Nofq" resolve="res" />
+                      </node>
+                      <node concept="liA8E" id="4TCblo5Nu3N" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                        <node concept="37vLTw" id="4TCblo5Nuf1" role="37wK5m">
+                          <ref role="3cqZAo" node="4TCblo5NoSd" resolve="a" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="4TCblo5NoSd" role="1Duv9x">
+            <property role="TrG5h" value="a" />
+            <node concept="3uibUv" id="4TCblo5NoWE" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="5jCHAT2R4NQ" role="1DdaDG">
+            <node concept="37vLTw" id="5jCHAT2R53E" role="2Oq$k0">
+              <ref role="3cqZAo" node="5jCHAT2QZ9P" resolve="constraint" />
+            </node>
+            <node concept="liA8E" id="5jCHAT2R4NT" role="2OqNvi">
+              <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4TCblo5NpdK" role="3cqZAp">
+          <node concept="37vLTw" id="4TCblo5NpdI" role="3clFbG">
+            <ref role="3cqZAo" node="4TCblo5Nofq" resolve="res" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5jCHAT2QZ9U" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="aFQeb4jPwW" role="jymVt" />
     <node concept="3clFb_" id="5rhZO$TZwZl" role="jymVt">
       <property role="TrG5h" value="getLocalVarIndex" />
@@ -1252,11 +1433,11 @@
                         <ref role="3cqZAo" node="5uFPQ7BEo4w" resolve="cst" />
                       </node>
                       <node concept="liA8E" id="30XHGaOWeZv" role="2OqNvi">
-                        <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.Collection" resolve="arguments" />
+                        <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
                       </node>
                     </node>
                     <node concept="liA8E" id="30XHGaOWfgx" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Collection.size():int" resolve="size" />
+                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="7eGEHDlg3RX" role="3uHU7B">
@@ -1501,11 +1682,11 @@
                         <ref role="3cqZAo" node="5uFPQ7BEu6z" resolve="pred" />
                       </node>
                       <node concept="liA8E" id="30XHGaOWeEi" role="2OqNvi">
-                        <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.Collection" resolve="arguments" />
+                        <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
                       </node>
                     </node>
                     <node concept="liA8E" id="30XHGaOWeVo" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Collection.size():int" resolve="size" />
+                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="2pvEdquuFm4" role="3uHU7w">
@@ -1576,7 +1757,7 @@
               <ref role="3cqZAo" node="7eGEHDldphF" resolve="item" />
             </node>
             <node concept="liA8E" id="2KVRGowW$Kw" role="2OqNvi">
-              <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.Collection" resolve="arguments" />
+              <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
             </node>
           </node>
         </node>
@@ -1971,7 +2152,7 @@
                   <ref role="3cqZAo" node="5rhZO$TZT5G" resolve="cst" />
                 </node>
                 <node concept="liA8E" id="5rhZO$TZT5F" role="2OqNvi">
-                  <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.Collection" resolve="arguments" />
+                  <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
                 </node>
               </node>
             </node>
@@ -2043,7 +2224,7 @@
                   <ref role="3cqZAo" node="5rhZO$TZT69" resolve="cst" />
                 </node>
                 <node concept="liA8E" id="5rhZO$TZT68" role="2OqNvi">
-                  <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.Collection" resolve="arguments" />
+                  <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
                 </node>
               </node>
             </node>
@@ -2399,7 +2580,7 @@
                       <ref role="3cqZAo" node="5rhZO$TZT8m" resolve="item" />
                     </node>
                     <node concept="liA8E" id="5rhZO$TZT8l" role="2OqNvi">
-                      <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.Collection" resolve="arguments" />
+                      <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
                     </node>
                   </node>
                 </node>

@@ -5106,8 +5106,8 @@
       </node>
       <node concept="312cEg" id="3F6vMxqlTiX" role="jymVt">
         <property role="TrG5h" value="expressionSolver" />
-        <node concept="3uibUv" id="4n$Qn$04BDj" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
+        <node concept="3uibUv" id="5jCHAT2xOdU" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
         </node>
         <node concept="3Tm1VV" id="3F6vMxq$S9w" role="1B3o_S" />
       </node>
@@ -5838,8 +5838,8 @@
         <property role="TrG5h" value="createSessionSolver" />
         <node concept="37vLTG" id="3F6vMxqmh0e" role="3clF46">
           <property role="TrG5h" value="expressionSolver" />
-          <node concept="3uibUv" id="1HG00HG2qpP" role="1tU5fm">
-            <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
+          <node concept="3uibUv" id="5jCHAT2xK28" role="1tU5fm">
+            <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
           </node>
         </node>
         <node concept="3uibUv" id="3F6vMxqlLKq" role="3clF45">

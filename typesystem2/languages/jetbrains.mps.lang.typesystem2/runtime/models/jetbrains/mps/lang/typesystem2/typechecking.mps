@@ -6389,8 +6389,8 @@
     <node concept="2tJIrI" id="3GlpCDSyR2$" role="jymVt" />
     <node concept="3clFb_" id="3GlpCDSyRnn" role="jymVt">
       <property role="TrG5h" value="getExpressionSolver" />
-      <node concept="3uibUv" id="3GlpCDSySro" role="3clF45">
-        <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
+      <node concept="3uibUv" id="5jCHAT2vNhS" role="3clF45">
+        <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
       </node>
       <node concept="3Tm1VV" id="3GlpCDSyRnq" role="1B3o_S" />
       <node concept="3clFbS" id="3GlpCDSyRnr" role="3clF47">
@@ -6429,8 +6429,8 @@
     </node>
     <node concept="312cEg" id="3F6vMxqlTiX" role="jymVt">
       <property role="TrG5h" value="expressionSolver" />
-      <node concept="3uibUv" id="4n$Qn$04BDj" role="1tU5fm">
-        <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
+      <node concept="3uibUv" id="5jCHAT2vNg1" role="1tU5fm">
+        <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
       </node>
       <node concept="3Tm6S6" id="3GlpCDSyB5p" role="1B3o_S" />
     </node>

@@ -236,43 +236,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="2tcGHBEzo4L" role="jymVt" />
-    <node concept="3clFb_" id="5jCHAT1MMTj" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="sessionInstructible" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="5jCHAT1MMTk" role="1B3o_S" />
-      <node concept="3uibUv" id="5jCHAT1MMTm" role="3clF45">
-        <ref role="3uigEE" to="w7la:~Instructible" resolve="Instructible" />
-      </node>
-      <node concept="3clFbS" id="5jCHAT1MMTn" role="3clF47">
-        <node concept="3clFbF" id="5jCHAT1MMTq" role="3cqZAp">
-          <node concept="10Nm6u" id="5jCHAT1MMTp" role="3clFbG" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5jCHAT1MMTo" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="5jCHAT1MMTr" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="sessionQueryable" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="5jCHAT1MMTs" role="1B3o_S" />
-      <node concept="3uibUv" id="5jCHAT1MMTu" role="3clF45">
-        <ref role="3uigEE" to="w7la:~Queryable" resolve="Queryable" />
-      </node>
-      <node concept="3clFbS" id="5jCHAT1MMTv" role="3clF47">
-        <node concept="3clFbF" id="5jCHAT1MMTy" role="3cqZAp">
-          <node concept="10Nm6u" id="5jCHAT1MMTx" role="3clFbG" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5jCHAT1MMTw" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
     <node concept="3clFb_" id="5jCHAT1MMTz" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="storeView" />
