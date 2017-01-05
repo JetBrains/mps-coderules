@@ -133,6 +133,8 @@ class Controller {
     // persistent (functional) object. reassigned on update
     private var propHistory = PropagationHistory()
 
+    val program: Program
+
     val ruleIndex: RuleIndex
 
     private val trace: EvaluationTrace
@@ -140,13 +142,14 @@ class Controller {
     private val profiler: Profiler?
 
     constructor(
-        handlers: Iterable<Handler>,
+        program: Program,
         trace: EvaluationTrace = EvaluationTrace.NULL,
         profiler: Profiler? = null,
         // for testing purposes only
         occurrences: Iterable<ConstraintOccurrence>? = null)
     {
-        this.ruleIndex = RuleIndex(handlers)
+        this.program = program
+        this.ruleIndex = RuleIndex(program.handlers())
         this.trace = trace
         this.profiler = profiler
         if (occurrences != null) {
@@ -159,7 +162,7 @@ class Controller {
 
     fun activate(constraint: Constraint) {
         try {
-            process(constraint.occurrence({ frameStack.current }, noLogicalContext))
+            process(constraint.occurrence({ frameStack.current }, program, noLogicalContext))
         }
         catch (t: Throwable) {
             throw t
@@ -204,7 +207,7 @@ class Controller {
                 trace.trying(match)
 
                 for (prd in match.patternPredicates) {
-                    tellPredicate(prd.invocation(match.logicalContext), trace)
+                    tellPredicate(prd, match.logicalContext, trace)
                 }
 
                 if (!match.rule.checkGuard(match.logicalContext, trace)) {
@@ -239,8 +242,8 @@ class Controller {
                     try {
                         for (item in body) {
                             when (item) {
-                                is Constraint -> process(item.occurrence({ frameStack.current }, match.logicalContext))
-                                is Predicate -> tellPredicate(item.invocation(match.logicalContext), trace)
+                                is Constraint -> process(item.occurrence({ frameStack.current }, program, match.logicalContext))
+                                is Predicate -> tellPredicate(item, match.logicalContext, trace)
                                 else -> throw IllegalArgumentException("unknown item ${item}")
                             }
                         }
@@ -278,39 +281,26 @@ class Controller {
     private fun Rule.checkGuard(logicalContext: LogicalContext, trace: EvaluationTrace): Boolean =
         profiler.profile<Boolean>("checkGuard") {
 
-            return guard().all { prd -> askPredicate(prd.invocation(logicalContext), trace) }
+            return guard().all { prd -> askPredicate(prd, logicalContext, trace) }
 
         }
 
-    private fun askPredicate(invocation: PredicateInvocation, trace: EvaluationTrace): Boolean =
-        profiler.profile<Boolean>("ask_${invocation.predicate().symbol()}", {
+    private fun askPredicate(predicate: Predicate, logicalContext: LogicalContext, trace: EvaluationTrace): Boolean =
+        profiler.profile<Boolean>("ask_${predicate.symbol()}", {
 
-            // TODO: provide SessionSolver as part of evaluation session
-            val result = EvaluationSession.current().sessionQueryable().ask(invocation)
-//            trace.ask(result, invocation)
-            return result
+            EvaluationSession.current().sessionSolver().ask(predicate, logicalContext)
 
         })
 
-    private fun tellPredicate(invocation: PredicateInvocation, trace: EvaluationTrace) {
-        profiler.profile("tell_${invocation.predicate().symbol()}") {
+    private fun tellPredicate(predicate: Predicate, logicalContext: LogicalContext, trace: EvaluationTrace) =
+        profiler.profile("tell_${predicate.symbol()}") {
 
-            // TODO: provide SessionSolver as part of evaluation session
-//            trace.tell(invocation)
-            EvaluationSession.current().sessionInstructible().tell(invocation)
+            EvaluationSession.current().sessionSolver().tell(predicate, logicalContext)
 
         }
-    }
 
 }
 
 private val noLogicalContext: LogicalContext = object: LogicalContext {
     override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V> = TODO()
 }
-
-private fun Predicate.invocation(logicalContext: LogicalContext): PredicateInvocation = object: PredicateInvocation {
-
-        override fun predicate(): Predicate = this@invocation
-
-        override fun arguments(): List<*> = invocationArguments(logicalContext).toList()
-    }

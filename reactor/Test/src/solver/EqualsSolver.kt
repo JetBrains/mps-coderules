@@ -9,10 +9,17 @@ import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Symbol
 
-class EqualsSolver  : Solver {
+class EqualsSolver  : AbstractSolver() {
 
-    override fun predicate(predicateSymbol: PredicateSymbol, vararg args: Any): Predicate =
-        TestEqPredicate(args[0], args[1])
+    companion object {
+        fun eq(left: Any, right: Any): TestEqPredicate = TestEqPredicate(left, right)
+    }
+
+    override fun invocationArguments(predicate: Predicate, logicalContext: LogicalContext): List<*> =
+        predicate.arguments().map { a ->
+            if (a is MetaLogical<*>) logicalContext.variable(a)
+            else a
+        }
 
     override fun ask(invocation: PredicateInvocation): Boolean {
         return _ask(invocation.arguments().get(0), invocation.arguments().get(1))
@@ -102,19 +109,20 @@ class EqualsSolver  : Solver {
 
 }
 
-infix fun <T : Any> Logical<T>.eq(value: T) {
-    EvaluationSession.current().sessionSolver().tell(PredicateSymbol("equals", 2), this, value)
-}
+infix fun <T : Any> T.is_eq(value: T): Boolean =
+    EvaluationSession.current().sessionSolver().ask(EqualsSolver.eq(this, value), object : LogicalContext{
+        override fun <V : Any?> variable(metaLogical: MetaLogical<V>?): Logical<V> = TODO()
+    })
+
+infix fun <T : Any> T.eq(value: T) =
+    EvaluationSession.current().sessionSolver().tell(EqualsSolver.eq(this, value), object : LogicalContext{
+        override fun <V : Any?> variable(metaLogical: MetaLogical<V>?): Logical<V> = TODO()
+    })
 
 data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
 
     override fun arguments(): List<Any> = listOf(left, right)
 
     override fun symbol(): PredicateSymbol = PredicateSymbol("equals", 2)
-
-    override fun invocationArguments(logicalContext: LogicalContext): Collection<*> = listOf(left, right).map { a ->
-        if (a is MetaLogical<*>) logicalContext.variable(a)
-        else a
-    }
 
 }

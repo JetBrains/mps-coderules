@@ -2,12 +2,16 @@ import jetbrains.mps.logic.reactor.core.Controller
 import jetbrains.mps.logic.reactor.core.SessionObjects
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
 import org.junit.*
 import org.junit.Assert.*
 import solver.EqualsSolver
 import solver.MockSessionSolver
 import solver.TestEqPredicate
+import solver.eq
+import solver.is_eq
 
 /**
  * @author Fedor Isakov
@@ -27,8 +31,6 @@ class TestController {
         lateinit var controller: Controller
         override fun handler(): Controller = controller
         override fun sessionSolver(): SessionSolver = solver
-        override fun sessionInstructible(): Instructible = solver
-        override fun sessionQueryable(): Queryable = solver
         override fun storeView(): StoreView = TODO()
 
         class MockBackend(val session: MockSession) : Backend {
@@ -55,19 +57,17 @@ class TestController {
             init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
 
     private fun Builder.controller(vararg occurrences: ConstraintOccurrence): Controller {
-        MockSession.init(sessionSolver(env.expressionSolver, env.equalsSolver))
-        val handler = Controller(handlers, occurrences = listOf(* occurrences))
-        MockSession.ourBackend.session.controller = handler
-        return handler
+        val solver = sessionSolver(env.expressionSolver, env.equalsSolver)
+        MockSession.init(solver)
+        val program = MockProgram("test", handlers, registry = MockConstraintRegistry(solver))
+        val controller = Controller(program, occurrences = listOf(* occurrences))
+        MockSession.ourBackend.session.controller = controller
+        return controller
     }
 
-    private fun <T : Any> eq(left: Logical<T>, right: Logical<T>) {
-        EvaluationSession.current().sessionSolver().tell(PredicateSymbol("equals", 2), left, right)
-    }
+    private fun <T : Any> eq(left: T, right: T) = left eq right
 
-    private fun <T : Any> is_eq(left: Logical<T>, right: Logical<T>): Boolean {
-        return EvaluationSession.current().sessionSolver().ask(PredicateSymbol("equals", 2), left, right)
-    }
+    private fun <T : Any> is_eq(left: T, right: T): Boolean = left is_eq right
 
     @Test
     fun processSingle() {

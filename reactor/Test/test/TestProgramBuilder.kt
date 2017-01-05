@@ -1,6 +1,8 @@
+import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.Queryable
-import jetbrains.mps.logic.reactor.evaluation.Solver
+import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.program.Solver
 import solver.MockSessionSolver
 import jetbrains.mps.logic.reactor.program.*
 import org.junit.AfterClass
@@ -17,8 +19,8 @@ import kotlin.reflect.KClass
 
 class TestProgramBuilder {
 
-    val dummySolver = object : Solver {
-        override fun predicate(predicateSymbol: PredicateSymbol?, vararg args: Any?): Predicate? = TODO()
+    val dummySolver = object : AbstractSolver() {
+        override fun invocationArguments(predicate: Predicate?, logicalContext: LogicalContext?): MutableList<*> = TODO()
         override fun ask(invocation: PredicateInvocation?): Boolean = TODO()
         override fun tell(invocation: PredicateInvocation?) = TODO()
     }
@@ -26,7 +28,7 @@ class TestProgramBuilder {
     val sessionSolver = MockSessionSolver(dummySolver, dummySolver)
 
     @Before fun beforeTest() {
-        programBuilder = ProgramBuilder(ConstraintRegistry(sessionSolver))
+        programBuilder = ProgramBuilder(MockConstraintRegistry(sessionSolver))
     }
 
     lateinit var programBuilder: ProgramBuilder

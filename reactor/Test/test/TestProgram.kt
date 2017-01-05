@@ -28,7 +28,7 @@ class TestProgram {
 
     private fun Builder.session(name: String): StoreView {
         val sessionSolver = MockSessionSolver(env.expressionSolver, env.equalsSolver)
-        val programBuilder = ProgramBuilder(ConstraintRegistry(sessionSolver))
+        val programBuilder = ProgramBuilder(MockConstraintRegistry(sessionSolver))
         for (h in handlers) {
             programBuilder.addHandler(h)
         }

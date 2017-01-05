@@ -1,6 +1,7 @@
+import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.Queryable
-import jetbrains.mps.logic.reactor.evaluation.Solver
+import jetbrains.mps.logic.reactor.program.Solver
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -57,10 +58,13 @@ fun <X, LPX: MetaLogical<X>,
             add(JavaPredicateSymbol.withArity(3).withCode({ x, y, z -> body.invoke(x, y, z); true }, x, y, z))
         }
 
-class ExpressionSolver : Solver {
+class ExpressionSolver : AbstractSolver() {
 
-    override fun predicate(predicateSymbol: PredicateSymbol, vararg args: Any): Predicate =
-        TODO()
+    override fun invocationArguments(predicate: Predicate, logicalContext: LogicalContext): List<*> =
+        predicate.arguments().map { a ->
+            if (a is MetaLogical<*>) logicalContext.variable(a)
+            else a
+        }
 
     override fun ask(invocation: PredicateInvocation): Boolean {
         return javaPredicates[invocation.arguments().get(0)]?.expr?.invoke(invocation.arguments().drop(1)) ?:
@@ -99,10 +103,6 @@ data class TestJavaPredicate(val symbol: JavaPredicateSymbol, val expr: JavaExpr
 
     override fun symbol(): PredicateSymbol = symbol
 
-    override fun invocationArguments(logicalContext: LogicalContext): Collection<*> = args.map { a ->
-        if (a is MetaLogical<*>) logicalContext.variable(a)
-        else a
-    }
 }
 
 private fun JavaPredicateSymbol.withCode(code: () -> Boolean) =

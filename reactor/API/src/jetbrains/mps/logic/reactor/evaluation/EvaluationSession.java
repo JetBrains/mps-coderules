@@ -39,10 +39,6 @@ public abstract class EvaluationSession {
 
   public abstract SessionSolver sessionSolver();
 
-  public abstract Instructible sessionInstructible();
-
-  public abstract Queryable sessionQueryable();
-
   public abstract StoreView storeView();
 
   protected static void setBackend(EvaluationSession.Backend backend) {

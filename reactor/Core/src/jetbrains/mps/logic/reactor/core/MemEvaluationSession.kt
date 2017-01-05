@@ -89,17 +89,13 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
     }
 
     fun launch(main: Constraint, profiler: Profiler?) {
-        this.controller = Controller(program.handlers(), trace, profiler)
+        this.controller = Controller(program, trace, profiler)
         controller.activate(main)
     }
 
     override fun handler() = controller
 
     override fun sessionSolver(): SessionSolver = sessionSolver
-
-    override fun sessionInstructible(): Instructible = sessionSolver
-
-    override fun sessionQueryable(): Queryable = sessionSolver
 
     override fun storeView(): StoreView =
         controller.storeView()

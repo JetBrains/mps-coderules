@@ -4,13 +4,15 @@
 
 import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
+import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
 import org.omg.CORBA.Environment
 import program.MockConstraint
 import java.util.*
 import java.util.Collections.*
 
-class ProgramBuilder(val registry: ConstraintRegistry)  {
+class ProgramBuilder(val registry: MockConstraintRegistry)  {
 
     private val handlers = ArrayList<Handler>()
 
@@ -97,7 +99,7 @@ class MockRule(
         else (kept + replaced).map { it as AndItem } + guard + body.flatten()
 }
 
-class MockProgram(val name: String, val handlers: List<Handler>, val registry: ConstraintRegistry) : Program() {
+class MockProgram(val name: String, val handlers: List<Handler>, val registry: MockConstraintRegistry) : Program() {
 
     override fun name(): String = name
 
@@ -110,17 +112,23 @@ class MockProgram(val name: String, val handlers: List<Handler>, val registry: C
     override fun predicateSymbols(): Iterable<PredicateSymbol> =
         registry.predicateSymbols()
 
+    override fun occurrenceArguments(constraint: Constraint, logicalContext: LogicalContext): List<*> =
+        constraint.arguments().map { a ->
+            if (a is MetaLogical<*>) logicalContext.variable(a)
+            else a
+        }
+
     override fun rules(): Iterable<Rule> = handlers.flatMap { it.rules() }
 
     override fun handlers(): Iterable<Handler> = unmodifiableCollection(handlers)
 }
 
 
-class ConstraintRegistry(val sessionSolver: SessionSolver) {
+class MockConstraintRegistry(val sessionSolver: SessionSolver) {
 
     private val myConstraintArgTypes = HashMap<ConstraintSymbol, List<Class<*>>>().withDefault { Collections.emptyList() }
 
-    private val myPredicateSolvers = HashMap<PredicateSymbol, Class<out Queryable>>()
+    private val myPredicateSymbols = HashSet<PredicateSymbol>()
 
     fun update(rule: Rule) {
         for(item in rule.all()) {
@@ -156,7 +164,7 @@ class ConstraintRegistry(val sessionSolver: SessionSolver) {
     fun introduce(item: AndItem) {
         when(item) {
             is Constraint -> myConstraintArgTypes.put(item.symbol(), item.argumentTypes())
-            is Predicate -> myPredicateSolvers.put(item.symbol(), sessionSolver.solverClass(item.symbol()))
+            is Predicate -> myPredicateSymbols.add(item.symbol())
             else          -> throw InvalidConstraintException("unknown item: ${item}")
         }
     }
@@ -168,7 +176,7 @@ class ConstraintRegistry(val sessionSolver: SessionSolver) {
             unmodifiableList(myConstraintArgTypes.getOrPut(symbol, { emptyList() }))
 
     fun predicateSymbols(): Iterable<PredicateSymbol> =
-            unmodifiableSet(myPredicateSolvers.keys)
+            unmodifiableSet(myPredicateSymbols)
 
 }
 

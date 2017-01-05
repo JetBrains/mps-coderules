@@ -18,11 +18,6 @@ data class MockConstraint(val symbol: ConstraintSymbol, val arguments: List<Any>
 
     override fun arguments(): List<Any> = arguments
 
-    override fun occurrenceArguments(logicalContext: LogicalContext): Collection<*> = arguments.map { a ->
-        if (a is MetaLogical<*>) logicalContext.variable(a)
-        else a
-    }
-
     override fun patternPredicates(args: Collection<*>): Collection<Predicate> = emptyList()
 
     override fun symbol(): ConstraintSymbol = symbol

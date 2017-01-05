@@ -15,8 +15,6 @@ public interface Constraint extends AndItem {
 
   List<Class<?>> argumentTypes();
 
-  Collection<?> occurrenceArguments(LogicalContext logicalContext);
-
   /**
    * Returns the collection of predicates that need to be applied after a successful match of this collection by a
    * rule's head. 
