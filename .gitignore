@@ -8,3 +8,6 @@
 .idea/workspace.xml
 out
 build/*
+config/*
+system/*
+
