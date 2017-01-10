@@ -31,9 +31,23 @@ fun ConstraintOccurrence.isAlive(): Boolean =
     (this as StoreItem).alive
 
 interface StoreItem {
+
     var alive: Boolean
+
     var stored: Boolean
+
     fun terminate(): Unit
+
+}
+
+interface StoreKeeper {
+
+    fun store(): Store
+
+    fun addObserver(logical: Logical<*>, obs: (StoreKeeper) -> LogicalObserver)
+
+    fun removeObserver(logical: Logical<*>, obs: (StoreKeeper) -> LogicalObserver)
+
 }
 
 interface OccurrenceIndex {
@@ -55,7 +69,7 @@ interface OccurrenceIndex {
  */
 class Store : LogicalObserver, OccurrenceIndex {
 
-    val currentFrame: () -> StoreHolder
+    val currentFrame: () -> StoreKeeper
 
     var symbol2occurrences: PersMap<ConstraintSymbol, IdHashSet<ConstraintOccurrence>>
 
@@ -65,8 +79,7 @@ class Store : LogicalObserver, OccurrenceIndex {
 
     var value2occurrences: PersMap<Any, IdHashSet<ConstraintOccurrence>>
 
-    constructor(copyFrom: Store, currentFrame: () -> StoreHolder)
-    {
+    constructor(copyFrom: Store, currentFrame: () -> StoreKeeper) {
         this.currentFrame = currentFrame
         this.symbol2occurrences = copyFrom.symbol2occurrences
         this.logical2occurrences = copyFrom.logical2occurrences
@@ -74,7 +87,32 @@ class Store : LogicalObserver, OccurrenceIndex {
         this.value2occurrences = copyFrom.value2occurrences
     }
 
-    constructor(currentFrame: () -> StoreHolder) {
+    constructor(copyFrom: StoreView, currentFrame: () -> StoreKeeper) {
+        this.currentFrame = currentFrame
+        this.symbol2occurrences = copyFrom.constraintSymbols()
+            .fold(Maps.of()) { map, sym -> map.put(sym, IdHashSet(copyFrom.occurrences(sym))) }
+
+        var l2o = Maps.of<IdWrapper<Logical<*>>, IdHashSet<ConstraintOccurrence>>()
+        var t2o = TermTrie<ConstraintOccurrence>()
+        var v2o = Maps.of<Any, IdHashSet<ConstraintOccurrence>>()
+
+        copyFrom.allOccurrences().forEach { occ ->
+            occ.arguments().forEach { a ->
+                when (a) {
+                    is Logical<*>   ->  l2o = l2o.put(IdWrapper(a), l2o[IdWrapper(a)]?.add(occ) ?: singletonSet(occ))
+                    is Term         ->  t2o = t2o.put(a, occ)
+                    is Any          ->  v2o = v2o.put(a, v2o[a]?.add(occ) ?: singletonSet(occ))
+                }
+            }
+
+        }
+
+        this.logical2occurrences = l2o
+        this.term2occurrences = t2o
+        this.value2occurrences = v2o
+    }
+
+    constructor(currentFrame: () -> StoreKeeper) {
         this.currentFrame = currentFrame
         this.symbol2occurrences = Maps.of()
         this.logical2occurrences = Maps.of()
@@ -118,12 +156,6 @@ class Store : LogicalObserver, OccurrenceIndex {
             this.logical2occurrences = logical2occurrences.remove(logicalId).put(rootId, newSet)
             assert(logical2occurrences.containsKey(rootId))
             assert(!logical2occurrences.containsKey(logicalId))
-        }
-    }
-
-    fun storeAll(all: Iterable<ConstraintOccurrence>): Unit {
-        for(occ in all) {
-            store(occ)
         }
     }
 
@@ -253,7 +285,7 @@ class Store : LogicalObserver, OccurrenceIndex {
 
 }
 
-class StoreViewImpl(occurrences: Sequence<ConstraintOccurrence>) : StoreView {
+private class StoreViewImpl(occurrences: Sequence<ConstraintOccurrence>) : StoreView {
 
     val allOccurrences = occurrences.toSet()
 
@@ -263,10 +295,7 @@ class StoreViewImpl(occurrences: Sequence<ConstraintOccurrence>) : StoreView {
 
     override fun allOccurrences(): Iterable<ConstraintOccurrence> = allOccurrences
 
-    override fun occurrences(symbol: ConstraintSymbol?): Iterable<ConstraintOccurrence> =
+    override fun occurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
         allOccurrences.filter { co -> co.constraint().symbol() == symbol }.toSet()
 
 }
-
-
-

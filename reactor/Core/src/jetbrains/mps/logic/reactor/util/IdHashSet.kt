@@ -14,39 +14,48 @@ class IdHashSet<E> : AbstractSet<E> {
 
     }
 
-    lateinit var store: DerivedKeyHashMap<Int, E>
+    var storage: DerivedKeyHashMap<Int, E>
 
     constructor() {
-        this.store = DerivedKeyHashMap(object : KeyFunction<Int, E> {
-            override fun key(value: E): Int = idkey(value)
-        })
+        this.storage = emptyStorage()
     }
 
-    constructor(setStore: DerivedKeyHashMap<Int, E>) {
-        this.store = setStore
+    constructor(storage: DerivedKeyHashMap<Int, E>) {
+        this.storage = storage
     }
 
-    override fun add(value: E): IdHashSet<E> = IdHashSet(store.put(idkey(value), value))
+    constructor(copyFrom: Iterable<E>) {
+        this.storage = copyFrom.fold(emptyStorage()) { s, e -> s.put(idkey(e), e) }
+    }
 
-    override fun contains(value: E): Boolean = store.containsKey(idkey(value))
+    override fun add(value: E): IdHashSet<E> = IdHashSet(storage.put(idkey(value), value))
 
-    override fun remove(value: E): IdHashSet<E> = IdHashSet(store.remove(idkey(value)))
+    override fun contains(value: E): Boolean = storage.containsKey(idkey(value))
+
+    override fun remove(value: E): IdHashSet<E> = IdHashSet(storage.remove(idkey(value)))
 
     override fun iterator(): MutableIterator<E> = object: MutableIterator<E> {
 
-        val storeIt = store.iterator()
+        val storageIt = storage.iterator()
 
-        override fun hasNext(): Boolean = storeIt.hasNext()
+        override fun hasNext(): Boolean = storageIt.hasNext()
 
-        override fun next(): E = storeIt.next().component2()
+        override fun next(): E = storageIt.next().component2()
 
         override fun remove() {
             throw UnsupportedOperationException()
         }
     }
 
+    private fun emptyStorage(): DerivedKeyHashMap<Int, E> {
+        return DerivedKeyHashMap(object : KeyFunction<Int, E> {
+            override fun key(value: E): Int = idkey(value)
+        })
+    }
+
 }
 
+@Suppress("UNCHECKED_CAST")
 fun <E> emptySet(): IdHashSet<E> = IdHashSet.EMPTY_SET as IdHashSet<E>
 
 fun <E> singletonSet(e: E): IdHashSet<E> = emptySet<E>().add(e)

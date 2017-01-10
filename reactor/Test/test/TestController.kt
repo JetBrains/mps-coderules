@@ -1,5 +1,6 @@
 import jetbrains.mps.logic.reactor.core.Controller
 import jetbrains.mps.logic.reactor.core.SessionObjects
+import jetbrains.mps.logic.reactor.core.Store
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
@@ -60,9 +61,20 @@ class TestController {
         val solver = sessionSolver(env.expressionSolver, env.equalsSolver)
         MockSession.init(solver)
         val program = MockProgram("test", handlers, registry = MockConstraintRegistry(solver))
-        val controller = Controller(program, occurrences = listOf(* occurrences))
+        val controller = Controller(program, storeView = MockStoreView(listOf(* occurrences)))
         MockSession.ourBackend.session.controller = controller
         return controller
+    }
+
+    private class MockStoreView(val occurrences: List<ConstraintOccurrence>) : StoreView {
+        val symbols = occurrences.map { it.constraint().symbol() }.toSet()
+
+        override fun constraintSymbols(): Iterable<ConstraintSymbol> = symbols
+
+        override fun allOccurrences(): Iterable<ConstraintOccurrence> = occurrences
+
+        override fun occurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
+            occurrences.filter { it.constraint().symbol() == symbol }
     }
 
     private fun <T : Any> eq(left: T, right: T) = left eq right

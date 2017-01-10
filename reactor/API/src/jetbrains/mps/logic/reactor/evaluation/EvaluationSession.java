@@ -6,9 +6,6 @@ import jetbrains.mps.logic.reactor.program.Program;
 import jetbrains.mps.logic.reactor.program.PredicateSymbol;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 
-/**
- * AKA "Handler"
- */
 public abstract class EvaluationSession {
 
   public static EvaluationSession current() {
@@ -30,6 +27,8 @@ public abstract class EvaluationSession {
     public abstract EvaluationSession.Config withPredicates(PredicateSymbol... predicateSymbols);
 
     public abstract EvaluationSession.Config withTrace(EvaluationTrace computingTracer);
+
+    public abstract EvaluationSession.Config withStoreView(StoreView storeView);
 
     public abstract EvaluationSession.Config withParam(String key, Object param);
 

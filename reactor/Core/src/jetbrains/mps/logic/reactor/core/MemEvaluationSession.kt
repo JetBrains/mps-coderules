@@ -21,26 +21,43 @@ interface SessionObjects {
 
 }
 
-class MemEvaluationSession : EvaluationSession, SessionObjects {
+class MemEvaluationSession private constructor (
+    val program: Program,
+    val sessionSolver: SessionSolver,
+    val trace: EvaluationTrace) : EvaluationSession(), SessionObjects
+{
+
+    lateinit var controller: Controller
+
+    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?) {
+        this.controller = Controller(program, trace, profiler, storeView)
+        controller.activate(main)
+    }
 
     private class Config(val program: Program) : EvaluationSession.Config() {
 
-        val myPredicateSymbols = ArrayList<PredicateSymbol>()
-        val myParameters = HashMap<String, Any?>()
-        var myEvaluationTrace: EvaluationTrace = EvaluationTrace.NULL
+        val predicateSymbols = ArrayList<PredicateSymbol>()
+        val parameters = HashMap<String, Any?>()
+        var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
+        var storeView: StoreView? = null
 
         override fun withPredicates(vararg predicateSymbols: PredicateSymbol): EvaluationSession.Config {
-            myPredicateSymbols.addAll(Arrays.asList(* predicateSymbols))
+            this.predicateSymbols.addAll(Arrays.asList(* predicateSymbols))
             return this
         }
 
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
-            myEvaluationTrace = computingTracer
+            this.evaluationTrace = computingTracer
+            return this
+        }
+
+        override fun withStoreView(storeView: StoreView): EvaluationSession.Config {
+            this.storeView = storeView
             return this
         }
 
         override fun withParam(key: String, param: Any): EvaluationSession.Config {
-            myParameters.put(key, param)
+            this.parameters.put(key, param)
             return this
         }
 
@@ -48,16 +65,17 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
             var session = ourBackend.ourSession.get()
             if (session != null) throw IllegalStateException("session already active")
 
-            val predicateSymbols = myPredicateSymbols.toArray<PredicateSymbol>(arrayOfNulls(myPredicateSymbols.size))
-            sessionSolver.init(myEvaluationTrace, * predicateSymbols)
+            sessionSolver.init(evaluationTrace, * predicateSymbols.toArray<PredicateSymbol>(arrayOfNulls(predicateSymbols.size)))
 
-            session = MemEvaluationSession(program, sessionSolver, myEvaluationTrace)
-            ourBackend.ourSession.set(session)
-
-            val durations = myParameters.get("profiling.data") as MutableMap<String, String>?
+            @Suppress("UNCHECKED_CAST")
+            val durations =
+                parameters.get("profiling.data") as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
+
+            session = MemEvaluationSession(program, sessionSolver, evaluationTrace)
+            ourBackend.ourSession.set(session)
             try {
-                session.launch(myParameters["main"] as Constraint, profiler)
+                session.launch(parameters["main"] as Constraint, profiler, storeView)
             }
             finally {
                 try {
@@ -74,23 +92,6 @@ class MemEvaluationSession : EvaluationSession, SessionObjects {
 
             return session
         }
-    }
-
-    val program: Program
-    val sessionSolver: SessionSolver
-    val trace: EvaluationTrace
-
-    lateinit var controller: Controller
-
-    private constructor(program: Program, sessionSolver: SessionSolver, trace: EvaluationTrace): super() {
-        this.program = program
-        this.sessionSolver = sessionSolver
-        this.trace = trace
-    }
-
-    fun launch(main: Constraint, profiler: Profiler?) {
-        this.controller = Controller(program, trace, profiler)
-        controller.activate(main)
     }
 
     override fun handler() = controller

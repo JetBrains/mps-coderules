@@ -14,20 +14,20 @@ import org.junit.Before
 
 class TestOccurrenceStore {
 
-    class MockProxy(val _store: () -> Store) : LogicalObserver, StoreHolder {
+    internal class MockProxy(val _store: () -> Store) : LogicalObserver, StoreKeeper {
 
         private var observerList = emptyConsList<Pair<Logical<*>, LogicalObserver>>()
 
         override fun store(): Store = _store()
 
-        override fun addObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver)  {
+        override fun addObserver(logical: Logical<*>, obs: (StoreKeeper) -> LogicalObserver)  {
             if (!observerList.any { obs -> obs.first === logical }) {               // referential equality!
                 logical.addObserver(this)
             }
             this.observerList = observerList.prepend(logical.to(obs(this)))
         }
 
-        override fun removeObserver(logical: Logical<*>, obs: (StoreHolder) -> LogicalObserver) = TODO()
+        override fun removeObserver(logical: Logical<*>, obs: (StoreKeeper) -> LogicalObserver) = TODO()
 
         override fun valueUpdated(logical: Logical<*>) {
             for (obs in observerList) {
