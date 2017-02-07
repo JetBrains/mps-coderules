@@ -978,7 +978,7 @@
                 <ref role="1YBMHb" node="7dgRGU4_Y5a" resolve="logicalExpression" />
               </node>
               <node concept="3TrEf2" id="7dgRGU4AkE3" role="2OqNvi">
-                <ref role="3Tt5mk" to="wq2x:6p0DfM0pQge" resolve="clause" />
+                <ref role="3Tt5mk" to="wq2x:6p0DfM0pQge" resolve="content" />
               </node>
             </node>
           </node>

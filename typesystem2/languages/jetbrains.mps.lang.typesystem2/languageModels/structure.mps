@@ -74,6 +74,11 @@
     <property role="34LRSv" value="handler" />
     <property role="EcuMT" value="8335224865066015764" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="20Ay2Vf1h9X" role="1TKVEl">
+      <property role="IQ2nx" value="2316688792951788157" />
+      <property role="TrG5h" value="stage" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="6p0DfM0bRQj" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="rule" />
@@ -138,7 +143,7 @@
     <node concept="1TJgyj" id="6p0DfM0a5m9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="code" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="7368070394766972297" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
@@ -151,6 +156,12 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="965748826975413053" />
       <ref role="20lvS9" node="PB1R3Y7Ed7" resolve="RulePartParameterDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="20Ay2VegCfd" role="1TKVEi">
+      <property role="IQ2ns" value="2316688792939037645" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="logic" />
+      <ref role="20lvS9" node="20Ay2VefOqC" resolve="LogicalClauseList" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3gA">
@@ -179,6 +190,7 @@
   <node concept="1TIwiD" id="6p0DfM0a6KG">
     <property role="TrG5h" value="EmitConstraintStatement" />
     <property role="EcuMT" value="7368070394766978092" />
+    <property role="3GE5qa" value="rule.clause" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="6p0DfM0ajKO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -213,7 +225,7 @@
       <property role="20kJfa" value="argument" />
       <property role="20lbJX" value="1..n" />
       <property role="IQ2ns" value="7368070394768117915" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0asb7">
@@ -296,14 +308,14 @@
       <property role="20kJfa" value="assignee" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7368070394770793388" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
     <node concept="1TJgyj" id="6p0DfM0oEna" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7368070394770793930" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0pKSO">
@@ -312,10 +324,10 @@
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="6p0DfM0pQge" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="clause" />
+      <property role="20kJfa" value="content" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7368070394771104782" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
   <node concept="1TIwiD" id="2E5lcNn01_F">
@@ -336,7 +348,7 @@
       <property role="20kJfa" value="assignedType" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3063948360252667312" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
   <node concept="1TIwiD" id="2E5lcNn5kn6">
@@ -470,7 +482,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="variable" />
       <property role="IQ2ns" value="6928531011217290187" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
   <node concept="1TIwiD" id="60B5zVESBMM">
@@ -1126,7 +1138,7 @@
     <property role="EcuMT" value="2037618519496446007" />
     <property role="3GE5qa" value="type.term" />
     <property role="TrG5h" value="TypeTerm" />
-    <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+    <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="1L74NXEmI65" role="1TKVEi">
       <property role="IQ2ns" value="2037618519496647045" />
       <property role="20lmBu" value="aggregation" />
@@ -1394,6 +1406,66 @@
       <ref role="PrY4T" node="1L74NXEmF9t" resolve="TypeInvocation" />
     </node>
     <node concept="asaX9" id="4MEOIDFfpT7" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="20Ay2VefOqC">
+    <property role="EcuMT" value="2316688792938825384" />
+    <property role="3GE5qa" value="rule.clause" />
+    <property role="TrG5h" value="LogicalClauseList" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="20Ay2VefOqD" role="1TKVEi">
+      <property role="IQ2ns" value="2316688792938825385" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="clauses" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="20Ay2VefOqF" resolve="LogicalClause" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="20Ay2VefOqF">
+    <property role="EcuMT" value="2316688792938825387" />
+    <property role="3GE5qa" value="rule.clause" />
+    <property role="TrG5h" value="LogicalClause" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="20Ay2VefOBs">
+    <property role="EcuMT" value="2316688792938826204" />
+    <property role="3GE5qa" value="rule.clause" />
+    <property role="TrG5h" value="ConstraintLogicalClause" />
+    <ref role="1TJDcQ" node="20Ay2VefOqF" resolve="LogicalClause" />
+    <node concept="1TJgyj" id="20Ay2VefOBA" role="1TKVEi">
+      <property role="IQ2ns" value="2316688792938826214" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="constraint" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="20Ay2Vei7FH">
+    <property role="EcuMT" value="2316688792939428589" />
+    <property role="3GE5qa" value="rule.clause" />
+    <property role="TrG5h" value="TemplateLogicalClause" />
+    <ref role="1TJDcQ" node="20Ay2VefOqF" resolve="LogicalClause" />
+    <node concept="1TJgyj" id="20Ay2Vei7FI" role="1TKVEi">
+      <property role="IQ2ns" value="2316688792939428590" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="20Ay2VepLqo">
+    <property role="EcuMT" value="2316688792941434520" />
+    <property role="3GE5qa" value="rule.clause" />
+    <property role="TrG5h" value="CodeLogicalClause" />
+    <ref role="1TJDcQ" node="20Ay2VefOqF" resolve="LogicalClause" />
+    <node concept="1TJgyj" id="20Ay2VepLqp" role="1TKVEi">
+      <property role="IQ2ns" value="2316688792941434521" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
   </node>
 </model>
 

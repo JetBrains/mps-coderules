@@ -230,6 +230,7 @@
         <child id="1197687026896" name="keyType" index="3rHrn6" />
         <child id="1197687035757" name="valueType" index="3rHtpV" />
       </concept>
+      <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
         <child id="1197932505799" name="map" index="3ElQJh" />
         <child id="1197932525128" name="key" index="3ElVtu" />
@@ -701,13 +702,16 @@
                 <node concept="2YIFZM" id="6QH_LDtbV5L" role="33vP2m">
                   <ref role="37wK5l" to="w7la:~EvaluationSession.newSession(jetbrains.mps.logic.reactor.program.Program):jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Config" resolve="newSession" />
                   <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-                  <node concept="2OqwBi" id="6QH_LDtbV5M" role="37wK5m">
-                    <node concept="37vLTw" id="6QH_LDtbV5N" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
+                  <node concept="2OqwBi" id="20Ay2VeYY60" role="37wK5m">
+                    <node concept="2OqwBi" id="6QH_LDtbV5M" role="2Oq$k0">
+                      <node concept="37vLTw" id="6QH_LDtbV5N" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
+                      </node>
+                      <node concept="liA8E" id="6QH_LDtbV5O" role="2OqNvi">
+                        <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getPrograms" />
+                      </node>
                     </node>
-                    <node concept="liA8E" id="6QH_LDtbV5O" role="2OqNvi">
-                      <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
-                    </node>
+                    <node concept="1uHKPH" id="20Ay2VeYZUR" role="2OqNvi" />
                   </node>
                 </node>
               </node>
@@ -865,17 +869,12 @@
             <node concept="2ShNRf" id="6QH_LDtbV73" role="33vP2m">
               <node concept="1pGfFk" id="6QH_LDtbV74" role="2ShVmc">
                 <ref role="37wK5l" to="nz6g:Ya9Z$kRaR0" resolve="RecoverySession" />
-                <node concept="2OqwBi" id="6QH_LDtbV75" role="37wK5m">
-                  <node concept="2OqwBi" id="6QH_LDtbV76" role="2Oq$k0">
-                    <node concept="37vLTw" id="6QH_LDtbV77" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
-                    </node>
-                    <node concept="liA8E" id="6QH_LDtbV78" role="2OqNvi">
-                      <ref role="37wK5l" to="hano:3GlpCDSyUJO" resolve="getTypecheckingTemplates" />
-                    </node>
+                <node concept="2OqwBi" id="6QH_LDtbV76" role="37wK5m">
+                  <node concept="37vLTw" id="6QH_LDtbV77" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
                   </node>
-                  <node concept="liA8E" id="6QH_LDtbV79" role="2OqNvi">
-                    <ref role="37wK5l" to="hano:4n$Qn$018my" resolve="typeTemplates" />
+                  <node concept="liA8E" id="20Ay2VeRAou" role="2OqNvi">
+                    <ref role="37wK5l" to="hano:20Ay2VeQGBR" resolve="getTypeTemplates" />
                   </node>
                 </node>
               </node>

@@ -222,7 +222,7 @@
     <property role="TrG5h" value="LogicalValue" />
     <property role="3GE5qa" value="logical" />
     <property role="EcuMT" value="8829335963591331603" />
-    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalClause" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="7E86$tKsqnr" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="code" />
@@ -232,7 +232,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7E86$tKsl45">
-    <property role="TrG5h" value="LogicalClause" />
+    <property role="TrG5h" value="LogicalItem" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="logical" />
@@ -244,7 +244,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="EcuMT" value="8829335963591431101" />
-    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalClause" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="7E86$tKsJfa" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="index" />
@@ -382,7 +382,7 @@
     <property role="3GE5qa" value="logical" />
     <property role="TrG5h" value="AssignedLogicalVariable" />
     <property role="EcuMT" value="5131913661993028914" />
-    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalClause" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="4sSe4$p4oON" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="variable" />
@@ -395,7 +395,7 @@
       <property role="20kJfa" value="value" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5131913661993028917" />
-      <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalClause" />
+      <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
 </model>

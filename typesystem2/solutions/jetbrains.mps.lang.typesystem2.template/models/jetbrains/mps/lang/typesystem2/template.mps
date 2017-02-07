@@ -226,6 +226,9 @@
       <concept id="1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" flags="nn" index="56pJg">
         <child id="1176906787974" name="rightExpression" index="576Qk" />
       </concept>
+      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
+        <child id="1151688676805" name="elementType" index="_ZDj9" />
+      </concept>
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
@@ -462,11 +465,25 @@
     <property role="TrG5h" value="AbstractRuleTemplateManifest" />
     <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="1ggxSI7z1Os" role="jymVt" />
+    <node concept="3clFb_" id="20Ay2VeQ4QK" role="jymVt">
+      <property role="TrG5h" value="handlingStages" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="_YKpA" id="20Ay2VeQ4RT" role="3clF45">
+        <node concept="_YKpA" id="20Ay2Vf4KeD" role="_ZDj9">
+          <node concept="3uibUv" id="20Ay2Vf4Kpw" role="_ZDj9">
+            <ref role="3uigEE" node="4MqhgXU9fm3" resolve="HandlerTemplate" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="20Ay2VeQ4QN" role="1B3o_S" />
+      <node concept="3clFbS" id="20Ay2VeQ4QO" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="20Ay2VeQ4EW" role="jymVt" />
     <node concept="3clFb_" id="4MqhgXUaiLz" role="jymVt">
       <property role="TrG5h" value="handlerTemplates" />
       <property role="1EzhhJ" value="true" />
-      <node concept="A3Dl8" id="4MqhgXUaiMs" role="3clF45">
-        <node concept="3uibUv" id="4MqhgXUaiMN" role="A3Ik2">
+      <node concept="_YKpA" id="20Ay2VeZMvJ" role="3clF45">
+        <node concept="3uibUv" id="20Ay2VeZMvL" role="_ZDj9">
           <ref role="3uigEE" node="4MqhgXU9fm3" resolve="HandlerTemplate" />
         </node>
       </node>
@@ -2041,6 +2058,15 @@
       <node concept="3clFbS" id="4MqhgXUN1Pi" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="4MqhgXUN1OI" role="jymVt" />
+    <node concept="3clFb_" id="20Ay2Vf1i5R" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="stage" />
+      <node concept="3clFbS" id="20Ay2Vf1i5U" role="3clF47" />
+      <node concept="3Tm1VV" id="20Ay2Vf1i5V" role="1B3o_S" />
+      <node concept="17QB3L" id="20Ay2Vf1hOi" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="20Ay2Vf1hyH" role="jymVt" />
     <node concept="3clFb_" id="4MqhgXU9lmo" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="primarySymbols" />
@@ -2066,6 +2092,23 @@
     </node>
     <node concept="2tJIrI" id="4MqhgXUaiOu" role="jymVt" />
     <node concept="3Tm1VV" id="4MqhgXU9fm4" role="1B3o_S" />
+  </node>
+  <node concept="3HP615" id="20Ay2VeQ4I0">
+    <property role="TrG5h" value="HandlingStage" />
+    <node concept="2tJIrI" id="20Ay2VeQ4IM" role="jymVt" />
+    <node concept="3clFb_" id="20Ay2VeQ4JB" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="handlerTemplates" />
+      <node concept="_YKpA" id="20Ay2VeQ4Kx" role="3clF45">
+        <node concept="3uibUv" id="20Ay2VeQ4Ld" role="_ZDj9">
+          <ref role="3uigEE" node="4MqhgXU9fm3" resolve="HandlerTemplate" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="20Ay2VeQ4JE" role="1B3o_S" />
+      <node concept="3clFbS" id="20Ay2VeQ4JF" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="20Ay2VeQ4IR" role="jymVt" />
+    <node concept="3Tm1VV" id="20Ay2VeQ4I1" role="1B3o_S" />
   </node>
 </model>
 

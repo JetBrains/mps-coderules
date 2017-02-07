@@ -2909,7 +2909,7 @@
       <node concept="37vLTG" id="4JJCDImSW1u" role="3clF46">
         <property role="TrG5h" value="typeTemplates" />
         <node concept="3uibUv" id="Ya9Z$kQMuo" role="1tU5fm">
-          <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateCollection" />
+          <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateIndex" />
         </node>
       </node>
       <node concept="3cqZAl" id="4JJCDImSW0B" role="3clF45" />
@@ -3409,7 +3409,7 @@
       <property role="TrG5h" value="typeTemplates" />
       <node concept="3Tm6S6" id="Ya9Z$kQMM1" role="1B3o_S" />
       <node concept="3uibUv" id="Ya9Z$kQMM3" role="1tU5fm">
-        <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateCollection" />
+        <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateIndex" />
       </node>
     </node>
     <node concept="2tJIrI" id="10IUAVUm$ge" role="jymVt" />
@@ -3596,7 +3596,7 @@
       <node concept="37vLTG" id="Ya9Z$kRaRp" role="3clF46">
         <property role="TrG5h" value="typeTemplates" />
         <node concept="3uibUv" id="Ya9Z$kRaSY" role="1tU5fm">
-          <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateCollection" />
+          <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateIndex" />
         </node>
       </node>
       <node concept="3cqZAl" id="Ya9Z$kRaR2" role="3clF45" />
@@ -4607,7 +4607,7 @@
       <property role="TrG5h" value="typeTemplates" />
       <node concept="3Tm6S6" id="Ya9Z$kRaUS" role="1B3o_S" />
       <node concept="3uibUv" id="Ya9Z$kRaUU" role="1tU5fm">
-        <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateCollection" />
+        <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateIndex" />
       </node>
     </node>
     <node concept="2tJIrI" id="2V8TwD0SnCd" role="jymVt" />

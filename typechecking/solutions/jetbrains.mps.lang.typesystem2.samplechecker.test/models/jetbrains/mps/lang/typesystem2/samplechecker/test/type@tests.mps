@@ -206,7 +206,7 @@
         <node concept="H_c77" id="7y50OW6ZKLy" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="7y50OW6ZKHy" role="3clF45">
-        <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateCollection" />
+        <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateIndex" />
       </node>
       <node concept="3clFbS" id="7y50OW6ZKyD" role="3clF47">
         <node concept="3SKdUt" id="7y50OW707GY" role="3cqZAp">
@@ -235,11 +235,11 @@
           <node concept="3cpWsn" id="7y50OW6ZS1A" role="3cpWs9">
             <property role="TrG5h" value="typeTemplates" />
             <node concept="3uibUv" id="7y50OW6ZS1r" role="1tU5fm">
-              <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateCollection" />
+              <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateIndex" />
             </node>
             <node concept="2ShNRf" id="7y50OW6ZS1B" role="33vP2m">
               <node concept="1pGfFk" id="7y50OW6ZS1C" role="2ShVmc">
-                <ref role="37wK5l" to="fqlx:1hX44vNlSOK" resolve="TypeTemplateCollection" />
+                <ref role="37wK5l" to="fqlx:1hX44vNlSOK" resolve="TypeTemplateIndex" />
                 <node concept="2OqwBi" id="7y50OW6ZS1D" role="37wK5m">
                   <node concept="37vLTw" id="7y50OW6ZS1E" role="2Oq$k0">
                     <ref role="3cqZAo" node="7y50OW6ZLiB" resolve="typeAspect" />
@@ -288,7 +288,7 @@
           <node concept="3cpWsn" id="4nxCIBqykWr" role="3cpWs9">
             <property role="TrG5h" value="typeTemplates" />
             <node concept="3uibUv" id="4nxCIBqykWp" role="1tU5fm">
-              <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateCollection" />
+              <ref role="3uigEE" to="fqlx:1hX44vNlSIA" resolve="TypeTemplateIndex" />
             </node>
             <node concept="2OqwBi" id="7y50OW6ZN_k" role="33vP2m">
               <node concept="2WthIp" id="7y50OW6ZN_n" role="2Oq$k0" />

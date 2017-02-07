@@ -290,7 +290,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1hX44vNlSIA">
-    <property role="TrG5h" value="TypeTemplateCollection" />
+    <property role="TrG5h" value="TypeTemplateIndex" />
     <node concept="2tJIrI" id="1hX44vNlSNY" role="jymVt" />
     <node concept="3clFbW" id="1hX44vNlSOK" role="jymVt">
       <node concept="3cqZAl" id="1hX44vNlSOM" role="3clF45" />
@@ -482,7 +482,7 @@
               <ref role="37wK5l" to="psr6:1pPth$m7IW6" resolve="collectTypeTables" />
               <node concept="2ShNRf" id="1hX44vNnpfM" role="37wK5m">
                 <node concept="HV5vD" id="1hX44vNnpfN" role="2ShVmc">
-                  <ref role="HV5vE" node="1hX44vNlSRx" resolve="TypeTemplateCollection.Collector" />
+                  <ref role="HV5vE" node="1hX44vNlSRx" resolve="TypeTemplateIndex.Collector" />
                 </node>
               </node>
             </node>
