@@ -98,7 +98,6 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
-      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -652,25 +651,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="6$7vuu2usrC" role="3cqZAp" />
-        <node concept="3cpWs8" id="6QH_LDtbV60" role="3cqZAp">
-          <node concept="3cpWsn" id="6QH_LDtbV61" role="3cpWs9">
-            <property role="TrG5h" value="errors" />
-            <node concept="3rvAFt" id="6QH_LDtbV62" role="1tU5fm">
-              <node concept="3uibUv" id="6QH_LDtbV63" role="3rvQeY">
-                <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-              </node>
-              <node concept="17QB3L" id="6QH_LDtbV64" role="3rvSg0" />
-            </node>
-            <node concept="2ShNRf" id="6QH_LDtbV65" role="33vP2m">
-              <node concept="3rGOSV" id="6QH_LDtbV66" role="2ShVmc">
-                <node concept="3uibUv" id="6QH_LDtbV67" role="3rHrn6">
-                  <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-                </node>
-                <node concept="17QB3L" id="6QH_LDtbV68" role="3rHtpV" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="6QH_LDtbV5P" role="3cqZAp">
           <node concept="3cpWsn" id="6QH_LDtbV5Q" role="3cpWs9">
             <property role="TrG5h" value="evaluator" />
@@ -759,9 +739,6 @@
                     <node concept="10M0yZ" id="6QH_LDtbV6h" role="37wK5m">
                       <ref role="1PxDUh" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
                       <ref role="3cqZAo" to="yg8f:24Vro6cS5rK" resolve="NULL" />
-                    </node>
-                    <node concept="37vLTw" id="6QH_LDtbV6i" role="37wK5m">
-                      <ref role="3cqZAo" node="6QH_LDtbV61" resolve="errors" />
                     </node>
                   </node>
                 </node>
