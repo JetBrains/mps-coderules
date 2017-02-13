@@ -671,6 +671,11 @@
     <property role="R5$K2" value="false" />
     <property role="EcuMT" value="1618328391714701957" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1CcQBrPqjP1" role="1TKVEl">
+      <property role="IQ2nx" value="1877115349164965185" />
+      <property role="TrG5h" value="final" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="PrWs8" id="1pPth$m5oa7" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
