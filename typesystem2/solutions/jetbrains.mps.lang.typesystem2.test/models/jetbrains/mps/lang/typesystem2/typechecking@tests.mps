@@ -603,11 +603,11 @@
           <node concept="3cpWsn" id="6$7vuu2ugt3" role="3cpWs9">
             <property role="TrG5h" value="tplApp" />
             <node concept="3uibUv" id="6$7vuu2ugsZ" role="1tU5fm">
-              <ref role="3uigEE" to="hano:3GlpCDSxTG7" resolve="TemplateApplicator" />
+              <ref role="3uigEE" to="hano:3GlpCDSxTG7" resolve="TypecheckingTemplates" />
             </node>
             <node concept="2ShNRf" id="6$7vuu2ugt4" role="33vP2m">
               <node concept="1pGfFk" id="6$7vuu2ugt5" role="2ShVmc">
-                <ref role="37wK5l" to="hano:3GlpCDSychS" resolve="TemplateApplicator" />
+                <ref role="37wK5l" to="hano:3GlpCDSychS" resolve="TypecheckingTemplates" />
                 <node concept="37vLTw" id="6$7vuu2ugt6" role="37wK5m">
                   <ref role="3cqZAo" node="6$7vuu2ugbx" resolve="repository" />
                 </node>
