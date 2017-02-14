@@ -5974,5 +5974,22 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="1CcQBrQdzxX">
+    <property role="3GE5qa" value="constraint" />
+    <ref role="1XX52x" to="wq2x:1CcQBrQdzwG" resolve="EqualsConstraint" />
+    <node concept="3EZMnI" id="1CcQBrQdzxZ" role="2wV5jI">
+      <node concept="3F1sOY" id="1CcQBrQdzy9" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:1CcQBrQdzxt" resolve="left" />
+      </node>
+      <node concept="3F0ifn" id="1CcQBrQdzyf" role="3EZMnx">
+        <property role="3F0ifm" value="≡" />
+        <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
+      </node>
+      <node concept="3F1sOY" id="1CcQBrQdzyx" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:1CcQBrQdzxv" resolve="right" />
+      </node>
+      <node concept="l2Vlx" id="1CcQBrQdzy2" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

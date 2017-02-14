@@ -1472,5 +1472,25 @@
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1CcQBrQdzwG">
+    <property role="EcuMT" value="1877115349178398764" />
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="EqualsConstraint" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyj" id="1CcQBrQdzxt" role="1TKVEi">
+      <property role="IQ2ns" value="1877115349178398813" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="left" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+    <node concept="1TJgyj" id="1CcQBrQdzxv" role="1TKVEi">
+      <property role="IQ2ns" value="1877115349178398815" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="right" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
 </model>
 
