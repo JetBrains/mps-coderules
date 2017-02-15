@@ -528,6 +528,25 @@
         </node>
       </node>
     </node>
+    <node concept="Wx3nA" id="1CcQBrQgCB2" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="TYPENODE_SYM" />
+      <node concept="3Tm1VV" id="1CcQBrQgCB3" role="1B3o_S" />
+      <node concept="3uibUv" id="1CcQBrQgCB4" role="1tU5fm">
+        <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
+      </node>
+      <node concept="2ShNRf" id="1CcQBrQgCB5" role="33vP2m">
+        <node concept="1pGfFk" id="1CcQBrQgCB6" role="2ShVmc">
+          <ref role="37wK5l" to="av0y:~ConstraintSymbol.&lt;init&gt;(java.lang.String,int)" resolve="ConstraintSymbol" />
+          <node concept="Xl_RD" id="1CcQBrQgCB7" role="37wK5m">
+            <property role="Xl_RC" value="typeNode" />
+          </node>
+          <node concept="3cmrfG" id="1CcQBrQgCB8" role="37wK5m">
+            <property role="3cmrfH" value="2" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="4OKkcnfu_zg" role="jymVt" />
     <node concept="2YIFZL" id="4OKkcnfu_$d" role="jymVt">
       <property role="TrG5h" value="typeOf" />
@@ -577,6 +596,54 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4OKkcnfu_$r" role="jymVt" />
+    <node concept="2YIFZL" id="1CcQBrQgD4I" role="jymVt">
+      <property role="TrG5h" value="typeNode" />
+      <node concept="37vLTG" id="1CcQBrQgD4J" role="3clF46">
+        <property role="TrG5h" value="type" />
+        <node concept="3uibUv" id="1CcQBrQgD4K" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1CcQBrQgD4L" role="3clF46">
+        <property role="TrG5h" value="anchor" />
+        <node concept="3uibUv" id="1CcQBrQgD4M" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="1CcQBrQgD4N" role="3clF45">
+        <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
+      </node>
+      <node concept="3Tm1VV" id="1CcQBrQgD4O" role="1B3o_S" />
+      <node concept="3clFbS" id="1CcQBrQgD4P" role="3clF47">
+        <node concept="3clFbF" id="1CcQBrQgD4Q" role="3cqZAp">
+          <node concept="2OqwBi" id="1CcQBrQgD4R" role="3clFbG">
+            <node concept="2OqwBi" id="1CcQBrQgD4S" role="2Oq$k0">
+              <node concept="2ShNRf" id="1CcQBrQgD4T" role="2Oq$k0">
+                <node concept="1pGfFk" id="1CcQBrQgD4U" role="2ShVmc">
+                  <ref role="37wK5l" to="nz6g:4sSe4$oM2rk" resolve="ConstraintBuilder" />
+                  <node concept="37vLTw" id="1CcQBrQgDfc" role="37wK5m">
+                    <ref role="3cqZAo" node="1CcQBrQgCB2" resolve="TYPENODE_SYM" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1CcQBrQgD4W" role="2OqNvi">
+                <ref role="37wK5l" to="nz6g:4sSe4$oM2sT" resolve="withArguments" />
+                <node concept="37vLTw" id="1CcQBrQgD4X" role="37wK5m">
+                  <ref role="3cqZAo" node="1CcQBrQgD4J" resolve="type" />
+                </node>
+                <node concept="37vLTw" id="1CcQBrQgD4Y" role="37wK5m">
+                  <ref role="3cqZAo" node="1CcQBrQgD4L" resolve="anchor" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="1CcQBrQgD4Z" role="2OqNvi">
+              <ref role="37wK5l" to="nz6g:4sSe4$oM2zI" resolve="toConstraint" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1CcQBrQgD4H" role="jymVt" />
     <node concept="2YIFZL" id="4OKkcnfu_$s" role="jymVt">
       <property role="TrG5h" value="prepend2" />
       <node concept="37vLTG" id="4OKkcnfu_$t" role="3clF46">
