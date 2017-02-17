@@ -194,9 +194,6 @@
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
-      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
-        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
-      </concept>
       <concept id="6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" flags="ng" index="3CFYIy">
         <reference id="6407023681583036854" name="attributeConcept" index="3CFYIx" />
       </concept>
@@ -764,9 +761,15 @@
               <node concept="2OqwBi" id="6Ng87FPZcyG" role="2SgHGx">
                 <node concept="2rP1CM" id="6Ng87FPZcyH" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="6Ng87FPZcyI" role="2OqNvi">
-                  <node concept="1xMEDy" id="6Ng87FPZcyJ" role="1xVPHs">
-                    <node concept="chp4Y" id="6Ng87FPZcyK" role="ri$Ld">
-                      <ref role="cht4Q" to="tpee:fzclF80" resolve="StatementList" />
+                  <node concept="3gmYPX" id="euG2bFd70E" role="1xVPHs">
+                    <node concept="3gn64h" id="euG2bFd70F" role="3gmYPZ">
+                      <ref role="3gnhBz" to="tpee:fzclF80" resolve="StatementList" />
+                    </node>
+                    <node concept="3gn64h" id="euG2bFd83W" role="3gmYPZ">
+                      <ref role="3gnhBz" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+                    </node>
+                    <node concept="3gn64h" id="euG2bFd9vf" role="3gmYPZ">
+                      <ref role="3gnhBz" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="6Ng87FPZcyL" role="1xVPHs" />
