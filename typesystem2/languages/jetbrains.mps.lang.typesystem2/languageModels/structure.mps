@@ -815,8 +815,9 @@
       <property role="IQ2ns" value="3371197252794315279" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="recovery" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="2V8TwD0$Yds" resolve="RecoveryBlock" />
+      <node concept="asaX9" id="euG2bFCwYA" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="1pPth$m5Bb$" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -1247,6 +1248,7 @@
     <property role="3GE5qa" value="type.code" />
     <property role="TrG5h" value="RecoveryBlock" />
     <ref role="1TJDcQ" node="1hX44vMFoce" resolve="CodeBlock" />
+    <node concept="asaX9" id="euG2bFCwYC" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="2V8TwD0E9Wq">
     <property role="EcuMT" value="3371197252795670298" />
@@ -1260,6 +1262,7 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1pPth$m5oa5" resolve="TypeFeature" />
     </node>
+    <node concept="asaX9" id="euG2bFwcwG" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="2V8TwD148$8">
     <property role="EcuMT" value="3371197252802480392" />
@@ -1270,6 +1273,7 @@
     <node concept="PrWs8" id="2V8TwD148BA" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
+    <node concept="asaX9" id="euG2bFw8r2" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="7rf49Ngk1cK">
     <property role="EcuMT" value="8561079682350453552" />
