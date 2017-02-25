@@ -19,7 +19,9 @@ package jetbrains.mps.unification.test;
 import jetbrains.mps.unification.Term;
 import jetbrains.mps.unification.TermWrapper;
 import org.jetbrains.annotations.NotNull;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.omg.CORBA.UNKNOWN;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -284,102 +286,7 @@ public class SolverTests {
     }
 
     @Test
-    public void testCyclic() throws Exception {
-        assertUnifiesWithBindings(
-                parse("@1 a{b ^1}"),
-                parse("@2 a{b a{b ^2}}")
-
-        );
-        assertUnifiesWithBindings(
-                parse("@1 a{b    ^1}"),
-                parse("   a{b @3 a{b ^3}}")
-
-        );
-        assertUnifiesWithBindings(
-                parse("@1 a{b ^1}"),
-                parse("@2 a{b ^2}")
-        );
-        // the following tests are not very strict, but they suffice to convey a message
-        // that cyclic terms can be safely unified
-        assertUnifiesWithBindings(
-                parse("a{@1 b{c{^2}} @2 b{c{^1}}}"),
-                parse("a{   b{Y}        b{Y}    }"),
-
-                // TODO: the innermost "b" must actually contain a ref to the top level
-                // FIXME: AssertStructurallyEquivalent
-                bind(var("Y"), parse("@1 c{b{c{b    }}}"))
-        );
-        assertUnifiesWithBindings(
-                parse("a{@1 b{c{^1}} @2 c{b{^2}}}"),
-                parse("a{   b{Y}        Y       }"),
-
-                // TODO: the innermost "b" must actually contain a ref to the top level
-                // FIXME: AssertStructurallyEquivalent
-                bind(var("Y"), parse("c{b     }"))
-        );
-        assertUnifiesWithBindings(
-                parse("a{@1 b{c{@3 b{c{^3}}}} @2 c{b{^2}}}"),
-                parse("a{   b{Y}                 Y       }"),
-
-                // TODO: the innermost "c" must actually contain a ref to the top level
-                // FIXME: AssertStructurallyEquivalent
-                bind(var("Y"), parse("c{b{c     }}"))
-        );
-        assertUnifiesWithBindings(
-                parse("@1 a{c{d} b{e{^1 f}}}"),
-                parse("   a{c{X} b{Y}}"),
-
-                bind(var("X"), parse("d")),
-
-                // TODO: the innermost "b" must actually contain a ref to the top level
-                // FIXME: AssertStructurallyEquivalent
-                bind(var("Y"), parse("e{a{c{d} b     } f}"))
-        );
-        assertUnifiesWithBindings(
-                parse("@1 a{c{d} b{e{@2 a{c{d} b{e{^2 f}}} f}}}"),
-                parse("   a{c{X} b{Y}}"),
-
-                bind(var("X"), parse("d")),
-
-                // TODO: the innermost "e" must actually contain a ref to the top level
-                // FIXME: AssertStructurallyEquivalent
-                bind(var("Y"), parse("e{a{c{d}  b{e{      f}}} f}"))
-        );
-    }
-
-    @Test
-    public void testCyclicExt() throws Exception {
-        Term left = parse("@1 j{^1}");
-        Term right = term("j", term("j", ref(left)));
-        assertUnifiesWithBindings(
-                left,
-                right
-        );
-        assertUnifiesWithBindings(
-                parse("a{@1 b{c{^1}} b{c{Z}}  @2 c{b{^2}}}"),
-                parse("a{   Z        b{Y}        Y       }"),
-
-                bind(var("Y"), parse("@2 c{Z}")),
-                bind(var("Z"), parse("@1 b{c{^1}}"))
-        );
-        assertUnifiesWithBindings(
-                parse("@1 a{c{d} b{e{Z f}}  ^1}"),
-                parse("   a{c{X} b{Y}        Z}"),
-
-                bind(var("X"), parse("d")),
-                bind(var("Y"), parse("e{Z f}")),
-                bind(var("Z"), parse("@1 a{c{d} b{e{Z f}}  ^1}"))
-        );
-    }
-
-    @Test
     public void testCyclicVar() throws Exception {
-        assertUnifiesWithBindings(
-                parse("@1 a{b ^1}"),
-                parse("@1 a{b  X}"),
-
-                bind(var("X"), parse("@1 a{b ^1}"))
-        );
         assertUnifiesWithBindings(
                 parse("@1 a{b ^1}"),
                 parse("X"),
@@ -391,12 +298,6 @@ public class SolverTests {
                 parse("X"),
 
                 bind(var("X"), parse("@1 a{^1 b c}"))
-        );
-        assertUnifiesWithBindings(
-                parse("@1 a{b ^1}"),
-                parse("@1 a{b a{b X}}"),
-
-                bind(var("X"), parse("@1 a{b ^1}"))
         );
         assertUnifiesWithBindings(
                 parse("a{X     c{X}                }"),
@@ -440,35 +341,6 @@ public class SolverTests {
                 bind(var("X"), parse("d"))
         );
     }
-
-    @Test
-    public void testCyclic_TermRewriting() throws Exception {
-        // The original problem is to unify two cyclic terms:
-        //
-        //          +->f              +--->f
-        //          |_/ \             |   / \
-        //              X             |  f   f<-+
-        //                            |_/ \ / \_|
-        //                                 Y
-        //
-        // -- which would be equivalent to the following:
-        //
-        //          "@1 f {^1 X}"     "@2 f {f {^2 Y} @3 f {Y ^3}}"
-        //
-        // Unfortunately, although the algorithm can successfully unify these
-        // two terms, no solution exists that is not recursive. That is,
-        // we cannot produce a list of variable bindings that do not include a
-        // variable itself in the substitution. Thus, we resort to a simplified test.
-
-        assertUnifiesWithBindings(
-                parse("@1 f {^1 X}"),
-                parse("@2 f {f {^2 Y} @3 f {Z ^3}}"),
-
-                bind(var("X"), parse("@1 f{Z ^1}")),
-                bind(var("Y"), parse("@1 f{Z ^1}"))
-        );
-    }
-
 
     @Test
     public void testUnifyExternalRef() throws Exception {
@@ -605,8 +477,32 @@ public class SolverTests {
     @Test
     public void testFailCyclic() throws Exception {
         assertUnificationFails(
+                term("g", ref(parse("f {h X}"))),
+                term("g", var("X")),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                parse("t {@1 f {h X} g {f {h X}}}"),
+                parse("t {Y          g {X}}"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                parse("a{b X}"),
+                parse("X"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
                 parse("f{X}"),
                 parse("X"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                parse("X"),
+                parse("f{X}"),
 
                 CYCLE_DETECTED
         );
@@ -631,6 +527,18 @@ public class SolverTests {
         assertUnificationFails(
                 parse("a{   b{c{b{c{b{c{^2}}}}}} @2 b{c{b{c{^2}}}}}"),
                 parse("a{   b{Y}                    b{Y}          }"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                parse("t {@1 f {h X} g {f {h X}}}"),
+                parse("t {Y          g {X}}"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                parse("t {@1 f {h X} g {^1}}"),
+                parse("t {Y          g {X}}"),
 
                 CYCLE_DETECTED
         );

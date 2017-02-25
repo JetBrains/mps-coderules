@@ -29,10 +29,12 @@ import static jetbrains.mps.unification.Unification.*;
  * This is an implementation of the "near linear" algorithm for solving syntactic unification
  * as described in the paper linked below and also in the textbook of the same author.<sup>1</sup> <sup>2</sup>
  *
- * No recursive terms are allowed as a solution, meaning the "occurrs check" for variables
- * is performed on the input. However, cyclic terms are allowed as input and can be unified, producing
- * solutions binding variables to cyclic terms. Variables can also be passed by reference without altering the
+ * No recursive terms are allowed as a solution, meaning the "occurs check" for variables
+ * is performed on the input. Variables can also be passed by reference without altering the
  * intuitive behaviour of the algorithm.
+ *
+ * The "REF" terms are an extension of the term algebra used in [1]. For the purposes of this algorithm, the "REF"
+ * terms are treated as pre-bound variables.
  *
  * If successful, the returned {@link Substitution} contains
  * the variable bindings.
@@ -68,43 +70,26 @@ public class UnionFindTermGraphUnifier {
         s = find(s);
         t = find(t);
 
-        if (s == t) return true;
+        if (s == t) {
+            return true;
+        }
 
         InnerTerm zs = s.mySchema;
         InnerTerm zt = t.mySchema;
 
+        while (zs.myOrigin.is(REF)) {
+            s = union(s, getRef(zs));
+            zs = s.mySchema;
+        }
+
+        while (zt.myOrigin.is(REF)) {
+            t = union(t, getRef(zt));
+            zt = t.mySchema;
+        }
+
         // a VAR always matches another node
         if(zs.myOrigin.is(VAR) || zt.myOrigin.is(VAR)) {
             union(s, t);
-            return true;
-        }
-
-        // dereference REF nodes
-        InnerTerm ds = deref(zs);
-        InnerTerm dt = deref(zt);
-
-        if (ds.myOrigin.is(VAR)) {
-            union(s, find(ds));
-            union(s, t);
-            return true;
-        }
-        else
-        {
-            zs = ds;
-        }
-
-        if (dt.myOrigin.is(VAR)) {
-            union(t, find(dt));
-            union(t, s);
-            return true;
-        }
-        else
-        {
-            zt = dt;
-        }
-
-        // use find 2nd time to account for dereferenced nodes
-        if (find(zs) == find(zt)) {
             return true;
         }
 
@@ -116,7 +101,7 @@ public class UnionFindTermGraphUnifier {
                 return false; // symbol clash
             }
 
-            // union REF nodes only to each other
+            // union REF nodes only if they are the same node
             if (s.myOrigin.is(REF) == t.myOrigin.is(REF)) {
                 union(s, t);
             }
@@ -138,7 +123,14 @@ public class UnionFindTermGraphUnifier {
         }
     }
 
-    private void union(InnerTerm s, InnerTerm t) {
+    private InnerTerm union(InnerTerm s, InnerTerm t) {
+        s = find(s);
+        t = find(t);
+
+        if (s == t) {
+            return s;
+        }
+
         int ssize = s.mySize;
         int tsize = t.mySize;
 
@@ -154,19 +146,21 @@ public class UnionFindTermGraphUnifier {
         }
 
         // union s and t classes by moving t under s
-
         s.mySize = ssize + tsize;
         prependVars(s, t.myVars);
+        t.myClass = s;
 
+        // copy the schema
         InnerTerm zs = s.mySchema;
         InnerTerm zt = t.mySchema;
-        if (zs.myOrigin.is(VAR)  ||
-            (zs.myOrigin.is(REF) && !zt.myOrigin.is(VAR)))
-        {
+        if (zs.myOrigin.is(REF)) {
+            s.mySchema = zt;
+
+        } else if (zs.myOrigin.is(VAR) && !(zt.myOrigin.is(VAR))) {
             s.mySchema = zt;
         }
 
-        t.myClass = s;
+        return s;
     }
 
     private InnerTerm find(InnerTerm term) {
@@ -176,7 +170,6 @@ public class UnionFindTermGraphUnifier {
         }
 
         // find representative and compress paths
-
         List<InnerTerm> path = new ArrayList<InnerTerm>(4);
         path.add(term.myClass);
         for (InnerTerm t; (t = term.myClass) != repr; ) {
@@ -191,12 +184,7 @@ public class UnionFindTermGraphUnifier {
     }
 
     private Substitution findSolution(InnerTerm s) {
-        mySolutionQueue.add(s);
-        Substitution solution = EMPTY_SUBSTITUTION;
-        while(!mySolutionQueue.isEmpty() && solution.isSuccessful()) {
-            solution = findSolution(mySolutionQueue.removeFirst(), solution);
-        }
-        return solution;
+        return findSolution(s, EMPTY_SUBSTITUTION);
     }
 
     private Substitution findSolution(InnerTerm s, Substitution substitution) {
@@ -213,49 +201,38 @@ public class UnionFindTermGraphUnifier {
             z.myVisited = true;
 
             for (Term c : z.myOrigin.arguments()) {
-                substitution = findSolution(toInner(c), substitution);
-
-                if (!substitution.isSuccessful()) {
+                if (!(substitution = findSolution(toInner(c), substitution)).isSuccessful()) {
                     break;
                 }
             }
 
             z.myVisited = false;
-
-        }
-        else if(z.myOrigin.is(REF)) {
-            InnerTerm trg = deref(z);
-            if (!trg.myAcyclic) {
-                mySolutionQueue.add(trg);
-            }
         }
 
-        if (!substitution.isSuccessful()) {
-            return substitution;
-        }
+        if (substitution.isSuccessful()) {
+            z.myAcyclic = true;
 
-        z.myAcyclic = true;
+            // avoid unnecessary instantiation
+            SuccessfulSubstitution success =
+                    (substitution instanceof SuccessfulSubstitution) ?
+                            (SuccessfulSubstitution) substitution : new SuccessfulSubstitution(substitution);
 
-        // avoid unnecessary instantiation
-        SuccessfulSubstitution success =
-                (substitution instanceof SuccessfulSubstitution) ?
-                (SuccessfulSubstitution) substitution : new SuccessfulSubstitution(substitution);
+            for (InnerTerm var : find(z).myVars) {
+                if (var != z) {
+                    // Keep the order of variables within a binding
+                    if (z.myOrigin.is(VAR) && z.myOrigin.compareTo(var.myOrigin) < 0) {
+                        success.addBinding(fromInner(z), fromInner(var));
 
-        for (InnerTerm var : find(z).myVars) {
-            if (var != z) {
-                InnerTerm trg = deref(z);
-
-                // Keep the order of variables within a binding
-                if (trg.myOrigin.is(VAR) && trg.myOrigin.compareTo(var.myOrigin) < 0) {
-                    success.addBinding(fromInner(trg), fromInner(var));
-                }
-                else {
-                    success.addBinding(fromInner(var), fromInner(trg));
+                    } else {
+                        success.addBinding(fromInner(var), fromInner(z));
+                    }
                 }
             }
+
+            substitution = success;
         }
 
-        return success;
+        return substitution;
     }
 
     private void prependVars(InnerTerm t, List<InnerTerm> vars) {
@@ -266,12 +243,11 @@ public class UnionFindTermGraphUnifier {
         t.myVars = newVars;
     }
 
-    private InnerTerm deref(InnerTerm zs) {
-        InnerTerm tmp = zs;
-        while (tmp.myOrigin.is(REF)) {
-            tmp = toInner(tmp.myOrigin.get());
+    private InnerTerm getRef(InnerTerm zs) {
+        if (zs.myOrigin.is(REF)) {
+            return toInner(zs.myOrigin.get());
         }
-        return tmp;
+        return zs;
     }
 
     private InnerTerm toInner(Term term) {
@@ -298,13 +274,8 @@ public class UnionFindTermGraphUnifier {
     }
 
     private TermWrapper wrapper = TermWrapper.ID;
-
     private Map<Object, InnerTerm> myTermCache = new IdentityHashMap<Object, InnerTerm>();
-
     private FailureCause myFailureCause = UKNOWN;
-
-    private LinkedList<InnerTerm> mySolutionQueue = new LinkedList<InnerTerm>();
-
     private Object[] myFailureDetails = null;
 
     private static boolean eq(Object a, Object b) {
