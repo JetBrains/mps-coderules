@@ -5223,9 +5223,12 @@
               <node concept="2OqwBi" id="4hPXq9Jmewf" role="2Oq$k0">
                 <node concept="3bvxqY" id="4hPXq9Jmewm" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="4hPXq9Jmewh" role="2OqNvi">
-                  <node concept="1xMEDy" id="4hPXq9Jmewi" role="1xVPHs">
-                    <node concept="chp4Y" id="4hPXq9Jmewj" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:6p0DfM0a3gA" resolve="Head" />
+                  <node concept="3gmYPX" id="2tI9bOlhlwu" role="1xVPHs">
+                    <node concept="3gn64h" id="2tI9bOlhlwv" role="3gmYPZ">
+                      <ref role="3gnhBz" to="wq2x:6p0DfM0a3gA" resolve="Head" />
+                    </node>
+                    <node concept="3gn64h" id="2tI9bOlhlZF" role="3gmYPZ">
+                      <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="TypeInitializer" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="4hPXq9Jmewk" role="1xVPHs" />
