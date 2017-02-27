@@ -126,10 +126,13 @@ class Controller(
                         frameStack.reset(savedFrame)
                     }
 
-                    if (failure == null) {
-                        // normal termination: skip the other alternatives
-                        break
+                    if (failure != null) {
+                        trace.failure(failure)
+                        continue
                     }
+
+                    // normal termination: skip the other alternatives
+                    break
                 }
 
                 if (failure != null) {
