@@ -547,6 +547,25 @@
         </node>
       </node>
     </node>
+    <node concept="Wx3nA" id="5tpkEj3JBli" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="ERROR_SYM" />
+      <node concept="3Tm1VV" id="5tpkEj3JBlj" role="1B3o_S" />
+      <node concept="3uibUv" id="5tpkEj3JBlk" role="1tU5fm">
+        <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
+      </node>
+      <node concept="2ShNRf" id="5tpkEj3JBll" role="33vP2m">
+        <node concept="1pGfFk" id="5tpkEj3JBlm" role="2ShVmc">
+          <ref role="37wK5l" to="av0y:~ConstraintSymbol.&lt;init&gt;(java.lang.String,int)" resolve="ConstraintSymbol" />
+          <node concept="Xl_RD" id="5tpkEj3JBln" role="37wK5m">
+            <property role="Xl_RC" value="error" />
+          </node>
+          <node concept="3cmrfG" id="5tpkEj3JBlo" role="37wK5m">
+            <property role="3cmrfH" value="2" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="4OKkcnfu_zg" role="jymVt" />
     <node concept="2YIFZL" id="4OKkcnfu_$d" role="jymVt">
       <property role="TrG5h" value="typeOf" />
