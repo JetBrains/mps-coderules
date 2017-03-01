@@ -528,7 +528,7 @@
               </node>
               <node concept="hTh3S" id="2KSgAgV9UDR" role="1xVPHs">
                 <node concept="3gn64h" id="2KSgAgV9UDS" role="hTh3Z">
-                  <ref role="3gnhBz" to="5j4j:7E86$tKsl45" resolve="LogicalClause" />
+                  <ref role="3gnhBz" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
                 </node>
               </node>
             </node>
@@ -1557,31 +1557,6 @@
       <node concept="3clFbS" id="5UYwY$H7MGd" role="2VODD2" />
     </node>
   </node>
-  <node concept="13h7C7" id="2V8TwD0$YJV">
-    <property role="3GE5qa" value="type.code" />
-    <ref role="13h7C2" to="wq2x:2V8TwD0$Yds" resolve="RecoveryBlock" />
-    <node concept="13hLZK" id="2V8TwD0$YJW" role="13h7CW">
-      <node concept="3clFbS" id="2V8TwD0$YJX" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="2V8TwD0$YK6" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="TrG5h" value="getExpectedRetType" />
-      <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:i2fhBNC" resolve="getExpectedRetType" />
-      <node concept="3Tm1VV" id="2V8TwD0$YK7" role="1B3o_S" />
-      <node concept="2AHcQZ" id="2V8TwD0$YKa" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-      </node>
-      <node concept="3clFbS" id="2V8TwD0$YKd" role="3clF47">
-        <node concept="3clFbF" id="2V8TwD0$YKx" role="3cqZAp">
-          <node concept="2c44tf" id="2V8TwD0$YKv" role="3clFbG">
-            <node concept="3Tqbb2" id="2V8TwD0$YKY" role="2c44tc" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="2V8TwD0$YKe" role="3clF45" />
-    </node>
-  </node>
   <node concept="13h7C7" id="4MEOIDFxxVo">
     <property role="3GE5qa" value="type.term" />
     <ref role="13h7C2" to="wq2x:4MEOIDFxxDM" resolve="TypeTermDeclarationParameterReference" />
@@ -1724,33 +1699,6 @@
     </node>
     <node concept="13hLZK" id="4MEOIDG83WX" role="13h7CW">
       <node concept="3clFbS" id="4MEOIDG83WY" role="2VODD2" />
-    </node>
-  </node>
-  <node concept="13h7C7" id="1L74NXEmFeh">
-    <property role="3GE5qa" value="constraint.typespecific" />
-    <ref role="13h7C2" to="wq2x:7eGEHDlgPU1" resolve="NewTypeConstraint" />
-    <node concept="13hLZK" id="1L74NXEmFei" role="13h7CW">
-      <node concept="3clFbS" id="1L74NXEmFej" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="1L74NXEmFes" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getTypeDeclaration" />
-      <ref role="13i0hy" node="1L74NXEmFa8" resolve="getTypeDeclaration" />
-      <node concept="3Tm1VV" id="1L74NXEmFet" role="1B3o_S" />
-      <node concept="3clFbS" id="1L74NXEmFew" role="3clF47">
-        <node concept="3clFbF" id="1L74NXEmFeR" role="3cqZAp">
-          <node concept="2OqwBi" id="1L74NXEmFnN" role="3clFbG">
-            <node concept="13iPFW" id="1L74NXEmFeQ" role="2Oq$k0" />
-            <node concept="3TrEf2" id="1L74NXEmFFe" role="2OqNvi">
-              <ref role="3Tt5mk" to="wq2x:YGS68N6UU4" resolve="typeDeclaration" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="1L74NXEmFex" role="3clF45">
-        <ref role="ehGHo" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
-      </node>
     </node>
   </node>
 </model>
