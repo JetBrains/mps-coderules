@@ -2,7 +2,7 @@
 <model ref="r:09e53496-6477-45e7-abd5-eaf3fac3b360(jetbrains.mps.logic.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -74,10 +74,13 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
@@ -174,10 +177,12 @@
             </node>
             <node concept="1PxgMI" id="7MlQDeOyTuD" role="33vP2m">
               <property role="1BlNFB" value="true" />
-              <ref role="1m5ApE" to="5j4j:5lJXKARS0" resolve="TreeForm" />
               <node concept="2OqwBi" id="7MlQDeOyTii" role="1m5AlR">
                 <node concept="13iPFW" id="7MlQDeOyTij" role="2Oq$k0" />
                 <node concept="1mfA1w" id="7MlQDeOyTik" role="2OqNvi" />
+              </node>
+              <node concept="chp4Y" id="6fXjIfxgne2" role="3oSUPX">
+                <ref role="cht4Q" to="5j4j:5lJXKARS0" resolve="TreeForm" />
               </node>
             </node>
           </node>
@@ -238,10 +243,12 @@
         <node concept="3clFbF" id="75vUFrSLzVQ" role="3cqZAp">
           <node concept="1PxgMI" id="75vUFrSL$eI" role="3clFbG">
             <property role="1BlNFB" value="true" />
-            <ref role="1m5ApE" to="5j4j:75vUFrS_9Sg" resolve="LogicalVariableDeclarationContainer" />
             <node concept="2OqwBi" id="75vUFrSLzXF" role="1m5AlR">
               <node concept="13iPFW" id="75vUFrSLzVP" role="2Oq$k0" />
               <node concept="1mfA1w" id="75vUFrSL$5c" role="2OqNvi" />
+            </node>
+            <node concept="chp4Y" id="6fXjIfxgndM" role="3oSUPX">
+              <ref role="cht4Q" to="5j4j:75vUFrS_9Sg" resolve="LogicalVariableDeclarationContainer" />
             </node>
           </node>
         </node>

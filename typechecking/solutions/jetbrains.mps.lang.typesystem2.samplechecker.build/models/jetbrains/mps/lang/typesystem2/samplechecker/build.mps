@@ -4,7 +4,7 @@
   <languages>
     <use id="427a473d-5177-432c-9905-bcbceb71b996" name="jetbrains.mps.build.mps.runner" version="0" />
     <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="2" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="3" />
     <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="0" />
@@ -664,12 +664,6 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7BVjoXzUxWJ" role="3bR37C">
-          <node concept="3bR9La" id="7BVjoXzUxWK" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6L2F" resolve="jetbrains.mps.baseLanguage.tuples" />
-          </node>
-        </node>
         <node concept="1E0d5M" id="7BVjoXzUxWL" role="1E1XAP">
           <ref role="1E0d5P" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.typesystem2.runtime" />
         </node>
@@ -763,6 +757,16 @@
             <node concept="3bR9La" id="7Ant4Wk$kD2" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7Ant4Wk$48A" resolve="jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="6fXjIfxguhs" role="3bR37C">
+            <node concept="3bR9La" id="6fXjIfxguhr" role="1SiIV1">
+              <ref role="3bR37D" to="ffeo:7YI57w6K0jH" resolve="jetbrains.mps.lang.descriptor#9020561928507175817" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="6fXjIfxguhu" role="3bR37C">
+            <node concept="3bR9La" id="6fXjIfxguht" role="1SiIV1">
+              <ref role="3bR37D" to="ffeo:6zkSwmUIjUj" resolve="jetbrains.mps.lang.aspect#3274906159125927726" />
             </node>
           </node>
         </node>
@@ -1940,12 +1944,6 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7Ant4WkHLqg" role="3bR37C">
-          <node concept="3bR9La" id="7Ant4WkHLqh" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6L2F" resolve="jetbrains.mps.baseLanguage.tuples" />
-          </node>
-        </node>
         <node concept="1E0d5M" id="7Ant4WkHLqi" role="1E1XAP">
           <ref role="1E0d5P" node="7Ant4WkHLr9" resolve="jetbrains.mps.lang.typesystem2.runtime" />
         </node>
@@ -2039,6 +2037,16 @@
             <node concept="3bR9La" id="7Ant4WkHLqM" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7Ant4WkHLsm" resolve="jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="6fXjIfxgus0" role="3bR37C">
+            <node concept="3bR9La" id="6fXjIfxgurZ" role="1SiIV1">
+              <ref role="3bR37D" to="ffeo:7YI57w6K0jH" resolve="jetbrains.mps.lang.descriptor#9020561928507175817" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="6fXjIfxgus2" role="3bR37C">
+            <node concept="3bR9La" id="6fXjIfxgus1" role="1SiIV1">
+              <ref role="3bR37D" to="ffeo:6zkSwmUIjUj" resolve="jetbrains.mps.lang.aspect#3274906159125927726" />
             </node>
           </node>
         </node>

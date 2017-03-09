@@ -2,7 +2,7 @@
 <model ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.typesystem2.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -20,7 +20,6 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -168,8 +167,8 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -403,12 +402,14 @@
                   </node>
                   <node concept="2OqwBi" id="4EfgX2E$QyW" role="33vP2m">
                     <node concept="1PxgMI" id="4EfgX2E$Qpz" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:fIYIFW9" resolve="StaticMethodCall" />
                       <node concept="2OqwBi" id="4EfgX2E$Qp$" role="1m5AlR">
                         <node concept="13iPFW" id="4EfgX2E$Qp_" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4EfgX2E$QpA" role="2OqNvi">
                           <ref role="3Tt5mk" to="wq2x:4EfgX2EvGcc" resolve="expression" />
                         </node>
+                      </node>
+                      <node concept="chp4Y" id="6fXjIfxgneJ" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fIYIFW9" resolve="StaticMethodCall" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="4EfgX2E$R7t" role="2OqNvi">
@@ -427,12 +428,14 @@
                       <node concept="3cpWs3" id="4EfgX2EE6Te" role="3uHU7B">
                         <node concept="2OqwBi" id="4EfgX2EEb$j" role="3uHU7w">
                           <node concept="1PxgMI" id="4EfgX2EEbam" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                             <node concept="2OqwBi" id="4EfgX2EE7im" role="1m5AlR">
                               <node concept="37vLTw" id="4EfgX2EE73f" role="2Oq$k0">
                                 <ref role="3cqZAo" node="4EfgX2E$Qpy" resolve="smd" />
                               </node>
                               <node concept="1mfA1w" id="4EfgX2EE920" role="2OqNvi" />
+                            </node>
+                            <node concept="chp4Y" id="6fXjIfxgnf9" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="4EfgX2EEcd0" role="2OqNvi">
@@ -487,12 +490,14 @@
                   <ref role="37wK5l" to="wyt6:~String.valueOf(boolean):java.lang.String" resolve="valueOf" />
                   <node concept="2OqwBi" id="3x8pcoFej2u" role="37wK5m">
                     <node concept="1PxgMI" id="3x8pcoFejIl" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:fzclF81" resolve="BooleanConstant" />
                       <node concept="2OqwBi" id="3x8pcoFeipH" role="1m5AlR">
                         <node concept="13iPFW" id="3x8pcoFehXU" role="2Oq$k0" />
                         <node concept="3TrEf2" id="3x8pcoFeiM5" role="2OqNvi">
                           <ref role="3Tt5mk" to="wq2x:4EfgX2EvGcc" resolve="expression" />
                         </node>
+                      </node>
+                      <node concept="chp4Y" id="6fXjIfxgneO" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fzclF81" resolve="BooleanConstant" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="3x8pcoFekiC" role="2OqNvi">
