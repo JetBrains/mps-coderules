@@ -4241,13 +4241,6 @@
         <property role="pLAjf" value="VK_F7" />
       </node>
     </node>
-    <node concept="Zd509" id="7E66$cFe67Z" role="Zd508">
-      <ref role="1bYAoF" node="41ox5VnrUX7" resolve="ClearTypes" />
-      <node concept="pLAjd" id="7E66$cFe681" role="Zd501">
-        <property role="pLAjc" value="ctrl" />
-        <property role="pLAjf" value="VK_F7" />
-      </node>
-    </node>
   </node>
   <node concept="312cEu" id="1pPth$l_TFV">
     <property role="TrG5h" value="TypecheckingHelper" />
