@@ -95,6 +95,7 @@ class Controller(
 
                 for (body in match.rule.bodyAlternation()) {
                     if (failure != null) {
+                        trace.failure(failure)
                         trace.retry(match)
                         failure = null
                     }
@@ -126,13 +127,10 @@ class Controller(
                         frameStack.reset(savedFrame)
                     }
 
-                    if (failure != null) {
-                        trace.failure(failure)
-                        continue
+                    if (failure == null) {
+                        // normal termination: skip the other alternatives
+                        break
                     }
-
-                    // normal termination: skip the other alternatives
-                    break
                 }
 
                 if (failure != null) {
