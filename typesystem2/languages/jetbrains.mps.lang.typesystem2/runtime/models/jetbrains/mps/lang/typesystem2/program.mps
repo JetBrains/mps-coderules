@@ -2799,39 +2799,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="7rf49NgpNI2" role="3cqZAp">
-          <node concept="3clFbS" id="7rf49NgpNI3" role="3clFbx">
-            <node concept="3cpWs6" id="7rf49NgpNI4" role="3cqZAp">
-              <node concept="2ShNRf" id="7rf49NgpPss" role="3cqZAk">
-                <node concept="1pGfFk" id="7rf49NgpQeO" role="2ShVmc">
-                  <ref role="37wK5l" to="cxk7:7rf49NgkbFA" resolve="NotPredicate" />
-                  <node concept="10QFUN" id="7rf49NgpSHW" role="37wK5m">
-                    <node concept="3uibUv" id="7rf49NgpSHS" role="10QFUM">
-                      <ref role="3uigEE" to="av0y:~Predicate" resolve="Predicate" />
-                    </node>
-                    <node concept="AH0OO" id="7rf49NgpSHT" role="10QFUP">
-                      <node concept="3cmrfG" id="7rf49NgpSHU" role="AHEQo">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                      <node concept="37vLTw" id="7rf49NgpSHV" role="AHHXb">
-                        <ref role="3cqZAo" node="4sSe4$oM2EL" resolve="args" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="7rf49NgpNI9" role="3clFbw">
-            <node concept="10M0yZ" id="7rf49NgpNIa" role="3uHU7w">
-              <ref role="1PxDUh" to="cxk7:7rf49NgkbDQ" resolve="NotPredicate" />
-              <ref role="3cqZAo" to="cxk7:7rf49Ngke3n" resolve="NOT_SYM" />
-            </node>
-            <node concept="37vLTw" id="7rf49NgpNIb" role="3uHU7B">
-              <ref role="3cqZAo" node="4sSe4$oM2YO" resolve="symbol" />
-            </node>
-          </node>
-        </node>
         <node concept="YS8fn" id="429xoypWfOD" role="3cqZAp">
           <node concept="2ShNRf" id="429xoypWg1a" role="YScLw">
             <node concept="1pGfFk" id="429xoypWgtn" role="2ShVmc">
