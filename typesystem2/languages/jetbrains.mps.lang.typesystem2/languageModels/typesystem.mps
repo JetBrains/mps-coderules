@@ -15,6 +15,7 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -1430,6 +1431,31 @@
     <node concept="1YaCAy" id="4MEOIDFzuUQ" role="1YuTPh">
       <property role="TrG5h" value="ttdpr" />
       <ref role="1YaFvo" to="wq2x:4MEOIDFxxDM" resolve="TypeTermDeclarationParameterReference" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="60zk4o7revn">
+    <property role="TrG5h" value="typeof_LogicalContextExpression" />
+    <node concept="3clFbS" id="60zk4o7revo" role="18ibNy">
+      <node concept="1Z5TYs" id="60zk4o7reE1" role="3cqZAp">
+        <node concept="mw_s8" id="60zk4o7reII" role="1ZfhKB">
+          <node concept="2c44tf" id="60zk4o7reIE" role="mwGJk">
+            <node concept="3uibUv" id="60zk4o7reL5" role="2c44tc">
+              <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="60zk4o7reE4" role="1ZfhK$">
+          <node concept="1Z2H0r" id="60zk4o7revx" role="mwGJk">
+            <node concept="1YBJjd" id="60zk4o7rexh" role="1Z2MuG">
+              <ref role="1YBMHb" node="60zk4o7revq" resolve="lce" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="60zk4o7revq" role="1YuTPh">
+      <property role="TrG5h" value="lce" />
+      <ref role="1YaFvo" to="wq2x:60zk4o7reud" resolve="LogicalContextExpression" />
     </node>
   </node>
 </model>
