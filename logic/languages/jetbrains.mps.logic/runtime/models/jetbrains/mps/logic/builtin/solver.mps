@@ -108,8 +108,6 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
-        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
-        <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -1525,8 +1523,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="3HJTsBn4oh0" role="1B3o_S" />
-    <node concept="3uibUv" id="5jCHAT2K9kD" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:5jCHAT2EKLb" resolve="AbstractLogicSolver" />
+    <node concept="3uibUv" id="60zk4o77lms" role="1zkMxy">
+      <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
     </node>
   </node>
   <node concept="312cEu" id="4xBopTzrd8Y">
@@ -1842,8 +1840,8 @@
     </node>
     <node concept="2tJIrI" id="7ISVfSIZY1" role="jymVt" />
     <node concept="3Tm1VV" id="4xBopTzrd8Z" role="1B3o_S" />
-    <node concept="3uibUv" id="5jCHAT2KaAo" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:5jCHAT2EKLb" resolve="AbstractLogicSolver" />
+    <node concept="3uibUv" id="60zk4o77mgW" role="1zkMxy">
+      <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
     </node>
   </node>
   <node concept="312cEu" id="6MYr6Jx1bvI">
@@ -1940,8 +1938,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6MYr6Jx1bvJ" role="1B3o_S" />
-    <node concept="3uibUv" id="5jCHAT2K9Pp" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:5jCHAT2EKLb" resolve="AbstractLogicSolver" />
+    <node concept="3uibUv" id="60zk4o77lME" role="1zkMxy">
+      <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
     </node>
   </node>
   <node concept="312cEu" id="6infEALAKBG">
@@ -2432,8 +2430,8 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6infEALAT0A" role="jymVt" />
-    <node concept="3uibUv" id="5jCHAT2K83b" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:5jCHAT2EKLb" resolve="AbstractLogicSolver" />
+    <node concept="3uibUv" id="60zk4o77kpg" role="1zkMxy">
+      <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
     </node>
   </node>
   <node concept="312cEu" id="6GYQG_Spvw5">
@@ -4720,8 +4718,8 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6MYr6JwBO6F" role="jymVt" />
-    <node concept="3uibUv" id="5jCHAT2KfAu" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:5jCHAT2EKLb" resolve="AbstractLogicSolver" />
+    <node concept="3uibUv" id="60zk4o77o9G" role="1zkMxy">
+      <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
     </node>
   </node>
   <node concept="312cEu" id="4psy6tqstt4">
@@ -4777,217 +4775,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="4psy6tqstt5" role="1B3o_S" />
-    <node concept="3uibUv" id="5jCHAT2KbNm" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:5jCHAT2EKLb" resolve="AbstractLogicSolver" />
-    </node>
-  </node>
-  <node concept="312cEu" id="7rf49Nglh1q">
-    <property role="TrG5h" value="NotSolver" />
-    <node concept="2tJIrI" id="7rf49NgligE" role="jymVt" />
-    <node concept="3clFbW" id="7rf49Nglkbs" role="jymVt">
-      <node concept="37vLTG" id="7rf49Nglkc0" role="3clF46">
-        <property role="TrG5h" value="sessionSolver" />
-        <node concept="3uibUv" id="5jCHAT2LqST" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="7rf49Nglkbu" role="3clF45" />
-      <node concept="3Tm1VV" id="7rf49Nglkbv" role="1B3o_S" />
-      <node concept="3clFbS" id="7rf49Nglkbw" role="3clF47">
-        <node concept="3clFbF" id="7rf49Nglke8" role="3cqZAp">
-          <node concept="37vLTI" id="7rf49Nglkea" role="3clFbG">
-            <node concept="2OqwBi" id="7rf49Nglkk7" role="37vLTJ">
-              <node concept="Xjq3P" id="7rf49NglkkE" role="2Oq$k0" />
-              <node concept="2OwXpG" id="7rf49Nglkka" role="2OqNvi">
-                <ref role="2Oxat5" node="7rf49Nglke4" resolve="sessionSolver" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="7rf49Nglkee" role="37vLTx">
-              <ref role="3cqZAo" node="7rf49Nglkc0" resolve="sessionSolver" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5jCHAT2E$P8" role="jymVt" />
-    <node concept="3clFb_" id="5jCHAT2VOX7" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="invocationArguments" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tmbuc" id="5jCHAT2VOX8" role="1B3o_S" />
-      <node concept="3uibUv" id="5jCHAT2VOX9" role="3clF45">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3qTvmN" id="5jCHAT2VOXa" role="11_B2D" />
-      </node>
-      <node concept="37vLTG" id="5jCHAT2VOXb" role="3clF46">
-        <property role="TrG5h" value="predicate" />
-        <node concept="3uibUv" id="5jCHAT2VOXc" role="1tU5fm">
-          <ref role="3uigEE" to="av0y:~Predicate" resolve="Predicate" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5jCHAT2VOXd" role="3clF46">
-        <property role="TrG5h" value="logicalContext" />
-        <node concept="3uibUv" id="5jCHAT2VOXe" role="1tU5fm">
-          <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5jCHAT2VOYc" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="5jCHAT2VOYd" role="3clF47">
-        <node concept="3cpWs8" id="7rf49NglQh2" role="3cqZAp">
-          <node concept="3cpWsn" id="7rf49NglQh3" role="3cpWs9">
-            <property role="TrG5h" value="paramPredicate" />
-            <node concept="3uibUv" id="7rf49NglX99" role="1tU5fm">
-              <ref role="3uigEE" to="cxk7:6Kcfpq7B0Wu" resolve="AbstractPredicate" />
-            </node>
-            <node concept="10QFUN" id="7rf49NglQh4" role="33vP2m">
-              <node concept="3uibUv" id="7rf49NglXvv" role="10QFUM">
-                <ref role="3uigEE" to="cxk7:6Kcfpq7B0Wu" resolve="AbstractPredicate" />
-              </node>
-              <node concept="2OqwBi" id="7rf49NglQh6" role="10QFUP">
-                <node concept="2OqwBi" id="5jCHAT2VQif" role="2Oq$k0">
-                  <node concept="37vLTw" id="5jCHAT2VQmr" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5jCHAT2VOXb" resolve="predicate" />
-                  </node>
-                  <node concept="liA8E" id="5jCHAT2VQii" role="2OqNvi">
-                    <ref role="37wK5l" to="av0y:~AndItem.arguments():java.util.List" resolve="arguments" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="7rf49NglQh8" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
-                  <node concept="3cmrfG" id="7rf49NglQh9" role="37wK5m">
-                    <property role="3cmrfH" value="0" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5jCHAT2VR8v" role="3cqZAp">
-          <node concept="2YIFZM" id="5jCHAT2VR8w" role="3clFbG">
-            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-            <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
-            <node concept="1rXfSq" id="5jCHAT2VREB" role="37wK5m">
-              <ref role="37wK5l" to="w7la:~AbstractSolver.invocation(jetbrains.mps.logic.reactor.program.Predicate,jetbrains.mps.logic.reactor.logical.LogicalContext):jetbrains.mps.logic.reactor.evaluation.PredicateInvocation" resolve="invocation" />
-              <node concept="37vLTw" id="5jCHAT2VRUG" role="37wK5m">
-                <ref role="3cqZAo" node="7rf49NglQh3" resolve="paramPredicate" />
-              </node>
-              <node concept="37vLTw" id="5jCHAT2VSa3" role="37wK5m">
-                <ref role="3cqZAo" node="5jCHAT2VOXd" resolve="logicalContext" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5jCHAT2VPhG" role="jymVt" />
-    <node concept="3clFb_" id="7rf49Nglkz3" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="ask" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="7rf49Nglkz4" role="1B3o_S" />
-      <node concept="10P_77" id="7rf49Nglkz6" role="3clF45" />
-      <node concept="37vLTG" id="7rf49Nglkz7" role="3clF46">
-        <property role="TrG5h" value="invocation" />
-        <node concept="3uibUv" id="7rf49Nglkz8" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~PredicateInvocation" resolve="PredicateInvocation" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="7rf49Nglkzb" role="3clF47">
-        <node concept="3cpWs8" id="7rf49Nglx97" role="3cqZAp">
-          <node concept="3cpWsn" id="7rf49Nglx98" role="3cpWs9">
-            <property role="TrG5h" value="predInv" />
-            <node concept="3uibUv" id="7rf49Nglxwi" role="1tU5fm">
-              <ref role="3uigEE" to="w7la:~PredicateInvocation" resolve="PredicateInvocation" />
-            </node>
-            <node concept="10QFUN" id="7rf49NglxSd" role="33vP2m">
-              <node concept="3uibUv" id="7rf49NglxS6" role="10QFUM">
-                <ref role="3uigEE" to="w7la:~PredicateInvocation" resolve="PredicateInvocation" />
-              </node>
-              <node concept="2OqwBi" id="7rf49NglxS7" role="10QFUP">
-                <node concept="2OqwBi" id="7rf49NglxS8" role="2Oq$k0">
-                  <node concept="37vLTw" id="7rf49NglxS9" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7rf49Nglkz7" resolve="invocation" />
-                  </node>
-                  <node concept="liA8E" id="7rf49NglxSa" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="7rf49NglxSb" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
-                  <node concept="3cmrfG" id="7rf49NglxSc" role="37wK5m">
-                    <property role="3cmrfH" value="0" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7rf49Nglw7m" role="3cqZAp" />
-        <node concept="3cpWs6" id="7rf49NglySu" role="3cqZAp">
-          <node concept="3fqX7Q" id="7rf49Nglzku" role="3cqZAk">
-            <node concept="1eOMI4" id="7rf49Nglzkw" role="3fr31v">
-              <node concept="2OqwBi" id="7rf49Nglzkx" role="1eOMHV">
-                <node concept="37vLTw" id="7rf49Nglzky" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7rf49Nglke4" resolve="sessionSolver" />
-                </node>
-                <node concept="liA8E" id="7rf49Nglzkz" role="2OqNvi">
-                  <ref role="37wK5l" to="w7la:~SessionSolver.ask(jetbrains.mps.logic.reactor.evaluation.PredicateInvocation):boolean" resolve="ask" />
-                  <node concept="37vLTw" id="7rf49Nglzk$" role="37wK5m">
-                    <ref role="3cqZAo" node="7rf49Nglx98" resolve="predInv" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="7rf49Nglkzc" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7rf49Nglp7C" role="jymVt" />
-    <node concept="3clFb_" id="7rf49Nglkzv" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="tell" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="7rf49Nglkzw" role="1B3o_S" />
-      <node concept="3cqZAl" id="7rf49Nglkzy" role="3clF45" />
-      <node concept="37vLTG" id="7rf49Nglkzz" role="3clF46">
-        <property role="TrG5h" value="invocation" />
-        <node concept="3uibUv" id="7rf49Nglkz$" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~PredicateInvocation" resolve="PredicateInvocation" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="7rf49NglkzC" role="3clF47">
-        <node concept="YS8fn" id="7rf49NgqJYc" role="3cqZAp">
-          <node concept="2ShNRf" id="7rf49NgqJZ4" role="YScLw">
-            <node concept="1pGfFk" id="7rf49NgqKaS" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="7rf49NglkzD" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7rf49Nglkmj" role="jymVt" />
-    <node concept="3Tm1VV" id="7rf49Nglh1r" role="1B3o_S" />
-    <node concept="312cEg" id="7rf49Nglke4" role="jymVt">
-      <property role="TrG5h" value="sessionSolver" />
-      <node concept="3Tm6S6" id="7rf49Nglke5" role="1B3o_S" />
-      <node concept="3uibUv" id="5jCHAT2Lr1Y" role="1tU5fm">
-        <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5jCHAT1JF$c" role="jymVt" />
-    <node concept="3uibUv" id="5jCHAT2KbZm" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:5jCHAT2EKLb" resolve="AbstractLogicSolver" />
+    <node concept="3uibUv" id="60zk4o77m_g" role="1zkMxy">
+      <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
     </node>
   </node>
 </model>
