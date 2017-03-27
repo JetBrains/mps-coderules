@@ -1,11 +1,11 @@
 import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
-import jetbrains.mps.logic.reactor.evaluation.Queryable
-import jetbrains.mps.logic.reactor.program.Solver
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
-import jetbrains.mps.logic.reactor.program.*
+import jetbrains.mps.logic.reactor.program.AndItem
+import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
+import jetbrains.mps.logic.reactor.program.Predicate
+import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import java.util.*
 
 /**
@@ -59,12 +59,6 @@ fun <X, LPX: MetaLogical<X>,
         }
 
 class ExpressionSolver : AbstractSolver() {
-
-    override fun invocationArguments(predicate: Predicate, logicalContext: LogicalContext): List<*> =
-        predicate.arguments().map { a ->
-            if (a is MetaLogical<*>) logicalContext.variable(a)
-            else a
-        }
 
     override fun ask(invocation: PredicateInvocation): Boolean {
         return javaPredicates[invocation.arguments().get(0)]?.expr?.invoke(invocation.arguments().drop(1)) ?:

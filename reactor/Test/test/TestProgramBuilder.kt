@@ -1,17 +1,11 @@
 import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
-import jetbrains.mps.logic.reactor.evaluation.Queryable
-import jetbrains.mps.logic.reactor.logical.LogicalContext
-import jetbrains.mps.logic.reactor.program.Solver
-import solver.MockSessionSolver
-import jetbrains.mps.logic.reactor.program.*
-import org.junit.AfterClass
-import org.junit.Assert.*
+import jetbrains.mps.logic.reactor.program.InvalidConstraintException
+import jetbrains.mps.logic.reactor.program.InvalidRuleException
+import org.junit.Assert.assertEquals
 import org.junit.Before
-import org.junit.BeforeClass
 import org.junit.Test
-import java.util.*
-import kotlin.reflect.KClass
+import solver.MockSessionSolver
 
 /**
  * @author Fedor Isakov
@@ -20,7 +14,6 @@ import kotlin.reflect.KClass
 class TestProgramBuilder {
 
     val dummySolver = object : AbstractSolver() {
-        override fun invocationArguments(predicate: Predicate?, logicalContext: LogicalContext?): MutableList<*> = TODO()
         override fun ask(invocation: PredicateInvocation?): Boolean = TODO()
         override fun tell(invocation: PredicateInvocation?) = TODO()
     }
@@ -42,8 +35,6 @@ class TestProgramBuilder {
                 ))).run {
 
             programBuilder.addHandler(MockHandler("test", emptyList(), rules))
-            assertEquals(programBuilder.program("test").rules().count(), 1)
-            assertEquals(programBuilder.program("test").rules().count(), 1)
         }
     }
 
@@ -69,7 +60,7 @@ class TestProgramBuilder {
                 ))).run {
 
             programBuilder.addHandler(MockHandler("test", emptyList(), rules))
-            assertEquals(programBuilder.program("test").rules().count(), 2)
+            assertEquals(programBuilder.program("test").handlers().flatMap { it.rules() }.count(), 2)
         }
     }
 

@@ -2,12 +2,10 @@
  * @author Fedor Isakov
  */
 
-import jetbrains.mps.logic.reactor.evaluation.Queryable
 import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
-import org.omg.CORBA.Environment
 import program.MockConstraint
 import java.util.*
 import java.util.Collections.*
@@ -112,13 +110,11 @@ class MockProgram(val name: String, val handlers: List<Handler>, val registry: M
     override fun predicateSymbols(): Iterable<PredicateSymbol> =
         registry.predicateSymbols()
 
-    override fun occurrenceArguments(constraint: Constraint, logicalContext: LogicalContext): List<*> =
-        constraint.arguments().map { a ->
+    override fun instantiateArguments(arguments: List<*>, logicalContext: LogicalContext): List<*> =
+        arguments.map { a ->
             if (a is MetaLogical<*>) logicalContext.variable(a)
             else a
         }
-
-    override fun rules(): Iterable<Rule> = handlers.flatMap { it.rules() }
 
     override fun handlers(): Iterable<Handler> = unmodifiableCollection(handlers)
 }

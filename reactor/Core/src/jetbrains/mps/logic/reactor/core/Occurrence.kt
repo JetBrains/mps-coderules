@@ -5,17 +5,18 @@ import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.Program
 
 /**
  * @author Fedor Isakov
  */
 
+fun Constraint.occurrence(controller: Controller, arguments: List<*>, logicalContext: LogicalContext): ConstraintOccurrence =
+    Occurrence({ controller.currentFrame() }, this, arguments, logicalContext)
 
-internal fun Constraint.occurrence(currentFrame: () -> Frame, program: Program, context: LogicalContext): ConstraintOccurrence =
-    Occurrence(currentFrame, this, program.occurrenceArguments(this, context))
-
-private data class Occurrence (val currentFrame: () -> Frame, val constraint: Constraint, val arguments: List<*>) :
+private data class Occurrence (val currentFrame: () -> Frame,
+                               val constraint: Constraint,
+                               val arguments: List<*>,
+                               val logicalContext: LogicalContext) :
     ConstraintOccurrence,
     LogicalObserver,
     StoreItem
@@ -34,6 +35,8 @@ private data class Occurrence (val currentFrame: () -> Frame, val constraint: Co
     override fun constraint(): Constraint = constraint
 
     override fun arguments(): List<*> = arguments
+
+    override fun logicalContext(): LogicalContext = logicalContext
 
     override fun valueUpdated(logical: Logical<*>) {
         if (alive) {

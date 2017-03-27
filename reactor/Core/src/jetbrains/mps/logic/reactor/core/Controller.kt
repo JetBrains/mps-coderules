@@ -19,6 +19,7 @@ class Controller(
     val profiler: Profiler? = null,
     val storeView: StoreView? = null)
 {
+    private val session: EvaluationSession = EvaluationSession.current()
 
     private val ruleIndex: RuleIndex = RuleIndex(program.handlers())
 
@@ -27,11 +28,13 @@ class Controller(
     // persistent (functional) object. reassigned on update
     private var propHistory = PropagationHistory()
 
+    internal fun currentFrame(): Frame = frameStack.current
+
     fun storeView(): StoreView = frameStack.current.store.view()
 
     fun activate(constraint: Constraint) {
         try {
-            process(constraint.occurrence({ frameStack.current }, program, noLogicalContext))
+            process(session.occurrence(constraint, noLogicalContext)) // FIXME noLogicalContext
         }
         catch (t: Throwable) {
             throw t
@@ -112,7 +115,7 @@ class Controller(
                     try {
                         for (item in body) {
                             when (item) {
-                                is Constraint -> process(item.occurrence({ frameStack.current }, program, match.logicalContext))
+                                is Constraint -> process(session.occurrence(item, match.logicalContext))
                                 is Predicate -> tellPredicate(item, match.logicalContext, trace)
                                 else -> throw IllegalArgumentException("unknown item ${item}")
                             }
@@ -158,14 +161,14 @@ class Controller(
     private fun askPredicate(predicate: Predicate, logicalContext: LogicalContext, trace: EvaluationTrace): Boolean =
         profiler.profile<Boolean>("ask_${predicate.symbol()}", {
 
-            EvaluationSession.current().sessionSolver().ask(predicate, logicalContext)
+            session.sessionSolver().ask(session.invocation(predicate, logicalContext))
 
         })
 
     private fun tellPredicate(predicate: Predicate, logicalContext: LogicalContext, trace: EvaluationTrace) =
         profiler.profile("tell_${predicate.symbol()}") {
 
-            EvaluationSession.current().sessionSolver().tell(predicate, logicalContext)
+            session.sessionSolver().tell(session.invocation(predicate, logicalContext))
 
         }
 

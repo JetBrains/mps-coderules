@@ -1,10 +1,8 @@
+import jetbrains.mps.logic.reactor.core.StoreItem
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
-import TestConstraintOccurrence
-import jetbrains.mps.logic.reactor.core.StoreItem
-import org.jetbrains.kotlin.codegen.inline.getNewFieldsToGenerate
 import solver.EqualsSolver
 import solver.TestEqPredicate
 import java.util.*
@@ -14,7 +12,6 @@ import java.util.*
  */
 
 class Builder(val env: Environment, val handlers: List<Handler>) {
-    @Deprecated(message = "use handlers")
     val rules: List<Rule>
         get() = handlers.flatMap { it.rules() }
 
@@ -163,6 +160,8 @@ data class TestConstraintOccurrence(val constraint: Constraint, val arguments: L
     override fun constraint(): Constraint = constraint
 
     override fun arguments(): List<Any> = arguments
+
+    override fun logicalContext(): LogicalContext = TODO()
 
     override fun terminate() {
         this.alive = false

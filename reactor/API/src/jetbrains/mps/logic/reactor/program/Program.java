@@ -8,23 +8,16 @@ import java.util.List;
 
 public abstract class Program {
 
-  public abstract String name();
+    public abstract String name();
 
-  public abstract Iterable<ConstraintSymbol> constraintSymbols();
+    public abstract Iterable<ConstraintSymbol> constraintSymbols();
 
-  public abstract List<Class<?>> constraintArgumentTypes(ConstraintSymbol constraintSymbol);
+    public abstract List<Class<?>> constraintArgumentTypes(ConstraintSymbol constraintSymbol);
 
-  public abstract Iterable<PredicateSymbol> predicateSymbols();
+    public abstract Iterable<PredicateSymbol> predicateSymbols();
 
-  /**
-   * @deprecated use handlers().foreach{ yieldAll it.rules() }
-   * @return
-   */
-  @Deprecated
-  public abstract Iterable<Rule> rules();
+    public abstract Iterable<Handler> handlers();
 
-  public abstract Iterable<Handler> handlers();
-
-  public abstract List<?> occurrenceArguments(Constraint constraint, LogicalContext logicalContext);
+    public abstract List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext);
 
 }

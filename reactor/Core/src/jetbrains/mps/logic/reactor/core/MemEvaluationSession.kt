@@ -1,15 +1,15 @@
 package jetbrains.mps.logic.reactor.core
 
-import com.github.andrewoma.dexx.collection.ConsList
 import jetbrains.mps.logic.reactor.evaluation.*
-import com.github.andrewoma.dexx.collection.List as PList
-import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
+import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
 import java.util.*
+import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
+import com.github.andrewoma.dexx.collection.List as PList
 
 /**
  * @author Fedor Isakov
@@ -100,6 +100,12 @@ class MemEvaluationSession private constructor (
 
     override fun storeView(): StoreView =
         controller.storeView()
+
+    override fun invocation(predicate: Predicate, logicalContext: LogicalContext): PredicateInvocation =
+        predicate.invocation(program.instantiateArguments(predicate.arguments(), logicalContext), logicalContext)
+
+    override fun occurrence(constraint: Constraint, logicalContext: LogicalContext): ConstraintOccurrence =
+        constraint.occurrence(controller, program.instantiateArguments(constraint.arguments(), logicalContext), logicalContext)
 
     private class Backend : EvaluationSession.Backend {
 

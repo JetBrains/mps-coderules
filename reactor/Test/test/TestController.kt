@@ -1,16 +1,17 @@
 import jetbrains.mps.logic.reactor.core.Controller
 import jetbrains.mps.logic.reactor.core.SessionObjects
-import jetbrains.mps.logic.reactor.core.Store
+import jetbrains.mps.logic.reactor.core.invocation
+import jetbrains.mps.logic.reactor.core.occurrence
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
-import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
-import org.junit.*
+import org.junit.After
 import org.junit.Assert.*
+import org.junit.Before
+import org.junit.Test
 import solver.EqualsSolver
 import solver.MockSessionSolver
-import solver.TestEqPredicate
 import solver.eq
 import solver.is_eq
 
@@ -28,7 +29,7 @@ class TestController {
         MockSession.deinit()
     }
 
-    private class MockSession(val solver: SessionSolver) : EvaluationSession(), SessionObjects {
+    private class MockSession(val program: Program, val solver: SessionSolver) : EvaluationSession(), SessionObjects {
         lateinit var controller: Controller
         override fun handler(): Controller = controller
         override fun sessionSolver(): SessionSolver = solver
@@ -39,11 +40,17 @@ class TestController {
             override fun createConfig(program: Program): Config = TODO()
         }
 
+        override fun invocation(predicate: Predicate, logicalContext: LogicalContext): PredicateInvocation =
+            predicate.invocation(program.instantiateArguments(predicate.arguments(), logicalContext), logicalContext)
+
+        override fun occurrence(constraint: Constraint, logicalContext: LogicalContext): ConstraintOccurrence =
+            constraint.occurrence(controller, program.instantiateArguments(constraint.arguments(), logicalContext), logicalContext)
+
         companion object {
             lateinit var ourBackend : MockBackend
 
-            fun init(solver: SessionSolver) {
-                ourBackend = MockBackend(MockSession(solver))
+            fun init(program: Program, solver: SessionSolver) {
+                ourBackend = MockBackend(MockSession(program, solver))
                 setBackend(ourBackend)
             }
 
@@ -59,8 +66,8 @@ class TestController {
 
     private fun Builder.controller(vararg occurrences: ConstraintOccurrence): Controller {
         val solver = sessionSolver(env.expressionSolver, env.equalsSolver)
-        MockSession.init(solver)
         val program = MockProgram("test", handlers, registry = MockConstraintRegistry(solver))
+        MockSession.init(program, solver)
         val controller = Controller(program, storeView = MockStoreView(listOf(* occurrences)))
         MockSession.ourBackend.session.controller = controller
         return controller

@@ -1,25 +1,21 @@
 package solver
 
-import jetbrains.mps.logic.reactor.evaluation.*
+import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
+import jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException
+import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.logical.SolverLogical
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
-import jetbrains.mps.logic.reactor.program.Symbol
 
 class EqualsSolver  : AbstractSolver() {
 
     companion object {
         fun eq(left: Any, right: Any): TestEqPredicate = TestEqPredicate(left, right)
     }
-
-    override fun invocationArguments(predicate: Predicate, logicalContext: LogicalContext): List<*> =
-        predicate.arguments().map { a ->
-            if (a is MetaLogical<*>) logicalContext.variable(a)
-            else a
-        }
 
     override fun ask(invocation: PredicateInvocation): Boolean {
         return _ask(invocation.arguments().get(0), invocation.arguments().get(1))
@@ -109,15 +105,19 @@ class EqualsSolver  : AbstractSolver() {
 
 }
 
-infix fun <T : Any> T.is_eq(value: T): Boolean =
-    EvaluationSession.current().sessionSolver().ask(EqualsSolver.eq(this, value), object : LogicalContext{
-        override fun <V : Any?> variable(metaLogical: MetaLogical<V>?): Logical<V> = TODO()
-    })
+infix fun <T : Any> T.is_eq(value: T): Boolean = EvaluationSession.current().let { session ->
+    session.sessionSolver().ask(session.invocation(EqualsSolver.eq(this, value), mockLogicalContext()))
+}
 
-infix fun <T : Any> T.eq(value: T) =
-    EvaluationSession.current().sessionSolver().tell(EqualsSolver.eq(this, value), object : LogicalContext{
+infix fun <T : Any> T.eq(value: T) = EvaluationSession.current().let { session ->
+    session.sessionSolver().tell(session.invocation(EqualsSolver.eq(this, value), mockLogicalContext()))
+}
+
+private fun mockLogicalContext(): LogicalContext {
+    return object : LogicalContext {
         override fun <V : Any?> variable(metaLogical: MetaLogical<V>?): Logical<V> = TODO()
-    })
+    }
+}
 
 data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
 
