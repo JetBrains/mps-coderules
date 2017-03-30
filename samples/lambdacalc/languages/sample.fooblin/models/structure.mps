@@ -315,5 +315,18 @@
     <property role="EcuMT" value="4497748771651493439" />
     <property role="TrG5h" value="Typeable" />
   </node>
+  <node concept="1TIwiD" id="12dHl3ZCxTW">
+    <property role="EcuMT" value="1192808835813875324" />
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="ForallType" />
+    <ref role="1TJDcQ" node="3_qfG1EP6Nw" resolve="Type" />
+    <node concept="1TJgyj" id="12dHl3ZCFaI" role="1TKVEi">
+      <property role="IQ2ns" value="1192808835813913262" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3_qfG1EP6Nw" resolve="Type" />
+    </node>
+  </node>
 </model>
 

@@ -303,7 +303,7 @@
   </node>
   <node concept="24kQdi" id="7_8aRkgE08o">
     <property role="3GE5qa" value="expr.fun" />
-    <ref role="1XX52x" to="8tt8:7_8aRkgDGQi" resolve="LamVarBinding" />
+    <ref role="1XX52x" to="8tt8:7_8aRkgDGQi" resolve="LamVarBind" />
     <node concept="3EZMnI" id="7_8aRkgE08q" role="2wV5jI">
       <node concept="3F0ifn" id="492bFERnr4S" role="3EZMnx">
         <property role="3F0ifm" value="\" />
@@ -411,7 +411,7 @@
             <node concept="3cpWsn" id="3TFdEPZevrj" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3Tqbb2" id="3TFdEPZevrk" role="1tU5fm">
-                <ref role="ehGHo" to="8tt8:7_8aRkgDGQi" resolve="LamVarBinding" />
+                <ref role="ehGHo" to="8tt8:7_8aRkgDGQi" resolve="LamVarBind" />
               </node>
               <node concept="2OqwBi" id="3TFdEPZevrl" role="33vP2m">
                 <node concept="2OqwBi" id="3TFdEPZevrm" role="2Oq$k0">
@@ -423,7 +423,7 @@
                   </node>
                 </node>
                 <node concept="2DeJnY" id="3TFdEPZevrp" role="2OqNvi">
-                  <ref role="1A9B2P" to="8tt8:7_8aRkgDGQi" resolve="LamVarBinding" />
+                  <ref role="1A9B2P" to="8tt8:7_8aRkgDGQi" resolve="LamVarBind" />
                 </node>
               </node>
             </node>
@@ -590,7 +590,7 @@
   </node>
   <node concept="24kQdi" id="7_8aRkgFz03">
     <property role="3GE5qa" value="" />
-    <ref role="1XX52x" to="8tt8:7_8aRkgDGQp" resolve="VarBinding" />
+    <ref role="1XX52x" to="8tt8:7_8aRkgDGQp" resolve="LetVarBind" />
     <node concept="3EZMnI" id="7_8aRkgFz05" role="2wV5jI">
       <node concept="3F1sOY" id="7_8aRkgFz0f" role="3EZMnx">
         <ref role="1NtTu8" to="8tt8:7_8aRkgDGQq" resolve="var" />
@@ -754,14 +754,8 @@
     <property role="3GE5qa" value="type" />
     <ref role="1XX52x" to="8tt8:3g9UT2j9I06" resolve="VarType" />
     <node concept="3EZMnI" id="3g9UT2j9ItO" role="2wV5jI">
-      <node concept="3F0ifn" id="2OtUBGmkNrh" role="3EZMnx">
-        <property role="3F0ifm" value="'" />
-      </node>
       <node concept="3F0A7n" id="3g9UT2j9ItV" role="3EZMnx">
         <ref role="1NtTu8" to="8tt8:3g9UT2j9Itl" resolve="name" />
-      </node>
-      <node concept="3F0ifn" id="2OtUBGmkNrp" role="3EZMnx">
-        <property role="3F0ifm" value="'" />
       </node>
       <node concept="l2Vlx" id="3g9UT2j9ItR" role="2iSdaV" />
     </node>
@@ -780,6 +774,19 @@
         </node>
       </node>
       <node concept="l2Vlx" id="7_zMfd$oooz" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="12dHl3ZCFav">
+    <property role="3GE5qa" value="type" />
+    <ref role="1XX52x" to="8tt8:12dHl3ZCxTW" resolve="ForallType" />
+    <node concept="3EZMnI" id="12dHl3ZCFax" role="2wV5jI">
+      <node concept="3F0ifn" id="12dHl3ZCFaC" role="3EZMnx">
+        <property role="3F0ifm" value="forall." />
+      </node>
+      <node concept="3F1sOY" id="12dHl3ZCFaK" role="3EZMnx">
+        <ref role="1NtTu8" to="8tt8:12dHl3ZCFaI" resolve="type" />
+      </node>
+      <node concept="l2Vlx" id="12dHl3ZCFa$" role="2iSdaV" />
     </node>
   </node>
 </model>
