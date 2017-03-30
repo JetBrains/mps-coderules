@@ -23,10 +23,10 @@
       <concept id="8739282858702982568" name="sample.fooblin.structure.Doc" flags="ng" index="1DVIrt">
         <child id="8739282858702982571" name="clause" index="1DVIru" />
       </concept>
-      <concept id="8739282858702982546" name="sample.fooblin.structure.LamVarBinding" flags="ng" index="1DVIrB">
+      <concept id="8739282858702982546" name="sample.fooblin.structure.LamVarBind" flags="ng" index="1DVIrB">
         <child id="8739282858702982547" name="var" index="1DVIrA" />
       </concept>
-      <concept id="8739282858702982553" name="sample.fooblin.structure.VarBinding" flags="ng" index="1DVIrG">
+      <concept id="8739282858702982553" name="sample.fooblin.structure.LetVarBind" flags="ng" index="1DVIrG">
         <child id="8739282858702982556" name="expr" index="1DVIrD" />
         <child id="8739282858702982554" name="var" index="1DVIrJ" />
       </concept>
@@ -323,6 +323,60 @@
         </node>
         <node concept="t0$VC" id="3TFdEPZdg7y" role="1DVIrD">
           <ref role="t0$VJ" node="2jleysRWYws" resolve="x" />
+        </node>
+      </node>
+    </node>
+    <node concept="1DVJbV" id="10BVPEVKOU2" role="1DVIru">
+      <node concept="1DVIrG" id="10BVPEVKOU4" role="j9CMd">
+        <node concept="1DVIoH" id="10BVPEVKOU6" role="1DVIrJ">
+          <property role="TrG5h" value="q" />
+        </node>
+        <node concept="1DVIrH" id="10BVPEVKOUz" role="1DVIrD">
+          <node concept="1DVIrH" id="10BVPEVKOUR" role="1DVIrk">
+            <node concept="t0$VC" id="10BVPEVKOVb" role="1DVIrk">
+              <ref role="t0$VJ" node="10BVPEVKOUY" resolve="s" />
+            </node>
+            <node concept="1DVIrG" id="10BVPEVKOUX" role="1DVIrE">
+              <node concept="1DVIoH" id="10BVPEVKOUY" role="1DVIrJ">
+                <property role="TrG5h" value="s" />
+              </node>
+              <node concept="1DVIrU" id="10BVPEVKOV3" role="1DVIrD">
+                <node concept="1DVIrB" id="10BVPEVKOV4" role="1DVIr_">
+                  <node concept="1DVIoH" id="10BVPEVKOV5" role="1DVIrA">
+                    <property role="TrG5h" value="b" />
+                  </node>
+                </node>
+                <node concept="t0$VC" id="10BVPEVKOV9" role="1DVIrw">
+                  <ref role="t0$VJ" node="10BVPEVKOUE" resolve="r" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1DVIrG" id="10BVPEVKOUD" role="1DVIrE">
+            <node concept="1DVIoH" id="10BVPEVKOUE" role="1DVIrJ">
+              <property role="TrG5h" value="r" />
+            </node>
+            <node concept="1DVIrH" id="10BVPEVKUAb" role="1DVIrD">
+              <node concept="t0$VC" id="10BVPEVKUBL" role="1DVIrk">
+                <ref role="t0$VJ" node="10BVPEVKUAi" resolve="a" />
+              </node>
+              <node concept="1DVIrG" id="10BVPEVKUAh" role="1DVIrE">
+                <node concept="1DVIoH" id="10BVPEVKUAi" role="1DVIrJ">
+                  <property role="TrG5h" value="a" />
+                </node>
+                <node concept="1DVIrU" id="10BVPEVKUBD" role="1DVIrD">
+                  <node concept="1DVIrB" id="10BVPEVKUBE" role="1DVIr_">
+                    <node concept="1DVIoH" id="10BVPEVKUBF" role="1DVIrA">
+                      <property role="TrG5h" value="x" />
+                    </node>
+                  </node>
+                  <node concept="t0$VC" id="10BVPEVKUBJ" role="1DVIrw">
+                    <ref role="t0$VJ" node="10BVPEVKUBF" resolve="x" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
