@@ -1160,7 +1160,7 @@
           </node>
         </node>
         <node concept="Xl_RD" id="2_NfR5wnk$l" role="2MkJ7o">
-          <property role="Xl_RC" value="alternation is not supported for rule with no input" />
+          <property role="Xl_RC" value="alternation is not supported for standalone rules" />
         </node>
         <node concept="1YBJjd" id="2_NfR5wnkGc" role="2OEOjV">
           <ref role="1YBMHb" node="2_NfR5wnk6J" resolve="rule" />

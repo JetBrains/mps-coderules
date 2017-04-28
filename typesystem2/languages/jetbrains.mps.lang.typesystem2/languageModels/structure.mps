@@ -102,7 +102,7 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="3GE5qa" value="rule" />
-    <property role="34LRSv" value="template" />
+    <property role="34LRSv" value="rule" />
     <property role="EcuMT" value="8335224865066016388" />
     <ref role="1TJDcQ" node="4EfgX2ET3GH" resolve="AbstractRule" />
     <node concept="1TJgyj" id="3KXGt7WSNcl" role="1TKVEi">
