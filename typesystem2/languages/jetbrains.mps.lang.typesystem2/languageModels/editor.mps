@@ -804,7 +804,7 @@
               </node>
               <node concept="l2Vlx" id="4nIWweBXWkK" role="2iSdaV" />
               <node concept="3F1sOY" id="tIwzd1EXki" role="3EZMnx">
-                <property role="1$x2rV" value="no additional templates" />
+                <property role="1$x2rV" value="no extra rules" />
                 <ref role="1NtTu8" to="wq2x:1ffsG7bh6Cz" resolve="requiredNodeBlock" />
               </node>
               <node concept="3F0ifn" id="4nIWweBXWAH" role="3EZMnx">
@@ -1759,7 +1759,7 @@
     <ref role="1XX52x" to="wq2x:1zN1RIkQtcr" resolve="BoundParameterBlock" />
     <node concept="3EZMnI" id="1zN1RIkQuBi" role="2wV5jI">
       <node concept="3F0ifn" id="1zN1RIkQuBj" role="3EZMnx">
-        <property role="3F0ifm" value="let" />
+        <property role="3F0ifm" value="using" />
         <ref role="1k5W1q" node="4aJUH_hW38r" resolve="RuleKeyword" />
       </node>
       <node concept="3F1sOY" id="1zN1RIkQuBk" role="3EZMnx">
@@ -1791,7 +1791,7 @@
     <ref role="1XX52x" to="wq2x:tIwzd1EOs6" resolve="RequiredNodeBlock" />
     <node concept="3EZMnI" id="tIwzd1EVN3" role="2wV5jI">
       <node concept="3F0ifn" id="tIwzd1EVN6" role="3EZMnx">
-        <property role="3F0ifm" value="also process templates for" />
+        <property role="3F0ifm" value="also apply rules for" />
         <ref role="1k5W1q" node="4aJUH_hW38r" resolve="RuleKeyword" />
       </node>
       <node concept="3F0ifn" id="tIwzd1EVN7" role="3EZMnx">
