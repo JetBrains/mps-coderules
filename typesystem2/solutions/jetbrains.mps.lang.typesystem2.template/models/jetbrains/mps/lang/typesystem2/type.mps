@@ -1137,9 +1137,7 @@
         <property role="DiZV1" value="false" />
         <property role="od$2w" value="false" />
         <node concept="3Tm1VV" id="4MEOIDEi5VP" role="1B3o_S" />
-        <node concept="3uibUv" id="4MEOIDEi5VR" role="3clF45">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
+        <node concept="17QB3L" id="5hSMZ_lGZu6" role="3clF45" />
         <node concept="3clFbS" id="4MEOIDEi5VS" role="3clF47">
           <node concept="3clFbF" id="4MEOIDEi6jx" role="3cqZAp">
             <node concept="2OqwBi" id="4MEOIDEi6qK" role="3clFbG">
@@ -1210,30 +1208,6 @@
       </node>
       <node concept="3Tm1VV" id="1eKXYsjvsWs" role="1B3o_S" />
       <node concept="3clFbS" id="1eKXYsjvsWt" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="60NbDCXGYuS" role="jymVt" />
-    <node concept="3clFb_" id="60NbDCXGYgv" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="typeTerm" />
-      <node concept="3uibUv" id="60NbDCXGYgw" role="3clF45">
-        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-      </node>
-      <node concept="3Tm1VV" id="60NbDCXGYgx" role="1B3o_S" />
-      <node concept="3clFbS" id="60NbDCXGYgy" role="3clF47" />
-      <node concept="37vLTG" id="60NbDCXGYgz" role="3clF46">
-        <property role="TrG5h" value="typeNode" />
-        <node concept="3Tqbb2" id="60NbDCXGYV4" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1eKXYsjICvB" role="jymVt" />
-    <node concept="3clFb_" id="1eKXYsjIChF" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="patternTypeTerm" />
-      <node concept="3uibUv" id="1eKXYsjIChG" role="3clF45">
-        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-      </node>
-      <node concept="3Tm1VV" id="1eKXYsjIChH" role="1B3o_S" />
-      <node concept="3clFbS" id="1eKXYsjIChI" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="4MEOIDG7Abc" role="jymVt" />
     <node concept="3clFb_" id="1eKXYsjvsWF" role="jymVt">
@@ -1311,25 +1285,6 @@
     <node concept="16euLQ" id="7IysFeAhp5y" role="16eVyc">
       <property role="TrG5h" value="T" />
     </node>
-  </node>
-  <node concept="3HP615" id="4nxCIBqhYFx">
-    <property role="TrG5h" value="NodeRecovery" />
-    <node concept="2tJIrI" id="4nxCIBqhYFN" role="jymVt" />
-    <node concept="3clFb_" id="4nxCIBqhZxR" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="recover" />
-      <node concept="37vLTG" id="4nxCIBqhZz$" role="3clF46">
-        <property role="TrG5h" value="typeTerm" />
-        <node concept="3uibUv" id="4nxCIBqhZzX" role="1tU5fm">
-          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="4nxCIBqhZzi" role="3clF45" />
-      <node concept="3Tm1VV" id="4nxCIBqhZxU" role="1B3o_S" />
-      <node concept="3clFbS" id="4nxCIBqhZxV" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="4nxCIBqhZxH" role="jymVt" />
-    <node concept="3Tm1VV" id="4nxCIBqhYFy" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="4MEOIDFA48I">
     <property role="TrG5h" value="AbstractTermDeclaration" />
