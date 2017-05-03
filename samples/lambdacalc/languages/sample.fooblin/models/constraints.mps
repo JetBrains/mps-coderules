@@ -379,7 +379,7 @@
               </node>
               <node concept="1pnPoh" id="3TFdEPZe9Nt" role="1_3QMm">
                 <node concept="3gn64h" id="3TFdEPZe9R2" role="1pnPq6">
-                  <ref role="3gnhBz" to="8tt8:7_8aRkgDGQp" resolve="VarBinding" />
+                  <ref role="3gnhBz" to="8tt8:7_8aRkgDGQp" resolve="LetVarBind" />
                 </node>
                 <node concept="3clFbS" id="3TFdEPZe9Nx" role="1pnPq1">
                   <node concept="3SKdUt" id="3TFdEPZe9Y1" role="3cqZAp">
@@ -584,7 +584,7 @@
                         <ref role="3gnhBz" to="8tt8:7_8aRkgDHAe" resolve="LetClause" />
                       </node>
                       <node concept="3gn64h" id="3TFdEPZeeAv" role="3gmYPZ">
-                        <ref role="3gnhBz" to="8tt8:7_8aRkgDGQp" resolve="VarBinding" />
+                        <ref role="3gnhBz" to="8tt8:7_8aRkgDGQp" resolve="LetVarBind" />
                       </node>
                     </node>
                   </node>

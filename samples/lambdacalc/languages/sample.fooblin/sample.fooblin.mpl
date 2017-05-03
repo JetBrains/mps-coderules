@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="sample.fooblin#8739282858702982481" uuid="573e397c-a9e0-4dac-b6cd-7f7ee10cd915">
+    <generator namespace="sample.fooblin#8739282858702982481" uuid="573e397c-a9e0-4dac-b6cd-7f7ee10cd915">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
