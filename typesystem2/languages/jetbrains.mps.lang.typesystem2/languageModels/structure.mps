@@ -774,8 +774,9 @@
       <property role="IQ2ns" value="5524459797192461937" />
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="termDecl" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="4MEOIDFttoe" resolve="TypeTermDeclaration" />
+      <node concept="asaX9" id="5hSMZ_lMoKM" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="1pPth$m5Bb$" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
