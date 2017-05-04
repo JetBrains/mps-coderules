@@ -627,7 +627,7 @@
   </node>
   <node concept="1TIwiD" id="1pPth$m5o9D">
     <property role="TrG5h" value="TypeTermTemplate" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <property role="EcuMT" value="1618328391714701929" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1pPth$m5oa9" role="1TKVEi">
@@ -639,7 +639,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5oa5">
-    <property role="3GE5qa" value="type.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <property role="TrG5h" value="TypeFeature" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
@@ -655,7 +655,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5oa6">
-    <property role="3GE5qa" value="type.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <property role="TrG5h" value="ListTypeFeature" />
     <property role="34LRSv" value="list" />
     <property role="EcuMT" value="1618328391714701958" />
@@ -668,7 +668,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5oae">
-    <property role="3GE5qa" value="type.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <property role="TrG5h" value="StringTypeFeature" />
     <property role="34LRSv" value="string" />
     <property role="EcuMT" value="1618328391714701966" />
@@ -688,7 +688,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5oaG">
-    <property role="3GE5qa" value="type.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <property role="TrG5h" value="ReferenceTypeFeature" />
     <property role="34LRSv" value="reference" />
     <property role="EcuMT" value="1618328391714701996" />
@@ -701,7 +701,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5oaL">
-    <property role="3GE5qa" value="type.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <property role="TrG5h" value="ChildTypeFeature" />
     <property role="34LRSv" value="child" />
     <property role="EcuMT" value="1618328391714702001" />
@@ -741,6 +741,7 @@
       <property role="20kJfa" value="termDeclaration" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="4MEOIDFttoe" resolve="TypeTermDeclaration" />
+      <node concept="asaX9" id="5hSMZ_lNwsa" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="1pPth$m5B55" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -820,7 +821,7 @@
   </node>
   <node concept="1TIwiD" id="1hX44vMEjQg">
     <property role="EcuMT" value="1476354154047290768" />
-    <property role="3GE5qa" value="type.code" />
+    <property role="3GE5qa" value="term.feature" />
     <property role="TrG5h" value="GetterBlock" />
     <ref role="1TJDcQ" node="1hX44vMFoce" resolve="CodeBlock" />
   </node>
@@ -1080,7 +1081,7 @@
   </node>
   <node concept="1TIwiD" id="1L74NXElX0R">
     <property role="EcuMT" value="2037618519496446007" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TypeTerm" />
     <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="1L74NXEmI65" role="1TKVEi">
@@ -1163,7 +1164,7 @@
   </node>
   <node concept="1TIwiD" id="1L74NXFMz6j">
     <property role="EcuMT" value="2037618519520719251" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TypeFeatureOverride" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1L74NXFMBVS" role="1TKVEi">
@@ -1248,7 +1249,7 @@
   </node>
   <node concept="1TIwiD" id="4MEOIDFttoe">
     <property role="EcuMT" value="5524459797190399502" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TypeTermDeclaration" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4MEOIDFttNi" role="1TKVEi">
@@ -1271,7 +1272,7 @@
   </node>
   <node concept="1TIwiD" id="4MEOIDFwTxW">
     <property role="EcuMT" value="5524459797191301244" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TypeTermDeclarationParameter" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4MEOIDFwTy3" role="1TKVEi">
@@ -1293,7 +1294,7 @@
   </node>
   <node concept="1TIwiD" id="4MEOIDFxxDM">
     <property role="EcuMT" value="5524459797191465586" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TypeTermDeclarationParameterReference" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4MEOIDFxxDY" role="1TKVEi">
@@ -1382,7 +1383,7 @@
   </node>
   <node concept="1TIwiD" id="5hSMZ_ldReM">
     <property role="EcuMT" value="6086839168128218034" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TermArgumentList" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5hSMZ_ldWzp" role="1TKVEi">
@@ -1395,7 +1396,7 @@
   </node>
   <node concept="1TIwiD" id="5hSMZ_ldReN">
     <property role="EcuMT" value="6086839168128218035" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TermParameterBinding" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5hSMZ_ldV8_" role="1TKVEi">
@@ -1411,6 +1412,24 @@
       <property role="20kJfa" value="parameter" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="4MEOIDFwTxW" resolve="TypeTermDeclarationParameter" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5hSMZ_lNwqz">
+    <property role="EcuMT" value="6086839168138086051" />
+    <property role="3GE5qa" value="term" />
+    <property role="TrG5h" value="TermTable" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="term table" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5hSMZ_lNwq$" role="1TKVEi">
+      <property role="IQ2ns" value="6086839168138086052" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="termDeclaration" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="4MEOIDFttoe" resolve="TypeTermDeclaration" />
+    </node>
+    <node concept="PrWs8" id="5hSMZ_lNwqA" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
 </model>

@@ -1401,7 +1401,7 @@
   </node>
   <node concept="1YbPZF" id="4MEOIDFzuUN">
     <property role="TrG5h" value="typeof_TypeTermDeclarationParameterReference" />
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <node concept="3clFbS" id="4MEOIDFzuUO" role="18ibNy">
       <node concept="1Z5TYs" id="4MEOIDFzv5A" role="3cqZAp">
         <node concept="mw_s8" id="4MEOIDFzv5S" role="1ZfhKB">

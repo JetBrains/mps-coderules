@@ -818,7 +818,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1L74NXFMz8h">
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <ref role="1M2myG" to="wq2x:1L74NXFMz6j" resolve="TypeFeatureOverride" />
     <node concept="1N5Pfh" id="1L74NXFMz8i" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:1L74NXFMz74" resolve="feature" />
@@ -937,7 +937,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4MEOIDFxysn">
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <ref role="1M2myG" to="wq2x:4MEOIDFxxDM" resolve="TypeTermDeclarationParameterReference" />
     <node concept="1N5Pfh" id="4MEOIDFxyEg" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:4MEOIDFxxDY" resolve="parameter" />
@@ -1004,7 +1004,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="5hSMZ_ldVhx">
-    <property role="3GE5qa" value="type.term" />
+    <property role="3GE5qa" value="term" />
     <ref role="1M2myG" to="wq2x:5hSMZ_ldReN" resolve="TermParameterBinding" />
     <node concept="1N5Pfh" id="5hSMZ_ldVhy" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:5hSMZ_ldReO" resolve="parameter" />
