@@ -1400,7 +1400,7 @@
     </node>
   </node>
   <node concept="1YbPZF" id="4MEOIDFzuUN">
-    <property role="TrG5h" value="typeof_TypeTermDeclarationParameterReference" />
+    <property role="TrG5h" value="typeof_TermDeclarationParameterRef" />
     <property role="3GE5qa" value="term" />
     <node concept="3clFbS" id="4MEOIDFzuUO" role="18ibNy">
       <node concept="1Z5TYs" id="4MEOIDFzv5A" role="3cqZAp">
@@ -1430,7 +1430,7 @@
     </node>
     <node concept="1YaCAy" id="4MEOIDFzuUQ" role="1YuTPh">
       <property role="TrG5h" value="ttdpr" />
-      <ref role="1YaFvo" to="wq2x:4MEOIDFxxDM" resolve="TypeTermDeclarationParameterReference" />
+      <ref role="1YaFvo" to="wq2x:4MEOIDFxxDM" resolve="TermDeclarationParameterRef" />
     </node>
   </node>
   <node concept="1YbPZF" id="60zk4o7revn">

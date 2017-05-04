@@ -1285,7 +1285,7 @@
   </node>
   <node concept="13h7C7" id="1L74NXEmHzJ">
     <property role="3GE5qa" value="term" />
-    <ref role="13h7C2" to="wq2x:1L74NXElX0R" resolve="TypeTerm" />
+    <ref role="13h7C2" to="wq2x:1L74NXElX0R" resolve="Term" />
     <node concept="13hLZK" id="1L74NXEmHzK" role="13h7CW">
       <node concept="3clFbS" id="1L74NXEmHzL" role="2VODD2" />
     </node>
@@ -1447,13 +1447,13 @@
   </node>
   <node concept="13h7C7" id="5UYwY$H7MGb">
     <property role="3GE5qa" value="term" />
-    <ref role="13h7C2" to="wq2x:1pPth$m5o9D" resolve="TypeTermTemplate" />
+    <ref role="13h7C2" to="wq2x:1pPth$m5o9D" resolve="TermTemplate" />
     <node concept="13i0hz" id="5UYwY$H7MGm" role="13h7CS">
       <property role="TrG5h" value="valueFeatures" />
       <node concept="3Tm1VV" id="5UYwY$H7MGn" role="1B3o_S" />
       <node concept="A3Dl8" id="5UYwY$H7MID" role="3clF45">
         <node concept="3Tqbb2" id="5UYwY$H7MIQ" role="A3Ik2">
-          <ref role="ehGHo" to="wq2x:1pPth$m5oa5" resolve="TypeFeature" />
+          <ref role="ehGHo" to="wq2x:1pPth$m5oa5" resolve="TermFeature" />
         </node>
       </node>
       <node concept="3clFbS" id="5UYwY$H7MGp" role="3clF47">
@@ -1476,7 +1476,7 @@
                         </node>
                         <node concept="1mIQ4w" id="1GNw78$s22b" role="2OqNvi">
                           <node concept="chp4Y" id="1GNw78$s22c" role="cj9EA">
-                            <ref role="cht4Q" to="wq2x:1pPth$m5oaG" resolve="ReferenceTypeFeature" />
+                            <ref role="cht4Q" to="wq2x:1pPth$m5oaG" resolve="ReferenceTermFeature" />
                           </node>
                         </node>
                       </node>
@@ -1486,7 +1486,7 @@
                         </node>
                         <node concept="1mIQ4w" id="1GNw78$s22f" role="2OqNvi">
                           <node concept="chp4Y" id="1GNw78$s22g" role="cj9EA">
-                            <ref role="cht4Q" to="wq2x:1pPth$m5oae" resolve="StringTypeFeature" />
+                            <ref role="cht4Q" to="wq2x:1pPth$m5oae" resolve="StringTermFeature" />
                           </node>
                         </node>
                       </node>
@@ -1508,7 +1508,7 @@
       <node concept="3Tm1VV" id="5UYwY$H7TrM" role="1B3o_S" />
       <node concept="A3Dl8" id="5UYwY$H7TDk" role="3clF45">
         <node concept="3Tqbb2" id="5UYwY$H7TDx" role="A3Ik2">
-          <ref role="ehGHo" to="wq2x:1pPth$m5oa5" resolve="TypeFeature" />
+          <ref role="ehGHo" to="wq2x:1pPth$m5oa5" resolve="TermFeature" />
         </node>
       </node>
       <node concept="3clFbS" id="5UYwY$H7TrO" role="3clF47">
@@ -1531,7 +1531,7 @@
                         </node>
                         <node concept="1mIQ4w" id="1GNw78$s22K" role="2OqNvi">
                           <node concept="chp4Y" id="1GNw78$s22L" role="cj9EA">
-                            <ref role="cht4Q" to="wq2x:1pPth$m5oa6" resolve="ListTypeFeature" />
+                            <ref role="cht4Q" to="wq2x:1pPth$m5oa6" resolve="ListTermFeature" />
                           </node>
                         </node>
                       </node>
@@ -1541,7 +1541,7 @@
                         </node>
                         <node concept="1mIQ4w" id="5YVpdhev4Hj" role="2OqNvi">
                           <node concept="chp4Y" id="5YVpdhev4Ub" role="cj9EA">
-                            <ref role="cht4Q" to="wq2x:1pPth$m5oaL" resolve="ChildTypeFeature" />
+                            <ref role="cht4Q" to="wq2x:1pPth$m5oaL" resolve="ChildTermFeature" />
                           </node>
                         </node>
                       </node>
@@ -1564,7 +1564,7 @@
   </node>
   <node concept="13h7C7" id="4MEOIDFxxVo">
     <property role="3GE5qa" value="term" />
-    <ref role="13h7C2" to="wq2x:4MEOIDFxxDM" resolve="TypeTermDeclarationParameterReference" />
+    <ref role="13h7C2" to="wq2x:4MEOIDFxxDM" resolve="TermDeclarationParameterRef" />
     <node concept="13hLZK" id="4MEOIDFxxVp" role="13h7CW">
       <node concept="3clFbS" id="4MEOIDFxxVq" role="2VODD2" />
     </node>
@@ -1591,7 +1591,7 @@
   </node>
   <node concept="13h7C7" id="4MEOIDG83_6">
     <property role="3GE5qa" value="term" />
-    <ref role="13h7C2" to="wq2x:4MEOIDFttoe" resolve="TypeTermDeclaration" />
+    <ref role="13h7C2" to="wq2x:4MEOIDFttoe" resolve="TermDeclaration" />
     <node concept="13i0hz" id="4MEOIDG83_h" role="13h7CS">
       <property role="TrG5h" value="runtimeClassName" />
       <node concept="3Tm1VV" id="4MEOIDG83_i" role="1B3o_S" />
@@ -1718,7 +1718,7 @@
           <node concept="3cpWsn" id="5hSMZ_ldW$R" role="3cpWs9">
             <property role="TrG5h" value="params" />
             <node concept="2I9FWS" id="5hSMZ_ldW$S" role="1tU5fm">
-              <ref role="2I9WkF" to="wq2x:4MEOIDFwTxW" resolve="TypeTermDeclarationParameter" />
+              <ref role="2I9WkF" to="wq2x:4MEOIDFwTxW" resolve="TermDeclarationParameter" />
             </node>
             <node concept="2OqwBi" id="5hSMZ_ldW$T" role="33vP2m">
               <node concept="2OqwBi" id="5hSMZ_ldW$U" role="2Oq$k0">
@@ -1727,7 +1727,7 @@
                   <node concept="2Xjw5R" id="5hSMZ_ldW$X" role="2OqNvi">
                     <node concept="1xMEDy" id="5hSMZ_ldW$Y" role="1xVPHs">
                       <node concept="chp4Y" id="5hSMZ_ldZ4J" role="ri$Ld">
-                        <ref role="cht4Q" to="wq2x:1L74NXElX0R" resolve="TypeTerm" />
+                        <ref role="cht4Q" to="wq2x:1L74NXElX0R" resolve="Term" />
                       </node>
                     </node>
                   </node>
