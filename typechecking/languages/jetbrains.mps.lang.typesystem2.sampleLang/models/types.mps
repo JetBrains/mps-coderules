@@ -518,19 +518,19 @@
       <concept id="1180964022718" name="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" flags="nn" index="3QWeyG" />
     </language>
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2">
-      <concept id="1618328391714701929" name="jetbrains.mps.lang.typesystem2.structure.TypeTermTemplate" flags="ng" index="0oftK">
+      <concept id="1618328391714701929" name="jetbrains.mps.lang.typesystem2.structure.TermTemplate" flags="ng" index="0oftK">
         <child id="1618328391714701961" name="feature" index="0ofug" />
       </concept>
-      <concept id="1618328391714701966" name="jetbrains.mps.lang.typesystem2.structure.StringTypeFeature" flags="ng" index="0ofun">
+      <concept id="1618328391714701966" name="jetbrains.mps.lang.typesystem2.structure.StringTermFeature" flags="ng" index="0ofun">
         <child id="1476354154047290766" name="getter" index="3AP2R9" />
       </concept>
-      <concept id="1618328391714701957" name="jetbrains.mps.lang.typesystem2.structure.TypeFeature" flags="ng" index="0ofus">
+      <concept id="1618328391714701957" name="jetbrains.mps.lang.typesystem2.structure.TermFeature" flags="ng" index="0ofus">
         <property id="1877115349164965185" name="final" index="3JpusR" />
       </concept>
-      <concept id="1618328391714701958" name="jetbrains.mps.lang.typesystem2.structure.ListTypeFeature" flags="ng" index="0ofuv">
+      <concept id="1618328391714701958" name="jetbrains.mps.lang.typesystem2.structure.ListTermFeature" flags="ng" index="0ofuv">
         <child id="4160332554964928895" name="getter" index="2J$v4l" />
       </concept>
-      <concept id="1618328391714701996" name="jetbrains.mps.lang.typesystem2.structure.ReferenceTypeFeature" flags="ng" index="0ofuP">
+      <concept id="1618328391714701996" name="jetbrains.mps.lang.typesystem2.structure.ReferenceTermFeature" flags="ng" index="0ofuP">
         <child id="1476354154056651955" name="getter" index="3BhgjO" />
       </concept>
       <concept id="1618328391714763069" name="jetbrains.mps.lang.typesystem2.structure.TypeTable" flags="ng" index="0oKg$">
@@ -585,10 +585,10 @@
         <child id="2876899482279399450" name="primary" index="8a1Nc" />
         <child id="7368070394767441299" name="rule" index="3ArX_J" />
       </concept>
-      <concept id="5524459797191301244" name="jetbrains.mps.lang.typesystem2.structure.TypeTermDeclarationParameter" flags="ng" index="BakEm">
+      <concept id="5524459797191301244" name="jetbrains.mps.lang.typesystem2.structure.TermDeclarationParameter" flags="ng" index="BakEm">
         <child id="5524459797191301251" name="type" index="BakDD" />
       </concept>
-      <concept id="5524459797191465586" name="jetbrains.mps.lang.typesystem2.structure.TypeTermDeclarationParameterReference" flags="ng" index="Bbcyo">
+      <concept id="5524459797191465586" name="jetbrains.mps.lang.typesystem2.structure.TermDeclarationParameterRef" flags="ng" index="Bbcyo">
         <reference id="5524459797191465598" name="parameter" index="Bbcyk" />
       </concept>
       <concept id="5524459797186715156" name="jetbrains.mps.lang.typesystem2.structure.NewTypePseudoConstraint" flags="ng" index="B_ONY">
@@ -596,7 +596,7 @@
         <child id="6086839168131714100" name="typeArgument" index="150vd" />
         <child id="5524459797186715209" name="typeVar" index="B_OMz" />
       </concept>
-      <concept id="5524459797190399502" name="jetbrains.mps.lang.typesystem2.structure.TypeTermDeclaration" flags="ng" index="BRKj$">
+      <concept id="5524459797190399502" name="jetbrains.mps.lang.typesystem2.structure.TermDeclaration" flags="ng" index="BRKj$">
         <child id="5524459797190401234" name="parameter" index="BRKSS" />
         <child id="5524459797190401236" name="template" index="BRKSY" />
       </concept>
@@ -714,7 +714,7 @@
         <child id="2316688792939428590" name="code" index="3IrJb0" />
       </concept>
       <concept id="965748826975413063" name="jetbrains.mps.lang.typesystem2.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
-      <concept id="2037618519496446007" name="jetbrains.mps.lang.typesystem2.structure.TypeTerm" flags="ng" index="1Q4cc8">
+      <concept id="2037618519496446007" name="jetbrains.mps.lang.typesystem2.structure.Term" flags="ng" index="1Q4cc8">
         <reference id="6086839168126957156" name="termDecl" index="1nfQt" />
         <child id="6086839168128216653" name="termArgument" index="1jUmO" />
         <child id="2037618519520915633" name="override" index="1Ryyee" />
@@ -726,7 +726,7 @@
       <concept id="2037618519496637434" name="jetbrains.mps.lang.typesystem2.structure.TypeArgumentList" flags="ng" index="1Q7qz5">
         <child id="2037618519496637435" name="binding" index="1Q7qz4" />
       </concept>
-      <concept id="2037618519520719251" name="jetbrains.mps.lang.typesystem2.structure.TypeFeatureOverride" flags="ng" index="1RziaG">
+      <concept id="2037618519520719251" name="jetbrains.mps.lang.typesystem2.structure.TermFeatureOverride" flags="ng" index="1RziaG">
         <reference id="2037618519520719300" name="feature" index="1RzibV" />
         <child id="2037618519520739064" name="term" index="1RzmR7" />
       </concept>
