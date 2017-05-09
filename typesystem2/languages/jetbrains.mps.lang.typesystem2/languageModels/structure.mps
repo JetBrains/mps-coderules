@@ -1188,6 +1188,11 @@
     <property role="TrG5h" value="TermListExpression" />
     <property role="34LRSv" value="termlist" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyi" id="4bWqD4Cl_wO" role="1TKVEl">
+      <property role="IQ2nx" value="4826850072313878580" />
+      <property role="TrG5h" value="hasNil" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="7LZcKzBrEQ$" role="1TKVEi">
       <property role="IQ2ns" value="8970945096080862628" />
       <property role="20lmBu" value="aggregation" />
