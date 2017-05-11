@@ -331,7 +331,7 @@
         <child id="6399471711045617306" name="dataType" index="3vLBG7" />
         <child id="3063948360254832884" name="declaration" index="3XD1gS" />
       </concept>
-      <concept id="8829335963593820278" name="jetbrains.mps.logic.structure.LogicalVariableReference" flags="ng" index="a7P8L">
+      <concept id="8829335963593820278" name="jetbrains.mps.logic.structure.LogicalVariable" flags="ng" index="a7P8L">
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
         <child id="5220966027126709245" name="position" index="3vcocd" />
       </concept>
@@ -363,7 +363,7 @@
       <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.Value" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
       </concept>
-      <concept id="5131913661993028914" name="jetbrains.mps.logic.structure.AssignedLogicalVariable" flags="ng" index="1uarlV">
+      <concept id="5131913661993028914" name="jetbrains.mps.logic.structure.PatternLogicalVariable" flags="ng" index="1uarlV">
         <child id="5131913661993028915" name="variable" index="1uarlU" />
         <child id="5131913661993028917" name="value" index="1uarlW" />
       </concept>
