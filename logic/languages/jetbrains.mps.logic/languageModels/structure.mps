@@ -256,7 +256,7 @@
     <property role="3GE5qa" value="logical" />
     <property role="TrG5h" value="ExpressionLogicalVariable" />
     <property role="EcuMT" value="8829335963591530299" />
-    <ref role="1TJDcQ" node="7E86$tKsHeX" resolve="AbstractLogicalVariable" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="7E86$tKt5BI" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
@@ -302,6 +302,12 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8829335963593822893" />
       <ref role="20lvS9" node="7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="4xOAf2nhhJX" role="1TKVEi">
+      <property role="IQ2ns" value="5220966027126709245" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="position" />
+      <ref role="20lvS9" node="7E86$tKskWj" resolve="LogicalValue" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mP5b6jNC0S">

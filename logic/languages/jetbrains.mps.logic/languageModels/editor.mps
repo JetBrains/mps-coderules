@@ -2350,8 +2350,8 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6p0DfM0nLOu" role="3EZMnx">
-          <ref role="1NtTu8" to="5j4j:7E86$tKsJfa" resolve="index" />
           <ref role="1k5W1q" node="7ksQUDZtGfa" resolve="Value" />
+          <ref role="1NtTu8" to="5j4j:4xOAf2nhhJX" resolve="position" />
           <node concept="2w$q5c" id="4bWqD4CreUJ" role="3xwHhi">
             <node concept="2aJ2om" id="4bWqD4CreUK" role="2w$qW5">
               <ref role="2$4xQ3" node="4bWqD4CreCD" resolve="EXPRESSION" />
@@ -2368,7 +2368,7 @@
                   <node concept="Bykcj" id="30XHGaOG64O" role="2OqNvi">
                     <node concept="1aIX9F" id="30XHGaOG64P" role="1xVPHs">
                       <node concept="26LbJo" id="30XHGaOG64Q" role="1aIX9E">
-                        <ref role="26LbJp" to="5j4j:7E86$tKsJfa" resolve="index" />
+                        <ref role="26LbJp" to="5j4j:4xOAf2nhhJX" resolve="position" />
                       </node>
                     </node>
                   </node>
@@ -3203,7 +3203,7 @@
   </node>
   <node concept="IW6AY" id="4hPXq9Jm69G">
     <property role="3GE5qa" value="logical" />
-    <ref role="aqKnT" to="5j4j:7E86$tKsHeX" resolve="AbstractLogicalVariable" />
+    <ref role="aqKnT" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
     <node concept="1Qtc8_" id="4hPXq9Jm69H" role="IW6Ez">
       <node concept="3cWJ9i" id="4hPXq9Jm69I" role="1Qtc8$">
         <node concept="CtIbL" id="4hPXq9Jm69J" role="CtIbM">
@@ -3229,7 +3229,7 @@
                 <node concept="2OqwBi" id="4hPXq9Jm69V" role="2Oq$k0">
                   <node concept="7Obwk" id="4hPXq9Jm69Z" role="2Oq$k0" />
                   <node concept="3TrEf2" id="4hPXq9Jm69X" role="2OqNvi">
-                    <ref role="3Tt5mk" to="5j4j:7E86$tKsJfa" resolve="index" />
+                    <ref role="3Tt5mk" to="5j4j:4xOAf2nhhJX" resolve="position" />
                   </node>
                 </node>
                 <node concept="3w_OXm" id="4hPXq9Jm69Y" role="2OqNvi" />
@@ -3254,7 +3254,7 @@
                   <node concept="2OqwBi" id="4hPXq9Jm6a9" role="2Oq$k0">
                     <node concept="7Obwk" id="4hPXq9Jm6af" role="2Oq$k0" />
                     <node concept="3TrEf2" id="4hPXq9Jm6ab" role="2OqNvi">
-                      <ref role="3Tt5mk" to="5j4j:7E86$tKsJfa" resolve="index" />
+                      <ref role="3Tt5mk" to="5j4j:4xOAf2nhhJX" resolve="position" />
                     </node>
                   </node>
                   <node concept="2DeJnY" id="4hPXq9Jm6ac" role="2OqNvi" />
