@@ -2,8 +2,8 @@
 <model ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -238,20 +238,6 @@
     <property role="3GE5qa" value="logical" />
     <property role="EcuMT" value="8829335963591332101" />
   </node>
-  <node concept="1TIwiD" id="7E86$tKsHeX">
-    <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="AbstractLogicalVariable" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="EcuMT" value="8829335963591431101" />
-    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
-    <node concept="1TJgyj" id="7E86$tKsJfa" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="index" />
-      <property role="IQ2ns" value="8829335963591439306" />
-      <ref role="20lvS9" node="7E86$tKskWj" resolve="LogicalValue" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="7E86$tKt5sV">
     <property role="3GE5qa" value="logical" />
     <property role="TrG5h" value="ExpressionLogicalVariable" />
@@ -295,7 +281,7 @@
     <property role="3GE5qa" value="logical" />
     <property role="TrG5h" value="LogicalVariableReference" />
     <property role="EcuMT" value="8829335963593820278" />
-    <ref role="1TJDcQ" node="7E86$tKsHeX" resolve="AbstractLogicalVariable" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="7E86$tK_PaH" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="declaration" />
@@ -394,7 +380,7 @@
       <property role="20kJfa" value="variable" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5131913661993028915" />
-      <ref role="20lvS9" node="7E86$tKsHeX" resolve="AbstractLogicalVariable" />
+      <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariableReference" />
     </node>
     <node concept="1TJgyj" id="4sSe4$p4oOP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
