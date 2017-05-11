@@ -2321,7 +2321,7 @@
   </node>
   <node concept="24kQdi" id="7E86$tK_Puj">
     <property role="3GE5qa" value="logical" />
-    <ref role="1XX52x" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+    <ref role="1XX52x" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
     <node concept="3EZMnI" id="6p0DfM0eyCR" role="2wV5jI">
       <node concept="1iCGBv" id="2E5lcNn53QK" role="3EZMnx">
         <ref role="1NtTu8" to="5j4j:7E86$tK_PaH" resolve="declaration" />
@@ -3186,7 +3186,7 @@
   </node>
   <node concept="24kQdi" id="4sSe4$p4oOX">
     <property role="3GE5qa" value="logical" />
-    <ref role="1XX52x" to="5j4j:4sSe4$p4oOM" resolve="AssignedLogicalVariable" />
+    <ref role="1XX52x" to="5j4j:4sSe4$p4oOM" resolve="PatternLogicalVariable" />
     <node concept="3EZMnI" id="4sSe4$p4oOZ" role="2wV5jI">
       <node concept="3F1sOY" id="4sSe4$p4oPk" role="3EZMnx">
         <ref role="1NtTu8" to="5j4j:4sSe4$p4oON" resolve="variable" />
@@ -3203,7 +3203,7 @@
   </node>
   <node concept="IW6AY" id="4hPXq9Jm69G">
     <property role="3GE5qa" value="logical" />
-    <ref role="aqKnT" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+    <ref role="aqKnT" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
     <node concept="1Qtc8_" id="4hPXq9Jm69H" role="IW6Ez">
       <node concept="3cWJ9i" id="4hPXq9Jm69I" role="1Qtc8$">
         <node concept="CtIbL" id="4hPXq9Jm69J" role="CtIbM">

@@ -846,7 +846,7 @@
       <ref role="2rZz_L" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
     </node>
     <node concept="3aamgX" id="6dMt3c5atGl" role="3acgRq">
-      <ref role="30HIoZ" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+      <ref role="30HIoZ" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
       <node concept="gft3U" id="6dMt3c5au09" role="1lVwrX">
         <node concept="10Nm6u" id="6dMt3c5au0f" role="gfFT$">
           <node concept="1sPUBX" id="6dMt3c5au0m" role="lGtFl">
@@ -1257,7 +1257,7 @@
     <property role="TrG5h" value="LogicalVariable" />
     <node concept="3aamgX" id="6dMt3c5ap00" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+      <ref role="30HIoZ" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
       <node concept="30G5F_" id="6dMt3c5ap7i" role="30HLyM">
         <node concept="3clFbS" id="6dMt3c5ap7j" role="2VODD2">
           <node concept="3clFbF" id="6dMt3c5apcd" role="3cqZAp">
@@ -1370,7 +1370,7 @@
     </node>
     <node concept="3aamgX" id="6dMt3c5apH0" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+      <ref role="30HIoZ" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
       <node concept="30G5F_" id="6dMt3c5apH1" role="30HLyM">
         <node concept="3clFbS" id="6dMt3c5apH2" role="2VODD2">
           <node concept="3clFbF" id="6dMt3c5apH3" role="3cqZAp">

@@ -5517,14 +5517,14 @@
                 <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
                 <node concept="3bvxqY" id="4hPXq9JmeuH" role="37wK5m" />
                 <node concept="prKvN" id="4hPXq9Jmeuw" role="37wK5m">
-                  <ref role="prhl4" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+                  <ref role="prhl4" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
                   <ref role="prhl7" to="5j4j:7E86$tK_PaH" resolve="declaration" />
                 </node>
                 <node concept="3cmrfG" id="4hPXq9Jmeux" role="37wK5m">
                   <property role="3cmrfH" value="-1" />
                 </node>
                 <node concept="3TUQnm" id="4hPXq9Jmeuy" role="37wK5m">
-                  <ref role="3TV0OU" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+                  <ref role="3TV0OU" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
                 </node>
               </node>
             </node>
@@ -5576,12 +5576,12 @@
               <node concept="3cpWsn" id="4hPXq9Jmevi" role="3cpWs9">
                 <property role="TrG5h" value="lvr" />
                 <node concept="3Tqbb2" id="4hPXq9Jmevj" role="1tU5fm">
-                  <ref role="ehGHo" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+                  <ref role="ehGHo" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
                 </node>
                 <node concept="2OqwBi" id="4hPXq9Jmevk" role="33vP2m">
                   <node concept="1rpKSd" id="4hPXq9JmevC" role="2Oq$k0" />
                   <node concept="15TzpJ" id="4hPXq9Jmevm" role="2OqNvi">
-                    <ref role="I8UWU" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+                    <ref role="I8UWU" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
                   </node>
                 </node>
               </node>

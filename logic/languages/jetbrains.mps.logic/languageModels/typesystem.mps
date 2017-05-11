@@ -369,7 +369,7 @@
     </node>
     <node concept="1YaCAy" id="2c3nq4GQw_H" role="1YuTPh">
       <property role="TrG5h" value="lvr" />
-      <ref role="1YaFvo" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+      <ref role="1YaFvo" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
     </node>
   </node>
   <node concept="1YbPZF" id="7dgRGU4$_5X">

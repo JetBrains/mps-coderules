@@ -873,7 +873,7 @@
       <property role="20kJfa" value="typeVar" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1302893676238674275" />
-      <ref role="20lvS9" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+      <ref role="20lvS9" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
     </node>
     <node concept="1TJgyj" id="18kNIl0jL3E" role="1TKVEi">
       <property role="IQ2ns" value="1302893676238672106" />
@@ -1232,7 +1232,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="typeVar" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariableReference" />
+      <ref role="20lvS9" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
     </node>
     <node concept="1TJgyj" id="5hSMZ_lrcKO" role="1TKVEi">
       <property role="IQ2ns" value="6086839168131714100" />

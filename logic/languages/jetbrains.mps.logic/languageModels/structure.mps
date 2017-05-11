@@ -279,7 +279,7 @@
   </node>
   <node concept="1TIwiD" id="7E86$tK_OxQ">
     <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="LogicalVariableReference" />
+    <property role="TrG5h" value="LogicalVariable" />
     <property role="EcuMT" value="8829335963593820278" />
     <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="7E86$tK_PaH" role="1TKVEi">
@@ -372,7 +372,7 @@
   </node>
   <node concept="1TIwiD" id="4sSe4$p4oOM">
     <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="AssignedLogicalVariable" />
+    <property role="TrG5h" value="PatternLogicalVariable" />
     <property role="EcuMT" value="5131913661993028914" />
     <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="4sSe4$p4oON" role="1TKVEi">
@@ -380,7 +380,7 @@
       <property role="20kJfa" value="variable" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5131913661993028915" />
-      <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariableReference" />
+      <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariable" />
     </node>
     <node concept="1TJgyj" id="4sSe4$p4oOP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
