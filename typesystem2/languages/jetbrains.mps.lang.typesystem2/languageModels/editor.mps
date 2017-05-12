@@ -1517,26 +1517,8 @@
   <node concept="24kQdi" id="6p0DfM0pR3S">
     <ref role="1XX52x" to="wq2x:6p0DfM0pKSO" resolve="LogicalExpression" />
     <node concept="3EZMnI" id="6p0DfM0pRaY" role="2wV5jI">
-      <node concept="3F0ifn" id="7nuzzkr4kdj" role="3EZMnx">
-        <property role="3F0ifm" value="«" />
-        <node concept="11LMrY" id="7nuzzkr4otD" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="VechU" id="7nuzzkr4ou_" role="3F10Kt">
-          <property role="Vb096" value="DARK_MAGENTA" />
-        </node>
-      </node>
       <node concept="3F1sOY" id="6p0DfM0pRb0" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:6p0DfM0pQge" resolve="content" />
-      </node>
-      <node concept="3F0ifn" id="7nuzzkr4kdr" role="3EZMnx">
-        <property role="3F0ifm" value="»" />
-        <node concept="11L4FC" id="7nuzzkr4ouE" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="VechU" id="7nuzzkr4ouG" role="3F10Kt">
-          <property role="Vb096" value="DARK_MAGENTA" />
-        </node>
       </node>
       <node concept="l2Vlx" id="6p0DfM0pRb1" role="2iSdaV" />
     </node>
