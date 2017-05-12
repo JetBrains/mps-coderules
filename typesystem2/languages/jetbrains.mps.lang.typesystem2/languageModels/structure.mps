@@ -217,7 +217,7 @@
     <node concept="1TJgyj" id="6p0DfM0et2r" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="argument" />
-      <property role="20lbJX" value="1..n" />
+      <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="7368070394768117915" />
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
