@@ -23,6 +23,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
@@ -180,6 +183,12 @@
       </concept>
       <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7" />
     </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435808" name="initValue" index="HW$Y0" />
+      </concept>
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
+    </language>
   </registry>
   <node concept="1YbPZF" id="1pt0VTMFfZC">
     <property role="TrG5h" value="typeof_TreeFormExpression" />
@@ -210,10 +219,19 @@
     <property role="3GE5qa" value="logical" />
     <property role="TrG5h" value="supertypesOf_LogicalType" />
     <node concept="3clFbS" id="1mP5b6jNJDk" role="2sgrp5">
-      <node concept="3clFbF" id="7HUwyZb13M4" role="3cqZAp">
-        <node concept="2c44tf" id="7HUwyZb13M2" role="3clFbG">
-          <node concept="3uibUv" id="1HG00HGaSgq" role="2c44tc">
-            <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+      <node concept="3clFbF" id="3kjrYXAraoO" role="3cqZAp">
+        <node concept="2ShNRf" id="3kjrYXAraoM" role="3clFbG">
+          <node concept="Tc6Ow" id="3kjrYXArbwW" role="2ShVmc">
+            <node concept="2c44tf" id="3kjrYXArbGw" role="HW$Y0">
+              <node concept="3uibUv" id="3kjrYXArbHz" role="2c44tc">
+                <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+              </node>
+            </node>
+            <node concept="2c44tf" id="3kjrYXArbI4" role="HW$Y0">
+              <node concept="3uibUv" id="3kjrYXArbID" role="2c44tc">
+                <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
