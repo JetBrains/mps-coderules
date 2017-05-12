@@ -8,6 +8,7 @@
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -241,6 +242,20 @@
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
       </concept>
     </language>
     <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl">
@@ -2534,7 +2549,6 @@
         <property role="TrG5h" value="index" />
         <node concept="3uibUv" id="5zncGqwePAD" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
-          <node concept="17QB3L" id="5zncGqwePDT" role="11_B2D" />
         </node>
       </node>
       <node concept="17QB3L" id="5zncGqwePgU" role="3clF45" />
@@ -2549,8 +2563,16 @@
               <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
               <node concept="2OqwBi" id="5zncGqweSkC" role="37wK5m">
                 <node concept="2OqwBi" id="5zncGqweSkD" role="2Oq$k0">
-                  <node concept="37vLTw" id="5zncGqweTy8" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5zncGqweP_N" resolve="index" />
+                  <node concept="1eOMI4" id="1z4HGmnUDUr" role="2Oq$k0">
+                    <node concept="10QFUN" id="1z4HGmnUDUo" role="1eOMHV">
+                      <node concept="3uibUv" id="1z4HGmnUE3S" role="10QFUM">
+                        <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
+                        <node concept="17QB3L" id="1z4HGmnUEe4" role="11_B2D" />
+                      </node>
+                      <node concept="37vLTw" id="1z4HGmnUDUt" role="10QFUP">
+                        <ref role="3cqZAo" node="5zncGqweP_N" resolve="index" />
+                      </node>
+                    </node>
                   </node>
                   <node concept="liA8E" id="5zncGqweSkF" role="2OqNvi">
                     <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
@@ -2579,6 +2601,14 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="1z4HGmnUD$s" role="lGtFl">
+        <node concept="TUZQ0" id="1z4HGmnUD$v" role="3nqlJM">
+          <property role="TUZQ4" value="Logical&lt;string&gt;" />
+          <node concept="zr_55" id="1z4HGmnUD$x" role="zr_5Q">
+            <ref role="zr_51" node="5zncGqweP_N" resolve="index" />
           </node>
         </node>
       </node>
@@ -3595,12 +3625,22 @@
                     </node>
                     <node concept="2OqwBi" id="7Y$xuoic1QH" role="33vP2m">
                       <node concept="2OqwBi" id="7Y$xuoic1QI" role="2Oq$k0">
-                        <node concept="AH0OO" id="7Y$xuoic1QJ" role="2Oq$k0">
-                          <node concept="37vLTw" id="7Y$xuoic1QK" role="AHEQo">
-                            <ref role="3cqZAo" node="7Y$xuoibK_M" resolve="i" />
-                          </node>
-                          <node concept="37vLTw" id="7Y$xuoic1QL" role="AHHXb">
-                            <ref role="3cqZAo" node="WBEjvSTnXa" resolve="origins" />
+                        <node concept="1eOMI4" id="1z4HGmnUKko" role="2Oq$k0">
+                          <node concept="10QFUN" id="1z4HGmnUKkl" role="1eOMHV">
+                            <node concept="3uibUv" id="1z4HGmnUKp4" role="10QFUM">
+                              <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
+                              <node concept="3uibUv" id="1z4HGmnUKwE" role="11_B2D">
+                                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                              </node>
+                            </node>
+                            <node concept="AH0OO" id="1z4HGmnUKkq" role="10QFUP">
+                              <node concept="37vLTw" id="1z4HGmnUKkr" role="AHEQo">
+                                <ref role="3cqZAo" node="7Y$xuoibK_M" resolve="i" />
+                              </node>
+                              <node concept="37vLTw" id="1z4HGmnUKks" role="AHHXb">
+                                <ref role="3cqZAo" node="WBEjvSTnXa" resolve="origins" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="7Y$xuoic1QM" role="2OqNvi">
@@ -3778,7 +3818,6 @@
         <property role="TrG5h" value="logical" />
         <node concept="3uibUv" id="WBEjvSTnS1" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
-          <node concept="17QB3L" id="WBEjvSTnUP" role="11_B2D" />
         </node>
       </node>
       <node concept="37vLTG" id="7Y$xuoibAUz" role="3clF46">
@@ -3790,9 +3829,26 @@
         <node concept="8X2XB" id="7Y$xuoibB7Q" role="1tU5fm">
           <node concept="3uibUv" id="WBEjvSTnXH" role="8Xvag">
             <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
-            <node concept="3uibUv" id="WBEjvSTo0u" role="11_B2D">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="1z4HGmnUJUj" role="lGtFl">
+        <node concept="TUZQ0" id="1z4HGmnUJUm" role="3nqlJM">
+          <property role="TUZQ4" value="Logical&lt;string&gt;" />
+          <node concept="zr_55" id="1z4HGmnUJUo" role="zr_5Q">
+            <ref role="zr_51" node="WBEjvSTnS2" resolve="logical" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="1z4HGmnUJUp" role="3nqlJM">
+          <property role="TUZQ4" value="string" />
+          <node concept="zr_55" id="1z4HGmnUJUr" role="zr_5Q">
+            <ref role="zr_51" node="7Y$xuoibAUz" resolve="format" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="1z4HGmnUJUs" role="3nqlJM">
+          <property role="TUZQ4" value="Logical&lt;TreeForm&gt;..." />
+          <node concept="zr_55" id="1z4HGmnUJUu" role="zr_5Q">
+            <ref role="zr_51" node="WBEjvSTnXa" resolve="origins" />
           </node>
         </node>
       </node>
@@ -3804,18 +3860,12 @@
         <property role="TrG5h" value="to" />
         <node concept="3uibUv" id="12dHl3ZD0z1" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
-          <node concept="3uibUv" id="12dHl3ZD0AM" role="11_B2D">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-          </node>
         </node>
       </node>
       <node concept="37vLTG" id="12dHl3ZD0tG" role="3clF46">
         <property role="TrG5h" value="from" />
         <node concept="3uibUv" id="12dHl3ZD0Ck" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
-          <node concept="3uibUv" id="12dHl3ZD0G8" role="11_B2D">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-          </node>
         </node>
       </node>
       <node concept="37vLTG" id="3Lj6UsgEHxB" role="3clF46">
@@ -3835,8 +3885,18 @@
             </node>
             <node concept="2OqwBi" id="12dHl3ZD1Rh" role="33vP2m">
               <node concept="2OqwBi" id="12dHl3ZD1Ri" role="2Oq$k0">
-                <node concept="37vLTw" id="12dHl3ZD1Rj" role="2Oq$k0">
-                  <ref role="3cqZAo" node="12dHl3ZD0tG" resolve="from" />
+                <node concept="1eOMI4" id="1z4HGmnUzp7" role="2Oq$k0">
+                  <node concept="10QFUN" id="1z4HGmnUzp4" role="1eOMHV">
+                    <node concept="3uibUv" id="1z4HGmnUzyH" role="10QFUM">
+                      <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
+                      <node concept="3uibUv" id="1z4HGmnUzJD" role="11_B2D">
+                        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="1z4HGmnUzp9" role="10QFUP">
+                      <ref role="3cqZAo" node="12dHl3ZD0tG" resolve="from" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="liA8E" id="12dHl3ZD1Rk" role="2OqNvi">
                   <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
@@ -3948,6 +4008,20 @@
         <node concept="3clFbF" id="3Lj6UsgENdE" role="3cqZAp">
           <node concept="3clFbT" id="3Lj6UsgENdD" role="3clFbG">
             <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="1z4HGmnUyg1" role="lGtFl">
+        <node concept="TUZQ0" id="1z4HGmnUyg4" role="3nqlJM">
+          <property role="TUZQ4" value="Logical&lt;TreeForm&gt;" />
+          <node concept="zr_55" id="1z4HGmnUyg6" role="zr_5Q">
+            <ref role="zr_51" node="12dHl3ZD0sZ" resolve="to" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="1z4HGmnUyg7" role="3nqlJM">
+          <property role="TUZQ4" value="Logical&lt;TreeForm&gt;" />
+          <node concept="zr_55" id="1z4HGmnUyg9" role="zr_5Q">
+            <ref role="zr_51" node="12dHl3ZD0tG" resolve="from" />
           </node>
         </node>
       </node>
