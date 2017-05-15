@@ -173,19 +173,6 @@
       <ref role="20lvS9" node="7_8aRkgDGPJ" resolve="Expr" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7_8aRkgDGQ$">
-    <property role="EcuMT" value="8739282858702982564" />
-    <property role="3GE5qa" value="expr" />
-    <property role="TrG5h" value="Rec" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="7_8aRkgDGQ_" role="1TKVEi">
-      <property role="IQ2ns" value="8739282858702982565" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="slot" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7_8aRkgDGPJ" resolve="Expr" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="7_8aRkgDGQB">
     <property role="EcuMT" value="8739282858702982567" />
     <property role="TrG5h" value="Clause" />
