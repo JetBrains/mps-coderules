@@ -14827,7 +14827,7 @@
     <property role="TrG5h" value="constraint_statement" />
     <node concept="3aamgX" id="18kNIl1Ns$b" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:18kNIl0jL2T" resolve="AsTypeConstraint" />
+      <ref role="30HIoZ" to="wq2x:18kNIl0jL2T" resolve="AsTypePseudoConstraint" />
       <node concept="1Koe21" id="18kNIl1NjF1" role="1lVwrX">
         <node concept="3clFb_" id="18kNIl1NjF7" role="1Koe22">
           <property role="TrG5h" value="method" />

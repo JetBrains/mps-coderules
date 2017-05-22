@@ -866,7 +866,7 @@
   <node concept="1TIwiD" id="18kNIl0jL2T">
     <property role="EcuMT" value="1302893676238672057" />
     <property role="3GE5qa" value="constraint.typespecific" />
-    <property role="TrG5h" value="AsTypeConstraint" />
+    <property role="TrG5h" value="AsTypePseudoConstraint" />
     <property role="34LRSv" value="as type" />
     <ref role="1TJDcQ" node="18kNIl0mxXI" resolve="PseudoConstraint" />
     <node concept="1TJgyj" id="18kNIl0jL_z" role="1TKVEi">

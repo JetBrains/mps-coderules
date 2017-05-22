@@ -1555,8 +1555,8 @@
         <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
       </node>
       <node concept="3F0ifn" id="2E5lcNn02i2" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-        <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
+        <property role="3F0ifm" value="is" />
+        <ref role="1k5W1q" node="4aJUH_hW38r" resolve="RuleKeyword" />
       </node>
       <node concept="3F1sOY" id="2E5lcNn03LN" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:2E5lcNn03mK" resolve="assignedType" />
@@ -3794,7 +3794,7 @@
   </node>
   <node concept="24kQdi" id="18kNIl0jL7w">
     <property role="3GE5qa" value="constraint.typespecific" />
-    <ref role="1XX52x" to="wq2x:18kNIl0jL2T" resolve="AsTypeConstraint" />
+    <ref role="1XX52x" to="wq2x:18kNIl0jL2T" resolve="AsTypePseudoConstraint" />
     <node concept="3EZMnI" id="18kNIl0jL7y" role="2wV5jI">
       <node concept="3F1sOY" id="18kNIl0jL7z" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:18kNIl0jL_z" resolve="typeVar" />
