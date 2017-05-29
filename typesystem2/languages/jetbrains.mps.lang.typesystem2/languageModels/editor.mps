@@ -1516,9 +1516,8 @@
       <node concept="3F1sOY" id="6p0DfM0oETK" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:6p0DfM0oEeG" resolve="assignee" />
       </node>
-      <node concept="3F0ifn" id="6p0DfM0oEFm" role="3EZMnx">
-        <property role="3F0ifm" value="~" />
-        <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
+      <node concept="PMmxH" id="6T06Mm3M2PZ" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F1sOY" id="6p0DfM0oEV$" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:6p0DfM0oEna" resolve="value" />
@@ -6306,9 +6305,8 @@
       <node concept="3F1sOY" id="1CcQBrQdzy9" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:1CcQBrQdzxt" resolve="left" />
       </node>
-      <node concept="3F0ifn" id="1CcQBrQdzyf" role="3EZMnx">
-        <property role="3F0ifm" value="=" />
-        <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
+      <node concept="PMmxH" id="6T06Mm3LX2O" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F1sOY" id="1CcQBrQdzyx" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:1CcQBrQdzxv" resolve="right" />

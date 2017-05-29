@@ -296,7 +296,7 @@
     <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="UnifiesConstraint" />
     <property role="EcuMT" value="7368070394770780974" />
-    <property role="34LRSv" value="~" />
+    <property role="34LRSv" value="=" />
     <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
     <node concept="1TJgyj" id="6p0DfM0oEeG" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1365,7 +1365,7 @@
     <property role="EcuMT" value="1877115349178398764" />
     <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="EqualsConstraint" />
-    <property role="34LRSv" value="=" />
+    <property role="34LRSv" value="==" />
     <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
     <node concept="1TJgyj" id="1CcQBrQdzxt" role="1TKVEi">
       <property role="IQ2ns" value="1877115349178398813" />
