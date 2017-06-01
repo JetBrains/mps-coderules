@@ -8,8 +8,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.0.5</kotlin.version>
+        <kotlin.version>1.1.2</kotlin.version>
         <unification.version>1.0.2</unification.version>
+        <collection.version>0.7</collection.version>
     </properties>
 
     <groupId>jetbrains.mps.logic.memreactor</groupId>
@@ -50,7 +51,7 @@
         <dependency>
             <groupId>com.github.andrewoma.dexx</groupId>
             <artifactId>collection</artifactId>
-            <version>0.6</version>
+            <version>${collection.version}</version>
         </dependency>
         <dependency>
             <groupId>com.intellij</groupId>
@@ -88,6 +89,9 @@
                 <groupId>org.jetbrains.kotlin</groupId>
                 <version>${kotlin.version}</version>
 
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
                 <executions>
                     <execution>
                         <id>compile</id>
