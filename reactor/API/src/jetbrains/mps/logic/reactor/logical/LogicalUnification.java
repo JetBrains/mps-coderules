@@ -4,6 +4,10 @@ package jetbrains.mps.logic.reactor.logical;
 
 import jetbrains.mps.unification.Term;
 
+/**
+ * Not used in the API.
+ * @deprecated
+ */
 public interface LogicalUnification {
 
   <TERM extends Term> TERM asRoot(TERM term);

@@ -5,9 +5,13 @@ package jetbrains.mps.logic.reactor.logical;
 import java.util.List;
 import java.util.ArrayList;
 
-public class MultiMetaLogical<V> extends MetaLogical<V> {
+/**
+ * A declaration of a logical variable with index. 
+ * @param <T>
+ */
+public class MultiMetaLogical<T> extends MetaLogical<T> {
 
-  public MultiMetaLogical(String name, Class<V> type, int cardinality) {
+  public MultiMetaLogical(String name, Class<T> type, int cardinality) {
     super(name, type);
     this.cardinality = cardinality;
     init();
@@ -17,7 +21,7 @@ public class MultiMetaLogical<V> extends MetaLogical<V> {
     return cardinality;
   }
 
-  public MetaLogical<V> logicalAt(int idx) {
+  public MetaLogical<T> logicalAt(int idx) {
     return metaLogicals.get(idx);
   }
 
@@ -28,10 +32,10 @@ public class MultiMetaLogical<V> extends MetaLogical<V> {
 
   private void init() {
     for (int i = 0; i < cardinality; i++) {
-      metaLogicals.add(new MetaLogical<V>(name() + "_" + (i + 1), type()));
+      metaLogicals.add(new MetaLogical<T>(name() + "_" + (i + 1), type()));
     }
   }
 
   private int cardinality;
-  private List<MetaLogical<V>> metaLogicals = new ArrayList<MetaLogical<V>>();
+  private List<MetaLogical<T>> metaLogicals = new ArrayList<MetaLogical<T>>();
 }

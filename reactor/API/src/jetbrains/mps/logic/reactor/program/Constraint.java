@@ -7,7 +7,7 @@ import java.util.Collection;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
 
 /**
- * A constraint provided by a handler. Can only be told.
+ * A constraint provided by a handler.
  */
 public interface Constraint extends AndItem {
 

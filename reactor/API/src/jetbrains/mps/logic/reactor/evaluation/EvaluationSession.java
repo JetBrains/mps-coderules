@@ -7,6 +7,13 @@ import jetbrains.mps.logic.reactor.program.*;
 
 import java.util.List;
 
+/**
+ * The starting point to evaluate a program.
+ *
+ * The session is started with {@code newSession}, provided the backend has been initialized.
+ *
+ * The backend is supposed to be provided at startup.
+ */
 public abstract class EvaluationSession {
 
     public static EvaluationSession current() {

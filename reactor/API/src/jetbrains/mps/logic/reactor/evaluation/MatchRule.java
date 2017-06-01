@@ -4,6 +4,9 @@ package jetbrains.mps.logic.reactor.evaluation;
 
 import jetbrains.mps.logic.reactor.program.Rule;
 
+/**
+ * A binding of a rule and the constraints that matched its head.
+ */
 public interface MatchRule {
 
   Rule rule();

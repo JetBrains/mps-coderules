@@ -7,6 +7,9 @@ import jetbrains.mps.logic.reactor.program.Constraint;
 
 import java.util.List;
 
+/**
+ * Represents a run-time object corresponding to an actual constraint.
+ */
 public interface ConstraintOccurrence {
 
     Constraint constraint();

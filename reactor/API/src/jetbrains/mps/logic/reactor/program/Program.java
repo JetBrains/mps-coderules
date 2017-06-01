@@ -6,6 +6,9 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext;
 
 import java.util.List;
 
+/**
+ * A collection of handlers that constitute a constraint rules program. 
+ */
 public abstract class Program {
 
     public abstract String name();

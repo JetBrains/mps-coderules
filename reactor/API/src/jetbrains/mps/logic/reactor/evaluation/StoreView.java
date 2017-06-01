@@ -3,7 +3,7 @@ package jetbrains.mps.logic.reactor.evaluation;
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol;
 
 /**
- * @author Fedor Isakov
+ * A read-only view on the constraints store.
  */
 public interface StoreView {
 

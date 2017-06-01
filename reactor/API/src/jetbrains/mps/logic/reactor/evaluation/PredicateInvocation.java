@@ -7,6 +7,9 @@ import jetbrains.mps.logic.reactor.program.Predicate;
 
 import java.util.List;
 
+/**
+ * A run-time object representing invocation of a predicate. 
+ */
 public interface PredicateInvocation {
 
     Predicate predicate();

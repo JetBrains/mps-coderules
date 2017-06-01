@@ -4,6 +4,9 @@ package jetbrains.mps.logic.reactor.program;
 
 import java.util.List;
 
+/**
+ *  An abstract conjunct. 
+ */
 public interface AndItem {
 
   Symbol symbol();
