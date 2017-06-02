@@ -20,11 +20,6 @@
             <artifactId>memreactor-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-        <dependency>
-            <groupId>jetbrains.mps.logic.memreactor</groupId>
-            <artifactId>unification-lib</artifactId>
-            <version>${unification.version}</version>
-        </dependency>
     </dependencies>
 
     <build>

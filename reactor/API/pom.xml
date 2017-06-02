@@ -14,14 +14,6 @@
     <artifactId>memreactor-api</artifactId>
     <packaging>jar</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>jetbrains.mps.logic.memreactor</groupId>
-            <artifactId>unification-lib</artifactId>
-            <version>${unification.version}</version>
-        </dependency>
-    </dependencies>
-
     <build>
         <sourceDirectory>${basedir}/src/</sourceDirectory>
     </build>

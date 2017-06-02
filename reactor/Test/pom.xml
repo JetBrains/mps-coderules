@@ -26,11 +26,6 @@
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
-            <groupId>jetbrains.mps.logic.memreactor</groupId>
-            <artifactId>unification-tests</artifactId>
-            <version>${unification.version}</version>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
