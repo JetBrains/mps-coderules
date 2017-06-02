@@ -6,13 +6,11 @@
     </modelRoot>
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="lib/memreactor-core-0.1.jar" />
-      <sourceRoot location="lib/unification-lib-1.0.2.jar" />
       <sourceRoot location="lib/memreactor-api-0.1.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/memreactor-core-0.1.jar" />
-    <stubModelEntry path="${module}/lib/unification-lib-1.0.2.jar" />
     <stubModelEntry path="${module}/lib/memreactor-api-0.1.jar" />
     <stubModelEntry path="${module}/lib/kotlin-runtime-1.1.2.jar" />
     <stubModelEntry path="${module}/lib/kotlin-stdlib-1.1.2.jar" />
