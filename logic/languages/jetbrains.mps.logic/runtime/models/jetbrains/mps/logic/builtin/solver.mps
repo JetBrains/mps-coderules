@@ -2458,8 +2458,8 @@
       </node>
       <node concept="37vLTG" id="3FIATxbQcKV" role="3clF46">
         <property role="TrG5h" value="logicalUnification" />
-        <node concept="3uibUv" id="3FIATxbQcPk" role="1tU5fm">
-          <ref role="3uigEE" to="bj13:~LogicalUnification" resolve="LogicalUnification" />
+        <node concept="3uibUv" id="5cDlfXsLvnr" role="1tU5fm">
+          <ref role="3uigEE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
         </node>
       </node>
     </node>
@@ -3141,7 +3141,7 @@
                     <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                   </node>
                   <node concept="liA8E" id="6MYr6JwRQjW" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~LogicalUnification.isLogical(jetbrains.mps.unification.Term):boolean" resolve="isLogical" />
+                    <ref role="37wK5l" to="oy3s:3FIATxbQg_7" resolve="isLogical" />
                     <node concept="37vLTw" id="6MYr6JwRQlP" role="37wK5m">
                       <ref role="3cqZAo" node="1Ns6gpY7SoX" resolve="bvar" />
                     </node>
@@ -3164,7 +3164,7 @@
                     <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                   </node>
                   <node concept="liA8E" id="6MYr6JwRS$K" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~LogicalUnification.logical(jetbrains.mps.unification.Term):jetbrains.mps.logic.reactor.logical.SolverLogical" resolve="logical" />
+                    <ref role="37wK5l" to="oy3s:3FIATxbQg$N" resolve="logical" />
                     <node concept="37vLTw" id="6MYr6JwRS$L" role="37wK5m">
                       <ref role="3cqZAo" node="1Ns6gpY7SoX" resolve="bvar" />
                     </node>
@@ -3186,7 +3186,7 @@
                         <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                       </node>
                       <node concept="liA8E" id="6MYr6JwS1$m" role="2OqNvi">
-                        <ref role="37wK5l" to="bj13:~LogicalUnification.asRoot(jetbrains.mps.unification.Term):jetbrains.mps.unification.Term" resolve="asRoot" />
+                        <ref role="37wK5l" to="oy3s:3FIATxbQg$x" resolve="asRoot" />
                         <node concept="2OqwBi" id="6MYr6JwS1$n" role="37wK5m">
                           <node concept="37vLTw" id="6MYr6JwS1$o" role="2Oq$k0">
                             <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
@@ -3248,7 +3248,7 @@
                           <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                         </node>
                         <node concept="liA8E" id="6MYr6JwRG9s" role="2OqNvi">
-                          <ref role="37wK5l" to="bj13:~LogicalUnification.logical(jetbrains.mps.unification.Term):jetbrains.mps.logic.reactor.logical.SolverLogical" resolve="logical" />
+                          <ref role="37wK5l" to="oy3s:3FIATxbQg$N" resolve="logical" />
                           <node concept="2OqwBi" id="6MYr6JwSbtb" role="37wK5m">
                             <node concept="37vLTw" id="6MYr6JwSbtc" role="2Oq$k0">
                               <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
@@ -3824,7 +3824,7 @@
                           <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                         </node>
                         <node concept="liA8E" id="6MYr6JwBrpD" role="2OqNvi">
-                          <ref role="37wK5l" to="bj13:~LogicalUnification.logical(jetbrains.mps.unification.Term):jetbrains.mps.logic.reactor.logical.SolverLogical" resolve="logical" />
+                          <ref role="37wK5l" to="oy3s:3FIATxbQg$N" resolve="logical" />
                           <node concept="2OqwBi" id="6xYPVrp_rZW" role="37wK5m">
                             <node concept="37vLTw" id="6xYPVrp_rZX" role="2Oq$k0">
                               <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
@@ -3852,7 +3852,7 @@
                   <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                 </node>
                 <node concept="liA8E" id="6MYr6JwSk3X" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~LogicalUnification.isLogical(jetbrains.mps.unification.Term):boolean" resolve="isLogical" />
+                  <ref role="37wK5l" to="oy3s:3FIATxbQg_7" resolve="isLogical" />
                   <node concept="2OqwBi" id="7FFmDVAMd61" role="37wK5m">
                     <node concept="37vLTw" id="7FFmDVAMd62" role="2Oq$k0">
                       <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
@@ -4081,7 +4081,7 @@
                           <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                         </node>
                         <node concept="liA8E" id="6MYr6JwBrFD" role="2OqNvi">
-                          <ref role="37wK5l" to="bj13:~LogicalUnification.logical(jetbrains.mps.unification.Term):jetbrains.mps.logic.reactor.logical.SolverLogical" resolve="logical" />
+                          <ref role="37wK5l" to="oy3s:3FIATxbQg$N" resolve="logical" />
                           <node concept="2OqwBi" id="6xYPVrp_lHu" role="37wK5m">
                             <node concept="37vLTw" id="6xYPVrp_lHv" role="2Oq$k0">
                               <ref role="3cqZAo" node="6xYPVrp_lH_" resolve="bnd" />
@@ -4109,7 +4109,7 @@
                   <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                 </node>
                 <node concept="liA8E" id="6MYr6JwStqX" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~LogicalUnification.isLogical(jetbrains.mps.unification.Term):boolean" resolve="isLogical" />
+                  <ref role="37wK5l" to="oy3s:3FIATxbQg_7" resolve="isLogical" />
                   <node concept="2OqwBi" id="7FFmDVAJ$YW" role="37wK5m">
                     <node concept="37vLTw" id="7FFmDVAJ$YX" role="2Oq$k0">
                       <ref role="3cqZAo" node="6xYPVrp_lH_" resolve="bnd" />
@@ -4389,7 +4389,7 @@
                           <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                         </node>
                         <node concept="liA8E" id="6MYr6JwBscD" role="2OqNvi">
-                          <ref role="37wK5l" to="bj13:~LogicalUnification.logical(jetbrains.mps.unification.Term):jetbrains.mps.logic.reactor.logical.SolverLogical" resolve="logical" />
+                          <ref role="37wK5l" to="oy3s:3FIATxbQg$N" resolve="logical" />
                           <node concept="2OqwBi" id="6xYPVrp_7R2" role="37wK5m">
                             <node concept="37vLTw" id="6xYPVrp_7R3" role="2Oq$k0">
                               <ref role="3cqZAo" node="6xYPVrp_5wy" resolve="bnd" />
@@ -4417,7 +4417,7 @@
                   <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                 </node>
                 <node concept="liA8E" id="6MYr6JwSoNk" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~LogicalUnification.isLogical(jetbrains.mps.unification.Term):boolean" resolve="isLogical" />
+                  <ref role="37wK5l" to="oy3s:3FIATxbQg_7" resolve="isLogical" />
                   <node concept="2OqwBi" id="7FFmDVAJE92" role="37wK5m">
                     <node concept="37vLTw" id="7FFmDVAJE93" role="2Oq$k0">
                       <ref role="3cqZAo" node="6xYPVrp_5wy" resolve="bnd" />
@@ -4519,7 +4519,7 @@
                     <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                   </node>
                   <node concept="liA8E" id="2T1p0CFz6ax" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~LogicalUnification.asRoot(jetbrains.mps.unification.Term):jetbrains.mps.unification.Term" resolve="asRoot" />
+                    <ref role="37wK5l" to="oy3s:3FIATxbQg$x" resolve="asRoot" />
                     <node concept="37vLTw" id="2T1p0CFz6ay" role="37wK5m">
                       <ref role="3cqZAo" node="6xYPVrp_37O" resolve="bound" />
                     </node>
@@ -4562,7 +4562,7 @@
                       <ref role="3cqZAo" node="6MYr6JwATAl" resolve="logicalUnification" />
                     </node>
                     <node concept="liA8E" id="2T1p0CFz6aM" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~LogicalUnification.logical(jetbrains.mps.unification.Term):jetbrains.mps.logic.reactor.logical.SolverLogical" resolve="logical" />
+                      <ref role="37wK5l" to="oy3s:3FIATxbQg$N" resolve="logical" />
                       <node concept="37vLTw" id="2T1p0CFz6aN" role="37wK5m">
                         <ref role="3cqZAo" node="6xYPVrp_37O" resolve="bound" />
                       </node>
@@ -4713,8 +4713,8 @@
     <node concept="312cEg" id="6MYr6JwATAl" role="jymVt">
       <property role="TrG5h" value="logicalUnification" />
       <node concept="3Tm6S6" id="6MYr6JwATAm" role="1B3o_S" />
-      <node concept="3uibUv" id="6MYr6JwAVkG" role="1tU5fm">
-        <ref role="3uigEE" to="bj13:~LogicalUnification" resolve="LogicalUnification" />
+      <node concept="3uibUv" id="5cDlfXsLwOo" role="1tU5fm">
+        <ref role="3uigEE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
       </node>
     </node>
     <node concept="2tJIrI" id="6MYr6JwBO6F" role="jymVt" />

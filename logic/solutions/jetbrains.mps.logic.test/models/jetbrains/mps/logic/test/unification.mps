@@ -15,6 +15,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -683,8 +684,8 @@
     <node concept="3clFbW" id="6yEjedm5WI7" role="jymVt">
       <node concept="37vLTG" id="3FIATxbQcKV" role="3clF46">
         <property role="TrG5h" value="logicalUnification" />
-        <node concept="3uibUv" id="3FIATxbQcPk" role="1tU5fm">
-          <ref role="3uigEE" to="bj13:~LogicalUnification" resolve="LogicalUnification" />
+        <node concept="3uibUv" id="5cDlfXsLvq0" role="1tU5fm">
+          <ref role="3uigEE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
         </node>
       </node>
       <node concept="3cqZAl" id="6yEjedm5WI9" role="3clF45" />
