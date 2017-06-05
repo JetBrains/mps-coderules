@@ -5,19 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>jetbrains.mps.logic.memreactor</groupId>
-        <artifactId>memreactor-main</artifactId>
-        <version>0.1</version>
+        <groupId>jetbrains.mps.logic.conreactor</groupId>
+        <artifactId>conreactor-main</artifactId>
+        <version>0.9</version>
         <relativePath>..</relativePath>
     </parent>
 
-    <artifactId>memreactor-core</artifactId>
+    <artifactId>conreactor-core</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>jetbrains.mps.logic.memreactor</groupId>
-            <artifactId>memreactor-api</artifactId>
+            <groupId>jetbrains.mps.logic.conreactor</groupId>
+            <artifactId>conreactor-api</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
