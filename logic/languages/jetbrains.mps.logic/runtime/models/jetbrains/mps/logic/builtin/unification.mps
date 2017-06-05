@@ -792,7 +792,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="3FIATxbQg$Q" role="3clF45">
-        <ref role="3uigEE" to="bj13:~SolverLogical" resolve="SolverLogical" />
+        <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
         <node concept="16syzq" id="3FIATxbQg$R" role="11_B2D">
           <ref role="16sUi3" node="3FIATxbQg$T" resolve="TERM" />
         </node>
@@ -823,7 +823,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="3FIATxbQg_4" role="10QFUM">
-              <ref role="3uigEE" to="bj13:~SolverLogical" resolve="SolverLogical" />
+              <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
               <node concept="16syzq" id="3FIATxbQg_5" role="11_B2D">
                 <ref role="16sUi3" node="3FIATxbQg$T" resolve="TERM" />
               </node>

@@ -3164,7 +3164,7 @@
         <node concept="3clFbF" id="6yEjedm5aa$" role="3cqZAp">
           <node concept="2ShNRf" id="6yEjedm5aaw" role="3clFbG">
             <node concept="1pGfFk" id="6yEjedm5bMh" role="2ShVmc">
-              <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+              <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
               <node concept="10QFUN" id="6yEjedm5h65" role="37wK5m">
                 <node concept="3uibUv" id="6yEjedm5hgr" role="10QFUM">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
@@ -3203,7 +3203,7 @@
         <node concept="3clFbF" id="6yEjedm5dee" role="3cqZAp">
           <node concept="2ShNRf" id="6yEjedm5def" role="3clFbG">
             <node concept="1pGfFk" id="6yEjedm5deg" role="2ShVmc">
-              <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String,java.lang.Object)" resolve="MemLogical" />
+              <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String,java.lang.Object)" resolve="LogicalImpl" />
               <node concept="37vLTw" id="6yEjedm5dzi" role="37wK5m">
                 <ref role="3cqZAo" node="2DKqMqOq_P$" resolve="name" />
               </node>
@@ -3620,9 +3620,12 @@
         <node concept="3clFbF" id="6yEjedm6GSD" role="3cqZAp">
           <node concept="2ShNRf" id="6yEjedm6GSB" role="3clFbG">
             <node concept="1pGfFk" id="6yEjedm6H80" role="2ShVmc">
-              <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+              <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
               <node concept="37vLTw" id="6yEjedm6Ha_" role="37wK5m">
                 <ref role="3cqZAo" node="6yEjedm6GJE" resolve="tf" />
+              </node>
+              <node concept="3uibUv" id="5cDlfXt8XHR" role="1pMfVU">
+                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
               </node>
             </node>
           </node>

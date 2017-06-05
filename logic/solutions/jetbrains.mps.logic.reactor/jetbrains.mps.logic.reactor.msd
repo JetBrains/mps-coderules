@@ -5,16 +5,16 @@
       <sourceRoot location="models" />
     </modelRoot>
     <modelRoot contentPath="${module}" type="java_classes">
-      <sourceRoot location="lib/memreactor-core-0.1.jar" />
-      <sourceRoot location="lib/memreactor-api-0.1.jar" />
+      <sourceRoot location="lib/conreactor-api-0.9.jar" />
+      <sourceRoot location="lib/conreactor-core-0.9.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${module}/lib/memreactor-core-0.1.jar" />
-    <stubModelEntry path="${module}/lib/memreactor-api-0.1.jar" />
     <stubModelEntry path="${module}/lib/kotlin-runtime-1.1.2.jar" />
     <stubModelEntry path="${module}/lib/kotlin-stdlib-1.1.2.jar" />
     <stubModelEntry path="${module}/lib/collection-0.7.jar" />
+    <stubModelEntry path="${module}/lib/conreactor-api-0.9.jar" />
+    <stubModelEntry path="${module}/lib/conreactor-core-0.9.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

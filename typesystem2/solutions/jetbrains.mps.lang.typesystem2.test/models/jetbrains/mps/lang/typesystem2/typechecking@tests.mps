@@ -657,12 +657,12 @@
           <node concept="3clFbS" id="6$7vuu2uPZQ" role="2GV8ay">
             <node concept="3clFbF" id="3F6vMxqjuT0" role="3cqZAp">
               <node concept="2OqwBi" id="3F6vMxqjuT1" role="3clFbG">
-                <node concept="10M0yZ" id="3F6vMxqjuT2" role="2Oq$k0">
-                  <ref role="3cqZAo" to="zx3l:~MemEvaluationSession.Companion" resolve="Companion" />
-                  <ref role="1PxDUh" to="zx3l:~MemEvaluationSession" resolve="MemEvaluationSession" />
+                <node concept="10M0yZ" id="5cDlfXt5oVE" role="2Oq$k0">
+                  <ref role="3cqZAo" to="zx3l:~EvaluationSessionImpl.Companion" resolve="Companion" />
+                  <ref role="1PxDUh" to="zx3l:~EvaluationSessionImpl" resolve="EvaluationSessionImpl" />
                 </node>
                 <node concept="liA8E" id="3F6vMxqjuT3" role="2OqNvi">
-                  <ref role="37wK5l" to="zx3l:~MemEvaluationSession$Companion.init():void" resolve="init" />
+                  <ref role="37wK5l" to="zx3l:~EvaluationSessionImpl$Companion.init():void" resolve="init" />
                 </node>
               </node>
             </node>
@@ -807,12 +807,12 @@
           <node concept="3clFbS" id="6$7vuu2uPZR" role="2GVbov">
             <node concept="3clFbF" id="6$7vuu2uR6h" role="3cqZAp">
               <node concept="2OqwBi" id="6$7vuu2uR6i" role="3clFbG">
-                <node concept="10M0yZ" id="6$7vuu2uR6j" role="2Oq$k0">
-                  <ref role="3cqZAo" to="zx3l:~MemEvaluationSession.Companion" resolve="Companion" />
-                  <ref role="1PxDUh" to="zx3l:~MemEvaluationSession" resolve="MemEvaluationSession" />
+                <node concept="10M0yZ" id="5cDlfXt5oWB" role="2Oq$k0">
+                  <ref role="3cqZAo" to="zx3l:~EvaluationSessionImpl.Companion" resolve="Companion" />
+                  <ref role="1PxDUh" to="zx3l:~EvaluationSessionImpl" resolve="EvaluationSessionImpl" />
                 </node>
                 <node concept="liA8E" id="6$7vuu2uR6k" role="2OqNvi">
-                  <ref role="37wK5l" to="zx3l:~MemEvaluationSession$Companion.deinit():void" resolve="deinit" />
+                  <ref role="37wK5l" to="zx3l:~EvaluationSessionImpl$Companion.deinit():void" resolve="deinit" />
                 </node>
               </node>
             </node>

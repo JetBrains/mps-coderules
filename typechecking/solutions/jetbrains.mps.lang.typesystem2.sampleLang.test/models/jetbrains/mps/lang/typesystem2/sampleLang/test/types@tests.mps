@@ -1253,14 +1253,14 @@
             <node concept="3cpWsn" id="7t5VLKGALTu" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7dtr" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7jXZ" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="7t5VLKGALTw" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7cy2" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7cQw" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -1283,7 +1283,7 @@
                 </node>
                 <node concept="2ShNRf" id="7t5VLKGALTC" role="37wK5m">
                   <node concept="1pGfFk" id="7t5VLKGALTD" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="7t5VLKGALTE" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALSU" resolve="left" />
                     </node>
@@ -1291,7 +1291,7 @@
                 </node>
                 <node concept="2ShNRf" id="7t5VLKGALTF" role="37wK5m">
                   <node concept="1pGfFk" id="7t5VLKGALTG" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="7t5VLKGALTH" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALTe" resolve="right" />
                     </node>
@@ -1312,7 +1312,7 @@
                 <ref role="3cqZAo" node="7t5VLKGALTu" resolve="var" />
               </node>
               <node concept="liA8E" id="4JRKVCv8a6c" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -1511,14 +1511,14 @@
             <node concept="3cpWsn" id="6yEjedm7RDU" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7RDV" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7RDW" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7RDX" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7RDY" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7RDZ" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -1541,7 +1541,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7RE6" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7RE7" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7RE8" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALTU" resolve="left" />
                     </node>
@@ -1549,7 +1549,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7RE9" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7REa" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7REb" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALUe" resolve="right" />
                     </node>
@@ -1570,7 +1570,7 @@
                 <ref role="3cqZAo" node="6yEjedm7RDU" resolve="var" />
               </node>
               <node concept="liA8E" id="7t5VLKGALUT" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -1755,14 +1755,14 @@
             <node concept="3cpWsn" id="6yEjedm7ovF" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7ovG" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7ovH" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7ovI" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7ovJ" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7ovK" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -1785,7 +1785,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7ovR" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7ovS" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7ovT" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALVi" resolve="left" />
                     </node>
@@ -1793,7 +1793,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7ovU" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7ovV" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7ovW" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALVA" resolve="right" />
                     </node>
@@ -1814,7 +1814,7 @@
                 <ref role="3cqZAo" node="6yEjedm7ovF" resolve="var" />
               </node>
               <node concept="liA8E" id="7t5VLKGALWc" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -2027,14 +2027,14 @@
             <node concept="3cpWsn" id="6yEjedm7saF" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7saG" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7saH" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7saI" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7saJ" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7saK" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -2057,7 +2057,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7saR" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7saS" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7saT" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALW_" resolve="left" />
                     </node>
@@ -2065,7 +2065,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7saU" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7saV" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7saW" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALWT" resolve="right" />
                     </node>
@@ -2086,7 +2086,7 @@
                 <ref role="3cqZAo" node="6yEjedm7saF" resolve="var" />
               </node>
               <node concept="liA8E" id="7t5VLKGALXD" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -2440,14 +2440,14 @@
             <node concept="3cpWsn" id="6yEjedm7vK4" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7vK5" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7vK6" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7vK7" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7vK8" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7vK9" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -2470,7 +2470,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7vKg" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7vKh" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7vKi" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALY2" resolve="left" />
                     </node>
@@ -2478,7 +2478,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7vKj" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7vKk" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7vKl" role="37wK5m">
                       <ref role="3cqZAo" node="7t5VLKGALYz" resolve="right" />
                     </node>
@@ -2499,7 +2499,7 @@
                 <ref role="3cqZAo" node="6yEjedm7vK4" resolve="var" />
               </node>
               <node concept="liA8E" id="7t5VLKGALZH" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -2946,14 +2946,14 @@
             <node concept="3cpWsn" id="6yEjedm7zha" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7zhb" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7zhc" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7zhd" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7zhe" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7zhf" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -2976,7 +2976,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7zhm" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7zhn" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7zho" role="37wK5m">
                       <ref role="3cqZAo" node="3hfdu5cNgqA" resolve="left" />
                     </node>
@@ -2984,7 +2984,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7zhp" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7zhq" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7zhr" role="37wK5m">
                       <ref role="3cqZAo" node="3hfdu5cNgre" resolve="right" />
                     </node>
@@ -3005,7 +3005,7 @@
                 <ref role="3cqZAo" node="6yEjedm7zha" resolve="var" />
               </node>
               <node concept="liA8E" id="3hfdu5cNgsz" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -3489,14 +3489,14 @@
             <node concept="3cpWsn" id="6yEjedm7AXX" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7AXY" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7AXZ" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7AY0" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7AY1" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7AY2" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -3519,7 +3519,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7AY9" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7AYa" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7AYb" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk2oHN" resolve="left" />
                     </node>
@@ -3527,7 +3527,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7AYc" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7AYd" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7AYe" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk2oJ1" resolve="right" />
                     </node>
@@ -3548,7 +3548,7 @@
                 <ref role="3cqZAo" node="6yEjedm7AXX" resolve="var" />
               </node>
               <node concept="liA8E" id="3KV3FXk2oKp" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -3953,14 +3953,14 @@
             <node concept="3cpWsn" id="6yEjedm7Ejv" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7Ejw" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7Ejx" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7Ejy" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7Ejz" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7Ej$" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -3983,7 +3983,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7EjF" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7EjG" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7EjH" role="37wK5m">
                       <ref role="3cqZAo" node="3hfdu5cN_JW" resolve="left" />
                     </node>
@@ -3991,7 +3991,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7EjI" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7EjJ" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7EjK" role="37wK5m">
                       <ref role="3cqZAo" node="3hfdu5cN_KU" resolve="right" />
                     </node>
@@ -4012,7 +4012,7 @@
                 <ref role="3cqZAo" node="6yEjedm7Ejv" resolve="var" />
               </node>
               <node concept="liA8E" id="3hfdu5cN_MM" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -4421,14 +4421,14 @@
             <node concept="3cpWsn" id="6yEjedm7HxN" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7HxO" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7HxP" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7HxQ" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7HxR" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7HxS" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -4451,7 +4451,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7HxZ" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7Hy0" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7Hy1" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXjXcpc" resolve="left" />
                     </node>
@@ -4459,7 +4459,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7Hy2" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7Hy3" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7Hy4" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXjXcq7" resolve="right" />
                     </node>
@@ -4480,7 +4480,7 @@
                 <ref role="3cqZAo" node="6yEjedm7HxN" resolve="var" />
               </node>
               <node concept="liA8E" id="3KV3FXjXcrp" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -4785,14 +4785,14 @@
             <node concept="3cpWsn" id="6yEjedm7KDC" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7KDD" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7KDE" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7KDF" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7KDG" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7KDH" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -4815,7 +4815,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7KDO" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7KDP" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7KDQ" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk18Nd" resolve="left" />
                     </node>
@@ -4823,7 +4823,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7KDR" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7KDS" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7KDT" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk18O5" resolve="right" />
                     </node>
@@ -4844,7 +4844,7 @@
                 <ref role="3cqZAo" node="6yEjedm7KDC" resolve="var" />
               </node>
               <node concept="liA8E" id="3KV3FXk18Pr" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -5221,14 +5221,14 @@
             <node concept="3cpWsn" id="6yEjedm7VYw" role="3cpWs9">
               <property role="TrG5h" value="var" />
               <node concept="3uibUv" id="6yEjedm7VYx" role="1tU5fm">
-                <ref role="3uigEE" to="zx3l:~MemLogical" resolve="MemLogical" />
+                <ref role="3uigEE" to="zx3l:~LogicalImpl" resolve="LogicalImpl" />
                 <node concept="3uibUv" id="6yEjedm7VYy" role="11_B2D">
                   <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
                 </node>
               </node>
               <node concept="2ShNRf" id="6yEjedm7VYz" role="33vP2m">
                 <node concept="1pGfFk" id="6yEjedm7VY$" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.String)" resolve="MemLogical" />
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
                   <node concept="Xl_RD" id="6yEjedm7VY_" role="37wK5m">
                     <property role="Xl_RC" value="var" />
                   </node>
@@ -5251,7 +5251,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7XtF" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7XtG" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7Xvm" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk2boN" resolve="fullPaths" />
                     </node>
@@ -5259,7 +5259,7 @@
                 </node>
                 <node concept="2ShNRf" id="6yEjedm7XtI" role="37wK5m">
                   <node concept="1pGfFk" id="6yEjedm7XtJ" role="2ShVmc">
-                    <ref role="37wK5l" to="zx3l:~MemLogical.&lt;init&gt;(java.lang.Object)" resolve="MemLogical" />
+                    <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
                     <node concept="37vLTw" id="6yEjedm7XAR" role="37wK5m">
                       <ref role="3cqZAo" node="3KV3FXk2bpF" resolve="startFrom" />
                     </node>
@@ -5280,7 +5280,7 @@
                 <ref role="3cqZAo" node="6yEjedm7VYw" resolve="var" />
               </node>
               <node concept="liA8E" id="3KV3FXk2bqk" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemLogical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="zx3l:~LogicalImpl.isBound():boolean" resolve="isBound" />
               </node>
             </node>
           </node>

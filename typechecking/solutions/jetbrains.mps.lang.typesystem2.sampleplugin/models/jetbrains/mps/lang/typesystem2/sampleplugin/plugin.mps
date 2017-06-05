@@ -6125,12 +6125,12 @@
         <node concept="3clFbS" id="3F6vMxqj$o$" role="3clF47">
           <node concept="3clFbF" id="3F6vMxqj$oG" role="3cqZAp">
             <node concept="2OqwBi" id="3F6vMxqj$oH" role="3clFbG">
-              <node concept="10M0yZ" id="3F6vMxqj$oI" role="2Oq$k0">
-                <ref role="1PxDUh" to="zx3l:~MemEvaluationSession" resolve="MemEvaluationSession" />
-                <ref role="3cqZAo" to="zx3l:~MemEvaluationSession.Companion" resolve="Companion" />
+              <node concept="10M0yZ" id="5cDlfXt5nSq" role="2Oq$k0">
+                <ref role="3cqZAo" to="zx3l:~EvaluationSessionImpl.Companion" resolve="Companion" />
+                <ref role="1PxDUh" to="zx3l:~EvaluationSessionImpl" resolve="EvaluationSessionImpl" />
               </node>
               <node concept="liA8E" id="3F6vMxqj$oJ" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemEvaluationSession$Companion.deinit():void" resolve="deinit" />
+                <ref role="37wK5l" to="zx3l:~EvaluationSessionImpl$Companion.deinit():void" resolve="deinit" />
               </node>
             </node>
           </node>
@@ -6144,12 +6144,12 @@
         <node concept="3clFbS" id="3F6vMxqjuSR" role="3clF47">
           <node concept="3clFbF" id="3F6vMxqjuT0" role="3cqZAp">
             <node concept="2OqwBi" id="3F6vMxqjuT1" role="3clFbG">
-              <node concept="10M0yZ" id="3F6vMxqjuT2" role="2Oq$k0">
-                <ref role="1PxDUh" to="zx3l:~MemEvaluationSession" resolve="MemEvaluationSession" />
-                <ref role="3cqZAo" to="zx3l:~MemEvaluationSession.Companion" resolve="Companion" />
+              <node concept="10M0yZ" id="5cDlfXt5o42" role="2Oq$k0">
+                <ref role="3cqZAo" to="zx3l:~EvaluationSessionImpl.Companion" resolve="Companion" />
+                <ref role="1PxDUh" to="zx3l:~EvaluationSessionImpl" resolve="EvaluationSessionImpl" />
               </node>
               <node concept="liA8E" id="3F6vMxqjuT3" role="2OqNvi">
-                <ref role="37wK5l" to="zx3l:~MemEvaluationSession$Companion.init():void" resolve="init" />
+                <ref role="37wK5l" to="zx3l:~EvaluationSessionImpl$Companion.init():void" resolve="init" />
               </node>
             </node>
           </node>
