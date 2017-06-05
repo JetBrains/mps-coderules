@@ -3,7 +3,7 @@ package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
-import jetbrains.mps.logic.reactor.logical.SolverLogical
+import jetbrains.mps.logic.reactor.logical.JoinableLogical
 import java.util.*
 
 /**
@@ -19,20 +19,20 @@ interface LogicalObserver {
 }
 
 fun Logical<*>.addObserver(observer: LogicalObserver) {
-    (this as MemLogical<*>).valueObservers.add(this.to(observer))
-    (this as MemLogical<*>).parentObservers.add(this.to(observer))
+    (this as LogicalImpl<*>).valueObservers.add(this.to(observer))
+    (this as LogicalImpl<*>).parentObservers.add(this.to(observer))
 }
 
 fun Logical<*>.removeObserver(observer: LogicalObserver) {
-    (this as MemLogical<*>).valueObservers.removeAll { p -> p.second == observer }
-    (this as MemLogical<*>).parentObservers.removeAll { p -> p.second == observer }
+    (this as LogicalImpl<*>).valueObservers.removeAll { p -> p.second == observer }
+    (this as LogicalImpl<*>).parentObservers.removeAll { p -> p.second == observer }
 }
 
-fun <V> MetaLogical<V>.logical(): Logical<V> = MemLogical<V>(this)
+fun <V> MetaLogical<V>.logical(): Logical<V> = LogicalImpl<V>(this)
 
-fun <V> MetaLogical<V>.logical(value: V): Logical<V> = MemLogical<V>(name(), value)
+fun <V> MetaLogical<V>.logical(value: V): Logical<V> = LogicalImpl<V>(name(), value)
 
-class MemLogical<T> : SolverLogical<T> {
+class LogicalImpl<T> : JoinableLogical<T> {
 
     companion object {
         var lastIdx = 0
@@ -42,15 +42,15 @@ class MemLogical<T> : SolverLogical<T> {
 
     val metaLogical: MetaLogical<T>
 
-    var _parent: MemLogical<T>? = null
+    var _parent: LogicalImpl<T>? = null
 
     var _value: T? = null
 
     var rank = 0
 
-    internal val valueObservers = ArrayList<Pair<MemLogical<*>, LogicalObserver>>()
+    internal val valueObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
 
-    internal val parentObservers = ArrayList<Pair<MemLogical<*>, LogicalObserver>>()
+    internal val parentObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
 
     constructor(value: T) {
         this.name = "$${++lastIdx}"
@@ -84,7 +84,7 @@ class MemLogical<T> : SolverLogical<T> {
 
     override fun metaLogical(): MetaLogical<T> = metaLogical
 
-    override fun findRoot(): SolverLogical<T> = find()
+    override fun findRoot(): JoinableLogical<T> = find()
 
     override fun setValue(newValue: T) {
         if (_value !== newValue) {
@@ -93,9 +93,9 @@ class MemLogical<T> : SolverLogical<T> {
         }
     }
 
-    override fun union(other: SolverLogical<T>, reconciler: SolverLogical.ValueReconciler<T>) {
+    override fun union(other: JoinableLogical<T>, reconciler: JoinableLogical.ValueReconciler<T>) {
         val thisRepr = this.find()
-        val otherRepr = (other as MemLogical<T>).find()
+        val otherRepr = (other as LogicalImpl<T>).find()
 
         // invariant: thisRepr.rank > otherRepr.rank
         if (thisRepr.rank() < otherRepr.rank()) {
@@ -136,11 +136,11 @@ class MemLogical<T> : SolverLogical<T> {
         }
     }
 
-    override fun union(other: SolverLogical<T>) {
+    override fun union(other: JoinableLogical<T>) {
         union(other, { a, b -> if (a != b) throw IllegalStateException("$a does not equal to $b")})
     }
 
-    private fun find(): MemLogical<T> {
+    private fun find(): LogicalImpl<T> {
         val tmp = _parent
         if (tmp == null) return this
         else {
@@ -154,19 +154,19 @@ class MemLogical<T> : SolverLogical<T> {
 
     private fun incRank() { rank++ }
 
-    private fun setParent(parent: MemLogical<T>) {
+    private fun setParent(parent: LogicalImpl<T>) {
         this._parent = parent
         notifyParentUpdated()
     }
 
-    private fun mergeValueObservers(mergeFrom: SolverLogical<T>) {
-        val other = mergeFrom as MemLogical<T>
+    private fun mergeValueObservers(mergeFrom: JoinableLogical<T>) {
+        val other = mergeFrom as LogicalImpl<T>
         valueObservers.addAll(other.valueObservers)
         other.valueObservers.clear()
     }
 
-    private fun mergeParentObservers(mergeFrom: SolverLogical<T>) {
-        val other = mergeFrom as MemLogical<T>
+    private fun mergeParentObservers(mergeFrom: JoinableLogical<T>) {
+        val other = mergeFrom as LogicalImpl<T>
         parentObservers.addAll(other.parentObservers)
         other.parentObservers.clear()
     }

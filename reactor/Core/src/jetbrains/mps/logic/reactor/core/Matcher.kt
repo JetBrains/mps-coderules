@@ -66,7 +66,7 @@ class Match(val rule: Rule,
                         meta2logical[metaLogical] = when (value) {
                             is Logical<*>   -> value
                             is LogicalOwner -> value.logical()
-                            else            -> MemLogical(value)
+                            else            -> LogicalImpl(value)
                         }
                     } else {
                         meta2logical[metaLogical] = metaLogical.logical()

@@ -1,5 +1,5 @@
 import jetbrains.mps.logic.reactor.core.LogicalObserver
-import jetbrains.mps.logic.reactor.core.MemLogical
+import jetbrains.mps.logic.reactor.core.LogicalImpl
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.logical.*
 import jetbrains.mps.logic.reactor.program.Predicate
@@ -11,14 +11,14 @@ import java.util.*
  */
 
 
-fun <T: Any> anon(value: T) = MemLogical(value)
+fun <T: Any> anon(value: T) = LogicalImpl(value)
 
-fun <T: Any> logical(name: String) = MemLogical<T>(name)
+fun <T: Any> logical(name: String) = LogicalImpl<T>(name)
 
-fun <T: Any> logical(name1: String, name2: String) = Pair(MemLogical<T>(name1), MemLogical<T>(name2))
+fun <T: Any> logical(name1: String, name2: String) = Pair(LogicalImpl<T>(name1), LogicalImpl<T>(name2))
 
 fun <T: Any> logical(name1: String, name2: String, name3: String) =
-    Triple(MemLogical<T>(name1), MemLogical<T>(name2), MemLogical<T>(name3))
+    Triple(LogicalImpl<T>(name1), LogicalImpl<T>(name2), LogicalImpl<T>(name3))
 
 inline fun <reified T: Any> metaLogical(name: String) = MetaLogical<T>(name, T::class.java)
 
@@ -36,7 +36,7 @@ fun <T: Any> Logical<T>.get(): T = findRoot().value()
 fun <T: Any> Logical<T>.getNullable(): T? = findRoot().value()
 
 fun <T: Any> Logical<T>.set(t: T) {
-    if (this is SolverLogical<T>)
+    if (this is JoinableLogical<T>)
         findRoot().setValue(t)
     else
         throw IllegalStateException("unexpected receiver $this")

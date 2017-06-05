@@ -21,7 +21,7 @@ interface SessionObjects {
 
 }
 
-class MemEvaluationSession private constructor (
+class EvaluationSessionImpl private constructor (
     val program: Program,
     val sessionSolver: SessionSolver,
     val trace: EvaluationTrace) : EvaluationSession(), SessionObjects
@@ -72,7 +72,7 @@ class MemEvaluationSession private constructor (
                 parameters.get("profiling.data") as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
 
-            session = MemEvaluationSession(program, sessionSolver, evaluationTrace)
+            session = EvaluationSessionImpl(program, sessionSolver, evaluationTrace)
             ourBackend.ourSession.set(session)
             try {
                 session.launch(parameters["main"] as Constraint, profiler, storeView)
@@ -109,7 +109,7 @@ class MemEvaluationSession private constructor (
 
     private class Backend : EvaluationSession.Backend {
 
-        val ourSession = ThreadLocal<MemEvaluationSession>()
+        val ourSession = ThreadLocal<EvaluationSessionImpl>()
 
         override fun current(): EvaluationSession = ourSession.get() ?: throw IllegalStateException("no session")
 

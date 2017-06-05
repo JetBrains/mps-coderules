@@ -8,25 +8,25 @@ package jetbrains.mps.logic.reactor.logical;
  *
  * @param <T> the value type
  */
-public interface SolverLogical<T> extends Logical<T> {
+public interface JoinableLogical<T> extends Logical<T> {
 
   /**
    * Covariant override.
    */
-  SolverLogical<T> findRoot();
+  JoinableLogical<T> findRoot();
 
   /**
    * Unions two equivalence classes of logicals. 
    * Both the receiver and the {@code other} parameter are expected to be representatives.
    * The one with the highest rank becomes the representative for the new class.
    */
-  void union(SolverLogical<T> other, SolverLogical.ValueReconciler<T> reconciler);
+  void union(JoinableLogical<T> other, JoinableLogical.ValueReconciler<T> reconciler);
 
   /**
-   * Calls {@link jetbrains.mps.logic.reactor.logical.SolverLogical#union(SolverLogical<T>, SolverLogical.ValueReconciler<T>) } with the default value reconciler.
+   * Calls {@link JoinableLogical#union(JoinableLogical <T>, JoinableLogical.ValueReconciler<T>) } with the default value reconciler.
    * The default reconciler throws {@link java.lang.IllegalArgumentException } if the two values are not equal.
    */
-  void union(SolverLogical<T> other);
+  void union(JoinableLogical<T> other);
 
   /**
    * Should only be called on a representative. 

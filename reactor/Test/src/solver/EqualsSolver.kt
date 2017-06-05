@@ -7,7 +7,7 @@ import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
-import jetbrains.mps.logic.reactor.logical.SolverLogical
+import jetbrains.mps.logic.reactor.logical.JoinableLogical
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 
@@ -22,11 +22,11 @@ class EqualsSolver  : AbstractSolver() {
     }
 
     private fun _ask(left: Any?, right: Any?): Boolean {
-        return if (left is SolverLogical<*> && right is SolverLogical<*>) {
+        return if (left is JoinableLogical<*> && right is JoinableLogical<*>) {
             ask_logical_logical(left, right)
-        } else if (left is SolverLogical<*>) {
+        } else if (left is JoinableLogical<*>) {
             ask_logical_value(left, right)
-        } else if (right is SolverLogical<*>) {
+        } else if (right is JoinableLogical<*>) {
             ask_value_logical(left, right)
         } else {
             ask_value_value(left, right)
@@ -38,27 +38,27 @@ class EqualsSolver  : AbstractSolver() {
     }
 
     private fun _tell(left: Any?, right: Any?) {
-        if (left is SolverLogical<*> && right is SolverLogical<*>) {
-            tell_logical_logical(left as SolverLogical<Any>, right as SolverLogical<Any>)
-        } else if (left is SolverLogical<*>) {
-            tell_logical_value(left as SolverLogical<Any>, right)
-        } else if (right is SolverLogical<*>) {
-            tell_value_logical(left, right as SolverLogical<Any>)
+        if (left is JoinableLogical<*> && right is JoinableLogical<*>) {
+            tell_logical_logical(left as JoinableLogical<Any>, right as JoinableLogical<Any>)
+        } else if (left is JoinableLogical<*>) {
+            tell_logical_value(left as JoinableLogical<Any>, right)
+        } else if (right is JoinableLogical<*>) {
+            tell_value_logical(left, right as JoinableLogical<Any>)
         } else {
             tell_value_value(left, right)
         }
     }
 
-    fun ask_logical_logical(left: SolverLogical<*>, right: SolverLogical<*>): Boolean {
+    fun ask_logical_logical(left: JoinableLogical<*>, right: JoinableLogical<*>): Boolean {
         if (left.findRoot() == right.findRoot()) return true
         return left.isBound && right.isBound && left.findRoot().value() == right.findRoot().value()
     }
 
-    fun ask_logical_value(left: SolverLogical<*>, right: Any?): Boolean {
+    fun ask_logical_value(left: JoinableLogical<*>, right: Any?): Boolean {
         return left.isBound && left.findRoot().value() == right
     }
 
-    fun ask_value_logical(left: Any?,  right: SolverLogical<*>): Boolean {
+    fun ask_value_logical(left: Any?,  right: JoinableLogical<*>): Boolean {
         return right.isBound && right.findRoot().value() == left
     }
 
@@ -66,7 +66,7 @@ class EqualsSolver  : AbstractSolver() {
         return left == right
     }
 
-    fun <T> tell_logical_logical(left: SolverLogical<T>, right: SolverLogical<T>) {
+    fun <T> tell_logical_logical(left: JoinableLogical<T>, right: JoinableLogical<T>) {
         if (left == right) return
 
         val leftRepr = left.findRoot()
@@ -77,7 +77,7 @@ class EqualsSolver  : AbstractSolver() {
         leftRepr.union(rightRepr, { a, b -> tell_value_value(a, b)})
     }
 
-    fun <T> tell_logical_value(left: SolverLogical<T>, right: T?) {
+    fun <T> tell_logical_value(left: JoinableLogical<T>, right: T?) {
         if (left.isBound) {
             check(left.findRoot().value() == right)
         }
@@ -86,7 +86,7 @@ class EqualsSolver  : AbstractSolver() {
         }
     }
 
-    fun <T> tell_value_logical(left: T?,  right: SolverLogical<T>) {
+    fun <T> tell_value_logical(left: T?,  right: JoinableLogical<T>) {
         if (right.isBound) {
             check(right.findRoot().value() == left)
         }

@@ -1,4 +1,4 @@
-import jetbrains.mps.logic.reactor.core.MemEvaluationSession
+import jetbrains.mps.logic.reactor.core.EvaluationSessionImpl
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -19,10 +19,10 @@ class TestProgram {
 
     companion object {
         @BeforeClass @JvmStatic fun setup() {
-            MemEvaluationSession.init();
+            EvaluationSessionImpl.init();
         }
         @AfterClass @JvmStatic fun teardown() {
-            MemEvaluationSession.deinit();
+            EvaluationSessionImpl.deinit();
         }
     }
 
