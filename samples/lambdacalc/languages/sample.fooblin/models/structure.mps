@@ -322,5 +322,33 @@
     <property role="34LRSv" value="fix" />
     <ref role="1TJDcQ" node="7_8aRkgDGPJ" resolve="Expr" />
   </node>
+  <node concept="1TIwiD" id="6_p$mL233Yk">
+    <property role="EcuMT" value="7591258541060276116" />
+    <property role="3GE5qa" value="expr" />
+    <property role="TrG5h" value="IfThenElse" />
+    <property role="34LRSv" value="if then else" />
+    <ref role="1TJDcQ" node="7_8aRkgDGPJ" resolve="Expr" />
+    <node concept="1TJgyj" id="6_p$mL233YL" role="1TKVEi">
+      <property role="IQ2ns" value="7591258541060276145" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="cond" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7_8aRkgDGPJ" resolve="Expr" />
+    </node>
+    <node concept="1TJgyj" id="6_p$mL233YR" role="1TKVEi">
+      <property role="IQ2ns" value="7591258541060276151" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="pos" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7_8aRkgDGPJ" resolve="Expr" />
+    </node>
+    <node concept="1TJgyj" id="6_p$mL233YU" role="1TKVEi">
+      <property role="IQ2ns" value="7591258541060276154" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="neg" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7_8aRkgDGPJ" resolve="Expr" />
+    </node>
+  </node>
 </model>
 

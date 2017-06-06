@@ -16,6 +16,11 @@
       <concept id="8747055848970356251" name="sample.fooblin.structure.VarRef" flags="ng" index="t0$VC">
         <reference id="8747055848970356252" name="def" index="t0$VJ" />
       </concept>
+      <concept id="7591258541060276116" name="sample.fooblin.structure.IfThenElse" flags="ng" index="FlqVS">
+        <child id="7591258541060276154" name="neg" index="FlqVm" />
+        <child id="7591258541060276151" name="pos" index="FlqVr" />
+        <child id="7591258541060276145" name="cond" index="FlqVt" />
+      </concept>
       <concept id="8739282858702982512" name="sample.fooblin.structure.App" flags="ng" index="1DVIo5">
         <child id="8739282858702982513" name="fun" index="1DVIo4" />
         <child id="8739282858702982525" name="arg" index="1DVIo8" />
@@ -43,6 +48,7 @@
         <child id="2654091495521629866" name="binding" index="j9CMd" />
       </concept>
       <concept id="4774429934441545239" name="sample.fooblin.structure.False" flags="ng" index="3P8L2H" />
+      <concept id="4774429934441530831" name="sample.fooblin.structure.True" flags="ng" index="3P8MHP" />
     </language>
   </registry>
   <node concept="1DVIrt" id="7_8aRkgE06U">
@@ -454,6 +460,18 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1DVJbV" id="6_p$mL23mCW" role="1DVIru">
+      <node concept="1DVIrG" id="6_p$mL23mCY" role="j9CMd">
+        <node concept="1DVIoH" id="6_p$mL23mD0" role="1DVIrJ">
+          <property role="TrG5h" value="aaa" />
+        </node>
+        <node concept="FlqVS" id="6_p$mL23mDN" role="1DVIrD">
+          <node concept="3P8MHP" id="6_p$mL23mDZ" role="FlqVt" />
+          <node concept="3P8MHP" id="6_p$mL23mE2" role="FlqVr" />
+          <node concept="3P8L2H" id="6_p$mL23wZ0" role="FlqVm" />
         </node>
       </node>
     </node>
