@@ -19,6 +19,7 @@ dependencies {
 }
 
 task downloadReactor {
+  ant.mkdir(dir: 'lib')
   ant.get(src: 'https://github.com/fisakov/conreactor/releases/download/v0.9-snapshot.1/conreactor-api-0.9.jar', dest: 'lib', usetimestamp: 'true', skipexisting: 'true')
   ant.get(src: 'https://github.com/fisakov/conreactor/releases/download/v0.9-snapshot.1/conreactor-core-0.9.jar', dest: 'lib',  usetimestamp: 'true', skipexisting: 'true')
 }

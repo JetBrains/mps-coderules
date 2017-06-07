@@ -1,6 +1,4 @@
-/*defaultTasks 'init'*/
-
-ant.importBuild('build.xml')
+defaultTasks 'init'
 
 allprojects {
     repositories {
@@ -18,8 +16,21 @@ task init(dependsOn: alldependencies) {
   }
 }
 
-task buildAll(dependsOn: ['init', 'clean', 'build']) {
-  doLast {
-    println 'Build finished.'
+ant.importBuild('build.xml')
+
+// ensure 'init' runs before 'fetchDependencies' task from ant build
+fetchDependencies {
+  dependsOn {
+    'init'
+  }
+}
+
+// ensure 'generate' runs before 'classes'
+classes {
+  dependsOn {
+    'generate'
+  }
+  mustRunAfter {
+    'generate'
   }
 }
