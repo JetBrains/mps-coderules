@@ -4,6 +4,8 @@ An engine for evaluating constraint rules.
 
 Written in Kotlin and Java.
 
+[![Build Status](https://travis-ci.org/fisakov/conreactor.svg?branch=master)](https://travis-ci.org/fisakov/conreactor)
+
 This is an implementation of the [Constraint Handling Rules](http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/constraint-handling-rules-book.html) semantics with custom extensions, influenced by [JCHR](https://dtai.cs.kuleuven.be/CHR/JCHR/). 
 
 The main features are built-in support for **terms** as the data structure, including terms **unification**, and **logical variables**.
