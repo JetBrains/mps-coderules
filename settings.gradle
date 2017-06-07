@@ -1,0 +1,2 @@
+include 'logic/solutions/jetbrains.mps.logic.reactor'
+include 'logic/solutions/jetbrains.mps.logic.test'

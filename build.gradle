@@ -1,0 +1,17 @@
+defaultTasks 'init'
+
+allprojects {
+    repositories {
+      mavenCentral()
+    }
+}
+
+def alldependencies = [
+  'logic/solutions/jetbrains.mps.logic.reactor:copyDependencies',
+  'logic/solutions/jetbrains.mps.logic.test:copyDependencies' ]
+
+task init(dependsOn: alldependencies) {
+  doLast {
+    println 'Initialized all dependencies.'
+  }
+}

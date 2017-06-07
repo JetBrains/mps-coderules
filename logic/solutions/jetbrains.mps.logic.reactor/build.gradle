@@ -1,0 +1,29 @@
+//repositories {
+//    ivy {
+//        url 'https://github.com/fisakov'
+//        layout ('pattern') {
+//            artifact '[organisation]/releases/download/[classifier]/[module]-[revision].[ext]'
+//        }
+//    }
+//}
+
+configurations {
+    logicReactor
+}
+
+dependencies {
+//    logicReactor 'conreactor:conreactor-api:0.9:v0.9-snapshot.1@jar'
+    logicReactor 'org.jetbrains.kotlin:kotlin-runtime:1.1.2@jar'
+    logicReactor 'org.jetbrains.kotlin:kotlin-stdlib:1.1.2@jar'
+    logicReactor 'com.github.andrewoma.dexx:collection:0.7@jar'
+}
+
+task downloadReactor {
+  ant.get(src: 'https://github.com/fisakov/conreactor/releases/download/v0.9-snapshot.1/conreactor-api-0.9.jar', dest: 'lib', skipexisting: 'true')
+  ant.get(src: 'https://github.com/fisakov/conreactor/releases/download/v0.9-snapshot.1/conreactor-core-0.9.jar', dest: 'lib', skipexisting: 'true')
+}
+
+task copyDependencies (type: Copy, dependsOn: downloadReactor) {
+  from configurations.logicReactor
+  into 'lib'
+}
