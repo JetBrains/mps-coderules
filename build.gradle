@@ -1,4 +1,6 @@
-defaultTasks 'init'
+/*defaultTasks 'init'*/
+
+ant.importBuild('build.xml')
 
 allprojects {
     repositories {
@@ -13,5 +15,11 @@ def alldependencies = [
 task init(dependsOn: alldependencies) {
   doLast {
     println 'Initialized all dependencies.'
+  }
+}
+
+task buildAll(dependsOn: ['init', 'clean', 'build']) {
+  doLast {
+    println 'Build finished.'
   }
 }

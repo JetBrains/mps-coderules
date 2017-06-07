@@ -6,8 +6,8 @@
 **/classes_jchr/*
 .mps/workspace.xml
 .idea/workspace.xml
+.gradle
 out
 build/*
 config/*
 system/*
-
