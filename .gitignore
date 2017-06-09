@@ -13,3 +13,5 @@ config/*
 system/*
 logic/solutions/jetbrains.mps.logic.reactor/lib/*
 logic/solutions/jetbrains.mps.logic.test/lib/*
+MPS_HOME
+TEST-*

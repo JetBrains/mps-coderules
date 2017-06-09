@@ -4,7 +4,7 @@
   <property name="build.tmp" location="${build.dir}/tmp/typechecking-plugin" />
   <property name="build.layout" location="${build.dir}/artifacts/typechecking-plugin" />
   <property name="mps.macro.logic_home" location="${basedir}" />
-  <property name="mps_home" location="${basedir}/../MPS_HOME" />
+  <property name="mps_home" location="${basedir}/MPS_HOME" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />

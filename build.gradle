@@ -1,30 +1,72 @@
 defaultTasks 'init'
 
 allprojects {
-    repositories {
-      mavenCentral()
-    }
-}
-
-def alldependencies = [
-  'logic/solutions/jetbrains.mps.logic.reactor:copyDependencies',
-  'logic/solutions/jetbrains.mps.logic.test:copyDependencies' ]
-
-task init(dependsOn: alldependencies) {
-  doLast {
-    println 'Initialized all dependencies.'
+  repositories {
+    mavenCentral()
   }
 }
 
-// initialize JUnit optional ant task
+repositories {
+  ivy {
+      url 'https://teamcity.jetbrains.com/guestAuth/repository/download'
+      layout ('pattern') {
+          artifact '[organization]/[classifier]/[module]-[revision].[ext]'
+      }
+  }
+}
+
 configurations {
     junitAnt
+    mps
 }
 
 dependencies {
+  // initialize JUnit optional ant task
   junitAnt 'junit:junit:4.8.2'
   junitAnt('org.apache.ant:ant-junit:1.9.2') {
       transitive = false
+  }
+
+  // MPS-related stuff declared as project properties
+  mps "${mpsBuildConfiguration}:MPS:${mpsBuildNumber}:${mpsRelease}.tcbuildtag@zip"
+}
+
+task installMps(type: Copy)  {
+  onlyIf {
+    ! file('MPS_HOME').exists()
+  }
+
+  from zipTree(configurations.mps[0])
+  into 'MPS_HOME'
+
+  // Gradle woodoo for unzipping an archive
+  eachFile { FileCopyDetails fcp ->
+    // copy the contents of the directory named "MPS ${mpsRelease}"
+    if (fcp.relativePath.pathString.startsWith("MPS ${mpsRelease}/")) {
+      // remap the file to the root
+      def segments = fcp.relativePath.segments
+      def pathsegments = segments[1..-1] as String[]
+      fcp.relativePath = new RelativePath(!fcp.file.isDirectory(), pathsegments)
+
+    } else {
+      fcp.exclude()
+    }
+    // avoid overriding files
+    if (fcp.relativePath.getFile(destinationDir).exists()) {
+       it.exclude()
+    }
+  }
+  includeEmptyDirs = false
+}
+
+def allInitDependencies = [
+  'installMps',
+  'logic/solutions/jetbrains.mps.logic.reactor:copyDependencies',
+  'logic/solutions/jetbrains.mps.logic.test:copyDependencies' ]
+
+task init(dependsOn: allInitDependencies) {
+  doLast {
+    println 'Initialized all dependencies.'
   }
 }
 
@@ -34,14 +76,20 @@ ant.taskdef(name: 'junit',
 
 ant.importBuild('build.xml')
 
-// ensure 'init' runs before 'fetchDependencies' task from ant build
+// ensure 'init' runs before 'fetchDependencies' and 'declare-mps-tasks'
 fetchDependencies {
   dependsOn {
     'init'
   }
 }
 
-// ensure 'generate' runs before 'classes'
+'declare-mps-tasks' {
+  dependsOn {
+    'init'
+  }
+}
+
+// ensure 'generate' runs before 'classes' ('generate' is NOT optional)
 classes {
   dependsOn {
     'generate'
