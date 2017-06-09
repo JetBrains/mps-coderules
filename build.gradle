@@ -16,6 +16,22 @@ task init(dependsOn: alldependencies) {
   }
 }
 
+// initialize JUnit optional ant task
+configurations {
+    junitAnt
+}
+
+dependencies {
+  junitAnt 'junit:junit:4.8.2'
+  junitAnt('org.apache.ant:ant-junit:1.9.2') {
+      transitive = false
+  }
+}
+
+ant.taskdef(name: 'junit',
+            classname: 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTask',
+            classpath: configurations.junitAnt.asPath)
+
 ant.importBuild('build.xml')
 
 // ensure 'init' runs before 'fetchDependencies' task from ant build
