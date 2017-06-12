@@ -12,7 +12,6 @@
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.sample.test/jetbrains.mps.lang.typesystem2.sample.test.msd" folder="typechecking.sample" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.sample/jetbrains.mps.lang.typesystem2.sample.msd" folder="typechecking.sample" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.sampleLang.test/jetbrains.mps.lang.typesystem2.sampleLang.test.msd" folder="typechecking.sampleLang" />
-      <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.build/jetbrains.mps.lang.typesystem2.samplechecker.build.msd" folder="typechecking.build" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.handler.util/jetbrains.mps.lang.typesystem2.samplechecker.handler.util.msd" folder="typechecking.template.handler" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.samplechecker.test/jetbrains.mps.lang.typesystem2.samplechecker.test.msd" folder="typechecking.template" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.lang.typesystem2.sampleplugin/jetbrains.mps.lang.typesystem2.sampleplugin.msd" folder="plugin" />

@@ -8,7 +8,6 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)</dependency>
-    <dependency reexport="false">6c4b56a7-b0a4-4dd9-9cbe-2040ad8ece58(jetbrains.mps.lang.typesystem2.samplechecker.build)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:798100da-4f0a-421a-b991-71f8c50ce5d2:jetbrains.mps.build" version="0" />
@@ -24,7 +23,6 @@
   </languageVersions>
   <dependencyVersions>
     <module reference="422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)" version="0" />
-    <module reference="6c4b56a7-b0a4-4dd9-9cbe-2040ad8ece58(jetbrains.mps.lang.typesystem2.samplechecker.build)" version="0" />
     <module reference="bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.typechecking.build)" version="0" />
   </dependencyVersions>
 </solution>

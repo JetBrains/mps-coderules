@@ -12,7 +12,6 @@
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
-    <import index="672t" ref="r:b80f9c7c-9e9c-4b49-9648-09a9a8aa03c9(jetbrains.mps.lang.typesystem2.samplechecker.build)" />
   </imports>
   <registry>
     <language id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests">
