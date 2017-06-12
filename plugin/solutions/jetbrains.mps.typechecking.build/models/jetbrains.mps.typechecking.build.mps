@@ -95,7 +95,6 @@
       </concept>
       <concept id="1265949165890536423" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars" flags="ng" index="L2wRC">
         <reference id="1265949165890536425" name="module" index="L2wRA" />
-        <child id="4356762679305730677" name="jarLocations" index="3yL2VB" />
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
       <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
@@ -107,10 +106,6 @@
         <reference id="5253498789149547705" name="module" index="3bR37D" />
       </concept>
       <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9" />
-      <concept id="4356762679305675652" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation" flags="ng" index="3yLZsm">
-        <property id="4356762679305675654" name="packagedLocation" index="3yLZsk" />
-        <child id="4356762679305675653" name="path" index="3yLZsn" />
-      </concept>
       <concept id="4278635856200826393" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar" flags="ng" index="1BurEX">
         <child id="4278635856200826394" name="path" index="1BurEY" />
       </concept>
@@ -1059,6 +1054,12 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
+        <node concept="1SiIV0" id="7ee4LalpI4k" role="3bR37C">
+          <node concept="3bR9La" id="7ee4LalpI4l" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Ant4WkHLsF" resolve="jetbrains.mps.lang.typesystem2.sampleLang" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="65DJywFj0uW" role="3989C9">
@@ -1537,11 +1538,17 @@
         <node concept="L2wRC" id="7Ant4WkHLmo" role="39821P">
           <ref role="L2wRA" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
         </node>
+        <node concept="L2wRC" id="7Ant4WkHLmw" role="39821P">
+          <ref role="L2wRA" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
+        </node>
+        <node concept="L2wRC" id="7Ant4WkHLmu" role="39821P">
+          <ref role="L2wRA" node="7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
+        </node>
+        <node concept="L2wRC" id="7Ant4WkHLmN" role="39821P">
+          <ref role="L2wRA" node="7Ant4WkHLpd" resolve="jetbrains.mps.logic.test" />
+        </node>
         <node concept="L2wRC" id="7Ant4WkHLmp" role="39821P">
           <ref role="L2wRA" node="7BVjoXzUx6U" resolve="jetbrains.mps.lang.typesystem2" />
-        </node>
-        <node concept="L2wRC" id="7Ant4WkHLmq" role="39821P">
-          <ref role="L2wRA" node="65DJywFj0Fi" resolve="jetbrains.mps.lang.typesystem2.sampleplugin" />
         </node>
         <node concept="L2wRC" id="7Ant4WkHLmr" role="39821P">
           <ref role="L2wRA" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.typesystem2.runtime" />
@@ -1552,22 +1559,19 @@
         <node concept="L2wRC" id="3u5wJtgmSk" role="39821P">
           <ref role="L2wRA" node="3u5wJtgk3a" resolve="jetbrains.mps.lang.typesystem2.helper" />
         </node>
+        <node concept="L2wRC" id="7Ant4WkHLmq" role="39821P">
+          <ref role="L2wRA" node="65DJywFj0Fi" resolve="jetbrains.mps.lang.typesystem2.sampleplugin" />
+        </node>
         <node concept="L2wRC" id="7Ant4WkHLmt" role="39821P">
           <ref role="L2wRA" node="7Ant4Wk$48A" resolve="jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
         </node>
         <node concept="L2wRC" id="5pz4PwHqt4r" role="39821P">
           <ref role="L2wRA" node="5pz4PwHqqS4" resolve="jetbrains.mps.lang.typesystem2.test" />
         </node>
-        <node concept="L2wRC" id="7Ant4WkHLmu" role="39821P">
-          <ref role="L2wRA" node="7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
-        </node>
         <node concept="3_J27D" id="7Ant4WkHLAr" role="Nbhlr">
           <node concept="3Mxwew" id="7Ant4WkHLDj" role="3MwsjC">
             <property role="3MwjfP" value="tests" />
           </node>
-        </node>
-        <node concept="L2wRC" id="7Ant4WkHLmN" role="39821P">
-          <ref role="L2wRA" node="7Ant4WkHLpd" resolve="jetbrains.mps.logic.test" />
         </node>
         <node concept="L2wRC" id="7Ant4WkHLmP" role="39821P">
           <ref role="L2wRA" node="7Ant4WkHLsY" resolve="jetbrains.mps.lang.typesystem2.samplechecker.test" />
@@ -1584,158 +1588,11 @@
         <node concept="L2wRC" id="46o4wsHr0QF" role="39821P">
           <ref role="L2wRA" node="46o4wsH5Nat" resolve="jetbrains.mps.lang.typesystem2.sample.test" />
         </node>
-        <node concept="L2wRC" id="7Ant4WkHLmw" role="39821P">
-          <ref role="L2wRA" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
-          <node concept="3yLZsm" id="46o4wsHi1SX" role="3yL2VB">
-            <property role="3yLZsk" value="lib/dexx-collections-0.2.jar" />
-            <node concept="398BVA" id="46o4wsHi1SY" role="3yLZsn">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="46o4wsHi1SZ" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="46o4wsHi1T0" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="46o4wsHi1T1" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="46o4wsHi1T2" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="46o4wsHi1T3" role="2Ry0An">
-                        <property role="2Ry0Am" value="dexx-collections-0.2.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3yLZsm" id="46o4wsHi1T4" role="3yL2VB">
-            <property role="3yLZsk" value="lib/google-collections-1.0.jar" />
-            <node concept="398BVA" id="46o4wsHi1T5" role="3yLZsn">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="46o4wsHi1T6" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="46o4wsHi1T7" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="46o4wsHi1T8" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="46o4wsHi1T9" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="46o4wsHi1Ta" role="2Ry0An">
-                        <property role="2Ry0Am" value="google-collections-1.0.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3yLZsm" id="46o4wsHi1Tb" role="3yL2VB">
-            <property role="3yLZsk" value="lib/kotlin-runtime-1.0.0-rc-1050.jar" />
-            <node concept="398BVA" id="46o4wsHi1Tc" role="3yLZsn">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="46o4wsHi1Td" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="46o4wsHi1Te" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="46o4wsHi1Tf" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="46o4wsHi1Tg" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="46o4wsHi1Th" role="2Ry0An">
-                        <property role="2Ry0Am" value="kotlin-runtime-1.0.0-rc-1050.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3yLZsm" id="46o4wsHi1Ti" role="3yL2VB">
-            <property role="3yLZsk" value="lib/kotlin-stdlib-1.0.0-rc-1050.jar" />
-            <node concept="398BVA" id="46o4wsHi1Tj" role="3yLZsn">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="46o4wsHi1Tk" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="46o4wsHi1Tl" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="46o4wsHi1Tm" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="46o4wsHi1Tn" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="46o4wsHi1To" role="2Ry0An">
-                        <property role="2Ry0Am" value="kotlin-stdlib-1.0.0-rc-1050.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3yLZsm" id="46o4wsHi1Tp" role="3yL2VB">
-            <property role="3yLZsk" value="lib/memreactor-api-0.1.jar" />
-            <node concept="398BVA" id="46o4wsHi1Tq" role="3yLZsn">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="46o4wsHi1Tr" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="46o4wsHi1Ts" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="46o4wsHi1Tt" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="46o4wsHi1Tu" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="46o4wsHi1Tv" role="2Ry0An">
-                        <property role="2Ry0Am" value="memreactor-api-0.1.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3yLZsm" id="46o4wsHi1Tw" role="3yL2VB">
-            <property role="3yLZsk" value="lib/memreactor-core-0.1.jar" />
-            <node concept="398BVA" id="46o4wsHi1Tx" role="3yLZsn">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="46o4wsHi1Ty" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="46o4wsHi1Tz" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="46o4wsHi1T$" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="46o4wsHi1T_" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="46o4wsHi1TA" role="2Ry0An">
-                        <property role="2Ry0Am" value="memreactor-core-0.1.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3yLZsm" id="46o4wsHi1TB" role="3yL2VB">
-            <property role="3yLZsk" value="lib/unification-lib-1.0.2.jar" />
-            <node concept="398BVA" id="46o4wsHi1TC" role="3yLZsn">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="46o4wsHi1TD" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="46o4wsHi1TE" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="46o4wsHi1TF" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="46o4wsHi1TG" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="46o4wsHi1TH" role="2Ry0An">
-                        <property role="2Ry0Am" value="unification-lib-1.0.2.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="L2wRC" id="46o4wsHrP6K" role="39821P">
           <ref role="L2wRA" node="46o4wsH5PJF" resolve="jetbrains.mps.typechecking.annotation" />
+        </node>
+        <node concept="L2wRC" id="7ee4LalqWl7" role="39821P">
+          <ref role="L2wRA" node="3u5wJtgiSM" resolve="jetbrains.mps.lang.smodel.types" />
         </node>
         <node concept="398223" id="7Ant4WkHLmR" role="39821P">
           <node concept="3_J27D" id="7Ant4WkHLmS" role="Nbhlr">
@@ -1814,14 +1671,14 @@
             <node concept="L2wRC" id="3u5wJtgS6b" role="39821P">
               <ref role="L2wRA" node="3u5wJtgk3a" resolve="jetbrains.mps.lang.typesystem2.helper" />
             </node>
-            <node concept="L2wRC" id="3u5wJtgSbK" role="39821P">
-              <ref role="L2wRA" node="3u5wJtgiSM" resolve="jetbrains.mps.lang.smodel.types" />
-            </node>
             <node concept="L2wRC" id="65DJywFj_1R" role="39821P">
               <ref role="L2wRA" node="65DJywFj0Fi" resolve="jetbrains.mps.lang.typesystem2.sampleplugin" />
             </node>
             <node concept="L2wRC" id="65DJywFk8$R" role="39821P">
               <ref role="L2wRA" node="7Ant4Wk$48A" resolve="jetbrains.mps.lang.typesystem2.samplechecker.handler.util" />
+            </node>
+            <node concept="L2wRC" id="3u5wJtgSbK" role="39821P">
+              <ref role="L2wRA" node="3u5wJtgiSM" resolve="jetbrains.mps.lang.smodel.types" />
             </node>
           </node>
           <node concept="398223" id="65DJywFkElN" role="39821P">
