@@ -68,7 +68,6 @@
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
     <import index="ewej" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.font(JDK/)" />
     <import index="fbzs" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.geom(JDK/)" />
-    <import index="4r4j" ref="r:94702bd0-f623-44e8-af0a-f2730f7d2518(jetbrains.mps.lang.typesystem2.samplechecker.handle.util)" />
     <import index="b8lf" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selection(MPS.Editor/)" />
     <import index="eh3q" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.text(MPS.Editor/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
@@ -15510,9 +15509,9 @@
                     <node concept="3uibUv" id="6QkkSolK_jV" role="1tU5fm">
                       <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                     </node>
-                    <node concept="2YIFZM" id="_04VjSrGzZ" role="33vP2m">
-                      <ref role="37wK5l" to="4r4j:_04VjSrAA8" resolve="extractReference" />
-                      <ref role="1Pybhc" to="4r4j:4OKkcnfu_xo" resolve="AnchorUtil" />
+                    <node concept="2YIFZM" id="5w_kaFFSmjR" role="33vP2m">
+                      <ref role="37wK5l" to="hano:_04VjSrAA8" resolve="extractReference" />
+                      <ref role="1Pybhc" to="hano:4OKkcnfu_xo" resolve="AnchorUtil" />
                       <node concept="2YIFZM" id="_04VjSrG$0" role="37wK5m">
                         <ref role="1Pybhc" to="6exd:6HT7BWBOXme" resolve="TreeFormUtil" />
                         <ref role="37wK5l" to="6exd:6HT7BWBOXr$" resolve="ground" />
@@ -15812,9 +15811,9 @@
                   <node concept="3uibUv" id="2tI9bOla_7l" role="1tU5fm">
                     <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                   </node>
-                  <node concept="2YIFZM" id="2tI9bOla_7m" role="33vP2m">
-                    <ref role="37wK5l" to="4r4j:_04VjSrAA8" resolve="extractReference" />
-                    <ref role="1Pybhc" to="4r4j:4OKkcnfu_xo" resolve="AnchorUtil" />
+                  <node concept="2YIFZM" id="5w_kaFFSmjS" role="33vP2m">
+                    <ref role="37wK5l" to="hano:_04VjSrAA8" resolve="extractReference" />
+                    <ref role="1Pybhc" to="hano:4OKkcnfu_xo" resolve="AnchorUtil" />
                     <node concept="2YIFZM" id="2tI9bOla_7n" role="37wK5m">
                       <ref role="37wK5l" to="6exd:6HT7BWBOXr$" resolve="ground" />
                       <ref role="1Pybhc" to="6exd:6HT7BWBOXme" resolve="TreeFormUtil" />

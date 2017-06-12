@@ -39,7 +39,6 @@
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="4r4j" ref="r:94702bd0-f623-44e8-af0a-f2730f7d2518(jetbrains.mps.lang.typesystem2.samplechecker.handle.util)" />
     <import index="hy7p" ref="r:01ee26d6-df00-4ffb-931c-1ddec5984886(jetbrains.mps.lang.typesystem2.util)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="nzob" ref="r:9c70dcd6-cd3e-4a40-a6f6-c3a41fef5269(jetbrains.mps.lang.typesystem2.plugin)" />
@@ -51,6 +50,7 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
+    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.typechecking)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
   </imports>
@@ -7292,9 +7292,9 @@
           </node>
         </node>
         <node concept="gft3U" id="7jC45KccKR9" role="14YRTM">
-          <node concept="2YIFZM" id="7jC45KccKZV" role="gfFT$">
-            <ref role="37wK5l" to="4r4j:4OKkcnfu_xq" resolve="anchorTreeForm" />
-            <ref role="1Pybhc" to="4r4j:4OKkcnfu_xo" resolve="AnchorUtil" />
+          <node concept="2YIFZM" id="5w_kaFFSmjO" role="gfFT$">
+            <ref role="37wK5l" to="hano:4OKkcnfu_xq" resolve="anchorTreeForm" />
+            <ref role="1Pybhc" to="hano:4OKkcnfu_xo" resolve="AnchorUtil" />
             <node concept="10Nm6u" id="7jC45KccL0o" role="37wK5m">
               <node concept="29HgVG" id="7jC45KccL0G" role="lGtFl">
                 <node concept="3NFfHV" id="7jC45KccL0H" role="3NFExx">
@@ -7318,9 +7318,9 @@
     <node concept="3aamgX" id="YGS68NawGr" role="3acgRq">
       <ref role="30HIoZ" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
       <node concept="gft3U" id="YGS68NawGs" role="1lVwrX">
-        <node concept="2YIFZM" id="YGS68NawZA" role="gfFT$">
-          <ref role="37wK5l" to="4r4j:4OKkcnfu_xq" resolve="anchorTreeForm" />
-          <ref role="1Pybhc" to="4r4j:4OKkcnfu_xo" resolve="AnchorUtil" />
+        <node concept="2YIFZM" id="5w_kaFFSmjN" role="gfFT$">
+          <ref role="37wK5l" to="hano:4OKkcnfu_xq" resolve="anchorTreeForm" />
+          <ref role="1Pybhc" to="hano:4OKkcnfu_xo" resolve="AnchorUtil" />
           <node concept="10Nm6u" id="YGS68NawZB" role="37wK5m">
             <node concept="29HgVG" id="YGS68NawZC" role="lGtFl">
               <node concept="3NFfHV" id="YGS68NawZD" role="3NFExx">
