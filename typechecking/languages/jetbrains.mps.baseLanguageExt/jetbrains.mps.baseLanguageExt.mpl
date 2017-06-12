@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.typesystem2.sampleLang" uuid="0fda14cc-a416-4c81-869a-2175d8b3325d" languageVersion="0" moduleVersion="0">
+<language namespace="jetbrains.mps.baseLanguageExt" uuid="0fda14cc-a416-4c81-869a-2175d8b3325d" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator namespace="jetbrains.mps.lang.typesystem2.sampleLang#8436953480441303409" uuid="3128d3e3-76dc-4d6d-b958-99599e4307fa">
+    <generator namespace="jetbrains.mps.baseLanguageExt#8436953480441303409" uuid="3128d3e3-76dc-4d6d-b958-99599e4307fa">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />

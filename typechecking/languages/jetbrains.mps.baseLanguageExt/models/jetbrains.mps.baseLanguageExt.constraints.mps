@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:93d77cb0-24e4-4236-bb8f-ec74a28cf85d(jetbrains.mps.lang.typesystem2.sampleLang.behavior)">
+<model ref="r:8cb9b106-f20c-45e1-b93a-1ad22077cd8d(jetbrains.mps.baseLanguageExt.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports />

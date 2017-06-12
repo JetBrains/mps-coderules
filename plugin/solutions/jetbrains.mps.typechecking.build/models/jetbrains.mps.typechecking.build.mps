@@ -1056,7 +1056,7 @@
         <node concept="1SiIV0" id="7ee4LalpI4k" role="3bR37C">
           <node concept="3bR9La" id="7ee4LalpI4l" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Ant4WkHLsF" resolve="jetbrains.mps.lang.typesystem2.sampleLang" />
+            <ref role="3bR37D" node="7Ant4WkHLsF" resolve="jetbrains.mps.baseLanguageExt" />
           </node>
         </node>
       </node>
@@ -1271,7 +1271,7 @@
       </node>
       <node concept="1E1JtD" id="7Ant4WkHLsF" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.typesystem2.sampleLang" />
+        <property role="TrG5h" value="jetbrains.mps.baseLanguageExt" />
         <property role="3LESm3" value="0fda14cc-a416-4c81-869a-2175d8b3325d" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="7Ant4WkHLsG" role="3LF7KH">
@@ -1280,9 +1280,9 @@
             <node concept="2Ry0Ak" id="7Ant4WkHLsI" role="2Ry0An">
               <property role="2Ry0Am" value="languages" />
               <node concept="2Ry0Ak" id="7Ant4WkHLsJ" role="2Ry0An">
-                <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.sampleLang" />
-                <node concept="2Ry0Ak" id="7Ant4WkHLsK" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.sampleLang.mpl" />
+                <property role="2Ry0Am" value="jetbrains.mps.baseLanguageExt" />
+                <node concept="2Ry0Ak" id="5w_kaFFuM20" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguageExt.mpl" />
                 </node>
               </node>
             </node>
@@ -1306,7 +1306,7 @@
           </node>
         </node>
         <node concept="1yeLz9" id="7Ant4WkHLsX" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.lang.typesystem2.sampleLang#8436953480441303409" />
+          <property role="TrG5h" value="jetbrains.mps.baseLanguageExt#8436953480441303409" />
           <property role="3LESm3" value="3128d3e3-76dc-4d6d-b958-99599e4307fa" />
           <property role="2GAjPV" value="false" />
         </node>
@@ -1361,7 +1361,7 @@
       <property role="TrG5h" value="samplechecker-test" />
       <node concept="1E1JtA" id="46o4wsHqZu7" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.typesystem2.sampleLang.test" />
+        <property role="TrG5h" value="jetbrains.mps.baseLanguageExt.test" />
         <property role="3LESm3" value="e44e7802-2e40-482b-9b1c-6d42660a6a11" />
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="sources and tests" />
@@ -1371,9 +1371,9 @@
             <node concept="2Ry0Ak" id="46o4wsHqZSa" role="2Ry0An">
               <property role="2Ry0Am" value="solutions" />
               <node concept="2Ry0Ak" id="46o4wsHr01V" role="2Ry0An">
-                <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.sampleLang.test" />
-                <node concept="2Ry0Ak" id="46o4wsHr0bG" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.sampleLang.test.msd" />
+                <property role="2Ry0Am" value="jetbrains.mps.baseLanguageExt.test" />
+                <node concept="2Ry0Ak" id="5w_kaFFuMbi" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguageExt.test.msd" />
                 </node>
               </node>
             </node>
@@ -1406,7 +1406,7 @@
         <node concept="1SiIV0" id="46o4wsHr0gG" role="3bR37C">
           <node concept="3bR9La" id="46o4wsHr0gH" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Ant4WkHLsF" resolve="jetbrains.mps.lang.typesystem2.sampleLang" />
+            <ref role="3bR37D" node="7Ant4WkHLsF" resolve="jetbrains.mps.baseLanguageExt" />
           </node>
         </node>
         <node concept="1SiIV0" id="20Ay2Vfc9oG" role="3bR37C">
@@ -1576,10 +1576,10 @@
           <ref role="L2wRA" node="7Ant4WkHLsY" resolve="jetbrains.mps.lang.typesystem2.samplechecker.test" />
         </node>
         <node concept="L2wRC" id="7Ant4WkHLmQ" role="39821P">
-          <ref role="L2wRA" node="7Ant4WkHLsF" resolve="jetbrains.mps.lang.typesystem2.sampleLang" />
+          <ref role="L2wRA" node="7Ant4WkHLsF" resolve="jetbrains.mps.baseLanguageExt" />
         </node>
         <node concept="L2wRC" id="46o4wsHqYX3" role="39821P">
-          <ref role="L2wRA" node="46o4wsHqZu7" resolve="jetbrains.mps.lang.typesystem2.sampleLang.test" />
+          <ref role="L2wRA" node="46o4wsHqZu7" resolve="jetbrains.mps.baseLanguageExt.test" />
         </node>
         <node concept="L2wRC" id="46o4wsHr0Fr" role="39821P">
           <ref role="L2wRA" node="46o4wsH5O3R" resolve="jetbrains.mps.lang.typesystem2.sample" />
