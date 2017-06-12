@@ -1253,7 +1253,7 @@
       </node>
       <node concept="1E1JtA" id="46o4wsH5O3R" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.typesystem2.sample" />
+        <property role="TrG5h" value="jetbrains.mps.typechecking.sample" />
         <property role="3LESm3" value="3ddddf69-9ff0-426b-9365-51ae7356fb82" />
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="sources" />
@@ -1263,9 +1263,9 @@
             <node concept="2Ry0Ak" id="46o4wsH5OqI" role="2Ry0An">
               <property role="2Ry0Am" value="solutions" />
               <node concept="2Ry0Ak" id="46o4wsH5Ozv" role="2Ry0An">
-                <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.sample" />
-                <node concept="2Ry0Ak" id="46o4wsH5OGg" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.sample.msd" />
+                <property role="2Ry0Am" value="jetbrains.mps.typechecking.sample" />
+                <node concept="2Ry0Ak" id="6HVcbo5ENxy" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.typechecking.sample.msd" />
                 </node>
               </node>
             </node>
@@ -1346,7 +1346,7 @@
       </node>
       <node concept="1E1JtA" id="46o4wsH5Nat" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.typesystem2.sample.test" />
+        <property role="TrG5h" value="jetbrains.mps.typechecking.sample.test" />
         <property role="3LESm3" value="1b65dfe8-24ff-41c3-9a3e-70f102942455" />
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="sources and tests" />
@@ -1356,9 +1356,9 @@
             <node concept="2Ry0Ak" id="46o4wsH5Ns8" role="2Ry0An">
               <property role="2Ry0Am" value="solutions" />
               <node concept="2Ry0Ak" id="46o4wsH5N$_" role="2Ry0An">
-                <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.sample.test" />
-                <node concept="2Ry0Ak" id="46o4wsH5NH2" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.sample.test.msd" />
+                <property role="2Ry0Am" value="jetbrains.mps.typechecking.sample.test" />
+                <node concept="2Ry0Ak" id="6HVcbo5ENDO" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.typechecking.sample.test.msd" />
                 </node>
               </node>
             </node>
@@ -1373,7 +1373,7 @@
         <node concept="1SiIV0" id="46o4wsH5OPm" role="3bR37C">
           <node concept="3bR9La" id="46o4wsH5OPn" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="46o4wsH5O3R" resolve="jetbrains.mps.lang.typesystem2.sample" />
+            <ref role="3bR37D" node="46o4wsH5O3R" resolve="jetbrains.mps.typechecking.sample" />
           </node>
         </node>
         <node concept="1SiIV0" id="46o4wsH5OPq" role="3bR37C">
@@ -1447,10 +1447,10 @@
           <ref role="L2wRA" node="46o4wsHqZu7" resolve="jetbrains.mps.baseLanguageExt.test" />
         </node>
         <node concept="L2wRC" id="46o4wsHr0Fr" role="39821P">
-          <ref role="L2wRA" node="46o4wsH5O3R" resolve="jetbrains.mps.lang.typesystem2.sample" />
+          <ref role="L2wRA" node="46o4wsH5O3R" resolve="jetbrains.mps.typechecking.sample" />
         </node>
         <node concept="L2wRC" id="46o4wsHr0QF" role="39821P">
-          <ref role="L2wRA" node="46o4wsH5Nat" resolve="jetbrains.mps.lang.typesystem2.sample.test" />
+          <ref role="L2wRA" node="46o4wsH5Nat" resolve="jetbrains.mps.typechecking.sample.test" />
         </node>
         <node concept="L2wRC" id="46o4wsHrP6K" role="39821P">
           <ref role="L2wRA" node="46o4wsH5PJF" resolve="jetbrains.mps.typechecking.annotation" />
