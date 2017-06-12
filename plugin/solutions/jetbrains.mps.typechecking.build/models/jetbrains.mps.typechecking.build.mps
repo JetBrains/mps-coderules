@@ -969,19 +969,19 @@
       <property role="TrG5h" value="typesystem2-test" />
       <node concept="1E1JtA" id="5pz4PwHqqS4" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.typesystem2.test" />
+        <property role="TrG5h" value="jetbrains.mps.lang.typechecking.test" />
         <property role="3LESm3" value="c9670c16-a215-41fb-8784-04b14329799d" />
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="sources and tests" />
         <node concept="55IIr" id="5pz4PwHqqS5" role="3LF7KH">
           <node concept="2Ry0Ak" id="5pz4PwHqrc5" role="iGT6I">
-            <property role="2Ry0Am" value="typesystem2" />
+            <property role="2Ry0Am" value="typechecking" />
             <node concept="2Ry0Ak" id="5pz4PwHqrm6" role="2Ry0An">
               <property role="2Ry0Am" value="solutions" />
               <node concept="2Ry0Ak" id="5pz4PwHqrw7" role="2Ry0An">
-                <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.test" />
-                <node concept="2Ry0Ak" id="5pz4PwHqrE8" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.lang.typesystem2.test.msd" />
+                <property role="2Ry0Am" value="jetbrains.mps.typechecking.test" />
+                <node concept="2Ry0Ak" id="6HVcbo5Dy$x" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.typechecking.test.msd" />
                 </node>
               </node>
             </node>
@@ -1433,7 +1433,7 @@
           <ref role="L2wRA" node="65DJywFj0Fi" resolve="jetbrains.mps.lang.typesystem2.sampleplugin" />
         </node>
         <node concept="L2wRC" id="5pz4PwHqt4r" role="39821P">
-          <ref role="L2wRA" node="5pz4PwHqqS4" resolve="jetbrains.mps.lang.typesystem2.test" />
+          <ref role="L2wRA" node="5pz4PwHqqS4" resolve="jetbrains.mps.lang.typechecking.test" />
         </node>
         <node concept="3_J27D" id="7Ant4WkHLAr" role="Nbhlr">
           <node concept="3Mxwew" id="7Ant4WkHLDj" role="3MwsjC">
