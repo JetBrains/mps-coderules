@@ -80,11 +80,17 @@
       </concept>
     </language>
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps">
+      <concept id="7832771629084799699" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor" flags="ng" index="2iUeEo">
+        <property id="7832771629084799702" name="name" index="2iUeEt" />
+        <property id="7832771629084799701" name="url" index="2iUeEu" />
+      </concept>
       <concept id="6592112598314498932" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin" flags="ng" index="m$_wf">
         <property id="6592112598314498927" name="id" index="m$_wk" />
+        <child id="7832771629084912518" name="vendor" index="2iVFfd" />
         <child id="6592112598314498931" name="version" index="m$_w8" />
         <child id="6592112598314499021" name="name" index="m$_yQ" />
         <child id="6592112598314855574" name="containerName" index="m_cZH" />
+        <child id="2172791612906637490" name="description" index="3s6cr7" />
       </concept>
       <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
@@ -155,7 +161,7 @@
       <property role="m$_wk" value="jetbrains.mps.typechecking" />
       <node concept="3_J27D" id="7BVjoXzUx68" role="m$_yQ">
         <node concept="3Mxwew" id="7BVjoXzUx6h" role="3MwsjC">
-          <property role="3MwjfP" value="Typechecking with Constraints" />
+          <property role="3MwjfP" value="Typechecking with Constraint Rules" />
         </node>
       </node>
       <node concept="3_J27D" id="7BVjoXzUx69" role="m_cZH">
@@ -167,6 +173,15 @@
         <node concept="3Mxwew" id="7BVjoXzUx6l" role="3MwsjC">
           <property role="3MwjfP" value="0.1" />
         </node>
+      </node>
+      <node concept="3_J27D" id="3AC_dXTSEnT" role="3s6cr7">
+        <node concept="3Mxwew" id="3AC_dXTSEnV" role="3MwsjC">
+          <property role="3MwjfP" value="Experimental support for type checking with constraint rules" />
+        </node>
+      </node>
+      <node concept="2iUeEo" id="3AC_dXTSEsp" role="2iVFfd">
+        <property role="2iUeEt" value="JetBrains s.r.o." />
+        <property role="2iUeEu" value="jetbrains.com/mps" />
       </node>
     </node>
     <node concept="2G$12M" id="7BVjoXzUxju" role="3989C9">

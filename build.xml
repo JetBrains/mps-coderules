@@ -825,8 +825,10 @@
     <echoxml file="${build.tmp}/default/typechecking-0.1.zip/typechecking/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>jetbrains.mps.typechecking</id>
-        <name>Typechecking with Constraints</name>
+        <name>Typechecking with Constraint Rules</name>
+        <description>Experimental support for type checking with constraint rules</description>
         <version>0.1</version>
+        <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
