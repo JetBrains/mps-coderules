@@ -923,11 +923,11 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
-        <library jar="../../../tests/lib/kotlin-runtime-1.1.2.jar" />
-        <library jar="../../../tests/lib/kotlin-stdlib-1.1.2.jar" />
-        <library jar="../../../tests/lib/collection-0.7.jar" />
-        <library jar="../../../tests/lib/conreactor-api-0.9.jar" />
-        <library jar="../../../tests/lib/conreactor-core-0.9.jar" />
+        <library jar="../lib/kotlin-runtime-1.1.2.jar" />
+        <library jar="../lib/kotlin-stdlib-1.1.2.jar" />
+        <library jar="../lib/collection-0.7.jar" />
+        <library jar="../lib/conreactor-api-0.9.jar" />
+        <library jar="../lib/conreactor-core-0.9.jar" />
         <classpath>
           <entry path="." />
         </classpath>
