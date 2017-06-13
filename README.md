@@ -4,7 +4,7 @@ An experimental feature for [JetBrains MPS](https://jetbrains.com/mps) implement
 
 ## Status
 
-**TODO: Build status here**
+[![Build Status](https://travis-ci.org/fisakov/constraints-typechecking.svg?branch=master)](https://travis-ci.org/fisakov/constraints-typechecking)
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
 
