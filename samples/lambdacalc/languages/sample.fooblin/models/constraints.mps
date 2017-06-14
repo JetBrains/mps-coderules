@@ -325,7 +325,9 @@
           <node concept="3cpWsn" id="7_zMfd$r3ut" role="3cpWs9">
             <property role="TrG5h" value="current" />
             <node concept="3Tqbb2" id="7_zMfd$r3uu" role="1tU5fm" />
-            <node concept="2rP1CM" id="7_zMfd$r3uv" role="33vP2m" />
+            <node concept="37vLTw" id="6NUaKj0XACM" role="33vP2m">
+              <ref role="3cqZAo" node="7_zMfd$r3s7" resolve="contextNode" />
+            </node>
           </node>
         </node>
         <node concept="2$JKZl" id="7_zMfd$r3uw" role="3cqZAp">
