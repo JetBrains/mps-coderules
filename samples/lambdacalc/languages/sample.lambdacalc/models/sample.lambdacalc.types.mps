@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(sample.fooblin.types)">
+<model ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(sample.lambdacalc.types)">
   <persistence version="9" />
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="0" />
@@ -12,15 +12,15 @@
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
-    <import index="8tt8" ref="r:e74c1bfc-387b-4b4b-abee-2eb77ee510ec(sample.fooblin.structure)" />
+    <import index="8tt8" ref="r:e74c1bfc-387b-4b4b-abee-2eb77ee510ec(sample.lambdacalc.structure)" />
     <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.typechecking)" />
-    <import index="1x08" ref="r:9dec6437-6097-4be2-891f-1792da0df61f(sample.fooblin.behavior)" />
+    <import index="1x08" ref="r:9dec6437-6097-4be2-891f-1792da0df61f(sample.lambdacalc.behavior)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
-    <import index="69ci" ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(sample.fooblin.types)" />
+    <import index="69ci" ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(sample.lambdacalc.types)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="6bz1" ref="r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)" implicit="true" />

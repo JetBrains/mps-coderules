@@ -2,7 +2,7 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="$PROJECT_DIR$/languages/sample.fooblin/sample.fooblin.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/sample.lambdacalc/sample.lambdacalc.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/sample.demo/sample.demo.msd" folder="" />
     </projectModules>
   </component>

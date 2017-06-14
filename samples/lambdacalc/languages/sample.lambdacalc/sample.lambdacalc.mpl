@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="sample.fooblin" uuid="af858d84-85f2-42f4-a854-0b3c6b5cd482" languageVersion="0" moduleVersion="0">
+<language namespace="sample.lambdacalc" uuid="af858d84-85f2-42f4-a854-0b3c6b5cd482" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -9,7 +9,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
-    <dependency reexport="false">af858d84-85f2-42f4-a854-0b3c6b5cd482(sample.fooblin)</dependency>
+    <dependency reexport="false">af858d84-85f2-42f4-a854-0b3c6b5cd482(sample.lambdacalc)</dependency>
     <dependency reexport="false">26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.typesystem2.runtime)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
