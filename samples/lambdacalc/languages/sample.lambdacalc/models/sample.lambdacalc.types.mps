@@ -4,7 +4,7 @@
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.fooblin" version="0" />
+    <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc" version="0" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
@@ -328,19 +328,19 @@
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
-    <language id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.fooblin">
-      <concept id="3749787170939265030" name="sample.fooblin.structure.VarType" flags="ng" index="2BbKIm">
+    <language id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc">
+      <concept id="3749787170939265030" name="sample.lambdacalc.structure.VarType" flags="ng" index="2BbKIm">
         <property id="3749787170939266901" name="name" index="2BbKN5" />
       </concept>
-      <concept id="4132684604212800736" name="sample.fooblin.structure.Type" flags="ng" index="1jz_8w" />
-      <concept id="4132684604212800783" name="sample.fooblin.structure.FunType" flags="ng" index="1jz_ff">
+      <concept id="4132684604212800736" name="sample.lambdacalc.structure.Type" flags="ng" index="1jz_8w" />
+      <concept id="4132684604212800783" name="sample.lambdacalc.structure.FunType" flags="ng" index="1jz_ff">
         <child id="4132684604212800793" name="argType" index="1jz_fp" />
         <child id="4132684604212800805" name="resType" index="1jz_f_" />
       </concept>
-      <concept id="1192808835813875324" name="sample.fooblin.structure.ForallType" flags="ng" index="3JbUGG">
+      <concept id="1192808835813875324" name="sample.lambdacalc.structure.ForallType" flags="ng" index="3JbUGG">
         <child id="1192808835813913262" name="type" index="3JbKvY" />
       </concept>
-      <concept id="4774429934441520217" name="sample.fooblin.structure.BoolType" flags="ng" index="3P8Jbz" />
+      <concept id="4774429934441520217" name="sample.lambdacalc.structure.BoolType" flags="ng" index="3P8Jbz" />
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
@@ -707,6 +707,17 @@
       <property role="TrG5h" value="typeOf_LetVarBind" />
       <node concept="3Aq9E8" id="10BVPEVK64G" role="3otmyu">
         <node concept="3I6sU6" id="10BVPEVK64H" role="3Ip0Jz">
+          <node concept="3I6s7M" id="6XR$k9E04nZ" role="3I6sU7">
+            <node concept="3Aqt3T" id="6XR$k9E04nX" role="3I6s78">
+              <ref role="3AqCNq" node="12dHl3ZCEwE" resolve="gen" />
+              <node concept="a7P8L" id="6XR$k9E04o9" role="3AunhB">
+                <ref role="a7OzE" node="6XR$k9E03vG" resolve="G" />
+              </node>
+              <node concept="a7P8L" id="6XR$k9E04og" role="3AunhB">
+                <ref role="a7OzE" node="10BVPEVK64u" resolve="E" />
+              </node>
+            </node>
+          </node>
           <node concept="3I6s7M" id="10BVPEVK65K" role="3I6sU7">
             <node concept="3XxkQB" id="10BVPEVK65C" role="3I6s78">
               <node concept="aYllk" id="10BVPEVK65E" role="3XxmmS">
@@ -719,10 +730,15 @@
                   </node>
                 </node>
               </node>
-              <node concept="a7P8L" id="76U9gs656JV" role="3Xxm5W">
-                <ref role="a7OzE" node="10BVPEVK64u" resolve="E" />
+              <node concept="a7P8L" id="6XR$k9E04om" role="3Xxm5W">
+                <ref role="a7OzE" node="6XR$k9E03vG" resolve="G" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3NuqgR" id="6XR$k9E03vF" role="3Nuqhd">
+          <node concept="aZer4" id="6XR$k9E03vG" role="3XD1gS">
+            <property role="TrG5h" value="G" />
           </node>
         </node>
       </node>
