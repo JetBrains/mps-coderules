@@ -1336,31 +1336,13 @@
               </node>
             </node>
           </node>
-          <node concept="3I6s7M" id="6_p$mL23i2O" role="3I6sU7">
-            <node concept="3A8Hvi" id="6_p$mL23i2I" role="3I6s78">
-              <node concept="a7P8L" id="6_p$mL23i32" role="3A8wtg">
+          <node concept="3I6s7M" id="6XR$k9E0jnH" role="3I6sU7">
+            <node concept="3A8Hvi" id="6XR$k9E0jnB" role="3I6s78">
+              <node concept="a7P8L" id="6XR$k9E0jo6" role="3A8wtg">
                 <ref role="a7OzE" node="6_p$mL23gmM" resolve="P" />
               </node>
-              <node concept="1Q4cc8" id="6_p$mL23i37" role="3A8w4Q">
-                <ref role="1nfQt" node="4dPZ2m2hTAN" resolve="Bool" />
-              </node>
-            </node>
-          </node>
-          <node concept="3I6s7M" id="6_p$mL23i3u" role="3I6sU7">
-            <node concept="3A8Hvi" id="6_p$mL23i3o" role="3I6s78">
-              <node concept="a7P8L" id="6_p$mL23i3K" role="3A8wtg">
+              <node concept="a7P8L" id="6XR$k9E0job" role="3A8w4Q">
                 <ref role="a7OzE" node="6_p$mL23gn7" resolve="N" />
-              </node>
-              <node concept="1Q4cc8" id="6_p$mL23i3P" role="3A8w4Q">
-                <ref role="1nfQt" node="4dPZ2m2hTAN" resolve="Bool" />
-              </node>
-            </node>
-          </node>
-          <node concept="3I6s7M" id="6_p$mL23mGP" role="3I6sU7">
-            <node concept="B_ONY" id="6_p$mL23mGL" role="3I6s78">
-              <ref role="17QRF" node="492bFERodOY" resolve="Bool" />
-              <node concept="a7P8L" id="6_p$mL23mHb" role="B_OMz">
-                <ref role="a7OzE" node="6_p$mL23mGl" resolve="T" />
               </node>
             </node>
           </node>
@@ -1371,15 +1353,10 @@
                   <ref role="3A2yKK" node="6_p$mL23fzC" resolve="ite" />
                 </node>
               </node>
-              <node concept="a7P8L" id="6_p$mL23mHh" role="3Xxm5W">
-                <ref role="a7OzE" node="6_p$mL23mGl" resolve="T" />
+              <node concept="a7P8L" id="6XR$k9E0joI" role="3Xxm5W">
+                <ref role="a7OzE" node="6_p$mL23gmM" resolve="P" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3NuqgR" id="6_p$mL23mGk" role="3Nuqhd">
-          <node concept="aZer4" id="6_p$mL23mGl" role="3XD1gS">
-            <property role="TrG5h" value="T" />
           </node>
         </node>
       </node>
@@ -1398,7 +1375,7 @@
                       </node>
                     </node>
                     <node concept="Xl_RD" id="6_p$mL23rkZ" role="37wK5m">
-                      <property role="Xl_RC" value="expected type Bool" />
+                      <property role="Xl_RC" value="mismatched type" />
                     </node>
                   </node>
                 </node>

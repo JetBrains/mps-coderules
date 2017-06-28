@@ -2,7 +2,7 @@
 <model ref="r:64f472af-c4b1-4900-9ea3-aec5c51b6e6e(sample.demo.fooblah)">
   <persistence version="9" />
   <languages>
-    <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.fooblin" version="0" />
+    <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc" version="0" />
   </languages>
   <imports />
   <registry>
@@ -11,44 +11,44 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
-    <language id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.fooblin">
-      <concept id="1784752312119229448" name="sample.fooblin.structure.Fix" flags="ng" index="2facFd" />
-      <concept id="8747055848970356251" name="sample.fooblin.structure.VarRef" flags="ng" index="t0$VC">
+    <language id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc">
+      <concept id="1784752312119229448" name="sample.lambdacalc.structure.Fix" flags="ng" index="2facFd" />
+      <concept id="8747055848970356251" name="sample.lambdacalc.structure.VarRef" flags="ng" index="t0$VC">
         <reference id="8747055848970356252" name="def" index="t0$VJ" />
       </concept>
-      <concept id="7591258541060276116" name="sample.fooblin.structure.IfThenElse" flags="ng" index="FlqVS">
+      <concept id="7591258541060276116" name="sample.lambdacalc.structure.IfThenElse" flags="ng" index="FlqVS">
         <child id="7591258541060276154" name="neg" index="FlqVm" />
         <child id="7591258541060276151" name="pos" index="FlqVr" />
         <child id="7591258541060276145" name="cond" index="FlqVt" />
       </concept>
-      <concept id="8739282858702982512" name="sample.fooblin.structure.App" flags="ng" index="1DVIo5">
+      <concept id="8739282858702982512" name="sample.lambdacalc.structure.App" flags="ng" index="1DVIo5">
         <child id="8739282858702982513" name="fun" index="1DVIo4" />
         <child id="8739282858702982525" name="arg" index="1DVIo8" />
       </concept>
-      <concept id="8739282858702982488" name="sample.fooblin.structure.Var" flags="ng" index="1DVIoH" />
-      <concept id="8739282858702982568" name="sample.fooblin.structure.Doc" flags="ng" index="1DVIrt">
+      <concept id="8739282858702982488" name="sample.lambdacalc.structure.Var" flags="ng" index="1DVIoH" />
+      <concept id="8739282858702982568" name="sample.lambdacalc.structure.Doc" flags="ng" index="1DVIrt">
         <child id="8739282858702982571" name="clause" index="1DVIru" />
       </concept>
-      <concept id="8739282858702982546" name="sample.fooblin.structure.LamVarBind" flags="ng" index="1DVIrB">
+      <concept id="8739282858702982546" name="sample.lambdacalc.structure.LamVarBind" flags="ng" index="1DVIrB">
         <child id="8739282858702982547" name="var" index="1DVIrA" />
       </concept>
-      <concept id="8739282858702982553" name="sample.fooblin.structure.LetVarBind" flags="ng" index="1DVIrG">
+      <concept id="8739282858702982553" name="sample.lambdacalc.structure.LetVarBind" flags="ng" index="1DVIrG">
         <child id="8739282858702982556" name="expr" index="1DVIrD" />
         <child id="8739282858702982554" name="var" index="1DVIrJ" />
       </concept>
-      <concept id="8739282858702982552" name="sample.fooblin.structure.LetExpr" flags="ng" index="1DVIrH">
+      <concept id="8739282858702982552" name="sample.lambdacalc.structure.LetExpr" flags="ng" index="1DVIrH">
         <child id="8739282858702982561" name="expr" index="1DVIrk" />
         <child id="8739282858702982559" name="binding" index="1DVIrE" />
       </concept>
-      <concept id="8739282858702982543" name="sample.fooblin.structure.Lam" flags="ng" index="1DVIrU">
+      <concept id="8739282858702982543" name="sample.lambdacalc.structure.Lam" flags="ng" index="1DVIrU">
         <child id="8739282858702982549" name="expr" index="1DVIrw" />
         <child id="8739282858702982544" name="binding" index="1DVIr_" />
       </concept>
-      <concept id="8739282858702985614" name="sample.fooblin.structure.LetClause" flags="ng" index="1DVJbV">
+      <concept id="8739282858702985614" name="sample.lambdacalc.structure.LetClause" flags="ng" index="1DVJbV">
         <child id="2654091495521629866" name="binding" index="j9CMd" />
       </concept>
-      <concept id="4774429934441545239" name="sample.fooblin.structure.False" flags="ng" index="3P8L2H" />
-      <concept id="4774429934441530831" name="sample.fooblin.structure.True" flags="ng" index="3P8MHP" />
+      <concept id="4774429934441545239" name="sample.lambdacalc.structure.False" flags="ng" index="3P8L2H" />
+      <concept id="4774429934441530831" name="sample.lambdacalc.structure.True" flags="ng" index="3P8MHP" />
     </language>
   </registry>
   <node concept="1DVIrt" id="7_8aRkgE06U">
@@ -470,8 +470,22 @@
         </node>
         <node concept="FlqVS" id="6_p$mL23mDN" role="1DVIrD">
           <node concept="3P8MHP" id="6_p$mL23mDZ" role="FlqVt" />
-          <node concept="3P8MHP" id="6_p$mL23mE2" role="FlqVr" />
-          <node concept="3P8L2H" id="6_p$mL23wZ0" role="FlqVm" />
+          <node concept="1DVIrU" id="6XR$k9E0tEk" role="FlqVr">
+            <node concept="1DVIrB" id="6XR$k9E0tEl" role="1DVIr_">
+              <node concept="1DVIoH" id="6XR$k9E0tEm" role="1DVIrA">
+                <property role="TrG5h" value="x" />
+              </node>
+            </node>
+            <node concept="3P8MHP" id="6XR$k9E0tEq" role="1DVIrw" />
+          </node>
+          <node concept="1DVIrU" id="6XR$k9E0tEu" role="FlqVm">
+            <node concept="1DVIrB" id="6XR$k9E0tEv" role="1DVIr_">
+              <node concept="1DVIoH" id="6XR$k9E0tEw" role="1DVIrA">
+                <property role="TrG5h" value="x" />
+              </node>
+            </node>
+            <node concept="3P8L2H" id="6XR$k9E0tE$" role="1DVIrw" />
+          </node>
         </node>
       </node>
     </node>
