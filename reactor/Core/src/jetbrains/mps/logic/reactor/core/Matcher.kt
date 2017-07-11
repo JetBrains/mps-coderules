@@ -27,12 +27,9 @@ import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.LazyIterable
 import jetbrains.mps.logic.reactor.util.Profiler
-import jetbrains.mps.logic.reactor.util.profile
 import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.TermWrapper
-import jetbrains.mps.unification.Unification
-import org.jetbrains.kotlin.container.topologicalSort
 import java.util.*
 import com.github.andrewoma.dexx.collection.List as PersList
 
@@ -46,14 +43,14 @@ class Matcher(val ruleIndex: RuleIndex,
               val profiler: Profiler? = null) : Iterable<Match>
 {
 
-    private val matchTries: LazyIterable<Rule, MatchTrie> by lazy(LazyThreadSafetyMode.NONE) {
-        LazyIterable<Rule, MatchTrie> (ruleIndex.forOccurrence(activeOcc).toList()) { rule ->
-            MatchTrie(rule, activeOcc, aux, profiler)
+    private val matchTries: LazyIterable<Rule, PartialMatchTrie> by lazy(LazyThreadSafetyMode.NONE) {
+        LazyIterable<Rule, PartialMatchTrie> (ruleIndex.forOccurrence(activeOcc).toList()) { rule ->
+            PartialMatchTrie(rule, activeOcc, aux, profiler)
         }
     }
 
     override fun iterator() =   matchTries.asSequence().flatMap { matchTrie ->
-                                matchTrie.asSequence() }.map { partialMatch ->
+                                matchTrie.matches().asSequence() }.map { partialMatch ->
                                 partialMatch.complete(profiler) }.filter { match ->
                                 match.successful }.iterator()
 
