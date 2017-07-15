@@ -74,4 +74,5 @@ internal class PartialMatch(val rule: Rule) {
         return match
     }
 
+    override fun toString(): String = "${keptOccurrences.toList()} \\ ${discardedOccurrences.toList()}"
 }

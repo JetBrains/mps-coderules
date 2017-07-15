@@ -30,7 +30,6 @@ import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.unification.Substitution
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.TermWrapper
-import java.util.*
 import com.github.andrewoma.dexx.collection.List as PersList
 
 /**
@@ -38,21 +37,33 @@ import com.github.andrewoma.dexx.collection.List as PersList
  */
 
 class Matcher(val ruleIndex: RuleIndex,
-              val activeOcc: ConstraintOccurrence,
-              val aux: OccurrenceIndex,
-              val profiler: Profiler? = null) : Iterable<Match>
+              val profiler: Profiler? = null)
 {
 
-    private val matchTries: LazyIterable<Rule, PartialMatchTrie> by lazy(LazyThreadSafetyMode.NONE) {
-        LazyIterable<Rule, PartialMatchTrie> (ruleIndex.forOccurrence(activeOcc).toList()) { rule ->
-            PartialMatchTrie(rule, activeOcc, aux, profiler)
-        }
-    }
+    private val rule2matchTrieSet = HashMap<Rule, MatchTrieSet>()
 
-    override fun iterator() =   matchTries.asSequence().flatMap { matchTrie ->
-                                matchTrie.matches().asSequence() }.map { partialMatch ->
-                                partialMatch.complete(profiler) }.filter { match ->
-                                match.successful }.iterator()
+    fun matches(activeOcc: ConstraintOccurrence, aux: OccurrenceIndex) : Iterable<Match> = object : Iterable<Match> {
+
+        override fun iterator(): Iterator<Match> {
+
+            val relevantRules = ruleIndex.forOccurrence(activeOcc).toList()
+
+            val tries = LazyIterable<Rule, MatchTrieSet>(relevantRules) { rule ->
+                rule2matchTrieSet[rule] ?: MatchTrieSet(rule, profiler).apply {
+                    rule2matchTrieSet[rule] = this
+                }
+            }.asSequence()
+
+            return  tries.flatMap { matchTrieSet ->
+                        matchTrieSet.matches(activeOcc, aux)
+                    }.map { partialMatch ->
+                        partialMatch.complete(profiler)
+                    }.filter { match ->
+                        match.successful
+                    }.iterator()
+        }
+        
+    }
 
 }
 

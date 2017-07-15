@@ -41,6 +41,8 @@ class Controller(
 
     private val frameStack = FrameStack(storeView)
 
+    private val matcher = Matcher(ruleIndex, profiler)
+
     // persistent (functional) object. reassigned on update
     private var propHistory = PropagationHistory()
 
@@ -84,7 +86,7 @@ class Controller(
                 trace.reactivate(active)
             }
 
-            for (match in Matcher(ruleIndex, active, frameStack.current.store, profiler)) {
+            for (match in matcher.matches(active, frameStack.current.store)) {
                 // TODO: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
                 if (!match.successful) continue

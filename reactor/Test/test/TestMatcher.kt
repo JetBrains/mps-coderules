@@ -27,7 +27,7 @@ class TestMatcher {
                 ))
         ).let { builder ->
             builder.indices().run {
-                Matcher(first, occurrence("main"), second).matching().let { matches ->
+                Matcher(first).matching(occurrence("main"), second).let { matches ->
                     val match = matches.single()
                     assertEquals(match.rule, builder.rules.first())
                     assertTrue(match.keptOccurrences.isEmpty())
@@ -57,7 +57,7 @@ class TestMatcher {
                 ))
         ).let { builder ->
             builder.indices().run {
-                Matcher(first, occurrence("main"), second).matching().let { matches ->
+                Matcher(first).matching(occurrence("main"), second).let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.toSet(), matches.map { m -> m.rule }.toSet())
                     matches.forEach { m -> assertTrue(m.keptOccurrences.size + m.discardedOccurrences.size == 1) }
@@ -92,7 +92,7 @@ class TestMatcher {
                 ))
         ).let { builder ->
             builder.indices().run {
-                Matcher(first, occurrence("main"), second).matching().let { matches ->
+                Matcher(first).matching(occurrence("main"), second).let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.drop(1).toSet(), matches.map { m -> m.rule }.toSet())
                 }
@@ -122,7 +122,7 @@ class TestMatcher {
                 ))
         ).let { builder ->
             builder.indices(occurrence("aux")).run {
-                Matcher(first, occurrence("main"), second).matching().let { matches ->
+                Matcher(first).matching(occurrence("main"), second).let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.toSet(), matches.map { m -> m.rule }.toSet())
                 }
@@ -149,7 +149,7 @@ class TestMatcher {
                 ))
         ).let { builder ->
             builder.indices().run{
-                Matcher(first, occurrence("main", "bar"), second).matching().let { matches ->
+                Matcher(first).matching(occurrence("main", "bar"), second).let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(builder.rules.drop(1), matches.map { m -> m.rule }.toList())
                 }
@@ -175,7 +175,7 @@ class TestMatcher {
                     constraint("bar")
                 ))
         ).indices().run{
-            Matcher(first, occurrence("main", "qux"), second).matching().let { matches ->
+            Matcher(first).matching(occurrence("main", "qux"), second).let { matches ->
                 assertFalse(matches.any())
             }
         }
@@ -197,13 +197,13 @@ class TestMatcher {
                     ))
                 )
         ).indices().run {
-            Matcher(first, occurrence("qux"), second).matching().let { matches ->
+            Matcher(first).matching(occurrence("qux"), second).let { matches ->
                 assertFalse(matches.any())
             }
-            Matcher(first, occurrence("foo"), second).matching().let { matches ->
+            Matcher(first).matching(occurrence("foo"), second).let { matches ->
                 assertSame(1, matches.size)
             }
-            Matcher(first, occurrence("bar"), second).matching().let { matches ->
+            Matcher(first).matching(occurrence("bar"), second).let { matches ->
                 assertSame(1, matches.size)
             }
         }
@@ -224,7 +224,7 @@ class TestMatcher {
                 )
             )
         ).indices().run {
-            Matcher(first, occurrence("foo", "blah", b), second).first().run {
+            Matcher(first).matches(occurrence("foo", "blah", b), second).first().run {
                 assert(successful)
                 assertEquals("blah", logicalContext.variable(A).findRoot().value())
                 assertSame(b, logicalContext.variable(B))
@@ -261,14 +261,14 @@ class TestMatcher {
                 ))
         ).run {
             indices().run {
-                Matcher(first, occurrence("foo", 1), second).matching().let { matches ->
+                Matcher(first).matching(occurrence("foo", 1), second).let { matches ->
                     assertFalse(matches.any())
                 }
             }
 
                 // same parameter -- 4 matches (all permutations)
              indices(occurrence("foo", 42)).run {
-                 Matcher(first, occurrence("foo", 42), second).matching().let { matches ->
+                 Matcher(first).matching(occurrence("foo", 42), second).let { matches ->
                      assertTrue(matches.all {m -> m.successful})
                      assertEquals(4, matches.count())
                      assertTrue(matches.all { m -> m.allOccurrences().toSet().size == 2 })
@@ -276,7 +276,7 @@ class TestMatcher {
              }
 
              indices(occurrence("foo", 42)).run {
-                 Matcher(first, occurrence("foo", 16), second).matching().let { matches ->
+                 Matcher(first).matching(occurrence("foo", 16), second).let { matches ->
                      assertTrue(matches.all {m -> m.successful})
                      assertEquals(2, matches.count())
                      assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() }.toList())
@@ -296,7 +296,7 @@ class TestMatcher {
             y.set(456)
 
             indices(occurrence("foo", x)).run {
-                Matcher(first, occurrence("foo", y), second).matching().let { matches ->
+                Matcher(first).matching(occurrence("foo", y), second).let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(2, matches.count())
                     assertEquals(listOf("main1", "main1"), matches.map { m -> m.rule.tag() }.toList())
@@ -308,7 +308,7 @@ class TestMatcher {
             w.findRoot().union(v)
 
             indices(occurrence("foo", v)).run {
-                Matcher(first, occurrence("foo", w), second).matching().let { matches ->
+                Matcher(first).matching(occurrence("foo", w), second).let { matches ->
                     assertTrue(matches.all {m -> m.successful})
                     assertEquals(2, matches.count())
                     assertTrue(matches.all{ m -> m.allOccurrences().toSet().size == 2 })
@@ -487,12 +487,12 @@ class TestMatcher {
         )
 
         program.indices(occurrence("foo", x, parse("a{c}"))).run {
-            Matcher(first, occurrence("foo", y, parse("a{b}")), second).matching().let { matches ->
+            Matcher(first).matching(occurrence("foo", y, parse("a{b}")), second).let { matches ->
                 assertEquals("foo2", matches.single().rule.tag())
             }
         }
         program.indices(occurrence("foo", x, parse("a{b}"))).run {
-            Matcher(first, occurrence("foo", y, parse("a{c}")), second).matching().let { matches ->
+            Matcher(first).matching(occurrence("foo", y, parse("a{c}")), second).let { matches ->
                 assertEquals("foo2", matches.single().rule.tag())
             }
         }
@@ -530,6 +530,6 @@ class TestMatcher {
 
     private fun Match.allOccurrences() = (keptOccurrences + discardedOccurrences)
 
-    private fun Matcher.matching() = this.filter { m -> m.successful }
+    private fun Matcher.matching(activeOcc: ConstraintOccurrence, aux: OccurrenceIndex) = this.matches(activeOcc, aux).filter { m -> m.successful }
 
 }
