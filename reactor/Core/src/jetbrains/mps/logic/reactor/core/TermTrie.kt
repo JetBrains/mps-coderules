@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.ConsList
-import com.github.andrewoma.dexx.collection.ConsList.empty
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.util.*
@@ -57,7 +56,7 @@ class TermTrie<T>() {
 
     }
 
-    private lateinit var root: PathNode<T>
+    private var root: PathNode<T>
 
     init {
         root = PathNode(WILDCARD, 1)
@@ -67,13 +66,13 @@ class TermTrie<T>() {
         this.root = setRoot
     }
 
-    fun put(term: Term, value: T): TermTrie<T> = TermTrie(putValue(root, value, IdHashSet(), term, empty()))
+    fun put(term: Term, value: T): TermTrie<T> = TermTrie(putValue(term, value))
 
-    fun remove(term: Term, value: T): TermTrie<T> = TermTrie(removeValue(root, value, IdHashSet(), term, empty()))
+    fun remove(term: Term, value: T): TermTrie<T> = TermTrie(removeValue(term, value))
 
     fun lookupValues(term: Term): Iterable<T> {
         val result = ArrayList<T>()
-        visitMatching(root, IdHashSet(), term, empty()) { value -> result.add(value) }
+        visitMatching(term) { value -> result.add(value) }
         return result
     }
 
@@ -83,89 +82,106 @@ class TermTrie<T>() {
         return result
     }
 
-    private fun putValue(node: PathNode<T>, value: T, seen: IdHashSet<Term>, term: Term, tail: ConsList<Term>): PathNode<T> {
-        val deref = if (seen.contains(deref(term))) term else deref(term)
-        val arguments = deref.arguments()
-        val newTail = arguments.reversed().fold(tail) { list, t -> list.prepend(t) }
+    private fun putValue(matchTerm: Term, value: T): PathNode<T> {
+        val seen = IdentityHashMap<Term, Term>()
+        var nodeStack: ConsList<PathNode<T>> = cons(root)
+        val termList = arrayListOf(matchTerm)
 
-        val nextNode = node.nextOrDefault(symbolOrWildcard(deref)) { sym -> PathNode(sym, arguments.size) }
+        while (!termList.isEmpty()) {
+            val node = nodeStack.first() !!
+            val term = termList.removeAt(termList.size - 1)
 
-        //invariant: terms arity is fixed
-        assert(nextNode.arity == arguments.size)
+            // dereferece the term only if it hasn't been dereferenced before
+            val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
+            val arguments = deref.arguments().toList()
+            for(i in 1..arguments.size) {
+                termList.add(arguments[arguments.size - i])
+            }
 
-        return if (newTail.isEmpty()) {
-            node.putNext(nextNode.addValue(value))
+            val nextNode = node.nextOrDefault(symbolOrWildcard(deref)) { sym -> PathNode(sym, arguments.size) }
+            nodeStack = nodeStack.prepend(nextNode)
+        }
 
+        val head = nodeStack.first() !!
+        return nodeStack.tail().fold(head.addValue(value)) { nextNode, node -> node.putNext(nextNode) }
+    }
+
+    private fun removeValue(matchTerm: Term, value: T): PathNode<T> {
+        val seen = IdentityHashMap<Term, Term>()
+        var nodeStack: ConsList<PathNode<T>> = cons(root)
+        val termList = arrayListOf(matchTerm)
+
+        while (!termList.isEmpty()) {
+            val node = nodeStack.first() !!
+            val term = termList.removeAt(termList.size - 1)
+
+            // dereferece the term only if it hasn't been dereferenced before
+            val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
+            val arguments = deref.arguments().toList()
+            for(i in 1..arguments.size) {
+                termList.add(arguments[arguments.size - i])
+            }
+
+            val nextNode = node.next(symbolOrWildcard(deref))
+            if (nextNode == null)  {
+                // term not found
+                return root
+            }
+            nodeStack = nodeStack.prepend(nextNode)
+        }
+
+        val head = nodeStack.first() !!
+        val newHead = head.removeValue(value)
+        return if (head !== newHead) {
+            nodeStack.tail().fold(newHead) { nextNode, node -> node.putNext(nextNode) }
         } else {
-            node.putNext(putValue(nextNode, value, seen.add(term), newTail.first()!!, newTail.drop(1)))
+            // value not found
+            root
         }
     }
 
-    private fun removeValue(node: PathNode<T>, value: T, seen: IdHashSet<Term>, term: Term, tail: ConsList<Term>): PathNode<T> {
-        val deref = if (seen.contains(deref(term))) term else deref(term)
-        val arguments = deref.arguments()
-        val newTail = arguments.reversed().fold(tail) { list, t -> list.prepend(t) }
+    private fun visitMatching(matchTerm: Term, visitor: (T) -> Unit) {
+        val seen = IdentityHashMap<Term, Term>()
+        val visitList = arrayListOf(root.to(cons(matchTerm)))
 
-        return node.next(symbolOrWildcard(deref))?.let { nextNode ->
+        while (!visitList.isEmpty()) {
+            val (node, termList) = visitList.removeAt(visitList.size - 1)
+            if (!termList.isEmpty) {
+                val term = termList.first() !!
+                val termTail = termList.tail()
 
-            //invariant: terms arity is fixed
-            assert(nextNode.arity == arguments.size)
+                // dereferece the term only if it hasn't been dereferenced before
+                val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
 
-            return if (newTail.isEmpty) {
-                val newNext = nextNode.removeValue(value)
-                if (newNext != nextNode) {
-                    if (!newNext.hasValues()) {
-                        node.removeNext(newNext)
+                val sym = symbolOrWildcard(deref)
+                if (sym == WILDCARD) {
+                    if (!termTail.isEmpty) {
+                        node.skipAllNext().forEach { n -> visitList.add(n.to(termTail)) }
 
                     } else {
-                        node.putNext(newNext)
+                        node.allNext().forEach { visitAll(it, visitor) }
                     }
 
                 } else {
-                    node
-                }
-
-            } else {
-                val newNext = removeValue(nextNode, value, seen.add(term), newTail.first()!!, newTail.drop(1))
-                if (newNext !== nextNode) {
-                    if (!newNext.hasNext()) {
-                        node.removeNext(nextNode)
-
-                    } else {
-                        node.putNext(newNext)
+                    node.next(WILDCARD)?.let { nn ->
+                        nn.values().forEach(visitor)
+                        if (!termTail.isEmpty) {
+                            visitList.add(nn.to(termTail))
+                        }
                     }
+                    node.next(sym)?.let { nn ->
+                        nn.values().forEach(visitor)
 
-                } else {
-                    node
-                }
-            }
-
-        } ?: node
-    }
-
-    private fun visitMatching(node: PathNode<T>, seen: IdHashSet<Term>, term: Term, tail: ConsList<Term>, visitor: (T) -> Unit) {
-        val deref =  if (seen.contains(deref(term))) term else deref(term)
-        val sym = symbolOrWildcard(deref)
-        if (sym == WILDCARD) {
-            if (!tail.isEmpty) {
-                node.skipAllNext().forEach { visitMatching(it, seen.add(term), tail.first()!!, tail.drop(1), visitor) }
-
-            } else {
-                node.allNext().forEach { visitAll(it, visitor) }
-            }
-
-        } else {
-            node.next(sym)?.let { nn ->
-                nn.values().forEach(visitor)
-                val newTail = deref.arguments().reversed().fold(tail) { list, t -> list.prepend(t) }
-                if (!newTail.isEmpty) {
-                    visitMatching(nn, seen.add(term), newTail.first()!!, newTail.drop(1), visitor)
-                }
-            }
-            node.next(WILDCARD)?.let { nn ->
-                nn.values().forEach(visitor)
-                if (!tail.isEmpty) {
-                    visitMatching(nn, seen.add(term), tail.first()!!, tail.drop(1), visitor)
+                        var newTail = termTail
+                        val arguments = deref.arguments().toList()
+                        for(i in 1..arguments.size) {
+                            newTail = newTail.prepend(arguments[arguments.size - i])
+                        }
+                        
+                        if (!newTail.isEmpty) {
+                            visitList.add(nn.to(newTail))
+                        }
+                    }
                 }
             }
         }
@@ -193,36 +209,26 @@ class TermTrie<T>() {
         }
     }
 
-    private class PathNode<T>(val symbol: Any, val arity: Int) {
+    private class PathNode<T>(val symbol: Any,
+                              val arity: Int,
+                              val next: PersMap<Any, PathNode<T>>,
+                              val values: IdHashSet<T>)
+    {
 
-        private lateinit var next: PersMap<Any, PathNode<T>>
+        constructor(symbol: Any, arity: Int) :
+            this(symbol, arity, Maps.of(), emptySet())
 
-        private lateinit var values: IdHashSet<T>
-
-        init {
-            this.next = Maps.of()
-            this.values = emptySet()
-        }
-
-        private constructor(symbol: Any, arity: Int, next: PersMap<Any, PathNode<T>>, values: IdHashSet<T>) :
-            this(symbol, arity)
-        {
-            this.next = next
-            this.values = values
-        }
-
-        private constructor(copyFrom: PathNode<T>) :
-            this(copyFrom.symbol, copyFrom.arity, copyFrom.next, copyFrom.values)
-
-        private constructor(copyFrom: PathNode<T>, setValues: IdHashSet<T>) :
+        constructor(copyFrom: PathNode<T>, setValues: IdHashSet<T>) :
             this(copyFrom.symbol, copyFrom.arity, copyFrom.next, setValues)
 
-        private constructor(copyFrom: PathNode<T>, setNext: PersMap<Any, PathNode<T>>) :
+        constructor(copyFrom: PathNode<T>, setNext: PersMap<Any, PathNode<T>>) :
             this(copyFrom.symbol, copyFrom.arity, setNext, copyFrom.values)
 
         fun values(): Iterable<T> = values
 
         fun hasValues(): Boolean = !values.isEmpty
+
+        fun hasValue(value: T): Boolean = values.contains(value)
 
         fun next(symbol: Any): PathNode<T>? = next[symbol]
 
@@ -248,10 +254,11 @@ class TermTrie<T>() {
 
         fun addValue(value: T): PathNode<T> = PathNode(this, values.add(value))
 
-        fun removeValue(value: T): PathNode<T> = PathNode(this, values.remove(value))
+        fun removeValue(value: T): PathNode<T> =
+            if (values.contains(value)) PathNode(this, values.remove(value)) else this
 
-        fun nextOrDefault(symbol: Any,
-                          default: (sym: Any) -> PathNode<T>): PathNode<T>
+        inline fun nextOrDefault(symbol: Any,
+                                 default: (sym: Any) -> PathNode<T>): PathNode<T>
         {
             return next[symbol] ?: default(symbol)
         }
