@@ -4,7 +4,17 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
+    <modelRoot contentPath="${module}" type="java_classes">
+      <sourceRoot location="lib/rxjava-2.1.1.jar" />
+      <sourceRoot location="lib/reactive-streams-1.0.0.final.jar" />
+      <sourceRoot location="lib/rxjava2-swing-0.2.1.jar" />
+    </modelRoot>
   </models>
+  <stubModelEntries>
+    <stubModelEntry path="${module}/lib/rxjava-2.1.1.jar" />
+    <stubModelEntry path="${module}/lib/rxjava2-swing-0.2.1.jar" />
+    <stubModelEntry path="${module}/lib/reactive-streams-1.0.0.final.jar" />
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)</dependency>

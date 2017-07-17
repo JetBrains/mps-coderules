@@ -1,0 +1,14 @@
+configurations {
+    typeChecking
+}
+
+dependencies {
+    typeChecking "io.reactivex.rxjava2:rxjava:${rxjavaRevision}@jar"
+    typeChecking "com.github.akarnokd:rxjava2-swing:${rxjavaswingRevision}@jar"
+    typeChecking "org.reactivestreams:reactive-streams:${reactivestreamsRevision}@jar"
+}
+
+task copyDependencies (type: Copy) {
+  from configurations.typeChecking
+  into 'lib'
+}

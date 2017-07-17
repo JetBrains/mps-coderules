@@ -1100,7 +1100,7 @@
         </node>
         <node concept="1SiIV0" id="65DJywFj18g" role="3bR37C">
           <node concept="3bR9La" id="65DJywFj18h" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
           </node>
         </node>
@@ -1172,7 +1172,7 @@
         </node>
         <node concept="1SiIV0" id="6i42QSs2bfI" role="3bR37C">
           <node concept="3bR9La" id="6i42QSs2bfJ" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
           </node>
         </node>
@@ -1186,6 +1186,72 @@
           <node concept="3bR9La" id="1BDNG5xH$Q$" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6Lg2" resolve="jetbrains.mps.smodel.resources" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3NqN4u$_mkE" role="3bR37C">
+          <node concept="1BurEX" id="3NqN4u$_mkF" role="1SiIV1">
+            <node concept="398BVA" id="3NqN4u$_mku" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="3NqN4u$_mkv" role="iGT6I">
+                <property role="2Ry0Am" value="typechecking" />
+                <node concept="2Ry0Ak" id="3NqN4u$_mkw" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="3NqN4u$_mkx" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.typechecking" />
+                    <node concept="2Ry0Ak" id="3NqN4u$_mky" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="3NqN4u$_mkz" role="2Ry0An">
+                        <property role="2Ry0Am" value="rxjava-2.1.1.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3NqN4u$_mkS" role="3bR37C">
+          <node concept="1BurEX" id="3NqN4u$_mkT" role="1SiIV1">
+            <node concept="398BVA" id="3NqN4u$_mkG" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="3NqN4u$_mkH" role="iGT6I">
+                <property role="2Ry0Am" value="typechecking" />
+                <node concept="2Ry0Ak" id="3NqN4u$_mkI" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="3NqN4u$_mkJ" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.typechecking" />
+                    <node concept="2Ry0Ak" id="3NqN4u$_mkK" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="3NqN4u$_mkL" role="2Ry0An">
+                        <property role="2Ry0Am" value="rxjava2-swing-0.2.1.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3NqN4u$_ml6" role="3bR37C">
+          <node concept="1BurEX" id="3NqN4u$_ml7" role="1SiIV1">
+            <node concept="398BVA" id="3NqN4u$_mkU" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="3NqN4u$_mkV" role="iGT6I">
+                <property role="2Ry0Am" value="typechecking" />
+                <node concept="2Ry0Ak" id="3NqN4u$_mkW" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="3NqN4u$_mkX" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.typechecking" />
+                    <node concept="2Ry0Ak" id="3NqN4u$_mkY" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="3NqN4u$_mkZ" role="2Ry0An">
+                        <property role="2Ry0Am" value="reactive-streams-1.0.0.final.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -1292,7 +1358,7 @@
         </node>
         <node concept="1SiIV0" id="46o4wsH5OKC" role="3bR37C">
           <node concept="3bR9La" id="46o4wsH5OKD" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
           </node>
         </node>
@@ -1517,6 +1583,23 @@
               </node>
             </node>
           </node>
+          <node concept="2HvfSZ" id="3NqN4u$_rqd" role="39821P">
+            <node concept="398BVA" id="3NqN4u$_rqe" role="2HvfZ0">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="3NqN4u$_rqf" role="iGT6I">
+                <property role="2Ry0Am" value="typechecking" />
+                <node concept="2Ry0Ak" id="3NqN4u$_rqg" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="3NqN4u$_rqh" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.typechecking" />
+                    <node concept="2Ry0Ak" id="3NqN4u$_rqi" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3981dG" id="65DJywFjdtY" role="39821P">
@@ -1662,6 +1745,69 @@
             </node>
             <node concept="L2wRC" id="65DJywFj_1R" role="39821P">
               <ref role="L2wRA" node="65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
+              <node concept="3yLZsm" id="3NqN4u$_rT6" role="3yL2VB">
+                <property role="3yLZsk" value="../lib/reactive-streams-1.0.0.final-0.7.jar" />
+                <node concept="398BVA" id="3NqN4u$_rT7" role="3yLZsn">
+                  <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+                  <node concept="2Ry0Ak" id="3NqN4u$_rT8" role="iGT6I">
+                    <property role="2Ry0Am" value="typechecking" />
+                    <node concept="2Ry0Ak" id="3NqN4u$_rT9" role="2Ry0An">
+                      <property role="2Ry0Am" value="solutions" />
+                      <node concept="2Ry0Ak" id="3NqN4u$_rTa" role="2Ry0An">
+                        <property role="2Ry0Am" value="jetbrains.mps.typechecking" />
+                        <node concept="2Ry0Ak" id="3NqN4u$_rTb" role="2Ry0An">
+                          <property role="2Ry0Am" value="lib" />
+                          <node concept="2Ry0Ak" id="3NqN4u$_s8k" role="2Ry0An">
+                            <property role="2Ry0Am" value="reactive-streams-1.0.0.final.jar" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3yLZsm" id="3NqN4u$_sim" role="3yL2VB">
+                <property role="3yLZsk" value="../lib/rxjava-2.1.1.jar" />
+                <node concept="398BVA" id="3NqN4u$_sin" role="3yLZsn">
+                  <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+                  <node concept="2Ry0Ak" id="3NqN4u$_sio" role="iGT6I">
+                    <property role="2Ry0Am" value="typechecking" />
+                    <node concept="2Ry0Ak" id="3NqN4u$_sip" role="2Ry0An">
+                      <property role="2Ry0Am" value="solutions" />
+                      <node concept="2Ry0Ak" id="3NqN4u$_siq" role="2Ry0An">
+                        <property role="2Ry0Am" value="jetbrains.mps.typechecking" />
+                        <node concept="2Ry0Ak" id="3NqN4u$_sir" role="2Ry0An">
+                          <property role="2Ry0Am" value="lib" />
+                          <node concept="2Ry0Ak" id="3NqN4u$_snF" role="2Ry0An">
+                            <property role="2Ry0Am" value="rxjava-2.1.1.jar" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3yLZsm" id="3NqN4u$_sxH" role="3yL2VB">
+                <property role="3yLZsk" value="../lib/rxjava2-swing-0.2.1.jar" />
+                <node concept="398BVA" id="3NqN4u$_sxI" role="3yLZsn">
+                  <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+                  <node concept="2Ry0Ak" id="3NqN4u$_sxJ" role="iGT6I">
+                    <property role="2Ry0Am" value="typechecking" />
+                    <node concept="2Ry0Ak" id="3NqN4u$_sxK" role="2Ry0An">
+                      <property role="2Ry0Am" value="solutions" />
+                      <node concept="2Ry0Ak" id="3NqN4u$_sxL" role="2Ry0An">
+                        <property role="2Ry0Am" value="jetbrains.mps.typechecking" />
+                        <node concept="2Ry0Ak" id="3NqN4u$_sxM" role="2Ry0An">
+                          <property role="2Ry0Am" value="lib" />
+                          <node concept="2Ry0Ak" id="3NqN4u$_sB9" role="2Ry0An">
+                            <property role="2Ry0Am" value="rxjava2-swing-0.2.1.jar" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="L2wRC" id="3u5wJtgSbK" role="39821P">
               <ref role="L2wRA" node="3u5wJtgiSM" resolve="jetbrains.mps.lang.smodel.types" />
@@ -1677,6 +1823,22 @@
                     <node concept="2Ry0Ak" id="65DJywFkaUU" role="2Ry0An">
                       <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
                       <node concept="2Ry0Ak" id="65DJywFkaUZ" role="2Ry0An">
+                        <property role="2Ry0Am" value="lib" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2HvfSZ" id="3NqN4u$_rD_" role="39821P">
+              <node concept="55IIr" id="3NqN4u$_rDA" role="2HvfZ0">
+                <node concept="2Ry0Ak" id="3NqN4u$_rDB" role="iGT6I">
+                  <property role="2Ry0Am" value="typechecking" />
+                  <node concept="2Ry0Ak" id="3NqN4u$_rDC" role="2Ry0An">
+                    <property role="2Ry0Am" value="solutions" />
+                    <node concept="2Ry0Ak" id="3NqN4u$_rDD" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.typechecking" />
+                      <node concept="2Ry0Ak" id="3NqN4u$_rDE" role="2Ry0An">
                         <property role="2Ry0Am" value="lib" />
                       </node>
                     </node>
