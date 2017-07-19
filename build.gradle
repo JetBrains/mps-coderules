@@ -28,7 +28,7 @@ dependencies {
   }
 
   // MPS-related stuff declared as project properties
-  mps "${mpsBuildConfiguration}:MPS:${mpsBuildNumber}:${mpsRelease}.tcbuildtag@zip"
+  mps "${mpsBuildConfiguration}:MPS:${mpsBuildNumber}:${mpsBuildLabel}.tcbuildtag@zip"
 }
 
 task installMps(type: Copy)  {

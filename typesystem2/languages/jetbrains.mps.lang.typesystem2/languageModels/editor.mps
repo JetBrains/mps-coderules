@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="7" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -162,6 +162,7 @@
       <concept id="8998492695583129991" name="jetbrains.mps.lang.editor.structure.SubstituteFeature_CanSubstitute" flags="ng" index="16NL3D">
         <child id="8998492695583129992" name="query" index="16NL3A" />
       </concept>
+      <concept id="2115302367868116903" name="jetbrains.mps.lang.editor.structure.GeneratedSubstituteMenuAttribute" flags="ng" index="382kZG" />
       <concept id="1154465273778" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode" flags="nn" index="3bvxqY" />
       <concept id="1838685759388685703" name="jetbrains.mps.lang.editor.structure.TransformationFeature_DescriptionText" flags="ng" index="3cqGtN">
         <child id="1838685759388685704" name="query" index="3cqGtW" />
@@ -313,6 +314,9 @@
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1950447826681509042" name="jetbrains.mps.lang.editor.structure.ApplyStyleClass" flags="lg" index="3Xmtl4">
         <child id="1950447826683828796" name="target" index="3XvnJa" />
+      </concept>
+      <concept id="8428109087107030357" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_ReferenceScope" flags="ng" index="3XHNnq">
+        <reference id="8428109087107339113" name="reference" index="3XGfJA" />
       </concept>
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -5415,8 +5419,10 @@
           </node>
         </node>
       </node>
-      <node concept="3ft5Ry" id="4hPXq9Jmete" role="3ft5RZ">
-        <ref role="4PJHt" to="wq2x:7IysFeA1uPa" resolve="TypeDeclarationParameterReference" />
+      <node concept="1s_PAr" id="3yBNtx8$qrr" role="3ft5RZ">
+        <node concept="2kknPI" id="3yBNtx8$qrs" role="1s_PAo">
+          <ref role="2kkw0f" node="3yBNtx8$qnP" resolve="TypeDeclarationParameterReference_SmartReference" />
+        </node>
       </node>
     </node>
   </node>
@@ -6799,8 +6805,10 @@
           </node>
         </node>
       </node>
-      <node concept="3ft5Ry" id="4bWqD4C22EU" role="3ft5RZ">
-        <ref role="4PJHt" to="wq2x:4MEOIDFxxDM" resolve="TermDeclarationParameterRef" />
+      <node concept="1s_PAr" id="3yBNtx8$qro" role="3ft5RZ">
+        <node concept="2kknPI" id="3yBNtx8$qrp" role="1s_PAo">
+          <ref role="2kkw0f" node="3yBNtx8$qnF" resolve="TermDeclarationParameterRef_SmartReference" />
+        </node>
       </node>
     </node>
   </node>
@@ -6969,6 +6977,24 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="Q6S24" id="3yBNtx8$qnF">
+    <property role="TrG5h" value="TermDeclarationParameterRef_SmartReference" />
+    <property role="3GE5qa" value="term" />
+    <ref role="aqKnT" to="wq2x:4MEOIDFxxDM" resolve="TermDeclarationParameterRef" />
+    <node concept="3XHNnq" id="3yBNtx8$qnE" role="3ft7WO">
+      <ref role="3XGfJA" to="wq2x:4MEOIDFxxDY" resolve="parameter" />
+    </node>
+    <node concept="382kZG" id="3yBNtx8$qnG" role="lGtFl" />
+  </node>
+  <node concept="Q6S24" id="3yBNtx8$qnP">
+    <property role="TrG5h" value="TypeDeclarationParameterReference_SmartReference" />
+    <property role="3GE5qa" value="type.decl" />
+    <ref role="aqKnT" to="wq2x:7IysFeA1uPa" resolve="TypeDeclarationParameterReference" />
+    <node concept="3XHNnq" id="3yBNtx8$qnO" role="3ft7WO">
+      <ref role="3XGfJA" to="wq2x:7IysFeA1uTj" resolve="parameter" />
+    </node>
+    <node concept="382kZG" id="3yBNtx8$qnQ" role="lGtFl" />
   </node>
 </model>
 

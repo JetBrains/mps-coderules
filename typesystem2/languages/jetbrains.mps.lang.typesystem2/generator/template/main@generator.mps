@@ -6,7 +6,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7" version="-1" />
@@ -325,6 +325,7 @@
       </concept>
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
         <reference id="1112820671508" name="modifiedSwitch" index="phYkn" />
+        <child id="1226355936225" name="nullInputMessage" index="28wCFW" />
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
@@ -14348,6 +14349,16 @@
           <node concept="29HgVG" id="7HUwyZb4Sps" role="lGtFl" />
         </node>
       </node>
+    </node>
+    <node concept="j$LIH" id="37pq54QuGuf" role="jxRDz">
+      <node concept="1lLz0L" id="37pq54QuGui" role="1lHHLF">
+        <property role="1lMjX7" value="error" />
+        <property role="1lLB17" value="unsupported concept" />
+      </node>
+    </node>
+    <node concept="1lLz0L" id="37pq54QuGuk" role="28wCFW">
+      <property role="1lMjX7" value="error" />
+      <property role="1lLB17" value="expression type is null" />
     </node>
   </node>
   <node concept="jVnub" id="49L2l3F7WoC">
