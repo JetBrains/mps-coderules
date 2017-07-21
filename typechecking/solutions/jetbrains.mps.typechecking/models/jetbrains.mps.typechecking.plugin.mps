@@ -8023,13 +8023,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4VwaB4LBuYD" role="jymVt" />
-    <node concept="3clFb_" id="7vxJ_H4$JVL" role="jymVt">
-      <property role="TrG5h" value="foo" />
-      <node concept="3cqZAl" id="7vxJ_H4$JVO" role="3clF45" />
-      <node concept="3Tm6S6" id="7vxJ_H4$JVN" role="1B3o_S" />
-      <node concept="3clFbS" id="7vxJ_H4$JVP" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="7vxJ_H4$DI$" role="jymVt" />
     <node concept="3clFb_" id="4VwaB4LCWiv" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createTableRenderer" />
@@ -8120,6 +8113,19 @@
             </node>
             <node concept="37vLTw" id="4VwaB4LCKaB" role="37wK5m">
               <ref role="3cqZAo" node="4VwaB4LCgf_" resolve="treeTableTree" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="6kREIVlapA7" role="3cqZAp">
+            <node concept="37vLTI" id="6kREIVlarJl" role="3clFbG">
+              <node concept="37vLTw" id="6kREIVlav6o" role="37vLTx">
+                <ref role="3cqZAo" node="4VwaB4LCgf_" resolve="treeTableTree" />
+              </node>
+              <node concept="2OqwBi" id="6kREIVlapR2" role="37vLTJ">
+                <node concept="Xjq3P" id="6kREIVlapA5" role="2Oq$k0" />
+                <node concept="2OwXpG" id="6kREIVlaqbB" role="2OqNvi">
+                  <ref role="2Oxat5" node="6kREIVlal0i" resolve="origTree" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -8291,9 +8297,36 @@
           <node concept="10Oyi0" id="4VwaB4LBxI0" role="1tU5fm" />
         </node>
         <node concept="3clFbS" id="4VwaB4LBxI1" role="3clF47">
-          <node concept="3clFbH" id="4VwaB4LBybv" role="3cqZAp" />
-          <node concept="3clFbF" id="4VwaB4LBxIa" role="3cqZAp">
-            <node concept="3nyPlj" id="4VwaB4LBxI9" role="3clFbG">
+          <node concept="3clFbJ" id="6kREIVlblJj" role="3cqZAp">
+            <node concept="3clFbS" id="6kREIVlblJl" role="3clFbx">
+              <node concept="3SKdUt" id="6kREIVlbxWz" role="3cqZAp">
+                <node concept="3SKdUq" id="6kREIVlbxW_" role="3SKWNk">
+                  <property role="3SKdUp" value="stale renderer, return a dumb component (can't be null because of JBTable.prepareRenderer() contract" />
+                </node>
+              </node>
+              <node concept="3cpWs6" id="6kREIVlb$0c" role="3cqZAp">
+                <node concept="2ShNRf" id="6kREIVldbpO" role="3cqZAk">
+                  <node concept="1pGfFk" id="6kREIVldiPb" role="2ShVmc">
+                    <ref role="37wK5l" to="dxuu:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
+                    <node concept="Xl_RD" id="6kREIVldlnb" role="37wK5m">
+                      <property role="Xl_RC" value="" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="6kREIVlbrUl" role="3clFbw">
+              <node concept="1rXfSq" id="6kREIVlbvfr" role="3uHU7w">
+                <ref role="37wK5l" to="u30n:~TreeTable.getTree():com.intellij.ui.treeStructure.treetable.TreeTableTree" resolve="getTree" />
+              </node>
+              <node concept="37vLTw" id="6kREIVlbp2Y" role="3uHU7B">
+                <ref role="3cqZAo" node="6kREIVlal0i" resolve="origTree" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="6kREIVlcogR" role="3cqZAp" />
+          <node concept="3cpWs6" id="6kREIVl6P92" role="3cqZAp">
+            <node concept="3nyPlj" id="4VwaB4LBxI9" role="3cqZAk">
               <ref role="37wK5l" to="u30n:~TreeTableCellRenderer.getTableCellRendererComponent(javax.swing.JTable,java.lang.Object,boolean,boolean,int,int):java.awt.Component" resolve="getTableCellRendererComponent" />
               <node concept="37vLTw" id="4VwaB4LBxI3" role="37wK5m">
                 <ref role="3cqZAo" node="4VwaB4LBxHP" resolve="table" />
@@ -8319,6 +8352,14 @@
         </node>
         <node concept="2AHcQZ" id="4VwaB4LBxI2" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="6kREIVlah2h" role="jymVt" />
+      <node concept="312cEg" id="6kREIVlal0i" role="jymVt">
+        <property role="TrG5h" value="origTree" />
+        <node concept="3Tm6S6" id="6kREIVlal0j" role="1B3o_S" />
+        <node concept="3uibUv" id="6kREIVlanho" role="1tU5fm">
+          <ref role="3uigEE" to="u30n:~TreeTableTree" resolve="TreeTableTree" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4VwaB4LBwk2" role="1B3o_S" />
