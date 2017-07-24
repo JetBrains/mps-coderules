@@ -13,6 +13,6 @@ config/*
 system/*
 logic/solutions/jetbrains.mps.logic.reactor/lib/*
 logic/solutions/jetbrains.mps.logic.test/lib/*
-typechecking/solutions/jetbrains.mps.typechecking/lib/*
+typechecking/solutions/jetbrains.mps.typechecking.ui/lib/*
 MPS_HOME
 TEST-*

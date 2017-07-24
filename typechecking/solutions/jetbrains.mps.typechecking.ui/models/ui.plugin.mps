@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.typechecking.plugin)">
+<model ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.typechecking.ui.plugin)">
   <persistence version="9" />
   <languages>
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
@@ -88,14 +88,14 @@
     <import index="umch" ref="r:4caa22a9-5195-4617-8800-5f9f74cc4480(jetbrains.mps.lang.typesystem2.helper.plugin)" />
     <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
     <import index="jkny" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm(MPS.IDEA/)" />
-    <import index="m4y7" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:io.reactivex.schedulers(jetbrains.mps.typechecking/)" />
-    <import index="unkn" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:io.reactivex(jetbrains.mps.typechecking/)" />
-    <import index="f4yq" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:hu.akarnokd.rxjava2.swing(jetbrains.mps.typechecking/)" />
-    <import index="e0w6" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:io.reactivex.observers(jetbrains.mps.typechecking/)" />
+    <import index="m4y7" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:io.reactivex.schedulers(jetbrains.mps.typechecking.ui/)" />
+    <import index="unkn" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:io.reactivex(jetbrains.mps.typechecking.ui/)" />
+    <import index="f4yq" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:hu.akarnokd.rxjava2.swing(jetbrains.mps.typechecking.ui/)" />
+    <import index="e0w6" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:io.reactivex.observers(jetbrains.mps.typechecking.ui/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
-    <import index="xi6c" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:io.reactivex.functions(jetbrains.mps.typechecking/)" />
+    <import index="xi6c" ref="35e2a720-13d8-4eda-88d3-ff9d78d5a3ae/java:io.reactivex.functions(jetbrains.mps.typechecking.ui/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>

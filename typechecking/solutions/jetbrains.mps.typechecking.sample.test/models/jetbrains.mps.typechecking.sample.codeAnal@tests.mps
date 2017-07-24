@@ -10,7 +10,7 @@
   </languages>
   <imports>
     <import index="hwt6" ref="r:1f3a7853-f20c-4f91-9912-5e82d9d1651a(jetbrains.mps.typechecking.sample.codeAnal)" />
-    <import index="t5kh" ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.typechecking.plugin)" />
+    <import index="t5kh" ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.typechecking.ui.plugin)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   </imports>
   <registry>

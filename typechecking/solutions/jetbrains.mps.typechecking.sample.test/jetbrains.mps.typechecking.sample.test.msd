@@ -9,7 +9,7 @@
   <dependencies>
     <dependency reexport="false">3ddddf69-9ff0-426b-9365-51ae7356fb82(jetbrains.mps.typechecking.sample)</dependency>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
-    <dependency reexport="false">35e2a720-13d8-4eda-88d3-ff9d78d5a3ae(jetbrains.mps.typechecking)</dependency>
+    <dependency reexport="false">35e2a720-13d8-4eda-88d3-ff9d78d5a3ae(jetbrains.mps.typechecking.ui)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="5" />
