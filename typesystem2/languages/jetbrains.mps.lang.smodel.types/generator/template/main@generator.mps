@@ -6,7 +6,8 @@
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
-    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.typechecking)" />
+    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.evaluation)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.typechecking)" />
     <import index="z8tp" ref="r:5bfbd177-208e-4d27-b74c-2ebd2a92eb80(jetbrains.mps.lang.smodel.types.structure)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
@@ -75,12 +76,12 @@
         <node concept="3clFbS" id="3u5wJtc3VJ" role="1Koe22">
           <node concept="3clFbF" id="3u5wJtc3VK" role="3cqZAp">
             <node concept="2OqwBi" id="3u5wJtc3VL" role="3clFbG">
-              <node concept="2YIFZM" id="3u5wJtc3VM" role="2Oq$k0">
-                <ref role="37wK5l" to="hano:7kaxm0sEy4A" resolve="getInstance" />
-                <ref role="1Pybhc" to="hano:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+              <node concept="2YIFZM" id="55Q$YFtvvQe" role="2Oq$k0">
+                <ref role="37wK5l" to="tj24:7kaxm0sEy4A" resolve="getInstance" />
+                <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingFacade" />
               </node>
               <node concept="liA8E" id="3u5wJtc3VN" role="2OqNvi">
-                <ref role="37wK5l" to="hano:7kaxm0sEBHs" resolve="typeOf" />
+                <ref role="37wK5l" to="tj24:7kaxm0sEBHs" resolve="typeOf" />
                 <node concept="10Nm6u" id="3u5wJtc3VO" role="37wK5m">
                   <node concept="29HgVG" id="3u5wJtc3VP" role="lGtFl">
                     <node concept="3NFfHV" id="3u5wJtc3VQ" role="3NFExx">

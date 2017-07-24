@@ -11,6 +11,7 @@
     <import index="7rut" ref="r:b1bec7fa-733c-4182-bbd4-b266e3d7e6db(jetbrains.mps.typechecking.sample.bounds.bad)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="t5kh" ref="r:1514c681-0724-461e-a435-315a6af4b3b4(jetbrains.mps.typechecking.ui.plugin)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.typechecking)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -108,9 +109,9 @@
       <node concept="3clFbS" id="1N_0WA5DT8I" role="3clF47">
         <node concept="2Hmddi" id="4ekooLap0nE" role="3cqZAp">
           <node concept="2OqwBi" id="6nJA6bpKqaJ" role="2Hmdds">
-            <node concept="2YIFZM" id="6nJA6bpKq32" role="2Oq$k0">
-              <ref role="37wK5l" to="t5kh:7y50OW6XU7p" resolve="checkTypes" />
-              <ref role="1Pybhc" to="t5kh:1N_0WA5JxZO" resolve="LaunchTypechecking" />
+            <node concept="2YIFZM" id="6IQb_RxcBBy" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="LaunchTypechecking" />
               <node concept="2OqwBi" id="6nJA6bpKq33" role="37wK5m">
                 <node concept="3xONca" id="6nJA6bpKq34" role="2Oq$k0">
                   <ref role="3xOPvv" node="1N_0WA5DX6Z" resolve="Test_Sample_bad1" />
@@ -122,7 +123,7 @@
               <node concept="1jxXqW" id="6nJA6bpKq36" role="37wK5m" />
             </node>
             <node concept="liA8E" id="6nJA6bpKqof" role="2OqNvi">
-              <ref role="37wK5l" to="t5kh:7y50OW6Y0Sl" resolve="error" />
+              <ref role="37wK5l" to="tj24:7y50OW6Y0Sl" resolve="error" />
             </node>
           </node>
           <node concept="3_1$Yv" id="4ekooLap0B2" role="3_9lra">
@@ -139,9 +140,9 @@
       <node concept="3clFbS" id="4ekooLap0M$" role="3clF47">
         <node concept="2Hmddi" id="4ekooLap0MH" role="3cqZAp">
           <node concept="2OqwBi" id="6nJA6bpKqCv" role="2Hmdds">
-            <node concept="2YIFZM" id="6nJA6bpKqwM" role="2Oq$k0">
-              <ref role="37wK5l" to="t5kh:7y50OW6XU7p" resolve="checkTypes" />
-              <ref role="1Pybhc" to="t5kh:1N_0WA5JxZO" resolve="LaunchTypechecking" />
+            <node concept="2YIFZM" id="6IQb_RxcBBv" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="LaunchTypechecking" />
               <node concept="2OqwBi" id="6nJA6bpKqwN" role="37wK5m">
                 <node concept="3xONca" id="6nJA6bpKqwO" role="2Oq$k0">
                   <ref role="3xOPvv" node="1N_0WA5J$6h" resolve="Test_Sample_bad2" />
@@ -153,7 +154,7 @@
               <node concept="1jxXqW" id="6nJA6bpKqwQ" role="37wK5m" />
             </node>
             <node concept="liA8E" id="6nJA6bpKqQf" role="2OqNvi">
-              <ref role="37wK5l" to="t5kh:7y50OW6Y0Sl" resolve="error" />
+              <ref role="37wK5l" to="tj24:7y50OW6Y0Sl" resolve="error" />
             </node>
           </node>
           <node concept="3_1$Yv" id="4ekooLap0MN" role="3_9lra">
