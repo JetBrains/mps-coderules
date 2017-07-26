@@ -99,6 +99,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
@@ -1227,6 +1228,9 @@
     <property role="3OwPAg" value="true" />
     <node concept="1LZb2c" id="7y50OW6TxjM" role="1SL9yI">
       <property role="TrG5h" value="typechecking" />
+      <node concept="3uibUv" id="4BHjwwGTD0T" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
       <node concept="3cqZAl" id="7y50OW6TxjN" role="3clF45" />
       <node concept="3clFbS" id="7y50OW6TxjR" role="3clF47">
         <node concept="3cpWs8" id="4BHjwwGTLX5" role="3cqZAp">
