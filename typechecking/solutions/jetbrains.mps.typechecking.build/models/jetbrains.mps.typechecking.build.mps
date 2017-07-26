@@ -826,12 +826,6 @@
             <ref role="3bR37D" node="7BVjoXzUx9d" resolve="jetbrains.mps.lang.typesystem2.template" />
           </node>
         </node>
-        <node concept="1SiIV0" id="3u5wJtgkkr" role="3bR37C">
-          <node concept="3bR9La" id="3u5wJtgkks" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="3u5wJtgk3a" resolve="jetbrains.mps.lang.typesystem2.helper" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="3u5wJtgkkt" role="3bR37C">
           <node concept="3bR9La" id="3u5wJtgkku" role="1SiIV1">
             <property role="3bR36h" value="false" />
