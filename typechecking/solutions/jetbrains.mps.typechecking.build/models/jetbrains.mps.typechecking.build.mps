@@ -1081,6 +1081,12 @@
             <ref role="3bR37D" node="55Q$YFtvwQY" resolve="jetbrains.mps.typechecking.ui" />
           </node>
         </node>
+        <node concept="1SiIV0" id="14$_tTxAZfS" role="3bR37C">
+          <node concept="3bR9La" id="14$_tTxAZfT" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="65DJywFj0uW" role="3989C9">
