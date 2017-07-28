@@ -13,7 +13,6 @@
   </languages>
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="umch" ref="r:4caa22a9-5195-4617-8800-5f9f74cc4480(jetbrains.mps.lang.typesystem2.helper.plugin)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="cmfw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.event(MPS.OpenAPI/)" />
@@ -46,6 +45,7 @@
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.typechecking.plugin)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -623,11 +623,11 @@
           <node concept="3cpWsn" id="7kaxm0sECXE" role="3cpWs9">
             <property role="TrG5h" value="tc" />
             <node concept="3uibUv" id="7kaxm0sECXA" role="1tU5fm">
-              <ref role="3uigEE" to="umch:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+              <ref role="3uigEE" to="qox2:4Z$O9mrQIzY" resolve="TypecheckingCache" />
             </node>
             <node concept="2YIFZM" id="443LGHBoCc8" role="33vP2m">
-              <ref role="37wK5l" to="umch:4Z$O9mrQIG1" resolve="get" />
-              <ref role="1Pybhc" to="umch:4Z$O9mrQIzY" resolve="TypecheckingCache" />
+              <ref role="37wK5l" to="qox2:4Z$O9mrQIG1" resolve="get" />
+              <ref role="1Pybhc" to="qox2:4Z$O9mrQIzY" resolve="TypecheckingCache" />
               <node concept="37vLTw" id="7kaxm0sECXG" role="37wK5m">
                 <ref role="3cqZAo" node="6$7vuu2wPaF" resolve="repository" />
               </node>
@@ -638,14 +638,14 @@
           <node concept="3cpWsn" id="7kaxm0sEDgr" role="3cpWs9">
             <property role="TrG5h" value="typesCache" />
             <node concept="3uibUv" id="443LGHByOkC" role="1tU5fm">
-              <ref role="3uigEE" to="umch:443LGHBxJ1f" resolve="TypecheckingCache.Clearable" />
+              <ref role="3uigEE" to="qox2:443LGHBxJ1f" resolve="TypecheckingCache.Clearable" />
             </node>
             <node concept="2OqwBi" id="7kaxm0sEDgs" role="33vP2m">
               <node concept="37vLTw" id="7kaxm0sEDgt" role="2Oq$k0">
                 <ref role="3cqZAo" node="7kaxm0sECXE" resolve="tc" />
               </node>
               <node concept="liA8E" id="7kaxm0sEDgu" role="2OqNvi">
-                <ref role="37wK5l" to="umch:4Z$O9mrQJgp" resolve="cachedTypes" />
+                <ref role="37wK5l" to="qox2:4Z$O9mrQJgp" resolve="cachedTypes" />
                 <node concept="2OqwBi" id="443LGHB6JxP" role="37wK5m">
                   <node concept="2JrnkZ" id="443LGHB6Irq" role="2Oq$k0">
                     <node concept="37vLTw" id="7kaxm0sEDgv" role="2JrQYb">
@@ -672,7 +672,7 @@
                     <ref role="3cqZAo" node="7kaxm0sECXE" resolve="tc" />
                   </node>
                   <node concept="liA8E" id="6QH_LDtbKr5" role="2OqNvi">
-                    <ref role="37wK5l" to="umch:6QH_LDtbsGz" resolve="updateCachedTypes" />
+                    <ref role="37wK5l" to="qox2:6QH_LDtbsGz" resolve="updateCachedTypes" />
                     <node concept="2OqwBi" id="443LGHB5CaU" role="37wK5m">
                       <node concept="2JrnkZ" id="443LGHB5B45" role="2Oq$k0">
                         <node concept="37vLTw" id="6QH_LDtbKtg" role="2JrQYb">
@@ -943,18 +943,18 @@
                           <node concept="3cpWsn" id="443LGHBd5ma" role="3cpWs9">
                             <property role="TrG5h" value="typesModelOwner" />
                             <node concept="3uibUv" id="443LGHBd5m3" role="1tU5fm">
-                              <ref role="3uigEE" to="umch:2zU3cYq$91A" resolve="TypesModelManager.ModelOwner" />
+                              <ref role="3uigEE" to="qox2:2zU3cYq$91A" resolve="TypesModelManager.ModelOwner" />
                             </node>
                             <node concept="2OqwBi" id="443LGHBd5mb" role="33vP2m">
                               <node concept="2YIFZM" id="443LGHBd5mc" role="2Oq$k0">
-                                <ref role="37wK5l" to="umch:2zU3cYqxb_u" resolve="get" />
-                                <ref role="1Pybhc" to="umch:2zU3cYqxbbL" resolve="TypesModelManager" />
+                                <ref role="37wK5l" to="qox2:2zU3cYqxb_u" resolve="get" />
+                                <ref role="1Pybhc" to="qox2:2zU3cYqxbbL" resolve="TypesModelManager" />
                                 <node concept="37vLTw" id="443LGHBdctZ" role="37wK5m">
                                   <ref role="3cqZAo" node="6$7vuu2wPaF" resolve="repository" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="443LGHBd5mg" role="2OqNvi">
-                                <ref role="37wK5l" to="umch:2zU3cYq$52j" resolve="emptyModel" />
+                                <ref role="37wK5l" to="qox2:2zU3cYq$52j" resolve="emptyModel" />
                               </node>
                             </node>
                           </node>
@@ -968,7 +968,7 @@
                                 <ref role="3cqZAo" node="443LGHBd5ma" resolve="typesModelOwner" />
                               </node>
                               <node concept="liA8E" id="443LGHBdhzZ" role="2OqNvi">
-                                <ref role="37wK5l" to="umch:2zU3cYq$9HD" resolve="model" />
+                                <ref role="37wK5l" to="qox2:2zU3cYq$9HD" resolve="model" />
                               </node>
                             </node>
                           </node>
@@ -7764,8 +7764,8 @@
                         <node concept="37vLTI" id="443LGHBcHIm" role="3clFbG">
                           <node concept="2OqwBi" id="443LGHBcO$x" role="37vLTx">
                             <node concept="2YIFZM" id="443LGHBcO$y" role="2Oq$k0">
-                              <ref role="37wK5l" to="umch:2zU3cYqxb_u" resolve="get" />
-                              <ref role="1Pybhc" to="umch:2zU3cYqxbbL" resolve="TypesModelManager" />
+                              <ref role="37wK5l" to="qox2:2zU3cYqxb_u" resolve="get" />
+                              <ref role="1Pybhc" to="qox2:2zU3cYqxbbL" resolve="TypesModelManager" />
                               <node concept="2OqwBi" id="443LGHBcO$z" role="37wK5m">
                                 <node concept="37vLTw" id="443LGHBcO$$" role="2Oq$k0">
                                   <ref role="3cqZAo" node="6IQb_RxlCww" resolve="mpsProject" />
@@ -7776,7 +7776,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="443LGHBcO$A" role="2OqNvi">
-                              <ref role="37wK5l" to="umch:2zU3cYq$52j" resolve="emptyModel" />
+                              <ref role="37wK5l" to="qox2:2zU3cYq$52j" resolve="emptyModel" />
                             </node>
                           </node>
                           <node concept="2OqwBi" id="443LGHBcD5o" role="37vLTJ">
@@ -7796,7 +7796,7 @@
                               <ref role="3cqZAo" node="443LGHBc_9c" resolve="typesModelOwner" />
                             </node>
                             <node concept="liA8E" id="Hg6EncbtTq" role="2OqNvi">
-                              <ref role="37wK5l" to="umch:2zU3cYq$9HD" resolve="model" />
+                              <ref role="37wK5l" to="qox2:2zU3cYq$9HD" resolve="model" />
                             </node>
                           </node>
                         </node>
@@ -7971,7 +7971,7 @@
                             <ref role="3cqZAo" node="443LGHBc_9c" resolve="typesModelOwner" />
                           </node>
                           <node concept="liA8E" id="Hg6EncbtUC" role="2OqNvi">
-                            <ref role="37wK5l" to="umch:2zU3cYq$pNG" resolve="register" />
+                            <ref role="37wK5l" to="qox2:2zU3cYq$pNG" resolve="register" />
                           </node>
                         </node>
                       </node>
@@ -8105,7 +8105,7 @@
       <property role="TrG5h" value="typesModelOwner" />
       <node concept="3Tm6S6" id="443LGHBc_9d" role="1B3o_S" />
       <node concept="3uibUv" id="443LGHBcAnA" role="1tU5fm">
-        <ref role="3uigEE" to="umch:2zU3cYq$91A" resolve="TypesModelManager.ModelOwner" />
+        <ref role="3uigEE" to="qox2:2zU3cYq$91A" resolve="TypesModelManager.ModelOwner" />
       </node>
     </node>
     <node concept="3Tm1VV" id="6IQb_RxlB9w" role="1B3o_S" />
@@ -8191,7 +8191,7 @@
       <node concept="37vLTG" id="443LGHBcWVk" role="3clF46">
         <property role="TrG5h" value="modelOwner" />
         <node concept="3uibUv" id="443LGHBcXDO" role="1tU5fm">
-          <ref role="3uigEE" to="umch:2zU3cYq$91A" resolve="TypesModelManager.ModelOwner" />
+          <ref role="3uigEE" to="qox2:2zU3cYq$91A" resolve="TypesModelManager.ModelOwner" />
         </node>
       </node>
       <node concept="3cqZAl" id="443LGHBcVeV" role="3clF45" />
@@ -8237,7 +8237,7 @@
               <ref role="3cqZAo" node="6QH_LDtcxh0" resolve="typesModelOwner" />
             </node>
             <node concept="liA8E" id="6QH_LDtcxgL" role="2OqNvi">
-              <ref role="37wK5l" to="umch:2zU3cYq$$V4" resolve="clear" />
+              <ref role="37wK5l" to="qox2:2zU3cYq$$V4" resolve="clear" />
             </node>
           </node>
         </node>
@@ -8327,7 +8327,7 @@
       <property role="TrG5h" value="typesModelOwner" />
       <node concept="3Tm6S6" id="6QH_LDtcxh1" role="1B3o_S" />
       <node concept="3uibUv" id="6QH_LDtcxh2" role="1tU5fm">
-        <ref role="3uigEE" to="umch:2zU3cYq$91A" resolve="TypesModelManager.ModelOwner" />
+        <ref role="3uigEE" to="qox2:2zU3cYq$91A" resolve="TypesModelManager.ModelOwner" />
       </node>
     </node>
     <node concept="312cEg" id="6QH_LDtcJq4" role="jymVt">
@@ -8373,7 +8373,7 @@
     <node concept="2tJIrI" id="6QH_LDtffK6" role="jymVt" />
     <node concept="3Tm1VV" id="6QH_LDtfe1a" role="1B3o_S" />
     <node concept="3uibUv" id="443LGHBy9d5" role="3HQHJm">
-      <ref role="3uigEE" to="umch:443LGHBxJ1f" resolve="TypecheckingCache.Clearable" />
+      <ref role="3uigEE" to="qox2:443LGHBxJ1f" resolve="TypecheckingCache.Clearable" />
     </node>
   </node>
 </model>

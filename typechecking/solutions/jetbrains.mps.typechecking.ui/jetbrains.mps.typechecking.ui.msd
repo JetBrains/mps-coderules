@@ -19,7 +19,6 @@
     <dependency reexport="true">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
     <dependency reexport="false">bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)</dependency>
     <dependency reexport="true">bfbdd672-7ff5-403f-af4f-16da5226f34c(jetbrains.mps.findUsages.runtime)</dependency>
-    <dependency reexport="false">274c9cfa-1024-4444-904c-f2f1383a35da(jetbrains.mps.lang.typesystem2.helper)</dependency>
     <dependency reexport="true">6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.typechecking)</dependency>
   </dependencies>
   <languageVersions>
@@ -49,7 +48,6 @@
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="bfbdd672-7ff5-403f-af4f-16da5226f34c(jetbrains.mps.findUsages.runtime)" version="0" />
     <module reference="5b1f863d-65a0-41a6-a801-33896be24202(jetbrains.mps.ide.editor)" version="0" />
-    <module reference="274c9cfa-1024-4444-904c-f2f1383a35da(jetbrains.mps.lang.typesystem2.helper)" version="0" />
     <module reference="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.typesystem2.runtime)" version="0" />
     <module reference="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.typesystem2.template)" version="0" />
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
