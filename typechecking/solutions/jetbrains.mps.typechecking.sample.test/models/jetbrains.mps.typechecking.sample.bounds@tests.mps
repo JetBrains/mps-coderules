@@ -171,7 +171,7 @@
         </node>
         <node concept="2Hmddi" id="4BHjwwGPMah" role="3cqZAp">
           <node concept="2YIFZM" id="4BHjwwGPMdn" role="2Hmdds">
-            <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="LaunchTypechecking" />
+            <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
             <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
             <node concept="37vLTw" id="4BHjwwGPMdo" role="37wK5m">
               <ref role="3cqZAo" node="4BHjwwGJQYf" resolve="cls" />
@@ -237,7 +237,7 @@
         <node concept="2Hmddi" id="4BHjwwGPMus" role="3cqZAp">
           <node concept="2YIFZM" id="4BHjwwGPMut" role="2Hmdds">
             <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
-            <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="LaunchTypechecking" />
+            <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
             <node concept="37vLTw" id="4BHjwwGPMuu" role="37wK5m">
               <ref role="3cqZAo" node="4BHjwwGK10E" resolve="cls" />
             </node>
@@ -302,7 +302,7 @@
         <node concept="2Hmddi" id="4BHjwwGPM_K" role="3cqZAp">
           <node concept="2YIFZM" id="4BHjwwGPM_L" role="2Hmdds">
             <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
-            <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="LaunchTypechecking" />
+            <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
             <node concept="37vLTw" id="4BHjwwGPM_M" role="37wK5m">
               <ref role="3cqZAo" node="4BHjwwGK2c_" resolve="cls" />
             </node>

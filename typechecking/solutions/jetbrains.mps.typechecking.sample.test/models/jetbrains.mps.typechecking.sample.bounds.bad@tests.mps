@@ -174,7 +174,7 @@
           <node concept="3clFbF" id="4BHjwwGPt_V" role="3$Oloe">
             <node concept="2YIFZM" id="4BHjwwGPt_X" role="3clFbG">
               <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="LaunchTypechecking" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
               <node concept="37vLTw" id="4BHjwwGPt_Y" role="37wK5m">
                 <ref role="3cqZAo" node="4BHjwwGJQYf" resolve="cls" />
               </node>
@@ -244,7 +244,7 @@
           <node concept="3clFbF" id="4BHjwwGPu9J" role="3$Oloe">
             <node concept="2YIFZM" id="4BHjwwGPu9K" role="3clFbG">
               <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="LaunchTypechecking" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
               <node concept="37vLTw" id="4BHjwwGPuRr" role="37wK5m">
                 <ref role="3cqZAo" node="4BHjwwGJTGe" resolve="cls" />
               </node>
