@@ -41,6 +41,7 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.typechecking.plugin)" />
+    <import index="f4yq" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:hu.akarnokd.rxjava2.swing(jetbrains.mps.typechecking/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -780,9 +781,9 @@
                                 </node>
                                 <node concept="liA8E" id="443LGHBQr4s" role="2OqNvi">
                                   <ref role="37wK5l" node="2mbQB8J5m$l" resolve="scheduleExecute" />
-                                  <node concept="2YIFZM" id="443LGHBQr4t" role="37wK5m">
-                                    <ref role="37wK5l" to="m4y7:~Schedulers.single():io.reactivex.Scheduler" resolve="single" />
-                                    <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+                                  <node concept="2YIFZM" id="3KwBCAACgvt" role="37wK5m">
+                                    <ref role="37wK5l" node="3KwBCAA_erO" resolve="single" />
+                                    <ref role="1Pybhc" node="3KwBCAA_ela" resolve="TypecheckingSchedulers" />
                                   </node>
                                 </node>
                               </node>
@@ -7729,6 +7730,82 @@
     <node concept="3uibUv" id="443LGHBy9d5" role="3HQHJm">
       <ref role="3uigEE" to="qox2:443LGHBxJ1f" resolve="TypecheckingCache.Clearable" />
     </node>
+  </node>
+  <node concept="312cEu" id="3KwBCAA_ela">
+    <property role="3GE5qa" value="launch" />
+    <property role="TrG5h" value="TypecheckingSchedulers" />
+    <node concept="2tJIrI" id="3KwBCAA_el$" role="jymVt" />
+    <node concept="2YIFZL" id="3KwBCAA_erO" role="jymVt">
+      <property role="TrG5h" value="single" />
+      <node concept="3uibUv" id="3KwBCAA_erP" role="3clF45">
+        <ref role="3uigEE" to="unkn:~Scheduler" resolve="Scheduler" />
+      </node>
+      <node concept="3Tm1VV" id="3KwBCAA_erQ" role="1B3o_S" />
+      <node concept="3clFbS" id="3KwBCAA_erR" role="3clF47">
+        <node concept="3clFbJ" id="3KwBCAA_Uq6" role="3cqZAp">
+          <node concept="9aQIb" id="3KwBCAA_Uq7" role="9aQIa">
+            <node concept="3clFbS" id="3KwBCAA_Uq8" role="9aQI4">
+              <node concept="3cpWs6" id="3KwBCAA_Uq9" role="3cqZAp">
+                <node concept="2YIFZM" id="3KwBCAAAg4Y" role="3cqZAk">
+                  <ref role="37wK5l" to="m4y7:~Schedulers.single():io.reactivex.Scheduler" resolve="single" />
+                  <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="3KwBCAA_Uqb" role="3clFbw">
+            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+            <ref role="37wK5l" to="dxuu:~SwingUtilities.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+          </node>
+          <node concept="3clFbS" id="3KwBCAA_Uqc" role="3clFbx">
+            <node concept="3cpWs6" id="3KwBCAA_Uqd" role="3cqZAp">
+              <node concept="2YIFZM" id="3KwBCAA_Uqe" role="3cqZAk">
+                <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+                <ref role="37wK5l" to="m4y7:~Schedulers.trampoline():io.reactivex.Scheduler" resolve="trampoline" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="3KwBCAA_Uqf" role="3cqZAp" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3KwBCAA_erk" role="jymVt" />
+    <node concept="2YIFZL" id="3KwBCAA_eqP" role="jymVt">
+      <property role="TrG5h" value="requireEDT" />
+      <node concept="3uibUv" id="3KwBCAA_eqQ" role="3clF45">
+        <ref role="3uigEE" to="unkn:~Scheduler" resolve="Scheduler" />
+      </node>
+      <node concept="3Tm1VV" id="3KwBCAA_eqR" role="1B3o_S" />
+      <node concept="3clFbS" id="3KwBCAA_eqS" role="3clF47">
+        <node concept="3clFbJ" id="3KwBCAA_rF9" role="3cqZAp">
+          <node concept="9aQIb" id="3KwBCAA_rFj" role="9aQIa">
+            <node concept="3clFbS" id="3KwBCAA_rFk" role="9aQI4">
+              <node concept="3cpWs6" id="3KwBCAA_rFl" role="3cqZAp">
+                <node concept="2YIFZM" id="3KwBCAA_sPN" role="3cqZAk">
+                  <ref role="37wK5l" to="f4yq:~SwingSchedulers.edt():io.reactivex.Scheduler" resolve="edt" />
+                  <ref role="1Pybhc" to="f4yq:~SwingSchedulers" resolve="SwingSchedulers" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="3KwBCAA_stb" role="3clFbw">
+            <ref role="37wK5l" to="dxuu:~SwingUtilities.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
+            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+          </node>
+          <node concept="3clFbS" id="3KwBCAA_s6R" role="3clFbx">
+            <node concept="3cpWs6" id="3KwBCAA_st_" role="3cqZAp">
+              <node concept="2YIFZM" id="3KwBCAA_stA" role="3cqZAk">
+                <ref role="37wK5l" to="m4y7:~Schedulers.trampoline():io.reactivex.Scheduler" resolve="trampoline" />
+                <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="3KwBCAA_skb" role="3cqZAp" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3KwBCAA_elH" role="jymVt" />
+    <node concept="3Tm1VV" id="3KwBCAA_elb" role="1B3o_S" />
   </node>
 </model>
 
