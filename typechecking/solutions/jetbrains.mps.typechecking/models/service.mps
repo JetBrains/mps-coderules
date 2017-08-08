@@ -1026,7 +1026,7 @@
     <node concept="3clFb_" id="3GlpCDSxTKz" role="jymVt">
       <property role="TrG5h" value="applyTemplates" />
       <node concept="37vLTG" id="3GlpCDSybFH" role="3clF46">
-        <property role="TrG5h" value="node" />
+        <property role="TrG5h" value="root" />
         <node concept="3Tqbb2" id="3GlpCDSyccP" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="3GlpCDSyCnQ" role="3clF46">
@@ -1089,7 +1089,7 @@
             <ref role="37wK5l" to="w1kc:~SModelOperations.getAllLanguageImports(org.jetbrains.mps.openapi.model.SModel):java.util.Set" resolve="getAllLanguageImports" />
             <node concept="2OqwBi" id="4n$QnzZWBdR" role="37wK5m">
               <node concept="37vLTw" id="4xTpErk1vp5" role="2Oq$k0">
-                <ref role="3cqZAo" node="3GlpCDSybFH" resolve="node" />
+                <ref role="3cqZAo" node="3GlpCDSybFH" resolve="root" />
               </node>
               <node concept="I4A8Y" id="4n$QnzZWCr8" role="2OqNvi" />
             </node>
@@ -1122,7 +1122,7 @@
               <ref role="3cqZAo" node="4hh0cTRbUS7" resolve="typesAspect" />
             </node>
             <node concept="37vLTw" id="4BHjwwGy54S" role="37wK5m">
-              <ref role="3cqZAo" node="3GlpCDSybFH" resolve="node" />
+              <ref role="3cqZAo" node="3GlpCDSybFH" resolve="root" />
             </node>
             <node concept="37vLTw" id="4BHjwwGy54T" role="37wK5m">
               <ref role="3cqZAo" node="3GlpCDSyCnQ" resolve="name" />
@@ -1152,7 +1152,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="4BHjwwGy54D" role="3clF46">
-        <property role="TrG5h" value="node" />
+        <property role="TrG5h" value="root" />
         <node concept="3Tqbb2" id="4BHjwwGy54E" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="4BHjwwGy54F" role="3clF46">
@@ -1353,7 +1353,7 @@
                     <node concept="1rXfSq" id="4BHjwwGy53Z" role="37wK5m">
                       <ref role="37wK5l" node="1CcQBrPfrjP" resolve="applyTemplates" />
                       <node concept="37vLTw" id="4BHjwwGy54I" role="37wK5m">
-                        <ref role="3cqZAo" node="4BHjwwGy54D" resolve="node" />
+                        <ref role="3cqZAo" node="4BHjwwGy54D" resolve="root" />
                       </node>
                       <node concept="37vLTw" id="4BHjwwGy541" role="37wK5m">
                         <ref role="3cqZAo" node="4BHjwwGy53C" resolve="stage" />
