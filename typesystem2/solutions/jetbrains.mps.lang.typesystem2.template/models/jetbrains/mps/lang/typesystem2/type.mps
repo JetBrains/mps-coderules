@@ -1231,7 +1231,7 @@
       <node concept="37vLTG" id="1eKXYsjvsWN" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="1eKXYsjvsWO" role="1tU5fm">
-          <ref role="3uigEE" to="nz6g:18kNIl1vDPZ" resolve="ApplicationSession" />
+          <ref role="3uigEE" to="nz6g:18kNIl1vDPZ" resolve="RuleApplicationSession" />
         </node>
       </node>
     </node>
@@ -1255,7 +1255,7 @@
       <node concept="37vLTG" id="60NbDCXG$np" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="60NbDCXG$nq" role="1tU5fm">
-          <ref role="3uigEE" to="nz6g:18kNIl1vDPZ" resolve="ApplicationSession" />
+          <ref role="3uigEE" to="nz6g:18kNIl1vDPZ" resolve="RuleApplicationSession" />
         </node>
       </node>
     </node>

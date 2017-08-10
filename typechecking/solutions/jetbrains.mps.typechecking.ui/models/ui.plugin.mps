@@ -24177,7 +24177,7 @@
                     <property role="3cmrfH" value="1" />
                   </node>
                   <node concept="37vLTw" id="1CcQBrPeqBx" role="1LFl5Q">
-                    <ref role="3cqZAo" node="3YJ7yg2N2M5" resolve="triple" />
+                    <ref role="3cqZAo" node="3YJ7yg2N2M5" resolve="tpl" />
                   </node>
                 </node>
               </node>
@@ -24244,16 +24244,18 @@
             </node>
           </node>
           <node concept="3cpWsn" id="3YJ7yg2N2M5" role="1Duv9x">
-            <property role="TrG5h" value="triple" />
+            <property role="TrG5h" value="tpl" />
             <node concept="1LlUBW" id="3YJ7yg2N3dO" role="1tU5fm">
               <node concept="3uibUv" id="1CcQBrPepNg" role="1Lm7xW">
                 <ref role="3uigEE" to="i348:1CcQBrPcZVG" resolve="HandlingStage" />
               </node>
-              <node concept="3uibUv" id="3YJ7yg2N40T" role="1Lm7xW">
+              <node concept="3uibUv" id="1ffsG7c4ezn" role="1Lm7xW">
                 <ref role="3uigEE" to="i348:1ffsG7bW_V4" resolve="RuleTemplate" />
-              </node>
-              <node concept="3uibUv" id="3YJ7yg2N4q2" role="1Lm7xW">
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                <node concept="3qUE_q" id="7XdbJdyRKIf" role="11_B2D">
+                  <node concept="3uibUv" id="7XdbJdyRMGp" role="3qUE_r">
+                    <ref role="3uigEE" to="i348:2RRx4MZ6_68" resolve="RuleApplicationToken" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

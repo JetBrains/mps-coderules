@@ -2846,7 +2846,7 @@
     <node concept="2tJIrI" id="4sSe4$oMZ04" role="jymVt" />
   </node>
   <node concept="312cEu" id="18kNIl1vDPZ">
-    <property role="TrG5h" value="ApplicationSession" />
+    <property role="TrG5h" value="RuleApplicationSession" />
     <node concept="2tJIrI" id="18kNIl1vDQp" role="jymVt" />
     <node concept="3clFbW" id="4JJCDImSW0_" role="jymVt">
       <node concept="37vLTG" id="4JJCDImSW1u" role="3clF46">
@@ -2938,7 +2938,7 @@
                               <ref role="3cqZAo" node="18kNIl1wWhK" resolve="typevar" />
                             </node>
                             <node concept="Xjq3P" id="4KRwoelDNTu" role="37wK5m">
-                              <ref role="1HBi2w" node="18kNIl1vDPZ" resolve="ApplicationSession" />
+                              <ref role="1HBi2w" node="18kNIl1vDPZ" resolve="RuleApplicationSession" />
                             </node>
                           </node>
                         </node>
@@ -3041,7 +3041,7 @@
                               <ref role="3cqZAo" node="4MEOIDFgV3b" resolve="typevar" />
                             </node>
                             <node concept="Xjq3P" id="4MEOIDFgV3G" role="37wK5m">
-                              <ref role="1HBi2w" node="18kNIl1vDPZ" resolve="ApplicationSession" />
+                              <ref role="1HBi2w" node="18kNIl1vDPZ" resolve="RuleApplicationSession" />
                             </node>
                           </node>
                         </node>
