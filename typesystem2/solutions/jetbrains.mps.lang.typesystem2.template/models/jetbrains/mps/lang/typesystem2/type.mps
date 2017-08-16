@@ -9,12 +9,10 @@
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="0" />
   </languages>
   <imports>
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.typesystem2.aspect)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1214,7 +1212,7 @@
       <property role="TrG5h" value="bindType" />
       <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="1eKXYsjvsWG" role="3clF45">
-        <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
+        <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
       </node>
       <node concept="3Tm1VV" id="1eKXYsjvsWH" role="1B3o_S" />
       <node concept="3clFbS" id="1eKXYsjvsWI" role="3clF47" />
@@ -1231,7 +1229,7 @@
       <node concept="37vLTG" id="1eKXYsjvsWN" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="1eKXYsjvsWO" role="1tU5fm">
-          <ref role="3uigEE" to="nz6g:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
         </node>
       </node>
     </node>
@@ -1240,7 +1238,7 @@
       <property role="TrG5h" value="bindType" />
       <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="60NbDCXG$ni" role="3clF45">
-        <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
+        <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
       </node>
       <node concept="3Tm1VV" id="60NbDCXG$nj" role="1B3o_S" />
       <node concept="3clFbS" id="60NbDCXG$nk" role="3clF47" />
@@ -1255,7 +1253,7 @@
       <node concept="37vLTG" id="60NbDCXG$np" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="60NbDCXG$nq" role="1tU5fm">
-          <ref role="3uigEE" to="nz6g:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
         </node>
       </node>
     </node>

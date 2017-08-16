@@ -21,7 +21,6 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -32,6 +31,7 @@
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.evaluation)" />
+    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -9574,7 +9574,7 @@
                         <ref role="3cqZAo" node="10IUAVUsYWO" resolve="subs" />
                       </node>
                       <node concept="liA8E" id="7IysFeA965U" role="2OqNvi">
-                        <ref role="37wK5l" to="nz6g:18kNIl0r2jH" resolve="logicalFor" />
+                        <ref role="37wK5l" to="6pyv:18kNIl0r2jH" resolve="logicalFor" />
                         <node concept="3tDTZT" id="7IysFeA96rN" role="37wK5m">
                           <ref role="3tDTNw" node="7IysFeA8Vu2" resolve="tvd" />
                         </node>
@@ -9591,7 +9591,7 @@
                   <ref role="3cqZAo" node="10IUAVUsYWO" resolve="subs" />
                 </node>
                 <node concept="liA8E" id="7IysFeA9663" role="2OqNvi">
-                  <ref role="37wK5l" to="nz6g:18kNIl0r2cQ" resolve="hasLogical" />
+                  <ref role="37wK5l" to="6pyv:18kNIl0r2cQ" resolve="hasLogical" />
                   <node concept="3tDTZT" id="7IysFeA96op" role="37wK5m">
                     <ref role="3tDTNw" node="7IysFeA8Vu2" resolve="tvd" />
                   </node>
@@ -9693,7 +9693,7 @@
                   <ref role="3cqZAo" node="10IUAVUsYWO" resolve="subs" />
                 </node>
                 <node concept="liA8E" id="7IysFeAaqOm" role="2OqNvi">
-                  <ref role="37wK5l" to="nz6g:18kNIl0r2cQ" resolve="hasLogical" />
+                  <ref role="37wK5l" to="6pyv:18kNIl0r2cQ" resolve="hasLogical" />
                   <node concept="3tDTZT" id="7IysFeAaqOn" role="37wK5m">
                     <ref role="3tDTNw" node="7IysFeA8Vu2" resolve="tvd" />
                   </node>
@@ -18960,7 +18960,7 @@
                 <node concept="2OqwBi" id="euG2bFfX$n" role="2Oq$k0">
                   <node concept="2ShNRf" id="euG2bFfVVP" role="2Oq$k0">
                     <node concept="1pGfFk" id="euG2bFfXj7" role="2ShVmc">
-                      <ref role="37wK5l" to="nz6g:4sSe4$oM2B4" resolve="PredicateBuilder" />
+                      <ref role="37wK5l" to="6pyv:4sSe4$oM2B4" resolve="PredicateBuilder" />
                       <node concept="10M0yZ" id="euG2bFfXs0" role="37wK5m">
                         <ref role="3cqZAo" to="cxk7:5uFPQ7C23RV" resolve="EQ_SYM" />
                         <ref role="1PxDUh" to="cxk7:3HJTsBn4kk_" resolve="EqualsPredicate" />
@@ -18968,7 +18968,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="euG2bFfXH6" role="2OqNvi">
-                    <ref role="37wK5l" to="nz6g:4sSe4$oM2Bb" resolve="withArguments" />
+                    <ref role="37wK5l" to="6pyv:4sSe4$oM2Bb" resolve="withArguments" />
                     <node concept="37vLTw" id="euG2bFfXNa" role="37wK5m">
                       <ref role="3cqZAo" node="euG2bFfV8u" resolve="logical" />
                     </node>
@@ -18978,7 +18978,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="euG2bFfYvA" role="2OqNvi">
-                  <ref role="37wK5l" to="nz6g:4sSe4$oM2Bs" resolve="toPredicate" />
+                  <ref role="37wK5l" to="6pyv:4sSe4$oM2Bs" resolve="toPredicate" />
                 </node>
               </node>
               <node concept="10M0yZ" id="euG2bFg3tn" role="37wK5m">
@@ -19166,8 +19166,8 @@
             <node concept="3clFbS" id="4MEOIDFP4h2" role="16YjZG">
               <node concept="3clFbF" id="4MEOIDFP4Md" role="3cqZAp">
                 <node concept="2YIFZM" id="4MEOIDFP4Me" role="3clFbG">
-                  <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                  <ref role="37wK5l" to="nz6g:7nPD14NOI_T" resolve="multiMetaLogical" />
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOI_T" resolve="multiMetaLogical" />
                   <node concept="Xl_RD" id="4MEOIDFP4Mf" role="37wK5m">
                     <property role="Xl_RC" value="Foo" />
                   </node>
@@ -19272,8 +19272,8 @@
             <node concept="3clFbS" id="4MEOIDFP57a" role="16YjZG">
               <node concept="3clFbF" id="4MEOIDFP5v5" role="3cqZAp">
                 <node concept="2YIFZM" id="4MEOIDFP5v6" role="3clFbG">
-                  <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                  <ref role="37wK5l" to="nz6g:7nPD14NOI_T" resolve="multiMetaLogical" />
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOI_T" resolve="multiMetaLogical" />
                   <node concept="Xl_RD" id="4MEOIDFP5v7" role="37wK5m">
                     <property role="Xl_RC" value="Foo" />
                   </node>
@@ -19317,8 +19317,8 @@
             <node concept="3clFbS" id="4MEOIDFP5Mr" role="16YjZG">
               <node concept="3clFbF" id="4MEOIDFP5Si" role="3cqZAp">
                 <node concept="2YIFZM" id="4MEOIDFP5Sj" role="3clFbG">
-                  <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                  <ref role="37wK5l" to="nz6g:7nPD14NOI_T" resolve="multiMetaLogical" />
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOI_T" resolve="multiMetaLogical" />
                   <node concept="Xl_RD" id="4MEOIDFP5Sk" role="37wK5m">
                     <property role="Xl_RC" value="Foo" />
                   </node>
@@ -19362,8 +19362,8 @@
             <node concept="3clFbS" id="4MEOIDFP64Q" role="16YjZG">
               <node concept="3clFbF" id="4MEOIDFP6wp" role="3cqZAp">
                 <node concept="2YIFZM" id="4MEOIDFP6wr" role="3clFbG">
-                  <ref role="37wK5l" to="nz6g:7nPD14NOI_T" resolve="multiMetaLogical" />
-                  <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOI_T" resolve="multiMetaLogical" />
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
                   <node concept="Xl_RD" id="4MEOIDFP6ws" role="37wK5m">
                     <property role="Xl_RC" value="Foo" />
                   </node>
@@ -19407,8 +19407,8 @@
             <node concept="3clFbS" id="4MEOIDFP6p1" role="16YjZG">
               <node concept="3clFbF" id="4MEOIDFP6$r" role="3cqZAp">
                 <node concept="2YIFZM" id="4MEOIDFP6$s" role="3clFbG">
-                  <ref role="37wK5l" to="nz6g:7nPD14NOI_T" resolve="multiMetaLogical" />
-                  <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOI_T" resolve="multiMetaLogical" />
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
                   <node concept="Xl_RD" id="4MEOIDFP6$t" role="37wK5m">
                     <property role="Xl_RC" value="Foo" />
                   </node>
@@ -19452,8 +19452,8 @@
             <node concept="3clFbS" id="4MEOIDFP6KP" role="16YjZG">
               <node concept="3clFbF" id="4MEOIDFP6S2" role="3cqZAp">
                 <node concept="2YIFZM" id="4MEOIDFP6S3" role="3clFbG">
-                  <ref role="1Pybhc" to="nz6g:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                  <ref role="37wK5l" to="nz6g:7nPD14NOI_T" resolve="multiMetaLogical" />
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOI_T" resolve="multiMetaLogical" />
                   <node concept="Xl_RD" id="4MEOIDFP6S4" role="37wK5m">
                     <property role="Xl_RC" value="Foo" />
                   </node>

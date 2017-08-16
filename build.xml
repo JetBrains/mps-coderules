@@ -368,6 +368,7 @@
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
@@ -1148,6 +1149,7 @@
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="23949432-aaff-4c03-b7da-26e4e956ccea(jetbrains.mps.baseLanguage.regexp.runtime)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
@@ -1370,7 +1372,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic#6626732309150416985, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.test, java.compile.jetbrains.mps.lang.typesystem2, java.compile.jetbrains.mps.lang.typesystem2#4578927328670739933, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.lang.smodel.types, java.compile.jetbrains.mps.lang.smodel.types#7345257067587611144, java.compile.jetbrains.mps.lang.typechecking.test, java.compile.jetbrains.mps.typechecking, java.compile.jetbrains.mps.typechecking.ui, java.compile.jetbrains.mps.typechecking.annotation, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.typechecking.sample, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.jetbrains.mps.typechecking.sample.test" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic#6626732309150416985, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.test, java.compile.jetbrains.mps.lang.typesystem2, java.compile.jetbrains.mps.lang.typesystem2#4578927328670739933, java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.lang.smodel.types, java.compile.jetbrains.mps.lang.smodel.types#7345257067587611144, java.compile.jetbrains.mps.lang.typechecking.test, java.compile.jetbrains.mps.typechecking, java.compile.jetbrains.mps.typechecking.ui, java.compile.jetbrains.mps.typechecking.annotation, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.typechecking.sample, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.jetbrains.mps.typechecking.sample.test" />
   
   <target name="processResources" />
   
@@ -1849,51 +1851,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.java.modules.cycle.1" depends="java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
-    <mkdir dir="${build.tmp}/java.modules.cycle.1" />
-    <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" encoding="utf8" nowarn="true" includeantruntime="false">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${mps.macro.logic_home}/typesystem2/languages/jetbrains.mps.lang.typesystem2/runtime/source_gen" />
-        <path location="${mps.macro.logic_home}/typesystem2/solutions/jetbrains.mps.lang.typesystem2.template/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.1.2.jar" />
-        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.1.2.jar" />
-        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
-        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/conreactor-api-0.9.jar" />
-        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.jar" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
-        <fileset file="${artifacts.mps}/lib/jdom.jar" />
-        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.6.2.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
-      </classpath>
-    </javac>
-  </target>
-  
-  <target name="java.compile.jetbrains.mps.lang.typesystem2.runtime" depends="java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, java.compile.java.modules.cycle.1, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem2.runtime" depends="java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
     <mkdir dir="${mps.macro.logic_home}/typesystem2/languages/jetbrains.mps.lang.typesystem2/runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.runtime" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.runtime" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -1913,6 +1871,7 @@
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.template" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
         <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.1.2.jar" />
@@ -1933,12 +1892,11 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.typesystem2.template" depends="java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, java.compile.java.modules.cycle.1, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.typesystem2.template" depends="java.compile.jetbrains.mps.logic.reactor, java.compile.jetbrains.mps.logic.runtime, fetchDependencies">
     <mkdir dir="${mps.macro.logic_home}/typesystem2/solutions/jetbrains.mps.lang.typesystem2.template/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.template" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.template" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -1947,15 +1905,15 @@
         <path location="${mps.macro.logic_home}/typesystem2/solutions/jetbrains.mps.lang.typesystem2.template/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.reactor" />
@@ -1970,13 +1928,13 @@
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.6.2.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
-        <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.smodel.types" depends="java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.typechecking, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.smodel.types" depends="java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.typechecking, fetchDependencies">
     <mkdir dir="${mps.macro.logic_home}/typesystem2/languages/jetbrains.mps.lang.smodel.types/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -1997,6 +1955,7 @@
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.runtime" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.template" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
@@ -2030,7 +1989,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.smodel.types#7345257067587611144" depends="java.compile.jetbrains.mps.lang.smodel.types, java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.typechecking, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.smodel.types#7345257067587611144" depends="java.compile.jetbrains.mps.lang.smodel.types, java.compile.jetbrains.mps.lang.typesystem2.runtime, java.compile.jetbrains.mps.lang.typesystem2.template, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.typechecking, fetchDependencies">
     <mkdir dir="${mps.macro.logic_home}/typesystem2/languages/jetbrains.mps.lang.smodel.types/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types#7345257067587611144" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types#7345257067587611144" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -2057,6 +2016,7 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.runtime" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem2.template" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />

@@ -36,7 +36,7 @@
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="zavc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.messageTargets(MPS.Core/)" />
     <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.rule)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
@@ -51,7 +51,6 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="qqrq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.components(MPS.IDEA/)" />
-    <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
     <import index="c8ee" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.table(JDK/)" />
     <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
@@ -88,6 +87,7 @@
     <import index="f4yq" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:hu.akarnokd.rxjava2.swing(jetbrains.mps.typechecking/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" />
+    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
@@ -7613,11 +7613,11 @@
             <node concept="3cpWsn" id="6RFuZEC715N" role="3cpWs9">
               <property role="TrG5h" value="ruleEx" />
               <node concept="3uibUv" id="6RFuZEC715O" role="1tU5fm">
-                <ref role="3uigEE" to="nz6g:7nPD14OaO1O" resolve="RuleEx" />
+                <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
               </node>
               <node concept="10QFUN" id="6RFuZEC71Wq" role="33vP2m">
                 <node concept="3uibUv" id="6RFuZEC71Wm" role="10QFUM">
-                  <ref role="3uigEE" to="nz6g:7nPD14OaO1O" resolve="RuleEx" />
+                  <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
                 </node>
                 <node concept="2OqwBi" id="6RFuZEC71Wn" role="10QFUP">
                   <node concept="1LFfDK" id="6bBjpI83UpJ" role="2Oq$k0">
@@ -7648,7 +7648,7 @@
                   <ref role="3cqZAo" node="6RFuZEC715N" resolve="ruleEx" />
                 </node>
                 <node concept="liA8E" id="6bBjpI8anRI" role="2OqNvi">
-                  <ref role="37wK5l" to="nz6g:7nPD14Ob4em" resolve="originRef" />
+                  <ref role="37wK5l" to="6pyv:7nPD14Ob4em" resolve="originRef" />
                 </node>
               </node>
             </node>
@@ -7998,11 +7998,11 @@
             <node concept="3cpWsn" id="2T1p0CFILaZ" role="3cpWs9">
               <property role="TrG5h" value="ruleEx" />
               <node concept="3uibUv" id="2T1p0CFILb0" role="1tU5fm">
-                <ref role="3uigEE" to="nz6g:7nPD14OaO1O" resolve="RuleEx" />
+                <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
               </node>
               <node concept="10QFUN" id="2T1p0CFILb1" role="33vP2m">
                 <node concept="3uibUv" id="2T1p0CFILb2" role="10QFUM">
-                  <ref role="3uigEE" to="nz6g:7nPD14OaO1O" resolve="RuleEx" />
+                  <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
                 </node>
                 <node concept="2EnYce" id="2T1p0CFILb3" role="10QFUP">
                   <node concept="1LFfDK" id="2T1p0CFILb4" role="2Oq$k0">
@@ -9824,7 +9824,7 @@
         <node concept="37vLTG" id="6QkkSolKGTF" role="3clF46">
           <property role="TrG5h" value="ruleEx" />
           <node concept="3uibUv" id="6QkkSolKHsd" role="1tU5fm">
-            <ref role="3uigEE" to="nz6g:7nPD14OaO1O" resolve="RuleEx" />
+            <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
           </node>
         </node>
         <node concept="3uibUv" id="6QkkSolKEFf" role="3clF45">
@@ -9856,7 +9856,7 @@
                         <ref role="3cqZAo" node="6QkkSolKGTF" resolve="ruleEx" />
                       </node>
                       <node concept="liA8E" id="6QkkSolKH$7" role="2OqNvi">
-                        <ref role="37wK5l" to="nz6g:7nPD14Ob4em" resolve="originRef" />
+                        <ref role="37wK5l" to="6pyv:7nPD14Ob4em" resolve="originRef" />
                       </node>
                     </node>
                   </node>
@@ -10014,7 +10014,7 @@
         <node concept="37vLTG" id="6QkkSolM4Dr" role="3clF46">
           <property role="TrG5h" value="ruleEx" />
           <node concept="3uibUv" id="6QkkSolM4Ds" role="1tU5fm">
-            <ref role="3uigEE" to="nz6g:7nPD14OaO1O" resolve="RuleEx" />
+            <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
           </node>
         </node>
         <node concept="37vLTG" id="6QkkSolLWBQ" role="3clF46">
@@ -10051,7 +10051,7 @@
                   <ref role="3cqZAo" node="6QkkSolM4Dr" resolve="ruleEx" />
                 </node>
                 <node concept="liA8E" id="6QkkSolM31a" role="2OqNvi">
-                  <ref role="37wK5l" to="nz6g:7nPD14Ob4lt" resolve="templateRef" />
+                  <ref role="37wK5l" to="6pyv:7nPD14Ob4lt" resolve="templateRef" />
                 </node>
               </node>
             </node>

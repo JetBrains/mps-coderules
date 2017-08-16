@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.template)">
+<model ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.rule)">
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
@@ -15,7 +15,7 @@
     <import index="ouhv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.annotation(JDK/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
-    <import index="nz6g" ref="r:ac00f724-30be-446e-805c-2345efc460d7(jetbrains.mps.lang.typesystem2.program)" />
+    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -365,14 +365,14 @@
             <node concept="2OqwBi" id="4sSe4$oN6pZ" role="2Oq$k0">
               <node concept="2ShNRf" id="4sSe4$oN6q0" role="2Oq$k0">
                 <node concept="1pGfFk" id="4sSe4$oN6q1" role="2ShVmc">
-                  <ref role="37wK5l" to="nz6g:4sSe4$oM2rk" resolve="ConstraintBuilder" />
+                  <ref role="37wK5l" to="6pyv:4sSe4$oM2rk" resolve="ConstraintBuilder" />
                   <node concept="37vLTw" id="4sSe4$oN6I7" role="37wK5m">
                     <ref role="3cqZAo" node="5uFPQ7CgjLS" resolve="TYPEOF_SYM" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="4sSe4$oN6q3" role="2OqNvi">
-                <ref role="37wK5l" to="nz6g:4sSe4$oM2sT" resolve="withArguments" />
+                <ref role="37wK5l" to="6pyv:4sSe4$oM2sT" resolve="withArguments" />
                 <node concept="37vLTw" id="4sSe4$oN7Bp" role="37wK5m">
                   <ref role="3cqZAo" node="4OKkcnfu_$e" resolve="type" />
                 </node>
@@ -382,7 +382,7 @@
               </node>
             </node>
             <node concept="liA8E" id="4sSe4$oN6q5" role="2OqNvi">
-              <ref role="37wK5l" to="nz6g:4sSe4$oM2zI" resolve="toConstraint" />
+              <ref role="37wK5l" to="6pyv:4sSe4$oM2zI" resolve="toConstraint" />
             </node>
           </node>
         </node>
@@ -413,14 +413,14 @@
             <node concept="2OqwBi" id="1CcQBrQgD4S" role="2Oq$k0">
               <node concept="2ShNRf" id="1CcQBrQgD4T" role="2Oq$k0">
                 <node concept="1pGfFk" id="1CcQBrQgD4U" role="2ShVmc">
-                  <ref role="37wK5l" to="nz6g:4sSe4$oM2rk" resolve="ConstraintBuilder" />
+                  <ref role="37wK5l" to="6pyv:4sSe4$oM2rk" resolve="ConstraintBuilder" />
                   <node concept="37vLTw" id="1CcQBrQgDfc" role="37wK5m">
                     <ref role="3cqZAo" node="1CcQBrQgCB2" resolve="TYPENODE_SYM" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="1CcQBrQgD4W" role="2OqNvi">
-                <ref role="37wK5l" to="nz6g:4sSe4$oM2sT" resolve="withArguments" />
+                <ref role="37wK5l" to="6pyv:4sSe4$oM2sT" resolve="withArguments" />
                 <node concept="37vLTw" id="1CcQBrQgD4X" role="37wK5m">
                   <ref role="3cqZAo" node="1CcQBrQgD4J" resolve="type" />
                 </node>
@@ -430,7 +430,7 @@
               </node>
             </node>
             <node concept="liA8E" id="1CcQBrQgD4Z" role="2OqNvi">
-              <ref role="37wK5l" to="nz6g:4sSe4$oM2zI" resolve="toConstraint" />
+              <ref role="37wK5l" to="6pyv:4sSe4$oM2zI" resolve="toConstraint" />
             </node>
           </node>
         </node>
@@ -1866,13 +1866,13 @@
       <property role="TrG5h" value="apply" />
       <node concept="A3Dl8" id="2RRx4MZ6CCf" role="3clF45">
         <node concept="3uibUv" id="2RRx4MZ6CCg" role="A3Ik2">
-          <ref role="3uigEE" to="nz6g:7eGEHDlc$ap" resolve="RuleBuilder" />
+          <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="2RRx4MZ6CCl" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="2RRx4MZ6CCm" role="1tU5fm">
-          <ref role="3uigEE" to="nz6g:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2RRx4MZ6CCn" role="1B3o_S" />
