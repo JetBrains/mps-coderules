@@ -890,27 +890,6 @@
     <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
   </node>
-  <node concept="1TIwiD" id="18kNIl0F1t4">
-    <property role="EcuMT" value="1302893676244768580" />
-    <property role="3GE5qa" value="constraint.typespecific" />
-    <property role="TrG5h" value="LogicalSubstitutionCreator" />
-    <property role="34LRSv" value="substitution" />
-    <ref role="1TJDcQ" to="tpee:gEShaYr" resolve="AbstractCreator" />
-    <node concept="1TJgyj" id="18kNIl0F1xB" role="1TKVEi">
-      <property role="IQ2ns" value="1302893676244768871" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="anchor" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="18kNIl0F2$k">
-    <property role="EcuMT" value="1302893676244773140" />
-    <property role="3GE5qa" value="constraint.typespecific" />
-    <property role="TrG5h" value="LogicalSubstitutionType" />
-    <property role="34LRSv" value="substitution" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
-  </node>
   <node concept="1TIwiD" id="7IysFe_ZPX_">
     <property role="EcuMT" value="8908809128801951589" />
     <property role="3GE5qa" value="type.decl" />

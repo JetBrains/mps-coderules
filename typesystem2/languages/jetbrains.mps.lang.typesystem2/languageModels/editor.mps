@@ -3835,39 +3835,6 @@
       <node concept="l2Vlx" id="18kNIl0jL8a" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="18kNIl0F1yM">
-    <property role="3GE5qa" value="constraint.typespecific" />
-    <ref role="1XX52x" to="wq2x:18kNIl0F1t4" resolve="LogicalSubstitutionCreator" />
-    <node concept="3EZMnI" id="18kNIl0F1yO" role="2wV5jI">
-      <node concept="PMmxH" id="18kNIl0F1yV" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <ref role="1k5W1q" node="4aJUH_hW38r" resolve="RuleKeyword" />
-      </node>
-      <node concept="3F0ifn" id="18kNIl0F1z0" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
-      </node>
-      <node concept="3F1sOY" id="18kNIl0F2yI" role="3EZMnx">
-        <ref role="1NtTu8" to="wq2x:18kNIl0F1xB" resolve="anchor" />
-      </node>
-      <node concept="3F0ifn" id="18kNIl0F1z8" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
-        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
-      </node>
-      <node concept="2iRfu4" id="18kNIl0F1yR" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="18kNIl0F2B0">
-    <property role="3GE5qa" value="constraint.typespecific" />
-    <ref role="1XX52x" to="wq2x:18kNIl0F2$k" resolve="LogicalSubstitutionType" />
-    <node concept="3EZMnI" id="18kNIl0F2B2" role="2wV5jI">
-      <node concept="PMmxH" id="18kNIl0FLxr" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <ref role="1k5W1q" node="4aJUH_hW38r" resolve="RuleKeyword" />
-      </node>
-      <node concept="2iRfu4" id="18kNIl0F2B5" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="7IysFe_ZPXL">
     <property role="3GE5qa" value="type.decl" />
     <ref role="1XX52x" to="wq2x:7IysFe_ZPXH" resolve="TypeInitializerLogicalDeclaration" />
