@@ -1172,12 +1172,6 @@
                   <ref role="3uigEE" to="hano:12yN8DyF_E1" resolve="ProgramProducer" />
                 </node>
               </node>
-              <node concept="37vLTG" id="7kTeLbPnSgH" role="1bW2Oz">
-                <property role="TrG5h" value="stage" />
-                <node concept="3uibUv" id="7kTeLbPnSkQ" role="1tU5fm">
-                  <ref role="3uigEE" to="i348:1CcQBrPcZVG" resolve="HandlingStage" />
-                </node>
-              </node>
               <node concept="37vLTG" id="7kTeLbPnSnQ" role="1bW2Oz">
                 <property role="TrG5h" value="programBuilder" />
                 <node concept="3uibUv" id="7kTeLbPnStL" role="1tU5fm">
@@ -1194,9 +1188,6 @@
                       <ref role="37wK5l" to="hano:6i42QSspo7W" resolve="forRoot" />
                       <node concept="37vLTw" id="7kTeLbPnTuZ" role="37wK5m">
                         <ref role="3cqZAo" node="3GlpCDSybFH" resolve="root" />
-                      </node>
-                      <node concept="37vLTw" id="7kTeLbPnTDd" role="37wK5m">
-                        <ref role="3cqZAo" node="7kTeLbPnSgH" resolve="stage" />
                       </node>
                       <node concept="37vLTw" id="7kTeLbPnUky" role="37wK5m">
                         <ref role="3cqZAo" node="7kTeLbPnSnQ" resolve="programBuilder" />
@@ -1249,12 +1240,6 @@
                   <ref role="3uigEE" to="hano:12yN8DyF_E1" resolve="ProgramProducer" />
                 </node>
               </node>
-              <node concept="37vLTG" id="7kTeLbPojCK" role="1bW2Oz">
-                <property role="TrG5h" value="stage" />
-                <node concept="3uibUv" id="7kTeLbPojCL" role="1tU5fm">
-                  <ref role="3uigEE" to="i348:1CcQBrPcZVG" resolve="HandlingStage" />
-                </node>
-              </node>
               <node concept="37vLTG" id="7kTeLbPojCM" role="1bW2Oz">
                 <property role="TrG5h" value="programBuilder" />
                 <node concept="3uibUv" id="7kTeLbPojCN" role="1tU5fm">
@@ -1271,9 +1256,6 @@
                       <ref role="37wK5l" to="hano:4QPCta1bMC1" resolve="forEach" />
                       <node concept="37vLTw" id="7kTeLbPojCT" role="37wK5m">
                         <ref role="3cqZAo" node="7kTeLbPojCA" resolve="nodes" />
-                      </node>
-                      <node concept="37vLTw" id="7kTeLbPojCU" role="37wK5m">
-                        <ref role="3cqZAo" node="7kTeLbPojCK" resolve="stage" />
                       </node>
                       <node concept="37vLTw" id="7kTeLbPojCV" role="37wK5m">
                         <ref role="3cqZAo" node="7kTeLbPojCM" resolve="programBuilder" />
@@ -1324,9 +1306,6 @@
         <node concept="1ajhzC" id="7kTeLbPnFEB" role="1tU5fm">
           <node concept="3uibUv" id="7kTeLbPnFRu" role="1ajw0F">
             <ref role="3uigEE" to="hano:12yN8DyF_E1" resolve="ProgramProducer" />
-          </node>
-          <node concept="3uibUv" id="7kTeLbPnFZo" role="1ajw0F">
-            <ref role="3uigEE" to="i348:1CcQBrPcZVG" resolve="HandlingStage" />
           </node>
           <node concept="3uibUv" id="7kTeLbPnG79" role="1ajw0F">
             <ref role="3uigEE" to="7n8k:5rhZO$TYZJM" resolve="ChrProgramBuilder" />
@@ -1453,10 +1432,10 @@
                                   <node concept="37vLTw" id="7kTeLbPnQ8Q" role="37wK5m">
                                     <ref role="3cqZAo" node="7kTeLbPnP2m" resolve="mainConstraint" />
                                   </node>
+                                  <node concept="37vLTw" id="7kTeLbQ9V3N" role="37wK5m">
+                                    <ref role="3cqZAo" node="7kTeLbPnP3_" resolve="stage" />
+                                  </node>
                                 </node>
-                              </node>
-                              <node concept="37vLTw" id="7kTeLbPnQoa" role="2SgHGx">
-                                <ref role="3cqZAo" node="7kTeLbPnP3_" resolve="stage" />
                               </node>
                               <node concept="37vLTw" id="7kTeLbPnQB4" role="2SgHGx">
                                 <ref role="3cqZAo" node="7kTeLbPnP2L" resolve="programBuilder" />
