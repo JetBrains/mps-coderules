@@ -42,6 +42,8 @@
     <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.typechecking.plugin)" />
     <import index="f4yq" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:hu.akarnokd.rxjava2.swing(jetbrains.mps.typechecking/)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
+    <import index="e5vs" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.jetbrains.ide(MPS.IDEA/)" />
+    <import index="ixe9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.concurrency(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -800,8 +802,8 @@
                                 <node concept="liA8E" id="443LGHBQr4s" role="2OqNvi">
                                   <ref role="37wK5l" node="2mbQB8J5m$l" resolve="scheduleExecute" />
                                   <node concept="2YIFZM" id="3KwBCAACgvt" role="37wK5m">
-                                    <ref role="37wK5l" node="3KwBCAA_erO" resolve="single" />
                                     <ref role="1Pybhc" node="3KwBCAA_ela" resolve="TypecheckingSchedulers" />
+                                    <ref role="37wK5l" node="3KwBCAA_erO" resolve="blocking" />
                                   </node>
                                 </node>
                               </node>
@@ -2190,9 +2192,9 @@
         <node concept="3clFbF" id="Hg6EndD1pg" role="3cqZAp">
           <node concept="1rXfSq" id="Hg6EndD1pf" role="3clFbG">
             <ref role="37wK5l" node="2mbQB8J5m$l" resolve="scheduleExecute" />
-            <node concept="2YIFZM" id="Hg6EndD1UU" role="37wK5m">
-              <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
-              <ref role="37wK5l" to="m4y7:~Schedulers.single():io.reactivex.Scheduler" resolve="single" />
+            <node concept="2YIFZM" id="19wqdqO46s4" role="37wK5m">
+              <ref role="37wK5l" node="19wqdqO45_Z" resolve="background" />
+              <ref role="1Pybhc" node="3KwBCAA_ela" resolve="TypecheckingSchedulers" />
             </node>
           </node>
         </node>
@@ -2300,79 +2302,87 @@
           </node>
         </node>
         <node concept="3clFbF" id="6kREIVkBx2c" role="3cqZAp">
-          <node concept="2OqwBi" id="4BHjwwGLnhh" role="3clFbG">
-            <node concept="37vLTw" id="4BHjwwGi7IH" role="2Oq$k0">
-              <ref role="3cqZAo" node="4BHjwwGi7In" resolve="last" />
-            </node>
-            <node concept="liA8E" id="4BHjwwGLnNl" role="2OqNvi">
-              <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function):io.reactivex.Single" resolve="map" />
-              <node concept="1bVj0M" id="4BHjwwGLp1f" role="37wK5m">
-                <node concept="37vLTG" id="4BHjwwGLq3q" role="1bW2Oz">
-                  <property role="TrG5h" value="step" />
-                  <node concept="3uibUv" id="4BHjwwGLqs3" role="1tU5fm">
-                    <ref role="3uigEE" node="1pPth$lAzAx" resolve="Step" />
-                    <node concept="3qTvmN" id="4BHjwwGLqPZ" role="11_B2D" />
-                  </node>
-                </node>
-                <node concept="3clFbS" id="4BHjwwGLp1g" role="1bW5cS">
-                  <node concept="3clFbJ" id="4BHjwwGLrnj" role="3cqZAp">
-                    <node concept="3y3z36" id="4BHjwwGLrZU" role="3clFbw">
-                      <node concept="10Nm6u" id="4BHjwwGLsfX" role="3uHU7w" />
-                      <node concept="37vLTw" id="4BHjwwGLrAa" role="3uHU7B">
-                        <ref role="3cqZAo" node="4BHjwwGKJA$" resolve="failure" />
-                      </node>
+          <node concept="2OqwBi" id="19wqdqNSOz_" role="3clFbG">
+            <node concept="2OqwBi" id="4BHjwwGLnhh" role="2Oq$k0">
+              <node concept="37vLTw" id="4BHjwwGi7IH" role="2Oq$k0">
+                <ref role="3cqZAo" node="4BHjwwGi7In" resolve="last" />
+              </node>
+              <node concept="liA8E" id="4BHjwwGLnNl" role="2OqNvi">
+                <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function):io.reactivex.Single" resolve="map" />
+                <node concept="1bVj0M" id="4BHjwwGLp1f" role="37wK5m">
+                  <node concept="37vLTG" id="4BHjwwGLq3q" role="1bW2Oz">
+                    <property role="TrG5h" value="step" />
+                    <node concept="3uibUv" id="4BHjwwGLqs3" role="1tU5fm">
+                      <ref role="3uigEE" node="1pPth$lAzAx" resolve="Step" />
+                      <node concept="3qTvmN" id="4BHjwwGLqPZ" role="11_B2D" />
                     </node>
-                    <node concept="3clFbS" id="4BHjwwGLrnl" role="3clFbx">
-                      <node concept="3clFbJ" id="4BHjwwGLT5a" role="3cqZAp">
-                        <node concept="3clFbS" id="4BHjwwGLT5c" role="3clFbx">
-                          <node concept="YS8fn" id="4BHjwwGLswN" role="3cqZAp">
-                            <node concept="1eOMI4" id="4BHjwwGMaLB" role="YScLw">
-                              <node concept="10QFUN" id="4BHjwwGMaL$" role="1eOMHV">
-                                <node concept="3uibUv" id="4BHjwwGMaLD" role="10QFUM">
-                                  <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
-                                </node>
-                                <node concept="37vLTw" id="4BHjwwGMaLE" role="10QFUP">
-                                  <ref role="3cqZAo" node="4BHjwwGKJA$" resolve="failure" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbH" id="4BHjwwGLZ5i" role="3cqZAp" />
+                  </node>
+                  <node concept="3clFbS" id="4BHjwwGLp1g" role="1bW5cS">
+                    <node concept="3clFbJ" id="4BHjwwGLrnj" role="3cqZAp">
+                      <node concept="3y3z36" id="4BHjwwGLrZU" role="3clFbw">
+                        <node concept="10Nm6u" id="4BHjwwGLsfX" role="3uHU7w" />
+                        <node concept="37vLTw" id="4BHjwwGLrAa" role="3uHU7B">
+                          <ref role="3cqZAo" node="4BHjwwGKJA$" resolve="failure" />
                         </node>
-                        <node concept="2ZW3vV" id="4BHjwwGLTOA" role="3clFbw">
-                          <node concept="3uibUv" id="4BHjwwGLU7V" role="2ZW6by">
-                            <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
-                          </node>
-                          <node concept="37vLTw" id="4BHjwwGLTjT" role="2ZW6bz">
-                            <ref role="3cqZAo" node="4BHjwwGKJA$" resolve="failure" />
-                          </node>
-                        </node>
-                        <node concept="9aQIb" id="4BHjwwGLUI6" role="9aQIa">
-                          <node concept="3clFbS" id="4BHjwwGLUI7" role="9aQI4">
-                            <node concept="YS8fn" id="4BHjwwGLUY4" role="3cqZAp">
-                              <node concept="2ShNRf" id="4BHjwwGLVh3" role="YScLw">
-                                <node concept="1pGfFk" id="4BHjwwGLWeu" role="2ShVmc">
-                                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
-                                  <node concept="Xl_RD" id="4BHjwwGLWTc" role="37wK5m">
-                                    <property role="Xl_RC" value="unexpected failure" />
+                      </node>
+                      <node concept="3clFbS" id="4BHjwwGLrnl" role="3clFbx">
+                        <node concept="3clFbJ" id="4BHjwwGLT5a" role="3cqZAp">
+                          <node concept="3clFbS" id="4BHjwwGLT5c" role="3clFbx">
+                            <node concept="YS8fn" id="4BHjwwGLswN" role="3cqZAp">
+                              <node concept="1eOMI4" id="4BHjwwGMaLB" role="YScLw">
+                                <node concept="10QFUN" id="4BHjwwGMaL$" role="1eOMHV">
+                                  <node concept="3uibUv" id="4BHjwwGMaLD" role="10QFUM">
+                                    <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
                                   </node>
-                                  <node concept="37vLTw" id="4BHjwwGLYSe" role="37wK5m">
+                                  <node concept="37vLTw" id="4BHjwwGMaLE" role="10QFUP">
                                     <ref role="3cqZAo" node="4BHjwwGKJA$" resolve="failure" />
                                   </node>
                                 </node>
                               </node>
                             </node>
+                            <node concept="3clFbH" id="4BHjwwGLZ5i" role="3cqZAp" />
+                          </node>
+                          <node concept="2ZW3vV" id="4BHjwwGLTOA" role="3clFbw">
+                            <node concept="3uibUv" id="4BHjwwGLU7V" role="2ZW6by">
+                              <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+                            </node>
+                            <node concept="37vLTw" id="4BHjwwGLTjT" role="2ZW6bz">
+                              <ref role="3cqZAo" node="4BHjwwGKJA$" resolve="failure" />
+                            </node>
+                          </node>
+                          <node concept="9aQIb" id="4BHjwwGLUI6" role="9aQIa">
+                            <node concept="3clFbS" id="4BHjwwGLUI7" role="9aQI4">
+                              <node concept="YS8fn" id="4BHjwwGLUY4" role="3cqZAp">
+                                <node concept="2ShNRf" id="4BHjwwGLVh3" role="YScLw">
+                                  <node concept="1pGfFk" id="4BHjwwGLWeu" role="2ShVmc">
+                                    <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
+                                    <node concept="Xl_RD" id="4BHjwwGLWTc" role="37wK5m">
+                                      <property role="Xl_RC" value="unexpected failure" />
+                                    </node>
+                                    <node concept="37vLTw" id="4BHjwwGLYSe" role="37wK5m">
+                                      <ref role="3cqZAo" node="4BHjwwGKJA$" resolve="failure" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
-                  </node>
-                  <node concept="3clFbF" id="4BHjwwGLtiL" role="3cqZAp">
-                    <node concept="37vLTw" id="4BHjwwGLtiJ" role="3clFbG">
-                      <ref role="3cqZAo" node="4BHjwwGLq3q" resolve="step" />
+                    <node concept="3clFbF" id="4BHjwwGLtiL" role="3cqZAp">
+                      <node concept="37vLTw" id="4BHjwwGLtiJ" role="3clFbG">
+                        <ref role="3cqZAo" node="4BHjwwGLq3q" resolve="step" />
+                      </node>
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="19wqdqNSTzi" role="2OqNvi">
+              <ref role="37wK5l" to="unkn:~Single.subscribeOn(io.reactivex.Scheduler):io.reactivex.Single" resolve="subscribeOn" />
+              <node concept="37vLTw" id="19wqdqNSVSy" role="37wK5m">
+                <ref role="3cqZAo" node="2mbQB8J5_aK" resolve="subscribeScheduler" />
               </node>
             </node>
           </node>
@@ -6124,9 +6134,9 @@
                 </node>
                 <node concept="liA8E" id="4BHjwwGP7Ac" role="2OqNvi">
                   <ref role="37wK5l" node="2mbQB8J5m$l" resolve="scheduleExecute" />
-                  <node concept="2YIFZM" id="4BHjwwGP7Ad" role="37wK5m">
-                    <ref role="37wK5l" to="m4y7:~Schedulers.single():io.reactivex.Scheduler" resolve="single" />
-                    <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+                  <node concept="2YIFZM" id="19wqdqOakA2" role="37wK5m">
+                    <ref role="37wK5l" node="3KwBCAA_erO" resolve="blocking" />
+                    <ref role="1Pybhc" node="3KwBCAA_ela" resolve="TypecheckingSchedulers" />
                   </node>
                 </node>
               </node>
@@ -7766,8 +7776,30 @@
     <property role="3GE5qa" value="launch" />
     <property role="TrG5h" value="TypecheckingSchedulers" />
     <node concept="2tJIrI" id="3KwBCAA_el$" role="jymVt" />
+    <node concept="2YIFZL" id="19wqdqO45_Z" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="background" />
+      <node concept="3clFbS" id="19wqdqO45zl" role="3clF47">
+        <node concept="3clFbF" id="19wqdqO45Oo" role="3cqZAp">
+          <node concept="2YIFZM" id="19wqdqO45Oq" role="3clFbG">
+            <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+            <ref role="37wK5l" to="m4y7:~Schedulers.from(java.util.concurrent.Executor):io.reactivex.Scheduler" resolve="from" />
+            <node concept="10M0yZ" id="19wqdqO45Or" role="37wK5m">
+              <ref role="1PxDUh" to="e5vs:~PooledThreadExecutor" resolve="PooledThreadExecutor" />
+              <ref role="3cqZAo" to="e5vs:~PooledThreadExecutor.INSTANCE" resolve="INSTANCE" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="19wqdqO45DQ" role="3clF45">
+        <ref role="3uigEE" to="unkn:~Scheduler" resolve="Scheduler" />
+      </node>
+      <node concept="3Tm1VV" id="19wqdqO45zk" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="19wqdqO45t$" role="jymVt" />
     <node concept="2YIFZL" id="3KwBCAA_erO" role="jymVt">
-      <property role="TrG5h" value="single" />
+      <property role="TrG5h" value="blocking" />
       <node concept="3uibUv" id="3KwBCAA_erP" role="3clF45">
         <ref role="3uigEE" to="unkn:~Scheduler" resolve="Scheduler" />
       </node>
@@ -7777,9 +7809,13 @@
           <node concept="9aQIb" id="3KwBCAA_Uq7" role="9aQIa">
             <node concept="3clFbS" id="3KwBCAA_Uq8" role="9aQI4">
               <node concept="3cpWs6" id="3KwBCAA_Uq9" role="3cqZAp">
-                <node concept="2YIFZM" id="3KwBCAAAg4Y" role="3cqZAk">
-                  <ref role="37wK5l" to="m4y7:~Schedulers.single():io.reactivex.Scheduler" resolve="single" />
+                <node concept="2YIFZM" id="19wqdqO465D" role="3cqZAk">
                   <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+                  <ref role="37wK5l" to="m4y7:~Schedulers.from(java.util.concurrent.Executor):io.reactivex.Scheduler" resolve="from" />
+                  <node concept="10M0yZ" id="19wqdqO465E" role="37wK5m">
+                    <ref role="3cqZAo" to="e5vs:~PooledThreadExecutor.INSTANCE" resolve="INSTANCE" />
+                    <ref role="1PxDUh" to="e5vs:~PooledThreadExecutor" resolve="PooledThreadExecutor" />
+                  </node>
                 </node>
               </node>
             </node>
