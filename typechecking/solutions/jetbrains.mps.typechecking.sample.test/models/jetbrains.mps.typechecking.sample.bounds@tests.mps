@@ -314,6 +314,71 @@
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
+    <node concept="1LZb2c" id="19nQ_7V2D9U" role="1SL9yI">
+      <property role="TrG5h" value="Recursion" />
+      <node concept="3cqZAl" id="19nQ_7V2D9V" role="3clF45" />
+      <node concept="3clFbS" id="19nQ_7V2D9W" role="3clF47">
+        <node concept="3cpWs8" id="19nQ_7V2D9X" role="3cqZAp">
+          <node concept="3cpWsn" id="19nQ_7V2D9Y" role="3cpWs9">
+            <property role="TrG5h" value="cls" />
+            <node concept="3Tqbb2" id="19nQ_7V2D9Z" role="1tU5fm">
+              <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+            </node>
+          </node>
+        </node>
+        <node concept="1QHqEK" id="19nQ_7V2Da0" role="3cqZAp">
+          <node concept="1QHqEC" id="19nQ_7V2Da1" role="1QHqEI">
+            <node concept="3clFbS" id="19nQ_7V2Da2" role="1bW5cS">
+              <node concept="3clFbF" id="19nQ_7V2Da3" role="3cqZAp">
+                <node concept="37vLTI" id="19nQ_7V2Da4" role="3clFbG">
+                  <node concept="1PxgMI" id="19nQ_7V2Da5" role="37vLTx">
+                    <node concept="chp4Y" id="19nQ_7V2Da6" role="3oSUPX">
+                      <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                    </node>
+                    <node concept="2OqwBi" id="19nQ_7V2Da7" role="1m5AlR">
+                      <node concept="1N_AGu" id="19nQ_7V2Da8" role="2Oq$k0">
+                        <ref role="1N_AGt" to="f6t6:7w387SKGv4P" resolve="Recursion" />
+                      </node>
+                      <node concept="liA8E" id="19nQ_7V2Da9" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                        <node concept="2OqwBi" id="19nQ_7V2Daa" role="37wK5m">
+                          <node concept="1jxXqW" id="19nQ_7V2Dab" role="2Oq$k0" />
+                          <node concept="liA8E" id="19nQ_7V2Dac" role="2OqNvi">
+                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="19nQ_7V2Dad" role="37vLTJ">
+                    <ref role="3cqZAo" node="19nQ_7V2D9Y" resolve="cls" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="19nQ_7V2Dae" role="ukAjM">
+            <node concept="1jxXqW" id="19nQ_7V2Daf" role="2Oq$k0" />
+            <node concept="liA8E" id="19nQ_7V2Dag" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
+        </node>
+        <node concept="2Hmddi" id="19nQ_7V2Dah" role="3cqZAp">
+          <node concept="2YIFZM" id="19nQ_7V2Dai" role="2Hmdds">
+            <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
+            <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+            <node concept="37vLTw" id="19nQ_7V2Daj" role="37wK5m">
+              <ref role="3cqZAo" node="19nQ_7V2D9Y" resolve="cls" />
+            </node>
+            <node concept="1jxXqW" id="19nQ_7V2Dak" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="19nQ_7V2Dal" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+    </node>
   </node>
   <node concept="2XOHcx" id="1N_0WA5DT60">
     <property role="2XOHcw" value="${logic_home}" />
