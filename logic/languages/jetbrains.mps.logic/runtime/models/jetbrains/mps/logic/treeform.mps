@@ -45,6 +45,10 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
+        <child id="1153952416686" name="body" index="2GV8ay" />
+        <child id="1153952429843" name="finallyBody" index="2GVbov" />
+      </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
       </concept>
@@ -11727,6 +11731,56 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4peSo3CM41r" role="jymVt" />
+    <node concept="2YIFZL" id="3sb6Qlvetq2" role="jymVt">
+      <property role="TrG5h" value="withDelegate" />
+      <node concept="37vLTG" id="3sb6QlvetJI" role="3clF46">
+        <property role="TrG5h" value="delegate" />
+        <node concept="3uibUv" id="3sb6QlvetMy" role="1tU5fm">
+          <ref role="3uigEE" node="4peSo3CLajR" resolve="PrintDelegate" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3sb6QlvetR9" role="3clF46">
+        <property role="TrG5h" value="run" />
+        <node concept="3uibUv" id="3sb6QlvetU1" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="3sb6Qlvetq4" role="3clF45" />
+      <node concept="3Tm1VV" id="3sb6Qlvetq5" role="1B3o_S" />
+      <node concept="3clFbS" id="3sb6Qlvetq6" role="3clF47">
+        <node concept="2GUZhq" id="3sb6QlvetWb" role="3cqZAp">
+          <node concept="3clFbS" id="3sb6QlvetWc" role="2GV8ay">
+            <node concept="3clFbF" id="3sb6QlvetWY" role="3cqZAp">
+              <node concept="1rXfSq" id="3sb6QlvetWX" role="3clFbG">
+                <ref role="37wK5l" node="4peSo3CM2Ms" resolve="pushDelegate" />
+                <node concept="37vLTw" id="3sb6QlvetZo" role="37wK5m">
+                  <ref role="3cqZAo" node="3sb6QlvetJI" resolve="delegate" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="3sb6Qlveu0w" role="3cqZAp">
+              <node concept="2OqwBi" id="3sb6Qlveu2H" role="3clFbG">
+                <node concept="37vLTw" id="3sb6Qlveu0u" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3sb6QlvetR9" resolve="run" />
+                </node>
+                <node concept="liA8E" id="3sb6Qlveu50" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="3sb6Qlveunm" role="3cqZAp" />
+          </node>
+          <node concept="3clFbS" id="3sb6QlvetWd" role="2GVbov">
+            <node concept="3clFbF" id="3sb6Qlveu6n" role="3cqZAp">
+              <node concept="1rXfSq" id="3sb6Qlveu6m" role="3clFbG">
+                <ref role="37wK5l" node="4peSo3CMbfh" resolve="popDelegate" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3sb6QlvetcL" role="jymVt" />
     <node concept="2YIFZL" id="4peSo3CM2Ms" role="jymVt">
       <property role="TrG5h" value="pushDelegate" />
       <node concept="37vLTG" id="4peSo3CM30y" role="3clF46">
