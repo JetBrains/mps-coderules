@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.logic.reactor" uuid="bbf5c548-7111-4a53-a117-cdefc664cf34" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="models" />
-    </modelRoot>
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="lib/conreactor-api-0.9.jar" />
       <sourceRoot location="lib/conreactor-core-0.9.jar" />
+      <sourceRoot location="lib/collection-0.7.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
