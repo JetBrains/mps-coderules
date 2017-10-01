@@ -560,7 +560,9 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
-      <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
+      <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp">
+        <reference id="1218736638915" name="classifier" index="32nkFo" />
+      </concept>
       <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
         <reference id="1205756909548" name="member" index="2WH_rO" />
       </concept>
@@ -26982,27 +26984,53 @@
                               <node concept="3uibUv" id="6kREIVkXK57" role="1tU5fm">
                                 <ref role="3uigEE" to="9erk:~SearchQuery" resolve="SearchQuery" />
                               </node>
-                              <node concept="2ShNRf" id="6kREIVkXK5j" role="33vP2m">
-                                <node concept="1pGfFk" id="6kREIVkXK5k" role="2ShVmc">
-                                  <ref role="37wK5l" to="9erk:~SearchQuery.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SearchScope)" resolve="SearchQuery" />
-                                  <node concept="2OqwBi" id="6kREIVkXK5l" role="37wK5m">
-                                    <node concept="2WthIp" id="6kREIVkXK5m" role="2Oq$k0" />
-                                    <node concept="1DTwFV" id="6kREIVkXK5n" role="2OqNvi">
-                                      <ref role="2WH_rO" node="3YJ7yg2LgUp" resolve="node" />
-                                    </node>
-                                  </node>
-                                  <node concept="2OqwBi" id="6kREIVkXK5o" role="37wK5m">
-                                    <node concept="2OqwBi" id="6kREIVkXK5p" role="2Oq$k0">
-                                      <node concept="2WthIp" id="6kREIVkXK5q" role="2Oq$k0" />
-                                      <node concept="1DTwFV" id="6kREIVkXK5r" role="2OqNvi">
-                                        <ref role="2WH_rO" node="3YJ7yg2LgUn" resolve="mpsProject" />
+                            </node>
+                          </node>
+                          <node concept="1QHqEK" id="5upUcEtjDdE" role="3cqZAp">
+                            <node concept="1QHqEC" id="5upUcEtjDdG" role="1QHqEI">
+                              <node concept="3clFbS" id="5upUcEtjDdI" role="1bW5cS">
+                                <node concept="3clFbF" id="5upUcEtiRpS" role="3cqZAp">
+                                  <node concept="37vLTI" id="5upUcEtiRpU" role="3clFbG">
+                                    <node concept="2ShNRf" id="6kREIVkXK5j" role="37vLTx">
+                                      <node concept="1pGfFk" id="6kREIVkXK5k" role="2ShVmc">
+                                        <ref role="37wK5l" to="9erk:~SearchQuery.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SearchScope)" resolve="SearchQuery" />
+                                        <node concept="2OqwBi" id="6kREIVkXK5l" role="37wK5m">
+                                          <node concept="2WthIp" id="6kREIVkXK5m" role="2Oq$k0" />
+                                          <node concept="1DTwFV" id="6kREIVkXK5n" role="2OqNvi">
+                                            <ref role="2WH_rO" node="3YJ7yg2LgUp" resolve="node" />
+                                          </node>
+                                        </node>
+                                        <node concept="2OqwBi" id="6kREIVkXK5o" role="37wK5m">
+                                          <node concept="2OqwBi" id="6kREIVkXK5p" role="2Oq$k0">
+                                            <node concept="2WthIp" id="6kREIVkXK5q" role="2Oq$k0" />
+                                            <node concept="1DTwFV" id="6kREIVkXK5r" role="2OqNvi">
+                                              <ref role="2WH_rO" node="3YJ7yg2LgUn" resolve="mpsProject" />
+                                            </node>
+                                          </node>
+                                          <node concept="liA8E" id="6kREIVkXK5s" role="2OqNvi">
+                                            <ref role="37wK5l" to="z1c3:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
-                                    <node concept="liA8E" id="6kREIVkXK5s" role="2OqNvi">
-                                      <ref role="37wK5l" to="z1c3:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
+                                    <node concept="37vLTw" id="5upUcEtiRpY" role="37vLTJ">
+                                      <ref role="3cqZAo" node="6kREIVkXK5i" resolve="query" />
                                     </node>
                                   </node>
                                 </node>
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="5upUcEtjF_F" role="ukAjM">
+                              <node concept="2OqwBi" id="5upUcEtjEoy" role="2Oq$k0">
+                                <node concept="2WthIp" id="5upUcEtjEo_" role="2Oq$k0">
+                                  <ref role="32nkFo" node="3YJ7yg2LgPI" resolve="FindApplicableTemplates" />
+                                </node>
+                                <node concept="1DTwFV" id="5upUcEtjEoB" role="2OqNvi">
+                                  <ref role="2WH_rO" node="3YJ7yg2LgUn" resolve="mpsProject" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="5upUcEtjHoz" role="2OqNvi">
+                                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                               </node>
                             </node>
                           </node>
