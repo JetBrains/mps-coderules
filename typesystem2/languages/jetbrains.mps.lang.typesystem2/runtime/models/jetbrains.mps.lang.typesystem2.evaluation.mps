@@ -634,19 +634,7 @@
             </node>
             <node concept="TSZUe" id="4hh0cTR9WTU" role="2OqNvi">
               <node concept="Xl_RD" id="4hh0cTR9X9H" role="25WWJ7">
-                <property role="Xl_RC" value="ubound" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4hh0cTR9Xig" role="3cqZAp">
-          <node concept="2OqwBi" id="4hh0cTR9Xih" role="3clFbG">
-            <node concept="37vLTw" id="4hh0cTR9Xii" role="2Oq$k0">
-              <ref role="3cqZAo" node="7dgRGU4oxoq" resolve="result" />
-            </node>
-            <node concept="TSZUe" id="4hh0cTR9Xij" role="2OqNvi">
-              <node concept="Xl_RD" id="4hh0cTR9Xik" role="25WWJ7">
-                <property role="Xl_RC" value="lbound" />
+                <property role="Xl_RC" value="hasBound" />
               </node>
             </node>
           </node>
