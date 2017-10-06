@@ -7,6 +7,7 @@ import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
 import jetbrains.mps.unification.test.MockTermsParser.parse
 import org.junit.Assert.*
+import org.junit.Ignore
 import org.junit.Test
 
 /**
@@ -498,9 +499,50 @@ class TestMatcher {
         }
     }
 
-    private fun Builder.indices(vararg occurrence: ConstraintOccurrence): Pair<RuleIndex, OccurrenceIndex> {
+    @Test
+    fun matchConstraintsIncrementally() {
 
-        val stored = occurrence.toList()
+        val (b, c, d) = metaLogical<String>("b", "c", "d")
+        val (x, y, z) = metaLogical<String>("x", "y", "z")
+
+        val program = programWithRules(
+            rule("expected",
+                headKept(
+                    constraint("foo", d, parse("a{d}")),
+                    constraint("foo", b, parse("a{b}")),
+                    constraint("foo", c, parse("a{c}"))
+                ),
+                                                                body(
+                                                                    constraint("done")
+                                                                )
+            )
+        )
+
+        val stored = ArrayList<ConstraintOccurrence>()
+        program.indices(stored).run {
+            val matcher = Matcher(first)
+            val occ1 = occurrence("foo", x, parse("a{c}"))
+            stored.add(occ1)
+            matcher.matching(occ1, second).let { matches ->
+                assertTrue(matches.isEmpty())
+            }
+            val occ2 = occurrence("foo", y, parse("a{b}"))
+            stored.add(occ2)
+            matcher.matching(occ2, second).let { matches ->
+                assertTrue(matches.isEmpty())
+            }
+            val occ3 = occurrence("foo", z, parse("a{d}"))
+            stored.add(occ3)
+            matcher.matching(occ3, second).let { matches ->
+                assertEquals("expected", matches.single().rule.tag())
+            }
+        }
+    }
+
+    private fun Builder.indices(vararg occurrence: ConstraintOccurrence): Pair<RuleIndex, OccurrenceIndex> =
+        this.indices(occurrence.toList())
+
+    private fun Builder.indices(stored: List<ConstraintOccurrence>): Pair<RuleIndex, OccurrenceIndex> {
 
         val aux = object : OccurrenceIndex {
             override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =

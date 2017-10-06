@@ -6,6 +6,8 @@ import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
+import jetbrains.mps.logic.reactor.util.cons
+import org.jetbrains.kotlin.js.parser.parse
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
@@ -474,6 +476,30 @@ class TestController {
             assertEquals(setOf(ConstraintSymbol("bar", 0), ConstraintSymbol("foo_and_bar", 0)), constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol("foo_and_bar", 0)).count())
             assertEquals(1, occurrences(ConstraintSymbol("bar", 0)).count())
+        }
+    }
+
+    @Test
+    fun inverseOccurrenceOrder() {
+        val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
+        val W = metaLogical<Int>("W")
+
+        programWithRules(
+             rule("main",
+                headReplaced(constraint("main")),       body(   statement({ w -> w.set(42) }, W),
+                                                                    constraint("foo", W, "a{c}"),
+                                                                    constraint("foo", W, "a{b}"),
+                                                                    constraint("foo", W, "a{d}"))
+             ),
+             rule("expected",
+                 headReplaced(
+                     constraint("foo", X, "a{d}"),
+                     constraint("foo", Y, "a{b}"),
+                     constraint("foo", Z, "a{c}")),     body(constraint("done")))
+        
+         ).controller().evaluate(occurrence("main")).run {
+            assertEquals(setOf(ConstraintSymbol("done", 0)), constraintSymbols())
+            assertEquals(1, occurrences(ConstraintSymbol.symbol("done", 0)).count())
         }
     }
 

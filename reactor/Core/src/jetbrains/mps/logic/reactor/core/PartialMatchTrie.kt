@@ -77,7 +77,6 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
         val newTries = ArrayList<PartialMatchTrie>()
         for (t in tries) {
             if (!t.vacant.isEmpty) {
-                t.vacant.stream()
                 newTries.add(t)
                 for (idx in t.vacant.stream()) {
                     if (activeOcc.constraint().symbol() == constraints[idx].symbol()) {
@@ -193,21 +192,19 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
         private inner class RootMatchTrieNode(copyFrom: RootMatchTrieNode? = null) : BaseMatchTrieNode() {
 
             init {
-                copyFrom?.firstChild?.firstAlive()?.let { mtn ->
+                copyFrom?._firstChild?.firstAlive()?.let { copyFirst ->
 
-                    var first = MatchTrieNode(null, mtn)
+                    var first = MatchTrieNode(null, copyFirst)
                     var prev = first
-                    var next = mtn.nextSibling?.firstAlive()
+                    var copyNext = copyFirst._nextSibling?.firstAlive()
 
-                    while (next != null) {
-                        val n = MatchTrieNode(null, next)
-                        prev._nextSibling = n
-                        prev = n
-                        next = n.nextSibling?.firstAlive()
+                    while (copyNext != null) {
+                        val next = MatchTrieNode(null, copyNext)
+                        prev._nextSibling = next
+                        prev = next
+                        copyNext = copyNext._nextSibling?.firstAlive()
                     }
-
-//                prev._nextSibling = buildRoots()
-
+                    
                     this._firstChild = first
 
                 }
@@ -331,7 +328,6 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
                 val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
 
-
                 return if (nextCst.symbol() == activeOcc.constraint().symbol() &&
                     !anyInPath { it -> it.constraint.symbol() == activeOcc.constraint().symbol() })
                 {
@@ -391,17 +387,17 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
             }
 
             private fun copyChildren(copyFrom: MatchTrieNode) {
-                copyFrom.firstChild?.firstAlive()?.let { mtn ->
+                copyFrom._firstChild?.firstAlive()?.let { copyFirst ->
 
-                    val first = MatchTrieNode(this, mtn)
+                    val first = MatchTrieNode(this, copyFirst)
                     var prev = first
-                    var next = mtn.nextSibling?.firstAlive()
+                    var copyNext = copyFirst._nextSibling?.firstAlive()
 
-                    while (next != null) {
-                        val n = MatchTrieNode(this, next)
-                        prev._nextSibling = n
-                        prev = n
-                        next = n.nextSibling?.firstAlive()
+                    while (copyNext != null) {
+                        val next = MatchTrieNode(this, copyNext)
+                        prev._nextSibling = next
+                        prev = next
+                        copyNext = copyNext._nextSibling?.firstAlive()
                     }
 
                     this._firstChild = first
@@ -430,7 +426,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 foldPath(ArrayList<Any>(4)) { list, mtn -> mtn.collectMetaInstances(meta, list) }
 
             private fun hasOccurrence(occ: ConstraintOccurrence): Boolean =
-                anyInPath { mtn -> mtn.occurrence == occ }
+                anyInPath { mtn -> mtn.occurrence === occ }         // referential equality!
 
             private inline fun anyInPath(predicate: (MatchTrieNode) -> Boolean): Boolean =
                 foldPath(false) { b, mtn -> b || predicate(mtn) }
