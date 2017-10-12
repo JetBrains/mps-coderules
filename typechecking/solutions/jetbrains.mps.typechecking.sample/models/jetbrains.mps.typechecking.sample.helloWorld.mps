@@ -38,6 +38,7 @@
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
@@ -119,6 +120,7 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -267,6 +269,50 @@
             <property role="Xl_RC" value="Hello" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="W6bnNduvXA" role="jymVt" />
+    <node concept="3clFb_" id="W6bnNduwiN" role="jymVt">
+      <property role="TrG5h" value="foo" />
+      <node concept="37vLTG" id="W6bnNduwoV" role="3clF46">
+        <property role="TrG5h" value="key" />
+        <node concept="10Oyi0" id="W6bnNduwq2" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="W6bnNduwqA" role="3clF46">
+        <property role="TrG5h" value="value" />
+        <node concept="3uibUv" id="W6bnNduwrJ" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="W6bnNduy34" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      </node>
+      <node concept="3Tm1VV" id="W6bnNduwiQ" role="1B3o_S" />
+      <node concept="3clFbS" id="W6bnNduwiR" role="3clF47">
+        <node concept="3clFbF" id="W6bnNduwsF" role="3cqZAp">
+          <node concept="2OqwBi" id="W6bnNduw$$" role="3clFbG">
+            <node concept="37vLTw" id="W6bnNduwsE" role="2Oq$k0">
+              <ref role="3cqZAo" node="W6bnNduw42" resolve="table" />
+            </node>
+            <node concept="liA8E" id="W6bnNduwWl" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Hashtable.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <node concept="37vLTw" id="W6bnNdux9p" role="37wK5m">
+                <ref role="3cqZAo" node="W6bnNduwoV" resolve="key" />
+              </node>
+              <node concept="37vLTw" id="W6bnNduxEF" role="37wK5m">
+                <ref role="3cqZAo" node="W6bnNduwqA" resolve="value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="W6bnNduwfs" role="jymVt" />
+    <node concept="312cEg" id="W6bnNduw42" role="jymVt">
+      <property role="TrG5h" value="table" />
+      <node concept="3Tm6S6" id="W6bnNduw43" role="1B3o_S" />
+      <node concept="3uibUv" id="W6bnNduw7t" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~Hashtable" resolve="Hashtable" />
       </node>
     </node>
     <node concept="3Tm1VV" id="3Qp4N06bAm1" role="1B3o_S" />
