@@ -1402,5 +1402,28 @@
       <ref role="1YaFvo" to="wq2x:60zk4o7reud" resolve="LogicalContextExpression" />
     </node>
   </node>
+  <node concept="1YbPZF" id="7smgEqggf1N">
+    <property role="TrG5h" value="typeof_NodeAnchor" />
+    <node concept="3clFbS" id="7smgEqggf1O" role="18ibNy">
+      <node concept="1Z5TYs" id="7smgEqggfiD" role="3cqZAp">
+        <node concept="mw_s8" id="7smgEqggfiX" role="1ZfhKB">
+          <node concept="2c44tf" id="7smgEqggfiT" role="mwGJk">
+            <node concept="26uTi9" id="7smgEqggfjj" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="7smgEqggfiG" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7smgEqggf2G" role="mwGJk">
+            <node concept="1YBJjd" id="7smgEqggf4s" role="1Z2MuG">
+              <ref role="1YBMHb" node="7smgEqggf1Q" resolve="nodeAnchor" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7smgEqggf1Q" role="1YuTPh">
+      <property role="TrG5h" value="nodeAnchor" />
+      <ref role="1YaFvo" to="wq2x:7smgEqggf12" resolve="NodeAnchor" />
+    </node>
+  </node>
 </model>
 
