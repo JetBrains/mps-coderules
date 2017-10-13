@@ -203,7 +203,7 @@ class LogicalImpl<T> : JoinableLogical<T> {
 
     override fun toString(): String =
         if (_parent != null) "${name}(^${_parent.toString()})"
-        else "${name}=$_value"
+        else name
 
 }
 
