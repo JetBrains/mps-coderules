@@ -326,7 +326,7 @@
                         <ref role="3gnhBz" to="wq2x:6p0DfM0a3TO" resolve="Body" />
                       </node>
                       <node concept="3gn64h" id="2TtA2rKl5iD" role="3gmYPZ">
-                        <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="TypeInitializer" />
+                        <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
                       </node>
                     </node>
                   </node>

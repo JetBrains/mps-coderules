@@ -6799,55 +6799,55 @@
     </node>
   </node>
   <node concept="bUwia" id="2N2MQGCM$We">
-    <property role="TrG5h" value="type" />
-    <property role="3GE5qa" value="type" />
-    <node concept="2rT7sh" id="2hteS6ClwZa" role="2rTMjI">
-      <property role="TrG5h" value="type_manifest" />
-      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
-    </node>
-    <node concept="2rT7sh" id="2N2MQGCMWOf" role="2rTMjI">
-      <property role="TrG5h" value="typetable_class" />
-      <ref role="2rTdP9" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
-      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
-    </node>
-    <node concept="2rT7sh" id="7IysFeAaXEh" role="2rTMjI">
-      <property role="TrG5h" value="typeParam_field" />
-      <ref role="2rTdP9" to="wq2x:7IysFeA0yb0" resolve="TypeDeclarationParameter" />
-      <ref role="2rZz_L" to="tpee:fz12cDC" resolve="FieldDeclaration" />
-    </node>
+    <property role="TrG5h" value="macro" />
+    <property role="3GE5qa" value="macro" />
     <node concept="2rT7sh" id="4MEOIDFGYa1" role="2rTMjI">
       <property role="TrG5h" value="typeTermParam_field" />
       <ref role="2rZz_L" to="tpee:fz12cDC" resolve="FieldDeclaration" />
       <ref role="2rTdP9" to="wq2x:4MEOIDFwTxW" resolve="TermDeclarationParameter" />
     </node>
+    <node concept="2rT7sh" id="2hteS6ClwZa" role="2rTMjI">
+      <property role="TrG5h" value="macroManifest" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
+    </node>
+    <node concept="2rT7sh" id="2N2MQGCMWOf" role="2rTMjI">
+      <property role="TrG5h" value="macroTable_class" />
+      <ref role="2rTdP9" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
+    </node>
+    <node concept="2rT7sh" id="7IysFeAaXEh" role="2rTMjI">
+      <property role="TrG5h" value="macroParam_field" />
+      <ref role="2rTdP9" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
+      <ref role="2rZz_L" to="tpee:fz12cDC" resolve="FieldDeclaration" />
+    </node>
     <node concept="2rT7sh" id="7XmdqtdHiM8" role="2rTMjI">
-      <property role="TrG5h" value="typeDecl_class" />
-      <ref role="2rTdP9" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+      <property role="TrG5h" value="macro_class" />
+      <ref role="2rTdP9" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
       <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="2rT7sh" id="7IysFeAiAcO" role="2rTMjI">
-      <property role="TrG5h" value="typeDecl_typeNode_variable" />
+      <property role="TrG5h" value="macro_inputNode_variable" />
       <ref role="2rZz_L" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
-      <ref role="2rTdP9" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+      <ref role="2rTdP9" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
     </node>
     <node concept="2rT7sh" id="4JJCDIm$O$I" role="2rTMjI">
-      <property role="TrG5h" value="typeDecl_template_constructor" />
-      <ref role="2rTdP9" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+      <property role="TrG5h" value="macro_template_constructor" />
+      <ref role="2rTdP9" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
       <ref role="2rZz_L" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
     </node>
     <node concept="2rT7sh" id="7IysFeAHWd7" role="2rTMjI">
-      <property role="TrG5h" value="typeDecl_template_typeLogical" />
-      <ref role="2rTdP9" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+      <property role="TrG5h" value="macro_template_logical" />
+      <ref role="2rTdP9" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
       <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
     </node>
     <node concept="3lhOvk" id="2N2MQGCMWNw" role="3lj3bC">
-      <ref role="30HIoZ" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
-      <ref role="3lhOvi" node="2N2MQGCMHqo" resolve="_TypeTable" />
-      <ref role="2sgKRv" node="2N2MQGCMWOf" resolve="typetable_class" />
+      <ref role="30HIoZ" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
+      <ref role="3lhOvi" node="2N2MQGCMHqo" resolve="_MacroTable" />
+      <ref role="2sgKRv" node="2N2MQGCMWOf" resolve="macroTable_class" />
     </node>
     <node concept="2VPoh5" id="2N2MQGCMV2s" role="2VS0gm">
-      <ref role="2VPoh2" node="2N2MQGCMVs3" resolve="TypeManifest" />
-      <ref role="2sBCQV" node="2hteS6ClwZa" resolve="type_manifest" />
+      <ref role="2VPoh2" node="2N2MQGCMVs3" resolve="MacroManifest" />
+      <ref role="2sBCQV" node="2hteS6ClwZa" resolve="macroManifest" />
       <node concept="2VP$b9" id="7km57Pkd9Ky" role="2VPoh3">
         <node concept="3clFbS" id="7km57Pkd9Kz" role="2VODD2">
           <node concept="3clFbF" id="7km57Pkd9RF" role="3cqZAp">
@@ -6858,7 +6858,7 @@
                   <node concept="1r8y6K" id="7km57Pkd9RJ" role="2OqNvi" />
                 </node>
                 <node concept="2RRcyG" id="7km57Pkd9RK" role="2OqNvi">
-                  <ref role="2RRcyH" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+                  <ref role="2RRcyH" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
                 </node>
               </node>
               <node concept="3GX2aA" id="7km57PkdeOj" role="2OqNvi" />
@@ -6985,7 +6985,7 @@
                                   <node concept="2Xjw5R" id="7IysFeAYttK" role="2OqNvi">
                                     <node concept="1xMEDy" id="7IysFeAYttL" role="1xVPHs">
                                       <node concept="chp4Y" id="7IysFeAYttM" role="ri$Ld">
-                                        <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="TypeDeclarationParameter" />
+                                        <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
                                       </node>
                                     </node>
                                   </node>
@@ -7012,7 +7012,7 @@
                                 <node concept="2Xjw5R" id="7IysFeAYpIH" role="2OqNvi">
                                   <node concept="1xMEDy" id="7IysFeAYpIJ" role="1xVPHs">
                                     <node concept="chp4Y" id="7IysFeAYqa4" role="ri$Ld">
-                                      <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="TypeDeclarationParameter" />
+                                      <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
                                     </node>
                                   </node>
                                 </node>
@@ -7042,7 +7042,7 @@
         <node concept="3clFb_" id="7IysFeAjmhI" role="1Koe22">
           <property role="TrG5h" value="context" />
           <node concept="37vLTG" id="7IysFeAjmo1" role="3clF46">
-            <property role="TrG5h" value="typeNode" />
+            <property role="TrG5h" value="inputNode" />
             <node concept="3Tqbb2" id="7IysFeAjmoR" role="1tU5fm" />
           </node>
           <node concept="3Tm6S6" id="7IysFeAjmi0" role="1B3o_S" />
@@ -7052,7 +7052,7 @@
           <node concept="3clFbS" id="7IysFeAjmr4" role="3clF47">
             <node concept="3clFbF" id="7IysFeAjmrn" role="3cqZAp">
               <node concept="37vLTw" id="7IysFeAjmrm" role="3clFbG">
-                <ref role="3cqZAo" node="7IysFeAjmo1" resolve="typeNode" />
+                <ref role="3cqZAo" node="7IysFeAjmo1" resolve="inputNode" />
                 <node concept="raruj" id="7IysFeAjms_" role="lGtFl" />
                 <node concept="1ZhdrF" id="7IysFeAjmvh" role="lGtFl">
                   <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
@@ -7063,13 +7063,63 @@
                         <node concept="2OqwBi" id="7IysFeAjngF" role="3clFbG">
                           <node concept="1iwH7S" id="7IysFeAjn5G" role="2Oq$k0" />
                           <node concept="1iwH70" id="7IysFeAjntC" role="2OqNvi">
-                            <ref role="1iwH77" node="7IysFeAiAcO" resolve="typeDecl_typeNode_variable" />
+                            <ref role="1iwH77" node="7IysFeAiAcO" resolve="macro_inputNode_variable" />
                             <node concept="2OqwBi" id="7IysFeAjnNS" role="1iwH7V">
                               <node concept="30H73N" id="7IysFeAjnDG" role="2Oq$k0" />
                               <node concept="2Xjw5R" id="7IysFeAjo7x" role="2OqNvi">
                                 <node concept="1xMEDy" id="7IysFeAjo7z" role="1xVPHs">
                                   <node concept="chp4Y" id="7IysFeAjob7" role="ri$Ld">
-                                    <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                                    <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="6DOfTm$$E65" role="3acgRq">
+      <ref role="30HIoZ" to="wq2x:6DOfTm$$CHj" resolve="MacroInputReference" />
+      <node concept="1Koe21" id="6DOfTm$$I_M" role="1lVwrX">
+        <node concept="3clFb_" id="6DOfTm$$I_N" role="1Koe22">
+          <property role="TrG5h" value="context" />
+          <node concept="37vLTG" id="6DOfTm$$I_O" role="3clF46">
+            <property role="TrG5h" value="inputNode" />
+            <node concept="3Tqbb2" id="6DOfTm$$I_P" role="1tU5fm" />
+          </node>
+          <node concept="3Tm6S6" id="6DOfTm$$I_Q" role="1B3o_S" />
+          <node concept="3uibUv" id="6DOfTm$$I_R" role="3clF45">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+          <node concept="3clFbS" id="6DOfTm$$I_S" role="3clF47">
+            <node concept="3clFbF" id="6DOfTm$$I_T" role="3cqZAp">
+              <node concept="37vLTw" id="6DOfTm$$I_U" role="3clFbG">
+                <ref role="3cqZAo" node="6DOfTm$$I_O" resolve="inputNode" />
+                <node concept="raruj" id="6DOfTm$$I_V" role="lGtFl" />
+                <node concept="1ZhdrF" id="6DOfTm$$I_W" role="lGtFl">
+                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                  <property role="2qtEX8" value="variableDeclaration" />
+                  <node concept="3$xsQk" id="6DOfTm$$I_X" role="3$ytzL">
+                    <node concept="3clFbS" id="6DOfTm$$I_Y" role="2VODD2">
+                      <node concept="3clFbF" id="6DOfTm$$I_Z" role="3cqZAp">
+                        <node concept="2OqwBi" id="6DOfTm$$IA0" role="3clFbG">
+                          <node concept="1iwH7S" id="6DOfTm$$IA1" role="2Oq$k0" />
+                          <node concept="1iwH70" id="6DOfTm$$IA2" role="2OqNvi">
+                            <ref role="1iwH77" node="7IysFeAiAcO" resolve="macro_inputNode_variable" />
+                            <node concept="2OqwBi" id="6DOfTm$$IA3" role="1iwH7V">
+                              <node concept="30H73N" id="6DOfTm$$IA4" role="2Oq$k0" />
+                              <node concept="2Xjw5R" id="6DOfTm$$IA5" role="2OqNvi">
+                                <node concept="1xMEDy" id="6DOfTm$$IA6" role="1xVPHs">
+                                  <node concept="chp4Y" id="6DOfTm$$IA7" role="ri$Ld">
+                                    <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                                   </node>
                                 </node>
                               </node>
@@ -7087,12 +7137,12 @@
       </node>
     </node>
     <node concept="3aamgX" id="7IysFeAI2sm" role="3acgRq">
-      <ref role="30HIoZ" to="wq2x:7IysFeA99oR" resolve="TypeLogicalExpression" />
+      <ref role="30HIoZ" to="wq2x:7IysFeA99oR" resolve="MacroLogicalExpression" />
       <node concept="1Koe21" id="7IysFeAI4Hr" role="1lVwrX">
         <node concept="3clFb_" id="7IysFeAI4Hx" role="1Koe22">
           <property role="TrG5h" value="context" />
           <node concept="37vLTG" id="7IysFeAI4JL" role="3clF46">
-            <property role="TrG5h" value="typeLogical" />
+            <property role="TrG5h" value="logical" />
             <node concept="3uibUv" id="7IysFeAI4Ka" role="1tU5fm">
               <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
             </node>
@@ -7104,7 +7154,7 @@
           <node concept="3clFbS" id="7IysFeAI4KI" role="3clF47">
             <node concept="3clFbF" id="7IysFeAI4KT" role="3cqZAp">
               <node concept="37vLTw" id="7IysFeAI4KS" role="3clFbG">
-                <ref role="3cqZAo" node="7IysFeAI4JL" resolve="typeLogical" />
+                <ref role="3cqZAo" node="7IysFeAI4JL" resolve="logical" />
                 <node concept="raruj" id="7IysFeAI4LL" role="lGtFl" />
                 <node concept="1ZhdrF" id="7IysFeAI4NT" role="lGtFl">
                   <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
@@ -7115,13 +7165,13 @@
                         <node concept="2OqwBi" id="7IysFeAI5$v" role="3clFbG">
                           <node concept="1iwH7S" id="7IysFeAI5qq" role="2Oq$k0" />
                           <node concept="1iwH70" id="7IysFeAI5KD" role="2OqNvi">
-                            <ref role="1iwH77" node="7IysFeAHWd7" resolve="typeDecl_template_typeLogical" />
+                            <ref role="1iwH77" node="7IysFeAHWd7" resolve="macro_template_logical" />
                             <node concept="2OqwBi" id="7IysFeAI66T" role="1iwH7V">
                               <node concept="30H73N" id="7IysFeAI5VU" role="2Oq$k0" />
                               <node concept="2Xjw5R" id="7IysFeAI6qK" role="2OqNvi">
                                 <node concept="1xMEDy" id="7IysFeAI6qM" role="1xVPHs">
                                   <node concept="chp4Y" id="7IysFeAI6up" role="ri$Ld">
-                                    <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                                    <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                                   </node>
                                 </node>
                               </node>
@@ -7139,7 +7189,7 @@
       </node>
     </node>
     <node concept="3aamgX" id="7IysFeAs4x0" role="3acgRq">
-      <ref role="30HIoZ" to="wq2x:7IysFeA1uPa" resolve="TypeDeclarationParameterReference" />
+      <ref role="30HIoZ" to="wq2x:7IysFeA1uPa" resolve="MacroParameterReference" />
       <node concept="1Koe21" id="7IysFeAs6Cn" role="1lVwrX">
         <node concept="312cEu" id="7IysFeAs6Ct" role="1Koe22">
           <property role="TrG5h" value="Context" />
@@ -7170,7 +7220,7 @@
                           <node concept="2OqwBi" id="7IysFeAs7Ff" role="3clFbG">
                             <node concept="1iwH7S" id="7IysFeAs7xu" role="2Oq$k0" />
                             <node concept="1iwH70" id="7IysFeAs7QL" role="2OqNvi">
-                              <ref role="1iwH77" node="7IysFeAaXEh" resolve="typeParam_field" />
+                              <ref role="1iwH77" node="7IysFeAaXEh" resolve="macroParam_field" />
                               <node concept="2OqwBi" id="7IysFeAs8cl" role="1iwH7V">
                                 <node concept="30H73N" id="7IysFeAs80s" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="7IysFeAs8y8" role="2OqNvi">
@@ -7954,8 +8004,8 @@
     </node>
   </node>
   <node concept="312cEu" id="2N2MQGCMHqo">
-    <property role="TrG5h" value="_TypeTable" />
-    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="_MacroTable" />
+    <property role="3GE5qa" value="macro" />
     <node concept="2tJIrI" id="2N2MQGCMIt2" role="jymVt" />
     <node concept="3clFb_" id="2N2MQGCMO_b" role="jymVt">
       <property role="TrG5h" value="name" />
@@ -7991,13 +8041,13 @@
     </node>
     <node concept="2tJIrI" id="2N2MQGCMOAW" role="jymVt" />
     <node concept="3clFb_" id="1GNw78$a430" role="jymVt">
-      <property role="TrG5h" value="typeTemplate" />
+      <property role="TrG5h" value="macroTemplate" />
       <node concept="37vLTG" id="1GNw78$a431" role="3clF46">
-        <property role="TrG5h" value="typeConcept" />
+        <property role="TrG5h" value="concept" />
         <node concept="3bZ5Sz" id="1GNw78$a432" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="1GNw78$afCG" role="3clF45">
-        <ref role="3uigEE" to="psr6:1hX44vNnjJ$" resolve="TypeTemplate" />
+        <ref role="3uigEE" to="psr6:1hX44vNnjJ$" resolve="MacroTemplate" />
         <node concept="16syzq" id="4KRwoem1VN0" role="11_B2D">
           <ref role="16sUi3" node="4KRwoem1TFX" resolve="Cfg" />
         </node>
@@ -8017,7 +8067,7 @@
           <node concept="3clFbC" id="3OHEjDeJF0e" role="3clFbw">
             <node concept="10Nm6u" id="3OHEjDeJF12" role="3uHU7w" />
             <node concept="37vLTw" id="3OHEjDeJEBr" role="3uHU7B">
-              <ref role="3cqZAo" node="1GNw78$a431" resolve="typeConcept" />
+              <ref role="3cqZAo" node="1GNw78$a431" resolve="concept" />
             </node>
           </node>
         </node>
@@ -8031,10 +8081,20 @@
                 <node concept="3$xsQk" id="1GNw78$a43a" role="3$ytzL">
                   <node concept="3clFbS" id="1GNw78$a43b" role="2VODD2">
                     <node concept="3clFbF" id="1GNw78$a43c" role="3cqZAp">
-                      <node concept="2OqwBi" id="1GNw78$a43d" role="3clFbG">
-                        <node concept="30H73N" id="1GNw78$a43e" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="1GNw78$a43f" role="2OqNvi">
-                          <ref role="3Tt5mk" to="wq2x:5MFgGQnlLNJ" resolve="conceptDeclaraton" />
+                      <node concept="2OqwBi" id="6DOfTm$CAJQ" role="3clFbG">
+                        <node concept="2OqwBi" id="6DOfTm$C_Ex" role="2Oq$k0">
+                          <node concept="2OqwBi" id="1GNw78$a43d" role="2Oq$k0">
+                            <node concept="30H73N" id="1GNw78$a43e" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="6DOfTm$C_53" role="2OqNvi">
+                              <ref role="3Tt5mk" to="wq2x:6DOfTm$zUE3" resolve="input" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="6DOfTm$CAbS" role="2OqNvi">
+                            <ref role="3Tt5mk" to="wq2x:6DOfTm$zVok" resolve="type" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="6DOfTm$CB5y" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tp25:g$ehGDh" resolve="concept" />
                         </node>
                       </node>
                     </node>
@@ -8046,14 +8106,14 @@
               <node concept="3cpWs6" id="1GNw78$a43h" role="3cqZAp">
                 <node concept="10QFUN" id="4KRwoem42xQ" role="3cqZAk">
                   <node concept="3uibUv" id="4KRwoem42xD" role="10QFUM">
-                    <ref role="3uigEE" to="psr6:1hX44vNlvEV" resolve="AbstractTypeTemplate" />
+                    <ref role="3uigEE" to="psr6:1hX44vNlvEV" resolve="AbstractMacroTemplate" />
                     <node concept="16syzq" id="4KRwoem42xE" role="11_B2D">
                       <ref role="16sUi3" node="4KRwoem1TFX" resolve="Cfg" />
                     </node>
                   </node>
                   <node concept="2ShNRf" id="4KRwoem42xF" role="10QFUP">
                     <node concept="1pGfFk" id="4KRwoem42xG" role="2ShVmc">
-                      <ref role="37wK5l" node="4JJCDIm$QjW" resolve="__TypeTable._Template" />
+                      <ref role="37wK5l" node="4JJCDIm$QjW" resolve="__MacroTable._Template" />
                       <node concept="1ZhdrF" id="4KRwoem42xI" role="lGtFl">
                         <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
                         <property role="2qtEX8" value="baseMethodDeclaration" />
@@ -8063,7 +8123,7 @@
                               <node concept="2OqwBi" id="4KRwoem42xM" role="3clFbG">
                                 <node concept="1iwH7S" id="4KRwoem42xN" role="2Oq$k0" />
                                 <node concept="1iwH70" id="4KRwoem42xO" role="2OqNvi">
-                                  <ref role="1iwH77" node="4JJCDIm$O$I" resolve="typeDecl_template_constructor" />
+                                  <ref role="1iwH77" node="4JJCDIm$O$I" resolve="macro_template_constructor" />
                                   <node concept="30H73N" id="4KRwoem42xP" role="1iwH7V" />
                                 </node>
                               </node>
@@ -8082,7 +8142,7 @@
                   <node concept="3clFbF" id="1GNw78$a43w" role="3cqZAp">
                     <node concept="2OqwBi" id="1GNw78$a43x" role="3clFbG">
                       <node concept="3Tsc0h" id="1GNw78$a43y" role="2OqNvi">
-                        <ref role="3TtcxE" to="wq2x:1pPth$m5B4Y" resolve="type" />
+                        <ref role="3TtcxE" to="wq2x:1pPth$m5B4Y" resolve="macro" />
                       </node>
                       <node concept="30H73N" id="1GNw78$a43z" role="2Oq$k0" />
                     </node>
@@ -8092,7 +8152,7 @@
             </node>
           </node>
           <node concept="37vLTw" id="1GNw78$a43$" role="1_3QMn">
-            <ref role="3cqZAo" node="1GNw78$a431" resolve="typeConcept" />
+            <ref role="3cqZAo" node="1GNw78$a431" resolve="concept" />
           </node>
         </node>
         <node concept="3clFbH" id="1GNw78$a43_" role="3cqZAp" />
@@ -8103,14 +8163,14 @@
               <node concept="3cpWs3" id="3OHEjDeH5tr" role="37wK5m">
                 <node concept="2OqwBi" id="3OHEjDeH6F7" role="3uHU7w">
                   <node concept="37vLTw" id="3OHEjDeH6jP" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1GNw78$a431" resolve="typeConcept" />
+                    <ref role="3cqZAo" node="1GNw78$a431" resolve="concept" />
                   </node>
                   <node concept="liA8E" id="3OHEjDeH6WA" role="2OqNvi">
                     <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="1GNw78$a43D" role="3uHU7B">
-                  <property role="Xl_RC" value="invalid type concept: " />
+                  <property role="Xl_RC" value="no such macro template: " />
                 </node>
               </node>
             </node>
@@ -8123,21 +8183,21 @@
       <node concept="16euLQ" id="4KRwoem1TFX" role="16eVyc">
         <property role="TrG5h" value="Cfg" />
         <node concept="3uibUv" id="1eKXYsj$2kU" role="3ztrMU">
-          <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="TypeTemplate.Config" />
+          <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="MacroTemplate.Config" />
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="4MEOIDEgrjY" role="jymVt" />
     <node concept="3clFb_" id="4MEOIDEgqbt" role="jymVt">
-      <property role="TrG5h" value="typeTemplate" />
+      <property role="TrG5h" value="macroTemplate" />
       <node concept="37vLTG" id="4MEOIDEhHGm" role="3clF46">
-        <property role="TrG5h" value="typeTplId" />
+        <property role="TrG5h" value="templateId" />
         <node concept="3uibUv" id="4MEOIDEhHGl" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="TypeTemplate.ID" />
+          <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="MacroTemplate.ID" />
         </node>
       </node>
       <node concept="3uibUv" id="4MEOIDEgqbw" role="3clF45">
-        <ref role="3uigEE" to="psr6:1hX44vNnjJ$" resolve="TypeTemplate" />
+        <ref role="3uigEE" to="psr6:1hX44vNnjJ$" resolve="MacroTemplate" />
         <node concept="16syzq" id="4MEOIDEgqbx" role="11_B2D">
           <ref role="16sUi3" node="4MEOIDEgqco" resolve="Cfg" />
         </node>
@@ -8157,7 +8217,7 @@
           <node concept="3clFbC" id="4MEOIDEgqbD" role="3clFbw">
             <node concept="10Nm6u" id="4MEOIDEgqbE" role="3uHU7w" />
             <node concept="37vLTw" id="4MEOIDEhJpZ" role="3uHU7B">
-              <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="typeTplId" />
+              <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="templateId" />
             </node>
           </node>
         </node>
@@ -8165,7 +8225,7 @@
         <node concept="2ignYC" id="4MEOIDEhKRU" role="3cqZAp">
           <node concept="2OqwBi" id="4MEOIDEhMjx" role="3KbGdf">
             <node concept="37vLTw" id="4MEOIDEhM1B" role="2Oq$k0">
-              <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="typeTplId" />
+              <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="templateId" />
             </node>
             <node concept="liA8E" id="4MEOIDEhMJJ" role="2OqNvi">
               <ref role="37wK5l" to="psr6:4MEOIDEi5VO" resolve="toString" />
@@ -8202,14 +8262,14 @@
               <node concept="3cpWs6" id="4MEOIDEi0CD" role="3cqZAp">
                 <node concept="10QFUN" id="4MEOIDEkrJU" role="3cqZAk">
                   <node concept="3uibUv" id="4MEOIDEkrJI" role="10QFUM">
-                    <ref role="3uigEE" to="psr6:1hX44vNnjJ$" resolve="TypeTemplate" />
+                    <ref role="3uigEE" to="psr6:1hX44vNnjJ$" resolve="MacroTemplate" />
                     <node concept="16syzq" id="4MEOIDEkrJJ" role="11_B2D">
                       <ref role="16sUi3" node="4MEOIDEgqco" resolve="Cfg" />
                     </node>
                   </node>
                   <node concept="2ShNRf" id="4MEOIDEkrJK" role="10QFUP">
                     <node concept="1pGfFk" id="4MEOIDEkrJL" role="2ShVmc">
-                      <ref role="37wK5l" node="4JJCDIm$QjW" resolve="__TypeTable._Template" />
+                      <ref role="37wK5l" node="4JJCDIm$QjW" resolve="__MacroTable._Template" />
                       <node concept="1ZhdrF" id="4MEOIDEkrJM" role="lGtFl">
                         <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
                         <property role="2qtEX8" value="baseMethodDeclaration" />
@@ -8219,7 +8279,7 @@
                               <node concept="2OqwBi" id="4MEOIDEkrJQ" role="3clFbG">
                                 <node concept="1iwH7S" id="4MEOIDEkrJR" role="2Oq$k0" />
                                 <node concept="1iwH70" id="4MEOIDEkrJS" role="2OqNvi">
-                                  <ref role="1iwH77" node="4JJCDIm$O$I" resolve="typeDecl_template_constructor" />
+                                  <ref role="1iwH77" node="4JJCDIm$O$I" resolve="macro_template_constructor" />
                                   <node concept="30H73N" id="4MEOIDEkrJT" role="1iwH7V" />
                                 </node>
                               </node>
@@ -8239,7 +8299,7 @@
                     <node concept="2OqwBi" id="4MEOIDEhYNh" role="3clFbG">
                       <node concept="30H73N" id="4MEOIDEhYfK" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="4MEOIDEhZ$2" role="2OqNvi">
-                        <ref role="3TtcxE" to="wq2x:1pPth$m5B4Y" resolve="type" />
+                        <ref role="3TtcxE" to="wq2x:1pPth$m5B4Y" resolve="macro" />
                       </node>
                     </node>
                   </node>
@@ -8255,10 +8315,10 @@
               <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
               <node concept="3cpWs3" id="4MEOIDEgqci" role="37wK5m">
                 <node concept="Xl_RD" id="4MEOIDEgqcm" role="3uHU7B">
-                  <property role="Xl_RC" value="invalid type template id: " />
+                  <property role="Xl_RC" value="invalid macro template id: " />
                 </node>
                 <node concept="37vLTw" id="4MEOIDEi3dN" role="3uHU7w">
-                  <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="typeTplId" />
+                  <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="templateId" />
                 </node>
               </node>
             </node>
@@ -8271,17 +8331,17 @@
       <node concept="16euLQ" id="4MEOIDEgqco" role="16eVyc">
         <property role="TrG5h" value="Cfg" />
         <node concept="3uibUv" id="4MEOIDEgqcp" role="3ztrMU">
-          <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="TypeTemplate.Config" />
+          <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="MacroTemplate.Config" />
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="4nxCIBqost0" role="jymVt" />
     <node concept="3clFb_" id="4MEOIDEWLFp" role="jymVt">
-      <property role="TrG5h" value="allTypeTemplateIds" />
+      <property role="TrG5h" value="allMacroTemplateIds" />
       <property role="1EzhhJ" value="false" />
       <node concept="3vKaQO" id="4MEOIDEWLFq" role="3clF45">
         <node concept="3uibUv" id="4MEOIDEWQRR" role="3O5elw">
-          <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="TypeTemplate.ID" />
+          <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="MacroTemplate.ID" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4MEOIDEWLFs" role="1B3o_S" />
@@ -8291,13 +8351,13 @@
             <property role="TrG5h" value="result" />
             <node concept="_YKpA" id="4MEOIDEWLFw" role="1tU5fm">
               <node concept="3uibUv" id="4MEOIDEWSA6" role="_ZDj9">
-                <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="TypeTemplate.ID" />
+                <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="MacroTemplate.ID" />
               </node>
             </node>
             <node concept="2ShNRf" id="4MEOIDEWLFy" role="33vP2m">
               <node concept="Tc6Ow" id="4MEOIDEWLFz" role="2ShVmc">
                 <node concept="3uibUv" id="4MEOIDEWRmU" role="HW$YZ">
-                  <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="TypeTemplate.ID" />
+                  <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="MacroTemplate.ID" />
                 </node>
               </node>
             </node>
@@ -8312,7 +8372,7 @@
             <node concept="TSZUe" id="4MEOIDEWLFD" role="2OqNvi">
               <node concept="2YIFZM" id="4MEOIDEWU$t" role="25WWJ7">
                 <ref role="37wK5l" to="psr6:4MEOIDEhz4d" resolve="forReference" />
-                <ref role="1Pybhc" to="psr6:4MEOIDEhyPY" resolve="TypeTemplate.ID" />
+                <ref role="1Pybhc" to="psr6:4MEOIDEhyPY" resolve="MacroTemplate.ID" />
                 <node concept="2OqwBi" id="4MEOIDEWUYy" role="37wK5m">
                   <node concept="2YIFZM" id="4MEOIDEWUOF" role="2Oq$k0">
                     <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
@@ -8361,7 +8421,7 @@
                 <node concept="3clFbF" id="4MEOIDEWLFP" role="3cqZAp">
                   <node concept="2OqwBi" id="4MEOIDEWLFQ" role="3clFbG">
                     <node concept="3Tsc0h" id="4MEOIDEWLFR" role="2OqNvi">
-                      <ref role="3TtcxE" to="wq2x:1pPth$m5B4Y" resolve="type" />
+                      <ref role="3TtcxE" to="wq2x:1pPth$m5B4Y" resolve="macro" />
                     </node>
                     <node concept="30H73N" id="4MEOIDEWLFS" role="2Oq$k0" />
                   </node>
@@ -8384,16 +8444,16 @@
     <node concept="2tJIrI" id="4MEOIDG8yS6" role="jymVt" />
     <node concept="2tJIrI" id="1GNw78$IsA6" role="jymVt">
       <node concept="xERo3" id="1GNw78$I_sH" role="lGtFl">
-        <ref role="xH3mL" node="1GNw78$HcGL" resolve="frag_TypeTable_TypeTemplate" />
+        <ref role="xH3mL" node="1GNw78$HcGL" resolve="frag_MacroTable_MacroTemplate" />
       </node>
     </node>
     <node concept="2tJIrI" id="1GNw78$IwZE" role="jymVt" />
     <node concept="3Tm1VV" id="2N2MQGCMHqp" role="1B3o_S" />
     <node concept="n94m4" id="2N2MQGCMHqq" role="lGtFl">
-      <ref role="n9lRv" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+      <ref role="n9lRv" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
     </node>
     <node concept="3uibUv" id="2N2MQGCMIsX" role="1zkMxy">
-      <ref role="3uigEE" to="psr6:1pPth$m7IVF" resolve="AbstractTypeTable" />
+      <ref role="3uigEE" to="psr6:1pPth$m7IVF" resolve="AbstractMacroTable" />
     </node>
     <node concept="17Uvod" id="2N2MQGCZANh" role="lGtFl">
       <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -8413,21 +8473,21 @@
     </node>
   </node>
   <node concept="312cEu" id="2N2MQGCMVs3">
-    <property role="TrG5h" value="TypeManifest" />
-    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="MacroManifest" />
+    <property role="3GE5qa" value="macro" />
     <node concept="3Tm1VV" id="2N2MQGCMVs4" role="1B3o_S" />
     <node concept="n94m4" id="2N2MQGCMVs5" role="lGtFl" />
     <node concept="3uibUv" id="2N2MQGCMVsu" role="1zkMxy">
-      <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractTypeManifest" />
+      <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
     </node>
     <node concept="2tJIrI" id="2N2MQGCMVHx" role="jymVt" />
     <node concept="3clFb_" id="2N2MQGCMVGl" role="jymVt">
-      <property role="TrG5h" value="collectTypeTables" />
+      <property role="TrG5h" value="collectMacroTables" />
       <property role="1EzhhJ" value="false" />
       <node concept="37vLTG" id="2N2MQGCMVGm" role="3clF46">
-        <property role="TrG5h" value="typeCollector" />
+        <property role="TrG5h" value="collector" />
         <node concept="3uibUv" id="2N2MQGCMVGn" role="1tU5fm">
-          <ref role="3uigEE" to="fqlx:2N2MQGCMOyq" resolve="TypeTableCollector" />
+          <ref role="3uigEE" to="fqlx:2N2MQGCMOyq" resolve="MacroTableCollector" />
         </node>
       </node>
       <node concept="3cqZAl" id="2N2MQGCMVGo" role="3clF45" />
@@ -8436,13 +8496,13 @@
         <node concept="3clFbF" id="4JJCDImP74_" role="3cqZAp">
           <node concept="2OqwBi" id="4JJCDImP7rU" role="3clFbG">
             <node concept="37vLTw" id="4JJCDImP74z" role="2Oq$k0">
-              <ref role="3cqZAo" node="2N2MQGCMVGm" resolve="typeCollector" />
+              <ref role="3cqZAo" node="2N2MQGCMVGm" resolve="collector" />
             </node>
             <node concept="liA8E" id="4JJCDImP7AX" role="2OqNvi">
-              <ref role="37wK5l" to="fqlx:4JJCDImP5xa" resolve="addTypeTable" />
+              <ref role="37wK5l" to="fqlx:4JJCDImP5xa" resolve="addMacroTable" />
               <node concept="2ShNRf" id="4JJCDImP7CL" role="37wK5m">
                 <node concept="HV5vD" id="4JJCDImP894" role="2ShVmc">
-                  <ref role="HV5vE" node="2N2MQGCMHqo" resolve="_TypeTable" />
+                  <ref role="HV5vE" node="2N2MQGCMHqo" resolve="_MacroTable" />
                   <node concept="1ZhdrF" id="4JJCDImP8vE" role="lGtFl">
                     <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797/2820489544401957798" />
                     <property role="2qtEX8" value="classifier" />
@@ -8452,7 +8512,7 @@
                           <node concept="2OqwBi" id="4JJCDImP8$y" role="3clFbG">
                             <node concept="1iwH7S" id="4JJCDImP8$z" role="2Oq$k0" />
                             <node concept="1iwH70" id="4JJCDImP8$$" role="2OqNvi">
-                              <ref role="1iwH77" node="2N2MQGCMWOf" resolve="typetable_class" />
+                              <ref role="1iwH77" node="2N2MQGCMWOf" resolve="macroTable_class" />
                               <node concept="30H73N" id="4JJCDImP8$_" role="1iwH7V" />
                             </node>
                           </node>
@@ -8474,7 +8534,7 @@
                       <node concept="1r8y6K" id="4JJCDImP9oX" role="2OqNvi" />
                     </node>
                     <node concept="2RRcyG" id="4JJCDImP9oY" role="2OqNvi">
-                      <ref role="2RRcyH" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+                      <ref role="2RRcyH" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
                     </node>
                   </node>
                 </node>
@@ -13170,7 +13230,7 @@
     </node>
     <node concept="3aamgX" id="7IysFeA$pbJ" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:7IysFe_ZPXH" resolve="TypeInitializerLogicalDeclaration" />
+      <ref role="30HIoZ" to="wq2x:7IysFe_ZPXH" resolve="MacroBodyLogicalDeclaration" />
       <node concept="1Koe21" id="7IysFeA$pdz" role="1lVwrX">
         <node concept="312cEu" id="7IysFeA$pdD" role="1Koe22">
           <property role="TrG5h" value="Context" />
@@ -13346,7 +13406,7 @@
     </node>
     <node concept="3aamgX" id="7XmdqtdI1D2" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:7IysFe_ZPXH" resolve="TypeInitializerLogicalDeclaration" />
+      <ref role="30HIoZ" to="wq2x:7IysFe_ZPXH" resolve="MacroBodyLogicalDeclaration" />
       <node concept="1Koe21" id="7XmdqtdI1CQ" role="1lVwrX">
         <node concept="312cEu" id="7XmdqtdI1CU" role="1Koe22">
           <property role="TrG5h" value="Context" />
@@ -13375,13 +13435,13 @@
                             <node concept="3cpWsn" id="7XmdqtdH_b5" role="3cpWs9">
                               <property role="TrG5h" value="td" />
                               <node concept="3Tqbb2" id="7XmdqtdH_aZ" role="1tU5fm">
-                                <ref role="ehGHo" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                                <ref role="ehGHo" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                               </node>
                               <node concept="2OqwBi" id="7XmdqtdH_b6" role="33vP2m">
                                 <node concept="2Xjw5R" id="7XmdqtdH_bd" role="2OqNvi">
                                   <node concept="1xMEDy" id="7XmdqtdH_be" role="1xVPHs">
                                     <node concept="chp4Y" id="7XmdqtdH_bf" role="ri$Ld">
-                                      <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                                      <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                                     </node>
                                   </node>
                                 </node>
@@ -13393,7 +13453,7 @@
                             <node concept="2OqwBi" id="7XmdqtdNiTp" role="3clFbG">
                               <node concept="1iwH7S" id="7XmdqtdNiTq" role="2Oq$k0" />
                               <node concept="1iwH70" id="7XmdqtdNiTr" role="2OqNvi">
-                                <ref role="1iwH77" node="7XmdqtdHiM8" resolve="typeDecl_class" />
+                                <ref role="1iwH77" node="7XmdqtdHiM8" resolve="macro_class" />
                                 <node concept="37vLTw" id="7XmdqtdNiTs" role="1iwH7V">
                                   <ref role="3cqZAo" node="7XmdqtdH_b5" resolve="td" />
                                 </node>
@@ -13956,17 +14016,17 @@
     <property role="3GE5qa" value="aspect" />
     <node concept="2tJIrI" id="2hteS6Clnqr" role="jymVt" />
     <node concept="3clFb_" id="2hteS6ClnqE" role="jymVt">
-      <property role="TrG5h" value="createTypeManifest" />
+      <property role="TrG5h" value="createMacroManifest" />
       <property role="1EzhhJ" value="false" />
       <node concept="3uibUv" id="2hteS6ClnqF" role="3clF45">
-        <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractTypeManifest" />
+        <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
       </node>
       <node concept="3Tm1VV" id="2hteS6ClnqG" role="1B3o_S" />
       <node concept="3clFbS" id="2hteS6ClnqI" role="3clF47">
         <node concept="3clFbF" id="2hteS6ClnLM" role="3cqZAp">
           <node concept="2ShNRf" id="2hteS6ClnLK" role="3clFbG">
             <node concept="HV5vD" id="2hteS6Cls$Q" role="2ShVmc">
-              <ref role="HV5vE" node="2N2MQGCMVs3" resolve="TypeManifest" />
+              <ref role="HV5vE" node="2N2MQGCMVs3" resolve="MacroManifest" />
               <node concept="1ZhdrF" id="2hteS6ClsBX" role="lGtFl">
                 <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797/2820489544401957798" />
                 <property role="2qtEX8" value="classifier" />
@@ -13976,7 +14036,7 @@
                       <node concept="2OqwBi" id="2hteS6ClsW_" role="3clFbG">
                         <node concept="1iwH7S" id="2hteS6ClsJ3" role="2Oq$k0" />
                         <node concept="1iwH7d" id="2hteS6Clt6M" role="2OqNvi">
-                          <ref role="1iwH7c" node="2hteS6ClwZa" resolve="type_manifest" />
+                          <ref role="1iwH7c" node="2hteS6ClwZa" resolve="macroManifest" />
                         </node>
                       </node>
                     </node>
@@ -13995,10 +14055,24 @@
                           <node concept="1r8y6K" id="2hteS6ClCRf" role="2OqNvi" />
                         </node>
                         <node concept="2RRcyG" id="2hteS6ClCRg" role="2OqNvi">
-                          <ref role="2RRcyH" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+                          <ref role="2RRcyH" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
                         </node>
                       </node>
                       <node concept="3GX2aA" id="2hteS6ClCRh" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="6DOfTmzYEg5" role="3cqZAp">
+                    <node concept="2OqwBi" id="6DOfTmzYEg6" role="3clFbG">
+                      <node concept="2OqwBi" id="6DOfTmzYEg7" role="2Oq$k0">
+                        <node concept="2OqwBi" id="6DOfTmzYEg8" role="2Oq$k0">
+                          <node concept="1iwH7S" id="6DOfTmzYEg9" role="2Oq$k0" />
+                          <node concept="1r8y6K" id="6DOfTmzYEga" role="2OqNvi" />
+                        </node>
+                        <node concept="2RRcyG" id="6DOfTmzYEgb" role="2OqNvi">
+                          <ref role="2RRcyH" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
+                        </node>
+                      </node>
+                      <node concept="3GX2aA" id="6DOfTmzYEgc" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
@@ -14153,11 +14227,11 @@
     </node>
   </node>
   <node concept="13MO4I" id="1GNw78$HcGL">
-    <property role="3GE5qa" value="type" />
-    <property role="TrG5h" value="frag_TypeTable_TypeTemplate" />
-    <ref role="3gUMe" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+    <property role="3GE5qa" value="macro" />
+    <property role="TrG5h" value="frag_MacroTable_MacroTemplate" />
+    <ref role="3gUMe" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
     <node concept="312cEu" id="1GNw78$HcGN" role="13RCb5">
-      <property role="TrG5h" value="__TypeTable" />
+      <property role="TrG5h" value="__MacroTable" />
       <node concept="2tJIrI" id="1GNw78$HcHb" role="jymVt" />
       <node concept="312cEu" id="4JJCDIm$yLt" role="jymVt">
         <property role="2bfB8j" value="false" />
@@ -14165,26 +14239,47 @@
         <node concept="2tJIrI" id="4JJCDIm$Llo" role="jymVt" />
         <node concept="312cEu" id="1GNw78$gMhl" role="jymVt">
           <property role="2bfB8j" value="false" />
-          <property role="TrG5h" value="TypeConfig" />
+          <property role="TrG5h" value="MacroConfig" />
           <node concept="2tJIrI" id="1GNw78$khpO" role="jymVt" />
           <node concept="2YIFZL" id="4MEOIDGH8rn" role="jymVt">
-            <property role="TrG5h" value="forTypeNode" />
+            <property role="TrG5h" value="forInputNode" />
             <node concept="37vLTG" id="4MEOIDGHboL" role="3clF46">
-              <property role="TrG5h" value="typeNode" />
+              <property role="TrG5h" value="inputNode" />
               <node concept="3Tqbb2" id="4MEOIDGHbsQ" role="1tU5fm" />
               <node concept="2ZBi8u" id="4MEOIDGHmbS" role="lGtFl">
-                <ref role="2rW$FS" node="7IysFeAiAcO" resolve="typeDecl_typeNode_variable" />
+                <ref role="2rW$FS" node="7IysFeAiAcO" resolve="macro_inputNode_variable" />
+              </node>
+              <node concept="17Uvod" id="6DOfTm$$QLH" role="lGtFl">
+                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                <property role="2qtEX9" value="name" />
+                <node concept="3zFVjK" id="6DOfTm$$QLI" role="3zH0cK">
+                  <node concept="3clFbS" id="6DOfTm$$QLJ" role="2VODD2">
+                    <node concept="3clFbF" id="6DOfTm$$Tby" role="3cqZAp">
+                      <node concept="2OqwBi" id="6DOfTm$$UEf" role="3clFbG">
+                        <node concept="2OqwBi" id="6DOfTm$$Ts2" role="2Oq$k0">
+                          <node concept="30H73N" id="6DOfTm$$Tbx" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="6DOfTm$$TUR" role="2OqNvi">
+                            <ref role="3Tt5mk" to="wq2x:6DOfTm$zUE3" resolve="input" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="6DOfTm$$Vah" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="3uibUv" id="20Ay2Ve9uJe" role="3clF45">
-              <ref role="3uigEE" node="1GNw78$gMhl" resolve="__TypeTable._Template.TypeConfig" />
+              <ref role="3uigEE" node="1GNw78$gMhl" resolve="__MacroTable._Template.MacroConfig" />
             </node>
             <node concept="3Tm1VV" id="4MEOIDGH8rq" role="1B3o_S" />
             <node concept="3clFbS" id="4MEOIDGH8rr" role="3clF47">
               <node concept="3clFbF" id="4MEOIDGHbyZ" role="3cqZAp">
                 <node concept="2ShNRf" id="4MEOIDGHbyX" role="3clFbG">
                   <node concept="1pGfFk" id="4MEOIDGHc5A" role="2ShVmc">
-                    <ref role="37wK5l" node="1GNw78$kUFK" resolve="__TypeTable._Template.TypeConfig" />
+                    <ref role="37wK5l" node="1GNw78$kUFK" resolve="__MacroTable._Template.MacroConfig" />
                     <node concept="2OqwBi" id="4MEOIDGHc9G" role="37wK5m">
                       <node concept="2ShNRf" id="4MEOIDGHc9H" role="2Oq$k0">
                         <node concept="YeOm9" id="4MEOIDGHc9I" role="2ShVmc">
@@ -14440,7 +14535,7 @@
                           <node concept="2OqwBi" id="1GNw78$ri7H" role="2Oq$k0">
                             <node concept="30H73N" id="1GNw78$ri7I" role="2Oq$k0" />
                             <node concept="3TrEf2" id="1GNw78$ri7J" role="2OqNvi">
-                              <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="init" />
+                              <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="body" />
                             </node>
                           </node>
                           <node concept="3x8VRR" id="1GNw78$ri7K" role="2OqNvi" />
@@ -14457,7 +14552,7 @@
                           <node concept="2OqwBi" id="1GNw78$ri7Q" role="2Oq$k0">
                             <node concept="30H73N" id="1GNw78$ri7R" role="2Oq$k0" />
                             <node concept="3TrEf2" id="1GNw78$ri7S" role="2OqNvi">
-                              <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="init" />
+                              <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="body" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="1GNw78$ri7T" role="2OqNvi">
@@ -14476,12 +14571,12 @@
           </node>
           <node concept="2tJIrI" id="1GNw78$reCN" role="jymVt" />
           <node concept="3clFb_" id="4KRwoelnc3p" role="jymVt">
-            <property role="TrG5h" value="buildType" />
+            <property role="TrG5h" value="applyMacro" />
             <node concept="37vLTG" id="4KRwoelnkwd" role="3clF46">
-              <property role="TrG5h" value="typeLogical" />
+              <property role="TrG5h" value="logical" />
               <node concept="26uTi9" id="4KRwoelnkwe" role="1tU5fm" />
               <node concept="2ZBi8u" id="4KRwoel$60G" role="lGtFl">
-                <ref role="2rW$FS" node="7IysFeAHWd7" resolve="typeDecl_template_typeLogical" />
+                <ref role="2rW$FS" node="7IysFeAHWd7" resolve="macro_template_logical" />
               </node>
             </node>
             <node concept="37vLTG" id="4KRwoelnkwf" role="3clF46">
@@ -14555,7 +14650,7 @@
                             <node concept="2OqwBi" id="4KRwoelno30" role="2Oq$k0">
                               <node concept="30H73N" id="4KRwoelno31" role="2Oq$k0" />
                               <node concept="3TrEf2" id="4KRwoelno32" role="2OqNvi">
-                                <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="init" />
+                                <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="body" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="4KRwoelno33" role="2OqNvi">
@@ -14601,7 +14696,7 @@
               </node>
             </node>
             <node concept="1WS0z7" id="1GNw78$lpM9" role="lGtFl">
-              <ref role="2rW$FS" node="7IysFeAaXEh" resolve="typeParam_field" />
+              <ref role="2rW$FS" node="7IysFeAaXEh" resolve="macroParam_field" />
               <node concept="3JmXsc" id="1GNw78$lpMa" role="3Jn$fo">
                 <node concept="3clFbS" id="1GNw78$lpMb" role="2VODD2">
                   <node concept="3clFbF" id="1GNw78$lpMc" role="3cqZAp">
@@ -14646,7 +14741,7 @@
                       <node concept="2OqwBi" id="4KRwoemkqgu" role="2Oq$k0">
                         <node concept="30H73N" id="4KRwoemkqgv" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4KRwoemkqgw" role="2OqNvi">
-                          <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="init" />
+                          <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="body" />
                         </node>
                       </node>
                       <node concept="3x8VRR" id="4KRwoemkqgx" role="2OqNvi" />
@@ -14662,7 +14757,7 @@
                     <node concept="2OqwBi" id="4KRwoemkpfl" role="3clFbG">
                       <node concept="2OqwBi" id="4KRwoemkpfm" role="2Oq$k0">
                         <node concept="3TrEf2" id="4KRwoemkpfn" role="2OqNvi">
-                          <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="init" />
+                          <ref role="3Tt5mk" to="wq2x:7IysFe_ZQc2" resolve="body" />
                         </node>
                         <node concept="30H73N" id="4KRwoemkpfo" role="2Oq$k0" />
                       </node>
@@ -14681,10 +14776,10 @@
           <node concept="2tJIrI" id="4MEOIDGDRuv" role="jymVt" />
           <node concept="3Tm1VV" id="1GNw78$gMhm" role="1B3o_S" />
           <node concept="3uibUv" id="1eKXYsjDeaP" role="EKbjA">
-            <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="TypeTemplate.Config" />
+            <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="MacroTemplate.Config" />
           </node>
           <node concept="2ZBi8u" id="7XmdqtdNdU0" role="lGtFl">
-            <ref role="2rW$FS" node="7XmdqtdHiM8" resolve="typeDecl_class" />
+            <ref role="2rW$FS" node="7XmdqtdHiM8" resolve="macro_class" />
           </node>
         </node>
         <node concept="2tJIrI" id="1GNw78$gI1a" role="jymVt" />
@@ -14694,7 +14789,7 @@
           <node concept="3Tm1VV" id="4JJCDIm$QjZ" role="1B3o_S" />
           <node concept="3clFbS" id="4JJCDIm$Qk0" role="3clF47" />
           <node concept="2ZBi8u" id="4JJCDIm_tMI" role="lGtFl">
-            <ref role="2rW$FS" node="4JJCDIm$O$I" resolve="typeDecl_template_constructor" />
+            <ref role="2rW$FS" node="4JJCDIm$O$I" resolve="macro_template_constructor" />
           </node>
         </node>
         <node concept="3Tm1VV" id="4JJCDIm$yLu" role="1B3o_S" />
@@ -14718,9 +14813,9 @@
           </node>
         </node>
         <node concept="3uibUv" id="4JJCDIm$SaN" role="1zkMxy">
-          <ref role="3uigEE" to="psr6:1hX44vNlvEV" resolve="AbstractTypeTemplate" />
+          <ref role="3uigEE" to="psr6:1hX44vNlvEV" resolve="AbstractMacroTemplate" />
           <node concept="3uibUv" id="1GNw78$kyyL" role="11_B2D">
-            <ref role="3uigEE" node="1GNw78$gMhl" resolve="__TypeTable._Template.TypeConfig" />
+            <ref role="3uigEE" node="1GNw78$gMhl" resolve="__MacroTable._Template.MacroConfig" />
           </node>
         </node>
         <node concept="2tJIrI" id="60NbDCXHpqs" role="jymVt" />
@@ -14736,14 +14831,14 @@
             </node>
           </node>
           <node concept="3uibUv" id="4KRwoelAK4n" role="3clF45">
-            <ref role="3uigEE" node="1GNw78$gMhl" resolve="__TypeTable._Template.TypeConfig" />
+            <ref role="3uigEE" node="1GNw78$gMhl" resolve="__MacroTable._Template.MacroConfig" />
           </node>
           <node concept="3Tm1VV" id="4KRwoelAK4l" role="1B3o_S" />
           <node concept="3clFbS" id="4KRwoelAK4o" role="3clF47">
             <node concept="3clFbF" id="4KRwoelAVUv" role="3cqZAp">
               <node concept="2ShNRf" id="4KRwoelAVUw" role="3clFbG">
                 <node concept="1pGfFk" id="4KRwoelAVUx" role="2ShVmc">
-                  <ref role="37wK5l" node="1GNw78$kUFK" resolve="__TypeTable._Template.TypeConfig" />
+                  <ref role="37wK5l" node="1GNw78$kUFK" resolve="__MacroTable._Template.MacroConfig" />
                   <node concept="37vLTw" id="4KRwoelAWIE" role="37wK5m">
                     <ref role="3cqZAo" node="4KRwoelAK4h" resolve="args" />
                   </node>
@@ -14757,23 +14852,23 @@
         </node>
         <node concept="2tJIrI" id="4KRwoelAXy6" role="jymVt" />
         <node concept="3clFb_" id="4KRwoelAK47" role="jymVt">
-          <property role="TrG5h" value="withNode" />
+          <property role="TrG5h" value="withInputNode" />
           <property role="1EzhhJ" value="false" />
           <node concept="37vLTG" id="4KRwoelAK48" role="3clF46">
-            <property role="TrG5h" value="typeNode" />
+            <property role="TrG5h" value="inputNode" />
             <node concept="3Tqbb2" id="4KRwoelAK49" role="1tU5fm" />
           </node>
           <node concept="3uibUv" id="4KRwoelAK4d" role="3clF45">
-            <ref role="3uigEE" node="1GNw78$gMhl" resolve="__TypeTable._Template.TypeConfig" />
+            <ref role="3uigEE" node="1GNw78$gMhl" resolve="__MacroTable._Template.MacroConfig" />
           </node>
           <node concept="3Tmbuc" id="60NbDCXHfR8" role="1B3o_S" />
           <node concept="3clFbS" id="4KRwoelAK4e" role="3clF47">
             <node concept="3cpWs6" id="20Ay2Ve9Vq_" role="3cqZAp">
               <node concept="2YIFZM" id="20Ay2Ve9VqA" role="3cqZAk">
-                <ref role="37wK5l" node="4MEOIDGH8rn" resolve="forTypeNode" />
-                <ref role="1Pybhc" node="1GNw78$gMhl" resolve="__TypeTable._Template.TypeConfig" />
+                <ref role="37wK5l" node="4MEOIDGH8rn" resolve="forInputNode" />
+                <ref role="1Pybhc" node="1GNw78$gMhl" resolve="__MacroTable._Template.MacroConfig" />
                 <node concept="37vLTw" id="20Ay2Ve9VqB" role="37wK5m">
-                  <ref role="3cqZAo" node="4KRwoelAK48" resolve="typeNode" />
+                  <ref role="3cqZAo" node="4KRwoelAK48" resolve="inputNode" />
                 </node>
               </node>
             </node>
@@ -14784,7 +14879,7 @@
         </node>
         <node concept="2tJIrI" id="4MEOIDG_fi5" role="jymVt" />
         <node concept="3clFb_" id="1GNw78$ryBl" role="jymVt">
-          <property role="TrG5h" value="bindType" />
+          <property role="TrG5h" value="doCall" />
           <property role="1EzhhJ" value="false" />
           <node concept="3uibUv" id="1GNw78$XT$v" role="3clF45">
             <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
@@ -14793,11 +14888,11 @@
           <node concept="37vLTG" id="1GNw78$ryBp" role="3clF46">
             <property role="TrG5h" value="config" />
             <node concept="3uibUv" id="1GNw78$ryBv" role="1tU5fm">
-              <ref role="3uigEE" node="1GNw78$gMhl" resolve="__TypeTable._Template.TypeConfig" />
+              <ref role="3uigEE" node="1GNw78$gMhl" resolve="__MacroTable._Template.MacroConfig" />
             </node>
           </node>
           <node concept="37vLTG" id="1GNw78$ryBr" role="3clF46">
-            <property role="TrG5h" value="typeLogical" />
+            <property role="TrG5h" value="logical" />
             <node concept="26uTi9" id="1GNw78$ryBs" role="1tU5fm" />
           </node>
           <node concept="37vLTG" id="1GNw78$ryBt" role="3clF46">
@@ -14813,9 +14908,9 @@
                   <ref role="3cqZAo" node="1GNw78$ryBp" resolve="config" />
                 </node>
                 <node concept="liA8E" id="4KRwoelnrgZ" role="2OqNvi">
-                  <ref role="37wK5l" node="4KRwoelnc3p" resolve="buildType" />
+                  <ref role="37wK5l" node="4KRwoelnc3p" resolve="applyMacro" />
                   <node concept="37vLTw" id="4KRwoelnrkZ" role="37wK5m">
-                    <ref role="3cqZAo" node="1GNw78$ryBr" resolve="typeLogical" />
+                    <ref role="3cqZAo" node="1GNw78$ryBr" resolve="logical" />
                   </node>
                   <node concept="37vLTw" id="4KRwoelnrts" role="37wK5m">
                     <ref role="3cqZAo" node="1GNw78$ryBt" resolve="session" />
@@ -14830,18 +14925,18 @@
         </node>
         <node concept="2tJIrI" id="4nxCIBqkjot" role="jymVt" />
         <node concept="3clFb_" id="60NbDCXGBZH" role="jymVt">
-          <property role="TrG5h" value="bindType" />
+          <property role="TrG5h" value="doExpand" />
           <property role="1EzhhJ" value="false" />
           <node concept="3uibUv" id="60NbDCXGBZI" role="3clF45">
             <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
           </node>
           <node concept="3Tm1VV" id="60NbDCXGBZJ" role="1B3o_S" />
           <node concept="37vLTG" id="60NbDCXGBZK" role="3clF46">
-            <property role="TrG5h" value="typeNode" />
+            <property role="TrG5h" value="inputNode" />
             <node concept="3Tqbb2" id="60NbDCXGG6D" role="1tU5fm" />
           </node>
           <node concept="37vLTG" id="60NbDCXGBZM" role="3clF46">
-            <property role="TrG5h" value="typeLogical" />
+            <property role="TrG5h" value="logical" />
             <node concept="26uTi9" id="60NbDCXGBZN" role="1tU5fm" />
           </node>
           <node concept="37vLTG" id="60NbDCXGBZO" role="3clF46">
@@ -14854,18 +14949,18 @@
             <node concept="3clFbF" id="60NbDCXGBZR" role="3cqZAp">
               <node concept="2OqwBi" id="60NbDCXGBZS" role="3clFbG">
                 <node concept="liA8E" id="60NbDCXGBZU" role="2OqNvi">
-                  <ref role="37wK5l" node="4KRwoelnc3p" resolve="buildType" />
+                  <ref role="37wK5l" node="4KRwoelnc3p" resolve="applyMacro" />
                   <node concept="37vLTw" id="60NbDCXGBZV" role="37wK5m">
-                    <ref role="3cqZAo" node="60NbDCXGBZM" resolve="typeLogical" />
+                    <ref role="3cqZAo" node="60NbDCXGBZM" resolve="logical" />
                   </node>
                   <node concept="37vLTw" id="60NbDCXGBZW" role="37wK5m">
                     <ref role="3cqZAo" node="60NbDCXGBZO" resolve="session" />
                   </node>
                 </node>
                 <node concept="1rXfSq" id="60NbDCXGHSJ" role="2Oq$k0">
-                  <ref role="37wK5l" node="4KRwoelAK47" resolve="withNode" />
+                  <ref role="37wK5l" node="4KRwoelAK47" resolve="withInputNode" />
                   <node concept="37vLTw" id="60NbDCXGIOi" role="37wK5m">
-                    <ref role="3cqZAo" node="60NbDCXGBZK" resolve="typeNode" />
+                    <ref role="3cqZAo" node="60NbDCXGBZK" resolve="inputNode" />
                   </node>
                 </node>
               </node>
@@ -14883,7 +14978,7 @@
               <node concept="3clFbF" id="4JJCDIm$BmU" role="3cqZAp">
                 <node concept="2OqwBi" id="4JJCDIm$BmP" role="3clFbG">
                   <node concept="3Tsc0h" id="4JJCDIm$BmS" role="2OqNvi">
-                    <ref role="3TtcxE" to="wq2x:1pPth$m5B4Y" resolve="type" />
+                    <ref role="3TtcxE" to="wq2x:1pPth$m5B4Y" resolve="macro" />
                   </node>
                   <node concept="30H73N" id="4JJCDIm$BmT" role="2Oq$k0" />
                 </node>
@@ -17895,7 +17990,7 @@
     </node>
     <node concept="3aamgX" id="7kTeLbPxw_B" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:18kNIl0jL2T" resolve="AsTypePseudoConstraint" />
+      <ref role="30HIoZ" to="wq2x:18kNIl0jL2T" resolve="ExpandPseudoConstraint" />
       <node concept="1Koe21" id="7kTeLbPxwA4" role="1lVwrX">
         <node concept="3clFb_" id="7kTeLbPxwA5" role="1Koe22">
           <property role="TrG5h" value="method" />
@@ -17938,7 +18033,7 @@
     </node>
     <node concept="3aamgX" id="7kTeLbPxyNh" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:4MEOIDFfpSk" resolve="NewTypePseudoConstraint" />
+      <ref role="30HIoZ" to="wq2x:4MEOIDFfpSk" resolve="CallMacroPseudoConstraint" />
       <node concept="1Koe21" id="7kTeLbPxyTN" role="1lVwrX">
         <node concept="3clFb_" id="7kTeLbPxyTO" role="1Koe22">
           <property role="TrG5h" value="method" />
@@ -17967,7 +18062,7 @@
                         <node concept="2OqwBi" id="7kTeLbPxB5I" role="2Oq$k0">
                           <node concept="30H73N" id="7kTeLbPxANV" role="2Oq$k0" />
                           <node concept="3TrEf2" id="7kTeLbPxBBN" role="2OqNvi">
-                            <ref role="3Tt5mk" to="wq2x:5hSMZ_lrcKO" resolve="typeArgument" />
+                            <ref role="3Tt5mk" to="wq2x:5hSMZ_lrcKO" resolve="argument" />
                           </node>
                         </node>
                         <node concept="3Tsc0h" id="7kTeLbPxDlP" role="2OqNvi">
@@ -17993,7 +18088,7 @@
     <property role="TrG5h" value="typeParameterBinding_extractAnchor" />
     <node concept="3aamgX" id="7kTeLbPxG7z" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:1L74NXEmF9s" resolve="TypeParameterBinding" />
+      <ref role="30HIoZ" to="wq2x:1L74NXEmF9s" resolve="MacroParameterBinding" />
       <node concept="14YyZ8" id="7kTeLbPxGkj" role="1lVwrX">
         <node concept="14ZrTv" id="7kTeLbPxGkp" role="14ZwWg">
           <node concept="30G5F_" id="7kTeLbPxGkq" role="150hEN">
@@ -18140,7 +18235,7 @@
     <property role="TrG5h" value="constraint_buildRule" />
     <node concept="3aamgX" id="7kTeLbPzUJ5" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:18kNIl0jL2T" resolve="AsTypePseudoConstraint" />
+      <ref role="30HIoZ" to="wq2x:18kNIl0jL2T" resolve="ExpandPseudoConstraint" />
       <node concept="1Koe21" id="7kTeLbPzUJ6" role="1lVwrX">
         <node concept="3clFb_" id="7kTeLbPzUJ7" role="1Koe22">
           <property role="TrG5h" value="method" />
@@ -18226,7 +18321,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="7kTeLbPzUJI" role="2OqNvi">
-                      <ref role="37wK5l" to="6pyv:18kNIl1wWgU" resolve="asType" />
+                      <ref role="37wK5l" to="6pyv:18kNIl1wWgU" resolve="expandMacro" />
                       <node concept="10Nm6u" id="7kTeLbPzUJJ" role="37wK5m">
                         <node concept="29HgVG" id="7kTeLbPzUJK" role="lGtFl">
                           <node concept="3NFfHV" id="7kTeLbPzUJL" role="3NFExx">
@@ -18234,7 +18329,7 @@
                               <node concept="3clFbF" id="7kTeLbPzUJN" role="3cqZAp">
                                 <node concept="2OqwBi" id="7kTeLbPzUJO" role="3clFbG">
                                   <node concept="3TrEf2" id="7kTeLbPzUJP" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="wq2x:18kNIl0jL_z" resolve="typeVar" />
+                                    <ref role="3Tt5mk" to="wq2x:18kNIl0jL_z" resolve="logical" />
                                   </node>
                                   <node concept="30H73N" id="7kTeLbPzUJQ" role="2Oq$k0" />
                                 </node>
@@ -18271,7 +18366,7 @@
     </node>
     <node concept="3aamgX" id="7kTeLbPzW_U" role="3aUrZf">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:4MEOIDFfpSk" resolve="NewTypePseudoConstraint" />
+      <ref role="30HIoZ" to="wq2x:4MEOIDFfpSk" resolve="CallMacroPseudoConstraint" />
       <node concept="1Koe21" id="7kTeLbPzW_V" role="1lVwrX">
         <node concept="3clFb_" id="7kTeLbPzW_W" role="1Koe22">
           <property role="TrG5h" value="method" />
@@ -18307,7 +18402,7 @@
                   <ref role="37wK5l" to="6pyv:77AxcO4ZwMR" resolve="merge" />
                   <node concept="2OqwBi" id="7kTeLbPzWAc" role="37wK5m">
                     <node concept="liA8E" id="7kTeLbPzWAd" role="2OqNvi">
-                      <ref role="37wK5l" to="6pyv:4MEOIDFgV3a" resolve="newType" />
+                      <ref role="37wK5l" to="6pyv:4MEOIDFgV3a" resolve="callMacro" />
                       <node concept="10Nm6u" id="7kTeLbPzWAe" role="37wK5m">
                         <node concept="29HgVG" id="7kTeLbPzWAf" role="lGtFl">
                           <node concept="3NFfHV" id="7kTeLbPzWAg" role="3NFExx">
@@ -18315,7 +18410,7 @@
                               <node concept="3clFbF" id="7kTeLbPzWAi" role="3cqZAp">
                                 <node concept="2OqwBi" id="7kTeLbPzWAj" role="3clFbG">
                                   <node concept="3TrEf2" id="7kTeLbPzWAk" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="wq2x:4MEOIDFfpT9" resolve="typeVar" />
+                                    <ref role="3Tt5mk" to="wq2x:4MEOIDFfpT9" resolve="logical" />
                                   </node>
                                   <node concept="30H73N" id="7kTeLbPzWAl" role="2Oq$k0" />
                                 </node>
@@ -18326,7 +18421,7 @@
                       </node>
                       <node concept="2YIFZM" id="7kTeLbPzWAm" role="37wK5m">
                         <ref role="37wK5l" to="psr6:4MEOIDEhz4d" resolve="forReference" />
-                        <ref role="1Pybhc" to="psr6:4MEOIDEhyPY" resolve="TypeTemplate.ID" />
+                        <ref role="1Pybhc" to="psr6:4MEOIDEhyPY" resolve="MacroTemplate.ID" />
                         <node concept="2OqwBi" id="7kTeLbPzWAn" role="37wK5m">
                           <node concept="2YIFZM" id="7kTeLbPzWAo" role="2Oq$k0">
                             <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
@@ -18354,7 +18449,7 @@
                                               <node concept="2OqwBi" id="7kTeLbPzWA$" role="2JrQYb">
                                                 <node concept="30H73N" id="7kTeLbPzWA_" role="2Oq$k0" />
                                                 <node concept="3TrEf2" id="7kTeLbPzWAA" role="2OqNvi">
-                                                  <ref role="3Tt5mk" to="wq2x:5hSMZ_lpUoi" resolve="typeDecl" />
+                                                  <ref role="3Tt5mk" to="wq2x:5hSMZ_lpUoi" resolve="declaration" />
                                                 </node>
                                               </node>
                                             </node>
@@ -18382,7 +18477,7 @@
                                     <node concept="2OqwBi" id="7kTeLbPzWAJ" role="2Oq$k0">
                                       <node concept="30H73N" id="7kTeLbPzWAK" role="2Oq$k0" />
                                       <node concept="3TrEf2" id="7kTeLbPzWAL" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="wq2x:5hSMZ_lrcKO" resolve="typeArgument" />
+                                        <ref role="3Tt5mk" to="wq2x:5hSMZ_lrcKO" resolve="argument" />
                                       </node>
                                     </node>
                                     <node concept="3Tsc0h" id="7kTeLbPzWAM" role="2OqNvi">
@@ -19066,7 +19161,7 @@
                                 <node concept="2Xjw5R" id="7kTeLbPzYUW" role="2OqNvi">
                                   <node concept="1xMEDy" id="7kTeLbPzYUX" role="1xVPHs">
                                     <node concept="chp4Y" id="7kTeLbPzYUY" role="ri$Ld">
-                                      <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                                      <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                                     </node>
                                   </node>
                                 </node>
@@ -19096,7 +19191,7 @@
                           <node concept="2Xjw5R" id="7kTeLbPzYVa" role="2OqNvi">
                             <node concept="1xMEDy" id="7kTeLbPzYVb" role="1xVPHs">
                               <node concept="chp4Y" id="7kTeLbPzYVc" role="ri$Ld">
-                                <ref role="cht4Q" to="wq2x:7IysFe_ZPX_" resolve="TypeInitializer" />
+                                <ref role="cht4Q" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
                               </node>
                             </node>
                           </node>

@@ -174,10 +174,10 @@
     </node>
     <node concept="2tJIrI" id="7km57Pkjxhg" role="jymVt" />
     <node concept="3clFb_" id="2hteS6ClmbE" role="jymVt">
-      <property role="TrG5h" value="createTypeManifest" />
+      <property role="TrG5h" value="createMacroManifest" />
       <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="2hteS6ClmeA" role="3clF45">
-        <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractTypeManifest" />
+        <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
       </node>
       <node concept="3Tm1VV" id="2hteS6ClmbH" role="1B3o_S" />
       <node concept="3clFbS" id="2hteS6ClmbI" role="3clF47" />
@@ -199,15 +199,15 @@
     </node>
   </node>
   <node concept="3HP615" id="2N2MQGCMOyq">
-    <property role="TrG5h" value="TypeTableCollector" />
+    <property role="TrG5h" value="MacroTableCollector" />
     <node concept="2tJIrI" id="4JJCDImP2S8" role="jymVt" />
     <node concept="3clFb_" id="4JJCDImP5xa" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="addTypeTable" />
+      <property role="TrG5h" value="addMacroTable" />
       <node concept="37vLTG" id="4JJCDImP5Mm" role="3clF46">
-        <property role="TrG5h" value="typeTable" />
+        <property role="TrG5h" value="macroTable" />
         <node concept="3uibUv" id="4JJCDImP5Ok" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:1pPth$m7IVF" resolve="AbstractTypeTable" />
+          <ref role="3uigEE" to="psr6:1pPth$m7IVF" resolve="AbstractMacroTable" />
         </node>
       </node>
       <node concept="3cqZAl" id="4JJCDImP5xc" role="3clF45" />

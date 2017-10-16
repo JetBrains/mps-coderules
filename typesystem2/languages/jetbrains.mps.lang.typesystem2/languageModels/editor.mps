@@ -3034,8 +3034,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="1pPth$m5B5c">
-    <property role="3GE5qa" value="type" />
-    <ref role="1XX52x" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+    <property role="3GE5qa" value="macro" />
+    <ref role="1XX52x" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
     <node concept="3EZMnI" id="1pPth$m5B5e" role="2wV5jI">
       <node concept="3EZMnI" id="1pPth$m5QfK" role="3EZMnx">
         <node concept="VPM3Z" id="1pPth$m5QfM" role="3F10Kt">
@@ -3121,7 +3121,7 @@
         <node concept="l2Vlx" id="1pPth$m5Qg$" role="2iSdaV" />
         <node concept="3F2HdR" id="1pPth$m5Bbp" role="3EZMnx">
           <property role="2czwfO" value=" " />
-          <ref role="1NtTu8" to="wq2x:1pPth$m5B4Y" resolve="type" />
+          <ref role="1NtTu8" to="wq2x:1pPth$m5B4Y" resolve="macro" />
           <node concept="l2Vlx" id="1pPth$m5Bbr" role="2czzBx" />
           <node concept="pj6Ft" id="1pPth$m5Bbw" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -3168,11 +3168,11 @@
     </node>
   </node>
   <node concept="24kQdi" id="1pPth$m6097">
-    <property role="3GE5qa" value="type.decl" />
-    <ref role="1XX52x" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="1XX52x" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
     <node concept="3EZMnI" id="1pPth$m6099" role="2wV5jI">
       <node concept="3F0ifn" id="7IysFeA7AdY" role="3EZMnx">
-        <property role="3F0ifm" value="type" />
+        <property role="3F0ifm" value="macro" />
         <ref role="1k5W1q" node="4aJUH_hW38r" resolve="RuleKeyword" />
       </node>
       <node concept="3F0A7n" id="1pPth$m609g" role="3EZMnx">
@@ -3207,7 +3207,7 @@
         </node>
       </node>
       <node concept="3F0ifn" id="7IysFeA6Upz" role="3EZMnx">
-        <property role="3F0ifm" value="for concept" />
+        <property role="3F0ifm" value="expands" />
         <ref role="1k5W1q" node="4aJUH_hW38r" resolve="RuleKeyword" />
       </node>
       <node concept="1iCGBv" id="5MFgGQnlLTp" role="3EZMnx">
@@ -3230,6 +3230,24 @@
         <node concept="3$7jql" id="5MFgGQnlLTu" role="3F10Kt">
           <property role="3$6WeP" value="0.0" />
         </node>
+        <node concept="pkWqt" id="6DOfTm$zYzu" role="pqm2j">
+          <node concept="3clFbS" id="6DOfTm$zYzv" role="2VODD2">
+            <node concept="3clFbF" id="6DOfTm$zYEG" role="3cqZAp">
+              <node concept="2OqwBi" id="6DOfTm$$020" role="3clFbG">
+                <node concept="2OqwBi" id="6DOfTm$zYTZ" role="2Oq$k0">
+                  <node concept="pncrf" id="6DOfTm$zYEF" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="6DOfTm$zZx3" role="2OqNvi">
+                    <ref role="3Tt5mk" to="wq2x:5MFgGQnlLNJ" resolve="conceptDeclaraton" />
+                  </node>
+                </node>
+                <node concept="3x8VRR" id="6DOfTm$$0Gp" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F1sOY" id="6DOfTm$zYlt" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:6DOfTm$zUE3" resolve="input" />
       </node>
       <node concept="3F2HdR" id="7IysFeA0yd6" role="3EZMnx">
         <property role="Q2I2d" value="punctuation" />
@@ -3280,7 +3298,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="7IysFe_ZQch" role="3EZMnx">
-        <ref role="1NtTu8" to="wq2x:7IysFe_ZQc2" resolve="init" />
+        <ref role="1NtTu8" to="wq2x:7IysFe_ZQc2" resolve="body" />
         <node concept="lj46D" id="4MEOIDF_LeC" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -3556,7 +3574,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="1hX44vMIQ7f">
-    <property role="3GE5qa" value="type.code" />
+    <property role="3GE5qa" value="macro.code" />
     <ref role="1XX52x" to="wq2x:1hX44vMEjQr" resolve="TypeNodeExpression" />
     <node concept="3EZMnI" id="1hX44vMIQ7h" role="2wV5jI">
       <node concept="2iRfu4" id="1hX44vMIQ7k" role="2iSdaV" />
@@ -3812,32 +3830,28 @@
   </node>
   <node concept="24kQdi" id="18kNIl0jL7w">
     <property role="3GE5qa" value="constraint.typespecific" />
-    <ref role="1XX52x" to="wq2x:18kNIl0jL2T" resolve="AsTypePseudoConstraint" />
+    <ref role="1XX52x" to="wq2x:18kNIl0jL2T" resolve="ExpandPseudoConstraint" />
     <node concept="3EZMnI" id="18kNIl0jL7y" role="2wV5jI">
       <node concept="3F1sOY" id="18kNIl0jL7z" role="3EZMnx">
-        <ref role="1NtTu8" to="wq2x:18kNIl0jL_z" resolve="typeVar" />
+        <ref role="1NtTu8" to="wq2x:18kNIl0jL_z" resolve="logical" />
       </node>
       <node concept="3F0ifn" id="18kNIl0jL7$" role="3EZMnx">
         <property role="3F0ifm" value="&lt;-" />
         <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
       </node>
+      <node concept="PMmxH" id="6DOfTm$5j2d" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" node="7ksQUDZpd8b" resolve="ConstraintKeyword" />
+      </node>
       <node concept="3F1sOY" id="18kNIl0jMiT" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:18kNIl0jL3E" resolve="origin" />
-      </node>
-      <node concept="3F0ifn" id="18kNIl0kvio" role="3EZMnx">
-        <property role="3F0ifm" value="." />
-        <ref role="1k5W1q" to="tpen:hFDnyG9" resolve="Dot" />
-      </node>
-      <node concept="3F0ifn" id="18kNIl0jL7_" role="3EZMnx">
-        <property role="3F0ifm" value="asType" />
-        <ref role="1k5W1q" node="7ksQUDZpd8b" resolve="ConstraintKeyword" />
       </node>
       <node concept="l2Vlx" id="18kNIl0jL8a" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="7IysFe_ZPXL">
-    <property role="3GE5qa" value="type.decl" />
-    <ref role="1XX52x" to="wq2x:7IysFe_ZPXH" resolve="TypeInitializerLogicalDeclaration" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="1XX52x" to="wq2x:7IysFe_ZPXH" resolve="MacroBodyLogicalDeclaration" />
     <node concept="3EZMnI" id="7IysFe_ZPXN" role="2wV5jI">
       <node concept="3EZMnI" id="1iWwVK2Coka" role="3EZMnx">
         <node concept="3F1sOY" id="1iWwVK2Coke" role="3EZMnx">
@@ -3863,8 +3877,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7IysFe_ZQ5Q">
-    <property role="3GE5qa" value="type.decl" />
-    <ref role="1XX52x" to="wq2x:7IysFe_ZPX_" resolve="TypeInitializer" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="1XX52x" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
     <node concept="3EZMnI" id="7IysFe_ZQ6e" role="2wV5jI">
       <node concept="3F0ifn" id="7IysFe_ZQ6E" role="3EZMnx">
         <property role="3F0ifm" value="produce" />
@@ -3873,7 +3887,7 @@
           <property role="VOm3f" value="true" />
         </node>
         <node concept="A1WHr" id="7XmdqtdBqvb" role="3vIgyS">
-          <ref role="2ZyFGn" to="wq2x:7IysFe_ZPX_" resolve="TypeInitializer" />
+          <ref role="2ZyFGn" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
         </node>
       </node>
       <node concept="3EZMnI" id="7XmdqtdB5Cs" role="3EZMnx">
@@ -3966,8 +3980,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7IysFeA0ybR">
-    <property role="3GE5qa" value="type.decl" />
-    <ref role="1XX52x" to="wq2x:7IysFeA0yb0" resolve="TypeDeclarationParameter" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="1XX52x" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
     <node concept="3EZMnI" id="7IysFeA0ybT" role="2wV5jI">
       <node concept="3F1sOY" id="7IysFeA0yc0" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:7IysFeA0ybI" resolve="type" />
@@ -3986,8 +4000,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7IysFeA1vun">
-    <property role="3GE5qa" value="type.decl" />
-    <ref role="1XX52x" to="wq2x:7IysFeA1uPa" resolve="TypeDeclarationParameterReference" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="1XX52x" to="wq2x:7IysFeA1uPa" resolve="MacroParameterReference" />
     <node concept="3EZMnI" id="7IysFeA1vup" role="2wV5jI">
       <node concept="1iCGBv" id="7IysFeA1vuw" role="3EZMnx">
         <ref role="1NtTu8" to="wq2x:7IysFeA1uTj" resolve="parameter" />
@@ -4003,7 +4017,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7IysFeA5Lea">
-    <property role="3GE5qa" value="type.code" />
+    <property role="3GE5qa" value="macro.code" />
     <ref role="1XX52x" to="wq2x:7IysFeA5Lco" resolve="InitBlock" />
     <node concept="3EZMnI" id="7IysFeA5LyV" role="2wV5jI">
       <node concept="3F0ifn" id="7IysFeA5LyW" role="3EZMnx">
@@ -4157,8 +4171,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7IysFeA99pm">
-    <property role="3GE5qa" value="type.code" />
-    <ref role="1XX52x" to="wq2x:7IysFeA99oR" resolve="TypeLogicalExpression" />
+    <property role="3GE5qa" value="macro.code" />
+    <ref role="1XX52x" to="wq2x:7IysFeA99oR" resolve="MacroLogicalExpression" />
     <node concept="3EZMnI" id="7IysFeA99po" role="2wV5jI">
       <node concept="PMmxH" id="7IysFeA99pp" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -4171,7 +4185,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3TnYLtqfh$h">
-    <property role="3GE5qa" value="type.code.with" />
+    <property role="3GE5qa" value="macro.code.with" />
     <ref role="1XX52x" to="wq2x:3TnYLtqfhzx" resolve="ContextParameterDeclaration" />
     <node concept="3EZMnI" id="3TnYLtqfh$j" role="2wV5jI">
       <node concept="3F1sOY" id="3TnYLtqfh$x" role="3EZMnx">
@@ -4184,7 +4198,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3TnYLtqfh_m">
-    <property role="3GE5qa" value="type.code.with" />
+    <property role="3GE5qa" value="macro.code.with" />
     <ref role="1XX52x" to="wq2x:3TnYLtqfh$J" resolve="ContextParameterReference" />
     <node concept="3EZMnI" id="3TnYLtqfh_o" role="2wV5jI">
       <node concept="1iCGBv" id="3TnYLtqfh_v" role="3EZMnx">
@@ -4204,7 +4218,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3TnYLtqgQZv">
-    <property role="3GE5qa" value="type.code.with" />
+    <property role="3GE5qa" value="macro.code.with" />
     <ref role="1XX52x" to="wq2x:3TnYLtqgQYU" resolve="WithContextStatement" />
     <node concept="3EZMnI" id="3TnYLtqgQZx" role="2wV5jI">
       <node concept="l2Vlx" id="3TnYLtqgQZ$" role="2iSdaV" />
@@ -4486,8 +4500,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="1L74NXEmFKo">
-    <property role="3GE5qa" value="type.invoke" />
-    <ref role="1XX52x" to="wq2x:1L74NXEmFJU" resolve="TypeArgumentList" />
+    <property role="3GE5qa" value="macro.invoke" />
+    <ref role="1XX52x" to="wq2x:1L74NXEmFJU" resolve="MacroArgumentList" />
     <node concept="3EZMnI" id="1L74NXEmFMy" role="2wV5jI">
       <node concept="3F2HdR" id="1L74NXEmFY1" role="3EZMnx">
         <property role="2czwfO" value="," />
@@ -4502,8 +4516,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="1L74NXEmHyT">
-    <property role="3GE5qa" value="type.invoke" />
-    <ref role="1XX52x" to="wq2x:1L74NXEmF9s" resolve="TypeParameterBinding" />
+    <property role="3GE5qa" value="macro.invoke" />
+    <ref role="1XX52x" to="wq2x:1L74NXEmF9s" resolve="MacroParameterBinding" />
     <node concept="3EZMnI" id="1L74NXEmHyV" role="2wV5jI">
       <node concept="3EZMnI" id="1L74NXGKmQR" role="3EZMnx">
         <node concept="VPM3Z" id="1L74NXGKmQT" role="3F10Kt">
@@ -4889,8 +4903,8 @@
     </node>
   </node>
   <node concept="IW6AY" id="4hPXq9JmejC">
-    <property role="3GE5qa" value="type" />
-    <ref role="aqKnT" to="wq2x:7IysFe_ZPXH" resolve="TypeInitializerLogicalDeclaration" />
+    <property role="3GE5qa" value="macro" />
+    <ref role="aqKnT" to="wq2x:7IysFe_ZPXH" resolve="MacroBodyLogicalDeclaration" />
     <node concept="1Qtc8_" id="4hPXq9JmejD" role="IW6Ez">
       <node concept="3cWJ9i" id="4hPXq9JmejE" role="1Qtc8$">
         <node concept="CtIbL" id="4hPXq9JmejF" role="CtIbM">
@@ -5227,12 +5241,12 @@
     </node>
     <node concept="1s_PAr" id="4hPXq9Jmesz" role="3ft7WO">
       <node concept="2kknPI" id="4hPXq9Jmes$" role="1s_PAo">
-        <ref role="2kkw0f" node="4hPXq9JmerR" resolve="TypeLogical_Expression" />
+        <ref role="2kkw0f" node="4hPXq9JmerR" resolve="MacroLogical_Expression" />
       </node>
     </node>
     <node concept="1s_PAr" id="4hPXq9Jmeth" role="3ft7WO">
       <node concept="2kknPI" id="4hPXq9Jmeti" role="1s_PAo">
-        <ref role="2kkw0f" node="4hPXq9Jmes_" resolve="TypeDeclaration_parameter" />
+        <ref role="2kkw0f" node="4hPXq9Jmes_" resolve="MacroDeclaration_parameter" />
       </node>
     </node>
     <node concept="1s_PAr" id="4bWqD4C23I8" role="3ft7WO">
@@ -5253,7 +5267,7 @@
   </node>
   <node concept="Q6S24" id="4hPXq9JmepQ">
     <property role="TrG5h" value="TypeNode_Expression" />
-    <property role="3GE5qa" value="type" />
+    <property role="3GE5qa" value="macro" />
     <ref role="aqKnT" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="3ft6gV" id="4hPXq9JmepS" role="3ft7WO">
       <node concept="3ft6gW" id="4hPXq9JmepT" role="3ft5RY">
@@ -5265,10 +5279,10 @@
                 <node concept="2Xjw5R" id="4hPXq9JmepZ" role="2OqNvi">
                   <node concept="3gmYPX" id="4hPXq9Jmeq0" role="1xVPHs">
                     <node concept="3gn64h" id="4hPXq9Jmeq1" role="3gmYPZ">
-                      <ref role="3gnhBz" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                      <ref role="3gnhBz" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                     </node>
                     <node concept="3gn64h" id="4hPXq9Jmeq2" role="3gmYPZ">
-                      <ref role="3gnhBz" to="wq2x:7IysFeA0yb0" resolve="TypeDeclarationParameter" />
+                      <ref role="3gnhBz" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="4hPXq9Jmeq3" role="1xVPHs" />
@@ -5276,7 +5290,7 @@
               </node>
               <node concept="1mIQ4w" id="4hPXq9Jmeq4" role="2OqNvi">
                 <node concept="chp4Y" id="4hPXq9Jmeq5" role="cj9EA">
-                  <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="TypeDeclarationParameter" />
+                  <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
                 </node>
               </node>
             </node>
@@ -5332,7 +5346,7 @@
                     <node concept="2Xjw5R" id="4hPXq9Jmerj" role="2OqNvi">
                       <node concept="1xMEDy" id="4hPXq9Jmerk" role="1xVPHs">
                         <node concept="chp4Y" id="4hPXq9Jmerl" role="ri$Ld">
-                          <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                          <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                         </node>
                       </node>
                     </node>
@@ -5351,8 +5365,8 @@
     </node>
   </node>
   <node concept="Q6S24" id="4hPXq9JmerR">
-    <property role="TrG5h" value="TypeLogical_Expression" />
-    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="MacroLogical_Expression" />
+    <property role="3GE5qa" value="macro" />
     <ref role="aqKnT" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="3ft6gV" id="4hPXq9JmerT" role="3ft7WO">
       <node concept="3ft6gW" id="4hPXq9JmerU" role="3ft5RY">
@@ -5364,7 +5378,7 @@
                 <node concept="2Xjw5R" id="4hPXq9Jmes0" role="2OqNvi">
                   <node concept="1xMEDy" id="4hPXq9Jmes1" role="1xVPHs">
                     <node concept="chp4Y" id="4hPXq9Jmes2" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:7IysFe_ZPX_" resolve="TypeInitializer" />
+                      <ref role="cht4Q" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="4hPXq9Jmes3" role="1xVPHs" />
@@ -5376,13 +5390,13 @@
         </node>
       </node>
       <node concept="3ft5Ry" id="4hPXq9Jmesw" role="3ft5RZ">
-        <ref role="4PJHt" to="wq2x:7IysFeA99oR" resolve="TypeLogicalExpression" />
+        <ref role="4PJHt" to="wq2x:7IysFeA99oR" resolve="MacroLogicalExpression" />
       </node>
     </node>
   </node>
   <node concept="Q6S24" id="4hPXq9Jmes_">
-    <property role="TrG5h" value="TypeDeclaration_parameter" />
-    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="MacroDeclaration_parameter" />
+    <property role="3GE5qa" value="macro" />
     <ref role="aqKnT" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="3ft6gV" id="4hPXq9JmesB" role="3ft7WO">
       <node concept="3ft6gW" id="4hPXq9JmesC" role="3ft5RY">
@@ -5394,7 +5408,7 @@
                 <node concept="2Xjw5R" id="4hPXq9JmesI" role="2OqNvi">
                   <node concept="1xMEDy" id="4hPXq9JmesJ" role="1xVPHs">
                     <node concept="chp4Y" id="4hPXq9JmesK" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                      <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="4hPXq9JmesL" role="1xVPHs" />
@@ -5407,7 +5421,7 @@
       </node>
       <node concept="1s_PAr" id="3yBNtx8$qrr" role="3ft5RZ">
         <node concept="2kknPI" id="3yBNtx8$qrs" role="1s_PAo">
-          <ref role="2kkw0f" node="3yBNtx8$qnP" resolve="TypeDeclarationParameterReference_SmartReference" />
+          <ref role="2kkw0f" node="3yBNtx8$qnP" resolve="MacroParameterReference_SmartReference" />
         </node>
       </node>
     </node>
@@ -5647,7 +5661,7 @@
                       <ref role="3gnhBz" to="wq2x:6p0DfM0a3gA" resolve="Head" />
                     </node>
                     <node concept="3gn64h" id="2tI9bOlhlZF" role="3gmYPZ">
-                      <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="TypeInitializer" />
+                      <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="4hPXq9Jmewk" role="1xVPHs" />
@@ -5805,7 +5819,7 @@
                 <node concept="2Xjw5R" id="4hPXq9Jme$6" role="2OqNvi">
                   <node concept="1xMEDy" id="4hPXq9Jme$7" role="1xVPHs">
                     <node concept="chp4Y" id="4hPXq9Jme$8" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+                      <ref role="cht4Q" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="4hPXq9Jme$9" role="1xVPHs" />
@@ -5829,7 +5843,7 @@
                   <node concept="2Xjw5R" id="4hPXq9Jme$I" role="2OqNvi">
                     <node concept="1xMEDy" id="4hPXq9Jme$J" role="1xVPHs">
                       <node concept="chp4Y" id="4hPXq9Jme$K" role="ri$Ld">
-                        <ref role="cht4Q" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+                        <ref role="cht4Q" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
                       </node>
                     </node>
                     <node concept="1xIGOp" id="4hPXq9Jme$L" role="1xVPHs" />
@@ -5900,18 +5914,18 @@
     </node>
   </node>
   <node concept="3p36aQ" id="4hPXq9JmeBh">
-    <property role="3GE5qa" value="type" />
-    <ref role="aqKnT" to="wq2x:7IysFeA99oR" resolve="TypeLogicalExpression" />
+    <property role="3GE5qa" value="macro" />
+    <ref role="aqKnT" to="wq2x:7IysFeA99oR" resolve="MacroLogicalExpression" />
   </node>
   <node concept="3p36aQ" id="4hPXq9JmeBi">
-    <property role="3GE5qa" value="type" />
-    <ref role="aqKnT" to="wq2x:7IysFeA1uPa" resolve="TypeDeclarationParameterReference" />
+    <property role="3GE5qa" value="macro" />
+    <ref role="aqKnT" to="wq2x:7IysFeA1uPa" resolve="MacroParameterReference" />
   </node>
   <node concept="3p36aQ" id="4hPXq9JmeBj">
     <ref role="aqKnT" to="wq2x:2E5lcNn5Ub2" resolve="LocalDeclarationStatement" />
   </node>
   <node concept="3p36aQ" id="4hPXq9JmeBl">
-    <property role="3GE5qa" value="type" />
+    <property role="3GE5qa" value="macro" />
     <ref role="aqKnT" to="wq2x:1hX44vMEjQr" resolve="TypeNodeExpression" />
   </node>
   <node concept="3p36aQ" id="4hPXq9JmeBm">
@@ -5938,40 +5952,47 @@
   </node>
   <node concept="24kQdi" id="4MEOIDFfpTe">
     <property role="3GE5qa" value="constraint.typespecific" />
-    <ref role="1XX52x" to="wq2x:4MEOIDFfpSk" resolve="NewTypePseudoConstraint" />
+    <ref role="1XX52x" to="wq2x:4MEOIDFfpSk" resolve="CallMacroPseudoConstraint" />
     <node concept="3EZMnI" id="4MEOIDFfpTg" role="2wV5jI">
       <node concept="3F1sOY" id="4MEOIDFfpTn" role="3EZMnx">
-        <ref role="1NtTu8" to="wq2x:4MEOIDFfpT9" resolve="typeVar" />
+        <ref role="1NtTu8" to="wq2x:4MEOIDFfpT9" resolve="logical" />
       </node>
       <node concept="3F0ifn" id="4MEOIDFfpTt" role="3EZMnx">
         <property role="3F0ifm" value="&lt;-" />
+        <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
       </node>
-      <node concept="3F0ifn" id="4MEOIDFfpT_" role="3EZMnx">
-        <property role="3F0ifm" value="newType" />
+      <node concept="PMmxH" id="6DOfTm$5ikq" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <ref role="1k5W1q" node="7ksQUDZpd8b" resolve="ConstraintKeyword" />
       </node>
       <node concept="1iCGBv" id="5hSMZ_lpX5n" role="3EZMnx">
-        <ref role="1NtTu8" to="wq2x:5hSMZ_lpUoi" resolve="typeDecl" />
+        <ref role="1NtTu8" to="wq2x:5hSMZ_lpUoi" resolve="declaration" />
+        <ref role="1k5W1q" node="7ksQUDZpd8b" resolve="ConstraintKeyword" />
         <node concept="1sVBvm" id="5hSMZ_lpX5p" role="1sWHZn">
           <node concept="3F0A7n" id="5hSMZ_lpX5$" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
+        <node concept="Vb9p2" id="6DOfTm$8sUZ" role="3F10Kt">
+          <property role="Vbekb" value="BOLD_ITALIC" />
+        </node>
       </node>
       <node concept="3F0ifn" id="5hSMZ_lrdys" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
+        <property role="3F0ifm" value="&lt;" />
         <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
-        <node concept="11L4FC" id="5hSMZ_lrdyt" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
         <node concept="11LMrY" id="5hSMZ_lrdyu" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3Xmtl4" id="6DOfTm$83po" role="3F10Kt">
+          <node concept="1wgc9g" id="6DOfTm$8sJu" role="3XvnJa">
+            <ref role="1wgcnl" node="7ksQUDZpd8b" resolve="ConstraintKeyword" />
+          </node>
         </node>
       </node>
       <node concept="3F1sOY" id="5hSMZ_lrdyv" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="wq2x:5hSMZ_lrcKO" resolve="typeArgument" />
+        <ref role="1NtTu8" to="wq2x:5hSMZ_lrcKO" resolve="argument" />
         <node concept="3nxI2P" id="5hSMZ_lrdyw" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -5980,10 +6001,15 @@
         </node>
       </node>
       <node concept="3F0ifn" id="5hSMZ_lrdyy" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
+        <property role="3F0ifm" value="&gt;" />
         <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
         <node concept="11L4FC" id="5hSMZ_lrdyz" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3Xmtl4" id="6DOfTm$83p_" role="3F10Kt">
+          <node concept="1wgc9g" id="6DOfTm$8sJx" role="3XvnJa">
+            <ref role="1wgcnl" node="7ksQUDZpd8b" resolve="ConstraintKeyword" />
+          </node>
         </node>
       </node>
       <node concept="3F1sOY" id="4MEOIDFfpTJ" role="3EZMnx">
@@ -6802,8 +6828,8 @@
     </node>
   </node>
   <node concept="IW6AY" id="7XmdqtdBbWm">
-    <property role="3GE5qa" value="type.decl" />
-    <ref role="aqKnT" to="wq2x:7IysFe_ZPX_" resolve="TypeInitializer" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="aqKnT" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
     <node concept="1Qtc8_" id="7XmdqtdBbWt" role="IW6Ez">
       <node concept="IWgqT" id="7XmdqtdBcyH" role="1Qtc8A">
         <node concept="1hCUdq" id="7XmdqtdBcyJ" role="1hCUd6">
@@ -6977,16 +7003,16 @@
     <node concept="382kZG" id="3yBNtx8$qnG" role="lGtFl" />
   </node>
   <node concept="Q6S24" id="3yBNtx8$qnP">
-    <property role="TrG5h" value="TypeDeclarationParameterReference_SmartReference" />
-    <property role="3GE5qa" value="type.decl" />
-    <ref role="aqKnT" to="wq2x:7IysFeA1uPa" resolve="TypeDeclarationParameterReference" />
+    <property role="TrG5h" value="MacroParameterReference_SmartReference" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="aqKnT" to="wq2x:7IysFeA1uPa" resolve="MacroParameterReference" />
     <node concept="3XHNnq" id="3yBNtx8$qnO" role="3ft7WO">
       <ref role="3XGfJA" to="wq2x:7IysFeA1uTj" resolve="parameter" />
     </node>
     <node concept="382kZG" id="3yBNtx8$qnQ" role="lGtFl" />
   </node>
   <node concept="24kQdi" id="6hqFpWmM97Z">
-    <property role="3GE5qa" value="type.code.with" />
+    <property role="3GE5qa" value="macro.code.with" />
     <ref role="1XX52x" to="wq2x:6hqFpWmM6I9" resolve="ContextParameterContainer" />
     <node concept="3EZMnI" id="6hqFpWmM98y" role="2wV5jI">
       <node concept="PMmxH" id="6hqFpWmM98G" role="3EZMnx">
@@ -7041,6 +7067,36 @@
         <ref role="1NtTu8" to="wq2x:7smgEqggf13" resolve="node" />
       </node>
       <node concept="l2Vlx" id="7smgEqggf1a" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6DOfTm$zRmy">
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="1XX52x" to="wq2x:6DOfTm$zRmf" resolve="MacroInputDeclaration" />
+    <node concept="3EZMnI" id="6DOfTm$zRm$" role="2wV5jI">
+      <node concept="3F1sOY" id="6DOfTm$zWc6" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:6DOfTm$zVok" resolve="type" />
+      </node>
+      <node concept="3F0A7n" id="6DOfTm$zRm_" role="3EZMnx">
+        <ref role="1k5W1q" node="7ksQUDZqpsE" resolve="InputName" />
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="l2Vlx" id="6DOfTm$zRmA" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="6DOfTm$$CHm">
+    <property role="3GE5qa" value="macro.code" />
+    <ref role="1XX52x" to="wq2x:6DOfTm$$CHj" resolve="MacroInputReference" />
+    <node concept="3EZMnI" id="6DOfTm$$CHo" role="2wV5jI">
+      <node concept="1iCGBv" id="6DOfTm$$CHv" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:6DOfTm$$CHk" resolve="declaration" />
+        <node concept="1sVBvm" id="6DOfTm$$CHx" role="1sWHZn">
+          <node concept="3F0A7n" id="6DOfTm$$CHC" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="6DOfTm$$CHr" role="2iSdaV" />
     </node>
   </node>
 </model>

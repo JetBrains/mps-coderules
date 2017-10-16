@@ -1163,7 +1163,7 @@
   </node>
   <node concept="1YbPZF" id="1hX44vMIYLv">
     <property role="TrG5h" value="typeof_TypeNodeExpression" />
-    <property role="3GE5qa" value="type.code" />
+    <property role="3GE5qa" value="macro.code" />
     <node concept="3clFbS" id="1hX44vMIYLw" role="18ibNy">
       <node concept="1Z5TYs" id="1hX44vMIYXY" role="3cqZAp">
         <node concept="mw_s8" id="1hX44vMIYYi" role="1ZfhKB">
@@ -1252,15 +1252,15 @@
     </node>
   </node>
   <node concept="1YbPZF" id="7IysFeA3vjt">
-    <property role="TrG5h" value="typeof_TypeDeclarationParameterReference" />
-    <property role="3GE5qa" value="type.decl" />
+    <property role="TrG5h" value="typeof_MacroParameterReference" />
+    <property role="3GE5qa" value="macro.decl" />
     <node concept="3clFbS" id="7IysFeA3vju" role="18ibNy">
       <node concept="1Z5TYs" id="7IysFeA3vv7" role="3cqZAp">
         <node concept="mw_s8" id="7IysFeA3vv_" role="1ZfhKB">
           <node concept="2OqwBi" id="7IysFeA3w5A" role="mwGJk">
             <node concept="2OqwBi" id="7IysFeA3vAO" role="2Oq$k0">
               <node concept="1YBJjd" id="7IysFeA3vvz" role="2Oq$k0">
-                <ref role="1YBMHb" node="7IysFeA3vjw" resolve="tdpr" />
+                <ref role="1YBMHb" node="7IysFeA3vjw" resolve="mpr" />
               </node>
               <node concept="3TrEf2" id="7IysFeA3vL8" role="2OqNvi">
                 <ref role="3Tt5mk" to="wq2x:7IysFeA1uTj" resolve="parameter" />
@@ -1274,20 +1274,20 @@
         <node concept="mw_s8" id="7IysFeA3vva" role="1ZfhK$">
           <node concept="1Z2H0r" id="7IysFeA3vj$" role="mwGJk">
             <node concept="1YBJjd" id="7IysFeA3vot" role="1Z2MuG">
-              <ref role="1YBMHb" node="7IysFeA3vjw" resolve="tdpr" />
+              <ref role="1YBMHb" node="7IysFeA3vjw" resolve="mpr" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="7IysFeA3vjw" role="1YuTPh">
-      <property role="TrG5h" value="tdpr" />
-      <ref role="1YaFvo" to="wq2x:7IysFeA1uPa" resolve="TypeDeclarationParameterReference" />
+      <property role="TrG5h" value="mpr" />
+      <ref role="1YaFvo" to="wq2x:7IysFeA1uPa" resolve="MacroParameterReference" />
     </node>
   </node>
   <node concept="1YbPZF" id="7IysFeA9bof">
-    <property role="TrG5h" value="typeof_TypeLogicalExpression" />
-    <property role="3GE5qa" value="type.code" />
+    <property role="TrG5h" value="typeof_MacroLogicalExpression" />
+    <property role="3GE5qa" value="macro.code" />
     <node concept="3clFbS" id="7IysFeA9bog" role="18ibNy">
       <node concept="1Z5TYs" id="7IysFeA9bwM" role="3cqZAp">
         <node concept="mw_s8" id="7IysFeA9bxi" role="1ZfhKB">
@@ -1298,20 +1298,20 @@
         <node concept="mw_s8" id="7IysFeA9bwP" role="1ZfhK$">
           <node concept="1Z2H0r" id="7IysFeA9bop" role="mwGJk">
             <node concept="1YBJjd" id="7IysFeA9bq9" role="1Z2MuG">
-              <ref role="1YBMHb" node="7IysFeA9boi" resolve="tle" />
+              <ref role="1YBMHb" node="7IysFeA9boi" resolve="mle" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="7IysFeA9boi" role="1YuTPh">
-      <property role="TrG5h" value="tle" />
-      <ref role="1YaFvo" to="wq2x:7IysFeA99oR" resolve="TypeLogicalExpression" />
+      <property role="TrG5h" value="mle" />
+      <ref role="1YaFvo" to="wq2x:7IysFeA99oR" resolve="MacroLogicalExpression" />
     </node>
   </node>
   <node concept="1YbPZF" id="3TnYLtqfmDB">
     <property role="TrG5h" value="typeof_ContextParameterReference" />
-    <property role="3GE5qa" value="type.code.with" />
+    <property role="3GE5qa" value="macro.code.with" />
     <node concept="3clFbS" id="3TnYLtqfmDC" role="18ibNy">
       <node concept="1Z5TYs" id="3TnYLtqfmXq" role="3cqZAp">
         <node concept="mw_s8" id="3TnYLtqfmXG" role="1ZfhKB">
@@ -1423,6 +1423,69 @@
     <node concept="1YaCAy" id="7smgEqggf1Q" role="1YuTPh">
       <property role="TrG5h" value="nodeAnchor" />
       <ref role="1YaFvo" to="wq2x:7smgEqggf12" resolve="NodeAnchor" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="6DOfTm$zWcY">
+    <property role="TrG5h" value="typeof_MacroInputDeclaration" />
+    <property role="3GE5qa" value="macro.decl" />
+    <node concept="3clFbS" id="6DOfTm$zWcZ" role="18ibNy">
+      <node concept="1Z5TYs" id="6DOfTm$zXey" role="3cqZAp">
+        <node concept="mw_s8" id="6DOfTm$zXeO" role="1ZfhKB">
+          <node concept="2OqwBi" id="6DOfTm$zXp9" role="mwGJk">
+            <node concept="1YBJjd" id="6DOfTm$zXeM" role="2Oq$k0">
+              <ref role="1YBMHb" node="6DOfTm$zWd1" resolve="mid" />
+            </node>
+            <node concept="3TrEf2" id="6DOfTm$zXKQ" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:6DOfTm$zVok" resolve="type" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="6DOfTm$zXe_" role="1ZfhK$">
+          <node concept="1Z2H0r" id="6DOfTm$zWi2" role="mwGJk">
+            <node concept="1YBJjd" id="6DOfTm$zWjP" role="1Z2MuG">
+              <ref role="1YBMHb" node="6DOfTm$zWd1" resolve="mid" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6DOfTm$zWd1" role="1YuTPh">
+      <property role="TrG5h" value="mid" />
+      <ref role="1YaFvo" to="wq2x:6DOfTm$zRmf" resolve="MacroInputDeclaration" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="6DOfTm$$CI4">
+    <property role="TrG5h" value="typeof_MacroInputReference" />
+    <property role="3GE5qa" value="macro.code" />
+    <node concept="3clFbS" id="6DOfTm$$CI5" role="18ibNy">
+      <node concept="1Z5TYs" id="6DOfTm$$D1t" role="3cqZAp">
+        <node concept="mw_s8" id="6DOfTm$$D1J" role="1ZfhKB">
+          <node concept="2OqwBi" id="6DOfTm$$DIg" role="mwGJk">
+            <node concept="2OqwBi" id="6DOfTm$$D9B" role="2Oq$k0">
+              <node concept="1YBJjd" id="6DOfTm$$D1H" role="2Oq$k0">
+                <ref role="1YBMHb" node="6DOfTm$$CI7" resolve="mir" />
+              </node>
+              <node concept="3TrEf2" id="6DOfTm$$DoR" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:6DOfTm$$CHk" resolve="declaration" />
+              </node>
+            </node>
+            <node concept="3TrEf2" id="6DOfTm$$DZV" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:6DOfTm$zVok" resolve="type" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="6DOfTm$$D1w" role="1ZfhK$">
+          <node concept="1Z2H0r" id="6DOfTm$$CLs" role="mwGJk">
+            <node concept="1YBJjd" id="6DOfTm$$CNf" role="1Z2MuG">
+              <ref role="1YBMHb" node="6DOfTm$$CI7" resolve="mir" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6DOfTm$$CI7" role="1YuTPh">
+      <property role="TrG5h" value="mir" />
+      <ref role="1YaFvo" to="wq2x:6DOfTm$$CHj" resolve="MacroInputReference" />
     </node>
   </node>
 </model>

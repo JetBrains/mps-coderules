@@ -501,7 +501,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1hX44vMIQ9K">
-    <property role="3GE5qa" value="type.code" />
+    <property role="3GE5qa" value="macro.code" />
     <ref role="1M2myG" to="wq2x:1hX44vMEjQr" resolve="TypeNodeExpression" />
     <node concept="1N5Pfh" id="1hX44vMIQ9L" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:1hX44vMIQ6F" resolve="declaration" />
@@ -511,14 +511,14 @@
             <node concept="3cpWsn" id="6fXjIfxgfV9" role="3cpWs9">
               <property role="TrG5h" value="tpd" />
               <node concept="3Tqbb2" id="6fXjIfxgfVa" role="1tU5fm">
-                <ref role="ehGHo" to="wq2x:7IysFeA0yb0" resolve="TypeDeclarationParameter" />
+                <ref role="ehGHo" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
               </node>
               <node concept="2OqwBi" id="6fXjIfxgfVb" role="33vP2m">
                 <node concept="2rP1CM" id="6fXjIfxgfVc" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="6fXjIfxgfVd" role="2OqNvi">
                   <node concept="1xMEDy" id="6fXjIfxgfVe" role="1xVPHs">
                     <node concept="chp4Y" id="6fXjIfxgfVf" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="TypeDeclarationParameter" />
+                      <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -567,7 +567,7 @@
                               <node concept="1mfA1w" id="6fXjIfxgfVB" role="2OqNvi" />
                             </node>
                             <node concept="chp4Y" id="6fXjIfxgnf6" role="3oSUPX">
-                              <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                              <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                             </node>
                           </node>
                         </node>
@@ -601,8 +601,8 @@
     </node>
   </node>
   <node concept="1M2fIO" id="7IysFeA1vGZ">
-    <property role="3GE5qa" value="type.decl" />
-    <ref role="1M2myG" to="wq2x:7IysFeA1uPa" resolve="TypeDeclarationParameterReference" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="1M2myG" to="wq2x:7IysFeA1uPa" resolve="MacroParameterReference" />
     <node concept="1N5Pfh" id="7IysFeA1vHe" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:7IysFeA1uTj" resolve="parameter" />
       <node concept="3dgokm" id="6fXjIfxgfVL" role="1N6uqs">
@@ -620,7 +620,7 @@
                       <node concept="2Xjw5R" id="6fXjIfxgfVU" role="2OqNvi">
                         <node concept="1xMEDy" id="6fXjIfxgfVV" role="1xVPHs">
                           <node concept="chp4Y" id="6fXjIfxgfVW" role="ri$Ld">
-                            <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="TypeDeclaration" />
+                            <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                           </node>
                         </node>
                         <node concept="1xIGOp" id="6fXjIfxgfVX" role="1xVPHs" />
@@ -668,7 +668,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="3TnYLtqfhA9">
-    <property role="3GE5qa" value="type.code.with" />
+    <property role="3GE5qa" value="macro.code.with" />
     <ref role="1M2myG" to="wq2x:3TnYLtqfh$J" resolve="ContextParameterReference" />
     <node concept="1N5Pfh" id="3TnYLtqfhNA" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:3TnYLtqfh$T" resolve="parameter" />
@@ -708,7 +708,7 @@
                           <node concept="2Xjw5R" id="6hqFpWmNfFe" role="2OqNvi">
                             <node concept="1xMEDy" id="6hqFpWmNfFf" role="1xVPHs">
                               <node concept="chp4Y" id="6hqFpWmNfFg" role="ri$Ld">
-                                <ref role="cht4Q" to="wq2x:1pPth$m5B4X" resolve="TypeTable" />
+                                <ref role="cht4Q" to="wq2x:1pPth$m5B4X" resolve="MacroTable" />
                               </node>
                             </node>
                             <node concept="1xIGOp" id="6hqFpWmNfFh" role="1xVPHs" />
@@ -755,7 +755,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="3TnYLtqgRGO">
-    <property role="3GE5qa" value="type.code.with" />
+    <property role="3GE5qa" value="macro.code.with" />
     <ref role="1M2myG" to="wq2x:3TnYLtqgQYU" resolve="WithContextStatement" />
     <node concept="1N5Pfh" id="3TnYLtqgRGP" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:3TnYLtqgRY3" resolve="parameter" />
@@ -781,8 +781,8 @@
     </node>
   </node>
   <node concept="1M2fIO" id="1L74NXEmG0V">
-    <property role="3GE5qa" value="type.invoke" />
-    <ref role="1M2myG" to="wq2x:1L74NXEmF9s" resolve="TypeParameterBinding" />
+    <property role="3GE5qa" value="macro.invoke" />
+    <ref role="1M2myG" to="wq2x:1L74NXEmF9s" resolve="MacroParameterBinding" />
     <node concept="1N5Pfh" id="1L74NXEmG0W" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:1L74NXEmG0t" resolve="parameter" />
       <node concept="3dgokm" id="6fXjIfxgfWm" role="1N6uqs">
@@ -830,7 +830,7 @@
                         <node concept="2Xjw5R" id="6fXjIfxgfWG" role="2OqNvi">
                           <node concept="1xMEDy" id="6fXjIfxgfWH" role="1xVPHs">
                             <node concept="chp4Y" id="6fXjIfxgfWI" role="ri$Ld">
-                              <ref role="cht4Q" to="wq2x:1L74NXEmF9t" resolve="TypeInvocation" />
+                              <ref role="cht4Q" to="wq2x:1L74NXEmF9t" resolve="MacroInvocation" />
                             </node>
                           </node>
                           <node concept="1xIGOp" id="6fXjIfxgfWJ" role="1xVPHs" />
@@ -1143,6 +1143,200 @@
                       <node concept="chp4Y" id="4bWqD4CmDX8" role="cj9EA">
                         <ref role="cht4Q" to="5j4j:2q_78a8W4yS" resolve="Wildcard" />
                       </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6DOfTm$zRn6">
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="1M2myG" to="wq2x:6DOfTm$zRmf" resolve="MacroInputDeclaration" />
+    <node concept="3EP7_v" id="6DOfTm$zRDR" role="1MtirG">
+      <node concept="3dgokm" id="6DOfTm$zRDV" role="3EP$qY">
+        <node concept="3clFbS" id="6DOfTm$zRDX" role="2VODD2">
+          <node concept="3cpWs8" id="6DOfTm$zRGQ" role="3cqZAp">
+            <node concept="3cpWsn" id="6DOfTm$zRGR" role="3cpWs9">
+              <property role="TrG5h" value="macroDecl" />
+              <node concept="3Tqbb2" id="6DOfTm$zRGS" role="1tU5fm">
+                <ref role="ehGHo" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
+              </node>
+              <node concept="2OqwBi" id="6DOfTm$zRGT" role="33vP2m">
+                <node concept="2rP1CM" id="6DOfTm$zRGU" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="6DOfTm$zRGV" role="2OqNvi">
+                  <node concept="1xMEDy" id="6DOfTm$zRGW" role="1xVPHs">
+                    <node concept="chp4Y" id="6DOfTm$zTa_" role="ri$Ld">
+                      <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
+                    </node>
+                  </node>
+                  <node concept="1xIGOp" id="6DOfTm$zRGY" role="1xVPHs" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="6DOfTm$zRGZ" role="3cqZAp">
+            <node concept="2ShNRf" id="6DOfTm$zRH0" role="3clFbG">
+              <node concept="YeOm9" id="6DOfTm$zRH1" role="2ShVmc">
+                <node concept="1Y3b0j" id="6DOfTm$zRH2" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="37wK5l" to="o8zo:4IP40Bi3e_T" resolve="ListScope" />
+                  <ref role="1Y3XeK" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
+                  <node concept="2YIFZM" id="6DOfTm$zRH3" role="37wK5m">
+                    <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                    <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                    <node concept="2OqwBi" id="6DOfTm$zUuH" role="37wK5m">
+                      <node concept="37vLTw" id="6DOfTm$zRH6" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6DOfTm$zRGR" resolve="macroDecl" />
+                      </node>
+                      <node concept="3TrEf2" id="6DOfTm$zVFy" role="2OqNvi">
+                        <ref role="3Tt5mk" to="wq2x:6DOfTm$zUE3" resolve="input" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3Tm1VV" id="6DOfTm$zRH9" role="1B3o_S" />
+                  <node concept="3clFb_" id="6DOfTm$zRHa" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="getName" />
+                    <node concept="17QB3L" id="6DOfTm$zRHb" role="3clF45" />
+                    <node concept="3Tm1VV" id="6DOfTm$zRHc" role="1B3o_S" />
+                    <node concept="37vLTG" id="6DOfTm$zRHd" role="3clF46">
+                      <property role="TrG5h" value="child" />
+                      <node concept="3Tqbb2" id="6DOfTm$zRHe" role="1tU5fm" />
+                    </node>
+                    <node concept="3clFbS" id="6DOfTm$zRHf" role="3clF47">
+                      <node concept="3clFbF" id="6DOfTm$zRHg" role="3cqZAp">
+                        <node concept="2OqwBi" id="6DOfTm$zRHh" role="3clFbG">
+                          <node concept="1PxgMI" id="6DOfTm$zRHi" role="2Oq$k0">
+                            <property role="1BlNFB" value="true" />
+                            <node concept="37vLTw" id="6DOfTm$zRHj" role="1m5AlR">
+                              <ref role="3cqZAo" node="6DOfTm$zRHd" resolve="child" />
+                            </node>
+                            <node concept="chp4Y" id="6DOfTm$zRHk" role="3oSUPX">
+                              <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="6DOfTm$zRHl" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6DOfTm$$Xzc">
+    <property role="3GE5qa" value="macro.code" />
+    <ref role="1M2myG" to="wq2x:6DOfTm$$CHj" resolve="MacroInputReference" />
+    <node concept="1N5Pfh" id="6DOfTm$$Xzd" role="1Mr941">
+      <ref role="1N5Vy1" to="wq2x:6DOfTm$$CHk" resolve="declaration" />
+      <node concept="3dgokm" id="6DOfTm$$ZXM" role="1N6uqs">
+        <node concept="3clFbS" id="6DOfTm$$ZXN" role="2VODD2">
+          <node concept="3cpWs8" id="6DOfTm$$ZXO" role="3cqZAp">
+            <node concept="3cpWsn" id="6DOfTm$$ZXP" role="3cpWs9">
+              <property role="TrG5h" value="mpd" />
+              <node concept="3Tqbb2" id="6DOfTm$$ZXQ" role="1tU5fm">
+                <ref role="ehGHo" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
+              </node>
+              <node concept="2OqwBi" id="6DOfTm$$ZXR" role="33vP2m">
+                <node concept="2rP1CM" id="6DOfTm$$ZXS" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="6DOfTm$$ZXT" role="2OqNvi">
+                  <node concept="1xMEDy" id="6DOfTm$$ZXU" role="1xVPHs">
+                    <node concept="chp4Y" id="6DOfTm$$ZXV" role="ri$Ld">
+                      <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="6DOfTm$$ZXW" role="3cqZAp">
+            <node concept="3clFbS" id="6DOfTm$$ZXX" role="3clFbx">
+              <node concept="3cpWs6" id="6DOfTm$$ZXY" role="3cqZAp">
+                <node concept="2ShNRf" id="6DOfTm$$ZXZ" role="3cqZAk">
+                  <node concept="YeOm9" id="6DOfTm$$ZY0" role="2ShVmc">
+                    <node concept="1Y3b0j" id="6DOfTm$$ZY1" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
+                      <ref role="37wK5l" to="o8zo:4IP40Bi3e_T" resolve="ListScope" />
+                      <node concept="3Tm1VV" id="6DOfTm$$ZY2" role="1B3o_S" />
+                      <node concept="3clFb_" id="6DOfTm$$ZY3" role="jymVt">
+                        <property role="1EzhhJ" value="false" />
+                        <property role="TrG5h" value="getName" />
+                        <node concept="17QB3L" id="6DOfTm$$ZY4" role="3clF45" />
+                        <node concept="3Tm1VV" id="6DOfTm$$ZY5" role="1B3o_S" />
+                        <node concept="37vLTG" id="6DOfTm$$ZY6" role="3clF46">
+                          <property role="TrG5h" value="child" />
+                          <node concept="3Tqbb2" id="6DOfTm$$ZY7" role="1tU5fm" />
+                        </node>
+                        <node concept="3clFbS" id="6DOfTm$$ZY8" role="3clF47">
+                          <node concept="3clFbF" id="6DOfTm$_1nK" role="3cqZAp">
+                            <node concept="2OqwBi" id="6DOfTm$_208" role="3clFbG">
+                              <node concept="1PxgMI" id="6DOfTm$_1KV" role="2Oq$k0">
+                                <property role="1BlNFB" value="true" />
+                                <node concept="chp4Y" id="6DOfTm$_1Nh" role="3oSUPX">
+                                  <ref role="cht4Q" to="wq2x:6DOfTm$zRmf" resolve="MacroInputDeclaration" />
+                                </node>
+                                <node concept="37vLTw" id="6DOfTm$_1nJ" role="1m5AlR">
+                                  <ref role="3cqZAo" node="6DOfTm$$ZY6" resolve="child" />
+                                </node>
+                              </node>
+                              <node concept="3TrcHB" id="6DOfTm$_2f8" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2ShNRf" id="6DOfTm$$ZYd" role="37wK5m">
+                        <node concept="Tc6Ow" id="6DOfTm$$ZYe" role="2ShVmc">
+                          <node concept="3Tqbb2" id="6DOfTm$$ZYf" role="HW$YZ" />
+                          <node concept="2OqwBi" id="6DOfTm$_0_g" role="HW$Y0">
+                            <node concept="1PxgMI" id="6DOfTm$$ZYg" role="2Oq$k0">
+                              <property role="1BlNFB" value="true" />
+                              <node concept="2OqwBi" id="6DOfTm$$ZYh" role="1m5AlR">
+                                <node concept="37vLTw" id="6DOfTm$$ZYi" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6DOfTm$$ZXP" resolve="mpd" />
+                                </node>
+                                <node concept="1mfA1w" id="6DOfTm$$ZYj" role="2OqNvi" />
+                              </node>
+                              <node concept="chp4Y" id="6DOfTm$$ZYk" role="3oSUPX">
+                                <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="6DOfTm$_17v" role="2OqNvi">
+                              <ref role="3Tt5mk" to="wq2x:6DOfTm$zUE3" resolve="input" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6DOfTm$$ZYl" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="6DOfTm$$ZYm" role="3clFbw">
+              <node concept="37vLTw" id="6DOfTm$$ZYn" role="2Oq$k0">
+                <ref role="3cqZAo" node="6DOfTm$$ZXP" resolve="mpd" />
+              </node>
+              <node concept="3x8VRR" id="6DOfTm$$ZYo" role="2OqNvi" />
+            </node>
+            <node concept="9aQIb" id="6DOfTm$$ZYp" role="9aQIa">
+              <node concept="3clFbS" id="6DOfTm$$ZYq" role="9aQI4">
+                <node concept="3cpWs6" id="6DOfTm$$ZYr" role="3cqZAp">
+                  <node concept="2ShNRf" id="6DOfTm$$ZYs" role="3cqZAk">
+                    <node concept="1pGfFk" id="6DOfTm$$ZYt" role="2ShVmc">
+                      <ref role="37wK5l" to="o8zo:7ipADkTfAzT" resolve="EmptyScope" />
                     </node>
                   </node>
                 </node>

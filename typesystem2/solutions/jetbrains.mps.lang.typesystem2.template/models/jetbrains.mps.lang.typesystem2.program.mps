@@ -2574,15 +2574,15 @@
     </node>
     <node concept="2tJIrI" id="4vBwiiV5X32" role="jymVt" />
     <node concept="3clFb_" id="18kNIl1wWgU" role="jymVt">
-      <property role="TrG5h" value="asType" />
+      <property role="TrG5h" value="expandMacro" />
       <property role="1EzhhJ" value="true" />
       <node concept="37vLTG" id="18kNIl1wWhK" role="3clF46">
-        <property role="TrG5h" value="typevar" />
+        <property role="TrG5h" value="logical" />
         <property role="3TUv4t" value="true" />
         <node concept="26uTi9" id="18kNIl1wWkp" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="18kNIl1x7Wn" role="3clF46">
-        <property role="TrG5h" value="typeNode" />
+        <property role="TrG5h" value="inputNode" />
         <property role="3TUv4t" value="true" />
         <node concept="3Tqbb2" id="18kNIl1x7Z0" role="1tU5fm" />
       </node>
@@ -2594,17 +2594,17 @@
     </node>
     <node concept="2tJIrI" id="4MEOIDFgTKR" role="jymVt" />
     <node concept="3clFb_" id="4MEOIDFgV3a" role="jymVt">
-      <property role="TrG5h" value="newType" />
+      <property role="TrG5h" value="callMacro" />
       <property role="1EzhhJ" value="true" />
       <node concept="37vLTG" id="4MEOIDFgV3b" role="3clF46">
-        <property role="TrG5h" value="typevar" />
+        <property role="TrG5h" value="logical" />
         <property role="3TUv4t" value="true" />
         <node concept="26uTi9" id="4MEOIDFgV3c" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="4MEOIDFgZnJ" role="3clF46">
         <property role="TrG5h" value="typeTplId" />
         <node concept="3uibUv" id="4MEOIDFgZnK" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="TypeTemplate.ID" />
+          <ref role="3uigEE" to="psr6:4MEOIDEhyPY" resolve="MacroTemplate.ID" />
         </node>
       </node>
       <node concept="37vLTG" id="4MEOIDFgV3f" role="3clF46">
