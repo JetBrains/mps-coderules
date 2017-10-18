@@ -668,8 +668,8 @@
   </node>
   <node concept="1TIwiD" id="1pPth$m5oae">
     <property role="3GE5qa" value="term.feature" />
-    <property role="TrG5h" value="StringTermFeature" />
-    <property role="34LRSv" value="string" />
+    <property role="TrG5h" value="ValueTermFeature" />
+    <property role="34LRSv" value="value" />
     <property role="EcuMT" value="1618328391714701966" />
     <ref role="1TJDcQ" node="1pPth$m5oa5" resolve="TermFeature" />
     <node concept="1TJgyj" id="1hX44vMEjQe" role="1TKVEi">
@@ -677,25 +677,6 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="getter" />
       <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="1hX44vMEjQg" resolve="GetterBlock" />
-    </node>
-    <node concept="1TJgyi" id="2N2MQGCKV7J" role="1TKVEl">
-      <property role="TrG5h" value="value" />
-      <property role="IQ2nx" value="3225363944256549359" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="1hX44vN6ydg" role="lGtFl" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="1pPth$m5oaG">
-    <property role="3GE5qa" value="term.feature" />
-    <property role="TrG5h" value="ReferenceTermFeature" />
-    <property role="34LRSv" value="reference" />
-    <property role="EcuMT" value="1618328391714701996" />
-    <ref role="1TJDcQ" node="1pPth$m5oa5" resolve="TermFeature" />
-    <node concept="1TJgyj" id="1hX44vNe1iN" role="1TKVEi">
-      <property role="IQ2ns" value="1476354154056651955" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="getter" />
       <ref role="20lvS9" node="1hX44vMEjQg" resolve="GetterBlock" />
     </node>
   </node>
