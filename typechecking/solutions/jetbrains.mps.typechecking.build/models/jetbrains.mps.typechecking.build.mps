@@ -334,7 +334,7 @@
         </node>
         <node concept="1SiIV0" id="4pNU3yqbyNn" role="3bR37C">
           <node concept="3bR9La" id="4pNU3yqbyNo" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
           </node>
         </node>
@@ -928,12 +928,6 @@
           <property role="TrG5h" value="jetbrains.mps.lang.smodel.types#7345257067587611144" />
           <property role="3LESm3" value="ceb57370-a04c-41e9-91e3-f36110b5e4aa" />
           <property role="2GAjPV" value="false" />
-          <node concept="1SiIV0" id="5w_kaFFMqLi" role="3bR37C">
-            <node concept="3bR9La" id="5w_kaFFMqLj" role="1SiIV1">
-              <property role="3bR36h" value="false" />
-              <ref role="3bR37D" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.typesystem2.runtime" />
-            </node>
-          </node>
           <node concept="1SiIV0" id="5w_kaFFMqLk" role="3bR37C">
             <node concept="3bR9La" id="5w_kaFFMqLl" role="1SiIV1">
               <property role="3bR36h" value="false" />
