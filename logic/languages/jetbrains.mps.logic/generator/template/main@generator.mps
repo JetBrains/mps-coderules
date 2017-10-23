@@ -292,12 +292,9 @@
         <node concept="2YIFZM" id="428_4iYhEzd" role="gfFT$">
           <ref role="37wK5l" to="6exd:6YPNC4OEDj2" resolve="create" />
           <ref role="1Pybhc" to="6exd:6YPNC4OECgm" resolve="ListRole" />
-          <node concept="2YIFZM" id="428_4iYhHHy" role="37wK5m">
-            <ref role="37wK5l" to="6exd:6YPNC4NZlZx" resolve="symbol" />
-            <ref role="1Pybhc" to="6exd:6YPNC4ODVle" resolve="RoleNode" />
-            <node concept="Xl_RD" id="428_4iYhHI_" role="37wK5m">
-              <property role="Xl_RC" value="list" />
-            </node>
+          <node concept="2YIFZM" id="428_4iYQBwm" role="37wK5m">
+            <ref role="37wK5l" to="6exd:428_4iYQuPn" resolve="listSymbol" />
+            <ref role="1Pybhc" to="6exd:6YPNC4OECgm" resolve="ListRole" />
           </node>
           <node concept="2YIFZM" id="428_4iYhHNa" role="37wK5m">
             <ref role="37wK5l" to="6exd:1OShD0HS45f" resolve="createList" />
