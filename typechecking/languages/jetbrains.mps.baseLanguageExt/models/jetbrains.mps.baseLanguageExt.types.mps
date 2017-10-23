@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="-1" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="3" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
@@ -378,13 +378,13 @@
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
+      <concept id="6694277639409954681" name="jetbrains.mps.logic.structure.ListRole" flags="ng" index="38e3lM">
+        <child id="6694277639409954746" name="list" index="38e3mL" />
+      </concept>
       <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.TreeFormExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
-      <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
-        <child id="7571593955706137319" name="contents" index="1oi5TL" />
-      </concept>
-      <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.Compound" flags="ng" index="1oi5UN">
+      <concept id="7571593955706137125" name="jetbrains.mps.logic.structure.TermNode" flags="ng" index="1oi5UN">
         <child id="7571593955706284441" name="role" index="1ojpOf" />
       </concept>
       <concept id="7571593955706137472" name="jetbrains.mps.logic.structure.ValueRole" flags="ng" index="1oi5Wm">
@@ -17227,9 +17227,9 @@
         </node>
         <node concept="3clFbF" id="5H6hZahsyrH" role="3cqZAp">
           <node concept="1oi1Uc" id="5H6hZahsAIB" role="3clFbG">
-            <node concept="1oi5ST" id="5H6hZahsAIC" role="1oi0x0">
+            <node concept="38e3lM" id="428_4iYbsiw" role="1oi0x0">
               <property role="TrG5h" value="list" />
-              <node concept="KCUsM" id="3t7_2FgGWG9" role="1oi5TL">
+              <node concept="KCUsM" id="3t7_2FgGWG9" role="38e3mL">
                 <node concept="1oi5UN" id="3t7_2FgGWGj" role="KCVpo">
                   <node concept="22Ky0T" id="3t7_2FgGWGG" role="lGtFl">
                     <node concept="37vLTw" id="3t7_2FgGWGW" role="22Ky0K">
@@ -19986,9 +19986,9 @@
                       </node>
                       <node concept="3clFbF" id="6X1kwjB_6xe" role="3cqZAp">
                         <node concept="1oi1Uc" id="6X1kwjB_6xf" role="3clFbG">
-                          <node concept="1oi5ST" id="6X1kwjB_6xg" role="1oi0x0">
+                          <node concept="38e3lM" id="428_4iYbsix" role="1oi0x0">
                             <property role="TrG5h" value="list" />
-                            <node concept="KCUsM" id="6X1kwjB_6xh" role="1oi5TL">
+                            <node concept="KCUsM" id="6X1kwjB_6xh" role="38e3mL">
                               <node concept="1oi5UN" id="6X1kwjB_6xi" role="KCVpo">
                                 <node concept="22Ky0T" id="6X1kwjB_6xj" role="lGtFl">
                                   <node concept="37vLTw" id="6X1kwjB_6xk" role="22Ky0K">
@@ -20037,9 +20037,9 @@
             </node>
             <node concept="aYllk" id="6X1kwjB$Pxv" role="3A8w4Q">
               <node concept="1oi1Uc" id="6X1kwjB_7LP" role="aYrYs">
-                <node concept="1oi5ST" id="6X1kwjB_7LQ" role="1oi0x0">
+                <node concept="38e3lM" id="428_4iYbsiv" role="1oi0x0">
                   <property role="TrG5h" value="list" />
-                  <node concept="KCUsM" id="6X1kwjB_7LR" role="1oi5TL">
+                  <node concept="KCUsM" id="6X1kwjB_7LR" role="38e3mL">
                     <node concept="1oi5UN" id="6X1kwjB_7LS" role="KCVpo">
                       <node concept="22Ky0T" id="6X1kwjB_7LT" role="lGtFl">
                         <node concept="37vLTw" id="6X1kwjB_7LU" role="22Ky0K">
