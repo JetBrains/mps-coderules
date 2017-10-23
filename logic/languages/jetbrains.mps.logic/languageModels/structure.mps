@@ -82,7 +82,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYC_">
-    <property role="TrG5h" value="Compound" />
+    <property role="TrG5h" value="TermNode" />
     <property role="3GE5qa" value="treeform" />
     <property role="EcuMT" value="7571593955706137125" />
     <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
@@ -363,6 +363,19 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5131913661993028917" />
       <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5NAQwIkRIXT">
+    <property role="EcuMT" value="6694277639409954681" />
+    <property role="3GE5qa" value="role" />
+    <property role="TrG5h" value="ListRole" />
+    <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="Role" />
+    <node concept="1TJgyj" id="5NAQwIkRIYU" role="1TKVEi">
+      <property role="IQ2ns" value="6694277639409954746" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="list" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1OShD0HAY6y" resolve="List" />
     </node>
   </node>
 </model>

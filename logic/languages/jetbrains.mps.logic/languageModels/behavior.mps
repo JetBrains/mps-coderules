@@ -309,7 +309,7 @@
   </node>
   <node concept="13h7C7" id="7FFmDVAL750">
     <property role="3GE5qa" value="treeform" />
-    <ref role="13h7C2" to="5j4j:6$jH9oLmYC_" resolve="Compound" />
+    <ref role="13h7C2" to="5j4j:6$jH9oLmYC_" resolve="TermNode" />
     <node concept="13hLZK" id="7FFmDVAL751" role="13h7CW">
       <node concept="3clFbS" id="7FFmDVAL752" role="2VODD2" />
     </node>
