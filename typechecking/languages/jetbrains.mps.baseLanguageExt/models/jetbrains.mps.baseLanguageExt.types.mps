@@ -587,7 +587,9 @@
       <concept id="1618328391714701958" name="jetbrains.mps.lang.typesystem2.structure.ListTermFeature" flags="ng" index="0ofuv">
         <child id="4160332554964928895" name="getter" index="2J$v4l" />
       </concept>
-      <concept id="1618328391714702001" name="jetbrains.mps.lang.typesystem2.structure.ChildTermFeature" flags="ng" index="0ofuC" />
+      <concept id="1618328391714702001" name="jetbrains.mps.lang.typesystem2.structure.ChildTermFeature" flags="ng" index="0ofuC">
+        <child id="3189112839535124368" name="getter" index="LoHUF" />
+      </concept>
       <concept id="1618328391714763069" name="jetbrains.mps.lang.typesystem2.structure.MacroTable" flags="ng" index="0oKg$">
         <child id="1618328391714763070" name="macro" index="0oKgB" />
       </concept>
@@ -19218,12 +19220,51 @@
         </node>
         <node concept="0ofuC" id="5310cdpGJdW" role="0ofug">
           <property role="TrG5h" value="origin" />
+          <node concept="3AP2Rn" id="6YPNC4OjWgS" role="LoHUF">
+            <node concept="3clFbS" id="6YPNC4OjWgT" role="16YjZG">
+              <node concept="3clFbF" id="6YPNC4OjWh5" role="3cqZAp">
+                <node concept="2YIFZM" id="6YPNC4OjWh7" role="3clFbG">
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                  <node concept="3VsKOn" id="6YPNC4OjWh8" role="37wK5m">
+                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="0ofuC" id="5310cdpGJec" role="0ofug">
           <property role="TrG5h" value="ubound" />
+          <node concept="3AP2Rn" id="6YPNC4OjWiV" role="LoHUF">
+            <node concept="3clFbS" id="6YPNC4OjWiW" role="16YjZG">
+              <node concept="3clFbF" id="6YPNC4OjWj8" role="3cqZAp">
+                <node concept="2YIFZM" id="6YPNC4OjWja" role="3clFbG">
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                  <node concept="3VsKOn" id="6YPNC4OjWjb" role="37wK5m">
+                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="0ofuC" id="5310cdpGJeu" role="0ofug">
           <property role="TrG5h" value="lbound" />
+          <node concept="3AP2Rn" id="6YPNC4OjWmK" role="LoHUF">
+            <node concept="3clFbS" id="6YPNC4OjWmL" role="16YjZG">
+              <node concept="3clFbF" id="6YPNC4OjWmO" role="3cqZAp">
+                <node concept="2YIFZM" id="6YPNC4OjWmQ" role="3clFbG">
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                  <node concept="3VsKOn" id="6YPNC4OjWmR" role="37wK5m">
+                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
