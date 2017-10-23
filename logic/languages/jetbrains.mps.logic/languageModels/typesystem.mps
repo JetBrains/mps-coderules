@@ -1051,5 +1051,30 @@
       <ref role="1YaFvo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
     </node>
   </node>
+  <node concept="1YbPZF" id="428_4iYhAjN">
+    <property role="TrG5h" value="typeof_ListExpression" />
+    <node concept="3clFbS" id="428_4iYhAjO" role="18ibNy">
+      <node concept="1Z5TYs" id="428_4iYhACh" role="3cqZAp">
+        <node concept="mw_s8" id="428_4iYhAC_" role="1ZfhKB">
+          <node concept="2c44tf" id="428_4iYhACx" role="mwGJk">
+            <node concept="3uibUv" id="428_4iYhADp" role="2c44tc">
+              <ref role="3uigEE" to="6exd:6YPNC4OECgm" resolve="ListRole" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="428_4iYhACk" role="1ZfhK$">
+          <node concept="1Z2H0r" id="428_4iYhArk" role="mwGJk">
+            <node concept="1YBJjd" id="428_4iYhAr$" role="1Z2MuG">
+              <ref role="1YBMHb" node="428_4iYhAjQ" resolve="le" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="428_4iYhAjQ" role="1YuTPh">
+      <property role="TrG5h" value="le" />
+      <ref role="1YaFvo" to="5j4j:428_4iYhwbR" resolve="ListExpression" />
+    </node>
+  </node>
 </model>
 

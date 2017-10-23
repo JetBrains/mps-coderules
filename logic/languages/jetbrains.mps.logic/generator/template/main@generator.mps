@@ -286,6 +286,42 @@
         <ref role="v9R2y" node="35Lj3TiT1Wl" resolve="Ast_Builder" />
       </node>
     </node>
+    <node concept="3aamgX" id="428_4iYhBrH" role="3acgRq">
+      <ref role="30HIoZ" to="5j4j:428_4iYhwbR" resolve="ListExpression" />
+      <node concept="gft3U" id="428_4iYhEyT" role="1lVwrX">
+        <node concept="2YIFZM" id="428_4iYhEzd" role="gfFT$">
+          <ref role="37wK5l" to="6exd:6YPNC4OEDj2" resolve="create" />
+          <ref role="1Pybhc" to="6exd:6YPNC4OECgm" resolve="ListRole" />
+          <node concept="2YIFZM" id="428_4iYhHHy" role="37wK5m">
+            <ref role="37wK5l" to="6exd:6YPNC4NZlZx" resolve="symbol" />
+            <ref role="1Pybhc" to="6exd:6YPNC4ODVle" resolve="RoleNode" />
+            <node concept="Xl_RD" id="428_4iYhHI_" role="37wK5m">
+              <property role="Xl_RC" value="list" />
+            </node>
+          </node>
+          <node concept="2YIFZM" id="428_4iYhHNa" role="37wK5m">
+            <ref role="37wK5l" to="6exd:1OShD0HS45f" resolve="createList" />
+            <ref role="1Pybhc" to="6exd:3OPtF03lco4" resolve="ListNode" />
+            <node concept="10Nm6u" id="428_4iYhHSl" role="37wK5m">
+              <node concept="2b32R4" id="428_4iYhHYj" role="lGtFl">
+                <node concept="3JmXsc" id="428_4iYhHYl" role="2P8S$">
+                  <node concept="3clFbS" id="428_4iYhHYn" role="2VODD2">
+                    <node concept="3clFbF" id="428_4iYhI6a" role="3cqZAp">
+                      <node concept="2OqwBi" id="428_4iYhIi5" role="3clFbG">
+                        <node concept="30H73N" id="428_4iYhI69" role="2Oq$k0" />
+                        <node concept="3Tsc0h" id="428_4iYhIup" role="2OqNvi">
+                          <ref role="3TtcxE" to="5j4j:428_4iYhwbV" resolve="contents" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="4OKkcneVYzR" role="3acgRq">
       <ref role="30HIoZ" to="5j4j:2q_78a8W4yS" resolve="Wildcard" />
       <node concept="14YyZ8" id="4OKkcneVZCA" role="1lVwrX">

@@ -378,5 +378,18 @@
       <ref role="20lvS9" node="1OShD0HAY6y" resolve="List" />
     </node>
   </node>
+  <node concept="1TIwiD" id="428_4iYhwbR">
+    <property role="EcuMT" value="4650129638230983415" />
+    <property role="TrG5h" value="ListExpression" />
+    <property role="34LRSv" value="list" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="428_4iYhwbV" role="1TKVEi">
+      <property role="IQ2ns" value="4650129638230983419" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="contents" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+    </node>
+  </node>
 </model>
 
