@@ -322,7 +322,7 @@
       <node concept="3clFbS" id="7FFmDVAL75b" role="3clF47">
         <node concept="3clFbF" id="7FFmDVALaK9" role="3cqZAp">
           <node concept="3B5_sB" id="7FFmDVALaK8" role="3clFbG">
-            <ref role="3B5MYn" to="6exd:5JQSuNswOXL" resolve="CompositeNode" />
+            <ref role="3B5MYn" to="6exd:5JQSuNswOXL" resolve="TermNode" />
           </node>
         </node>
       </node>

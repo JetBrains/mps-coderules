@@ -271,7 +271,7 @@
                         <ref role="3cqZAo" node="21Zu7ABuute" resolve="name" />
                       </node>
                       <node concept="3VsKOn" id="6yEjedm5tU_" role="37wK5m">
-                        <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="CompositeNode" />
+                        <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                       </node>
                     </node>
                   </node>
@@ -1767,7 +1767,7 @@
                         <ref role="3cqZAo" node="6yEjedm71gR" resolve="name" />
                       </node>
                       <node concept="3VsKOn" id="6yEjedm71h4" role="37wK5m">
-                        <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="CompositeNode" />
+                        <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                       </node>
                     </node>
                   </node>
@@ -4572,21 +4572,33 @@
                   <node concept="1oi5UN" id="4$OyT8ISxYI" role="KCVpo">
                     <node concept="1oi5Wm" id="4$OyT8ISyBa" role="1ojpOf">
                       <property role="TrG5h" value="foo" />
+                      <node concept="1oi5XN" id="6YPNC4O6Jgg" role="1oi5zu">
+                        <property role="1oi5yK" value="." />
+                      </node>
                     </node>
                   </node>
                   <node concept="1oi5UN" id="4$OyT8ISzRW" role="KCVpo">
                     <node concept="1oi5Wm" id="4$OyT8ISzRX" role="1ojpOf">
                       <property role="TrG5h" value="bar" />
+                      <node concept="1oi5XN" id="6YPNC4O6Jgi" role="1oi5zu">
+                        <property role="1oi5yK" value="." />
+                      </node>
                     </node>
                   </node>
                   <node concept="1oi5UN" id="4$OyT8IS_8N" role="KCVpo">
                     <node concept="1oi5Wm" id="4$OyT8IS_8O" role="1ojpOf">
                       <property role="TrG5h" value="baz" />
+                      <node concept="1oi5XN" id="6YPNC4O6Jgk" role="1oi5zu">
+                        <property role="1oi5yK" value="." />
+                      </node>
                     </node>
                   </node>
                   <node concept="1oi5UN" id="4$OyT8ISApG" role="KCVpo">
                     <node concept="1oi5Wm" id="4$OyT8ISApH" role="1ojpOf">
                       <property role="TrG5h" value="qux" />
+                      <node concept="1oi5XN" id="6YPNC4O6Jgm" role="1oi5zu">
+                        <property role="1oi5yK" value="." />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4716,6 +4728,9 @@
                     <node concept="1oi5UN" id="4$OyT8ISnxh" role="1oi0x0">
                       <node concept="1oi5Wm" id="4$OyT8ITRPO" role="1ojpOf">
                         <property role="TrG5h" value="foo" />
+                        <node concept="1oi5XN" id="6YPNC4O6Jgq" role="1oi5zu">
+                          <property role="1oi5yK" value="." />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -4751,16 +4766,25 @@
                       <node concept="1oi5UN" id="4$OyT8ISXyO" role="KCVpo">
                         <node concept="1oi5Wm" id="4$OyT8ISXyP" role="1ojpOf">
                           <property role="TrG5h" value="bar" />
+                          <node concept="1oi5XN" id="6YPNC4O6Jgs" role="1oi5zu">
+                            <property role="1oi5yK" value="." />
+                          </node>
                         </node>
                       </node>
                       <node concept="1oi5UN" id="4$OyT8ISXyQ" role="KCVpo">
                         <node concept="1oi5Wm" id="4$OyT8ISXyR" role="1ojpOf">
                           <property role="TrG5h" value="baz" />
+                          <node concept="1oi5XN" id="6YPNC4O6Jgu" role="1oi5zu">
+                            <property role="1oi5yK" value="." />
+                          </node>
                         </node>
                       </node>
                       <node concept="1oi5UN" id="4$OyT8ISXyS" role="KCVpo">
                         <node concept="1oi5Wm" id="4$OyT8ISXyT" role="1ojpOf">
                           <property role="TrG5h" value="qux" />
+                          <node concept="1oi5XN" id="6YPNC4O6Jgw" role="1oi5zu">
+                            <property role="1oi5yK" value="." />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -4800,21 +4824,33 @@
                   <node concept="1oi5UN" id="4$OyT8ITVLa" role="KCVpo">
                     <node concept="1oi5Wm" id="4$OyT8ITVLb" role="1ojpOf">
                       <property role="TrG5h" value="foo" />
+                      <node concept="1oi5XN" id="6YPNC4O6Jgo" role="1oi5zu">
+                        <property role="1oi5yK" value="." />
+                      </node>
                     </node>
                   </node>
                   <node concept="1oi5UN" id="4$OyT8ITVLc" role="KCVpo">
                     <node concept="1oi5Wm" id="4$OyT8ITVLd" role="1ojpOf">
                       <property role="TrG5h" value="bar" />
+                      <node concept="1oi5XN" id="6YPNC4O6Jgy" role="1oi5zu">
+                        <property role="1oi5yK" value="." />
+                      </node>
                     </node>
                   </node>
                   <node concept="1oi5UN" id="4$OyT8ITVLe" role="KCVpo">
                     <node concept="1oi5Wm" id="4$OyT8ITVLf" role="1ojpOf">
                       <property role="TrG5h" value="baz" />
+                      <node concept="1oi5XN" id="6YPNC4O6Jg$" role="1oi5zu">
+                        <property role="1oi5yK" value="." />
+                      </node>
                     </node>
                   </node>
                   <node concept="1oi5UN" id="4$OyT8ITVLg" role="KCVpo">
                     <node concept="1oi5Wm" id="4$OyT8ITVLh" role="1ojpOf">
                       <property role="TrG5h" value="qux" />
+                      <node concept="1oi5XN" id="6YPNC4O6JgA" role="1oi5zu">
+                        <property role="1oi5yK" value="." />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -5008,11 +5044,17 @@
                       <node concept="1oi5UN" id="4$OyT8ITVMb" role="KCVpo">
                         <node concept="1oi5Wm" id="4$OyT8ITVMc" role="1ojpOf">
                           <property role="TrG5h" value="baz" />
+                          <node concept="1oi5XN" id="6YPNC4O6JgC" role="1oi5zu">
+                            <property role="1oi5yK" value="." />
+                          </node>
                         </node>
                       </node>
                       <node concept="1oi5UN" id="4$OyT8ITVMd" role="KCVpo">
                         <node concept="1oi5Wm" id="4$OyT8ITVMe" role="1ojpOf">
                           <property role="TrG5h" value="qux" />
+                          <node concept="1oi5XN" id="6YPNC4O6JgE" role="1oi5zu">
+                            <property role="1oi5yK" value="." />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -5317,7 +5359,7 @@
                       <property role="Xl_RC" value="w1" />
                     </node>
                     <node concept="3VsKOn" id="6yEjedm8P1G" role="37wK5m">
-                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="CompositeNode" />
+                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                     </node>
                   </node>
                 </node>
@@ -5649,7 +5691,7 @@
                       <property role="Xl_RC" value="w1" />
                     </node>
                     <node concept="3VsKOn" id="6yEjedm8Oi0" role="37wK5m">
-                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="CompositeNode" />
+                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                     </node>
                   </node>
                 </node>
