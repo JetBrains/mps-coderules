@@ -620,8 +620,14 @@
     <property role="TrG5h" value="ConstraintParameterDeclaration" />
     <property role="EcuMT" value="1878265754077060950" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1CgWc1TyPXw" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="1TJgyj" id="5f6wxQ38Bap" role="1TKVEi">
+      <property role="IQ2ns" value="6036655413802463897" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="dataType" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="5f6wxQ39cqG" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5o9D">
