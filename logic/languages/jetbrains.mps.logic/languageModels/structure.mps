@@ -236,6 +236,13 @@
       <property role="20kJfa" value="cardinality" />
       <property role="IQ2ns" value="8829335963591583291" />
       <ref role="20lvS9" node="7E86$tKskWj" resolve="LogicalValue" />
+      <node concept="asaX9" id="5f6wxQ3ye_u" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="5f6wxQ3ychO" role="1TKVEi">
+      <property role="IQ2ns" value="6036655413809169524" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="cardinalityExpr" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="1TJgyi" id="7E86$tKtijQ" role="1TKVEl">
       <property role="TrG5h" value="isMulti" />
@@ -269,6 +276,13 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="position" />
       <ref role="20lvS9" node="7E86$tKskWj" resolve="LogicalValue" />
+      <node concept="asaX9" id="5f6wxQ3po4d" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="5f6wxQ3pnWr" role="1TKVEi">
+      <property role="IQ2ns" value="6036655413806858011" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="indexExpr" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mP5b6jNC0S">
