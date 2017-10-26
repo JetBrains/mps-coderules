@@ -140,6 +140,9 @@
         <child id="1206060619838" name="condition" index="3eO9$A" />
         <child id="1206060644605" name="statementList" index="3eOfB_" />
       </concept>
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -909,6 +912,97 @@
                     </node>
                   </node>
                   <node concept="3clFbH" id="60zk4o6SxJv" role="3cqZAp" />
+                </node>
+              </node>
+              <node concept="3eNFk2" id="5WBVN_M1CZI" role="3eNLev">
+                <node concept="2ZW3vV" id="5WBVN_M1Djq" role="3eO9$A">
+                  <node concept="3uibUv" id="5WBVN_M1Dpb" role="2ZW6by">
+                    <ref role="3uigEE" to="yg8f:5WBVN_M1BKE" resolve="LateExpression" />
+                  </node>
+                  <node concept="37vLTw" id="5WBVN_M1DbI" role="2ZW6bz">
+                    <ref role="3cqZAo" node="60zk4o6SxJP" resolve="a" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="5WBVN_M1CZK" role="3eOfB_">
+                  <node concept="3cpWs8" id="5WBVN_M1J07" role="3cqZAp">
+                    <node concept="3cpWsn" id="5WBVN_M1J08" role="3cpWs9">
+                      <property role="TrG5h" value="exp" />
+                      <node concept="3uibUv" id="5WBVN_M1J02" role="1tU5fm">
+                        <ref role="3uigEE" to="yg8f:5WBVN_M1BKE" resolve="LateExpression" />
+                        <node concept="3qTvmN" id="5WBVN_M1J05" role="11_B2D" />
+                      </node>
+                      <node concept="1eOMI4" id="5WBVN_M1J09" role="33vP2m">
+                        <node concept="10QFUN" id="5WBVN_M1J0a" role="1eOMHV">
+                          <node concept="3uibUv" id="5WBVN_M1J0b" role="10QFUM">
+                            <ref role="3uigEE" to="yg8f:5WBVN_M1BKE" resolve="LateExpression" />
+                            <node concept="3qTvmN" id="5WBVN_M1J0c" role="11_B2D" />
+                          </node>
+                          <node concept="37vLTw" id="5WBVN_M1J0d" role="10QFUP">
+                            <ref role="3cqZAo" node="60zk4o6SxJP" resolve="a" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="5WBVN_M1GEt" role="3cqZAp">
+                    <node concept="3cpWsn" id="5WBVN_M1GEu" role="3cpWs9">
+                      <property role="TrG5h" value="expArgs" />
+                      <node concept="3uibUv" id="5WBVN_M1GEk" role="1tU5fm">
+                        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                        <node concept="3qTvmN" id="5WBVN_M1GEn" role="11_B2D" />
+                      </node>
+                      <node concept="1rXfSq" id="5WBVN_M1GEv" role="33vP2m">
+                        <ref role="37wK5l" node="60zk4o6Suoh" resolve="instantiateArguments" />
+                        <node concept="2YIFZM" id="5WBVN_MlGya" role="37wK5m">
+                          <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+                          <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+                          <node concept="2OqwBi" id="5WBVN_M1GEw" role="37wK5m">
+                            <node concept="37vLTw" id="5WBVN_M1J0e" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5WBVN_M1J08" resolve="exp" />
+                            </node>
+                            <node concept="liA8E" id="5WBVN_M1GEA" role="2OqNvi">
+                              <ref role="37wK5l" to="yg8f:5WBVN_M1BSf" resolve="metaArgs" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="5WBVN_M1GEB" role="37wK5m">
+                          <ref role="3cqZAo" node="60zk4o6Suop" resolve="logicalContext" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="5WBVN_M1MSf" role="3cqZAp">
+                    <node concept="3SKdUq" id="5WBVN_M1MSh" role="3SKWNk">
+                      <property role="3SKdUp" value="TODO: user code" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5WBVN_M1Hyh" role="3cqZAp">
+                    <node concept="2OqwBi" id="5WBVN_M1HRh" role="3clFbG">
+                      <node concept="37vLTw" id="5WBVN_M1Hyf" role="2Oq$k0">
+                        <ref role="3cqZAo" node="60zk4o6SxJ1" resolve="res" />
+                      </node>
+                      <node concept="liA8E" id="5WBVN_M1IHI" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                        <node concept="2OqwBi" id="5WBVN_M1JzG" role="37wK5m">
+                          <node concept="37vLTw" id="5WBVN_M1JhL" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5WBVN_M1J08" resolve="exp" />
+                          </node>
+                          <node concept="liA8E" id="5WBVN_M1JVL" role="2OqNvi">
+                            <ref role="37wK5l" to="yg8f:5WBVN_M1BLN" resolve="eval" />
+                            <node concept="2OqwBi" id="5WBVN_M1KyJ" role="37wK5m">
+                              <node concept="37vLTw" id="5WBVN_M1K7z" role="2Oq$k0">
+                                <ref role="3cqZAo" node="5WBVN_M1GEu" resolve="expArgs" />
+                              </node>
+                              <node concept="liA8E" id="5WBVN_M1L1T" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~List.toArray():java.lang.Object[]" resolve="toArray" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="5WBVN_M1Hs2" role="3cqZAp" />
                 </node>
               </node>
               <node concept="3clFbS" id="60zk4o6SxJw" role="3clFbx">

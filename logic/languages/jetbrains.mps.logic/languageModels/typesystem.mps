@@ -952,32 +952,6 @@
       <ref role="1YaFvo" to="5j4j:dfChU1zo4B" resolve="Splice" />
     </node>
   </node>
-  <node concept="1YbPZF" id="1_iD3HAeW0h">
-    <property role="TrG5h" value="typeof_LogicalValue" />
-    <property role="3GE5qa" value="logical" />
-    <node concept="3clFbS" id="1_iD3HAeW0i" role="18ibNy">
-      <node concept="1Z5TYs" id="4pNU3yqjDGK" role="3cqZAp">
-        <node concept="mw_s8" id="4pNU3yqjDGO" role="1ZfhK$">
-          <node concept="1Z2H0r" id="4pNU3yqjDGP" role="mwGJk">
-            <node concept="1YBJjd" id="4pNU3yqjDGQ" role="1Z2MuG">
-              <ref role="1YBMHb" node="1_iD3HAeW0k" resolve="logicalValue" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="65DJywF0VF8" role="1ZfhKB">
-          <node concept="2pJPEk" id="65DJywF0VF4" role="mwGJk">
-            <node concept="2pJPED" id="65DJywF0VFj" role="2pJPEn">
-              <ref role="2pJxaS" to="5j4j:1mP5b6jNC0S" resolve="LogicalType" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="1_iD3HAeW0k" role="1YuTPh">
-      <property role="TrG5h" value="logicalValue" />
-      <ref role="1YaFvo" to="5j4j:7E86$tKskWj" resolve="LogicalValue" />
-    </node>
-  </node>
   <node concept="2sgARr" id="7HUwyZb1IYy">
     <property role="3GE5qa" value="logical" />
     <property role="TrG5h" value="supertypesOf_MultiLogicalType" />

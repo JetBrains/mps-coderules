@@ -108,6 +108,8 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
+        <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -4776,6 +4778,158 @@
     </node>
     <node concept="3Tm1VV" id="4psy6tqstt5" role="1B3o_S" />
     <node concept="3uibUv" id="60zk4o77m_g" role="1zkMxy">
+      <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
+    </node>
+  </node>
+  <node concept="312cEu" id="5WBVN_M2Qf9">
+    <property role="TrG5h" value="EvalExpressionSolver" />
+    <node concept="2tJIrI" id="5WBVN_M2QLe" role="jymVt" />
+    <node concept="3clFb_" id="5WBVN_M2Qjm" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="ask" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="5WBVN_M2Qjn" role="1B3o_S" />
+      <node concept="10P_77" id="5WBVN_M2Qjp" role="3clF45" />
+      <node concept="37vLTG" id="5WBVN_M2Qjq" role="3clF46">
+        <property role="TrG5h" value="invocation" />
+        <node concept="3uibUv" id="5WBVN_M2Qjr" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~PredicateInvocation" resolve="PredicateInvocation" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5WBVN_M2Qjv" role="3clF47">
+        <node concept="3clFbJ" id="5WBVN_M2REh" role="3cqZAp">
+          <node concept="3clFbS" id="5WBVN_M2REj" role="3clFbx">
+            <node concept="YS8fn" id="5WBVN_M2SBd" role="3cqZAp">
+              <node concept="2ShNRf" id="5WBVN_M2SBI" role="YScLw">
+                <node concept="1pGfFk" id="5WBVN_M2TMF" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;()" resolve="IllegalArgumentException" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="5WBVN_M2REN" role="3clFbw">
+            <node concept="1eOMI4" id="5WBVN_M2RGy" role="3fr31v">
+              <node concept="2ZW3vV" id="5WBVN_M2Stl" role="1eOMHV">
+                <node concept="3uibUv" id="5WBVN_M2SAm" role="2ZW6by">
+                  <ref role="3uigEE" to="cxk7:5WBVN_M1SJ9" resolve="EvalExpressionPredicate" />
+                </node>
+                <node concept="2OqwBi" id="5WBVN_M2ROo" role="2ZW6bz">
+                  <node concept="37vLTw" id="5WBVN_M2RHi" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5WBVN_M2Qjq" resolve="invocation" />
+                  </node>
+                  <node concept="liA8E" id="5WBVN_M2RSG" role="2OqNvi">
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate():jetbrains.mps.logic.reactor.program.Predicate" resolve="predicate" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5WBVN_M2TRc" role="3cqZAp">
+          <node concept="3SKdUq" id="5WBVN_M2TRe" role="3SKWNk">
+            <property role="3SKdUp" value="the expression has been evaluated while instantiating arguments" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1v5snkI5ghX" role="3cqZAp">
+          <node concept="3cpWsn" id="1v5snkI5ghY" role="3cpWs9">
+            <property role="TrG5h" value="val" />
+            <node concept="3uibUv" id="1v5snkI5ghW" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            </node>
+            <node concept="2OqwBi" id="1v5snkI5ghZ" role="33vP2m">
+              <node concept="2OqwBi" id="1v5snkI5gi0" role="2Oq$k0">
+                <node concept="37vLTw" id="1v5snkI5gi1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5WBVN_M2Qjq" resolve="invocation" />
+                </node>
+                <node concept="liA8E" id="1v5snkI5gi2" role="2OqNvi">
+                  <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1v5snkI5gi3" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                <node concept="3cmrfG" id="1v5snkI5gi4" role="37wK5m">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1v5snkI5gA9" role="3cqZAp">
+          <node concept="10QFUN" id="1v5snkI5gA6" role="3clFbG">
+            <node concept="3uibUv" id="1v5snkI5gC_" role="10QFUM">
+              <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+            </node>
+            <node concept="37vLTw" id="1v5snkI5gDL" role="10QFUP">
+              <ref role="3cqZAo" node="1v5snkI5ghY" resolve="val" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5WBVN_M2Qjw" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5WBVN_M2Xj5" role="jymVt" />
+    <node concept="3clFb_" id="5WBVN_M2Qjb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="tell" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="5WBVN_M2Qjc" role="1B3o_S" />
+      <node concept="3cqZAl" id="5WBVN_M2Qje" role="3clF45" />
+      <node concept="37vLTG" id="5WBVN_M2Qjf" role="3clF46">
+        <property role="TrG5h" value="invocation" />
+        <node concept="3uibUv" id="5WBVN_M2Qjg" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~PredicateInvocation" resolve="PredicateInvocation" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5WBVN_M2Qjk" role="3clF47">
+        <node concept="3clFbJ" id="2UGjFq4pFcR" role="3cqZAp">
+          <node concept="3clFbS" id="2UGjFq4pFcS" role="3clFbx">
+            <node concept="YS8fn" id="2UGjFq4pFcT" role="3cqZAp">
+              <node concept="2ShNRf" id="2UGjFq4pFcU" role="YScLw">
+                <node concept="1pGfFk" id="2UGjFq4pFcV" role="2ShVmc">
+                  <ref role="37wK5l" to="w7la:~EvaluationFailureException.&lt;init&gt;(java.lang.String)" resolve="EvaluationFailureException" />
+                  <node concept="3cpWs3" id="2UGjFq4pFcW" role="37wK5m">
+                    <node concept="2OqwBi" id="2UGjFq4pGID" role="3uHU7w">
+                      <node concept="2OqwBi" id="2UGjFq4pG$q" role="2Oq$k0">
+                        <node concept="37vLTw" id="2UGjFq4pGyz" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5WBVN_M2Qjf" resolve="invocation" />
+                        </node>
+                        <node concept="liA8E" id="2UGjFq4pGBj" role="2OqNvi">
+                          <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate():jetbrains.mps.logic.reactor.program.Predicate" resolve="predicate" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="2UGjFq4pGMy" role="2OqNvi">
+                        <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="2UGjFq4pFcY" role="3uHU7B">
+                      <property role="Xl_RC" value="unsatisfied predicate: " />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="2UGjFq4pFcZ" role="3clFbw">
+            <node concept="1rXfSq" id="2UGjFq4pFd0" role="3fr31v">
+              <ref role="37wK5l" node="5WBVN_M2Qjm" resolve="ask" />
+              <node concept="37vLTw" id="2UGjFq4pGvi" role="37wK5m">
+                <ref role="3cqZAo" node="5WBVN_M2Qjf" resolve="invocation" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5WBVN_M2Qjl" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5WBVN_M2Qj4" role="jymVt" />
+    <node concept="3Tm1VV" id="5WBVN_M2Qfa" role="1B3o_S" />
+    <node concept="3uibUv" id="5WBVN_M2Qig" role="1zkMxy">
       <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
     </node>
   </node>

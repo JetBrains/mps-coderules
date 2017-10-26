@@ -20,6 +20,9 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
+      <concept id="1219920932475" name="jetbrains.mps.baseLanguage.structure.VariableArityType" flags="in" index="8X2XB">
+        <child id="1219921048460" name="componentType" index="8Xvag" />
+      </concept>
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -228,7 +231,22 @@
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -1161,6 +1179,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="5WBVN_M0Tbf" role="lGtFl">
+        <node concept="TZ5HA" id="5WBVN_M0U54" role="TZ5H$">
+          <node concept="1dT_AC" id="5WBVN_M0U9o" role="1dT_Ay">
+            <property role="1dT_AB" value="FIXME: not used, delete me" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5WBVN_M0Tbi" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="2tJIrI" id="4sSe4$oZQjr" role="jymVt" />
     <node concept="3Tm1VV" id="4TCblo5ZkfJ" role="1B3o_S" />
@@ -1722,6 +1750,44 @@
       <node concept="16syzq" id="7nPD14NXWFt" role="11_B2D">
         <ref role="16sUi3" node="7nPD14NHRwV" resolve="V" />
       </node>
+    </node>
+  </node>
+  <node concept="3HP615" id="5WBVN_M1BKE">
+    <property role="TrG5h" value="LateExpression" />
+    <node concept="2tJIrI" id="5WBVN_M1BL8" role="jymVt" />
+    <node concept="3clFb_" id="5WBVN_M1BSf" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="metaArgs" />
+      <node concept="10Q1$e" id="5WBVN_MlESz" role="3clF45">
+        <node concept="3uibUv" id="5WBVN_MlERY" role="10Q1$1">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5WBVN_M1BSi" role="1B3o_S" />
+      <node concept="3clFbS" id="5WBVN_M1BSj" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="5WBVN_M1BRL" role="jymVt" />
+    <node concept="3clFb_" id="5WBVN_M1BLN" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="eval" />
+      <node concept="37vLTG" id="5WBVN_M1BNS" role="3clF46">
+        <property role="TrG5h" value="args" />
+        <node concept="8X2XB" id="5WBVN_M1BOF" role="1tU5fm">
+          <node concept="3uibUv" id="5WBVN_M1BOh" role="8Xvag">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+        </node>
+      </node>
+      <node concept="16syzq" id="5WBVN_M1BQX" role="3clF45">
+        <ref role="16sUi3" node="5WBVN_M1BQ$" resolve="T" />
+      </node>
+      <node concept="3Tm1VV" id="5WBVN_M1BLQ" role="1B3o_S" />
+      <node concept="3clFbS" id="5WBVN_M1BLR" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="5WBVN_M1BLq" role="jymVt" />
+    <node concept="3Tm1VV" id="5WBVN_M1BKF" role="1B3o_S" />
+    <node concept="16euLQ" id="5WBVN_M1BQ$" role="16eVyc">
+      <property role="TrG5h" value="T" />
     </node>
   </node>
 </model>

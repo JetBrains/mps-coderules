@@ -205,6 +205,7 @@
       <property role="IQ2ns" value="8829335963591353819" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="asaX9" id="5WBVN_MT8qr" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="7E86$tKsl45">
     <property role="TrG5h" value="LogicalItem" />
@@ -399,6 +400,40 @@
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="428_4iYhwbV" role="1TKVEi">
       <property role="IQ2ns" value="4650129638230983419" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="contents" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+      <node concept="asaX9" id="5WBVN_MJ510" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="5WBVN_MJ9$7" role="1TKVEi">
+      <property role="IQ2ns" value="6856711987712006407" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="literal" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5WBVN_MJ50y" resolve="ListLiteral" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5WBVN_MESCN">
+    <property role="EcuMT" value="6856711987710888499" />
+    <property role="3GE5qa" value="logical" />
+    <property role="TrG5h" value="TreeFormLiteral" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="5WBVN_MESCO" role="1TKVEi">
+      <property role="IQ2ns" value="6856711987710888500" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="root" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5WBVN_MJ50y">
+    <property role="EcuMT" value="6856711987711987746" />
+    <property role="TrG5h" value="ListLiteral" />
+    <property role="34LRSv" value="list" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="5WBVN_MJ50Y" role="1TKVEi">
+      <property role="IQ2ns" value="6856711987711987774" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
