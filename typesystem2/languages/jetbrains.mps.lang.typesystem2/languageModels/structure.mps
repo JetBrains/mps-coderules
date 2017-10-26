@@ -1478,5 +1478,17 @@
       <ref role="20lvS9" node="6DOfTm$zRmf" resolve="MacroInputDeclaration" />
     </node>
   </node>
+  <node concept="1TIwiD" id="5WBVN_MT8FC">
+    <property role="EcuMT" value="6856711987714624232" />
+    <property role="TrG5h" value="ExpressionItem" />
+    <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="5WBVN_MT8FD" role="1TKVEi">
+      <property role="IQ2ns" value="6856711987714624233" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
 </model>
 

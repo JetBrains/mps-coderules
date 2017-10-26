@@ -260,12 +260,6 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
         </node>
-        <node concept="1SiIV0" id="4pNU3yqbxee" role="3bR37C">
-          <node concept="3bR9La" id="4pNU3yqbxef" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="4pNU3yqbxeg" role="3bR37C">
           <node concept="3bR9La" id="4pNU3yqbxeh" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -647,12 +641,6 @@
           <node concept="3bR9La" id="7BVjoXzUxW$" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:44LXwdzyvTi" resolve="Annotations" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7BVjoXzUxW_" role="3bR37C">
-          <node concept="3bR9La" id="7BVjoXzUxWA" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
           </node>
         </node>
         <node concept="1SiIV0" id="7BVjoXzUxWB" role="3bR37C">
