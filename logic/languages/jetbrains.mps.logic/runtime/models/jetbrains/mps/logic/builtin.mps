@@ -1770,6 +1770,12 @@
     <node concept="3clFb_" id="5WBVN_M1BLN" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="eval" />
+      <node concept="37vLTG" id="6yUEjXvTuvu" role="3clF46">
+        <property role="TrG5h" value="logicalContext" />
+        <node concept="3uibUv" id="6yUEjXvTu_d" role="1tU5fm">
+          <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
+        </node>
+      </node>
       <node concept="37vLTG" id="5WBVN_M1BNS" role="3clF46">
         <property role="TrG5h" value="args" />
         <node concept="8X2XB" id="5WBVN_M1BOF" role="1tU5fm">

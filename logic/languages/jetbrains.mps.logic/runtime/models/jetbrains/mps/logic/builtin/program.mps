@@ -989,6 +989,9 @@
                           </node>
                           <node concept="liA8E" id="5WBVN_M1JVL" role="2OqNvi">
                             <ref role="37wK5l" to="yg8f:5WBVN_M1BLN" resolve="eval" />
+                            <node concept="37vLTw" id="6yUEjXvTvSG" role="37wK5m">
+                              <ref role="3cqZAo" node="60zk4o6Suop" resolve="logicalContext" />
+                            </node>
                             <node concept="2OqwBi" id="5WBVN_M1KyJ" role="37wK5m">
                               <node concept="37vLTw" id="5WBVN_M1K7z" role="2Oq$k0">
                                 <ref role="3cqZAo" node="5WBVN_M1GEu" resolve="expArgs" />

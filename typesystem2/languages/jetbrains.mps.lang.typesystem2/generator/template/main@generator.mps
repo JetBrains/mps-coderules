@@ -556,6 +556,10 @@
         <child id="3421461530438559756" name="constructorArgument" index="1L3L4I" />
         <child id="3421461530438559974" name="type" index="1L3L74" />
       </concept>
+      <concept id="1176743162354" name="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" flags="nn" index="3VmV3z">
+        <property id="1176743296073" name="name" index="3VnrPo" />
+        <child id="1176743202636" name="type" index="3Vn4Tt" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="5820409030208923287" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation" flags="nn" index="25OxAV" />
@@ -4734,6 +4738,12 @@
                         <node concept="3clFb_" id="5WBVN_N1Ybo" role="jymVt">
                           <property role="1EzhhJ" value="false" />
                           <property role="TrG5h" value="eval" />
+                          <node concept="37vLTG" id="6yUEjXw07Ee" role="3clF46">
+                            <property role="TrG5h" value="_logicalContext" />
+                            <node concept="3uibUv" id="6yUEjXw08VT" role="1tU5fm">
+                              <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
+                            </node>
+                          </node>
                           <node concept="37vLTG" id="5WBVN_N1Ybp" role="3clF46">
                             <property role="TrG5h" value="args" />
                             <node concept="8X2XB" id="5WBVN_N1Ybq" role="1tU5fm">
@@ -5107,6 +5117,12 @@
                           <node concept="3clFb_" id="5WBVN_M3A_V" role="jymVt">
                             <property role="1EzhhJ" value="false" />
                             <property role="TrG5h" value="eval" />
+                            <node concept="37vLTG" id="6yUEjXvTrRK" role="3clF46">
+                              <property role="TrG5h" value="_logicalContext" />
+                              <node concept="3uibUv" id="6yUEjXvTurD" role="1tU5fm">
+                                <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
+                              </node>
+                            </node>
                             <node concept="37vLTG" id="5WBVN_M3A_W" role="3clF46">
                               <property role="TrG5h" value="args" />
                               <node concept="8X2XB" id="5WBVN_M3A_X" role="1tU5fm">
@@ -5407,6 +5423,35 @@
                   <ref role="37wK5l" to="6pyv:4sSe4$oM2Bs" resolve="toPredicate" />
                 </node>
                 <node concept="raruj" id="5WBVN_M3sEF" role="lGtFl" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="6yUEjXvTwe$" role="3acgRq">
+      <ref role="30HIoZ" to="wq2x:60zk4o7reud" resolve="LogicalContextExpression" />
+      <node concept="1Koe21" id="6yUEjXvT$ta" role="1lVwrX">
+        <node concept="3clFb_" id="6yUEjXvT$tj" role="1Koe22">
+          <property role="TrG5h" value="context" />
+          <node concept="37vLTG" id="6yUEjXvT$uX" role="3clF46">
+            <property role="TrG5h" value="_logicalContext" />
+            <node concept="3uibUv" id="6yUEjXvT$wf" role="1tU5fm">
+              <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="6yUEjXvT$tt" role="1B3o_S" />
+          <node concept="3uibUv" id="6yUEjXvTCO7" role="3clF45">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+          <node concept="3clFbS" id="6yUEjXvT$$G" role="3clF47">
+            <node concept="3clFbF" id="6OkhGGhGcks" role="3cqZAp">
+              <node concept="3VmV3z" id="6OkhGGhGckq" role="3clFbG">
+                <property role="3VnrPo" value="_logicalContext" />
+                <node concept="3uibUv" id="6OkhGGhGckH" role="3Vn4Tt">
+                  <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
+                </node>
+                <node concept="raruj" id="6OkhGGhGcti" role="lGtFl" />
               </node>
             </node>
           </node>
