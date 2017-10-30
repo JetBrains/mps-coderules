@@ -370,50 +370,6 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
-        <node concept="1SiIV0" id="1BDNG5xC0YU" role="3bR37C">
-          <node concept="1BurEX" id="1BDNG5xC0YV" role="1SiIV1">
-            <node concept="398BVA" id="1BDNG5xC0YI" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="1BDNG5xC0YJ" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="1BDNG5xC0YK" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="1BDNG5xC0YL" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="1BDNG5xC0YM" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="1BDNG5xC0YN" role="2Ry0An">
-                        <property role="2Ry0Am" value="kotlin-runtime-1.1.2.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="1BDNG5xC0Z8" role="3bR37C">
-          <node concept="1BurEX" id="1BDNG5xC0Z9" role="1SiIV1">
-            <node concept="398BVA" id="1BDNG5xC0YW" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="1BDNG5xC0YX" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="1BDNG5xC0YY" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="1BDNG5xC0YZ" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="1BDNG5xC0Z0" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="1BDNG5xC0Z1" role="2Ry0An">
-                        <property role="2Ry0Am" value="kotlin-stdlib-1.1.2.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="1SiIV0" id="1BDNG5xC0Zm" role="3bR37C">
           <node concept="1BurEX" id="1BDNG5xC0Zn" role="1SiIV1">
             <node concept="398BVA" id="1BDNG5xC0Za" role="1BurEY">
@@ -472,6 +428,72 @@
                       <property role="2Ry0Am" value="lib" />
                       <node concept="2Ry0Ak" id="1BDNG5xC0ZF" role="2Ry0An">
                         <property role="2Ry0Am" value="conreactor-core-0.9.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6OkhGGhHeL$" role="3bR37C">
+          <node concept="1BurEX" id="6OkhGGhHeL_" role="1SiIV1">
+            <node concept="398BVA" id="6OkhGGhHeLo" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="6OkhGGhHeLp" role="iGT6I">
+                <property role="2Ry0Am" value="logic" />
+                <node concept="2Ry0Ak" id="6OkhGGhHeLq" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="6OkhGGhHeLr" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                    <node concept="2Ry0Ak" id="6OkhGGhHeLs" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="6OkhGGhHeLt" role="2Ry0An">
+                        <property role="2Ry0Am" value="trove4j-3.0.3.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="65oFETaV2Um" role="3bR37C">
+          <node concept="1BurEX" id="65oFETaV2Un" role="1SiIV1">
+            <node concept="398BVA" id="65oFETaV2Ua" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="65oFETaV2Ub" role="iGT6I">
+                <property role="2Ry0Am" value="logic" />
+                <node concept="2Ry0Ak" id="65oFETaV2Uc" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="65oFETaV2Ud" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                    <node concept="2Ry0Ak" id="65oFETaV2Ue" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="65oFETaV2Uf" role="2Ry0An">
+                        <property role="2Ry0Am" value="kotlin-runtime-1.1.4.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="65oFETaV2U$" role="3bR37C">
+          <node concept="1BurEX" id="65oFETaV2U_" role="1SiIV1">
+            <node concept="398BVA" id="65oFETaV2Uo" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="65oFETaV2Up" role="iGT6I">
+                <property role="2Ry0Am" value="logic" />
+                <node concept="2Ry0Ak" id="65oFETaV2Uq" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="65oFETaV2Ur" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                    <node concept="2Ry0Ak" id="65oFETaV2Us" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="65oFETaV2Ut" role="2Ry0An">
+                        <property role="2Ry0Am" value="kotlin-stdlib-1.1.4.jar" />
                       </node>
                     </node>
                   </node>

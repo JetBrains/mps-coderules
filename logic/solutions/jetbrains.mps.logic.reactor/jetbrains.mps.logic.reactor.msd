@@ -8,11 +8,12 @@
     </modelRoot>
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${module}/lib/kotlin-runtime-1.1.2.jar" />
-    <stubModelEntry path="${module}/lib/kotlin-stdlib-1.1.2.jar" />
     <stubModelEntry path="${module}/lib/collection-0.7.jar" />
     <stubModelEntry path="${module}/lib/conreactor-api-0.9.jar" />
     <stubModelEntry path="${module}/lib/conreactor-core-0.9.jar" />
+    <stubModelEntry path="${module}/lib/trove4j-3.0.3.jar" />
+    <stubModelEntry path="${module}/lib/kotlin-runtime-1.1.4.jar" />
+    <stubModelEntry path="${module}/lib/kotlin-stdlib-1.1.4.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

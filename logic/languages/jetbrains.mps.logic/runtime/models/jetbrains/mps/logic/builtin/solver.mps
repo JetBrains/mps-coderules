@@ -3050,14 +3050,19 @@
             <node concept="3uibUv" id="7K4Mb_J$cIC" role="1tU5fm">
               <ref role="3uigEE" to="yt73:~Substitution" resolve="Substitution" />
             </node>
-            <node concept="2YIFZM" id="7K4Mb_J$cID" role="33vP2m">
-              <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
-              <node concept="37vLTw" id="7K4Mb_J$cIE" role="37wK5m">
-                <ref role="3cqZAo" node="6GYQG_SpvAH" resolve="leftVal" />
+            <node concept="2OqwBi" id="6OkhGGhHPa$" role="33vP2m">
+              <node concept="10M0yZ" id="6OkhGGhHOO5" role="2Oq$k0">
+                <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
+                <ref role="1PxDUh" to="yt73:~Unification" resolve="Unification" />
               </node>
-              <node concept="37vLTw" id="7K4Mb_J$cIF" role="37wK5m">
-                <ref role="3cqZAo" node="6GYQG_SpvAJ" resolve="rightVal" />
+              <node concept="liA8E" id="6OkhGGhHPxp" role="2OqNvi">
+                <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                <node concept="37vLTw" id="7K4Mb_J$cIE" role="37wK5m">
+                  <ref role="3cqZAo" node="6GYQG_SpvAH" resolve="leftVal" />
+                </node>
+                <node concept="37vLTw" id="7K4Mb_J$cIF" role="37wK5m">
+                  <ref role="3cqZAo" node="6GYQG_SpvAJ" resolve="rightVal" />
+                </node>
               </node>
             </node>
           </node>
@@ -3408,19 +3413,24 @@
                 <node concept="3uibUv" id="_oAIrg3tH2" role="1tU5fm">
                   <ref role="3uigEE" to="yt73:~Substitution" resolve="Substitution" />
                 </node>
-                <node concept="2YIFZM" id="_oAIrg3tHd" role="33vP2m">
-                  <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
-                  <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-                  <node concept="2ShNRf" id="_oAIrg3tHe" role="37wK5m">
-                    <node concept="1pGfFk" id="_oAIrg3tHf" role="2ShVmc">
-                      <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
-                      <node concept="37vLTw" id="6HKur8$jCv_" role="37wK5m">
-                        <ref role="3cqZAo" node="7d$oK1$qfYd" resolve="leftRepr" />
+                <node concept="2OqwBi" id="6OkhGGhHQGF" role="33vP2m">
+                  <node concept="10M0yZ" id="6OkhGGhHQxS" role="2Oq$k0">
+                    <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
+                    <ref role="1PxDUh" to="yt73:~Unification" resolve="Unification" />
+                  </node>
+                  <node concept="liA8E" id="6OkhGGhHQRO" role="2OqNvi">
+                    <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                    <node concept="2ShNRf" id="_oAIrg3tHe" role="37wK5m">
+                      <node concept="1pGfFk" id="_oAIrg3tHf" role="2ShVmc">
+                        <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                        <node concept="37vLTw" id="6HKur8$jCv_" role="37wK5m">
+                          <ref role="3cqZAo" node="7d$oK1$qfYd" resolve="leftRepr" />
+                        </node>
                       </node>
                     </node>
-                  </node>
-                  <node concept="37vLTw" id="_oAIrg3tHh" role="37wK5m">
-                    <ref role="3cqZAo" node="4U_yxogBZLC" resolve="rightVal" />
+                    <node concept="37vLTw" id="_oAIrg3tHh" role="37wK5m">
+                      <ref role="3cqZAo" node="4U_yxogBZLC" resolve="rightVal" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3621,22 +3631,27 @@
             <node concept="3uibUv" id="_oAIrg3wr4" role="1tU5fm">
               <ref role="3uigEE" to="yt73:~Substitution" resolve="Substitution" />
             </node>
-            <node concept="2YIFZM" id="_oAIrg3wr5" role="33vP2m">
-              <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
-              <node concept="2ShNRf" id="_oAIrg3wr6" role="37wK5m">
-                <node concept="1pGfFk" id="_oAIrg3wr7" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
-                  <node concept="37vLTw" id="6HKur8$jCK9" role="37wK5m">
-                    <ref role="3cqZAo" node="7d$oK1$rAnE" resolve="leftRepr" />
+            <node concept="2OqwBi" id="6OkhGGhHRt9" role="33vP2m">
+              <node concept="10M0yZ" id="6OkhGGhHRid" role="2Oq$k0">
+                <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
+                <ref role="1PxDUh" to="yt73:~Unification" resolve="Unification" />
+              </node>
+              <node concept="liA8E" id="6OkhGGhHRCr" role="2OqNvi">
+                <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                <node concept="2ShNRf" id="_oAIrg3wr6" role="37wK5m">
+                  <node concept="1pGfFk" id="_oAIrg3wr7" role="2ShVmc">
+                    <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                    <node concept="37vLTw" id="6HKur8$jCK9" role="37wK5m">
+                      <ref role="3cqZAo" node="7d$oK1$rAnE" resolve="leftRepr" />
+                    </node>
                   </node>
                 </node>
-              </node>
-              <node concept="2ShNRf" id="_oAIrg3wRH" role="37wK5m">
-                <node concept="1pGfFk" id="_oAIrg3wRI" role="2ShVmc">
-                  <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
-                  <node concept="37vLTw" id="6HKur8$jD0Z" role="37wK5m">
-                    <ref role="3cqZAo" node="7d$oK1$rAnK" resolve="rightRepr" />
+                <node concept="2ShNRf" id="_oAIrg3wRH" role="37wK5m">
+                  <node concept="1pGfFk" id="_oAIrg3wRI" role="2ShVmc">
+                    <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                    <node concept="37vLTw" id="6HKur8$jD0Z" role="37wK5m">
+                      <ref role="3cqZAo" node="7d$oK1$rAnK" resolve="rightRepr" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3774,14 +3789,19 @@
             <node concept="3uibUv" id="7K4Mb_J$cIW" role="1tU5fm">
               <ref role="3uigEE" to="yt73:~Substitution" resolve="Substitution" />
             </node>
-            <node concept="2YIFZM" id="7K4Mb_J$cIX" role="33vP2m">
-              <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
-              <node concept="37vLTw" id="7K4Mb_J$cIY" role="37wK5m">
-                <ref role="3cqZAo" node="6GYQG_SpvAT" resolve="leftVal" />
+            <node concept="2OqwBi" id="6OkhGGhHULL" role="33vP2m">
+              <node concept="10M0yZ" id="6OkhGGhHU$r" role="2Oq$k0">
+                <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
+                <ref role="1PxDUh" to="yt73:~Unification" resolve="Unification" />
               </node>
-              <node concept="37vLTw" id="7K4Mb_J$cIZ" role="37wK5m">
-                <ref role="3cqZAo" node="6GYQG_SpvAV" resolve="rightVal" />
+              <node concept="liA8E" id="6OkhGGhHV2K" role="2OqNvi">
+                <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                <node concept="37vLTw" id="7K4Mb_J$cIY" role="37wK5m">
+                  <ref role="3cqZAo" node="6GYQG_SpvAT" resolve="leftVal" />
+                </node>
+                <node concept="37vLTw" id="7K4Mb_J$cIZ" role="37wK5m">
+                  <ref role="3cqZAo" node="6GYQG_SpvAV" resolve="rightVal" />
+                </node>
               </node>
             </node>
           </node>
@@ -4007,19 +4027,24 @@
             <node concept="3uibUv" id="7K4Mb_J$cJW" role="1tU5fm">
               <ref role="3uigEE" to="yt73:~Substitution" resolve="Substitution" />
             </node>
-            <node concept="2YIFZM" id="7K4Mb_J$cJX" role="33vP2m">
-              <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
-              <node concept="2OqwBi" id="6HKur8$jDgl" role="37wK5m">
-                <node concept="37vLTw" id="6HKur8$jDgm" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4U_yxogDnOj" resolve="leftRepr" />
-                </node>
-                <node concept="liA8E" id="6HKur8$jDgn" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
-                </node>
+            <node concept="2OqwBi" id="6OkhGGhHSln" role="33vP2m">
+              <node concept="10M0yZ" id="6OkhGGhHS7n" role="2Oq$k0">
+                <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
+                <ref role="1PxDUh" to="yt73:~Unification" resolve="Unification" />
               </node>
-              <node concept="37vLTw" id="7K4Mb_J$cJZ" role="37wK5m">
-                <ref role="3cqZAo" node="4U_yxogC1Ei" resolve="rightVal" />
+              <node concept="liA8E" id="6OkhGGhHS$E" role="2OqNvi">
+                <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                <node concept="2OqwBi" id="6HKur8$jDgl" role="37wK5m">
+                  <node concept="37vLTw" id="6HKur8$jDgm" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4U_yxogDnOj" resolve="leftRepr" />
+                  </node>
+                  <node concept="liA8E" id="6HKur8$jDgn" role="2OqNvi">
+                    <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="7K4Mb_J$cJZ" role="37wK5m">
+                  <ref role="3cqZAo" node="4U_yxogC1Ei" resolve="rightVal" />
+                </node>
               </node>
             </node>
           </node>
@@ -4295,23 +4320,28 @@
             <node concept="3uibUv" id="7K4Mb_J$cJw" role="1tU5fm">
               <ref role="3uigEE" to="yt73:~Substitution" resolve="Substitution" />
             </node>
-            <node concept="2YIFZM" id="7K4Mb_J$cJx" role="33vP2m">
-              <ref role="1Pybhc" to="yt73:~Unification" resolve="Unification" />
-              <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
-              <node concept="2OqwBi" id="6HKur8$jE$z" role="37wK5m">
-                <node concept="37vLTw" id="6HKur8$jE$$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7d$oK1$nL7F" resolve="leftRepr" />
-                </node>
-                <node concept="liA8E" id="6HKur8$jE$_" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
-                </node>
+            <node concept="2OqwBi" id="6OkhGGhHTzD" role="33vP2m">
+              <node concept="10M0yZ" id="6OkhGGhHTkA" role="2Oq$k0">
+                <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
+                <ref role="1PxDUh" to="yt73:~Unification" resolve="Unification" />
               </node>
-              <node concept="2OqwBi" id="6HKur8$jFZg" role="37wK5m">
-                <node concept="37vLTw" id="6HKur8$jFZh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7d$oK1$nLDN" resolve="rightRepr" />
+              <node concept="liA8E" id="6OkhGGhHTN0" role="2OqNvi">
+                <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                <node concept="2OqwBi" id="6HKur8$jE$z" role="37wK5m">
+                  <node concept="37vLTw" id="6HKur8$jE$$" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7d$oK1$nL7F" resolve="leftRepr" />
+                  </node>
+                  <node concept="liA8E" id="6HKur8$jE$_" role="2OqNvi">
+                    <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="6HKur8$jFZi" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                <node concept="2OqwBi" id="6HKur8$jFZg" role="37wK5m">
+                  <node concept="37vLTw" id="6HKur8$jFZh" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7d$oK1$nLDN" resolve="rightRepr" />
+                  </node>
+                  <node concept="liA8E" id="6HKur8$jFZi" role="2OqNvi">
+                    <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  </node>
                 </node>
               </node>
             </node>
