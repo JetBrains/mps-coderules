@@ -2,7 +2,7 @@
 <model ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(sample.lambdacalc.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="3" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="4" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc" version="0" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
@@ -282,9 +282,6 @@
       <concept id="8829335963593820278" name="jetbrains.mps.logic.structure.LogicalVariable" flags="ng" index="a7P8L">
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
-      <concept id="8829335963591331603" name="jetbrains.mps.logic.structure.LogicalValue" flags="ng" index="aYllk">
-        <child id="8829335963591353819" name="code" index="aYrYs" />
-      </concept>
       <concept id="8829335963591530299" name="jetbrains.mps.logic.structure.ExpressionLogicalVariable" flags="ng" index="aZ4PW">
         <child id="8829335963591530990" name="expression" index="aZ4eD" />
       </concept>
@@ -368,13 +365,15 @@
       <concept id="1618328391714701929" name="jetbrains.mps.lang.typesystem2.structure.TermTemplate" flags="ng" index="0oftK">
         <child id="1618328391714701961" name="feature" index="0ofug" />
       </concept>
-      <concept id="1618328391714701966" name="jetbrains.mps.lang.typesystem2.structure.StringTermFeature" flags="ng" index="0ofun">
+      <concept id="1618328391714701966" name="jetbrains.mps.lang.typesystem2.structure.ValueTermFeature" flags="ng" index="0ofun">
         <child id="1476354154047290766" name="getter" index="3AP2R9" />
       </concept>
       <concept id="1618328391714701957" name="jetbrains.mps.lang.typesystem2.structure.TermFeature" flags="ng" index="0ofus">
         <property id="1877115349164965185" name="final" index="3JpusR" />
       </concept>
-      <concept id="1618328391714702001" name="jetbrains.mps.lang.typesystem2.structure.ChildTermFeature" flags="ng" index="0ofuC" />
+      <concept id="1618328391714702001" name="jetbrains.mps.lang.typesystem2.structure.ChildTermFeature" flags="ng" index="0ofuC">
+        <child id="3189112839535124368" name="getter" index="LoHUF" />
+      </concept>
       <concept id="1618328391714763069" name="jetbrains.mps.lang.typesystem2.structure.MacroTable" flags="ng" index="0oKg$">
         <child id="1618328391714763070" name="macro" index="0oKgB" />
       </concept>
@@ -404,6 +403,9 @@
       </concept>
       <concept id="5524459797190399502" name="jetbrains.mps.lang.typesystem2.structure.TermDeclaration" flags="ng" index="BRKj$">
         <child id="5524459797190401236" name="template" index="BRKSY" />
+      </concept>
+      <concept id="6856711987714624232" name="jetbrains.mps.lang.typesystem2.structure.ExpressionItem" flags="ng" index="HKQnh">
+        <child id="6856711987714624233" name="code" index="HKQng" />
       </concept>
       <concept id="7670825977262339471" name="jetbrains.mps.lang.typesystem2.structure.MacroInputDeclaration" flags="ng" index="3eYOCq">
         <child id="7670825977262355988" name="type" index="3eYSA1" />
@@ -2999,8 +3001,8 @@
                   <node concept="a7P8L" id="4dPZ2m2i658" role="3GeI8F">
                     <ref role="a7OzE" node="4dPZ2m2i60W" resolve="Node" />
                   </node>
-                  <node concept="aYllk" id="4dPZ2m2i65p" role="3GeI8D">
-                    <node concept="2c44tf" id="4dPZ2m2i65y" role="aYrYs">
+                  <node concept="HKQnh" id="2UDjWFTkhtU" role="3GeI8D">
+                    <node concept="2c44tf" id="4dPZ2m2i65y" role="HKQng">
                       <node concept="3P8Jbz" id="4dPZ2m2i6g7" role="2c44tc" />
                     </node>
                   </node>
@@ -3195,8 +3197,8 @@
                     <node concept="a7P8L" id="4dPZ2m2i6vr" role="3GeI8F">
                       <ref role="a7OzE" node="4dPZ2m2i6hy" resolve="Node" />
                     </node>
-                    <node concept="aYllk" id="4dPZ2m2i6vw" role="3GeI8D">
-                      <node concept="2c44tf" id="4dPZ2m2i6vD" role="aYrYs">
+                    <node concept="HKQnh" id="2UDjWFTkhtV" role="3GeI8D">
+                      <node concept="2c44tf" id="4dPZ2m2i6vD" role="HKQng">
                         <node concept="1jz_ff" id="4dPZ2m2i6vT" role="2c44tc">
                           <node concept="3P8Jbz" id="4dPZ2m2i6wS" role="1jz_fp">
                             <node concept="2c44te" id="4dPZ2m2i6x1" role="lGtFl">
@@ -4616,9 +4618,35 @@
         </node>
         <node concept="0ofuC" id="4dPZ2m2hXGZ" role="0ofug">
           <property role="TrG5h" value="arg" />
+          <node concept="3AP2Rn" id="1tQ0laA7PXK" role="LoHUF">
+            <node concept="3clFbS" id="1tQ0laA7PXL" role="16YjZG">
+              <node concept="3clFbF" id="1tQ0laA7QMd" role="3cqZAp">
+                <node concept="2YIFZM" id="1tQ0laA7QMI" role="3clFbG">
+                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <node concept="3VsKOn" id="1tQ0laA7RgV" role="37wK5m">
+                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="0ofuC" id="4dPZ2m2hXHj" role="0ofug">
           <property role="TrG5h" value="res" />
+          <node concept="3AP2Rn" id="1tQ0laA7Rk6" role="LoHUF">
+            <node concept="3clFbS" id="1tQ0laA7Rk7" role="16YjZG">
+              <node concept="3clFbF" id="1tQ0laA7Rkj" role="3cqZAp">
+                <node concept="2YIFZM" id="1tQ0laA7Rkl" role="3clFbG">
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                  <node concept="3VsKOn" id="1tQ0laA7Rkm" role="37wK5m">
+                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -4645,6 +4673,19 @@
         </node>
         <node concept="0ofuC" id="12dHl3ZCEvq" role="0ofug">
           <property role="TrG5h" value="type" />
+          <node concept="3AP2Rn" id="1tQ0laA7RlL" role="LoHUF">
+            <node concept="3clFbS" id="1tQ0laA7RlM" role="16YjZG">
+              <node concept="3clFbF" id="1tQ0laA7RlY" role="3cqZAp">
+                <node concept="2YIFZM" id="1tQ0laA7Rm0" role="3clFbG">
+                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                  <node concept="3VsKOn" id="1tQ0laA7Rm1" role="37wK5m">
+                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
