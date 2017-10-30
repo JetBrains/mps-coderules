@@ -65,7 +65,7 @@ public class AssertUnification {
     }
 
     public static void assertUnifiesWithBindings(Term s, Term t, Substitution.Binding ... bindings) throws Exception{
-        Substitution subs = Unification.unify(s, t);
+        Substitution subs = Unification.INSTANCE.unify(s, t);
 
         assertTrue(subs.isSuccessful());
         assertSameBindings(
@@ -74,14 +74,14 @@ public class AssertUnification {
                 ),
                 subs.bindings());
 
-        Substitution subs2 = Unification.unify(t, s);
+        Substitution subs2 = Unification.INSTANCE.unify(t, s);
 
         assertTrue(subs2.isSuccessful());
         assertSameBindings(subs.bindings(), subs2.bindings());
     }
 
     public static void assertUnifiesWithBindings(Term s, Term t, TermWrapper wrapper, Substitution.Binding ... bindings) throws Exception{
-        Substitution subs = Unification.unify(s, t, wrapper);
+        Substitution subs = Unification.INSTANCE.unify(s, t, wrapper);
 
         assertTrue(subs.isSuccessful());
         assertSameBindings(
@@ -90,14 +90,14 @@ public class AssertUnification {
                 ),
                 subs.bindings());
 
-        Substitution subs2 = Unification.unify(t, s, wrapper);
+        Substitution subs2 = Unification.INSTANCE.unify(t, s, wrapper);
 
         assertTrue(subs2.isSuccessful());
         assertSameBindings(subs.bindings(), subs2.bindings());
     }
 
     public static void assertUnifiesWithBindingsAsymm(Term s, Term t, Substitution.Binding ... bindings) throws Exception{
-        Substitution subs = Unification.unify(s, t);
+        Substitution subs = Unification.INSTANCE.unify(s, t);
 
         assertTrue(subs.isSuccessful());
         assertSameBindings(
@@ -108,45 +108,45 @@ public class AssertUnification {
     }
 
     public static void assertUnificationFails(Term s, Term t) throws Exception {
-        Substitution subs1 = Unification.unify(s, t);
+        Substitution subs1 = Unification.INSTANCE.unify(s, t);
 
         assertFalse(subs1.isSuccessful());
 
-        Substitution subs2 = Unification.unify(s, t);
+        Substitution subs2 = Unification.INSTANCE.unify(s, t);
 
         assertFalse(subs2.isSuccessful());
     }
 
     public static void assertUnificationFails(Term s, Term t, TermWrapper wrapper) throws Exception {
-        Substitution subs1 = Unification.unify(s, t, wrapper);
+        Substitution subs1 = Unification.INSTANCE.unify(s, t, wrapper);
 
         assertFalse(subs1.isSuccessful());
 
-        Substitution subs2 = Unification.unify(s, t, wrapper);
+        Substitution subs2 = Unification.INSTANCE.unify(s, t, wrapper);
 
         assertFalse(subs2.isSuccessful());
     }
 
     public static void assertUnificationFails(Term s, Term t, FailureCause failureCause) throws Exception {
-        Substitution subs1 = Unification.unify(s, t);
+        Substitution subs1 = Unification.INSTANCE.unify(s, t);
 
         assertFalse(subs1.isSuccessful());
         assertSame(failureCause, subs1.failureCause());
 
-        Substitution subs2 = Unification.unify(t, s);
+        Substitution subs2 = Unification.INSTANCE.unify(t, s);
 
         assertFalse(subs2.isSuccessful());
         assertSame(failureCause, subs2.failureCause());
     }
 
     public static void assertUnificationFails(Term s, Term t, FailureCause failureCause, Object... details) throws Exception {
-        Substitution subs1 = Unification.unify(s, t);
+        Substitution subs1 = Unification.INSTANCE.unify(s, t);
 
         assertFalse(subs1.isSuccessful());
         assertSame(failureCause, subs1.failureCause());
         assertArrayEquals(details, subs1.failureDetails());
 
-        Substitution subs2 = Unification.unify(t, s);
+        Substitution subs2 = Unification.INSTANCE.unify(t, s);
 
         assertFalse(subs2.isSuccessful());
         assertSame(failureCause, subs1.failureCause());
