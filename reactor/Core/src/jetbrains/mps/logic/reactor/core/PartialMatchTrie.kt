@@ -24,6 +24,7 @@ import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 import jetbrains.mps.unification.Term
+import jetbrains.mps.unification.Unification
 import java.util.*
 import kotlin.collections.ArrayList
 import com.github.andrewoma.dexx.collection.Map as PersMap
@@ -222,7 +223,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 var first: MatchTrieNode? = null
                 var prev: MatchTrieNode? = null
                 for ((idx, cst) in keptConstraints.withIndex()) {
-                    if (cst.symbol() == activeOcc.constraint().symbol()) {
+                    if (cst.probablyMatches(activeOcc)) {
                         val next = MatchTrieNode(null, true, cst, activeOcc, idx)
                         if (first == null) {
                             first = next
@@ -232,7 +233,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                     }
                 }
                 for ((idx, cst) in discardedConstraints.withIndex()) {
-                    if (cst.symbol() == activeOcc.constraint().symbol()) {
+                    if (cst.probablyMatches(activeOcc)) {
                         val next = MatchTrieNode(null, false, cst, activeOcc, idx)
                         if (first == null) {
                             first = next
@@ -328,10 +329,9 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 val nextIdx = if (keep) nextSlot else nextSlot - keptConstraints.size
                 val nextCst = if (keep) keptConstraints[nextSlot] else discardedConstraints[nextIdx]
 
-                return if (nextCst.symbol() == activeOcc.constraint().symbol() &&
-                    !anyInPath { it -> it.constraint.symbol() == activeOcc.constraint().symbol() })
-                {
+                return if (nextCst.probablyMatches(activeOcc) && !hasOccurrence(activeOcc)) {
                     arrayListOf(MatchTrieNode(this, keep, nextCst, activeOcc, nextIdx))
+                    
                 }
                 else {
                     val (result, auxOccurrences) = lookupAuxOccurrences(nextCst)
@@ -363,7 +363,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                         }
                     }
                     if (fromArgs.isNotEmpty()) {
-                        Result.DEFINITIVE.to(fromArgs.filter { occ -> occ.constraint().symbol() == cst.symbol() && !hasOccurrence(occ) })
+                        Result.DEFINITIVE.to(fromArgs.filter { occ -> cst.probablyMatches(occ) && !hasOccurrence(occ) })
 
                     } else {
                         return profiler.profile<Pair<Result, Iterable<ConstraintOccurrence>>> ("lookupAux_default_${cst.symbol()}") {
@@ -373,14 +373,13 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                             val noArgs = cst.arguments().isEmpty()
 
                             if (noArgs || (allArgsMetaLogicals && !hasRelated)) {
-                                Result.INCONCLUSIVE.to(occIndex.forSymbol(cst.symbol()).filter { occ -> !hasOccurrence(occ) })
+                                Result.INCONCLUSIVE.to(occIndex.forSymbol(cst.symbol()).filter { occ -> cst.probablyMatches(occ) && !hasOccurrence(occ) })
 
                             }
                             else {
                                 // all candidate occurrences should have been found by this time; if not, then there's none
                                 Result.NONE.to(emptyList())
                             }
-
                         }
                     }
                 }
@@ -404,7 +403,6 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 }
             }
 
-
             fun firstAlive(): MatchTrieNode? {
                 var fca: MatchTrieNode? = this
                 while (!(fca?.occurrence?.isAlive() ?: true)) {
@@ -412,6 +410,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 }
                 return fca
             }
+
 
             private fun collectMetaInstances(meta: Collection<*>, list: ArrayList<Any>): ArrayList<Any> {
                 constraint.arguments().zip(occurrence.arguments()).forEach { p ->
@@ -446,6 +445,27 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
 
         }
 
+    }
+
+    private fun Constraint.probablyMatches(occ: ConstraintOccurrence): Boolean {
+        if (this.symbol() != occ.constraint().symbol()) { return false }
+
+        val cstArgIt = this.arguments().iterator()
+        val occArgIt = occ.arguments().iterator()
+        while (cstArgIt.hasNext() && occArgIt.hasNext()) {
+            val cstArg = cstArgIt.next()
+            val occArg = occArgIt.next()
+
+            if (cstArg is Term && occArg is Term) {
+                if (!Unification.unify(cstArg, occArg).isSuccessful) { return false }
+            }
+
+            if (cstArg !is MetaLogical<*> && occArg !is Logical<*>) {
+                if (!(cstArg?.equals(occArg) ?: (occArg === null))) { return false }
+            }
+        }
+
+        return true
     }
 
     enum class Result {
