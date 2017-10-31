@@ -440,5 +440,30 @@
       <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
     </node>
   </node>
+  <node concept="1TIwiD" id="28ktUhrjnwn">
+    <property role="EcuMT" value="2455719244613908503" />
+    <property role="3GE5qa" value="logical" />
+    <property role="TrG5h" value="ValueOfLogicalExpression" />
+    <property role="34LRSv" value="valueOf" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="28ktUhrjrp0" role="1TKVEi">
+      <property role="IQ2ns" value="2455719244613924416" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="logical" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="49obaclcan7">
+    <property role="EcuMT" value="4780620083400582599" />
+    <property role="TrG5h" value="LogicalExpression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="49obaclcanY" role="1TKVEi">
+      <property role="IQ2ns" value="4780620083400582654" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="logical" />
+      <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
 </model>
 
