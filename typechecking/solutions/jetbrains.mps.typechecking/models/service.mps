@@ -3857,6 +3857,7 @@
                           <ref role="37wK5l" node="3F6vMxqjuT6" resolve="initSession" />
                         </node>
                       </node>
+                      <node concept="3clFbH" id="HOeeeU9$L7" role="3cqZAp" />
                       <node concept="3cpWs8" id="Hg6Enc7CPK" role="3cqZAp">
                         <node concept="3cpWsn" id="Hg6Enc7CPL" role="3cpWs9">
                           <property role="TrG5h" value="progEval" />
@@ -3869,8 +3870,19 @@
                               <node concept="37vLTw" id="Hg6Enc7CPP" role="37wK5m">
                                 <ref role="3cqZAo" node="Hg6Enc7CPu" resolve="sessionSolver" />
                               </node>
-                              <node concept="3clFbT" id="7kTeLbPp7Er" role="37wK5m">
-                                <property role="3clFbU" value="false" />
+                              <node concept="2YIFZM" id="3G24ulS6bUE" role="37wK5m">
+                                <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String):java.lang.Boolean" resolve="valueOf" />
+                                <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                                <node concept="2YIFZM" id="3G24ulS6bUF" role="37wK5m">
+                                  <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String,java.lang.String):java.lang.String" resolve="getProperty" />
+                                  <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                                  <node concept="Xl_RD" id="3G24ulS6bUG" role="37wK5m">
+                                    <property role="Xl_RC" value="logic.profile" />
+                                  </node>
+                                  <node concept="Xl_RD" id="3G24ulS6bUH" role="37wK5m">
+                                    <property role="Xl_RC" value="false" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
