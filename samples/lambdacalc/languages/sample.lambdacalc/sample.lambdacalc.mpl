@@ -53,7 +53,7 @@
     <language slang="l:b83431fe-5c8f-40bc-8a36-65e25f4dd253:jetbrains.mps.lang.textGen" version="1" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
     <language slang="l:7a5dda62-9140-4668-ab76-d5ed1746f2b2:jetbrains.mps.lang.typesystem" version="1" />
-    <language slang="l:c4803b19-6d89-4a3b-bf82-390769514add:jetbrains.mps.lang.typesystem2" version="4" />
+    <language slang="l:c4803b19-6d89-4a3b-bf82-390769514add:jetbrains.mps.lang.typesystem2" version="5" />
     <language slang="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" version="2" />
     <language slang="l:af858d84-85f2-42f4-a854-0b3c6b5cd482:sample.fooblin" version="0" />
   </languageVersions>
