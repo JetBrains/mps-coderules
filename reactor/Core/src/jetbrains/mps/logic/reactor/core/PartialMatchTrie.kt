@@ -32,8 +32,6 @@ import com.github.andrewoma.dexx.collection.Map as PersMap
 /**
  * @author Fedor Isakov
  */
-
-
 internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
 
     private val keptConstraints = rule.headKept().toCollection(ArrayList(4))
@@ -80,8 +78,8 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
             if (!t.vacant.isEmpty) {
                 newTries.add(t)
                 for (idx in t.vacant.stream()) {
-                    if (activeOcc.constraint().symbol() == constraints[idx].symbol()) {
-                        relevantTries.add(PartialMatchTrie(t, activeOcc, occIndex))
+                    if (constraints[idx].probablyMatches(activeOcc)) {
+                        relevantTries.add(PartialMatchTrie(activeOcc, occIndex, t))
                         newTries.removeAt(newTries.size - 1)
                         break
                     }
@@ -89,7 +87,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
             }
         }
         if (relevantTries.isEmpty()) {
-            relevantTries.add(PartialMatchTrie(activeOcc, occIndex))
+            relevantTries.add(PartialMatchTrie(activeOcc, occIndex, null))
         }
 
         this.tries.clear()
@@ -100,25 +98,10 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
     }
 
     inner class PartialMatchTrie(val activeOcc: ConstraintOccurrence,
-                                 val occIndex: OccurrenceIndex)
+                                 val occIndex: OccurrenceIndex,
+                                     prototype: PartialMatchTrie?)
     {
-
-        constructor(prototype: PartialMatchTrie,
-                    activeOcc: ConstraintOccurrence,
-                    occurrenceIndex: OccurrenceIndex) :
-            this(activeOcc, occurrenceIndex)
-        {
-            this._prototype = prototype
-        }
-
-        private var _prototype: PartialMatchTrie? = null
-
-        private val prototype: PartialMatchTrie?
-            get() = _prototype
-
-        private val root: RootMatchTrieNode by lazy(LazyThreadSafetyMode.NONE) {
-            prototype?.root?.let { root -> RootMatchTrieNode(root) } ?: RootMatchTrieNode()
-        }
+        private val root: RootMatchTrieNode = RootMatchTrieNode(prototype?.root)
 
         val vacant = BitSet()
 
@@ -150,35 +133,37 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 }
 
                 private fun calcNext(): PartialMatch? {
-                    // the search always starts at the first root
-                    if (firstRoot == null) {
+                    return profiler.profile<PartialMatch?>("partialMatch_calcNext") {
+                        // the search always starts at the first root
+                        if (firstRoot == null) {
+                            return null
+                        }
+                        var mtn: MatchTrieNode? = firstRoot
+
+                        while (mtn != null) {
+                            if (mtn.isSeen) {
+                                if (mtn.nextSibling == null) {
+                                    mtn.parent?.setSeen()
+                                }
+                                mtn = mtn.nextSibling ?: mtn.parent
+
+                            } else if (mtn.isLeaf) {
+                                mtn.setSeen()
+                                vacant.clear()
+                                return mtn.match
+
+                            } else if (mtn.firstChild == null) {
+                                mtn.setSeen()
+                                vacant.or(mtn.vacantSlots)
+                                vacant.andNot(mtn.relatedFirstVacantSlots)
+
+                            } else {
+                                mtn = mtn.firstChild
+                            }
+                        }
+
                         return null
                     }
-                    var mtn: MatchTrieNode? = firstRoot
-
-                    while (mtn != null) {
-                        if (mtn.isSeen) {
-                            if (mtn.nextSibling == null) {
-                                mtn.parent?.setSeen()
-                            }
-                            mtn = mtn.nextSibling ?: mtn.parent
-                        }
-                        else if (mtn.isLeaf) {
-                            mtn.setSeen()
-                            vacant.clear()
-                            return mtn.match
-                        }
-                        else if (mtn.firstChild == null) {
-                            mtn.setSeen()
-                            vacant.or(mtn.vacantSlots)
-                            vacant.andNot(mtn.relatedFirstVacantSlots)
-                        }
-                        else {
-                            mtn = mtn.firstChild 
-                        }
-                    }
-
-                    return null
                 }
             }
 
@@ -188,61 +173,67 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
 
             var _firstChild: MatchTrieNode? = null
 
+            protected fun copyChildren(copyFrom: BaseMatchTrieNode, parent: MatchTrieNode?) {
+                copyFrom._firstChild?.firstAlive()?.let { copyFirst ->
+
+                    val first = MatchTrieNode(parent, copyFirst)
+                    var prev = first
+                    var copyNext = copyFirst.nextSibling?.firstAlive()
+
+                    while (copyNext != null) {
+                        val next = MatchTrieNode(parent, copyNext)
+                        prev._nextSibling = next
+                        prev = next
+                        copyNext = copyNext.nextSibling?.firstAlive()
+                    }
+
+                    this._firstChild = first
+                }
+            }
+
+            protected fun buildNode(siblings: Iterable<MatchTrieNode>) : MatchTrieNode? {
+                var first: MatchTrieNode? = null
+                var prev: MatchTrieNode? = null
+                for (next in siblings) {
+                    if (first == null) {
+                        first = next
+                    }
+                    prev?._nextSibling = next
+                    prev = next
+                }
+
+                return first
+            }
+
         }
 
         private inner class RootMatchTrieNode(copyFrom: RootMatchTrieNode? = null) : BaseMatchTrieNode() {
 
             init {
-                copyFrom?._firstChild?.firstAlive()?.let { copyFirst ->
-
-                    var first = MatchTrieNode(null, copyFirst)
-                    var prev = first
-                    var copyNext = copyFirst._nextSibling?.firstAlive()
-
-                    while (copyNext != null) {
-                        val next = MatchTrieNode(null, copyNext)
-                        prev._nextSibling = next
-                        prev = next
-                        copyNext = copyNext._nextSibling?.firstAlive()
-                    }
-                    
-                    this._firstChild = first
-
-                }
+                if (copyFrom != null) { copyChildren(copyFrom, null) }
             }
 
             val firstChild: MatchTrieNode?
                 get() {
                     if (_firstChild == null) {
-                        this._firstChild = buildRoots()
+                        this._firstChild = buildNode(calcRoots())
                     }
                     return _firstChild
                 }
 
-            private fun buildRoots(): MatchTrieNode? {
-                var first: MatchTrieNode? = null
-                var prev: MatchTrieNode? = null
-                for ((idx, cst) in keptConstraints.withIndex()) {
-                    if (cst.probablyMatches(activeOcc)) {
-                        val next = MatchTrieNode(null, true, cst, activeOcc, idx)
-                        if (first == null) {
-                            first = next
-                        }
-                        prev?._nextSibling = next
-                        prev = next
+            private fun calcRoots(): Iterable<MatchTrieNode> {
+                return profiler.profile<Iterable<MatchTrieNode>>("partialMatch_calcRoots") {
+
+                    keptConstraints.withIndex().filter {(_, cst) ->
+                        cst.probablyMatches(activeOcc)}.map {(idx, cst) ->
+                        MatchTrieNode(null, true, cst, activeOcc, idx)
+                    } +
+                    discardedConstraints.withIndex().filter {(_, cst) ->
+                        cst.probablyMatches(activeOcc)}.map {(idx, cst) ->
+                        MatchTrieNode(null, false, cst, activeOcc, idx)
                     }
+                    
                 }
-                for ((idx, cst) in discardedConstraints.withIndex()) {
-                    if (cst.probablyMatches(activeOcc)) {
-                        val next = MatchTrieNode(null, false, cst, activeOcc, idx)
-                        if (first == null) {
-                            first = next
-                        }
-                        prev?._nextSibling = next
-                        prev = next
-                    }
-                }
-                return first
             }
 
         }
@@ -257,8 +248,21 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
             constructor(parent: MatchTrieNode?, copyFrom: MatchTrieNode) :
                 this(parent, copyFrom.keepConstraint, copyFrom.constraint, copyFrom.occurrence, copyFrom.index)
             {
-                copyChildren(copyFrom)
+                copyChildren(copyFrom, this)
             }
+
+            val firstChild: MatchTrieNode?
+                get() {
+                    if (_firstChild == null) {
+                        this._firstChild = buildNode(calcChildren())
+                    }
+                    return _firstChild
+                }
+
+            var _nextSibling: MatchTrieNode? = null
+
+            val nextSibling: MatchTrieNode?
+                get() = _nextSibling
 
             private var _isSeen: Boolean = false
 
@@ -295,29 +299,6 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 this._isSeen = true
             }
 
-            val firstChild: MatchTrieNode?
-                get() {
-                    if (_firstChild == null) {
-                        var first: MatchTrieNode? = null
-                        var prev: MatchTrieNode? = null
-                        for (next in calcChildren()) {
-                            if (first == null) {
-                                first = next
-                            }
-                            prev?._nextSibling = next
-                            prev = next
-                        }
-
-                        this._firstChild = first
-                    }
-                    return _firstChild
-                }
-
-            var _nextSibling: MatchTrieNode? = null
-
-            val nextSibling: MatchTrieNode?
-                get() = _nextSibling
-
             private fun calcChildren(): Iterable<MatchTrieNode> {
                 val nextSlots = if (!relatedFirstVacantSlots.isEmpty) relatedFirstVacantSlots else vacantSlots
                 val nextSlot = nextSlots.nextSetBit(0)
@@ -339,7 +320,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                         Result.DEFINITIVE   ->  parent
                         Result.NONE         ->  this
                         Result.INCONCLUSIVE ->  null
-                    }?.forEachInPath { mtn -> mtn._isSeen = true }
+                    }?.forEachInPath { mtn -> mtn.setSeen() }
 
                     auxOccurrences.map { auxOcc -> MatchTrieNode(this, keep, nextCst, auxOcc, nextIdx) }
                 }
@@ -385,28 +366,10 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 }
             }
 
-            private fun copyChildren(copyFrom: MatchTrieNode) {
-                copyFrom._firstChild?.firstAlive()?.let { copyFirst ->
-
-                    val first = MatchTrieNode(this, copyFirst)
-                    var prev = first
-                    var copyNext = copyFirst._nextSibling?.firstAlive()
-
-                    while (copyNext != null) {
-                        val next = MatchTrieNode(this, copyNext)
-                        prev._nextSibling = next
-                        prev = next
-                        copyNext = copyNext._nextSibling?.firstAlive()
-                    }
-
-                    this._firstChild = first
-                }
-            }
-
             fun firstAlive(): MatchTrieNode? {
                 var fca: MatchTrieNode? = this
                 while (!(fca?.occurrence?.isAlive() ?: true)) {
-                    fca = fca?._nextSibling
+                    fca = fca?.nextSibling
                 }
                 return fca
             }
@@ -447,7 +410,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
 
     }
 
-    private fun Constraint.probablyMatches(occ: ConstraintOccurrence): Boolean {
+    fun Constraint.probablyMatches(occ: ConstraintOccurrence): Boolean {
         if (this.symbol() != occ.constraint().symbol()) { return false }
 
         val cstArgIt = this.arguments().iterator()
