@@ -7,10 +7,11 @@ This project is made with [JetBrains MPS](https://www.jetbrains.com/mps/) using 
 
 ## Instructions
 
-1. Install the latest version of [JetBrains MPS](https://www.jetbrains.com/mps/download) (2017.1)
+1. Install the latest version of [JetBrains MPS](https://www.jetbrains.com/mps/download) (latest release)
 2. Download the type checking plugin from [this](https://github.com/fisakov/constraints-typechecking) project (see downloads for the latest release)
 3. Install the plugin to your local drive (example for macOS): 
 
-    `unzip typechecking-0.1.zip -d ~/Library/Application\ Support/MPS2017.1/`
+    `unzip typechecking-0.2.zip -d ~/Library/Application\ Support/MPS2017.2/`
 
 4. Clone this repository and open the project with MPS
+5. Execute 'Rebuild Project'
