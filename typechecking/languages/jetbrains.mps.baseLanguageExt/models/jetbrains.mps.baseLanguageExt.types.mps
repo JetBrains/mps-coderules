@@ -20627,6 +20627,70 @@
         </node>
       </node>
     </node>
+    <node concept="AVZhu" id="GWYJuVSHfV" role="3ArX_J">
+      <property role="TrG5h" value="hasBound_captureOf" />
+      <node concept="3Aq9E8" id="GWYJuVSHjY" role="3otmyu">
+        <node concept="3I6sU6" id="GWYJuVSHjZ" role="3Ip0Jz">
+          <node concept="3I6s7M" id="GWYJuVSJeg" role="3I6sU7">
+            <node concept="3Aqt3T" id="GWYJuVSJef" role="3I6s78">
+              <ref role="3AqCNq" node="3Qp4N06bUPu" resolve="convertsTo" />
+              <node concept="a7P8L" id="GWYJuVSJel" role="3AunhB">
+                <ref role="a7OzE" node="GWYJuVSJaJ" resolve="CapUBnd" />
+              </node>
+              <node concept="a7P8L" id="GWYJuVSJet" role="3AunhB">
+                <ref role="a7OzE" node="GWYJuVSHj5" resolve="Bnd" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Aq93q" id="GWYJuVSHiD" role="3orSU4">
+        <node concept="3I6sU6" id="GWYJuVSHiE" role="3Ip0Jz">
+          <node concept="3I6s7M" id="GWYJuVSHiI" role="3I6sU7">
+            <node concept="3Aqt3T" id="GWYJuVSHiH" role="3I6s78">
+              <ref role="3AqCNq" node="5310cdpUCuT" resolve="hasBound" />
+              <node concept="1uarlV" id="GWYJuVSHjp" role="3AunhB">
+                <node concept="a7P8L" id="GWYJuVSHjj" role="1uarlU">
+                  <ref role="a7OzE" node="GWYJuVSHiN" resolve="CapOfType" />
+                </node>
+                <node concept="1Q4cc8" id="GWYJuVSHj_" role="1uarlW">
+                  <ref role="1nfQt" node="5310cdpGJ3u" resolve="captureOfType" />
+                  <node concept="1jVxb" id="GWYJuVSJ9W" role="1jUmO" />
+                  <node concept="1RziaG" id="GWYJuVSJa3" role="1Ryyee">
+                    <ref role="1RzibV" node="5310cdpGJec" resolve="ubound" />
+                    <node concept="3AP2Rn" id="GWYJuVSJa4" role="1RzmR7">
+                      <node concept="3clFbS" id="GWYJuVSJa5" role="16YjZG">
+                        <node concept="3clFbF" id="GWYJuVSJba" role="3cqZAp">
+                          <node concept="1nq8_$" id="GWYJuVSJc3" role="3clFbG">
+                            <node concept="a7P8L" id="GWYJuVSJc1" role="1nq8_t">
+                              <ref role="a7OzE" node="GWYJuVSJaJ" resolve="CapUBnd" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="a7P8L" id="GWYJuVSHjQ" role="3AunhB">
+                <ref role="a7OzE" node="GWYJuVSHj5" resolve="Bnd" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3NuqgR" id="GWYJuVSHiM" role="3Nuqhd">
+          <node concept="aZer4" id="GWYJuVSHiN" role="3XD1gS">
+            <property role="TrG5h" value="CapOfType" />
+          </node>
+          <node concept="aZer4" id="GWYJuVSJaJ" role="3XD1gS">
+            <property role="TrG5h" value="CapUBnd" />
+          </node>
+          <node concept="aZer4" id="GWYJuVSHj5" role="3XD1gS">
+            <property role="TrG5h" value="Bnd" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="AVZhu" id="Co5va1TPhC" role="3ArX_J">
       <property role="TrG5h" value="hasBound_primitive" />
       <node concept="3Aq9E8" id="Co5va1TPhD" role="3otmyu">
