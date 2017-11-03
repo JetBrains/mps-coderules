@@ -553,6 +553,11 @@ class TestMatcher {
                     co.arguments().any { it is Logical<*> && it.isBound && it.findRoot() == logical.findRoot() }
                 }
 
+            override fun forLogicalAndConstraint(logical: Logical<*>, cst: Constraint): Iterable<ConstraintOccurrence> =
+                stored.filter { co ->
+                    co.arguments().any { it is Logical<*> && it.isBound && it.findRoot() == logical.findRoot() }
+                }
+
             override fun forTerm(term: Term): Iterable<ConstraintOccurrence> =
                 stored.filter { co ->
                     co.arguments().any { it is Term && Unification.unify(it, term).isSuccessful  }

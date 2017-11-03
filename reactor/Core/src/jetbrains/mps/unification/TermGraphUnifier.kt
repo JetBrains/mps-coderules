@@ -58,7 +58,7 @@ class TermGraphUnifier {
         val EMPTY =TIntArrayList.wrap(kotlin.IntArray(0))
     }
 
-    private lateinit var wrapper: TermWrapper
+    private var wrapper: TermWrapper
 
     private var failureCause: Substitution.FailureCause = Substitution.FailureCause.UKNOWN
     private var failureDetails = emptyArray<Any?>()
@@ -238,15 +238,17 @@ class TermGraphUnifier {
         var repr = innerClass[t]
         if (repr == t) { return repr }
 
-        // find representative and compress paths
-        val path = ArrayList<Int>()
-        path.add(t)
-        while (repr != innerClass[repr]) {
-            path.add(repr)
-            repr = innerClass[repr]
-        }
-        for (p in path) {
-            innerClass[p] = repr
+        if (repr != innerClass[repr]) {
+            // find representative and compress paths
+            val path = TIntArrayList()
+            path.add(t)
+            while (repr != innerClass[repr]) {
+                path.add(repr)
+                repr = innerClass[repr]
+            }
+            for (p in path) {
+                innerClass[p] = repr
+            }
         }
 
         return repr

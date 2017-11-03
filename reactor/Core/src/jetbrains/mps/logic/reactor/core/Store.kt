@@ -72,6 +72,8 @@ interface OccurrenceIndex {
 
     fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence>
 
+    fun forLogicalAndConstraint(logical: Logical<*>, cst:Constraint): Iterable<ConstraintOccurrence>
+
     fun forTerm(term: Term): Iterable<ConstraintOccurrence>
 
     fun forTermAndConstraint(term: Term, cst: Constraint): Iterable<ConstraintOccurrence>
@@ -255,6 +257,20 @@ class Store : LogicalObserver, OccurrenceIndex {
 
     override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> {
         return (symbol2occurrences[symbol] ?: emptySet()).filter { co -> co.isStored() }
+    }
+
+    override fun forLogicalAndConstraint(logical: Logical<*>, cst: Constraint): Iterable<ConstraintOccurrence> {
+        return if (logical.isBound) {
+            val value = logical.findRoot().value()
+            when (value) {
+                is Term     -> forTermAndConstraint(value, cst)
+                is Any      -> forValue(value)
+                else        -> throw NullPointerException()
+            }
+
+        } else {
+            (logical2occurrences[IdWrapper(logical.findRoot())] ?: emptySet()).filter { co -> co.isStored() }
+        }
     }
 
     override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> {

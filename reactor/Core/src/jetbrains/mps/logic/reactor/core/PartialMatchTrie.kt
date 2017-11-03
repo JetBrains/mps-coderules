@@ -336,7 +336,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                     val fromArgs = ArrayList<ConstraintOccurrence>(4)
                     for (arg in metaInstances(cst.arguments()) + cst.arguments().filter { arg -> !(arg is MetaLogical<*>) }) {
                         when (arg) {
-                            is Logical<*>   ->  fromArgs.addAll(occIndex.forLogical(arg))
+                            is Logical<*>   ->  fromArgs.addAll(occIndex.forLogicalAndConstraint(arg, cst))
 
                             is Term         ->  fromArgs.addAll(occIndex.forTermAndConstraint(arg, cst))
 
