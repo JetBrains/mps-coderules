@@ -77,27 +77,21 @@ class Match(val rule: Rule,
         object : LogicalContext {
 
             // invariant: the variables in substitution bindings can only be instances of MetaLogical
-            val meta2value = substitution.bindings().map { b ->
+            val meta2subs = substitution.bindings().map { b ->
                 (b.`var`().symbol() as MetaLogical<Any>).to(b.term().toValue())
             }.toMap(HashMap<MetaLogical<*>, Any?>())
 
             val meta2logical = HashMap<MetaLogical<*>, Logical<*>>()
 
-            override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V> {
-                if (!meta2logical.containsKey(metaLogical)) {
-                    if (meta2value.containsKey(metaLogical)) {
-                        val value = meta2value[metaLogical]
-                        meta2logical[metaLogical] = when (value) {
-                            is Logical<*>   -> value
-                            is LogicalOwner -> value.logical()
-                            else            -> LogicalImpl(value)
-                        }
-                    } else {
-                        meta2logical[metaLogical] = metaLogical.logical()
+            override fun <V : Any> variable(meta: MetaLogical<V>): Logical<V> =
+                (meta2logical[meta] ?: meta2subs[meta]?.let { value ->
+                    when (value) {
+                        is Logical<*> -> value
+                        is LogicalOwner -> value.logical()
+                        else -> LogicalImpl(value)
                     }
-                }
-                return meta2logical[metaLogical] as Logical<V>
-            }
+                } ?: meta.logical().also {
+                    logical -> meta2logical[meta] = logical }) as Logical<V>
 
         }
     }
