@@ -525,6 +525,9 @@
       <property role="IQ2ns" value="5372587443968983820" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="PrWs8" id="1HWyn8iMc5Z" role="PzmwI">
+      <ref role="PrY4T" node="1HWyn8iLEBo" resolve="LateParameter" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4EfgX2ET3GH">
     <property role="3GE5qa" value="rule" />
@@ -1490,6 +1493,26 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="PrWs8" id="1HWyn8iMa37" role="PzmwI">
+      <ref role="PrY4T" node="1HWyn8iLEBo" resolve="LateParameter" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1HWyn8iJ_xB">
+    <property role="EcuMT" value="1980609059169917031" />
+    <property role="TrG5h" value="CopyItem" />
+    <property role="34LRSv" value="copyOf" />
+    <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="1HWyn8iJ_Iq" role="1TKVEi">
+      <property role="IQ2ns" value="1980609059169917850" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="origin" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1HWyn8iLEBo">
+    <property role="EcuMT" value="1980609059170462168" />
+    <property role="TrG5h" value="LateParameter" />
   </node>
 </model>
 

@@ -13,6 +13,7 @@
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.typesystem2.aspect)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
+    <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -105,9 +106,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-    </language>
-    <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="1564179198502666296" name="jetbrains.mps.logic.structure.LogicalType" flags="ig" index="26uTi9" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -476,7 +474,12 @@
       </node>
       <node concept="37vLTG" id="60NbDCXG$nn" role="3clF46">
         <property role="TrG5h" value="logical" />
-        <node concept="26uTi9" id="60NbDCXG$no" role="1tU5fm" />
+        <node concept="3uibUv" id="1HWyn8j9WNN" role="1tU5fm">
+          <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+          <node concept="3uibUv" id="1HWyn8j9WQv" role="11_B2D">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="60NbDCXG$np" role="3clF46">
         <property role="TrG5h" value="session" />
@@ -502,7 +505,12 @@
       </node>
       <node concept="37vLTG" id="1eKXYsjvsWL" role="3clF46">
         <property role="TrG5h" value="logical" />
-        <node concept="26uTi9" id="1eKXYsjvsWM" role="1tU5fm" />
+        <node concept="3uibUv" id="1HWyn8j9WS8" role="1tU5fm">
+          <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+          <node concept="3uibUv" id="1HWyn8j9WVd" role="11_B2D">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="1eKXYsjvsWN" role="3clF46">
         <property role="TrG5h" value="session" />

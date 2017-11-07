@@ -228,9 +228,6 @@
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
-    <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="1564179198502666296" name="jetbrains.mps.logic.structure.LogicalType" flags="ig" index="26uTi9" />
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
@@ -2563,7 +2560,12 @@
       <node concept="37vLTG" id="18kNIl1wWhK" role="3clF46">
         <property role="TrG5h" value="logical" />
         <property role="3TUv4t" value="true" />
-        <node concept="26uTi9" id="18kNIl1wWkp" role="1tU5fm" />
+        <node concept="3uibUv" id="1HWyn8j8RX2" role="1tU5fm">
+          <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+          <node concept="3uibUv" id="1HWyn8j8S22" role="11_B2D">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="18kNIl1x7Wn" role="3clF46">
         <property role="TrG5h" value="inputNode" />
@@ -2583,7 +2585,12 @@
       <node concept="37vLTG" id="4MEOIDFgV3b" role="3clF46">
         <property role="TrG5h" value="logical" />
         <property role="3TUv4t" value="true" />
-        <node concept="26uTi9" id="4MEOIDFgV3c" role="1tU5fm" />
+        <node concept="3uibUv" id="1HWyn8j8S3X" role="1tU5fm">
+          <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+          <node concept="3uibUv" id="1HWyn8j8S7p" role="11_B2D">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="4MEOIDFgZnJ" role="3clF46">
         <property role="TrG5h" value="typeTplId" />
