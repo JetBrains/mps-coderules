@@ -32,9 +32,9 @@ import java.util.*
 
 class RuleIndex : Iterable<Rule> {
 
-    private val allSymbol2valueIndex = HashMap<ConstraintSymbol, ValueIndex>()
-
     private val primarySymbol2valueIndex = HashMap<ConstraintSymbol, ValueIndex>()
+
+    private val auxSymbol2valueIndex = HashMap<ConstraintSymbol, ValueIndex>()
 
     private val tag2rule = LinkedHashMap<String, Rule>()
 
@@ -51,7 +51,7 @@ class RuleIndex : Iterable<Rule> {
 
     fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> =
         primarySymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?:
-            (allSymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?: emptyList())
+            (auxSymbol2valueIndex.get(occ.constraint().symbol())?.select(occ) ?: emptyList())
 
     override fun iterator(): Iterator<Rule> = tag2rule.values.iterator()
 
@@ -62,17 +62,16 @@ class RuleIndex : Iterable<Rule> {
             .forEach { symbol -> primarySymbol2valueIndex.getOrPut(symbol) { ValueIndex(symbol) } }
 
         for (h in handlers) {
-            val hPrimSyms = h.primarySymbols().toSet()
+            val primSymbols = h.primarySymbols().toSet()
             for (r in h.rules()) {
                 for (c in (r.headKept() + r.headReplaced())) {
                     val symbol = c.symbol()
-                    if (symbol in hPrimSyms) {
+                    if (symbol in primSymbols) {
                         primarySymbol2valueIndex[symbol]?.update(r, c)
+                        
+                    } else  {
+                        auxSymbol2valueIndex.getOrPut(symbol) { ValueIndex(symbol) }.update(r, c)
                     }
-                    else if (hPrimSyms.isEmpty()) {
-                        allSymbol2valueIndex.getOrPut(symbol) { ValueIndex(symbol) }.update(r, c)
-                    }
-                    // else ignore the constraint -- it's not meant to be processed by this handler, as it is not a primary
                 }
             }
         }
