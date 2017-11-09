@@ -621,9 +621,6 @@
       <concept id="6086839168138086051" name="jetbrains.mps.lang.typesystem2.structure.TermTable" flags="ng" index="1HGPq">
         <child id="6086839168138086052" name="termDeclaration" index="1HGPt" />
       </concept>
-      <concept id="2876899482279399435" name="jetbrains.mps.lang.typesystem2.structure.ConstraintReference" flags="ng" index="8a1Nt">
-        <reference id="2876899482279399436" name="constraint" index="8a1Nq" />
-      </concept>
       <concept id="6928531011217292466" name="jetbrains.mps.lang.typesystem2.structure.IsfreeVariableConstraint" flags="ng" index="2aLmEc" />
       <concept id="6928531011217258898" name="jetbrains.mps.lang.typesystem2.structure.LogicVariableConstraint" flags="ng" index="2aLIYG">
         <child id="6928531011217290187" name="variable" index="2aLmnP" />
@@ -644,7 +641,7 @@
       </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.typesystem2.structure.Handler" flags="ng" index="AVZre">
         <property id="2316688792951788157" name="stage" index="3J8TDj" />
-        <child id="2876899482279399450" name="primary" index="8a1Nc" />
+        <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="7368070394767441299" name="rule" index="3ArX_J" />
       </concept>
       <concept id="5524459797191301244" name="jetbrains.mps.lang.typesystem2.structure.TermDeclarationParameter" flags="ng" index="BakEm">
@@ -747,9 +744,6 @@
       <concept id="7368070394766966388" name="jetbrains.mps.lang.typesystem2.structure.Body" flags="ng" index="3Aq9E8" />
       <concept id="7368070394766978092" name="jetbrains.mps.lang.typesystem2.structure.EmitConstraintStatement" flags="ng" index="3Aqczg">
         <child id="7368070394767031348" name="constraint" index="3Aqpz8" />
-      </concept>
-      <concept id="7368070394767065799" name="jetbrains.mps.lang.typesystem2.structure.Solver" flags="ng" index="3AqmoV">
-        <child id="7368070394767068701" name="template" index="3AqmFx" />
       </concept>
       <concept id="7368070394767067636" name="jetbrains.mps.lang.typesystem2.structure.ConstraintDeclaration" flags="ng" index="3AqmO8">
         <property id="7368070394767096851" name="arity" index="3AqDzJ" />
@@ -1778,293 +1772,6 @@
       </node>
     </node>
   </node>
-  <node concept="3AqmoV" id="3Qp4N06bUPp">
-    <property role="TrG5h" value="StandardConstraints" />
-    <node concept="3AqmO8" id="7nkyKX7rINS" role="3AqmFx">
-      <property role="TrG5h" value="main" />
-      <property role="3AqDzJ" value="0" />
-      <node concept="1zAsnw" id="7nkyKX7rIPv" role="lGtFl">
-        <node concept="3SKdUq" id="7nkyKX7rIPw" role="27qylF">
-          <property role="3SKdUp" value="Main entry point" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="5310cdpUCuT" role="3AqmFx">
-      <property role="TrG5h" value="hasBound" />
-      <node concept="1zAUYm" id="5310cdpUCwS" role="1zAUyy">
-        <property role="TrG5h" value="var" />
-      </node>
-      <node concept="1zAUYm" id="5310cdpUCwP" role="1zAUyy">
-        <property role="TrG5h" value="bnd" />
-      </node>
-      <node concept="1zAsnw" id="5310cdpUCwV" role="lGtFl">
-        <node concept="3SKdUq" id="5310cdpUCwW" role="27qylF">
-          <property role="3SKdUp" value="indicates a bound. used only on inference variables" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="5310cdpUCx3" role="3AqmFx">
-      <property role="TrG5h" value="intro_hasBound" />
-      <node concept="1zAUYm" id="5310cdpUCz6" role="1zAUyy">
-        <property role="TrG5h" value="var" />
-      </node>
-      <node concept="1zAUYm" id="5310cdpUCz8" role="1zAUyy">
-        <property role="TrG5h" value="bnd" />
-      </node>
-      <node concept="1zAsnw" id="5310cdpUCz2" role="lGtFl">
-        <node concept="3SKdUq" id="5310cdpUCz3" role="27qylF">
-          <property role="3SKdUp" value="introduce bound" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="3Qp4N06bUPt" role="3AqmFx">
-      <property role="TrG5h" value="varname" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="2shrukTHOAq" role="1zAUyy">
-        <property role="TrG5h" value="variable" />
-      </node>
-      <node concept="1zAUYm" id="2shrukTHOAs" role="1zAUyy">
-        <property role="TrG5h" value="name" />
-      </node>
-      <node concept="1zAsnw" id="2shrukTJtQS" role="lGtFl">
-        <node concept="3SKdUq" id="2shrukTJtQT" role="27qylF">
-          <property role="3SKdUp" value="presence of this constraint in pool indicates that its first argument is Java typesystem variable with some name" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="3Qp4N06bUPu" role="3AqmFx">
-      <property role="TrG5h" value="convertsTo" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="5bC6UNlvkxp" role="1zAUyy">
-        <property role="TrG5h" value="subType" />
-      </node>
-      <node concept="1zAUYm" id="5bC6UNlvkxr" role="1zAUyy">
-        <property role="TrG5h" value="superType" />
-      </node>
-      <node concept="1zAsnw" id="5bC6UNlyGir" role="lGtFl">
-        <node concept="3SKdUq" id="5bC6UNlyGis" role="27qylF">
-          <property role="3SKdUp" value="asserts that subtyping relation is necessary for correctness of some program fragment" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="ONSj15RYDg" role="3AqmFx">
-      <property role="TrG5h" value="compatibleWith" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="ONSj15RYDh" role="1zAUyy">
-        <property role="TrG5h" value="subType" />
-      </node>
-      <node concept="1zAUYm" id="ONSj15RYDi" role="1zAUyy">
-        <property role="TrG5h" value="superType" />
-      </node>
-      <node concept="1zAsnw" id="ONSj15RYDj" role="lGtFl">
-        <node concept="3SKdUq" id="ONSj15RYDk" role="27qylF">
-          <property role="3SKdUp" value="equivalent to convertsTo except for any type compatible with void type" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="2CsZ2XTe9r" role="3AqmFx">
-      <property role="TrG5h" value="coerce" />
-      <property role="3AqDzJ" value="3" />
-      <node concept="1zAUYm" id="2CsZ2XTh3z" role="1zAUyy">
-        <property role="TrG5h" value="coerced" />
-      </node>
-      <node concept="1zAUYm" id="2CsZ2XTeae" role="1zAUyy">
-        <property role="TrG5h" value="type" />
-      </node>
-      <node concept="1zAUYm" id="2CsZ2XTeag" role="1zAUyy">
-        <property role="TrG5h" value="domain" />
-      </node>
-      <node concept="1zAsnw" id="2CsZ2XTeaj" role="lGtFl">
-        <node concept="3SKdUq" id="2CsZ2XTeak" role="27qylF">
-          <property role="3SKdUp" value="coerce the type to the specific domain" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="6KkyQm4aRV3" role="3AqmFx">
-      <property role="TrG5h" value="containedIn" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="5bC6UNlvyXp" role="1zAUyy">
-        <property role="TrG5h" value="subClassifierType" />
-      </node>
-      <node concept="1zAUYm" id="5bC6UNlvyXn" role="1zAUyy">
-        <property role="TrG5h" value="superClassifierType" />
-      </node>
-      <node concept="1zAsnw" id="5bC6UNlyGiv" role="lGtFl">
-        <node concept="3SKdUq" id="5bC6UNlyGiw" role="27qylF">
-          <property role="3SKdUp" value="asserts that classifier contaiment relation is necessary for correctness of some program fragment" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="3wxtToEiJ2p" role="3AqmFx">
-      <property role="TrG5h" value="capture" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="3wxtToEiJ2q" role="1zAUyy">
-        <property role="TrG5h" value="captured" />
-      </node>
-      <node concept="1zAUYm" id="3wxtToEiJ2r" role="1zAUyy">
-        <property role="TrG5h" value="type" />
-      </node>
-      <node concept="1zAsnw" id="3wxtToEiJ2s" role="lGtFl">
-        <node concept="3SKdUq" id="3wxtToEiJ2t" role="27qylF">
-          <property role="3SKdUp" value="capture conversion" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="3wxtToEiJ2j" role="3AqmFx">
-      <property role="TrG5h" value="captureVar" />
-      <property role="3AqDzJ" value="3" />
-      <node concept="1zAUYm" id="3wxtToEiJ2k" role="1zAUyy">
-        <property role="TrG5h" value="capturedVar" />
-      </node>
-      <node concept="1zAUYm" id="3wxtToEiJ2l" role="1zAUyy">
-        <property role="TrG5h" value="type" />
-      </node>
-      <node concept="1zAUYm" id="3wxtToEiJ2m" role="1zAUyy">
-        <property role="TrG5h" value="bound" />
-      </node>
-      <node concept="1zAsnw" id="3wxtToEiJ2n" role="lGtFl">
-        <node concept="3SKdUq" id="3wxtToEiJ2o" role="27qylF">
-          <property role="3SKdUp" value="used by the capture conversion." />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="6txXQySZxcH" role="3AqmFx">
-      <property role="TrG5h" value="box" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="6txXQySZxel" role="1zAUyy">
-        <property role="TrG5h" value="boxed" />
-      </node>
-      <node concept="1zAUYm" id="6txXQySZxen" role="1zAUyy">
-        <property role="TrG5h" value="type" />
-      </node>
-    </node>
-    <node concept="3AqmO8" id="2q0gzCFHesp" role="3AqmFx">
-      <property role="TrG5h" value="lub" />
-      <property role="3AqDzJ" value="3" />
-      <node concept="1zAUYm" id="4nb5svirF8" role="1zAUyy">
-        <property role="TrG5h" value="Res" />
-      </node>
-      <node concept="1zAUYm" id="4nb5svirFa" role="1zAUyy">
-        <property role="TrG5h" value="TypeA" />
-      </node>
-      <node concept="1zAUYm" id="4nb5svirFd" role="1zAUyy">
-        <property role="TrG5h" value="TypeB" />
-      </node>
-      <node concept="1zAsnw" id="4nb5svirER" role="lGtFl">
-        <node concept="3SKdUq" id="4nb5svirES" role="27qylF">
-          <property role="3SKdUp" value="least upper bound" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="4nb5svirFh" role="3AqmFx">
-      <property role="TrG5h" value="glb" />
-      <property role="3AqDzJ" value="3" />
-      <node concept="1zAUYm" id="4nb5svirGN" role="1zAUyy">
-        <property role="TrG5h" value="Res" />
-      </node>
-      <node concept="1zAUYm" id="4nb5svirGP" role="1zAUyy">
-        <property role="TrG5h" value="TypeA" />
-      </node>
-      <node concept="1zAUYm" id="4nb5svirGS" role="1zAUyy">
-        <property role="TrG5h" value="TypeB" />
-      </node>
-      <node concept="1zAsnw" id="4nb5svirGW" role="lGtFl">
-        <node concept="3SKdUq" id="4nb5svirGX" role="27qylF">
-          <property role="3SKdUp" value="greatest lower bound" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="2q0gzCFHojT" role="3AqmFx">
-      <property role="TrG5h" value="subtypePaths" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="1_2bK$p0sjE" role="1zAUyy">
-        <property role="TrG5h" value="Result" />
-      </node>
-      <node concept="1zAUYm" id="1_2bK$p0sjG" role="1zAUyy">
-        <property role="TrG5h" value="ClassAnchor" />
-      </node>
-    </node>
-    <node concept="3AqmO8" id="1_2bK$p16Hl" role="3AqmFx">
-      <property role="TrG5h" value="promote" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="1_2bK$p16I3" role="1zAUyy">
-        <property role="TrG5h" value="Subtype" />
-      </node>
-      <node concept="1zAUYm" id="1_2bK$p16I5" role="1zAUyy">
-        <property role="TrG5h" value="Supertype" />
-      </node>
-      <node concept="1zAsnw" id="1_2bK$p16I8" role="lGtFl">
-        <node concept="3SKdUq" id="1_2bK$p16I9" role="27qylF">
-          <property role="3SKdUp" value="proves the subtyping conversion from Subtype to Supertype" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="WauyOOvQCY" role="3AqmFx">
-      <property role="TrG5h" value="dpromote" />
-      <property role="3AqDzJ" value="3" />
-      <node concept="1zAUYm" id="WauyOOvQDL" role="1zAUyy">
-        <property role="TrG5h" value="Subtype" />
-      </node>
-      <node concept="1zAUYm" id="WauyOOvQDN" role="1zAUyy">
-        <property role="TrG5h" value="Supertype" />
-      </node>
-      <node concept="1zAUYm" id="WauyOOvQDQ" role="1zAUyy">
-        <property role="TrG5h" value="SubtypePath" />
-      </node>
-      <node concept="1zAsnw" id="WauyOOvQDU" role="lGtFl">
-        <node concept="3SKdUq" id="WauyOOvQDV" role="27qylF">
-          <property role="3SKdUp" value="proves the subtyping conversion from Subtype to Supertype given the raw subtypes path" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="ohf6zGDp2e" role="3AqmFx">
-      <property role="TrG5h" value="primSubtype" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="ohf6zGDp3u" role="1zAUyy">
-        <property role="TrG5h" value="PrimSubtype" />
-      </node>
-      <node concept="1zAUYm" id="ohf6zGDp3w" role="1zAUyy">
-        <property role="TrG5h" value="PrimSupertype" />
-      </node>
-      <node concept="1zAsnw" id="ohf6zGDp3z" role="lGtFl">
-        <node concept="3SKdUq" id="ohf6zGDp3$" role="27qylF">
-          <property role="3SKdUp" value="primitive subtyping relation" />
-        </node>
-      </node>
-    </node>
-    <node concept="3AqmO8" id="4JRKVCvfdUU" role="3AqmFx">
-      <property role="TrG5h" value="union" />
-      <property role="3AqDzJ" value="2" />
-      <node concept="1zAUYm" id="4MEOIDFUy1B" role="1zAUyy">
-        <property role="TrG5h" value="UnionType" />
-      </node>
-      <node concept="1zAUYm" id="4MEOIDFUy1D" role="1zAUyy">
-        <property role="TrG5h" value="Components" />
-      </node>
-    </node>
-    <node concept="3AqmO8" id="6Qzc0KyJGJT" role="3AqmFx">
-      <property role="TrG5h" value="recover" />
-      <node concept="1zAUYm" id="6Qzc0KyJGLv" role="1zAUyy">
-        <property role="TrG5h" value="foo" />
-        <node concept="3Tqbb2" id="5f6wxQ39f0y" role="3gTf24" />
-      </node>
-      <node concept="1zAUYm" id="6Qzc0KyJGLF" role="1zAUyy">
-        <property role="TrG5h" value="bar" />
-      </node>
-    </node>
-    <node concept="3AqmO8" id="20Zoq4kTOFb" role="3AqmFx">
-      <property role="TrG5h" value="recoverAll" />
-    </node>
-    <node concept="3AqmO8" id="1CcQBrPmcRh" role="3AqmFx">
-      <property role="TrG5h" value="typeNode" />
-      <node concept="1zAUYm" id="1CcQBrPmcSX" role="1zAUyy">
-        <property role="TrG5h" value="typeNode" />
-      </node>
-      <node concept="1zAUYm" id="1CcQBrPmcSZ" role="1zAUyy">
-        <property role="TrG5h" value="expression" />
-      </node>
-    </node>
-  </node>
   <node concept="AVZre" id="6qJjpCjlmVR">
     <property role="TrG5h" value="Check" />
     <node concept="AVZhu" id="7nkyKX7rIiH" role="3ArX_J">
@@ -2291,9 +1998,6 @@
   <node concept="AVZre" id="5MHpiylysUh">
     <property role="TrG5h" value="SubtypingPaths" />
     <property role="3GE5qa" value="relation" />
-    <node concept="8a1Nt" id="W6bnNdTlFE" role="8a1Nc">
-      <ref role="8a1Nq" node="2q0gzCFHojT" resolve="subtypePaths" />
-    </node>
     <node concept="AVZhu" id="2q0gzCFIUJ_" role="3ArX_J">
       <property role="TrG5h" value="findSubtypePaths_Classifier" />
       <node concept="3Aq9E8" id="2q0gzCFIUJF" role="3otmyu">
@@ -2848,6 +2552,16 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3AqmO8" id="2q0gzCFHojT" role="8PkJo">
+      <property role="TrG5h" value="subtypePaths" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="1_2bK$p0sjE" role="1zAUyy">
+        <property role="TrG5h" value="Result" />
+      </node>
+      <node concept="1zAUYm" id="1_2bK$p0sjG" role="1zAUyy">
+        <property role="TrG5h" value="ClassAnchor" />
       </node>
     </node>
   </node>
@@ -6505,8 +6219,20 @@
         </node>
       </node>
     </node>
-    <node concept="8a1Nt" id="2TtA2rK44Ys" role="8a1Nc">
-      <ref role="8a1Nq" node="6KkyQm4aRV3" resolve="containedIn" />
+    <node concept="3AqmO8" id="6KkyQm4aRV3" role="8PkJo">
+      <property role="TrG5h" value="containedIn" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="5bC6UNlvyXp" role="1zAUyy">
+        <property role="TrG5h" value="subClassifierType" />
+      </node>
+      <node concept="1zAUYm" id="5bC6UNlvyXn" role="1zAUyy">
+        <property role="TrG5h" value="superClassifierType" />
+      </node>
+      <node concept="1zAsnw" id="5bC6UNlyGiv" role="lGtFl">
+        <node concept="3SKdUq" id="5bC6UNlyGiw" role="27qylF">
+          <property role="3SKdUp" value="asserts that classifier contaiment relation is necessary for correctness of some program fragment" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="AVZre" id="7t5VLKGTNCo">
@@ -8804,11 +8530,35 @@
         </node>
       </node>
     </node>
-    <node concept="8a1Nt" id="2TtA2rK45fv" role="8a1Nc">
-      <ref role="8a1Nq" node="ONSj15RYDg" resolve="compatibleWith" />
+    <node concept="3AqmO8" id="3Qp4N06bUPu" role="8PkJo">
+      <property role="TrG5h" value="convertsTo" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="5bC6UNlvkxp" role="1zAUyy">
+        <property role="TrG5h" value="subType" />
+      </node>
+      <node concept="1zAUYm" id="5bC6UNlvkxr" role="1zAUyy">
+        <property role="TrG5h" value="superType" />
+      </node>
+      <node concept="1zAsnw" id="5bC6UNlyGir" role="lGtFl">
+        <node concept="3SKdUq" id="5bC6UNlyGis" role="27qylF">
+          <property role="3SKdUp" value="asserts that subtyping relation is necessary for correctness of some program fragment" />
+        </node>
+      </node>
     </node>
-    <node concept="8a1Nt" id="2TtA2rK45f$" role="8a1Nc">
-      <ref role="8a1Nq" node="3Qp4N06bUPu" resolve="convertsTo" />
+    <node concept="3AqmO8" id="ONSj15RYDg" role="8PkJo">
+      <property role="TrG5h" value="compatibleWith" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="ONSj15RYDh" role="1zAUyy">
+        <property role="TrG5h" value="subType" />
+      </node>
+      <node concept="1zAUYm" id="ONSj15RYDi" role="1zAUyy">
+        <property role="TrG5h" value="superType" />
+      </node>
+      <node concept="1zAsnw" id="ONSj15RYDj" role="lGtFl">
+        <node concept="3SKdUq" id="ONSj15RYDk" role="27qylF">
+          <property role="3SKdUp" value="equivalent to convertsTo except for any type compatible with void type" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="0oKg$" id="E1U1n2RerB">
@@ -11419,6 +11169,39 @@
         </node>
       </node>
     </node>
+    <node concept="3AqmO8" id="1_2bK$p16Hl" role="8PkJo">
+      <property role="TrG5h" value="promote" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="1_2bK$p16I3" role="1zAUyy">
+        <property role="TrG5h" value="Subtype" />
+      </node>
+      <node concept="1zAUYm" id="1_2bK$p16I5" role="1zAUyy">
+        <property role="TrG5h" value="Supertype" />
+      </node>
+      <node concept="1zAsnw" id="1_2bK$p16I8" role="lGtFl">
+        <node concept="3SKdUq" id="1_2bK$p16I9" role="27qylF">
+          <property role="3SKdUp" value="proves the subtyping conversion from Subtype to Supertype" />
+        </node>
+      </node>
+    </node>
+    <node concept="3AqmO8" id="WauyOOvQCY" role="8PkJo">
+      <property role="TrG5h" value="dpromote" />
+      <property role="3AqDzJ" value="3" />
+      <node concept="1zAUYm" id="WauyOOvQDL" role="1zAUyy">
+        <property role="TrG5h" value="Subtype" />
+      </node>
+      <node concept="1zAUYm" id="WauyOOvQDN" role="1zAUyy">
+        <property role="TrG5h" value="Supertype" />
+      </node>
+      <node concept="1zAUYm" id="WauyOOvQDQ" role="1zAUyy">
+        <property role="TrG5h" value="SubtypePath" />
+      </node>
+      <node concept="1zAsnw" id="WauyOOvQDU" role="lGtFl">
+        <node concept="3SKdUq" id="WauyOOvQDV" role="27qylF">
+          <property role="3SKdUp" value="proves the subtyping conversion from Subtype to Supertype given the raw subtypes path" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="AVZre" id="5_6ImQYgAiy">
     <property role="TrG5h" value="Varname" />
@@ -11500,6 +11283,21 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3AqmO8" id="3Qp4N06bUPt" role="8PkJo">
+      <property role="TrG5h" value="varname" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="2shrukTHOAq" role="1zAUyy">
+        <property role="TrG5h" value="variable" />
+      </node>
+      <node concept="1zAUYm" id="2shrukTHOAs" role="1zAUyy">
+        <property role="TrG5h" value="name" />
+      </node>
+      <node concept="1zAsnw" id="2shrukTJtQS" role="lGtFl">
+        <node concept="3SKdUq" id="2shrukTJtQT" role="27qylF">
+          <property role="3SKdUp" value="presence of this constraint in pool indicates that its first argument is Java typesystem variable with some name" />
         </node>
       </node>
     </node>
@@ -12010,6 +11808,34 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3AqmO8" id="2q0gzCFHesp" role="8PkJo">
+      <property role="TrG5h" value="lub" />
+      <property role="3AqDzJ" value="3" />
+      <node concept="1zAUYm" id="4nb5svirF8" role="1zAUyy">
+        <property role="TrG5h" value="Res" />
+      </node>
+      <node concept="1zAUYm" id="4nb5svirFa" role="1zAUyy">
+        <property role="TrG5h" value="TypeA" />
+      </node>
+      <node concept="1zAUYm" id="4nb5svirFd" role="1zAUyy">
+        <property role="TrG5h" value="TypeB" />
+      </node>
+      <node concept="1zAsnw" id="4nb5svirER" role="lGtFl">
+        <node concept="3SKdUq" id="4nb5svirES" role="27qylF">
+          <property role="3SKdUp" value="least upper bound" />
+        </node>
+      </node>
+    </node>
+    <node concept="3AqmO8" id="4JRKVCvfdUU" role="8PkJo">
+      <property role="TrG5h" value="union" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="4MEOIDFUy1B" role="1zAUyy">
+        <property role="TrG5h" value="UnionType" />
+      </node>
+      <node concept="1zAUYm" id="4MEOIDFUy1D" role="1zAUyy">
+        <property role="TrG5h" value="Components" />
       </node>
     </node>
   </node>
@@ -12540,6 +12366,24 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3AqmO8" id="2CsZ2XTe9r" role="8PkJo">
+      <property role="TrG5h" value="coerce" />
+      <property role="3AqDzJ" value="3" />
+      <node concept="1zAUYm" id="2CsZ2XTh3z" role="1zAUyy">
+        <property role="TrG5h" value="coerced" />
+      </node>
+      <node concept="1zAUYm" id="2CsZ2XTeae" role="1zAUyy">
+        <property role="TrG5h" value="type" />
+      </node>
+      <node concept="1zAUYm" id="2CsZ2XTeag" role="1zAUyy">
+        <property role="TrG5h" value="domain" />
+      </node>
+      <node concept="1zAsnw" id="2CsZ2XTeaj" role="lGtFl">
+        <node concept="3SKdUq" id="2CsZ2XTeak" role="27qylF">
+          <property role="3SKdUp" value="coerce the type to the specific domain" />
         </node>
       </node>
     </node>
@@ -13630,6 +13474,21 @@
         </node>
       </node>
     </node>
+    <node concept="3AqmO8" id="ohf6zGDp2e" role="8PkJo">
+      <property role="TrG5h" value="primSubtype" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="ohf6zGDp3u" role="1zAUyy">
+        <property role="TrG5h" value="PrimSubtype" />
+      </node>
+      <node concept="1zAUYm" id="ohf6zGDp3w" role="1zAUyy">
+        <property role="TrG5h" value="PrimSupertype" />
+      </node>
+      <node concept="1zAsnw" id="ohf6zGDp3z" role="lGtFl">
+        <node concept="3SKdUq" id="ohf6zGDp3$" role="27qylF">
+          <property role="3SKdUp" value="primitive subtyping relation" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="AVZre" id="4nb5svirH4">
     <property role="3GE5qa" value="relation" />
@@ -13926,6 +13785,24 @@
         </node>
       </node>
     </node>
+    <node concept="3AqmO8" id="4nb5svirFh" role="8PkJo">
+      <property role="TrG5h" value="glb" />
+      <property role="3AqDzJ" value="3" />
+      <node concept="1zAUYm" id="4nb5svirGN" role="1zAUyy">
+        <property role="TrG5h" value="Res" />
+      </node>
+      <node concept="1zAUYm" id="4nb5svirGP" role="1zAUyy">
+        <property role="TrG5h" value="TypeA" />
+      </node>
+      <node concept="1zAUYm" id="4nb5svirGS" role="1zAUyy">
+        <property role="TrG5h" value="TypeB" />
+      </node>
+      <node concept="1zAsnw" id="4nb5svirGW" role="lGtFl">
+        <node concept="3SKdUq" id="4nb5svirGX" role="27qylF">
+          <property role="3SKdUp" value="greatest lower bound" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="AVZre" id="6txXQySZxcg">
     <property role="3GE5qa" value="relation" />
@@ -14042,6 +13919,16 @@
         </node>
       </node>
     </node>
+    <node concept="3AqmO8" id="6txXQySZxcH" role="8PkJo">
+      <property role="TrG5h" value="box" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="6txXQySZxel" role="1zAUyy">
+        <property role="TrG5h" value="boxed" />
+      </node>
+      <node concept="1zAUYm" id="6txXQySZxen" role="1zAUyy">
+        <property role="TrG5h" value="type" />
+      </node>
+    </node>
   </node>
   <node concept="AVZre" id="6Qzc0KyJGzD">
     <property role="TrG5h" value="recover" />
@@ -14053,6 +13940,15 @@
           <node concept="3I6s7M" id="20Ay2Veq5h6" role="3I6sU7">
             <node concept="3Aqt3T" id="20Ay2Veq5ha" role="3I6s78">
               <ref role="3AqCNq" node="20Zoq4kTOFb" resolve="recoverAll" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Aq93q" id="1HWyn8jBS$z" role="3orSU4">
+        <node concept="3I6sU6" id="1HWyn8jBS$$" role="3Ip0Jz">
+          <node concept="3I6s7M" id="1HWyn8jBS$C" role="3I6sU7">
+            <node concept="3Aqt3T" id="1HWyn8jBS$B" role="3I6s78">
+              <ref role="3AqCNq" node="7nkyKX7rINS" resolve="main" />
             </node>
           </node>
         </node>
@@ -15791,6 +15687,37 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3AqmO8" id="7nkyKX7rINS" role="8PkJo">
+      <property role="TrG5h" value="main" />
+      <property role="3AqDzJ" value="0" />
+      <node concept="1zAsnw" id="7nkyKX7rIPv" role="lGtFl">
+        <node concept="3SKdUq" id="7nkyKX7rIPw" role="27qylF">
+          <property role="3SKdUp" value="Main entry point" />
+        </node>
+      </node>
+    </node>
+    <node concept="3AqmO8" id="6Qzc0KyJGJT" role="8PkJo">
+      <property role="TrG5h" value="recover" />
+      <node concept="1zAUYm" id="6Qzc0KyJGLv" role="1zAUyy">
+        <property role="TrG5h" value="foo" />
+        <node concept="3Tqbb2" id="5f6wxQ39f0y" role="3gTf24" />
+      </node>
+      <node concept="1zAUYm" id="6Qzc0KyJGLF" role="1zAUyy">
+        <property role="TrG5h" value="bar" />
+      </node>
+    </node>
+    <node concept="3AqmO8" id="20Zoq4kTOFb" role="8PkJo">
+      <property role="TrG5h" value="recoverAll" />
+    </node>
+    <node concept="3AqmO8" id="1CcQBrPmcRh" role="8PkJo">
+      <property role="TrG5h" value="typeNode" />
+      <node concept="1zAUYm" id="1CcQBrPmcSX" role="1zAUyy">
+        <property role="TrG5h" value="typeNode" />
+      </node>
+      <node concept="1zAUYm" id="1CcQBrPmcSZ" role="1zAUyy">
+        <property role="TrG5h" value="expression" />
       </node>
     </node>
   </node>
@@ -20463,11 +20390,38 @@
         </node>
       </node>
     </node>
-    <node concept="8a1Nt" id="3wxtToEiKKK" role="8a1Nc">
-      <ref role="8a1Nq" node="3wxtToEiJ2p" resolve="capture" />
+    <node concept="3AqmO8" id="3wxtToEiJ2p" role="8PkJo">
+      <property role="TrG5h" value="capture" />
+      <property role="3AqDzJ" value="2" />
+      <node concept="1zAUYm" id="3wxtToEiJ2q" role="1zAUyy">
+        <property role="TrG5h" value="captured" />
+      </node>
+      <node concept="1zAUYm" id="3wxtToEiJ2r" role="1zAUyy">
+        <property role="TrG5h" value="type" />
+      </node>
+      <node concept="1zAsnw" id="3wxtToEiJ2s" role="lGtFl">
+        <node concept="3SKdUq" id="3wxtToEiJ2t" role="27qylF">
+          <property role="3SKdUp" value="capture conversion" />
+        </node>
+      </node>
     </node>
-    <node concept="8a1Nt" id="3wxtToEiKMm" role="8a1Nc">
-      <ref role="8a1Nq" node="3wxtToEiJ2j" resolve="captureVar" />
+    <node concept="3AqmO8" id="3wxtToEiJ2j" role="8PkJo">
+      <property role="TrG5h" value="captureVar" />
+      <property role="3AqDzJ" value="3" />
+      <node concept="1zAUYm" id="3wxtToEiJ2k" role="1zAUyy">
+        <property role="TrG5h" value="capturedVar" />
+      </node>
+      <node concept="1zAUYm" id="3wxtToEiJ2l" role="1zAUyy">
+        <property role="TrG5h" value="type" />
+      </node>
+      <node concept="1zAUYm" id="3wxtToEiJ2m" role="1zAUyy">
+        <property role="TrG5h" value="bound" />
+      </node>
+      <node concept="1zAsnw" id="3wxtToEiJ2n" role="lGtFl">
+        <node concept="3SKdUq" id="3wxtToEiJ2o" role="27qylF">
+          <property role="3SKdUp" value="used by the capture conversion." />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="AVZre" id="5310cdpUCzb">
@@ -20970,11 +20924,33 @@
         </node>
       </node>
     </node>
-    <node concept="8a1Nt" id="5310cdpUDdx" role="8a1Nc">
-      <ref role="8a1Nq" node="5310cdpUCx3" resolve="intro_hasBound" />
+    <node concept="3AqmO8" id="5310cdpUCuT" role="8PkJo">
+      <property role="TrG5h" value="hasBound" />
+      <node concept="1zAUYm" id="5310cdpUCwS" role="1zAUyy">
+        <property role="TrG5h" value="var" />
+      </node>
+      <node concept="1zAUYm" id="5310cdpUCwP" role="1zAUyy">
+        <property role="TrG5h" value="bnd" />
+      </node>
+      <node concept="1zAsnw" id="5310cdpUCwV" role="lGtFl">
+        <node concept="3SKdUq" id="5310cdpUCwW" role="27qylF">
+          <property role="3SKdUp" value="indicates a bound. used only on inference variables" />
+        </node>
+      </node>
     </node>
-    <node concept="8a1Nt" id="5310cdpUDds" role="8a1Nc">
-      <ref role="8a1Nq" node="5310cdpUCuT" resolve="hasBound" />
+    <node concept="3AqmO8" id="5310cdpUCx3" role="8PkJo">
+      <property role="TrG5h" value="intro_hasBound" />
+      <node concept="1zAUYm" id="5310cdpUCz6" role="1zAUyy">
+        <property role="TrG5h" value="var" />
+      </node>
+      <node concept="1zAUYm" id="5310cdpUCz8" role="1zAUyy">
+        <property role="TrG5h" value="bnd" />
+      </node>
+      <node concept="1zAsnw" id="5310cdpUCz2" role="lGtFl">
+        <node concept="3SKdUq" id="5310cdpUCz3" role="27qylF">
+          <property role="3SKdUp" value="introduce bound" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
