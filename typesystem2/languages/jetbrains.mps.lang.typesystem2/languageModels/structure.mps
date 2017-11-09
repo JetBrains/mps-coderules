@@ -90,6 +90,14 @@
       <property role="20kJfa" value="primary" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="2vGNdoJLd0b" resolve="ConstraintReference" />
+      <node concept="asaX9" id="1HWyn8jErEj" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="1HWyn8jEsaE" role="1TKVEi">
+      <property role="IQ2ns" value="1980609059185345194" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="constraint" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6p0DfM0asBO" resolve="ConstraintDeclaration" />
     </node>
     <node concept="PrWs8" id="6p0DfM0au2d" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -237,6 +245,7 @@
     <node concept="PrWs8" id="6p0DfM0au4g" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="asaX9" id="1HWyn8jFqxS" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="6p0DfM0asBO">
     <property role="3GE5qa" value="constraint.template" />
