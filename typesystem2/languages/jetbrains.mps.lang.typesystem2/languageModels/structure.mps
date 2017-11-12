@@ -651,7 +651,7 @@
     <node concept="1TJgyj" id="1pPth$m5oa9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="feature" />
-      <property role="20lbJX" value="1..n" />
+      <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1618328391714701961" />
       <ref role="20lvS9" node="1pPth$m5oa5" resolve="TermFeature" />
     </node>
@@ -1245,6 +1245,12 @@
     <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TermDeclaration" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7c96q9tz_UX" role="1TKVEi">
+      <property role="IQ2ns" value="8289184774297116349" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="prototype" />
+      <ref role="20lvS9" node="4MEOIDFttoe" resolve="TermDeclaration" />
+    </node>
     <node concept="1TJgyj" id="4MEOIDFttNi" role="1TKVEi">
       <property role="IQ2ns" value="5524459797190401234" />
       <property role="20lmBu" value="aggregation" />

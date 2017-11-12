@@ -1347,5 +1347,9 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="7c96q9tCTXi">
+    <property role="3GE5qa" value="term" />
+    <ref role="1M2myG" to="wq2x:4MEOIDFttoe" resolve="TermDeclaration" />
+  </node>
 </model>
 
