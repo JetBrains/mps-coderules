@@ -23,7 +23,6 @@
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -201,9 +200,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
-        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
-      </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -259,15 +255,7 @@
       <concept id="1618328391714701929" name="jetbrains.mps.lang.typesystem2.structure.TermTemplate" flags="ng" index="0oftK">
         <child id="1618328391714701961" name="feature" index="0ofug" />
       </concept>
-      <concept id="1618328391714701966" name="jetbrains.mps.lang.typesystem2.structure.ValueTermFeature" flags="ng" index="0ofun">
-        <child id="1476354154047290766" name="getter" index="3AP2R9" />
-      </concept>
-      <concept id="1618328391714701957" name="jetbrains.mps.lang.typesystem2.structure.TermFeature" flags="ng" index="0ofus">
-        <property id="1877115349164965185" name="final" index="3JpusR" />
-      </concept>
-      <concept id="1618328391714702001" name="jetbrains.mps.lang.typesystem2.structure.ChildTermFeature" flags="ng" index="0ofuC">
-        <child id="3189112839535124368" name="getter" index="LoHUF" />
-      </concept>
+      <concept id="1618328391714702001" name="jetbrains.mps.lang.typesystem2.structure.ChildTermFeature" flags="ng" index="0ofuC" />
       <concept id="1618328391714763069" name="jetbrains.mps.lang.typesystem2.structure.MacroTable" flags="ng" index="0oKg$">
         <child id="1618328391714763070" name="macro" index="0oKgB" />
       </concept>
@@ -2624,118 +2612,24 @@
     <property role="TrG5h" value="terms" />
     <node concept="BRKj$" id="4dPZ2m2hTAN" role="1HGPt">
       <property role="TrG5h" value="Bool" />
-      <node concept="0oftK" id="4dPZ2m2hTAO" role="BRKSY">
-        <node concept="0ofun" id="4dPZ2m2hTAX" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4dPZ2m2hUlX" role="3AP2R9">
-            <node concept="3clFbS" id="4dPZ2m2hUlY" role="16YjZG">
-              <node concept="3clFbF" id="4dPZ2m2hUmb" role="3cqZAp">
-                <node concept="2OqwBi" id="4dPZ2m2hUDU" role="3clFbG">
-                  <node concept="35c_gC" id="4dPZ2m2hUma" role="2Oq$k0">
-                    <ref role="35c_gD" to="8tt8:492bFERodLp" resolve="BoolType" />
-                  </node>
-                  <node concept="liA8E" id="4dPZ2m2hVir" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="0oftK" id="4dPZ2m2hTAO" role="BRKSY" />
     </node>
     <node concept="BRKj$" id="4dPZ2m2hWGK" role="1HGPt">
       <property role="TrG5h" value="Fun" />
       <node concept="0oftK" id="4dPZ2m2hWGL" role="BRKSY">
-        <node concept="0ofun" id="4dPZ2m2hWGZ" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4dPZ2m2hWH8" role="3AP2R9">
-            <node concept="3clFbS" id="4dPZ2m2hWH9" role="16YjZG">
-              <node concept="3clFbF" id="4dPZ2m2hWIj" role="3cqZAp">
-                <node concept="2OqwBi" id="4dPZ2m2hWZj" role="3clFbG">
-                  <node concept="35c_gC" id="4dPZ2m2hWIi" role="2Oq$k0">
-                    <ref role="35c_gD" to="8tt8:3_qfG1EP6Of" resolve="FunType" />
-                  </node>
-                  <node concept="liA8E" id="4dPZ2m2hXCv" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofuC" id="4dPZ2m2hXGZ" role="0ofug">
           <property role="TrG5h" value="arg" />
-          <node concept="3AP2Rn" id="1tQ0laA7PXK" role="LoHUF">
-            <node concept="3clFbS" id="1tQ0laA7PXL" role="16YjZG">
-              <node concept="3clFbF" id="1tQ0laA7QMd" role="3cqZAp">
-                <node concept="2YIFZM" id="1tQ0laA7QMI" role="3clFbG">
-                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
-                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                  <node concept="3VsKOn" id="1tQ0laA7RgV" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
         <node concept="0ofuC" id="4dPZ2m2hXHj" role="0ofug">
           <property role="TrG5h" value="res" />
-          <node concept="3AP2Rn" id="1tQ0laA7Rk6" role="LoHUF">
-            <node concept="3clFbS" id="1tQ0laA7Rk7" role="16YjZG">
-              <node concept="3clFbF" id="1tQ0laA7Rkj" role="3cqZAp">
-                <node concept="2YIFZM" id="1tQ0laA7Rkl" role="3clFbG">
-                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
-                  <node concept="3VsKOn" id="1tQ0laA7Rkm" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
     </node>
     <node concept="BRKj$" id="12dHl3ZCxN1" role="1HGPt">
       <property role="TrG5h" value="Forall" />
       <node concept="0oftK" id="12dHl3ZCxN2" role="BRKSY">
-        <node concept="0ofun" id="12dHl3ZCxNH" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="12dHl3ZCDqj" role="3AP2R9">
-            <node concept="3clFbS" id="12dHl3ZCDqk" role="16YjZG">
-              <node concept="3clFbF" id="12dHl3ZCDqx" role="3cqZAp">
-                <node concept="2OqwBi" id="12dHl3ZCDSR" role="3clFbG">
-                  <node concept="35c_gC" id="12dHl3ZCDqw" role="2Oq$k0">
-                    <ref role="35c_gD" to="8tt8:12dHl3ZCxTW" resolve="ForallType" />
-                  </node>
-                  <node concept="liA8E" id="12dHl3ZCEtB" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofuC" id="12dHl3ZCEvq" role="0ofug">
           <property role="TrG5h" value="type" />
-          <node concept="3AP2Rn" id="1tQ0laA7RlL" role="LoHUF">
-            <node concept="3clFbS" id="1tQ0laA7RlM" role="16YjZG">
-              <node concept="3clFbF" id="1tQ0laA7RlY" role="3cqZAp">
-                <node concept="2YIFZM" id="1tQ0laA7Rm0" role="3clFbG">
-                  <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                  <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
-                  <node concept="3VsKOn" id="1tQ0laA7Rm1" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
     </node>
