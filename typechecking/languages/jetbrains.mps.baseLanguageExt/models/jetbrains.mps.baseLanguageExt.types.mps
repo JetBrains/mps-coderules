@@ -636,6 +636,7 @@
         <child id="5524459797186715209" name="logical" index="B_OMz" />
       </concept>
       <concept id="5524459797190399502" name="jetbrains.mps.lang.typesystem2.structure.TermDeclaration" flags="ng" index="BRKj$">
+        <reference id="8289184774297116349" name="prototype" index="IxOsv" />
         <child id="5524459797190401236" name="template" index="BRKSY" />
       </concept>
       <concept id="6856711987714624232" name="jetbrains.mps.lang.typesystem2.structure.ExpressionItem" flags="ng" index="HKQnh">
@@ -18492,19 +18493,6 @@
     <node concept="BRKj$" id="4MEOIDFwT9I" role="1HGPt">
       <property role="TrG5h" value="classifierType" />
       <node concept="0oftK" id="4MEOIDFwT9J" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFP4gD" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFP4gE" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFP4gF" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFP4gG" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFP4gI" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:g7uibYu" resolve="ClassifierType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="kTK1BfzLUs" role="0ofug">
           <property role="TrG5h" value="classifier" />
         </node>
@@ -18519,19 +18507,6 @@
     <node concept="BRKj$" id="4MEOIDFP50S" role="1HGPt">
       <property role="TrG5h" value="typeVariableType" />
       <node concept="0oftK" id="4MEOIDFP50T" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFP56J" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFP56K" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFP56L" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFP56M" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFP56O" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:g96syBo" resolve="TypeVariableReference" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="4MEOIDFP56X" role="0ofug">
           <property role="TrG5h" value="declaration" />
           <property role="3JpusR" value="false" />
@@ -18544,19 +18519,6 @@
     <node concept="BRKj$" id="5310cdpGJ3u" role="1HGPt">
       <property role="TrG5h" value="captureOfType" />
       <node concept="0oftK" id="5310cdpGJ3v" role="BRKSY">
-        <node concept="0ofun" id="5310cdpGJ9b" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="5310cdpGJ9e" role="3AP2R9">
-            <node concept="3clFbS" id="5310cdpGJ9f" role="16YjZG">
-              <node concept="3clFbF" id="5310cdpGJ9s" role="3cqZAp">
-                <node concept="Xl_RD" id="5310cdpGJ9r" role="3clFbG">
-                  <property role="Xl_RC" value="captureOf" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofuC" id="5310cdpGJdW" role="0ofug">
           <property role="TrG5h" value="origin" />
         </node>
@@ -18571,19 +18533,6 @@
     <node concept="BRKj$" id="4MEOIDFP5FM" role="1HGPt">
       <property role="TrG5h" value="arrayType" />
       <node concept="0oftK" id="4MEOIDFP5FN" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFP5Mi" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFP5Mj" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFP5Mk" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFP5Ml" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFP5Mn" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:f_0Q1BR" resolve="ArrayType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofuv" id="4MEOIDFP5Mp" role="0ofug">
           <property role="TrG5h" value="parameter" />
         </node>
@@ -18592,19 +18541,6 @@
     <node concept="BRKj$" id="4MEOIDFP5Y0" role="1HGPt">
       <property role="TrG5h" value="variableArityType" />
       <node concept="0oftK" id="4MEOIDFP5Y1" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFP64H" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFP64I" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFP64J" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFP64K" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFP64M" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:hK8X2TV" resolve="VariableArityType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofuv" id="4MEOIDFP64O" role="0ofug">
           <property role="TrG5h" value="parameter" />
         </node>
@@ -18613,19 +18549,6 @@
     <node concept="BRKj$" id="4MEOIDFP6hU" role="1HGPt">
       <property role="TrG5h" value="upperBoundType" />
       <node concept="0oftK" id="4MEOIDFP6hV" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFP6oS" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFP6oT" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFP6oU" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFP6oV" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFP6oX" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:h3qUExa" resolve="UpperBoundType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofuv" id="4MEOIDFP6oZ" role="0ofug">
           <property role="TrG5h" value="parameter" />
         </node>
@@ -18634,19 +18557,6 @@
     <node concept="BRKj$" id="4MEOIDFP6Dt" role="1HGPt">
       <property role="TrG5h" value="lowerBoundType" />
       <node concept="0oftK" id="4MEOIDFP6Du" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFP6KG" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFP6KH" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFP6KI" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFP6KJ" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFP6KL" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:h3qUtkX" resolve="LowerBoundType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofuv" id="4MEOIDFP6KN" role="0ofug">
           <property role="TrG5h" value="parameter" />
         </node>
@@ -18654,38 +18564,11 @@
     </node>
     <node concept="BRKj$" id="4MEOIDFP71f" role="1HGPt">
       <property role="TrG5h" value="wildcardType" />
-      <node concept="0oftK" id="4MEOIDFP71g" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFP78J" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFP78K" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFP78L" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFP78M" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFP78O" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:h3qTviz" resolve="WildCardType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="0oftK" id="4MEOIDFP71g" role="BRKSY" />
     </node>
     <node concept="BRKj$" id="4MEOIDFP7k0" role="1HGPt">
       <property role="TrG5h" value="primType" />
       <node concept="0oftK" id="4MEOIDFP7k1" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFP7rD" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFP7rE" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFP7rF" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFP7rG" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFP7rJ" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="4MEOIDFP7rK" role="0ofug">
           <property role="TrG5h" value="kind" />
         </node>
@@ -18696,20 +18579,8 @@
     </node>
     <node concept="BRKj$" id="4MEOIDFPb3l" role="1HGPt">
       <property role="TrG5h" value="intType" />
+      <ref role="IxOsv" node="4MEOIDFP7k0" resolve="primType" />
       <node concept="0oftK" id="4MEOIDFPb3m" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFPbbh" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFPbbi" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFPbbj" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFPbbk" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFPbbn" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="4MEOIDFPbbo" role="0ofug">
           <property role="TrG5h" value="kind" />
           <property role="3JpusR" value="true" />
@@ -18739,20 +18610,8 @@
     </node>
     <node concept="BRKj$" id="4MEOIDFPcaR" role="1HGPt">
       <property role="TrG5h" value="byteType" />
+      <ref role="IxOsv" node="4MEOIDFP7k0" resolve="primType" />
       <node concept="0oftK" id="4MEOIDFPcaS" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFPcj8" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFPcj9" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFPcja" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFPcjb" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFPcje" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="4MEOIDFPcjf" role="0ofug">
           <property role="TrG5h" value="kind" />
           <property role="3JpusR" value="true" />
@@ -18782,20 +18641,8 @@
     </node>
     <node concept="BRKj$" id="4MEOIDFPdjK" role="1HGPt">
       <property role="TrG5h" value="charType" />
+      <ref role="IxOsv" node="4MEOIDFP7k0" resolve="primType" />
       <node concept="0oftK" id="4MEOIDFPdjL" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFPdsm" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFPdsn" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFPdso" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFPdsp" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFPdss" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="4MEOIDFPdst" role="0ofug">
           <property role="TrG5h" value="kind" />
           <property role="3JpusR" value="true" />
@@ -18825,20 +18672,8 @@
     </node>
     <node concept="BRKj$" id="6hqFpWn8MXO" role="1HGPt">
       <property role="TrG5h" value="shortType" />
+      <ref role="IxOsv" node="4MEOIDFP7k0" resolve="primType" />
       <node concept="0oftK" id="6hqFpWn8MXP" role="BRKSY">
-        <node concept="0ofun" id="6hqFpWn8MXQ" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="6hqFpWn8MXR" role="3AP2R9">
-            <node concept="3clFbS" id="6hqFpWn8MXS" role="16YjZG">
-              <node concept="3clFbF" id="6hqFpWn8MXT" role="3cqZAp">
-                <node concept="35c_gC" id="6hqFpWn8MXW" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="6hqFpWn8MXX" role="0ofug">
           <property role="TrG5h" value="kind" />
           <property role="3JpusR" value="true" />
@@ -18868,20 +18703,8 @@
     </node>
     <node concept="BRKj$" id="4MEOIDFPdCt" role="1HGPt">
       <property role="TrG5h" value="longType" />
+      <ref role="IxOsv" node="4MEOIDFP7k0" resolve="primType" />
       <node concept="0oftK" id="4MEOIDFPdCu" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFPeAZ" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFPeB0" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFPeB1" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFPeB2" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFPeB5" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="4MEOIDFPeB6" role="0ofug">
           <property role="TrG5h" value="kind" />
           <property role="3JpusR" value="true" />
@@ -18911,20 +18734,8 @@
     </node>
     <node concept="BRKj$" id="6hqFpWn7myR" role="1HGPt">
       <property role="TrG5h" value="floatType" />
+      <ref role="IxOsv" node="4MEOIDFP7k0" resolve="primType" />
       <node concept="0oftK" id="6hqFpWn7myS" role="BRKSY">
-        <node concept="0ofun" id="6hqFpWn7myT" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="6hqFpWn7myU" role="3AP2R9">
-            <node concept="3clFbS" id="6hqFpWn7myV" role="16YjZG">
-              <node concept="3clFbF" id="6hqFpWn7myW" role="3cqZAp">
-                <node concept="35c_gC" id="6hqFpWn7myZ" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="6hqFpWn7mz0" role="0ofug">
           <property role="TrG5h" value="kind" />
           <property role="3JpusR" value="true" />
@@ -18954,20 +18765,8 @@
     </node>
     <node concept="BRKj$" id="6hqFpWn7lK$" role="1HGPt">
       <property role="TrG5h" value="doubleType" />
+      <ref role="IxOsv" node="4MEOIDFP7k0" resolve="primType" />
       <node concept="0oftK" id="6hqFpWn7lK_" role="BRKSY">
-        <node concept="0ofun" id="6hqFpWn7lKA" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="6hqFpWn7lKB" role="3AP2R9">
-            <node concept="3clFbS" id="6hqFpWn7lKC" role="16YjZG">
-              <node concept="3clFbF" id="6hqFpWn7lKD" role="3cqZAp">
-                <node concept="35c_gC" id="6hqFpWn7lKG" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="6hqFpWn7lKH" role="0ofug">
           <property role="TrG5h" value="kind" />
           <property role="3JpusR" value="true" />
@@ -18997,20 +18796,8 @@
     </node>
     <node concept="BRKj$" id="4MEOIDFPfys" role="1HGPt">
       <property role="TrG5h" value="booleanType" />
+      <ref role="IxOsv" node="4MEOIDFP7k0" resolve="primType" />
       <node concept="0oftK" id="4MEOIDFPfyt" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFPfFG" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFPfFH" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFPfFI" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFPfFJ" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFPfFM" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:gWaQbR$" resolve="PrimitiveType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="0ofun" id="4MEOIDFPfFN" role="0ofug">
           <property role="TrG5h" value="kind" />
           <property role="3JpusR" value="true" />
@@ -19040,39 +18827,11 @@
     </node>
     <node concept="BRKj$" id="4MEOIDFPgJw" role="1HGPt">
       <property role="TrG5h" value="voidType" />
-      <node concept="0oftK" id="4MEOIDFPgJx" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFPgT5" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFPgT6" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFPgT7" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFPgT8" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFPgTa" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:fzcqZ_H" resolve="VoidType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="0oftK" id="4MEOIDFPgJx" role="BRKSY" />
     </node>
     <node concept="BRKj$" id="4MEOIDFPgZJ" role="1HGPt">
       <property role="TrG5h" value="nullType" />
-      <node concept="0oftK" id="4MEOIDFPgZK" role="BRKSY">
-        <node concept="0ofun" id="4MEOIDFPhZF" role="0ofug">
-          <property role="TrG5h" value="concept" />
-          <property role="3JpusR" value="true" />
-          <node concept="3AP2Rn" id="4MEOIDFPhZG" role="3AP2R9">
-            <node concept="3clFbS" id="4MEOIDFPhZH" role="16YjZG">
-              <node concept="3clFbF" id="4MEOIDFPhZI" role="3cqZAp">
-                <node concept="35c_gC" id="4MEOIDFPhZK" role="3clFbG">
-                  <ref role="35c_gD" to="tpee:hxvX6za" resolve="NullType" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="0oftK" id="4MEOIDFPgZK" role="BRKSY" />
     </node>
   </node>
   <node concept="312cEu" id="2zBk6uIjXRS">
