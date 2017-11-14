@@ -826,15 +826,7 @@
                       <ref role="37wK5l" to="hano:HV6urVFjOl" resolve="ProgramEvaluator" />
                       <node concept="2ShNRf" id="6QH_LDtbV5U" role="37wK5m">
                         <node concept="1pGfFk" id="6QH_LDtbV5V" role="2ShVmc">
-                          <ref role="37wK5l" to="cxk7:3F6vMxqo1c$" resolve="DefaultSessionSolver" />
-                          <node concept="2OqwBi" id="6QH_LDtbV5W" role="37wK5m">
-                            <node concept="37vLTw" id="4QPCta1$Kxp" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4QPCta1$JMV" resolve="typeAspectRuntime" />
-                            </node>
-                            <node concept="liA8E" id="6QH_LDtbV5Y" role="2OqNvi">
-                              <ref role="37wK5l" to="hano:4QPCta1yW53" resolve="getExpressionSolver" />
-                            </node>
-                          </node>
+                          <ref role="37wK5l" to="cxk7:23c4kVtavpK" resolve="DefaultSessionSolver" />
                         </node>
                       </node>
                     </node>

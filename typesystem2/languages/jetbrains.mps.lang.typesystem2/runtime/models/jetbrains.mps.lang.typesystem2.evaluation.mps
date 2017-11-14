@@ -8503,24 +8503,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="4QPCta1yTPO" role="3cqZAp" />
-        <node concept="3clFbF" id="4QPCta1yTPP" role="3cqZAp">
-          <node concept="37vLTI" id="4QPCta1yTPQ" role="3clFbG">
-            <node concept="2OqwBi" id="4QPCta1yTPR" role="37vLTJ">
-              <node concept="Xjq3P" id="4QPCta1yTPS" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4QPCta1yTPT" role="2OqNvi">
-                <ref role="2Oxat5" node="3F6vMxqlTiX" resolve="expressionSolver" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="4QPCta1yTPU" role="37vLTx">
-              <node concept="37vLTw" id="4QPCta1yTPV" role="2Oq$k0">
-                <ref role="3cqZAo" node="4QPCta1yTPJ" resolve="ruleManifest" />
-              </node>
-              <node concept="liA8E" id="4QPCta1yTPW" role="2OqNvi">
-                <ref role="37wK5l" to="i348:1ggxSI7z1S5" resolve="javaExpressionSolver" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="4QPCta1yTPX" role="3cqZAp">
           <node concept="37vLTI" id="4QPCta1yTPY" role="3clFbG">
             <node concept="2OqwBi" id="4QPCta1yTPZ" role="37vLTJ">
@@ -8607,21 +8589,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4QPCta1yOdP" role="jymVt" />
-    <node concept="3clFb_" id="4QPCta1yW53" role="jymVt">
-      <property role="TrG5h" value="getExpressionSolver" />
-      <node concept="3uibUv" id="4QPCta1yW54" role="3clF45">
-        <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
-      </node>
-      <node concept="3Tm1VV" id="4QPCta1yW55" role="1B3o_S" />
-      <node concept="3clFbS" id="4QPCta1yW56" role="3clF47">
-        <node concept="3clFbF" id="4QPCta1yW57" role="3cqZAp">
-          <node concept="37vLTw" id="4QPCta1yW52" role="3clFbG">
-            <ref role="3cqZAo" node="3F6vMxqlTiX" resolve="expressionSolver" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4QPCta1yWta" role="jymVt" />
     <node concept="3clFb_" id="4QPCta1yW59" role="jymVt">
       <property role="TrG5h" value="getTypeTemplatesIndex" />
       <node concept="3uibUv" id="4QPCta1yW5a" role="3clF45">
@@ -8652,13 +8619,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4QPCta1yWEZ" role="jymVt" />
-    <node concept="312cEg" id="3F6vMxqlTiX" role="jymVt">
-      <property role="TrG5h" value="expressionSolver" />
-      <node concept="3uibUv" id="5jCHAT2vNg1" role="1tU5fm">
-        <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
-      </node>
-      <node concept="3Tm6S6" id="3GlpCDSyB5p" role="1B3o_S" />
-    </node>
     <node concept="312cEg" id="20Ay2VeQFsB" role="jymVt">
       <property role="TrG5h" value="typeTemplatesIndex" />
       <node concept="3Tm6S6" id="20Ay2VeQFsC" role="1B3o_S" />

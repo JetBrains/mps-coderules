@@ -4,6 +4,7 @@
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
@@ -1023,21 +1024,16 @@
       </node>
       <node concept="3cqZAl" id="3F6vMxqo1cA" role="3clF45" />
       <node concept="3Tm1VV" id="3F6vMxqo1cB" role="1B3o_S" />
-      <node concept="3clFbS" id="3F6vMxqo1cC" role="3clF47">
-        <node concept="3clFbF" id="3F6vMxqo1jU" role="3cqZAp">
-          <node concept="37vLTI" id="3F6vMxqo1jW" role="3clFbG">
-            <node concept="2OqwBi" id="3F6vMxqo1vB" role="37vLTJ">
-              <node concept="Xjq3P" id="3F6vMxqo1wG" role="2Oq$k0" />
-              <node concept="2OwXpG" id="3F6vMxqo1vE" role="2OqNvi">
-                <ref role="2Oxat5" node="3F6vMxqo1jQ" resolve="javaExpressionSolver" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="3F6vMxqo1k0" role="37vLTx">
-              <ref role="3cqZAo" node="3F6vMxqo1cY" resolve="javaExpressionSolver" />
-            </node>
-          </node>
-        </node>
+      <node concept="3clFbS" id="3F6vMxqo1cC" role="3clF47" />
+      <node concept="2AHcQZ" id="23c4kVtauK5" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
+    </node>
+    <node concept="2tJIrI" id="23c4kVtauXp" role="jymVt" />
+    <node concept="3clFbW" id="23c4kVtavpK" role="jymVt">
+      <node concept="3cqZAl" id="23c4kVtavpM" role="3clF45" />
+      <node concept="3Tm1VV" id="23c4kVtavpN" role="1B3o_S" />
+      <node concept="3clFbS" id="23c4kVtavpO" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="3F6vMxqo23u" role="jymVt" />
     <node concept="3clFb_" id="3F6vMxqo28Q" role="jymVt">
@@ -1319,13 +1315,6 @@
     <node concept="3Tm1VV" id="3F6vMxqo13Z" role="1B3o_S" />
     <node concept="3uibUv" id="3F6vMxqo15F" role="1zkMxy">
       <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
-    </node>
-    <node concept="312cEg" id="3F6vMxqo1jQ" role="jymVt">
-      <property role="TrG5h" value="javaExpressionSolver" />
-      <node concept="3Tm6S6" id="3F6vMxqo1jR" role="1B3o_S" />
-      <node concept="3uibUv" id="5jCHAT2qKu7" role="1tU5fm">
-        <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
-      </node>
     </node>
   </node>
   <node concept="312cEu" id="5WBVN_M1SJ9">

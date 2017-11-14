@@ -557,8 +557,7 @@
               </node>
               <node concept="2ShNRf" id="2tcGHBEewJA" role="33vP2m">
                 <node concept="1pGfFk" id="1ggxSI7$OLj" role="2ShVmc">
-                  <ref role="37wK5l" to="cxk7:3F6vMxqo1c$" resolve="DefaultSessionSolver" />
-                  <node concept="10Nm6u" id="6yEjedmgUCa" role="37wK5m" />
+                  <ref role="37wK5l" to="cxk7:23c4kVtavpK" resolve="DefaultSessionSolver" />
                 </node>
               </node>
             </node>
