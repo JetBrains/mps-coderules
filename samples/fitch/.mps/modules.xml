@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.fitch/jetbrains.mps.fitch.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.fitch/sandbox/jetbrains.mps.fitch.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>

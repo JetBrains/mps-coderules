@@ -1,0 +1,9 @@
+**/source_gen/*
+**/source_gen.caches/*
+**/test_gen/*
+**/test_gen.caches/*
+**/classes_gen/*
+.mps/workspace.xml
+.idea/workspace.xml
+out
+build/*
