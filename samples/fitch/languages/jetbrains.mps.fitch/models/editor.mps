@@ -77,6 +77,7 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
+      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -128,7 +129,6 @@
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
-        <child id="4242538589862653897" name="addHints" index="2whIAn" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
       <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
@@ -460,7 +460,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3JXBM6C3FsQ">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:3JXBM6C3FsN" resolve="Basis" />
     <node concept="3EZMnI" id="3JXBM6C3FsS" role="2wV5jI">
       <node concept="l2Vlx" id="3JXBM6C3FsV" role="2iSdaV" />
@@ -492,21 +492,21 @@
     </node>
   </node>
   <node concept="24kQdi" id="3JXBM6C3MQ3">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
     <node concept="3EZMnI" id="3JXBM6C3MQ5" role="2wV5jI">
-      <node concept="3F1sOY" id="3JXBM6C3MQc" role="3EZMnx">
-        <ref role="1NtTu8" to="jfgh:3JXBM6C3FsB" resolve="conclusion" />
+      <node concept="3F1sOY" id="2aBGSFggwfm" role="3EZMnx">
+        <ref role="1NtTu8" to="jfgh:2aBGSFggvpT" resolve="conclusion" />
       </node>
       <node concept="l2Vlx" id="3JXBM6C3MQ8" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="3JXBM6C3Pwn">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
     <node concept="3EZMnI" id="3JXBM6C3Pwp" role="2wV5jI">
-      <node concept="3F1sOY" id="3JXBM6C3Pww" role="3EZMnx">
-        <ref role="1NtTu8" to="jfgh:3JXBM6C3Pwl" resolve="sentence" />
+      <node concept="3F1sOY" id="2aBGSFggwf8" role="3EZMnx">
+        <ref role="1NtTu8" to="jfgh:2aBGSFggvpT" resolve="conclusion" />
       </node>
       <node concept="l2Vlx" id="3JXBM6C3Pws" role="2iSdaV" />
     </node>
@@ -629,10 +629,10 @@
                   <property role="VOm3f" value="true" />
                 </node>
               </node>
-            </node>
-            <node concept="2w$q5c" id="$u9BK_z6eB" role="2whIAn">
-              <node concept="2aJ2om" id="$u9BK_z6eC" role="2w$qW5">
-                <ref role="2$4xQ3" node="$u9BK_z27v" resolve="ID" />
+              <node concept="2w$q5c" id="5RfK0kxj3Yz" role="78xua">
+                <node concept="2aJ2om" id="5RfK0kxj3Y$" role="2w$qW5">
+                  <ref role="2$4xQ3" node="$u9BK_z27v" resolve="ID" />
+                </node>
               </node>
             </node>
           </node>
@@ -646,18 +646,12 @@
             <node concept="VPM3Z" id="3JXBM6C6j0G" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
-            <node concept="lj46D" id="3JXBM6C6j10" role="3F10Kt">
-              <property role="VOm3f" value="true" />
-            </node>
             <node concept="l2Vlx" id="3JXBM6C6j0J" role="2iSdaV" />
             <node concept="3F2HdR" id="3JXBM6C3URp" role="3EZMnx">
               <property role="2czwfO" value=" " />
               <ref role="1NtTu8" to="jfgh:3JXBM6C4wQA" resolve="content" />
               <node concept="l2Vlx" id="3JXBM6C3URr" role="2czzBx" />
               <node concept="tppnM" id="3JXBM6C3URw" role="sWeuL">
-                <node concept="lj46D" id="3JXBM6C6n8g" role="3F10Kt">
-                  <property role="VOm3f" value="true" />
-                </node>
                 <node concept="ljvvj" id="3JXBM6C3URy" role="3F10Kt">
                   <property role="VOm3f" value="true" />
                 </node>
@@ -691,11 +685,6 @@
                 </node>
               </node>
             </node>
-            <node concept="2w$q5c" id="$u9BK_$Qxr" role="2whIAn">
-              <node concept="2aJ2om" id="$u9BK_$Qxs" role="2w$qW5">
-                <ref role="2$4xQ3" node="$u9BK_z27v" resolve="ID" />
-              </node>
-            </node>
           </node>
           <node concept="VPM3Z" id="$u9BK_zG5q" role="3F10Kt">
             <property role="VOm3f" value="false" />
@@ -707,7 +696,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="3JXBM6C6A54">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="aqKnT" to="jfgh:3JXBM6C3FsN" resolve="Basis" />
     <node concept="3XHNnq" id="3JXBM6C6A55" role="3ft7WO">
       <ref role="3XGfJA" to="jfgh:3JXBM6C3FuH" resolve="reasoning" />
@@ -738,7 +727,7 @@
     <ref role="aqKnT" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
   </node>
   <node concept="3p36aQ" id="3JXBM6C6Jqd">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="aqKnT" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
     <node concept="3eGOop" id="3JXBM6C6Jqe" role="3ft7WO">
       <ref role="3EoQqy" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
@@ -1605,7 +1594,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK_z2Sb">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
     <node concept="3EZMnI" id="$u9BK_z3hm" role="2wV5jI">
       <node concept="1HlG4h" id="$u9BK_z3DP" role="3EZMnx">
@@ -1638,7 +1627,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK_zdtN">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
     <node concept="2aJ2om" id="$u9BK_zdtP" role="CpUAK">
       <ref role="2$4xQ3" node="$u9BK_z27v" resolve="ID" />
@@ -1722,12 +1711,13 @@
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK_zG8U">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
-    <node concept="3F0ifn" id="$u9BK_zG91" role="2wV5jI">
-      <property role="3F0ifm" value="(Assumption)" />
-      <node concept="VPM3Z" id="$u9BK_$76y" role="3F10Kt">
-        <property role="VOm3f" value="false" />
+    <node concept="3EZMnI" id="5RfK0kxjn86" role="2wV5jI">
+      <node concept="l2Vlx" id="5RfK0kxjn87" role="2iSdaV" />
+      <node concept="3F0ifn" id="5RfK0kxjSf2" role="3EZMnx">
+        <property role="3F0ifm" value="(Assumption)" />
+        <node concept="Vb9p2" id="5RfK0kxjSf4" role="3F10Kt" />
       </node>
     </node>
     <node concept="2aJ2om" id="$u9BK_zG8W" role="CpUAK">
@@ -1735,7 +1725,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK_zGGT">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
     <node concept="3EZMnI" id="$u9BK_zHtD" role="2wV5jI">
       <node concept="3F0ifn" id="$u9BK_zTQU" role="3EZMnx">
@@ -1746,12 +1736,14 @@
         <node concept="11LMrY" id="$u9BK_zTRj" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
+        <node concept="Vb9p2" id="5RfK0kxkpv9" role="3F10Kt" />
       </node>
       <node concept="PMmxH" id="$u9BK_zHtM" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <node concept="VPM3Z" id="$u9BK_$dvv" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
+        <node concept="Vb9p2" id="5RfK0kxkpvl" role="3F10Kt" />
       </node>
       <node concept="3F0ifn" id="$u9BK_zTRa" role="3EZMnx">
         <property role="3F0ifm" value=")" />
@@ -1761,6 +1753,7 @@
         <node concept="11L4FC" id="$u9BK_zTRl" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
+        <node concept="Vb9p2" id="5RfK0kxkpvt" role="3F10Kt" />
       </node>
       <node concept="3F0ifn" id="$u9BK_zHtN" role="3EZMnx">
         <property role="3F0ifm" value=":" />
@@ -1784,22 +1777,23 @@
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK__JRm">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:$u9BK__JRe" resolve="Premise" />
     <node concept="3EZMnI" id="$u9BK__JRo" role="2wV5jI">
-      <node concept="3F1sOY" id="$u9BK__JRp" role="3EZMnx">
-        <ref role="1NtTu8" to="jfgh:$u9BK__JRh" resolve="sentence" />
-      </node>
       <node concept="l2Vlx" id="$u9BK__JRq" role="2iSdaV" />
+      <node concept="3F1sOY" id="2aBGSFggwff" role="3EZMnx">
+        <ref role="1NtTu8" to="jfgh:2aBGSFggvpT" resolve="conclusion" />
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK__JRu">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:$u9BK__JRe" resolve="Premise" />
-    <node concept="3F0ifn" id="$u9BK__JRy" role="2wV5jI">
-      <property role="3F0ifm" value="(Premise)" />
-      <node concept="VPM3Z" id="$u9BK__SA6" role="3F10Kt">
-        <property role="VOm3f" value="false" />
+    <node concept="3EZMnI" id="5RfK0kxjn8e" role="2wV5jI">
+      <node concept="l2Vlx" id="5RfK0kxjn8f" role="2iSdaV" />
+      <node concept="3F0ifn" id="5RfK0kxjFjS" role="3EZMnx">
+        <property role="3F0ifm" value="(Premise)" />
+        <node concept="Vb9p2" id="5RfK0kxjFjU" role="3F10Kt" />
       </node>
     </node>
     <node concept="2aJ2om" id="$u9BK__JRw" role="CpUAK">
@@ -1807,7 +1801,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK__JR_">
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1XX52x" to="jfgh:$u9BK__JRe" resolve="Premise" />
     <node concept="2aJ2om" id="$u9BK__JRB" role="CpUAK">
       <ref role="2$4xQ3" node="$u9BK_z27v" resolve="ID" />
@@ -1847,6 +1841,12 @@
         <ref role="1NtTu8" to="jfgh:$u9BK__SA9" resolve="sentence" />
       </node>
       <node concept="l2Vlx" id="$u9BK__SAk" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="2aBGSFge6px">
+    <ref role="1XX52x" to="jfgh:2aBGSFge6pw" resolve="Ok" />
+    <node concept="3F0ifn" id="2aBGSFge6pG" role="2wV5jI">
+      <property role="3F0ifm" value="OK" />
     </node>
   </node>
 </model>

@@ -205,7 +205,7 @@
     <property role="TrG5h" value="Judgement" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3JXBM6C3MQ0" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247848320" />
@@ -214,13 +214,6 @@
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="3JXBM6C3FsN" resolve="Basis" />
     </node>
-    <node concept="1TJgyj" id="3JXBM6C3FsB" role="1TKVEi">
-      <property role="IQ2ns" value="4322786184247818023" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="conclusion" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
-    </node>
     <node concept="PrWs8" id="3JXBM6C3Pwg" role="PzmwI">
       <ref role="PrY4T" node="3JXBM6C3OtS" resolve="Reasoning" />
     </node>
@@ -228,7 +221,7 @@
   <node concept="1TIwiD" id="3JXBM6C3FsN">
     <property role="EcuMT" value="4322786184247818035" />
     <property role="TrG5h" value="Basis" />
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3JXBM6C3FuH" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247818157" />
@@ -241,7 +234,14 @@
   <node concept="PlHQZ" id="3JXBM6C3OtS">
     <property role="EcuMT" value="4322786184247854968" />
     <property role="TrG5h" value="Reasoning" />
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
+    <node concept="1TJgyj" id="2aBGSFggvpT" role="1TKVEi">
+      <property role="IQ2ns" value="2497161927181071993" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="conclusion" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
+    </node>
     <node concept="PrWs8" id="3JXBM6C4o1Q" role="PrDN$">
       <ref role="PrY4T" node="3JXBM6C4ntZ" resolve="Leaf" />
     </node>
@@ -250,16 +250,9 @@
     <property role="EcuMT" value="4322786184247859218" />
     <property role="TrG5h" value="Assumption" />
     <property role="34LRSv" value="assumption" />
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <property role="R4oN_" value="Assumption" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="3JXBM6C3Pwl" role="1TKVEi">
-      <property role="IQ2ns" value="4322786184247859221" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="sentence" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
-    </node>
     <node concept="PrWs8" id="3JXBM6C3Pwj" role="PzmwI">
       <ref role="PrY4T" node="3JXBM6C3OtS" resolve="Reasoning" />
     </node>
@@ -393,18 +386,11 @@
   </node>
   <node concept="1TIwiD" id="$u9BK__JRe">
     <property role="EcuMT" value="657004910291123662" />
-    <property role="3GE5qa" value="proof" />
+    <property role="3GE5qa" value="proof.reasoning" />
     <property role="TrG5h" value="Premise" />
     <property role="34LRSv" value="premise" />
     <property role="R4oN_" value="Premise" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="$u9BK__JRh" role="1TKVEi">
-      <property role="IQ2ns" value="657004910291123665" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="sentence" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
-    </node>
     <node concept="PrWs8" id="$u9BK__JRf" role="PzmwI">
       <ref role="PrY4T" node="3JXBM6C3OtS" resolve="Reasoning" />
     </node>
@@ -421,6 +407,11 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="2aBGSFge6pw">
+    <property role="EcuMT" value="2497161927180445280" />
+    <property role="TrG5h" value="Ok" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 
