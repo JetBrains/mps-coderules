@@ -32,6 +32,7 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -61,8 +62,11 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
+      <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
+      <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
         <reference id="1147467295099" name="applicableProperty" index="EomxK" />
         <child id="1147468630220" name="propertyGetter" index="EtsB7" />
@@ -73,6 +77,7 @@
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
         <child id="1213098023997" name="property" index="1MhHOB" />
       </concept>
       <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
@@ -84,6 +89,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -391,6 +397,35 @@
           <node concept="3cpWs6" id="3JXBM6C7aYb" role="3cqZAp">
             <node concept="3clFbT" id="3JXBM6C7bdg" role="3cqZAk">
               <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5jVx7S22QGW">
+    <property role="3GE5qa" value="proof.reasoning" />
+    <ref role="1M2myG" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
+    <node concept="9S07l" id="5jVx7S22QGX" role="9Vyp8">
+      <node concept="3clFbS" id="5jVx7S22QGY" role="2VODD2">
+        <node concept="3clFbF" id="5jVx7S22QO7" role="3cqZAp">
+          <node concept="1Wc70l" id="5jVx7S22S$w" role="3clFbG">
+            <node concept="3clFbC" id="5jVx7S22VSB" role="3uHU7w">
+              <node concept="3cmrfG" id="5jVx7S22Wl1" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="2OqwBi" id="5jVx7S22T0M" role="3uHU7B">
+                <node concept="EsrRn" id="5jVx7S22SJQ" role="2Oq$k0" />
+                <node concept="2bSWHS" id="5jVx7S22Tz3" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="5jVx7S22R3d" role="3uHU7B">
+              <node concept="nLn13" id="5jVx7S22QO6" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="5jVx7S22Rfk" role="2OqNvi">
+                <node concept="chp4Y" id="5jVx7S22RrK" role="cj9EA">
+                  <ref role="cht4Q" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

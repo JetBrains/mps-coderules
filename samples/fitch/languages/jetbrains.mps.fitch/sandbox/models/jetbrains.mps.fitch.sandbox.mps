@@ -42,6 +42,7 @@
       <concept id="657004910291159432" name="jetbrains.mps.fitch.structure.Goal" flags="ng" index="GyqZO">
         <child id="657004910291159433" name="sentence" index="GyqZP" />
       </concept>
+      <concept id="6123633795074140037" name="jetbrains.mps.fitch.structure.Reiteration" flags="ng" index="1l0MfV" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -58,7 +59,7 @@
             <node concept="2jWLFD" id="3JXBM6C4ztH" role="2jWM__">
               <property role="TrG5h" value="p" />
             </node>
-            <node concept="2jWLFQ" id="3JXBM6C4ztI" role="2jWM__">
+            <node concept="2jWLFQ" id="5jVx7S2251s" role="2jWM__">
               <node concept="2jWLFD" id="3JXBM6C4ztJ" role="2jWLFT">
                 <property role="TrG5h" value="p" />
               </node>
@@ -117,14 +118,17 @@
             <property role="TrG5h" value="p" />
           </node>
         </node>
-        <node concept="2jWGsN" id="$u9BK_y$eJ" role="2jWza4">
-          <node concept="2jWLFQ" id="$u9BK_y$eK" role="3MT$nN">
-            <node concept="2jWM$7" id="$u9BK_y$eL" role="2jWLFT">
-              <node concept="2jWLFD" id="$u9BK_y$eM" role="2jWM__">
+        <node concept="1l0MfV" id="5jVx7S2165V" role="2jWza4">
+          <node concept="2jWMwi" id="5jVx7S2165W" role="2jWFax">
+            <ref role="2jWMyc" node="3JXBM6C4ztF" />
+          </node>
+          <node concept="2jWLFQ" id="5jVx7S2165X" role="3MT$nN">
+            <node concept="2jWM$7" id="5jVx7S2165Y" role="2jWLFT">
+              <node concept="2jWLFD" id="5jVx7S2165Z" role="2jWM__">
                 <property role="TrG5h" value="p" />
               </node>
-              <node concept="2jWLFQ" id="$u9BK_y$eN" role="2jWM__">
-                <node concept="2jWLFD" id="$u9BK_y$eO" role="2jWLFT">
+              <node concept="2jWLFQ" id="5jVx7S21660" role="2jWM__">
+                <node concept="2jWLFD" id="5jVx7S21661" role="2jWLFT">
                   <property role="TrG5h" value="p" />
                 </node>
               </node>
@@ -136,8 +140,8 @@
         <node concept="2jWMwi" id="$u9BK_yzWV" role="2jWFax">
           <ref role="2jWMyc" node="3JXBM6Ca7rQ" />
         </node>
-        <node concept="2jWMwi" id="$u9BK_y$kI" role="2jWFax">
-          <ref role="2jWMyc" node="$u9BK_y$eJ" />
+        <node concept="2jWMwi" id="5jVx7S2166q" role="2jWFax">
+          <ref role="2jWMyc" node="5jVx7S2165V" />
         </node>
         <node concept="2jWM_K" id="$u9BK_yzWw" role="3MT$nN">
           <node concept="2jWLFD" id="$u9BK_yzWs" role="2jWM_N">
@@ -270,14 +274,17 @@
             </node>
           </node>
         </node>
-        <node concept="2jWGsN" id="$u9BK_y$z8" role="2jWza4">
-          <node concept="2jWLFQ" id="$u9BK_y$z9" role="3MT$nN">
-            <node concept="2jWM$7" id="$u9BK_y$za" role="2jWLFT">
-              <node concept="2jWLFD" id="$u9BK_y$zb" role="2jWM__">
+        <node concept="1l0MfV" id="5jVx7S22tDg" role="2jWza4">
+          <node concept="2jWMwi" id="5jVx7S22tDh" role="2jWFax">
+            <ref role="2jWMyc" node="$u9BK_y$yH" />
+          </node>
+          <node concept="2jWLFQ" id="5jVx7S22tDi" role="3MT$nN">
+            <node concept="2jWM$7" id="5jVx7S22tDj" role="2jWLFT">
+              <node concept="2jWLFD" id="5jVx7S22tDk" role="2jWM__">
                 <property role="TrG5h" value="p" />
               </node>
-              <node concept="2jWLFQ" id="$u9BK_y$zc" role="2jWM__">
-                <node concept="2jWLFD" id="$u9BK_y$zd" role="2jWLFT">
+              <node concept="2jWLFQ" id="5jVx7S22tDl" role="2jWM__">
+                <node concept="2jWLFD" id="5jVx7S22tDm" role="2jWLFT">
                   <property role="TrG5h" value="p" />
                 </node>
               </node>
@@ -289,8 +296,8 @@
         <node concept="2jWMwi" id="$u9BK_y$zf" role="2jWFax">
           <ref role="2jWMyc" node="$u9BK_y$z6" />
         </node>
-        <node concept="2jWMwi" id="$u9BK_y$zg" role="2jWFax">
-          <ref role="2jWMyc" node="$u9BK_y$z8" />
+        <node concept="2jWMwi" id="5jVx7S22tDL" role="2jWFax">
+          <ref role="2jWMyc" node="5jVx7S22tDg" />
         </node>
         <node concept="2jWM_K" id="$u9BK_y$zh" role="3MT$nN">
           <node concept="2jWLFQ" id="$u9BK_y$__" role="2jWM_N">

@@ -413,5 +413,13 @@
     <property role="TrG5h" value="Ok" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="5jVx7S1Yau5">
+    <property role="EcuMT" value="6123633795074140037" />
+    <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Reiteration" />
+    <property role="34LRSv" value="R" />
+    <property role="R4oN_" value="Reiteration" />
+    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
+  </node>
 </model>
 
