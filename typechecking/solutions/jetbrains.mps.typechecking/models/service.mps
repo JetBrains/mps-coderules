@@ -3851,6 +3851,50 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="HOeeeU9$L7" role="3cqZAp" />
+                      <node concept="3cpWs8" id="23c4kVtm7Ik" role="3cqZAp">
+                        <node concept="3cpWsn" id="23c4kVtm7Il" role="3cpWs9">
+                          <property role="TrG5h" value="profile" />
+                          <node concept="3uibUv" id="23c4kVtm7Ig" role="1tU5fm">
+                            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+                          </node>
+                          <node concept="2YIFZM" id="23c4kVtm7Im" role="33vP2m">
+                            <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String):java.lang.Boolean" resolve="valueOf" />
+                            <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                            <node concept="2YIFZM" id="23c4kVtm7In" role="37wK5m">
+                              <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String,java.lang.String):java.lang.String" resolve="getProperty" />
+                              <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                              <node concept="Xl_RD" id="23c4kVtm7Io" role="37wK5m">
+                                <property role="Xl_RC" value="logic.profile" />
+                              </node>
+                              <node concept="Xl_RD" id="23c4kVtm7Ip" role="37wK5m">
+                                <property role="Xl_RC" value="false" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWs8" id="23c4kVtm90u" role="3cqZAp">
+                        <node concept="3cpWsn" id="23c4kVtm90v" role="3cpWs9">
+                          <property role="TrG5h" value="checkGarbage" />
+                          <node concept="3uibUv" id="23c4kVtm90w" role="1tU5fm">
+                            <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+                          </node>
+                          <node concept="2YIFZM" id="23c4kVtm90x" role="33vP2m">
+                            <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String):java.lang.Boolean" resolve="valueOf" />
+                            <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                            <node concept="2YIFZM" id="23c4kVtm90y" role="37wK5m">
+                              <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String,java.lang.String):java.lang.String" resolve="getProperty" />
+                              <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                              <node concept="Xl_RD" id="23c4kVtm90z" role="37wK5m">
+                                <property role="Xl_RC" value="logic.checkGarbage" />
+                              </node>
+                              <node concept="Xl_RD" id="23c4kVtm90$" role="37wK5m">
+                                <property role="Xl_RC" value="true" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3cpWs8" id="Hg6Enc7CPK" role="3cqZAp">
                         <node concept="3cpWsn" id="Hg6Enc7CPL" role="3cpWs9">
                           <property role="TrG5h" value="progEval" />
@@ -3863,19 +3907,11 @@
                               <node concept="37vLTw" id="Hg6Enc7CPP" role="37wK5m">
                                 <ref role="3cqZAo" node="Hg6Enc7CPu" resolve="sessionSolver" />
                               </node>
-                              <node concept="2YIFZM" id="3G24ulS6bUE" role="37wK5m">
-                                <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String):java.lang.Boolean" resolve="valueOf" />
-                                <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-                                <node concept="2YIFZM" id="3G24ulS6bUF" role="37wK5m">
-                                  <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String,java.lang.String):java.lang.String" resolve="getProperty" />
-                                  <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                                  <node concept="Xl_RD" id="3G24ulS6bUG" role="37wK5m">
-                                    <property role="Xl_RC" value="logic.profile" />
-                                  </node>
-                                  <node concept="Xl_RD" id="3G24ulS6bUH" role="37wK5m">
-                                    <property role="Xl_RC" value="false" />
-                                  </node>
-                                </node>
+                              <node concept="37vLTw" id="23c4kVtm7Iq" role="37wK5m">
+                                <ref role="3cqZAo" node="23c4kVtm7Il" resolve="profile" />
+                              </node>
+                              <node concept="37vLTw" id="23c4kVtmfZ7" role="37wK5m">
+                                <ref role="3cqZAo" node="23c4kVtm90v" resolve="checkGarbage" />
                               </node>
                             </node>
                           </node>
