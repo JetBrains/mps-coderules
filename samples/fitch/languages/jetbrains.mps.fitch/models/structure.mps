@@ -180,6 +180,11 @@
     <property role="34LRSv" value="proof" />
     <property role="3GE5qa" value="proof" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2AfSc6Jvjow" role="1TKVEl">
+      <property role="IQ2nx" value="2994859399702197792" />
+      <property role="TrG5h" value="description" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="$u9BK__SAr" role="1TKVEi">
       <property role="IQ2ns" value="657004910291159451" />
       <property role="20lmBu" value="aggregation" />
@@ -228,7 +233,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="reasoning" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3OtS" resolve="Reasoning" />
+      <ref role="20lvS9" node="3JXBM6C3UQB" resolve="Node" />
     </node>
   </node>
   <node concept="PlHQZ" id="3JXBM6C3OtS">
@@ -244,6 +249,9 @@
     </node>
     <node concept="PrWs8" id="3JXBM6C4o1Q" role="PrDN$">
       <ref role="PrY4T" node="3JXBM6C4ntZ" resolve="Leaf" />
+    </node>
+    <node concept="PrWs8" id="5jVx7S23jt3" role="PrDN$">
+      <ref role="PrY4T" node="5jVx7S23jsE" resolve="Proposition" />
     </node>
   </node>
   <node concept="1TIwiD" id="3JXBM6C3Pwi">
@@ -261,6 +269,7 @@
     <property role="EcuMT" value="4322786184247881124" />
     <property role="TrG5h" value="SubProof" />
     <property role="3GE5qa" value="proof" />
+    <property role="34LRSv" value="subproof" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3JXBM6C3UQ_" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247881125" />
@@ -271,6 +280,9 @@
     </node>
     <node concept="PrWs8" id="3JXBM6C3UQC" role="PzmwI">
       <ref role="PrY4T" node="3JXBM6C3UQB" resolve="Node" />
+    </node>
+    <node concept="PrWs8" id="5jVx7S23jsM" role="PzmwI">
+      <ref role="PrY4T" node="5jVx7S23jsE" resolve="Proposition" />
     </node>
   </node>
   <node concept="PlHQZ" id="3JXBM6C3UQB">
@@ -420,6 +432,11 @@
     <property role="34LRSv" value="R" />
     <property role="R4oN_" value="Reiteration" />
     <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="PlHQZ" id="5jVx7S23jsE">
+    <property role="EcuMT" value="6123633795075487530" />
+    <property role="3GE5qa" value="proof" />
+    <property role="TrG5h" value="Proposition" />
   </node>
 </model>
 
