@@ -104,7 +104,6 @@
       <concept id="8998492695583129971" name="jetbrains.mps.lang.editor.structure.SubstituteFeature_DescriptionText" flags="ng" index="16NL0t">
         <child id="8998492695583129972" name="query" index="16NL0q" />
       </concept>
-      <concept id="1154465273778" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode" flags="nn" index="3bvxqY" />
       <concept id="2896773699153795590" name="jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform" flags="ng" index="3cWJ9i">
         <child id="3473224453637651919" name="placeInCell" index="CtIbM" />
       </concept>
@@ -128,6 +127,7 @@
       <concept id="3308396621974580100" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Default" flags="ng" index="3p36aQ" />
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1219226236603" name="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" flags="ln" index="3vyZuw" />
+      <concept id="5425882385312046132" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode" flags="nn" index="1yR$tW" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
@@ -2116,7 +2116,7 @@
                           <node concept="chp4Y" id="5jVx7S2079D" role="3oSUPX">
                             <ref role="cht4Q" to="jfgh:3JXBM6C3UQB" resolve="Node" />
                           </node>
-                          <node concept="3bvxqY" id="5jVx7S2079E" role="1m5AlR" />
+                          <node concept="1yR$tW" id="2AfSc6JyrF7" role="1m5AlR" />
                         </node>
                         <node concept="2qgKlT" id="5jVx7S20KqM" role="2OqNvi">
                           <ref role="37wK5l" to="qd7f:5jVx7S20nJ_" resolve="allInScope" />
@@ -2182,7 +2182,7 @@
               </node>
             </node>
             <node concept="2OqwBi" id="5jVx7S1Zkfh" role="3clFbw">
-              <node concept="3bvxqY" id="5jVx7S1Zk0c" role="2Oq$k0" />
+              <node concept="1yR$tW" id="2AfSc6Jy_o6" role="2Oq$k0" />
               <node concept="1mIQ4w" id="5jVx7S1ZkAb" role="2OqNvi">
                 <node concept="chp4Y" id="5jVx7S1ZkJ7" role="cj9EA">
                   <ref role="cht4Q" to="jfgh:3JXBM6C3UQB" resolve="Node" />
