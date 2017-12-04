@@ -26,8 +26,14 @@
     </language>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
       <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
+      <concept id="2755237150521975431" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithString" flags="ng" index="aVJcg">
+        <child id="2755237150521975437" name="value" index="aVJcq" />
+      </concept>
       <concept id="7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" flags="ng" index="iG8Mu">
         <child id="7321017245477039051" name="compositePart" index="iGT6I" />
+      </concept>
+      <concept id="3767587139141066978" name="jetbrains.mps.build.structure.BuildVariableMacro" flags="ng" index="2kB4xC">
+        <child id="2755237150521975432" name="initialValue" index="aVJcv" />
       </concept>
       <concept id="4993211115183325728" name="jetbrains.mps.build.structure.BuildProjectDependency" flags="ng" index="2sgV4H">
         <reference id="5617550519002745380" name="script" index="1l3spb" />
@@ -72,6 +78,9 @@
       <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
       <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
         <property id="4903714810883755350" name="text" index="3MwjfP" />
+      </concept>
+      <concept id="4903714810883702017" name="jetbrains.mps.build.structure.BuildVarRefStringPart" flags="ng" index="3Mxwey">
+        <reference id="4903714810883702018" name="macro" index="3Mxwex" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -177,8 +186,11 @@
         </node>
       </node>
       <node concept="3_J27D" id="7BVjoXzUx6a" role="m$_w8">
-        <node concept="3Mxwew" id="7BVjoXzUx6l" role="3MwsjC">
-          <property role="3MwjfP" value="0.2-b17" />
+        <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
+          <property role="3MwjfP" value="2.0-b" />
+        </node>
+        <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
+          <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />
         </node>
       </node>
       <node concept="3_J27D" id="3AC_dXTSEnT" role="3s6cr7">
@@ -1519,6 +1531,16 @@
       <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
       <node concept="398BVA" id="7Ant4WkHLme" role="2JcizS">
         <ref role="398BVh" node="7Ant4WkHLn3" resolve="mps_home" />
+      </node>
+    </node>
+    <node concept="2kB4xC" id="2BiN_P7R7jO" role="1l3spd">
+      <property role="TrG5h" value="ci.build.num" />
+      <node concept="aVJcg" id="2BiN_P7R7Ma" role="aVJcv">
+        <node concept="NbPM2" id="2BiN_P7R7M9" role="aVJcq">
+          <node concept="3Mxwew" id="2BiN_P7R7M8" role="3MwsjC">
+            <property role="3MwjfP" value="0" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="398rNT" id="46o4wsH3mv_" role="1l3spd">

@@ -1,3 +1,6 @@
+import groovy.xml.MarkupBuilder
+import java.util.regex.*
+
 defaultTasks 'init'
 
 allprojects {
@@ -71,11 +74,39 @@ task init(dependsOn: allInitDependencies) {
   }
 }
 
+def tagMatcher() {
+  System.env.TRAVIS_TAG =~ /v([0-9.]+)-.*\.([0-9]+)/
+}
+
+task generateUpdatePluginsXml {
+  onlyIf {
+    tagMatcher().find()
+  }
+  doLast {
+    def updatesDir = project.projectDir.absolutePath + "/build/artifacts/typechecking-plugin/updates"
+    mkdir(updatesDir)
+
+    def baseUrl = "https://github.com/fisakov/constraints-typechecking/releases/download"
+    def zip = "/typechecking-0.2.zip"
+
+    file(updatesDir + "/updatePlugins.xml").withWriter { w ->
+       new MarkupBuilder(new IndentPrinter(w, "    ", true)).
+         plugins {
+           plugin( id: "jetbrains.mps.typechecking" ,
+                   url: baseUrl + "/$System.env.TRAVIS_TAG" + zip ,
+                   version: "${tagMatcher()[0][1]}-b${tagMatcher()[0][2]}" )
+         { }
+       }
+    }
+  }
+}
+
 ant.taskdef(name: 'junit',
             classname: 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTask',
             classpath: configurations.junitAnt.asPath)
 
 ant.importBuild('build.xml')
+ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '0'}".toString()
 
 // ensure 'init' runs before 'fetchDependencies' and 'declare-mps-tasks'
 fetchDependencies {
@@ -99,3 +130,10 @@ classes {
     'generate'
   }
 }
+
+assemble {
+  finalizedBy {
+    'generateUpdatePluginsXml'
+  }
+}
+

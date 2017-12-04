@@ -3,6 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/typechecking-plugin" />
   <property name="build.layout" location="${build.dir}/artifacts/typechecking-plugin" />
+  <property name="ci.build.num" value="0" />
   <property name="mps.macro.logic_home" location="${basedir}" />
   <property name="mps_home" location="${basedir}/MPS_HOME" />
   <property name="artifacts.mps" location="${mps_home}" />
@@ -838,7 +839,7 @@
         <id>jetbrains.mps.typechecking</id>
         <name>Typechecking with Constraint Rules</name>
         <description>Experimental support for type checking with constraint rules</description>
-        <version>0.2-b17</version>
+        <version>2.0-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         
         <extensions defaultExtensionNs="com.intellij">
@@ -1348,7 +1349,7 @@
       <zipfileset dir="${basedir}/typechecking/solutions/jetbrains.mps.typechecking/lib" prefix="typechecking/lib" />
       <fileset dir="${build.tmp}/default/typechecking-0.2.zip" />
     </zip>
-    <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
+    <echo file="${build.layout}/build.properties">typechecking-plugin.ci.build.num=${ci.build.num}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
   <target name="buildDependents" />
