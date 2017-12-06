@@ -40,9 +40,21 @@ The source code can be opened with the latest version of JetBrains MPS, which is
 
 ## Installation
 
-See the downloads section of the latest release for the plugin archive. This archive has to be unpacked to the MPS plugins folder on your local drive. For example (using macOS):
+The easiest way to install the plugin is by using the update mechanism built in to JetBrains MPS. 
 
-`unzip typechecker-0.1.zip -d ~/Library/Application\ Support/MPS2017.1/`
+1. Open the Preferences dialog and select Plugins on the left
+2. In the panel on the right select Browse Repositories…
+3. In the dialog that appears select Manage Repositories…
+4. Add a new repository with the following url:
+```
+https://raw.githubusercontent.com/fisakov/constraints-typechecking/updates/updatePlugins.xml
+```
+5. The list of plugins should be refreshed and the new plugin «typechecking» should appear
+6. Install the plugin and restart the application.
+
+Alternatively, the plugin can be installed manually. See the downloads section of the latest release for the plugin archive. This archive has to be unpacked to the MPS plugins folder on your local drive. For example (using macOS):
+
+`unzip typechecker-0.2.zip -d ~/Library/Application\ Support/MPS2017.2/`
 
 ## Hacking
 
