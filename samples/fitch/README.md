@@ -7,13 +7,9 @@ This project is developed with [JetBrains MPS](https://www.jetbrains.com/mps/) u
 ### Instructions
 
 1. Install the latest version of [JetBrains MPS](https://www.jetbrains.com/mps/download).
-2. Download the type checking plugin from [this](https://github.com/fisakov/constraints-typechecking) project (see downloads for the latest release)
-3. Install the plugin to your local drive (example for macOS): 
-
-    `unzip typechecking-0.2.zip -d ~/Library/Application\ Support/MPS2017.2/`
-
-4. Clone this repository and open the project with MPS
-5. Execute 'Rebuild Project'
+2. Download the type checking plugin from [this](https://github.com/fisakov/constraints-typechecking) project (follow the instructions there for installing the plugin using either update mechanism or manually)
+3. Clone this repository and open the project with MPS
+4. Execute 'Rebuild Project'
 
 ### Using the proof checker
 
