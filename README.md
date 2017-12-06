@@ -36,7 +36,7 @@ Once finished, the constraint rules produce the inferred types and type errors, 
 
 ## Dependencies
 
-The source code can be opened with the latest version of JetBrains MPS, which is 2017.1 as of the time this file is written. The plugin that is created with the build script is also compatible with the same version of MPS.
+The source code can be opened with the latest version of JetBrains MPS. The plugin that is created with the build script is also compatible with the same version of MPS.
 
 ## Installation
 
