@@ -21,7 +21,7 @@ If the proof is valid, the goal is underlined with green, otherwise the goal and
 
 ### Propositional logic language
 
-The language enables to write boolean expressions and consist of propositional constants and the following logical operations: conjunction (And), disjunction (Or), negation (Not), implication (If), and biconditional (Iff). The following table summarises the operations and symbols that are used to represent them.
+The language enables to write boolean expressions and consists of propositional constants and the following logical operations: conjunction (And), disjunction (Or), negation (Not), implication (If), and biconditional (Iff). The following table summarises the operations and symbols that are used to represent them.
 
 | Name | Logical operator | Symbol |
 |:--|:--|:--|
@@ -52,7 +52,7 @@ Proofs in propositional logic are built from reasonings and subproofs. A reasoni
 | Reiteration | 1 | Reinvokes a premise or an assumption available in the scope |
 | Judgement | (depends on the rule) | Invokes an inference rule |
 
-The rules of inference are defined by the used [system](http://logic.stanford.edu/intrologic/glossary/fitch_system.html) and consist of ten rules: 
+The rules of inference are defined by the [system](http://logic.stanford.edu/intrologic/glossary/fitch_system.html) being used and comprises ten rules: 
 
 | Inference rule | Symbol| Number of bases of a judgement |
 |:--|:--|:--|
@@ -71,7 +71,7 @@ Here is a sample proof in propositional logic.
 
 ![An example of proof in Fitch system](img/sample-proof.png)
 
-The proof is validated using experimental type checking with constraint rules, which is a new feature being developed for MPS. The sentences that constitute judgements in the proof are represented as terms in the internal language of constraint rules. The inference rules use terms unification to match sentences and extract sub-sentences. Every judgement is assigned a conclusion and, if the judgement is proved to be correct, it is marked as valid. 
+The proof is validated using experimental type checking with constraint rules, which is a new feature being developed for MPS. The sentences that constitute judgements in the proof are represented as *terms* in the internal language of constraint rules. The inference rules use *terms unification* to match sentences and extract sub-sentences. Every judgement is assigned a conclusion and, if the judgement is proved to be correct, it is marked as valid. 
 
 Here is a sample of an inference rule written in the language of constraint rules processing.
 
@@ -152,6 +152,6 @@ The proof’s goal is unified with the last **top-level** reasoning. Since reaso
 
 ### Type checking
 
-The actual type checking is trivial. The first stage of the constraint rules program does all the job and produces `valid` constraints, which are then analysed. All reasonings are checked in the second stage. Reasonings that don’t have `valid` constraint are marked with error. 
+The actual type checking is trivial. The first stage of the constraint rules program does all the job and produces `valid` constraints, which are to be analysed in the second stage. All reasonings are checked in the second stage, and the reasonings that don’t have `valid` constraint are marked with error. 
 
 There is only one type «OK». Only the goal gets assigned a type in case it marked as `valid`, otherwise an error is produced. 
