@@ -2196,5 +2196,28 @@
       </node>
     </node>
   </node>
+  <node concept="13h7C7" id="2zPM3MPBdd2">
+    <property role="3GE5qa" value="rule.code.parameter" />
+    <ref role="13h7C2" to="wq2x:5MHpiylG7gA" resolve="RuleParameterBlock" />
+    <node concept="13hLZK" id="2zPM3MPBdd3" role="13h7CW">
+      <node concept="3clFbS" id="2zPM3MPBdd4" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="2zPM3MPBddd" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="getExpectedRetType" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:i2fhBNC" resolve="getExpectedRetType" />
+      <node concept="3Tm1VV" id="2zPM3MPBdde" role="1B3o_S" />
+      <node concept="2AHcQZ" id="2zPM3MPBddh" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="3clFbS" id="2zPM3MPBddk" role="3clF47">
+        <node concept="3clFbF" id="2zPM3MPBddB" role="3cqZAp">
+          <node concept="10Nm6u" id="2zPM3MPBddA" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="2zPM3MPBddl" role="3clF45" />
+    </node>
+  </node>
 </model>
 
