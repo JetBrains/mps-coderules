@@ -267,7 +267,7 @@
         <node concept="3clFbF" id="6Kcfpq7B99k" role="3cqZAp">
           <node concept="2OqwBi" id="5uFPQ7BZfDt" role="3clFbG">
             <node concept="1rXfSq" id="7ISVfSJnHs" role="2Oq$k0">
-              <ref role="37wK5l" to="av0y:~AndItem.symbol():jetbrains.mps.logic.reactor.program.Symbol" resolve="symbol" />
+              <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
             </node>
             <node concept="liA8E" id="5uFPQ7BZfHQ" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
@@ -368,7 +368,7 @@
                       <ref role="3cqZAo" node="6Kcfpq7B2Ww" resolve="that" />
                     </node>
                     <node concept="liA8E" id="7ISVfSJor9" role="2OqNvi">
-                      <ref role="37wK5l" to="av0y:~AndItem.symbol():jetbrains.mps.logic.reactor.program.Symbol" resolve="symbol" />
+                      <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
                     </node>
                   </node>
                 </node>
@@ -378,7 +378,7 @@
                       <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                     </node>
                     <node concept="1rXfSq" id="7ISVfSJomP" role="10QFUP">
-                      <ref role="37wK5l" to="av0y:~AndItem.symbol():jetbrains.mps.logic.reactor.program.Symbol" resolve="symbol" />
+                      <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
                     </node>
                   </node>
                 </node>
@@ -387,7 +387,7 @@
             <node concept="3y3z36" id="6Kcfpq7B2WV" role="3K4Cdx">
               <node concept="10Nm6u" id="6Kcfpq7B2WW" role="3uHU7w" />
               <node concept="1rXfSq" id="7ISVfSJojN" role="3uHU7B">
-                <ref role="37wK5l" to="av0y:~AndItem.symbol():jetbrains.mps.logic.reactor.program.Symbol" resolve="symbol" />
+                <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
               </node>
             </node>
             <node concept="3y3z36" id="6Kcfpq7B2WX" role="3K4GZi">
@@ -397,7 +397,7 @@
                   <ref role="3cqZAo" node="6Kcfpq7B2Ww" resolve="that" />
                 </node>
                 <node concept="liA8E" id="7ISVfSJots" role="2OqNvi">
-                  <ref role="37wK5l" to="av0y:~AndItem.symbol():jetbrains.mps.logic.reactor.program.Symbol" resolve="symbol" />
+                  <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
                 </node>
               </node>
             </node>
@@ -457,7 +457,7 @@
                   <node concept="3y3z36" id="6Kcfpq7B2Xt" role="3K4Cdx">
                     <node concept="10Nm6u" id="6Kcfpq7B2Xu" role="3uHU7w" />
                     <node concept="1rXfSq" id="7ISVfSJoxI" role="3uHU7B">
-                      <ref role="37wK5l" to="av0y:~AndItem.symbol():jetbrains.mps.logic.reactor.program.Symbol" resolve="symbol" />
+                      <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="6Kcfpq7B2Xv" role="3K4E3e">
@@ -465,7 +465,7 @@
                       <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                       <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
                       <node concept="1rXfSq" id="7ISVfSJoy$" role="37wK5m">
-                        <ref role="37wK5l" to="av0y:~AndItem.symbol():jetbrains.mps.logic.reactor.program.Symbol" resolve="symbol" />
+                        <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
                       </node>
                     </node>
                     <node concept="liA8E" id="6Kcfpq7B2Xx" role="2OqNvi">
@@ -499,9 +499,6 @@
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
-    </node>
-    <node concept="3uibUv" id="4TCblo5ZwCk" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:4TCblo5ZkfI" resolve="AbstractAndItem" />
     </node>
   </node>
   <node concept="312cEu" id="2GO7tyJVmP4">
@@ -1015,21 +1012,6 @@
   <node concept="312cEu" id="3F6vMxqo13Y">
     <property role="TrG5h" value="DefaultSessionSolver" />
     <node concept="2tJIrI" id="3F6vMxqo1bG" role="jymVt" />
-    <node concept="3clFbW" id="3F6vMxqo1c$" role="jymVt">
-      <node concept="37vLTG" id="3F6vMxqo1cY" role="3clF46">
-        <property role="TrG5h" value="javaExpressionSolver" />
-        <node concept="3uibUv" id="5jCHAT2qKEp" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="3F6vMxqo1cA" role="3clF45" />
-      <node concept="3Tm1VV" id="3F6vMxqo1cB" role="1B3o_S" />
-      <node concept="3clFbS" id="3F6vMxqo1cC" role="3clF47" />
-      <node concept="2AHcQZ" id="23c4kVtauK5" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="23c4kVtauXp" role="jymVt" />
     <node concept="3clFbW" id="23c4kVtavpK" role="jymVt">
       <node concept="3cqZAl" id="23c4kVtavpM" role="3clF45" />
       <node concept="3Tm1VV" id="23c4kVtavpN" role="1B3o_S" />

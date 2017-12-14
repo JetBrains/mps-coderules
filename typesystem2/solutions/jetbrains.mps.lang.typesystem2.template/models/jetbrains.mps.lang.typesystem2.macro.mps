@@ -551,7 +551,7 @@
     <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="4MEOIDFA4bd" role="jymVt" />
     <node concept="3clFb_" id="4MEOIDFA4bP" role="jymVt">
-      <property role="TrG5h" value="typeTerm" />
+      <property role="TrG5h" value="getTerm" />
       <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="4MEOIDFA4e5" role="3clF45">
         <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />

@@ -2542,7 +2542,7 @@
       <property role="TrG5h" value="RuleApplicationSessionListener" />
       <node concept="3clFb_" id="4vBwiiV65KJ" role="jymVt">
         <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="asType" />
+        <property role="TrG5h" value="macroExpanded" />
         <node concept="37vLTG" id="4vBwiiV660X" role="3clF46">
           <property role="TrG5h" value="typeNode" />
           <node concept="3Tqbb2" id="4vBwiiV665_" role="1tU5fm" />

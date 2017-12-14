@@ -5418,23 +5418,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4MqhgXUaiGi" role="jymVt" />
-    <node concept="3clFb_" id="1ggxSI7z25H" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="javaExpressionSolver" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3Tm1VV" id="1ggxSI7z25J" role="1B3o_S" />
-      <node concept="3uibUv" id="5jCHAT2vJrl" role="3clF45">
-        <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
-      </node>
-      <node concept="3clFbS" id="1ggxSI7z25L" role="3clF47">
-        <node concept="3clFbF" id="1ggxSI7z28i" role="3cqZAp">
-          <node concept="10Nm6u" id="1fZtLFT9rfQ" role="3clFbG" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4MqhgXUajfR" role="jymVt" />
     <node concept="3clFb_" id="4MqhgXUajMY" role="jymVt">
       <property role="TrG5h" value="init" />
       <node concept="3cqZAl" id="4MqhgXUajN0" role="3clF45" />
@@ -15548,7 +15531,7 @@
       </node>
       <node concept="2tJIrI" id="5hSMZ_lNZhT" role="jymVt" />
       <node concept="3clFb_" id="5hSMZ_lNZhU" role="jymVt">
-        <property role="TrG5h" value="typeTerm" />
+        <property role="TrG5h" value="getTerm" />
         <property role="1EzhhJ" value="false" />
         <node concept="3uibUv" id="5hSMZ_lNZhV" role="3clF45">
           <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
@@ -15947,7 +15930,7 @@
               <node concept="3clFbF" id="5hSMZ_ljA5G" role="3cqZAp">
                 <node concept="2OqwBi" id="5hSMZ_ljA5H" role="3clFbG">
                   <node concept="liA8E" id="5hSMZ_ljA5I" role="2OqNvi">
-                    <ref role="37wK5l" to="psr6:4MEOIDFA4bP" resolve="typeTerm" />
+                    <ref role="37wK5l" to="psr6:4MEOIDFA4bP" resolve="getTerm" />
                   </node>
                   <node concept="1eOMI4" id="5hSMZ_ljA5J" role="2Oq$k0">
                     <node concept="2ShNRf" id="5hSMZ_ljA5K" role="1eOMHV">
@@ -16137,7 +16120,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="5hSMZ_ljTU9" role="2OqNvi">
-                <ref role="37wK5l" to="psr6:4MEOIDFA4bP" resolve="typeTerm" />
+                <ref role="37wK5l" to="psr6:4MEOIDFA4bP" resolve="getTerm" />
               </node>
               <node concept="raruj" id="5hSMZ_ljTUa" role="lGtFl" />
             </node>

@@ -10,7 +10,6 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -86,12 +85,6 @@
     <property role="3GE5qa" value="treeform" />
     <property role="EcuMT" value="7571593955706137125" />
     <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
-    <node concept="1TJgyi" id="6dP_abdQoiG" role="1TKVEl">
-      <property role="TrG5h" value="kind" />
-      <property role="IQ2nx" value="7166797808989209772" />
-      <ref role="AX2Wp" node="6dP_abdQnLY" resolve="NodeKind" />
-      <node concept="asaX9" id="kTK1BfuS5K" role="lGtFl" />
-    </node>
     <node concept="1TJgyj" id="6$jH9oLnyAp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="role" />
@@ -223,12 +216,6 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="cardinalityExpr" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="1TJgyi" id="7E86$tKtijQ" role="1TKVEl">
-      <property role="TrG5h" value="isMulti" />
-      <property role="IQ2nx" value="8829335963591582966" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-      <node concept="asaX9" id="7dgRGU4AfJD" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="7E86$tKtid6" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
