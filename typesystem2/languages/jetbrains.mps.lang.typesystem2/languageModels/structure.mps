@@ -84,14 +84,6 @@
       <property role="IQ2ns" value="7368070394767441299" />
       <ref role="20lvS9" node="4EfgX2ET3GH" resolve="AbstractRule" />
     </node>
-    <node concept="1TJgyj" id="2vGNdoJLd0q" role="1TKVEi">
-      <property role="IQ2ns" value="2876899482279399450" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="primary" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="2vGNdoJLd0b" resolve="ConstraintReference" />
-      <node concept="asaX9" id="1HWyn8jErEj" role="lGtFl" />
-    </node>
     <node concept="1TJgyj" id="1HWyn8jEsaE" role="1TKVEi">
       <property role="IQ2ns" value="1980609059185345194" />
       <property role="20lmBu" value="aggregation" />
@@ -228,25 +220,6 @@
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
-  <node concept="1TIwiD" id="6p0DfM0asb7">
-    <property role="3GE5qa" value="constraint.template" />
-    <property role="TrG5h" value="Solver" />
-    <property role="19KtqR" value="true" />
-    <property role="34LRSv" value="solver" />
-    <property role="EcuMT" value="7368070394767065799" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="6p0DfM0asSt" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="template" />
-      <property role="20lbJX" value="0..n" />
-      <property role="IQ2ns" value="7368070394767068701" />
-      <ref role="20lvS9" node="6p0DfM0asBO" resolve="ConstraintDeclaration" />
-    </node>
-    <node concept="PrWs8" id="6p0DfM0au4g" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="asaX9" id="1HWyn8jFqxS" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="6p0DfM0asBO">
     <property role="3GE5qa" value="constraint.template" />
     <property role="TrG5h" value="ConstraintDeclaration" />
@@ -319,19 +292,6 @@
       <property role="IQ2ns" value="7368070394770793930" />
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="6p0DfM0pKSO">
-    <property role="TrG5h" value="LogicalExpression" />
-    <property role="EcuMT" value="7368070394771082804" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="6p0DfM0pQge" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="content" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="7368070394771104782" />
-      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
-    </node>
-    <node concept="asaX9" id="49obaclcan8" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="2E5lcNn01_F">
     <property role="3GE5qa" value="constraint.typespecific" />
@@ -720,28 +680,12 @@
     <property role="34LRSv" value="macro table" />
     <property role="EcuMT" value="1618328391714763069" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="3TnYLtqfp9N" role="1TKVEi">
-      <property role="IQ2ns" value="4492335231042163315" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parameter" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="3TnYLtqfhzx" resolve="ContextParameterDeclaration" />
-      <node concept="asaX9" id="6hqFpWmRcmn" role="lGtFl" />
-    </node>
     <node concept="1TJgyj" id="1pPth$m5B4Y" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="macro" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1618328391714763070" />
       <ref role="20lvS9" node="1pPth$m5Bbz" resolve="MacroDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="4MEOIDFttPg" role="1TKVEi">
-      <property role="IQ2ns" value="5524459797190401360" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="termDeclaration" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="4MEOIDFttoe" resolve="TermDeclaration" />
-      <node concept="asaX9" id="5hSMZ_lNwsa" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="1pPth$m5B55" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -772,20 +716,6 @@
       <property role="20kJfa" value="body" />
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="7IysFe_ZPX_" resolve="MacroBody" />
-    </node>
-    <node concept="1TJgyj" id="5MFgGQnlLNJ" role="1TKVEi">
-      <property role="20kJfa" value="conceptDeclaraton" />
-      <property role="IQ2ns" value="6677504323281689839" />
-      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      <node concept="asaX9" id="6DOfTm$A4l$" role="lGtFl" />
-    </node>
-    <node concept="1TJgyj" id="4MEOIDF_kTL" role="1TKVEi">
-      <property role="IQ2ns" value="5524459797192461937" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="termDecl" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="4MEOIDFttoe" resolve="TermDeclaration" />
-      <node concept="asaX9" id="5hSMZ_lMoKM" role="lGtFl" />
     </node>
     <node concept="PrWs8" id="1pPth$m5Bb$" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -832,24 +762,6 @@
     <property role="3GE5qa" value="term.feature" />
     <property role="TrG5h" value="GetterBlock" />
     <ref role="1TJDcQ" node="1hX44vMFoce" resolve="CodeBlock" />
-  </node>
-  <node concept="1TIwiD" id="1hX44vMEjQr">
-    <property role="EcuMT" value="1476354154047290779" />
-    <property role="3GE5qa" value="macro.code" />
-    <property role="TrG5h" value="TypeNodeExpression" />
-    <property role="34LRSv" value="inputNode" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="1hX44vMIQ6F" role="1TKVEi">
-      <property role="IQ2ns" value="1476354154048479659" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="declaration" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="1pPth$m5Bbz" resolve="MacroDeclaration" />
-    </node>
-    <node concept="PrWs8" id="1hX44vML8ZV" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="asaX9" id="6DOfTmzYpQo" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1hX44vMFoce">
     <property role="EcuMT" value="1476354154047570702" />
@@ -1073,36 +985,12 @@
     <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="Term" />
     <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
-    <node concept="1TJgyj" id="1L74NXEmI65" role="1TKVEi">
-      <property role="IQ2ns" value="2037618519496647045" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="argument" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="1L74NXEmFJU" resolve="MacroArgumentList" />
-      <node concept="asaX9" id="5hSMZ_lg0sM" role="lGtFl" />
-    </node>
-    <node concept="1TJgyj" id="5hSMZ_ldQTd" role="1TKVEi">
-      <property role="IQ2ns" value="6086839168128216653" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="termArgument" />
-      <ref role="20lvS9" node="5hSMZ_ldReM" resolve="TermArgumentList" />
-      <node concept="asaX9" id="1HWyn8jSwXY" role="lGtFl" />
-    </node>
     <node concept="1TJgyj" id="1L74NXFNj2L" role="1TKVEi">
       <property role="IQ2ns" value="2037618519520915633" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="override" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="1L74NXFMz6j" resolve="TermFeatureOverride" />
-    </node>
-    <node concept="1TJgyj" id="1L74NXElX1C" role="1TKVEi">
-      <property role="IQ2ns" value="2037618519496446056" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="declaration" />
-      <property role="20lbJX" value="0..1" />
-      <property role="TrG5h" value="declaration" />
-      <ref role="20lvS9" node="1pPth$m5Bbz" resolve="MacroDeclaration" />
-      <node concept="asaX9" id="5hSMZ_ldQ_C" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="5hSMZ_l93p$" role="1TKVEi">
       <property role="IQ2ns" value="6086839168126957156" />
@@ -1170,25 +1058,6 @@
       <ref role="20lvS9" node="1pPth$m5oa5" resolve="TermFeature" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7LZcKzBrEPK">
-    <property role="EcuMT" value="8970945096080862576" />
-    <property role="TrG5h" value="TermListExpression" />
-    <property role="34LRSv" value="termlist" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyi" id="4bWqD4Cl_wO" role="1TKVEl">
-      <property role="IQ2nx" value="4826850072313878580" />
-      <property role="TrG5h" value="hasNil" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyj" id="7LZcKzBrEQ$" role="1TKVEi">
-      <property role="IQ2ns" value="8970945096080862628" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="contents" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" to="5j4j:5lJXKARS0" resolve="TreeForm" />
-    </node>
-    <node concept="asaX9" id="428_4iYu28z" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="2vGNdoJLd0b">
     <property role="EcuMT" value="2876899482279399435" />
     <property role="3GE5qa" value="rule" />
@@ -1228,14 +1097,6 @@
       <property role="20kJfa" value="argument" />
       <ref role="20lvS9" node="1L74NXEmFJU" resolve="MacroArgumentList" />
     </node>
-    <node concept="1TJgyj" id="4MEOIDFfpTb" role="1TKVEi">
-      <property role="IQ2ns" value="5524459797186715211" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="typeTerm" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="1L74NXElX0R" resolve="Term" />
-      <node concept="asaX9" id="5hSMZ_lrctE" role="lGtFl" />
-    </node>
     <node concept="PrWs8" id="5hSMZ_ltV78" role="PzmwI">
       <ref role="PrY4T" node="1L74NXEmF9t" resolve="MacroInvocation" />
     </node>
@@ -1251,14 +1112,6 @@
       <property role="20kJfa" value="prototype" />
       <ref role="20lvS9" node="4MEOIDFttoe" resolve="TermDeclaration" />
     </node>
-    <node concept="1TJgyj" id="4MEOIDFttNi" role="1TKVEi">
-      <property role="IQ2ns" value="5524459797190401234" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="parameter" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="4MEOIDFwTxW" resolve="TermDeclarationParameter" />
-      <node concept="asaX9" id="Lu45F83wsG" role="lGtFl" />
-    </node>
     <node concept="1TJgyj" id="4MEOIDFttNk" role="1TKVEi">
       <property role="IQ2ns" value="5524459797190401236" />
       <property role="20lmBu" value="aggregation" />
@@ -1269,46 +1122,6 @@
     <node concept="PrWs8" id="4MEOIDFttNg" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="4MEOIDFwTxW">
-    <property role="EcuMT" value="5524459797191301244" />
-    <property role="3GE5qa" value="term" />
-    <property role="TrG5h" value="TermDeclarationParameter" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="4MEOIDFwTy3" role="1TKVEi">
-      <property role="IQ2ns" value="5524459797191301251" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="type" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
-    </node>
-    <node concept="PrWs8" id="4MEOIDFwTxX" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-    <node concept="PrWs8" id="4MEOIDFwTxY" role="PzmwI">
-      <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
-    </node>
-    <node concept="PrWs8" id="4MEOIDFwTxZ" role="PzmwI">
-      <ref role="PrY4T" to="tpck:hqLv6T6" resolve="IResolveInfo" />
-    </node>
-    <node concept="asaX9" id="Lu45F8t9q0" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="4MEOIDFxxDM">
-    <property role="EcuMT" value="5524459797191465586" />
-    <property role="3GE5qa" value="term" />
-    <property role="TrG5h" value="TermDeclarationParameterRef" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="4MEOIDFxxDY" role="1TKVEi">
-      <property role="IQ2ns" value="5524459797191465598" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="parameter" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="4MEOIDFwTxW" resolve="TermDeclarationParameter" />
-    </node>
-    <node concept="PrWs8" id="4MEOIDFxxDW" role="PzmwI">
-      <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
-    </node>
-    <node concept="asaX9" id="Lu45F83W2g" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="20Ay2VefOqC">
     <property role="EcuMT" value="2316688792938825384" />
@@ -1383,41 +1196,6 @@
     <property role="TrG5h" value="LogicalContextExpression" />
     <property role="34LRSv" value="logicalContext" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-  </node>
-  <node concept="1TIwiD" id="5hSMZ_ldReM">
-    <property role="EcuMT" value="6086839168128218034" />
-    <property role="3GE5qa" value="term" />
-    <property role="TrG5h" value="TermArgumentList" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5hSMZ_ldWzp" role="1TKVEi">
-      <property role="IQ2ns" value="6086839168128239833" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="binding" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5hSMZ_ldReN" resolve="TermParameterBinding" />
-    </node>
-    <node concept="asaX9" id="Lu45F8t9_2" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="5hSMZ_ldReN">
-    <property role="EcuMT" value="6086839168128218035" />
-    <property role="3GE5qa" value="term" />
-    <property role="TrG5h" value="TermParameterBinding" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5hSMZ_ldV8_" role="1TKVEi">
-      <property role="IQ2ns" value="6086839168128234021" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="code" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="1TJgyj" id="5hSMZ_ldReO" role="1TKVEi">
-      <property role="IQ2ns" value="6086839168128218036" />
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="parameter" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="4MEOIDFwTxW" resolve="TermDeclarationParameter" />
-    </node>
-    <node concept="asaX9" id="Lu45F8t9$Y" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="5hSMZ_lNwqz">
     <property role="EcuMT" value="6086839168138086051" />

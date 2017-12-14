@@ -2169,33 +2169,6 @@
       <node concept="3clFbS" id="1HWyn8iLEBO" role="2VODD2" />
     </node>
   </node>
-  <node concept="13h7C7" id="4MEOIDFxxVo">
-    <property role="3GE5qa" value="term" />
-    <ref role="13h7C2" to="wq2x:4MEOIDFxxDM" resolve="TermDeclarationParameterRef" />
-    <node concept="13hLZK" id="4MEOIDFxxVp" role="13h7CW">
-      <node concept="3clFbS" id="4MEOIDFxxVq" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="4MEOIDFxxVz" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="TrG5h" value="getVariable" />
-      <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:SORzhOpB6t" resolve="getVariable" />
-      <node concept="3Tm1VV" id="4MEOIDFxxV$" role="1B3o_S" />
-      <node concept="3clFbS" id="4MEOIDFxxVB" role="3clF47">
-        <node concept="3clFbF" id="4MEOIDFxxVT" role="3cqZAp">
-          <node concept="2OqwBi" id="4MEOIDFxy9Z" role="3clFbG">
-            <node concept="13iPFW" id="4MEOIDFxxVS" role="2Oq$k0" />
-            <node concept="3TrEf2" id="4MEOIDFxyiL" role="2OqNvi">
-              <ref role="3Tt5mk" to="wq2x:4MEOIDFxxDY" resolve="parameter" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="4MEOIDFxxVC" role="3clF45">
-        <ref role="ehGHo" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
-      </node>
-    </node>
-  </node>
   <node concept="13h7C7" id="2zPM3MPBdd2">
     <property role="3GE5qa" value="rule.code.parameter" />
     <ref role="13h7C2" to="wq2x:5MHpiylG7gA" resolve="RuleParameterBlock" />
