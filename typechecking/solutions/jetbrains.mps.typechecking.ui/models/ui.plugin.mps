@@ -26451,7 +26451,7 @@
                 <ref role="3uigEE" to="i348:1ffsG7bW_V4" resolve="RuleTemplate" />
                 <node concept="3qUE_q" id="7XdbJdyRKIf" role="11_B2D">
                   <node concept="3uibUv" id="7XdbJdyRMGp" role="3qUE_r">
-                    <ref role="3uigEE" to="i348:2RRx4MZ6_68" resolve="RuleApplicationToken" />
+                    <ref role="3uigEE" to="i348:2RRx4MZ6_68" resolve="RuleTemplateApplicationToken" />
                   </node>
                 </node>
               </node>

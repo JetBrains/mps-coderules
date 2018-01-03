@@ -1915,7 +1915,7 @@
         <node concept="37vLTG" id="2RRx4MZnXS8" role="3clF46">
           <property role="TrG5h" value="session" />
           <node concept="3uibUv" id="2RRx4MZnXS9" role="1tU5fm">
-            <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+            <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
           </node>
           <node concept="2ZBi8u" id="7XdbJdzdGjm" role="lGtFl">
             <ref role="2rW$FS" node="429xoypVg6q" resolve="apply_session_parameter" />
@@ -3058,7 +3058,7 @@
         <ref role="2rW$FS" node="452KZTbsjfN" resolve="rule_token_class" />
       </node>
       <node concept="3uibUv" id="4QPCta0vZsb" role="1zkMxy">
-        <ref role="3uigEE" to="i348:23fvq3Kb72a" resolve="BaseIteratingRuleApplicationToken" />
+        <ref role="3uigEE" to="i348:23fvq3Kb72a" resolve="BaseIteratingRuleTemplateApplicationToken" />
         <node concept="3uibUv" id="4QPCta0w98F" role="11_B2D">
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           <node concept="29HgVG" id="4QPCta0w98G" role="lGtFl">
@@ -3116,7 +3116,7 @@
           </node>
           <node concept="gft3U" id="4QPCta0wUwb" role="UU_$l">
             <node concept="3uibUv" id="4QPCta0wYj0" role="gfFT$">
-              <ref role="3uigEE" to="i348:2RRx4MZ6I3W" resolve="BaseRuleApplicationToken" />
+              <ref role="3uigEE" to="i348:2RRx4MZ6I3W" resolve="BaseRuleTemplateApplicationToken" />
             </node>
           </node>
         </node>
@@ -6102,7 +6102,7 @@
         <node concept="37vLTG" id="1yw2nYxUub5" role="3clF46">
           <property role="TrG5h" value="session" />
           <node concept="3uibUv" id="1yw2nYxUxkr" role="1tU5fm">
-            <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+            <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
           </node>
           <node concept="2ZBi8u" id="1yw2nYxUxl7" role="lGtFl">
             <ref role="2rW$FS" node="1yw2nYxUwhm" resolve="rulemethod_session_parameter" />
@@ -6266,7 +6266,7 @@
         <node concept="37vLTG" id="1yw2nYxUzzp" role="3clF46">
           <property role="TrG5h" value="session" />
           <node concept="3uibUv" id="1yw2nYxUzM1" role="1tU5fm">
-            <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+            <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
           </node>
         </node>
         <node concept="3cqZAl" id="6FQzrygU_lo" role="3clF45" />
@@ -6603,7 +6603,7 @@
         <node concept="37vLTG" id="1yw2nYxUARH" role="3clF46">
           <property role="TrG5h" value="session" />
           <node concept="3uibUv" id="1yw2nYxUBrW" role="1tU5fm">
-            <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+            <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
           </node>
         </node>
       </node>
@@ -7247,7 +7247,7 @@
           <node concept="37vLTG" id="10IUAVUqcIK" role="3clF46">
             <property role="TrG5h" value="session" />
             <node concept="3uibUv" id="10IUAVUqcJD" role="1tU5fm">
-              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+              <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
             </node>
           </node>
           <node concept="3Tm6S6" id="10IUAVUqcHD" role="1B3o_S" />
@@ -7285,7 +7285,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="10IUAVUqcWJ" role="2OqNvi">
-                  <ref role="37wK5l" to="6pyv:3TnYLtqfaVk" resolve="getParameter" />
+                  <ref role="37wK5l" to="psr6:7DvO2M9IiMz" resolve="getParameter" />
                   <node concept="Xl_RD" id="10IUAVUx60p" role="37wK5m">
                     <property role="Xl_RC" value="" />
                     <node concept="17Uvod" id="10IUAVUx60q" role="lGtFl">
@@ -7387,7 +7387,7 @@
           <node concept="37vLTG" id="10IUAVUr$OD" role="3clF46">
             <property role="TrG5h" value="session" />
             <node concept="3uibUv" id="10IUAVUr$OE" role="1tU5fm">
-              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+              <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
             </node>
           </node>
           <node concept="3Tm6S6" id="10IUAVUr$OF" role="1B3o_S" />
@@ -7425,7 +7425,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="10IUAVUr$OX" role="2OqNvi">
-                  <ref role="37wK5l" to="6pyv:3TnYLtqfaVk" resolve="getParameter" />
+                  <ref role="37wK5l" to="psr6:7DvO2M9IiMz" resolve="getParameter" />
                   <node concept="Xl_RD" id="10IUAVUuiHW" role="37wK5m">
                     <property role="Xl_RC" value="" />
                     <node concept="17Uvod" id="10IUAVUujA1" role="lGtFl">
@@ -7555,7 +7555,7 @@
               <node concept="37vLTG" id="7kTeLbPGiif" role="3clF46">
                 <property role="TrG5h" value="session" />
                 <node concept="3uibUv" id="7kTeLbPGiig" role="1tU5fm">
-                  <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+                  <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
                 </node>
               </node>
               <node concept="3Tm6S6" id="7kTeLbPGiih" role="1B3o_S" />
@@ -7595,7 +7595,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="7kTeLbPGii_" role="2OqNvi">
-                          <ref role="37wK5l" to="6pyv:3TnYLtqf9a6" resolve="putParameter" />
+                          <ref role="37wK5l" to="psr6:7DvO2M9IiMh" resolve="putParameter" />
                           <node concept="Xl_RD" id="7kTeLbPGiiA" role="37wK5m">
                             <node concept="17Uvod" id="7kTeLbPGiiB" role="lGtFl">
                               <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
@@ -7695,7 +7695,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="7kTeLbPGijk" role="2OqNvi">
-                              <ref role="37wK5l" to="6pyv:3TnYLtqfdPI" resolve="removeParameter" />
+                              <ref role="37wK5l" to="psr6:7DvO2M9IiMQ" resolve="removeParameter" />
                               <node concept="Xl_RD" id="7kTeLbPGijl" role="37wK5m">
                                 <node concept="17Uvod" id="7kTeLbPGijm" role="lGtFl">
                                   <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
@@ -7764,7 +7764,7 @@
               <node concept="37vLTG" id="7kTeLbPGkrb" role="3clF46">
                 <property role="TrG5h" value="session" />
                 <node concept="3uibUv" id="7kTeLbPGkrc" role="1tU5fm">
-                  <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+                  <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
                 </node>
               </node>
               <node concept="3Tm6S6" id="7kTeLbPGkrd" role="1B3o_S" />
@@ -7804,7 +7804,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="7kTeLbPGkrx" role="2OqNvi">
-                          <ref role="37wK5l" to="6pyv:3TnYLtqf9a6" resolve="putParameter" />
+                          <ref role="37wK5l" to="psr6:7DvO2M9IiMh" resolve="putParameter" />
                           <node concept="Xl_RD" id="7kTeLbPGkry" role="37wK5m">
                             <node concept="17Uvod" id="7kTeLbPGkrz" role="lGtFl">
                               <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
@@ -7904,7 +7904,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="7kTeLbPGksg" role="2OqNvi">
-                              <ref role="37wK5l" to="6pyv:3TnYLtqfdPI" resolve="removeParameter" />
+                              <ref role="37wK5l" to="psr6:7DvO2M9IiMQ" resolve="removeParameter" />
                               <node concept="Xl_RD" id="7kTeLbPGksh" role="37wK5m">
                                 <node concept="17Uvod" id="7kTeLbPGksi" role="lGtFl">
                                   <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
@@ -12176,7 +12176,7 @@
         <node concept="37vLTG" id="1yw2nYxUJc$" role="3clF46">
           <property role="TrG5h" value="session" />
           <node concept="3uibUv" id="1yw2nYxUJuP" role="1tU5fm">
-            <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+            <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
           </node>
         </node>
       </node>
@@ -12675,7 +12675,7 @@
           <node concept="37vLTG" id="1L74NXExmUc" role="3clF46">
             <property role="TrG5h" value="session" />
             <node concept="3uibUv" id="1L74NXExobd" role="1tU5fm">
-              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+              <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
             </node>
           </node>
           <node concept="3Tm6S6" id="1L74NXExmHY" role="1B3o_S" />
@@ -12719,7 +12719,7 @@
           <node concept="37vLTG" id="1L74NXExsfh" role="3clF46">
             <property role="TrG5h" value="session" />
             <node concept="3uibUv" id="1L74NXExsfi" role="1tU5fm">
-              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+              <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
             </node>
           </node>
           <node concept="3Tm6S6" id="1L74NXExsfj" role="1B3o_S" />
@@ -13855,7 +13855,7 @@
             <node concept="37vLTG" id="4KRwoelnkwf" role="3clF46">
               <property role="TrG5h" value="session" />
               <node concept="3uibUv" id="4KRwoelnkwg" role="1tU5fm">
-                <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+                <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
               </node>
             </node>
             <node concept="3uibUv" id="4KRwoelneiV" role="3clF45">
@@ -13867,7 +13867,7 @@
                 <node concept="3cpWsn" id="4KRwoelno2A" role="3cpWs9">
                   <property role="TrG5h" value="_session" />
                   <node concept="3uibUv" id="4KRwoelno2B" role="1tU5fm">
-                    <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+                    <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
                   </node>
                   <node concept="37vLTw" id="4KRwoelno2C" role="33vP2m">
                     <ref role="3cqZAo" node="4KRwoelnkwf" resolve="session" />
@@ -14176,7 +14176,7 @@
           <node concept="37vLTG" id="1GNw78$ryBt" role="3clF46">
             <property role="TrG5h" value="session" />
             <node concept="3uibUv" id="1GNw78$ryBu" role="1tU5fm">
-              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+              <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
             </node>
           </node>
           <node concept="3clFbS" id="1GNw78$ryBw" role="3clF47">
@@ -14225,7 +14225,7 @@
           <node concept="37vLTG" id="60NbDCXGBZO" role="3clF46">
             <property role="TrG5h" value="session" />
             <node concept="3uibUv" id="60NbDCXGBZP" role="1tU5fm">
-              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+              <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
             </node>
           </node>
           <node concept="3clFbS" id="60NbDCXGBZQ" role="3clF47">
@@ -16638,7 +16638,7 @@
           <node concept="37vLTG" id="7kTeLbPzUJ8" role="3clF46">
             <property role="TrG5h" value="session" />
             <node concept="3uibUv" id="7kTeLbPzUJ9" role="1tU5fm">
-              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+              <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
             </node>
           </node>
           <node concept="3cqZAl" id="7kTeLbPzUJa" role="3clF45" />
@@ -16717,7 +16717,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="7kTeLbPzUJI" role="2OqNvi">
-                      <ref role="37wK5l" to="6pyv:18kNIl1wWgU" resolve="expandMacro" />
+                      <ref role="37wK5l" to="psr6:18kNIl1wWgU" resolve="expandMacro" />
                       <node concept="10Nm6u" id="7kTeLbPzUJJ" role="37wK5m">
                         <node concept="29HgVG" id="7kTeLbPzUJK" role="lGtFl">
                           <node concept="3NFfHV" id="7kTeLbPzUJL" role="3NFExx">
@@ -16769,7 +16769,7 @@
           <node concept="37vLTG" id="7kTeLbPzW_X" role="3clF46">
             <property role="TrG5h" value="session" />
             <node concept="3uibUv" id="7kTeLbPzW_Y" role="1tU5fm">
-              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+              <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
             </node>
           </node>
           <node concept="3cqZAl" id="7kTeLbPzW_Z" role="3clF45" />
@@ -16798,7 +16798,7 @@
                   <ref role="37wK5l" to="6pyv:77AxcO4ZwMR" resolve="merge" />
                   <node concept="2OqwBi" id="7kTeLbPzWAc" role="37wK5m">
                     <node concept="liA8E" id="7kTeLbPzWAd" role="2OqNvi">
-                      <ref role="37wK5l" to="6pyv:4MEOIDFgV3a" resolve="callMacro" />
+                      <ref role="37wK5l" to="psr6:4MEOIDFgV3a" resolve="callMacro" />
                       <node concept="10Nm6u" id="7kTeLbPzWAe" role="37wK5m">
                         <node concept="29HgVG" id="7kTeLbPzWAf" role="lGtFl">
                           <node concept="3NFfHV" id="7kTeLbPzWAg" role="3NFExx">

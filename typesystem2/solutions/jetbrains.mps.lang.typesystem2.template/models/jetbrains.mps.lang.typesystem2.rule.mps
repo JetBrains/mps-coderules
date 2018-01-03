@@ -16,6 +16,7 @@
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
+    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.typesystem2.macro)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -222,6 +223,9 @@
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -690,6 +694,7 @@
   </node>
   <node concept="Qs71p" id="4OKkcnfu_Ag">
     <property role="TrG5h" value="RuleTemplateMehodKind" />
+    <property role="3GE5qa" value="ruleTemplate" />
     <node concept="QsSxf" id="4OKkcnfu_Ah" role="Qtgdg">
       <property role="TrG5h" value="HEAD_KEPT" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -710,6 +715,7 @@
   </node>
   <node concept="2ABs$o" id="4OKkcnfu_Am">
     <property role="TrG5h" value="RuleTemplateMethod" />
+    <property role="3GE5qa" value="ruleTemplate" />
     <node concept="2ACnGN" id="4OKkcnfu_An" role="3MN40a">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -756,6 +762,7 @@
   <node concept="312cEu" id="1ffsG7bUbCM">
     <property role="TrG5h" value="BaseRuleTemplate" />
     <property role="1sVAO0" value="true" />
+    <property role="3GE5qa" value="ruleTemplate" />
     <node concept="2tJIrI" id="1ffsG7bUbEG" role="jymVt" />
     <node concept="3clFbW" id="1ffsG7bUbEV" role="jymVt">
       <node concept="37vLTG" id="4MqhgXUnerW" role="3clF46">
@@ -1150,7 +1157,7 @@
     <node concept="16euLQ" id="1ffsG7bUbY4" role="16eVyc">
       <property role="TrG5h" value="Token" />
       <node concept="3uibUv" id="7XdbJdy7jWi" role="3ztrMU">
-        <ref role="3uigEE" node="2RRx4MZ6_68" resolve="RuleApplicationToken" />
+        <ref role="3uigEE" node="2RRx4MZ6_68" resolve="RuleTemplateApplicationToken" />
       </node>
     </node>
     <node concept="3uibUv" id="1ffsG7bWFot" role="EKbjA">
@@ -1176,6 +1183,7 @@
   </node>
   <node concept="3HP615" id="1ffsG7bW_V4">
     <property role="TrG5h" value="RuleTemplate" />
+    <property role="3GE5qa" value="ruleTemplate" />
     <node concept="2tJIrI" id="67SsWaEm4a8" role="jymVt" />
     <node concept="3clFb_" id="4vBwiiUVL7_" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -1283,13 +1291,14 @@
     <node concept="16euLQ" id="1ffsG7bWA35" role="16eVyc">
       <property role="TrG5h" value="Token" />
       <node concept="3uibUv" id="7XdbJdy67uN" role="3ztrMU">
-        <ref role="3uigEE" node="2RRx4MZ6_68" resolve="RuleApplicationToken" />
+        <ref role="3uigEE" node="2RRx4MZ6_68" resolve="RuleTemplateApplicationToken" />
       </node>
     </node>
   </node>
   <node concept="312cEu" id="1ffsG7bX1MS">
     <property role="TrG5h" value="BaseIteratingRuleTemplate" />
     <property role="1sVAO0" value="true" />
+    <property role="3GE5qa" value="ruleTemplate" />
     <node concept="3uibUv" id="1ffsG7bX2a9" role="1zkMxy">
       <ref role="3uigEE" node="1ffsG7bUbCM" resolve="BaseRuleTemplate" />
       <node concept="16syzq" id="1ffsG7bX2$t" role="11_B2D">
@@ -1693,7 +1702,7 @@
     <node concept="16euLQ" id="1ffsG7bX2zU" role="16eVyc">
       <property role="TrG5h" value="Token" />
       <node concept="3uibUv" id="23fvq3KaUtY" role="3ztrMU">
-        <ref role="3uigEE" node="23fvq3KaSFM" resolve="IteratingRuleApplicationToken" />
+        <ref role="3uigEE" node="23fvq3KaSFM" resolve="IteratingRuleTemplateApplicationToken" />
         <node concept="16syzq" id="23fvq3KaVBi" role="11_B2D">
           <ref role="16sUi3" node="1ffsG7bX2$8" resolve="Iter" />
         </node>
@@ -1711,6 +1720,7 @@
   </node>
   <node concept="3HP615" id="1ffsG7bXcuq">
     <property role="TrG5h" value="IteratingRuleTemplate" />
+    <property role="3GE5qa" value="ruleTemplate" />
     <node concept="3uibUv" id="1ffsG7bXcPu" role="3HQHJm">
       <ref role="3uigEE" node="1ffsG7bW_V4" resolve="RuleTemplate" />
       <node concept="16syzq" id="1ffsG7bXdfH" role="11_B2D">
@@ -1725,7 +1735,7 @@
     <node concept="16euLQ" id="1ffsG7bXcDV" role="16eVyc">
       <property role="TrG5h" value="Token" />
       <node concept="3uibUv" id="23fvq3KaW36" role="3ztrMU">
-        <ref role="3uigEE" node="23fvq3KaSFM" resolve="IteratingRuleApplicationToken" />
+        <ref role="3uigEE" node="23fvq3KaSFM" resolve="IteratingRuleTemplateApplicationToken" />
         <node concept="16syzq" id="23fvq3KaW4O" role="11_B2D">
           <ref role="16sUi3" node="1ffsG7bXcDZ" resolve="Iter" />
         </node>
@@ -1839,7 +1849,8 @@
     <node concept="3Tm1VV" id="1CcQBrPcZVH" role="1B3o_S" />
   </node>
   <node concept="3HP615" id="2RRx4MZ6_68">
-    <property role="TrG5h" value="RuleApplicationToken" />
+    <property role="TrG5h" value="RuleTemplateApplicationToken" />
+    <property role="3GE5qa" value="ruleTemplate.token" />
     <node concept="2tJIrI" id="2RRx4MZSLs8" role="jymVt" />
     <node concept="3clFb_" id="2RRx4MZ6CBV" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -1870,7 +1881,7 @@
       <node concept="37vLTG" id="2RRx4MZ6CCl" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="2RRx4MZ6CCm" role="1tU5fm">
-          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="RuleApplicationSession" />
+          <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2RRx4MZ6CCn" role="1B3o_S" />
@@ -1880,8 +1891,9 @@
     <node concept="3Tm1VV" id="2RRx4MZ6_69" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="2RRx4MZ6I3W">
-    <property role="TrG5h" value="BaseRuleApplicationToken" />
+    <property role="TrG5h" value="BaseRuleTemplateApplicationToken" />
     <property role="1sVAO0" value="true" />
+    <property role="3GE5qa" value="ruleTemplate.token" />
     <node concept="2tJIrI" id="2RRx4MZ6Ib2" role="jymVt" />
     <node concept="3clFb_" id="2RRx4MZ6Ibj" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -1919,11 +1931,12 @@
     <node concept="2tJIrI" id="2RRx4MZ6IJC" role="jymVt" />
     <node concept="3Tm1VV" id="2RRx4MZ6I3X" role="1B3o_S" />
     <node concept="3uibUv" id="2RRx4MZ6I8M" role="EKbjA">
-      <ref role="3uigEE" node="2RRx4MZ6_68" resolve="RuleApplicationToken" />
+      <ref role="3uigEE" node="2RRx4MZ6_68" resolve="RuleTemplateApplicationToken" />
     </node>
   </node>
   <node concept="3HP615" id="23fvq3KaSFM">
-    <property role="TrG5h" value="IteratingRuleApplicationToken" />
+    <property role="TrG5h" value="IteratingRuleTemplateApplicationToken" />
+    <property role="3GE5qa" value="ruleTemplate.token" />
     <node concept="2tJIrI" id="23fvq3KaT8p" role="jymVt" />
     <node concept="3clFb_" id="23fvq3KaT8H" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -1939,15 +1952,16 @@
     <node concept="2tJIrI" id="23fvq3KaT8y" role="jymVt" />
     <node concept="3Tm1VV" id="23fvq3KaSFN" role="1B3o_S" />
     <node concept="3uibUv" id="23fvq3KaSPQ" role="3HQHJm">
-      <ref role="3uigEE" node="2RRx4MZ6_68" resolve="RuleApplicationToken" />
+      <ref role="3uigEE" node="2RRx4MZ6_68" resolve="RuleTemplateApplicationToken" />
     </node>
     <node concept="16euLQ" id="23fvq3KaTe2" role="16eVyc">
       <property role="TrG5h" value="Iter" />
     </node>
   </node>
   <node concept="312cEu" id="23fvq3Kb72a">
-    <property role="TrG5h" value="BaseIteratingRuleApplicationToken" />
+    <property role="TrG5h" value="BaseIteratingRuleTemplateApplicationToken" />
     <property role="1sVAO0" value="true" />
+    <property role="3GE5qa" value="ruleTemplate.token" />
     <node concept="2tJIrI" id="23fvq3Kb799" role="jymVt" />
     <node concept="3clFb_" id="23fvq3Kb7km" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -1988,7 +2002,7 @@
       <property role="TrG5h" value="Iter" />
     </node>
     <node concept="3uibUv" id="23fvq3Kb7eS" role="EKbjA">
-      <ref role="3uigEE" node="23fvq3KaSFM" resolve="IteratingRuleApplicationToken" />
+      <ref role="3uigEE" node="23fvq3KaSFM" resolve="IteratingRuleTemplateApplicationToken" />
       <node concept="16syzq" id="23fvq3Kb7jR" role="11_B2D">
         <ref role="16sUi3" node="23fvq3Kb79x" resolve="Iter" />
       </node>

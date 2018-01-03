@@ -991,6 +991,12 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="7DvO2M9pVyQ" role="3bR37C">
+          <node concept="3bR9La" id="7DvO2M9pVyR" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7BVjoXzUx9d" role="2G$12L">
         <property role="BnDLt" value="true" />
