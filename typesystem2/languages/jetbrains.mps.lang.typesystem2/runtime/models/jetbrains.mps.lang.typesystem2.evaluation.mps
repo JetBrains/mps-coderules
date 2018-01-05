@@ -40,6 +40,9 @@
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="c6va" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.languageScope(MPS.Core/)" />
+    <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
+    <import index="tpcp" ref="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -3420,48 +3423,27 @@
             <ref role="3cqZAo" node="7DvO2Manxmv" resolve="ruleTemplateManifests" />
           </node>
           <node concept="3clFbS" id="7DvO2ManDOI" role="2LFqv$">
-            <node concept="1DcWWT" id="7DvO2ManCIL" role="3cqZAp">
+            <node concept="2Gpval" id="7DvO2Mate8N" role="3cqZAp">
               <node concept="3clFbS" id="7DvO2ManCIM" role="2LFqv$">
-                <node concept="3cpWs8" id="7DvO2ManCIN" role="3cqZAp">
-                  <node concept="3cpWsn" id="7DvO2ManCIO" role="3cpWs9">
-                    <property role="TrG5h" value="stage" />
-                    <node concept="3uibUv" id="7DvO2ManCIP" role="1tU5fm">
-                      <ref role="3uigEE" to="i348:1CcQBrPcZVG" resolve="HandlingStage" />
-                    </node>
-                    <node concept="2ShNRf" id="7DvO2ManCIQ" role="33vP2m">
-                      <node concept="1pGfFk" id="7DvO2ManCIR" role="2ShVmc">
-                        <ref role="37wK5l" to="i348:1CcQBrPd004" resolve="HandlingStage" />
-                        <node concept="37vLTw" id="7DvO2ManCIS" role="37wK5m">
-                          <ref role="3cqZAo" node="7DvO2ManCIY" resolve="htemplates" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbF" id="7DvO2ManCIT" role="3cqZAp">
                   <node concept="1rXfSq" id="7DvO2ManLgf" role="3clFbG">
                     <ref role="37wK5l" node="1CcQBrPcvkZ" resolve="addStage" />
-                    <node concept="37vLTw" id="7DvO2ManCIX" role="37wK5m">
-                      <ref role="3cqZAo" node="7DvO2ManCIO" resolve="stage" />
+                    <node concept="2GrUjf" id="7DvO2MaztVh" role="37wK5m">
+                      <ref role="2Gs0qQ" node="7DvO2Mate9V" resolve="stage" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3cpWsn" id="7DvO2ManCIY" role="1Duv9x">
-                <property role="TrG5h" value="htemplates" />
-                <node concept="_YKpA" id="7DvO2ManCIZ" role="1tU5fm">
-                  <node concept="3uibUv" id="7DvO2ManCJ0" role="_ZDj9">
-                    <ref role="3uigEE" to="i348:4MqhgXU9fm3" resolve="HandlerTemplate" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="7DvO2ManCJ1" role="1DdaDG">
+              <node concept="2OqwBi" id="7DvO2ManCJ1" role="2GsD0m">
                 <node concept="2GrUjf" id="7DvO2ManKIx" role="2Oq$k0">
                   <ref role="2Gs0qQ" node="7DvO2ManDOE" resolve="ruleManifest" />
                 </node>
                 <node concept="liA8E" id="7DvO2ManCJ3" role="2OqNvi">
                   <ref role="37wK5l" to="i348:20Ay2VeQ4QK" resolve="handlingStages" />
                 </node>
+              </node>
+              <node concept="2GrKxI" id="7DvO2Mate9V" role="2Gsz3X">
+                <property role="TrG5h" value="stage" />
               </node>
             </node>
           </node>
@@ -4566,7 +4548,7 @@
         </node>
         <node concept="3clFbJ" id="4QPCta1z5yD" role="3cqZAp">
           <node concept="3clFbC" id="4QPCta1znfs" role="3clFbw">
-            <node concept="37vLTw" id="4QPCta1z66z" role="3uHU7B">
+            <node concept="37vLTw" id="7DvO2MauKvJ" role="3uHU7B">
               <ref role="3cqZAo" node="4QPCta1yYW3" resolve="typesAspect" />
             </node>
             <node concept="10Nm6u" id="4QPCta1z7hK" role="3uHU7w" />
