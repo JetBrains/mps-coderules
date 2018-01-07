@@ -68,7 +68,6 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
-      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -86,7 +85,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
@@ -197,25 +195,6 @@
     <node concept="3uibUv" id="7km57PkjxgV" role="EKbjA">
       <ref role="3uigEE" to="ze1i:~ILanguageAspect" resolve="ILanguageAspect" />
     </node>
-  </node>
-  <node concept="3HP615" id="2N2MQGCMOyq">
-    <property role="TrG5h" value="MacroTableCollector" />
-    <node concept="2tJIrI" id="4JJCDImP2S8" role="jymVt" />
-    <node concept="3clFb_" id="4JJCDImP5xa" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="addMacroTable" />
-      <node concept="37vLTG" id="4JJCDImP5Mm" role="3clF46">
-        <property role="TrG5h" value="macroTable" />
-        <node concept="3uibUv" id="4JJCDImP5Ok" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:1pPth$m7IVF" resolve="AbstractMacroTable" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="4JJCDImP5xc" role="3clF45" />
-      <node concept="3Tm1VV" id="4JJCDImP5xd" role="1B3o_S" />
-      <node concept="3clFbS" id="4JJCDImP5xe" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="4nxCIBqhZmR" role="jymVt" />
-    <node concept="3Tm1VV" id="2N2MQGCMOyr" role="1B3o_S" />
   </node>
 </model>
 

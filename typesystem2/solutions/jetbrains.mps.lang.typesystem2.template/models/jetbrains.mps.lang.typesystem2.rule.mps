@@ -240,6 +240,7 @@
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
       </concept>
+      <concept id="2526372162255441536" name="jetbrains.mps.baseLanguage.collections.structure.AsUnmodifiableOperation" flags="nn" index="26Dbio" />
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -2207,8 +2208,11 @@
       <node concept="3Tm1VV" id="1CcQBrPd1dA" role="1B3o_S" />
       <node concept="3clFbS" id="1CcQBrPd1dB" role="3clF47">
         <node concept="3clFbF" id="1CcQBrPd1$F" role="3cqZAp">
-          <node concept="37vLTw" id="1CcQBrPd1$E" role="3clFbG">
-            <ref role="3cqZAo" node="1CcQBrPcZWy" resolve="handlerTemplates" />
+          <node concept="2OqwBi" id="6UWSvq4JGuP" role="3clFbG">
+            <node concept="37vLTw" id="1CcQBrPd1$E" role="2Oq$k0">
+              <ref role="3cqZAo" node="1CcQBrPcZWy" resolve="handlerTemplates" />
+            </node>
+            <node concept="26Dbio" id="6UWSvq4JHBk" role="2OqNvi" />
           </node>
         </node>
       </node>

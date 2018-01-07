@@ -15,6 +15,7 @@
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -197,6 +198,16 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4MEOIDEgpw7" role="jymVt" />
+    <node concept="3clFb_" id="6UWSvq4Vn1v" role="jymVt">
+      <property role="TrG5h" value="allMacroConcepts" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="3vKaQO" id="6UWSvq4Vn1w" role="3clF45">
+        <node concept="3bZ5Sz" id="6UWSvq4VpUS" role="3O5elw" />
+      </node>
+      <node concept="3Tm1VV" id="6UWSvq4Vn1y" role="1B3o_S" />
+      <node concept="3clFbS" id="6UWSvq4Vn1z" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="6UWSvq4Vn68" role="jymVt" />
     <node concept="3clFb_" id="4MEOIDEgpuf" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="macroTemplate" />
@@ -238,19 +249,17 @@
   <node concept="312cEu" id="2N2MQGCMVqD">
     <property role="TrG5h" value="AbstractMacroManifest" />
     <property role="1sVAO0" value="true" />
-    <node concept="2tJIrI" id="2N2MQGCMVqZ" role="jymVt" />
-    <node concept="3clFb_" id="1pPth$m7IW6" role="jymVt">
-      <property role="TrG5h" value="collectMacroTables" />
+    <node concept="2tJIrI" id="6UWSvq4Vu5u" role="jymVt" />
+    <node concept="3clFb_" id="6UWSvq4Vu5V" role="jymVt">
+      <property role="TrG5h" value="macroTables" />
       <property role="1EzhhJ" value="true" />
-      <node concept="37vLTG" id="2N2MQGCMO$N" role="3clF46">
-        <property role="TrG5h" value="typeCollector" />
-        <node concept="3uibUv" id="2N2MQGCMO_1" role="1tU5fm">
-          <ref role="3uigEE" to="fqlx:2N2MQGCMOyq" resolve="MacroTableCollector" />
+      <node concept="3vKaQO" id="6UWSvq4Vu6$" role="3clF45">
+        <node concept="3uibUv" id="6UWSvq4Vu7$" role="3O5elw">
+          <ref role="3uigEE" node="1pPth$m7IVF" resolve="AbstractMacroTable" />
         </node>
       </node>
-      <node concept="3cqZAl" id="2N2MQGCMO$B" role="3clF45" />
-      <node concept="3Tm1VV" id="1pPth$m7IW9" role="1B3o_S" />
-      <node concept="3clFbS" id="1pPth$m7IWa" role="3clF47" />
+      <node concept="3Tm1VV" id="6UWSvq4Vu5Y" role="1B3o_S" />
+      <node concept="3clFbS" id="6UWSvq4Vu5Z" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="2N2MQGCMNOd" role="jymVt" />
     <node concept="3Tm1VV" id="2N2MQGCMVqE" role="1B3o_S" />
