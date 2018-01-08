@@ -17,14 +17,11 @@
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
-      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
-        <child id="1169127546356" name="extends" index="PrDN$" />
-      </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
-        <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
@@ -50,7 +47,6 @@
     <property role="34LRSv" value="and" />
     <property role="3GE5qa" value="sentence" />
     <property role="R4oN_" value="Conjunction" />
-    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FnV" resolve="And_old" />
     <node concept="1TJgyj" id="3JXBM6C3FnW" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817724" />
       <property role="20lmBu" value="aggregation" />
@@ -67,7 +63,6 @@
     <property role="TrG5h" value="Constant" />
     <property role="3GE5qa" value="sentence" />
     <property role="R4oN_" value="Constant" />
-    <ref role="1TJDcQ" to="jfgh:3JXBM6C3Cn8" resolve="Constant_old" />
     <node concept="PrWs8" id="3JXBM6C3Fso" role="PzmwI">
       <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="Sentence" />
     </node>
@@ -81,7 +76,6 @@
     <property role="34LRSv" value="if" />
     <property role="3GE5qa" value="sentence" />
     <property role="R4oN_" value="Implication" />
-    <ref role="1TJDcQ" to="jfgh:3JXBM6C3Fph" resolve="If_old" />
     <node concept="1TJgyj" id="3JXBM6C3Fpi" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817810" />
       <property role="20lmBu" value="aggregation" />
@@ -106,7 +100,6 @@
     <property role="34LRSv" value="iff" />
     <property role="3GE5qa" value="sentence" />
     <property role="R4oN_" value="Biconditional" />
-    <ref role="1TJDcQ" to="jfgh:3JXBM6C3Frx" resolve="Iff_old" />
     <node concept="1TJgyj" id="3JXBM6C3FrF" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817963" />
       <property role="20lmBu" value="aggregation" />
@@ -131,7 +124,6 @@
     <property role="34LRSv" value="not" />
     <property role="3GE5qa" value="sentence" />
     <property role="R4oN_" value="Negation" />
-    <ref role="1TJDcQ" to="jfgh:3JXBM6C3Cnn" resolve="Not_old" />
     <node concept="1TJgyj" id="3JXBM6C3Cno" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247805400" />
       <property role="20lmBu" value="aggregation" />
@@ -149,7 +141,6 @@
     <property role="34LRSv" value="or" />
     <property role="3GE5qa" value="sentence" />
     <property role="R4oN_" value="Disjunction" />
-    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FoA" resolve="Or_old" />
     <node concept="1TJgyj" id="3JXBM6C3Fp4" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817796" />
       <property role="20lmBu" value="aggregation" />
@@ -165,9 +156,6 @@
     <property role="EcuMT" value="4322786184247805402" />
     <property role="TrG5h" value="Sentence" />
     <property role="3GE5qa" value="sentence" />
-    <node concept="PrWs8" id="4LBPYGUYJPe" role="PrDN$">
-      <ref role="PrY4T" to="jfgh:3JXBM6C3Cnq" resolve="Sentence_old" />
-    </node>
   </node>
 </model>
 

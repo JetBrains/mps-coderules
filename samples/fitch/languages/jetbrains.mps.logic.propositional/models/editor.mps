@@ -1199,5 +1199,25 @@
       </node>
     </node>
   </node>
+  <node concept="3p36aQ" id="4LBPYGV20UT">
+    <property role="3GE5qa" value="sentence" />
+    <ref role="aqKnT" to="27wh:3JXBM6C3FnV" resolve="And" />
+  </node>
+  <node concept="3p36aQ" id="4LBPYGV21ly">
+    <property role="3GE5qa" value="sentence" />
+    <ref role="aqKnT" to="27wh:3JXBM6C3Fph" resolve="If" />
+  </node>
+  <node concept="3p36aQ" id="4LBPYGV21lW">
+    <property role="3GE5qa" value="sentence" />
+    <ref role="aqKnT" to="27wh:3JXBM6C3Frx" resolve="Iff" />
+  </node>
+  <node concept="3p36aQ" id="4LBPYGV21mm">
+    <property role="3GE5qa" value="sentence" />
+    <ref role="aqKnT" to="27wh:3JXBM6C3FoA" resolve="Or" />
+  </node>
+  <node concept="3p36aQ" id="4LBPYGV21nq">
+    <property role="3GE5qa" value="sentence" />
+    <ref role="aqKnT" to="27wh:3JXBM6C3Cnq" resolve="Sentence" />
+  </node>
 </model>
 
