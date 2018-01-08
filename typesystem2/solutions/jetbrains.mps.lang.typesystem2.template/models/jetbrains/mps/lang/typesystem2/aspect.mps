@@ -43,6 +43,8 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
+        <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -169,6 +171,37 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="2tJIrI" id="6UWSvq5bjXg" role="jymVt" />
+    <node concept="2YIFZL" id="6UWSvq5bk3i" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="forLanguageDesc" />
+      <node concept="37vLTG" id="6UWSvq5bk7O" role="3clF46">
+        <property role="TrG5h" value="langrt" />
+        <node concept="3uibUv" id="6UWSvq5bk8e" role="1tU5fm">
+          <ref role="3uigEE" to="vndm:~LanguageRuntime" resolve="LanguageRuntime" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="6UWSvq5bk0u" role="3clF47">
+        <node concept="3clFbF" id="6UWSvq5bk8J" role="3cqZAp">
+          <node concept="2OqwBi" id="6UWSvq5bk8K" role="3clFbG">
+            <node concept="37vLTw" id="6UWSvq5bkfV" role="2Oq$k0">
+              <ref role="3cqZAo" node="6UWSvq5bk7O" resolve="langrt" />
+            </node>
+            <node concept="liA8E" id="6UWSvq5bk8M" role="2OqNvi">
+              <ref role="37wK5l" to="vndm:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.ILanguageAspect" resolve="getAspect" />
+              <node concept="3VsKOn" id="6UWSvq5bk8N" role="37wK5m">
+                <ref role="3VsUkX" node="7km57Pkjxf4" resolve="TypeAspectDescriptor" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="6UWSvq5bk65" role="3clF45">
+        <ref role="3uigEE" node="7km57Pkjxf4" resolve="TypeAspectDescriptor" />
+      </node>
+      <node concept="3Tm1VV" id="6UWSvq5bk0t" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="7km57Pkjxhg" role="jymVt" />
     <node concept="3clFb_" id="2hteS6ClmbE" role="jymVt">
