@@ -2,10 +2,31 @@
 <model ref="r:ff7f5a29-d9b8-40f0-b446-35696305dff0(jetbrains.mps.fitch.sandbox)">
   <persistence version="9" />
   <languages>
-    <use id="06b7c5c7-e359-4f4b-a581-5d0c9323af39" name="jetbrains.mps.fitch" version="0" />
+    <use id="06b7c5c7-e359-4f4b-a581-5d0c9323af39" name="jetbrains.mps.fitch" version="1" />
+    <use id="ec79e64d-4cbb-4f6c-b7b7-108dd125aba6" name="jetbrains.mps.logic.propositional" version="-1" />
   </languages>
   <imports />
   <registry>
+    <language id="ec79e64d-4cbb-4f6c-b7b7-108dd125aba6" name="jetbrains.mps.logic.propositional">
+      <concept id="4322786184247805384" name="jetbrains.mps.logic.propositional.structure.Constant" flags="ng" index="2jWLFD" />
+      <concept id="4322786184247805399" name="jetbrains.mps.logic.propositional.structure.Not" flags="ng" index="2jWLFQ">
+        <child id="4322786184247805400" name="target" index="2jWLFT" />
+      </concept>
+      <concept id="4322786184247817766" name="jetbrains.mps.logic.propositional.structure.Or" flags="ng" index="2jWM$7">
+        <child id="4322786184247817796" name="disjunct" index="2jWM__" />
+      </concept>
+      <concept id="4322786184247817809" name="jetbrains.mps.logic.propositional.structure.If" flags="ng" index="2jWM_K">
+        <child id="4322786184247817810" name="antecedent" index="2jWM_N" />
+        <child id="4322786184247817812" name="consequent" index="2jWM_P" />
+      </concept>
+      <concept id="4322786184247817953" name="jetbrains.mps.logic.propositional.structure.Iff" flags="ng" index="2jWMB0">
+        <child id="4322786184247817963" name="antecedent" index="2jWMBa" />
+        <child id="4322786184247817964" name="consequent" index="2jWMBd" />
+      </concept>
+      <concept id="4322786184247817723" name="jetbrains.mps.logic.propositional.structure.And" flags="ng" index="2jWMFq">
+        <child id="4322786184247817724" name="conjunct" index="2jWMFt" />
+      </concept>
+    </language>
     <language id="06b7c5c7-e359-4f4b-a581-5d0c9323af39" name="jetbrains.mps.fitch">
       <concept id="4322786184247881315" name="jetbrains.mps.fitch.structure.AndElim" flags="ng" index="2jWz52" />
       <concept id="4322786184247881317" name="jetbrains.mps.fitch.structure.OrElim" flags="ng" index="2jWz54" />
@@ -24,10 +45,6 @@
       <concept id="4322786184247854968" name="jetbrains.mps.fitch.structure.Reasoning" flags="ng" index="2jWHxp">
         <child id="2497161927181071993" name="conclusion" index="3MT$nN" />
       </concept>
-      <concept id="4322786184247805384" name="jetbrains.mps.fitch.structure.Constant" flags="ng" index="2jWLFD" />
-      <concept id="4322786184247805399" name="jetbrains.mps.fitch.structure.Not" flags="ng" index="2jWLFQ">
-        <child id="4322786184247805400" name="target" index="2jWLFT" />
-      </concept>
       <concept id="4322786184247818020" name="jetbrains.mps.fitch.structure.Proof" flags="ng" index="2jWMw5">
         <property id="2994859399702197792" name="description" index="26WHrx" />
         <child id="4322786184248036774" name="content" index="2jVTa7" />
@@ -38,20 +55,6 @@
       </concept>
       <concept id="4322786184247818035" name="jetbrains.mps.fitch.structure.Basis" flags="ng" index="2jWMwi">
         <reference id="4322786184247818157" name="reasoning" index="2jWMyc" />
-      </concept>
-      <concept id="4322786184247817766" name="jetbrains.mps.fitch.structure.Or" flags="ng" index="2jWM$7">
-        <child id="4322786184247817796" name="disjunct" index="2jWM__" />
-      </concept>
-      <concept id="4322786184247817809" name="jetbrains.mps.fitch.structure.If" flags="ng" index="2jWM_K">
-        <child id="4322786184247817810" name="antecedent" index="2jWM_N" />
-        <child id="4322786184247817812" name="consequent" index="2jWM_P" />
-      </concept>
-      <concept id="4322786184247817953" name="jetbrains.mps.fitch.structure.Iff" flags="ng" index="2jWMB0">
-        <child id="4322786184247817963" name="antecedent" index="2jWMBa" />
-        <child id="4322786184247817964" name="consequent" index="2jWMBd" />
-      </concept>
-      <concept id="4322786184247817723" name="jetbrains.mps.fitch.structure.And" flags="ng" index="2jWMFq">
-        <child id="4322786184247817724" name="conjunct" index="2jWMFt" />
       </concept>
       <concept id="657004910291123662" name="jetbrains.mps.fitch.structure.Premise" flags="ng" index="GydIM" />
       <concept id="657004910291159432" name="jetbrains.mps.fitch.structure.Goal" flags="ng" index="GyqZO">
@@ -187,11 +190,6 @@
     </node>
     <node concept="2jWAjC" id="$u9BK_y$oJ" role="2jVTa7">
       <node concept="2jWM_K" id="$u9BK_y$q$" role="3MT$nN">
-        <node concept="2jWLFQ" id="$u9BK_y$xn" role="2jWM_P">
-          <node concept="2jWLFD" id="$u9BK_y$xp" role="2jWLFT">
-            <property role="TrG5h" value="p" />
-          </node>
-        </node>
         <node concept="2jWLFQ" id="$u9BK_y$v0" role="2jWM_N">
           <node concept="2jWM$7" id="$u9BK_y$qb" role="2jWLFT">
             <node concept="2jWLFD" id="$u9BK_y$q8" role="2jWM__">
@@ -202,6 +200,11 @@
                 <property role="TrG5h" value="p" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="2jWLFQ" id="$u9BK_y$xn" role="2jWM_P">
+          <node concept="2jWLFD" id="$u9BK_y$xp" role="2jWLFT">
+            <property role="TrG5h" value="p" />
           </node>
         </node>
       </node>
@@ -346,9 +349,6 @@
     </node>
     <node concept="2jWAjC" id="$u9BK_y$yx" role="2jVTa7">
       <node concept="2jWM_K" id="$u9BK_y$y$" role="3MT$nN">
-        <node concept="2jWLFD" id="$u9BK_y$yA" role="2jWM_P">
-          <property role="TrG5h" value="p" />
-        </node>
         <node concept="2jWLFQ" id="$u9BK_y$yB" role="2jWM_N">
           <node concept="2jWM$7" id="$u9BK_y$yC" role="2jWLFT">
             <node concept="2jWLFD" id="$u9BK_y$yD" role="2jWM__">
@@ -360,6 +360,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2jWLFD" id="$u9BK_y$yA" role="2jWM_P">
+          <property role="TrG5h" value="p" />
         </node>
       </node>
       <node concept="2jWMwi" id="2AfSc6JviTz" role="2jWFax">

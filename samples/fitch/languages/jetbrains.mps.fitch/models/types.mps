@@ -7,6 +7,7 @@
   </languages>
   <imports>
     <import index="jfgh" ref="r:2003997c-f9a6-418f-99d4-03e1285a3e13(jetbrains.mps.fitch.structure)" />
+    <import index="27wh" ref="r:459ba7ac-2a61-40fc-bcc4-f13a7956cbeb(jetbrains.mps.logic.propositional.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -359,7 +360,7 @@
       <node concept="3eYOCq" id="5RfK0kxl0WG" role="3eYTkm">
         <property role="TrG5h" value="cst" />
         <node concept="3Tqbb2" id="5RfK0kxl0WH" role="3eYSA1">
-          <ref role="ehGHo" to="jfgh:3JXBM6C3Cn8" resolve="Constant" />
+          <ref role="ehGHo" to="27wh:3JXBM6C3Cn8" resolve="Constant" />
         </node>
       </node>
       <node concept="3uniRm" id="5RfK0kxl0X2" role="3unh6L">
@@ -402,7 +403,7 @@
                   <ref role="3eTFj1" node="5RfK0kxl0WS" resolve="and" />
                 </node>
                 <node concept="3Tsc0h" id="5RfK0kxl2rm" role="2OqNvi">
-                  <ref role="3TtcxE" to="jfgh:3JXBM6C3FnW" resolve="conjunct" />
+                  <ref role="3TtcxE" to="27wh:3JXBM6C3FnW" resolve="conjunct" />
                 </node>
               </node>
             </node>
@@ -412,7 +413,7 @@
       <node concept="3eYOCq" id="5RfK0kxl0WS" role="3eYTkm">
         <property role="TrG5h" value="and" />
         <node concept="3Tqbb2" id="5RfK0kxl0WT" role="3eYSA1">
-          <ref role="ehGHo" to="jfgh:3JXBM6C3FnV" resolve="And" />
+          <ref role="ehGHo" to="27wh:3JXBM6C3FnV" resolve="And" />
         </node>
       </node>
       <node concept="3uniRm" id="5RfK0kxl2u5" role="3unh6L">
@@ -522,7 +523,7 @@
                   <ref role="3eTFj1" node="5RfK0kxld9p" resolve="or" />
                 </node>
                 <node concept="3Tsc0h" id="5RfK0kxldOt" role="2OqNvi">
-                  <ref role="3TtcxE" to="jfgh:3JXBM6C3Fp4" resolve="disjunct" />
+                  <ref role="3TtcxE" to="27wh:3JXBM6C3Fp4" resolve="disjunct" />
                 </node>
               </node>
             </node>
@@ -532,7 +533,7 @@
       <node concept="3eYOCq" id="5RfK0kxld9p" role="3eYTkm">
         <property role="TrG5h" value="or" />
         <node concept="3Tqbb2" id="5RfK0kxld9q" role="3eYSA1">
-          <ref role="ehGHo" to="jfgh:3JXBM6C3FoA" resolve="Or" />
+          <ref role="ehGHo" to="27wh:3JXBM6C3FoA" resolve="Or" />
         </node>
       </node>
       <node concept="3uniRm" id="5RfK0kxld9r" role="3unh6L">
@@ -642,7 +643,7 @@
                   <ref role="3eTFj1" node="5RfK0kxlwbs" resolve="not" />
                 </node>
                 <node concept="3TrEf2" id="5RfK0kxlwAU" role="2OqNvi">
-                  <ref role="3Tt5mk" to="jfgh:3JXBM6C3Cno" resolve="target" />
+                  <ref role="3Tt5mk" to="27wh:3JXBM6C3Cno" resolve="target" />
                 </node>
               </node>
             </node>
@@ -652,7 +653,7 @@
       <node concept="3eYOCq" id="5RfK0kxlwbs" role="3eYTkm">
         <property role="TrG5h" value="not" />
         <node concept="3Tqbb2" id="5RfK0kxlwbt" role="3eYSA1">
-          <ref role="ehGHo" to="jfgh:3JXBM6C3Cnn" resolve="Not" />
+          <ref role="ehGHo" to="27wh:3JXBM6C3Cnn" resolve="Not" />
         </node>
       </node>
       <node concept="3uniRm" id="5RfK0kxlwDE" role="3unh6L">
@@ -712,7 +713,7 @@
                   <ref role="3eTFj1" node="5RfK0kxlwHw" resolve="_if" />
                 </node>
                 <node concept="3TrEf2" id="5RfK0kxlxgC" role="2OqNvi">
-                  <ref role="3Tt5mk" to="jfgh:3JXBM6C3Fpi" resolve="antecedent" />
+                  <ref role="3Tt5mk" to="27wh:3JXBM6C3Fpi" resolve="antecedent" />
                 </node>
               </node>
             </node>
@@ -730,7 +731,7 @@
                   <ref role="3eTFj1" node="5RfK0kxlwHw" resolve="_if" />
                 </node>
                 <node concept="3TrEf2" id="5RfK0kxlxE1" role="2OqNvi">
-                  <ref role="3Tt5mk" to="jfgh:3JXBM6C3Fpk" resolve="consequent" />
+                  <ref role="3Tt5mk" to="27wh:3JXBM6C3Fpk" resolve="consequent" />
                 </node>
               </node>
             </node>
@@ -740,7 +741,7 @@
       <node concept="3eYOCq" id="5RfK0kxlwHw" role="3eYTkm">
         <property role="TrG5h" value="_if" />
         <node concept="3Tqbb2" id="5RfK0kxlwHx" role="3eYSA1">
-          <ref role="ehGHo" to="jfgh:3JXBM6C3Fph" resolve="If" />
+          <ref role="ehGHo" to="27wh:3JXBM6C3Fph" resolve="If" />
         </node>
       </node>
       <node concept="3uniRm" id="5RfK0kxlxIw" role="3unh6L">
@@ -827,7 +828,7 @@
                   <ref role="3eTFj1" node="5RfK0kxly6R" resolve="iff" />
                 </node>
                 <node concept="3TrEf2" id="5RfK0kxlyLG" role="2OqNvi">
-                  <ref role="3Tt5mk" to="jfgh:3JXBM6C3FrF" resolve="antecedent" />
+                  <ref role="3Tt5mk" to="27wh:3JXBM6C3FrF" resolve="antecedent" />
                 </node>
               </node>
             </node>
@@ -845,7 +846,7 @@
                   <ref role="3eTFj1" node="5RfK0kxly6R" resolve="iff" />
                 </node>
                 <node concept="3TrEf2" id="5RfK0kxlyZr" role="2OqNvi">
-                  <ref role="3Tt5mk" to="jfgh:3JXBM6C3FrG" resolve="consequent" />
+                  <ref role="3Tt5mk" to="27wh:3JXBM6C3FrG" resolve="consequent" />
                 </node>
               </node>
             </node>
@@ -855,7 +856,7 @@
       <node concept="3eYOCq" id="5RfK0kxly6R" role="3eYTkm">
         <property role="TrG5h" value="iff" />
         <node concept="3Tqbb2" id="5RfK0kxly6S" role="3eYSA1">
-          <ref role="ehGHo" to="jfgh:3JXBM6C3Frx" resolve="Iff" />
+          <ref role="ehGHo" to="27wh:3JXBM6C3Frx" resolve="Iff" />
         </node>
       </node>
       <node concept="3uniRm" id="5RfK0kxly6T" role="3unh6L">

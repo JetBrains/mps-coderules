@@ -429,7 +429,7 @@
   </node>
   <node concept="1M2fIO" id="3JXBM6C7aaV">
     <property role="3GE5qa" value="sentence" />
-    <ref role="1M2myG" to="jfgh:3JXBM6C3Cn8" resolve="Constant" />
+    <ref role="1M2myG" to="jfgh:3JXBM6C3Cn8" resolve="Constant_old" />
     <node concept="EnEH3" id="3JXBM6C7aaW" role="1MhHOB">
       <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="QB0g5" id="3JXBM6C7aaY" role="QCWH9">
