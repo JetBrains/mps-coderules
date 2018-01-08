@@ -41,16 +41,11 @@
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
-        <module reference="ec79e64d-4cbb-4f6c-b7b7-108dd125aba6(jetbrains.mps.logic.propositional)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
     </generator>
   </generators>
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">06b7c5c7-e359-4f4b-a581-5d0c9323af39(jetbrains.mps.fitch)</dependency>
-    <dependency reexport="false">ec79e64d-4cbb-4f6c-b7b7-108dd125aba6(jetbrains.mps.logic.propositional)</dependency>
-  </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="5" />
     <language slang="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" version="0" />
@@ -102,10 +97,7 @@
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
     <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
     <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
-    <module reference="ec79e64d-4cbb-4f6c-b7b7-108dd125aba6(jetbrains.mps.logic.propositional)" version="0" />
   </dependencyVersions>
-  <extendedLanguages>
-    <extendedLanguage>ec79e64d-4cbb-4f6c-b7b7-108dd125aba6(jetbrains.mps.logic.propositional)</extendedLanguage>
-  </extendedLanguages>
+  <extendedLanguages />
 </language>
 

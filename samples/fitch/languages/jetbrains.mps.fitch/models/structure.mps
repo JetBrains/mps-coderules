@@ -6,7 +6,6 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
-    <import index="27wh" ref="r:459ba7ac-2a61-40fc-bcc4-f13a7956cbeb(jetbrains.mps.logic.propositional.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -124,7 +123,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conclusion" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="27wh:3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" node="4LBPYGV4cY1" resolve="LogicalSentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C4o1Q" role="PrDN$">
       <ref role="PrY4T" node="3JXBM6C4ntZ" resolve="Leaf" />
@@ -296,7 +295,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="sentence" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="27wh:3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" node="4LBPYGV4cY1" resolve="LogicalSentence" />
     </node>
   </node>
   <node concept="1TIwiD" id="2aBGSFge6pw">
@@ -316,6 +315,10 @@
     <property role="EcuMT" value="6123633795075487530" />
     <property role="3GE5qa" value="proof" />
     <property role="TrG5h" value="Proposition" />
+  </node>
+  <node concept="PlHQZ" id="4LBPYGV4cY1">
+    <property role="EcuMT" value="5505606474791964545" />
+    <property role="TrG5h" value="LogicalSentence" />
   </node>
 </model>
 
