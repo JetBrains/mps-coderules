@@ -8,6 +8,16 @@
   <imports />
   <registry>
     <language id="ec79e64d-4cbb-4f6c-b7b7-108dd125aba6" name="jetbrains.mps.logic.propositional">
+      <concept id="4322786184247881315" name="jetbrains.mps.logic.propositional.structure.AndElim" flags="ng" index="2jWz52" />
+      <concept id="4322786184247881317" name="jetbrains.mps.logic.propositional.structure.OrElim" flags="ng" index="2jWz54" />
+      <concept id="4322786184247881316" name="jetbrains.mps.logic.propositional.structure.OrIntro" flags="ng" index="2jWz55" />
+      <concept id="4322786184247881318" name="jetbrains.mps.logic.propositional.structure.NotIntro" flags="ng" index="2jWz57" />
+      <concept id="4322786184247881194" name="jetbrains.mps.logic.propositional.structure.AndIntro" flags="ng" index="2jWzbb" />
+      <concept id="4322786184247901129" name="jetbrains.mps.logic.propositional.structure.IfIntro" flags="ng" index="2jWAjC" />
+      <concept id="4322786184247901128" name="jetbrains.mps.logic.propositional.structure.NotElim" flags="ng" index="2jWAjD" />
+      <concept id="4322786184247901143" name="jetbrains.mps.logic.propositional.structure.IffIntro" flags="ng" index="2jWAjQ" />
+      <concept id="4322786184247901142" name="jetbrains.mps.logic.propositional.structure.IfElim" flags="ng" index="2jWAjR" />
+      <concept id="4322786184247901144" name="jetbrains.mps.logic.propositional.structure.IffElim" flags="ng" index="2jWAjT" />
       <concept id="4322786184247805384" name="jetbrains.mps.logic.propositional.structure.Proposition" flags="ng" index="2jWLFD" />
       <concept id="4322786184247805399" name="jetbrains.mps.logic.propositional.structure.Not" flags="ng" index="2jWLFQ">
         <child id="4322786184247805400" name="target" index="2jWLFT" />
@@ -28,19 +38,9 @@
       </concept>
     </language>
     <language id="06b7c5c7-e359-4f4b-a581-5d0c9323af39" name="jetbrains.mps.fitch">
-      <concept id="4322786184247881315" name="jetbrains.mps.fitch.structure.AndElim" flags="ng" index="2jWz52" />
-      <concept id="4322786184247881317" name="jetbrains.mps.fitch.structure.OrElim" flags="ng" index="2jWz54" />
-      <concept id="4322786184247881316" name="jetbrains.mps.fitch.structure.OrIntro" flags="ng" index="2jWz55" />
-      <concept id="4322786184247881318" name="jetbrains.mps.fitch.structure.NotIntro" flags="ng" index="2jWz57" />
       <concept id="4322786184247881124" name="jetbrains.mps.fitch.structure.SubProof" flags="ng" index="2jWza5">
         <child id="4322786184247881125" name="content" index="2jWza4" />
       </concept>
-      <concept id="4322786184247881194" name="jetbrains.mps.fitch.structure.AndIntro" flags="ng" index="2jWzbb" />
-      <concept id="4322786184247901129" name="jetbrains.mps.fitch.structure.IfIntro" flags="ng" index="2jWAjC" />
-      <concept id="4322786184247901128" name="jetbrains.mps.fitch.structure.NotElim" flags="ng" index="2jWAjD" />
-      <concept id="4322786184247901143" name="jetbrains.mps.fitch.structure.IffIntro" flags="ng" index="2jWAjQ" />
-      <concept id="4322786184247901142" name="jetbrains.mps.fitch.structure.IfElim" flags="ng" index="2jWAjR" />
-      <concept id="4322786184247901144" name="jetbrains.mps.fitch.structure.IffElim" flags="ng" index="2jWAjT" />
       <concept id="4322786184247859218" name="jetbrains.mps.fitch.structure.Assumption" flags="ng" index="2jWGsN" />
       <concept id="4322786184247854968" name="jetbrains.mps.fitch.structure.Reasoning" flags="ng" index="2jWHxp">
         <child id="2497161927181071993" name="conclusion" index="3MT$nN" />

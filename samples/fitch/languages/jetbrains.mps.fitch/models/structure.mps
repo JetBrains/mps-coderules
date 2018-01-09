@@ -128,9 +128,6 @@
     <node concept="PrWs8" id="3JXBM6C4o1Q" role="PrDN$">
       <ref role="PrY4T" node="3JXBM6C4ntZ" resolve="Leaf" />
     </node>
-    <node concept="PrWs8" id="5jVx7S23jt3" role="PrDN$">
-      <ref role="PrY4T" node="5jVx7S23jsE" resolve="Proposition" />
-    </node>
   </node>
   <node concept="1TIwiD" id="3JXBM6C3Pwi">
     <property role="EcuMT" value="4322786184247859218" />
@@ -159,9 +156,6 @@
     <node concept="PrWs8" id="3JXBM6C3UQC" role="PzmwI">
       <ref role="PrY4T" node="3JXBM6C3UQB" resolve="Node" />
     </node>
-    <node concept="PrWs8" id="5jVx7S23jsM" role="PzmwI">
-      <ref role="PrY4T" node="5jVx7S23jsE" resolve="Proposition" />
-    </node>
   </node>
   <node concept="PlHQZ" id="3JXBM6C3UQB">
     <property role="EcuMT" value="4322786184247881127" />
@@ -177,86 +171,6 @@
       <property role="TrG5h" value="sequenceNum" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3URE">
-    <property role="EcuMT" value="4322786184247881194" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="AndIntro" />
-    <property role="34LRSv" value="&amp;I" />
-    <property role="R4oN_" value="And Introduction" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3UTz">
-    <property role="EcuMT" value="4322786184247881315" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="AndElim" />
-    <property role="34LRSv" value="&amp;E" />
-    <property role="R4oN_" value="And Elimination" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3UT$">
-    <property role="EcuMT" value="4322786184247881316" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="OrIntro" />
-    <property role="34LRSv" value="|I" />
-    <property role="R4oN_" value="OrIntroduction" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3UT_">
-    <property role="EcuMT" value="4322786184247881317" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="OrElim" />
-    <property role="34LRSv" value="|E" />
-    <property role="R4oN_" value="Or Elimination" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3UTA">
-    <property role="EcuMT" value="4322786184247881318" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="NotIntro" />
-    <property role="34LRSv" value="~I" />
-    <property role="R4oN_" value="Negation Introduction" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3ZJ8">
-    <property role="EcuMT" value="4322786184247901128" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="NotElim" />
-    <property role="34LRSv" value="~E" />
-    <property role="R4oN_" value="Negation Elimination" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3ZJ9">
-    <property role="EcuMT" value="4322786184247901129" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="IfIntro" />
-    <property role="34LRSv" value="=&gt;I" />
-    <property role="R4oN_" value="Implication Introduction" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3ZJm">
-    <property role="EcuMT" value="4322786184247901142" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="IfElim" />
-    <property role="34LRSv" value="=&gt;E" />
-    <property role="R4oN_" value="Implication Elimination" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3ZJn">
-    <property role="EcuMT" value="4322786184247901143" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="IffIntro" />
-    <property role="34LRSv" value="&lt;=&gt;I" />
-    <property role="R4oN_" value="Biconditional Introduction" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="1TIwiD" id="3JXBM6C3ZJo">
-    <property role="EcuMT" value="4322786184247901144" />
-    <property role="3GE5qa" value="proof.rule" />
-    <property role="TrG5h" value="IffElim" />
-    <property role="34LRSv" value="&lt;=&gt;E" />
-    <property role="R4oN_" value="Biconditional Elimination" />
-    <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
   </node>
   <node concept="PlHQZ" id="3JXBM6C4ntZ">
     <property role="EcuMT" value="4322786184247998335" />
@@ -310,11 +224,6 @@
     <property role="34LRSv" value="R" />
     <property role="R4oN_" value="Reiteration" />
     <ref role="1TJDcQ" node="3JXBM6C3FsA" resolve="Judgement" />
-  </node>
-  <node concept="PlHQZ" id="5jVx7S23jsE">
-    <property role="EcuMT" value="6123633795075487530" />
-    <property role="3GE5qa" value="proof" />
-    <property role="TrG5h" value="Proposition" />
   </node>
   <node concept="PlHQZ" id="4LBPYGV4cY1">
     <property role="EcuMT" value="5505606474791964545" />

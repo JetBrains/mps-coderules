@@ -24,6 +24,7 @@
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
@@ -161,6 +162,86 @@
     <node concept="PrWs8" id="4LBPYGV4d_8" role="PrDN$">
       <ref role="PrY4T" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3UTz">
+    <property role="EcuMT" value="4322786184247881315" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="AndElim" />
+    <property role="34LRSv" value="&amp;E" />
+    <property role="R4oN_" value="And Elimination" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3URE">
+    <property role="EcuMT" value="4322786184247881194" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="AndIntro" />
+    <property role="34LRSv" value="&amp;I" />
+    <property role="R4oN_" value="And Introduction" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3ZJm">
+    <property role="EcuMT" value="4322786184247901142" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="IfElim" />
+    <property role="34LRSv" value="=&gt;E" />
+    <property role="R4oN_" value="Implication Elimination" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3ZJ9">
+    <property role="EcuMT" value="4322786184247901129" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="IfIntro" />
+    <property role="34LRSv" value="=&gt;I" />
+    <property role="R4oN_" value="Implication Introduction" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3ZJo">
+    <property role="EcuMT" value="4322786184247901144" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="IffElim" />
+    <property role="34LRSv" value="&lt;=&gt;E" />
+    <property role="R4oN_" value="Biconditional Elimination" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3ZJn">
+    <property role="EcuMT" value="4322786184247901143" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="IffIntro" />
+    <property role="34LRSv" value="&lt;=&gt;I" />
+    <property role="R4oN_" value="Biconditional Introduction" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3ZJ8">
+    <property role="EcuMT" value="4322786184247901128" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="NotElim" />
+    <property role="34LRSv" value="~E" />
+    <property role="R4oN_" value="Negation Elimination" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3UTA">
+    <property role="EcuMT" value="4322786184247881318" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="NotIntro" />
+    <property role="34LRSv" value="~I" />
+    <property role="R4oN_" value="Negation Introduction" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3UT_">
+    <property role="EcuMT" value="4322786184247881317" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="OrElim" />
+    <property role="34LRSv" value="|E" />
+    <property role="R4oN_" value="Or Elimination" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+  </node>
+  <node concept="1TIwiD" id="3JXBM6C3UT$">
+    <property role="EcuMT" value="4322786184247881316" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="OrIntro" />
+    <property role="34LRSv" value="|I" />
+    <property role="R4oN_" value="OrIntroduction" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
   </node>
 </model>
 
