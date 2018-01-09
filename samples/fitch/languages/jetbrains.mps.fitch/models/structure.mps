@@ -93,9 +93,9 @@
     <node concept="1TJgyj" id="3JXBM6C3MQ0" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247848320" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="premise" />
+      <property role="20kJfa" value="basis" />
       <property role="20lbJX" value="1..n" />
-      <ref role="20lvS9" node="3JXBM6C3FsN" resolve="Basis" />
+      <ref role="20lvS9" node="3JXBM6C3FsN" resolve="Reference" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Pwg" role="PzmwI">
       <ref role="PrY4T" node="3JXBM6C3OtS" resolve="Reasoning" />
@@ -103,7 +103,7 @@
   </node>
   <node concept="1TIwiD" id="3JXBM6C3FsN">
     <property role="EcuMT" value="4322786184247818035" />
-    <property role="TrG5h" value="Basis" />
+    <property role="TrG5h" value="Reference" />
     <property role="3GE5qa" value="proof.reasoning" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3JXBM6C3FuH" role="1TKVEi">

@@ -428,7 +428,7 @@
   </node>
   <node concept="1M2fIO" id="5jVx7S230S1">
     <property role="3GE5qa" value="proof.reasoning" />
-    <ref role="1M2myG" to="jfgh:3JXBM6C3FsN" resolve="Basis" />
+    <ref role="1M2myG" to="jfgh:3JXBM6C3FsN" resolve="Reference" />
     <node concept="1N5Pfh" id="5jVx7S230S2" role="1Mr941">
       <ref role="1N5Vy1" to="jfgh:3JXBM6C3FuH" resolve="reasoning" />
       <node concept="3dgokm" id="5jVx7S230S6" role="1N6uqs">

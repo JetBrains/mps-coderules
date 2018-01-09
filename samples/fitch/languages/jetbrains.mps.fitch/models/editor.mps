@@ -276,7 +276,7 @@
   </registry>
   <node concept="24kQdi" id="3JXBM6C3FsQ">
     <property role="3GE5qa" value="proof.reasoning" />
-    <ref role="1XX52x" to="jfgh:3JXBM6C3FsN" resolve="Basis" />
+    <ref role="1XX52x" to="jfgh:3JXBM6C3FsN" resolve="Reference" />
     <node concept="3EZMnI" id="3JXBM6C3FsS" role="2wV5jI">
       <node concept="l2Vlx" id="3JXBM6C3FsV" role="2iSdaV" />
       <node concept="1iCGBv" id="3JXBM6C3FuJ" role="3EZMnx">
@@ -524,7 +524,7 @@
   </node>
   <node concept="3p36aQ" id="3JXBM6C6A54">
     <property role="3GE5qa" value="proof.reasoning" />
-    <ref role="aqKnT" to="jfgh:3JXBM6C3FsN" resolve="Basis" />
+    <ref role="aqKnT" to="jfgh:3JXBM6C3FsN" resolve="Reference" />
     <node concept="3XHNnq" id="3JXBM6C6A55" role="3ft7WO">
       <ref role="3XGfJA" to="jfgh:3JXBM6C3FuH" resolve="reasoning" />
       <node concept="1WAQ3h" id="3JXBM6C6Adw" role="1WZ6D9">
@@ -820,7 +820,7 @@
       </node>
       <node concept="3F2HdR" id="$u9BK_zHtO" role="3EZMnx">
         <property role="2czwfO" value="," />
-        <ref role="1NtTu8" to="jfgh:3JXBM6C3MQ0" resolve="premise" />
+        <ref role="1NtTu8" to="jfgh:3JXBM6C3MQ0" resolve="basis" />
         <node concept="l2Vlx" id="$u9BK_zHtP" role="2czzBx" />
         <node concept="3F0ifn" id="$u9BK_zHtQ" role="2czzBI">
           <property role="3F0ifm" value="" />
@@ -932,7 +932,7 @@
               <node concept="3cpWsn" id="5jVx7S1ZHTp" role="3cpWs9">
                 <property role="TrG5h" value="b" />
                 <node concept="3Tqbb2" id="5jVx7S1ZHTn" role="1tU5fm">
-                  <ref role="ehGHo" to="jfgh:3JXBM6C3FsN" resolve="Basis" />
+                  <ref role="ehGHo" to="jfgh:3JXBM6C3FsN" resolve="Reference" />
                 </node>
                 <node concept="2OqwBi" id="5jVx7S1ZHTq" role="33vP2m">
                   <node concept="2OqwBi" id="5jVx7S1ZHTr" role="2Oq$k0">
@@ -940,7 +940,7 @@
                       <ref role="3cqZAo" node="5jVx7S1Z$Hy" resolve="reit" />
                     </node>
                     <node concept="3Tsc0h" id="5jVx7S1ZHTt" role="2OqNvi">
-                      <ref role="3TtcxE" to="jfgh:3JXBM6C3MQ0" resolve="premise" />
+                      <ref role="3TtcxE" to="jfgh:3JXBM6C3MQ0" resolve="basis" />
                     </node>
                   </node>
                   <node concept="WFELt" id="5jVx7S1ZHTu" role="2OqNvi" />
