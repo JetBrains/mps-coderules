@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:ff7f5a29-d9b8-40f0-b446-35696305dff0(jetbrains.mps.fitch.sandbox)">
+<model ref="r:ff7f5a29-d9b8-40f0-b446-35696305dff0(jetbrains.mps.fitch.propositional)">
   <persistence version="9" />
   <languages>
     <use id="06b7c5c7-e359-4f4b-a581-5d0c9323af39" name="jetbrains.mps.fitch" version="1" />
