@@ -290,7 +290,7 @@
       <node concept="3eYOCq" id="5RfK0kxl0WG" role="3eYTkm">
         <property role="TrG5h" value="cst" />
         <node concept="3Tqbb2" id="5RfK0kxl0WH" role="3eYSA1">
-          <ref role="ehGHo" to="27wh:3JXBM6C3Cn8" resolve="Constant" />
+          <ref role="ehGHo" to="27wh:3JXBM6C3Cn8" resolve="Proposition" />
         </node>
       </node>
       <node concept="3uniRm" id="5RfK0kxl0X2" role="3unh6L">

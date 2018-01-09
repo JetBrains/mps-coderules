@@ -8,7 +8,7 @@
   <imports />
   <registry>
     <language id="ec79e64d-4cbb-4f6c-b7b7-108dd125aba6" name="jetbrains.mps.logic.propositional">
-      <concept id="4322786184247805384" name="jetbrains.mps.logic.propositional.structure.Constant" flags="ng" index="2jWLFD" />
+      <concept id="4322786184247805384" name="jetbrains.mps.logic.propositional.structure.Proposition" flags="ng" index="2jWLFD" />
       <concept id="4322786184247805399" name="jetbrains.mps.logic.propositional.structure.Not" flags="ng" index="2jWLFQ">
         <child id="4322786184247805400" name="target" index="2jWLFT" />
       </concept>

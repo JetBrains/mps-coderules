@@ -123,7 +123,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conclusion" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="4LBPYGV4cY1" resolve="LogicalSentence" />
+      <ref role="20lvS9" node="4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C4o1Q" role="PrDN$">
       <ref role="PrY4T" node="3JXBM6C4ntZ" resolve="Leaf" />
@@ -295,7 +295,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="sentence" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="4LBPYGV4cY1" resolve="LogicalSentence" />
+      <ref role="20lvS9" node="4LBPYGV4cY1" resolve="Sentence" />
     </node>
   </node>
   <node concept="1TIwiD" id="2aBGSFge6pw">
@@ -318,7 +318,7 @@
   </node>
   <node concept="PlHQZ" id="4LBPYGV4cY1">
     <property role="EcuMT" value="5505606474791964545" />
-    <property role="TrG5h" value="LogicalSentence" />
+    <property role="TrG5h" value="Sentence" />
   </node>
 </model>
 

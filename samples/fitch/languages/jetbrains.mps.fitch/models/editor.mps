@@ -63,6 +63,7 @@
         <child id="8371900013785948359" name="part" index="2$S_pN" />
         <child id="8371900013785948365" name="parameterQuery" index="2$S_pT" />
       </concept>
+      <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
@@ -1150,6 +1151,9 @@
       </node>
     </node>
     <node concept="3VyMlK" id="5jVx7S20VFl" role="3ft7WO" />
+  </node>
+  <node concept="IW6AY" id="2DPo4JTQI2h">
+    <ref role="aqKnT" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
   </node>
 </model>
 

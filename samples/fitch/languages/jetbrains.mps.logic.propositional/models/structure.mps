@@ -54,19 +54,19 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conjunct" />
       <property role="20lbJX" value="1..n" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fsj" role="PzmwI">
-      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="LogicalSentence" />
     </node>
   </node>
   <node concept="1TIwiD" id="3JXBM6C3Cn8">
     <property role="EcuMT" value="4322786184247805384" />
-    <property role="TrG5h" value="Constant" />
+    <property role="TrG5h" value="Proposition" />
     <property role="3GE5qa" value="sentence" />
-    <property role="R4oN_" value="Constant" />
-    <node concept="PrWs8" id="3JXBM6C3Fso" role="PzmwI">
-      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="Sentence" />
+    <property role="R4oN_" value="Proposition" />
+    <node concept="PrWs8" id="2DPo4JTQslZ" role="PzmwI">
+      <ref role="PrY4T" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Cn9" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -83,17 +83,17 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="antecedent" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="1TJgyj" id="3JXBM6C3Fpk" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817812" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="consequent" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fss" role="PzmwI">
-      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="LogicalSentence" />
     </node>
   </node>
   <node concept="1TIwiD" id="3JXBM6C3Frx">
@@ -107,17 +107,17 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="antecedent" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="1TJgyj" id="3JXBM6C3FrG" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817964" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="consequent" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fsu" role="PzmwI">
-      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="LogicalSentence" />
     </node>
   </node>
   <node concept="1TIwiD" id="3JXBM6C3Cnn">
@@ -131,10 +131,10 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fsw" role="PzmwI">
-      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="LogicalSentence" />
     </node>
   </node>
   <node concept="1TIwiD" id="3JXBM6C3FoA">
@@ -148,18 +148,18 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="disjunct" />
       <property role="20lbJX" value="1..n" />
-      <ref role="20lvS9" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fsy" role="PzmwI">
-      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="Sentence" />
+      <ref role="PrY4T" node="3JXBM6C3Cnq" resolve="LogicalSentence" />
     </node>
   </node>
   <node concept="PlHQZ" id="3JXBM6C3Cnq">
     <property role="EcuMT" value="4322786184247805402" />
-    <property role="TrG5h" value="Sentence" />
+    <property role="TrG5h" value="LogicalSentence" />
     <property role="3GE5qa" value="sentence" />
     <node concept="PrWs8" id="4LBPYGV4d_8" role="PrDN$">
-      <ref role="PrY4T" to="jfgh:4LBPYGV4cY1" resolve="LogicalSentence" />
+      <ref role="PrY4T" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
   </node>
 </model>
