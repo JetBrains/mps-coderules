@@ -47,9 +47,9 @@
         <child id="2497161927181071993" name="conclusion" index="3MT$nN" />
       </concept>
       <concept id="4322786184247818022" name="jetbrains.mps.fitch.structure.Judgement" flags="ng" index="2jWMw7">
-        <child id="4322786184247848320" name="premise" index="2jWFax" />
+        <child id="4322786184247848320" name="basis" index="2jWFax" />
       </concept>
-      <concept id="4322786184247818035" name="jetbrains.mps.fitch.structure.Basis" flags="ng" index="2jWMwi">
+      <concept id="4322786184247818035" name="jetbrains.mps.fitch.structure.Reference" flags="ng" index="2jWMwi">
         <reference id="4322786184247818157" name="reasoning" index="2jWMyc" />
       </concept>
       <concept id="657004910291123662" name="jetbrains.mps.fitch.structure.Premise" flags="ng" index="GydIM" />

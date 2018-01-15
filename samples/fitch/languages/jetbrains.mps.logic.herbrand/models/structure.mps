@@ -23,6 +23,7 @@
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
@@ -35,6 +36,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -44,6 +48,7 @@
     <property role="EcuMT" value="3059457401299011374" />
     <property role="TrG5h" value="Object" />
     <property role="34LRSv" value="object" />
+    <property role="3GE5qa" value="sentence" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2DPo4JTRwt9" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -55,11 +60,13 @@
   <node concept="PlHQZ" id="2DPo4JTRwsJ">
     <property role="EcuMT" value="3059457401299011375" />
     <property role="TrG5h" value="Term" />
+    <property role="3GE5qa" value="sentence" />
   </node>
   <node concept="1TIwiD" id="2DPo4JTRwsM">
     <property role="EcuMT" value="3059457401299011378" />
     <property role="TrG5h" value="Variable" />
     <property role="34LRSv" value="variable" />
+    <property role="3GE5qa" value="sentence" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2DPo4JTRwt2" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -72,6 +79,7 @@
     <property role="EcuMT" value="3059457401299011381" />
     <property role="TrG5h" value="Function" />
     <property role="34LRSv" value="function" />
+    <property role="3GE5qa" value="sentence" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2DPo4JTRwtv" role="1TKVEi">
       <property role="IQ2ns" value="3059457401299011423" />
@@ -92,6 +100,7 @@
     <property role="TrG5h" value="Forall" />
     <property role="34LRSv" value="forall" />
     <property role="R4oN_" value="Universal Sentence" />
+    <property role="3GE5qa" value="sentence" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2DPo4JTRwtr" role="1TKVEi">
       <property role="IQ2ns" value="3059457401299011419" />
@@ -116,6 +125,7 @@
     <property role="TrG5h" value="Exists" />
     <property role="34LRSv" value="exists" />
     <property role="R4oN_" value="Existentional Sentence" />
+    <property role="3GE5qa" value="sentence" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2DPo4JTRwto" role="1TKVEi">
       <property role="IQ2ns" value="3059457401299011416" />
@@ -140,6 +150,7 @@
     <property role="TrG5h" value="Relation" />
     <property role="34LRSv" value="relation" />
     <property role="R4oN_" value="Relational" />
+    <property role="3GE5qa" value="sentence" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2DPo4JTRwtF" role="1TKVEi">
       <property role="IQ2ns" value="3059457401299011435" />
@@ -154,6 +165,69 @@
     <node concept="PrWs8" id="2DPo4JTSLdT" role="PzmwI">
       <ref role="PrY4T" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="Vo$tzLEGtD">
+    <property role="EcuMT" value="1069765272453957481" />
+    <property role="TrG5h" value="ForallIntro" />
+    <property role="34LRSv" value="∀I" />
+    <property role="R4oN_" value="Universal Introduction" />
+    <property role="3GE5qa" value="proof.rule" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+    <node concept="PrWs8" id="3w0n0hzjEBR" role="PzmwI">
+      <ref role="PrY4T" node="3w0n0hziLce" resolve="QuantifierRule" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="Vo$tzLEGtE">
+    <property role="EcuMT" value="1069765272453957482" />
+    <property role="TrG5h" value="ForallElim" />
+    <property role="34LRSv" value="∀E" />
+    <property role="R4oN_" value="Universal Elimination" />
+    <property role="3GE5qa" value="proof.rule" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+    <node concept="PrWs8" id="3w0n0hzjEBP" role="PzmwI">
+      <ref role="PrY4T" node="3w0n0hziLce" resolve="QuantifierRule" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="Vo$tzLEGtF">
+    <property role="EcuMT" value="1069765272453957483" />
+    <property role="TrG5h" value="ExistsIntro" />
+    <property role="34LRSv" value="∃I" />
+    <property role="R4oN_" value="Existential Introduction" />
+    <property role="3GE5qa" value="proof.rule" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+    <node concept="PrWs8" id="3w0n0hzjEBN" role="PzmwI">
+      <ref role="PrY4T" node="3w0n0hziLce" resolve="QuantifierRule" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="Vo$tzLEGtG">
+    <property role="EcuMT" value="1069765272453957484" />
+    <property role="TrG5h" value="ExistsElim" />
+    <property role="34LRSv" value="∃E" />
+    <property role="R4oN_" value="Existential Elimination" />
+    <property role="3GE5qa" value="proof.rule" />
+    <ref role="1TJDcQ" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+    <node concept="PrWs8" id="3w0n0hzjEBL" role="PzmwI">
+      <ref role="PrY4T" node="3w0n0hziLce" resolve="QuantifierRule" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3w0n0hzg5do">
+    <property role="EcuMT" value="4035326440038749016" />
+    <property role="TrG5h" value="HerbrandProof" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="Herbrand Proof" />
+    <property role="3GE5qa" value="proof" />
+    <ref role="1TJDcQ" to="jfgh:3w0n0hzgWvH" resolve="AbstractProof" />
+    <node concept="PrWs8" id="3w0n0hzg5dp" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="3w0n0hzg5du" role="PzmwI">
+      <ref role="PrY4T" to="jfgh:3JXBM6C5urr" resolve="Root" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="3w0n0hziLce">
+    <property role="EcuMT" value="4035326440039453454" />
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="QuantifierRule" />
   </node>
 </model>
 
