@@ -1313,5 +1313,32 @@
     <property role="EcuMT" value="1980609059170462168" />
     <property role="TrG5h" value="LateParameter" />
   </node>
+  <node concept="1TIwiD" id="3pMFS1zdeji">
+    <property role="EcuMT" value="3923391191348208850" />
+    <property role="TrG5h" value="Substitution" />
+    <property role="34LRSv" value="subst" />
+    <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="3pMFS1zdejv" role="1TKVEi">
+      <property role="IQ2ns" value="3923391191348208863" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="origin" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+    <node concept="1TJgyj" id="3pMFS1zdej$" role="1TKVEi">
+      <property role="IQ2ns" value="3923391191348208868" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="pattern" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+    <node concept="1TJgyj" id="3pMFS1zdejx" role="1TKVEi">
+      <property role="IQ2ns" value="3923391191348208865" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="replacement" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
 </model>
 
