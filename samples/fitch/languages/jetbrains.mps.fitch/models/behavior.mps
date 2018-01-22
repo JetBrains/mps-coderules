@@ -33,17 +33,20 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
+      <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1068580123133" name="returnType" index="3clF45" />
+        <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
@@ -82,6 +85,7 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1145572800087" name="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation" flags="nn" index="2Ttrtt" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -187,6 +191,25 @@
     </node>
     <node concept="13hLZK" id="5jVx7S20nJr" role="13h7CW">
       <node concept="3clFbS" id="5jVx7S20nJs" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3w0n0hzjKLx">
+    <property role="3GE5qa" value="proof" />
+    <ref role="13h7C2" to="jfgh:3JXBM6C5urr" resolve="Root" />
+    <node concept="13i0hz" id="3w0n0hzjKLG" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="isRuleSupported" />
+      <node concept="37vLTG" id="3w0n0hzjKN7" role="3clF46">
+        <property role="TrG5h" value="ruleConcept" />
+        <node concept="3bZ5Sz" id="3w0n0hzjKO0" role="1tU5fm" />
+      </node>
+      <node concept="3Tm1VV" id="3w0n0hzjKLH" role="1B3o_S" />
+      <node concept="10P_77" id="3w0n0hzjKLW" role="3clF45" />
+      <node concept="3clFbS" id="3w0n0hzjKLJ" role="3clF47" />
+    </node>
+    <node concept="13hLZK" id="3w0n0hzjKLy" role="13h7CW">
+      <node concept="3clFbS" id="3w0n0hzjKLz" role="2VODD2" />
     </node>
   </node>
 </model>

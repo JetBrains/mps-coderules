@@ -5356,8 +5356,8 @@
                     <node concept="2OqwBi" id="2YqrT$P7QYz" role="2Oq$k0">
                       <node concept="1PxgMI" id="2YqrT$P7QY$" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
-                        <node concept="chp4Y" id="2YqrT$P7QY_" role="3oSUPX">
-                          <ref role="cht4Q" to="jfgh:3JXBM6C3Fs$" resolve="Proof" />
+                        <node concept="chp4Y" id="3w0n0hzgXvI" role="3oSUPX">
+                          <ref role="cht4Q" to="jfgh:3w0n0hzgWvH" resolve="AbstractProof" />
                         </node>
                         <node concept="2OqwBi" id="2YqrT$P7QYA" role="1m5AlR">
                           <node concept="3A2sRY" id="2YqrT$P7QYB" role="2Oq$k0">
@@ -5415,8 +5415,8 @@
                   <node concept="2OqwBi" id="2YqrT$P7QS9" role="2Oq$k0">
                     <node concept="1PxgMI" id="2YqrT$P7QSa" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
-                      <node concept="chp4Y" id="2YqrT$P7QSb" role="3oSUPX">
-                        <ref role="cht4Q" to="jfgh:3JXBM6C3Fs$" resolve="Proof" />
+                      <node concept="chp4Y" id="3w0n0hzgXrv" role="3oSUPX">
+                        <ref role="cht4Q" to="jfgh:3w0n0hzgWvH" resolve="AbstractProof" />
                       </node>
                       <node concept="2OqwBi" id="2YqrT$P7QSc" role="1m5AlR">
                         <node concept="3A2sRY" id="2YqrT$P7QSd" role="2Oq$k0">
@@ -5450,8 +5450,8 @@
                 <node concept="2OqwBi" id="2YqrT$P7JQA" role="2Oq$k0">
                   <node concept="1PxgMI" id="2YqrT$P7J$X" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
-                    <node concept="chp4Y" id="2YqrT$P7JEG" role="3oSUPX">
-                      <ref role="cht4Q" to="jfgh:3JXBM6C3Fs$" resolve="Proof" />
+                    <node concept="chp4Y" id="3w0n0hzgWPN" role="3oSUPX">
+                      <ref role="cht4Q" to="jfgh:3w0n0hzgWvH" resolve="AbstractProof" />
                     </node>
                     <node concept="2OqwBi" id="2YqrT$P7IdR" role="1m5AlR">
                       <node concept="3A2sRY" id="2YqrT$P7I5i" role="2Oq$k0">
