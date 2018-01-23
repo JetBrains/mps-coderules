@@ -1,6 +1,6 @@
 # Fitch system
 
-This project demonstrates the use of type checking to validate proofs in [propositional logic](http://logic.stanford.edu/intrologic/glossary/propositional_logic.html). The proof system is [Fitch](http://logic.stanford.edu/intrologic/glossary/fitch_system.html).
+This project demonstrates the use of type checking to validate proofs in [Propositional Logic](http://logic.stanford.edu/intrologic/glossary/propositional_logic.html), as well as [Herbrand Logic](http://logic.stanford.edu/intrologic/glossary/herbrand_logic.html) and [First Order Logic](http://logic.stanford.edu/intrologic/extras/fol.html). The proof system is [Fitch](http://logic.stanford.edu/intrologic/glossary/fitch_system.html).
 
 This project is developed with [JetBrains MPS](https://www.jetbrains.com/mps/) using the [plugin](https://github.com/fisakov/constraints-typechecking) that provides an experimental feature: *type checking with constraint rules*.
 
@@ -19,7 +19,7 @@ Open a proof and invoke «Mark All Types» (Cmd+F7 on Mac).
 
 If the proof is valid, the goal is underlined with green, otherwise the goal and the reasoning(s) that have errors are marked with red. 
 
-### Propositional logic language
+### Propositional Logic language
 
 The language enables to write boolean expressions and consists of propositional constants and the following logical operations: conjunction (And), disjunction (Or), negation (Not), implication (If), and biconditional (Iff). The following table summarises the operations and symbols that are used to represent them.
 
@@ -39,6 +39,23 @@ q
 p => q
 (~p | q)
 ````
+
+### Herbrand Logic language
+
+Herbrand Logic is an extension of Propositional Logic that extends the notion of proposition to be a n-ary relation on objects, which are represented as terms: objects, functions, and variables. Herbrand Logic also adds quantified sentences: universally and existentially quantified sentences, and introduces appropriate rules for manipulating the proofs that include quantifiers.
+
+| Name | Logical operator | Symbol |
+|:--|:--|:--|
+| Universal Sentence | Forall | ∀ |
+| Existential Sentence | Exists | ∃ |
+
+### First Order Logic language
+
+First Order Logic further extends Herbrand logic with equality sentence. Equality is another atomic sentence, just like proposition or a relation. 
+
+| Name | Logical operator | Symbol |
+|:--|:--|:--|
+| Equality | Equals | = |
 
 ### Proof language 
 
@@ -67,10 +84,32 @@ The rules of inference are defined by the [system](http://logic.stanford.edu/int
 | Biconditional Introduction | <=>I | 2 |
 | Biconditional Elimination | <=>E | 1 |
 
-Here is a sample proof in propositional logic.
+Rules that Herbrand Logic adds: 
 
-![An example of proof in Fitch system](img/sample-proof.png)
+| Inference rule | Symbol| Number of bases of a judgement |
+|:--|:--|:--|
+| Universal Introduction | ∀I | 1 |
+| Universal Elimination | ∀E | 2 |
+| Existential Introduction | ∃I | 1 |
+| Existential Elimination | ∃E | 2 |
 
+Note that this implementation of Herbrand Logic lacks either a Domain Closure rule or Induction rules. Without these rules an implementation is incomplete.
+
+Rules that First Order Logic adds: 
+
+| Inference rule | Symbol| Number of bases of a judgement |
+|:--|:--|:--|
+| Equality Introduction | =I | 0 |
+| Equality Elimination | =E | 2 |
+
+Here are samples of proofs:
+
+![An example of a proof in Propositional Logic](img/sample-proof.png)
+
+![An example of a proof in Herbrand Logic](img/sample-proof-herbrand.png)
+
+![An example of a proof in First Order Logic](img/sample-proof-firstorder.png)
+ 
 The proof is validated using experimental type checking with constraint rules, which is a new feature being developed for MPS. The sentences that constitute judgements in the proof are represented as *terms* in the internal language of constraint rules. The inference rules use *terms unification* to match sentences and extract sub-sentences. Every judgement is assigned a conclusion and, if the judgement is proved to be correct, it is marked as valid. 
 
 Here is a sample of an inference rule written in the language of constraint rules processing.
@@ -89,6 +128,8 @@ The result of the rule’s activation is simply that the judgement `ne` is marke
 ### Inner workings
 
 Rule templates are applied to each of the reasoning nodes and produce a constraint rules program, that is then evaluated. First the automatic rules, the rules that are always generated, are triggered, which activate constraint `conclusion` binding reasoning to the propositional term corresponding to the sentence contained in the reasoning. 
+
+#### Propositional Logic rules
 
 ![Automatic rule activating `conclusion` constraint](img/judgement_conclusion.png)
 
@@ -135,12 +176,43 @@ In the case of Implication Introduction the premise is not a judgement, but a su
 
 ![Biconditional Introduction and Biconditional Elimination](img/iff_rules.png)
 
-We create two versions of both Biconditional Introduction and Biconditional Elimination rules to account for arbitrary order of premises and arbitrary selection of the conclusion.
+There are two versions of both Biconditional Introduction and Biconditional Elimination rules to account for arbitrary order of premises and arbitrary selection of the conclusion.
 
 ![Biconditional Introduction inference rule](img/iff_intro.png)
 
 ![Biconditional Elimination inference rule](img/iff_elim.png)
 
+#### Herbrand Logic rules
+
+![Universal Introduction](img/ui_rule.png)
+
+![Universal Elimination](img/ue_rule.png)
+
+![Universal Introduction inference rule](img/forall_intro.png)
+![Universal Elimination inference rule](img/forall_elim.png)
+
+Structure of both inference rules follows strictly the definitions above. Since there are certain conditions that must be met for rules to be applicable, these are extracted in boolean variables that are checked with `assert()` constraint, which is built-in into the language of constraint rules. If assertion fails, the alternative branch is triggered, which assigns an error message to the judgement.
+
+An important detail is the presence of `when` clause, which tests that the corresponding terms in premises and the conclusion are matched *after* a successful substitution. The construct `subst(TERM [MATCH -> REPLACEMENT])` serves the purpose of producing the term that is the result of a substitution. 
+
+![Existential Introduction and Elimination](img/exists_rules.png)
+
+![Existential Introduction inference rule](img/exists_intro.png)
+![Existential Elimination inference rule](img/exists_elim.png)
+
+As with rules for Universal quantifier, Existential  Introduction and Elimination rules follow the formal definitions, both checking for correct unification of terms and asserting that the variable is chosen correctly in case of elimination.
+
+#### First Order Logic rules
+
+![Equality Introduction and Elimination](img/equality_rules.png)
+
+![Equality Introduction inference rule](img/eq_intro.png)
+
+![Equality Elimination inference rule](img/eq_elim.png)
+
+First Order Logic introduces only one rule of interest, since Equality Introduction is not really useful. And the pattern here is the same as with Universal and Existential rules.
+
+#### Goal
 
 The constraint `goal` is activated automatically to associate the goal of the proof with its formal sentence.
 
