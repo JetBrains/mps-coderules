@@ -106,7 +106,7 @@ ant.taskdef(name: 'junit',
             classpath: configurations.junitAnt.asPath)
 
 ant.importBuild('build.xml')
-ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '0'}".toString()
+ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9999'}".toString()
 
 // ensure 'init' runs before 'fetchDependencies' and 'declare-mps-tasks'
 fetchDependencies {
