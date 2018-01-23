@@ -19,7 +19,7 @@
   </languageVersions>
   <dependencyVersions>
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
-    <module reference="3ddddf69-9ff0-426b-9365-51ae7356fb82(jetbrains.mps.lang.typesystem2.sample)" version="0" />
+    <module reference="3ddddf69-9ff0-426b-9365-51ae7356fb82(jetbrains.mps.typechecking.sample)" version="0" />
   </dependencyVersions>
 </solution>
 
