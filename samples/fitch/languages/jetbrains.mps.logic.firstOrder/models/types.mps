@@ -526,7 +526,7 @@
                         <node concept="3clFbF" id="3w0n0hzmj5K" role="3cqZAp">
                           <node concept="1nq8_$" id="3w0n0hzmj5J" role="3clFbG">
                             <node concept="a7P8L" id="3w0n0hzmj5I" role="1nq8_t">
-                              <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Left" />
+                              <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Term" />
                             </node>
                           </node>
                         </node>
@@ -539,8 +539,8 @@
                       <node concept="3clFbS" id="3w0n0hzmjcf" role="16YjZG">
                         <node concept="3clFbF" id="3w0n0hzmjc$" role="3cqZAp">
                           <node concept="1nq8_$" id="3w0n0hzmjcz" role="3clFbG">
-                            <node concept="a7P8L" id="3w0n0hzmjcy" role="1nq8_t">
-                              <ref role="a7OzE" node="3w0n0hzmj4i" resolve="Right" />
+                            <node concept="a7P8L" id="2gcGVmG$Rdc" role="1nq8_t">
+                              <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Term" />
                             </node>
                           </node>
                         </node>
@@ -562,10 +562,7 @@
             <property role="TrG5h" value="Con" />
           </node>
           <node concept="aZer4" id="3w0n0hzmj4c" role="3XD1gS">
-            <property role="TrG5h" value="Left" />
-          </node>
-          <node concept="aZer4" id="3w0n0hzmj4i" role="3XD1gS">
-            <property role="TrG5h" value="Right" />
+            <property role="TrG5h" value="Term" />
           </node>
         </node>
       </node>
