@@ -520,50 +520,6 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="65oFETaV2Um" role="3bR37C">
-          <node concept="1BurEX" id="65oFETaV2Un" role="1SiIV1">
-            <node concept="398BVA" id="65oFETaV2Ua" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="65oFETaV2Ub" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="65oFETaV2Uc" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="65oFETaV2Ud" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="65oFETaV2Ue" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="65oFETaV2Uf" role="2Ry0An">
-                        <property role="2Ry0Am" value="kotlin-runtime-1.1.4.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="65oFETaV2U$" role="3bR37C">
-          <node concept="1BurEX" id="65oFETaV2U_" role="1SiIV1">
-            <node concept="398BVA" id="65oFETaV2Uo" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
-              <node concept="2Ry0Ak" id="65oFETaV2Up" role="iGT6I">
-                <property role="2Ry0Am" value="logic" />
-                <node concept="2Ry0Ak" id="65oFETaV2Uq" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="65oFETaV2Ur" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="65oFETaV2Us" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="65oFETaV2Ut" role="2Ry0An">
-                        <property role="2Ry0Am" value="kotlin-stdlib-1.1.4.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3rtmxn" id="3Z6zOnxMp$6" role="3bR31x">
           <node concept="3LXTmp" id="3Z6zOnxMp$7" role="3rtmxm">
             <node concept="3qWCbU" id="3Z6zOnxMp$8" role="3LXTna">
@@ -576,6 +532,50 @@
                   <property role="2Ry0Am" value="solutions" />
                   <node concept="2Ry0Ak" id="3Z6zOnxMp$c" role="2Ry0An">
                     <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2D8WQQliKxH" role="3bR37C">
+          <node concept="1BurEX" id="2D8WQQliKxI" role="1SiIV1">
+            <node concept="398BVA" id="2D8WQQliKxx" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="2D8WQQliKxy" role="iGT6I">
+                <property role="2Ry0Am" value="logic" />
+                <node concept="2Ry0Ak" id="2D8WQQliKxz" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="2D8WQQliKx$" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                    <node concept="2Ry0Ak" id="2D8WQQliKx_" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="2D8WQQliKxA" role="2Ry0An">
+                        <property role="2Ry0Am" value="kotlin-runtime-1.2.30.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2D8WQQliKxV" role="3bR37C">
+          <node concept="1BurEX" id="2D8WQQliKxW" role="1SiIV1">
+            <node concept="398BVA" id="2D8WQQliKxJ" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
+              <node concept="2Ry0Ak" id="2D8WQQliKxK" role="iGT6I">
+                <property role="2Ry0Am" value="logic" />
+                <node concept="2Ry0Ak" id="2D8WQQliKxL" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="2D8WQQliKxM" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
+                    <node concept="2Ry0Ak" id="2D8WQQliKxN" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="2D8WQQliKxO" role="2Ry0An">
+                        <property role="2Ry0Am" value="kotlin-stdlib-1.2.30.jar" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2064,7 +2064,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="4EvsDTBGxZx" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/kotlin-runtime-1.1.4.jar" />
+                <property role="3yLZsk" value="../lib/kotlin-runtime-1.2.30.jar" />
                 <node concept="398BVA" id="4EvsDTBGxZy" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
                   <node concept="2Ry0Ak" id="4EvsDTBGxZz" role="iGT6I">
@@ -2076,7 +2076,7 @@
                         <node concept="2Ry0Ak" id="4EvsDTBGxZA" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
                           <node concept="2Ry0Ak" id="4EvsDTBGxZB" role="2Ry0An">
-                            <property role="2Ry0Am" value="kotlin-runtime-1.1.4.jar" />
+                            <property role="2Ry0Am" value="kotlin-runtime-1.2.30.jar" />
                           </node>
                         </node>
                       </node>
@@ -2085,7 +2085,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="4EvsDTBGxZC" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/kotlin-stdlib-1.1.4.jar" />
+                <property role="3yLZsk" value="../lib/kotlin-stdlib-1.2.30.jar" />
                 <node concept="398BVA" id="4EvsDTBGxZD" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.logic_home" />
                   <node concept="2Ry0Ak" id="4EvsDTBGxZE" role="iGT6I">
@@ -2097,7 +2097,7 @@
                         <node concept="2Ry0Ak" id="4EvsDTBGxZH" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
                           <node concept="2Ry0Ak" id="4EvsDTBGxZI" role="2Ry0An">
-                            <property role="2Ry0Am" value="kotlin-stdlib-1.1.4.jar" />
+                            <property role="2Ry0Am" value="kotlin-stdlib-1.2.30.jar" />
                           </node>
                         </node>
                       </node>

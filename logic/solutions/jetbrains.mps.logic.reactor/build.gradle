@@ -23,9 +23,9 @@ task downloadReactor {
   ant.mkdir(dir: 'lib')
   def url = 'https://github.com/fisakov/conreactor/releases/download'
   ant.get(src: "${url}/${conreactorTag}/conreactor-api-${conreactorVersion}.jar",
-          dest: 'lib', usetimestamp: 'true', skipexisting: 'true')
+          dest: 'lib', usetimestamp: 'true', skipexisting: 'false')
   ant.get(src: "${url}/${conreactorTag}/conreactor-core-${conreactorVersion}.jar",
-          dest: 'lib',  usetimestamp: 'true', skipexisting: 'true')
+          dest: 'lib',  usetimestamp: 'true', skipexisting: 'false')
 }
 
 task copyDependencies (type: Copy, dependsOn: downloadReactor) {
