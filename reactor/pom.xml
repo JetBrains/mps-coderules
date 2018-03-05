@@ -8,7 +8,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.1.4</kotlin.version>
+        <kotlin.version>1.2.30</kotlin.version>
         <collection.version>0.7</collection.version>
     </properties>
 
