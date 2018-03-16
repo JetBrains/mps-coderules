@@ -2248,5 +2248,25 @@
     <node concept="2tJIrI" id="1CcQBrPcZWl" role="jymVt" />
     <node concept="3Tm1VV" id="1CcQBrPcZVH" role="1B3o_S" />
   </node>
+  <node concept="3HP615" id="36tQV5AurZW">
+    <property role="3GE5qa" value="ruleTemplate" />
+    <property role="TrG5h" value="ConstraintRuleTemplate" />
+    <node concept="2tJIrI" id="36tQV5Aus0e" role="jymVt" />
+    <node concept="3clFb_" id="36tQV5Aus0w" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="apply" />
+      <node concept="37vLTG" id="36tQV5Auubn" role="3clF46">
+        <property role="TrG5h" value="session" />
+        <node concept="3uibUv" id="36tQV5Auubo" role="1tU5fm">
+          <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="36tQV5Aus0z" role="1B3o_S" />
+      <node concept="3clFbS" id="36tQV5Aus0$" role="3clF47" />
+      <node concept="3cqZAl" id="36tQV5AI6in" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="36tQV5AIeEy" role="jymVt" />
+    <node concept="3Tm1VV" id="36tQV5AurZX" role="1B3o_S" />
+  </node>
 </model>
 
