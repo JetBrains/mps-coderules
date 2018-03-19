@@ -16,6 +16,7 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -626,9 +627,41 @@
         <node concept="3clFbS" id="4vBwiiV65KN" role="3clF47" />
       </node>
       <node concept="2tJIrI" id="7DvO2M9g6$W" role="jymVt" />
+      <node concept="3clFb_" id="36tQV5B44It" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="TrG5h" value="customContraint" />
+        <node concept="37vLTG" id="36tQV5B457L" role="3clF46">
+          <property role="TrG5h" value="anchorNode" />
+          <node concept="3Tqbb2" id="36tQV5B459x" role="1tU5fm" />
+        </node>
+        <node concept="3cqZAl" id="36tQV5B44Iv" role="3clF45" />
+        <node concept="3Tm1VV" id="36tQV5B44Iw" role="1B3o_S" />
+        <node concept="3clFbS" id="36tQV5B44Ix" role="3clF47" />
+      </node>
+      <node concept="2tJIrI" id="36tQV5B44$K" role="jymVt" />
       <node concept="3Tm1VV" id="4vBwiiV6131" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="4vBwiiV5X32" role="jymVt" />
+    <node concept="3clFb_" id="36tQV5B3WAl" role="jymVt">
+      <property role="TrG5h" value="customConstraint" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="36tQV5B40w6" role="3clF46">
+        <property role="TrG5h" value="cst" />
+        <node concept="3uibUv" id="36tQV5B40QP" role="1tU5fm">
+          <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="36tQV5B41xj" role="3clF46">
+        <property role="TrG5h" value="anchorNode" />
+        <node concept="3Tqbb2" id="36tQV5B420J" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="36tQV5B3YXl" role="3clF45">
+        <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
+      </node>
+      <node concept="3Tm1VV" id="36tQV5B3WAo" role="1B3o_S" />
+      <node concept="3clFbS" id="36tQV5B3WAp" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="36tQV5B3UL3" role="jymVt" />
     <node concept="3clFb_" id="18kNIl1wWgU" role="jymVt">
       <property role="TrG5h" value="expandMacro" />
       <property role="1EzhhJ" value="true" />
