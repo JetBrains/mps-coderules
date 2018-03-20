@@ -6911,5 +6911,22 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="36tQV5BDpoC">
+    <property role="3GE5qa" value="rule.code" />
+    <ref role="1XX52x" to="wq2x:36tQV5BDmft" resolve="RequireStatement" />
+    <node concept="3EZMnI" id="36tQV5BDpso" role="2wV5jI">
+      <node concept="PMmxH" id="36tQV5BDpsy" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="36tQV5BDpsN" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:36tQV5BDmjo" resolve="node" />
+      </node>
+      <node concept="3F0ifn" id="36tQV5BDpsV" role="3EZMnx">
+        <property role="3F0ifm" value=";" />
+        <ref role="1k5W1q" to="tpen:hFDgi_W" resolve="Semicolon" />
+      </node>
+      <node concept="l2Vlx" id="36tQV5BDpsr" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

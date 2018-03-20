@@ -117,6 +117,9 @@
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
+      <concept id="3575255234196628445" name="jetbrains.mps.lang.typesystem2.structure.RequireStatement" flags="ng" index="1mebxG">
+        <child id="3575255234196628696" name="node" index="1mebXD" />
+      </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.typesystem2.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="3575255234174969658" name="head" index="1nLNMb" />
         <child id="3575255234174969660" name="body" index="1nLNMd" />
@@ -179,6 +182,11 @@
     <node concept="1nLNMY" id="36tQV5Ao9qv" role="1nK1Vg">
       <property role="TrG5h" value="test" />
       <node concept="3clFbS" id="36tQV5Ao9qw" role="1nLNMH">
+        <node concept="1mebxG" id="7lt0LtOVMbx" role="3cqZAp">
+          <node concept="3A2sRY" id="7lt0LtOVMh4" role="1mebXD">
+            <ref role="3A2yKK" node="36tQV5A_oxu" resolve="attr" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="36tQV5AKngS" role="3cqZAp">
           <node concept="3cpWsn" id="36tQV5AKngV" role="3cpWs9">
             <property role="TrG5h" value="str" />

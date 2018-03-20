@@ -1559,5 +1559,35 @@
       <ref role="1YaFvo" to="wq2x:5WBVN_MT8FC" resolve="ExpressionItem" />
     </node>
   </node>
+  <node concept="1YbPZF" id="36tQV5BDmjN">
+    <property role="TrG5h" value="typeof_RequireStatement" />
+    <property role="3GE5qa" value="rule.code" />
+    <node concept="3clFbS" id="36tQV5BDmjO" role="18ibNy">
+      <node concept="1ZobV4" id="7lt0LtOVMp1" role="3cqZAp">
+        <property role="3wDh2S" value="false" />
+        <node concept="mw_s8" id="7lt0LtOVMp6" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7lt0LtOVMp7" role="mwGJk">
+            <node concept="2OqwBi" id="7lt0LtOVMp8" role="1Z2MuG">
+              <node concept="1YBJjd" id="7lt0LtOVMp9" role="2Oq$k0">
+                <ref role="1YBMHb" node="36tQV5BDmjQ" resolve="rs" />
+              </node>
+              <node concept="3TrEf2" id="7lt0LtOVMpa" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:36tQV5BDmjo" resolve="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="7lt0LtOVMp3" role="1ZfhKB">
+          <node concept="2c44tf" id="7lt0LtOVMp4" role="mwGJk">
+            <node concept="3Tqbb2" id="7lt0LtOVMp5" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="36tQV5BDmjQ" role="1YuTPh">
+      <property role="TrG5h" value="rs" />
+      <ref role="1YaFvo" to="wq2x:36tQV5BDmft" resolve="RequireStatement" />
+    </node>
+  </node>
 </model>
 
