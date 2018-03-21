@@ -556,6 +556,13 @@
       <property role="IQ2ns" value="1427485783571962463" />
       <ref role="20lvS9" node="6p0DfM0a3TO" resolve="Body" />
     </node>
+    <node concept="1TJgyj" id="7lt0LtPpFwP" role="1TKVEi">
+      <property role="IQ2ns" value="8456919074560456757" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7lt0LtPpEVM" resolve="ParameterContainer" />
+    </node>
     <node concept="PrWs8" id="3NRKQ2BIeUB" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
@@ -1443,6 +1450,22 @@
       <property role="20kJfa" value="node" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7lt0LtPpEVM">
+    <property role="EcuMT" value="8456919074560454386" />
+    <property role="3GE5qa" value="rule.component" />
+    <property role="TrG5h" value="ParameterContainer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7lt0LtPpF3M" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="8456919074560454898" />
+      <ref role="20lvS9" node="PB1R3Y7Ed7" resolve="RulePartParameterDeclaration" />
+    </node>
+    <node concept="PrWs8" id="7lt0LtPpF3K" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
     </node>
   </node>
 </model>
