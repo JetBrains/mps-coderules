@@ -1399,6 +1399,13 @@
     <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="ConstraintRule" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7lt0LtPHSaf" role="1TKVEi">
+      <property role="IQ2ns" value="8456919074565751439" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7lt0LtPpEVM" resolve="ParameterContainer" />
+    </node>
     <node concept="1TJgyj" id="36tQV5AmIsU" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="head" />
@@ -1422,6 +1429,9 @@
     </node>
     <node concept="PrWs8" id="36tQV5Ax0RU" role="PzmwI">
       <ref role="PrY4T" node="7IysFeBd3kI" resolve="ApplicationSessionParticipant" />
+    </node>
+    <node concept="PrWs8" id="7lt0LtPInTv" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
     </node>
   </node>
   <node concept="1TIwiD" id="36tQV5AmIt0">
