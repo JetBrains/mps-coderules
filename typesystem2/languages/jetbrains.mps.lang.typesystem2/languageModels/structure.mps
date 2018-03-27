@@ -1303,6 +1303,7 @@
   <node concept="1TIwiD" id="5WBVN_MT8FC">
     <property role="EcuMT" value="6856711987714624232" />
     <property role="TrG5h" value="ExpressionItem" />
+    <property role="34LRSv" value="expression" />
     <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="5WBVN_MT8FD" role="1TKVEi">
       <property role="IQ2ns" value="6856711987714624233" />
@@ -1476,6 +1477,19 @@
     </node>
     <node concept="PrWs8" id="7lt0LtPpF3K" role="PzmwI">
       <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7lt0LtQg3tE">
+    <property role="EcuMT" value="8456919074574710634" />
+    <property role="TrG5h" value="ConstantExpressionItem" />
+    <property role="34LRSv" value="constant" />
+    <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="7lt0LtQg3vl" role="1TKVEi">
+      <property role="IQ2ns" value="8456919074574710741" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

@@ -1589,5 +1589,62 @@
       <ref role="1YaFvo" to="wq2x:36tQV5BDmft" resolve="RequireStatement" />
     </node>
   </node>
+  <node concept="1YbPZF" id="7lt0LtQg3Cb">
+    <property role="TrG5h" value="typeof_ConstantExpressionItem" />
+    <node concept="3clFbS" id="7lt0LtQg3Cc" role="18ibNy">
+      <node concept="nvevp" id="7lt0LtQg3Hj" role="3cqZAp">
+        <node concept="3clFbS" id="7lt0LtQg3Hk" role="nvhr_">
+          <node concept="1Z5TYs" id="7lt0LtQg3Hl" role="3cqZAp">
+            <node concept="mw_s8" id="7lt0LtQg3Hm" role="1ZfhKB">
+              <node concept="2pJPEk" id="7lt0LtQg3Hn" role="mwGJk">
+                <node concept="2pJPED" id="7lt0LtQg3Ho" role="2pJPEn">
+                  <ref role="2pJxaS" to="5j4j:1mP5b6jNC0S" resolve="LogicalType" />
+                  <node concept="2pIpSj" id="7lt0LtQg3Hp" role="2pJxcM">
+                    <ref role="2pIpSl" to="5j4j:5zfvpQ71CIE" resolve="dataType" />
+                    <node concept="36biLy" id="7lt0LtQg3Hq" role="2pJxcZ">
+                      <node concept="1PxgMI" id="7lt0LtQg3Hr" role="36biLW">
+                        <property role="1BlNFB" value="true" />
+                        <node concept="chp4Y" id="7lt0LtQg3Hs" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:fz3vP1H" resolve="Type" />
+                        </node>
+                        <node concept="2X3wrD" id="7lt0LtQg3Ht" role="1m5AlR">
+                          <ref role="2X3Bk0" node="7lt0LtQg3H_" resolve="codeType" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="mw_s8" id="7lt0LtQg3Hu" role="1ZfhK$">
+              <node concept="1Z2H0r" id="7lt0LtQg3Hv" role="mwGJk">
+                <node concept="1YBJjd" id="7lt0LtQg3Hw" role="1Z2MuG">
+                  <ref role="1YBMHb" node="7lt0LtQg3Ce" resolve="cei" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1Z2H0r" id="7lt0LtQg3Hx" role="nvjzm">
+          <node concept="2OqwBi" id="7lt0LtQg3Hy" role="1Z2MuG">
+            <node concept="1YBJjd" id="7lt0LtQg3Hz" role="2Oq$k0">
+              <ref role="1YBMHb" node="7lt0LtQg3Ce" resolve="cei" />
+            </node>
+            <node concept="3TrEf2" id="7lt0LtQg3H$" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:7lt0LtQg3vl" resolve="code" />
+            </node>
+          </node>
+        </node>
+        <node concept="2X1qdy" id="7lt0LtQg3H_" role="2X0Ygz">
+          <property role="TrG5h" value="codeType" />
+          <node concept="2jxLKc" id="7lt0LtQg3HA" role="1tU5fm" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7lt0LtQg3Ce" role="1YuTPh">
+      <property role="TrG5h" value="cei" />
+      <ref role="1YaFvo" to="wq2x:7lt0LtQg3tE" resolve="ConstantExpressionItem" />
+    </node>
+  </node>
 </model>
 

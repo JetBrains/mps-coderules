@@ -4942,44 +4942,37 @@
     </node>
     <node concept="3aamgX" id="5WBVN_MTd1c" role="3acgRq">
       <ref role="30HIoZ" to="wq2x:5WBVN_MT8FC" resolve="ExpressionItem" />
-      <node concept="14YyZ8" id="5WBVN_N2ivc" role="1lVwrX">
-        <node concept="14ZrTv" id="5WBVN_N2ivg" role="14ZwWg">
-          <node concept="30G5F_" id="5WBVN_N2ivh" role="150hEN">
-            <node concept="3clFbS" id="5WBVN_N2ivi" role="2VODD2">
-              <node concept="3clFbF" id="5WBVN_N6z$b" role="3cqZAp">
-                <node concept="2OqwBi" id="5WBVN_N6A6s" role="3clFbG">
-                  <node concept="2OqwBi" id="5WBVN_N6zL8" role="2Oq$k0">
-                    <node concept="30H73N" id="5WBVN_N6z$9" role="2Oq$k0" />
-                    <node concept="2qgKlT" id="1HWyn8iVnzc" role="2OqNvi">
-                      <ref role="37wK5l" to="x5bw:1HWyn8iLEDG" resolve="logicalItems" />
-                    </node>
-                  </node>
-                  <node concept="3GX2aA" id="5WBVN_N6CRH" role="2OqNvi" />
-                </node>
-              </node>
-              <node concept="3SKdUt" id="5WBVN_N2lN3" role="3cqZAp">
-                <node concept="3SKdUq" id="5WBVN_N2lN4" role="3SKWNk">
-                  <property role="3SKdUp" value="FIXME: only macro parameters!" />
-                </node>
-              </node>
+      <node concept="30G5F_" id="7lt0LtQruqd" role="30HLyM">
+        <node concept="3clFbS" id="7lt0LtQruqe" role="2VODD2">
+          <node concept="3SKdUt" id="7lt0LtQruUX" role="3cqZAp">
+            <node concept="3SKdUq" id="7lt0LtQruUY" role="3SKWNk">
+              <property role="3SKdUp" value="FIXME: should late expression be used always?" />
             </node>
           </node>
-          <node concept="j$656" id="1HWyn8iTpMA" role="150oIE">
-            <ref role="v9R2y" node="1HWyn8iTl_Y" resolve="LateParameter_expression" />
+          <node concept="3clFbF" id="7lt0LtQruUZ" role="3cqZAp">
+            <node concept="3clFbT" id="7lt0LtQruV0" role="3clFbG">
+              <property role="3clFbU" value="true" />
+            </node>
           </node>
         </node>
-        <node concept="gft3U" id="5WBVN_N2m3C" role="14YRTM">
-          <node concept="10Nm6u" id="1mP5b6jMWs0" role="gfFT$">
-            <node concept="29HgVG" id="1mP5b6jMWt0" role="lGtFl">
-              <node concept="3NFfHV" id="1mP5b6jMWt1" role="3NFExx">
-                <node concept="3clFbS" id="1mP5b6jMWt2" role="2VODD2">
-                  <node concept="3clFbF" id="1mP5b6jMWt8" role="3cqZAp">
-                    <node concept="2OqwBi" id="1mP5b6jMWt3" role="3clFbG">
-                      <node concept="3TrEf2" id="5WBVN_N2nQ0" role="2OqNvi">
-                        <ref role="3Tt5mk" to="wq2x:5WBVN_MT8FD" resolve="code" />
-                      </node>
-                      <node concept="30H73N" id="1mP5b6jMWt7" role="2Oq$k0" />
+      </node>
+      <node concept="j$656" id="1HWyn8iTpMA" role="1lVwrX">
+        <ref role="v9R2y" node="1HWyn8iTl_Y" resolve="LateParameter_expression" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="7lt0LtQg4bJ" role="3acgRq">
+      <ref role="30HIoZ" to="wq2x:7lt0LtQg3tE" resolve="ConstantExpressionItem" />
+      <node concept="gft3U" id="7lt0LtQgaVg" role="1lVwrX">
+        <node concept="10Nm6u" id="7lt0LtQgaVh" role="gfFT$">
+          <node concept="29HgVG" id="7lt0LtQgaVi" role="lGtFl">
+            <node concept="3NFfHV" id="7lt0LtQgaVj" role="3NFExx">
+              <node concept="3clFbS" id="7lt0LtQgaVk" role="2VODD2">
+                <node concept="3clFbF" id="7lt0LtQgaVl" role="3cqZAp">
+                  <node concept="2OqwBi" id="7lt0LtQgaVm" role="3clFbG">
+                    <node concept="3TrEf2" id="7lt0LtQgaVn" role="2OqNvi">
+                      <ref role="3Tt5mk" to="wq2x:7lt0LtQg3vl" resolve="code" />
                     </node>
+                    <node concept="30H73N" id="7lt0LtQgaVo" role="2Oq$k0" />
                   </node>
                 </node>
               </node>
@@ -13041,10 +13034,16 @@
                     </node>
                     <node concept="3clFbS" id="49obaclwhoc" role="3clFbx">
                       <node concept="3cpWs6" id="49obaclwiuR" role="3cqZAp">
-                        <node concept="2OqwBi" id="49obaclwgJU" role="3cqZAk">
-                          <node concept="30H73N" id="49obaclwg$Y" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="49obaclwh70" role="2OqNvi">
-                            <ref role="3Tt5mk" to="5j4j:5zfvpQ71CIE" resolve="dataType" />
+                        <node concept="1UaxmW" id="7lt0LtPWcbF" role="3cqZAk">
+                          <node concept="1YaCAy" id="7lt0LtPWcYr" role="1Ub_4A">
+                            <property role="TrG5h" value="classifierType" />
+                            <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
+                          </node>
+                          <node concept="2OqwBi" id="7lt0LtPWctC" role="1Ub_4B">
+                            <node concept="30H73N" id="7lt0LtPWcic" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="7lt0LtPWcUl" role="2OqNvi">
+                              <ref role="3Tt5mk" to="5j4j:5zfvpQ71CIE" resolve="dataType" />
+                            </node>
                           </node>
                         </node>
                       </node>
