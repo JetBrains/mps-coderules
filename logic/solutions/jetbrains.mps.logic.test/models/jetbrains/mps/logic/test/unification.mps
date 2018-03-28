@@ -14,7 +14,6 @@
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
-    <import index="omn0" ref="r:4e44cb56-a834-45de-a0c4-c49a5c86e78e(jetbrains.mps.logic.builtin.solver)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
   </imports>
   <registry>
@@ -691,7 +690,7 @@
       <node concept="3Tm1VV" id="6yEjedm5WIa" role="1B3o_S" />
       <node concept="3clFbS" id="6yEjedm5WIb" role="3clF47">
         <node concept="XkiVB" id="6yEjedm5WNa" role="3cqZAp">
-          <ref role="37wK5l" to="omn0:5p8T3QHGKJ7" resolve="UnificationSolver" />
+          <ref role="37wK5l" to="cxk7:5p8T3QHGKJ7" resolve="UnificationPredicate.UnificationSolver" />
           <node concept="37vLTw" id="6yEjedm5WTt" role="37wK5m">
             <ref role="3cqZAo" node="3FIATxbQcKV" resolve="logicalUnification" />
           </node>
@@ -706,7 +705,7 @@
       <node concept="3clFbS" id="6yEjedm5XWA" role="3clF47">
         <node concept="3clFbF" id="6yEjedm6hex" role="3cqZAp">
           <node concept="1rXfSq" id="6yEjedm6hew" role="3clFbG">
-            <ref role="37wK5l" to="omn0:2UGjFq4lTDy" resolve="doAsk" />
+            <ref role="37wK5l" to="cxk7:2UGjFq4lTDy" resolve="doAsk" />
             <node concept="37vLTw" id="6yEjedm6hnq" role="37wK5m">
               <ref role="3cqZAo" node="6yEjedm5Zmw" resolve="a" />
             </node>
@@ -737,7 +736,7 @@
       <node concept="3clFbS" id="6yEjedm623f" role="3clF47">
         <node concept="3clFbF" id="6yEjedm6hJS" role="3cqZAp">
           <node concept="1rXfSq" id="6yEjedm6hJR" role="3clFbG">
-            <ref role="37wK5l" to="omn0:2UGjFq4mbmq" resolve="doTell" />
+            <ref role="37wK5l" to="cxk7:2UGjFq4mbmq" resolve="doTell" />
             <node concept="37vLTw" id="6yEjedm6hPb" role="37wK5m">
               <ref role="3cqZAo" node="6yEjedm623g" resolve="a" />
             </node>
@@ -761,8 +760,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="6yEjedm5WkF" role="1B3o_S" />
-    <node concept="3uibUv" id="6yEjedm5WEV" role="1zkMxy">
-      <ref role="3uigEE" to="omn0:6GYQG_Spvw5" resolve="UnificationSolver" />
+    <node concept="3uibUv" id="7lt0LtQwpQM" role="1zkMxy">
+      <ref role="3uigEE" to="cxk7:6GYQG_Spvw5" resolve="UnificationPredicate.UnificationSolver" />
     </node>
   </node>
   <node concept="312cEu" id="6yEjedm8s$A">
@@ -787,7 +786,7 @@
       <node concept="3clFbS" id="6yEjedm8tAm" role="3clF47">
         <node concept="3clFbF" id="6yEjedm8tOR" role="3cqZAp">
           <node concept="1rXfSq" id="6yEjedm8tOQ" role="3clFbG">
-            <ref role="37wK5l" to="omn0:2UGjFq4lGBW" resolve="_tell" />
+            <ref role="37wK5l" to="cxk7:2UGjFq4lGBW" resolve="_tell" />
             <node concept="37vLTw" id="6yEjedm8tTM" role="37wK5m">
               <ref role="3cqZAo" node="6yEjedm8tDF" resolve="a" />
             </node>
@@ -800,8 +799,8 @@
     </node>
     <node concept="2tJIrI" id="6yEjedm8sYi" role="jymVt" />
     <node concept="3Tm1VV" id="6yEjedm8s$B" role="1B3o_S" />
-    <node concept="3uibUv" id="6yEjedm8s_w" role="1zkMxy">
-      <ref role="3uigEE" to="omn0:3HJTsBn4ogZ" resolve="EqualsSolver" />
+    <node concept="3uibUv" id="7lt0LtQw8s8" role="1zkMxy">
+      <ref role="3uigEE" to="cxk7:3HJTsBn4ogZ" resolve="EqualsPredicate.EqualsSolver" />
     </node>
   </node>
   <node concept="312cEu" id="60zk4o6U2na">
