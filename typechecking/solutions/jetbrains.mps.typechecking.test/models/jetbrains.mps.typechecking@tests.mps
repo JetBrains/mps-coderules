@@ -882,6 +882,9 @@
                                 </node>
                                 <node concept="liA8E" id="6QH_LDtbV6f" role="2OqNvi">
                                   <ref role="37wK5l" to="hano:HV6urVFrQ9" resolve="eval" />
+                                  <node concept="37vLTw" id="7lt0LtQtMIX" role="37wK5m">
+                                    <ref role="3cqZAo" node="1CcQBrQrTBe" resolve="program" />
+                                  </node>
                                   <node concept="37vLTw" id="6QH_LDtbV6g" role="37wK5m">
                                     <ref role="3cqZAo" node="6QH_LDtbV5J" resolve="config" />
                                   </node>

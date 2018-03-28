@@ -3334,6 +3334,9 @@
                                     </node>
                                     <node concept="liA8E" id="Hg6Enc7CQl" role="2OqNvi">
                                       <ref role="37wK5l" to="hano:HV6urVFrQ9" resolve="eval" />
+                                      <node concept="3M$PaV" id="7lt0LtQtHHG" role="37wK5m">
+                                        <ref role="3M$S_o" node="4BHjwwGAILz" resolve="program" />
+                                      </node>
                                       <node concept="37vLTw" id="Hg6Enc7CQm" role="37wK5m">
                                         <ref role="3cqZAo" node="Hg6Enc7CQ8" resolve="config" />
                                       </node>
