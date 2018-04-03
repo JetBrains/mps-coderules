@@ -1646,5 +1646,47 @@
       <ref role="1YaFvo" to="wq2x:7lt0LtQg3tE" resolve="ConstantExpressionItem" />
     </node>
   </node>
+  <node concept="1YbPZF" id="oI9Yrc9SS">
+    <property role="TrG5h" value="typeof_SNodeAssignTypeOperation" />
+    <node concept="3clFbS" id="oI9Yrc9ST" role="18ibNy">
+      <node concept="1Z5TYs" id="oI9Yrca4p" role="3cqZAp">
+        <node concept="mw_s8" id="oI9Yrca4H" role="1ZfhKB">
+          <node concept="2c44tf" id="oI9Yrca4D" role="mwGJk">
+            <node concept="10P_77" id="oI9Yrca5G" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="oI9Yrca4s" role="1ZfhK$">
+          <node concept="1Z2H0r" id="oI9Yrc9Vt" role="mwGJk">
+            <node concept="1YBJjd" id="oI9Yrc9Xf" role="1Z2MuG">
+              <ref role="1YBMHb" node="oI9Yrc9SV" resolve="ato" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1ZobV4" id="oI9YrcaYJ" role="3cqZAp">
+        <node concept="mw_s8" id="oI9YrcaZ_" role="1ZfhKB">
+          <node concept="2c44tf" id="oI9YrcaZx" role="mwGJk">
+            <node concept="3Tqbb2" id="oI9Yrcb3x" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="oI9YrcaYM" role="1ZfhK$">
+          <node concept="1Z2H0r" id="oI9Yrca6M" role="mwGJk">
+            <node concept="2OqwBi" id="oI9YrcahM" role="1Z2MuG">
+              <node concept="1YBJjd" id="oI9Yrca8F" role="2Oq$k0">
+                <ref role="1YBMHb" node="oI9Yrc9SV" resolve="ato" />
+              </node>
+              <node concept="3TrEf2" id="oI9Yrcat9" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:oI9Yrc9Ch" resolve="typeExpr" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="oI9Yrc9SV" role="1YuTPh">
+      <property role="TrG5h" value="ato" />
+      <ref role="1YaFvo" to="wq2x:oI9Yrc9wC" resolve="SNodeSetTypeOperation" />
+    </node>
+  </node>
 </model>
 

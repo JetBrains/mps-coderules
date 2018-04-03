@@ -11585,5 +11585,44 @@
     <node concept="2tJIrI" id="3pMFS1zdqqy" role="jymVt" />
     <node concept="3Tm1VV" id="3pMFS1zdqqz" role="1B3o_S" />
   </node>
+  <node concept="312cEu" id="7lt0LtQ_OIS">
+    <property role="TrG5h" value="TypecheckingSessionSolver" />
+    <node concept="2tJIrI" id="oI9Yrbvo_" role="jymVt" />
+    <node concept="3clFbW" id="oI9Yrbvrt" role="jymVt">
+      <node concept="3cqZAl" id="oI9Yrbvrv" role="3clF45" />
+      <node concept="3Tm1VV" id="oI9Yrbvrw" role="1B3o_S" />
+      <node concept="3clFbS" id="oI9Yrbvrx" role="3clF47">
+        <node concept="XkiVB" id="oI9Yrbvx2" role="3cqZAp">
+          <ref role="37wK5l" to="cxk7:23c4kVtavpK" resolve="DefaultSessionSolver" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7lt0LtQ_OLY" role="jymVt" />
+    <node concept="3clFb_" id="7lt0LtQ_SZU" role="jymVt">
+      <property role="TrG5h" value="assignType" />
+      <node concept="37vLTG" id="7lt0LtQ_T0C" role="3clF46">
+        <property role="TrG5h" value="target" />
+        <node concept="3Tqbb2" id="7lt0LtQ_T26" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="7lt0LtQ_T29" role="3clF46">
+        <property role="TrG5h" value="type" />
+        <node concept="3Tqbb2" id="7lt0LtQ_T3R" role="1tU5fm" />
+      </node>
+      <node concept="10P_77" id="oI9YrbUH2" role="3clF45" />
+      <node concept="3Tm1VV" id="7lt0LtQ_SZX" role="1B3o_S" />
+      <node concept="3clFbS" id="7lt0LtQ_SZY" role="3clF47">
+        <node concept="3clFbF" id="oI9YrbVyx" role="3cqZAp">
+          <node concept="3clFbT" id="oI9YrbVyw" role="3clFbG">
+            <property role="3clFbU" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7lt0LtQ_OM3" role="jymVt" />
+    <node concept="3Tm1VV" id="7lt0LtQ_OIT" role="1B3o_S" />
+    <node concept="3uibUv" id="7lt0LtQ_OLT" role="1zkMxy">
+      <ref role="3uigEE" to="cxk7:3F6vMxqo13Y" resolve="DefaultSessionSolver" />
+    </node>
+  </node>
 </model>
 

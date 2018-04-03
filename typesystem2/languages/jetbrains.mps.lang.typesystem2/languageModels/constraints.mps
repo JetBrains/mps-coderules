@@ -18,6 +18,7 @@
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="z8tp" ref="r:5bfbd177-208e-4d27-b74c-2ebd2a92eb80(jetbrains.mps.lang.smodel.types.structure)" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.typesystem2.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -109,6 +110,8 @@
       </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
+      <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
+      <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
         <reference id="1147467295099" name="applicableProperty" index="EomxK" />
@@ -124,6 +127,7 @@
       <concept id="1152959968041" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" flags="in" index="1LLf8_" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
         <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
         <child id="1213101058038" name="defaultScope" index="1MtirG" />
@@ -1100,6 +1104,45 @@
   <node concept="1M2fIO" id="7c96q9tCTXi">
     <property role="3GE5qa" value="term" />
     <ref role="1M2myG" to="wq2x:4MEOIDFttoe" resolve="TermDeclaration" />
+  </node>
+  <node concept="1M2fIO" id="oI9Yr_Dyq">
+    <ref role="1M2myG" to="wq2x:oI9Yrc9wC" resolve="SNodeSetTypeOperation" />
+    <node concept="9S07l" id="oI9Yr_Dyr" role="9Vyp8">
+      <node concept="3clFbS" id="oI9Yr_Dys" role="2VODD2">
+        <node concept="3clFbF" id="oI9Yr_G2o" role="3cqZAp">
+          <node concept="2OqwBi" id="oI9Yr_Qrl" role="3clFbG">
+            <node concept="2OqwBi" id="oI9Yr_Psx" role="2Oq$k0">
+              <node concept="1PxgMI" id="oI9Yr_OVI" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="oI9Yr_P6Q" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                </node>
+                <node concept="2OqwBi" id="oI9Yr_Hec" role="1m5AlR">
+                  <node concept="1PxgMI" id="oI9Yr_GB5" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="oI9Yr_GP7" role="3oSUPX">
+                      <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                    </node>
+                    <node concept="nLn13" id="oI9Yr_G2m" role="1m5AlR" />
+                  </node>
+                  <node concept="3TrEf2" id="oI9Yr_MZZ" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3TrEf2" id="oI9Yr_PXD" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+              </node>
+            </node>
+            <node concept="1mIQ4w" id="oI9Yr_QQc" role="2OqNvi">
+              <node concept="chp4Y" id="oI9Yr_R6h" role="cj9EA">
+                <ref role="cht4Q" to="z8tp:6nJA6bpveD5" resolve="SNodeTypeOperation" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

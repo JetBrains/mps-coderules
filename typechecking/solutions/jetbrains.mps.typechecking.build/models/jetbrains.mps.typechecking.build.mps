@@ -905,6 +905,11 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6Lg8" resolve="jetbrains.mps.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="oI9YrDjAW" role="3bR37C">
+          <node concept="1Busua" id="oI9YrDjAX" role="1SiIV1">
+            <ref role="1Busuk" node="3u5wJtgiSM" resolve="jetbrains.mps.lang.smodel.types" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7BVjoXzUxee" role="2G$12L">
         <property role="BnDLt" value="true" />
