@@ -45,6 +45,7 @@
     <import index="tpcp" ref="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
+    <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -11605,7 +11606,7 @@
         <node concept="3Tqbb2" id="7lt0LtQ_T26" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="7lt0LtQ_T29" role="3clF46">
-        <property role="TrG5h" value="type" />
+        <property role="TrG5h" value="nodeType" />
         <node concept="3Tqbb2" id="7lt0LtQ_T3R" role="1tU5fm" />
       </node>
       <node concept="10P_77" id="oI9YrbUH2" role="3clF45" />
@@ -11617,11 +11618,17 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="oI9YrIZQO" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="2tJIrI" id="7lt0LtQ_OM3" role="jymVt" />
     <node concept="3Tm1VV" id="7lt0LtQ_OIT" role="1B3o_S" />
     <node concept="3uibUv" id="7lt0LtQ_OLT" role="1zkMxy">
       <ref role="3uigEE" to="cxk7:3F6vMxqo13Y" resolve="DefaultSessionSolver" />
+    </node>
+    <node concept="3uibUv" id="oI9YrIZn4" role="EKbjA">
+      <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
     </node>
   </node>
 </model>
