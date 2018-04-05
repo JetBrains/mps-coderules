@@ -2,8 +2,8 @@
 <model ref="r:30efdd3a-609b-4e7b-a8f2-60af62d5341f(jetbrains.mps.fitch.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -49,6 +49,9 @@
       </concept>
     </language>
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2">
+      <concept id="8456919074560454386" name="jetbrains.mps.lang.typesystem2.structure.ParameterContainer" flags="ng" index="0eUR_">
+        <child id="8456919074560454898" name="parameter" index="0eVf_" />
+      </concept>
       <concept id="1618328391714701929" name="jetbrains.mps.lang.typesystem2.structure.TermTemplate" flags="ng" index="0oftK" />
       <concept id="6086839168138086051" name="jetbrains.mps.lang.typesystem2.structure.TermTable" flags="ng" index="1HGPq">
         <child id="6086839168138086052" name="termDeclaration" index="1HGPt" />
@@ -70,6 +73,7 @@
         <child id="6856711987714624233" name="code" index="HKQng" />
       </concept>
       <concept id="5372587443975633709" name="jetbrains.mps.lang.typesystem2.structure.AbstractRule" flags="ng" index="3wqRzX">
+        <child id="8456919074560456757" name="parameter" index="0eVGy" />
         <child id="7509376976631847095" name="input" index="20_v8_" />
         <child id="1427485783570316357" name="head" index="3orSU4" />
         <child id="1427485783571962463" name="body" index="3otmyu" />
@@ -89,7 +93,6 @@
       </concept>
       <concept id="7368070394766963523" name="jetbrains.mps.lang.typesystem2.structure.RuleComponent" flags="ng" index="3Aq9uZ">
         <child id="2316688792939037645" name="logic" index="3Ip0Jz" />
-        <child id="965748826975413053" name="parameter" index="3Nuqhd" />
       </concept>
       <concept id="7368070394766966388" name="jetbrains.mps.lang.typesystem2.structure.Body" flags="ng" index="3Aq9E8" />
       <concept id="7368070394767067636" name="jetbrains.mps.lang.typesystem2.structure.ConstraintDeclaration" flags="ng" index="3AqmO8">
@@ -342,13 +345,15 @@
             </node>
           </node>
         </node>
-        <node concept="3NuqgR" id="2YqrT$P6Q3v" role="3Nuqhd">
+      </node>
+      <node concept="0eUR_" id="3dsgZciwaju" role="0eVGy">
+        <node concept="3NuqgR" id="2YqrT$P6Q3v" role="0eVf_">
           <node concept="aZer4" id="2YqrT$P6Q3w" role="3XD1gS">
             <property role="TrG5h" value="Node" />
           </node>
           <node concept="3Tqbb2" id="2YqrT$P6Q3x" role="3vLBG7" />
         </node>
-        <node concept="3NuqgR" id="2YqrT$P6Qsx" role="3Nuqhd">
+        <node concept="3NuqgR" id="2YqrT$P6Qsx" role="0eVf_">
           <node concept="aZer4" id="2YqrT$P6Qsy" role="3XD1gS">
             <property role="TrG5h" value="Msg" />
           </node>
@@ -388,12 +393,6 @@
             </node>
           </node>
         </node>
-        <node concept="3NuqgR" id="2YqrT$P7SuF" role="3Nuqhd">
-          <node concept="aZer4" id="2YqrT$P7SuG" role="3XD1gS">
-            <property role="TrG5h" value="Node" />
-          </node>
-          <node concept="3Tqbb2" id="2YqrT$P7SuH" role="3vLBG7" />
-        </node>
       </node>
       <node concept="2t___k" id="2YqrT$P7StQ" role="20_v8_">
         <ref role="2t_S0q" to="jfgh:$u9BK__SA8" resolve="Goal" />
@@ -428,6 +427,14 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="0eUR_" id="3dsgZciwajt" role="0eVGy">
+        <node concept="3NuqgR" id="2YqrT$P7SuF" role="0eVf_">
+          <node concept="aZer4" id="2YqrT$P7SuG" role="3XD1gS">
+            <property role="TrG5h" value="Node" />
+          </node>
+          <node concept="3Tqbb2" id="2YqrT$P7SuH" role="3vLBG7" />
         </node>
       </node>
     </node>
@@ -481,13 +488,15 @@
             </node>
           </node>
         </node>
-        <node concept="3NuqgR" id="2YqrT$P7SAS" role="3Nuqhd">
+      </node>
+      <node concept="0eUR_" id="3dsgZciwajs" role="0eVGy">
+        <node concept="3NuqgR" id="2YqrT$P7SAS" role="0eVf_">
           <node concept="aZer4" id="2YqrT$P7SAT" role="3XD1gS">
             <property role="TrG5h" value="Node" />
           </node>
           <node concept="3Tqbb2" id="2YqrT$P7SAU" role="3vLBG7" />
         </node>
-        <node concept="3NuqgR" id="2YqrT$P7SAV" role="3Nuqhd">
+        <node concept="3NuqgR" id="2YqrT$P7SAV" role="0eVf_">
           <node concept="aZer4" id="2YqrT$P7SAW" role="3XD1gS">
             <property role="TrG5h" value="Msg" />
           </node>

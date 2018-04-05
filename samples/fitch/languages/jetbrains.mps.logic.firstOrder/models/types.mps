@@ -2,7 +2,7 @@
 <model ref="r:a40f7100-fd07-4b1c-98c5-112d92c92128(jetbrains.mps.logic.firstOrder.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="7" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="8" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -187,6 +187,9 @@
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2">
+      <concept id="8456919074560454386" name="jetbrains.mps.lang.typesystem2.structure.ParameterContainer" flags="ng" index="0eUR_">
+        <child id="8456919074560454898" name="parameter" index="0eVf_" />
+      </concept>
       <concept id="1618328391714701929" name="jetbrains.mps.lang.typesystem2.structure.TermTemplate" flags="ng" index="0oftK">
         <child id="1618328391714701961" name="feature" index="0ofug" />
       </concept>
@@ -260,6 +263,7 @@
       </concept>
       <concept id="8908809128801951597" name="jetbrains.mps.lang.typesystem2.structure.MacroBodyLogicalDeclaration" flags="ng" index="3uniRu" />
       <concept id="5372587443975633709" name="jetbrains.mps.lang.typesystem2.structure.AbstractRule" flags="ng" index="3wqRzX">
+        <child id="8456919074560456757" name="parameter" index="0eVGy" />
         <child id="7509376976633120254" name="letBlock" index="20w6XG" />
         <child id="7509376976631847095" name="input" index="20_v8_" />
         <child id="1427485783571243167" name="guard" index="3oo59u" />
@@ -282,7 +286,6 @@
       </concept>
       <concept id="7368070394766963523" name="jetbrains.mps.lang.typesystem2.structure.RuleComponent" flags="ng" index="3Aq9uZ">
         <child id="2316688792939037645" name="logic" index="3Ip0Jz" />
-        <child id="965748826975413053" name="parameter" index="3Nuqhd" />
       </concept>
       <concept id="7368070394766966158" name="jetbrains.mps.lang.typesystem2.structure.Guard" flags="ng" index="3Aq9_M" />
       <concept id="7368070394766966388" name="jetbrains.mps.lang.typesystem2.structure.Body" flags="ng" index="3Aq9E8" />
@@ -492,16 +495,18 @@
             </node>
           </node>
         </node>
-        <node concept="3NuqgR" id="3w0n0hzminr" role="3Nuqhd">
-          <node concept="aZer4" id="3w0n0hzmins" role="3XD1gS">
-            <property role="TrG5h" value="Stc" />
-          </node>
-        </node>
       </node>
       <node concept="2t___k" id="3w0n0hzmfJW" role="20_v8_">
         <ref role="2t_S0q" to="yhz9:3w0n0hzkQ4g" resolve="EqualityIntro" />
         <node concept="3A20r5" id="3w0n0hzmfJX" role="2t_VXX">
           <property role="TrG5h" value="eqi" />
+        </node>
+      </node>
+      <node concept="0eUR_" id="3dsgZciwak0" role="0eVGy">
+        <node concept="3NuqgR" id="3w0n0hzminr" role="0eVf_">
+          <node concept="aZer4" id="3w0n0hzmins" role="3XD1gS">
+            <property role="TrG5h" value="Stc" />
+          </node>
         </node>
       </node>
     </node>
@@ -557,14 +562,6 @@
             </node>
           </node>
         </node>
-        <node concept="3NuqgR" id="3w0n0hzmj4b" role="3Nuqhd">
-          <node concept="aZer4" id="3w0n0hzmj4x" role="3XD1gS">
-            <property role="TrG5h" value="Con" />
-          </node>
-          <node concept="aZer4" id="3w0n0hzmj4c" role="3XD1gS">
-            <property role="TrG5h" value="Term" />
-          </node>
-        </node>
       </node>
       <node concept="2t___k" id="3w0n0hzm35Z" role="20_v8_">
         <ref role="2t_S0q" to="yhz9:3w0n0hzkQ4g" resolve="EqualityIntro" />
@@ -583,6 +580,16 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="0eUR_" id="3dsgZciwak3" role="0eVGy">
+        <node concept="3NuqgR" id="3w0n0hzmj4b" role="0eVf_">
+          <node concept="aZer4" id="3w0n0hzmj4x" role="3XD1gS">
+            <property role="TrG5h" value="Con" />
+          </node>
+          <node concept="aZer4" id="3w0n0hzmj4c" role="3XD1gS">
+            <property role="TrG5h" value="Term" />
           </node>
         </node>
       </node>
@@ -693,23 +700,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3NuqgR" id="3w0n0hzmjfi" role="3Nuqhd">
-          <node concept="aZer4" id="3w0n0hzmjg7" role="3XD1gS">
-            <property role="TrG5h" value="Prem" />
-          </node>
-          <node concept="aZer4" id="3w0n0hzmjfj" role="3XD1gS">
-            <property role="TrG5h" value="Eq" />
-          </node>
-          <node concept="aZer4" id="3w0n0hzmjfs" role="3XD1gS">
-            <property role="TrG5h" value="EqLeft" />
-          </node>
-          <node concept="aZer4" id="3w0n0hzmjfI" role="3XD1gS">
-            <property role="TrG5h" value="EqRight" />
-          </node>
-          <node concept="aZer4" id="3w0n0hzmrDC" role="3XD1gS">
-            <property role="TrG5h" value="Con" />
           </node>
         </node>
       </node>
@@ -866,12 +856,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3NuqgR" id="2CF5XF5v8Q8" role="3Nuqhd">
-          <node concept="aZer4" id="2CF5XF5v8Q9" role="3XD1gS">
-            <property role="TrG5h" value="Msg" />
-          </node>
-          <node concept="17QB3L" id="2CF5XF5vbtE" role="3vLBG7" />
         </node>
       </node>
       <node concept="2caHhw" id="3w0n0hzmrNx" role="20w6XG">
@@ -1246,6 +1230,31 @@
           </node>
         </node>
       </node>
+      <node concept="0eUR_" id="3dsgZciwak1" role="0eVGy">
+        <node concept="3NuqgR" id="3w0n0hzmjfi" role="0eVf_">
+          <node concept="aZer4" id="3w0n0hzmjg7" role="3XD1gS">
+            <property role="TrG5h" value="Prem" />
+          </node>
+          <node concept="aZer4" id="3w0n0hzmjfj" role="3XD1gS">
+            <property role="TrG5h" value="Eq" />
+          </node>
+          <node concept="aZer4" id="3w0n0hzmjfs" role="3XD1gS">
+            <property role="TrG5h" value="EqLeft" />
+          </node>
+          <node concept="aZer4" id="3w0n0hzmjfI" role="3XD1gS">
+            <property role="TrG5h" value="EqRight" />
+          </node>
+          <node concept="aZer4" id="3w0n0hzmrDC" role="3XD1gS">
+            <property role="TrG5h" value="Con" />
+          </node>
+        </node>
+        <node concept="3NuqgR" id="2CF5XF5v8Q8" role="0eVf_">
+          <node concept="aZer4" id="2CF5XF5v8Q9" role="3XD1gS">
+            <property role="TrG5h" value="Msg" />
+          </node>
+          <node concept="17QB3L" id="2CF5XF5vbtE" role="3vLBG7" />
+        </node>
+      </node>
     </node>
     <node concept="AVZhu" id="3w0n0hznwzA" role="3ArX_J">
       <property role="TrG5h" value="equalityElimRight" />
@@ -1353,23 +1362,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3NuqgR" id="3w0n0hznw$i" role="3Nuqhd">
-          <node concept="aZer4" id="3w0n0hznw$j" role="3XD1gS">
-            <property role="TrG5h" value="Prem" />
-          </node>
-          <node concept="aZer4" id="3w0n0hznw$k" role="3XD1gS">
-            <property role="TrG5h" value="Eq" />
-          </node>
-          <node concept="aZer4" id="3w0n0hznw$l" role="3XD1gS">
-            <property role="TrG5h" value="EqLeft" />
-          </node>
-          <node concept="aZer4" id="3w0n0hznw$m" role="3XD1gS">
-            <property role="TrG5h" value="EqRight" />
-          </node>
-          <node concept="aZer4" id="3w0n0hznw$n" role="3XD1gS">
-            <property role="TrG5h" value="Con" />
           </node>
         </node>
       </node>
@@ -1526,12 +1518,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3NuqgR" id="3w0n0hznw_o" role="3Nuqhd">
-          <node concept="aZer4" id="3w0n0hznw_p" role="3XD1gS">
-            <property role="TrG5h" value="Msg" />
-          </node>
-          <node concept="17QB3L" id="3w0n0hznw_q" role="3vLBG7" />
         </node>
       </node>
       <node concept="2caHhw" id="3w0n0hznw_r" role="20w6XG">
@@ -1904,6 +1890,31 @@
               <ref role="3cqZAo" node="3w0n0hznw_R" resolve="replOk" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="0eUR_" id="3dsgZciwak2" role="0eVGy">
+        <node concept="3NuqgR" id="3w0n0hznw$i" role="0eVf_">
+          <node concept="aZer4" id="3w0n0hznw$j" role="3XD1gS">
+            <property role="TrG5h" value="Prem" />
+          </node>
+          <node concept="aZer4" id="3w0n0hznw$k" role="3XD1gS">
+            <property role="TrG5h" value="Eq" />
+          </node>
+          <node concept="aZer4" id="3w0n0hznw$l" role="3XD1gS">
+            <property role="TrG5h" value="EqLeft" />
+          </node>
+          <node concept="aZer4" id="3w0n0hznw$m" role="3XD1gS">
+            <property role="TrG5h" value="EqRight" />
+          </node>
+          <node concept="aZer4" id="3w0n0hznw$n" role="3XD1gS">
+            <property role="TrG5h" value="Con" />
+          </node>
+        </node>
+        <node concept="3NuqgR" id="3w0n0hznw_o" role="0eVf_">
+          <node concept="aZer4" id="3w0n0hznw_p" role="3XD1gS">
+            <property role="TrG5h" value="Msg" />
+          </node>
+          <node concept="17QB3L" id="3w0n0hznw_q" role="3vLBG7" />
         </node>
       </node>
     </node>
