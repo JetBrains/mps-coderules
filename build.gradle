@@ -87,7 +87,7 @@ task generateUpdatePluginsXml {
     mkdir(updatesDir)
 
     def baseUrl = "https://github.com/fisakov/constraints-typechecking/releases/download"
-    def zip = "/typechecking-0.3.zip"
+    def zip = "/typechecking-0.4.zip"
 
     file(updatesDir + "/updatePlugins.xml").withWriter { w ->
        new MarkupBuilder(new IndentPrinter(w, "    ", true)).
