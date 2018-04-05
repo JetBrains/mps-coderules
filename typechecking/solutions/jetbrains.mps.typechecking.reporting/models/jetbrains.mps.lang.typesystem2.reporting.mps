@@ -40,6 +40,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -114,6 +115,28 @@
       <node concept="10P_77" id="oI9YrIZpM" role="3clF45" />
       <node concept="3Tm1VV" id="oI9YrIZnX" role="1B3o_S" />
       <node concept="3clFbS" id="oI9YrIZnY" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="oI9Ys2yoC" role="jymVt" />
+    <node concept="3clFb_" id="oI9Ys2ypk" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="report" />
+      <node concept="37vLTG" id="oI9Ys2yue" role="3clF46">
+        <property role="TrG5h" value="target" />
+        <node concept="3Tqbb2" id="oI9Ys2yvH" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="oI9Ys2y$v" role="3clF46">
+        <property role="TrG5h" value="kind" />
+        <node concept="3uibUv" id="oI9Ys2yAc" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="oI9Ys2yxf" role="3clF46">
+        <property role="TrG5h" value="text" />
+        <node concept="17QB3L" id="oI9Ys2yyP" role="1tU5fm" />
+      </node>
+      <node concept="10P_77" id="oI9Ys2yr2" role="3clF45" />
+      <node concept="3Tm1VV" id="oI9Ys2ypn" role="1B3o_S" />
+      <node concept="3clFbS" id="oI9Ys2ypo" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="oI9YrIZfj" role="jymVt" />
     <node concept="3Tm1VV" id="oI9YrIZeT" role="1B3o_S" />

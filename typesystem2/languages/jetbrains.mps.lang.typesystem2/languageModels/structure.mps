@@ -21,6 +21,14 @@
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
+      </concept>
       <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
         <property id="7588428831955550663" name="role" index="Hh88m" />
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
@@ -1503,6 +1511,40 @@
       <property role="20kJfa" value="typeExpr" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="oI9Ys1jH2">
+    <property role="EcuMT" value="6958395097955138" />
+    <property role="TrG5h" value="SNodeReportOperation" />
+    <property role="34LRSv" value="report" />
+    <ref role="1TJDcQ" to="tp25:g$eCIIG" resolve="SNodeOperation" />
+    <node concept="1TJgyi" id="oI9Ys1lGD" role="1TKVEl">
+      <property role="IQ2nx" value="6958395097963305" />
+      <property role="TrG5h" value="kind" />
+      <ref role="AX2Wp" node="oI9Ys1lFh" resolve="ReportKind" />
+    </node>
+    <node concept="1TJgyj" id="oI9Ys1lF8" role="1TKVEi">
+      <property role="IQ2ns" value="6958395097963208" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="text" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="oI9Ys1lFh">
+    <property role="TrG5h" value="ReportKind" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="oI9Ys1lFi" role="M5hS2">
+      <property role="1uS6qo" value="info" />
+      <property role="1uS6qv" value="info" />
+    </node>
+    <node concept="M4N5e" id="oI9Ys1lFj" role="M5hS2">
+      <property role="1uS6qo" value="warning" />
+      <property role="1uS6qv" value="warning" />
+    </node>
+    <node concept="M4N5e" id="oI9Ys1lFm" role="M5hS2">
+      <property role="1uS6qo" value="error" />
+      <property role="1uS6qv" value="error" />
     </node>
   </node>
 </model>
