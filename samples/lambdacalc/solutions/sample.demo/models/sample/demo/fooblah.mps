@@ -491,7 +491,7 @@
     </node>
   </node>
   <node concept="1DVIrt" id="7Et5j8uqHKT">
-    <property role="TrG5h" value="SKI" />
+    <property role="TrG5h" value=" SKI" />
     <node concept="1DVJbV" id="7Et5j8uqHKU" role="1DVIru">
       <node concept="1DVIrG" id="2jleysRWY_e" role="j9CMd">
         <node concept="1DVIoH" id="2jleysRWY_k" role="1DVIrJ">
