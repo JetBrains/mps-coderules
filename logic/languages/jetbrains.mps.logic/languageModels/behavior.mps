@@ -8,7 +8,7 @@
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -221,7 +221,7 @@
         </node>
         <node concept="3clFbF" id="6Sag3KsyjWy" role="3cqZAp">
           <node concept="3B5_sB" id="7MlQDeOyUrC" role="3clFbG">
-            <ref role="3B5MYn" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3B5MYn" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
           </node>
         </node>
       </node>
@@ -271,7 +271,7 @@
       <node concept="3clFbS" id="7FFmDVAL6W0" role="3clF47">
         <node concept="3clFbF" id="7FFmDVALaOi" role="3cqZAp">
           <node concept="3B5_sB" id="7FFmDVALaOh" role="3clFbG">
-            <ref role="3B5MYn" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3B5MYn" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
           </node>
         </node>
       </node>
@@ -322,7 +322,7 @@
       <node concept="3clFbS" id="7FFmDVAL75b" role="3clF47">
         <node concept="3clFbF" id="7FFmDVALaK9" role="3cqZAp">
           <node concept="3B5_sB" id="7FFmDVALaK8" role="3clFbG">
-            <ref role="3B5MYn" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+            <ref role="3B5MYn" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
           </node>
         </node>
       </node>

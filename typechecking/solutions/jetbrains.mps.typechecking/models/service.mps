@@ -35,7 +35,7 @@
     <import index="unkn" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:io.reactivex(jetbrains.mps.typechecking/)" />
     <import index="e0w6" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:io.reactivex.observers(jetbrains.mps.typechecking/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -6821,7 +6821,7 @@
           <node concept="3cpWsn" id="1CcQBrQmZPT" role="3cpWs9">
             <property role="TrG5h" value="anchor" />
             <node concept="3uibUv" id="1CcQBrQmZPU" role="1tU5fm">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
             </node>
           </node>
         </node>
@@ -6831,7 +6831,7 @@
               <node concept="37vLTI" id="1CcQBrQmZPY" role="3clFbG">
                 <node concept="10QFUN" id="1CcQBrQmZPZ" role="37vLTx">
                   <node concept="3uibUv" id="1CcQBrQmZQ0" role="10QFUM">
-                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                   </node>
                   <node concept="37vLTw" id="1CcQBrQmZQG" role="10QFUP">
                     <ref role="3cqZAo" node="1CcQBrQmZQC" resolve="arg" />
@@ -6846,7 +6846,7 @@
           </node>
           <node concept="2ZW3vV" id="1CcQBrQmZQ4" role="3clFbw">
             <node concept="3uibUv" id="1CcQBrQmZQ5" role="2ZW6by">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
             </node>
             <node concept="37vLTw" id="1CcQBrQmZQH" role="2ZW6bz">
               <ref role="3cqZAo" node="1CcQBrQmZQC" resolve="arg" />
@@ -6871,7 +6871,7 @@
                           <node concept="3uibUv" id="1CcQBrQmZQi" role="10QFUM">
                             <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
                             <node concept="3uibUv" id="1CcQBrQmZQj" role="11_B2D">
-                              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="1CcQBrQmZQI" role="10QFUP">

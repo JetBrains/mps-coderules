@@ -14,7 +14,7 @@
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -902,7 +902,7 @@
                               <node concept="3uibUv" id="60zk4o6SxJt" role="10QFUM">
                                 <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
                                 <node concept="3uibUv" id="60zk4o6SxJu" role="11_B2D">
-                                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                                 </node>
                               </node>
                             </node>
@@ -1021,7 +1021,7 @@
                         <ref role="37wK5l" to="yg8f:4TCblo5NqWF" resolve="instantiateMetaLogicals" />
                         <node concept="10QFUN" id="60zk4o6SxJA" role="37wK5m">
                           <node concept="3uibUv" id="60zk4o6SxJB" role="10QFUM">
-                            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                           </node>
                           <node concept="37vLTw" id="60zk4o6SxJC" role="10QFUP">
                             <ref role="3cqZAo" node="60zk4o6SxJP" resolve="a" />
@@ -1038,7 +1038,7 @@
               </node>
               <node concept="2ZW3vV" id="60zk4o6SxJF" role="3clFbw">
                 <node concept="3uibUv" id="60zk4o6SxJG" role="2ZW6by">
-                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                 </node>
                 <node concept="37vLTw" id="60zk4o6SxJH" role="2ZW6bz">
                   <ref role="3cqZAo" node="60zk4o6SxJP" resolve="a" />

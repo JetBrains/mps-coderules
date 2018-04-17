@@ -17,7 +17,7 @@
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -481,7 +481,7 @@
               <node concept="1pGfFk" id="2Dg5bSg3RdZ" role="2ShVmc">
                 <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
                 <node concept="3VsKOn" id="2Dg5bSg3Rjh" role="37wK5m">
-                  <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                  <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                 </node>
               </node>
             </node>
@@ -562,11 +562,11 @@
       <ref role="30HIoZ" to="5j4j:6$jH9oLmYC_" resolve="TermNode" />
       <node concept="gft3U" id="29_L5zQWy8k" role="1lVwrX">
         <node concept="2YIFZM" id="29_L5zQWy8l" role="gfFT$">
-          <ref role="1Pybhc" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+          <ref role="1Pybhc" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
           <ref role="37wK5l" to="6exd:5JQSuNsxhfn" resolve="create" />
           <node concept="2YIFZM" id="6YPNC4NIgLX" role="37wK5m">
             <ref role="37wK5l" to="6exd:6YPNC4NI311" resolve="symbol" />
-            <ref role="1Pybhc" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+            <ref role="1Pybhc" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
             <node concept="3cmrfG" id="6YPNC4NIi1X" role="37wK5m">
               <property role="3cmrfH" value="0" />
               <node concept="17Uvod" id="6YPNC4NIiDD" role="lGtFl">

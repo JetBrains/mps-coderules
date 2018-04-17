@@ -9,7 +9,7 @@
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
   </languages>
   <imports>
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.typesystem2.aspect)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
@@ -527,7 +527,7 @@
         <node concept="3uibUv" id="1HWyn8j9WNN" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
           <node concept="3uibUv" id="1HWyn8j9WQv" role="11_B2D">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
           </node>
         </node>
       </node>
@@ -558,7 +558,7 @@
         <node concept="3uibUv" id="1HWyn8j9WS8" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
           <node concept="3uibUv" id="1HWyn8j9WVd" role="11_B2D">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
           </node>
         </node>
       </node>
@@ -604,7 +604,7 @@
       <property role="TrG5h" value="getTerm" />
       <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="4MEOIDFA4e5" role="3clF45">
-        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
       </node>
       <node concept="3Tm1VV" id="4MEOIDFA4bS" role="1B3o_S" />
       <node concept="3clFbS" id="4MEOIDFA4bT" role="3clF47" />
@@ -700,7 +700,7 @@
         <node concept="3uibUv" id="1HWyn8j8RX2" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
           <node concept="3uibUv" id="1HWyn8j8S22" role="11_B2D">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
           </node>
         </node>
       </node>
@@ -725,7 +725,7 @@
         <node concept="3uibUv" id="1HWyn8j8S3X" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
           <node concept="3uibUv" id="1HWyn8j8S7p" role="11_B2D">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
           </node>
         </node>
       </node>

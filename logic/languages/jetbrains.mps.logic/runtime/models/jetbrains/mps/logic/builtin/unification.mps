@@ -10,7 +10,7 @@
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.treeform)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -256,7 +256,7 @@
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qUE_q" id="7HUwyZbdPnr" role="11_B2D">
             <node concept="3uibUv" id="7HUwyZbdPns" role="3qUE_r">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
             </node>
           </node>
         </node>
@@ -538,7 +538,7 @@
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qUE_q" id="4TCblo5MWaF" role="11_B2D">
             <node concept="3uibUv" id="4TCblo5MWaG" role="3qUE_r">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
             </node>
           </node>
         </node>
@@ -766,7 +766,7 @@
                     <ref role="3cqZAo" node="3FIATxbQg$y" resolve="term" />
                   </node>
                   <node concept="3uibUv" id="3FIATxbQg$J" role="10QFUM">
-                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="TreeForm" />
+                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                   </node>
                 </node>
               </node>
