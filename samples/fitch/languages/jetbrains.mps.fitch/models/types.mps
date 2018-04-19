@@ -2,7 +2,7 @@
 <model ref="r:30efdd3a-609b-4e7b-a8f2-60af62d5341f(jetbrains.mps.fitch.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="8" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="13" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
@@ -30,6 +30,15 @@
         <reference id="5455284157993910961" name="concept" index="2pJxaS" />
       </concept>
     </language>
+    <language id="942985d5-7bcf-46ee-8b79-7b662eaebb4e" name="jetbrains.mps.dataform">
+      <concept id="861509610434243104" name="jetbrains.mps.dataform.structure.DataFormTable" flags="ng" index="ns1xd">
+        <child id="861509610434243105" name="contents" index="ns1xc" />
+      </concept>
+      <concept id="861509610434243081" name="jetbrains.mps.dataform.structure.DataFormDeclaration" flags="ng" index="ns1x$">
+        <child id="861509610434243084" name="template" index="ns1xx" />
+      </concept>
+      <concept id="861509610434276450" name="jetbrains.mps.dataform.structure.DataFormTemplate" flags="ng" index="nspSf" />
+    </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
       <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
         <child id="6399471711045617306" name="dataType" index="3vLBG7" />
@@ -55,10 +64,6 @@
       <concept id="8456919074560454386" name="jetbrains.mps.lang.typesystem2.structure.ParameterContainer" flags="ng" index="0eUR_">
         <child id="8456919074560454898" name="parameter" index="0eVf_" />
       </concept>
-      <concept id="1618328391714701929" name="jetbrains.mps.lang.typesystem2.structure.TermTemplate" flags="ng" index="0oftK" />
-      <concept id="6086839168138086051" name="jetbrains.mps.lang.typesystem2.structure.TermTable" flags="ng" index="1HGPq">
-        <child id="6086839168138086052" name="termDeclaration" index="1HGPt" />
-      </concept>
       <concept id="6958395084019752" name="jetbrains.mps.lang.typesystem2.structure.SNodeSetTypeOperation" flags="ng" index="2ra22R">
         <child id="6958395084020241" name="typeExpr" index="2ra2ae" />
       </concept>
@@ -75,9 +80,6 @@
         <property id="2316688792951788157" name="stage" index="3J8TDj" />
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="7368070394767441299" name="rule" index="3ArX_J" />
-      </concept>
-      <concept id="5524459797190399502" name="jetbrains.mps.lang.typesystem2.structure.TermDeclaration" flags="ng" index="BRKj$">
-        <child id="5524459797190401236" name="template" index="BRKSY" />
       </concept>
       <concept id="5372587443975633709" name="jetbrains.mps.lang.typesystem2.structure.AbstractRule" flags="ng" index="3wqRzX">
         <child id="8456919074560456757" name="parameter" index="0eVGy" />
@@ -122,13 +124,6 @@
       <concept id="965748826975413063" name="jetbrains.mps.lang.typesystem2.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
     </language>
   </registry>
-  <node concept="1HGPq" id="5RfK0kxl_Hp">
-    <property role="TrG5h" value="Types" />
-    <node concept="BRKj$" id="5RfK0kxl_Hq" role="1HGPt">
-      <property role="TrG5h" value="Ok" />
-      <node concept="0oftK" id="5RfK0kxl_Hr" role="BRKSY" />
-    </node>
-  </node>
   <node concept="AVZre" id="2aBGSFge0GD">
     <property role="3J8TDj" value="Stage2" />
     <property role="TrG5h" value="Check" />
@@ -432,6 +427,13 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="ns1xd" id="7VBaGntKJ6x">
+    <property role="TrG5h" value="Types" />
+    <node concept="ns1x$" id="7VBaGntKJ6y" role="ns1xc">
+      <property role="TrG5h" value="Ok" />
+      <node concept="nspSf" id="7VBaGntKJ6z" role="ns1xx" />
     </node>
   </node>
 </model>
