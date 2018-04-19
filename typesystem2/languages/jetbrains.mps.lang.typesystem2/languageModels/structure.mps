@@ -643,6 +643,7 @@
       <property role="IQ2ns" value="1618328391714701961" />
       <ref role="20lvS9" node="1pPth$m5oa5" resolve="TermFeature" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCE5" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1pPth$m5oa5">
     <property role="3GE5qa" value="term.feature" />
@@ -659,6 +660,7 @@
     <node concept="PrWs8" id="1pPth$m5oa7" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCz$" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1pPth$m5oa6">
     <property role="3GE5qa" value="term.feature" />
@@ -672,6 +674,7 @@
       <property role="20kJfa" value="getter" />
       <ref role="20lvS9" node="1hX44vMEjQg" resolve="GetterBlock" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCzy" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1pPth$m5oae">
     <property role="3GE5qa" value="term.feature" />
@@ -686,6 +689,7 @@
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="1hX44vMEjQg" resolve="GetterBlock" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCDV" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1pPth$m5oaL">
     <property role="3GE5qa" value="term.feature" />
@@ -700,6 +704,7 @@
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="1hX44vMEjQg" resolve="GetterBlock" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCzu" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1pPth$m5B4X">
     <property role="3GE5qa" value="macro" />
@@ -790,6 +795,7 @@
     <property role="3GE5qa" value="term.feature" />
     <property role="TrG5h" value="GetterBlock" />
     <ref role="1TJDcQ" node="1hX44vMFoce" resolve="CodeBlock" />
+    <node concept="asaX9" id="34$A1MeuCzw" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1hX44vMFoce">
     <property role="EcuMT" value="1476354154047570702" />
@@ -1026,6 +1032,7 @@
       <property role="20kJfa" value="termDecl" />
       <ref role="20lvS9" node="4MEOIDFttoe" resolve="TermDeclaration" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCDX" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1L74NXEmF9s">
     <property role="EcuMT" value="2037618519496634972" />
@@ -1085,6 +1092,7 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1pPth$m5oa5" resolve="TermFeature" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCE1" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="2vGNdoJLd0b">
     <property role="EcuMT" value="2876899482279399435" />
@@ -1150,6 +1158,7 @@
     <node concept="PrWs8" id="4MEOIDFttNg" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCDZ" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="20Ay2VefOqC">
     <property role="EcuMT" value="2316688792938825384" />
@@ -1242,6 +1251,7 @@
     <node concept="PrWs8" id="5hSMZ_lNwqA" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
+    <node concept="asaX9" id="34$A1MeuCE3" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="6hqFpWmM6I9">
     <property role="EcuMT" value="7231283050490391433" />
