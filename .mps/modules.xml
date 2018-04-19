@@ -2,6 +2,7 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.dataform/jetbrains.mps.dataform.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" folder="logic" />

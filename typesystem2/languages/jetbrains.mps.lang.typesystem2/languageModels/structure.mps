@@ -11,6 +11,7 @@
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="dff3" ref="r:575429ab-72f6-4385-a61f-a1f1f27e3490(jetbrains.mps.dataform.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -1552,6 +1553,9 @@
     <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="PatternLogicalVariable" />
     <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="PrWs8" id="JOGAOsIT9E" role="PzmwI">
+      <ref role="PrY4T" to="dff3:JOGAOsIRhm" resolve="Capture" />
+    </node>
     <node concept="1TJgyj" id="4sSe4$p4oON" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="variable" />
