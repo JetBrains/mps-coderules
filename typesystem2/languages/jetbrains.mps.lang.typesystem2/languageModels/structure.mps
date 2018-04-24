@@ -81,6 +81,12 @@
     <property role="34LRSv" value="handler" />
     <property role="EcuMT" value="8335224865066015764" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="34$A1Mf2w7l" role="1TKVEi">
+      <property role="IQ2ns" value="3541122455446356437" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="extends" />
+      <ref role="20lvS9" node="7eGEHDlgPKk" resolve="Handler" />
+    </node>
     <node concept="1TJgyi" id="20Ay2Vf1h9X" role="1TKVEl">
       <property role="IQ2nx" value="2316688792951788157" />
       <property role="TrG5h" value="stage" />
@@ -107,8 +113,8 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="36tQV5AmIsf" resolve="RuleTemplate" />
     </node>
-    <node concept="PrWs8" id="6p0DfM0au2d" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="34$A1Mf53b_" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="7eGEHDlgPU4">
@@ -1106,6 +1112,7 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="6p0DfM0asBO" resolve="ConstraintDeclaration" />
     </node>
+    <node concept="asaX9" id="34$A1Mf2tdU" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="4MEOIDFfpSk">
     <property role="EcuMT" value="5524459797186715156" />

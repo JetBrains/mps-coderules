@@ -15893,8 +15893,8 @@
       </node>
       <node concept="3Tm1VV" id="4MqhgXUa3p0" role="1B3o_S" />
       <node concept="3clFbS" id="4MqhgXUa3p2" role="3clF47">
-        <node concept="3clFbF" id="2vGNdoJNa_S" role="3cqZAp">
-          <node concept="37vLTw" id="2vGNdoJNa_Q" role="3clFbG">
+        <node concept="3clFbF" id="34$A1Mf7Kfv" role="3cqZAp">
+          <node concept="37vLTw" id="34$A1Mf7Kfu" role="3clFbG">
             <ref role="3cqZAo" node="2vGNdoJKThO" resolve="primarySymbols" />
           </node>
         </node>
@@ -16065,118 +16065,9 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="2vGNdoJKUxk" role="3cqZAp">
-          <node concept="3clFbS" id="2vGNdoJKUxm" role="3clFbx">
-            <node concept="3cpWs8" id="2vGNdoJL2Fq" role="3cqZAp">
-              <node concept="3cpWsn" id="2vGNdoJL2Fr" role="3cpWs9">
-                <property role="TrG5h" value="list" />
-                <node concept="_YKpA" id="2vGNdoJL2Fi" role="1tU5fm">
-                  <node concept="3uibUv" id="2vGNdoJL2Fl" role="_ZDj9">
-                    <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
-                  </node>
-                </node>
-                <node concept="2ShNRf" id="2vGNdoJL2Fs" role="33vP2m">
-                  <node concept="Tc6Ow" id="2vGNdoJL2Ft" role="2ShVmc">
-                    <node concept="3uibUv" id="2vGNdoJL2Fu" role="HW$YZ">
-                      <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2vGNdoJL6db" role="3cqZAp">
-              <node concept="2OqwBi" id="2vGNdoJL6VX" role="3clFbG">
-                <node concept="37vLTw" id="2vGNdoJL6d9" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2vGNdoJL2Fr" resolve="list" />
-                </node>
-                <node concept="TSZUe" id="2vGNdoJL7sU" role="2OqNvi">
-                  <node concept="2ShNRf" id="2vGNdoJL98j" role="25WWJ7">
-                    <node concept="1pGfFk" id="2vGNdoJL9CN" role="2ShVmc">
-                      <ref role="37wK5l" to="av0y:~ConstraintSymbol.&lt;init&gt;(java.lang.String,int)" resolve="ConstraintSymbol" />
-                      <node concept="Xl_RD" id="2vGNdoJL9GR" role="37wK5m">
-                        <property role="Xl_RC" value="" />
-                        <node concept="17Uvod" id="2vGNdoJN3XM" role="lGtFl">
-                          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                          <property role="2qtEX9" value="value" />
-                          <node concept="3zFVjK" id="2vGNdoJN3XN" role="3zH0cK">
-                            <node concept="3clFbS" id="2vGNdoJN3XO" role="2VODD2">
-                              <node concept="3clFbF" id="2vGNdoJN4jY" role="3cqZAp">
-                                <node concept="2OqwBi" id="2vGNdoJN5cj" role="3clFbG">
-                                  <node concept="30H73N" id="2vGNdoJN4jX" role="2Oq$k0" />
-                                  <node concept="3TrcHB" id="2vGNdoJN5SB" role="2OqNvi">
-                                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cmrfG" id="2vGNdoJL9L4" role="37wK5m">
-                        <property role="3cmrfH" value="0" />
-                        <node concept="17Uvod" id="2vGNdoJN6f4" role="lGtFl">
-                          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" />
-                          <property role="2qtEX9" value="value" />
-                          <node concept="3zFVjK" id="2vGNdoJN6f5" role="3zH0cK">
-                            <node concept="3clFbS" id="2vGNdoJN6f6" role="2VODD2">
-                              <node concept="3clFbF" id="2vGNdoJN7xu" role="3cqZAp">
-                                <node concept="2OqwBi" id="2vGNdoJN8OM" role="3clFbG">
-                                  <node concept="2OqwBi" id="2vGNdoJN7Nb" role="2Oq$k0">
-                                    <node concept="30H73N" id="2vGNdoJN7xt" role="2Oq$k0" />
-                                    <node concept="3TrEf2" id="2vGNdoJN8gA" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="wq2x:2vGNdoJLd0c" resolve="constraint" />
-                                    </node>
-                                  </node>
-                                  <node concept="3TrcHB" id="2vGNdoJN9uJ" role="2OqNvi">
-                                    <ref role="3TsBF5" to="wq2x:6p0DfM0azKj" resolve="arity" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="1WS0z7" id="2vGNdoJMZv6" role="lGtFl">
-                <node concept="3JmXsc" id="2vGNdoJMZv8" role="3Jn$fo">
-                  <node concept="3clFbS" id="2vGNdoJMZva" role="2VODD2">
-                    <node concept="3clFbF" id="2vGNdoJN0cE" role="3cqZAp">
-                      <node concept="2OqwBi" id="2vGNdoJN0o_" role="3clFbG">
-                        <node concept="30H73N" id="2vGNdoJN0cD" role="2Oq$k0" />
-                        <node concept="3Tsc0h" id="1HWyn8jIiC0" role="2OqNvi">
-                          <ref role="3TtcxE" to="wq2x:1HWyn8jEsaE" resolve="constraint" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2vGNdoJL2L2" role="3cqZAp">
-              <node concept="37vLTI" id="2vGNdoJL40m" role="3clFbG">
-                <node concept="2OqwBi" id="2vGNdoJL4Oq" role="37vLTx">
-                  <node concept="37vLTw" id="2vGNdoJL46M" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2vGNdoJL2Fr" resolve="list" />
-                  </node>
-                  <node concept="26Dbio" id="2vGNdoJL5Y7" role="2OqNvi" />
-                </node>
-                <node concept="2OqwBi" id="2vGNdoJL2TO" role="37vLTJ">
-                  <node concept="Xjq3P" id="2vGNdoJL2L0" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="2vGNdoJL39l" role="2OqNvi">
-                    <ref role="2Oxat5" node="2vGNdoJKThO" resolve="primarySymbols" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="2vGNdoJKVNJ" role="3clFbw">
-            <node concept="10Nm6u" id="2vGNdoJKVOx" role="3uHU7w" />
-            <node concept="37vLTw" id="2vGNdoJKUVV" role="3uHU7B">
-              <ref role="3cqZAo" node="2vGNdoJKThO" resolve="primarySymbols" />
-            </node>
+        <node concept="3SKdUt" id="34$A1MeQp9E" role="3cqZAp">
+          <node concept="3SKdUq" id="34$A1MeQp9G" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: primary symbols dropped" />
           </node>
         </node>
       </node>
@@ -16198,6 +16089,18 @@
         <node concept="3uibUv" id="2vGNdoJKU10" role="_ZDj9">
           <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
         </node>
+      </node>
+      <node concept="2OqwBi" id="34$A1Mf2ksy" role="33vP2m">
+        <node concept="1eOMI4" id="34$A1Mf2jD8" role="2Oq$k0">
+          <node concept="2ShNRf" id="34$A1Mf2jD9" role="1eOMHV">
+            <node concept="Tc6Ow" id="34$A1Mf2jDa" role="2ShVmc">
+              <node concept="3uibUv" id="34$A1Mf2jDb" role="HW$YZ">
+                <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="26Dbio" id="34$A1Mf2lH6" role="2OqNvi" />
       </node>
     </node>
     <node concept="3Tm1VV" id="4MqhgXU9Ebs" role="1B3o_S" />
