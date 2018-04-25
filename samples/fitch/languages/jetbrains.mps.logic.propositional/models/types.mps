@@ -7,6 +7,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="942985d5-7bcf-46ee-8b79-7b662eaebb4e" name="jetbrains.mps.dataform" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -192,6 +193,7 @@
         <child id="4340821131304055573" name="condition" index="30RCb4" />
       </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.typesystem2.structure.Handler" flags="ng" index="AVZre">
+        <reference id="3541122455446356437" name="extends" index="2YbDB9" />
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="7368070394767441299" name="rule" index="3ArX_J" />
       </concept>
@@ -821,7 +823,8 @@
     </node>
   </node>
   <node concept="AVZre" id="5RfK0kxl_zr">
-    <property role="TrG5h" value="Reasoning" />
+    <property role="TrG5h" value="PropReasoning" />
+    <ref role="2YbDB9" to="f3ld:2aBGSFge0GD" resolve="Check" />
     <node concept="AVZhu" id="2aBGSFgfACW" role="3ArX_J">
       <property role="TrG5h" value="Judgement_conclusion" />
       <node concept="3Aq9E8" id="2aBGSFgfAEo" role="3otmyu">

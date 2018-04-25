@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="13" />
+    <use id="942985d5-7bcf-46ee-8b79-7b662eaebb4e" name="jetbrains.mps.dataform" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -230,6 +231,7 @@
         <child id="4340821131304055573" name="condition" index="30RCb4" />
       </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.typesystem2.structure.Handler" flags="ng" index="AVZre">
+        <reference id="3541122455446356437" name="extends" index="2YbDB9" />
         <child id="7368070394767441299" name="rule" index="3ArX_J" />
       </concept>
       <concept id="6678105047444342713" name="jetbrains.mps.lang.typesystem2.structure.RuleParameterDeclaration" flags="ng" index="391aah">
@@ -439,7 +441,8 @@
     </node>
   </node>
   <node concept="AVZre" id="3w0n0hzm35U">
-    <property role="TrG5h" value="Reasoning" />
+    <property role="TrG5h" value="FOReasoning" />
+    <ref role="2YbDB9" to="6r1k:5RfK0kxl_zr" resolve="Reasoning" />
     <node concept="AVZhu" id="3w0n0hzmfJv" role="3ArX_J">
       <property role="TrG5h" value="equalityIntroConclusion" />
       <node concept="3Aq9E8" id="3w0n0hzmfKd" role="3otmyu">
