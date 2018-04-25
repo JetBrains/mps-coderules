@@ -5,6 +5,7 @@
 **/classes_gen/*
 **/classes_jchr/*
 .mps/workspace.xml
+.mps/shelf/*
 .idea/workspace.xml
 .gradle
 out
