@@ -1525,7 +1525,7 @@
                             </node>
                           </node>
                           <node concept="2qgKlT" id="34$A1Mf4Hzk" role="2OqNvi">
-                            <ref role="37wK5l" to="x5bw:34$A1Mf3_WJ" resolve="allExtends" />
+                            <ref role="37wK5l" to="x5bw:34$A1Mf3_WJ" resolve="handlerClosure" />
                           </node>
                         </node>
                         <node concept="3goQfb" id="34$A1Mf4TZE" role="2OqNvi">

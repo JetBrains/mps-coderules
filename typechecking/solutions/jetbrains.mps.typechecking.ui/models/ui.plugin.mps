@@ -26445,7 +26445,7 @@
             <property role="TrG5h" value="tpl" />
             <node concept="1LlUBW" id="3YJ7yg2N3dO" role="1tU5fm">
               <node concept="3uibUv" id="1CcQBrPepNg" role="1Lm7xW">
-                <ref role="3uigEE" to="i348:1CcQBrPcZVG" resolve="HandlingStage" />
+                <ref role="3uigEE" to="hano:1CcQBrPcZVG" resolve="HandlingStage" />
               </node>
               <node concept="3uibUv" id="1ffsG7c4ezn" role="1Lm7xW">
                 <ref role="3uigEE" to="i348:1ffsG7bW_V4" resolve="RuleTemplate" />
@@ -26462,7 +26462,7 @@
               <ref role="3cqZAo" node="20Ay2VeR5Dy" resolve="ruleTemplateIndex" />
             </node>
             <node concept="liA8E" id="3YJ7yg2N55j" role="2OqNvi">
-              <ref role="37wK5l" to="hano:6fdr4UgfuGk" resolve="allTemplates" />
+              <ref role="37wK5l" to="hano:6fdr4UgfuGk" resolve="allRuleTemplates" />
               <node concept="37vLTw" id="3YJ7yg2N7pX" role="37wK5m">
                 <ref role="3cqZAo" node="4n$QnzZQnen" resolve="node" />
               </node>
