@@ -625,6 +625,7 @@
         <child id="6928531011217290187" name="variable" index="2aLmnP" />
       </concept>
       <concept id="6928531011218148071" name="jetbrains.mps.lang.typesystem2.structure.IsboundVariableConstraint" flags="ng" index="2aM9Np" />
+      <concept id="9035818301008609703" name="jetbrains.mps.lang.typesystem2.structure.Query" flags="ng" index="2bWyPT" />
       <concept id="1797788903610635035" name="jetbrains.mps.lang.typesystem2.structure.BoundParameterBlock" flags="ng" index="2caHhw" />
       <concept id="1797788903609800178" name="jetbrains.mps.lang.typesystem2.structure.IterateParameterBlock" flags="ng" index="2cfxa9" />
       <concept id="4992889260816483106" name="jetbrains.mps.lang.typesystem2.structure.Condition" flags="ng" index="cBwPQ" />
@@ -20187,6 +20188,9 @@
   </node>
   <node concept="AVZre" id="34$A1MfhdDu">
     <property role="TrG5h" value="TypeOf" />
+  </node>
+  <node concept="2bWyPT" id="7WKNeR9hdZc">
+    <property role="TrG5h" value="main" />
   </node>
 </model>
 
