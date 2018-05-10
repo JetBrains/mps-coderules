@@ -16,6 +16,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -46,6 +47,15 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
   </imports>
   <registry>
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
+      <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
+        <child id="1238852204892" name="componentType" index="1Lm7xW" />
+      </concept>
+      <concept id="1238857743184" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression" flags="nn" index="1LFfDK">
+        <child id="1238857764950" name="tuple" index="1LFl5Q" />
+        <child id="1238857834412" name="index" index="1LF_Uc" />
+      </concept>
+    </language>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
       <concept id="1211979288880" name="jetbrains.mps.lang.test.structure.AssertMatch" flags="nn" index="JA50E">
         <child id="1211979305365" name="before" index="JA92f" />
@@ -122,6 +132,7 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -966,21 +977,6 @@
                   </node>
                   <node concept="1DcWWT" id="1CcQBrQrTBa" role="3cqZAp">
                     <node concept="3clFbS" id="1CcQBrQrTBd" role="2LFqv$">
-                      <node concept="3cpWs8" id="6QH_LDtbV5I" role="3cqZAp">
-                        <node concept="3cpWsn" id="6QH_LDtbV5J" role="3cpWs9">
-                          <property role="TrG5h" value="config" />
-                          <node concept="3uibUv" id="6QH_LDtbV5K" role="1tU5fm">
-                            <ref role="3uigEE" to="w7la:~EvaluationSession$Config" resolve="EvaluationSession.Config" />
-                          </node>
-                          <node concept="2YIFZM" id="6QH_LDtbV5L" role="33vP2m">
-                            <ref role="37wK5l" to="w7la:~EvaluationSession.newSession(jetbrains.mps.logic.reactor.program.Program):jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Config" resolve="newSession" />
-                            <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-                            <node concept="37vLTw" id="1CcQBrQrWi4" role="37wK5m">
-                              <ref role="3cqZAo" node="1CcQBrQrTBe" resolve="program" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node concept="3clFbF" id="1CcQBrQrYPT" role="3cqZAp">
                         <node concept="37vLTI" id="1CcQBrQrYPV" role="3clFbG">
                           <node concept="37vLTw" id="1CcQBrQrYPZ" role="37vLTJ">
@@ -998,11 +994,21 @@
                                 </node>
                                 <node concept="liA8E" id="6QH_LDtbV6f" role="2OqNvi">
                                   <ref role="37wK5l" to="hano:HV6urVFrQ9" resolve="eval" />
-                                  <node concept="37vLTw" id="7lt0LtQtMIX" role="37wK5m">
-                                    <ref role="3cqZAo" node="1CcQBrQrTBe" resolve="program" />
+                                  <node concept="1LFfDK" id="7WKNeR9lNYN" role="37wK5m">
+                                    <node concept="3cmrfG" id="7WKNeR9lNYW" role="1LF_Uc">
+                                      <property role="3cmrfH" value="0" />
+                                    </node>
+                                    <node concept="37vLTw" id="7lt0LtQtMIX" role="1LFl5Q">
+                                      <ref role="3cqZAo" node="1CcQBrQrTBe" resolve="stage_program" />
+                                    </node>
                                   </node>
-                                  <node concept="37vLTw" id="6QH_LDtbV6g" role="37wK5m">
-                                    <ref role="3cqZAo" node="6QH_LDtbV5J" resolve="config" />
+                                  <node concept="1LFfDK" id="7WKNeR9G7WA" role="37wK5m">
+                                    <node concept="3cmrfG" id="7WKNeR9G7WB" role="1LF_Uc">
+                                      <property role="3cmrfH" value="1" />
+                                    </node>
+                                    <node concept="37vLTw" id="7WKNeR9G7WC" role="1LFl5Q">
+                                      <ref role="3cqZAo" node="1CcQBrQrTBe" resolve="stage_program" />
+                                    </node>
                                   </node>
                                   <node concept="10M0yZ" id="6QH_LDtbV6h" role="37wK5m">
                                     <ref role="1PxDUh" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
@@ -1016,9 +1022,12 @@
                       </node>
                     </node>
                     <node concept="3cpWsn" id="1CcQBrQrTBe" role="1Duv9x">
-                      <property role="TrG5h" value="program" />
-                      <node concept="3uibUv" id="1CcQBrQrTBi" role="1tU5fm">
-                        <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
+                      <property role="TrG5h" value="stage_program" />
+                      <node concept="1LlUBW" id="7WKNeR9lHxD" role="1tU5fm">
+                        <node concept="17QB3L" id="7WKNeR9lJcK" role="1Lm7xW" />
+                        <node concept="3uibUv" id="7WKNeR9lK4q" role="1Lm7xW">
+                          <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
+                        </node>
                       </node>
                     </node>
                     <node concept="2OqwBi" id="1CcQBrQrTBj" role="1DdaDG">

@@ -1088,16 +1088,16 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="7DvO2M9pVyQ" role="3bR37C">
-          <node concept="3bR9La" id="7DvO2M9pVyR" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="oI9YrJ93V" role="3bR37C">
           <node concept="3bR9La" id="oI9YrJ93W" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="oI9YrJ7Rx" resolve="jetbrains.mps.typechecking.reporting" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7WKNeR92MhD" role="3bR37C">
+          <node concept="3bR9La" id="7WKNeR92MhE" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
           </node>
         </node>
       </node>
@@ -1678,6 +1678,12 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7WKNeR9rwdk" role="3bR37C">
+          <node concept="3bR9La" id="7WKNeR9rwdl" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Ant4WkHLsF" resolve="jetbrains.mps.baseLanguageExt" />
           </node>
         </node>
       </node>

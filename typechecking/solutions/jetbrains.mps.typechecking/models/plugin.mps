@@ -27,6 +27,7 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.evaluation)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -86,6 +87,9 @@
       </concept>
       <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
         <child id="1164991057263" name="throwable" index="YScLw" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -2856,6 +2860,340 @@
             <node concept="2OqwBi" id="443LGHBoGQ$" role="37wK5m">
               <node concept="1KvdUw" id="443LGHBoGQ_" role="2Oq$k0" />
               <node concept="liA8E" id="443LGHBoGQA" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="7WKNeR8VLpH">
+    <property role="TrG5h" value="CodeRulesManager" />
+    <node concept="2tJIrI" id="7WKNeR8VM1Q" role="jymVt" />
+    <node concept="2YIFZL" id="7WKNeR8VMwW" role="jymVt">
+      <property role="TrG5h" value="get" />
+      <node concept="37vLTG" id="7WKNeR8VOgK" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="7WKNeR8VOgL" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="7WKNeR8Wxm0" role="3clF45">
+        <ref role="3uigEE" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+      </node>
+      <node concept="3Tm1VV" id="7WKNeR8VMwZ" role="1B3o_S" />
+      <node concept="3clFbS" id="7WKNeR8VMx0" role="3clF47">
+        <node concept="3clFbF" id="7WKNeR8VNq$" role="3cqZAp">
+          <node concept="2OqwBi" id="7WKNeR8VNq_" role="3clFbG">
+            <node concept="10M0yZ" id="7WKNeR8VPqA" role="2Oq$k0">
+              <ref role="3cqZAo" node="7WKNeR8VMzY" resolve="ourInstances" />
+              <ref role="1PxDUh" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+            </node>
+            <node concept="liA8E" id="7WKNeR8VNqA" role="2OqNvi">
+              <ref role="37wK5l" to="5zyv:~ConcurrentMap.computeIfAbsent(java.lang.Object,java.util.function.Function):java.lang.Object" resolve="computeIfAbsent" />
+              <node concept="37vLTw" id="7WKNeR8VNqB" role="37wK5m">
+                <ref role="3cqZAo" node="7WKNeR8VOgK" resolve="repository" />
+              </node>
+              <node concept="1bVj0M" id="7WKNeR8VNqC" role="37wK5m">
+                <node concept="37vLTG" id="7WKNeR8VNqD" role="1bW2Oz">
+                  <property role="TrG5h" value="repo" />
+                  <node concept="3uibUv" id="7WKNeR8VNqE" role="1tU5fm">
+                    <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="7WKNeR8VNqF" role="1bW5cS">
+                  <node concept="3clFbF" id="7WKNeR8VNqG" role="3cqZAp">
+                    <node concept="2ShNRf" id="7WKNeR8VNqH" role="3clFbG">
+                      <node concept="1pGfFk" id="7WKNeR8W2EB" role="2ShVmc">
+                        <ref role="37wK5l" node="7WKNeR8VU5d" resolve="CodeRulesManager" />
+                        <node concept="37vLTw" id="7WKNeR8W2Lr" role="37wK5m">
+                          <ref role="3cqZAo" node="7WKNeR8VNqD" resolve="repo" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7WKNeR8VM1S" role="jymVt" />
+    <node concept="2YIFZL" id="7WKNeR8VPWJ" role="jymVt">
+      <property role="TrG5h" value="dispose" />
+      <node concept="37vLTG" id="7WKNeR8VQgj" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="7WKNeR8VQgk" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="7WKNeR8VPWL" role="3clF45" />
+      <node concept="3Tm1VV" id="7WKNeR8VPWM" role="1B3o_S" />
+      <node concept="3clFbS" id="7WKNeR8VPWN" role="3clF47">
+        <node concept="3clFbF" id="7WKNeR8VQAZ" role="3cqZAp">
+          <node concept="2OqwBi" id="7WKNeR8VQB0" role="3clFbG">
+            <node concept="10M0yZ" id="7WKNeR8VTEZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="7WKNeR8VMzY" resolve="ourInstances" />
+              <ref role="1PxDUh" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+            </node>
+            <node concept="liA8E" id="7WKNeR8VQB1" role="2OqNvi">
+              <ref role="37wK5l" to="5zyv:~ConcurrentMap.computeIfPresent(java.lang.Object,java.util.function.BiFunction):java.lang.Object" resolve="computeIfPresent" />
+              <node concept="37vLTw" id="7WKNeR8VQB2" role="37wK5m">
+                <ref role="3cqZAo" node="7WKNeR8VQgj" resolve="repository" />
+              </node>
+              <node concept="1bVj0M" id="7WKNeR8VQB3" role="37wK5m">
+                <node concept="3clFbS" id="7WKNeR8VQB4" role="1bW5cS">
+                  <node concept="3clFbF" id="7WKNeR8VQB5" role="3cqZAp">
+                    <node concept="2OqwBi" id="7WKNeR8VQB6" role="3clFbG">
+                      <node concept="37vLTw" id="7WKNeR8VQB7" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7WKNeR8VQBf" resolve="instance" />
+                      </node>
+                      <node concept="liA8E" id="7WKNeR8VQB8" role="2OqNvi">
+                        <ref role="37wK5l" node="7WKNeR8VSa4" resolve="dispose" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="7WKNeR8VQB9" role="3cqZAp">
+                    <node concept="3SKdUq" id="7WKNeR8VQBa" role="3SKWNk">
+                      <property role="3SKdUp" value="remove the mapping" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7WKNeR8VQBb" role="3cqZAp">
+                    <node concept="10Nm6u" id="7WKNeR8VQBc" role="3clFbG" />
+                  </node>
+                </node>
+                <node concept="37vLTG" id="7WKNeR8VQBd" role="1bW2Oz">
+                  <property role="TrG5h" value="repos" />
+                  <node concept="3uibUv" id="7WKNeR8VQBe" role="1tU5fm">
+                    <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                  </node>
+                </node>
+                <node concept="37vLTG" id="7WKNeR8VQBf" role="1bW2Oz">
+                  <property role="TrG5h" value="instance" />
+                  <node concept="3uibUv" id="7WKNeR8VR_j" role="1tU5fm">
+                    <ref role="3uigEE" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7WKNeR8VROu" role="jymVt" />
+    <node concept="3clFb_" id="7WKNeR8W8qn" role="jymVt">
+      <property role="TrG5h" value="getSession" />
+      <node concept="37vLTG" id="7WKNeR8W9Me" role="3clF46">
+        <property role="TrG5h" value="model" />
+        <node concept="H_c77" id="7WKNeR8Wa8g" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="7WKNeR8W8ON" role="3clF45">
+        <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
+      </node>
+      <node concept="3Tm1VV" id="7WKNeR8W8qq" role="1B3o_S" />
+      <node concept="3clFbS" id="7WKNeR8W8qr" role="3clF47">
+        <node concept="3clFbF" id="7WKNeR8Wiyc" role="3cqZAp">
+          <node concept="2OqwBi" id="7WKNeR8WmN6" role="3clFbG">
+            <node concept="37vLTw" id="7WKNeR8Wiya" role="2Oq$k0">
+              <ref role="3cqZAo" node="7WKNeR8Wgb9" resolve="sessionCache" />
+            </node>
+            <node concept="liA8E" id="7WKNeR8Wnrs" role="2OqNvi">
+              <ref role="37wK5l" to="5zyv:~ConcurrentMap.putIfAbsent(java.lang.Object,java.lang.Object):java.lang.Object" resolve="putIfAbsent" />
+              <node concept="2OqwBi" id="7WKNeR8Wqkq" role="37wK5m">
+                <node concept="2JrnkZ" id="7WKNeR8Wqkr" role="2Oq$k0">
+                  <node concept="37vLTw" id="7WKNeR8Wqks" role="2JrQYb">
+                    <ref role="3cqZAo" node="7WKNeR8W9Me" resolve="model" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="7WKNeR8Wqkt" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="7WKNeR8Wpbu" role="37wK5m">
+                <ref role="1Pybhc" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
+                <ref role="37wK5l" to="hano:7DvO2M9p276" resolve="newSession" />
+                <node concept="37vLTw" id="7WKNeR8Wpbv" role="37wK5m">
+                  <ref role="3cqZAo" node="7WKNeR8W19_" resolve="repository" />
+                </node>
+                <node concept="37vLTw" id="7WKNeR8Wpbw" role="37wK5m">
+                  <ref role="3cqZAo" node="7WKNeR8W9Me" resolve="model" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7WKNeR93utq" role="3cqZAp">
+          <node concept="2OqwBi" id="7WKNeR93uOU" role="3clFbG">
+            <node concept="37vLTw" id="7WKNeR93uto" role="2Oq$k0">
+              <ref role="3cqZAo" node="7WKNeR8Wgb9" resolve="sessionCache" />
+            </node>
+            <node concept="liA8E" id="7WKNeR93w2g" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+              <node concept="2OqwBi" id="7WKNeR93wkI" role="37wK5m">
+                <node concept="2JrnkZ" id="7WKNeR93wkJ" role="2Oq$k0">
+                  <node concept="37vLTw" id="7WKNeR93wkK" role="2JrQYb">
+                    <ref role="3cqZAo" node="7WKNeR8W9Me" resolve="model" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="7WKNeR93wkL" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7WKNeR8WcYf" role="jymVt" />
+    <node concept="3clFbW" id="7WKNeR8VU5d" role="jymVt">
+      <node concept="37vLTG" id="7WKNeR8W0I5" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="7WKNeR8W0QJ" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="7WKNeR8VU5f" role="3clF45" />
+      <node concept="3Tm6S6" id="7WKNeR8VUhp" role="1B3o_S" />
+      <node concept="3clFbS" id="7WKNeR8VU5h" role="3clF47">
+        <node concept="3clFbF" id="7WKNeR8W19D" role="3cqZAp">
+          <node concept="37vLTI" id="7WKNeR8W19F" role="3clFbG">
+            <node concept="2OqwBi" id="7WKNeR8W1Cb" role="37vLTJ">
+              <node concept="Xjq3P" id="7WKNeR8W1Dm" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7WKNeR8W1OT" role="2OqNvi">
+                <ref role="2Oxat5" node="7WKNeR8W19_" resolve="repository" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="7WKNeR8W19J" role="37vLTx">
+              <ref role="3cqZAo" node="7WKNeR8W0I5" resolve="repository" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7WKNeR8VTNh" role="jymVt" />
+    <node concept="3clFb_" id="7WKNeR8VSa4" role="jymVt">
+      <property role="TrG5h" value="dispose" />
+      <node concept="3cqZAl" id="7WKNeR8VSa6" role="3clF45" />
+      <node concept="3Tm6S6" id="7WKNeR8VUi4" role="1B3o_S" />
+      <node concept="3clFbS" id="7WKNeR8VSa8" role="3clF47">
+        <node concept="3clFbF" id="7WKNeR8Wr9j" role="3cqZAp">
+          <node concept="2OqwBi" id="7WKNeR8Wrvc" role="3clFbG">
+            <node concept="37vLTw" id="7WKNeR8Wr9h" role="2Oq$k0">
+              <ref role="3cqZAo" node="7WKNeR8Wgb9" resolve="sessionCache" />
+            </node>
+            <node concept="liA8E" id="7WKNeR8Ws6G" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Map.clear():void" resolve="clear" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7WKNeR8W1Tz" role="3cqZAp">
+          <node concept="37vLTI" id="7WKNeR8W2nY" role="3clFbG">
+            <node concept="10Nm6u" id="7WKNeR8W2pI" role="37vLTx" />
+            <node concept="2OqwBi" id="7WKNeR8W1XX" role="37vLTJ">
+              <node concept="Xjq3P" id="7WKNeR8W1Ty" role="2Oq$k0" />
+              <node concept="2OwXpG" id="7WKNeR8W2bE" role="2OqNvi">
+                <ref role="2Oxat5" node="7WKNeR8W19_" resolve="repository" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7WKNeR8VM1V" role="jymVt" />
+    <node concept="Wx3nA" id="7WKNeR8VMzY" role="jymVt">
+      <property role="TrG5h" value="ourInstances" />
+      <node concept="3Tm6S6" id="7WKNeR8VMzZ" role="1B3o_S" />
+      <node concept="3uibUv" id="7WKNeR8VM$0" role="1tU5fm">
+        <ref role="3uigEE" to="5zyv:~ConcurrentMap" resolve="ConcurrentMap" />
+        <node concept="3uibUv" id="7WKNeR8VM$1" role="11_B2D">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+        <node concept="3uibUv" id="7WKNeR8VN2d" role="11_B2D">
+          <ref role="3uigEE" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="7WKNeR8VM$3" role="33vP2m">
+        <node concept="1pGfFk" id="7WKNeR8VM$4" role="2ShVmc">
+          <ref role="37wK5l" to="5zyv:~ConcurrentHashMap.&lt;init&gt;()" resolve="ConcurrentHashMap" />
+          <node concept="3uibUv" id="7WKNeR8VM$5" role="1pMfVU">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+          </node>
+          <node concept="3uibUv" id="7WKNeR8VNg3" role="1pMfVU">
+            <ref role="3uigEE" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7WKNeR8VM1Z" role="jymVt" />
+    <node concept="312cEg" id="7WKNeR8Wgb9" role="jymVt">
+      <property role="TrG5h" value="sessionCache" />
+      <node concept="3Tm6S6" id="7WKNeR8Wgba" role="1B3o_S" />
+      <node concept="3uibUv" id="7WKNeR8WiEd" role="1tU5fm">
+        <ref role="3uigEE" to="5zyv:~ConcurrentMap" resolve="ConcurrentMap" />
+        <node concept="3uibUv" id="7WKNeR8Wlc6" role="11_B2D">
+          <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+        </node>
+        <node concept="3uibUv" id="7WKNeR8Wq2D" role="11_B2D">
+          <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="7WKNeR8Win4" role="33vP2m">
+        <node concept="1pGfFk" id="7WKNeR8WkaM" role="2ShVmc">
+          <ref role="37wK5l" to="5zyv:~ConcurrentHashMap.&lt;init&gt;()" resolve="ConcurrentHashMap" />
+          <node concept="3uibUv" id="7WKNeR8WkAs" role="1pMfVU">
+            <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+          </node>
+          <node concept="3uibUv" id="7WKNeR8WpL7" role="1pMfVU">
+            <ref role="3uigEE" to="hano:CGeqIk8WWU" resolve="RuleProcessingSession" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7WKNeR8VLpI" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7WKNeR8VMqz" role="lGtFl">
+      <node concept="TZ5HA" id="7WKNeR8VMq$" role="TZ5H$">
+        <node concept="1dT_AC" id="7WKNeR8VMq_" role="1dT_Ay">
+          <property role="1dT_AB" value="A per-repository cache of code rule indices." />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="7WKNeR8W19_" role="jymVt">
+      <property role="TrG5h" value="repository" />
+      <node concept="3Tm6S6" id="7WKNeR8W19A" role="1B3o_S" />
+      <node concept="3uibUv" id="7WKNeR8W19C" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+      </node>
+    </node>
+  </node>
+  <node concept="2uRRBy" id="7WKNeR8VWis">
+    <property role="TrG5h" value="CodeRulesManagerLifecycle" />
+    <node concept="2uRRBT" id="7WKNeR8VWiQ" role="2uRRB$">
+      <node concept="3clFbS" id="7WKNeR8VWiR" role="2VODD2">
+        <node concept="3clFbF" id="7WKNeR8VWpv" role="3cqZAp">
+          <node concept="2YIFZM" id="7WKNeR8VW_Q" role="3clFbG">
+            <ref role="37wK5l" node="7WKNeR8VMwW" resolve="get" />
+            <ref role="1Pybhc" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+            <node concept="2OqwBi" id="7WKNeR8VWXq" role="37wK5m">
+              <node concept="1KvdUw" id="7WKNeR8VWAi" role="2Oq$k0" />
+              <node concept="liA8E" id="7WKNeR8VY8y" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2uRRBN" id="7WKNeR8VWjc" role="2uRRB_">
+      <node concept="3clFbS" id="7WKNeR8VWjd" role="2VODD2">
+        <node concept="3clFbF" id="7WKNeR8VYg9" role="3cqZAp">
+          <node concept="2YIFZM" id="7WKNeR8VYgC" role="3clFbG">
+            <ref role="37wK5l" node="7WKNeR8VPWJ" resolve="dispose" />
+            <ref role="1Pybhc" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+            <node concept="2OqwBi" id="7WKNeR8VZ0O" role="37wK5m">
+              <node concept="1KvdUw" id="7WKNeR8VYiU" role="2Oq$k0" />
+              <node concept="liA8E" id="7WKNeR8W0bW" role="2OqNvi">
                 <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
               </node>
             </node>
