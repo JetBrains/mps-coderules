@@ -233,6 +233,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -253,6 +254,7 @@
   <node concept="2DaZZR" id="2zU3cYqx4HT" />
   <node concept="2uRRBy" id="2zU3cYqx4HU">
     <property role="TrG5h" value="TypesModelManagerLifecycle" />
+    <property role="3GE5qa" value="lifecycle" />
     <node concept="2uRRBT" id="2zU3cYqx4Pl" role="2uRRB$">
       <node concept="3clFbS" id="2zU3cYqx4Pm" role="2VODD2">
         <node concept="3clFbF" id="2zU3cYqyvdE" role="3cqZAp">
@@ -2835,6 +2837,7 @@
   </node>
   <node concept="2uRRBy" id="443LGHBoF4R">
     <property role="TrG5h" value="TypecheckingCacheLifecycle" />
+    <property role="3GE5qa" value="lifecycle" />
     <node concept="2uRRBT" id="443LGHBoF4U" role="2uRRB$">
       <node concept="3clFbS" id="443LGHBoF4V" role="2VODD2">
         <node concept="3clFbF" id="443LGHBoGH8" role="3cqZAp">
@@ -3169,6 +3172,7 @@
   </node>
   <node concept="2uRRBy" id="7WKNeR8VWis">
     <property role="TrG5h" value="CodeRulesManagerLifecycle" />
+    <property role="3GE5qa" value="lifecycle" />
     <node concept="2uRRBT" id="7WKNeR8VWiQ" role="2uRRB$">
       <node concept="3clFbS" id="7WKNeR8VWiR" role="2VODD2">
         <node concept="3clFbF" id="7WKNeR8VWpv" role="3cqZAp">

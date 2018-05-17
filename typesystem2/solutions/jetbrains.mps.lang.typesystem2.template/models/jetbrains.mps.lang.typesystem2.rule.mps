@@ -167,6 +167,7 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
         <child id="1107880067339" name="method" index="3MN40a" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -2033,10 +2034,9 @@
       </node>
       <node concept="37vLTG" id="7P_FdVPsGBf" role="3clF46">
         <property role="TrG5h" value="parameters" />
-        <node concept="8X2XB" id="7P_FdVPsGC6" role="1tU5fm">
-          <node concept="3uibUv" id="7P_FdVPsGC0" role="8Xvag">
-            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          </node>
+        <node concept="3uibUv" id="3IIf9OAgMKI" role="1tU5fm">
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+          <node concept="3qTvmN" id="3IIf9OAm5rX" role="11_B2D" />
         </node>
       </node>
       <node concept="3uibUv" id="7P_FdVPsDNI" role="3clF45">
