@@ -9,8 +9,6 @@
   </languages>
   <imports>
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
-    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.evaluation)" />
-    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.typesystem2.macro)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -204,8 +202,8 @@
       <property role="TrG5h" value="application" />
       <node concept="37vLTG" id="oI9YrJ1qv" role="3clF46">
         <property role="TrG5h" value="appSession" />
-        <node concept="3uibUv" id="oI9YrJ1qP" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
+        <node concept="3uibUv" id="3IIf9O_CChB" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>
       </node>
       <node concept="3uibUv" id="oI9YrJ1pY" role="3clF45">

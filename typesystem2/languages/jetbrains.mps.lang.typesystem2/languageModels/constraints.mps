@@ -18,7 +18,6 @@
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
-    <import index="z8tp" ref="r:5bfbd177-208e-4d27-b74c-2ebd2a92eb80(jetbrains.mps.lang.smodel.types.structure)" />
     <import index="hy7p" ref="r:01ee26d6-df00-4ffb-931c-1ddec5984886(jetbrains.mps.lang.typesystem2.util)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.rule)" />
     <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.typesystem2.behavior)" implicit="true" />
@@ -1148,36 +1147,14 @@
     <ref role="1M2myG" to="wq2x:oI9Yrc9wC" resolve="SNodeSetTypeOperation" />
     <node concept="9S07l" id="oI9Yr_Dyr" role="9Vyp8">
       <node concept="3clFbS" id="oI9Yr_Dys" role="2VODD2">
-        <node concept="3clFbF" id="oI9Yr_G2o" role="3cqZAp">
-          <node concept="2OqwBi" id="oI9Yr_Qrl" role="3clFbG">
-            <node concept="2OqwBi" id="oI9Yr_Psx" role="2Oq$k0">
-              <node concept="1PxgMI" id="oI9Yr_OVI" role="2Oq$k0">
-                <property role="1BlNFB" value="true" />
-                <node concept="chp4Y" id="oI9Yr_P6Q" role="3oSUPX">
-                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
-                </node>
-                <node concept="2OqwBi" id="oI9Yr_Hec" role="1m5AlR">
-                  <node concept="1PxgMI" id="oI9Yr_GB5" role="2Oq$k0">
-                    <property role="1BlNFB" value="true" />
-                    <node concept="chp4Y" id="oI9Yr_GP7" role="3oSUPX">
-                      <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
-                    </node>
-                    <node concept="nLn13" id="oI9Yr_G2m" role="1m5AlR" />
-                  </node>
-                  <node concept="3TrEf2" id="oI9Yr_MZZ" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3TrEf2" id="oI9Yr_PXD" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
-              </node>
-            </node>
-            <node concept="1mIQ4w" id="oI9Yr_QQc" role="2OqNvi">
-              <node concept="chp4Y" id="oI9Yr_R6h" role="cj9EA">
-                <ref role="cht4Q" to="z8tp:6nJA6bpveD5" resolve="SNodeTypeOperation" />
-              </node>
-            </node>
+        <node concept="3SKdUt" id="3IIf9O_Dsc2" role="3cqZAp">
+          <node concept="3SKdUq" id="3IIf9O_Dsc3" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: better control over where this should be available" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="3IIf9O_DsqD" role="3cqZAp">
+          <node concept="3clFbT" id="3IIf9O_DsqC" role="3clFbG">
+            <property role="3clFbU" value="true" />
           </node>
         </node>
       </node>
