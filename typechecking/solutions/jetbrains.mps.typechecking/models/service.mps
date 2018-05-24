@@ -45,8 +45,6 @@
     <import index="e5vs" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.jetbrains.ide(MPS.IDEA/)" />
     <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.baseLanguageExt.types)" />
-    <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.typesystem2.structure)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -350,11 +348,6 @@
       </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
-    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
-      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
-        <reference id="7256306938026143658" name="target" index="2aWVGs" />
-      </concept>
-    </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
         <property id="1167228628751" name="hasException" index="34fQS0" />
@@ -367,16 +360,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU">
-        <reference id="7400021826771268269" name="concept" index="2sp9C9" />
-      </concept>
-      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
-        <child id="7400021826774799510" name="ref" index="2tJFKM" />
-      </concept>
-      <concept id="4065387505485742749" name="jetbrains.mps.lang.smodel.structure.AbstractPointerResolveOperation" flags="ng" index="2yCiFS">
-        <child id="3648723375513868575" name="repositoryArg" index="Vysub" />
-      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
@@ -388,7 +371,6 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
-      <concept id="3648723375513868532" name="jetbrains.mps.lang.smodel.structure.NodePointer_ResolveOperation" flags="ng" index="Vyspw" />
       <concept id="1227264722563" name="jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression" flags="nn" index="2YFouu" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1206482823744" name="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" flags="nn" index="3BYIHo">
@@ -409,13 +391,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -1031,23 +1006,14 @@
       <node concept="3Tm6S6" id="3IIf9OA6IDF" role="1B3o_S" />
       <node concept="17QB3L" id="3IIf9OA6IDG" role="3clF45" />
       <node concept="3clFbS" id="3IIf9OA6IDa" role="3clF47">
-        <node concept="3cpWs6" id="3IIf9OA6MX8" role="3cqZAp">
-          <node concept="2OqwBi" id="3IIf9OA6MX9" role="3cqZAk">
-            <node concept="2OqwBi" id="3IIf9OA6MXa" role="2Oq$k0">
-              <node concept="2tJFMh" id="3IIf9OA6MXb" role="2Oq$k0">
-                <node concept="ZC_QK" id="6OXbTD$P1oO" role="2tJFKM">
-                  <ref role="2aWVGs" to="kqnc:6OXbTD$fto2" resolve="typecheck" />
-                </node>
-              </node>
-              <node concept="Vyspw" id="3IIf9OA6MXd" role="2OqNvi">
-                <node concept="37vLTw" id="3IIf9OA6MXe" role="Vysub">
-                  <ref role="3cqZAo" node="3IIf9O_u8qV" resolve="repository" />
-                </node>
-              </node>
-            </node>
-            <node concept="2qgKlT" id="3IIf9OA6MXf" role="2OqNvi">
-              <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
-            </node>
+        <node concept="3SKdUt" id="6d0cWF2SWTd" role="3cqZAp">
+          <node concept="3SKdUq" id="6d0cWF2SWTe" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: refactor into an extension point to avoid having to hardcode fqname" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6d0cWF2T1fj" role="3cqZAp">
+          <node concept="Xl_RD" id="6d0cWF2T1Gs" role="3clFbG">
+            <property role="Xl_RC" value="jetbrains.mps.baseLanguageExt.types.typecheck" />
           </node>
         </node>
       </node>
@@ -1058,23 +1024,14 @@
       <node concept="3Tm6S6" id="3IIf9OA6Ow$" role="1B3o_S" />
       <node concept="17QB3L" id="3IIf9OA6Ow_" role="3clF45" />
       <node concept="3clFbS" id="3IIf9OA6OwA" role="3clF47">
-        <node concept="3cpWs6" id="3IIf9OA6OwB" role="3cqZAp">
-          <node concept="2OqwBi" id="3IIf9OA6OwC" role="3cqZAk">
-            <node concept="2OqwBi" id="3IIf9OA6OwD" role="2Oq$k0">
-              <node concept="2tJFMh" id="3IIf9OA6OwE" role="2Oq$k0">
-                <node concept="ZC_QK" id="6OXbTD$P1P2" role="2tJFKM">
-                  <ref role="2aWVGs" to="kqnc:6OXbTD$ftrf" resolve="subtypeOf" />
-                </node>
-              </node>
-              <node concept="Vyspw" id="3IIf9OA6OwG" role="2OqNvi">
-                <node concept="37vLTw" id="3IIf9OA6OwH" role="Vysub">
-                  <ref role="3cqZAo" node="3IIf9O_u8qV" resolve="repository" />
-                </node>
-              </node>
-            </node>
-            <node concept="2qgKlT" id="6OXbTD$P2nZ" role="2OqNvi">
-              <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
-            </node>
+        <node concept="3SKdUt" id="6d0cWF2T25z" role="3cqZAp">
+          <node concept="3SKdUq" id="6d0cWF2T25$" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: refactor into an extension point to avoid having to hardcode fqname" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6d0cWF2T25_" role="3cqZAp">
+          <node concept="Xl_RD" id="6d0cWF2T25A" role="3clFbG">
+            <property role="Xl_RC" value="jetbrains.mps.baseLanguageExt.types.subtypeOf" />
           </node>
         </node>
       </node>
@@ -6121,25 +6078,7 @@
         <node concept="3clFbH" id="6OXbTD_AGUa" role="3cqZAp" />
         <node concept="3SKdUt" id="6OXbTD_AKjZ" role="3cqZAp">
           <node concept="3SKdUq" id="6OXbTD_AKk1" role="3SKWNk">
-            <property role="3SKdUp" value="TODO: need a direct link to the query" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="6OXbTD_AY$T" role="3cqZAp" />
-        <node concept="1X3_iC" id="6OXbTD_AJ6F" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3cpWs8" id="6OXbTD_Apwe" role="8Wnug">
-            <node concept="3cpWsn" id="6OXbTD_Apwf" role="3cpWs9">
-              <property role="TrG5h" value="queryNode" />
-              <node concept="2sp9CU" id="6OXbTD_Apwd" role="1tU5fm">
-                <ref role="2sp9C9" to="wq2x:6OXbTD$dU7b" resolve="Query" />
-              </node>
-              <node concept="2tJFMh" id="6OXbTD_Apwg" role="33vP2m">
-                <node concept="ZC_QK" id="6OXbTD_Apwh" role="2tJFKM">
-                  <ref role="2aWVGs" to="kqnc:6OXbTD$fto2" resolve="typecheck" />
-                </node>
-              </node>
-            </node>
+            <property role="3SKdUp" value="FIXME: refactor into an extension point to avoid having to hardcode fqname" />
           </node>
         </node>
         <node concept="3cpWs8" id="6OXbTD_A30I" role="3cqZAp">

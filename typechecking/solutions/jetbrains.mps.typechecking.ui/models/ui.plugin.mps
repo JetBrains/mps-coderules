@@ -101,7 +101,6 @@
     <import index="6rp1" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:com.github.andrewoma.dexx.collection(jetbrains.mps.logic.reactor/)" />
     <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
-    <import index="kqnc" ref="r:92b96158-68e6-4f53-a32b-36e2b456fe01(jetbrains.mps.baseLanguageExt.types)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
   </imports>
   <registry>
@@ -569,11 +568,6 @@
         <reference id="1205756909548" name="member" index="2WH_rO" />
       </concept>
     </language>
-    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
-      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
-        <reference id="7256306938026143658" name="target" index="2aWVGs" />
-      </concept>
-    </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
         <property id="1167228628751" name="hasException" index="34fQS0" />
@@ -586,20 +580,12 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
-        <child id="7400021826774799510" name="ref" index="2tJFKM" />
-      </concept>
-      <concept id="4065387505485742749" name="jetbrains.mps.lang.smodel.structure.AbstractPointerResolveOperation" flags="ng" index="2yCiFS">
-        <child id="3648723375513868575" name="repositoryArg" index="Vysub" />
-      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="3648723375513868532" name="jetbrains.mps.lang.smodel.structure.NodePointer_ResolveOperation" flags="ng" index="Vyspw" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -33756,62 +33742,21 @@
           </node>
         </node>
         <node concept="3clFbH" id="7WKNeR8RdQu" role="3cqZAp" />
+        <node concept="3SKdUt" id="6OXbTD_AKjZ" role="3cqZAp">
+          <node concept="3SKdUq" id="6OXbTD_AKk1" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: refactor into an extension point to avoid having to hardcode fqname" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="7WKNeR9hhkg" role="3cqZAp">
           <node concept="3cpWsn" id="7WKNeR9hhkh" role="3cpWs9">
             <property role="TrG5h" value="fqueryFqName" />
             <node concept="17QB3L" id="7WKNeR9hhkf" role="1tU5fm" />
-          </node>
-        </node>
-        <node concept="1QHqEK" id="7WKNeR8RdQy" role="3cqZAp">
-          <node concept="1QHqEC" id="7WKNeR8RdQz" role="1QHqEI">
-            <node concept="3clFbS" id="7WKNeR8RdQ$" role="1bW5cS">
-              <node concept="3clFbF" id="7WKNeR9hhDS" role="3cqZAp">
-                <node concept="37vLTI" id="7WKNeR9hhDU" role="3clFbG">
-                  <node concept="2OqwBi" id="7WKNeR9hhki" role="37vLTx">
-                    <node concept="2OqwBi" id="7WKNeR9hhkj" role="2Oq$k0">
-                      <node concept="2tJFMh" id="7WKNeR9hhkk" role="2Oq$k0">
-                        <node concept="ZC_QK" id="6OXbTD$ftQw" role="2tJFKM">
-                          <ref role="2aWVGs" to="kqnc:6OXbTD$fto2" resolve="typecheck" />
-                        </node>
-                      </node>
-                      <node concept="Vyspw" id="7WKNeR9hhkm" role="2OqNvi">
-                        <node concept="2OqwBi" id="7WKNeR9hhkn" role="Vysub">
-                          <node concept="2OqwBi" id="7WKNeR9hhko" role="2Oq$k0">
-                            <node concept="2WthIp" id="7WKNeR9hhkp" role="2Oq$k0" />
-                            <node concept="1DTwFV" id="7WKNeR9hhkq" role="2OqNvi">
-                              <ref role="2WH_rO" node="7WKNeR8Rags" resolve="mpsProject" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="7WKNeR9hhkr" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2qgKlT" id="6OXbTD$fur0" role="2OqNvi">
-                      <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="7WKNeR9hhDY" role="37vLTJ">
-                    <ref role="3cqZAo" node="7WKNeR9hhkh" resolve="fqueryFqName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="7WKNeR8RdQH" role="ukAjM">
-            <node concept="2OqwBi" id="7WKNeR8RdQI" role="2Oq$k0">
-              <node concept="2WthIp" id="7WKNeR8RdQJ" role="2Oq$k0" />
-              <node concept="1DTwFV" id="7WKNeR8RdQK" role="2OqNvi">
-                <ref role="2WH_rO" node="7WKNeR8Rags" resolve="mpsProject" />
-              </node>
-            </node>
-            <node concept="liA8E" id="7WKNeR8RdQL" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            <node concept="Xl_RD" id="6d0cWF2SUMI" role="33vP2m">
+              <property role="Xl_RC" value="jetbrains.mps.baseLanguageExt.types.typecheck" />
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7WKNeR8RdQM" role="3cqZAp" />
+        <node concept="3clFbH" id="6d0cWF2SWaM" role="3cqZAp" />
         <node concept="3clFbF" id="7WKNeR8RdQN" role="3cqZAp">
           <node concept="2OqwBi" id="7WKNeR8RdQO" role="3clFbG">
             <node concept="2OqwBi" id="7WKNeR8RdQP" role="2Oq$k0">
@@ -33925,58 +33870,17 @@
           </node>
         </node>
         <node concept="3clFbH" id="3IIf9O_okkg" role="3cqZAp" />
-        <node concept="3cpWs8" id="3IIf9O_okkh" role="3cqZAp">
-          <node concept="3cpWsn" id="3IIf9O_okki" role="3cpWs9">
-            <property role="TrG5h" value="fqueryFqName" />
-            <node concept="17QB3L" id="3IIf9O_okkj" role="1tU5fm" />
+        <node concept="3SKdUt" id="6d0cWF2SWTd" role="3cqZAp">
+          <node concept="3SKdUq" id="6d0cWF2SWTe" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME: refactor into an extension point to avoid having to hardcode fqname" />
           </node>
         </node>
-        <node concept="1QHqEK" id="3IIf9O_okkk" role="3cqZAp">
-          <node concept="1QHqEC" id="3IIf9O_okkl" role="1QHqEI">
-            <node concept="3clFbS" id="3IIf9O_okkm" role="1bW5cS">
-              <node concept="3clFbF" id="3IIf9O_okkn" role="3cqZAp">
-                <node concept="37vLTI" id="3IIf9O_okko" role="3clFbG">
-                  <node concept="2OqwBi" id="3IIf9O_okkp" role="37vLTx">
-                    <node concept="2OqwBi" id="3IIf9O_okkq" role="2Oq$k0">
-                      <node concept="2tJFMh" id="3IIf9O_okkr" role="2Oq$k0">
-                        <node concept="ZC_QK" id="6OXbTD$fxQ1" role="2tJFKM">
-                          <ref role="2aWVGs" to="kqnc:6OXbTD$fto2" resolve="typecheck" />
-                        </node>
-                      </node>
-                      <node concept="Vyspw" id="3IIf9O_okkt" role="2OqNvi">
-                        <node concept="2OqwBi" id="3IIf9O_okku" role="Vysub">
-                          <node concept="2OqwBi" id="3IIf9O_okkv" role="2Oq$k0">
-                            <node concept="2WthIp" id="3IIf9O_okkw" role="2Oq$k0" />
-                            <node concept="1DTwFV" id="3IIf9O_okkx" role="2OqNvi">
-                              <ref role="2WH_rO" node="3IIf9O_okk3" resolve="mpsProject" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="3IIf9O_okky" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2qgKlT" id="6OXbTD$fyqI" role="2OqNvi">
-                      <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="3IIf9O_okk$" role="37vLTJ">
-                    <ref role="3cqZAo" node="3IIf9O_okki" resolve="fqueryFqName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="3IIf9O_okk_" role="ukAjM">
-            <node concept="2OqwBi" id="3IIf9O_okkA" role="2Oq$k0">
-              <node concept="2WthIp" id="3IIf9O_okkB" role="2Oq$k0" />
-              <node concept="1DTwFV" id="3IIf9O_okkC" role="2OqNvi">
-                <ref role="2WH_rO" node="3IIf9O_okk3" resolve="mpsProject" />
-              </node>
-            </node>
-            <node concept="liA8E" id="3IIf9O_okkD" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+        <node concept="3cpWs8" id="6d0cWF2SWTf" role="3cqZAp">
+          <node concept="3cpWsn" id="6d0cWF2SWTg" role="3cpWs9">
+            <property role="TrG5h" value="fqueryFqName" />
+            <node concept="17QB3L" id="6d0cWF2SWTh" role="1tU5fm" />
+            <node concept="Xl_RD" id="6d0cWF2SWTi" role="33vP2m">
+              <property role="Xl_RC" value="jetbrains.mps.baseLanguageExt.types.typecheck" />
             </node>
           </node>
         </node>
@@ -33988,8 +33892,8 @@
                 <node concept="2YIFZM" id="3IIf9O_okkI" role="2Oq$k0">
                   <ref role="37wK5l" node="7WKNeR8SP2E" resolve="launchQuery" />
                   <ref role="1Pybhc" node="6hqFpWnf9Mu" resolve="TypecheckingActions" />
-                  <node concept="37vLTw" id="3IIf9O_okkJ" role="37wK5m">
-                    <ref role="3cqZAo" node="3IIf9O_okki" resolve="fqueryFqName" />
+                  <node concept="37vLTw" id="6d0cWF2SY5R" role="37wK5m">
+                    <ref role="3cqZAo" node="6d0cWF2SWTg" resolve="fqueryFqName" />
                   </node>
                   <node concept="2OqwBi" id="3IIf9O_okkK" role="37wK5m">
                     <node concept="2WthIp" id="3IIf9O_okkL" role="2Oq$k0" />
