@@ -2725,5 +2725,109 @@
       <node concept="3clFbS" id="34$A1Mf3_WA" role="2VODD2" />
     </node>
   </node>
+  <node concept="13h7C7" id="6OXbTDz3CCF">
+    <ref role="13h7C2" to="wq2x:7P_FdVQ_S6B" resolve="QueryTemplate" />
+    <node concept="13i0hz" id="6OXbTDz3CCQ" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="exportedLogicalVariable" />
+      <ref role="13i0hy" to="ha02:7E86$tKAujJ" resolve="exportedLogicalVariable" />
+      <node concept="3Tm1VV" id="6OXbTDz3CCR" role="1B3o_S" />
+      <node concept="3clFbS" id="6OXbTDz3CCS" role="3clF47">
+        <node concept="3clFbF" id="6OXbTDz3CCT" role="3cqZAp">
+          <node concept="2OqwBi" id="6OXbTDz3CCU" role="3clFbG">
+            <node concept="2OqwBi" id="6OXbTDz3CCV" role="2Oq$k0">
+              <node concept="2OqwBi" id="6OXbTDz3CCW" role="2Oq$k0">
+                <node concept="2OqwBi" id="6OXbTDz3CCX" role="2Oq$k0">
+                  <node concept="13iPFW" id="6OXbTDz3CCY" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="6OXbTDz3CCZ" role="2OqNvi">
+                    <ref role="3Tt5mk" to="wq2x:6OXbTDyyU9U" resolve="code" />
+                  </node>
+                </node>
+                <node concept="2Rf3mk" id="6OXbTDz3CD0" role="2OqNvi">
+                  <node concept="1xMEDy" id="6OXbTDz3CD1" role="1xVPHs">
+                    <node concept="chp4Y" id="6OXbTDz3CD2" role="ri$Ld">
+                      <ref role="cht4Q" to="wq2x:36tQV5AmIt0" resolve="ConstraintRuleStatement" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="13MTOL" id="6OXbTDz3CD3" role="2OqNvi">
+                <ref role="13MTZf" to="wq2x:36tQV5AmIt1" resolve="rule" />
+              </node>
+            </node>
+            <node concept="3goQfb" id="6OXbTDz3CD4" role="2OqNvi">
+              <node concept="1bVj0M" id="6OXbTDz3CD5" role="23t8la">
+                <node concept="3clFbS" id="6OXbTDz3CD6" role="1bW5cS">
+                  <node concept="3clFbF" id="6OXbTDz3CD7" role="3cqZAp">
+                    <node concept="2OqwBi" id="6OXbTDz3CD8" role="3clFbG">
+                      <node concept="37vLTw" id="6OXbTDz3CD9" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6OXbTDz3CDb" resolve="it" />
+                      </node>
+                      <node concept="2qgKlT" id="6OXbTDz3CDa" role="2OqNvi">
+                        <ref role="37wK5l" to="ha02:7E86$tKAujJ" resolve="exportedLogicalVariable" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="6OXbTDz3CDb" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="6OXbTDz3CDc" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="A3Dl8" id="6OXbTDz3CDd" role="3clF45">
+        <node concept="3Tqbb2" id="6OXbTDz3CDe" role="A3Ik2">
+          <ref role="ehGHo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="6OXbTDz3CDf" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="availableLogicalVariable" />
+      <ref role="13i0hy" to="ha02:6YKq674fNYS" resolve="availableLogicalVariable" />
+      <node concept="3Tm1VV" id="6OXbTDz3CDg" role="1B3o_S" />
+      <node concept="3clFbS" id="6OXbTDz3CDh" role="3clF47">
+        <node concept="3clFbF" id="6OXbTDz3CDi" role="3cqZAp">
+          <node concept="2OqwBi" id="6OXbTDz3CDj" role="3clFbG">
+            <node concept="13iPFW" id="6OXbTDz3CDk" role="2Oq$k0" />
+            <node concept="2qgKlT" id="6OXbTDz3CDl" role="2OqNvi">
+              <ref role="37wK5l" to="ha02:7E86$tKAujJ" resolve="exportedLogicalVariable" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="A3Dl8" id="6OXbTDz3CDm" role="3clF45">
+        <node concept="3Tqbb2" id="6OXbTDz3CDn" role="A3Ik2">
+          <ref role="ehGHo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="6OXbTDz3CDo" role="13h7CS">
+      <property role="TrG5h" value="localContextNames" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <node concept="3Tm1VV" id="6OXbTDz3CDp" role="1B3o_S" />
+      <node concept="3clFbS" id="6OXbTDz3CDq" role="3clF47">
+        <node concept="3clFbF" id="6OXbTDz3CDr" role="3cqZAp">
+          <node concept="BsUDl" id="6OXbTDz3CDs" role="3clFbG">
+            <ref role="37wK5l" to="ha02:7E86$tKAujJ" resolve="exportedLogicalVariable" />
+          </node>
+        </node>
+      </node>
+      <node concept="A3Dl8" id="6OXbTDz3CDt" role="3clF45">
+        <node concept="3Tqbb2" id="6OXbTDz3CDu" role="A3Ik2">
+          <ref role="ehGHo" to="tpck:h0TrEE$" resolve="INamedConcept" />
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="6OXbTDz3CCG" role="13h7CW">
+      <node concept="3clFbS" id="6OXbTDz3CCH" role="2VODD2" />
+    </node>
+  </node>
 </model>
 

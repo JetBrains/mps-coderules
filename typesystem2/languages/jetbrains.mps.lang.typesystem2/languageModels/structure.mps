@@ -43,7 +43,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
-      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -1412,6 +1414,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
+    <node concept="PrWs8" id="6OXbTDyHcSb" role="PzmwI">
+      <ref role="PrY4T" node="6OXbTDyHcuD" resolve="Template" />
+    </node>
     <node concept="PrWs8" id="36tQV5AmIsC" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
@@ -1591,18 +1596,54 @@
   </node>
   <node concept="1TIwiD" id="7P_FdVQ_S6B">
     <property role="EcuMT" value="9035818301008609703" />
+    <property role="TrG5h" value="QueryTemplate" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="6OXbTD$fGCg" role="1TKVEl">
+      <property role="IQ2nx" value="7871500063866800656" />
+      <property role="TrG5h" value="stage" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="6OXbTDyyU9U" role="1TKVEi">
+      <property role="IQ2ns" value="7871500063838282362" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="PrWs8" id="6OXbTDyHcHo" role="PzmwI">
+      <ref role="PrY4T" node="6OXbTDyHcuD" resolve="Template" />
+    </node>
+    <node concept="PrWs8" id="7P_FdVQ_S6O" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="6OXbTDz3CC2" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+    </node>
+    <node concept="PrWs8" id="6OXbTDz3CCc" role="PzmwI">
+      <ref role="PrY4T" node="7IysFeBd3kI" resolve="ApplicationSessionParticipant" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6OXbTDyHcuD">
+    <property role="EcuMT" value="7871500063840978857" />
+    <property role="TrG5h" value="Template" />
+    <node concept="PrWs8" id="6OXbTDyHcuE" role="PrDN$">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6OXbTD$dU7b">
+    <property role="EcuMT" value="7871500063866331595" />
     <property role="TrG5h" value="Query" />
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="query" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="3IIf9O_dj_p" role="1TKVEi">
-      <property role="IQ2ns" value="4300441339817179481" />
+    <node concept="1TJgyj" id="6OXbTD$dU7c" role="1TKVEi">
+      <property role="IQ2ns" value="7871500063866331596" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="start" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6p0DfM0ang5" resolve="UserConstraint" />
+      <property role="20kJfa" value="queryStage" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7P_FdVQ_S6B" resolve="QueryTemplate" />
     </node>
-    <node concept="PrWs8" id="7P_FdVQ_S6O" role="PzmwI">
+    <node concept="PrWs8" id="6OXbTD$dU7e" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>

@@ -196,7 +196,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="5rhZO$TYZJM">
-    <property role="TrG5h" value="ChrProgramBuilder" />
+    <property role="TrG5h" value="LogicProgramBuilder" />
     <node concept="2tJIrI" id="5rhZO$TZ4oM" role="jymVt" />
     <node concept="3clFbW" id="5rhZO$TZ9Ji" role="jymVt">
       <node concept="3cqZAl" id="5rhZO$TZ9Jk" role="3clF45" />
@@ -260,7 +260,7 @@
         <node concept="3clFbF" id="5rhZO$TZjg5" role="3cqZAp">
           <node concept="2ShNRf" id="5rhZO$TZjg3" role="3clFbG">
             <node concept="1pGfFk" id="5rhZO$TZlOE" role="2ShVmc">
-              <ref role="37wK5l" node="7eGEHDlcF69" resolve="ChrProgram" />
+              <ref role="37wK5l" node="7eGEHDlcF69" resolve="LogicProgram" />
               <node concept="37vLTw" id="5rhZO$TZlPA" role="37wK5m">
                 <ref role="3cqZAo" node="5rhZO$TZiL2" resolve="name" />
               </node>
@@ -600,7 +600,7 @@
     <node concept="3Tm1VV" id="18cJbc1659x" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7eGEHDlcEJ0">
-    <property role="TrG5h" value="ChrProgram" />
+    <property role="TrG5h" value="LogicProgram" />
     <node concept="3uibUv" id="78CwJJcTnG5" role="1zkMxy">
       <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
     </node>

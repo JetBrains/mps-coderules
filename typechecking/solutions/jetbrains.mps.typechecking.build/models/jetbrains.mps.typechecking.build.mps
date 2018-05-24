@@ -1123,7 +1123,7 @@
         </node>
         <node concept="1SiIV0" id="wfREvqakXX" role="3bR37C">
           <node concept="3bR9La" id="wfREvqakXY" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
           </node>
         </node>
@@ -1317,6 +1317,12 @@
           <node concept="3bR9La" id="oI9YrRP7D" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="oI9YrJ7Rx" resolve="jetbrains.mps.typechecking.reporting" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6OXbTD_u8Xd" role="3bR37C">
+          <node concept="3bR9La" id="6OXbTD_u8Xe" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7BVjoXzUx6U" resolve="jetbrains.mps.lang.typesystem2" />
           </node>
         </node>
       </node>
