@@ -47,6 +47,7 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.rule)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
+    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -843,9 +844,10 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="6OXbTD_oqun" role="2OqNvi">
-                      <ref role="37wK5l" to="hano:7WKNeR95RPZ" resolve="byFqName" />
-                      <node concept="Xl_RD" id="6d0cWF2SWTi" role="37wK5m">
-                        <property role="Xl_RC" value="jetbrains.mps.baseLanguageExt.types.typecheck" />
+                      <ref role="37wK5l" to="hano:4t7Xo7inmSj" resolve="byKind" />
+                      <node concept="10M0yZ" id="2BZXJecMAXy" role="37wK5m">
+                        <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
+                        <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
                       </node>
                     </node>
                   </node>
@@ -1251,9 +1253,9 @@
                     <node concept="3cpWsn" id="6$7vuu2wZdr" role="3cpWs9">
                       <property role="TrG5h" value="typeOfExpr" />
                       <node concept="3Tqbb2" id="6$7vuu2wZdp" role="1tU5fm" />
-                      <node concept="2YIFZM" id="3IIf9O_uwHs" role="33vP2m">
-                        <ref role="37wK5l" to="tj24:3IIf9O_u0Ck" resolve="typeOf" />
-                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                      <node concept="2YIFZM" id="4t7Xo7iw4eI" role="33vP2m">
+                        <ref role="37wK5l" to="1g4i:3IIf9O_u0Ck" resolve="typeOf" />
+                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
                         <node concept="2OqwBi" id="14$_tTxxSAt" role="37wK5m">
                           <node concept="37vLTw" id="14$_tTxxSjJ" role="2Oq$k0">
                             <ref role="3cqZAo" node="14$_tTxxQ5i" resolve="varo" />
@@ -1282,9 +1284,9 @@
                     <node concept="3cpWsn" id="6$7vuu2xGoB" role="3cpWs9">
                       <property role="TrG5h" value="typeOfExpr2" />
                       <node concept="3Tqbb2" id="6$7vuu2xGoC" role="1tU5fm" />
-                      <node concept="2YIFZM" id="3IIf9O_uwVw" role="33vP2m">
-                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingFacade" />
-                        <ref role="37wK5l" to="tj24:3IIf9O_u0Ck" resolve="typeOf" />
+                      <node concept="2YIFZM" id="4t7Xo7iw4eJ" role="33vP2m">
+                        <ref role="37wK5l" to="1g4i:3IIf9O_u0Ck" resolve="typeOf" />
+                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
                         <node concept="2OqwBi" id="3IIf9O_uwVx" role="37wK5m">
                           <node concept="37vLTw" id="3IIf9O_uwVy" role="2Oq$k0">
                             <ref role="3cqZAo" node="14$_tTxxQ5i" resolve="varo" />
@@ -1622,9 +1624,9 @@
                       <node concept="3cpWsn" id="3IIf9OA557D" role="3cpWs9">
                         <property role="TrG5h" value="isSubtype" />
                         <node concept="10P_77" id="3IIf9OA557w" role="1tU5fm" />
-                        <node concept="2YIFZM" id="3IIf9OA557E" role="33vP2m">
-                          <ref role="37wK5l" to="tj24:3IIf9OA4ZMD" resolve="isSubtype" />
-                          <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                        <node concept="2YIFZM" id="4t7Xo7iw4eK" role="33vP2m">
+                          <ref role="37wK5l" to="1g4i:3IIf9OA4ZMD" resolve="isSubtype" />
+                          <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
                           <node concept="37vLTw" id="3IIf9OA557F" role="37wK5m">
                             <ref role="3cqZAo" node="3IIf9OA4zN5" resolve="typeOfExpr" />
                           </node>

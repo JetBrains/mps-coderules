@@ -1636,6 +1636,13 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="query" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2BZXJecE0bF" role="1TKVEi">
+      <property role="IQ2ns" value="3026409000513569515" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="queryKind" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
     <node concept="1TJgyj" id="6OXbTD$dU7c" role="1TKVEi">
       <property role="IQ2ns" value="7871500063866331596" />
       <property role="20lmBu" value="aggregation" />

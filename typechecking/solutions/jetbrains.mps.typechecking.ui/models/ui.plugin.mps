@@ -102,6 +102,7 @@
     <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
+    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -30470,8 +30471,10 @@
     <node concept="2YIFZL" id="7WKNeR8SP2E" role="jymVt">
       <property role="TrG5h" value="launchQuery" />
       <node concept="37vLTG" id="7WKNeR9gygX" role="3clF46">
-        <property role="TrG5h" value="queryFqName" />
-        <node concept="17QB3L" id="7WKNeR9gy_k" role="1tU5fm" />
+        <property role="TrG5h" value="queryKind" />
+        <node concept="3uibUv" id="2Mi2iz0OnfF" role="1tU5fm">
+          <ref role="3uigEE" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+        </node>
       </node>
       <node concept="37vLTG" id="7WKNeR8SP2H" role="3clF46">
         <property role="TrG5h" value="editorComponent" />
@@ -30501,7 +30504,7 @@
             <node concept="1pGfFk" id="7WKNeR8SP2S" role="2ShVmc">
               <ref role="37wK5l" node="7WKNeR8SQxi" resolve="TypecheckingActions.LaunchQuery" />
               <node concept="37vLTw" id="7WKNeR9gzZ3" role="37wK5m">
-                <ref role="3cqZAo" node="7WKNeR9gygX" resolve="queryFqName" />
+                <ref role="3cqZAo" node="7WKNeR9gygX" resolve="queryKind" />
               </node>
               <node concept="37vLTw" id="7WKNeR8SP2U" role="37wK5m">
                 <ref role="3cqZAo" node="7WKNeR8SP2H" resolve="editorComponent" />
@@ -31525,8 +31528,10 @@
       <node concept="2tJIrI" id="7WKNeR8SQxh" role="jymVt" />
       <node concept="3clFbW" id="7WKNeR8SQxi" role="jymVt">
         <node concept="37vLTG" id="7WKNeR9ahrT" role="3clF46">
-          <property role="TrG5h" value="queryFqName" />
-          <node concept="17QB3L" id="7WKNeR9ahN6" role="1tU5fm" />
+          <property role="TrG5h" value="queryKind" />
+          <node concept="3uibUv" id="2Mi2iz0Onwr" role="1tU5fm">
+            <ref role="3uigEE" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+          </node>
         </node>
         <node concept="37vLTG" id="7WKNeR8SQxl" role="3clF46">
           <property role="TrG5h" value="editorComponent" />
@@ -31570,7 +31575,7 @@
                 </node>
               </node>
               <node concept="37vLTw" id="7WKNeR9fm7l" role="37vLTx">
-                <ref role="3cqZAo" node="7WKNeR9ahrT" resolve="queryFqName" />
+                <ref role="3cqZAo" node="7WKNeR9ahrT" resolve="queryKind" />
               </node>
             </node>
           </node>
@@ -31871,7 +31876,9 @@
       <node concept="312cEg" id="7WKNeR9fm7b" role="jymVt">
         <property role="TrG5h" value="queryFqName" />
         <node concept="3Tm6S6" id="7WKNeR9fm7c" role="1B3o_S" />
-        <node concept="17QB3L" id="7WKNeR9fm7e" role="1tU5fm" />
+        <node concept="3uibUv" id="2Mi2iz0OnNw" role="1tU5fm">
+          <ref role="3uigEE" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="6hqFpWnfjsp" role="jymVt" />
@@ -33741,30 +33748,15 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7WKNeR8RdQu" role="3cqZAp" />
-        <node concept="3SKdUt" id="6OXbTD_AKjZ" role="3cqZAp">
-          <node concept="3SKdUq" id="6OXbTD_AKk1" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME: refactor into an extension point to avoid having to hardcode fqname" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7WKNeR9hhkg" role="3cqZAp">
-          <node concept="3cpWsn" id="7WKNeR9hhkh" role="3cpWs9">
-            <property role="TrG5h" value="fqueryFqName" />
-            <node concept="17QB3L" id="7WKNeR9hhkf" role="1tU5fm" />
-            <node concept="Xl_RD" id="6d0cWF2SUMI" role="33vP2m">
-              <property role="Xl_RC" value="jetbrains.mps.baseLanguageExt.types.typecheck" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="6d0cWF2SWaM" role="3cqZAp" />
         <node concept="3clFbF" id="7WKNeR8RdQN" role="3cqZAp">
           <node concept="2OqwBi" id="7WKNeR8RdQO" role="3clFbG">
             <node concept="2OqwBi" id="7WKNeR8RdQP" role="2Oq$k0">
               <node concept="2YIFZM" id="7WKNeR8TaPY" role="2Oq$k0">
                 <ref role="37wK5l" node="7WKNeR8SP2E" resolve="launchQuery" />
                 <ref role="1Pybhc" node="6hqFpWnf9Mu" resolve="TypecheckingActions" />
-                <node concept="37vLTw" id="7WKNeR9hhkt" role="37wK5m">
-                  <ref role="3cqZAo" node="7WKNeR9hhkh" resolve="fqueryFqName" />
+                <node concept="10M0yZ" id="2Mi2iz0OoOv" role="37wK5m">
+                  <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
+                  <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
                 </node>
                 <node concept="2OqwBi" id="7WKNeR8TaPZ" role="37wK5m">
                   <node concept="2WthIp" id="7WKNeR8TaQ0" role="2Oq$k0" />
@@ -33869,22 +33861,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="3IIf9O_okkg" role="3cqZAp" />
-        <node concept="3SKdUt" id="6d0cWF2SWTd" role="3cqZAp">
-          <node concept="3SKdUq" id="6d0cWF2SWTe" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME: refactor into an extension point to avoid having to hardcode fqname" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6d0cWF2SWTf" role="3cqZAp">
-          <node concept="3cpWsn" id="6d0cWF2SWTg" role="3cpWs9">
-            <property role="TrG5h" value="fqueryFqName" />
-            <node concept="17QB3L" id="6d0cWF2SWTh" role="1tU5fm" />
-            <node concept="Xl_RD" id="6d0cWF2SWTi" role="33vP2m">
-              <property role="Xl_RC" value="jetbrains.mps.baseLanguageExt.types.typecheck" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="3IIf9O_okkE" role="3cqZAp" />
         <node concept="3clFbF" id="3IIf9O_okkF" role="3cqZAp">
           <node concept="2OqwBi" id="3IIf9O_okkG" role="3clFbG">
             <node concept="2OqwBi" id="3IIf9O_oo3r" role="2Oq$k0">
@@ -33892,8 +33868,9 @@
                 <node concept="2YIFZM" id="3IIf9O_okkI" role="2Oq$k0">
                   <ref role="37wK5l" node="7WKNeR8SP2E" resolve="launchQuery" />
                   <ref role="1Pybhc" node="6hqFpWnf9Mu" resolve="TypecheckingActions" />
-                  <node concept="37vLTw" id="6d0cWF2SY5R" role="37wK5m">
-                    <ref role="3cqZAo" node="6d0cWF2SWTg" resolve="fqueryFqName" />
+                  <node concept="10M0yZ" id="2Mi2iz0OpPz" role="37wK5m">
+                    <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
+                    <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
                   </node>
                   <node concept="2OqwBi" id="3IIf9O_okkK" role="37wK5m">
                     <node concept="2WthIp" id="3IIf9O_okkL" role="2Oq$k0" />

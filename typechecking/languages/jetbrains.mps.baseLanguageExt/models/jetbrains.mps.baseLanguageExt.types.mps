@@ -36,6 +36,7 @@
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.rule)" />
     <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.typesystem2.macro)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
+    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" implicit="true" />
   </imports>
   <registry>
@@ -127,6 +128,9 @@
       </concept>
       <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
         <child id="1164991057263" name="throwable" index="YScLw" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -622,6 +626,7 @@
       </concept>
       <concept id="7871500063866331595" name="jetbrains.mps.lang.typesystem2.structure.Query" flags="ng" index="92CTh">
         <child id="7871500063866331596" name="queryStage" index="92CTm" />
+        <child id="3026409000513569515" name="queryKind" index="2_lZgo" />
       </concept>
       <concept id="6928531011217292466" name="jetbrains.mps.lang.typesystem2.structure.IsfreeVariableConstraint" flags="ng" index="2aLmEc" />
       <concept id="6928531011217258898" name="jetbrains.mps.lang.typesystem2.structure.LogicVariableConstraint" flags="ng" index="2aLIYG">
@@ -20154,7 +20159,7 @@
     </node>
   </node>
   <node concept="92CTh" id="6OXbTD$fto2">
-    <property role="TrG5h" value="typecheck" />
+    <property role="TrG5h" value="Typecheck" />
     <node concept="2bWyPT" id="6OXbTD$ftqj" role="92CTm">
       <property role="TrG5h" value="check" />
       <node concept="3clFbS" id="6OXbTD$ftqk" role="fHCRw">
@@ -20193,9 +20198,13 @@
         </node>
       </node>
     </node>
+    <node concept="10M0yZ" id="2BZXJecEQOM" role="2_lZgo">
+      <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
+      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+    </node>
   </node>
   <node concept="92CTh" id="6OXbTD$ftrf">
-    <property role="TrG5h" value="subtypeOf" />
+    <property role="TrG5h" value="SubtypeOf" />
     <node concept="2bWyPT" id="6OXbTD$fttw" role="92CTm">
       <property role="TrG5h" value="subtypeOf" />
       <node concept="3clFbS" id="6OXbTD$fttx" role="fHCRw">
@@ -20265,6 +20274,10 @@
         </node>
         <node concept="3clFbH" id="6OXbTD$fttZ" role="3cqZAp" />
       </node>
+    </node>
+    <node concept="10M0yZ" id="2BZXJecEQQ5" role="2_lZgo">
+      <ref role="3cqZAo" to="1g4i:4t7Xo7inO_s" resolve="SUBTYPE" />
+      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
     </node>
   </node>
 </model>
