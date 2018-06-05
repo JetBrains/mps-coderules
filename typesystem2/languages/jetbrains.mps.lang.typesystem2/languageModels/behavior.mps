@@ -2726,6 +2726,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="6OXbTDz3CCF">
+    <property role="3GE5qa" value="query" />
     <ref role="13h7C2" to="wq2x:7P_FdVQ_S6B" resolve="QueryTemplate" />
     <node concept="13i0hz" id="6OXbTDz3CCQ" role="13h7CS">
       <property role="13i0iv" value="false" />

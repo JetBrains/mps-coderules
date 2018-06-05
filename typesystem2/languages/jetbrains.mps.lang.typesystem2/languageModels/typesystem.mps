@@ -1690,6 +1690,7 @@
   </node>
   <node concept="1YbPZF" id="2BZXJecE0cj">
     <property role="TrG5h" value="typeof_Query" />
+    <property role="3GE5qa" value="query" />
     <node concept="3clFbS" id="2BZXJecE0ck" role="18ibNy">
       <node concept="1ZobV4" id="2BZXJecE0Nr" role="3cqZAp">
         <property role="3wDh2S" value="true" />
