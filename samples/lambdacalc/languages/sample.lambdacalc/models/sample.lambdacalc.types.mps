@@ -24,6 +24,7 @@
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
+    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -53,6 +54,9 @@
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
@@ -285,12 +289,20 @@
         <child id="7670825977262353027" name="input" index="3eYTkm" />
         <child id="8908809128801952514" name="body" index="3unh6L" />
       </concept>
+      <concept id="7871500063866331595" name="jetbrains.mps.lang.typesystem2.structure.Query" flags="ng" index="92CTh">
+        <child id="7871500063866331596" name="queryStage" index="92CTm" />
+        <child id="3026409000513569515" name="queryKind" index="2_lZgo" />
+      </concept>
       <concept id="1980609059169917031" name="jetbrains.mps.lang.typesystem2.structure.CopyItem" flags="ng" index="9KH4l">
         <child id="1980609059169917850" name="origin" index="9KHbC" />
       </concept>
       <concept id="6928531011217292466" name="jetbrains.mps.lang.typesystem2.structure.IsfreeVariableConstraint" flags="ng" index="2aLmEc" />
       <concept id="6928531011217258898" name="jetbrains.mps.lang.typesystem2.structure.LogicVariableConstraint" flags="ng" index="2aLIYG">
         <child id="6928531011217290187" name="variable" index="2aLmnP" />
+      </concept>
+      <concept id="9035818301008609703" name="jetbrains.mps.lang.typesystem2.structure.QueryTemplate" flags="ng" index="2bWyPT">
+        <property id="7871500063866800656" name="stage" index="90Yma" />
+        <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="6958395084019752" name="jetbrains.mps.lang.typesystem2.structure.SNodeSetTypeOperation" flags="ng" index="2ra22R">
         <child id="6958395084020241" name="typeExpr" index="2ra2ae" />
@@ -306,6 +318,7 @@
       <concept id="8335224865066016388" name="jetbrains.mps.lang.typesystem2.structure.Rule" flags="ng" index="AVZhu" />
       <concept id="8335224865066015764" name="jetbrains.mps.lang.typesystem2.structure.Handler" flags="ng" index="AVZre">
         <property id="2316688792951788157" name="stage" index="3J8TDj" />
+        <reference id="3541122455446356437" name="extends" index="2YbDB9" />
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="7368070394767441299" name="rule" index="3ArX_J" />
       </concept>
@@ -318,6 +331,12 @@
       </concept>
       <concept id="7670825977262339471" name="jetbrains.mps.lang.typesystem2.structure.MacroInputDeclaration" flags="ng" index="3eYOCq">
         <child id="7670825977262355988" name="type" index="3eYSA1" />
+      </concept>
+      <concept id="3575255234174969639" name="jetbrains.mps.lang.typesystem2.structure.ConstraintRule" flags="ng" index="1nLNMm">
+        <child id="3575255234174969660" name="body" index="1nLNMd" />
+      </concept>
+      <concept id="3575255234174969664" name="jetbrains.mps.lang.typesystem2.structure.ConstraintRuleStatement" flags="ng" index="1nLNNL">
+        <child id="3575255234174969665" name="rule" index="1nLNNK" />
       </concept>
       <concept id="8908809128804390455" name="jetbrains.mps.lang.typesystem2.structure.MacroLogicalExpression" flags="ng" index="3txIi4" />
       <concept id="8908809128801951589" name="jetbrains.mps.lang.typesystem2.structure.MacroBody" flags="ng" index="3uniRm">
@@ -1679,27 +1698,7 @@
   <node concept="AVZre" id="4dPZ2m2i46N">
     <property role="TrG5h" value="recover" />
     <property role="3J8TDj" value="Stage2" />
-    <node concept="AVZhu" id="4dPZ2m2jAOh" role="3ArX_J">
-      <property role="TrG5h" value="recover_all" />
-      <node concept="3Aq9E8" id="4dPZ2m2jAYr" role="3otmyu">
-        <node concept="3I6sU6" id="4dPZ2m2jAYt" role="3Ip0Jz">
-          <node concept="3I6s7M" id="4dPZ2m2jAYv" role="3I6sU7">
-            <node concept="3Aqt3T" id="4dPZ2m2jAYz" role="3I6s78">
-              <ref role="3AqCNq" node="4dPZ2m2jAgt" resolve="recoverAll" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Aq93q" id="4nAM3Of9gIf" role="3orSU4">
-        <node concept="3I6sU6" id="4nAM3Of9gIg" role="3Ip0Jz">
-          <node concept="3I6s7M" id="4nAM3Of9gIk" role="3I6sU7">
-            <node concept="3Aqt3T" id="4nAM3Of9gIj" role="3I6s78">
-              <ref role="3AqCNq" node="4nAM3Of98gl" resolve="main" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
+    <ref role="2YbDB9" node="5dGkjBXlLmT" resolve="typeOf" />
     <node concept="AVZhu" id="4dPZ2m2jB8S" role="3ArX_J">
       <property role="TrG5h" value="expr_typeNode" />
       <node concept="3Aq9E8" id="4dPZ2m2jBn7" role="3otmyu">
@@ -2587,6 +2586,32 @@
           <property role="nspS5" value="false" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="92CTh" id="5Eb7bDWO4vA">
+    <property role="TrG5h" value="Typecheck" />
+    <node concept="2bWyPT" id="5Eb7bDWO9gE" role="92CTm">
+      <property role="TrG5h" value="recover" />
+      <property role="90Yma" value="Stage2" />
+      <node concept="3clFbS" id="5Eb7bDWO9gF" role="fHCRw">
+        <node concept="1nLNNL" id="5Eb7bDWO9jS" role="3cqZAp">
+          <node concept="1nLNMm" id="5Eb7bDWO9jT" role="1nLNNK">
+            <node concept="3Aq9E8" id="5Eb7bDWO9lC" role="1nLNMd">
+              <node concept="3I6sU6" id="5Eb7bDWO9lD" role="3Ip0Jz">
+                <node concept="3I6s7M" id="5Eb7bDWO9lH" role="3I6sU7">
+                  <node concept="3Aqt3T" id="5Eb7bDWO9lG" role="3I6s78">
+                    <ref role="3AqCNq" node="4dPZ2m2jAgt" resolve="recoverAll" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="10M0yZ" id="5Eb7bDWO7EB" role="2_lZgo">
+      <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
+      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
     </node>
   </node>
 </model>
