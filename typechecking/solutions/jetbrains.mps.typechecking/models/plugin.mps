@@ -3073,9 +3073,27 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="12QmIoyQS8L" role="3cqZAp">
+          <node concept="2OqwBi" id="12QmIoyQSer" role="3clFbG">
+            <node concept="37vLTw" id="12QmIoyQS8J" role="2Oq$k0">
+              <ref role="3cqZAo" node="7WKNeR8W0I5" resolve="repository" />
+            </node>
+            <node concept="liA8E" id="12QmIoyQSs9" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~SRepository.addRepositoryListener(org.jetbrains.mps.openapi.module.SRepositoryListener):void" resolve="addRepositoryListener" />
+              <node concept="2ShNRf" id="12QmIoyQStf" role="37wK5m">
+                <node concept="1pGfFk" id="12QmIoyQUz1" role="2ShVmc">
+                  <ref role="37wK5l" node="12QmIoyQPTu" resolve="CodeRulesManager.DisposeListener" />
+                  <node concept="37vLTw" id="12QmIoyQUBu" role="37wK5m">
+                    <ref role="3cqZAo" node="7WKNeR8W0I5" resolve="repository" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="7WKNeR8VTNh" role="jymVt" />
+    <node concept="2tJIrI" id="12QmIoyQXLS" role="jymVt" />
     <node concept="3clFb_" id="7WKNeR8VSa4" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <node concept="3cqZAl" id="7WKNeR8VSa6" role="3clF45" />
@@ -3130,6 +3148,94 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7WKNeR8VM1Z" role="jymVt" />
+    <node concept="312cEu" id="12QmIoyQPie" role="jymVt">
+      <property role="2bfB8j" value="false" />
+      <property role="TrG5h" value="DisposeListener" />
+      <node concept="3clFbW" id="12QmIoyQPTu" role="jymVt">
+        <node concept="37vLTG" id="12QmIoyQPVg" role="3clF46">
+          <property role="TrG5h" value="repository" />
+          <node concept="3uibUv" id="12QmIoyQQ2H" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="12QmIoyQPTw" role="3clF45" />
+        <node concept="3Tm1VV" id="12QmIoyQPTx" role="1B3o_S" />
+        <node concept="3clFbS" id="12QmIoyQPTy" role="3clF47">
+          <node concept="3clFbF" id="12QmIoyQQQg" role="3cqZAp">
+            <node concept="37vLTI" id="12QmIoyQQQi" role="3clFbG">
+              <node concept="2OqwBi" id="12QmIoyQQV6" role="37vLTJ">
+                <node concept="Xjq3P" id="12QmIoyQQX2" role="2Oq$k0" />
+                <node concept="2OwXpG" id="12QmIoyQQV9" role="2OqNvi">
+                  <ref role="2Oxat5" node="12QmIoyQQQc" resolve="repository" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="12QmIoyQQQm" role="37vLTx">
+                <ref role="3cqZAo" node="12QmIoyQPVg" resolve="repository" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="12QmIoyQUQ4" role="1B3o_S" />
+      <node concept="3uibUv" id="12QmIoyQPDM" role="1zkMxy">
+        <ref role="3uigEE" to="lui2:~SRepositoryListenerBase" resolve="SRepositoryListenerBase" />
+      </node>
+      <node concept="3clFb_" id="12QmIoyQPE0" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="moduleRemoved" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="12QmIoyQPE1" role="1B3o_S" />
+        <node concept="3cqZAl" id="12QmIoyQPE3" role="3clF45" />
+        <node concept="37vLTG" id="12QmIoyQPE4" role="3clF46">
+          <property role="TrG5h" value="module" />
+          <node concept="3uibUv" id="12QmIoyQPE5" role="1tU5fm">
+            <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+          </node>
+          <node concept="2AHcQZ" id="12QmIoyQPE6" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="12QmIoyQPE7" role="3clF47">
+          <node concept="3SKdUt" id="12QmIoyU_fU" role="3cqZAp">
+            <node concept="3SKdUq" id="12QmIoyU_fW" role="3SKWNk">
+              <property role="3SKdUp" value="make sure we don't keep stale classes" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="12QmIoyQR7e" role="3cqZAp">
+            <node concept="2YIFZM" id="12QmIoyQR8D" role="3clFbG">
+              <ref role="37wK5l" node="7WKNeR8VPWJ" resolve="dispose" />
+              <ref role="1Pybhc" node="7WKNeR8VLpH" resolve="CodeRulesManager" />
+              <node concept="37vLTw" id="12QmIoyQRau" role="37wK5m">
+                <ref role="3cqZAo" node="12QmIoyQQQc" resolve="repository" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="12QmIoyU$zz" role="3cqZAp">
+            <node concept="2OqwBi" id="12QmIoyU$JU" role="3clFbG">
+              <node concept="37vLTw" id="12QmIoyU$zx" role="2Oq$k0">
+                <ref role="3cqZAo" node="12QmIoyQQQc" resolve="repository" />
+              </node>
+              <node concept="liA8E" id="12QmIoyU_0b" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.removeRepositoryListener(org.jetbrains.mps.openapi.module.SRepositoryListener):void" resolve="removeRepositoryListener" />
+                <node concept="Xjq3P" id="12QmIoyU_3M" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="12QmIoyQPE8" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="312cEg" id="12QmIoyQQQc" role="jymVt">
+        <property role="TrG5h" value="repository" />
+        <node concept="3Tm6S6" id="12QmIoyQQQd" role="1B3o_S" />
+        <node concept="3uibUv" id="12QmIoyQQQf" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="12QmIoyQVMn" role="jymVt" />
     <node concept="312cEg" id="7WKNeR8Wgb9" role="jymVt">
       <property role="TrG5h" value="sessionCache" />
       <node concept="3Tm6S6" id="7WKNeR8Wgba" role="1B3o_S" />
