@@ -635,7 +635,6 @@
       </concept>
       <concept id="6928531011218148071" name="jetbrains.mps.lang.typesystem2.structure.IsboundVariableConstraint" flags="ng" index="2aM9Np" />
       <concept id="9035818301008609703" name="jetbrains.mps.lang.typesystem2.structure.QueryTemplate" flags="ng" index="2bWyPT">
-        <property id="7871500063866800656" name="stage" index="90Yma" />
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="1797788903610635035" name="jetbrains.mps.lang.typesystem2.structure.BoundParameterBlock" flags="ng" index="2caHhw" />
@@ -661,7 +660,6 @@
         <child id="6678105047444830024" name="iterateParameterBlock" index="39759w" />
       </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.typesystem2.structure.Handler" flags="ng" index="AVZre">
-        <property id="2316688792951788157" name="stage" index="3J8TDj" />
         <reference id="3541122455446356437" name="extends" index="2YbDB9" />
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="7368070394767441299" name="rule" index="3ArX_J" />
@@ -14019,7 +14017,6 @@
   </node>
   <node concept="AVZre" id="6Qzc0KyJGzD">
     <property role="TrG5h" value="Recover" />
-    <property role="3J8TDj" value="Stage2" />
     <ref role="2YbDB9" node="34$A1Mf51rY" resolve="TypeOf" />
     <node concept="AVZhu" id="20Zoq4kTOCq" role="3ArX_J">
       <property role="TrG5h" value="typeOf_expression" />
@@ -20179,23 +20176,8 @@
                     <ref role="3AqCNq" node="34$A1MfabR$" resolve="checkAll" />
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="6OXbTD$ftqD" role="3cqZAp" />
-      </node>
-    </node>
-    <node concept="2bWyPT" id="6OXbTD_dqTU" role="92CTm">
-      <property role="TrG5h" value="recover" />
-      <property role="90Yma" value="Stage2" />
-      <node concept="3clFbS" id="6OXbTD_dqTV" role="fHCRw">
-        <node concept="1nLNNL" id="6OXbTD_dqUG" role="3cqZAp">
-          <node concept="1nLNMm" id="6OXbTD_dqUH" role="1nLNNK">
-            <node concept="3Aq9E8" id="6OXbTD_dqVG" role="1nLNMd">
-              <node concept="3I6sU6" id="6OXbTD_dqVH" role="3Ip0Jz">
-                <node concept="3I6s7M" id="6OXbTD_dqVL" role="3I6sU7">
-                  <node concept="3Aqt3T" id="6OXbTD_$x$y" role="3I6s78">
+                <node concept="3I6s7M" id="12QmIoyIWn9" role="3I6sU7">
+                  <node concept="3Aqt3T" id="12QmIoyIWn7" role="3I6s78">
                     <ref role="3AqCNq" node="20Zoq4kTOFb" resolve="recoverAll" />
                   </node>
                 </node>
@@ -20203,6 +20185,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="6OXbTD$ftqD" role="3cqZAp" />
       </node>
     </node>
     <node concept="10M0yZ" id="2BZXJecEQOM" role="2_lZgo">
