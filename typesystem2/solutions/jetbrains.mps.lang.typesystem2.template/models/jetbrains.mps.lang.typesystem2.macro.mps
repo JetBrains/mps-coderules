@@ -144,6 +144,9 @@
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
+      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
+        <child id="1151689745422" name="elementType" index="A3Ik2" />
+      </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
       </concept>
@@ -669,6 +672,20 @@
       <node concept="3cqZAl" id="36tQV5BDE0S" role="3clF45" />
       <node concept="3Tm1VV" id="36tQV5BDE0T" role="1B3o_S" />
       <node concept="3clFbS" id="36tQV5BDE0U" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="12QmIo$ympP" role="jymVt" />
+    <node concept="3clFb_" id="12QmIo$ylEC" role="jymVt">
+      <property role="TrG5h" value="requireAll" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="12QmIo$ylED" role="3clF46">
+        <property role="TrG5h" value="nodes" />
+        <node concept="A3Dl8" id="12QmIo$yo2v" role="1tU5fm">
+          <node concept="3Tqbb2" id="12QmIo$yo2w" role="A3Ik2" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="12QmIo$ylEF" role="3clF45" />
+      <node concept="3Tm1VV" id="12QmIo$ylEG" role="1B3o_S" />
+      <node concept="3clFbS" id="12QmIo$ylEH" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="36tQV5BDCxt" role="jymVt" />
     <node concept="3clFb_" id="36tQV5B3WAl" role="jymVt">

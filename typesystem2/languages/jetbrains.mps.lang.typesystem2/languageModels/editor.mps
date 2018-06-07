@@ -6934,5 +6934,22 @@
       <node concept="l2Vlx" id="2BZXJecNhVZ" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="12QmIo$ySTG">
+    <property role="3GE5qa" value="rule.code" />
+    <ref role="1XX52x" to="wq2x:12QmIo$yS$B" resolve="RequireAllStatement" />
+    <node concept="3EZMnI" id="12QmIo$ySTI" role="2wV5jI">
+      <node concept="PMmxH" id="12QmIo$ySTJ" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F1sOY" id="12QmIo$ySTK" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:12QmIo$ySSU" resolve="nodes" />
+      </node>
+      <node concept="3F0ifn" id="12QmIo$ySTL" role="3EZMnx">
+        <property role="3F0ifm" value=";" />
+        <ref role="1k5W1q" to="tpen:hFDgi_W" resolve="Semicolon" />
+      </node>
+      <node concept="l2Vlx" id="12QmIo$ySTM" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

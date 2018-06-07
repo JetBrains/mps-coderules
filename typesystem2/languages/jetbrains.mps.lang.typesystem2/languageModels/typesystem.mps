@@ -250,6 +250,9 @@
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
       <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
+      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
+        <child id="1151689745422" name="elementType" index="A3Ik2" />
+      </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
@@ -1718,6 +1721,38 @@
     <node concept="1YaCAy" id="2BZXJecE0cm" role="1YuTPh">
       <property role="TrG5h" value="query" />
       <ref role="1YaFvo" to="wq2x:6OXbTD$dU7b" resolve="Query" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="12QmIo$ySV1">
+    <property role="TrG5h" value="typeof_RequireAllStatement" />
+    <property role="3GE5qa" value="rule.code" />
+    <node concept="3clFbS" id="12QmIo$ySV2" role="18ibNy">
+      <node concept="1ZobV4" id="12QmIo$ySYw" role="3cqZAp">
+        <property role="3wDh2S" value="false" />
+        <node concept="mw_s8" id="12QmIo$ySYx" role="1ZfhK$">
+          <node concept="1Z2H0r" id="12QmIo$ySYy" role="mwGJk">
+            <node concept="2OqwBi" id="12QmIo$ySYz" role="1Z2MuG">
+              <node concept="1YBJjd" id="12QmIo$yT2c" role="2Oq$k0">
+                <ref role="1YBMHb" node="12QmIo$ySV4" resolve="ras" />
+              </node>
+              <node concept="3TrEf2" id="12QmIo$$7m2" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:12QmIo$ySSU" resolve="nodes" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="12QmIo$ySYA" role="1ZfhKB">
+          <node concept="2c44tf" id="12QmIo$ySYB" role="mwGJk">
+            <node concept="A3Dl8" id="12QmIo$yT5l" role="2c44tc">
+              <node concept="3Tqbb2" id="12QmIo$yT6y" role="A3Ik2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="12QmIo$ySV4" role="1YuTPh">
+      <property role="TrG5h" value="ras" />
+      <ref role="1YaFvo" to="wq2x:12QmIo$yS$B" resolve="RequireAllStatement" />
     </node>
   </node>
 </model>

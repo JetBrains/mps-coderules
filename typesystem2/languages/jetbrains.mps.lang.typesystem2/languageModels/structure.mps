@@ -1698,5 +1698,19 @@
       <ref role="20lvS9" node="2BZXJecNbEw" resolve="QueryParameterDeclaration" />
     </node>
   </node>
+  <node concept="1TIwiD" id="12QmIo$yS$B">
+    <property role="EcuMT" value="1204249894870288679" />
+    <property role="3GE5qa" value="rule.code" />
+    <property role="TrG5h" value="RequireAllStatement" />
+    <property role="34LRSv" value="requireAll" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="1TJgyj" id="12QmIo$ySSU" role="1TKVEi">
+      <property role="IQ2ns" value="1204249894870289978" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="nodes" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
 </model>
 
