@@ -100,6 +100,7 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="7368070394767441299" />
       <ref role="20lvS9" node="4EfgX2ET3GH" resolve="AbstractRule" />
+      <node concept="asaX9" id="12QmIo_hXAc" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="1HWyn8jEsaE" role="1TKVEi">
       <property role="IQ2ns" value="1980609059185345194" />
@@ -154,6 +155,7 @@
     <node concept="PrWs8" id="5bC6UNl$TEw" role="PzmwI">
       <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="ICanBeCommented" />
     </node>
+    <node concept="asaX9" id="12QmIo_hXAi" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3d3">
     <property role="TrG5h" value="RuleComponent" />
@@ -590,6 +592,7 @@
     <node concept="PrWs8" id="7IysFeBd5uE" role="PzmwI">
       <ref role="PrY4T" node="7IysFeBd3kI" resolve="ApplicationSessionParticipant" />
     </node>
+    <node concept="asaX9" id="12QmIo_hXAe" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="6infEALDvmn">
     <property role="3GE5qa" value="constraint" />
@@ -789,6 +792,7 @@
     <property role="34LRSv" value="fragment" />
     <property role="EcuMT" value="7509376976633057349" />
     <ref role="1TJDcQ" node="4EfgX2ET3GH" resolve="AbstractRule" />
+    <node concept="asaX9" id="12QmIo_hXAg" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="PB1R3Y7Ed7">
     <property role="3GE5qa" value="constraint.variable" />
