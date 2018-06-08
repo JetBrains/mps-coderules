@@ -997,6 +997,12 @@
             <ref role="3bR37D" node="JOGAOsFCCM" resolve="jetbrains.mps.dataform" />
           </node>
         </node>
+        <node concept="1SiIV0" id="4uSBgQVvlaV" role="3bR37C">
+          <node concept="3bR9La" id="4uSBgQVvlaW" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7BVjoXzUxee" role="2G$12L">
         <property role="BnDLt" value="true" />
