@@ -166,7 +166,6 @@
         <child id="6691972578451986151" name="input" index="2t_VXX" />
       </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.typesystem2.structure.Handler" flags="ng" index="AVZre">
-        <property id="2316688792951788157" name="stage" index="3J8TDj" />
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
@@ -706,7 +705,6 @@
     </node>
   </node>
   <node concept="AVZre" id="7lt0LtPOZVe">
-    <property role="3J8TDj" value="recover" />
     <property role="TrG5h" value="Recover" />
     <node concept="3AqmO8" id="7lt0LtPOZVl" role="8PkJo">
       <property role="TrG5h" value="recover" />
