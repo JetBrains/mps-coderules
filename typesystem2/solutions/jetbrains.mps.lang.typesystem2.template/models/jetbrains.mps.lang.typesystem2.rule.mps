@@ -1765,7 +1765,7 @@
       <node concept="37vLTG" id="2RRx4MZ6CCl" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="2RRx4MZ6CCm" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
+          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
         </node>
       </node>
       <node concept="3Tm1VV" id="2RRx4MZ6CCn" role="1B3o_S" />
@@ -1917,7 +1917,7 @@
       <node concept="37vLTG" id="36tQV5Auubn" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="36tQV5Auubo" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
+          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
         </node>
       </node>
       <node concept="3Tm1VV" id="36tQV5Aus0z" role="1B3o_S" />
@@ -2047,7 +2047,7 @@
       <node concept="37vLTG" id="mJ_D14woVZ" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="mJ_D14woW0" role="1tU5fm">
-          <ref role="3uigEE" to="psr6:18kNIl1vDPZ" resolve="AbstractMacroProcessing" />
+          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
         </node>
       </node>
       <node concept="3Tm1VV" id="mJ_D14woW1" role="1B3o_S" />
