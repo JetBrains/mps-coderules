@@ -13144,7 +13144,7 @@
         <ref role="2rW$FS" node="36tQV5Ap$gK" resolve="ruletemplate_token_class" />
       </node>
       <node concept="3uibUv" id="36tQV5AoEXd" role="1zkMxy">
-        <ref role="3uigEE" to="i348:2RRx4MZ6I3W" resolve="BaseRuleTemplateApplicationToken" />
+        <ref role="3uigEE" to="i348:2RRx4MZ6I3W" resolve="BaseRuleTemplateToken" />
       </node>
     </node>
     <node concept="2tJIrI" id="36tQV5AoEXD" role="jymVt" />
