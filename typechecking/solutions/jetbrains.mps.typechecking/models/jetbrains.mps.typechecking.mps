@@ -17,7 +17,9 @@
     <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.typechecking.plugin)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" />
     <import index="unkn" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:io.reactivex(jetbrains.mps.typechecking/)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.rule)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
+    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
+    <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -56,6 +58,7 @@
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -82,6 +85,7 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -1384,6 +1388,79 @@
       <property role="TrG5h" value="name" />
       <node concept="3Tm6S6" id="4t7Xo7inNUY" role="1B3o_S" />
       <node concept="17QB3L" id="4t7Xo7inNV0" role="1tU5fm" />
+    </node>
+  </node>
+  <node concept="312cEu" id="7lt0LtQ_OIS">
+    <property role="TrG5h" value="TypecheckingSessionSolver" />
+    <node concept="2tJIrI" id="oI9Yrbvo_" role="jymVt" />
+    <node concept="3clFbW" id="oI9Yrbvrt" role="jymVt">
+      <node concept="3cqZAl" id="oI9Yrbvrv" role="3clF45" />
+      <node concept="3Tm1VV" id="oI9Yrbvrw" role="1B3o_S" />
+      <node concept="3clFbS" id="oI9Yrbvrx" role="3clF47">
+        <node concept="XkiVB" id="oI9Yrbvx2" role="3cqZAp">
+          <ref role="37wK5l" to="cxk7:23c4kVtavpK" resolve="DefaultSessionSolver" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7lt0LtQ_OLY" role="jymVt" />
+    <node concept="3clFb_" id="7lt0LtQ_SZU" role="jymVt">
+      <property role="TrG5h" value="assignType" />
+      <node concept="37vLTG" id="7lt0LtQ_T0C" role="3clF46">
+        <property role="TrG5h" value="target" />
+        <node concept="3Tqbb2" id="7lt0LtQ_T26" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="7lt0LtQ_T29" role="3clF46">
+        <property role="TrG5h" value="nodeType" />
+        <node concept="3Tqbb2" id="7lt0LtQ_T3R" role="1tU5fm" />
+      </node>
+      <node concept="10P_77" id="oI9YrbUH2" role="3clF45" />
+      <node concept="3Tm1VV" id="7lt0LtQ_SZX" role="1B3o_S" />
+      <node concept="3clFbS" id="7lt0LtQ_SZY" role="3clF47">
+        <node concept="3clFbF" id="oI9YrbVyx" role="3cqZAp">
+          <node concept="3clFbT" id="oI9YrbVyw" role="3clFbG">
+            <property role="3clFbU" value="false" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="oI9YrIZQO" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7lt0LtQ_OM3" role="jymVt" />
+    <node concept="3clFb_" id="oI9Ys2yFM" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="report" />
+      <node concept="37vLTG" id="oI9Ys2yFN" role="3clF46">
+        <property role="TrG5h" value="target" />
+        <node concept="3Tqbb2" id="oI9Ys2yFO" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="oI9Ys2yFP" role="3clF46">
+        <property role="TrG5h" value="kind" />
+        <node concept="3uibUv" id="oI9Ys2yFQ" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="oI9Ys2yFR" role="3clF46">
+        <property role="TrG5h" value="text" />
+        <node concept="17QB3L" id="oI9Ys2yFS" role="1tU5fm" />
+      </node>
+      <node concept="10P_77" id="oI9Ys2yFT" role="3clF45" />
+      <node concept="3Tm1VV" id="oI9Ys2yFU" role="1B3o_S" />
+      <node concept="3clFbS" id="oI9Ys2yFX" role="3clF47">
+        <node concept="3clFbF" id="oI9Ys2yG0" role="3cqZAp">
+          <node concept="3clFbT" id="oI9Ys2yFZ" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="oI9Ys2yFY" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7lt0LtQ_OIT" role="1B3o_S" />
+    <node concept="3uibUv" id="7lt0LtQ_OLT" role="1zkMxy">
+      <ref role="3uigEE" to="cxk7:3F6vMxqo13Y" resolve="DefaultSessionSolver" />
+    </node>
+    <node concept="3uibUv" id="oI9YrIZn4" role="EKbjA">
+      <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
     </node>
   </node>
 </model>

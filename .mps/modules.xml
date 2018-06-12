@@ -2,12 +2,16 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/jetbrains.mps.lang.coderules.mpl" folder="coderules" />
+      <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/runtime/jetbrains.mps.lang.coderules.runtime.msd" folder="coderules" />
+      <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.coderules.template/jetbrains.mps.lang.coderules.template.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.dataform/jetbrains.mps.dataform.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/solutions/jetbrains.mps.logic.test/jetbrains.mps.logic.test.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/typechecking/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="typechecking.baseLanguageExt" />
+      <modulePath path="$PROJECT_DIR$/typechecking/languages/jetbrains.mps.lang.smodel.types/jetbrains.mps.lang.smodel.types.mpl" folder="typechecking" />
       <modulePath path="$PROJECT_DIR$/typechecking/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" folder="typechecking.annotation" />
       <modulePath path="$PROJECT_DIR$/typechecking/languages/jetbrains.mps.typechecking.testlang/jetbrains.mps.typechecking.testlang.mpl" folder="typechecking.test" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="typechecking.baseLanguageExt" />
@@ -15,14 +19,10 @@
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.typechecking.reporting/jetbrains.mps.typechecking.reporting.msd" folder="typechecking" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.typechecking.sample.test/jetbrains.mps.typechecking.sample.test.msd" folder="typechecking.test" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.typechecking.sample/jetbrains.mps.typechecking.sample.msd" folder="typechecking.test" />
-      <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.typechecking.test/jetbrains.mps.lang.typechecking.test.msd" folder="typechecking.test" />
+      <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.typechecking.test/jetbrains.mps.typechecking.test.msd" folder="typechecking.test" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.typechecking.testlang.sandbox/jetbrains.mps.typechecking.testlang.sandbox.msd" folder="typechecking.test" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.typechecking.ui/jetbrains.mps.typechecking.ui.msd" folder="typechecking.ui" />
       <modulePath path="$PROJECT_DIR$/typechecking/solutions/jetbrains.mps.typechecking/jetbrains.mps.typechecking.msd" folder="typechecking.service" />
-      <modulePath path="$PROJECT_DIR$/typesystem2/languages/jetbrains.mps.lang.smodel.types/jetbrains.mps.lang.smodel.types.mpl" folder="typesystem2" />
-      <modulePath path="$PROJECT_DIR$/typesystem2/languages/jetbrains.mps.lang.typesystem2/jetbrains.mps.lang.typesystem2.mpl" folder="typesystem2" />
-      <modulePath path="$PROJECT_DIR$/typesystem2/languages/jetbrains.mps.lang.typesystem2/runtime/jetbrains.mps.lang.typesystem2.runtime.msd" folder="typesystem2" />
-      <modulePath path="$PROJECT_DIR$/typesystem2/solutions/jetbrains.mps.lang.typesystem2.template/jetbrains.mps.lang.typesystem2.template.msd" folder="typesystem2" />
     </projectModules>
   </component>
 </project>

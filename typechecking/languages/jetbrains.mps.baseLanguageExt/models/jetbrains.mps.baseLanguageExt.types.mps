@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2" version="14" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="14" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
@@ -30,11 +30,11 @@
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
-    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.typesystem2.evaluation)" />
-    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.typesystem2.program)" />
+    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.coderules.eval)" />
+    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.coderules.program)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.typesystem2.rule)" />
-    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.typesystem2.macro)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
+    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" implicit="true" />
@@ -608,189 +608,189 @@
     <language id="cba985fe-1e96-4f16-9f8d-b07434405d4f" name="jetbrains.mps.lang.smodel.types">
       <concept id="7345257067587627589" name="jetbrains.mps.lang.smodel.types.structure.SNodeTypeOperation" flags="ng" index="2W$R8B" />
     </language>
-    <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.typesystem2">
-      <concept id="8456919074560454386" name="jetbrains.mps.lang.typesystem2.structure.ParameterContainer" flags="ng" index="0eUR_">
+    <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
+      <concept id="8456919074560454386" name="jetbrains.mps.lang.coderules.structure.ParameterContainer" flags="ng" index="0eUR_">
         <child id="8456919074560454898" name="parameter" index="0eVf_" />
       </concept>
-      <concept id="1618328391714763069" name="jetbrains.mps.lang.typesystem2.structure.MacroTable" flags="ng" index="0oKg$">
+      <concept id="1618328391714763069" name="jetbrains.mps.lang.coderules.structure.MacroTable" flags="ng" index="0oKg$">
         <child id="1618328391714763070" name="macro" index="0oKgB" />
       </concept>
-      <concept id="1618328391714763491" name="jetbrains.mps.lang.typesystem2.structure.MacroDeclaration" flags="ng" index="0oKvU">
+      <concept id="1618328391714763491" name="jetbrains.mps.lang.coderules.structure.MacroDeclaration" flags="ng" index="0oKvU">
         <child id="7670825977262353027" name="input" index="3eYTkm" />
         <child id="8908809128802132746" name="parameter" index="3tC56T" />
         <child id="8908809128801952514" name="body" index="3unh6L" />
       </concept>
-      <concept id="8456919074574710634" name="jetbrains.mps.lang.typesystem2.structure.ConstantExpressionItem" flags="ng" index="37jhX">
+      <concept id="8456919074574710634" name="jetbrains.mps.lang.coderules.structure.ConstantExpressionItem" flags="ng" index="37jhX">
         <child id="8456919074574710741" name="code" index="37jj2" />
       </concept>
-      <concept id="7871500063866331595" name="jetbrains.mps.lang.typesystem2.structure.Query" flags="ng" index="92CTh">
+      <concept id="7871500063866331595" name="jetbrains.mps.lang.coderules.structure.Query" flags="ng" index="92CTh">
         <child id="7871500063866331596" name="queryStage" index="92CTm" />
         <child id="3026409000515988658" name="parameter" index="2_cLD1" />
         <child id="3026409000513569515" name="queryKind" index="2_lZgo" />
       </concept>
-      <concept id="6928531011217292466" name="jetbrains.mps.lang.typesystem2.structure.IsfreeVariableConstraint" flags="ng" index="2aLmEc" />
-      <concept id="6928531011217258898" name="jetbrains.mps.lang.typesystem2.structure.LogicVariableConstraint" flags="ng" index="2aLIYG">
+      <concept id="6928531011217292466" name="jetbrains.mps.lang.coderules.structure.IsfreeVariableConstraint" flags="ng" index="2aLmEc" />
+      <concept id="6928531011217258898" name="jetbrains.mps.lang.coderules.structure.LogicVariableConstraint" flags="ng" index="2aLIYG">
         <child id="6928531011217290187" name="variable" index="2aLmnP" />
       </concept>
-      <concept id="6928531011218148071" name="jetbrains.mps.lang.typesystem2.structure.IsboundVariableConstraint" flags="ng" index="2aM9Np" />
-      <concept id="9035818301008609703" name="jetbrains.mps.lang.typesystem2.structure.QueryTemplate" flags="ng" index="2bWyPT">
+      <concept id="6928531011218148071" name="jetbrains.mps.lang.coderules.structure.IsboundVariableConstraint" flags="ng" index="2aM9Np" />
+      <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
-      <concept id="4992889260816483106" name="jetbrains.mps.lang.typesystem2.structure.Condition" flags="ng" index="cBwPQ" />
-      <concept id="6958395084019752" name="jetbrains.mps.lang.typesystem2.structure.SNodeSetTypeOperation" flags="ng" index="2ra22R">
+      <concept id="4992889260816483106" name="jetbrains.mps.lang.coderules.structure.Condition" flags="ng" index="cBwPQ" />
+      <concept id="6958395084019752" name="jetbrains.mps.lang.coderules.structure.SNodeSetTypeOperation" flags="ng" index="2ra22R">
         <child id="6958395084020241" name="typeExpr" index="2ra2ae" />
       </concept>
-      <concept id="6691972578451976398" name="jetbrains.mps.lang.typesystem2.structure.RuleInputSpecification" flags="ng" index="2t___k">
+      <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
       </concept>
-      <concept id="3026409000516001347" name="jetbrains.mps.lang.typesystem2.structure.QueryParameterReference" flags="ng" index="2_cIyK">
+      <concept id="3026409000516001347" name="jetbrains.mps.lang.coderules.structure.QueryParameterReference" flags="ng" index="2_cIyK">
         <reference id="3026409000516001528" name="declaration" index="2_cIwb" />
       </concept>
-      <concept id="3026409000515975840" name="jetbrains.mps.lang.typesystem2.structure.QueryParameterDeclaration" flags="ng" index="2_cOLj">
+      <concept id="3026409000515975840" name="jetbrains.mps.lang.coderules.structure.QueryParameterDeclaration" flags="ng" index="2_cOLj">
         <child id="3026409000516797621" name="type" index="2_9F96" />
       </concept>
-      <concept id="8335224865066015764" name="jetbrains.mps.lang.typesystem2.structure.Handler" flags="ng" index="AVZre">
+      <concept id="8335224865066015764" name="jetbrains.mps.lang.coderules.structure.Handler" flags="ng" index="AVZre">
         <reference id="3541122455446356437" name="extends" index="2YbDB9" />
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
-      <concept id="5524459797186715156" name="jetbrains.mps.lang.typesystem2.structure.CallMacroPseudoConstraint" flags="ng" index="B_ONY">
+      <concept id="5524459797186715156" name="jetbrains.mps.lang.coderules.structure.CallMacroPseudoConstraint" flags="ng" index="B_ONY">
         <reference id="6086839168131376658" name="declaration" index="17QRF" />
         <child id="6086839168131714100" name="argument" index="150vd" />
         <child id="5524459797186715209" name="logical" index="B_OMz" />
       </concept>
-      <concept id="6856711987714624232" name="jetbrains.mps.lang.typesystem2.structure.ExpressionItem" flags="ng" index="HKQnh">
+      <concept id="6856711987714624232" name="jetbrains.mps.lang.coderules.structure.ExpressionItem" flags="ng" index="HKQnh">
         <child id="6856711987714624233" name="code" index="HKQng" />
       </concept>
-      <concept id="1204249894870288679" name="jetbrains.mps.lang.typesystem2.structure.RequireAllStatement" flags="ng" index="Oftf1">
+      <concept id="1204249894870288679" name="jetbrains.mps.lang.coderules.structure.RequireAllStatement" flags="ng" index="Oftf1">
         <child id="1204249894870289978" name="nodes" index="Oftjs" />
       </concept>
-      <concept id="7670825977262541651" name="jetbrains.mps.lang.typesystem2.structure.MacroInputReference" flags="ng" index="3eTFj6">
+      <concept id="7670825977262541651" name="jetbrains.mps.lang.coderules.structure.MacroInputReference" flags="ng" index="3eTFj6">
         <reference id="7670825977262541652" name="declaration" index="3eTFj1" />
       </concept>
-      <concept id="7670825977262339471" name="jetbrains.mps.lang.typesystem2.structure.MacroInputDeclaration" flags="ng" index="3eYOCq">
+      <concept id="7670825977262339471" name="jetbrains.mps.lang.coderules.structure.MacroInputDeclaration" flags="ng" index="3eYOCq">
         <child id="7670825977262355988" name="type" index="3eYSA1" />
       </concept>
-      <concept id="1302893676238672057" name="jetbrains.mps.lang.typesystem2.structure.ExpandPseudoConstraint" flags="ng" index="1imXTs">
+      <concept id="1302893676238672057" name="jetbrains.mps.lang.coderules.structure.ExpandPseudoConstraint" flags="ng" index="1imXTs">
         <child id="1302893676238674275" name="logical" index="1imXu6" />
         <child id="1302893676238672106" name="origin" index="1imXSf" />
       </concept>
-      <concept id="7248331023826941335" name="jetbrains.mps.lang.typesystem2.structure.AssertExpressionConstraint" flags="ng" index="3lcGGY" />
-      <concept id="3575255234196628445" name="jetbrains.mps.lang.typesystem2.structure.RequireStatement" flags="ng" index="1mebxG">
+      <concept id="7248331023826941335" name="jetbrains.mps.lang.coderules.structure.AssertExpressionConstraint" flags="ng" index="3lcGGY" />
+      <concept id="3575255234196628445" name="jetbrains.mps.lang.coderules.structure.RequireStatement" flags="ng" index="1mebxG">
         <child id="3575255234196628696" name="node" index="1mebXD" />
       </concept>
-      <concept id="3575255234174969639" name="jetbrains.mps.lang.typesystem2.structure.ConstraintRule" flags="ng" index="1nLNMm">
+      <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="8456919074565751439" name="parameter" index="0UC6o" />
         <child id="3575255234174969659" name="guard" index="1nLNMa" />
         <child id="3575255234174969658" name="head" index="1nLNMb" />
         <child id="3575255234174969660" name="body" index="1nLNMd" />
       </concept>
-      <concept id="3575255234174969615" name="jetbrains.mps.lang.typesystem2.structure.RuleTemplate" flags="ng" index="1nLNMY">
+      <concept id="3575255234174969615" name="jetbrains.mps.lang.coderules.structure.RuleTemplate" flags="ng" index="1nLNMY">
         <child id="3575255234175001641" name="condition" index="1nLFYo" />
         <child id="3575255234174969633" name="input" index="1nLNMg" />
         <child id="3575255234174969628" name="code" index="1nLNMH" />
       </concept>
-      <concept id="3575255234174969664" name="jetbrains.mps.lang.typesystem2.structure.ConstraintRuleStatement" flags="ng" index="1nLNNL">
+      <concept id="3575255234174969664" name="jetbrains.mps.lang.coderules.structure.ConstraintRuleStatement" flags="ng" index="1nLNNL">
         <child id="3575255234174969665" name="rule" index="1nLNNK" />
       </concept>
-      <concept id="8908809128804390455" name="jetbrains.mps.lang.typesystem2.structure.MacroLogicalExpression" flags="ng" index="3txIi4" />
-      <concept id="8908809128802132672" name="jetbrains.mps.lang.typesystem2.structure.MacroParameterDeclaration" flags="ng" index="3tC51N">
+      <concept id="8908809128804390455" name="jetbrains.mps.lang.coderules.structure.MacroLogicalExpression" flags="ng" index="3txIi4" />
+      <concept id="8908809128802132672" name="jetbrains.mps.lang.coderules.structure.MacroParameterDeclaration" flags="ng" index="3tC51N">
         <child id="8908809128802132718" name="type" index="3tC51t" />
         <child id="8908809128803441142" name="init" index="3tH6H5" />
       </concept>
-      <concept id="8908809128802381130" name="jetbrains.mps.lang.typesystem2.structure.MacroParameterReference" flags="ng" index="3tDTZT">
+      <concept id="8908809128802381130" name="jetbrains.mps.lang.coderules.structure.MacroParameterReference" flags="ng" index="3tDTZT">
         <reference id="8908809128802381395" name="parameter" index="3tDTNw" />
       </concept>
-      <concept id="8908809128803504920" name="jetbrains.mps.lang.typesystem2.structure.InitBlock" flags="ng" index="3tHm6F" />
-      <concept id="8908809128801951589" name="jetbrains.mps.lang.typesystem2.structure.MacroBody" flags="ng" index="3uniRm">
+      <concept id="8908809128803504920" name="jetbrains.mps.lang.coderules.structure.InitBlock" flags="ng" index="3tHm6F" />
+      <concept id="8908809128801951589" name="jetbrains.mps.lang.coderules.structure.MacroBody" flags="ng" index="3uniRm">
         <child id="8908809128801951594" name="parameter" index="3uniRp" />
         <child id="8908809128801951592" name="code" index="3uniRr" />
       </concept>
-      <concept id="8908809128801951597" name="jetbrains.mps.lang.typesystem2.structure.MacroBodyLogicalDeclaration" flags="ng" index="3uniRu" />
-      <concept id="5372587443968979218" name="jetbrains.mps.lang.typesystem2.structure.ExpressionConstraint" flags="ng" index="3wWvb2">
+      <concept id="8908809128801951597" name="jetbrains.mps.lang.coderules.structure.MacroBodyLogicalDeclaration" flags="ng" index="3uniRu" />
+      <concept id="5372587443968979218" name="jetbrains.mps.lang.coderules.structure.ExpressionConstraint" flags="ng" index="3wWvb2">
         <child id="5372587443968983820" name="expression" index="3wWo3s" />
       </concept>
-      <concept id="1878265754076919072" name="jetbrains.mps.lang.typesystem2.structure.Comment" flags="ng" index="1zAsnw">
+      <concept id="1878265754076919072" name="jetbrains.mps.lang.coderules.structure.Comment" flags="ng" index="1zAsnw">
         <child id="5974055334837370567" name="part" index="27qylF" />
       </concept>
-      <concept id="1878265754077060950" name="jetbrains.mps.lang.typesystem2.structure.ConstraintParameterDeclaration" flags="ng" index="1zAUYm">
+      <concept id="1878265754077060950" name="jetbrains.mps.lang.coderules.structure.ConstraintParameterDeclaration" flags="ng" index="1zAUYm">
         <child id="6036655413802463897" name="dataType" index="3gTf24" />
       </concept>
-      <concept id="4492335231042547642" name="jetbrains.mps.lang.typesystem2.structure.WithContextStatement" flags="ng" index="1$59iH">
+      <concept id="4492335231042547642" name="jetbrains.mps.lang.coderules.structure.WithContextStatement" flags="ng" index="1$59iH">
         <reference id="4492335231042551683" name="parameter" index="1$58ik" />
         <child id="4492335231042547643" name="body" index="1$59iG" />
         <child id="4492335231042547648" name="init" index="1$59jn" />
       </concept>
-      <concept id="4492335231042132271" name="jetbrains.mps.lang.typesystem2.structure.ContextParameterReference" flags="ng" index="1$qI8S">
+      <concept id="4492335231042132271" name="jetbrains.mps.lang.coderules.structure.ContextParameterReference" flags="ng" index="1$qI8S">
         <reference id="4492335231042132281" name="parameter" index="1$qI8I" />
       </concept>
-      <concept id="4492335231042132193" name="jetbrains.mps.lang.typesystem2.structure.ContextParameterDeclaration" flags="ng" index="1$qIfQ">
+      <concept id="4492335231042132193" name="jetbrains.mps.lang.coderules.structure.ContextParameterDeclaration" flags="ng" index="1$qIfQ">
         <child id="4492335231042132212" name="type" index="1$qIfz" />
       </concept>
-      <concept id="7368070394769089081" name="jetbrains.mps.lang.typesystem2.structure.RuleInputDeclaration" flags="ng" index="3A20r5" />
-      <concept id="7368070394769139970" name="jetbrains.mps.lang.typesystem2.structure.RuleInputReference" flags="ng" index="3A2sRY">
+      <concept id="7368070394769089081" name="jetbrains.mps.lang.coderules.structure.RuleInputDeclaration" flags="ng" index="3A20r5" />
+      <concept id="7368070394769139970" name="jetbrains.mps.lang.coderules.structure.RuleInputReference" flags="ng" index="3A2sRY">
         <reference id="7368070394769213644" name="declaration" index="3A2yKK" />
       </concept>
-      <concept id="7368070394770780974" name="jetbrains.mps.lang.typesystem2.structure.UnifiesConstraint" flags="ng" index="3A8Hvi">
+      <concept id="7368070394770780974" name="jetbrains.mps.lang.coderules.structure.UnifiesConstraint" flags="ng" index="3A8Hvi">
         <child id="7368070394770793930" name="value" index="3A8w4Q" />
         <child id="7368070394770793388" name="assignee" index="3A8wtg" />
       </concept>
-      <concept id="7368070394766963750" name="jetbrains.mps.lang.typesystem2.structure.Head" flags="ng" index="3Aq93q">
+      <concept id="7368070394766963750" name="jetbrains.mps.lang.coderules.structure.Head" flags="ng" index="3Aq93q">
         <property id="7368070394767443940" name="keep" index="3ArMco" />
       </concept>
-      <concept id="7368070394766963523" name="jetbrains.mps.lang.typesystem2.structure.RuleComponent" flags="ng" index="3Aq9uZ">
+      <concept id="7368070394766963523" name="jetbrains.mps.lang.coderules.structure.RuleComponent" flags="ng" index="3Aq9uZ">
         <child id="2316688792939037645" name="logic" index="3Ip0Jz" />
         <child id="965748826975413053" name="parameter" index="3Nuqhd" />
       </concept>
-      <concept id="7368070394766966158" name="jetbrains.mps.lang.typesystem2.structure.Guard" flags="ng" index="3Aq9_M" />
-      <concept id="7368070394766966388" name="jetbrains.mps.lang.typesystem2.structure.Body" flags="ng" index="3Aq9E8" />
-      <concept id="7368070394766978092" name="jetbrains.mps.lang.typesystem2.structure.EmitConstraintStatement" flags="ng" index="3Aqczg">
+      <concept id="7368070394766966158" name="jetbrains.mps.lang.coderules.structure.Guard" flags="ng" index="3Aq9_M" />
+      <concept id="7368070394766966388" name="jetbrains.mps.lang.coderules.structure.Body" flags="ng" index="3Aq9E8" />
+      <concept id="7368070394766978092" name="jetbrains.mps.lang.coderules.structure.EmitConstraintStatement" flags="ng" index="3Aqczg">
         <child id="7368070394767031348" name="constraint" index="3Aqpz8" />
       </concept>
-      <concept id="7368070394767067636" name="jetbrains.mps.lang.typesystem2.structure.ConstraintDeclaration" flags="ng" index="3AqmO8">
+      <concept id="7368070394767067636" name="jetbrains.mps.lang.coderules.structure.ConstraintDeclaration" flags="ng" index="3AqmO8">
         <property id="7368070394767096851" name="arity" index="3AqDzJ" />
         <child id="1878265754077059170" name="parameters" index="1zAUyy" />
       </concept>
-      <concept id="7368070394767045637" name="jetbrains.mps.lang.typesystem2.structure.UserConstraint" flags="ng" index="3Aqt3T">
+      <concept id="7368070394767045637" name="jetbrains.mps.lang.coderules.structure.UserConstraint" flags="ng" index="3Aqt3T">
         <reference id="7368070394767091750" name="template" index="3AqCNq" />
         <child id="7368070394768117915" name="argument" index="3AunhB" />
       </concept>
-      <concept id="1476354154047570702" name="jetbrains.mps.lang.typesystem2.structure.CodeBlock" flags="ng" index="3AO9d9">
+      <concept id="1476354154047570702" name="jetbrains.mps.lang.coderules.structure.CodeBlock" flags="ng" index="3AO9d9">
         <child id="535508562359074271" name="code" index="16YjZG" />
       </concept>
-      <concept id="8581119423153238082" name="jetbrains.mps.lang.typesystem2.structure.NodeAnchor" flags="ng" index="3BlFb$">
+      <concept id="8581119423153238082" name="jetbrains.mps.lang.coderules.structure.NodeAnchor" flags="ng" index="3BlFb$">
         <child id="8581119423153238083" name="node" index="3BlFb_" />
       </concept>
-      <concept id="1877115349178398764" name="jetbrains.mps.lang.typesystem2.structure.EqualsConstraint" flags="ng" index="3GeI9q">
+      <concept id="1877115349178398764" name="jetbrains.mps.lang.coderules.structure.EqualsConstraint" flags="ng" index="3GeI9q">
         <child id="1877115349178398815" name="right" index="3GeI8D" />
         <child id="1877115349178398813" name="left" index="3GeI8F" />
       </concept>
-      <concept id="1553157749316176827" name="jetbrains.mps.lang.typesystem2.structure.PatternLogicalVariable" flags="ng" index="1HFMs5">
+      <concept id="1553157749316176827" name="jetbrains.mps.lang.coderules.structure.PatternLogicalVariable" flags="ng" index="1HFMs5">
         <child id="5131913661993028915" name="variable" index="1uarlU" />
         <child id="5131913661993028917" name="value" index="1uarlW" />
       </concept>
-      <concept id="2316688792938826204" name="jetbrains.mps.lang.typesystem2.structure.ConstraintLogicalClause" flags="ng" index="3I6s7M">
+      <concept id="2316688792938826204" name="jetbrains.mps.lang.coderules.structure.ConstraintLogicalClause" flags="ng" index="3I6s7M">
         <child id="2316688792938826214" name="constraint" index="3I6s78" />
       </concept>
-      <concept id="2316688792938825384" name="jetbrains.mps.lang.typesystem2.structure.LogicalClauseList" flags="ng" index="3I6sU6">
+      <concept id="2316688792938825384" name="jetbrains.mps.lang.coderules.structure.LogicalClauseList" flags="ng" index="3I6sU6">
         <child id="2316688792938825385" name="clauses" index="3I6sU7" />
       </concept>
-      <concept id="2316688792939428589" name="jetbrains.mps.lang.typesystem2.structure.TemplateLogicalClause" flags="ng" index="3IrJb3">
+      <concept id="2316688792939428589" name="jetbrains.mps.lang.coderules.structure.TemplateLogicalClause" flags="ng" index="3IrJb3">
         <child id="2316688792939428590" name="code" index="3IrJb0" />
       </concept>
-      <concept id="7231283050490391433" name="jetbrains.mps.lang.typesystem2.structure.ContextParameterContainer" flags="ng" index="1M$Gom">
+      <concept id="7231283050490391433" name="jetbrains.mps.lang.coderules.structure.ContextParameterContainer" flags="ng" index="1M$Gom">
         <child id="7231283050490401312" name="parameter" index="1M$zYZ" />
       </concept>
-      <concept id="965748826975413063" name="jetbrains.mps.lang.typesystem2.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
-      <concept id="2037618519496634972" name="jetbrains.mps.lang.typesystem2.structure.MacroParameterBinding" flags="ng" index="1Q7q5z">
+      <concept id="965748826975413063" name="jetbrains.mps.lang.coderules.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
+      <concept id="2037618519496634972" name="jetbrains.mps.lang.coderules.structure.MacroParameterBinding" flags="ng" index="1Q7q5z">
         <reference id="2037618519496638493" name="parameter" index="1Q7tcy" />
         <child id="2037618519536835329" name="code" index="1KxKwY" />
       </concept>
-      <concept id="2037618519496637434" name="jetbrains.mps.lang.typesystem2.structure.MacroArgumentList" flags="ng" index="1Q7qz5">
+      <concept id="2037618519496637434" name="jetbrains.mps.lang.coderules.structure.MacroArgumentList" flags="ng" index="1Q7qz5">
         <child id="2037618519496637435" name="binding" index="1Q7qz4" />
       </concept>
-      <concept id="3063948360254202562" name="jetbrains.mps.lang.typesystem2.structure.LocalDeclarationStatement" flags="ng" index="3X$Joe" />
+      <concept id="3063948360254202562" name="jetbrains.mps.lang.coderules.structure.LocalDeclarationStatement" flags="ng" index="3X$Joe" />
     </language>
   </registry>
   <node concept="AVZre" id="3Qp4N06bUAA">
