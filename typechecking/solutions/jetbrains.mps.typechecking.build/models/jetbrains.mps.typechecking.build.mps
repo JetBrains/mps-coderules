@@ -945,6 +945,12 @@
               <ref role="3bR37D" node="65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
             </node>
           </node>
+          <node concept="1SiIV0" id="6tPOoeTFKoH" role="3bR37C">
+            <node concept="3bR9La" id="6tPOoeTFKoI" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="3u5wJtgiSM" resolve="jetbrains.mps.lang.smodel.types" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="wfREvqj2G8" role="3bR37C">
           <node concept="3bR9La" id="wfREvqj2G9" role="1SiIV1">
