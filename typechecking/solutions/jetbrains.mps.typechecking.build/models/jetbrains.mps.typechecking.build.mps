@@ -195,7 +195,7 @@
       </node>
       <node concept="3_J27D" id="7BVjoXzUx6a" role="m$_w8">
         <node concept="3Mxwew" id="2BiN_P7R7Wi" role="3MwsjC">
-          <property role="3MwjfP" value="0.4-b" />
+          <property role="3MwjfP" value="0.5-b" />
         </node>
         <node concept="3Mxwey" id="2BiN_P7R81m" role="3MwsjC">
           <ref role="3Mxwex" node="2BiN_P7R7jO" resolve="ci.build.num" />

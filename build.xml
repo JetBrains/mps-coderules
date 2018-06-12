@@ -957,7 +957,7 @@
         <id>jetbrains.mps.typechecking</id>
         <name>Typechecking with Constraint Rules</name>
         <description>Experimental support for type checking with constraint rules</description>
-        <version>0.4-b${ci.build.num}</version>
+        <version>0.5-b${ci.build.num}</version>
         <vendor url="jetbrains.com/mps">JetBrains s.r.o.</vendor>
         
         <extensions defaultExtensionNs="com.intellij">
