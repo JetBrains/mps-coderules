@@ -15,5 +15,6 @@ system/*
 logic/solutions/jetbrains.mps.logic.reactor/lib/*
 logic/solutions/jetbrains.mps.logic.test/lib/*
 typechecking/solutions/jetbrains.mps.typechecking/lib/*
+coderules/solutions/jetbrains.mps.coderules/lib/*
 MPS_HOME
 TEST-*

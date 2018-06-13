@@ -7,16 +7,18 @@
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
   </languages>
   <imports>
-    <import index="unkn" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:io.reactivex(jetbrains.mps.typechecking/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="m4y7" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:io.reactivex.schedulers(jetbrains.mps.typechecking/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="f4yq" ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d/java:hu.akarnokd.rxjava2.swing(jetbrains.mps.typechecking/)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" />
+    <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" />
+    <import index="f4yq" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:hu.akarnokd.rxjava2.swing(jetbrains.mps.coderules/)" />
+    <import index="m4y7" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.schedulers(jetbrains.mps.coderules/)" />
+    <import index="1yqb" ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -533,9 +535,9 @@
                     <node concept="2WthIp" id="3KwBCAA$II1" role="2Oq$k0" />
                     <node concept="2XshWL" id="3KwBCAA$II2" role="2OqNvi">
                       <ref role="2WH_rO" node="3KwBCAAvk20" resolve="scheduleRead" />
-                      <node concept="2YIFZM" id="3KwBCAAAr_E" role="2XxRq1">
-                        <ref role="37wK5l" to="tj24:3KwBCAA_erO" resolve="blocking" />
-                        <ref role="1Pybhc" to="tj24:3KwBCAA_ela" resolve="TypecheckingSchedulers" />
+                      <node concept="2YIFZM" id="NKt6yn9kxY" role="2XxRq1">
+                        <ref role="37wK5l" to="1yqb:3KwBCAA_erO" resolve="blocking" />
+                        <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />
                       </node>
                       <node concept="37vLTw" id="3KwBCAA$II4" role="2XxRq1">
                         <ref role="3cqZAo" node="3KwBCAA$IH_" resolve="start" />
@@ -554,9 +556,9 @@
                             <node concept="2WthIp" id="3KwBCAA$IIb" role="2Oq$k0" />
                             <node concept="2XshWL" id="3KwBCAA$IIc" role="2OqNvi">
                               <ref role="2WH_rO" node="3KwBCAAvofQ" resolve="scheduleCommand" />
-                              <node concept="2YIFZM" id="3KwBCAAAtj1" role="2XxRq1">
-                                <ref role="37wK5l" to="tj24:3KwBCAA_eqP" resolve="requireEDT" />
-                                <ref role="1Pybhc" to="tj24:3KwBCAA_ela" resolve="TypecheckingSchedulers" />
+                              <node concept="2YIFZM" id="NKt6yn9ky5" role="2XxRq1">
+                                <ref role="37wK5l" to="1yqb:3KwBCAA_eqP" resolve="requireEDT" />
+                                <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />
                               </node>
                               <node concept="37vLTw" id="3KwBCAA$IIe" role="2XxRq1">
                                 <ref role="3cqZAo" node="3KwBCAA$IIh" resolve="from" />
@@ -764,9 +766,9 @@
                               <node concept="2WthIp" id="3KwBCAAwrc7" role="2Oq$k0" />
                               <node concept="2XshWL" id="3KwBCAAwrc8" role="2OqNvi">
                                 <ref role="2WH_rO" node="3KwBCAAvk20" resolve="scheduleRead" />
-                                <node concept="2YIFZM" id="3KwBCAAAu8X" role="2XxRq1">
-                                  <ref role="37wK5l" to="tj24:3KwBCAA_erO" resolve="blocking" />
-                                  <ref role="1Pybhc" to="tj24:3KwBCAA_ela" resolve="TypecheckingSchedulers" />
+                                <node concept="2YIFZM" id="NKt6yn9ky4" role="2XxRq1">
+                                  <ref role="37wK5l" to="1yqb:3KwBCAA_erO" resolve="blocking" />
+                                  <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />
                                 </node>
                                 <node concept="37vLTw" id="3KwBCAAwrca" role="2XxRq1">
                                   <ref role="3cqZAo" node="3KwBCAAwrbR" resolve="start" />
@@ -785,9 +787,9 @@
                                       <node concept="2WthIp" id="3KwBCAA$ctJ" role="2Oq$k0" />
                                       <node concept="2XshWL" id="3KwBCAA$ctK" role="2OqNvi">
                                         <ref role="2WH_rO" node="3KwBCAAvofQ" resolve="scheduleCommand" />
-                                        <node concept="2YIFZM" id="3KwBCAAAuO_" role="2XxRq1">
-                                          <ref role="37wK5l" to="tj24:3KwBCAA_erO" resolve="blocking" />
-                                          <ref role="1Pybhc" to="tj24:3KwBCAA_ela" resolve="TypecheckingSchedulers" />
+                                        <node concept="2YIFZM" id="NKt6yn9ky2" role="2XxRq1">
+                                          <ref role="37wK5l" to="1yqb:3KwBCAA_erO" resolve="blocking" />
+                                          <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />
                                         </node>
                                         <node concept="37vLTw" id="3KwBCAA$j0F" role="2XxRq1">
                                           <ref role="3cqZAo" node="3KwBCAA$36O" resolve="from" />

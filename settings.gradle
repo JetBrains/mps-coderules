@@ -1,3 +1,4 @@
 include 'logic/solutions/jetbrains.mps.logic.reactor'
 include 'logic/solutions/jetbrains.mps.logic.test'
 include 'typechecking/solutions/jetbrains.mps.typechecking'
+include 'coderules/solutions/jetbrains.mps.coderules'
