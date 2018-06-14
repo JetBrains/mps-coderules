@@ -6,6 +6,10 @@
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/runtime/jetbrains.mps.lang.coderules.runtime.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules/jetbrains.mps.coderules.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.coderules.template/jetbrains.mps.lang.coderules.template.msd" folder="coderules" />
+      <modulePath path="$PROJECT_DIR$/controlflow/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" folder="controlflow" />
+      <modulePath path="$PROJECT_DIR$/controlflow/solutions/jetbrains.mps.controlflow.ui/jetbrains.mps.controlflow.ui.msd" folder="controlflow" />
+      <modulePath path="$PROJECT_DIR$/controlflow/solutions/jetbrains.mps.controlflow/jetbrains.mps.controlflow.msd" folder="controlflow" />
+      <modulePath path="$PROJECT_DIR$/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/jetbrains.mps.lang.controlflow.runtime.msd" folder="controlflow" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.dataform/jetbrains.mps.dataform.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/logic/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />

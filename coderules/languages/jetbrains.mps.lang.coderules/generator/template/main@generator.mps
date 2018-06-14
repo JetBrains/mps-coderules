@@ -465,6 +465,7 @@
       <concept id="1217889960776" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase" flags="nn" index="2fTw9j">
         <child id="1217890689512" name="userKey" index="2fWi3N" />
       </concept>
+      <concept id="1217894033795" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess" flags="nn" index="2g92yo" />
       <concept id="1217960179967" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage" flags="nn" index="2k5nB$" />
       <concept id="1217960314443" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase" flags="nn" index="2k5Stg">
         <child id="1217960314448" name="messageText" index="2k5Stb" />
@@ -558,6 +559,9 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU">
+        <reference id="7400021826771268269" name="concept" index="2sp9C9" />
+      </concept>
       <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
         <child id="7400021826774799510" name="ref" index="2tJFKM" />
       </concept>
@@ -15628,6 +15632,29 @@
     </node>
     <node concept="3uibUv" id="NKt6yp1FJg" role="1zkMxy">
       <ref role="3uigEE" to="fqlx:NKt6yp1COZ" resolve="DefaultCoderulesAspect" />
+      <node concept="1ZhdrF" id="78H58odLtQH" role="lGtFl">
+        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
+        <property role="2qtEX8" value="classifier" />
+        <node concept="3$xsQk" id="78H58odLtQI" role="3$ytzL">
+          <node concept="3clFbS" id="78H58odLtQJ" role="2VODD2">
+            <node concept="3clFbF" id="78H58odQ4Ko" role="3cqZAp">
+              <node concept="10QFUN" id="78H58odQ5en" role="3clFbG">
+                <node concept="2OqwBi" id="78H58odQ5ej" role="10QFUP">
+                  <node concept="1iwH7S" id="78H58odQ5ek" role="2Oq$k0" />
+                  <node concept="2g92yo" id="78H58odQ5el" role="2OqNvi">
+                    <node concept="Xl_RD" id="78H58odQ5em" role="2fWi3N">
+                      <property role="Xl_RC" value="CODERULES_ASPECT_RUNTIME" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2sp9CU" id="78H58odQ5g$" role="10QFUM">
+                  <ref role="2sp9C9" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

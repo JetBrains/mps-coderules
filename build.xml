@@ -810,6 +810,270 @@
       <zipfileset file="${basedir}/typechecking/solutions/jetbrains.mps.typechecking.test/jetbrains.mps.typechecking.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/typechecking-solutions-jetbrains.mps.typechecking.test-models" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.smodel.types.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.smodel.types" type="language" uuid="cba985fe-1e96-4f16-9f8d-b07434405d4f">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.lang.smodel.types-src.jar" descriptor="jetbrains.mps.lang.smodel.types.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types" />
+      <fileset dir="${basedir}/typechecking/languages/jetbrains.mps.lang.smodel.types" includes="icons/**, resources/**" />
+      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.smodel.types#7345257067587611144" type="generator" uuid="ceb57370-a04c-41e9-91e3-f36110b5e4aa">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.lang.smodel.types-src.jar" descriptor="jetbrains.mps.lang.smodel.types.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types-generator.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types#7345257067587611144" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-generator-template">
+      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-models">
+      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/generator/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/typechecking/languages/jetbrains.mps.lang.smodel.types/jetbrains.mps.lang.smodel.types.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-generator-template" prefix="module/generator/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-models" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.controlflow.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.controlflow.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.controlflow.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.controlflow" type="solution" uuid="517911e5-605f-4310-831b-10d44e0f5237">
+        <dependencies />
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.controlflow-src.jar" descriptor="jetbrains.mps.controlflow.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.controlflow.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow" />
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.controlflow-models">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.controlflow-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/controlflow/solutions/jetbrains.mps.controlflow/jetbrains.mps.controlflow.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.controlflow-models" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.controlflow.ui" type="solution" uuid="eacb1d2f-fed3-4344-a1dd-143fac2e9c20">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.controlflow.ui-src.jar" descriptor="jetbrains.mps.controlflow.ui.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.controlflow.ui.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow.ui" />
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.controlflow.ui-models">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.controlflow.ui-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/controlflow/solutions/jetbrains.mps.controlflow.ui/jetbrains.mps.controlflow.ui.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.controlflow.ui-models" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.controlflow" type="language" uuid="2e120f68-abfb-4980-bb1c-bc70159b1f95">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.lang.controlflow-src.jar" descriptor="jetbrains.mps.lang.controlflow.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow" />
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.controlflow#01" type="generator" uuid="67306c43-4604-4dad-9b74-7e808a66bee5">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.lang.controlflow-src.jar" descriptor="jetbrains.mps.lang.controlflow.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow-generator.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow#01" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-languages-jetbrains.mps.lang.controlflow-generator-template">
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-languages-jetbrains.mps.lang.controlflow-models">
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/generator/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/controlflow/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-languages-jetbrains.mps.lang.controlflow-generator-template" prefix="module/generator/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-languages-jetbrains.mps.lang.controlflow-models" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.controlflow.runtime" type="solution" uuid="ffcd9ef5-e931-4da9-a8d1-eb9bf80d19b4">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.lang.controlflow.runtime-src.jar" descriptor="jetbrains.mps.lang.controlflow.runtime.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow.runtime.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.lang.controlflow.runtime-models">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow.runtime-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/jetbrains.mps.lang.controlflow.runtime.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.lang.controlflow.runtime-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageExt.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageExt.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguageExt.jar/META-INF/module.xml">
@@ -1019,87 +1283,6 @@
       </fileset>
       <zipfileset file="${basedir}/typechecking/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.typechecking.annotation-languageModels" prefix="module/languageModels" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.smodel.types.jar/META-INF/module.xml">
-      <module namespace="jetbrains.mps.lang.smodel.types" type="language" uuid="cba985fe-1e96-4f16-9f8d-b07434405d4f">
-        <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
-          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
-          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
-          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
-          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
-          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
-          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
-          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
-          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
-          <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
-          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
-          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
-          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
-          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
-        </dependencies>
-        <classpath>
-          <entry path="." />
-        </classpath>
-        <sources jar="jetbrains.mps.lang.smodel.types-src.jar" descriptor="jetbrains.mps.lang.smodel.types.mpl" />
-      </module>
-    </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types" />
-      <fileset dir="${basedir}/typechecking/languages/jetbrains.mps.lang.smodel.types" includes="icons/**, resources/**" />
-      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types.jar" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar/META-INF/module.xml">
-      <module namespace="jetbrains.mps.lang.smodel.types#7345257067587611144" type="generator" uuid="ceb57370-a04c-41e9-91e3-f36110b5e4aa">
-        <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
-          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
-          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
-          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
-          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
-          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
-          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
-          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
-          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
-          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
-        </dependencies>
-        <classpath>
-          <entry path="." />
-        </classpath>
-        <sources jar="jetbrains.mps.lang.smodel.types-src.jar" descriptor="jetbrains.mps.lang.smodel.types.mpl" />
-      </module>
-    </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types#7345257067587611144" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-generator-template">
-      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-models">
-      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types-src.jar" duplicate="preserve">
-      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-        <exclude name="**/checkpoints" />
-        <exclude name="**/*.mps" />
-      </fileset>
-      <fileset dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-        <exclude name="**/checkpoints" />
-        <exclude name="**/*.mps" />
-      </fileset>
-      <zipfileset file="${basedir}/typechecking/languages/jetbrains.mps.lang.smodel.types/jetbrains.mps.lang.smodel.types.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-generator-template" prefix="module/generator/template" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/tests/lib" />
     <copy todir="${build.layout}/tests/lib">
@@ -2020,6 +2203,189 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-generator-template1" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/typechecking-languages-jetbrains.mps.lang.smodel.types-models1" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.controlflow.jar1" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.controlflow.jar1/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.controlflow.jar1/META-INF/module.xml">
+      <module namespace="jetbrains.mps.controlflow" type="solution" uuid="517911e5-605f-4310-831b-10d44e0f5237">
+        <dependencies />
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.controlflow-src.jar" descriptor="jetbrains.mps.controlflow.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.controlflow.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow" />
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.jar1" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.controlflow-models1">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.controlflow-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/controlflow/solutions/jetbrains.mps.controlflow/jetbrains.mps.controlflow.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.controlflow-models1" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar1" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar1/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar1/META-INF/module.xml">
+      <module namespace="jetbrains.mps.controlflow.ui" type="solution" uuid="eacb1d2f-fed3-4344-a1dd-143fac2e9c20">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.controlflow.ui-src.jar" descriptor="jetbrains.mps.controlflow.ui.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.controlflow.ui.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow.ui" />
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar1" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.controlflow.ui-models1">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.controlflow.ui-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/controlflow/solutions/jetbrains.mps.controlflow.ui/jetbrains.mps.controlflow.ui.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.controlflow.ui-models1" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar1" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar1/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar1/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.controlflow" type="language" uuid="2e120f68-abfb-4980-bb1c-bc70159b1f95">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.lang.controlflow-src.jar" descriptor="jetbrains.mps.lang.controlflow.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.lang.controlflow.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow" />
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar1" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar1" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar1/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar1/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.controlflow#01" type="generator" uuid="67306c43-4604-4dad-9b74-7e808a66bee5">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.lang.controlflow-src.jar" descriptor="jetbrains.mps.lang.controlflow.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.lang.controlflow-generator.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow#01" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar1" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-languages-jetbrains.mps.lang.controlflow-generator-template1">
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-languages-jetbrains.mps.lang.controlflow-models1">
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.lang.controlflow-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/generator/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <fileset dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/controlflow/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-languages-jetbrains.mps.lang.controlflow-generator-template1" prefix="module/generator/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-languages-jetbrains.mps.lang.controlflow-models1" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar1" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar1/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar1/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.controlflow.runtime" type="solution" uuid="ffcd9ef5-e931-4da9-a8d1-eb9bf80d19b4">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="jetbrains.mps.lang.controlflow.runtime-src.jar" descriptor="jetbrains.mps.lang.controlflow.runtime.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.lang.controlflow.runtime.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar1" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.lang.controlflow.runtime-models1">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/typechecking-0.5.zip/typechecking/languages/jetbrains.mps.lang.controlflow.runtime-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/jetbrains.mps.lang.controlflow.runtime.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/controlflow-solutions-jetbrains.mps.lang.controlflow.runtime-models1" prefix="module/models" />
+    </jar>
     <zip destfile="${build.layout}/typechecking-0.5.zip">
       <zipfileset dir="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/lib" prefix="typechecking/lib" />
       <zipfileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules/lib" prefix="typechecking/lib" />
@@ -2039,7 +2405,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic#6626732309150416985, java.compile.jetbrains.mps.dataform, java.compile.jetbrains.mps.dataform#01, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.logic.test, java.compile.jetbrains.mps.coderules, java.compile.jetbrains.mps.lang.coderules, java.compile.jetbrains.mps.lang.coderules#4578927328670739933, java.compile.jetbrains.mps.lang.coderules.runtime, java.compile.jetbrains.mps.lang.coderules.template, java.compile.jetbrains.mps.typechecking, java.compile.jetbrains.mps.typechecking.reporting, java.compile.jetbrains.mps.lang.typechecking, java.compile.jetbrains.mps.lang.typechecking#01, java.compile.jetbrains.mps.lang.typechecking.runtime, java.compile.jetbrains.mps.lang.smodel.types, java.compile.jetbrains.mps.lang.smodel.types#7345257067587611144, java.compile.jetbrains.mps.typechecking.ui, java.compile.jetbrains.mps.typechecking.annotation, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.typechecking.sample, java.compile.jetbrains.mps.typechecking.test, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.jetbrains.mps.typechecking.sample.test" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.logic#6626732309150416985, java.compile.jetbrains.mps.dataform, java.compile.jetbrains.mps.dataform#01, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.logic.test, java.compile.jetbrains.mps.coderules, java.compile.jetbrains.mps.lang.coderules, java.compile.jetbrains.mps.lang.coderules#4578927328670739933, java.compile.jetbrains.mps.lang.coderules.runtime, java.compile.jetbrains.mps.lang.coderules.template, java.compile.jetbrains.mps.typechecking, java.compile.jetbrains.mps.typechecking.reporting, java.compile.jetbrains.mps.lang.typechecking, java.compile.jetbrains.mps.lang.typechecking#01, java.compile.jetbrains.mps.lang.typechecking.runtime, java.compile.jetbrains.mps.lang.smodel.types, java.compile.jetbrains.mps.lang.smodel.types#7345257067587611144, java.compile.jetbrains.mps.typechecking.ui, java.compile.jetbrains.mps.typechecking.annotation, java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.typechecking.sample, java.compile.jetbrains.mps.controlflow, java.compile.jetbrains.mps.controlflow.ui, java.compile.jetbrains.mps.lang.controlflow, java.compile.jetbrains.mps.lang.controlflow#01, java.compile.jetbrains.mps.lang.controlflow.runtime, java.compile.jetbrains.mps.typechecking.test, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.jetbrains.mps.typechecking.sample.test" />
   
   <target name="processResources" />
   
@@ -2142,6 +2508,8 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
+        <module file="${basedir}/controlflow/solutions/jetbrains.mps.controlflow/jetbrains.mps.controlflow.msd" />
+        <module file="${basedir}/controlflow/solutions/jetbrains.mps.controlflow.ui/jetbrains.mps.controlflow.ui.msd" />
         <module file="${basedir}/typechecking/languages/jetbrains.mps.lang.smodel.types/jetbrains.mps.lang.smodel.types.mpl" />
         <module file="${basedir}/logic/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" />
         <module file="${basedir}/logic/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" />
@@ -2155,6 +2523,8 @@
         <module file="${basedir}/coderules/languages/jetbrains.mps.lang.coderules/jetbrains.mps.lang.coderules.mpl" />
         <module file="${basedir}/coderules/languages/jetbrains.mps.lang.coderules/runtime/jetbrains.mps.lang.coderules.runtime.msd" />
         <module file="${basedir}/coderules/solutions/jetbrains.mps.lang.coderules.template/jetbrains.mps.lang.coderules.template.msd" />
+        <module file="${basedir}/controlflow/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" />
+        <module file="${basedir}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/jetbrains.mps.lang.controlflow.runtime.msd" />
         <module file="${basedir}/typechecking/languages/jetbrains.mps.lang.typechecking/jetbrains.mps.lang.typechecking.mpl" />
         <module file="${basedir}/typechecking/solutions/jetbrains.mps.lang.typechecking.runtime/jetbrains.mps.lang.typechecking.runtime.msd" />
         <module file="${basedir}/logic/solutions/jetbrains.mps.logic.test/jetbrains.mps.logic.test.msd" />
@@ -3258,6 +3628,225 @@
     </javac>
   </target>
   
+  <target name="java.compile.jetbrains.mps.controlflow">
+    <mkdir dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.controlflow" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.controlflow" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/source_gen" />
+      </src>
+      <classpath />
+    </javac>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.controlflow.ui" depends="fetchDependencies">
+    <mkdir dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.controlflow.ui" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.controlflow.ui" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.controlflow" depends="java.compile.jetbrains.mps.coderules, java.compile.jetbrains.mps.dataform, java.compile.jetbrains.mps.lang.coderules, java.compile.jetbrains.mps.lang.coderules.template, java.compile.jetbrains.mps.lang.controlflow.runtime, java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.typechecking.reporting, fetchDependencies">
+    <mkdir dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.coderules" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.dataform" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules.template" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.typechecking.reporting" />
+        <fileset file="${mps.macro.logic_home}/coderules/solutions/jetbrains.mps.coderules/lib/reactive-streams-1.0.0.final.jar" />
+        <fileset file="${mps.macro.logic_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava-2.1.1.jar" />
+        <fileset file="${mps.macro.logic_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/conreactor-api-0.9.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.2.30.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.2.30.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.aspect.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.modelapi.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.util.order.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.controlflow#01" depends="java.compile.jetbrains.mps.dataform, java.compile.jetbrains.mps.lang.coderules, java.compile.jetbrains.mps.lang.coderules#4578927328670739933, java.compile.jetbrains.mps.lang.coderules.runtime, java.compile.jetbrains.mps.lang.coderules.template, java.compile.jetbrains.mps.lang.controlflow, java.compile.jetbrains.mps.lang.controlflow.runtime, java.compile.jetbrains.mps.logic, java.compile.jetbrains.mps.typechecking.reporting, fetchDependencies">
+    <mkdir dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow#01" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow#01" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/generator/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.dataform" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules#4578927328670739933" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules.runtime" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules.template" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.controlflow" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.typechecking.reporting" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/conreactor-api-0.9.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.2.30.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.2.30.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.aspect-generator.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor-generator.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.modelapi.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.controlflow.runtime" depends="java.compile.jetbrains.mps.lang.coderules.template, java.compile.jetbrains.mps.typechecking.reporting, fetchDependencies">
+    <mkdir dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules.template" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.typechecking.reporting" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/conreactor-api-0.9.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-runtime-1.2.30.jar" />
+        <fileset file="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.reactor/lib/kotlin-stdlib-1.2.30.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
   <target name="java.compile.jetbrains.mps.typechecking.test" depends="java.compile.jetbrains.mps.coderules, java.compile.jetbrains.mps.lang.coderules.runtime, java.compile.jetbrains.mps.lang.coderules.template, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.typechecking, java.compile.jetbrains.mps.typechecking.reporting, fetchDependencies">
     <mkdir dir="${mps.macro.logic_home}/typechecking/solutions/jetbrains.mps.typechecking.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.typechecking.test" />
@@ -3608,6 +4197,8 @@
   </target>
   
   <target name="cleanSources">
+    <delete dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/source_gen" />
+    <delete dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow.ui/source_gen" />
     <delete dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/source_gen" />
     <delete dir="${mps.macro.logic_home}/logic/languages/jetbrains.mps.logic/source_gen" />
     <delete dir="${mps.macro.logic_home}/logic/languages/jetbrains.mps.logic/generator/source_gen" />
@@ -3621,6 +4212,9 @@
     <delete dir="${mps.macro.logic_home}/coderules/languages/jetbrains.mps.lang.coderules/generator/source_gen" />
     <delete dir="${mps.macro.logic_home}/coderules/languages/jetbrains.mps.lang.coderules/runtime/source_gen" />
     <delete dir="${mps.macro.logic_home}/coderules/solutions/jetbrains.mps.lang.coderules.template/source_gen" />
+    <delete dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/source_gen" />
+    <delete dir="${mps.macro.logic_home}/controlflow/languages/jetbrains.mps.lang.controlflow/generator/source_gen" />
+    <delete dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen" />
     <delete dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.smodel.types/generator/source_gen" />
     <delete dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.typechecking/source_gen" />
     <delete dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.lang.typechecking/generator/source_gen" />

@@ -30229,8 +30229,8 @@
           <node concept="3cpWsn" id="7WKNeR8ULi1" role="3cpWs9">
             <property role="TrG5h" value="aspects" />
             <node concept="3vKaQO" id="7WKNeR8ULhW" role="1tU5fm">
-              <node concept="3uibUv" id="NKt6yoWG9c" role="3O5elw">
-                <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+              <node concept="3uibUv" id="78H58oe9cIE" role="3O5elw">
+                <ref role="3uigEE" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
               </node>
             </node>
             <node concept="2YIFZM" id="NKt6yomRVQ" role="33vP2m">

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)">
+<model ref="r:bf5143f7-9856-43e8-8ae7-57cecc1fe6a9(jetbrains.mps.lang.controlflow.aspect)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
+    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
+    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)" />
+    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)" />
-    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
-    <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
-    <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -110,9 +109,9 @@
     </language>
   </registry>
   <node concept="312cEu" id="7km57Pkjxf4">
-    <property role="TrG5h" value="TypecheckingAspect" />
+    <property role="TrG5h" value="ControlflowAspect" />
     <property role="1sVAO0" value="true" />
-    <node concept="2tJIrI" id="2hteS6CndfK" role="jymVt" />
+    <node concept="2tJIrI" id="78H58oefMK4" role="jymVt" />
     <node concept="2YIFZL" id="2hteS6Cndm6" role="jymVt">
       <property role="TrG5h" value="forLanguage" />
       <node concept="37vLTG" id="2hteS6Cndm7" role="3clF46">
@@ -127,20 +126,13 @@
           <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
-      <node concept="3uibUv" id="78H58oe2vCL" role="3clF45">
-        <ref role="3uigEE" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+      <node concept="3uibUv" id="78H58oefNdl" role="3clF45">
+        <ref role="3uigEE" node="7km57Pkjxf4" resolve="ControlflowAspect" />
       </node>
       <node concept="3Tm1VV" id="2hteS6Cndmc" role="1B3o_S" />
       <node concept="3clFbS" id="2hteS6Cndmd" role="3clF47">
         <node concept="3clFbF" id="NKt6ynqkPu" role="3cqZAp">
           <node concept="2OqwBi" id="NKt6ynqlte" role="3clFbG">
-            <node concept="2YIFZM" id="78H58oefVIX" role="2Oq$k0">
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <node concept="1rXfSq" id="78H58oefJz9" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
-              </node>
-            </node>
             <node concept="liA8E" id="NKt6ynqlFW" role="2OqNvi">
               <ref role="37wK5l" to="fqlx:NKt6ynp3Wc" resolve="forLanguage" />
               <node concept="37vLTw" id="NKt6ynqlMF" role="37wK5m">
@@ -148,6 +140,13 @@
               </node>
               <node concept="37vLTw" id="NKt6ynqlZL" role="37wK5m">
                 <ref role="3cqZAo" node="2hteS6Cndm9" resolve="repository" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="78H58oefVIX" role="2Oq$k0">
+              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
+              <node concept="1rXfSq" id="78H58oefWuI" role="37wK5m">
+                <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
               </node>
             </node>
           </node>
@@ -168,8 +167,8 @@
         </node>
       </node>
       <node concept="3vKaQO" id="7P_FdVPWaUF" role="3clF45">
-        <node concept="3uibUv" id="78H58oe2xvT" role="3O5elw">
-          <ref role="3uigEE" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+        <node concept="3uibUv" id="78H58oefO8e" role="3O5elw">
+          <ref role="3uigEE" node="7km57Pkjxf4" resolve="ControlflowAspect" />
         </node>
       </node>
       <node concept="3Tm1VV" id="7P_FdVPW9uX" role="1B3o_S" />
@@ -185,11 +184,11 @@
                 <ref role="3cqZAo" node="7P_FdVPWb2$" resolve="repository" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefVUw" role="2Oq$k0">
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+            <node concept="2YIFZM" id="78H58oefWHA" role="2Oq$k0">
               <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <node concept="1rXfSq" id="78H58oefVUx" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
+              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+              <node concept="1rXfSq" id="78H58oefWHB" role="37wK5m">
+                <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
               </node>
             </node>
           </node>
@@ -212,8 +211,8 @@
         </node>
       </node>
       <node concept="3vKaQO" id="7P_FdVPWn7I" role="3clF45">
-        <node concept="3uibUv" id="78H58oe2xpU" role="3O5elw">
-          <ref role="3uigEE" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+        <node concept="3uibUv" id="78H58oefOc5" role="3O5elw">
+          <ref role="3uigEE" node="7km57Pkjxf4" resolve="ControlflowAspect" />
         </node>
       </node>
       <node concept="3Tm1VV" id="7P_FdVPWn7K" role="1B3o_S" />
@@ -229,11 +228,11 @@
                 <ref role="3cqZAo" node="7P_FdVPWn7G" resolve="repository" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefW3x" role="2Oq$k0">
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+            <node concept="2YIFZM" id="78H58oefWMR" role="2Oq$k0">
               <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <node concept="1rXfSq" id="78H58oefW3y" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
+              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+              <node concept="1rXfSq" id="78H58oefWMS" role="37wK5m">
+                <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
               </node>
             </node>
           </node>
@@ -260,46 +259,47 @@
                 <ref role="3cqZAo" node="7P_FdVPWjGg" resolve="langrt" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefWbN" role="2Oq$k0">
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+            <node concept="2YIFZM" id="78H58oefWRp" role="2Oq$k0">
               <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <node concept="1rXfSq" id="78H58oefWbO" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
+              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+              <node concept="1rXfSq" id="78H58oefWRq" role="37wK5m">
+                <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="3vKaQO" id="7P_FdVPWlen" role="3clF45">
-        <node concept="3uibUv" id="78H58oe2xL5" role="3O5elw">
-          <ref role="3uigEE" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+        <node concept="3uibUv" id="78H58oefOfX" role="3O5elw">
+          <ref role="3uigEE" node="7km57Pkjxf4" resolve="ControlflowAspect" />
         </node>
       </node>
       <node concept="3Tm1VV" id="7P_FdVPWjGp" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="7P_FdVPWjGe" role="jymVt" />
     <node concept="2YIFZL" id="78H58oefGzt" role="jymVt">
-      <property role="TrG5h" value="typecheckingDiscoverable" />
+      <property role="TrG5h" value="controlflowDiscoverable" />
       <node concept="3Tm6S6" id="78H58oefGzu" role="1B3o_S" />
       <node concept="3uibUv" id="78H58oefGzv" role="3clF45">
         <ref role="3uigEE" to="fqlx:NKt6ynom3d" resolve="AspectDiscoverable" />
-        <node concept="3uibUv" id="78H58oefGzw" role="11_B2D">
-          <ref role="3uigEE" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+        <node concept="3uibUv" id="78H58oefNmj" role="11_B2D">
+          <ref role="3uigEE" node="7km57Pkjxf4" resolve="ControlflowAspect" />
         </node>
       </node>
       <node concept="3clFbS" id="78H58oefGxh" role="3clF47">
         <node concept="3cpWs6" id="78H58oefGyl" role="3cqZAp">
           <node concept="2YIFZM" id="78H58oefKuE" role="3cqZAk">
-            <ref role="37wK5l" to="fqlx:78H58oefoaA" resolve="discoverable" />
             <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="DefaultCoderulesAspect" />
+            <ref role="37wK5l" to="fqlx:78H58oefoaA" resolve="discoverable" />
             <node concept="3VsKOn" id="78H58oefGyn" role="37wK5m">
-              <ref role="3VsUkX" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+              <ref role="3VsUkX" node="7km57Pkjxf4" resolve="ControlflowAspect" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="2hteS6Cleqc" role="jymVt" />
+    <node concept="2tJIrI" id="78H58oefMKa" role="jymVt" />
     <node concept="3Tm1VV" id="7km57Pkjxf5" role="1B3o_S" />
     <node concept="3uibUv" id="NKt6yomOJv" role="EKbjA">
       <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
