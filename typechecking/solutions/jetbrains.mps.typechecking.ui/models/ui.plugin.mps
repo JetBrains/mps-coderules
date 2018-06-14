@@ -104,6 +104,7 @@
     <import index="5tvg" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.disposables(jetbrains.mps.coderules/)" />
     <import index="iljd" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.plugins(jetbrains.mps.coderules/)" />
     <import index="m4y7" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.schedulers(jetbrains.mps.coderules/)" />
+    <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -26543,9 +26544,9 @@
                     <node concept="3clFbF" id="3YJ7yg2LDWV" role="3cqZAp">
                       <node concept="3y3z36" id="3YJ7yg2LDWW" role="3clFbG">
                         <node concept="10Nm6u" id="3YJ7yg2LDWX" role="3uHU7w" />
-                        <node concept="2YIFZM" id="3YJ7yg2LDWY" role="3uHU7B">
-                          <ref role="37wK5l" to="fqlx:2hteS6Cndm6" resolve="forLanguage" />
-                          <ref role="1Pybhc" to="fqlx:7km57Pkjxf4" resolve="TypeAspectDescriptor" />
+                        <node concept="2YIFZM" id="NKt6yomRVP" role="3uHU7B">
+                          <ref role="37wK5l" to="u46i:2hteS6Cndm6" resolve="forLanguage" />
+                          <ref role="1Pybhc" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
                           <node concept="37vLTw" id="3YJ7yg2LDWZ" role="37wK5m">
                             <ref role="3cqZAo" node="3YJ7yg2LDX3" resolve="it" />
                           </node>
@@ -30228,13 +30229,13 @@
           <node concept="3cpWsn" id="7WKNeR8ULi1" role="3cpWs9">
             <property role="TrG5h" value="aspects" />
             <node concept="3vKaQO" id="7WKNeR8ULhW" role="1tU5fm">
-              <node concept="3uibUv" id="7WKNeR8ULhZ" role="3O5elw">
-                <ref role="3uigEE" to="fqlx:7km57Pkjxf4" resolve="TypeAspectDescriptor" />
+              <node concept="3uibUv" id="NKt6yoWG9c" role="3O5elw">
+                <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
               </node>
             </node>
-            <node concept="2YIFZM" id="7WKNeR8ULi2" role="33vP2m">
-              <ref role="37wK5l" to="fqlx:7P_FdVPW9uU" resolve="allForModel" />
-              <ref role="1Pybhc" to="fqlx:7km57Pkjxf4" resolve="TypeAspectDescriptor" />
+            <node concept="2YIFZM" id="NKt6yomRVQ" role="33vP2m">
+              <ref role="37wK5l" to="u46i:7P_FdVPW9uU" resolve="allForModel" />
+              <ref role="1Pybhc" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
               <node concept="2OqwBi" id="7WKNeR8ULi3" role="37wK5m">
                 <node concept="37vLTw" id="7WKNeR8ULi4" role="2Oq$k0">
                   <ref role="3cqZAo" node="6hqFpWnfbDy" resolve="containingRoot" />

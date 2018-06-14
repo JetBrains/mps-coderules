@@ -44,6 +44,7 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
+    <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -4732,9 +4733,9 @@
           <node concept="2ShNRf" id="7DvO2M9ptMA" role="3clFbG">
             <node concept="1pGfFk" id="7DvO2M9ptMB" role="2ShVmc">
               <ref role="37wK5l" node="7DvO2M9VeM1" resolve="RuleProcessingSession" />
-              <node concept="2YIFZM" id="7P_FdVPWEK7" role="37wK5m">
-                <ref role="37wK5l" to="fqlx:7P_FdVPW9uU" resolve="allForModel" />
-                <ref role="1Pybhc" to="fqlx:7km57Pkjxf4" resolve="TypeAspectDescriptor" />
+              <node concept="2YIFZM" id="NKt6yomRVR" role="37wK5m">
+                <ref role="37wK5l" to="u46i:7P_FdVPW9uU" resolve="allForModel" />
+                <ref role="1Pybhc" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
                 <node concept="37vLTw" id="7P_FdVPWEO8" role="37wK5m">
                   <ref role="3cqZAo" node="4QPCta1yZW$" resolve="model" />
                 </node>
@@ -4809,8 +4810,8 @@
       <node concept="37vLTG" id="7DvO2M9VeM8" role="3clF46">
         <property role="TrG5h" value="descriptors" />
         <node concept="A3Dl8" id="6UWSvq5dhn_" role="1tU5fm">
-          <node concept="3uibUv" id="6UWSvq5dhnB" role="A3Ik2">
-            <ref role="3uigEE" to="fqlx:7km57Pkjxf4" resolve="TypeAspectDescriptor" />
+          <node concept="3uibUv" id="NKt6yoT9YX" role="A3Ik2">
+            <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
           </node>
         </node>
       </node>
@@ -4823,8 +4824,8 @@
       <node concept="37vLTG" id="7DvO2M9VeMe" role="3clF46">
         <property role="TrG5h" value="descriptors" />
         <node concept="A3Dl8" id="6UWSvq5dh__" role="1tU5fm">
-          <node concept="3uibUv" id="6UWSvq5dh_B" role="A3Ik2">
-            <ref role="3uigEE" to="fqlx:7km57Pkjxf4" resolve="TypeAspectDescriptor" />
+          <node concept="3uibUv" id="NKt6yoTa0P" role="A3Ik2">
+            <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
           </node>
         </node>
       </node>
@@ -4864,7 +4865,7 @@
           </node>
         </node>
         <node concept="3clFbH" id="7P_FdVPGUJh" role="3cqZAp" />
-        <node concept="1DcWWT" id="6UWSvq5d00k" role="3cqZAp">
+        <node concept="2Gpval" id="NKt6yoTa7y" role="3cqZAp">
           <node concept="3clFbS" id="6UWSvq5d00n" role="2LFqv$">
             <node concept="3cpWs8" id="7wfdmjRl1_C" role="3cqZAp">
               <node concept="3cpWsn" id="7wfdmjRl1_D" role="3cpWs9">
@@ -4873,11 +4874,11 @@
                   <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
                 </node>
                 <node concept="2OqwBi" id="7wfdmjRl1_E" role="33vP2m">
-                  <node concept="37vLTw" id="7wfdmjRl1_F" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6UWSvq5d00o" resolve="aspect" />
+                  <node concept="2GrUjf" id="NKt6yoTaa0" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="NKt6yoTa9Y" resolve="aspect" />
                   </node>
                   <node concept="liA8E" id="7wfdmjRl1_G" role="2OqNvi">
-                    <ref role="37wK5l" to="fqlx:2hteS6ClmbE" resolve="createMacroManifest" />
+                    <ref role="37wK5l" to="fqlx:NKt6yomP6t" resolve="createMacroManifest" />
                   </node>
                 </node>
               </node>
@@ -4912,11 +4913,11 @@
                   <ref role="3uigEE" to="i348:4OKkcnfu_xe" resolve="AbstractRuleTemplateManifest" />
                 </node>
                 <node concept="2OqwBi" id="7wfdmjRl43b" role="33vP2m">
-                  <node concept="37vLTw" id="7wfdmjRl43c" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6UWSvq5d00o" resolve="aspect" />
+                  <node concept="2GrUjf" id="NKt6yoTaa2" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="NKt6yoTa9Y" resolve="aspect" />
                   </node>
                   <node concept="liA8E" id="7wfdmjRl43d" role="2OqNvi">
-                    <ref role="37wK5l" to="fqlx:2hteS6ClmfS" resolve="createRuleManifest" />
+                    <ref role="37wK5l" to="fqlx:NKt6yomP6y" resolve="createRuleManifest" />
                   </node>
                 </node>
               </node>
@@ -4944,14 +4945,11 @@
               </node>
             </node>
           </node>
-          <node concept="3cpWsn" id="6UWSvq5d00o" role="1Duv9x">
-            <property role="TrG5h" value="aspect" />
-            <node concept="3uibUv" id="6UWSvq5d00s" role="1tU5fm">
-              <ref role="3uigEE" to="fqlx:7km57Pkjxf4" resolve="TypeAspectDescriptor" />
-            </node>
-          </node>
-          <node concept="37vLTw" id="6UWSvq5d00t" role="1DdaDG">
+          <node concept="37vLTw" id="6UWSvq5d00t" role="2GsD0m">
             <ref role="3cqZAo" node="7DvO2M9VeMe" resolve="descriptors" />
+          </node>
+          <node concept="2GrKxI" id="NKt6yoTa9Y" role="2Gsz3X">
+            <property role="TrG5h" value="aspect" />
           </node>
         </node>
         <node concept="3clFbH" id="7P_FdVPGUuH" role="3cqZAp" />
