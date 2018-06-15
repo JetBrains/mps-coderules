@@ -113,6 +113,28 @@
     <property role="TrG5h" value="TypecheckingAspect" />
     <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="2hteS6CndfK" role="jymVt" />
+    <node concept="2YIFZL" id="78H58oeCAQS" role="jymVt">
+      <property role="TrG5h" value="aspectLookup" />
+      <node concept="3Tm1VV" id="78H58oeCBjF" role="1B3o_S" />
+      <node concept="3uibUv" id="78H58oeCAQU" role="3clF45">
+        <ref role="3uigEE" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+        <node concept="3uibUv" id="78H58oeCAQV" role="11_B2D">
+          <ref role="3uigEE" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="78H58oeCAOe" role="3clF47">
+        <node concept="3cpWs6" id="78H58oeCAPx" role="3cqZAp">
+          <node concept="2YIFZM" id="78H58oeCAPy" role="3cqZAk">
+            <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
+            <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+            <node concept="1rXfSq" id="78H58oeCAPz" role="37wK5m">
+              <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6UWSvq5bjXg" role="jymVt" />
     <node concept="2YIFZL" id="2hteS6Cndm6" role="jymVt">
       <property role="TrG5h" value="forLanguage" />
       <node concept="37vLTG" id="2hteS6Cndm7" role="3clF46">
@@ -134,12 +156,9 @@
       <node concept="3clFbS" id="2hteS6Cndmd" role="3clF47">
         <node concept="3clFbF" id="NKt6ynqkPu" role="3cqZAp">
           <node concept="2OqwBi" id="NKt6ynqlte" role="3clFbG">
-            <node concept="2YIFZM" id="78H58oefVIX" role="2Oq$k0">
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <node concept="1rXfSq" id="78H58oefJz9" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
-              </node>
+            <node concept="2YIFZM" id="78H58oeCAQW" role="2Oq$k0">
+              <ref role="1Pybhc" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+              <ref role="37wK5l" node="78H58oeCAQS" resolve="aspectLookup" />
             </node>
             <node concept="liA8E" id="NKt6ynqlFW" role="2OqNvi">
               <ref role="37wK5l" to="fqlx:NKt6ynp3Wc" resolve="forLanguage" />
@@ -154,7 +173,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="6UWSvq5bjXg" role="jymVt" />
     <node concept="2YIFZL" id="7P_FdVPW9uU" role="jymVt">
       <property role="TrG5h" value="allForModel" />
       <node concept="37vLTG" id="7P_FdVPWb2y" role="3clF46">
@@ -185,12 +203,9 @@
                 <ref role="3cqZAo" node="7P_FdVPWb2$" resolve="repository" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefVUw" role="2Oq$k0">
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <node concept="1rXfSq" id="78H58oefVUx" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
-              </node>
+            <node concept="2YIFZM" id="78H58oeCB43" role="2Oq$k0">
+              <ref role="1Pybhc" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+              <ref role="37wK5l" node="78H58oeCAQS" resolve="aspectLookup" />
             </node>
           </node>
         </node>
@@ -229,12 +244,9 @@
                 <ref role="3cqZAo" node="7P_FdVPWn7G" resolve="repository" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefW3x" role="2Oq$k0">
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <node concept="1rXfSq" id="78H58oefW3y" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
-              </node>
+            <node concept="2YIFZM" id="78H58oeCB45" role="2Oq$k0">
+              <ref role="1Pybhc" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+              <ref role="37wK5l" node="78H58oeCAQS" resolve="aspectLookup" />
             </node>
           </node>
         </node>
@@ -260,12 +272,9 @@
                 <ref role="3cqZAo" node="7P_FdVPWjGg" resolve="langrt" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefWbN" role="2Oq$k0">
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <node concept="1rXfSq" id="78H58oefWbO" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="typecheckingDiscoverable" />
-              </node>
+            <node concept="2YIFZM" id="78H58oeCB47" role="2Oq$k0">
+              <ref role="1Pybhc" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
+              <ref role="37wK5l" node="78H58oeCAQS" resolve="aspectLookup" />
             </node>
           </node>
         </node>

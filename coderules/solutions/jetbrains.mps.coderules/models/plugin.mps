@@ -325,6 +325,11 @@
       </node>
       <node concept="3Tm1VV" id="7WKNeR8W8qq" role="1B3o_S" />
       <node concept="3clFbS" id="7WKNeR8W8qr" role="3clF47">
+        <node concept="3SKdUt" id="78H58oeRFgU" role="3cqZAp">
+          <node concept="3SKdUq" id="78H58oeRFgW" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME either make dependent on an aspect or drop this class" />
+          </node>
+        </node>
         <node concept="3clFbF" id="7WKNeR8Wiyc" role="3cqZAp">
           <node concept="2OqwBi" id="7WKNeR8WmN6" role="3clFbG">
             <node concept="37vLTw" id="7WKNeR8Wiya" role="2Oq$k0">
@@ -593,6 +598,11 @@
       <node concept="TZ5HA" id="7WKNeR8VMq$" role="TZ5H$">
         <node concept="1dT_AC" id="7WKNeR8VMq_" role="1dT_Ay">
           <property role="1dT_AB" value="A per-repository cache of code rule indices." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="78H58oeRF5I" role="TZ5H$">
+        <node concept="1dT_AC" id="78H58oeRF5J" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME: this class is not used " />
         </node>
       </node>
     </node>

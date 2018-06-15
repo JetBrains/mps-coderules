@@ -22,6 +22,7 @@
     <import index="1yqb" ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)" />
     <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
+    <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -742,6 +743,10 @@
             <node concept="2ShNRf" id="3IIf9OAgt3H" role="33vP2m">
               <node concept="1pGfFk" id="3IIf9OAgt3I" role="2ShVmc">
                 <ref role="37wK5l" to="1yqb:7WKNeR9fh8j" resolve="ApplyTemplatesStep" />
+                <node concept="2YIFZM" id="78H58oeKQ9V" role="37wK5m">
+                  <ref role="37wK5l" to="u46i:78H58oeCAQS" resolve="aspectLookup" />
+                  <ref role="1Pybhc" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
+                </node>
                 <node concept="37vLTw" id="3IIf9OAm07q" role="37wK5m">
                   <ref role="3cqZAo" node="3IIf9OAm07k" resolve="nodes" />
                 </node>
@@ -787,11 +792,11 @@
           <node concept="3cpWsn" id="3IIf9OAgvDL" role="3cpWs9">
             <property role="TrG5h" value="helper" />
             <node concept="3uibUv" id="3IIf9OAgvDM" role="1tU5fm">
-              <ref role="3uigEE" to="tj24:1pPth$l_TFV" resolve="TypecheckingHelper" />
+              <ref role="3uigEE" to="1yqb:1pPth$l_TFV" resolve="CoderulesHelper" />
             </node>
             <node concept="2ShNRf" id="3IIf9OAgvDN" role="33vP2m">
               <node concept="1pGfFk" id="3IIf9OAgvDO" role="2ShVmc">
-                <ref role="37wK5l" to="tj24:443LGHBiDEV" resolve="TypecheckingHelper" />
+                <ref role="37wK5l" to="1yqb:443LGHBiDEV" resolve="CoderulesHelper" />
                 <node concept="37vLTw" id="3IIf9OAgvDP" role="37wK5m">
                   <ref role="3cqZAo" node="3IIf9OAgt3F" resolve="applyTemplatesStep" />
                 </node>
@@ -818,7 +823,7 @@
                       <ref role="3cqZAo" node="3IIf9OAgvDL" resolve="helper" />
                     </node>
                     <node concept="liA8E" id="3IIf9OAgx7Y" role="2OqNvi">
-                      <ref role="37wK5l" to="tj24:2mbQB8J5m$l" resolve="scheduleExecute" />
+                      <ref role="37wK5l" to="1yqb:2mbQB8J5m$l" resolve="scheduleExecute" />
                       <node concept="2YIFZM" id="NKt6yn9ky3" role="37wK5m">
                         <ref role="37wK5l" to="1yqb:3KwBCAA_erO" resolve="blocking" />
                         <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />
@@ -940,6 +945,10 @@
             <node concept="2ShNRf" id="3IIf9O_qVtJ" role="33vP2m">
               <node concept="1pGfFk" id="3IIf9O_qVtK" role="2ShVmc">
                 <ref role="37wK5l" to="1yqb:7WKNeR9fh8j" resolve="ApplyTemplatesStep" />
+                <node concept="2YIFZM" id="78H58oeKRUy" role="37wK5m">
+                  <ref role="37wK5l" to="u46i:78H58oeCAQS" resolve="aspectLookup" />
+                  <ref role="1Pybhc" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
+                </node>
                 <node concept="37vLTw" id="3IIf9O_qVvh" role="37wK5m">
                   <ref role="3cqZAo" node="3IIf9O_qVvd" resolve="nodes" />
                 </node>
@@ -990,11 +999,11 @@
           <node concept="3cpWsn" id="3IIf9O_qVu0" role="3cpWs9">
             <property role="TrG5h" value="helper" />
             <node concept="3uibUv" id="3IIf9O_qVu1" role="1tU5fm">
-              <ref role="3uigEE" to="tj24:1pPth$l_TFV" resolve="TypecheckingHelper" />
+              <ref role="3uigEE" to="1yqb:1pPth$l_TFV" resolve="CoderulesHelper" />
             </node>
             <node concept="2ShNRf" id="3IIf9O_qVu2" role="33vP2m">
               <node concept="1pGfFk" id="3IIf9O_qVu3" role="2ShVmc">
-                <ref role="37wK5l" to="tj24:443LGHBiDEV" resolve="TypecheckingHelper" />
+                <ref role="37wK5l" to="1yqb:443LGHBiDEV" resolve="CoderulesHelper" />
                 <node concept="37vLTw" id="3IIf9O_qVu4" role="37wK5m">
                   <ref role="3cqZAo" node="3IIf9O_qVtH" resolve="applyTemplatesStep" />
                 </node>
@@ -1024,7 +1033,7 @@
                       <ref role="3cqZAo" node="3IIf9O_qVu0" resolve="helper" />
                     </node>
                     <node concept="liA8E" id="3IIf9O_qVuf" role="2OqNvi">
-                      <ref role="37wK5l" to="tj24:2mbQB8J5m$l" resolve="scheduleExecute" />
+                      <ref role="37wK5l" to="1yqb:2mbQB8J5m$l" resolve="scheduleExecute" />
                       <node concept="2YIFZM" id="NKt6yn9ky1" role="37wK5m">
                         <ref role="37wK5l" to="1yqb:3KwBCAA_erO" resolve="blocking" />
                         <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />

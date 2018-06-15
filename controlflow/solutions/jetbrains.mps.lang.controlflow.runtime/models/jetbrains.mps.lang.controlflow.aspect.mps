@@ -112,6 +112,28 @@
     <property role="TrG5h" value="ControlflowAspect" />
     <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="78H58oefMK4" role="jymVt" />
+    <node concept="2YIFZL" id="78H58oeCBNZ" role="jymVt">
+      <property role="TrG5h" value="aspectLookup" />
+      <node concept="3Tm1VV" id="78H58oeCCgW" role="1B3o_S" />
+      <node concept="3uibUv" id="78H58oeCBO1" role="3clF45">
+        <ref role="3uigEE" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+        <node concept="3uibUv" id="78H58oeCBO2" role="11_B2D">
+          <ref role="3uigEE" node="7km57Pkjxf4" resolve="ControlflowAspect" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="78H58oeCBLl" role="3clF47">
+        <node concept="3cpWs6" id="78H58oeCBMC" role="3cqZAp">
+          <node concept="2YIFZM" id="78H58oeCBMD" role="3cqZAk">
+            <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
+            <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
+            <node concept="1rXfSq" id="78H58oeCBME" role="37wK5m">
+              <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6UWSvq5bjXg" role="jymVt" />
     <node concept="2YIFZL" id="2hteS6Cndm6" role="jymVt">
       <property role="TrG5h" value="forLanguage" />
       <node concept="37vLTG" id="2hteS6Cndm7" role="3clF46">
@@ -142,18 +164,14 @@
                 <ref role="3cqZAo" node="2hteS6Cndm9" resolve="repository" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefVIX" role="2Oq$k0">
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <node concept="1rXfSq" id="78H58oefWuI" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
-              </node>
+            <node concept="2YIFZM" id="78H58oeCBO3" role="2Oq$k0">
+              <ref role="1Pybhc" node="7km57Pkjxf4" resolve="ControlflowAspect" />
+              <ref role="37wK5l" node="78H58oeCBNZ" resolve="aspectLookup" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="6UWSvq5bjXg" role="jymVt" />
     <node concept="2YIFZL" id="7P_FdVPW9uU" role="jymVt">
       <property role="TrG5h" value="allForModel" />
       <node concept="37vLTG" id="7P_FdVPWb2y" role="3clF46">
@@ -184,12 +202,9 @@
                 <ref role="3cqZAo" node="7P_FdVPWb2$" resolve="repository" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefWHA" role="2Oq$k0">
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <node concept="1rXfSq" id="78H58oefWHB" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
-              </node>
+            <node concept="2YIFZM" id="78H58oeCC1f" role="2Oq$k0">
+              <ref role="1Pybhc" node="7km57Pkjxf4" resolve="ControlflowAspect" />
+              <ref role="37wK5l" node="78H58oeCBNZ" resolve="aspectLookup" />
             </node>
           </node>
         </node>
@@ -228,12 +243,9 @@
                 <ref role="3cqZAo" node="7P_FdVPWn7G" resolve="repository" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefWMR" role="2Oq$k0">
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <node concept="1rXfSq" id="78H58oefWMS" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
-              </node>
+            <node concept="2YIFZM" id="78H58oeCC1h" role="2Oq$k0">
+              <ref role="1Pybhc" node="7km57Pkjxf4" resolve="ControlflowAspect" />
+              <ref role="37wK5l" node="78H58oeCBNZ" resolve="aspectLookup" />
             </node>
           </node>
         </node>
@@ -259,12 +271,9 @@
                 <ref role="3cqZAo" node="7P_FdVPWjGg" resolve="langrt" />
               </node>
             </node>
-            <node concept="2YIFZM" id="78H58oefWRp" role="2Oq$k0">
-              <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
-              <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-              <node concept="1rXfSq" id="78H58oefWRq" role="37wK5m">
-                <ref role="37wK5l" node="78H58oefGzt" resolve="controlflowDiscoverable" />
-              </node>
+            <node concept="2YIFZM" id="78H58oeCC1j" role="2Oq$k0">
+              <ref role="1Pybhc" node="7km57Pkjxf4" resolve="ControlflowAspect" />
+              <ref role="37wK5l" node="78H58oeCBNZ" resolve="aspectLookup" />
             </node>
           </node>
         </node>

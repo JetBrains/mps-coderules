@@ -176,7 +176,7 @@
             <node concept="LkI2h" id="7km57PkgwKW" role="2OqNvi" />
           </node>
           <node concept="Xl_RD" id="2aiW7Bvrvo" role="3uHU7w">
-            <property role="Xl_RC" value=".TypesAspectDescriptor" />
+            <property role="Xl_RC" value=".ControlflowAspectDescriptor" />
           </node>
         </node>
         <node concept="3B5_sB" id="2hteS6Cje6U" role="v9R3O">

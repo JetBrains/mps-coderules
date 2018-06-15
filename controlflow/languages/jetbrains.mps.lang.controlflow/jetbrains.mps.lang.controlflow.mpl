@@ -13,12 +13,12 @@
           <sourceRoot location="." />
         </modelRoot>
       </models>
-      <external-templates />
+      <external-templates>
+        <generator generatorUID="21d5540d-cd6b-44dd-b6ab-6835bf032803(jetbrains.mps.lang.coderules#4578927328670739933)" />
+        <generator generatorUID="3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)" />
+      </external-templates>
       <dependencies>
-        <dependency reexport="false">21d5540d-cd6b-44dd-b6ab-6835bf032803(jetbrains.mps.lang.coderules#4578927328670739933)</dependency>
-        <dependency reexport="false">e45a8b22-94f2-427f-b849-77f254c4eef5(jetbrains.mps.lang.aspect#3274906159125927726)</dependency>
         <dependency reexport="false">86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)</dependency>
-        <dependency reexport="false">3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)</dependency>
         <dependency reexport="false">ffcd9ef5-e931-4da9-a8d1-eb9bf80d19b4(jetbrains.mps.lang.controlflow.runtime)</dependency>
       </dependencies>
       <languageVersions>
@@ -72,7 +72,22 @@
         <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
         <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)" version="0" />
       </dependencyVersions>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_together">
+          <greater-priority-mapping>
+            <generator generatorUID="67306c43-4604-4dad-9b74-7e808a66bee5(jetbrains.mps.lang.controlflow#01)" />
+            <external-mapping>
+              <mapping-node modelUID="r:7be25111-db66-40e7-be84-6d98fca6b94a(main@generator)" nodeID="*" />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="21d5540d-cd6b-44dd-b6ab-6835bf032803(jetbrains.mps.lang.coderules#4578927328670739933)" />
+            <external-mapping>
+              <mapping-node modelUID="r:c0702ee3-be79-48ac-aa39-b7cd0d895de6(jetbrains.mps.lang.coderules.generator.template.main@generator)" nodeID="*" />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <sourcePath />
@@ -131,8 +146,12 @@
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
     <module reference="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" version="0" />
   </dependencyVersions>
+  <runtime>
+    <dependency reexport="false">ffcd9ef5-e931-4da9-a8d1-eb9bf80d19b4(jetbrains.mps.lang.controlflow.runtime)</dependency>
+  </runtime>
   <extendedLanguages>
     <extendedLanguage>c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)</extendedLanguage>
+    <extendedLanguage>f4ad079d-bc71-4ffb-9600-9328705cf998(jetbrains.mps.lang.descriptor)</extendedLanguage>
   </extendedLanguages>
 </language>
 
