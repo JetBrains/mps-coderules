@@ -1778,7 +1778,7 @@
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="7Ant4WkHLsG" role="3LF7KH">
           <node concept="2Ry0Ak" id="7Ant4WkHLsH" role="iGT6I">
-            <property role="2Ry0Am" value="typechecking" />
+            <property role="2Ry0Am" value="baselanguage" />
             <node concept="2Ry0Ak" id="7Ant4WkHLsI" role="2Ry0An">
               <property role="2Ry0Am" value="languages" />
               <node concept="2Ry0Ak" id="7Ant4WkHLsJ" role="2Ry0An">
@@ -2152,7 +2152,7 @@
         <property role="aoJFB" value="sources and tests" />
         <node concept="55IIr" id="46o4wsHqZur" role="3LF7KH">
           <node concept="2Ry0Ak" id="46o4wsHqZIp" role="iGT6I">
-            <property role="2Ry0Am" value="typechecking" />
+            <property role="2Ry0Am" value="baselanguage" />
             <node concept="2Ry0Ak" id="46o4wsHqZSa" role="2Ry0An">
               <property role="2Ry0Am" value="solutions" />
               <node concept="2Ry0Ak" id="46o4wsHr01V" role="2Ry0An">
