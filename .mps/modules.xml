@@ -6,6 +6,7 @@
       <modulePath path="$PROJECT_DIR$/baselanguage/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/jetbrains.mps.lang.coderules.mpl" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/runtime/jetbrains.mps.lang.coderules.runtime.msd" folder="coderules" />
+      <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules.ui/jetbrains.mps.coderules.ui.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules/jetbrains.mps.coderules.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.coderules.template/jetbrains.mps.lang.coderules.template.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/controlflow/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" folder="controlflow" />
