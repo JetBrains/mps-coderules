@@ -73,14 +73,14 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
         val constraints = keptConstraints + discardedConstraints
 
         val relevantTries = ArrayList<PartialMatchTrie>()
-        val newTries = ArrayList<PartialMatchTrie>()
+        val copyTries = ArrayList<PartialMatchTrie>()
         for (t in tries) {
             if (!t.vacant.isEmpty) {
-                newTries.add(t)
+                copyTries.add(t)
                 for (idx in t.vacant.stream()) {
                     if (constraints[idx].probablyMatches(activeOcc)) {
                         relevantTries.add(PartialMatchTrie(activeOcc, occIndex, t))
-                        newTries.removeAt(newTries.size - 1)
+                        copyTries.removeAt(copyTries.size - 1)
                         break
                     }
                 }
@@ -91,10 +91,10 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
         }
 
         this.tries.clear()
-        this.tries.addAll(newTries)
+        this.tries.addAll(copyTries)
         this.tries.addAll(relevantTries)
 
-        return relevantTries.asSequence().flatMap { t -> t.matches() }
+        return tries.asSequence().flatMap { t -> t.matches() }
     }
 
     inner class PartialMatchTrie(val activeOcc: ConstraintOccurrence,
@@ -317,7 +317,8 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
                 else {
                     val (result, auxOccurrences) = lookupAuxOccurrences(nextCst)
                     when (result) {
-                        Result.DEFINITIVE   ->  parent
+                        // FIXME: this optimization is causing major problems, drop it?
+                        Result.DEFINITIVE   ->  null /*parent*/
                         Result.NONE         ->  this
                         Result.INCONCLUSIVE ->  null
                     }?.forEachInPath { mtn -> mtn.setSeen() }
