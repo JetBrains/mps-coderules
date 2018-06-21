@@ -929,6 +929,12 @@
             <ref role="3bR37D" node="7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2acLaGi2utJ" role="3bR37C">
+          <node concept="3bR9La" id="2acLaGi2utK" role="1SiIV1">
+            <property role="3bR36h" value="true" />
+            <ref role="3bR37D" to="ffeo:1ia2VB5guYy" resolve="MPS.IDEA" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7BVjoXzUx6U" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -1994,7 +2000,7 @@
         </node>
         <node concept="1SiIV0" id="78H58oewGWX" role="3bR37C">
           <node concept="3bR9La" id="78H58oewGWY" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="NKt6yn9_8p" resolve="jetbrains.mps.coderules" />
           </node>
         </node>
@@ -2014,6 +2020,24 @@
           <node concept="3bR9La" id="78H58oewGX4" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="78H58oeeGcw" resolve="jetbrains.mps.controlflow" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2acLaGi2uwp" role="3bR37C">
+          <node concept="3bR9La" id="2acLaGi2uwq" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2acLaGi2uwr" role="3bR37C">
+          <node concept="3bR9La" id="2acLaGi2uws" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2acLaGi2uwt" role="3bR37C">
+          <node concept="3bR9La" id="2acLaGi2uwu" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="6Yb9hAqy9L2" resolve="jetbrains.mps.coderules.ui" />
           </node>
         </node>
       </node>
