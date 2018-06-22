@@ -94,7 +94,7 @@ internal class MatchTrieSet(val rule: Rule, val profiler: Profiler?) {
         this.tries.addAll(copyTries)
         this.tries.addAll(relevantTries)
 
-        return tries.asSequence().flatMap { t -> t.matches() }
+        return relevantTries.asSequence().flatMap { t -> t.matches() }
     }
 
     inner class PartialMatchTrie(val activeOcc: ConstraintOccurrence,
