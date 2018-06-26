@@ -965,6 +965,11 @@
     <property role="TrG5h" value="RuleTemplate" />
     <property role="34LRSv" value="template" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="xaaVXv4NiS" role="1TKVEl">
+      <property role="IQ2nx" value="597338001513854136" />
+      <property role="TrG5h" value="principal" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="36tQV5AmIsx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="input" />
