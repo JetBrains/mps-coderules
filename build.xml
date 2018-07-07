@@ -1228,9 +1228,7 @@
     <mkdir dir="${build.tmp}/default/jetbrains.mps.typechecking.sample.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.typechecking.sample.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.typechecking.sample" type="solution" uuid="3ddddf69-9ff0-426b-9365-51ae7356fb82">
-        <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
-        </dependencies>
+        <dependencies />
         <classpath>
           <entry path="." />
         </classpath>
@@ -2634,6 +2632,7 @@
         <module file="${basedir}/logic/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" />
         <module file="${basedir}/typechecking/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" />
         <module file="${basedir}/typechecking/solutions/jetbrains.mps.typechecking.reporting/jetbrains.mps.typechecking.reporting.msd" />
+        <module file="${basedir}/typechecking/solutions/jetbrains.mps.typechecking.sample/jetbrains.mps.typechecking.sample.msd" />
       </chunk>
       <chunk>
         <module file="${basedir}/coderules/solutions/jetbrains.mps.coderules/jetbrains.mps.coderules.msd" />
@@ -2657,7 +2656,6 @@
         <module file="${basedir}/baselanguage/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" />
       </chunk>
       <chunk>
-        <module file="${basedir}/typechecking/solutions/jetbrains.mps.typechecking.sample/jetbrains.mps.typechecking.sample.msd" />
         <module file="${basedir}/typechecking/solutions/jetbrains.mps.typechecking.sample.test/jetbrains.mps.typechecking.sample.test.msd" />
         <module file="${basedir}/typechecking/solutions/jetbrains.mps.typechecking.test/jetbrains.mps.typechecking.test.msd" />
       </chunk>
@@ -4436,6 +4434,7 @@
     <delete dir="${mps.macro.logic_home}/logic/languages/jetbrains.mps.logic/runtime/source_gen" />
     <delete dir="${mps.macro.logic_home}/typechecking/languages/jetbrains.mps.typechecking.annotation/source_gen" />
     <delete dir="${mps.macro.logic_home}/typechecking/solutions/jetbrains.mps.typechecking.reporting/source_gen" />
+    <delete dir="${mps.macro.logic_home}/typechecking/solutions/jetbrains.mps.typechecking.sample/source_gen" />
     <delete dir="${mps.macro.logic_home}/coderules/solutions/jetbrains.mps.coderules/source_gen" />
     <delete dir="${mps.macro.logic_home}/coderules/solutions/jetbrains.mps.coderules.ui/source_gen" />
     <delete dir="${mps.macro.logic_home}/controlflow/solutions/jetbrains.mps.controlflow/source_gen" />
@@ -4458,7 +4457,6 @@
     <delete dir="${mps.macro.logic_home}/typechecking/solutions/jetbrains.mps.typechecking.ui/source_gen" />
     <delete dir="${mps.macro.logic_home}/baselanguage/languages/jetbrains.mps.baseLanguageExt/source_gen" />
     <delete dir="${mps.macro.logic_home}/baselanguage/solutions/jetbrains.mps.baseLanguageExt.test/source_gen" />
-    <delete dir="${mps.macro.logic_home}/typechecking/solutions/jetbrains.mps.typechecking.sample/source_gen" />
     <delete dir="${mps.macro.logic_home}/typechecking/solutions/jetbrains.mps.typechecking.sample.test/source_gen" />
     <delete dir="${mps.macro.logic_home}/typechecking/solutions/jetbrains.mps.typechecking.test/source_gen" />
     <delete dir="${mps.macro.logic_home}/logic/solutions/jetbrains.mps.logic.test/test_gen" />
