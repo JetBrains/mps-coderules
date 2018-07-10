@@ -238,8 +238,18 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -5952,14 +5962,55 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="1v5snkI5gA9" role="3cqZAp">
-            <node concept="10QFUN" id="1v5snkI5gA6" role="3clFbG">
-              <node concept="3uibUv" id="1v5snkI5gC_" role="10QFUM">
+          <node concept="3clFbJ" id="5pIcDR7lSQL" role="3cqZAp">
+            <node concept="3clFbS" id="5pIcDR7lSQN" role="3clFbx">
+              <node concept="3cpWs6" id="5pIcDR7lTzP" role="3cqZAp">
+                <node concept="10QFUN" id="5pIcDR7lTzQ" role="3cqZAk">
+                  <node concept="3uibUv" id="5pIcDR7lTzR" role="10QFUM">
+                    <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+                  </node>
+                  <node concept="37vLTw" id="5pIcDR7lTzS" role="10QFUP">
+                    <ref role="3cqZAo" node="1v5snkI5ghY" resolve="val" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2ZW3vV" id="5pIcDR7lTpr" role="3clFbw">
+              <node concept="3uibUv" id="5pIcDR7lTpC" role="2ZW6by">
                 <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
               </node>
-              <node concept="37vLTw" id="1v5snkI5gDL" role="10QFUP">
+              <node concept="37vLTw" id="5pIcDR7lSSq" role="2ZW6bz">
                 <ref role="3cqZAo" node="1v5snkI5ghY" resolve="val" />
               </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="5pIcDR7_$JI" role="3cqZAp">
+            <node concept="3SKdUq" id="5pIcDR7_$JK" role="3SKWNk">
+              <property role="3SKdUp" value="TODO: return false in case the expression evaluates to null?" />
+            </node>
+          </node>
+          <node concept="1X3_iC" id="5pIcDR7_$HT" role="lGtFl">
+            <property role="3V$3am" value="statement" />
+            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+            <node concept="3clFbJ" id="5pIcDR7lTA3" role="8Wnug">
+              <node concept="3clFbS" id="5pIcDR7lTA5" role="3clFbx">
+                <node concept="3cpWs6" id="5pIcDR7lTTp" role="3cqZAp">
+                  <node concept="3clFbT" id="5pIcDR7lTTN" role="3cqZAk">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="5pIcDR7lTS$" role="3clFbw">
+                <node concept="10Nm6u" id="5pIcDR7lTSZ" role="3uHU7w" />
+                <node concept="37vLTw" id="5pIcDR7lTC5" role="3uHU7B">
+                  <ref role="3cqZAo" node="1v5snkI5ghY" resolve="val" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="5pIcDR7lU2H" role="3cqZAp">
+            <node concept="3clFbT" id="5pIcDR7lU2G" role="3clFbG">
+              <property role="3clFbU" value="true" />
             </node>
           </node>
         </node>

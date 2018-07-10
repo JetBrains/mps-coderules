@@ -423,6 +423,12 @@
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
+      <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
+        <child id="1154546920563" name="concept" index="3gmYPZ" />
+      </concept>
+      <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
+        <reference id="1154546997487" name="concept" index="3gnhBz" />
+      </concept>
       <concept id="1176109685393" name="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" flags="nn" index="3lApI0">
         <reference id="1176109685394" name="concept" index="3lApI3" />
       </concept>
@@ -2988,9 +2994,12 @@
               <node concept="2OqwBi" id="1mdVbTRTSQj" role="2Oq$k0">
                 <node concept="3bvxqY" id="1mdVbTRTSAU" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="1mdVbTRTTbe" role="2OqNvi">
-                  <node concept="1xMEDy" id="1mdVbTRTTbg" role="1xVPHs">
-                    <node concept="chp4Y" id="1mdVbTRUx2R" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:6p0DfM0a3TO" resolve="Body" />
+                  <node concept="3gmYPX" id="7pxta7vAT1C" role="1xVPHs">
+                    <node concept="3gn64h" id="7pxta7vAT1P" role="3gmYPZ">
+                      <ref role="3gnhBz" to="wq2x:6p0DfM0a3TO" resolve="Body" />
+                    </node>
+                    <node concept="3gn64h" id="7pxta7vAT9j" role="3gmYPZ">
+                      <ref role="3gnhBz" to="wq2x:6p0DfM0a3Qe" resolve="Guard" />
                     </node>
                   </node>
                   <node concept="1xIGOp" id="1mdVbTRTTFK" role="1xVPHs" />
