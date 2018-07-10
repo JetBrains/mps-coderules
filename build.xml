@@ -1151,6 +1151,7 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" />
           <module ref="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" />
+          <module ref="ffcd9ef5-e931-4da9-a8d1-eb9bf80d19b4(jetbrains.mps.lang.controlflow.runtime)" />
           <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
@@ -4152,7 +4153,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguageExt" depends="java.compile.jetbrains.mps.coderules, java.compile.jetbrains.mps.controlflow, java.compile.jetbrains.mps.lang.coderules.runtime, java.compile.jetbrains.mps.lang.coderules.template, java.compile.jetbrains.mps.lang.typechecking.runtime, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.typechecking, java.compile.jetbrains.mps.typechecking.reporting, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.baseLanguageExt" depends="java.compile.jetbrains.mps.coderules, java.compile.jetbrains.mps.controlflow, java.compile.jetbrains.mps.lang.coderules.runtime, java.compile.jetbrains.mps.lang.coderules.template, java.compile.jetbrains.mps.lang.controlflow.runtime, java.compile.jetbrains.mps.lang.typechecking.runtime, java.compile.jetbrains.mps.logic.runtime, java.compile.jetbrains.mps.typechecking, java.compile.jetbrains.mps.typechecking.reporting, fetchDependencies">
     <mkdir dir="${mps.macro.logic_home}/baselanguage/languages/jetbrains.mps.baseLanguageExt/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -4183,6 +4184,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.controlflow" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.coderules.template" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typechecking.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.typechecking" />
@@ -4355,6 +4357,7 @@
       <pathelement location="${build.layout}/tests/jetbrains.mps.controlflow.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.coderules.runtime.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.coderules.template.jar" />
+      <pathelement location="${build.layout}/tests/jetbrains.mps.lang.controlflow.runtime.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.smodel.types.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.typechecking.runtime.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.logic.jar" />
