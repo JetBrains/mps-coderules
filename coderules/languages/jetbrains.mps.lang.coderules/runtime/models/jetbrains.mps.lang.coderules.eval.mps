@@ -44,7 +44,6 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
-    <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -376,7 +375,6 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115028452779" name="jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation" flags="nn" index="2z74zc" />
-      <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -4699,46 +4697,6 @@
   <node concept="312cEu" id="CGeqIk8WWU">
     <property role="TrG5h" value="RuleProcessingSession" />
     <node concept="2tJIrI" id="CGeqIk90l8" role="jymVt" />
-    <node concept="2YIFZL" id="7DvO2M9p276" role="jymVt">
-      <property role="TrG5h" value="newSession" />
-      <node concept="37vLTG" id="4QPCta1yZtK" role="3clF46">
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="4QPCta1yZVX" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="4QPCta1yZW$" role="3clF46">
-        <property role="TrG5h" value="model" />
-        <node concept="H_c77" id="4QPCta1$riM" role="1tU5fm" />
-      </node>
-      <node concept="3uibUv" id="7DvO2M9p28d" role="3clF45">
-        <ref role="3uigEE" node="CGeqIk8WWU" resolve="RuleProcessingSession" />
-      </node>
-      <node concept="3Tm1VV" id="7DvO2M9p279" role="1B3o_S" />
-      <node concept="3clFbS" id="7DvO2M9p27a" role="3clF47">
-        <node concept="3clFbF" id="7P_FdVPG8pg" role="3cqZAp">
-          <node concept="2ShNRf" id="7DvO2M9ptMA" role="3clFbG">
-            <node concept="1pGfFk" id="7DvO2M9ptMB" role="2ShVmc">
-              <ref role="37wK5l" node="7DvO2M9VeM1" resolve="RuleProcessingSession" />
-              <node concept="2YIFZM" id="NKt6yomRVR" role="37wK5m">
-                <ref role="37wK5l" to="u46i:7P_FdVPW9uU" resolve="allForModel" />
-                <ref role="1Pybhc" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
-                <node concept="37vLTw" id="7P_FdVPWEO8" role="37wK5m">
-                  <ref role="3cqZAo" node="4QPCta1yZW$" resolve="model" />
-                </node>
-                <node concept="37vLTw" id="7P_FdVPWETI" role="37wK5m">
-                  <ref role="3cqZAo" node="4QPCta1yZtK" resolve="repository" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="78H58oeD2fb" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7DvO2M9pm6U" role="jymVt" />
     <node concept="3clFbW" id="7DvO2M9VeM1" role="jymVt">
       <node concept="3cqZAl" id="7DvO2M9VeM2" role="3clF45" />
       <node concept="3Tm1VV" id="78H58oeCgeV" role="1B3o_S" />
