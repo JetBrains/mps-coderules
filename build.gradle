@@ -64,9 +64,9 @@ task installMps(type: Copy)  {
 
 def allInitDependencies = [
   'installMps',
-  'logic/solutions/jetbrains.mps.logic.reactor:copyDependencies',
-  'logic/solutions/jetbrains.mps.logic.test:copyDependencies',
-  'typechecking/solutions/jetbrains.mps.typechecking:copyDependencies',
+  'coderules/solutions/jetbrains.mps.logic.reactor:copyDependencies',
+  'coderules/solutions/jetbrains.mps.logic.test:copyDependencies',
+  'coderules/solutions/jetbrains.mps.typechecking:copyDependencies',
   'coderules/solutions/jetbrains.mps.coderules:copyDependencies' ]
 
 task init(dependsOn: allInitDependencies) {
