@@ -11755,6 +11755,45 @@
             </node>
             <node concept="3clFbJ" id="4t7Xo7in$su" role="3cqZAp">
               <node concept="3clFbS" id="4t7Xo7in$sw" role="3clFbx">
+                <node concept="3clFbJ" id="7mB3viLvnft" role="3cqZAp">
+                  <node concept="3clFbS" id="7mB3viLvnfv" role="3clFbx">
+                    <node concept="YS8fn" id="7mB3viLvt8k" role="3cqZAp">
+                      <node concept="2ShNRf" id="7mB3viLvt9c" role="YScLw">
+                        <node concept="1pGfFk" id="7mB3viLvtzw" role="2ShVmc">
+                          <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                          <node concept="3cpWs3" id="7mB3viLvN1f" role="37wK5m">
+                            <node concept="2OqwBi" id="7mB3viLvNkl" role="3uHU7w">
+                              <node concept="2GrUjf" id="7mB3viLvN7U" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="7WKNeR97wDT" resolve="qt" />
+                              </node>
+                              <node concept="liA8E" id="7mB3viLvO1o" role="2OqNvi">
+                                <ref role="37wK5l" to="i348:4t7Xo7icmmF" resolve="kind" />
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="7mB3viLvt$5" role="3uHU7B">
+                              <property role="Xl_RC" value="conflicting queries of kind: " />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="7mB3viLvqxl" role="3clFbw">
+                    <node concept="37vLTw" id="7mB3viLvp5b" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4t7Xo7inyhm" resolve="kind2queryTemplate" />
+                    </node>
+                    <node concept="2Nt0df" id="7mB3viLvr4s" role="2OqNvi">
+                      <node concept="2OqwBi" id="7mB3viLvrfQ" role="38cxEo">
+                        <node concept="2GrUjf" id="7mB3viLvr6Q" role="2Oq$k0">
+                          <ref role="2Gs0qQ" node="7WKNeR97wDT" resolve="qt" />
+                        </node>
+                        <node concept="liA8E" id="7mB3viLvrTm" role="2OqNvi">
+                          <ref role="37wK5l" to="i348:4t7Xo7icmmF" resolve="kind" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="4t7Xo7inGd8" role="3cqZAp">
                   <node concept="37vLTI" id="4t7Xo7inJsK" role="3clFbG">
                     <node concept="2GrUjf" id="4t7Xo7inMuK" role="37vLTx">
