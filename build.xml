@@ -26,7 +26,7 @@
   </path>
   
   <target name="assemble" depends="classes, declare-mps-tasks">
-    <mkdir dir="${build.layout}/tests" />
+    <mkdir dir="${build.layout}/deploy" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.dataform.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.dataform.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.dataform.jar/META-INF/module.xml">
@@ -50,7 +50,7 @@
         <sources jar="jetbrains.mps.dataform-src.jar" descriptor="jetbrains.mps.dataform.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.dataform.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.dataform.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.dataform" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.dataform/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.dataform.jar" />
@@ -78,7 +78,7 @@
         <sources jar="jetbrains.mps.dataform-src.jar" descriptor="jetbrains.mps.dataform.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.dataform-generator.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.dataform-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.dataform#01" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.dataform-generator.jar" />
     </jar>
@@ -88,7 +88,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.dataform-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.dataform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.dataform-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.dataform-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.dataform/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -135,7 +135,7 @@
         <sources jar="jetbrains.mps.logic-src.jar" descriptor="jetbrains.mps.logic.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.logic" />
       <fileset dir="${basedir}/coderules/languages/jetbrains.mps.logic" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.logic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -163,7 +163,7 @@
         <sources jar="jetbrains.mps.logic-src.jar" descriptor="jetbrains.mps.logic.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic-generator.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.logic#6626732309150416985" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.logic-generator.jar" />
     </jar>
@@ -173,7 +173,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.logic-languageModels">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.logic/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.logic/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -207,11 +207,11 @@
         <sources jar="jetbrains.mps.logic.reactor-src.jar" descriptor="jetbrains.mps.logic.reactor.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic.reactor.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic.reactor.jar" duplicate="preserve">
       <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.logic.reactor" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.logic.reactor.jar" />
     </jar>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic.reactor-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic.reactor-src.jar" duplicate="preserve">
       <zipfileset file="${basedir}/coderules/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" prefix="module" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.logic.runtime.jar" />
@@ -236,7 +236,7 @@
         <sources jar="jetbrains.mps.logic.runtime-src.jar" descriptor="jetbrains.mps.logic.runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic.runtime.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
       <fileset dir="${basedir}/coderules/languages/jetbrains.mps.logic/runtime" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.logic/runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -245,7 +245,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.logic-runtime-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.logic/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic.runtime-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic.runtime-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.logic/runtime/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -281,7 +281,7 @@
         <sources jar="jetbrains.mps.logic.test-src.jar" descriptor="jetbrains.mps.logic.test.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic.test.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.logic.test" />
       <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.logic.test" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -290,7 +290,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.logic.test-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.logic.test-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.logic.test-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.test/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -331,7 +331,7 @@
         <sources jar="jetbrains.mps.lang.coderules-src.jar" descriptor="jetbrains.mps.lang.coderules.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.coderules.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.coderules.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.coderules" />
       <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.coderules" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.coderules/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -362,7 +362,7 @@
         <sources jar="jetbrains.mps.lang.coderules-src.jar" descriptor="jetbrains.mps.lang.coderules.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.coderules-generator.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.coderules-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.coderules#4578927328670739933" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.coderules-generator.jar" />
     </jar>
@@ -372,7 +372,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.lang.coderules-languageModels">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.coderules/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.coderules-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.coderules-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.coderules/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -413,7 +413,7 @@
         <sources jar="jetbrains.mps.lang.coderules.runtime-src.jar" descriptor="jetbrains.mps.lang.coderules.runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.coderules.runtime.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.coderules.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.coderules.runtime" />
       <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.coderules/runtime" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.coderules/runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -422,7 +422,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.lang.coderules-runtime-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.coderules/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.coderules.runtime-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.coderules.runtime-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.coderules/runtime/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -455,7 +455,7 @@
         <sources jar="jetbrains.mps.lang.coderules.template-src.jar" descriptor="jetbrains.mps.lang.coderules.template.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.coderules.template.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.coderules.template.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.coderules.template" />
       <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.lang.coderules.template" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.coderules.template/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -464,7 +464,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.lang.coderules.template-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.coderules.template/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.coderules.template-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.coderules.template-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.coderules.template/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -502,7 +502,7 @@
         <sources jar="jetbrains.mps.coderules-src.jar" descriptor="jetbrains.mps.coderules.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.coderules.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.jar" />
@@ -510,7 +510,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.coderules-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -545,7 +545,7 @@
         <sources jar="jetbrains.mps.coderules.ui-src.jar" descriptor="jetbrains.mps.coderules.ui.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.coderules.ui.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.ui.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.ui" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.ui.jar" />
@@ -553,7 +553,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.coderules.ui-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.ui/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.coderules.ui-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.ui-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.ui/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -588,7 +588,7 @@
         <sources jar="jetbrains.mps.lang.typechecking-src.jar" descriptor="jetbrains.mps.lang.typechecking.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.typechecking.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.typechecking.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.jar" />
@@ -617,7 +617,7 @@
         <sources jar="jetbrains.mps.lang.typechecking-src.jar" descriptor="jetbrains.mps.lang.typechecking.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.typechecking-generator.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.typechecking-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking#01" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking-generator.jar" />
     </jar>
@@ -627,7 +627,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.lang.typechecking-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.typechecking-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.typechecking-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -664,7 +664,7 @@
         <sources jar="jetbrains.mps.lang.typechecking.runtime-src.jar" descriptor="jetbrains.mps.lang.typechecking.runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.typechecking.runtime.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking.runtime" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.runtime.jar" />
@@ -672,7 +672,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.lang.typechecking.runtime-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.typechecking.runtime-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.typechecking.runtime-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -707,7 +707,7 @@
         <sources jar="jetbrains.mps.typechecking-src.jar" descriptor="jetbrains.mps.typechecking.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking" />
       <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.typechecking" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -716,7 +716,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.typechecking-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -746,7 +746,7 @@
         <sources jar="jetbrains.mps.typechecking.reporting-src.jar" descriptor="jetbrains.mps.typechecking.reporting.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.reporting.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.reporting.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.reporting" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.reporting/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.typechecking.reporting.jar" />
@@ -754,7 +754,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.typechecking.reporting-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.reporting/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.reporting-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.reporting-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.reporting/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -789,7 +789,7 @@
         <sources jar="jetbrains.mps.typechecking.ui-src.jar" descriptor="jetbrains.mps.typechecking.ui.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.ui.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.ui.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.ui" />
       <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.typechecking.ui" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -798,7 +798,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.typechecking.ui-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.ui/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.ui-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.ui-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.ui/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -839,7 +839,7 @@
         <sources jar="jetbrains.mps.typechecking.testlang-src.jar" descriptor="jetbrains.mps.typechecking.testlang.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.testlang.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.testlang.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.testlang" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.typechecking.testlang/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.typechecking.testlang.jar" />
@@ -866,7 +866,7 @@
         <sources jar="jetbrains.mps.typechecking.testlang-src.jar" descriptor="jetbrains.mps.typechecking.testlang.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.testlang-generator.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.testlang-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.testlang#3575255234175341581" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.typechecking.testlang-generator.jar" />
     </jar>
@@ -876,7 +876,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.typechecking.testlang-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.typechecking.testlang/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.testlang-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.testlang-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.typechecking.testlang/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -904,7 +904,7 @@
         <sources jar="jetbrains.mps.typechecking.testlang.sandbox-src.jar" descriptor="jetbrains.mps.typechecking.testlang.sandbox.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.testlang.sandbox.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.testlang.sandbox.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.testlang.sandbox" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.testlang.sandbox/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.typechecking.testlang.sandbox.jar" />
@@ -912,7 +912,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.typechecking.testlang.sandbox-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.testlang.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.testlang.sandbox-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.testlang.sandbox-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.testlang.sandbox/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -949,7 +949,7 @@
         <sources jar="jetbrains.mps.typechecking.test-src.jar" descriptor="jetbrains.mps.typechecking.test.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.test.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.test" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.typechecking.test.jar" />
@@ -957,7 +957,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.typechecking.test-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.test-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.test-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.typechecking.test/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -993,7 +993,7 @@
         <sources jar="jetbrains.mps.lang.smodel.types-src.jar" descriptor="jetbrains.mps.lang.smodel.types.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.smodel.types.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types" />
       <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.smodel.types" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.smodel.types/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -1021,7 +1021,7 @@
         <sources jar="jetbrains.mps.lang.smodel.types-src.jar" descriptor="jetbrains.mps.lang.smodel.types.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types-generator.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.smodel.types-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodel.types#7345257067587611144" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodel.types-generator.jar" />
     </jar>
@@ -1031,7 +1031,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.lang.smodel.types-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.smodel.types/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.smodel.types-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.smodel.types-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.smodel.types/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -1068,7 +1068,7 @@
         <sources jar="jetbrains.mps.controlflow-src.jar" descriptor="jetbrains.mps.controlflow.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.controlflow.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.controlflow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.jar" />
@@ -1076,7 +1076,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.controlflow-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.controlflow-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.controlflow-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -1110,7 +1110,7 @@
         <sources jar="jetbrains.mps.controlflow.ui-src.jar" descriptor="jetbrains.mps.controlflow.ui.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.controlflow.ui.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.controlflow.ui.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow.ui" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar" />
@@ -1118,7 +1118,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.controlflow.ui-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow.ui/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.controlflow.ui-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.controlflow.ui-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow.ui/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -1153,7 +1153,7 @@
         <sources jar="jetbrains.mps.lang.controlflow-src.jar" descriptor="jetbrains.mps.lang.controlflow.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.controlflow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar" />
@@ -1182,7 +1182,7 @@
         <sources jar="jetbrains.mps.lang.controlflow-src.jar" descriptor="jetbrains.mps.lang.controlflow.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow-generator.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.controlflow-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow#01" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow-generator.jar" />
     </jar>
@@ -1192,7 +1192,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.lang.controlflow-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.controlflow/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.controlflow-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.controlflow/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -1229,7 +1229,7 @@
         <sources jar="jetbrains.mps.lang.controlflow.runtime-src.jar" descriptor="jetbrains.mps.lang.controlflow.runtime.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow.runtime.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.controlflow.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar" />
@@ -1237,7 +1237,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-solutions-jetbrains.mps.lang.controlflow.runtime-models">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.controlflow.runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.controlflow.runtime-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.controlflow.runtime-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -1272,7 +1272,7 @@
         <sources jar="jetbrains.mps.typechecking.annotation-src.jar" descriptor="jetbrains.mps.typechecking.annotation.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.annotation.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.annotation.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.annotation" />
       <fileset dir="${basedir}/coderules/languages/jetbrains.mps.typechecking.annotation" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.typechecking.annotation/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -1281,7 +1281,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.typechecking.annotation-languageModels">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.typechecking.annotation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.typechecking.annotation-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.annotation-src.jar" duplicate="preserve">
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.typechecking.annotation/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -1291,14 +1291,14 @@
       <zipfileset file="${basedir}/coderules/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/coderules-languages-jetbrains.mps.typechecking.annotation-languageModels" prefix="module/languageModels" />
     </jar>
-    <mkdir dir="${build.layout}/tests/lib" />
-    <copy todir="${build.layout}/tests/lib">
+    <mkdir dir="${build.layout}/deploy/lib" />
+    <copy todir="${build.layout}/deploy/lib">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.test/lib" />
     </copy>
-    <copy todir="${build.layout}/tests/lib">
+    <copy todir="${build.layout}/deploy/lib">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib" />
     </copy>
-    <copy todir="${build.layout}/tests/lib">
+    <copy todir="${build.layout}/deploy/lib">
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib" />
     </copy>
     <mkdir dir="${build.tmp}/default/typechecking-0.5.zip" />
@@ -1489,7 +1489,7 @@
         <library jar="../lib/collection-0.7.jar" />
         <library jar="../lib/conreactor-api-0.9.jar" />
         <library jar="../lib/conreactor-core-0.9.jar" />
-        <library jar="../../../tests/lib/trove4j-3.0.3.jar" />
+        <library jar="../../../deploy/lib/trove4j-3.0.3.jar" />
         <library jar="../lib/kotlin-runtime-1.2.30.jar" />
         <library jar="../lib/kotlin-stdlib-1.2.30.jar" />
         <classpath>
@@ -4186,18 +4186,18 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.coderules.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.dataform.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.lang.coderules.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.lang.coderules.runtime.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.lang.coderules.template.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.lang.smodel.types.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.lang.typechecking.runtime.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.logic.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.logic.reactor.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.logic.runtime.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.typechecking.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.typechecking.reporting.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.coderules.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.dataform.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.lang.coderules.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.lang.coderules.template.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.lang.smodel.types.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.logic.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.logic.reactor.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.logic.runtime.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.typechecking.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.typechecking.reporting.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
@@ -4206,11 +4206,11 @@
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
     <path id="mps.tests.path">
-      <pathelement location="${build.layout}/tests/jetbrains.mps.logic.test.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.typechecking.test.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.typechecking.testlang-generator.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.typechecking.testlang.jar" />
-      <pathelement location="${build.layout}/tests/jetbrains.mps.typechecking.testlang.sandbox.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.logic.test.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.typechecking.test.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.typechecking.testlang-generator.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.typechecking.testlang.jar" />
+      <pathelement location="${build.layout}/deploy/jetbrains.mps.typechecking.testlang.sandbox.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
     <path id="long.class.path">

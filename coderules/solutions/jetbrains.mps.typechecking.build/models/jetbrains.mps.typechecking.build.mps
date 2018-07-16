@@ -2244,7 +2244,7 @@
         </node>
         <node concept="3_J27D" id="7Ant4WkHLAr" role="Nbhlr">
           <node concept="3Mxwew" id="7Ant4WkHLDj" role="3MwsjC">
-            <property role="3MwjfP" value="tests" />
+            <property role="3MwjfP" value="deploy" />
           </node>
         </node>
         <node concept="L2wRC" id="46o4wsHrP6K" role="39821P">
