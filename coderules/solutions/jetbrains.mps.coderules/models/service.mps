@@ -339,7 +339,6 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
-      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -749,12 +748,9 @@
                                     <ref role="3cqZAo" node="78H58oeCDR1" resolve="aspectLookup" />
                                   </node>
                                   <node concept="liA8E" id="78H58oeCJ_3" role="2OqNvi">
-                                    <ref role="37wK5l" to="fqlx:NKt6ynoYr0" resolve="allForModel" />
-                                    <node concept="2OqwBi" id="78H58oeCRWV" role="37wK5m">
-                                      <node concept="37vLTw" id="78H58oeCR6e" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="7kTeLbPtnTq" resolve="node" />
-                                      </node>
-                                      <node concept="I4A8Y" id="78H58oeCSYQ" role="2OqNvi" />
+                                    <ref role="37wK5l" to="fqlx:7mB3viLmii2" resolve="allForNode" />
+                                    <node concept="37vLTw" id="78H58oeCR6e" role="37wK5m">
+                                      <ref role="3cqZAo" node="7kTeLbPtnTq" resolve="node" />
                                     </node>
                                     <node concept="37vLTw" id="78H58oeCUMr" role="37wK5m">
                                       <ref role="3cqZAo" node="6kREIVkLEGt" resolve="repository" />
@@ -799,19 +795,21 @@
                                   <ref role="3cqZAo" node="7WKNeR9fj4f" resolve="queryKind" />
                                 </node>
                               </node>
-                              <node concept="2OqwBi" id="7WKNeR9kv7P" role="3K4E3e">
-                                <node concept="2OqwBi" id="7WKNeR9kv7Q" role="2Oq$k0">
-                                  <node concept="37vLTw" id="12QmIoyMYgE" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="12QmIoyMK_F" resolve="session" />
+                              <node concept="1eOMI4" id="7mB3viLnA$T" role="3K4E3e">
+                                <node concept="2OqwBi" id="7mB3viLnA$N" role="1eOMHV">
+                                  <node concept="2OqwBi" id="7mB3viLnA$O" role="2Oq$k0">
+                                    <node concept="37vLTw" id="7mB3viLnA$P" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="12QmIoyMK_F" resolve="session" />
+                                    </node>
+                                    <node concept="liA8E" id="7mB3viLnA$Q" role="2OqNvi">
+                                      <ref role="37wK5l" to="hano:7WKNeR9alW4" resolve="queryTemplates" />
+                                    </node>
                                   </node>
-                                  <node concept="liA8E" id="7WKNeR9kv7S" role="2OqNvi">
-                                    <ref role="37wK5l" to="hano:7WKNeR9alW4" resolve="queryTemplates" />
-                                  </node>
-                                </node>
-                                <node concept="liA8E" id="7WKNeR9kv7T" role="2OqNvi">
-                                  <ref role="37wK5l" to="hano:4t7Xo7inmSj" resolve="byKind" />
-                                  <node concept="37vLTw" id="7WKNeR9kv7U" role="37wK5m">
-                                    <ref role="3cqZAo" node="7WKNeR9fj4f" resolve="queryKind" />
+                                  <node concept="liA8E" id="7mB3viLnA$R" role="2OqNvi">
+                                    <ref role="37wK5l" to="hano:4t7Xo7inmSj" resolve="byKind" />
+                                    <node concept="37vLTw" id="7mB3viLnA$S" role="37wK5m">
+                                      <ref role="3cqZAo" node="7WKNeR9fj4f" resolve="queryKind" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>
