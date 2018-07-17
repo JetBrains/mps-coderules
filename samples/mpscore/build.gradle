@@ -14,4 +14,22 @@ ant.taskdef(name: 'junit',
             classname: 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTask',
             classpath: configurations.junitAnt.asPath)
 
-ant.importBuild('build.xml')
+ant.importBuild('build.xml') {antTarget ->
+    'mpscore-'+antTarget
+}
+
+// ensure 'generate' runs before 'classes' ('generate' is NOT optional)
+'mpscore-classes' {
+  dependsOn {
+    'mpscore-generate'
+  }
+  mustRunAfter {
+    'mpscore-generate'
+  }
+}
+
+'mpscore-generate' {
+  dependsOn {
+    ':coderules-assemble'
+  }
+}

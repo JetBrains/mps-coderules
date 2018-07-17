@@ -139,3 +139,9 @@ ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9
     'generateUpdatePluginsXml'
   }
 }
+
+task check {
+  dependsOn {
+    [':coderules-test', ':samples/mpscore:mpscore-test']
+  }
+}
