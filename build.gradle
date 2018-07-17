@@ -106,43 +106,35 @@ ant.taskdef(name: 'junit',
             classname: 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTask',
             classpath: configurations.junitAnt.asPath)
 
-ant.importBuild('build.xml')
+ant.importBuild('build.xml') { antTarget ->
+    'coderules-'+antTarget
+}
 ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9999'}".toString()
 
 // ensure 'init' runs before 'fetchDependencies' and 'declare-mps-tasks'
-fetchDependencies {
+'coderules-fetchDependencies' {
   dependsOn {
     'init'
   }
 }
 
-'declare-mps-tasks' {
+'coderules-declare-mps-tasks' {
   dependsOn {
     'init'
   }
 }
 
 // ensure 'generate' runs before 'classes' ('generate' is NOT optional)
-allprojects {
-  classes {
-    dependsOn {
-      'generate'
-    }
-    mustRunAfter {
-      'generate'
-    }
+'coderules-classes' {
+  dependsOn {
+    'coderules-generate'
   }
-  test {
-    dependsOn {
-      'assemble'
-    }
-    mustRunAfter {
-      'assemble'
-    }
+  mustRunAfter {
+    'coderules-generate'
   }
 }
 
-assemble {
+'coderules-assemble' {
   finalizedBy {
     'generateUpdatePluginsXml'
   }
