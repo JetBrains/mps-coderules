@@ -123,12 +123,22 @@ fetchDependencies {
 }
 
 // ensure 'generate' runs before 'classes' ('generate' is NOT optional)
-classes {
-  dependsOn {
-    'generate'
+allprojects {
+  classes {
+    dependsOn {
+      'generate'
+    }
+    mustRunAfter {
+      'generate'
+    }
   }
-  mustRunAfter {
-    'generate'
+  test {
+    dependsOn {
+      'assemble'
+    }
+    mustRunAfter {
+      'assemble'
+    }
   }
 }
 
@@ -137,4 +147,3 @@ assemble {
     'generateUpdatePluginsXml'
   }
 }
-

@@ -11,6 +11,7 @@
 .gradle
 out
 build/*
+samples/mpscore/build/*
 config/*
 system/*
 MPS_HOME

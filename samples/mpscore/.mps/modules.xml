@@ -4,6 +4,7 @@
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.coderules.samples.mpscore.build/jetbrains.mps.coderules.samples.mpscore.build.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.sample.test/jetbrains.mps.typechecking.sample.test.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.typechecking.sample/jetbrains.mps.typechecking.sample.msd" folder="" />
     </projectModules>

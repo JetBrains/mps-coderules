@@ -125,7 +125,7 @@
     </language>
   </registry>
   <node concept="2XOHcx" id="1N_0WA5DT60">
-    <property role="2XOHcw" value="${logic_home}" />
+    <property role="2XOHcw" value="${mpscore_home}" />
   </node>
   <node concept="1lH9Xt" id="1N_0WA5DT3k">
     <property role="TrG5h" value="Typechecking" />

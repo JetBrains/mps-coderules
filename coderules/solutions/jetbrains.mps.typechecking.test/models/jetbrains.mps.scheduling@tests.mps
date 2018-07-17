@@ -950,7 +950,7 @@
     </node>
   </node>
   <node concept="2XOHcx" id="7t5VLKGQVAO">
-    <property role="2XOHcw" value="${logic_home}" />
+    <property role="2XOHcw" value="${coderules_home}" />
   </node>
 </model>
 

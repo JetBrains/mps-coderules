@@ -1070,7 +1070,7 @@
     </node>
   </node>
   <node concept="2XOHcx" id="7t5VLKGQVAO">
-    <property role="2XOHcw" value="${logic_home}" />
+    <property role="2XOHcw" value="${mpscore_home}" />
   </node>
   <node concept="3s_ewN" id="7t5VLKGALSG">
     <property role="3s_ewP" value="Lub" />

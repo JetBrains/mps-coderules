@@ -334,7 +334,7 @@
     </language>
   </registry>
   <node concept="2XOHcx" id="7t5VLKGQVAO">
-    <property role="2XOHcw" value="${logic_home}" />
+    <property role="2XOHcw" value="${coderules_home}" />
   </node>
   <node concept="1lH9Xt" id="6QH_LDtdSk3">
     <property role="TrG5h" value="TypeCache" />
