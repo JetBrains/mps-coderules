@@ -5,7 +5,6 @@
   <property name="build.layout" location="${build.dir}/artifacts/mpscore" />
   <property name="mps_home" location="${basedir}/../../MPS_HOME" />
   <property name="mps.macro.mpscore_home" location="${basedir}" />
-  <property name="mps.macro.logic_home" location="${basedir}" />
   <property name="coderules_plugin" location="${basedir}/../../build/artifacts/typechecking-plugin" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property name="artifacts.typechecking-plugin" location="${coderules_plugin}" />
@@ -22,13 +21,13 @@
   <property name="environment" value="env" />
   <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
-
+  
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mps}/lib/ant/lib/ant-mps.jar" />
     <pathelement location="${artifacts.mps}/lib/jdom.jar" />
     <pathelement location="${artifacts.mps}/lib/log4j.jar" />
   </path>
-
+  
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/deploy" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguageExt.jar" />
@@ -194,28 +193,28 @@
     </jar>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}typechecking-plugin.ci.build.num=${typechecking-plugin.ci.build.num}</echo>
   </target>
-
+  
   <target name="buildDependents" />
-
+  
   <target name="fetchDependencies" />
-
+  
   <target name="build" depends="assemble" />
-
+  
   <target name="clean">
     <delete dir="${build.tmp}" />
     <delete dir="${build.layout}" />
   </target>
-
+  
   <target name="compileJava" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.jetbrains.mps.typechecking.sample, java.compile.jetbrains.mps.typechecking.sample.test" />
-
+  
   <target name="processResources" />
-
+  
   <target name="classes" depends="compileJava, processResources" />
-
+  
   <target name="test" depends="classes, module-tests" />
-
+  
   <target name="check" depends="test" />
-
+  
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
@@ -330,15 +329,15 @@
       <macro name="coderules_plugin" path="${coderules_plugin}" />
     </generate>
   </target>
-
+  
   <target name="declare-mps-tasks">
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path" />
   </target>
-
+  
   <target name="makeDependents" />
-
+  
   <target name="module-tests" depends="assemble, test.testconfig" />
-
+  
   <target name="java.compile.jetbrains.mps.baseLanguageExt" depends="fetchDependencies">
     <mkdir dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
@@ -397,7 +396,7 @@
       </classpath>
     </javac>
   </target>
-
+  
   <target name="java.compile.jetbrains.mps.baseLanguageExt.test" depends="java.compile.jetbrains.mps.baseLanguageExt, fetchDependencies">
     <mkdir dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt.test" />
@@ -458,7 +457,7 @@
       </classpath>
     </javac>
   </target>
-
+  
   <target name="java.compile.jetbrains.mps.typechecking.sample">
     <mkdir dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.typechecking.sample" />
@@ -470,7 +469,7 @@
       <classpath />
     </javac>
   </target>
-
+  
   <target name="java.compile.jetbrains.mps.typechecking.sample.test" depends="java.compile.jetbrains.mps.typechecking.sample, fetchDependencies">
     <mkdir dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.typechecking.sample.test" />
@@ -537,7 +536,7 @@
       </classpath>
     </javac>
   </target>
-
+  
   <target name="test.testconfig" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -679,23 +678,25 @@
       <jvmarg value="-Xmx1024m" />
       <jvmarg value="-XX:MaxPermSize=256m" />
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
-
+      
       <classpath>
         <fileset dir="${build.tmp}">
           <include name="mps.class.path.jar" />
         </fileset>
       </classpath>
-
+      
+      <env key="NO_FS_ROOTS_ACCESS_CHECK" value="true" />
       <sysproperty key="plugin.path" value="${mps.plugins.path.string}" />
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
+      
       <sysproperty key="mps.macro.mpscore_home" value="${basedir}" />
-
+      
       <test name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.AntModuleTestSuite-testconfig" />
       <formatter type="xml" />
     </junit>
   </target>
-
+  
   <target name="cleanSources">
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/source_gen" />
