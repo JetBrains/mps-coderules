@@ -175,9 +175,9 @@
       </node>
     </node>
     <node concept="2sgV4H" id="7E7FS_VaV_t" role="1l3spa">
-      <ref role="1l3spb" to="zqd8:1BDNG5xBZgg" resolve="typechecking-plugin" />
+      <ref role="1l3spb" to="zqd8:1BDNG5xBZgg" resolve="coderules" />
       <node concept="398BVA" id="7E7FS_VaV_y" role="2JcizS">
-        <ref role="398BVh" node="7E7FS_VaSma" resolve="coderules_deploy" />
+        <ref role="398BVh" node="7E7FS_VaSma" resolve="coderules_art" />
       </node>
     </node>
     <node concept="55IIr" id="7E7FS_VaSlT" role="auvoZ" />
@@ -185,7 +185,7 @@
     <node concept="10PD9b" id="7E7FS_VaSlV" role="10PD9s" />
     <node concept="3b7kt6" id="7E7FS_VaSm0" role="10PD9s" />
     <node concept="398rNT" id="7E7FS_VaSma" role="1l3spd">
-      <property role="TrG5h" value="coderules_deploy" />
+      <property role="TrG5h" value="coderules_art" />
       <node concept="55IIr" id="7E7FS_VaSmc" role="398pKh">
         <node concept="2Ry0Ak" id="7E7FS_VaSn8" role="iGT6I">
           <property role="2Ry0Am" value=".." />
@@ -195,8 +195,8 @@
               <property role="2Ry0Am" value="build" />
               <node concept="2Ry0Ak" id="7E7FS_VaVA4" role="2Ry0An">
                 <property role="2Ry0Am" value="artifacts" />
-                <node concept="2Ry0Ak" id="7E7FS_VaVA9" role="2Ry0An">
-                  <property role="2Ry0Am" value="typechecking-plugin" />
+                <node concept="2Ry0Ak" id="5CiHmuT4DQ6" role="2Ry0An">
+                  <property role="2Ry0Am" value="coderules" />
                 </node>
               </node>
             </node>

@@ -1,4 +1,0 @@
-<plugins>
-    <plugin id="jetbrains.mps.typechecking" url="https://github.com/fisakov/constraints-typechecking/releases/download/v0.2-snapshot.17/typechecking-0.2.zip" version="0.2-b17" >
-    </plugin>
-</plugins>

@@ -130,7 +130,7 @@
       <node concept="55IIr" id="46o4wsH3mGg" role="398pKh" />
     </node>
     <node concept="398rNT" id="5VQ8Sex_oaS" role="1l3spd">
-      <property role="TrG5h" value="coderules_plugin" />
+      <property role="TrG5h" value="coderules_art" />
       <node concept="55IIr" id="5VQ8Sex_odz" role="398pKh">
         <node concept="2Ry0Ak" id="5VQ8Sex_odA" role="iGT6I">
           <property role="2Ry0Am" value=".." />
@@ -140,8 +140,8 @@
               <property role="2Ry0Am" value="build" />
               <node concept="2Ry0Ak" id="5VQ8Sex_og3" role="2Ry0An">
                 <property role="2Ry0Am" value="artifacts" />
-                <node concept="2Ry0Ak" id="5VQ8Sex_ohC" role="2Ry0An">
-                  <property role="2Ry0Am" value="typechecking-plugin" />
+                <node concept="2Ry0Ak" id="5CiHmuT4vvj" role="2Ry0An">
+                  <property role="2Ry0Am" value="coderules" />
                 </node>
               </node>
             </node>
@@ -181,9 +181,9 @@
       </node>
     </node>
     <node concept="2sgV4H" id="69UmpDmJQIZ" role="1l3spa">
-      <ref role="1l3spb" to="zqd8:1BDNG5xBZgg" resolve="typechecking-plugin" />
+      <ref role="1l3spb" to="zqd8:1BDNG5xBZgg" resolve="coderules" />
       <node concept="398BVA" id="5VQ8Sex_oug" role="2JcizS">
-        <ref role="398BVh" node="5VQ8Sex_oaS" resolve="coderules_plugin" />
+        <ref role="398BVh" node="5VQ8Sex_oaS" resolve="coderules_art" />
       </node>
     </node>
     <node concept="2G$12M" id="69UmpDmJW20" role="3989C9">

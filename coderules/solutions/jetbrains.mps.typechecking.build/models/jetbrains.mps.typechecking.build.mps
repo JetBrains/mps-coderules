@@ -167,7 +167,7 @@
   </registry>
   <node concept="1l3spW" id="1BDNG5xBZgg">
     <property role="2DA0ip" value="../../../" />
-    <property role="TrG5h" value="typechecking-plugin" />
+    <property role="TrG5h" value="coderules" />
     <node concept="22LTRH" id="7Ant4WkHLti" role="1hWBAP">
       <property role="TrG5h" value="testconfig" />
       <node concept="22LTRF" id="46o4wsHrLsQ" role="22LTRK">
@@ -183,15 +183,15 @@
       </node>
     </node>
     <node concept="m$_wf" id="7BVjoXzUx67" role="3989C9">
-      <property role="m$_wk" value="jetbrains.mps.typechecking" />
+      <property role="m$_wk" value="jetbrains.mps.coderules" />
       <node concept="3_J27D" id="7BVjoXzUx68" role="m$_yQ">
         <node concept="3Mxwew" id="7BVjoXzUx6h" role="3MwsjC">
-          <property role="3MwjfP" value="Typechecking with Constraint Rules" />
+          <property role="3MwjfP" value="Code Rules" />
         </node>
       </node>
       <node concept="3_J27D" id="7BVjoXzUx69" role="m_cZH">
         <node concept="3Mxwew" id="7BVjoXzUx6j" role="3MwsjC">
-          <property role="3MwjfP" value="typechecking" />
+          <property role="3MwjfP" value="coderules" />
         </node>
       </node>
       <node concept="3_J27D" id="7BVjoXzUx6a" role="m$_w8">
@@ -204,7 +204,7 @@
       </node>
       <node concept="3_J27D" id="3AC_dXTSEnT" role="3s6cr7">
         <node concept="3Mxwew" id="3AC_dXTSEnV" role="3MwsjC">
-          <property role="3MwjfP" value="Experimental support for type checking with constraint rules" />
+          <property role="3MwjfP" value="Code rules and constraint handling (experimental)" />
         </node>
       </node>
       <node concept="2iUeEo" id="3AC_dXTSEsp" role="2iVFfd">
@@ -2348,11 +2348,11 @@
       <node concept="3981dG" id="65DJywFjdtY" role="39821P">
         <node concept="3_J27D" id="65DJywFjdtZ" role="Nbhlr">
           <node concept="3Mxwew" id="65DJywFjdwr" role="3MwsjC">
-            <property role="3MwjfP" value="typechecking-0.5.zip" />
+            <property role="3MwjfP" value="coderules-0.5.zip" />
           </node>
         </node>
         <node concept="m$_wl" id="65DJywFjdwt" role="39821P">
-          <ref role="m_rDy" node="7BVjoXzUx67" resolve="jetbrains.mps.typechecking" />
+          <ref role="m_rDy" node="7BVjoXzUx67" resolve="jetbrains.mps.coderules" />
           <node concept="398223" id="65DJywFkEum" role="39821P">
             <node concept="3_J27D" id="65DJywFkEuo" role="Nbhlr">
               <node concept="3Mxwew" id="65DJywFkExe" role="3MwsjC">

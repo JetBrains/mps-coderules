@@ -266,7 +266,7 @@
     <node concept="3b7kt6" id="4$bYnYI$RBZ" role="10PD9s" />
     <node concept="10PD9b" id="4$bYnYI$RC4" role="10PD9s" />
     <node concept="398rNT" id="4$bYnYI$RCy" role="1l3spd">
-      <property role="TrG5h" value="coderules_deploy" />
+      <property role="TrG5h" value="coderules_art" />
       <node concept="55IIr" id="4$bYnYI$RCE" role="398pKh">
         <node concept="2Ry0Ak" id="4$bYnYI$RCJ" role="iGT6I">
           <property role="2Ry0Am" value=".." />
@@ -276,8 +276,8 @@
               <property role="2Ry0Am" value="build" />
               <node concept="2Ry0Ak" id="4$bYnYI$RD1" role="2Ry0An">
                 <property role="2Ry0Am" value="artifacts" />
-                <node concept="2Ry0Ak" id="4$bYnYI$RD6" role="2Ry0An">
-                  <property role="2Ry0Am" value="typechecking-plugin" />
+                <node concept="2Ry0Ak" id="5CiHmuT4_6V" role="2Ry0An">
+                  <property role="2Ry0Am" value="coderules" />
                 </node>
               </node>
             </node>
@@ -306,9 +306,9 @@
       </node>
     </node>
     <node concept="2sgV4H" id="4$bYnYI$URi" role="1l3spa">
-      <ref role="1l3spb" to="zqd8:1BDNG5xBZgg" resolve="typechecking-plugin" />
+      <ref role="1l3spb" to="zqd8:1BDNG5xBZgg" resolve="coderules" />
       <node concept="398BVA" id="4$bYnYI$URn" role="2JcizS">
-        <ref role="398BVh" node="4$bYnYI$RCy" resolve="coderules_deploy" />
+        <ref role="398BVh" node="4$bYnYI$RCy" resolve="coderules_art" />
       </node>
     </node>
   </node>
