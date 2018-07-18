@@ -7,6 +7,7 @@
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.firstOrder/jetbrains.mps.logic.firstOrder.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.herbrand/jetbrains.mps.logic.herbrand.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.propositional/jetbrains.mps.logic.propositional.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.fitch.build/jetbrains.mps.fitch.build.msd" folder="" />
     </projectModules>
   </component>
 </project>

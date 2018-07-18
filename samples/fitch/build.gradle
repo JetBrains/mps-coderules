@@ -1,0 +1,23 @@
+configurations {
+    junitAnt
+}
+
+ant.importBuild('build.xml') {antTarget ->
+    'fitch-'+antTarget
+}
+
+// ensure 'generate' runs before 'classes' ('generate' is NOT optional)
+'fitch-classes' {
+  dependsOn {
+    'fitch-generate'
+  }
+  mustRunAfter {
+    'fitch-generate'
+  }
+}
+
+'fitch-generate' {
+  dependsOn {
+    ':coderules-assemble'
+  }
+}
