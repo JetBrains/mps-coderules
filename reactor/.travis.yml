@@ -1,0 +1,14 @@
+language: java
+jdk:
+- oraclejdk8
+script: mvn -Dmaven.javadoc.skip=true -B package
+deploy:
+  provider: releases
+  api_key:
+    secure: lDb8+36TFmBXll5ty4eSx6KIDjOCBcnHN3V/JANvHqsydkXNXoeQSFigEh4CkmOeAdbC9C49JK8StohYT3w8nx4F8N0pwtYlHSEfXVj9HZCOGxJvuO1scc7PJOgxZnNxC/EQZSy6Wqv/G6WwTUZm5tU6PH3yxxYYm4kpXTMHVAPeUeCI7VkrRdASUkGjZ74c2CDD0pQwmY+tisapXWyEdZ59/ozuRCeTEqriEDhCXbvKjp0Th3MoQnBRUy0gFa73JSYLAaPtfQULwZiRu+foP3pqiWQ46ZRs2uqtv97B/1pAeZsSNahjXpQKjuA8rRfBL91crVH73KvCizggN9Ok4pDUvydmKlUh1/Qv1QqZnxx2/lj5SdCAzAuq8NZdGBd98BcWF7TPVRfhvkaAmceobR3IqzhJe1+a1Ui5Hx5elQpClMFlnk39Behi3hK0HSnRRtf/2b8VpO6zpGE5XFa9DwruDvNcatyXnAdnFbRTbhWDuzpGPPld2QwMYT9day5KhupUdkl+otJ4wLFfRIBOqoIyUFkGfvNuGy5f1dy9ePXbiw0u8Oysat0XWQ6Qj+jLpGQqMh8hSOVvcJmpIbowptnB2DEDSDu98gs3jBu1ooFUNYWtLGtm0IpvzVMATrZa5Rug4gdXjs9H8JqZ6sss0URTvMHi/B+I/Bm0XqZ/Uic=
+  file:
+  - ./API/target/conreactor-api-0.9.jar
+  - ./Core/target/conreactor-core-0.9.jar
+  skip_cleanup: true
+  on:
+    tags: true
