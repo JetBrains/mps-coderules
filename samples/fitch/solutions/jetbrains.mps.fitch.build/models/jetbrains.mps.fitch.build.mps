@@ -250,14 +250,11 @@
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="4$bYnYI$ZFO" role="3LF7KH">
           <node concept="2Ry0Ak" id="4$bYnYI$ZGE" role="iGT6I">
-            <property role="2Ry0Am" value="languages" />
+            <property role="2Ry0Am" value="solutions" />
             <node concept="2Ry0Ak" id="4$bYnYI$ZGJ" role="2Ry0An">
-              <property role="2Ry0Am" value="jetbrains.mps.fitch" />
+              <property role="2Ry0Am" value="jetbrains.mps.fitch.sandbox" />
               <node concept="2Ry0Ak" id="4$bYnYI$ZGO" role="2Ry0An">
-                <property role="2Ry0Am" value="sandbox" />
-                <node concept="2Ry0Ak" id="4$bYnYI$ZGT" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.fitch.sandbox.msd" />
-                </node>
+                <property role="2Ry0Am" value="jetbrains.mps.fitch.sandbox.msd" />
               </node>
             </node>
           </node>
