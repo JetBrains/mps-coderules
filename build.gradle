@@ -142,6 +142,10 @@ ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9
 
 task check {
   dependsOn {
-    [':coderules-test', ':samples/mpscore:mpscore-test']
+    [
+      ':coderules-test',
+      ':samples/mpscore:mpscore-test',
+      ':samples/lambdacalc:lambdacalc-generate'
+    ]
   }
 }

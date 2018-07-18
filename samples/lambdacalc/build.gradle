@@ -1,0 +1,23 @@
+configurations {
+    junitAnt
+}
+
+ant.importBuild('build.xml') {antTarget ->
+    'lambdacalc-'+antTarget
+}
+
+// ensure 'generate' runs before 'classes' ('generate' is NOT optional)
+'lambdacalc-classes' {
+  dependsOn {
+    'lambdacalc-generate'
+  }
+  mustRunAfter {
+    'lambdacalc-generate'
+  }
+}
+
+'lambdacalc-generate' {
+  dependsOn {
+    ':coderules-assemble'
+  }
+}
