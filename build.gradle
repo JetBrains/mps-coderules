@@ -5,6 +5,7 @@ defaultTasks 'init'
 
 allprojects {
   repositories {
+    mavenLocal()
     mavenCentral()
   }
 }

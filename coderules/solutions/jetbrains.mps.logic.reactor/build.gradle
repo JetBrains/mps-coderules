@@ -1,34 +1,17 @@
-//repositories {
-//    ivy {
-//        url 'https://github.com/fisakov'
-//        layout ('pattern') {
-//            artifact '[organisation]/releases/download/[classifier]/[module]-[revision].[ext]'
-//        }
-//    }
-//}
-
 configurations {
     logicReactor
 }
 
 dependencies {
-//    logicReactor 'conreactor:conreactor-api:0.9:v0.9-snapshot.1@jar'
+    logicReactor "jetbrains.mps.logic.conreactor:conreactor-api:${conreactorVersion}@jar"
+    logicReactor "jetbrains.mps.logic.conreactor:conreactor-core:${conreactorVersion}@jar"
     logicReactor "org.jetbrains.kotlin:kotlin-runtime:${kotlinVersion}@jar"
     logicReactor "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}@jar"
     logicReactor "com.github.andrewoma.dexx:collection:${dexxVersion}@jar"
     logicReactor "net.sf.trove4j:trove4j:${trove4jVersion}@jar"
 }
 
-task downloadReactor {
-  ant.mkdir(dir: 'lib')
-  def url = 'https://github.com/fisakov/conreactor/releases/download'
-  ant.get(src: "${url}/${conreactorTag}/conreactor-api-${conreactorVersion}.jar",
-          dest: 'lib', usetimestamp: 'true', skipexisting: 'false')
-  ant.get(src: "${url}/${conreactorTag}/conreactor-core-${conreactorVersion}.jar",
-          dest: 'lib',  usetimestamp: 'true', skipexisting: 'false')
-}
-
-task copyDependencies (type: Copy, dependsOn: downloadReactor) {
+task copyDependencies (type: Copy) {
   from configurations.logicReactor
   into 'lib'
 }
