@@ -1,6 +1,8 @@
-# Type Checking with Constraint Rules
+![](doc/img/mps-logo.png)
 
-An experimental feature for [JetBrains MPS](https://jetbrains.com/mps) implementing a better type checking and type inference using constraint rules.
+# Code Rules
+
+An experimental feature of [JetBrains MPS](https://jetbrains.com/mps). Code rules allow to create various code analyses employing constraints handling. The examples are provided, including type checking and control flow analysis of code written using MPS’s baseLanguage.
 
 ## Status
 
@@ -10,79 +12,37 @@ The status of this project is **pre-release**. Don’t rely on any of the langua
 
 ## Overview
 
-This project is the result of the research done within the MPS team in the area of code analysis using constraint rules, in particular [CHR](http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/constraint-handling-rules-book.html).
+This project is the result of ongoing research done within MPS team in the area of code analysis using constraints handling, in particular [CHR](http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/constraint-handling-rules-book.html).
 
-Typing rules serve as templates that produce constraint rules. Both transformation to constraint rules and evaluating is done in-memory at the time type checking is launched. Constraint rules are processed by the embedded [engine](https://github.com/fisakov/conreactor).
+Code rules serve as templates that produce constraint rules. Both transformation to constraint rules and evaluating is done in-memory at the time analysis is launched. Constraint rules are processed by the embedded [engine](reactor).
 
-The source code also contains the typing rules for *baseLanguage*, which serve to demonstrate how the various type inference problems are solved.
+Samples included with this project demonstrate how *coderules* can be used for solving concrete tasks connected with source code analysis. 
 
-## Features
+- [Type checking of lambda calculus](samples/lambdacalc) shows the implementation of standard type checking algorithm.
+- [Proof validation](samples/fitch) using Fitch system demonstrates how logical inference can be done. 
+- [Type checking and control flow analysis](samples/mpscore) for core MPS languages.
 
-The language *jetbrains.mps.typesystem2* enables to write typing rules. A custom aspect «types» is used to store the typing rules in the language source code.
+*Coderules* allow for extensions to be provided by derived languages. Extensions have higher priority, so it’s easy to override the built-in behaviour. 
 
-![Example of a typing rule](/doc/img/typing-rule-example.png)
+The semantics of constraints handling is compatible with regular Java semantics, so *coderules* can be safely embedded into the user code. There also exists support for launching arbitrary code from when processing constraints.
 
-Type checking plugin for MPS provides the actions for checking the types in a currently opened root.
+Parallel or background execution of *coderules* is possible thanks to the reactive extensions, in particular rxjava, which is used by the implementation.
 
-![](/doc/img/menu-example.png)
-
-Constraints activation trace view for debugging the process of evaluating constraint rules.
-
-![Activation trace](/doc/img/activation-trace-example.png)
-
-Once finished, the constraint rules produce the inferred types and type errors, which are added as highlighter annotations to the editor.
-
-![](doc/img/type-annotation-example.png)
+See [implementation notes](coderules/README.md) for more information.
 
 ## Dependencies
 
 The source code can be opened with the latest version of JetBrains MPS. The plugin that is created with the build script is also compatible with the same version of MPS.
 
+## Project structure
+
+- **reactor** - contains the implementation of constraint processing engine
+- **coderules** - implementation and tests
+- **samples** - sample projects using *coderules*
+
 ## Installation
 
-The easiest way to install the plugin is by using the update mechanism built in to JetBrains MPS. 
-
-1. Open the Preferences dialog and select Plugins on the left
-2. In the panel on the right select Browse Repositories…
-3. In the dialog that appears select Manage Repositories…
-4. Add a new repository with the following url:
-```
-https://raw.githubusercontent.com/fisakov/constraints-typechecking/updates/updatePlugins.xml
-```
-5. The list of plugins should be refreshed and the new plugin «typechecking» should appear
-6. Install the plugin and restart the application.
-
-Alternatively, the plugin can be installed manually. See the downloads section of the latest release for the plugin archive. This archive has to be unpacked to the MPS plugins folder on your local drive. For example (using macOS):
-
-`unzip typechecker-0.2.zip -d ~/Library/Application\ Support/MPS2017.2/`
-
-## Hacking
-
-The project is built using [gradle](http://www.gradle.org). To work with the source code, follow these steps:
-
-1. Install JetBrains MPS using [this link](https://jetbrains.com/mps/download).
-2. Clone this repository to your local drive.
-3. [optional] In the project folder put a *symlink* called «MPS_HOME» that leads to the MPS home folder:
-
-    `ln -s /Applications/MPS\ 2017.1.app/Contents MPS_HOME`
-
-    By doing so you skip unpacking the MPS distribution by the gradle script.
-
-4. Run gradle using the following command to generate all models:
-
-    `./gradlew generate`
-
-    In order to execute full build, including artefacts, run this command:
-
-    `./gradlew build`
-
-    If you want to run the tests as well as building the project, execute this instead:
-
-    `./gradlew test`
-
-5. The project is now ready to be opened with MPS.
-
-    NOTE: every time the source tree is cleaned, for example with `git clean` command, the gradle script has to be run in order to download the necessary libraries.
+See [INSTALL.txt](INSTALL.txt).
 
 ## License
 

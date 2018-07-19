@@ -7,9 +7,12 @@ The two aspects are implemented here:
 1. Type system 
 2. Control flow 
 
-### Build
+### Installation
 
-Use the instructions in the root folder of this repository for information on how to build this sample. 
+The code in this project relies on *coderules* languages and solutions to be available, either as a project library or as a plugin. There are two possibilities to install coderules:
+
+1. Follow the instructions for building the root project, or
+2. Install the compiled plugin (see the latest release on GitHub).
 
 ## License
 

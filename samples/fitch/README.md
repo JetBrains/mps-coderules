@@ -1,15 +1,15 @@
-# Fitch system
+# Fitch proofs
 
 This project demonstrates the use of type checking to validate proofs in [Propositional Logic](http://logic.stanford.edu/intrologic/glossary/propositional_logic.html), as well as [Herbrand Logic](http://logic.stanford.edu/intrologic/glossary/herbrand_logic.html) and [First Order Logic](http://logic.stanford.edu/intrologic/extras/fol.html). The proof system is [Fitch](http://logic.stanford.edu/intrologic/glossary/fitch_system.html).
 
-This project is developed with [JetBrains MPS](https://www.jetbrains.com/mps/) using the [plugin](https://github.com/fisakov/constraints-typechecking) that provides an experimental feature: *type checking with constraint rules*.
+This project is developed with [JetBrains MPS](https://www.jetbrains.com/mps/) with *coderules* experimental extension.
 
-### Instructions
+### Installation
 
-1. Install the latest version of [JetBrains MPS](https://www.jetbrains.com/mps/download).
-2. Download the type checking plugin from [this](https://github.com/fisakov/constraints-typechecking) project (follow the instructions there for installing the plugin using either update mechanism or manually)
-3. Clone this repository and open the project with MPS
-4. Execute 'Rebuild Project'
+The code in this project relies on *coderules* languages and solutions to be available, either as a project library or as a plugin. There are two possibilities to install coderules:
+
+1. Follow the instructions for building the root project, or
+2. Install the compiled plugin (see the latest release on GitHub).
 
 ### Using the proof checker
 
@@ -227,3 +227,19 @@ The proof’s goal is unified with the last **top-level** reasoning. Since reaso
 The actual type checking is trivial. The first stage of the constraint rules program does all the job and produces `valid` constraints, which are to be analysed in the second stage. All reasonings are checked in the second stage, and the reasonings that don’t have `valid` constraint are marked with error. 
 
 There is only one type «OK». Only the goal gets assigned a type in case it marked as `valid`, otherwise an error is produced. 
+
+## License
+
+Copyright 2014-2018 JetBrains s.r.o.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
