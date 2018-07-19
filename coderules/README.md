@@ -16,7 +16,7 @@ Modules in this group define the core concepts of *coderules* and the logic behi
 
 Constraints activation trace view for debugging the process of evaluating constraint rules.
 
-![Activation trace](/doc/img/activation-trace-example.png)
+![Activation trace](doc/img/activation-trace-example.png)
 
 Once finished, constraint rules produce inferred types and type errors, which are added as highlighter annotations to the editor.
 
@@ -26,11 +26,11 @@ Once finished, constraint rules produce inferred types and type errors, which ar
 
 Defines a custom aspect «types», which is used to store the typing rules in the language source code.
 
-![Example of a typing rule](/doc/img/typing-rule-example.png)
+![Example of a typing rule](doc/img/typing-rule-example.png)
 
 Type checking plugin for MPS provides the actions for checking the types in a currently opened root.
 
-![](/doc/img/menu-example.png)
+![](doc/img/menu-example.png)
 
 #### Control flow
 
