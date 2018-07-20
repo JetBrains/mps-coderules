@@ -11,7 +11,6 @@
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="dff3" ref="r:575429ab-72f6-4385-a61f-a1f1f27e3490(jetbrains.mps.dataform.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -901,8 +900,9 @@
   </node>
   <node concept="1TIwiD" id="5WBVN_MT8FC">
     <property role="EcuMT" value="6856711987714624232" />
-    <property role="TrG5h" value="ExpressionItem" />
-    <property role="34LRSv" value="expression" />
+    <property role="TrG5h" value="LateExpressionItem" />
+    <property role="34LRSv" value="lateExpression" />
+    <property role="3GE5qa" value="logical" />
     <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="5WBVN_MT8FD" role="1TKVEi">
       <property role="IQ2ns" value="6856711987714624233" />
@@ -1086,19 +1086,6 @@
       <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7lt0LtQg3tE">
-    <property role="EcuMT" value="8456919074574710634" />
-    <property role="TrG5h" value="ConstantExpressionItem" />
-    <property role="34LRSv" value="constant" />
-    <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
-    <node concept="1TJgyj" id="7lt0LtQg3vl" role="1TKVEi">
-      <property role="IQ2ns" value="8456919074574710741" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="code" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="oI9Yrc9wC">
     <property role="EcuMT" value="6958395084019752" />
     <property role="TrG5h" value="SNodeSetTypeOperation" />
@@ -1153,7 +1140,7 @@
     <property role="TrG5h" value="PatternLogicalVariable" />
     <ref role="1TJDcQ" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     <node concept="PrWs8" id="JOGAOsIT9E" role="PzmwI">
-      <ref role="PrY4T" to="dff3:JOGAOsIRhm" resolve="Capture" />
+      <ref role="PrY4T" to="5j4j:JOGAOsIRhm" resolve="Capture" />
     </node>
     <node concept="1TJgyj" id="4sSe4$p4oON" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

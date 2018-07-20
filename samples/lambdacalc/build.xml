@@ -57,7 +57,6 @@
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.dataform.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />

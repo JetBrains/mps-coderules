@@ -114,6 +114,24 @@
           <property role="3LESm3" value="65b2d9d2-5a92-4dd0-abf5-f3a1bd399bec" />
           <property role="2GAjPV" value="false" />
         </node>
+        <node concept="1SiIV0" id="5p9vXslHrSF" role="3bR37C">
+          <node concept="3bR9La" id="5p9vXslHrSG" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5p9vXslHrSH" role="3bR37C">
+          <node concept="3bR9La" id="5p9vXslHrSI" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5p9vXslHrSJ" role="3bR37C">
+          <node concept="3bR9La" id="5p9vXslHrSK" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="4$bYnYI$URy" resolve="jetbrains.mps.fitch" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="4$bYnYI$UVm" role="2G$12L">
         <property role="BnDLt" value="true" />

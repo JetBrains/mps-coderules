@@ -161,13 +161,13 @@
       <concept id="238586457668550951" name="jetbrains.mps.logic.structure.Splice" flags="ng" index="22Ky0T">
         <child id="238586457668550958" name="expression" index="22Ky0K" />
       </concept>
-      <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
+      <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.ListNode" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
       <concept id="6694277639409954681" name="jetbrains.mps.logic.structure.ListRole" flags="ng" index="38e3lM">
         <child id="6694277639409954746" name="list" index="38e3mL" />
       </concept>
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.TreeFormExpression" flags="ng" index="1oi1Uc">
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.DataNodeExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
@@ -275,14 +275,14 @@
     <node concept="3clFb_" id="2ev$9JFEEfC" role="jymVt">
       <property role="TrG5h" value="anyTerms" />
       <node concept="3uibUv" id="2ev$9JFEFFy" role="3clF45">
-        <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+        <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
       </node>
       <node concept="3Tm1VV" id="2ev$9JFEEfF" role="1B3o_S" />
       <node concept="3clFbS" id="2ev$9JFEEfG" role="3clF47">
         <node concept="3clFbF" id="2ev$9JFEGHn" role="3cqZAp">
           <node concept="10QFUN" id="2ev$9JFEGHp" role="3clFbG">
             <node concept="3uibUv" id="2ev$9JFEGHq" role="10QFUM">
-              <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+              <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
             </node>
             <node concept="2YIFZM" id="2ev$9JFEGHr" role="10QFUP">
               <ref role="1Pybhc" to="n4y8:~Mockito" resolve="Mockito" />
@@ -634,7 +634,7 @@
                 <ref role="37wK5l" to="6exd:104EUzFOARE" resolve="visitTermNode" />
                 <node concept="10QFUN" id="2ev$9JFDJDT" role="37wK5m">
                   <node concept="3uibUv" id="5cGCTtqzhLw" role="10QFUM">
-                    <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                    <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                   </node>
                   <node concept="2YIFZM" id="2ev$9JFDJDP" role="10QFUP">
                     <ref role="37wK5l" to="n4y8:~Matchers.eq(java.lang.Object):java.lang.Object" resolve="eq" />
@@ -698,11 +698,11 @@
             <node concept="3cpWsn" id="2ev$9JFDTTZ" role="3cpWs9">
               <property role="TrG5h" value="cn" />
               <node concept="3uibUv" id="6MYr6JxshWa" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6JxshYq" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6JxshYj" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6JxshYk" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6JxshYl" role="1oi0x0">
@@ -917,11 +917,11 @@
             <node concept="3cpWsn" id="2ev$9JFFqmp" role="3cpWs9">
               <property role="TrG5h" value="child" />
               <node concept="3uibUv" id="6MYr6JxshSY" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6JxshUH" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6JxshUA" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6JxshUB" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6JxshUC" role="1oi0x0">
@@ -970,11 +970,11 @@
             <node concept="3cpWsn" id="2ev$9JFFqmv" role="3cpWs9">
               <property role="TrG5h" value="cn" />
               <node concept="3uibUv" id="6MYr6JxshwM" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6JxshIN" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6JxshIG" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6JxshIH" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6JxshII" role="1oi0x0">
@@ -1428,11 +1428,11 @@
             <node concept="3cpWsn" id="5YVX0wIjZEX" role="3cpWs9">
               <property role="TrG5h" value="first" />
               <node concept="3uibUv" id="6MYr6Jxsln8" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6JxsloV" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6JxsloO" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6JxsloP" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6JxsloQ" role="1oi0x0">
@@ -1457,11 +1457,11 @@
             <node concept="3cpWsn" id="5YVX0wIk0aR" role="3cpWs9">
               <property role="TrG5h" value="second" />
               <node concept="3uibUv" id="6MYr6Jxslqr" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6JxsluC" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6Jxslux" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6Jxsluy" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6Jxsluz" role="1oi0x0">
@@ -1486,11 +1486,11 @@
             <node concept="3cpWsn" id="5YVX0wIk0rD" role="3cpWs9">
               <property role="TrG5h" value="third" />
               <node concept="3uibUv" id="6MYr6Jxslwq" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6Jxslyd" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6Jxsly6" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6Jxsly7" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6Jxsly8" role="1oi0x0">
@@ -1907,11 +1907,11 @@
             <node concept="3cpWsn" id="3t7_2Fg_0sP" role="3cpWs9">
               <property role="TrG5h" value="first" />
               <node concept="3uibUv" id="6MYr6JxsnM$" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6JxsnOq" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6JxsnOj" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6JxsnOk" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6JxsnOl" role="1oi0x0">
@@ -1936,11 +1936,11 @@
             <node concept="3cpWsn" id="3t7_2Fg_0sY" role="3cpWs9">
               <property role="TrG5h" value="second" />
               <node concept="3uibUv" id="6MYr6JxsnQ0" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6JxsnRQ" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6JxsnRJ" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6JxsnRK" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6JxsnRL" role="1oi0x0">
@@ -1965,11 +1965,11 @@
             <node concept="3cpWsn" id="3t7_2Fg_0t7" role="3cpWs9">
               <property role="TrG5h" value="third" />
               <node concept="3uibUv" id="6MYr6JxsnTt" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6JxsnVj" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6JxsnVc" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6JxsnVd" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6JxsnVe" role="1oi0x0">
@@ -4541,11 +4541,11 @@
             <node concept="3cpWsn" id="2S_ORi38Qgq" role="3cpWs9">
               <property role="TrG5h" value="a" />
               <node concept="3uibUv" id="6MYr6Jy86h5" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6Jy86gm" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6Jy86hI" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6Jy86gg" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6Jy86gh" role="1oi0x0">
@@ -4571,11 +4571,11 @@
             <node concept="3cpWsn" id="2S_ORi38Qg$" role="3cpWs9">
               <property role="TrG5h" value="b" />
               <node concept="3uibUv" id="6MYr6Jy86in" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
               </node>
               <node concept="10QFUN" id="6MYr6Jy86js" role="33vP2m">
                 <node concept="3uibUv" id="6MYr6Jy86jj" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                  <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                 </node>
                 <node concept="1oi1Uc" id="6MYr6Jy86jk" role="10QFUP">
                   <node concept="1oi5UN" id="6MYr6Jy86jl" role="1oi0x0">

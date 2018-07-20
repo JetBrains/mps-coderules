@@ -1036,7 +1036,8 @@
     </node>
   </node>
   <node concept="13h7C7" id="5WBVN_N1Xtr">
-    <ref role="13h7C2" to="wq2x:5WBVN_MT8FC" resolve="ExpressionItem" />
+    <property role="3GE5qa" value="logical" />
+    <ref role="13h7C2" to="wq2x:5WBVN_MT8FC" resolve="LateExpressionItem" />
     <node concept="13i0hz" id="1HWyn8iQj$B" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />

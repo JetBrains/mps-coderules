@@ -9,7 +9,8 @@
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="942985d5-7bcf-46ee-8b79-7b662eaebb4e" name="jetbrains.mps.dataform" version="0" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
+    <use id="cba985fe-1e96-4f16-9f8d-b07434405d4f" name="jetbrains.mps.lang.smodel.types" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -19,9 +20,9 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
-    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
+    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.coderules.program)" />
     <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
   </imports>
@@ -180,29 +181,6 @@
       </concept>
       <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
     </language>
-    <language id="942985d5-7bcf-46ee-8b79-7b662eaebb4e" name="jetbrains.mps.dataform">
-      <concept id="861509610434242029" name="jetbrains.mps.dataform.structure.DataForm" flags="ng" index="ns1u0">
-        <reference id="861509610434243078" name="decl" index="ns1xF" />
-        <child id="861509610434243076" name="override" index="ns1xD" />
-      </concept>
-      <concept id="861509610434243104" name="jetbrains.mps.dataform.structure.DataFormTable" flags="ng" index="ns1xd">
-        <child id="861509610434243105" name="contents" index="ns1xc" />
-      </concept>
-      <concept id="861509610434243081" name="jetbrains.mps.dataform.structure.DataFormDeclaration" flags="ng" index="ns1x$">
-        <child id="861509610434243084" name="template" index="ns1xx" />
-      </concept>
-      <concept id="861509610434276453" name="jetbrains.mps.dataform.structure.DataFormFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
-      <concept id="861509610434276450" name="jetbrains.mps.dataform.structure.DataFormTemplate" flags="ng" index="nspSf">
-        <child id="861509610434276451" name="feature" index="nspSe" />
-      </concept>
-      <concept id="861509610434289827" name="jetbrains.mps.dataform.structure.ChildFeature" flags="ng" index="nstbe" />
-      <concept id="861509610434435669" name="jetbrains.mps.dataform.structure.DataFormFeatureOverride" flags="ng" index="nsMwS">
-        <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
-      </concept>
-    </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
       <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
         <child id="6399471711045617306" name="dataType" index="3vLBG7" />
@@ -215,10 +193,31 @@
         <child id="8829335963591530990" name="expression" index="aZ4eD" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalExpression" flags="ng" index="1nq8_$">
+      <concept id="861509610434242029" name="jetbrains.mps.logic.structure.DataFormConstructor" flags="ng" index="ns1u0">
+        <reference id="861509610434243078" name="decl" index="ns1xF" />
+        <child id="861509610434243076" name="override" index="ns1xD" />
+      </concept>
+      <concept id="861509610434243104" name="jetbrains.mps.logic.structure.DataFormTable" flags="ng" index="ns1xd">
+        <child id="861509610434243105" name="contents" index="ns1xc" />
+      </concept>
+      <concept id="861509610434243081" name="jetbrains.mps.logic.structure.DataFormDeclaration" flags="ng" index="ns1x$">
+        <child id="861509610434243084" name="template" index="ns1xx" />
+      </concept>
+      <concept id="861509610434276453" name="jetbrains.mps.logic.structure.DataFormFeature" flags="ng" index="nspS8">
+        <property id="861509610434276456" name="final" index="nspS5" />
+      </concept>
+      <concept id="861509610434276450" name="jetbrains.mps.logic.structure.DataFormTemplate" flags="ng" index="nspSf">
+        <child id="861509610434276451" name="feature" index="nspSe" />
+      </concept>
+      <concept id="861509610434289827" name="jetbrains.mps.logic.structure.ChildFeature" flags="ng" index="nstbe" />
+      <concept id="861509610434435669" name="jetbrains.mps.logic.structure.DataFormFeatureOverride" flags="ng" index="nsMwS">
+        <reference id="861509610434435672" name="feature" index="nsMwP" />
+        <child id="861509610434435670" name="getter" index="nsMwV" />
+      </concept>
+      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
         <child id="4780620083400582654" name="logical" index="1nq8_t" />
       </concept>
-      <concept id="2455719244613908503" name="jetbrains.mps.logic.structure.ValueOfLogicalExpression" flags="ng" index="1TmgYN">
+      <concept id="2455719244613908503" name="jetbrains.mps.logic.structure.ValueOfExpression" flags="ng" index="1TmgYN">
         <child id="2455719244613924416" name="logical" index="1Tms7$" />
       </concept>
     </language>
@@ -322,7 +321,7 @@
         <reference id="6086839168131376658" name="declaration" index="17QRF" />
         <child id="5524459797186715209" name="logical" index="B_OMz" />
       </concept>
-      <concept id="6856711987714624232" name="jetbrains.mps.lang.coderules.structure.ExpressionItem" flags="ng" index="HKQnh">
+      <concept id="6856711987714624232" name="jetbrains.mps.lang.coderules.structure.LateExpressionItem" flags="ng" index="HKQnh">
         <child id="6856711987714624233" name="code" index="HKQng" />
       </concept>
       <concept id="7670825977262339471" name="jetbrains.mps.lang.coderules.structure.MacroInputDeclaration" flags="ng" index="3eYOCq">
@@ -2674,6 +2673,31 @@
       </node>
     </node>
   </node>
+  <node concept="92CTh" id="5Eb7bDWO4vA">
+    <property role="TrG5h" value="Typecheck" />
+    <node concept="2bWyPT" id="5Eb7bDWO9gE" role="92CTm">
+      <property role="TrG5h" value="recover" />
+      <node concept="3clFbS" id="5Eb7bDWO9gF" role="fHCRw">
+        <node concept="1nLNNL" id="5Eb7bDWO9jS" role="3cqZAp">
+          <node concept="1nLNMm" id="5Eb7bDWO9jT" role="1nLNNK">
+            <node concept="3Aq9E8" id="5Eb7bDWO9lC" role="1nLNMd">
+              <node concept="3I6sU6" id="5Eb7bDWO9lD" role="3Ip0Jz">
+                <node concept="3I6s7M" id="5Eb7bDWO9lH" role="3I6sU7">
+                  <node concept="3Aqt3T" id="5Eb7bDWO9lG" role="3I6s78">
+                    <ref role="3AqCNq" node="4dPZ2m2jAgt" resolve="recoverAll" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="10M0yZ" id="5Eb7bDWO7EB" role="2_lZgo">
+      <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
+      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+    </node>
+  </node>
   <node concept="ns1xd" id="7VBaGntJSFZ">
     <property role="TrG5h" value="terms" />
     <node concept="ns1x$" id="7VBaGntJSG0" role="ns1xc">
@@ -2701,31 +2725,6 @@
           <property role="nspS5" value="false" />
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="92CTh" id="5Eb7bDWO4vA">
-    <property role="TrG5h" value="Typecheck" />
-    <node concept="2bWyPT" id="5Eb7bDWO9gE" role="92CTm">
-      <property role="TrG5h" value="recover" />
-      <node concept="3clFbS" id="5Eb7bDWO9gF" role="fHCRw">
-        <node concept="1nLNNL" id="5Eb7bDWO9jS" role="3cqZAp">
-          <node concept="1nLNMm" id="5Eb7bDWO9jT" role="1nLNNK">
-            <node concept="3Aq9E8" id="5Eb7bDWO9lC" role="1nLNMd">
-              <node concept="3I6sU6" id="5Eb7bDWO9lD" role="3Ip0Jz">
-                <node concept="3I6s7M" id="5Eb7bDWO9lH" role="3I6sU7">
-                  <node concept="3Aqt3T" id="5Eb7bDWO9lG" role="3I6s78">
-                    <ref role="3AqCNq" node="4dPZ2m2jAgt" resolve="recoverAll" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="10M0yZ" id="5Eb7bDWO7EB" role="2_lZgo">
-      <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
-      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
     </node>
   </node>
 </model>

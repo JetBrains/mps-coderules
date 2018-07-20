@@ -17,17 +17,16 @@
   </languages>
   <imports>
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
-    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
+    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
-    <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.builtin.program)" />
+    <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.program)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
@@ -36,7 +35,7 @@
     <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.coderules.program)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="c6va" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.languageScope(MPS.Core/)" />
     <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
@@ -773,7 +772,7 @@
       <node concept="37vLTG" id="24Vro6cQKgF" role="3clF46">
         <property role="TrG5h" value="tracer" />
         <node concept="3uibUv" id="qubcdtxFI2" role="1tU5fm">
-          <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
+          <ref role="3uigEE" to="7n8k:qubcdtxBiR" resolve="EvaluationTraceExt" />
         </node>
       </node>
       <node concept="3clFbS" id="41ox5VnkgxM" role="3clF47">
@@ -984,7 +983,7 @@
                       <ref role="3cqZAo" node="24Vro6cQKgF" resolve="tracer" />
                     </node>
                     <node concept="liA8E" id="5cnt3vhfbzQ" role="2OqNvi">
-                      <ref role="37wK5l" to="yg8f:5cnt3vhfW9c" resolve="restored" />
+                      <ref role="37wK5l" to="7n8k:5cnt3vhfW9c" resolve="restored" />
                       <node concept="37vLTw" id="5cnt3vhfbAG" role="37wK5m">
                         <ref role="3cqZAo" node="5cnt3vheYOP" resolve="occ" />
                       </node>
@@ -1207,7 +1206,7 @@
                               <ref role="3cqZAo" node="24Vro6cQKgF" resolve="tracer" />
                             </node>
                             <node concept="liA8E" id="4F3SXIF5J_x" role="2OqNvi">
-                              <ref role="37wK5l" to="yg8f:18cJbc1jRnT" resolve="info" />
+                              <ref role="37wK5l" to="7n8k:18cJbc1jRnT" resolve="info" />
                               <node concept="3cpWs3" id="4F3SXIF5J_D" role="37wK5m">
                                 <node concept="37vLTw" id="4ZcizIatSHV" role="3uHU7w">
                                   <ref role="3cqZAo" node="4ZcizIatPiJ" resolve="s" />
@@ -1366,7 +1365,7 @@
                           <ref role="3cqZAo" node="24Vro6cQKgF" resolve="tracer" />
                         </node>
                         <node concept="liA8E" id="7nkyKX7hbcb" role="2OqNvi">
-                          <ref role="37wK5l" to="yg8f:7nkyKX7gU0T" resolve="result" />
+                          <ref role="37wK5l" to="7n8k:7nkyKX7gU0T" resolve="result" />
                           <node concept="37vLTw" id="5mr7UHcctZW" role="37wK5m">
                             <ref role="3cqZAo" node="5mr7UHccsMI" resolve="co" />
                           </node>
@@ -1383,7 +1382,7 @@
                             <ref role="3cqZAo" node="24Vro6cQKgF" resolve="tracer" />
                           </node>
                           <node concept="liA8E" id="7nkyKX7hbpz" role="2OqNvi">
-                            <ref role="37wK5l" to="yg8f:7nkyKX7gU3L" resolve="garbage" />
+                            <ref role="37wK5l" to="7n8k:7nkyKX7gU3L" resolve="garbage" />
                             <node concept="37vLTw" id="5mr7UHccu7a" role="37wK5m">
                               <ref role="3cqZAo" node="5mr7UHccsMI" resolve="co" />
                             </node>
@@ -4425,7 +4424,7 @@
                 <ref role="3cqZAo" node="1HWyn8jvsPB" resolve="tf" />
               </node>
               <node concept="3uibUv" id="1HWyn8jvx1M" role="2ZW6by">
-                <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalTreeForm" />
+                <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
               </node>
             </node>
             <node concept="9aQIb" id="1HWyn8jvsQP" role="9aQIa">
@@ -4462,7 +4461,7 @@
                             <ref role="3cqZAo" node="1HWyn8jvsPB" resolve="tf" />
                           </node>
                           <node concept="3uibUv" id="1HWyn8jvsPU" role="10QFUM">
-                            <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalTreeForm" />
+                            <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
                           </node>
                         </node>
                       </node>
@@ -4560,7 +4559,7 @@
                     <node concept="3cpWs6" id="1HWyn8jvsQM" role="3cqZAp">
                       <node concept="2ShNRf" id="1HWyn8jvzyn" role="3cqZAk">
                         <node concept="1pGfFk" id="1HWyn8jvzA9" role="2ShVmc">
-                          <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                          <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
                           <node concept="37vLTw" id="1HWyn8jvzAa" role="37wK5m">
                             <ref role="3cqZAo" node="1HWyn8jvsQq" resolve="logicalCopy" />
                           </node>
@@ -10110,8 +10109,8 @@
                       <node concept="37vLTw" id="NKt6ynosn6" role="2Oq$k0">
                         <ref role="3cqZAo" node="NKt6ynosmK" resolve="v" />
                       </node>
-                      <node concept="2OwXpG" id="NKt6ynosn7" role="2OqNvi">
-                        <ref role="2Oxat5" to="fqlx:NKt6ynospK" resolve="extended" />
+                      <node concept="2OwXpG" id="74q$MmS0bJ6" role="2OqNvi">
+                        <ref role="2Oxat5" node="2$$Q_FeUozA" resolve="extended" />
                       </node>
                     </node>
                   </node>
@@ -11080,7 +11079,7 @@
                 </node>
                 <node concept="2ShNRf" id="3pMFS1zlzeG" role="37vLTx">
                   <node concept="1pGfFk" id="3pMFS1zlzG9" role="2ShVmc">
-                    <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                    <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
                     <node concept="10QFUN" id="3pMFS1zlzWI" role="37wK5m">
                       <node concept="3uibUv" id="3pMFS1zlzWF" role="10QFUM">
                         <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
@@ -11461,7 +11460,7 @@
                         <ref role="3cqZAo" node="3pMFS1zeegA" resolve="tf" />
                       </node>
                       <node concept="3uibUv" id="3pMFS1zdqoQ" role="2ZW6by">
-                        <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalTreeForm" />
+                        <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
                       </node>
                     </node>
                     <node concept="9aQIb" id="3pMFS1zdqoR" role="9aQIa">
@@ -11490,7 +11489,7 @@
                       <node concept="3cpWs6" id="3pMFS1zeyhu" role="3cqZAp">
                         <node concept="2ShNRf" id="3pMFS1zeyhv" role="3cqZAk">
                           <node concept="1pGfFk" id="3pMFS1zeyhw" role="2ShVmc">
-                            <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                            <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
                             <node concept="2OqwBi" id="3pMFS1zez0W" role="37wK5m">
                               <node concept="1eOMI4" id="3pMFS1zez0X" role="2Oq$k0">
                                 <node concept="10QFUN" id="3pMFS1zez0Y" role="1eOMHV">
@@ -11498,7 +11497,7 @@
                                     <ref role="3cqZAo" node="3pMFS1zeegA" resolve="tf" />
                                   </node>
                                   <node concept="3uibUv" id="3pMFS1zez10" role="10QFUM">
-                                    <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalTreeForm" />
+                                    <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
                                   </node>
                                 </node>
                               </node>

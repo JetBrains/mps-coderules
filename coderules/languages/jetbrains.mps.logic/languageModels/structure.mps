@@ -2,15 +2,15 @@
 <model ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)">
   <persistence version="9" />
   <languages>
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="6" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -44,6 +44,7 @@
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
@@ -70,91 +71,83 @@
     </language>
   </registry>
   <node concept="1TIwiD" id="6$jH9oLmUCq">
-    <property role="TrG5h" value="TreeFormExpression" />
+    <property role="TrG5h" value="DataNodeExpression" />
     <property role="EcuMT" value="7571593955706120730" />
+    <property role="3GE5qa" value="dataform.expression" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="6$jH9oLmVNm" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="root" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7571593955706125526" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYC_">
     <property role="TrG5h" value="TermNode" />
-    <property role="3GE5qa" value="treeform" />
+    <property role="3GE5qa" value="dataform" />
     <property role="EcuMT" value="7571593955706137125" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="DataNode" />
     <node concept="1TJgyj" id="6$jH9oLnyAp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="role" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="7571593955706284441" />
-      <ref role="20lvS9" node="6$jH9oLmYD_" resolve="Role" />
+      <ref role="20lvS9" node="6$jH9oLmYD_" resolve="RoleNode" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYD_">
-    <property role="TrG5h" value="Role" />
+    <property role="TrG5h" value="RoleNode" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="3GE5qa" value="role" />
+    <property role="3GE5qa" value="dataform.role" />
     <property role="EcuMT" value="7571593955706137189" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="DataNode" />
     <node concept="PrWs8" id="6$jH9oLmYEr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYEJ">
     <property role="TrG5h" value="ChildRole" />
-    <property role="3GE5qa" value="role" />
+    <property role="3GE5qa" value="dataform.role" />
     <property role="EcuMT" value="7571593955706137263" />
-    <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="Role" />
+    <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="RoleNode" />
     <node concept="1TJgyj" id="6$jH9oLmYFB" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="7571593955706137319" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYI0">
     <property role="TrG5h" value="ValueRole" />
-    <property role="3GE5qa" value="role" />
+    <property role="3GE5qa" value="dataform.role" />
     <property role="EcuMT" value="7571593955706137472" />
-    <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="Role" />
+    <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="RoleNode" />
     <node concept="1TJgyj" id="6$jH9oLmYL8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="7571593955706137672" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
   </node>
   <node concept="1TIwiD" id="6$jH9oLmYJ_">
     <property role="TrG5h" value="Value" />
-    <property role="3GE5qa" value="treeform" />
+    <property role="3GE5qa" value="dataform" />
     <property role="EcuMT" value="7571593955706137573" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
+    <ref role="1TJDcQ" node="5yqFHXo6Ubn" resolve="DataForm" />
     <node concept="1TJgyi" id="6$jH9oLmYKA" role="1TKVEl">
       <property role="TrG5h" value="value" />
       <property role="IQ2nx" value="7571593955706137638" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="6$jH9oLnyB1">
-    <property role="TrG5h" value="Symbol" />
-    <property role="3GE5qa" value="treeform" />
-    <property role="EcuMT" value="7571593955706284481" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="6$jH9oLnyBN" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-  </node>
   <node concept="AxPO7" id="6dP_abdQnLY">
     <property role="TrG5h" value="NodeKind" />
     <property role="3lZH7k" value="derive_from_presentation" />
-    <property role="3GE5qa" value="treeform" />
+    <property role="3GE5qa" value="dataform" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="1dOf$WH0KX6" role="M5hS2">
       <property role="1uS6qo" value="inherit" />
@@ -173,29 +166,29 @@
     </node>
   </node>
   <node concept="1TIwiD" id="5lJXKARS0">
-    <property role="TrG5h" value="TreeForm" />
+    <property role="TrG5h" value="DataNode" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="3GE5qa" value="treeform" />
+    <property role="3GE5qa" value="dataform" />
     <property role="EcuMT" value="1503029989441024" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="5yqFHXo6Ubn" resolve="DataForm" />
   </node>
   <node concept="1TIwiD" id="2q_78a8W4yS">
-    <property role="3GE5qa" value="treeform" />
+    <property role="3GE5qa" value="dataform" />
     <property role="TrG5h" value="Wildcard" />
     <property role="34LRSv" value="_" />
     <property role="EcuMT" value="2784663291567294648" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
+    <ref role="1TJDcQ" node="5yqFHXo6Ubn" resolve="DataForm" />
   </node>
   <node concept="1TIwiD" id="7E86$tKsl45">
     <property role="TrG5h" value="LogicalItem" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
-    <property role="3GE5qa" value="logical" />
+    <property role="3GE5qa" value="logical.item" />
     <property role="EcuMT" value="8829335963591332101" />
   </node>
   <node concept="1TIwiD" id="7E86$tKt5sV">
-    <property role="3GE5qa" value="logical" />
+    <property role="3GE5qa" value="logical.item" />
     <property role="TrG5h" value="ExpressionLogicalVariable" />
     <property role="EcuMT" value="8829335963591530299" />
     <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
@@ -208,7 +201,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7E86$tKtfM3">
-    <property role="3GE5qa" value="logical" />
+    <property role="3GE5qa" value="logical.variable" />
     <property role="TrG5h" value="LogicalVariableDeclaration" />
     <property role="EcuMT" value="8829335963591572611" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -223,12 +216,12 @@
     </node>
   </node>
   <node concept="PlHQZ" id="7E86$tK$Rgo">
-    <property role="3GE5qa" value="logical" />
+    <property role="3GE5qa" value="logical.variable" />
     <property role="TrG5h" value="LogicalVariableScope" />
     <property role="EcuMT" value="8829335963593569304" />
   </node>
   <node concept="1TIwiD" id="7E86$tK_OxQ">
-    <property role="3GE5qa" value="logical" />
+    <property role="3GE5qa" value="logical.variable" />
     <property role="TrG5h" value="LogicalVariable" />
     <property role="EcuMT" value="8829335963593820278" />
     <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
@@ -247,7 +240,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1mP5b6jNC0S">
-    <property role="3GE5qa" value="logical" />
+    <property role="3GE5qa" value="logical.type" />
     <property role="TrG5h" value="LogicalType" />
     <property role="34LRSv" value="logical" />
     <property role="EcuMT" value="1564179198502666296" />
@@ -261,8 +254,8 @@
   </node>
   <node concept="1TIwiD" id="dfChU1zo4B">
     <property role="TrG5h" value="Splice" />
-    <property role="3GE5qa" value="treeform" />
-    <property role="34LRSv" value="Node Expression" />
+    <property role="3GE5qa" value="dataform.expression" />
+    <property role="34LRSv" value="splice" />
     <property role="EcuMT" value="238586457668550951" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyj" id="dfChU1zo4I" role="1TKVEi">
@@ -274,8 +267,8 @@
     </node>
     <node concept="M6xJ_" id="dfChU1zo4C" role="lGtFl">
       <property role="Hh88m" value="splice" />
-      <node concept="trNpa" id="dfChU1zo4E" role="EQaZv">
-        <ref role="trN6q" node="5lJXKARS0" resolve="TreeForm" />
+      <node concept="trNpa" id="74q$MmS8dM9" role="EQaZv">
+        <ref role="trN6q" node="5yqFHXo6Ubn" resolve="DataForm" />
       </node>
       <node concept="tn0Fv" id="dfChU1zo4G" role="HhnKV">
         <property role="tnX3d" value="false" />
@@ -283,20 +276,20 @@
     </node>
   </node>
   <node concept="1TIwiD" id="1OShD0HAY6y">
-    <property role="3GE5qa" value="treeform" />
-    <property role="TrG5h" value="List" />
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="ListNode" />
     <property role="EcuMT" value="2105510410850132386" />
-    <ref role="1TJDcQ" node="5lJXKARS0" resolve="TreeForm" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="DataNode" />
     <node concept="1TJgyj" id="1OShD0HAZ38" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="2105510410850136264" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
   </node>
   <node concept="PlHQZ" id="75vUFrS_9Sg">
-    <property role="3GE5qa" value="constraint.variable" />
+    <property role="3GE5qa" value="logical.variable" />
     <property role="TrG5h" value="LogicalVariableDeclarationContainer" />
     <property role="EcuMT" value="8169506320648805904" />
     <node concept="1TJgyj" id="2E5lcNn8k3O" role="1TKVEi">
@@ -314,50 +307,30 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7HUwyZb1HXL">
-    <property role="3GE5qa" value="logical" />
+    <property role="3GE5qa" value="logical.type" />
     <property role="TrG5h" value="MultiLogicalType" />
     <property role="34LRSv" value="multiLogical" />
     <property role="EcuMT" value="8897567155605135217" />
     <ref role="1TJDcQ" node="1mP5b6jNC0S" resolve="LogicalType" />
   </node>
-  <node concept="1TIwiD" id="4sSe4$p4oOM">
-    <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="PatternLogicalVariable" />
-    <property role="EcuMT" value="5131913661993028914" />
-    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
-    <node concept="1TJgyj" id="4sSe4$p4oON" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="variable" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="5131913661993028915" />
-      <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariable" />
-    </node>
-    <node concept="1TJgyj" id="4sSe4$p4oOP" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="value" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="5131913661993028917" />
-      <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalItem" />
-    </node>
-    <node concept="asaX9" id="1mdVbTS8GIW" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="5NAQwIkRIXT">
     <property role="EcuMT" value="6694277639409954681" />
-    <property role="3GE5qa" value="role" />
+    <property role="3GE5qa" value="dataform.role" />
     <property role="TrG5h" value="ListRole" />
-    <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="Role" />
+    <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="RoleNode" />
     <node concept="1TJgyj" id="5NAQwIkRIYU" role="1TKVEi">
       <property role="IQ2ns" value="6694277639409954746" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="list" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="1OShD0HAY6y" resolve="List" />
+      <ref role="20lvS9" node="1OShD0HAY6y" resolve="ListNode" />
     </node>
   </node>
   <node concept="1TIwiD" id="428_4iYhwbR">
     <property role="EcuMT" value="4650129638230983415" />
     <property role="TrG5h" value="ListExpression" />
     <property role="34LRSv" value="list" />
+    <property role="3GE5qa" value="dataform.expression" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="5WBVN_MJ9$7" role="1TKVEi">
       <property role="IQ2ns" value="6856711987712006407" />
@@ -369,34 +342,35 @@
   </node>
   <node concept="1TIwiD" id="5WBVN_MESCN">
     <property role="EcuMT" value="6856711987710888499" />
-    <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="TreeFormLiteral" />
+    <property role="3GE5qa" value="logical.item" />
+    <property role="TrG5h" value="DataNodeLiteral" />
     <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="5WBVN_MESCO" role="1TKVEi">
       <property role="IQ2ns" value="6856711987710888500" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="root" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
   </node>
   <node concept="1TIwiD" id="5WBVN_MJ50y">
     <property role="EcuMT" value="6856711987711987746" />
     <property role="TrG5h" value="ListLiteral" />
     <property role="34LRSv" value="list" />
+    <property role="3GE5qa" value="logical.item" />
     <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="5WBVN_MJ50Y" role="1TKVEi">
       <property role="IQ2ns" value="6856711987711987774" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contents" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5lJXKARS0" resolve="TreeForm" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
   </node>
   <node concept="1TIwiD" id="28ktUhrjnwn">
     <property role="EcuMT" value="2455719244613908503" />
     <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="ValueOfLogicalExpression" />
+    <property role="TrG5h" value="ValueOfExpression" />
     <property role="34LRSv" value="valueOf" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="28ktUhrjrp0" role="1TKVEi">
@@ -409,13 +383,177 @@
   </node>
   <node concept="1TIwiD" id="49obaclcan7">
     <property role="EcuMT" value="4780620083400582599" />
-    <property role="TrG5h" value="LogicalExpression" />
+    <property role="TrG5h" value="LogicalItemExpression" />
+    <property role="3GE5qa" value="logical.item.expression" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="49obaclcanY" role="1TKVEi">
       <property role="IQ2ns" value="4780620083400582654" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="logical" />
       <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5yqFHXo6Ubn">
+    <property role="EcuMT" value="6384607696030245591" />
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="DataForm" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxm2z">
+    <property role="EcuMT" value="861509610434289827" />
+    <property role="TrG5h" value="ChildFeature" />
+    <property role="34LRSv" value="child" />
+    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="DataFormFeature" />
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxiL_">
+    <property role="EcuMT" value="861509610434276453" />
+    <property role="TrG5h" value="DataFormFeature" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="JOGAOsxiLC" role="1TKVEl">
+      <property role="IQ2nx" value="861509610434276456" />
+      <property role="TrG5h" value="final" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="PrWs8" id="JOGAOsxiLA" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="1TJgyj" id="JOGAOsxmrx" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434291425" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="getter" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxTDl">
+    <property role="EcuMT" value="861509610434435669" />
+    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <property role="TrG5h" value="DataFormFeatureOverride" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="JOGAOsxTDo" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434435672" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="feature" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="JOGAOsxiL_" resolve="DataFormFeature" />
+    </node>
+    <node concept="1TJgyj" id="JOGAOsxTDm" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434435670" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="getter" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxpXw">
+    <property role="EcuMT" value="861509610434305888" />
+    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <property role="TrG5h" value="ListFeature" />
+    <property role="34LRSv" value="list" />
+    <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="DataFormFeature" />
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxnj6">
+    <property role="EcuMT" value="861509610434294982" />
+    <property role="TrG5h" value="ValueFeature" />
+    <property role="34LRSv" value="value" />
+    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="DataFormFeature" />
+  </node>
+  <node concept="PlHQZ" id="JOGAOsIRhm">
+    <property role="EcuMT" value="861509610437833814" />
+    <property role="TrG5h" value="Capture" />
+    <property role="3GE5qa" value="logical" />
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxanH">
+    <property role="EcuMT" value="861509610434242029" />
+    <property role="TrG5h" value="DataFormConstructor" />
+    <property role="3GE5qa" value="dataform.constructor" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="JOGAOsxaC6" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434243078" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="decl" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="JOGAOsxaC9" resolve="DataFormDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="JOGAOsxaC4" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434243076" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="override" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="JOGAOsxTDl" resolve="DataFormFeatureOverride" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxaC9">
+    <property role="EcuMT" value="861509610434243081" />
+    <property role="TrG5h" value="DataFormDeclaration" />
+    <property role="3GE5qa" value="dataform.constructor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="JOGAOsxaCc" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434243084" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="template" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="JOGAOsxiLy" resolve="DataFormTemplate" />
+    </node>
+    <node concept="PrWs8" id="JOGAOsxaCa" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="1TJgyj" id="JOGAOsxaCh" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434243089" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="prototype" />
+      <ref role="20lvS9" node="JOGAOsxaC9" resolve="DataFormDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxaCw">
+    <property role="EcuMT" value="861509610434243104" />
+    <property role="TrG5h" value="DataFormTable" />
+    <property role="34LRSv" value="DataForm Table" />
+    <property role="19KtqR" value="true" />
+    <property role="3GE5qa" value="dataform.constructor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="JOGAOsxaCx" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434243105" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="contents" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="JOGAOsxaC9" resolve="DataFormDeclaration" />
+    </node>
+    <node concept="PrWs8" id="JOGAOsxfAQ" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="JOGAOsxiLy">
+    <property role="EcuMT" value="861509610434276450" />
+    <property role="TrG5h" value="DataFormTemplate" />
+    <property role="3GE5qa" value="dataform.constructor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="JOGAOsxiLz" role="1TKVEi">
+      <property role="IQ2ns" value="861509610434276451" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="feature" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="JOGAOsxiL_" resolve="DataFormFeature" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7lt0LtQg3tE">
+    <property role="EcuMT" value="8456919074574710634" />
+    <property role="TrG5h" value="ExpressionItem" />
+    <property role="34LRSv" value="expression" />
+    <property role="3GE5qa" value="logical.item" />
+    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
+    <node concept="1TJgyj" id="7lt0LtQg3vl" role="1TKVEi">
+      <property role="IQ2ns" value="8456919074574710741" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

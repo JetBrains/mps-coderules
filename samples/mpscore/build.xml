@@ -220,7 +220,6 @@
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.controlflow.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.dataform.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
@@ -541,7 +540,6 @@
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.controlflow.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.dataform.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />

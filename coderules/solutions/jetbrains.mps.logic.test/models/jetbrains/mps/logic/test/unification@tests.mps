@@ -11,15 +11,15 @@
   <imports>
     <import index="mqqo" ref="r:82cec6f7-ddec-440c-961c-1c598267be42(jetbrains.mps.logic.test.unification)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
-    <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
+    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
+    <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.program)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -202,13 +202,13 @@
       <concept id="238586457668550951" name="jetbrains.mps.logic.structure.Splice" flags="ng" index="22Ky0T">
         <child id="238586457668550958" name="expression" index="22Ky0K" />
       </concept>
-      <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.List" flags="ng" index="KCUsM">
+      <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.ListNode" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
       <concept id="6694277639409954681" name="jetbrains.mps.logic.structure.ListRole" flags="ng" index="38e3lM">
         <child id="6694277639409954746" name="list" index="38e3mL" />
       </concept>
-      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.TreeFormExpression" flags="ng" index="1oi1Uc">
+      <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.DataNodeExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
       <concept id="7571593955706137263" name="jetbrains.mps.logic.structure.ChildRole" flags="ng" index="1oi5ST">
@@ -261,9 +261,9 @@
       <node concept="3clFbS" id="21Zu7ABuubZ" role="3clF47">
         <node concept="3clFbF" id="21Zu7ABuuuo" role="3cqZAp">
           <node concept="10QFUN" id="1OShD0I14HQ" role="3clFbG">
-            <node concept="2YIFZM" id="3mz2_dYuDAz" role="10QFUP">
-              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asVariable" />
-              <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
+            <node concept="2YIFZM" id="74q$MmRB2bj" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="6yEjedm5rGN" role="37wK5m">
                 <node concept="1pGfFk" id="6yEjedm5sqz" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="LogicalImpl" />
@@ -274,7 +274,7 @@
                         <ref role="3cqZAo" node="21Zu7ABuute" resolve="name" />
                       </node>
                       <node concept="3VsKOn" id="6yEjedm5tU_" role="37wK5m">
-                        <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                        <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                       </node>
                     </node>
                   </node>
@@ -302,9 +302,9 @@
       <node concept="3clFbS" id="3mz2_dYxTYI" role="3clF47">
         <node concept="3clFbF" id="3mz2_dYxTYJ" role="3cqZAp">
           <node concept="10QFUN" id="3mz2_dYxTYK" role="3clFbG">
-            <node concept="2YIFZM" id="3mz2_dYxTYL" role="10QFUP">
-              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asVariable" />
-              <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
+            <node concept="2YIFZM" id="74q$MmRB2bk" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="6yEjedm5vBK" role="37wK5m">
                 <node concept="1pGfFk" id="6yEjedm5vBL" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="LogicalImpl" />
@@ -342,9 +342,9 @@
             <node concept="3uibUv" id="5cGCTtqzoJY" role="10QFUM">
               <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
-            <node concept="2YIFZM" id="3mz2_dYuDM0" role="10QFUP">
-              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asVariable" />
-              <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
+            <node concept="2YIFZM" id="74q$MmRB2br" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="5cGCTtqzoJT" role="37wK5m">
                 <node concept="1pGfFk" id="6yEjedm5xLL" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="LogicalImpl" />
@@ -1756,9 +1756,9 @@
       <node concept="3clFbS" id="6yEjedm71gV" role="3clF47">
         <node concept="3clFbF" id="6yEjedm71gW" role="3cqZAp">
           <node concept="10QFUN" id="6yEjedm71gX" role="3clFbG">
-            <node concept="2YIFZM" id="6yEjedm71gY" role="10QFUP">
-              <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
-              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asVariable" />
+            <node concept="2YIFZM" id="74q$MmRB2bn" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="6yEjedm71gZ" role="37wK5m">
                 <node concept="1pGfFk" id="6yEjedm71h0" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="LogicalImpl" />
@@ -1769,7 +1769,7 @@
                         <ref role="3cqZAo" node="6yEjedm71gR" resolve="name" />
                       </node>
                       <node concept="3VsKOn" id="6yEjedm71h4" role="37wK5m">
-                        <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                        <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                       </node>
                     </node>
                   </node>
@@ -1797,9 +1797,9 @@
       <node concept="3clFbS" id="6yEjedm71hc" role="3clF47">
         <node concept="3clFbF" id="6yEjedm71hd" role="3cqZAp">
           <node concept="10QFUN" id="6yEjedm71he" role="3clFbG">
-            <node concept="2YIFZM" id="6yEjedm71hf" role="10QFUP">
-              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asVariable" />
-              <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
+            <node concept="2YIFZM" id="74q$MmRB2bp" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="6yEjedm71hg" role="37wK5m">
                 <node concept="1pGfFk" id="6yEjedm71hh" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="LogicalImpl" />
@@ -1837,9 +1837,9 @@
             <node concept="3uibUv" id="6yEjedm71hu" role="10QFUM">
               <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
-            <node concept="2YIFZM" id="6yEjedm71hv" role="10QFUP">
-              <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
-              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asVariable" />
+            <node concept="2YIFZM" id="74q$MmRB2bo" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="6yEjedm71hw" role="37wK5m">
                 <node concept="1pGfFk" id="6yEjedm71hx" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="LogicalImpl" />
@@ -1874,9 +1874,9 @@
             <node concept="3uibUv" id="7nuzzkr25aB" role="10QFUM">
               <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
-            <node concept="2YIFZM" id="3mz2_dYuEZO" role="10QFUP">
-              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asVariable" />
-              <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
+            <node concept="2YIFZM" id="74q$MmRB2bq" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="7nuzzkr25az" role="37wK5m">
                 <node concept="1pGfFk" id="7nuzzkr25a$" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="LogicalImpl" />
@@ -5162,9 +5162,9 @@
             <node concept="3uibUv" id="3K_0akS$LQx" role="10QFUM">
               <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
-            <node concept="2YIFZM" id="3mz2_dYuFY1" role="10QFUP">
-              <ref role="37wK5l" to="yg8f:4TCblo5YI1H" resolve="asVariable" />
-              <ref role="1Pybhc" to="yg8f:677NV565N1x" resolve="LogicalUtil" />
+            <node concept="2YIFZM" id="74q$MmRB2bl" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="3K_0akS$LQt" role="37wK5m">
                 <node concept="1pGfFk" id="3K_0akS$LQu" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
@@ -5361,7 +5361,7 @@
                       <property role="Xl_RC" value="w1" />
                     </node>
                     <node concept="3VsKOn" id="6yEjedm8P1G" role="37wK5m">
-                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                     </node>
                   </node>
                 </node>
@@ -5693,7 +5693,7 @@
                       <property role="Xl_RC" value="w1" />
                     </node>
                     <node concept="3VsKOn" id="6yEjedm8Oi0" role="37wK5m">
-                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
                     </node>
                   </node>
                 </node>

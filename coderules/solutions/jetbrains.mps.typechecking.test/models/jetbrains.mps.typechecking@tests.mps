@@ -26,8 +26,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
-    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
-    <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
+    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
@@ -50,6 +49,7 @@
     <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
     <import index="sppd" ref="r:0e60ac07-77c3-4d5c-b40d-73e8fd128592(jetbrains.mps.typechecking.testlang.sandbox.test)" />
     <import index="qulx" ref="r:ec0979fb-ae37-4823-9eaa-8550d9f5c6fd(jetbrains.mps.typechecking.testlang.structure)" />
+    <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.program)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -1112,9 +1112,9 @@
                               <node concept="37vLTw" id="6tPOoeTc7DG" role="37wK5m">
                                 <ref role="3cqZAo" node="6tPOoeTbYYA" resolve="program" />
                               </node>
-                              <node concept="10M0yZ" id="6QH_LDtbV6h" role="37wK5m">
-                                <ref role="1PxDUh" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
-                                <ref role="3cqZAo" to="yg8f:24Vro6cS5rK" resolve="NULL" />
+                              <node concept="10M0yZ" id="74q$MmRB2bb" role="37wK5m">
+                                <ref role="3cqZAo" to="7n8k:24Vro6cS5rK" resolve="NULL" />
+                                <ref role="1PxDUh" to="7n8k:qubcdtxBiR" resolve="EvaluationTraceExt" />
                               </node>
                             </node>
                           </node>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)">
+<model ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
@@ -13,7 +13,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
@@ -1737,7 +1737,7 @@
                       <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
                       <node concept="2ShNRf" id="_oAIrg3tHe" role="37wK5m">
                         <node concept="1pGfFk" id="_oAIrg3tHf" role="2ShVmc">
-                          <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                          <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
                           <node concept="37vLTw" id="6HKur8$jCv_" role="37wK5m">
                             <ref role="3cqZAo" node="7d$oK1$qfYd" resolve="leftRepr" />
                           </node>
@@ -1955,7 +1955,7 @@
                   <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
                   <node concept="2ShNRf" id="_oAIrg3wr6" role="37wK5m">
                     <node concept="1pGfFk" id="_oAIrg3wr7" role="2ShVmc">
-                      <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                      <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
                       <node concept="37vLTw" id="6HKur8$jCK9" role="37wK5m">
                         <ref role="3cqZAo" node="7d$oK1$rAnE" resolve="leftRepr" />
                       </node>
@@ -1963,7 +1963,7 @@
                   </node>
                   <node concept="2ShNRf" id="_oAIrg3wRH" role="37wK5m">
                     <node concept="1pGfFk" id="_oAIrg3wRI" role="2ShVmc">
-                      <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                      <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
                       <node concept="37vLTw" id="6HKur8$jD0Z" role="37wK5m">
                         <ref role="3cqZAo" node="7d$oK1$rAnK" resolve="rightRepr" />
                       </node>

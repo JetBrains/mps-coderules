@@ -39,7 +39,6 @@
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
-    <import index="yg8f" ref="r:e213377a-f1a7-4ba7-9d08-96bcb97ed8ce(jetbrains.mps.logic.builtin)" />
     <import index="rgfa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.tree(JDK/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="u30n" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.treeStructure.treetable(MPS.IDEA/)" />
@@ -52,7 +51,7 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
-    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)" />
+    <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="6rp1" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:com.github.andrewoma.dexx.collection(jetbrains.mps.logic.reactor/)" />
     <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
     <import index="gsia" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.event(JDK/)" />
@@ -84,6 +83,7 @@
     <import index="iljd" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.plugins(jetbrains.mps.coderules/)" />
     <import index="5tvg" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.disposables(jetbrains.mps.coderules/)" />
     <import index="m4y7" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.schedulers(jetbrains.mps.coderules/)" />
+    <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.program)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -3215,7 +3215,7 @@
     </node>
     <node concept="3Tm1VV" id="6IQb_Rx3pZ9" role="1B3o_S" />
     <node concept="3uibUv" id="6IQb_Rx3qQh" role="1zkMxy">
-      <ref role="3uigEE" to="yg8f:15BaR5AeJIv" resolve="EvaluationTraceExt.Stub" />
+      <ref role="3uigEE" to="7n8k:15BaR5AeJIv" resolve="EvaluationTraceExt.Stub" />
     </node>
   </node>
   <node concept="312cEu" id="4vBwiiVrUlG">
@@ -6171,7 +6171,7 @@
     </node>
     <node concept="3Tm1VV" id="YGS68MDHIa" role="1B3o_S" />
     <node concept="3uibUv" id="YGS68MEieQ" role="EKbjA">
-      <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
+      <ref role="3uigEE" to="7n8k:qubcdtxBiR" resolve="EvaluationTraceExt" />
     </node>
   </node>
   <node concept="312cEu" id="6QkkSolfqrm">
@@ -7870,7 +7870,7 @@
                         <node concept="3cpWs6" id="19wqdqOqxsQ" role="3cqZAp">
                           <node concept="2ShNRf" id="19wqdqOqxsR" role="3cqZAk">
                             <node concept="1pGfFk" id="19wqdqOqxsS" role="2ShVmc">
-                              <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalTreeForm" />
+                              <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
                               <node concept="1rXfSq" id="19wqdqOqxsT" role="37wK5m">
                                 <ref role="37wK5l" node="19wqdqOpSqM" resolve="logicalSnapshot" />
                                 <node concept="37vLTw" id="19wqdqOqxsU" role="37wK5m">
@@ -11915,7 +11915,7 @@
       <ref role="3uigEE" node="YGS68MDHI9" resolve="Sink" />
     </node>
     <node concept="3uibUv" id="YGS68ME8xi" role="EKbjA">
-      <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
+      <ref role="3uigEE" to="7n8k:qubcdtxBiR" resolve="EvaluationTraceExt" />
     </node>
     <node concept="2tJIrI" id="5cnt3vhg7bh" role="jymVt" />
     <node concept="3clFb_" id="5cnt3vhgbAS" role="jymVt">
@@ -17036,7 +17036,7 @@
       <node concept="37vLTG" id="6YPNC4PsId0" role="3clF46">
         <property role="TrG5h" value="termNode" />
         <node concept="3uibUv" id="6YPNC4PsId1" role="1tU5fm">
-          <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="BranchNode" />
+          <ref role="3uigEE" to="6exd:5JQSuNswOXL" resolve="TermNode" />
         </node>
       </node>
       <node concept="2AHcQZ" id="6YPNC4PsId6" role="2AJF6D">
@@ -18438,7 +18438,7 @@
     <node concept="3clFb_" id="YGS68MEx_L" role="jymVt">
       <property role="TrG5h" value="trace" />
       <node concept="3uibUv" id="YGS68MEAd1" role="3clF45">
-        <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
+        <ref role="3uigEE" to="7n8k:qubcdtxBiR" resolve="EvaluationTraceExt" />
       </node>
       <node concept="3Tm1VV" id="YGS68MEx_O" role="1B3o_S" />
       <node concept="3clFbS" id="YGS68MEx_P" role="3clF47">
@@ -29352,7 +29352,7 @@
     </node>
     <node concept="3Tm1VV" id="YGS68MDzNV" role="1B3o_S" />
     <node concept="3uibUv" id="YGS68MDF0A" role="EKbjA">
-      <ref role="3uigEE" to="yg8f:qubcdtxBiR" resolve="EvaluationTraceExt" />
+      <ref role="3uigEE" to="7n8k:qubcdtxBiR" resolve="EvaluationTraceExt" />
     </node>
     <node concept="3uibUv" id="YGS68MDJ0J" role="1zkMxy">
       <ref role="3uigEE" node="YGS68MDHI9" resolve="Sink" />

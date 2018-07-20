@@ -4,10 +4,10 @@
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="14" />
     <use id="cba985fe-1e96-4f16-9f8d-b07434405d4f" name="jetbrains.mps.lang.smodel.types" version="0" />
-    <use id="942985d5-7bcf-46ee-8b79-7b662eaebb4e" name="jetbrains.mps.dataform" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -107,29 +107,6 @@
         <child id="5455284157993911099" name="values" index="2pJxcM" />
       </concept>
     </language>
-    <language id="942985d5-7bcf-46ee-8b79-7b662eaebb4e" name="jetbrains.mps.dataform">
-      <concept id="861509610434242029" name="jetbrains.mps.dataform.structure.DataForm" flags="ng" index="ns1u0">
-        <reference id="861509610434243078" name="decl" index="ns1xF" />
-        <child id="861509610434243076" name="override" index="ns1xD" />
-      </concept>
-      <concept id="861509610434243104" name="jetbrains.mps.dataform.structure.DataFormTable" flags="ng" index="ns1xd">
-        <child id="861509610434243105" name="contents" index="ns1xc" />
-      </concept>
-      <concept id="861509610434243081" name="jetbrains.mps.dataform.structure.DataFormDeclaration" flags="ng" index="ns1x$">
-        <child id="861509610434243084" name="template" index="ns1xx" />
-      </concept>
-      <concept id="861509610434276453" name="jetbrains.mps.dataform.structure.DataFormFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
-      <concept id="861509610434276450" name="jetbrains.mps.dataform.structure.DataFormTemplate" flags="ng" index="nspSf">
-        <child id="861509610434276451" name="feature" index="nspSe" />
-      </concept>
-      <concept id="861509610434294982" name="jetbrains.mps.dataform.structure.ValueFeature" flags="ng" index="nssqF" />
-      <concept id="861509610434435669" name="jetbrains.mps.dataform.structure.DataFormFeatureOverride" flags="ng" index="nsMwS">
-        <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
-      </concept>
-    </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
       <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
         <child id="3063948360254832884" name="declaration" index="3XD1gS" />
@@ -141,10 +118,31 @@
         <child id="8829335963591530990" name="expression" index="aZ4eD" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalExpression" flags="ng" index="1nq8_$">
+      <concept id="861509610434242029" name="jetbrains.mps.logic.structure.DataFormConstructor" flags="ng" index="ns1u0">
+        <reference id="861509610434243078" name="decl" index="ns1xF" />
+        <child id="861509610434243076" name="override" index="ns1xD" />
+      </concept>
+      <concept id="861509610434243104" name="jetbrains.mps.logic.structure.DataFormTable" flags="ng" index="ns1xd">
+        <child id="861509610434243105" name="contents" index="ns1xc" />
+      </concept>
+      <concept id="861509610434243081" name="jetbrains.mps.logic.structure.DataFormDeclaration" flags="ng" index="ns1x$">
+        <child id="861509610434243084" name="template" index="ns1xx" />
+      </concept>
+      <concept id="861509610434276453" name="jetbrains.mps.logic.structure.DataFormFeature" flags="ng" index="nspS8">
+        <property id="861509610434276456" name="final" index="nspS5" />
+      </concept>
+      <concept id="861509610434276450" name="jetbrains.mps.logic.structure.DataFormTemplate" flags="ng" index="nspSf">
+        <child id="861509610434276451" name="feature" index="nspSe" />
+      </concept>
+      <concept id="861509610434294982" name="jetbrains.mps.logic.structure.ValueFeature" flags="ng" index="nssqF" />
+      <concept id="861509610434435669" name="jetbrains.mps.logic.structure.DataFormFeatureOverride" flags="ng" index="nsMwS">
+        <reference id="861509610434435672" name="feature" index="nsMwP" />
+        <child id="861509610434435670" name="getter" index="nsMwV" />
+      </concept>
+      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
         <child id="4780620083400582654" name="logical" index="1nq8_t" />
       </concept>
-      <concept id="2455719244613908503" name="jetbrains.mps.logic.structure.ValueOfLogicalExpression" flags="ng" index="1TmgYN">
+      <concept id="2455719244613908503" name="jetbrains.mps.logic.structure.ValueOfExpression" flags="ng" index="1TmgYN">
         <child id="2455719244613924416" name="logical" index="1Tms7$" />
       </concept>
     </language>
@@ -449,21 +447,6 @@
         <ref role="2t_S0q" to="tpck:gw2VY9q" resolve="BaseConcept" />
         <node concept="3A20r5" id="7lt0LtPOZVo" role="2t_VXX">
           <property role="TrG5h" value="bc" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="ns1xd" id="JOGAOsVt6x">
-    <property role="TrG5h" value="Types" />
-    <node concept="ns1x$" id="JOGAOsVt6y" role="ns1xc">
-      <property role="TrG5h" value="Type" />
-      <node concept="nspSf" id="JOGAOsVt6z" role="ns1xx">
-        <node concept="nssqF" id="7mB3viLdDa5" role="nspSe">
-          <property role="TrG5h" value="name" />
-        </node>
-        <node concept="nssqF" id="JOGAOsVt6$" role="nspSe">
-          <property role="TrG5h" value="val" />
-          <property role="nspS5" value="false" />
         </node>
       </node>
     </node>
@@ -1101,6 +1084,21 @@
     <node concept="10M0yZ" id="7mB3viLg9aJ" role="2_lZgo">
       <ref role="3cqZAo" to="1g4i:4t7Xo7inO_s" resolve="CONVERT" />
       <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+    </node>
+  </node>
+  <node concept="ns1xd" id="JOGAOsVt6x">
+    <property role="TrG5h" value="Types" />
+    <node concept="ns1x$" id="JOGAOsVt6y" role="ns1xc">
+      <property role="TrG5h" value="Type" />
+      <node concept="nspSf" id="JOGAOsVt6z" role="ns1xx">
+        <node concept="nssqF" id="7mB3viLdDa5" role="nspSe">
+          <property role="TrG5h" value="name" />
+        </node>
+        <node concept="nssqF" id="JOGAOsVt6$" role="nspSe">
+          <property role="TrG5h" value="val" />
+          <property role="nspS5" value="false" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

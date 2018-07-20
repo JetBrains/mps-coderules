@@ -98,6 +98,10 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
+      </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -120,6 +124,8 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -132,9 +138,9 @@
     </language>
   </registry>
   <node concept="3dkpOd" id="6dMt3c55sJy">
-    <property role="3GE5qa" value="treeform" />
-    <property role="TrG5h" value="Node_splice" />
-    <ref role="2ZfgGC" to="5j4j:5lJXKARS0" resolve="TreeForm" />
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="DataForm_splice" />
+    <ref role="2ZfgGC" to="5j4j:5yqFHXo6Ubn" resolve="DataForm" />
     <node concept="2S6ZIM" id="6dMt3c55sJz" role="2ZfVej">
       <node concept="3clFbS" id="6dMt3c55sJ$" role="2VODD2">
         <node concept="3clFbF" id="6dMt3c55vc4" role="3cqZAp">
@@ -155,9 +161,7 @@
         <node concept="3cpWs8" id="6dMt3c55Va_" role="3cqZAp">
           <node concept="3cpWsn" id="6dMt3c55VaA" role="3cpWs9">
             <property role="TrG5h" value="attr" />
-            <node concept="3uibUv" id="6dMt3c55Va$" role="1tU5fm">
-              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-            </node>
+            <node concept="3Tqbb2" id="5p9vXslDtup" role="1tU5fm" />
             <node concept="2OqwBi" id="6dMt3c55VaB" role="33vP2m">
               <node concept="2JrnkZ" id="6dMt3c55VaC" role="2Oq$k0">
                 <node concept="2OqwBi" id="6dMt3c55VaD" role="2JrQYb">
@@ -188,8 +192,13 @@
               </node>
             </node>
             <node concept="2oxUTD" id="6dMt3c55VCu" role="2OqNvi">
-              <node concept="37vLTw" id="6dMt3c55VD_" role="2oxUTC">
-                <ref role="3cqZAo" node="6dMt3c55VaA" resolve="attr" />
+              <node concept="1PxgMI" id="5p9vXslDuCZ" role="2oxUTC">
+                <node concept="chp4Y" id="5p9vXslDuGG" role="3oSUPX">
+                  <ref role="cht4Q" to="5j4j:dfChU1zo4B" resolve="Splice" />
+                </node>
+                <node concept="37vLTw" id="6dMt3c55VD_" role="1m5AlR">
+                  <ref role="3cqZAo" node="6dMt3c55VaA" resolve="attr" />
+                </node>
               </node>
             </node>
           </node>
@@ -230,8 +239,8 @@
     </node>
   </node>
   <node concept="2S6QgY" id="1_iD3HA2fYt">
-    <property role="3GE5qa" value="treeform" />
-    <property role="TrG5h" value="Node_unsplice" />
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="DataForm_unsplice" />
     <ref role="2ZfgGC" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="2S6ZIM" id="1_iD3HA2fYu" role="2ZfVej">
       <node concept="3clFbS" id="1_iD3HA2fYv" role="2VODD2">

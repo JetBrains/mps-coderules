@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.builtin.unification)">
+<model ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)">
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
@@ -166,7 +166,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="7HUwyZbdMWH">
-    <property role="TrG5h" value="MetaLogicalTreeForm" />
+    <property role="TrG5h" value="MetaLogicalDataForm" />
     <node concept="2tJIrI" id="7HUwyZbdN_B" role="jymVt" />
     <node concept="3clFbW" id="7HUwyZbdNAd" role="jymVt">
       <node concept="3cqZAl" id="7HUwyZbdNAf" role="3clF45" />
@@ -325,7 +325,7 @@
     </node>
   </node>
   <node concept="312cEu" id="4TCblo5MJ1m">
-    <property role="TrG5h" value="LogicalTreeForm" />
+    <property role="TrG5h" value="LogicalDataForm" />
     <node concept="2tJIrI" id="4TCblo5MOJG" role="jymVt" />
     <node concept="312cEg" id="4TCblo5MOOn" role="jymVt">
       <property role="TrG5h" value="logical" />
@@ -682,7 +682,7 @@
           <node concept="3fqX7Q" id="4TCblo5N6Ds" role="3clFbw">
             <node concept="2ZW3vV" id="4TCblo5N6QY" role="3fr31v">
               <node concept="3uibUv" id="4TCblo5N6YK" role="2ZW6by">
-                <ref role="3uigEE" node="4TCblo5MJ1m" resolve="LogicalTreeForm" />
+                <ref role="3uigEE" node="4TCblo5MJ1m" resolve="LogicalDataForm" />
               </node>
               <node concept="37vLTw" id="4TCblo5N6Ff" role="2ZW6bz">
                 <ref role="3cqZAo" node="4TCblo5N1M1" resolve="that" />
@@ -707,7 +707,7 @@
                       <ref role="3cqZAo" node="4TCblo5N1M1" resolve="that" />
                     </node>
                     <node concept="3uibUv" id="4TCblo5N9Mf" role="10QFUM">
-                      <ref role="3uigEE" node="4TCblo5MJ1m" resolve="LogicalTreeForm" />
+                      <ref role="3uigEE" node="4TCblo5MJ1m" resolve="LogicalDataForm" />
                     </node>
                   </node>
                 </node>

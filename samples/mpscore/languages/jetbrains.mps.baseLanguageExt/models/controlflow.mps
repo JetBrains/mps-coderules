@@ -14,7 +14,7 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
-    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.builtin.predicate)" />
+    <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
@@ -131,10 +131,10 @@
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalExpression" flags="ng" index="1nq8_$">
+      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
         <child id="4780620083400582654" name="logical" index="1nq8_t" />
       </concept>
-      <concept id="2455719244613908503" name="jetbrains.mps.logic.structure.ValueOfLogicalExpression" flags="ng" index="1TmgYN">
+      <concept id="2455719244613908503" name="jetbrains.mps.logic.structure.ValueOfExpression" flags="ng" index="1TmgYN">
         <child id="2455719244613924416" name="logical" index="1Tms7$" />
       </concept>
     </language>
@@ -268,7 +268,7 @@
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
-      <concept id="6856711987714624232" name="jetbrains.mps.lang.coderules.structure.ExpressionItem" flags="ng" index="HKQnh">
+      <concept id="6856711987714624232" name="jetbrains.mps.lang.coderules.structure.LateExpressionItem" flags="ng" index="HKQnh">
         <child id="6856711987714624233" name="code" index="HKQng" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
