@@ -52,7 +52,7 @@
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
     <module reference="a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)" version="0" />
-    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)" version="0" />
+    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
   </dependencyVersions>
 </solution>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.typechecking.reporting" uuid="da80355b-a098-4248-9ec8-70d10dd7e9af" moduleVersion="0" compileInMPS="true">
+<solution name="jetbrains.mps.reporting.runtime" uuid="da80355b-a098-4248-9ec8-70d10dd7e9af" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -21,7 +21,7 @@
   </languageVersions>
   <dependencyVersions>
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
-    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)" version="0" />
+    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
   </dependencyVersions>
 </solution>
 

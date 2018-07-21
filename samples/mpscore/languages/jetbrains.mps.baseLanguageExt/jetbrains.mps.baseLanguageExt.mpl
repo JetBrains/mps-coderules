@@ -66,8 +66,8 @@
     <module reference="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" version="0" />
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
+    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
     <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.typechecking)" version="0" />
-    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)" version="0" />
   </dependencyVersions>
   <extendedLanguages>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>

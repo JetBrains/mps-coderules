@@ -94,8 +94,8 @@
         <module reference="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" version="0" />
         <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
         <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
+        <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
         <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.typechecking)" version="0" />
-        <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
     </generator>
@@ -193,13 +193,13 @@
     <module reference="35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)" version="0" />
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
+    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
     <module reference="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" version="0" />
-    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)" version="0" />
   </dependencyVersions>
   <runtime>
-    <dependency reexport="false">da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)</dependency>
     <dependency reexport="false">ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)</dependency>
     <dependency reexport="false">26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)</dependency>
+    <dependency reexport="false">da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)</dependency>
   </runtime>
   <extendedLanguages>
     <extendedLanguage>35320f26-77cb-4c55-be9f-a97a27770af1(jetbrains.mps.logic)</extendedLanguage>

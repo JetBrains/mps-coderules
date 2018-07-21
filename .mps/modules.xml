@@ -20,8 +20,8 @@
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/jetbrains.mps.lang.typechecking.runtime.msd" folder="typechecking" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.logic.test/jetbrains.mps.logic.test.msd" folder="logic" />
+      <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.reporting.runtime/jetbrains.mps.reporting.runtime.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.typechecking.build/jetbrains.mps.typechecking.build.msd" folder="build" />
-      <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.typechecking.reporting/jetbrains.mps.typechecking.reporting.msd" folder="typechecking" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.typechecking.test/jetbrains.mps.typechecking.test.msd" folder="typechecking.test" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.typechecking.testlang.sandbox/jetbrains.mps.typechecking.testlang.sandbox.msd" folder="typechecking.test" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.typechecking.ui/jetbrains.mps.typechecking.ui.msd" folder="typechecking.ui" />

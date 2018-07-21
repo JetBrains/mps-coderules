@@ -29,7 +29,7 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" version="0" />
     <module reference="ffcd9ef5-e931-4da9-a8d1-eb9bf80d19b4(jetbrains.mps.lang.controlflow.runtime)" version="0" />
-    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)" version="0" />
+    <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
   </dependencyVersions>
 </solution>
 

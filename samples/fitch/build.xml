@@ -55,8 +55,8 @@
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -209,8 +209,8 @@
         <fileset file="${artifacts.mps}/plugins/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
@@ -305,7 +305,7 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.jar" />
@@ -399,7 +399,7 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.jar" />
@@ -490,7 +490,7 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.jar" />

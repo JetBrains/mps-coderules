@@ -50,8 +50,8 @@
           <module ref="ffcd9ef5-e931-4da9-a8d1-eb9bf80d19b4(jetbrains.mps.lang.controlflow.runtime)" />
           <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" />
+          <module ref="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
-          <module ref="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.typechecking.reporting)" />
         </dependencies>
         <classpath>
           <entry path="." />
@@ -232,8 +232,8 @@
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.test.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -381,8 +381,8 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
@@ -521,8 +521,8 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
@@ -552,8 +552,8 @@
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.test.jar" />
+      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.reporting.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
