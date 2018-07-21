@@ -317,6 +317,7 @@
         <child id="6691972578451986151" name="input" index="2t_VXX" />
       </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.coderules.structure.Handler" flags="ng" index="AVZre">
+        <reference id="3541122455446356437" name="extends" index="2YbDB9" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
       <concept id="7670825977262541651" name="jetbrains.mps.lang.coderules.structure.MacroInputReference" flags="ng" index="3eTFj6">
@@ -1054,6 +1055,7 @@
   </node>
   <node concept="AVZre" id="Vo$tzLEGty">
     <property role="TrG5h" value="Reasoning" />
+    <ref role="2YbDB9" to="6r1k:5RfK0kxl_zr" resolve="PropReasoning" />
     <node concept="1nLNMY" id="6$MtiK8H0qt" role="1nK1Vg">
       <property role="TrG5h" value="forallIntro" />
       <node concept="3clFbS" id="6$MtiK8H0qu" role="1nLNMH">
