@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.fitch.sandbox" uuid="86925f4e-7856-4553-a261-c86fbf09bb52" moduleVersion="0" compileInMPS="true">
+<solution name="jetbrains.mps.fitch.demo" uuid="86925f4e-7856-4553-a261-c86fbf09bb52" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -14,7 +14,7 @@
     <language slang="l:ec79e64d-4cbb-4f6c-b7b7-108dd125aba6:jetbrains.mps.logic.propositional" version="-1" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="86925f4e-7856-4553-a261-c86fbf09bb52(jetbrains.mps.fitch.sandbox)" version="0" />
+    <module reference="86925f4e-7856-4553-a261-c86fbf09bb52(jetbrains.mps.fitch.demo)" version="0" />
   </dependencyVersions>
 </solution>
 

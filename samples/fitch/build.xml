@@ -142,7 +142,7 @@
         <module file="${basedir}/languages/jetbrains.mps.logic.propositional/jetbrains.mps.logic.propositional.mpl" />
       </chunk>
       <chunk>
-        <module file="${basedir}/solutions/jetbrains.mps.fitch.sandbox/jetbrains.mps.fitch.sandbox.msd" />
+        <module file="${basedir}/solutions/jetbrains.mps.fitch.demo/jetbrains.mps.fitch.demo.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -158,7 +158,7 @@
   
   <target name="makeDependents" />
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.fitch, java.compile.jetbrains.mps.fitch#4322786184247805322, java.compile.jetbrains.mps.logic.propositional, java.compile.jetbrains.mps.logic.propositional#5505606474790531941, java.compile.jetbrains.mps.logic.herbrand, java.compile.jetbrains.mps.logic.herbrand#3059457401298723545, java.compile.jetbrains.mps.logic.firstOrder, java.compile.jetbrains.mps.logic.firstOrder#4035326440039985569, java.compile.jetbrains.mps.fitch.sandbox" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.fitch, java.compile.jetbrains.mps.fitch#4322786184247805322, java.compile.jetbrains.mps.logic.propositional, java.compile.jetbrains.mps.logic.propositional#5505606474790531941, java.compile.jetbrains.mps.logic.herbrand, java.compile.jetbrains.mps.logic.herbrand#3059457401298723545, java.compile.jetbrains.mps.logic.firstOrder, java.compile.jetbrains.mps.logic.firstOrder#4035326440039985569, java.compile.jetbrains.mps.fitch.demo" />
   
   <target name="processResources" />
   
@@ -542,13 +542,13 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.fitch.sandbox">
-    <mkdir dir="${basedir}/solutions/jetbrains.mps.fitch.sandbox/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.fitch.sandbox" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.fitch.sandbox" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.jetbrains.mps.fitch.demo">
+    <mkdir dir="${basedir}/solutions/jetbrains.mps.fitch.demo/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.fitch.demo" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.fitch.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/solutions/jetbrains.mps.fitch.sandbox/source_gen" />
+        <path location="${basedir}/solutions/jetbrains.mps.fitch.demo/source_gen" />
       </src>
       <classpath />
     </javac>
@@ -563,6 +563,6 @@
     <delete dir="${basedir}/languages/jetbrains.mps.logic.herbrand/generator/source_gen" />
     <delete dir="${basedir}/languages/jetbrains.mps.logic.propositional/source_gen" />
     <delete dir="${basedir}/languages/jetbrains.mps.logic.propositional/generator/source_gen" />
-    <delete dir="${basedir}/solutions/jetbrains.mps.fitch.sandbox/source_gen" />
+    <delete dir="${basedir}/solutions/jetbrains.mps.fitch.demo/source_gen" />
   </target>
 </project>

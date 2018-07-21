@@ -3,7 +3,7 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.fitch/jetbrains.mps.fitch.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.fitch.sandbox/jetbrains.mps.fitch.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.fitch.demo/jetbrains.mps.fitch.demo.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.firstOrder/jetbrains.mps.logic.firstOrder.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.herbrand/jetbrains.mps.logic.herbrand.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.propositional/jetbrains.mps.logic.propositional.mpl" folder="" />
