@@ -43,7 +43,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.sample.lambdacalc, java.compile.sample.demo" />
+  <target name="compileJava" depends="java.compile.sample.lambdacalc, java.compile.sample.lambdacalc.demo" />
   
   <target name="processResources" />
   
@@ -139,7 +139,7 @@
         <module file="${basedir}/languages/sample.lambdacalc/sample.lambdacalc.mpl" bootstrap="true" />
       </chunk>
       <chunk>
-        <module file="${basedir}/solutions/sample.demo/sample.demo.msd" />
+        <module file="${basedir}/solutions/sample.lambdacalc.demo/sample.lambdacalc.demo.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -210,19 +210,19 @@
     </javac>
   </target>
   
-  <target name="java.compile.sample.demo">
-    <mkdir dir="${basedir}/solutions/sample.demo/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/sample.demo" />
-    <javac destdir="${build.tmp}/java/out/sample.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.sample.lambdacalc.demo">
+    <mkdir dir="${basedir}/solutions/sample.lambdacalc.demo/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/sample.lambdacalc.demo" />
+    <javac destdir="${build.tmp}/java/out/sample.lambdacalc.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/solutions/sample.demo/source_gen" />
+        <path location="${basedir}/solutions/sample.lambdacalc.demo/source_gen" />
       </src>
       <classpath />
     </javac>
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/solutions/sample.demo/source_gen" />
+    <delete dir="${basedir}/solutions/sample.lambdacalc.demo/source_gen" />
   </target>
 </project>

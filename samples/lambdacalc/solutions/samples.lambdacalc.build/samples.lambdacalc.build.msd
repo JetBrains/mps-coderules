@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="build" uuid="dc70cc8a-128e-4f6c-ad96-05b193c44372" moduleVersion="0" compileInMPS="true">
+<solution name="samples.lambdacalc.build" uuid="dc70cc8a-128e-4f6c-ad96-05b193c44372" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -24,9 +24,9 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="dc70cc8a-128e-4f6c-ad96-05b193c44372(build)" version="0" />
     <module reference="422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)" version="0" />
     <module reference="bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.typechecking.build)" version="0" />
+    <module reference="dc70cc8a-128e-4f6c-ad96-05b193c44372(samples.lambdacalc.build)" version="0" />
   </dependencyVersions>
 </solution>
 

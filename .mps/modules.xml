@@ -33,8 +33,8 @@
       <modulePath path="$PROJECT_DIR$/samples/fitch/solutions/jetbrains.mps.fitch.build/jetbrains.mps.fitch.build.msd" folder="samples.fitch" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/solutions/jetbrains.mps.fitch.sandbox/jetbrains.mps.fitch.sandbox.msd" folder="samples.fitch" />
       <modulePath path="$PROJECT_DIR$/samples/lambdacalc/languages/sample.lambdacalc/sample.lambdacalc.mpl" folder="samples.lambdacalc" />
-      <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/build/build.msd" folder="samples.lambdacalc" />
-      <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/sample.demo/sample.demo.msd" folder="samples.lambdacalc" />
+      <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/sample.lambdacalc.demo/sample.lambdacalc.demo.msd" folder="samples.lambdacalc" />
+      <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/samples.lambdacalc.build/samples.lambdacalc.build.msd" folder="samples.lambdacalc" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="samples.mpscore" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="samples.mpscore.tests" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.coderules.samples.mpscore.build/jetbrains.mps.coderules.samples.mpscore.build.msd" folder="samples.mpscore.build" />

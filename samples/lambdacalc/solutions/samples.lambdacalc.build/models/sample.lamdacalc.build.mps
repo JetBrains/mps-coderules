@@ -152,16 +152,16 @@
       </node>
       <node concept="1E1JtA" id="7E7FS_VaVB_" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="sample.demo" />
+        <property role="TrG5h" value="sample.lambdacalc.demo" />
         <property role="3LESm3" value="05f15741-5274-4aed-a086-84d9a15ab93b" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="7E7FS_VaVBC" role="3LF7KH">
           <node concept="2Ry0Ak" id="7E7FS_VaVC3" role="iGT6I">
             <property role="2Ry0Am" value="solutions" />
             <node concept="2Ry0Ak" id="7E7FS_VaVC8" role="2Ry0An">
-              <property role="2Ry0Am" value="sample.demo" />
-              <node concept="2Ry0Ak" id="7E7FS_VaVCd" role="2Ry0An">
-                <property role="2Ry0Am" value="sample.demo.msd" />
+              <property role="2Ry0Am" value="sample.lambdacalc.demo" />
+              <node concept="2Ry0Ak" id="3kk50IPE9wL" role="2Ry0An">
+                <property role="2Ry0Am" value="sample.lambdacalc.demo.msd" />
               </node>
             </node>
           </node>
