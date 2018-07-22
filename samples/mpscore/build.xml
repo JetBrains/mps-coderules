@@ -119,39 +119,10 @@
       <zipfileset file="${basedir}/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.baseLanguageExt.test-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.typechecking.sample.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.typechecking.sample.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.typechecking.sample.jar/META-INF/module.xml">
-      <module namespace="jetbrains.mps.typechecking.sample" type="solution" uuid="3ddddf69-9ff0-426b-9365-51ae7356fb82">
-        <dependencies />
-        <classpath>
-          <entry path="." />
-        </classpath>
-        <sources jar="jetbrains.mps.typechecking.sample-src.jar" descriptor="jetbrains.mps.typechecking.sample.msd" />
-      </module>
-    </echoxml>
-    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.sample.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.sample" />
-      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.typechecking.sample.jar" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.typechecking.sample-models">
-      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.sample-src.jar" duplicate="preserve">
-      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-        <exclude name="**/checkpoints" />
-        <exclude name="**/*.mps" />
-      </fileset>
-      <zipfileset file="${basedir}/solutions/jetbrains.mps.typechecking.sample/jetbrains.mps.typechecking.sample.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.typechecking.sample-models" prefix="module/models" />
-    </jar>
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.typechecking.sample.test.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.typechecking.sample.test.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.typechecking.sample.test.jar/META-INF/module.xml">
-      <module namespace="jetbrains.mps.typechecking.sample.test" type="solution" uuid="1b65dfe8-24ff-41c3-9a3e-70f102942455">
+    <mkdir dir="${build.tmp}/default/typechecking.samples.baseLanguage.jar" />
+    <mkdir dir="${build.tmp}/default/typechecking.samples.baseLanguage.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/typechecking.samples.baseLanguage.jar/META-INF/module.xml">
+      <module namespace="typechecking.samples.baseLanguage" type="solution" uuid="3ddddf69-9ff0-426b-9365-51ae7356fb82">
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="49808fad-9d41-4b96-83fa-9231640f6b2b(JUnit)" />
@@ -170,26 +141,26 @@
         <classpath>
           <entry path="." />
         </classpath>
-        <sources jar="jetbrains.mps.typechecking.sample.test-src.jar" descriptor="jetbrains.mps.typechecking.sample.test.msd" />
+        <sources jar="typechecking.samples.baseLanguage-src.jar" descriptor="typechecking.samples.baseLanguage.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.sample.test.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.sample.test" />
-      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.typechecking.sample.test.jar" />
+    <jar destfile="${build.layout}/deploy/typechecking.samples.baseLanguage.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/typechecking.samples.baseLanguage" />
+      <fileset dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/typechecking.samples.baseLanguage.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.typechecking.sample.test-models">
-      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-typechecking.samples.baseLanguage-models">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.sample.test-src.jar" duplicate="preserve">
-      <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/source_gen">
+    <jar destfile="${build.layout}/deploy/typechecking.samples.baseLanguage-src.jar" duplicate="preserve">
+      <fileset dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <zipfileset file="${basedir}/solutions/jetbrains.mps.typechecking.sample.test/jetbrains.mps.typechecking.sample.test.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.typechecking.sample.test-models" prefix="module/models" />
+      <zipfileset file="${basedir}/solutions/typechecking.samples.baseLanguage/typechecking.samples.baseLanguage.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-typechecking.samples.baseLanguage-models" prefix="module/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}</echo>
   </target>
@@ -205,7 +176,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.jetbrains.mps.typechecking.sample, java.compile.jetbrains.mps.typechecking.sample.test" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.baseLanguageExt, java.compile.jetbrains.mps.baseLanguageExt.test, java.compile.typechecking.samples.baseLanguage" />
   
   <target name="processResources" />
   
@@ -315,10 +286,9 @@
       <chunk>
         <module file="${basedir}/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" />
         <module file="${basedir}/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" />
-        <module file="${basedir}/solutions/jetbrains.mps.typechecking.sample/jetbrains.mps.typechecking.sample.msd" />
       </chunk>
       <chunk>
-        <module file="${basedir}/solutions/jetbrains.mps.typechecking.sample.test/jetbrains.mps.typechecking.sample.test.msd" />
+        <module file="${basedir}/solutions/typechecking.samples.baseLanguage/typechecking.samples.baseLanguage.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -457,29 +427,16 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.typechecking.sample">
-    <mkdir dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.typechecking.sample" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.typechecking.sample" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.typechecking.samples.baseLanguage" depends="fetchDependencies">
+    <mkdir dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/typechecking.samples.baseLanguage" />
+    <javac destdir="${build.tmp}/java/out/typechecking.samples.baseLanguage" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample/source_gen" />
-      </src>
-      <classpath />
-    </javac>
-  </target>
-  
-  <target name="java.compile.jetbrains.mps.typechecking.sample.test" depends="java.compile.jetbrains.mps.typechecking.sample, fetchDependencies">
-    <mkdir dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.typechecking.sample.test" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.typechecking.sample.test" fork="true" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/source_gen" />
-        <pathelement path="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/test_gen/" />
+        <path location="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" />
+        <pathelement path="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/test_gen/" />
       </src>
       <classpath>
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.typechecking.sample" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -638,8 +595,7 @@
     <path id="mps.tests.path">
       <pathelement location="${build.layout}/deploy/jetbrains.mps.baseLanguageExt.jar" />
       <pathelement location="${build.layout}/deploy/jetbrains.mps.baseLanguageExt.test.jar" />
-      <pathelement location="${build.layout}/deploy/jetbrains.mps.typechecking.sample.jar" />
-      <pathelement location="${build.layout}/deploy/jetbrains.mps.typechecking.sample.test.jar" />
+      <pathelement location="${build.layout}/deploy/typechecking.samples.baseLanguage.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
     <path id="long.class.path">
@@ -698,9 +654,8 @@
   <target name="cleanSources">
     <delete dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/source_gen" />
-    <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample/source_gen" />
-    <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/source_gen" />
+    <delete dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" />
     <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/test_gen" />
-    <delete dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.typechecking.sample.test/test_gen" />
+    <delete dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/test_gen" />
   </target>
 </project>
