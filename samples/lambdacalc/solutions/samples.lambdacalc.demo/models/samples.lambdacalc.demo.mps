@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:64f472af-c4b1-4900-9ea3-aec5c51b6e6e(sample.lambdacalc.demo)">
+<model ref="r:64f472af-c4b1-4900-9ea3-aec5c51b6e6e(samples.lambdacalc.demo)">
   <persistence version="9" />
   <languages>
     <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc" version="0" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(sample.lambdacalc.types)">
+<model ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(samples.lambdacalc.types)">
   <persistence version="9" />
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="14" />
@@ -15,9 +15,9 @@
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
-    <import index="8tt8" ref="r:e74c1bfc-387b-4b4b-abee-2eb77ee510ec(sample.lambdacalc.structure)" />
+    <import index="8tt8" ref="r:e74c1bfc-387b-4b4b-abee-2eb77ee510ec(samples.lambdacalc.structure)" />
     <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.coderules.eval)" />
-    <import index="1x08" ref="r:9dec6437-6097-4be2-891f-1792da0df61f(sample.lambdacalc.behavior)" />
+    <import index="1x08" ref="r:9dec6437-6097-4be2-891f-1792da0df61f(samples.lambdacalc.behavior)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
@@ -244,8 +244,8 @@
       </concept>
     </language>
     <language id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking">
-      <concept id="6958395084019752" name="" flags="ng" index="2ra22R">
-        <child id="6958395084020241" name="" index="2ra2ae" />
+      <concept id="6958395084019752" name="jetbrains.mps.lang.typechecking.structure.SNodeSetTypeOperation" flags="ng" index="2ra22R">
+        <child id="6958395084020241" name="typeExpr" index="2ra2ae" />
       </concept>
     </language>
     <language id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="sample.lambdacalc" uuid="af858d84-85f2-42f4-a854-0b3c6b5cd482" languageVersion="0" moduleVersion="0">
+<language namespace="samples.lambdacalc" uuid="af858d84-85f2-42f4-a854-0b3c6b5cd482" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -59,7 +59,7 @@
     <language slang="l:4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462:jetbrains.mps.lang.typechecking" version="0" />
     <language slang="l:7a5dda62-9140-4668-ab76-d5ed1746f2b2:jetbrains.mps.lang.typesystem" version="1" />
     <language slang="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" version="2" />
-    <language slang="l:af858d84-85f2-42f4-a854-0b3c6b5cd482:sample.lambdacalc" version="0" />
+    <language slang="l:af858d84-85f2-42f4-a854-0b3c6b5cd482:samples.lambdacalc" version="0" />
   </languageVersions>
   <dependencyVersions>
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
@@ -78,7 +78,7 @@
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
     <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
     <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.typechecking)" version="0" />
-    <module reference="af858d84-85f2-42f4-a854-0b3c6b5cd482(sample.lambdacalc)" version="0" />
+    <module reference="af858d84-85f2-42f4-a854-0b3c6b5cd482(samples.lambdacalc)" version="0" />
   </dependencyVersions>
   <extendedLanguages />
 </language>

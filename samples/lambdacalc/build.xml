@@ -43,7 +43,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.sample.lambdacalc, java.compile.sample.lambdacalc.demo" />
+  <target name="compileJava" depends="java.compile.samples.lambdacalc, java.compile.samples.lambdacalc.demo" />
   
   <target name="processResources" />
   
@@ -137,10 +137,10 @@
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <chunk bootstrap="true">
-        <module file="${basedir}/languages/sample.lambdacalc/sample.lambdacalc.mpl" bootstrap="true" />
+        <module file="${basedir}/languages/samples.lambdacalc/samples.lambdacalc.mpl" bootstrap="true" />
       </chunk>
       <chunk>
-        <module file="${basedir}/solutions/sample.lambdacalc.demo/sample.lambdacalc.demo.msd" />
+        <module file="${basedir}/solutions/samples.lambdacalc.demo/samples.lambdacalc.demo.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -156,13 +156,13 @@
   
   <target name="makeDependents" />
   
-  <target name="java.compile.sample.lambdacalc" depends="fetchDependencies">
-    <mkdir dir="${basedir}/languages/sample.lambdacalc/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/sample.lambdacalc" />
-    <javac destdir="${build.tmp}/java/out/sample.lambdacalc" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.lambdacalc" depends="fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.lambdacalc/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.lambdacalc" />
+    <javac destdir="${build.tmp}/java/out/samples.lambdacalc" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/sample.lambdacalc/source_gen" />
+        <path location="${basedir}/languages/samples.lambdacalc/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -211,19 +211,19 @@
     </javac>
   </target>
   
-  <target name="java.compile.sample.lambdacalc.demo">
-    <mkdir dir="${basedir}/solutions/sample.lambdacalc.demo/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/sample.lambdacalc.demo" />
-    <javac destdir="${build.tmp}/java/out/sample.lambdacalc.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.lambdacalc.demo">
+    <mkdir dir="${basedir}/solutions/samples.lambdacalc.demo/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.lambdacalc.demo" />
+    <javac destdir="${build.tmp}/java/out/samples.lambdacalc.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/solutions/sample.lambdacalc.demo/source_gen" />
+        <path location="${basedir}/solutions/samples.lambdacalc.demo/source_gen" />
       </src>
       <classpath />
     </javac>
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/solutions/sample.lambdacalc.demo/source_gen" />
+    <delete dir="${basedir}/solutions/samples.lambdacalc.demo/source_gen" />
   </target>
 </project>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:28481291-d2d5-4731-aef9-4e3085be546e(sample.lamdacalc.build)">
+<model ref="r:28481291-d2d5-4731-aef9-4e3085be546e(samples.lamdacalc.build)">
   <persistence version="9" />
   <languages>
     <use id="427a473d-5177-432c-9905-bcbceb71b996" name="jetbrains.mps.build.mps.runner" version="0" />
@@ -87,16 +87,16 @@
       <property role="TrG5h" value="lambdacalc" />
       <node concept="1E1JtD" id="7E7FS_VaVAl" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="sample.lambdacalc" />
+        <property role="TrG5h" value="samples.lambdacalc" />
         <property role="3LESm3" value="af858d84-85f2-42f4-a854-0b3c6b5cd482" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="7E7FS_VaVAm" role="3LF7KH">
           <node concept="2Ry0Ak" id="7E7FS_VaVAs" role="iGT6I">
             <property role="2Ry0Am" value="languages" />
             <node concept="2Ry0Ak" id="7E7FS_VaVAx" role="2Ry0An">
-              <property role="2Ry0Am" value="sample.lambdacalc" />
-              <node concept="2Ry0Ak" id="7E7FS_VaVAA" role="2Ry0An">
-                <property role="2Ry0Am" value="sample.lambdacalc.mpl" />
+              <property role="2Ry0Am" value="samples.lambdacalc" />
+              <node concept="2Ry0Ak" id="58VeaO3ANGa" role="2Ry0An">
+                <property role="2Ry0Am" value="samples.lambdacalc.mpl" />
               </node>
             </node>
           </node>
@@ -152,16 +152,16 @@
       </node>
       <node concept="1E1JtA" id="7E7FS_VaVB_" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="sample.lambdacalc.demo" />
+        <property role="TrG5h" value="samples.lambdacalc.demo" />
         <property role="3LESm3" value="05f15741-5274-4aed-a086-84d9a15ab93b" />
         <property role="2GAjPV" value="false" />
         <node concept="55IIr" id="7E7FS_VaVBC" role="3LF7KH">
           <node concept="2Ry0Ak" id="7E7FS_VaVC3" role="iGT6I">
             <property role="2Ry0Am" value="solutions" />
             <node concept="2Ry0Ak" id="7E7FS_VaVC8" role="2Ry0An">
-              <property role="2Ry0Am" value="sample.lambdacalc.demo" />
-              <node concept="2Ry0Ak" id="3kk50IPE9wL" role="2Ry0An">
-                <property role="2Ry0Am" value="sample.lambdacalc.demo.msd" />
+              <property role="2Ry0Am" value="samples.lambdacalc.demo" />
+              <node concept="2Ry0Ak" id="58VeaO3ANG$" role="2Ry0An">
+                <property role="2Ry0Am" value="samples.lambdacalc.demo.msd" />
               </node>
             </node>
           </node>

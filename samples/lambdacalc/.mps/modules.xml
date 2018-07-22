@@ -2,9 +2,9 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="$PROJECT_DIR$/languages/sample.lambdacalc/sample.lambdacalc.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/build/build.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/sample.lambdacalc.demo/sample.lambdacalc.demo.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/samples.lambdacalc/samples.lambdacalc.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/samples.lambdacalc.build/samples.lambdacalc.build.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/samples.lambdacalc.demo/samples.lambdacalc.demo.msd" folder="" />
     </projectModules>
   </component>
 </project>
