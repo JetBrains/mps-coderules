@@ -51,6 +51,7 @@
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.smodel.types.jar" />
+      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />

@@ -11,6 +11,7 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
     <use id="cba985fe-1e96-4f16-9f8d-b07434405d4f" name="jetbrains.mps.lang.smodel.types" version="0" />
+    <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -242,6 +243,11 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
+    <language id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking">
+      <concept id="6958395084019752" name="" flags="ng" index="2ra22R">
+        <child id="6958395084020241" name="" index="2ra2ae" />
+      </concept>
+    </language>
     <language id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc">
       <concept id="3749787170939265030" name="sample.lambdacalc.structure.VarType" flags="ng" index="2BbKIm">
         <property id="3749787170939266901" name="name" index="2BbKN5" />
@@ -300,9 +306,6 @@
       </concept>
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
         <child id="7871500063838282362" name="code" index="fHCRw" />
-      </concept>
-      <concept id="6958395084019752" name="jetbrains.mps.lang.coderules.structure.SNodeSetTypeOperation" flags="ng" index="2ra22R">
-        <child id="6958395084020241" name="typeExpr" index="2ra2ae" />
       </concept>
       <concept id="6958395097955138" name="jetbrains.mps.lang.coderules.structure.SNodeReportOperation" flags="ng" index="2s7oft">
         <property id="6958395097963305" name="kind" index="2s7ueQ" />

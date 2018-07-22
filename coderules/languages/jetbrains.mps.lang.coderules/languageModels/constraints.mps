@@ -746,23 +746,6 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="oI9Yr_Dyq">
-    <ref role="1M2myG" to="wq2x:oI9Yrc9wC" resolve="SNodeSetTypeOperation" />
-    <node concept="9S07l" id="oI9Yr_Dyr" role="9Vyp8">
-      <node concept="3clFbS" id="oI9Yr_Dys" role="2VODD2">
-        <node concept="3SKdUt" id="3IIf9O_Dsc2" role="3cqZAp">
-          <node concept="3SKdUq" id="3IIf9O_Dsc3" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME: better control over where this should be available" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="3IIf9O_DsqD" role="3cqZAp">
-          <node concept="3clFbT" id="3IIf9O_DsqC" role="3clFbG">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="1M2fIO" id="1090FxOSDK0">
     <ref role="1M2myG" to="wq2x:60zk4o7reud" resolve="LogicalContextExpression" />
     <node concept="9S07l" id="1090FxOSDK1" role="9Vyp8">

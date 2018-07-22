@@ -523,6 +523,11 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
+    <language id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking">
+      <concept id="6958395084019752" name="" flags="ng" index="2ra22R">
+        <child id="6958395084020241" name="" index="2ra2ae" />
+      </concept>
+    </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
@@ -636,9 +641,6 @@
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="4992889260816483106" name="jetbrains.mps.lang.coderules.structure.Condition" flags="ng" index="cBwPQ" />
-      <concept id="6958395084019752" name="jetbrains.mps.lang.coderules.structure.SNodeSetTypeOperation" flags="ng" index="2ra22R">
-        <child id="6958395084020241" name="typeExpr" index="2ra2ae" />
-      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
