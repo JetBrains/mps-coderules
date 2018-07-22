@@ -2,12 +2,12 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.fitch/jetbrains.mps.fitch.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.fitch.demo/jetbrains.mps.fitch.demo.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.firstOrder/jetbrains.mps.logic.firstOrder.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.herbrand/jetbrains.mps.logic.herbrand.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.logic.propositional/jetbrains.mps.logic.propositional.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.fitch.build/jetbrains.mps.fitch.build.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/samples.fitch.firstOrderLogic/samples.fitch.firstOrderLogic.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/samples.fitch.herbrandLogic/samples.fitch.herbrandLogic.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/samples.fitch.propositionalLogic/samples.fitch.propositionalLogic.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/samples.fitch/samples.fitch.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/samples.fitch.build/samples.fitch.build.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/samples.fitch.demo/samples.fitch.demo.msd" folder="" />
     </projectModules>
   </component>
 </project>

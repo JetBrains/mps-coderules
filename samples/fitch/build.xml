@@ -137,13 +137,13 @@
       <library file="${artifacts.mps}/plugins/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-core/languages/languageDesign/jetbrains.mps.lang.migration.util.jar" />
       <chunk>
-        <module file="${basedir}/languages/jetbrains.mps.fitch/jetbrains.mps.fitch.mpl" />
-        <module file="${basedir}/languages/jetbrains.mps.logic.firstOrder/jetbrains.mps.logic.firstOrder.mpl" />
-        <module file="${basedir}/languages/jetbrains.mps.logic.herbrand/jetbrains.mps.logic.herbrand.mpl" />
-        <module file="${basedir}/languages/jetbrains.mps.logic.propositional/jetbrains.mps.logic.propositional.mpl" />
+        <module file="${basedir}/languages/samples.fitch/samples.fitch.mpl" />
+        <module file="${basedir}/languages/samples.fitch.firstOrderLogic/samples.fitch.firstOrderLogic.mpl" />
+        <module file="${basedir}/languages/samples.fitch.herbrandLogic/samples.fitch.herbrandLogic.mpl" />
+        <module file="${basedir}/languages/samples.fitch.propositionalLogic/samples.fitch.propositionalLogic.mpl" />
       </chunk>
       <chunk>
-        <module file="${basedir}/solutions/jetbrains.mps.fitch.demo/jetbrains.mps.fitch.demo.msd" />
+        <module file="${basedir}/solutions/samples.fitch.demo/samples.fitch.demo.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -159,7 +159,7 @@
   
   <target name="makeDependents" />
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.fitch, java.compile.jetbrains.mps.fitch#4322786184247805322, java.compile.jetbrains.mps.logic.propositional, java.compile.jetbrains.mps.logic.propositional#5505606474790531941, java.compile.jetbrains.mps.logic.herbrand, java.compile.jetbrains.mps.logic.herbrand#3059457401298723545, java.compile.jetbrains.mps.logic.firstOrder, java.compile.jetbrains.mps.logic.firstOrder#4035326440039985569, java.compile.jetbrains.mps.fitch.demo" />
+  <target name="compileJava" depends="java.compile.samples.fitch, java.compile.samples.fitch#4322786184247805322, java.compile.samples.fitch.propositionalLogic, java.compile.samples.fitch.propositionalLogic#5505606474790531941, java.compile.samples.fitch.herbrandLogic, java.compile.samples.fitch.herbrandLogic#3059457401298723545, java.compile.samples.fitch.firstOrderLogic, java.compile.samples.fitch.firstOrderLogic#4035326440039985569, java.compile.samples.fitch.demo" />
   
   <target name="processResources" />
   
@@ -169,13 +169,13 @@
   
   <target name="check" depends="test" />
   
-  <target name="java.compile.jetbrains.mps.fitch" depends="fetchDependencies">
-    <mkdir dir="${basedir}/languages/jetbrains.mps.fitch/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.fitch" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.fitch" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.fitch" depends="fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.fitch/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/jetbrains.mps.fitch/source_gen" />
+        <path location="${basedir}/languages/samples.fitch/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -225,13 +225,13 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.fitch#4322786184247805322" depends="java.compile.jetbrains.mps.fitch, fetchDependencies">
-    <mkdir dir="${basedir}/languages/jetbrains.mps.fitch/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.fitch#4322786184247805322" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.fitch#4322786184247805322" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.fitch#4322786184247805322" depends="java.compile.samples.fitch, fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.fitch/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch#4322786184247805322" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch#4322786184247805322" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/jetbrains.mps.fitch/generator/source_gen" />
+        <path location="${basedir}/languages/samples.fitch/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -250,7 +250,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.fitch" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -263,13 +263,13 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.logic.propositional" depends="java.compile.jetbrains.mps.fitch, fetchDependencies">
-    <mkdir dir="${basedir}/languages/jetbrains.mps.logic.propositional/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.propositional" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.propositional" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.fitch.propositionalLogic" depends="java.compile.samples.fitch, fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.fitch.propositionalLogic/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch.propositionalLogic" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/jetbrains.mps.logic.propositional/source_gen" />
+        <path location="${basedir}/languages/samples.fitch.propositionalLogic/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -288,101 +288,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.fitch" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
-        <fileset file="${artifacts.mps}/lib/jdom.jar" />
-        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
-        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-runtime-1.2.30.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-stdlib-1.2.30.jar" />
-      </classpath>
-    </javac>
-  </target>
-  
-  <target name="java.compile.jetbrains.mps.logic.propositional#5505606474790531941" depends="java.compile.jetbrains.mps.fitch, java.compile.jetbrains.mps.logic.propositional, fetchDependencies">
-    <mkdir dir="${basedir}/languages/jetbrains.mps.logic.propositional/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.propositional#5505606474790531941" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.propositional#5505606474790531941" fork="true" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/languages/jetbrains.mps.logic.propositional/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.fitch" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.propositional" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
-        <fileset file="${artifacts.mps}/lib/jdom.jar" />
-        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
-        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-      </classpath>
-    </javac>
-  </target>
-  
-  <target name="java.compile.jetbrains.mps.logic.herbrand" depends="java.compile.jetbrains.mps.fitch, java.compile.jetbrains.mps.logic.propositional, fetchDependencies">
-    <mkdir dir="${basedir}/languages/jetbrains.mps.logic.herbrand/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.herbrand" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.herbrand" fork="true" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/languages/jetbrains.mps.logic.herbrand/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.fitch" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.propositional" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -411,13 +317,13 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.logic.herbrand#3059457401298723545" depends="java.compile.jetbrains.mps.fitch, java.compile.jetbrains.mps.logic.herbrand, java.compile.jetbrains.mps.logic.propositional, fetchDependencies">
-    <mkdir dir="${basedir}/languages/jetbrains.mps.logic.herbrand/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.herbrand#3059457401298723545" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.herbrand#3059457401298723545" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.fitch.propositionalLogic#5505606474790531941" depends="java.compile.samples.fitch, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch.propositionalLogic#5505606474790531941" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch.propositionalLogic#5505606474790531941" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/jetbrains.mps.logic.herbrand/generator/source_gen" />
+        <path location="${basedir}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -436,9 +342,8 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.fitch" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.herbrand" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.propositional" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -451,13 +356,13 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.logic.firstOrder" depends="java.compile.jetbrains.mps.fitch, java.compile.jetbrains.mps.logic.herbrand, java.compile.jetbrains.mps.logic.propositional, fetchDependencies">
-    <mkdir dir="${basedir}/languages/jetbrains.mps.logic.firstOrder/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.firstOrder" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.firstOrder" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.fitch.herbrandLogic" depends="java.compile.samples.fitch, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.fitch.herbrandLogic/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch.herbrandLogic" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch.herbrandLogic" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/jetbrains.mps.logic.firstOrder/source_gen" />
+        <path location="${basedir}/languages/samples.fitch.herbrandLogic/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -476,9 +381,104 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.fitch" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.herbrand" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.propositional" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-runtime-1.2.30.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-stdlib-1.2.30.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.samples.fitch.herbrandLogic#3059457401298723545" depends="java.compile.samples.fitch, java.compile.samples.fitch.herbrandLogic, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch.herbrandLogic#3059457401298723545" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch.herbrandLogic#3059457401298723545" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.herbrandLogic" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.samples.fitch.firstOrderLogic" depends="java.compile.samples.fitch, java.compile.samples.fitch.herbrandLogic, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.fitch.firstOrderLogic/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch.firstOrderLogic" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch.firstOrderLogic" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/samples.fitch.firstOrderLogic/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.herbrandLogic" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -502,13 +502,13 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.logic.firstOrder#4035326440039985569" depends="java.compile.jetbrains.mps.fitch, java.compile.jetbrains.mps.logic.firstOrder, java.compile.jetbrains.mps.logic.herbrand, java.compile.jetbrains.mps.logic.propositional, fetchDependencies">
-    <mkdir dir="${basedir}/languages/jetbrains.mps.logic.firstOrder/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.logic.firstOrder#4035326440039985569" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.logic.firstOrder#4035326440039985569" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.fitch.firstOrderLogic#4035326440039985569" depends="java.compile.samples.fitch, java.compile.samples.fitch.firstOrderLogic, java.compile.samples.fitch.herbrandLogic, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
+    <mkdir dir="${basedir}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch.firstOrderLogic#4035326440039985569" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch.firstOrderLogic#4035326440039985569" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/jetbrains.mps.logic.firstOrder/generator/source_gen" />
+        <path location="${basedir}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -527,10 +527,10 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.fitch" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.firstOrder" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.herbrand" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.propositional" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.firstOrderLogic" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.herbrandLogic" />
+        <pathelement path="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -543,27 +543,27 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.fitch.demo">
-    <mkdir dir="${basedir}/solutions/jetbrains.mps.fitch.demo/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.fitch.demo" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.fitch.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.samples.fitch.demo">
+    <mkdir dir="${basedir}/solutions/samples.fitch.demo/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/samples.fitch.demo" />
+    <javac destdir="${build.tmp}/java/out/samples.fitch.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/solutions/jetbrains.mps.fitch.demo/source_gen" />
+        <path location="${basedir}/solutions/samples.fitch.demo/source_gen" />
       </src>
       <classpath />
     </javac>
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/languages/jetbrains.mps.fitch/source_gen" />
-    <delete dir="${basedir}/languages/jetbrains.mps.fitch/generator/source_gen" />
-    <delete dir="${basedir}/languages/jetbrains.mps.logic.firstOrder/source_gen" />
-    <delete dir="${basedir}/languages/jetbrains.mps.logic.firstOrder/generator/source_gen" />
-    <delete dir="${basedir}/languages/jetbrains.mps.logic.herbrand/source_gen" />
-    <delete dir="${basedir}/languages/jetbrains.mps.logic.herbrand/generator/source_gen" />
-    <delete dir="${basedir}/languages/jetbrains.mps.logic.propositional/source_gen" />
-    <delete dir="${basedir}/languages/jetbrains.mps.logic.propositional/generator/source_gen" />
-    <delete dir="${basedir}/solutions/jetbrains.mps.fitch.demo/source_gen" />
+    <delete dir="${basedir}/languages/samples.fitch/source_gen" />
+    <delete dir="${basedir}/languages/samples.fitch/generator/source_gen" />
+    <delete dir="${basedir}/languages/samples.fitch.firstOrderLogic/source_gen" />
+    <delete dir="${basedir}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
+    <delete dir="${basedir}/languages/samples.fitch.herbrandLogic/source_gen" />
+    <delete dir="${basedir}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
+    <delete dir="${basedir}/languages/samples.fitch.propositionalLogic/source_gen" />
+    <delete dir="${basedir}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
+    <delete dir="${basedir}/solutions/samples.fitch.demo/source_gen" />
   </target>
 </project>
