@@ -10616,7 +10616,7 @@
                           <ref role="1Pybhc" to="al1t:~MessagePool" resolve="MessagePool" />
                         </node>
                         <node concept="liA8E" id="19wqdqO101N" role="2OqNvi">
-                          <ref role="37wK5l" to="al1t:~MessagePool.addIdeFatalMessage(com.intellij.openapi.diagnostic.IdeaLoggingEvent):com.intellij.diagnostic.LogMessage" resolve="addIdeFatalMessage" />
+                          <ref role="37wK5l" to="al1t:~MessagePool.addIdeFatalMessage(com.intellij.openapi.diagnostic.IdeaLoggingEvent):void" resolve="addIdeFatalMessage" />
                           <node concept="2ShNRf" id="19wqdqO101O" role="37wK5m">
                             <node concept="1pGfFk" id="19wqdqO101P" role="2ShVmc">
                               <ref role="37wK5l" to="uzhr:~IdeaLoggingEvent.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="IdeaLoggingEvent" />

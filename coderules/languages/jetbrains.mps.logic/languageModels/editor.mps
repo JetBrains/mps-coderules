@@ -316,6 +316,7 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -377,12 +378,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -421,10 +416,6 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
-      </concept>
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
@@ -440,6 +431,13 @@
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
+      </concept>
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
@@ -470,9 +468,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -2979,30 +2974,26 @@
       <node concept="3Tqbb2" id="4hPXq9Jmeum" role="2ZBHrp" />
       <node concept="2$S_p_" id="4hPXq9Jmeun" role="2$S_pT">
         <node concept="3clFbS" id="4hPXq9Jmeuo" role="2VODD2">
-          <node concept="3SKdUt" id="4hPXq9Jmeup" role="3cqZAp">
-            <node concept="3SKdUq" id="4hPXq9Jmeuq" role="3SKWNk">
-              <property role="3SKdUp" value="see ChildSubstituteActionsHelper" />
-            </node>
-          </node>
-          <node concept="3cpWs8" id="4hPXq9Jmeur" role="3cqZAp">
-            <node concept="3cpWsn" id="4hPXq9Jmeus" role="3cpWs9">
-              <property role="TrG5h" value="srd" />
-              <node concept="3uibUv" id="4hPXq9Jmeut" role="1tU5fm">
+          <node concept="3cpWs8" id="5yj19qaZwIU" role="3cqZAp">
+            <node concept="3cpWsn" id="5yj19qaZwIV" role="3cpWs9">
+              <property role="TrG5h" value="rd" />
+              <node concept="3uibUv" id="5yj19qaZwIS" role="1tU5fm">
                 <ref role="3uigEE" to="ykok:~ReferenceDescriptor" resolve="ReferenceDescriptor" />
               </node>
-              <node concept="2YIFZM" id="4hPXq9Jmeuu" role="33vP2m">
-                <ref role="37wK5l" to="ykok:~ModelConstraints.getSmartReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,java.lang.String,int,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getSmartReferenceDescriptor" />
+              <node concept="2YIFZM" id="5yj19qaZwIW" role="33vP2m">
                 <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                <node concept="3bvxqY" id="4hPXq9JmeuH" role="37wK5m" />
-                <node concept="prKvN" id="4hPXq9Jmeuw" role="37wK5m">
-                  <ref role="prhl4" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
-                  <ref role="prhl7" to="5j4j:7E86$tK_PaH" resolve="declaration" />
-                </node>
-                <node concept="3cmrfG" id="4hPXq9Jmeux" role="37wK5m">
+                <ref role="37wK5l" to="ykok:~ModelConstraints.getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,int,org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getReferenceDescriptor" />
+                <node concept="3bvxqY" id="5yj19qaZwIX" role="37wK5m" />
+                <node concept="10Nm6u" id="5yj19qaZKuw" role="37wK5m" />
+                <node concept="3cmrfG" id="5yj19qaZwIZ" role="37wK5m">
                   <property role="3cmrfH" value="-1" />
                 </node>
-                <node concept="3TUQnm" id="4hPXq9Jmeuy" role="37wK5m">
-                  <ref role="3TV0OU" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
+                <node concept="359W_D" id="5yj19qaZKt6" role="37wK5m">
+                  <ref role="359W_E" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
+                  <ref role="359W_F" to="5j4j:7E86$tK_PaH" resolve="declaration" />
+                </node>
+                <node concept="35c_gC" id="5yj19qaZKuV" role="37wK5m">
+                  <ref role="35c_gD" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
                 </node>
               </node>
             </node>
@@ -3014,8 +3005,8 @@
               </node>
               <node concept="2OqwBi" id="4hPXq9JmeuB" role="10QFUP">
                 <node concept="2OqwBi" id="4hPXq9JmeuC" role="2Oq$k0">
-                  <node concept="37vLTw" id="4hPXq9JmeuD" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4hPXq9Jmeus" resolve="srd" />
+                  <node concept="37vLTw" id="5yj19qaZwUP" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5yj19qaZwIV" resolve="rd" />
                   </node>
                   <node concept="liA8E" id="4hPXq9JmeuE" role="2OqNvi">
                     <ref role="37wK5l" to="ykok:~ReferenceDescriptor.getScope():jetbrains.mps.scope.Scope" resolve="getScope" />

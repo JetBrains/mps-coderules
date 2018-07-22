@@ -88,7 +88,7 @@
     </language>
     <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
       <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
-        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+        <child id="9046399079000773837" name="pattern" index="HM535" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -620,47 +620,6 @@
     <node concept="1YaCAy" id="1mP5b6jNJDm" role="1YuTPh">
       <property role="TrG5h" value="lt" />
       <ref role="1YaFvo" to="5j4j:1mP5b6jNC0S" resolve="LogicalType" />
-    </node>
-  </node>
-  <node concept="35pCF_" id="dfChU1jsd3">
-    <property role="3GE5qa" value="logical" />
-    <property role="TrG5h" value="LogicalPattern_subtypeOf_logical" />
-    <node concept="3clFbS" id="dfChU1jsd4" role="2sgrp5">
-      <node concept="3SKdUt" id="dfChU1jzdK" role="3cqZAp">
-        <node concept="3SKdUq" id="dfChU1jzqi" role="3SKWNk">
-          <property role="3SKdUp" value="yes" />
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="dfChU1jtEQ" role="35pZ6h">
-      <property role="TrG5h" value="logicalType" />
-      <ref role="1YaFvo" to="5j4j:1mP5b6jNC0S" resolve="LogicalType" />
-    </node>
-    <node concept="1YaCAy" id="dfChU1jtEr" role="1YuTPh">
-      <property role="TrG5h" value="ct" />
-      <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
-    </node>
-    <node concept="1xSnZT" id="dfChU1jtFt" role="1xSnZW">
-      <node concept="3clFbS" id="dfChU1jtFu" role="2VODD2">
-        <node concept="3clFbF" id="dfChU1jx6v" role="3cqZAp">
-          <node concept="2OqwBi" id="dfChU1jylg" role="3clFbG">
-            <node concept="1UaxmW" id="dfChU1jx6s" role="2Oq$k0">
-              <node concept="1YBJjd" id="dfChU1jxh4" role="1Ub_4B">
-                <ref role="1YBMHb" node="dfChU1jtEr" resolve="ct" />
-              </node>
-              <node concept="1Yb3XT" id="2S_ORi36mSg" role="1Ub_4A">
-                <property role="TrG5h" value="il" />
-                <node concept="2DMOqp" id="2S_ORi36mSh" role="1YbcFS">
-                  <node concept="3uibUv" id="7HUwyZb3e5O" role="2DMOqq">
-                    <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3x8VRR" id="dfChU1jz0$" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node concept="1YbPZF" id="2c3nq4GQw_E">
@@ -1345,6 +1304,49 @@
     <node concept="1YaCAy" id="7lt0LtQg3Ce" role="1YuTPh">
       <property role="TrG5h" value="cei" />
       <ref role="1YaFvo" to="5j4j:7lt0LtQg3tE" resolve="ExpressionItem" />
+    </node>
+  </node>
+  <node concept="35pCF_" id="dfChU1jsd3">
+    <property role="3GE5qa" value="logical" />
+    <property role="TrG5h" value="LogicalPattern_subtypeOf_logical" />
+    <node concept="3clFbS" id="dfChU1jsd4" role="2sgrp5">
+      <node concept="3SKdUt" id="dfChU1jzdK" role="3cqZAp">
+        <node concept="3SKdUq" id="dfChU1jzqi" role="3SKWNk">
+          <property role="3SKdUp" value="yes" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="dfChU1jtEQ" role="35pZ6h">
+      <property role="TrG5h" value="logicalType" />
+      <ref role="1YaFvo" to="5j4j:1mP5b6jNC0S" resolve="LogicalType" />
+    </node>
+    <node concept="1YaCAy" id="dfChU1jtEr" role="1YuTPh">
+      <property role="TrG5h" value="ct" />
+      <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
+    </node>
+    <node concept="1xSnZT" id="dfChU1jtFt" role="1xSnZW">
+      <node concept="3clFbS" id="dfChU1jtFu" role="2VODD2">
+        <node concept="3clFbF" id="dfChU1jx6v" role="3cqZAp">
+          <node concept="2OqwBi" id="dfChU1jylg" role="3clFbG">
+            <node concept="1UaxmW" id="dfChU1jx6s" role="2Oq$k0">
+              <node concept="1YBJjd" id="5yj19qb1sQP" role="1Ub_4B">
+                <ref role="1YBMHb" node="dfChU1jtEr" resolve="ct" />
+              </node>
+              <node concept="1Yb3XT" id="5yj19qb1t54" role="1Ub_4A">
+                <property role="TrG5h" value="ml" />
+                <node concept="2DMOqp" id="5yj19qb1t56" role="1YbcFS">
+                  <node concept="2c44tf" id="5yj19qb1t58" role="HM535">
+                    <node concept="3uibUv" id="5yj19qb1t5o" role="2c44tc">
+                      <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3x8VRR" id="dfChU1jz0$" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
