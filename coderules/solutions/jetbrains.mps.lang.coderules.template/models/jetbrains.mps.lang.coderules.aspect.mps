@@ -120,6 +120,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -226,7 +229,6 @@
       </concept>
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
-        <child id="1237731803878" name="copyFrom" index="I$8f6" />
       </concept>
       <concept id="1227008614712" name="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator" flags="nn" index="2Jqq0_" />
       <concept id="1227022159410" name="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation" flags="nn" index="2Ke4WJ" />
@@ -451,16 +453,40 @@
                 <node concept="3uibUv" id="7mB3viLmJhI" role="HW$YZ">
                   <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
                 </node>
-                <node concept="2YIFZM" id="7mB3viLmGMq" role="I$8f6">
-                  <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
-                  <ref role="37wK5l" to="w1kc:~SModelOperations.getAllLanguageImports(org.jetbrains.mps.openapi.model.SModel):java.util.Set" resolve="getAllLanguageImports" />
-                  <node concept="2OqwBi" id="7mB3viLmGMr" role="37wK5m">
-                    <node concept="37vLTw" id="7mB3viLmGMs" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7mB3viLmiiz" resolve="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="52Js5TEzSBG" role="3cqZAp">
+          <node concept="3clFbS" id="52Js5TEzSBI" role="3clFbx">
+            <node concept="3clFbF" id="52Js5TEzYMa" role="3cqZAp">
+              <node concept="2OqwBi" id="52Js5TEzZC9" role="3clFbG">
+                <node concept="37vLTw" id="52Js5TEzYM8" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7mB3viLmGMp" resolve="imports" />
+                </node>
+                <node concept="X8dFx" id="52Js5TE$0yw" role="2OqNvi">
+                  <node concept="2YIFZM" id="52Js5TE$0D7" role="25WWJ7">
+                    <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
+                    <ref role="37wK5l" to="w1kc:~SModelOperations.getAllLanguageImports(org.jetbrains.mps.openapi.model.SModel):java.util.Set" resolve="getAllLanguageImports" />
+                    <node concept="2OqwBi" id="52Js5TE$1LH" role="37wK5m">
+                      <node concept="37vLTw" id="52Js5TE$1LI" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7mB3viLmiiz" resolve="node" />
+                      </node>
+                      <node concept="I4A8Y" id="52Js5TE$1LJ" role="2OqNvi" />
                     </node>
-                    <node concept="I4A8Y" id="7mB3viLmGMt" role="2OqNvi" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="52Js5TEzYGV" role="3clFbw">
+            <node concept="10Nm6u" id="52Js5TEzYIu" role="3uHU7w" />
+            <node concept="1eOMI4" id="52Js5TE$1LG" role="3uHU7B">
+              <node concept="2OqwBi" id="52Js5TE$1LD" role="1eOMHV">
+                <node concept="37vLTw" id="52Js5TE$1LE" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7mB3viLmiiz" resolve="node" />
+                </node>
+                <node concept="I4A8Y" id="52Js5TE$1LF" role="2OqNvi" />
               </node>
             </node>
           </node>
