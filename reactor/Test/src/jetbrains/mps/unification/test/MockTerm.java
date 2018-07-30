@@ -16,7 +16,10 @@
 
 package jetbrains.mps.unification.test;
 
+import jetbrains.mps.logic.reactor.logical.Logical;
+import jetbrains.mps.logic.reactor.logical.LogicalOwner;
 import jetbrains.mps.unification.Term;
+import sun.rmi.log.LogOutputStream;
 
 import java.util.*;
 
@@ -34,6 +37,14 @@ public abstract class MockTerm implements Term {
 
     public static Term var(String name) {
         return new MockVar(name);
+    }
+
+    public static Term metaVar(Object symbol) {
+        return new MockMetaVar(symbol);
+    }
+
+    public static Term logicalVar(Logical<? extends Term> logical) {
+        return new MockLogicalVar(logical);
     }
 
     public static Term ref(Term term) {
@@ -152,6 +163,92 @@ public abstract class MockTerm implements Term {
             return ((MockVar)o).myName.equals(myName);
         }
 
+    }
+
+    public static class MockMetaVar extends MockTerm {
+        private final Object mySymbol;
+
+        public MockMetaVar(Object symbol) {
+            this.mySymbol = symbol;
+        }
+
+        @Override
+        public Object symbol() {
+            return mySymbol;
+        }
+
+        @Override
+        public boolean is(Kind kind) {
+            return Kind.VAR == kind;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(mySymbol);
+        }
+
+        @Override
+        public int hashCode() {
+            return 43 + 17*mySymbol.hashCode();
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            return ((MockMetaVar)o).mySymbol.equals(mySymbol);
+        }
+    }
+
+    public static class MockLogicalVar extends MockTerm implements LogicalOwner {
+        private final Logical<? extends Term> myLogical;
+
+        public MockLogicalVar(Logical<? extends Term> logical) {
+            this.myLogical = logical;
+        }
+
+        @Override
+        public Logical<?> logical() {
+            return myLogical;
+        }
+
+        @Override
+        public Object symbol() {
+            return myLogical;
+        }
+
+        @Override
+        public boolean is(Kind kind) {
+            if (myLogical.isBound()) {
+                return Kind.REF == kind;
+
+            } else {
+                return Kind.VAR == kind;
+            }
+        }
+
+        @Override
+        public Term get() {
+            if (myLogical.isBound()) {
+                return myLogical.findRoot().value();
+
+            } else {
+                return this;
+            }
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(myLogical);
+        }
+
+        @Override
+        public int hashCode() {
+            return 31 + 19* myLogical.hashCode();
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            return ((MockLogicalVar)o).myLogical.equals(myLogical);
+        }
     }
 
     public static class MockRef extends MockTerm {

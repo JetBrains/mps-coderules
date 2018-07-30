@@ -43,51 +43,51 @@ public class ParserTests {
 
     @Test
     public void testSingle() {
-        assertEquals(parse("a"), term("a"));
-        assertEquals(parseTerm("a").symbol(), term("a").symbol());
-        assertEquals(parseVar("X").symbol(), var("X").symbol());
-        assertEquals(parse("X"), var("X"));
-        assertEquals(parse("a{b}"), term("a", term("b")));
-        assertEquals(parseTerm("a{b}").symbol(), term("a", term("b")).symbol());
-        assertEquals(parse("a{b c}"), term("a", term("b"), term("c")));
-        assertEquals(parse("a{b X}"), term("a", term("b"), var("X")));
-        assertEquals(parse("a{X b}"), term("a", var("X"), term("b")));
-        assertEquals(parse("a{X Y}"), term("a", var("X"), var("Y")));
+        assertEquals(MockTermsParser.parseTerm("a"), MockTermsParser.parseTerm("a"));
+        assertEquals(parseTerm("a").symbol(), MockTermsParser.parseTerm("a").symbol());
+        assertEquals(parseTerm("X").symbol(), var("X").symbol());
+        assertEquals(MockTermsParser.parseTerm("X"), var("X"));
+        assertEquals(MockTermsParser.parseTerm("a{b}"), term("a", MockTermsParser.parseTerm("b")));
+        assertEquals(parseTerm("a{b}").symbol(), term("a", MockTermsParser.parseTerm("b")).symbol());
+        assertEquals(MockTermsParser.parseTerm("a{b c}"), term("a", MockTermsParser.parseTerm("b"), MockTermsParser.parseTerm("c")));
+        assertEquals(MockTermsParser.parseTerm("a{b X}"), term("a", MockTermsParser.parseTerm("b"), var("X")));
+        assertEquals(MockTermsParser.parseTerm("a{X b}"), term("a", var("X"), MockTermsParser.parseTerm("b")));
+        assertEquals(MockTermsParser.parseTerm("a{X Y}"), term("a", var("X"), var("Y")));
     }
 
     @Test
     public void testMuti() {
-        assertEqualsAll(parseAll("a b"), term("a"), term("b"));
+        assertEqualsAll(parseAll("a b"), MockTermsParser.parseTerm("a"), MockTermsParser.parseTerm("b"));
         assertEqualsAll(parseAll("X Y"), var("X"), var("Y"));
-        assertEqualsAll(parseAll("a{b} a{b}"), term("a", term("b")), term("a", term("b")));
+        assertEqualsAll(parseAll("a{b} a{b}"), term("a", MockTermsParser.parseTerm("b")), term("a", MockTermsParser.parseTerm("b")));
     }
 
     @Test
     public void testWhitespace() {
-        assertEquals(parse("    a"), term("a"));
-        assertEquals(parse("  Y  "), var("Y"));
-        assertEquals(parse("a{ b }"), term("a", term("b")));
-        assertEquals(parse("a{   b c }"), term("a", term("b"), term("c")));
-        assertEquals(parse("a{b X}   "), term("a", term("b"), var("X")));
-        assertEquals(parse("a {X   b}"), term("a", var("X"), term("b")));
-        assertEquals(parse(" a{X Y } "), term("a", var("X"), var("Y")));
+        assertEquals(MockTermsParser.parseTerm("    a"), MockTermsParser.parseTerm("a"));
+        assertEquals(MockTermsParser.parseTerm("  Y  "), var("Y"));
+        assertEquals(MockTermsParser.parseTerm("a{ b }"), term("a", MockTermsParser.parseTerm("b")));
+        assertEquals(MockTermsParser.parseTerm("a{   b c }"), term("a", MockTermsParser.parseTerm("b"), MockTermsParser.parseTerm("c")));
+        assertEquals(MockTermsParser.parseTerm("a{b X}   "), term("a", MockTermsParser.parseTerm("b"), var("X")));
+        assertEquals(MockTermsParser.parseTerm("a {X   b}"), term("a", var("X"), MockTermsParser.parseTerm("b")));
+        assertEquals(MockTermsParser.parseTerm(" a{X Y } "), term("a", var("X"), var("Y")));
     }
 
     @Test
     public void testDeep() {
-        assertEquals(parse("a{b{c{d{e f g}}}}"),
+        assertEquals(MockTermsParser.parseTerm("a{b{c{d{e f g}}}}"),
                 term("a",
                     term("b",
                             term("c",
                                     term("d",
-                                            term("e"), term("f"), term("g"))))));
+                                            MockTermsParser.parseTerm("e"), MockTermsParser.parseTerm("f"), MockTermsParser.parseTerm("g"))))));
 
-        assertEquals(parse("a{X b{c{d{Z e W f g} Y}}}"),
+        assertEquals(MockTermsParser.parseTerm("a{X b{c{d{Z e W f g} Y}}}"),
                 term("a",
                     var("X"), term("b",
                                 term("c",
                                         term("d",
-                                                var("Z"), term("e"), var("W"), term("f"), term("g")),
+                                                var("Z"), MockTermsParser.parseTerm("e"), var("W"), MockTermsParser.parseTerm("f"), MockTermsParser.parseTerm("g")),
                                         var("Y")))));
     }
 
@@ -96,23 +96,23 @@ public class ParserTests {
         LazyTermLookup termLookup = new LazyTermLookup();
         Term a = termLookup.term = term("a", ref(termLookup));
         assertEquivalent(
-                parse("@1a{^1}"),
+                MockTermsParser.parseTerm("@1a{^1}"),
                 a);
 
-        Term b = term("b");
+        Term b = MockTermsParser.parseTerm("b");
         assertEquivalent(
-                parse("a{@1b ^1}"),
+                MockTermsParser.parseTerm("a{@1b ^1}"),
                 term("a", b, ref(b)));
 
-        Term c = term("c");
+        Term c = MockTermsParser.parseTerm("c");
         assertEquivalent(
-                parse("a{^1 @1c}"),
+                MockTermsParser.parseTerm("a{^1 @1c}"),
                 term("a", ref(c), c));
 
-        Term b1  = term("b");
-        Term b2  = term("b");
+        Term b1  = MockTermsParser.parseTerm("b");
+        Term b2  = MockTermsParser.parseTerm("b");
         assertEquivalent(
-                parse("a{@2b ^1 ^2 @1b}"),
+                MockTermsParser.parseTerm("a{@2b ^1 ^2 @1b}"),
                 term("a", b2, ref(b1), ref(b2), b1));
     }
 
@@ -121,78 +121,78 @@ public class ParserTests {
         Term x = var("X");
 
         assertEquivalent(
-                parse("^X"),
+                MockTermsParser.parseTerm("^X"),
                 ref(x));
         assertEquivalent(
-                parse("a{^X}"),
+                MockTermsParser.parseTerm("a{^X}"),
                 term("a", ref(x)));
 
     }
 
     @Test(expected = ComparisonFailure.class)
     public void testNotEquivalent1() throws Exception {
-        Term d = term("d");
-        assertEquivalent(parse("a{^1 @1c}"),
+        Term d = MockTermsParser.parseTerm("d");
+        assertEquivalent(MockTermsParser.parseTerm("a{^1 @1c}"),
                 term("a", ref(d), d));
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testUnclosedFail() {
-        parse("a{b ");
+        MockTermsParser.parseTerm("a{b ");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testUnclosedFail2() {
-        parse("a{X b");
+        MockTermsParser.parseTerm("a{X b");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testUnclosedFail3() {
-        parse("a{{X b}");
+        MockTermsParser.parseTerm("a{{X b}");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testDoubleClosed() {
-        parse("a{X b}}");
+        MockTermsParser.parseTerm("a{X b}}");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testFailMulti1() {
-        parse("  a   Y");
+        MockTermsParser.parseTerm("  a   Y");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testFailMulti2() {
-        parse("a b");
+        MockTermsParser.parseTerm("a b");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testEmptyFail() {
-        parse("");
+        MockTermsParser.parseTerm("");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testEmptyChildrenFail() {
-        parse("a{}");
+        MockTermsParser.parseTerm("a{}");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testWrongStartFail() {
-        parse("{a}");
+        MockTermsParser.parseTerm("{a}");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testVarHasChilrenFail() {
-        parse("X{a}");
+        MockTermsParser.parseTerm("X{a}");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testExtraSymbolFail() {
-        parse("a}");
+        MockTermsParser.parseTerm("a}");
     }
 
     @Test(expected = MockTermsParser.ParseException.class)
     public void testNonExistingRefFail() {
-        parse("a{b ^1}");
+        MockTermsParser.parseTerm("a{b ^1}");
     }
 }

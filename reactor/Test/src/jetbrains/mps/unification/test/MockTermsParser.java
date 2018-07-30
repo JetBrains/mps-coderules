@@ -33,20 +33,12 @@ public class MockTermsParser {
         return new RecursiveDescent().parse(str);
     }
 
-    public static Term parse(String str) {
+    public static Term parseTerm(String str) {
         List<Term> terms = new RecursiveDescent().parse(str);
         if (terms.size() != 1) {
             throw new IllegalArgumentException("expected single asTerm or asVar");
         }
         return terms.get(0);
-    }
-
-    public static Term parseTerm(String str) {
-        return parse(str);
-    }
-
-    public static Term parseVar(String str) {
-        return parse(str);
     }
 
     private static class RecursiveDescent {
@@ -57,7 +49,7 @@ public class MockTermsParser {
         private LinkedList<List<Term>> argumentsStack = new LinkedList<List<Term>>();
         private int lastLabel = -1;
         private Map<Integer, Term> termRefs = new HashMap<Integer, Term>();
-        // initialized on the parse finished
+        // initialized on the parseTerm finished
         private LookupHelper lookupHelper = new LookupHelper();
 
         private List<Term> parse(String toParse) {

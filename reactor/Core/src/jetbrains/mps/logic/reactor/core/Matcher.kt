@@ -113,6 +113,7 @@ class Match(val rule: Rule,
 
     override fun matchHeadReplaced(): Iterable<ConstraintOccurrence> = discardedOccurrences
 
+    override fun logicalContext(): LogicalContext = logicalContext
 }
 
 /** Function term with arguments == constraints converted to terms. May contain variables. */

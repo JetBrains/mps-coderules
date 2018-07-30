@@ -5,9 +5,8 @@ import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.Unification
-import jetbrains.mps.unification.test.MockTermsParser.parse
+import jetbrains.mps.unification.test.MockTermsParser.parseTerm
 import org.junit.Assert.*
-import org.junit.Ignore
 import org.junit.Test
 
 /**
@@ -386,28 +385,28 @@ class TestMatcher {
         programWithRules(
             rule("select_fg_x",
                 headKept(
-                    constraint("foo", parse("f{g}"), M)
+                    constraint("foo", parseTerm("f{g}"), M)
                 ),
                                                                 body(
                                                                     constraint("bar")
                                                                 )),
             rule("select_abX_x",
                 headKept(
-                    constraint("foo", parse("a{b X}"), M)
+                    constraint("foo", parseTerm("a{b X}"), M)
                 ),
                                                                 body(
                                                                     constraint("bar")
                                                                 )),
             rule("select_aYcde_x",
                 headKept(
-                    constraint("foo", parse("a{Y c{d e}}"), M)
+                    constraint("foo", parseTerm("a{Y c{d e}}"), M)
                 ),
                                                                 body(
                                                                     constraint("bar")
                                                                 )),
             rule("select_aYcdd_fg",
                 headKept(
-                    constraint("foo", parse("a{Y c{d d}}"), parse("f{g}"))
+                    constraint("foo", parseTerm("a{Y c{d d}}"), parseTerm("f{g}"))
                 ),
                                                                 body(
                                                                     constraint("bar")
@@ -416,16 +415,16 @@ class TestMatcher {
 
             assertEquals(
                 listOf(byTag("select_fg_x")),
-                forOccurrence(occurrence("foo", parse("f{g}"), parse("u"))).toList())
+                forOccurrence(occurrence("foo", parseTerm("f{g}"), parseTerm("u"))).toList())
             assertEquals(
                 listOf(byTag("select_fg_x")),
-                forOccurrence(occurrence("foo", parse("f{Z}"), parse("u"))).toList())
+                forOccurrence(occurrence("foo", parseTerm("f{Z}"), parseTerm("u"))).toList())
             assertEquals(
                 listOf(byTag("select_abX_x"), byTag("select_aYcde_x")),
-                forOccurrence(occurrence("foo", parse("a{b c{d Z}}"), parse("u"))).toList())
+                forOccurrence(occurrence("foo", parseTerm("a{b c{d Z}}"), parseTerm("u"))).toList())
             assertEquals(
                 listOf(byTag("select_aYcdd_fg")),
-                forOccurrence(occurrence("foo", parse("a{d c{d d}}"), parse("f{g}"))).toList())
+                forOccurrence(occurrence("foo", parseTerm("a{d c{d d}}"), parseTerm("f{g}"))).toList())
 
         }
     }
@@ -435,21 +434,21 @@ class TestMatcher {
         programWithRules(
             rule("select_abcde",
                 headKept(
-                    constraint("foo", parse("a{b{h} c{d e}}"))
+                    constraint("foo", parseTerm("a{b{h} c{d e}}"))
                 ),
                                                                 body(
                                                                     constraint("bar")
                                                                 )),
             rule("select_abcdf",
                 headKept(
-                    constraint("foo", parse("a{b{h} c{d f}}"))
+                    constraint("foo", parseTerm("a{b{h} c{d f}}"))
                 ),
                                                                 body(
                                                                     constraint("bar")
                                                                 )),
             rule("select_agcde",
                 headKept(
-                    constraint("foo", parse("a{g{h} c{d e}}"))
+                    constraint("foo", parseTerm("a{g{h} c{d e}}"))
                 ),
                                                                 body(
                                                                     constraint("bar")
@@ -458,13 +457,13 @@ class TestMatcher {
 
             assertEquals(
                 listOf(byTag("select_abcde")),
-                forOccurrence(occurrence("foo", parse("a{b{h} c{d e}}"))).toList())
+                forOccurrence(occurrence("foo", parseTerm("a{b{h} c{d e}}"))).toList())
             assertEquals(
                 listOf(byTag("select_abcdf")),
-                forOccurrence(occurrence("foo", parse("a{b{h} c{d f}}"))).toList())
+                forOccurrence(occurrence("foo", parseTerm("a{b{h} c{d f}}"))).toList())
             assertEquals(
                 listOf(byTag("select_agcde")),
-                forOccurrence(occurrence("foo", parse("a{g{h} c{d e}}"))).toList())
+                forOccurrence(occurrence("foo", parseTerm("a{g{h} c{d e}}"))).toList())
 
         }
     }
@@ -478,8 +477,8 @@ class TestMatcher {
         val program = programWithRules(
             rule("foo2",
                 headKept(
-                    constraint("foo", b, parse("a{b}")),
-                    constraint("foo", c, parse("a{c}"))
+                    constraint("foo", b, parseTerm("a{b}")),
+                    constraint("foo", c, parseTerm("a{c}"))
                 ),
                                                                 body(
                                                                     constraint("done")
@@ -487,13 +486,13 @@ class TestMatcher {
             )
         )
 
-        program.indices(occurrence("foo", x, parse("a{c}"))).run {
-            Matcher(first).matching(occurrence("foo", y, parse("a{b}")), second).let { matches ->
+        program.indices(occurrence("foo", x, parseTerm("a{c}"))).run {
+            Matcher(first).matching(occurrence("foo", y, parseTerm("a{b}")), second).let { matches ->
                 assertEquals("foo2", matches.single().rule.tag())
             }
         }
-        program.indices(occurrence("foo", x, parse("a{b}"))).run {
-            Matcher(first).matching(occurrence("foo", y, parse("a{c}")), second).let { matches ->
+        program.indices(occurrence("foo", x, parseTerm("a{b}"))).run {
+            Matcher(first).matching(occurrence("foo", y, parseTerm("a{c}")), second).let { matches ->
                 assertEquals("foo2", matches.single().rule.tag())
             }
         }
@@ -508,9 +507,9 @@ class TestMatcher {
         val program = programWithRules(
             rule("expected",
                 headKept(
-                    constraint("foo", d, parse("a{d}")),
-                    constraint("foo", b, parse("a{b}")),
-                    constraint("foo", c, parse("a{c}"))
+                    constraint("foo", d, parseTerm("a{d}")),
+                    constraint("foo", b, parseTerm("a{b}")),
+                    constraint("foo", c, parseTerm("a{c}"))
                 ),
                                                                 body(
                                                                     constraint("done")
@@ -521,17 +520,17 @@ class TestMatcher {
         val stored = ArrayList<ConstraintOccurrence>()
         program.indices(stored).run {
             val matcher = Matcher(first)
-            val occ1 = occurrence("foo", x, parse("a{c}"))
+            val occ1 = occurrence("foo", x, parseTerm("a{c}"))
             stored.add(occ1)
             matcher.matching(occ1, second).let { matches ->
                 assertTrue(matches.isEmpty())
             }
-            val occ2 = occurrence("foo", y, parse("a{b}"))
+            val occ2 = occurrence("foo", y, parseTerm("a{b}"))
             stored.add(occ2)
             matcher.matching(occ2, second).let { matches ->
                 assertTrue(matches.isEmpty())
             }
-            val occ3 = occurrence("foo", z, parse("a{d}"))
+            val occ3 = occurrence("foo", z, parseTerm("a{d}"))
             stored.add(occ3)
             matcher.matching(occ3, second).let { matches ->
                 assertEquals("expected", matches.single().rule.tag())

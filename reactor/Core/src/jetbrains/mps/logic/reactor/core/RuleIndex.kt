@@ -30,7 +30,7 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class RuleIndex : Iterable<Rule> {
+class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
 
     private val primarySymbol2valueIndex = HashMap<ConstraintSymbol, ValueIndex>()
 
@@ -38,7 +38,7 @@ class RuleIndex : Iterable<Rule> {
 
     private val tag2rule = LinkedHashMap<String, Rule>()
 
-    constructor(handlers: Iterable<Handler>) {
+    init {
         for (h in handlers) {
             for (r in h.rules()) {
                 tag2rule[r.tag()] = r
@@ -68,7 +68,7 @@ class RuleIndex : Iterable<Rule> {
                     val symbol = c.symbol()
                     if (symbol in primSymbols) {
                         primarySymbol2valueIndex[symbol]?.update(r, c)
-                        
+
                     } else  {
                         auxSymbol2valueIndex.getOrPut(symbol) { ValueIndex(symbol) }.update(r, c)
                     }

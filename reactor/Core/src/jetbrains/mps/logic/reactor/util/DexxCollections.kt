@@ -35,6 +35,11 @@ fun <E> consListOf(vararg args: E): ConsList<E> {
     return builder.build()
 }
 
+fun <E> Sequence<E>.appendAllTo(toList: ConsList<E>): ConsList<E> =
+    fold(toList) { list, e -> list.append(e) }
+
+fun <E> Sequence<E>.toConsList(): ConsList<E> = appendAllTo(emptyConsList())
+
 fun <E> ConsList<E>.removeAt(idx: Int): ConsList<E> {
     if (idx < 0) throw IllegalArgumentException("index < 0")
     val left = this.take(idx)

@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 
+import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.program.Rule;
 
 /**
@@ -32,4 +33,5 @@ public interface MatchRule {
 
     Iterable<ConstraintOccurrence> matchHeadReplaced();
 
+    LogicalContext logicalContext();
 }

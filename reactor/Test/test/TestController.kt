@@ -508,22 +508,29 @@ class TestController {
         val (X1,Y1,Z1) = metaLogical<Int>("X1", "Y1", "Z1")
         val (X2,Y2,Z2) = metaLogical<Int>("X2", "Y2", "Z2")
         val (X3,Y3,Z3) = metaLogical<Int>("X3", "Y3", "Z3")
+        var count = 0
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ z -> z.set(0) }, Z1),
-                                                                    constraint("foo", X1, Z1),
-                                                                    constraint("foo", Y1, Z1),
-                                                                    statement({ x, y -> eq(x, y) }, X1, Y1) )
+                headReplaced( constraint("main") ),
+            body(
+                statement({ z -> z.set(0) }, Z1),
+                constraint("foo", X1, Z1),
+                constraint("foo", Y1, Z1),
+                statement({ x, y -> eq(x, y) }, X1, Y1) )
             ),
             rule("capture_foo",
                 headKept( constraint("foo", X2, Y2) ),
-                                                            body(   statement({ y, z -> z.set(y.get() + 1) }, Y2, Z2),
-                                                                    constraint("capture", Z2) )
+            body(
+                statement({ z -> z.set(count++) }, Z2),
+                constraint("capture", Z2) )
             ),
             rule("capture_foo_foo",
                 headKept( constraint("foo", X3, Z3) ),
-                headReplaced( constraint("foo", Y3, Z3) ),  guard(  expression({ x, y ->  is_eq(x, y) }, X3, Y3)),
-                                                            body(   constraint("replaced") )
+                headReplaced( constraint("foo", Y3, Z3) ),
+            guard(
+                expression({ x, y ->  is_eq(x, y) }, X3, Y3)),
+            body(
+                constraint("replaced") )
             )
         ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf( ConstraintSymbol("foo", 2),

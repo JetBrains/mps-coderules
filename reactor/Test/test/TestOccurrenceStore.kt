@@ -3,7 +3,7 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol
 import jetbrains.mps.logic.reactor.util.emptyConsList
 import jetbrains.mps.unification.Term
-import jetbrains.mps.unification.test.MockTermsParser.parse
+import jetbrains.mps.unification.test.MockTermsParser.parseTerm
 import org.junit.Test
 import org.junit.Assert.*
 import org.junit.Before
@@ -93,10 +93,10 @@ class TestOccurrenceStore {
         assertEquals(listOf(cnst), occstore.forLogical(foo))
         assertEquals(listOf(cnst), occstore.forSymbol(symbol("cnst", 1)))
 
-        foo.set(parse("a{b c d{e}}"))
+        foo.set(parseTerm("a{b c d{e}}"))
 
         assertEquals(listOf(cnst), occstore.forLogical(foo))
-        assertEquals(listOf(cnst), occstore.forTerm(parse("a{b c d{e}}")))
+        assertEquals(listOf(cnst), occstore.forTerm(parseTerm("a{b c d{e}}")))
 
         foo.union(bar)
         assertEquals(listOf(cnst), occstore.forLogical(bar))
@@ -106,27 +106,27 @@ class TestOccurrenceStore {
     fun testEarlyGroundLogical() {
         val foo = logical<Term>("foo")
 
-        foo.set(parse("a{b c d{e}}"))
+        foo.set(parseTerm("a{b c d{e}}"))
 
         val cnst = occurrence("cnst", foo)
         occstore.store(cnst)
 
         assertEquals(listOf(cnst), occstore.forLogical(foo))
         assertEquals(listOf(cnst), occstore.forSymbol(symbol("cnst", 1)))
-        assertEquals(listOf(cnst), occstore.forTerm(parse("a{b c d{e}}")))
+        assertEquals(listOf(cnst), occstore.forTerm(parseTerm("a{b c d{e}}")))
     }
 
     @Test
     fun testIndependentlyGroundLogical() {
         val foo = logical<Term>("foo")
 
-        val cnst = occurrence("cnst", parse("a{b c d{e}}"))
+        val cnst = occurrence("cnst", parseTerm("a{b c d{e}}"))
         occstore.store(cnst)
 
-        foo.set(parse("a{b c d{e}}"))
+        foo.set(parseTerm("a{b c d{e}}"))
 
         assertEquals(listOf(cnst), occstore.forSymbol(symbol("cnst", 1)))
-        assertEquals(listOf(cnst), occstore.forTerm(parse("a{b c d{e}}")))
+        assertEquals(listOf(cnst), occstore.forTerm(parseTerm("a{b c d{e}}")))
         assertEquals(listOf(cnst), occstore.forLogical(foo))
     }
 
@@ -141,13 +141,13 @@ class TestOccurrenceStore {
 
     @Test
     fun testTermIndex () {
-        val foo = occurrence("foo", parse("a{b c}"))
+        val foo = occurrence("foo", parseTerm("a{b c}"))
         occstore.store(foo)
 
         // TODO: more tests
-        assertEquals(listOf(foo), occstore.forTerm(parse("a{b c}")))
-        assertEquals(listOf(foo), occstore.forTerm(parse("a{b Y}")))
-        assertEquals(listOf(foo), occstore.forTerm(parse("Z")))
+        assertEquals(listOf(foo), occstore.forTerm(parseTerm("a{b c}")))
+        assertEquals(listOf(foo), occstore.forTerm(parseTerm("a{b Y}")))
+        assertEquals(listOf(foo), occstore.forTerm(parseTerm("Z")))
     }
 
 }
