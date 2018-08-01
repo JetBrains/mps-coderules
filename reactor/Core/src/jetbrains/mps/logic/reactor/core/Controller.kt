@@ -43,6 +43,8 @@ class Controller(
 
     private val matcher = Matcher(ruleIndex, profiler)
 
+    private var dispatchFringe = Dispatcher(ruleIndex).fringe()
+
     // persistent (functional) object. reassigned on update
     private var propHistory = PropagationHistory()
 
@@ -86,35 +88,43 @@ class Controller(
                 trace.reactivate(active)
             }
 
-            for (match in matcher.matches(active, frameStack.current.store)) {
+            val activatedDF = dispatchFringe.activated(active)
+            this.dispatchFringe = activatedDF
+
+//            for (match in matcher.matches(active, frameStack.current.store)) {
+            for(match in dispatchFringe.allMatches.toList()) {
+
                 // TODO: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
-                if (!match.successful) continue
+//                if (!match.successful) continue
                 // FIXME: move this check elsewhere
-                if ((match.keptOccurrences + match.discardedOccurrences).any { co -> !co.isStored() }) continue
-                if (propHistory.isRecorded(match)) continue
+                if ((match.matchHeadKept() + match.matchHeadReplaced()).any { co -> !co.isStored() }) continue
+
+                // TODO: prophistory
+//                if (propHistory.isRecorded(match)) continue
 
                 trace.trying(match)
 
-                for (prd in match.patternPredicates) {
-                    tellPredicate(prd, match.logicalContext, trace)
+                for (prd in match.patternPredicates()) {
+                    tellPredicate(prd, match.logicalContext(), trace)
                 }
 
-                if (!match.rule.checkGuard(match.logicalContext, trace)) {
+                if (!match.rule().checkGuard(match.logicalContext(), trace)) {
                     trace.reject(match)
                     continue
                 }
 
                 trace.trigger(match)
 
-                for (occ in match.discardedOccurrences) {
+                for (occ in match.matchHeadReplaced()) {
+                    this.dispatchFringe = dispatchFringe.discarded(occ)
                     frameStack.current.store.discard(occ)
                     trace.discard(occ)
                 }
 
                 var failure: EvaluationFailureException? = null
 
-                for (body in match.rule.bodyAlternation()) {
+                for (body in match.rule().bodyAlternation()) {
                     if (failure != null) {
                         trace.failure(failure)
                         trace.retry(match)
@@ -125,7 +135,8 @@ class Controller(
                     // we must reassign the field on every rule triggering
                     // and store on the stack the last value before rule activation in order to undo in case of failure
                     val savedPropHistory = propHistory
-                    this.propHistory = propHistory.record(match)
+                    // TODO: prophistory
+//                    this.propHistory = propHistory.record(match)
 
                     val savedFrame = frameStack.current
                     frameStack.push()
@@ -133,8 +144,8 @@ class Controller(
                     try {
                         for (item in body) {
                             when (item) {
-                                is Constraint -> process(session.occurrence(item, match.logicalContext))
-                                is Predicate -> tellPredicate(item, match.logicalContext, trace)
+                                is Constraint -> process(session.occurrence(item, match.logicalContext()))
+                                is Predicate -> tellPredicate(item, match.logicalContext(), trace)
                                 else -> throw IllegalArgumentException("unknown item ${item}")
                             }
                         }
@@ -195,3 +206,8 @@ class Controller(
 private val noLogicalContext: LogicalContext = object: LogicalContext {
     override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V> = TODO()
 }
+
+fun MatchRule.patternPredicates() =
+    (rule().headKept() + rule().headReplaced()).zip(matchHeadKept() + matchHeadReplaced()).flatMap {
+        it.first.patternPredicates(it.second.arguments())
+    }.toList()
