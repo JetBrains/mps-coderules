@@ -2,18 +2,18 @@
 <solution name="jetbrains.mps.logic.reactor" uuid="bbf5c548-7111-4a53-a117-cdefc664cf34" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="java_classes">
-      <sourceRoot location="lib/conreactor-api-0.9.jar" />
-      <sourceRoot location="lib/conreactor-core-0.9.jar" />
       <sourceRoot location="lib/collection-0.7.jar" />
+      <sourceRoot location="lib/conreactor-api-0.9.1.jar" />
+      <sourceRoot location="lib/conreactor-core-0.9.1.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/collection-0.7.jar" />
-    <stubModelEntry path="${module}/lib/conreactor-api-0.9.jar" />
-    <stubModelEntry path="${module}/lib/conreactor-core-0.9.jar" />
     <stubModelEntry path="${module}/lib/trove4j-3.0.3.jar" />
     <stubModelEntry path="${module}/lib/kotlin-runtime-1.2.30.jar" />
     <stubModelEntry path="${module}/lib/kotlin-stdlib-1.2.30.jar" />
+    <stubModelEntry path="${module}/lib/conreactor-api-0.9.1.jar" />
+    <stubModelEntry path="${module}/lib/conreactor-core-0.9.1.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

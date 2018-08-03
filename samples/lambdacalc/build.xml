@@ -203,11 +203,11 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-runtime-1.2.30.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-stdlib-1.2.30.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.1.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.1.jar" />
       </classpath>
     </javac>
   </target>
