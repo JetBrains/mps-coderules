@@ -524,8 +524,8 @@
       </concept>
     </language>
     <language id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking">
-      <concept id="6958395084019752" name="" flags="ng" index="2ra22R">
-        <child id="6958395084020241" name="" index="2ra2ae" />
+      <concept id="6958395084019752" name="jetbrains.mps.lang.typechecking.structure.SNodeSetTypeOperation" flags="ng" index="2ra22R">
+        <child id="6958395084020241" name="typeExpr" index="2ra2ae" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">

@@ -2,7 +2,7 @@
 <model ref="r:64f472af-c4b1-4900-9ea3-aec5c51b6e6e(samples.lambdacalc.demo)">
   <persistence version="9" />
   <languages>
-    <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc" version="0" />
+    <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="samples.lambdacalc" version="0" />
   </languages>
   <imports />
   <registry>
@@ -11,44 +11,44 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
-    <language id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="sample.lambdacalc">
-      <concept id="1784752312119229448" name="sample.lambdacalc.structure.Fix" flags="ng" index="2facFd" />
-      <concept id="8747055848970356251" name="sample.lambdacalc.structure.VarRef" flags="ng" index="t0$VC">
+    <language id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="samples.lambdacalc">
+      <concept id="1784752312119229448" name="samples.lambdacalc.structure.Fix" flags="ng" index="2facFd" />
+      <concept id="8747055848970356251" name="samples.lambdacalc.structure.VarRef" flags="ng" index="t0$VC">
         <reference id="8747055848970356252" name="def" index="t0$VJ" />
       </concept>
-      <concept id="7591258541060276116" name="sample.lambdacalc.structure.IfThenElse" flags="ng" index="FlqVS">
+      <concept id="7591258541060276116" name="samples.lambdacalc.structure.IfThenElse" flags="ng" index="FlqVS">
         <child id="7591258541060276154" name="neg" index="FlqVm" />
         <child id="7591258541060276151" name="pos" index="FlqVr" />
         <child id="7591258541060276145" name="cond" index="FlqVt" />
       </concept>
-      <concept id="8739282858702982512" name="sample.lambdacalc.structure.App" flags="ng" index="1DVIo5">
+      <concept id="8739282858702982512" name="samples.lambdacalc.structure.App" flags="ng" index="1DVIo5">
         <child id="8739282858702982513" name="fun" index="1DVIo4" />
         <child id="8739282858702982525" name="arg" index="1DVIo8" />
       </concept>
-      <concept id="8739282858702982488" name="sample.lambdacalc.structure.Var" flags="ng" index="1DVIoH" />
-      <concept id="8739282858702982568" name="sample.lambdacalc.structure.Doc" flags="ng" index="1DVIrt">
+      <concept id="8739282858702982488" name="samples.lambdacalc.structure.Var" flags="ng" index="1DVIoH" />
+      <concept id="8739282858702982568" name="samples.lambdacalc.structure.Doc" flags="ng" index="1DVIrt">
         <child id="8739282858702982571" name="clause" index="1DVIru" />
       </concept>
-      <concept id="8739282858702982546" name="sample.lambdacalc.structure.LamVarBind" flags="ng" index="1DVIrB">
+      <concept id="8739282858702982546" name="samples.lambdacalc.structure.LamVarBind" flags="ng" index="1DVIrB">
         <child id="8739282858702982547" name="var" index="1DVIrA" />
       </concept>
-      <concept id="8739282858702982553" name="sample.lambdacalc.structure.LetVarBind" flags="ng" index="1DVIrG">
+      <concept id="8739282858702982553" name="samples.lambdacalc.structure.LetVarBind" flags="ng" index="1DVIrG">
         <child id="8739282858702982556" name="expr" index="1DVIrD" />
         <child id="8739282858702982554" name="var" index="1DVIrJ" />
       </concept>
-      <concept id="8739282858702982552" name="sample.lambdacalc.structure.LetExpr" flags="ng" index="1DVIrH">
+      <concept id="8739282858702982552" name="samples.lambdacalc.structure.LetExpr" flags="ng" index="1DVIrH">
         <child id="8739282858702982561" name="expr" index="1DVIrk" />
         <child id="8739282858702982559" name="binding" index="1DVIrE" />
       </concept>
-      <concept id="8739282858702982543" name="sample.lambdacalc.structure.Lam" flags="ng" index="1DVIrU">
+      <concept id="8739282858702982543" name="samples.lambdacalc.structure.Lam" flags="ng" index="1DVIrU">
         <child id="8739282858702982549" name="expr" index="1DVIrw" />
         <child id="8739282858702982544" name="binding" index="1DVIr_" />
       </concept>
-      <concept id="8739282858702985614" name="sample.lambdacalc.structure.LetClause" flags="ng" index="1DVJbV">
+      <concept id="8739282858702985614" name="samples.lambdacalc.structure.LetClause" flags="ng" index="1DVJbV">
         <child id="2654091495521629866" name="binding" index="j9CMd" />
       </concept>
-      <concept id="4774429934441545239" name="sample.lambdacalc.structure.False" flags="ng" index="3P8L2H" />
-      <concept id="4774429934441530831" name="sample.lambdacalc.structure.True" flags="ng" index="3P8MHP" />
+      <concept id="4774429934441545239" name="samples.lambdacalc.structure.False" flags="ng" index="3P8L2H" />
+      <concept id="4774429934441530831" name="samples.lambdacalc.structure.True" flags="ng" index="3P8MHP" />
     </language>
   </registry>
   <node concept="1DVIrt" id="7_8aRkgE06U">

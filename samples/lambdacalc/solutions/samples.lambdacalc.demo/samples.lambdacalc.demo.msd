@@ -8,7 +8,7 @@
   <sourcePath />
   <languageVersions>
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
-    <language slang="l:af858d84-85f2-42f4-a854-0b3c6b5cd482:sample.lambdacalc" version="0" />
+    <language slang="l:af858d84-85f2-42f4-a854-0b3c6b5cd482:samples.lambdacalc" version="0" />
   </languageVersions>
   <dependencyVersions>
     <module reference="05f15741-5274-4aed-a086-84d9a15ab93b(samples.lambdacalc.demo)" version="0" />
