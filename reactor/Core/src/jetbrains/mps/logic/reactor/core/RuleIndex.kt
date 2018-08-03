@@ -39,11 +39,6 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
     private val tag2rule = LinkedHashMap<String, Rule>()
 
     init {
-        for (h in handlers) {
-            for (r in h.rules()) {
-                tag2rule[r.tag()] = r
-            }
-        }
         buildIndex(handlers)
     }
 
@@ -64,6 +59,10 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
         for (h in handlers) {
             val primSymbols = h.primarySymbols().toSet()
             for (r in h.rules()) {
+                if (tag2rule.containsKey(r.tag())) {
+                    throw IllegalStateException("duplicate rule tag ${r.tag()}")
+                }
+                tag2rule[r.tag()] = r
                 for (c in (r.headKept() + r.headReplaced())) {
                     val symbol = c.symbol()
                     if (symbol in primSymbols) {
