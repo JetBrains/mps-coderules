@@ -28,6 +28,7 @@ public abstract class Handler {
 
     public abstract String name();
 
+    @Deprecated
     public abstract Iterable<ConstraintSymbol> primarySymbols();
 
     public abstract Iterable<Rule> rules();
