@@ -52,7 +52,7 @@ interface StoreItem {
 
     var stored: Boolean
 
-    fun terminate(): Unit
+    fun terminate() 
 
 }
 
@@ -66,26 +66,10 @@ interface StoreKeeper {
 
 }
 
-interface OccurrenceIndex {
-
-    fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence>
-
-    fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence>
-
-    fun forLogicalAndConstraint(logical: Logical<*>, cst:Constraint): Iterable<ConstraintOccurrence>
-
-    fun forTerm(term: Term): Iterable<ConstraintOccurrence>
-
-    fun forTermAndConstraint(term: Term, cst: Constraint): Iterable<ConstraintOccurrence>
-
-    fun forValue(value: Any): Iterable<ConstraintOccurrence>
-
-}
-
 /**
  * TODO: make this class persistent.
  */
-class Store : LogicalObserver, OccurrenceIndex {
+class Store : LogicalObserver {
 
     val currentFrame: () -> StoreKeeper
 
@@ -93,16 +77,10 @@ class Store : LogicalObserver, OccurrenceIndex {
 
     var logical2occurrences: PersMap<IdWrapper<Logical<*>>, IdHashSet<ConstraintOccurrence>>
 
-    var term2occurrences: TermTrie<ConstraintOccurrence>
-
-    var value2occurrences: PersMap<Any, IdHashSet<ConstraintOccurrence>>
-
     constructor(copyFrom: Store, currentFrame: () -> StoreKeeper) {
         this.currentFrame = currentFrame
         this.symbol2occurrences = copyFrom.symbol2occurrences
         this.logical2occurrences = copyFrom.logical2occurrences
-        this.term2occurrences = copyFrom.term2occurrences
-        this.value2occurrences = copyFrom.value2occurrences
     }
 
     constructor(copyFrom: StoreView, currentFrame: () -> StoreKeeper) {
@@ -126,40 +104,15 @@ class Store : LogicalObserver, OccurrenceIndex {
         }
 
         this.logical2occurrences = l2o
-        this.term2occurrences = t2o
-        this.value2occurrences = v2o
     }
 
     constructor(currentFrame: () -> StoreKeeper) {
         this.currentFrame = currentFrame
         this.symbol2occurrences = Maps.of()
         this.logical2occurrences = Maps.of()
-        this.term2occurrences = TermTrie()
-        this.value2occurrences = Maps.of()
     }
 
     override fun valueUpdated(logical: Logical<*>) {
-        logical2occurrences[IdWrapper(logical.findRoot())]?.let { toMerge ->
-            val value = logical.findRoot().value()
-            when (value) {
-                is Term     -> {
-                    for (occ in toMerge) {
-                        this.term2occurrences = term2occurrences.put(value.withConstraint(occ.constraint()), occ)
-                    }
-                }
-                is Any      -> {
-                    var newSet = value2occurrences[value] ?: emptySet()
-                    for (occ in toMerge) {
-                        newSet = newSet.add(occ)
-                    }
-                    this.value2occurrences = value2occurrences.put(value, newSet)
-                }
-                else        -> {
-                    // never happens
-                    throw NullPointerException()
-                }
-            }
-        }
     }
 
     override fun parentUpdated(logical: Logical<*>) {
@@ -177,7 +130,7 @@ class Store : LogicalObserver, OccurrenceIndex {
         }
     }
 
-    fun store(occ: ConstraintOccurrence): Unit {
+    fun store(occ: ConstraintOccurrence) {
         val symbol = occ.constraint().symbol()
 
         this.symbol2occurrences = symbol2occurrences.put(symbol,
@@ -192,17 +145,6 @@ class Store : LogicalObserver, OccurrenceIndex {
                     this.logical2occurrences = logical2occurrences.put(argId,
                         logical2occurrences[argId]?.add(occ) ?: singletonSet(occ))
                     currentFrame().addObserver(value) { frame -> frame.store() }
-                }
-                is Term         -> {
-                    this.term2occurrences = term2occurrences.put(value.withConstraint(occ.constraint()), occ)
-                }
-                is Any          -> {
-                    this.value2occurrences = value2occurrences.put(value,
-                        value2occurrences[value]?.add(occ) ?: singletonSet(occ))
-                }
-                else            -> {
-                    // never happens
-                    throw NullPointerException()
                 }
             }
         }
@@ -231,16 +173,6 @@ class Store : LogicalObserver, OccurrenceIndex {
                         }
                     }
                 }
-                is Term         -> {
-                    // removing occurrences from the index is *very* expensive,
-                    // so let's simply use the 'alive' flag to filter out terminated occurrences
-//                    this.term2occurrences = term2occurrences.remove(arg, occ)
-                }
-                is Any          ->  {
-                    value2occurrences[arg]?.remove(occ)?. let { newList ->
-                        this.value2occurrences = value2occurrences.put(arg, newList)
-                    }
-                }
             }
         }
 
@@ -255,62 +187,12 @@ class Store : LogicalObserver, OccurrenceIndex {
 
     fun view(): StoreView = StoreViewImpl(allOccurrences())
 
-    override fun forSymbol(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> {
-        return (symbol2occurrences[symbol] ?: emptySet()).filter { co -> co.isStored() }
-    }
-
-    override fun forLogicalAndConstraint(logical: Logical<*>, cst: Constraint): Iterable<ConstraintOccurrence> {
-        return if (logical.isBound) {
-            val value = logical.findRoot().value()
-            when (value) {
-                is Term     -> forTermAndConstraint(value, cst)
-                is Any      -> forValue(value)
-                else        -> throw NullPointerException()
-            }
-
-        } else {
-            (logical2occurrences[IdWrapper(logical.findRoot())] ?: emptySet()).filter { co -> co.isStored() }
-        }
-    }
-
-    override fun forLogical(logical: Logical<*>): Iterable<ConstraintOccurrence> {
-        return if (logical.isBound) {
-            val value = logical.findRoot().value()
-            when (value) {
-                is Term     -> forTerm(value)
-                is Any      -> forValue(value)
-                else        -> throw NullPointerException()
-            }
-
-        } else {
-            (logical2occurrences[IdWrapper(logical.findRoot())] ?: emptySet()).filter { co -> co.isStored() }
-        }
-    }
-
-    override fun forTerm(term: Term): Iterable<ConstraintOccurrence> {
-        return term2occurrences.lookupValues(term.withAny()).filter { it.isStored() }
-    }
-
-    override fun forTermAndConstraint(term: Term, cst: Constraint): Iterable<ConstraintOccurrence> {
-        return term2occurrences.lookupValues(term.withConstraint(cst)).filter { it.isStored() }
-    }
-
-    override fun forValue(value: Any): Iterable<ConstraintOccurrence> {
-        return (value2occurrences[value] ?: emptySet()).filter { co -> co.isStored() }
-    }
-
     private fun Term.withConstraint(cst: Constraint): Term = Function(CONSTRAINT, listOf(Function(cst.symbol(), emptyList()), this))
-
-    private fun Term.withAny(): Term = Function(CONSTRAINT, listOf(Variable(ANY), this))
 
     private companion object {
 
         private val CONSTRAINT = object : Any() {
             override fun toString(): String = "CONSTRAINT"
-        }
-
-        private val ANY = object : Any() {
-            override fun toString(): String = "ANY"
         }
 
     }

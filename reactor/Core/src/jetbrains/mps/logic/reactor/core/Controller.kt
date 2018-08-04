@@ -41,12 +41,7 @@ class Controller(
 
     private val frameStack = FrameStack(storeView)
 
-    private val matcher = Matcher(ruleIndex, profiler)
-
     private var dispatchFringe = Dispatcher(ruleIndex).fringe()
-
-    // persistent (functional) object. reassigned on update
-    private var propHistory = PropagationHistory()
 
     internal fun currentFrame(): Frame = frameStack.current
 
@@ -131,13 +126,6 @@ class Controller(
                         failure = null
                     }
 
-                    // propHistory is now functional (persistent)
-                    // we must reassign the field on every rule triggering
-                    // and store on the stack the last value before rule activation in order to undo in case of failure
-                    val savedPropHistory = propHistory
-                    // TODO: prophistory
-//                    this.propHistory = propHistory.record(match)
-
                     val savedFrame = frameStack.current
                     frameStack.push()
 
@@ -152,10 +140,6 @@ class Controller(
                     }
                     catch (ex: EvaluationFailureException) {
                         failure = ex
-
-                        // abrupt termination: restore the state
-                        this.propHistory = savedPropHistory
-
                         frameStack.reset(savedFrame)
                     }
 
