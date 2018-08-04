@@ -22,6 +22,9 @@ import java.util.*
  * @author Fedor Isakov
  */
 
+inline fun BitSet.copyApply (f: BitSet.() -> Unit): BitSet =
+    (clone() as BitSet).apply(f)
+
 fun bitSetOfOnes(size: Int): BitSet =
     BitSet(size).also { it.set(0, size) }
 

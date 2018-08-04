@@ -61,7 +61,11 @@ class RuleMatcher(val rule: Rule) {
                 rn is ActiveFringeNode && rn.complete && rn.genId == genId }.map { rn ->
                 (rn as ActiveFringeNode).toMatchRule() }
 
-        fun expand(occ: ConstraintOccurrence): MatchFringe {
+        /**
+         * Expands the fringe by creating new leaf nodes that match the occurrence.
+         * Mask specifies possible slots for the occurrence.
+         */
+        fun expand(occ: ConstraintOccurrence, mask: BitSet? = null): MatchFringe {
             if (seen.contains(occ)) {
                 // constraint occurrence is reactivated
                 // there are nodes having occ in their paths
@@ -74,12 +78,15 @@ class RuleMatcher(val rule: Rule) {
                         fn.unrelatedOrCopy(occ, genId + 1)
                     else
                         fn
-                }.appendAllTo(emptyConsList())
+                }.toConsList()
                 return MatchFringe(newNodes, seen, genId + 1)
 
             } else {
-                val newNodes = nodes.asSequence().flatMap { it.expand(occ, genId + 1) }
-                return MatchFringe(newNodes.appendAllTo(nodes), seen.add(occ), genId + 1)
+                val newNodes = nodes.asSequence().filter { fn ->
+                    mask == null || fn.matchesVacant(mask)
+                }.flatMap { fn ->
+                    fn.expand(occ, genId + 1) }
+                return MatchFringe(newNodes.prependTo(nodes), seen.add(occ), genId + 1)
             }
         }
 
@@ -87,6 +94,7 @@ class RuleMatcher(val rule: Rule) {
             val newNodes = nodes.asSequence().mapNotNull { it.unrelatedOrNull(occ) }
             return MatchFringe(newNodes.toConsList(), seen.remove(occ), genId + 1)
         }
+
     }
 
     open inner class FringeNode(val subst: Subst,
@@ -97,10 +105,8 @@ class RuleMatcher(val rule: Rule) {
          * If the occurrence is already in the path, return empty sequence.
          */
         fun expand(occ: ConstraintOccurrence, genId: Int): Sequence<ActiveFringeNode> {
-            val fringeNode = unrelatedOrNull(occ)
-            if (fringeNode == null) return emptySequence()
-
-            return fringeNode.vacant.allSetBits().map { idx ->
+            val unrelated = unrelatedOrNull(occ) ?: return emptySequence()
+            return unrelated.vacant.allSetBits().map { idx ->
                 idx to match(head[idx] !!, occ, subst) }.asSequence().mapNotNull { (idx, newSubst) ->
                 newSubst?.let { ActiveFringeNode(this, occ, idx, genId, it) }
             }
@@ -110,6 +116,8 @@ class RuleMatcher(val rule: Rule) {
          * Returns this node if it doesn't have the occurrence in its path, null otherwise.
          */
         open fun unrelatedOrNull(occ: ConstraintOccurrence): FringeNode? = this
+
+        fun matchesVacant(mask: BitSet) = !mask.copyApply { and(vacant) }.isEmpty
 
         /**
          * Matches constraint and occurrence.

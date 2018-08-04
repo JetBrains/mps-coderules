@@ -62,10 +62,8 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
         fun activated(active: ConstraintOccurrence): DispatchFringe {
             return DispatchFringe(this,
-                ruleIndex.forOccurrence(active).mapNotNull { rule ->
-                    rule2fringe[rule]
-                }.map { fringe ->
-                    fringe.expand(active)
+                ruleIndex.forOccurrenceWithMask(active).mapNotNull { (rule, mask) ->
+                    rule2fringe[rule]?.expand(active, mask)
                 })
         }
 
