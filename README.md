@@ -1,4 +1,4 @@
-![](doc/img/mps-logo.png)
+![](mps-full.svg)
 
 # Code Rules
 
