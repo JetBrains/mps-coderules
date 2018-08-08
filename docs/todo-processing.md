@@ -1,0 +1,35 @@
+### Constraints processing
+- [ ] intro
+- [x] Terms
+    - [x] abstract data structure
+    - [x] keeping arbitrary POJO
+    - [x] unification
+- [x] Logical variables
+    - [x] monotonic
+    - [x] Terms with logical vars
+    - [x] unification binds logicals
+    - [x] logicals are observable
+        - [x] parent observer
+        - [x] value observer
+- [ ] Constraints and predicates
+    - [ ] What is a constraint. 
+    - [ ] Constraint arguments.
+        - [ ] POJO
+        - [ ] Term
+        - [ ] Logical vars
+    - [ ] what is a predicate
+    - [ ] tell / ask
+- [ ] Constraint production (constraint rule)
+    - [ ] kept constraints vs. replaced constraints
+        - [ ] simplification/propagation/simpagation
+        - [ ] constraint store
+        - [ ] constraint lifecycle
+    - [ ] condition for firing a production
+        - [ ] on start - how it’s actually implemented (main)
+    - [ ] automatic binding of logicals on firing
+    - [ ] guard condition
+    - [ ] predicates
+        - [ ] arbitrary java code
+    - [ ] body
+        - [ ] alternate body
+
