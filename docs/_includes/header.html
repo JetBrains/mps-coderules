@@ -1,0 +1,29 @@
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <a class="mdl-layout-icon" href="{{ '/' | absolute_url }}">
+      {% if site.logo %}
+        <img src="{{ site.logo | absolute_url }}" alt="" id="site-logo"/>
+      {% endif %}
+    </a>
+    <span class="mdl-layout-title">
+      {% if page.title %}
+        <h1 id="page-title" class="mdl-typography--title">
+          {{ page.title }}
+        </h1>
+      {% endif %}
+    </span>
+    <div class="mdl-layout-spacer"></div>
+    <nav class="mdl-navigation">
+      {% if site.github-project %}
+        <div class="mdl-navigation__link">
+          <a class="github-icon" href="https://github.com/{{ site.github-project }}"></a>
+        </div>
+      {% endif %}
+    </nav>
+    {% if site.search != false %}
+      <a href="{{ site.baseurl }}{% link _assets/search.html %}" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">search</i>
+      </a>
+    {% endif %}
+  </div>
+</header>

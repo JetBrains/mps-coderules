@@ -1,0 +1,30 @@
+{% comment %}
+<!-- Based on: MaterialDocs https://github.com/chromatical/jekyll-materialdocs  -->
+<!-- Copyright (c) 2017 James King -->
+<!-- MIT License https://opensource.org/licenses/MIT -->
+{% endcomment %}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      {% include header.html %}
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <a id="site-title" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
+        </span>
+        <nav class="mdl-navigation">
+          {% include menu.html %}
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="mdl-grid grid-content">
+          {{ content }}
+        </div>
+        {% include footer.html %}
+      </main>
+    </div>
+  </body>
+</html>

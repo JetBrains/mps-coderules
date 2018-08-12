@@ -1,0 +1,43 @@
+# Site settings
+title: MPS Code Rules
+email: fedor.isakov@jetbrains.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Code Rules is a language framework and runtime for running logical
+  inference in JetBrains MPS.
+baseurl: "/constraints-typechecking" # the subpath of your site, e.g. /blog
+url: "https://fisakov.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jetbrains_mps
+github_username:  fisakov
+time: 2018-08-05
+copyright: JetBrains s.r.o.
+copyright_url: "https://jetbrains.com"
+homepage: "https://jetbrains.com/mps"
+homepage_title: "JetBrains MPS"
+github-project: fisakov/constraints-typechecking
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+mdl_colors: grey-light_blue
+plugins:
+  - jekyll-feed
+
+include:
+  - "content"
+  - "img"
+  - "_assets"
+
+# Exclude from processing.
+exclude:
+ - "*.gemspec"
+ - Gemfile
+ - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

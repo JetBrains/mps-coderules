@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="mdl-cell mdl-cell--top mdl-cell--8-col mdl-cell--2-offset">
+  <div class="welcome-card-wide mdl-card mdl-shadow--16dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">MPS Code Rules</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      {{ content }}
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      {% assign sorted_pages = site.pages | sort: 'weight' %}
+      {% for p in sorted_pages %}
+        {% if p.menu != false and p.weight != nil %}
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ p.url | absolute_url }}">
+            Get Started
+          </a>
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      <a style="position: relative; float: right;" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://github.com/{{ site.github-project }}/releases">
+        Download Plugin
+      </a>
+    </div>
+    <div class="mdl-card__menu">
+      <button id="unsplash-button" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect unsplash-icon" href="https://unsplash.com/@worthyofelegance?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Alex"> </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{% assign sorted_pages = site.pages | sort: 'weight' %}
+{% assign prev = nil %}
+<div class="mdl-cell mdl-cell--bottom mdl-cell--1-col back">
+{% for node in sorted_pages %}
+  {% if node.menu != false and node.weight != nil %}
+    {% if node.path == page.path %}
+      {% if prev != nil and prev.menu != false %}
+          <a class="mdl-button mdl-js-button mdl-button--icon" href="{{ prev.url | absolute_url }}">
+            <i class="material-icons">keyboard_arrow_left</i>
+          </a>
+          Back
+        {% break %}
+      {% endif %}
+    {% endif %}
+    {% assign prev = node %}
+  {% endif %}
+{% endfor %}
+</div>
+<div class="mdl-cell mdl-cell--10-col">
+  <div class="page-content">
+    <div class="content">
+      {% if page.github-path %}
+        <a id="github-file" class="mdl-button mdl-js-button mdl-button--icon homepage" href="https://github.com/{{ site.github-project }}/{{ page.github-path}}" target="_blank">
+          <i class="material-icons">home</i>
+        </a>
+        <div class="mdl-tooltip" data-mdl-for="github-file">Project Home <i class="material-icons">open_in_new</i></div>
+      {% endif %}
+      {{ content }}
+    </div>
+  </div>
+</div>
+{% assign req_next = false %}
+<div class="mdl-cell mdl-cell--bottom mdl-cell--1-col forward">
+{% for node in sorted_pages %}
+  {% if node.menu != false and node.weight != nil %}
+    {% if req_next %}
+        Forward
+        <a class="mdl-button mdl-js-button mdl-button--icon" href="{{ node.url | absolute_url }}">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </a>
+      {% break %}
+    {% endif %}
+    {% if node.path == page.path %}
+      {% assign req_next = true%}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</div>

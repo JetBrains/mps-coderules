@@ -1,0 +1,24 @@
+- title: "Examples"
+  url: false
+  weight: 800
+  id: examples
+
+- title: "Links"
+  url: false
+  weight: 900
+  id: links
+
+- title: "GitHub Project"
+  url: "https://github.com/fisakov/constraints-typechecking"
+  parent: links
+  tab: true
+
+- title: "Latest Release"
+  url: "https://github.com/fisakov/constraints-typechecking/releases"
+  parent: links
+  tab: true
+
+- title: "JetBrains MPS"
+  url: "https://www.jetbrains.com/mps/"
+  parent: links
+  tab: true

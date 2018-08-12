@@ -1,0 +1,40 @@
+{% comment %}
+<!-- Based on: MaterialDocs https://github.com/chromatical/jekyll-materialdocs  -->
+<!-- Copyright (c) 2017 James King -->
+<!-- MIT License https://opensource.org/licenses/MIT -->
+{% endcomment %}
+{% assign sorted_pages = site.pages | sort: 'weight' %}
+{% if site.data.nav %}
+  {% assign sorted_pages = sorted_pages | concat: site.data.nav | sort: 'weight' %}
+{% endif %}
+{% for node in sorted_pages %}
+  {% if node.menu != false and node.weight != nil %}
+    {% if node.menu or node.title %}
+      {% unless node.parent %}
+        {% if node.url != false %}
+          <a class="mdl-navigation__link parent{% if node.url == page.url or page.parent and page.parent == node.path %} is-active{% endif %}" href="{{ node.url | absolute_url }}"{% if node.tab %} target="_blank"{% endif %}>{% if node.menu %}{{ node.menu }}{% else %}{{ node.title }}{% endif %}</a>
+        {% else %}
+          <span class="mdl-navigation__link parent{% if node.url == page.url or page.parent and page.parent == node.path %} is-active{% endif %}">{% if node.menu %}{{ node.menu }}{% else %}{{ node.title }}{% endif %}</span>
+        {% endif %}
+        {% if site.menu_style != 'dropdown' or node.url == page.url or page.parent and page.parent == node.path %}
+          {% for child in sorted_pages %}
+            {% if child.menu != false %}
+              {% if child.menu or child.title %}
+                {% if child.parent %}
+                  {% if child.parent == node.path or child.parent == node.id %}
+                    {% if child.url != false %}
+                      <a class="mdl-navigation__link child{% if child.url == page.url %} is-active{% endif %}" href="{{ child.url | absolute_url }}"{% if child.tab %} target="_blank"{% endif %}>{% if child.menu %}{{ child.menu }}{% else %}{{ child.title }}{% endif %}{% if child.tab %}
+                        <i class="material-icons">open_in_new</i>{% endif %}</a>
+                    {% else %}
+                      <span class="mdl-navigation__link child{% if child.url == page.url %} is-active{% endif %}">{% if child.menu %}{{ child.menu }}{% else %}{{ child.title }}{% endif %}</span>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endunless %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
