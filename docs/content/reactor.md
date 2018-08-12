@@ -1,4 +1,8 @@
-
+---
+layout: page
+title: Constraints Reactor
+weight: 60
+---
 ## Reactor
 
  ![](img/errorDialog.png) **TODO details of constraints processing implementation**

@@ -1,3 +1,8 @@
+---
+layout: page
+title: Code Rules Language
+weight: 30
+---
 ## Code rules language
 
 ![](img/errorDialog.png) **TODO This section should teach how to use the language**
@@ -15,23 +20,23 @@
 
 ### Handler
 
-*Handler* serves two purposes: it declares the constraints that can be used in the *head* of productions in this handler and its extensions, and it  also declares *rule templates*, which are, simply put, procedures applicable to specific concept and (optionally) its subconcepts. 
+*Handler* serves two purposes: it declares the constraints that can be used in the *head* of productions in this handler and its extensions, and it  also declares *rule templates*, which are, simply put, procedures applicable to specific concept and (optionally) its subconcepts.
 
 The aim of rule templates is again twofold: firstly, they may serve as regular «checking» rules, and also, most importantly, they contribute constraint productions. These are created with a DSL that allows mixing of productions and Java code, and can also use template fragments (thus «rule templates»).
 
-The following example is from the experimental *control flow* aspect for baseLanguage. It demonstrates how a production is constructed using a template. A template is enclosed into a pair of `%% … %%` symbols and yields constraints wrapped into special `<% … %>` brackets. In this particular case `write()` constraint is optional and is only added to the body of the production in case the condition is satisfied (a location is written to, only if the local variable has an initialiser). 
+The following example is from the experimental *control flow* aspect for baseLanguage. It demonstrates how a production is constructed using a template. A template is enclosed into a pair of `%% … %%` symbols and yields constraints wrapped into special `<% … %>` brackets. In this particular case `write()` constraint is optional and is only added to the body of the production in case the condition is satisfied (a location is written to, only if the local variable has an initialiser).
 
 ```
-write_localVarDecl matching LocalVariableDeclaration lvd <with subconcepts> <always apply> 
-{ 
-    on start 
-    activate 
-      %% 
-        <% loc(@lvd) %> 
-        if (lvd.initializer.isNotNull) { 
-          <% write(@lvd, @lvd) %> 
-        } 
-      %% 
+write_localVarDecl matching LocalVariableDeclaration lvd <with subconcepts> <always apply>
+{
+    on start
+    activate
+      %%
+        <% loc(@lvd) %>
+        if (lvd.initializer.isNotNull) {
+          <% write(@lvd, @lvd) %>
+        }
+      %%
 }
 ```
 
@@ -39,8 +44,8 @@ A handler is a concept in language `jetbrains.mps.lang.coderules`.
 
 ```
 handler CheckAll extends TypeOf   
- 
-  checkAll() / 0 
+
+  checkAll() / 0
 
   << … >>     
 ```
@@ -51,16 +56,16 @@ Keyword `extends` allows to specify another handler, which is extended by this o
 
 Only declared constraints are allowed to be used in the heads of productions in rule templates. Handler should declare one or more constraints, unless it only uses the constraints from handlers being extended. Constraint declaration consists of   name and arity, which together constitute a *constraint symbol*. Constraint’s arity is fixed.
 
-Rule templates can specify applicable concept, either exactly or including its subconcepts. One can also declare *standalone* templates, which are triggered automatically on every invocation of constraints program. 
+Rule templates can specify applicable concept, either exactly or including its subconcepts. One can also declare *standalone* templates, which are triggered automatically on every invocation of constraints program.
 
 ```
-checkLocalVariable matching VariableDeclaration lvd <with subconcepts> 
-apply if { lvd.initializer.isNotNull; } 
-{ 
-    on <term VariableType, InizrType> 
-      typeOf(@lvd, VariableType), typeOf(@lvd.initializer, InizrType) 
-    activate 
-      convertsTo(InizrType, VariableType) 
+checkLocalVariable matching VariableDeclaration lvd <with subconcepts>
+apply if { lvd.initializer.isNotNull; }
+{
+    on <term VariableType, InizrType>
+      typeOf(@lvd, VariableType), typeOf(@lvd.initializer, InizrType)
+    activate
+      convertsTo(InizrType, VariableType)
 }
 ```
 
@@ -69,12 +74,12 @@ apply if { lvd.initializer.isNotNull; }
 A condition, is specified, is checked before applying the rule.
 
 ```
-hasBound_captureOf <no input> <always apply> 
-{ 
-    on <term CapOfType, CapUBnd, Bnd> 
-      ~hasBound(CapOfType = captureOfType(ubound: CapUBnd), Bnd) 
-    activate 
-      convertsTo(CapUBnd, Bnd) 
+hasBound_captureOf <no input> <always apply>
+{
+    on <term CapOfType, CapUBnd, Bnd>
+      ~hasBound(CapOfType = captureOfType(ubound: CapUBnd), Bnd)
+    activate
+      convertsTo(CapUBnd, Bnd)
 }
 ```
 
@@ -84,14 +89,14 @@ The contents of a rule template is a block of code that gets executed when the t
 
 ![](img/errorDialog.png) **TODO what other features are available aside from constraint productions?**
 
-Constraint productions can be created at any place within the body of a rule template. A production has three main parts called head, guard, and body. The head defines what constraint trigger this production, and it can only contain constraints defined by the handler or one of the handlers it extends. The body can contain any visible constraints, as well as *predicates*. A production must include either the body or the head, no production can omit both. The guard is optional, and it can only contain predicates. 
+Constraint productions can be created at any place within the body of a rule template. A production has three main parts called head, guard, and body. The head defines what constraint trigger this production, and it can only contain constraints defined by the handler or one of the handlers it extends. The body can contain any visible constraints, as well as *predicates*. A production must include either the body or the head, no production can omit both. The guard is optional, and it can only contain predicates.
 
-Both the head and the body can declare *logical variables*. By default a logical variable ranges over *terms*, although any POJO may be serve as a value. 
+Both the head and the body can declare *logical variables*. By default a logical variable ranges over *terms*, although any POJO may be serve as a value.
 
 ```
-    on <term S, T> 
-        ~compatibleWith(S, T) 
-      activate 
+    on <term S, T>
+        ~compatibleWith(S, T)
+      activate
         convertsTo(S, T)
 ```
 
@@ -99,17 +104,17 @@ Both the head and the body can declare *logical variables*. By default a logical
 
 A production with an empty head, that is not declaring any constraints to serve as the input, is considered an *automatic* production and is triggered automatically on start of constraints program execution.
 
-In production’s head constraints can be declared as either *kept* or *replaced*. Briefly put, the constraints that are *kept* are left alone after a production is fired, whereas the *replaced* ones are discarded after the head has been matched. Replaced constraints are marked with tilde `~`. 
+In production’s head constraints can be declared as either *kept* or *replaced*. Briefly put, the constraints that are *kept* are left alone after a production is fired, whereas the *replaced* ones are discarded after the head has been matched. Replaced constraints are marked with tilde `~`.
 
 A production is triggered when there are constraint occurrences matching all constraints in production’s head. When a constraint with logical variable as one of its arguments is matched, that variable becomes bound to the corresponding argument of the matching occurrence. The scope of this binding is the guard and the body of the production.
 
 Pattern matching is also possible with terms, optionally containing logical variables, serving as patterns. For this to work, a logical variable that serves as a constraint argument should have a pattern attached.  
 
 ```
-    on <term Capture, LBnd, From> 
-      ~convertsTo(From, Capture = captureOfType(lbound: LBnd)) 
-    activate 
-      convertsTo(From, LBnd) 
+    on <term Capture, LBnd, From>
+      ~convertsTo(From, Capture = captureOfType(lbound: LBnd))
+    activate
+      convertsTo(From, LBnd)
 ```
 
 > (production with pattern matching)
@@ -117,38 +122,38 @@ Pattern matching is also possible with terms, optionally containing logical vari
 Everywhere where locations in the source code (model) must be referenced, node references are used, which are introduced with the `@` symbol.
 
 ```
-    on <term Condition, term BoolType> 
-      typeOf(@ifs.condition, Condition) 
-    activate 
-      BoolType := call booleanType<>, convertsTo(Condition, BoolType) 
+    on <term Condition, term BoolType>
+      typeOf(@ifs.condition, Condition)
+    activate
+      BoolType := call booleanType<>, convertsTo(Condition, BoolType)
 ```
 
 > (example of a constraint argument referring to a location)
 
-Whereas the production’s head can only contain constraints, there are also other logical clauses that are used in the guard and the body. 
+Whereas the production’s head can only contain constraints, there are also other logical clauses that are used in the guard and the body.
 
 A *predicate* is a built-in construct that serves two purposes: when used in the guard, it serves to query if a condition is satisfied, and when used in the body it asserts this condition. An example is `unifies` predicate displayed as `=`, which tests if its arguments can be unified. There are also predicates that can only be queries, such as `isFree()` or `isBound()` testing if a logical variable is free or has value assigned.
 
 Production’s guard can only contain predicates, and the body can contain both constraints and predicates.  
 
 ```
-    on <term S, T> 
-        ~containedIn(S, T) 
-      when 
-        isBound(S), isBound(T), S = T 
-      activate 
+    on <term S, T>
+        ~containedIn(S, T)
+      when
+        isBound(S), isBound(T), S = T
+      activate
         S = T
-``` 
+```
 
 > (`unifies` predicate used in the guard and in the body)
 
-Arbitrary Java code can be called with `eval()` predicate. It accepts either an expression of `boolean` type, in which case it can be used in the guard, or expression of any type, such as static method call, which can be inserted in the body. 
+Arbitrary Java code can be called with `eval()` predicate. It accepts either an expression of `boolean` type, in which case it can be used in the guard, or expression of any type, such as static method call, which can be inserted in the body.
 
 ```
-    on <node<> Node, term Type> 
-      recoverAll(), typeOf(@op, Type) 
-    activate 
-      recover(Node, Type), eval(op._type_.set(valueOf(Node))) 
+    on <node<> Node, term Type>
+      recoverAll(), typeOf(@op, Type)
+    activate
+      recover(Node, Type), eval(op._type_.set(valueOf(Node)))
 ```
 
 > (example of using `eval()` predicate)
@@ -163,22 +168,22 @@ Arbitrary Java code can be called with `eval()` predicate. It accepts either an 
 
 ![](img/errorDialog.png) **TODO**
 
-Query is the entry point to a constraint program. The only purpose of a query is to activate constraints that trigger computation defined by productions created by handlers. 
+Query is the entry point to a constraint program. The only purpose of a query is to activate constraints that trigger computation defined by productions created by handlers.
 
 ```
-query Typecheck 
-parameter: << ... >> 
- 
-kind: TypecheckingQueryKind.TYPECHECK 
- 
-  check 
-   
-    on start 
-    activate 
+query Typecheck
+parameter: << ... >>
+
+kind: TypecheckingQueryKind.TYPECHECK
+
+  check
+
+    on start
+    activate
       checkAll(), recoverAll()   
 ```
 
-A query is discovered by the API through its *kind*. Query kind specifies parameters that can be passed to it. The body of a query can contain same constraints and predicates as regular constraints production. 
+A query is discovered by the API through its *kind*. Query kind specifies parameters that can be passed to it. The body of a query can contain same constraints and predicates as regular constraints production.
 
 #### Macro table
 
@@ -188,24 +193,24 @@ Macros allow to have parameterised constructors for terms. They can either creat
 
 This feature may come in handy when data types used by the constraint program are complicated and include many levels of containment. For example, type checking with *code rules* relies on types being terms, which means types can contain other types.
 
-Macros are defined in a root `Macro table`. 
+Macros are defined in a root `Macro table`.
 
 ```
-macro table Types 
-  
-macro classifierType expands node<ClassifierType> classifierType 
+macro table Types
+
+macro classifierType expands node<ClassifierType> classifierType
   node<Classifier> cls1 = classifierType.classifier;  
-  nlist<> arguments = classifierType.parameter; 
-   
-  produce <term DefaultParams[cls1.typeVariableDeclaration.size]> 
+  nlist<> arguments = classifierType.parameter;
+
+  produce <term DefaultParams[cls1.typeVariableDeclaration.size]>
     %%
-            … 
+            …
     %%
-``` 
+```
 
 > (macro table with a macro definition)
 
-Macro *expands* instances of specified concept. This means the macro can be invoked on an instance of this concept. In case macro is *expanded*, its parameters are automatically initialised to appropriate values. Otherwise, a macro can be directly *called* with parameters specified explicitly. 
+Macro *expands* instances of specified concept. This means the macro can be invoked on an instance of this concept. In case macro is *expanded*, its parameters are automatically initialised to appropriate values. Otherwise, a macro can be directly *called* with parameters specified explicitly.
 
 ![](img/errorDialog.png) **TODO expand/call from production body**
 
@@ -220,17 +225,17 @@ DataForm table contains *data form* declarations, a.k.a. *terms*. A term is a si
 Data form is defined by its symbol and its features, which can be a POJO, a child data form, or a list of data forms. A feature may have a default value provider. A data form extending another data form adds new features or provides default values for existing ones.
 
 ```
-classifierType ( 
+classifierType (
   value classifier  
   value kind  
-  list parameter 
+  list parameter
 )
 ```
 
 ```
-longType : primType ( 
+longType : primType (
   final value kind = concept/LongType/  
-  value val = 0L 
+  value val = 0L
 )
 ```
 
