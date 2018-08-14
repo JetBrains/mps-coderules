@@ -1,4 +1,13 @@
-### Handler  
+# TODO Language 
+
+## Intro
+- [ ] templates are usual for MPS
+- [ ] applicable to concept/+subconcepts
+- [ ] standalone
+- [ ] can serve as «checking rule»
+- [ ] produce productions to be evaluated
+
+## Handler  
 - [x] create handler, optionally extend another handler
 - [x] declare constraints
 - [ ] define rule template
@@ -25,13 +34,13 @@
         - [ ] **using code templates** `%% … %%`
     - [ ] **alternative body**
 
-### Query
+## Query
 - [x] Purpose of a query
 - [x] Query kind
 - [x] Parameters
 - [x] Executed block
 
-### Macro table
+## Macro table
  - [x] applicable to a node of specific concept
      - [x] macro is not applied automatically
  - [x] macro parameters
@@ -48,7 +57,7 @@
      - [ ] context parameters
      - [ ] specifying parameters using «with» statement
 
-### Term table
+## Term table
 - [x] purpose of this root
 - [ ] what is a term
     - [x] what are features

@@ -1,0 +1,62 @@
+# TODO Constraints Processing
+
+- [ ] intro
+    - [ ] committed choice
+    - [ ] embeddable
+    - [ ] call back to Java
+    - [ ] 
+- [x] Terms
+    - [x] abstract data structure
+    - [x] keeping arbitrary POJO
+    - [x] unification
+        - [ ] **example of finding MGU with unification**
+- [x] Logical variables
+    - [x] monotonic
+    - [x] Terms with logical vars
+    - [x] unification binds logicals
+    - [x] logicals are observable
+        - [x] parent observer
+        - [x] value observer
+- [x] Constraints and predicates
+    - [x] What is a constraint. 
+        - [x] constraint lifecycle
+        - [ ] **constraint store**
+    - [x] Constraint arguments.
+        - [x] POJO
+        - [x] Term
+        - [x] Logical vars
+        - [ ] **constraint observes its arguments**
+    - [x] what is a predicate
+        - [x] tell / ask
+        - [ ] **unification example**
+            - [ ] ask - test if unification succeeds (logical context)
+            - [ ] tell - unify terms, assign logicals, re-activate constraints
+- [ ] Constraint production (constraint rule)
+    - [x] kept constraints vs. replaced constraints
+        - [x] simplification/propagation/simpagation
+    - [ ] condition for firing a production
+        - [ ] on start - how it’s actually implemented (main)
+    - [ ] automatic binding of logicals on firing
+        - [ ] pattern matching
+    - [ ] guard condition
+        - [ ] predicates
+            - [ ] arbitrary java code
+    - [ ] body
+        - [ ] predicates
+            - [ ] arbitrary java code
+        - [ ] alternative body
+    - [ ] handlers
+        - [ ] order of productions within a handler
+- [ ] Processing a constraint
+    - [ ] one active constraint at any moment
+    - [ ] productions selected top-to-bottom
+    - [ ] aux constraints from store
+    - [ ] committed choice
+- [ ] Extensions (differences to CHR)
+    - [ ] partial rollback (alternative body)
+    - [ ] observable logicals reactivate constraints
+    - [ ] matched head binds logicals
+    - [ ] 
+- [ ] Semantics of constraints program
+    - [ ] **classical semantics**?
+    - [x] linear logic semantics

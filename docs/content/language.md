@@ -3,9 +3,11 @@ layout: page
 title: Code Rules Language
 weight: 30
 ---
-## Code rules language
+# Code Rules Language
 
 ![](img/errorDialog.png) **TODO This section should teach how to use the language**
+
+Root concepts should be contained by a language aspect model importing the language `jetbrains.mps.lang.coderules`. For example, language `jetbrains.mps.lang.typechecking` defines aspect *types* to contain code rules related to type checking.
 
 ### Root concepts
 

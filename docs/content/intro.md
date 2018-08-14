@@ -3,7 +3,7 @@ layout: page
 title: Introduction
 weight: 10
 ---
-## Introduction
+# Introduction
 
 This project is an attempt to bring logic programming to JetBrains MPS[^mps] to facilitate tasks related to source code (model) analysis, and which require logical inference of some kind to operate. Examples include type checking and control flow (data flow).
 

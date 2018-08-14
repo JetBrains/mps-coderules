@@ -11,3 +11,5 @@
 /evaluating.md
 
 /reactor.md
+
+/challenges.md
