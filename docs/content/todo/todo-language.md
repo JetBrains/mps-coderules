@@ -46,7 +46,7 @@
  - [x] macro parameters
      - [x] parameter initialiser
  - [ ] how macro can be called
-     - [ ] **special predicates «expand» and «call»**
+     - [x] **special predicates «expand» and «call»**
  - [x] What is the meaning of macro body
  - [ ] referring logical variables 
      - [x] «macroLogical» expression
@@ -69,3 +69,4 @@
         - [ ] specify subtterms
         - [ ] specify values
     - [ ] using terms as patterns
+    - [ ] **copy operation**!
