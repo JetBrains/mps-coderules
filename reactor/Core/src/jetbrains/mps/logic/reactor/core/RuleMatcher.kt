@@ -184,13 +184,16 @@ class RuleMatcher(val rule: Rule) {
         private fun matchLogical(ptn: Logical<*>,
                                  trg: Any?,
                                  subst: Subst): Subst? =
-            if (ptn.isBound) {
-                if (trg is Logical<*>) matchAny(ptn.value(), trg.findRoot().value(), subst) else null
-
-            } else {
-                if (trg is Logical<*> && ptn === trg.findRoot()) subst else null     // reference equality!
+            when {
+                trg is Logical<*>   -> when {
+                    ptn.isBound                         -> matchAny(ptn.findRoot().value(), trg.findRoot().value(), subst)
+                    ptn.findRoot() === trg.findRoot()   -> subst     // reference equality
+                    else                                -> null
+                }
+                ptn.isBound         -> matchAny(ptn.findRoot().value(), trg, subst)
+                else                -> null
             }
-
+        
         private fun resolve(obj: Any?): Any? =
             when (obj) {
                 is LogicalOwner -> if (obj.logical().isBound) resolve(obj.logical()) else obj

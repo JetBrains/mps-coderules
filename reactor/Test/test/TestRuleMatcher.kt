@@ -330,6 +330,33 @@ class TestRuleMatcher {
         }
     }
 
+    @Test
+    fun testTermRefLogicalMetaLogical3() {
+        val (X, Y) = metaLogical<Term>("X", "Y")
+        val yLogical = Y.logical()
+        with(programWithRules(
+            rule("rule1",
+                headReplaced(
+                    constraint("foo", term("f", ref(metaVar(X)), term("g"))),
+                    constraint("bar", term("h", term("k"), metaVar(X)))
+                ),
+                body(
+                    constraint("qux")
+                ))))
+        {
+            with(RuleMatcher(rules.first()).fringe()) {
+
+                expand(occurrence("foo", term("f", logicalVar(yLogical), term("g")))) }.apply {
+                matches().size shouldBe 0                                                                }.run {
+
+                yLogical.set(parseTerm("p{q r}"))
+                val termh = logicalVar(yLogical)
+
+                expand(occurrence("bar", parseTerm("h{k p{q r}}")))         }.apply {
+                matches().size shouldBe 1
+            }
+        }
+    }
 
     @Test
     fun testTermLogical() {
