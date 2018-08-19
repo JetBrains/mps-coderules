@@ -4,6 +4,8 @@ This is a demo of type checking simply typed lambda calculus using constraint ru
 
 This project is made with [JetBrains MPS](https://www.jetbrains.com/mps/) using *coderules* experimental extension.
 
+Details of implementation can be found in the [article](https://github.com/fisakov/typechecking-lambdacalc) available online.
+
 ### Installation
 
 The code in this project relies on *coderules* languages and solutions to be available, either as a project library or as a plugin. There are two possibilities to install coderules:
