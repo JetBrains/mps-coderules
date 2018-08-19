@@ -3,6 +3,9 @@
 <!-- Copyright (c) 2017 James King -->
 <!-- MIT License https://opensource.org/licenses/MIT -->
 {% endcomment %}
+{% if site.google_analytics and jekyll.environment == 'production' %}
+{% include google-analytics.html %}
+{% endif %}
 <meta charset="utf-8"/>
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

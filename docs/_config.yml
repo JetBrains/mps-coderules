@@ -14,6 +14,8 @@ copyright_url: "https://jetbrains.com"
 homepage: "https://jetbrains.com/mps"
 homepage_title: "JetBrains MPS"
 github-project: fisakov/mps-coderules
+# Google Analytics
+google_analytics: UA-124237176-1
 
 # Build settings
 markdown: kramdown
