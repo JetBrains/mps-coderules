@@ -110,9 +110,9 @@ Here are samples of proofs:
 
 ![An example of a proof in First Order Logic](img/sample-proof-firstorder.png)
  
-The proof is validated using experimental type checking with constraint rules, which is a new feature being developed for MPS. The sentences that constitute judgements in the proof are represented as *terms* in the internal language of constraint rules. The inference rules use *terms unification* to match sentences and extract sub-sentences. Every judgement is assigned a conclusion and, if the judgement is proved to be correct, it is marked as valid. 
+The proof is validated using *code rules* — an experimental feature being developed for MPS. The sentences that constitute judgements in the proof are represented as *terms* in the internal language of code rules. The inference rules use *terms unification* to match sentences and extract sub-sentences. Every judgement is assigned a conclusion and, if the judgement is proved to be correct, it is marked as valid. 
 
-Here is a sample of an inference rule written in the language of constraint rules processing.
+Here is a sample of an inference rule.
 
 ![An example of inference rule](img/sample-rule.png)
 
@@ -127,7 +127,7 @@ The result of the rule’s activation is simply that the judgement `ne` is marke
 
 ### Inner workings
 
-Rule templates are applied to each of the reasoning nodes and produce a constraint rules program, that is then evaluated. First the automatic rules, the rules that are always generated, are triggered, which activate constraint `conclusion` binding reasoning to the propositional term corresponding to the sentence contained in the reasoning. 
+Rule templates are applied to each of the reasoning nodes and produce a constraints program, that is then evaluated. First the automatic rules, the rules that are always generated, are triggered, which activate constraint `conclusion` binding reasoning to the propositional term corresponding to the sentence contained in the reasoning. 
 
 #### Propositional Logic rules
 
@@ -137,13 +137,13 @@ Constraint `valid` signifies the validity of a reasoning. Premise and Assumption
 
 ![](img/auto_valid.png)
 
-Activated constraints `conclusion` and `valid` trigger the rest of the constraint rules, which correspond to inference rules. 
+Activated constraints `conclusion` and `valid` trigger the rest of the constraint productions, which correspond to inference rules. 
 
 The formal definition of And Introduction and And Elimination inference rules are the following. 
 
 ![And Introduction and And Elimination](img/and_rules.png)
 
-For simplicity, in this sample project we restrict ourselves to only two conjunctions, but we should account for premises being enumerated in any order. Here are the two inference rules for conjunction in the language of constraint rules. 
+For simplicity, in this sample project we restrict ourselves to only two conjunctions, but we should account for premises being enumerated in any order. Here are the two inference rules for conjunction in the language of code rules. 
 
 ![And Introduction inference rule](img/and_intro.png)
 ![And Elimination inference rule](img/and_elim.png)
@@ -191,7 +191,7 @@ There are two versions of both Biconditional Introduction and Biconditional Elim
 ![Universal Introduction inference rule](img/forall_intro.png)
 ![Universal Elimination inference rule](img/forall_elim.png)
 
-Structure of both inference rules follows strictly the definitions above. Since there are certain conditions that must be met for rules to be applicable, these are extracted in boolean variables that are checked with `assert()` constraint, which is built-in into the language of constraint rules. If assertion fails, the alternative branch is triggered, which assigns an error message to the judgement.
+Structure of both inference rules follows strictly the definitions above. Since there are certain conditions that must be met for rules to be applicable, these are extracted in boolean variables that are checked with `assert()` constraint, which is built-in into the language of code rules. If assertion fails, the alternative branch is triggered, which assigns an error message to the judgement.
 
 An important detail is the presence of `when` clause, which tests that the corresponding terms in premises and the conclusion are matched *after* a successful substitution. The construct `subst(TERM [MATCH -> REPLACEMENT])` serves the purpose of producing the term that is the result of a substitution. 
 
@@ -224,7 +224,7 @@ The proof’s goal is unified with the last **top-level** reasoning. Since reaso
 
 ### Type checking
 
-The actual type checking is trivial. The first stage of the constraint rules program does all the job and produces `valid` constraints, which are to be analysed in the second stage. All reasonings are checked in the second stage, and the reasonings that don’t have `valid` constraint are marked with error. 
+The actual type checking is trivial. The first stage of the constraints program does all the job and produces `valid` constraints, which are to be analysed in the second stage. All reasonings are checked in the second stage, and the reasonings that don’t have `valid` constraint are marked with error. 
 
 There is only one type «OK». Only the goal gets assigned a type in case it marked as `valid`, otherwise an error is produced. 
 
