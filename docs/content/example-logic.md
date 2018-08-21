@@ -15,7 +15,7 @@ The four languages in this example define the structure of proofs (samples.fitch
 
 The proof structure allows for building hierarchical proof trees, which are necessary for Implication Introduction rule, and interprets the leafs as reasonings, which can be either assumptions or judgements. The beginning of the proof contains all the premises, and the final top-level node is the goal. 
 
-![](img/ex-logic-contrapositive.png)  
+![](img/ex-logic-contrapositive-450.png)  
 _(example of proof in Fitch system)_
 
 Base inference rules are defined by `samples.fitch.propositionalLogic` language, with two other extending the set of rules appropriately. Herbrand logic extends this language with relations, functions, and quantifiers, whereas First Order logic adds equality. Each of the logics also define their own root proof concept. 
@@ -27,7 +27,7 @@ Each reasoning has a *conclusion*, which is expanded to term and assigned to the
 - the rule’s conclusion matches the required form, and
 - all the bases are *valid*.
 
-![](img/ex-logic-andintro.png)  
+![](img/ex-logic-andintro-650.png)  
 _(example of an inference rule)_
 
 The rule’s body activates `valid()` constraint, therefore only reasonings that have met the requirement are marked as valid. Check handler marks reasonings that weren’t validated as erroneous. 

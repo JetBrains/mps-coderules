@@ -70,3 +70,7 @@
         - [ ] specify values
     - [ ] using terms as patterns
     - [ ] **copy operation**!
+- [ ] constructing term
+    - [ ] list term
+    - [ ] dataform concept and subconcepts
+    - [ ] splice
