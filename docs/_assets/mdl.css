@@ -57,6 +57,9 @@
   background-color: #424242 !important;
 }
 
+@media print {
+    .content .printed-page { page-break-after: always; }
+}
 
 .content{
   max-width: 800px;

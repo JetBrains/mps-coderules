@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="mdl-cell mdl-cell--bottom mdl-cell--1-col back">
+    </div>
+    <div class="mdl-cell mdl-cell--10-col">
+      <div class="page-content">
+        <div class="content">
+          <span class="mdl-layout-title">
+            <h1 id="title">
+              {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
+            </h1>
+          </span>
+          {{ content }}
+          {% assign sorted_pages = site.pages | sort: 'weight' %}
+          {% for p in sorted_pages %}
+            {% if p.menu != false and p.weight != nil %}
+              <div class="printed-page">
+                {{ p.content | markdownify }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--bottom mdl-cell--1-col forward">
+    </div>
+  </body>
+</html>

@@ -1,7 +1,12 @@
 - title: "Examples"
   url: false
-  weight: 800
+  weight: 500
   id: examples
+
+- title: "All on Single Page"
+  url: "content/allpages.html"
+  weight: 890
+  tab: true
 
 - title: "Links"
   url: false

@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.{{ mdl_colors }}.min.css" />
 <link rel="stylesheet" href="{{ '/_assets/mdl.css' | absolute_url }}"/>
 <link rel="stylesheet" href="{{ '/_assets/syntax.css' | absolute_url }}"/>
-<title>{{ page.title }} | {{ site.title }}</title>
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
