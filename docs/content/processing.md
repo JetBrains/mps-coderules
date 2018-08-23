@@ -1,11 +1,12 @@
 ---
 layout: page
-title: Processing Constraints
+title: Constraints Processing System
+menu: Processing Constraints
 weight: 50
 ---
-# Constraints processing system
+# Constraints Processing System
 
-![](img/errorDialog.png) **TODO Discuss how constraints processing works (abstractly)**
+***Discuss how constraints processing works (abstractly)***
 
 - Discuss semantics of constraints processing.   
 - Loosely follows CHR semantics.  
@@ -22,8 +23,7 @@ Constraints processing relies heavily on the use of terms as data type. Abstract
 
   node(name("List"), arg(node(name("Int"), arg())))
 ```
-
-> (examples of terms)
+_(examples of terms)_
 
 A term variable ranges over terms. A substitution is a mapping of variables to terms. Unification searches for a substitution $\sigma$, such that for two terms being unified, $f$ and $g$, the following holds: $\sigma f = \sigma g$.
 
@@ -51,8 +51,7 @@ Logical variables serve to identify an object that is to be determined in the fu
   assertTrue(Y.find() == X)
   assertTrue(Y.find().value() == "foo")
 ```
-
-> (example of using logical variables)
+_(example of using logical variables)_
 
 Combining logical variables and terms gives a very powerful instrument. A term variable can also be a logical variable, so that when two terms are unified, the substitution has the calculated value for this variable.
 
@@ -69,7 +68,6 @@ Combining logical variables and terms gives a very powerful instrument. A term v
   assertTrue(X.find().value() == term("h"))
 ```
 
-
 ## Constraints and predicates
 
 Constraints are simple tuples with fixed arity and a symbol attached. In some respects constraints correspond to rows in a database table. Logically they can be understood as facts, relations, or propositions. An argument to a constraint can be a term, a logical variable, or any POJO, except another constraint. 
@@ -80,23 +78,22 @@ The following figure shows the lifecycle of a constraint. The big rounded square
 
 A successfully fired production, which declares one or more of its head constraints to be «replaced», causes these to be terminated. 
 
-![](img/constraint-lifecycle.svg)
+![](img/constraint-lifecycle.svg)  
+_(lifecycle of a constraint)_
 
-To illustrate the idea of using *stored* constraints to fill vacant positions when matching a production, let’s consider an example…**TODO**
+To illustrate the idea of using *stored* constraints to fill vacant positions when matching a production, let’s consider an example…***unfinished***
 
-![](img/errorDialog.png) **TODO example of multi-head production**
+***Example of multi-head production***
 
 Whereas a constraint serves to embody a relation among objects simply by being a witness of such a relation, a *predicate*[^pred] helps to establish a relation or check if a relation exists by means of executing a procedure. Same is true for facts and propositions.
 
-![](img/errorDialog.png) **TODO example of a predicate**
+***Example of a predicate***
 
 Predicates must implement ask/tell protocol. If a predicate is invoked from production’s guard clause, it represents a query (ask), and if it is invoked from the body, it is an assertion (tell). 
 
-![](img/errorDialog.png) **TODO example of ask/tell**
+***Example of ask/tell***
 
 ## Constraint production (rule)
-
-![](img/errorDialog.png) **TODO**
 
 Constraints program is built from productions. Each production has three parts: the part that is responsible for triggering the production, called «head», the part that checks for pre-conditions, called «guard», and the part that is evaluated when production is fired, which is called «body». 
 
@@ -115,8 +112,7 @@ Guard is a conjunction of predicates, which are checked before a match of availa
 
 Body is a conjunction of predicates and constraint activations. When evaluated, each body clause is evaluated in order, with predicates serving as *assertions* and constraint activations producing new constraints. Each newly activated constraint is checked against any productions that can be fired, and so on. 
 
-
-![](img/errorDialog.png) **TODO alternative body**
+***Alternative body***
 
 ## Semantics of constraint program
 

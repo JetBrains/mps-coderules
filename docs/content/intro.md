@@ -9,9 +9,8 @@ This project is an attempt to bring logic programming to JetBrains MPS[^mps] to 
 
 Type system in MPS is traditionally defined with help of type checking rules, in particular inference rules, which allow to make logical statements about types, such as «*is a*» or «*is a subtype of*», enabling the internal engine to infer the specific type based on a collection of such statements, referred to as type equations and inequalities.
 
-```
-typeOf(assignment.right) :<=: typeof(assignment.left)
-```
+![](img/intro-assignment-550.png)  
+_(statement in `j.m.lang.typesystem` language)_
 
 Albeit brief and concise, this notation leaves many questions unanswered when it comes to how exactly the system of equations and inequalities is processed. In other words, type inference is — for the most part — left up to the internal engine to decide. This limits the options for the author of type system to control how exactly subtyping is defined, and what happens with type parameters when computing sub- or supertype. Java, for instance, has several kinds of «conversions» with clearly defined rules controlling how types are transformed and what types are compatible in certain situations. All of this has to be emulated with «strong» and «weak» subtyping in MPS.  
 
@@ -19,14 +18,8 @@ Another example is the all too well known *when_concrete*, which is basically a 
 
 Consider how the type of a method call is calculated: the details aside, in essence *when_concrete* has to be applied to the type of each argument. Then we should either turn to inequalities and rely on the inference engine, or analyse the type structure and run closing computation when the *last* unknown type is finalised.
 
-```
-foreach arg in methodCall.arguments {
-  when_concrete (typeof(arg) as A) {
-    // analyse the type of arg, such as extract its parameters, etc
-    // when all argument types are known, infer the type of call
-  }
-}
-```
+![](img/intro-methodcall-550.png)  
+_(example of processing method arguments)_
 
 Code rules may have a solution to these and other issues. The core idea is to employ a **production system** to process facts and relations, collectively known as constraints, with the user being in full control of what productions to generate for given source code (model). With the ability to use logical variables to represent unknowns, and with support for term algebra and unification, it is pretty straightforward to define the core of type inference or similar framework without having to rely on opaque implementation and pre-defined relations.
 
@@ -41,5 +34,5 @@ A framework for evaluating a constraints program, enabling reporting of problems
 Finally, an embedded engine capable of processing constraints, which accepts a list of productions, an initial active constraint, and, optionally, a store of inactive constraints, and yields an updated store after all matched productions have been fired.
 
 
-[^mps]: [https://jetbrains.com/mps](https://jetbrains.com/mps)
+[^mps]: Meta Programming System [https://jetbrains.com/mps](https://jetbrains.com/mps)
 [^chr]: Constraint Handling Rules [http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/constraint-handling-rules-book.html](http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/constraint-handling-rules-book.html)

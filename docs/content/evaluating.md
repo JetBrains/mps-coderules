@@ -5,10 +5,11 @@ weight: 40
 ---
 # Evaluating Code Rules
 
- ![](img/errorDialog.png) **TODO two stage process**
+***Two stage process***
  
 ## Aspects
- ![](img/errorDialog.png) **TODO aspects**
+
+***Aspects***
 
 ## Applying rule templates
 
@@ -24,17 +25,18 @@ Generated productions constitute the constraints program, which is then executed
 
 In the second stage the constraints program is run. To begin execution, a query is selected, which contains the list of constraints to be activated. Query can be viewed as a regular production, which is triggered  unconditionally right after all headless productions (marked as «on start») have fired.
 
-![](img/errorDialog.png) **TODO order of productions firing**
+***Order of productions firing***
+
 Order of productions fired: 
  - on start 
  - query
 
 While constraints program is run, it is allowed to report feedback, such as assign calculated types or report problems, using special predicates. 
 
-![](img/errorDialog.png) **TODO feedback predicates example**
+***Feedback predicates example***
 
 Failures during evaluation are caught with the help of alternative body branches, where those are provided. An uncaught failure terminates program execution and is reported to the user.
 
 ## Activation trace view
 
- ![](img/errorDialog.png) **TODO activation trace view**
+***Activation trace view***

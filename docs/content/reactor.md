@@ -6,7 +6,7 @@ weight: 55
 ---
 # Constraints Reactor
 
- ![](img/errorDialog.png) **TODO details of constraints processing implementation**
+***Details of constraints processing implementation***
 
 Constraints reactor is a small library written in Kotlin and Java, which implements the extended semantics of constraints processing. Its main features are:
     
