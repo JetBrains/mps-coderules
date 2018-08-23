@@ -4,6 +4,7 @@ title: Constraints Processing System
 menu: Processing Constraints
 weight: 50
 ---
+
 # Constraints Processing System
 
 ***Discuss how constraints processing works (abstractly)***
@@ -70,13 +71,13 @@ Combining logical variables and terms gives a very powerful instrument. A term v
 
 ## Constraints and predicates
 
-Constraints are simple tuples with fixed arity and a symbol attached. In some respects constraints correspond to rows in a database table. Logically they can be understood as facts, relations, or propositions. An argument to a constraint can be a term, a logical variable, or any POJO, except another constraint. 
+Constraints are simple tuples with fixed arity and a symbol attached. In some respects constraints correspond to rows in a database table. Logically they can be understood as facts, relations, or propositions. An argument to a constraint can be a term, a logical variable, or any POJO, except another constraint.
 
 Constraints are activated from production’s body and stay active until there are no possible matches with productions’s heads. If a constraint is not discarded by a production, it is stored for future use. Stored constraints represent the program’s state.
 
-The following figure shows the lifecycle of a constraint. The big rounded square in the middle contains the states, in which a constraint is considered «alive»: it can be either «active» or «stored», but available for filling up vacant positions in a production’s head. A stored constraint can be reactivated if one of its arguments changes, such as when a logical variable becomes ground. 
+The following figure shows the lifecycle of a constraint. The big rounded square in the middle contains the states, in which a constraint is considered «alive»: it can be either «active» or «stored», but available for filling up vacant positions in a production’s head. A stored constraint can be reactivated if one of its arguments changes, such as when a logical variable becomes ground.
 
-A successfully fired production, which declares one or more of its head constraints to be «replaced», causes these to be terminated. 
+A successfully fired production, which declares one or more of its head constraints to be «replaced», causes these to be terminated.
 
 ![](img/constraint-lifecycle.svg)  
 _(lifecycle of a constraint)_
@@ -89,15 +90,15 @@ Whereas a constraint serves to embody a relation among objects simply by being a
 
 ***Example of a predicate***
 
-Predicates must implement ask/tell protocol. If a predicate is invoked from production’s guard clause, it represents a query (ask), and if it is invoked from the body, it is an assertion (tell). 
+Predicates must implement ask/tell protocol. If a predicate is invoked from production’s guard clause, it represents a query (ask), and if it is invoked from the body, it is an assertion (tell).
 
 ***Example of ask/tell***
 
 ## Constraint production (rule)
 
-Constraints program is built from productions. Each production has three parts: the part that is responsible for triggering the production, called «head», the part that checks for pre-conditions, called «guard», and the part that is evaluated when production is fired, which is called «body». 
+Constraints program is built from productions. Each production has three parts: the part that is responsible for triggering the production, called «head», the part that checks for pre-conditions, called «guard», and the part that is evaluated when production is fired, which is called «body».
 
-Head is a set of constraints which are all required to be alive in order for production to fire. This set is divided into «kept» part and «replaced» part, the latter containing constraints that are to be discarded as soon as the production fires. 
+Head is a set of constraints which are all required to be alive in order for production to fire. This set is divided into «kept» part and «replaced» part, the latter containing constraints that are to be discarded as soon as the production fires.
 
 There is some terminology inherited from CHR that can be useful when discussing the kinds of productions.
 
@@ -110,7 +111,7 @@ There is some terminology inherited from CHR that can be useful when discussing 
 
 Guard is a conjunction of predicates, which are checked before a match of available constraints with the production’s head is considered successful. Predicates in a guard are *queried*.
 
-Body is a conjunction of predicates and constraint activations. When evaluated, each body clause is evaluated in order, with predicates serving as *assertions* and constraint activations producing new constraints. Each newly activated constraint is checked against any productions that can be fired, and so on. 
+Body is a conjunction of predicates and constraint activations. When evaluated, each body clause is evaluated in order, with predicates serving as *assertions* and constraint activations producing new constraints. Each newly activated constraint is checked against any productions that can be fired, and so on.
 
 ***Alternative body***
 
@@ -118,18 +119,18 @@ Body is a conjunction of predicates and constraint activations. When evaluated, 
 
 The paper by Betz and Frühwirth[^lls] gives an excellent tretise on semantics of CHR using *linear logic*. Since our constraints processing system is based on CHR, this semantics is valid for it also.
 
-Linear logic abandons boolean values and replaces them with consumable resources. Consequently, it introduces its own set of connectives, from which we are interested only in the following: $!,\otimes,\multimap$. The *multiplicative conjunction* $\otimes$ combines two or more resources that are all available at the same time. The symbol $!$ (*of course*) marks a resource that can’t be exhausted. And instead of implication $\rightarrow$ one uses $\multimap$ symbol, the meaning of which is a transformation of one resource to another. The formula $A \multimap B$ is read: «consuming $A$, produce $B$ », that is given a resource $A$, we can assume $B$, but $A$ can no longer be used. 
+Linear logic abandons boolean values and replaces them with consumable resources. Consequently, it introduces its own set of connectives, from which we are interested only in the following: $!,\otimes,\multimap$. The *multiplicative conjunction* $\otimes$ combines two or more resources that are all available at the same time. The symbol $!$ (*of course*) marks a resource that can’t be exhausted. And instead of implication $\rightarrow$ one uses $\multimap$ symbol, the meaning of which is a transformation of one resource to another. The formula $A \multimap B$ is read: «consuming $A$, produce $B$ », that is given a resource $A$, we can assume $B$, but $A$ can no longer be used.
 
 Simplification is represented by a proposition stating that from valid guard condition $C$, which can be reused, we can imply the following: given the set of constraints $E$ matching the production’s left-hand side, we can find such substitution $\sigma$, such that we can now assume the set of constraints produced from production’s body: $\sigma G$. All free variables in this proposition are universally quantified and the proposition itself can be reused infinitely.
 
-\\[  (E \Leftrightarrow C | G)^L := 
-         !\forall((!C^L) \multimap 
+\\[  (E \Leftrightarrow C | G)^L :=
+         !\forall((!C^L) \multimap
              (E^L \multimap \exists\bar{y}G^L)) \\]
 
-Propagation is different from simplification in that the set of constraints $E$, which triggered the production, is made available together with the constraints produced by the body, so the constraints in $E$ are not «consumed». 
+Propagation is different from simplification in that the set of constraints $E$, which triggered the production, is made available together with the constraints produced by the body, so the constraints in $E$ are not «consumed».
 
-\\[  (E \Rightarrow C | G)^L := 
-         !\forall((!C^L) \multimap 
+\\[  (E \Rightarrow C | G)^L :=
+         !\forall((!C^L) \multimap
              (E^L \multimap E^L\otimes\exists\bar{y}G^L)) \\]
 
 

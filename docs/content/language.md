@@ -3,6 +3,7 @@ layout: page
 title: Code Rules Language
 weight: 30
 ---
+
 # Code Rules Language
 
 ***This section should teach how to use the language***

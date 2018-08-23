@@ -15,6 +15,8 @@
             </h1>
           </span>
           {{ content }}
+          <p>Revision: {{ site.revision }}</p>
+          <p>Date: {{ site.time | date: "%-d %b, %Y" }}</p>
           {% assign sorted_pages = site.pages | sort: 'weight' %}
           {% for p in sorted_pages %}
             {% if p.menu != false and p.weight != nil %}

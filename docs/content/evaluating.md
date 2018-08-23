@@ -3,23 +3,24 @@ layout: page
 title: Evaluating Code Rules
 weight: 40
 ---
+
 # Evaluating Code Rules
 
 ***Two stage process***
- 
+
 ## Aspects
 
 ***Aspects***
 
 ## Applying rule templates
 
-The first stage of evaluating code rules is applying handlers. Handlers are collected from corresponding aspects of all languages imported into the model. 
+The first stage of evaluating code rules is applying handlers. Handlers are collected from corresponding aspects of all languages imported into the model.
 
-As rules are applied to source model nodes, they produce constraint productions generated from templates. The order of productions is kept as defined by handlers, with handlers from extension languages having higher priority. 
+As rules are applied to source model nodes, they produce constraint productions generated from templates. The order of productions is kept as defined by handlers, with handlers from extension languages having higher priority.
 
 As well as generating constraint productions, the rules are allowed to report messages to be displayed at source locations.
 
-Generated productions constitute the constraints program, which is then executed. 
+Generated productions constitute the constraints program, which is then executed.
 
 ## Running constraints program
 
@@ -27,11 +28,11 @@ In the second stage the constraints program is run. To begin execution, a query 
 
 ***Order of productions firing***
 
-Order of productions fired: 
- - on start 
+Order of productions fired:
+ - on start
  - query
 
-While constraints program is run, it is allowed to report feedback, such as assign calculated types or report problems, using special predicates. 
+While constraints program is run, it is allowed to report feedback, such as assign calculated types or report problems, using special predicates.
 
 ***Feedback predicates example***
 

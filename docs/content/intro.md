@@ -3,6 +3,7 @@ layout: page
 title: Introduction
 weight: 10
 ---
+
 # Introduction
 
 This project is an attempt to bring logic programming to JetBrains MPS[^mps] to facilitate tasks related to source code (model) analysis, and which require logical inference of some kind to operate. Examples include type checking and control flow (data flow).
@@ -36,3 +37,4 @@ Finally, an embedded engine capable of processing constraints, which accepts a l
 
 [^mps]: Meta Programming System [https://jetbrains.com/mps](https://jetbrains.com/mps)
 [^chr]: Constraint Handling Rules [http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/constraint-handling-rules-book.html](http://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/constraint-handling-rules-book.html)
+

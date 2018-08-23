@@ -4,22 +4,23 @@ title: Constraints Reactor
 parent: content/processing.md
 weight: 55
 ---
+
 # Constraints Reactor
 
 ***Details of constraints processing implementation***
 
 Constraints reactor is a small library written in Kotlin and Java, which implements the extended semantics of constraints processing. Its main features are:
-    
+
 - native support for terms and unification
 - observable logical variables
 - fast lookup of matching production from constraint’s arguments
 - Rete-like algorithm for finding potential matches
-    
+
 ## Implementation notes
 
-Unification is implemented according to a «near-constant time» algorithm[^uni]. 
+Unification is implemented according to a «near-constant time» algorithm[^uni].
 
-A trie[^trie] (a prefix tree) on flattened terms is used for indexing productions by value. 
+A trie[^trie] (a prefix tree) on flattened terms is used for indexing productions by value.
 
 Persistent structures used for implementing internal state, which are useful for tracking and restoring the state of the constraints program.
 

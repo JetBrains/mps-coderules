@@ -2,7 +2,7 @@
 layout: page
 title: Contacts
 menu: Contacts
-weight: 890
+weight: 800
 ---
 
 # Contacts

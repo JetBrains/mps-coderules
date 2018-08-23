@@ -3,19 +3,19 @@ layout: page
 title: Typechecking BaseLanguage
 menu: Typechecking BL
 parent: examples
-weight: 500
+weight: 510
 github-path: /tree/master/samples/mpscore
 ---
 
 # Typechecking BaseLanguage
 
-Short explanation of the architecture of BL-specific type system built with *code rules*. 
+Short explanation of the architecture of BL-specific type system built with *code rules*.
 
 This sample is the main result of developing code rules. It is still work in progress, but the main areas of typechecking BaseLanguage have been covered. Here we briefly touch on the implementation details.
 
 First, all the BaseLanguage types have corresponding dataforms, and in addition there are definitions of types that are only ever used during typechecking, such as capture type.
 
-The macros in `Types` macro table define the rules how types are constructed, ensuring, among other things, that bounds on type parameters are correctly processed. 
+The macros in `Types` macro table define the rules how types are constructed, ensuring, among other things, that bounds on type parameters are correctly processed.
 
 ![](img/ex-typecheck-terms-300.png)  
 _(examples of type dataforms)_
@@ -35,7 +35,7 @@ _(the production from `Typecheck` query)_
 
 Typechecking itself starts with activating of `checkAll()` constraint, triggering  the productions responsible for assigning types to literals, `this` expression, as well as processing type annotations — ensuring that these are built without violating bounds.
 
-The rule for variable declaration is quite trivial: the type annotation gets expanded to dataform and assigned to the source location with `typeOf()` constraint. 
+The rule for variable declaration is quite trivial: the type annotation gets expanded to dataform and assigned to the source location with `typeOf()` constraint.
 
 ![](img/ex-typecheck-vardecl-750.png)  
 _(assigning the type to a variable declaration)_
@@ -45,7 +45,7 @@ An integer literal is simply assigned the type `int` with the value being the va
 ![](img/ex-typecheck-intliteral-700.png)  
 _(assigning the type to `int` literal)_
 
-From these starting points typechecking continues up the syntax tree until there are no more productions left that can be triggered. 
+From these starting points typechecking continues up the syntax tree until there are no more productions left that can be triggered.
 
 A `dot expression` propagates the type from operation to the whole expression.
 
@@ -59,7 +59,7 @@ _(typechecking of assignment expression)_
 
 ## Type Relations
 
-Several kinds of relations on types are defined, surveyed in the following table. 
+Several kinds of relations on types are defined, surveyed in the following table.
 
 | Relation | Constraint | Description |
 |:--|:--|:--|
@@ -83,16 +83,16 @@ _(`convertsTo()` delegates to `promote()` for classifier type)_
 
 ### Subclassing
 
-Resolution of `promote()` constraint, which represents subtyping among classifier types, is implemented around a simple idea of representing all subclass paths the root (Object) to a classifier as a set of lists. This representation deliberately ignores the class parameters. As a first step, the shortest path from supertype’s classifier to subtype’s one is selected. This path is then reversed and represented as a dataform list. This makes it possible to pattern-match on this list, since it is nothing more than a cons list represented as a dataform. 
+Resolution of `promote()` constraint, which represents subtyping among classifier types, is implemented around a simple idea of representing all subclass paths the root (Object) to a classifier as a set of lists. This representation deliberately ignores the class parameters. As a first step, the shortest path from supertype’s classifier to subtype’s one is selected. This path is then reversed and represented as a dataform list. This makes it possible to pattern-match on this list, since it is nothing more than a cons list represented as a dataform.
 
 Subtyping is a reflexive and transitive relation, so `promote()` is replaced with another constraint `dpromote()`, which triggers one of the two productions responsible for either aspect of the relation. Transitivity is solved by advancing up the supertype path keeping track of all type variables and ensuring all bounds on type parameter are satisfied. Reflexivity delegates to `containedIn()` to ensure parameters are within bounds, which in its turn delegates to `convertsTo()`.
 
-Take a simple example of `Long` classifier type — the boxed `long`. Its superclasses are written as follows. 
+Take a simple example of `Long` classifier type — the boxed `long`. Its superclasses are written as follows.
 
 ```
   Long : Comparable : Object
   Long : Number : Serializable : Object
-``` 
+```
 
 Suppose we need to decide if `Long <: Serializable`, that is if `Long` is a subtype of `Serializable`. The shortest path between those consists of three nodes : `[Long, Number, Serializable]`. Constraint `dpromote()` is activated with this list as the  3rd parameter, and it requires two steps of inductive production and one step of reflexive to solve this relation.
 
@@ -129,7 +129,7 @@ Suppose we need to decide if `Long <: Serializable`, that is if `Long` is a subt
         - method call
             - **type parameter substitutions**
         - equals/assignment/+assignment
-        - 
+        -
         - ???
     - method declaration
     - type relations
@@ -144,5 +144,4 @@ Suppose we need to decide if `Long <: Serializable`, that is if `Long` is a subt
     - type annotations
         - classifier type
         - type parameters: type var, bound type, wildcard
-        - 
-    
+        -
