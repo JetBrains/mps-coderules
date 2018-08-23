@@ -15,7 +15,7 @@ _(statement in `j.m.lang.typesystem` language)_
 
 Albeit brief and concise, this notation leaves many questions unanswered when it comes to how exactly the system of equations and inequalities is processed. In other words, type inference is — for the most part — left up to the internal engine to decide. This limits the options for the author of type system to control how exactly subtyping is defined, and what happens with type parameters when computing sub- or supertype. Java, for instance, has several kinds of «conversions» with clearly defined rules controlling how types are transformed and what types are compatible in certain situations. All of this has to be emulated with «strong» and «weak» subtyping in MPS.  
 
-Another example is the all too well known *when_concrete*, which is basically a suspended block that gets executed when the type, that serves as its parameter, is computed. Sometimes this never happens during type inference, which results in numerous «*when concrete is never concrete*» warnings, leaving the user wondering what went wrong. This, however, is very much a necessary evil, since there are no other possibilities to hook into the engine in order to spy on types, and knowing the exact form of a type is sometimes required for further inference.
+Another example is all too well known *when_concrete*, which is basically a suspended block that gets executed when the type, that serves as its parameter, is computed. Sometimes this never happens during type inference, which results in numerous «*when concrete is never concrete*» warnings, leaving the user wondering what went wrong. This, however, is very much a necessary evil, since there are no other possibilities to hook into the engine in order to spy on types, and knowing the exact form of a type is sometimes required for further inference.
 
 Consider how the type of a method call is calculated: the details aside, in essence *when_concrete* has to be applied to the type of each argument. Then we should either turn to inequalities and rely on the inference engine, or analyse the type structure and run closing computation when the *last* unknown type is finalised.
 
@@ -26,13 +26,15 @@ Code rules may have a solution to these and other issues. The core idea is to em
 
 The following is the list of features made available to users of MPS with *code rules* plugin.  
 
-A language `jetbrains.mps.lang.coderules` containing concept definitions for building rules that serve as production templates, and as regular «checking» rules. The templates may be concept-specific or standalone in order to provide constraints that are invariant for every invocation.
+ - A language `jetbrains.mps.lang.coderules` with concept definitions for building rules that serve as production templates, and as regular «checking» rules. The templates may be concept-specific or standalone, if there is a need to provide constraints that are invariant for every invocation.
 
-An extension of CHR[^chr] semantics allowing the use of unification in production head with automatic binding of logical variables on successful match. This extension also supports limited backtracking, as well as calling arbitrary Java code. Representing the inference in the form of logical productions helps achieve extensibility, as productions defined by extension languages can be easily blended in.
+ - *Constraint Processing System* — an extension of CHR[^chr] semantics allowing the use of unification in production’s head with automatic binding of logical variables on successful match. This extension also supports limited backtracking, as well as calling arbitrary Java code. Representing the inference in the form of logical productions helps achieve extensibility, as productions defined by extension languages can be easily blended in.
 
-A framework for evaluating a constraints program, enabling reporting of problems from the production body, as well as a façade interface for accessing the results of the program evaluation. The UI also includes a tracing tool for providing insights into how constraints are handled.
+ - A framework for evaluating a constraints program, enabling reporting of problems from the production body, as well as a façade interface for accessing the results of program evaluation. The UI also includes a tracing tool for providing insights into how constraints are handled.
 
-Finally, an embedded engine capable of processing constraints, which accepts a list of productions, an initial active constraint, and, optionally, a store of inactive constraints, and yields an updated store after all matched productions have been fired.
+ - Finally, an embedded engine capable of processing constraints, which accepts a list of productions, an initial active constraint, and, optionally, a store of inactive constraints, and yields an updated store after all matched productions have been fired.
+
+Examples are provided that demonstrate the use of this technology for type checking and other analyses. 
 
 
 [^mps]: Meta Programming System [https://jetbrains.com/mps](https://jetbrains.com/mps)

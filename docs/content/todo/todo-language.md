@@ -1,11 +1,9 @@
 # TODO Language 
 
-## Intro
-- [ ] templates are usual for MPS
-- [ ] applicable to concept/+subconcepts
-- [ ] standalone
-- [ ] can serve as «checking rule»
-- [ ] produce productions to be evaluated
+## Language aspect
+- [ ] **aspects**
+     - [ ] language defines aspect (eg. typechecking)
+     - [ ] languages using this aspect define handlers
 
 ## Handler  
 - [x] create handler, optionally extend another handler
@@ -15,7 +13,7 @@
     - [x] applicability condition
     - [ ] what purpose does the body serve
         - [ ] **reporting errors**
-        - [ ] **_require_ statement**
+        - [x] _require_ statement
         - [ ] **what features are available in a rule**
 - [ ] introduce constraint production
     - [x] declare logical variables

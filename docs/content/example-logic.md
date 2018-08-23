@@ -35,4 +35,4 @@ The rule’s body activates `valid()` constraint, therefore only reasonings that
 Finally, if the proof’s goal is marked valid, it is assigned «Ok» type, otherwise it is marked with error.
 
 
-[^inlog]: Stanford Introduction to Logic http://logic.stanford.edu/intrologic/homepage/index.html
+[^inlog]: Stanford Introduction to Logic [http://logic.stanford.edu/intrologic/homepage/index.html](http://logic.stanford.edu/intrologic/homepage/index.html)

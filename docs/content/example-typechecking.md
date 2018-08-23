@@ -57,7 +57,7 @@ Whereas `assignment` does something more: it ensures that the actual type on the
 ![](img/ex-typecheck-assignment-700.png)  
 _(typechecking of assignment expression)_
 
-## Type Relations
+### Type Relations
 
 Several kinds of relations on types are defined, surveyed in the following table.
 
@@ -69,7 +69,7 @@ Several kinds of relations on types are defined, surveyed in the following table
 | subclassing | `promote()` | subtyping among classifier types |
 | containment | `containedIn()` | type parameter containment |
 
-### Conversion
+#### Conversion
 
 Constraint `convertsTo()` ensures that a type can be converted to another type, that is a type A can be used instead of type B. To test if a type is acceptable in certain locations, including those that allow any type, the constraint `compatibleWith()` is used, which delegates to `convertsTo()`.
 
@@ -81,7 +81,7 @@ In its turn, `convertsTo()` delegates to either `primSubtype()`, which is respon
 ![](img/ex-typecheck-convertscls-500.png)  
 _(`convertsTo()` delegates to `promote()` for classifier type)_
 
-### Subclassing
+#### Subclassing
 
 Resolution of `promote()` constraint, which represents subtyping among classifier types, is implemented around a simple idea of representing all subclass paths the root (Object) to a classifier as a set of lists. This representation deliberately ignores the class parameters. As a first step, the shortest path from supertype’s classifier to subtype’s one is selected. This path is then reversed and represented as a dataform list. This makes it possible to pattern-match on this list, since it is nothing more than a cons list represented as a dataform.
 
@@ -98,50 +98,3 @@ Suppose we need to decide if `Long <: Serializable`, that is if `Long` is a subt
 
 
 
-
-- types
-    - term table for types
-        - classifier type
-        - type var type
-        - capture type
-        - array/vararity type
-        - upper/lower bound type
-        - wildcard type
-        - primitive type: int, bool, etc.
-        - void and null
-    - macro table
-        - classifier type
-        - type var type
-            - bounds
-        - parameterised types
-        - types with value
-- Query
-    - Typecheck
-        - checkall, recoverall
-    - ConvertsTo
-        - convertsTo()
-- Typechecking
-    - Constant values
-        - string
-        - integer, long, char, …
-    - expression
-        - dotexpression, dot operation
-        - method call
-            - **type parameter substitutions**
-        - equals/assignment/+assignment
-        -
-        - ???
-    - method declaration
-    - type relations
-        - boxing
-        - capture
-        - coerce
-        - conversion
-        - primitive subtyping
-        - subclassing/promote
-    - type parameter
-        - containment, hasbound
-    - type annotations
-        - classifier type
-        - type parameters: type var, bound type, wildcard
-        -
