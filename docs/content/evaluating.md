@@ -32,8 +32,8 @@ To begin execution, a *query* is selected, which contains the list of constraint
 There is a fixed order in which productions are fired on start of program execution. First, all «on start» productions are triggered. All constraints activated by these productions are processed normally, and after there are no more productions to be triggered, the query is fired. 
 
 Order of productions fired:
-1. «on start»
-2. productions in a query
+1. «on start» productions
+2. query production
 
 While constraints program is run, it is allowed to report feedback, such as assign calculated types or report problems, using special constructs, that are available as predicates in the body of production.
 

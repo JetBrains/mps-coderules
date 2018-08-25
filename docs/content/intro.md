@@ -24,6 +24,16 @@ _(example of processing method arguments)_
 
 Code rules may have a solution to these and other issues. The core idea is to employ a **production system** to process facts and relations, collectively known as constraints, with the user being in full control of what productions to generate for given source code (model). With the ability to use logical variables to represent unknowns, and with support for term algebra and unification, it is pretty straightforward to define the core of type inference or similar framework without having to rely on opaque implementation and pre-defined relations.
 
+Typechecking assignment expression could look like the following. What code says, is basically once left and right sides of the assignment have types (not necessarily ground types), test if left side’s type converts to right side’s. Constraint `convertsTo/2` is defined in the same aspect, and the typesystem author has full control how it deals with type parameters, for example.
+
+![](img/intro-assignprod-700.png)  
+_(typechecking assignment with constraint production)_
+
+Instead of waiting until a type has been finalised in order to access its structure, *pattern matching* is used to trigger productions only on types of certain form. The example below shows how `convertsTo/2` is resolved for an instance of `LowerBoundType`, which requires contravariance. 
+
+![](img/intro-converts-550.png)  
+_(resolution of `convertsTo/2` constraint using pattern matching)_
+
 The following is the list of features made available to users of MPS with *code rules* plugin.  
 
  - A language `jetbrains.mps.lang.coderules` with concept definitions for building rules that serve as production templates, and as regular «checking» rules. The templates may be concept-specific or standalone, if there is a need to provide constraints that are invariant for every invocation.
