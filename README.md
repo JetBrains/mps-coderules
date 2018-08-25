@@ -1,14 +1,22 @@
-![](mps-full.svg)
-
-# Code Rules
+# MPS Code Rules
 
 An experimental feature of [JetBrains MPS](https://jetbrains.com/mps). Code rules allow to create various code analyses employing constraints handling. The examples are provided, including type checking and control flow analysis of code written using MPS’s baseLanguage.
 
+## Documentation
+
+**NEW!** The documentation [website](http://fisakov.github.io/mps-coderules/) has been created.  
+ 
 ## Status
 
 [![Build Status](https://travis-ci.org/fisakov/mps-coderules.svg?branch=master)](https://travis-ci.org/fisakov/mps-coderules)
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
+
+Latest release can be found [here](https://github.com/fisakov/mps-coderules/releases).
+
+The author can be reached by email `fedor.isakov` (AT) `jetbrains.com` or by [Twitter](https://twitter.com/fisakov).
+
+[JetBrains MPS](https://www.jetbrains.com/mps/) is a project developed by [JetBrains](http://www.jetbrains.com/?fromFooter) and is available via [web](https://www.jetbrains.com/mps/) and [Twitter](http://twitter.com/jetbrains_mps).
 
 ## Overview
 
