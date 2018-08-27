@@ -14,12 +14,12 @@ The outcome of this phase is a *constraints program*, which is a collection of *
 
 The first phase runs in «read action», therefore blocking potential writes, which means the editor may become unresponsive if a write action is requested. Ideally the rules should finish quickly and postpone all heavy load to the next phase, which can be run in the background, as the access to `SModel` is no longer necessary.
 
-In the second phase the constraints program that was created in phase one is evaluated. Evaluation starts with a query, which serves as an entry point to the program. For example, type system defines `TYPECHECK` and `CONVERT` queries, aimed at running type checking and testing if a type can be converted to another type, correspondingly. Queries are declared in the same aspect model.
+In the second phase the constraints program that was created in phase one is executed. Execution starts with a query, which serves as an entry point to the program. For example, type system defines `TYPECHECK` and `CONVERT` queries, aimed at running type checking and testing if a type can be converted to another type, correspondingly. Queries are declared in the same aspect model.
 
 ![](img/overview-convertsto-500.png)  
 _(example of a query)_
 
-In the above example, the query defines two logical variables (A and B) of type `term`, which serve to represent types internally. First, both query parameters `to` and `from` are *expanded*, meaning that their `SNode` representations are converted to terms, and then the constraint `convertsTo(A, B)` is activated, kicking off the process of evaluating the program. In case productions triggered by `convertsTo/2` constraint all evaluate to true, the query is deemed successful, and if there is at least one production that evaluates to false, the query fails accordingly.
+In the above example, the query defines two logical variables (A and B) of type `term`, which serve to represent types internally. First, both query parameters `to` and `from` are *expanded*, meaning that their `SNode` representations are converted to terms, and then constraint `convertsTo(A, B)` is activated, kicking off the processing of constraints, which is the essence of constraints program execution. In case productions triggered by `convertsTo/2` constraint all evaluate to true, the query is deemed successful, and if there is at least one production that evaluates to false, the query fails accordingly.
 
 One nice feature of using code rules is the ability to abstract away from type structure defined by the language. For example, one may decide to represent all primitive types as a term `primitive(kind=<specific kind>)`. Terms can also incorporate values as regular Java objects, so creating an inference rule which checks if a particular constant fits the given type, be it an `int` or a `char`, is trivial.  
 
@@ -30,7 +30,7 @@ _(example of a query production)_
 
 Here, the first constraint `checkAll/0` fires type checking, whereas the second `recoverAll/0` is responsible for restoring terms to `SNode` instances and reporting them back to the user. Joining the two constraints with a conjunction establishes the order in which these are evaluated.
 
-An of course, if something can go wrong, it will. In case type inference is unsuccessful, the second stage has no chance of being evaluated. To account for that, a partial backtracking was added to the language of production templates, which helps recover from certain failures.
+An of course, if something can go wrong, it will. In case type inference is unsuccessful, the second part of the query has no chance of being executed. To account for that, a partial backtracking was added to the language of constraint productions, which helps recover from certain failures.
 
 ![](img/overview-check2-300.png)  
 _(example of a query production with alternative body)_

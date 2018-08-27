@@ -25,7 +25,7 @@ Primitive types define allowed ranges, so the dataforms for these types have val
 ![](img/ex-typecheck-terms2-400.png)  
 _(examples of primitive type dataforms)_
 
-There are two queries defined for typechecking and for converting a type to another type. The latter is used when testing for *subtyping*. ConvertsTo query expands both its parameters before activating `convertsTo()` constraint, which launches the process of evaluating the relation.
+There are two queries defined for typechecking and for converting a type to another type. The latter is used when testing for *subtyping*. ConvertsTo query expands both its parameters before activating `convertsTo()` constraint, which launches the processing of the relation.
 
 ![](img/ex-typecheck-convertsto-450.png)  
 _(the production from `ConvertsTo` query)_
@@ -95,6 +95,3 @@ Take a simple example of `Long` classifier type — the boxed `long`. Its superc
 ```
 
 Suppose we need to decide if `Long <: Serializable`, that is if `Long` is a subtype of `Serializable`. The shortest path between those consists of three nodes : `[Long, Number, Serializable]`. Constraint `dpromote()` is activated with this list as the  3rd parameter, and it requires two steps of inductive production and one step of reflexive to solve this relation.
-
-
-

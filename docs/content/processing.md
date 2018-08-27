@@ -111,11 +111,11 @@ There is some terminology inherited from CHR that can be useful when discussing 
 
 Guard is a conjunction of predicates, which are checked before a match of available constraints with the production’s head is considered successful. Predicates in a guard are *queried*.
 
-Body is a conjunction of predicates and constraint activations. When evaluated, each body clause is evaluated in order, with predicates serving as *assertions* and constraint activations producing new constraints. Each newly activated constraint is checked against any productions that can be fired, and so on.
+Body is a conjunction of predicates and constraint activations. When triggered, each body clause is evaluated in order, with predicates serving as *assertions* and constraint activations producing new constraints. Each newly activated constraint is checked against any productions that can be fired, and so on.
 
 ***Alternative body***
 
-## Semantics of constraint program
+## Semantics of constraints program
 
 The paper by Betz and Frühwirth[^lls] gives an excellent tretise on semantics of CHR using *linear logic*. Since our constraints processing system is based on CHR, this semantics is valid for it also.
 
