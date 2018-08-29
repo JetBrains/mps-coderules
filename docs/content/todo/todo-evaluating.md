@@ -6,10 +6,10 @@
          - [x] some templates simply report errors
          - [x] collect constraint productions
              - [x] build program
-     - [ ] evaluate program
-         - [ ] **report problems during evaluation**
-         - [ ] **handle errors**
- - [ ] **UI**
+     - [x] evaluate program
+         - [x] report problems during evaluation
+         - [x] handle failures
+ - [x] UI
  - [ ] **facade API**
- - [ ] **activation trace view**
+ - [x] activation trace view
 

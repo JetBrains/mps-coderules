@@ -9,7 +9,7 @@ github-path: /tree/master/samples/lambdacalc
 
 # Typechecking STLC
 
-Simply Typed Lambda Calculus is a famous example found in almost every textbook on type checking. This sample demonstrates how a classical type checking algorithm (Hindley-Milner[^hm]) designed specifically for this language can be implemented using code rules. This sample has also been demonstrated in an article[^tclc] published online.
+Simply Typed Lambda Calculus is a famous example favoured by textbook authors. This sample demonstrates how a classical type checking algorithm (Hindley-Milner[^hm]) designed specifically for this language can be implemented using code rules. This sample has also been demonstrated in an article[^tclc] published online.
 
 For purposes of keeping this sample small, we keep the language confined to boolean values. Aside of boolean constants `true` and `false`, the mandatory lambda abstraction and application, `let-in` expression, and `if-then-else`, we have in addition defined `fix` operator to support recursion.
 

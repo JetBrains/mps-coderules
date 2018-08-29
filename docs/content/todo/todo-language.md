@@ -62,13 +62,14 @@
     - [x] what are getters
     - [x] extending another term
 - [ ] terms representing types
+    - [ ] subst expression
 - [ ] using terms
-    - [ ] constructing new terms
+    - [ ] creating terms with dataform table
         - [ ] specify subtterms
         - [ ] specify values
     - [ ] using terms as patterns
     - [ ] **copy operation**!
-- [ ] constructing term
+- [ ] constructing term with primitives
     - [ ] list term
     - [ ] dataform concept and subconcepts
     - [ ] splice

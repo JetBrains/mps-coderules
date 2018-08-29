@@ -7,15 +7,11 @@ weight: 50
 
 # Constraints Processing System
 
-***Discuss how constraints processing works (abstractly)***
-
-- Discuss semantics of constraints processing.   
-- Loosely follows CHR semantics.  
-- Influenced heavily by JCHR[^jchr].  
+This section briefly overlooks how constraint processing works. The system described here follows loosely the CHR specification, and has been in particular heavily influenced by JCHR[^jchr] implementation. The distinctive features are built-in support for logical variables, terms, and pattern matching. Alternative body branches are a deviation from the standard CHR. 
 
 ## Terms and unification
 
-Constraints processing relies heavily on the use of terms as data type. Abstractly speaking, terms are functions of 0 or more arguments. Any opaque value captured by a term must be a POJO.  
+Constraints processing relies heavily on the use of *terms* as data type. Abstractly speaking, terms are functions of 0 or more arguments. Any opaque value captured by a term must be a POJO.
 
 ```
   f(g(), h(k()))
@@ -26,6 +22,8 @@ Constraints processing relies heavily on the use of terms as data type. Abstract
 ```
 _(examples of terms)_
 
+The unique feature of terms is that they support unification. Unification of two terms is possible with or without *variables* being used as subterms of either participant, but in the latter case the two terms must be equal. 
+
 A term variable ranges over terms. A substitution is a mapping of variables to terms. Unification searches for a substitution $\sigma$, such that for two terms being unified, $f$ and $g$, the following holds: $\sigma f = \sigma g$.
 
 ```
@@ -34,9 +32,11 @@ A term variable ranges over terms. A substitution is a mapping of variables to t
   f(X, h(X)) and f(g(), h(k())) can't be unified
 ```
 
+Pattern matching is possible when variables are only used by one of the terms, which is then serves as pattern. To test if a pattern matches a given term can be implemented by a linear time algorithm, whereas full unification is slightly more complicated. 
+
 ## Logical variables
 
-Logical variables serve to identify an object that is to be determined in the future. They are *monotonic*, in the sense that once a variable is assigned, it stays assigned to that value. In addition, they implement a *union-find data structure*[^uf] a.k.a. «disjoint set». Any free logical variable can be assigned a class by setting its «parent» field to point to the class’s representative. All logical variables belonging to same class are treated as exactly one variable. Logical variables notify observers when they become ground and when their *parent* (class representative) changes.
+Logical variables serve to identify an object that is to be determined in the future. They are *monotonic*, in the sense that once a variable is assigned a particular value, it stays assigned to that value. In addition, they implement a *union-find data structure*[^uf] a.k.a. «disjoint set». Any free logical variable can be assigned a class by setting its «parent» field to point to the class’s representative. All logical variables belonging to the same class are treated as exactly one variable. Logical variables notify observers when they become ground and when their *parent* (class representative) changes.
 
 ```
   val X = Logical("X")
@@ -54,7 +54,7 @@ Logical variables serve to identify an object that is to be determined in the fu
 ```
 _(example of using logical variables)_
 
-Combining logical variables and terms gives a very powerful instrument. A term variable can also be a logical variable, so that when two terms are unified, the substitution has the calculated value for this variable.
+A term variable can also be a logical variable, so that when two terms are unified, the substitution already has the calculated value for that variable.
 
 ```
   val X = Logical("X")
@@ -71,30 +71,35 @@ Combining logical variables and terms gives a very powerful instrument. A term v
 
 ## Constraints and predicates
 
-Constraints are simple tuples with fixed arity and a symbol attached. In some respects constraints correspond to rows in a database table. Logically they can be understood as facts, relations, or propositions. An argument to a constraint can be a term, a logical variable, or any POJO, except another constraint.
+Constraints are, simply put, tuples with fixed arity and a symbol attached. In some respects constraints correspond to rows in a database table. Logically they can be understood as facts, relations, or propositions. An argument to a constraint can be a term, a logical variable, or any POJO, except another constraint.
 
-Constraints are activated from production’s body and stay active until there are no possible matches with productions’s heads. If a constraint is not discarded by a production, it is stored for future use. Stored constraints represent the program’s state.
+Constraints are activated from a production’s body and stay active until there are no possible matches with any of productions’s heads. If a constraint is not discarded by a production, it is stored for future use. Stored constraints represent the program’s state.
 
 The following figure shows the lifecycle of a constraint. The big rounded square in the middle contains the states, in which a constraint is considered «alive»: it can be either «active» or «stored», but available for filling up vacant positions in a production’s head. A stored constraint can be reactivated if one of its arguments changes, such as when a logical variable becomes ground.
 
-A successfully fired production, which declares one or more of its head constraints to be «replaced», causes these to be terminated.
+A successfully fired production, which declares one or more of constraints in its head to be «replaced», causes these to be terminated.
 
 ![](img/constraint-lifecycle.svg)  
 _(lifecycle of a constraint)_
 
-To illustrate the idea of using *stored* constraints to fill vacant positions when matching a production, let’s consider an example…***unfinished***
+To illustrate the idea of using *stored* constraints to fill vacant positions when matching a production, let’s consider an example — a production resolving `containedIn/2` constraint, which corresponds to *type parameter containment* relation of BaseLanguage types.
 
-***Example of multi-head production***
+![](img/process-containedin-350.png)  
+_(example of a multi-head production)_
 
-Whereas a constraint serves to embody a relation among objects simply by being a witness of such a relation, a *predicate*[^pred] helps to establish a relation or check if a relation exists by means of executing a procedure. Same is true for facts and propositions.
+When `containedIn/2` constraint is activated, the production above matches, but two slots in its head must be filled in order for production to fire. The processor looks in the *store* for all *different* occurrences of constraint `hasBound/2` that could be matched, and substitutes them in these slots. The production will be fired for every matching triple of constraints.
 
-***Example of a predicate***
+#### Predicates
+
+Whereas a constraint serves to embody a fact or a relation among objects simply by being a witness of such a fact or a relation, a *predicate*[^pred] helps to establish a fact or a relation, or check if one exists, by means of executing a procedure. Same is true for facts and propositions.
 
 Predicates must implement ask/tell protocol. If a predicate is invoked from production’s guard clause, it represents a query (ask), and if it is invoked from the body, it is an assertion (tell).
 
+***Example of a predicate***
+
 ***Example of ask/tell***
 
-## Constraint production (rule)
+## Constraint production
 
 Constraints program is built from productions. Each production has three parts: the part that is responsible for triggering the production, called «head», the part that checks for pre-conditions, called «guard», and the part that is evaluated when production is fired, which is called «body».
 
@@ -108,8 +113,7 @@ There is some terminology inherited from CHR that can be useful when discussing 
 | non-empty | empty | `E => C | G` | Propagation |
 | non-empty | non-empty | `E \ E’ <=> C | G` | Simpagation |
 
-
-Guard is a conjunction of predicates, which are checked before a match of available constraints with the production’s head is considered successful. Predicates in a guard are *queried*.
+Guard is a conjunction of predicates, which are checked before a production is fired. Predicates in a guard are *queried*.
 
 Body is a conjunction of predicates and constraint activations. When triggered, each body clause is evaluated in order, with predicates serving as *assertions* and constraint activations producing new constraints. Each newly activated constraint is checked against any productions that can be fired, and so on.
 

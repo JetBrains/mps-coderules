@@ -23,7 +23,7 @@ After the relevant handlers are collected, the source model is traversed from th
 
 Generated constraint productions constitute the constraints program, which is then executed in the next stage.
 
-### Running constraints program
+### Executing constraints program
 
 In the second stage the constraints program is executed.
 
@@ -37,12 +37,34 @@ Order of productions fired:
 
 While constraints program is run, it is allowed to report feedback, such as assign calculated types or report problems, using special constructs, that are available as predicates in the body of production.
 
-***Feedback predicates example***
+For example, type **node** can be assigned to source model location with *set type* operation. Essentially, assigning a type node can be understood as a way of annotating source model with additional information, which can then be reused by subsequent invocations of code rules or displayed to the user. 
+
+![](img/eval-settype-650.png)  
+_(example showing type assigned from a production)_
 
 Failures during constraints program execution are caught with the help of alternative body branches, where those are provided. An uncaught failure terminates program execution and is reported to the user.
 
-***Alternative body example***
+In the following example, a potential error is caught in the `else` branch and a corresponding errors is reported. Execution of constraints program is not terminated though, so other problems may still be reported. 
+
+![](img/eval-altbody-650.png)  
+_(example of using an alternative body branch)_
+
+### User interface
+
+The user interface is defined by a plugin responsible for particular language aspect. 
+
+![](img/eval-menu-snapshot.png)  
+_(context menu with typechecking actions)_
 
 ### Activation trace view
 
-***Activation trace view***
+During execution of a constraints program all activation/suspension/deactivation events, as well as ask/tell queries to predicates can be displayed in a dedicated view.
+
+![](img/eval-proof-350.png)  
+_(sample proof in propositional logic)_
+
+Above is an example of a proof in propositional logic, the trace of checking which is provided below. When a row in the left pane side selected, the right pane displays the contents of *constraints store* at this moment in time. 
+
+![](img/eval-atrace-snapshot.png)  
+_(activation trace view)_
+

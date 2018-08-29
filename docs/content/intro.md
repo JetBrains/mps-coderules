@@ -6,9 +6,9 @@ weight: 10
 
 # Introduction
 
-This project is an attempt to bring logic programming to JetBrains MPS[^mps] to facilitate tasks related to source code (model) analysis, and which require logical inference of some kind to operate. Examples include type checking and control flow (data flow).
+This project is an attempt to bring logic programming to JetBrains MPS[^mps] in order to facilitate tasks related to source mdoel analysis, and which require logical inference of some kind to operate. Examples include type checking and control flow.
 
-Type system in MPS is traditionally defined with help of type checking rules, in particular inference rules, which allow to make logical statements about types, such as «*is a*» or «*is a subtype of*», enabling the internal engine to infer the specific type based on a collection of such statements, referred to as type equations and inequalities.
+Type system in MPS is traditionally defined with help of type checking rules, in particular inference rules, which allow to make logical statements about types, such as «*is a*» or «*is a subtype of*», enabling the internal engine to infer the specific type, deriving it from a collection of such statements, which are referred to as type equations and inequalities.
 
 ![](img/intro-assignment-550.png)  
 _(statement in `j.m.lang.typesystem` language)_
@@ -38,11 +38,11 @@ The following is the list of features made available to users of MPS with *code 
 
  - A language `jetbrains.mps.lang.coderules` with concept definitions for building rules that serve as production templates, and as regular «checking» rules. The rules may be concept-specific or standalone, if there is a need to provide constraints that are invariant for every invocation.
 
- - *Constraint Processing System* — an extension of CHR[^chr] semantics allowing the use of unification in production’s head with automatic binding of logical variables on successful match. This extension also supports limited backtracking, as well as calling arbitrary Java code. Representing the inference in the form of logical productions helps achieve extensibility, as productions defined by extension languages can be easily blended in.
+ - *Constraint Processing System* — an extension of CHR[^chr] semantics allowing the use of unification in production’s head with automatic binding of logical variables on successful match. This extension also supports alternative body branches, as well as calling arbitrary Java code. Representing the inference in the form of logical productions helps achieve extensibility, as productions defined by extension languages can be easily blended in.
 
- - A framework for executing a constraints program, with support for reporting of problems from the production body, as well as a façade interface for accessing the results of program execution. The UI also includes a tracing tool for providing insights into how constraints are handled.
+ - A framework for executing a constraints program, with support for error reporting from production’s body, as well as a façade interface for accessing the results of a constraints program execution. The UI also includes a tracing tool for providing insights into how constraints are processed.
 
- - Finally, an embedded engine capable of processing constraints, which accepts a list of productions, an initial active constraint, and, optionally, a store of inactive constraints, and yields an updated store after all matched productions have been fired.
+ - Finally, an embedded engine capable of processing constraints, which accepts a list of productions sorted by handler, an initial active constraint, and, optionally, a store of inactive constraints, and yields an updated store after all matched productions have been fired.
 
 Examples are provided that demonstrate the use of this technology for type checking and other analyses.
 
