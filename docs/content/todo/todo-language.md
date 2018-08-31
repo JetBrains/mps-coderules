@@ -23,7 +23,7 @@
         - [x] pattern matching
         - [x] the '@' syntax
     - [ ] predicates vs constraints
-        - [ ] **special predicates «expand» and «call»**
+        - [ ] **special predicates “expand” and “call”**
         - [x] calling arbitrary Java code (eval)
     - [ ] guard (when)
         - [x] what operations are available in the guard
@@ -44,16 +44,16 @@
  - [x] macro parameters
      - [x] parameter initialiser
  - [ ] how macro can be called
-     - [x] **special predicates «expand» and «call»**
+     - [x] **special predicates “expand” and “call”**
  - [x] What is the meaning of macro body
  - [ ] referring logical variables 
-     - [x] «macroLogical» expression
+     - [x] “macroLogical” expression
      - [ ] **$-wrapper for an expression**
- - [ ] **«substitution from context»**
+ - [ ] **“substitution from context”**
      - [ ] context parameters
      - [ ] substitutions
      - [ ] context parameters
-     - [ ] specifying parameters using «with» statement
+     - [ ] specifying parameters using “with” statement
 
 ## Term table
 - [x] purpose of this root

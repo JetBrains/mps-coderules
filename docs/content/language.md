@@ -30,7 +30,7 @@ The following table contains root concepts that belong to code rules definition.
 
 #### Rules
 
-The aim of rules defined by handlers is again twofold: firstly, they may serve as regular «checking» rules, and also, most importantly, they contribute constraint productions. These are created with a DSL that allows mixing of productions and Java code, and can also include constraint fragments inside a production template.
+The aim of rules defined by handlers is again twofold: firstly, they may serve as regular “checking” rules, and also, most importantly, they contribute constraint productions. These are created with a DSL that allows mixing of productions and Java code, and can also include constraint fragments inside a production template.
 
 The following example is from experimental *control flow* aspect for baseLanguage. It demonstrates how a production is constructed using a template. A template is enclosed into a pair of `%% … %%` symbols and yields constraints wrapped into special `<% … %>` brackets. In this particular case `write/2` constraint is optional and is only added to the body of production in case the condition is satisfied (a location corresponding to a local variable is written to only if it has an initialiser).
 
@@ -58,7 +58,7 @@ _(example of standalone rule without input)_
 
 Rule’s contents is a block of code that gets executed when the rule is applied to the source model. If the input is specified, the declared parameter is available in rule’s body.
 
-Rules may affect the scope of model locations that are processed during an evaluation session. Suppose a production responsible for typechecking a particular location in source model relies on presence of productions that are only available if some other location is processed as well. To guarantee that a certain model location is processed during the evaluation session, one uses `require` statement.
+Rules may affect the scope of model locations that are processed during an evaluation session. Suppose a production responsible for type checking a particular location in source model relies on presence of productions that are only available if some other location is processed as well. To guarantee that a certain model location is processed during the evaluation session, one uses `require` statement.
 
 ![](img/language-recoverct-700.png)  
 _(example of using `require` statement)_
@@ -67,7 +67,7 @@ _(example of using `require` statement)_
 
 *Productions* can be created at any place within rule body. A production has three main parts called *head*, *guard*, and *body*. Head defines what constraints trigger this production, and it can only contain constraints defined by the handler or one of the handlers it extends. Body can contain any visible constraints, as well as *predicates*. A production must include either the body or the head, no production can omit both. Guard is optional, and it can only contain predicates.
 
-Both head and body can declare *logical variables*. By default a logical variable ranges over *terms*, although any POJO may be serve as a value.
+Both head and body can declare *logical variables*. By default a logical variable ranges over *terms*, although any POJO[^pojo] may be serve as a value.
 
 ![](img/language-compatibleWith-300.png)  
 _(production declaring logical variables)_
@@ -92,7 +92,7 @@ _(example of constraint argument referring to a model location)_
 
 Whereas the production’s head can only contain constraints, there are also other logical clauses that are used in guard and body.
 
-A *predicate* is a built-in construct that serves two purposes: when used in guard, it serves to query if the condition is satisfied, and when invoked from body, it asserts the condition. An example is `unifies` predicate, displayed as `=`, which, if used in guard, only tests that its arguments can be unified, otherwise if called from body, it invokes the actual unification. There are also predicates that can only be queries, such as `isFree/1` or `isBound/1`, testing if a logical variable is free or has value assigned.
+A *predicate* is a built-in construct that serves two purposes: when used in guard, it acts to query if the condition is satisfied, and when invoked from body, it asserts the condition. An example is `unifies` predicate, displayed as `=`, which, if used in guard, only tests that its arguments can be unified, otherwise if called from body, it invokes the actual unification. There are also predicates that can only be queries, such as `isFree/1` or `isBound/1`, testing if a logical variable is free or has value assigned.
 
 Production’s guard can only contain predicates, and the body can contain both constraints and predicates.  
 
@@ -104,7 +104,7 @@ Arbitrary Java code can be called with `eval/1` predicate. It accepts either an 
 ![](img/language-recover-500.png)  
 _(example of using `eval/1` predicate)_
 
-In order to make use of macro definitions, which are essentially parameterised production templates extracted to a separate root, one of two pseudo predicates can be used: `expand` and `call`. The former accepts a node, whereas the second expects the argument that are substituted as macro parameters.
+In order to make use of macro definitions, which are essentially parameterised production templates extracted to a separate root, one of the two pseudo predicates can be used: `expand` and `call`. The former accepts a node, whereas the second expects the arguments that are substituted as macro parameters.
 
 ***Examples of expand/call pseudo predicates***
 
@@ -155,3 +155,4 @@ _(example of a dataform definition for classifier type)_
 _(examples of dataform definition for long type)_
 
 [^dft]: this concept is defined in another language, `jetbrains.mps.logic`
+[^pojo]: Plain Old Java Object — any Java object conforming to equals/hashCode contract

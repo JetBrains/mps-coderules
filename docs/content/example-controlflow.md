@@ -20,19 +20,19 @@ Control flow analysis starts with activating constraint `trace/0`. This initiate
 ![](img/ex-cflow-query-350.png)  
 _(controlflow query)_
 
-Constraint `follow/2` binds together two locations that are adjacent in the control flow graph, and `merge/2` is an auxiliary helper, which is used to mark the «exit point» for a search that goes *depth-first* into subexpressions. 
+Constraint `follow/2` binds together two locations that are adjacent in the control flow graph, and `merge/2` is an auxiliary helper, which is used to mark the “exit point” for a search that goes *depth-first* into subexpressions. 
 
 ![](img/ex-cflow-binop-650.png)  
 _(control flow check of binary operation)_
 
-The meaning of `follow(@A, @B)` is «B follows A», and `merge(@X, @Y)` — «X should follow whatever location is last after traversing Y». 
+The meaning of `follow(@A, @B)` is “B follows A”, and `merge(@X, @Y)` — “X should follow whatever location is last after traversing Y”. 
 
 Read and write locations are processed once the control flow graph has been built. This is when `rw/0` constraint activates and starts this phase of the analysis. This phase also consists of two parts, and these are repeated for every method declaration. This is done by putting two constraints in a conjunction, as shown below. 
 
 ![](img/ex-cflow-visitall-700.png)  
-_(initiating collection of «uses» map, then activating «live» analysis)_
+_(initiating collection of “uses” map, then activating “live” analysis)_
 
-First, the control flow graph is walked from starting location, which can be a method declaration, for example. During the traversal of the graph a mapping of «uses» is collected — a map where keys are locations that are read, and values are sets of locations where reading happens. Uninitialised reads are detected at this stage. 
+First, the control flow graph is walked from starting location, which can be a method declaration, for example. During the traversal of the graph a mapping of “uses” is collected — a map where keys are locations that are read, and values are sets of locations where reading happens. Uninitialised reads are detected at this stage. 
 
 Second, all *write* locations are visited again, this time ensuring there is at least one read after a write. 
 

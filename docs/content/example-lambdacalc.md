@@ -18,7 +18,7 @@ The dataform table contains obvious declarations for the only primitive type `bo
 ![](img/ex-stlc-dataformtable-300.png)  
 _(dataform table)_
 
-There is only one query of kind `TYPECHECK`, which launches types recovery. All the type checking is done by the automatic productions «on start». 
+There is only one query of kind `TYPECHECK`, which launches types recovery. All the type checking is done by the automatic productions “on start”. 
 
 Handlers are separated into types recovery, operations with universal type, and the rest, which is assigning types to expressions. Type checking follows the program’s syntactic structure.
 

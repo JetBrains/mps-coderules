@@ -18,7 +18,7 @@ Constraints reactor is a small library written in Kotlin and Java, which impleme
 
 ## Implementation notes
 
-Unification is implemented according to a «near-constant time» algorithm[^uni].
+Unification is implemented according to a “near-constant time” algorithm[^uni].
 
 A trie[^trie] (a prefix tree) on flattened terms is used for indexing productions by value.
 

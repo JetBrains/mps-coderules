@@ -11,9 +11,9 @@ github-path: /tree/master/samples/mpscore
 
 Short explanation of the architecture of BL-specific type system built with *code rules*.
 
-This sample is the main result of developing code rules. It is still work in progress, but the main areas of typechecking BaseLanguage have been covered. Here we briefly touch on the implementation details.
+This sample is the main result of developing code rules. It is still work in progress, but the main areas of type checking BaseLanguage have been covered. Here we briefly touch on the implementation details.
 
-First, all the BaseLanguage types have corresponding dataforms, and in addition there are definitions of types that are only ever used during typechecking, such as capture type.
+First, all the BaseLanguage types have corresponding dataforms, and in addition there are definitions of types that are only ever used during type checking, such as capture type.
 
 The macros in `Types` macro table define the rules how types are constructed, ensuring, among other things, that bounds on type parameters are correctly processed.
 
@@ -25,7 +25,7 @@ Primitive types define allowed ranges, so the dataforms for these types have val
 ![](img/ex-typecheck-terms2-400.png)  
 _(examples of primitive type dataforms)_
 
-There are two queries defined for typechecking and for converting a type to another type. The latter is used when testing for *subtyping*. ConvertsTo query expands both its parameters before activating `convertsTo()` constraint, which launches the processing of the relation.
+There are two queries defined for type checking and for converting a type to another type. The latter is used when testing for *subtyping*. ConvertsTo query expands both its parameters before activating `convertsTo()` constraint, which launches the processing of the relation.
 
 ![](img/ex-typecheck-convertsto-450.png)  
 _(the production from `ConvertsTo` query)_
@@ -45,7 +45,7 @@ An integer literal is simply assigned the type `int` with the value being the va
 ![](img/ex-typecheck-intliteral-700.png)  
 _(assigning the type to `int` literal)_
 
-From these starting points typechecking continues up the syntax tree until there are no more productions left that can be triggered.
+From these starting points type checking continues up the syntax tree until there are no more productions left that can be triggered.
 
 A `dot expression` propagates the type from operation to the whole expression.
 
