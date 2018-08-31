@@ -33,7 +33,7 @@ _(the production from `ConvertsTo` query)_
 ![](img/ex-typecheck-typecheck-300.png)  
 _(the production from `Typecheck` query)_
 
-Typechecking itself starts with activating of `checkAll()` constraint, triggering  the productions responsible for assigning types to literals, `this` expression, as well as processing type annotations — ensuring that these are built without violating bounds.
+Typechecking itself starts with activating the `checkAll()` constraint, triggering  the productions responsible for assigning types to literals, `this` expression, as well as processing type annotations — ensuring that these are built without violating bounds.
 
 The rule for variable declaration is quite trivial: the type annotation gets expanded to dataform and assigned to the source location with `typeOf()` constraint.
 

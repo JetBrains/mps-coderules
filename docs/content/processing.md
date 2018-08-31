@@ -9,7 +9,7 @@ weight: 50
 
 This section briefly overlooks how constraint processing works. The system described here follows loosely the CHR specification, and has been in particular heavily influenced by JCHR[^jchr] implementation. The distinctive features are built-in support for logical variables, terms, and pattern matching. Alternative body branches are a deviation from the standard CHR. 
 
-## Terms and unification
+### Terms and unification
 
 Constraints processing relies heavily on the use of *terms* as data type. Abstractly speaking, terms are functions of 0 or more arguments. Any opaque value captured by a term must be a POJO.
 
@@ -34,7 +34,7 @@ A term variable ranges over terms. A substitution is a mapping of variables to t
 
 Pattern matching is possible when variables are only used by one of the terms, which is then serves as pattern. To test if a pattern matches a given term can be implemented by a linear time algorithm, whereas full unification is slightly more complicated. 
 
-## Logical variables
+### Logical variables
 
 Logical variables serve to identify an object that is to be determined in the future. They are *monotonic*, in the sense that once a variable is assigned a particular value, it stays assigned to that value. In addition, they implement a *union-find data structure*[^uf] a.k.a. «disjoint set». Any free logical variable can be assigned a class by setting its «parent» field to point to the class’s representative. All logical variables belonging to the same class are treated as exactly one variable. Logical variables notify observers when they become ground and when their *parent* (class representative) changes.
 
@@ -69,7 +69,7 @@ A term variable can also be a logical variable, so that when two terms are unifi
   assertTrue(X.find().value() == term("h"))
 ```
 
-## Constraints and predicates
+### Constraints and predicates
 
 Constraints are, simply put, tuples with fixed arity and a symbol attached. In some respects constraints correspond to rows in a database table. Logically they can be understood as facts, relations, or propositions. An argument to a constraint can be a term, a logical variable, or any POJO, except another constraint.
 
@@ -82,13 +82,6 @@ A successfully fired production, which declares one or more of constraints in it
 ![](img/constraint-lifecycle.svg)  
 _(lifecycle of a constraint)_
 
-To illustrate the idea of using *stored* constraints to fill vacant positions when matching a production, let’s consider an example — a production resolving `containedIn/2` constraint, which corresponds to *type parameter containment* relation of BaseLanguage types.
-
-![](img/process-containedin-350.png)  
-_(example of a multi-head production)_
-
-When `containedIn/2` constraint is activated, the production above matches, but two slots in its head must be filled in order for production to fire. The processor looks in the *store* for all *different* occurrences of constraint `hasBound/2` that could be matched, and substitutes them in these slots. The production will be fired for every matching triple of constraints.
-
 #### Predicates
 
 Whereas a constraint serves to embody a fact or a relation among objects simply by being a witness of such a fact or a relation, a *predicate*[^pred] helps to establish a fact or a relation, or check if one exists, by means of executing a procedure. Same is true for facts and propositions.
@@ -99,13 +92,17 @@ Predicates must implement ask/tell protocol. If a predicate is invoked from prod
 
 ***Example of ask/tell***
 
-## Constraint production
+### Constraint productions
 
 Constraints program is built from productions. Each production has three parts: the part that is responsible for triggering the production, called «head», the part that checks for pre-conditions, called «guard», and the part that is evaluated when production is fired, which is called «body».
 
+#### Head 
+
 Head is a set of constraints which are all required to be alive in order for production to fire. This set is divided into «kept» part and «replaced» part, the latter containing constraints that are to be discarded as soon as the production fires.
 
-There is some terminology inherited from CHR that can be useful when discussing the kinds of productions.
+A production is triggered when there are constraint occurrences matching all constraints specified in production’s head. These occurrences include the active constraint, plus any additional matching constraints that are currently alive, filling the other vacant slots.
+
+There is some terminology inherited from CHR that can be useful when discussing the kinds of productions. In the following table `E` and `E'` are the set of constraints in production’s head, `C` is a conjunction of predicates serving as guard, and `G` is a conjunction of predicates and constraints in production’s body.
 
 | «kept» set `E` | «replaced» set `E’` | Notation | Designation |
 |:--|:--|:--:|:--|
@@ -113,9 +110,24 @@ There is some terminology inherited from CHR that can be useful when discussing 
 | non-empty | empty | `E => C | G` | Propagation |
 | non-empty | non-empty | `E \ E’ <=> C | G` | Simpagation |
 
+Essentially, a production with only «kept» constraints in its head is a «propagation», the one with only «replaced» constraints is a «simplification», and the one that has both «kept» and «replaced» constraints is a combination of the two. 
+
+In addition, we define a fourth kind of production, an «auto» production with an empty head. As the name implies, such production is triggered automatically on start of constraints program execution. 
+To illustrate the idea of using *stored* constraints to fill vacant positions when matching a production, let’s consider an example — a production resolving `containedIn/2` constraint, which corresponds to *type parameter containment* relation of BaseLanguage types.
+
+![](img/process-containedin-350.png)  
+_(example of a multi-head production)_
+
+When `containedIn/2` constraint is activated, the production above matches, but two slots in its head must be filled in order for production to fire. The processor looks in the *store* for all *different* occurrences of constraint `hasBound/2` that could be matched, and substitutes them in these slots. The production will be fired for every matching triple of constraints.
+
+#### Guard
+
 Guard is a conjunction of predicates, which are checked before a production is fired. Predicates in a guard are *queried*.
 
+#### Body
+
 Body is a conjunction of predicates and constraint activations. When triggered, each body clause is evaluated in order, with predicates serving as *assertions* and constraint activations producing new constraints. Each newly activated constraint is checked against any productions that can be fired, and so on.
+
 
 ***Alternative body***
 
@@ -138,7 +150,7 @@ Propagation is different from simplification in that the set of constraints $E$,
              (E^L \multimap E^L\otimes\exists\bar{y}G^L)) \\]
 
 
-[^jchr]: K.U.Leuven JCHR System https://dtai.cs.kuleuven.be/CHR/JCHR/
-[^uf]: https://en.wikipedia.org/wiki/Disjoint-set_data_structure
+[^jchr]: K.U.Leuven JCHR System [https://dtai.cs.kuleuven.be/CHR/JCHR/](https://dtai.cs.kuleuven.be/CHR/JCHR/)
+[^uf]: [https://en.wikipedia.org/wiki/Disjoint-set_data_structure](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
 [^pred]: a.k.a. «built-in constraints» in CHR literature
 [^lls]: Betz, H. and Frühwirth, T., 2005, October. A linear-logic semantics for constraint handling rules. In International Conference on Principles and Practice of Constraint Programming (pp. 137-151). Springer, Berlin, Heidelberg.

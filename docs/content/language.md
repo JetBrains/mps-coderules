@@ -46,39 +46,37 @@ Keyword `extends` allows to specify another handler that is to be extended. All 
 
 Only declared constraints are allowed to be used in the heads of productions in rules of this handler or its extensions. Handler should declare one or more constraints, unless it only uses the constraints from handlers which it extends. Constraint declaration consists of name and *arity*, which together constitute a *constraint symbol*. Constraint’s arity is fixed.
 
-Rules can specify applicable concept, either exactly or including its subconcepts. One can also declare *standalone* rules, which are applied automatically on every evaluation of code rules.
+An applicability condition, if specified, is checked before applying the rule.
 
 ![](img/language-vardecl-600.png)  
 _(example of rule matching concept instances with condition block)_
 
-An applicability condition, if specified, is checked before applying the rule.
+Rules can specify applicable concept, either exactly or including its subconcepts. One can also declare *standalone* rules, which are applied automatically on every evaluation of code rules.
 
 ![](img/language-hasbound-550.png)  
 _(example of standalone rule without input)_
 
-Contents of a rule is a block of code that gets executed when the rule is applied to the source model. If the input is specified, the declared parameter is available in rule’s body. 
+Rule’s contents is a block of code that gets executed when the rule is applied to the source model. If the input is specified, the declared parameter is available in rule’s body.
 
 Rules may affect the scope of model locations that are processed during an evaluation session. Suppose a production responsible for typechecking a particular location in source model relies on presence of productions that are only available if some other location is processed as well. To guarantee that a certain model location is processed during the evaluation session, one uses `require` statement.
 
 ![](img/language-recoverct-700.png)  
 _(example of using `require` statement)_
 
-#### Constraint productions
+#### Productions
 
-*Constraint productions* can be created at any place within rule body. A production has three main parts called *head*, *guard*, and *body*. Head defines what constraint trigger this production, and it can only contain constraints defined by the handler or one of the handlers it extends. Body can contain any visible constraints, as well as *predicates*. A production must include either the body or the head, no production can omit both. Guard is optional, and it can only contain predicates.
+*Productions* can be created at any place within rule body. A production has three main parts called *head*, *guard*, and *body*. Head defines what constraints trigger this production, and it can only contain constraints defined by the handler or one of the handlers it extends. Body can contain any visible constraints, as well as *predicates*. A production must include either the body or the head, no production can omit both. Guard is optional, and it can only contain predicates.
 
 Both head and body can declare *logical variables*. By default a logical variable ranges over *terms*, although any POJO may be serve as a value.
 
 ![](img/language-compatibleWith-300.png)  
-_(constraint production declaring logical variables)_
+_(production declaring logical variables)_
 
 A production with an empty head, not declaring any constraints to serve as its input, is considered an *automatic* production and is triggered automatically on start of constraints program execution.
 
-In a production’s head constraints can be declared as either *kept* or *replaced*. Briefly put, the constraints that are *kept* are left alone after a production is fired, whereas the *replaced* ones are discarded after the production’s head has been matched. Replaced constraints are marked with tilde `~`.
+In a production’s head constraints can be declared as either *kept* or *replaced*. Briefly put, the constraints that are *kept* are left alone after a production is fired, whereas the *replaced* ones are discarded after the production’s head has been matched. Replaced constraints are marked with a tilde `~`.
 
-A production is triggered when there are constraint occurrences matching all constraints specified in production’s head. These occurrences include the active constraint, plus any additional matching constraints that are currently alive, filling the other vacant slots.
-
-Productions to match a particular constraint are selected from a handler that has declares this constraint, and handlers that are its extensions. The order of productions within the handler matters, the ones declared on top are matched first. Productions from extending handlers are prepended to the list of productions of the handler they extend.
+Productions to match a particular constraint are selected from a handler that declares this constraint, and handlers that are its extensions. The order of productions within the handler matters, the ones declared on top are matched first. Productions from extending handlers are prepended to the list of productions of the handler they extend.
 
 When a constraint with logical variable as one of its arguments is matched, that variable becomes bound to the corresponding argument of the matching occurrence. The scope of such binding is this production’s guard and body.
 
@@ -94,7 +92,7 @@ _(example of constraint argument referring to a model location)_
 
 Whereas the production’s head can only contain constraints, there are also other logical clauses that are used in guard and body.
 
-A *predicate* is a built-in construct that serves two purposes: when used in guard, it serves to query if the condition is satisfied, and when invoked from body, it asserts the condition. An example is `unifies` predicate, displayed as `=`, which tests that its arguments can be unified — if used in guard, and invokes the actual unification if called from body. There are also predicates that can only be queries, such as `isFree/1` or `isBound/1`, testing if a logical variable is free or has value assigned.
+A *predicate* is a built-in construct that serves two purposes: when used in guard, it serves to query if the condition is satisfied, and when invoked from body, it asserts the condition. An example is `unifies` predicate, displayed as `=`, which, if used in guard, only tests that its arguments can be unified, otherwise if called from body, it invokes the actual unification. There are also predicates that can only be queries, such as `isFree/1` or `isBound/1`, testing if a logical variable is free or has value assigned.
 
 Production’s guard can only contain predicates, and the body can contain both constraints and predicates.  
 
@@ -106,10 +104,11 @@ Arbitrary Java code can be called with `eval/1` predicate. It accepts either an 
 ![](img/language-recover-500.png)  
 _(example of using `eval/1` predicate)_
 
-In order to make use of macro definitions, which are essentially parameterised production templates extracted to a separate root, one of two pseudo predicates can be used: `expand` and `call`. The former accepts a node, whereas the second expects the argument that are substituted as macro parameters. 
+In order to make use of macro definitions, which are essentially parameterised production templates extracted to a separate root, one of two pseudo predicates can be used: `expand` and `call`. The former accepts a node, whereas the second expects the argument that are substituted as macro parameters.
 
 ***Examples of expand/call pseudo predicates***
 
+***Substitution — passing parameters via context***
 
 ***Template fragments within production template body***
 
