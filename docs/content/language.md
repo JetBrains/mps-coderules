@@ -32,7 +32,7 @@ The following table contains root concepts that belong to code rules definition.
 
 The aim of rules defined by handlers is again twofold: firstly, they may serve as regular “checking” rules, and also, most importantly, they contribute constraint productions. These are created with a DSL that allows mixing of productions and Java code, and can also include constraint fragments inside a production template.
 
-The following example is from experimental *control flow* aspect for baseLanguage. It demonstrates how a production is constructed using a template. A template is enclosed into a pair of `%% … %%` symbols and yields constraints wrapped into special `<% … %>` brackets. In this particular case `write/2` constraint is optional and is only added to the body of production in case the condition is satisfied (a location corresponding to a local variable is written to only if it has an initialiser).
+The following example is from the experimental *control flow* aspect for baseLanguage. It demonstrates how a production is constructed using a template. A template is enclosed into a pair of `%% … %%` symbols and yields constraints wrapped into special `<% … %>` brackets. In this particular case `write/2` constraint is optional and is only added to the body of production in case the condition is satisfied (a location corresponding to a local variable is written to only if it has an initialiser).
 
 ![](img/language-writelocal-750.png)  
 _(example of rule with production template)_
@@ -63,20 +63,38 @@ Rules may affect the scope of model locations that are processed during an evalu
 ![](img/language-recoverct-700.png)  
 _(example of using `require` statement)_
 
-#### Productions
+#### Production templates
 
-*Productions* can be created at any place within rule body. A production has three main parts called *head*, *guard*, and *body*. Head defines what constraints trigger this production, and it can only contain constraints defined by the handler or one of the handlers it extends. Body can contain any visible constraints, as well as *predicates*. A production must include either the body or the head, no production can omit both. Guard is optional, and it can only contain predicates.
+Constraint productions are discussed in details in the section on Constraint Processing System, and here we briefly enumerate the main concepts and their usage. 
+
+*Productions* can be created at any place within a rule’s body, which amounts to creating a production *template*. This means, a production within a loop generates a runtime constraint production on every iteration of this loop. 
+
+A production template has three parts called *head*, *guard*, and *body*. Their meanings correspond precisely to those defined for the constraint productions. 
+
+There is a certain limitation as to what *constraints* can be used in head: it can only contain constraints defined by this handler, or one of the handlers it extends. This limitation has its origin in the way productions are chosen when  an active constraint is being processed. Namely, productions to match an active constraint are selected from the handler declaring this constraint, and handlers that are its extensions. The order of productions within the handler matters, the ones declared on top are matched first. Productions from extending handlers are prepended to the list of productions of the handler they extend.
+
+Production’s body can contain any visible constraints, as well as *predicates*. A production must include either the body or the head, no production can omit both. Guard is optional, and it can only contain predicates.
+
+A production with an empty head, not declaring any constraints to serve as its input, is considered an *automatic* production and is triggered automatically on start of constraints program execution.
+
+Constraints in a production’s head can be declared as either *kept* or *replaced*. Replaced constraints are marked with a tilde `~`.
+
+Predicates, also known otherwise as “built-in constraints”, are represented either as binary operators, such as `=` for unification or `==` for equality, or they are boolean-valued functions. Unification or equality if used in guard, only tests that its arguments can be unified, otherwise if called from body, it invokes the actual unification or assigns the value to a logical variable.
+
+![](img/language-unify-300.png)  
+_(`unifies` predicate used in the guard and in the body)_
+
+There are also predicates that can only be queries, such as `isFree/1` or `isBound/1`, testing if a logical variable is free or has value assigned. Such predicates can only be used in guard. 
+
+Arbitrary Java code can be called with `eval/1` predicate. It accepts either an expression of `boolean` type, in which case it can be used in guard, or expression of any type when called from body. In the latter case the value expression evaluates to is ignored.
+
+![](img/language-recover-500.png)  
+_(example of using `eval/1` predicate)_
 
 Both head and body can declare *logical variables*. By default a logical variable ranges over *terms*, although any POJO[^pojo] may be serve as a value.
 
 ![](img/language-compatibleWith-300.png)  
 _(production declaring logical variables)_
-
-A production with an empty head, not declaring any constraints to serve as its input, is considered an *automatic* production and is triggered automatically on start of constraints program execution.
-
-In a production’s head constraints can be declared as either *kept* or *replaced*. Briefly put, the constraints that are *kept* are left alone after a production is fired, whereas the *replaced* ones are discarded after the production’s head has been matched. Replaced constraints are marked with a tilde `~`.
-
-Productions to match a particular constraint are selected from a handler that declares this constraint, and handlers that are its extensions. The order of productions within the handler matters, the ones declared on top are matched first. Productions from extending handlers are prepended to the list of productions of the handler they extend.
 
 When a constraint with logical variable as one of its arguments is matched, that variable becomes bound to the corresponding argument of the matching occurrence. The scope of such binding is this production’s guard and body.
 
@@ -90,21 +108,8 @@ Everywhere locations in the source code (model) must be referenced, node referen
 ![](img/language-typeof-550.png)  
 _(example of constraint argument referring to a model location)_
 
-Whereas the production’s head can only contain constraints, there are also other logical clauses that are used in guard and body.
-
-A *predicate* is a built-in construct that serves two purposes: when used in guard, it acts to query if the condition is satisfied, and when invoked from body, it asserts the condition. An example is `unifies` predicate, displayed as `=`, which, if used in guard, only tests that its arguments can be unified, otherwise if called from body, it invokes the actual unification. There are also predicates that can only be queries, such as `isFree/1` or `isBound/1`, testing if a logical variable is free or has value assigned.
-
-Production’s guard can only contain predicates, and the body can contain both constraints and predicates.  
-
-![](img/language-unify-300.png)  
-_(`unifies` predicate used in the guard and in the body)_
-
-Arbitrary Java code can be called with `eval/1` predicate. It accepts either an expression of `boolean` type, in which case it can be used in guard, or expression of any type when called from body. In the latter case the value expression evaluates to is ignored.
-
-![](img/language-recover-500.png)  
-_(example of using `eval/1` predicate)_
-
 In order to make use of macro definitions, which are essentially parameterised production templates extracted to a separate root, one of the two pseudo predicates can be used: `expand` and `call`. The former accepts a node, whereas the second expects the arguments that are substituted as macro parameters.
+
 
 ***Examples of expand/call pseudo predicates***
 
