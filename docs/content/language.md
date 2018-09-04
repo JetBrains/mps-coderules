@@ -30,7 +30,7 @@ The following table contains root concepts that belong to code rules definition.
 
 #### Rules
 
-The aim of rules defined by handlers is again twofold: firstly, they may serve as regular “checking” rules, and also, most importantly, they contribute constraint productions. These are created with a DSL that allows mixing of productions and Java code, and can also include constraint fragments inside a production template.
+The aim of rules defined by handlers contribute constraint productions. These are created with a DSL that allows mixing of productions and Java code, and can also include constraint fragments inside a production template.
 
 The following example is from the experimental *control flow* aspect for baseLanguage. It demonstrates how a production is constructed using a template. A template is enclosed into a pair of `%% … %%` symbols and yields constraints wrapped into special `<% … %>` brackets. In this particular case `write/2` constraint is optional and is only added to the body of production in case the condition is satisfied (a location corresponding to a local variable is written to only if it has an initialiser).
 

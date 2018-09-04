@@ -10,8 +10,6 @@ Analysis of source code or model with *code rules* can be described as a two-pha
 
 In the first phase, languages used by the model being analysed and their prototypes (meaning the languages that are being *extended*, but not used directly) are surveyed for the appropriate *code rules* aspect model, which is `types` in case of type checking, for example. Each language defines its contribution to the rules set by declaring its own *code rules* in the appropriate aspect model. All rules within this aspect model are applied to the source model, with rules coming from extension languages having higher priority.
 
-***MPS contributions normally**
-
 The outcome of this phase is a *constraints program*, which is a collection of *handlers*, which in turn represent lists of *productions*. This “program” however, exists in memory only as it does not have any textual representation.
 
 The first phase runs in “read action”, blocking potential writes, which means the editor may become unresponsive if a write action is requested. Ideally the rules should finish quickly and postpone all heavy load to the next phase, which can then be run in the background, as the access to `SModel` is no longer required.

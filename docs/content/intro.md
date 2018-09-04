@@ -38,7 +38,7 @@ _(resolution of `convertsTo/2` constraint using pattern matching)_
 
 The following is the list of features made available to users of MPS with *code rules* plugin.  
 
- - A language for building rules that serve as production templates, and as regular “checking” rules. The rules may be concept-specific or standalone, if there is a need to provide constraints that are invariant for every invocation.
+ - A language for building rules that serve as production templates. The rules may be concept-specific or standalone, if there is a need to provide constraints that are invariant for every invocation.
 
  - *Constraint Processing System* — an extension of CHR[^chr] semantics allowing the use of unification in production’s head with automatic binding of logical variables on successful match. This extension also supports alternative body branches, as well as calling arbitrary Java code. Representing type inference in the form of logical productions helps achieve extensibility, as productions defined by extension languages can be easily blended in.
 

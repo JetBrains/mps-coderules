@@ -42,7 +42,7 @@ For example, type **node** can be assigned to source model location with *set ty
 ![](img/eval-settype-650.png)  
 _(example showing type assigned from a production)_
 
-Failures during constraints program execution are caught with the help of alternative body branches, where those are provided. An uncaught failure terminates program execution and is reported to the user.
+Failures may be encountered during constraints program execution, such as a unification failure, and they are caught with the help of alternative body branches, where those are provided. An uncaught failure terminates program execution and is reported to the user.
 
 In the following example, a potential error is caught in the `else` branch and a corresponding errors is reported. Execution of constraints program is not terminated though, so other problems may still be reported.
 

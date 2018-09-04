@@ -43,7 +43,8 @@ Unification may fail because the arity or the symbols of the two terms mismatch.
 
 ```
   f(X, h(X)) and f(g(), h(k())) can't be unified because g != k
-  f(X, g(X)) and f(g(X), g(h()) can't be unified because of failed occurs check
+  f(X, g(X)) and f(g(X), g(h()) can't be unified because of 
+                                failed occurs check
 ```
 
 Pattern matching is possible when variables are only used by one of the terms, which then serves as a pattern. To test if a pattern matches a given term can be implemented by a linear time algorithm, whereas full unification is slightly more complicated.
@@ -105,6 +106,8 @@ Predicates must implement ask/tell protocol. If a predicate is invoked from prod
 ***Example of a predicate***
 
 ***Example of ask/tell***
+
+***Example of failed predicate***
 
 ### Constraint productions
 
