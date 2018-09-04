@@ -26,13 +26,13 @@ inline fun BitSet.copyApply (f: BitSet.() -> Unit): BitSet =
     (clone() as BitSet).apply(f)
 
 fun bitSetOfOnes(size: Int): BitSet =
-    BitSet(size).also { it.set(0, size) }
+    BitSet(size).apply { set(0, size) }
 
 fun BitSet.setBit(bit: Int): BitSet =
-    BitSet.valueOf(this.toLongArray()).also { it.set(bit) }
+    BitSet.valueOf(this.toLongArray()).apply { set(bit) }
 
 fun BitSet.clearBit(bit: Int): BitSet =
-    BitSet.valueOf(this.toLongArray()).also { it.clear(bit) }
+    BitSet.valueOf(this.toLongArray()).apply { clear(bit) }
 
 fun BitSet.allSetBits(): Iterable<Int> = object : Iterable<Int> {
     override fun iterator(): Iterator<Int> = object : Iterator<Int> {

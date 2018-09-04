@@ -18,7 +18,6 @@ package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.List as PersList
-import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.Maps
 import com.github.andrewoma.dexx.collection.Vector as PersVector
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
@@ -32,6 +31,7 @@ import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.*
 import jetbrains.mps.unification.Term
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * @author Fedor Isakov
@@ -48,9 +48,9 @@ class RuleMatcher(val rule: Rule) {
     
     val propagation = rule.headReplaced().count() == 0
 
-    fun fringe() = MatchFringe(cons(FringeNode(emptySubst())), emptySet(), 0)
+    fun fringe() = MatchFringe(listOf(FringeNode(emptySubst())), emptySet(), 0)
 
-    inner class MatchFringe(val nodes: ConsList<FringeNode>,
+    inner class MatchFringe(val nodes: List<FringeNode>,
                             val seen: IdHashSet<ConstraintOccurrence>,
                             val genId: Int) {
 
@@ -72,27 +72,33 @@ class RuleMatcher(val rule: Rule) {
                 // select complete (leaf) nodes and make them appear as if newly expanded
                 // *unless* propagation (implement propagation history feature)
                 if (propagation) return MatchFringe(nodes, seen, genId + 1)
-                
-                val newNodes = nodes.asSequence().mapNotNull { fn ->
-                    if (fn is ActiveFringeNode && fn.complete)
+
+                val newNodes = ArrayList<FringeNode>()
+                for (fn in nodes) {
+                    if (fn is ActiveFringeNode && fn.complete) {
                         fn.unrelatedOrCopy(occ, genId + 1)
-                    else
-                        fn
-                }.toConsList()
+                        
+                    } else { fn }?.let { newNodes.add(it) }
+                }
+
                 return MatchFringe(newNodes, seen, genId + 1)
 
             } else {
-                val newNodes = nodes.asSequence().filter { fn ->
-                    mask == null || fn.matchesVacant(mask)
-                }.flatMap { fn ->
-                    fn.expand(occ, genId + 1) }
-                return MatchFringe(newNodes.prependTo(nodes), seen.add(occ), genId + 1)
+                val newNodes = ArrayList<FringeNode>(nodes)
+                for (fn in nodes) {
+                    // TODO: mask can't be null in normal circumstances
+                    if (mask == null || fn.matchesVacant(mask)) {
+                        newNodes.addAll(fn.expand(occ, genId + 1))
+                    }
+                }
+
+                return MatchFringe(newNodes, seen.add(occ), genId + 1)
             }
         }
 
         fun cleanup(occ: ConstraintOccurrence): MatchFringe {
-            val newNodes = nodes.asSequence().mapNotNull { it.unrelatedOrNull(occ) }
-            return MatchFringe(newNodes.toConsList(), seen.remove(occ), genId + 1)
+            val newNodes = nodes.mapNotNull { it.unrelatedOrNull(occ) }
+            return MatchFringe(newNodes, seen.remove(occ), genId + 1)
         }
 
     }
@@ -104,13 +110,16 @@ class RuleMatcher(val rule: Rule) {
          * Returns the additional nodes built from this node on adding the occurrence.
          * If the occurrence is already in the path, return empty sequence.
          */
-        fun expand(occ: ConstraintOccurrence, genId: Int): Sequence<ActiveFringeNode> {
-            val unrelated = unrelatedOrNull(occ) ?: return emptySequence()
-            return unrelated.vacant.allSetBits().map { idx ->
-                idx to match(head[idx] !!, occ, subst) }.asSequence().mapNotNull { (idx, newSubst) ->
-                newSubst?.let { ActiveFringeNode(this, occ, idx, genId, it) }
-            }
-        }
+        fun expand(occ: ConstraintOccurrence, genId: Int): List<ActiveFringeNode> =
+            unrelatedOrNull(occ)?.run {
+                ArrayList<ActiveFringeNode>().also { expanded ->
+                    for (idx in vacant.allSetBits()) {
+                        match(head[idx]!!, occ, subst)?.let { newSubst ->
+                            expanded.add(ActiveFringeNode(this, occ, idx, genId, newSubst))
+                        }
+                    }
+                }
+            } ?: emptyList()
 
         /**
          * Returns this node if it doesn't have the occurrence in its path, null otherwise.

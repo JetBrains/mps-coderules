@@ -38,7 +38,7 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
 
     val rules = ArrayList<Rule>()
 
-    private val slotIndices = ArrayList<SlotIndex>()
+    private val slotIndices = ArrayList<SlotMask>()
 
     init {
         buildIndex(handlers)
@@ -55,14 +55,16 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
      * Returns a pair of rule and bit mask with 1's marking matching slots.
      */
     fun forOccurrenceWithMask(occ: ConstraintOccurrence): Iterable<Pair<Rule, BitSet>> {
-        val ruleIndices = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
-        return ruleIndices.allSetBits().mapNotNull { idx -> slotIndices[idx][occ]?.let { mask -> rules[idx] to mask }}
+        val ruleBits = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
+        return ruleBits.allSetBits().mapNotNull { ruleBit ->
+            slotIndices[ruleBit][occ]?.let { mask -> rules[ruleBit] to mask }
+        }
     }
 
     override fun iterator(): Iterator<Rule> = tag2rule.values.iterator()
 
     private fun buildIndex(handlers: Iterable<Handler>) {
-        var pos = 0
+        var ruleBit = 0
         for (h in handlers) {
             for (rule in h.rules()) {
                 if (tag2rule.containsKey(rule.tag())) throw IllegalStateException("duplicate rule tag ${rule.tag()}")
@@ -71,30 +73,38 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
                 rules.add(rule)
 
                 val head = rule.headKept() + rule.headReplaced()
-                val symbol2mask = SlotIndex()
-                for ((bit, cst) in head.withIndex()) {
-                    symbol2index.getOrPut(cst.symbol()) { ArgumentRuleIndex(cst.symbol()) }.update(pos, cst)
-                    symbol2mask.update(cst, bit)
+                val cst2mask = SlotMask()
+                for ((pos, cst) in head.withIndex()) {
+                    symbol2index.getOrPut(cst.symbol()) { ArgumentRuleIndex(cst.symbol()) }.update(cst, ruleBit)
+                    cst2mask.update(cst, pos)
                 }
 
-                slotIndices.add(symbol2mask)
+                slotIndices.add(cst2mask)
 
-                pos += 1
+                ruleBit += 1
             }
         }
     }
 
-    class SlotIndex() {
+
+    /**
+     * Represents a mask associated with a single rule.
+     * The mask tells whether or not a particular constraint occurrence can match
+     * any of the rule's constraints.
+     */
+    class SlotMask {
 
         val symbol2mask = HashMap<Symbol, BitSet>()
 
-        fun update(cst: Constraint, pos: Int) {
-            symbol2mask.getOrPut(cst.symbol()) { BitSet() }.set(pos)
+        fun update(cst: Constraint, posInHead: Int) {
+            symbol2mask.getOrPut(cst.symbol()) { BitSet() }.set(posInHead)
         }
 
+        /**
+         * When null is returned, there can be no match for this constraint
+         */
         operator fun get(occ: ConstraintOccurrence): BitSet? =
-            symbol2mask[occ.constraint().symbol()]              // guaranteed to != null
-
+            symbol2mask[occ.constraint().symbol()]
     }
 
     /**
@@ -118,17 +128,17 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
             }
         }
 
-        fun update(bit: Int, cst: Constraint) {
+        fun update(cst: Constraint, ruleBit: Int) {
             for ((idx, arg) in cst.arguments().withIndex()) {
                 val value2indices = anySelectors[idx]
                 when (arg) {
                     is MetaLogical<*>   ->
                                             // all values should be accepted by a meta logical
-                                            wildcardSelectors[idx].set(bit)
+                                            wildcardSelectors[idx].set(ruleBit)
                     is Term             ->
-                                            termSelectors.set(idx, termSelectors[idx].put(arg, bit))
+                                            termSelectors.set(idx, termSelectors[idx].put(arg, ruleBit))
                     is Any              ->
-                                            value2indices.getOrPut(arg) { BitSet() }.also { it.set(bit) }
+                                            value2indices.getOrPut(arg) { BitSet() }.apply { set(ruleBit) }
                     else                ->
                                             throw NullPointerException()  // never happens
 

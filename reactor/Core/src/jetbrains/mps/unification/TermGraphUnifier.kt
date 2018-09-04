@@ -16,7 +16,6 @@
 
 package jetbrains.mps.unification
 
-import gnu.trove.TIntHashSet
 import gnu.trove.list.array.TIntArrayList
 import gnu.trove.map.hash.TIntObjectHashMap
 import jetbrains.mps.unification.Substitution.FailureCause.CYCLE_DETECTED
@@ -52,6 +51,9 @@ import java.util.*
  * @author Fedor Isakov
  */
 
+typealias IntList = TIntArrayList
+typealias IntAnyHashMap<V> = TIntObjectHashMap<V>
+
 class TermGraphUnifier {
 
     companion object {
@@ -65,12 +67,12 @@ class TermGraphUnifier {
 
     private val backref = IdentityHashMap<Any?, Int>()
     private val origin = ArrayList<Term>()
-    private val innerClass = TIntArrayList()
-    private val innerSchema = TIntArrayList()
-    private val innerSize = TIntArrayList()
-    private val innerVars = TIntObjectHashMap<TIntArrayList?>()
-    private val innerAcyclic = TIntHashSet()
-    private val innerVisited = TIntHashSet()
+    private val innerClass = IntList()
+    private val innerSchema = IntList()
+    private val innerSize = IntList()
+    private val innerVars = IntAnyHashMap<IntList?>()
+    private val innerAcyclic = BitSet()
+    private val innerVisited = BitSet()
 
     constructor() {
         this.wrapper = TermWrapper.ID
@@ -96,23 +98,23 @@ class TermGraphUnifier {
     private fun findSolution(s: Int, defSubs: Substitution) : Substitution {
         val z = innerSchema[find(s)]
 
-        if (innerAcyclic.contains(z)) { return defSubs } // not part of a cycle
-        if (innerVisited.contains(z)) { return failedSubstitution(CYCLE_DETECTED) } // there exists a cycle
+        if (innerAcyclic[z]) { return defSubs } // not part of a cycle
+        if (innerVisited[z]) { return failedSubstitution(CYCLE_DETECTED) } // there exists a cycle
 
         var subs = defSubs
         if (origin[z].`is`(FUN)) {
-            innerVisited.add(z)
+            innerVisited.set(z)
 
             for (c in origin[z].arguments()) {
                 subs = findSolution(toInner(c), subs)
                 if (!subs.isSuccessful) break
             }
 
-            innerVisited.add(z)
+            innerVisited.set(z)
         }
 
         if (subs.isSuccessful) {
-            innerAcyclic.add(z)
+            innerAcyclic.set(z)
 
             // avoid unnecessary instatiation
             val success = if (subs is SuccessfulSubstitution) subs else SuccessfulSubstitution(subs)
@@ -240,7 +242,7 @@ class TermGraphUnifier {
 
         if (repr != innerClass[repr]) {
             // find representative and compress paths
-            val path = TIntArrayList()
+            val path = IntList()
             path.add(t)
             while (repr != innerClass[repr]) {
                 path.add(repr)
@@ -258,7 +260,7 @@ class TermGraphUnifier {
     private fun prependVars(t: Int, vars: TIntArrayList?) {
         if (vars?.isEmpty ?: true) { return }
 
-        val newVars = TIntArrayList(innerVars[t] ?: EMPTY)
+        val newVars = IntList(innerVars[t] ?: EMPTY)
         newVars.addAll(vars)
         innerVars.put (t, newVars)
     }
@@ -281,7 +283,7 @@ class TermGraphUnifier {
             innerClass.add(next)
             innerSize.add(1)
             if (wrapped.`is`(VAR)) {
-                innerVars.put(next, TIntArrayList(intArrayOf(next)))
+                innerVars.put(next, IntList(intArrayOf(next)))
             }
             backref.put(key, next)
             next
