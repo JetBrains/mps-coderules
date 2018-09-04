@@ -5,18 +5,18 @@ description: >- # this means to ignore newlines until "baseurl:"
   Code Rules is a language framework and runtime for running logical
   inference in JetBrains MPS.
 baseurl: "/mps-coderules" # the subpath of your site, e.g. /blog
-url: "https://fisakov.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://jetbrains.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jetbrains_mps
-github_username:  fisakov
+github_username:  jetbrains
 time: 2018-09-04
 revision: 0.5.0
 copyright: JetBrains s.r.o.
 copyright_url: "https://jetbrains.com"
 homepage: "https://jetbrains.com/mps"
 homepage_title: "JetBrains MPS"
-github-project: fisakov/mps-coderules
+github-project: jetbrains/mps-coderules
 # Google Analytics
-google_analytics: UA-124237176-1
+google_analytics: UA-124630631-1
 
 # Build settings
 markdown: kramdown

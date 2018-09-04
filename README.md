@@ -4,15 +4,15 @@ An experimental feature of [JetBrains MPS](https://jetbrains.com/mps). Code rule
 
 ## Documentation
 
-**NEW!** The documentation [website](http://fisakov.github.io/mps-coderules/) has been created.  
- 
+**NEW!** The documentation [website](http://jetbrains.github.io/mps-coderules/) is available.  
+
 ## Status
 
-[![Build Status](https://travis-ci.org/fisakov/mps-coderules.svg?branch=master)](https://travis-ci.org/fisakov/mps-coderules)
+[![Build Status](https://travis-ci.org/jetbrains/mps-coderules.svg?branch=master)](https://travis-ci.org/jetbrains/mps-coderules)
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
 
-Latest release can be found [here](https://github.com/fisakov/mps-coderules/releases).
+Latest release can be found [here](https://github.com/jetbrains/mps-coderules/releases).
 
 The author can be reached by email `fedor.isakov` (AT) `jetbrains.com` or by [Twitter](https://twitter.com/fisakov).
 
@@ -24,13 +24,13 @@ This project is the result of ongoing research done within MPS team in the area 
 
 Code rules serve as templates that produce constraint rules. Both transformation to constraint rules and evaluating is done in-memory at the time analysis is launched. Constraint rules are processed by the embedded [engine](reactor).
 
-Samples included with this project demonstrate how *coderules* can be used for solving concrete tasks connected with source code analysis. 
+Samples included with this project demonstrate how *coderules* can be used for solving concrete tasks connected with source code analysis.
 
 - [Type checking of lambda calculus](samples/lambdacalc) shows the implementation of standard type checking algorithm.
-- [Proof validation](samples/fitch) using Fitch system demonstrates how logical inference can be done. 
+- [Proof validation](samples/fitch) using Fitch system demonstrates how logical inference can be done.
 - [Type checking and control flow analysis](samples/mpscore) for core MPS languages.
 
-*Coderules* allow for extensions to be provided by derived languages. Extensions have higher priority, so it’s easy to override the built-in behaviour. 
+*Coderules* allow for extensions to be provided by derived languages. Extensions have higher priority, so it’s easy to override the built-in behaviour.
 
 The semantics of constraints handling is compatible with regular Java semantics, so *coderules* can be safely embedded into the user code. There also exists support for launching arbitrary code from when processing constraints.
 
