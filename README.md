@@ -8,7 +8,7 @@ An experimental feature of [JetBrains MPS](https://jetbrains.com/mps). Code rule
 
 ## Status
 
-[![Build Status](https://travis-ci.org/jetbrains/mps-coderules.svg?branch=master)](https://travis-ci.org/jetbrains/mps-coderules)
+[![Build Status](https://travis-ci.org/JetBrains/mps-coderules.svg?branch=master)](https://travis-ci.org/JetBrains/mps-coderules)
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
 
