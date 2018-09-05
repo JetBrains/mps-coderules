@@ -28,11 +28,19 @@ kramdown:
 mdl_colors: grey-light_blue
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 include:
   - "content"
   - "img"
   - "_assets"
+
+defaults:
+  -
+    scope:
+      path:            "content/todo/*.md"
+    values:
+      sitemap:         false
 
 # Exclude from processing.
 exclude:
