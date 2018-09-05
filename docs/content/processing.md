@@ -143,7 +143,7 @@ Body is a conjunction of predicates and constraint activations. When triggered, 
 
 The procedure `processActive()` accepts a constraint occurrence that has been activated and proceeds as follows until this constraint is either discarded or suspended (moved to store). This procedure calls itself recursively on every constraint activation, so there might be many active constraints at any given moment, organised into a stack, which matches exactly the call stack of `processActive()`. 
 
-First, the procedure searches for “relevant” productions that declare a constraint in their heads matching the active constraint occurrence currently being processed. These  productions form a FIFO queue, corresponding to the order of productions within a handler. 
+First, the procedure searches for “relevant” productions that declare a constraint in their heads matching the active constraint occurrence currently being processed. These productions form a FIFO queue, corresponding to the order of productions within a handler.
 
 For each “relevant” production, which at least partially matches the currently active constraint occurrence, the vacant slots in production’s head are filled with matching constraints from the store, which were previously suspended. Once a full match with production’s head is established, the guard is checked.
 

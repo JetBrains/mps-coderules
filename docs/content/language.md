@@ -26,11 +26,13 @@ The following table contains root concepts that belong to code rules definition.
 
 ### Handler
 
-*Handler* serves two purposes: it declares the constraints that can be used in the *head* of productions in this handler and its extensions, and it  also declares *rules*, which are, simply put, procedures applicable to specific concept and (optionally) its subconcepts.
+*Handler* serves two purposes: it declares the *constraints* that it processes, and it  also declares *rules*, which are, simply put, procedures applicable to specific concept and (optionally) its subconcepts. 
+
+Constraints declared by a handler are public symbols that serve as its API in the following sense. In *head* of productions of a handler and its extensions only those constraints can be used, that were declared in this handler or any handler it extends. On the other hand, any constraints can be used in *body*, provided the references to constraint declarations are resolved in the usual way.
 
 #### Rules
 
-The aim of rules defined by handlers contribute constraint productions. These are created with a DSL that allows mixing of productions and Java code, and can also include constraint fragments inside a production template.
+The aim of rules defined by handlers is to contribute constraint productions. These are created with a DSL that allows mixing of productions and Java code, and can also include constraint fragments inside a production template.
 
 The following example is from the experimental *control flow* aspect for baseLanguage. It demonstrates how a production is constructed using a template. A template is enclosed into a pair of `%% … %%` symbols and yields constraints wrapped into special `<% … %>` brackets. In this particular case `write/2` constraint is optional and is only added to the body of production in case the condition is satisfied (a location corresponding to a local variable is written to only if it has an initialiser).
 
@@ -71,9 +73,9 @@ Constraint productions are discussed in details in the section on Constraint Pro
 
 A production template has three parts called *head*, *guard*, and *body*. Their meanings correspond precisely to those defined for the constraint productions. 
 
-There is a certain limitation as to what *constraints* can be used in head: it can only contain constraints defined by this handler, or one of the handlers it extends. This limitation has its origin in the way productions are chosen when  an active constraint is being processed. Namely, productions to match an active constraint are selected from the handler declaring this constraint, and handlers that are its extensions. The order of productions within the handler matters, the ones declared on top are matched first. Productions from extending handlers are prepended to the list of productions of the handler they extend.
+There is a certain limitation as to what *constraints* can be used in head: it can only contain constraints defined by this handler, or one of the handlers it extends. This limitation has its origin in the way productions are chosen when an active constraint is being processed. Namely, productions to match an active constraint are selected from the handler declaring this constraint, and handlers that are its extensions. The order of productions within the handler matters, the ones declared on top are matched first. Productions from extending handlers are prepended to the list of productions of the handler they extend.
 
-Production’s body can contain any visible constraints, as well as *predicates*. A production must include either the body or the head, no production can omit both. Guard is optional, and it can only contain predicates.
+Production’s body can contain any visible constraints declared by handlers located in imported models, as well as *predicates*. A production must include either a body or a head, no production can omit both. Guard is optional, and it can only contain predicates.
 
 A production with an empty head, not declaring any constraints to serve as its input, is considered an *automatic* production and is triggered automatically on start of constraints program execution.
 
