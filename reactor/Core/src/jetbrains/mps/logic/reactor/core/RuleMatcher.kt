@@ -44,7 +44,8 @@ private fun emptySubst() = Maps.of<MetaLogical<*>, Any>()
 
 class RuleMatcher(val rule: Rule) {
 
-    val head = rule.headKept().toCollection(ArrayList(4)).also { it.addAll(rule.headReplaced()) }
+    val head = rule.headKept().toCollection(ArrayList(4)).apply {
+                    addAll(rule.headReplaced()) } as List<Constraint>
     
     val propagation = rule.headReplaced().count() == 0
 
@@ -87,9 +88,7 @@ class RuleMatcher(val rule: Rule) {
                 val newNodes = ArrayList<FringeNode>(nodes)
                 for (fn in nodes) {
                     // TODO: mask can't be null in normal circumstances
-                    if (mask == null || fn.matchesVacant(mask)) {
-                        newNodes.addAll(fn.expand(occ, genId + 1))
-                    }
+                    newNodes.addAll(fn.expand(occ, genId + 1, fn.matchingVacant(mask)))
                 }
 
                 return MatchFringe(newNodes, seen.add(occ), genId + 1)
@@ -110,11 +109,11 @@ class RuleMatcher(val rule: Rule) {
          * Returns the additional nodes built from this node on adding the occurrence.
          * If the occurrence is already in the path, return empty sequence.
          */
-        fun expand(occ: ConstraintOccurrence, genId: Int): List<ActiveFringeNode> =
+        fun expand(occ: ConstraintOccurrence, genId: Int, matchingVacant: BitSet): List<ActiveFringeNode> =
             unrelatedOrNull(occ)?.run {
                 ArrayList<ActiveFringeNode>().also { expanded ->
-                    for (idx in vacant.allSetBits()) {
-                        match(head[idx]!!, occ, subst)?.let { newSubst ->
+                    for (idx in matchingVacant.allSetBits()) {
+                        match(head[idx], occ, subst)?.let { newSubst ->
                             expanded.add(ActiveFringeNode(this, occ, idx, genId, newSubst))
                         }
                     }
@@ -125,6 +124,8 @@ class RuleMatcher(val rule: Rule) {
          * Returns this node if it doesn't have the occurrence in its path, null otherwise.
          */
         open fun unrelatedOrNull(occ: ConstraintOccurrence): FringeNode? = this
+
+        fun matchingVacant(mask: BitSet?) = mask?.copyApply { and(vacant) } ?: vacant
 
         fun matchesVacant(mask: BitSet) = !mask.copyApply { and(vacant) }.isEmpty
 

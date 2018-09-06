@@ -87,7 +87,7 @@ class Controller(
             this.dispatchFringe = activatedDF
 
 //            for (match in matcher.matches(active, frameStack.current.store)) {
-            for(match in dispatchFringe.allMatches.toList()) {
+            for(match in dispatchFringe.matches().toList()) {
 
                 // TODO: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break

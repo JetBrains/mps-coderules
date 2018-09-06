@@ -73,7 +73,7 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
                 rules.add(rule)
 
                 val head = rule.headKept() + rule.headReplaced()
-                val cst2mask = SlotMask()
+                val cst2mask = SlotMask(head.size)
                 for ((pos, cst) in head.withIndex()) {
                     symbol2index.getOrPut(cst.symbol()) { ArgumentRuleIndex(cst.symbol()) }.update(cst, ruleBit)
                     cst2mask.update(cst, pos)
@@ -86,13 +86,12 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
         }
     }
 
-
     /**
      * Represents a mask associated with a single rule.
      * The mask tells whether or not a particular constraint occurrence can match
      * any of the rule's constraints.
      */
-    class SlotMask {
+    class SlotMask(val size: Int) {
 
         val symbol2mask = HashMap<Symbol, BitSet>()
 

@@ -41,7 +41,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
         private var rule2fringe: PersMap<Rule, RuleMatcher.MatchFringe>
         
-        val allMatches = arrayListOf<MatchRule>()
+        private val allMatches = arrayListOf<MatchRule>()
 
         constructor() {
             this.rule2fringe = Maps.of()
