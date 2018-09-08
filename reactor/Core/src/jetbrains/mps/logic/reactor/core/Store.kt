@@ -89,14 +89,12 @@ class Store : LogicalObserver {
             .fold(Maps.of()) { map, sym -> map.put(sym, IdHashSet(copyFrom.occurrences(sym))) }
 
         var l2o = Maps.of<IdWrapper<Logical<*>>, IdHashSet<ConstraintOccurrence>>()
-        var t2o = TermTrie<ConstraintOccurrence>()
         var v2o = Maps.of<Any, IdHashSet<ConstraintOccurrence>>()
 
         copyFrom.allOccurrences().forEach { occ ->
             occ.arguments().forEach { arg ->
                 when (arg) {
                     is Logical<*>   ->  l2o = l2o.put(IdWrapper(arg.findRoot()), l2o[IdWrapper(arg.findRoot())]?.add(occ) ?: singletonSet(occ))
-                    is Term         ->  t2o = t2o.put(arg.withConstraint(occ.constraint()), occ)
                     is Any          ->  v2o = v2o.put(arg, v2o[arg]?.add(occ) ?: singletonSet(occ))
                 }
             }

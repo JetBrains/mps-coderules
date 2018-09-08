@@ -1,4 +1,4 @@
-import jetbrains.mps.logic.reactor.core.TermTrie
+import jetbrains.mps.logic.reactor.core.PersistentTermTrie
 import jetbrains.mps.unification.test.MockTerm.*
 import jetbrains.mps.unification.test.MockTermsParser.parseTerm
 import org.junit.Test
@@ -18,7 +18,7 @@ class TestTermTrie {
         val t3 = parseTerm("f{g h{i k{l m{o p} n}}}")
         val t4 = parseTerm("f{g h{i q            }}")
 
-        val trie1 = TermTrie<Any>().runs(
+        val trie1 = PersistentTermTrie<Any>().runs(
             { put(t1, "foo") },
             { put(t2, "bar") },
             { put(t3, "qux") },
@@ -49,7 +49,7 @@ class TestTermTrie {
         val t3 = parseTerm("f{g h{i k{l m{o p} n}}}")
         val t4 = parseTerm("f{g h{i q            }}")
 
-        val trie1 = TermTrie<Any>().runs(
+        val trie1 = PersistentTermTrie<Any>().runs(
             { put(t1, "foo") },
             { put(t2, "bar") },
             { put(t3, "qux") },
@@ -80,7 +80,7 @@ class TestTermTrie {
         val t1 = parseTerm("a{b c}")
         val t2 = parseTerm("a{b d}")
 
-        val trie1 = TermTrie<Any>().runs(
+        val trie1 = PersistentTermTrie<Any>().runs(
             { put(t1, "foo") },
             { put(t2, "bar") }
         )
@@ -115,7 +115,7 @@ class TestTermTrie {
         val t4 = parseTerm("f{g{X b} X}")
         val t5 = parseTerm("f{X Y}")
 
-        val tt = TermTrie<String>().runs(
+        val tt = PersistentTermTrie<String>().runs(
             { put(t1, "t1") },
             { put(t2, "t2") },
             { put(t3, "t3") },
@@ -139,7 +139,7 @@ class TestTermTrie {
         val t1 = parseTerm("a{b c}")
         val t2 = parseTerm("b{c d}")
 
-        val trie1 = TermTrie<Any>().runs (
+        val trie1 = PersistentTermTrie<Any>().runs (
             { put(t1, "foo") },
             { put(t2, "bar") }
         )
@@ -156,7 +156,7 @@ class TestTermTrie {
         val t1 = parseTerm("a{X c}")
         val t2 = parseTerm("b{c Y}")
 
-        val trie1 = TermTrie<Any>().runs(
+        val trie1 = PersistentTermTrie<Any>().runs(
             { put(t1, "foo") },
             { put(t2, "bar") }
         )
@@ -182,7 +182,7 @@ class TestTermTrie {
         val t3 = parseTerm("f{g h{i k{l m{o p} n}}}")
         val t4 = parseTerm("f{g h{i q            }}")
 
-        val trie1 = TermTrie<Any>().runs(
+        val trie1 = PersistentTermTrie<Any>().runs(
             { put(t1, "foo") },
             { put(t2, "bar") },
             { put(t3, "qux") },
@@ -206,7 +206,7 @@ class TestTermTrie {
         val t4 = parseTerm("f{g h{Z k{l m{o p} n}}}")
         val t5 = parseTerm("f{Z h{i q            }}")
 
-        val trie1 = TermTrie<Any>().runs(
+        val trie1 = PersistentTermTrie<Any>().runs(
             { put(t1, "foo") },
             { put(t2, "bar") },
             { put(t3, "bazz") },
@@ -235,7 +235,7 @@ class TestTermTrie {
         val t3 = parseTerm("a{c Y}")
         val t4 = parseTerm("a{X Y}")
 
-        val trie1 = TermTrie<Any>().runs(
+        val trie1 = PersistentTermTrie<Any>().runs(
             { put(t1, "foo") },
             { put(t2, "bar") },
             { put(t3, "bazz") },
@@ -258,7 +258,7 @@ class TestTermTrie {
     fun testRefTerm() {
         val varRef = MockRef(MockVar("TAIL"))
         val pattern = MockFun("g", MockFun("h"), MockFun("f", varRef, MockFun("nil")))
-        val trie1 = TermTrie<Any>().runs(
+        val trie1 = PersistentTermTrie<Any>().runs(
             { put(parseTerm("g {h f {a nil}}"), "bar") },
             { put(parseTerm("g {h f {a f {b nil}}}"), "bazz") },
             { put(pattern, "foo") },
@@ -273,7 +273,7 @@ class TestTermTrie {
 
     @Test
     fun testRefList() {
-        val trie = TermTrie<Any>().runs(
+        val trie = PersistentTermTrie<Any>().runs(
             {  put(parseTerm("f{X Y}"), "foo") },
             {  put(parseTerm("f{a Z}"), "bar") },
             {  put(parseTerm("f{a f{b W}}"), "bazz") }
@@ -287,7 +287,7 @@ class TestTermTrie {
 
     @Test
     fun testCyclicTerm() {
-        val trie = TermTrie<Any>().runs(
+        val trie = PersistentTermTrie<Any>().runs(
             { put(parseTerm("cst{ @1 n{ a{b c} d{^1} } }"), "foo") },
             { put(parseTerm("cst{ n{ @2 a{b ^2} d{e} } }"), "bar") }
         )

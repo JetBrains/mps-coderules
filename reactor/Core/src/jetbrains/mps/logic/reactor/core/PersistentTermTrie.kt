@@ -46,7 +46,7 @@ import java.util.*
  * Elsevier Sci. Pub. B. V., Amsterdam, The Netherlands, The Netherlands.
  *
  */
-class TermTrie<T>() {
+class PersistentTermTrie<T>() {
 
     private companion object {
 
@@ -66,9 +66,9 @@ class TermTrie<T>() {
         this.root = setRoot
     }
 
-    fun put(term: Term, value: T): TermTrie<T> = TermTrie(putValue(term, value))
+    fun put(term: Term, value: T): PersistentTermTrie<T> = PersistentTermTrie(putValue(term, value))
 
-    fun remove(term: Term, value: T): TermTrie<T> = TermTrie(removeValue(term, value))
+    fun remove(term: Term, value: T): PersistentTermTrie<T> = PersistentTermTrie(removeValue(term, value))
 
     fun lookupValues(term: Term): Iterable<T> {
         val result = ArrayList<T>()

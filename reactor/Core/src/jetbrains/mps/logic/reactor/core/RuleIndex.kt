@@ -115,14 +115,14 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
 
         val anySelectors = ArrayList<MutableMap<Any, BitSet>>()
 
-        val termSelectors = ArrayList<TermTrie<Int>>()
+        val termSelectors = ArrayList<PersistentTermTrie<Int>>()
 
         val wildcardSelectors = ArrayList<BitSet>()
 
         init {
             for (idx in 1..symbol.arity()) {
                 anySelectors.add(HashMap())
-                termSelectors.add(TermTrie())
+                termSelectors.add(PersistentTermTrie())
                 wildcardSelectors.add(BitSet())
             }
         }
