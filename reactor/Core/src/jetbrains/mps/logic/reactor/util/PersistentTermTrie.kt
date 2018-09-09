@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.util
 
 import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Maps
-import jetbrains.mps.logic.reactor.util.*
 import jetbrains.mps.unification.Term
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * @author Fedor Isakov
@@ -46,7 +46,7 @@ import java.util.*
  * Elsevier Sci. Pub. B. V., Amsterdam, The Netherlands, The Netherlands.
  *
  */
-class PersistentTermTrie<T>() {
+class PersistentTermTrie<T>() : TermTrie<T> {
 
     private companion object {
 
@@ -66,17 +66,17 @@ class PersistentTermTrie<T>() {
         this.root = setRoot
     }
 
-    fun put(term: Term, value: T): PersistentTermTrie<T> = PersistentTermTrie(putValue(term, value))
+    override fun put(term: Term, value: T): PersistentTermTrie<T> = PersistentTermTrie(putValue(term, value))
 
-    fun remove(term: Term, value: T): PersistentTermTrie<T> = PersistentTermTrie(removeValue(term, value))
+    override fun remove(term: Term, value: T): PersistentTermTrie<T> = PersistentTermTrie(removeValue(term, value))
 
-    fun lookupValues(term: Term): Iterable<T> {
+    override fun lookupValues(term: Term): Iterable<T> {
         val result = ArrayList<T>()
         visitMatching(term) { value -> result.add(value) }
         return result
     }
 
-    fun allValues(): Iterable<T> {
+    override fun allValues(): Iterable<T> {
         val result = ArrayList<T>()
         visitAll(root, { value -> result.add(value) })
         return result
@@ -109,17 +109,17 @@ class PersistentTermTrie<T>() {
     private fun removeValue(matchTerm: Term, value: T): PathNode<T> {
         val seen = IdentityHashMap<Term, Term>()
         var nodeStack: ConsList<PathNode<T>> = cons(root)
-        val termList = arrayListOf(matchTerm)
+        val termStack = arrayListOf(matchTerm)
 
-        while (!termList.isEmpty()) {
+        while (!termStack.isEmpty()) {
             val node = nodeStack.first() !!
-            val term = termList.removeAt(termList.size - 1)
+            val term = termStack.pop()
 
             // dereferece the term only if it hasn't been dereferenced before
             val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
             val arguments = deref.arguments().toList()
             for(i in 1..arguments.size) {
-                termList.add(arguments[arguments.size - i])
+                termStack.push(arguments[arguments.size - i])
             }
 
             val nextNode = node.next(symbolOrWildcard(deref))
@@ -140,46 +140,59 @@ class PersistentTermTrie<T>() {
         }
     }
 
-    private fun visitMatching(matchTerm: Term, visitor: (T) -> Unit) {
+    /**
+     * Given a pattern term, which may contain variables that are treated as wildcards,
+     * call the passed visitor function with values of all matching nodes and all the nodes that precede them.
+     */
+    private fun visitMatching(pattern: Term, visitor: (T) -> Unit) {
         val seen = IdentityHashMap<Term, Term>()
-        val visitList = arrayListOf(root.to(cons(matchTerm)))
+        val visitStack = arrayListOf(root to cons(pattern))
 
-        while (!visitList.isEmpty()) {
-            val (node, termList) = visitList.removeAt(visitList.size - 1)
-            if (!termList.isEmpty) {
-                val term = termList.first() !!
-                val termTail = termList.tail()
+        while (!visitStack.isEmpty()) {
+            val (node, patternTerms) = visitStack.pop()
+            if (!patternTerms.isEmpty) {
+                val patternTermsHead = patternTerms.first() !!
+                val patternTermsTail = patternTerms.tail()
 
                 // dereferece the term only if it hasn't been dereferenced before
-                val deref = deref(term).let { dt -> seen[dt]?.run { term } ?: dt.apply { seen[dt] = term } }
+                val patternTerm = deref(patternTermsHead).let { dt ->
+                    seen[dt]?.run { patternTermsHead } ?: dt.apply { seen[dt] = patternTermsHead }
+                }
 
-                val sym = symbolOrWildcard(deref)
+                val sym = symbolOrWildcard(patternTerm)
                 if (sym == WILDCARD) {
-                    if (!termTail.isEmpty) {
-                        node.skipAllNext().forEach { n -> visitList.add(n.to(termTail)) }
+                    if (!patternTermsTail.isEmpty) {
+                        // skip the current node
+                        // match the patterns tail with the current node's direct successors
+                        val (allTerms, allEdge) = node.allTerms2edge()
+                        allTerms.forEach { it.values.forEach(visitor) }
+                        allEdge.forEach { n -> visitStack.push(n to patternTermsTail) }
 
                     } else {
+                        // wildcard consumes the rest of the trie
                         node.allNext().forEach { visitAll(it, visitor) }
                     }
 
                 } else {
                     node.next(WILDCARD)?.let { nn ->
                         nn.values().forEach(visitor)
-                        if (!termTail.isEmpty) {
-                            visitList.add(nn.to(termTail))
+                        if (!patternTermsTail.isEmpty) {
+                            visitStack.push(nn to patternTermsTail)
                         }
                     }
                     node.next(sym)?.let { nn ->
                         nn.values().forEach(visitor)
 
-                        var newTail = termTail
-                        val arguments = deref.arguments().toList()
+                        var newTail = patternTermsTail
+                        val arguments = patternTerm.arguments().toList()
+                        // prepend patternTerm's arguments in reverse order
+                        // this results in newTail being ordered normally
                         for(i in 1..arguments.size) {
                             newTail = newTail.prepend(arguments[arguments.size - i])
                         }
                         
                         if (!newTail.isEmpty) {
-                            visitList.add(nn.to(newTail))
+                            visitStack.push(nn to newTail)
                         }
                     }
                 }
@@ -187,6 +200,9 @@ class PersistentTermTrie<T>() {
         }
     }
 
+    /**
+     * Call the visitor function with values of the given node and all its direct and indirect successors.
+     */
     private fun visitAll(node: PathNode<T>, visitor: (T) -> Unit) {
         node.values().forEach(visitor)
         node.allNext().forEach { visitAll(it, visitor) }
@@ -209,6 +225,9 @@ class PersistentTermTrie<T>() {
         }
     }
 
+    /**
+     * A trie node. Corresponds to a particular subterm.
+     */
     private class PathNode<T>(val symbol: Any,
                               val arity: Int,
                               val next: PersMap<Any, PathNode<T>>,
@@ -226,26 +245,56 @@ class PersistentTermTrie<T>() {
 
         fun values(): Iterable<T> = values
 
-        fun hasValues(): Boolean = !values.isEmpty
-
-        fun hasValue(value: T): Boolean = values.contains(value)
-
         fun next(symbol: Any): PathNode<T>? = next[symbol]
-
-        fun hasNext(): Boolean = !next.isEmpty
-
+        
+        /**
+         * Returns all trie nodes that are direct successors of this one.
+         */
         fun allNext(): Iterable<PathNode<T>> = next.values()
 
-        fun skipAllNext(): Iterable<PathNode<T>> = allNext(0)
+        /**
+         * Returns a pair of iterables:
+         * -  first component contains all the nodes that make up the next *term*;
+         * -  second component contains the nodes on the edge before the *term* after that one.
+         *
+         * The trie keeps the terms _flattened_, and the following proposition holds.
+         *
+         * Let t = f(...) be a term. Let flt: Term->List be a function that transforms terms to lists of symbols.
+         * Let ar: Symbol->int be a function that returns arity for a given symbol.
+         *
+         * Then size(flt t) = 1 + sum . (map ar) (flt t), where '.' stands for function composition.
+         *
+         * The size of a list representing a flattened term is equal to
+         * the sum of arities of all symbols in this list plus 1.
+         */
+        fun allTerms2edge(): Pair<Iterable<PathNode<T>>, Iterable<PathNode<T>>> {
 
-        private fun allNext(skip: Int): Iterable<PathNode<T>> = allNext().flatMap { nn ->
-            val newSkip = skip + nn.arity
-            if (newSkip == 0) {
-                listOf(nn)
+            // for every current node there is a number
+            // initially 0
+            // counting down with every call to allNext()
+            // increased by current node's arity
 
-            } else {
-                nn.allNext(newSkip - 1)
+            val term = ArrayList<PathNode<T>>()
+            val edge = ArrayList<PathNode<T>>()
+            
+            val stack = ArrayList<Pair<PathNode<T>, Int>>()
+            for (n in allNext()) {
+                stack.push(n to 0)
             }
+
+            while (stack.isNotEmpty()) {
+                val (n, count) = stack.pop()
+                val newCount = count + n.arity
+                if (newCount == 0) {
+                    edge.add(n)
+
+                } else {
+                    term.add(n)
+                    n.allNext().forEach { stack.push(it to (newCount - 1)) }
+                }
+            }
+
+            return term to edge
         }
 
         fun putNext(node: PathNode<T>): PathNode<T> = PathNode(this, next.put(node.symbol, node))

@@ -20,7 +20,9 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
+import jetbrains.mps.logic.reactor.util.TermTrie
 import jetbrains.mps.logic.reactor.util.allSetBits
+import jetbrains.mps.logic.reactor.util.termTrie
 import jetbrains.mps.unification.Term
 import java.util.*
 import kotlin.collections.ArrayList
@@ -115,14 +117,14 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
 
         val anySelectors = ArrayList<MutableMap<Any, BitSet>>()
 
-        val termSelectors = ArrayList<PersistentTermTrie<Int>>()
+        val termSelectors = ArrayList<TermTrie<Int>>()
 
         val wildcardSelectors = ArrayList<BitSet>()
 
         init {
             for (idx in 1..symbol.arity()) {
                 anySelectors.add(HashMap())
-                termSelectors.add(PersistentTermTrie())
+                termSelectors.add(termTrie())
                 wildcardSelectors.add(BitSet())
             }
         }
