@@ -3,3 +3,4 @@ out/**
 API/target/**
 Core/target/**
 Test/target/**
+.idea/shelf/**
