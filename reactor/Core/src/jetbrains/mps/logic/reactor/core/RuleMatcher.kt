@@ -18,7 +18,6 @@ package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.List as PersList
-import com.github.andrewoma.dexx.collection.Maps
 import com.github.andrewoma.dexx.collection.Vector as PersVector
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
@@ -32,15 +31,15 @@ import jetbrains.mps.logic.reactor.util.*
 import jetbrains.mps.unification.Term
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 /**
  * @author Fedor Isakov
  */
 
-private typealias Subst = PersMap<MetaLogical<*>, Any>
+private typealias Subst = Map<MetaLogical<*>, Any>
 
-private fun emptySubst() = Maps.of<MetaLogical<*>, Any>()
-
+private fun emptySubst() = HashMap<MetaLogical<*>, Any>(4)
 
 class RuleMatcher(val rule: Rule) {
 
@@ -113,8 +112,10 @@ class RuleMatcher(val rule: Rule) {
             unrelatedOrNull(occ)?.run {
                 ArrayList<ActiveFringeNode>().also { expanded ->
                     for (idx in matchingVacant.allSetBits()) {
-                        match(head[idx], occ, subst)?.let { newSubst ->
-                            expanded.add(ActiveFringeNode(this, occ, idx, genId, newSubst))
+                        OccurrenceMatcher(subst).let { matcher ->
+                            if (matcher.matches(head[idx], occ)) {
+                                expanded.add(ActiveFringeNode(this, occ, idx, genId, matcher.substitution()))
+                            }
                         }
                     }
                 }
@@ -127,90 +128,6 @@ class RuleMatcher(val rule: Rule) {
 
         fun matchingVacant(mask: BitSet?) = mask?.copyApply { and(vacant) } ?: vacant
 
-        fun matchesVacant(mask: BitSet) = !mask.copyApply { and(vacant) }.isEmpty
-
-        /**
-         * Matches constraint and occurrence.
-         * Recursively processes all arguments, including terms.
-         * Returns substitution of MetaLogical instances on success, null otherwise.
-         */
-        protected fun match(cst: Constraint,
-                            occ: ConstraintOccurrence,
-                            subst: Subst): Subst?
-        {
-            if (cst.symbol() != occ.constraint().symbol()) return null
-
-            var itsubst = subst
-            for ((cstarg, occarg) in cst.arguments().zip(occ.arguments())) {
-                itsubst = matchAny(cstarg, occarg, itsubst) ?: return null
-            }
-
-            return itsubst
-        }
-
-        /**
-         * Matches target against pattern.
-         * Recursively iterates terms.
-         * Respects substitutions for MetaLogical instances.
-         * Returns either new substitution on successful match, or null.
-         */
-        private fun matchAny(ptn: Any?,
-                             trg: Any?,
-                             subst: Subst): Subst? =
-            when (ptn) {
-                is MetaLogical<*>   ->
-                    // recursion with existing substitution or new substitution
-                    if (subst.containsKey(ptn)) subst[ptn].let { matchAny(it, trg, subst) } else subst.put(ptn, trg)
-                is Logical<*>       ->
-                    // match logical or its value
-                    matchLogical(ptn.findRoot(), trg, subst)
-                is Term             ->
-                    // recursion into the term
-                    matchTerm(ptn, trg, subst)
-                else                ->
-                    // compare two arbitrary values
-                    if (ptn == trg) subst else null
-            }
-
-        private fun matchTerm(ptn: Term,
-                              trg: Any?,
-                              subst: Subst): Subst?
-        {
-            if (trg == null) return null
-
-            val trgval = resolve(trg)
-            if (!(trgval is Term)) return null
-
-            if (ptn.`is`(Term.Kind.VAR)) return matchAny(ptn.get().symbol(), trgval, subst)
-
-            var itsubst = matchAny(ptn.get().symbol(), trgval.symbol(), subst) ?: return null
-            for ((ptnarg, trgarg) in ptn.get().arguments().zip(trgval.arguments())) {
-                itsubst = matchAny (ptnarg, trgarg, itsubst) ?: return null
-            }
-
-            return itsubst
-        }
-
-        private fun matchLogical(ptn: Logical<*>,
-                                 trg: Any?,
-                                 subst: Subst): Subst? =
-            when {
-                trg is Logical<*>   -> when {
-                    ptn.isBound                         -> matchAny(ptn.findRoot().value(), trg.findRoot().value(), subst)
-                    ptn.findRoot() === trg.findRoot()   -> subst     // reference equality
-                    else                                -> null
-                }
-                ptn.isBound         -> matchAny(ptn.findRoot().value(), trg, subst)
-                else                -> null
-            }
-        
-        private fun resolve(obj: Any?): Any? =
-            when (obj) {
-                is LogicalOwner -> if (obj.logical().isBound) resolve(obj.logical()) else obj
-                is Logical<*>   -> resolve(obj.findRoot().value())
-                is Term         -> if (obj.`is`(Term.Kind.REF)) resolve(obj.get()) else obj
-                else            -> obj
-            }
 
         /**
          * Folds the path to the root.
@@ -294,5 +211,99 @@ class RuleMatcher(val rule: Rule) {
             override fun logicalContext(): LogicalContext = logicalContext
 
         }
+    }
+
+    private class OccurrenceMatcher(contextSubst: Subst) {
+
+        private val matchSubst = HashMap(contextSubst)
+
+        fun substitution(): Subst = matchSubst
+
+        /**
+         * Matches constraint and occurrence.
+         * Recursively processes all arguments, including terms.
+         * Returns substitution of MetaLogical instances on success, null otherwise.
+         */
+        fun matches(cst: Constraint, occ: ConstraintOccurrence): Boolean
+        {
+            if (cst.symbol() != occ.constraint().symbol()) return false
+
+            return zipWhileTrue(cst.arguments(), occ.arguments()) { cstarg, occarg ->
+                matchAny(cstarg, occarg)
+            }
+        }
+
+        /**
+         * Matches target against pattern.
+         * Recursively iterates terms.
+         * Respects substitutions for MetaLogical instances.
+         * Returns either new substitution on successful match, or null.
+         */
+        private fun matchAny(ptn: Any?, trg: Any?): Boolean =
+            when (ptn) {
+                is MetaLogical<*>   ->
+                    // recursion with existing substitution or new substitution
+                    if (matchSubst.containsKey(ptn))
+                        matchSubst[ptn].let { matchAny(it, trg) }
+                    else
+                        matchSubst.apply { put(ptn, trg) }.run { true }
+                is Logical<*>       ->
+                    // match logical or its value
+                    matchLogical(ptn.findRoot(), trg)
+                is Term             ->
+                    // recursion into the term
+                    matchTerm(ptn, trg)
+                else                ->
+                    // compare two arbitrary values
+                    (ptn == trg)
+            }
+
+        private fun matchTerm(ptn: Term, trg: Any?): Boolean
+        {
+            if (trg == null) return false
+
+            val trgval = resolve(trg)
+            if (!(trgval is Term)) return false
+
+            if (ptn.`is`(Term.Kind.VAR)) return matchAny(ptn.get().symbol(), trgval)
+
+            if (!matchAny(ptn.get().symbol(), trgval.symbol())) return false
+            // FIXME: reversing the order of arguments leads to infinite cycle
+            // Example: two terms of the form f(... V_1 ...) and f(... V_2 ...) where
+            // V_1 is bound to g(... W_1 ...), V_2 -> g(... W_2 ...), W_1 -> f(... V_1 ...), and W_2 -> f(... V_2 ...)
+            return zipWhileTrue(ptn.get().arguments(), trgval.arguments()) { ptnarg, trgarg ->
+                matchAny (ptnarg, trgarg)
+            }
+        }
+
+        private fun matchLogical(ptn: Logical<*>, trg: Any?): Boolean =
+            when {
+                trg is Logical<*>   ->
+                    when {
+                        ptn.isBound                         -> matchAny(ptn.findRoot().value(), trg.findRoot().value())
+                        ptn.findRoot() === trg.findRoot()   -> true     // reference equality
+                        else                                -> false
+                    }
+                ptn.isBound         -> matchAny(ptn.findRoot().value(), trg)
+                else                -> false
+            }
+
+        private fun resolve(obj: Any?): Any? =
+            when (obj) {
+                is LogicalOwner -> if (obj.logical().isBound) resolve(obj.logical()) else obj
+                is Logical<*>   -> resolve(obj.findRoot().value())
+                is Term         -> if (obj.`is`(Term.Kind.REF)) resolve(obj.get()) else obj
+                else            -> obj
+            }
+
+        private inline fun<S,T> zipWhileTrue(first: Iterable<S>, second: Iterable<T>, action: (S, T) -> Boolean): Boolean {
+            val firstIt = first.iterator()
+            val secondIt = second.iterator()
+            while(firstIt.hasNext() && secondIt.hasNext()) {
+                if (!action(firstIt.next(), secondIt.next())) return false
+            }
+            return true
+        }
+
     }
 }
