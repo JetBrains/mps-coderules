@@ -56,6 +56,7 @@
     <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
     <import index="z8tp" ref="r:5bfbd177-208e-4d27-b74c-2ebd2a92eb80(jetbrains.mps.lang.smodel.types.structure)" />
     <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.program)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -1344,6 +1345,59 @@
               <node concept="raruj" id="12QmIo$yT8D" role="lGtFl" />
             </node>
             <node concept="3clFbH" id="12QmIo$yT8E" role="3cqZAp" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="72RDgINfUEY" role="3acgRq">
+      <ref role="30HIoZ" to="wq2x:72RDgINeSQJ" resolve="ContextRepositoryExpression" />
+      <node concept="1Koe21" id="72RDgINfVCY" role="1lVwrX">
+        <node concept="3clFb_" id="72RDgINfVD4" role="1Koe22">
+          <property role="TrG5h" value="context" />
+          <node concept="37vLTG" id="72RDgINfVD5" role="3clF46">
+            <property role="TrG5h" value="session" />
+            <node concept="3uibUv" id="72RDgINfVD6" role="1tU5fm">
+              <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
+            </node>
+          </node>
+          <node concept="3Tm6S6" id="72RDgINfVD7" role="1B3o_S" />
+          <node concept="3uibUv" id="72RDgINfVD8" role="3clF45">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+          <node concept="3clFbS" id="72RDgINfVD9" role="3clF47">
+            <node concept="3clFbF" id="72RDgINfVDa" role="3cqZAp">
+              <node concept="2OqwBi" id="72RDgINgA7u" role="3clFbG">
+                <node concept="liA8E" id="72RDgINgAnc" role="2OqNvi">
+                  <ref role="37wK5l" to="9x2e:72RDgIN33NR" resolve="contextRepository" />
+                </node>
+                <node concept="raruj" id="72RDgINgBPZ" role="lGtFl" />
+                <node concept="37vLTw" id="72RDgINk6c8" role="2Oq$k0">
+                  <ref role="3cqZAo" node="72RDgINfVD5" resolve="session" />
+                  <node concept="1sPUBX" id="72RDgINk6c9" role="lGtFl">
+                    <ref role="v9R2y" node="1L74NXExmCW" resolve="session_variable" />
+                    <node concept="3NFfHV" id="72RDgINk6ca" role="1sPUBK">
+                      <node concept="3clFbS" id="72RDgINk6cb" role="2VODD2">
+                        <node concept="3clFbF" id="72RDgINk6cc" role="3cqZAp">
+                          <node concept="2OqwBi" id="72RDgINk6cd" role="3clFbG">
+                            <node concept="30H73N" id="72RDgINk6ce" role="2Oq$k0" />
+                            <node concept="2Xjw5R" id="72RDgINk6cf" role="2OqNvi">
+                              <node concept="3gmYPX" id="72RDgINk6cg" role="1xVPHs">
+                                <node concept="3gn64h" id="72RDgINk6ch" role="3gmYPZ">
+                                  <ref role="3gnhBz" to="wq2x:7IysFeBd3kI" resolve="ApplicationSessionParticipant" />
+                                </node>
+                                <node concept="3gn64h" id="72RDgINk6ci" role="3gmYPZ">
+                                  <ref role="3gnhBz" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

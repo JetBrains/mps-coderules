@@ -14,6 +14,7 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.coderules.program)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -1508,6 +1509,31 @@
     <node concept="1YaCAy" id="12QmIo$ySV4" role="1YuTPh">
       <property role="TrG5h" value="ras" />
       <ref role="1YaFvo" to="wq2x:12QmIo$yS$B" resolve="RequireAllStatement" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="72RDgINeTsf">
+    <property role="TrG5h" value="typeof_ContextRepositoryExpression" />
+    <node concept="3clFbS" id="72RDgINeTsg" role="18ibNy">
+      <node concept="1Z5TYs" id="72RDgINeTOs" role="3cqZAp">
+        <node concept="mw_s8" id="72RDgINeTOK" role="1ZfhKB">
+          <node concept="2c44tf" id="72RDgINeTOG" role="mwGJk">
+            <node concept="3uibUv" id="72RDgINeTPI" role="2c44tc">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="72RDgINeTOv" role="1ZfhK$">
+          <node concept="1Z2H0r" id="72RDgINeTsv" role="mwGJk">
+            <node concept="1YBJjd" id="72RDgINeTuh" role="1Z2MuG">
+              <ref role="1YBMHb" node="72RDgINeTsi" resolve="cre" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="72RDgINeTsi" role="1YuTPh">
+      <property role="TrG5h" value="cre" />
+      <ref role="1YaFvo" to="wq2x:72RDgINeSQJ" resolve="ContextRepositoryExpression" />
     </node>
   </node>
 </model>
