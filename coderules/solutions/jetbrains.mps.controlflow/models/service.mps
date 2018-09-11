@@ -70,6 +70,7 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
@@ -340,6 +341,7 @@
   </node>
   <node concept="312cEu" id="7lt0LtQ_OIS">
     <property role="TrG5h" value="ControlflowSessionSolver" />
+    <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="oI9Yrbvo_" role="jymVt" />
     <node concept="3clFbW" id="oI9Yrbvrt" role="jymVt">
       <node concept="3cqZAl" id="oI9Yrbvrv" role="3clF45" />
@@ -631,6 +633,25 @@
                         <property role="3clFbU" value="false" />
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node concept="2tJIrI" id="72RDgIN3jWs" role="jymVt" />
+                <node concept="3clFb_" id="72RDgIN3k5M" role="jymVt">
+                  <property role="1EzhhJ" value="false" />
+                  <property role="TrG5h" value="contextRepository" />
+                  <node concept="3uibUv" id="72RDgIN3k5N" role="3clF45">
+                    <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                  </node>
+                  <node concept="3Tm1VV" id="72RDgIN3k5O" role="1B3o_S" />
+                  <node concept="3clFbS" id="72RDgIN3k5U" role="3clF47">
+                    <node concept="3clFbF" id="72RDgIN3pjg" role="3cqZAp">
+                      <node concept="1rXfSq" id="72RDgIN3pjf" role="3clFbG">
+                        <ref role="37wK5l" to="1yqb:443LGHBSOXq" resolve="getRepository" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2AHcQZ" id="72RDgIN3k5V" role="2AJF6D">
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                 </node>
               </node>

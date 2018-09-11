@@ -87,6 +87,7 @@
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
@@ -1384,6 +1385,7 @@
   </node>
   <node concept="312cEu" id="7lt0LtQ_OIS">
     <property role="TrG5h" value="TypecheckingSessionSolver" />
+    <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="oI9Yrbvo_" role="jymVt" />
     <node concept="3clFbW" id="oI9Yrbvrt" role="jymVt">
       <node concept="3cqZAl" id="oI9Yrbvrv" role="3clF45" />

@@ -81,6 +81,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -116,6 +117,7 @@
         <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -800,6 +802,7 @@
               <node concept="3cpWs8" id="6OXbTD_oHco" role="3cqZAp">
                 <node concept="3cpWsn" id="6OXbTD_oHcp" role="3cpWs9">
                   <property role="TrG5h" value="repo" />
+                  <property role="3TUv4t" value="true" />
                   <node concept="3uibUv" id="6OXbTD_oHcm" role="1tU5fm">
                     <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
                   </node>
@@ -863,6 +866,9 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                      <node concept="37vLTw" id="72RDgIN4_KQ" role="37wK5m">
+                        <ref role="3cqZAo" node="6OXbTD_oHcp" resolve="repo" />
                       </node>
                     </node>
                   </node>
@@ -1037,6 +1043,25 @@
                                 </node>
                               </node>
                               <node concept="2AHcQZ" id="oI9YrxdH7" role="2AJF6D">
+                                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                              </node>
+                            </node>
+                            <node concept="2tJIrI" id="72RDgIN3Ptd" role="jymVt" />
+                            <node concept="3clFb_" id="72RDgIN3POE" role="jymVt">
+                              <property role="1EzhhJ" value="false" />
+                              <property role="TrG5h" value="contextRepository" />
+                              <node concept="3uibUv" id="72RDgIN3POF" role="3clF45">
+                                <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                              </node>
+                              <node concept="3Tm1VV" id="72RDgIN3POG" role="1B3o_S" />
+                              <node concept="3clFbS" id="72RDgIN3POM" role="3clF47">
+                                <node concept="3clFbF" id="72RDgIN3Ti5" role="3cqZAp">
+                                  <node concept="37vLTw" id="72RDgIN3Ti4" role="3clFbG">
+                                    <ref role="3cqZAo" node="6OXbTD_oHcp" resolve="repo" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="2AHcQZ" id="72RDgIN3PON" role="2AJF6D">
                                 <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                               </node>
                             </node>

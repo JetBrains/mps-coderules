@@ -10,6 +10,7 @@
   </languages>
   <imports>
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -174,6 +175,16 @@
       <node concept="10P_77" id="oI9Ys2yr2" role="3clF45" />
       <node concept="3Tm1VV" id="oI9Ys2ypn" role="1B3o_S" />
       <node concept="3clFbS" id="oI9Ys2ypo" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="72RDgIN33KJ" role="jymVt" />
+    <node concept="3clFb_" id="72RDgIN33NR" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="contextRepository" />
+      <node concept="3uibUv" id="72RDgIN33Sa" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+      </node>
+      <node concept="3Tm1VV" id="72RDgIN33NU" role="1B3o_S" />
+      <node concept="3clFbS" id="72RDgIN33NV" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="oI9YrIZfj" role="jymVt" />
     <node concept="3Tm1VV" id="oI9YrIZeT" role="1B3o_S" />
