@@ -16,6 +16,7 @@
     <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.coderules.program)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -127,6 +128,11 @@
         <child id="8182547171709752112" name="expression" index="36biLW" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
+    </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
@@ -188,9 +194,15 @@
         <child id="1803469493727536396" name="concept" index="hTh3Z" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
+      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
+      </concept>
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
@@ -207,9 +219,6 @@
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
-      </concept>
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
-        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
@@ -370,15 +379,24 @@
                 <node concept="3clFbS" id="1zN1RIlro2W" role="1bW5cS">
                   <node concept="3clFbF" id="1zN1RIlro2X" role="3cqZAp">
                     <node concept="3clFbC" id="1zN1RIlro2Y" role="3clFbG">
-                      <node concept="3B5_sB" id="1zN1RIlro2Z" role="3uHU7w">
-                        <ref role="3B5MYn" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
-                      </node>
-                      <node concept="2OqwBi" id="1zN1RIlro30" role="3uHU7B">
-                        <node concept="37vLTw" id="1zN1RIlro31" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1zN1RIlro33" resolve="annInst" />
+                      <node concept="2OqwBi" id="4cvvxaYhCI5" role="3uHU7B">
+                        <node concept="2JrnkZ" id="4cvvxaYhCfO" role="2Oq$k0">
+                          <node concept="2OqwBi" id="1zN1RIlro30" role="2JrQYb">
+                            <node concept="37vLTw" id="1zN1RIlro31" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1zN1RIlro33" resolve="annInst" />
+                            </node>
+                            <node concept="3TrEf2" id="1zN1RIlro32" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
+                            </node>
+                          </node>
                         </node>
-                        <node concept="3TrEf2" id="1zN1RIlro32" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
+                        <node concept="liA8E" id="4cvvxaYhDrT" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
+                        </node>
+                      </node>
+                      <node concept="2tJFMh" id="4cvvxaYhE4e" role="3uHU7w">
+                        <node concept="ZC_QK" id="4cvvxaYhE4f" role="2tJFKM">
+                          <ref role="2aWVGs" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
                         </node>
                       </node>
                     </node>
@@ -505,16 +523,25 @@
                         <node concept="3clFbS" id="1zN1RIlsblV" role="1bW5cS">
                           <node concept="3clFbF" id="1zN1RIlsblW" role="3cqZAp">
                             <node concept="3clFbC" id="1zN1RIlsblX" role="3clFbG">
-                              <node concept="2OqwBi" id="1zN1RIlsblY" role="3uHU7B">
-                                <node concept="37vLTw" id="1zN1RIlsblZ" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="1zN1RIlsbm2" resolve="ai" />
+                              <node concept="2OqwBi" id="4cvvxaYh$zL" role="3uHU7B">
+                                <node concept="2JrnkZ" id="4cvvxaYh$3h" role="2Oq$k0">
+                                  <node concept="2OqwBi" id="1zN1RIlsblY" role="2JrQYb">
+                                    <node concept="37vLTw" id="1zN1RIlsblZ" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="1zN1RIlsbm2" resolve="ai" />
+                                    </node>
+                                    <node concept="3TrEf2" id="1zN1RIlsbm0" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
+                                    </node>
+                                  </node>
                                 </node>
-                                <node concept="3TrEf2" id="1zN1RIlsbm0" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
+                                <node concept="liA8E" id="4cvvxaYh_7T" role="2OqNvi">
+                                  <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
                                 </node>
                               </node>
-                              <node concept="3B5_sB" id="1zN1RIlsbm1" role="3uHU7w">
-                                <ref role="3B5MYn" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
+                              <node concept="2tJFMh" id="4cvvxaYhA_C" role="3uHU7w">
+                                <node concept="ZC_QK" id="4cvvxaYhAWD" role="2tJFKM">
+                                  <ref role="2aWVGs" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
+                                </node>
                               </node>
                             </node>
                           </node>

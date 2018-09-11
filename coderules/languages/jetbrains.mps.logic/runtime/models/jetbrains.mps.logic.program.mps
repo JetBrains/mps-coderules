@@ -2404,9 +2404,6 @@
     <node concept="2tJIrI" id="7HUwyZb7clq" role="jymVt" />
     <node concept="2YIFZL" id="7HUwyZb7chj" role="jymVt">
       <property role="TrG5h" value="asVariable" />
-      <node concept="16euLQ" id="4TCblo5YIpd" role="16eVyc">
-        <property role="TrG5h" value="T" />
-      </node>
       <node concept="37vLTG" id="7HUwyZb7chk" role="3clF46">
         <property role="TrG5h" value="metaLogical" />
         <node concept="3uibUv" id="7HUwyZb7chm" role="1tU5fm">
