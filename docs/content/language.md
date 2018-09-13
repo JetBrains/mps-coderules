@@ -65,6 +65,8 @@ Rules may affect the scope of model locations that are processed during an evalu
 ![](img/language-recoverct-700.png)  
 _(example of using `require` statement)_
 
+This feature may come in handy for implementing a “partial” type checking. Type checking may be launched either for a whole root, processing all AST tree recursively, in which case it is called called a “total” type checking, or it can be launched for a particular AST node in isolation, and this is then a “partial” type checking. In the latter case, there must be additional information provided by the type system author, which should serve to establish the necessary context by means of following the required dependencies. These may be method and class declarations, for example, if we are to check the type of a particular method parameter. 
+
 #### Production templates
 
 Constraint productions are discussed in details in the section on Constraint Processing System, and here we briefly enumerate the main concepts and their usage. 
