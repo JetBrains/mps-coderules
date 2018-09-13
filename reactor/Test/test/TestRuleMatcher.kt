@@ -373,21 +373,26 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
+            val occ2reactivate = occurrence("bazz", term("k", logicalVar(yLogical)))
+
             with(RuleMatcher(rules.first()).fringe()) {
-                expand(occurrence("bazz", term("k", logicalVar(yLogical))))    }.apply {
+                expand(occ2reactivate)                                                  }.apply {
                 matches().size shouldBe 0
                 yLogical.findRoot().value() shouldBe null
                                                                                         }.run {
                 expand(occurrence("foo", parseTerm("f{k{h}}")))                 }.apply {
+
                 matches().size shouldBe 0
 
-                yLogical.set(parseTerm("h"))                                        }.run {
+                                                                                        }.run {
                 expand(occurrence("bar", parseTerm("g{h}")))                    }.apply {
                 matches().size shouldBe 0
 
+                yLogical.findRoot().value() shouldBe null
+                // test reactivate occurrence
                 yLogical.findRoot().set(parseTerm("h"))
                                                                                         }.run {
-                expand(occurrence("bazz", term("k", logicalVar(yLogical))))    }.apply {
+                expand(occ2reactivate)                                                  }.apply {
                 matches().size shouldBe 1
 
                 with(matches().first()) {

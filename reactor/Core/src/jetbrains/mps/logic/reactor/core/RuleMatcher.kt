@@ -58,8 +58,8 @@ class RuleMatcher(val rule: Rule) {
 
         fun matches(): Collection<MatchRule> =
             nodes.filter { rn ->
-                rn is ActiveFringeNode && rn.complete && rn.genId == genId }.map { rn ->
-                (rn as ActiveFringeNode).toMatchRule() }
+                    rn is ActiveFringeNode && rn.complete && rn.genId == genId       }.map { rn ->
+                    (rn as ActiveFringeNode).toMatchRule() }
 
         /**
          * Expands the fringe by creating new leaf nodes that match the occurrence.
@@ -75,10 +75,21 @@ class RuleMatcher(val rule: Rule) {
 
                 val newNodes = ArrayList<FringeNode>()
                 for (fn in nodes) {
-                    if (fn is ActiveFringeNode && fn.complete) {
-                        fn.unrelatedOrCopy(occ, genId + 1)
-                        
-                    } else { fn }?.let { newNodes.add(it) }
+                    when (fn) {
+                        is ActiveFringeNode -> {
+                            // only leaf nodes
+                            // either unrelated, or the nodes already having occ
+                            fn.unrelatedOrCopy(occ, genId + 1)?.let { newNodes.add(it) }
+
+                            // only non-leaf nodes
+                            // all unrelated, expanded on occ
+                            fn.unrelatedOrNull(occ)?.let {
+                                newNodes.addAll(it.expand(occ, genId + 1, fn.matchingVacant(mask)))
+                            }
+                        }
+
+                        else                -> newNodes.add(fn)
+                    }
                 }
 
                 return MatchFringe(newNodes, seen, genId + 1)
@@ -101,9 +112,9 @@ class RuleMatcher(val rule: Rule) {
 
     }
 
-    open inner class FringeNode(val subst: Subst,
-                                val vacant: BitSet = bitSetOfOnes(head.size))
+    open inner class FringeNode(val subst: Subst, val vacant: BitSet = bitSetOfOnes(head.size))
     {
+
         /**
          * Returns the additional nodes built from this node on adding the occurrence.
          * If the occurrence is already in the path, return empty sequence.
@@ -114,12 +125,13 @@ class RuleMatcher(val rule: Rule) {
                     for (idx in matchingVacant.allSetBits()) {
                         OccurrenceMatcher(subst).let { matcher ->
                             if (matcher.matches(head[idx], occ)) {
-                                expanded.add(ActiveFringeNode(this, occ, idx, genId, matcher.substitution()))
+                                expanded.add(ActiveFringeNode(matcher.substitution(), this, occ, idx, genId))
                             }
                         }
                     }
                 }
             } ?: emptyList()
+
 
         /**
          * Returns this node if it doesn't have the occurrence in its path, null otherwise.
@@ -127,7 +139,6 @@ class RuleMatcher(val rule: Rule) {
         open fun unrelatedOrNull(occ: ConstraintOccurrence): FringeNode? = this
 
         fun matchingVacant(mask: BitSet?) = mask?.copyApply { and(vacant) } ?: vacant
-
 
         /**
          * Folds the path to the root.
@@ -145,11 +156,11 @@ class RuleMatcher(val rule: Rule) {
         /**
          * Folds the path to the root. If an iteration yields null, fold is stopped and null is returned.
          */
-        inline protected fun <T> foldUntilNull(init: T, action: (T?, ActiveFringeNode) -> T?): T?  {
+        inline protected fun <T> foldUntilNull(init: T, action: (T, ActiveFringeNode) -> T?): T?  {
             var rn = this
             var curr: T? = init
             while (rn is ActiveFringeNode) {
-                curr = action(curr, rn)
+                curr = action(curr !!, rn)
                 if (curr == null) return null
                 rn = rn.parent
             }
@@ -157,14 +168,18 @@ class RuleMatcher(val rule: Rule) {
         }
     }
 
-    inner class ActiveFringeNode(val parent: FringeNode,
+    inner class ActiveFringeNode(subst: Subst,
+                                 val parent: FringeNode,
                                  val occ: ConstraintOccurrence,
                                  val idx: Int,
-                                 val genId: Int,
-                                 subst: Subst) :
-                FringeNode(subst,  parent.vacant.clearBit(idx))
+                                 val genId: Int) :
+                FringeNode(subst, parent.vacant.clearBit(idx))
     {
         val complete = vacant.cardinality() == 0
+
+        fun occurrence(): ConstraintOccurrence = occ
+
+        fun constraint(): Constraint = head[idx]
 
         override fun unrelatedOrNull(occ: ConstraintOccurrence): ActiveFringeNode? =
             foldUntilNull(this) { acc, rn -> if (rn.occ === occ) null else  acc }
@@ -174,43 +189,47 @@ class RuleMatcher(val rule: Rule) {
          * otherwise a copy of this node with the specified generation id.
          */
         fun unrelatedOrCopy(occ: ConstraintOccurrence, copyGenId: Int): FringeNode? =
-            unrelatedOrNull(occ) ?: ActiveFringeNode(parent, occ, idx, copyGenId, subst)
+            unrelatedOrNull(occ) ?: ActiveFringeNode(subst, parent, occ, idx, copyGenId)
 
-        private fun matchedOccurrences(): Array<ConstraintOccurrence?> =
-            fold(arrayOfNulls(head.size)) { arr, rn -> arr[rn.idx] = rn.occ; arr }
+        fun toMatchRule(): MatchRule  {
+            val matched: Array<ConstraintOccurrence?> =
+                fold(arrayOfNulls(head.size)) { arr, rn -> arr[rn.idx] = rn.occ; arr }
+            return FringeMatchRule(rule,
+                                    subst,
+                                    ArrayList(matched.take(rule.headKept().count())),
+                                    ArrayList(matched.takeLast(rule.headReplaced().count())))
+        }
+    }
 
-        fun toMatchRule(): MatchRule = object : MatchRule {
 
-            val matched = matchedOccurrences()
+    private class FringeMatchRule(val rule: Rule,
+                                  val subst: Subst,
+                                  val headKept: MutableIterable<ConstraintOccurrence?>,
+                                  val headReplaced: MutableIterable<ConstraintOccurrence?>) : MatchRule {
+        
+        private val logicalContext = object : LogicalContext {
 
-            val headKept =  ArrayList (matched.take(rule.headKept().count()))
+            val meta2logical = HashMap<MetaLogical<*>, Logical<*>>()
 
-            val headReplaced =  ArrayList (matched.takeLast(rule.headReplaced().count()))
-
-            private val logicalContext = object : LogicalContext {
-
-                val meta2logical = HashMap<MetaLogical<*>, Logical<*>>()
-
-                override fun <V : Any> variable(meta: MetaLogical<V>): Logical<V> =
-                    (meta2logical[meta] ?: subst[meta]?.let { value ->
-                        when (value) {
-                            is Logical<*> -> value
-                            is LogicalOwner -> value.logical()
-                            else -> LogicalImpl(value)
-                        }
-                    } ?: meta.logical().also { logical -> meta2logical[meta] = logical }) as Logical<V>
-
-            }
-
-            override fun rule(): Rule = rule
-
-            override fun matchHeadKept(): MutableIterable<ConstraintOccurrence?> = headKept
-
-            override fun matchHeadReplaced(): MutableIterable<ConstraintOccurrence?> = headReplaced
-
-            override fun logicalContext(): LogicalContext = logicalContext
+            override fun <V : Any> variable(meta: MetaLogical<V>): Logical<V> =
+                (meta2logical[meta] ?: subst[meta]?.let { value ->
+                    when (value) {
+                        is Logical<*> -> value
+                        is LogicalOwner -> value.logical()
+                        else -> LogicalImpl(value)
+                    }
+                } ?: meta.logical().also { logical -> meta2logical[meta] = logical }) as Logical<V>
 
         }
+
+        override fun rule(): Rule = rule
+
+        override fun matchHeadKept(): MutableIterable<ConstraintOccurrence?> = headKept
+
+        override fun matchHeadReplaced(): MutableIterable<ConstraintOccurrence?> = headReplaced
+
+        override fun logicalContext(): LogicalContext = logicalContext
+
     }
 
     private class OccurrenceMatcher(contextSubst: Subst) {
@@ -251,8 +270,10 @@ class RuleMatcher(val rule: Rule) {
                     // match logical or its value
                     matchLogical(ptn.findRoot(), trg)
                 is Term             ->
-                    // recursion into the term
-                    matchTerm(ptn, trg)
+                    when {
+                        ptn.`is`(Term.Kind.REF)     -> matchAny(resolve(ptn), trg)
+                        else                        ->  matchTerm(ptn, trg) // recursion into the term
+                    }
                 else                ->
                     // compare two arbitrary values
                     (ptn == trg)
