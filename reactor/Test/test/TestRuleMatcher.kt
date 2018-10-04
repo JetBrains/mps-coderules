@@ -1,7 +1,4 @@
-import jetbrains.mps.logic.reactor.core.Dispatcher
-import jetbrains.mps.logic.reactor.core.RuleIndex
-import jetbrains.mps.logic.reactor.core.RuleMatcher
-import jetbrains.mps.logic.reactor.core.logical
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
@@ -46,7 +43,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
 
                 expand(occurrence("foo"))                           }.apply {
                 matches().size shouldBe 0                               }.run {
@@ -74,7 +71,7 @@ class TestRuleMatcher {
                 ))))
         {
             val foo = occurrence("foo")
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
 
                 expand(foo)                                             }.apply {
                 matches().size shouldBe 0                               }.run {
@@ -100,7 +97,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
 
                 expand(occurrence("foo", parseTerm("f{g g}")))              }.apply {
                 matches().size shouldBe 0                                           }.run {
@@ -126,7 +123,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
                 val termh = parseTerm("h{k}")
 
                 expand(occurrence("foo", term("f", parseTerm("g"), ref(termh))))    }.apply {
@@ -150,7 +147,7 @@ class TestRuleMatcher {
                 ))))
         {
             val bara = occurrence("bar", "a")
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
 
                 expand(occurrence("foo"))                           }.apply {
                 matches().size shouldBe 0                               }.run {
@@ -159,7 +156,7 @@ class TestRuleMatcher {
                 expand(occurrence("bar", "b"))               }.apply {
                 matches().size shouldBe 0                               }.run {
 
-                cleanup(bara)                                           }.apply {
+                contract(bara)                                           }.apply {
                 matches().size shouldBe 0                               }.run {
 
                 expand(occurrence("bazz"))                          }.apply {
@@ -194,7 +191,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
 
                 expand(occurrence("foo", "a"))                      }.run {
                 expand(occurrence("bazz", "b"))                     }.run {
@@ -260,7 +257,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
                 expand(occurrence("foo", parseTerm("f{g{h}}")))                 }.apply {
                 matches().size shouldBe 0
                                                                                         }.run {
@@ -290,7 +287,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
                 expand(occurrence("bar", parseTerm("h{k}"), parseTerm("h{k}")))              }.apply {
                 matches().size shouldBe 0                                                                }.run {
 
@@ -317,7 +314,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
 
                 expand(occurrence("foo", term("f", ref(logicalVar(yLogical)), term("h"))))       }.apply {
                 matches().size shouldBe 0                                                                       }.run {
@@ -344,7 +341,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
 
                 expand(occurrence("foo", term("f", logicalVar(yLogical), term("g")))) }.apply {
                 matches().size shouldBe 0                                                                }.run {
@@ -375,7 +372,7 @@ class TestRuleMatcher {
         {
             val occ2reactivate = occurrence("bazz", term("k", logicalVar(yLogical)))
 
-            with(RuleMatcher(rules.first()).fringe()) {
+            with(ruleMatcher().probe()) {
                 expand(occ2reactivate)                                                  }.apply {
                 matches().size shouldBe 0
                 yLogical.findRoot().value() shouldBe null
@@ -658,7 +655,6 @@ class TestRuleMatcher {
         }
     }
 
-
-
+    private fun Builder.ruleMatcher() = Matcher(rules.first())
 
 }

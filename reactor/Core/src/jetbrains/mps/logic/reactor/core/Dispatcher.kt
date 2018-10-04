@@ -26,34 +26,36 @@ import jetbrains.mps.logic.reactor.program.Rule
  * @author Fedor Isakov
  */
 
+typealias Matcher = RuleMatcher
+
 class Dispatcher (val ruleIndex: RuleIndex) {
 
-    private val rule2matcher = HashMap<Rule, RuleMatcher>()
+    private val rule2matcher = HashMap<Rule, Matcher>()
 
     init {
         ruleIndex.forEach { rule ->
-            val matcher = RuleMatcher(rule)
+            val matcher = Matcher(rule)
             rule2matcher.put(rule, matcher);
         }
     }
 
     inner class DispatchFringe {
 
-        private var rule2fringe: PersMap<Rule, RuleMatcher.MatchFringe>
+        private var rule2probe: PersMap<Rule, MatchingProbe>
         
         private val allMatches = arrayListOf<MatchRule>()
 
         constructor() {
-            this.rule2fringe = Maps.of()
+            this.rule2probe = Maps.of()
             rule2matcher.entries.forEach { e ->
-                this.rule2fringe = rule2fringe.put(e.key, e.value.fringe())
+                this.rule2probe = rule2probe.put(e.key, e.value.probe())
             }
         }
 
-        constructor(pred: DispatchFringe, matching: Iterable<RuleMatcher.MatchFringe>) {
-            this.rule2fringe = pred.rule2fringe
+        constructor(pred: DispatchFringe, matching: Iterable<MatchingProbe>) {
+            this.rule2probe = pred.rule2probe
             matching.forEach { fringe ->
-                this.rule2fringe = rule2fringe.put(fringe.rule(), fringe)
+                this.rule2probe = rule2probe.put(fringe.rule(), fringe)
                 allMatches.addAll(fringe.matches())
             }
         }
@@ -63,16 +65,16 @@ class Dispatcher (val ruleIndex: RuleIndex) {
         fun activated(active: ConstraintOccurrence): DispatchFringe {
             return DispatchFringe(this,
                 ruleIndex.forOccurrenceWithMask(active).mapNotNull { (rule, mask) ->
-                    rule2fringe[rule]?.expand(active, mask)
+                    rule2probe[rule]?.expand(active, mask)
                 })
         }
 
         fun discarded(discarded: ConstraintOccurrence): DispatchFringe {
             return DispatchFringe(this,
                 ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
-                    rule2fringe[rule]
+                    rule2probe[rule]
                 }.map { fringe ->
-                    fringe.cleanup(discarded)
+                    fringe.contract(discarded)
                 })
         }
 
