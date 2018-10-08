@@ -73,8 +73,8 @@ class Dispatcher (val ruleIndex: RuleIndex) {
             return DispatchFringe(this,
                 ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
                     rule2probe[rule]
-                }.map { fringe ->
-                    fringe.contract(discarded)
+                }.map { probe ->
+                    probe.contract(discarded)
                 })
         }
 

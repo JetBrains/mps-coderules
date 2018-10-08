@@ -22,16 +22,21 @@ import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.unification.Term
+import java.util.*
 
 typealias Subst = Map<MetaLogical<*>, Any>
 
 fun emptySubst() = HashMap<MetaLogical<*>, Any>(4)
 
-class OccurrenceMatcher(contextSubst: Subst = emptySubst()) {
+class OccurrenceMatcher(val contextSubst: Subst? = null) {
 
-    private val matchSubst = HashMap(contextSubst)
+    companion object {
+        val EMPTY_SUBST : Subst = Collections.emptyMap()
+    }
 
-    fun substitution(): Subst = matchSubst
+    private var matchSubst : MutableMap<MetaLogical<*>, Any>? = null
+
+    fun substitution(): Subst = matchSubst ?: (contextSubst ?: EMPTY_SUBST)
 
     /**
      * Matches constraint and occurrence.
@@ -63,19 +68,26 @@ class OccurrenceMatcher(contextSubst: Subst = emptySubst()) {
      */
     private fun matchAny(ptn: Any?, trg: Any?): Boolean =
         when (ptn) {
-            is MetaLogical<*> ->
+            is MetaLogical<*> -> {
                 // recursion with existing substitution or new substitution
-                if (matchSubst.containsKey(ptn))
-                    matchSubst[ptn].let { matchAny(it, trg) }
+                if (matchSubst == null) {
+                    this.matchSubst = if (contextSubst != null) HashMap(contextSubst) else emptySubst()
+                }
+
+                if (matchSubst!!.containsKey(ptn))
+                    matchSubst!![ptn].let { matchAny(it, trg) }
                 else
-                    matchSubst.apply { put(ptn, trg) }.run { true }
+                    matchSubst!!.put(ptn, trg!!).run { true }
+            }
+
             is Logical<*> ->
                 // match logical or its value
                 matchLogical(ptn.findRoot(), trg)
+            
             is Term ->
                 when {
                     ptn.`is`(Term.Kind.REF)     -> matchAny(resolve(ptn), trg)
-                    else                        ->  matchTerm(ptn, trg) // recursion into the term
+                    else                        -> matchTerm(ptn, trg) // recursion into the term
                 }
             else                ->
                 // compare two arbitrary values

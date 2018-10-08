@@ -4,6 +4,7 @@ import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
 import jetbrains.mps.unification.test.MockTermsParser.*
 import org.junit.Assert.assertEquals
+import org.junit.Ignore
 import org.junit.Test
 
 /*
@@ -598,6 +599,7 @@ class TestRuleMatcher {
     }
 
     @Test
+    @Ignore("unclear whether this is a correct test case")
     fun testDispatcherIncrementalDiscard() {
         with(programWithRules(
             rule("rule1",
