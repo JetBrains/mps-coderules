@@ -11,6 +11,7 @@
   <imports>
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -112,6 +113,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -158,15 +160,15 @@
     <node concept="3clFb_" id="oI9Ys2ypk" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="report" />
-      <node concept="37vLTG" id="oI9Ys2yue" role="3clF46">
-        <property role="TrG5h" value="target" />
-        <node concept="3Tqbb2" id="oI9Ys2yvH" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="oI9Ys2y$v" role="3clF46">
         <property role="TrG5h" value="kind" />
-        <node concept="3uibUv" id="oI9Ys2yAc" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        <node concept="3uibUv" id="1FOQehwp95V" role="1tU5fm">
+          <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
         </node>
+      </node>
+      <node concept="37vLTG" id="oI9Ys2yue" role="3clF46">
+        <property role="TrG5h" value="target" />
+        <node concept="2sp9CU" id="1FOQehwMiYP" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="oI9Ys2yxf" role="3clF46">
         <property role="TrG5h" value="text" />

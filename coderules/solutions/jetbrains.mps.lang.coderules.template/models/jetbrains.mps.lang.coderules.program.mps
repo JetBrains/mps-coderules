@@ -20,6 +20,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -258,6 +259,7 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -3211,15 +3213,15 @@
     <node concept="3clFb_" id="oI9Ys3m9o" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="report" />
-      <node concept="37vLTG" id="oI9Ys3m9p" role="3clF46">
-        <property role="TrG5h" value="target" />
-        <node concept="3Tqbb2" id="oI9Ys3m9q" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="oI9Ys3m9r" role="3clF46">
         <property role="TrG5h" value="kind" />
-        <node concept="3uibUv" id="oI9Ys3m9s" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        <node concept="3uibUv" id="1FOQehwpsz0" role="1tU5fm">
+          <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
         </node>
+      </node>
+      <node concept="37vLTG" id="oI9Ys3m9p" role="3clF46">
+        <property role="TrG5h" value="target" />
+        <node concept="2sp9CU" id="1FOQehwMiYP" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="oI9Ys3m9t" role="3clF46">
         <property role="TrG5h" value="text" />

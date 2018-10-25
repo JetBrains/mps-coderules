@@ -1126,13 +1126,6 @@
           <ref role="3uigEE" node="7P_FdVQ_k3b" resolve="QueryTemplate.QueryObservable" />
         </node>
       </node>
-      <node concept="37vLTG" id="7P_FdVPsGBf" role="3clF46">
-        <property role="TrG5h" value="parameters" />
-        <node concept="3uibUv" id="3IIf9OAgMKI" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="3qTvmN" id="3IIf9OAm5rX" role="11_B2D" />
-        </node>
-      </node>
       <node concept="3uibUv" id="7P_FdVPsDNI" role="3clF45">
         <ref role="3uigEE" node="7P_FdVPsDC0" resolve="QueryTemplate.QueryConfigurable" />
       </node>

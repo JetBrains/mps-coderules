@@ -33,6 +33,7 @@
     <import index="e0w6" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.observers(jetbrains.mps.coderules/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.program)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1494,52 +1495,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3F6vMxq$Y7S" role="jymVt" />
-    <node concept="3clFbW" id="3IIf9OAgFCl" role="jymVt">
-      <node concept="3cqZAl" id="3IIf9OAgFCm" role="3clF45" />
-      <node concept="3Tm1VV" id="3IIf9OAgFCn" role="1B3o_S" />
-      <node concept="3clFbS" id="3IIf9OAgFCo" role="3clF47">
-        <node concept="3clFbF" id="3IIf9OAgFCp" role="3cqZAp">
-          <node concept="37vLTI" id="3IIf9OAgFCq" role="3clFbG">
-            <node concept="2OqwBi" id="3IIf9OAgFCr" role="37vLTJ">
-              <node concept="Xjq3P" id="3IIf9OAgFCs" role="2Oq$k0" />
-              <node concept="2OwXpG" id="3IIf9OAgFCt" role="2OqNvi">
-                <ref role="2Oxat5" node="443LGHBSt7P" resolve="repository" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="3IIf9OAgFCu" role="37vLTx">
-              <ref role="3cqZAo" node="3IIf9OAgFCv" resolve="repository" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3IIf9OAgHRc" role="3cqZAp">
-          <node concept="37vLTI" id="3IIf9OAgHRe" role="3clFbG">
-            <node concept="2OqwBi" id="3IIf9OAgJUJ" role="37vLTJ">
-              <node concept="Xjq3P" id="3IIf9OAgJZk" role="2Oq$k0" />
-              <node concept="2OwXpG" id="3IIf9OAgJUM" role="2OqNvi">
-                <ref role="2Oxat5" node="3IIf9OAgHR7" resolve="parameter" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="3IIf9OAgHRi" role="37vLTx">
-              <ref role="3cqZAo" node="3IIf9OAgHzP" resolve="parameter" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="3IIf9OAgFCv" role="3clF46">
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="3IIf9OAgFCw" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="3IIf9OAgHzP" role="3clF46">
-        <property role="TrG5h" value="parameter" />
-        <node concept="3uibUv" id="3IIf9OAgO$P" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="3qTvmN" id="3IIf9OAm23N" role="11_B2D" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3IIf9OAgFCk" role="jymVt" />
     <node concept="3clFb_" id="1pPth$lMSHK" role="jymVt">
       <property role="TrG5h" value="info" />
       <property role="1EzhhJ" value="false" />
@@ -1553,7 +1508,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="3F6vMxq_0xa" role="jymVt" />
+    <node concept="2tJIrI" id="1FOQehwo8s$" role="jymVt" />
     <node concept="3clFb_" id="55Q$YFtJK$_" role="jymVt">
       <property role="TrG5h" value="schedule" />
       <property role="1EzhhJ" value="false" />
@@ -1861,9 +1816,6 @@
                                       </node>
                                     </node>
                                   </node>
-                                </node>
-                                <node concept="37vLTw" id="3IIf9OAgKDg" role="37wK5m">
-                                  <ref role="3cqZAo" node="3IIf9OAgHR7" resolve="parameter" />
                                 </node>
                               </node>
                             </node>
@@ -2556,14 +2508,6 @@
       <node concept="3Tm6S6" id="443LGHBSt7Q" role="1B3o_S" />
       <node concept="3uibUv" id="443LGHBSt7S" role="1tU5fm">
         <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-      </node>
-    </node>
-    <node concept="312cEg" id="3IIf9OAgHR7" role="jymVt">
-      <property role="TrG5h" value="parameter" />
-      <node concept="3Tm6S6" id="3IIf9OAgHR8" role="1B3o_S" />
-      <node concept="3uibUv" id="3IIf9OAgPa_" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3qTvmN" id="3IIf9OAm4oj" role="11_B2D" />
       </node>
     </node>
   </node>
@@ -4967,6 +4911,25 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="3HP615" id="5KrJ7UHMRRs">
+    <property role="TrG5h" value="ReportSink" />
+    <node concept="2tJIrI" id="5KrJ7UHMRRU" role="jymVt" />
+    <node concept="3clFb_" id="5KrJ7UHMRSa" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="report" />
+      <node concept="37vLTG" id="5KrJ7UHMRTK" role="3clF46">
+        <property role="TrG5h" value="reportItem" />
+        <node concept="3uibUv" id="5KrJ7UHMVA7" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="5KrJ7UHMRSc" role="3clF45" />
+      <node concept="3Tm1VV" id="5KrJ7UHMRSd" role="1B3o_S" />
+      <node concept="3clFbS" id="5KrJ7UHMRSe" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="5KrJ7UHMRRZ" role="jymVt" />
+    <node concept="3Tm1VV" id="5KrJ7UHMRRt" role="1B3o_S" />
   </node>
 </model>
 
