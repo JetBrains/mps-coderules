@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.core.ProcessingState.FAILED
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -24,6 +25,7 @@ import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
 import java.util.*
+import kotlin.collections.ArrayList
 import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
 import com.github.andrewoma.dexx.collection.List as PList
 
@@ -33,21 +35,22 @@ import com.github.andrewoma.dexx.collection.List as PList
 
 interface SessionObjects {
 
-    fun handler(): Controller
+    fun controller(): Controller
 
 }
 
 class EvaluationSessionImpl private constructor (
     val program: Program,
     val sessionSolver: SessionSolver,
-    val trace: EvaluationTrace) : EvaluationSession(), SessionObjects
+    val trace: EvaluationTrace,
+    val failureHandler: FailureHandler?) : EvaluationSession(), SessionObjects
 {
 
     lateinit var controller: Controller
 
-    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?) {
-        this.controller = Controller(program, trace, profiler, storeView)
-        controller.activate(main)
+    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?) : ProcessingState {
+        this.controller = Controller(program, trace, profiler, storeView, failureHandler)
+        return controller.activate(main)
     }
 
     private class Config(val program: Program) : EvaluationSession.Config() {
@@ -56,6 +59,7 @@ class EvaluationSessionImpl private constructor (
         val parameters = HashMap<String, Any?>()
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
         var storeView: StoreView? = null
+        var failureHandler: FailureHandler? = null
 
         override fun withPredicates(vararg predicateSymbols: PredicateSymbol): EvaluationSession.Config {
             this.predicateSymbols.addAll(Arrays.asList(* predicateSymbols))
@@ -72,12 +76,17 @@ class EvaluationSessionImpl private constructor (
             return this
         }
 
+        override fun withFailureHandler(handler: FailureHandler): EvaluationSession.Config {
+            this.failureHandler = handler
+            return this
+        }
+
         override fun withParam(key: String, param: Any): EvaluationSession.Config {
             this.parameters.put(key, param)
             return this
         }
 
-        override fun start(sessionSolver: SessionSolver): EvaluationSession {
+        override fun start(sessionSolver: SessionSolver): EvaluationResult {
             var session = ourBackend.ourSession.get()
             if (session != null) throw IllegalStateException("session already active")
 
@@ -88,15 +97,19 @@ class EvaluationSessionImpl private constructor (
                 parameters.get("profiling.data") as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
 
-            session = EvaluationSessionImpl(program, sessionSolver, evaluationTrace)
+            session = EvaluationSessionImpl(program, sessionSolver, evaluationTrace, failureHandler)
             ourBackend.ourSession.set(session)
+            var failure: EvaluationFailure? = null
             try {
-                session.launch(parameters["main"] as Constraint, profiler, storeView)
+                val state = session.launch(parameters["main"] as Constraint, profiler, storeView)
+                if (state is FAILED) {
+                    failure = state.failure
+                }
             }
             finally {
                 try {
                     profiler?.run {
-                        formattedData().entries.forEach { e -> durations?.put(e.key, e.value) }
+                        formattedData().entries.forEach { e -> durations.put(e.key, e.value) }
                         clear()
                     }
                 }
@@ -106,11 +119,15 @@ class EvaluationSessionImpl private constructor (
                 ourBackend.ourSession.set(null)
             }
 
-            return session
+            return object : EvaluationResult {
+                override fun storeView(): StoreView? = session.storeView()
+
+                override fun failure():  EvaluationFailure? = failure
+            }
         }
     }
 
-    override fun handler() = controller
+    override fun controller() = controller
 
     override fun sessionSolver(): SessionSolver = sessionSolver
 

@@ -62,7 +62,7 @@ public interface EvaluationTrace {
         public void failure(EvaluationFailureException fail) {
         }
 
-        public void reportFailure(String message) {
+        public void failure(EvaluationFailure failure) {
         }
 
     };
@@ -89,8 +89,8 @@ public interface EvaluationTrace {
 
     void ask(boolean result, PredicateInvocation invocation);
 
+    @Deprecated
     void failure(EvaluationFailureException fail);
 
-    @Deprecated
-    void reportFailure(String message);
+    void failure(EvaluationFailure failure);
 }

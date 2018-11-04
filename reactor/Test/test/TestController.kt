@@ -33,7 +33,7 @@ class TestController {
 
     private class MockSession(val program: Program, val solver: SessionSolver) : EvaluationSession(), SessionObjects {
         lateinit var controller: Controller
-        override fun handler(): Controller = controller
+        override fun controller(): Controller = controller
         override fun sessionSolver(): SessionSolver = solver
         override fun storeView(): StoreView = TODO()
 

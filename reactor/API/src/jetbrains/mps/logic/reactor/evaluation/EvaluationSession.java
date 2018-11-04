@@ -88,9 +88,11 @@ public abstract class EvaluationSession {
 
         public abstract EvaluationSession.Config withStoreView(StoreView storeView);
 
+        public abstract EvaluationSession.Config withFailureHandler(FailureHandler handler);
+
         public abstract EvaluationSession.Config withParam(String key, Object param);
 
-        public abstract EvaluationSession start(SessionSolver sessionSolver);
+        public abstract EvaluationResult start(SessionSolver sessionSolver);
 
     }
 

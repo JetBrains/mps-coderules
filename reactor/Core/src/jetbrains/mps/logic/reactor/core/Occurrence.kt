@@ -56,13 +56,13 @@ private data class Occurrence (val currentFrame: () -> Frame,
 
     override fun valueUpdated(logical: Logical<*>) {
         if (alive) {
-            (EvaluationSession.current() as SessionObjects).handler().reactivate(this)
+            (EvaluationSession.current() as SessionObjects).controller().reactivate(this)
         }
     }
 
     override fun parentUpdated(logical: Logical<*>) {
         if (alive) {
-            (EvaluationSession.current() as SessionObjects).handler().reactivate(this)
+            (EvaluationSession.current() as SessionObjects).controller().reactivate(this)
         }
     }
 

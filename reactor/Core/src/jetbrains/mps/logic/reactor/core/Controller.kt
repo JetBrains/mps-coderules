@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.core.ProcessingState.*
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
@@ -28,12 +29,12 @@ import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 import com.github.andrewoma.dexx.collection.Map as PersMap
 
-
 class Controller(
     val program: Program,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null,
-    val storeView: StoreView? = null)
+    val storeView: StoreView? = null,
+    val failureHandler: FailureHandler? = null)
 {
     private val session: EvaluationSession = EvaluationSession.current()
 
@@ -47,34 +48,35 @@ class Controller(
 
     fun storeView(): StoreView = frameStack.current.store.view()
 
-    fun activate(constraint: Constraint) {
+    fun activate(constraint: Constraint) : ProcessingState =
         try {
-            process(session.occurrence(constraint, noLogicalContext)) // FIXME noLogicalContext
+            process(session.occurrence(constraint, noLogicalContext), NORMAL()) // FIXME noLogicalContext
         }
         catch (t: Throwable) {
             throw t
         }
-    }
 
-    fun reactivate(occurrence: ConstraintOccurrence) {
+    fun reactivate(occurrence: ConstraintOccurrence) =
         try {
-            process(occurrence)
+            process(occurrence, NORMAL())
         }
         catch (t: Throwable) {
             throw t
         }
-    }
 
     /** For tests only */
     fun evaluate(occurrence: ConstraintOccurrence): StoreView {
-        process(occurrence)
+        val state = process(occurrence, NORMAL())
+        if (state is FAILED) {
+            throw state.failure.cause
+        }
         return storeView()
     }
 
-    private fun process(active: ConstraintOccurrence) {
+    private fun process(active: ConstraintOccurrence, instate: ProcessingState) : ProcessingState {
         assert(active.isAlive())
 
-        profiler.profile("process_${active.constraint().symbol()}") {
+        return profiler.profile<ProcessingState>("process_${active.constraint().symbol()}") {
 
             if (!active.isStored()) {
                 frameStack.current.store.store(active)
@@ -86,8 +88,11 @@ class Controller(
             val activatedDF = dispatchFringe.activated(active)
             this.dispatchFringe = activatedDF
 
+            var state : ProcessingState = instate
+
 //            for (match in matcher.matches(active, frameStack.current.store)) {
-            for(match in dispatchFringe.matches().toList()) {
+            for (match in dispatchFringe.matches().toList()) {
+                if (!state.operational) break
 
                 // TODO: paranoid check. should be isAlive() instead
                 if (!active.isStored()) break
@@ -100,12 +105,16 @@ class Controller(
 
                 trace.trying(match)
 
-                for (prd in match.patternPredicates()) {
-                    tellPredicate(prd, match.logicalContext(), trace)
-                }
+                state = match.patternPredicates().fold(state, { st, prd ->
+                    st.eval { tellPredicate(prd, match.logicalContext(), it) } })
+//                    if (st.operational) tellPredicate(prd, match.logicalContext(), st) else st })
 
-                if (!match.rule().checkGuard(match.logicalContext(), trace)) {
+                state = state.eval { match.rule().checkGuard(match.logicalContext(), it) }
+//                    if (state.operational) match.rule().checkGuard(match.logicalContext(), state) else state
+                
+                if (state is ABORTED) {
                     trace.reject(match)
+                    state = state.reset()
                     continue
                 }
 
@@ -117,40 +126,40 @@ class Controller(
                     trace.discard(occ)
                 }
 
-                var failure: EvaluationFailureException? = null
-
                 for (body in match.rule().bodyAlternation()) {
-                    if (failure != null) {
-                        trace.failure(failure)
+                    if (state is FAILED) {
                         trace.retry(match)
-                        failure = null
+                        state = state.reset()
                     }
 
                     val savedFrame = frameStack.current
                     frameStack.push()
 
-                    try {
-                        for (item in body) {
+                    state = body.fold(state) { st, item ->
+                        if (st.operational)
                             when (item) {
-                                is Constraint -> process(session.occurrence(item, match.logicalContext()))
-                                is Predicate -> tellPredicate(item, match.logicalContext(), trace)
-                                else -> throw IllegalArgumentException("unknown item ${item}")
+                                is Constraint   ->  process(session.occurrence(item, match.logicalContext()), state)
+                                is Predicate    ->  tellPredicate(item, match.logicalContext(), state)
+                                else            ->  throw IllegalArgumentException("unknown item ${item}")
+                            }
+                        else st
+                    }
+
+                    if (state is FAILED) {
+                        if (failureHandler != null) {
+                            val updatedFailure = failureHandler.handleFailure(state.failure, match.rule())
+                            if (updatedFailure == null) {
+                                state = state.reset()
+                                break
                             }
                         }
-                    }
-                    catch (ex: EvaluationFailureException) {
-                        failure = ex
-                        frameStack.reset(savedFrame)
-                    }
 
-                    if (failure == null) {
-                        // normal termination: skip the other alternatives
+                        trace.failure(state.failure)
+                        frameStack.reset(savedFrame)
+
+                    } else {
                         break
                     }
-                }
-
-                if (failure != null) {
-                    throw failure
                 }
 
                 trace.finish(match)
@@ -161,37 +170,59 @@ class Controller(
                 trace.suspend(active)
             }
 
+            state
         }
     }
 
-    private fun Rule.checkGuard(logicalContext: LogicalContext, trace: EvaluationTrace): Boolean =
-        profiler.profile<Boolean>("checkGuard") {
-
-            return guard().all { prd -> askPredicate(prd, logicalContext, trace) }
-
+    private fun Rule.checkGuard(logicalContext: LogicalContext, state: ProcessingState): ProcessingState =
+        guard().fold(state) { st, prd ->
+            if (st.operational) askPredicate(prd, logicalContext, st) else st
         }
 
-    private fun askPredicate(predicate: Predicate, logicalContext: LogicalContext, trace: EvaluationTrace): Boolean =
-        profiler.profile<Boolean>("ask_${predicate.symbol()}", {
+    private fun askPredicate(predicate: Predicate,
+                             logicalContext: LogicalContext,
+                             instate: ProcessingState): ProcessingState
+    {
+        return profiler.profile<ProcessingState>("ask_${predicate.symbol()}", {
 
-            session.sessionSolver().ask(session.invocation(predicate, logicalContext))
+            try {
+                if(session.sessionSolver().ask(session.invocation(predicate, logicalContext))) {
+                    instate
+                } else {
+                    instate.abort()
+                }
+
+            } catch (ex: EvaluationFailureException) {
+                instate.fail(EvaluationFailure(ex))
+            }
 
         })
+    }
 
-    private fun tellPredicate(predicate: Predicate, logicalContext: LogicalContext, trace: EvaluationTrace) =
-        profiler.profile("tell_${predicate.symbol()}") {
+    private fun tellPredicate(predicate: Predicate,
+                              logicalContext: LogicalContext,
+                              instate: ProcessingState) : ProcessingState
+    {
+        return profiler.profile<ProcessingState>("tell_${predicate.symbol()}") {
 
-            session.sessionSolver().tell(session.invocation(predicate, logicalContext))
+            try {
+                session.sessionSolver().tell(session.invocation(predicate, logicalContext))
+                instate
+
+            } catch (ex: EvaluationFailureException) {
+                instate.fail(EvaluationFailure(ex))
+            }
 
         }
+    }
+
+    private val noLogicalContext: LogicalContext = object: LogicalContext {
+        override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V> = TODO()
+    }
+
+    private fun MatchRule.patternPredicates() =
+        (rule().headKept() + rule().headReplaced()).zip(matchHeadKept() + matchHeadReplaced()).flatMap {
+            it.first.patternPredicates(it.second.arguments())
+        }.toList()
 
 }
-
-private val noLogicalContext: LogicalContext = object: LogicalContext {
-    override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V> = TODO()
-}
-
-fun MatchRule.patternPredicates() =
-    (rule().headKept() + rule().headReplaced()).zip(matchHeadKept() + matchHeadReplaced()).flatMap {
-        it.first.patternPredicates(it.second.arguments())
-    }.toList()
