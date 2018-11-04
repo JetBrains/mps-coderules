@@ -4972,7 +4972,7 @@
               </node>
             </node>
             <node concept="liA8E" id="5jPBdK_v1h" role="2OqNvi">
-              <ref role="37wK5l" to="w7la:~EvaluationSession$Config.start(jetbrains.mps.logic.reactor.evaluation.SessionSolver):jetbrains.mps.logic.reactor.evaluation.EvaluationSession" resolve="start" />
+              <ref role="37wK5l" to="w7la:~EvaluationSession$Config.start(jetbrains.mps.logic.reactor.evaluation.SessionSolver):jetbrains.mps.logic.reactor.evaluation.EvaluationResult" resolve="start" />
               <node concept="10Nm6u" id="2UGjFq4L8wv" role="37wK5m" />
             </node>
           </node>
@@ -5444,7 +5444,7 @@
               </node>
             </node>
             <node concept="liA8E" id="5jPBdK_QKs" role="2OqNvi">
-              <ref role="37wK5l" to="w7la:~EvaluationSession$Config.start(jetbrains.mps.logic.reactor.evaluation.SessionSolver):jetbrains.mps.logic.reactor.evaluation.EvaluationSession" resolve="start" />
+              <ref role="37wK5l" to="w7la:~EvaluationSession$Config.start(jetbrains.mps.logic.reactor.evaluation.SessionSolver):jetbrains.mps.logic.reactor.evaluation.EvaluationResult" resolve="start" />
               <node concept="10Nm6u" id="2UGjFq4L8GP" role="37wK5m" />
             </node>
           </node>

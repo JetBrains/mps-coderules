@@ -530,8 +530,26 @@
             <node concept="10Nm6u" id="6Qzc0KyFxsL" role="3clFbG" />
           </node>
         </node>
-        <node concept="2AHcQZ" id="6Qzc0KyFxsK" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3clFb_" id="694E_55g1vK" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="withFailureHandler" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="694E_55g1vL" role="1B3o_S" />
+        <node concept="3uibUv" id="694E_55g1vN" role="3clF45">
+          <ref role="3uigEE" to="w7la:~EvaluationSession$Config" resolve="EvaluationSession.Config" />
+        </node>
+        <node concept="37vLTG" id="694E_55g1vO" role="3clF46">
+          <property role="TrG5h" value="handler" />
+          <node concept="3uibUv" id="694E_55g1vP" role="1tU5fm">
+            <ref role="3uigEE" to="w7la:~FailureHandler" resolve="FailureHandler" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="694E_55g1vQ" role="3clF47">
+          <node concept="3clFbF" id="694E_55g1vT" role="3cqZAp">
+            <node concept="10Nm6u" id="694E_55g1vS" role="3clFbG" />
+          </node>
         </node>
       </node>
       <node concept="3clFb_" id="2UGjFq4L4SC" role="jymVt">
@@ -543,8 +561,8 @@
             <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
           </node>
         </node>
-        <node concept="3uibUv" id="2UGjFq4L4SF" role="3clF45">
-          <ref role="3uigEE" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
+        <node concept="3uibUv" id="da2PmlMQg_" role="3clF45">
+          <ref role="3uigEE" to="w7la:~EvaluationResult" resolve="EvaluationResult" />
         </node>
         <node concept="3Tm1VV" id="2UGjFq4L4SG" role="1B3o_S" />
         <node concept="3clFbS" id="2UGjFq4L4SI" role="3clF47">
@@ -591,6 +609,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="3clFbF" id="da2PmlMQil" role="3cqZAp">
+            <node concept="10Nm6u" id="da2PmlMQij" role="3clFbG" />
           </node>
         </node>
       </node>

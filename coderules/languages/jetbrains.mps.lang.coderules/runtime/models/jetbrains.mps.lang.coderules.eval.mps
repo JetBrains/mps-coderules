@@ -43,6 +43,7 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -104,6 +105,10 @@
       </concept>
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -924,6 +929,144 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="8odmgCo0jL" role="3cqZAp">
+          <node concept="37vLTI" id="8odmgCo34v" role="3clFbG">
+            <node concept="2OqwBi" id="8odmgCo4nu" role="37vLTx">
+              <node concept="37vLTw" id="8odmgCo4hH" role="2Oq$k0">
+                <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
+              </node>
+              <node concept="liA8E" id="8odmgCo4yk" role="2OqNvi">
+                <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withFailureHandler(jetbrains.mps.logic.reactor.evaluation.FailureHandler):jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Config" resolve="withFailureHandler" />
+                <node concept="2ShNRf" id="8odmgCo4zw" role="37wK5m">
+                  <node concept="YeOm9" id="8odmgCo4Lc" role="2ShVmc">
+                    <node concept="1Y3b0j" id="8odmgCo4Lf" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" to="w7la:~FailureHandler" resolve="FailureHandler" />
+                      <node concept="3Tm1VV" id="8odmgCo4Lg" role="1B3o_S" />
+                      <node concept="3clFb_" id="8odmgCo4Lh" role="jymVt">
+                        <property role="1EzhhJ" value="false" />
+                        <property role="TrG5h" value="handleFailure" />
+                        <property role="DiZV1" value="false" />
+                        <property role="od$2w" value="false" />
+                        <node concept="3Tm1VV" id="8odmgCo4Li" role="1B3o_S" />
+                        <node concept="3uibUv" id="8odmgCo4Lk" role="3clF45">
+                          <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+                        </node>
+                        <node concept="37vLTG" id="8odmgCo4Ll" role="3clF46">
+                          <property role="TrG5h" value="failure" />
+                          <node concept="3uibUv" id="8odmgCo4Lm" role="1tU5fm">
+                            <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+                          </node>
+                        </node>
+                        <node concept="37vLTG" id="8odmgCo4Ln" role="3clF46">
+                          <property role="TrG5h" value="rule" />
+                          <node concept="3uibUv" id="8odmgCo4Lo" role="1tU5fm">
+                            <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
+                          </node>
+                        </node>
+                        <node concept="3clFbS" id="8odmgCo4Lp" role="3clF47">
+                          <node concept="3clFbH" id="8odmgCoHiQ" role="3cqZAp" />
+                          <node concept="3clFbJ" id="8odmgCoHk0" role="3cqZAp">
+                            <node concept="3clFbS" id="8odmgCoHk2" role="3clFbx">
+                              <node concept="3clFbF" id="8odmgCoHuJ" role="3cqZAp">
+                                <node concept="2OqwBi" id="8odmgCoHQh" role="3clFbG">
+                                  <node concept="2YIFZM" id="8odmgCoHx_" role="2Oq$k0">
+                                    <ref role="37wK5l" to="9x2e:oI9YrIZUA" resolve="solver" />
+                                    <ref role="1Pybhc" to="9x2e:oI9YrIZTG" resolve="ReportingFrom" />
+                                    <node concept="2OqwBi" id="8odmgCoHDZ" role="37wK5m">
+                                      <node concept="2YIFZM" id="8odmgCoH$4" role="2Oq$k0">
+                                        <ref role="37wK5l" to="w7la:~EvaluationSession.current():jetbrains.mps.logic.reactor.evaluation.EvaluationSession" resolve="current" />
+                                        <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
+                                      </node>
+                                      <node concept="liA8E" id="8odmgCoHKm" role="2OqNvi">
+                                        <ref role="37wK5l" to="w7la:~EvaluationSession.sessionSolver():jetbrains.mps.logic.reactor.evaluation.SessionSolver" resolve="sessionSolver" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="8odmgCoHXm" role="2OqNvi">
+                                    <ref role="37wK5l" to="9x2e:oI9Ys2ypk" resolve="report" />
+                                    <node concept="Rm8GO" id="8odmgCoL3K" role="37wK5m">
+                                      <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
+                                      <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+                                    </node>
+                                    <node concept="2OqwBi" id="8odmgCp7$l" role="37wK5m">
+                                      <node concept="1eOMI4" id="8odmgCp7$m" role="2Oq$k0">
+                                        <node concept="10QFUN" id="8odmgCp7$n" role="1eOMHV">
+                                          <node concept="3uibUv" id="8odmgCp7$o" role="10QFUM">
+                                            <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
+                                          </node>
+                                          <node concept="37vLTw" id="8odmgCp7$p" role="10QFUP">
+                                            <ref role="3cqZAo" node="8odmgCo4Ln" resolve="rule" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="liA8E" id="8odmgCp7$q" role="2OqNvi">
+                                        <ref role="37wK5l" to="6pyv:7nPD14Ob4em" resolve="originRef" />
+                                      </node>
+                                    </node>
+                                    <node concept="2OqwBi" id="8odmgCoMt9" role="37wK5m">
+                                      <node concept="37vLTw" id="8odmgCoMjU" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="8odmgCo4Ll" resolve="failure" />
+                                      </node>
+                                      <node concept="liA8E" id="8odmgCoMDE" role="2OqNvi">
+                                        <ref role="37wK5l" to="w7la:~EvaluationFailure.getMessage():java.lang.String" resolve="getMessage" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3cpWs6" id="8odmgCoMG0" role="3cqZAp">
+                                <node concept="10Nm6u" id="8odmgCoMHh" role="3cqZAk" />
+                              </node>
+                            </node>
+                            <node concept="1Wc70l" id="8odmgCp724" role="3clFbw">
+                              <node concept="2ZW3vV" id="8odmgCoLj4" role="3uHU7B">
+                                <node concept="3uibUv" id="8odmgCoLjk" role="2ZW6by">
+                                  <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
+                                </node>
+                                <node concept="37vLTw" id="8odmgCoL5g" role="2ZW6bz">
+                                  <ref role="3cqZAo" node="8odmgCo4Ln" resolve="rule" />
+                                </node>
+                              </node>
+                              <node concept="3y3z36" id="8odmgCp7zc" role="3uHU7w">
+                                <node concept="10Nm6u" id="8odmgCp7$i" role="3uHU7w" />
+                                <node concept="2OqwBi" id="8odmgCp72f" role="3uHU7B">
+                                  <node concept="1eOMI4" id="8odmgCp72g" role="2Oq$k0">
+                                    <node concept="10QFUN" id="8odmgCp72h" role="1eOMHV">
+                                      <node concept="3uibUv" id="8odmgCp72i" role="10QFUM">
+                                        <ref role="3uigEE" to="6pyv:7nPD14OaO1O" resolve="RuleEx" />
+                                      </node>
+                                      <node concept="37vLTw" id="8odmgCp72j" role="10QFUP">
+                                        <ref role="3cqZAo" node="8odmgCo4Ln" resolve="rule" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="8odmgCp72k" role="2OqNvi">
+                                    <ref role="37wK5l" to="6pyv:7nPD14Ob4em" resolve="originRef" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbH" id="8odmgCoMHM" role="3cqZAp" />
+                          <node concept="3cpWs6" id="8odmgCoMJg" role="3cqZAp">
+                            <node concept="37vLTw" id="8odmgCoMKE" role="3cqZAk">
+                              <ref role="3cqZAo" node="8odmgCo4Ll" resolve="failure" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="8odmgCo0jJ" role="37vLTJ">
+              <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="8odmgCo4LW" role="3cqZAp" />
         <node concept="1DcWWT" id="7lt0LtQu0jy" role="3cqZAp">
           <node concept="3clFbS" id="7lt0LtQu0j_" role="2LFqv$">
             <node concept="3clFbF" id="7lt0LtQtR7U" role="3cqZAp">
@@ -1057,9 +1200,9 @@
         </node>
         <node concept="3cpWs8" id="5mr7UHcbsDR" role="3cqZAp">
           <node concept="3cpWsn" id="5mr7UHcbsDS" role="3cpWs9">
-            <property role="TrG5h" value="evaluationSession" />
-            <node concept="3uibUv" id="5mr7UHcbsDe" role="1tU5fm">
-              <ref role="3uigEE" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
+            <property role="TrG5h" value="evaluationResult" />
+            <node concept="3uibUv" id="1X0h_efXwhM" role="1tU5fm">
+              <ref role="3uigEE" to="w7la:~EvaluationResult" resolve="EvaluationResult" />
             </node>
             <node concept="10Nm6u" id="7rf49NgqS96" role="33vP2m" />
           </node>
@@ -1146,17 +1289,54 @@
                     <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
                   </node>
                   <node concept="liA8E" id="5mr7UHcbsE5" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~EvaluationSession$Config.start(jetbrains.mps.logic.reactor.evaluation.SessionSolver):jetbrains.mps.logic.reactor.evaluation.EvaluationSession" resolve="start" />
+                    <ref role="37wK5l" to="w7la:~EvaluationSession$Config.start(jetbrains.mps.logic.reactor.evaluation.SessionSolver):jetbrains.mps.logic.reactor.evaluation.EvaluationResult" resolve="start" />
                     <node concept="37vLTw" id="2UGjFq4Lf8i" role="37wK5m">
                       <ref role="3cqZAo" node="2UGjFq4Lesf" resolve="sessionSolver" />
                     </node>
                   </node>
                 </node>
                 <node concept="37vLTw" id="1Ry9kf2vmS7" role="37vLTJ">
-                  <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationSession" />
+                  <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationResult" />
                 </node>
               </node>
             </node>
+            <node concept="3cpWs8" id="1X0h_efYbPh" role="3cqZAp">
+              <node concept="3cpWsn" id="1X0h_efYbPi" role="3cpWs9">
+                <property role="TrG5h" value="failure" />
+                <node concept="2OqwBi" id="1X0h_efYbPj" role="33vP2m">
+                  <node concept="37vLTw" id="1X0h_efYbPk" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationResult" />
+                  </node>
+                  <node concept="liA8E" id="1X0h_efYbPl" role="2OqNvi">
+                    <ref role="37wK5l" to="w7la:~EvaluationResult.failure():jetbrains.mps.logic.reactor.evaluation.EvaluationFailure" resolve="failure" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="8odmgCcssF" role="1tU5fm">
+                  <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="1X0h_efY7po" role="3cqZAp">
+              <node concept="3clFbS" id="1X0h_efY7pq" role="3clFbx">
+                <node concept="YS8fn" id="1X0h_efYaF8" role="3cqZAp">
+                  <node concept="2OqwBi" id="1X0h_efYvb5" role="YScLw">
+                    <node concept="37vLTw" id="1X0h_efYbPn" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1X0h_efYbPi" resolve="failure" />
+                    </node>
+                    <node concept="liA8E" id="1X0h_efYvi3" role="2OqNvi">
+                      <ref role="37wK5l" to="w7la:~EvaluationFailure.getCause():jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException" resolve="getCause" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3y3z36" id="8odmgCcsAb" role="3clFbw">
+                <node concept="10Nm6u" id="8odmgCcsAF" role="3uHU7w" />
+                <node concept="37vLTw" id="1X0h_efYbPm" role="3uHU7B">
+                  <ref role="3cqZAo" node="1X0h_efYbPi" resolve="failure" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="1X0h_efYdfs" role="3cqZAp" />
             <node concept="3clFbF" id="3GlpCDSF16f" role="3cqZAp">
               <node concept="37vLTI" id="3GlpCDSF3sl" role="3clFbG">
                 <node concept="2OqwBi" id="3GlpCDSF22I" role="37vLTJ">
@@ -1167,15 +1347,15 @@
                 </node>
                 <node concept="2OqwBi" id="5jCHAT1QTrY" role="37vLTx">
                   <node concept="37vLTw" id="3GlpCDSF4lt" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationSession" />
+                    <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationResult" />
                   </node>
                   <node concept="liA8E" id="5jCHAT1QTDv" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~EvaluationSession.storeView():jetbrains.mps.logic.reactor.evaluation.StoreView" resolve="storeView" />
+                    <ref role="37wK5l" to="w7la:~EvaluationResult.storeView():jetbrains.mps.logic.reactor.evaluation.StoreView" resolve="storeView" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="1Ry9kf2vjSe" role="3cqZAp" />
+            <node concept="3clFbH" id="1X0h_efY7oC" role="3cqZAp" />
           </node>
           <node concept="3clFbS" id="1Ry9kf2vh7I" role="2GVbov">
             <node concept="3SKdUt" id="4F3SXIF5S$a" role="3cqZAp">
@@ -1335,10 +1515,10 @@
             </node>
             <node concept="2OqwBi" id="5jCHAT1QROG" role="33vP2m">
               <node concept="37vLTw" id="5jCHAT1QROH" role="2Oq$k0">
-                <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationSession" />
+                <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationResult" />
               </node>
               <node concept="liA8E" id="5jCHAT1QROI" role="2OqNvi">
-                <ref role="37wK5l" to="w7la:~EvaluationSession.storeView():jetbrains.mps.logic.reactor.evaluation.StoreView" resolve="storeView" />
+                <ref role="37wK5l" to="w7la:~EvaluationResult.storeView():jetbrains.mps.logic.reactor.evaluation.StoreView" resolve="storeView" />
               </node>
             </node>
           </node>
