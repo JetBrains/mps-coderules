@@ -407,8 +407,8 @@
                     <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
                     <node concept="2Ry0Ak" id="1N8$BG_7HU2" role="2Ry0An">
                       <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="1N8$BG_7HU3" role="2Ry0An">
-                        <property role="2Ry0Am" value="conreactor-api-0.9.1.jar" />
+                      <node concept="2Ry0Ak" id="1X0h_efWxGU" role="2Ry0An">
+                        <property role="2Ry0Am" value="conreactor-api-0.9.2.jar" />
                       </node>
                     </node>
                   </node>
@@ -429,8 +429,8 @@
                     <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
                     <node concept="2Ry0Ak" id="1N8$BG_7HUg" role="2Ry0An">
                       <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="1N8$BG_7HUh" role="2Ry0An">
-                        <property role="2Ry0Am" value="conreactor-core-0.9.1.jar" />
+                      <node concept="2Ry0Ak" id="1X0h_efWxGW" role="2Ry0An">
+                        <property role="2Ry0Am" value="conreactor-core-0.9.2.jar" />
                       </node>
                     </node>
                   </node>
@@ -950,6 +950,12 @@
           <node concept="3bR9La" id="78H58oeMJTj" role="1SiIV1">
             <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="NKt6yomVLS" resolve="jetbrains.mps.lang.typechecking.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1FOQehxTEQO" role="3bR37C">
+          <node concept="3bR9La" id="1FOQehxTEQP" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="46o4wsH5PJF" resolve="jetbrains.mps.typechecking.annotation" />
           </node>
         </node>
       </node>
@@ -2377,7 +2383,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="4EvsDTBGxZj" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/conreactor-api-0.9.1.jar" />
+                <property role="3yLZsk" value="../lib/conreactor-api-0.9.2.jar" />
                 <node concept="398BVA" id="4EvsDTBGxZk" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="4EvsDTBGxZl" role="iGT6I">
@@ -2388,8 +2394,8 @@
                         <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
                         <node concept="2Ry0Ak" id="4EvsDTBGxZo" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
-                          <node concept="2Ry0Ak" id="1N8$BG_7I0O" role="2Ry0An">
-                            <property role="2Ry0Am" value="conreactor-api-0.9.1.jar" />
+                          <node concept="2Ry0Ak" id="1X0h_efWxGY" role="2Ry0An">
+                            <property role="2Ry0Am" value="conreactor-api-0.9.2.jar" />
                           </node>
                         </node>
                       </node>
@@ -2398,7 +2404,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="4EvsDTBGxZq" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/conreactor-core-0.9.1.jar" />
+                <property role="3yLZsk" value="../lib/conreactor-core-0.9.2.jar" />
                 <node concept="398BVA" id="4EvsDTBGxZr" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="4EvsDTBGxZs" role="iGT6I">
@@ -2409,8 +2415,8 @@
                         <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
                         <node concept="2Ry0Ak" id="4EvsDTBGxZv" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
-                          <node concept="2Ry0Ak" id="1N8$BG_7I0Q" role="2Ry0An">
-                            <property role="2Ry0Am" value="conreactor-core-0.9.1.jar" />
+                          <node concept="2Ry0Ak" id="1X0h_efWxH0" role="2Ry0An">
+                            <property role="2Ry0Am" value="conreactor-core-0.9.2.jar" />
                           </node>
                         </node>
                       </node>
