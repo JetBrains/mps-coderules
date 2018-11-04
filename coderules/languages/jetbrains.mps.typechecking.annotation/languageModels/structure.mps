@@ -55,5 +55,22 @@
       </node>
     </node>
   </node>
+  <node concept="1TIwiD" id="1FOQehwZdZ9">
+    <property role="EcuMT" value="1942415814694854601" />
+    <property role="TrG5h" value="ErrorAnnotation" />
+    <property role="34LRSv" value="error" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyi" id="1FOQehwZdZk" role="1TKVEl">
+      <property role="IQ2nx" value="1942415814694854612" />
+      <property role="TrG5h" value="text" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="M6xJ_" id="1FOQehwZdZg" role="lGtFl">
+      <property role="Hh88m" value="error" />
+      <node concept="trNpa" id="1FOQehwZdZi" role="EQaZv">
+        <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+    </node>
+  </node>
 </model>
 
