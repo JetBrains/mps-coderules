@@ -3601,33 +3601,10 @@
       </node>
       <node concept="3Tm1VV" id="3KwBCAA_erQ" role="1B3o_S" />
       <node concept="3clFbS" id="3KwBCAA_erR" role="3clF47">
-        <node concept="3clFbJ" id="3KwBCAA_Uq6" role="3cqZAp">
-          <node concept="9aQIb" id="3KwBCAA_Uq7" role="9aQIa">
-            <node concept="3clFbS" id="3KwBCAA_Uq8" role="9aQI4">
-              <node concept="3cpWs6" id="3KwBCAA_Uq9" role="3cqZAp">
-                <node concept="2YIFZM" id="19wqdqO465D" role="3cqZAk">
-                  <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
-                  <ref role="37wK5l" to="m4y7:~Schedulers.from(java.util.concurrent.Executor):io.reactivex.Scheduler" resolve="from" />
-                  <node concept="10M0yZ" id="19wqdqO465E" role="37wK5m">
-                    <ref role="3cqZAo" to="e5vs:~PooledThreadExecutor.INSTANCE" resolve="INSTANCE" />
-                    <ref role="1PxDUh" to="e5vs:~PooledThreadExecutor" resolve="PooledThreadExecutor" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2YIFZM" id="3KwBCAA_Uqb" role="3clFbw">
-            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-            <ref role="37wK5l" to="dxuu:~SwingUtilities.isEventDispatchThread():boolean" resolve="isEventDispatchThread" />
-          </node>
-          <node concept="3clFbS" id="3KwBCAA_Uqc" role="3clFbx">
-            <node concept="3cpWs6" id="3KwBCAA_Uqd" role="3cqZAp">
-              <node concept="2YIFZM" id="3KwBCAA_Uqe" role="3cqZAk">
-                <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
-                <ref role="37wK5l" to="m4y7:~Schedulers.trampoline():io.reactivex.Scheduler" resolve="trampoline" />
-              </node>
-            </node>
-            <node concept="3clFbH" id="3KwBCAA_Uqf" role="3cqZAp" />
+        <node concept="3cpWs6" id="3KwBCAA_Uqd" role="3cqZAp">
+          <node concept="2YIFZM" id="3KwBCAA_Uqe" role="3cqZAk">
+            <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+            <ref role="37wK5l" to="m4y7:~Schedulers.trampoline():io.reactivex.Scheduler" resolve="trampoline" />
           </node>
         </node>
       </node>
