@@ -126,7 +126,10 @@ class Controller(
                     trace.discard(occ)
                 }
 
-                for (body in match.rule().bodyAlternation()) {
+                val altIt = match.rule().bodyAlternation().iterator()
+                while (altIt.hasNext()) {
+                    val body = altIt.next()
+
                     if (state is FAILED) {
                         trace.retry(match)
                         state = state.reset()
@@ -146,17 +149,20 @@ class Controller(
                     }
 
                     if (state is FAILED) {
-                        if (failureHandler != null) {
-                            val updatedFailure = failureHandler.handleFailure(state.failure, match.rule())
-                            if (updatedFailure == null) {
-                                state = state.reset()
-                                break
+                        if (!altIt.hasNext()) {
+                            // last alternative
+                            if (failureHandler != null) {
+                                val updatedFailure = failureHandler.handleFailure(state.failure, match.rule())
+                                if (updatedFailure == null) {
+                                    state = state.reset()
+                                }
                             }
                         }
-
-                        trace.failure(state.failure)
-                        frameStack.reset(savedFrame)
-
+                        if (state is FAILED) {
+                            trace.failure(state.failure)
+                            frameStack.reset(savedFrame)
+                        }
+                        
                     } else {
                         break
                     }
