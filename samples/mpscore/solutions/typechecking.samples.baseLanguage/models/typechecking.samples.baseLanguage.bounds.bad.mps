@@ -657,9 +657,9 @@
                 <ref role="3uigEE" node="5s497Vrh7RP" resolve="Sample_bad1.J" />
                 <node concept="16syzq" id="5s497Vrh7Sg" role="11_B2D">
                   <ref role="16sUi3" node="5s497Vrh7Sm" resolve="T3" />
-                </node>
-                <node concept="1U20sH" id="1FOQehxRcNX" role="lGtFl">
-                  <property role="1U20sK" value="error" />
+                  <node concept="1U20sH" id="2QSgdlj86JW" role="lGtFl">
+                    <property role="1U20sK" value="error" />
+                  </node>
                 </node>
               </node>
             </node>
