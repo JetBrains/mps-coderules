@@ -330,6 +330,12 @@
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167228628751" name="hasException" index="34fQS0" />
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
+        <child id="1167227561449" name="exception" index="34bMjA" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -4228,6 +4234,23 @@
               <ref role="37wK5l" to="unkn:~Single.onErrorReturn(io.reactivex.functions.Function):io.reactivex.Single" resolve="onErrorReturn" />
               <node concept="1bVj0M" id="6kREIVkftIa" role="37wK5m">
                 <node concept="3clFbS" id="6kREIVkftIc" role="1bW5cS">
+                  <node concept="3clFbH" id="2HYHa0WURMM" role="3cqZAp" />
+                  <node concept="34ab3g" id="2HYHa0WUTOS" role="3cqZAp">
+                    <property role="35gtTG" value="warn" />
+                    <property role="34fQS0" value="true" />
+                    <node concept="2OqwBi" id="2HYHa0WUVTV" role="34bqiv">
+                      <node concept="37vLTw" id="2HYHa0WUViD" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6kREIVkftXC" resolve="t" />
+                      </node>
+                      <node concept="liA8E" id="2HYHa0WUWtA" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="2HYHa0WUUhQ" role="34bMjA">
+                      <ref role="3cqZAo" node="6kREIVkftXC" resolve="t" />
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="2HYHa0WUUhS" role="3cqZAp" />
                   <node concept="3clFbJ" id="6kREIVkerka" role="3cqZAp">
                     <node concept="3clFbS" id="6kREIVkerkb" role="3clFbx">
                       <node concept="3cpWs8" id="6kREIVkerkc" role="3cqZAp">
