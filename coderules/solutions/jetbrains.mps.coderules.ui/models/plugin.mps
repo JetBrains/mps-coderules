@@ -23298,15 +23298,50 @@
         </node>
         <node concept="3Tm1VV" id="6QkkSolKE3A" role="1B3o_S" />
         <node concept="3clFbS" id="6QkkSolK_jk" role="3clF47">
-          <node concept="3clFbF" id="3sb6Qlveaik" role="3cqZAp">
-            <node concept="1rXfSq" id="3sb6Qlveaij" role="3clFbG">
-              <ref role="37wK5l" node="3sb6Qlve15C" resolve="forArgument" />
-              <node concept="37vLTw" id="3sb6QlvebW5" role="37wK5m">
-                <ref role="3cqZAo" node="6QkkSolK_jg" resolve="arg" />
+          <node concept="SfApY" id="2HYHa0WQNUa" role="3cqZAp">
+            <node concept="3clFbS" id="2HYHa0WQNUc" role="SfCbr">
+              <node concept="3cpWs6" id="2HYHa0WRSqd" role="3cqZAp">
+                <node concept="1rXfSq" id="3sb6Qlveaij" role="3cqZAk">
+                  <ref role="37wK5l" node="3sb6Qlve15C" resolve="forArgument" />
+                  <node concept="37vLTw" id="3sb6QlvebW5" role="37wK5m">
+                    <ref role="3cqZAo" node="6QkkSolK_jg" resolve="arg" />
+                  </node>
+                  <node concept="Rm8GO" id="3sb6QlvecgU" role="37wK5m">
+                    <ref role="Rm8GQ" node="3WU9yfAaHB4" resolve="PLAIN" />
+                    <ref role="1Px2BO" node="3WU9yfAaH8C" resolve="TableCellInfo.Style" />
+                  </node>
+                </node>
               </node>
-              <node concept="Rm8GO" id="3sb6QlvecgU" role="37wK5m">
-                <ref role="Rm8GQ" node="3WU9yfAaHB4" resolve="PLAIN" />
-                <ref role="1Px2BO" node="3WU9yfAaH8C" resolve="TableCellInfo.Style" />
+              <node concept="3clFbH" id="2HYHa0WQNUb" role="3cqZAp" />
+            </node>
+            <node concept="TDmWw" id="2HYHa0WQNUd" role="TEbGg">
+              <node concept="3cpWsn" id="2HYHa0WQNUf" role="TDEfY">
+                <property role="TrG5h" value="ex" />
+                <node concept="3uibUv" id="2HYHa0WQOar" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="2HYHa0WQNUj" role="TDEfX">
+                <node concept="34ab3g" id="2HYHa0WQOxa" role="3cqZAp">
+                  <property role="35gtTG" value="warn" />
+                  <property role="34fQS0" value="true" />
+                  <node concept="Xl_RD" id="2HYHa0WQOxc" role="34bqiv">
+                    <property role="Xl_RC" value="Error computing cellinfo" />
+                  </node>
+                  <node concept="37vLTw" id="2HYHa0WQOxe" role="34bMjA">
+                    <ref role="3cqZAo" node="2HYHa0WQNUf" resolve="ex" />
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="2HYHa0WSjrN" role="3cqZAp">
+                  <node concept="2ShNRf" id="2HYHa0WQPlT" role="3cqZAk">
+                    <node concept="1pGfFk" id="2HYHa0WRkcH" role="2ShVmc">
+                      <ref role="37wK5l" node="6QkkSolg2tt" resolve="TableCellInfo" />
+                      <node concept="Xl_RD" id="2HYHa0WRkrF" role="37wK5m">
+                        <property role="Xl_RC" value="?ERROR?" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
