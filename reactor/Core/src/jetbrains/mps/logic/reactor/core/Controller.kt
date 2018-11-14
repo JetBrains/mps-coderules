@@ -56,13 +56,14 @@ class Controller(
             throw t
         }
 
-    fun reactivate(occurrence: ConstraintOccurrence) =
-        try {
-            process(occurrence, NORMAL())
+    fun reactivate(occurrence: ConstraintOccurrence) {
+        // FIXME propagate the processing state further up the call stack
+        // TODO: introduce processing state to solver API?
+        val state = process(occurrence, NORMAL())
+        if (state is FAILED) {
+            throw state.failure.cause
         }
-        catch (t: Throwable) {
-            throw t
-        }
+    }
 
     /** For tests only */
     fun evaluate(occurrence: ConstraintOccurrence): StoreView {
@@ -149,17 +150,20 @@ class Controller(
                     }
 
                     if (state is FAILED) {
+                        trace.failure(state.failure)
+                        
                         if (!altIt.hasNext()) {
                             // last alternative
                             if (failureHandler != null) {
+                                // FIXME: failure handler may replace the failure
                                 val updatedFailure = failureHandler.handleFailure(state.failure, match.rule())
                                 if (updatedFailure == null) {
                                     state = state.reset()
                                 }
                             }
                         }
+
                         if (state is FAILED) {
-                            trace.failure(state.failure)
                             frameStack.reset(savedFrame)
                         }
                         
