@@ -82,8 +82,16 @@ class RuleMatcher(val rule: Rule) {
                             }
                         }
 
-                        else                -> newNodes.add(fn)
+                        else                -> {
+                            newNodes.add(fn)
+                        }
                     }
+                }
+
+                if (newNodes.size == 1) {
+                    // only the root
+                    val rfn = newNodes.get(0)
+                    newNodes.addAll(rfn.expand(occ, genId + 1, rfn.matchingVacant(mask)))
                 }
 
                 return MatchFringe(newNodes, seen, genId + 1)

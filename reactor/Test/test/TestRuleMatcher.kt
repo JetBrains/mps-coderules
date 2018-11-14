@@ -87,6 +87,34 @@ class TestRuleMatcher {
     }
 
     @Test
+    fun testSameOccurrenceLogical() {
+        with(programWithRules(
+            rule("rule1",
+                headReplaced(
+                    constraint("foo", term("bar"))
+                ),
+                body(
+                    constraint("qux")
+                ))))
+        {
+            val X = metaLogical<Term>("X")
+            val x = X.logical()
+            val foo = occurrence("foo", x)
+            with(ruleMatcher().probe()) {
+
+                expand(foo)                                             }.apply {
+                matches().size shouldBe 0                               }.run {
+
+                x.set(term("bar"))
+
+                expand(foo)                                        }.apply {
+                matches().size shouldBe 1                               }.run {
+
+            }
+        }
+    }
+
+    @Test
     fun testTermArgument() {
         with(programWithRules(
             rule("main",
