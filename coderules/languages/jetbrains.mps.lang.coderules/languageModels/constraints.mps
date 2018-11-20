@@ -186,7 +186,6 @@
       <concept id="1182511038748" name="jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation" flags="nn" index="1j9C0f">
         <reference id="1182511038750" name="concept" index="1j9C0d" />
       </concept>
-      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -642,16 +641,16 @@
         <node concept="3clFbS" id="6DOfTm$$ZXN" role="2VODD2">
           <node concept="3cpWs8" id="6DOfTm$$ZXO" role="3cqZAp">
             <node concept="3cpWsn" id="6DOfTm$$ZXP" role="3cpWs9">
-              <property role="TrG5h" value="mpd" />
+              <property role="TrG5h" value="md" />
               <node concept="3Tqbb2" id="6DOfTm$$ZXQ" role="1tU5fm">
-                <ref role="ehGHo" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
+                <ref role="ehGHo" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
               </node>
               <node concept="2OqwBi" id="6DOfTm$$ZXR" role="33vP2m">
                 <node concept="2rP1CM" id="6DOfTm$$ZXS" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="6DOfTm$$ZXT" role="2OqNvi">
                   <node concept="1xMEDy" id="6DOfTm$$ZXU" role="1xVPHs">
-                    <node concept="chp4Y" id="6DOfTm$$ZXV" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:7IysFeA0yb0" resolve="MacroParameterDeclaration" />
+                    <node concept="chp4Y" id="6EY0p2x1LUm" role="ri$Ld">
+                      <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -702,11 +701,8 @@
                           <node concept="2OqwBi" id="6DOfTm$_0_g" role="HW$Y0">
                             <node concept="1PxgMI" id="6DOfTm$$ZYg" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
-                              <node concept="2OqwBi" id="6DOfTm$$ZYh" role="1m5AlR">
-                                <node concept="37vLTw" id="6DOfTm$$ZYi" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6DOfTm$$ZXP" resolve="mpd" />
-                                </node>
-                                <node concept="1mfA1w" id="6DOfTm$$ZYj" role="2OqNvi" />
+                              <node concept="37vLTw" id="6DOfTm$$ZYi" role="1m5AlR">
+                                <ref role="3cqZAo" node="6DOfTm$$ZXP" resolve="md" />
                               </node>
                               <node concept="chp4Y" id="6DOfTm$$ZYk" role="3oSUPX">
                                 <ref role="cht4Q" to="wq2x:1pPth$m5Bbz" resolve="MacroDeclaration" />
@@ -726,7 +722,7 @@
             </node>
             <node concept="2OqwBi" id="6DOfTm$$ZYm" role="3clFbw">
               <node concept="37vLTw" id="6DOfTm$$ZYn" role="2Oq$k0">
-                <ref role="3cqZAo" node="6DOfTm$$ZXP" resolve="mpd" />
+                <ref role="3cqZAo" node="6DOfTm$$ZXP" resolve="md" />
               </node>
               <node concept="3x8VRR" id="6DOfTm$$ZYo" role="2OqNvi" />
             </node>
