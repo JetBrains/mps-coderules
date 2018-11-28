@@ -700,11 +700,21 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="1FOQehwovo2" role="1B3o_S" />
-      <node concept="17QB3L" id="1FOQehwozNz" role="3clF45" />
+      <node concept="3uibUv" id="5t4mtEg02Hk" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
+      </node>
       <node concept="3clFbS" id="1FOQehwovoe" role="3clF47">
-        <node concept="3clFbF" id="1FOQehwovF_" role="3cqZAp">
-          <node concept="Xl_RD" id="1FOQehx4DGR" role="3clFbG">
-            <property role="Xl_RC" value="control flow" />
+        <node concept="3clFbF" id="5t4mtEg03ir" role="3cqZAp">
+          <node concept="2OqwBi" id="5t4mtEg03x0" role="3clFbG">
+            <node concept="37vLTw" id="5t4mtEg03ip" role="2Oq$k0">
+              <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TYPESYSTEM" resolve="TYPESYSTEM" />
+            </node>
+            <node concept="liA8E" id="5t4mtEg03Sb" role="2OqNvi">
+              <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+              <node concept="Xl_RD" id="5t4mtEg03Se" role="37wK5m">
+                <property role="Xl_RC" value="control flow" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

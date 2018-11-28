@@ -840,7 +840,7 @@
         <node concept="3clFbF" id="3YJ7yg2MqON" role="3cqZAp">
           <node concept="2ShNRf" id="3YJ7yg2MqOJ" role="3clFbG">
             <node concept="1pGfFk" id="3YJ7yg2MRp0" role="2ShVmc">
-              <ref role="37wK5l" to="9erk:~SearchResults.&lt;init&gt;(java.util.Set,java.util.List)" resolve="SearchResults" />
+              <ref role="37wK5l" to="9erk:~SearchResults.&lt;init&gt;(java.util.Collection,java.util.List)" resolve="SearchResults" />
               <node concept="2YIFZM" id="3YJ7yg2MyQB" role="37wK5m">
                 <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
                 <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />

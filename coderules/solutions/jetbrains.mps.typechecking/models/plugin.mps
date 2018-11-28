@@ -806,8 +806,9 @@
                 <ref role="3cqZAo" node="6IQb_RxJsDI" resolve="modelData" />
               </node>
               <node concept="liA8E" id="6IQb_RxJvBf" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~SModel.setModelDescriptor(org.jetbrains.mps.openapi.model.SModel):void" resolve="setModelDescriptor" />
+                <ref role="37wK5l" to="w1kc:~SModel.setModelDescriptor(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.smodel.event.ModelEventDispatch):void" resolve="setModelDescriptor" />
                 <node concept="Xjq3P" id="6IQb_RxJvBg" role="37wK5m" />
+                <node concept="10Nm6u" id="7Cu8ExJkdKz" role="37wK5m" />
               </node>
             </node>
           </node>

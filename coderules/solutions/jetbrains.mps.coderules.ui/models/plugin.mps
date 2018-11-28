@@ -2434,18 +2434,26 @@
         <property role="DiZV1" value="false" />
         <property role="od$2w" value="false" />
         <node concept="3Tm1VV" id="2zPM3MPzmOG" role="1B3o_S" />
-        <node concept="3uibUv" id="2zPM3MPzmOI" role="3clF45">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        <node concept="3uibUv" id="3nc912Krb38" role="3clF45">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
         </node>
         <node concept="3clFbS" id="2zPM3MPzmOS" role="3clF47">
-          <node concept="3clFbF" id="2zPM3MPzrJW" role="3cqZAp">
-            <node concept="2OqwBi" id="2zPM3MPzrJX" role="3clFbG">
-              <node concept="Rm8GO" id="2zPM3MPzrQp" role="2Oq$k0">
-                <ref role="Rm8GQ" to="2gg1:~MessageStatus.OK" resolve="OK" />
-                <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+          <node concept="3clFbF" id="3nc912Krb3h" role="3cqZAp">
+            <node concept="2OqwBi" id="3nc912Krb3i" role="3clFbG">
+              <node concept="37vLTw" id="3nc912Krb3o" role="2Oq$k0">
+                <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TYPESYSTEM" resolve="TYPESYSTEM" />
               </node>
-              <node concept="liA8E" id="2zPM3MPzrJZ" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Enum.toString():java.lang.String" resolve="toString" />
+              <node concept="liA8E" id="3nc912Krb3j" role="2OqNvi">
+                <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                <node concept="2OqwBi" id="3nc912Krb3k" role="37wK5m">
+                  <node concept="Rm8GO" id="3nc912Krb98" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="2gg1:~MessageStatus.OK" resolve="OK" />
+                    <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+                  </node>
+                  <node concept="liA8E" id="3nc912Krb3m" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Enum.toString():java.lang.String" resolve="toString" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -2570,18 +2578,26 @@
         <property role="DiZV1" value="false" />
         <property role="od$2w" value="false" />
         <node concept="3Tm1VV" id="2zPM3MPzmYl" role="1B3o_S" />
-        <node concept="3uibUv" id="2zPM3MPzmYn" role="3clF45">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        <node concept="3uibUv" id="3nc912Kr9Le" role="3clF45">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
         </node>
         <node concept="3clFbS" id="2zPM3MPzmYx" role="3clF47">
-          <node concept="3clFbF" id="2zPM3MPzpBk" role="3cqZAp">
-            <node concept="2OqwBi" id="2zPM3MPzqPR" role="3clFbG">
-              <node concept="Rm8GO" id="2zPM3MPzpBm" role="2Oq$k0">
-                <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
-                <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+          <node concept="3clFbF" id="3nc912Kral_" role="3cqZAp">
+            <node concept="2OqwBi" id="3nc912KraEX" role="3clFbG">
+              <node concept="37vLTw" id="3nc912Kralz" role="2Oq$k0">
+                <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TYPESYSTEM" resolve="TYPESYSTEM" />
               </node>
-              <node concept="liA8E" id="2zPM3MPzrIv" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Enum.toString():java.lang.String" resolve="toString" />
+              <node concept="liA8E" id="3nc912KraMH" role="2OqNvi">
+                <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+                <node concept="2OqwBi" id="3nc912KraMK" role="37wK5m">
+                  <node concept="Rm8GO" id="3nc912KraML" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
+                    <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+                  </node>
+                  <node concept="liA8E" id="3nc912KraMM" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Enum.toString():java.lang.String" resolve="toString" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

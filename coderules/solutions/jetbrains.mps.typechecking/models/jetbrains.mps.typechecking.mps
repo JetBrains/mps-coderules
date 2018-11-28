@@ -2266,11 +2266,18 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="1FOQehwovo2" role="1B3o_S" />
-      <node concept="17QB3L" id="1FOQehwozNz" role="3clF45" />
+      <node concept="3uibUv" id="3Frdzi2HNjf" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
+      </node>
       <node concept="3clFbS" id="1FOQehwovoe" role="3clF47">
         <node concept="3clFbF" id="1FOQehwovF_" role="3cqZAp">
-          <node concept="37vLTw" id="1FOQehwovWL" role="3clFbG">
-            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TYPESYSTEM" resolve="TYPESYSTEM" />
+          <node concept="2OqwBi" id="3Frdzi2HNtO" role="3clFbG">
+            <node concept="37vLTw" id="3Frdzi2HNmP" role="2Oq$k0">
+              <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TYPESYSTEM" resolve="TYPESYSTEM" />
+            </node>
+            <node concept="liA8E" id="3Frdzi2HNzf" role="2OqNvi">
+              <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind():jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+            </node>
           </node>
         </node>
       </node>
@@ -2382,11 +2389,21 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="1FOQehxypNL" role="1B3o_S" />
-      <node concept="17QB3L" id="1FOQehxyrb$" role="3clF45" />
+      <node concept="3uibUv" id="3Frdzi2HNj9" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~IssueKindReportItem$ItemKind" resolve="IssueKindReportItem.ItemKind" />
+      </node>
       <node concept="3clFbS" id="1FOQehxypNS" role="3clF47">
-        <node concept="3clFbF" id="1FOQehxyrkB" role="3cqZAp">
-          <node concept="Xl_RD" id="1FOQehxyrkA" role="3clFbG">
-            <property role="Xl_RC" value="launch typechecking" />
+        <node concept="3clFbF" id="3Frdzi2HNzI" role="3cqZAp">
+          <node concept="2OqwBi" id="3Frdzi2HNNF" role="3clFbG">
+            <node concept="37vLTw" id="3Frdzi2HNzG" role="2Oq$k0">
+              <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TYPESYSTEM" resolve="TYPESYSTEM" />
+            </node>
+            <node concept="liA8E" id="3Frdzi2HOaE" role="2OqNvi">
+              <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind():jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+              <node concept="Xl_RD" id="3Frdzi2HOaH" role="37wK5m">
+                <property role="Xl_RC" value="launch typechecking" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
