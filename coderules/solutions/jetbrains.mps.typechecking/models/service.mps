@@ -2,10 +2,10 @@
 <model ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
@@ -312,9 +312,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226591481394" name="jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation" flags="nn" index="2mzaWJ">
-        <child id="1226591501988" name="argument" index="2mzfYT" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -338,6 +335,7 @@
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="1167380149909" name="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" flags="nn" index="3dhRuq" />
       <concept id="1240424373525" name="jetbrains.mps.baseLanguage.collections.structure.MappingType" flags="in" index="3f3tKP">
         <child id="1240424397093" name="keyType" index="3f3zw5" />
         <child id="1240424402756" name="valueType" index="3f3$T$" />
@@ -906,14 +904,14 @@
                                       <node concept="37vLTw" id="2Bs9D5RyTDU" role="2Oq$k0">
                                         <ref role="3cqZAo" node="2Bs9D5RySzh" resolve="errRefs" />
                                       </node>
-                                      <node concept="2mzaWJ" id="2Bs9D5RyWs0" role="2OqNvi">
-                                        <node concept="2OqwBi" id="2Bs9D5RyZ7k" role="2mzfYT">
-                                          <node concept="2JrnkZ" id="2Bs9D5RyYm1" role="2Oq$k0">
-                                            <node concept="37vLTw" id="2Bs9D5RyWwc" role="2JrQYb">
+                                      <node concept="3dhRuq" id="1GKPrS22Kih" role="2OqNvi">
+                                        <node concept="2OqwBi" id="1GKPrS22Kid" role="25WWJ7">
+                                          <node concept="2JrnkZ" id="1GKPrS22Kie" role="2Oq$k0">
+                                            <node concept="37vLTw" id="1GKPrS22Kif" role="2JrQYb">
                                               <ref role="3cqZAo" node="1FOQehxMqQL" resolve="ea" />
                                             </node>
                                           </node>
-                                          <node concept="liA8E" id="2Bs9D5RyZWn" role="2OqNvi">
+                                          <node concept="liA8E" id="1GKPrS22Kig" role="2OqNvi">
                                             <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
                                           </node>
                                         </node>
@@ -1509,7 +1507,6 @@
     <property role="3GE5qa" value="cache" />
     <node concept="2tJIrI" id="6QH_LDtffII" role="jymVt" />
     <node concept="3clFb_" id="6QH_LDtffJj" role="jymVt">
-      <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="typeOf" />
       <node concept="37vLTG" id="6QH_LDtffNl" role="3clF46">
         <property role="TrG5h" value="nodeRef" />
@@ -1523,7 +1520,6 @@
     </node>
     <node concept="2tJIrI" id="1FOQehxe54l" role="jymVt" />
     <node concept="3clFb_" id="1FOQehxe5cU" role="jymVt">
-      <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="allTypes" />
       <node concept="3rvAFt" id="1FOQehxe5no" role="3clF45">
         <node concept="3uibUv" id="1FOQehxe5uo" role="3rvQeY">
@@ -1536,7 +1532,6 @@
     </node>
     <node concept="2tJIrI" id="6QH_LDtffK6" role="jymVt" />
     <node concept="3clFb_" id="1FOQehxelEi" role="jymVt">
-      <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="clear" />
       <node concept="3cqZAl" id="1FOQehxelEk" role="3clF45" />
       <node concept="3Tm1VV" id="1FOQehxelEl" role="1B3o_S" />

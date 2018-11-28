@@ -2,7 +2,7 @@
 <model ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -596,9 +596,6 @@
     <node concept="PrWs8" id="7IysFeA1uRT" role="PzmwI">
       <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
     </node>
-    <node concept="PrWs8" id="7IysFeA2ROS" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="7IysFeA5Lco">
     <property role="EcuMT" value="8908809128803504920" />
@@ -612,9 +609,6 @@
     <property role="TrG5h" value="MacroLogicalExpression" />
     <property role="34LRSv" value="macroLogical" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="PrWs8" id="7IysFeA99oS" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="PlHQZ" id="7IysFeBd3kI">
     <property role="EcuMT" value="8908809128822191406" />
@@ -656,9 +650,6 @@
     </node>
     <node concept="PrWs8" id="3TnYLtqfh$K" role="PzmwI">
       <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
-    </node>
-    <node concept="PrWs8" id="3TnYLtqfh$P" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="3TnYLtqgQYU">

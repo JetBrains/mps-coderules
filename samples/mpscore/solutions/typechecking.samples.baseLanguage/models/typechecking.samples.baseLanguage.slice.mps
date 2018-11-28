@@ -2,7 +2,7 @@
 <model ref="r:a8ff5933-0f6e-4d4a-af4a-5da865d78faf(typechecking.samples.baseLanguage.slice)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="0fda14cc-a416-4c81-869a-2175d8b3325d" name="jetbrains.mps.baseLanguageExt" version="0" />
   </languages>
   <imports>
@@ -80,9 +80,7 @@
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
-      <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
-        <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
-      </concept>
+      <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_" />
       <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
@@ -175,7 +173,6 @@
         <property role="2bfB8j" value="true" />
         <property role="TrG5h" value="Map" />
         <node concept="3clFb_" id="61vfVfp6ECs" role="jymVt">
-          <property role="1EzhhJ" value="true" />
           <property role="TrG5h" value="get" />
           <node concept="16syzq" id="61vfVfp6ECK" role="3clF45">
             <ref role="16sUi3" node="61vfVfp6EC4" resolve="Y" />

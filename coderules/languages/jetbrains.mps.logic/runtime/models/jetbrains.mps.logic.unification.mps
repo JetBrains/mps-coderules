@@ -2,7 +2,7 @@
 <model ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -28,9 +28,6 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -226,7 +223,6 @@
     <node concept="2tJIrI" id="514BAS_XsdE" role="jymVt" />
     <node concept="3clFb_" id="7HUwyZbdP0v" role="jymVt">
       <property role="TrG5h" value="isWildcard" />
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <node concept="10P_77" id="7HUwyZbdP0w" role="3clF45" />
       <node concept="3Tm1VV" id="7HUwyZbdP0x" role="1B3o_S" />
@@ -292,7 +288,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="toString" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="4sSe4$psaDY" role="1B3o_S" />
       <node concept="17QB3L" id="4sSe4$psaDZ" role="3clF45" />
       <node concept="2AHcQZ" id="4sSe4$psaE7" role="2AJF6D">
@@ -508,7 +503,6 @@
     <node concept="2tJIrI" id="4TCblo5MQDY" role="jymVt" />
     <node concept="3clFb_" id="4TCblo5MSCA" role="jymVt">
       <property role="TrG5h" value="isWildcard" />
-      <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <node concept="10P_77" id="4TCblo5MSCB" role="3clF45" />
       <node concept="3Tm1VV" id="4TCblo5MSCC" role="1B3o_S" />
@@ -600,7 +594,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="toString" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="4TCblo5MYmB" role="1B3o_S" />
       <node concept="17QB3L" id="4TCblo5MYmC" role="3clF45" />
       <node concept="2AHcQZ" id="4TCblo5MYmK" role="2AJF6D">
@@ -624,7 +617,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="hashCode" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="4TCblo5N0Jy" role="1B3o_S" />
       <node concept="10Oyi0" id="4TCblo5N0Jz" role="3clF45" />
       <node concept="2AHcQZ" id="4TCblo5N0JT" role="2AJF6D">
@@ -658,7 +650,6 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="equals" />
       <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
       <node concept="3Tm1VV" id="4TCblo5N1LZ" role="1B3o_S" />
       <node concept="10P_77" id="4TCblo5N1M0" role="3clF45" />
       <node concept="37vLTG" id="4TCblo5N1M1" role="3clF46">

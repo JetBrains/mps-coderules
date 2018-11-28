@@ -4,11 +4,11 @@
   <languages>
     <use id="427a473d-5177-432c-9905-bcbceb71b996" name="jetbrains.mps.build.mps.runner" version="0" />
     <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="5" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="7" />
     <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="0" />
-    <use id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests" version="0" />
+    <use id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests" version="1" />
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
@@ -21,7 +21,10 @@
       </concept>
       <concept id="4560297596904469357" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules" flags="nn" index="22LTRH">
         <child id="4560297596904469360" name="modules" index="22LTRK" />
-        <child id="7206546315286874030" name="haltonfailure" index="1S4sKv" />
+        <child id="6593674873639474544" name="options" index="24cAkG" />
+      </concept>
+      <concept id="6593674873639474400" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Options" flags="ng" index="24cAiW">
+        <child id="6593674873639478221" name="haltonfailure" index="24c_eh" />
       </concept>
       <concept id="4005526075820600484" name="jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin" flags="ng" index="1gjT0q" />
     </language>
@@ -114,7 +117,9 @@
       </concept>
       <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
+        <child id="3570488090019868128" name="packagingType" index="pUk7w" />
       </concept>
+      <concept id="3570488090019868065" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_AutoPluginLayoutType" flags="ng" index="pUk6x" />
       <concept id="1500819558095907805" name="jetbrains.mps.build.mps.structure.BuildMps_Group" flags="ng" index="2G$12M">
         <child id="1500819558095907806" name="modules" index="2G$12L" />
       </concept>
@@ -182,9 +187,11 @@
       <node concept="22LTRF" id="5pz4PwHqsv1" role="22LTRK">
         <ref role="22LTRG" node="5pz4PwHqqGu" resolve="typechecking-test" />
       </node>
-      <node concept="NbPM2" id="5pz4PwHrDMq" role="1S4sKv">
-        <node concept="3Mxwew" id="5pz4PwHrDMp" role="3MwsjC">
-          <property role="3MwjfP" value="true" />
+      <node concept="24cAiW" id="1GKPrS22Kir" role="24cAkG">
+        <node concept="NbPM2" id="5pz4PwHrDMq" role="24c_eh">
+          <node concept="3Mxwew" id="5pz4PwHrDMp" role="3MwsjC">
+            <property role="3MwjfP" value="true" />
+          </node>
         </node>
       </node>
     </node>
@@ -2613,6 +2620,7 @@
               </node>
             </node>
           </node>
+          <node concept="pUk6x" id="1GKPrS22Kip" role="pUk7w" />
         </node>
       </node>
     </node>

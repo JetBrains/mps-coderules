@@ -2,9 +2,9 @@
 <model ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
   </languages>
@@ -235,7 +235,6 @@
     <property role="TrG5h" value="Getter" />
     <node concept="2tJIrI" id="1hX44vMVmqR" role="jymVt" />
     <node concept="3clFb_" id="1hX44vMVmr4" role="jymVt">
-      <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="get" />
       <node concept="37vLTG" id="1hX44vMVmsA" role="3clF46">
         <property role="TrG5h" value="node" />
@@ -261,7 +260,6 @@
       <property role="2bfB8j" value="false" />
       <property role="TrG5h" value="MacroTemplateAction" />
       <node concept="3clFb_" id="1eKXYsjvTXf" role="jymVt">
-        <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="doAction" />
         <node concept="37vLTG" id="1eKXYsjvTZZ" role="3clF46">
           <property role="TrG5h" value="template" />
@@ -455,7 +453,6 @@
     <node concept="2tJIrI" id="1eKXYsjvsN9" role="jymVt" />
     <node concept="3clFb_" id="1eKXYsjvsWn" role="jymVt">
       <property role="TrG5h" value="withArgs" />
-      <property role="1EzhhJ" value="true" />
       <node concept="37vLTG" id="1eKXYsjvsWo" role="3clF46">
         <property role="TrG5h" value="args" />
         <node concept="8X2XB" id="1eKXYsjvsWp" role="1tU5fm">
@@ -473,7 +470,6 @@
     <node concept="2tJIrI" id="4MEOIDG7Abc" role="jymVt" />
     <node concept="3clFb_" id="60NbDCXG$nh" role="jymVt">
       <property role="TrG5h" value="doExpand" />
-      <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="60NbDCXG$ni" role="3clF45">
         <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
       </node>
@@ -502,7 +498,6 @@
     <node concept="2tJIrI" id="6DOfTm$eR_X" role="jymVt" />
     <node concept="3clFb_" id="1eKXYsjvsWF" role="jymVt">
       <property role="TrG5h" value="doCall" />
-      <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="1eKXYsjvsWG" role="3clF45">
         <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
       </node>
@@ -543,7 +538,6 @@
     <property role="TrG5h" value="Init" />
     <node concept="2tJIrI" id="7IysFeAhp9G" role="jymVt" />
     <node concept="3clFb_" id="7IysFeAhp5H" role="jymVt">
-      <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="get" />
       <node concept="16syzq" id="7IysFeAhp7b" role="3clF45">
         <ref role="16sUi3" node="7IysFeAhp5y" resolve="T" />

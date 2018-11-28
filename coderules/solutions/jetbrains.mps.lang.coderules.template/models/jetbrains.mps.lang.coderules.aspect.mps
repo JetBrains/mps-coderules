@@ -2,9 +2,9 @@
 <model ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
@@ -266,7 +266,6 @@
     <property role="TrG5h" value="AspectDiscoverable" />
     <node concept="2tJIrI" id="NKt6ynombm" role="jymVt" />
     <node concept="3clFb_" id="NKt6ynombB" role="jymVt">
-      <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="discover" />
       <node concept="37vLTG" id="NKt6ynomn_" role="3clF46">
         <property role="TrG5h" value="lr" />
@@ -1708,7 +1707,6 @@
     <node concept="2tJIrI" id="NKt6yomOnF" role="jymVt" />
     <node concept="3clFb_" id="NKt6yomP6t" role="jymVt">
       <property role="TrG5h" value="createMacroManifest" />
-      <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="NKt6yomP6u" role="3clF45">
         <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
       </node>
@@ -1718,7 +1716,6 @@
     <node concept="2tJIrI" id="NKt6yomP6x" role="jymVt" />
     <node concept="3clFb_" id="NKt6yomP6y" role="jymVt">
       <property role="TrG5h" value="createRuleManifest" />
-      <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="NKt6yomP6z" role="3clF45">
         <ref role="3uigEE" to="i348:4OKkcnfu_xe" resolve="AbstractRuleTemplateManifest" />
       </node>
