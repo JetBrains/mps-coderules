@@ -15,6 +15,15 @@
     <import index="zqd8" ref="r:4f157831-48e7-4c8f-a144-b5bbd1be1539(jetbrains.mps.typechecking.build)" />
   </imports>
   <registry>
+    <language id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests">
+      <concept id="4560297596904469357" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules" flags="nn" index="22LTRH">
+        <child id="4560297596904469360" name="modules" index="22LTRK" />
+      </concept>
+      <concept id="4560297596904469362" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule" flags="nn" index="22LTRM">
+        <reference id="4560297596904469363" name="module" index="22LTRN" />
+      </concept>
+      <concept id="4005526075820600484" name="jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin" flags="ng" index="1gjT0q" />
+    </language>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
       <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
       <concept id="7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" flags="ng" index="iG8Mu">
@@ -24,11 +33,18 @@
         <reference id="5617550519002745380" name="script" index="1l3spb" />
         <child id="4129895186893471026" name="artifacts" index="2JcizS" />
       </concept>
+      <concept id="4380385936562003279" name="jetbrains.mps.build.structure.BuildString" flags="ng" index="NbPM2">
+        <child id="4903714810883783243" name="parts" index="3MwsjC" />
+      </concept>
       <concept id="8618885170173601777" name="jetbrains.mps.build.structure.BuildCompositePath" flags="nn" index="2Ry0Ak">
         <property id="8618885170173601779" name="head" index="2Ry0Am" />
         <child id="8618885170173601778" name="tail" index="2Ry0An" />
       </concept>
       <concept id="6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" flags="ng" index="10PD9b" />
+      <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
+        <child id="4380385936562148502" name="containerName" index="Nbhlr" />
+      </concept>
+      <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
       <concept id="7389400916848136194" name="jetbrains.mps.build.structure.BuildFolderMacro" flags="ng" index="398rNT">
         <child id="7389400916848144618" name="defaultPath" index="398pKh" />
       </concept>
@@ -46,6 +62,13 @@
         <child id="5617550519002745378" name="macros" index="1l3spd" />
         <child id="5617550519002745372" name="layout" index="1l3spN" />
       </concept>
+      <concept id="4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" flags="ng" index="1y1bJS">
+        <child id="7389400916848037006" name="children" index="39821P" />
+      </concept>
+      <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
+      <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
+        <property id="4903714810883755350" name="text" index="3MwjfP" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -59,6 +82,9 @@
       <concept id="1500819558095907805" name="jetbrains.mps.build.mps.structure.BuildMps_Group" flags="ng" index="2G$12M">
         <child id="1500819558095907806" name="modules" index="2G$12L" />
       </concept>
+      <concept id="1265949165890536423" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars" flags="ng" index="L2wRC">
+        <reference id="1265949165890536425" name="module" index="L2wRA" />
+      </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
       <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
         <child id="5253498789149547704" name="dependencies" index="3bR37C" />
@@ -66,7 +92,9 @@
       <concept id="5253498789149585690" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule" flags="ng" index="3bR9La">
         <reference id="5253498789149547705" name="module" index="3bR37D" />
       </concept>
-      <concept id="3189788309731840247" name="jetbrains.mps.build.mps.structure.BuildMps_Solution" flags="ng" index="1E1JtA" />
+      <concept id="3189788309731840247" name="jetbrains.mps.build.mps.structure.BuildMps_Solution" flags="ng" index="1E1JtA">
+        <property id="269707337715731330" name="sourcesKind" index="aoJFB" />
+      </concept>
       <concept id="3189788309731840248" name="jetbrains.mps.build.mps.structure.BuildMps_Language" flags="ng" index="1E1JtD" />
       <concept id="322010710375871467" name="jetbrains.mps.build.mps.structure.BuildMps_AbstractModule" flags="ng" index="3LEN3z">
         <property id="8369506495128725901" name="compact" index="BnDLt" />
@@ -143,6 +171,7 @@
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="samples.lambdacalc.demo" />
         <property role="3LESm3" value="05f15741-5274-4aed-a086-84d9a15ab93b" />
+        <property role="aoJFB" value="sources and tests" />
         <node concept="55IIr" id="7E7FS_VaVBC" role="3LF7KH">
           <node concept="2Ry0Ak" id="7E7FS_VaVC3" role="iGT6I">
             <property role="2Ry0Am" value="solutions" />
@@ -157,6 +186,11 @@
         <node concept="1SiIV0" id="6EwjVjWv06c" role="3bR37C">
           <node concept="3bR9La" id="6EwjVjWv06d" role="1SiIV1">
             <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6EwjVjWvFnZ" role="3bR37C">
+          <node concept="3bR9La" id="6EwjVjWvFo0" role="1SiIV1">
+            <ref role="3bR37D" node="7E7FS_VaVAl" resolve="samples.lambdacalc" />
           </node>
         </node>
       </node>
@@ -174,9 +208,24 @@
       </node>
     </node>
     <node concept="55IIr" id="7E7FS_VaSlT" role="auvoZ" />
-    <node concept="1l3spV" id="7E7FS_VaSlU" role="1l3spN" />
+    <node concept="1l3spV" id="7E7FS_VaSlU" role="1l3spN">
+      <node concept="398223" id="6EwjVjWvKjy" role="39821P">
+        <node concept="3_J27D" id="6EwjVjWvKjz" role="Nbhlr">
+          <node concept="3Mxwew" id="6EwjVjWvKjA" role="3MwsjC">
+            <property role="3MwjfP" value="lambdacalc" />
+          </node>
+        </node>
+        <node concept="L2wRC" id="6EwjVjWvKjC" role="39821P">
+          <ref role="L2wRA" node="7E7FS_VaVAl" resolve="samples.lambdacalc" />
+        </node>
+        <node concept="L2wRC" id="6EwjVjWvKjH" role="39821P">
+          <ref role="L2wRA" node="7E7FS_VaVB_" resolve="samples.lambdacalc.demo" />
+        </node>
+      </node>
+    </node>
     <node concept="10PD9b" id="7E7FS_VaSlV" role="10PD9s" />
     <node concept="3b7kt6" id="7E7FS_VaSm0" role="10PD9s" />
+    <node concept="1gjT0q" id="6EwjVjWvHKf" role="10PD9s" />
     <node concept="398rNT" id="7E7FS_VaSma" role="1l3spd">
       <property role="TrG5h" value="coderules_art" />
       <node concept="55IIr" id="7E7FS_VaSmc" role="398pKh">
@@ -213,6 +262,12 @@
     </node>
     <node concept="2igEWh" id="7E7FS_Vb3KS" role="1hWBAP">
       <property role="2igJW4" value="true" />
+    </node>
+    <node concept="22LTRH" id="6EwjVjWvK8W" role="1hWBAP">
+      <property role="TrG5h" value="demo" />
+      <node concept="22LTRM" id="6EwjVjWvK90" role="22LTRK">
+        <ref role="22LTRN" node="7E7FS_VaVB_" resolve="samples.lambdacalc.demo" />
+      </node>
     </node>
   </node>
 </model>
