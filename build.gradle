@@ -146,7 +146,7 @@ task check {
     [
       ':coderules-test',
       ':samples/mpscore:mpscore-test',
-      ':samples/lambdacalc:lambdacalc-generate',
+      ':samples/lambdacalc:lambdacalc-test',
       ':samples/fitch:fitch-generate'
     ]
   }
