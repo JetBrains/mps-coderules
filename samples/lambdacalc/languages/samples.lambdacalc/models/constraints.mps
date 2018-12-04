@@ -133,8 +133,11 @@
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
         <reference id="1147467295099" name="applicableProperty" index="EomxK" />
+        <child id="1147468630220" name="propertyGetter" index="EtsB7" />
         <child id="1212097481299" name="propertyValidator" index="QCWH9" />
       </concept>
+      <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
+      <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
@@ -806,6 +809,30 @@
     </node>
     <node concept="2tJIrI" id="7_zMfd$r3oW" role="jymVt" />
     <node concept="3Tm1VV" id="7_zMfd$r3oo" role="1B3o_S" />
+  </node>
+  <node concept="1M2fIO" id="JqEP$8gEkk">
+    <property role="3GE5qa" value="expr" />
+    <ref role="1M2myG" to="8tt8:JqEP$8fvrm" resolve="AnnVar" />
+    <node concept="EnEH3" id="JqEP$8gEkl" role="1MhHOB">
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
+      <node concept="Eqf_E" id="JqEP$8gEkn" role="EtsB7">
+        <node concept="3clFbS" id="JqEP$8gEko" role="2VODD2">
+          <node concept="3clFbF" id="JqEP$8gEBA" role="3cqZAp">
+            <node concept="2OqwBi" id="JqEP$8gGmi" role="3clFbG">
+              <node concept="2OqwBi" id="JqEP$8gES1" role="2Oq$k0">
+                <node concept="EsrRn" id="JqEP$8gEB_" role="2Oq$k0" />
+                <node concept="3TrEf2" id="JqEP$8gFj9" role="2OqNvi">
+                  <ref role="3Tt5mk" to="8tt8:JqEP$8fvrp" resolve="var" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="JqEP$8gGLe" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
