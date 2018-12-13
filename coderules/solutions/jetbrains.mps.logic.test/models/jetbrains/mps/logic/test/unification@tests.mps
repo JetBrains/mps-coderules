@@ -543,6 +543,26 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbH" id="6N2bvv_upuD" role="3cqZAp" />
+          <node concept="3vwNmj" id="6N2bvv_upu4" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_upu5" role="3vwVQn">
+              <node concept="37vLTw" id="6N2bvv_upu6" role="2Oq$k0">
+                <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_upu7" role="2OqNvi">
+                <ref role="37wK5l" to="mqqo:6yEjedm5XWy" resolve="askUni" />
+                <node concept="37vLTw" id="6N2bvv_upu8" role="37wK5m">
+                  <ref role="3cqZAo" node="53iOybEHDaF" resolve="a" />
+                </node>
+                <node concept="1rXfSq" id="6N2bvv_upxz" role="37wK5m">
+                  <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
+                  <node concept="Xl_RD" id="6N2bvv_upxR" role="37wK5m">
+                    <property role="Xl_RC" value="Y" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3s$Bmu" id="21Zu7ABunhH" role="3s_gse">
@@ -630,6 +650,29 @@
                 </node>
                 <node concept="37vLTw" id="21Zu7ABunia" role="37wK5m">
                   <ref role="3cqZAo" node="21Zu7ABunhW" resolve="b" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="6N2bvv_ut1Y" role="3cqZAp" />
+          <node concept="3vwNmj" id="6N2bvv_usQD" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_usQE" role="3vwVQn">
+              <node concept="37vLTw" id="6N2bvv_usQF" role="2Oq$k0">
+                <ref role="3cqZAo" node="fHk0tWuntB" resolve="unificationSolver" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_usQG" role="2OqNvi">
+                <ref role="37wK5l" to="mqqo:6yEjedm5XWy" resolve="askUni" />
+                <node concept="1rXfSq" id="6N2bvv_usTK" role="37wK5m">
+                  <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
+                  <node concept="Xl_RD" id="6N2bvv_usU4" role="37wK5m">
+                    <property role="Xl_RC" value="Y" />
+                  </node>
+                </node>
+                <node concept="1rXfSq" id="6N2bvv_ut1x" role="37wK5m">
+                  <ref role="37wK5l" node="21Zu7ABuubV" resolve="var" />
+                  <node concept="Xl_RD" id="6N2bvv_ut1Q" role="37wK5m">
+                    <property role="Xl_RC" value="Z" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -6027,6 +6070,264 @@
             </node>
             <node concept="37vLTw" id="3K_0akS$MRU" role="37vLTJ">
               <ref role="3cqZAo" node="3K_0akS$Mx8" resolve="eqSolver" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3s_ewN" id="6N2bvv_uxy8">
+    <property role="3s_ewP" value="AskEqSolver" />
+    <node concept="312cEg" id="6N2bvv_uxyb" role="jymVt">
+      <property role="TrG5h" value="eqSolver" />
+      <node concept="3Tm6S6" id="6N2bvv_uxyc" role="1B3o_S" />
+      <node concept="3uibUv" id="6N2bvv_uxyd" role="1tU5fm">
+        <ref role="3uigEE" to="mqqo:6yEjedm8s$A" resolve="TestingEqualsSolver" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6N2bvv_ux$U" role="jymVt" />
+    <node concept="3clFb_" id="6N2bvv_ux$s" role="jymVt">
+      <property role="TrG5h" value="var" />
+      <node concept="37vLTG" id="6N2bvv_ux$t" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="6N2bvv_ux$u" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="6N2bvv_ux$v" role="3clF45">
+        <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
+      </node>
+      <node concept="3Tm6S6" id="6N2bvv_ux$w" role="1B3o_S" />
+      <node concept="3clFbS" id="6N2bvv_ux$x" role="3clF47">
+        <node concept="3clFbF" id="6N2bvv_ux$y" role="3cqZAp">
+          <node concept="10QFUN" id="6N2bvv_ux$z" role="3clFbG">
+            <node concept="3uibUv" id="6N2bvv_ux$$" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
+            </node>
+            <node concept="2YIFZM" id="6N2bvv_ux$_" role="10QFUP">
+              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
+              <node concept="2ShNRf" id="6N2bvv_ux$A" role="37wK5m">
+                <node concept="1pGfFk" id="6N2bvv_ux$B" role="2ShVmc">
+                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
+                  <node concept="37vLTw" id="6N2bvv_ux$C" role="37wK5m">
+                    <ref role="3cqZAo" node="6N2bvv_ux$t" resolve="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6N2bvv_uPwS" role="jymVt" />
+    <node concept="3clFb_" id="6N2bvv_uPxw" role="jymVt">
+      <property role="TrG5h" value="logical" />
+      <node concept="3uibUv" id="6N2bvv_uPxX" role="3clF45">
+        <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+        <node concept="3uibUv" id="6N2bvv_uPy5" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6N2bvv_uPxz" role="1B3o_S" />
+      <node concept="3clFbS" id="6N2bvv_uPx$" role="3clF47">
+        <node concept="3clFbF" id="6N2bvv_uPyw" role="3cqZAp">
+          <node concept="2ShNRf" id="6N2bvv_uPyu" role="3clFbG">
+            <node concept="1pGfFk" id="6N2bvv_uPTa" role="2ShVmc">
+              <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
+              <node concept="37vLTw" id="6N2bvv_uPTt" role="37wK5m">
+                <ref role="3cqZAo" node="6N2bvv_uPya" resolve="name" />
+              </node>
+              <node concept="3uibUv" id="6N2bvv_uQ4W" role="1pMfVU">
+                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="6N2bvv_uPya" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="6N2bvv_uPy9" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="6N2bvv_uxy9" role="1B3o_S" />
+    <node concept="3s_gsd" id="6N2bvv_uxya" role="3s_ewO">
+      <node concept="3s$Bmu" id="6N2bvv_uwro" role="3s_gse">
+        <property role="3s$Bm0" value="eq_var_var" />
+        <node concept="3cqZAl" id="6N2bvv_uwrp" role="3clF45" />
+        <node concept="3Tm1VV" id="6N2bvv_uwrq" role="1B3o_S" />
+        <node concept="3clFbS" id="6N2bvv_uwrr" role="3clF47">
+          <node concept="3clFbH" id="6N2bvv_uwvU" role="3cqZAp" />
+          <node concept="3cpWs8" id="6N2bvv_uTT2" role="3cqZAp">
+            <node concept="3cpWsn" id="6N2bvv_uTT3" role="3cpWs9">
+              <property role="TrG5h" value="x" />
+              <node concept="3uibUv" id="6N2bvv_uTSY" role="1tU5fm">
+                <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+                <node concept="3uibUv" id="6N2bvv_uTT1" role="11_B2D">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+              </node>
+              <node concept="1rXfSq" id="6N2bvv_uTT4" role="33vP2m">
+                <ref role="37wK5l" node="6N2bvv_uPxw" resolve="logical" />
+                <node concept="Xl_RD" id="6N2bvv_uTT5" role="37wK5m">
+                  <property role="Xl_RC" value="X" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="6N2bvv_uTTL" role="3cqZAp">
+            <node concept="3cpWsn" id="6N2bvv_uTTM" role="3cpWs9">
+              <property role="TrG5h" value="y" />
+              <node concept="3uibUv" id="6N2bvv_uTTG" role="1tU5fm">
+                <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+                <node concept="3uibUv" id="6N2bvv_uTTJ" role="11_B2D">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+              </node>
+              <node concept="1rXfSq" id="6N2bvv_uTTN" role="33vP2m">
+                <ref role="37wK5l" node="6N2bvv_uPxw" resolve="logical" />
+                <node concept="Xl_RD" id="6N2bvv_uTTO" role="37wK5m">
+                  <property role="Xl_RC" value="Y" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="6N2bvv_uWqI" role="3cqZAp">
+            <node concept="3cpWsn" id="6N2bvv_uWqJ" role="3cpWs9">
+              <property role="TrG5h" value="z" />
+              <node concept="3uibUv" id="6N2bvv_uWqK" role="1tU5fm">
+                <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+                <node concept="3uibUv" id="6N2bvv_uWqL" role="11_B2D">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+              </node>
+              <node concept="1rXfSq" id="6N2bvv_uWqM" role="33vP2m">
+                <ref role="37wK5l" node="6N2bvv_uPxw" resolve="logical" />
+                <node concept="Xl_RD" id="6N2bvv_uWqN" role="37wK5m">
+                  <property role="Xl_RC" value="Y" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="6N2bvv_uTUc" role="3cqZAp" />
+          <node concept="3vwNmj" id="6N2bvv_uyIl" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_uyWP" role="3vwVQn">
+              <node concept="37vLTw" id="6N2bvv_uyIR" role="2Oq$k0">
+                <ref role="3cqZAo" node="6N2bvv_uxyb" resolve="eqSolver" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_u$YF" role="2OqNvi">
+                <ref role="37wK5l" to="mqqo:6N2bvv_uxft" resolve="askEq" />
+                <node concept="37vLTw" id="6N2bvv_uTT6" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_uTT3" resolve="x" />
+                </node>
+                <node concept="37vLTw" id="6N2bvv_uTTP" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_uTTM" resolve="y" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="6N2bvv_uyHR" role="3cqZAp" />
+          <node concept="3clFbF" id="6N2bvv_uTVT" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_uU3u" role="3clFbG">
+              <node concept="37vLTw" id="6N2bvv_uTVR" role="2Oq$k0">
+                <ref role="3cqZAo" node="6N2bvv_uTT3" resolve="x" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_uVfr" role="2OqNvi">
+                <ref role="37wK5l" to="bj13:~JoinableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <node concept="Xl_RD" id="6N2bvv_uVfI" role="37wK5m">
+                  <property role="Xl_RC" value="foo" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vwNmj" id="6N2bvv_uVhm" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_uVhn" role="3vwVQn">
+              <node concept="37vLTw" id="6N2bvv_uVho" role="2Oq$k0">
+                <ref role="3cqZAo" node="6N2bvv_uxyb" resolve="eqSolver" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_uVhp" role="2OqNvi">
+                <ref role="37wK5l" to="mqqo:6N2bvv_uxft" resolve="askEq" />
+                <node concept="37vLTw" id="6N2bvv_uVhq" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_uTT3" resolve="x" />
+                </node>
+                <node concept="37vLTw" id="6N2bvv_uVhr" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_uTTM" resolve="y" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="6N2bvv_uViW" role="3cqZAp" />
+          <node concept="3clFbF" id="6N2bvv_uVkj" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_uVyd" role="3clFbG">
+              <node concept="37vLTw" id="6N2bvv_uVkh" role="2Oq$k0">
+                <ref role="3cqZAo" node="6N2bvv_uTTM" resolve="y" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_uWmD" role="2OqNvi">
+                <ref role="37wK5l" to="bj13:~JoinableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <node concept="Xl_RD" id="6N2bvv_uWmW" role="37wK5m">
+                  <property role="Xl_RC" value="foo" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vwNmj" id="6N2bvv_uWo$" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_uWo_" role="3vwVQn">
+              <node concept="37vLTw" id="6N2bvv_uWoA" role="2Oq$k0">
+                <ref role="3cqZAo" node="6N2bvv_uxyb" resolve="eqSolver" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_uWoB" role="2OqNvi">
+                <ref role="37wK5l" to="mqqo:6N2bvv_uxft" resolve="askEq" />
+                <node concept="37vLTw" id="6N2bvv_uWoC" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_uTT3" resolve="x" />
+                </node>
+                <node concept="37vLTw" id="6N2bvv_uWoD" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_uTTM" resolve="y" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="6N2bvv_uWsI" role="3cqZAp" />
+          <node concept="3clFbF" id="6N2bvv_uWrG" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_uWrH" role="3clFbG">
+              <node concept="37vLTw" id="6N2bvv_uWuF" role="2Oq$k0">
+                <ref role="3cqZAo" node="6N2bvv_uWqJ" resolve="z" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_uWrJ" role="2OqNvi">
+                <ref role="37wK5l" to="bj13:~JoinableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <node concept="Xl_RD" id="6N2bvv_uWrK" role="37wK5m">
+                  <property role="Xl_RC" value="bar" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vFxKo" id="6N2bvv_uWyG" role="3cqZAp">
+            <node concept="2OqwBi" id="6N2bvv_uWzK" role="3vFALc">
+              <node concept="37vLTw" id="6N2bvv_uWzL" role="2Oq$k0">
+                <ref role="3cqZAo" node="6N2bvv_uxyb" resolve="eqSolver" />
+              </node>
+              <node concept="liA8E" id="6N2bvv_uWzM" role="2OqNvi">
+                <ref role="37wK5l" to="mqqo:6N2bvv_uxft" resolve="askEq" />
+                <node concept="37vLTw" id="6N2bvv_uWzN" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_uTT3" resolve="x" />
+                </node>
+                <node concept="37vLTw" id="6N2bvv_uWzO" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_uWqJ" resolve="z" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1KhYhu" id="6N2bvv_uyD4" role="1KhZu4">
+      <node concept="3clFbS" id="6N2bvv_uyD5" role="2VODD2">
+        <node concept="3clFbF" id="6N2bvv_uyD8" role="3cqZAp">
+          <node concept="37vLTI" id="6N2bvv_uyD9" role="3clFbG">
+            <node concept="2ShNRf" id="6N2bvv_uyDa" role="37vLTx">
+              <node concept="HV5vD" id="6N2bvv_uyDb" role="2ShVmc">
+                <ref role="HV5vE" to="mqqo:6yEjedm8s$A" resolve="TestingEqualsSolver" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="6N2bvv_uyDc" role="37vLTJ">
+              <ref role="3cqZAo" node="6N2bvv_uxyb" resolve="eqSolver" />
             </node>
           </node>
         </node>

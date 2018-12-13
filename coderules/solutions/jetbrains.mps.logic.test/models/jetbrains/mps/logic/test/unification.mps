@@ -788,6 +788,37 @@
   <node concept="312cEu" id="6yEjedm8s$A">
     <property role="TrG5h" value="TestingEqualsSolver" />
     <node concept="2tJIrI" id="6yEjedm8s_T" role="jymVt" />
+    <node concept="3clFb_" id="6N2bvv_uxft" role="jymVt">
+      <property role="TrG5h" value="askEq" />
+      <node concept="37vLTG" id="6N2bvv_uxfQ" role="3clF46">
+        <property role="TrG5h" value="a" />
+        <node concept="3uibUv" id="6N2bvv_uxfV" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6N2bvv_uxfZ" role="3clF46">
+        <property role="TrG5h" value="b" />
+        <node concept="3uibUv" id="6N2bvv_uxg6" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="10P_77" id="6N2bvv_uGe3" role="3clF45" />
+      <node concept="3Tm1VV" id="6N2bvv_uxfw" role="1B3o_S" />
+      <node concept="3clFbS" id="6N2bvv_uxfx" role="3clF47">
+        <node concept="3clFbF" id="6N2bvv_uxi6" role="3cqZAp">
+          <node concept="1rXfSq" id="6N2bvv_uxi5" role="3clFbG">
+            <ref role="37wK5l" to="cxk7:2UGjFq4lB$H" resolve="_ask" />
+            <node concept="37vLTw" id="6N2bvv_uxmD" role="37wK5m">
+              <ref role="3cqZAo" node="6N2bvv_uxfQ" resolve="a" />
+            </node>
+            <node concept="37vLTw" id="6N2bvv_uxsA" role="37wK5m">
+              <ref role="3cqZAo" node="6N2bvv_uxfZ" resolve="b" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6N2bvv_uxxg" role="jymVt" />
     <node concept="3clFb_" id="6yEjedm8tAi" role="jymVt">
       <property role="TrG5h" value="tellEq" />
       <node concept="37vLTG" id="6yEjedm8tDF" role="3clF46">
