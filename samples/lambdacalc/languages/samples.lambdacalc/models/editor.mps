@@ -28,6 +28,7 @@
       <concept id="1196434649611" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_SimpleString" flags="ng" index="2h3Zct">
         <property id="1196434851095" name="text" index="2h4Kg1" />
       </concept>
+      <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="6089045305654894366" name="jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Default" flags="ng" index="2kknPJ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
@@ -781,7 +782,15 @@
     <ref role="1XX52x" to="8tt8:12dHl3ZCxTW" resolve="ForallType" />
     <node concept="3EZMnI" id="12dHl3ZCFax" role="2wV5jI">
       <node concept="3F0ifn" id="12dHl3ZCFaC" role="3EZMnx">
-        <property role="3F0ifm" value="forall." />
+        <property role="3F0ifm" value="forall" />
+      </node>
+      <node concept="3F2HdR" id="48ZGLP7q1QZ" role="3EZMnx">
+        <property role="2czwfO" value=" " />
+        <ref role="1NtTu8" to="8tt8:48ZGLP7q1Qc" resolve="typeVars" />
+        <node concept="2iRfu4" id="48ZGLP7q1R2" role="2czzBx" />
+      </node>
+      <node concept="3F0ifn" id="48ZGLP7q1QP" role="3EZMnx">
+        <property role="3F0ifm" value="." />
       </node>
       <node concept="3F1sOY" id="12dHl3ZCFaK" role="3EZMnx">
         <ref role="1NtTu8" to="8tt8:12dHl3ZCFaI" resolve="type" />

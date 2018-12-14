@@ -316,6 +316,13 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3_qfG1EP6Nw" resolve="Type" />
     </node>
+    <node concept="1TJgyj" id="48ZGLP7q1Qc" role="1TKVEi">
+      <property role="IQ2ns" value="4773731068369444236" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="typeVars" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="3g9UT2j9I06" resolve="VarType" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1z4HGmnV7K8">
     <property role="EcuMT" value="1784752312119229448" />
