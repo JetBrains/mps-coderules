@@ -1264,6 +1264,11 @@
             <ref role="3bR37D" node="65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2dF51l18cxj" role="3bR37C">
+          <node concept="3bR9La" id="2dF51l18cxk" role="1SiIV1">
+            <ref role="3bR37D" node="7Ant4WkHLpd" resolve="jetbrains.mps.logic.test" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="78H58oeeFzd" role="3989C9">
