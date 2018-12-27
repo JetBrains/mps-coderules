@@ -106,6 +106,7 @@
         <reference id="7991336459489872009" name="outputConcept" index="3EoQqy" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
+        <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -901,6 +902,7 @@
       </node>
       <node concept="3F2HdR" id="48ZGLP7q1QZ" role="3EZMnx">
         <property role="2czwfO" value=" " />
+        <property role="1cu_pB" value="0" />
         <ref role="1NtTu8" to="8tt8:48ZGLP7q1Qc" resolve="typeVars" />
         <node concept="2iRfu4" id="48ZGLP7q1R2" role="2czzBx" />
       </node>
