@@ -2345,13 +2345,8 @@
         <ref role="3uigEE" to="mqqo:6yEjedm5WkE" resolve="TestingUnificationSolver" />
       </node>
       <node concept="2ShNRf" id="fHk0tWuoQm" role="33vP2m">
-        <node concept="1pGfFk" id="fHk0tWutdI" role="2ShVmc">
-          <ref role="37wK5l" to="mqqo:6yEjedm5WI7" resolve="TestingUnificationSolver" />
-          <node concept="2ShNRf" id="6yEjedm5KqE" role="37wK5m">
-            <node concept="HV5vD" id="4xTpErjR48y" role="2ShVmc">
-              <ref role="HV5vE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
-            </node>
-          </node>
+        <node concept="HV5vD" id="3gNap3fFj93" role="2ShVmc">
+          <ref role="HV5vE" to="mqqo:6yEjedm5WkE" resolve="TestingUnificationSolver" />
         </node>
       </node>
     </node>
@@ -2372,9 +2367,9 @@
             <node concept="3uibUv" id="6N2bvv_ux$$" role="10QFUM">
               <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
-            <node concept="2YIFZM" id="6N2bvv_ux$_" role="10QFUP">
-              <ref role="37wK5l" to="7n8k:4TCblo5YI1H" resolve="asVariable" />
-              <ref role="1Pybhc" to="7n8k:677NV565N1x" resolve="LogicalUtil" />
+            <node concept="2YIFZM" id="3gNap3fNlJl" role="10QFUP">
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2ShNRf" id="6N2bvv_ux$A" role="37wK5m">
                 <node concept="1pGfFk" id="6N2bvv_ux$B" role="2ShVmc">
                   <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />

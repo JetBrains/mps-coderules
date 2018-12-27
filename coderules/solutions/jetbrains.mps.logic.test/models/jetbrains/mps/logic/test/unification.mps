@@ -48,7 +48,6 @@
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
-      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -700,25 +699,6 @@
     <property role="2bfB8j" value="false" />
     <property role="TrG5h" value="TestingUnificationSolver" />
     <node concept="2tJIrI" id="6yEjedm5WFP" role="jymVt" />
-    <node concept="3clFbW" id="6yEjedm5WI7" role="jymVt">
-      <node concept="37vLTG" id="3FIATxbQcKV" role="3clF46">
-        <property role="TrG5h" value="logicalUnification" />
-        <node concept="3uibUv" id="5cDlfXsLvq0" role="1tU5fm">
-          <ref role="3uigEE" to="oy3s:4xTpErjR15$" resolve="DefaultLogicalUnification" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="6yEjedm5WI9" role="3clF45" />
-      <node concept="3Tm1VV" id="6yEjedm5WIa" role="1B3o_S" />
-      <node concept="3clFbS" id="6yEjedm5WIb" role="3clF47">
-        <node concept="XkiVB" id="6yEjedm5WNa" role="3cqZAp">
-          <ref role="37wK5l" to="cxk7:5p8T3QHGKJ7" resolve="UnificationPredicate.UnificationSolver" />
-          <node concept="37vLTw" id="6yEjedm5WTt" role="37wK5m">
-            <ref role="3cqZAo" node="3FIATxbQcKV" resolve="logicalUnification" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6yEjedm5XCT" role="jymVt" />
     <node concept="3clFb_" id="6yEjedm5XWy" role="jymVt">
       <property role="TrG5h" value="askUni" />
       <node concept="10P_77" id="6yEjedm5ZZz" role="3clF45" />

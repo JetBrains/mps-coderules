@@ -7837,13 +7837,13 @@
                       <node concept="3clFbS" id="19wqdqOqxsh" role="3clFbx">
                         <node concept="3SKdUt" id="19wqdqOqxsi" role="3cqZAp">
                           <node concept="3SKdUq" id="19wqdqOqxsj" role="3SKWNk">
-                            <property role="3SKdUp" value="FIXME: there should be a clear contract for instances of TreeForm that wrap logicals" />
+                            <property role="3SKdUp" value="FIXME: there should be a clear contract for instances of DataForm that wrap logicals" />
                           </node>
                         </node>
                         <node concept="3cpWs6" id="19wqdqOqxsk" role="3cqZAp">
                           <node concept="2ZW3vV" id="19wqdqOqxsl" role="3cqZAk">
-                            <node concept="3uibUv" id="19wqdqOqxsm" role="2ZW6by">
-                              <ref role="3uigEE" to="bj13:~LogicalOwner" resolve="LogicalOwner" />
+                            <node concept="3uibUv" id="3gNap3frqGV" role="2ZW6by">
+                              <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
                             </node>
                             <node concept="37vLTw" id="19wqdqOqxsn" role="2ZW6bz">
                               <ref role="3cqZAo" node="19wqdqOqxsb" resolve="tf" />
@@ -7913,8 +7913,11 @@
                                     <node concept="37vLTw" id="19wqdqOqxsN" role="10QFUP">
                                       <ref role="3cqZAo" node="19wqdqOqxsw" resolve="tf" />
                                     </node>
-                                    <node concept="3uibUv" id="19wqdqOqxsO" role="10QFUM">
-                                      <ref role="3uigEE" to="bj13:~LogicalOwner" resolve="LogicalOwner" />
+                                    <node concept="3uibUv" id="3gNap3frrmL" role="10QFUM">
+                                      <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
+                                      <node concept="3uibUv" id="3gNap3frrQb" role="11_B2D">
+                                        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -7941,8 +7944,8 @@
                         <node concept="3clFbH" id="19wqdqOqxsV" role="3cqZAp" />
                       </node>
                       <node concept="2ZW3vV" id="19wqdqOqxsW" role="3clFbw">
-                        <node concept="3uibUv" id="19wqdqOqxsX" role="2ZW6by">
-                          <ref role="3uigEE" to="bj13:~LogicalOwner" resolve="LogicalOwner" />
+                        <node concept="3uibUv" id="3gNap3frr1Q" role="2ZW6by">
+                          <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
                         </node>
                         <node concept="37vLTw" id="19wqdqOqxsY" role="2ZW6bz">
                           <ref role="3cqZAo" node="19wqdqOqxsw" resolve="tf" />
