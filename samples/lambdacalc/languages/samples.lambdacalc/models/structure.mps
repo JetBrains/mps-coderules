@@ -259,21 +259,21 @@
     <property role="EcuMT" value="4774429934441520217" />
     <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="BoolType" />
-    <property role="34LRSv" value="bool" />
+    <property role="34LRSv" value="Bool" />
     <ref role="1TJDcQ" node="3_qfG1EP6Nw" resolve="Type" />
   </node>
   <node concept="1TIwiD" id="492bFERognf">
     <property role="EcuMT" value="4774429934441530831" />
     <property role="3GE5qa" value="expr.const" />
     <property role="TrG5h" value="True" />
-    <property role="34LRSv" value="true" />
+    <property role="34LRSv" value="True" />
     <ref role="1TJDcQ" node="7_8aRkgDGQe" resolve="Const" />
   </node>
   <node concept="1TIwiD" id="492bFERojSn">
     <property role="EcuMT" value="4774429934441545239" />
     <property role="3GE5qa" value="expr.const" />
     <property role="TrG5h" value="False" />
-    <property role="34LRSv" value="false" />
+    <property role="34LRSv" value="False" />
     <ref role="1TJDcQ" node="7_8aRkgDGQe" resolve="Const" />
   </node>
   <node concept="1TIwiD" id="3g9UT2j9I06">
@@ -310,6 +310,7 @@
     <property role="EcuMT" value="1192808835813875324" />
     <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="ForallType" />
+    <property role="34LRSv" value="forall" />
     <ref role="1TJDcQ" node="3_qfG1EP6Nw" resolve="Type" />
     <node concept="1TJgyj" id="12dHl3ZCFaI" role="1TKVEi">
       <property role="IQ2ns" value="1192808835813913262" />
@@ -448,6 +449,7 @@
     <property role="EcuMT" value="854183478222197450" />
     <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="PairType" />
+    <property role="34LRSv" value="pair" />
     <ref role="1TJDcQ" node="3_qfG1EP6Nw" resolve="Type" />
     <node concept="1TJgyj" id="JqEP$8shbd" role="1TKVEi">
       <property role="IQ2ns" value="854183478222197453" />

@@ -307,7 +307,7 @@
         <ref role="1NtTu8" to="8tt8:7_8aRkgDGQg" resolve="binding" />
       </node>
       <node concept="3F0ifn" id="7_8aRkgE086" role="3EZMnx">
-        <property role="3F0ifm" value="-&gt;" />
+        <property role="3F0ifm" value="→" />
       </node>
       <node concept="3F1sOY" id="7_8aRkgE08J" role="3EZMnx">
         <ref role="1NtTu8" to="8tt8:7_8aRkgDGQl" resolve="expr" />
@@ -781,7 +781,7 @@
         <ref role="1NtTu8" to="8tt8:3_qfG1EP6Op" resolve="argType" />
       </node>
       <node concept="3F0ifn" id="3_qfG1EP6OI" role="3EZMnx">
-        <property role="3F0ifm" value="-&gt;" />
+        <property role="3F0ifm" value="→" />
       </node>
       <node concept="3F1sOY" id="3_qfG1EP6OV" role="3EZMnx">
         <property role="1$x2rV" value="?" />
@@ -898,10 +898,9 @@
         </node>
       </node>
       <node concept="3F0ifn" id="12dHl3ZCFaC" role="3EZMnx">
-        <property role="3F0ifm" value="forall" />
+        <property role="3F0ifm" value="∀" />
       </node>
       <node concept="3F2HdR" id="48ZGLP7q1QZ" role="3EZMnx">
-        <property role="2czwfO" value=" " />
         <property role="1cu_pB" value="0" />
         <ref role="1NtTu8" to="8tt8:48ZGLP7q1Qc" resolve="typeVars" />
         <node concept="2iRfu4" id="48ZGLP7q1R2" role="2czzBx" />
@@ -909,6 +908,9 @@
       <node concept="3F0ifn" id="48ZGLP7q1QP" role="3EZMnx">
         <property role="3F0ifm" value="." />
         <node concept="11L4FC" id="1IKbs5XoXAX" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="11LMrY" id="1IKbs5XHOf$" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -1032,7 +1034,7 @@
         <ref role="1NtTu8" to="8tt8:JqEP$8fvqp" resolve="expr" />
       </node>
       <node concept="3F0ifn" id="JqEP$8fvqZ" role="3EZMnx">
-        <property role="3F0ifm" value="::" />
+        <property role="3F0ifm" value="∷" />
       </node>
       <node concept="3F1sOY" id="JqEP$8fvrf" role="3EZMnx">
         <ref role="1NtTu8" to="8tt8:JqEP$8fvrd" resolve="ann" />
@@ -1066,7 +1068,7 @@
         <ref role="1NtTu8" to="8tt8:JqEP$8fvrp" resolve="var" />
       </node>
       <node concept="3F0ifn" id="JqEP$8fvsq" role="3EZMnx">
-        <property role="3F0ifm" value="::" />
+        <property role="3F0ifm" value="∷" />
       </node>
       <node concept="3F1sOY" id="JqEP$8fvsK" role="3EZMnx">
         <ref role="1NtTu8" to="8tt8:JqEP$8fvrd" resolve="ann" />
