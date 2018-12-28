@@ -3,8 +3,8 @@
   <models>
     <modelRoot contentPath="${module}" type="java_classes">
       <sourceRoot location="lib/collection-0.7.jar" />
-      <sourceRoot location="lib/conreactor-api-0.9.2.jar" />
-      <sourceRoot location="lib/conreactor-core-0.9.2.jar" />
+      <sourceRoot location="lib/conreactor-core-0.9.3.jar" />
+      <sourceRoot location="lib/conreactor-api-0.9.3.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
@@ -12,8 +12,8 @@
     <stubModelEntry path="${module}/lib/trove4j-3.0.3.jar" />
     <stubModelEntry path="${module}/lib/kotlin-runtime-1.2.30.jar" />
     <stubModelEntry path="${module}/lib/kotlin-stdlib-1.2.30.jar" />
-    <stubModelEntry path="${module}/lib/conreactor-api-0.9.2.jar" />
-    <stubModelEntry path="${module}/lib/conreactor-core-0.9.2.jar" />
+    <stubModelEntry path="${module}/lib/conreactor-api-0.9.3.jar" />
+    <stubModelEntry path="${module}/lib/conreactor-core-0.9.3.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

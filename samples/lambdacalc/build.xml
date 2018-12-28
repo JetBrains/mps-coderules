@@ -317,8 +317,8 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-runtime-1.2.30.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-stdlib-1.2.30.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.2.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.2.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.3.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.3.jar" />
       </classpath>
     </javac>
   </target>
@@ -384,8 +384,8 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-runtime-1.2.30.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="kotlin-stdlib-1.2.30.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.2.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.2.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-api-0.9.3.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.3.jar" />
       </classpath>
     </javac>
   </target>
