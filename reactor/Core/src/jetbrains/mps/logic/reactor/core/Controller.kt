@@ -91,7 +91,6 @@ class Controller(
 
             var state : ProcessingState = instate
 
-//            for (match in matcher.matches(active, frameStack.current.store)) {
             for (match in dispatchFringe.matches().toList()) {
                 if (!state.operational) break
 
@@ -108,13 +107,16 @@ class Controller(
 
                 state = match.patternPredicates().fold(state, { st, prd ->
                     st.eval { tellPredicate(prd, match.logicalContext(), it) } })
-//                    if (st.operational) tellPredicate(prd, match.logicalContext(), st) else st })
 
                 state = state.eval { match.rule().checkGuard(match.logicalContext(), it) }
-//                    if (state.operational) match.rule().checkGuard(match.logicalContext(), state) else state
-                
-                if (state is ABORTED) {
+
+                if (state is ABORTED) {  // guard is not satisfied
                     trace.reject(match)
+                    state = state.reset()
+                    continue
+
+                } else if (state is FAILED) {  // guard failed
+                    trace.failure(state.failure)
                     state = state.reset()
                     continue
                 }
