@@ -84,6 +84,12 @@ class LogicalImpl<T> : JoinableLogical<T> {
         this._value = value
     }
 
+    constructor(metaLogical: MetaLogical<T>, value: T) {
+        this.metaLogical = metaLogical
+        this.name = "${metaLogical.name()}_${++lastIdx}"
+        this._value = value
+    }
+
     constructor(metaLogical: MetaLogical<T>) {
         this.metaLogical = metaLogical
         this.name = "${metaLogical.name()}_${++lastIdx}"

@@ -38,7 +38,7 @@ class MatchRuleImpl(val rule: Rule,
                when (value) {
                    is Logical<*> -> value
                    is LogicalOwner -> value.logical()
-                   else -> LogicalImpl(value)
+                   else -> LogicalImpl(meta, value as V)
                }
            } ?: meta.logical().also { logical -> meta2logical[meta] = logical }) as Logical<V>
 
