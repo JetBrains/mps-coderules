@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.util
 
+import jetbrains.mps.logic.reactor.logical.VarSymbol
 import jetbrains.mps.unification.Term
 import java.util.*
 import kotlin.collections.ArrayList
@@ -142,7 +143,7 @@ class ClassicTermTrie<T> : TermTrie<T> {
     }
 
     private fun symbolOrWildcard(term: Term): Any  {
-        return if (term.`is`(Term.Kind.VAR)) {
+        return if (term.`is`(Term.Kind.VAR) || (term.`is`(Term.Kind.FUN) && term.symbol() is VarSymbol)) {
             WILDCARD
 
         } else {

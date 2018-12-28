@@ -24,7 +24,7 @@ package jetbrains.mps.logic.reactor.logical;
  *
  * @author Fedor Isakov
  */
-public class MetaLogical<T> {
+public class MetaLogical<T> implements VarSymbol {
 
     private static final String WILDCARD = "_";
     private String name;
