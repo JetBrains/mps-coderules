@@ -59,10 +59,18 @@ public abstract class SessionSolver implements Queryable, Instructible {
         handler.tell(invocation);
     }
 
+    /**
+     * @deprecated FIXME unused, delete this method
+     */
+    @Deprecated
     public boolean ask(Predicate predicate, LogicalContext logicalContext) {
         return ask(EvaluationSession.current().invocation(predicate, logicalContext));
     }
 
+    /**
+     * @deprecated FIXME unused, delete this method
+     */
+    @Deprecated
     public void tell(AndItem item, LogicalContext logicalContext) {
         if (item instanceof Predicate) {
             tell(EvaluationSession.current().invocation((Predicate) item, logicalContext));
