@@ -10,6 +10,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="hwt6" ref="r:1f3a7853-f20c-4f91-9912-5e82d9d1651a(typechecking.samples.baseLanguage.codeAnal)" />
@@ -32,6 +33,9 @@
       <concept id="1225978065297" name="jetbrains.mps.lang.test.structure.SimpleNodeTest" flags="ng" index="1LZb2c" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
+        <child id="1082485599096" name="statements" index="9aQI4" />
+      </concept>
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
@@ -41,9 +45,13 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
@@ -62,6 +70,11 @@
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -77,6 +90,11 @@
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
+      </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -113,6 +131,12 @@
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="7080278351417106679" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNotNull" flags="nn" index="2Hmddi">
         <child id="7080278351417106681" name="expression" index="2Hmdds" />
+      </concept>
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -215,25 +239,49 @@
       <property role="TrG5h" value="Thinlet" />
       <node concept="3cqZAl" id="1N_0WA5DT8H" role="3clF45" />
       <node concept="3clFbS" id="1N_0WA5DT8I" role="3clF47">
-        <node concept="2Hmddi" id="4BHjwwGPMah" role="3cqZAp">
-          <node concept="2YIFZM" id="4BHjwwGPMdn" role="2Hmdds">
-            <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
-            <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
-            <node concept="2OqwBi" id="2QSgdliBFSp" role="37wK5m">
-              <node concept="2WthIp" id="2QSgdliBFNX" role="2Oq$k0" />
-              <node concept="2XshWL" id="2QSgdliBFZs" role="2OqNvi">
-                <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                <node concept="2tJFMh" id="2QSgdliBFZv" role="2XxRq1">
-                  <node concept="ZC_QK" id="2QSgdlj8a_0" role="2tJFKM">
-                    <ref role="2aWVGs" to="hwt6:3489cc5$luO" resolve="Thinlet" />
+        <node concept="3clFbJ" id="2rIdnPwwKoc" role="3cqZAp">
+          <node concept="3clFbS" id="2rIdnPwwKoe" role="3clFbx">
+            <node concept="2Hmddi" id="4BHjwwGPMah" role="3cqZAp">
+              <node concept="2YIFZM" id="4BHjwwGPMdn" role="2Hmdds">
+                <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <node concept="2OqwBi" id="2QSgdliBFSp" role="37wK5m">
+                  <node concept="2WthIp" id="2QSgdliBFNX" role="2Oq$k0" />
+                  <node concept="2XshWL" id="2QSgdliBFZs" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="2QSgdliBFZv" role="2XxRq1">
+                      <node concept="ZC_QK" id="2QSgdlj8a_0" role="2tJFKM">
+                        <ref role="2aWVGs" to="hwt6:3489cc5$luO" resolve="Thinlet" />
+                      </node>
+                    </node>
                   </node>
+                </node>
+                <node concept="1jxXqW" id="4BHjwwGPMdp" role="37wK5m" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="2rIdnPwwLWI" role="3cqZAp" />
+          </node>
+          <node concept="3y3z36" id="2rIdnPwwLzh" role="3clFbw">
+            <node concept="10Nm6u" id="2rIdnPwwLKh" role="3uHU7w" />
+            <node concept="2YIFZM" id="2KEPLp6ICYM" role="3uHU7B">
+              <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
+              <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+              <node concept="Xl_RD" id="2KEPLp6ICYN" role="37wK5m">
+                <property role="Xl_RC" value="mps.test.modules" />
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="2rIdnPwwLPG" role="9aQIa">
+            <node concept="3clFbS" id="2rIdnPwwLPH" role="9aQI4">
+              <node concept="RRSsy" id="2rIdnPuCRgJ" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="Xl_RD" id="2rIdnPuCRgL" role="RRSoy">
+                  <property role="Xl_RC" value="Test is disabled in non-CI enviroment" />
                 </node>
               </node>
             </node>
-            <node concept="1jxXqW" id="4BHjwwGPMdp" role="37wK5m" />
           </node>
         </node>
-        <node concept="3clFbH" id="2QSgdlj8alg" role="3cqZAp" />
       </node>
       <node concept="3uibUv" id="4BHjwwGPyDL" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
