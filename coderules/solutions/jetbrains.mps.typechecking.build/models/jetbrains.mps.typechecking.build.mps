@@ -931,6 +931,11 @@
             <ref role="3bR37D" node="46o4wsH5PJF" resolve="jetbrains.mps.typechecking.annotation" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2hrSdN9bYck" role="3bR37C">
+          <node concept="3bR9La" id="2hrSdN9bYcl" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="3u5wJtgiSM" role="2G$12L">
         <property role="BnDLt" value="true" />

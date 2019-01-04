@@ -1977,19 +1977,24 @@
             <property role="3SKdUp" value="this method throws exception and &quot;read action&quot; doesn't like that" />
           </node>
         </node>
-        <node concept="3cpWs8" id="443LGHBj7CW" role="3cqZAp">
-          <node concept="3cpWsn" id="443LGHBj7CX" role="3cpWs9">
+        <node concept="3cpWs8" id="27bTNFfbxlM" role="3cqZAp">
+          <node concept="3cpWsn" id="27bTNFfbxlN" role="3cpWs9">
             <property role="TrG5h" value="checkTypes" />
-            <node concept="3uibUv" id="443LGHBj7CV" role="1tU5fm">
+            <node concept="3uibUv" id="27bTNFfbxlO" role="1tU5fm">
               <ref role="3uigEE" to="tj24:6QH_LDtfe19" resolve="TypeCache" />
             </node>
-            <node concept="2YIFZM" id="443LGHBj7CY" role="33vP2m">
-              <ref role="37wK5l" to="tj24:7y50OW6XU7p" resolve="checkTypes" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
-              <node concept="37vLTw" id="443LGHBj7CZ" role="37wK5m">
-                <ref role="3cqZAo" node="4BHjwwGTLX6" resolve="demo" />
+            <node concept="2OqwBi" id="27bTNFfbxlP" role="33vP2m">
+              <node concept="2YIFZM" id="27bTNFfbxlQ" role="2Oq$k0">
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <node concept="37vLTw" id="27bTNFfbxlR" role="37wK5m">
+                  <ref role="3cqZAo" node="4BHjwwGTLX6" resolve="demo" />
+                </node>
+                <node concept="1jxXqW" id="27bTNFfc2nC" role="37wK5m" />
               </node>
-              <node concept="1jxXqW" id="443LGHBj7D0" role="37wK5m" />
+              <node concept="liA8E" id="27bTNFfbxlT" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+              </node>
             </node>
           </node>
         </node>
@@ -2003,7 +2008,7 @@
                   <node concept="3Tqbb2" id="4BHjwwGqWQm" role="1tU5fm" />
                   <node concept="2OqwBi" id="7y50OW6ZH4n" role="33vP2m">
                     <node concept="37vLTw" id="443LGHBj7MB" role="2Oq$k0">
-                      <ref role="3cqZAo" node="443LGHBj7CX" resolve="checkTypes" />
+                      <ref role="3cqZAo" node="27bTNFfbxlN" resolve="checkTypes" />
                     </node>
                     <node concept="liA8E" id="7y50OW6ZH4p" role="2OqNvi">
                       <ref role="37wK5l" to="tj24:6QH_LDtffJj" resolve="typeOf" />
@@ -2025,7 +2030,7 @@
                   <node concept="3Tqbb2" id="4BHjwwGqWVs" role="1tU5fm" />
                   <node concept="2OqwBi" id="7y50OW701J3" role="33vP2m">
                     <node concept="37vLTw" id="443LGHBj7W9" role="2Oq$k0">
-                      <ref role="3cqZAo" node="443LGHBj7CX" resolve="checkTypes" />
+                      <ref role="3cqZAo" node="27bTNFfbxlN" resolve="checkTypes" />
                     </node>
                     <node concept="liA8E" id="7y50OW701J5" role="2OqNvi">
                       <ref role="37wK5l" to="tj24:6QH_LDtffJj" resolve="typeOf" />
