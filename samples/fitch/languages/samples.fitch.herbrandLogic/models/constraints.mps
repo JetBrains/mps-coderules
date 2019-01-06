@@ -187,5 +187,36 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="4h0MmDW5DCZ">
+    <property role="3GE5qa" value="sentence" />
+    <ref role="1M2myG" to="bw37:2DPo4JTRwtx" resolve="Relation" />
+    <node concept="EnEH3" id="4h0MmDW5DD0" role="1MhHOB">
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
+      <node concept="QB0g5" id="4h0MmDW5DD5" role="QCWH9">
+        <node concept="3clFbS" id="4h0MmDW5DD6" role="2VODD2">
+          <node concept="1QpiS5" id="4h0MmDW5FQ1" role="3cqZAp">
+            <node concept="1Qi9sc" id="4h0MmDW5FQ2" role="1YN4dH">
+              <node concept="1OClNT" id="4h0MmDW5R0Q" role="1QigWp">
+                <node concept="1SYyG9" id="4h0MmDW5FQk" role="1OLDsb">
+                  <ref role="1SYXPG" to="tpfp:h5SUPxr" resolve="\p{Lower}" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="4h0MmDW5FQ4" role="1Qpmdr">
+              <node concept="3cpWs6" id="4h0MmDW5FQq" role="3cqZAp">
+                <node concept="3clFbT" id="4h0MmDW5FQA" role="3cqZAk">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+            <node concept="1Wqviy" id="4h0MmDW5FQe" role="1QpSPf" />
+          </node>
+          <node concept="3cpWs6" id="4h0MmDW5FQR" role="3cqZAp">
+            <node concept="3clFbT" id="4h0MmDW5FRb" role="3cqZAk" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
