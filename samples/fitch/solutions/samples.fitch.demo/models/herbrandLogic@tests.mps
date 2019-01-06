@@ -132,7 +132,7 @@
     </language>
   </registry>
   <node concept="1lH9Xt" id="5RH_cL_9FJF">
-    <property role="TrG5h" value="Check" />
+    <property role="TrG5h" value="HerbrandLogic" />
     <node concept="1LZb2c" id="5s5QomKHHK1" role="1SL9yI">
       <property role="TrG5h" value="Example" />
       <node concept="3cqZAl" id="5s5QomKHHK2" role="3clF45" />
