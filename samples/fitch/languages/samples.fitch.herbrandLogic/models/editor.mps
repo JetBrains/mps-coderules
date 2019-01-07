@@ -63,12 +63,18 @@
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW">
+        <child id="7033942394258392116" name="overridenEditorComponent" index="1PM95z" />
+      </concept>
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
       <concept id="4323500428121233431" name="jetbrains.mps.lang.editor.structure.EditorCellId" flags="ng" index="2SqB2G" />
       <concept id="4323500428136740385" name="jetbrains.mps.lang.editor.structure.CellIdReferenceSelector" flags="ng" index="2TlHUq">
         <reference id="4323500428136742952" name="id" index="2TlMyj" />
+      </concept>
+      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2">
+        <property id="1186403771423" name="style" index="Vbekb" />
       </concept>
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
@@ -142,6 +148,9 @@
       <concept id="3647146066980922272" name="jetbrains.mps.lang.editor.structure.SelectInEditorOperation" flags="nn" index="1OKiuA">
         <child id="1948540814633499358" name="editorContext" index="lBI5i" />
         <child id="1948540814635895774" name="cellSelector" index="lGT1i" />
+      </concept>
+      <concept id="7033942394256351208" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference" flags="ng" index="1PE4EZ">
+        <reference id="7033942394256351817" name="editorComponent" index="1PE7su" />
       </concept>
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="7980428675268276156" name="jetbrains.mps.lang.editor.structure.TransformationMenuSection" flags="ng" index="1Qtc8_">
@@ -990,6 +999,163 @@
   <node concept="3p36aQ" id="3w0n0hzhNHg">
     <property role="3GE5qa" value="proof" />
     <ref role="aqKnT" to="bw37:3w0n0hzg5do" resolve="HerbrandProof" />
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8b4o">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="ExistsElim_DOC" />
+    <ref role="1XX52x" to="bw37:Vo$tzLEGtG" resolve="ExistsElim" />
+    <node concept="3EZMnI" id="4h0MmDW8b4s" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8b4z" role="3EZMnx">
+        <property role="3F0ifm" value="Existential Elimination" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8b4A" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8b4D" role="3EZMnx">
+        <property role="3F0ifm" value="Eliminator for existential quantifier (∃)." />
+        <node concept="Vb9p2" id="4h0MmDW8b4H" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8b4J" role="3EZMnx">
+        <property role="3F0ifm" value="Must have two bases (premises) : " />
+        <node concept="Vb9p2" id="4h0MmDW8b4R" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8b4T" role="3EZMnx">
+        <property role="3F0ifm" value="    first of the form (∃ X. SENTENCE)," />
+        <node concept="Vb9p2" id="4h0MmDW8b4U" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8b53" role="3EZMnx">
+        <property role="3F0ifm" value="    and second of the form (∀ Y. UNI_SENTENCE =&gt; CONCLUSION)," />
+        <node concept="Vb9p2" id="4h0MmDW8b54" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8bOi" role="3EZMnx">
+        <property role="3F0ifm" value="    where CONCLUSION is the judgement's conclusion." />
+        <node concept="Vb9p2" id="4h0MmDW8bOu" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8bOw" role="3EZMnx">
+        <property role="3F0ifm" value="SENTENCE must match UNI_SENTENCE after consistently replacing X with Y." />
+        <node concept="Vb9p2" id="4h0MmDW8bPf" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8bOI" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8bOX" role="3EZMnx">
+        <property role="3F0ifm" value="The variable must not occurr free in the conclusion." />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8b4v" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8b4q" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8gM_">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="ExistsIntro_DOC" />
+    <ref role="1XX52x" to="bw37:Vo$tzLEGtF" resolve="ExistsIntro" />
+    <node concept="3EZMnI" id="4h0MmDW8gMD" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8gMK" role="3EZMnx">
+        <property role="3F0ifm" value="Existential Introduction" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8gMN" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8gMQ" role="3EZMnx">
+        <property role="3F0ifm" value="Constructor for existential quantifier (∃)." />
+        <node concept="Vb9p2" id="4h0MmDW8gMU" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8gMW" role="3EZMnx">
+        <property role="3F0ifm" value="Must have one arbitrary basis (premise) : PREMISE." />
+        <node concept="Vb9p2" id="4h0MmDW8gN2" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8gN4" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must match (∃ X. SENTENCE)," />
+        <node concept="Vb9p2" id="4h0MmDW8gNl" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8gNc" role="3EZMnx">
+        <property role="3F0ifm" value="    where SENTENCE must match PREMISE after consistently replacing X with a fresh variable." />
+        <node concept="Vb9p2" id="4h0MmDW8gNn" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8gMG" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8gMB" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8lQU">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="ForallElim_DOC" />
+    <ref role="1XX52x" to="bw37:Vo$tzLEGtE" resolve="ForallElim" />
+    <node concept="3EZMnI" id="4h0MmDW8lQY" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8lX_" role="3EZMnx">
+        <property role="3F0ifm" value="Universal Elimination" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8lXC" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8lXF" role="3EZMnx">
+        <property role="3F0ifm" value="Eliminator for universal quantifier (∀)." />
+        <node concept="Vb9p2" id="4h0MmDW8lXJ" role="3F10Kt">
+          <property role="Vbekb" value="PLAIN" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8lXL" role="3EZMnx">
+        <property role="3F0ifm" value="Must have one basis (premise) : a universal sentence (∀ X.SENTENCE)," />
+        <node concept="Vb9p2" id="4h0MmDW8lXY" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8lY0" role="3EZMnx">
+        <property role="3F0ifm" value="    where SENTENCE must match the conclusion after consistently replacing X with a fresh variable." />
+        <node concept="Vb9p2" id="4h0MmDW8lY9" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8lXR" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW88XD" role="3EZMnx">
+        <property role="3F0ifm" value="The following quotation describes what it means for a term to be free for a variable:" />
+        <node concept="Vb9p2" id="4h0MmDW88Yj" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88XQ" role="3EZMnx">
+        <property role="3F0ifm" value="   &quot;a term t is free for a variable x in a sentence s if and only if" />
+        <node concept="Vb9p2" id="4h0MmDW88Yl" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88Y4" role="3EZMnx">
+        <property role="3F0ifm" value="    no free occurrence of x occurs within the scope of a quantifier of some variable in t&quot;" />
+        <node concept="Vb9p2" id="4h0MmDW88Yn" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8lYb" role="3EZMnx" />
+      <node concept="2iRkQZ" id="4h0MmDW8lR1" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8lQW" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8lZG">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="ForallIntro_DOC" />
+    <ref role="1XX52x" to="bw37:Vo$tzLEGtD" resolve="ForallIntro" />
+    <node concept="3EZMnI" id="4h0MmDW8lZK" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8lZR" role="3EZMnx">
+        <property role="3F0ifm" value="Universal Introduction" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8lZU" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8lZX" role="3EZMnx">
+        <property role="3F0ifm" value="Constructor for universal quantifier (∀). " />
+        <node concept="Vb9p2" id="4h0MmDW8m0$" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8m0l" role="3EZMnx">
+        <property role="3F0ifm" value="Must have one basis (premise) PREMISE." />
+        <node concept="Vb9p2" id="4h0MmDW8m1v" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8m0M" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must be of the form (∀ X.PREMISE)." />
+        <node concept="Vb9p2" id="4h0MmDW8m1x" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8m0T" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8m1k" role="3EZMnx">
+        <property role="3F0ifm" value="The following quote explains what it means for the quantified variable to be valid:" />
+        <node concept="Vb9p2" id="4h0MmDW8m1B" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8m11" role="3EZMnx">
+        <property role="3F0ifm" value="    &quot;if the variable being quantified appears in the sentence being quantified," />
+        <node concept="Vb9p2" id="4h0MmDW8m1z" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8m1a" role="3EZMnx">
+        <property role="3F0ifm" value="    it must not appear free in any active assumption&quot;." />
+        <node concept="Vb9p2" id="4h0MmDW8m1_" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8lZN" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8lZI" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
   </node>
 </model>
 

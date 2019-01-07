@@ -40,6 +40,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW">
+        <child id="7033942394258392116" name="overridenEditorComponent" index="1PM95z" />
+      </concept>
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
@@ -81,6 +84,9 @@
       <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
       </concept>
+      <concept id="7033942394256351208" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference" flags="ng" index="1PE4EZ">
+        <reference id="7033942394256351817" name="editorComponent" index="1PE7su" />
+      </concept>
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -116,6 +122,9 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
   </registry>
@@ -368,6 +377,50 @@
         </node>
       </node>
       <node concept="l2Vlx" id="$u9BK_zdQp" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW88l0">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="EqualityElim_DOC" />
+    <ref role="1XX52x" to="yhz9:3w0n0hzkQ4j" resolve="EqualityElim" />
+    <node concept="3EZMnI" id="4h0MmDW88l4" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW88lb" role="3EZMnx">
+        <property role="3F0ifm" value="Equality Elimination" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88le" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW88lh" role="3EZMnx">
+        <property role="3F0ifm" value="Eliminator for equality relation." />
+        <node concept="Vb9p2" id="4h0MmDW88ll" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88ln" role="3EZMnx">
+        <property role="3F0ifm" value="Must have two bases (premises) : PREMISE and an equality of the form (LEFT = RIGHT)." />
+        <node concept="Vb9p2" id="4h0MmDW88X5" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88X7" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must match PREMISE after consistently replacing LEFT with RIGHT (or the other way around)." />
+        <node concept="Vb9p2" id="4h0MmDW88Xg" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88Xi" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW88WY" role="3EZMnx">
+        <property role="3F0ifm" value="Replacement must be substitutable for the term being replaced." />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88Xt" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW88XD" role="3EZMnx">
+        <property role="3F0ifm" value="The following quotation describes what it means for a term to be free for a variable:" />
+        <node concept="Vb9p2" id="4h0MmDW88Yj" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88XQ" role="3EZMnx">
+        <property role="3F0ifm" value="   &quot;a term t is free for a variable x in a sentence s if and only if" />
+        <node concept="Vb9p2" id="4h0MmDW88Yl" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW88Y4" role="3EZMnx">
+        <property role="3F0ifm" value="    no free occurrence of x occurs within the scope of a quantifier of some variable in t&quot;" />
+        <node concept="Vb9p2" id="4h0MmDW88Yn" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW88l7" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW88l2" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
     </node>
   </node>
 </model>

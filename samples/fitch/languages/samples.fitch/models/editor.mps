@@ -19,6 +19,7 @@
         <child id="414384289274416996" name="parts" index="3ft7WO" />
       </concept>
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
+        <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
         <child id="2597348684684069742" name="contextHints" index="CpUAK" />
       </concept>
       <concept id="6822301196700715228" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference" flags="ig" index="2aJ2om">
@@ -33,6 +34,7 @@
       <concept id="1196434649611" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_SimpleString" flags="ng" index="2h3Zct">
         <property id="1196434851095" name="text" index="2h4Kg1" />
       </concept>
+      <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
@@ -61,6 +63,9 @@
         <child id="8371900013785948365" name="parameterQuery" index="2$S_pT" />
       </concept>
       <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW">
+        <child id="7033942394258392116" name="overridenEditorComponent" index="1PM95z" />
+      </concept>
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
@@ -122,6 +127,9 @@
       </concept>
       <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
+      </concept>
+      <concept id="7033942394256351208" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference" flags="ng" index="1PE4EZ">
+        <reference id="7033942394256351817" name="editorComponent" index="1PE7su" />
       </concept>
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="2722384699544370949" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Placeholder" flags="ng" index="3VyMlK" />
@@ -310,6 +318,9 @@
       </node>
       <node concept="l2Vlx" id="3JXBM6C3MQ8" role="2iSdaV" />
     </node>
+    <node concept="PMmxH" id="4h0MmDW7Yu1" role="6VMZX">
+      <ref role="PMmxG" node="4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
   </node>
   <node concept="24kQdi" id="3JXBM6C3Pwn">
     <property role="3GE5qa" value="proof.reasoning" />
@@ -319,6 +330,9 @@
         <ref role="1NtTu8" to="jfgh:2aBGSFggvpT" resolve="conclusion" />
       </node>
       <node concept="l2Vlx" id="3JXBM6C3Pws" role="2iSdaV" />
+    </node>
+    <node concept="PMmxH" id="4h0MmDW7Nkt" role="6VMZX">
+      <ref role="PMmxG" node="4h0MmDW7Nk2" resolve="Assumption_DOC" />
     </node>
   </node>
   <node concept="24kQdi" id="3JXBM6C3UQE">
@@ -629,6 +643,9 @@
     <node concept="2aJ2om" id="$u9BK_zG8W" role="CpUAK">
       <ref role="2$4xQ3" node="$u9BK_zG6f" resolve="BASIS" />
     </node>
+    <node concept="PMmxH" id="4h0MmDW7Nkv" role="6VMZX">
+      <ref role="PMmxG" node="4h0MmDW7Nk2" resolve="Assumption_DOC" />
+    </node>
   </node>
   <node concept="24kQdi" id="$u9BK_zGGT">
     <property role="3GE5qa" value="proof.reasoning" />
@@ -681,6 +698,9 @@
     <node concept="2aJ2om" id="$u9BK_zGGX" role="CpUAK">
       <ref role="2$4xQ3" node="$u9BK_zG6f" resolve="BASIS" />
     </node>
+    <node concept="PMmxH" id="4h0MmDW7YtZ" role="6VMZX">
+      <ref role="PMmxG" node="4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
   </node>
   <node concept="24kQdi" id="$u9BK__JRm">
     <property role="3GE5qa" value="proof.reasoning" />
@@ -690,6 +710,9 @@
       <node concept="3F1sOY" id="2aBGSFggwff" role="3EZMnx">
         <ref role="1NtTu8" to="jfgh:2aBGSFggvpT" resolve="conclusion" />
       </node>
+    </node>
+    <node concept="PMmxH" id="4h0MmDW7E1K" role="6VMZX">
+      <ref role="PMmxG" node="4h0MmDW7E1r" resolve="Premise_DOC" />
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK__JRu">
@@ -704,6 +727,9 @@
     </node>
     <node concept="2aJ2om" id="$u9BK__JRw" role="CpUAK">
       <ref role="2$4xQ3" node="$u9BK_zG6f" resolve="BASIS" />
+    </node>
+    <node concept="PMmxH" id="4h0MmDW7E1M" role="6VMZX">
+      <ref role="PMmxG" node="4h0MmDW7E1r" resolve="Premise_DOC" />
     </node>
   </node>
   <node concept="24kQdi" id="$u9BK__JR_">
@@ -1003,6 +1029,73 @@
   </node>
   <node concept="IW6AY" id="2DPo4JTQI2h">
     <ref role="aqKnT" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
+  </node>
+  <node concept="PKFIW" id="4h0MmDW7E1r">
+    <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Premise_DOC" />
+    <ref role="1XX52x" to="jfgh:$u9BK__JRe" resolve="Premise" />
+    <node concept="3EZMnI" id="4h0MmDW7E1t" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW7E1$" role="3EZMnx">
+        <property role="3F0ifm" value="Premise" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW7IEj" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW7E1B" role="3EZMnx">
+        <property role="3F0ifm" value="A sentence that serves as an input to the proof. Must be on top level. Doesn't require a proof." />
+        <node concept="Vb9p2" id="4h0MmDW7IEh" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW7E1w" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW7Nk2">
+    <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Assumption_DOC" />
+    <ref role="1XX52x" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
+    <node concept="3EZMnI" id="4h0MmDW7Nk4" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW7Nkb" role="3EZMnx">
+        <property role="3F0ifm" value="Assumption" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW7Nke" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW7Nkh" role="3EZMnx">
+        <property role="3F0ifm" value="Introduce assumption. Starts a new subproof. " />
+        <node concept="Vb9p2" id="4h0MmDW7Nkl" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW7Nk7" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW7NkU">
+    <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Judgement_DOC" />
+    <ref role="1XX52x" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+    <node concept="3EZMnI" id="4h0MmDW7NkW" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW7Nl3" role="3EZMnx">
+        <property role="3F0ifm" value="Judgement" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW7Nl6" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW7Nl9" role="3EZMnx">
+        <property role="3F0ifm" value="Judgement is an act of making a conclusion." />
+        <node concept="Vb9p2" id="4h0MmDW7Nld" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW7NkZ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8$kN">
+    <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Reiteration_DOC" />
+    <ref role="1XX52x" to="jfgh:5jVx7S1Yau5" resolve="Reiteration" />
+    <node concept="3EZMnI" id="4h0MmDW8$kR" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8$kY" role="3EZMnx">
+        <property role="3F0ifm" value="Reiteration" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$l1" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8$l4" role="3EZMnx">
+        <property role="3F0ifm" value="Allows to reuse a previous assumption or a premise." />
+        <node concept="Vb9p2" id="4h0MmDW8z3H" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8$kU" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8$kP" role="1PM95z">
+      <ref role="1PE7su" node="4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
   </node>
 </model>
 

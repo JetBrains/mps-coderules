@@ -67,9 +67,13 @@
         <child id="1638911550608610281" name="executeFunction" index="IWgqQ" />
         <child id="5692353713941573325" name="textFunction" index="1hCUd6" />
       </concept>
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW">
+        <child id="7033942394258392116" name="overridenEditorComponent" index="1PM95z" />
+      </concept>
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
+      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -131,6 +135,9 @@
       </concept>
       <concept id="5624877018228264944" name="jetbrains.mps.lang.editor.structure.TransformationMenuContribution" flags="ng" index="3INDKC">
         <child id="6718020819489956031" name="menuReference" index="AmTjC" />
+      </concept>
+      <concept id="7033942394256351208" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference" flags="ng" index="1PE4EZ">
+        <reference id="7033942394256351817" name="editorComponent" index="1PE7su" />
       </concept>
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="7980428675268276156" name="jetbrains.mps.lang.editor.structure.TransformationMenuSection" flags="ng" index="1Qtc8_">
@@ -1396,6 +1403,316 @@
   <node concept="3p36aQ" id="3JXBM6C6F7z">
     <property role="3GE5qa" value="proof" />
     <ref role="aqKnT" to="27wh:3JXBM6C3Fs$" resolve="PropositionalProof" />
+  </node>
+  <node concept="PKFIW" id="4h0MmDW7NlC">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="AndElim_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3UTz" resolve="AndElim" />
+    <node concept="3EZMnI" id="4h0MmDW7NlG" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW7NlN" role="3EZMnx">
+        <property role="3F0ifm" value="And Elimination" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW7NlQ" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW7NlT" role="3EZMnx">
+        <property role="3F0ifm" value="Eliminator for And (&amp;)." />
+        <node concept="Vb9p2" id="4h0MmDW7NlX" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW7Os5" role="3EZMnx">
+        <property role="3F0ifm" value="Requires one basis (premise), which must have a form of conjunction." />
+        <node concept="Vb9p2" id="4h0MmDW7Osb" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW83hg" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must match one of the conjunction members." />
+        <node concept="Vb9p2" id="4h0MmDW83ho" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW7NlJ" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW7NlE" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW83hN">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="AndIntro_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3URE" resolve="AndIntro" />
+    <node concept="3EZMnI" id="4h0MmDW83hR" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW83hY" role="3EZMnx">
+        <property role="3F0ifm" value="And Introduction" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW83i1" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW83i4" role="3EZMnx">
+        <property role="3F0ifm" value="Constructor for And (&amp;)." />
+        <node concept="Vb9p2" id="4h0MmDW83i8" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW83ia" role="3EZMnx">
+        <property role="3F0ifm" value="Must have two bases (premises) : A and B." />
+        <node concept="Vb9p2" id="4h0MmDW83ig" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW83ii" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must be a conjunction of its bases : (A &amp; B)." />
+        <node concept="Vb9p2" id="4h0MmDW83iq" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW83hU" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW83hP" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8yNo">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="IfElim_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3ZJm" resolve="IfElim" />
+    <node concept="3EZMnI" id="4h0MmDW8yNs" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8yNz" role="3EZMnx">
+        <property role="3F0ifm" value="Implication Elimination" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yNA" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8yND" role="3EZMnx">
+        <property role="3F0ifm" value="Eliminator for implication (=&gt;) (modus ponens). " />
+        <node concept="Vb9p2" id="4h0MmDW8yNM" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yNH" role="3EZMnx">
+        <property role="3F0ifm" value="Must have two bases (premises) :•" />
+        <node concept="Vb9p2" id="4h0MmDW8yO8" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yNO" role="3EZMnx">
+        <property role="3F0ifm" value="    first of the form (SENTENCE =&gt; CONCLUSION)," />
+        <node concept="Vb9p2" id="4h0MmDW8yNV" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yNX" role="3EZMnx">
+        <property role="3F0ifm" value="    and second SENTENCE," />
+        <node concept="Vb9p2" id="4h0MmDW8yO6" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z3P" role="3EZMnx">
+        <property role="3F0ifm" value="    where CONCLUSION is the judgement's conslusion." />
+        <node concept="Vb9p2" id="4h0MmDW8z41" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8yNv" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8yNq" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8yP0">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="IfIntro_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3ZJ9" resolve="IfIntro" />
+    <node concept="3EZMnI" id="4h0MmDW8yP4" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8yPb" role="3EZMnx">
+        <property role="3F0ifm" value="Implication Introduction" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yPe" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8yPh" role="3EZMnx">
+        <property role="3F0ifm" value="Constructor for implication (=&gt;)." />
+        <node concept="Vb9p2" id="4h0MmDW8yPl" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yVE" role="3EZMnx">
+        <property role="3F0ifm" value="Must have one basis (premise) which is an assumption in the preceding subproof." />
+        <node concept="Vb9p2" id="4h0MmDW8yVR" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yVK" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must be be of the form (ASSUMPTION =&gt; LAST)," />
+        <node concept="Vb9p2" id="4h0MmDW8yVT" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8Ooi" role="3EZMnx">
+        <property role="3F0ifm" value="   where ASSUMPTION is the assumption in the preceding subproof," />
+        <node concept="Vb9p2" id="4h0MmDW8OoB" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8Oos" role="3EZMnx">
+        <property role="3F0ifm" value="   and LAST is the last judgement in the same subproof." />
+        <node concept="Vb9p2" id="4h0MmDW8OoD" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8yP7" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8yP2" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8yWk">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="IffElim_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3ZJo" resolve="IffElim" />
+    <node concept="3EZMnI" id="4h0MmDW8yWo" role="2wV5jI">
+      <node concept="2iRkQZ" id="4h0MmDW8yWr" role="2iSdaV" />
+      <node concept="3F0ifn" id="4h0MmDW8yWv" role="3EZMnx">
+        <property role="3F0ifm" value="Biconditional Elimination" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yWx" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8z1a" role="3EZMnx">
+        <property role="3F0ifm" value="Eliminator for Biconditional (&lt;=&gt;). " />
+        <node concept="Vb9p2" id="4h0MmDW8z1i" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8yW$" role="3EZMnx">
+        <property role="3F0ifm" value="Must have one basis (premise) of the form (A &lt;=&gt; B) or (B &lt;=&gt; A). " />
+        <node concept="Vb9p2" id="4h0MmDW8z0e" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z09" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must be of the form (A =&gt; B). " />
+        <node concept="Vb9p2" id="4h0MmDW8z0g" role="3F10Kt" />
+      </node>
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8yWm" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8z0F">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="IffIntro_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3ZJn" resolve="IffIntro" />
+    <node concept="3EZMnI" id="4h0MmDW8z0J" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8z0Q" role="3EZMnx">
+        <property role="3F0ifm" value="Biconditional Introduction" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z13" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8z16" role="3EZMnx">
+        <property role="3F0ifm" value="Constructor for Biconditinoal (&lt;=&gt;)." />
+        <node concept="Vb9p2" id="4h0MmDW8z1k" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z1m" role="3EZMnx">
+        <property role="3F0ifm" value="Must have two bases (premises) of the form (A =&gt; B) and (B =&gt; A)." />
+        <node concept="Vb9p2" id="4h0MmDW8z1z" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z1s" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must be of the form (A &lt;=&gt; B)." />
+        <node concept="Vb9p2" id="4h0MmDW8z1_" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8z0M" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8z0H" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8z20">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="NotElim_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3ZJ8" resolve="NotElim" />
+    <node concept="3EZMnI" id="4h0MmDW8z24" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8z2b" role="3EZMnx">
+        <property role="3F0ifm" value="Negation Elimination" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z2e" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8z2h" role="3EZMnx">
+        <property role="3F0ifm" value="Eliminator for negation (~)." />
+        <node concept="Vb9p2" id="4h0MmDW8z2l" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z2n" role="3EZMnx">
+        <property role="3F0ifm" value="Must have one basis (premise) of the form (~~CONCLUSION)," />
+        <node concept="Vb9p2" id="4h0MmDW8z2t" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z43" role="3EZMnx">
+        <property role="3F0ifm" value="    where CONCLUSION is the judgement's conclusion." />
+        <node concept="Vb9p2" id="4h0MmDW8z4b" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8z27" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8z22" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8z2S">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="NotIntro_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3UTA" resolve="NotIntro" />
+    <node concept="3EZMnI" id="4h0MmDW8z2W" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8z33" role="3EZMnx">
+        <property role="3F0ifm" value="Negation Introduction" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z36" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8z39" role="3EZMnx">
+        <property role="3F0ifm" value="Constructor for negation (~)." />
+        <node concept="Vb9p2" id="4h0MmDW8z3d" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z3f" role="3EZMnx">
+        <property role="3F0ifm" value="Must have two bases (premises) : " />
+        <node concept="Vb9p2" id="4h0MmDW8z3H" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z3l" role="3EZMnx">
+        <property role="3F0ifm" value="   one of the form (SENTENCE =&gt; A)," />
+        <node concept="Vb9p2" id="4h0MmDW8z3J" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z3s" role="3EZMnx">
+        <property role="3F0ifm" value="   and another of the form (SENTENCE =&gt; ~A)" />
+        <node concept="Vb9p2" id="4h0MmDW8z3L" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z3$" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must be of the form ~SENTENCE." />
+        <node concept="Vb9p2" id="4h0MmDW8z3N" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8z2Z" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8z2U" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8z4A">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="OrElim_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3UT_" resolve="OrElim" />
+    <node concept="3EZMnI" id="4h0MmDW8z4E" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8z4L" role="3EZMnx">
+        <property role="3F0ifm" value="Or Elimination" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z4O" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8z4R" role="3EZMnx">
+        <property role="3F0ifm" value="Eliminator for Or (|)." />
+        <node concept="Vb9p2" id="4h0MmDW8z50" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8z52" role="3EZMnx">
+        <property role="3F0ifm" value="Must have three bases (premises): " />
+        <node concept="Vb9p2" id="4h0MmDW8$bP" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$bf" role="3EZMnx">
+        <property role="3F0ifm" value="    first of the form (A =&gt; CONCLUSION)," />
+        <node concept="Vb9p2" id="4h0MmDW8$bR" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$bn" role="3EZMnx">
+        <property role="3F0ifm" value="    second of the form (B =&gt; CONCLUSION)," />
+        <node concept="Vb9p2" id="4h0MmDW8$bT" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$bw" role="3EZMnx">
+        <property role="3F0ifm" value="    and third of the form (A | B) or (B | A)," />
+        <node concept="Vb9p2" id="4h0MmDW8$bV" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$bE" role="3EZMnx">
+        <property role="3F0ifm" value="    where CONCLUSION is the judgement's conclusion." />
+        <node concept="Vb9p2" id="4h0MmDW8$bX" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8z4H" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8z4C" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8$cA">
+    <property role="3GE5qa" value="proof.rule" />
+    <property role="TrG5h" value="OrIntro_DOC" />
+    <ref role="1XX52x" to="27wh:3JXBM6C3UT$" resolve="OrIntro" />
+    <node concept="3EZMnI" id="4h0MmDW8$cE" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8$cL" role="3EZMnx">
+        <property role="3F0ifm" value="Or Introduction" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$cO" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8$cR" role="3EZMnx">
+        <property role="3F0ifm" value="Constructor for Or (|)." />
+        <node concept="Vb9p2" id="4h0MmDW8$cV" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$cX" role="3EZMnx">
+        <property role="3F0ifm" value="Must have one basis (premise) : PREMISE." />
+        <node concept="Vb9p2" id="4h0MmDW8$kk" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$k5" role="3EZMnx">
+        <property role="3F0ifm" value="Conclusion must be of the form (SENTENCE | PREMISE) or (PREMISE | SENTENCE)," />
+        <node concept="Vb9p2" id="4h0MmDW8$km" role="3F10Kt" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$kc" role="3EZMnx">
+        <property role="3F0ifm" value="    where SENTENCE is any sentence." />
+        <node concept="Vb9p2" id="4h0MmDW8$ko" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8$cH" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8$cC" role="1PM95z">
+      <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
   </node>
 </model>
 
