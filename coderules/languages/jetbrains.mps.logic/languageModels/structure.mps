@@ -34,6 +34,7 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
@@ -75,6 +76,8 @@
     <property role="TrG5h" value="DataNodeExpression" />
     <property role="EcuMT" value="7571593955706120730" />
     <property role="3GE5qa" value="dataform.expression" />
+    <property role="34LRSv" value="dataform" />
+    <property role="R4oN_" value="data form literal expression" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="6$jH9oLmVNm" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -88,6 +91,8 @@
     <property role="TrG5h" value="TermNode" />
     <property role="3GE5qa" value="dataform" />
     <property role="EcuMT" value="7571593955706137125" />
+    <property role="34LRSv" value="term" />
+    <property role="R4oN_" value="term node" />
     <ref role="1TJDcQ" node="5lJXKARS0" resolve="DataNode" />
     <node concept="1TJgyj" id="6$jH9oLnyAp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -112,6 +117,8 @@
     <property role="TrG5h" value="ChildRole" />
     <property role="3GE5qa" value="dataform.role" />
     <property role="EcuMT" value="7571593955706137263" />
+    <property role="34LRSv" value="childRole" />
+    <property role="R4oN_" value="child role node" />
     <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="RoleNode" />
     <node concept="1TJgyj" id="6$jH9oLmYFB" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -125,6 +132,8 @@
     <property role="TrG5h" value="ValueRole" />
     <property role="3GE5qa" value="dataform.role" />
     <property role="EcuMT" value="7571593955706137472" />
+    <property role="34LRSv" value="valueRole" />
+    <property role="R4oN_" value="value role node" />
     <ref role="1TJDcQ" node="6$jH9oLmYD_" resolve="RoleNode" />
     <node concept="1TJgyj" id="6$jH9oLmYL8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -138,6 +147,8 @@
     <property role="TrG5h" value="Value" />
     <property role="3GE5qa" value="dataform" />
     <property role="EcuMT" value="7571593955706137573" />
+    <property role="34LRSv" value="value" />
+    <property role="R4oN_" value="value node" />
     <ref role="1TJDcQ" node="5yqFHXo6Ubn" resolve="DataForm" />
     <node concept="1TJgyi" id="6$jH9oLmYKA" role="1TKVEl">
       <property role="TrG5h" value="value" />
@@ -177,8 +188,9 @@
   <node concept="1TIwiD" id="2q_78a8W4yS">
     <property role="3GE5qa" value="dataform" />
     <property role="TrG5h" value="Wildcard" />
-    <property role="34LRSv" value="_" />
+    <property role="34LRSv" value="wildcard" />
     <property role="EcuMT" value="2784663291567294648" />
+    <property role="R4oN_" value="wildcard node" />
     <ref role="1TJDcQ" node="5yqFHXo6Ubn" resolve="DataForm" />
   </node>
   <node concept="1TIwiD" id="7E86$tKsl45">
@@ -280,6 +292,8 @@
     <property role="3GE5qa" value="dataform" />
     <property role="TrG5h" value="ListNode" />
     <property role="EcuMT" value="2105510410850132386" />
+    <property role="R4oN_" value="list node" />
+    <property role="34LRSv" value="list" />
     <ref role="1TJDcQ" node="5lJXKARS0" resolve="DataNode" />
     <node concept="1TJgyj" id="1OShD0HAZ38" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -326,6 +340,7 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1OShD0HAY6y" resolve="ListNode" />
     </node>
+    <node concept="asaX9" id="2L$SfABkf0J" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="428_4iYhwbR">
     <property role="EcuMT" value="4650129638230983415" />
@@ -346,6 +361,8 @@
     <property role="EcuMT" value="6856711987710888499" />
     <property role="3GE5qa" value="logical.item" />
     <property role="TrG5h" value="DataNodeLiteral" />
+    <property role="34LRSv" value="dataform" />
+    <property role="R4oN_" value="data form literal" />
     <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
     <node concept="1TJgyj" id="5WBVN_MESCO" role="1TKVEi">
       <property role="IQ2ns" value="6856711987710888500" />
@@ -557,6 +574,19 @@
       <property role="20kJfa" value="code" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2L$SfAAUQEl">
+    <property role="EcuMT" value="3198928998191819413" />
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="NewLineAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="2L$SfAAUS3M" role="lGtFl">
+      <property role="Hh88m" value="newline" />
+      <node concept="trNpa" id="2L$SfAAVlhr" role="EQaZv">
+        <ref role="trN6q" node="5yqFHXo6Ubn" resolve="DataForm" />
+      </node>
+      <node concept="tn0Fv" id="2L$SfAAV6TP" role="HhnKV" />
     </node>
   </node>
 </model>
