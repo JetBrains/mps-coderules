@@ -234,6 +234,7 @@
       <concept id="8243879142738608185" name="jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest" flags="in" index="1KhYhu" />
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
+      <concept id="3198928998191819413" name="jetbrains.mps.logic.structure.NewLineAttribute" flags="ng" index="2azSDG" />
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.ListNode" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
@@ -1906,6 +1907,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB5zgJ" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="7t5VLKGALYn" role="KCVpo">
                     <node concept="1oi5UN" id="4JRKVCv2h$c" role="KCVpo">
@@ -2020,6 +2022,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfABi6RI" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="7t5VLKGALYX" role="KCVpo">
                     <node concept="1oi5UN" id="4JRKVCv2h$T" role="KCVpo">
@@ -2064,6 +2067,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfABi7k_" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="7t5VLKGALZa" role="KCVpo">
                     <node concept="1oi5UN" id="4JRKVCv2h_d" role="KCVpo">
@@ -2255,6 +2259,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB6hmp" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="3hfdu5cNgqG" role="KCVpo">
                     <node concept="1oi5UN" id="3hfdu5cNgqH" role="KCVpo">
@@ -2369,6 +2374,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB6wYj" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="3KV3FXk2mJp" role="KCVpo">
                     <node concept="1oi5UN" id="3KV3FXk2mJq" role="KCVpo">
@@ -3386,6 +3392,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB8s3P" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="3KV3FXjXcVT" role="KCVpo">
                     <node concept="1oi5UN" id="3KV3FXjXcVU" role="KCVpo">
@@ -3621,6 +3628,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB7Ysm" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="3KV3FXk18NJ" role="KCVpo">
                     <node concept="1oi5UN" id="3KV3FXk18NK" role="KCVpo">
@@ -3882,6 +3890,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB8d62" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="6N2bvv_ty6Q" role="KCVpo">
                     <node concept="1oi5UN" id="6N2bvv_ty6R" role="KCVpo">
@@ -3982,6 +3991,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB8d65" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="2rIdnPvBis1" role="KCVpo">
                     <node concept="1oi5UN" id="2rIdnPvBis2" role="KCVpo">
@@ -4082,6 +4092,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB8dyO" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="2rIdnPvBhMy" role="KCVpo">
                     <node concept="1oi5UN" id="2rIdnPvBhMz" role="KCVpo">
@@ -4154,6 +4165,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB8dyR" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="6N2bvv_tzDA" role="KCVpo">
                     <node concept="1oi5UN" id="6N2bvv_tzDB" role="KCVpo">
@@ -4240,6 +4252,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB8dZA" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="6N2bvv_tzJb" role="KCVpo">
                     <node concept="1oi5UN" id="6N2bvv_tzJc" role="KCVpo">
@@ -4284,6 +4297,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB8dZD" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="6N2bvv_tzP6" role="KCVpo">
                     <node concept="1oi5UN" id="6N2bvv_tzP7" role="KCVpo">
@@ -4686,6 +4700,7 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2azSDG" id="2L$SfAB79x_" role="lGtFl" />
                   </node>
                   <node concept="KCUsM" id="6N2bvv_tzZx" role="KCVpo">
                     <node concept="1oi5UN" id="6N2bvv_tzZy" role="KCVpo">
