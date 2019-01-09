@@ -374,6 +374,40 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="1IKbs5XIs8G" role="1SL9yI">
+      <property role="TrG5h" value="DemoScopes" />
+      <node concept="3cqZAl" id="1IKbs5XIs8H" role="3clF45" />
+      <node concept="3clFbS" id="1IKbs5XIs8L" role="3clF47">
+        <node concept="2Hmddi" id="RcyXiSVPlH" role="3cqZAp">
+          <node concept="2OqwBi" id="RcyXiSVPlI" role="2Hmdds">
+            <node concept="2OqwBi" id="RcyXiSVPlJ" role="2Oq$k0">
+              <node concept="2YIFZM" id="RcyXiSVPlK" role="2Oq$k0">
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <ref role="37wK5l" to=":^" resolve="ofNode" />
+                <node concept="2OqwBi" id="RcyXiSVPlL" role="37wK5m">
+                  <node concept="2WthIp" id="RcyXiSVPlM" role="2Oq$k0" />
+                  <node concept="2XshWL" id="RcyXiSVPlN" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="RcyXiSVPlO" role="2XxRq1">
+                      <node concept="ZC_QK" id="RcyXiSVPvg" role="2tJFKM">
+                        <ref role="2aWVGs" to="ysck:JqEP$8t9fh" resolve="DemoScopes" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1jxXqW" id="RcyXiSVPlQ" role="37wK5m" />
+              </node>
+              <node concept="liA8E" id="RcyXiSVPlR" role="2OqNvi">
+                <ref role="37wK5l" to=":^" resolve="skipLocal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="RcyXiSVPlS" role="2OqNvi">
+              <ref role="37wK5l" to=":^" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2XrIbr" id="35YJGAJTxCf" role="1qtyYc">
       <property role="TrG5h" value="resolve" />
       <node concept="37vLTG" id="35YJGAJTxCF" role="3clF46">
