@@ -185,9 +185,6 @@
       <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
     </language>
     <language id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic">
-      <concept id="8456919074574710634" name="jetbrains.mps.logic.structure.ExpressionItem" flags="ng" index="37jhX">
-        <child id="8456919074574710741" name="code" index="37jj2" />
-      </concept>
       <concept id="8169506320648805904" name="jetbrains.mps.logic.structure.LogicalVariableDeclarationContainer" flags="ng" index="29MRiA">
         <child id="6399471711045617306" name="dataType" index="3vLBG7" />
         <child id="3063948360254832884" name="declaration" index="3XD1gS" />
@@ -6066,126 +6063,6 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="1X3_iC" id="RcyXiSZsaN" role="lGtFl">
-                      <property role="3V$3am" value="statement" />
-                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                      <node concept="3Aqczg" id="RcyXiSZrXf" role="8Wnug">
-                        <node concept="3A8Hvi" id="RcyXiSZrXg" role="3Aqpz8">
-                          <node concept="a7P8L" id="RcyXiSZrXh" role="3A8wtg">
-                            <ref role="a7OzE" node="48ZGLP8weBp" resolve="TV" />
-                          </node>
-                          <node concept="ns1u0" id="RcyXiSZrXi" role="3A8w4Q">
-                            <ref role="ns1xF" node="48ZGLP7GYxP" resolve="Var" />
-                            <node concept="nsMwS" id="RcyXiSZrXj" role="ns1xD">
-                              <ref role="nsMwP" node="48ZGLP7GYyd" resolve="name" />
-                              <node concept="1nq8_$" id="RcyXiSZrXk" role="nsMwV">
-                                <node concept="HKQnh" id="RcyXiSZrXl" role="1nq8_t">
-                                  <node concept="1nq8_$" id="RcyXiSZrXm" role="HKQng">
-                                    <node concept="a7P8L" id="RcyXiSZrXn" role="1nq8_t">
-                                      <ref role="a7OzE" node="48ZGLP8beNw" resolve="Name" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="1X3_iC" id="RcyXiSYDgg" role="lGtFl">
-                      <property role="3V$3am" value="statement" />
-                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                      <node concept="3Aqczg" id="48ZGLP8rJPo" role="8Wnug">
-                        <node concept="3A8Hvi" id="48ZGLP8rJS9" role="3Aqpz8">
-                          <node concept="a7P8L" id="48ZGLP8weC3" role="3A8wtg">
-                            <ref role="a7OzE" node="48ZGLP8weBp" resolve="TV" />
-                          </node>
-                          <node concept="ns1u0" id="48ZGLP8rJSn" role="3A8w4Q">
-                            <ref role="ns1xF" node="48ZGLP7GYxP" resolve="Var" />
-                            <node concept="nsMwS" id="48ZGLP8rJSp" role="ns1xD">
-                              <ref role="nsMwP" node="48ZGLP7GYyd" resolve="name" />
-                              <node concept="2YIFZM" id="48ZGLP8rJUo" role="nsMwV">
-                                <ref role="37wK5l" to="6exd:5JQSuNsxb_I" resolve="create" />
-                                <ref role="1Pybhc" to="6exd:2xQ7eRAD2dj" resolve="Value" />
-                                <node concept="1nq8_$" id="48ZGLP8rJV_" role="37wK5m">
-                                  <node concept="HKQnh" id="48ZGLP8rJV$" role="1nq8_t">
-                                    <node concept="1nq8_$" id="48ZGLP8rJXe" role="HKQng">
-                                      <node concept="a7P8L" id="48ZGLP8rJXd" role="1nq8_t">
-                                        <ref role="a7OzE" node="48ZGLP8beNw" resolve="Name" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="1X3_iC" id="48ZGLP8uqT9" role="lGtFl">
-                      <property role="3V$3am" value="statement" />
-                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                      <node concept="3Aqczg" id="48ZGLP8t7he" role="8Wnug">
-                        <node concept="3A8Hvi" id="48ZGLP8t7ko" role="3Aqpz8">
-                          <node concept="a7P8L" id="48ZGLP8y96w" role="3A8wtg">
-                            <ref role="a7OzE" node="48ZGLP8weBp" resolve="TV" />
-                          </node>
-                          <node concept="ns1u0" id="48ZGLP8t7kA" role="3A8w4Q">
-                            <ref role="ns1xF" node="48ZGLP7GYxP" resolve="Var" />
-                            <node concept="nsMwS" id="48ZGLP8t7kC" role="ns1xD">
-                              <ref role="nsMwP" node="48ZGLP7GYyd" resolve="name" />
-                              <node concept="2YIFZM" id="48ZGLP8t7mB" role="nsMwV">
-                                <ref role="37wK5l" to="6exd:5JQSuNsxb_I" resolve="create" />
-                                <ref role="1Pybhc" to="6exd:2xQ7eRAD2dj" resolve="Value" />
-                                <node concept="1nq8_$" id="48ZGLP8t7nP" role="37wK5m">
-                                  <node concept="37jhX" id="48ZGLP8t7nN" role="1nq8_t">
-                                    <node concept="1nq8_$" id="48ZGLP8tLFf" role="37jj2">
-                                      <node concept="HKQnh" id="48ZGLP8tLFe" role="1nq8_t">
-                                        <node concept="1TmgYN" id="48ZGLP8tLHa" role="HKQng">
-                                          <node concept="1nq8_$" id="48ZGLP8tLIx" role="1Tms7$">
-                                            <node concept="a7P8L" id="48ZGLP8tLIv" role="1nq8_t">
-                                              <ref role="a7OzE" node="48ZGLP8beNw" resolve="Name" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="1X3_iC" id="48ZGLP8uMKf" role="lGtFl">
-                      <property role="3V$3am" value="statement" />
-                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                      <node concept="3Aqczg" id="48ZGLP8uqLW" role="8Wnug">
-                        <node concept="3A8Hvi" id="48ZGLP8uqSa" role="3Aqpz8">
-                          <node concept="a7P8L" id="48ZGLP8y99P" role="3A8wtg">
-                            <ref role="a7OzE" node="48ZGLP8weBp" resolve="TV" />
-                          </node>
-                          <node concept="HKQnh" id="48ZGLP8uqSo" role="3A8w4Q">
-                            <node concept="1nq8_$" id="48ZGLP8uqSu" role="HKQng">
-                              <node concept="ns1u0" id="48ZGLP8uqSt" role="1nq8_t">
-                                <ref role="ns1xF" node="48ZGLP7GYxP" resolve="Var" />
-                                <node concept="nsMwS" id="48ZGLP8uqS_" role="ns1xD">
-                                  <ref role="nsMwP" node="48ZGLP7GYyd" resolve="name" />
-                                  <node concept="1TmgYN" id="48ZGLP8uqSH" role="nsMwV">
-                                    <node concept="1nq8_$" id="48ZGLP8uqSS" role="1Tms7$">
-                                      <node concept="a7P8L" id="48ZGLP8uqSQ" role="1nq8_t">
-                                        <ref role="a7OzE" node="48ZGLP8beNw" resolve="Name" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node concept="3Aqczg" id="48ZGLP8weLk" role="3cqZAp">
                       <node concept="3A8Hvi" id="48ZGLP8weRt" role="3Aqpz8">
                         <node concept="a7P8L" id="48ZGLP8weRA" role="3A8wtg">
@@ -7388,6 +7265,17 @@
     <node concept="1nLNMY" id="1IKbs5X$K1I" role="1nK1Vg">
       <property role="TrG5h" value="renameTypeVars" />
       <node concept="3clFbS" id="1IKbs5X$K1J" role="1nLNMH">
+        <node concept="3SKdUt" id="2O9ahh6mGHO" role="3cqZAp">
+          <node concept="3SKdUq" id="2O9ahh6mGHQ" role="3SKWNk">
+            <property role="3SKdUp" value="Fails on bound instantiated type vars by design" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2O9ahh6mGKH" role="3cqZAp">
+          <node concept="3SKdUq" id="2O9ahh6mGKJ" role="3SKWNk">
+            <property role="3SKdUp" value="Binds free variables to VarRef to propagate its names" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="2O9ahh6mGIM" role="3cqZAp" />
         <node concept="1nLNNL" id="1IKbs5X$K1K" role="3cqZAp">
           <node concept="1nLNMm" id="1IKbs5X$K1L" role="1nLNNK">
             <node concept="0eUR_" id="1IKbs5X$K1M" role="0UC6o">
@@ -7536,9 +7424,15 @@
     <node concept="1nLNMY" id="1IKbs5XihRK" role="1nK1Vg">
       <property role="TrG5h" value="checkTypeVars" />
       <node concept="3clFbS" id="1IKbs5XihRL" role="1nLNMH">
+        <node concept="3SKdUt" id="2O9ahh6mGvD" role="3cqZAp">
+          <node concept="3SKdUq" id="2O9ahh6mGvF" role="3SKWNk">
+            <property role="3SKdUp" value="Checks that there exist no conflicting instantiations of the same type var" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="2O9ahh6mGwC" role="3cqZAp" />
         <node concept="3SKdUt" id="1IKbs5Xii5q" role="3cqZAp">
           <node concept="3SKdUq" id="1IKbs5Xii5s" role="3SKWNk">
-            <property role="3SKdUp" value="Don't touch bound terms &amp; don't bind (rename) free variables" />
+            <property role="3SKdUp" value="Allow bound terms &amp; don't bind (rename, in a sense) free variables" />
           </node>
         </node>
         <node concept="3SKdUt" id="1IKbs5X_vMz" role="3cqZAp">
@@ -7563,7 +7457,7 @@
                   <property role="TrG5h" value="OrigTVar" />
                 </node>
                 <node concept="aZer4" id="1IKbs5XihRU" role="3XD1gS">
-                  <property role="TrG5h" value="TVar" />
+                  <property role="TrG5h" value="ITVar" />
                 </node>
                 <node concept="aZer4" id="1IKbs5XihRV" role="3XD1gS">
                   <property role="TrG5h" value="TVsTail" />
@@ -7588,7 +7482,7 @@
                           <ref role="nsMwP" node="48ZGLP7pl6$" resolve="head" />
                           <node concept="1nq8_$" id="1IKbs5XihS5" role="nsMwV">
                             <node concept="a7P8L" id="1IKbs5XihS6" role="1nq8_t">
-                              <ref role="a7OzE" node="1IKbs5XihRU" resolve="TVar" />
+                              <ref role="a7OzE" node="1IKbs5XihRU" resolve="ITVar" />
                             </node>
                           </node>
                         </node>
@@ -7650,7 +7544,7 @@
                 <node concept="3I6s7M" id="1IKbs5XihSy" role="3I6sU7">
                   <node concept="2aLmEc" id="1IKbs5XihSz" role="3I6s78">
                     <node concept="a7P8L" id="1IKbs5XihS$" role="2aLmnP">
-                      <ref role="a7OzE" node="1IKbs5XihRU" resolve="TVar" />
+                      <ref role="a7OzE" node="1IKbs5XihRU" resolve="ITVar" />
                     </node>
                   </node>
                 </node>
@@ -7818,7 +7712,7 @@
         <node concept="3clFbH" id="1IKbs5X_w4w" role="3cqZAp" />
         <node concept="3SKdUt" id="1IKbs5X_w6d" role="3cqZAp">
           <node concept="3SKdUq" id="1IKbs5X_w6f" role="3SKWNk">
-            <property role="3SKdUp" value="otherwise TVar isn't free instantiated variable --- it was bound to some term" />
+            <property role="3SKdUp" value="otherwise TVar isn't free instantiated variable --- it was bound to some term, it's ok" />
           </node>
         </node>
       </node>
