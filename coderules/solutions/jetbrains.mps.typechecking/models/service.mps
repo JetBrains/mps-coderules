@@ -272,6 +272,10 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="1803469493727536395" name="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" flags="ng" index="hTh3S">
+        <child id="1803469493727536396" name="concept" index="hTh3Z" />
+      </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -280,6 +284,9 @@
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1227264722563" name="jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression" flags="nn" index="2YFouu" />
+      <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
+        <reference id="1154546997487" name="concept" index="3gnhBz" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -636,6 +643,11 @@
                                 </node>
                               </node>
                               <node concept="1xIGOp" id="27bTNFfaZ25" role="1xVPHs" />
+                              <node concept="hTh3S" id="2ZFX$PQvJ_1" role="1xVPHs">
+                                <node concept="3gn64h" id="2ZFX$PQvL21" role="hTh3Z">
+                                  <ref role="3gnhBz" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                           <node concept="3zZkjj" id="27bTNFfaZ26" role="2OqNvi">
@@ -1050,11 +1062,14 @@
                             <node concept="Xl_RD" id="27bTNFfaZ4N" role="37wK5m">
                               <property role="Xl_RC" value="Advised error not triggered in '%s'" />
                             </node>
-                            <node concept="2OqwBi" id="27bTNFfaZ4O" role="37wK5m">
-                              <node concept="37vLTw" id="27bTNFfaZ4P" role="2Oq$k0">
-                                <ref role="3cqZAo" node="27bTNFfaZ4u" resolve="ea" />
+                            <node concept="2OqwBi" id="2ZFX$PQooP9" role="37wK5m">
+                              <node concept="2OqwBi" id="27bTNFfaZ4O" role="2Oq$k0">
+                                <node concept="37vLTw" id="27bTNFfaZ4P" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="27bTNFfaZ4u" resolve="ea" />
+                                </node>
+                                <node concept="1mfA1w" id="27bTNFfaZ4Q" role="2OqNvi" />
                               </node>
-                              <node concept="1mfA1w" id="27bTNFfaZ4Q" role="2OqNvi" />
+                              <node concept="iZEcu" id="2ZFX$PQoYli" role="2OqNvi" />
                             </node>
                           </node>
                         </node>
