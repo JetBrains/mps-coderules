@@ -2,7 +2,7 @@
 <model ref="r:65f97255-4bb1-4783-acd6-a4ed5a1088e2(jetbrains.mps.typechecking.testlang.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="14" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="15" />
     <use id="cba985fe-1e96-4f16-9f8d-b07434405d4f" name="jetbrains.mps.lang.smodel.types" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
@@ -242,6 +242,10 @@
       <concept id="7368070394769139970" name="jetbrains.mps.lang.coderules.structure.RuleInputReference" flags="ng" index="3A2sRY">
         <reference id="7368070394769213644" name="declaration" index="3A2yKK" />
       </concept>
+      <concept id="7368070394770780974" name="jetbrains.mps.lang.coderules.structure.UnifiesConstraint" flags="ng" index="3A8Hvi">
+        <child id="7368070394770793930" name="value" index="3A8w4Q" />
+        <child id="7368070394770793388" name="assignee" index="3A8wtg" />
+      </concept>
       <concept id="7368070394766963750" name="jetbrains.mps.lang.coderules.structure.Head" flags="ng" index="3Aq93q">
         <property id="7368070394767443940" name="keep" index="3ArMco" />
       </concept>
@@ -265,10 +269,6 @@
       </concept>
       <concept id="8581119423153238082" name="jetbrains.mps.lang.coderules.structure.NodeAnchor" flags="ng" index="3BlFb$">
         <child id="8581119423153238083" name="node" index="3BlFb_" />
-      </concept>
-      <concept id="1877115349178398764" name="jetbrains.mps.lang.coderules.structure.EqualsConstraint" flags="ng" index="3GeI9q">
-        <child id="1877115349178398815" name="right" index="3GeI8D" />
-        <child id="1877115349178398813" name="left" index="3GeI8F" />
       </concept>
       <concept id="1553157749316176827" name="jetbrains.mps.lang.coderules.structure.PatternLogicalVariable" flags="ng" index="1HFMs5">
         <child id="5131913661993028915" name="variable" index="1uarlU" />
@@ -785,11 +785,11 @@
       <node concept="3uniRm" id="7mB3viLcERP" role="3unh6L">
         <node concept="3clFbS" id="7mB3viLcERW" role="3uniRr">
           <node concept="3Aqczg" id="7mB3viLcOg5" role="3cqZAp">
-            <node concept="3GeI9q" id="7mB3viLcOfZ" role="3Aqpz8">
-              <node concept="aZ4PW" id="7mB3viLcOgX" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xUSeK" role="3Aqpz8">
+              <node concept="aZ4PW" id="7mB3viLcOgX" role="3A8wtg">
                 <node concept="3txIi4" id="7mB3viLcOh3" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7mB3viLcOh9" role="3GeI8D">
+              <node concept="ns1u0" id="7mB3viLcOh9" role="3A8w4Q">
                 <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
                 <node concept="nsMwS" id="7mB3viLdDgZ" role="ns1xD">
                   <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
@@ -858,11 +858,11 @@
       <node concept="3uniRm" id="7mB3viLdD9E" role="3unh6L">
         <node concept="3clFbS" id="7mB3viLdD9K" role="3uniRr">
           <node concept="3Aqczg" id="7mB3viLdD9J" role="3cqZAp">
-            <node concept="3GeI9q" id="7mB3viLdD9G" role="3Aqpz8">
-              <node concept="aZ4PW" id="7mB3viLdD9Q" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xUSeL" role="3Aqpz8">
+              <node concept="aZ4PW" id="7mB3viLdD9Q" role="3A8wtg">
                 <node concept="3txIi4" id="7mB3viLdD9W" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7mB3viLdDcc" role="3GeI8D">
+              <node concept="ns1u0" id="7mB3viLdDcc" role="3A8w4Q">
                 <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
                 <node concept="nsMwS" id="7mB3viLdDce" role="ns1xD">
                   <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
@@ -929,11 +929,11 @@
       <node concept="3uniRm" id="7mB3viLggrJ" role="3unh6L">
         <node concept="3clFbS" id="7mB3viLggrP" role="3uniRr">
           <node concept="3Aqczg" id="7mB3viLggrO" role="3cqZAp">
-            <node concept="3GeI9q" id="7mB3viLggrL" role="3Aqpz8">
-              <node concept="aZ4PW" id="7mB3viLggrV" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xUSeM" role="3Aqpz8">
+              <node concept="aZ4PW" id="7mB3viLggrV" role="3A8wtg">
                 <node concept="3txIi4" id="7mB3viLggs1" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7mB3viLggs9" role="3GeI8D">
+              <node concept="ns1u0" id="7mB3viLggs9" role="3A8w4Q">
                 <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
                 <node concept="nsMwS" id="7mB3viLggsn" role="ns1xD">
                   <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
