@@ -2,7 +2,7 @@
 <model ref="r:a40f7100-fd07-4b1c-98c5-112d92c92128(samples.fitch.firstOrderLogic.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="14" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="15" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
@@ -307,10 +307,6 @@
       <concept id="8581119423153238082" name="jetbrains.mps.lang.coderules.structure.NodeAnchor" flags="ng" index="3BlFb$">
         <child id="8581119423153238083" name="node" index="3BlFb_" />
       </concept>
-      <concept id="1877115349178398764" name="jetbrains.mps.lang.coderules.structure.EqualsConstraint" flags="ng" index="3GeI9q">
-        <child id="1877115349178398815" name="right" index="3GeI8D" />
-        <child id="1877115349178398813" name="left" index="3GeI8F" />
-      </concept>
       <concept id="1553157749316176827" name="jetbrains.mps.lang.coderules.structure.PatternLogicalVariable" flags="ng" index="1HFMs5">
         <child id="5131913661993028915" name="variable" index="1uarlU" />
         <child id="5131913661993028917" name="value" index="1uarlW" />
@@ -397,11 +393,11 @@
             </node>
           </node>
           <node concept="3Aqczg" id="3w0n0hzlYj1" role="3cqZAp">
-            <node concept="3GeI9q" id="3w0n0hzlYiV" role="3Aqpz8">
-              <node concept="aZ4PW" id="3w0n0hzlYje" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xtN57" role="3Aqpz8">
+              <node concept="aZ4PW" id="3w0n0hzlYje" role="3A8wtg">
                 <node concept="3txIi4" id="3w0n0hzlYjk" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7VBaGntKJ8V" role="3GeI8D">
+              <node concept="ns1u0" id="7VBaGntKJ8V" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
                 <node concept="nsMwS" id="7VBaGntKJ8W" role="ns1xD">
                   <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />

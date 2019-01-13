@@ -2,7 +2,7 @@
 <model ref="r:30d249b0-c2b0-4934-8bd8-e1d7a37c3b3b(samples.fitch.propositionalLogic.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="14" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="15" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
@@ -234,6 +234,10 @@
       <concept id="7368070394769139970" name="jetbrains.mps.lang.coderules.structure.RuleInputReference" flags="ng" index="3A2sRY">
         <reference id="7368070394769213644" name="declaration" index="3A2yKK" />
       </concept>
+      <concept id="7368070394770780974" name="jetbrains.mps.lang.coderules.structure.UnifiesConstraint" flags="ng" index="3A8Hvi">
+        <child id="7368070394770793930" name="value" index="3A8w4Q" />
+        <child id="7368070394770793388" name="assignee" index="3A8wtg" />
+      </concept>
       <concept id="7368070394766963750" name="jetbrains.mps.lang.coderules.structure.Head" flags="ng" index="3Aq93q">
         <property id="7368070394767443940" name="keep" index="3ArMco" />
       </concept>
@@ -256,10 +260,6 @@
       </concept>
       <concept id="8581119423153238082" name="jetbrains.mps.lang.coderules.structure.NodeAnchor" flags="ng" index="3BlFb$">
         <child id="8581119423153238083" name="node" index="3BlFb_" />
-      </concept>
-      <concept id="1877115349178398764" name="jetbrains.mps.lang.coderules.structure.EqualsConstraint" flags="ng" index="3GeI9q">
-        <child id="1877115349178398815" name="right" index="3GeI8D" />
-        <child id="1877115349178398813" name="left" index="3GeI8F" />
       </concept>
       <concept id="1553157749316176827" name="jetbrains.mps.lang.coderules.structure.PatternLogicalVariable" flags="ng" index="1HFMs5">
         <child id="5131913661993028915" name="variable" index="1uarlU" />
@@ -306,11 +306,11 @@
       <node concept="3uniRm" id="5RfK0kxl0X2" role="3unh6L">
         <node concept="3clFbS" id="5RfK0kxl0X9" role="3uniRr">
           <node concept="3Aqczg" id="5RfK0kxl0YB" role="3cqZAp">
-            <node concept="3GeI9q" id="5RfK0kxl0Yx" role="3Aqpz8">
-              <node concept="aZ4PW" id="5RfK0kxl0YQ" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xtN79" role="3Aqpz8">
+              <node concept="aZ4PW" id="5RfK0kxl0YQ" role="3A8wtg">
                 <node concept="3txIi4" id="5RfK0kxl0ZL" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7VBaGntKJe2" role="3GeI8D">
+              <node concept="ns1u0" id="7VBaGntKJe2" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntKJ7X" resolve="Const" />
                 <node concept="nsMwS" id="7VBaGntKJe3" role="ns1xD">
                   <ref role="nsMwP" node="7VBaGntKJ7Z" resolve="name" />
@@ -418,11 +418,11 @@
             </node>
           </node>
           <node concept="3Aqczg" id="5RfK0kxlc3S" role="3cqZAp">
-            <node concept="3GeI9q" id="5RfK0kxlc3M" role="3Aqpz8">
-              <node concept="aZ4PW" id="5RfK0kxlc4q" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xtN7a" role="3Aqpz8">
+              <node concept="aZ4PW" id="5RfK0kxlc4q" role="3A8wtg">
                 <node concept="3txIi4" id="5RfK0kxlc4w" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7VBaGntKJeh" role="3GeI8D">
+              <node concept="ns1u0" id="7VBaGntKJeh" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntKJ80" resolve="And" />
                 <node concept="nsMwS" id="7VBaGntKJei" role="ns1xD">
                   <ref role="nsMwP" node="7VBaGntKJ82" resolve="conjuncts" />
@@ -532,11 +532,11 @@
             </node>
           </node>
           <node concept="3Aqczg" id="5RfK0kxld9U" role="3cqZAp">
-            <node concept="3GeI9q" id="5RfK0kxld9V" role="3Aqpz8">
-              <node concept="aZ4PW" id="5RfK0kxld9W" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xtN7b" role="3Aqpz8">
+              <node concept="aZ4PW" id="5RfK0kxld9W" role="3A8wtg">
                 <node concept="3txIi4" id="5RfK0kxld9X" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7VBaGntKJf3" role="3GeI8D">
+              <node concept="ns1u0" id="7VBaGntKJf3" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntKJ83" resolve="Or" />
                 <node concept="nsMwS" id="7VBaGntKJf4" role="ns1xD">
                   <ref role="nsMwP" node="7VBaGntKJ85" resolve="disjuncts" />
@@ -596,11 +596,11 @@
             </node>
           </node>
           <node concept="3Aqczg" id="5RfK0kxlwEC" role="3cqZAp">
-            <node concept="3GeI9q" id="5RfK0kxlwEy" role="3Aqpz8">
-              <node concept="aZ4PW" id="5RfK0kxlwEN" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xtN7c" role="3Aqpz8">
+              <node concept="aZ4PW" id="5RfK0kxlwEN" role="3A8wtg">
                 <node concept="3txIi4" id="5RfK0kxlwET" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7VBaGntKJej" role="3GeI8D">
+              <node concept="ns1u0" id="7VBaGntKJej" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntKJ86" resolve="Not" />
                 <node concept="nsMwS" id="7VBaGntKJek" role="ns1xD">
                   <ref role="nsMwP" node="7VBaGntKJ88" resolve="target" />
@@ -691,11 +691,11 @@
             </node>
           </node>
           <node concept="3Aqczg" id="5RfK0kxlxKk" role="3cqZAp">
-            <node concept="3GeI9q" id="5RfK0kxlxKe" role="3Aqpz8">
-              <node concept="aZ4PW" id="5RfK0kxlxK$" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xtN7d" role="3Aqpz8">
+              <node concept="aZ4PW" id="5RfK0kxlxK$" role="3A8wtg">
                 <node concept="3txIi4" id="5RfK0kxlxKE" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7VBaGntKJeG" role="3GeI8D">
+              <node concept="ns1u0" id="7VBaGntKJeG" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
                 <node concept="nsMwS" id="7VBaGntKJeH" role="ns1xD">
                   <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
@@ -794,11 +794,11 @@
             </node>
           </node>
           <node concept="3Aqczg" id="5RfK0kxly76" role="3cqZAp">
-            <node concept="3GeI9q" id="5RfK0kxly77" role="3Aqpz8">
-              <node concept="aZ4PW" id="5RfK0kxly78" role="3GeI8F">
+            <node concept="3A8Hvi" id="5TfjU0xtN7e" role="3Aqpz8">
+              <node concept="aZ4PW" id="5RfK0kxly78" role="3A8wtg">
                 <node concept="3txIi4" id="5RfK0kxly79" role="aZ4eD" />
               </node>
-              <node concept="ns1u0" id="7VBaGntKJeP" role="3GeI8D">
+              <node concept="ns1u0" id="7VBaGntKJeP" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntKJ8d" resolve="Iff" />
                 <node concept="nsMwS" id="7VBaGntKJeQ" role="ns1xD">
                   <ref role="nsMwP" node="7VBaGntKJ8f" resolve="antecedent" />
