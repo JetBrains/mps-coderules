@@ -11948,17 +11948,6 @@
               </node>
               <node concept="3clFbH" id="2dF51l166zG" role="3cqZAp" />
             </node>
-            <node concept="2OqwBi" id="2dF51l166VF" role="3clFbw">
-              <node concept="37vLTw" id="2dF51l166$S" role="2Oq$k0">
-                <ref role="3cqZAo" node="3pMFS1zdqoI" resolve="tf" />
-              </node>
-              <node concept="liA8E" id="2dF51l167A3" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="37vLTw" id="2dF51l167Bq" role="37wK5m">
-                  <ref role="3cqZAo" node="3pMFS1zdOFa" resolve="patternForm" />
-                </node>
-              </node>
-            </node>
             <node concept="9aQIb" id="2dF51l167C_" role="9aQIa">
               <node concept="3clFbS" id="2dF51l167CA" role="9aQI4">
                 <node concept="3cpWs6" id="2dF51l167CD" role="3cqZAp">
@@ -11973,6 +11962,20 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6SwZmzBHL5n" role="3clFbw">
+              <node concept="37vLTw" id="6SwZmzBHKyW" role="2Oq$k0">
+                <ref role="3cqZAo" node="6SwZmzBz6$Y" resolve="eqSolver" />
+              </node>
+              <node concept="liA8E" id="6SwZmzBHUlY" role="2OqNvi">
+                <ref role="37wK5l" node="6SwZmzBHSfW" resolve="askEq" />
+                <node concept="37vLTw" id="6SwZmzBHVIe" role="37wK5m">
+                  <ref role="3cqZAo" node="3pMFS1zdOFa" resolve="patternForm" />
+                </node>
+                <node concept="37vLTw" id="6SwZmzBHW19" role="37wK5m">
+                  <ref role="3cqZAo" node="3pMFS1zdqoI" resolve="tf" />
                 </node>
               </node>
             </node>
@@ -12130,6 +12133,58 @@
         <node concept="3uibUv" id="3pMFS1zdPaO" role="1tU5fm">
           <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
         </node>
+      </node>
+      <node concept="312cEg" id="6SwZmzBz6$Y" role="jymVt">
+        <property role="TrG5h" value="eqSolver" />
+        <node concept="3Tm6S6" id="6SwZmzBz6$Z" role="1B3o_S" />
+        <node concept="3uibUv" id="6SwZmzBHTLd" role="1tU5fm">
+          <ref role="3uigEE" node="6SwZmzBHRzS" resolve="SubstituteUtil.SubstEqSolver" />
+        </node>
+        <node concept="2ShNRf" id="6SwZmzBz7as" role="33vP2m">
+          <node concept="HV5vD" id="6SwZmzBzcb4" role="2ShVmc">
+            <ref role="HV5vE" node="6SwZmzBHRzS" resolve="SubstituteUtil.SubstEqSolver" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6SwZmzBHPBl" role="jymVt" />
+    <node concept="312cEu" id="6SwZmzBHRzS" role="jymVt">
+      <property role="TrG5h" value="SubstEqSolver" />
+      <node concept="2tJIrI" id="6SwZmzBHSe5" role="jymVt" />
+      <node concept="3clFb_" id="6SwZmzBHSfW" role="jymVt">
+        <property role="TrG5h" value="askEq" />
+        <node concept="37vLTG" id="6SwZmzBHStw" role="3clF46">
+          <property role="TrG5h" value="a" />
+          <node concept="3uibUv" id="6SwZmzBHSvj" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="6SwZmzBHSRy" role="3clF46">
+          <property role="TrG5h" value="b" />
+          <node concept="3uibUv" id="6SwZmzBHSXx" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+        </node>
+        <node concept="10P_77" id="6SwZmzBHSm2" role="3clF45" />
+        <node concept="3Tmbuc" id="6SwZmzBHSkU" role="1B3o_S" />
+        <node concept="3clFbS" id="6SwZmzBHSg0" role="3clF47">
+          <node concept="3clFbF" id="6SwZmzBHTsF" role="3cqZAp">
+            <node concept="1rXfSq" id="6SwZmzBHTsE" role="3clFbG">
+              <ref role="37wK5l" to="cxk7:2UGjFq4lB$H" resolve="doAsk" />
+              <node concept="37vLTw" id="6SwZmzBHT$R" role="37wK5m">
+                <ref role="3cqZAo" node="6SwZmzBHStw" resolve="a" />
+              </node>
+              <node concept="37vLTw" id="6SwZmzBHTJJ" role="37wK5m">
+                <ref role="3cqZAo" node="6SwZmzBHSRy" resolve="b" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="6SwZmzBHSeY" role="jymVt" />
+      <node concept="3Tm6S6" id="6SwZmzBHShJ" role="1B3o_S" />
+      <node concept="3uibUv" id="6SwZmzBHS6n" role="1zkMxy">
+        <ref role="3uigEE" to="cxk7:3HJTsBn4ogZ" resolve="EqualsPredicate.EqualsSolver" />
       </node>
     </node>
     <node concept="2tJIrI" id="3pMFS1zdqqy" role="jymVt" />
