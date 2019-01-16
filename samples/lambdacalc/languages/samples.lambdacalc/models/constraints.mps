@@ -1310,7 +1310,7 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="2O9ahh6v9GN" role="2OqNvi">
-                              <ref role="3Tt5mk" to="8tt8:2O9ahh6mHnP" resolve="type" />
+                              <ref role="3Tt5mk" to="8tt8:2O9ahh6mHnP" resolve="typeScheme" />
                             </node>
                           </node>
                           <node concept="32TBzR" id="2O9ahh6ve0B" role="2OqNvi">

@@ -1437,7 +1437,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="2O9ahh6mHsm" role="3EZMnx">
-        <ref role="1NtTu8" to="8tt8:2O9ahh6mHnP" resolve="type" />
+        <ref role="1NtTu8" to="8tt8:2O9ahh6mHnP" resolve="typeScheme" />
       </node>
       <node concept="3F0ifn" id="2O9ahh6mHsA" role="3EZMnx">
         <property role="3F0ifm" value="where" />

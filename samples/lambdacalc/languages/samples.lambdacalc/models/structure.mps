@@ -514,7 +514,7 @@
     <node concept="1TJgyj" id="2O9ahh6mHnP" role="1TKVEi">
       <property role="IQ2ns" value="3245170173553595893" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="type" />
+      <property role="20kJfa" value="typeScheme" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="12dHl3ZCxTW" resolve="ForallType" />
     </node>
