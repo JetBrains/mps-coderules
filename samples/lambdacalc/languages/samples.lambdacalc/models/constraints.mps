@@ -2109,7 +2109,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="2O9ahh6tFoQ" role="1Mr941">
-      <ref role="1N5Vy1" to="8tt8:2O9ahh6tFol" resolve="typeRef" />
+      <ref role="1N5Vy1" to="8tt8:2O9ahh6tFol" resolve="varRef" />
       <node concept="3dgokm" id="2O9ahh6tFoS" role="1N6uqs">
         <node concept="3clFbS" id="2O9ahh6tFoT" role="2VODD2">
           <node concept="3SKdUt" id="2O9ahh6vV6N" role="3cqZAp">

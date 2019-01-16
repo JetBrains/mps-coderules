@@ -564,7 +564,7 @@
     <node concept="1TJgyj" id="2O9ahh6tFol" role="1TKVEi">
       <property role="IQ2ns" value="3245170173555422741" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="typeRef" />
+      <property role="20kJfa" value="varRef" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3g9UT2j9I06" resolve="VarType" />
     </node>

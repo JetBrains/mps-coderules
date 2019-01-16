@@ -1490,7 +1490,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="2O9ahh6tFoz" role="3EZMnx">
-        <ref role="1NtTu8" to="8tt8:2O9ahh6tFol" resolve="typeRef" />
+        <ref role="1NtTu8" to="8tt8:2O9ahh6tFol" resolve="varRef" />
         <node concept="1sVBvm" id="2O9ahh6tFo_" role="1sWHZn">
           <node concept="3F0A7n" id="2O9ahh6tFoJ" role="2wV5jI">
             <property role="1Intyy" value="true" />
