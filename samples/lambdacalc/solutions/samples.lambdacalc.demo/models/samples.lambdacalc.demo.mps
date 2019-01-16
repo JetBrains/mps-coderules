@@ -106,7 +106,7 @@
       </concept>
       <concept id="3245170173553596368" name="samples.lambdacalc.structure.Constraint" flags="ng" index="1FkZV4">
         <reference id="3245170173553596371" name="typeclass" index="1FkZV7" />
-        <reference id="3245170173555422741" name="typeRef" index="1FvTW1" />
+        <reference id="3245170173555422741" name="varRef" index="1FvTW1" />
       </concept>
       <concept id="1192808835813875324" name="samples.lambdacalc.structure.ForallType" flags="ng" index="3JbUGG">
         <child id="4773731068369444236" name="typeVars" index="5lUUh" />
@@ -4057,6 +4057,10 @@
         </node>
       </node>
       <node concept="3JbUGG" id="2O9ahh6H2xJ" role="1FkZNx">
+        <node concept="1FkZV4" id="47tET_W69wT" role="1FkZ4g">
+          <ref role="1FkZV7" node="2O9ahh6x9Cg" resolve="Monoid" />
+          <ref role="1FvTW1" node="2O9ahh6H2yQ" resolve="b" />
+        </node>
         <node concept="1FkZV4" id="2O9ahh6H2yZ" role="1FkZ4g">
           <ref role="1FkZV7" node="2O9ahh6x9Cg" resolve="Monoid" />
           <ref role="1FvTW1" node="2O9ahh6H2yQ" resolve="b" />
