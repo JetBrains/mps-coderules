@@ -1038,7 +1038,7 @@
                 </node>
                 <node concept="3Aqczg" id="47tET_WaO8Q" role="3cqZAp">
                   <node concept="3Aqt3T" id="47tET_WaO8R" role="3Aqpz8">
-                    <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
                     <node concept="a7P8L" id="47tET_WaO8S" role="3AunhB">
                       <ref role="a7OzE" node="3vXKzDNGKNh" resolve="TmpTVs" />
                       <node concept="37vLTw" id="47tET_WaO8T" role="3gCZO6">
@@ -1171,7 +1171,7 @@
               </node>
               <node concept="3Aqczg" id="47tET_WaO3x" role="3cqZAp">
                 <node concept="3Aqt3T" id="47tET_WaO3v" role="3Aqpz8">
-                  <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+                  <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
                   <node concept="a7P8L" id="47tET_WaO41" role="3AunhB">
                     <ref role="a7OzE" node="3vXKzDNGKNh" resolve="TmpTVs" />
                     <node concept="37vLTw" id="47tET_WaO4I" role="3gCZO6">
@@ -1593,7 +1593,7 @@
           </node>
           <node concept="3Aqczg" id="47tET_W4RYt" role="3cqZAp">
             <node concept="3Aqt3T" id="47tET_W4RYB" role="3Aqpz8">
-              <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+              <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
               <node concept="a7P8L" id="47tET_W4RYG" role="3AunhB">
                 <ref role="a7OzE" node="47tET_W4R0b" resolve="TVar" />
               </node>
@@ -7378,7 +7378,7 @@
               <node concept="3I6sU6" id="47tET_W6GGE" role="3Ip0Jz">
                 <node concept="3I6s7M" id="47tET_W6GGY" role="3I6sU7">
                   <node concept="3Aqt3T" id="47tET_W6GGX" role="3I6s78">
-                    <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
                     <node concept="a7P8L" id="47tET_WboXk" role="3AunhB">
                       <ref role="a7OzE" node="47tET_WboWA" resolve="TV0" />
                     </node>
@@ -11429,6 +11429,15 @@
         <property role="TrG5h" value="set" />
       </node>
     </node>
+    <node concept="3AqmO8" id="47tET_WOmOE" role="8PkJo">
+      <property role="TrG5h" value="tdefConstraints" />
+      <node concept="1zAUYm" id="47tET_WOmPa" role="1zAUyy">
+        <property role="TrG5h" value="typeVar" />
+      </node>
+      <node concept="1zAUYm" id="47tET_WOmPc" role="1zAUyy">
+        <property role="TrG5h" value="set" />
+      </node>
+    </node>
     <node concept="3AqmO8" id="47tET_W6Fxn" role="8PkJo">
       <property role="TrG5h" value="produceTypeConstraints" />
       <node concept="1zAUYm" id="47tET_W6FC6" role="1zAUyy">
@@ -11522,14 +11531,78 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="47tET_WPsek" role="3cqZAp" />
+        <node concept="1nLNNL" id="47tET_WPsfr" role="3cqZAp">
+          <node concept="1nLNMm" id="47tET_WPsfs" role="1nLNNK">
+            <node concept="3Aq93q" id="47tET_WPsf$" role="1nLNMb">
+              <property role="3ArMco" value="true" />
+              <node concept="3I6sU6" id="47tET_WPsf_" role="3Ip0Jz">
+                <node concept="3I6s7M" id="47tET_WPsfA" role="3I6sU7">
+                  <node concept="3Aqt3T" id="47tET_WPsfB" role="3I6s78">
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
+                    <node concept="a7P8L" id="47tET_WPshE" role="3AunhB">
+                      <ref role="a7OzE" node="47tET_W4S06" resolve="TVar1" />
+                    </node>
+                    <node concept="a7P8L" id="47tET_WPshI" role="3AunhB">
+                      <ref role="a7OzE" node="47tET_W4S10" resolve="SetHandle1" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3Aq93q" id="47tET_WPsfE" role="1nLNMb">
+              <node concept="3I6sU6" id="47tET_WPsfF" role="3Ip0Jz">
+                <node concept="3I6s7M" id="47tET_WPsfG" role="3I6sU7">
+                  <node concept="3Aqt3T" id="47tET_WPsfH" role="3I6s78">
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
+                    <node concept="a7P8L" id="47tET_WPshM" role="3AunhB">
+                      <ref role="a7OzE" node="47tET_W4S0l" resolve="TVar2" />
+                    </node>
+                    <node concept="a7P8L" id="47tET_WPshQ" role="3AunhB">
+                      <ref role="a7OzE" node="47tET_W4S1o" resolve="SetHandle2" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3Aq9E8" id="47tET_WPsfK" role="1nLNMd">
+              <node concept="3I6sU6" id="47tET_WPsfL" role="3Ip0Jz">
+                <node concept="3I6s7M" id="47tET_WPsfM" role="3I6sU7">
+                  <node concept="3A8Hvi" id="47tET_WPsfN" role="3I6s78">
+                    <node concept="a7P8L" id="47tET_WPsi0" role="3A8wtg">
+                      <ref role="a7OzE" node="47tET_W4S10" resolve="SetHandle1" />
+                    </node>
+                    <node concept="a7P8L" id="47tET_WPsh$" role="3A8w4Q">
+                      <ref role="a7OzE" node="47tET_W4S1o" resolve="SetHandle2" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3Aq9_M" id="47tET_WPsfQ" role="1nLNMa">
+              <node concept="3I6sU6" id="47tET_WPsfR" role="3Ip0Jz">
+                <node concept="3I6s7M" id="47tET_WPsfS" role="3I6sU7">
+                  <node concept="3GeI9q" id="47tET_WPsfT" role="3I6s78">
+                    <node concept="a7P8L" id="47tET_WPshU" role="3GeI8F">
+                      <ref role="a7OzE" node="47tET_W4S06" resolve="TVar1" />
+                    </node>
+                    <node concept="a7P8L" id="47tET_WPshX" role="3GeI8D">
+                      <ref role="a7OzE" node="47tET_W4S0l" resolve="TVar2" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="1nLNMY" id="47tET_WwVxG" role="1nK1Vg">
-      <property role="TrG5h" value="typeConstraints_disharge" />
+      <property role="TrG5h" value="typeConstraints_discharge" />
       <node concept="3clFbS" id="47tET_WwVxH" role="1nLNMH">
         <node concept="3SKdUt" id="47tET_WwVLX" role="3cqZAp">
           <node concept="3SKdUq" id="47tET_WwVLZ" role="3SKWNk">
-            <property role="3SKdUp" value="Discharges Constraints when they're satisfied" />
+            <property role="3SKdUp" value="Discharges Constraints for bound types when they're satisfied" />
           </node>
         </node>
         <node concept="1nLNNL" id="47tET_WGoXa" role="3cqZAp">
@@ -11595,7 +11668,7 @@
       <node concept="3clFbS" id="47tET_W6FC9" role="1nLNMH">
         <node concept="3SKdUt" id="47tET_W6G7c" role="3cqZAp">
           <node concept="3SKdUq" id="47tET_W6G7e" role="3SKWNk">
-            <property role="3SKdUp" value="Note: VarRef (instead of just TV) because this rule is called aftexr freeTypeVars" />
+            <property role="3SKdUp" value="Note: VarRef (instead of just TV) because this rule is called after freeTypeVars" />
           </node>
         </node>
         <node concept="3SKdUt" id="47tET_W6Gab" role="3cqZAp">
@@ -11686,7 +11759,7 @@
               <node concept="3I6sU6" id="47tET_W6FLn" role="3Ip0Jz">
                 <node concept="3I6s7M" id="47tET_W6Gn9" role="3I6sU7">
                   <node concept="3Aqt3T" id="47tET_W6Gn8" role="3I6s78">
-                    <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
                     <node concept="a7P8L" id="47tET_W6Gnh" role="3AunhB">
                       <ref role="a7OzE" node="47tET_W6FLH" resolve="TV" />
                     </node>
@@ -11768,7 +11841,6 @@
               </node>
             </node>
             <node concept="3Aq93q" id="47tET_WgaQQ" role="1nLNMb">
-              <property role="3ArMco" value="true" />
               <node concept="3I6sU6" id="47tET_WgaQR" role="3Ip0Jz">
                 <node concept="3I6s7M" id="47tET_WgaR8" role="3I6sU7">
                   <node concept="3Aqt3T" id="47tET_WgaR7" role="3I6s78">
@@ -11785,6 +11857,17 @@
             </node>
             <node concept="3Aq9E8" id="47tET_WgaMF" role="1nLNMd">
               <node concept="3I6sU6" id="47tET_WgaMG" role="3Ip0Jz">
+                <node concept="3I6s7M" id="47tET_WOmPn" role="3I6sU7">
+                  <node concept="3Aqt3T" id="47tET_WOmPl" role="3I6s78">
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
+                    <node concept="a7P8L" id="47tET_WOmPv" role="3AunhB">
+                      <ref role="a7OzE" node="47tET_Wcd0y" resolve="TV0" />
+                    </node>
+                    <node concept="a7P8L" id="47tET_WOmPB" role="3AunhB">
+                      <ref role="a7OzE" node="47tET_W6G5H" resolve="CtrSet" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3I6s7M" id="47tET_WgaML" role="3I6sU7">
                   <node concept="3Aqt3T" id="47tET_WgaMM" role="3I6s78">
                     <ref role="3AqCNq" node="47tET_W6Fxn" resolve="produceTypeConstraints" />
@@ -11863,7 +11946,7 @@
               <node concept="3I6sU6" id="47tET_W6GpT" role="3Ip0Jz">
                 <node concept="3I6s7M" id="47tET_W6GpU" role="3I6sU7">
                   <node concept="3Aqt3T" id="47tET_W6GpV" role="3I6s78">
-                    <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
                     <node concept="a7P8L" id="47tET_W6GsJ" role="3AunhB">
                       <ref role="a7OzE" node="47tET_W6FLH" resolve="TV" />
                     </node>
@@ -11938,7 +12021,7 @@
               <node concept="3I6sU6" id="47tET_WlKFQ" role="3Ip0Jz">
                 <node concept="3I6s7M" id="47tET_WlKFY" role="3I6sU7">
                   <node concept="3Aqt3T" id="47tET_WlKFX" role="3I6s78">
-                    <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
                     <node concept="a7P8L" id="47tET_WlKG3" role="3AunhB">
                       <ref role="a7OzE" node="47tET_WlKFo" resolve="TV" />
                     </node>
@@ -12149,7 +12232,7 @@
               <node concept="3I6sU6" id="47tET_Wgb4S" role="3Ip0Jz">
                 <node concept="3I6s7M" id="47tET_Wgb6P" role="3I6sU7">
                   <node concept="3Aqt3T" id="47tET_Wgb6Q" role="3I6s78">
-                    <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
                     <node concept="a7P8L" id="47tET_Wgb6R" role="3AunhB">
                       <ref role="a7OzE" node="47tET_Wgb4_" resolve="TV0" />
                     </node>
@@ -12338,7 +12421,7 @@
               <node concept="3I6sU6" id="47tET_Wh9Qi" role="3Ip0Jz">
                 <node concept="3I6s7M" id="47tET_Wh9Qz" role="3I6sU7">
                   <node concept="3Aqt3T" id="47tET_Wh9Qy" role="3I6s78">
-                    <ref role="3AqCNq" node="47tET_W4MQg" resolve="typeConstraints" />
+                    <ref role="3AqCNq" node="47tET_WOmOE" resolve="tdefConstraints" />
                     <node concept="a7P8L" id="47tET_WhdLK" role="3AunhB">
                       <ref role="a7OzE" node="47tET_WhdLm" resolve="ITVDef0" />
                     </node>
