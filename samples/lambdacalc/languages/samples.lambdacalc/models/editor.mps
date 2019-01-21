@@ -1501,5 +1501,17 @@
       <node concept="l2Vlx" id="2O9ahh6mHvz" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="47tET_WTDZz">
+    <ref role="1XX52x" to="8tt8:47tET_WTDZo" resolve="ConstraintRepr" />
+    <node concept="3EZMnI" id="47tET_WTF2U" role="2wV5jI">
+      <node concept="3F0A7n" id="47tET_WTF3o" role="3EZMnx">
+        <ref role="1NtTu8" to="8tt8:47tET_WTDZp" resolve="typeclassName" />
+      </node>
+      <node concept="3F0A7n" id="47tET_X0Jum" role="3EZMnx">
+        <ref role="1NtTu8" to="8tt8:47tET_X0JtN" resolve="typeVarName" />
+      </node>
+      <node concept="l2Vlx" id="47tET_WTF31" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 
