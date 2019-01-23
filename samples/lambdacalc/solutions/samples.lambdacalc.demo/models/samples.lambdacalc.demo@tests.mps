@@ -433,6 +433,74 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="47tET_Xohmr" role="1SL9yI">
+      <property role="TrG5h" value="DemoTypeclasses" />
+      <node concept="3cqZAl" id="47tET_Xohms" role="3clF45" />
+      <node concept="3clFbS" id="47tET_Xohmt" role="3clF47">
+        <node concept="2Hmddi" id="47tET_Xohmu" role="3cqZAp">
+          <node concept="2OqwBi" id="47tET_Xohmv" role="2Hmdds">
+            <node concept="2OqwBi" id="47tET_Xohmw" role="2Oq$k0">
+              <node concept="2YIFZM" id="47tET_Xohmx" role="2Oq$k0">
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <node concept="2OqwBi" id="47tET_Xohmy" role="37wK5m">
+                  <node concept="2WthIp" id="47tET_Xohmz" role="2Oq$k0" />
+                  <node concept="2XshWL" id="47tET_Xohm$" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="47tET_Xohm_" role="2XxRq1">
+                      <node concept="ZC_QK" id="47tET_XohUr" role="2tJFKM">
+                        <ref role="2aWVGs" to="ysck:47tET_WGoBb" resolve="DemoTypeclasses" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1jxXqW" id="47tET_XohmB" role="37wK5m" />
+              </node>
+              <node concept="liA8E" id="47tET_XohmC" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="47tET_XohmD" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="47tET_XoiCv" role="1SL9yI">
+      <property role="TrG5h" value="DemoConstraints" />
+      <node concept="3cqZAl" id="47tET_XoiCw" role="3clF45" />
+      <node concept="3clFbS" id="47tET_XoiCx" role="3clF47">
+        <node concept="2Hmddi" id="47tET_XoiCy" role="3cqZAp">
+          <node concept="2OqwBi" id="47tET_XoiCz" role="2Hmdds">
+            <node concept="2OqwBi" id="47tET_XoiC$" role="2Oq$k0">
+              <node concept="2YIFZM" id="47tET_XoiC_" role="2Oq$k0">
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <node concept="2OqwBi" id="47tET_XoiCA" role="37wK5m">
+                  <node concept="2WthIp" id="47tET_XoiCB" role="2Oq$k0" />
+                  <node concept="2XshWL" id="47tET_XoiCC" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="47tET_XoiCD" role="2XxRq1">
+                      <node concept="ZC_QK" id="47tET_Xoj9p" role="2tJFKM">
+                        <ref role="2aWVGs" to="ysck:2O9ahh6x9Cb" resolve="DemoConstraints" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1jxXqW" id="47tET_XoiCF" role="37wK5m" />
+              </node>
+              <node concept="liA8E" id="47tET_XoiCG" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="47tET_XoiCH" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2XrIbr" id="35YJGAJTxCf" role="1qtyYc">
       <property role="TrG5h" value="resolve" />
       <node concept="37vLTG" id="35YJGAJTxCF" role="3clF46">
