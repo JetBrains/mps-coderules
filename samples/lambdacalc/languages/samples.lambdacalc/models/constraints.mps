@@ -1888,7 +1888,7 @@
           <node concept="3clFbS" id="2O9ahh6pKor" role="3clFbx">
             <node concept="3SKdUt" id="2O9ahh6q5FM" role="3cqZAp">
               <node concept="3SKdUq" id="2O9ahh6q5FO" role="3SKWNk">
-                <property role="3SKdUp" value="Allow only monotypes (simple types without foralls inside)" />
+                <property role="3SKdUp" value="Allow only monotypes (simple types without foralls inside), as in Haskell" />
               </node>
             </node>
             <node concept="3cpWs6" id="2O9ahh6pLx4" role="3cqZAp">
