@@ -1,11 +1,11 @@
-import jetbrains.mps.logic.reactor.core.Controller
-import jetbrains.mps.logic.reactor.core.SessionObjects
-import jetbrains.mps.logic.reactor.core.invocation
-import jetbrains.mps.logic.reactor.core.occurrence
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
+import jetbrains.mps.logic.reactor.util.cons
+import jetbrains.mps.unification.Term
+import jetbrains.mps.unification.test.MockTerm.*
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
@@ -14,6 +14,7 @@ import solver.EqualsSolver
 import solver.MockSessionSolver
 import solver.eq
 import solver.is_eq
+
 
 /**
  * @author Fedor Isakov
@@ -753,6 +754,58 @@ class TestController {
         }
     }
 
+    @Test
+    fun matchHeadWithTerm() {
+        val (X, Y, Z) = metaLogical<Term>("X", "Y", "Z")
+        val xLogical = X.logical()
+        val yLogical = Y.logical()
+        val zLogical = Z.logical()
 
+        programWithRules(
+            rule("main",
+                headReplaced(constraint("main")),
+                body(
+                    constraint("foo", term("bar", logicalVar(zLogical))),
+                    constraint("foo", term("bar", logicalVar(xLogical))),
+                    constraint("trigger", xLogical)
+                )
+            ),
+            rule("rule1",
+                headReplaced(
+                    constraint("trigger", Y),
+                    constraint("foo", term("bar", metaVar(X)))
+                ),
+                guard(
+                    expression ({ x, y ->  x.findRoot() == y.findRoot() }, X, Y)
+                ),
+                body(
+                    constraint("triggered1", X, Y)
+                )
+            ),
+            rule("rule2",
+                headReplaced(
+                    constraint("trigger", Y),
+                    constraint("foo", X)
+                ),
+                guard(
+                    expression ({ x, y -> !y.isBound && x.findRoot() == y.findRoot() }, X, Y)
+                ),
+                body(
+                    constraint("triggered2", X, Y)
+                )
+            )
+        ).controller().run {
+            evaluate(occurrence("main"))
+            storeView().run {
+                val foo = ConstraintSymbol("foo", 1)
+                val t1 = ConstraintSymbol("triggered1", 2)
+                constraintSymbols() shouldBe setOf(t1, foo)
+                occurrences(t1).count() shouldBe 1
+                occurrences(t1).first().arguments().first() shouldBe xLogical
+                occurrences(foo).count() shouldBe 1
+                occurrences(foo).first().arguments().first() shouldBe term("bar", logicalVar(zLogical))
+            }
+        }
+    }
 }
 

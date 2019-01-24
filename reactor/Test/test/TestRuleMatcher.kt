@@ -32,8 +32,6 @@ import program.MockConstraint
 
 class TestRuleMatcher {
 
-    infix fun <A, B> A.shouldBe(that: B) = assertEquals(that, this)
-
     @Test
     fun testOccurrenceMatchLogical() {
         val (X, Y) = metaLogical<String>("X", "Y")
