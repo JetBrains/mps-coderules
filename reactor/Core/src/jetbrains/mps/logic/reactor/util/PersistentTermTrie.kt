@@ -235,7 +235,7 @@ class PersistentTermTrie<T>() : TermTrie<T> {
     {
 
         constructor(symbol: Any, arity: Int) :
-            this(symbol, arity, Maps.of(), emptySet())
+            this(symbol, arity, Maps.of(), emptyIdSet())
 
         constructor(copyFrom: PathNode<T>, setValues: IdHashSet<T>) :
             this(copyFrom.symbol, copyFrom.arity, copyFrom.next, setValues)

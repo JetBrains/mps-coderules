@@ -1,4 +1,5 @@
 import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
@@ -6,6 +7,7 @@ import jetbrains.mps.unification.test.MockTermsParser.*
 import org.junit.Assert.assertEquals
 import org.junit.Ignore
 import org.junit.Test
+import program.MockConstraint
 
 /*
  * Copyright 2014-2018 JetBrains s.r.o.
@@ -31,6 +33,105 @@ import org.junit.Test
 class TestRuleMatcher {
 
     infix fun <A, B> A.shouldBe(that: B) = assertEquals(that, this)
+
+    @Test
+    fun testOccurrenceMatchLogical() {
+        val (X, Y) = metaLogical<String>("X", "Y")
+        val xLogical = X.logical()
+        val yLogical = Y.logical()
+
+        val foobar = MockConstraint(ConstraintSymbol("foo", 1), "bar")
+        val foox = MockConstraint(ConstraintSymbol("foo", 1), X)
+
+        // foo("bar") = foo("bar")
+        OccurrenceMatcher().
+            matches(foobar, occurrence("foo", "bar")) shouldBe true
+        // foo("bar") != foo(X)
+        OccurrenceMatcher().
+            matches(foobar, occurrence("foo", xLogical)) shouldBe false
+        // foo("bar") = foo(X = "bar")
+        xLogical.set("bar")
+        OccurrenceMatcher().
+            matches(foobar, occurrence("foo", xLogical)) shouldBe true
+
+        // foo(X) = foo(Y)
+        OccurrenceMatcher().
+            matches(foox, occurrence("foo", yLogical)) shouldBe true
+        // foo(X) = foo("bar")
+        OccurrenceMatcher().
+            matches(foox, occurrence("foo", "bar")) shouldBe true
+        // foo(X) = foo(Y = "bar")
+        yLogical.set("bar")
+        OccurrenceMatcher().
+            matches(foox, occurrence("foo", yLogical)) shouldBe true
+    }
+
+    @Test
+    fun testOccurrenceMatchTerm() {
+        val (X, Y) = metaLogical<Term>("X", "Y")
+        val xLogical = X.logical()
+        val yLogical = Y.logical()
+
+        val foofh = MockConstraint(ConstraintSymbol("foo", 1), parseTerm("f { h }"))
+        val foofx = MockConstraint(ConstraintSymbol("foo", 1), term("f", metaVar(X)))
+
+        // foo(f { h }) = foo(f { h })
+        OccurrenceMatcher().
+            matches(foofh, occurrence("foo", parseTerm("f { h }"))) shouldBe true
+        // foo(f { h }) != foo(f { X })
+        OccurrenceMatcher().
+            matches(foofh, occurrence("foo", term("f", logicalVar(xLogical)))) shouldBe false
+        // foo(f { h }) != foo(f { X = h })
+        xLogical.set(term("h"))
+        OccurrenceMatcher().
+            matches(foofh, occurrence("foo", term("f", logicalVar(xLogical)))) shouldBe true
+
+        // foo(f { X }) = foo(f { h })
+        OccurrenceMatcher().
+            matches(foofx, occurrence("foo", parseTerm("f { h }"))) shouldBe true
+        // foo(f { X }) = foo(f { Y })
+        OccurrenceMatcher().
+            matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe true
+        // foo(f { X }) = foo(f { Y = h })
+        xLogical.set(term("h"))
+        OccurrenceMatcher().
+            matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe true
+    }
+
+    @Test
+    fun testOccurrenceMatchConsistent() {
+        val (X, Y, Z) = metaLogical<Term>("X", "Y", "Z")
+        val xLogical = X.logical()
+        val yLogical = Y.logical()
+        val zLogical = Z.logical()
+
+        val foofx = MockConstraint(ConstraintSymbol("foo", 1), term("f", metaVar(X)))
+
+        // [X -> free] |- foo(f { X }) = foo(f { X })
+        OccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+            matches(foofx, occurrence("foo", term("f", logicalVar(xLogical)))) shouldBe true
+        // [X -> free] |- foo(f { X }) != foo(f { Y })
+        OccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+            matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe false
+        // [X -> free] |- foo(f { X }) != foo(f { h })
+        OccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+            matches(foofx, occurrence("foo", parseTerm("f { h }"))) shouldBe false
+        // [X -> free] |- foo(f { X }) != foo(f { Y = h })
+        yLogical.set(term("h"))
+        OccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+            matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe false
+
+        // [X -> h] |- foo(f { X }) = foo(f { h })
+        OccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+            matches(foofx, occurrence("foo", parseTerm("f { h }"))) shouldBe true
+        // [X -> h] |- foo(f { X }) != foo(f { Z })
+        OccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+            matches(foofx, occurrence("foo", term("f", logicalVar(zLogical)))) shouldBe false
+        // [X -> h] |- foo(f { X }) = foo(f { Z = h })
+        zLogical.set(term("h"))
+        OccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+            matches(foofx, occurrence("foo", term("f", logicalVar(zLogical)))) shouldBe true
+    }
 
     @Test
     fun testExpand() {
@@ -447,10 +548,10 @@ class TestRuleMatcher {
         {
             with(Dispatcher(RuleIndex(handlers)).fringe()) {
 
-                activated(occurrence("foo"))                                    }.apply {
+                expand(occurrence("foo"))                                    }.apply {
                 matches().count() shouldBe 0                                        }.run {
 
-                activated(occurrence("bar"))                                    }.apply {
+                expand(occurrence("bar"))                                    }.apply {
                 matches().count() shouldBe 1                                        
                 
                 with(matches().first()) {
@@ -489,10 +590,10 @@ class TestRuleMatcher {
         {
             with(Dispatcher(RuleIndex(handlers)).fringe()) {
 
-                activated(occurrence("foo"))                                    }.apply {
+                expand(occurrence("foo"))                                    }.apply {
                 matches().count() shouldBe 0                                        }.run {
 
-                activated(occurrence("bar", "a"))                        }.apply {
+                expand(occurrence("bar", "a"))                        }.apply {
                 matches().count() shouldBe 1
 
                 with(matches().first()) {
@@ -501,7 +602,7 @@ class TestRuleMatcher {
 
                 }
                                                                                     }.run {
-                activated(occurrence("bazz"))                                   }.apply {
+                expand(occurrence("bazz"))                                   }.apply {
                 matches().count() shouldBe 1
 
                 with(matches().first()) {
@@ -511,7 +612,7 @@ class TestRuleMatcher {
 
                 }
                                                                                     }.run {
-                activated(occurrence("bar", "b"))                        }.apply {
+                expand(occurrence("bar", "b"))                        }.apply {
                 matches().count() shouldBe 2
 
                 with(matches().drop(1).first()) {
@@ -558,16 +659,16 @@ class TestRuleMatcher {
         {
             with(Dispatcher(RuleIndex(handlers)).fringe()) {
 
-                activated(occurrence("blin"))                                   }.apply {
+                expand(occurrence("blin"))                                   }.apply {
                 matches().count() shouldBe 0                                        }.run {
 
-                activated(occurrence("bar"))                                    }.apply {
+                expand(occurrence("bar"))                                    }.apply {
                 matches().count() shouldBe 0                                        }.run {
 
-                activated(occurrence("bazz"))                                   }.apply {
+                expand(occurrence("bazz"))                                   }.apply {
                 matches().count() shouldBe 0                                        }.run {
 
-                activated(occurrence("foo"))                                    }.apply {
+                expand(occurrence("foo"))                                    }.apply {
                 matches().count() shouldBe 3                                        }.run {
 
                 matches().map { it.rule().tag() }.toList() shouldBe listOf("rule1", "rule2", "rule3")
@@ -608,18 +709,18 @@ class TestRuleMatcher {
         {
             with(Dispatcher(RuleIndex(handlers)).fringe()) {
 
-                activated(occurrence("foo"))                                }.apply {
+                expand(occurrence("foo"))                                }.apply {
                 matches().count() shouldBe 0                                    }.run {
 
-                activated(occurrence("bar"))                                }.apply {
+                expand(occurrence("bar"))                                }.apply {
                 matches().count() shouldBe 1
                 matches().first().rule().tag() shouldBe  "rule2"                }.run {
 
-                activated(occurrence("bazz"))                               }.apply {
+                expand(occurrence("bazz"))                               }.apply {
                 matches().count() shouldBe 1
                 matches().first().rule().tag() shouldBe  "rule1"                }.run {
 
-                activated(occurrence("blin"))                               }.apply {
+                expand(occurrence("blin"))                               }.apply {
                 matches().count() shouldBe 1
                 matches().first().rule().tag() shouldBe  "rule3"
             }
@@ -661,24 +762,24 @@ class TestRuleMatcher {
             val bar = occurrence("bar")
             with(Dispatcher(RuleIndex(handlers)).fringe()) {
 
-                activated(occurrence("foo"))                                }.apply {
+                expand(occurrence("foo"))                                }.apply {
                 matches().count() shouldBe 0                                    }.run {
 
-                activated(bar)                                                  }.apply {
+                expand(bar)                                                  }.apply {
                 matches().count() shouldBe 1
                 matches().first().rule().tag() shouldBe  "rule2"                }.run {
 
-                activated(occurrence("bazz"))                               }.apply {
+                expand(occurrence("bazz"))                               }.apply {
                 matches().count() shouldBe 1
                 matches().first().rule().tag() shouldBe  "rule1"                }.run {
 
-                discarded(bar)                                                  }.apply {
+                contract(bar)                                                  }.apply {
                 matches().count() shouldBe 0                                    }.run {
 
-                activated(occurrence("blin"))                               }.apply {
+                expand(occurrence("blin"))                               }.apply {
                 matches().count() shouldBe 0
                                                                                 }.run {
-                activated(bar)                                                  }.apply {
+                expand(bar)                                                  }.apply {
                 matches().count() shouldBe 3
                 matches().map { it.rule().tag() }.toList() shouldBe listOf("rule1", "rule2", "rule3")
             }
@@ -686,5 +787,4 @@ class TestRuleMatcher {
     }
 
     private fun Builder.ruleMatcher() = Matcher(rules.first())
-
 }

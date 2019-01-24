@@ -16,20 +16,14 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import com.github.andrewoma.dexx.collection.DerivedKeyHashMap
-import com.github.andrewoma.dexx.collection.KeyFunction
 import com.github.andrewoma.dexx.collection.Maps
-import com.github.andrewoma.dexx.collection.internal.base.AbstractSet
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.unification.Term
 import jetbrains.mps.logic.reactor.util.*
-import java.util.*
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Set as PersSet
 import com.github.andrewoma.dexx.collection.Vector as PersVector
@@ -94,8 +88,8 @@ class Store : LogicalObserver {
         copyFrom.allOccurrences().forEach { occ ->
             occ.arguments().forEach { arg ->
                 when (arg) {
-                    is Logical<*>   ->  l2o = l2o.put(IdWrapper(arg.findRoot()), l2o[IdWrapper(arg.findRoot())]?.add(occ) ?: singletonSet(occ))
-                    is Any          ->  v2o = v2o.put(arg, v2o[arg]?.add(occ) ?: singletonSet(occ))
+                    is Logical<*>   ->  l2o = l2o.put(IdWrapper(arg.findRoot()), l2o[IdWrapper(arg.findRoot())]?.add(occ) ?: singletonIdSet(occ))
+                    is Any          ->  v2o = v2o.put(arg, v2o[arg]?.add(occ) ?: singletonIdSet(occ))
                 }
             }
 
@@ -118,7 +112,7 @@ class Store : LogicalObserver {
         val logicalId = IdWrapper(logical)
         logical2occurrences[logicalId]?.let { toMerge ->
             val rootId = IdWrapper(logical.findRoot())
-            var newSet = logical2occurrences[rootId] ?: emptySet()
+            var newSet = logical2occurrences[rootId] ?: emptyIdSet()
             for (log in toMerge) {
                 newSet = newSet.add(log)
             }
@@ -132,7 +126,7 @@ class Store : LogicalObserver {
         val symbol = occ.constraint().symbol()
 
         this.symbol2occurrences = symbol2occurrences.put(symbol,
-            symbol2occurrences[symbol]?.add(occ) ?: singletonSet(occ))
+            symbol2occurrences[symbol]?.add(occ) ?: singletonIdSet(occ))
 
         for (arg in occ.arguments()) {
             val value = if (arg is Logical<*> && arg.isBound) arg.findRoot().value() else arg
@@ -141,7 +135,7 @@ class Store : LogicalObserver {
                     // free logical
                     val argId = IdWrapper(value.findRoot())
                     this.logical2occurrences = logical2occurrences.put(argId,
-                        logical2occurrences[argId]?.add(occ) ?: singletonSet(occ))
+                        logical2occurrences[argId]?.add(occ) ?: singletonIdSet(occ))
                     currentFrame().addObserver(value) { frame -> frame.store() }
                 }
             }

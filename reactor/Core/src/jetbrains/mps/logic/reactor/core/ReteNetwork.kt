@@ -296,7 +296,8 @@ class ReteRuleMatcher(val rule: Rule) {
                         val occList = occArray.toMutableList()
                         val keptCount = rule.headKept().count()
 
-                        matches.add(MatchRuleImpl(rule,
+                        matches.add(MatchRuleImpl(n,
+                                                    rule,
                                                     allSubst,
                                                     occList.subList(0, keptCount),
                                                     occList.subList(keptCount, occList.size)))
@@ -344,6 +345,9 @@ class ReteRuleMatcher(val rule: Rule) {
 
         override fun matches(): Collection<MatchRule> = generations.last().matches()
 
+        override fun consumed(matchRule: MatchRule): MatchingProbe {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
 
         fun indexOf(occurrence: ConstraintOccurrence): Int =
             seenOcc2Idx[occurrence] ?: (nextOccIdx++).also { idx -> seenOcc2Idx[occurrence] = idx }

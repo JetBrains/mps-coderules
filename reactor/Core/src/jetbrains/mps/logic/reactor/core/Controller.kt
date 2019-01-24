@@ -86,12 +86,12 @@ class Controller(
                 trace.reactivate(active)
             }
 
-            val activatedDF = dispatchFringe.activated(active)
-            this.dispatchFringe = activatedDF
+            val activatedFringe = dispatchFringe.expand(active)
+            this.dispatchFringe = activatedFringe
 
             var state : ProcessingState = instate
 
-            for (match in dispatchFringe.matches().toList()) {
+            for (match in activatedFringe.matches().toList()) {
                 if (!state.operational) break
 
                 // TODO: paranoid check. should be isAlive() instead
@@ -121,10 +121,11 @@ class Controller(
                     continue
                 }
 
+                this.dispatchFringe = dispatchFringe.consume(match)
                 trace.trigger(match)
 
                 for (occ in match.matchHeadReplaced()) {
-                    this.dispatchFringe = dispatchFringe.discarded(occ)
+                    this.dispatchFringe = dispatchFringe.contract(occ)
                     frameStack.current.store.discard(occ)
                     trace.discard(occ)
                 }
@@ -153,7 +154,7 @@ class Controller(
 
                     if (state is FAILED) {
                         trace.failure(state.failure)
-                        
+
                         if (!altIt.hasNext()) {
                             // last alternative
                             if (failureHandler != null) {
@@ -168,7 +169,7 @@ class Controller(
                         if (state is FAILED) {
                             frameStack.reset(savedFrame)
                         }
-                        
+
                     } else {
                         break
                     }

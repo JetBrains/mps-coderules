@@ -24,7 +24,8 @@ import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Rule
 
-class MatchRuleImpl(val rule: Rule,
+class MatchRuleImpl(val origin: Any,
+                    val rule: Rule,
                     val subst: Subst,
                     val headKept: MutableIterable<ConstraintOccurrence?>,
                     val headReplaced: MutableIterable<ConstraintOccurrence?>) : MatchRule {

@@ -6,8 +6,6 @@ import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
-import jetbrains.mps.logic.reactor.util.cons
-import org.jetbrains.kotlin.js.parser.parse
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
@@ -570,6 +568,56 @@ class TestController {
         }
     }
 
+    @Test
+    fun propagationHistoryLogical() {
+        val X = metaLogical<Int>("X")
+        programWithRules(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   constraint("foo", X),
+                                                                        statement({ x -> eq(x, "doh") }, X)
+                                                                )
+            ),
+            rule("foobar",
+                headKept( constraint("foo", X) ),
+                guard( expression ({ x -> x.isBound }, X) ),
+                                                                body(   constraint("foobar") )
+            )
+        ).controller().evaluate(occurrence("main")).run {
+            assertEquals(setOf( ConstraintSymbol("foo", 1),
+                                ConstraintSymbol("foobar", 0)),
+                         constraintSymbols())
+            assertEquals(1, occurrences(ConstraintSymbol("foo", 1)).count())
+            assertEquals(1, occurrences(ConstraintSymbol("foobar", 0)).count())
+        }
+    }
+
+    @Test
+    fun propagationHistoryLogical2() {
+        val (X, Y) = metaLogical<Int>("X", "Y")
+        programWithRules(
+            rule("main",
+                headReplaced( constraint("main") ),         body(   constraint("foo", X),
+                                                                        constraint("bar", Y),
+                                                                        statement({ x -> eq(x, "doh") }, X)
+                                                                )
+            ),
+            rule("foobar",
+                headKept( constraint("foo", X),
+                          constraint("bar", Y)
+                ),
+                guard( expression ({ x -> x.isBound }, X) ),
+                                                                body(   constraint("foobar") )
+            )
+        ).controller().evaluate(occurrence("main")).run {
+            assertEquals(setOf( ConstraintSymbol("foo", 1),
+                                ConstraintSymbol("bar", 1),
+                                ConstraintSymbol("foobar", 0)),
+                         constraintSymbols())
+            assertEquals(1, occurrences(ConstraintSymbol("foo", 1)).count())
+            assertEquals(1, occurrences(ConstraintSymbol("bar", 1)).count())
+            assertEquals(1, occurrences(ConstraintSymbol("foobar", 0)).count())
+        }
+    }
 
     @Test
     fun removeObserver() {

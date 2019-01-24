@@ -48,7 +48,7 @@ class OccurrenceMatcher(val contextSubst: Subst? = null) {
         if (cst.symbol() != occ.constraint().symbol()) return false
 
         return zipWhileTrue(cst.arguments(), occ.arguments()) { cstarg, occarg ->
-            matchAny(cstarg, occarg)
+            ptnMatchAny(cstarg, occarg)
         }
     }
 
@@ -66,7 +66,7 @@ class OccurrenceMatcher(val contextSubst: Subst? = null) {
      * Respects substitutions for MetaLogical instances.
      * Returns either new substitution on successful match, or null.
      */
-    private fun matchAny(ptn: Any?, trg: Any?): Boolean =
+    private fun ptnMatchAny(ptn: Any?, trg: Any?): Boolean =
         when (ptn) {
             is MetaLogical<*> -> {
                 // recursion with existing substitution or new substitution
@@ -79,49 +79,83 @@ class OccurrenceMatcher(val contextSubst: Subst? = null) {
                 else
                     matchSubst!!.put(ptn, trg!!).run { true }
             }
-
-            is Logical<*> ->
-                // match logical or its value
-                matchLogical(ptn.findRoot(), trg)
-            
             is Term ->
                 when {
-                    ptn.`is`(Term.Kind.REF)     -> matchAny(resolve(ptn), trg)
-                    else                        -> matchTerm(ptn, trg) // recursion into the term
+                    ptn.`is`(Term.Kind.REF)     -> ptnMatchAny(resolve(ptn), trg)
+                    else                        -> ptnMatchTerm(ptn, trg) // recursion into the term
                 }
             else                ->
-                // compare two arbitrary values
-                (ptn == trg)
+                when {
+                    trg is Logical<*>           -> ptnMatchAny(ptn, resolve(trg))
+                    else                        ->
+                                                    // compare two arbitrary values
+                                                    (ptn == trg)
+                }
         }
 
-    private fun matchTerm(ptn: Term, trg: Any?): Boolean
-    {
+    private fun matchAny(left: Any?, right: Any?): Boolean =
+        when (left) {
+            is Logical<*>   ->
+                // match logical or its value
+                matchLogical(left.findRoot(), right)
+            is Term         ->
+                when {
+                    left.`is`(Term.Kind.REF)        -> matchAny(resolve(left), right)
+                    else                            -> matchTerm(left, right) // recursion into the term
+                }
+            else            ->
+                when {
+                    right is Logical<*>             -> matchAny(left, resolve(right))
+                    else                            ->  // compare two arbitrary values
+                                                        (left == right)
+                }
+        }
+
+    private fun ptnMatchTerm(ptn: Term, trg: Any?): Boolean {
         if (trg == null) return false
 
         val trgval = resolve(trg)
         if (!(trgval is Term)) return false
 
-        if (ptn.`is`(Term.Kind.VAR)) return matchAny(ptn.get().symbol(), trgval)
+        if (ptn.`is`(Term.Kind.VAR)) return ptnMatchAny(ptn.get().symbol(), trgval)
 
-        if (!matchAny(ptn.get().symbol(), trgval.symbol())) return false
+        if (!ptnMatchAny(ptn.get().symbol(), trgval.symbol())) return false
+
         // FIXME: reversing the order of arguments leads to infinite cycle
         // Example: two terms of the form f(... V_1 ...) and f(... V_2 ...) where
         // V_1 is bound to g(... W_1 ...), V_2 -> g(... W_2 ...), W_1 -> f(... V_1 ...), and W_2 -> f(... V_2 ...)
         return zipWhileTrue(ptn.get().arguments(), trgval.arguments()) { ptnarg, trgarg ->
-            matchAny (ptnarg, trgarg)
+            ptnMatchAny (ptnarg, trgarg)
         }
     }
 
-    private fun matchLogical(ptn: Logical<*>, trg: Any?): Boolean =
+    private fun matchTerm(left: Term, right: Any?): Boolean {
+        if (right == null) return false
+
+        val rval = resolve(right)
+        if (!(rval is Term)) return false
+
+        if (!matchAny(left.get().symbol(), rval.symbol())) return false
+
+        // FIXME: reversing the order of arguments leads to infinite cycle
+        // Example: two terms of the form f(... V_1 ...) and f(... V_2 ...) where
+        // V_1 is bound to g(... W_1 ...), V_2 -> g(... W_2 ...), W_1 -> f(... V_1 ...), and W_2 -> f(... V_2 ...)
+        return zipWhileTrue(left.get().arguments(), rval.arguments()) { larg, rarg ->
+            matchAny (larg, rarg)
+        }
+    }
+
+    private fun matchLogical(left: Logical<*>, right: Any?): Boolean =
         when {
-            trg is Logical<*> ->
+            right is Logical<*> ->
                 when {
-                    ptn.isBound                         -> matchAny(ptn.findRoot().value(), trg.findRoot().value())
-                    ptn.findRoot() === trg.findRoot()   -> true     // reference equality
-                    else                                -> false
+                    left.isBound                            -> matchAny(left.findRoot().value(),
+                                                                           right.findRoot().value())
+                    left.findRoot() === right.findRoot()    -> true     // reference equality
+                    else                                    -> false
                 }
-            ptn.isBound         -> matchAny(ptn.findRoot().value(), trg)
-            else                -> false
+            left.isBound            -> matchAny(left.findRoot().value(), right)
+            else                    -> false
         }
 
     private fun resolve(obj: Any?): Any? =

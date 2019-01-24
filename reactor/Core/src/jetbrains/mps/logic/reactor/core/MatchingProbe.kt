@@ -31,10 +31,12 @@ interface MatchingProbe {
 
     fun matches() : Collection<MatchRule>
 
+    fun consumed(matchRule: MatchRule): MatchingProbe
+
     fun expand(occ: ConstraintOccurrence) : MatchingProbe
 
     fun expand(occ: ConstraintOccurrence, mask: BitSet) : MatchingProbe
 
     fun contract(occ: ConstraintOccurrence): MatchingProbe
-    
+
 }

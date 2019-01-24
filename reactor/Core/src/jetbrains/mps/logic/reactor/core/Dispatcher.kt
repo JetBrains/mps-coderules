@@ -54,29 +54,34 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
         constructor(pred: DispatchFringe, matching: Iterable<MatchingProbe>) {
             this.rule2probe = pred.rule2probe
-            matching.forEach { fringe ->
-                this.rule2probe = rule2probe.put(fringe.rule(), fringe)
-                allMatches.addAll(fringe.matches())
+            matching.forEach { probe ->
+                this.rule2probe = rule2probe.put(probe.rule(), probe)
+                allMatches.addAll(probe.matches())
+            }
+        }
+
+        constructor(pred: DispatchFringe, consumedMatch: MatchRule) {
+            this.rule2probe = pred.rule2probe
+            pred.rule2probe[consumedMatch.rule()]?.let {
+                this.rule2probe = rule2probe.put(consumedMatch.rule(), it.consumed(consumedMatch))
             }
         }
 
         fun matches() : Iterable<MatchRule> = allMatches
 
-        fun activated(active: ConstraintOccurrence): DispatchFringe {
-            return DispatchFringe(this,
-                ruleIndex.forOccurrenceWithMask(active).mapNotNull { (rule, mask) ->
-                    rule2probe[rule]?.expand(active, mask)
-                })
-        }
+        fun consume(matchRule: MatchRule) = DispatchFringe(this, matchRule)
 
-        fun discarded(discarded: ConstraintOccurrence): DispatchFringe {
-            return DispatchFringe(this,
-                ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
-                    rule2probe[rule]
-                }.map { probe ->
-                    probe.contract(discarded)
-                })
-        }
+        fun expand(activated: ConstraintOccurrence) = DispatchFringe(this,
+            ruleIndex.forOccurrenceWithMask(activated).mapNotNull { (rule, mask) ->
+                rule2probe[rule]?.expand(activated, mask)
+            })
+
+        fun contract(discarded: ConstraintOccurrence) = DispatchFringe(this,
+            ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
+                rule2probe[rule]
+            }.map { probe ->
+                probe.contract(discarded)
+            })
 
     }
 

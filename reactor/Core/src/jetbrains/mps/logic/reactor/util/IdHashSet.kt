@@ -72,6 +72,6 @@ class IdHashSet<E> : AbstractSet<E> {
 }
 
 @Suppress("UNCHECKED_CAST")
-fun <E> emptySet(): IdHashSet<E> = IdHashSet.EMPTY_SET as IdHashSet<E>
+fun <E> emptyIdSet(): IdHashSet<E> = IdHashSet.EMPTY_SET as IdHashSet<E>
 
-fun <E> singletonSet(e: E): IdHashSet<E> = emptySet<E>().add(e)
+fun <E> singletonIdSet(e: E): IdHashSet<E> = emptyIdSet<E>().add(e)
