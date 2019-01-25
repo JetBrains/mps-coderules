@@ -18,6 +18,7 @@ package jetbrains.mps.unification
 
 import gnu.trove.list.array.TIntArrayList
 import gnu.trove.map.hash.TIntObjectHashMap
+import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.unification.Substitution.FailureCause.CYCLE_DETECTED
 import jetbrains.mps.unification.Substitution.FailureCause.SYMBOL_CLASH
 import jetbrains.mps.unification.Term.Kind.*
@@ -294,13 +295,15 @@ class TermGraphUnifier {
         return wrapper.unwrap(origin[t])
     }
 
-    private fun idSymbol(symbol: Any): Any {
-        return if (symbol is String)  symbol.intern() else symbol
-    }
-    
+    private fun idSymbol(symbol: Any): Any =
+        when (symbol) {
+            is String       -> symbol.intern()
+            is Logical<*>   -> symbol.findRoot()
+            else            -> symbol
+        }
+
     private fun Any?.eq (that: Any?): Boolean {
         return if (this == null) that == null else this.equals(that)
     }
-
 
 }

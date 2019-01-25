@@ -16,6 +16,9 @@
 
 package jetbrains.mps.unification.test;
 
+import jetbrains.mps.logic.reactor.core.LogicalImpl;
+import jetbrains.mps.logic.reactor.logical.MetaLogical;
+import jetbrains.mps.unification.Substitution;
 import jetbrains.mps.unification.Term;
 import jetbrains.mps.unification.TermWrapper;
 import org.jetbrains.annotations.NotNull;
@@ -543,4 +546,44 @@ public class SolverTests {
     }
 
 
+    @Test
+    public void joinedLogicals() throws Exception {
+        MetaLogical<Term> X = new MetaLogical<>("X", Term.class);
+        MetaLogical<Term> Y = new MetaLogical<>("Y", Term.class);
+        MetaLogical<Term> Z = new MetaLogical<>("Z", Term.class);
+        LogicalImpl<Term> xLogical = new LogicalImpl<>(X);
+        LogicalImpl<Term> yLogical = new LogicalImpl<>(Y);
+        LogicalImpl<Term> zLogical = new LogicalImpl<>(Z);
+
+        Term left = term("foo", term("bar", logicalVar(yLogical)), logicalVar(zLogical));
+        Term right = term("foo", term("bar", logicalVar(xLogical)), logicalVar(zLogical));
+        
+        assertUnifiesWithBindings(left, right,
+                new Substitution.Binding(logicalVar(xLogical), logicalVar(yLogical)));
+
+        xLogical.union(yLogical);
+
+        assertUnifiesWithBindings(left, right);
+    }
+
+    @Test
+    public void joinedLogicals_cycle() throws Exception {
+        MetaLogical<Term> X = new MetaLogical<>("X", Term.class);
+        MetaLogical<Term> Y = new MetaLogical<>("Y", Term.class);
+        MetaLogical<Term> Z = new MetaLogical<>("Z", Term.class);
+        LogicalImpl<Term> xLogical = new LogicalImpl<>(X);
+        LogicalImpl<Term> yLogical = new LogicalImpl<>(Y);
+        LogicalImpl<Term> zLogical = new LogicalImpl<>(Z);
+
+        Term left = logicalVar(yLogical);
+        Term right = term("foo", term("bar", logicalVar(xLogical)), logicalVar(zLogical));
+
+        assertUnifiesWithBindings(left, right,
+                new Substitution.Binding(left, right));
+
+        xLogical.union(yLogical);
+
+        assertUnificationFails(left, right,
+                CYCLE_DETECTED);
+    }
 }
