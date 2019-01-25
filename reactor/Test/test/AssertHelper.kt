@@ -22,3 +22,7 @@ import org.junit.Assert
 
 infix fun <A, B> A.shouldBe(that: B) = Assert.assertEquals(that, this)
 
+infix fun <A, B> A.shouldBeSame(that: B) = Assert.assertSame(that, this)
+
+infix fun <A, B> A.shouldNotBeSame(that: B) = Assert.assertNotSame(that, this)
+

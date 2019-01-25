@@ -119,16 +119,24 @@ class LogicalImpl<T> : JoinableLogical<T> {
         val otherRepr = (other as LogicalImpl<T>).find()
 
         if (thisRepr === otherRepr) {
-            throw IllegalStateException("cannnot unite logical with itself")
+            // nothing to do
+            return
         }
 
         // invariant: thisRepr.rank > otherRepr.rank
         if (thisRepr.rank() < otherRepr.rank()) {
             otherRepr.union(thisRepr, reconciler);
-            return;
+            return
 
         } else if (thisRepr.rank() == otherRepr.rank()) {
-            thisRepr.incRank();
+            if (thisRepr._value == null && otherRepr._value != null) {
+                otherRepr.union(thisRepr, reconciler);
+                return
+
+            } else {
+                thisRepr.incRank();
+
+            }
         }
 
         val thisVal = thisRepr.value();
