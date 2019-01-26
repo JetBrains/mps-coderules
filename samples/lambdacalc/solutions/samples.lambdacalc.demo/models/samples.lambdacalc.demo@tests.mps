@@ -258,40 +258,31 @@
       <property role="TrG5h" value="SKI" />
       <node concept="3cqZAl" id="6EwjVjWvpYH" role="3clF45" />
       <node concept="3clFbS" id="6EwjVjWvpYI" role="3clF47">
-        <node concept="3SKdUt" id="6b_Nj5K6ayZ" role="3cqZAp">
-          <node concept="3SKdUq" id="6b_Nj5K6az1" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME failing test temporarily disabled" />
-          </node>
-        </node>
-        <node concept="1X3_iC" id="6b_Nj5K6aPb" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="2Hmddi" id="27bTNFfbwTP" role="8Wnug">
-            <node concept="2OqwBi" id="27bTNFfbwTQ" role="2Hmdds">
-              <node concept="2OqwBi" id="27bTNFfbwTR" role="2Oq$k0">
-                <node concept="2YIFZM" id="27bTNFfbwTS" role="2Oq$k0">
-                  <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
-                  <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-                  <node concept="2OqwBi" id="27bTNFfbW8C" role="37wK5m">
-                    <node concept="2WthIp" id="27bTNFfbW8D" role="2Oq$k0" />
-                    <node concept="2XshWL" id="27bTNFfbW8E" role="2OqNvi">
-                      <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                      <node concept="2tJFMh" id="27bTNFfbW8F" role="2XxRq1">
-                        <node concept="ZC_QK" id="27bTNFfbW8G" role="2tJFKM">
-                          <ref role="2aWVGs" to="ysck:7Et5j8uqHKT" resolve="SKI" />
-                        </node>
+        <node concept="2Hmddi" id="27bTNFfbwTP" role="3cqZAp">
+          <node concept="2OqwBi" id="27bTNFfbwTQ" role="2Hmdds">
+            <node concept="2OqwBi" id="27bTNFfbwTR" role="2Oq$k0">
+              <node concept="2YIFZM" id="27bTNFfbwTS" role="2Oq$k0">
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <node concept="2OqwBi" id="27bTNFfbW8C" role="37wK5m">
+                  <node concept="2WthIp" id="27bTNFfbW8D" role="2Oq$k0" />
+                  <node concept="2XshWL" id="27bTNFfbW8E" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="27bTNFfbW8F" role="2XxRq1">
+                      <node concept="ZC_QK" id="27bTNFfbW8G" role="2tJFKM">
+                        <ref role="2aWVGs" to="ysck:7Et5j8uqHKT" resolve="SKI" />
                       </node>
                     </node>
                   </node>
-                  <node concept="1jxXqW" id="27bTNFfbWaD" role="37wK5m" />
                 </node>
-                <node concept="liA8E" id="27bTNFfbwTV" role="2OqNvi">
-                  <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
-                </node>
+                <node concept="1jxXqW" id="27bTNFfbWaD" role="37wK5m" />
               </node>
-              <node concept="liA8E" id="27bTNFfbwTW" role="2OqNvi">
-                <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+              <node concept="liA8E" id="27bTNFfbwTV" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
               </node>
+            </node>
+            <node concept="liA8E" id="27bTNFfbwTW" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
         </node>
@@ -335,40 +326,31 @@
       <property role="TrG5h" value="Omega" />
       <node concept="3cqZAl" id="6EwjVjWvydS" role="3clF45" />
       <node concept="3clFbS" id="6EwjVjWvydT" role="3clF47">
-        <node concept="3SKdUt" id="6b_Nj5K6b69" role="3cqZAp">
-          <node concept="3SKdUq" id="6b_Nj5K6b6a" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME failing test temporarily disabled" />
-          </node>
-        </node>
-        <node concept="1X3_iC" id="6b_Nj5K6b52" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="2Hmddi" id="27bTNFfbwV9" role="8Wnug">
-            <node concept="2OqwBi" id="27bTNFfbwVa" role="2Hmdds">
-              <node concept="2OqwBi" id="27bTNFfbwVb" role="2Oq$k0">
-                <node concept="2YIFZM" id="27bTNFfbwVc" role="2Oq$k0">
-                  <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
-                  <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-                  <node concept="2OqwBi" id="27bTNFfbWzk" role="37wK5m">
-                    <node concept="2WthIp" id="27bTNFfbWzl" role="2Oq$k0" />
-                    <node concept="2XshWL" id="27bTNFfbWzm" role="2OqNvi">
-                      <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                      <node concept="2tJFMh" id="27bTNFfbWzn" role="2XxRq1">
-                        <node concept="ZC_QK" id="27bTNFfbWzo" role="2tJFKM">
-                          <ref role="2aWVGs" to="ysck:nOeFRaGxm_" resolve="Omega" />
-                        </node>
+        <node concept="2Hmddi" id="27bTNFfbwV9" role="3cqZAp">
+          <node concept="2OqwBi" id="27bTNFfbwVa" role="2Hmdds">
+            <node concept="2OqwBi" id="27bTNFfbwVb" role="2Oq$k0">
+              <node concept="2YIFZM" id="27bTNFfbwVc" role="2Oq$k0">
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <node concept="2OqwBi" id="27bTNFfbWzk" role="37wK5m">
+                  <node concept="2WthIp" id="27bTNFfbWzl" role="2Oq$k0" />
+                  <node concept="2XshWL" id="27bTNFfbWzm" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="27bTNFfbWzn" role="2XxRq1">
+                      <node concept="ZC_QK" id="27bTNFfbWzo" role="2tJFKM">
+                        <ref role="2aWVGs" to="ysck:nOeFRaGxm_" resolve="Omega" />
                       </node>
                     </node>
                   </node>
-                  <node concept="1jxXqW" id="27bTNFfbW_l" role="37wK5m" />
                 </node>
-                <node concept="liA8E" id="27bTNFfbwVf" role="2OqNvi">
-                  <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
-                </node>
+                <node concept="1jxXqW" id="27bTNFfbW_l" role="37wK5m" />
               </node>
-              <node concept="liA8E" id="27bTNFfbwVg" role="2OqNvi">
-                <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+              <node concept="liA8E" id="27bTNFfbwVf" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
               </node>
+            </node>
+            <node concept="liA8E" id="27bTNFfbwVg" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
         </node>
@@ -378,40 +360,31 @@
       <property role="TrG5h" value="Y_combinator" />
       <node concept="3cqZAl" id="6EwjVjWvyrX" role="3clF45" />
       <node concept="3clFbS" id="6EwjVjWvyrY" role="3clF47">
-        <node concept="3SKdUt" id="6b_Nj5K6bkV" role="3cqZAp">
-          <node concept="3SKdUq" id="6b_Nj5K6bkW" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME failing test temporarily disabled" />
-          </node>
-        </node>
-        <node concept="1X3_iC" id="6b_Nj5K6bjT" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="2Hmddi" id="27bTNFfbwVN" role="8Wnug">
-            <node concept="2OqwBi" id="27bTNFfbwVO" role="2Hmdds">
-              <node concept="2OqwBi" id="27bTNFfbwVP" role="2Oq$k0">
-                <node concept="2YIFZM" id="27bTNFfbwVQ" role="2Oq$k0">
-                  <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
-                  <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-                  <node concept="2OqwBi" id="27bTNFfbWBe" role="37wK5m">
-                    <node concept="2WthIp" id="27bTNFfbWBf" role="2Oq$k0" />
-                    <node concept="2XshWL" id="27bTNFfbWBg" role="2OqNvi">
-                      <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
-                      <node concept="2tJFMh" id="27bTNFfbWBh" role="2XxRq1">
-                        <node concept="ZC_QK" id="27bTNFfbWBi" role="2tJFKM">
-                          <ref role="2aWVGs" to="ysck:1PL$JmLA85j" resolve="Y_combinator" />
-                        </node>
+        <node concept="2Hmddi" id="27bTNFfbwVN" role="3cqZAp">
+          <node concept="2OqwBi" id="27bTNFfbwVO" role="2Hmdds">
+            <node concept="2OqwBi" id="27bTNFfbwVP" role="2Oq$k0">
+              <node concept="2YIFZM" id="27bTNFfbwVQ" role="2Oq$k0">
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <node concept="2OqwBi" id="27bTNFfbWBe" role="37wK5m">
+                  <node concept="2WthIp" id="27bTNFfbWBf" role="2Oq$k0" />
+                  <node concept="2XshWL" id="27bTNFfbWBg" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="27bTNFfbWBh" role="2XxRq1">
+                      <node concept="ZC_QK" id="27bTNFfbWBi" role="2tJFKM">
+                        <ref role="2aWVGs" to="ysck:1PL$JmLA85j" resolve="Y_combinator" />
                       </node>
                     </node>
                   </node>
-                  <node concept="1jxXqW" id="27bTNFfbWDf" role="37wK5m" />
                 </node>
-                <node concept="liA8E" id="27bTNFfbwVT" role="2OqNvi">
-                  <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
-                </node>
+                <node concept="1jxXqW" id="27bTNFfbWDf" role="37wK5m" />
               </node>
-              <node concept="liA8E" id="27bTNFfbwVU" role="2OqNvi">
-                <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+              <node concept="liA8E" id="27bTNFfbwVT" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:27bTNFfaVLW" resolve="skipLocal" />
               </node>
+            </node>
+            <node concept="liA8E" id="27bTNFfbwVU" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
         </node>
@@ -421,12 +394,12 @@
       <property role="TrG5h" value="DemoScopes" />
       <node concept="3cqZAl" id="1IKbs5XIs8H" role="3clF45" />
       <node concept="3clFbS" id="1IKbs5XIs8L" role="3clF47">
-        <node concept="3SKdUt" id="6b_Nj5K6bHw" role="3cqZAp">
-          <node concept="3SKdUq" id="6b_Nj5K6bHx" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME failing test temporarily disabled" />
+        <node concept="3SKdUt" id="2tst4bvYo3Z" role="3cqZAp">
+          <node concept="3SKdUq" id="2tst4bvYo41" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME test temporarily disabled" />
           </node>
         </node>
-        <node concept="1X3_iC" id="6b_Nj5K6fRy" role="lGtFl">
+        <node concept="1X3_iC" id="2tst4bvYo2M" role="lGtFl">
           <property role="3V$3am" value="statement" />
           <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
           <node concept="2Hmddi" id="RcyXiSVPlH" role="8Wnug">
