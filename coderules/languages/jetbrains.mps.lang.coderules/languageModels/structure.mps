@@ -36,6 +36,7 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
@@ -1037,7 +1038,8 @@
     <property role="EcuMT" value="3575255234174969664" />
     <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="ConstraintRuleStatement" />
-    <property role="34LRSv" value="constraint rule" />
+    <property role="34LRSv" value="on" />
+    <property role="R4oN_" value="Constraint Rule" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="36tQV5AmIt1" role="1TKVEi">
       <property role="IQ2ns" value="3575255234174969665" />
