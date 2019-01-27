@@ -106,6 +106,9 @@
     <node concept="PrWs8" id="34$A1Mf53b_" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
+    <node concept="PrWs8" id="b5g$pBzjBm" role="PzmwI">
+      <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3d3">
     <property role="TrG5h" value="RuleComponent" />
@@ -215,9 +218,6 @@
     </node>
     <node concept="PrWs8" id="1CgWc1TyDEK" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-    <node concept="PrWs8" id="1CgWc1TyDEQ" role="PzmwI">
-      <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="ICanBeCommented" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0ia8T">
@@ -383,16 +383,16 @@
     </node>
     <node concept="M6xJ_" id="1CgWc1Tyjkx" role="lGtFl">
       <property role="Hh88m" value="comment" />
-      <node concept="trNpa" id="1CgWc1TyjkA" role="EQaZv">
-        <ref role="trN6q" node="1CgWc1Tyjkz" resolve="ICanBeCommented" />
-      </node>
       <node concept="tn0Fv" id="5bC6UNlxqD9" role="HhnKV">
         <property role="tnX3d" value="false" />
+      </node>
+      <node concept="trNpa" id="b5g$pBzjAP" role="EQaZv">
+        <ref role="trN6q" node="1CgWc1Tyjkz" resolve="Commentable" />
       </node>
     </node>
   </node>
   <node concept="PlHQZ" id="1CgWc1Tyjkz">
-    <property role="TrG5h" value="ICanBeCommented" />
+    <property role="TrG5h" value="Commentable" />
     <property role="3GE5qa" value="comment" />
     <property role="EcuMT" value="1878265754076919075" />
   </node>
@@ -427,6 +427,9 @@
     </node>
     <node concept="PrWs8" id="1pPth$m5B55" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="b5g$pBzjBf" role="PzmwI">
+      <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
     </node>
   </node>
   <node concept="1TIwiD" id="1pPth$m5Bbz">
@@ -463,6 +466,9 @@
     </node>
     <node concept="PrWs8" id="3AWu6Emeo$c" role="PzmwI">
       <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+    </node>
+    <node concept="PrWs8" id="b5g$pBzjW6" role="PzmwI">
+      <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
     </node>
   </node>
   <node concept="1TIwiD" id="PB1R3Y7Ed7">
