@@ -12,6 +12,7 @@
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1589,14 +1590,14 @@
                 </node>
               </node>
               <node concept="3clFbF" id="3gNap3g_70f" role="3cqZAp">
-                <node concept="2YIFZM" id="3gNap3g_bV_" role="3clFbG">
-                  <ref role="37wK5l" to="oy3s:3gNap3fZcVn" resolve="asValue" />
+                <node concept="2YIFZM" id="1Lr58WG4AYV" role="3clFbG">
                   <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-                  <node concept="37vLTw" id="3gNap3g_bVA" role="37wK5m">
+                  <ref role="37wK5l" to="oy3s:3gNap3gwG50" resolve="asValue" />
+                  <node concept="37vLTw" id="1Lr58WG4AYW" role="37wK5m">
                     <ref role="3cqZAo" node="3gNap3g_70d" resolve="logical" />
-                    <node concept="29HgVG" id="3gNap3g_bVB" role="lGtFl" />
+                    <node concept="29HgVG" id="1Lr58WG4AYX" role="lGtFl" />
                   </node>
-                  <node concept="raruj" id="3gNap3g_bVC" role="lGtFl" />
+                  <node concept="raruj" id="1Lr58WG4AYY" role="lGtFl" />
                 </node>
               </node>
             </node>

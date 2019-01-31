@@ -11,7 +11,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="yhz9" ref="r:72b177ed-1924-4265-b8f3-64e062fd2eed(samples.fitch.firstOrderLogic.structure)" />
     <import index="ious" ref="r:2deee13f-4a3d-4229-ad45-9e5b85327419(samples.fitch.demo.firstOrderLogic)" />
-    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" implicit="true" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -144,8 +144,8 @@
           <node concept="2OqwBi" id="27bTNFfbwI2" role="2Hmdds">
             <node concept="2OqwBi" id="27bTNFfbwI3" role="2Oq$k0">
               <node concept="2YIFZM" id="27bTNFfbwI4" role="2Oq$k0">
-                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
                 <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
                 <node concept="2OqwBi" id="27bTNFfbZPj" role="37wK5m">
                   <node concept="2WthIp" id="27bTNFfbZPk" role="2Oq$k0" />
                   <node concept="2XshWL" id="27bTNFfbZPl" role="2OqNvi">

@@ -7922,7 +7922,7 @@
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="19wqdqOqxsP" role="2OqNvi">
-                                  <ref role="37wK5l" to="bj13:~LogicalOwner.logical():jetbrains.mps.logic.reactor.logical.Logical" resolve="logical" />
+                                  <ref role="37wK5l" to="oy3s:4TCblo5MS1o" resolve="logical" />
                                 </node>
                               </node>
                             </node>
