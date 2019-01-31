@@ -28,8 +28,20 @@ ant.importBuild('build.xml') {antTarget ->
   }
 }
 
+'fitch-declare-mps-tasks' {
+  dependsOn {
+    ':init'
+  }
+}
+
 'fitch-generate' {
   dependsOn {
     ':coderules-assemble'
+  }
+}
+
+task check {
+  dependsOn {
+    'fitch-check'
   }
 }

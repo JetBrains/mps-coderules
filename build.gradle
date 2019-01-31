@@ -144,10 +144,13 @@ ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9
 task check {
   dependsOn {
     [
-      ':coderules-test',
-      ':samples/mpscore:mpscore-test',
-      ':samples/lambdacalc:lambdacalc-test',
-      ':samples/fitch:fitch-test'
+      ':samples/mpscore:mpscore-check',
+      ':samples/lambdacalc:lambdacalc-check',
+      ':samples/fitch:fitch-check'
     ]
+  }
+  // tests from this target also include model checker invocation, which requires everything to be built
+  finalizedBy {
+    ':coderules-check'
   }
 }
