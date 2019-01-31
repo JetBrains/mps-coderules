@@ -11,6 +11,7 @@
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" folder="typechecking.annotation" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.typechecking.testlang/jetbrains.mps.typechecking.testlang.mpl" folder="typechecking.test" />
+      <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules.test/jetbrains.mps.coderules.test.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules.ui/jetbrains.mps.coderules.ui.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules/jetbrains.mps.coderules.msd" folder="coderules" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.controlflow.ui/jetbrains.mps.controlflow.ui.msd" folder="controlflow" />
