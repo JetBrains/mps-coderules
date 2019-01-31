@@ -30,7 +30,7 @@ ant.importBuild('build.xml') {antTarget ->
 
 'mpscore-declare-mps-tasks' {
   dependsOn {
-    ':init'
+    ':setup'
   }
 }
 

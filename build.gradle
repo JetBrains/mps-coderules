@@ -1,7 +1,7 @@
 import groovy.xml.MarkupBuilder
 import java.util.regex.*
 
-defaultTasks 'init'
+defaultTasks 'build'
 
 allprojects {
   repositories {
@@ -65,12 +65,12 @@ task installMps(type: Copy)  {
 
 def allInitDependencies = [
   'installMps',
-  'coderules/solutions/jetbrains.mps.logic.reactor:copyDependencies',
-  'coderules/solutions/jetbrains.mps.logic.test:copyDependencies',
-  'coderules/solutions/jetbrains.mps.typechecking:copyDependencies',
-  'coderules/solutions/jetbrains.mps.coderules:copyDependencies' ]
+  'coderules:solutions:jetbrains.mps.logic.reactor:copyDependencies',
+  'coderules:solutions:jetbrains.mps.logic.test:copyDependencies',
+  'coderules:solutions:jetbrains.mps.typechecking:copyDependencies',
+  'coderules:solutions:jetbrains.mps.coderules:copyDependencies' ]
 
-task init(dependsOn: allInitDependencies) {
+task setup(dependsOn: allInitDependencies) {
   doLast {
     println 'Initialized all dependencies.'
   }
@@ -112,16 +112,16 @@ ant.importBuild('build.xml') { antTarget ->
 }
 ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9999'}".toString()
 
-// ensure 'init' runs before 'fetchDependencies' and 'declare-mps-tasks'
+// ensure 'setup' runs before 'fetchDependencies' and 'declare-mps-tasks'
 'coderules-fetchDependencies' {
   dependsOn {
-    'init'
+    'setup'
   }
 }
 
 'coderules-declare-mps-tasks' {
   dependsOn {
-    'init'
+    'setup'
   }
 }
 
@@ -141,12 +141,24 @@ ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9
   }
 }
 
+task build {
+  dependsOn {
+    [
+      ':coderules-assemble',
+      ':samples:mpscore:mpscore-assemble',
+      ':samples:lambdacalc:lambdacalc-assemble',
+      ':samples:fitch:fitch-assemble'
+    ]
+  }
+
+}
+
 task check {
   dependsOn {
     [
-      ':samples/mpscore:mpscore-check',
-      ':samples/lambdacalc:lambdacalc-check',
-      ':samples/fitch:fitch-check'
+      ':samples:mpscore:mpscore-check',
+      ':samples:lambdacalc:lambdacalc-check',
+      ':samples:fitch:fitch-check'
     ]
   }
   // tests from this target also include model checker invocation, which requires everything to be built

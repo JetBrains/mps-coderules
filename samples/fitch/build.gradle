@@ -30,7 +30,7 @@ ant.importBuild('build.xml') {antTarget ->
 
 'fitch-declare-mps-tasks' {
   dependsOn {
-    ':init'
+    ':setup'
   }
 }
 
