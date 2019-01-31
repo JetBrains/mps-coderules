@@ -206,13 +206,6 @@
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
     </language>
-    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
-        <property id="2034914114981261751" name="severity" index="RRSoG" />
-        <child id="2034914114981261755" name="throwable" index="RRSow" />
-        <child id="2034914114981261753" name="message" index="RRSoy" />
-      </concept>
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -1182,16 +1175,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="1FOQehxyuTe" role="3cqZAp" />
-              <node concept="RRSsy" id="1FOQehxoN55" role="3cqZAp">
-                <property role="RRSoG" value="warn" />
-                <node concept="Xl_RD" id="1FOQehxoN56" role="RRSoy">
-                  <property role="Xl_RC" value="error launching typechecking" />
-                </node>
-                <node concept="37vLTw" id="1FOQehxoN57" role="RRSow">
-                  <ref role="3cqZAo" node="1FOQehxoN52" resolve="ex" />
-                </node>
-              </node>
             </node>
           </node>
         </node>
@@ -1472,16 +1455,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="1FOQehxyrYK" role="3cqZAp" />
-              <node concept="RRSsy" id="4cvvxaYh9pT" role="3cqZAp">
-                <property role="RRSoG" value="warn" />
-                <node concept="Xl_RD" id="2BZXJed2VqB" role="RRSoy">
-                  <property role="Xl_RC" value="error launching typechecking" />
-                </node>
-                <node concept="37vLTw" id="2BZXJed2VqC" role="RRSow">
-                  <ref role="3cqZAo" node="2BZXJed2Jz1" resolve="ex" />
-                </node>
-              </node>
             </node>
           </node>
         </node>
@@ -1659,16 +1632,6 @@
                   <node concept="37vLTw" id="1FOQehxyx$e" role="3uHU7B">
                     <ref role="3cqZAo" node="5KrJ7UHMZjn" resolve="reportSink" />
                   </node>
-                </node>
-              </node>
-              <node concept="3clFbH" id="1FOQehxyxzU" role="3cqZAp" />
-              <node concept="RRSsy" id="1FOQehxoxjC" role="3cqZAp">
-                <property role="RRSoG" value="warn" />
-                <node concept="Xl_RD" id="2BZXJed2IvL" role="RRSoy">
-                  <property role="Xl_RC" value="error launching typechecking" />
-                </node>
-                <node concept="37vLTw" id="2BZXJed2IvN" role="RRSow">
-                  <ref role="3cqZAo" node="2BZXJecZP8S" resolve="ex" />
                 </node>
               </node>
               <node concept="3clFbH" id="1FOQehxy_$p" role="3cqZAp" />

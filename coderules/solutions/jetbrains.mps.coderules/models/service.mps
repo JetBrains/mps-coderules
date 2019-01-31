@@ -324,14 +324,7 @@
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
-        <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
-      </concept>
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -3774,7 +3767,19 @@
                     </node>
                     <node concept="3cqZAl" id="443LGHBiInL" role="3clF45" />
                     <node concept="3Tm1VV" id="443LGHBiInM" role="1B3o_S" />
-                    <node concept="3clFbS" id="443LGHBiInO" role="3clF47" />
+                    <node concept="3clFbS" id="443LGHBiInO" role="3clF47">
+                      <node concept="RRSsy" id="4UWJfzxYHC8" role="3cqZAp">
+                        <property role="RRSoG" value="warn" />
+                        <node concept="3cpWs3" id="4UWJfzxYI1C" role="RRSoy">
+                          <node concept="37vLTw" id="4UWJfzxYIom" role="3uHU7w">
+                            <ref role="3cqZAo" node="443LGHBiInJ" resolve="message" />
+                          </node>
+                          <node concept="Xl_RD" id="4UWJfzxYHCa" role="3uHU7B">
+                            <property role="Xl_RC" value="unhandled failure: " />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -3866,18 +3871,22 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="Hg6EncPqlL" role="3clF47">
-                        <node concept="RRSsy" id="4cvvxaYhU$1" role="3cqZAp">
-                          <property role="RRSoG" value="warn" />
-                          <node concept="2OqwBi" id="Hg6EncPFSZ" role="RRSoy">
-                            <node concept="37vLTw" id="Hg6EncPFaf" role="2Oq$k0">
-                              <ref role="3cqZAo" node="Hg6EncPqlI" resolve="thr" />
+                        <node concept="3clFbF" id="4UWJfzxWa0n" role="3cqZAp">
+                          <node concept="2OqwBi" id="4UWJfzxWavX" role="3clFbG">
+                            <node concept="37vLTw" id="4UWJfzxWa0l" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3F6vMxqaA$x" resolve="callback" />
                             </node>
-                            <node concept="liA8E" id="Hg6EncPGiV" role="2OqNvi">
-                              <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                            <node concept="liA8E" id="4UWJfzxWcwa" role="2OqNvi">
+                              <ref role="37wK5l" node="3F6vMxqaA38" resolve="failed" />
+                              <node concept="2OqwBi" id="4UWJfzxWdBF" role="37wK5m">
+                                <node concept="37vLTw" id="4UWJfzxWcVZ" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="Hg6EncPqlI" resolve="thr" />
+                                </node>
+                                <node concept="liA8E" id="4UWJfzxWevZ" role="2OqNvi">
+                                  <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                                </node>
+                              </node>
                             </node>
-                          </node>
-                          <node concept="37vLTw" id="Hg6EncPGXS" role="RRSow">
-                            <ref role="3cqZAo" node="Hg6EncPqlI" resolve="thr" />
                           </node>
                         </node>
                       </node>
@@ -4227,22 +4236,6 @@
               <ref role="37wK5l" to="unkn:~Single.onErrorReturn(io.reactivex.functions.Function):io.reactivex.Single" resolve="onErrorReturn" />
               <node concept="1bVj0M" id="6kREIVkftIa" role="37wK5m">
                 <node concept="3clFbS" id="6kREIVkftIc" role="1bW5cS">
-                  <node concept="3clFbH" id="2HYHa0WURMM" role="3cqZAp" />
-                  <node concept="34ab3g" id="2HYHa0WUTOS" role="3cqZAp">
-                    <property role="35gtTG" value="warn" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="2OqwBi" id="2HYHa0WUVTV" role="34bqiv">
-                      <node concept="37vLTw" id="2HYHa0WUViD" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6kREIVkftXC" resolve="t" />
-                      </node>
-                      <node concept="liA8E" id="2HYHa0WUWtA" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="2HYHa0WUUhQ" role="34bMjA">
-                      <ref role="3cqZAo" node="6kREIVkftXC" resolve="t" />
-                    </node>
-                  </node>
                   <node concept="3clFbH" id="2HYHa0WUUhS" role="3cqZAp" />
                   <node concept="3clFbJ" id="6kREIVkerka" role="3cqZAp">
                     <node concept="3clFbS" id="6kREIVkerkb" role="3clFbx">
