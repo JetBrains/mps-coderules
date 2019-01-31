@@ -19,6 +19,9 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="2423417345669755629" name="whichError" index="1eyWvh" />
+      </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
         <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
@@ -1684,6 +1687,9 @@
           </node>
         </node>
       </node>
+      <node concept="15s5l7" id="1Lr58WGbJj0" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;reference scopes (reference scopes)&quot;;FLAVOUR_MESSAGE=&quot;reference a (def) is out of search scope&quot;;FLAVOUR_NODE_FEATURE=&quot;def&quot;;FLAVOUR_RULE_ID=&quot;[r:49af371c-e432-4e5a-a3df-e689ebe20a8d(samples.lambdacalc.constraints)/4773731068388848700]&quot;;" />
+      </node>
     </node>
     <node concept="1DVJbV" id="1IKbs5XHk5K" role="1DVIru">
       <node concept="1DVIrG" id="1IKbs5XHk5M" role="j9CMd">
@@ -2082,6 +2088,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="15s5l7" id="1Lr58WGbJj2" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;constraints (cannot be parent)&quot;;FLAVOUR_MESSAGE=&quot;Node r5 cannot be parent of node r5&quot;;FLAVOUR_RULE_ID=&quot;[r:49af371c-e432-4e5a-a3df-e689ebe20a8d(samples.lambdacalc.constraints)/1995144943984672032]&quot;;" />
       </node>
     </node>
     <node concept="1DVJbV" id="JqEP$8s0FX" role="1DVIru">
