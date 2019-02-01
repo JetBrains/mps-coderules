@@ -32,6 +32,7 @@
     <import index="a19p" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.rules(JUnit/)" />
     <import index="fczk" ref="1fd846c3-c5f9-4b9e-9ecc-e716f7149f86/java:org.hamcrest.core(Hamcrest/)" />
     <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
+    <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -340,13 +341,13 @@
             </node>
           </node>
           <node concept="2ShNRf" id="1Lr58WFW70r" role="HW$Y0">
-            <node concept="HV5vD" id="1Lr58WFW7zl" role="2ShVmc">
-              <ref role="HV5vE" to="wsw7:3etVqSRK$2L" resolve="ModelPropertiesChecker" />
+            <node concept="1pGfFk" id="6lga0XrIjBS" role="2ShVmc">
+              <ref role="37wK5l" to="k2t0:~ModelPropertiesChecker.&lt;init&gt;()" resolve="ModelPropertiesChecker" />
             </node>
           </node>
           <node concept="2ShNRf" id="1Lr58WFWaaF" role="HW$Y0">
-            <node concept="1pGfFk" id="1Lr58WFWcM8" role="2ShVmc">
-              <ref role="37wK5l" to="wsw7:3etVqSRT$Df" resolve="ModuleChecker" />
+            <node concept="1pGfFk" id="6lga0XrIk8C" role="2ShVmc">
+              <ref role="37wK5l" to="k2t0:~ModuleChecker.&lt;init&gt;()" resolve="ModuleChecker" />
             </node>
           </node>
           <node concept="2ShNRf" id="1Lr58WFWe0Z" role="HW$Y0">
