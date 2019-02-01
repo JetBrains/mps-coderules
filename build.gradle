@@ -4,6 +4,8 @@ import java.util.regex.*
 defaultTasks 'build'
 
 allprojects {
+  apply plugin: 'java'
+
   repositories {
     mavenLocal()
     mavenCentral()
@@ -141,7 +143,7 @@ ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9
   }
 }
 
-task build {
+build {
   dependsOn {
     [
       ':coderules-assemble',
@@ -150,10 +152,9 @@ task build {
       ':samples:fitch:fitch-assemble'
     ]
   }
-
 }
 
-task check {
+check {
   dependsOn {
     [
       ':samples:mpscore:mpscore-check',

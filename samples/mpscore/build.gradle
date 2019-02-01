@@ -40,7 +40,13 @@ ant.importBuild('build.xml') {antTarget ->
   }
 }
 
-task check {
+build {
+  dependsOn {
+    'mpscore-assemble'
+  }
+}
+
+check {
   dependsOn {
     'mpscore-check'
   }

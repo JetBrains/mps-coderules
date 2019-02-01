@@ -40,7 +40,13 @@ ant.importBuild('build.xml') {antTarget ->
   }
 }
 
-task check {
+build {
+  dependsOn {
+    'fitch-assemble'
+  }
+}
+
+check {
   dependsOn {
     'fitch-check'
   }
