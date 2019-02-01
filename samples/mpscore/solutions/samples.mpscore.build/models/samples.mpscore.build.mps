@@ -126,10 +126,6 @@
         </node>
       </node>
     </node>
-    <node concept="398rNT" id="46o4wsH3mv_" role="1l3spd">
-      <property role="TrG5h" value="mps.macro.mpscore_home" />
-      <node concept="55IIr" id="46o4wsH3mGg" role="398pKh" />
-    </node>
     <node concept="398rNT" id="5VQ8Sex_oaS" role="1l3spd">
       <property role="TrG5h" value="coderules_art" />
       <node concept="55IIr" id="5VQ8Sex_odz" role="398pKh">
@@ -149,6 +145,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="398rNT" id="46o4wsH3mv_" role="1l3spd">
+      <property role="TrG5h" value="mps.macro.mpscore_home" />
+      <node concept="55IIr" id="46o4wsH3mGg" role="398pKh" />
     </node>
     <node concept="10PD9b" id="1BDNG5xBZhR" role="10PD9s" />
     <node concept="3b7kt6" id="1BDNG5xBZhW" role="10PD9s" />

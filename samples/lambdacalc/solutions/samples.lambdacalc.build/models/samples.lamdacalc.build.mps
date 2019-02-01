@@ -260,6 +260,10 @@
         </node>
       </node>
     </node>
+    <node concept="398rNT" id="46o4wsH3mv_" role="1l3spd">
+      <property role="TrG5h" value="mps.macro.lambdacalc_home" />
+      <node concept="55IIr" id="46o4wsH3mGg" role="398pKh" />
+    </node>
     <node concept="2igEWh" id="7E7FS_Vb3KS" role="1hWBAP">
       <property role="2igJW4" value="true" />
     </node>

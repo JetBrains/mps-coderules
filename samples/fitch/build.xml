@@ -5,6 +5,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/fitch" />
   <property name="coderules_art" location="${basedir}/../../build/artifacts/coderules" />
   <property name="mps_home" location="${basedir}/../../MPS_HOME" />
+  <property name="mps.macro.fitch_home" location="${basedir}" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property name="artifacts.coderules" location="${coderules_art}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
@@ -69,7 +70,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch" />
-      <fileset dir="${basedir}/languages/samples.fitch/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/samples.fitch-generator.jar" />
@@ -100,19 +101,19 @@
       <fileset dir="${build.tmp}/default/samples.fitch-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.fitch-generator-template">
-      <fileset dir="${basedir}/languages/samples.fitch/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.fitch-models">
-      <fileset dir="${basedir}/languages/samples.fitch/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/modules/samples.fitch-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/languages/samples.fitch/generator/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <fileset dir="${basedir}/languages/samples.fitch/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
@@ -156,7 +157,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.firstOrderLogic.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch.firstOrderLogic" />
-      <fileset dir="${basedir}/languages/samples.fitch.firstOrderLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.firstOrderLogic.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/samples.fitch.firstOrderLogic-generator.jar" />
@@ -187,19 +188,19 @@
       <fileset dir="${build.tmp}/default/samples.fitch.firstOrderLogic-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.fitch.firstOrderLogic-generator-template">
-      <fileset dir="${basedir}/languages/samples.fitch.firstOrderLogic/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.fitch.firstOrderLogic-models">
-      <fileset dir="${basedir}/languages/samples.fitch.firstOrderLogic/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/modules/samples.fitch.firstOrderLogic-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/languages/samples.fitch.firstOrderLogic/generator/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <fileset dir="${basedir}/languages/samples.fitch.firstOrderLogic/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
@@ -244,7 +245,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.herbrandLogic.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch.herbrandLogic" />
-      <fileset dir="${basedir}/languages/samples.fitch.herbrandLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.herbrandLogic.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/samples.fitch.herbrandLogic-generator.jar" />
@@ -275,19 +276,19 @@
       <fileset dir="${build.tmp}/default/samples.fitch.herbrandLogic-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.fitch.herbrandLogic-generator-template">
-      <fileset dir="${basedir}/languages/samples.fitch.herbrandLogic/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.fitch.herbrandLogic-models">
-      <fileset dir="${basedir}/languages/samples.fitch.herbrandLogic/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/modules/samples.fitch.herbrandLogic-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/languages/samples.fitch.herbrandLogic/generator/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <fileset dir="${basedir}/languages/samples.fitch.herbrandLogic/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
@@ -332,7 +333,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.propositionalLogic.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
-      <fileset dir="${basedir}/languages/samples.fitch.propositionalLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.propositionalLogic.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/samples.fitch.propositionalLogic-generator.jar" />
@@ -363,19 +364,19 @@
       <fileset dir="${build.tmp}/default/samples.fitch.propositionalLogic-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.fitch.propositionalLogic-generator-template">
-      <fileset dir="${basedir}/languages/samples.fitch.propositionalLogic/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.fitch.propositionalLogic-models">
-      <fileset dir="${basedir}/languages/samples.fitch.propositionalLogic/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/modules/samples.fitch.propositionalLogic-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/languages/samples.fitch.propositionalLogic/generator/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <fileset dir="${basedir}/languages/samples.fitch.propositionalLogic/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
@@ -412,14 +413,14 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.demo.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch.demo" />
-      <fileset dir="${basedir}/solutions/samples.fitch.demo/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps.macro.fitch_home}/solutions/samples.fitch.demo/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.demo.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-samples.fitch.demo-models">
-      <fileset dir="${basedir}/solutions/samples.fitch.demo/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.fitch_home}/solutions/samples.fitch.demo/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/modules/samples.fitch.demo-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/solutions/samples.fitch.demo/source_gen">
+      <fileset dir="${mps.macro.fitch_home}/solutions/samples.fitch.demo/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
@@ -558,6 +559,7 @@
       </jvmargs>
       <macro name="coderules_art" path="${coderules_art}" />
       <macro name="mps_home" path="${mps_home}" />
+      <macro name="mps.macro.fitch_home" path="${mps.macro.fitch_home}" />
     </generate>
   </target>
   
@@ -580,12 +582,12 @@
   <target name="module-tests" depends="assemble, test.check" />
   
   <target name="java.compile.samples.fitch" depends="fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.fitch/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/languages/samples.fitch/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch" />
     <javac destdir="${build.tmp}/java/out/samples.fitch" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.fitch/source_gen" />
+        <path location="${mps.macro.fitch_home}/languages/samples.fitch/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -648,12 +650,12 @@
   </target>
   
   <target name="java.compile.samples.fitch#4322786184247805322" depends="java.compile.samples.fitch, fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.fitch/generator/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/languages/samples.fitch/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch#4322786184247805322" />
     <javac destdir="${build.tmp}/java/out/samples.fitch#4322786184247805322" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.fitch/generator/source_gen" />
+        <path location="${mps.macro.fitch_home}/languages/samples.fitch/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -687,12 +689,12 @@
   </target>
   
   <target name="java.compile.samples.fitch.propositionalLogic" depends="java.compile.samples.fitch, fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.fitch.propositionalLogic/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
     <javac destdir="${build.tmp}/java/out/samples.fitch.propositionalLogic" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.fitch.propositionalLogic/source_gen" />
+        <path location="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -756,12 +758,12 @@
   </target>
   
   <target name="java.compile.samples.fitch.propositionalLogic#5505606474790531941" depends="java.compile.samples.fitch, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch.propositionalLogic#5505606474790531941" />
     <javac destdir="${build.tmp}/java/out/samples.fitch.propositionalLogic#5505606474790531941" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
+        <path location="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -796,12 +798,12 @@
   </target>
   
   <target name="java.compile.samples.fitch.herbrandLogic" depends="java.compile.samples.fitch, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.fitch.herbrandLogic/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch.herbrandLogic" />
     <javac destdir="${build.tmp}/java/out/samples.fitch.herbrandLogic" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.fitch.herbrandLogic/source_gen" />
+        <path location="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -866,12 +868,12 @@
   </target>
   
   <target name="java.compile.samples.fitch.herbrandLogic#3059457401298723545" depends="java.compile.samples.fitch, java.compile.samples.fitch.herbrandLogic, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch.herbrandLogic#3059457401298723545" />
     <javac destdir="${build.tmp}/java/out/samples.fitch.herbrandLogic#3059457401298723545" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
+        <path location="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -907,12 +909,12 @@
   </target>
   
   <target name="java.compile.samples.fitch.firstOrderLogic" depends="java.compile.samples.fitch, java.compile.samples.fitch.herbrandLogic, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.fitch.firstOrderLogic/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch.firstOrderLogic" />
     <javac destdir="${build.tmp}/java/out/samples.fitch.firstOrderLogic" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.fitch.firstOrderLogic/source_gen" />
+        <path location="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -976,12 +978,12 @@
   </target>
   
   <target name="java.compile.samples.fitch.firstOrderLogic#4035326440039985569" depends="java.compile.samples.fitch, java.compile.samples.fitch.firstOrderLogic, java.compile.samples.fitch.herbrandLogic, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch.firstOrderLogic#4035326440039985569" />
     <javac destdir="${build.tmp}/java/out/samples.fitch.firstOrderLogic#4035326440039985569" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
+        <path location="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -1018,13 +1020,13 @@
   </target>
   
   <target name="java.compile.samples.fitch.demo" depends="java.compile.samples.fitch, java.compile.samples.fitch.firstOrderLogic, java.compile.samples.fitch.herbrandLogic, java.compile.samples.fitch.propositionalLogic, fetchDependencies">
-    <mkdir dir="${basedir}/solutions/samples.fitch.demo/source_gen" />
+    <mkdir dir="${mps.macro.fitch_home}/solutions/samples.fitch.demo/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.fitch.demo" />
     <javac destdir="${build.tmp}/java/out/samples.fitch.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/solutions/samples.fitch.demo/source_gen" />
-        <pathelement path="${basedir}/solutions/samples.fitch.demo/test_gen/" />
+        <path location="${mps.macro.fitch_home}/solutions/samples.fitch.demo/source_gen" />
+        <pathelement path="${mps.macro.fitch_home}/solutions/samples.fitch.demo/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -1237,6 +1239,7 @@
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
       
+      <sysproperty key="mps.macro.fitch_home" value="${basedir}" />
       
       <test name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.AntModuleTestSuite-check" />
       <formatter type="xml" />
@@ -1244,15 +1247,15 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/languages/samples.fitch/source_gen" />
-    <delete dir="${basedir}/languages/samples.fitch/generator/source_gen" />
-    <delete dir="${basedir}/languages/samples.fitch.firstOrderLogic/source_gen" />
-    <delete dir="${basedir}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
-    <delete dir="${basedir}/languages/samples.fitch.herbrandLogic/source_gen" />
-    <delete dir="${basedir}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
-    <delete dir="${basedir}/languages/samples.fitch.propositionalLogic/source_gen" />
-    <delete dir="${basedir}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
-    <delete dir="${basedir}/solutions/samples.fitch.demo/source_gen" />
-    <delete dir="${basedir}/solutions/samples.fitch.demo/test_gen" />
+    <delete dir="${mps.macro.fitch_home}/languages/samples.fitch/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/languages/samples.fitch/generator/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/generator/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/generator/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/generator/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/solutions/samples.fitch.demo/source_gen" />
+    <delete dir="${mps.macro.fitch_home}/solutions/samples.fitch.demo/test_gen" />
   </target>
 </project>

@@ -4,8 +4,8 @@
   <property name="build.tmp" location="${build.dir}/tmp/mpscore" />
   <property name="build.layout" location="${build.dir}/artifacts/mpscore" />
   <property name="mps_home" location="${basedir}/../../MPS_HOME" />
-  <property name="mps.macro.mpscore_home" location="${basedir}" />
   <property name="coderules_art" location="${basedir}/../../build/artifacts/coderules" />
+  <property name="mps.macro.mpscore_home" location="${basedir}" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property name="artifacts.coderules" location="${coderules_art}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
@@ -300,8 +300,8 @@
         <arg value="-Xmx512m" />
       </jvmargs>
       <macro name="mps_home" path="${mps_home}" />
-      <macro name="mps.macro.mpscore_home" path="${mps.macro.mpscore_home}" />
       <macro name="coderules_art" path="${coderules_art}" />
+      <macro name="mps.macro.mpscore_home" path="${mps.macro.mpscore_home}" />
     </generate>
   </target>
   

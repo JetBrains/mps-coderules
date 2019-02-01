@@ -5,6 +5,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/lambdacalc" />
   <property name="coderules_art" location="${basedir}/../../build/artifacts/coderules" />
   <property name="mps_home" location="${basedir}/../../MPS_HOME" />
+  <property name="mps.macro.lambdacalc_home" location="${basedir}" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property name="artifacts.coderules" location="${coderules_art}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
@@ -65,14 +66,14 @@
     </echoxml>
     <jar destfile="${build.layout}/lambdacalc/samples.lambdacalc.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.lambdacalc" />
-      <fileset dir="${basedir}/languages/samples.lambdacalc/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps.macro.lambdacalc_home}/languages/samples.lambdacalc/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.lambdacalc.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-samples.lambdacalc-models">
-      <fileset dir="${basedir}/languages/samples.lambdacalc/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.lambdacalc_home}/languages/samples.lambdacalc/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/lambdacalc/samples.lambdacalc-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/languages/samples.lambdacalc/source_gen">
+      <fileset dir="${mps.macro.lambdacalc_home}/languages/samples.lambdacalc/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
@@ -108,14 +109,14 @@
     </echoxml>
     <jar destfile="${build.layout}/lambdacalc/samples.lambdacalc.demo.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.lambdacalc.demo" />
-      <fileset dir="${basedir}/solutions/samples.lambdacalc.demo/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.lambdacalc.demo.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-samples.lambdacalc.demo-models">
-      <fileset dir="${basedir}/solutions/samples.lambdacalc.demo/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/lambdacalc/samples.lambdacalc.demo-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/solutions/samples.lambdacalc.demo/source_gen">
+      <fileset dir="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
@@ -256,6 +257,7 @@
       </jvmargs>
       <macro name="coderules_art" path="${coderules_art}" />
       <macro name="mps_home" path="${mps_home}" />
+      <macro name="mps.macro.lambdacalc_home" path="${mps.macro.lambdacalc_home}" />
     </generate>
   </target>
   
@@ -268,12 +270,12 @@
   <target name="module-tests" depends="assemble, test.demo" />
   
   <target name="java.compile.samples.lambdacalc" depends="fetchDependencies">
-    <mkdir dir="${basedir}/languages/samples.lambdacalc/source_gen" />
+    <mkdir dir="${mps.macro.lambdacalc_home}/languages/samples.lambdacalc/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.lambdacalc" />
     <javac destdir="${build.tmp}/java/out/samples.lambdacalc" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/languages/samples.lambdacalc/source_gen" />
+        <path location="${mps.macro.lambdacalc_home}/languages/samples.lambdacalc/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -324,13 +326,13 @@
   </target>
   
   <target name="java.compile.samples.lambdacalc.demo" depends="java.compile.samples.lambdacalc, fetchDependencies">
-    <mkdir dir="${basedir}/solutions/samples.lambdacalc.demo/source_gen" />
+    <mkdir dir="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/source_gen" />
     <mkdir dir="${build.tmp}/java/out/samples.lambdacalc.demo" />
     <javac destdir="${build.tmp}/java/out/samples.lambdacalc.demo" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/solutions/samples.lambdacalc.demo/source_gen" />
-        <pathelement path="${basedir}/solutions/samples.lambdacalc.demo/test_gen/" />
+        <path location="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/source_gen" />
+        <pathelement path="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -531,6 +533,7 @@
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
       
+      <sysproperty key="mps.macro.lambdacalc_home" value="${basedir}" />
       
       <test name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.AntModuleTestSuite-demo" />
       <formatter type="xml" />
@@ -538,7 +541,7 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/solutions/samples.lambdacalc.demo/source_gen" />
-    <delete dir="${basedir}/solutions/samples.lambdacalc.demo/test_gen" />
+    <delete dir="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/source_gen" />
+    <delete dir="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/test_gen" />
   </target>
 </project>
