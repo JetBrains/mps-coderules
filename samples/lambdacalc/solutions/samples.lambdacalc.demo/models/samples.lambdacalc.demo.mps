@@ -1293,9 +1293,6 @@
                 </node>
                 <node concept="t0$VC" id="3TFdEPZheq9" role="1DVIo8">
                   <ref role="t0$VJ" node="2jleysRX4dp" resolve="x" />
-                  <node concept="1U20sH" id="1Lr58WG9UYh" role="lGtFl">
-                    <property role="1U20sK" value="error" />
-                  </node>
                 </node>
               </node>
               <node concept="1DVIoH" id="2jleysRX4dp" role="1DVIrJ">
@@ -1307,6 +1304,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="15s5l7" id="5NV6AIIt152" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;reference scopes (reference scopes)&quot;;FLAVOUR_MESSAGE=&quot;reference x (def) is out of search scope&quot;;FLAVOUR_NODE_FEATURE=&quot;def&quot;;FLAVOUR_RULE_ID=&quot;[r:49af371c-e432-4e5a-a3df-e689ebe20a8d(samples.lambdacalc.constraints)/8747055848970356303]&quot;;" />
       </node>
     </node>
     <node concept="1DVJbV" id="1YCbHn1AbJG" role="1DVIru">
