@@ -515,7 +515,7 @@
         <attribute name="Class-Path" value="${manifest.classpath}" />
       </manifest>
     </jar>
-    <junit showoutput="true" fork="true" haltonfailure="false" dir="${basedir}">
+    <junit showoutput="true" fork="true" haltonfailure="true" dir="${basedir}">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss2048k" />
       <jvmarg value="-Xmx1024m" />
