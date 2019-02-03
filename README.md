@@ -7,8 +7,10 @@ An experimental feature of [JetBrains MPS](https://jetbrains.com/mps). Code rule
 **NEW!** The documentation [website](http://jetbrains.github.io/mps-coderules/) is available.  
 
 ## Status
+| Travis CI | TeamCity |
+|:--|:--|
+| [![Build Status](https://travis-ci.org/JetBrains/mps-coderules.svg?branch=master)](https://travis-ci.org/JetBrains/mps-coderules)  | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20191_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20191_Distribution_MpsCodeRules) |
 
-[![Build Status](https://travis-ci.org/JetBrains/mps-coderules.svg?branch=master)](https://travis-ci.org/JetBrains/mps-coderules)
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
 
