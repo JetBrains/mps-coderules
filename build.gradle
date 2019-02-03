@@ -16,7 +16,7 @@ repositories {
   ivy {
       url 'https://teamcity.jetbrains.com/guestAuth/repository/download'
       layout ('pattern') {
-          artifact '[organization]/[module]-[revision]/[module]-[revision].[ext]'
+          artifact '[organization]/[revision]/[revision].[ext]'
       }
   }
 }
