@@ -1,7 +1,7 @@
 import groovy.xml.MarkupBuilder
 import java.util.regex.*
 
-defaultTasks 'build'
+defaultTasks 'assemble'
 
 allprojects {
   apply plugin: 'java'
@@ -143,7 +143,7 @@ ant.properties.'ci.build.num' = "${tagMatcher().find() ? tagMatcher()[0][2] : '9
   }
 }
 
-build {
+assemble {
   dependsOn {
     [
       ':coderules-assemble',

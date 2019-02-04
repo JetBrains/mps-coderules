@@ -1,32 +1,31 @@
 # INSTALL #
 
-Prerequisites: 
+Prerequisites:
 
-- Oracle JDK 1.8 
+- Oracle JDK 1.8
 - Maven 3
 
-## To fully build the project execute: ##
+** NOTE: ** in order to open any of the sample projects follow the steps below
+for building the whole project, as samples expect the compiled languages to be
+available in a project library.
 
-    mvn -Dmaven.javadoc.skip=true -B -f reactor install && ./gradlew build
+## To fully build the project including all subprojects, execute: ##
 
-## To fully build and test the project execute: ##
+    mvn -Dmaven.javadoc.skip=true -B -f reactor install && ./gradlew assemble
+
+## To fully build and test the project including all subprojects, execute: ##
 
     mvn -Dmaven.javadoc.skip=true -B -f reactor install && ./gradlew check
 
 This builds the "reactor" project and installs its artefacts into local Maven
 repository. Then the regular Gradle build is launched. Further launches of
-Gradle can be done without running the build in "reactor". 
+Gradle can be done without running the build in "reactor".
 
-The default task to execute if none is specified is "build".
+The default task to execute if none is specified is "assemble".
 
 ## To install all the dependencies in order to open the project with MPS: ##
 
     mvn -Dmaven.javadoc.skip=true -B -f reactor install && ./gradlew setup
 
-Once the project is opened, execute "Rebuild Project", since generated 
+Once the project is opened, execute "Rebuild Project", since generated
 artefacts are excluded from version control.
-
-**NOTE: ** in order to open any of the sample projects follow the steps above
-for building the whole project, as samples expect the compiled languages to be
-available in a project library.
-

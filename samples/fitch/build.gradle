@@ -40,7 +40,7 @@ ant.importBuild('build.xml') {antTarget ->
   }
 }
 
-build {
+assemble {
   dependsOn {
     'fitch-assemble'
   }
