@@ -10,6 +10,9 @@ allprojects {
     mavenLocal()
     mavenCentral()
   }
+
+  // please no jars, no manifests, no build folders 
+  jar { onlyIf { false } }
 }
 
 repositories {
