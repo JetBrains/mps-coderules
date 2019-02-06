@@ -11642,6 +11642,21 @@
           </node>
         </node>
         <node concept="3clFbH" id="47tET_Xpobg" role="3cqZAp" />
+        <node concept="3SKdUt" id="7Mcb_HeOBq$" role="3cqZAp">
+          <node concept="3SKdUq" id="7Mcb_HeOBqA" role="3SKWNk">
+            <property role="3SKdUp" value="Merging Constraints makes sense only for type variables" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7Mcb_HeOBsL" role="3cqZAp">
+          <node concept="3SKdUq" id="7Mcb_HeOBsN" role="3SKWNk">
+            <property role="3SKdUp" value=" because they have distinct identity, whereas two equal ground types" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7Mcb_HeOBv2" role="3cqZAp">
+          <node concept="3SKdUq" id="7Mcb_HeOBv4" role="3SKWNk">
+            <property role="3SKdUp" value=" can legitimately have different sets of Constraints." />
+          </node>
+        </node>
         <node concept="1nLNNL" id="47tET_W4RZW" role="3cqZAp">
           <node concept="1nLNMm" id="47tET_W4RZY" role="1nLNNK">
             <node concept="0eUR_" id="47tET_W4S03" role="0UC6o">
@@ -11709,6 +11724,13 @@
             </node>
             <node concept="3Aq9_M" id="47tET_W4S3n" role="1nLNMa">
               <node concept="3I6sU6" id="47tET_W4S3o" role="3Ip0Jz">
+                <node concept="3I6s7M" id="7Mcb_HeNx$r" role="3I6sU7">
+                  <node concept="2aLmEc" id="7Mcb_HeNx$p" role="3I6s78">
+                    <node concept="a7P8L" id="7Mcb_HeNx$y" role="2aLmnP">
+                      <ref role="a7OzE" node="47tET_W4S06" resolve="TVar1" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3I6s7M" id="47tET_W4S3u" role="3I6sU7">
                   <node concept="3GeI9q" id="47tET_W4S3r" role="3I6s78">
                     <node concept="a7P8L" id="47tET_W4S3z" role="3GeI8F">
@@ -11723,7 +11745,12 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="47tET_WPsek" role="3cqZAp" />
+        <node concept="3clFbH" id="7Mcb_HeOBxp" role="3cqZAp" />
+        <node concept="3SKdUt" id="7Mcb_HeOBwd" role="3cqZAp">
+          <node concept="3SKdUq" id="7Mcb_HeOBwf" role="3SKWNk">
+            <property role="3SKdUp" value="But definition Constraints are always on free variables." />
+          </node>
+        </node>
         <node concept="1nLNNL" id="47tET_WPsfr" role="3cqZAp">
           <node concept="1nLNMm" id="47tET_WPsfs" role="1nLNNK">
             <node concept="3Aq93q" id="47tET_WPsf$" role="1nLNMb">
@@ -11805,6 +11832,11 @@
         <node concept="3SKdUt" id="47xL5G3q0Z8" role="3cqZAp">
           <node concept="3SKdUq" id="47xL5G3q0Z9" role="3SKWNk">
             <property role="3SKdUp" value=" when its argument type (with some collected Constraints) becomes bound in process of type inference." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7Mcb_HeOBoE" role="3cqZAp">
+          <node concept="3SKdUq" id="7Mcb_HeOBoF" role="3SKWNk">
+            <property role="3SKdUp" value=" becomes bound in process of type inference." />
           </node>
         </node>
         <node concept="3SKdUt" id="47xL5G3q107" role="3cqZAp">
