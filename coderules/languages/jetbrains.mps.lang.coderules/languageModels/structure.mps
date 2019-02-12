@@ -219,6 +219,9 @@
     <node concept="PrWs8" id="1CgWc1TyDEK" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
+    <node concept="PrWs8" id="3xe5rkWUnVK" role="PzmwI">
+      <ref role="PrY4T" node="3xe5rkWUnV$" resolve="IVisible" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0ia8T">
     <property role="3GE5qa" value="rule.input" />
@@ -1269,6 +1272,46 @@
     <property role="TrG5h" value="ContextRepositoryExpression" />
     <property role="34LRSv" value="repository" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="PlHQZ" id="3xe5rkWUnV$">
+    <property role="EcuMT" value="4057204182462594788" />
+    <property role="3GE5qa" value="constraint.visibility" />
+    <property role="TrG5h" value="IVisible" />
+    <node concept="1TJgyj" id="3xe5rkWUnV_" role="1TKVEi">
+      <property role="IQ2ns" value="4057204182462594789" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="visibility" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3xe5rkWUnVB" resolve="Visibility" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3xe5rkWUnVB">
+    <property role="EcuMT" value="4057204182462594791" />
+    <property role="3GE5qa" value="constraint.visibility" />
+    <property role="TrG5h" value="Visibility" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="3xe5rkWUrcN">
+    <property role="EcuMT" value="4057204182462608179" />
+    <property role="3GE5qa" value="constraint.visibility" />
+    <property role="TrG5h" value="PublicVisibility" />
+    <property role="34LRSv" value="public" />
+    <ref role="1TJDcQ" node="3xe5rkWUnVB" resolve="Visibility" />
+  </node>
+  <node concept="1TIwiD" id="3xe5rkWUrcO">
+    <property role="EcuMT" value="4057204182462608180" />
+    <property role="3GE5qa" value="constraint.visibility" />
+    <property role="TrG5h" value="ProtectedVisibility" />
+    <property role="34LRSv" value="protected" />
+    <ref role="1TJDcQ" node="3xe5rkWUnVB" resolve="Visibility" />
+  </node>
+  <node concept="1TIwiD" id="3xe5rkWUrcP">
+    <property role="EcuMT" value="4057204182462608181" />
+    <property role="3GE5qa" value="constraint.visibility" />
+    <property role="TrG5h" value="PrivateVisibility" />
+    <property role="34LRSv" value="private" />
+    <ref role="1TJDcQ" node="3xe5rkWUnVB" resolve="Visibility" />
   </node>
 </model>
 

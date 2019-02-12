@@ -491,6 +491,9 @@
     <property role="3GE5qa" value="constraint.template" />
     <ref role="1XX52x" to="wq2x:6p0DfM0asBO" resolve="ConstraintDeclaration" />
     <node concept="3EZMnI" id="6p0DfM0brAq" role="2wV5jI">
+      <node concept="PMmxH" id="3xe5rkX5uDN" role="3EZMnx">
+        <ref role="PMmxG" node="3xe5rkX5o7f" resolve="Component_Visibility" />
+      </node>
       <node concept="3F0A7n" id="6p0DfM0brDT" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <ref role="1k5W1q" node="7ksQUDZpyGq" resolve="Constraint" />
@@ -4906,6 +4909,30 @@
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="l2Vlx" id="72RDgINeSRh" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3xe5rkX5gEY">
+    <property role="3GE5qa" value="constraint.visibility" />
+    <ref role="1XX52x" to="wq2x:3xe5rkWUnVB" resolve="Visibility" />
+    <node concept="PMmxH" id="3xe5rkX5gF8" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      <node concept="VPxyj" id="3xe5rkX5gFa" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+    </node>
+  </node>
+  <node concept="PKFIW" id="3xe5rkX5o7f">
+    <property role="3GE5qa" value="constraint.visibility" />
+    <property role="TrG5h" value="Component_Visibility" />
+    <ref role="1XX52x" to="wq2x:3xe5rkWUnV$" resolve="IVisible" />
+    <node concept="3F1sOY" id="3xe5rkX5o7h" role="2wV5jI">
+      <ref role="1NtTu8" to="wq2x:3xe5rkWUnV_" resolve="visibility" />
+      <node concept="3F0ifn" id="3xe5rkX5oA_" role="2ruayu">
+        <node concept="VPxyj" id="3xe5rkX5oAB" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
