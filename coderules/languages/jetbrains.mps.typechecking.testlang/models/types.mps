@@ -2,7 +2,7 @@
 <model ref="r:65f97255-4bb1-4783-acd6-a4ed5a1088e2(jetbrains.mps.typechecking.testlang.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="15" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="16" />
     <use id="cba985fe-1e96-4f16-9f8d-b07434405d4f" name="jetbrains.mps.lang.smodel.types" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
@@ -176,6 +176,10 @@
         <child id="8908809128802132746" name="parameter" index="3tC56T" />
         <child id="8908809128801952514" name="body" index="3unh6L" />
       </concept>
+      <concept id="4057204182462594788" name="jetbrains.mps.lang.coderules.structure.IVisible" flags="ng" index="4DQHh">
+        <child id="4057204182462594789" name="visibility" index="4DQHg" />
+      </concept>
+      <concept id="4057204182462608179" name="jetbrains.mps.lang.coderules.structure.PublicVisibility" flags="ng" index="4DUq6" />
       <concept id="7871500063866331595" name="jetbrains.mps.lang.coderules.structure.Query" flags="ng" index="92CTh">
         <child id="7871500063866331596" name="queryStage" index="92CTm" />
         <child id="3026409000515988658" name="parameter" index="2_cLD1" />
@@ -288,6 +292,7 @@
     <ref role="2YbDB9" node="7mB3viLbCp8" resolve="Typeof" />
     <node concept="3AqmO8" id="7lt0LtPOZVl" role="8PkJo">
       <property role="TrG5h" value="recover" />
+      <node concept="4DUq6" id="1Z2HYz9jjP0" role="4DQHg" />
     </node>
     <node concept="3AqmO8" id="7lt0LtPOZWJ" role="8PkJo">
       <property role="TrG5h" value="typeNode" />
@@ -297,6 +302,7 @@
       <node concept="1zAUYm" id="7lt0LtPP10I" role="1zAUyy">
         <property role="TrG5h" value="expression" />
       </node>
+      <node concept="4DUq6" id="1Z2HYz9jjP1" role="4DQHg" />
     </node>
     <node concept="1nLNMY" id="7lt0LtPOZVh" role="1nK1Vg">
       <property role="TrG5h" value="recoverExpr" />
@@ -578,6 +584,7 @@
       <node concept="1zAUYm" id="3IIf9OArhmR" role="1zAUyy">
         <property role="TrG5h" value="supertype" />
       </node>
+      <node concept="4DUq6" id="1Z2HYz9jjP2" role="4DQHg" />
     </node>
   </node>
   <node concept="92CTh" id="6OXbTD$fzih">
@@ -625,6 +632,7 @@
       <node concept="1zAUYm" id="7mB3viLbCpd" role="1zAUyy">
         <property role="TrG5h" value="type" />
       </node>
+      <node concept="4DUq6" id="1Z2HYz9jjP3" role="4DQHg" />
     </node>
     <node concept="1nLNMY" id="7lt0LtPHRZ8" role="1nK1Vg">
       <property role="TrG5h" value="exprTypeof" />

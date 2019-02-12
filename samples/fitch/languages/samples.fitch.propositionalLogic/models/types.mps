@@ -2,7 +2,7 @@
 <model ref="r:30d249b0-c2b0-4934-8bd8-e1d7a37c3b3b(samples.fitch.propositionalLogic.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="15" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="16" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
@@ -183,6 +183,10 @@
         <child id="8908809128802132746" name="parameter" index="3tC56T" />
         <child id="8908809128801952514" name="body" index="3unh6L" />
       </concept>
+      <concept id="4057204182462594788" name="jetbrains.mps.lang.coderules.structure.IVisible" flags="ng" index="4DQHh">
+        <child id="4057204182462594789" name="visibility" index="4DQHg" />
+      </concept>
+      <concept id="4057204182462608179" name="jetbrains.mps.lang.coderules.structure.PublicVisibility" flags="ng" index="4DUq6" />
       <concept id="4992889260816483106" name="jetbrains.mps.lang.coderules.structure.Condition" flags="ng" index="cBwPQ" />
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -841,6 +845,7 @@
           <property role="3SKdUp" value="sentence is the reasoning's conclusion" />
         </node>
       </node>
+      <node concept="4DUq6" id="1Z2HYz9jjP8" role="4DQHg" />
     </node>
     <node concept="3AqmO8" id="2YqrT$P7RE$" role="8PkJo">
       <property role="TrG5h" value="goal" />
@@ -855,6 +860,7 @@
           <property role="3SKdUp" value="sentence is the proof's goal" />
         </node>
       </node>
+      <node concept="4DUq6" id="1Z2HYz9jjP9" role="4DQHg" />
     </node>
     <node concept="1nLNMY" id="6$MtiK8H12U" role="1nK1Vg">
       <property role="TrG5h" value="Judgement_conclusion" />

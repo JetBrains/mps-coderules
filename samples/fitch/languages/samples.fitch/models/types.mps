@@ -2,7 +2,7 @@
 <model ref="r:30efdd3a-609b-4e7b-a8f2-60af62d5341f(samples.fitch.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="15" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="16" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
     <use id="cba985fe-1e96-4f16-9f8d-b07434405d4f" name="jetbrains.mps.lang.smodel.types" version="0" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
@@ -80,6 +80,10 @@
       <concept id="8456919074560454386" name="jetbrains.mps.lang.coderules.structure.ParameterContainer" flags="ng" index="0eUR_">
         <child id="8456919074560454898" name="parameter" index="0eVf_" />
       </concept>
+      <concept id="4057204182462594788" name="jetbrains.mps.lang.coderules.structure.IVisible" flags="ng" index="4DQHh">
+        <child id="4057204182462594789" name="visibility" index="4DQHg" />
+      </concept>
+      <concept id="4057204182462608179" name="jetbrains.mps.lang.coderules.structure.PublicVisibility" flags="ng" index="4DUq6" />
       <concept id="7871500063866331595" name="jetbrains.mps.lang.coderules.structure.Query" flags="ng" index="92CTh">
         <child id="7871500063866331596" name="queryStage" index="92CTm" />
         <child id="3026409000513569515" name="queryKind" index="2_lZgo" />
@@ -152,15 +156,18 @@
     <property role="TrG5h" value="Check" />
     <node concept="3AqmO8" id="2aBGSFge6lD" role="8PkJo">
       <property role="TrG5h" value="main" />
+      <node concept="4DUq6" id="1Z2HYz9jjPc" role="4DQHg" />
     </node>
     <node concept="3AqmO8" id="2aBGSFge6lJ" role="8PkJo">
       <property role="TrG5h" value="checkAll" />
+      <node concept="4DUq6" id="1Z2HYz9jjPd" role="4DQHg" />
     </node>
     <node concept="3AqmO8" id="2YqrT$P6Q6Q" role="8PkJo">
       <property role="TrG5h" value="check" />
       <node concept="1zAUYm" id="2YqrT$P6Q72" role="1zAUyy">
         <property role="TrG5h" value="rsn" />
       </node>
+      <node concept="4DUq6" id="1Z2HYz9jjPe" role="4DQHg" />
     </node>
     <node concept="3AqmO8" id="2YqrT$P7tud" role="8PkJo">
       <property role="TrG5h" value="valid" />
@@ -172,6 +179,7 @@
           <property role="3SKdUp" value="reasoning is valid" />
         </node>
       </node>
+      <node concept="4DUq6" id="1Z2HYz9jjPf" role="4DQHg" />
     </node>
     <node concept="1nLNMY" id="6$MtiK8GZEJ" role="1nK1Vg">
       <property role="TrG5h" value="check_Reasoning" />
