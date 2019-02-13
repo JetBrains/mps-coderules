@@ -1,4 +1,4 @@
-## Typechecking Lambda Calculus with Extensions
+# Typechecking Extended Lambda Calculus
 
 Simply Typed Lambda Calculus (STLC) is a famous example favored by textbook authors.
 This sample demonstrates how a classical type checking algorithm (Hindley-Milner[^hm]) designed for this language can be implemented using Code Rules.
@@ -19,7 +19,7 @@ The required extensions for GHC are:
 
 The dataform table is trivial, there're two terms used in Cons-list implementation (`Cons` and `Nil`), term `Constraint` used in the part of type system concerned with typeclasses, and other expected terms for types (`Fun` for function type, `Forall` for universal types etc.).
 
-![DataForm Table](img/dataform-table.png)  
+![DataForm Table](img/ex-stlc/dataform-table.png)  
 _(dataform table)_
 
 There is only one query of kind `TYPECHECK`, which launches types recovery. All the type checking is done by the automatic productions “on start”.
@@ -27,17 +27,17 @@ There is only one query of kind `TYPECHECK`, which launches types recovery. All 
 
 
 
-### Basic Hindley-Milner Type Inference
+## Basic Hindley-Milner Type Inference
 
 The basic type inference is covered by the several handlers: handler `typeOf` that contains most of the typing rules, handler `forall` covers typing of universal types, `recover` handler is concerned with translating inferred types back to SNodes representation, and `consList` is an utility handler.
 
 <!-- TODO -->
 <!-- EXAMPLES OF CONSTRUCTS & TYPE OUTPUT -->
-<!-- ![Numerals](img/numerals.png) -->
+<!-- ![Numerals](img/ex-stlc/numerals.png) -->
 <!--  -->
-<!-- ![SKI combinators](img/skicombinators.png) -->
+<!-- ![SKI combinators](img/ex-stlc/skicombinators.png) -->
 <!--  -->
-<!-- ![Y combinator](img/ycombinator.png) -->
+<!-- ![Y combinator](img/ex-stlc/ycombinator.png) -->
 
 
 #### Cons-list
@@ -45,7 +45,7 @@ The basic type inference is covered by the several handlers: handler `typeOf` th
 Handler `consList` is a straightforward implementation of Cons-list, present in all functional programming languages. Implementation consists of `Cons` and `Nil` data forms, `append` constraint and two rules that process it, one for common case and one for base case (when one of the input lists is empty).
 There's also a helper function, that translates lists embedded in Code Rules to these ad-hoc Cons-lists.
 
-![append rule](img/append.png)  
+![append rule](img/ex-stlc/append.png)  
 _(single rule implementing cons-list)_
 
 
@@ -60,7 +60,7 @@ Fresh type variables are represented simply by fresh logical variables.
 For example, this is a rule for lambda-bindings:
 <!-- A variable introduced by lambda abstraction is assigned a type, which is a fresh logical variable. -->
 
-![typeOf_LamVarBind rule](img/typeOf_LamVarBind.png)  
+![typeOf_LamVarBind rule](img/ex-stlc/typeOf_LamVarBind.png)  
 _(typing rule for a lambda-binding)_
 
 It's important to note that these variables can later be bound to something during the process of type inference, and so just before generalization on `let` we need to additionally check that the variables are indeed free.
@@ -71,19 +71,19 @@ Typing rules for the most of the nodes are straightforward: rules match on `type
 There're additional conditions on some of the rules, because their handling depends on whether these nodes are annotated or not. The case with annotations is processed in another handler `annotation`.
 For example, in the case of unannotated let-binding we simply generalize over all free variables in the bound expression:
 
-![typeOf_LetVarBind rule](img/typeOf_LetVarBind.png)  
+![typeOf_LetVarBind rule](img/ex-stlc/typeOf_LetVarBind.png)  
 _(typing rule for a let-binding)_
 
 In the typing rule for variable occurrences they are instantiated with a help of `inst` constraint.
 It also returns a list of fresh instantiated variables.
 This rule ensures that terms with universal types can actually be used polymorphically.
 
-![typeOf_VarRef rule](img/typeOf_VarRef.png)  
+![typeOf_VarRef rule](img/ex-stlc/typeOf_VarRef.png)  
 _(typing rule for a variable reference)_
 
 The type checking for `if-then-else` ensures that the types of both branches unify, and assigns the resulting unified type to the whole expression.
 
-![typeOf_IfThenElse rule](img/typeOf_IfThenElse.png)  
+![typeOf_IfThenElse rule](img/ex-stlc/typeOf_IfThenElse.png)  
 _(typing rule for conditional expression)_
 
 The most interesting rule here is for function application. Besides instantiating function, which may has polymorphic type, it also checks that the function can be applied to the argument, according to the types.
@@ -92,13 +92,13 @@ The most interesting rule here is for function application. Besides instantiatin
 The subsumption relation on types, that checks this, comes from the need to account for type annotations and is covered later. In short, it handles the case when the actual argument has a more general (more polymorphic) type, than type of the formal parameter. In other words, when the parameter's type is _subsumed_ by the argument's type.
 In the basic STLC formulation we would have here a usual unification between parameter's type and actual argument's type.
 
-![typeOf_App rule](img/typeOf_App.png)  
+![typeOf_App rule](img/ex-stlc/typeOf_App.png)  
 _(typing rule for function application)_
 
 Finally, the `fix` operator, which represents general recursion, is given the type `∀a. (a → a) → a`.
 <!-- `forall a. (a -> a) -> a`. -->
 
-![typeOf_Fix rule](img/typeOf_Fix.png)  
+![typeOf_Fix rule](img/ex-stlc/typeOf_Fix.png)  
 _(typing rule for `fix` operator)_
 
 
@@ -108,12 +108,12 @@ A separate handler is dedicated to producing and instantiating universal types, 
 The handler declares two general constraints `gen` and `inst` together with several helper constraints.
 
 
-###### Generalization
+##### Generalization
 
 `gen` constraint returns universal type through the logical variable passed as the first argument, accepts the type to generalize in the second argument and the type variables to generalize over (collected with `newTypeVars` constraint) in the third.
 `gen` activates 2 helper constraints: the first processes type vars one by one (that's where the main work happens), and the second handles several different cases depending on the form of type that is generalized.
 
-![gen rule](img/gen.png)  
+![gen rule](img/ex-stlc/gen.png)  
 _(rule for a type generalization)_
 
 Generalization of a single free type variable consists from two steps.
@@ -122,29 +122,29 @@ In short, we need to get the type constraints, that the type variable collected 
 The second step is a substitution of its occurrences in the generalized type with references to a fresh type variable playing a role of its definition.
 This is accomplished simply by a unification of free type var with `VarRef` data form, pointing to this fresh type var.
 
-![genTypeVars rule](img/genTypeVars.png)  
+![genTypeVars rule](img/ex-stlc/genTypeVars.png)  
 _(generalization of a single type variable)_
 
 The fresh type variables are collected and then passed to the second helper constraint, that actually produces universal type.
 It may appear, that in the type there're no free type variables to generalize over. In this case we shouldn't produce universal type.
 
-![genHelper_noForall rule](img/genHelper_noForall.png)  
+![genHelper_noForall rule](img/ex-stlc/genHelper_noForall.png)  
 _(not generalizing with no free type variables)_
 
 In another case, when the generalized type is itself a universal type we merge the sets of the generalized type variables to avoid nested universal types.
 
-![genHelper_forall rule](img/genHelper_forall.png)  
+![genHelper_forall rule](img/ex-stlc/genHelper_forall.png)  
 _(generalization of a universal type)_
 
 And in the common case we just produce a universal type with processed type variables.
 
-![genHelper rule](img/genHelper.png)  
+![genHelper rule](img/ex-stlc/genHelper.png)  
 _(generalization, common case)_
 
 For example, generalizing a type `Fun(arg: A res: B)`, where `A` and `B` are free terms (type variables) we will get `Forall(type: Fun(arg: VarRef(def: C) res: VarRef(def: D)) typeVars: [C, D])`, where `C` and `D` are fresh variables.
 
 
-###### Instantiation
+##### Instantiation
 
 Instantiation of a universal type mirrors generalization of a type.
 `inst` constraint also depends on the form of a type being instantiated.
@@ -152,12 +152,12 @@ There're two cases: the trivial case, when the instantiated type is not a univer
 
 In the former case we essentially do nothing, and return the same type and an empty list of instantiated type variables.
 
-![inst_dummy rule](img/inst_dummy.png)  
+![inst_dummy rule](img/ex-stlc/inst_dummy.png)  
 _(instantiating non-universal type)_
 
 The latter case uses a helper constraint, that processes bound type variables from universal type one by one.
 
-![inst rule](img/inst.png)  
+![inst rule](img/ex-stlc/inst.png)  
 _(instantiating universal type)_
 
 Instantiation of a single bound type variable has two steps.
@@ -166,7 +166,7 @@ It is done with a call to `subst`, a part of the internal API.
 The second step is concerned with typeclass constraints. What we need to do here is to instantiate (copy, really) the set of typeclass constraints for the freshly instantiated type variable.
 This variable is collected to the list of instantiated type variables for the caller.
 
-![instTypeVars rule](img/instTypeVars.png)  
+![instTypeVars rule](img/ex-stlc/instTypeVars.png)  
 _(instantiating single type variable)_
 
 
@@ -174,23 +174,23 @@ _(instantiating single type variable)_
 
 The handler `recover` is responsible for translating the calculated types to SNode form and is pretty straightforward. On each typeable node a `recover` constraint is activated. SNodes representing types are constructed using quotations.
 
-![recoverAll rule](img/recoverAll.png)  
+![recoverAll rule](img/ex-stlc/recoverAll.png)  
 _(starting type recovery)_
 
 The rules for type variables ensure that every one of them has an assigned name.
 For variables without names assigned in type annotations the second rule will assign them with a help of `VarNames` utility.
 
-![recover_var rules](img/recover_var.png)  
+![recover_var rules](img/ex-stlc/recover_var.png)  
 _(recover type variable)_
     <!-- SHOW BOTH RULES -->
 
 The most involved rule is for universal type, because it requires to recover and collect in a list SNodes representing type variables.
 Analogously, for each type variable we need to recover and collect its typeclass constraints.
 
-![recover_forall rule](img/recover_forall.png)  
+![recover_forall rule](img/ex-stlc/recover_forall.png)  
 _(recover universal type)_
 
-![recoverTypeVars rule](img/recoverTypeVars.png)  
+![recoverTypeVars rule](img/ex-stlc/recoverTypeVars.png)  
 _(recover bound type variable from universal type)_
     <!-- SHOW FORALL RULES FOR FORALL & RECOVERTYPEVARS -->
 
@@ -199,7 +199,7 @@ Next, we turn our attention to the extensions to STLC.
 
 
 
-### Type Annotations
+## Type Annotations
 
 Extension of STLC with type annotations demonstrates two important points: a usage of Code Rules macros and an implementation of a relation between types in the form of constraint. Relations on types are present in many type systems, and probably the most widespread example is a subtyping relation (e.g. `isSubtype(type1, type2)`). As a matter of fact, the `subsumed` relation, presented here, is a form of subtyping too, as explained below.
 
@@ -213,12 +213,12 @@ In this lambda calculus there's a single macro table called `types` for translat
 
 A typical example of a macro is for the function type. It recursively invokes macros for its argument and result types.
 
-![](img/macro_Fun.png)  
+![](img/ex-stlc/macro_Fun.png)  
 _(macro for a function type)_
 
 Macro for a type variable produces a fresh logical variable each time it is invoked.
 
-![](img/macro_Var.png)  
+![](img/ex-stlc/macro_Var.png)  
 _(macro for a type variable)_
 
 As it can be invoked several times, we need to unify different logical variables emitted for a single type variable.
@@ -226,12 +226,15 @@ It is done in handler `annotation`.
 We also emit a special constraint to carry type variable's name.
 It's needed for outputting types in handler `recover` with expected names.
 
-![](img/varTypeDuplicate.png)  
+![](img/ex-stlc/varTypeDuplicate.png)  
 _(unifying duplicate logical variables)_
+
+
+#### Typing Rules for Annotations
 
 All these macros are used in the handler `annotation` in a rule that produces a single constraint carrying the type from annotation:
 
-![](img/getType.png)  
+![](img/ex-stlc/getType.png)  
 _(usage of a macro expansion)_
 <!-- _usage macro expansion for translating type SNode_ -->
 
@@ -239,18 +242,18 @@ Handler `annotation` defines several important rules.
 Two of them are concerned with special handling of annotated bindings (let-binding and lambda-binding).
 For lambda-binding we simply propagate the type from annotation, because at this point, at the introduction of a new variable, there're no constraints on it to check against.
 
-![](img/typeOf_LamVarBind_anno.png)  
+![](img/ex-stlc/typeOf_LamVarBind_anno.png)  
 _(annotated lambda-binding just assigns to its variable type from the annotation)_
 
 The case of let-binding is different. Here we need to check the annotation against the inferred type of the bound expression. This is done with a help of `subsumed` constraint, explained below. It is the only difference of this typing rule from a rule for unannotated let-binding.
 
-![](img/typeOf_LetVarBind_anno.png)  
+![](img/ex-stlc/typeOf_LetVarBind_anno.png)  
 _(annotated let-binding checks annotation against inferred type with `subsumed`)_
 
 Another rule is concerned with annotated expressions.
 In this case we check against the type of inferred expression, analogously to the rule for let-binding.
 
-![](img/typeOf_AnnExpr.png)  
+![](img/ex-stlc/typeOf_AnnExpr.png)  
 _(annotated expression also includes `subsumed` check)_
 
 In essence, this is all that is special about type annotations.
@@ -323,14 +326,14 @@ The most important part comes after that: we need to check that the types, to wh
 The required checks differ for these two rules. That's where the asymmetric nature of relation manifests itself.
 For details, the reader can proceed to an example for polymorphic pair types described below or, for a full treatment, to the original paper.[^spjones2007]
 
-![](img/subsumption_Forall.png)  
+![](img/ex-stlc/subsumption_Forall.png)  
 _(subsumption rules for universal types)_
 
 Another important case is that of leaves, when one of the types is either a type variable reference or a free type variable (either instantiated or initially free, that is, not bound during the process of type inference).
 In the case of free type variable we unify it with another term, essentially instantiating type variable to it.
 If there will be _conflicting instantiations of the same type variable to different types_, unification will fail and halt typechecking.
 
-![](img/subsumption_leaves.png)  
+![](img/ex-stlc/subsumption_leaves.png)  
 _(leaves in subsumption are unified)_
 
 But if the second term is a free type variable too, then unification will succeed and we may need to perform additional check.
@@ -345,19 +348,19 @@ So it is performed only in the rules for universal types.
 
 In the case of variable references (that is, type variables bound by some universal quantifier) they must match because these variables are _rigid_, and they can't be unified. This case is essentially the same as in Haskell, where, for example, two type variables with different names entered by a user can't be unified.
 
-![](img/subsumption_leaves_rigid.png)  
+![](img/ex-stlc/subsumption_leaves_rigid.png)  
 _(rigid type variables in subsumption are checked for equality)_
     <!-- TODO example from haskell? from here? -->
 
 Subsumption rule for function types proceeds by checking argument and result types.
 It is analogous to typical subtyping rules for function types: argument types are checked contravariantly, result types are checked covariantly.
 
-![](img/subsumption_Fun.png)  
+![](img/ex-stlc/subsumption_Fun.png)  
 _(subsumption rule for function type)_
 
 Rule for a pair type is straightforward.
 
-![](img/subsumption_Pair.png)  
+![](img/ex-stlc/subsumption_Pair.png)  
 _(subsumption rule for pair type)_
 
 That's how implementation of a complex relation on types can look like in Code Rules.
@@ -365,7 +368,7 @@ That's how implementation of a complex relation on types can look like in Code R
 
 
 
-### Typeclasses
+## Typeclasses
 
 Haskell typeclasses are one of the most important and complex features of its type system, that distinguishes Haskell among other well-known functional languages.
 Implementing typeclasees using Code Rules shows that it has expressive power that is sufficient even for the advanced type systems.
@@ -409,7 +412,7 @@ Programmer can manipulate the set with a handle.
 The implementation consists of a single rule that maintains the set invariant, i.e. that it can't contain two equal elements.
 <!-- Notice that the `equals` predicate is used here. -->
 
-![](img/set_removeDupl.png)  
+![](img/ex-stlc/set_removeDupl.png)  
 _(set data structure implementation)_
 
 The beauty of such representation of a set is that merging sets comes essentially for free and, moreover, is performed implicitly.
@@ -432,10 +435,10 @@ Handler `set` also declares several utility functions with straightforward imple
 - making a Cons-list out of a set while preserving the original set;
 - testing whether one set is a subset of another.
 
-![](img/setCopy.png)  
+![](img/ex-stlc/setCopy.png)  
 _(copy a set)_
 
-![](img/isSubset.png)  
+![](img/ex-stlc/isSubset.png)  
 _(test whether one set is a subset of another)_
 
 
@@ -458,7 +461,7 @@ And that's where constraint reactivation again helps us, now for `typeConstraint
 The following rule is a top rule in handler `typeConstraints`.
 It ensures, that each type variable has a single set of all its typeclass constraints.
 
-![](img/typeConstraints_mergeSets(v2).png)  
+![](img/ex-stlc/typeConstraints_mergeSets(v2).png)  
 _(merging Constraints sets)_
 
 
@@ -472,13 +475,13 @@ There're two cases: it either remains free until the point of generalization (i.
 When free type variable becomes bound to something, we need to check that all typeclass constraints collected up to this point are satisfied.
 Due to constraint reactivation, another rule that starts this check will be triggered.
 
-![](img/typeConstraints_discharge.png)  
+![](img/ex-stlc/typeConstraints_discharge.png)  
 _(rule playing a role of entry point to typeclass constraints check)_
 
 There're 2 cases: it can be bound to a ground type (e.g. function type, Bool) or a type variable reference.
 The cases differ and require different checks.
 
-![](img/checkVarConstraints.png)  
+![](img/ex-stlc/checkVarConstraints.png)  
 _(check collected typeclass constraints for a type variable: 2 cases)_
 
 ##### Strength Check
@@ -490,7 +493,7 @@ In other words, the type variable can't be instantiated to a type (here, type va
 To check it we need to ensure that for each Constraint from the set of collected ones there's a matching Constraint to satisfy it.
 It can be done with a `isSubset` check.
 
-![](img/strengthCheck.png)  
+![](img/ex-stlc/strengthCheck.png)  
 _(strength check: checking the restrictiveness of two Constraint sets)_
 
 For example, given a function application `f x` with types `x ∷ C1 t ⇒ t` (`t` is bound somewhere else) and `f ∷ ∀ a.(C1 a, C2 a) ⇒ a → a`, the strength check will clearly fail, because the Constraints set `{C1}` on the type variable `t` _is not more restrictive_ than the set `{C1, C2}`. The set `{C1, C2}` is not a subset of `{C1}`.
@@ -500,7 +503,7 @@ For example, given a function application `f x` with types `x ∷ C1 t ⇒ t` (`
 The second case of a usual type is more intuitive and more common, but its implementation is a bit more involved.
 The first two rules in it do nothing special: the first makes a list out of the set and the second traverses it, triggering actual instance check for each typeclass constraint on a type.
 
-![](img/instanceCheck(1-2).png)  
+![](img/ex-stlc/instanceCheck(1-2).png)  
 _(instance check, first two rules)_
 
 The next two rules try to find a matching instance among all instances of the typeclass with a help of `instance` constraint.
@@ -518,8 +521,8 @@ The last rule simply fails in case when no matching instance is found.
 The typecheck is failed by triggering `eval(false)`.
 Of course, it isn't the best mechanism for reporting type system errors, but it's a temporary solution.
 
-<!-- ![](img/instanceCheck.png)   -->
-![](img/instanceCheck(3-5).png)  
+<!-- ![](img/ex-stlc/instanceCheck.png)   -->
+![](img/ex-stlc/instanceCheck(3-5).png)  
 _(instance check: searching for a typeclass instance for a type)_
 
 
@@ -528,17 +531,17 @@ _(instance check: searching for a typeclass instance for a type)_
 Typeclasses require only a little change to `forall` handler.
 In the rule for generalization of a type variable we have to add only a single production that moves collected typeclass constraints (in `typeConstraints`) to a definition (`tdefConstraints`).
 
-![genTypeVars rule](img/genTypeVars.png)  
+![genTypeVars rule](img/ex-stlc/genTypeVars.png)  
 _(generalization over a single type variable: notice activation of `produceTypeConstraints`)_
 <!-- _(notice `produceTypeConstraints` production)_ -->
 
-![](img/produceTypeConstraints.png)  
+![](img/ex-stlc/produceTypeConstraints.png)  
 _(collected typeclass constraints become part of the type variable definition)_
 
 The constraint `tdefConstraints` is used in an instantiation of a type variable.
 We essentially do the opposite: we copy typeclass constraints from the definition (`tdefConstraints`) to a new set (in `typeConstraints`) for a freshly instantiated type variable.
 
-![instTypeVars rule](img/instTypeVars.png)  
+![instTypeVars rule](img/ex-stlc/instTypeVars.png)  
 _(instantiation of a single type variable: notice activation of `typeConstraints` with a copied set)_
 <!-- _(notice activation of `typeConstraints` with a copied set)_ -->
 
@@ -550,18 +553,18 @@ It ensures the well-formedness of typeclass and instance declarations, and defin
 
 The rule for typeclass declaration only processes declaration of type variable declared in a typeclass and produces an auxiliary constraint carrying typeclass name, used in `recover` handler.
 
-![](img/getType_Typeclass.png)  
+![](img/ex-stlc/getType_Typeclass.png)  
 _(processing typeclass declaration)_
 
 The rule for instance declaration is also straightforward. It expands a macro for its type scheme and produces `instance` constraint that is used in `instanceCheck`.
 
-![](img/getType_Instance.png)  
+![](img/ex-stlc/getType_Instance.png)  
 _(processing instance declaration)_
 
 Typeclass contains a number of function Prototype declarations (i.e. pairs of symbol and type).
 The rule for them just produces their type given type annotation.
 
-![](img/typeOf_Prototype.png)  
+![](img/ex-stlc/typeOf_Prototype.png)  
 _(producing type of a Prototype in a typeclass)_
 
 Instance, correspondingly, contains Prototype implementations, and they require the most involved rule.
@@ -569,7 +572,7 @@ It checks that the actual type of the implementation agrees with a Prototype's t
 The first step of this is to instantiate the generic Prototype to the Instance type scheme.
 The second step is to actually check that the types agree, that is, the type of the implementation does not restrict the Prototype's type (in other words, it is more general). It is checked using subsumption relation.
 
-![](img/typeOf_PrototypeImpl.png)  
+![](img/ex-stlc/typeOf_PrototypeImpl.png)  
 _(checking correctness of Prototype implementations)_
 
 That is everything there is to the typechecking of typeclasses.
@@ -598,5 +601,5 @@ They're implemented in a way to be triggered automatically, while other rules he
 
 [^thih]: See [Mark P. Jones. "Typing Haskell in Haskell"](https://web.cecs.pdx.edu/~mpj/thih/thih.pdf).
 
-<!-- ![](img/)   -->
+<!-- ![](img/ex-stlc/)   -->
 <!-- _()_ -->
