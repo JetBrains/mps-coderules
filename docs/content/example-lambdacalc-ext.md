@@ -1,4 +1,13 @@
-# Typechecking Extended Lambda Calculus
+---
+layout: page
+title: Typechecking Extended Lambda Calculus
+menu: Typechecking STLC
+parent: examples
+weight: 550
+github-path: /tree/master/samples/lambdacalc
+---
+
+# Typechecking Extended STLC
 
 Simply Typed Lambda Calculus (STLC) is a famous example favored by textbook authors.
 This sample demonstrates how a classical type checking algorithm (Hindley-Milner[^hm]) designed for this language can be implemented using Code Rules.
@@ -19,7 +28,7 @@ The required extensions for GHC are:
 
 The dataform table is trivial, there're two terms used in Cons-list implementation (`Cons` and `Nil`), term `Constraint` used in the part of type system concerned with typeclasses, and other expected terms for types (`Fun` for function type, `Forall` for universal types etc.).
 
-![DataForm Table](img/ex-stlc/dataform-table.png)  
+![DataForm Table](img/ex-stlc/dataform-table-wider.png)  
 _(dataform table)_
 
 There is only one query of kind `TYPECHECK`, which launches types recovery. All the type checking is done by the automatic productions “on start”.
@@ -27,7 +36,7 @@ There is only one query of kind `TYPECHECK`, which launches types recovery. All 
 
 
 
-## Basic Hindley-Milner Type Inference
+### Basic Hindley-Milner Type Inference
 
 The basic type inference is covered by the several handlers: handler `typeOf` that contains most of the typing rules, handler `forall` covers typing of universal types, `recover` handler is concerned with translating inferred types back to SNodes representation, and `consList` is an utility handler.
 
@@ -199,7 +208,7 @@ Next, we turn our attention to the extensions to STLC.
 
 
 
-## Type Annotations
+### Type Annotations
 
 Extension of STLC with type annotations demonstrates two important points: a usage of Code Rules macros and an implementation of a relation between types in the form of constraint. Relations on types are present in many type systems, and probably the most widespread example is a subtyping relation (e.g. `isSubtype(type1, type2)`). As a matter of fact, the `subsumed` relation, presented here, is a form of subtyping too, as explained below.
 
@@ -368,7 +377,7 @@ That's how implementation of a complex relation on types can look like in Code R
 
 
 
-## Typeclasses
+### Typeclasses
 
 Haskell typeclasses are one of the most important and complex features of its type system, that distinguishes Haskell among other well-known functional languages.
 Implementing typeclasees using Code Rules shows that it has expressive power that is sufficient even for the advanced type systems.
