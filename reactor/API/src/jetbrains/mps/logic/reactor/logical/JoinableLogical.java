@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.logical;
 
 
 /**
+ * // FIXME to be renamed to MutableLogical
  * A logical variable that can be joined with another variable to produce a union.
  *
  * @param <T> the value type

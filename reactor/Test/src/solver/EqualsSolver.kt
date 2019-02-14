@@ -1,9 +1,7 @@
 package solver
 
-import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
-import jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.core.invocation
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -106,11 +104,23 @@ class EqualsSolver  : AbstractSolver() {
 }
 
 infix fun <T : Any> T.is_eq(value: T): Boolean = EvaluationSession.current().let { session ->
-    session.sessionSolver().ask(session.invocation(EqualsSolver.eq(this, value), mockLogicalContext()))
+    val logicalContext = mockLogicalContext()
+    val predicate = EqualsSolver.eq(this, value)
+    val args = session.program().instantiateArguments(predicate.arguments(), logicalContext)
+    val inv = predicate.invocation(args, logicalContext, object : InvocationContext {
+        override fun report(feedback: EvaluationFeedback) = TODO()
+    })
+    session.sessionSolver().ask(inv)
 }
 
 infix fun <T : Any> T.eq(value: T) = EvaluationSession.current().let { session ->
-    session.sessionSolver().tell(session.invocation(EqualsSolver.eq(this, value), mockLogicalContext()))
+    val logicalContext = mockLogicalContext()
+    val predicate = EqualsSolver.eq(this, value)
+    val args = session.program().instantiateArguments(predicate.arguments(), logicalContext)
+    val inv = predicate.invocation(args, logicalContext, object : InvocationContext {
+        override fun report(feedback: EvaluationFeedback) = TODO()
+    })
+    session.sessionSolver().tell(inv)
 }
 
 private fun mockLogicalContext(): LogicalContext {

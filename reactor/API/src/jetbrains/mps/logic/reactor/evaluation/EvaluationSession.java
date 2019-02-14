@@ -22,6 +22,7 @@ import jetbrains.mps.logic.reactor.program.Constraint;
 import jetbrains.mps.logic.reactor.program.Predicate;
 import jetbrains.mps.logic.reactor.program.PredicateSymbol;
 import jetbrains.mps.logic.reactor.program.Program;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The starting point to evaluate a program.
@@ -68,9 +69,25 @@ public abstract class EvaluationSession {
 
     public abstract StoreView storeView();
 
-    public abstract PredicateInvocation invocation(Predicate predicate, LogicalContext logicalContext);
+    @Deprecated
+    public PredicateInvocation invocation(Predicate predicate, LogicalContext logicalContext) {
+        // FIXME delete the method after all code has been migrated
+        // keep compatibility with existing code
+        throw new UnsupportedOperationException();
+    }
 
-    public abstract ConstraintOccurrence occurrence(Constraint constraint, LogicalContext logicalContext);
+    @Deprecated
+    public ConstraintOccurrence occurrence(Constraint constraint, LogicalContext logicalContext) {
+        // FIXME delete the method after all code has been migrated
+        // keep compatibility with existing code
+        throw new UnsupportedOperationException();
+    }
+
+    public Program program() {
+        // FIXME delete the implementation after all code has been migrated
+        // keep compatibility with existing code
+        throw new UnsupportedOperationException();
+    }
 
     protected interface Backend {
 

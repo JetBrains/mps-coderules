@@ -16,36 +16,56 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.evaluation.CompositeFeedback
+import jetbrains.mps.logic.reactor.evaluation.DetailedFeedback
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFailure
+import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 
-abstract class ProcessingState() {
+abstract class ProcessingState(val feedback : EvaluationFeedback?) {
 
     abstract val operational : Boolean
 
-    inline fun eval(block: (ProcessingState) -> ProcessingState): ProcessingState =
-        if (operational) block(this) else this
+//    inline fun eval(block: (ProcessingState) -> ProcessingState): ProcessingState =
+//        if (operational) block(this) else this
     
     /** Stop what is being done because a required condition is not satisfied. */
-    fun abort() : ProcessingState = ABORTED(this)
-    /** Failure occurred during processing. */
-    fun fail(failure: EvaluationFailure) : ProcessingState = FAILED(failure, this)
-    /** Reset after a failure or a cancellation, bring the state back to operational. */
-    abstract fun reset() : ProcessingState
+    open fun abort(details: EvaluationFeedback) : ProcessingState = throw IllegalStateException()
 
-    class NORMAL : ProcessingState() {
+    /** Failure occurred during processing. */
+    open fun fail(failure: EvaluationFailure) : ProcessingState = throw IllegalStateException()
+
+    /** Provide detailed feedback. */
+    open fun report(details: DetailedFeedback) : ProcessingState = throw IllegalStateException()
+
+    /** Move back to normal. */
+    open fun recover() : ProcessingState = throw IllegalStateException()
+
+    class NORMAL(feedback: EvaluationFeedback? = null) : ProcessingState(feedback) {
         override val operational = true
-        override fun reset(): ProcessingState = this
+        override fun abort(details: EvaluationFeedback): ProcessingState = ABORTED(this, details)
+        override fun fail(failure: EvaluationFailure): ProcessingState = FAILED(this, failure)
+        override fun report(details: DetailedFeedback): ProcessingState = NORMAL(compose(this.feedback, details))
     }
-    class FAILING(failed: FAILED) : ProcessingState() {
-        override val operational = true
-        override fun reset(): ProcessingState = this
-    }
-    class FAILED(val failure: EvaluationFailure, val going: ProcessingState) : ProcessingState() {
+
+    class FAILED(state: ProcessingState, val failure: EvaluationFailure) : ProcessingState(compose(state.feedback, failure)) {
         override val operational = false
-        override fun reset(): ProcessingState = FAILING(this)
+        /** Recover after a failure or a cancellation, bring the state back to operational. */
+        override fun recover(): ProcessingState = NORMAL(feedback)
     }
-    class ABORTED(val going: ProcessingState) : ProcessingState() {
+
+    class ABORTED(state: ProcessingState, val reason: EvaluationFeedback) : ProcessingState(compose(state.feedback, reason)) {
         override val operational = false
-        override fun reset(): ProcessingState = going
+        override fun recover(): ProcessingState = NORMAL(feedback)
     }
+}
+
+internal fun compose(left: EvaluationFeedback?, right: EvaluationFeedback?) = CompositeFeedback.of(left, right)
+
+data class ReportMessage(val severity: Severity, val message: String)
+
+enum class Severity(val level: Int) {
+    INFO(0),
+    WARNING(1),
+    ERROR(2),
+    FATAL(3)
 }

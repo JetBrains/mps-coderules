@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,29 +16,11 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
-
-import jetbrains.mps.logic.reactor.logical.LogicalContext;
-import jetbrains.mps.logic.reactor.program.Predicate;
-
-import java.util.List;
-
 /**
- * A run-time object representing invocation of a predicate.
- *
  * @author Fedor Isakov
  */
-public interface PredicateInvocation {
+public interface InvocationContext {
 
-    Predicate predicate();
-
-    List<?> arguments();
-
-    LogicalContext logicalContext();
-
-    default InvocationContext invocationContext() {
-        // FIXME delete the implementation after all code has been migrated
-        // keep compatibitily with existing code
-        throw new UnsupportedOperationException();
-    };
+    void report(EvaluationFeedback feedback);
 
 }

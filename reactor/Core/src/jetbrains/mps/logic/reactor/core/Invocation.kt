@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.evaluation.InvocationContext
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Predicate
@@ -24,16 +25,22 @@ import jetbrains.mps.logic.reactor.program.Predicate
  * @author Fedor Isakov
  */
 
-fun Predicate.invocation(arguments: List<*>, logicalContext: LogicalContext): PredicateInvocation =
-    Invocation(this, arguments, logicalContext)
+fun Predicate.invocation(arguments: List<*>,
+                         logicalContext: LogicalContext,
+                         invocationContext: InvocationContext): PredicateInvocation =
+    Invocation(this, arguments, logicalContext, invocationContext)
 
 private data class Invocation(val predicate: Predicate,
                               val invocationArguments: List<*>,
-                              val logicalContext: LogicalContext) : PredicateInvocation {
-
+                              val logicalContext: LogicalContext,
+                              val invocationContext: InvocationContext) : PredicateInvocation
+{
     override fun predicate(): Predicate = predicate
 
     override fun arguments(): List<*> = invocationArguments
 
     override fun logicalContext(): LogicalContext = logicalContext
+
+    override fun invocationContext(): InvocationContext = invocationContext
+
 }

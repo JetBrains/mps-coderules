@@ -26,7 +26,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * // FIXME to be merged with EvaluationSession
  * Is used to provide an interface for handlers and solvers working together in a single session.
+ *
  *
  * @author Fedor Isakov
  */
@@ -57,28 +59,6 @@ public abstract class SessionSolver implements Queryable, Instructible {
         AbstractSolver handler = solver(invocation.predicate().symbol());
         tracer.tell(invocation);
         handler.tell(invocation);
-    }
-
-    /**
-     * @deprecated FIXME unused, delete this method
-     */
-    @Deprecated
-    public boolean ask(Predicate predicate, LogicalContext logicalContext) {
-        return ask(EvaluationSession.current().invocation(predicate, logicalContext));
-    }
-
-    /**
-     * @deprecated FIXME unused, delete this method
-     */
-    @Deprecated
-    public void tell(AndItem item, LogicalContext logicalContext) {
-        if (item instanceof Predicate) {
-            tell(EvaluationSession.current().invocation((Predicate) item, logicalContext));
-
-        } else {
-            // FIXME: implement me
-            throw new UnsupportedOperationException("not implemented");
-        }
     }
 
     protected abstract void registerSymbol(PredicateSymbol predicateSymbol, EvaluationTrace computingTracer);

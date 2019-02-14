@@ -16,6 +16,8 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
+import jetbrains.mps.logic.reactor.program.Rule;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,24 +33,35 @@ import java.util.List;
  *
  * @author Fedor Isakov
  */
-public class EvaluationFailure {
+public class EvaluationFailure extends EvaluationFeedback {
 
     public EvaluationFailure(EvaluationFailureException ex) {
-        this.message = ex.getMessage();
         this.cause = ex;
+        this.message = ex.getMessage();
     }
 
     public EvaluationFailure(String message, EvaluationFailureException ex) {
-        this.message = message;
         this.cause = ex;
+        this.message = message;
     }
 
     /**
+     * // FIXME need a smarter way to supercede previously reported failure with a more specific one
      * Constructs a more specific failure given a generic one.
      */
     public EvaluationFailure(EvaluationFailure reason, String message) {
         this.reason = reason;
         this.message = message;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public Severity getSeverity() {
+        return Severity.ERROR;
     }
 
     /**
@@ -64,8 +77,9 @@ public class EvaluationFailure {
         return result;
     }
 
-    public String getMessage() {
-        return message;
+    @Override
+    public Throwable failureCause() {
+        return getCause();
     }
 
     public EvaluationFailureException getCause() {
@@ -81,5 +95,4 @@ public class EvaluationFailure {
     private EvaluationFailure reason;
     private String message;
     private EvaluationFailureException cause;
-
 }

@@ -26,13 +26,13 @@ import jetbrains.mps.logic.reactor.program.Constraint
  * @author Fedor Isakov
  */
 
-fun Constraint.occurrence(controller: Controller, arguments: List<*>, logicalContext: LogicalContext): ConstraintOccurrence =
-    Occurrence({ controller.currentFrame() }, this, arguments, logicalContext)
+internal fun Constraint.occurrence(logicalContext: LogicalContext, arguments: List<*>, frameStack: FrameStack): ConstraintOccurrence =
+    Occurrence(this, logicalContext, arguments, frameStack)
 
-private data class Occurrence (val currentFrame: () -> Frame,
-                               val constraint: Constraint,
+private data class Occurrence (val constraint: Constraint,
+                               val logicalContext: LogicalContext,
                                val arguments: List<*>,
-                               val logicalContext: LogicalContext) :
+                               val frameStack: FrameStack) :
     ConstraintOccurrence,
     LogicalObserver,
     StoreItem
@@ -43,7 +43,7 @@ private data class Occurrence (val currentFrame: () -> Frame,
     init {
         for (a in arguments) {
             if (a is Logical<*>) {
-                currentFrame().addObserver(a) { this }
+                frameStack.current.addObserver(a) { this }
             }
         }
     }
@@ -69,7 +69,7 @@ private data class Occurrence (val currentFrame: () -> Frame,
     override fun terminate() {
         for (a in arguments) {
             if (a is Logical<*>) {
-                currentFrame().removeObserver(a) { this }
+                frameStack.current.removeObserver(a) { this }
             }
         }
         alive = false

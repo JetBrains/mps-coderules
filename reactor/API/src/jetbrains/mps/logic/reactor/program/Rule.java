@@ -35,7 +35,9 @@ public abstract class Rule {
     public abstract Iterable<Predicate> guard();
 
     @Deprecated
-    public abstract Iterable<AndItem> body();
+    public Iterable<AndItem> body() {
+        throw new UnsupportedOperationException();
+    }
 
     public abstract Iterable<? extends Iterable<AndItem>> bodyAlternation();
 

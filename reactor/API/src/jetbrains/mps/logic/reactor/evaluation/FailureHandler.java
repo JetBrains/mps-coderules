@@ -20,8 +20,10 @@ import jetbrains.mps.logic.reactor.program.Rule;
 
 /**
  * @author Fedor Isakov
+ * @deprecated Use {@link EvaluationFeedbackHandler} instead.
  */
-public interface FailureHandler {
+@Deprecated
+public interface FailureHandler extends EvaluationFeedbackHandler {
 
     /**
      *  This method is called in order to decide what to do when a failure occurs during rule evaluation.
@@ -32,4 +34,12 @@ public interface FailureHandler {
      */
     EvaluationFailure handleFailure(EvaluationFailure failure, Rule rule);
 
+    @Override
+    default boolean handleFeedback(Rule rule, EvaluationFeedback feedback) {
+        // compatibility adapter
+        if (feedback instanceof EvaluationFailure) {
+            return handleFailure((EvaluationFailure) feedback, rule) == null;
+        }
+        return false;
+    }
 }

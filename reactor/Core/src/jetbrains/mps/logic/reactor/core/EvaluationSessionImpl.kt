@@ -131,14 +131,10 @@ class EvaluationSessionImpl private constructor (
 
     override fun sessionSolver(): SessionSolver = sessionSolver
 
+    override fun program(): Program = program
+
     override fun storeView(): StoreView =
         controller.storeView()
-
-    override fun invocation(predicate: Predicate, logicalContext: LogicalContext): PredicateInvocation =
-        predicate.invocation(program.instantiateArguments(predicate.arguments(), logicalContext), logicalContext)
-
-    override fun occurrence(constraint: Constraint, logicalContext: LogicalContext): ConstraintOccurrence =
-        constraint.occurrence(controller, program.instantiateArguments(constraint.arguments(), logicalContext), logicalContext)
 
     private class Backend : EvaluationSession.Backend {
 

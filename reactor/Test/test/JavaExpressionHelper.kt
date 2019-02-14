@@ -13,61 +13,61 @@ import java.util.*
  */
 
 
-fun expression(body: () -> Boolean): ConjBuilder.() -> Unit = {
+fun expression(body: PredicateInvocation.() -> Boolean): ConjBuilder.() -> Unit = {
     add(JavaPredicateSymbol.withArity(0).withCode(body))
 }
 
 fun <X, LX: Logical<X>, LPX: MetaLogical<X>>
-    expression(body: (LX) -> Boolean, x: LPX): ConjBuilder.() -> Unit = {
+    expression(body: PredicateInvocation.(LX) -> Boolean, x: LPX): ConjBuilder.() -> Unit = {
         add(JavaPredicateSymbol.withArity(1).withCode(body, x))
     }
 
 fun <X, LX: Logical<X>, LPX: MetaLogical<X>,
      Y, LY: Logical<Y>, LPY: MetaLogical<Y>>
-    expression(body: (LX, LY) -> Boolean, x: LPX, y: LPY): ConjBuilder.() -> Unit = {
+    expression(body: PredicateInvocation.(LX, LY) -> Boolean, x: LPX, y: LPY): ConjBuilder.() -> Unit = {
         add(JavaPredicateSymbol.withArity(2).withCode(body, x, y))
     }
 
 fun <X, LX: Logical<X>, LPX: MetaLogical<X>,
      Y, LY: Logical<Y>, LPY: MetaLogical<Y>,
      Z, LZ: Logical<Z>, LPZ: MetaLogical<Z>>
-    expression(body: (LX, LY, LZ) -> Boolean, x: LPX, y: LPY, z: LPZ): ConjBuilder.() -> Unit = {
+    expression(body: PredicateInvocation.(LX, LY, LZ) -> Boolean, x: LPX, y: LPY, z: LPZ): ConjBuilder.() -> Unit = {
         add(JavaPredicateSymbol.withArity(3).withCode(body, x, y, z))
     }
 
-fun statement(body: () -> Unit): ConjBuilder.() -> Unit = {
-    add(JavaPredicateSymbol.withArity(0).withCode { body.invoke(); true  })
+fun statement(body: PredicateInvocation.() -> Unit): ConjBuilder.() -> Unit = {
+    add(JavaPredicateSymbol.withArity(0).withCode { body(); true  })
 }
 
 fun <X, LPX: MetaLogical<X>>
         statement(
-            body: (Logical<X>) -> Unit, x: LPX): ConjBuilder.() -> Unit = {
-                add(JavaPredicateSymbol.withArity(1).withCode({ x -> body.invoke(x); true }, x))
+            body: PredicateInvocation.(Logical<X>) -> Unit, x: LPX): ConjBuilder.() -> Unit = {
+                add(JavaPredicateSymbol.withArity(1).withCode({ x -> body(x); true }, x))
         }
 
 fun <X, LPX: MetaLogical<X>,
      Y, LPY: MetaLogical<Y>>
-        statement(body: (Logical<X>, Logical<Y>) -> Unit, x: LPX, y: LPY): ConjBuilder.() -> Unit = {
-            add(JavaPredicateSymbol.withArity(2).withCode({ x, y -> body.invoke(x, y); true }, x, y))
+        statement(body: PredicateInvocation.(Logical<X>, Logical<Y>) -> Unit, x: LPX, y: LPY): ConjBuilder.() -> Unit = {
+            add(JavaPredicateSymbol.withArity(2).withCode({ x, y -> body(x, y); true }, x, y))
         }
 
 fun <X, LPX: MetaLogical<X>,
      Y, LPY: MetaLogical<Y>,
      Z, LPZ: MetaLogical<Z>>
-        statement(body: (Logical<X>, Logical<Y>, Logical<Z>) -> Unit, x: LPX, y: LPY, z: LPZ): ConjBuilder.() -> Unit = {
-            add(JavaPredicateSymbol.withArity(3).withCode({ x, y, z -> body.invoke(x, y, z); true }, x, y, z))
+        statement(body: PredicateInvocation.(Logical<X>, Logical<Y>, Logical<Z>) -> Unit, x: LPX, y: LPY, z: LPZ): ConjBuilder.() -> Unit = {
+            add(JavaPredicateSymbol.withArity(3).withCode({ x, y, z -> body(x, y, z); true }, x, y, z))
         }
 
 class ExpressionSolver : AbstractSolver() {
 
     override fun ask(invocation: PredicateInvocation): Boolean {
-        return javaPredicates[invocation.arguments().get(0)]?.expr?.invoke(invocation.arguments().drop(1)) ?:
+        return javaPredicates[invocation.arguments().get(0)]?.expr?.invoke(invocation, invocation.arguments().drop(1)) ?:
             ERROR("no such symbol ${invocation.predicate().symbol()}")
     }
 
     override fun tell(invocation: PredicateInvocation) {
         when (invocation.predicate().symbol()) {
-            is JavaPredicateSymbol -> javaPredicates[invocation.arguments().get(0)]?.expr?.invoke(invocation.arguments().drop(1))
+            is JavaPredicateSymbol -> javaPredicates[invocation.arguments().get(0)]?.expr?.invoke(invocation, invocation.arguments().drop(1))
             else                    -> ERROR("uknown symbol ${invocation.predicate().symbol()}")
         }
     }
@@ -88,7 +88,7 @@ class ExpressionSolver : AbstractSolver() {
 }
 
 interface JavaExpression {
-    fun invoke(args: List<*>): Boolean
+    fun invoke(invocation: PredicateInvocation, args: List<*>): Boolean
 }
 
 data class TestJavaPredicate(val symbol: JavaPredicateSymbol, val expr: JavaExpression, val args: List<*>) : Predicate {
@@ -99,49 +99,49 @@ data class TestJavaPredicate(val symbol: JavaPredicateSymbol, val expr: JavaExpr
 
 }
 
-private fun JavaPredicateSymbol.withCode(code: () -> Boolean) =
+private fun JavaPredicateSymbol.withCode(code: PredicateInvocation.() -> Boolean) =
     TestJavaPredicate(this, JavaExpression0(code), listOf(System.identityHashCode(code)))
 
 private fun <X, LX: Logical<X>, LPX: MetaLogical<X>>
-    JavaPredicateSymbol.withCode(code: (LX) -> Boolean, x: LPX) =
+    JavaPredicateSymbol.withCode(code: PredicateInvocation.(LX) -> Boolean, x: LPX) =
         TestJavaPredicate(this, JavaExpression1(code), listOf(System.identityHashCode(code), x))
 
 private fun <X, LX: Logical<X>, LPX: MetaLogical<X>,
              Y, LY: Logical<Y>, LPY: MetaLogical<Y>>
-    JavaPredicateSymbol.withCode(code: (LX, LY) -> Boolean, x: LPX, y: LPY) =
+    JavaPredicateSymbol.withCode(code: PredicateInvocation.(LX, LY) -> Boolean, x: LPX, y: LPY) =
         TestJavaPredicate(this, JavaExpression2(code), listOf(System.identityHashCode(code), x, y))
 
 private fun <X, LX: Logical<X>, LPX: MetaLogical<X>,
              Y, LY: Logical<Y>, LPY: MetaLogical<Y>,
              Z, LZ: Logical<Z>, LPZ: MetaLogical<Z>>
-                JavaPredicateSymbol.withCode(code: (LX, LY, LZ) -> Boolean, x: LPX, y: LPY, z: LPZ) =
+                JavaPredicateSymbol.withCode(code: PredicateInvocation.(LX, LY, LZ) -> Boolean, x: LPX, y: LPY, z: LPZ) =
                     TestJavaPredicate(this, JavaExpression3(code), listOf(System.identityHashCode(code), x, y, z))
 
-private class JavaExpression0(val code: () -> Boolean) : JavaExpression {
-    override fun invoke(args: List<*>): Boolean {
+private class JavaExpression0(val code: PredicateInvocation.() -> Boolean) : JavaExpression {
+    override fun invoke(invocation: PredicateInvocation, args: List<*>): Boolean {
         if (args.size != 0) throw IllegalArgumentException("arity mismatch")
-        return code()
+        return invocation.code()
     }
 }
 
-private class JavaExpression1<X>(val code: (X) -> Boolean) : JavaExpression {
-    override fun invoke(args: List<*>): Boolean {
+private class JavaExpression1<X>(val code: PredicateInvocation.(X) -> Boolean) : JavaExpression {
+    override fun invoke(invocation: PredicateInvocation, args: List<*>): Boolean {
         if (args.size != 1) throw IllegalArgumentException("arity mismatch")
-        return code(args[0] as X)
+        return invocation.code(args[0] as X)
     }
 }
 
-private class JavaExpression2<X,Y>(val code: (X, Y) -> Boolean) : JavaExpression {
-    override fun invoke(args: List<*>): Boolean {
+private class JavaExpression2<X,Y>(val code: PredicateInvocation.(X, Y) -> Boolean) : JavaExpression {
+    override fun invoke(invocation: PredicateInvocation, args: List<*>): Boolean {
         if (args.size != 2) throw IllegalArgumentException("arity mismatch")
-        return code(args[0] as X, args[1] as Y)
+        return invocation.code(args[0] as X, args[1] as Y)
     }
 }
 
-private class JavaExpression3<X,Y,Z>(val code: (X, Y, Z) -> Boolean) : JavaExpression {
-    override fun invoke(args: List<*>): Boolean {
+private class JavaExpression3<X,Y,Z>(val code: PredicateInvocation.(X, Y, Z) -> Boolean) : JavaExpression {
+    override fun invoke(invocation: PredicateInvocation, args: List<*>): Boolean {
         if (args.size != 3) throw IllegalArgumentException("arity mismatch")
-        return code(args[0] as X, args[1] as Y, args[2] as Z)
+        return invocation.code(args[0] as X, args[1] as Y, args[2] as Z)
     }
 }
 

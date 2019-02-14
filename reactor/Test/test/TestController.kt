@@ -1,9 +1,7 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
-import jetbrains.mps.logic.reactor.util.cons
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
 import org.junit.After
@@ -34,18 +32,13 @@ class TestController {
         lateinit var controller: Controller
         override fun controller(): Controller = controller
         override fun sessionSolver(): SessionSolver = solver
+        override fun program(): Program = program
         override fun storeView(): StoreView = TODO()
 
         class MockBackend(val session: MockSession) : Backend {
             override fun current(): EvaluationSession = session
             override fun createConfig(program: Program): Config = TODO()
         }
-
-        override fun invocation(predicate: Predicate, logicalContext: LogicalContext): PredicateInvocation =
-            predicate.invocation(program.instantiateArguments(predicate.arguments(), logicalContext), logicalContext)
-
-        override fun occurrence(constraint: Constraint, logicalContext: LogicalContext): ConstraintOccurrence =
-            constraint.occurrence(controller, program.instantiateArguments(constraint.arguments(), logicalContext), logicalContext)
 
         companion object {
             lateinit var ourBackend : MockBackend
@@ -73,6 +66,22 @@ class TestController {
         MockSession.ourBackend.session.controller = controller
         return controller
     }
+
+    private fun Builder.controllerWithFeedback(feedbackHandler: EvaluationFeedbackHandler,
+                                                vararg occurrences: ConstraintOccurrence): Controller
+    {
+        val solver = sessionSolver(env.expressionSolver, env.equalsSolver)
+        val program = MockProgram("test", handlers, registry = MockConstraintRegistry(solver))
+        MockSession.init(program, solver)
+        val controller = Controller(program, storeView = MockStoreView(listOf(* occurrences)), feedbackHandler = feedbackHandler)
+        MockSession.ourBackend.session.controller = controller
+        return controller
+    }
+
+    private fun detailFeedback(msg: String): DetailedFeedback = object : DetailedFeedback(msg) {
+        override fun toString(): String = "{" + msg + "}"
+    }
+
 
     private class MockStoreView(val occurrences: List<ConstraintOccurrence>) : StoreView {
         val symbols = occurrences.map { it.constraint().symbol() }.toSet()
@@ -807,5 +816,143 @@ class TestController {
             }
         }
     }
+
+    @Test(expected = EvaluationFailureException::class)
+    fun failureHandler() {
+        val failureHandler = object : FailureHandler {
+            val failures = ArrayList<Pair<EvaluationFailure, String>>()
+            override fun handleFailure(failure: EvaluationFailure, rule: Rule): EvaluationFailure? {
+                failures.add(failure to rule.tag())
+                return failure
+            }
+        }
+
+        programWithRules(
+            rule("main",
+                headReplaced(constraint("main")),
+                body (
+                    constraint("foo")
+                )
+            ),
+            rule("rule1",
+                headReplaced(constraint("foo")),
+                body(
+                    constraint("yes"),
+                    constraint("bar"),
+                    constraint("no")
+                )
+            ),
+            rule("rule2",
+                headReplaced(constraint("bar")),
+                body(
+                    statement { throw EvaluationFailureException("unhandled") }
+                )
+            )
+        ).controllerWithFeedback(failureHandler).run {
+            try {
+                evaluate(occurrence("main"))
+
+            } finally {
+                failureHandler.failures.map { (f, t) -> "${f.cause.message}@${t}" }.toList() shouldBe
+                    listOf("unhandled@rule2", "unhandled@rule1", "unhandled@main")
+            }
+        }
+    }
+
+    @Test
+    fun failureHandlerRecover() {
+        val failureHandler = object : FailureHandler {
+            val failures = ArrayList<Pair<EvaluationFailure, String>>()
+            override fun handleFailure(failure: EvaluationFailure, rule: Rule): EvaluationFailure? {
+                failures.add(failure to rule.tag())
+                if (rule.tag()?.startsWith("recoverable") == true) return null
+                return failure
+            }
+        }
+
+        programWithRules(
+            rule("main",
+                headReplaced(constraint("main")),
+                body (
+                    constraint("foo")
+                )
+            ),
+            rule("rule1",
+                headReplaced(constraint("foo")),
+                body(
+                    statement {
+                        // this failure does not propagate because of the alt body branch
+                        throw EvaluationFailureException("unhandled")
+                    }
+                ),
+                altBody(
+                    constraint("recovered", 1),
+                    constraint("bar"),
+                    constraint("recovered", 2)
+                )
+            ),
+            rule ("recoverable",
+                headReplaced(constraint("bar")),
+                body(
+                    constraint("bazz")
+                )
+            ),
+            rule("rule3",
+                headReplaced(constraint("bazz")),
+                body(
+                    statement { throw EvaluationFailureException("handled") }
+                )
+            )
+        ).controllerWithFeedback(failureHandler).run {
+            evaluate(occurrence("main"))
+            storeView().run {
+                val recovered = ConstraintSymbol("recovered", 1)
+                constraintSymbols() shouldBe setOf(recovered)
+                occurrences(recovered).map { it.arguments()[0] }.toSet() shouldBe setOf(1, 2)
+            }
+        }
+        failureHandler.failures.map { (f, t) -> "${f.cause.message}@$t"}.toList() shouldBe
+            listOf("handled@rule3", "handled@recoverable")
+    }
+
+    @Test
+    fun detailsFeedbackHandler() {
+        val feedbackHandler = object : EvaluationFeedbackHandler {
+            val feedbacks = arrayListOf<Pair<EvaluationFeedback, String>>()
+            override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean {
+                feedbacks.add(feedback to rule.tag())
+                return feedback.message.startsWith("catchme")
+            }
+        }
+
+        programWithRules(
+            rule("main",
+                headReplaced(constraint("main")),
+                body (
+                    constraint("foo")
+                )
+            ),
+            rule("rule1",
+                headReplaced(constraint("foo")),
+                body(
+                    statement { invocationContext().report(detailFeedback("catchme")) },
+                    constraint("bar")
+
+                )
+            ),
+            rule("rule2",
+                headReplaced(constraint("bar")),
+                body(
+                    statement { invocationContext().report(detailFeedback("propagateme")) }
+                )
+            )
+        ).controllerWithFeedback(feedbackHandler).run {
+            evaluate(occurrence("main"))
+
+        }
+
+        feedbackHandler.feedbacks.map { (f, t) -> "${f.message}@$t"}.toList() shouldBe
+            listOf("catchme@rule1", "propagateme@rule2", "propagateme@rule1", "propagateme@main")
+        }
 }
 

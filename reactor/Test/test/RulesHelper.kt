@@ -1,5 +1,6 @@
 import jetbrains.mps.logic.reactor.core.StoreItem
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedbackHandler
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint

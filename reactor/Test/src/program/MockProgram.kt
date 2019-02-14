@@ -66,8 +66,6 @@ class MockHandler(
 
     override fun name(): String = name
 
-    override fun primarySymbols(): Iterable<ConstraintSymbol> = primary
-
     override fun rules(): Iterable<Rule> = rules
 }
 
@@ -87,8 +85,6 @@ class MockRule(
     override fun headReplaced(): Iterable<Constraint> = replaced
 
     override fun guard(): Iterable<Predicate> = guard
-
-    override fun body(): Iterable<AndItem> = body.first()
 
     override fun bodyAlternation(): Iterable<Iterable<AndItem>> = body
 
