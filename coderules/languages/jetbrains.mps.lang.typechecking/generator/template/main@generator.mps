@@ -24,7 +24,6 @@
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="ba7m" ref="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.aspect.generator.template.main@generator)" />
     <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
-    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.coderules.program)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="z8tp" ref="r:5bfbd177-208e-4d27-b74c-2ebd2a92eb80(jetbrains.mps.lang.smodel.types.structure)" />
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
@@ -554,7 +553,7 @@
             <node concept="37vLTG" id="oI9YrWqaC" role="3clF46">
               <property role="TrG5h" value="session" />
               <node concept="3uibUv" id="oI9YrWqaD" role="1tU5fm">
-                <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
+                <ref role="3uigEE" to="i348:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
               </node>
             </node>
             <node concept="3Tm6S6" id="oI9YrWidm" role="1B3o_S" />

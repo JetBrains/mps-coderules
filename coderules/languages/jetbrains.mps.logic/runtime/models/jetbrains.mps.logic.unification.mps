@@ -2266,5 +2266,112 @@
     <node concept="2tJIrI" id="4TCblo5NlYH" role="jymVt" />
     <node concept="3Tm1VV" id="677NV565N1y" role="1B3o_S" />
   </node>
+  <node concept="312cEu" id="7nPD14NOCSa">
+    <property role="TrG5h" value="MetaLogicalFactory" />
+    <node concept="2tJIrI" id="7nPD14O1soX" role="jymVt" />
+    <node concept="2YIFZL" id="7nPD14NOCTS" role="jymVt">
+      <property role="TrG5h" value="metaLogical" />
+      <node concept="37vLTG" id="7nPD14NODps" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="7nPD14NODpt" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="7nPD14NODpu" role="3clF46">
+        <property role="TrG5h" value="type" />
+        <node concept="3uibUv" id="7nPD14NODpv" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="49obaclnSbP" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="7nPD14NOCUy" role="3clF45">
+        <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+      </node>
+      <node concept="3Tm1VV" id="7nPD14NOCTV" role="1B3o_S" />
+      <node concept="3clFbS" id="7nPD14NOCTW" role="3clF47">
+        <node concept="3clFbF" id="7nPD14NODrD" role="3cqZAp">
+          <node concept="2ShNRf" id="7nPD14NODrB" role="3clFbG">
+            <node concept="1pGfFk" id="7nPD14NOD$h" role="2ShVmc">
+              <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
+              <node concept="37vLTw" id="7nPD14NOFsO" role="37wK5m">
+                <ref role="3cqZAo" node="7nPD14NODps" resolve="name" />
+              </node>
+              <node concept="37vLTw" id="7nPD14NOHDs" role="37wK5m">
+                <ref role="3cqZAo" node="7nPD14NODpu" resolve="type" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7nPD14NOHIY" role="jymVt" />
+    <node concept="2YIFZL" id="7nPD14NOI_T" role="jymVt">
+      <property role="TrG5h" value="multiMetaLogical" />
+      <node concept="37vLTG" id="7nPD14NOI_U" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="7nPD14NOI_V" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="7nPD14NOI_W" role="3clF46">
+        <property role="TrG5h" value="type" />
+        <node concept="3uibUv" id="7nPD14NOI_X" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="49obaclnSgw" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7nPD14NOIRc" role="3clF46">
+        <property role="TrG5h" value="cardinality" />
+        <node concept="10Oyi0" id="7nPD14NOISV" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="7nPD14NOIGv" role="3clF45">
+        <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+      </node>
+      <node concept="3Tm1VV" id="7nPD14NOIA0" role="1B3o_S" />
+      <node concept="3clFbS" id="7nPD14NOIA1" role="3clF47">
+        <node concept="3clFbF" id="7nPD14NOIA2" role="3cqZAp">
+          <node concept="2ShNRf" id="7nPD14NOIA3" role="3clFbG">
+            <node concept="1pGfFk" id="7nPD14NOIA4" role="2ShVmc">
+              <ref role="37wK5l" to="bj13:~MultiMetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class,int)" resolve="MultiMetaLogical" />
+              <node concept="37vLTw" id="7nPD14NOIA5" role="37wK5m">
+                <ref role="3cqZAo" node="7nPD14NOI_U" resolve="name" />
+              </node>
+              <node concept="37vLTw" id="7nPD14NOIA6" role="37wK5m">
+                <ref role="3cqZAo" node="7nPD14NOI_W" resolve="type" />
+              </node>
+              <node concept="37vLTw" id="7nPD14NOJ0q" role="37wK5m">
+                <ref role="3cqZAo" node="7nPD14NOIRc" resolve="cardinality" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7nPD14NOIs7" role="jymVt" />
+    <node concept="2YIFZL" id="7nPD14NOHGU" role="jymVt">
+      <property role="TrG5h" value="wildcardMetaLogical" />
+      <node concept="37vLTG" id="7nPD14NOHGX" role="3clF46">
+        <property role="TrG5h" value="type" />
+        <node concept="3uibUv" id="7nPD14NOHGY" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="49obaclnSlf" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="7nPD14NOHH0" role="3clF45">
+        <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+      </node>
+      <node concept="3Tm1VV" id="7nPD14NOHH1" role="1B3o_S" />
+      <node concept="3clFbS" id="7nPD14NOHH2" role="3clF47">
+        <node concept="3clFbF" id="7nPD14NOHH3" role="3cqZAp">
+          <node concept="2ShNRf" id="7nPD14NOHH4" role="3clFbG">
+            <node concept="1pGfFk" id="7nPD14NOHH5" role="2ShVmc">
+              <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
+              <node concept="37vLTw" id="7nPD14NOHH7" role="37wK5m">
+                <ref role="3cqZAo" node="7nPD14NOHGX" resolve="type" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7nPD14O1iIK" role="jymVt" />
+    <node concept="3Tm1VV" id="7nPD14NOCSb" role="1B3o_S" />
+  </node>
 </model>
 

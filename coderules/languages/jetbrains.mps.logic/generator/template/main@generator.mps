@@ -24,8 +24,6 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="ha02" ref="r:09e53496-6477-45e7-abd5-eaf3fac3b360(jetbrains.mps.logic.behavior)" />
     <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)" />
-    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.coderules.program)" />
-    <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.program)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
   </imports>
   <registry>
@@ -2612,9 +2610,9 @@
               <property role="TrG5h" value="name" />
               <node concept="1oi5XN" id="Lu45F8oXbJ" role="1oi5zu">
                 <node concept="22Ky0T" id="Lu45F8oXbK" role="lGtFl">
-                  <node concept="2YIFZM" id="W6bnNelN58" role="22Ky0K">
-                    <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                    <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                  <node concept="2YIFZM" id="4$YN6QudHf0" role="22Ky0K">
+                    <ref role="37wK5l" to="oy3s:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                    <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
                     <node concept="3VsKOn" id="W6bnNelN8X" role="37wK5m">
                       <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                     </node>
@@ -2711,9 +2709,9 @@
               <property role="TrG5h" value="name" />
               <node concept="1oi5UN" id="Lu45F8j02J" role="1oi5TL">
                 <node concept="22Ky0T" id="Lu45F8j02K" role="lGtFl">
-                  <node concept="2YIFZM" id="6YPNC4OjWja" role="22Ky0K">
-                    <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                    <ref role="37wK5l" to="6pyv:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                  <node concept="2YIFZM" id="4$YN6QudHf1" role="22Ky0K">
+                    <ref role="37wK5l" to="oy3s:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                    <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
                     <node concept="3VsKOn" id="6YPNC4OjWjb" role="37wK5m">
                       <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                     </node>
@@ -2813,9 +2811,9 @@
               <node concept="KCUsM" id="Lu45F8gMWf" role="38e3mL">
                 <node concept="1oi5UN" id="Lu45F8gNFj" role="KCVpo">
                   <node concept="22Ky0T" id="Lu45F8gNTx" role="lGtFl">
-                    <node concept="2YIFZM" id="4MEOIDFP4Me" role="22Ky0K">
-                      <ref role="1Pybhc" to="6pyv:7nPD14NOCSa" resolve="MetaLogicalFactory" />
-                      <ref role="37wK5l" to="6pyv:7nPD14NOI_T" resolve="multiMetaLogical" />
+                    <node concept="2YIFZM" id="4$YN6QudHeZ" role="22Ky0K">
+                      <ref role="37wK5l" to="oy3s:7nPD14NOI_T" resolve="multiMetaLogical" />
+                      <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
                       <node concept="Xl_RD" id="4MEOIDFP4Mf" role="37wK5m">
                         <property role="Xl_RC" value="_" />
                       </node>

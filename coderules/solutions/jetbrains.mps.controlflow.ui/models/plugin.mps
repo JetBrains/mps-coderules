@@ -31,7 +31,7 @@
     <import index="o35r" ref="r:76281d8a-46ce-405f-8cfc-287ee8597b54(jetbrains.mps.coderules.ui.plugin)" />
     <import index="f4yq" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:hu.akarnokd.rxjava2.swing(jetbrains.mps.coderules/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
-    <import index="7n8k" ref="r:475a2e92-d7d4-41c3-98e3-172d70b6f018(jetbrains.mps.logic.program)" />
+    <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.coderules.eval)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1471,7 +1471,7 @@
                   <ref role="3uigEE" to="1yqb:1pPth$lAwc0" resolve="ApplyTemplatesStep" />
                 </node>
                 <node concept="3uibUv" id="6Yb9hAqUIFI" role="1Lm7xW">
-                  <ref role="3uigEE" to="7n8k:qubcdtxBiR" resolve="EvaluationTraceExt" />
+                  <ref role="3uigEE" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
                 </node>
               </node>
             </node>
@@ -1625,7 +1625,7 @@
                         <node concept="1eOMI4" id="6Yb9hAqUIH4" role="1Lso8e">
                           <node concept="10QFUN" id="6Yb9hAqUIH5" role="1eOMHV">
                             <node concept="3uibUv" id="6Yb9hAqUIH6" role="10QFUM">
-                              <ref role="3uigEE" to="7n8k:qubcdtxBiR" resolve="EvaluationTraceExt" />
+                              <ref role="3uigEE" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
                             </node>
                             <node concept="2ShNRf" id="6Yb9hAqUIH7" role="10QFUP">
                               <node concept="1pGfFk" id="6Yb9hAqUIH8" role="2ShVmc">

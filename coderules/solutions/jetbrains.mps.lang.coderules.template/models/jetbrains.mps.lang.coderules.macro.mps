@@ -12,12 +12,12 @@
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="6pyv" ref="r:e418ad23-36dc-4ed0-b837-26a7fd157da3(jetbrains.mps.lang.coderules.program)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -471,7 +471,7 @@
     <node concept="3clFb_" id="60NbDCXG$nh" role="jymVt">
       <property role="TrG5h" value="doExpand" />
       <node concept="3uibUv" id="60NbDCXG$ni" role="3clF45">
-        <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
+        <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
       </node>
       <node concept="3Tm1VV" id="60NbDCXG$nj" role="1B3o_S" />
       <node concept="3clFbS" id="60NbDCXG$nk" role="3clF47" />
@@ -491,7 +491,7 @@
       <node concept="37vLTG" id="60NbDCXG$np" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="60NbDCXG$nq" role="1tU5fm">
-          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
+          <ref role="3uigEE" to="i348:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
         </node>
       </node>
     </node>
@@ -499,7 +499,7 @@
     <node concept="3clFb_" id="1eKXYsjvsWF" role="jymVt">
       <property role="TrG5h" value="doCall" />
       <node concept="3uibUv" id="1eKXYsjvsWG" role="3clF45">
-        <ref role="3uigEE" to="6pyv:7eGEHDlc$ap" resolve="RuleBuilder" />
+        <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
       </node>
       <node concept="3Tm1VV" id="1eKXYsjvsWH" role="1B3o_S" />
       <node concept="3clFbS" id="1eKXYsjvsWI" role="3clF47" />
@@ -521,7 +521,7 @@
       <node concept="37vLTG" id="1eKXYsjvsWN" role="3clF46">
         <property role="TrG5h" value="session" />
         <node concept="3uibUv" id="1eKXYsjvsWO" role="1tU5fm">
-          <ref role="3uigEE" to="6pyv:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
+          <ref role="3uigEE" to="i348:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
         </node>
       </node>
     </node>
