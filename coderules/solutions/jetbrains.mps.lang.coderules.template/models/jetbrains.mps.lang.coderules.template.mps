@@ -947,20 +947,6 @@
       <node concept="3Tm1VV" id="7P_FdVQoGPw" role="1B3o_S" />
       <node concept="3clFbS" id="7P_FdVQoGPx" role="3clF47" />
     </node>
-    <node concept="2tJIrI" id="7P_FdVQoNeh" role="jymVt" />
-    <node concept="3clFb_" id="4MqhgXU9lmo" role="jymVt">
-      <property role="TrG5h" value="primarySymbols" />
-      <node concept="A3Dl8" id="2vGNdoJH8yh" role="3clF45">
-        <node concept="3uibUv" id="2vGNdoJH8yj" role="A3Ik2">
-          <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4MqhgXU9lmr" role="1B3o_S" />
-      <node concept="3clFbS" id="4MqhgXU9lms" role="3clF47" />
-      <node concept="2AHcQZ" id="7P_FdVPH75_" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="4MqhgXU9fJA" role="jymVt" />
     <node concept="3clFb_" id="4MqhgXUaiON" role="jymVt">
       <property role="TrG5h" value="ruleTemplates" />
@@ -3853,30 +3839,6 @@
         </node>
       </node>
       <node concept="2tJIrI" id="7eGEHDlc$eo" role="jymVt" />
-      <node concept="3clFb_" id="7eGEHDlc$ep" role="jymVt">
-        <property role="TrG5h" value="body" />
-        <property role="1EzhhJ" value="false" />
-        <node concept="3uibUv" id="7eGEHDlc$eq" role="3clF45">
-          <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-          <node concept="3uibUv" id="5uFPQ7BHb5l" role="11_B2D">
-            <ref role="3uigEE" to="av0y:~AndItem" resolve="AndItem" />
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="7eGEHDlc$es" role="1B3o_S" />
-        <node concept="3clFbS" id="7eGEHDlc$et" role="3clF47">
-          <node concept="YS8fn" id="2_NfR5wmTaG" role="3cqZAp">
-            <node concept="2ShNRf" id="2_NfR5wmTCQ" role="YScLw">
-              <node concept="1pGfFk" id="2_NfR5wmTUa" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="7eGEHDldApc" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="2tJIrI" id="TYqmVPFZAf" role="jymVt" />
       <node concept="3clFb_" id="TYqmVPG0r5" role="jymVt">
         <property role="TrG5h" value="bodyAlternation" />
         <property role="1EzhhJ" value="false" />
@@ -4054,12 +4016,6 @@
     </node>
     <node concept="312cEg" id="7eGEHDlc$e_" role="jymVt">
       <property role="TrG5h" value="headKept" />
-      <node concept="3uibUv" id="7eGEHDlc$eB" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="1HG00HG1YdR" role="11_B2D">
-          <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
-        </node>
-      </node>
       <node concept="3Tm6S6" id="7eGEHDlc$eA" role="1B3o_S" />
       <node concept="2ShNRf" id="7eGEHDlc$eD" role="33vP2m">
         <node concept="1pGfFk" id="7eGEHDlc$eE" role="2ShVmc">
@@ -4072,15 +4028,15 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="312cEg" id="7eGEHDlc$eH" role="jymVt">
-      <property role="TrG5h" value="headReplaced" />
-      <node concept="3uibUv" id="7eGEHDlc$eJ" role="1tU5fm">
+      <node concept="3uibUv" id="7eGEHDlc$eB" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="1HG00HG21te" role="11_B2D">
+        <node concept="3uibUv" id="1HG00HG1YdR" role="11_B2D">
           <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
         </node>
       </node>
+    </node>
+    <node concept="312cEg" id="7eGEHDlc$eH" role="jymVt">
+      <property role="TrG5h" value="headReplaced" />
       <node concept="3Tm6S6" id="7eGEHDlc$eI" role="1B3o_S" />
       <node concept="2ShNRf" id="7eGEHDlc$eL" role="33vP2m">
         <node concept="1pGfFk" id="7eGEHDlc$eM" role="2ShVmc">
@@ -4093,15 +4049,15 @@
           </node>
         </node>
       </node>
+      <node concept="3uibUv" id="7eGEHDlc$eJ" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="1HG00HG21te" role="11_B2D">
+          <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
+        </node>
+      </node>
     </node>
     <node concept="312cEg" id="7eGEHDlc$eP" role="jymVt">
       <property role="TrG5h" value="guard" />
-      <node concept="3uibUv" id="7eGEHDlc$eR" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="5uFPQ7BH7BV" role="11_B2D">
-          <ref role="3uigEE" to="av0y:~Predicate" resolve="Predicate" />
-        </node>
-      </node>
       <node concept="3Tm6S6" id="7eGEHDlc$eQ" role="1B3o_S" />
       <node concept="2ShNRf" id="7eGEHDlc$eT" role="33vP2m">
         <node concept="1pGfFk" id="7eGEHDlc$eU" role="2ShVmc">
@@ -4114,30 +4070,36 @@
           </node>
         </node>
       </node>
+      <node concept="3uibUv" id="7eGEHDlc$eR" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="5uFPQ7BH7BV" role="11_B2D">
+          <ref role="3uigEE" to="av0y:~Predicate" resolve="Predicate" />
+        </node>
+      </node>
     </node>
     <node concept="312cEg" id="7eGEHDlc$eX" role="jymVt">
       <property role="TrG5h" value="bodyAlternation" />
-      <node concept="3uibUv" id="7eGEHDlc$eZ" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="2_NfR5wkbAi" role="11_B2D">
-          <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="3uibUv" id="2_NfR5wkcfq" role="11_B2D">
-            <ref role="3uigEE" to="av0y:~AndItem" resolve="AndItem" />
-          </node>
-        </node>
-      </node>
       <node concept="3Tm6S6" id="7eGEHDlc$eY" role="1B3o_S" />
       <node concept="2ShNRf" id="7eGEHDlc$f1" role="33vP2m">
         <node concept="1pGfFk" id="7eGEHDlc$f2" role="2ShVmc">
           <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(int)" resolve="ArrayList" />
+          <node concept="3cmrfG" id="2_NfR5wkrqS" role="37wK5m">
+            <property role="3cmrfH" value="2" />
+          </node>
           <node concept="3uibUv" id="2_NfR5wkjUe" role="1pMfVU">
             <ref role="3uigEE" to="33ny:~List" resolve="List" />
             <node concept="3uibUv" id="2_NfR5wkkDv" role="11_B2D">
               <ref role="3uigEE" to="av0y:~AndItem" resolve="AndItem" />
             </node>
           </node>
-          <node concept="3cmrfG" id="2_NfR5wkrqS" role="37wK5m">
-            <property role="3cmrfH" value="2" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="7eGEHDlc$eZ" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="2_NfR5wkbAi" role="11_B2D">
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+          <node concept="3uibUv" id="2_NfR5wkcfq" role="11_B2D">
+            <ref role="3uigEE" to="av0y:~AndItem" resolve="AndItem" />
           </node>
         </node>
       </node>

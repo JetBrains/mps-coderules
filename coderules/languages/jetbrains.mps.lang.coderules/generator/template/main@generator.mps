@@ -10864,27 +10864,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="20Ay2Vf1l6U" role="jymVt" />
-    <node concept="3clFb_" id="4MqhgXUa3oY" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="primarySymbols" />
-      <node concept="A3Dl8" id="2vGNdoJHbUP" role="3clF45">
-        <node concept="3uibUv" id="2vGNdoJHbUQ" role="A3Ik2">
-          <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4MqhgXUa3p0" role="1B3o_S" />
-      <node concept="3clFbS" id="4MqhgXUa3p2" role="3clF47">
-        <node concept="3clFbF" id="34$A1Mf7Kfv" role="3cqZAp">
-          <node concept="37vLTw" id="34$A1Mf7Kfu" role="3clFbG">
-            <ref role="3cqZAo" node="2vGNdoJKThO" resolve="primarySymbols" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4MqhgXUa3p3" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4MqhgXUazcQ" role="jymVt" />
     <node concept="3clFb_" id="4MqhgXUazsM" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="ruleTemplates" />
