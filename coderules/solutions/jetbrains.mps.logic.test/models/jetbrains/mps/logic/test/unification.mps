@@ -95,10 +95,6 @@
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
-      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
-        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
-      </concept>
-      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -565,35 +561,6 @@
         </node>
         <node concept="3Tm1VV" id="2UGjFq4L4SG" role="1B3o_S" />
         <node concept="3clFbS" id="2UGjFq4L4SI" role="3clF47">
-          <node concept="3cpWs8" id="2tcGHBEewJ$" role="3cqZAp">
-            <node concept="3cpWsn" id="2tcGHBEewJ_" role="3cpWs9">
-              <property role="TrG5h" value="csession" />
-              <node concept="3uibUv" id="6yEjedmgUqt" role="1tU5fm">
-                <ref role="3uigEE" to="cxk7:3F6vMxqo13Y" resolve="DefaultSessionSolver" />
-              </node>
-              <node concept="2ShNRf" id="2tcGHBEewJA" role="33vP2m">
-                <node concept="1pGfFk" id="1ggxSI7$OLj" role="2ShVmc">
-                  <ref role="37wK5l" to="cxk7:23c4kVtavpK" resolve="DefaultSessionSolver" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="5jPBdK_B63" role="3cqZAp">
-            <node concept="2OqwBi" id="5jPBdK_Bcd" role="3clFbG">
-              <node concept="37vLTw" id="2tcGHBEewJE" role="2Oq$k0">
-                <ref role="3cqZAo" node="2tcGHBEewJ_" resolve="csession" />
-              </node>
-              <node concept="liA8E" id="5jPBdK_Bhd" role="2OqNvi">
-                <ref role="37wK5l" to="w7la:~SessionSolver.init(jetbrains.mps.logic.reactor.program.PredicateSymbol...):void" resolve="init" />
-                <node concept="2OqwBi" id="2tcGHBEex4W" role="37wK5m">
-                  <node concept="Xjq3P" id="2tcGHBEex4X" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="2tcGHBEex4Y" role="2OqNvi">
-                    <ref role="2Oxat5" node="5jPBdK_qdB" resolve="predicateSymbols" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="5jPBdK_p5i" role="3cqZAp">
             <node concept="37vLTI" id="5jPBdK_p7U" role="3clFbG">
               <node concept="37vLTw" id="5jPBdK_p5h" role="37vLTJ">
@@ -602,8 +569,10 @@
               <node concept="2ShNRf" id="5jPBdK_pxU" role="37vLTx">
                 <node concept="1pGfFk" id="5jPBdK_qS9" role="2ShVmc">
                   <ref role="37wK5l" node="5jPBdK_qM0" resolve="TestingEvaluationSession" />
-                  <node concept="37vLTw" id="5jPBdK_DfM" role="37wK5m">
-                    <ref role="3cqZAo" node="2tcGHBEewJ_" resolve="csession" />
+                  <node concept="2ShNRf" id="4jcOV4h9MdQ" role="37wK5m">
+                    <node concept="1pGfFk" id="4jcOV4h9Mrh" role="2ShVmc">
+                      <ref role="37wK5l" to="w7la:~SessionSolver.&lt;init&gt;()" resolve="SessionSolver" />
+                    </node>
                   </node>
                 </node>
               </node>

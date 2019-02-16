@@ -48,9 +48,6 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -6822,42 +6819,6 @@
     </node>
     <node concept="1KhYhu" id="3K_0akS$LUq" role="1KhZu4">
       <node concept="3clFbS" id="3K_0akS$LUr" role="2VODD2">
-        <node concept="3cpWs8" id="6yEjedm8ekr" role="3cqZAp">
-          <node concept="3cpWsn" id="6yEjedm8eks" role="3cpWs9">
-            <property role="TrG5h" value="symbols" />
-            <node concept="3uibUv" id="6yEjedm8ekt" role="1tU5fm">
-              <ref role="3uigEE" to="cxk7:3F6vMxqo13Y" resolve="DefaultSessionSolver" />
-            </node>
-            <node concept="2ShNRf" id="6yEjedm8eku" role="33vP2m">
-              <node concept="1pGfFk" id="6yEjedm8ekv" role="2ShVmc">
-                <ref role="37wK5l" to="cxk7:23c4kVtavpK" resolve="DefaultSessionSolver" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3SKdUt" id="2tcGHBEi$_e" role="3cqZAp">
-          <node concept="3SKdUq" id="2tcGHBEi$_g" role="3SKWNk">
-            <property role="3SKdUp" value="TODO: why create new solvers?" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="2tcGHBEi$gx" role="3cqZAp">
-          <node concept="2OqwBi" id="2tcGHBEi$kw" role="3clFbG">
-            <node concept="37vLTw" id="6yEjedm8eMu" role="2Oq$k0">
-              <ref role="3cqZAo" node="6yEjedm8eks" resolve="symbols" />
-            </node>
-            <node concept="liA8E" id="2tcGHBEi$nn" role="2OqNvi">
-              <ref role="37wK5l" to="w7la:~SessionSolver.init(jetbrains.mps.logic.reactor.program.PredicateSymbol...):void" resolve="init" />
-              <node concept="10M0yZ" id="2tcGHBEe$iM" role="37wK5m">
-                <ref role="3cqZAo" to="cxk7:5uFPQ7C23RV" resolve="EQ_SYM" />
-                <ref role="1PxDUh" to="cxk7:3HJTsBn4kk_" resolve="EqualsPredicate" />
-              </node>
-              <node concept="10M0yZ" id="2tcGHBEe$iN" role="37wK5m">
-                <ref role="3cqZAo" to="cxk7:5uFPQ7C29mw" resolve="UNI_SYM" />
-                <ref role="1PxDUh" to="cxk7:2GO7tyJVmP4" resolve="UnificationPredicate" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3K_0akS$LUA" role="3cqZAp">
           <node concept="37vLTI" id="3K_0akS$LUB" role="3clFbG">
             <node concept="37vLTw" id="3K_0akS$LUF" role="37vLTJ">

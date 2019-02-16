@@ -465,8 +465,8 @@
         <property role="TrG5h" value="solvers" />
         <node concept="3uibUv" id="4$YN6QuY4je" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
-          <node concept="3uibUv" id="4$YN6Qv0YGU" role="11_B2D">
-            <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
+          <node concept="3uibUv" id="4jcOV4h9W5b" role="11_B2D">
+            <ref role="3uigEE" to="w7la:~Solver" resolve="Solver" />
           </node>
         </node>
       </node>
@@ -1018,8 +1018,8 @@
       <node concept="3Tm6S6" id="4$YN6QuY09G" role="1B3o_S" />
       <node concept="3uibUv" id="4$YN6QuY1ni" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="4$YN6Qv0YPb" role="11_B2D">
-          <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
+        <node concept="3uibUv" id="4jcOV4h9Wch" role="11_B2D">
+          <ref role="3uigEE" to="w7la:~Solver" resolve="Solver" />
         </node>
       </node>
     </node>
@@ -4494,8 +4494,8 @@
           <node concept="3cpWsn" id="4$YN6QuZ0VB" role="3cpWs9">
             <property role="TrG5h" value="solvers" />
             <node concept="_YKpA" id="4$YN6QuZ0Vd" role="1tU5fm">
-              <node concept="3uibUv" id="4$YN6Qv1$TN" role="_ZDj9">
-                <ref role="3uigEE" to="w7la:~AbstractSolver" resolve="AbstractSolver" />
+              <node concept="3uibUv" id="4jcOV4h9XGC" role="_ZDj9">
+                <ref role="3uigEE" to="w7la:~Solver" resolve="Solver" />
               </node>
             </node>
             <node concept="2OqwBi" id="4$YN6QuZ2wV" role="33vP2m">

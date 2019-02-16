@@ -341,7 +341,7 @@
       <node concept="3Tm1VV" id="oI9Yrbvrw" role="1B3o_S" />
       <node concept="3clFbS" id="oI9Yrbvrx" role="3clF47">
         <node concept="XkiVB" id="oI9Yrbvx2" role="3cqZAp">
-          <ref role="37wK5l" to="cxk7:23c4kVtavpK" resolve="DefaultSessionSolver" />
+          <ref role="37wK5l" to="w7la:~SessionSolver.&lt;init&gt;()" resolve="SessionSolver" />
         </node>
       </node>
     </node>
@@ -378,8 +378,8 @@
     </node>
     <node concept="2tJIrI" id="1FOQehvIsJr" role="jymVt" />
     <node concept="3Tm1VV" id="7lt0LtQ_OIT" role="1B3o_S" />
-    <node concept="3uibUv" id="7lt0LtQ_OLT" role="1zkMxy">
-      <ref role="3uigEE" to="cxk7:3F6vMxqo13Y" resolve="DefaultSessionSolver" />
+    <node concept="3uibUv" id="4jcOV4h9GqE" role="1zkMxy">
+      <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
     </node>
     <node concept="3uibUv" id="78H58oeu4oM" role="EKbjA">
       <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
