@@ -1,14 +1,15 @@
 import jetbrains.mps.logic.reactor.core.EvaluationSessionImpl
+import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import solver.MockSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.JavaPredicateSymbol
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import org.junit.*
 import org.junit.Assert.*
 import program.MockConstraint
+import solver.EqualsSolver
 import solver.eq
 
 /**
@@ -27,13 +28,12 @@ class TestProgram {
     }
 
     private fun Builder.session(name: String): StoreView {
-        val sessionSolver = MockSessionSolver(env.expressionSolver, env.equalsSolver)
+        val sessionSolver = MockSessionSolver()
         val programBuilder = ProgramBuilder(MockConstraintRegistry(sessionSolver))
         for (h in handlers) {
             programBuilder.addHandler(h)
         }
         val session = EvaluationSession.newSession(programBuilder.program(name)).
-            withPredicates(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3).
             withParam("main", MockConstraint(ConstraintSymbol("main", 0))).start(sessionSolver)
         return session.storeView()
     }

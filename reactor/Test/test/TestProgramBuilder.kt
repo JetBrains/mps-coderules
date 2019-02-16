@@ -13,12 +13,7 @@ import solver.MockSessionSolver
 
 class TestProgramBuilder {
 
-    val dummySolver = object : AbstractSolver() {
-        override fun ask(invocation: PredicateInvocation?): Boolean = TODO()
-        override fun tell(invocation: PredicateInvocation?) = TODO()
-    }
-
-    val sessionSolver = MockSessionSolver(dummySolver, dummySolver)
+    val sessionSolver = MockSessionSolver()
 
     @Before fun beforeTest() {
         programBuilder = ProgramBuilder(MockConstraintRegistry(sessionSolver))

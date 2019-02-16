@@ -18,9 +18,7 @@ package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.core.ProcessingState.FAILED
 import jetbrains.mps.logic.reactor.evaluation.*
-import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
@@ -43,7 +41,7 @@ class EvaluationSessionImpl private constructor (
     val program: Program,
     val sessionSolver: SessionSolver,
     val trace: EvaluationTrace,
-    val failureHandler: FailureHandler?) : EvaluationSession(), SessionObjects
+    val failureHandler: EvaluationFeedbackHandler?) : EvaluationSession(), SessionObjects
 {
 
     lateinit var controller: Controller
@@ -59,7 +57,7 @@ class EvaluationSessionImpl private constructor (
         val parameters = HashMap<String, Any?>()
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
         var storeView: StoreView? = null
-        var failureHandler: FailureHandler? = null
+        var feedbackHandler: EvaluationFeedbackHandler? = null
 
         override fun withPredicates(vararg predicateSymbols: PredicateSymbol): EvaluationSession.Config {
             this.predicateSymbols.addAll(Arrays.asList(* predicateSymbols))
@@ -77,7 +75,12 @@ class EvaluationSessionImpl private constructor (
         }
 
         override fun withFailureHandler(handler: FailureHandler): EvaluationSession.Config {
-            this.failureHandler = handler
+            this.feedbackHandler = handler
+            return this
+        }
+
+        override fun withFeedbackHandler(handler: EvaluationFeedbackHandler?): EvaluationSession.Config {
+            this.feedbackHandler = handler
             return this
         }
 
@@ -97,7 +100,7 @@ class EvaluationSessionImpl private constructor (
                 parameters.get("profiling.data") as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
 
-            session = EvaluationSessionImpl(program, sessionSolver, evaluationTrace, failureHandler)
+            session = EvaluationSessionImpl(program, sessionSolver, evaluationTrace, feedbackHandler)
             ourBackend.ourSession.set(session)
             var failure: EvaluationFailure? = null
             try {

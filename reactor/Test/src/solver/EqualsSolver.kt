@@ -9,10 +9,16 @@ import jetbrains.mps.logic.reactor.logical.JoinableLogical
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 
-class EqualsSolver  : AbstractSolver() {
+class EqualsSolver  : Solver {
 
     companion object {
         fun eq(left: Any, right: Any): TestEqPredicate = TestEqPredicate(left, right)
+
+        val instance = EqualsSolver()
+
+        val symbol : PredicateSymbol = object : PredicateSymbol("equals", 2) {
+            override fun solver(): Solver = instance
+        }
     }
 
     override fun ask(invocation: PredicateInvocation): Boolean {
@@ -133,6 +139,6 @@ data class TestEqPredicate(val left: Any, val right: Any) : Predicate {
 
     override fun arguments(): List<Any> = listOf(left, right)
 
-    override fun symbol(): PredicateSymbol = PredicateSymbol("equals", 2)
+    override fun symbol(): PredicateSymbol = EqualsSolver.symbol
 
 }

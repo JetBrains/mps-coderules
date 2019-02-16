@@ -18,9 +18,8 @@ class Builder(val env: Environment, val handlers: List<Handler>) {
 
 }
 
+@Deprecated("don't use")
 class Environment(val programBuilder: ProgramBuilder? = null) {
-    val equalsSolver = EqualsSolver()
-    val expressionSolver = ExpressionSolver()
 }
 
 fun programWithRules(vararg ruleBuilders : Environment.() -> Rule): Builder {
@@ -113,7 +112,7 @@ class ConjBuilder(val type: Class<out AndItem>, val env: Environment) {
         if (!type.isAssignableFrom(item.javaClass))
             throw IllegalArgumentException("unexpected constraint class '${item.javaClass}'")
         constraints.add(item)
-        env.expressionSolver.addMaybeJavaPredicate(item)
+
     }
 
     @Suppress("UNCHECKED_CAST")

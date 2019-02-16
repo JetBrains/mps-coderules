@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,9 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 /**
- * Not very useful now.
- * Serves as an abstract superclass for implementations, as a mixin of Instructible and Queryable.
- *
- * @deprecated use Solver instead.
+ * A mixin of Queryable and Instructible.
+ * 
  * @author Fedor Isakov
  */
-@Deprecated
-public abstract class AbstractSolver implements Solver {
-
-
+public interface Solver extends Queryable, Instructible {
 }

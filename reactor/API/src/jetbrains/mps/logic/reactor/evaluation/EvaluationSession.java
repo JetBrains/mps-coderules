@@ -99,15 +99,30 @@ public abstract class EvaluationSession {
 
     public static abstract class Config {
 
-        public abstract EvaluationSession.Config withPredicates(PredicateSymbol... predicateSymbols);
+        @Deprecated
+        public EvaluationSession.Config withPredicates(PredicateSymbol... predicateSymbols){
+            return this;
+        }
 
-        public abstract EvaluationSession.Config withTrace(EvaluationTrace computingTracer);
+        public EvaluationSession.Config withTrace(EvaluationTrace computingTracer) {
+            return this;
+        }
 
-        public abstract EvaluationSession.Config withStoreView(StoreView storeView);
+        public EvaluationSession.Config withStoreView(StoreView storeView) {
+            return this;
+        }
 
-        public abstract EvaluationSession.Config withFailureHandler(FailureHandler handler);
+        public EvaluationSession.Config withFailureHandler(FailureHandler handler) {
+            return this;
+        }
 
-        public abstract EvaluationSession.Config withParam(String key, Object param);
+        public EvaluationSession.Config withFeedbackHandler(EvaluationFeedbackHandler handler) {
+            return this;
+        }
+
+        public EvaluationSession.Config withParam(String key, Object param) {
+            return this;
+        }
 
         public abstract EvaluationResult start(SessionSolver sessionSolver);
 

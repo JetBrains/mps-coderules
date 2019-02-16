@@ -54,12 +54,10 @@ class TestController {
         }
     }
 
-    private fun sessionSolver(expressionSolver: ExpressionSolver, equalsSolver: EqualsSolver): SessionSolver =
-        MockSessionSolver(expressionSolver, equalsSolver).apply {
-            init(PredicateSymbol("equals", 2), JavaPredicateSymbol.EXPRESSION0, JavaPredicateSymbol.EXPRESSION1, JavaPredicateSymbol.EXPRESSION2, JavaPredicateSymbol.EXPRESSION3) }
+    private fun sessionSolver(): SessionSolver = MockSessionSolver()
 
     private fun Builder.controller(vararg occurrences: ConstraintOccurrence): Controller {
-        val solver = sessionSolver(env.expressionSolver, env.equalsSolver)
+        val solver = sessionSolver()
         val program = MockProgram("test", handlers, registry = MockConstraintRegistry(solver))
         MockSession.init(program, solver)
         val controller = Controller(program, storeView = MockStoreView(listOf(* occurrences)))
@@ -70,7 +68,7 @@ class TestController {
     private fun Builder.controllerWithFeedback(feedbackHandler: EvaluationFeedbackHandler,
                                                 vararg occurrences: ConstraintOccurrence): Controller
     {
-        val solver = sessionSolver(env.expressionSolver, env.equalsSolver)
+        val solver = sessionSolver()
         val program = MockProgram("test", handlers, registry = MockConstraintRegistry(solver))
         MockSession.init(program, solver)
         val controller = Controller(program, storeView = MockStoreView(listOf(* occurrences)), feedbackHandler = feedbackHandler)

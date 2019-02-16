@@ -17,16 +17,20 @@
 package jetbrains.mps.logic.reactor.program;
 
 
+import jetbrains.mps.logic.reactor.evaluation.Solver;
+
 /**
  * A predicate symbol.
  *
  * @author Fedor Isakov
  */
-public class PredicateSymbol extends Symbol {
+public abstract class PredicateSymbol extends Symbol {
 
     public PredicateSymbol(String id, int arity) {
         super(id, arity);
     }
+
+    public abstract Solver solver();
 
     @Override
     public String toString() {

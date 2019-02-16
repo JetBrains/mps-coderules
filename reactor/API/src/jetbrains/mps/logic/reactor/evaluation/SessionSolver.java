@@ -32,15 +32,19 @@ import java.util.Map;
  *
  * @author Fedor Isakov
  */
-public abstract class SessionSolver implements Queryable, Instructible {
+public class SessionSolver implements Solver {
 
-    private Map<PredicateSymbol, AbstractSolver> solvers = new HashMap<PredicateSymbol, AbstractSolver>();
     private EvaluationTrace tracer = EvaluationTrace.NULL;
 
-    public void init(PredicateSymbol... predicateSymbols) {
-        registerSymbols(predicateSymbols);
+    public void init(EvaluationTrace evaluationTrace) {
+        tracer = evaluationTrace;
     }
 
+    @Deprecated
+    public void init(PredicateSymbol... predicateSymbols) {
+    }
+
+    @Deprecated
     public void init(EvaluationTrace evaluationTrace, PredicateSymbol... predicateSymbols) {
         tracer = evaluationTrace;
         init(predicateSymbols);
@@ -48,7 +52,7 @@ public abstract class SessionSolver implements Queryable, Instructible {
 
     @Override
     public boolean ask(PredicateInvocation invocation) {
-        AbstractSolver solver = solver(invocation.predicate().symbol());
+        Solver solver = invocation.predicate().symbol().solver();
         boolean result = solver.ask(invocation);
         tracer.ask(result, invocation);
         return result;
@@ -56,28 +60,18 @@ public abstract class SessionSolver implements Queryable, Instructible {
 
     @Override
     public void tell(PredicateInvocation invocation) {
-        AbstractSolver handler = solver(invocation.predicate().symbol());
+        Solver solver = invocation.predicate().symbol().solver();
         tracer.tell(invocation);
-        handler.tell(invocation);
+        solver.tell(invocation);
     }
 
-    protected abstract void registerSymbol(PredicateSymbol predicateSymbol, EvaluationTrace computingTracer);
+    @Deprecated
+    protected void registerSymbol(PredicateSymbol predicateSymbol, EvaluationTrace computingTracer) {
+        throw new UnsupportedOperationException();
+    }
 
+    @Deprecated
     protected void registerSolver(PredicateSymbol constraint, AbstractSolver solver) {
-        solvers.put(constraint, solver);
     }
-
-    private AbstractSolver solver(PredicateSymbol predicateSymbol) {
-        if (!(solvers.containsKey(predicateSymbol))) {
-            throw new IllegalStateException("no handler: " + predicateSymbol);
-        }
-        return solvers.get(predicateSymbol);
-    }
-
-    private void registerSymbols(PredicateSymbol... predicateSymbols) {
-        for (PredicateSymbol symbol : predicateSymbols) {
-            registerSymbol(symbol, tracer);
-        }
-    }
-
+    
 }
