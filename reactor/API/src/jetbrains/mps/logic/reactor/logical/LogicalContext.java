@@ -24,7 +24,6 @@ package jetbrains.mps.logic.reactor.logical;
  */
 public interface LogicalContext {
 
-
     <V> Logical<V> variable(MetaLogical<V> metaLogical);
 
 }

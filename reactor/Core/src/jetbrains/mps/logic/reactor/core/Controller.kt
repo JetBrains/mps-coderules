@@ -271,7 +271,7 @@ class Controller(
     }
 
     private fun activateConstraint(constraint: Constraint, context: Context) : Boolean {
-        val args = program.instantiateArguments(constraint.arguments(), context.logicalContext)
+        val args = program.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.updateState { state ->
             process(constraint.occurrence(context.logicalContext, args, frameStack), state)
         }
@@ -281,7 +281,7 @@ class Controller(
         profiler.profile<Boolean>("ask_${predicate.symbol()}") {
             
             context.evalSafe { state ->
-                val args = program.instantiateArguments(predicate.arguments(), context.logicalContext)
+                val args = program.instantiateArguments(predicate.arguments(), context.logicalContext, context)
                 if (session.sessionSolver().ask(predicate.invocation(args, context.logicalContext, context)))
                     state
                 else
@@ -294,7 +294,7 @@ class Controller(
         profiler.profile<Boolean>("tell_${predicate.symbol()}") {
 
             context.runSafe {
-                val args = program.instantiateArguments(predicate.arguments(), context.logicalContext)
+                val args = program.instantiateArguments(predicate.arguments(), context.logicalContext, context)
                 session.sessionSolver().tell(predicate.invocation(args, context.logicalContext, context))
             }
 

@@ -112,20 +112,22 @@ class EqualsSolver  : Solver {
 infix fun <T : Any> T.is_eq(value: T): Boolean = EvaluationSession.current().let { session ->
     val logicalContext = mockLogicalContext()
     val predicate = EqualsSolver.eq(this, value)
-    val args = session.program().instantiateArguments(predicate.arguments(), logicalContext)
-    val inv = predicate.invocation(args, logicalContext, object : InvocationContext {
+    val invocationContext: InvocationContext = object : InvocationContext {
         override fun report(feedback: EvaluationFeedback) = TODO()
-    })
+    }
+    val args = session.program().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
+    val inv = predicate.invocation(args, logicalContext, invocationContext)
     session.sessionSolver().ask(inv)
 }
 
 infix fun <T : Any> T.eq(value: T) = EvaluationSession.current().let { session ->
     val logicalContext = mockLogicalContext()
     val predicate = EqualsSolver.eq(this, value)
-    val args = session.program().instantiateArguments(predicate.arguments(), logicalContext)
-    val inv = predicate.invocation(args, logicalContext, object : InvocationContext {
+    val invocationContext: InvocationContext = object : InvocationContext {
         override fun report(feedback: EvaluationFeedback) = TODO()
-    })
+    }
+    val args = session.program().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
+    val inv = predicate.invocation(args, logicalContext, invocationContext)
     session.sessionSolver().tell(inv)
 }
 

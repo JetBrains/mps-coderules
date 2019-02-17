@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.program;
 
 
+import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
 
 import java.util.List;
@@ -38,6 +39,16 @@ public abstract class Program {
 
     public abstract Iterable<Handler> handlers();
 
-    public abstract List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext);
+    /**
+     * @deprecated use the overloaded method with InvocationContext parameter
+     */
+    @Deprecated
+    public List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext) {
+        throw new UnsupportedOperationException();
+    }
+
+    public List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext, InvocationContext ignore) {
+        return instantiateArguments(arguments, logicalContext);
+    }
 
 }
