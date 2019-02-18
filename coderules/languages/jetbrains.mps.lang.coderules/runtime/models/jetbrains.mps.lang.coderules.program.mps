@@ -717,6 +717,12 @@
           <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
         </node>
       </node>
+      <node concept="37vLTG" id="4jcOV4hkQup" role="3clF46">
+        <property role="TrG5h" value="invocationContext" />
+        <node concept="3uibUv" id="4jcOV4hkSdQ" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~InvocationContext" resolve="InvocationContext" />
+        </node>
+      </node>
       <node concept="3clFbS" id="60zk4o6Suor" role="3clF47">
         <node concept="3cpWs8" id="60zk4o6SxJ0" role="3cqZAp">
           <node concept="3cpWsn" id="60zk4o6SxJ1" role="3cpWs9">
@@ -844,6 +850,9 @@
                         <node concept="37vLTw" id="5WBVN_M1GEB" role="37wK5m">
                           <ref role="3cqZAo" node="60zk4o6Suop" resolve="logicalContext" />
                         </node>
+                        <node concept="37vLTw" id="4jcOV4hkYUG" role="37wK5m">
+                          <ref role="3cqZAo" node="4jcOV4hkQup" resolve="invocationContext" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -867,6 +876,9 @@
                             <ref role="37wK5l" to="i348:5WBVN_M1BLN" resolve="eval" />
                             <node concept="37vLTw" id="6yUEjXvTvSG" role="37wK5m">
                               <ref role="3cqZAo" node="60zk4o6Suop" resolve="logicalContext" />
+                            </node>
+                            <node concept="37vLTw" id="4jcOV4hlseO" role="37wK5m">
+                              <ref role="3cqZAo" node="4jcOV4hkQup" resolve="invocationContext" />
                             </node>
                             <node concept="2OqwBi" id="5WBVN_M1KyJ" role="37wK5m">
                               <node concept="37vLTw" id="5WBVN_M1K7z" role="2Oq$k0">

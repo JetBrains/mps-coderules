@@ -1804,6 +1804,12 @@
           <ref role="3uigEE" to="bj13:~LogicalContext" resolve="LogicalContext" />
         </node>
       </node>
+      <node concept="37vLTG" id="4jcOV4hliBa" role="3clF46">
+        <property role="TrG5h" value="invocationContext" />
+        <node concept="3uibUv" id="4jcOV4hliCP" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~InvocationContext" resolve="InvocationContext" />
+        </node>
+      </node>
       <node concept="37vLTG" id="5WBVN_M1BNS" role="3clF46">
         <property role="TrG5h" value="args" />
         <node concept="8X2XB" id="5WBVN_M1BOF" role="1tU5fm">

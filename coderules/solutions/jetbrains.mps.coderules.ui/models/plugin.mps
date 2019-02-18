@@ -1393,55 +1393,36 @@
                                           <node concept="10Nm6u" id="5lxnBcTZ0U4" role="3uHU7w" />
                                         </node>
                                         <node concept="3clFbS" id="5lxnBcTZ0U5" role="3clFbx">
-                                          <node concept="3clFbJ" id="1FOQehx2gvv" role="3cqZAp">
-                                            <node concept="3clFbS" id="1FOQehx2gvx" role="3clFbx">
-                                              <node concept="3clFbF" id="5lxnBcTZ0U6" role="3cqZAp">
-                                                <node concept="2OqwBi" id="5lxnBcTZ0U7" role="3clFbG">
-                                                  <node concept="37vLTw" id="5lxnBcTZ0U8" role="2Oq$k0">
-                                                    <ref role="3cqZAo" node="5lxnBcTZ0T4" resolve="messageList" />
+                                          <node concept="3SKdUt" id="4jcOV4hTkxu" role="3cqZAp">
+                                            <node concept="3SKdUq" id="4jcOV4hTkxw" role="3SKWNk">
+                                              <property role="3SKdUp" value="FIXME superfluous conversion to/from HighlighterMessage" />
+                                            </node>
+                                          </node>
+                                          <node concept="3clFbF" id="5lxnBcTZ0U6" role="3cqZAp">
+                                            <node concept="2OqwBi" id="5lxnBcTZ0U7" role="3clFbG">
+                                              <node concept="37vLTw" id="5lxnBcTZ0U8" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="5lxnBcTZ0T4" resolve="messageList" />
+                                              </node>
+                                              <node concept="TSZUe" id="5lxnBcTZ0U9" role="2OqNvi">
+                                                <node concept="2OqwBi" id="5lxnBcTZ0Ua" role="25WWJ7">
+                                                  <node concept="37vLTw" id="5lxnBcTZ0Ub" role="2Oq$k0">
+                                                    <ref role="3cqZAo" node="52a_GfIDucr" resolve="messageDisplay" />
                                                   </node>
-                                                  <node concept="TSZUe" id="5lxnBcTZ0U9" role="2OqNvi">
-                                                    <node concept="2OqwBi" id="5lxnBcTZ0Ua" role="25WWJ7">
-                                                      <node concept="37vLTw" id="5lxnBcTZ0Ub" role="2Oq$k0">
-                                                        <ref role="3cqZAo" node="52a_GfIDucr" resolve="messageDisplay" />
-                                                      </node>
-                                                      <node concept="liA8E" id="5lxnBcTZ0Uc" role="2OqNvi">
-                                                        <ref role="37wK5l" node="4vBwiiVsgIX" resolve="errorMessage" />
-                                                        <node concept="37vLTw" id="5lxnBcTZ0Ud" role="37wK5m">
-                                                          <ref role="3cqZAo" node="5lxnBcTZ0TQ" resolve="node" />
-                                                        </node>
-                                                        <node concept="2OqwBi" id="1FOQehx2B9O" role="37wK5m">
-                                                          <node concept="37vLTw" id="1FOQehx2_bF" role="2Oq$k0">
-                                                            <ref role="3cqZAo" node="1FOQehx1Lkm" resolve="nri" />
-                                                          </node>
-                                                          <node concept="liA8E" id="1FOQehx2Dl8" role="2OqNvi">
-                                                            <ref role="37wK5l" to="d6hs:~ReportItem.getMessage():java.lang.String" resolve="getMessage" />
-                                                          </node>
-                                                        </node>
-                                                      </node>
+                                                  <node concept="liA8E" id="5lxnBcTZ0Uc" role="2OqNvi">
+                                                    <ref role="37wK5l" node="4vBwiiVsgIX" resolve="reportMessage" />
+                                                    <node concept="37vLTw" id="5lxnBcTZ0Ud" role="37wK5m">
+                                                      <ref role="3cqZAo" node="5lxnBcTZ0TQ" resolve="node" />
+                                                    </node>
+                                                    <node concept="37vLTw" id="4jcOV4hT2sL" role="37wK5m">
+                                                      <ref role="3cqZAo" node="1FOQehx1Lkm" resolve="nri" />
                                                     </node>
                                                   </node>
                                                 </node>
                                               </node>
                                             </node>
-                                            <node concept="3clFbC" id="1FOQehx2mse" role="3clFbw">
-                                              <node concept="2OqwBi" id="1FOQehx2qlw" role="3uHU7w">
-                                                <node concept="37vLTw" id="1FOQehx2onP" role="2Oq$k0">
-                                                  <ref role="3cqZAo" node="1FOQehx1Lkm" resolve="nri" />
-                                                </node>
-                                                <node concept="liA8E" id="1FOQehx2spE" role="2OqNvi">
-                                                  <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
-                                                </node>
-                                              </node>
-                                              <node concept="Rm8GO" id="1FOQehx2kl_" role="3uHU7B">
-                                                <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
-                                                <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
-                                              </node>
-                                            </node>
                                           </node>
                                         </node>
                                       </node>
-                                      <node concept="3clFbH" id="1FOQehx27FW" role="3cqZAp" />
                                     </node>
                                     <node concept="2ZW3vV" id="1FOQehx1$n8" role="3clFbw">
                                       <node concept="3uibUv" id="1FOQehx1Air" role="2ZW6by">
@@ -1452,7 +1433,6 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node concept="3clFbH" id="1FOQehx1s9E" role="3cqZAp" />
                                 </node>
                                 <node concept="3cpWsn" id="1FOQehx1cWL" role="1Duv9x">
                                   <property role="TrG5h" value="it" />
@@ -2351,14 +2331,16 @@
     </node>
     <node concept="2tJIrI" id="4vBwiiVsgIW" role="jymVt" />
     <node concept="3clFb_" id="4vBwiiVsgIX" role="jymVt">
-      <property role="TrG5h" value="errorMessage" />
+      <property role="TrG5h" value="reportMessage" />
       <node concept="37vLTG" id="4vBwiiVsgIY" role="3clF46">
         <property role="TrG5h" value="target" />
         <node concept="3Tqbb2" id="4vBwiiVsgIZ" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="4vBwiiVsgJ0" role="3clF46">
-        <property role="TrG5h" value="error" />
-        <node concept="17QB3L" id="4vBwiiVsgJ1" role="1tU5fm" />
+      <node concept="37vLTG" id="4jcOV4hSPAw" role="3clF46">
+        <property role="TrG5h" value="nri" />
+        <node concept="3uibUv" id="4jcOV4hSSJi" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+        </node>
       </node>
       <node concept="3uibUv" id="4vBwiiVsgJ2" role="3clF45">
         <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />
@@ -2368,7 +2350,7 @@
         <node concept="3clFbF" id="4vBwiiVsgJ5" role="3cqZAp">
           <node concept="2ShNRf" id="4vBwiiVsgJ6" role="3clFbG">
             <node concept="1pGfFk" id="4vBwiiVsgJ7" role="2ShVmc">
-              <ref role="37wK5l" node="4vBwiiVsgKf" resolve="MessageDisplay.ErrorMessage" />
+              <ref role="37wK5l" node="4vBwiiVsgKf" resolve="MessageDisplay.ReportMessage" />
               <node concept="37vLTw" id="4vBwiiVsgJ8" role="37wK5m">
                 <ref role="3cqZAo" node="4vBwiiVsgIY" resolve="target" />
               </node>
@@ -2383,10 +2365,23 @@
                   <node concept="2YIFZM" id="6Yb9hAqy3Re" role="3uHU7w">
                     <ref role="37wK5l" node="4vBwiiVrVPy" resolve="escapeHtml" />
                     <ref role="1Pybhc" node="4vBwiiVrUlG" resolve="HtmlUtil" />
-                    <node concept="37vLTw" id="4vBwiiVsgJe" role="37wK5m">
-                      <ref role="3cqZAo" node="4vBwiiVsgJ0" resolve="error" />
+                    <node concept="2OqwBi" id="4jcOV4hSXxE" role="37wK5m">
+                      <node concept="37vLTw" id="4jcOV4hSWW3" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4jcOV4hSPAw" resolve="nri" />
+                      </node>
+                      <node concept="liA8E" id="4jcOV4hSY3I" role="2OqNvi">
+                        <ref role="37wK5l" to="d6hs:~ReportItem.getMessage():java.lang.String" resolve="getMessage" />
+                      </node>
                     </node>
                   </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4jcOV4hSZ1e" role="37wK5m">
+                <node concept="37vLTw" id="4jcOV4hSYvu" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4jcOV4hSPAw" resolve="nri" />
+                </node>
+                <node concept="liA8E" id="4jcOV4hT01Z" role="2OqNvi">
+                  <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
                 </node>
               </node>
             </node>
@@ -2522,10 +2517,14 @@
           <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
         </node>
         <node concept="3clFbS" id="4vBwiiVsgJR" role="3clF47">
-          <node concept="3clFbF" id="4vBwiiVsgJS" role="3cqZAp">
-            <node concept="10M0yZ" id="4vBwiiVsgJT" role="3clFbG">
-              <ref role="1PxDUh" to="z60i:~Color" resolve="Color" />
-              <ref role="3cqZAo" to="z60i:~Color.GREEN" resolve="GREEN" />
+          <node concept="3clFbF" id="4jcOV4hRGik" role="3cqZAp">
+            <node concept="2YIFZM" id="4jcOV4hRGu8" role="3clFbG">
+              <ref role="37wK5l" to="exr9:~HighlighterMessage.getMessageColor(jetbrains.mps.errors.MessageStatus):java.awt.Color" resolve="getMessageColor" />
+              <ref role="1Pybhc" to="exr9:~HighlighterMessage" resolve="HighlighterMessage" />
+              <node concept="Rm8GO" id="4jcOV4hRHcD" role="37wK5m">
+                <ref role="Rm8GQ" to="2gg1:~MessageStatus.OK" resolve="OK" />
+                <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+              </node>
             </node>
           </node>
         </node>
@@ -2541,7 +2540,7 @@
     <node concept="2tJIrI" id="4vBwiiVsgJX" role="jymVt" />
     <node concept="312cEu" id="4vBwiiVsgJY" role="jymVt">
       <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="ErrorReportItem" />
+      <property role="TrG5h" value="MessageReportItem" />
       <node concept="3clFbW" id="4vBwiiVsgJZ" role="jymVt">
         <node concept="37vLTG" id="4vBwiiVsgK0" role="3clF46">
           <property role="TrG5h" value="nodeRef" />
@@ -2553,20 +2552,38 @@
           <property role="TrG5h" value="msg" />
           <node concept="17QB3L" id="4vBwiiVsgK3" role="1tU5fm" />
         </node>
+        <node concept="37vLTG" id="4jcOV4hRHDN" role="3clF46">
+          <property role="TrG5h" value="status" />
+          <node concept="3uibUv" id="4jcOV4hRI9D" role="1tU5fm">
+            <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+          </node>
+        </node>
         <node concept="3cqZAl" id="4vBwiiVsgK4" role="3clF45" />
         <node concept="3Tm6S6" id="4vBwiiVsgK5" role="1B3o_S" />
         <node concept="3clFbS" id="4vBwiiVsgK6" role="3clF47">
           <node concept="XkiVB" id="4vBwiiVsgK7" role="3cqZAp">
             <ref role="37wK5l" to="d6hs:~NodeReportItemBase.&lt;init&gt;(jetbrains.mps.errors.MessageStatus,org.jetbrains.mps.openapi.model.SNodeReference,java.lang.String)" resolve="NodeReportItemBase" />
-            <node concept="Rm8GO" id="4vBwiiVsgK8" role="37wK5m">
-              <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
-              <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
+            <node concept="37vLTw" id="4jcOV4hRK8x" role="37wK5m">
+              <ref role="3cqZAo" node="4jcOV4hRHDN" resolve="status" />
             </node>
             <node concept="37vLTw" id="4vBwiiVsgK9" role="37wK5m">
               <ref role="3cqZAo" node="4vBwiiVsgK0" resolve="nodeRef" />
             </node>
             <node concept="37vLTw" id="4vBwiiVsgKa" role="37wK5m">
               <ref role="3cqZAo" node="4vBwiiVsgK2" resolve="msg" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="4jcOV4hRIn_" role="3cqZAp">
+            <node concept="37vLTI" id="4jcOV4hRInB" role="3clFbG">
+              <node concept="2OqwBi" id="4jcOV4hRJ6k" role="37vLTJ">
+                <node concept="Xjq3P" id="4jcOV4hRJlu" role="2Oq$k0" />
+                <node concept="2OwXpG" id="4jcOV4hRPtJ" role="2OqNvi">
+                  <ref role="2Oxat5" node="4jcOV4hRInx" resolve="status" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="4jcOV4hRInF" role="37vLTx">
+                <ref role="3cqZAo" node="4jcOV4hRHDN" resolve="status" />
+              </node>
             </node>
           </node>
         </node>
@@ -2589,9 +2606,8 @@
               <node concept="liA8E" id="3nc912KraMH" role="2OqNvi">
                 <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
                 <node concept="2OqwBi" id="3nc912KraMK" role="37wK5m">
-                  <node concept="Rm8GO" id="3nc912KraML" role="2Oq$k0">
-                    <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
-                    <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+                  <node concept="37vLTw" id="4jcOV4hRKSE" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4jcOV4hRInx" resolve="status" />
                   </node>
                   <node concept="liA8E" id="3nc912KraMM" role="2OqNvi">
                     <ref role="37wK5l" to="wyt6:~Enum.toString():java.lang.String" resolve="toString" />
@@ -2609,11 +2625,18 @@
       <node concept="3uibUv" id="4vBwiiVsgKc" role="1zkMxy">
         <ref role="3uigEE" to="d6hs:~NodeReportItemBase" resolve="NodeReportItemBase" />
       </node>
+      <node concept="312cEg" id="4jcOV4hRInx" role="jymVt">
+        <property role="TrG5h" value="status" />
+        <node concept="3Tm6S6" id="4jcOV4hRIny" role="1B3o_S" />
+        <node concept="3uibUv" id="4jcOV4hRIn$" role="1tU5fm">
+          <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="4vBwiiVsgKd" role="jymVt" />
     <node concept="312cEu" id="4vBwiiVsgKe" role="jymVt">
       <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="ErrorMessage" />
+      <property role="TrG5h" value="ReportMessage" />
       <node concept="3clFbW" id="4vBwiiVsgKf" role="jymVt">
         <node concept="37vLTG" id="4vBwiiVsgKg" role="3clF46">
           <property role="TrG5h" value="target" />
@@ -2622,6 +2645,12 @@
         <node concept="37vLTG" id="4vBwiiVsgKi" role="3clF46">
           <property role="TrG5h" value="msg" />
           <node concept="17QB3L" id="4vBwiiVsgKj" role="1tU5fm" />
+        </node>
+        <node concept="37vLTG" id="4jcOV4hRQap" role="3clF46">
+          <property role="TrG5h" value="status" />
+          <node concept="3uibUv" id="4jcOV4hRQJR" role="1tU5fm">
+            <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+          </node>
         </node>
         <node concept="3cqZAl" id="4vBwiiVsgKk" role="3clF45" />
         <node concept="3Tm1VV" id="4vBwiiVsgKl" role="1B3o_S" />
@@ -2633,7 +2662,7 @@
             </node>
             <node concept="2ShNRf" id="4vBwiiVsgKp" role="37wK5m">
               <node concept="1pGfFk" id="4vBwiiVsgKq" role="2ShVmc">
-                <ref role="37wK5l" node="4vBwiiVsgJZ" resolve="MessageDisplay.ErrorReportItem" />
+                <ref role="37wK5l" node="4vBwiiVsgJZ" resolve="MessageDisplay.MessageReportItem" />
                 <node concept="2OqwBi" id="4vBwiiVsgKr" role="37wK5m">
                   <node concept="2JrnkZ" id="4vBwiiVsgKs" role="2Oq$k0">
                     <node concept="37vLTw" id="4vBwiiVsgKt" role="2JrQYb">
@@ -2647,10 +2676,26 @@
                 <node concept="37vLTw" id="4vBwiiVsgKv" role="37wK5m">
                   <ref role="3cqZAo" node="4vBwiiVsgKi" resolve="msg" />
                 </node>
+                <node concept="37vLTw" id="4jcOV4hRRhi" role="37wK5m">
+                  <ref role="3cqZAo" node="4jcOV4hRQap" resolve="status" />
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="4vBwiiVsgKw" role="37wK5m">
               <ref role="3cqZAo" node="4vBwiiVsgKg" resolve="target" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="4jcOV4hRWYv" role="3cqZAp">
+            <node concept="37vLTI" id="4jcOV4hS0j5" role="3clFbG">
+              <node concept="37vLTw" id="4jcOV4hS0CG" role="37vLTx">
+                <ref role="3cqZAo" node="4jcOV4hRQap" resolve="status" />
+              </node>
+              <node concept="2OqwBi" id="4jcOV4hRXkT" role="37vLTJ">
+                <node concept="Xjq3P" id="4jcOV4hRWYt" role="2Oq$k0" />
+                <node concept="2OwXpG" id="4jcOV4hRXMN" role="2OqNvi">
+                  <ref role="2Oxat5" node="4jcOV4hRRlZ" resolve="status" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2670,15 +2715,26 @@
           <ref role="3uigEE" to="z60i:~Color" resolve="Color" />
         </node>
         <node concept="3clFbS" id="4vBwiiVsgKB" role="3clF47">
-          <node concept="3clFbF" id="4vBwiiVsgKC" role="3cqZAp">
-            <node concept="10M0yZ" id="4vBwiiVsgKD" role="3clFbG">
-              <ref role="3cqZAo" to="z60i:~Color.RED" resolve="RED" />
-              <ref role="1PxDUh" to="z60i:~Color" resolve="Color" />
+          <node concept="3clFbF" id="4jcOV4hS2cW" role="3cqZAp">
+            <node concept="2YIFZM" id="4jcOV4hS2oL" role="3clFbG">
+              <ref role="37wK5l" to="exr9:~HighlighterMessage.getMessageColor(jetbrains.mps.errors.MessageStatus):java.awt.Color" resolve="getMessageColor" />
+              <ref role="1Pybhc" to="exr9:~HighlighterMessage" resolve="HighlighterMessage" />
+              <node concept="37vLTw" id="4jcOV4hS36I" role="37wK5m">
+                <ref role="3cqZAo" node="4jcOV4hRRlZ" resolve="status" />
+              </node>
             </node>
           </node>
         </node>
         <node concept="2AHcQZ" id="4vBwiiVsgKE" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="4jcOV4hS3em" role="jymVt" />
+      <node concept="312cEg" id="4jcOV4hRRlZ" role="jymVt">
+        <property role="TrG5h" value="status" />
+        <node concept="3Tm6S6" id="4jcOV4hRRm0" role="1B3o_S" />
+        <node concept="3uibUv" id="4jcOV4hRRm1" role="1tU5fm">
+          <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
         </node>
       </node>
     </node>

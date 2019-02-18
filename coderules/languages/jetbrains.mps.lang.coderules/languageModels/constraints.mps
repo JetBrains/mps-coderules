@@ -1300,5 +1300,157 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="4jcOV4hwMzQ">
+    <property role="3GE5qa" value="constraint" />
+    <ref role="1M2myG" to="wq2x:4jcOV4hu088" resolve="ProvideFeedbackConstraint" />
+    <node concept="9S07l" id="4jcOV4hwMzR" role="9Vyp8">
+      <node concept="3clFbS" id="4jcOV4hwMzS" role="2VODD2">
+        <node concept="3cpWs8" id="4jcOV4hwMIQ" role="3cqZAp">
+          <node concept="3cpWsn" id="4jcOV4hwMIR" role="3cpWs9">
+            <property role="TrG5h" value="acceptable" />
+            <node concept="10P_77" id="4jcOV4hwMIS" role="1tU5fm" />
+            <node concept="2OqwBi" id="4jcOV4hwMIT" role="33vP2m">
+              <node concept="2OqwBi" id="4jcOV4hwMIU" role="2Oq$k0">
+                <node concept="nLn13" id="4jcOV4hwMIV" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="4jcOV4hwMIW" role="2OqNvi">
+                  <node concept="3gmYPX" id="4jcOV4hwMIX" role="1xVPHs">
+                    <node concept="3gn64h" id="4jcOV4hwMIZ" role="3gmYPZ">
+                      <ref role="3gnhBz" to="wq2x:6p0DfM0a3TO" resolve="Body" />
+                    </node>
+                    <node concept="3gn64h" id="4jcOV4hwMJ0" role="3gmYPZ">
+                      <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
+                    </node>
+                  </node>
+                  <node concept="1xIGOp" id="4jcOV4hwMJ1" role="1xVPHs" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="4jcOV4hwMJ2" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4jcOV4hwMJ3" role="3cqZAp" />
+        <node concept="3cpWs8" id="4jcOV4hwMJ4" role="3cqZAp">
+          <node concept="3cpWsn" id="4jcOV4hwMJ5" role="3cpWs9">
+            <property role="TrG5h" value="methk" />
+            <node concept="3uibUv" id="4jcOV4hwMJ6" role="1tU5fm">
+              <ref role="3uigEE" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+            </node>
+            <node concept="2YIFZM" id="4jcOV4hwMJ7" role="33vP2m">
+              <ref role="37wK5l" to="hy7p:746Sd4ujSOx" resolve="templateMethodKind" />
+              <ref role="1Pybhc" to="hy7p:746Sd4ujSKb" resolve="RuleTemplateUtil" />
+              <node concept="2OqwBi" id="4jcOV4hwMJ8" role="37wK5m">
+                <node concept="nLn13" id="4jcOV4hwMJ9" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="4jcOV4hwMJa" role="2OqNvi">
+                  <node concept="1xMEDy" id="4jcOV4hwMJb" role="1xVPHs">
+                    <node concept="chp4Y" id="4jcOV4hwMJc" role="ri$Ld">
+                      <ref role="cht4Q" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4jcOV4hwMJd" role="3cqZAp">
+          <node concept="3vZ8r8" id="4jcOV4hwMJe" role="3clFbG">
+            <node concept="3clFbC" id="4jcOV4hwMJj" role="37vLTx">
+              <node concept="37vLTw" id="4jcOV4hwMJk" role="3uHU7B">
+                <ref role="3cqZAo" node="4jcOV4hwMJ5" resolve="methk" />
+              </node>
+              <node concept="Rm8GO" id="4jcOV4hwMJl" role="3uHU7w">
+                <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                <ref role="Rm8GQ" to="i348:4OKkcnfu_Ak" resolve="BODY" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="4jcOV4hwMJm" role="37vLTJ">
+              <ref role="3cqZAo" node="4jcOV4hwMIR" resolve="acceptable" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4jcOV4hwMJn" role="3cqZAp" />
+        <node concept="3clFbF" id="4jcOV4hwMJo" role="3cqZAp">
+          <node concept="37vLTw" id="4jcOV4hwMJp" role="3clFbG">
+            <ref role="3cqZAo" node="4jcOV4hwMIR" resolve="acceptable" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="4jcOV4hEFqh">
+    <property role="3GE5qa" value="constraint" />
+    <ref role="1M2myG" to="wq2x:4jcOV4hExo0" resolve="FailConstraint" />
+    <node concept="9S07l" id="4jcOV4hEFqi" role="9Vyp8">
+      <node concept="3clFbS" id="4jcOV4hEFqj" role="2VODD2">
+        <node concept="3cpWs8" id="4jcOV4hEF_h" role="3cqZAp">
+          <node concept="3cpWsn" id="4jcOV4hEF_i" role="3cpWs9">
+            <property role="TrG5h" value="acceptable" />
+            <node concept="10P_77" id="4jcOV4hEF_j" role="1tU5fm" />
+            <node concept="2OqwBi" id="4jcOV4hEF_k" role="33vP2m">
+              <node concept="2OqwBi" id="4jcOV4hEF_l" role="2Oq$k0">
+                <node concept="nLn13" id="4jcOV4hEF_m" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="4jcOV4hEF_n" role="2OqNvi">
+                  <node concept="3gmYPX" id="4jcOV4hEF_o" role="1xVPHs">
+                    <node concept="3gn64h" id="4jcOV4hEF_p" role="3gmYPZ">
+                      <ref role="3gnhBz" to="wq2x:6p0DfM0a3TO" resolve="Body" />
+                    </node>
+                    <node concept="3gn64h" id="4jcOV4hEF_q" role="3gmYPZ">
+                      <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
+                    </node>
+                  </node>
+                  <node concept="1xIGOp" id="4jcOV4hEF_r" role="1xVPHs" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="4jcOV4hEF_s" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4jcOV4hEF_t" role="3cqZAp" />
+        <node concept="3cpWs8" id="4jcOV4hEF_u" role="3cqZAp">
+          <node concept="3cpWsn" id="4jcOV4hEF_v" role="3cpWs9">
+            <property role="TrG5h" value="methk" />
+            <node concept="3uibUv" id="4jcOV4hEF_w" role="1tU5fm">
+              <ref role="3uigEE" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+            </node>
+            <node concept="2YIFZM" id="4jcOV4hEF_x" role="33vP2m">
+              <ref role="37wK5l" to="hy7p:746Sd4ujSOx" resolve="templateMethodKind" />
+              <ref role="1Pybhc" to="hy7p:746Sd4ujSKb" resolve="RuleTemplateUtil" />
+              <node concept="2OqwBi" id="4jcOV4hEF_y" role="37wK5m">
+                <node concept="nLn13" id="4jcOV4hEF_z" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="4jcOV4hEF_$" role="2OqNvi">
+                  <node concept="1xMEDy" id="4jcOV4hEF__" role="1xVPHs">
+                    <node concept="chp4Y" id="4jcOV4hEF_A" role="ri$Ld">
+                      <ref role="cht4Q" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4jcOV4hEF_B" role="3cqZAp">
+          <node concept="3vZ8r8" id="4jcOV4hEF_C" role="3clFbG">
+            <node concept="3clFbC" id="4jcOV4hEF_D" role="37vLTx">
+              <node concept="37vLTw" id="4jcOV4hEF_E" role="3uHU7B">
+                <ref role="3cqZAo" node="4jcOV4hEF_v" resolve="methk" />
+              </node>
+              <node concept="Rm8GO" id="4jcOV4hEF_F" role="3uHU7w">
+                <ref role="1Px2BO" to="i348:4OKkcnfu_Ag" resolve="RuleTemplateMehodKind" />
+                <ref role="Rm8GQ" to="i348:4OKkcnfu_Ak" resolve="BODY" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="4jcOV4hEF_G" role="37vLTJ">
+              <ref role="3cqZAo" node="4jcOV4hEF_i" resolve="acceptable" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4jcOV4hEF_H" role="3cqZAp" />
+        <node concept="3clFbF" id="4jcOV4hEF_I" role="3cqZAp">
+          <node concept="37vLTw" id="4jcOV4hEF_J" role="3clFbG">
+            <ref role="3cqZAo" node="4jcOV4hEF_i" resolve="acceptable" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

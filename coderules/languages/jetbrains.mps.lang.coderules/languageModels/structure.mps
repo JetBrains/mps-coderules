@@ -23,6 +23,7 @@
       </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <reference id="1083241965437" name="defaultMember" index="Qgau1" />
         <child id="1083172003582" name="member" index="M5hS2" />
       </concept>
       <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
@@ -354,7 +355,7 @@
     <node concept="1TJgyj" id="4EfgX2EvGcc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
-      <property role="20lbJX" value="0..1" />
+      <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5372587443968983820" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
@@ -1269,6 +1270,70 @@
     <property role="TrG5h" value="ContextRepositoryExpression" />
     <property role="34LRSv" value="repository" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="1TIwiD" id="4jcOV4hu088">
+    <property role="EcuMT" value="4957570047283823112" />
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="ProvideFeedbackConstraint" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyj" id="4jcOV4hwicZ" role="1TKVEi">
+      <property role="IQ2ns" value="4957570047284421439" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="message" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyi" id="4jcOV4hu0nK" role="1TKVEl">
+      <property role="IQ2nx" value="4957570047283824112" />
+      <property role="TrG5h" value="severity" />
+      <ref role="AX2Wp" node="4jcOV4hu0ns" resolve="FeedbackSeverity" />
+    </node>
+    <node concept="PrWs8" id="4jcOV4hwWdd" role="PzmwI">
+      <ref role="PrY4T" node="1HWyn8iLEBo" resolve="LateParameter" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="4jcOV4hu0ns">
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="FeedbackSeverity" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <ref role="Qgau1" node="4jcOV4hu0nu" />
+    <node concept="M4N5e" id="4jcOV4hu0nt" role="M5hS2">
+      <property role="1uS6qv" value="DEBUG" />
+      <property role="1uS6qo" value="debug" />
+    </node>
+    <node concept="M4N5e" id="4jcOV4hu0nu" role="M5hS2">
+      <property role="1uS6qv" value="INFO" />
+      <property role="1uS6qo" value="info" />
+    </node>
+    <node concept="M4N5e" id="4jcOV4hu0nx" role="M5hS2">
+      <property role="1uS6qv" value="WARN" />
+      <property role="1uS6qo" value="warning" />
+    </node>
+    <node concept="M4N5e" id="4jcOV4hu0n_" role="M5hS2">
+      <property role="1uS6qv" value="ERROR" />
+      <property role="1uS6qo" value="error" />
+    </node>
+    <node concept="M4N5e" id="4jcOV4hu0nE" role="M5hS2">
+      <property role="1uS6qv" value="FATAL" />
+      <property role="1uS6qo" value="fatal" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4jcOV4hExo0">
+    <property role="EcuMT" value="4957570047287105024" />
+    <property role="3GE5qa" value="constraint" />
+    <property role="TrG5h" value="FailConstraint" />
+    <property role="34LRSv" value="fail" />
+    <ref role="1TJDcQ" node="6p0DfM0ajMA" resolve="AbstractConstraint" />
+    <node concept="1TJgyj" id="4jcOV4hEDv3" role="1TKVEi">
+      <property role="IQ2ns" value="4957570047287138243" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="message" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="4jcOV4hEyRj" role="PzmwI">
+      <ref role="PrY4T" node="1HWyn8iLEBo" resolve="LateParameter" />
+    </node>
   </node>
 </model>
 
