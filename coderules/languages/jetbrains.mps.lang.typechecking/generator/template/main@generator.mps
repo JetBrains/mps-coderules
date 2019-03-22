@@ -29,6 +29,7 @@
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -340,7 +341,7 @@
                 <node concept="1eOMI4" id="oI9Yrdpd1" role="2Oq$k0">
                   <node concept="10QFUN" id="oI9YrdpcY" role="1eOMHV">
                     <node concept="3uibUv" id="oI9YrdpgP" role="10QFUM">
-                      <ref role="3uigEE" to="1g4i:7lt0LtQ_OIS" resolve="TypecheckingSessionSolver" />
+                      <ref role="3uigEE" to="tj24:7lt0LtQ_OIS" resolve="TypecheckingSessionSolver" />
                     </node>
                     <node concept="2OqwBi" id="oI9Yrdpd3" role="10QFUP">
                       <node concept="2YIFZM" id="oI9Yrdpd4" role="2Oq$k0">
@@ -354,7 +355,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="oI9YrdpMV" role="2OqNvi">
-                  <ref role="37wK5l" to="1g4i:7lt0LtQ_SZU" resolve="assignType" />
+                  <ref role="37wK5l" to="tj24:7lt0LtQ_SZU" resolve="assignType" />
                   <node concept="10Nm6u" id="oI9YrdpSj" role="37wK5m">
                     <node concept="29HgVG" id="oI9Yrdq5a" role="lGtFl">
                       <node concept="3NFfHV" id="oI9Yrdq6g" role="3NFExx">

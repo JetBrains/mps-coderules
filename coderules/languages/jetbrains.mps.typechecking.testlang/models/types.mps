@@ -16,6 +16,7 @@
     <import index="qulx" ref="r:ec0979fb-ae37-4823-9eaa-8550d9f5c6fd(jetbrains.mps.typechecking.testlang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -610,9 +611,9 @@
         </node>
       </node>
     </node>
-    <node concept="10M0yZ" id="12QmIoyRGx2" role="2_lZgo">
-      <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
-      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+    <node concept="10M0yZ" id="4RzhaQIJMWV" role="2_lZgo">
+      <ref role="3cqZAo" to="tj24:4t7Xo7inNvw" resolve="TYPECHECK" />
+      <ref role="1PxDUh" to="tj24:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
     </node>
   </node>
   <node concept="AVZre" id="7mB3viLbCp8">
@@ -1018,9 +1019,9 @@
         </node>
       </node>
     </node>
-    <node concept="10M0yZ" id="7mB3viLg9aJ" role="2_lZgo">
-      <ref role="3cqZAo" to="1g4i:4t7Xo7inO_s" resolve="CONVERT" />
-      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+    <node concept="10M0yZ" id="4RzhaQIJMX0" role="2_lZgo">
+      <ref role="3cqZAo" to="tj24:4t7Xo7inO_s" resolve="CONVERT" />
+      <ref role="1PxDUh" to="tj24:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
     </node>
   </node>
   <node concept="ns1xd" id="JOGAOsVt6x">

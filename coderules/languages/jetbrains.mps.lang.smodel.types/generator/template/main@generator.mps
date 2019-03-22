@@ -79,7 +79,7 @@
         <node concept="3clFbS" id="3IIf9O_EzTq" role="1Koe22">
           <node concept="3clFbF" id="3IIf9O_E_tv" role="3cqZAp">
             <node concept="1niqFM" id="3IIf9O_E_tt" role="3clFbG">
-              <property role="1npUBZ" value="jetbrains.mps.typechecking.Typechecking" />
+              <property role="1npUBZ" value="jetbrains.mps.typechecking.service.Typechecking" />
               <property role="1npL6y" value="typeOf" />
               <node concept="10Nm6u" id="3IIf9O_E_u8" role="2U24H$">
                 <node concept="29HgVG" id="3IIf9O_E_u9" role="lGtFl">

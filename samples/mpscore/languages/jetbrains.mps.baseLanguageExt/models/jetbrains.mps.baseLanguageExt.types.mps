@@ -32,6 +32,7 @@
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="zdap" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util.text(MPS.IDEA/)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -26179,9 +26180,9 @@
         <node concept="3clFbH" id="6OXbTD$ftqD" role="3cqZAp" />
       </node>
     </node>
-    <node concept="10M0yZ" id="2BZXJecEQOM" role="2_lZgo">
-      <ref role="3cqZAo" to="1g4i:4t7Xo7inNvw" resolve="TYPECHECK" />
-      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+    <node concept="10M0yZ" id="4RzhaQIJMWU" role="2_lZgo">
+      <ref role="3cqZAo" to="tj24:4t7Xo7inNvw" resolve="TYPECHECK" />
+      <ref role="1PxDUh" to="tj24:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
     </node>
   </node>
   <node concept="92CTh" id="6OXbTD$ftrf">
@@ -26248,9 +26249,9 @@
         </node>
       </node>
     </node>
-    <node concept="10M0yZ" id="2BZXJecEQQ5" role="2_lZgo">
-      <ref role="3cqZAo" to="1g4i:4t7Xo7inO_s" resolve="CONVERT" />
-      <ref role="1PxDUh" to="1g4i:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+    <node concept="10M0yZ" id="4RzhaQIJMWZ" role="2_lZgo">
+      <ref role="3cqZAo" to="tj24:4t7Xo7inO_s" resolve="CONVERT" />
+      <ref role="1PxDUh" to="tj24:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
     </node>
   </node>
   <node concept="ns1xd" id="JOGAOsVt29">
