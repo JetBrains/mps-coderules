@@ -692,12 +692,12 @@
             <node concept="3cpWsn" id="27bTNFfaZ1y" role="3cpWs9">
               <property role="TrG5h" value="facade" />
               <node concept="3uibUv" id="27bTNFfaZ1z" role="1tU5fm">
-                <ref role="3uigEE" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                <ref role="3uigEE" to="1g4i:7kaxm0sEy3e" resolve="Typechecking" />
               </node>
               <node concept="2OqwBi" id="27bTNFfaZ1$" role="33vP2m">
                 <node concept="2YIFZM" id="27bTNFfaZ1_" role="2Oq$k0">
                   <ref role="37wK5l" to="1g4i:1FOQehxzbI0" resolve="forRepository" />
-                  <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                  <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="Typechecking" />
                   <node concept="37vLTw" id="27bTNFfaZ1A" role="37wK5m">
                     <ref role="3cqZAo" node="27bTNFfaZ1m" resolve="repository" />
                   </node>

@@ -252,7 +252,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="7kaxm0sEy3e">
-    <property role="TrG5h" value="TypecheckingFacade" />
+    <property role="TrG5h" value="Typechecking" />
     <node concept="2tJIrI" id="7kaxm0sEy44" role="jymVt" />
     <node concept="2YIFZL" id="3IIf9O_u0Ck" role="jymVt">
       <property role="TrG5h" value="typeOf" />
@@ -263,7 +263,7 @@
           <node concept="2OqwBi" id="3IIf9O_u1Ig" role="3clFbG">
             <node concept="2YIFZM" id="3IIf9O_Z9Gn" role="2Oq$k0">
               <ref role="37wK5l" node="3IIf9O_Z6Ip" resolve="forNode" />
-              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
               <node concept="37vLTw" id="3IIf9O_Z9Go" role="37wK5m">
                 <ref role="3cqZAo" node="7kaxm0sEBL9" resolve="node" />
               </node>
@@ -309,11 +309,11 @@
           <node concept="3cpWsn" id="2BZXJecYEPF" role="3cpWs9">
             <property role="TrG5h" value="tf1" />
             <node concept="3uibUv" id="2BZXJecYEPD" role="1tU5fm">
-              <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+              <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
             </node>
             <node concept="2YIFZM" id="2BZXJecYEPG" role="33vP2m">
               <ref role="37wK5l" node="3IIf9O_Z6Ip" resolve="forNode" />
-              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
               <node concept="37vLTw" id="2BZXJecYEPH" role="37wK5m">
                 <ref role="3cqZAo" node="3IIf9OA507H" resolve="from" />
               </node>
@@ -324,11 +324,11 @@
           <node concept="3cpWsn" id="2BZXJecYF1x" role="3cpWs9">
             <property role="TrG5h" value="tf2" />
             <node concept="3uibUv" id="2BZXJecYF1y" role="1tU5fm">
-              <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+              <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
             </node>
             <node concept="2YIFZM" id="2BZXJecYF1z" role="33vP2m">
               <ref role="37wK5l" node="3IIf9O_Z6Ip" resolve="forNode" />
-              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
               <node concept="37vLTw" id="2BZXJecYF8X" role="37wK5m">
                 <ref role="3cqZAo" node="3IIf9OA50dD" resolve="to" />
               </node>
@@ -428,17 +428,17 @@
         <node concept="3Tqbb2" id="3IIf9O_Z7fM" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3IIf9O_Z77V" role="3clF45">
-        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
       </node>
       <node concept="3Tm1VV" id="3IIf9O_Z6Is" role="1B3o_S" />
       <node concept="3clFbS" id="3IIf9O_Z6It" role="3clF47">
         <node concept="3clFbF" id="3IIf9O_Z8fP" role="3cqZAp">
           <node concept="2ShNRf" id="3IIf9O_Z8fL" role="3clFbG">
             <node concept="1pGfFk" id="3IIf9O_Z9pb" role="2ShVmc">
-              <ref role="37wK5l" node="7kaxm0sEBCn" resolve="TypecheckingFacade" />
+              <ref role="37wK5l" node="7kaxm0sEBCn" resolve="Typechecking" />
               <node concept="2YIFZM" id="3IIf9O_Z9Ao" role="37wK5m">
                 <ref role="37wK5l" node="3IIf9O_tL1f" resolve="repository" />
-                <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
                 <node concept="37vLTw" id="3IIf9O_Z9Ap" role="37wK5m">
                   <ref role="3cqZAo" node="3IIf9O_Z79b" resolve="node" />
                 </node>
@@ -465,14 +465,14 @@
         </node>
       </node>
       <node concept="3uibUv" id="1FOQehxzdlB" role="3clF45">
-        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
       </node>
       <node concept="3Tm1VV" id="1FOQehxzbI3" role="1B3o_S" />
       <node concept="3clFbS" id="1FOQehxzbI4" role="3clF47">
         <node concept="3clFbF" id="1FOQehxzdzZ" role="3cqZAp">
           <node concept="2ShNRf" id="1FOQehxzdzX" role="3clFbG">
             <node concept="1pGfFk" id="1FOQehxzdPc" role="2ShVmc">
-              <ref role="37wK5l" node="7kaxm0sEBCn" resolve="TypecheckingFacade" />
+              <ref role="37wK5l" node="7kaxm0sEBCn" resolve="Typechecking" />
               <node concept="37vLTw" id="1FOQehxzdTQ" role="37wK5m">
                 <ref role="3cqZAo" node="1FOQehxzduN" resolve="repository" />
               </node>
@@ -491,7 +491,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5KrJ7UHN2kK" role="3clF45">
-        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingFacade" />
+        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
       </node>
       <node concept="3Tm1VV" id="5KrJ7UHN1Ln" role="1B3o_S" />
       <node concept="3clFbS" id="5KrJ7UHN1Lo" role="3clF47">

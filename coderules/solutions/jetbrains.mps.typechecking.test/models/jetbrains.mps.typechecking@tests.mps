@@ -1381,7 +1381,7 @@
                       <node concept="3Tqbb2" id="6$7vuu2wZdp" role="1tU5fm" />
                       <node concept="2YIFZM" id="4t7Xo7iw4eI" role="33vP2m">
                         <ref role="37wK5l" to="1g4i:3IIf9O_u0Ck" resolve="typeOf" />
-                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="Typechecking" />
                         <node concept="2OqwBi" id="7mB3viLfF1U" role="37wK5m">
                           <node concept="1PxgMI" id="7mB3viLfDMv" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
@@ -1422,7 +1422,7 @@
                       <node concept="3Tqbb2" id="6$7vuu2xGoC" role="1tU5fm" />
                       <node concept="2YIFZM" id="4t7Xo7iw4eJ" role="33vP2m">
                         <ref role="37wK5l" to="1g4i:3IIf9O_u0Ck" resolve="typeOf" />
-                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="Typechecking" />
                         <node concept="2OqwBi" id="7mB3viLfG$o" role="37wK5m">
                           <node concept="1PxgMI" id="7mB3viLfG$p" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
@@ -1833,7 +1833,7 @@
                       <node concept="10P_77" id="3IIf9OA557w" role="1tU5fm" />
                       <node concept="2YIFZM" id="4t7Xo7iw4eK" role="33vP2m">
                         <ref role="37wK5l" to="1g4i:3IIf9OA4ZMD" resolve="convertsTo" />
-                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="Typechecking" />
                         <node concept="37vLTw" id="3IIf9OA557F" role="37wK5m">
                           <ref role="3cqZAo" node="3IIf9OA4zN5" resolve="barType" />
                         </node>
@@ -1855,7 +1855,7 @@
                       <node concept="10P_77" id="2BZXJed03iA" role="1tU5fm" />
                       <node concept="2YIFZM" id="2BZXJed03iB" role="33vP2m">
                         <ref role="37wK5l" to="1g4i:3IIf9OA4ZMD" resolve="convertsTo" />
-                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="TypecheckingFacade" />
+                        <ref role="1Pybhc" to="1g4i:7kaxm0sEy3e" resolve="Typechecking" />
                         <node concept="37vLTw" id="2BZXJed03iD" role="37wK5m">
                           <ref role="3cqZAo" node="3IIf9OA4zNj" resolve="quxType" />
                         </node>
