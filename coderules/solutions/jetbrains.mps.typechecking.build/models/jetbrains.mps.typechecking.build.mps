@@ -261,10 +261,10 @@
     <node concept="2G$12M" id="7BVjoXzUxju" role="3989C9">
       <property role="TrG5h" value="logic" />
       <node concept="1E1JtA" id="7BVjoXzUxoR" role="2G$12L">
-        <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.logic.reactor" />
         <property role="3LESm3" value="bbf5c548-7111-4a53-a117-cdefc664cf34" />
         <property role="2GAjPV" value="true" />
+        <property role="BnDLt" value="true" />
         <node concept="55IIr" id="7BVjoXzUxoU" role="3LF7KH">
           <node concept="2Ry0Ak" id="7BVjoXzUxpK" role="iGT6I">
             <property role="2Ry0Am" value="coderules" />
@@ -348,50 +348,6 @@
                       <property role="2Ry0Am" value="lib" />
                       <node concept="2Ry0Ak" id="2telgBuBcyE" role="2Ry0An">
                         <property role="2Ry0Am" value="trove4j-3.0.3.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2telgBuBcyZ" role="3bR37C">
-          <node concept="1BurEX" id="2telgBuBcz0" role="1SiIV1">
-            <node concept="398BVA" id="2telgBuBcyN" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="2telgBuBcyO" role="iGT6I">
-                <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="2telgBuBcyP" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="2telgBuBcyQ" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="2telgBuBcyR" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2telgBuBcyS" role="2Ry0An">
-                        <property role="2Ry0Am" value="kotlin-runtime-1.2.30.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2telgBuBczd" role="3bR37C">
-          <node concept="1BurEX" id="2telgBuBcze" role="1SiIV1">
-            <node concept="398BVA" id="2telgBuBcz1" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="2telgBuBcz2" role="iGT6I">
-                <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="2telgBuBcz3" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="2telgBuBcz4" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                    <node concept="2Ry0Ak" id="2telgBuBcz5" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2telgBuBcz6" role="2Ry0An">
-                        <property role="2Ry0Am" value="kotlin-stdlib-1.2.30.jar" />
                       </node>
                     </node>
                   </node>
@@ -2336,48 +2292,6 @@
                           <property role="2Ry0Am" value="lib" />
                           <node concept="2Ry0Ak" id="1X0h_efWxH0" role="2Ry0An">
                             <property role="2Ry0Am" value="conreactor-core-0.9.4.jar" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3yLZsm" id="4EvsDTBGxZx" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/kotlin-runtime-1.2.30.jar" />
-                <node concept="398BVA" id="4EvsDTBGxZy" role="3yLZsn">
-                  <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-                  <node concept="2Ry0Ak" id="4EvsDTBGxZz" role="iGT6I">
-                    <property role="2Ry0Am" value="coderules" />
-                    <node concept="2Ry0Ak" id="4EvsDTBGxZ$" role="2Ry0An">
-                      <property role="2Ry0Am" value="solutions" />
-                      <node concept="2Ry0Ak" id="4EvsDTBGxZ_" role="2Ry0An">
-                        <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                        <node concept="2Ry0Ak" id="4EvsDTBGxZA" role="2Ry0An">
-                          <property role="2Ry0Am" value="lib" />
-                          <node concept="2Ry0Ak" id="4EvsDTBGxZB" role="2Ry0An">
-                            <property role="2Ry0Am" value="kotlin-runtime-1.2.30.jar" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3yLZsm" id="4EvsDTBGxZC" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/kotlin-stdlib-1.2.30.jar" />
-                <node concept="398BVA" id="4EvsDTBGxZD" role="3yLZsn">
-                  <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-                  <node concept="2Ry0Ak" id="4EvsDTBGxZE" role="iGT6I">
-                    <property role="2Ry0Am" value="coderules" />
-                    <node concept="2Ry0Ak" id="4EvsDTBGxZF" role="2Ry0An">
-                      <property role="2Ry0Am" value="solutions" />
-                      <node concept="2Ry0Ak" id="4EvsDTBGxZG" role="2Ry0An">
-                        <property role="2Ry0Am" value="jetbrains.mps.logic.reactor" />
-                        <node concept="2Ry0Ak" id="4EvsDTBGxZH" role="2Ry0An">
-                          <property role="2Ry0Am" value="lib" />
-                          <node concept="2Ry0Ak" id="4EvsDTBGxZI" role="2Ry0An">
-                            <property role="2Ry0Am" value="kotlin-stdlib-1.2.30.jar" />
                           </node>
                         </node>
                       </node>
