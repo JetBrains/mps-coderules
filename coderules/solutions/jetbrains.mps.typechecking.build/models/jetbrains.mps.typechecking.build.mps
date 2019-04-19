@@ -1921,6 +1921,7 @@
         </node>
         <node concept="1SiIV0" id="6Yb9hAqybbz" role="3bR37C">
           <node concept="3bR9La" id="6Yb9hAqybb$" role="1SiIV1">
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
           </node>
         </node>
