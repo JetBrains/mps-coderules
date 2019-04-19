@@ -158,12 +158,13 @@ class Controller(
 
     private fun processMatch(inState: ProcessingState, match: MatchRule) : ProcessingState {
         val context = Context(inState, match.logicalContext())
-        trace.trying(match)
 
         // invoke matched pattern predicates
         for (prd in match.patternPredicates()) {
             if (!tellPredicate(prd, context)) break
         }
+
+        trace.trying(match)
 
         // check guard
         for (gprd in match.rule().guard()) {
