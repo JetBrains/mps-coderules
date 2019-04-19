@@ -21921,9 +21921,26 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="YbzkzKA5fU" role="3cqZAp">
+            <node concept="3cpWsn" id="YbzkzKA5fV" role="3cpWs9">
+              <property role="TrG5h" value="firstVisibleRow" />
+              <node concept="10Oyi0" id="YbzkzKsvd1" role="1tU5fm" />
+              <node concept="2OqwBi" id="YbzkzKA5fW" role="33vP2m">
+                <node concept="37vLTw" id="YbzkzKA5fX" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6QkkSol9Cs8" resolve="treeTable" />
+                </node>
+                <node concept="liA8E" id="YbzkzKA5fY" role="2OqNvi">
+                  <ref role="37wK5l" to="dxuu:~JTable.rowAtPoint(java.awt.Point)" resolve="rowAtPoint" />
+                  <node concept="37vLTw" id="YbzkzKA5fZ" role="37wK5m">
+                    <ref role="3cqZAo" node="JuOqj3G$2$" resolve="vp" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3cpWs8" id="JuOqj4hyVh" role="3cqZAp">
             <node concept="3cpWsn" id="JuOqj4hyVi" role="3cpWs9">
-              <property role="TrG5h" value="firstVisible" />
+              <property role="TrG5h" value="tp" />
               <node concept="3uibUv" id="JuOqj4hy_s" role="1tU5fm">
                 <ref role="3uigEE" to="rgfa:~TreePath" resolve="TreePath" />
               </node>
@@ -21938,16 +21955,8 @@
                 </node>
                 <node concept="liA8E" id="JuOqj4hyVn" role="2OqNvi">
                   <ref role="37wK5l" to="dxuu:~JTree.getPathForRow(int)" resolve="getPathForRow" />
-                  <node concept="2OqwBi" id="JuOqj4iT$s" role="37wK5m">
-                    <node concept="37vLTw" id="JuOqj4iT$t" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6QkkSol9Cs8" resolve="treeTable" />
-                    </node>
-                    <node concept="liA8E" id="JuOqj4iT$u" role="2OqNvi">
-                      <ref role="37wK5l" to="dxuu:~JTable.rowAtPoint(java.awt.Point)" resolve="rowAtPoint" />
-                      <node concept="37vLTw" id="JuOqj4iT$v" role="37wK5m">
-                        <ref role="3cqZAo" node="JuOqj3G$2$" resolve="vp" />
-                      </node>
-                    </node>
+                  <node concept="37vLTw" id="YbzkzKA5g0" role="37wK5m">
+                    <ref role="3cqZAo" node="YbzkzKA5fV" resolve="firstVisibleRow" />
                   </node>
                 </node>
               </node>
@@ -21968,7 +21977,7 @@
                       <node concept="liA8E" id="JuOqj4pjFV" role="2OqNvi">
                         <ref role="37wK5l" node="JuOqj4kyiV" resolve="lookupIndex" />
                         <node concept="37vLTw" id="JuOqj4pjFW" role="37wK5m">
-                          <ref role="3cqZAo" node="JuOqj4hyVi" resolve="firstVisible" />
+                          <ref role="3cqZAo" node="JuOqj4hyVi" resolve="tp" />
                         </node>
                       </node>
                     </node>
@@ -22000,7 +22009,7 @@
             <node concept="3y3z36" id="JuOqj4nunq" role="3clFbw">
               <node concept="10Nm6u" id="JuOqj4nAe2" role="3uHU7w" />
               <node concept="37vLTw" id="JuOqj4nkMD" role="3uHU7B">
-                <ref role="3cqZAo" node="JuOqj4hyVi" resolve="firstVisible" />
+                <ref role="3cqZAo" node="JuOqj4hyVi" resolve="tp" />
               </node>
             </node>
           </node>
@@ -22390,46 +22399,53 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="JuOqj4FTXt" role="3cqZAp">
-                <node concept="2OqwBi" id="JuOqj4G2rF" role="3clFbG">
-                  <node concept="37vLTw" id="JuOqj4FTXr" role="2Oq$k0">
-                    <ref role="3cqZAo" node="JuOqj3Wc6x" resolve="cellRect" />
+              <node concept="3clFbF" id="YbzkzKTUzG" role="3cqZAp">
+                <node concept="2OqwBi" id="YbzkzKU4HV" role="3clFbG">
+                  <node concept="2OqwBi" id="YbzkzKTVVA" role="2Oq$k0">
+                    <node concept="37vLTw" id="YbzkzKTUzE" role="2Oq$k0">
+                      <ref role="3cqZAo" node="JuOqj4bmg5" resolve="scrollPane" />
+                    </node>
+                    <node concept="liA8E" id="YbzkzKU4hG" role="2OqNvi">
+                      <ref role="37wK5l" to="dxuu:~JScrollPane.getViewport()" resolve="getViewport" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="JuOqj4GgLH" role="2OqNvi">
-                    <ref role="37wK5l" to="z60i:~Rectangle.setSize(int,int)" resolve="setSize" />
-                    <node concept="2OqwBi" id="JuOqj4GAAh" role="37wK5m">
-                      <node concept="37vLTw" id="JuOqj4GsQg" role="2Oq$k0">
+                  <node concept="liA8E" id="YbzkzKUe1L" role="2OqNvi">
+                    <ref role="37wK5l" to="dxuu:~JViewport.setViewPosition(java.awt.Point)" resolve="setViewPosition" />
+                    <node concept="2OqwBi" id="YbzkzKUyUC" role="37wK5m">
+                      <node concept="37vLTw" id="YbzkzKUqw$" role="2Oq$k0">
                         <ref role="3cqZAo" node="JuOqj3Wc6x" resolve="cellRect" />
                       </node>
-                      <node concept="2OwXpG" id="JuOqj4GPbY" role="2OqNvi">
-                        <ref role="2Oxat5" to="z60i:~Rectangle.width" resolve="width" />
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="JuOqj4Hn_W" role="37wK5m">
-                      <node concept="2OqwBi" id="JuOqj4Hdi$" role="2Oq$k0">
-                        <node concept="37vLTw" id="JuOqj4Hdi_" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6QkkSolabO4" resolve="treeTable" />
-                        </node>
-                        <node concept="liA8E" id="JuOqj4HdiA" role="2OqNvi">
-                          <ref role="37wK5l" to="dxuu:~JComponent.getVisibleRect()" resolve="getVisibleRect" />
-                        </node>
-                      </node>
-                      <node concept="2OwXpG" id="JuOqj4HyIO" role="2OqNvi">
-                        <ref role="2Oxat5" to="z60i:~Rectangle.height" resolve="height" />
+                      <node concept="liA8E" id="YbzkzKUK73" role="2OqNvi">
+                        <ref role="37wK5l" to="z60i:~Rectangle.getLocation()" resolve="getLocation" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="JuOqj3Zx6J" role="3cqZAp">
-                <node concept="2OqwBi" id="JuOqj3ZDip" role="3clFbG">
-                  <node concept="37vLTw" id="JuOqj3Zx6H" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6QkkSolabO4" resolve="treeTable" />
+              <node concept="3SKdUt" id="YbzkzKWPQC" role="3cqZAp">
+                <node concept="3SKdUq" id="YbzkzKWPQE" role="3SKWNk">
+                  <property role="3SKdUp" value="do that again because swing..." />
+                </node>
+              </node>
+              <node concept="3clFbF" id="YbzkzKVWbR" role="3cqZAp">
+                <node concept="2OqwBi" id="YbzkzKVWbS" role="3clFbG">
+                  <node concept="2OqwBi" id="YbzkzKVWbT" role="2Oq$k0">
+                    <node concept="37vLTw" id="YbzkzKVWbU" role="2Oq$k0">
+                      <ref role="3cqZAo" node="JuOqj4bmg5" resolve="scrollPane" />
+                    </node>
+                    <node concept="liA8E" id="YbzkzKVWbV" role="2OqNvi">
+                      <ref role="37wK5l" to="dxuu:~JScrollPane.getViewport()" resolve="getViewport" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="JuOqj3ZTKi" role="2OqNvi">
-                    <ref role="37wK5l" to="dxuu:~JComponent.scrollRectToVisible(java.awt.Rectangle)" resolve="scrollRectToVisible" />
-                    <node concept="37vLTw" id="JuOqj403Zr" role="37wK5m">
-                      <ref role="3cqZAo" node="JuOqj3Wc6x" resolve="cellRect" />
+                  <node concept="liA8E" id="YbzkzKVWbW" role="2OqNvi">
+                    <ref role="37wK5l" to="dxuu:~JViewport.setViewPosition(java.awt.Point)" resolve="setViewPosition" />
+                    <node concept="2OqwBi" id="YbzkzKVWbX" role="37wK5m">
+                      <node concept="37vLTw" id="YbzkzKVWbY" role="2Oq$k0">
+                        <ref role="3cqZAo" node="JuOqj3Wc6x" resolve="cellRect" />
+                      </node>
+                      <node concept="liA8E" id="YbzkzKVWbZ" role="2OqNvi">
+                        <ref role="37wK5l" to="z60i:~Rectangle.getLocation()" resolve="getLocation" />
+                      </node>
                     </node>
                   </node>
                 </node>
