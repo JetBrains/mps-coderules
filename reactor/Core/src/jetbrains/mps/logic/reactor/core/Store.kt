@@ -178,17 +178,7 @@ class Store : LogicalObserver {
     }
 
     fun view(): StoreView = StoreViewImpl(allOccurrences())
-
-    private fun Term.withConstraint(cst: Constraint): Term = Function(CONSTRAINT, listOf(Function(cst.symbol(), emptyList()), this))
-
-    private companion object {
-
-        private val CONSTRAINT = object : Any() {
-            override fun toString(): String = "CONSTRAINT"
-        }
-
-    }
-
+    
 }
 
 private class StoreViewImpl(occurrences: Sequence<ConstraintOccurrence>) : StoreView {
