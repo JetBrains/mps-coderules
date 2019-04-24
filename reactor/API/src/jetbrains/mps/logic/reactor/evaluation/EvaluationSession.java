@@ -22,7 +22,6 @@ import jetbrains.mps.logic.reactor.program.Constraint;
 import jetbrains.mps.logic.reactor.program.Predicate;
 import jetbrains.mps.logic.reactor.program.PredicateSymbol;
 import jetbrains.mps.logic.reactor.program.Program;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * The starting point to evaluate a program.
@@ -35,7 +34,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public abstract class EvaluationSession {
 
-    private static EvaluationSession.Backend ourBackend;
+    private static EvaluationSession.Backend<? extends EvaluationSession> ourBackend;
+
+    @SuppressWarnings("unchecked")
+    public static <S extends EvaluationSession> S current(Class<S> sessionClass) {
+        return (S) current();
+    }
 
     public static EvaluationSession current() {
         if (ourBackend == null) {
@@ -51,47 +55,32 @@ public abstract class EvaluationSession {
         return ourBackend.createConfig(program);
     }
 
-    protected static void setBackend(EvaluationSession.Backend backend) {
+    protected static void setBackend(EvaluationSession.Backend<? extends EvaluationSession> backend) {
         if (ourBackend != null) {
             throw new IllegalStateException("backend already assigned");
         }
         ourBackend = backend;
     }
 
-    protected static void clearBackend(EvaluationSession.Backend backend) {
+    protected static void clearBackend(EvaluationSession.Backend<? extends EvaluationSession> backend) {
         if (ourBackend != backend) {
             throw new IllegalStateException("illegal access");
         }
         ourBackend = null;
     }
 
+    @Deprecated
     public abstract SessionSolver sessionSolver();
 
-    public abstract StoreView storeView();
+    public abstract Program program();
 
-    @Deprecated
-    public PredicateInvocation invocation(Predicate predicate, LogicalContext logicalContext) {
-        // FIXME delete the method after all code has been migrated
-        // keep compatibility with existing code
-        throw new UnsupportedOperationException();
-    }
+    public abstract boolean ask(PredicateInvocation invocation);
 
-    @Deprecated
-    public ConstraintOccurrence occurrence(Constraint constraint, LogicalContext logicalContext) {
-        // FIXME delete the method after all code has been migrated
-        // keep compatibility with existing code
-        throw new UnsupportedOperationException();
-    }
+    public abstract void tell(PredicateInvocation invocation);
 
-    public Program program() {
-        // FIXME delete the implementation after all code has been migrated
-        // keep compatibility with existing code
-        throw new UnsupportedOperationException();
-    }
+    public interface Backend<S extends EvaluationSession> {
 
-    protected interface Backend {
-
-        EvaluationSession current();
+        S current();
 
         EvaluationSession.Config createConfig(Program program);
 
@@ -99,20 +88,11 @@ public abstract class EvaluationSession {
 
     public static abstract class Config {
 
-        @Deprecated
-        public EvaluationSession.Config withPredicates(PredicateSymbol... predicateSymbols){
-            return this;
-        }
-
         public EvaluationSession.Config withTrace(EvaluationTrace computingTracer) {
             return this;
         }
 
         public EvaluationSession.Config withStoreView(StoreView storeView) {
-            return this;
-        }
-
-        public EvaluationSession.Config withFailureHandler(FailureHandler handler) {
             return this;
         }
 
@@ -124,7 +104,10 @@ public abstract class EvaluationSession {
             return this;
         }
 
+        @Deprecated
         public abstract EvaluationResult start(SessionSolver sessionSolver);
+
+        public abstract EvaluationResult start();
 
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2018 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,29 +14,34 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.core.internal
 
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.logic.reactor.util.*
+import jetbrains.mps.logic.reactor.util.allSetBits
+import jetbrains.mps.logic.reactor.util.bitSet
+import jetbrains.mps.logic.reactor.util.bitSetOfOnes
+import jetbrains.mps.logic.reactor.util.copyApply
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 /**
+ * An alternative implementation of RuleMatcherImpl. Has similar asymptotic characteristics as the default implementation,
+ * but in practice is a bit slower.
+ *
+ * Loosely based on "Rete network" algorithm.
+ *
  * @author Fedor Isakov
  */
-
-
-class ReteRuleMatcher(val rule: Rule) {
+internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
 
     val head = (rule.headKept() + rule.headReplaced()).toList()
 
     val propagation = rule.headReplaced().count() == 0
-    
-    fun probe(): ReteNetwork = ReteNetwork(head.size)
+
+    override fun probe(): ReteNetwork = ReteNetwork(head.size)
 
     inner class ReteNetwork(val headSize: Int) : MatchingProbe {
 
@@ -69,7 +74,7 @@ class ReteRuleMatcher(val rule: Rule) {
 
                 if (thisMetaIndices.cardinality() != 0 && thatMetaIndices.cardinality() != 0) {
                     for (shared in thisMetaIndices.copyApply { and(thatMetaIndices) }.allSetBits()) {
-                        if (!OccurrenceMatcher().match(this.getSubst(shared), that.getSubst(shared))) return false
+                        if (!createOccurrenceMatcher().match(this.getSubst(shared), that.getSubst(shared))) return false
                     }
                 }
 
@@ -86,7 +91,7 @@ class ReteRuleMatcher(val rule: Rule) {
 
             abstract fun combine(that: AlphaNode): ReteNode
 
-            open fun collectData(occArray: Array<ConstraintOccurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {}
+            open fun collectData(occArray: Array<Occurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {}
 
         }
 
@@ -107,13 +112,13 @@ class ReteRuleMatcher(val rule: Rule) {
         /**
          * A network node corresponding to a single occurrence matched against a constraint.
          */
-        inner class AlphaNode(val occurrence: ConstraintOccurrence,
+        inner class AlphaNode(val occurrence: Occurrence,
                               val posInHead: Int,
                               val subst: Subst) : ReteNode()
         {
             val metaIndices: BitSet? =
                 if (subst.isNotEmpty()) bitSet(subst.keys.map { metaLogical -> indexOf(metaLogical) }) else null
-            
+
             val occIdx = indexOf(occurrence)
 
             private val idx2subst = HashMap<Int, Any?>()
@@ -139,7 +144,7 @@ class ReteRuleMatcher(val rule: Rule) {
 
             override fun combine(that: AlphaNode): ReteNode = BetaNode(this, that)
 
-            override fun collectData(occArray: Array<ConstraintOccurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {
+            override fun collectData(occArray: Array<Occurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {
                 occArray[posInHead] = occurrence
                 for ((k, v) in subst) {
                     allSubst.put(k, v)
@@ -152,7 +157,7 @@ class ReteRuleMatcher(val rule: Rule) {
          * A "deep" network node. Always has two parents, one of which is always an AlphaNode.
          */
         inner class BetaNode : ReteNode {
-            
+
             val left: ReteNode
 
             val right: AlphaNode
@@ -200,7 +205,7 @@ class ReteRuleMatcher(val rule: Rule) {
 
             override fun combine(that: AlphaNode): ReteNode = BetaNode(this, that)
 
-            override fun collectData(occArray: Array<ConstraintOccurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {
+            override fun collectData(occArray: Array<Occurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {
                 right.collectData(occArray, allSubst)
                 left.collectData(occArray, allSubst)
             }
@@ -222,7 +227,7 @@ class ReteRuleMatcher(val rule: Rule) {
             fun addNode(n: ReteNode) {
                 nodesList.add(n)
             }
-            
+
             fun nodes() : Iterable<ReteNode> = nodesList.subList(startIdx, nodesList.size)
 
             fun allNodes() : Iterable<ReteNode> = nodesList
@@ -234,7 +239,7 @@ class ReteRuleMatcher(val rule: Rule) {
             init {
                 assert(layers.isNotEmpty())
             }
-            
+
             fun introduce(occIdx: Int, alphaNodes: Collection<AlphaNode>): Generation {
                 // propagation history
                 val initLayer = layers.last()
@@ -280,27 +285,26 @@ class ReteRuleMatcher(val rule: Rule) {
             }
 
 
-            fun matches(): Collection<MatchRule> {
+            fun matches(): Collection<MatchRuleImpl> {
                 val topLayer = layers.first()
                 if (topLayer.final) {
 
-                    val matches = ArrayList<MatchRule>()
+                    val matches = ArrayList<MatchRuleImpl>()
                     for (n in topLayer.nodes()) {
                         // any excluded occurrences?
                         if (n.containsOccurrence(skipOccIndices)) continue
 
                         val allSubst = HashMap<MetaLogical<*>, Any>()
-                        val occArray = arrayOfNulls<ConstraintOccurrence>(headSize)
+                        val occArray = arrayOfNulls<Occurrence>(headSize)
                         n.collectData(occArray, allSubst)
-                        
-                        val occList = occArray.toMutableList()
+
+                        val occList = occArray.toList() as List<Occurrence>
                         val keptCount = rule.headKept().count()
 
-                        matches.add(MatchRuleImpl(n,
-                                                    rule,
-                                                    allSubst,
-                                                    occList.subList(0, keptCount),
-                                                    occList.subList(keptCount, occList.size)))
+                        matches.add(MatchRuleImpl(rule,
+                            allSubst,
+                            occList.subList(0, keptCount),
+                            occList.subList(keptCount, occList.size)))
                     }
                     return matches
 
@@ -315,10 +319,10 @@ class ReteRuleMatcher(val rule: Rule) {
         override fun rule(): Rule = rule
 
         // for tests only
-        override fun expand(occ: ConstraintOccurrence): ReteNetwork =
+        override fun expand(occ: Occurrence): ReteNetwork =
             expand(occ, bitSetOfOnes(headSize))
 
-        override fun expand(occ: ConstraintOccurrence, mask: BitSet): ReteNetwork {
+        override fun expand(occ: Occurrence, mask: BitSet): ReteNetwork {
             // raising from the dead, huh?
             val occIdx = indexOf(occ)
             skipOccIndices.clear(occIdx)
@@ -326,7 +330,7 @@ class ReteRuleMatcher(val rule: Rule) {
             val alphaNodes = arrayListOf<AlphaNode>()
             for (posInHead in mask.allSetBits()) {
 
-                val matcher = OccurrenceMatcher(emptySubst())
+                val matcher = createOccurrenceMatcher(emptySubst())
                 if (matcher.matches(head[posInHead], occ)) {
                     alphaNodes.add(AlphaNode(occ, posInHead, matcher.substitution()))
                 }
@@ -338,12 +342,12 @@ class ReteRuleMatcher(val rule: Rule) {
             return this
         }
 
-        override fun contract(occ: ConstraintOccurrence): ReteNetwork {
+        override fun contract(occ: Occurrence): ReteNetwork {
             skipOccIndices.set(indexOf(occ))
             return this
         }
 
-        override fun matches(): Collection<MatchRule> = generations.last().matches()
+        override fun matches(): Collection<MatchRuleImpl> = generations.last().matches()
 
         override fun consumed(matchRule: MatchRule): MatchingProbe {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -359,10 +363,3 @@ class ReteRuleMatcher(val rule: Rule) {
     }
 
 }
-
-
-
-
-
-
-

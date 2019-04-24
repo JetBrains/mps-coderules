@@ -17,17 +17,17 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.Maps
+import jetbrains.mps.logic.reactor.core.internal.MatchRuleImpl
+import jetbrains.mps.logic.reactor.core.internal.RuleMatcherImpl
 import com.github.andrewoma.dexx.collection.Map as PersMap
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.program.Rule
 
 /**
+ * A front-end interface to [RuleMatcher].
+ * 
  * @author Fedor Isakov
  */
-
-typealias Matcher = RuleMatcher
-
 class Dispatcher (val ruleIndex: RuleIndex) {
 
     private val rule2matcher = HashMap<Rule, Matcher>()
@@ -43,7 +43,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
         private var rule2probe: PersMap<Rule, MatchingProbe>
         
-        private val allMatches = arrayListOf<MatchRule>()
+        private val allMatches = arrayListOf<MatchRuleImpl>()
 
         constructor() {
             this.rule2probe = Maps.of()
@@ -56,7 +56,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
             this.rule2probe = pred.rule2probe
             matching.forEach { probe ->
                 this.rule2probe = rule2probe.put(probe.rule(), probe)
-                allMatches.addAll(probe.matches())
+                allMatches.addAll(probe.matches() as Collection<MatchRuleImpl>)
             }
         }
 
@@ -71,12 +71,13 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
         fun consume(matchRule: MatchRule) = DispatchFringe(this, matchRule)
 
-        fun expand(activated: ConstraintOccurrence) = DispatchFringe(this,
+        fun expand(activated: Occurrence) = DispatchFringe(this,
             ruleIndex.forOccurrenceWithMask(activated).mapNotNull { (rule, mask) ->
+                rule2probe[rule]?.expand(activated, mask)
                 rule2probe[rule]?.expand(activated, mask)
             })
 
-        fun contract(discarded: ConstraintOccurrence) = DispatchFringe(this,
+        fun contract(discarded: Occurrence) = DispatchFringe(this,
             ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
                 rule2probe[rule]
             }.map { probe ->

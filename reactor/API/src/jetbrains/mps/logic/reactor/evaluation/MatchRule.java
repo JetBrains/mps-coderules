@@ -21,7 +21,7 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.program.Rule;
 
 /**
- * A binding of a rule and the constraints that matched its head.
+ * A binding of a rule and the constraint occurrences that matched its head.
  *
  * @author Fedor Isakov
  */

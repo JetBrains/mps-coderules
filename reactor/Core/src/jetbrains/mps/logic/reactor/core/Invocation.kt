@@ -22,19 +22,16 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Predicate
 
 /**
+ * Data class representing a single invocation of a predicate.
+ * 
  * @author Fedor Isakov
  */
-
-fun Predicate.invocation(arguments: List<*>,
-                         logicalContext: LogicalContext,
-                         invocationContext: InvocationContext): PredicateInvocation =
-    Invocation(this, arguments, logicalContext, invocationContext)
-
-private data class Invocation(val predicate: Predicate,
+data class Invocation(val predicate: Predicate,
                               val invocationArguments: List<*>,
                               val logicalContext: LogicalContext,
                               val invocationContext: InvocationContext) : PredicateInvocation
 {
+
     override fun predicate(): Predicate = predicate
 
     override fun arguments(): List<*> = invocationArguments
@@ -44,3 +41,8 @@ private data class Invocation(val predicate: Predicate,
     override fun invocationContext(): InvocationContext = invocationContext
 
 }
+
+fun Predicate.invocation(arguments: List<*>,
+                         logicalContext: LogicalContext,
+                         invocationContext: InvocationContext): PredicateInvocation =
+    Invocation(this, arguments, logicalContext, invocationContext)

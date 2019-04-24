@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2018 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.core.internal
 
+import jetbrains.mps.logic.reactor.core.Occurrence
+import jetbrains.mps.logic.reactor.core.Subst
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -24,11 +26,10 @@ import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Rule
 
-class MatchRuleImpl(val origin: Any,
-                    val rule: Rule,
-                    val subst: Subst,
-                    val headKept: MutableIterable<ConstraintOccurrence?>,
-                    val headReplaced: MutableIterable<ConstraintOccurrence?>) : MatchRule {
+internal class MatchRuleImpl(val rule: Rule,
+                             val subst: Subst,
+                             val headKept: Iterable<Occurrence>,
+                             val headReplaced: Iterable<Occurrence>) : MatchRule {
 
    private val logicalContext = object : LogicalContext {
 
@@ -47,10 +48,10 @@ class MatchRuleImpl(val origin: Any,
 
    override fun rule(): Rule = rule
 
-   override fun matchHeadKept(): MutableIterable<ConstraintOccurrence?> = headKept
+   override fun matchHeadKept(): Iterable<ConstraintOccurrence?> = headKept
 
-   override fun matchHeadReplaced(): MutableIterable<ConstraintOccurrence?> = headReplaced
-
+   override fun matchHeadReplaced(): Iterable<ConstraintOccurrence?> = headReplaced
+    
    override fun logicalContext(): LogicalContext = logicalContext
 
 }

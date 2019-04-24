@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.core.internal
 
 import com.github.andrewoma.dexx.collection.Maps
+import jetbrains.mps.logic.reactor.core.FrameObservable
+import jetbrains.mps.logic.reactor.core.LogicalObserver
+import jetbrains.mps.logic.reactor.core.Occurrence
+import jetbrains.mps.logic.reactor.core.occurrence
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.unification.Term
 import jetbrains.mps.logic.reactor.util.*
+import java.util.*
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Set as PersSet
 import com.github.andrewoma.dexx.collection.Vector as PersVector
@@ -32,73 +35,53 @@ import com.github.andrewoma.dexx.collection.Vector as PersVector
  * @author Fedor Isakov
  */
 
-fun ConstraintOccurrence.isStored(): Boolean =
-    // TODO: superfluous cast
-    (this as StoreItem).stored
-
-fun ConstraintOccurrence.isAlive(): Boolean =
-    // TODO: superfluous cast
-    (this as StoreItem).alive
-
-interface StoreItem {
-
-    var alive: Boolean
-
-    var stored: Boolean
-
-    fun terminate() 
-
-}
-
-interface StoreKeeper {
-
-    fun store(): Store
-
-    fun addObserver(logical: Logical<*>, obs: (StoreKeeper) -> LogicalObserver)
-
-    fun removeObserver(logical: Logical<*>, obs: (StoreKeeper) -> LogicalObserver)
-
-}
-
 /**
+ * Constrants storeObserver.
+ *
  * TODO: make this class persistent.
  */
-class Store : LogicalObserver {
+internal class Store : LogicalObserver {
 
-    val currentFrame: () -> StoreKeeper
+    val currentFrame: () -> FrameObservable
 
-    var symbol2occurrences: PersMap<ConstraintSymbol, IdHashSet<ConstraintOccurrence>>
+    var symbol2occurrences: PersMap<ConstraintSymbol, IdHashSet<Occurrence>>
 
-    var logical2occurrences: PersMap<IdWrapper<Logical<*>>, IdHashSet<ConstraintOccurrence>>
+    var logical2occurrences: PersMap<IdWrapper<Logical<*>>, IdHashSet<Occurrence>>
 
-    constructor(copyFrom: Store, currentFrame: () -> StoreKeeper) {
+    constructor(copyFrom: Store, currentFrame: () -> FrameObservable) {
         this.currentFrame = currentFrame
         this.symbol2occurrences = copyFrom.symbol2occurrences
         this.logical2occurrences = copyFrom.logical2occurrences
     }
 
-    constructor(copyFrom: StoreView, currentFrame: () -> StoreKeeper) {
+
+    constructor(copyFrom: StoreView, currentFrame: () -> FrameObservable) {
         this.currentFrame = currentFrame
-        this.symbol2occurrences = copyFrom.constraintSymbols()
-            .fold(Maps.of()) { map, sym -> map.put(sym, IdHashSet(copyFrom.occurrences(sym))) }
-
-        var l2o = Maps.of<IdWrapper<Logical<*>>, IdHashSet<ConstraintOccurrence>>()
-        var v2o = Maps.of<Any, IdHashSet<ConstraintOccurrence>>()
-
+        var l2o = Maps.of<IdWrapper<Logical<*>>, IdHashSet<Occurrence>>()
+        val storeItems = IdentityHashMap<ConstraintOccurrence, Occurrence>()
         copyFrom.allOccurrences().forEach { occ ->
+            val item = occ.constraint().occurrence(occ.arguments(), currentFrame)
+            storeItems.put(occ, item)
             occ.arguments().forEach { arg ->
                 when (arg) {
-                    is Logical<*>   ->  l2o = l2o.put(IdWrapper(arg.findRoot()), l2o[IdWrapper(arg.findRoot())]?.add(occ) ?: singletonIdSet(occ))
-                    is Any          ->  v2o = v2o.put(arg, v2o[arg]?.add(occ) ?: singletonIdSet(occ))
+                    is Logical<*>   -> {
+                        l2o = l2o.put(IdWrapper(arg.findRoot()),
+                                      l2o[IdWrapper(arg.findRoot())]?.add(item) ?: singletonIdSet(item))
+                    }
                 }
             }
 
         }
-
         this.logical2occurrences = l2o
+        this.symbol2occurrences = copyFrom.constraintSymbols().fold(Maps.of()) { map, sym ->
+            val copyFrom1 = copyFrom.occurrences(sym).map { occ -> storeItems.get(occ)!! }
+            val idHashSet = IdHashSet( copyFrom1 )
+            
+            map.put(sym, idHashSet)
+        }
     }
 
-    constructor(currentFrame: () -> StoreKeeper) {
+    constructor(currentFrame: () -> FrameObservable) {
         this.currentFrame = currentFrame
         this.symbol2occurrences = Maps.of()
         this.logical2occurrences = Maps.of()
@@ -122,7 +105,7 @@ class Store : LogicalObserver {
         }
     }
 
-    fun store(occ: ConstraintOccurrence) {
+    fun store(occ: Occurrence) {
         val symbol = occ.constraint().symbol()
 
         this.symbol2occurrences = symbol2occurrences.put(symbol,
@@ -136,16 +119,15 @@ class Store : LogicalObserver {
                     val argId = IdWrapper(value.findRoot())
                     this.logical2occurrences = logical2occurrences.put(argId,
                         logical2occurrences[argId]?.add(occ) ?: singletonIdSet(occ))
-                    currentFrame().addObserver(value) { frame -> frame.store() }
+                    currentFrame().addObserver(value) { frame -> frame.storeObserver() }
                 }
             }
         }
 
-        // TODO: superfluous cast
-        (occ as StoreItem).stored = true
+        occ.stored = true
     }
 
-    fun discard(occ: ConstraintOccurrence, profiler: Profiler? = null, tag: String? = null): Unit {
+    fun discard(occ: Occurrence, profiler: Profiler? = null, tag: String? = null): Unit {
         val symbol = occ.constraint().symbol()
 
         symbol2occurrences[symbol]?.remove(occ)?.let { newList ->
@@ -168,13 +150,12 @@ class Store : LogicalObserver {
             }
         }
 
-        // TODO: superfluous cast
-        (occ as StoreItem).stored = false
+        occ.stored = false
         occ.terminate()
     }
 
     fun allOccurrences(): Sequence<ConstraintOccurrence> {
-        return symbol2occurrences.values().flatten().filter { co -> co.isStored() }.asSequence()
+        return symbol2occurrences.values().flatten().filter { co -> co.stored }.asSequence()
     }
 
     fun view(): StoreView = StoreViewImpl(allOccurrences())

@@ -29,9 +29,10 @@ import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
 /**
+ * A container for [Rule] instances with the ability to look up by [ConstraintOccurrence].
+ * 
  * @author Fedor Isakov
  */
-
 class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
 
     private val symbol2index = HashMap<ConstraintSymbol, ArgumentRuleIndex>()

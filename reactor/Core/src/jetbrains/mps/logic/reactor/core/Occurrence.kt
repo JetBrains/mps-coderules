@@ -17,33 +17,35 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 
 /**
+ * Data class representing a single constraint occurrence.
+ *
  * @author Fedor Isakov
  */
-
-internal fun Constraint.occurrence(logicalContext: LogicalContext, arguments: List<*>, frameStack: FrameStack): ConstraintOccurrence =
-    Occurrence(this, logicalContext, arguments, frameStack)
-
-private data class Occurrence (val constraint: Constraint,
+data class Occurrence (val constraint: Constraint,
                                val logicalContext: LogicalContext,
                                val arguments: List<*>,
-                               val frameStack: FrameStack) :
+                               val currentFrame: () -> FrameObservable) :
     ConstraintOccurrence,
-    LogicalObserver,
-    StoreItem
+    LogicalObserver
 {
-    override var alive = true
-    override var stored = false
+
+    var alive = true
+
+    var stored = false
 
     init {
         for (a in arguments) {
             if (a is Logical<*>) {
-                frameStack.current.addObserver(a) { this }
+                currentFrame().addObserver(a) { this }
             }
         }
     }
@@ -56,20 +58,20 @@ private data class Occurrence (val constraint: Constraint,
 
     override fun valueUpdated(logical: Logical<*>) {
         if (alive) {
-            (EvaluationSession.current() as SessionObjects).controller().reactivate(this)
+            EvaluationSession.current(EvaluationSessionEx::class.java).controller().reactivate(this)
         }
     }
 
     override fun parentUpdated(logical: Logical<*>) {
         if (alive) {
-            (EvaluationSession.current() as SessionObjects).controller().reactivate(this)
+            EvaluationSession.current(EvaluationSessionEx::class.java).controller().reactivate(this)
         }
     }
 
-    override fun terminate() {
+    fun terminate() {
         for (a in arguments) {
             if (a is Logical<*>) {
-                frameStack.current.removeObserver(a) { this }
+                currentFrame().removeObserver(a) { this }
             }
         }
         alive = false
@@ -79,3 +81,15 @@ private data class Occurrence (val constraint: Constraint,
 
 }
 
+fun Constraint.occurrence(arguments: List<*>,
+                          currentFrame: () -> FrameObservable,
+                          logicalContext: LogicalContext): Occurrence =
+    Occurrence(this, logicalContext, arguments, currentFrame)
+
+fun Constraint.occurrence(arguments: List<*>,
+                          currentFrame: () -> FrameObservable): Occurrence =
+    Occurrence(this, noLogicalContext, arguments, currentFrame)
+
+private val noLogicalContext: LogicalContext = object: LogicalContext {
+    override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
+}

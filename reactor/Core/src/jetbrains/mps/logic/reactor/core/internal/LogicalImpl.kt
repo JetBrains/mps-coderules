@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,40 +14,14 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.MetaLogical
+import jetbrains.mps.logic.reactor.core.LogicalObserver
 import jetbrains.mps.logic.reactor.logical.JoinableLogical
-import java.util.*
+import jetbrains.mps.logic.reactor.logical.MetaLogical
+import java.util.ArrayList
 
-/**
- * @author Fedor Isakov
- */
-
-interface LogicalObserver {
-
-    fun valueUpdated(logical: Logical<*>)
-
-    fun parentUpdated(logical: Logical<*>)
-
-}
-
-fun Logical<*>.addObserver(observer: LogicalObserver) {
-    (this as LogicalImpl<*>).valueObservers.add(this.to(observer))
-    (this as LogicalImpl<*>).parentObservers.add(this.to(observer))
-}
-
-fun Logical<*>.removeObserver(observer: LogicalObserver) {
-    (this as LogicalImpl<*>).valueObservers.removeAll { p -> p.second == observer }
-    (this as LogicalImpl<*>).parentObservers.removeAll { p -> p.second == observer }
-}
-
-fun <V> MetaLogical<V>.logical(): Logical<V> = LogicalImpl<V>(this)
-
-fun <V> MetaLogical<V>.logical(value: V): Logical<V> = LogicalImpl<V>(name(), value)
-
-class LogicalImpl<T> : JoinableLogical<T> {
+internal class LogicalImpl<T> : JoinableLogical<T> {
 
     companion object {
         var lastIdx = 0
@@ -226,3 +200,14 @@ class LogicalImpl<T> : JoinableLogical<T> {
 }
 
 class DefaultMetaLogical<V> (val name: String) : MetaLogical<V>(name, Object::class.java as Class<V>) {}
+
+// Used from tests
+
+fun <V> anonLogical(value: V): JoinableLogical<V> = LogicalImpl<V>(value)
+
+fun <V> namedLogical(name: String): JoinableLogical<V> = LogicalImpl<V>(name)
+
+fun <V> MetaLogical<V>.logical(): JoinableLogical<V> = LogicalImpl<V>(this)
+
+fun <V> MetaLogical<V>.logical(value: V): JoinableLogical<V> = LogicalImpl<V>(name(), value)
+

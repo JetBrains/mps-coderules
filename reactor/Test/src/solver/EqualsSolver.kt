@@ -117,7 +117,7 @@ infix fun <T : Any> T.is_eq(value: T): Boolean = EvaluationSession.current().let
     }
     val args = session.program().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
     val inv = predicate.invocation(args, logicalContext, invocationContext)
-    session.sessionSolver().ask(inv)
+    session.ask(inv)
 }
 
 infix fun <T : Any> T.eq(value: T) = EvaluationSession.current().let { session ->
@@ -128,7 +128,7 @@ infix fun <T : Any> T.eq(value: T) = EvaluationSession.current().let { session -
     }
     val args = session.program().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
     val inv = predicate.invocation(args, logicalContext, invocationContext)
-    session.sessionSolver().tell(inv)
+    session.tell(inv)
 }
 
 private fun mockLogicalContext(): LogicalContext {

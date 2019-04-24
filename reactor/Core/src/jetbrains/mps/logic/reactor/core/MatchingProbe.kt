@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2018 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,24 +19,26 @@ package jetbrains.mps.logic.reactor.core
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.program.Rule
-import java.util.*
+
+import java.util.BitSet
 
 /**
+ * Provides functionality relevant to finding match(-es) for a rule.
+ *
  * @author Fedor Isakov
  */
-
 interface MatchingProbe {
-    
-    fun rule() : Rule
 
-    fun matches() : Collection<MatchRule>
+    fun rule(): Rule
+
+    fun matches(): Collection<MatchRule>
 
     fun consumed(matchRule: MatchRule): MatchingProbe
 
-    fun expand(occ: ConstraintOccurrence) : MatchingProbe
+    fun expand(occ: Occurrence): MatchingProbe
 
-    fun expand(occ: ConstraintOccurrence, mask: BitSet) : MatchingProbe
+    fun expand(occ: Occurrence, mask: BitSet): MatchingProbe
 
-    fun contract(occ: ConstraintOccurrence): MatchingProbe
+    fun contract(occ: Occurrence): MatchingProbe
 
 }

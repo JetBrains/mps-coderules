@@ -116,7 +116,7 @@ class MockProgram(val name: String, val handlers: List<Handler>, val registry: M
 }
 
 
-class MockConstraintRegistry(val sessionSolver: SessionSolver) {
+class MockConstraintRegistry() {
 
     private val myConstraintArgTypes = HashMap<ConstraintSymbol, List<Class<*>>>().withDefault { Collections.emptyList() }
 

@@ -1,15 +1,14 @@
-import jetbrains.mps.logic.reactor.core.EvaluationSessionImpl
-import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
+import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
-import solver.MockSessionSolver
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.PredicateSymbol
-import org.junit.*
-import org.junit.Assert.*
+import org.junit.AfterClass
+import org.junit.Assert.assertEquals
+import org.junit.BeforeClass
+import org.junit.Test
 import program.MockConstraint
-import solver.EqualsSolver
 import solver.eq
 
 /**
@@ -19,22 +18,25 @@ import solver.eq
 class TestProgram {
 
     companion object {
-        @BeforeClass @JvmStatic fun setup() {
-            EvaluationSessionImpl.init();
+        @BeforeClass
+        @JvmStatic
+        fun setup() {
+            ReactorLifecycle.init();
         }
-        @AfterClass @JvmStatic fun teardown() {
-            EvaluationSessionImpl.deinit();
+
+        @AfterClass
+        @JvmStatic
+        fun teardown() {
+            ReactorLifecycle.deinit();
         }
     }
 
     private fun Builder.session(name: String): StoreView {
-        val sessionSolver = MockSessionSolver()
-        val programBuilder = ProgramBuilder(MockConstraintRegistry(sessionSolver))
+        val programBuilder = ProgramBuilder(MockConstraintRegistry())
         for (h in handlers) {
             programBuilder.addHandler(h)
         }
-        val session = EvaluationSession.newSession(programBuilder.program(name)).
-            withParam("main", MockConstraint(ConstraintSymbol("main", 0))).start(sessionSolver)
+        val session = EvaluationSession.newSession(programBuilder.program(name)).withParam("main", MockConstraint(ConstraintSymbol("main", 0))).start()
         return session.storeView()
     }
 
@@ -79,7 +81,7 @@ class TestProgram {
                     constraint("foo", X)
                 ),
                 body(
-                    statement({x, y -> y eq (x.get() * 2) }, X, Y),
+                    statement({ x, y -> y eq (x.get() * 2) }, X, Y),
                     constraint("bar", Y)
                 )
             )
@@ -97,14 +99,14 @@ class TestProgram {
 
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(5) }, X),
-                                                                    constraint("val", X) )
+                headReplaced(constraint("main")), body(statement({ x -> x.set(5) }, X),
+                constraint("val", X))
             ),
             rule("dec",
-                headReplaced( constraint("val", X) ),       guard(  expression({ x -> x.get() > 0 }, X) ),
-                                                            body(   constraint("trail", X),
-                                                                    statement({ x, y -> y.set(x.get() - 1)}, X, Y),
-                                                                    constraint("val", Y) )
+                headReplaced(constraint("val", X)), guard(expression({ x -> x.get() > 0 }, X)),
+                body(constraint("trail", X),
+                    statement({ x, y -> y.set(x.get() - 1) }, X, Y),
+                    constraint("val", Y))
             )
         ).session("dec").run {
             assertEquals(setOf(ConstraintSymbol("val", 1), ConstraintSymbol("trail", 1)), constraintSymbols())
@@ -120,20 +122,20 @@ class TestProgram {
         val (M, N, TMP) = metaLogical<Int>("M", "N", "TMP")
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),     body(   statement({ m, n -> m.set(21); n.set(35) }, M, N),
-                                                                constraint("gcd", M),
-                                                                constraint("gcd", N) )
+                headReplaced(constraint("main")), body(statement({ m, n -> m.set(21); n.set(35) }, M, N),
+                constraint("gcd", M),
+                constraint("gcd", N))
             ),
             rule("trivial",
-                headReplaced( constraint("gcd", M) ),   guard(  expression({ x -> x.get() == 0 }, M) ),
-                                                        body(   statement {  }  /*nothing*/ )
+                headReplaced(constraint("gcd", M)), guard(expression({ x -> x.get() == 0 }, M)),
+                body(statement { }  /*nothing*/)
             ),
             rule("step",
-                headKept( constraint("gcd", N) ),
-                headReplaced( constraint("gcd", M) ),
-                                                        guard(  expression({ m, n -> m.get() >= n.get()}, M, N) ),
-                                                        body(   statement({ m, n, tmp -> tmp.set(m.get() - n.get())}, M, N, TMP),
-                                                                constraint("gcd", TMP)
+                headKept(constraint("gcd", N)),
+                headReplaced(constraint("gcd", M)),
+                guard(expression({ m, n -> m.get() >= n.get() }, M, N)),
+                body(statement({ m, n, tmp -> tmp.set(m.get() - n.get()) }, M, N, TMP),
+                    constraint("gcd", TMP)
                 )
             )
         ).session("gcd").run {
@@ -149,26 +151,23 @@ class TestProgram {
         val (M, N) = metaLogical<Int>("M", "N")
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),     body(   statement({ n -> n.set(10) }, N),
-                                                                constraint("prime", N)  )
+                headReplaced(constraint("main")), body(statement({ n -> n.set(10) }, N),
+                constraint("prime", N))
             ),
             rule("gen",
-                headKept( constraint("prime", N)),      guard(  expression({ n -> n.get() > 2 }, N)),
-                                                        body(   statement({ m, n -> m.set(n.get() - 1) }, M, N),
-                                                                constraint("prime", M)  )
+                headKept(constraint("prime", N)), guard(expression({ n -> n.get() > 2 }, N)),
+                body(statement({ m, n -> m.set(n.get() - 1) }, M, N),
+                    constraint("prime", M))
             ),
             rule("sift",
-                headKept( constraint("prime", M)),
-                headReplaced( constraint("prime", N)),
-                                                        guard(  expression({ m, n -> (n.get() % m.get()) == 0 }, M, N)),
-                                                        body(   statement { } /* nothing */     )
+                headKept(constraint("prime", M)),
+                headReplaced(constraint("prime", N)),
+                guard(expression({ m, n -> (n.get() % m.get()) == 0 }, M, N)),
+                body(statement { } /* nothing */)
             )
         ).session("primes").run {
             assertEquals(4, allOccurrences().count())
-            assertEquals(setOf(2,3,5,7),                occurrences(ConstraintSymbol.symbol("prime", 1)).
-                                                            flatMap { co -> co.arguments() }.
-                                                            map { a -> (a as Logical<Int>).findRoot().value() }.
-                                                            toSet())
+            assertEquals(setOf(2, 3, 5, 7), occurrences(ConstraintSymbol.symbol("prime", 1)).flatMap { co -> co.arguments() }.map { a -> (a as Logical<Int>).findRoot().value() }.toSet())
         }
 
     }

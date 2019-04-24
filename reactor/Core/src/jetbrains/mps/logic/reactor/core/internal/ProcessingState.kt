@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2018 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.evaluation.CompositeFeedback
 import jetbrains.mps.logic.reactor.evaluation.DetailedFeedback

@@ -16,7 +16,9 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.logic.reactor.core.LogicalImpl;
+import jetbrains.mps.logic.reactor.core.LogicalObserverKt;
+import jetbrains.mps.logic.reactor.core.internal.LogicalImplKt;
+import jetbrains.mps.logic.reactor.logical.JoinableLogical;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;
 import jetbrains.mps.unification.Substitution;
 import jetbrains.mps.unification.Term;
@@ -27,10 +29,11 @@ import org.junit.Test;
 import java.util.Collection;
 import java.util.Collections;
 
-import static jetbrains.mps.unification.Substitution.FailureCause.*;
+import static jetbrains.mps.unification.Substitution.FailureCause.CYCLE_DETECTED;
+import static jetbrains.mps.unification.Substitution.FailureCause.SYMBOL_CLASH;
 import static jetbrains.mps.unification.test.AssertUnification.*;
 import static jetbrains.mps.unification.test.MockTerm.*;
-import static jetbrains.mps.unification.test.MockTermsParser.*;
+import static jetbrains.mps.unification.test.MockTermsParser.parseTerm;
 
 /**
  * Created by fyodor on 09.06.2014.
@@ -408,12 +411,32 @@ public class SolverTests {
         class Wrapper implements Term {
             Term wrapped;
 
-            Wrapper(Term term)                                          { this.wrapped = term; }
-            @Override public Object symbol()                            { return wrapped; }
-            @Override public Collection<? extends Term> arguments()     { return Collections.emptyList(); }
-            @Override public Term get()                                 {  return this; }
-            @Override public boolean is(Kind kind)                      { return Kind.FUN == kind; }
-            @Override public int compareTo(@NotNull Term other) {
+            Wrapper(Term term) {
+                this.wrapped = term;
+            }
+
+            @Override
+            public Object symbol() {
+                return wrapped;
+            }
+
+            @Override
+            public Collection<? extends Term> arguments() {
+                return Collections.emptyList();
+            }
+
+            @Override
+            public Term get() {
+                return this;
+            }
+
+            @Override
+            public boolean is(Kind kind) {
+                return Kind.FUN == kind;
+            }
+
+            @Override
+            public int compareTo(@NotNull Term other) {
                 return String.valueOf(symbol()).compareTo(String.valueOf(other.symbol()));
             }
 
@@ -427,7 +450,7 @@ public class SolverTests {
 
             @Override
             public Term unwrap(Term maybeWrapper) {
-                return maybeWrapper instanceof Wrapper ? ((Wrapper)maybeWrapper).wrapped : maybeWrapper;
+                return maybeWrapper instanceof Wrapper ? ((Wrapper) maybeWrapper).wrapped : maybeWrapper;
             }
         };
 
@@ -551,13 +574,13 @@ public class SolverTests {
         MetaLogical<Term> X = new MetaLogical<>("X", Term.class);
         MetaLogical<Term> Y = new MetaLogical<>("Y", Term.class);
         MetaLogical<Term> Z = new MetaLogical<>("Z", Term.class);
-        LogicalImpl<Term> xLogical = new LogicalImpl<>(X);
-        LogicalImpl<Term> yLogical = new LogicalImpl<>(Y);
-        LogicalImpl<Term> zLogical = new LogicalImpl<>(Z);
+        JoinableLogical<Term> xLogical = LogicalImplKt.logical(X);
+        JoinableLogical<Term> yLogical = LogicalImplKt.logical(Y);
+        JoinableLogical<Term> zLogical = LogicalImplKt.logical(Z);
 
         Term left = term("foo", term("bar", logicalVar(yLogical)), logicalVar(zLogical));
         Term right = term("foo", term("bar", logicalVar(xLogical)), logicalVar(zLogical));
-        
+
         assertUnifiesWithBindings(left, right,
                 new Substitution.Binding(logicalVar(xLogical), logicalVar(yLogical)));
 
@@ -571,9 +594,9 @@ public class SolverTests {
         MetaLogical<Term> X = new MetaLogical<>("X", Term.class);
         MetaLogical<Term> Y = new MetaLogical<>("Y", Term.class);
         MetaLogical<Term> Z = new MetaLogical<>("Z", Term.class);
-        LogicalImpl<Term> xLogical = new LogicalImpl<>(X);
-        LogicalImpl<Term> yLogical = new LogicalImpl<>(Y);
-        LogicalImpl<Term> zLogical = new LogicalImpl<>(Z);
+        JoinableLogical<Term> xLogical = LogicalImplKt.logical(X);
+        JoinableLogical<Term> yLogical = LogicalImplKt.logical(Y);
+        JoinableLogical<Term> zLogical = LogicalImplKt.logical(Z);
 
         Term left = logicalVar(yLogical);
         Term right = term("foo", term("bar", logicalVar(xLogical)), logicalVar(zLogical));

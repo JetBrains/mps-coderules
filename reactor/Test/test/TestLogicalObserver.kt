@@ -1,10 +1,7 @@
-import jetbrains.mps.logic.reactor.core.LogicalObserver
-import jetbrains.mps.logic.reactor.core.LogicalImpl
 import jetbrains.mps.logic.reactor.core.addObserver
-import jetbrains.mps.logic.reactor.logical.Logical
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertSame
 import org.junit.Test
-import org.junit.Assert.*
-import java.util.*
 
 /**
  * @author Fedor Isakov

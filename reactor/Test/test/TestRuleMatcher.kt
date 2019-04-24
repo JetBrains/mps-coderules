@@ -1,10 +1,11 @@
 import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.core.internal.createOccurrenceMatcher
+import jetbrains.mps.logic.reactor.core.internal.logical
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
 import jetbrains.mps.unification.test.MockTermsParser.*
-import org.junit.Assert.assertEquals
 import org.junit.Ignore
 import org.junit.Test
 import program.MockConstraint
@@ -42,25 +43,25 @@ class TestRuleMatcher {
         val foox = MockConstraint(ConstraintSymbol("foo", 1), X)
 
         // foo("bar") = foo("bar")
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foobar, occurrence("foo", "bar")) shouldBe true
         // foo("bar") != foo(X)
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foobar, occurrence("foo", xLogical)) shouldBe false
         // foo("bar") = foo(X = "bar")
         xLogical.set("bar")
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foobar, occurrence("foo", xLogical)) shouldBe true
 
         // foo(X) = foo(Y)
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foox, occurrence("foo", yLogical)) shouldBe true
         // foo(X) = foo("bar")
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foox, occurrence("foo", "bar")) shouldBe true
         // foo(X) = foo(Y = "bar")
         yLogical.set("bar")
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foox, occurrence("foo", yLogical)) shouldBe true
     }
 
@@ -74,25 +75,25 @@ class TestRuleMatcher {
         val foofx = MockConstraint(ConstraintSymbol("foo", 1), term("f", metaVar(X)))
 
         // foo(f { h }) = foo(f { h })
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foofh, occurrence("foo", parseTerm("f { h }"))) shouldBe true
         // foo(f { h }) != foo(f { X })
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foofh, occurrence("foo", term("f", logicalVar(xLogical)))) shouldBe false
         // foo(f { h }) != foo(f { X = h })
         xLogical.set(term("h"))
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foofh, occurrence("foo", term("f", logicalVar(xLogical)))) shouldBe true
 
         // foo(f { X }) = foo(f { h })
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foofx, occurrence("foo", parseTerm("f { h }"))) shouldBe true
         // foo(f { X }) = foo(f { Y })
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe true
         // foo(f { X }) = foo(f { Y = h })
         xLogical.set(term("h"))
-        OccurrenceMatcher().
+        createOccurrenceMatcher().
             matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe true
     }
 
@@ -106,28 +107,28 @@ class TestRuleMatcher {
         val foofx = MockConstraint(ConstraintSymbol("foo", 1), term("f", metaVar(X)))
 
         // [X -> free] |- foo(f { X }) = foo(f { X })
-        OccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+        createOccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
             matches(foofx, occurrence("foo", term("f", logicalVar(xLogical)))) shouldBe true
         // [X -> free] |- foo(f { X }) != foo(f { Y })
-        OccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+        createOccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
             matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe false
         // [X -> free] |- foo(f { X }) != foo(f { h })
-        OccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+        createOccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
             matches(foofx, occurrence("foo", parseTerm("f { h }"))) shouldBe false
         // [X -> free] |- foo(f { X }) != foo(f { Y = h })
         yLogical.set(term("h"))
-        OccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+        createOccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
             matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe false
 
         // [X -> h] |- foo(f { X }) = foo(f { h })
-        OccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+        createOccurrenceMatcher(arrayOf(X to term("h")).toMap()).
             matches(foofx, occurrence("foo", parseTerm("f { h }"))) shouldBe true
         // [X -> h] |- foo(f { X }) != foo(f { Z })
-        OccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+        createOccurrenceMatcher(arrayOf(X to term("h")).toMap()).
             matches(foofx, occurrence("foo", term("f", logicalVar(zLogical)))) shouldBe false
         // [X -> h] |- foo(f { X }) = foo(f { Z = h })
         zLogical.set(term("h"))
-        OccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+        createOccurrenceMatcher(arrayOf(X to term("h")).toMap()).
             matches(foofx, occurrence("foo", term("f", logicalVar(zLogical)))) shouldBe true
     }
 
@@ -784,5 +785,5 @@ class TestRuleMatcher {
         }
     }
 
-    private fun Builder.ruleMatcher() = Matcher(rules.first())
+    private fun Builder.ruleMatcher() = createRuleMatcher(rules.first())
 }

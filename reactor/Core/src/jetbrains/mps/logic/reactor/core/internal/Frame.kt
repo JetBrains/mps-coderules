@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.core.internal
 
 import com.github.andrewoma.dexx.collection.ConsList
 import com.github.andrewoma.dexx.collection.Map
 import com.github.andrewoma.dexx.collection.Maps
+import jetbrains.mps.logic.reactor.core.FrameObservable
+import jetbrains.mps.logic.reactor.core.LogicalObserver
+import jetbrains.mps.logic.reactor.core.addObserver
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.util.IdWrapper
@@ -26,13 +29,13 @@ import jetbrains.mps.logic.reactor.util.cons
 import jetbrains.mps.logic.reactor.util.remove
 import java.util.*
 
-internal class Frame: LogicalObserver, StoreKeeper {
+internal class Frame: LogicalObserver, FrameObservable {
 
     val stack: FrameStack
 
     val store: Store
 
-    private var observers: Map<IdWrapper<Logical<*>>, ConsList<(StoreKeeper) -> LogicalObserver>>
+    private var observers: Map<IdWrapper<Logical<*>>, ConsList<(FrameObservable) -> LogicalObserver>>
 
     constructor(stack: FrameStack) {
         this.stack = stack
@@ -52,9 +55,9 @@ internal class Frame: LogicalObserver, StoreKeeper {
         this.observers = Maps.of()
     }
 
-    override fun store() = store
+    override fun storeObserver() = store
 
-    override fun addObserver(logical: Logical<*>, obs: (StoreKeeper) -> LogicalObserver) {
+    override fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
         val logicalId = IdWrapper(logical)
         if (!observers.containsKey(logicalId)) {
             stack.addObserver(logical)
@@ -63,7 +66,7 @@ internal class Frame: LogicalObserver, StoreKeeper {
             observers[logicalId]?.prepend(obs) ?: cons(obs))
     }
 
-    override fun removeObserver(logical: Logical<*>, obs: (StoreKeeper) -> LogicalObserver) {
+    override fun removeObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
         val logicalId = IdWrapper(logical)
         observers[logicalId].remove(obs)?.let { newList ->
             this.observers = observers.put(logicalId, newList)

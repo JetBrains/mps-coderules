@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.ProcessingState.FAILED
+import jetbrains.mps.logic.reactor.core.internal.ProcessingState.FAILED
+import jetbrains.mps.logic.reactor.core.EvaluationSessionEx
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.Constraint
-import jetbrains.mps.logic.reactor.program.PredicateSymbol
 import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
 import java.util.*
-import kotlin.collections.ArrayList
 import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
 import com.github.andrewoma.dexx.collection.List as PList
 
@@ -31,38 +30,27 @@ import com.github.andrewoma.dexx.collection.List as PList
  * @author Fedor Isakov
  */
 
-interface SessionObjects {
-
-    fun controller(): Controller
-
-}
-
-class EvaluationSessionImpl private constructor (
-    val program: Program,
-    val sessionSolver: SessionSolver,
-    val trace: EvaluationTrace,
-    val failureHandler: EvaluationFeedbackHandler?) : EvaluationSession(), SessionObjects
+internal class EvaluationSessionImpl private constructor (
+                                        program: Program,
+                                        trace: EvaluationTrace,
+                                        sessionSolver: SessionSolver? = null) : EvaluationSessionEx(program, trace, sessionSolver)
 {
 
-    lateinit var controller: Controller
+    lateinit var controller: ControllerImpl
 
-    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?) : ProcessingState {
-        this.controller = Controller(program, trace, profiler, storeView, failureHandler)
+    override fun controller() = controller
+
+    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?, feedbackHandler: EvaluationFeedbackHandler?) : ProcessingState {
+        this.controller = ControllerImpl(program, trace, profiler, storeView, feedbackHandler)
         return controller.activate(main)
     }
 
     private class Config(val program: Program) : EvaluationSession.Config() {
-
-        val predicateSymbols = ArrayList<PredicateSymbol>()
         val parameters = HashMap<String, Any?>()
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
         var storeView: StoreView? = null
-        var feedbackHandler: EvaluationFeedbackHandler? = null
 
-        override fun withPredicates(vararg predicateSymbols: PredicateSymbol): EvaluationSession.Config {
-            this.predicateSymbols.addAll(Arrays.asList(* predicateSymbols))
-            return this
-        }
+        var feedbackHandler: EvaluationFeedbackHandler? = null
 
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
             this.evaluationTrace = computingTracer
@@ -71,11 +59,6 @@ class EvaluationSessionImpl private constructor (
 
         override fun withStoreView(storeView: StoreView): EvaluationSession.Config {
             this.storeView = storeView
-            return this
-        }
-
-        override fun withFailureHandler(handler: FailureHandler): EvaluationSession.Config {
-            this.feedbackHandler = handler
             return this
         }
 
@@ -89,22 +72,24 @@ class EvaluationSessionImpl private constructor (
             return this
         }
 
-        override fun start(sessionSolver: SessionSolver): EvaluationResult {
-            var session = ourBackend.ourSession.get()
+        override fun start(): EvaluationResult = start(SessionSolver())
+
+        override fun start(sessionSolver: SessionSolver?): EvaluationResult {
+            var session = Backend.ourBackend.ourSession.get()
             if (session != null) throw IllegalStateException("session already active")
 
-            sessionSolver.init(evaluationTrace, * predicateSymbols.toArray<PredicateSymbol>(arrayOfNulls(predicateSymbols.size)))
+            sessionSolver?.init(evaluationTrace)
 
             @Suppress("UNCHECKED_CAST")
             val durations =
                 parameters.get("profiling.data") as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
 
-            session = EvaluationSessionImpl(program, sessionSolver, evaluationTrace, feedbackHandler)
-            ourBackend.ourSession.set(session)
+            session = EvaluationSessionImpl(program, evaluationTrace, sessionSolver)
+            Backend.ourBackend.ourSession.set(session)
             var failure: EvaluationFailure? = null
             try {
-                val state = session.launch(parameters["main"] as Constraint, profiler, storeView)
+                val state = session.launch(parameters["main"] as Constraint, profiler, storeView, feedbackHandler)
                 if (state is FAILED) {
                     failure = state.failure
                 }
@@ -119,44 +104,38 @@ class EvaluationSessionImpl private constructor (
                 catch (t: Throwable) {
                     // avoid nested failure
                 }
-                ourBackend.ourSession.set(null)
+                Backend.ourBackend.ourSession.set(null)
             }
 
             return object : EvaluationResult {
-                override fun storeView(): StoreView? = session.storeView()
+                override fun storeView(): StoreView? = session.controller.storeView()
 
                 override fun failure():  EvaluationFailure? = failure
             }
         }
+
     }
 
-    override fun controller() = controller
-
-    override fun sessionSolver(): SessionSolver = sessionSolver
-
-    override fun program(): Program = program
-
-    override fun storeView(): StoreView =
-        controller.storeView()
-
-    private class Backend : EvaluationSession.Backend {
+    internal class Backend : EvaluationSession.Backend<EvaluationSessionImpl> {
 
         val ourSession = ThreadLocal<EvaluationSessionImpl>()
 
-        override fun current(): EvaluationSession = ourSession.get() ?: throw IllegalStateException("no session")
+        override fun current(): EvaluationSessionImpl = ourSession.get() ?: throw IllegalStateException("no session")
 
         override fun createConfig(program: Program): EvaluationSession.Config = Config(program)
-    }
 
-    companion object {
-        private val ourBackend = Backend()
+        companion object {
+            val ourBackend = Backend()
 
-        fun init() {
-            setBackend(ourBackend)
+            fun init() {
+                EvaluationSession.setBackend(ourBackend)
+            }
+
+            fun deinit() {
+                EvaluationSession.clearBackend(ourBackend)
+            }
         }
 
-        fun deinit() {
-            clearBackend(ourBackend)
-        }
     }
+
 }

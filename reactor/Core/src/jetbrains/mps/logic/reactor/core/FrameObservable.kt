@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,20 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.evaluation;
+package jetbrains.mps.logic.reactor.core
+
+import jetbrains.mps.logic.reactor.logical.Logical
 
 /**
- * Not very useful now.
- * Serves as an abstract superclass for implementations, as a mixin of Instructible and Queryable.
- *
- * @deprecated use Solver instead.
- * @author Fedor Isakov
+ * Serves to add/remove observers of [Logical] that track the frame stack.
  */
-@Deprecated
-public abstract class AbstractSolver implements Solver {
+interface FrameObservable {
 
+    /** Returns the store associated with this frame */
+    fun storeObserver(): LogicalObserver
+
+    fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver)
+
+    fun removeObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver)
 
 }

@@ -1,11 +1,8 @@
-import jetbrains.mps.logic.reactor.evaluation.AbstractSolver
-import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.program.InvalidConstraintException
 import jetbrains.mps.logic.reactor.program.InvalidRuleException
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import solver.MockSessionSolver
 
 /**
  * @author Fedor Isakov
@@ -13,10 +10,8 @@ import solver.MockSessionSolver
 
 class TestProgramBuilder {
 
-    val sessionSolver = MockSessionSolver()
-
     @Before fun beforeTest() {
-        programBuilder = ProgramBuilder(MockConstraintRegistry(sessionSolver))
+        programBuilder = ProgramBuilder(MockConstraintRegistry())
     }
 
     lateinit var programBuilder: ProgramBuilder

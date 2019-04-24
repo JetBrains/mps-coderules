@@ -31,7 +31,9 @@ import java.util.Map;
  *
  *
  * @author Fedor Isakov
+ * @deprecated Use EvalutionSession
  */
+@Deprecated
 public class SessionSolver implements Solver {
 
     private EvaluationTrace tracer = EvaluationTrace.NULL;
@@ -40,17 +42,13 @@ public class SessionSolver implements Solver {
         tracer = evaluationTrace;
     }
 
-    @Deprecated
-    public void init(PredicateSymbol... predicateSymbols) {
-    }
-
-    @Deprecated
-    public void init(EvaluationTrace evaluationTrace, PredicateSymbol... predicateSymbols) {
-        tracer = evaluationTrace;
-        init(predicateSymbols);
-    }
-
+    /**
+     * @deprecated Use EvaluationSession
+     * @param invocation
+     * @return
+     */
     @Override
+    @Deprecated
     public boolean ask(PredicateInvocation invocation) {
         Solver solver = invocation.predicate().symbol().solver();
         boolean result = solver.ask(invocation);
@@ -58,20 +56,16 @@ public class SessionSolver implements Solver {
         return result;
     }
 
+    /**
+     * @deprecated Use EvaluationSession
+     * @param invocation
+     */
     @Override
+    @Deprecated
     public void tell(PredicateInvocation invocation) {
         Solver solver = invocation.predicate().symbol().solver();
         tracer.tell(invocation);
         solver.tell(invocation);
     }
 
-    @Deprecated
-    protected void registerSymbol(PredicateSymbol predicateSymbol, EvaluationTrace computingTracer) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Deprecated
-    protected void registerSolver(PredicateSymbol constraint, AbstractSolver solver) {
-    }
-    
 }

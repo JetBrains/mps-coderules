@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 JetBrains s.r.o.
+ * Copyright 2014-2019 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,24 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.program;
+package jetbrains.mps.logic.reactor.core
+
+import jetbrains.mps.logic.reactor.core.internal.EvaluationSessionImpl
 
 /**
- * A handler is a container of rules.
- * <p>
+ * Must be invoked by the code responsible for application's initialization and teardown.
+ *
  * @author Fedor Isakov
  */
-public abstract class Handler {
+class ReactorLifecycle {
 
-    public abstract String name();
+    companion object {
+        fun init() {
+            EvaluationSessionImpl.Backend.init()
+        }
 
-    public abstract Iterable<Rule> rules();
-
+        fun deinit() {
+            EvaluationSessionImpl.Backend.deinit()
+        }
+    }
 }

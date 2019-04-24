@@ -1,10 +1,7 @@
-import jetbrains.mps.logic.reactor.core.LogicalImpl
 import jetbrains.mps.logic.reactor.core.LogicalObserver
 import jetbrains.mps.logic.reactor.core.addObserver
-import jetbrains.mps.logic.reactor.logical.JoinableLogical
 import jetbrains.mps.logic.reactor.logical.Logical
 import org.junit.Test
-import kotlin.math.log
 
 /*
  * Copyright 2014-2019 JetBrains s.r.o.
@@ -28,9 +25,7 @@ import kotlin.math.log
 
 class TestLogical {
 
-    inline fun <reified T> logical(name: String): JoinableLogical<T> = LogicalImpl<T>(name)
-
-    class Observer(logical: Logical<*>): LogicalObserver {
+    class Observer(logical: Logical<*>) : LogicalObserver {
 
         var parentUpdated: Pair<Logical<*>, Logical<*>>? = null
         var valueUpdated: Pair<Logical<*>, Any>? = null
@@ -52,7 +47,7 @@ class TestLogical {
     }
 
     @Test
-    fun union_notifies_observers () {
+    fun union_notifies_observers() {
         val xLogical = logical<String>("X")
         val yLogical = logical<String>("Y")
         val zLogical = logical<String>("Z")
@@ -85,7 +80,7 @@ class TestLogical {
         xLogical.union(yLogical)
         observerY.parentUpdated shouldBe (yLogical to xLogical)
         observerX.parentUpdated shouldBe (null)
-        yLogical.findRoot() shouldBeSame  xLogical
+        yLogical.findRoot() shouldBeSame xLogical
 
         yLogical.findRoot().setValue("foobar")
         observerX.valueUpdated shouldBe (xLogical to "foobar")

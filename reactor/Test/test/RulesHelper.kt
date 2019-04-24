@@ -1,10 +1,12 @@
-import jetbrains.mps.logic.reactor.core.StoreItem
+import jetbrains.mps.logic.reactor.core.FrameObservable
+import jetbrains.mps.logic.reactor.core.LogicalObserver
+import jetbrains.mps.logic.reactor.core.Occurrence
+import jetbrains.mps.logic.reactor.core.occurrence
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedbackHandler
+import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
-import solver.EqualsSolver
 import solver.TestEqPredicate
 import java.util.*
 
@@ -22,11 +24,11 @@ class Builder(val env: Environment, val handlers: List<Handler>) {
 class Environment(val programBuilder: ProgramBuilder? = null) {
 }
 
-fun programWithRules(vararg ruleBuilders : Environment.() -> Rule): Builder {
+fun programWithRules(vararg ruleBuilders: Environment.() -> Rule): Builder {
     return programWithRules(Environment(), ruleBuilders)
 }
 
-fun programWithRules(pb: ProgramBuilder, vararg ruleBuilders : Environment.() -> Rule): Builder {
+fun programWithRules(pb: ProgramBuilder, vararg ruleBuilders: Environment.() -> Rule): Builder {
     return programWithRules(Environment(pb), ruleBuilders)
 }
 
@@ -34,13 +36,13 @@ private fun programWithRules(env: Environment, ruleBuilders: Array<out Environme
     return builder(env, arrayOf(handler("test", emptyList(), * ruleBuilders)))
 }
 
-fun programWithHandlers(vararg handlerBuilders : Environment.() -> Handler): Builder {
+fun programWithHandlers(vararg handlerBuilders: Environment.() -> Handler): Builder {
     return builder(Environment(), handlerBuilders)
 }
 
 private fun builder(env: Environment, handlerBlocks: Array<out Environment.() -> Handler>): Builder {
     val handlers = ArrayList<Handler>()
-    with (env) {
+    with(env) {
         for (block in handlerBlocks) {
             handlers.add(block())
         }
@@ -56,7 +58,7 @@ fun handler(name: String, primary: Iterable<ConstraintSymbol>, vararg ruleBlocks
     hb.toHandler()
 }
 
-fun rule(tag: String, vararg component:RB.() -> Unit): Environment.() -> Rule = {
+fun rule(tag: String, vararg component: RB.() -> Unit): Environment.() -> Rule = {
     val rb = RB(this, tag)
     for (cmp in component) {
         rb.cmp()
@@ -64,23 +66,23 @@ fun rule(tag: String, vararg component:RB.() -> Unit): Environment.() -> Rule = 
     rb.toRule()
 }
 
-fun headKept(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendHeadKept( * buildConjunction(Constraint::class.java, env, content).toArray())
+fun headKept(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
+    appendHeadKept(* buildConjunction(Constraint::class.java, env, content).toArray())
 }
 
-fun headReplaced(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendHeadReplaced( * buildConjunction(Constraint::class.java, env, content).toArray())
+fun headReplaced(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
+    appendHeadReplaced(* buildConjunction(Constraint::class.java, env, content).toArray())
 }
 
-fun guard(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendGuard( * buildConjunction(Predicate::class.java, env, content).toArray())
+fun guard(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
+    appendGuard(* buildConjunction(Predicate::class.java, env, content).toArray())
 }
 
-fun body(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
+fun body(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
     appendBody(false, * buildConjunction(AndItem::class.java, env, content).toArray())
 }
 
-fun altBody(vararg content : ConjBuilder.() -> Unit): RB.() -> Unit = {
+fun altBody(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
     appendBody(true, * buildConjunction(AndItem::class.java, env, content).toArray())
 }
 
@@ -93,7 +95,21 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
     add(TestEqPredicate(left, right))
 }
 
-fun occurrence(id: String, vararg args: Any) : ConstraintOccurrence = TestConstraintOccurrence(id, * args)
+fun occurrence(id: String, vararg args: Any): Occurrence =
+    MockConstraint(ConstraintSymbol.symbol(id, args.size)).occurrence(listOf(* args), { fooObservable })
+
+object fooObservable : FrameObservable {
+    override fun storeObserver(): LogicalObserver {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
+    }
+
+    override fun removeObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+}
 
 class RB(val env: Environment, tag: String) : RuleBuilder(tag) {
 
@@ -103,9 +119,8 @@ class ConjBuilder(val type: Class<out AndItem>, val env: Environment) {
     val constraints = ArrayList<AndItem>()
 
     fun createConstraint(args: Array<out Any>, id: String): Constraint {
-        return env.programBuilder ?.
-            constraint(ConstraintSymbol(id, args.size), * args)     ?:
-            MockConstraint(ConstraintSymbol(id, args.size), * args)
+        return env.programBuilder?.constraint(ConstraintSymbol(id, args.size), * args)
+            ?: MockConstraint(ConstraintSymbol(id, args.size), * args)
     }
 
     fun add(item: AndItem): Unit {
@@ -133,40 +148,10 @@ class ConjBuilder(val type: Class<out AndItem>, val env: Environment) {
 
 private fun buildConjunction(type: Class<out AndItem>,
                              env: Environment,
-                             content: Array<out ConjBuilder.() -> Unit>): ConjBuilder
-{
+                             content: Array<out ConjBuilder.() -> Unit>): ConjBuilder {
     val conjBuilder = ConjBuilder(type, env)
     for (c in content) {
         conjBuilder.c()
     }
     return conjBuilder
-}
-
-data class TestConstraintOccurrence(val constraint: Constraint, val arguments: List<Any>, val id: Int) :
-    ConstraintOccurrence,
-    StoreItem
-{
-    override var alive: Boolean = true
-
-    override var stored: Boolean = false
-
-    companion object {
-        val random = Random()
-    }
-
-    constructor(id: String, vararg args: Any) :
-        this(MockConstraint(ConstraintSymbol.symbol(id, args.size)), listOf(* args), random.nextInt()) {}
-
-    override fun constraint(): Constraint = constraint
-
-    override fun arguments(): List<Any> = arguments
-
-    override fun logicalContext(): LogicalContext = TODO()
-
-    override fun terminate() {
-        this.alive = false
-    }
-
-    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
-
 }

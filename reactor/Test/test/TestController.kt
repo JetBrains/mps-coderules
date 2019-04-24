@@ -1,15 +1,18 @@
-import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.core.Controller
+import jetbrains.mps.logic.reactor.core.EvaluationSessionEx
+import jetbrains.mps.logic.reactor.core.internal.createController
+import jetbrains.mps.logic.reactor.core.internal.logical
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.program.*
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.Program
+import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import solver.EqualsSolver
-import solver.MockSessionSolver
 import solver.eq
 import solver.is_eq
 
@@ -21,30 +24,31 @@ import solver.is_eq
 
 class TestController {
 
-    @Before fun beforeTest() {
+    @Before
+    fun beforeTest() {
     }
 
-    @After fun afterTest() {
+    @After
+    fun afterTest() {
         MockSession.deinit()
     }
 
-    private class MockSession(val program: Program, val solver: SessionSolver) : EvaluationSession(), SessionObjects {
+    private class MockSession(program: Program) :
+        EvaluationSessionEx(program, EvaluationTrace.NULL) {
         lateinit var controller: Controller
-        override fun controller(): Controller = controller
-        override fun sessionSolver(): SessionSolver = solver
-        override fun program(): Program = program
-        override fun storeView(): StoreView = TODO()
 
-        class MockBackend(val session: MockSession) : Backend {
-            override fun current(): EvaluationSession = session
+        override fun controller(): Controller = controller
+
+        class MockBackend(val session: MockSession) : Backend<MockSession> {
+            override fun current(): MockSession = session
             override fun createConfig(program: Program): Config = TODO()
         }
 
         companion object {
-            lateinit var ourBackend : MockBackend
+            lateinit var ourBackend: MockBackend
 
-            fun init(program: Program, solver: SessionSolver) {
-                ourBackend = MockBackend(MockSession(program, solver))
+            fun init(program: Program) {
+                ourBackend = MockBackend(MockSession(program))
                 setBackend(ourBackend)
             }
 
@@ -54,24 +58,19 @@ class TestController {
         }
     }
 
-    private fun sessionSolver(): SessionSolver = MockSessionSolver()
-
     private fun Builder.controller(vararg occurrences: ConstraintOccurrence): Controller {
-        val solver = sessionSolver()
-        val program = MockProgram("test", handlers, registry = MockConstraintRegistry(solver))
-        MockSession.init(program, solver)
-        val controller = Controller(program, storeView = MockStoreView(listOf(* occurrences)))
+        val program = MockProgram("test", handlers, registry = MockConstraintRegistry())
+        MockSession.init(program)
+        val controller = createController(program, storeView = MockStoreView(listOf(* occurrences)))
         MockSession.ourBackend.session.controller = controller
         return controller
     }
 
     private fun Builder.controllerWithFeedback(feedbackHandler: EvaluationFeedbackHandler,
-                                                vararg occurrences: ConstraintOccurrence): Controller
-    {
-        val solver = sessionSolver()
-        val program = MockProgram("test", handlers, registry = MockConstraintRegistry(solver))
-        MockSession.init(program, solver)
-        val controller = Controller(program, storeView = MockStoreView(listOf(* occurrences)), feedbackHandler = feedbackHandler)
+                                               vararg occurrences: ConstraintOccurrence): Controller {
+        val program = MockProgram("test", handlers, registry = MockConstraintRegistry())
+        MockSession.init(program)
+        val controller = createController(program, storeView = MockStoreView(listOf(* occurrences)), feedbackHandler = feedbackHandler)
         MockSession.ourBackend.session.controller = controller
         return controller
     }
@@ -146,7 +145,7 @@ class TestController {
 
     @Test
     fun basicExpression() {
-        var test : String = "not initialized"
+        var test: String = "not initialized"
         programWithRules(
             rule("main",
                 headKept(
@@ -171,7 +170,7 @@ class TestController {
                     constraint("main")
                 ),
                 body(
-                    statement ({ test.set("value") })
+                    statement({ test.set("value") })
                 ))
         ).run {
             controller().evaluate(occurrence("main"))
@@ -181,7 +180,7 @@ class TestController {
 
     @Test
     fun basicLogical() {
-        var test : String? = "not initialized"
+        var test: String? = "not initialized"
         val x = logical<String>("x")
         x.setValue("expected")
         programWithRules(
@@ -190,7 +189,7 @@ class TestController {
                     constraint("main")
                 ),
                 body(
-                    statement ({ test = x.get() } )
+                    statement({ test = x.get() })
                 ))
         ).run {
             controller().evaluate(occurrence("main"))
@@ -200,8 +199,8 @@ class TestController {
 
     @Test
     fun logicalCopy() {
-        var test : String? = "not initialized"
-        val (x,y) = logical<String>("x", "y")
+        var test: String? = "not initialized"
+        val (x, y) = logical<String>("x", "y")
         x.setValue("expected")
         programWithRules(
             rule("main",
@@ -217,7 +216,7 @@ class TestController {
                     constraint("next")
                 ),
                 body(
-                    statement ({ test = y.get() })
+                    statement({ test = y.get() })
                 ))
         ).run {
             controller().evaluate(occurrence("main")).run {
@@ -231,8 +230,8 @@ class TestController {
 
     @Test
     fun basicGuard() {
-        var test1 : String = "not initialized 1"
-        var test2 : String = "not initialized 2"
+        var test1: String = "not initialized 1"
+        var test2: String = "not initialized 2"
         programWithRules(
             rule("main1",
                 headKept(
@@ -242,14 +241,14 @@ class TestController {
                     expression { false }
                 ),
                 body(
-                    statement {  test1 = "not expected" }
+                    statement { test1 = "not expected" }
                 )),
             rule("main2",
                 headKept(
                     constraint("main")
                 ),
                 guard(
-                    expression {  true }
+                    expression { true }
                 ),
                 body(
                     statement { test2 = "expected" }
@@ -276,10 +275,11 @@ class TestController {
                 )
             )
         ).controller().apply {
-            a.set("value") }.evaluate(occurrence("foo", a)).run {
+            a.set("value")
+        }.evaluate(occurrence("foo", a)).run {
             assertSame(1, allOccurrences().toList().size)
             val co = allOccurrences().first()
-            assertEquals(ConstraintSymbol("bar",1), co.constraint().symbol())
+            assertEquals(ConstraintSymbol("bar", 1), co.constraint().symbol())
             assertEquals(1, co.arguments().size)
             val arg = co.arguments().first()
             assertNotEquals(a, arg)
@@ -291,18 +291,18 @@ class TestController {
     fun occurrenceTerminated() {
         programWithRules(
             rule("first",
-                headKept( constraint("foo") ),          body( constraint("expected1") )
+                headKept(constraint("foo")), body(constraint("expected1"))
             ),
             rule("second",
-                headKept( constraint("foo") ),          body( constraint("bar") )
+                headKept(constraint("foo")), body(constraint("bar"))
             ),
             rule("third",
-                headKept( constraint("foo") ),          body( constraint("unexpected") )
+                headKept(constraint("foo")), body(constraint("unexpected"))
             ),
             rule("fourth",
-                headReplaced(   constraint("bar"),
-                                constraint("foo") ),
-                                                        body( constraint("expected2") )
+                headReplaced(constraint("bar"),
+                    constraint("foo")),
+                body(constraint("expected2"))
             )
         ).controller().evaluate(occurrence("foo")).run {
             assertEquals(
@@ -315,18 +315,18 @@ class TestController {
     fun occurrenceKeptActive() {
         programWithRules(
             rule("first",
-                headKept( constraint("foo") ),          body( constraint("bar") )
+                headKept(constraint("foo")), body(constraint("bar"))
             ),
             rule("second",
-                headReplaced( constraint("foo") ),      body( constraint("expected1") )
+                headReplaced(constraint("foo")), body(constraint("expected1"))
             ),
             rule("third",
-                headReplaced( constraint("foo") ),      body( constraint("unexpected") )
+                headReplaced(constraint("foo")), body(constraint("unexpected"))
             ),
             rule("fourth",
-                headKept( constraint("foo") ),
-                headReplaced( constraint("bar") ),
-                                                        body( constraint("expected2") )
+                headKept(constraint("foo")),
+                headReplaced(constraint("bar")),
+                body(constraint("expected2"))
             )
         ).controller().evaluate(occurrence("foo")).run {
             assertEquals(
@@ -340,31 +340,31 @@ class TestController {
         val X = metaLogical<Int>("X")
         programWithRules(
             rule("zeroth",
-                headKept( constraint("foo") ),          body( statement({ x -> x.set(999) }, X),
-                                                              constraint("bar", X))
+                headKept(constraint("foo")), body(statement({ x -> x.set(999) }, X),
+                constraint("bar", X))
             ),
             rule("first",
-                headKept( constraint("foo") ),
-                                                        body( constraint("bar", X),
-                                                              constraint("qux", X))
+                headKept(constraint("foo")),
+                body(constraint("bar", X),
+                    constraint("qux", X))
             ),
             rule("second",
-                headReplaced( constraint("qux", X) ),
-                                                        body( constraint("expected1"),
-                                                              statement({ x -> x.set(123) }, X))
+                headReplaced(constraint("qux", X)),
+                body(constraint("expected1"),
+                    statement({ x -> x.set(123) }, X))
             ),
             rule("third",
-                headReplaced( constraint("foo") ),
-                                                        body( constraint("unexpected"))
+                headReplaced(constraint("foo")),
+                body(constraint("unexpected"))
             ),
             rule("fourth",
-                headReplaced( constraint("foo") ),
-                headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 123 }, X)),
-                                                        body( constraint("expected2") )
+                headReplaced(constraint("foo")),
+                headReplaced(constraint("bar", X)), guard(expression({ x -> x.getNullable() == 123 }, X)),
+                body(constraint("expected2"))
             ),
             rule("fifth",
-                headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 999 }, X)),
-                                                        body( constraint("expected3", X))
+                headReplaced(constraint("bar", X)), guard(expression({ x -> x.getNullable() == 999 }, X)),
+                body(constraint("expected3", X))
             )
         ).controller().evaluate(occurrence("foo")).run {
             assertEquals(3, allOccurrences().count())
@@ -381,28 +381,28 @@ class TestController {
         val (X, Y) = metaLogical<Int>("X", "Y")
         programWithRules(
             rule("first",
-                headKept( constraint("foo") ),
-                                                        body( constraint("bar", X),
-                                                              constraint("qux", Y),
-                                                              statement({ x, y -> eq(x, y) }, X, Y))
+                headKept(constraint("foo")),
+                body(constraint("bar", X),
+                    constraint("qux", Y),
+                    statement({ x, y -> eq(x, y) }, X, Y))
             ),
             rule("second",
-                headReplaced( constraint("qux", Y) ),
-                                                        body( constraint("expected1"),
-                                                              statement({ y -> y.set(123) }, Y))
+                headReplaced(constraint("qux", Y)),
+                body(constraint("expected1"),
+                    statement({ y -> y.set(123) }, Y))
             ),
             rule("third",
-                headReplaced( constraint("foo") ),
-                                                        body( constraint("unexpected"))
+                headReplaced(constraint("foo")),
+                body(constraint("unexpected"))
             ),
             rule("fourth",
-                headReplaced( constraint("foo") ),
-                headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 123 }, X)),
-                                                        body( constraint("expected2") )
+                headReplaced(constraint("foo")),
+                headReplaced(constraint("bar", X)), guard(expression({ x -> x.getNullable() == 123 }, X)),
+                body(constraint("expected2"))
             ),
             rule("fifth",
-                headKept( constraint("bar", X) ),
-                                                        body( constraint("expected3", X))
+                headKept(constraint("bar", X)),
+                body(constraint("expected3", X))
             )
         ).controller().evaluate(occurrence("foo")).run {
             assertEquals(3, allOccurrences().count())
@@ -419,35 +419,35 @@ class TestController {
         val (X, Y) = metaLogical<Int>("X", "Y")
         programWithRules(
             rule("first",
-                headKept( constraint("foo") ),
-                                                        body( constraint("bar", X),
-                                                              statement({ x, y -> eq(x, y) }, X, Y),
-                                                              constraint("qux", Y))
+                headKept(constraint("foo")),
+                body(constraint("bar", X),
+                    statement({ x, y -> eq(x, y) }, X, Y),
+                    constraint("qux", Y))
             ),
             rule("second",
-                headReplaced( constraint("qux", Y) ),
-                                                        body( constraint("expected1"),
-                                                              statement({ y -> y.set(123) }, Y))
+                headReplaced(constraint("qux", Y)),
+                body(constraint("expected1"),
+                    statement({ y -> y.set(123) }, Y))
             ),
             rule("third",
-                headReplaced( constraint("foo") ),
-                                                        body( constraint("unexpected"))
+                headReplaced(constraint("foo")),
+                body(constraint("unexpected"))
             ),
             rule("fourth",
-                headReplaced( constraint("foo") ),
-                headReplaced( constraint("bar", X) ),   guard(expression({ x -> x.getNullable() == 123 }, X)),
-                                                        body( constraint("expected2") )
+                headReplaced(constraint("foo")),
+                headReplaced(constraint("bar", X)), guard(expression({ x -> x.getNullable() == 123 }, X)),
+                body(constraint("expected2"))
             ),
             rule("fifth",
-                headKept( constraint("bar", X) ),
-                                                        body( constraint("expected3", X))
+                headKept(constraint("bar", X)),
+                body(constraint("expected3", X))
             )
         ).controller().evaluate(occurrence("foo")).run {
             assertEquals(3, allOccurrences().count())
-            assertEquals(setOf( ConstraintSymbol("expected1", 0),
-                                ConstraintSymbol("expected2", 0),
-                                ConstraintSymbol("expected3", 1)),
-                         allOccurrences().map { co -> co.constraint().symbol() }.toSet())
+            assertEquals(setOf(ConstraintSymbol("expected1", 0),
+                ConstraintSymbol("expected2", 0),
+                ConstraintSymbol("expected3", 1)),
+                allOccurrences().map { co -> co.constraint().symbol() }.toSet())
             val ex3 = allOccurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("expected3", 1) }.first()
             assertEquals(123, (ex3.arguments().first() as Logical<Int>).value())
         }
@@ -456,27 +456,27 @@ class TestController {
 
     @Test
     fun correctRulesOrder() {
-        val X= metaLogical<Int>("X")
+        val X = metaLogical<Int>("X")
 
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(1) }, X),
-                                                                    constraint("bar"),
-                                                                    constraint("foo", X) )
+                headReplaced(constraint("main")), body(statement({ x -> x.set(1) }, X),
+                constraint("bar"),
+                constraint("foo", X))
             ),
             rule("foo_if_zero",
-                headReplaced( constraint("foo", X) ),       guard(  expression({ x -> x.get() == 0 }, X) ),
-                                                            body(   constraint("foo_zero") )
+                headReplaced(constraint("foo", X)), guard(expression({ x -> x.get() == 0 }, X)),
+                body(constraint("foo_zero"))
             ),
             rule("foo_and_bar",
-                headReplaced( constraint("foo", X) ),
-                headKept( constraint("bar") ),
-                                                            body(   constraint("foo_and_bar") )
+                headReplaced(constraint("foo", X)),
+                headKept(constraint("bar")),
+                body(constraint("foo_and_bar"))
             ),
             rule("foo_if_non_zero",
-                headReplaced( constraint("foo", X) ),
-                                                            guard(  expression({ x -> x.get() != 0 }, X) ),
-                                                            body(   constraint("foo_non_zero") )
+                headReplaced(constraint("foo", X)),
+                guard(expression({ x -> x.get() != 0 }, X)),
+                body(constraint("foo_non_zero"))
             )
         ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf(ConstraintSymbol("bar", 0), ConstraintSymbol("foo_and_bar", 0)), constraintSymbols())
@@ -491,19 +491,19 @@ class TestController {
         val W = metaLogical<Int>("W")
 
         programWithRules(
-             rule("main",
-                headReplaced(constraint("main")),       body(   statement({ w -> w.set(42) }, W),
-                                                                    constraint("foo", W, "a{c}"),
-                                                                    constraint("foo", W, "a{b}"),
-                                                                    constraint("foo", W, "a{d}"))
-             ),
-             rule("expected",
-                 headReplaced(
-                     constraint("foo", X, "a{d}"),
-                     constraint("foo", Y, "a{b}"),
-                     constraint("foo", Z, "a{c}")),     body(constraint("done")))
-        
-         ).controller().evaluate(occurrence("main")).run {
+            rule("main",
+                headReplaced(constraint("main")), body(statement({ w -> w.set(42) }, W),
+                constraint("foo", W, "a{c}"),
+                constraint("foo", W, "a{b}"),
+                constraint("foo", W, "a{d}"))
+            ),
+            rule("expected",
+                headReplaced(
+                    constraint("foo", X, "a{d}"),
+                    constraint("foo", Y, "a{b}"),
+                    constraint("foo", Z, "a{c}")), body(constraint("done")))
+
+        ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf(ConstraintSymbol("done", 0)), constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol.symbol("done", 0)).count())
         }
@@ -511,38 +511,38 @@ class TestController {
 
     @Test
     fun reactivateOnUnion() {
-        val (X1,Y1,Z1) = metaLogical<Int>("X1", "Y1", "Z1")
-        val (X2,Y2,Z2) = metaLogical<Int>("X2", "Y2", "Z2")
-        val (X3,Y3,Z3) = metaLogical<Int>("X3", "Y3", "Z3")
+        val (X1, Y1, Z1) = metaLogical<Int>("X1", "Y1", "Z1")
+        val (X2, Y2, Z2) = metaLogical<Int>("X2", "Y2", "Z2")
+        val (X3, Y3, Z3) = metaLogical<Int>("X3", "Y3", "Z3")
         var count = 0
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),
-            body(
-                statement({ z -> z.set(0) }, Z1),
-                constraint("foo", X1, Z1),
-                constraint("foo", Y1, Z1),
-                statement({ x, y -> eq(x, y) }, X1, Y1) )
+                headReplaced(constraint("main")),
+                body(
+                    statement({ z -> z.set(0) }, Z1),
+                    constraint("foo", X1, Z1),
+                    constraint("foo", Y1, Z1),
+                    statement({ x, y -> eq(x, y) }, X1, Y1))
             ),
             rule("capture_foo",
-                headKept( constraint("foo", X2, Y2) ),
-            body(
-                statement({ z -> z.set(count++) }, Z2),
-                constraint("capture", Z2) )
+                headKept(constraint("foo", X2, Y2)),
+                body(
+                    statement({ z -> z.set(count++) }, Z2),
+                    constraint("capture", Z2))
             ),
             rule("capture_foo_foo",
-                headKept( constraint("foo", X3, Z3) ),
-                headReplaced( constraint("foo", Y3, Z3) ),
-            guard(
-                expression({ x, y ->  is_eq(x, y) }, X3, Y3)),
-            body(
-                constraint("replaced") )
+                headKept(constraint("foo", X3, Z3)),
+                headReplaced(constraint("foo", Y3, Z3)),
+                guard(
+                    expression({ x, y -> is_eq(x, y) }, X3, Y3)),
+                body(
+                    constraint("replaced"))
             )
         ).controller().evaluate(occurrence("main")).run {
-            assertEquals(setOf( ConstraintSymbol("foo", 2),
-                                ConstraintSymbol("capture", 1),
-                                ConstraintSymbol("replaced", 0)),
-                         constraintSymbols())
+            assertEquals(setOf(ConstraintSymbol("foo", 2),
+                ConstraintSymbol("capture", 1),
+                ConstraintSymbol("replaced", 0)),
+                constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol("foo", 2)).count())
             assertEquals(2, occurrences(ConstraintSymbol("capture", 1)).count())
             assertEquals(1, occurrences(ConstraintSymbol("replaced", 0)).count())
@@ -551,25 +551,25 @@ class TestController {
 
     @Test
     fun propagationHistory() {
-        val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
+        val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
-                                                                    constraint("foo", Y),
-                                                                    constraint("bar", Z),
-                                                                    // update Z's parent
-                                                                    statement({ x, z -> eq(x, z) }, X, Z) )
+                headReplaced(constraint("main")), body(statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
+                constraint("foo", Y),
+                constraint("bar", Z),
+                // update Z's parent
+                statement({ x, z -> eq(x, z) }, X, Z))
             ),
             rule("foobar",
-                headKept( constraint("foo", X) ),
-                headKept( constraint("bar", Y) ),
-                                                            body(   constraint("foobar") )
+                headKept(constraint("foo", X)),
+                headKept(constraint("bar", Y)),
+                body(constraint("foobar"))
             )
         ).controller().evaluate(occurrence("main")).run {
-            assertEquals(setOf( ConstraintSymbol("foo", 1),
-                                ConstraintSymbol("bar", 1),
-                                ConstraintSymbol("foobar", 0)),
-                         constraintSymbols())
+            assertEquals(setOf(ConstraintSymbol("foo", 1),
+                ConstraintSymbol("bar", 1),
+                ConstraintSymbol("foobar", 0)),
+                constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol("foo", 1)).count())
             assertEquals(1, occurrences(ConstraintSymbol("bar", 1)).count())
             assertEquals(1, occurrences(ConstraintSymbol("foobar", 0)).count())
@@ -581,19 +581,19 @@ class TestController {
         val X = metaLogical<Int>("X")
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   constraint("foo", X),
-                                                                        statement({ x -> eq(x, "doh") }, X)
-                                                                )
+                headReplaced(constraint("main")), body(constraint("foo", X),
+                statement({ x -> eq(x, "doh") }, X)
+            )
             ),
             rule("foobar",
-                headKept( constraint("foo", X) ),
-                guard( expression ({ x -> x.isBound }, X) ),
-                                                                body(   constraint("foobar") )
+                headKept(constraint("foo", X)),
+                guard(expression({ x -> x.isBound }, X)),
+                body(constraint("foobar"))
             )
         ).controller().evaluate(occurrence("main")).run {
-            assertEquals(setOf( ConstraintSymbol("foo", 1),
-                                ConstraintSymbol("foobar", 0)),
-                         constraintSymbols())
+            assertEquals(setOf(ConstraintSymbol("foo", 1),
+                ConstraintSymbol("foobar", 0)),
+                constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol("foo", 1)).count())
             assertEquals(1, occurrences(ConstraintSymbol("foobar", 0)).count())
         }
@@ -604,23 +604,23 @@ class TestController {
         val (X, Y) = metaLogical<Int>("X", "Y")
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   constraint("foo", X),
-                                                                        constraint("bar", Y),
-                                                                        statement({ x -> eq(x, "doh") }, X)
-                                                                )
+                headReplaced(constraint("main")), body(constraint("foo", X),
+                constraint("bar", Y),
+                statement({ x -> eq(x, "doh") }, X)
+            )
             ),
             rule("foobar",
-                headKept( constraint("foo", X),
-                          constraint("bar", Y)
+                headKept(constraint("foo", X),
+                    constraint("bar", Y)
                 ),
-                guard( expression ({ x -> x.isBound }, X) ),
-                                                                body(   constraint("foobar") )
+                guard(expression({ x -> x.isBound }, X)),
+                body(constraint("foobar"))
             )
         ).controller().evaluate(occurrence("main")).run {
-            assertEquals(setOf( ConstraintSymbol("foo", 1),
-                                ConstraintSymbol("bar", 1),
-                                ConstraintSymbol("foobar", 0)),
-                         constraintSymbols())
+            assertEquals(setOf(ConstraintSymbol("foo", 1),
+                ConstraintSymbol("bar", 1),
+                ConstraintSymbol("foobar", 0)),
+                constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol("foo", 1)).count())
             assertEquals(1, occurrences(ConstraintSymbol("bar", 1)).count())
             assertEquals(1, occurrences(ConstraintSymbol("foobar", 0)).count())
@@ -629,37 +629,37 @@ class TestController {
 
     @Test
     fun removeObserver() {
-        val (X1,Y1,Z1) = metaLogical<Int>("X1", "Y1", "Z1")
+        val (X1, Y1, Z1) = metaLogical<Int>("X1", "Y1", "Z1")
         val X2 = metaLogical<Int>("X2")
-        val (X3,Y3) = metaLogical<Int>("X3", "Y3")
+        val (X3, Y3) = metaLogical<Int>("X3", "Y3")
         val X4 = metaLogical<Int>("X4")
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X1, Y1),  // rank(X) = 1
-                                                                    statement({ x -> x.set(42) }, X1),
-                                                                    constraint("match", Z1, X1),
-                                                                    constraint("trigger", Z1)                )
+                headReplaced(constraint("main")), body(statement({ x, y -> eq(x, y) }, X1, Y1),  // rank(X) = 1
+                statement({ x -> x.set(42) }, X1),
+                constraint("match", Z1, X1),
+                constraint("trigger", Z1))
             ),
             rule("trigger",
-                headReplaced( constraint("trigger", X2) ),
-                                                            body(   constraint("foobar", X2) )
+                headReplaced(constraint("trigger", X2)),
+                body(constraint("foobar", X2))
             ),
             rule("nofoobar",
-                headReplaced( constraint("foobar", X3),
-                              constraint("match", X3, Y3) ),
-                                                            body(   constraint("expected"),
-                                                                    constraint("blah"),
-                                                                    statement({ x, z -> eq(x, z) }, X3, Y3) )
+                headReplaced(constraint("foobar", X3),
+                    constraint("match", X3, Y3)),
+                body(constraint("expected"),
+                    constraint("blah"),
+                    statement({ x, z -> eq(x, z) }, X3, Y3))
             ),
             rule("blah",
-                headReplaced( constraint("blah") ),
-                headReplaced( constraint("foobar", X4) ),
-                                                            body(   constraint("unexpected") )
+                headReplaced(constraint("blah")),
+                headReplaced(constraint("foobar", X4)),
+                body(constraint("unexpected"))
             )
         ).controller().evaluate(occurrence("main")).run {
-            assertEquals(setOf( ConstraintSymbol("blah", 0),
-                                ConstraintSymbol("expected", 0)),
-                         constraintSymbols())
+            assertEquals(setOf(ConstraintSymbol("blah", 0),
+                ConstraintSymbol("expected", 0)),
+                constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol("blah", 0)).count())
             assertEquals(1, occurrences(ConstraintSymbol("expected", 0)).count())
         }
@@ -667,26 +667,26 @@ class TestController {
 
     @Test
     fun reactivateOnUnionKeepValue() {
-        val (X,Y,Z) = metaLogical<Int>("X", "Y", "Z")
+        val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
-                                                                    statement({ z -> z.set(42) }, Z),
-                                                                    constraint("foo", Z),
-                                                                    statement({ x, z -> eq(x, z) }, X, Z) )
+                headReplaced(constraint("main")), body(statement({ x, y -> eq(x, y) }, X, Y),  // rank(X) = 1
+                statement({ z -> z.set(42) }, Z),
+                constraint("foo", Z),
+                statement({ x, z -> eq(x, z) }, X, Z))
             ),
             rule("capture_foo_free",
-                headKept( constraint("foo", X) ),           guard(  expression({ x -> x.getNullable() == null }, X) ),
-                                                            body(   constraint("free") )
+                headKept(constraint("foo", X)), guard(expression({ x -> x.getNullable() == null }, X)),
+                body(constraint("free"))
             ),
             rule("capture_foo_assigned",
-                headKept( constraint("foo", X) ),           guard(  expression({ x -> x.getNullable() != null }, X) ),
-                                                            body(   constraint("assigned") )
+                headKept(constraint("foo", X)), guard(expression({ x -> x.getNullable() != null }, X)),
+                body(constraint("assigned"))
             )
         ).controller().evaluate(occurrence("main")).run {
-            assertEquals(setOf( ConstraintSymbol("foo", 1),
-                                ConstraintSymbol("assigned", 0)),
-                         constraintSymbols())
+            assertEquals(setOf(ConstraintSymbol("foo", 1),
+                ConstraintSymbol("assigned", 0)),
+                constraintSymbols())
             assertEquals(1, occurrences(ConstraintSymbol("foo", 1)).count())
             assertEquals(1, occurrences(ConstraintSymbol("assigned", 0)).count())
         }
@@ -698,14 +698,14 @@ class TestController {
 
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
-                                                                    statement({ y -> y.set(7) }, Y),
-                                                                    constraint("aux", X, Y) )
+                headReplaced(constraint("main")), body(statement({ x -> x.set(7) }, X),
+                statement({ y -> y.set(7) }, Y),
+                constraint("aux", X, Y))
             ),
             rule("aux",
-                headReplaced( constraint("aux", X, Y) ),    body(       equals(X, Y),
-                                                                        constraint("expected") ),
-                                                            altBody(    constraint("unexpected") )
+                headReplaced(constraint("aux", X, Y)), body(equals(X, Y),
+                constraint("expected")),
+                altBody(constraint("unexpected"))
             )
         ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf(ConstraintSymbol("expected", 0)), constraintSymbols())
@@ -719,14 +719,14 @@ class TestController {
 
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
-                                                                    statement({ y -> y.set(13) }, Y),
-                                                                    constraint("aux", X, Y) )
+                headReplaced(constraint("main")), body(statement({ x -> x.set(7) }, X),
+                statement({ y -> y.set(13) }, Y),
+                constraint("aux", X, Y))
             ),
             rule("aux",
-                headReplaced( constraint("aux", X, Y) ),    body(       equals(X, Y),
-                                                                        constraint("unexpected") ),
-                                                            altBody(    constraint("expected") )
+                headReplaced(constraint("aux", X, Y)), body(equals(X, Y),
+                constraint("unexpected")),
+                altBody(constraint("expected"))
             )
         ).controller().evaluate(occurrence("main")).run {
             assertEquals(setOf(ConstraintSymbol("expected", 0)), constraintSymbols())
@@ -740,22 +740,21 @@ class TestController {
 
         programWithRules(
             rule("main",
-                headReplaced( constraint("main") ),         body(   statement({ x -> x.set(7) }, X),
-                                                                    statement({ y -> y.set(13) }, Y),
-                                                                    statement({ z -> z.set(17) }, Z),
-                                                                    constraint("aux", X, Y, Z) )
+                headReplaced(constraint("main")), body(statement({ x -> x.set(7) }, X),
+                statement({ y -> y.set(13) }, Y),
+                statement({ z -> z.set(17) }, Z),
+                constraint("aux", X, Y, Z))
             ),
             rule("aux",
-                headReplaced( constraint("aux", X, Y, Z) ), body(       equals(X, Y),
-                                                                        constraint("unexpected1") ),
-                                                            altBody(    equals(X, Z),
-                                                                        constraint("unexpected2") )
+                headReplaced(constraint("aux", X, Y, Z)), body(equals(X, Y),
+                constraint("unexpected1")),
+                altBody(equals(X, Z),
+                    constraint("unexpected2"))
             )
         ).controller().run {
             try {
                 evaluate(occurrence("main"))
-            }
-            finally {
+            } finally {
                 assertEquals(emptySet<ConstraintSymbol>(), storeView().constraintSymbols())
             }
         }
@@ -783,7 +782,7 @@ class TestController {
                     constraint("foo", term("bar", metaVar(X)))
                 ),
                 guard(
-                    expression ({ x, y ->  x.findRoot() == y.findRoot() }, X, Y)
+                    expression({ x, y -> x.findRoot() == y.findRoot() }, X, Y)
                 ),
                 body(
                     constraint("triggered1", X, Y)
@@ -795,15 +794,14 @@ class TestController {
                     constraint("foo", X)
                 ),
                 guard(
-                    expression ({ x, y -> !y.isBound && x.findRoot() == y.findRoot() }, X, Y)
+                    expression({ x, y -> !y.isBound && x.findRoot() == y.findRoot() }, X, Y)
                 ),
                 body(
                     constraint("triggered2", X, Y)
                 )
             )
         ).controller().run {
-            evaluate(occurrence("main"))
-            storeView().run {
+            evaluate(occurrence("main")).run {
                 val foo = ConstraintSymbol("foo", 1)
                 val t1 = ConstraintSymbol("triggered1", 2)
                 constraintSymbols() shouldBe setOf(t1, foo)
@@ -817,18 +815,20 @@ class TestController {
 
     @Test(expected = EvaluationFailureException::class)
     fun failureHandler() {
-        val failureHandler = object : FailureHandler {
+        val failureHandler = object : EvaluationFeedbackHandler {
             val failures = ArrayList<Pair<EvaluationFailure, String>>()
-            override fun handleFailure(failure: EvaluationFailure, rule: Rule): EvaluationFailure? {
-                failures.add(failure to rule.tag())
-                return failure
+            override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean {
+                if (feedback is EvaluationFailure) {
+                    failures.add(feedback to rule.tag())
+                }
+                return false
             }
         }
 
         programWithRules(
             rule("main",
                 headReplaced(constraint("main")),
-                body (
+                body(
                     constraint("foo")
                 )
             ),
@@ -859,19 +859,21 @@ class TestController {
 
     @Test
     fun failureHandlerRecover() {
-        val failureHandler = object : FailureHandler {
+        val failureHandler = object : EvaluationFeedbackHandler {
             val failures = ArrayList<Pair<EvaluationFailure, String>>()
-            override fun handleFailure(failure: EvaluationFailure, rule: Rule): EvaluationFailure? {
-                failures.add(failure to rule.tag())
-                if (rule.tag()?.startsWith("recoverable") == true) return null
-                return failure
+            override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean {
+                if (feedback is EvaluationFailure) {
+                    failures.add(feedback to rule.tag())
+                    return (rule.tag()?.startsWith("recoverable") == true)
+                }
+                return false
             }
         }
 
         programWithRules(
             rule("main",
                 headReplaced(constraint("main")),
-                body (
+                body(
                     constraint("foo")
                 )
             ),
@@ -889,7 +891,7 @@ class TestController {
                     constraint("recovered", 2)
                 )
             ),
-            rule ("recoverable",
+            rule("recoverable",
                 headReplaced(constraint("bar")),
                 body(
                     constraint("bazz")
@@ -902,14 +904,13 @@ class TestController {
                 )
             )
         ).controllerWithFeedback(failureHandler).run {
-            evaluate(occurrence("main"))
-            storeView().run {
+            evaluate(occurrence("main")).run {
                 val recovered = ConstraintSymbol("recovered", 1)
                 constraintSymbols() shouldBe setOf(recovered)
                 occurrences(recovered).map { it.arguments()[0] }.toSet() shouldBe setOf(1, 2)
             }
         }
-        failureHandler.failures.map { (f, t) -> "${f.cause.message}@$t"}.toList() shouldBe
+        failureHandler.failures.map { (f, t) -> "${f.cause.message}@$t" }.toList() shouldBe
             listOf("handled@rule3", "handled@recoverable")
     }
 
@@ -926,7 +927,7 @@ class TestController {
         programWithRules(
             rule("main",
                 headReplaced(constraint("main")),
-                body (
+                body(
                     constraint("foo")
                 )
             ),
@@ -949,8 +950,8 @@ class TestController {
 
         }
 
-        feedbackHandler.feedbacks.map { (f, t) -> "${f.message}@$t"}.toList() shouldBe
+        feedbackHandler.feedbacks.map { (f, t) -> "${f.message}@$t" }.toList() shouldBe
             listOf("catchme@rule1", "propagateme@rule2", "propagateme@rule1", "propagateme@main")
-        }
+    }
 }
 
