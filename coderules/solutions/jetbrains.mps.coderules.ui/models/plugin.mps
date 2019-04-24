@@ -496,11 +496,10 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="6332851714983831325" name="jetbrains.mps.baseLanguage.logging.structure.MsgStatement" flags="ng" index="2xdQw9">
+        <property id="6332851714983843871" name="severity" index="2xdLsb" />
+        <child id="5721587534047265374" name="message" index="9lYJi" />
+        <child id="5721587534047265375" name="throwable" index="9lYJj" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -11996,13 +11995,12 @@
                   </node>
                 </node>
               </node>
-              <node concept="34ab3g" id="428_4iYyOsr" role="3cqZAp">
-                <property role="35gtTG" value="warn" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="428_4iYyOss" role="34bqiv">
+              <node concept="2xdQw9" id="YbzkzLtMB_" role="3cqZAp">
+                <property role="2xdLsb" value="warn" />
+                <node concept="Xl_RD" id="428_4iYyOss" role="9lYJi">
                   <property role="Xl_RC" value="exception while extracting presentation" />
                 </node>
-                <node concept="37vLTw" id="428_4iYyOst" role="34bMjA">
+                <node concept="37vLTw" id="428_4iYyOst" role="9lYJj">
                   <ref role="3cqZAo" node="428_4iYyOse" resolve="e" />
                 </node>
               </node>
@@ -24464,13 +24462,12 @@
                 </node>
               </node>
               <node concept="3clFbS" id="2HYHa0WQNUj" role="TDEfX">
-                <node concept="34ab3g" id="2HYHa0WQOxa" role="3cqZAp">
-                  <property role="35gtTG" value="warn" />
-                  <property role="34fQS0" value="true" />
-                  <node concept="Xl_RD" id="2HYHa0WQOxc" role="34bqiv">
+                <node concept="2xdQw9" id="YbzkzLtSD1" role="3cqZAp">
+                  <property role="2xdLsb" value="warn" />
+                  <node concept="Xl_RD" id="2HYHa0WQOxc" role="9lYJi">
                     <property role="Xl_RC" value="Error computing cellinfo" />
                   </node>
-                  <node concept="37vLTw" id="2HYHa0WQOxe" role="34bMjA">
+                  <node concept="37vLTw" id="2HYHa0WQOxe" role="9lYJj">
                     <ref role="3cqZAo" node="2HYHa0WQNUf" resolve="ex" />
                   </node>
                 </node>
