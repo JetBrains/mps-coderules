@@ -17,6 +17,7 @@
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="98" ref="b189d6c6-9397-4d64-88af-1ac73760a4f5/java:org.mockito.stubbing(jetbrains.mps.logic.test/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
+    <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -103,6 +104,7 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
@@ -3311,19 +3313,15 @@
       </node>
       <node concept="3Tm1VV" id="2DKqMqOqk7n" role="1B3o_S" />
       <node concept="3clFbS" id="2DKqMqOqk7o" role="3clF47">
-        <node concept="3clFbF" id="6yEjedm5aa$" role="3cqZAp">
-          <node concept="2ShNRf" id="6yEjedm5aaw" role="3clFbG">
-            <node concept="1pGfFk" id="6yEjedm5bMh" role="2ShVmc">
-              <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
-              <node concept="10QFUN" id="6yEjedm5h65" role="37wK5m">
-                <node concept="3uibUv" id="6yEjedm5hgr" role="10QFUM">
-                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-                </node>
-                <node concept="10Nm6u" id="6yEjedm5h64" role="10QFUP" />
-              </node>
-              <node concept="3uibUv" id="6yEjedm5cAk" role="1pMfVU">
+        <node concept="3clFbF" id="YbzkzLjwMU" role="3cqZAp">
+          <node concept="2YIFZM" id="YbzkzLjwMV" role="3clFbG">
+            <ref role="37wK5l" to="z9ve:~LogicalImplKt.anonLogical(java.lang.Object)" resolve="anonLogical" />
+            <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+            <node concept="10QFUN" id="YbzkzLjzs_" role="37wK5m">
+              <node concept="3uibUv" id="YbzkzLjzsA" role="10QFUM">
                 <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
               </node>
+              <node concept="10Nm6u" id="YbzkzLjzsB" role="10QFUP" />
             </node>
           </node>
         </node>
@@ -3350,23 +3348,45 @@
       </node>
       <node concept="3Tm1VV" id="2DKqMqOq_PG" role="1B3o_S" />
       <node concept="3clFbS" id="2DKqMqOq_PH" role="3clF47">
-        <node concept="3clFbF" id="6yEjedm5dee" role="3cqZAp">
-          <node concept="2ShNRf" id="6yEjedm5def" role="3clFbG">
-            <node concept="1pGfFk" id="6yEjedm5deg" role="2ShVmc">
-              <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String,java.lang.Object)" resolve="LogicalImpl" />
-              <node concept="37vLTw" id="6yEjedm5dzi" role="37wK5m">
+        <node concept="3cpWs8" id="YbzkzLjZPR" role="3cqZAp">
+          <node concept="3cpWsn" id="YbzkzLjZPS" role="3cpWs9">
+            <property role="TrG5h" value="nl" />
+            <node concept="3uibUv" id="YbzkzLjZPM" role="1tU5fm">
+              <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+              <node concept="3uibUv" id="YbzkzLjZPP" role="11_B2D">
+                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="YbzkzLjZPT" role="33vP2m">
+              <ref role="37wK5l" to="z9ve:~LogicalImplKt.namedLogical(java.lang.String)" resolve="namedLogical" />
+              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+              <node concept="37vLTw" id="YbzkzLjZPU" role="37wK5m">
                 <ref role="3cqZAo" node="2DKqMqOq_P$" resolve="name" />
               </node>
-              <node concept="37vLTw" id="6yEjedm5dC2" role="37wK5m">
-                <ref role="3cqZAo" node="2DKqMqOq_PA" resolve="tf" />
-              </node>
-              <node concept="3uibUv" id="6yEjedm5dei" role="1pMfVU">
+              <node concept="3uibUv" id="YbzkzLjZPV" role="3PaCim">
                 <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="6yEjedm5d2V" role="3cqZAp" />
+        <node concept="3clFbF" id="YbzkzLjKWj" role="3cqZAp">
+          <node concept="2OqwBi" id="YbzkzLk5w6" role="3clFbG">
+            <node concept="37vLTw" id="YbzkzLjZPW" role="2Oq$k0">
+              <ref role="3cqZAo" node="YbzkzLjZPS" resolve="nl" />
+            </node>
+            <node concept="liA8E" id="YbzkzLk7wn" role="2OqNvi">
+              <ref role="37wK5l" to="bj13:~JoinableLogical.setValue(java.lang.Object)" resolve="setValue" />
+              <node concept="37vLTw" id="YbzkzLkaf1" role="37wK5m">
+                <ref role="3cqZAo" node="2DKqMqOq_PA" resolve="tf" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="YbzkzLkd8a" role="3cqZAp">
+          <node concept="37vLTw" id="YbzkzLkd88" role="3clFbG">
+            <ref role="3cqZAo" node="YbzkzLjZPS" resolve="nl" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="2DKqMqOqk3v" role="1B3o_S" />
@@ -3773,16 +3793,12 @@
       </node>
       <node concept="3Tm6S6" id="6yEjedm6GE4" role="1B3o_S" />
       <node concept="3clFbS" id="6yEjedm6G_T" role="3clF47">
-        <node concept="3clFbF" id="6yEjedm6GSD" role="3cqZAp">
-          <node concept="2ShNRf" id="6yEjedm6GSB" role="3clFbG">
-            <node concept="1pGfFk" id="6yEjedm6H80" role="2ShVmc">
-              <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.Object)" resolve="LogicalImpl" />
-              <node concept="37vLTw" id="6yEjedm6Ha_" role="37wK5m">
-                <ref role="3cqZAo" node="6yEjedm6GJE" resolve="tf" />
-              </node>
-              <node concept="3uibUv" id="5cDlfXt8XHR" role="1pMfVU">
-                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-              </node>
+        <node concept="3clFbF" id="YbzkzLfoao" role="3cqZAp">
+          <node concept="2YIFZM" id="YbzkzLjlXO" role="3clFbG">
+            <ref role="37wK5l" to="z9ve:~LogicalImplKt.anonLogical(java.lang.Object)" resolve="anonLogical" />
+            <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+            <node concept="37vLTw" id="YbzkzLjlXP" role="37wK5m">
+              <ref role="3cqZAo" node="6yEjedm6GJE" resolve="tf" />
             </node>
           </node>
         </node>

@@ -41,6 +41,7 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
+    <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -173,6 +174,7 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
+        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
@@ -1158,14 +1160,14 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="3F6vMxqjuT0" role="3cqZAp">
-                <node concept="2OqwBi" id="3F6vMxqjuT1" role="3clFbG">
-                  <node concept="10M0yZ" id="5cDlfXt5oVE" role="2Oq$k0">
-                    <ref role="3cqZAo" to="zx3l:~EvaluationSessionImpl.Companion" resolve="Companion" />
-                    <ref role="1PxDUh" to="zx3l:~EvaluationSessionImpl" resolve="EvaluationSessionImpl" />
+              <node concept="3clFbF" id="YbzkzLckMI" role="3cqZAp">
+                <node concept="2OqwBi" id="YbzkzLcpjZ" role="3clFbG">
+                  <node concept="10M0yZ" id="YbzkzLcocA" role="2Oq$k0">
+                    <ref role="3cqZAo" to="zx3l:~ReactorLifecycle.Companion" resolve="Companion" />
+                    <ref role="1PxDUh" to="zx3l:~ReactorLifecycle" resolve="ReactorLifecycle" />
                   </node>
-                  <node concept="liA8E" id="3F6vMxqjuT3" role="2OqNvi">
-                    <ref role="37wK5l" to="zx3l:~EvaluationSessionImpl$Companion.init():void" resolve="init" />
+                  <node concept="liA8E" id="YbzkzLcu3A" role="2OqNvi">
+                    <ref role="37wK5l" to="zx3l:~ReactorLifecycle$Companion.init()" resolve="init" />
                   </node>
                 </node>
               </node>
@@ -1270,14 +1272,14 @@
                   <node concept="3clFbH" id="1CcQBrQslUW" role="3cqZAp" />
                 </node>
                 <node concept="3clFbS" id="6$7vuu2uPZR" role="2GVbov">
-                  <node concept="3clFbF" id="6$7vuu2uR6h" role="3cqZAp">
-                    <node concept="2OqwBi" id="6$7vuu2uR6i" role="3clFbG">
-                      <node concept="10M0yZ" id="5cDlfXt5oWB" role="2Oq$k0">
-                        <ref role="3cqZAo" to="zx3l:~EvaluationSessionImpl.Companion" resolve="Companion" />
-                        <ref role="1PxDUh" to="zx3l:~EvaluationSessionImpl" resolve="EvaluationSessionImpl" />
+                  <node concept="3clFbF" id="YbzkzLc$Yp" role="3cqZAp">
+                    <node concept="2OqwBi" id="YbzkzLc$Yq" role="3clFbG">
+                      <node concept="10M0yZ" id="YbzkzLc$Yr" role="2Oq$k0">
+                        <ref role="3cqZAo" to="zx3l:~ReactorLifecycle.Companion" resolve="Companion" />
+                        <ref role="1PxDUh" to="zx3l:~ReactorLifecycle" resolve="ReactorLifecycle" />
                       </node>
-                      <node concept="liA8E" id="6$7vuu2uR6k" role="2OqNvi">
-                        <ref role="37wK5l" to="zx3l:~EvaluationSessionImpl$Companion.deinit():void" resolve="deinit" />
+                      <node concept="liA8E" id="YbzkzLcDvv" role="2OqNvi">
+                        <ref role="37wK5l" to="zx3l:~ReactorLifecycle$Companion.deinit()" resolve="deinit" />
                       </node>
                     </node>
                   </node>
@@ -2361,12 +2363,14 @@
             <node concept="2YIFZM" id="3gNap3fNlJl" role="10QFUP">
               <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
               <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-              <node concept="2ShNRf" id="6N2bvv_ux$A" role="37wK5m">
-                <node concept="1pGfFk" id="6N2bvv_ux$B" role="2ShVmc">
-                  <ref role="37wK5l" to="zx3l:~LogicalImpl.&lt;init&gt;(java.lang.String)" resolve="LogicalImpl" />
-                  <node concept="37vLTw" id="6N2bvv_ux$C" role="37wK5m">
-                    <ref role="3cqZAo" node="6N2bvv_ux$t" resolve="name" />
-                  </node>
+              <node concept="2YIFZM" id="YbzkzLdcYi" role="37wK5m">
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.namedLogical(java.lang.String)" resolve="namedLogical" />
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <node concept="37vLTw" id="YbzkzLdgPX" role="37wK5m">
+                  <ref role="3cqZAo" node="6N2bvv_ux$t" resolve="name" />
+                </node>
+                <node concept="3uibUv" id="YbzkzLd_aB" role="3PaCim">
+                  <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
                 </node>
               </node>
             </node>

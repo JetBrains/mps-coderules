@@ -3,7 +3,6 @@ configurations {
 }
 
 dependencies {
-    logicReactor "jetbrains.mps.logic.conreactor:conreactor-api:${conreactorVersion}@jar"
     logicReactor "jetbrains.mps.logic.conreactor:conreactor-core:${conreactorVersion}@jar"
     logicReactor "org.jetbrains.kotlin:kotlin-runtime:${kotlinVersion}@jar"
     logicReactor "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}@jar"
