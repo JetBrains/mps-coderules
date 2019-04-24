@@ -2561,7 +2561,10 @@
   
   <target name="buildDependents" />
   
-  <target name="fetchDependencies" />
+  <target name="fetchDependencies">
+    <mkdir dir="${build.tmp}/deps/mpsWorkbench/mps-workbench.jar" />
+    <unzip src="${artifacts.mps}/lib/mps-workbench.jar" dest="${build.tmp}/deps/mpsWorkbench/mps-workbench.jar" />
+  </target>
   
   <target name="build" depends="assemble" />
   
@@ -2585,10 +2588,10 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" skipUnmodifiedModels="${mps.generator.skipUnmodifiedModels}">
-      <plugin path="${artifacts.mps}/lib/mps-workbench.jar" />
       <plugin path="${artifacts.mps}/plugins/mps-build" />
       <plugin path="${artifacts.mps}/plugins/mps-core" />
       <plugin path="${artifacts.mps}/plugins/mps-testing" />
+      <plugin path="${build.tmp}/deps/mpsWorkbench/mps-workbench.jar/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -2614,7 +2617,6 @@
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.jar" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.templates.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.analyzers.runtime.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.access.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
@@ -4235,7 +4237,6 @@
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.jar" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.templates.jar" />
-      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.analyzers.runtime.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.access.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
@@ -4315,10 +4316,10 @@
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
-      <pathelement location="${artifacts.mps}/lib/mps-workbench.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-build" />
       <pathelement location="${artifacts.mps}/plugins/mps-core" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing" />
+      <pathelement location="${build.tmp}/deps/mpsWorkbench/mps-workbench.jar/META-INF/plugin.xml/../.." />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
     <path id="mps.tests.path">
