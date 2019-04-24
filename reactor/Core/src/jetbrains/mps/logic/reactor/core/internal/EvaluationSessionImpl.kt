@@ -31,9 +31,9 @@ import com.github.andrewoma.dexx.collection.List as PList
  */
 
 internal class EvaluationSessionImpl private constructor (
-                                        program: Program,
-                                        trace: EvaluationTrace,
-                                        sessionSolver: SessionSolver? = null) : EvaluationSessionEx(program, trace, sessionSolver)
+    program: Program,
+    trace: EvaluationTrace,
+    sessionSolver: SessionSolver? = null) : EvaluationSessionEx(program, trace, sessionSolver)
 {
 
     lateinit var controller: ControllerImpl

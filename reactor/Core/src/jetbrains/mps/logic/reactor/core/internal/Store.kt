@@ -64,7 +64,7 @@ internal class Store : LogicalObserver {
             storeItems.put(occ, item)
             occ.arguments().forEach { arg ->
                 when (arg) {
-                    is Logical<*>   -> {
+                    is Logical<*> -> {
                         l2o = l2o.put(IdWrapper(arg.findRoot()),
                                       l2o[IdWrapper(arg.findRoot())]?.add(item) ?: singletonIdSet(item))
                     }
@@ -114,7 +114,7 @@ internal class Store : LogicalObserver {
         for (arg in occ.arguments()) {
             val value = if (arg is Logical<*> && arg.isBound) arg.findRoot().value() else arg
             when (value) {
-                is Logical<*>   -> {
+                is Logical<*> -> {
                     // free logical
                     val argId = IdWrapper(value.findRoot())
                     this.logical2occurrences = logical2occurrences.put(argId,
@@ -136,7 +136,7 @@ internal class Store : LogicalObserver {
 
         for (arg in occ.arguments()) {
             when (arg) {
-                is Logical<*>   -> {
+                is Logical<*> -> {
                     val argId = IdWrapper(arg.findRoot())
                     logical2occurrences[argId]?.remove(occ)?.let { newList ->
                         this.logical2occurrences = if (newList.isEmpty) {

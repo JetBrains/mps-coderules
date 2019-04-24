@@ -16,7 +16,6 @@
 
 package jetbrains.mps.unification.test;
 
-import jetbrains.mps.logic.reactor.core.LogicalObserverKt;
 import jetbrains.mps.logic.reactor.core.internal.LogicalImplKt;
 import jetbrains.mps.logic.reactor.logical.JoinableLogical;
 import jetbrains.mps.logic.reactor.logical.MetaLogical;

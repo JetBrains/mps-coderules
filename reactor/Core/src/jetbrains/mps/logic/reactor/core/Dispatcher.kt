@@ -18,7 +18,6 @@ package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.internal.MatchRuleImpl
-import jetbrains.mps.logic.reactor.core.internal.RuleMatcherImpl
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.program.Rule

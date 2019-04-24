@@ -17,11 +17,6 @@
     <dependencies>
         <dependency>
             <groupId>jetbrains.mps.logic.conreactor</groupId>
-            <artifactId>conreactor-api</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>jetbrains.mps.logic.conreactor</groupId>
             <artifactId>conreactor-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>

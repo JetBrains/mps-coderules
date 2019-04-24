@@ -18,8 +18,6 @@ package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.core.internal.LogicalImpl
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.MetaLogical
-import jetbrains.mps.logic.reactor.logical.JoinableLogical
 
 /**
  * An observer interface of a [Logical] instance.

@@ -96,7 +96,6 @@
 
 
     <modules>
-        <module>API</module>
         <module>Core</module>
         <module>Test</module>
     </modules>

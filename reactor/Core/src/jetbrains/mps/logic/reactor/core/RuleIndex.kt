@@ -134,7 +134,7 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
             for ((idx, arg) in cst.arguments().withIndex()) {
                 val value2indices = anySelectors[idx]
                 when (arg) {
-                    is MetaLogical<*>   ->
+                    is MetaLogical<*> ->
                                             // all values should be accepted by a meta logical
                                             wildcardSelectors[idx].set(ruleBit)
                     is Term             ->

@@ -15,11 +15,6 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>jetbrains.mps.logic.conreactor</groupId>
-            <artifactId>conreactor-api</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
     </dependencies>
 
     <build>

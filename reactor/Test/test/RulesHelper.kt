@@ -2,9 +2,7 @@ import jetbrains.mps.logic.reactor.core.FrameObservable
 import jetbrains.mps.logic.reactor.core.LogicalObserver
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.occurrence
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
 import solver.TestEqPredicate

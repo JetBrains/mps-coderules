@@ -31,9 +31,9 @@ import jetbrains.mps.logic.reactor.program.Constraint
  * @author Fedor Isakov
  */
 data class Occurrence (val constraint: Constraint,
-                               val logicalContext: LogicalContext,
-                               val arguments: List<*>,
-                               val currentFrame: () -> FrameObservable) :
+                       val logicalContext: LogicalContext,
+                       val arguments: List<*>,
+                       val currentFrame: () -> FrameObservable) :
     ConstraintOccurrence,
     LogicalObserver
 {
@@ -82,12 +82,12 @@ data class Occurrence (val constraint: Constraint,
 }
 
 fun Constraint.occurrence(arguments: List<*>,
-                          currentFrame: () -> FrameObservable,
-                          logicalContext: LogicalContext): Occurrence =
+                                                              currentFrame: () -> FrameObservable,
+                                                              logicalContext: LogicalContext): Occurrence =
     Occurrence(this, logicalContext, arguments, currentFrame)
 
 fun Constraint.occurrence(arguments: List<*>,
-                          currentFrame: () -> FrameObservable): Occurrence =
+                                                              currentFrame: () -> FrameObservable): Occurrence =
     Occurrence(this, noLogicalContext, arguments, currentFrame)
 
 private val noLogicalContext: LogicalContext = object: LogicalContext {

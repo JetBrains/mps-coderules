@@ -16,9 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.StoreView
-import jetbrains.mps.logic.reactor.program.Predicate
 
 /**
  * Allows access to the internal mechanics of the reactor.

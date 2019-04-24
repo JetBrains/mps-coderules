@@ -83,7 +83,7 @@ internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : Occurren
                 }
             else                ->
                 when {
-                    trg is Logical<*>           -> ptnMatchAny(ptn, resolve(trg))
+                    trg is Logical<*> -> ptnMatchAny(ptn, resolve(trg))
                     else                        ->
                                                     // compare two arbitrary values
                                                     (ptn == trg)
@@ -93,7 +93,7 @@ internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : Occurren
 
     private fun matchAny(left: Any?, right: Any?): Boolean =
         when (left) {
-            is Logical<*>   ->
+            is Logical<*> ->
                 // match logical or its value
                 matchLogical(left.findRoot(), right)
             is Term         ->
@@ -103,7 +103,7 @@ internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : Occurren
                 }
             else            ->
                 when {
-                    right is Logical<*>             -> matchAny(left, resolve(right))
+                    right is Logical<*> -> matchAny(left, resolve(right))
                     else                            ->  // compare two arbitrary values
                                                         (left == right)
                 }

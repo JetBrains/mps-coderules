@@ -19,9 +19,11 @@ package jetbrains.mps.unification.test;
 import jetbrains.mps.logic.reactor.logical.Logical;
 import jetbrains.mps.logic.reactor.logical.LogicalOwner;
 import jetbrains.mps.unification.Term;
-import sun.rmi.log.LogOutputStream;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by fyodor on 09.06.2014.

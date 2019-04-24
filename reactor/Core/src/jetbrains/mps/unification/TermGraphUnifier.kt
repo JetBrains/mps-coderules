@@ -298,7 +298,7 @@ class TermGraphUnifier {
     private fun idSymbol(symbol: Any): Any =
         when (symbol) {
             is String       -> symbol.intern()
-            is Logical<*>   -> symbol.findRoot()
+            is Logical<*> -> symbol.findRoot()
             else            -> symbol
         }
 
