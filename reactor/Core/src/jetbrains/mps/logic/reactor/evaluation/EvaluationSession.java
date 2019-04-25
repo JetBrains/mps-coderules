@@ -30,43 +30,20 @@ import jetbrains.mps.logic.reactor.program.Program;
  */
 public abstract class EvaluationSession {
 
-    private static EvaluationSession.Backend<? extends EvaluationSession> ourBackend;
-
     @SuppressWarnings("unchecked")
     public static <S extends EvaluationSession> S current(Class<S> sessionClass) {
         return (S) current();
     }
 
     public static EvaluationSession current() {
-        if (ourBackend == null) {
-            throw new IllegalStateException("no backend");
-        }
+        if (ourBackend == null) throw new IllegalStateException("no backend");
         return ourBackend.current();
     }
 
     public static EvaluationSession.Config newSession(Program program) {
-        if (ourBackend == null) {
-            throw new IllegalStateException("no backend");
-        }
+        if (ourBackend == null) throw new IllegalStateException("no backend");
         return ourBackend.createConfig(program);
     }
-
-    protected static void setBackend(EvaluationSession.Backend<? extends EvaluationSession> backend) {
-        if (ourBackend != null) {
-            throw new IllegalStateException("backend already assigned");
-        }
-        ourBackend = backend;
-    }
-
-    protected static void clearBackend(EvaluationSession.Backend<? extends EvaluationSession> backend) {
-        if (ourBackend != backend) {
-            throw new IllegalStateException("illegal access");
-        }
-        ourBackend = null;
-    }
-
-    @Deprecated
-    public abstract SessionSolver sessionSolver();
 
     public abstract Program program();
 
@@ -74,37 +51,69 @@ public abstract class EvaluationSession {
 
     public abstract void tell(PredicateInvocation invocation);
 
-    public interface Backend<S extends EvaluationSession> {
+    public abstract <T> T parameter(ParameterKey<T> key);
+
+    public static class ParameterKey<T> {
+
+        private final String name;
+
+        public static <T> ParameterKey<T> of(String name, Class<T> klass) {
+            return new ParameterKey<T>(name);
+        }
+
+        private ParameterKey(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            ParameterKey<?> that = (ParameterKey<?>) o;
+            return name != null ? name.equals(that.name) : that.name == null;
+        }
+
+        @Override
+        public int hashCode() {
+            return name != null ? name.hashCode() : 0;
+        }
+    }
+
+    public static abstract class Config {
+
+        public abstract <T> Config withParameter(ParameterKey<T> key, T value);
+
+        public abstract Config withTrace(EvaluationTrace computingTracer);
+
+        public abstract Config withStoreView(StoreView storeView);
+
+        public abstract Config withFeedbackHandler(EvaluationFeedbackHandler handler);
+
+        @Deprecated
+        public abstract Config withParam(String key, Object param);
+
+        public abstract EvaluationResult start();
+
+    }
+    
+    protected static void setBackend(EvaluationSession.Backend<? extends EvaluationSession> backend) {
+        if (ourBackend != null) throw new IllegalStateException("backend already assigned");
+        ourBackend = backend;
+    }
+
+    protected static void clearBackend(EvaluationSession.Backend<? extends EvaluationSession> backend) {
+        if (ourBackend != backend) throw new IllegalStateException("illegal access");
+        ourBackend = null;
+    }
+
+    protected interface Backend<S extends EvaluationSession> {
 
         S current();
 
         EvaluationSession.Config createConfig(Program program);
 
     }
-
-    public static abstract class Config {
-
-        public EvaluationSession.Config withTrace(EvaluationTrace computingTracer) {
-            return this;
-        }
-
-        public EvaluationSession.Config withStoreView(StoreView storeView) {
-            return this;
-        }
-
-        public EvaluationSession.Config withFeedbackHandler(EvaluationFeedbackHandler handler) {
-            return this;
-        }
-
-        public EvaluationSession.Config withParam(String key, Object param) {
-            return this;
-        }
-
-        @Deprecated
-        public abstract EvaluationResult start(SessionSolver sessionSolver);
-
-        public abstract EvaluationResult start();
-
-    }
-
+    
+    private static EvaluationSession.Backend<? extends EvaluationSession> ourBackend;
 }

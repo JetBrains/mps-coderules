@@ -33,7 +33,7 @@ import com.github.andrewoma.dexx.collection.List as PList
 internal class EvaluationSessionImpl private constructor (
     program: Program,
     trace: EvaluationTrace,
-    sessionSolver: SessionSolver? = null) : EvaluationSessionEx(program, trace, sessionSolver)
+    params: Map<ParameterKey<*>, *>?) : EvaluationSessionEx(program, trace, params)
 {
 
     lateinit var controller: ControllerImpl
@@ -46,8 +46,11 @@ internal class EvaluationSessionImpl private constructor (
     }
 
     private class Config(val program: Program) : EvaluationSession.Config() {
-        val parameters = HashMap<String, Any?>()
+
+        val parameters = HashMap<ParameterKey<*>, Any>()
+
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
+
         var storeView: StoreView? = null
 
         var feedbackHandler: EvaluationFeedbackHandler? = null
@@ -68,28 +71,30 @@ internal class EvaluationSessionImpl private constructor (
         }
 
         override fun withParam(key: String, param: Any): EvaluationSession.Config {
-            this.parameters.put(key, param)
+            this.parameters.put(ParameterKey.of(key, Any::class.java), param)
             return this
         }
 
-        override fun start(): EvaluationResult = start(SessionSolver())
+        override fun <T> withParameter(key: ParameterKey<T>, value: T): EvaluationSession.Config {
+            this.parameters.put(key, value as Any)
+            return this
+        }
 
-        override fun start(sessionSolver: SessionSolver?): EvaluationResult {
+        override fun start(): EvaluationResult {
             var session = Backend.ourBackend.ourSession.get()
             if (session != null) throw IllegalStateException("session already active")
-
-            sessionSolver?.init(evaluationTrace)
-
+            
             @Suppress("UNCHECKED_CAST")
-            val durations =
-                parameters.get("profiling.data") as MutableMap<String, String>?
+            val durations = parameters[ParameterKey.of("profiling.data", MutableMap::class.java)]
+                as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
 
-            session = EvaluationSessionImpl(program, evaluationTrace, sessionSolver)
+            session = EvaluationSessionImpl(program, evaluationTrace, parameters)
             Backend.ourBackend.ourSession.set(session)
             var failure: EvaluationFailure? = null
             try {
-                val state = session.launch(parameters["main"] as Constraint, profiler, storeView, feedbackHandler)
+                val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
+                val state = session.launch(main, profiler, storeView, feedbackHandler)
                 if (state is FAILED) {
                     failure = state.failure
                 }

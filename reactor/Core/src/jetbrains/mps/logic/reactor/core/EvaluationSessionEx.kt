@@ -19,7 +19,6 @@ package jetbrains.mps.logic.reactor.core
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
-import jetbrains.mps.logic.reactor.evaluation.SessionSolver
 import jetbrains.mps.logic.reactor.program.Program
 
 /**
@@ -28,13 +27,15 @@ import jetbrains.mps.logic.reactor.program.Program
  */
 abstract class EvaluationSessionEx(val program: Program,
                                    val trace: EvaluationTrace,
-                                   val sessionSolver: SessionSolver? = null) : EvaluationSession() {
+                                   val params: Map<ParameterKey<*>, *>?) : EvaluationSession()
+{
 
     abstract fun controller(): Controller
 
     override fun program(): Program = program
 
-    override fun sessionSolver(): SessionSolver = sessionSolver ?: SessionSolver()
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
     override fun ask(invocation: PredicateInvocation): Boolean {
         val solver = invocation.predicate().symbol().solver()

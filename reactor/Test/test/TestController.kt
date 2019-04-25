@@ -34,7 +34,7 @@ class TestController {
     }
 
     private class MockSession(program: Program) :
-        EvaluationSessionEx(program, EvaluationTrace.NULL) {
+        EvaluationSessionEx(program, EvaluationTrace.NULL, params = mapOf<ParameterKey<*>, Any>()) {
         lateinit var controller: Controller
 
         override fun controller(): Controller = controller
