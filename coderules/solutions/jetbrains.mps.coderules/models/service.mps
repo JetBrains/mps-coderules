@@ -31,6 +31,7 @@
     <import index="e0w6" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.observers(jetbrains.mps.coderules/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
+    <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1837,7 +1838,7 @@
                                 <ref role="37wK5l" to="hano:4F3SXIF5Xa$" resolve="ProgramEvaluator" />
                                 <node concept="3Tm1VV" id="7WKNeR9ynVB" role="1B3o_S" />
                                 <node concept="1rXfSq" id="7WKNeR9_X4s" role="37wK5m">
-                                  <ref role="37wK5l" node="23c4kVtaQus" resolve="createSessionSolver" />
+                                  <ref role="37wK5l" node="23c4kVtaQus" resolve="createReporting" />
                                 </node>
                                 <node concept="37vLTw" id="23c4kVtm7Iq" role="37wK5m">
                                   <ref role="3cqZAo" node="23c4kVtm7Il" resolve="profile" />
@@ -2443,10 +2444,10 @@
     </node>
     <node concept="2tJIrI" id="3F6vMxqjxuu" role="jymVt" />
     <node concept="3clFb_" id="23c4kVtaQus" role="jymVt">
-      <property role="TrG5h" value="createSessionSolver" />
+      <property role="TrG5h" value="createReporting" />
       <property role="1EzhhJ" value="true" />
-      <node concept="3uibUv" id="23c4kVtaQuv" role="3clF45">
-        <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
+      <node concept="3uibUv" id="3GEs5q_2liE" role="3clF45">
+        <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
       </node>
       <node concept="3Tmbuc" id="23c4kVtaQuw" role="1B3o_S" />
       <node concept="3clFbS" id="23c4kVtaQux" role="3clF47" />

@@ -137,7 +137,6 @@
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
@@ -2628,11 +2627,11 @@
     </node>
     <node concept="2tJIrI" id="78H58of4wGy" role="jymVt" />
     <node concept="3clFb_" id="NKt6yn82MX" role="jymVt">
-      <property role="TrG5h" value="createSessionSolver" />
+      <property role="TrG5h" value="createReporting" />
       <property role="1EzhhJ" value="false" />
       <property role="DiZV1" value="true" />
-      <node concept="3uibUv" id="NKt6yn82MY" role="3clF45">
-        <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
+      <node concept="3uibUv" id="3GEs5q_2V0K" role="3clF45">
+        <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
       </node>
       <node concept="3Tmbuc" id="NKt6yn82MZ" role="1B3o_S" />
       <node concept="3clFbS" id="NKt6yn82NT" role="3clF47">
@@ -2641,8 +2640,8 @@
             <node concept="YeOm9" id="oI9YrbAuF" role="2ShVmc">
               <node concept="1Y3b0j" id="oI9YrbAuI" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="1Y3XeK" node="7lt0LtQ_OIS" resolve="TypecheckingSessionSolver" />
-                <ref role="37wK5l" node="oI9Yrbvrt" resolve="TypecheckingSessionSolver" />
+                <ref role="1Y3XeK" to="9x2e:oI9YrIZeS" resolve="Reporting" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 <node concept="3Tm1VV" id="oI9YrbAuJ" role="1B3o_S" />
                 <node concept="3clFb_" id="oI9YrbA_u" role="jymVt">
                   <property role="TrG5h" value="assignType" />
@@ -5043,52 +5042,6 @@
       <node concept="3uibUv" id="1FOQehxMN6x" role="1tU5fm">
         <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
       </node>
-    </node>
-  </node>
-  <node concept="312cEu" id="7lt0LtQ_OIS">
-    <property role="TrG5h" value="TypecheckingSessionSolver" />
-    <property role="1sVAO0" value="true" />
-    <node concept="2tJIrI" id="oI9Yrbvo_" role="jymVt" />
-    <node concept="3clFbW" id="oI9Yrbvrt" role="jymVt">
-      <node concept="3cqZAl" id="oI9Yrbvrv" role="3clF45" />
-      <node concept="3Tm1VV" id="oI9Yrbvrw" role="1B3o_S" />
-      <node concept="3clFbS" id="oI9Yrbvrx" role="3clF47">
-        <node concept="XkiVB" id="oI9Yrbvx2" role="3cqZAp">
-          <ref role="37wK5l" to="w7la:~SessionSolver.&lt;init&gt;()" resolve="SessionSolver" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7lt0LtQ_OLY" role="jymVt" />
-    <node concept="3clFb_" id="7lt0LtQ_SZU" role="jymVt">
-      <property role="TrG5h" value="assignType" />
-      <node concept="37vLTG" id="7lt0LtQ_T0C" role="3clF46">
-        <property role="TrG5h" value="target" />
-        <node concept="3Tqbb2" id="7lt0LtQ_T26" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="7lt0LtQ_T29" role="3clF46">
-        <property role="TrG5h" value="nodeType" />
-        <node concept="3Tqbb2" id="7lt0LtQ_T3R" role="1tU5fm" />
-      </node>
-      <node concept="10P_77" id="oI9YrbUH2" role="3clF45" />
-      <node concept="3Tm1VV" id="7lt0LtQ_SZX" role="1B3o_S" />
-      <node concept="3clFbS" id="7lt0LtQ_SZY" role="3clF47">
-        <node concept="3clFbF" id="oI9YrbVyx" role="3cqZAp">
-          <node concept="3clFbT" id="oI9YrbVyw" role="3clFbG">
-            <property role="3clFbU" value="false" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="oI9YrIZQO" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7lt0LtQ_OM3" role="jymVt" />
-    <node concept="3Tm1VV" id="7lt0LtQ_OIT" role="1B3o_S" />
-    <node concept="3uibUv" id="4jcOV4h9TLE" role="1zkMxy">
-      <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
-    </node>
-    <node concept="3uibUv" id="oI9YrIZn4" role="EKbjA">
-      <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
     </node>
   </node>
 </model>

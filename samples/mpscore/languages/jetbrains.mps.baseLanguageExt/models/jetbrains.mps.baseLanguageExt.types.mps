@@ -283,6 +283,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -6774,19 +6777,6 @@
                 <node concept="3I6s7M" id="6EY0p2x_g$4" role="3I6sU7">
                   <node concept="3wWvb2" id="6EY0p2x_g$5" role="3I6s78">
                     <node concept="2OqwBi" id="6EY0p2x_g$6" role="3wWo3s">
-                      <node concept="2YIFZM" id="6EY0p2x_g$7" role="2Oq$k0">
-                        <ref role="1Pybhc" to="9x2e:oI9YrIZTG" resolve="ReportingFrom" />
-                        <ref role="37wK5l" to="9x2e:oI9YrIZUA" resolve="solver" />
-                        <node concept="2OqwBi" id="6EY0p2x_g$8" role="37wK5m">
-                          <node concept="2YIFZM" id="6EY0p2x_g$9" role="2Oq$k0">
-                            <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-                            <ref role="37wK5l" to="w7la:~EvaluationSession.current():jetbrains.mps.logic.reactor.evaluation.EvaluationSession" resolve="current" />
-                          </node>
-                          <node concept="liA8E" id="6EY0p2x_g$a" role="2OqNvi">
-                            <ref role="37wK5l" to="w7la:~EvaluationSession.sessionSolver():jetbrains.mps.logic.reactor.evaluation.SessionSolver" resolve="sessionSolver" />
-                          </node>
-                        </node>
-                      </node>
                       <node concept="liA8E" id="6EY0p2x_g$b" role="2OqNvi">
                         <ref role="37wK5l" to="9x2e:oI9Ys2ypk" resolve="report" />
                         <node concept="Rm8GO" id="6EY0p2x_g$c" role="37wK5m">
@@ -6804,6 +6794,25 @@
                           <node concept="1nq8_$" id="6EY0p2x_g$h" role="1Tms7$">
                             <node concept="a7P8L" id="6EY0p2x_gA0" role="1nq8_t">
                               <ref role="a7OzE" node="5moyjRHroB8" resolve="Msg" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="oI9YrWf2v" role="2Oq$k0">
+                        <node concept="2YIFZM" id="oI9YrWf2w" role="2Oq$k0">
+                          <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
+                          <ref role="37wK5l" to="w7la:~EvaluationSession.current()" resolve="current" />
+                        </node>
+                        <node concept="liA8E" id="3GEs5q_4fTI" role="2OqNvi">
+                          <ref role="37wK5l" to="w7la:~EvaluationSession.parameter(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$ParameterKey)" resolve="parameter" />
+                          <node concept="2YIFZM" id="3GEs5q_4fTJ" role="37wK5m">
+                            <ref role="1Pybhc" to="w7la:~EvaluationSession$ParameterKey" resolve="EvaluationSession.ParameterKey" />
+                            <ref role="37wK5l" to="w7la:~EvaluationSession$ParameterKey.of(java.lang.String,java.lang.Class)" resolve="of" />
+                            <node concept="Xl_RD" id="3GEs5q_4fTK" role="37wK5m">
+                              <property role="Xl_RC" value="reporting" />
+                            </node>
+                            <node concept="3VsKOn" id="3GEs5q_4fTL" role="37wK5m">
+                              <ref role="3VsUkX" to="9x2e:oI9YrIZeS" resolve="Reporting" />
                             </node>
                           </node>
                         </node>
@@ -10066,19 +10075,6 @@
                 <node concept="3I6s7M" id="3MG3BxoG1ob" role="3I6sU7">
                   <node concept="3wWvb2" id="3MG3BxoG1oa" role="3I6s78">
                     <node concept="2OqwBi" id="3MG3BxoG52$" role="3wWo3s">
-                      <node concept="2YIFZM" id="3MG3BxoG4Ea" role="2Oq$k0">
-                        <ref role="37wK5l" to="9x2e:oI9YrIZUA" resolve="solver" />
-                        <ref role="1Pybhc" to="9x2e:oI9YrIZTG" resolve="ReportingFrom" />
-                        <node concept="2OqwBi" id="3MG3BxoG4Ri" role="37wK5m">
-                          <node concept="2YIFZM" id="3MG3BxoG4Ep" role="2Oq$k0">
-                            <ref role="37wK5l" to="w7la:~EvaluationSession.current():jetbrains.mps.logic.reactor.evaluation.EvaluationSession" resolve="current" />
-                            <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-                          </node>
-                          <node concept="liA8E" id="3MG3BxoG4WL" role="2OqNvi">
-                            <ref role="37wK5l" to="w7la:~EvaluationSession.sessionSolver():jetbrains.mps.logic.reactor.evaluation.SessionSolver" resolve="sessionSolver" />
-                          </node>
-                        </node>
-                      </node>
                       <node concept="liA8E" id="3MG3BxoG59l" role="2OqNvi">
                         <ref role="37wK5l" to="9x2e:oI9Ys2ypk" resolve="report" />
                         <node concept="Rm8GO" id="3MG3BxoG5d6" role="37wK5m">
@@ -10096,6 +10092,25 @@
                           <node concept="1nq8_$" id="3MG3BxoG5fB" role="1Tms7$">
                             <node concept="a7P8L" id="3MG3BxoG5f_" role="1nq8_t">
                               <ref role="a7OzE" node="3MG3BxoG1mO" resolve="Msg" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="3GEs5q_4KZ0" role="2Oq$k0">
+                        <node concept="2YIFZM" id="3GEs5q_4KZ1" role="2Oq$k0">
+                          <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
+                          <ref role="37wK5l" to="w7la:~EvaluationSession.current()" resolve="current" />
+                        </node>
+                        <node concept="liA8E" id="3GEs5q_4KZ2" role="2OqNvi">
+                          <ref role="37wK5l" to="w7la:~EvaluationSession.parameter(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$ParameterKey)" resolve="parameter" />
+                          <node concept="2YIFZM" id="3GEs5q_4KZ3" role="37wK5m">
+                            <ref role="1Pybhc" to="w7la:~EvaluationSession$ParameterKey" resolve="EvaluationSession.ParameterKey" />
+                            <ref role="37wK5l" to="w7la:~EvaluationSession$ParameterKey.of(java.lang.String,java.lang.Class)" resolve="of" />
+                            <node concept="Xl_RD" id="3GEs5q_4KZ4" role="37wK5m">
+                              <property role="Xl_RC" value="reporting" />
+                            </node>
+                            <node concept="3VsKOn" id="3GEs5q_4KZ5" role="37wK5m">
+                              <ref role="3VsUkX" to="9x2e:oI9YrIZeS" resolve="Reporting" />
                             </node>
                           </node>
                         </node>
@@ -27516,19 +27531,6 @@
                       <node concept="3Aqczg" id="7XRk2O3zftP" role="3cqZAp">
                         <node concept="3wWvb2" id="7XRk2O3zftR" role="3Aqpz8">
                           <node concept="2OqwBi" id="7XRk2O3zft3" role="3wWo3s">
-                            <node concept="2YIFZM" id="7XRk2O3zft5" role="2Oq$k0">
-                              <ref role="1Pybhc" to="9x2e:oI9YrIZTG" resolve="ReportingFrom" />
-                              <ref role="37wK5l" to="9x2e:oI9YrIZUA" resolve="solver" />
-                              <node concept="2OqwBi" id="7XRk2O3zft7" role="37wK5m">
-                                <node concept="2YIFZM" id="7XRk2O3zft9" role="2Oq$k0">
-                                  <ref role="37wK5l" to="w7la:~EvaluationSession.current():jetbrains.mps.logic.reactor.evaluation.EvaluationSession" resolve="current" />
-                                  <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-                                </node>
-                                <node concept="liA8E" id="7XRk2O3zftb" role="2OqNvi">
-                                  <ref role="37wK5l" to="w7la:~EvaluationSession.sessionSolver():jetbrains.mps.logic.reactor.evaluation.SessionSolver" resolve="sessionSolver" />
-                                </node>
-                              </node>
-                            </node>
                             <node concept="liA8E" id="7XRk2O3zftd" role="2OqNvi">
                               <ref role="37wK5l" to="9x2e:oI9Ys2ypk" resolve="report" />
                               <node concept="Rm8GO" id="7XRk2O3zftf" role="37wK5m">
@@ -27540,6 +27542,25 @@
                               </node>
                               <node concept="Xl_RD" id="7XRk2O3zfrR" role="37wK5m">
                                 <property role="Xl_RC" value="mismatched type arguments number" />
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="3GEs5q_4NcH" role="2Oq$k0">
+                              <node concept="2YIFZM" id="3GEs5q_4NcI" role="2Oq$k0">
+                                <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
+                                <ref role="37wK5l" to="w7la:~EvaluationSession.current()" resolve="current" />
+                              </node>
+                              <node concept="liA8E" id="3GEs5q_4NcJ" role="2OqNvi">
+                                <ref role="37wK5l" to="w7la:~EvaluationSession.parameter(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$ParameterKey)" resolve="parameter" />
+                                <node concept="2YIFZM" id="3GEs5q_4NcK" role="37wK5m">
+                                  <ref role="1Pybhc" to="w7la:~EvaluationSession$ParameterKey" resolve="EvaluationSession.ParameterKey" />
+                                  <ref role="37wK5l" to="w7la:~EvaluationSession$ParameterKey.of(java.lang.String,java.lang.Class)" resolve="of" />
+                                  <node concept="Xl_RD" id="3GEs5q_4NcL" role="37wK5m">
+                                    <property role="Xl_RC" value="reporting" />
+                                  </node>
+                                  <node concept="3VsKOn" id="3GEs5q_4NcM" role="37wK5m">
+                                    <ref role="3VsUkX" to="9x2e:oI9YrIZeS" resolve="Reporting" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>

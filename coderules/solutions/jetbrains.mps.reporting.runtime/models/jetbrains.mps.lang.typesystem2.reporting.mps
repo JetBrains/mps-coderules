@@ -189,62 +189,6 @@
   <node concept="312cEu" id="oI9YrIZTG">
     <property role="TrG5h" value="ReportingFrom" />
     <node concept="2tJIrI" id="oI9YrIZUi" role="jymVt" />
-    <node concept="2YIFZL" id="oI9YrIZUA" role="jymVt">
-      <property role="TrG5h" value="solver" />
-      <node concept="37vLTG" id="oI9YrIZVw" role="3clF46">
-        <property role="TrG5h" value="sessionSolver" />
-        <node concept="3uibUv" id="oI9YrIZWj" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
-        </node>
-      </node>
-      <node concept="3uibUv" id="oI9YrIZV1" role="3clF45">
-        <ref role="3uigEE" node="oI9YrIZeS" resolve="Reporting" />
-      </node>
-      <node concept="3Tm1VV" id="oI9YrIZUD" role="1B3o_S" />
-      <node concept="3clFbS" id="oI9YrIZUE" role="3clF47">
-        <node concept="3SKdUt" id="oI9YrJ1AH" role="3cqZAp">
-          <node concept="3SKdUq" id="oI9YrJ1AJ" role="3SKWNk">
-            <property role="3SKdUp" value="TODO: pluggable components" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="oI9YrIZWS" role="3cqZAp">
-          <node concept="2ZW3vV" id="oI9YrJ0$6" role="3clFbw">
-            <node concept="3uibUv" id="oI9YrJ1rT" role="2ZW6by">
-              <ref role="3uigEE" node="oI9YrIZeS" resolve="Reporting" />
-            </node>
-            <node concept="37vLTw" id="oI9YrIZX$" role="2ZW6bz">
-              <ref role="3cqZAo" node="oI9YrIZVw" resolve="sessionSolver" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="oI9YrIZWU" role="3clFbx">
-            <node concept="3cpWs6" id="oI9YrJ0ER" role="3cqZAp">
-              <node concept="1eOMI4" id="oI9YrJ0FP" role="3cqZAk">
-                <node concept="10QFUN" id="oI9YrJ0FM" role="1eOMHV">
-                  <node concept="3uibUv" id="oI9YrJ1tE" role="10QFUM">
-                    <ref role="3uigEE" node="oI9YrIZeS" resolve="Reporting" />
-                  </node>
-                  <node concept="37vLTw" id="oI9YrJ0FS" role="10QFUP">
-                    <ref role="3cqZAo" node="oI9YrIZVw" resolve="sessionSolver" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="oI9YrJ0HG" role="3cqZAp" />
-        <node concept="YS8fn" id="oI9YrJ0LG" role="3cqZAp">
-          <node concept="2ShNRf" id="oI9YrJ0NY" role="YScLw">
-            <node concept="1pGfFk" id="oI9YrJ0WL" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-              <node concept="Xl_RD" id="oI9YrJ0X1" role="37wK5m">
-                <property role="Xl_RC" value="reporting not available" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="oI9YrJ1mF" role="jymVt" />
     <node concept="2YIFZL" id="oI9YrJ1oq" role="jymVt">
       <property role="TrG5h" value="application" />
       <node concept="37vLTG" id="oI9YrJ1qv" role="3clF46">

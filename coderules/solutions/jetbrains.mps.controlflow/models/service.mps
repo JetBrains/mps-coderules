@@ -71,7 +71,6 @@
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
@@ -332,59 +331,6 @@
       <node concept="17QB3L" id="4t7Xo7inNV0" role="1tU5fm" />
     </node>
   </node>
-  <node concept="312cEu" id="7lt0LtQ_OIS">
-    <property role="TrG5h" value="ControlflowSessionSolver" />
-    <property role="1sVAO0" value="true" />
-    <node concept="2tJIrI" id="oI9Yrbvo_" role="jymVt" />
-    <node concept="3clFbW" id="oI9Yrbvrt" role="jymVt">
-      <node concept="3cqZAl" id="oI9Yrbvrv" role="3clF45" />
-      <node concept="3Tm1VV" id="oI9Yrbvrw" role="1B3o_S" />
-      <node concept="3clFbS" id="oI9Yrbvrx" role="3clF47">
-        <node concept="XkiVB" id="oI9Yrbvx2" role="3cqZAp">
-          <ref role="37wK5l" to="w7la:~SessionSolver.&lt;init&gt;()" resolve="SessionSolver" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7lt0LtQ_OLY" role="jymVt" />
-    <node concept="3clFb_" id="7lt0LtQ_SZU" role="jymVt">
-      <property role="TrG5h" value="assignType" />
-      <node concept="37vLTG" id="7lt0LtQ_T0C" role="3clF46">
-        <property role="TrG5h" value="target" />
-        <node concept="3Tqbb2" id="7lt0LtQ_T26" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="7lt0LtQ_T29" role="3clF46">
-        <property role="TrG5h" value="nodeType" />
-        <node concept="3Tqbb2" id="7lt0LtQ_T3R" role="1tU5fm" />
-      </node>
-      <node concept="10P_77" id="oI9YrbUH2" role="3clF45" />
-      <node concept="3Tm1VV" id="7lt0LtQ_SZX" role="1B3o_S" />
-      <node concept="3clFbS" id="7lt0LtQ_SZY" role="3clF47">
-        <node concept="3SKdUt" id="78H58oeu59G" role="3cqZAp">
-          <node concept="3SKdUq" id="78H58oeu59I" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME this doesn't belong here" />
-          </node>
-        </node>
-        <node concept="YS8fn" id="78H58oeu4WY" role="3cqZAp">
-          <node concept="2ShNRf" id="78H58oeu4XS" role="YScLw">
-            <node concept="1pGfFk" id="78H58oeu55k" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="oI9YrIZQO" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1FOQehvIsJr" role="jymVt" />
-    <node concept="3Tm1VV" id="7lt0LtQ_OIT" role="1B3o_S" />
-    <node concept="3uibUv" id="4jcOV4h9GqE" role="1zkMxy">
-      <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
-    </node>
-    <node concept="3uibUv" id="78H58oeu4oM" role="EKbjA">
-      <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
-    </node>
-  </node>
   <node concept="312cEu" id="78H58oeu6dG">
     <property role="TrG5h" value="ControlflowStep" />
     <node concept="2tJIrI" id="78H58oeu6M4" role="jymVt" />
@@ -483,10 +429,10 @@
     </node>
     <node concept="2tJIrI" id="6Yb9hAqJRuL" role="jymVt" />
     <node concept="3clFb_" id="78H58oeu6MG" role="jymVt">
-      <property role="TrG5h" value="createSessionSolver" />
+      <property role="TrG5h" value="createReporting" />
       <property role="1EzhhJ" value="false" />
-      <node concept="3uibUv" id="78H58oeu9FS" role="3clF45">
-        <ref role="3uigEE" to="w7la:~SessionSolver" resolve="SessionSolver" />
+      <node concept="3uibUv" id="3GEs5q_2s3Z" role="3clF45">
+        <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
       </node>
       <node concept="3Tmbuc" id="78H58oeu6MI" role="1B3o_S" />
       <node concept="3clFbS" id="78H58oeu6MK" role="3clF47">
@@ -495,8 +441,8 @@
             <node concept="YeOm9" id="78H58oeuadh" role="2ShVmc">
               <node concept="1Y3b0j" id="78H58oeuadk" role="YeSDq">
                 <property role="2bfB8j" value="true" />
-                <ref role="1Y3XeK" node="7lt0LtQ_OIS" resolve="ControlflowSessionSolver" />
-                <ref role="37wK5l" node="oI9Yrbvrt" resolve="ControlflowSessionSolver" />
+                <ref role="1Y3XeK" to="9x2e:oI9YrIZeS" resolve="Reporting" />
+                <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
                 <node concept="3Tm1VV" id="78H58oeuadl" role="1B3o_S" />
                 <node concept="3clFb_" id="78H58oeuats" role="jymVt">
                   <property role="1EzhhJ" value="false" />
@@ -549,6 +495,37 @@
                         <property role="3clFbU" value="true" />
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node concept="2tJIrI" id="3GEs5q_2HLX" role="jymVt" />
+                <node concept="3clFb_" id="3GEs5q_2Fa2" role="jymVt">
+                  <property role="TrG5h" value="assignType" />
+                  <node concept="37vLTG" id="3GEs5q_2Fa3" role="3clF46">
+                    <property role="TrG5h" value="target" />
+                    <node concept="3Tqbb2" id="3GEs5q_2Fa4" role="1tU5fm" />
+                  </node>
+                  <node concept="37vLTG" id="3GEs5q_2Fa5" role="3clF46">
+                    <property role="TrG5h" value="nodeType" />
+                    <node concept="3Tqbb2" id="3GEs5q_2Fa6" role="1tU5fm" />
+                  </node>
+                  <node concept="10P_77" id="3GEs5q_2Fa7" role="3clF45" />
+                  <node concept="3Tm1VV" id="3GEs5q_2Fa8" role="1B3o_S" />
+                  <node concept="3clFbS" id="3GEs5q_2Fa9" role="3clF47">
+                    <node concept="3SKdUt" id="3GEs5q_2Faa" role="3cqZAp">
+                      <node concept="3SKdUq" id="3GEs5q_2Fab" role="3SKWNk">
+                        <property role="3SKdUp" value="FIXME this doesn't belong here" />
+                      </node>
+                    </node>
+                    <node concept="YS8fn" id="3GEs5q_2Fac" role="3cqZAp">
+                      <node concept="2ShNRf" id="3GEs5q_2Fad" role="YScLw">
+                        <node concept="1pGfFk" id="3GEs5q_2Fae" role="2ShVmc">
+                          <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2AHcQZ" id="3GEs5q_2Faf" role="2AJF6D">
+                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                 </node>
                 <node concept="2tJIrI" id="72RDgIN3jWs" role="jymVt" />

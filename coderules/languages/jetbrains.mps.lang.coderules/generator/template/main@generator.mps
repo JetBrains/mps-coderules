@@ -14239,19 +14239,6 @@
               <node concept="3clFbS" id="oI9Ys2xiQ" role="3clF47">
                 <node concept="3clFbF" id="oI9Ys2xiR" role="3cqZAp">
                   <node concept="2OqwBi" id="oI9Ys2xiS" role="3clFbG">
-                    <node concept="2YIFZM" id="oI9Ys2xiT" role="2Oq$k0">
-                      <ref role="37wK5l" to="9x2e:oI9YrIZUA" resolve="solver" />
-                      <ref role="1Pybhc" to="9x2e:oI9YrIZTG" resolve="ReportingFrom" />
-                      <node concept="2OqwBi" id="oI9Ys2xiU" role="37wK5m">
-                        <node concept="2YIFZM" id="oI9Ys2xiV" role="2Oq$k0">
-                          <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-                          <ref role="37wK5l" to="w7la:~EvaluationSession.current():jetbrains.mps.logic.reactor.evaluation.EvaluationSession" resolve="current" />
-                        </node>
-                        <node concept="liA8E" id="oI9Ys2xiW" role="2OqNvi">
-                          <ref role="37wK5l" to="w7la:~EvaluationSession.sessionSolver():jetbrains.mps.logic.reactor.evaluation.SessionSolver" resolve="sessionSolver" />
-                        </node>
-                      </node>
-                    </node>
                     <node concept="liA8E" id="oI9Ys2xiX" role="2OqNvi">
                       <ref role="37wK5l" to="9x2e:oI9Ys2ypk" resolve="report" />
                       <node concept="Rm8GO" id="1FOQehwoRqu" role="37wK5m">
@@ -14325,6 +14312,25 @@
                       </node>
                     </node>
                     <node concept="raruj" id="oI9Ys2xjm" role="lGtFl" />
+                    <node concept="2OqwBi" id="oI9YrWf2v" role="2Oq$k0">
+                      <node concept="2YIFZM" id="oI9YrWf2w" role="2Oq$k0">
+                        <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
+                        <ref role="37wK5l" to="w7la:~EvaluationSession.current()" resolve="current" />
+                      </node>
+                      <node concept="liA8E" id="3GEs5q_4fTI" role="2OqNvi">
+                        <ref role="37wK5l" to="w7la:~EvaluationSession.parameter(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$ParameterKey)" resolve="parameter" />
+                        <node concept="2YIFZM" id="3GEs5q_4fTJ" role="37wK5m">
+                          <ref role="1Pybhc" to="w7la:~EvaluationSession$ParameterKey" resolve="EvaluationSession.ParameterKey" />
+                          <ref role="37wK5l" to="w7la:~EvaluationSession$ParameterKey.of(java.lang.String,java.lang.Class)" resolve="of" />
+                          <node concept="Xl_RD" id="3GEs5q_4fTK" role="37wK5m">
+                            <property role="Xl_RC" value="reporting" />
+                          </node>
+                          <node concept="3VsKOn" id="3GEs5q_4fTL" role="37wK5m">
+                            <ref role="3VsUkX" to="9x2e:oI9YrIZeS" resolve="Reporting" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -14349,39 +14355,6 @@
             <node concept="3clFbS" id="oI9Ys2xjt" role="3clF47">
               <node concept="3clFbF" id="oI9Ys2xju" role="3cqZAp">
                 <node concept="2OqwBi" id="oI9Ys2xjv" role="3clFbG">
-                  <node concept="2YIFZM" id="oI9Ys2xjw" role="2Oq$k0">
-                    <ref role="37wK5l" to="9x2e:oI9YrJ1oq" resolve="application" />
-                    <ref role="1Pybhc" to="9x2e:oI9YrIZTG" resolve="ReportingFrom" />
-                    <node concept="37vLTw" id="oI9Ys2xjx" role="37wK5m">
-                      <ref role="3cqZAo" node="oI9Ys2xjp" resolve="session" />
-                      <node concept="1ZhdrF" id="oI9Ys2xjy" role="lGtFl">
-                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                        <property role="2qtEX8" value="variableDeclaration" />
-                        <node concept="3$xsQk" id="oI9Ys2xjz" role="3$ytzL">
-                          <node concept="3clFbS" id="oI9Ys2xj$" role="2VODD2">
-                            <node concept="3clFbF" id="oI9Ys2xj_" role="3cqZAp">
-                              <node concept="2OqwBi" id="oI9Ys2xjA" role="3clFbG">
-                                <node concept="1iwH7S" id="oI9Ys2xjB" role="2Oq$k0" />
-                                <node concept="1iwH70" id="oI9Ys2xjC" role="2OqNvi">
-                                  <ref role="1iwH77" node="429xoypVg6q" resolve="apply_session_parameter" />
-                                  <node concept="2OqwBi" id="oI9Ys2xjD" role="1iwH7V">
-                                    <node concept="30H73N" id="oI9Ys2xjE" role="2Oq$k0" />
-                                    <node concept="2Xjw5R" id="oI9Ys2xjF" role="2OqNvi">
-                                      <node concept="1xMEDy" id="oI9Ys2xjG" role="1xVPHs">
-                                        <node concept="chp4Y" id="oI9Ys2xjH" role="ri$Ld">
-                                          <ref role="cht4Q" to="wq2x:36tQV5AmIsf" resolve="RuleTemplate" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="raruj" id="oI9Ys2xk7" role="lGtFl" />
                   <node concept="liA8E" id="oI9Ys2EaM" role="2OqNvi">
                     <ref role="37wK5l" to="9x2e:oI9Ys2ypk" resolve="report" />
@@ -14447,6 +14420,39 @@
                                 </node>
                                 <node concept="3TrEf2" id="oI9Ys2Ebi" role="2OqNvi">
                                   <ref role="3Tt5mk" to="wq2x:oI9Ys1lF8" resolve="text" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2YIFZM" id="oI9Ys2xjw" role="2Oq$k0">
+                    <ref role="37wK5l" to="9x2e:oI9YrJ1oq" resolve="application" />
+                    <ref role="1Pybhc" to="9x2e:oI9YrIZTG" resolve="ReportingFrom" />
+                    <node concept="37vLTw" id="oI9Ys2xjx" role="37wK5m">
+                      <ref role="3cqZAo" node="oI9Ys2xjp" resolve="session" />
+                      <node concept="1ZhdrF" id="oI9Ys2xjy" role="lGtFl">
+                        <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                        <property role="2qtEX8" value="variableDeclaration" />
+                        <node concept="3$xsQk" id="oI9Ys2xjz" role="3$ytzL">
+                          <node concept="3clFbS" id="oI9Ys2xj$" role="2VODD2">
+                            <node concept="3clFbF" id="oI9Ys2xj_" role="3cqZAp">
+                              <node concept="2OqwBi" id="oI9Ys2xjA" role="3clFbG">
+                                <node concept="1iwH7S" id="oI9Ys2xjB" role="2Oq$k0" />
+                                <node concept="1iwH70" id="oI9Ys2xjC" role="2OqNvi">
+                                  <ref role="1iwH77" node="429xoypVg6q" resolve="apply_session_parameter" />
+                                  <node concept="2OqwBi" id="oI9Ys2xjD" role="1iwH7V">
+                                    <node concept="30H73N" id="oI9Ys2xjE" role="2Oq$k0" />
+                                    <node concept="2Xjw5R" id="oI9Ys2xjF" role="2OqNvi">
+                                      <node concept="1xMEDy" id="oI9Ys2xjG" role="1xVPHs">
+                                        <node concept="chp4Y" id="oI9Ys2xjH" role="ri$Ld">
+                                          <ref role="cht4Q" to="wq2x:36tQV5AmIsf" resolve="RuleTemplate" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
