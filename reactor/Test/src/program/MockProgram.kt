@@ -2,6 +2,7 @@
  * @author Fedor Isakov
  */
 
+import jetbrains.mps.logic.reactor.evaluation.InvocationContext
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
@@ -96,6 +97,7 @@ class MockProgram(val name: String, val handlers: List<Handler>, val registry: M
 
     override fun name(): String = name
 
+
     override fun constraintSymbols(): Iterable<ConstraintSymbol> =
         registry.constraintSymbols()
 
@@ -105,7 +107,7 @@ class MockProgram(val name: String, val handlers: List<Handler>, val registry: M
     override fun predicateSymbols(): Iterable<PredicateSymbol> =
         registry.predicateSymbols()
 
-    override fun instantiateArguments(arguments: List<*>, logicalContext: LogicalContext): List<*> =
+    override fun instantiateArguments(arguments: List<*>, logicalContext: LogicalContext, invocationContext: InvocationContext): List<*> =
         arguments.map { a ->
             if (a is MetaLogical<*>) logicalContext.variable(a)
             else a

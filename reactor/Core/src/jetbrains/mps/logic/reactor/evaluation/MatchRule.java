@@ -23,6 +23,8 @@ import jetbrains.mps.logic.reactor.program.Rule;
 /**
  * A binding of a rule and the constraint occurrences that matched its head.
  *
+ * // FIXME rename to RuleMatch
+ *
  * @author Fedor Isakov
  */
 public interface MatchRule {

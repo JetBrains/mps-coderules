@@ -26,7 +26,15 @@ public abstract class Rule {
 
     public abstract Rule.Kind kind();
 
+    /**
+     * A tag uniquely identifies the rule.
+     */
     public abstract String tag();
+
+    /**
+     * An origin serves as justification for all constraints affected by this rule.
+     */
+    public Object origin() { return null; }
 
     public abstract Iterable<Constraint> headKept();
 

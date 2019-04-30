@@ -25,30 +25,36 @@ import java.util.List;
 /**
  * A collection of handlers that constitute a constraint rules program.
  *
+ * FIXME a handler is to be renamed to RulesList
  * @author Fedor Isakov
  */
 public abstract class Program {
 
     public abstract String name();
 
-    public abstract Iterable<ConstraintSymbol> constraintSymbols();
+    /**
+     * @deprecated no usages
+     * @return
+     */
+    @Deprecated
+    public Iterable<ConstraintSymbol> constraintSymbols() { throw new UnsupportedOperationException (); }
 
-    public abstract List<Class<?>> constraintArgumentTypes(ConstraintSymbol constraintSymbol);
+    /**
+     * @deprecated no usages
+     * @return
+     */
+    @Deprecated
+    public List<Class<?>> constraintArgumentTypes(ConstraintSymbol constraintSymbol) { throw new UnsupportedOperationException (); }
 
-    public abstract Iterable<PredicateSymbol> predicateSymbols();
+    /**
+     * @deprecated no usages
+     * @return
+     */
+    @Deprecated
+    public Iterable<PredicateSymbol> predicateSymbols() { throw new UnsupportedOperationException (); }
 
     public abstract Iterable<Handler> handlers();
 
-    /**
-     * @deprecated use the overloaded method with InvocationContext parameter
-     */
-    @Deprecated
-    public List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext) {
-        throw new UnsupportedOperationException();
-    }
-
-    public List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext, InvocationContext ignore) {
-        return instantiateArguments(arguments, logicalContext);
-    }
+    public abstract List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext, InvocationContext invocationContext);
 
 }

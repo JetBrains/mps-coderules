@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.program;
 /**
  * A handler is a container of rules.
  * <p>
+ * FIXME to be renamed to RulesList
  * @author Fedor Isakov
  */
 public abstract class Handler {
