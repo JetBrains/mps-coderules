@@ -1,7 +1,4 @@
-import jetbrains.mps.logic.reactor.core.FrameObservable
-import jetbrains.mps.logic.reactor.core.LogicalObserver
-import jetbrains.mps.logic.reactor.core.Occurrence
-import jetbrains.mps.logic.reactor.core.occurrence
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
@@ -12,10 +9,23 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class Builder(val env: Environment, val handlers: List<Handler>) {
-    val rules: List<Rule>
-        get() = handlers.flatMap { it.rules() }
+class Builder(val env: Environment, val handlers: List<Handler>) : RuleLookup {
 
+    val tag2rule = HashMap<String, Rule>()
+
+    init {
+        handlers
+            .flatMap { it.rules() }
+            .forEach { r -> tag2rule[r.tag()] = r }
+    }
+
+    val rules: List<Rule>
+        get() = tag2rule.values.toList()
+
+    override fun lookupRuleByTag(tag: String): Rule? = tag2rule[tag]
+
+    fun ruleMatcher(): RuleMatcher = createRuleMatcher(this, rules.first().tag())
+    
 }
 
 @Deprecated("don't use")

@@ -784,6 +784,4 @@ class TestRuleMatcher {
             }
         }
     }
-
-    private fun Builder.ruleMatcher() = createRuleMatcher(rules.first())
 }

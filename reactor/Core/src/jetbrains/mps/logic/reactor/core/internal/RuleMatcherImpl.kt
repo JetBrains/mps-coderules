@@ -18,10 +18,10 @@ package jetbrains.mps.logic.reactor.core.internal
 
 import com.github.andrewoma.dexx.collection.Sets
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.*
+import java.lang.IllegalStateException
 import java.util.*
 import kotlin.collections.ArrayList
 import com.github.andrewoma.dexx.collection.List as PersList
@@ -32,39 +32,41 @@ import com.github.andrewoma.dexx.collection.Vector as PersVector
 /**
  * @author Fedor Isakov
  */
-internal class RuleMatcherImpl(val rule: Rule) : RuleMatcher {
+internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
+                               private val tag: String) : RuleMatcher
+{
 
-    val head = rule.headKept().toCollection(ArrayList(4)).apply { addAll(rule.headReplaced()) }
+    val head = lookupRule().run { ArrayList(headKept() + headReplaced()) }
 
-    val propagation = rule.headReplaced().count() == 0
+    val propagation = lookupRule().headReplaced().count() == 0
 
-    val origins = IdentityHashMap<MatchRule, ActiveMatchNode>()
+    fun lookupRule(): Rule = ruleLookup.lookupRuleByTag(tag) ?: throw IllegalStateException("can't lookup rule by tag: '${tag}'")
 
+    override fun probe(): RuleMatchingProbe =
+        RuleMatchFringe(listOf(MatchNode(emptySubst())),
+                        Sets.of(),
+                        Sets.of(),
+                        0)
 
-    override fun probe(): MatchingProbe = RuleMatchFringe(listOf(MatchNode(emptySubst())),
-        Sets.of(),
-        Sets.of(),
-        0)
+    inner class RuleMatchFringe(private val nodes: List<MatchNode>,
+                                private val seenOccurrences: PersSet<IdWrapper<Occurrence>>,
+                                private val consumedSignatures: PersSet<ArrayList<IdWrapper<Occurrence>?>>,
+                                private val genId: Int) : RuleMatchingProbe
+    {
+        override fun rule(): Rule = lookupRule()
 
-    inner class RuleMatchFringe(val nodes: List<MatchNode>,
-                                val seen: PersSet<IdWrapper<Occurrence>>,
-                                val consumed: PersSet<ArrayList<IdWrapper<Occurrence>?>>,
-                                val genId: Int) : MatchingProbe {
-        override fun rule(): Rule = rule
-
-        override fun matches(): Collection<MatchRuleImpl> {
-            return nodes.filter { it is ActiveMatchNode && it.complete && it.genId == genId }
+        override fun matches(): Collection<RuleMatchImpl> =
+            nodes
+                .filter { it is ActiveMatchNode && it.complete && it.genId == genId }
                 .map { (it as ActiveMatchNode).toMatchRule() }
-        }
 
-        override fun consumed(matchRule: MatchRule): MatchingProbe =
+        override fun consume(matchRule: RuleMatchEx): RuleMatchingProbe =
             RuleMatchFringe(nodes,
-                seen,
-                consumed.add(origins.get(matchRule)?.signature!!),
-//                    ((matchRule as MatchRuleImpl).origin as ActiveMatchNode).signature),
-                genId)
+                            seenOccurrences,
+                            consumedSignatures.add(matchRule.signature()),
+                            genId)
 
-        override fun expand(occ: Occurrence): MatchingProbe =
+        override fun expand(occ: Occurrence): RuleMatchingProbe =
             expand(occ, bitSetOfOnes(head.size))
 
         /**
@@ -72,31 +74,32 @@ internal class RuleMatcherImpl(val rule: Rule) : RuleMatcher {
          * Mask specifies possible slots for the occurrence.
          */
         override fun expand(occ: Occurrence, mask: BitSet): RuleMatchFringe {
-            val reactivated = seen.contains(IdWrapper(occ))
-            val newSeen = if (reactivated) seen else seen.add(IdWrapper(occ))
+            val reactivated = seenOccurrences.contains(IdWrapper(occ))
+            val newSeen = if (reactivated) seenOccurrences else seenOccurrences.add(IdWrapper(occ))
             val newNodes = ArrayList<MatchNode>(nodes)
 
             val allSignatures = newNodes.map { it.signature }.toHashSet()
             for (n in nodes) {
                 n.expand(occ, genId + 1, n.matchingVacant(mask))
                     .filter { allSignatures.add(it.signature) || reactivated }  // ensure reactivated have effect
-                    .filter { !(propagation && reactivated && consumed.contains(it.signature)) } // ...unless propagation
+                    .filter { !(propagation && reactivated && consumedSignatures.contains(it.signature)) } // ...unless propagation
                     .forEach { newNodes.add(it) }
             }
 
-            return RuleMatchFringe(newNodes, newSeen, consumed, genId + 1)
+            return RuleMatchFringe(newNodes, newSeen, consumedSignatures, genId + 1)
         }
 
         override fun contract(occ: Occurrence): RuleMatchFringe {
             val newNodes = nodes.mapNotNull { it.unrelatedOrNull(occ) }
-            return RuleMatchFringe(newNodes, seen, consumed, genId + 1)
+            return RuleMatchFringe(newNodes, seenOccurrences, consumedSignatures, genId + 1)
         }
 
     }
 
     open inner class MatchNode(val subst: Subst, val vacant: BitSet = bitSetOfOnes(head.size)) {
-        open val signature: ArrayList<IdWrapper<Occurrence>?> =
-            arrayListOf(* arrayOfNulls(head.size))
+
+        // a signature is a (partial) set of constraint occurrences that belong to this node
+        open val signature: ArrayList<IdWrapper<Occurrence>?> = arrayListOf(* arrayOfNulls(head.size))
 
         /**
          * Returns the additional nodes built from this node on adding the occurrence.
@@ -168,18 +171,16 @@ internal class RuleMatcherImpl(val rule: Rule) : RuleMatcher {
             foldUntilNull(this) { acc, rn -> if (rn.occurrence === occ) null else acc }
 
 
-        fun toMatchRule(): MatchRuleImpl {
+        fun toMatchRule(): RuleMatchImpl {
             val matched: Array<Occurrence> =
                 fold(arrayOfNulls<Occurrence>(head.size)) { arr, rn ->
                     arr[rn.headIndex] = rn.occurrence; arr
                 } as Array<Occurrence>
 
-            val mr = MatchRuleImpl(rule,
+            return RuleMatchImpl(lookupRule(),
                 subst,
-                ArrayList(matched.take(rule.headKept().count())),
-                ArrayList(matched.takeLast(rule.headReplaced().count())))
-            origins.put(mr, this)
-            return mr
+                ArrayList(matched.take(lookupRule().headKept().count())),
+                ArrayList(matched.takeLast(lookupRule().headReplaced().count())))
         }
     }
 

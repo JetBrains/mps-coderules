@@ -17,27 +17,18 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
-import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.IdWrapper
 
-import java.util.BitSet
 
 /**
- * Provides functionality relevant to finding match(-es) for a rule.
- *
  * @author Fedor Isakov
  */
-interface MatchingProbe {
 
-    fun rule(): Rule
+interface RuleMatchEx : MatchRule {
 
-    fun matches(): Collection<MatchRule>
-
-    fun consumed(matchRule: MatchRule): MatchingProbe
-
-    fun expand(occ: Occurrence): MatchingProbe
-
-    fun expand(occ: Occurrence, mask: BitSet): MatchingProbe
-
-    fun contract(occ: Occurrence): MatchingProbe
+    /**
+     * Returns an array of matched constraint occurrences wrapped in [IdWrapper].
+     */
+    fun signature(): ArrayList<IdWrapper<Occurrence>?>
 
 }

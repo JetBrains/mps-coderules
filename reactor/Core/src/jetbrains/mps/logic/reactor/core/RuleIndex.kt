@@ -30,59 +30,65 @@ import kotlin.collections.HashMap
 
 /**
  * A container for [Rule] instances with the ability to look up by [ConstraintOccurrence].
- * 
+ *
+ * FIXME handler to be renamed to RulesList
  * @author Fedor Isakov
  */
-class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
+class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule>, RuleLookup {
 
     private val symbol2index = HashMap<ConstraintSymbol, ArgumentRuleIndex>()
 
     private val tag2rule = LinkedHashMap<String, Rule>()
 
-    val rules = ArrayList<Rule>()
+    // rule's index is rule's position in this list
+    private val rulesList = ArrayList<Rule>()
 
-    private val slotIndices = ArrayList<SlotMask>()
+    // every rule has a slot mask
+    // invariant: rulesList.size == slotMasksList.size
+    private val slotMasksList = ArrayList<SlotMask>()
 
     init {
         buildIndex(handlers)
     }
 
-    fun byTag(tag: String): Rule? = tag2rule[tag]
+    override fun lookupRuleByTag(tag: String): Rule? = tag2rule[tag]
 
+    /**
+     * Returns instances of [Rule] that can potentially match the specified [ConstraintOccurrence].
+     */
     fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> {
         val ruleIndices = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
-        return ruleIndices.allSetBits().map { idx -> rules[idx] }
+        return ruleIndices.allSetBits().map { idx -> rulesList[idx] }
     }
 
     /**
-     * Returns a pair of rule and bit mask with 1's marking matching slots.
+     * Returns a pair of rule and bit mask with 1's marking matching slots in constraint's head.
      */
     fun forOccurrenceWithMask(occ: ConstraintOccurrence): Iterable<Pair<Rule, BitSet>> {
         val ruleBits = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
         return ruleBits.allSetBits().mapNotNull { ruleBit ->
-            slotIndices[ruleBit][occ]?.let { mask -> rules[ruleBit] to mask }
+            slotMasksList[ruleBit][occ]?.let { mask -> rulesList[ruleBit] to mask }
         }
     }
 
-    override fun iterator(): Iterator<Rule> = tag2rule.values.iterator()
+    override fun iterator(): Iterator<Rule> = rulesList.iterator()
 
     private fun buildIndex(handlers: Iterable<Handler>) {
         var ruleBit = 0
         for (h in handlers) {
             for (rule in h.rules()) {
                 if (tag2rule.containsKey(rule.tag())) throw IllegalStateException("duplicate rule tag ${rule.tag()}")
-
                 tag2rule[rule.tag()] = rule
-                rules.add(rule)
+                rulesList.add(rule)
 
                 val head = rule.headKept() + rule.headReplaced()
-                val cst2mask = SlotMask(head.size)
+                val slotMask = SlotMask()
                 for ((pos, cst) in head.withIndex()) {
                     symbol2index.getOrPut(cst.symbol()) { ArgumentRuleIndex(cst.symbol()) }.update(cst, ruleBit)
-                    cst2mask.update(cst, pos)
+                    slotMask.update(cst, pos)
                 }
 
-                slotIndices.add(cst2mask)
+                slotMasksList.add(slotMask)
 
                 ruleBit += 1
             }
@@ -94,7 +100,7 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
      * The mask tells whether or not a particular constraint occurrence can match
      * any of the rule's constraints.
      */
-    class SlotMask(val size: Int) {
+    private class SlotMask() {
 
         val symbol2mask = HashMap<Symbol, BitSet>()
 
@@ -155,8 +161,8 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule> {
             if (occ.constraint().symbol() != symbol) throw IllegalArgumentException()
 
             // initially select all rules
-            val upToBit = rules.size
-            val ruleIndices = BitSet(rules.size)
+            val upToBit = rulesList.size
+            val ruleIndices = BitSet(rulesList.size)
             ruleIndices.set(0, upToBit)
 
             for ((idx, arg) in occ.arguments().withIndex()) {

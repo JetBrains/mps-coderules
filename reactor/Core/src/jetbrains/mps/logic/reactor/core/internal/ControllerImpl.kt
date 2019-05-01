@@ -99,7 +99,7 @@ internal class ControllerImpl (
                 // TODO: paranoid check. should be isAlive() instead
                 // FIXME: move this check elsewhere
                 if (state.operational && active.stored && match.allStored())
-                    processMatch(state, match as MatchRuleImpl)
+                    processMatch(state, match as RuleMatchImpl)
                 else
                     state
             }
@@ -113,7 +113,7 @@ internal class ControllerImpl (
         }
     }
 
-    private fun processMatch(inState: ProcessingState, match: MatchRuleImpl) : ProcessingState {
+    private fun processMatch(inState: ProcessingState, match: RuleMatchImpl) : ProcessingState {
         val context = Context(inState, match.logicalContext())
 
         // invoke matched pattern predicates
@@ -147,7 +147,7 @@ internal class ControllerImpl (
         this.dispatchFringe = dispatchFringe.consume(match)
         trace.trigger(match)
 
-        for (occ in match.headReplaced) {
+        match.forEachReplaced {occ ->
             this.dispatchFringe = dispatchFringe.contract(occ)
             frameStack.current.store.discard(occ)
             trace.discard(occ)

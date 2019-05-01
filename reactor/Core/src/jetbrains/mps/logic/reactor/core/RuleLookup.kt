@@ -16,19 +16,16 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.core.internal.RuleMatcherImpl
 import jetbrains.mps.logic.reactor.program.Rule
 
 /**
- * Abstracts a rule matching algorithm.  
+ * Enables to lookup a rule by the tag, which uniquely identifies the rule.
  *
  * @author Fedor Isakov
  */
-interface RuleMatcher {
 
-    fun probe(): RuleMatchingProbe
+interface RuleLookup {
+
+    fun lookupRuleByTag(tag: String): Rule?
 
 }
-
-fun createRuleMatcher(lookup: RuleLookup, tag: String): RuleMatcher = RuleMatcherImpl(lookup, tag)
-

@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.Occurrence
+import jetbrains.mps.logic.reactor.core.RuleMatchEx
 import jetbrains.mps.logic.reactor.core.Subst
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
@@ -25,11 +26,13 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.IdWrapper
 
-internal class MatchRuleImpl(val rule: Rule,
-                             val subst: Subst,
-                             val headKept: Iterable<Occurrence>,
-                             val headReplaced: Iterable<Occurrence>) : MatchRule {
+internal class RuleMatchImpl(private val rule: Rule,
+                             private val subst: Subst,
+                             private val headKept: Iterable<Occurrence>,
+                             private val headReplaced: Iterable<Occurrence>) : RuleMatchEx
+{
 
    private val logicalContext = object : LogicalContext {
 
@@ -46,7 +49,13 @@ internal class MatchRuleImpl(val rule: Rule,
 
    }
 
-   override fun rule(): Rule = rule
+   inline fun forEachReplaced(action: (Occurrence) -> Unit) =
+       headReplaced.forEach(action)
+
+    override fun signature(): ArrayList<IdWrapper<Occurrence>?> =
+        ArrayList((headKept + headReplaced).map { IdWrapper(it) })
+
+    override fun rule(): Rule = rule
 
    override fun matchHeadKept(): Iterable<ConstraintOccurrence?> = headKept
 

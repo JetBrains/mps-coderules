@@ -17,10 +17,9 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.Maps
-import jetbrains.mps.logic.reactor.core.internal.MatchRuleImpl
+import jetbrains.mps.logic.reactor.core.internal.RuleMatchImpl
 import com.github.andrewoma.dexx.collection.Map as PersMap
 import jetbrains.mps.logic.reactor.evaluation.MatchRule
-import jetbrains.mps.logic.reactor.program.Rule
 
 /**
  * A front-end interface to [RuleMatcher].
@@ -29,62 +28,80 @@ import jetbrains.mps.logic.reactor.program.Rule
  */
 class Dispatcher (val ruleIndex: RuleIndex) {
 
-    private val rule2matcher = HashMap<Rule, Matcher>()
+    private val ruletag2matcher = HashMap<String, RuleMatcher>()
 
     init {
         ruleIndex.forEach { rule ->
-            val matcher = Matcher(rule)
-            rule2matcher.put(rule, matcher);
+            val matcher = createRuleMatcher(ruleIndex, rule.tag())
+            ruletag2matcher.put(rule.tag(), matcher);
         }
     }
 
+    /**
+     * Create new empty [DispatchFringe] ready to accept constraints.
+     */
+    fun fringe() = DispatchFringe()
+
     inner class DispatchFringe {
 
-        private var rule2probe: PersMap<Rule, MatchingProbe>
-        
-        private val allMatches = arrayListOf<MatchRuleImpl>()
+        private var ruletag2probe: PersMap<String, RuleMatchingProbe>
+
+        private val allMatches = arrayListOf<RuleMatchImpl>()
 
         constructor() {
-            this.rule2probe = Maps.of()
-            rule2matcher.entries.forEach { e ->
-                this.rule2probe = rule2probe.put(e.key, e.value.probe())
+            this.ruletag2probe = Maps.of()
+            ruletag2matcher.entries.forEach { e ->
+                this.ruletag2probe = ruletag2probe.put(e.key, e.value.probe())
             }
         }
 
-        constructor(pred: DispatchFringe, matching: Iterable<MatchingProbe>) {
-            this.rule2probe = pred.rule2probe
+        private constructor(pred: DispatchFringe, matching: Iterable<RuleMatchingProbe>) {
+            this.ruletag2probe = pred.ruletag2probe
             matching.forEach { probe ->
-                this.rule2probe = rule2probe.put(probe.rule(), probe)
-                allMatches.addAll(probe.matches() as Collection<MatchRuleImpl>)
+                this.ruletag2probe = ruletag2probe.put(probe.rule().tag(), probe)
+                allMatches.addAll(probe.matches() as Collection<RuleMatchImpl>)
             }
         }
 
-        constructor(pred: DispatchFringe, consumedMatch: MatchRule) {
-            this.rule2probe = pred.rule2probe
-            pred.rule2probe[consumedMatch.rule()]?.let {
-                this.rule2probe = rule2probe.put(consumedMatch.rule(), it.consumed(consumedMatch))
+        private constructor(pred: DispatchFringe, consumedMatch: RuleMatchEx) {
+            this.ruletag2probe = pred.ruletag2probe
+            pred.ruletag2probe[consumedMatch.rule().tag()]?.let {
+                this.ruletag2probe = ruletag2probe.put(consumedMatch.rule().tag(), it.consume(consumedMatch))
             }
         }
 
-        fun matches() : Iterable<MatchRule> = allMatches
+        /**
+         * Returns all matches satisfied by the constraint occurrences received so far.
+         */
+        fun matches() : Iterable<RuleMatchEx> = allMatches
 
-        fun consume(matchRule: MatchRule) = DispatchFringe(this, matchRule)
-
+        /**
+         * Returns a new [DispatchFringe] instance that is "expanded" with matches corresponding to the
+         * specified active constraint occurrence.
+         */
         fun expand(activated: Occurrence) = DispatchFringe(this,
             ruleIndex.forOccurrenceWithMask(activated).mapNotNull { (rule, mask) ->
-                rule2probe[rule]?.expand(activated, mask)
-                rule2probe[rule]?.expand(activated, mask)
+                ruletag2probe[rule.tag()]?.expand(activated, mask)
+                ruletag2probe[rule.tag()]?.expand(activated, mask)
             })
 
+        /**
+         * Returns a new [DispatchFringe] instance that is "contracted": all matches corresponding to the
+         * specified discarded constraint occurrence are eliminated.
+         */
         fun contract(discarded: Occurrence) = DispatchFringe(this,
             ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
-                rule2probe[rule]
+                ruletag2probe[rule.tag()]
             }.map { probe ->
                 probe.contract(discarded)
             })
 
-    }
+        /**
+         * Serves to indicate that the specified [RuleMatchEx] has been processed (consumed) and has to
+         * be excluded from any further "match" set returned by [matches].
+         */
+        internal fun consume(matchRule: RuleMatchEx) = DispatchFringe(this, matchRule)
 
-    fun fringe() = DispatchFringe()
+    }
 
 }

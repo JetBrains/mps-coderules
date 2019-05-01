@@ -16,19 +16,28 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.core.internal.RuleMatcherImpl
+import jetbrains.mps.logic.reactor.evaluation.MatchRule
 import jetbrains.mps.logic.reactor.program.Rule
 
+import java.util.BitSet
+
 /**
- * Abstracts a rule matching algorithm.  
+ * Provides functionality relevant to finding match(-es) for a rule.
  *
  * @author Fedor Isakov
  */
-interface RuleMatcher {
+interface RuleMatchingProbe {
 
-    fun probe(): RuleMatchingProbe
+    fun rule(): Rule
+
+    fun matches(): Collection<RuleMatchEx>
+
+    fun consume(matchRule: RuleMatchEx): RuleMatchingProbe
+
+    fun expand(occ: Occurrence): RuleMatchingProbe
+
+    fun expand(occ: Occurrence, mask: BitSet): RuleMatchingProbe
+
+    fun contract(occ: Occurrence): RuleMatchingProbe
 
 }
-
-fun createRuleMatcher(lookup: RuleLookup, tag: String): RuleMatcher = RuleMatcherImpl(lookup, tag)
-

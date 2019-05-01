@@ -43,7 +43,7 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
 
     override fun probe(): ReteNetwork = ReteNetwork(head.size)
 
-    inner class ReteNetwork(val headSize: Int) : MatchingProbe {
+    inner class ReteNetwork(val headSize: Int) : RuleMatchingProbe {
 
         init {
             // rules with empty head are not allowed
@@ -285,11 +285,11 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
             }
 
 
-            fun matches(): Collection<MatchRuleImpl> {
+            fun matches(): Collection<RuleMatchImpl> {
                 val topLayer = layers.first()
                 if (topLayer.final) {
 
-                    val matches = ArrayList<MatchRuleImpl>()
+                    val matches = ArrayList<RuleMatchImpl>()
                     for (n in topLayer.nodes()) {
                         // any excluded occurrences?
                         if (n.containsOccurrence(skipOccIndices)) continue
@@ -301,7 +301,7 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
                         val occList = occArray.toList() as List<Occurrence>
                         val keptCount = rule.headKept().count()
 
-                        matches.add(MatchRuleImpl(rule,
+                        matches.add(RuleMatchImpl(rule,
                             allSubst,
                             occList.subList(0, keptCount),
                             occList.subList(keptCount, occList.size)))
@@ -347,9 +347,9 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
             return this
         }
 
-        override fun matches(): Collection<MatchRuleImpl> = generations.last().matches()
+        override fun matches(): Collection<RuleMatchImpl> = generations.last().matches()
 
-        override fun consumed(matchRule: MatchRule): MatchingProbe {
+        override fun consume(matchRule: RuleMatchEx): RuleMatchingProbe {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
