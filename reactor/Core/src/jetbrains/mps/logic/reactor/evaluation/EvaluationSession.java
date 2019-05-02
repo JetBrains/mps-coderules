@@ -90,9 +90,6 @@ public abstract class EvaluationSession {
 
         public abstract Config withFeedbackHandler(EvaluationFeedbackHandler handler);
 
-        @Deprecated
-        public abstract Config withParam(String key, Object param);
-
         public abstract EvaluationResult start();
 
     }

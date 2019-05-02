@@ -2,6 +2,7 @@ import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.AfterClass
 import org.junit.Assert.assertEquals
@@ -35,7 +36,9 @@ class TestProgram {
         for (h in handlers) {
             programBuilder.addHandler(h)
         }
-        val session = EvaluationSession.newSession(programBuilder.program(name)).withParam("main", MockConstraint(ConstraintSymbol("main", 0))).start()
+        val session = EvaluationSession.newSession(programBuilder.program(name))
+            .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
+            .start()
         return session.storeView()
     }
 

@@ -70,11 +70,6 @@ internal class EvaluationSessionImpl private constructor (
             return this
         }
 
-        override fun withParam(key: String, param: Any): EvaluationSession.Config {
-            this.parameters.put(ParameterKey.of(key, Any::class.java), param)
-            return this
-        }
-
         override fun <T> withParameter(key: ParameterKey<T>, value: T): EvaluationSession.Config {
             this.parameters.put(key, value as Any)
             return this

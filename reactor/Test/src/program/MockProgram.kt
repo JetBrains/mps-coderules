@@ -96,17 +96,7 @@ class MockRule(
 class MockProgram(val name: String, val handlers: List<Handler>, val registry: MockConstraintRegistry) : Program() {
 
     override fun name(): String = name
-
-
-    override fun constraintSymbols(): Iterable<ConstraintSymbol> =
-        registry.constraintSymbols()
-
-    override fun constraintArgumentTypes(constraintSymbol: ConstraintSymbol): List<Class<*>> =
-        registry.constraintArgTypes(constraintSymbol)
-
-    override fun predicateSymbols(): Iterable<PredicateSymbol> =
-        registry.predicateSymbols()
-
+    
     override fun instantiateArguments(arguments: List<*>, logicalContext: LogicalContext, invocationContext: InvocationContext): List<*> =
         arguments.map { a ->
             if (a is MetaLogical<*>) logicalContext.variable(a)

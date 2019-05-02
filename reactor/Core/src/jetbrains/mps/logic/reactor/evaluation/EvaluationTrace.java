@@ -58,10 +58,7 @@ public interface EvaluationTrace {
 
         public void ask(boolean result, PredicateInvocation invocation) {
         }
-
-        public void failure(EvaluationFailureException fail) {
-        }
-
+        
         public void failure(EvaluationFailure failure) {
         }
 
@@ -88,9 +85,6 @@ public interface EvaluationTrace {
     void tell(PredicateInvocation invocation);
 
     void ask(boolean result, PredicateInvocation invocation);
-
-    @Deprecated
-    void failure(EvaluationFailureException fail);
-
+    
     void failure(EvaluationFailure failure);
 }

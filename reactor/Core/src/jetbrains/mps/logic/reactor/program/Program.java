@@ -32,27 +32,6 @@ public abstract class Program {
 
     public abstract String name();
 
-    /**
-     * @deprecated no usages
-     * @return
-     */
-    @Deprecated
-    public Iterable<ConstraintSymbol> constraintSymbols() { throw new UnsupportedOperationException (); }
-
-    /**
-     * @deprecated no usages
-     * @return
-     */
-    @Deprecated
-    public List<Class<?>> constraintArgumentTypes(ConstraintSymbol constraintSymbol) { throw new UnsupportedOperationException (); }
-
-    /**
-     * @deprecated no usages
-     * @return
-     */
-    @Deprecated
-    public Iterable<PredicateSymbol> predicateSymbols() { throw new UnsupportedOperationException (); }
-
     public abstract Iterable<Handler> handlers();
 
     public abstract List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext, InvocationContext invocationContext);
