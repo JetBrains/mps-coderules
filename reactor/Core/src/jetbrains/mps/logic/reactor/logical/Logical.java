@@ -39,8 +39,6 @@ public interface Logical<T> {
      * Returns the value associated with this logical instance.
      * Can be null.
      * Only the logical instance that is a representative can have value that is not null.
-     * <p>
-     * FIXME: must return the representative's value
      */
     T value();
 

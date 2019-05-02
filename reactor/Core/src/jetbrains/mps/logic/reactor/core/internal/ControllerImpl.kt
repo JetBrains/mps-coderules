@@ -263,12 +263,12 @@ internal class ControllerImpl (
         override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
     }
 
-    private fun MatchRule.patternPredicates() =
+    private fun RuleMatch.patternPredicates() =
         (rule().headKept() + rule().headReplaced()).zip(matchHeadKept() + matchHeadReplaced()).flatMap {
             it.first.patternPredicates(it.second.arguments())
         }.toList()
 
-    private fun MatchRule.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
+    private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
 
 }
 

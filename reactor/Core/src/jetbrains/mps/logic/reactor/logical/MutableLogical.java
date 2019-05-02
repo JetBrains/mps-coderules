@@ -18,32 +18,31 @@ package jetbrains.mps.logic.reactor.logical;
 
 
 /**
- * // FIXME to be renamed to MutableLogical
  * A logical variable that can be joined with another variable to produce a union.
  *
  * @param <T> the value type
  *
  * @author Fedor Isakov
  */
-public interface JoinableLogical<T> extends Logical<T> {
+public interface MutableLogical<T> extends Logical<T> {
 
     /**
      * Covariant override.
      */
-    JoinableLogical<T> findRoot();
+    MutableLogical<T> findRoot();
 
     /**
      * Unions two equivalence classes of logicals.
      * Both the receiver and the {@code other} parameter are expected to be representatives.
      * The one with the highest rank becomes the representative for the new class.
      */
-    void union(JoinableLogical<T> other, JoinableLogical.ValueReconciler<T> reconciler);
+    void union(MutableLogical<T> other, MutableLogical.ValueReconciler<T> reconciler);
 
     /**
-     * Calls {@link JoinableLogical#union(JoinableLogical <T>, JoinableLogical.ValueReconciler<T>) } with the default value reconciler.
+     * Calls {@link MutableLogical#union(MutableLogical <T>, MutableLogical.ValueReconciler<T>) } with the default value reconciler.
      * The default reconciler throws {@link java.lang.IllegalArgumentException } if the two values are not equal.
      */
-    void union(JoinableLogical<T> other);
+    void union(MutableLogical<T> other);
 
     /**
      * Should only be called on a representative.

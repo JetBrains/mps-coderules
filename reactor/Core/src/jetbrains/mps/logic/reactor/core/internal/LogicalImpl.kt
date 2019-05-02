@@ -17,11 +17,11 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.LogicalObserver
-import jetbrains.mps.logic.reactor.logical.JoinableLogical
+import jetbrains.mps.logic.reactor.logical.MutableLogical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import java.util.ArrayList
 
-internal class LogicalImpl<T> : JoinableLogical<T> {
+internal class LogicalImpl<T> : MutableLogical<T> {
 
     companion object {
         var lastIdx = 0
@@ -79,7 +79,7 @@ internal class LogicalImpl<T> : JoinableLogical<T> {
 
     override fun metaLogical(): MetaLogical<T> = metaLogical
 
-    override fun findRoot(): JoinableLogical<T> = find()
+    override fun findRoot(): MutableLogical<T> = find()
 
     override fun setValue(newValue: T) {
         if (_value !== newValue) {
@@ -88,7 +88,7 @@ internal class LogicalImpl<T> : JoinableLogical<T> {
         }
     }
 
-    override fun union(other: JoinableLogical<T>, reconciler: JoinableLogical.ValueReconciler<T>) {
+    override fun union(other: MutableLogical<T>, reconciler: MutableLogical.ValueReconciler<T>) {
         val thisRepr = this.find()
         val otherRepr = (other as LogicalImpl<T>).find()
 
@@ -143,7 +143,7 @@ internal class LogicalImpl<T> : JoinableLogical<T> {
         }
     }
 
-    override fun union(other: JoinableLogical<T>) {
+    override fun union(other: MutableLogical<T>) {
         union(other, { a, b -> if (a != b) throw IllegalStateException("$a does not equal to $b")})
     }
 
@@ -166,13 +166,13 @@ internal class LogicalImpl<T> : JoinableLogical<T> {
         notifyParentUpdated()
     }
 
-    private fun mergeValueObservers(mergeFrom: JoinableLogical<T>) {
+    private fun mergeValueObservers(mergeFrom: MutableLogical<T>) {
         val other = mergeFrom as LogicalImpl<T>
         valueObservers.addAll(other.valueObservers)
         other.valueObservers.clear()
     }
 
-    private fun mergeParentObservers(mergeFrom: JoinableLogical<T>) {
+    private fun mergeParentObservers(mergeFrom: MutableLogical<T>) {
         val other = mergeFrom as LogicalImpl<T>
         parentObservers.addAll(other.parentObservers)
         other.parentObservers.clear()
@@ -203,11 +203,11 @@ class DefaultMetaLogical<V> (val name: String) : MetaLogical<V>(name, Object::cl
 
 // Used from tests
 
-fun <V> anonLogical(value: V): JoinableLogical<V> = LogicalImpl<V>(value)
+fun <V> anonLogical(value: V): MutableLogical<V> = LogicalImpl<V>(value)
 
-fun <V> namedLogical(name: String): JoinableLogical<V> = LogicalImpl<V>(name)
+fun <V> namedLogical(name: String): MutableLogical<V> = LogicalImpl<V>(name)
 
-fun <V> MetaLogical<V>.logical(): JoinableLogical<V> = LogicalImpl<V>(this)
+fun <V> MetaLogical<V>.logical(): MutableLogical<V> = LogicalImpl<V>(this)
 
-fun <V> MetaLogical<V>.logical(value: V): JoinableLogical<V> = LogicalImpl<V>(name(), value)
+fun <V> MetaLogical<V>.logical(value: V): MutableLogical<V> = LogicalImpl<V>(name(), value)
 

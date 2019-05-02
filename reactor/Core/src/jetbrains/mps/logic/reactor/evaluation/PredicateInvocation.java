@@ -35,10 +35,5 @@ public interface PredicateInvocation {
 
     LogicalContext logicalContext();
 
-    default InvocationContext invocationContext() {
-        // FIXME delete the implementation after all code has been migrated
-        // keep compatibitily with existing code
-        throw new UnsupportedOperationException();
-    };
-
+    InvocationContext invocationContext();
 }

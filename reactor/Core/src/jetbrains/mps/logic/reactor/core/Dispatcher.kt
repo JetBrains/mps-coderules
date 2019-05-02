@@ -19,7 +19,6 @@ package jetbrains.mps.logic.reactor.core
 import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.internal.RuleMatchImpl
 import com.github.andrewoma.dexx.collection.Map as PersMap
-import jetbrains.mps.logic.reactor.evaluation.MatchRule
 
 /**
  * A front-end interface to [RuleMatcher].

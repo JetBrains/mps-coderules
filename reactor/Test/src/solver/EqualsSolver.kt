@@ -5,7 +5,7 @@ import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
-import jetbrains.mps.logic.reactor.logical.JoinableLogical
+import jetbrains.mps.logic.reactor.logical.MutableLogical
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.program.PredicateSymbol
 
@@ -26,11 +26,11 @@ class EqualsSolver  : Solver {
     }
 
     private fun _ask(left: Any?, right: Any?): Boolean {
-        return if (left is JoinableLogical<*> && right is JoinableLogical<*>) {
+        return if (left is MutableLogical<*> && right is MutableLogical<*>) {
             ask_logical_logical(left, right)
-        } else if (left is JoinableLogical<*>) {
+        } else if (left is MutableLogical<*>) {
             ask_logical_value(left, right)
-        } else if (right is JoinableLogical<*>) {
+        } else if (right is MutableLogical<*>) {
             ask_value_logical(left, right)
         } else {
             ask_value_value(left, right)
@@ -42,27 +42,27 @@ class EqualsSolver  : Solver {
     }
 
     private fun _tell(left: Any?, right: Any?) {
-        if (left is JoinableLogical<*> && right is JoinableLogical<*>) {
-            tell_logical_logical(left as JoinableLogical<Any>, right as JoinableLogical<Any>)
-        } else if (left is JoinableLogical<*>) {
-            tell_logical_value(left as JoinableLogical<Any>, right)
-        } else if (right is JoinableLogical<*>) {
-            tell_value_logical(left, right as JoinableLogical<Any>)
+        if (left is MutableLogical<*> && right is MutableLogical<*>) {
+            tell_logical_logical(left as MutableLogical<Any>, right as MutableLogical<Any>)
+        } else if (left is MutableLogical<*>) {
+            tell_logical_value(left as MutableLogical<Any>, right)
+        } else if (right is MutableLogical<*>) {
+            tell_value_logical(left, right as MutableLogical<Any>)
         } else {
             tell_value_value(left, right)
         }
     }
 
-    fun ask_logical_logical(left: JoinableLogical<*>, right: JoinableLogical<*>): Boolean {
+    fun ask_logical_logical(left: MutableLogical<*>, right: MutableLogical<*>): Boolean {
         if (left.findRoot() == right.findRoot()) return true
         return left.isBound && right.isBound && left.findRoot().value() == right.findRoot().value()
     }
 
-    fun ask_logical_value(left: JoinableLogical<*>, right: Any?): Boolean {
+    fun ask_logical_value(left: MutableLogical<*>, right: Any?): Boolean {
         return left.isBound && left.findRoot().value() == right
     }
 
-    fun ask_value_logical(left: Any?,  right: JoinableLogical<*>): Boolean {
+    fun ask_value_logical(left: Any?,  right: MutableLogical<*>): Boolean {
         return right.isBound && right.findRoot().value() == left
     }
 
@@ -70,7 +70,7 @@ class EqualsSolver  : Solver {
         return left == right
     }
 
-    fun <T> tell_logical_logical(left: JoinableLogical<T>, right: JoinableLogical<T>) {
+    fun <T> tell_logical_logical(left: MutableLogical<T>, right: MutableLogical<T>) {
         if (left == right) return
 
         val leftRepr = left.findRoot()
@@ -81,7 +81,7 @@ class EqualsSolver  : Solver {
         leftRepr.union(rightRepr, { a, b -> tell_value_value(a, b)})
     }
 
-    fun <T> tell_logical_value(left: JoinableLogical<T>, right: T?) {
+    fun <T> tell_logical_value(left: MutableLogical<T>, right: T?) {
         if (left.isBound) {
             check(left.findRoot().value() == right)
         }
@@ -90,7 +90,7 @@ class EqualsSolver  : Solver {
         }
     }
 
-    fun <T> tell_value_logical(left: T?,  right: JoinableLogical<T>) {
+    fun <T> tell_value_logical(left: T?,  right: MutableLogical<T>) {
         if (right.isBound) {
             check(right.findRoot().value() == left)
         }

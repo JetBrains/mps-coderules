@@ -44,7 +44,7 @@ public class EvaluationFailure extends EvaluationFeedback {
     }
 
     /**
-     * // FIXME need a smarter way to supercede previously reported failure with a more specific one
+     * // TODO need a smarter way to supercede previously reported failure with a more specific one
      * Constructs a more specific failure given a generic one.
      */
     public EvaluationFailure(EvaluationFailure reason, String message) {

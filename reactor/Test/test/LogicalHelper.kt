@@ -1,7 +1,7 @@
 import jetbrains.mps.logic.reactor.core.LogicalObserver
 import jetbrains.mps.logic.reactor.core.internal.anonLogical
 import jetbrains.mps.logic.reactor.core.internal.namedLogical
-import jetbrains.mps.logic.reactor.logical.JoinableLogical
+import jetbrains.mps.logic.reactor.logical.MutableLogical
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import java.util.*
@@ -36,7 +36,7 @@ fun <T : Any> Logical<T>.get(): T = findRoot().value()
 fun <T : Any> Logical<T>.getNullable(): T? = findRoot().value()
 
 fun <T : Any> Logical<T>.set(t: T) {
-    if (this is JoinableLogical<T>)
+    if (this is MutableLogical<T>)
         findRoot().setValue(t)
     else
         throw IllegalStateException("unexpected receiver $this")

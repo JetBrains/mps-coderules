@@ -16,7 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.evaluation.MatchRule
+import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.util.IdWrapper
 
 
@@ -24,7 +24,7 @@ import jetbrains.mps.logic.reactor.util.IdWrapper
  * @author Fedor Isakov
  */
 
-interface RuleMatchEx : MatchRule {
+interface RuleMatchEx : RuleMatch {
 
     /**
      * Returns an array of matched constraint occurrences wrapped in [IdWrapper].

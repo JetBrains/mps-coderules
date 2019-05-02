@@ -38,19 +38,19 @@ public interface EvaluationTrace {
         public void discard(ConstraintOccurrence occurrence) {
         }
 
-        public void trying(MatchRule matchRule) {
+        public void trying(RuleMatch matchRule) {
         }
 
-        public void reject(MatchRule matchRule) {
+        public void reject(RuleMatch matchRule) {
         }
 
-        public void trigger(MatchRule matchRule) {
+        public void trigger(RuleMatch matchRule) {
         }
 
-        public void retry(MatchRule matchRule) {
+        public void retry(RuleMatch matchRule) {
         }
 
-        public void finish(MatchRule matchRule) {
+        public void finish(RuleMatch matchRule) {
         }
 
         public void tell(PredicateInvocation invocation) {
@@ -72,15 +72,15 @@ public interface EvaluationTrace {
 
     void discard(ConstraintOccurrence occurrence);
 
-    void trying(MatchRule matchRule);
+    void trying(RuleMatch matchRule);
 
-    void reject(MatchRule matchRule);
+    void reject(RuleMatch matchRule);
 
-    void trigger(MatchRule matchRule);
+    void trigger(RuleMatch matchRule);
 
-    void retry(MatchRule matchRule);
+    void retry(RuleMatch matchRule);
 
-    void finish(MatchRule matchRule);
+    void finish(RuleMatch matchRule);
 
     void tell(PredicateInvocation invocation);
 
