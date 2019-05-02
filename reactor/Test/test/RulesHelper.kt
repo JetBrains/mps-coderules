@@ -9,9 +9,11 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-class Builder(val env: Environment, val handlers: List<Handler>) : RuleLookup {
+class Builder(var handlers: List<Handler>) : RuleLookup {
 
     val tag2rule = HashMap<String, Rule>()
+
+    val programBuilder = ProgramBuilder(MockConstraintRegistry())
 
     init {
         handlers
@@ -25,73 +27,57 @@ class Builder(val env: Environment, val handlers: List<Handler>) : RuleLookup {
     override fun lookupRuleByTag(tag: String): Rule? = tag2rule[tag]
 
     fun ruleMatcher(): RuleMatcher = createRuleMatcher(this, rules.first().tag())
+
+    fun program(name: String): Program = programBuilder.program(name, handlers)
     
 }
 
-@Deprecated("don't use")
-class Environment(val programBuilder: ProgramBuilder? = null) {
+fun programWithRules(vararg ruleBuilders: () -> Rule): Builder {
+    return builder(arrayOf(handler("test", * ruleBuilders)))
 }
 
-fun programWithRules(vararg ruleBuilders: Environment.() -> Rule): Builder {
-    return programWithRules(Environment(), ruleBuilders)
-}
-
-fun programWithRules(pb: ProgramBuilder, vararg ruleBuilders: Environment.() -> Rule): Builder {
-    return programWithRules(Environment(pb), ruleBuilders)
-}
-
-private fun programWithRules(env: Environment, ruleBuilders: Array<out Environment.() -> Rule>): Builder {
-    return builder(env, arrayOf(handler("test", emptyList(), * ruleBuilders)))
-}
-
-fun programWithHandlers(vararg handlerBuilders: Environment.() -> Handler): Builder {
-    return builder(Environment(), handlerBuilders)
-}
-
-private fun builder(env: Environment, handlerBlocks: Array<out Environment.() -> Handler>): Builder {
+private fun builder(handlerBlocks: Array<out () -> Handler>): Builder {
     val handlers = ArrayList<Handler>()
-    with(env) {
-        for (block in handlerBlocks) {
-            handlers.add(block())
-        }
+    for (block in handlerBlocks) {
+        handlers.add(block())
     }
-    return Builder(env, handlers)
+    return Builder(handlers)
 }
 
-fun handler(name: String, primary: Iterable<ConstraintSymbol>, vararg ruleBlocks: Environment.() -> Rule): Environment.() -> Handler = {
-    val hb = HandlerBuilder(name, primary)
+fun handler(name: String, vararg ruleBlocks: () -> Rule): () -> Handler = {
+    val hb = HandlerBuilder(name)
     for (block in ruleBlocks) {
-        hb.appendRule(this.block())
+        hb.appendRule(block())
     }
     hb.toHandler()
 }
 
-fun rule(tag: String, vararg component: RB.() -> Unit): Environment.() -> Rule = {
-    val rb = RB(this, tag)
+fun rule(tag: String, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
+    val rb = RuleBuilder(tag)
     for (cmp in component) {
         rb.cmp()
     }
     rb.toRule()
 }
 
-fun headKept(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendHeadKept(* buildConjunction(Constraint::class.java, env, content).toArray())
+fun headKept(vararg content: ConjBuilder.() -> Unit): RuleBuilder.() -> Unit = {
+    appendHeadKept(* buildConjunction(Constraint::class.java, content).toArray())
 }
 
-fun headReplaced(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendHeadReplaced(* buildConjunction(Constraint::class.java, env, content).toArray())
+fun headReplaced(vararg content: ConjBuilder.() -> Unit): RuleBuilder.() -> Unit = {
+    appendHeadReplaced(* buildConjunction(Constraint::class.java, content).toArray())
 }
 
-fun guard(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendGuard(* buildConjunction(Predicate::class.java, env, content).toArray())
+fun guard(vararg content: ConjBuilder.() -> Unit): RuleBuilder.() -> Unit = {
+    appendGuard(* buildConjunction(Predicate::class.java, content).toArray())
 }
 
-fun body(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendBody(false, * buildConjunction(AndItem::class.java, env, content).toArray())
+fun body(vararg content: ConjBuilder.() -> Unit): RuleBuilder.() -> Unit = {
+    appendBody(false, * buildConjunction(AndItem::class.java, content).toArray())
 }
 
-fun altBody(vararg content: ConjBuilder.() -> Unit): RB.() -> Unit = {
-    appendBody(true, * buildConjunction(AndItem::class.java, env, content).toArray())
+fun altBody(vararg content: ConjBuilder.() -> Unit): RuleBuilder.() -> Unit = {
+    appendBody(true, * buildConjunction(AndItem::class.java, content).toArray())
 }
 
 fun constraint(id: String, vararg args: Any): ConjBuilder.() -> Unit = {
@@ -119,16 +105,11 @@ object fooObservable : FrameObservable {
     }
 }
 
-class RB(val env: Environment, tag: String) : RuleBuilder(tag) {
-
-}
-
-class ConjBuilder(val type: Class<out AndItem>, val env: Environment) {
+class ConjBuilder(val type: Class<out AndItem>) {
     val constraints = ArrayList<AndItem>()
 
     fun createConstraint(args: Array<out Any>, id: String): Constraint {
-        return env.programBuilder?.constraint(ConstraintSymbol(id, args.size), * args)
-            ?: MockConstraint(ConstraintSymbol(id, args.size), * args)
+        return MockConstraint(ConstraintSymbol(id, args.size), * args)
     }
 
     fun add(item: AndItem): Unit {
@@ -155,9 +136,8 @@ class ConjBuilder(val type: Class<out AndItem>, val env: Environment) {
 }
 
 private fun buildConjunction(type: Class<out AndItem>,
-                             env: Environment,
                              content: Array<out ConjBuilder.() -> Unit>): ConjBuilder {
-    val conjBuilder = ConjBuilder(type, env)
+    val conjBuilder = ConjBuilder(type)
     for (c in content) {
         conjBuilder.c()
     }

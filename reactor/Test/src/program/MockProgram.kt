@@ -6,35 +6,30 @@ import jetbrains.mps.logic.reactor.evaluation.InvocationContext
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
-import program.MockConstraint
 import java.util.*
 import java.util.Collections.*
 
 class ProgramBuilder(val registry: MockConstraintRegistry)  {
 
-    private val handlers = ArrayList<Handler>()
-
-    fun addHandler(handler: Handler) {
-        for (r in handler.rules()) {
-            registry.update(r)
+    fun program(name: String, handlers: List<Handler>): Program {
+        for (h in handlers) {
+            for (r in h.rules()) {
+                registry.update(r)
+            }
         }
-        handlers.add(handler)
+        return MockProgram(name, handlers, registry)
     }
-
-    fun constraint(symbol: ConstraintSymbol, vararg args: Any): Constraint = MockConstraint(symbol, listOf(* args))
-
-    fun program(name: String): Program = MockProgram(name, handlers, registry)
-
+    
 }
 
-open class HandlerBuilder(val name: String, val primary: Iterable<ConstraintSymbol>) {
+open class HandlerBuilder(val name: String) {
     val rules = ArrayList<Rule>()
 
     fun appendRule(rule: Rule) {
         rules.add(rule)
     }
 
-    fun toHandler(): Handler = MockHandler(name, primary, rules)
+    fun toHandler(): Handler = MockHandler(name, rules)
 }
 
 open class RuleBuilder(val tag: String) {
@@ -61,7 +56,6 @@ open class RuleBuilder(val tag: String) {
 
 class MockHandler(
     val name: String,
-    val primary: Iterable<ConstraintSymbol>,
     val rules: List<Rule>) : Handler() {
 
     override fun name(): String = name

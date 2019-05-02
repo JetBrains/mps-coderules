@@ -10,27 +10,22 @@ import org.junit.Test
 
 class TestProgramBuilder {
 
-    @Before fun beforeTest() {
-        programBuilder = ProgramBuilder(MockConstraintRegistry())
-    }
-
-    lateinit var programBuilder: ProgramBuilder
-
     @Test(expected = InvalidRuleException::class)
     fun emptyBody() {
-        programWithRules(programBuilder,
+        programWithRules(
             rule("foo",
                 headKept(
                     constraint("bar")
-                ))).run {
-
-            programBuilder.addHandler(MockHandler("test", emptyList(), rules))
+                )
+            )
+        ).run {
+            program("test")
         }
     }
 
     @Test
     fun replace() {
-        programWithRules(programBuilder,
+        programWithRules(
             rule("foo",
                 headReplaced(
                     constraint("bar")
@@ -47,25 +42,26 @@ class TestProgramBuilder {
                 ),
                 body(
                     constraint("blah")
-                ))).run {
-
-            programBuilder.addHandler(MockHandler("test", emptyList(), rules))
-            assertEquals(programBuilder.program("test").handlers().flatMap { it.rules() }.count(), 2)
+                )
+            )
+        ).run {
+            assertEquals(program("test").handlers().flatMap { it.rules() }.count(), 2)
         }
     }
 
     @Test(expected = InvalidConstraintException::class)
     fun fail() {
-        programWithRules(programBuilder,
+        programWithRules(
             rule("foo",
                 headReplaced(
                     constraint("bar", 1)
                 ),
                 body(
                     constraint("bar", "1")
-                ))).run {
-
-            programBuilder.addHandler(MockHandler("test", emptyList(), rules))
+                )
+            )
+        ).run {
+            program("test")
         }
     }
 }

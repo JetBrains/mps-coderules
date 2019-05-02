@@ -1,4 +1,5 @@
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
+import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -45,16 +46,19 @@ class TestIncrementalProgram {
         }
     }
 
-    private fun Builder.launch(name: String): StoreView {
-        val programBuilder = ProgramBuilder(MockConstraintRegistry())
-        for (h in handlers) {
-            programBuilder.addHandler(h)
-        }
-        val result = EvaluationSession.newSession(programBuilder.program(name))
+    private fun Builder.launch(name: String, resultHandler: (EvaluationResult) -> Unit): Pair<Builder, StoreView> {
+        val result = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .start()
-        return result.storeView()
+        result.failure()?.let { throw it.cause }
+        resultHandler(result)
+        return this to result.storeView()
     }
+
+    private fun Builder.relaunch(name: String, storeView: StoreView, resultHandler: (EvaluationResult) -> Unit) {
+        
+    }
+
 
 //    private fun StoreView.launch(name: String): StoreView {
 //        val programBuilder = ProgramBuilder(MockConstraintRegistry())
@@ -84,8 +88,11 @@ class TestIncrementalProgram {
                     constraint("bar")
                 )
             )
-        ).launch("replace").apply {
-            Assert.assertEquals(setOf(ConstraintSymbol("foo", 0), ConstraintSymbol("bar", 0)), constraintSymbols())
+        ).launch("replace") { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(ConstraintSymbol("foo", 0), ConstraintSymbol("bar", 0))
+
+        }.also { (builder, storeView) ->
+
         }
     }
 

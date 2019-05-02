@@ -32,11 +32,7 @@ class TestProgram {
     }
 
     private fun Builder.session(name: String): StoreView {
-        val programBuilder = ProgramBuilder(MockConstraintRegistry())
-        for (h in handlers) {
-            programBuilder.addHandler(h)
-        }
-        val session = EvaluationSession.newSession(programBuilder.program(name))
+        val session = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .start()
         return session.storeView()
