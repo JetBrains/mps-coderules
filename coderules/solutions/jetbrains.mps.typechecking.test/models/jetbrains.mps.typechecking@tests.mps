@@ -2395,7 +2395,7 @@
     <node concept="3clFb_" id="390NiL15T3$" role="jymVt">
       <property role="TrG5h" value="asTermLogical" />
       <node concept="3uibUv" id="390NiL15T4j" role="3clF45">
-        <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+        <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
         <node concept="3uibUv" id="6SwZmzBzs3_" role="11_B2D">
           <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
         </node>
@@ -2423,7 +2423,7 @@
               </node>
             </node>
             <node concept="3uibUv" id="390NiL162LH" role="10QFUM">
-              <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+              <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
               <node concept="3uibUv" id="390NiL162LO" role="11_B2D">
                 <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
               </node>
@@ -3416,7 +3416,7 @@
               <node concept="1eOMI4" id="2dF51l1dp$h" role="2Oq$k0">
                 <node concept="10QFUN" id="2dF51l1dp$e" role="1eOMHV">
                   <node concept="3uibUv" id="2dF51l1dp$Q" role="10QFUM">
-                    <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+                    <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
                     <node concept="3uibUv" id="2dF51l1drx0" role="11_B2D">
                       <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                     </node>
@@ -3442,7 +3442,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="2dF51l1dtwt" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~JoinableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
                 <node concept="37vLTw" id="2dF51l1dBeg" role="37wK5m">
                   <ref role="3cqZAo" node="2dF51l1d$S6" resolve="foo1" />
                 </node>
@@ -3496,7 +3496,7 @@
               <node concept="1eOMI4" id="2dF51l1dNCp" role="2Oq$k0">
                 <node concept="10QFUN" id="2dF51l1dNCq" role="1eOMHV">
                   <node concept="3uibUv" id="2dF51l1dNCr" role="10QFUM">
-                    <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+                    <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
                     <node concept="3uibUv" id="2dF51l1dNCs" role="11_B2D">
                       <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
                     </node>
@@ -3522,7 +3522,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="2dF51l1dNC$" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~JoinableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
                 <node concept="37vLTw" id="2dF51l1dNHz" role="37wK5m">
                   <ref role="3cqZAo" node="2dF51l1dEVg" resolve="foo2" />
                 </node>
@@ -3880,7 +3880,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBzJKn" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~JoinableLogical.union(jetbrains.mps.logic.reactor.logical.JoinableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBzLb3" role="37wK5m">
                   <ref role="37wK5l" node="390NiL15T3$" resolve="asTermLogical" />
                   <node concept="37vLTw" id="6SwZmzBzLhd" role="37wK5m">
@@ -4140,7 +4140,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBGFuM" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~JoinableLogical.union(jetbrains.mps.logic.reactor.logical.JoinableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBGFuN" role="37wK5m">
                   <ref role="37wK5l" node="390NiL15T3$" resolve="asTermLogical" />
                   <node concept="37vLTw" id="6SwZmzBGFuO" role="37wK5m">

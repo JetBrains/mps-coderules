@@ -3352,7 +3352,7 @@
           <node concept="3cpWsn" id="YbzkzLjZPS" role="3cpWs9">
             <property role="TrG5h" value="nl" />
             <node concept="3uibUv" id="YbzkzLjZPM" role="1tU5fm">
-              <ref role="3uigEE" to="bj13:~JoinableLogical" resolve="JoinableLogical" />
+              <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
               <node concept="3uibUv" id="YbzkzLjZPP" role="11_B2D">
                 <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
               </node>
@@ -3375,7 +3375,7 @@
               <ref role="3cqZAo" node="YbzkzLjZPS" resolve="nl" />
             </node>
             <node concept="liA8E" id="YbzkzLk7wn" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~JoinableLogical.setValue(java.lang.Object)" resolve="setValue" />
+              <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
               <node concept="37vLTw" id="YbzkzLkaf1" role="37wK5m">
                 <ref role="3cqZAo" node="2DKqMqOq_PA" resolve="tf" />
               </node>

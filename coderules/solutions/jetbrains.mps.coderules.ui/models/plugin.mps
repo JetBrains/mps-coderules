@@ -6061,7 +6061,7 @@
       <node concept="37vLTG" id="YGS68MEg3Q" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="YGS68MEg3R" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="YGS68MEg3S" role="3clF45" />
@@ -6078,7 +6078,7 @@
       <node concept="37vLTG" id="YGS68MEg3Y" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="YGS68MEg3Z" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="YGS68MEg40" role="3clF45" />
@@ -6095,7 +6095,7 @@
       <node concept="37vLTG" id="YGS68MEg46" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="YGS68MEg47" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="YGS68MEg48" role="3clF45" />
@@ -6112,7 +6112,7 @@
       <node concept="37vLTG" id="2_NfR5wh9fc" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="2_NfR5wh9fd" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="2_NfR5wh9fe" role="3clF45" />
@@ -6129,7 +6129,7 @@
       <node concept="37vLTG" id="YGS68MEg4e" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="YGS68MEg4f" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="YGS68MEg4g" role="3clF45" />
@@ -7133,7 +7133,7 @@
       <node concept="37vLTG" id="3mz2_dYayts" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="3mz2_dYfdao" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3Tm1VV" id="3mz2_dYay7y" role="1B3o_S" />
@@ -7155,7 +7155,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="3mz2_dYfcTc" role="3clF45">
-        <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+        <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
       </node>
     </node>
     <node concept="2tJIrI" id="3mz2_dYfbSs" role="jymVt" />
@@ -7380,14 +7380,14 @@
         <node concept="3clFbF" id="3mz2_dYeZM0" role="3cqZAp">
           <node concept="2ShNRf" id="3mz2_dYeZM1" role="3clFbG">
             <node concept="1pGfFk" id="3mz2_dYeZM2" role="2ShVmc">
-              <ref role="37wK5l" node="3mz2_dYeSui" resolve="Snapshot.MatchRuleSnapshot" />
+              <ref role="37wK5l" node="3mz2_dYeSui" resolve="Snapshot.RuleMatchSnapshot" />
               <node concept="Xjq3P" id="19wqdqOpE9g" role="37wK5m" />
               <node concept="2OqwBi" id="3mz2_dYf1SI" role="37wK5m">
                 <node concept="37vLTw" id="3mz2_dYeZM3" role="2Oq$k0">
                   <ref role="3cqZAo" node="3mz2_dYeZLV" resolve="original" />
                 </node>
                 <node concept="liA8E" id="3mz2_dYf1Xs" role="2OqNvi">
-                  <ref role="37wK5l" to="w7la:~MatchRule.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
+                  <ref role="37wK5l" to="w7la:~RuleMatch.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
                 </node>
               </node>
               <node concept="1rXfSq" id="3mz2_dYeZM4" role="37wK5m">
@@ -7397,7 +7397,7 @@
                     <ref role="3cqZAo" node="3mz2_dYeZLV" resolve="original" />
                   </node>
                   <node concept="liA8E" id="3mz2_dYeZM7" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~MatchRule.matchHeadKept():java.lang.Iterable" resolve="matchHeadKept" />
+                    <ref role="37wK5l" to="w7la:~RuleMatch.matchHeadKept():java.lang.Iterable" resolve="matchHeadKept" />
                   </node>
                 </node>
               </node>
@@ -7408,7 +7408,7 @@
                     <ref role="3cqZAo" node="3mz2_dYeZLV" resolve="original" />
                   </node>
                   <node concept="liA8E" id="3mz2_dYf24v" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~MatchRule.matchHeadReplaced():java.lang.Iterable" resolve="matchHeadReplaced" />
+                    <ref role="37wK5l" to="w7la:~RuleMatch.matchHeadReplaced():java.lang.Iterable" resolve="matchHeadReplaced" />
                   </node>
                 </node>
               </node>
@@ -7419,11 +7419,11 @@
       <node concept="37vLTG" id="3mz2_dYeZLV" role="3clF46">
         <property role="TrG5h" value="original" />
         <node concept="3uibUv" id="3mz2_dYf1sN" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3uibUv" id="3mz2_dYf76w" role="3clF45">
-        <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+        <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
       </node>
       <node concept="3Tmbuc" id="19wqdqOq7BK" role="1B3o_S" />
     </node>
@@ -8060,7 +8060,7 @@
     <node concept="2tJIrI" id="6QkkSol$YK6" role="jymVt" />
     <node concept="312cEu" id="3mz2_dYeR7o" role="jymVt">
       <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="MatchRuleSnapshot" />
+      <property role="TrG5h" value="RuleMatchSnapshot" />
       <node concept="2tJIrI" id="3mz2_dYeS1y" role="jymVt" />
       <node concept="3clFbW" id="3mz2_dYeSui" role="jymVt">
         <node concept="37vLTG" id="19wqdqOpm6O" role="3clF46">
@@ -8146,7 +8146,7 @@
       <node concept="2tJIrI" id="6Uh0cilklX9" role="jymVt" />
       <node concept="3Tm6S6" id="3mz2_dYeROi" role="1B3o_S" />
       <node concept="3uibUv" id="3mz2_dYeRSG" role="EKbjA">
-        <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+        <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
       </node>
       <node concept="3clFb_" id="3mz2_dYeRVo" role="jymVt">
         <property role="1EzhhJ" value="false" />
@@ -8569,6 +8569,26 @@
         </node>
       </node>
       <node concept="2tJIrI" id="60zk4o7lrIn" role="jymVt" />
+      <node concept="3clFb_" id="3T3QA3WscfK" role="jymVt">
+        <property role="TrG5h" value="invocationContext" />
+        <node concept="3Tm1VV" id="3T3QA3WscfL" role="1B3o_S" />
+        <node concept="3uibUv" id="3T3QA3WscfN" role="3clF45">
+          <ref role="3uigEE" to="w7la:~InvocationContext" resolve="InvocationContext" />
+        </node>
+        <node concept="3clFbS" id="3T3QA3WscfO" role="3clF47">
+          <node concept="YS8fn" id="3T3QA3Wsdfw" role="3cqZAp">
+            <node concept="2ShNRf" id="3T3QA3Wsdfx" role="YScLw">
+              <node concept="1pGfFk" id="3T3QA3Wsdfy" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="3T3QA3WscfP" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3T3QA3Wsdsk" role="jymVt" />
       <node concept="3clFb_" id="6Uh0cilkrIv" role="jymVt">
         <property role="TrG5h" value="original" />
         <property role="1EzhhJ" value="false" />
@@ -14148,7 +14168,7 @@
           <property role="TrG5h" value="match" />
           <node concept="1LlUBW" id="6bBjpI83oo_" role="1tU5fm">
             <node concept="3uibUv" id="6bBjpI83ooA" role="1Lm7xW">
-              <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+              <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
             </node>
             <node concept="3uibUv" id="32fHqDfefKU" role="1Lm7xW">
               <ref role="3uigEE" node="5X6ji59xezw" resolve="ActivationEvent" />
@@ -14212,7 +14232,7 @@
         <ref role="3uigEE" node="4VwaB4LlZ1n" resolve="ActivationNodes.DefaultTreeNode" />
         <node concept="1LlUBW" id="4VwaB4LmiAf" role="11_B2D">
           <node concept="3uibUv" id="4VwaB4LmiAg" role="1Lm7xW">
-            <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+            <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
           </node>
           <node concept="3uibUv" id="32fHqDfef9h" role="1Lm7xW">
             <ref role="3uigEE" node="5X6ji59xezw" resolve="ActivationEvent" />
@@ -14230,7 +14250,7 @@
           <property role="TrG5h" value="match" />
           <node concept="1LlUBW" id="6bBjpI85Qrt" role="1tU5fm">
             <node concept="3uibUv" id="6bBjpI85Qru" role="1Lm7xW">
-              <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+              <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
             </node>
             <node concept="3uibUv" id="6bBjpI85Qrw" role="1Lm7xW">
               <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
@@ -14291,7 +14311,7 @@
         <ref role="3uigEE" node="4VwaB4LlZ1n" resolve="ActivationNodes.DefaultTreeNode" />
         <node concept="1LlUBW" id="4VwaB4LmYK$" role="11_B2D">
           <node concept="3uibUv" id="4VwaB4LmYK_" role="1Lm7xW">
-            <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+            <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
           </node>
           <node concept="3uibUv" id="4VwaB4LmYKA" role="1Lm7xW">
             <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
@@ -14310,7 +14330,7 @@
           <property role="TrG5h" value="match" />
           <node concept="1LlUBW" id="4VwaB4LGpdV" role="1tU5fm">
             <node concept="3uibUv" id="4VwaB4LGpdW" role="1Lm7xW">
-              <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+              <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
             </node>
           </node>
         </node>
@@ -14367,7 +14387,7 @@
         <ref role="3uigEE" node="4VwaB4LlZ1n" resolve="ActivationNodes.DefaultTreeNode" />
         <node concept="1LlUBW" id="4VwaB4LGpe8" role="11_B2D">
           <node concept="3uibUv" id="4VwaB4LGpe9" role="1Lm7xW">
-            <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+            <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
           </node>
         </node>
       </node>
@@ -26546,7 +26566,7 @@
               </node>
               <node concept="1LlUBW" id="6bBjpI85VsC" role="1tU5fm">
                 <node concept="3uibUv" id="6bBjpI85VsD" role="1Lm7xW">
-                  <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                  <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                 </node>
                 <node concept="3uibUv" id="32fHqDff1js" role="1Lm7xW">
                   <ref role="3uigEE" node="5X6ji59xezw" resolve="ActivationEvent" />
@@ -26587,7 +26607,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="6RFuZEC71Wp" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~MatchRule.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
+                    <ref role="37wK5l" to="w7la:~RuleMatch.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
                   </node>
                 </node>
               </node>
@@ -26937,7 +26957,7 @@
               <property role="TrG5h" value="data" />
               <node concept="1LlUBW" id="2T1p0CFILaH" role="1tU5fm">
                 <node concept="3uibUv" id="2T1p0CFILaI" role="1Lm7xW">
-                  <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                  <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                 </node>
                 <node concept="3uibUv" id="32fHqDfegQp" role="1Lm7xW">
                   <ref role="3uigEE" node="5X6ji59xezw" resolve="ActivationEvent" />
@@ -26988,7 +27008,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="2T1p0CFILb7" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~MatchRule.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
+                    <ref role="37wK5l" to="w7la:~RuleMatch.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
                   </node>
                 </node>
               </node>
@@ -27118,7 +27138,7 @@
               <property role="TrG5h" value="data" />
               <node concept="1LlUBW" id="2T1p0CFIO93" role="1tU5fm">
                 <node concept="3uibUv" id="2T1p0CFIO94" role="1Lm7xW">
-                  <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                  <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                 </node>
                 <node concept="3uibUv" id="2T1p0CFIO95" role="1Lm7xW">
                   <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
@@ -27208,7 +27228,7 @@
               <property role="TrG5h" value="data" />
               <node concept="1LlUBW" id="2T1p0CFIMZD" role="1tU5fm">
                 <node concept="3uibUv" id="2T1p0CFIMZE" role="1Lm7xW">
-                  <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                  <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                 </node>
               </node>
               <node concept="2OqwBi" id="2T1p0CFIMZF" role="33vP2m">
@@ -27267,7 +27287,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="2T1p0CFIN07" role="2OqNvi">
-                        <ref role="37wK5l" to="w7la:~MatchRule.matchHeadKept():java.lang.Iterable" resolve="matchHeadKept" />
+                        <ref role="37wK5l" to="w7la:~RuleMatch.matchHeadKept():java.lang.Iterable" resolve="matchHeadKept" />
                       </node>
                     </node>
                   </node>
@@ -27296,7 +27316,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="2T1p0CFIN0l" role="2OqNvi">
-                        <ref role="37wK5l" to="w7la:~MatchRule.matchHeadReplaced():java.lang.Iterable" resolve="matchHeadReplaced" />
+                        <ref role="37wK5l" to="w7la:~RuleMatch.matchHeadReplaced():java.lang.Iterable" resolve="matchHeadReplaced" />
                       </node>
                     </node>
                   </node>
@@ -27725,7 +27745,7 @@
                     <property role="TrG5h" value="data" />
                     <node concept="1LlUBW" id="6_UQWSXemqg" role="1tU5fm">
                       <node concept="3uibUv" id="6_UQWSXemqh" role="1Lm7xW">
-                        <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                        <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                       </node>
                       <node concept="3uibUv" id="6_UQWSXemqi" role="1Lm7xW">
                         <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
@@ -28159,7 +28179,7 @@
               <property role="TrG5h" value="data" />
               <node concept="1LlUBW" id="5TpjAH61t3d" role="1tU5fm">
                 <node concept="3uibUv" id="5TpjAH61t3e" role="1Lm7xW">
-                  <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                  <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                 </node>
                 <node concept="3uibUv" id="5TpjAH61t3f" role="1Lm7xW">
                   <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
@@ -28335,7 +28355,7 @@
       <node concept="37vLTG" id="YGS68MDFvd" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="YGS68MDFve" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="YGS68MDFvf" role="3clF45" />
@@ -28345,7 +28365,7 @@
           <node concept="3cpWsn" id="3wxtToDRFe4" role="3cpWs9">
             <property role="TrG5h" value="snapshot" />
             <node concept="3uibUv" id="3wxtToDRFdG" role="1tU5fm">
-              <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+              <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
             </node>
             <node concept="2OqwBi" id="3wxtToDRFe5" role="33vP2m">
               <node concept="1rXfSq" id="3wxtToE2swg" role="2Oq$k0">
@@ -28381,7 +28401,7 @@
                     <node concept="3uibUv" id="3wxtToDRFei" role="1tU5fm">
                       <ref role="3uigEE" node="3wxtToDPbdf" resolve="Snapshot.History.Record" />
                       <node concept="3uibUv" id="3wxtToDRFej" role="11_B2D">
-                        <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                        <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                       </node>
                     </node>
                   </node>
@@ -28473,7 +28493,7 @@
       <node concept="37vLTG" id="YGS68MDFvN" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="YGS68MDFvO" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="YGS68MDFvP" role="3clF45" />
@@ -28507,7 +28527,7 @@
                           <ref role="3cqZAo" node="YGS68MDFvN" resolve="matchRule" />
                         </node>
                         <node concept="liA8E" id="YGS68MDFw6" role="2OqNvi">
-                          <ref role="37wK5l" to="w7la:~MatchRule.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
+                          <ref role="37wK5l" to="w7la:~RuleMatch.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
                         </node>
                       </node>
                     </node>
@@ -28529,7 +28549,7 @@
       <node concept="37vLTG" id="YGS68MDFw8" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="YGS68MDFw9" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="YGS68MDFwa" role="3clF45" />
@@ -28539,7 +28559,7 @@
           <node concept="3cpWsn" id="3wxtToDTkjy" role="3cpWs9">
             <property role="TrG5h" value="snapshot" />
             <node concept="3uibUv" id="3wxtToDTkjz" role="1tU5fm">
-              <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+              <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
             </node>
             <node concept="2OqwBi" id="3wxtToDTkj$" role="33vP2m">
               <node concept="1rXfSq" id="3wxtToE2rTQ" role="2Oq$k0">
@@ -28575,7 +28595,7 @@
                     <node concept="3uibUv" id="3wxtToDTkjL" role="1tU5fm">
                       <ref role="3uigEE" node="3wxtToDPbdf" resolve="Snapshot.History.Record" />
                       <node concept="3uibUv" id="3wxtToDTkjM" role="11_B2D">
-                        <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                        <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                       </node>
                     </node>
                   </node>
@@ -28613,7 +28633,7 @@
                           <ref role="3cqZAo" node="YGS68MDFw8" resolve="matchRule" />
                         </node>
                         <node concept="liA8E" id="YGS68MDFww" role="2OqNvi">
-                          <ref role="37wK5l" to="w7la:~MatchRule.rule()" resolve="rule" />
+                          <ref role="37wK5l" to="w7la:~RuleMatch.rule()" resolve="rule" />
                         </node>
                       </node>
                     </node>
@@ -28705,7 +28725,7 @@
       <node concept="37vLTG" id="32fHqDfcLw8" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="32fHqDfcLw9" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="32fHqDfcLwa" role="3clF45" />
@@ -28718,7 +28738,7 @@
           <node concept="3cpWsn" id="3wxtToDTqkG" role="3cpWs9">
             <property role="TrG5h" value="snapshot" />
             <node concept="3uibUv" id="3wxtToDTqkH" role="1tU5fm">
-              <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+              <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
             </node>
             <node concept="2OqwBi" id="3wxtToDTqkI" role="33vP2m">
               <node concept="1rXfSq" id="3wxtToE2rn4" role="2Oq$k0">
@@ -28754,7 +28774,7 @@
                     <node concept="3uibUv" id="3wxtToDTqkV" role="1tU5fm">
                       <ref role="3uigEE" node="3wxtToDPbdf" resolve="Snapshot.History.Record" />
                       <node concept="3uibUv" id="3wxtToDTqkW" role="11_B2D">
-                        <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+                        <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
                       </node>
                     </node>
                   </node>
@@ -28792,7 +28812,7 @@
                           <ref role="3cqZAo" node="32fHqDfcLw8" resolve="matchRule" />
                         </node>
                         <node concept="liA8E" id="32fHqDfcR9$" role="2OqNvi">
-                          <ref role="37wK5l" to="w7la:~MatchRule.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
+                          <ref role="37wK5l" to="w7la:~RuleMatch.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
                         </node>
                       </node>
                     </node>
@@ -28848,7 +28868,7 @@
       <node concept="37vLTG" id="YGS68MDFwX" role="3clF46">
         <property role="TrG5h" value="matchRule" />
         <node concept="3uibUv" id="YGS68MDFwY" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
       <node concept="3cqZAl" id="YGS68MDFwZ" role="3clF45" />
@@ -28882,7 +28902,7 @@
                           <ref role="3cqZAo" node="YGS68MDFwX" resolve="matchRule" />
                         </node>
                         <node concept="liA8E" id="YGS68MDFxg" role="2OqNvi">
-                          <ref role="37wK5l" to="w7la:~MatchRule.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
+                          <ref role="37wK5l" to="w7la:~RuleMatch.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
                         </node>
                       </node>
                     </node>
@@ -29922,7 +29942,7 @@
         <node concept="37vLTG" id="YGS68MJoYg" role="3clF46">
           <property role="TrG5h" value="matchRule" />
           <node concept="3uibUv" id="YGS68MJoYh" role="1tU5fm">
-            <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+            <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
           </node>
         </node>
         <node concept="37vLTG" id="32fHqDfev9p" role="3clF46">
@@ -30040,7 +30060,7 @@
         <node concept="37vLTG" id="YGS68MJoZ2" role="3clF46">
           <property role="TrG5h" value="matchRule" />
           <node concept="3uibUv" id="YGS68MJoZ3" role="1tU5fm">
-            <ref role="3uigEE" to="w7la:~MatchRule" resolve="MatchRule" />
+            <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
           </node>
         </node>
         <node concept="3clFbS" id="YGS68MJoZ4" role="3clF47">
@@ -30138,7 +30158,7 @@
                     <ref role="3cqZAo" node="YGS68MJoZ2" resolve="matchRule" />
                   </node>
                   <node concept="liA8E" id="YGS68MJoZH" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~MatchRule.matchHeadKept():java.lang.Iterable" resolve="matchHeadKept" />
+                    <ref role="37wK5l" to="w7la:~RuleMatch.matchHeadKept():java.lang.Iterable" resolve="matchHeadKept" />
                   </node>
                 </node>
               </node>
@@ -30214,7 +30234,7 @@
                     <ref role="3cqZAo" node="YGS68MJoZ2" resolve="matchRule" />
                   </node>
                   <node concept="liA8E" id="YGS68MJp0b" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~MatchRule.matchHeadReplaced():java.lang.Iterable" resolve="matchHeadReplaced" />
+                    <ref role="37wK5l" to="w7la:~RuleMatch.matchHeadReplaced():java.lang.Iterable" resolve="matchHeadReplaced" />
                   </node>
                 </node>
               </node>
@@ -30361,7 +30381,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="YGS68MJp1a" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~MatchRule.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
+                    <ref role="37wK5l" to="w7la:~RuleMatch.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
                   </node>
                 </node>
                 <node concept="liA8E" id="YGS68MJp1b" role="2OqNvi">
@@ -30453,7 +30473,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="32fHqDfdi_M" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~MatchRule.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
+                      <ref role="37wK5l" to="w7la:~RuleMatch.rule():jetbrains.mps.logic.reactor.program.Rule" resolve="rule" />
                     </node>
                   </node>
                   <node concept="liA8E" id="32fHqDfdi_N" role="2OqNvi">
