@@ -1,6 +1,7 @@
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.StoreView
+import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.AfterClass
 import org.junit.Assert
@@ -49,7 +50,9 @@ class TestIncrementalProgram {
         for (h in handlers) {
             programBuilder.addHandler(h)
         }
-        val result = EvaluationSession.newSession(programBuilder.program(name)).withParam("main", MockConstraint(ConstraintSymbol("main", 0))).start()
+        val result = EvaluationSession.newSession(programBuilder.program(name))
+            .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
+            .start()
         return result.storeView()
     }
 
