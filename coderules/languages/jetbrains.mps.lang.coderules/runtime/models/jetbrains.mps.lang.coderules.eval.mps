@@ -765,9 +765,16 @@
                 <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
               </node>
               <node concept="liA8E" id="3GlpCDSC7E3" role="2OqNvi">
-                <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withParam(java.lang.String,java.lang.Object):jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Config" resolve="withParam" />
-                <node concept="Xl_RD" id="3GlpCDSC7E4" role="37wK5m">
-                  <property role="Xl_RC" value="main" />
+                <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withParameter(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$ParameterKey,java.lang.Object)" resolve="withParameter" />
+                <node concept="2YIFZM" id="4OmcgRwjQME" role="37wK5m">
+                  <ref role="37wK5l" to="w7la:~EvaluationSession$ParameterKey.of(java.lang.String,java.lang.Class)" resolve="of" />
+                  <ref role="1Pybhc" to="w7la:~EvaluationSession$ParameterKey" resolve="EvaluationSession.ParameterKey" />
+                  <node concept="Xl_RD" id="4OmcgRwjTBh" role="37wK5m">
+                    <property role="Xl_RC" value="main" />
+                  </node>
+                  <node concept="3VsKOn" id="4OmcgRwk4WE" role="37wK5m">
+                    <ref role="3VsUkX" to="av0y:~Constraint" resolve="Constraint" />
+                  </node>
                 </node>
                 <node concept="2OqwBi" id="3GlpCDSC7E5" role="37wK5m">
                   <node concept="2ShNRf" id="3GlpCDSC7E6" role="2Oq$k0">
@@ -811,9 +818,16 @@
                     <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
                   </node>
                   <node concept="liA8E" id="3F6vMxqqwSs" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withParam(java.lang.String,java.lang.Object):jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Config" resolve="withParam" />
-                    <node concept="Xl_RD" id="3F6vMxqqzhz" role="37wK5m">
-                      <property role="Xl_RC" value="profiling.data" />
+                    <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withParameter(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$ParameterKey,java.lang.Object)" resolve="withParameter" />
+                    <node concept="2YIFZM" id="4OmcgRwkj$x" role="37wK5m">
+                      <ref role="37wK5l" to="w7la:~EvaluationSession$ParameterKey.of(java.lang.String,java.lang.Class)" resolve="of" />
+                      <ref role="1Pybhc" to="w7la:~EvaluationSession$ParameterKey" resolve="EvaluationSession.ParameterKey" />
+                      <node concept="Xl_RD" id="3F6vMxqqzhz" role="37wK5m">
+                        <property role="Xl_RC" value="profiling.data" />
+                      </node>
+                      <node concept="3VsKOn" id="4OmcgRwktYn" role="37wK5m">
+                        <ref role="3VsUkX" to="33ny:~Map" resolve="Map" />
+                      </node>
                     </node>
                     <node concept="37vLTw" id="3F6vMxqqAtS" role="37wK5m">
                       <ref role="3cqZAo" node="3GlpCDSBZo0" resolve="profilingData" />
@@ -1308,9 +1322,14 @@
                     <ref role="3cqZAo" node="24Vro6cQKgF" resolve="tracer" />
                   </node>
                   <node concept="liA8E" id="3GlpCDSFxxb" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~EvaluationTrace.failure(jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException):void" resolve="failure" />
-                    <node concept="37vLTw" id="3GlpCDSFxz0" role="37wK5m">
-                      <ref role="3cqZAo" node="3GlpCDSFvLb" resolve="f" />
+                    <ref role="37wK5l" to="w7la:~EvaluationTrace.failure(jetbrains.mps.logic.reactor.evaluation.EvaluationFailure)" resolve="failure" />
+                    <node concept="2ShNRf" id="4OmcgRwmQGK" role="37wK5m">
+                      <node concept="1pGfFk" id="4OmcgRwmZFA" role="2ShVmc">
+                        <ref role="37wK5l" to="w7la:~EvaluationFailure.&lt;init&gt;(jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException)" resolve="EvaluationFailure" />
+                        <node concept="37vLTw" id="4OmcgRwn1BD" role="37wK5m">
+                          <ref role="3cqZAo" node="3GlpCDSFvLb" resolve="f" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -7829,22 +7848,6 @@
         <node concept="3Tm1VV" id="2UGjFq48k4N" role="1B3o_S" />
         <node concept="3clFbS" id="2UGjFq48k4R" role="3clF47" />
         <node concept="2AHcQZ" id="15BaR5AeVgk" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="3clFb_" id="7vxJ_H4tnOC" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="failure" />
-        <node concept="37vLTG" id="7vxJ_H4tnOD" role="3clF46">
-          <property role="TrG5h" value="fail" />
-          <node concept="3uibUv" id="7vxJ_H4tnOE" role="1tU5fm">
-            <ref role="3uigEE" to="w7la:~EvaluationFailureException" resolve="EvaluationFailureException" />
-          </node>
-        </node>
-        <node concept="3cqZAl" id="7vxJ_H4tnOF" role="3clF45" />
-        <node concept="3Tm1VV" id="7vxJ_H4tnOG" role="1B3o_S" />
-        <node concept="3clFbS" id="7vxJ_H4tnOK" role="3clF47" />
-        <node concept="2AHcQZ" id="15BaR5AeVI3" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
