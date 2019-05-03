@@ -8,6 +8,7 @@ import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
 import java.util.*
 import java.util.Collections.*
+import kotlin.collections.LinkedHashMap
 
 class ProgramBuilder(val registry: MockConstraintRegistry)  {
 
@@ -22,17 +23,24 @@ class ProgramBuilder(val registry: MockConstraintRegistry)  {
     
 }
 
-open class HandlerBuilder(val name: String) {
-    val rules = ArrayList<Rule>()
+class HandlerBuilder(val name: String) {
 
-    fun appendRule(rule: Rule) {
-        rules.add(rule)
+    val rules = LinkedHashMap<String, Rule>()
+
+    constructor(name: String, handler: Handler) : this(name) {
+        for (r in handler.rules()) {
+            appendRule(r)
+        }
     }
 
-    fun toHandler(): Handler = MockHandler(name, rules)
+    fun appendRule(rule: Rule) {
+        rules[rule.tag()] = rule
+    }
+
+    fun toHandler(): Handler = MockHandler(name, rules.values.toList())
 }
 
-open class RuleBuilder(val tag: String) {
+class RuleBuilder(val tag: String) {
     val kept = ArrayList<Constraint>()
     val replaced = ArrayList<Constraint>()
     val guard = ArrayList<Predicate>()

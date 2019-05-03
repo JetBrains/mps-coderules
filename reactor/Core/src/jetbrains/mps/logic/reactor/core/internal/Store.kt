@@ -55,29 +55,38 @@ internal class Store : LogicalObserver {
     }
 
 
+    /**
+     * Copy constructor that accepts a view on the store.
+     * This can be a view on the store from previous run of the program.
+     */
     constructor(copyFrom: StoreView, currentFrame: () -> FrameObservable) {
         this.currentFrame = currentFrame
-        var l2o = Maps.of<IdWrapper<Logical<*>>, IdHashSet<Occurrence>>()
-        val storeItems = IdentityHashMap<ConstraintOccurrence, Occurrence>()
-        copyFrom.allOccurrences().forEach { occ ->
-            val item = occ.constraint().occurrence(occ.arguments(), currentFrame)
-            storeItems.put(occ, item)
-            occ.arguments().forEach { arg ->
+
+        var log2occs = Maps.of<IdWrapper<Logical<*>>, IdHashSet<Occurrence>>()
+        val orig2occ = IdentityHashMap<ConstraintOccurrence, Occurrence>()
+
+        // process the original data and make copies as needed
+        for (orig in copyFrom.allOccurrences()) {
+            val occ = orig.constraint().occurrence(orig.arguments(), currentFrame)
+            orig2occ[orig] = occ
+            for (arg in orig.arguments()) {
                 when (arg) {
                     is Logical<*> -> {
-                        l2o = l2o.put(IdWrapper(arg.findRoot()),
-                                      l2o[IdWrapper(arg.findRoot())]?.add(item) ?: singletonIdSet(item))
+                        val key = IdWrapper(arg.findRoot())
+                        log2occs = log2occs.put(key,
+                                                log2occs[key]?.add(occ) ?: singletonIdSet(occ))
+                        currentFrame().addObserver(arg) { frame -> frame.storeObserver() }
                     }
                 }
             }
-
+            occ.stored = true
         }
-        this.logical2occurrences = l2o
-        this.symbol2occurrences = copyFrom.constraintSymbols().fold(Maps.of()) { map, sym ->
-            val copyFrom1 = copyFrom.occurrences(sym).map { occ -> storeItems.get(occ)!! }
-            val idHashSet = IdHashSet( copyFrom1 )
-            
-            map.put(sym, idHashSet)
+
+        // set internal structures
+        this.logical2occurrences = log2occs
+        this.symbol2occurrences = copyFrom.constraintSymbols().fold(Maps.of()) { pmap, csym ->
+            val occs = IdHashSet(copyFrom.occurrences(csym).map { occ -> orig2occ.get(occ)!! })
+            pmap.put(csym, occs)
         }
     }
 
@@ -112,6 +121,7 @@ internal class Store : LogicalObserver {
             symbol2occurrences[symbol]?.add(occ) ?: singletonIdSet(occ))
 
         for (arg in occ.arguments()) {
+            // FIXME extracting the value is unnecessary here
             val value = if (arg is Logical<*> && arg.isBound) arg.findRoot().value() else arg
             when (value) {
                 is Logical<*> -> {

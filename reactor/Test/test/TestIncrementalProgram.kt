@@ -56,19 +56,13 @@ class TestIncrementalProgram {
     }
 
     private fun Builder.relaunch(name: String, storeView: StoreView, resultHandler: (EvaluationResult) -> Unit) {
-        
+        val result = EvaluationSession.newSession(program(name))
+            .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
+            .withStoreView(storeView)
+            .start()
+        result.failure()?.let { throw it.cause }
+        resultHandler(result)
     }
-
-
-//    private fun StoreView.launch(name: String): StoreView {
-//        val programBuilder = ProgramBuilder(MockConstraintRegistry())
-//        for (h in handlers) {
-//            programBuilder.addHandler(h)
-//        }
-//        val result = EvaluationSession.newSession(programBuilder.program(name)).withParam("main", MockConstraint(ConstraintSymbol("main", 0))).start()
-//        return result.storeView()
-//
-//    }
 
     @Test
     fun replace() {
@@ -89,10 +83,22 @@ class TestIncrementalProgram {
                 )
             )
         ).launch("replace") { result ->
-            result.storeView().constraintSymbols() shouldBe setOf(ConstraintSymbol("foo", 0), ConstraintSymbol("bar", 0))
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"))
 
         }.also { (builder, storeView) ->
+            builder.programWithRules (
+                rule("main.foo",
+                    headKept(
+                        constraint("foo")
+                    ),
+                    body(
+                        constraint("baz")
+                    )
+                )
+            ).relaunch("test", storeView) { result ->
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
 
+            }
         }
     }
 

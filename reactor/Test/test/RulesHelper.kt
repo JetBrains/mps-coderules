@@ -4,6 +4,7 @@ import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
 import solver.TestEqPredicate
 import java.util.*
+import kotlin.collections.HashMap
 
 /**
  * @author Fedor Isakov
@@ -32,11 +33,7 @@ class Builder(var handlers: List<Handler>) : RuleLookup {
     
 }
 
-fun programWithRules(vararg ruleBuilders: () -> Rule): Builder {
-    return builder(arrayOf(handler("test", * ruleBuilders)))
-}
-
-private fun builder(handlerBlocks: Array<out () -> Handler>): Builder {
+private fun createBuilder(handlerBlocks: Array<out () -> Handler>): Builder {
     val handlers = ArrayList<Handler>()
     for (block in handlerBlocks) {
         handlers.add(block())
@@ -44,13 +41,38 @@ private fun builder(handlerBlocks: Array<out () -> Handler>): Builder {
     return Builder(handlers)
 }
 
-fun handler(name: String, vararg ruleBlocks: () -> Rule): () -> Handler = {
+private fun updateBuilder(builder:Builder, handlerBlocks: Array<out () -> Handler>): Builder {
+    val name2handler = HashMap(builder.handlers.map { it.name() to it }.toMap())
+    for (block in handlerBlocks) {
+        val h = block()
+        name2handler[h.name()] = h
+    }
+    return Builder(name2handler.values.toList())
+}
+
+private fun createHandler(name: String, vararg ruleBlocks: () -> Rule): () -> Handler = {
     val hb = HandlerBuilder(name)
     for (block in ruleBlocks) {
         hb.appendRule(block())
     }
     hb.toHandler()
 }
+
+private fun updateHandler(name: String, handler: Handler, vararg ruleBlocks: () -> Rule): () -> Handler = {
+    val hb = HandlerBuilder(name, handler)
+    for (block in ruleBlocks) {
+        hb.appendRule(block())
+    }
+    hb.toHandler()
+}
+
+// builder DSL for constructing program
+
+fun programWithRules(vararg ruleBuilders: () -> Rule): Builder =
+    createBuilder(arrayOf(createHandler("test", * ruleBuilders)))
+
+fun Builder.programWithRules(vararg ruleBuilders: () -> Rule): Builder =
+    updateBuilder(this, arrayOf(updateHandler("test",  handlers.first(), * ruleBuilders)))
 
 fun rule(tag: String, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
     val rb = RuleBuilder(tag)
@@ -91,6 +113,15 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size)).occurrence(listOf(* args), { fooObservable })
+
+fun sym0(id: String): ConstraintSymbol =
+    ConstraintSymbol(id, 0)
+
+fun sym1(id: String): ConstraintSymbol =
+    ConstraintSymbol(id, 1)
+
+fun sym2(id: String): ConstraintSymbol =
+    ConstraintSymbol(id, 2)
 
 object fooObservable : FrameObservable {
     override fun storeObserver(): LogicalObserver {
