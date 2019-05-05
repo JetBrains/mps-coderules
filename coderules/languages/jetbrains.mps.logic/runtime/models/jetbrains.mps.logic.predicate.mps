@@ -8537,15 +8537,14 @@
               </node>
               <node concept="liA8E" id="4jcOV4hxy0C" role="2OqNvi">
                 <ref role="37wK5l" to="w7la:~InvocationContext.report(jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback):void" resolve="report" />
-                <node concept="2ShNRf" id="4jcOV4hxy6V" role="37wK5m">
-                  <node concept="1pGfFk" id="4jcOV4hxypF" role="2ShVmc">
-                    <ref role="37wK5l" to="w7la:~DetailedFeedback.&lt;init&gt;(java.lang.String,jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback$Severity)" resolve="DetailedFeedback" />
-                    <node concept="37vLTw" id="4jcOV4hxNNG" role="37wK5m">
-                      <ref role="3cqZAo" node="4jcOV4hx_1_" resolve="msg" />
-                    </node>
-                    <node concept="37vLTw" id="4jcOV4hxO4P" role="37wK5m">
-                      <ref role="3cqZAo" node="4jcOV4hxMnf" resolve="severity" />
-                    </node>
+                <node concept="2YIFZM" id="473$26GHA4W" role="37wK5m">
+                  <ref role="1Pybhc" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
+                  <ref role="37wK5l" to="w7la:~EvaluationFeedback.details(java.lang.String,jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback$Severity)" resolve="details" />
+                  <node concept="37vLTw" id="473$26GHB0q" role="37wK5m">
+                    <ref role="3cqZAo" node="4jcOV4hx_1_" resolve="msg" />
+                  </node>
+                  <node concept="37vLTw" id="473$26GHB77" role="37wK5m">
+                    <ref role="3cqZAo" node="4jcOV4hxMnf" resolve="severity" />
                   </node>
                 </node>
               </node>

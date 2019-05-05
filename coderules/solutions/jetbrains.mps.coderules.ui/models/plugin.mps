@@ -6178,21 +6178,18 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7vxJ_H4trvc" role="jymVt" />
-    <node concept="3clFb_" id="8odmgCdhBu" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="failure" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="8odmgCdhBv" role="1B3o_S" />
-      <node concept="3cqZAl" id="8odmgCdhBx" role="3clF45" />
-      <node concept="37vLTG" id="8odmgCdhBy" role="3clF46">
-        <property role="TrG5h" value="failure" />
-        <node concept="3uibUv" id="8odmgCdhBz" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+    <node concept="3clFb_" id="473$26GERaw" role="jymVt">
+      <property role="TrG5h" value="feedback" />
+      <node concept="3Tm1VV" id="473$26GERay" role="1B3o_S" />
+      <node concept="3cqZAl" id="473$26GERa$" role="3clF45" />
+      <node concept="37vLTG" id="473$26GERa_" role="3clF46">
+        <property role="TrG5h" value="feedback" />
+        <node concept="3uibUv" id="473$26GERaA" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
         </node>
       </node>
-      <node concept="3clFbS" id="8odmgCdhB_" role="3clF47" />
-      <node concept="2AHcQZ" id="8odmgCdhBA" role="2AJF6D">
+      <node concept="3clFbS" id="473$26GERaC" role="3clF47" />
+      <node concept="2AHcQZ" id="473$26GERaD" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
@@ -29545,78 +29542,76 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="7vxJ_H4twbw" role="jymVt" />
-    <node concept="3clFb_" id="8odmgCdik5" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="failure" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tm1VV" id="8odmgCdik6" role="1B3o_S" />
-      <node concept="3cqZAl" id="8odmgCdik7" role="3clF45" />
-      <node concept="37vLTG" id="8odmgCdik8" role="3clF46">
-        <property role="TrG5h" value="failure" />
-        <node concept="3uibUv" id="8odmgCdik9" role="1tU5fm">
-          <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+    <node concept="2tJIrI" id="473$26GDJDY" role="jymVt" />
+    <node concept="3clFb_" id="473$26GDEOc" role="jymVt">
+      <property role="TrG5h" value="feedback" />
+      <node concept="3Tm1VV" id="473$26GDEOe" role="1B3o_S" />
+      <node concept="3cqZAl" id="473$26GDEOg" role="3clF45" />
+      <node concept="37vLTG" id="473$26GDEOh" role="3clF46">
+        <property role="TrG5h" value="feedback" />
+        <node concept="3uibUv" id="473$26GDEOi" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
         </node>
       </node>
-      <node concept="2AHcQZ" id="8odmgCdikb" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-      <node concept="3clFbS" id="8odmgCdikc" role="3clF47">
-        <node concept="3clFbJ" id="8odmgCmxf1" role="3cqZAp">
-          <node concept="3clFbS" id="8odmgCmxf3" role="3clFbx">
-            <node concept="3clFbF" id="8odmgCmD0E" role="3cqZAp">
-              <node concept="37vLTI" id="8odmgCmFOB" role="3clFbG">
-                <node concept="37vLTw" id="8odmgCmGm6" role="37vLTx">
-                  <ref role="3cqZAo" node="8odmgCdik8" resolve="failure" />
-                </node>
-                <node concept="3EllGN" id="8odmgCmFa4" role="37vLTJ">
-                  <node concept="37vLTw" id="8odmgCmFFm" role="3ElVtu">
-                    <ref role="3cqZAo" node="8odmgCdik8" resolve="failure" />
+      <node concept="3clFbS" id="473$26GDEOm" role="3clF47">
+        <node concept="3clFbJ" id="473$26GEqy0" role="3cqZAp">
+          <node concept="3clFbS" id="473$26GEqy2" role="3clFbx">
+            <node concept="3clFbJ" id="8odmgCmxf1" role="3cqZAp">
+              <node concept="3clFbS" id="8odmgCmxf3" role="3clFbx">
+                <node concept="3clFbF" id="8odmgCmD0E" role="3cqZAp">
+                  <node concept="37vLTI" id="8odmgCmFOB" role="3clFbG">
+                    <node concept="37vLTw" id="473$26GEwNk" role="37vLTx">
+                      <ref role="3cqZAo" node="473$26GDEOh" resolve="feedback" />
+                    </node>
+                    <node concept="3EllGN" id="8odmgCmFa4" role="37vLTJ">
+                      <node concept="37vLTw" id="473$26GEvTK" role="3ElVtu">
+                        <ref role="3cqZAo" node="473$26GDEOh" resolve="feedback" />
+                      </node>
+                      <node concept="37vLTw" id="8odmgCmD0C" role="3ElQJh">
+                        <ref role="3cqZAo" node="8odmgCm2gs" resolve="seenFailures" />
+                      </node>
+                    </node>
                   </node>
-                  <node concept="37vLTw" id="8odmgCmD0C" role="3ElQJh">
-                    <ref role="3cqZAo" node="8odmgCm2gs" resolve="seenFailures" />
-                  </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="8odmgCdi_U" role="3cqZAp">
-              <node concept="1rXfSq" id="8odmgCdi_V" role="3clFbG">
-                <ref role="37wK5l" node="YGS68MDG_7" resolve="recordActivationEvent" />
-                <node concept="Rm8GO" id="8odmgCdi_W" role="37wK5m">
-                  <ref role="Rm8GQ" node="7vxJ_H4mnTR" resolve="FAILURE" />
-                  <ref role="1Px2BO" node="5X6ji59xezw" resolve="ActivationEvent" />
-                </node>
-                <node concept="1bVj0M" id="8odmgCdi_X" role="37wK5m">
-                  <node concept="37vLTG" id="8odmgCdi_Y" role="1bW2Oz">
-                    <property role="TrG5h" value="id" />
-                    <node concept="10Oyi0" id="8odmgCdi_Z" role="1tU5fm" />
-                  </node>
-                  <node concept="3clFbS" id="8odmgCdiA0" role="1bW5cS">
-                    <node concept="3clFbF" id="8odmgCdiA1" role="3cqZAp">
-                      <node concept="2OqwBi" id="8odmgCdiA2" role="3clFbG">
-                        <node concept="37vLTw" id="8odmgCdiA3" role="2Oq$k0">
-                          <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationModelBuilder" />
-                        </node>
-                        <node concept="liA8E" id="8odmgCdiA4" role="2OqNvi">
-                          <ref role="37wK5l" node="7vxJ_H4mqbm" resolve="failure" />
-                          <node concept="37vLTw" id="8odmgCdiA5" role="37wK5m">
-                            <ref role="3cqZAo" node="8odmgCdi_Y" resolve="id" />
-                          </node>
-                          <node concept="2OqwBi" id="8odmgCdiA6" role="37wK5m">
-                            <node concept="37vLTw" id="8odmgCdCxt" role="2Oq$k0">
-                              <ref role="3cqZAo" node="8odmgCdik8" resolve="failure" />
+                <node concept="3clFbF" id="8odmgCdi_U" role="3cqZAp">
+                  <node concept="1rXfSq" id="8odmgCdi_V" role="3clFbG">
+                    <ref role="37wK5l" node="YGS68MDG_7" resolve="recordActivationEvent" />
+                    <node concept="Rm8GO" id="8odmgCdi_W" role="37wK5m">
+                      <ref role="Rm8GQ" node="7vxJ_H4mnTR" resolve="FAILURE" />
+                      <ref role="1Px2BO" node="5X6ji59xezw" resolve="ActivationEvent" />
+                    </node>
+                    <node concept="1bVj0M" id="8odmgCdi_X" role="37wK5m">
+                      <node concept="37vLTG" id="8odmgCdi_Y" role="1bW2Oz">
+                        <property role="TrG5h" value="id" />
+                        <node concept="10Oyi0" id="8odmgCdi_Z" role="1tU5fm" />
+                      </node>
+                      <node concept="3clFbS" id="8odmgCdiA0" role="1bW5cS">
+                        <node concept="3clFbF" id="8odmgCdiA1" role="3cqZAp">
+                          <node concept="2OqwBi" id="8odmgCdiA2" role="3clFbG">
+                            <node concept="37vLTw" id="8odmgCdiA3" role="2Oq$k0">
+                              <ref role="3cqZAo" node="YGS68MDFfZ" resolve="activationModelBuilder" />
                             </node>
-                            <node concept="liA8E" id="8odmgCdiA8" role="2OqNvi">
-                              <ref role="37wK5l" to="w7la:~EvaluationFailure.getMessage():java.lang.String" resolve="getMessage" />
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="8odmgCdDm4" role="37wK5m">
-                            <node concept="37vLTw" id="8odmgCdCUB" role="2Oq$k0">
-                              <ref role="3cqZAo" node="8odmgCdik8" resolve="failure" />
-                            </node>
-                            <node concept="liA8E" id="8odmgCdDFQ" role="2OqNvi">
-                              <ref role="37wK5l" to="w7la:~EvaluationFailure.getCause():jetbrains.mps.logic.reactor.evaluation.EvaluationFailureException" resolve="getCause" />
+                            <node concept="liA8E" id="8odmgCdiA4" role="2OqNvi">
+                              <ref role="37wK5l" node="7vxJ_H4mqbm" resolve="failure" />
+                              <node concept="37vLTw" id="8odmgCdiA5" role="37wK5m">
+                                <ref role="3cqZAo" node="8odmgCdi_Y" resolve="id" />
+                              </node>
+                              <node concept="2OqwBi" id="8odmgCdiA6" role="37wK5m">
+                                <node concept="37vLTw" id="473$26GEBot" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="473$26GDEOh" resolve="feedback" />
+                                </node>
+                                <node concept="liA8E" id="8odmgCdiA8" role="2OqNvi">
+                                  <ref role="37wK5l" to="w7la:~EvaluationFeedback.getMessage()" resolve="getMessage" />
+                                </node>
+                              </node>
+                              <node concept="2OqwBi" id="8odmgCdDm4" role="37wK5m">
+                                <node concept="37vLTw" id="473$26GECos" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="473$26GDEOh" resolve="feedback" />
+                                </node>
+                                <node concept="liA8E" id="473$26GEDg8" role="2OqNvi">
+                                  <ref role="37wK5l" to="w7la:~EvaluationFeedback.failureCause()" resolve="failureCause" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -29625,21 +29620,32 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="3fqX7Q" id="8odmgCmCii" role="3clFbw">
-            <node concept="2OqwBi" id="8odmgCmCik" role="3fr31v">
-              <node concept="37vLTw" id="8odmgCmCil" role="2Oq$k0">
-                <ref role="3cqZAo" node="8odmgCm2gs" resolve="seenFailures" />
-              </node>
-              <node concept="2Nt0df" id="8odmgCmCim" role="2OqNvi">
-                <node concept="37vLTw" id="8odmgCmCin" role="38cxEo">
-                  <ref role="3cqZAo" node="8odmgCdik8" resolve="failure" />
+              <node concept="3fqX7Q" id="8odmgCmCii" role="3clFbw">
+                <node concept="2OqwBi" id="8odmgCmCik" role="3fr31v">
+                  <node concept="37vLTw" id="8odmgCmCil" role="2Oq$k0">
+                    <ref role="3cqZAo" node="8odmgCm2gs" resolve="seenFailures" />
+                  </node>
+                  <node concept="2Nt0df" id="8odmgCmCim" role="2OqNvi">
+                    <node concept="37vLTw" id="473$26GEv2L" role="38cxEo">
+                      <ref role="3cqZAo" node="473$26GDEOh" resolve="feedback" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
+          <node concept="2OqwBi" id="473$26GErE1" role="3clFbw">
+            <node concept="37vLTw" id="473$26GEqZV" role="2Oq$k0">
+              <ref role="3cqZAo" node="473$26GDEOh" resolve="feedback" />
+            </node>
+            <node concept="liA8E" id="473$26GEsl_" role="2OqNvi">
+              <ref role="37wK5l" to="w7la:~EvaluationFeedback.isFailure()" resolve="isFailure" />
+            </node>
+          </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="473$26GDEOn" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="8odmgCdDFT" role="jymVt" />
@@ -31035,20 +31041,20 @@
       <node concept="2ShNRf" id="8odmgCm3Jw" role="33vP2m">
         <node concept="1pGfFk" id="8odmgCmvu2" role="2ShVmc">
           <ref role="37wK5l" to="33ny:~IdentityHashMap.&lt;init&gt;()" resolve="IdentityHashMap" />
-          <node concept="3uibUv" id="8odmgCnuy$" role="1pMfVU">
-            <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+          <node concept="3uibUv" id="473$26GEu3N" role="1pMfVU">
+            <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
           </node>
-          <node concept="3uibUv" id="8odmgCn4Rw" role="1pMfVU">
-            <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+          <node concept="3uibUv" id="473$26GE_uL" role="1pMfVU">
+            <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
           </node>
         </node>
       </node>
       <node concept="3rvAFt" id="8odmgCmv_S" role="1tU5fm">
-        <node concept="3uibUv" id="8odmgCnuqK" role="3rvQeY">
-          <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+        <node concept="3uibUv" id="473$26GEtgu" role="3rvQeY">
+          <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
         </node>
-        <node concept="3uibUv" id="8odmgCn4BR" role="3rvSg0">
-          <ref role="3uigEE" to="w7la:~EvaluationFailure" resolve="EvaluationFailure" />
+        <node concept="3uibUv" id="473$26GE$G5" role="3rvSg0">
+          <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
         </node>
       </node>
     </node>
