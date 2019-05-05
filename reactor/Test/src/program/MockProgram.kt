@@ -2,7 +2,9 @@
  * @author Fedor Isakov
  */
 
+import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext
+import jetbrains.mps.logic.reactor.evaluation.Supervisor
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
@@ -98,16 +100,21 @@ class MockRule(
 class MockProgram(val name: String, val handlers: List<Handler>, val registry: MockConstraintRegistry) : Program() {
 
     override fun name(): String = name
-    
+
+    override fun handlers(): Iterable<Handler> = unmodifiableCollection(handlers)
+}
+
+
+open class MockSupervisor : Supervisor {
+
     override fun instantiateArguments(arguments: List<*>, logicalContext: LogicalContext, invocationContext: InvocationContext): List<*> =
         arguments.map { a ->
             if (a is MetaLogical<*>) logicalContext.variable(a)
             else a
         }
 
-    override fun handlers(): Iterable<Handler> = unmodifiableCollection(handlers)
+//    override fun handleFeedback(rule: Rule?, feedback: EvaluationFeedback?): Boolean = false
 }
-
 
 class MockConstraintRegistry() {
 

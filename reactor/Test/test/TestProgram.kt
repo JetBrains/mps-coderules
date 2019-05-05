@@ -34,7 +34,7 @@ class TestProgram {
     private fun Builder.session(name: String): StoreView {
         val session = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
-            .start()
+            .start(MockSupervisor())
         return session.storeView()
     }
 

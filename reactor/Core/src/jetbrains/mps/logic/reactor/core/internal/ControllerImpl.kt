@@ -24,25 +24,20 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Predicate
-import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 import com.github.andrewoma.dexx.collection.Map as PersMap
 
 internal class ControllerImpl (
-    val program: Program,
+    val supervisor: Supervisor,
+    val ruleIndex: RuleIndex,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null,
-    val storeView: StoreView? = null,
-    val feedbackHandler: EvaluationFeedbackHandler? = null) : Controller
+    val storeView: StoreView? = null) : Controller
 {
-
 
     // FIXME move to parameter
     private val session: EvaluationSession = EvaluationSession.current()
-
-
-    private val ruleIndex: RuleIndex = RuleIndex(program.handlers())
 
 
     private var dispatchFringe = Dispatcher(ruleIndex).fringe()
@@ -59,7 +54,7 @@ internal class ControllerImpl (
         val active = occ.constraint().occurrence(occ.arguments(), { frameStack.current })
         val state = process(active, NORMAL())
         if (state is FAILED) {
-            throw state.failure.cause
+            throw state.failure.failureCause()
         }
         return storeView()
     }
@@ -76,7 +71,7 @@ internal class ControllerImpl (
         // TODO: introduce processing state to solver API?
         val state = process(occ, NORMAL())
         if (state is FAILED) {
-            throw state.failure.cause
+            throw state.failure.failureCause()
         }
     }
 
@@ -136,7 +131,7 @@ internal class ControllerImpl (
 
                 }
                 is FAILED -> { // guard failed
-                    trace.failure(state.failure)
+                    trace.feedback(state.failure)
                     return state.recover()
 
                 }
@@ -179,8 +174,8 @@ internal class ControllerImpl (
 
                 if (itemOk) {
                     context.withState { state ->
-                        if (feedbackHandler != null && state.feedback?.alreadyHandled() == false) {
-                            state.feedback.handle(match.rule(), feedbackHandler)
+                        if (state.feedback?.alreadyHandled() == false) {
+                            state.feedback.handle(match.rule(), supervisor)
                         }
                     }
 
@@ -192,16 +187,15 @@ internal class ControllerImpl (
 
             val altOk = context.updateState { state ->
                 if (state is FAILED) {
-                    trace.failure(state.failure)
+                    trace.feedback(state.failure)
 
                     if (altIt.hasNext()) {
                         // clear the failure handled status
-                        state.failure.handle(match.rule()) { _, _ -> true }
+                        // the supervisor is NOT notified here
+                        state.failure.handle(match.rule())
                         state
 
-                    } else if (feedbackHandler != null && state.feedback?.alreadyHandled() == false &&
-                        state.failure.handle(match.rule(), feedbackHandler))
-                    {
+                    } else if (state.feedback?.alreadyHandled() == false && state.failure.handle(match.rule(), supervisor)) {
                         state.recover()
 
                     } else {
@@ -229,7 +223,7 @@ internal class ControllerImpl (
     }
 
     private fun activateConstraint(constraint: Constraint, context: Context) : Boolean {
-        val args = program.instantiateArguments(constraint.arguments(), context.logicalContext, context)
+        val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.updateState { state ->
             val active = constraint.occurrence(args, { frameStack.current }, context.logicalContext)
             process(active, state)
@@ -240,7 +234,7 @@ internal class ControllerImpl (
         profiler.profile<Boolean>("ask_${predicate.symbol()}") {
 
             context.evalSafe { state ->
-                val args = program.instantiateArguments(predicate.arguments(), context.logicalContext, context)
+                val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
                 if (session.ask(predicate.invocation(args, context.logicalContext, context)))
                     state
                 else
@@ -253,7 +247,7 @@ internal class ControllerImpl (
         profiler.profile<Boolean>("tell_${predicate.symbol()}") {
 
             context.runSafe {
-                val args = program.instantiateArguments(predicate.arguments(), context.logicalContext, context)
+                val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
                 session.tell(predicate.invocation(args, context.logicalContext, context))
             }
 
@@ -324,9 +318,9 @@ private class Context(inState: ProcessingState,
 
 /** Used to create controller from tests */
 fun createController(
-    program: Program,
+    supervisor: Supervisor,
+    ruleIndex: RuleIndex,
     trace: EvaluationTrace = EvaluationTrace.NULL,
     profiler: Profiler? = null,
-    storeView: StoreView? = null,
-    feedbackHandler: EvaluationFeedbackHandler? = null) : Controller =
-    ControllerImpl(program, trace, profiler, storeView, feedbackHandler)
+    storeView: StoreView? = null) : Controller =
+    ControllerImpl(supervisor, ruleIndex, trace, profiler, storeView)

@@ -16,9 +16,13 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import jetbrains.mps.logic.reactor.core.EvaluationFailure
 import jetbrains.mps.logic.reactor.core.internal.ProcessingState.FAILED
 import jetbrains.mps.logic.reactor.core.EvaluationSessionEx
+import jetbrains.mps.logic.reactor.core.Feedback
+import jetbrains.mps.logic.reactor.core.RuleIndex
 import jetbrains.mps.logic.reactor.evaluation.*
+import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
@@ -32,16 +36,17 @@ import com.github.andrewoma.dexx.collection.List as PList
 
 internal class EvaluationSessionImpl private constructor (
     program: Program,
+    supervisor: Supervisor,
     trace: EvaluationTrace,
-    params: Map<ParameterKey<*>, *>?) : EvaluationSessionEx(program, trace, params)
+    params: Map<ParameterKey<*>, *>?) : EvaluationSessionEx(program, supervisor, trace, params)
 {
 
     lateinit var controller: ControllerImpl
 
     override fun controller() = controller
 
-    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?, feedbackHandler: EvaluationFeedbackHandler?) : ProcessingState {
-        this.controller = ControllerImpl(program, trace, profiler, storeView, feedbackHandler)
+    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?) : ProcessingState {
+        this.controller = ControllerImpl(supervisor, RuleIndex(program().handlers()), trace, profiler, storeView)
         return controller.activate(main)
     }
 
@@ -53,8 +58,6 @@ internal class EvaluationSessionImpl private constructor (
 
         var storeView: StoreView? = null
 
-        var feedbackHandler: EvaluationFeedbackHandler? = null
-
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
             this.evaluationTrace = computingTracer
             return this
@@ -65,17 +68,12 @@ internal class EvaluationSessionImpl private constructor (
             return this
         }
 
-        override fun withFeedbackHandler(handler: EvaluationFeedbackHandler?): EvaluationSession.Config {
-            this.feedbackHandler = handler
-            return this
-        }
-
         override fun <T> withParameter(key: ParameterKey<T>, value: T): EvaluationSession.Config {
             this.parameters.put(key, value as Any)
             return this
         }
 
-        override fun start(): EvaluationResult {
+        override fun start(supervisor: Supervisor): EvaluationResult {
             var session = Backend.ourBackend.ourSession.get()
             if (session != null) throw IllegalStateException("session already active")
             
@@ -84,12 +82,12 @@ internal class EvaluationSessionImpl private constructor (
                 as MutableMap<String, String>?
             val profiler = durations?.let { Profiler() }
 
-            session = EvaluationSessionImpl(program, evaluationTrace, parameters)
+            session = EvaluationSessionImpl(program, supervisor, evaluationTrace, parameters)
             Backend.ourBackend.ourSession.set(session)
-            var failure: EvaluationFailure? = null
+            var failure: Feedback? = null
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                val state = session.launch(main, profiler, storeView, feedbackHandler)
+                val state = session.launch(main, profiler, storeView)
                 if (state is FAILED) {
                     failure = state.failure
                 }
@@ -110,7 +108,7 @@ internal class EvaluationSessionImpl private constructor (
             return object : EvaluationResult {
                 override fun storeView(): StoreView? = session.controller.storeView()
 
-                override fun failure():  EvaluationFailure? = failure
+                override fun feedback():  EvaluationFeedback? = failure
             }
         }
 

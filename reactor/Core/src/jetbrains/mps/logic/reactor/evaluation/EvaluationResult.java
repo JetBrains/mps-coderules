@@ -16,6 +16,8 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
+import jetbrains.mps.logic.reactor.core.EvaluationFailure;
+
 /**
  * @author Fedor Isakov
  */
@@ -23,6 +25,12 @@ public interface EvaluationResult {
 
     public StoreView storeView();
 
-    public EvaluationFailure failure();
+    /**
+     * @deprecated use {@link EvaluationResult#feedback()}
+     */
+    @Deprecated
+    default EvaluationFailure failure() { throw new UnsupportedOperationException(); }
+
+    public EvaluationFeedback feedback();
 
 }

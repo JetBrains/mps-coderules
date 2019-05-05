@@ -49,8 +49,8 @@ class TestIncrementalProgram {
     private fun Builder.launch(name: String, resultHandler: (EvaluationResult) -> Unit): Pair<Builder, StoreView> {
         val result = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
-            .start()
-        result.failure()?.let { throw it.cause }
+            .start(MockSupervisor())
+        result.feedback()?.let { if (it.isFailure) throw it.failureCause() }
         resultHandler(result)
         return this to result.storeView()
     }
@@ -59,8 +59,8 @@ class TestIncrementalProgram {
         val result = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .withStoreView(storeView)
-            .start()
-        result.failure()?.let { throw it.cause }
+            .start(MockSupervisor())
+        result.feedback()?.let { if (it.isFailure) throw it.failureCause() }
         resultHandler(result)
     }
 

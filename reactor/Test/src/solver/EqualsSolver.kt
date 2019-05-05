@@ -115,7 +115,7 @@ infix fun <T : Any> T.is_eq(value: T): Boolean = EvaluationSession.current().let
     val invocationContext: InvocationContext = object : InvocationContext {
         override fun report(feedback: EvaluationFeedback) = TODO()
     }
-    val args = session.program().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
+    val args = session.supervisor().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
     val inv = predicate.invocation(args, logicalContext, invocationContext)
     session.ask(inv)
 }
@@ -126,7 +126,7 @@ infix fun <T : Any> T.eq(value: T) = EvaluationSession.current().let { session -
     val invocationContext: InvocationContext = object : InvocationContext {
         override fun report(feedback: EvaluationFeedback) = TODO()
     }
-    val args = session.program().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
+    val args = session.supervisor().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
     val inv = predicate.invocation(args, logicalContext, invocationContext)
     session.tell(inv)
 }

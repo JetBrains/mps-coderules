@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.core
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.evaluation.Supervisor
 import jetbrains.mps.logic.reactor.program.Program
 
 /**
@@ -26,6 +27,7 @@ import jetbrains.mps.logic.reactor.program.Program
  * @author Fedor Isakov
  */
 abstract class EvaluationSessionEx(val program: Program,
+                                   val supervisor: Supervisor,
                                    val trace: EvaluationTrace,
                                    val params: Map<ParameterKey<*>, *>?) : EvaluationSession()
 {
@@ -33,6 +35,8 @@ abstract class EvaluationSessionEx(val program: Program,
     abstract fun controller(): Controller
 
     override fun program(): Program = program
+
+    override fun supervisor(): Supervisor = supervisor
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T

@@ -1,5 +1,4 @@
-import jetbrains.mps.logic.reactor.core.Controller
-import jetbrains.mps.logic.reactor.core.EvaluationSessionEx
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.createController
 import jetbrains.mps.logic.reactor.core.internal.logical
 import jetbrains.mps.logic.reactor.evaluation.*
@@ -33,8 +32,8 @@ class TestController {
         MockSession.deinit()
     }
 
-    private class MockSession(program: Program) :
-        EvaluationSessionEx(program, EvaluationTrace.NULL, params = mapOf<ParameterKey<*>, Any>()) {
+    private class MockSession(program: Program, supervisor: Supervisor) :
+        EvaluationSessionEx(program, supervisor, EvaluationTrace.NULL, params = mapOf<ParameterKey<*>, Any>()) {
         lateinit var controller: Controller
 
         override fun controller(): Controller = controller
@@ -47,8 +46,8 @@ class TestController {
         companion object {
             lateinit var ourBackend: MockBackend
 
-            fun init(program: Program) {
-                ourBackend = MockBackend(MockSession(program))
+            fun init(program: Program, supervisor: Supervisor) {
+                ourBackend = MockBackend(MockSession(program, supervisor))
                 setBackend(ourBackend)
             }
 
@@ -60,17 +59,21 @@ class TestController {
 
     private fun Builder.controller(vararg occurrences: ConstraintOccurrence): Controller {
         val program = MockProgram("test", handlers, registry = MockConstraintRegistry())
-        MockSession.init(program)
-        val controller = createController(program, storeView = MockStoreView(listOf(* occurrences)))
+        MockSession.init(program, MockSupervisor())
+        val controller = createController(MockSupervisor(), RuleIndex(program.handlers), storeView = MockStoreView(listOf(* occurrences)))
         MockSession.ourBackend.session.controller = controller
         return controller
     }
 
-    private fun Builder.controllerWithFeedback(feedbackHandler: EvaluationFeedbackHandler,
+    private fun Builder.controllerWithFeedback(feedbackHandler: (Rule, EvaluationFeedback) -> Boolean,
                                                vararg occurrences: ConstraintOccurrence): Controller {
         val program = MockProgram("test", handlers, registry = MockConstraintRegistry())
-        MockSession.init(program)
-        val controller = createController(program, storeView = MockStoreView(listOf(* occurrences)), feedbackHandler = feedbackHandler)
+        val supervisor = object : MockSupervisor() {
+            override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean =
+                feedbackHandler(rule, feedback)
+        }
+        MockSession.init(program, supervisor)
+        val controller = createController(supervisor, RuleIndex(program.handlers), storeView = MockStoreView(listOf(* occurrences)))
         MockSession.ourBackend.session.controller = controller
         return controller
     }
@@ -78,7 +81,6 @@ class TestController {
     private fun detailFeedback(msg: String): DetailedFeedback = object : DetailedFeedback(msg) {
         override fun toString(): String = "{" + msg + "}"
     }
-
 
     private class MockStoreView(val occurrences: List<ConstraintOccurrence>) : StoreView {
         val symbols = occurrences.map { it.constraint().symbol() }.toSet()
@@ -815,15 +817,13 @@ class TestController {
 
     @Test(expected = EvaluationFailureException::class)
     fun failureHandler() {
-        val failureHandler = object : EvaluationFeedbackHandler {
-            val failures = ArrayList<Pair<EvaluationFailure, String>>()
-            override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean {
+        val failures = ArrayList<Pair<EvaluationFailure, String>>()
+        val failureHandler =  { rule: Rule, feedback: EvaluationFeedback ->
                 if (feedback is EvaluationFailure) {
                     failures.add(feedback to rule.tag())
                 }
-                return false
+                false
             }
-        }
 
         programWithRules(
             rule("main",
@@ -851,7 +851,7 @@ class TestController {
                 evaluate(occurrence("main"))
 
             } finally {
-                failureHandler.failures.map { (f, t) -> "${f.cause.message}@${t}" }.toList() shouldBe
+                failures.map { (f, t) -> "${f.getCause()!!.message}@${t}" }.toList() shouldBe
                     listOf("unhandled@rule2", "unhandled@rule1", "unhandled@main")
             }
         }
@@ -859,16 +859,13 @@ class TestController {
 
     @Test
     fun failureHandlerRecover() {
-        val failureHandler = object : EvaluationFeedbackHandler {
-            val failures = ArrayList<Pair<EvaluationFailure, String>>()
-            override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean {
+        val failures = ArrayList<Pair<EvaluationFailure, String>>()
+        val failureHandler = { rule: Rule, feedback: EvaluationFeedback ->
                 if (feedback is EvaluationFailure) {
                     failures.add(feedback to rule.tag())
-                    return (rule.tag()?.startsWith("recoverable") == true)
-                }
-                return false
+                    (rule.tag()?.startsWith("recoverable") == true)
+                } else false
             }
-        }
 
         programWithRules(
             rule("main",
@@ -910,19 +907,17 @@ class TestController {
                 occurrences(recovered).map { it.arguments()[0] }.toSet() shouldBe setOf(1, 2)
             }
         }
-        failureHandler.failures.map { (f, t) -> "${f.cause.message}@$t" }.toList() shouldBe
+        failures.map { (f, t) -> "${f.getCause()!!.message}@$t" }.toList() shouldBe
             listOf("handled@rule3", "handled@recoverable")
     }
 
     @Test
     fun detailsFeedbackHandler() {
-        val feedbackHandler = object : EvaluationFeedbackHandler {
-            val feedbacks = arrayListOf<Pair<EvaluationFeedback, String>>()
-            override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean {
+        val feedbacks = arrayListOf<Pair<EvaluationFeedback, String>>()
+        val feedbackHandler = { rule: Rule, feedback: EvaluationFeedback ->
                 feedbacks.add(feedback to rule.tag())
-                return feedback.message.startsWith("catchme")
+                feedback.message.startsWith("catchme")
             }
-        }
 
         programWithRules(
             rule("main",
@@ -950,7 +945,7 @@ class TestController {
 
         }
 
-        feedbackHandler.feedbacks.map { (f, t) -> "${f.message}@$t" }.toList() shouldBe
+        feedbacks.map { (f, t) -> "${f.message}@$t" }.toList() shouldBe
             listOf("catchme@rule1", "propagateme@rule2", "propagateme@rule1", "propagateme@main")
     }
 }

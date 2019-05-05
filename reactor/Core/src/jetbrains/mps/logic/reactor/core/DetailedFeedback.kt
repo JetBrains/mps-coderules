@@ -14,42 +14,41 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.evaluation;
+package jetbrains.mps.logic.reactor.core
+
+import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 
 /**
  * Encapsulates a detailed report to be provided by the code being evaluated.
  * Does not affect the evaluation flow.
- * 
+ *
  * @author Fedor Isakov
  */
-public class DetailedFeedback extends EvaluationFeedback {
+open class DetailedFeedback : Feedback {
 
-    public DetailedFeedback(String message) {
-        this.message = message;
-        this.severity = Severity.INFO;
+    private val message: String
+    private val severity: EvaluationFeedback.Severity
+
+    constructor(message: String) {
+        this.message = message
+        this.severity = EvaluationFeedback.Severity.INFO
     }
 
-    public DetailedFeedback(String message, Severity severity) {
-        this.message = message;
-        this.severity = severity;
+    constructor(message: String, severity: EvaluationFeedback.Severity) {
+        this.message = message
+        this.severity = severity
     }
 
-    @Override
-    public Severity getSeverity() {
-        return severity;
+    override fun getSeverity(): EvaluationFeedback.Severity {
+        return severity
     }
 
-    @Override
-    public String getMessage() {
-        return message;
+    override fun getMessage(): String {
+        return message
     }
 
-    @Override
-    public String toString() {
-        return getSeverity() + " " + message;
+    override fun toString(): String {
+        return getSeverity().toString() + " " + message
     }
-
-    private final String message;
-    private final Severity severity;
 
 }

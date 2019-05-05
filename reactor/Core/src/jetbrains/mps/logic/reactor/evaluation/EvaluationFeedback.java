@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
+import jetbrains.mps.logic.reactor.core.DetailedFeedback;
 import jetbrains.mps.logic.reactor.program.Rule;
 
 /**
@@ -25,23 +26,12 @@ import jetbrains.mps.logic.reactor.program.Rule;
  */
 abstract public class EvaluationFeedback {
 
-    public boolean alreadyHandled() {
-        return alreadyHandled;
+    public static EvaluationFeedback details(String message) {
+        return new DetailedFeedback(message, Severity.INFO);
     }
 
-    protected void setHandled() {
-        // TODO: default logging?
-        this.alreadyHandled = true;
-    }
-
-    /**
-     * Returns true if the feedback has been handled.
-     */
-    public boolean handle(Rule rule, EvaluationFeedbackHandler handler) {
-        if (!alreadyHandled() && handler.handleFeedback(rule, this)) {
-            setHandled();
-        }
-        return alreadyHandled();
+    public static EvaluationFeedback details(String message, Severity severity) {
+        return new DetailedFeedback(message, severity);
     }
 
     abstract public Severity getSeverity();
@@ -78,6 +68,4 @@ abstract public class EvaluationFeedback {
 
         private final String title;
     }
-
-    private boolean alreadyHandled;
 }

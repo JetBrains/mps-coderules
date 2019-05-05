@@ -16,20 +16,27 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
+import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.program.Rule;
 
+import java.util.List;
+
 /**
+ * Oversees the process of evaluating a program.
+ * Supplied by the client.
+ *
  * @author Fedor Isakov
  */
-@Deprecated
-public interface EvaluationFeedbackHandler {
-    
+public interface Supervisor {
+
+    List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext, InvocationContext invocationContext);
+
     /**
-     * @deprecated moved elsewhere
+     * Override this method in order to "handle" the feedback.
+     * Returns true if the method has handled (consumed) the feedback.
      */
-    @Deprecated
-    default boolean handleFeedback(Rule rule, EvaluationFeedback feedback){
-        throw new UnsupportedOperationException(); 
+    default boolean handleFeedback(Rule rule, EvaluationFeedback feedback) {
+        return false;
     }
 
 }

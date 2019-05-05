@@ -47,6 +47,8 @@ public abstract class EvaluationSession {
 
     public abstract Program program();
 
+    public abstract Supervisor supervisor();
+
     public abstract boolean ask(PredicateInvocation invocation);
 
     public abstract void tell(PredicateInvocation invocation);
@@ -88,9 +90,18 @@ public abstract class EvaluationSession {
 
         public abstract Config withStoreView(StoreView storeView);
 
-        public abstract Config withFeedbackHandler(EvaluationFeedbackHandler handler);
+        @Deprecated
+        public Config withFeedbackHandler(EvaluationFeedbackHandler handler) {
+            throw new UnsupportedOperationException();
+        }
 
-        public abstract EvaluationResult start();
+        public abstract EvaluationResult start(Supervisor supervisor);
+
+        /**
+         * @deprecated use {@link Config#start(Supervisor)}
+         */
+        @Deprecated
+        public EvaluationResult start() { throw new UnsupportedOperationException(); }
 
     }
     

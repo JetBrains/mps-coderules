@@ -34,6 +34,12 @@ public abstract class Program {
 
     public abstract Iterable<Handler> handlers();
 
-    public abstract List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext, InvocationContext invocationContext);
+    /**
+     * @deprecated use {@link jetbrains.mps.logic.reactor.evaluation.Supervisor}
+     */
+    @Deprecated
+    public List<?> instantiateArguments(List<?> arguments, LogicalContext logicalContext, InvocationContext invocationContext) {
+        throw new UnsupportedOperationException();
+    }
 
 }
