@@ -50,8 +50,5 @@ public interface EvaluationTrace {
 
     default void ask(boolean result, PredicateInvocation invocation) {}
 
-    @Deprecated
-    default void failure(EvaluationFailure failure) {}
-
     default void feedback(EvaluationFeedback feedback) {}
 }

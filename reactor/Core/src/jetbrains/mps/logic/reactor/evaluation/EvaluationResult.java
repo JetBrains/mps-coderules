@@ -24,13 +24,7 @@ import jetbrains.mps.logic.reactor.core.EvaluationFailure;
 public interface EvaluationResult {
 
     public StoreView storeView();
-
-    /**
-     * @deprecated use {@link EvaluationResult#feedback()}
-     */
-    @Deprecated
-    default EvaluationFailure failure() { throw new UnsupportedOperationException(); }
-
+    
     public EvaluationFeedback feedback();
 
 }

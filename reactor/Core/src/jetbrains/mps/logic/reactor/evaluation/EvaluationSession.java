@@ -90,18 +90,7 @@ public abstract class EvaluationSession {
 
         public abstract Config withStoreView(StoreView storeView);
 
-        @Deprecated
-        public Config withFeedbackHandler(EvaluationFeedbackHandler handler) {
-            throw new UnsupportedOperationException();
-        }
-
         public abstract EvaluationResult start(Supervisor supervisor);
-
-        /**
-         * @deprecated use {@link Config#start(Supervisor)}
-         */
-        @Deprecated
-        public EvaluationResult start() { throw new UnsupportedOperationException(); }
 
     }
     
