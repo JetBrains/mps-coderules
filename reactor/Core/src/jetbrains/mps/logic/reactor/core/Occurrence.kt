@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import gnu.trove.set.TIntSet
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -31,7 +32,8 @@ import jetbrains.mps.logic.reactor.program.Constraint
 data class Occurrence (val controller: Controller,
                        val constraint: Constraint,
                        val logicalContext: LogicalContext,
-                       val arguments: List<*>) :
+                       val arguments: List<*>,
+                       val justifications: TIntSet?):
     ConstraintOccurrence,
     LogicalObserver
 {
@@ -53,6 +55,8 @@ data class Occurrence (val controller: Controller,
     override fun arguments(): List<*> = arguments
 
     override fun logicalContext(): LogicalContext = logicalContext
+
+    override fun justifications(): TIntSet? = justifications
 
     override fun valueUpdated(logical: Logical<*>) {
         if (alive) {
@@ -81,12 +85,18 @@ data class Occurrence (val controller: Controller,
 
 fun Constraint.occurrence(controller: Controller,
                           arguments: List<*>,
+                          justifications: TIntSet?,
                           logicalContext: LogicalContext): Occurrence =
-    Occurrence(controller, this, logicalContext, arguments)
+    Occurrence(controller, this, logicalContext, arguments, justifications)
+
+fun Constraint.occurrence(controller: Controller,
+                          arguments: List<*>,
+                          justifications: TIntSet?): Occurrence =
+    Occurrence(controller, this, noLogicalContext, arguments, justifications)
 
 fun Constraint.occurrence(controller: Controller,
                           arguments: List<*>): Occurrence =
-    Occurrence(controller, this, noLogicalContext, arguments)
+    Occurrence(controller, this, noLogicalContext, arguments, null)
 
 private val noLogicalContext: LogicalContext = object: LogicalContext {
     override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
