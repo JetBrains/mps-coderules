@@ -40,7 +40,7 @@ internal class ControllerImpl (
     private val session: EvaluationSession = EvaluationSession.current()
 
 
-    private var dispatchFringe = Dispatcher(ruleIndex).fringe()
+    private var dispatchFront = Dispatcher(ruleIndex).front()
 
     // FIXME move to context
     private val frameStack = FrameStack(storeView)
@@ -87,10 +87,10 @@ internal class ControllerImpl (
                 trace.reactivate(active)
             }
 
-            val activatedFringe = dispatchFringe.expand(active)
-            this.dispatchFringe = activatedFringe
+            val activatedFront = dispatchFront.expand(active)
+            this.dispatchFront = activatedFront
 
-            val outState = activatedFringe.matches().toList().fold(inState) { state, match ->
+            val outState = activatedFront.matches().toList().fold(inState) { state, match ->
                 // TODO: paranoid check. should be isAlive() instead
                 // FIXME: move this check elsewhere
                 if (state.operational && active.stored && match.allStored())
@@ -139,11 +139,11 @@ internal class ControllerImpl (
             }
         }
 
-        this.dispatchFringe = dispatchFringe.consume(match)
+        this.dispatchFront = dispatchFront.consume(match)
         trace.trigger(match)
 
         match.forEachReplaced {occ ->
-            this.dispatchFringe = dispatchFringe.contract(occ)
+            this.dispatchFront = dispatchFront.contract(occ)
             frameStack.current.store.discard(occ)
             trace.discard(occ)
         }

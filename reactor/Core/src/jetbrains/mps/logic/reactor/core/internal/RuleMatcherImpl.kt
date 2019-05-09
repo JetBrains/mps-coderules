@@ -43,12 +43,12 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
     fun lookupRule(): Rule = ruleLookup.lookupRuleByTag(tag) ?: throw IllegalStateException("can't lookup rule by tag: '${tag}'")
 
     override fun probe(): RuleMatchingProbe =
-        RuleMatchFringe(listOf(MatchNode(emptySubst())),
+        RuleMatchFront(listOf(MatchNode(emptySubst())),
                         Sets.of(),
                         Sets.of(),
                         0)
 
-    inner class RuleMatchFringe(private val nodes: List<MatchNode>,
+    inner class RuleMatchFront(private val nodes: List<MatchNode>,
                                 private val seenOccurrences: PersSet<IdWrapper<Occurrence>>,
                                 private val consumedSignatures: PersSet<ArrayList<IdWrapper<Occurrence>?>>,
                                 private val genId: Int) : RuleMatchingProbe
@@ -58,22 +58,22 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
         override fun matches(): Collection<RuleMatchImpl> =
             nodes
                 .filter { it is ActiveMatchNode && it.complete && it.genId == genId }
-                .map { (it as ActiveMatchNode).toMatchRule() }
+                .map { (it as ActiveMatchNode).toRuleMatch() }
 
-        override fun consume(matchRule: RuleMatchEx): RuleMatchingProbe =
-            RuleMatchFringe(nodes,
+        override fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe =
+            RuleMatchFront(nodes,
                             seenOccurrences,
-                            consumedSignatures.add(matchRule.signature()),
+                            consumedSignatures.add(ruleMatch.signature()),
                             genId)
 
         override fun expand(occ: Occurrence): RuleMatchingProbe =
             expand(occ, bitSetOfOnes(head.size))
 
         /**
-         * Expands the fringe by creating new leaf nodes that match the occurrence.
+         * Expands the front by creating new leaf nodes that match the occurrence.
          * Mask specifies possible slots for the occurrence.
          */
-        override fun expand(occ: Occurrence, mask: BitSet): RuleMatchFringe {
+        override fun expand(occ: Occurrence, mask: BitSet): RuleMatchFront {
             val reactivated = seenOccurrences.contains(IdWrapper(occ))
             val newSeen = if (reactivated) seenOccurrences else seenOccurrences.add(IdWrapper(occ))
             val newNodes = ArrayList<MatchNode>(nodes)
@@ -86,12 +86,12 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
                     .forEach { newNodes.add(it) }
             }
 
-            return RuleMatchFringe(newNodes, newSeen, consumedSignatures, genId + 1)
+            return RuleMatchFront(newNodes, newSeen, consumedSignatures, genId + 1)
         }
 
-        override fun contract(occ: Occurrence): RuleMatchFringe {
+        override fun contract(occ: Occurrence): RuleMatchFront {
             val newNodes = nodes.mapNotNull { it.unrelatedOrNull(occ) }
-            return RuleMatchFringe(newNodes, seenOccurrences, consumedSignatures, genId + 1)
+            return RuleMatchFront(newNodes, seenOccurrences, consumedSignatures, genId + 1)
         }
 
     }
@@ -171,7 +171,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
             foldUntilNull(this) { acc, rn -> if (rn.occurrence === occ) null else acc }
 
 
-        fun toMatchRule(): RuleMatchImpl {
+        fun toRuleMatch(): RuleMatchImpl {
             val matched: Array<Occurrence> =
                 fold(arrayOfNulls<Occurrence>(head.size)) { arr, rn ->
                     arr[rn.headIndex] = rn.occurrence; arr

@@ -348,7 +348,7 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
 
         override fun matches(): Collection<RuleMatchImpl> = generations.last().matches()
 
-        override fun consume(matchRule: RuleMatchEx): RuleMatchingProbe {
+        override fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 

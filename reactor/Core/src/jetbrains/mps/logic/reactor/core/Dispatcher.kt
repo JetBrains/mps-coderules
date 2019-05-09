@@ -37,11 +37,11 @@ class Dispatcher (val ruleIndex: RuleIndex) {
     }
 
     /**
-     * Create new empty [DispatchFringe] ready to accept constraints.
+     * Create new empty [DispatchingFront] ready to accept constraints.
      */
-    fun fringe() = DispatchFringe()
+    fun front() = DispatchingFront()
 
-    inner class DispatchFringe {
+    inner class DispatchingFront {
 
         private var ruletag2probe: PersMap<String, RuleMatchingProbe>
 
@@ -54,7 +54,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
             }
         }
 
-        private constructor(pred: DispatchFringe, matching: Iterable<RuleMatchingProbe>) {
+        private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>) {
             this.ruletag2probe = pred.ruletag2probe
             matching.forEach { probe ->
                 this.ruletag2probe = ruletag2probe.put(probe.rule().tag(), probe)
@@ -62,7 +62,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
             }
         }
 
-        private constructor(pred: DispatchFringe, consumedMatch: RuleMatchEx) {
+        private constructor(pred: DispatchingFront, consumedMatch: RuleMatchEx) {
             this.ruletag2probe = pred.ruletag2probe
             pred.ruletag2probe[consumedMatch.rule().tag()]?.let {
                 this.ruletag2probe = ruletag2probe.put(consumedMatch.rule().tag(), it.consume(consumedMatch))
@@ -75,20 +75,20 @@ class Dispatcher (val ruleIndex: RuleIndex) {
         fun matches() : Iterable<RuleMatchEx> = allMatches
 
         /**
-         * Returns a new [DispatchFringe] instance that is "expanded" with matches corresponding to the
+         * Returns a new [DispatchingFront] instance that is "expanded" with matches corresponding to the
          * specified active constraint occurrence.
          */
-        fun expand(activated: Occurrence) = DispatchFringe(this,
+        fun expand(activated: Occurrence) = DispatchingFront(this,
             ruleIndex.forOccurrenceWithMask(activated).mapNotNull { (rule, mask) ->
                 ruletag2probe[rule.tag()]?.expand(activated, mask)
                 ruletag2probe[rule.tag()]?.expand(activated, mask)
             })
 
         /**
-         * Returns a new [DispatchFringe] instance that is "contracted": all matches corresponding to the
+         * Returns a new [DispatchingFront] instance that is "contracted": all matches corresponding to the
          * specified discarded constraint occurrence are eliminated.
          */
-        fun contract(discarded: Occurrence) = DispatchFringe(this,
+        fun contract(discarded: Occurrence) = DispatchingFront(this,
             ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
                 ruletag2probe[rule.tag()]
             }.map { probe ->
@@ -99,7 +99,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          * Serves to indicate that the specified [RuleMatchEx] has been processed (consumed) and has to
          * be excluded from any further "match" set returned by [matches].
          */
-        internal fun consume(matchRule: RuleMatchEx) = DispatchFringe(this, matchRule)
+        internal fun consume(ruleMatch: RuleMatchEx) = DispatchingFront(this, ruleMatch)
 
     }
 

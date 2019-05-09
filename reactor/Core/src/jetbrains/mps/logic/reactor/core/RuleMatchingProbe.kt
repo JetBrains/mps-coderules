@@ -31,7 +31,7 @@ interface RuleMatchingProbe {
 
     fun matches(): Collection<RuleMatchEx>
 
-    fun consume(matchRule: RuleMatchEx): RuleMatchingProbe
+    fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe
 
     fun expand(occ: Occurrence): RuleMatchingProbe
 

@@ -36,15 +36,15 @@ public interface EvaluationTrace {
 
     default void discard(ConstraintOccurrence occurrence) {}
 
-    default void trying(RuleMatch matchRule) {}
+    default void trying(RuleMatch ruleMatch) {}
 
-    default void reject(RuleMatch matchRule) {}
+    default void reject(RuleMatch ruleMatch) {}
 
-    default void trigger(RuleMatch matchRule) {}
+    default void trigger(RuleMatch ruleMatch) {}
 
-    default void retry(RuleMatch matchRule) {}
+    default void retry(RuleMatch ruleMatch) {}
 
-    default void finish(RuleMatch matchRule) {}
+    default void finish(RuleMatch ruleMatch) {}
 
     default void tell(PredicateInvocation invocation) {}
 
