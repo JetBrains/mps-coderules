@@ -16,13 +16,11 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.EvaluationFailure
-import jetbrains.mps.logic.reactor.core.internal.ProcessingState.FAILED
+import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus.FAILED
 import jetbrains.mps.logic.reactor.core.EvaluationSessionEx
 import jetbrains.mps.logic.reactor.core.Feedback
 import jetbrains.mps.logic.reactor.core.RuleIndex
 import jetbrains.mps.logic.reactor.evaluation.*
-import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
@@ -45,7 +43,7 @@ internal class EvaluationSessionImpl private constructor (
 
     override fun controller() = controller
 
-    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?) : ProcessingState {
+    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?) : FeedbackStatus {
         this.controller = ControllerImpl(supervisor, RuleIndex(program().handlers()), trace, profiler, storeView)
         return controller.activate(main)
     }
@@ -87,9 +85,9 @@ internal class EvaluationSessionImpl private constructor (
             var failure: Feedback? = null
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                val state = session.launch(main, profiler, storeView)
-                if (state is FAILED) {
-                    failure = state.failure
+                val status = session.launch(main, profiler, storeView)
+                if (status is FAILED) {
+                    failure = status.failure
                 }
             }
             finally {

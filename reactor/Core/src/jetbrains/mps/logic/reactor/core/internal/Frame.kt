@@ -24,7 +24,7 @@ import jetbrains.mps.logic.reactor.core.LogicalObserver
 import jetbrains.mps.logic.reactor.core.addObserver
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.util.IdWrapper
+import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.cons
 import jetbrains.mps.logic.reactor.util.remove
 import java.util.*
@@ -35,7 +35,7 @@ internal class Frame: LogicalObserver, FrameObservable {
 
     val store: Store
 
-    private var observers: Map<IdWrapper<Logical<*>>, ConsList<(FrameObservable) -> LogicalObserver>>
+    private var observers: Map<Id<Logical<*>>, ConsList<(FrameObservable) -> LogicalObserver>>
 
     constructor(stack: FrameStack) {
         this.stack = stack
@@ -58,7 +58,7 @@ internal class Frame: LogicalObserver, FrameObservable {
     override fun storeObserver() = store
 
     override fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
-        val logicalId = IdWrapper(logical)
+        val logicalId = Id(logical)
         if (!observers.containsKey(logicalId)) {
             stack.addObserver(logical)
         }
@@ -67,7 +67,7 @@ internal class Frame: LogicalObserver, FrameObservable {
     }
 
     override fun removeObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
-        val logicalId = IdWrapper(logical)
+        val logicalId = Id(logical)
         observers[logicalId].remove(obs)?.let { newList ->
             this.observers = observers.put(logicalId, newList)
             if (newList.isEmpty) {
@@ -77,7 +77,7 @@ internal class Frame: LogicalObserver, FrameObservable {
     }
 
     override fun valueUpdated(logical: Logical<*>) {
-        observers[IdWrapper(logical)]?.let { list ->
+        observers[Id(logical)]?.let { list ->
             for (obs in list) {
                 obs(this).valueUpdated(logical)
             }
@@ -85,7 +85,7 @@ internal class Frame: LogicalObserver, FrameObservable {
     }
 
     override fun parentUpdated(logical: Logical<*>) {
-        observers[IdWrapper(logical)]?.let { list ->
+        observers[Id(logical)]?.let { list ->
             for (obs in list) {
                 obs(this).parentUpdated(logical)
             }
@@ -98,7 +98,7 @@ internal class FrameStack(storeView: StoreView?) : LogicalObserver {
 
     var current: Frame
 
-    val observing = HashSet<IdWrapper<Logical<*>>>()
+    val observing = HashSet<Id<Logical<*>>>()
 
     init {
         this.current = if (storeView != null) Frame(this, storeView) else Frame(this)
@@ -115,7 +115,7 @@ internal class FrameStack(storeView: StoreView?) : LogicalObserver {
     }
 
     fun addObserver(logical: Logical<*>) {
-        val token = IdWrapper(logical)
+        val token = Id(logical)
         if (!observing.contains(token)) {
             logical.addObserver(this)
             observing.add(token)

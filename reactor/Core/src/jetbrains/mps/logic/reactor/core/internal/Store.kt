@@ -46,7 +46,7 @@ internal class Store : LogicalObserver {
 
     var symbol2occurrences: PersMap<ConstraintSymbol, IdHashSet<Occurrence>>
 
-    var logical2occurrences: PersMap<IdWrapper<Logical<*>>, IdHashSet<Occurrence>>
+    var logical2occurrences: PersMap<Id<Logical<*>>, IdHashSet<Occurrence>>
 
     constructor(copyFrom: Store, currentFrame: () -> FrameObservable) {
         this.currentFrame = currentFrame
@@ -62,7 +62,7 @@ internal class Store : LogicalObserver {
     constructor(copyFrom: StoreView, currentFrame: () -> FrameObservable) {
         this.currentFrame = currentFrame
 
-        var log2occs = Maps.of<IdWrapper<Logical<*>>, IdHashSet<Occurrence>>()
+        var log2occs = Maps.of<Id<Logical<*>>, IdHashSet<Occurrence>>()
         val orig2occ = IdentityHashMap<ConstraintOccurrence, Occurrence>()
 
         // process the original data and make copies as needed
@@ -72,7 +72,7 @@ internal class Store : LogicalObserver {
             for (arg in orig.arguments()) {
                 when (arg) {
                     is Logical<*> -> {
-                        val key = IdWrapper(arg.findRoot())
+                        val key = Id(arg.findRoot())
                         log2occs = log2occs.put(key,
                                                 log2occs[key]?.add(occ) ?: singletonIdSet(occ))
                         currentFrame().addObserver(arg) { frame -> frame.storeObserver() }
@@ -101,9 +101,9 @@ internal class Store : LogicalObserver {
 
     override fun parentUpdated(logical: Logical<*>) {
         // TODO: should we care about the order in which occurrences are stored?
-        val logicalId = IdWrapper(logical)
+        val logicalId = Id(logical)
         logical2occurrences[logicalId]?.let { toMerge ->
-            val rootId = IdWrapper(logical.findRoot())
+            val rootId = Id(logical.findRoot())
             var newSet = logical2occurrences[rootId] ?: emptyIdSet()
             for (log in toMerge) {
                 newSet = newSet.add(log)
@@ -126,7 +126,7 @@ internal class Store : LogicalObserver {
             when (value) {
                 is Logical<*> -> {
                     // free logical
-                    val argId = IdWrapper(value.findRoot())
+                    val argId = Id(value.findRoot())
                     this.logical2occurrences = logical2occurrences.put(argId,
                         logical2occurrences[argId]?.add(occ) ?: singletonIdSet(occ))
                     currentFrame().addObserver(value) { frame -> frame.storeObserver() }
@@ -147,7 +147,7 @@ internal class Store : LogicalObserver {
         for (arg in occ.arguments()) {
             when (arg) {
                 is Logical<*> -> {
-                    val argId = IdWrapper(arg.findRoot())
+                    val argId = Id(arg.findRoot())
                     logical2occurrences[argId]?.remove(occ)?.let { newList ->
                         this.logical2occurrences = if (newList.isEmpty) {
                             logical2occurrences.remove(argId)

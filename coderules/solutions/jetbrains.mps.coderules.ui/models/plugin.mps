@@ -9245,7 +9245,7 @@
                 <ref role="37wK5l" to="6rp1:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
                 <node concept="2ShNRf" id="3wxtToDZuS_" role="37wK5m">
                   <node concept="1pGfFk" id="3wxtToDZxLF" role="2ShVmc">
-                    <ref role="37wK5l" to="bid0:~IdWrapper.&lt;init&gt;(java.lang.Object)" resolve="IdWrapper" />
+                    <ref role="37wK5l" to="bid0:~Id.&lt;init&gt;(java.lang.Object)" resolve="Id" />
                     <node concept="37vLTw" id="3wxtToDZyci" role="37wK5m">
                       <ref role="3cqZAo" node="3wxtToDQuSt" resolve="orig" />
                     </node>
@@ -9414,7 +9414,7 @@
                     <ref role="37wK5l" to="6rp1:~Map.put(java.lang.Object,java.lang.Object):com.github.andrewoma.dexx.collection.Map" resolve="put" />
                     <node concept="2ShNRf" id="3wxtToDZiI1" role="37wK5m">
                       <node concept="1pGfFk" id="3wxtToDZmkj" role="2ShVmc">
-                        <ref role="37wK5l" to="bid0:~IdWrapper.&lt;init&gt;(java.lang.Object)" resolve="IdWrapper" />
+                        <ref role="37wK5l" to="bid0:~Id.&lt;init&gt;(java.lang.Object)" resolve="Id" />
                         <node concept="37vLTw" id="3wxtToDZnda" role="37wK5m">
                           <ref role="3cqZAo" node="3wxtToDRnqb" resolve="orig" />
                         </node>

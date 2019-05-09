@@ -25,7 +25,7 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.logic.reactor.util.IdWrapper
+import jetbrains.mps.logic.reactor.util.Id
 
 internal class RuleMatchImpl(private val rule: Rule,
                              private val subst: Subst,
@@ -51,8 +51,8 @@ internal class RuleMatchImpl(private val rule: Rule,
    inline fun forEachReplaced(action: (Occurrence) -> Unit) =
        headReplaced.forEach(action)
 
-    override fun signature(): ArrayList<IdWrapper<Occurrence>?> =
-        ArrayList((headKept + headReplaced).map { IdWrapper(it) })
+    override fun signature(): ArrayList<Id<Occurrence>?> =
+        ArrayList((headKept + headReplaced).map { Id(it) })
 
     override fun rule(): Rule = rule
 

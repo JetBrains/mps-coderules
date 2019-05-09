@@ -16,14 +16,14 @@
 
 package jetbrains.mps.logic.reactor.util
 
-class IdWrapper<T>(val wrapped: T) {
+class Id<T>(val wrapped: T) {
 
     val idHash = System.identityHashCode(wrapped)
 
     override fun hashCode(): Int = idHash
 
     override fun equals(other: Any?): Boolean {
-        if (other is IdWrapper<*>)
+        if (other is Id<*>)
             return this.wrapped === other.wrapped // referential equality!
         return false
     }

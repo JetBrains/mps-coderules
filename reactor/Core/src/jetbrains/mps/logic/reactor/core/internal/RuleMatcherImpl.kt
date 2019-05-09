@@ -49,9 +49,9 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
                         0)
 
     inner class RuleMatchFront(private val nodes: List<MatchNode>,
-                                private val seenOccurrences: PersSet<IdWrapper<Occurrence>>,
-                                private val consumedSignatures: PersSet<ArrayList<IdWrapper<Occurrence>?>>,
-                                private val genId: Int) : RuleMatchingProbe
+                               private val seenOccurrences: PersSet<Id<Occurrence>>,
+                               private val consumedSignatures: PersSet<ArrayList<Id<Occurrence>?>>,
+                               private val genId: Int) : RuleMatchingProbe
     {
         override fun rule(): Rule = lookupRule()
 
@@ -74,8 +74,8 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
          * Mask specifies possible slots for the occurrence.
          */
         override fun expand(occ: Occurrence, mask: BitSet): RuleMatchFront {
-            val reactivated = seenOccurrences.contains(IdWrapper(occ))
-            val newSeen = if (reactivated) seenOccurrences else seenOccurrences.add(IdWrapper(occ))
+            val reactivated = seenOccurrences.contains(Id(occ))
+            val newSeen = if (reactivated) seenOccurrences else seenOccurrences.add(Id(occ))
             val newNodes = ArrayList<MatchNode>(nodes)
 
             val allSignatures = newNodes.map { it.signature }.toHashSet()
@@ -99,7 +99,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
     open inner class MatchNode(val subst: Subst, val vacant: BitSet = bitSetOfOnes(head.size)) {
 
         // a signature is a (partial) set of constraint occurrences that belong to this node
-        open val signature: ArrayList<IdWrapper<Occurrence>?> = arrayListOf(* arrayOfNulls(head.size))
+        open val signature: ArrayList<Id<Occurrence>?> = arrayListOf(* arrayOfNulls(head.size))
 
         /**
          * Returns the additional nodes built from this node on adding the occurrence.
@@ -162,8 +162,8 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
         MatchNode(subst, parent.vacant.clearBit(headIndex)) {
         val complete = vacant.cardinality() == 0
 
-        override val signature: ArrayList<IdWrapper<Occurrence>?> =
-            ArrayList(parent.signature).also { it[headIndex] = IdWrapper(occurrence) }
+        override val signature: ArrayList<Id<Occurrence>?> =
+            ArrayList(parent.signature).also { it[headIndex] = Id(occurrence) }
 
         fun constraint(): Constraint = head[headIndex]
 

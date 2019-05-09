@@ -17,7 +17,7 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.core.internal.ProcessingState.*
+import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus.*
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
@@ -52,33 +52,33 @@ internal class ControllerImpl (
     override fun evaluate(occ: Occurrence): StoreView {
         // create the internal occurrence
         val active = occ.constraint().occurrence(occ.arguments(), { frameStack.current })
-        val state = process(active, NORMAL())
-        if (state is FAILED) {
-            throw state.failure.failureCause()
+        val status = process(active, NORMAL())
+        if (status is FAILED) {
+            throw status.failure.failureCause()
         }
         return storeView()
     }
 
-    fun activate(constraint: Constraint) : ProcessingState {
+    fun activate(constraint: Constraint) : FeedbackStatus {
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext)
         activateConstraint(constraint, context)
-        return context.currentState()
+        return context.currentStatus()
     }
 
     override fun reactivate(occ: Occurrence) {
-        // FIXME propagate the processing state further up the call stack
-        // TODO: introduce processing state to solver API?
-        val state = process(occ, NORMAL())
-        if (state is FAILED) {
-            throw state.failure.failureCause()
+        // FIXME propagate the status further up the call stack
+        // TODO: introduce status to solver API?
+        val status = process(occ, NORMAL())
+        if (status is FAILED) {
+            throw status.failure.failureCause()
         }
     }
 
-    private fun process(active: Occurrence, inState: ProcessingState) : ProcessingState {
+    private fun process(active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
         assert(active.alive)
 
-        return profiler.profile<ProcessingState>("process_${active.constraint().symbol()}") {
+        return profiler.profile<FeedbackStatus>("process_${active.constraint().symbol()}") {
 
             if (!active.stored) {
                 frameStack.current.store.store(active)
@@ -90,13 +90,13 @@ internal class ControllerImpl (
             val activatedFront = dispatchFront.expand(active)
             this.dispatchFront = activatedFront
 
-            val outState = activatedFront.matches().toList().fold(inState) { state, match ->
+            val outStatus = activatedFront.matches().toList().fold(inStatus) { status, match ->
                 // TODO: paranoid check. should be isAlive() instead
                 // FIXME: move this check elsewhere
-                if (state.operational && active.stored && match.allStored())
-                    processMatch(state, match as RuleMatchImpl)
+                if (status.operational && active.stored && match.allStored())
+                    processMatch(status, match as RuleMatchImpl)
                 else
-                    state
+                    status
             }
 
             // TODO: should be isAlive()
@@ -104,12 +104,12 @@ internal class ControllerImpl (
                 trace.suspend(active)
             }
 
-            outState
+            outStatus
         }
     }
 
-    private fun processMatch(inState: ProcessingState, match: RuleMatchImpl) : ProcessingState {
-        val context = Context(inState, match.logicalContext())
+    private fun processMatch(inStatus: FeedbackStatus, match: RuleMatchImpl) : FeedbackStatus {
+        val context = Context(inStatus, match.logicalContext())
 
         // invoke matched pattern predicates
         for (prd in match.patternPredicates()) {
@@ -123,19 +123,19 @@ internal class ControllerImpl (
             if (!askPredicate(gprd, context)) break
         }
 
-        context.updateState { state ->
-            when (state) {
+        context.updateStatus { status ->
+            when (status) {
                 is ABORTED -> { // guard is not satisfied
                     trace.reject(match)
-                    return state.recover()
+                    return status.recover()
 
                 }
                 is FAILED -> { // guard failed
-                    trace.feedback(state.failure)
-                    return state.recover()
+                    trace.feedback(status.failure)
+                    return status.recover()
 
                 }
-                else -> state
+                else -> status
             }
         }
 
@@ -152,13 +152,13 @@ internal class ControllerImpl (
         while (altIt.hasNext()) {
             val body = altIt.next()
 
-            context.updateState { state ->
-                if (state is FAILED) {
+            context.updateStatus { status ->
+                if (status is FAILED) {
                     trace.retry(match)
-                    state.recover()
+                    status.recover()
 
                 } else {
-                    state
+                    status
                 }
             }
 
@@ -173,37 +173,37 @@ internal class ControllerImpl (
                 }
 
                 if (itemOk) {
-                    context.withState { state ->
-                        if (state.feedback?.alreadyHandled() == false) {
-                            state.feedback.handle(match.rule(), supervisor)
+                    context.withStatus { status ->
+                        if (status.feedback?.alreadyHandled() == false) {
+                            status.feedback.handle(match.rule(), supervisor)
                         }
                     }
 
                 } else {
-                    // state is not operational after constraint/predicate processing
+                    // status is not operational after constraint/predicate processing
                     break
                 }
             }
 
-            val altOk = context.updateState { state ->
-                if (state is FAILED) {
-                    trace.feedback(state.failure)
+            val altOk = context.updateStatus { status ->
+                if (status is FAILED) {
+                    trace.feedback(status.failure)
 
                     if (altIt.hasNext()) {
                         // clear the failure handled status
                         // the supervisor is NOT notified here
-                        state.failure.handle(match.rule())
-                        state
+                        status.failure.handle(match.rule())
+                        status
 
-                    } else if (state.feedback?.alreadyHandled() == false && state.failure.handle(match.rule(), supervisor)) {
-                        state.recover()
+                    } else if (status.feedback?.alreadyHandled() == false && status.failure.handle(match.rule(), supervisor)) {
+                        status.recover()
 
                     } else {
-                        state
+                        status
                     }
 
                 } else {
-                    state
+                    status
                 }
             }
 
@@ -219,26 +219,26 @@ internal class ControllerImpl (
 
         trace.finish(match)
 
-        return context.currentState()
+        return context.currentStatus()
     }
 
     private fun activateConstraint(constraint: Constraint, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
-        return context.updateState { state ->
+        return context.updateStatus { status ->
             val active = constraint.occurrence(args, { frameStack.current }, context.logicalContext)
-            process(active, state)
+            process(active, status)
         }
     }
 
     private fun askPredicate(predicate: Predicate, context: Context) : Boolean =
         profiler.profile<Boolean>("ask_${predicate.symbol()}") {
 
-            context.evalSafe { state ->
+            context.evalSafe { status ->
                 val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
                 if (session.ask(predicate.invocation(args, context.logicalContext, context)))
-                    state
+                    status
                 else
-                    state.abort(DetailedFeedback("predicate not satisfied"))
+                    status.abort(DetailedFeedback("predicate not satisfied"))
             }
 
         }
@@ -266,52 +266,52 @@ internal class ControllerImpl (
 
 }
 
-private class Context(inState: ProcessingState,
+private class Context(inStatus: FeedbackStatus,
                       val logicalContext: LogicalContext) : InvocationContext
 {
 
-    private var state = inState
-    fun currentState(): ProcessingState = state
+    private var status = inStatus
+    fun currentStatus(): FeedbackStatus = status
 
     override fun report(feedback: EvaluationFeedback) {
         when (feedback) {
-            is EvaluationFailure -> this.state = state.fail(feedback)
-            is DetailedFeedback -> this.state = state.report(feedback)
+            is EvaluationFailure -> this.status = status.fail(feedback)
+            is DetailedFeedback -> this.status = status.report(feedback)
         }
     }
 
-    inline fun withState(block: (ProcessingState) -> Unit) {
-        block.invoke(state)
+    inline fun withStatus(block: (FeedbackStatus) -> Unit) {
+        block.invoke(status)
     }
 
-    inline fun updateState(block: (ProcessingState) -> ProcessingState) : Boolean {
-        this.state = block.invoke(state)
-        return state.operational
+    inline fun updateStatus(block: (FeedbackStatus) -> FeedbackStatus) : Boolean {
+        this.status = block.invoke(status)
+        return status.operational
     }
 
-    inline fun evalSafe(block: (ProcessingState) -> ProcessingState) : Boolean {
-        if (state.operational) {
+    inline fun evalSafe(block: (FeedbackStatus) -> FeedbackStatus) : Boolean {
+        if (status.operational) {
             try {
-                this.state = block.invoke(state)
+                this.status = block.invoke(status)
 
             } catch (ex: EvaluationFailureException) {
-                this.state = state.fail(EvaluationFailure(ex))
+                this.status = status.fail(EvaluationFailure(ex))
             }
         }
-        return state.operational
+        return status.operational
     }
 
     inline fun runSafe(block: () -> Unit) : Boolean {
-        if (state.operational) {
+        if (status.operational) {
             try {
                 block()
 
             } catch (ex: EvaluationFailureException) {
-                this.state = state.fail(EvaluationFailure(ex))
+                this.status = status.fail(EvaluationFailure(ex))
             }
         }
 
-        return state.operational
+        return status.operational
     }
 
 }
