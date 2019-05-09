@@ -10,14 +10,14 @@ import kotlin.collections.HashMap
  * @author Fedor Isakov
  */
 
-class Builder(var handlers: List<Handler>) : RuleLookup {
+class Builder(var rulesLists: List<RulesList>) : RuleLookup {
 
     val tag2rule = HashMap<String, Rule>()
 
     val programBuilder = ProgramBuilder(MockConstraintRegistry())
 
     init {
-        handlers
+        rulesLists
             .flatMap { it.rules() }
             .forEach { r -> tag2rule[r.tag()] = r }
     }
@@ -29,28 +29,28 @@ class Builder(var handlers: List<Handler>) : RuleLookup {
 
     fun ruleMatcher(): RuleMatcher = createRuleMatcher(this, rules.first().tag())
 
-    fun program(name: String): Program = programBuilder.program(name, handlers)
+    fun program(name: String): Program = programBuilder.program(name, rulesLists)
     
 }
 
-private fun createBuilder(handlerBlocks: Array<out () -> Handler>): Builder {
-    val handlers = ArrayList<Handler>()
-    for (block in handlerBlocks) {
+private fun createBuilder(rulesListBlocks: Array<out () -> RulesList>): Builder {
+    val handlers = ArrayList<RulesList>()
+    for (block in rulesListBlocks) {
         handlers.add(block())
     }
     return Builder(handlers)
 }
 
-private fun updateBuilder(builder:Builder, handlerBlocks: Array<out () -> Handler>): Builder {
-    val name2handler = HashMap(builder.handlers.map { it.name() to it }.toMap())
-    for (block in handlerBlocks) {
+private fun updateBuilder(builder:Builder, rulesListBlocks: Array<out () -> RulesList>): Builder {
+    val name2handler = HashMap(builder.rulesLists.map { it.name() to it }.toMap())
+    for (block in rulesListBlocks) {
         val h = block()
         name2handler[h.name()] = h
     }
     return Builder(name2handler.values.toList())
 }
 
-private fun createHandler(name: String, vararg ruleBlocks: () -> Rule): () -> Handler = {
+private fun createHandler(name: String, vararg ruleBlocks: () -> Rule): () -> RulesList = {
     val hb = HandlerBuilder(name)
     for (block in ruleBlocks) {
         hb.appendRule(block())
@@ -58,8 +58,8 @@ private fun createHandler(name: String, vararg ruleBlocks: () -> Rule): () -> Ha
     hb.toHandler()
 }
 
-private fun updateHandler(name: String, handler: Handler, vararg ruleBlocks: () -> Rule): () -> Handler = {
-    val hb = HandlerBuilder(name, handler)
+private fun updateHandler(name: String, rulesList: RulesList, vararg ruleBlocks: () -> Rule): () -> RulesList = {
+    val hb = HandlerBuilder(name, rulesList)
     for (block in ruleBlocks) {
         hb.appendRule(block())
     }
@@ -72,7 +72,7 @@ fun programWithRules(vararg ruleBuilders: () -> Rule): Builder =
     createBuilder(arrayOf(createHandler("test", * ruleBuilders)))
 
 fun Builder.programWithRules(vararg ruleBuilders: () -> Rule): Builder =
-    updateBuilder(this, arrayOf(updateHandler("test",  handlers.first(), * ruleBuilders)))
+    updateBuilder(this, arrayOf(updateHandler("test",  rulesLists.first(), * ruleBuilders)))
 
 fun rule(tag: String, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
     val rb = RuleBuilder(tag)

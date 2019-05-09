@@ -17,11 +17,6 @@
 package jetbrains.mps.logic.reactor.program;
 
 
-import jetbrains.mps.logic.reactor.evaluation.InvocationContext;
-import jetbrains.mps.logic.reactor.logical.LogicalContext;
-
-import java.util.List;
-
 /**
  * A collection of handlers that constitute a constraint rules program.
  *
@@ -32,6 +27,6 @@ public abstract class Program {
 
     public abstract String name();
 
-    public abstract Iterable<Handler> handlers();
+    public abstract Iterable<RulesList> handlers();
 
 }

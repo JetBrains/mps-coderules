@@ -2,7 +2,6 @@
  * @author Fedor Isakov
  */
 
-import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext
 import jetbrains.mps.logic.reactor.evaluation.Supervisor
 import jetbrains.mps.logic.reactor.logical.LogicalContext
@@ -14,13 +13,13 @@ import kotlin.collections.LinkedHashMap
 
 class ProgramBuilder(val registry: MockConstraintRegistry)  {
 
-    fun program(name: String, handlers: List<Handler>): Program {
-        for (h in handlers) {
+    fun program(name: String, rulesLists: List<RulesList>): Program {
+        for (h in rulesLists) {
             for (r in h.rules()) {
                 registry.update(r)
             }
         }
-        return MockProgram(name, handlers, registry)
+        return MockProgram(name, rulesLists, registry)
     }
     
 }
@@ -29,8 +28,8 @@ class HandlerBuilder(val name: String) {
 
     val rules = LinkedHashMap<String, Rule>()
 
-    constructor(name: String, handler: Handler) : this(name) {
-        for (r in handler.rules()) {
+    constructor(name: String, rulesList: RulesList) : this(name) {
+        for (r in rulesList.rules()) {
             appendRule(r)
         }
     }
@@ -39,7 +38,7 @@ class HandlerBuilder(val name: String) {
         rules[rule.tag()] = rule
     }
 
-    fun toHandler(): Handler = MockHandler(name, rules.values.toList())
+    fun toHandler(): RulesList = MockHandler(name, rules.values.toList())
 }
 
 class RuleBuilder(val tag: String) {
@@ -66,7 +65,7 @@ class RuleBuilder(val tag: String) {
 
 class MockHandler(
     val name: String,
-    val rules: List<Rule>) : Handler() {
+    val rules: List<Rule>) : RulesList() {
 
     override fun name(): String = name
 
@@ -97,11 +96,11 @@ class MockRule(
         else (kept + replaced).map { it as AndItem } + guard + body.flatten()
 }
 
-class MockProgram(val name: String, val handlers: List<Handler>, val registry: MockConstraintRegistry) : Program() {
+class MockProgram(val name: String, val rulesLists: List<RulesList>, val registry: MockConstraintRegistry) : Program() {
 
     override fun name(): String = name
 
-    override fun handlers(): Iterable<Handler> = unmodifiableCollection(handlers)
+    override fun handlers(): Iterable<RulesList> = unmodifiableCollection(rulesLists)
 }
 
 

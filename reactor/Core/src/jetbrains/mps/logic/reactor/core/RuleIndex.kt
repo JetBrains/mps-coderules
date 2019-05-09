@@ -34,7 +34,7 @@ import kotlin.collections.HashMap
  * FIXME handler to be renamed to RulesList
  * @author Fedor Isakov
  */
-class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule>, RuleLookup {
+class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
 
     private val symbol2index = HashMap<ConstraintSymbol, ArgumentRuleIndex>()
 
@@ -73,7 +73,7 @@ class RuleIndex(handlers: Iterable<Handler>) : Iterable<Rule>, RuleLookup {
 
     override fun iterator(): Iterator<Rule> = rulesList.iterator()
 
-    private fun buildIndex(handlers: Iterable<Handler>) {
+    private fun buildIndex(handlers: Iterable<RulesList>) {
         var ruleBit = 0
         for (h in handlers) {
             for (rule in h.rules()) {

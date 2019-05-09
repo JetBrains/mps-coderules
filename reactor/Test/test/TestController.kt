@@ -58,22 +58,22 @@ class TestController {
     }
 
     private fun Builder.controller(vararg occurrences: ConstraintOccurrence): Controller {
-        val program = MockProgram("test", handlers, registry = MockConstraintRegistry())
+        val program = MockProgram("test", rulesLists, registry = MockConstraintRegistry())
         MockSession.init(program, MockSupervisor())
-        val controller = createController(MockSupervisor(), RuleIndex(program.handlers), storeView = MockStoreView(listOf(* occurrences)))
+        val controller = createController(MockSupervisor(), RuleIndex(program.rulesLists), storeView = MockStoreView(listOf(* occurrences)))
         MockSession.ourBackend.session.controller = controller
         return controller
     }
 
     private fun Builder.controllerWithFeedback(feedbackHandler: (Rule, EvaluationFeedback) -> Boolean,
                                                vararg occurrences: ConstraintOccurrence): Controller {
-        val program = MockProgram("test", handlers, registry = MockConstraintRegistry())
+        val program = MockProgram("test", rulesLists, registry = MockConstraintRegistry())
         val supervisor = object : MockSupervisor() {
             override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean =
                 feedbackHandler(rule, feedback)
         }
         MockSession.init(program, supervisor)
-        val controller = createController(supervisor, RuleIndex(program.handlers), storeView = MockStoreView(listOf(* occurrences)))
+        val controller = createController(supervisor, RuleIndex(program.rulesLists), storeView = MockStoreView(listOf(* occurrences)))
         MockSession.ourBackend.session.controller = controller
         return controller
     }

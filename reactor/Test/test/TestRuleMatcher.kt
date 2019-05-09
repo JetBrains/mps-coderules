@@ -545,7 +545,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(Dispatcher(RuleIndex(handlers)).front()) {
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
 
                 expand(occurrence("foo"))                                    }.apply {
                 matches().count() shouldBe 0                                        }.run {
@@ -587,7 +587,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(Dispatcher(RuleIndex(handlers)).front()) {
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
 
                 expand(occurrence("foo"))                                    }.apply {
                 matches().count() shouldBe 0                                        }.run {
@@ -656,7 +656,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(Dispatcher(RuleIndex(handlers)).front()) {
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
 
                 expand(occurrence("blin"))                                   }.apply {
                 matches().count() shouldBe 0                                        }.run {
@@ -706,7 +706,7 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            with(Dispatcher(RuleIndex(handlers)).front()) {
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
 
                 expand(occurrence("foo"))                                }.apply {
                 matches().count() shouldBe 0                                    }.run {
@@ -759,7 +759,7 @@ class TestRuleMatcher {
                 ))))
         {
             val bar = occurrence("bar")
-            with(Dispatcher(RuleIndex(handlers)).front()) {
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
 
                 expand(occurrence("foo"))                                }.apply {
                 matches().count() shouldBe 0                                    }.run {

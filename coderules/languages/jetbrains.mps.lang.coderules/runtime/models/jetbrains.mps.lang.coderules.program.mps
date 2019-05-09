@@ -457,7 +457,7 @@
         <node concept="3uibUv" id="4MqhgXUS0Q7" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="3uibUv" id="4MqhgXUS0Q8" role="11_B2D">
-            <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+            <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
           </node>
         </node>
       </node>
@@ -590,7 +590,7 @@
       <node concept="3uibUv" id="4MqhgXUKgMf" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
         <node concept="3uibUv" id="4MqhgXUKgMg" role="11_B2D">
-          <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+          <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
         </node>
       </node>
       <node concept="3clFbS" id="4MqhgXUKgMh" role="3clF47">
@@ -658,7 +658,7 @@
       <node concept="3uibUv" id="4MqhgXULV52" role="1tU5fm">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="4MqhgXULVdx" role="11_B2D">
-          <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+          <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
         </node>
       </node>
     </node>
@@ -1573,7 +1573,7 @@
     <node concept="3clFb_" id="4MqhgXUNDLG" role="jymVt">
       <property role="TrG5h" value="toHandler" />
       <node concept="3uibUv" id="4MqhgXUNEFF" role="3clF45">
-        <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+        <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
       </node>
       <node concept="3Tm1VV" id="4MqhgXUNDLJ" role="1B3o_S" />
       <node concept="3clFbS" id="4MqhgXUNDLK" role="3clF47">
@@ -1711,7 +1711,7 @@
       <node concept="2tJIrI" id="4MqhgXUM$3z" role="jymVt" />
       <node concept="3Tm1VV" id="4MqhgXUMzTR" role="1B3o_S" />
       <node concept="3uibUv" id="4MqhgXUM$3j" role="1zkMxy">
-        <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+        <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
       </node>
     </node>
     <node concept="2tJIrI" id="4MqhgXUMzKi" role="jymVt" />
@@ -1784,7 +1784,7 @@
       </node>
       <node concept="TZ5HA" id="2$$Q_FeW4_3" role="TZ5H$">
         <node concept="1dT_AC" id="2$$Q_FeW4_4" role="1dT_Ay">
-          <property role="1dT_AB" value="Instance of Handler produced by toHandler() returns the rules sorted by location key." />
+          <property role="1dT_AB" value="Instance of RulesList produced by toHandler() returns the rules sorted by location key." />
         </node>
       </node>
     </node>
@@ -1955,7 +1955,7 @@
       <property role="TrG5h" value="allHandlers" />
       <node concept="A3Dl8" id="7DvO2M9UagV" role="3clF45">
         <node concept="3uibUv" id="7DvO2M9UagW" role="A3Ik2">
-          <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+          <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
         </node>
       </node>
       <node concept="3Tm1VV" id="7DvO2M9UagX" role="1B3o_S" />
@@ -1965,13 +1965,13 @@
             <property role="TrG5h" value="allHandlers" />
             <node concept="_YKpA" id="7DvO2M9Uah1" role="1tU5fm">
               <node concept="3uibUv" id="7DvO2M9Uah2" role="_ZDj9">
-                <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+                <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
               </node>
             </node>
             <node concept="2ShNRf" id="7DvO2M9Uah3" role="33vP2m">
               <node concept="Tc6Ow" id="7DvO2M9Uah4" role="2ShVmc">
                 <node concept="3uibUv" id="7DvO2M9Uah5" role="HW$YZ">
-                  <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+                  <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
                 </node>
               </node>
             </node>
@@ -4246,7 +4246,7 @@
       <node concept="37vLTG" id="4MqhgXUQrZn" role="3clF46">
         <property role="TrG5h" value="handler" />
         <node concept="3uibUv" id="4MqhgXUQsf0" role="1tU5fm">
-          <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+          <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
         </node>
       </node>
       <node concept="3cqZAl" id="4MqhgXUQoON" role="3clF45" />
@@ -4276,7 +4276,7 @@
                   <ref role="3cqZAo" node="4MqhgXUQrZn" resolve="handler" />
                 </node>
                 <node concept="liA8E" id="4MqhgXUQtEx" role="2OqNvi">
-                  <ref role="37wK5l" to="av0y:~Handler.rules():java.lang.Iterable" resolve="rules" />
+                  <ref role="37wK5l" to="av0y:~RulesList.rules():java.lang.Iterable" resolve="rules" />
                 </node>
               </node>
             </node>
@@ -4461,13 +4461,13 @@
       <node concept="3Tm6S6" id="4MqhgXULVBB" role="1B3o_S" />
       <node concept="_YKpA" id="4$YN6Qv0idE" role="1tU5fm">
         <node concept="3uibUv" id="4$YN6Qv0idG" role="_ZDj9">
-          <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+          <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
         </node>
       </node>
       <node concept="2ShNRf" id="4$YN6Qv0kjy" role="33vP2m">
         <node concept="Tc6Ow" id="4$YN6Qv0kjj" role="2ShVmc">
           <node concept="3uibUv" id="4$YN6Qv0kjk" role="HW$YZ">
-            <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+            <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
           </node>
         </node>
       </node>
@@ -4913,7 +4913,7 @@
               <node concept="3cpWsn" id="4MqhgXUSKVP" role="1Duv9x">
                 <property role="TrG5h" value="handler" />
                 <node concept="3uibUv" id="4MqhgXUSKVT" role="1tU5fm">
-                  <ref role="3uigEE" to="av0y:~Handler" resolve="Handler" />
+                  <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
                 </node>
               </node>
               <node concept="2OqwBi" id="6tPOoeTbtQC" role="1DdaDG">
