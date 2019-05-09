@@ -1078,7 +1078,7 @@
                             <node concept="2Xjw5R" id="34$A1Mf4Hzh" role="2OqNvi">
                               <node concept="1xMEDy" id="34$A1Mf4Hzi" role="1xVPHs">
                                 <node concept="chp4Y" id="34$A1Mf4Hzj" role="ri$Ld">
-                                  <ref role="cht4Q" to="wq2x:7eGEHDlgPKk" resolve="Handler" />
+                                  <ref role="cht4Q" to="wq2x:7eGEHDlgPKk" resolve="RulesList" />
                                 </node>
                               </node>
                             </node>
