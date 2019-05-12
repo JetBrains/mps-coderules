@@ -342,31 +342,34 @@ class TestController {
         val X = metaLogical<Int>("X")
         programWithRules(
             rule("zeroth",
-                headKept(constraint("foo")), body(statement({ x -> x.set(999) }, X),
-                constraint("bar", X))
+                headKept(constraint("foo")),
+                                                    body(statement({ x -> x.set(999) }, X),
+                                                         constraint("bar", X))
             ),
             rule("first",
                 headKept(constraint("foo")),
-                body(constraint("bar", X),
-                    constraint("qux", X))
+                                                    body(constraint("bar", X),
+                                                        constraint("qux", X))
             ),
             rule("second",
                 headReplaced(constraint("qux", X)),
-                body(constraint("expected1"),
-                    statement({ x -> x.set(123) }, X))
+                                                    body(constraint("expected1"),
+                                                        statement({ x -> x.set(123) }, X))
             ),
             rule("third",
                 headReplaced(constraint("foo")),
-                body(constraint("unexpected"))
+                                                    body(constraint("unexpected"))
             ),
             rule("fourth",
                 headReplaced(constraint("foo")),
-                headReplaced(constraint("bar", X)), guard(expression({ x -> x.getNullable() == 123 }, X)),
-                body(constraint("expected2"))
+                headReplaced(constraint("bar", X)),
+                                                    guard(expression({ x -> x.getNullable() == 123 }, X)),
+                                                    body(constraint("expected2"))
             ),
             rule("fifth",
-                headReplaced(constraint("bar", X)), guard(expression({ x -> x.getNullable() == 999 }, X)),
-                body(constraint("expected3", X))
+                headReplaced(constraint("bar", X)),
+                                                    guard(expression({ x -> x.getNullable() == 999 }, X)),
+                                                    body(constraint("expected3", X))
             )
         ).controller().evaluate(occurrence("foo")).run {
             assertEquals(3, allOccurrences().count())

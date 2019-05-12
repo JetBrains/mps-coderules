@@ -127,20 +127,7 @@ fun sym2(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 2)
 
 class MockController : Controller {
-
-    override fun currentFrame(): FrameObservable = object  : FrameObservable {
-        override fun storeObserver(): LogicalObserver {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
-        override fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
-        }
-
-        override fun removeObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-    }
-
+    
     override fun ask(invocation: PredicateInvocation): Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -155,6 +142,14 @@ class MockController : Controller {
 
     override fun evaluate(occ: Occurrence): StoreView {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun state(): ProcessingState = object : ProcessingState {
+        override fun addForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
+        }
+
+        override fun removeForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
+        }
     }
 
     override fun storeView(): StoreView {

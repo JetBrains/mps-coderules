@@ -19,15 +19,13 @@ package jetbrains.mps.logic.reactor.core
 import jetbrains.mps.logic.reactor.logical.Logical
 
 /**
- * Serves to add/remove observers of [Logical] that track the frame stack.
+ * @author Fedor Isakov
  */
-interface FrameObservable {
 
-    /** Returns the store associated with this frame */
-    fun storeObserver(): LogicalObserver
+interface ProcessingState {
 
-    fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver)
+    fun addForwardingObserver(logical: Logical<*>, observer: LogicalObserver)
 
-    fun removeObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver)
-
+    fun removeForwardingObserver(logical: Logical<*>, observer: LogicalObserver)
+    
 }

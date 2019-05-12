@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
-import jetbrains.mps.logic.reactor.core.internal.RuleMatchImpl
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 
@@ -34,7 +33,7 @@ interface Controller {
 
     fun reactivate(occ: Occurrence)
 
-    fun currentFrame(): FrameObservable
+    fun state(): ProcessingState
 
     /** For tests only  */
     fun evaluate(occ: Occurrence): StoreView

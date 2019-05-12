@@ -30,24 +30,20 @@ import com.github.andrewoma.dexx.collection.Map as PersMap
 
 internal class ControllerImpl (
     val supervisor: Supervisor,
-    val ruleIndex: RuleIndex,
+    val state: ProcessingStateImpl,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null) : Controller
 {
 
-    private var dispatchFront = Dispatcher(ruleIndex).front()
-
-    // FIXME move to context
-    private val frameStack = FrameStack()
-
     /** For tests only */
-    override fun storeView(): StoreView = frameStack.current.store.view()
+    override fun storeView(): StoreView = state.storeView()
 
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {
         // create the internal occurrence
         val active = occ.constraint().occurrence(this, occ.arguments())
-        val status = process(active, NORMAL())
+
+        val status = state.processActivated(active, NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
         }
@@ -63,7 +59,8 @@ internal class ControllerImpl (
         return context.currentStatus()
     }
 
-    override fun currentFrame(): FrameObservable = frameStack.current
+    override fun state(): ProcessingStateImpl =
+        state
 
     override fun ask(invocation: PredicateInvocation): Boolean {
         val solver = invocation.predicate().symbol().solver()
@@ -80,34 +77,12 @@ internal class ControllerImpl (
 
     override fun reactivate(occ: Occurrence) {
         // FIXME propagate the status further up the call stack
-        // TODO: introduce status to solver API?
-        // TODO update the stack
 
-        val status = process(occ, NORMAL())
-
+        val status = state.processActivated(occ, NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
         }
     }
-
-    private fun processMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
-        offerMatch(match, inStatus)
-            .let  { when (it) {
-                is ABORTED -> { // guard is not satisfied
-                    trace.reject(match)
-                    return it.recover() // return from the enclosing method
-
-                } is FAILED -> { // guard failed
-                    trace.feedback(it.failure)
-                    return it.recover() // return from the enclosing method
-
-                } else -> it
-            } }
-            .also { consumeMatch(match) }
-            .also { trace.trigger(match) }
-            .also { processDiscarded(match) }
-            .then { processBody(match, it) }
-            .also { trace.finish(match) }
 
     override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
         inStatus.then { checkMatchPreconditions(match, it) }
@@ -154,8 +129,7 @@ internal class ControllerImpl (
                 }
             }
 
-            val savedFrame = frameStack.current
-            frameStack.push()
+            val savedFrame = state.currentFrame()
 
             for (item in body) {
                 val itemOk = when (item) {
@@ -201,7 +175,7 @@ internal class ControllerImpl (
 
             if (!altOk) {
                 // all constraints activated up to a failure are lost
-                frameStack.reset(savedFrame)
+                state.reset(savedFrame)
 
             } else {
                 // body finished normally
@@ -211,61 +185,12 @@ internal class ControllerImpl (
 
         return context.currentStatus()
     }
-
-    private fun process(active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
-        assert(active.alive)
-
-        return profiler.profile<FeedbackStatus>("process_${active.constraint().symbol()}") {
-
-            if (!active.stored) {
-                frameStack.current.store.store(active)
-                trace.activate(active)
-            } else {
-                trace.reactivate(active)
-            }
-
-            val activatedFront = dispatchFront.expand(active)
-            this.dispatchFront = activatedFront
-
-            val outStatus = activatedFront.matches().toList().fold(inStatus) { status, match ->
-                // TODO: paranoid check. should be isAlive() instead
-                // FIXME: move this check elsewhere
-                if (status.operational && active.stored && match.allStored())
-                    processMatch(match as RuleMatchImpl, status)
-                else
-                    status
-            }
-
-            // TODO: should be isAlive()
-            if (active.stored) {
-                trace.suspend(active)
-            }
-
-            outStatus
-        }
-    }
-
-    private fun consumeMatch(match: RuleMatchEx) {
-        this.dispatchFront = dispatchFront.consume(match)
-    }
-
-    private fun processDiscarded (match: RuleMatchEx) {
-        match.forEachReplaced { occ ->
-            this.dispatchFront = dispatchFront.contract(occ)
-
-            frameStack.current.store.discard(occ)
-
-            trace.discard(occ)
-        }
-    }
-
+    
     private fun activateConstraint(constraint: Constraint, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
-            // TODO update the state stack
-            val active = constraint.occurrence(this, args, context.logicalContext)
-            process(active, status)
+            state.processActivated(constraint.occurrence(this, args, context.logicalContext), status)
 
         }
     }
@@ -364,6 +289,6 @@ fun createController(
     supervisor: Supervisor,
     ruleIndex: RuleIndex,
     trace: EvaluationTrace = EvaluationTrace.NULL,
-    profiler: Profiler? = null,
-    storeView: StoreView? = null) : Controller =
-    ControllerImpl(supervisor, ruleIndex, trace, profiler)
+    profiler: Profiler? = null) : Controller =
+
+    ControllerImpl(supervisor, ProcessingStateImpl(Dispatcher(ruleIndex)), trace, profiler)

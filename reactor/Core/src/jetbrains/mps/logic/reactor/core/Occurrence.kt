@@ -43,7 +43,7 @@ data class Occurrence (val controller: Controller,
     init {
         for (a in arguments) {
             if (a is Logical<*>) {
-                controller.currentFrame().addObserver(a) { this }
+                controller.state().addForwardingObserver(a, this)
             }
         }
     }
@@ -69,7 +69,7 @@ data class Occurrence (val controller: Controller,
     fun terminate() {
         for (a in arguments) {
             if (a is Logical<*>) {
-                controller.currentFrame().removeObserver(a) { this }
+                controller.state().removeForwardingObserver(a, this)
             }
         }
         alive = false

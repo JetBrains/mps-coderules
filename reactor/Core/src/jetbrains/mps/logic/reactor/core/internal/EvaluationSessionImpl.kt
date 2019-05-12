@@ -16,10 +16,8 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus.FAILED
-import jetbrains.mps.logic.reactor.core.EvaluationSessionEx
-import jetbrains.mps.logic.reactor.core.Feedback
-import jetbrains.mps.logic.reactor.core.RuleIndex
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Program
@@ -44,7 +42,9 @@ internal class EvaluationSessionImpl private constructor (
     override fun controller() = controller
 
     private fun launch(main: Constraint, profiler: Profiler?) : FeedbackStatus {
-        this.controller = ControllerImpl(supervisor, RuleIndex(program().handlers()), trace, profiler)
+        val dispatcher = Dispatcher(RuleIndex(program().handlers()))
+        val state = ProcessingStateImpl(dispatcher, trace, profiler)
+        this.controller = ControllerImpl(supervisor, state, trace, profiler)
         return controller.activate(main)
     }
 
