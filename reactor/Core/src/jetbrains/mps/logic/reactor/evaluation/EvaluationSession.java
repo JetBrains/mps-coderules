@@ -88,6 +88,10 @@ public abstract class EvaluationSession {
 
         public abstract Config withTrace(EvaluationTrace computingTracer);
 
+        /**
+         * @deprecated passing store view is deprecated and doesn't have an effect
+         */
+        @Deprecated
         public abstract Config withStoreView(StoreView storeView);
 
         public abstract EvaluationResult start(Supervisor supervisor);

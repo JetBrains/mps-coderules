@@ -41,17 +41,10 @@ abstract class EvaluationSessionEx(val program: Program,
     @Suppress("UNCHECKED_CAST")
     override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
-    override fun ask(invocation: PredicateInvocation): Boolean {
-        val solver = invocation.predicate().symbol().solver()
-        val result = solver.ask(invocation)
-        trace.ask(result, invocation)
-        return result
-    }
+    override fun ask(invocation: PredicateInvocation): Boolean =
+        controller().ask(invocation)
 
-    override fun tell(invocation: PredicateInvocation) {
-        val solver = invocation.predicate().symbol().solver()
-        trace.tell(invocation)
-        solver.tell(invocation)
-    }
+    override fun tell(invocation: PredicateInvocation) =
+        controller().tell(invocation)
 
 }

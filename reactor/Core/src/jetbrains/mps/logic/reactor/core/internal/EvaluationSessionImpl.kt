@@ -43,8 +43,8 @@ internal class EvaluationSessionImpl private constructor (
 
     override fun controller() = controller
 
-    private fun launch(main: Constraint, profiler: Profiler?, storeView: StoreView?) : FeedbackStatus {
-        this.controller = ControllerImpl(supervisor, RuleIndex(program().handlers()), trace, profiler, storeView)
+    private fun launch(main: Constraint, profiler: Profiler?) : FeedbackStatus {
+        this.controller = ControllerImpl(supervisor, RuleIndex(program().handlers()), trace, profiler)
         return controller.activate(main)
     }
 
@@ -54,15 +54,12 @@ internal class EvaluationSessionImpl private constructor (
 
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
 
-        var storeView: StoreView? = null
-
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
             this.evaluationTrace = computingTracer
             return this
         }
 
         override fun withStoreView(storeView: StoreView): EvaluationSession.Config {
-            this.storeView = storeView
             return this
         }
 
@@ -85,7 +82,7 @@ internal class EvaluationSessionImpl private constructor (
             var failure: Feedback? = null
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                val status = session.launch(main, profiler, storeView)
+                val status = session.launch(main, profiler)
                 if (status is FAILED) {
                     failure = status.failure
                 }

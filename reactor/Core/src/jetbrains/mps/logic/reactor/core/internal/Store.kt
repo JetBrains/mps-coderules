@@ -53,43 +53,7 @@ internal class Store : LogicalObserver {
         this.symbol2occurrences = copyFrom.symbol2occurrences
         this.logical2occurrences = copyFrom.logical2occurrences
     }
-
-
-    /**
-     * Copy constructor that accepts a view on the store.
-     * This can be a view on the store from previous run of the program.
-     */
-    constructor(copyFrom: StoreView, currentFrame: () -> FrameObservable) {
-        this.currentFrame = currentFrame
-
-        var log2occs = Maps.of<Id<Logical<*>>, IdHashSet<Occurrence>>()
-        val orig2occ = IdentityHashMap<ConstraintOccurrence, Occurrence>()
-
-        // process the original data and make copies as needed
-        for (orig in copyFrom.allOccurrences()) {
-            val occ = orig.constraint().occurrence(orig.arguments(), currentFrame)
-            orig2occ[orig] = occ
-            for (arg in orig.arguments()) {
-                when (arg) {
-                    is Logical<*> -> {
-                        val key = Id(arg.findRoot())
-                        log2occs = log2occs.put(key,
-                                                log2occs[key]?.add(occ) ?: singletonIdSet(occ))
-                        currentFrame().addObserver(arg) { frame -> frame.storeObserver() }
-                    }
-                }
-            }
-            occ.stored = true
-        }
-
-        // set internal structures
-        this.logical2occurrences = log2occs
-        this.symbol2occurrences = copyFrom.constraintSymbols().fold(Maps.of()) { pmap, csym ->
-            val occs = IdHashSet(copyFrom.occurrences(csym).map { occ -> orig2occ.get(occ)!! })
-            pmap.put(csym, occs)
-        }
-    }
-
+    
     constructor(currentFrame: () -> FrameObservable) {
         this.currentFrame = currentFrame
         this.symbol2occurrences = Maps.of()

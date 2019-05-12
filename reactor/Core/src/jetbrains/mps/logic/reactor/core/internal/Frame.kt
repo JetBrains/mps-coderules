@@ -49,12 +49,6 @@ internal class Frame: LogicalObserver, FrameObservable {
         this.observers = prev.observers
     }
 
-    constructor(stack: FrameStack, storeView: StoreView) {
-        this.stack = stack
-        this.store = Store(storeView) { stack.current }
-        this.observers = Maps.of()
-    }
-
     override fun storeObserver() = store
 
     override fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
@@ -94,14 +88,14 @@ internal class Frame: LogicalObserver, FrameObservable {
 
 }
 
-internal class FrameStack(storeView: StoreView?) : LogicalObserver {
+internal class FrameStack : LogicalObserver {
 
     var current: Frame
 
     val observing = HashSet<Id<Logical<*>>>()
 
     init {
-        this.current = if (storeView != null) Frame(this, storeView) else Frame(this)
+        this.current = Frame(this)
     }
 
     fun push(): Frame {

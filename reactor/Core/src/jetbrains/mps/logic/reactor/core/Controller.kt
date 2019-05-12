@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 
 /**
@@ -25,7 +26,13 @@ import jetbrains.mps.logic.reactor.evaluation.StoreView
  */
 interface Controller {
 
+    fun ask(invocation: PredicateInvocation): Boolean
+
+    fun tell(invocation: PredicateInvocation)
+
     fun reactivate(occ: Occurrence)
+
+    fun currentFrame(): FrameObservable
 
     /** For tests only  */
     fun evaluate(occ: Occurrence): StoreView

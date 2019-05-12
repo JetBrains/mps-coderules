@@ -1,4 +1,6 @@
 import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
+import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
@@ -112,7 +114,7 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 }
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
-    MockConstraint(ConstraintSymbol.symbol(id, args.size)).occurrence(listOf(* args), { fooObservable })
+    MockConstraint(ConstraintSymbol.symbol(id, args.size)).occurrence(MockController(), listOf(* args))
 
 fun sym0(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 0)
@@ -123,15 +125,38 @@ fun sym1(id: String): ConstraintSymbol =
 fun sym2(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 2)
 
-object fooObservable : FrameObservable {
-    override fun storeObserver(): LogicalObserver {
+class MockController : Controller {
+
+    override fun currentFrame(): FrameObservable = object  : FrameObservable {
+        override fun storeObserver(): LogicalObserver {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
+        }
+
+        override fun removeObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+    }
+
+    override fun ask(invocation: PredicateInvocation): Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun addObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
+    override fun tell(invocation: PredicateInvocation) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun removeObserver(logical: Logical<*>, obs: (FrameObservable) -> LogicalObserver) {
+    override fun reactivate(occ: Occurrence) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun evaluate(occ: Occurrence): StoreView {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun storeView(): StoreView {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

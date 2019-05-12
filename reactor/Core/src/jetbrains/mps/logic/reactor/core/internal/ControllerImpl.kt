@@ -32,18 +32,13 @@ internal class ControllerImpl (
     val supervisor: Supervisor,
     val ruleIndex: RuleIndex,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
-    val profiler: Profiler? = null,
-    val storeView: StoreView? = null) : Controller
+    val profiler: Profiler? = null) : Controller
 {
-
-    // FIXME move to parameter
-    private val session: EvaluationSession = EvaluationSession.current()
-
 
     private var dispatchFront = Dispatcher(ruleIndex).front()
 
     // FIXME move to context
-    private val frameStack = FrameStack(storeView)
+    private val frameStack = FrameStack()
 
     /** For tests only */
     override fun storeView(): StoreView = frameStack.current.store.view()
@@ -51,7 +46,7 @@ internal class ControllerImpl (
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {
         // create the internal occurrence
-        val active = occ.constraint().occurrence(occ.arguments(), { frameStack.current })
+        val active = occ.constraint().occurrence(this, occ.arguments())
         val status = process(active, NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
@@ -64,6 +59,21 @@ internal class ControllerImpl (
         val context = Context(NORMAL(), noLogicalContext)
         activateConstraint(constraint, context)
         return context.currentStatus()
+    }
+
+    override fun currentFrame(): FrameObservable = frameStack.current
+
+    override fun ask(invocation: PredicateInvocation): Boolean {
+        val solver = invocation.predicate().symbol().solver()
+        val result = solver.ask(invocation)
+        trace.ask(result, invocation)
+        return result
+    }
+
+    override fun tell(invocation: PredicateInvocation) {
+        val solver = invocation.predicate().symbol().solver()
+        trace.tell(invocation)
+        solver.tell(invocation)
     }
 
     override fun reactivate(occ: Occurrence) {
@@ -148,6 +158,14 @@ internal class ControllerImpl (
             trace.discard(occ)
         }
 
+        processBody(match, context)
+
+        trace.finish(match)
+
+        return context.currentStatus()
+    }
+
+    private fun processBody(match: RuleMatchImpl, context: Context) {
         val altIt = match.rule().bodyAlternation().iterator()
         while (altIt.hasNext()) {
             val body = altIt.next()
@@ -216,16 +234,12 @@ internal class ControllerImpl (
                 break
             }
         }
-
-        trace.finish(match)
-
-        return context.currentStatus()
     }
 
     private fun activateConstraint(constraint: Constraint, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.updateStatus { status ->
-            val active = constraint.occurrence(args, { frameStack.current }, context.logicalContext)
+            val active = constraint.occurrence(this, args, context.logicalContext)
             process(active, status)
         }
     }
@@ -235,7 +249,7 @@ internal class ControllerImpl (
 
             context.evalSafe { status ->
                 val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
-                if (session.ask(predicate.invocation(args, context.logicalContext, context)))
+                if (ask(predicate.invocation(args, context.logicalContext, context)))
                     status
                 else
                     status.abort(DetailedFeedback("predicate not satisfied"))
@@ -248,7 +262,7 @@ internal class ControllerImpl (
 
             context.runSafe {
                 val args = supervisor.instantiateArguments(predicate.arguments(), context.logicalContext, context)
-                session.tell(predicate.invocation(args, context.logicalContext, context))
+                tell(predicate.invocation(args, context.logicalContext, context))
             }
 
         }
@@ -264,54 +278,54 @@ internal class ControllerImpl (
 
     private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
 
-}
+    private class Context(inStatus: FeedbackStatus,
+                          val logicalContext: LogicalContext) : InvocationContext
+    {
 
-private class Context(inStatus: FeedbackStatus,
-                      val logicalContext: LogicalContext) : InvocationContext
-{
+        private var status = inStatus
+        fun currentStatus(): FeedbackStatus = status
 
-    private var status = inStatus
-    fun currentStatus(): FeedbackStatus = status
-
-    override fun report(feedback: EvaluationFeedback) {
-        when (feedback) {
-            is EvaluationFailure -> this.status = status.fail(feedback)
-            is DetailedFeedback -> this.status = status.report(feedback)
-        }
-    }
-
-    inline fun withStatus(block: (FeedbackStatus) -> Unit) {
-        block.invoke(status)
-    }
-
-    inline fun updateStatus(block: (FeedbackStatus) -> FeedbackStatus) : Boolean {
-        this.status = block.invoke(status)
-        return status.operational
-    }
-
-    inline fun evalSafe(block: (FeedbackStatus) -> FeedbackStatus) : Boolean {
-        if (status.operational) {
-            try {
-                this.status = block.invoke(status)
-
-            } catch (ex: EvaluationFailureException) {
-                this.status = status.fail(EvaluationFailure(ex))
-            }
-        }
-        return status.operational
-    }
-
-    inline fun runSafe(block: () -> Unit) : Boolean {
-        if (status.operational) {
-            try {
-                block()
-
-            } catch (ex: EvaluationFailureException) {
-                this.status = status.fail(EvaluationFailure(ex))
+        override fun report(feedback: EvaluationFeedback) {
+            when (feedback) {
+                is EvaluationFailure -> this.status = status.fail(feedback)
+                is DetailedFeedback -> this.status = status.report(feedback)
             }
         }
 
-        return status.operational
+        inline fun withStatus(block: (FeedbackStatus) -> Unit) {
+            block.invoke(status)
+        }
+
+        inline fun updateStatus(block: (FeedbackStatus) -> FeedbackStatus) : Boolean {
+            this.status = block.invoke(status)
+            return status.operational
+        }
+
+        inline fun evalSafe(block: (FeedbackStatus) -> FeedbackStatus) : Boolean {
+            if (status.operational) {
+                try {
+                    this.status = block.invoke(status)
+
+                } catch (ex: EvaluationFailureException) {
+                    this.status = status.fail(EvaluationFailure(ex))
+                }
+            }
+            return status.operational
+        }
+
+        inline fun runSafe(block: () -> Unit) : Boolean {
+            if (status.operational) {
+                try {
+                    block()
+
+                } catch (ex: EvaluationFailureException) {
+                    this.status = status.fail(EvaluationFailure(ex))
+                }
+            }
+
+            return status.operational
+        }
+
     }
 
 }
@@ -323,4 +337,4 @@ fun createController(
     trace: EvaluationTrace = EvaluationTrace.NULL,
     profiler: Profiler? = null,
     storeView: StoreView? = null) : Controller =
-    ControllerImpl(supervisor, ruleIndex, trace, profiler, storeView)
+    ControllerImpl(supervisor, ruleIndex, trace, profiler)

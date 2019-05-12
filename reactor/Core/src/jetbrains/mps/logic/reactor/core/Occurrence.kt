@@ -18,8 +18,6 @@ package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 
-import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -30,10 +28,10 @@ import jetbrains.mps.logic.reactor.program.Constraint
  *
  * @author Fedor Isakov
  */
-data class Occurrence (val constraint: Constraint,
+data class Occurrence (val controller: Controller,
+                       val constraint: Constraint,
                        val logicalContext: LogicalContext,
-                       val arguments: List<*>,
-                       val currentFrame: () -> FrameObservable) :
+                       val arguments: List<*>) :
     ConstraintOccurrence,
     LogicalObserver
 {
@@ -45,7 +43,7 @@ data class Occurrence (val constraint: Constraint,
     init {
         for (a in arguments) {
             if (a is Logical<*>) {
-                currentFrame().addObserver(a) { this }
+                controller.currentFrame().addObserver(a) { this }
             }
         }
     }
@@ -58,20 +56,20 @@ data class Occurrence (val constraint: Constraint,
 
     override fun valueUpdated(logical: Logical<*>) {
         if (alive) {
-            EvaluationSession.current(EvaluationSessionEx::class.java).controller().reactivate(this)
+            controller.reactivate(this)
         }
     }
 
     override fun parentUpdated(logical: Logical<*>) {
         if (alive) {
-            EvaluationSession.current(EvaluationSessionEx::class.java).controller().reactivate(this)
+            controller.reactivate(this)
         }
     }
 
     fun terminate() {
         for (a in arguments) {
             if (a is Logical<*>) {
-                currentFrame().removeObserver(a) { this }
+                controller.currentFrame().removeObserver(a) { this }
             }
         }
         alive = false
@@ -81,14 +79,14 @@ data class Occurrence (val constraint: Constraint,
 
 }
 
-fun Constraint.occurrence(arguments: List<*>,
-                                                              currentFrame: () -> FrameObservable,
-                                                              logicalContext: LogicalContext): Occurrence =
-    Occurrence(this, logicalContext, arguments, currentFrame)
+fun Constraint.occurrence(controller: Controller,
+                          arguments: List<*>,
+                          logicalContext: LogicalContext): Occurrence =
+    Occurrence(controller, this, logicalContext, arguments)
 
-fun Constraint.occurrence(arguments: List<*>,
-                                                              currentFrame: () -> FrameObservable): Occurrence =
-    Occurrence(this, noLogicalContext, arguments, currentFrame)
+fun Constraint.occurrence(controller: Controller,
+                          arguments: List<*>): Occurrence =
+    Occurrence(controller, this, noLogicalContext, arguments)
 
 private val noLogicalContext: LogicalContext = object: LogicalContext {
     override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
