@@ -57,7 +57,9 @@ internal class ControllerImpl (
     fun activate(constraint: Constraint) : FeedbackStatus {
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext)
+
         activateConstraint(constraint, context)
+
         return context.currentStatus()
     }
 
@@ -79,98 +81,70 @@ internal class ControllerImpl (
     override fun reactivate(occ: Occurrence) {
         // FIXME propagate the status further up the call stack
         // TODO: introduce status to solver API?
+        // TODO update the stack
+
         val status = process(occ, NORMAL())
+
         if (status is FAILED) {
             throw status.failure.failureCause()
         }
     }
 
-    private fun process(active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
-        assert(active.alive)
+    private fun processMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
+        offerMatch(match, inStatus)
+            .let  { when (it) {
+                is ABORTED -> { // guard is not satisfied
+                    trace.reject(match)
+                    return it.recover() // return from the enclosing method
 
-        return profiler.profile<FeedbackStatus>("process_${active.constraint().symbol()}") {
+                } is FAILED -> { // guard failed
+                    trace.feedback(it.failure)
+                    return it.recover() // return from the enclosing method
 
-            if (!active.stored) {
-                frameStack.current.store.store(active)
-                trace.activate(active)
-            } else {
-                trace.reactivate(active)
-            }
+                } else -> it
+            } }
+            .also { consumeMatch(match) }
+            .also { trace.trigger(match) }
+            .also { processDiscarded(match) }
+            .then { processBody(match, it) }
+            .also { trace.finish(match) }
 
-            val activatedFront = dispatchFront.expand(active)
-            this.dispatchFront = activatedFront
+    override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
+        inStatus.then { checkMatchPreconditions(match, it) }
+            .also { trace.trying(match) }
+            .then { processGuard(match, it) }
 
-            val outStatus = activatedFront.matches().toList().fold(inStatus) { status, match ->
-                // TODO: paranoid check. should be isAlive() instead
-                // FIXME: move this check elsewhere
-                if (status.operational && active.stored && match.allStored())
-                    processMatch(status, match as RuleMatchImpl)
-                else
-                    status
-            }
-
-            // TODO: should be isAlive()
-            if (active.stored) {
-                trace.suspend(active)
-            }
-
-            outStatus
-        }
-    }
-
-    private fun processMatch(inStatus: FeedbackStatus, match: RuleMatchImpl) : FeedbackStatus {
+    private fun checkMatchPreconditions(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
         val context = Context(inStatus, match.logicalContext())
 
         // invoke matched pattern predicates
         for (prd in match.patternPredicates()) {
+            // normally these are safe, but unification can fail
             if (!tellPredicate(prd, context)) break
         }
 
-        trace.trying(match)
+        return context.currentStatus()
+    }
+
+    private fun processGuard(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
+        val context = Context(inStatus, match.logicalContext())
 
         // check guard
         for (gprd in match.rule().guard()) {
             if (!askPredicate(gprd, context)) break
         }
 
-        context.updateStatus { status ->
-            when (status) {
-                is ABORTED -> { // guard is not satisfied
-                    trace.reject(match)
-                    return status.recover()
-
-                }
-                is FAILED -> { // guard failed
-                    trace.feedback(status.failure)
-                    return status.recover()
-
-                }
-                else -> status
-            }
-        }
-
-        this.dispatchFront = dispatchFront.consume(match)
-        trace.trigger(match)
-
-        match.forEachReplaced {occ ->
-            this.dispatchFront = dispatchFront.contract(occ)
-            frameStack.current.store.discard(occ)
-            trace.discard(occ)
-        }
-
-        processBody(match, context)
-
-        trace.finish(match)
-
         return context.currentStatus()
     }
 
-    private fun processBody(match: RuleMatchImpl, context: Context) {
+    override fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
+        val context = Context(inStatus, match.logicalContext())
+
         val altIt = match.rule().bodyAlternation().iterator()
         while (altIt.hasNext()) {
             val body = altIt.next()
 
-            context.updateStatus { status ->
+            context.eval { status ->
                 if (status is FAILED) {
                     trace.retry(match)
                     status.recover()
@@ -203,7 +177,7 @@ internal class ControllerImpl (
                 }
             }
 
-            val altOk = context.updateStatus { status ->
+            val altOk = context.eval { status ->
                 if (status is FAILED) {
                     trace.feedback(status.failure)
 
@@ -234,13 +208,65 @@ internal class ControllerImpl (
                 break
             }
         }
+
+        return context.currentStatus()
+    }
+
+    private fun process(active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
+        assert(active.alive)
+
+        return profiler.profile<FeedbackStatus>("process_${active.constraint().symbol()}") {
+
+            if (!active.stored) {
+                frameStack.current.store.store(active)
+                trace.activate(active)
+            } else {
+                trace.reactivate(active)
+            }
+
+            val activatedFront = dispatchFront.expand(active)
+            this.dispatchFront = activatedFront
+
+            val outStatus = activatedFront.matches().toList().fold(inStatus) { status, match ->
+                // TODO: paranoid check. should be isAlive() instead
+                // FIXME: move this check elsewhere
+                if (status.operational && active.stored && match.allStored())
+                    processMatch(match as RuleMatchImpl, status)
+                else
+                    status
+            }
+
+            // TODO: should be isAlive()
+            if (active.stored) {
+                trace.suspend(active)
+            }
+
+            outStatus
+        }
+    }
+
+    private fun consumeMatch(match: RuleMatchEx) {
+        this.dispatchFront = dispatchFront.consume(match)
+    }
+
+    private fun processDiscarded (match: RuleMatchEx) {
+        match.forEachReplaced { occ ->
+            this.dispatchFront = dispatchFront.contract(occ)
+
+            frameStack.current.store.discard(occ)
+
+            trace.discard(occ)
+        }
     }
 
     private fun activateConstraint(constraint: Constraint, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
-        return context.updateStatus { status ->
+        return context.eval { status ->
+
+            // TODO update the state stack
             val active = constraint.occurrence(this, args, context.logicalContext)
             process(active, status)
+
         }
     }
 
@@ -271,6 +297,9 @@ internal class ControllerImpl (
         override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
     }
 
+    private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
+        if (operational) action(this) else this
+
     private fun RuleMatch.patternPredicates() =
         (rule().headKept() + rule().headReplaced()).zip(matchHeadKept() + matchHeadReplaced()).flatMap {
             it.first.patternPredicates(it.second.arguments())
@@ -296,7 +325,7 @@ internal class ControllerImpl (
             block.invoke(status)
         }
 
-        inline fun updateStatus(block: (FeedbackStatus) -> FeedbackStatus) : Boolean {
+        inline fun eval(block: (FeedbackStatus) -> FeedbackStatus) : Boolean {
             this.status = block.invoke(status)
             return status.operational
         }

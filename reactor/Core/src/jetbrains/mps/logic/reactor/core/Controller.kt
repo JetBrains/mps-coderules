@@ -16,6 +16,8 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
+import jetbrains.mps.logic.reactor.core.internal.RuleMatchImpl
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 
@@ -39,5 +41,20 @@ interface Controller {
 
     /** For tests only  */
     fun storeView(): StoreView
+
+    /**
+     * Applies necessary predicates implied by the match.
+     * Checks the guard.
+     * The returned status indicates whether the match can be processed.
+     */
+    fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus): FeedbackStatus
+
+    /**
+     * Evaluates the rule's body.
+     * The caller must ensure that [offerMatch] has been called before and
+     * its status allowed the operation.
+     * The returned status captures the result of evaluating the rule's body.
+     */
+    fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus): FeedbackStatus
 
 }

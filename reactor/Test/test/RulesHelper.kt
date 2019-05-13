@@ -1,4 +1,5 @@
 import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -157,6 +158,14 @@ class MockController : Controller {
     }
 
     override fun storeView(): StoreView {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus): FeedbackStatus {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus): FeedbackStatus {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

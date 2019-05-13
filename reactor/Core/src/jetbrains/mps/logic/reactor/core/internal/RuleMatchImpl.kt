@@ -48,7 +48,7 @@ internal class RuleMatchImpl(private val rule: Rule,
 
    }
 
-   inline fun forEachReplaced(action: (Occurrence) -> Unit) =
+   override fun forEachReplaced(action: (Occurrence) -> Unit) =
        headReplaced.forEach(action)
 
     override fun signature(): ArrayList<Id<Occurrence>?> =
