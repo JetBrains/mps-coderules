@@ -1,3 +1,5 @@
+import gnu.trove.set.TIntSet
+import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
@@ -106,7 +108,11 @@ fun altBody(vararg content: ConjBuilder.() -> Unit): RuleBuilder.() -> Unit = {
 }
 
 fun constraint(id: String, vararg args: Any): ConjBuilder.() -> Unit = {
-    add(createConstraint(args, id))
+    add(createConstraint(args, id, false))
+}
+
+fun princConstraint(id: String, vararg args: Any): ConjBuilder.() -> Unit = {
+    add(createConstraint(args, id, true))
 }
 
 
@@ -116,6 +122,10 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size)).occurrence(MockController(), listOf(* args))
+
+fun justifiedOccurrence(id: String, justs: TIntSet, vararg args: Any): Occurrence =
+    MockConstraint(ConstraintSymbol.symbol(id, args.size), true).occurrence(listOf(* args), { fooObservable }, justs)
+fun justifiedOccurrence(id: String, justs: Set<Int>, vararg args: Any): Occurrence = justifiedOccurrence(id, TIntHashSet(justs), * args)
 
 fun sym0(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 0)
@@ -168,8 +178,8 @@ class MockController : Controller {
 class ConjBuilder(val type: Class<out AndItem>) {
     val constraints = ArrayList<AndItem>()
 
-    fun createConstraint(args: Array<out Any>, id: String): Constraint {
-        return MockConstraint(ConstraintSymbol(id, args.size), * args)
+    fun createConstraint(args: Array<out Any>, id: String, principal: Boolean): Constraint {
+        return MockConstraint(ConstraintSymbol(id, args.size), principal, * args)
     }
 
     fun add(item: AndItem): Unit {
