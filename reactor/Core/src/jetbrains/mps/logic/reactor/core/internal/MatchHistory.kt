@@ -35,7 +35,7 @@ interface MatchHistory {
 
         var occurrences: MutableList<Entry> = mutableListOf()
 
-        override fun toString() = "(id=$id, $justifications, $occurrences)"
+        override fun toString() = "(id=$id, $justifications, ${match.rule().tag()}, $occurrences)"
     }
 
     class RemoveChunkIterator(val it: MutableListIterator<Chunk>): Iterator<Chunk> by it {
@@ -62,6 +62,7 @@ interface MatchHistory {
     fun reset(timepoint: HistoryPos)
 
     fun rollTo(futurePos: HistoryPos)
+    fun rollTo(chunk: Chunk)
 
     companion object {
         fun fromSeed(chunkIdSeed: Int = 0): MatchHistory = MatchHistoryImpl(chunkIdSeed)
@@ -178,7 +179,7 @@ internal class MatchHistoryImpl(view: MatchHistory.View?): MatchHistory {
         }
     }
 
-    fun rollTo(chunk: MatchHistory.Chunk) {
+    override fun rollTo(chunk: MatchHistory.Chunk) {
         while (current != chunk && pos.hasNext()) {
             current = pos.next()
             rollOccurences(current.occurrences)

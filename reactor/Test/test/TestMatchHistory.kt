@@ -1,6 +1,8 @@
 import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.MatchHistory
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -299,6 +301,198 @@ class TestMatchHistory {
 
             hist.currentPos().chunk() shouldBe savedPos.chunk()
             hist.currentPos().occsRetained() shouldBe savedPos.occsRetained()
+        }
+    }
+
+    @Test
+    fun testRmAddInMiddle() {
+        val hist = MatchHistory.fromSeed()
+
+        with(programWithRules(
+            rule("rule0",
+                headKept(
+                    princConstraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("rule1",
+                headKept(
+                    princConstraint("foo")
+                ),
+                body(
+                    // 'bar' occurrences are activated manually, see test code
+//                    constraint("bar1"),
+//                    constraint("bar2"),
+                    princConstraint("bazz")
+                )),
+
+            rule("rule2a",
+                headReplaced(
+                    constraint("bar1")
+                ),
+                headKept(
+                    princConstraint("bazz")
+                ),
+                body()),
+            rule("rule2b",
+                headKept(
+                    constraint("bar2"),
+                    princConstraint("bazz")
+                ),
+                body(
+                    princConstraint("qux")
+                )),
+
+            rule("rule3",
+                headKept(
+                    princConstraint("foo"),
+                    princConstraint("bazz")
+                ),
+                body(
+                    princConstraint("qux")
+                )),
+            rule("ruleMakeP",
+                headReplaced(
+                    princConstraint("qux")
+                ),
+                body(
+//                    constraint("p")
+                    princConstraint("p")
+                ))
+        ))
+        {
+            // Test outline:
+            //  1) exec program
+            //  2) rm chunk (rule match) from the history middle
+            //  3) add something instead of removed rule match
+            //  4) apply the still valid future, that's left from the first exec
+            //
+            // fst exec: rule1 -> rule2a -> rule3 -> ruleMakeP
+            // snd exec: rule1 -> rule2b -> ruleMakeP -> rule3 -> ruleMakeP
+
+            var d = Dispatcher(RuleIndex(handlers)).fringe()
+            val mainOcc = justifiedOccurrence("main", setOf(0))
+            d = d.expand(mainOcc)
+
+            with(d.matches().first()) {
+                rule().tag() shouldBe "rule0"
+                hist.logMatch(this)
+            }
+            val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
+            hist.logOccurence(fooOcc); d = d.expand(fooOcc)
+
+
+            with(d.matches().first()) {
+                rule().tag() shouldBe "rule1"
+                hist.logMatch(this)
+            }
+            val bar1Occ = occurrence("bar1")
+            val bazzOcc = justifiedOccurrence("bazz", hist.current().justifications)
+            hist.logOccurence(bar1Occ); d = d.expand(bar1Occ)
+            hist.logOccurence(bazzOcc); d = d.expand(bazzOcc)
+
+
+            val rule1matches = d.matches()
+            rule1matches.count() shouldBe 2
+            with(rule1matches.first()) {
+                rule().tag() shouldBe "rule2a"
+                hist.logMatch(this)
+            }
+            //no productions in rule2a
+
+            // this rule match will remain in history untouched
+            with(rule1matches.last()) {
+                rule().tag() shouldBe "rule3"
+                hist.logMatch(this)
+            }
+            val quxOcc0 = justifiedOccurrence("qux", hist.current().justifications)
+            hist.logOccurence(quxOcc0); d = d.expand(quxOcc0)
+
+
+            with(d.matches().first()) {
+                rule().tag() shouldBe "ruleMakeP"
+                hist.logMatch(this)
+            }
+//            val pOcc1 = occurrence("p")
+            val pOcc1 = justifiedOccurrence("p", hist.current().justifications)
+            hist.logOccurence(pOcc1); d = d.expand(pOcc1)
+
+
+            // execution has ended
+            hist.view().chunks.size shouldBe 5
+            val lastChunk = hist.current()
+
+            // bar1 was discarded by rule2a, so it shouldn't be in the store
+            val bar1StoredBeforeRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("bar1", 0))
+            bar1StoredBeforeRoll.count() shouldBe 0
+
+            // walk by history, remove the third chunk (i.e. match of rule2a)
+            //  continue from the second chunk (match of rule1)
+            val rmIt = hist.removeIterator()
+            rmIt.next()
+            val continueFrom = rmIt.next()
+            rmIt.next()
+            rmIt.remove()
+
+            // store is not longer valid after removing chunks from history, so reset it
+            hist.resetStore()
+            // move to the point where we want to insert new rule
+            hist.rollTo(continueFrom)
+
+            // we removed (canceled) rule discarding bar1, so after roll we should have it in the store
+            val bar1StoredAfterRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("bar1", 0))
+            bar1StoredAfterRoll.count() shouldBe 1
+
+
+            // add another instance of bar (i.e. bar2) and trigger another rule, rule2b
+            //  bar2 plays a role of the reactivation of original bar
+            val bar2Occ = occurrence("bar2")
+            hist.logOccurence(bar2Occ); d = d.expand(bar2Occ)
+//            hist.logOccurence(bazzOcc); d = d.expand(bazzOcc) // it is already produced
+
+            // we have only a single _new_ match; rule3 has been matched already and remains in the history, in future
+            d.matches().count() shouldBe 1
+            // this rule match is added at the place of rule2a match
+            with(d.matches().first()) {
+                rule().tag() shouldBe "rule2b"
+                hist.logMatch(this)
+            }
+            val quxOcc1 = justifiedOccurrence("qux", hist.current().justifications)
+            hist.logOccurence(quxOcc1); d = d.expand(quxOcc1)
+            hist.view().chunks.size shouldBe (3 + 1 + 1) // past + new added + future
+
+
+            d.matches().count() shouldBe 1
+            with(d.matches().first()) {
+                rule().tag() shouldBe "ruleMakeP"
+                hist.logMatch(this)
+            }
+//            val pOcc2 = occurrence("p")
+            val pOcc2 = justifiedOccurrence("p", hist.current().justifications)
+            hist.logOccurence(pOcc2); d = d.expand(pOcc2)
+
+
+            val pStoredBeforeRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("p", 0))
+            pStoredBeforeRoll.count() shouldBe 1
+            // todo?: check history before roll
+
+            // finally, purely go the the end, applying the rest of the history to the store
+            assertNotEquals(lastChunk, hist.current())
+            hist.rollTo(lastChunk)
+
+            hist.view().chunks.size shouldBe 6
+            hist.current() shouldBeSame lastChunk // we inserted in the middle -- the last chunk should remain the same
+
+            println(hist.view().toString())
+            println(hist.storeView().allOccurrences().toString())
+
+            //somehow fails if 'p' is an occ without justifications! e.g. with equal null sets
+            // e.g. see this: println(setOf(pOcc1, pOcc2))
+            val pStoredAfterRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("p", 0))
+            pStoredAfterRoll.count() shouldBe 2
+            // todo?: check history after roll
+
         }
     }
 }
