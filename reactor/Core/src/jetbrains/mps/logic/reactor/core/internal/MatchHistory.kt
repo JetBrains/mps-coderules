@@ -22,13 +22,20 @@ import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 interface MatchHistory {
+    data class View(val chunks: List<Chunk>, val nextChunkId: Int)
+
     data class Chunk(val match: RuleMatch, val id: Int, val justifications: TIntSet) {
-        data class Entry(val occ: Occurrence, val isDiscarded: Boolean = false)
+        data class Entry(val occ: Occurrence, val isDiscarded: Boolean = false) {
+            override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
+        }
 
         var occurrences: MutableList<Entry> = mutableListOf()
+
+        override fun toString() = "(id=$id, $justifications, $occurrences)"
     }
 
     class RemoveChunkIterator(val it: MutableListIterator<Chunk>): Iterator<Chunk> by it {
@@ -44,6 +51,7 @@ interface MatchHistory {
     fun removeIterator(): RemoveChunkIterator
     fun resetStore()
     fun storeView(): StoreView
+    fun view(): MatchHistory.View
 
     fun logMatch(match: RuleMatch)
     fun logOccurence(occ: Occurrence)
@@ -56,12 +64,38 @@ interface MatchHistory {
     fun rollTo(futurePos: HistoryPos)
 
     companion object {
-        fun getMatchHistory(chunkIdSeed: Int = 0): MatchHistory = MatchHistoryImpl(chunkIdSeed)
+        fun fromSeed(chunkIdSeed: Int = 0): MatchHistory = MatchHistoryImpl(chunkIdSeed)
+        fun fromView(view: MatchHistory.View): MatchHistory = MatchHistoryImpl(view)
     }
 }
 
 
-internal class MatchHistoryImpl(chunkIdSeed: Int): MatchHistory {
+internal class MatchHistoryImpl(view: MatchHistory.View?): MatchHistory {
+
+    private val hist: MutableList<MatchHistory.Chunk>
+    private var nextChunkId: Int
+
+    //    private var order: Map<Chunk, Int> = emptyMap()
+    private val frameStack: FrameStack = FrameStack(null)
+
+    init {
+        if (view == null) {
+            hist = LinkedList<MatchHistory.Chunk>()
+            nextChunkId = 0
+        } else {
+            hist = LinkedList<MatchHistory.Chunk>(view.chunks)
+            nextChunkId = view.nextChunkId
+        }
+    }
+
+    constructor(chunkIdSeed: Int) : this(null) {
+        nextChunkId = chunkIdSeed
+    }
+
+    // FIXME: provide initial chunk? possibly initialized from StoreView, with empty justifications
+    private lateinit var current: MatchHistory.Chunk
+    private var pos: MutableListIterator<MatchHistory.Chunk> = hist.listIterator()
+
 
     override fun removeIterator() = MatchHistory.RemoveChunkIterator(hist.listIterator())
 
@@ -72,6 +106,8 @@ internal class MatchHistoryImpl(chunkIdSeed: Int): MatchHistory {
     }
 
     override fun storeView(): StoreView = frameStack.current.store.view()
+
+    override fun view() = MatchHistory.View(ArrayList(hist), nextChunkId)
 
 
     override fun logMatch(match: RuleMatch) {
@@ -121,8 +157,9 @@ internal class MatchHistoryImpl(chunkIdSeed: Int): MatchHistory {
         val tp = timepoint as HistoryPosImpl
         frameStack.reset(tp.frame)
 
-        while (tp.chunk != current && pos.hasPrevious()) {
+        while (pos.hasPrevious()) {
             current = pos.previous()
+            if (current == tp.chunk) break
             pos.remove()
         }
         current.occurrences = current.occurrences.take(tp.occsRetained) as MutableList<MatchHistory.Chunk.Entry>
@@ -140,6 +177,7 @@ internal class MatchHistoryImpl(chunkIdSeed: Int): MatchHistory {
             rollOccurences(current.occurrences)
         }
     }
+
     fun rollTo(chunk: MatchHistory.Chunk) {
         while (current != chunk && pos.hasNext()) {
             current = pos.next()
@@ -160,17 +198,6 @@ internal class MatchHistoryImpl(chunkIdSeed: Int): MatchHistory {
 
     // fixme: does belong to here?
 //    fun resetOrder() { order = hist.mapToIndex() }
-
-
-    private val hist: MutableList<MatchHistory.Chunk> = LinkedList<MatchHistory.Chunk>()
-//    private var order: Map<Chunk, Int> = emptyMap()
-    private val frameStack: FrameStack = FrameStack(null)
-
-    // FIXME: provide initial chunk? possibly initialized from StoreView, with empty justifications
-    private lateinit var current: MatchHistory.Chunk
-    private var pos: MutableListIterator<MatchHistory.Chunk> = hist.listIterator()
-
-    private var nextChunkId: Int = chunkIdSeed;
 
 
 }

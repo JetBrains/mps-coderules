@@ -1,10 +1,6 @@
 import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.core.internal.createOccurrenceMatcher
-import jetbrains.mps.logic.reactor.core.internal.logical
 import jetbrains.mps.logic.reactor.core.internal.MatchHistory
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -29,7 +25,7 @@ class TestMatchHistory {
 
     @Test
     fun testJustificationTracking() {
-        val hist = MatchHistory.getMatchHistory()
+        val hist = MatchHistory.fromSeed()
 
         with(programWithRules(
             rule("rule1",
@@ -125,7 +121,7 @@ class TestMatchHistory {
 
     @Test
     fun testResetThenRoll() {
-        val hist = MatchHistory.getMatchHistory()
+        val hist = MatchHistory.fromSeed()
 
         with(programWithRules(
             rule("rule1",
@@ -198,7 +194,7 @@ class TestMatchHistory {
 
     @Test
     fun testPushExecReset() {
-        val hist = MatchHistory.getMatchHistory()
+        val hist = MatchHistory.fromSeed()
 
         with(programWithRules(
             rule("rule1",
@@ -274,6 +270,7 @@ class TestMatchHistory {
             hist.logOccurence(bazzOcc2)
             d = d.expand(bazzOcc2)
 
+            val oldState = hist.view()
             val oldStore = hist.storeView().allOccurrences()
             val savedPos = hist.currentPos()
             hist.push()
@@ -285,16 +282,20 @@ class TestMatchHistory {
 
             with(d.matches().first()) {
                 rule().tag() shouldBe "rule4"
+                hist.view().chunks.size shouldBe 2
                 hist.logMatch(this)
+                hist.view().chunks.size shouldBe 3
             }
             val lastOcc = occurrence("last")
             hist.logOccurence(lastOcc)
             d = d.expand(lastOcc)
 
 
+            assertNotEquals(oldState.chunks, hist.view().chunks)
             assertNotEquals(oldStore, hist.storeView().allOccurrences())
             hist.reset(savedPos)
-            assertEquals(oldStore, hist.storeView().allOccurrences())
+            hist.view().chunks shouldBe oldState.chunks
+            hist.storeView().allOccurrences() shouldBe oldStore
 
             hist.currentPos().chunk() shouldBe savedPos.chunk()
             hist.currentPos().occsRetained() shouldBe savedPos.occsRetained()
