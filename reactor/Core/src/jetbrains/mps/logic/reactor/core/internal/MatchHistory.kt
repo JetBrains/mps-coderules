@@ -54,7 +54,7 @@ interface MatchHistory {
     fun view(): MatchHistory.View
 
     fun logMatch(match: RuleMatch)
-    fun logOccurence(occ: Occurrence)
+    fun logOccurrence(occ: Occurrence)
 
     fun current(): Chunk
     fun currentPos(): HistoryPos
@@ -132,7 +132,7 @@ internal class MatchHistoryImpl(view: MatchHistory.View?): MatchHistory {
         }
     }
 
-    override fun logOccurence(occ: Occurrence) {
+    override fun logOccurrence(occ: Occurrence) {
         current.occurrences.add(MatchHistory.Chunk.Entry(occ))
         frameStack.current.store.store(occ)
     }

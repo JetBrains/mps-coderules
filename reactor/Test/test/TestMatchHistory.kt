@@ -1,7 +1,6 @@
 import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.MatchHistory
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.Test
 import org.junit.Assert.*
@@ -63,7 +62,7 @@ class TestMatchHistory {
 
             var d = Dispatcher(RuleIndex(handlers)).fringe()
             val mainOcc = justifiedOccurrence("main", setOf(0))
-//            hist.logOccurence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
+//            hist.logOccurrence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
 
             with(d.matches()) {
@@ -75,7 +74,7 @@ class TestMatchHistory {
 
                     hist.current().justifications shouldBe TIntHashSet(setOf(0))
                     val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
-                    hist.logOccurence(fooOcc)
+                    hist.logOccurrence(fooOcc)
                     d = d.expand(fooOcc)
                 }
             }
@@ -89,7 +88,7 @@ class TestMatchHistory {
 
                     hist.current().justifications shouldBe TIntHashSet(setOf(0,1))
                     val barOcc = justifiedOccurrence("bar", hist.current().justifications)
-                    hist.logOccurence(barOcc)
+                    hist.logOccurrence(barOcc)
                     d = d.expand(barOcc)
 
                     with(d.matches()) {
@@ -103,7 +102,7 @@ class TestMatchHistory {
 
                     hist.current().justifications shouldBe TIntHashSet(setOf(0,2))
                     val quxOcc = justifiedOccurrence("qux", hist.current().justifications)
-                    hist.logOccurence(quxOcc)
+                    hist.logOccurrence(quxOcc)
                     d = d.expand(quxOcc)
 
                     with(d.matches()) {
@@ -153,14 +152,14 @@ class TestMatchHistory {
 
             var d = Dispatcher(RuleIndex(handlers)).fringe()
             val mainOcc = justifiedOccurrence("main", setOf(0))
-//            hist.logOccurence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
+//            hist.logOccurrence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
 
             with(d.matches().first()) {
                 hist.logMatch(this)
             }
             val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
-            hist.logOccurence(fooOcc)
+            hist.logOccurrence(fooOcc)
             d = d.expand(fooOcc)
 
 
@@ -168,14 +167,14 @@ class TestMatchHistory {
                 hist.logMatch(this)
             }
             val barOcc = justifiedOccurrence("bar", hist.current().justifications)
-            hist.logOccurence(barOcc)
+            hist.logOccurrence(barOcc)
             d = d.expand(barOcc)
 
             with(d.matches().first()) {
                 hist.logMatch(this)
             }
             val quxOcc = justifiedOccurrence("qux", hist.current().justifications)
-            hist.logOccurence(quxOcc)
+            hist.logOccurrence(quxOcc)
             d = d.expand(quxOcc)
 
             // 'rollTo' to the saved pos after full 'resetStore' must restore the store
@@ -243,7 +242,7 @@ class TestMatchHistory {
                 hist.logMatch(this)
             }
             val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
-            hist.logOccurence(fooOcc)
+            hist.logOccurrence(fooOcc)
             d = d.expand(fooOcc)
 
 
@@ -254,9 +253,9 @@ class TestMatchHistory {
             val barOcc = occurrence("bar")
             val bazzOcc = occurrence("bazz")
             val quxOcc = justifiedOccurrence("qux", hist.current().justifications)
-            hist.logOccurence(barOcc)
+            hist.logOccurrence(barOcc)
             d = d.expand(barOcc)
-            hist.logOccurence(bazzOcc)
+            hist.logOccurrence(bazzOcc)
             d = d.expand(bazzOcc)
 
 
@@ -269,7 +268,7 @@ class TestMatchHistory {
             hist.current() shouldBeSame curChunk
 
             val bazzOcc2 = occurrence("bazz")
-            hist.logOccurence(bazzOcc2)
+            hist.logOccurrence(bazzOcc2)
             d = d.expand(bazzOcc2)
 
             val oldState = hist.view()
@@ -278,7 +277,7 @@ class TestMatchHistory {
             hist.push()
 
 
-            hist.logOccurence(quxOcc)
+            hist.logOccurrence(quxOcc)
             d = d.expand(quxOcc)
 
 
@@ -289,7 +288,7 @@ class TestMatchHistory {
                 hist.view().chunks.size shouldBe 3
             }
             val lastOcc = occurrence("last")
-            hist.logOccurence(lastOcc)
+            hist.logOccurrence(lastOcc)
             d = d.expand(lastOcc)
 
 
@@ -380,7 +379,7 @@ class TestMatchHistory {
                 hist.logMatch(this)
             }
             val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
-            hist.logOccurence(fooOcc); d = d.expand(fooOcc)
+            hist.logOccurrence(fooOcc); d = d.expand(fooOcc)
 
 
             with(d.matches().first()) {
@@ -389,8 +388,8 @@ class TestMatchHistory {
             }
             val bar1Occ = occurrence("bar1")
             val bazzOcc = justifiedOccurrence("bazz", hist.current().justifications)
-            hist.logOccurence(bar1Occ); d = d.expand(bar1Occ)
-            hist.logOccurence(bazzOcc); d = d.expand(bazzOcc)
+            hist.logOccurrence(bar1Occ); d = d.expand(bar1Occ)
+            hist.logOccurrence(bazzOcc); d = d.expand(bazzOcc)
 
 
             val rule1matches = d.matches()
@@ -407,7 +406,7 @@ class TestMatchHistory {
                 hist.logMatch(this)
             }
             val quxOcc0 = justifiedOccurrence("qux", hist.current().justifications)
-            hist.logOccurence(quxOcc0); d = d.expand(quxOcc0)
+            hist.logOccurrence(quxOcc0); d = d.expand(quxOcc0)
 
 
             with(d.matches().first()) {
@@ -416,7 +415,7 @@ class TestMatchHistory {
             }
 //            val pOcc1 = occurrence("p")
             val pOcc1 = justifiedOccurrence("p", hist.current().justifications)
-            hist.logOccurence(pOcc1); d = d.expand(pOcc1)
+            hist.logOccurrence(pOcc1); d = d.expand(pOcc1)
 
 
             // execution has ended
@@ -448,8 +447,8 @@ class TestMatchHistory {
             // add another instance of bar (i.e. bar2) and trigger another rule, rule2b
             //  bar2 plays a role of the reactivation of original bar
             val bar2Occ = occurrence("bar2")
-            hist.logOccurence(bar2Occ); d = d.expand(bar2Occ)
-//            hist.logOccurence(bazzOcc); d = d.expand(bazzOcc) // it is already produced
+            hist.logOccurrence(bar2Occ); d = d.expand(bar2Occ)
+//            hist.logOccurrence(bazzOcc); d = d.expand(bazzOcc) // it is already produced
 
             // we have only a single _new_ match; rule3 has been matched already and remains in the history, in future
             d.matches().count() shouldBe 1
@@ -459,7 +458,7 @@ class TestMatchHistory {
                 hist.logMatch(this)
             }
             val quxOcc1 = justifiedOccurrence("qux", hist.current().justifications)
-            hist.logOccurence(quxOcc1); d = d.expand(quxOcc1)
+            hist.logOccurrence(quxOcc1); d = d.expand(quxOcc1)
             hist.view().chunks.size shouldBe (3 + 1 + 1) // past + new added + future
 
 
@@ -470,7 +469,7 @@ class TestMatchHistory {
             }
 //            val pOcc2 = occurrence("p")
             val pOcc2 = justifiedOccurrence("p", hist.current().justifications)
-            hist.logOccurence(pOcc2); d = d.expand(pOcc2)
+            hist.logOccurrence(pOcc2); d = d.expand(pOcc2)
 
 
             val pStoredBeforeRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("p", 0))
