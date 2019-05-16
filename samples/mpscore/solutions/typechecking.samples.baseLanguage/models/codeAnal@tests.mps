@@ -78,6 +78,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT" />
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -99,6 +100,7 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
@@ -266,13 +268,16 @@
             </node>
             <node concept="3clFbH" id="2rIdnPwwLWI" role="3cqZAp" />
           </node>
-          <node concept="3y3z36" id="2rIdnPwwLzh" role="3clFbw">
-            <node concept="10Nm6u" id="2rIdnPwwLKh" role="3uHU7w" />
-            <node concept="2YIFZM" id="2KEPLp6ICYM" role="3uHU7B">
-              <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
-              <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-              <node concept="Xl_RD" id="2KEPLp6ICYN" role="37wK5m">
-                <property role="Xl_RC" value="mps.test.modules" />
+          <node concept="1Wc70l" id="4_SvTPdGPKU" role="3clFbw">
+            <node concept="3clFbT" id="4_SvTPdGPWK" role="3uHU7B" />
+            <node concept="3y3z36" id="2rIdnPwwLzh" role="3uHU7w">
+              <node concept="10Nm6u" id="2rIdnPwwLKh" role="3uHU7w" />
+              <node concept="2YIFZM" id="2KEPLp6ICYM" role="3uHU7B">
+                <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String)" resolve="getProperty" />
+                <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                <node concept="Xl_RD" id="2KEPLp6ICYN" role="37wK5m">
+                  <property role="Xl_RC" value="mps.test.modules" />
+                </node>
               </node>
             </node>
           </node>
