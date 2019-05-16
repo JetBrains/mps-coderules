@@ -39,18 +39,11 @@ import jetbrains.mps.logic.reactor.util.*
  * @author Fedor Isakov
  */
 
-internal class StateFrame private constructor(val state: ProcessingStateImpl) : LogicalObserver
+internal class StateFrame constructor() : LogicalObserver
 {
-    private lateinit var dispatchingFront: DispatchingFront
-
     private var observers: PersMap<Id<Logical<*>>, ConsList<LogicalObserver>> = Maps.of()
 
-    constructor(state: ProcessingStateImpl, dispatcher: Dispatcher) : this(state) {
-        this.dispatchingFront = dispatcher.front()
-    }
-
-    constructor(prototype: StateFrame) : this(prototype.state) {
-        this.dispatchingFront = prototype.dispatchingFront
+    constructor(prototype: StateFrame) : this() {
         this.observers = prototype.observers
     }
 
@@ -90,80 +83,5 @@ internal class StateFrame private constructor(val state: ProcessingStateImpl) : 
             }
         }
     }
-
-    /**
-     * Called to update the state with the currently active constraint occurrence.
-     * Calls the controller to process matches (if any) that were triggered.
-     * This method may be called at most once for a fresh state frame.
-     */
-    fun processActivated(active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
-        assert(active.alive)
-
-        return state.profiler.profile<FeedbackStatus>("activated_${active.constraint().symbol()}") {
-
-            if (!active.stored) {
-                active.stored = true
-                state.trace.activate(active)
-
-            } else {
-                state.trace.reactivate(active)
-            }
-
-            this.dispatchingFront = dispatchingFront.expand(active)
-
-            val outStatus = dispatchingFront.matches().toList().fold(inStatus) { status, match ->
-                // TODO: paranoid check. should be isAlive() instead
-                // FIXME: move this check elsewhere
-                if (status.operational && active.stored && match.allStored())
-                    processMatch(active.controller, match, status)
-                else
-                    status
-            }
-
-            // TODO: should be isAlive()
-            if (active.stored) {
-                state.trace.suspend(active)
-            }
-
-            outStatus
-        }
-    }
-
-    private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
-        if (operational) action(this) else this
-
-    private fun processMatch(controller: Controller, match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
-        controller.offerMatch(match, inStatus)
-            .let  { when (it) {
-                        is FeedbackStatus.ABORTED -> {  // guard is not satisfied
-                            state.trace.reject(match)
-                            return it.recover()         // return from the enclosing method
-
-                        } is FeedbackStatus.FAILED -> { // guard failed
-                            state.trace.feedback(it.failure)
-                            return it.recover()         // return from the enclosing method
-
-                        } else -> it
-                    } }
-            .also { state.trace.trigger(match) }
-            .also { accept(match) }
-            .then { controller.processBody(match, it) }
-            .also { state.trace.finish(match) }
-
-
-    private fun accept (match: RuleMatchEx) {
-        this.dispatchingFront = dispatchingFront.consume(match)
-
-        match.forEachReplaced { occ ->
-            this.dispatchingFront = dispatchingFront.contract(occ)
-
-            occ.stored = false
-            occ.terminate()
-
-            state.trace.discard(occ)
-        }
-    }
-
-    private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
 
 }

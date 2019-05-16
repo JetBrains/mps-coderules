@@ -19,11 +19,13 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
+import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.Profiler
+import jetbrains.mps.logic.reactor.util.profile
 import java.util.*
 
 
@@ -42,24 +44,21 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-internal class ProcessingStateImpl private constructor(val trace: EvaluationTrace = EvaluationTrace.NULL,
-                                                       val profiler: Profiler? = null) :
+internal class ProcessingStateImpl constructor(dispatcher: Dispatcher,
+                                               val trace: EvaluationTrace = EvaluationTrace.NULL,
+                                               val profiler: Profiler? = null) :
     ProcessingState, LogicalObserver
 {
+
+    private var dispatchingFront: Dispatcher.DispatchingFront
 
     // invariant: never empty
     private val stateFrames = LinkedList<StateFrame>()
 
-    constructor(dispatcher: Dispatcher,
-                trace: EvaluationTrace = EvaluationTrace.NULL,
-                profiler: Profiler? = null) :
-        this(trace, profiler)
-    {
-        stateFrames.push(StateFrame(this, dispatcher))
+    init {
+        this.dispatchingFront = dispatcher.front()
+        stateFrames.push(StateFrame())
     }
-
-    fun processActivated(active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus =
-        push().processActivated(active, inStatus)
 
     fun currentFrame() : StateFrame =
         stateFrames.first
@@ -106,4 +105,82 @@ internal class ProcessingStateImpl private constructor(val trace: EvaluationTrac
         // forward to the top frame
         currentFrame().parentUpdated(logical)
     }
+
+
+    /**
+     * Called to update the state with the currently active constraint occurrence.
+     * Calls the controller to process matches (if any) that were triggered.
+     * This method may be called at most once for a fresh state frame.
+     */
+    fun processActivated(active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
+        push()
+        assert(active.alive)
+
+        return profiler.profile<FeedbackStatus>("activated_${active.constraint().symbol()}") {
+
+            if (!active.stored) {
+                active.stored = true
+                trace.activate(active)
+
+            } else {
+                trace.reactivate(active)
+            }
+
+            this.dispatchingFront = dispatchingFront.expand(active)
+
+            val outStatus = dispatchingFront.matches().toList().fold(inStatus) { status, match ->
+                // TODO: paranoid check. should be isAlive() instead
+                // FIXME: move this check elsewhere
+                if (status.operational && active.stored && match.allStored())
+                    processMatch(active.controller, match, status)
+                else
+                    status
+            }
+
+            // TODO: should be isAlive()
+            if (active.stored) {
+                trace.suspend(active)
+            }
+
+            outStatus
+        }
+    }
+
+    private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
+        if (operational) action(this) else this
+
+    private fun processMatch(controller: Controller, match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
+        controller.offerMatch(match, inStatus)
+            .let  { when (it) {
+                is FeedbackStatus.ABORTED -> {  // guard is not satisfied
+                    trace.reject(match)
+                    return it.recover()         // return from the enclosing method
+
+                } is FeedbackStatus.FAILED -> { // guard failed
+                    trace.feedback(it.failure)
+                    return it.recover()         // return from the enclosing method
+
+                } else -> it
+            } }
+            .also { trace.trigger(match) }
+            .also { accept(match) }
+            .then { controller.processBody(match, it) }
+            .also { trace.finish(match) }
+
+
+    private fun accept (match: RuleMatchEx) {
+        this.dispatchingFront = dispatchingFront.consume(match)
+
+        match.forEachReplaced { occ ->
+            this.dispatchingFront = dispatchingFront.contract(occ)
+
+            occ.stored = false
+            occ.terminate()
+
+            trace.discard(occ)
+        }
+    }
+
+
+    private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
 }
