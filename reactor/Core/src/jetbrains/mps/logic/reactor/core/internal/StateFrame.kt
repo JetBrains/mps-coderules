@@ -45,10 +45,6 @@ internal class StateFrame private constructor(val state: ProcessingStateImpl) : 
 
     private var observers: PersMap<Id<Logical<*>>, ConsList<LogicalObserver>> = Maps.of()
 
-    private val activatedOccurrences = ArrayList<Occurrence>(4)
-    
-    private val deactivatedOccurrences = ArrayList<Occurrence>(4)
-
     constructor(state: ProcessingStateImpl, dispatcher: Dispatcher) : this(state) {
         this.dispatchingFront = dispatcher.front()
     }
@@ -95,12 +91,6 @@ internal class StateFrame private constructor(val state: ProcessingStateImpl) : 
         }
     }
 
-    fun allActivated() : Sequence<Occurrence> =
-        activatedOccurrences.asSequence()
-
-    fun allDeactivated() : Sequence<Occurrence> =
-        deactivatedOccurrences.asSequence()
-
     /**
      * Called to update the state with the currently active constraint occurrence.
      * Calls the controller to process matches (if any) that were triggered.
@@ -119,7 +109,6 @@ internal class StateFrame private constructor(val state: ProcessingStateImpl) : 
                 state.trace.reactivate(active)
             }
 
-            activatedOccurrences += active
             this.dispatchingFront = dispatchingFront.expand(active)
 
             val outStatus = dispatchingFront.matches().toList().fold(inStatus) { status, match ->
@@ -167,7 +156,6 @@ internal class StateFrame private constructor(val state: ProcessingStateImpl) : 
 
         match.forEachReplaced { occ ->
             this.dispatchingFront = dispatchingFront.contract(occ)
-            deactivatedOccurrences += occ
 
             occ.stored = false
             occ.terminate()

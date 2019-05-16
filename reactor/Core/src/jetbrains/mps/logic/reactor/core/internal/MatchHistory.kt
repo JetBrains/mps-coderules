@@ -19,14 +19,18 @@ package jetbrains.mps.logic.reactor.core.internal
 import gnu.trove.set.TIntSet
 import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.Occurrence
+import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.StoreView
+import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 import kotlin.collections.ArrayList
 
 
 interface MatchHistory {
     data class View(val chunks: List<Chunk>, val nextChunkId: Int)
+
 
     data class Chunk(val match: RuleMatch, val id: Int, val justifications: TIntSet) {
         data class Entry(val occ: Occurrence, val isDiscarded: Boolean = false) {
@@ -106,7 +110,15 @@ internal class MatchHistoryImpl(val state: ProcessingStateImpl, view: MatchHisto
     }
 
     // TODO:
-    override fun storeView(): StoreView = state.storeView()
+    override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
+
+    private fun allOccurrences(): Sequence<Occurrence> {
+        val set = HashSet<Id<Occurrence>>()
+        hist.flatMap { it.occurrences } .forEach {
+            if (it.isDiscarded) set.add(Id(it.occ)) else set.remove(Id(it.occ))
+        }
+        return set.map { it.wrapped }.asSequence()
+    }
 
     override fun view() = MatchHistory.View(ArrayList(hist), nextChunkId)
 
@@ -192,6 +204,22 @@ internal class MatchHistoryImpl(val state: ProcessingStateImpl, view: MatchHisto
 
     // fixme: does belong to here?
 //    fun resetOrder() { order = hist.mapToIndex() }
+
+
+    private class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
+
+        val allOccurrences = occurrences.toSet()
+
+        val allSymbols = allOccurrences.map { co -> co.constraint().symbol() }.toSet()
+
+        override fun constraintSymbols(): Iterable<ConstraintSymbol> = allSymbols
+
+        override fun allOccurrences(): Iterable<ConstraintOccurrence> = allOccurrences
+
+        override fun occurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
+            allOccurrences.filter { co -> co.constraint().symbol() == symbol }.toSet()
+
+    }
 }
 
 private fun RuleMatch.headJustifications(): TIntSet {

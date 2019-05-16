@@ -106,35 +106,4 @@ internal class ProcessingStateImpl private constructor(val trace: EvaluationTrac
         // forward to the top frame
         currentFrame().parentUpdated(logical)
     }
-
-    fun storeView(): StoreView =
-        StoreViewImpl(allOccurrences())
-
-    private fun allOccurrences(): Sequence<Occurrence> {
-        val dit = stateFrames.descendingIterator()
-        val set = HashSet<Id<Occurrence>>()
-        while (dit.hasNext()) {
-            val stateFrame = dit.next()
-            stateFrame.allActivated().forEach { set.add(Id(it)) }
-            stateFrame.allDeactivated().forEach { set.remove(Id(it)) }
-        }
-        return set.map { it.wrapped }.asSequence()
-    }
-
-    private class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
-
-        val allOccurrences = occurrences.toSet()
-
-        val allSymbols = allOccurrences.map { co -> co.constraint().symbol() }.toSet()
-
-        override fun constraintSymbols(): Iterable<ConstraintSymbol> = allSymbols
-
-        override fun allOccurrences(): Iterable<ConstraintOccurrence> = allOccurrences
-
-        override fun occurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
-            allOccurrences.filter { co -> co.constraint().symbol() == symbol }.toSet()
-
-    }
-
-
 }
