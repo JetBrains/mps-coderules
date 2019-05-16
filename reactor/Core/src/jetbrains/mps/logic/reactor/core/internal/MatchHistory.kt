@@ -58,26 +58,25 @@ interface MatchHistory {
 
     fun current(): Chunk
     fun currentPos(): HistoryPos
-    fun push()
+    fun testPush(): Unit
     fun reset(timepoint: HistoryPos)
 
     fun rollTo(futurePos: HistoryPos)
     fun rollTo(chunk: Chunk)
 
     companion object {
-        fun fromSeed(chunkIdSeed: Int = 0): MatchHistory = MatchHistoryImpl(chunkIdSeed)
-        fun fromView(view: MatchHistory.View): MatchHistory = MatchHistoryImpl(view)
+        fun fromSeed(chunkIdSeed: Int = 0): MatchHistory = MatchHistoryImpl(ProcessingStateImpl(), chunkIdSeed)
+        fun fromView(view: MatchHistory.View): MatchHistory = MatchHistoryImpl(ProcessingStateImpl(), view)
     }
 }
 
 
-internal class MatchHistoryImpl(view: MatchHistory.View?): MatchHistory {
+internal class MatchHistoryImpl(val state: ProcessingStateImpl, view: MatchHistory.View?): MatchHistory {
 
     private val hist: MutableList<MatchHistory.Chunk>
     private var nextChunkId: Int
 
     //    private var order: Map<Chunk, Int> = emptyMap()
-    private val frameStack: FrameStack = FrameStack(null)
 
     init {
         if (view == null) {
@@ -89,7 +88,7 @@ internal class MatchHistoryImpl(view: MatchHistory.View?): MatchHistory {
         }
     }
 
-    constructor(chunkIdSeed: Int) : this(null) {
+    constructor(state: ProcessingStateImpl, chunkIdSeed: Int) : this(state, null) {
         nextChunkId = chunkIdSeed
     }
 
@@ -102,11 +101,12 @@ internal class MatchHistoryImpl(view: MatchHistory.View?): MatchHistory {
 
     // Reset only store & history position, don't modify history
     override fun resetStore() {
-        frameStack.reset(Frame(frameStack))
+        state.reset()
         pos = hist.listIterator()
     }
 
-    override fun storeView(): StoreView = frameStack.current.store.view()
+    // TODO:
+    override fun storeView(): StoreView = state.storeView()
 
     override fun view() = MatchHistory.View(ArrayList(hist), nextChunkId)
 
@@ -128,35 +128,36 @@ internal class MatchHistoryImpl(view: MatchHistory.View?): MatchHistory {
         match.forEachReplaced {occ ->
 //            this.dispatchFringe = dispatchFringe.contract(occ)
             current.occurrences.add(MatchHistory.Chunk.Entry(occ, true))
-            frameStack.current.store.discard(occ)
+            occ.terminate()
         }
     }
 
     override fun logOccurrence(occ: Occurrence) {
         current.occurrences.add(MatchHistory.Chunk.Entry(occ))
-        frameStack.current.store.store(occ)
+        occ.revive()
     }
 
 
-    private data class HistoryPosImpl(val frame: Frame, val chunk: MatchHistory.Chunk, val occsRetained: Int = 0) : MatchHistory.HistoryPos {
+    private data class HistoryPosImpl(val frame: StateFrame, val chunk: MatchHistory.Chunk, val occsRetained: Int = 0) : MatchHistory.HistoryPos {
         override fun chunk(): MatchHistory.Chunk = chunk
         override fun occsRetained(): Int = occsRetained
     }
 
     // FrameStack API: currentFrame/currentPos, push, reset
-    fun currentFrame() = frameStack.current
+    fun currentFrame() = state.currentFrame()
 
     override fun current(): MatchHistory.Chunk = current
 
-    override fun currentPos(): MatchHistory.HistoryPos = HistoryPosImpl(frameStack.current, current, current.occurrences.size)
+    override fun currentPos(): MatchHistory.HistoryPos = HistoryPosImpl(state.currentFrame(), current, current.occurrences.size)
 
-    override fun push(): Unit { frameStack.push() }
+    override fun testPush() { state.push() }
+    fun push() = state.push()
 
     // Throw away recently added chunks and reset store accordingly
     // NB: not checking that chunks are actually recently added
     override fun reset(timepoint: MatchHistory.HistoryPos) {
         val tp = timepoint as HistoryPosImpl
-        frameStack.reset(tp.frame)
+        state.reset(tp.frame)
 
         while (pos.hasPrevious()) {
             current = pos.previous()
@@ -186,21 +187,11 @@ internal class MatchHistoryImpl(view: MatchHistory.View?): MatchHistory {
         }
     }
 
-    private fun rollOccurences(occSpecs: Iterable<MatchHistory.Chunk.Entry>) {
-        // 'apply' all occurrences of current chunk to the store
-        for (occSpec in occSpecs) {
-            if (occSpec.isDiscarded) {
-                frameStack.current.store.discard(occSpec.occ)
-            } else {
-                frameStack.current.store.store(occSpec.occ)
-            }
-        }
-    }
+    private fun rollOccurences(occSpecs: Iterable<MatchHistory.Chunk.Entry>) =
+        occSpecs.forEach { if (it.isDiscarded) it.occ.terminate() else it.occ.revive() }
 
     // fixme: does belong to here?
 //    fun resetOrder() { order = hist.mapToIndex() }
-
-
 }
 
 private fun RuleMatch.headJustifications(): TIntSet {

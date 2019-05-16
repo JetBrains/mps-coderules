@@ -70,6 +70,8 @@ internal class ProcessingStateImpl private constructor(val trace: EvaluationTrac
         return newFrame
     }
 
+    fun reset() = reset(stateFrames.last)
+
     fun reset(frame: StateFrame) {
         val it = stateFrames.iterator()
         while (it.hasNext()) {

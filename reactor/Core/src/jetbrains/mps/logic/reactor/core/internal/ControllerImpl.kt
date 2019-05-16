@@ -190,7 +190,7 @@ internal class ControllerImpl (
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
-            state.processActivated(constraint.occurrence(this, args, context.logicalContext), status)
+            state.processActivated(constraint.occurrence(this, args, null, context.logicalContext), status)
 
         }
     }

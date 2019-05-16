@@ -60,7 +60,7 @@ class TestMatchHistory {
                 ))))
         {
 
-            var d = Dispatcher(RuleIndex(handlers)).fringe()
+            var d = Dispatcher(RuleIndex(rulesLists)).front()
             val mainOcc = justifiedOccurrence("main", setOf(0))
 //            hist.logOccurrence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
@@ -150,7 +150,7 @@ class TestMatchHistory {
             ))
         {
 
-            var d = Dispatcher(RuleIndex(handlers)).fringe()
+            var d = Dispatcher(RuleIndex(rulesLists)).front()
             val mainOcc = justifiedOccurrence("main", setOf(0))
 //            hist.logOccurrence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
@@ -233,7 +233,7 @@ class TestMatchHistory {
         ))
         {
 
-            var d = Dispatcher(RuleIndex(handlers)).fringe()
+            var d = Dispatcher(RuleIndex(rulesLists)).front()
             val mainOcc = justifiedOccurrence("main", setOf(0))
             d = d.expand(mainOcc)
 
@@ -274,7 +274,7 @@ class TestMatchHistory {
             val oldState = hist.view()
             val oldStore = hist.storeView().allOccurrences()
             val savedPos = hist.currentPos()
-            hist.push()
+            hist.testPush()
 
 
             hist.logOccurrence(quxOcc)
@@ -370,7 +370,7 @@ class TestMatchHistory {
             // fst exec: rule1 -> rule2a -> rule3 -> ruleMakeP
             // snd exec: rule1 -> rule2b -> ruleMakeP -> rule3 -> ruleMakeP
 
-            var d = Dispatcher(RuleIndex(handlers)).fringe()
+            var d = Dispatcher(RuleIndex(rulesLists)).front()
             val mainOcc = justifiedOccurrence("main", setOf(0))
             d = d.expand(mainOcc)
 

@@ -43,11 +43,7 @@ data class Occurrence (val controller: Controller,
     var stored = false
 
     init {
-        for (a in arguments) {
-            if (a is Logical<*>) {
-                controller.state().addForwardingObserver(a, this)
-            }
-        }
+        revive()
     }
 
     override fun constraint(): Constraint = constraint
@@ -77,6 +73,15 @@ data class Occurrence (val controller: Controller,
             }
         }
         alive = false
+    }
+
+    fun revive() {
+        for (a in arguments) {
+            if (a is Logical<*>) {
+                controller.state().addForwardingObserver(a, this)
+            }
+        }
+        alive = true
     }
 
     override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
