@@ -33,7 +33,7 @@ import com.github.andrewoma.dexx.collection.Vector as PersVector
  * @author Fedor Isakov
  */
 internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
-                               private val tag: String) : RuleMatcher
+                               private val tag: Any) : RuleMatcher
 {
 
     val head = lookupRule().run { ArrayList(headKept() + headReplaced()) }

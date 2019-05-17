@@ -522,7 +522,7 @@ class TestRuleMatcher {
                 matches().size shouldBe 1
 
                 with(matches().first()) {
-                    rule().tag() shouldBe "rule1"
+                    rule().uniqueTag().toString() shouldBe "rule1"
 
                     with(logicalContext()) {
                         variable(X).findRoot().value() shouldBe parseTerm("h")
@@ -555,7 +555,7 @@ class TestRuleMatcher {
                 
                 with(matches().first()) {
 
-                    rule().tag() shouldBe "main"
+                    rule().uniqueTag().toString() shouldBe "main"
                     matchHeadKept().count() shouldBe 0
                     matchHeadReplaced().count() shouldBe 2
 
@@ -597,7 +597,7 @@ class TestRuleMatcher {
 
                 with(matches().first()) {
 
-                    rule().tag() shouldBe "rule1"
+                    rule().uniqueTag().toString() shouldBe "rule1"
 
                 }
                                                                                     }.run {
@@ -606,7 +606,7 @@ class TestRuleMatcher {
 
                 with(matches().first()) {
 
-                    rule().tag() shouldBe "rule2"
+                    rule().uniqueTag().toString() shouldBe "rule2"
                     logicalContext().variable(X).value() shouldBe "a"
 
                 }
@@ -616,7 +616,7 @@ class TestRuleMatcher {
 
                 with(matches().drop(1).first()) {
 
-                    rule().tag() shouldBe "rule2"
+                    rule().uniqueTag().toString() shouldBe "rule2"
                     logicalContext().variable(X).value() shouldBe "b"
 
                 }
@@ -670,7 +670,7 @@ class TestRuleMatcher {
                 expand(occurrence("foo"))                                    }.apply {
                 matches().count() shouldBe 3                                        }.run {
 
-                matches().map { it.rule().tag() }.toList() shouldBe listOf("rule1", "rule2", "rule3")
+                matches().map { it.rule().uniqueTag().toString() }.toList() shouldBe listOf("rule1", "rule2", "rule3")
             }
         }
     }
@@ -713,15 +713,15 @@ class TestRuleMatcher {
 
                 expand(occurrence("bar"))                                }.apply {
                 matches().count() shouldBe 1
-                matches().first().rule().tag() shouldBe  "rule2"                }.run {
+                matches().first().rule().uniqueTag().toString() shouldBe  "rule2"                }.run {
 
                 expand(occurrence("bazz"))                               }.apply {
                 matches().count() shouldBe 1
-                matches().first().rule().tag() shouldBe  "rule1"                }.run {
+                matches().first().rule().uniqueTag().toString() shouldBe  "rule1"                }.run {
 
                 expand(occurrence("blin"))                               }.apply {
                 matches().count() shouldBe 1
-                matches().first().rule().tag() shouldBe  "rule3"
+                matches().first().rule().uniqueTag().toString() shouldBe  "rule3"
             }
         }
     }
@@ -766,11 +766,11 @@ class TestRuleMatcher {
 
                 expand(bar)                                                  }.apply {
                 matches().count() shouldBe 1
-                matches().first().rule().tag() shouldBe  "rule2"                }.run {
+                matches().first().rule().uniqueTag().toString() shouldBe  "rule2"                }.run {
 
                 expand(occurrence("bazz"))                               }.apply {
                 matches().count() shouldBe 1
-                matches().first().rule().tag() shouldBe  "rule1"                }.run {
+                matches().first().rule().uniqueTag().toString() shouldBe  "rule1"                }.run {
 
                 contract(bar)                                                  }.apply {
                 matches().count() shouldBe 0                                    }.run {
@@ -780,7 +780,7 @@ class TestRuleMatcher {
                                                                                 }.run {
                 expand(bar)                                                  }.apply {
                 matches().count() shouldBe 3
-                matches().map { it.rule().tag() }.toList() shouldBe listOf("rule1", "rule2", "rule3")
+                matches().map { it.rule().uniqueTag().toString() }.toList() shouldBe listOf("rule1", "rule2", "rule3")
             }
         }
     }

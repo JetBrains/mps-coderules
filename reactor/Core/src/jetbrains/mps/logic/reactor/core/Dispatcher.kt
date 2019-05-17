@@ -27,12 +27,12 @@ import com.github.andrewoma.dexx.collection.Map as PersMap
  */
 class Dispatcher (val ruleIndex: RuleIndex) {
 
-    private val ruletag2matcher = HashMap<String, RuleMatcher>()
+    private val ruletag2matcher = HashMap<Any, RuleMatcher>()
 
     init {
         ruleIndex.forEach { rule ->
-            val matcher = createRuleMatcher(ruleIndex, rule.tag())
-            ruletag2matcher.put(rule.tag(), matcher);
+            val matcher = createRuleMatcher(ruleIndex, rule.uniqueTag())
+            ruletag2matcher.put(rule.uniqueTag(), matcher);
         }
     }
 
@@ -43,7 +43,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
     inner class DispatchingFront {
 
-        private var ruletag2probe: PersMap<String, RuleMatchingProbe>
+        private var ruletag2probe: PersMap<Any, RuleMatchingProbe>
 
         private val allMatches = arrayListOf<RuleMatchImpl>()
 
@@ -57,15 +57,15 @@ class Dispatcher (val ruleIndex: RuleIndex) {
         private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>) {
             this.ruletag2probe = pred.ruletag2probe
             matching.forEach { probe ->
-                this.ruletag2probe = ruletag2probe.put(probe.rule().tag(), probe)
+                this.ruletag2probe = ruletag2probe.put(probe.rule().uniqueTag(), probe)
                 allMatches.addAll(probe.matches() as Collection<RuleMatchImpl>)
             }
         }
 
         private constructor(pred: DispatchingFront, consumedMatch: RuleMatchEx) {
             this.ruletag2probe = pred.ruletag2probe
-            pred.ruletag2probe[consumedMatch.rule().tag()]?.let {
-                this.ruletag2probe = ruletag2probe.put(consumedMatch.rule().tag(), it.consume(consumedMatch))
+            pred.ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
+                this.ruletag2probe = ruletag2probe.put(consumedMatch.rule().uniqueTag(), it.consume(consumedMatch))
             }
         }
 
@@ -80,8 +80,8 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          */
         fun expand(activated: Occurrence) = DispatchingFront(this,
             ruleIndex.forOccurrenceWithMask(activated).mapNotNull { (rule, mask) ->
-                ruletag2probe[rule.tag()]?.expand(activated, mask)
-                ruletag2probe[rule.tag()]?.expand(activated, mask)
+                ruletag2probe[rule.uniqueTag()]?.expand(activated, mask)
+                ruletag2probe[rule.uniqueTag()]?.expand(activated, mask)
             })
 
         /**
@@ -90,7 +90,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          */
         fun contract(discarded: Occurrence) = DispatchingFront(this,
             ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
-                ruletag2probe[rule.tag()]
+                ruletag2probe[rule.uniqueTag()]
             }.map { probe ->
                 probe.contract(discarded)
             })

@@ -15,22 +15,22 @@ import kotlin.collections.HashMap
 
 class Builder(var rulesLists: List<RulesList>) : RuleLookup {
 
-    val tag2rule = HashMap<String, Rule>()
+    val tag2rule = HashMap<Any, Rule>()
 
     val programBuilder = ProgramBuilder(MockConstraintRegistry())
 
     init {
         rulesLists
             .flatMap { it.rules() }
-            .forEach { r -> tag2rule[r.tag()] = r }
+            .forEach { r -> tag2rule[r.uniqueTag()] = r }
     }
 
     val rules: List<Rule>
         get() = tag2rule.values.toList()
 
-    override fun lookupRuleByTag(tag: String): Rule? = tag2rule[tag]
+    override fun lookupRuleByTag(tag: Any): Rule? = tag2rule[tag]
 
-    fun ruleMatcher(): RuleMatcher = createRuleMatcher(this, rules.first().tag())
+    fun ruleMatcher(): RuleMatcher = createRuleMatcher(this, rules.first().uniqueTag())
 
     fun program(name: String): Program = programBuilder.program(name, rulesLists)
     

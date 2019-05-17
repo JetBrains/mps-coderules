@@ -29,14 +29,13 @@ import kotlin.collections.HashMap
 /**
  * A container for [Rule] instances with the ability to look up by [ConstraintOccurrence].
  *
- * FIXME handler to be renamed to RulesList
  * @author Fedor Isakov
  */
 class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
 
     private val symbol2index = HashMap<ConstraintSymbol, ArgumentRuleIndex>()
 
-    private val tag2rule = LinkedHashMap<String, Rule>()
+    private val tag2rule = LinkedHashMap<Any, Rule>()
 
     // rule's index is rule's position in this list
     private val rulesList = ArrayList<Rule>()
@@ -55,7 +54,7 @@ class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
         buildIndex(handlers)
     }
 
-    override fun lookupRuleByTag(tag: String): Rule? = tag2rule[tag]
+    override fun lookupRuleByTag(tag: Any): Rule? = tag2rule[tag]
 
     /**
      * Returns instances of [Rule] that can potentially match the specified [ConstraintOccurrence].
@@ -88,8 +87,8 @@ class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
         var ruleBit = 0
         for (h in handlers) {
             for (rule in h.rules()) {
-                if (tag2rule.containsKey(rule.tag())) throw IllegalStateException("duplicate rule tag ${rule.tag()}")
-                tag2rule[rule.tag()] = rule
+                if (tag2rule.containsKey(rule.uniqueTag())) throw IllegalStateException("duplicate rule tag ${rule.uniqueTag()}")
+                tag2rule[rule.uniqueTag()] = rule
                 rulesList.add(rule)
 
                 val head = rule.headKept() + rule.headReplaced()

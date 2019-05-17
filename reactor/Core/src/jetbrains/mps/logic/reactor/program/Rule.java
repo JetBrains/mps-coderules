@@ -29,7 +29,7 @@ public abstract class Rule {
     /**
      * A tag uniquely identifies the rule.
      */
-    public abstract String tag();
+    public abstract Object uniqueTag();
 
     /**
      * An origin serves as justification for all constraints affected by this rule.

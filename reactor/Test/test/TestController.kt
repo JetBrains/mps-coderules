@@ -509,8 +509,8 @@ class TestController {
                     constraint("foo", Z, "a{c}")), body(constraint("done")))
 
         ).controller().evaluate(occurrence("main")).run {
-            assertEquals(setOf(ConstraintSymbol("done", 0)), constraintSymbols())
-            assertEquals(1, occurrences(ConstraintSymbol.symbol("done", 0)).count())
+            constraintSymbols() shouldBe setOf(sym0("done"))
+            occurrences(sym0("done")).count() shouldBe 1
         }
     }
 
@@ -820,10 +820,10 @@ class TestController {
 
     @Test(expected = EvaluationFailureException::class)
     fun failureHandler() {
-        val failures = ArrayList<Pair<EvaluationFailure, String>>()
+        val failures = ArrayList<Pair<EvaluationFailure, Any>>()
         val failureHandler =  { rule: Rule, feedback: EvaluationFeedback ->
                 if (feedback is EvaluationFailure) {
-                    failures.add(feedback to rule.tag())
+                    failures.add(feedback to rule.uniqueTag())
                 }
                 false
             }
@@ -862,11 +862,11 @@ class TestController {
 
     @Test
     fun failureHandlerRecover() {
-        val failures = ArrayList<Pair<EvaluationFailure, String>>()
+        val failures = ArrayList<Pair<EvaluationFailure, Any>>()
         val failureHandler = { rule: Rule, feedback: EvaluationFeedback ->
                 if (feedback is EvaluationFailure) {
-                    failures.add(feedback to rule.tag())
-                    (rule.tag()?.startsWith("recoverable") == true)
+                    failures.add(feedback to rule.uniqueTag())
+                    (rule.uniqueTag().toString().startsWith("recoverable"))
                 } else false
             }
 
@@ -916,9 +916,9 @@ class TestController {
 
     @Test
     fun detailsFeedbackHandler() {
-        val feedbacks = arrayListOf<Pair<EvaluationFeedback, String>>()
+        val feedbacks = arrayListOf<Pair<EvaluationFeedback, Any>>()
         val feedbackHandler = { rule: Rule, feedback: EvaluationFeedback ->
-                feedbacks.add(feedback to rule.tag())
+                feedbacks.add(feedback to rule.uniqueTag())
                 feedback.message.startsWith("catchme")
             }
 

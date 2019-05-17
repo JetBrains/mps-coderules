@@ -26,7 +26,7 @@ class ProgramBuilder(val registry: MockConstraintRegistry)  {
 
 class HandlerBuilder(val name: String) {
 
-    val rules = LinkedHashMap<String, Rule>()
+    val rules = LinkedHashMap<Any, Rule>()
 
     constructor(name: String, rulesList: RulesList) : this(name) {
         for (r in rulesList.rules()) {
@@ -35,7 +35,7 @@ class HandlerBuilder(val name: String) {
     }
 
     fun appendRule(rule: Rule) {
-        rules[rule.tag()] = rule
+        rules[rule.uniqueTag()] = rule
     }
 
     fun toHandler(): RulesList = MockHandler(name, rules.values.toList())
@@ -80,8 +80,8 @@ class MockRule(
     val body: Collection<Collection<AndItem>>) : Rule() {
 
     override fun kind(): Kind = TODO()
-
-    override fun tag(): String = tag
+    
+    override fun uniqueTag() = tag
 
     override fun headKept(): Iterable<Constraint> = kept
 

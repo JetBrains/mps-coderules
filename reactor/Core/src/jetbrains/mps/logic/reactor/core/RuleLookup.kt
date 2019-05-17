@@ -26,6 +26,6 @@ import jetbrains.mps.logic.reactor.program.Rule
 
 interface RuleLookup {
 
-    fun lookupRuleByTag(tag: String): Rule?
+    fun lookupRuleByTag(tag: Any): Rule?
 
 }

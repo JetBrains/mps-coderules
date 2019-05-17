@@ -30,5 +30,5 @@ interface RuleMatcher {
 
 }
 
-fun createRuleMatcher(lookup: RuleLookup, tag: String): RuleMatcher = RuleMatcherImpl(lookup, tag)
+fun createRuleMatcher(lookup: RuleLookup, tag: Any): RuleMatcher = RuleMatcherImpl(lookup, tag)
 
