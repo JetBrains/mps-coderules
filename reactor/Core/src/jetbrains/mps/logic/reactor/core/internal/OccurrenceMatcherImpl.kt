@@ -16,8 +16,10 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.OccurrenceMatcher
 import jetbrains.mps.logic.reactor.core.Subst
+import jetbrains.mps.logic.reactor.core.emptySubst
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalOwner
@@ -28,13 +30,9 @@ import java.util.*
 
 internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : OccurrenceMatcher {
 
-    companion object {
+    private var matchSubst : Subst? = null
 
-        val EMPTY_SUBST : Subst = Collections.emptyMap()
-    }
-    private var matchSubst : MutableMap<MetaLogical<*>, Any>? = null
-
-    override fun substitution(): Subst = matchSubst ?: (contextSubst ?: EMPTY_SUBST)
+    override fun substitution(): Subst = matchSubst ?: (contextSubst ?: emptySubst())
 
     /**
      * Matches constraint and occurrence.
@@ -68,13 +66,13 @@ internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : Occurren
             is MetaLogical<*> -> {
                 // recursion with existing substitution or new substitution
                 if (matchSubst == null) {
-                    this.matchSubst = if (contextSubst != null) HashMap(contextSubst) else emptySubst()
+                    this.matchSubst = if (contextSubst != null) contextSubst else emptySubst()
                 }
 
                 if (matchSubst!!.containsKey(ptn))
                     matchSubst!![ptn].let { matchAny(it, trg) }
                 else
-                    matchSubst!!.put(ptn, trg!!).run { true }
+                    matchSubst!!.put(ptn, trg!!).also { matchSubst = it }.run { true }
             }
             is Term ->
                 when {
@@ -174,8 +172,6 @@ internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : Occurren
     }
 
 }
-
-fun emptySubst() = HashMap<MetaLogical<*>, Any>(4)
 
 fun createOccurrenceMatcher(contextSubst: Subst? = null): OccurrenceMatcher =
     OccurrenceMatcherImpl(contextSubst)

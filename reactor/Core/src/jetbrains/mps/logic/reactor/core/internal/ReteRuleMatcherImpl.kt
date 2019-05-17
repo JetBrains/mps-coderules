@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -92,7 +93,7 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
 
             abstract fun combine(that: AlphaNode): ReteNode
 
-            open fun collectData(occArray: Array<Occurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {}
+            open fun collectData(occArray: Array<Occurrence?>, allSubst: Subst): Subst = allSubst
 
         }
 
@@ -118,14 +119,14 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
                               val subst: Subst) : ReteNode()
         {
             val metaIndices: BitSet? =
-                if (subst.isNotEmpty()) bitSet(subst.keys.map { metaLogical -> indexOf(metaLogical) }) else null
+                if (!subst.isEmpty) bitSet(subst.keys().map { metaLogical -> indexOf(metaLogical) }) else null
 
             val occIdx = indexOf(occurrence)
 
             private val idx2subst = HashMap<Int, Any?>()
 
             init {
-                for ((meta, subst) in subst.entries) {
+                for ((meta, subst) in subst.asMap().entries) {
                     idx2subst[indexOf(meta)] = subst
                 }
             }
@@ -145,11 +146,9 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
 
             override fun combine(that: AlphaNode): ReteNode = BetaNode(this, that)
 
-            override fun collectData(occArray: Array<Occurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {
+            override fun collectData(occArray: Array<Occurrence?>, allSubst: Subst): Subst {
                 occArray[posInHead] = occurrence
-                for ((k, v) in subst) {
-                    allSubst.put(k, v)
-                }
+                return subst.fold(allSubst) { acc, (k, v) -> acc.put(k, v) }
             }
         }
 
@@ -206,10 +205,8 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
 
             override fun combine(that: AlphaNode): ReteNode = BetaNode(this, that)
 
-            override fun collectData(occArray: Array<Occurrence?>, allSubst: MutableMap<MetaLogical<*>, Any>) {
-                right.collectData(occArray, allSubst)
-                left.collectData(occArray, allSubst)
-            }
+            override fun collectData(occArray: Array<Occurrence?>, allSubst: Subst): Subst =
+                left.collectData(occArray, right.collectData(occArray, allSubst))
 
         }
 
@@ -295,7 +292,7 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
                         // any excluded occurrences?
                         if (n.containsOccurrence(skipOccIndices)) continue
 
-                        val allSubst = HashMap<MetaLogical<*>, Any>()
+                        val allSubst : Subst = emptySubst()
                         val occArray = arrayOfNulls<Occurrence>(headSize)
                         n.collectData(occArray, allSubst)
 

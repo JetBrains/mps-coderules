@@ -1,3 +1,4 @@
+import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.createOccurrenceMatcher
 import jetbrains.mps.logic.reactor.core.internal.logical
@@ -107,28 +108,28 @@ class TestRuleMatcher {
         val foofx = MockConstraint(ConstraintSymbol("foo", 1), term("f", metaVar(X)))
 
         // [X -> free] |- foo(f { X }) = foo(f { X })
-        createOccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+        createOccurrenceMatcher(Maps.of(X, logicalVar(xLogical))).
             matches(foofx, occurrence("foo", term("f", logicalVar(xLogical)))) shouldBe true
         // [X -> free] |- foo(f { X }) != foo(f { Y })
-        createOccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+        createOccurrenceMatcher(Maps.of(X, logicalVar(xLogical))).
             matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe false
         // [X -> free] |- foo(f { X }) != foo(f { h })
-        createOccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+        createOccurrenceMatcher(Maps.of(X, logicalVar(xLogical))).
             matches(foofx, occurrence("foo", parseTerm("f { h }"))) shouldBe false
         // [X -> free] |- foo(f { X }) != foo(f { Y = h })
         yLogical.set(term("h"))
-        createOccurrenceMatcher(arrayOf(X to logicalVar(xLogical)).toMap()).
+        createOccurrenceMatcher(Maps.of(X, logicalVar(xLogical))).
             matches(foofx, occurrence("foo", term("f", logicalVar(yLogical)))) shouldBe false
 
         // [X -> h] |- foo(f { X }) = foo(f { h })
-        createOccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+        createOccurrenceMatcher(Maps.of(X, term("h"))).
             matches(foofx, occurrence("foo", parseTerm("f { h }"))) shouldBe true
         // [X -> h] |- foo(f { X }) != foo(f { Z })
-        createOccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+        createOccurrenceMatcher(Maps.of(X, term("h"))).
             matches(foofx, occurrence("foo", term("f", logicalVar(zLogical)))) shouldBe false
         // [X -> h] |- foo(f { X }) = foo(f { Z = h })
         zLogical.set(term("h"))
-        createOccurrenceMatcher(arrayOf(X to term("h")).toMap()).
+        createOccurrenceMatcher(Maps.of(X, term("h"))).
             matches(foofx, occurrence("foo", term("f", logicalVar(zLogical)))) shouldBe true
     }
 
