@@ -108,7 +108,9 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
         fun expand(occ: Occurrence, genId: Int, matchingVacant: BitSet): List<ActiveMatchNode> =
             unrelatedOrNull(occ)?.let { n ->
                 ArrayList<ActiveMatchNode>().also { expanded ->
-                    for (headIdx in matchingVacant.allSetBits()) {
+                    val it = matchingVacant.allSetBits()
+                    while (it.hasNext()) {
+                        val headIdx = it.next()
                         createOccurrenceMatcher(subst).run {
                             if (matches(head[headIdx], occ)) {
                                 expanded.add(ActiveMatchNode(substitution(), n, occ, headIdx, genId))

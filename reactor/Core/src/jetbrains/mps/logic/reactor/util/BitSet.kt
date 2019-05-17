@@ -16,7 +16,9 @@
 
 package jetbrains.mps.logic.reactor.util
 
+import gnu.trove.iterator.TIntIterator
 import java.util.*
+import kotlin.NoSuchElementException
 
 /**
  * @author Fedor Isakov
@@ -28,7 +30,7 @@ inline fun BitSet.copyApply (f: BitSet.() -> Unit): BitSet =
 fun bitSetOfOnes(size: Int): BitSet =
     BitSet(size).apply { set(0, size) }
 
-fun bitSet(setBit: Int): BitSet=
+fun bitSet(setBit: Int): BitSet =
     BitSet().apply { set(setBit) }
 
 fun bitSet(setBits: Iterable<Int>): BitSet=
@@ -40,22 +42,21 @@ fun BitSet.setBit(bit: Int): BitSet =
 fun BitSet.clearBit(bit: Int): BitSet =
     (clone() as BitSet).apply { clear(bit) }
 
-fun BitSet.allSetBits(): Iterable<Int> = object : Iterable<Int> {
-    override fun iterator(): Iterator<Int> = object : Iterator<Int> {
-        var next = nextSetBit(0);
+fun BitSet.allSetBits(): TIntIterator = object : TIntIterator {
 
-        override fun hasNext(): Boolean = next != -1;
+    var next = nextSetBit(0);
 
-        override fun next(): Int =
-            if (next != -1) {
-                val ret = next
-                next = nextSetBit(next + 1)
-                ret
-            } else {
-                throw NoSuchElementException()
-            }
-    }
+    override fun hasNext(): Boolean = next != -1;
+
+    override fun next(): Int =
+        if (next != -1) {
+            val ret = next
+            next = nextSetBit(next + 1)
+            ret
+        } else {
+            throw NoSuchElementException()
+        }
+
+    override fun remove() =
+        throw UnsupportedOperationException()
 }
-
-
-

@@ -45,9 +45,9 @@ internal class StateFrame private constructor(val state: ProcessingStateImpl) : 
 
     private var observers: PersMap<Id<Logical<*>>, ConsList<LogicalObserver>> = Maps.of()
 
-    private val activatedOccurrences = ArrayList<Occurrence>()
+    private val activatedOccurrences = ArrayList<Occurrence>(4)
     
-    private val deactivatedOccurrences = ArrayList<Occurrence>()
+    private val deactivatedOccurrences = ArrayList<Occurrence>(4)
 
     constructor(state: ProcessingStateImpl, dispatcher: Dispatcher) : this(state) {
         this.dispatchingFront = dispatcher.front()

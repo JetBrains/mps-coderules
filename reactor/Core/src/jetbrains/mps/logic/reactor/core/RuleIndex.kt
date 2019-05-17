@@ -20,9 +20,7 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
-import jetbrains.mps.logic.reactor.util.TermTrie
-import jetbrains.mps.logic.reactor.util.allSetBits
-import jetbrains.mps.logic.reactor.util.termTrie
+import jetbrains.mps.logic.reactor.util.*
 import jetbrains.mps.unification.Term
 import java.util.*
 import kotlin.collections.ArrayList
@@ -47,6 +45,12 @@ class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
     // invariant: rulesList.size == slotMasksList.size
     private val slotMasksList = ArrayList<SlotMask>()
 
+    /** the bit set that is going to be reused for all calls to [select] */
+    private val ruleIndices = BitSet(rulesList.size)
+
+    /** the bit set to be used for temporary processing within [select]*/
+    private val andRuleIndices = BitSet(rulesList.size)
+
     init {
         buildIndex(handlers)
     }
@@ -58,7 +62,10 @@ class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
      */
     fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> {
         val ruleIndices = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
-        return ruleIndices.allSetBits().map { idx -> rulesList[idx] }
+        val result = ArrayList<Rule>()
+        val it = ruleIndices.allSetBits()
+        while (it.hasNext()) result.add(rulesList[it.next()])
+        return result
     }
 
     /**
@@ -66,9 +73,13 @@ class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
      */
     fun forOccurrenceWithMask(occ: ConstraintOccurrence): Iterable<Pair<Rule, BitSet>> {
         val ruleBits = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
-        return ruleBits.allSetBits().mapNotNull { ruleBit ->
-            slotMasksList[ruleBit][occ]?.let { mask -> rulesList[ruleBit] to mask }
+        val result = ArrayList<Pair<Rule, BitSet>>()
+        val it = ruleBits.allSetBits()
+        while (it.hasNext()) {
+            val ruleBit = it.next()
+            slotMasksList[ruleBit][occ]?.let { mask ->  result.add(rulesList[ruleBit] to mask) }
         }
+        return result
     }
 
     override fun iterator(): Iterator<Rule> = rulesList.iterator()
@@ -107,12 +118,12 @@ class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
         fun update(cst: Constraint, posInHead: Int) {
             symbol2mask.getOrPut(cst.symbol()) { BitSet() }.set(posInHead)
         }
-
         /**
          * When null is returned, there can be no match for this constraint
          */
         operator fun get(occ: ConstraintOccurrence): BitSet? =
             symbol2mask[occ.constraint().symbol()]
+
     }
 
     /**
@@ -162,7 +173,6 @@ class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
 
             // initially select all rules
             val upToBit = rulesList.size
-            val ruleIndices = BitSet(rulesList.size)
             ruleIndices.set(0, upToBit)
 
             for ((idx, arg) in occ.arguments().withIndex()) {
@@ -174,35 +184,20 @@ class RuleIndex(handlers: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
                     continue
                 }
 
+                andRuleIndices.clear(0, upToBit)
+                andRuleIndices.or(wildcardIndices)
+
                 val argVal = if (arg is Logical<*>) arg.findRoot().value() else arg
                 when (argVal) {
-                    is Term             -> {
-                        val bits = wildcardIndices.clone() as BitSet
-                        for (i in termIndices.lookupValues(argVal)) {
-                            bits.set(i)
-                        }
-                        ruleIndices.and(bits)
-                    }
-                    is Any              -> {
-                        if (value2indices.containsKey(argVal)) {
-                            // ensure only rules with either matching values or wildcard arguments get selected
-                            val bits = wildcardIndices.clone() as BitSet
-                            bits.or(value2indices[argVal])
-                            ruleIndices.and(bits)
-
-                        } else {
-                            ruleIndices.and(wildcardIndices)
-                        }
-                    }
-                    else -> {
-                        /* never happens */
-                        throw NullPointerException()
-                    }
+                    is Term             ->
+                        termIndices.lookupValues(argVal).forEach { andRuleIndices.set(it) }
+                    is Any              ->
+                        // ensure only rules with either matching values or wildcard arguments get selected
+                        if (value2indices.containsKey(argVal)) andRuleIndices.or(value2indices[argVal])
                 }
+                ruleIndices.and(andRuleIndices)
 
-                if (ruleIndices.isEmpty) {
-                    break
-                }
+                if (ruleIndices.isEmpty) break
             }
 
             return ruleIndices

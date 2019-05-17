@@ -72,7 +72,9 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
                 if (thisMetaIndices == null || thatMetaIndices == null) return true
 
                 if (thisMetaIndices.cardinality() != 0 && thatMetaIndices.cardinality() != 0) {
-                    for (shared in thisMetaIndices.copyApply { and(thatMetaIndices) }.allSetBits()) {
+                    val it = thisMetaIndices.copyApply { and(thatMetaIndices) }.allSetBits()
+                    while (it.hasNext()) {
+                        val shared = it.next()
                         if (!createOccurrenceMatcher().match(this.getSubst(shared), that.getSubst(shared))) return false
                     }
                 }
@@ -327,8 +329,10 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
             skipOccIndices.clear(occIdx)
 
             val alphaNodes = arrayListOf<AlphaNode>()
-            for (posInHead in mask.allSetBits()) {
+            val it = mask.allSetBits()
+            while (it.hasNext()){
 
+                val posInHead = it.next()
                 val matcher = createOccurrenceMatcher(emptySubst())
                 if (matcher.matches(head[posInHead], occ)) {
                     alphaNodes.add(AlphaNode(occ, posInHead, matcher.substitution()))
