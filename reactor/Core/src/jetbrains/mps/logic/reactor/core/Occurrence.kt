@@ -39,7 +39,7 @@ data class Occurrence (val controller: Controller,
                        val constraint: Constraint,
                        val logicalContext: LogicalContext,
                        val arguments: List<*>,
-                       val justifications: Justs?):
+                       val justifications: Justs):
     ConstraintOccurrence,
     LogicalObserver
 {
@@ -58,7 +58,7 @@ data class Occurrence (val controller: Controller,
 
     override fun logicalContext(): LogicalContext = logicalContext
 
-    override fun justifications(): Justs? = justifications
+    override fun justifications(): Justs = justifications
 
     override fun valueUpdated(logical: Logical<*>) {
         if (alive) {
@@ -96,18 +96,18 @@ data class Occurrence (val controller: Controller,
 
 fun Constraint.occurrence(controller: Controller,
                           arguments: List<*>,
-                          justifications: Justs?,
+                          justifications: Justs,
                           logicalContext: LogicalContext): Occurrence =
     Occurrence(controller, this, logicalContext, arguments, justifications)
 
 fun Constraint.occurrence(controller: Controller,
                           arguments: List<*>,
-                          justifications: Justs?): Occurrence =
+                          justifications: Justs): Occurrence =
     Occurrence(controller, this, noLogicalContext, arguments, justifications)
 
 fun Constraint.occurrence(controller: Controller,
                           arguments: List<*>): Occurrence =
-    Occurrence(controller, this, noLogicalContext, arguments, null)
+    Occurrence(controller, this, noLogicalContext, arguments, justsOf())
 
 private val noLogicalContext: LogicalContext = object: LogicalContext {
     override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null

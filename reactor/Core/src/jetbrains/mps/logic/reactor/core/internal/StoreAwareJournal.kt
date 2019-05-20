@@ -120,7 +120,6 @@ internal open class MatchJournalImpl(view: MatchJournal.View?): MatchJournal {
 
         // Log discards
         match.forEachReplaced {occ ->
-            //            this.dispatchFringe = dispatchFringe.contract(occ)
             current.occurrences.add(MatchJournal.Chunk.Entry(occ, true))
             occ.terminate()
         }
@@ -241,9 +240,8 @@ internal class StoreAwareJournalImpl(val state: ProcessingStateImpl, view: Match
 
 private fun RuleMatch.headJustifications(): Justs {
     val res: Justs = justsOf()
-    this.matchHeadKept().forEach { it.justifications()?.let { res.addAll(it) } }
-    this.matchHeadReplaced().forEach { it.justifications()?.let { res.addAll(it) } }
+    this.matchHeadKept().forEach { it.justifications().let { res.addAll(it) } }
+    this.matchHeadReplaced().forEach { it.justifications().let { res.addAll(it) } }
     return res
-//    return if (res.isEmpty) null else res
 }
 

@@ -20,7 +20,7 @@ package jetbrains.mps.logic.reactor.evaluation;
 import gnu.trove.set.TIntSet;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.program.Constraint;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -37,7 +37,7 @@ public interface ConstraintOccurrence {
 
     LogicalContext logicalContext();
 
-    @Nullable
+    @NotNull
     TIntSet justifications();
 
 }
