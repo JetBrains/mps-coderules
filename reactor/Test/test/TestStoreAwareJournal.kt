@@ -1,6 +1,7 @@
 import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.core.internal.MatchHistory
+import jetbrains.mps.logic.reactor.core.internal.MatchJournal
+import jetbrains.mps.logic.reactor.core.internal.StoreAwareJournal
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.Test
 import org.junit.Assert.*
@@ -22,7 +23,9 @@ import org.junit.Assert.*
  */
 
 
-class TestMatchHistory {
+fun MatchJournal.justs() = this.currentPos().chunk().justifications
+
+class TestStoreAwareJournal {
 
     @Test
     fun testJustificationTracking() {
@@ -60,7 +63,7 @@ class TestMatchHistory {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = MatchHistory.fromSeed(disp)
+            val hist = StoreAwareJournal.fromSeed(disp)
             val mainOcc = justifiedOccurrence("main", setOf(0))
 //            hist.logOccurrence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
@@ -72,8 +75,8 @@ class TestMatchHistory {
                     hist.logMatch(this)
                     rule().tag() shouldBe "rule1"
 
-                    hist.current().justifications shouldBe TIntHashSet(setOf(0))
-                    val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
+                    hist.justs() shouldBe TIntHashSet(setOf(0))
+                    val fooOcc = justifiedOccurrence("foo", hist.justs())
                     hist.logOccurrence(fooOcc)
                     d = d.expand(fooOcc)
                 }
@@ -86,8 +89,8 @@ class TestMatchHistory {
                     hist.logMatch(this)
                     rule().tag() shouldBe "rule2"
 
-                    hist.current().justifications shouldBe TIntHashSet(setOf(0,1))
-                    val barOcc = justifiedOccurrence("bar", hist.current().justifications)
+                    hist.justs() shouldBe TIntHashSet(setOf(0,1))
+                    val barOcc = justifiedOccurrence("bar", hist.justs())
                     hist.logOccurrence(barOcc)
                     d = d.expand(barOcc)
 
@@ -100,8 +103,8 @@ class TestMatchHistory {
                     hist.logMatch(this)
                     rule().tag() shouldBe "rule3"
 
-                    hist.current().justifications shouldBe TIntHashSet(setOf(0,2))
-                    val quxOcc = justifiedOccurrence("qux", hist.current().justifications)
+                    hist.justs() shouldBe TIntHashSet(setOf(0,2))
+                    val quxOcc = justifiedOccurrence("qux", hist.justs())
                     hist.logOccurrence(quxOcc)
                     d = d.expand(quxOcc)
 
@@ -112,7 +115,7 @@ class TestMatchHistory {
                             hist.logMatch(this)
                             rule().tag() shouldBe "rule4"
                         }
-                        hist.current().justifications shouldBe TIntHashSet(setOf(0,1,2,3))
+                        hist.justs() shouldBe TIntHashSet(setOf(0,1,2,3))
                     }
                 }
             }
@@ -150,7 +153,7 @@ class TestMatchHistory {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = MatchHistory.fromSeed(disp)
+            val hist = StoreAwareJournal.fromSeed(disp)
             val mainOcc = justifiedOccurrence("main", setOf(0))
 //            hist.logOccurrence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
@@ -158,7 +161,7 @@ class TestMatchHistory {
             with(d.matches().first()) {
                 hist.logMatch(this)
             }
-            val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
+            val fooOcc = justifiedOccurrence("foo", hist.justs())
             hist.logOccurrence(fooOcc)
             d = d.expand(fooOcc)
 
@@ -166,14 +169,14 @@ class TestMatchHistory {
             with(d.matches().first()) {
                 hist.logMatch(this)
             }
-            val barOcc = justifiedOccurrence("bar", hist.current().justifications)
+            val barOcc = justifiedOccurrence("bar", hist.justs())
             hist.logOccurrence(barOcc)
             d = d.expand(barOcc)
 
             with(d.matches().first()) {
                 hist.logMatch(this)
             }
-            val quxOcc = justifiedOccurrence("qux", hist.current().justifications)
+            val quxOcc = justifiedOccurrence("qux", hist.justs())
             hist.logOccurrence(quxOcc)
             d = d.expand(quxOcc)
 
@@ -233,7 +236,7 @@ class TestMatchHistory {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = MatchHistory.fromSeed(disp)
+            val hist = StoreAwareJournal.fromSeed(disp)
             val mainOcc = justifiedOccurrence("main", setOf(0))
             d = d.expand(mainOcc)
 
@@ -241,7 +244,7 @@ class TestMatchHistory {
                 rule().tag() shouldBe "rule1"
                 hist.logMatch(this)
             }
-            val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
+            val fooOcc = justifiedOccurrence("foo", hist.justs())
             hist.logOccurrence(fooOcc)
             d = d.expand(fooOcc)
 
@@ -252,20 +255,20 @@ class TestMatchHistory {
             }
             val barOcc = occurrence("bar")
             val bazzOcc = occurrence("bazz")
-            val quxOcc = justifiedOccurrence("qux", hist.current().justifications)
+            val quxOcc = justifiedOccurrence("qux", hist.justs())
             hist.logOccurrence(barOcc)
             d = d.expand(barOcc)
             hist.logOccurrence(bazzOcc)
             d = d.expand(bazzOcc)
 
 
-            val curChunk = hist.current()
+            val curChunk = hist.currentPos().chunk()
             with(d.matches().first()) {
                 rule().tag() shouldBe "rule3"
                 hist.logMatch(this)
             }
             // matched on rule with heads without justifications, should remain in the same chunk
-            hist.current() shouldBeSame curChunk
+            hist.currentPos().chunk() shouldBeSame curChunk
 
             val bazzOcc2 = occurrence("bazz")
             hist.logOccurrence(bazzOcc2)
@@ -298,6 +301,7 @@ class TestMatchHistory {
             hist.view().chunks shouldBe oldState.chunks
             hist.storeView().allOccurrences() shouldBe oldStore
 
+//            hist.currentPos() shouldBeSame savedPos
             hist.currentPos().chunk() shouldBe savedPos.chunk()
             hist.currentPos().occsRetained() shouldBe savedPos.occsRetained()
         }
@@ -370,7 +374,7 @@ class TestMatchHistory {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = MatchHistory.fromSeed(disp)
+            val hist = StoreAwareJournal.fromSeed(disp)
             val mainOcc = justifiedOccurrence("main", setOf(0))
             d = d.expand(mainOcc)
 
@@ -378,7 +382,7 @@ class TestMatchHistory {
                 rule().tag() shouldBe "rule0"
                 hist.logMatch(this)
             }
-            val fooOcc = justifiedOccurrence("foo", hist.current().justifications)
+            val fooOcc = justifiedOccurrence("foo", hist.justs())
             hist.logOccurrence(fooOcc); d = d.expand(fooOcc)
 
 
@@ -387,7 +391,7 @@ class TestMatchHistory {
                 hist.logMatch(this)
             }
             val bar1Occ = occurrence("bar1")
-            val bazzOcc = justifiedOccurrence("bazz", hist.current().justifications)
+            val bazzOcc = justifiedOccurrence("bazz", hist.justs())
             hist.logOccurrence(bar1Occ); d = d.expand(bar1Occ)
             hist.logOccurrence(bazzOcc); d = d.expand(bazzOcc)
 
@@ -405,7 +409,7 @@ class TestMatchHistory {
                 rule().tag() shouldBe "rule3"
                 hist.logMatch(this)
             }
-            val quxOcc0 = justifiedOccurrence("qux", hist.current().justifications)
+            val quxOcc0 = justifiedOccurrence("qux", hist.justs())
             hist.logOccurrence(quxOcc0); d = d.expand(quxOcc0)
 
 
@@ -414,13 +418,13 @@ class TestMatchHistory {
                 hist.logMatch(this)
             }
 //            val pOcc1 = occurrence("p")
-            val pOcc1 = justifiedOccurrence("p", hist.current().justifications)
+            val pOcc1 = justifiedOccurrence("p", hist.justs())
             hist.logOccurrence(pOcc1); d = d.expand(pOcc1)
 
 
             // execution has ended
             hist.view().chunks.size shouldBe 5
-            val lastChunk = hist.current()
+            val lastPos = hist.currentPos()
 
             // bar1 was discarded by rule2a, so it shouldn't be in the store
             val bar1StoredBeforeRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("bar1", 0))
@@ -428,7 +432,7 @@ class TestMatchHistory {
 
             // walk by history, remove the third chunk (i.e. match of rule2a)
             //  continue from the second chunk (match of rule1)
-            val rmIt = hist.removeIterator()
+            val rmIt = hist.iterator()
             rmIt.next()
             val continueFrom = rmIt.next()
             rmIt.next()
@@ -457,7 +461,7 @@ class TestMatchHistory {
                 rule().tag() shouldBe "rule2b"
                 hist.logMatch(this)
             }
-            val quxOcc1 = justifiedOccurrence("qux", hist.current().justifications)
+            val quxOcc1 = justifiedOccurrence("qux", hist.justs())
             hist.logOccurrence(quxOcc1); d = d.expand(quxOcc1)
             hist.view().chunks.size shouldBe (3 + 1 + 1) // past + new added + future
 
@@ -468,7 +472,7 @@ class TestMatchHistory {
                 hist.logMatch(this)
             }
 //            val pOcc2 = occurrence("p")
-            val pOcc2 = justifiedOccurrence("p", hist.current().justifications)
+            val pOcc2 = justifiedOccurrence("p", hist.justs())
             hist.logOccurrence(pOcc2); d = d.expand(pOcc2)
 
             // only pOcc2 should be in the store
@@ -477,11 +481,11 @@ class TestMatchHistory {
             // todo?: check history before roll
 
             // finally, purely go the the end, applying the rest of the history to the store
-            assertNotEquals(lastChunk, hist.current())
-            hist.rollTo(lastChunk)
+            assertNotEquals(lastPos, hist.currentPos())
+            hist.rollTo(lastPos)
 
             hist.view().chunks.size shouldBe 6
-            hist.current() shouldBeSame lastChunk // we inserted in the middle -- the last chunk should remain the same
+            hist.currentPos().chunk() shouldBeSame lastPos.chunk() // we inserted in the middle -- the last chunk should remain the same
 
             println(hist.view().toString())
             println(hist.storeView().allOccurrences().toString())
