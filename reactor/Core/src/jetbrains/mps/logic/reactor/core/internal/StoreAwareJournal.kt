@@ -54,7 +54,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
         var occurrences: MutableList<Entry> = mutableListOf()
 
-        override fun toString() = "(id=$id, $justifications, ${match.rule().tag()}, $occurrences)"
+        override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, $occurrences)"
 
         override fun chunk(): Chunk = this
         override fun entriesInChunk(): Int = occurrences.size
