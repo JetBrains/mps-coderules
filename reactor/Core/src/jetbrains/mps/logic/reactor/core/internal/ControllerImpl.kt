@@ -34,15 +34,18 @@ internal class ControllerImpl (
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null) : Controller
 {
+    // fixme
+//    val journal: StoreAwareJournalImpl = StoreAwareJournalImpl(state, null)
 
     /** For tests only */
 //    override fun storeView(): StoreView = state.storeView()
+//    override fun storeView(): StoreView = journal.storeView()
     override fun storeView(): StoreView = TODO()
 
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {
         // create the internal occurrence
-        val active = occ.constraint().occurrence(this, occ.arguments())
+        val active = occ.constraint().occurrence(this, occ.arguments(), occ.justifications())
 
         val status = state.processActivated(active, NORMAL())
         if (status is FAILED) {
@@ -131,6 +134,7 @@ internal class ControllerImpl (
             }
 
             val savedFrame = state.currentFrame()
+//            val savedPos = journal.currentPos()
 
             for (item in body) {
                 val itemOk = when (item) {
@@ -177,6 +181,7 @@ internal class ControllerImpl (
             if (!altOk) {
                 // all constraints activated up to a failure are lost
                 state.reset(savedFrame)
+//                journal.reset(savedPos)
 
             } else {
                 // body finished normally
@@ -191,8 +196,9 @@ internal class ControllerImpl (
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
-            state.processActivated(constraint.occurrence(this, args, justsOf(), context.logicalContext), status)
-
+//            val justs = if (constraint.isPrincipal) journal.justs() else justsOf()
+            val justs = justsOf()
+            state.processActivated(constraint.occurrence(this, args, justs, context.logicalContext), status)
         }
     }
 

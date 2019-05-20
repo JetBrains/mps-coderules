@@ -44,19 +44,13 @@ import java.util.*
  * @author Fedor Isakov
  */
 
-internal class ProcessingStateImpl constructor(dispatcher: Dispatcher,
-                                               val trace: EvaluationTrace = EvaluationTrace.NULL,
-                                               val profiler: Profiler? = null) :
-    ProcessingState, LogicalObserver
+
+internal open class StateFrameStack() : ProcessingState, LogicalObserver
 {
-
-    private var dispatchingFront: Dispatcher.DispatchingFront
-
     // invariant: never empty
     private val stateFrames = LinkedList<StateFrame>()
 
     init {
-        this.dispatchingFront = dispatcher.front()
         stateFrames.push(StateFrame())
     }
 
@@ -105,6 +99,17 @@ internal class ProcessingStateImpl constructor(dispatcher: Dispatcher,
         // forward to the top frame
         currentFrame().parentUpdated(logical)
     }
+
+}
+
+
+internal class ProcessingStateImpl constructor(dispatcher: Dispatcher,
+                                               val trace: EvaluationTrace = EvaluationTrace.NULL,
+                                               val profiler: Profiler? = null) :
+    StateFrameStack()
+{
+
+    private var dispatchingFront: Dispatcher.DispatchingFront = dispatcher.front()
 
 
     /**

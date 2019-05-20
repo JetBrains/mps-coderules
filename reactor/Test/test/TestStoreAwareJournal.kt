@@ -1,7 +1,5 @@
-import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.core.internal.MatchJournal
-import jetbrains.mps.logic.reactor.core.internal.StoreAwareJournal
+import jetbrains.mps.logic.reactor.core.internal.*
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.Test
 import org.junit.Assert.*
@@ -22,8 +20,6 @@ import org.junit.Assert.*
  * limitations under the License.
  */
 
-
-fun MatchJournal.justs() = this.currentPos().chunk().justifications
 
 class TestStoreAwareJournal {
 
