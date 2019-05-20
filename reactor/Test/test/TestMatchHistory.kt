@@ -26,8 +26,6 @@ class TestMatchHistory {
 
     @Test
     fun testJustificationTracking() {
-        val hist = MatchHistory.fromSeed()
-
         with(programWithRules(
             rule("rule1",
                 headKept(
@@ -60,7 +58,9 @@ class TestMatchHistory {
                 ))))
         {
 
-            var d = Dispatcher(RuleIndex(rulesLists)).front()
+            val disp = Dispatcher(RuleIndex(rulesLists))
+            var d = disp.front()
+            val hist = MatchHistory.fromSeed(disp)
             val mainOcc = justifiedOccurrence("main", setOf(0))
 //            hist.logOccurrence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
@@ -122,8 +122,6 @@ class TestMatchHistory {
 
     @Test
     fun testResetThenRoll() {
-        val hist = MatchHistory.fromSeed()
-
         with(programWithRules(
             rule("rule1",
                 headKept(
@@ -150,7 +148,9 @@ class TestMatchHistory {
             ))
         {
 
-            var d = Dispatcher(RuleIndex(rulesLists)).front()
+            val disp = Dispatcher(RuleIndex(rulesLists))
+            var d = disp.front()
+            val hist = MatchHistory.fromSeed(disp)
             val mainOcc = justifiedOccurrence("main", setOf(0))
 //            hist.logOccurrence(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
@@ -195,8 +195,6 @@ class TestMatchHistory {
 
     @Test
     fun testPushExecReset() {
-        val hist = MatchHistory.fromSeed()
-
         with(programWithRules(
             rule("rule1",
                 headKept(
@@ -233,7 +231,9 @@ class TestMatchHistory {
         ))
         {
 
-            var d = Dispatcher(RuleIndex(rulesLists)).front()
+            val disp = Dispatcher(RuleIndex(rulesLists))
+            var d = disp.front()
+            val hist = MatchHistory.fromSeed(disp)
             val mainOcc = justifiedOccurrence("main", setOf(0))
             d = d.expand(mainOcc)
 
@@ -305,8 +305,6 @@ class TestMatchHistory {
 
     @Test
     fun testRmAddInMiddle() {
-        val hist = MatchHistory.fromSeed()
-
         with(programWithRules(
             rule("rule0",
                 headKept(
@@ -370,7 +368,9 @@ class TestMatchHistory {
             // fst exec: rule1 -> rule2a -> rule3 -> ruleMakeP
             // snd exec: rule1 -> rule2b -> ruleMakeP -> rule3 -> ruleMakeP
 
-            var d = Dispatcher(RuleIndex(rulesLists)).front()
+            val disp = Dispatcher(RuleIndex(rulesLists))
+            var d = disp.front()
+            val hist = MatchHistory.fromSeed(disp)
             val mainOcc = justifiedOccurrence("main", setOf(0))
             d = d.expand(mainOcc)
 
@@ -471,7 +471,7 @@ class TestMatchHistory {
             val pOcc2 = justifiedOccurrence("p", hist.current().justifications)
             hist.logOccurrence(pOcc2); d = d.expand(pOcc2)
 
-
+            // only pOcc2 should be in the store
             val pStoredBeforeRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("p", 0))
             pStoredBeforeRoll.count() shouldBe 1
             // todo?: check history before roll

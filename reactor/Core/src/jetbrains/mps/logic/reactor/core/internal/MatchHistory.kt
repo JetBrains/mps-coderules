@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.core.internal
 
 import gnu.trove.set.TIntSet
 import gnu.trove.set.hash.TIntHashSet
+import jetbrains.mps.logic.reactor.core.Dispatcher
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
@@ -69,8 +70,8 @@ interface MatchHistory {
     fun rollTo(chunk: Chunk)
 
     companion object {
-        fun fromSeed(chunkIdSeed: Int = 0): MatchHistory = MatchHistoryImpl(ProcessingStateImpl(), chunkIdSeed)
-        fun fromView(view: MatchHistory.View): MatchHistory = MatchHistoryImpl(ProcessingStateImpl(), view)
+        fun fromSeed(disp: Dispatcher, chunkIdSeed: Int = 0): MatchHistory = MatchHistoryImpl(ProcessingStateImpl(disp), chunkIdSeed)
+        fun fromView(disp: Dispatcher, view: MatchHistory.View): MatchHistory = MatchHistoryImpl(ProcessingStateImpl(disp), view)
     }
 }
 
@@ -109,13 +110,19 @@ internal class MatchHistoryImpl(val state: ProcessingStateImpl, view: MatchHisto
         pos = hist.listIterator()
     }
 
-    // TODO:
     override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
 
     private fun allOccurrences(): Sequence<Occurrence> {
+        // the following lop doesn't handle this case of starting pos, when 'current' isn't valid
+        if (!pos.hasPrevious())
+            return emptySequence()
+
         val set = HashSet<Id<Occurrence>>()
-        hist.flatMap { it.occurrences } .forEach {
-            if (it.isDiscarded) set.add(Id(it.occ)) else set.remove(Id(it.occ))
+        for (chunk in hist) {
+            chunk.occurrences.forEach {
+                if (it.isDiscarded) set.remove(Id(it.occ)) else set.add(Id(it.occ))
+            }
+            if (chunk == current) break
         }
         return set.map { it.wrapped }.asSequence()
     }

@@ -36,7 +36,8 @@ internal class ControllerImpl (
 {
 
     /** For tests only */
-    override fun storeView(): StoreView = state.storeView()
+//    override fun storeView(): StoreView = state.storeView()
+    override fun storeView(): StoreView = TODO()
 
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {
