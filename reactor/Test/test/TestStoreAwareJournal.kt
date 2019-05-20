@@ -75,7 +75,7 @@ class TestStoreAwareJournal {
                     hist.logMatch(this)
                     rule().tag() shouldBe "rule1"
 
-                    hist.justs() shouldBe TIntHashSet(setOf(0))
+                    hist.justs() shouldBe justsOf(0)
                     val fooOcc = justifiedOccurrence("foo", hist.justs())
                     hist.logActivation(fooOcc)
                     d = d.expand(fooOcc)
@@ -89,7 +89,7 @@ class TestStoreAwareJournal {
                     hist.logMatch(this)
                     rule().tag() shouldBe "rule2"
 
-                    hist.justs() shouldBe TIntHashSet(setOf(0,1))
+                    hist.justs() shouldBe justsOf(0,1)
                     val barOcc = justifiedOccurrence("bar", hist.justs())
                     hist.logActivation(barOcc)
                     d = d.expand(barOcc)
@@ -103,7 +103,7 @@ class TestStoreAwareJournal {
                     hist.logMatch(this)
                     rule().tag() shouldBe "rule3"
 
-                    hist.justs() shouldBe TIntHashSet(setOf(0,2))
+                    hist.justs() shouldBe justsOf(0,2)
                     val quxOcc = justifiedOccurrence("qux", hist.justs())
                     hist.logActivation(quxOcc)
                     d = d.expand(quxOcc)
@@ -115,7 +115,7 @@ class TestStoreAwareJournal {
                             hist.logMatch(this)
                             rule().tag() shouldBe "rule4"
                         }
-                        hist.justs() shouldBe TIntHashSet(setOf(0,1,2,3))
+                        hist.justs() shouldBe justsOf(0,1,2,3)
                     }
                 }
             }

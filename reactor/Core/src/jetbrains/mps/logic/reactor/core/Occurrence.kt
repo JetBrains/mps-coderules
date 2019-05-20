@@ -17,12 +17,18 @@
 package jetbrains.mps.logic.reactor.core
 
 import gnu.trove.set.TIntSet
+import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
+
+
+typealias Justs = TIntSet
+fun justsOf(vararg elements: Int) = TIntHashSet(elements)
+fun justsFromCollection(collection: Collection<Int>) = TIntHashSet(collection)
 
 /**
  * Data class representing a single constraint occurrence.
@@ -33,7 +39,7 @@ data class Occurrence (val controller: Controller,
                        val constraint: Constraint,
                        val logicalContext: LogicalContext,
                        val arguments: List<*>,
-                       val justifications: TIntSet?):
+                       val justifications: Justs?):
     ConstraintOccurrence,
     LogicalObserver
 {
@@ -52,7 +58,7 @@ data class Occurrence (val controller: Controller,
 
     override fun logicalContext(): LogicalContext = logicalContext
 
-    override fun justifications(): TIntSet? = justifications
+    override fun justifications(): Justs? = justifications
 
     override fun valueUpdated(logical: Logical<*>) {
         if (alive) {
@@ -90,13 +96,13 @@ data class Occurrence (val controller: Controller,
 
 fun Constraint.occurrence(controller: Controller,
                           arguments: List<*>,
-                          justifications: TIntSet?,
+                          justifications: Justs?,
                           logicalContext: LogicalContext): Occurrence =
     Occurrence(controller, this, logicalContext, arguments, justifications)
 
 fun Constraint.occurrence(controller: Controller,
                           arguments: List<*>,
-                          justifications: TIntSet?): Occurrence =
+                          justifications: Justs?): Occurrence =
     Occurrence(controller, this, noLogicalContext, arguments, justifications)
 
 fun Constraint.occurrence(controller: Controller,

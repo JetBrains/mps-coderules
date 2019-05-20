@@ -19,7 +19,9 @@ package jetbrains.mps.logic.reactor.core.internal
 import gnu.trove.set.TIntSet
 import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.Dispatcher
+import jetbrains.mps.logic.reactor.core.Justs
 import jetbrains.mps.logic.reactor.core.Occurrence
+import jetbrains.mps.logic.reactor.core.justsOf
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.StoreView
@@ -45,7 +47,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
     data class View(val chunks: List<Chunk>, val nextChunkId: Int)
 
-    data class Chunk(val match: RuleMatch, val id: Int, val justifications: TIntSet) : Pos {
+    data class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : Pos {
         data class Entry(val occ: Occurrence, val isDiscarded: Boolean = false) {
             override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
         }
@@ -237,8 +239,8 @@ internal class StoreAwareJournalImpl(val state: ProcessingStateImpl, view: Match
     }
 }
 
-private fun RuleMatch.headJustifications(): TIntSet {
-    val res: TIntSet = TIntHashSet()
+private fun RuleMatch.headJustifications(): Justs {
+    val res: Justs = justsOf()
     this.matchHeadKept().forEach { it.justifications()?.let { res.addAll(it) } }
     this.matchHeadReplaced().forEach { it.justifications()?.let { res.addAll(it) } }
     return res

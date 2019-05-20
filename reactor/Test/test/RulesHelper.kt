@@ -123,9 +123,9 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size)).occurrence(MockController(), listOf(* args))
 
-fun justifiedOccurrence(id: String, justs: TIntSet, vararg args: Any): Occurrence =
+fun justifiedOccurrence(id: String, justs: Justs, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size), true).occurrence(MockController(), listOf(* args), justs)
-fun justifiedOccurrence(id: String, justs: Set<Int>, vararg args: Any): Occurrence = justifiedOccurrence(id, TIntHashSet(justs), * args)
+fun justifiedOccurrence(id: String, justs: Collection<Int>, vararg args: Any): Occurrence = justifiedOccurrence(id, justsFromCollection(justs), * args)
 
 fun sym0(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 0)
