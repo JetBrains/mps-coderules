@@ -33,11 +33,11 @@ import kotlin.collections.ArrayList
 interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
     fun logMatch(match: RuleMatch)
-    fun logOccurrence(occ: Occurrence)
+    fun logActivation(occ: Occurrence)
 
     fun currentPos(): Pos
     fun reset(pastPos: Pos)
-    fun rollTo(futurePos: Pos)
+    fun replay(futurePos: Pos)
 
     fun view(): View
     fun storeView(): StoreView
@@ -55,12 +55,12 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         override fun toString() = "(id=$id, $justifications, ${match.rule().tag()}, $occurrences)"
 
         override fun chunk(): Chunk = this
-        override fun occsRetained(): Int = occurrences.size
+        override fun entriesInChunk(): Int = occurrences.size
     }
 
     interface Pos {
         fun chunk(): Chunk
-        fun occsRetained(): Int
+        fun entriesInChunk(): Int
     }
 }
 
@@ -124,7 +124,7 @@ internal open class MatchJournalImpl(view: MatchJournal.View?): MatchJournal {
         }
     }
 
-    override fun logOccurrence(occ: Occurrence) {
+    override fun logActivation(occ: Occurrence) {
         current.occurrences.add(MatchJournal.Chunk.Entry(occ))
         occ.revive()
     }
@@ -135,25 +135,28 @@ internal open class MatchJournalImpl(view: MatchJournal.View?): MatchJournal {
     override fun reset(pastPos: MatchJournal.Pos) {
         while (pos.hasPrevious()) {
             current = pos.previous()
-            if (current === pastPos.chunk()) break
-            pos.remove()
-        }
-        current.occurrences = current.occurrences.take(pastPos.occsRetained()) as MutableList<MatchJournal.Chunk.Entry>
-    }
-
-    override fun rollTo(futurePos: MatchJournal.Pos) {
-        while (pos.hasNext()) {
-            current = pos.next()
-            if (futurePos.chunk() === current) {
-                rollOccurrences(current.occurrences.take(futurePos.occsRetained()))
+            if (current === pastPos.chunk()) {
+                current.occurrences = current.occurrences.take(pastPos.entriesInChunk()) as MutableList<MatchJournal.Chunk.Entry>
                 return
             }
-            rollOccurrences(current.occurrences)
+            pos.remove()
         }
         throw IllegalStateException()
     }
 
-    private fun rollOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
+    override fun replay(futurePos: MatchJournal.Pos) {
+        while (pos.hasNext()) {
+            current = pos.next()
+            if (futurePos.chunk() === current) {
+                replayOccurrences(current.occurrences.take(futurePos.entriesInChunk()))
+                return
+            }
+            replayOccurrences(current.occurrences)
+        }
+        throw IllegalStateException()
+    }
+
+    private fun replayOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
         occSpecs.forEach { if (it.isDiscarded) it.occ.terminate() else it.occ.revive() }
 
 
@@ -171,9 +174,10 @@ internal open class MatchJournalImpl(view: MatchJournal.View?): MatchJournal {
             chunk.occurrences.forEach {
                 if (it.isDiscarded) set.remove(Id(it.occ)) else set.add(Id(it.occ))
             }
-            if (chunk === current) break
+            if (chunk === current)
+                return set.map { it.wrapped }.asSequence()
         }
-        return set.map { it.wrapped }.asSequence()
+        throw IllegalStateException()
     }
 
 
@@ -201,9 +205,9 @@ internal class StoreAwareJournalImpl(val state: ProcessingStateImpl, view: Match
     }
 
 
-    private data class PosImpl(val frame: StateFrame, val chunk: MatchJournal.Chunk, val occsRetained: Int = 0) : MatchJournal.Pos {
+    private data class PosImpl(val frame: StateFrame, val chunk: MatchJournal.Chunk, val entriesInChunk: Int = 0) : MatchJournal.Pos {
         override fun chunk(): MatchJournal.Chunk = chunk
-        override fun occsRetained(): Int = occsRetained
+        override fun entriesInChunk(): Int = entriesInChunk
     }
 
 
@@ -222,7 +226,7 @@ internal class StoreAwareJournalImpl(val state: ProcessingStateImpl, view: Match
     override fun currentPos(): MatchJournal.Pos = PosImpl(state.currentFrame(), current, current.occurrences.size)
 
     // Throw away recently added chunks and reset store accordingly
-    // NB: not checking that chunks are actually recently added
+    // NB: not checking that chunks are actually recently added, from this exec session
     override fun reset(pastPos: MatchJournal.Pos) {
         if (pastPos is PosImpl) {
             state.reset(pastPos.frame)
