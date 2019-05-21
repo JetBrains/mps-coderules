@@ -59,7 +59,7 @@ class TestStoreAwareJournal {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = StoreAwareJournal.fromSeed(disp)
+            val hist = StoreAwareJournal.fromSeed()
             val mainOcc = justifiedOccurrence("main", setOf(0))
 //            hist.logActivation(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
@@ -149,7 +149,7 @@ class TestStoreAwareJournal {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = StoreAwareJournal.fromSeed(disp)
+            val hist = StoreAwareJournal.fromSeed()
             val mainOcc = justifiedOccurrence("main", setOf(0))
 //            hist.logActivation(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
             d = d.expand(mainOcc)
@@ -232,7 +232,7 @@ class TestStoreAwareJournal {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = StoreAwareJournal.fromSeed(disp)
+            val hist = StoreAwareJournal.fromSeed()
             val mainOcc = justifiedOccurrence("main", setOf(0))
             d = d.expand(mainOcc)
 
@@ -370,7 +370,7 @@ class TestStoreAwareJournal {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = StoreAwareJournal.fromSeed(disp)
+            val hist = StoreAwareJournal.fromSeed()
             val mainOcc = justifiedOccurrence("main", setOf(0))
             d = d.expand(mainOcc)
 

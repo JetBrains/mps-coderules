@@ -64,7 +64,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 }
 
 
-internal open class MatchJournalImpl(view: MatchJournal.View?): MatchJournal {
+internal open class MatchJournalImpl(view: MatchJournal.View? = null): MatchJournal {
 
     protected val hist: MutableList<MatchJournal.Chunk>
     protected var nextChunkId: Int

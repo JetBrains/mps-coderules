@@ -43,7 +43,8 @@ internal class EvaluationSessionImpl private constructor (
 
     private fun launch(main: Constraint, profiler: Profiler?) : FeedbackStatus {
         val dispatcher = Dispatcher(RuleIndex(program().handlers()))
-        val state = ProcessingStateImpl(dispatcher, trace, profiler)
+        val journal = MatchJournalImpl()
+        val state = ProcessingStateImpl(journal, dispatcher, trace, profiler)
         this.controller = ControllerImpl(supervisor, state, trace, profiler)
         return controller.activate(main)
     }

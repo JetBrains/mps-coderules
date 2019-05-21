@@ -103,10 +103,11 @@ internal open class StateFrameStack() : ProcessingState, LogicalObserver
 }
 
 
-internal class ProcessingStateImpl constructor(dispatcher: Dispatcher,
-                                               val trace: EvaluationTrace = EvaluationTrace.NULL,
-                                               val profiler: Profiler? = null) :
-    StateFrameStack()
+internal class ProcessingStateImpl(journal: MatchJournal,
+                                   dispatcher: Dispatcher,
+                                   val trace: EvaluationTrace = EvaluationTrace.NULL,
+                                   val profiler: Profiler? = null)
+    : StoreAwareJournalImpl(journal)
 {
 
     private var dispatchingFront: Dispatcher.DispatchingFront = dispatcher.front()

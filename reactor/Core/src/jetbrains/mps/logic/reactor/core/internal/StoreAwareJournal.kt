@@ -25,13 +25,15 @@ abstract class StoreAwareJournal(val journal: MatchJournal): MatchJournal by jou
     abstract fun testPush(): Unit
     abstract fun resetStore()
 
+    //fixme: move/remove?
     companion object {
-        fun fromSeed(disp: Dispatcher, chunkIdSeed: Int = 0): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(chunkIdSeed))
-        fun fromView(disp: Dispatcher, view: MatchJournal.View): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(view))
+        fun fromSeed(chunkIdSeed: Int = 0): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(chunkIdSeed))
+        fun fromView(view: MatchJournal.View): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(view))
     }
 }
 
-internal class StoreAwareJournalImpl(journal: MatchJournal, private val state: StateFrameStack = StateFrameStack())
+
+internal open class StoreAwareJournalImpl(journal: MatchJournal, private val state: StateFrameStack = StateFrameStack())
     : StoreAwareJournal(journal), ProcessingState by state
 {
 
@@ -41,17 +43,20 @@ internal class StoreAwareJournalImpl(journal: MatchJournal, private val state: S
     }
 
 
+    fun currentFrame() = state.currentFrame()
+
+    fun push() = state.push()
+
+    //fixme: remove, temporary
+    fun reset(frame: StateFrame) = state.reset(frame)
+
+    override fun testPush() { state.push() }
+
     // Reset only store & history position, don't modify history
     override fun resetStore() {
         state.reset()
         this.resetPos()
     }
-
-    // FrameStack API: currentFrame/currentPos, push, reset
-    fun currentFrame() = state.currentFrame()
-
-    override fun testPush() { state.push() }
-    fun push() = state.push()
 
 
     override fun currentPos(): MatchJournal.Pos =

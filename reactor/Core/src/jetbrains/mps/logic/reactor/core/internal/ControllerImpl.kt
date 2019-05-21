@@ -298,4 +298,4 @@ fun createController(
     trace: EvaluationTrace = EvaluationTrace.NULL,
     profiler: Profiler? = null) : Controller =
 
-    ControllerImpl(supervisor, ProcessingStateImpl(Dispatcher(ruleIndex)), trace, profiler)
+    ControllerImpl(supervisor, ProcessingStateImpl(MatchJournalImpl(), Dispatcher(ruleIndex)), trace, profiler)
