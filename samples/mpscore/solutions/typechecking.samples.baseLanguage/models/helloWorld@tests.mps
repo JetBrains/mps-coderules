@@ -214,7 +214,7 @@
           <node concept="2OqwBi" id="27bTNFfbxkR" role="2Hmdds">
             <node concept="2YIFZM" id="27bTNFfbxkS" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
               <node concept="2OqwBi" id="27bTNFfc5Qu" role="37wK5m">
                 <node concept="2WthIp" id="27bTNFfc5Qx" role="2Oq$k0" />
                 <node concept="2XshWL" id="27bTNFfc5Qz" role="2OqNvi">
@@ -246,7 +246,7 @@
           <node concept="2OqwBi" id="27bTNFfbxll" role="2Hmdds">
             <node concept="2YIFZM" id="27bTNFfbxlm" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
               <node concept="2OqwBi" id="27bTNFfc6bq" role="37wK5m">
                 <node concept="2WthIp" id="27bTNFfc6bt" role="2Oq$k0" />
                 <node concept="2XshWL" id="27bTNFfc6bv" role="2OqNvi">

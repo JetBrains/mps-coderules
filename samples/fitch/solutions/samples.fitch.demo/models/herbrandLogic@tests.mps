@@ -141,7 +141,7 @@
           <node concept="2OqwBi" id="27bTNFfbwWu" role="2Hmdds">
             <node concept="2OqwBi" id="27bTNFfbwWv" role="2Oq$k0">
               <node concept="2YIFZM" id="27bTNFfbwWw" role="2Oq$k0">
-                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
                 <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
                 <node concept="2OqwBi" id="27bTNFfbZAI" role="37wK5m">
                   <node concept="2WthIp" id="27bTNFfbZAJ" role="2Oq$k0" />

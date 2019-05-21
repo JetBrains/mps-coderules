@@ -215,7 +215,7 @@
           <node concept="2OqwBi" id="27bTNFfbxmn" role="2Hmdds">
             <node concept="2YIFZM" id="27bTNFfbxmo" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
               <node concept="2OqwBi" id="27bTNFfc3IH" role="37wK5m">
                 <node concept="2WthIp" id="27bTNFfc3II" role="2Oq$k0" />
                 <node concept="2XshWL" id="27bTNFfc3IJ" role="2OqNvi">
@@ -247,7 +247,7 @@
           <node concept="2OqwBi" id="27bTNFfbxmT" role="2Hmdds">
             <node concept="2YIFZM" id="27bTNFfbxmU" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
               <node concept="2OqwBi" id="27bTNFfc3Mz" role="37wK5m">
                 <node concept="2WthIp" id="27bTNFfc3M$" role="2Oq$k0" />
                 <node concept="2XshWL" id="27bTNFfc3M_" role="2OqNvi">
@@ -279,7 +279,7 @@
           <node concept="2OqwBi" id="27bTNFfbxnr" role="2Hmdds">
             <node concept="2YIFZM" id="27bTNFfbxns" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
               <node concept="2OqwBi" id="27bTNFfc3Qp" role="37wK5m">
                 <node concept="2WthIp" id="27bTNFfc3Qq" role="2Oq$k0" />
                 <node concept="2XshWL" id="27bTNFfc3Qr" role="2OqNvi">
@@ -311,7 +311,7 @@
           <node concept="2OqwBi" id="27bTNFfbxnX" role="2Hmdds">
             <node concept="2YIFZM" id="27bTNFfbxnY" role="2Oq$k0">
               <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
-              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TestLaunchTypechecking" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
               <node concept="2OqwBi" id="27bTNFfc3Uf" role="37wK5m">
                 <node concept="2WthIp" id="27bTNFfc3Ug" role="2Oq$k0" />
                 <node concept="2XshWL" id="27bTNFfc3Uh" role="2OqNvi">
