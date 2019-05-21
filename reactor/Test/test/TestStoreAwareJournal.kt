@@ -31,26 +31,26 @@ class TestStoreAwareJournal {
                     constraint("main")
                 ),
                 body(
-                    constraint("foo")
+                    princConstraint("foo")
                 )),
             rule("rule2",
                 headKept(
-                    constraint("foo")
+                    princConstraint("foo")
                 ),
                 body(
-                    constraint("bar")
+                    princConstraint("bar")
                 )),
             rule("rule3",
                 headKept(
-                    constraint("foo")
+                    princConstraint("foo")
                 ),
                 body(
-                    constraint("qux")
+                    princConstraint("qux")
                 )),
             rule("rule4",
                 headReplaced(
-                    constraint("bar"),
-                    constraint("qux")
+                    princConstraint("bar"),
+                    princConstraint("qux")
                 ),
                 body(
 //                    constraint("blin")
@@ -59,9 +59,9 @@ class TestStoreAwareJournal {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = StoreAwareJournal.fromSeed()
-            val mainOcc = justifiedOccurrence("main", setOf(0))
-//            hist.logActivation(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
+            val hist = StoreAwareJournal.fromView()
+            val mainOcc = occurrence("main")
+            hist.logActivation(mainOcc)
             d = d.expand(mainOcc)
 
             with(d.matches()) {
@@ -71,8 +71,8 @@ class TestStoreAwareJournal {
                     hist.logMatch(this)
 //                    rule().tag() shouldBe "rule1"
 
-                    hist.justs() shouldBe justsOf(0)
-                    val fooOcc = justifiedOccurrence("foo", hist.justs())
+                    hist.justs() shouldBe justsOf()
+                    val fooOcc = justifiedOccurrence("foo", setOf(1))
                     hist.logActivation(fooOcc)
                     d = d.expand(fooOcc)
                 }
@@ -85,7 +85,7 @@ class TestStoreAwareJournal {
                     hist.logMatch(this)
 //                    rule().tag() shouldBe "rule2"
 
-                    hist.justs() shouldBe justsOf(0,1)
+                    hist.justs() shouldBe justsOf(1)
                     val barOcc = justifiedOccurrence("bar", hist.justs())
                     hist.logActivation(barOcc)
                     d = d.expand(barOcc)
@@ -99,7 +99,7 @@ class TestStoreAwareJournal {
                     hist.logMatch(this)
 //                    rule().tag() shouldBe "rule3"
 
-                    hist.justs() shouldBe justsOf(0,2)
+                    hist.justs() shouldBe justsOf(1,2)
                     val quxOcc = justifiedOccurrence("qux", hist.justs())
                     hist.logActivation(quxOcc)
                     d = d.expand(quxOcc)
@@ -111,7 +111,7 @@ class TestStoreAwareJournal {
                             hist.logMatch(this)
 //                            rule().tag() shouldBe "rule4"
                         }
-                        hist.justs() shouldBe justsOf(0,1,2,3)
+                        hist.justs() shouldBe justsOf(1,2,3)
                     }
                 }
             }
@@ -127,37 +127,37 @@ class TestStoreAwareJournal {
                     constraint("main")
                 ),
                 body(
-                    constraint("foo")
+                    princConstraint("foo")
                 )),
             rule("rule2",
                 headKept(
-                    constraint("foo")
+                    princConstraint("foo")
                 ),
                 body(
-                    constraint("bar")
+                    princConstraint("bar")
                 )),
             rule("rule3",
                 headReplaced(
-                    constraint("bar"),
-                    constraint("foo")
+                    princConstraint("bar"),
+                    princConstraint("foo")
                 ),
                 body(
-                    constraint("qux")
+                    princConstraint("qux")
                 ))
             ))
         {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = StoreAwareJournal.fromSeed()
-            val mainOcc = justifiedOccurrence("main", setOf(0))
-//            hist.logActivation(mainOcc) // plays a role of the initial constraint, with no preceding RuleMatch
+            val hist = StoreAwareJournal.fromView()
+            val mainOcc = occurrence("main")
+            hist.logActivation(mainOcc)
             d = d.expand(mainOcc)
 
             with(d.matches().first()) {
                 hist.logMatch(this)
             }
-            val fooOcc = justifiedOccurrence("foo", hist.justs())
+            val fooOcc = justifiedOccurrence("foo", setOf(1))
             hist.logActivation(fooOcc)
             d = d.expand(fooOcc)
 
@@ -179,13 +179,15 @@ class TestStoreAwareJournal {
             // 'replay' to the saved pos after full 'resetStore' must restore the store
 
             val oldStore = hist.storeView().allOccurrences()
-            oldStore.count() shouldBe 1
+            oldStore.count() shouldBe 2 // 'qux' and 'main'
             val savedPos = hist.currentPos()
 
             hist.resetStore()
+
             hist.storeView().allOccurrences().count() shouldBe 0
 
             hist.replay(savedPos)
+
             hist.storeView().allOccurrences() shouldBe oldStore
             hist.currentPos().chunk() shouldBe savedPos.chunk()
             hist.currentPos().entriesInChunk() shouldBe savedPos.entriesInChunk()
@@ -193,11 +195,16 @@ class TestStoreAwareJournal {
     }
 
     @Test
+    fun testReplayInitialChunk() {
+
+    }
+
+    @Test
     fun testPushExecReset() {
         with(programWithRules(
             rule("rule1",
                 headKept(
-                    princConstraint("main")
+                    constraint("main")
                 ),
                 body(
                     princConstraint("foo")
@@ -232,15 +239,16 @@ class TestStoreAwareJournal {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = StoreAwareJournal.fromSeed()
-            val mainOcc = justifiedOccurrence("main", setOf(0))
+            val hist = StoreAwareJournal.fromView()
+            val mainOcc = occurrence("main")
+            hist.logActivation(mainOcc)
             d = d.expand(mainOcc)
 
             with(d.matches().first()) {
 //                rule().tag() shouldBe "rule1"
                 hist.logMatch(this)
             }
-            val fooOcc = justifiedOccurrence("foo", hist.justs())
+            val fooOcc = justifiedOccurrence("foo", setOf(1))
             hist.logActivation(fooOcc)
             d = d.expand(fooOcc)
 
@@ -308,7 +316,7 @@ class TestStoreAwareJournal {
         with(programWithRules(
             rule("rule0",
                 headKept(
-                    princConstraint("main")
+                    constraint("main")
                 ),
                 body(
                     princConstraint("foo")
@@ -370,15 +378,16 @@ class TestStoreAwareJournal {
 
             val disp = Dispatcher(RuleIndex(rulesLists))
             var d = disp.front()
-            val hist = StoreAwareJournal.fromSeed()
-            val mainOcc = justifiedOccurrence("main", setOf(0))
+            val hist = StoreAwareJournal.fromView()
+            val mainOcc = occurrence("main")
+            hist.logActivation(mainOcc)
             d = d.expand(mainOcc)
 
             with(d.matches().first()) {
 //                rule().tag() shouldBe "rule0"
                 hist.logMatch(this)
             }
-            val fooOcc = justifiedOccurrence("foo", hist.justs())
+            val fooOcc = justifiedOccurrence("foo", setOf(1))
             hist.logActivation(fooOcc); d = d.expand(fooOcc)
 
 
@@ -429,7 +438,7 @@ class TestStoreAwareJournal {
             // walk by history, remove the third chunk (i.e. match of rule2a)
             //  continue from the second chunk (match of rule1)
             val rmIt = hist.iterator()
-            rmIt.next()
+//            rmIt.next()
             val continueFrom = rmIt.next()
             rmIt.next()
             rmIt.remove()
@@ -474,7 +483,6 @@ class TestStoreAwareJournal {
             // only pOcc2 should be in the store
             val pStoredBeforeRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("p", 0))
             pStoredBeforeRoll.count() shouldBe 1
-            // todo?: check history before roll
 
             // finally, purely go the the end, applying the rest of the history to the store
             assertNotEquals(lastPos, hist.currentPos())
@@ -484,14 +492,11 @@ class TestStoreAwareJournal {
             hist.currentPos().chunk() shouldBeSame lastPos.chunk() // we inserted in the middle -- the last chunk should remain the same
 
             println(hist.view().toString())
-            println(hist.storeView().allOccurrences().toString())
 
             //somehow fails if 'p' is an occ without justifications! e.g. with equal null sets
             // e.g. see this: println(setOf(pOcc1, pOcc2))
             val pStoredAfterRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("p", 0))
             pStoredAfterRoll.count() shouldBe 2
-            // todo?: check history after roll
-
         }
     }
 }

@@ -22,13 +22,12 @@ import java.lang.IllegalArgumentException
 
 abstract class StoreAwareJournal(val journal: MatchJournal): MatchJournal by journal {
 
-    abstract fun testPush(): Unit
+    abstract fun testPush()
     abstract fun resetStore()
 
-    //fixme: move/remove?
+    // for tests
     companion object {
-        fun fromSeed(chunkIdSeed: Int = 0): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(chunkIdSeed))
-        fun fromView(view: MatchJournal.View): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(view))
+        fun fromView(view: MatchJournal.View? = null): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(view))
     }
 }
 

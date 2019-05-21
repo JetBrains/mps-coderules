@@ -38,9 +38,7 @@ internal class ControllerImpl (
 //    val journal: StoreAwareJournalImpl = StoreAwareJournalImpl(state, null)
 
     /** For tests only */
-//    override fun storeView(): StoreView = state.storeView()
-//    override fun storeView(): StoreView = journal.storeView()
-    override fun storeView(): StoreView = TODO()
+    override fun storeView(): StoreView = state.storeView()
 
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {

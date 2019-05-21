@@ -132,6 +132,7 @@ internal class ProcessingStateImpl(journal: MatchJournal,
                 trace.reactivate(active)
             }
 
+            logActivation(active)
             this.dispatchingFront = dispatchingFront.expand(active)
 
             val outStatus = dispatchingFront.matches().toList().fold(inStatus) { status, match ->
@@ -175,13 +176,15 @@ internal class ProcessingStateImpl(journal: MatchJournal,
 
 
     private fun accept (match: RuleMatchEx) {
+        logMatch(match)
+
         this.dispatchingFront = dispatchingFront.consume(match)
 
         match.forEachReplaced { occ ->
             this.dispatchingFront = dispatchingFront.contract(occ)
 
             occ.stored = false
-            occ.terminate()
+//            occ.terminate() // logMatch terminates occurrences
 
             trace.discard(occ)
         }
