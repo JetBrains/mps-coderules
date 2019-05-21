@@ -3,6 +3,7 @@ import jetbrains.mps.logic.reactor.core.internal.*
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.Test
 import org.junit.Assert.*
+import org.junit.Ignore
 
 /*
  * Copyright 2014-2019 JetBrains s.r.o.
@@ -200,6 +201,7 @@ class TestStoreAwareJournal {
     }
 
     @Test
+    @Ignore
     fun testPushExecReset() {
         with(programWithRules(
             rule("rule1",
@@ -278,9 +280,7 @@ class TestStoreAwareJournal {
             hist.logActivation(bazzOcc2)
             d = d.expand(bazzOcc2)
 
-            val oldState = hist.view()
-            val oldStore = hist.storeView().allOccurrences()
-            val savedPos = hist.currentPos()
+
             hist.testPush()
 
 
@@ -294,18 +294,26 @@ class TestStoreAwareJournal {
                 hist.logMatch(this)
                 hist.view().chunks.size shouldBe 3
             }
+
+            val oldState = hist.view()
+            val oldStore = hist.storeView().allOccurrences()
+            val savedPos = hist.currentPos()
+
+//            println("chunks on save: ${oldState.chunks}")
             val lastOcc = occurrence("last")
             hist.logActivation(lastOcc)
             d = d.expand(lastOcc)
 
-
+//            println("chunks on save: ${oldState.chunks}")
+//            println("chunks on exec: ${hist.view().chunks}")
             assertNotEquals(oldState.chunks, hist.view().chunks)
             assertNotEquals(oldStore, hist.storeView().allOccurrences())
+
             hist.reset(savedPos)
+
             hist.view().chunks shouldBe oldState.chunks
             hist.storeView().allOccurrences() shouldBe oldStore
 
-//            hist.currentPos() shouldBeSame savedPos
             hist.currentPos().chunk() shouldBe savedPos.chunk()
             hist.currentPos().entriesInChunk() shouldBe savedPos.entriesInChunk()
         }
@@ -490,8 +498,6 @@ class TestStoreAwareJournal {
 
             hist.view().chunks.size shouldBe 6
             hist.currentPos().chunk() shouldBeSame lastPos.chunk() // we inserted in the middle -- the last chunk should remain the same
-
-            println(hist.view().toString())
 
             //somehow fails if 'p' is an occ without justifications! e.g. with equal null sets
             // e.g. see this: println(setOf(pOcc1, pOcc2))

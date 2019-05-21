@@ -177,7 +177,6 @@ internal class ProcessingStateImpl(journal: MatchJournal,
 
     private fun accept (match: RuleMatchEx) {
         logMatch(match)
-
         this.dispatchingFront = dispatchingFront.consume(match)
 
         match.forEachReplaced { occ ->

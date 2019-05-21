@@ -55,6 +55,11 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         var occurrences: MutableList<Entry> = mutableListOf()
 
         override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, $occurrences)"
+        override fun equals(other: Any?) =
+            other is Chunk
+            && other.id == id
+            && other.occurrences == occurrences
+            && other.justifications == justifications
 
         override fun chunk(): Chunk = this
         override fun entriesInChunk(): Int = occurrences.size
@@ -132,16 +137,17 @@ internal open class MatchJournalImpl(view: MatchJournal.View? = null): MatchJour
 
     override fun reset(pastPos: MatchJournal.Pos) {
         while (pos.hasPrevious()) {
-            current = pos.previous()
             if (current === pastPos.chunk()) {
                 current.occurrences = current.occurrences.take(pastPos.entriesInChunk()) as MutableList<MatchJournal.Chunk.Entry>
                 return
             }
+            current = pos.previous()
             pos.remove()
         }
         throw IllegalStateException()
     }
 
+    // NB: can't replay inside the same chunk
     override fun replay(futurePos: MatchJournal.Pos) {
         while (pos.hasNext()) {
             current = pos.next()

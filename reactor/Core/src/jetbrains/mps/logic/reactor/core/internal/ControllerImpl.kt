@@ -131,8 +131,7 @@ internal class ControllerImpl (
                 }
             }
 
-            val savedFrame = state.currentFrame()
-//            val savedPos = journal.currentPos()
+            val savedPos = state.currentPos()
 
             for (item in body) {
                 val itemOk = when (item) {
@@ -178,8 +177,7 @@ internal class ControllerImpl (
 
             if (!altOk) {
                 // all constraints activated up to a failure are lost
-                state.reset(savedFrame)
-//                journal.reset(savedPos)
+                state.reset(savedPos)
 
             } else {
                 // body finished normally
