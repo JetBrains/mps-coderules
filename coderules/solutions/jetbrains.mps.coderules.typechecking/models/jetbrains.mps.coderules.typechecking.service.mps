@@ -4384,6 +4384,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="1GKZK$A5eIX" role="3cqZAp" />
         <node concept="3cpWs8" id="1FOQehxe22T" role="3cqZAp">
           <node concept="3cpWsn" id="1FOQehxe22U" role="3cpWs9">
             <property role="TrG5h" value="tc" />
@@ -6084,6 +6085,27 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="14$_tTxAhsw" role="3clF47">
+        <node concept="3SKdUt" id="1GKZK$AfPVy" role="3cqZAp">
+          <node concept="3SKdUq" id="1GKZK$AfPV$" role="3SKWNk">
+            <property role="3SKdUp" value="ensure read access" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="1GKZK$AfJKl" role="3cqZAp">
+          <node concept="2OqwBi" id="1GKZK$AfJKm" role="3clFbG">
+            <node concept="2OqwBi" id="1GKZK$AfJKn" role="2Oq$k0">
+              <node concept="37vLTw" id="1GKZK$AfJKo" role="2Oq$k0">
+                <ref role="3cqZAo" node="14$_tTxAlhx" resolve="repository" />
+              </node>
+              <node concept="liA8E" id="1GKZK$AfJKp" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess()" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1GKZK$AfJKq" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.checkReadAccess()" resolve="checkReadAccess" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1GKZK$AfIct" role="3cqZAp" />
         <node concept="3clFbF" id="443LGHBoCbP" role="3cqZAp">
           <node concept="2OqwBi" id="443LGHBoCbQ" role="3clFbG">
             <node concept="liA8E" id="443LGHBoCbR" role="2OqNvi">
@@ -6248,6 +6270,27 @@
       </node>
       <node concept="3Tm1VV" id="4Z$O9mrQJgs" role="1B3o_S" />
       <node concept="3clFbS" id="4Z$O9mrQJgt" role="3clF47">
+        <node concept="3SKdUt" id="1GKZK$Agevt" role="3cqZAp">
+          <node concept="3SKdUq" id="1GKZK$Agevv" role="3SKWNk">
+            <property role="3SKdUp" value="ensure read access" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="1GKZK$Ag9_X" role="3cqZAp">
+          <node concept="2OqwBi" id="1GKZK$Ag9_Y" role="3clFbG">
+            <node concept="2OqwBi" id="1GKZK$Ag9_Z" role="2Oq$k0">
+              <node concept="37vLTw" id="1GKZK$Ag9A0" role="2Oq$k0">
+                <ref role="3cqZAo" node="4Z$O9mrQIM1" resolve="repository" />
+              </node>
+              <node concept="liA8E" id="1GKZK$Ag9A1" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess()" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1GKZK$Ag9A2" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.checkReadAccess()" resolve="checkReadAccess" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1GKZK$Ag9_o" role="3cqZAp" />
         <node concept="3cpWs8" id="7Mte5SKjzLs" role="3cqZAp">
           <node concept="3cpWsn" id="7Mte5SKjzLt" role="3cpWs9">
             <property role="TrG5h" value="holder" />
@@ -6361,6 +6404,27 @@
       </node>
       <node concept="3Tm1VV" id="6QH_LDtbsGA" role="1B3o_S" />
       <node concept="3clFbS" id="6QH_LDtbsGB" role="3clF47">
+        <node concept="3SKdUt" id="1GKZK$Agzeg" role="3cqZAp">
+          <node concept="3SKdUq" id="1GKZK$Agzei" role="3SKWNk">
+            <property role="3SKdUp" value="ensure read access" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="1GKZK$AguoD" role="3cqZAp">
+          <node concept="2OqwBi" id="1GKZK$AguoE" role="3clFbG">
+            <node concept="2OqwBi" id="1GKZK$AguoF" role="2Oq$k0">
+              <node concept="37vLTw" id="1GKZK$AguoG" role="2Oq$k0">
+                <ref role="3cqZAo" node="4Z$O9mrQIM1" resolve="repository" />
+              </node>
+              <node concept="liA8E" id="1GKZK$AguoH" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess()" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1GKZK$AguoI" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.checkReadAccess()" resolve="checkReadAccess" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1GKZK$Agq$D" role="3cqZAp" />
         <node concept="3cpWs8" id="6QH_LDtbDEY" role="3cqZAp">
           <node concept="3cpWsn" id="6QH_LDtbDEZ" role="3cpWs9">
             <property role="TrG5h" value="holder" />
