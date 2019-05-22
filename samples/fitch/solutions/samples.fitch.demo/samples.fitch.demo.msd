@@ -8,7 +8,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
-    <dependency reexport="false">6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.typechecking)</dependency>
+    <dependency reexport="false">6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)</dependency>
     <dependency reexport="false">ec79e64d-4cbb-4f6c-b7b7-108dd125aba6(samples.fitch.propositionalLogic)</dependency>
     <dependency reexport="false">748b3ba1-2791-4ee8-b985-a5598baa7112(samples.fitch.herbrandLogic)</dependency>
     <dependency reexport="false">ddb01c98-e78e-4c79-b11a-aeba193668d4(samples.fitch.firstOrderLogic)</dependency>
@@ -36,6 +36,7 @@
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c(jetbrains.mps.coderules)" version="0" />
+    <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" version="0" />
     <module reference="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" version="0" />
     <module reference="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
@@ -43,7 +44,6 @@
     <module reference="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" version="0" />
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
     <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
-    <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.typechecking)" version="0" />
     <module reference="06b7c5c7-e359-4f4b-a581-5d0c9323af39(samples.fitch)" version="1" />
     <module reference="86925f4e-7856-4553-a261-c86fbf09bb52(samples.fitch.demo)" version="0" />
     <module reference="ddb01c98-e78e-4c79-b11a-aeba193668d4(samples.fitch.firstOrderLogic)" version="0" />

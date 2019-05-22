@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.typechecking.test" uuid="c9670c16-a215-41fb-8784-04b14329799d" moduleVersion="0" compileInMPS="true">
+<solution name="jetbrains.mps.coderules.typechecking.test" uuid="c9670c16-a215-41fb-8784-04b14329799d" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -12,9 +12,9 @@
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
     <dependency reexport="false">a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-    <dependency reexport="false">6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.typechecking)</dependency>
+    <dependency reexport="false">6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)</dependency>
     <dependency reexport="false">f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)</dependency>
-    <dependency reexport="false">f9bad4b1-59da-4f20-8feb-9f4cc4ad872e(jetbrains.mps.typechecking.testlang.sandbox)</dependency>
+    <dependency reexport="false">f9bad4b1-59da-4f20-8feb-9f4cc4ad872e(jetbrains.mps.coderules.typechecking.testlang.sandbox)</dependency>
     <dependency reexport="false">3a1f0f04-b5e0-43be-884e-b856bfdeca21(jetbrains.mps.typechecking.testlang)</dependency>
     <dependency reexport="false">b189d6c6-9397-4d64-88af-1ac73760a4f5(jetbrains.mps.logic.test)</dependency>
   </dependencies>
@@ -48,6 +48,9 @@
     <module reference="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
     <module reference="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c(jetbrains.mps.coderules)" version="0" />
+    <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" version="0" />
+    <module reference="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.coderules.typechecking.test)" version="0" />
+    <module reference="f9bad4b1-59da-4f20-8feb-9f4cc4ad872e(jetbrains.mps.coderules.typechecking.testlang.sandbox)" version="0" />
     <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
     <module reference="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" version="0" />
     <module reference="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" version="0" />
@@ -58,10 +61,7 @@
     <module reference="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" version="0" />
     <module reference="b189d6c6-9397-4d64-88af-1ac73760a4f5(jetbrains.mps.logic.test)" version="0" />
     <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
-    <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.typechecking)" version="0" />
-    <module reference="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.typechecking.test)" version="0" />
     <module reference="3a1f0f04-b5e0-43be-884e-b856bfdeca21(jetbrains.mps.typechecking.testlang)" version="0" />
-    <module reference="f9bad4b1-59da-4f20-8feb-9f4cc4ad872e(jetbrains.mps.typechecking.testlang.sandbox)" version="0" />
   </dependencyVersions>
 </solution>
 

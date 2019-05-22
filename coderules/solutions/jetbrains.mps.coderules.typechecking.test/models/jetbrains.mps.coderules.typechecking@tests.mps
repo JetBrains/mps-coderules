@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:cbfbe9a2-941f-4667-8e48-3bf39c5dad6d(jetbrains.mps.typechecking@tests)">
+<model ref="r:cbfbe9a2-941f-4667-8e48-3bf39c5dad6d(jetbrains.mps.coderules.typechecking@tests)">
   <persistence version="9" />
   <languages>
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
@@ -28,12 +28,12 @@
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
-    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" />
-    <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.typechecking.plugin)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
+    <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.coderules.typechecking.plugin)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
-    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
+    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.coderules.typechecking)" />
     <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
-    <import index="sppd" ref="r:0e60ac07-77c3-4d5c-b40d-73e8fd128592(jetbrains.mps.typechecking.testlang.sandbox.test)" />
+    <import index="sppd" ref="r:0e60ac07-77c3-4d5c-b40d-73e8fd128592(jetbrains.mps.coderules.typechecking.testlang.sandbox.test)" />
     <import index="qulx" ref="r:ec0979fb-ae37-4823-9eaa-8550d9f5c6fd(jetbrains.mps.typechecking.testlang.structure)" />
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
@@ -1309,7 +1309,7 @@
                       <node concept="3Tqbb2" id="6$7vuu2wZdp" role="1tU5fm" />
                       <node concept="2YIFZM" id="4RzhaQIJMX1" role="33vP2m">
                         <ref role="37wK5l" to="tj24:3IIf9O_u0Ck" resolve="typeOf" />
-                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="Typechecking" />
+                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
                         <node concept="2OqwBi" id="7mB3viLfF1U" role="37wK5m">
                           <node concept="1PxgMI" id="7mB3viLfDMv" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
@@ -1350,7 +1350,7 @@
                       <node concept="3Tqbb2" id="6$7vuu2xGoC" role="1tU5fm" />
                       <node concept="2YIFZM" id="4RzhaQIJMX2" role="33vP2m">
                         <ref role="37wK5l" to="tj24:3IIf9O_u0Ck" resolve="typeOf" />
-                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="Typechecking" />
+                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
                         <node concept="2OqwBi" id="7mB3viLfG$o" role="37wK5m">
                           <node concept="1PxgMI" id="7mB3viLfG$p" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
@@ -1743,7 +1743,7 @@
                       <node concept="10P_77" id="3IIf9OA557w" role="1tU5fm" />
                       <node concept="2YIFZM" id="4RzhaQIJMX3" role="33vP2m">
                         <ref role="37wK5l" to="tj24:3IIf9OA4ZMD" resolve="convertsTo" />
-                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="Typechecking" />
+                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
                         <node concept="37vLTw" id="3IIf9OA557F" role="37wK5m">
                           <ref role="3cqZAo" node="3IIf9OA4zN5" resolve="barType" />
                         </node>
@@ -1765,7 +1765,7 @@
                       <node concept="10P_77" id="2BZXJed03iA" role="1tU5fm" />
                       <node concept="2YIFZM" id="4RzhaQIJMX4" role="33vP2m">
                         <ref role="37wK5l" to="tj24:3IIf9OA4ZMD" resolve="convertsTo" />
-                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="Typechecking" />
+                        <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
                         <node concept="37vLTw" id="2BZXJed03iD" role="37wK5m">
                           <ref role="3cqZAo" node="3IIf9OA4zNj" resolve="quxType" />
                         </node>

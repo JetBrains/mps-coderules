@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)">
+<model ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
@@ -25,9 +25,9 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.typechecking.plugin)" />
+    <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.coderules.typechecking.plugin)" />
     <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
-    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.typechecking)" />
+    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.coderules.typechecking)" />
     <import index="1yqb" ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)" />
     <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
@@ -728,12 +728,12 @@
             <node concept="3cpWsn" id="27bTNFfaZ1y" role="3cpWs9">
               <property role="TrG5h" value="facade" />
               <node concept="3uibUv" id="27bTNFfaZ1z" role="1tU5fm">
-                <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
+                <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingService" />
               </node>
               <node concept="2OqwBi" id="27bTNFfaZ1$" role="33vP2m">
                 <node concept="2YIFZM" id="4RzhaQIJMX8" role="2Oq$k0">
                   <ref role="37wK5l" node="1FOQehxzbI0" resolve="forRepository" />
-                  <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
+                  <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingService" />
                   <node concept="37vLTw" id="27bTNFfaZ1A" role="37wK5m">
                     <ref role="3cqZAo" node="27bTNFfaZ1m" resolve="repository" />
                   </node>
@@ -4063,7 +4063,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7kaxm0sEy3e">
-    <property role="TrG5h" value="Typechecking" />
+    <property role="TrG5h" value="TypecheckingService" />
     <node concept="2tJIrI" id="7kaxm0sEy44" role="jymVt" />
     <node concept="2YIFZL" id="3IIf9O_u0Ck" role="jymVt">
       <property role="TrG5h" value="typeOf" />
@@ -4074,7 +4074,7 @@
           <node concept="2OqwBi" id="3IIf9O_u1Ig" role="3clFbG">
             <node concept="2YIFZM" id="3IIf9O_Z9Gn" role="2Oq$k0">
               <ref role="37wK5l" node="3IIf9O_Z6Ip" resolve="forNode" />
-              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
+              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingService" />
               <node concept="37vLTw" id="3IIf9O_Z9Go" role="37wK5m">
                 <ref role="3cqZAo" node="7kaxm0sEBL9" resolve="node" />
               </node>
@@ -4120,11 +4120,11 @@
           <node concept="3cpWsn" id="2BZXJecYEPF" role="3cpWs9">
             <property role="TrG5h" value="tf1" />
             <node concept="3uibUv" id="2BZXJecYEPD" role="1tU5fm">
-              <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
+              <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingService" />
             </node>
             <node concept="2YIFZM" id="2BZXJecYEPG" role="33vP2m">
               <ref role="37wK5l" node="3IIf9O_Z6Ip" resolve="forNode" />
-              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
+              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingService" />
               <node concept="37vLTw" id="2BZXJecYEPH" role="37wK5m">
                 <ref role="3cqZAo" node="3IIf9OA507H" resolve="from" />
               </node>
@@ -4135,11 +4135,11 @@
           <node concept="3cpWsn" id="2BZXJecYF1x" role="3cpWs9">
             <property role="TrG5h" value="tf2" />
             <node concept="3uibUv" id="2BZXJecYF1y" role="1tU5fm">
-              <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
+              <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingService" />
             </node>
             <node concept="2YIFZM" id="2BZXJecYF1z" role="33vP2m">
               <ref role="37wK5l" node="3IIf9O_Z6Ip" resolve="forNode" />
-              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
+              <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingService" />
               <node concept="37vLTw" id="2BZXJecYF8X" role="37wK5m">
                 <ref role="3cqZAo" node="3IIf9OA50dD" resolve="to" />
               </node>
@@ -4239,17 +4239,17 @@
         <node concept="3Tqbb2" id="3IIf9O_Z7fM" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3IIf9O_Z77V" role="3clF45">
-        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
+        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingService" />
       </node>
       <node concept="3Tmbuc" id="6$gg4kBQEdi" role="1B3o_S" />
       <node concept="3clFbS" id="3IIf9O_Z6It" role="3clF47">
         <node concept="3clFbF" id="3IIf9O_Z8fP" role="3cqZAp">
           <node concept="2ShNRf" id="3IIf9O_Z8fL" role="3clFbG">
             <node concept="1pGfFk" id="3IIf9O_Z9pb" role="2ShVmc">
-              <ref role="37wK5l" node="7kaxm0sEBCn" resolve="Typechecking" />
+              <ref role="37wK5l" node="7kaxm0sEBCn" resolve="TypecheckingService" />
               <node concept="2YIFZM" id="3IIf9O_Z9Ao" role="37wK5m">
                 <ref role="37wK5l" node="3IIf9O_tL1f" resolve="repository" />
-                <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="Typechecking" />
+                <ref role="1Pybhc" node="7kaxm0sEy3e" resolve="TypecheckingService" />
                 <node concept="37vLTw" id="3IIf9O_Z9Ap" role="37wK5m">
                   <ref role="3cqZAo" node="3IIf9O_Z79b" resolve="node" />
                 </node>
@@ -4276,14 +4276,14 @@
         </node>
       </node>
       <node concept="3uibUv" id="1FOQehxzdlB" role="3clF45">
-        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
+        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingService" />
       </node>
       <node concept="3Tmbuc" id="6$gg4k_fPQX" role="1B3o_S" />
       <node concept="3clFbS" id="1FOQehxzbI4" role="3clF47">
         <node concept="3clFbF" id="1FOQehxzdzZ" role="3cqZAp">
           <node concept="2ShNRf" id="1FOQehxzdzX" role="3clFbG">
             <node concept="1pGfFk" id="1FOQehxzdPc" role="2ShVmc">
-              <ref role="37wK5l" node="7kaxm0sEBCn" resolve="Typechecking" />
+              <ref role="37wK5l" node="7kaxm0sEBCn" resolve="TypecheckingService" />
               <node concept="37vLTw" id="1FOQehxzdTQ" role="37wK5m">
                 <ref role="3cqZAo" node="1FOQehxzduN" resolve="repository" />
               </node>
@@ -4302,7 +4302,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="5KrJ7UHN2kK" role="3clF45">
-        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="Typechecking" />
+        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingService" />
       </node>
       <node concept="3Tmbuc" id="6$gg4k_fH5z" role="1B3o_S" />
       <node concept="3clFbS" id="5KrJ7UHN1Lo" role="3clF47">

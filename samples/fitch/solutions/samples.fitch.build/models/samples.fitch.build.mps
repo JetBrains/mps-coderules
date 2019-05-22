@@ -12,7 +12,7 @@
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
-    <import index="zqd8" ref="r:4f157831-48e7-4c8f-a144-b5bbd1be1539(jetbrains.mps.typechecking.build)" />
+    <import index="zqd8" ref="r:4f157831-48e7-4c8f-a144-b5bbd1be1539(jetbrains.mps.coderules.build)" />
   </imports>
   <registry>
     <language id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests">
@@ -136,7 +136,7 @@
         </node>
         <node concept="1SiIV0" id="4$bYnYI$URR" role="3bR37C">
           <node concept="3bR9La" id="4$bYnYI$URS" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
+            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
         <node concept="1yeLz9" id="4$bYnYI$URT" role="1TViLv">
@@ -205,7 +205,7 @@
         </node>
         <node concept="1SiIV0" id="2Bpms61Tj7q" role="3bR37C">
           <node concept="3bR9La" id="2Bpms61Tj7r" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
+            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
       </node>
@@ -255,7 +255,7 @@
         </node>
         <node concept="1SiIV0" id="2Bpms61TBri" role="3bR37C">
           <node concept="3bR9La" id="2Bpms61TBrj" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
+            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
       </node>
@@ -300,7 +300,7 @@
         </node>
         <node concept="1SiIV0" id="2Bpms61TLDp" role="3bR37C">
           <node concept="3bR9La" id="2Bpms61TLDq" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
+            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
       </node>
@@ -342,7 +342,7 @@
         </node>
         <node concept="1SiIV0" id="5RH_cL_a8z4" role="3bR37C">
           <node concept="3bR9La" id="5RH_cL_a8z5" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.typechecking" />
+            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
       </node>

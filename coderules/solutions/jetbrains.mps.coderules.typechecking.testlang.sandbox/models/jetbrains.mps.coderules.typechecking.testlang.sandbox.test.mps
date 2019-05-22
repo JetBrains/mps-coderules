@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:0e60ac07-77c3-4d5c-b40d-73e8fd128592(jetbrains.mps.typechecking.testlang.sandbox.test)">
+<model ref="r:0e60ac07-77c3-4d5c-b40d-73e8fd128592(jetbrains.mps.coderules.typechecking.testlang.sandbox.test)">
   <persistence version="9" />
   <languages>
     <use id="3a1f0f04-b5e0-43be-884e-b856bfdeca21" name="jetbrains.mps.typechecking.testlang" version="0" />

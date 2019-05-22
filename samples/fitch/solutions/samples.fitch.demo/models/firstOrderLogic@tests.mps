@@ -11,7 +11,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="yhz9" ref="r:72b177ed-1924-4265-b8f3-64e062fd2eed(samples.fitch.firstOrderLogic.structure)" />
     <import index="ious" ref="r:2deee13f-4a3d-4229-ad45-9e5b85327419(samples.fitch.demo.firstOrderLogic)" />
-    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.typechecking.service)" />
+    <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">

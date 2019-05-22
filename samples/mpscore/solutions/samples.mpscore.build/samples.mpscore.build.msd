@@ -7,7 +7,7 @@
   </models>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.typechecking.build)</dependency>
+    <dependency reexport="false">bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.coderules.build)</dependency>
     <dependency reexport="false">422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)</dependency>
   </dependencies>
   <languageVersions>
@@ -24,8 +24,8 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>
+    <module reference="bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.coderules.build)" version="0" />
     <module reference="422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)" version="0" />
-    <module reference="bc9cd1e7-827b-4d61-b111-d2c896dcae6f(jetbrains.mps.typechecking.build)" version="0" />
     <module reference="d1dbf8e7-cee5-45f7-8159-4c825af0fe7d(samples.mpscore.build)" version="0" />
   </dependencyVersions>
 </solution>
