@@ -24,16 +24,25 @@ import org.junit.Ignore
 
 class TestStoreAwareJournal {
 
+    private class JournalDispatcherHelper(dispatcher: Dispatcher, val hist: StoreAwareJournal = StoreAwareJournal.fromView())
+    {
+        var d: Dispatcher.DispatchingFront = dispatcher.front()
+
+        fun logExpand(occ: Occurrence) {
+            hist.logActivation(occ)
+            d = d.expand(occ)
+        }
+
+        fun logFirstMatch() = hist.logMatch(d.matches().first())
+
+        // log and expand occurrence while tracking its justifications
+        fun logExpandJustified(id: String, vararg args: Any) =
+            logExpand(justifiedOccurrence(id, hist.justs(), * args))
+    }
+
     @Test
     fun testJustificationTracking() {
         with(programWithRules(
-            rule("rule1",
-                headKept(
-                    constraint("main")
-                ),
-                body(
-                    princConstraint("foo")
-                )),
             rule("rule2",
                 headKept(
                     princConstraint("foo")
@@ -53,91 +62,57 @@ class TestStoreAwareJournal {
                     princConstraint("bar"),
                     princConstraint("qux")
                 ),
-                body(
-//                    constraint("blin")
-                ))))
+                body()
+                )))
         {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-            val disp = Dispatcher(RuleIndex(rulesLists))
-            var d = disp.front()
-            val hist = StoreAwareJournal.fromView()
-            val mainOcc = occurrence("main")
-            hist.logActivation(mainOcc)
-            d = d.expand(mainOcc)
+                hist.justs() shouldBe justsOf()
 
-            with(d.matches()) {
-                count() shouldBe 1
+                logExpand(justifiedOccurrence("foo", setOf(1)))
+                val fooMatches = d.matches()
+                fooMatches.count() shouldBe 2
 
-                with(first()) {
-                    hist.logMatch(this)
-//                    rule().tag() shouldBe "rule1"
+                // log first 'foo' match
 
-                    hist.justs() shouldBe justsOf()
-                    val fooOcc = justifiedOccurrence("foo", setOf(1))
-                    hist.logActivation(fooOcc)
-                    d = d.expand(fooOcc)
-                }
-            }
+                hist.logMatch(fooMatches.first())
+                hist.justs() shouldBe justsOf(1)
 
-            with(d.matches()) {
-                count() shouldBe 2
+                logExpandJustified("bar")
+                d.matches().count() shouldBe 0
 
-                with(elementAt(0)) {
-                    hist.logMatch(this)
-//                    rule().tag() shouldBe "rule2"
+                // log second 'foo' match
 
-                    hist.justs() shouldBe justsOf(1)
-                    val barOcc = justifiedOccurrence("bar", hist.justs())
-                    hist.logActivation(barOcc)
-                    d = d.expand(barOcc)
+                hist.logMatch(fooMatches.elementAt(1))
+                hist.justs() shouldBe justsOf(1,2)
 
-                    with(d.matches()) {
-                        count() shouldBe 0
-                    }
-                }
+                logExpandJustified("qux")
+                d.matches().count() shouldBe 1
 
-                with(elementAt(1)) {
-                    hist.logMatch(this)
-//                    rule().tag() shouldBe "rule3"
-
-                    hist.justs() shouldBe justsOf(1,2)
-                    val quxOcc = justifiedOccurrence("qux", hist.justs())
-                    hist.logActivation(quxOcc)
-                    d = d.expand(quxOcc)
-
-                    with(d.matches()) {
-                        count() shouldBe 1
-
-                        with(first()) {
-                            hist.logMatch(this)
-//                            rule().tag() shouldBe "rule4"
-                        }
-                        hist.justs() shouldBe justsOf(1,2,3)
-                    }
-                }
+                logFirstMatch()
+                hist.justs() shouldBe justsOf(1,2,3)
             }
         }
     }
 
 
     @Test
-    fun testResetThenRoll() {
+    fun testReplayInitialChunk() {
+
+    }
+
+
+    @Test
+    fun testResetStoreThenReplay() {
         with(programWithRules(
             rule("rule1",
-                headKept(
-                    constraint("main")
-                ),
-                body(
-                    princConstraint("foo")
-                )),
-            rule("rule2",
                 headKept(
                     princConstraint("foo")
                 ),
                 body(
                     princConstraint("bar")
                 )),
-            rule("rule3",
+            rule("rule2",
                 headReplaced(
                     princConstraint("bar"),
                     princConstraint("foo")
@@ -147,70 +122,99 @@ class TestStoreAwareJournal {
                 ))
             ))
         {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-            val disp = Dispatcher(RuleIndex(rulesLists))
-            var d = disp.front()
-            val hist = StoreAwareJournal.fromView()
-            val mainOcc = occurrence("main")
-            hist.logActivation(mainOcc)
-            d = d.expand(mainOcc)
+                logExpand(justifiedOccurrence("foo", setOf(1)))
 
-            with(d.matches().first()) {
-                hist.logMatch(this)
+                logFirstMatch()
+                logExpandJustified("bar")
+
+                logFirstMatch()
+                logExpandJustified("qux")
+
+                // 'replay' to the saved pos after full 'resetStore' must restore the store
+                with(hist) {
+                    val oldStore = storeView().allOccurrences()
+                    oldStore.count() shouldBe 1 // 'qux'
+                    val savedPos = currentPos()
+
+                    resetStore()
+
+                    storeView().allOccurrences().count() shouldBe 0
+
+                    replay(savedPos)
+
+                    storeView().allOccurrences() shouldBe oldStore
+                    currentPos().chunk() shouldBe savedPos.chunk()
+                    currentPos().entriesInChunk() shouldBe savedPos.entriesInChunk()
+                }
             }
-            val fooOcc = justifiedOccurrence("foo", setOf(1))
-            hist.logActivation(fooOcc)
-            d = d.expand(fooOcc)
-
-
-            with(d.matches().first()) {
-                hist.logMatch(this)
-            }
-            val barOcc = justifiedOccurrence("bar", hist.justs())
-            hist.logActivation(barOcc)
-            d = d.expand(barOcc)
-
-            with(d.matches().first()) {
-                hist.logMatch(this)
-            }
-            val quxOcc = justifiedOccurrence("qux", hist.justs())
-            hist.logActivation(quxOcc)
-            d = d.expand(quxOcc)
-
-            // 'replay' to the saved pos after full 'resetStore' must restore the store
-
-            val oldStore = hist.storeView().allOccurrences()
-            oldStore.count() shouldBe 2 // 'qux' and 'main'
-            val savedPos = hist.currentPos()
-
-            hist.resetStore()
-
-            hist.storeView().allOccurrences().count() shouldBe 0
-
-            hist.replay(savedPos)
-
-            hist.storeView().allOccurrences() shouldBe oldStore
-            hist.currentPos().chunk() shouldBe savedPos.chunk()
-            hist.currentPos().entriesInChunk() shouldBe savedPos.entriesInChunk()
         }
     }
 
-    @Test
-    fun testReplayInitialChunk() {
-
-    }
 
     @Test
-    @Ignore
-    fun testPushExecReset() {
+    @Ignore("reset is tested properly in TestController")
+    fun testFullReset() {
         with(programWithRules(
             rule("rule1",
                 headKept(
-                    constraint("main")
+                    constraint("foo")
                 ),
                 body(
-                    princConstraint("foo")
+                    princConstraint("bar")
                 )),
+            rule("rule2",
+                headReplaced(
+                    princConstraint("bar"),
+                    constraint("foo")
+                ),
+                body(
+                    princConstraint("qux")
+                ))
+        ))
+        {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+
+                with(hist) {
+                    view().chunks.size shouldBe 1 // only initial chunk
+                    storeView().allOccurrences().count() shouldBe 0
+                }
+                val initialPos = hist.currentPos()
+
+                // execute program
+
+                hist.testPush()
+                logExpand(occurrence("foo"))
+
+                logFirstMatch()
+                // provide initial justification
+                logExpand(justifiedOccurrence("bar", setOf(1)))
+
+                logFirstMatch()
+                logExpandJustified("qux")
+
+
+                with(hist) {
+                    view().chunks.size shouldBe 2
+                    storeView().allOccurrences().count() shouldBe 1 // only "qux"
+
+                    // reset to the very beginning
+                    reset(initialPos)
+
+                    currentPos().chunk() shouldBe initialPos.chunk()
+                    view().chunks.size shouldBe 1
+                    storeView().allOccurrences().count() shouldBe 0
+                }
+            }
+        }
+    }
+
+
+    @Test
+    @Ignore("reset is tested properly in TestController")
+    fun testPushExecReset() {
+        with(programWithRules(
             rule("rule2",
                 headKept(
                     princConstraint("foo")
@@ -238,97 +242,71 @@ class TestStoreAwareJournal {
             ))
         ))
         {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-            val disp = Dispatcher(RuleIndex(rulesLists))
-            var d = disp.front()
-            val hist = StoreAwareJournal.fromView()
-            val mainOcc = occurrence("main")
-            hist.logActivation(mainOcc)
-            d = d.expand(mainOcc)
+                logExpand(justifiedOccurrence("foo", setOf(1)))
 
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "rule1"
-                hist.logMatch(this)
-            }
-            val fooOcc = justifiedOccurrence("foo", setOf(1))
-            hist.logActivation(fooOcc)
-            d = d.expand(fooOcc)
+                // rule2
+                logFirstMatch()
+                logExpand(occurrence("bar"))
+                logExpand(occurrence("bazz"))
+                // use this production later, but create it now to get relevant justs
+                val quxOcc = justifiedOccurrence("qux", hist.justs())
 
 
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "rule2"
-                hist.logMatch(this)
-            }
-            val barOcc = occurrence("bar")
-            val bazzOcc = occurrence("bazz")
-            val quxOcc = justifiedOccurrence("qux", hist.justs())
-            hist.logActivation(barOcc)
-            d = d.expand(barOcc)
-            hist.logActivation(bazzOcc)
-            d = d.expand(bazzOcc)
+                val curChunk = hist.currentPos().chunk()
+                // rule3
+                logFirstMatch()
+                logExpand(occurrence("bazz"))
+                // matched on rule with heads without justifications, should remain in the same chunk
+                hist.currentPos().chunk() shouldBeSame curChunk
 
 
-            val curChunk = hist.currentPos().chunk()
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "rule3"
-                hist.logMatch(this)
-            }
-            // matched on rule with heads without justifications, should remain in the same chunk
-            hist.currentPos().chunk() shouldBeSame curChunk
-
-            val bazzOcc2 = occurrence("bazz")
-            hist.logActivation(bazzOcc2)
-            d = d.expand(bazzOcc2)
+                // push happens before constraints in body are activated
+                hist.testPush()
+                // last production from rule2
+                logExpand(quxOcc)
+//                logExpandJustified("qux")
 
 
-            hist.testPush()
-
-
-            hist.logActivation(quxOcc)
-            d = d.expand(quxOcc)
-
-
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "rule4"
+                // rule4
                 hist.view().chunks.size shouldBe 2
-                hist.logMatch(this)
+                logFirstMatch()
+                // match on the principal constraint must add the chunk
                 hist.view().chunks.size shouldBe 3
-            }
 
-            val oldState = hist.view()
-            val oldStore = hist.storeView().allOccurrences()
-            val savedPos = hist.currentPos()
+
+                val oldState = hist.view()
+                val oldNChunks = oldState.chunks.size
+                val oldStore = hist.storeView().allOccurrences()
+                val savedPos = hist.currentPos()
 
 //            println("chunks on save: ${oldState.chunks}")
-            val lastOcc = occurrence("last")
-            hist.logActivation(lastOcc)
-            d = d.expand(lastOcc)
+                hist.testPush()
+                logExpand(occurrence("last"))
 
 //            println("chunks on save: ${oldState.chunks}")
 //            println("chunks on exec: ${hist.view().chunks}")
-            assertNotEquals(oldState.chunks, hist.view().chunks)
-            assertNotEquals(oldStore, hist.storeView().allOccurrences())
+                oldState.chunks.size shouldBe 3
+                assertNotEquals(oldState.chunks, hist.view().chunks)
+                assertNotEquals(oldStore, hist.storeView().allOccurrences())
 
-            hist.reset(savedPos)
+                hist.reset(savedPos)
 
-            hist.view().chunks shouldBe oldState.chunks
-            hist.storeView().allOccurrences() shouldBe oldStore
+                oldState.chunks.size shouldBe 2
+                hist.view().chunks shouldBe oldState.chunks
+                hist.storeView().allOccurrences() shouldBe oldStore
 
-            hist.currentPos().chunk() shouldBe savedPos.chunk()
-            hist.currentPos().entriesInChunk() shouldBe savedPos.entriesInChunk()
+                hist.currentPos().chunk() shouldBe savedPos.chunk()
+                hist.currentPos().entriesInChunk() shouldBe savedPos.entriesInChunk()
+            }
         }
     }
+
 
     @Test
     fun testRmAddInMiddle() {
         with(programWithRules(
-            rule("rule0",
-                headKept(
-                    constraint("main")
-                ),
-                body(
-                    princConstraint("foo")
-                )),
             rule("rule1",
                 headKept(
                     princConstraint("foo")
@@ -370,7 +348,6 @@ class TestStoreAwareJournal {
                     princConstraint("qux")
                 ),
                 body(
-//                    constraint("p")
                     princConstraint("p")
                 ))
         ))
@@ -384,125 +361,93 @@ class TestStoreAwareJournal {
             // fst exec: rule1 -> rule2a -> rule3 -> ruleMakeP
             // snd exec: rule1 -> rule2b -> ruleMakeP -> rule3 -> ruleMakeP
 
-            val disp = Dispatcher(RuleIndex(rulesLists))
-            var d = disp.front()
-            val hist = StoreAwareJournal.fromView()
-            val mainOcc = occurrence("main")
-            hist.logActivation(mainOcc)
-            d = d.expand(mainOcc)
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "rule0"
-                hist.logMatch(this)
+                logExpand(justifiedOccurrence("foo", setOf(1)))
+
+                // rule1
+                logFirstMatch()
+                logExpand(occurrence("bar1"))
+                logExpandJustified("bazz")
+
+                val rule1matches = d.matches()
+                rule1matches.count() shouldBe 2
+
+                // rule2a
+                hist.logMatch(rule1matches.first())
+                //no productions in rule2a
+
+                // rule3, this rule match will remain in history untouched
+                hist.logMatch(rule1matches.last())
+                logExpandJustified("qux")
+
+                // ruleMakeP
+                logFirstMatch()
+                logExpandJustified("p")
+
+                // execution has ended
+
+                val lastPos = hist.currentPos()
+                with(hist) {
+                    view().chunks.size shouldBe 5
+
+                    // bar1 was discarded by rule2a, so it shouldn't be in the store
+                    val bar1StoredBeforeRoll = storeView().occurrences(ConstraintSymbol.symbol("bar1", 0))
+                    bar1StoredBeforeRoll.count() shouldBe 0
+
+                    // walk by history, remove the third chunk (i.e. match of rule2a)
+                    //  continue from the second chunk (match of rule1)
+                    val rmIt = iterator()
+                    val continueFrom = rmIt.next()
+                    rmIt.next()
+                    rmIt.remove()
+
+                    // store is not longer valid after removing chunks from history, so reset it
+                    resetStore()
+                    // move to the point where we want to insert new rule
+                    replay(continueFrom)
+
+                    // we removed (canceled) rule discarding bar1, so after roll we should have it in the store
+                    val bar1StoredAfterRoll = storeView().occurrences(ConstraintSymbol.symbol("bar1", 0))
+                    bar1StoredAfterRoll.count() shouldBe 1
+                }
+
+                // add another instance of bar (i.e. bar2) and trigger another rule, rule2b
+                //  bar2 plays a role of the reactivation of original bar
+                logExpand(occurrence("bar2"))
+                // "bazz" is already produced
+
+                // we have only a single _new_ match; rule3 has been matched already and remains in the history, in future
+                d.matches().count() shouldBe 1
+                // rule2b, this rule match is added at the place of rule2a match
+                logFirstMatch()
+                logExpandJustified("qux")
+
+                d.matches().count() shouldBe 1
+                // ruleMakeP
+                logFirstMatch()
+                logExpandJustified("p")
+
+
+                with(hist) {
+                    view().chunks.size shouldBe 6
+
+                    // only pOcc2 should be in the store
+                    val pStoredBeforeRoll = storeView().occurrences(ConstraintSymbol.symbol("p", 0))
+                    pStoredBeforeRoll.count() shouldBe 1
+
+                    // finally, purely go the the end, applying the rest of the history to the store
+                    assertNotEquals(lastPos, currentPos())
+
+                    replay(lastPos)
+
+                    view().chunks.size shouldBe 6
+                    currentPos().chunk() shouldBeSame lastPos.chunk() // we inserted in the middle -- the last chunk should remain the same
+
+                    val pStoredAfterRoll = storeView().occurrences(ConstraintSymbol.symbol("p", 0))
+                    pStoredAfterRoll.count() shouldBe 2
+                }
             }
-            val fooOcc = justifiedOccurrence("foo", setOf(1))
-            hist.logActivation(fooOcc); d = d.expand(fooOcc)
-
-
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "rule1"
-                hist.logMatch(this)
-            }
-            val bar1Occ = occurrence("bar1")
-            val bazzOcc = justifiedOccurrence("bazz", hist.justs())
-            hist.logActivation(bar1Occ); d = d.expand(bar1Occ)
-            hist.logActivation(bazzOcc); d = d.expand(bazzOcc)
-
-
-            val rule1matches = d.matches()
-            rule1matches.count() shouldBe 2
-            with(rule1matches.first()) {
-//                rule().tag() shouldBe "rule2a"
-                hist.logMatch(this)
-            }
-            //no productions in rule2a
-
-            // this rule match will remain in history untouched
-            with(rule1matches.last()) {
-//                rule().tag() shouldBe "rule3"
-                hist.logMatch(this)
-            }
-            val quxOcc0 = justifiedOccurrence("qux", hist.justs())
-            hist.logActivation(quxOcc0); d = d.expand(quxOcc0)
-
-
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "ruleMakeP"
-                hist.logMatch(this)
-            }
-//            val pOcc1 = occurrence("p")
-            val pOcc1 = justifiedOccurrence("p", hist.justs())
-            hist.logActivation(pOcc1); d = d.expand(pOcc1)
-
-
-            // execution has ended
-            hist.view().chunks.size shouldBe 5
-            val lastPos = hist.currentPos()
-
-            // bar1 was discarded by rule2a, so it shouldn't be in the store
-            val bar1StoredBeforeRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("bar1", 0))
-            bar1StoredBeforeRoll.count() shouldBe 0
-
-            // walk by history, remove the third chunk (i.e. match of rule2a)
-            //  continue from the second chunk (match of rule1)
-            val rmIt = hist.iterator()
-//            rmIt.next()
-            val continueFrom = rmIt.next()
-            rmIt.next()
-            rmIt.remove()
-
-            // store is not longer valid after removing chunks from history, so reset it
-            hist.resetStore()
-            // move to the point where we want to insert new rule
-            hist.replay(continueFrom)
-
-            // we removed (canceled) rule discarding bar1, so after roll we should have it in the store
-            val bar1StoredAfterRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("bar1", 0))
-            bar1StoredAfterRoll.count() shouldBe 1
-
-
-            // add another instance of bar (i.e. bar2) and trigger another rule, rule2b
-            //  bar2 plays a role of the reactivation of original bar
-            val bar2Occ = occurrence("bar2")
-            hist.logActivation(bar2Occ); d = d.expand(bar2Occ)
-//            hist.logActivation(bazzOcc); d = d.expand(bazzOcc) // it is already produced
-
-            // we have only a single _new_ match; rule3 has been matched already and remains in the history, in future
-            d.matches().count() shouldBe 1
-            // this rule match is added at the place of rule2a match
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "rule2b"
-                hist.logMatch(this)
-            }
-            val quxOcc1 = justifiedOccurrence("qux", hist.justs())
-            hist.logActivation(quxOcc1); d = d.expand(quxOcc1)
-            hist.view().chunks.size shouldBe (3 + 1 + 1) // past + new added + future
-
-
-            d.matches().count() shouldBe 1
-            with(d.matches().first()) {
-//                rule().tag() shouldBe "ruleMakeP"
-                hist.logMatch(this)
-            }
-//            val pOcc2 = occurrence("p")
-            val pOcc2 = justifiedOccurrence("p", hist.justs())
-            hist.logActivation(pOcc2); d = d.expand(pOcc2)
-
-            // only pOcc2 should be in the store
-            val pStoredBeforeRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("p", 0))
-            pStoredBeforeRoll.count() shouldBe 1
-
-            // finally, purely go the the end, applying the rest of the history to the store
-            assertNotEquals(lastPos, hist.currentPos())
-            hist.replay(lastPos)
-
-            hist.view().chunks.size shouldBe 6
-            hist.currentPos().chunk() shouldBeSame lastPos.chunk() // we inserted in the middle -- the last chunk should remain the same
-
-            //somehow fails if 'p' is an occ without justifications! e.g. with equal null sets
-            // e.g. see this: println(setOf(pOcc1, pOcc2))
-            val pStoredAfterRoll = hist.storeView().occurrences(ConstraintSymbol.symbol("p", 0))
-            pStoredAfterRoll.count() shouldBe 2
         }
     }
 }

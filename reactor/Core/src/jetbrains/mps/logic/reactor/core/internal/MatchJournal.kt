@@ -138,7 +138,7 @@ internal open class MatchJournalImpl(view: MatchJournal.View? = null): MatchJour
     override fun reset(pastPos: MatchJournal.Pos) {
         while (pos.hasPrevious()) {
             if (current === pastPos.chunk()) {
-                current.occurrences = current.occurrences.take(pastPos.entriesInChunk()) as MutableList<MatchJournal.Chunk.Entry>
+                current.occurrences = current.occurrences.subList(0, pastPos.entriesInChunk())
                 return
             }
             current = pos.previous()
