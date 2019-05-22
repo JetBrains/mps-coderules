@@ -56,7 +56,7 @@ internal class ControllerImpl (
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext)
 
-        activateConstraint(constraint, context)
+        activateConstraint(constraint, emptyJusts(), context)
 
         return context.currentStatus()
     }
@@ -133,9 +133,15 @@ internal class ControllerImpl (
 
             val savedPos = state.currentPos()
 
+            val currentJusts = state.justs()
+
             for (item in body) {
                 val itemOk = when (item) {
-                    is Constraint -> activateConstraint(item, context)
+                    is Constraint -> {
+                        // track justifications only for principal constraints
+                        val justs = if (item.isPrincipal) currentJusts else emptyJusts()
+                        activateConstraint(item, justs, context)
+                    }
                     is Predicate -> tellPredicate(item, context)
                     else -> throw IllegalArgumentException("unknown item ${item}")
                 }
@@ -188,12 +194,10 @@ internal class ControllerImpl (
         return context.currentStatus()
     }
     
-    private fun activateConstraint(constraint: Constraint, context: Context) : Boolean {
+    private fun activateConstraint(constraint: Constraint, justs: Justs, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
-//            val justs = if (constraint.isPrincipal) journal.justs() else justsOf()
-            val justs = justsOf()
             state.processActivated(constraint.occurrence(this, args, justs, context.logicalContext), status)
         }
     }

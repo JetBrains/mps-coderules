@@ -27,6 +27,8 @@ import jetbrains.mps.logic.reactor.program.Constraint
 
 
 typealias Justs = TIntSet
+//fun emptyJusts() = object : TIntSet {}
+fun emptyJusts() = TIntHashSet(1)
 fun justsOf(vararg elements: Int) = TIntHashSet(elements)
 fun justsFromCollection(collection: Collection<Int>) = TIntHashSet(collection)
 
