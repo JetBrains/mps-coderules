@@ -8,7 +8,7 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="0fda14cc-a416-4c81-869a-2175d8b3325d" name="jetbrains.mps.baseLanguageExt" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
@@ -207,7 +207,7 @@
                         <node concept="2OqwBi" id="35YJGAJT$3b" role="Vysub">
                           <node concept="1jxXqW" id="35YJGAJT$3c" role="2Oq$k0" />
                           <node concept="liA8E" id="35YJGAJT$3d" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                            <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                           </node>
                         </node>
                       </node>
@@ -223,7 +223,7 @@
           <node concept="2OqwBi" id="35YJGAJTxW6" role="ukAjM">
             <node concept="1jxXqW" id="35YJGAJTxLs" role="2Oq$k0" />
             <node concept="liA8E" id="35YJGAJTy_W" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
             </node>
           </node>
         </node>

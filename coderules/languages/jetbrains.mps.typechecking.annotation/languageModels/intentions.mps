@@ -200,7 +200,7 @@
             <property role="TrG5h" value="text" />
             <node concept="17QB3L" id="1FOQehwZfE_" role="1tU5fm" />
             <node concept="2YIFZM" id="7KcYPxpVjXr" role="33vP2m">
-              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
               <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
               <node concept="2OqwBi" id="7KcYPxpVjXs" role="37wK5m">
                 <node concept="2Sf5sV" id="7KcYPxpVjXt" role="2Oq$k0" />

@@ -280,7 +280,7 @@
               <node concept="10Nm6u" id="2rIdnPwwLKh" role="3uHU7w" />
               <node concept="2YIFZM" id="2KEPLp6ICYM" role="3uHU7B">
                 <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
+                <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String)" resolve="getProperty" />
                 <node concept="Xl_RD" id="2KEPLp6ICYN" role="37wK5m">
                   <property role="Xl_RC" value="mps.test.modules" />
                 </node>
@@ -384,7 +384,7 @@
           </node>
           <node concept="2YIFZM" id="1Lr58WFTEwF" role="37wK5m">
             <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-            <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+            <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
             <node concept="1Xw6AR" id="1Lr58WFTEwG" role="37wK5m">
               <node concept="1dCxOl" id="1Lr58WFTEwH" role="1XwpL7">
                 <property role="1XweGQ" value="r:cc1a7719-27fc-407d-bcc3-f0a29456923e" />
@@ -502,7 +502,7 @@
                         <ref role="1PxDUh" to="d6hs:~NodeFlavouredItem" resolve="NodeFlavouredItem" />
                       </node>
                       <node concept="liA8E" id="1Lr58WFXFJa" role="2OqNvi">
-                        <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.tryToGet(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="tryToGet" />
+                        <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.tryToGet(jetbrains.mps.errors.item.FlavouredItem)" resolve="tryToGet" />
                         <node concept="37vLTw" id="1Lr58WFXIle" role="37wK5m">
                           <ref role="3cqZAo" node="1Lr58WFXqkn" resolve="reportItem" />
                         </node>
@@ -516,7 +516,7 @@
                     <ref role="1PxDUh" to="d6hs:~NodeFlavouredItem" resolve="NodeFlavouredItem" />
                   </node>
                   <node concept="liA8E" id="1Lr58WFX_tm" role="2OqNvi">
-                    <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.canGet(jetbrains.mps.errors.item.FlavouredItem):boolean" resolve="canGet" />
+                    <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.canGet(jetbrains.mps.errors.item.FlavouredItem)" resolve="canGet" />
                     <node concept="37vLTw" id="1Lr58WFX__e" role="37wK5m">
                       <ref role="3cqZAo" node="1Lr58WFXqkn" resolve="reportItem" />
                     </node>
@@ -528,7 +528,7 @@
                   <node concept="3cpWs6" id="1Lr58WFXIuP" role="3cqZAp">
                     <node concept="2OqwBi" id="1Lr58WFXIuQ" role="3cqZAk">
                       <node concept="liA8E" id="1Lr58WFXIuS" role="2OqNvi">
-                        <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.tryToGet(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="tryToGet" />
+                        <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.tryToGet(jetbrains.mps.errors.item.FlavouredItem)" resolve="tryToGet" />
                         <node concept="37vLTw" id="1Lr58WFXIuT" role="37wK5m">
                           <ref role="3cqZAo" node="1Lr58WFXqkn" resolve="reportItem" />
                         </node>
@@ -546,7 +546,7 @@
                     <ref role="1PxDUh" to="d6hs:~ModelFlavouredItem" resolve="ModelFlavouredItem" />
                   </node>
                   <node concept="liA8E" id="1Lr58WFXIuW" role="2OqNvi">
-                    <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.canGet(jetbrains.mps.errors.item.FlavouredItem):boolean" resolve="canGet" />
+                    <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.canGet(jetbrains.mps.errors.item.FlavouredItem)" resolve="canGet" />
                     <node concept="37vLTw" id="1Lr58WFXIuX" role="37wK5m">
                       <ref role="3cqZAo" node="1Lr58WFXqkn" resolve="reportItem" />
                     </node>
@@ -558,7 +558,7 @@
                   <node concept="3cpWs6" id="1Lr58WFXJex" role="3cqZAp">
                     <node concept="2OqwBi" id="1Lr58WFXJey" role="3cqZAk">
                       <node concept="liA8E" id="1Lr58WFXJez" role="2OqNvi">
-                        <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.tryToGet(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="tryToGet" />
+                        <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.tryToGet(jetbrains.mps.errors.item.FlavouredItem)" resolve="tryToGet" />
                         <node concept="37vLTw" id="1Lr58WFXJe$" role="37wK5m">
                           <ref role="3cqZAo" node="1Lr58WFXqkn" resolve="reportItem" />
                         </node>
@@ -576,7 +576,7 @@
                     <ref role="1PxDUh" to="d6hs:~ModuleFlavouredItem" resolve="ModuleFlavouredItem" />
                   </node>
                   <node concept="liA8E" id="1Lr58WFXJeC" role="2OqNvi">
-                    <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.canGet(jetbrains.mps.errors.item.FlavouredItem):boolean" resolve="canGet" />
+                    <ref role="37wK5l" to="d6hs:~FlavouredItem$ReportItemFlavour.canGet(jetbrains.mps.errors.item.FlavouredItem)" resolve="canGet" />
                     <node concept="37vLTw" id="1Lr58WFXJeD" role="37wK5m">
                       <ref role="3cqZAo" node="1Lr58WFXqkn" resolve="reportItem" />
                     </node>
@@ -674,7 +674,7 @@
             <node concept="2OqwBi" id="1Lr58WFTIHh" role="2GsD0m">
               <node concept="1jxXqW" id="1Lr58WFTIHi" role="2Oq$k0" />
               <node concept="liA8E" id="1Lr58WFTIHj" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~IProject.getProjectModules():java.util.List" resolve="getProjectModules" />
+                <ref role="37wK5l" to="z1c3:~IProject.getProjectModules()" resolve="getProjectModules" />
               </node>
             </node>
             <node concept="3clFbS" id="1Lr58WFTIHk" role="2LFqv$">
@@ -741,7 +741,7 @@
                 <node concept="2OqwBi" id="1Lr58WFTIHJ" role="37wK5m">
                   <node concept="1jxXqW" id="1Lr58WFTIHK" role="2Oq$k0" />
                   <node concept="liA8E" id="1Lr58WFTIHL" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="1Lr58WFTIHM" role="37wK5m">
@@ -770,7 +770,7 @@
                   <ref role="3cqZAo" node="1Lr58WFTIHu" resolve="collectConsumer" />
                 </node>
                 <node concept="liA8E" id="1Lr58WFTIHW" role="2OqNvi">
-                  <ref role="37wK5l" to="18ew:~CollectConsumer.getResult():java.util.Collection" resolve="getResult" />
+                  <ref role="37wK5l" to="18ew:~CollectConsumer.getResult()" resolve="getResult" />
                 </node>
               </node>
             </node>
@@ -794,7 +794,7 @@
                       <ref role="2Gs0qQ" node="1Lr58WFTIHY" resolve="r" />
                     </node>
                     <node concept="liA8E" id="1Lr58WFTII6" role="2OqNvi">
-                      <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
+                      <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity()" resolve="getSeverity" />
                     </node>
                   </node>
                 </node>
@@ -808,7 +808,7 @@
                   </node>
                   <node concept="2OqwBi" id="1Lr58WFTIIx" role="33vP2m">
                     <node concept="liA8E" id="1Lr58WFTIIz" role="2OqNvi">
-                      <ref role="37wK5l" to="d6hs:~ReportItemBase$SimpleReportItemFlavour.get(jetbrains.mps.errors.item.FlavouredItem):java.lang.Object" resolve="get" />
+                      <ref role="37wK5l" to="d6hs:~ReportItemBase$SimpleReportItemFlavour.get(jetbrains.mps.errors.item.FlavouredItem)" resolve="get" />
                       <node concept="2GrUjf" id="1Lr58WFTII$" role="37wK5m">
                         <ref role="2Gs0qQ" node="1Lr58WFTIHY" resolve="r" />
                       </node>
@@ -837,7 +837,7 @@
                             <ref role="2Gs0qQ" node="1Lr58WFTIHY" resolve="r" />
                           </node>
                           <node concept="liA8E" id="1Lr58WFUGgU" role="2OqNvi">
-                            <ref role="37wK5l" to="d6hs:~ReportItem.getMessage():java.lang.String" resolve="getMessage" />
+                            <ref role="37wK5l" to="d6hs:~ReportItem.getMessage()" resolve="getMessage" />
                           </node>
                         </node>
                         <node concept="Xl_RD" id="1Lr58WFUGgV" role="3uHU7w">
@@ -855,7 +855,7 @@
                     <ref role="3cqZAo" node="1Lr58WFTGDC" resolve="myErrorCollector" />
                   </node>
                   <node concept="liA8E" id="1Lr58WFUws3" role="2OqNvi">
-                    <ref role="37wK5l" to="a19p:~ErrorCollector.checkThat(java.lang.String,java.lang.Object,org.hamcrest.Matcher):void" resolve="checkThat" />
+                    <ref role="37wK5l" to="a19p:~ErrorCollector.checkThat(java.lang.String,java.lang.Object,org.hamcrest.Matcher)" resolve="checkThat" />
                     <node concept="37vLTw" id="1Lr58WFUGgW" role="37wK5m">
                       <ref role="3cqZAo" node="1Lr58WFUGgK" resolve="reason" />
                     </node>
@@ -863,7 +863,7 @@
                       <ref role="3cqZAo" node="1Lr58WFTII2" resolve="severity" />
                     </node>
                     <node concept="2YIFZM" id="1Lr58WFUBmv" role="37wK5m">
-                      <ref role="37wK5l" to="fczk:~IsNot.not(java.lang.Object):org.hamcrest.Matcher" resolve="not" />
+                      <ref role="37wK5l" to="fczk:~IsNot.not(java.lang.Object)" resolve="not" />
                       <ref role="1Pybhc" to="fczk:~IsNot" resolve="IsNot" />
                       <node concept="Rm8GO" id="1Lr58WFUBqA" role="37wK5m">
                         <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />

@@ -760,7 +760,7 @@
                 <ref role="3cqZAo" node="61vfVfpb5yr" resolve="o" />
               </node>
               <node concept="liA8E" id="61vfVfpb5$U" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Object.hashCode():int" resolve="hashCode" />
+                <ref role="37wK5l" to="wyt6:~Object.hashCode()" resolve="hashCode" />
               </node>
             </node>
           </node>
@@ -971,7 +971,7 @@
                   <ref role="3cqZAo" node="61vfVfpb5yN" resolve="myValue" />
                 </node>
                 <node concept="liA8E" id="61vfVfpb5_7" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
                 </node>
               </node>
             </node>

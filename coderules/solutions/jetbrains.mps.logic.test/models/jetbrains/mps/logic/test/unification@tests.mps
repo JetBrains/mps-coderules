@@ -334,7 +334,7 @@
                 <ref role="3cqZAo" node="5TfjU0xmAUC" resolve="x" />
               </node>
               <node concept="liA8E" id="5TfjU0xmGY8" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="5TfjU0xmH22" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -364,7 +364,7 @@
                 <ref role="3cqZAo" node="5TfjU0xmAUI" resolve="y" />
               </node>
               <node concept="liA8E" id="5TfjU0xmLGH" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="5TfjU0xmLLa" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -394,7 +394,7 @@
                 <ref role="3cqZAo" node="5TfjU0xmAUO" resolve="z" />
               </node>
               <node concept="liA8E" id="5TfjU0xmNLi" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="5TfjU0xmNRG" role="37wK5m">
                   <property role="Xl_RC" value="bar" />
                 </node>
@@ -1116,7 +1116,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3gNap3g8MRy" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="3gNap3g8MRS" role="37wK5m">
                   <property role="Xl_RC" value="xyz" />
                 </node>
@@ -2484,7 +2484,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1OShD0IfIGc" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
               </node>
             </node>
             <node concept="2OqwBi" id="1OShD0IfI6R" role="3tpDZB">
@@ -2495,7 +2495,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="1OShD0IfIj2" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
               </node>
             </node>
           </node>
@@ -3030,7 +3030,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3gNap3g823B" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
               </node>
             </node>
             <node concept="2OqwBi" id="3gNap3g823C" role="3tpDZB">
@@ -3041,7 +3041,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3gNap3g823F" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
               </node>
             </node>
           </node>
@@ -3088,7 +3088,7 @@
                 <ref role="3cqZAo" node="kTK1BfxNEZ" resolve="list" />
               </node>
               <node concept="liA8E" id="kTK1BfxPgH" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object)" resolve="add" />
                 <node concept="Xl_RD" id="kTK1BfxPuT" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -3101,7 +3101,7 @@
                 <ref role="3cqZAo" node="kTK1BfxNEZ" resolve="list" />
               </node>
               <node concept="liA8E" id="kTK1BfxQ7L" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object)" resolve="add" />
                 <node concept="Xl_RD" id="kTK1BfxQ7M" role="37wK5m">
                   <property role="Xl_RC" value="bar" />
                 </node>
@@ -3249,7 +3249,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="kTK1BfxL5W" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
               </node>
             </node>
             <node concept="2OqwBi" id="kTK1BfxL5X" role="3tpDZB">
@@ -3260,7 +3260,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="kTK1BfxL60" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
               </node>
             </node>
           </node>
@@ -3376,11 +3376,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3HJTsBn466m" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
               <node concept="liA8E" id="3HJTsBn466n" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
               </node>
             </node>
             <node concept="1oi1Uc" id="3eLgHzX3GZl" role="3tpDZB">
@@ -3501,11 +3501,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3gNap3g8enU" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
               <node concept="liA8E" id="3gNap3g8enV" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
               </node>
             </node>
             <node concept="Xl_RD" id="3gNap3g8eHS" role="3tpDZB">
@@ -3551,7 +3551,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3gNap3g8lCn" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="3gNap3g8lCK" role="37wK5m">
                   <property role="Xl_RC" value="xyz" />
                 </node>
@@ -3801,11 +3801,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="kTK1BfyxPc" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
               <node concept="liA8E" id="kTK1BfyxPd" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
               </node>
             </node>
             <node concept="1oi1Uc" id="kTK1BfyxPe" role="3tpDZB">
@@ -4008,11 +4008,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="6MYr6Jy8m2W" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
               <node concept="liA8E" id="6MYr6Jy8m2X" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
               </node>
             </node>
             <node concept="1oi1Uc" id="6MYr6Jy8lXX" role="3tpDZB">
@@ -4189,7 +4189,7 @@
                 <ref role="3cqZAo" node="1OShD0IfO6H" resolve="x" />
               </node>
               <node concept="liA8E" id="3mz2_dYyyKt" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
           </node>
@@ -4199,7 +4199,7 @@
                 <ref role="3cqZAo" node="1OShD0IfP49" resolve="y" />
               </node>
               <node concept="liA8E" id="3mz2_dYyyKx" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
           </node>
@@ -4210,7 +4210,7 @@
                   <ref role="3cqZAo" node="1OShD0IfP49" resolve="y" />
                 </node>
                 <node concept="liA8E" id="3mz2_dYyyKA" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                  <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
                 </node>
               </node>
               <node concept="2OqwBi" id="3mz2_dYyyKB" role="3uHU7B">
@@ -4218,7 +4218,7 @@
                   <ref role="3cqZAo" node="1OShD0IfO6H" resolve="x" />
                 </node>
                 <node concept="liA8E" id="3mz2_dYyyKD" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                  <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
                 </node>
               </node>
             </node>
@@ -4268,7 +4268,7 @@
                 <ref role="3cqZAo" node="1OShD0IfO6H" resolve="x" />
               </node>
               <node concept="liA8E" id="3mz2_dYyzcE" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
             <node concept="2OqwBi" id="3mz2_dYyzcF" role="3tpDZA">
@@ -4276,7 +4276,7 @@
                 <ref role="3cqZAo" node="1OShD0IfP49" resolve="y" />
               </node>
               <node concept="liA8E" id="3mz2_dYyzcH" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
           </node>
@@ -4462,7 +4462,7 @@
                 <ref role="3cqZAo" node="4XqG8ivylRa" resolve="x" />
               </node>
               <node concept="liA8E" id="3mz2_dYylmd" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
           </node>
@@ -4472,7 +4472,7 @@
                 <ref role="3cqZAo" node="4XqG8ivylRq" resolve="y" />
               </node>
               <node concept="liA8E" id="3mz2_dYylm_" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
           </node>
@@ -4483,7 +4483,7 @@
                   <ref role="3cqZAo" node="4XqG8ivylRq" resolve="y" />
                 </node>
                 <node concept="liA8E" id="3mz2_dYyuoZ" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                  <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
                 </node>
               </node>
               <node concept="2OqwBi" id="3mz2_dYyu5J" role="3uHU7B">
@@ -4491,7 +4491,7 @@
                   <ref role="3cqZAo" node="4XqG8ivylRa" resolve="x" />
                 </node>
                 <node concept="liA8E" id="3mz2_dYyudo" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                  <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
                 </node>
               </node>
             </node>
@@ -4541,7 +4541,7 @@
                 <ref role="3cqZAo" node="4XqG8ivylRa" resolve="x" />
               </node>
               <node concept="liA8E" id="3mz2_dYym2e" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
             <node concept="2OqwBi" id="3mz2_dYymac" role="3tpDZA">
@@ -4549,7 +4549,7 @@
                 <ref role="3cqZAo" node="4XqG8ivylRq" resolve="y" />
               </node>
               <node concept="liA8E" id="3mz2_dYymhu" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.get():jetbrains.mps.unification.Term" resolve="get" />
+                <ref role="37wK5l" to="yt73:~Term.get()" resolve="get" />
               </node>
             </node>
           </node>
@@ -4731,7 +4731,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVxI_" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -4947,7 +4947,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVtAm" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -4960,7 +4960,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVuqF" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -5177,7 +5177,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVrZL" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -5356,7 +5356,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVqqO" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -5485,7 +5485,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVo6f" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -5649,7 +5649,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVknj" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -5887,7 +5887,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVcT8" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -5916,7 +5916,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4$OyT8IVdCg" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -6310,11 +6310,11 @@
                     <ref role="3cqZAo" node="3K_0akS_bIv" resolve="p1" />
                   </node>
                   <node concept="liA8E" id="6HT7BWBPd0X" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                    <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="liA8E" id="6HT7BWBPd0Y" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                 </node>
               </node>
             </node>
@@ -6350,11 +6350,11 @@
                     <ref role="3cqZAo" node="6HT7BWBPd0T" resolve="value" />
                   </node>
                   <node concept="liA8E" id="3K_0akS_wH1" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Term.arguments():java.util.Collection" resolve="arguments" />
+                    <ref role="37wK5l" to="yt73:~Term.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3K_0akS_wH2" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Collection.iterator():java.util.Iterator" resolve="iterator" />
+                  <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
                 </node>
               </node>
             </node>
@@ -6365,7 +6365,7 @@
                 <ref role="3cqZAo" node="3K_0akS_wGU" resolve="it" />
               </node>
               <node concept="liA8E" id="3K_0akS_wH6" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+                <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
               </node>
             </node>
           </node>
@@ -6380,7 +6380,7 @@
                   <ref role="3cqZAo" node="3K_0akS_wGU" resolve="it" />
                 </node>
                 <node concept="liA8E" id="5YIOneOTrts" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+                  <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
                 </node>
               </node>
             </node>
@@ -6409,11 +6409,11 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3t7_2FgLmh_" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Collection.iterator():java.util.Iterator" resolve="iterator" />
+                    <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3t7_2FgLmhA" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+                  <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
                 </node>
               </node>
             </node>
@@ -6440,7 +6440,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3t7_2FgLjnj" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="3t7_2FgLjnk" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -6666,11 +6666,11 @@
                     <ref role="3cqZAo" node="3K_0akS_pDi" resolve="p1" />
                   </node>
                   <node concept="liA8E" id="6HT7BWBPhwQ" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                    <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="liA8E" id="6HT7BWBPhwR" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                 </node>
               </node>
             </node>
@@ -6706,11 +6706,11 @@
                     <ref role="3cqZAo" node="6HT7BWBPhwM" resolve="value" />
                   </node>
                   <node concept="liA8E" id="3K_0akS_pDV" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Term.arguments():java.util.Collection" resolve="arguments" />
+                    <ref role="37wK5l" to="yt73:~Term.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3K_0akS_pDW" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Collection.iterator():java.util.Iterator" resolve="iterator" />
+                  <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
                 </node>
               </node>
             </node>
@@ -6721,7 +6721,7 @@
                 <ref role="3cqZAo" node="3K_0akS_pDO" resolve="it" />
               </node>
               <node concept="liA8E" id="3K_0akS_pE0" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+                <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
               </node>
             </node>
           </node>
@@ -6736,7 +6736,7 @@
                   <ref role="3cqZAo" node="3K_0akS_pDO" resolve="it" />
                 </node>
                 <node concept="liA8E" id="5YIOneOTmzR" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+                  <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
                 </node>
               </node>
             </node>
@@ -6765,11 +6765,11 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3t7_2FgLnZI" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Collection.iterator():java.util.Iterator" resolve="iterator" />
+                    <ref role="37wK5l" to="33ny:~Collection.iterator()" resolve="iterator" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3t7_2FgLnZJ" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+                  <ref role="37wK5l" to="33ny:~Iterator.next()" resolve="next" />
                 </node>
               </node>
             </node>
@@ -6796,7 +6796,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3t7_2FgLgwS" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="3t7_2FgLg_$" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -7141,7 +7141,7 @@
                 <ref role="3cqZAo" node="6N2bvv_uTT3" resolve="x" />
               </node>
               <node concept="liA8E" id="6N2bvv_uVfr" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="6N2bvv_uVfI" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -7187,7 +7187,7 @@
                 <ref role="3cqZAo" node="6N2bvv_uTTM" resolve="y" />
               </node>
               <node concept="liA8E" id="6N2bvv_uWmD" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="6N2bvv_uWmW" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -7217,7 +7217,7 @@
                 <ref role="3cqZAo" node="6N2bvv_uWqJ" resolve="z" />
               </node>
               <node concept="liA8E" id="6N2bvv_uWrJ" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="6N2bvv_uWrK" role="37wK5m">
                   <property role="Xl_RC" value="bar" />
                 </node>
@@ -7682,7 +7682,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzB$SYy" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzB$T98" role="37wK5m">
                   <ref role="37wK5l" node="390NiL15T3$" resolve="asTermLogical" />
                   <node concept="37vLTw" id="6SwZmzB$ThZ" role="37wK5m">
@@ -7766,7 +7766,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBDVxE" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBDVCz" role="37wK5m">
                   <ref role="37wK5l" node="6SwZmzBDxdZ" resolve="asStringLogical" />
                   <node concept="37vLTw" id="6SwZmzBDVQT" role="37wK5m">
@@ -8207,7 +8207,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="390NiL15UsS" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="1oi1Uc" id="390NiL15U$k" role="37wK5m">
                   <node concept="1oi5UN" id="390NiL15UG0" role="1oi0x0">
                     <node concept="1oi5Wm" id="390NiL15UG2" role="1ojpOf">
@@ -8263,7 +8263,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBF$71" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBF$j1" role="37wK5m">
                   <ref role="37wK5l" node="390NiL15T3$" resolve="asTermLogical" />
                   <node concept="37vLTw" id="6SwZmzBF$wl" role="37wK5m">
@@ -8315,7 +8315,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBEcXI" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="6SwZmzBEd4F" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -8364,7 +8364,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBEnlT" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBEntc" role="37wK5m">
                   <ref role="37wK5l" node="6SwZmzBDxdZ" resolve="asStringLogical" />
                   <node concept="37vLTw" id="6SwZmzBEnGV" role="37wK5m">
@@ -8545,7 +8545,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBARwE" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBAR$P" role="37wK5m">
                   <ref role="37wK5l" node="390NiL15T3$" resolve="asTermLogical" />
                   <node concept="37vLTw" id="6SwZmzBARGN" role="37wK5m">
@@ -8713,7 +8713,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="390NiL16XbS" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="1oi1Uc" id="390NiL16Xcr" role="37wK5m">
                   <node concept="1oi5UN" id="390NiL16Xgj" role="1oi0x0">
                     <node concept="1oi5Wm" id="390NiL16Xgl" role="1ojpOf">
@@ -9091,7 +9091,7 @@
                 <ref role="3cqZAo" node="390NiL14HhZ" resolve="x" />
               </node>
               <node concept="liA8E" id="390NiL14Hir" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="390NiL14His" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -9147,7 +9147,7 @@
                 <ref role="3cqZAo" node="390NiL14Hi5" resolve="y" />
               </node>
               <node concept="liA8E" id="390NiL14HiB" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="390NiL14HiC" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -9182,7 +9182,7 @@
                 <ref role="3cqZAo" node="390NiL14Hib" resolve="z" />
               </node>
               <node concept="liA8E" id="390NiL14HiN" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="390NiL14HiO" role="37wK5m">
                   <property role="Xl_RC" value="bar" />
                 </node>
@@ -9677,7 +9677,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBAFqu" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBAFuk" role="37wK5m">
                   <ref role="37wK5l" node="390NiL16pUf" resolve="asTermLogical" />
                   <node concept="37vLTw" id="6SwZmzBAFBb" role="37wK5m">
@@ -9761,7 +9761,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBF8hC" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBF8hD" role="37wK5m">
                   <ref role="37wK5l" node="6SwZmzBEAPo" resolve="asStringLogical" />
                   <node concept="37vLTw" id="6SwZmzBF8hE" role="37wK5m">
@@ -10232,7 +10232,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="390NiL16dSg" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="1oi1Uc" id="390NiL16dSh" role="37wK5m">
                   <node concept="1oi5UN" id="390NiL16dSi" role="1oi0x0">
                     <node concept="1oi5Wm" id="390NiL16dSj" role="1ojpOf">
@@ -10288,7 +10288,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBFIh7" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBFIh8" role="37wK5m">
                   <ref role="37wK5l" node="390NiL16pUf" resolve="asTermLogical" />
                   <node concept="37vLTw" id="6SwZmzBFIh9" role="37wK5m">
@@ -10340,7 +10340,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBFOXV" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="Xl_RD" id="6SwZmzBFOXW" role="37wK5m">
                   <property role="Xl_RC" value="foo" />
                 </node>
@@ -10389,7 +10389,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBFSS4" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBFSS5" role="37wK5m">
                   <ref role="37wK5l" node="6SwZmzBEAPo" resolve="asStringLogical" />
                   <node concept="37vLTw" id="6SwZmzBFSS6" role="37wK5m">
@@ -10559,7 +10559,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6SwZmzBB4Lf" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="1rXfSq" id="6SwZmzBB4Pq" role="37wK5m">
                   <ref role="37wK5l" node="390NiL16pUf" resolve="asTermLogical" />
                   <node concept="37vLTw" id="6SwZmzBB4YH" role="37wK5m">
@@ -10722,7 +10722,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="390NiL171eP" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                 <node concept="1oi1Uc" id="390NiL171eQ" role="37wK5m">
                   <node concept="1oi5UN" id="390NiL171eR" role="1oi0x0">
                     <node concept="1oi5Wm" id="390NiL171eS" role="1ojpOf">

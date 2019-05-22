@@ -233,14 +233,14 @@
                 <ref role="3cqZAo" node="3KwBCAAvoo8" resolve="from" />
               </node>
               <node concept="liA8E" id="3KwBCAAvq5K" role="2OqNvi">
-                <ref role="37wK5l" to="unkn:~Single.observeOn(io.reactivex.Scheduler):io.reactivex.Single" resolve="observeOn" />
+                <ref role="37wK5l" to="unkn:~Single.observeOn(io.reactivex.Scheduler)" resolve="observeOn" />
                 <node concept="37vLTw" id="3KwBCAAvUzM" role="37wK5m">
                   <ref role="3cqZAo" node="3KwBCAAvTlq" resolve="scheduler" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="3KwBCAAvrSp" role="2OqNvi">
-              <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function):io.reactivex.Single" resolve="map" />
+              <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function)" resolve="map" />
               <node concept="1bVj0M" id="3KwBCAAvs4S" role="37wK5m">
                 <node concept="3clFbS" id="3KwBCAAvs4T" role="1bW5cS">
                   <node concept="3cpWs8" id="3KwBCAAvDKQ" role="3cqZAp">
@@ -291,7 +291,7 @@
                     <node concept="2OqwBi" id="3KwBCAAwANk" role="ukAjM">
                       <node concept="1jxXqW" id="3KwBCAAwAnn" role="2Oq$k0" />
                       <node concept="liA8E" id="3KwBCAAwBHn" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                        <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
                   </node>
@@ -359,14 +359,14 @@
                 <ref role="3cqZAo" node="3KwBCAAyxIp" resolve="from" />
               </node>
               <node concept="liA8E" id="3KwBCAAywI_" role="2OqNvi">
-                <ref role="37wK5l" to="unkn:~Single.observeOn(io.reactivex.Scheduler):io.reactivex.Single" resolve="observeOn" />
+                <ref role="37wK5l" to="unkn:~Single.observeOn(io.reactivex.Scheduler)" resolve="observeOn" />
                 <node concept="37vLTw" id="3KwBCAAywIA" role="37wK5m">
                   <ref role="3cqZAo" node="3KwBCAAyxIn" resolve="scheduler" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="3KwBCAAywIB" role="2OqNvi">
-              <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function):io.reactivex.Single" resolve="map" />
+              <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function)" resolve="map" />
               <node concept="1bVj0M" id="3KwBCAAywIC" role="37wK5m">
                 <node concept="3clFbS" id="3KwBCAAywID" role="1bW5cS">
                   <node concept="3cpWs8" id="3KwBCAAywIE" role="3cqZAp">
@@ -417,7 +417,7 @@
                     <node concept="2OqwBi" id="3KwBCAAz44L" role="ukAjM">
                       <node concept="1jxXqW" id="3KwBCAAz3xj" role="2Oq$k0" />
                       <node concept="liA8E" id="3KwBCAAz4P_" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                        <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                       </node>
                     </node>
                   </node>
@@ -478,16 +478,16 @@
             <node concept="2OqwBi" id="3KwBCAA$IHD" role="33vP2m">
               <node concept="2YIFZM" id="3KwBCAA$IHE" role="2Oq$k0">
                 <ref role="1Pybhc" to="unkn:~Single" resolve="Single" />
-                <ref role="37wK5l" to="unkn:~Single.just(java.lang.Object):io.reactivex.Single" resolve="just" />
+                <ref role="37wK5l" to="unkn:~Single.just(java.lang.Object)" resolve="just" />
                 <node concept="37vLTw" id="3KwBCAA$IHF" role="37wK5m">
                   <ref role="3cqZAo" node="3KwBCAA$IHu" resolve="list" />
                 </node>
               </node>
               <node concept="liA8E" id="3KwBCAA$IHG" role="2OqNvi">
-                <ref role="37wK5l" to="unkn:~Single.subscribeOn(io.reactivex.Scheduler):io.reactivex.Single" resolve="subscribeOn" />
+                <ref role="37wK5l" to="unkn:~Single.subscribeOn(io.reactivex.Scheduler)" resolve="subscribeOn" />
                 <node concept="2YIFZM" id="3KwBCAA$IHH" role="37wK5m">
                   <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
-                  <ref role="37wK5l" to="m4y7:~Schedulers.trampoline():io.reactivex.Scheduler" resolve="trampoline" />
+                  <ref role="37wK5l" to="m4y7:~Schedulers.trampoline()" resolve="trampoline" />
                 </node>
               </node>
             </node>
@@ -548,7 +548,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="3KwBCAA$II6" role="2OqNvi">
-                    <ref role="37wK5l" to="unkn:~Single.to(io.reactivex.functions.Function):java.lang.Object" resolve="to" />
+                    <ref role="37wK5l" to="unkn:~Single.to(io.reactivex.functions.Function)" resolve="to" />
                     <node concept="1bVj0M" id="3KwBCAA$II7" role="37wK5m">
                       <node concept="3clFbS" id="3KwBCAA$II8" role="1bW5cS">
                         <node concept="3clFbF" id="3KwBCAA$II9" role="3cqZAp">
@@ -586,7 +586,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3KwBCAA$IIl" role="2OqNvi">
-                  <ref role="37wK5l" to="unkn:~Single.timeout(long,java.util.concurrent.TimeUnit):io.reactivex.Single" resolve="timeout" />
+                  <ref role="37wK5l" to="unkn:~Single.timeout(long,java.util.concurrent.TimeUnit)" resolve="timeout" />
                   <node concept="3cmrfG" id="3KwBCAA$IIm" role="37wK5m">
                     <property role="3cmrfH" value="1" />
                   </node>
@@ -597,7 +597,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="3KwBCAA$IIo" role="2OqNvi">
-                <ref role="37wK5l" to="unkn:~Single.blockingGet():java.lang.Object" resolve="blockingGet" />
+                <ref role="37wK5l" to="unkn:~Single.blockingGet()" resolve="blockingGet" />
               </node>
             </node>
           </node>
@@ -668,7 +668,7 @@
               <ref role="3cqZAo" node="3KwBCAAwUO5" resolve="sem" />
             </node>
             <node concept="liA8E" id="3KwBCAAx$_P" role="2OqNvi">
-              <ref role="37wK5l" to="5zyv:~Semaphore.acquire():void" resolve="acquire" />
+              <ref role="37wK5l" to="5zyv:~Semaphore.acquire()" resolve="acquire" />
             </node>
           </node>
         </node>
@@ -708,16 +708,16 @@
                       </node>
                       <node concept="2OqwBi" id="3KwBCAAye5s" role="33vP2m">
                         <node concept="2YIFZM" id="3KwBCAAwrbV" role="2Oq$k0">
-                          <ref role="37wK5l" to="unkn:~Single.just(java.lang.Object):io.reactivex.Single" resolve="just" />
+                          <ref role="37wK5l" to="unkn:~Single.just(java.lang.Object)" resolve="just" />
                           <ref role="1Pybhc" to="unkn:~Single" resolve="Single" />
                           <node concept="37vLTw" id="3KwBCAAylmt" role="37wK5m">
                             <ref role="3cqZAo" node="3KwBCAAylmp" resolve="list" />
                           </node>
                         </node>
                         <node concept="liA8E" id="3KwBCAAygkh" role="2OqNvi">
-                          <ref role="37wK5l" to="unkn:~Single.subscribeOn(io.reactivex.Scheduler):io.reactivex.Single" resolve="subscribeOn" />
+                          <ref role="37wK5l" to="unkn:~Single.subscribeOn(io.reactivex.Scheduler)" resolve="subscribeOn" />
                           <node concept="2YIFZM" id="3KwBCAAyq1I" role="37wK5m">
-                            <ref role="37wK5l" to="m4y7:~Schedulers.trampoline():io.reactivex.Scheduler" resolve="trampoline" />
+                            <ref role="37wK5l" to="m4y7:~Schedulers.trampoline()" resolve="trampoline" />
                             <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
                           </node>
                         </node>
@@ -779,7 +779,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="3KwBCAA$16O" role="2OqNvi">
-                              <ref role="37wK5l" to="unkn:~Single.to(io.reactivex.functions.Function):java.lang.Object" resolve="to" />
+                              <ref role="37wK5l" to="unkn:~Single.to(io.reactivex.functions.Function)" resolve="to" />
                               <node concept="1bVj0M" id="3KwBCAA$265" role="37wK5m">
                                 <node concept="3clFbS" id="3KwBCAA$266" role="1bW5cS">
                                   <node concept="3clFbF" id="3KwBCAA$ctG" role="3cqZAp">
@@ -817,7 +817,7 @@
                             </node>
                           </node>
                           <node concept="liA8E" id="3KwBCAAwrcc" role="2OqNvi">
-                            <ref role="37wK5l" to="unkn:~Single.timeout(long,java.util.concurrent.TimeUnit):io.reactivex.Single" resolve="timeout" />
+                            <ref role="37wK5l" to="unkn:~Single.timeout(long,java.util.concurrent.TimeUnit)" resolve="timeout" />
                             <node concept="3cmrfG" id="3KwBCAAwrcd" role="37wK5m">
                               <property role="3cmrfH" value="1" />
                             </node>
@@ -828,7 +828,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="3KwBCAAwrcf" role="2OqNvi">
-                          <ref role="37wK5l" to="unkn:~Single.blockingGet():java.lang.Object" resolve="blockingGet" />
+                          <ref role="37wK5l" to="unkn:~Single.blockingGet()" resolve="blockingGet" />
                         </node>
                       </node>
                     </node>
@@ -868,7 +868,7 @@
                           <ref role="3cqZAo" node="3KwBCAAxblG" resolve="ex" />
                         </node>
                         <node concept="liA8E" id="3KwBCAAxnOn" role="2OqNvi">
-                          <ref role="37wK5l" to="18ew:~Reference.set(java.lang.Object):void" resolve="set" />
+                          <ref role="37wK5l" to="18ew:~Reference.set(java.lang.Object)" resolve="set" />
                           <node concept="37vLTw" id="3KwBCAAxo2e" role="37wK5m">
                             <ref role="3cqZAo" node="3KwBCAAxfRl" resolve="e" />
                           </node>
@@ -890,7 +890,7 @@
                         <ref role="3cqZAo" node="3KwBCAAwUO5" resolve="sem" />
                       </node>
                       <node concept="liA8E" id="3KwBCAAx5Kf" role="2OqNvi">
-                        <ref role="37wK5l" to="5zyv:~Semaphore.release():void" resolve="release" />
+                        <ref role="37wK5l" to="5zyv:~Semaphore.release()" resolve="release" />
                       </node>
                     </node>
                   </node>
@@ -901,7 +901,7 @@
           <node concept="2OqwBi" id="3KwBCAAwzoO" role="ukAjM">
             <node concept="1jxXqW" id="3KwBCAAwz3E" role="2Oq$k0" />
             <node concept="liA8E" id="3KwBCAAw_5s" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
             </node>
           </node>
         </node>
@@ -917,7 +917,7 @@
               <ref role="3cqZAo" node="3KwBCAAwUO5" resolve="sem" />
             </node>
             <node concept="liA8E" id="3KwBCAAwZzl" role="2OqNvi">
-              <ref role="37wK5l" to="5zyv:~Semaphore.acquire():void" resolve="acquire" />
+              <ref role="37wK5l" to="5zyv:~Semaphore.acquire()" resolve="acquire" />
             </node>
           </node>
         </node>
@@ -929,7 +929,7 @@
                   <ref role="3cqZAo" node="3KwBCAAxblG" resolve="ex" />
                 </node>
                 <node concept="liA8E" id="3KwBCAAxvjO" role="2OqNvi">
-                  <ref role="37wK5l" to="18ew:~Reference.get():java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="18ew:~Reference.get()" resolve="get" />
                 </node>
               </node>
             </node>
@@ -941,7 +941,7 @@
                 <ref role="3cqZAo" node="3KwBCAAxblG" resolve="ex" />
               </node>
               <node concept="liA8E" id="3KwBCAAxrG8" role="2OqNvi">
-                <ref role="37wK5l" to="18ew:~Reference.get():java.lang.Object" resolve="get" />
+                <ref role="37wK5l" to="18ew:~Reference.get()" resolve="get" />
               </node>
             </node>
           </node>

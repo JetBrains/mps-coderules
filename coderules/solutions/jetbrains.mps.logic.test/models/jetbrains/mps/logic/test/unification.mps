@@ -162,7 +162,7 @@
         <node concept="3clFbF" id="7ISVfSIf2T" role="3cqZAp">
           <node concept="2YIFZM" id="7ISVfSIf4g" role="3clFbG">
             <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-            <ref role="37wK5l" to="w7la:~EvaluationSession.setBackend(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Backend):void" resolve="setBackend" />
+            <ref role="37wK5l" to="w7la:~EvaluationSession.setBackend(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Backend)" resolve="setBackend" />
             <node concept="37vLTw" id="5jPBdK_KfE" role="37wK5m">
               <ref role="3cqZAo" node="5jPBdK_KfB" resolve="ourBackend" />
             </node>
@@ -179,7 +179,7 @@
         <node concept="3clFbF" id="5jPBdK_KqF" role="3cqZAp">
           <node concept="2YIFZM" id="5jPBdK_KEq" role="3clFbG">
             <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-            <ref role="37wK5l" to="w7la:~EvaluationSession.clearBackend(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Backend):void" resolve="clearBackend" />
+            <ref role="37wK5l" to="w7la:~EvaluationSession.clearBackend(jetbrains.mps.logic.reactor.evaluation.EvaluationSession$Backend)" resolve="clearBackend" />
             <node concept="37vLTw" id="5jPBdK_KEr" role="37wK5m">
               <ref role="3cqZAo" node="5jPBdK_KfB" resolve="ourBackend" />
             </node>

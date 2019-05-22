@@ -456,7 +456,7 @@
               </node>
               <node concept="tyxLq" id="7mB3viLb$9F" role="2OqNvi">
                 <node concept="2YIFZM" id="7mB3viLb$D4" role="tz02z">
-                  <ref role="37wK5l" to="wyt6:~Integer.valueOf(java.lang.String):java.lang.Integer" resolve="valueOf" />
+                  <ref role="37wK5l" to="wyt6:~Integer.valueOf(java.lang.String)" resolve="valueOf" />
                   <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
                   <node concept="ub8z3" id="7mB3viLb$Lt" role="37wK5m" />
                 </node>
@@ -657,7 +657,7 @@
                 <node concept="2OqwBi" id="7mB3viLh1na" role="37vLTx">
                   <node concept="ub8z3" id="7mB3viLh13D" role="2Oq$k0" />
                   <node concept="liA8E" id="7mB3viLh2bE" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.substring(int):java.lang.String" resolve="substring" />
+                    <ref role="37wK5l" to="wyt6:~String.substring(int)" resolve="substring" />
                     <node concept="3cmrfG" id="7mB3viLh2io" role="37wK5m">
                       <property role="3cmrfH" value="1" />
                     </node>
@@ -675,7 +675,7 @@
               <node concept="2OqwBi" id="7mB3viLhw1z" role="3clFbG">
                 <node concept="1Q80Hx" id="7mB3viLhvtt" role="2Oq$k0" />
                 <node concept="liA8E" id="7mB3viLhwvk" role="2OqNvi">
-                  <ref role="37wK5l" to="cj4x:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
+                  <ref role="37wK5l" to="cj4x:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode)" resolve="selectWRTFocusPolicy" />
                   <node concept="7Obwk" id="7mB3viLhx3z" role="37wK5m" />
                 </node>
               </node>

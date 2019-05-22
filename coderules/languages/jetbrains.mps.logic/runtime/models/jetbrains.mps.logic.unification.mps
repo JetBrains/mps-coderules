@@ -311,7 +311,7 @@
               <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
             </node>
             <node concept="liA8E" id="7HUwyZbdPaE" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~MetaLogical.isWildcard():boolean" resolve="isWildcard" />
+              <ref role="37wK5l" to="bj13:~MetaLogical.isWildcard()" resolve="isWildcard" />
             </node>
           </node>
         </node>
@@ -345,11 +345,11 @@
                 <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
               </node>
               <node concept="liA8E" id="7HUwyZbdW4K" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MetaLogical.type():java.lang.Class" resolve="type" />
+                <ref role="37wK5l" to="bj13:~MetaLogical.type()" resolve="type" />
               </node>
             </node>
             <node concept="liA8E" id="6OUp3PsSKJ7" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="37vLTw" id="6OUp3PsSKQb" role="37wK5m">
                 <ref role="3cqZAo" node="7HUwyZbdPnp" resolve="klass" />
               </node>
@@ -446,7 +446,7 @@
               <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
             </node>
             <node concept="liA8E" id="4sSe4$pscXp" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~MetaLogical.toString():java.lang.String" resolve="toString" />
+              <ref role="37wK5l" to="bj13:~MetaLogical.toString()" resolve="toString" />
             </node>
           </node>
         </node>
@@ -474,7 +474,7 @@
                   <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
                 </node>
                 <node concept="liA8E" id="3gNap3ffK22" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.hashCode():int" resolve="hashCode" />
+                  <ref role="37wK5l" to="wyt6:~Object.hashCode()" resolve="hashCode" />
                 </node>
               </node>
               <node concept="3cmrfG" id="3gNap3ffK23" role="3uHU7w">
@@ -530,7 +530,7 @@
               </node>
             </node>
             <node concept="liA8E" id="3gNap3ffK2p" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="2OqwBi" id="3gNap3ffK2q" role="37wK5m">
                 <node concept="1eOMI4" id="3gNap3ffK2r" role="2Oq$k0">
                   <node concept="10QFUN" id="3gNap3ffK2s" role="1eOMHV">
@@ -645,7 +645,7 @@
               <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
             </node>
             <node concept="liA8E" id="4TCblo5MV1e" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~Logical.isWildcard():boolean" resolve="isWildcard" />
+              <ref role="37wK5l" to="bj13:~Logical.isWildcard()" resolve="isWildcard" />
             </node>
           </node>
         </node>
@@ -680,7 +680,7 @@
                 <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
               </node>
               <node concept="liA8E" id="4TCblo5PfRq" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.metaLogical():jetbrains.mps.logic.reactor.logical.MetaLogical" resolve="metaLogical" />
+                <ref role="37wK5l" to="bj13:~Logical.metaLogical()" resolve="metaLogical" />
               </node>
             </node>
           </node>
@@ -693,15 +693,15 @@
                       <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
                     </node>
                     <node concept="liA8E" id="4TCblo5Pi8Z" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.metaLogical():jetbrains.mps.logic.reactor.logical.MetaLogical" resolve="metaLogical" />
+                      <ref role="37wK5l" to="bj13:~Logical.metaLogical()" resolve="metaLogical" />
                     </node>
                   </node>
                   <node concept="liA8E" id="4TCblo5Pj6t" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~MetaLogical.type():java.lang.Class" resolve="type" />
+                    <ref role="37wK5l" to="bj13:~MetaLogical.type()" resolve="type" />
                   </node>
                 </node>
                 <node concept="liA8E" id="6OUp3PsSHqC" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                   <node concept="37vLTw" id="6OUp3PsSJNn" role="37wK5m">
                     <ref role="3cqZAo" node="4TCblo5MWaD" resolve="klass" />
                   </node>
@@ -744,11 +744,11 @@
                     <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
                   </node>
                   <node concept="liA8E" id="4TCblo5NeWU" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                    <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="liA8E" id="4TCblo5NfQc" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                 </node>
               </node>
             </node>
@@ -759,7 +759,7 @@
               <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
             </node>
             <node concept="liA8E" id="4TCblo5Ndxq" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+              <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
             </node>
           </node>
           <node concept="9aQIb" id="4TCblo5Nikj" role="9aQIa">
@@ -808,7 +808,7 @@
               <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
             </node>
             <node concept="liA8E" id="4TCblo5MRBz" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+              <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
             </node>
           </node>
           <node concept="9aQIb" id="4TCblo5MQHu" role="9aQIa">
@@ -851,7 +851,7 @@
                 <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
               </node>
               <node concept="liA8E" id="3gNap3ffJAC" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -895,7 +895,7 @@
               <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
             </node>
             <node concept="liA8E" id="4TCblo5MZKI" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+              <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
             </node>
           </node>
         </node>
@@ -923,7 +923,7 @@
                   <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
                 </node>
                 <node concept="liA8E" id="4TCblo5N3Oz" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.hashCode():int" resolve="hashCode" />
+                  <ref role="37wK5l" to="wyt6:~Object.hashCode()" resolve="hashCode" />
                 </node>
               </node>
               <node concept="3cmrfG" id="4TCblo5N55b" role="3uHU7w">
@@ -979,7 +979,7 @@
               </node>
             </node>
             <node concept="liA8E" id="4TCblo5N8WJ" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="2OqwBi" id="4TCblo5Na0e" role="37wK5m">
                 <node concept="1eOMI4" id="4TCblo5N9Mc" role="2Oq$k0">
                   <node concept="10QFUN" id="4TCblo5N9Md" role="1eOMHV">
@@ -1078,7 +1078,7 @@
               <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
             </node>
             <node concept="liA8E" id="7BhUeN7y$2Z" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+              <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
             </node>
           </node>
           <node concept="3clFbS" id="7BhUeN7yx2g" role="3clFbx">
@@ -1089,11 +1089,11 @@
                     <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
                   </node>
                   <node concept="liA8E" id="7BhUeN7yAJo" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                    <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
                   </node>
                 </node>
                 <node concept="liA8E" id="7BhUeN7yB7W" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                 </node>
               </node>
             </node>
@@ -1127,7 +1127,7 @@
               <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
             </node>
             <node concept="liA8E" id="3gNap3fN2jY" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~Logical.isWildcard():boolean" resolve="isWildcard" />
+              <ref role="37wK5l" to="bj13:~Logical.isWildcard()" resolve="isWildcard" />
             </node>
           </node>
         </node>
@@ -1160,7 +1160,7 @@
               <ref role="3VsUkX" to="6exd:2xQ7eRAD2dj" resolve="Value" />
             </node>
             <node concept="liA8E" id="3gNap3fN3Rf" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="37vLTw" id="3gNap3fN3SA" role="37wK5m">
                 <ref role="3cqZAo" node="3gNap3fN2m4" resolve="klass" />
               </node>
@@ -1227,7 +1227,7 @@
               <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
             </node>
             <node concept="liA8E" id="7BhUeN7ylN8" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+              <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
             </node>
           </node>
           <node concept="9aQIb" id="7BhUeN7ylX0" role="9aQIa">
@@ -1270,7 +1270,7 @@
                 <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
               </node>
               <node concept="liA8E" id="7BhUeN7yoA4" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -1314,7 +1314,7 @@
               <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
             </node>
             <node concept="liA8E" id="3gNap3fN7WR" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+              <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
             </node>
           </node>
         </node>
@@ -1342,7 +1342,7 @@
                   <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
                 </node>
                 <node concept="liA8E" id="3gNap3fN7X4" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.hashCode():int" resolve="hashCode" />
+                  <ref role="37wK5l" to="wyt6:~Object.hashCode()" resolve="hashCode" />
                 </node>
               </node>
               <node concept="3cmrfG" id="3gNap3fN7X5" role="3uHU7w">
@@ -1398,7 +1398,7 @@
               </node>
             </node>
             <node concept="liA8E" id="3gNap3fN7Xr" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="2OqwBi" id="3gNap3fN7Xs" role="37wK5m">
                 <node concept="1eOMI4" id="3gNap3fN7Xt" role="2Oq$k0">
                   <node concept="10QFUN" id="3gNap3fN7Xu" role="1eOMHV">
@@ -1517,7 +1517,7 @@
               <ref role="3cqZAo" node="3gNap3fNdyC" resolve="metaLogical" />
             </node>
             <node concept="liA8E" id="3gNap3fNd$L" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~MetaLogical.isWildcard():boolean" resolve="isWildcard" />
+              <ref role="37wK5l" to="bj13:~MetaLogical.isWildcard()" resolve="isWildcard" />
             </node>
           </node>
         </node>
@@ -1550,7 +1550,7 @@
               <ref role="3VsUkX" to="6exd:2xQ7eRAD2dj" resolve="Value" />
             </node>
             <node concept="liA8E" id="3gNap3fNdAI" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="37vLTw" id="3gNap3fNdAJ" role="37wK5m">
                 <ref role="3cqZAo" node="3gNap3fNd_w" resolve="klass" />
               </node>
@@ -1647,7 +1647,7 @@
               <ref role="3cqZAo" node="3gNap3fNdyC" resolve="metaLogical" />
             </node>
             <node concept="liA8E" id="3gNap3fNdGf" role="2OqNvi">
-              <ref role="37wK5l" to="bj13:~MetaLogical.toString():java.lang.String" resolve="toString" />
+              <ref role="37wK5l" to="bj13:~MetaLogical.toString()" resolve="toString" />
             </node>
           </node>
         </node>
@@ -1675,7 +1675,7 @@
                   <ref role="3cqZAo" node="3gNap3fNdyC" resolve="metaLogical" />
                 </node>
                 <node concept="liA8E" id="3gNap3fNdGs" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.hashCode():int" resolve="hashCode" />
+                  <ref role="37wK5l" to="wyt6:~Object.hashCode()" resolve="hashCode" />
                 </node>
               </node>
               <node concept="3cmrfG" id="3gNap3fNdGt" role="3uHU7w">
@@ -1731,7 +1731,7 @@
               </node>
             </node>
             <node concept="liA8E" id="3gNap3fNdGN" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="2OqwBi" id="3gNap3fNdGO" role="37wK5m">
                 <node concept="1eOMI4" id="3gNap3fNdGP" role="2Oq$k0">
                   <node concept="10QFUN" id="3gNap3fNdGQ" role="1eOMHV">
@@ -1806,7 +1806,7 @@
                       <ref role="3cqZAo" node="7HUwyZb7b7D" resolve="multiMetaLogical" />
                     </node>
                     <node concept="liA8E" id="7HUwyZbdR3y" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~MultiMetaLogical.cardinality():int" resolve="cardinality" />
+                      <ref role="37wK5l" to="bj13:~MultiMetaLogical.cardinality()" resolve="cardinality" />
                     </node>
                   </node>
                 </node>
@@ -1836,7 +1836,7 @@
                       <ref role="3cqZAo" node="7HUwyZb7b7D" resolve="multiMetaLogical" />
                     </node>
                     <node concept="liA8E" id="7HUwyZbdRgZ" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~MultiMetaLogical.logicalAt(int):jetbrains.mps.logic.reactor.logical.MetaLogical" resolve="logicalAt" />
+                      <ref role="37wK5l" to="bj13:~MultiMetaLogical.logicalAt(int)" resolve="logicalAt" />
                       <node concept="37vLTw" id="7HUwyZbdRiC" role="37wK5m">
                         <ref role="3cqZAo" node="7HUwyZb7b8h" resolve="i" />
                       </node>
@@ -1862,7 +1862,7 @@
                 <ref role="3cqZAo" node="7HUwyZb7b7D" resolve="multiMetaLogical" />
               </node>
               <node concept="liA8E" id="7HUwyZbdR6B" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MultiMetaLogical.cardinality():int" resolve="cardinality" />
+                <ref role="37wK5l" to="bj13:~MultiMetaLogical.cardinality()" resolve="cardinality" />
               </node>
             </node>
           </node>
@@ -2172,7 +2172,7 @@
                         <ref role="3cqZAo" node="4TCblo5MI7r" resolve="logicalContext" />
                       </node>
                       <node concept="liA8E" id="3gNap3fZcZv" role="2OqNvi">
-                        <ref role="37wK5l" to="bj13:~LogicalContext.variable(jetbrains.mps.logic.reactor.logical.MetaLogical):jetbrains.mps.logic.reactor.logical.Logical" resolve="variable" />
+                        <ref role="37wK5l" to="bj13:~LogicalContext.variable(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="variable" />
                         <node concept="2OqwBi" id="3gNap3fZcZw" role="37wK5m">
                           <node concept="1eOMI4" id="3gNap3fZcZx" role="2Oq$k0">
                             <node concept="10QFUN" id="3gNap3fZcZy" role="1eOMHV">
@@ -2204,7 +2204,7 @@
                       <ref role="3cqZAo" node="4TCblo5MI7r" resolve="logicalContext" />
                     </node>
                     <node concept="liA8E" id="3gNap3fZcU9" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~LogicalContext.variable(jetbrains.mps.logic.reactor.logical.MetaLogical):jetbrains.mps.logic.reactor.logical.Logical" resolve="variable" />
+                      <ref role="37wK5l" to="bj13:~LogicalContext.variable(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="variable" />
                       <node concept="2OqwBi" id="3gNap3fZcUa" role="37wK5m">
                         <node concept="1eOMI4" id="3gNap3fZcUb" role="2Oq$k0">
                           <node concept="10QFUN" id="3gNap3fZcUc" role="1eOMHV">

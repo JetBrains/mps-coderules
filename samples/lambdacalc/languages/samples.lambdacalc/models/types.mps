@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="samples.lambdacalc" version="-1" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
@@ -3285,7 +3285,7 @@
                         <property role="2s7ueQ" value="error" />
                         <node concept="2YIFZM" id="6K6UrSyIfsz" role="2s7u9n">
                           <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                          <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                          <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...)" resolve="format" />
                           <node concept="Xl_RD" id="6K6UrSyIfs$" role="37wK5m">
                             <property role="Xl_RC" value="cannot unify '%s' and '%s'" />
                           </node>
@@ -4092,11 +4092,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="5zncGqweSkF" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
               <node concept="liA8E" id="5zncGqweSkG" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
               </node>
             </node>
           </node>
@@ -4169,11 +4169,11 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="48ZGLP8jezM" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.findRoot():jetbrains.mps.logic.reactor.logical.Logical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
               <node concept="liA8E" id="48ZGLP8jhiA" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
               </node>
             </node>
           </node>

@@ -426,7 +426,7 @@
                         <node concept="3clFbF" id="5p9vXslDHuK" role="3cqZAp">
                           <node concept="2YIFZM" id="5p9vXslDHuL" role="3clFbG">
                             <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                            <ref role="37wK5l" to="wyt6:~String.valueOf(int):java.lang.String" resolve="valueOf" />
+                            <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
                             <node concept="2OqwBi" id="5p9vXslDHuM" role="37wK5m">
                               <node concept="1PxgMI" id="5p9vXslDHuN" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />

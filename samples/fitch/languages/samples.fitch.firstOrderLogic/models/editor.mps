@@ -359,7 +359,7 @@
             <node concept="3clFbS" id="$u9BK_zdQj" role="2VODD2">
               <node concept="3clFbF" id="$u9BK_zdQk" role="3cqZAp">
                 <node concept="2YIFZM" id="$u9BK_zdQl" role="3clFbG">
-                  <ref role="37wK5l" to="wyt6:~String.valueOf(int):java.lang.String" resolve="valueOf" />
+                  <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
                   <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                   <node concept="2OqwBi" id="$u9BK_zdQm" role="37wK5m">
                     <node concept="pncrf" id="$u9BK_zdQn" role="2Oq$k0" />

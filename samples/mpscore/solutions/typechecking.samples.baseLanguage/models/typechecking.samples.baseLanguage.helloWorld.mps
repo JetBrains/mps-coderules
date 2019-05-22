@@ -189,7 +189,7 @@
               <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
             </node>
             <node concept="liA8E" id="3Qp4N06bAlY" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
               <node concept="Xl_RD" id="3Qp4N06bAlZ" role="37wK5m">
                 <property role="Xl_RC" value="Hello, world!" />
               </node>
@@ -201,10 +201,10 @@
           <node concept="2OqwBi" id="6flDoy9UcrU" role="3clFbG">
             <node concept="2YIFZM" id="3xj1Usc_M0M" role="2Oq$k0">
               <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-              <ref role="37wK5l" to="wyt6:~System.getenv():java.util.Map" resolve="getenv" />
+              <ref role="37wK5l" to="wyt6:~System.getenv()" resolve="getenv" />
             </node>
             <node concept="liA8E" id="6flDoy9UcGV" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+              <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object)" resolve="get" />
               <node concept="Xl_RD" id="6flDoy9UcNr" role="37wK5m">
                 <property role="Xl_RC" value="MPS_HOME" />
               </node>
@@ -597,7 +597,7 @@
                   <ref role="3cqZAo" node="5bC6UNlLkmm" resolve="res1" />
                 </node>
                 <node concept="liA8E" id="3g$8GQBPjvy" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
                   <node concept="Xl_RD" id="3g$8GQBPjwK" role="37wK5m">
                     <property role="Xl_RC" value="bcd" />
                   </node>
@@ -672,7 +672,7 @@
               <ref role="3cqZAo" node="W6bnNduw42" resolve="table" />
             </node>
             <node concept="liA8E" id="W6bnNduwWl" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Hashtable.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <ref role="37wK5l" to="33ny:~Hashtable.put(java.lang.Object,java.lang.Object)" resolve="put" />
               <node concept="37vLTw" id="W6bnNdux9p" role="37wK5m">
                 <ref role="3cqZAo" node="W6bnNduwoV" resolve="key" />
               </node>

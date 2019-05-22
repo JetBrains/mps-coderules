@@ -5,7 +5,7 @@
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="15" />
     <use id="cba985fe-1e96-4f16-9f8d-b07434405d4f" name="jetbrains.mps.lang.smodel.types" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
@@ -509,7 +509,7 @@
                   <node concept="3wWvb2" id="7mB3viLicin" role="3I6s78">
                     <node concept="2dkUwp" id="7mB3viLie3k" role="3wWo3s">
                       <node concept="2YIFZM" id="7mB3viLiciz" role="3uHU7B">
-                        <ref role="37wK5l" to="wyt6:~Integer.valueOf(java.lang.String):java.lang.Integer" resolve="valueOf" />
+                        <ref role="37wK5l" to="wyt6:~Integer.valueOf(java.lang.String)" resolve="valueOf" />
                         <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
                         <node concept="1TmgYN" id="7mB3viLicQJ" role="37wK5m">
                           <node concept="1nq8_$" id="7mB3viLicSp" role="1Tms7$">
@@ -520,7 +520,7 @@
                         </node>
                       </node>
                       <node concept="2YIFZM" id="7mB3viLie5Z" role="3uHU7w">
-                        <ref role="37wK5l" to="wyt6:~Integer.valueOf(java.lang.String):java.lang.Integer" resolve="valueOf" />
+                        <ref role="37wK5l" to="wyt6:~Integer.valueOf(java.lang.String)" resolve="valueOf" />
                         <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
                         <node concept="1TmgYN" id="7mB3viLie60" role="37wK5m">
                           <node concept="1nq8_$" id="7mB3viLie61" role="1Tms7$">

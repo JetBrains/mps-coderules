@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -211,7 +211,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="6dMt3c55VaG" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.createNode(org.jetbrains.mps.openapi.language.SConcept):org.jetbrains.mps.openapi.model.SNode" resolve="createNode" />
+                <ref role="37wK5l" to="mhbf:~SModel.createNode(org.jetbrains.mps.openapi.language.SConcept)" resolve="createNode" />
                 <node concept="10QFUN" id="6dMt3c55VaH" role="37wK5m">
                   <node concept="3uibUv" id="6dMt3c55VaI" role="10QFUM">
                     <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
@@ -250,7 +250,7 @@
       <node concept="3clFbS" id="6dMt3c55sOH" role="2VODD2">
         <node concept="3clFbF" id="6dMt3c55sXJ" role="3cqZAp">
           <node concept="2YIFZM" id="6dMt3c55th2" role="3clFbG">
-            <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+            <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...)" resolve="asList" />
             <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
             <node concept="35c_gC" id="6dMt3c55LmV" role="37wK5m">
               <ref role="35c_gD" to="5j4j:dfChU1zo4B" resolve="Splice" />
@@ -475,7 +475,7 @@
           <node concept="2OqwBi" id="2L$SfAAVDFR" role="3clFbG">
             <node concept="1XNTG" id="2L$SfAAVCjP" role="2Oq$k0" />
             <node concept="liA8E" id="2L$SfAAVEvn" role="2OqNvi">
-              <ref role="37wK5l" to="cj4x:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode):void" resolve="selectWRTFocusPolicy" />
+              <ref role="37wK5l" to="cj4x:~EditorContext.selectWRTFocusPolicy(org.jetbrains.mps.openapi.model.SNode)" resolve="selectWRTFocusPolicy" />
               <node concept="37vLTw" id="2L$SfABaakS" role="37wK5m">
                 <ref role="3cqZAo" node="2L$SfABaabI" resolve="attr" />
               </node>

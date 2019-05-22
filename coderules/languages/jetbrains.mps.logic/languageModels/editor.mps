@@ -5,7 +5,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
@@ -2944,7 +2944,7 @@
               </node>
               <node concept="2YIFZM" id="5yj19qaZwIW" role="33vP2m">
                 <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                <ref role="37wK5l" to="ykok:~ModelConstraints.getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,int,org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getReferenceDescriptor" />
+                <ref role="37wK5l" to="ykok:~ModelConstraints.getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,int,org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="getReferenceDescriptor" />
                 <node concept="3bvxqY" id="5yj19qaZwIX" role="37wK5m" />
                 <node concept="10Nm6u" id="5yj19qaZKuw" role="37wK5m" />
                 <node concept="3cmrfG" id="5yj19qaZwIZ" role="37wK5m">
@@ -2971,11 +2971,11 @@
                     <ref role="3cqZAo" node="5yj19qaZwIV" resolve="rd" />
                   </node>
                   <node concept="liA8E" id="4hPXq9JmeuE" role="2OqNvi">
-                    <ref role="37wK5l" to="ykok:~ReferenceDescriptor.getScope():jetbrains.mps.scope.Scope" resolve="getScope" />
+                    <ref role="37wK5l" to="ykok:~ReferenceDescriptor.getScope()" resolve="getScope" />
                   </node>
                 </node>
                 <node concept="liA8E" id="4hPXq9JmeuF" role="2OqNvi">
-                  <ref role="37wK5l" to="35tq:~Scope.getAvailableElements(java.lang.String):java.lang.Iterable" resolve="getAvailableElements" />
+                  <ref role="37wK5l" to="35tq:~Scope.getAvailableElements(java.lang.String)" resolve="getAvailableElements" />
                   <node concept="Xl_RD" id="4hPXq9JmeuG" role="37wK5m">
                     <property role="Xl_RC" value="" />
                   </node>

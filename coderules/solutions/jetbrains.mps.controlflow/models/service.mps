@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
@@ -232,7 +232,7 @@
               </node>
             </node>
             <node concept="liA8E" id="4t7Xo7iw0Kl" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
               <node concept="37vLTw" id="4t7Xo7iw11c" role="37wK5m">
                 <ref role="3cqZAo" node="4t7Xo7ivP5g" resolve="fqName" />
               </node>
@@ -302,14 +302,14 @@
               <node concept="2OqwBi" id="4t7Xo7ivWyB" role="3uHU7B">
                 <node concept="2OqwBi" id="2Mi2iz0Yf4b" role="2Oq$k0">
                   <node concept="1rXfSq" id="4t7Xo7ivWek" role="2Oq$k0">
-                    <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                    <ref role="37wK5l" to="wyt6:~Object.getClass()" resolve="getClass" />
                   </node>
                   <node concept="liA8E" id="2Mi2iz0YfRL" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Class.getPackage():java.lang.Package" resolve="getPackage" />
+                    <ref role="37wK5l" to="wyt6:~Class.getPackage()" resolve="getPackage" />
                   </node>
                 </node>
                 <node concept="liA8E" id="4t7Xo7ivWVU" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Package.getName():java.lang.String" resolve="getName" />
+                  <ref role="37wK5l" to="wyt6:~Package.getName()" resolve="getName" />
                 </node>
               </node>
               <node concept="Xl_RD" id="4t7Xo7ivXoD" role="3uHU7w">
@@ -396,7 +396,7 @@
               </node>
             </node>
             <node concept="liA8E" id="6Yb9hAqJTJO" role="2OqNvi">
-              <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function):io.reactivex.Single" resolve="map" />
+              <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function)" resolve="map" />
               <node concept="1bVj0M" id="6Yb9hAqJUtw" role="37wK5m">
                 <node concept="37vLTG" id="6Yb9hAqJUBz" role="1bW2Oz">
                   <property role="TrG5h" value="step" />
@@ -686,7 +686,7 @@
               <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TYPESYSTEM" resolve="TYPESYSTEM" />
             </node>
             <node concept="liA8E" id="5t4mtEg03Sb" role="2OqNvi">
-              <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String):jetbrains.mps.errors.item.IssueKindReportItem$ItemKind" resolve="deriveItemKind" />
+              <ref role="37wK5l" to="d6hs:~IssueKindReportItem$CheckerCategory.deriveItemKind(java.lang.String)" resolve="deriveItemKind" />
               <node concept="Xl_RD" id="5t4mtEg03Se" role="37wK5m">
                 <property role="Xl_RC" value="control flow" />
               </node>

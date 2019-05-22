@@ -9,7 +9,7 @@
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
   </languages>
   <imports>
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
@@ -316,10 +316,10 @@
       <node concept="3clFbS" id="5uFPQ7BZhBL" role="3clF47">
         <node concept="3clFbF" id="5uFPQ7BZjve" role="3cqZAp">
           <node concept="2YIFZM" id="5uFPQ7BZjxZ" role="3clFbG">
-            <ref role="37wK5l" to="33ny:~Collections.unmodifiableList(java.util.List):java.util.List" resolve="unmodifiableList" />
+            <ref role="37wK5l" to="33ny:~Collections.unmodifiableList(java.util.List)" resolve="unmodifiableList" />
             <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
             <node concept="2YIFZM" id="5uFPQ7BZjDb" role="37wK5m">
-              <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+              <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...)" resolve="asList" />
               <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
               <node concept="37vLTw" id="5uFPQ7BZjFA" role="37wK5m">
                 <ref role="3cqZAo" node="5uFPQ7BZe15" resolve="arguments" />
@@ -347,10 +347,10 @@
         <node concept="3clFbF" id="6Kcfpq7B99k" role="3cqZAp">
           <node concept="2OqwBi" id="5uFPQ7BZfDt" role="3clFbG">
             <node concept="1rXfSq" id="7ISVfSJnHs" role="2Oq$k0">
-              <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+              <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
             </node>
             <node concept="liA8E" id="5uFPQ7BZfHQ" role="2OqNvi">
-              <ref role="37wK5l" to="av0y:~PredicateSymbol.toString():java.lang.String" resolve="toString" />
+              <ref role="37wK5l" to="av0y:~PredicateSymbol.toString()" resolve="toString" />
             </node>
           </node>
         </node>
@@ -399,7 +399,7 @@
               <node concept="2OqwBi" id="6Kcfpq7B2Wo" role="3uHU7B">
                 <node concept="Xjq3P" id="6Kcfpq7B2Wp" role="2Oq$k0" />
                 <node concept="liA8E" id="6Kcfpq7B2Wq" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                  <ref role="37wK5l" to="wyt6:~Object.getClass()" resolve="getClass" />
                 </node>
               </node>
               <node concept="2OqwBi" id="6Kcfpq7B2Wr" role="3uHU7w">
@@ -407,7 +407,7 @@
                   <ref role="3cqZAo" node="6Kcfpq7B2W_" resolve="o" />
                 </node>
                 <node concept="liA8E" id="6Kcfpq7B2Wt" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                  <ref role="37wK5l" to="wyt6:~Object.getClass()" resolve="getClass" />
                 </node>
               </node>
             </node>
@@ -442,13 +442,13 @@
             <node concept="3fqX7Q" id="6Kcfpq7B2WO" role="3K4E3e">
               <node concept="2OqwBi" id="6Kcfpq7B2WP" role="3fr31v">
                 <node concept="liA8E" id="6Kcfpq7B2WQ" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                   <node concept="2OqwBi" id="6Kcfpq7B2WR" role="37wK5m">
                     <node concept="37vLTw" id="6Kcfpq7B2WC" role="2Oq$k0">
                       <ref role="3cqZAo" node="6Kcfpq7B2Ww" resolve="that" />
                     </node>
                     <node concept="liA8E" id="7ISVfSJor9" role="2OqNvi">
-                      <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                      <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
                     </node>
                   </node>
                 </node>
@@ -458,7 +458,7 @@
                       <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                     </node>
                     <node concept="1rXfSq" id="7ISVfSJomP" role="10QFUP">
-                      <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                      <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
                     </node>
                   </node>
                 </node>
@@ -467,7 +467,7 @@
             <node concept="3y3z36" id="6Kcfpq7B2WV" role="3K4Cdx">
               <node concept="10Nm6u" id="6Kcfpq7B2WW" role="3uHU7w" />
               <node concept="1rXfSq" id="7ISVfSJojN" role="3uHU7B">
-                <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
               </node>
             </node>
             <node concept="3y3z36" id="6Kcfpq7B2WX" role="3K4GZi">
@@ -477,7 +477,7 @@
                   <ref role="3cqZAo" node="6Kcfpq7B2Ww" resolve="that" />
                 </node>
                 <node concept="liA8E" id="7ISVfSJots" role="2OqNvi">
-                  <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                  <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
                 </node>
               </node>
             </node>
@@ -537,19 +537,19 @@
                   <node concept="3y3z36" id="6Kcfpq7B2Xt" role="3K4Cdx">
                     <node concept="10Nm6u" id="6Kcfpq7B2Xu" role="3uHU7w" />
                     <node concept="1rXfSq" id="7ISVfSJoxI" role="3uHU7B">
-                      <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                      <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="6Kcfpq7B2Xv" role="3K4E3e">
                     <node concept="2YIFZM" id="6Kcfpq7B2Xw" role="2Oq$k0">
                       <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                      <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
                       <node concept="1rXfSq" id="7ISVfSJoy$" role="37wK5m">
-                        <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                        <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
                       </node>
                     </node>
                     <node concept="liA8E" id="6Kcfpq7B2Xx" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~String.hashCode():int" resolve="hashCode" />
+                      <ref role="37wK5l" to="wyt6:~String.hashCode()" resolve="hashCode" />
                     </node>
                   </node>
                 </node>
@@ -798,11 +798,11 @@
                     <ref role="3cqZAo" node="2UGjFq4m5q1" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4m8A8" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4m8A9" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4m8Aa" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -814,11 +814,11 @@
                     <ref role="3cqZAo" node="2UGjFq4m5q1" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4m8Ae" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4m8Af" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4m8Ag" role="37wK5m">
                     <property role="3cmrfH" value="1" />
                   </node>
@@ -1078,11 +1078,11 @@
                     <ref role="3cqZAo" node="2UGjFq4mhER" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4mjWD" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4mjWE" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4mjWF" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -1094,11 +1094,11 @@
                     <ref role="3cqZAo" node="2UGjFq4mhER" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4mjWJ" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4mjWK" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4mjWL" role="37wK5m">
                     <property role="3cmrfH" value="1" />
                   </node>
@@ -1373,7 +1373,7 @@
                       <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
                     </node>
                     <node concept="liA8E" id="6OkhGGhHPxp" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term)" resolve="unify" />
                       <node concept="1eOMI4" id="5TfjU0x$pu8" role="37wK5m">
                         <node concept="10QFUN" id="5TfjU0x$pu5" role="1eOMHV">
                           <node concept="3uibUv" id="5TfjU0x$pua" role="10QFUM">
@@ -1445,7 +1445,7 @@
                       <ref role="3cqZAo" node="7K4Mb_J$cIB" resolve="subs" />
                     </node>
                     <node concept="liA8E" id="6SkxsMzEepC" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
+                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
                     </node>
                   </node>
                 </node>
@@ -1464,7 +1464,7 @@
                           <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                         </node>
                         <node concept="liA8E" id="1Ns6gpY7Sp0" role="2OqNvi">
-                          <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                          <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                         </node>
                       </node>
                     </node>
@@ -1518,7 +1518,7 @@
                                       <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                                     </node>
                                     <node concept="liA8E" id="6MYr6JwS1$p" role="2OqNvi">
-                                      <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                      <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                     </node>
                                   </node>
                                 </node>
@@ -1533,11 +1533,11 @@
                               <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6SkxsMzFMgY" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                             </node>
                           </node>
                           <node concept="liA8E" id="56MMu0Ap5n2" role="2OqNvi">
-                            <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
+                            <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind)" resolve="is" />
                             <node concept="Rm8GO" id="573vQv1oO8g" role="37wK5m">
                               <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
                               <ref role="Rm8GQ" to="yt73:~Term$Kind.FUN" resolve="FUN" />
@@ -1551,11 +1551,11 @@
                                 <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                               </node>
                               <node concept="liA8E" id="6SkxsMzFMD8" role="2OqNvi">
-                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                               </node>
                             </node>
                             <node concept="liA8E" id="56MMu0ApUkU" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
+                              <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind)" resolve="is" />
                               <node concept="Rm8GO" id="56MMu0ApUkV" role="37wK5m">
                                 <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
                                 <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
@@ -1578,7 +1578,7 @@
                                         <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                                       </node>
                                       <node concept="liA8E" id="6MYr6JwSbtd" role="2OqNvi">
-                                        <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                        <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                       </node>
                                     </node>
                                   </node>
@@ -1627,7 +1627,7 @@
                                   <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="3gNap3fZkiL" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
                             </node>
@@ -1646,7 +1646,7 @@
                                       <ref role="3cqZAo" node="3gNap3fZiSP" resolve="bvarLogical" />
                                     </node>
                                     <node concept="liA8E" id="3gNap3fZmj7" role="2OqNvi">
-                                      <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                      <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                                     </node>
                                   </node>
                                 </node>
@@ -1668,7 +1668,7 @@
                                             <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                                           </node>
                                           <node concept="liA8E" id="3gNap3fZlur" role="2OqNvi">
-                                            <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                            <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                           </node>
                                         </node>
                                       </node>
@@ -1698,7 +1698,7 @@
                                                       <ref role="3cqZAo" node="3gNap3fZmj4" resolve="left" />
                                                     </node>
                                                     <node concept="liA8E" id="3gNap3fZqTd" role="2OqNvi">
-                                                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -1723,7 +1723,7 @@
                                           <ref role="3cqZAo" node="3gNap3fZmj4" resolve="left" />
                                         </node>
                                         <node concept="liA8E" id="3gNap3fZq0K" role="2OqNvi">
-                                          <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                          <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                         </node>
                                       </node>
                                     </node>
@@ -1735,7 +1735,7 @@
                                     <ref role="3cqZAo" node="3gNap3fZmj4" resolve="left" />
                                   </node>
                                   <node concept="liA8E" id="3gNap3fZnds" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                    <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                   </node>
                                 </node>
                                 <node concept="9aQIb" id="3gNap3fZnen" role="9aQIa">
@@ -1746,7 +1746,7 @@
                                           <ref role="3cqZAo" node="3gNap3fZmj4" resolve="left" />
                                         </node>
                                         <node concept="liA8E" id="3gNap3fZp4c" role="2OqNvi">
-                                          <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                                          <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                                           <node concept="37vLTw" id="3gNap3fZp55" role="37wK5m">
                                             <ref role="3cqZAo" node="3gNap3fZluk" resolve="value" />
                                           </node>
@@ -1765,7 +1765,7 @@
                                 <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                               </node>
                               <node concept="liA8E" id="3gNap3fZkHV" role="2OqNvi">
-                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                               </node>
                             </node>
                           </node>
@@ -1784,7 +1784,7 @@
                                     <ref role="3cqZAo" node="3gNap3fZiSP" resolve="bvarLogical" />
                                   </node>
                                   <node concept="liA8E" id="3gNap3fZrMv" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                    <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                                   </node>
                                 </node>
                               </node>
@@ -1808,7 +1808,7 @@
                                           <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
                                         </node>
                                         <node concept="liA8E" id="3gNap3fZkUu" role="2OqNvi">
-                                          <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                          <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                         </node>
                                       </node>
                                       <node concept="3uibUv" id="3gNap3g07gl" role="3PaCim">
@@ -1817,7 +1817,7 @@
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="3gNap3fZsjf" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                    <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                                   </node>
                                 </node>
                               </node>
@@ -1842,7 +1842,7 @@
                                                     <ref role="3cqZAo" node="3gNap3fZrMs" resolve="left" />
                                                   </node>
                                                   <node concept="liA8E" id="3gNap3fZtZb" role="2OqNvi">
-                                                    <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                                    <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                                   </node>
                                                 </node>
                                               </node>
@@ -1855,7 +1855,7 @@
                                                 <ref role="3cqZAo" node="3gNap3fZkKR" resolve="right" />
                                               </node>
                                               <node concept="liA8E" id="3gNap3fZuQW" role="2OqNvi">
-                                                <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                               </node>
                                             </node>
                                           </node>
@@ -1872,7 +1872,7 @@
                                         <ref role="3cqZAo" node="3gNap3fZrMs" resolve="left" />
                                       </node>
                                       <node concept="liA8E" id="3gNap3fZtZi" role="2OqNvi">
-                                        <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                        <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                       </node>
                                     </node>
                                   </node>
@@ -1885,7 +1885,7 @@
                                     <ref role="3cqZAo" node="3gNap3fZkKR" resolve="right" />
                                   </node>
                                   <node concept="liA8E" id="3gNap3fZtYX" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                    <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                   </node>
                                 </node>
                                 <node concept="2OqwBi" id="3gNap3fZsy2" role="3uHU7B">
@@ -1893,7 +1893,7 @@
                                     <ref role="3cqZAo" node="3gNap3fZrMs" resolve="left" />
                                   </node>
                                   <node concept="liA8E" id="3gNap3fZt9V" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                    <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                   </node>
                                 </node>
                               </node>
@@ -1905,7 +1905,7 @@
                                         <ref role="3cqZAo" node="3gNap3fZrMs" resolve="left" />
                                       </node>
                                       <node concept="liA8E" id="7fidXgOaBT_" role="2OqNvi">
-                                        <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                                        <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                                         <node concept="37vLTw" id="7fidXgOaBTA" role="37wK5m">
                                           <ref role="3cqZAo" node="3gNap3fZkKR" resolve="right" />
                                         </node>
@@ -1947,7 +1947,7 @@
                     <ref role="3cqZAo" node="7K4Mb_J$cIB" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="6SkxsMzDp2f" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
+                    <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
                   </node>
                 </node>
               </node>
@@ -2093,7 +2093,7 @@
                   <ref role="3cqZAo" node="4U_yxogBZLE" resolve="left" />
                 </node>
                 <node concept="liA8E" id="6b_Nj5K6khf" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -2127,7 +2127,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1bm7a6EV5ci" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                    <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                     <node concept="1eOMI4" id="5TfjU0xyP_X" role="37wK5m">
                       <node concept="10QFUN" id="5TfjU0xyP_U" role="1eOMHV">
                         <node concept="16syzq" id="5TfjU0xJFts" role="10QFUM">
@@ -2149,7 +2149,7 @@
                   <ref role="3cqZAo" node="6b_Nj5K6khc" resolve="leftRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xJggS" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -2163,7 +2163,7 @@
                         <ref role="3cqZAo" node="6b_Nj5K6khc" resolve="leftRepr" />
                       </node>
                       <node concept="liA8E" id="5TfjU0xJhdk" role="2OqNvi">
-                        <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                        <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="6SkxsMzEV29" role="37wK5m">
@@ -2218,7 +2218,7 @@
                   <ref role="3cqZAo" node="4U_yxogC05J" resolve="left" />
                 </node>
                 <node concept="liA8E" id="7d$oK1$rAnI" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -2237,7 +2237,7 @@
                   <ref role="3cqZAo" node="4U_yxogC0jU" resolve="right" />
                 </node>
                 <node concept="liA8E" id="7d$oK1$rAnO" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -2266,7 +2266,7 @@
                       <ref role="3cqZAo" node="7d$oK1$rAnE" resolve="leftRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xIiEX" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="5TfjU0xIiEY" role="37wK5m">
@@ -2274,7 +2274,7 @@
                       <ref role="3cqZAo" node="7d$oK1$rAnK" resolve="rightRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xIiF0" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                 </node>
@@ -2287,7 +2287,7 @@
                   <ref role="3cqZAo" node="7d$oK1$rAnK" resolve="rightRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xIiF4" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5TfjU0xIiF5" role="3uHU7B">
@@ -2295,7 +2295,7 @@
                   <ref role="3cqZAo" node="7d$oK1$rAnE" resolve="leftRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xIiF7" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -2314,7 +2314,7 @@
                       <ref role="3cqZAo" node="7d$oK1$rAnE" resolve="leftRepr" />
                     </node>
                     <node concept="liA8E" id="1POzLwzdIuB" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                 </node>
@@ -2326,7 +2326,7 @@
                 <ref role="3cqZAo" node="7d$oK1$rAnE" resolve="leftRepr" />
               </node>
               <node concept="liA8E" id="1POzLwzdIjn" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
             <node concept="3eNFk2" id="1POzLwzdIv$" role="3eNLev">
@@ -2335,7 +2335,7 @@
                   <ref role="3cqZAo" node="7d$oK1$rAnK" resolve="rightRepr" />
                 </node>
                 <node concept="liA8E" id="1POzLwzdIvB" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
               <node concept="3clFbS" id="1POzLwzdIvC" role="3eOfB_">
@@ -2350,7 +2350,7 @@
                         <ref role="3cqZAo" node="7d$oK1$rAnK" resolve="rightRepr" />
                       </node>
                       <node concept="liA8E" id="1POzLwzdIvI" role="2OqNvi">
-                        <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                        <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                       </node>
                     </node>
                   </node>
@@ -2364,7 +2364,7 @@
                 <ref role="3cqZAo" node="7d$oK1$rAnE" resolve="leftRepr" />
               </node>
               <node concept="liA8E" id="1POzLwzdIw9" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical):void" resolve="union" />
+                <ref role="37wK5l" to="bj13:~MutableLogical.union(jetbrains.mps.logic.reactor.logical.MutableLogical)" resolve="union" />
                 <node concept="37vLTw" id="1POzLwzdIwa" role="37wK5m">
                   <ref role="3cqZAo" node="7d$oK1$rAnK" resolve="rightRepr" />
                 </node>
@@ -2407,7 +2407,7 @@
                   <ref role="3cqZAo" node="1POzLwyWxZf" resolve="logical" />
                 </node>
                 <node concept="liA8E" id="1POzLwyX6pL" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -2425,11 +2425,11 @@
                     <ref role="3cqZAo" node="1POzLwyX6pI" resolve="repr" />
                   </node>
                   <node concept="liA8E" id="1POzLwyWxYh" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~Logical.metaLogical():jetbrains.mps.logic.reactor.logical.MetaLogical" resolve="metaLogical" />
+                    <ref role="37wK5l" to="bj13:~Logical.metaLogical()" resolve="metaLogical" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1POzLwyWxYi" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.type():java.lang.Class" resolve="type" />
+                  <ref role="37wK5l" to="bj13:~MetaLogical.type()" resolve="type" />
                 </node>
               </node>
             </node>
@@ -2475,7 +2475,7 @@
                       <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
                     </node>
                     <node concept="liA8E" id="1POzLwyWxY$" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term)" resolve="unify" />
                       <node concept="2ShNRf" id="1POzLwyWxY_" role="37wK5m">
                         <node concept="1pGfFk" id="1POzLwyWxYA" role="2ShVmc">
                           <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
@@ -2543,7 +2543,7 @@
                       <ref role="3cqZAo" node="1POzLwyWxYw" resolve="subs" />
                     </node>
                     <node concept="liA8E" id="1POzLwyWxYZ" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
+                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
                     </node>
                   </node>
                 </node>
@@ -2562,7 +2562,7 @@
                   <ref role="3VsUkX" to="yt73:~Term" resolve="Term" />
                 </node>
                 <node concept="liA8E" id="1POzLwyWxZ7" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                  <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class)" resolve="isAssignableFrom" />
                   <node concept="37vLTw" id="1POzLwyWxZ8" role="37wK5m">
                     <ref role="3cqZAo" node="1POzLwyWxYb" resolve="cls" />
                   </node>
@@ -2611,7 +2611,7 @@
                       <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
                     </node>
                     <node concept="liA8E" id="6OkhGGhHV2K" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term)" resolve="unify" />
                       <node concept="10QFUN" id="5TfjU0xA2t7" role="37wK5m">
                         <node concept="3uibUv" id="5TfjU0xA2t5" role="10QFUM">
                           <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
@@ -2646,7 +2646,7 @@
                       <ref role="3cqZAo" node="7K4Mb_J$cIV" resolve="subs" />
                     </node>
                     <node concept="liA8E" id="6xYPVrp_rZ_" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
+                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
                     </node>
                   </node>
                 </node>
@@ -2676,7 +2676,7 @@
                                     <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                                   </node>
                                   <node concept="liA8E" id="6xYPVrp_rZY" role="2OqNvi">
-                                    <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                    <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                   </node>
                                 </node>
                               </node>
@@ -2686,7 +2686,7 @@
                                 <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                               </node>
                               <node concept="liA8E" id="6xYPVrp_s02" role="2OqNvi">
-                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                               </node>
                             </node>
                           </node>
@@ -2703,7 +2703,7 @@
                             <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                           </node>
                           <node concept="liA8E" id="7FFmDVAMd63" role="2OqNvi">
-                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                           </node>
                         </node>
                       </node>
@@ -2728,14 +2728,14 @@
                                         <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                                       </node>
                                       <node concept="liA8E" id="3gNap3g91F2" role="2OqNvi">
-                                        <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                        <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                       </node>
                                     </node>
                                   </node>
                                 </node>
                               </node>
                               <node concept="liA8E" id="3gNap3fZ_6Y" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                               </node>
                             </node>
                           </node>
@@ -2759,13 +2759,13 @@
                                           <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                                         </node>
                                         <node concept="liA8E" id="3gNap3fZ_79" role="2OqNvi">
-                                          <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                          <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                         </node>
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="3gNap3fZ_7a" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                    <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                                   </node>
                                 </node>
                               </node>
@@ -2788,7 +2788,7 @@
                                         <ref role="3cqZAo" node="3gNap3fZ_6T" resolve="bndLeft" />
                                       </node>
                                       <node concept="liA8E" id="3gNap3fZHmh" role="2OqNvi">
-                                        <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                        <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                       </node>
                                     </node>
                                   </node>
@@ -2800,7 +2800,7 @@
                                     <ref role="3cqZAo" node="3gNap3fZ_70" resolve="bndRight" />
                                   </node>
                                   <node concept="liA8E" id="3gNap3fZAJG" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                    <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                   </node>
                                 </node>
                                 <node concept="2OqwBi" id="3gNap3fZ_m6" role="3uHU7B">
@@ -2808,7 +2808,7 @@
                                     <ref role="3cqZAo" node="3gNap3fZ_6T" resolve="bndLeft" />
                                   </node>
                                   <node concept="liA8E" id="3gNap3fZ_Y5" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                    <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                   </node>
                                 </node>
                               </node>
@@ -2822,7 +2822,7 @@
                                 <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                               </node>
                               <node concept="liA8E" id="3gNap3fZ_5H" role="2OqNvi">
-                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                               </node>
                             </node>
                           </node>
@@ -2836,7 +2836,7 @@
                                   <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="3gNap3g91kQ" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
                             </node>
@@ -2855,7 +2855,7 @@
                                               <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                                             </node>
                                             <node concept="liA8E" id="3gNap3g94c0" role="2OqNvi">
-                                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                             </node>
                                           </node>
                                         </node>
@@ -2869,7 +2869,7 @@
                                         <ref role="3cqZAo" node="3gNap3fZ_6T" resolve="bndLeft" />
                                       </node>
                                       <node concept="liA8E" id="3gNap3g945W" role="2OqNvi">
-                                        <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                        <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                       </node>
                                     </node>
                                   </node>
@@ -2878,7 +2878,7 @@
                                       <ref role="3cqZAo" node="3gNap3fZ_6T" resolve="bndLeft" />
                                     </node>
                                     <node concept="liA8E" id="3gNap3g93IL" role="2OqNvi">
-                                      <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                      <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                     </node>
                                   </node>
                                 </node>
@@ -2899,7 +2899,7 @@
                             <ref role="3cqZAo" node="6xYPVrp_s03" resolve="bnd" />
                           </node>
                           <node concept="liA8E" id="3gNap3fZzxU" role="2OqNvi">
-                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                           </node>
                         </node>
                       </node>
@@ -2917,7 +2917,7 @@
                     <ref role="3cqZAo" node="7K4Mb_J$cIV" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="6xYPVrp_s07" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
+                    <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
                   </node>
                 </node>
               </node>
@@ -3052,17 +3052,17 @@
                               <ref role="3cqZAo" node="4U_yxogC1Ek" resolve="left" />
                             </node>
                             <node concept="liA8E" id="5TfjU0xJFH9" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                             </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="5TfjU0xCkrQ" role="2OqNvi">
-                          <ref role="37wK5l" to="bj13:~Logical.metaLogical():jetbrains.mps.logic.reactor.logical.MetaLogical" resolve="metaLogical" />
+                          <ref role="37wK5l" to="bj13:~Logical.metaLogical()" resolve="metaLogical" />
                         </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="5TfjU0xCkrR" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~MetaLogical.type():java.lang.Class" resolve="type" />
+                      <ref role="37wK5l" to="bj13:~MetaLogical.type()" resolve="type" />
                     </node>
                   </node>
                 </node>
@@ -3085,7 +3085,7 @@
                               <ref role="3cqZAo" node="4U_yxogC1Ek" resolve="left" />
                             </node>
                             <node concept="liA8E" id="5TfjU0xJFHd" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                             </node>
                           </node>
                         </node>
@@ -3115,7 +3115,7 @@
                           <ref role="3cqZAo" to="yt73:~Unification.INSTANCE" resolve="INSTANCE" />
                         </node>
                         <node concept="liA8E" id="5TfjU0xCks9" role="2OqNvi">
-                          <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                          <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term)" resolve="unify" />
                           <node concept="2ShNRf" id="5TfjU0xCksa" role="37wK5m">
                             <node concept="1pGfFk" id="5TfjU0xCksb" role="2ShVmc">
                               <ref role="37wK5l" to="oy3s:4TCblo5ML4I" resolve="LogicalDataForm" />
@@ -3148,7 +3148,7 @@
                           <ref role="3cqZAo" node="5TfjU0xCks5" resolve="subs" />
                         </node>
                         <node concept="liA8E" id="5TfjU0xCks$" role="2OqNvi">
-                          <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
+                          <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
                         </node>
                       </node>
                     </node>
@@ -3166,7 +3166,7 @@
                               <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="5TfjU0xHlrm" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                             </node>
                           </node>
                           <node concept="1eOMI4" id="5TfjU0xJFHq" role="3uHU7w">
@@ -3175,7 +3175,7 @@
                                 <ref role="3cqZAo" node="4U_yxogC1Ek" resolve="left" />
                               </node>
                               <node concept="liA8E" id="5TfjU0xJFHp" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                               </node>
                             </node>
                           </node>
@@ -3204,7 +3204,7 @@
                                         <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                                       </node>
                                       <node concept="liA8E" id="5TfjU0xHlrA" role="2OqNvi">
-                                        <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                        <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                       </node>
                                     </node>
                                   </node>
@@ -3214,7 +3214,7 @@
                                     <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                                   </node>
                                   <node concept="liA8E" id="5TfjU0xHlrD" role="2OqNvi">
-                                    <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                    <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                   </node>
                                 </node>
                               </node>
@@ -3231,7 +3231,7 @@
                                 <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                               </node>
                               <node concept="liA8E" id="5TfjU0xHlrJ" role="2OqNvi">
-                                <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                               </node>
                             </node>
                           </node>
@@ -3256,14 +3256,14 @@
                                             <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                                           </node>
                                           <node concept="liA8E" id="5TfjU0xHMH9" role="2OqNvi">
-                                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                           </node>
                                         </node>
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="5TfjU0xHMHa" role="2OqNvi">
-                                    <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                    <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                                   </node>
                                 </node>
                               </node>
@@ -3287,13 +3287,13 @@
                                               <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                                             </node>
                                             <node concept="liA8E" id="5TfjU0xHMHn" role="2OqNvi">
-                                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                             </node>
                                           </node>
                                         </node>
                                       </node>
                                       <node concept="liA8E" id="5TfjU0xHMHo" role="2OqNvi">
-                                        <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                        <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                                       </node>
                                     </node>
                                   </node>
@@ -3316,7 +3316,7 @@
                                             <ref role="3cqZAo" node="5TfjU0xHMGZ" resolve="bndLeft" />
                                           </node>
                                           <node concept="liA8E" id="5TfjU0xHMH$" role="2OqNvi">
-                                            <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                            <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                           </node>
                                         </node>
                                       </node>
@@ -3328,7 +3328,7 @@
                                         <ref role="3cqZAo" node="5TfjU0xHMHe" resolve="bndRight" />
                                       </node>
                                       <node concept="liA8E" id="5TfjU0xHMHC" role="2OqNvi">
-                                        <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                        <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                       </node>
                                     </node>
                                     <node concept="2OqwBi" id="5TfjU0xHMHD" role="3uHU7B">
@@ -3336,7 +3336,7 @@
                                         <ref role="3cqZAo" node="5TfjU0xHMGZ" resolve="bndLeft" />
                                       </node>
                                       <node concept="liA8E" id="5TfjU0xHMHF" role="2OqNvi">
-                                        <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                        <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                       </node>
                                     </node>
                                   </node>
@@ -3350,7 +3350,7 @@
                                     <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                                   </node>
                                   <node concept="liA8E" id="5TfjU0xHMHK" role="2OqNvi">
-                                    <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                    <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                   </node>
                                 </node>
                               </node>
@@ -3364,7 +3364,7 @@
                                       <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                                     </node>
                                     <node concept="liA8E" id="5TfjU0xHMHQ" role="2OqNvi">
-                                      <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                      <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                     </node>
                                   </node>
                                 </node>
@@ -3383,7 +3383,7 @@
                                                   <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                                                 </node>
                                                 <node concept="liA8E" id="5TfjU0xHMI1" role="2OqNvi">
-                                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                                 </node>
                                               </node>
                                             </node>
@@ -3397,7 +3397,7 @@
                                             <ref role="3cqZAo" node="5TfjU0xHMGZ" resolve="bndLeft" />
                                           </node>
                                           <node concept="liA8E" id="5TfjU0xHMI5" role="2OqNvi">
-                                            <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                                            <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                                           </node>
                                         </node>
                                       </node>
@@ -3406,7 +3406,7 @@
                                           <ref role="3cqZAo" node="5TfjU0xHMGZ" resolve="bndLeft" />
                                         </node>
                                         <node concept="liA8E" id="5TfjU0xHMI8" role="2OqNvi">
-                                          <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                                          <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                                         </node>
                                       </node>
                                     </node>
@@ -3427,7 +3427,7 @@
                                 <ref role="3cqZAo" node="5TfjU0xHlrK" resolve="bnd" />
                               </node>
                               <node concept="liA8E" id="5TfjU0xHMIf" role="2OqNvi">
-                                <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                               </node>
                             </node>
                           </node>
@@ -3445,7 +3445,7 @@
                         <ref role="3cqZAo" node="5TfjU0xCks5" resolve="subs" />
                       </node>
                       <node concept="liA8E" id="5TfjU0xHlrO" role="2OqNvi">
-                        <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
+                        <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
                       </node>
                     </node>
                   </node>
@@ -3462,7 +3462,7 @@
                       <ref role="3VsUkX" to="yt73:~Term" resolve="Term" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xCksG" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                      <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class)" resolve="isAssignableFrom" />
                       <node concept="37vLTw" id="5TfjU0xCksH" role="37wK5m">
                         <ref role="3cqZAo" node="5TfjU0xCkrJ" resolve="cls" />
                       </node>
@@ -3487,12 +3487,12 @@
                       <ref role="3cqZAo" node="4U_yxogC1Ek" resolve="left" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xJFHh" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                      <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                     </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="4U_yxogDnOx" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                 </node>
               </node>
             </node>
@@ -3508,12 +3508,12 @@
                             <ref role="3cqZAo" node="4U_yxogC1Ek" resolve="left" />
                           </node>
                           <node concept="liA8E" id="5TfjU0xJFHl" role="2OqNvi">
-                            <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                            <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                           </node>
                         </node>
                       </node>
                       <node concept="liA8E" id="5TfjU0xCZYL" role="2OqNvi">
-                        <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                        <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="5TfjU0xD3yM" role="37wK5m">
@@ -3574,7 +3574,7 @@
                   <ref role="3cqZAo" node="4U_yxogC2zy" resolve="left" />
                 </node>
                 <node concept="liA8E" id="7d$oK1$nL7J" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -3593,7 +3593,7 @@
                   <ref role="3cqZAo" node="4U_yxogC2z$" resolve="right" />
                 </node>
                 <node concept="liA8E" id="7d$oK1$nLDR" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -3626,7 +3626,7 @@
                       <ref role="3cqZAo" node="7d$oK1$nL7F" resolve="leftRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xFiJ$" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="5TfjU0xFrQi" role="37wK5m">
@@ -3634,7 +3634,7 @@
                       <ref role="3cqZAo" node="7d$oK1$nLDN" resolve="rightRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xFufg" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                 </node>
@@ -3646,7 +3646,7 @@
                   <ref role="3cqZAo" node="7d$oK1$nLDN" resolve="rightRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xF5pB" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5TfjU0xF0Tt" role="3uHU7B">
@@ -3654,7 +3654,7 @@
                   <ref role="3cqZAo" node="7d$oK1$nL7F" resolve="leftRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xF2Pc" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -3669,7 +3669,7 @@
                       <ref role="3cqZAo" node="7d$oK1$nL7F" resolve="leftRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xGuDg" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5TfjU0xGyXd" role="37wK5m">
@@ -3683,7 +3683,7 @@
                 <ref role="3cqZAo" node="7d$oK1$nL7F" resolve="leftRepr" />
               </node>
               <node concept="liA8E" id="5TfjU0xFYlu" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -3700,7 +3700,7 @@
                       <ref role="3cqZAo" node="7d$oK1$nLDN" resolve="rightRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xGRAT" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                 </node>
@@ -3711,7 +3711,7 @@
                 <ref role="3cqZAo" node="7d$oK1$nLDN" resolve="rightRepr" />
               </node>
               <node concept="liA8E" id="5TfjU0xGAre" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -3764,7 +3764,7 @@
                   <ref role="3cqZAo" node="6xYPVrp_1P$" resolve="logical" />
                 </node>
                 <node concept="liA8E" id="6MYr6Jy8_cI" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -3804,7 +3804,7 @@
                 <ref role="3cqZAo" node="6xYPVrp_37O" resolve="bound" />
               </node>
               <node concept="liA8E" id="2T1p0CFz6aA" role="2OqNvi">
-                <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
+                <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind)" resolve="is" />
                 <node concept="Rm8GO" id="2T1p0CFz6aB" role="37wK5m">
                   <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
                   <ref role="Rm8GQ" to="yt73:~Term$Kind.FUN" resolve="FUN" />
@@ -3845,7 +3845,7 @@
                   <ref role="3cqZAo" node="6xYPVrp_37O" resolve="bound" />
                 </node>
                 <node concept="liA8E" id="2T1p0CFz6aR" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind):boolean" resolve="is" />
+                  <ref role="37wK5l" to="yt73:~Term.is(jetbrains.mps.unification.Term$Kind)" resolve="is" />
                   <node concept="Rm8GO" id="2T1p0CFz6aS" role="37wK5m">
                     <ref role="1Px2BO" to="yt73:~Term$Kind" resolve="Term.Kind" />
                     <ref role="Rm8GQ" to="yt73:~Term$Kind.VAR" resolve="VAR" />
@@ -3909,11 +3909,11 @@
                     <ref role="3cqZAo" node="1MWQR5SpMLu" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="1MWQR5SpML5" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.failureCause():jetbrains.mps.unification.Substitution$FailureCause" resolve="failureCause" />
+                    <ref role="37wK5l" to="yt73:~Substitution.failureCause()" resolve="failureCause" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1MWQR5SpML6" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Substitution$FailureCause.toString():java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="yt73:~Substitution$FailureCause.toString()" resolve="toString" />
                 </node>
               </node>
             </node>
@@ -3924,7 +3924,7 @@
                 <node concept="37vLTI" id="1MWQR5SpMLa" role="3clFbG">
                   <node concept="2YIFZM" id="1MWQR5SpMLb" role="37vLTx">
                     <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                    <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                    <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...)" resolve="format" />
                     <node concept="Xl_RD" id="1MWQR5SpMLc" role="37wK5m">
                       <property role="Xl_RC" value="'%s' != '%s'" />
                     </node>
@@ -3933,7 +3933,7 @@
                         <ref role="3cqZAo" node="1MWQR5SpMLu" resolve="subs" />
                       </node>
                       <node concept="liA8E" id="1MWQR5SpMLf" role="2OqNvi">
-                        <ref role="37wK5l" to="yt73:~Substitution.failureDetails():java.lang.Object[]" resolve="failureDetails" />
+                        <ref role="37wK5l" to="yt73:~Substitution.failureDetails()" resolve="failureDetails" />
                       </node>
                     </node>
                   </node>
@@ -3954,7 +3954,7 @@
                     <ref role="3cqZAo" node="1MWQR5SpMLu" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="1MWQR5SpMLm" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.failureCause():jetbrains.mps.unification.Substitution$FailureCause" resolve="failureCause" />
+                    <ref role="37wK5l" to="yt73:~Substitution.failureCause()" resolve="failureCause" />
                   </node>
                 </node>
               </node>
@@ -3965,7 +3965,7 @@
                     <ref role="3cqZAo" node="1MWQR5SpMLu" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="1MWQR5SpMLr" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.failureDetails():java.lang.Object[]" resolve="failureDetails" />
+                    <ref role="37wK5l" to="yt73:~Substitution.failureDetails()" resolve="failureDetails" />
                   </node>
                 </node>
               </node>
@@ -4411,11 +4411,11 @@
                     <ref role="3cqZAo" node="2UGjFq4l$TZ" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4l_wR" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4l_Rj" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4l_Ux" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -4532,11 +4532,11 @@
                     <ref role="3cqZAo" node="2UGjFq4kzkN" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4lzR8" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4lzR9" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4lzRa" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -4699,7 +4699,7 @@
                   <ref role="3cqZAo" node="6infEALAKQI" resolve="logical" />
                 </node>
                 <node concept="liA8E" id="6infEALBcls" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -4724,7 +4724,7 @@
                     <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
                   </node>
                   <node concept="liA8E" id="6infEALBgCV" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                    <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                   </node>
                 </node>
               </node>
@@ -4733,7 +4733,7 @@
                   <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
                 </node>
                 <node concept="liA8E" id="6infEALBeBH" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -4750,7 +4750,7 @@
                   <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
                 </node>
                 <node concept="liA8E" id="6infEALBscr" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                 </node>
               </node>
             </node>
@@ -4763,7 +4763,7 @@
                     <ref role="3cqZAo" node="6infEALBcln" resolve="repr" />
                   </node>
                   <node concept="liA8E" id="6infEALBvmp" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object):void" resolve="setValue" />
+                    <ref role="37wK5l" to="bj13:~MutableLogical.setValue(java.lang.Object)" resolve="setValue" />
                     <node concept="10M0yZ" id="6infEALBvoZ" role="37wK5m">
                       <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
                       <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
@@ -4831,7 +4831,7 @@
                   <ref role="3cqZAo" node="6infEALAKR3" resolve="logical" />
                 </node>
                 <node concept="liA8E" id="6infEALBa$D" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -4850,7 +4850,7 @@
                   <ref role="3cqZAo" node="6infEALBa$A" resolve="repr" />
                 </node>
                 <node concept="liA8E" id="6infEALB0GT" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -4862,7 +4862,7 @@
                 <ref role="3cqZAo" node="6infEALBa$A" resolve="repr" />
               </node>
               <node concept="liA8E" id="6infEALAXgk" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
               </node>
             </node>
           </node>
@@ -5086,11 +5086,11 @@
                     <ref role="3cqZAo" node="2UGjFq4lDR6" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4lFoe" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4lFof" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4lFog" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -5102,11 +5102,11 @@
                     <ref role="3cqZAo" node="2UGjFq4lDR6" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4lFMe" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4lFMf" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4lFMg" role="37wK5m">
                     <property role="3cmrfH" value="1" />
                   </node>
@@ -5379,11 +5379,11 @@
                     <ref role="3cqZAo" node="2UGjFq4lKkm" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4lNPx" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4lNPy" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4lNPz" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -5395,11 +5395,11 @@
                     <ref role="3cqZAo" node="2UGjFq4lKkm" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="2UGjFq4lNPB" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="2UGjFq4lNPC" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="2UGjFq4lNPD" role="37wK5m">
                     <property role="3cmrfH" value="1" />
                   </node>
@@ -5658,7 +5658,7 @@
                       <ref role="1PxDUh" to="yt73:~Unification" resolve="Unification" />
                     </node>
                     <node concept="liA8E" id="390NiL16yeb" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term)" resolve="unify" />
                       <node concept="1eOMI4" id="390NiL16yec" role="37wK5m">
                         <node concept="10QFUN" id="390NiL16yed" role="1eOMHV">
                           <node concept="3uibUv" id="390NiL16yee" role="10QFUM">
@@ -5730,7 +5730,7 @@
                       <ref role="3cqZAo" node="390NiL16ye7" resolve="subs" />
                     </node>
                     <node concept="liA8E" id="390NiL16yeC" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
+                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
                     </node>
                   </node>
                 </node>
@@ -5758,7 +5758,7 @@
                                   <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="6SwZmzBC0kj" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                 </node>
                               </node>
                             </node>
@@ -5783,7 +5783,7 @@
                                   <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="6SwZmzBCqdI" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
                             </node>
@@ -5805,7 +5805,7 @@
                               <ref role="3cqZAo" node="6SwZmzBCqdA" resolve="tLogical" />
                             </node>
                             <node concept="liA8E" id="6SwZmzBCwD7" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                             </node>
                           </node>
                           <node concept="2OqwBi" id="6SwZmzBCs5M" role="3uHU7B">
@@ -5813,7 +5813,7 @@
                               <ref role="3cqZAo" node="6SwZmzBBYus" resolve="vLogical" />
                             </node>
                             <node concept="liA8E" id="6SwZmzBCtkA" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                             </node>
                           </node>
                         </node>
@@ -5827,7 +5827,7 @@
                             <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                           </node>
                           <node concept="liA8E" id="6SwZmzBCq7Y" role="2OqNvi">
-                            <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                            <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                           </node>
                         </node>
                       </node>
@@ -5838,7 +5838,7 @@
                             <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                           </node>
                           <node concept="liA8E" id="6SwZmzBCphD" role="2OqNvi">
-                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                           </node>
                         </node>
                       </node>
@@ -5852,7 +5852,7 @@
                               <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6SwZmzBGn_m" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                             </node>
                           </node>
                         </node>
@@ -5863,7 +5863,7 @@
                               <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6SwZmzBGn_q" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                             </node>
                           </node>
                         </node>
@@ -5883,7 +5883,7 @@
                                   <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="6SwZmzBGn_z" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                 </node>
                               </node>
                             </node>
@@ -5903,7 +5903,7 @@
                                   <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="6SwZmzBGn_F" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
                             </node>
@@ -5924,7 +5924,7 @@
                                 <ref role="3cqZAo" node="6SwZmzBGn__" resolve="tLogical" />
                               </node>
                               <node concept="liA8E" id="6SwZmzBGn_O" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                               </node>
                             </node>
                             <node concept="2OqwBi" id="6SwZmzBGn_P" role="3uHU7B">
@@ -5932,7 +5932,7 @@
                                 <ref role="3cqZAo" node="6SwZmzBGn_t" resolve="vLogical" />
                               </node>
                               <node concept="liA8E" id="6SwZmzBGn_R" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                               </node>
                             </node>
                           </node>
@@ -5983,7 +5983,7 @@
                     <ref role="3cqZAo" node="390NiL16ye7" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="6SwZmzBBWeb" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
+                    <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
                   </node>
                 </node>
               </node>
@@ -6128,7 +6128,7 @@
                   <ref role="3cqZAo" node="3HJTsBn4V_C" resolve="left" />
                 </node>
                 <node concept="liA8E" id="3HJTsBn77Z0" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -6145,7 +6145,7 @@
                   <ref role="3cqZAo" node="3HJTsBn77YW" resolve="leftRepr" />
                 </node>
                 <node concept="liA8E" id="3HJTsBn77Zn" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                 </node>
               </node>
             </node>
@@ -6264,7 +6264,7 @@
                   <ref role="3cqZAo" node="3HJTsBn4V_R" resolve="left" />
                 </node>
                 <node concept="liA8E" id="3HJTsBn6R7_" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -6283,7 +6283,7 @@
                   <ref role="3cqZAo" node="3HJTsBn4V_U" resolve="right" />
                 </node>
                 <node concept="liA8E" id="3HJTsBn6R7F" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -6318,7 +6318,7 @@
                       <ref role="3cqZAo" node="3HJTsBn6R7x" resolve="leftRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xlJO3" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="5TfjU0xlKvG" role="37wK5m">
@@ -6326,7 +6326,7 @@
                       <ref role="3cqZAo" node="3HJTsBn6R7B" resolve="rightRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xlKQD" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                 </node>
@@ -6339,7 +6339,7 @@
                   <ref role="3cqZAo" node="3HJTsBn6R7B" resolve="rightRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xlIZU" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5TfjU0xlHGF" role="3uHU7B">
@@ -6347,7 +6347,7 @@
                   <ref role="3cqZAo" node="3HJTsBn6R7x" resolve="leftRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xlI96" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -6420,7 +6420,7 @@
                       <ref role="1PxDUh" to="yt73:~Unification" resolve="Unification" />
                     </node>
                     <node concept="liA8E" id="390NiL16_Ib" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term):jetbrains.mps.unification.Substitution" resolve="unify" />
+                      <ref role="37wK5l" to="yt73:~Unification.unify(jetbrains.mps.unification.Term,jetbrains.mps.unification.Term)" resolve="unify" />
                       <node concept="10QFUN" id="390NiL16_Ic" role="37wK5m">
                         <node concept="3uibUv" id="390NiL16_Id" role="10QFUM">
                           <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
@@ -6455,7 +6455,7 @@
                       <ref role="3cqZAo" node="390NiL16_I7" resolve="subs" />
                     </node>
                     <node concept="liA8E" id="390NiL16_Ip" role="2OqNvi">
-                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful():boolean" resolve="isSuccessful" />
+                      <ref role="37wK5l" to="yt73:~Substitution.isSuccessful()" resolve="isSuccessful" />
                     </node>
                   </node>
                 </node>
@@ -6483,7 +6483,7 @@
                                   <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="6SwZmzBD5At" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                 </node>
                               </node>
                             </node>
@@ -6508,7 +6508,7 @@
                                   <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="6SwZmzBD5AB" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
                             </node>
@@ -6530,7 +6530,7 @@
                               <ref role="3cqZAo" node="6SwZmzBD5Av" resolve="tLogical" />
                             </node>
                             <node concept="liA8E" id="6SwZmzBD5AK" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                             </node>
                           </node>
                           <node concept="2OqwBi" id="6SwZmzBD5AL" role="3uHU7B">
@@ -6538,7 +6538,7 @@
                               <ref role="3cqZAo" node="6SwZmzBD5Al" resolve="vLogical" />
                             </node>
                             <node concept="liA8E" id="6SwZmzBD5AN" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                             </node>
                           </node>
                         </node>
@@ -6552,7 +6552,7 @@
                             <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                           </node>
                           <node concept="liA8E" id="6SwZmzBD5AS" role="2OqNvi">
-                            <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                            <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                           </node>
                         </node>
                       </node>
@@ -6563,7 +6563,7 @@
                             <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                           </node>
                           <node concept="liA8E" id="6SwZmzBD5AW" role="2OqNvi">
-                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                            <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                           </node>
                         </node>
                       </node>
@@ -6577,7 +6577,7 @@
                               <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6SwZmzBGanM" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                             </node>
                           </node>
                         </node>
@@ -6588,7 +6588,7 @@
                               <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                             </node>
                             <node concept="liA8E" id="6SwZmzBG9s2" role="2OqNvi">
-                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                              <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                             </node>
                           </node>
                         </node>
@@ -6608,7 +6608,7 @@
                                   <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="6SwZmzBGbc2" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var():jetbrains.mps.unification.Term" resolve="var" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                 </node>
                               </node>
                             </node>
@@ -6628,7 +6628,7 @@
                                   <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                                 </node>
                                 <node concept="liA8E" id="6SwZmzBGfdT" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term():jetbrains.mps.unification.Term" resolve="term" />
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
                             </node>
@@ -6649,7 +6649,7 @@
                                 <ref role="3cqZAo" node="6SwZmzBGfdN" resolve="tLogical" />
                               </node>
                               <node concept="liA8E" id="6SwZmzBGgQ$" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                               </node>
                             </node>
                             <node concept="2OqwBi" id="6SwZmzBGgQ_" role="3uHU7B">
@@ -6657,7 +6657,7 @@
                                 <ref role="3cqZAo" node="6SwZmzBGbbY" resolve="vLogical" />
                               </node>
                               <node concept="liA8E" id="6SwZmzBGgQB" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                               </node>
                             </node>
                           </node>
@@ -6680,7 +6680,7 @@
                     <ref role="3cqZAo" node="390NiL16_I7" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="6SwZmzBD5Bd" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.bindings():java.util.Collection" resolve="bindings" />
+                    <ref role="37wK5l" to="yt73:~Substitution.bindings()" resolve="bindings" />
                   </node>
                 </node>
               </node>
@@ -6804,7 +6804,7 @@
                   <ref role="3cqZAo" node="3HJTsBn4VAC" resolve="left" />
                 </node>
                 <node concept="liA8E" id="3HJTsBn6Eho" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -6821,7 +6821,7 @@
                   <ref role="3cqZAo" node="3HJTsBn6Ehk" resolve="leftRepr" />
                 </node>
                 <node concept="liA8E" id="390NiL16DNr" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                  <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                 </node>
               </node>
             </node>
@@ -6900,7 +6900,7 @@
                   <ref role="3cqZAo" node="3HJTsBn4VAT" resolve="left" />
                 </node>
                 <node concept="liA8E" id="3HJTsBn61Rv" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -6919,7 +6919,7 @@
                   <ref role="3cqZAo" node="3HJTsBn4VAW" resolve="right" />
                 </node>
                 <node concept="liA8E" id="3HJTsBn61R_" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot():jetbrains.mps.logic.reactor.logical.MutableLogical" resolve="findRoot" />
+                  <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
                 </node>
               </node>
             </node>
@@ -6958,7 +6958,7 @@
                       <ref role="3cqZAo" node="3HJTsBn61Rr" resolve="leftRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xmaKZ" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="5TfjU0xmdeJ" role="37wK5m">
@@ -6966,7 +6966,7 @@
                       <ref role="3cqZAo" node="3HJTsBn61Rx" resolve="rightRepr" />
                     </node>
                     <node concept="liA8E" id="5TfjU0xmdxZ" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                 </node>
@@ -6978,7 +6978,7 @@
                   <ref role="3cqZAo" node="3HJTsBn61Rx" resolve="rightRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xm7bx" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5TfjU0xm4Bq" role="3uHU7B">
@@ -6986,7 +6986,7 @@
                   <ref role="3cqZAo" node="3HJTsBn61Rr" resolve="leftRepr" />
                 </node>
                 <node concept="liA8E" id="5TfjU0xm5Ho" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -7001,7 +7001,7 @@
                       <ref role="3cqZAo" node="3HJTsBn61Rr" resolve="leftRepr" />
                     </node>
                     <node concept="liA8E" id="390NiL16Gtl" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="390NiL16Gv0" role="37wK5m">
@@ -7015,7 +7015,7 @@
                 <ref role="3cqZAo" node="3HJTsBn61Rr" resolve="leftRepr" />
               </node>
               <node concept="liA8E" id="390NiL16Fxn" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -7032,7 +7032,7 @@
                       <ref role="3cqZAo" node="3HJTsBn61Rx" resolve="rightRepr" />
                     </node>
                     <node concept="liA8E" id="390NiL16IAw" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.value():java.lang.Object" resolve="value" />
+                      <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
                     </node>
                   </node>
                 </node>
@@ -7043,7 +7043,7 @@
                 <ref role="3cqZAo" node="3HJTsBn61Rx" resolve="rightRepr" />
               </node>
               <node concept="liA8E" id="390NiL16Gvg" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
               </node>
             </node>
           </node>
@@ -7083,11 +7083,11 @@
                     <ref role="3cqZAo" node="390NiL16JOx" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="390NiL16JOE" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.failureCause():jetbrains.mps.unification.Substitution$FailureCause" resolve="failureCause" />
+                    <ref role="37wK5l" to="yt73:~Substitution.failureCause()" resolve="failureCause" />
                   </node>
                 </node>
                 <node concept="liA8E" id="390NiL16JOF" role="2OqNvi">
-                  <ref role="37wK5l" to="yt73:~Substitution$FailureCause.toString():java.lang.String" resolve="toString" />
+                  <ref role="37wK5l" to="yt73:~Substitution$FailureCause.toString()" resolve="toString" />
                 </node>
               </node>
             </node>
@@ -7098,7 +7098,7 @@
                 <node concept="37vLTI" id="390NiL16JOJ" role="3clFbG">
                   <node concept="2YIFZM" id="390NiL16JOK" role="37vLTx">
                     <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                    <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                    <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...)" resolve="format" />
                     <node concept="Xl_RD" id="390NiL16JOL" role="37wK5m">
                       <property role="Xl_RC" value="'%s' != '%s'" />
                     </node>
@@ -7107,7 +7107,7 @@
                         <ref role="3cqZAo" node="390NiL16JOx" resolve="subs" />
                       </node>
                       <node concept="liA8E" id="390NiL16JOO" role="2OqNvi">
-                        <ref role="37wK5l" to="yt73:~Substitution.failureDetails():java.lang.Object[]" resolve="failureDetails" />
+                        <ref role="37wK5l" to="yt73:~Substitution.failureDetails()" resolve="failureDetails" />
                       </node>
                     </node>
                   </node>
@@ -7128,7 +7128,7 @@
                     <ref role="3cqZAo" node="390NiL16JOx" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="390NiL16JOV" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.failureCause():jetbrains.mps.unification.Substitution$FailureCause" resolve="failureCause" />
+                    <ref role="37wK5l" to="yt73:~Substitution.failureCause()" resolve="failureCause" />
                   </node>
                 </node>
               </node>
@@ -7139,7 +7139,7 @@
                     <ref role="3cqZAo" node="390NiL16JOx" resolve="subs" />
                   </node>
                   <node concept="liA8E" id="390NiL16JP0" role="2OqNvi">
-                    <ref role="37wK5l" to="yt73:~Substitution.failureDetails():java.lang.Object[]" resolve="failureDetails" />
+                    <ref role="37wK5l" to="yt73:~Substitution.failureDetails()" resolve="failureDetails" />
                   </node>
                 </node>
               </node>
@@ -7663,11 +7663,11 @@
                       <ref role="3cqZAo" node="2UGjFq4lPBJ" resolve="invocation" />
                     </node>
                     <node concept="liA8E" id="2UGjFq4lPV7" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                      <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                     </node>
                   </node>
                   <node concept="liA8E" id="2UGjFq4lQ3A" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                     <node concept="3cmrfG" id="2UGjFq4lQ6T" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>
@@ -7719,11 +7719,11 @@
                         <ref role="3cqZAo" node="2UGjFq4lQgb" resolve="invocation" />
                       </node>
                       <node concept="liA8E" id="2UGjFq4lR5V" role="2OqNvi">
-                        <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                        <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                       </node>
                     </node>
                     <node concept="liA8E" id="2UGjFq4lRfo" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                      <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                       <node concept="3cmrfG" id="2UGjFq4lRja" role="37wK5m">
                         <property role="3cmrfH" value="0" />
                       </node>
@@ -7774,7 +7774,7 @@
                   <ref role="3cqZAo" node="7ISVfSJ19s" resolve="logical" />
                 </node>
                 <node concept="liA8E" id="5uFPQ7CiQsu" role="2OqNvi">
-                  <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                  <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                 </node>
               </node>
             </node>
@@ -7814,7 +7814,7 @@
                     <ref role="3cqZAo" node="7ISVfSJ1ol" resolve="logical" />
                   </node>
                   <node concept="liA8E" id="3eLgHzX3VwK" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~Logical.isBound():boolean" resolve="isBound" />
+                    <ref role="37wK5l" to="bj13:~Logical.isBound()" resolve="isBound" />
                   </node>
                 </node>
               </node>
@@ -8007,7 +8007,7 @@
                       <ref role="3cqZAo" node="5WBVN_M2Qjq" resolve="invocation" />
                     </node>
                     <node concept="liA8E" id="5WBVN_M2RSG" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate():jetbrains.mps.logic.reactor.program.Predicate" resolve="predicate" />
+                      <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate()" resolve="predicate" />
                     </node>
                   </node>
                 </node>
@@ -8031,11 +8031,11 @@
                     <ref role="3cqZAo" node="5WBVN_M2Qjq" resolve="invocation" />
                   </node>
                   <node concept="liA8E" id="1v5snkI5gi2" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                    <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                   </node>
                 </node>
                 <node concept="liA8E" id="1v5snkI5gi3" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                  <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                   <node concept="3cmrfG" id="1v5snkI5gi4" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -8127,11 +8127,11 @@
                             <ref role="3cqZAo" node="5WBVN_M2Qjf" resolve="invocation" />
                           </node>
                           <node concept="liA8E" id="2UGjFq4pGBj" role="2OqNvi">
-                            <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate():jetbrains.mps.logic.reactor.program.Predicate" resolve="predicate" />
+                            <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate()" resolve="predicate" />
                           </node>
                         </node>
                         <node concept="liA8E" id="2UGjFq4pGMy" role="2OqNvi">
-                          <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                          <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
                         </node>
                       </node>
                       <node concept="Xl_RD" id="2UGjFq4pFcY" role="3uHU7B">
@@ -8407,11 +8407,11 @@
                         <ref role="3cqZAo" node="4jcOV4hx9Eo" resolve="invocation" />
                       </node>
                       <node concept="liA8E" id="4jcOV4hxo3E" role="2OqNvi">
-                        <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate():jetbrains.mps.logic.reactor.program.Predicate" resolve="predicate" />
+                        <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate()" resolve="predicate" />
                       </node>
                     </node>
                     <node concept="liA8E" id="4jcOV4hxpET" role="2OqNvi">
-                      <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                      <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
                     </node>
                   </node>
                 </node>
@@ -8459,7 +8459,7 @@
                       <ref role="3cqZAo" node="4jcOV4hx9Fc" resolve="invocation" />
                     </node>
                     <node concept="liA8E" id="4jcOV4hx9EA" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate():jetbrains.mps.logic.reactor.program.Predicate" resolve="predicate" />
+                      <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate()" resolve="predicate" />
                     </node>
                   </node>
                 </node>
@@ -8474,18 +8474,18 @@
               </node>
               <node concept="2YIFZM" id="4jcOV4hxADP" role="33vP2m">
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                <ref role="37wK5l" to="wyt6:~String.valueOf(char[]):java.lang.String" resolve="valueOf" />
+                <ref role="37wK5l" to="wyt6:~String.valueOf(char[])" resolve="valueOf" />
                 <node concept="2OqwBi" id="4jcOV4hx_1A" role="37wK5m">
                   <node concept="2OqwBi" id="4jcOV4hx_1B" role="2Oq$k0">
                     <node concept="37vLTw" id="4jcOV4hx_1C" role="2Oq$k0">
                       <ref role="3cqZAo" node="4jcOV4hx9Fc" resolve="invocation" />
                     </node>
                     <node concept="liA8E" id="4jcOV4hx_1D" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                      <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                     </node>
                   </node>
                   <node concept="liA8E" id="4jcOV4hx_1E" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                     <node concept="3cmrfG" id="4jcOV4hx_1F" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>
@@ -8504,18 +8504,18 @@
                 <ref role="37wK5l" node="4jcOV4hxCVB" resolve="severityFromString" />
                 <node concept="2YIFZM" id="4jcOV4hxMnh" role="37wK5m">
                   <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                  <ref role="37wK5l" to="wyt6:~String.valueOf(char[]):java.lang.String" resolve="valueOf" />
+                  <ref role="37wK5l" to="wyt6:~String.valueOf(char[])" resolve="valueOf" />
                   <node concept="2OqwBi" id="4jcOV4hxMni" role="37wK5m">
                     <node concept="2OqwBi" id="4jcOV4hxMnj" role="2Oq$k0">
                       <node concept="37vLTw" id="4jcOV4hxMnk" role="2Oq$k0">
                         <ref role="3cqZAo" node="4jcOV4hx9Fc" resolve="invocation" />
                       </node>
                       <node concept="liA8E" id="4jcOV4hxMnl" role="2OqNvi">
-                        <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                        <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                       </node>
                     </node>
                     <node concept="liA8E" id="4jcOV4hxMnm" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                      <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                       <node concept="3cmrfG" id="4jcOV4hxMnn" role="37wK5m">
                         <property role="3cmrfH" value="1" />
                       </node>
@@ -8532,11 +8532,11 @@
                   <ref role="3cqZAo" node="4jcOV4hx9Fc" resolve="invocation" />
                 </node>
                 <node concept="liA8E" id="4jcOV4hxxNP" role="2OqNvi">
-                  <ref role="37wK5l" to="w7la:~PredicateInvocation.invocationContext():jetbrains.mps.logic.reactor.evaluation.InvocationContext" resolve="invocationContext" />
+                  <ref role="37wK5l" to="w7la:~PredicateInvocation.invocationContext()" resolve="invocationContext" />
                 </node>
               </node>
               <node concept="liA8E" id="4jcOV4hxy0C" role="2OqNvi">
-                <ref role="37wK5l" to="w7la:~InvocationContext.report(jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback):void" resolve="report" />
+                <ref role="37wK5l" to="w7la:~InvocationContext.report(jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback)" resolve="report" />
                 <node concept="2YIFZM" id="473$26GHA4W" role="37wK5m">
                   <ref role="1Pybhc" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
                   <ref role="37wK5l" to="w7la:~EvaluationFeedback.details(java.lang.String,jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback$Severity)" resolve="details" />
@@ -8823,11 +8823,11 @@
                         <ref role="3cqZAo" node="4jcOV4hENEg" resolve="invocation" />
                       </node>
                       <node concept="liA8E" id="4jcOV4hENEr" role="2OqNvi">
-                        <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate():jetbrains.mps.logic.reactor.program.Predicate" resolve="predicate" />
+                        <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate()" resolve="predicate" />
                       </node>
                     </node>
                     <node concept="liA8E" id="4jcOV4hENEs" role="2OqNvi">
-                      <ref role="37wK5l" to="av0y:~Predicate.symbol():jetbrains.mps.logic.reactor.program.PredicateSymbol" resolve="symbol" />
+                      <ref role="37wK5l" to="av0y:~Predicate.symbol()" resolve="symbol" />
                     </node>
                   </node>
                 </node>
@@ -8875,7 +8875,7 @@
                       <ref role="3cqZAo" node="4jcOV4hENEy" resolve="invocation" />
                     </node>
                     <node concept="liA8E" id="4jcOV4hENEK" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate():jetbrains.mps.logic.reactor.program.Predicate" resolve="predicate" />
+                      <ref role="37wK5l" to="w7la:~PredicateInvocation.predicate()" resolve="predicate" />
                     </node>
                   </node>
                 </node>
@@ -8890,18 +8890,18 @@
               </node>
               <node concept="2YIFZM" id="4jcOV4hENEO" role="33vP2m">
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                <ref role="37wK5l" to="wyt6:~String.valueOf(char[]):java.lang.String" resolve="valueOf" />
+                <ref role="37wK5l" to="wyt6:~String.valueOf(char[])" resolve="valueOf" />
                 <node concept="2OqwBi" id="4jcOV4hENEP" role="37wK5m">
                   <node concept="2OqwBi" id="4jcOV4hENEQ" role="2Oq$k0">
                     <node concept="37vLTw" id="4jcOV4hENER" role="2Oq$k0">
                       <ref role="3cqZAo" node="4jcOV4hENEy" resolve="invocation" />
                     </node>
                     <node concept="liA8E" id="4jcOV4hENES" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments():java.util.List" resolve="arguments" />
+                      <ref role="37wK5l" to="w7la:~PredicateInvocation.arguments()" resolve="arguments" />
                     </node>
                   </node>
                   <node concept="liA8E" id="4jcOV4hENET" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                    <ref role="37wK5l" to="33ny:~List.get(int)" resolve="get" />
                     <node concept="3cmrfG" id="4jcOV4hENEU" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>

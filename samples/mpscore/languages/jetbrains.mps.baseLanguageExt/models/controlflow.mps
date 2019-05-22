@@ -1251,7 +1251,7 @@
               <ref role="359W_E" to="tpee:hGd03cG" resolve="BaseAssignmentExpression" />
             </node>
             <node concept="liA8E" id="5YmBCzQLx57" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="2OqwBi" id="5YmBCzQLxjw" role="37wK5m">
                 <node concept="3A2sRY" id="5YmBCzQLx5i" role="2Oq$k0">
                   <ref role="3A2yKK" node="6Yb9hAqOc4n" resolve="varref" />
@@ -6572,7 +6572,7 @@
                           <ref role="359W_E" to="tpee:hGd03cG" resolve="BaseAssignmentExpression" />
                         </node>
                         <node concept="liA8E" id="6Yb9hAqRblB" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                          <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                           <node concept="2OqwBi" id="6Yb9hAqRb_n" role="37wK5m">
                             <node concept="3A2sRY" id="6Yb9hAqRbn9" role="2Oq$k0">
                               <ref role="3A2yKK" node="6Yb9hAqNAzu" resolve="varref" />
