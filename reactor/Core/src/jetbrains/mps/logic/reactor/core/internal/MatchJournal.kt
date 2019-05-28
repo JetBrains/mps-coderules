@@ -48,25 +48,25 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
     data class View(val chunks: List<Chunk>, val nextChunkId: Int)
 
-    class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : Pos {
+    abstract class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : Pos
+    {
         data class Entry(val occ: Occurrence, val isDiscarded: Boolean = false) {
             override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
         }
 
-        var occurrences: MutableList<Entry> = mutableListOf()
+        abstract fun occurrences(): List<Entry>
+        abstract fun findOccurrence(ctr: Constraint): Occurrence?
+        abstract fun principalConstraint(): Constraint?
 
-        fun findOccurrence(ctr: Constraint): Occurrence? =
-            occurrences.find { !it.isDiscarded && it.occ.constraint.symbol() == ctr.symbol() }?.occ
-
-        override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, $occurrences)"
+        override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${occurrences()})"
         override fun equals(other: Any?) =
             other is Chunk
             && other.id == id
-            && other.occurrences == occurrences
+            && other.occurrences() == occurrences()
             && other.justifications == justifications
 
         override fun chunk(): Chunk = this
-        override fun entriesInChunk(): Int = occurrences.size
+        override fun entriesInChunk(): Int = occurrences().size
     }
 
     interface Pos {
@@ -82,34 +82,32 @@ internal open class MatchJournalImpl(
 ) : MatchJournal
 {
     // invariant: never empty
-    private val hist: MutableList<MatchJournal.Chunk>
+    private val hist: MutableList<ChunkImpl>
     private var nextChunkId: Int
 
     init {
         if (view == null) {
-            hist = LinkedList<MatchJournal.Chunk>()
+            hist = LinkedList()
             nextChunkId = 0
-            val initChunk = MatchJournal.Chunk(InitRuleMatch, nextChunkId++, justsOf())
+            val initChunk = ChunkImpl(ispec, InitRuleMatch, nextChunkId++, justsOf())
             hist.add(initChunk)
         } else {
             // fixme: check somehow that initial chunk is present?
-            hist = LinkedList<MatchJournal.Chunk>(view.chunks)
+            hist = LinkedList(view.chunks as List<ChunkImpl>)
             nextChunkId = view.nextChunkId
         }
     }
 
     constructor(view: MatchJournal.View? = null) : this(IncrementalProgramSpec.NonIncrSpec, view)
 
-    private var pos: MutableListIterator<MatchJournal.Chunk> = hist.listIterator()
-    private var current: MatchJournal.Chunk = pos.next() // take the initial chunk, move pos
+    private var pos: MutableListIterator<ChunkImpl> = hist.listIterator()
+    private var current: ChunkImpl = pos.next() // take the initial chunk, move pos
 
 
-    override fun iterator() = hist.iterator()
+    override fun iterator(): MutableIterator<MatchJournal.Chunk> = hist.iterator()
 
 
     override fun logMatch(match: RuleMatch) {
-        // TODO: think, what about principal (i.e. 'matching') rules, but with empty head justs?
-
         // Two cases when a new chunk is created:
         //  either the set of justifications isn't empty
         //  or we directly know that we deal with a principal rule.
@@ -117,7 +115,7 @@ internal open class MatchJournalImpl(
         if (ispec.isPrincipal(match.rule()) || !justs.isEmpty) {
 
             justs.add(nextChunkId)
-            val newChunk = MatchJournal.Chunk(match, nextChunkId, justs)
+            val newChunk = ChunkImpl(ispec, match, nextChunkId, justs)
             pos.add(newChunk)
 
             ++nextChunkId
@@ -183,7 +181,7 @@ internal open class MatchJournalImpl(
 
         val set = HashSet<Id<Occurrence>>()
         for (chunk in hist) { // initial chunk is counted too
-            chunk.occurrences.forEach {
+            chunk.occurrences().forEach {
                 if (it.isDiscarded) set.remove(Id(it.occ)) else set.add(Id(it.occ))
             }
             if (chunk === current) {
@@ -191,6 +189,27 @@ internal open class MatchJournalImpl(
             }
         }
         throw IllegalStateException()
+    }
+
+
+    private class ChunkImpl(val ispec: IncrementalProgramSpec, match: RuleMatch, id: Int, justifications: Justs) : MatchJournal.Chunk(match, id, justifications)
+    {
+        var occurrences: MutableList<MatchJournal.Chunk.Entry> = mutableListOf()
+
+        override fun occurrences(): List<MatchJournal.Chunk.Entry> = occurrences
+
+        override fun findOccurrence(ctr: Constraint): Occurrence? =
+            occurrences.find { !it.isDiscarded && it.occ.constraint.symbol() == ctr.symbol() }?.occ
+
+        override fun principalConstraint(): Constraint? {
+            try {
+                val body = match.rule().bodyAlternation().first()
+                val princProds = body.filter { it is Constraint && it.isPrincipal() }
+                return princProds.first() as Constraint
+            } catch (e: NoSuchElementException) {
+                return null
+            }
+        }
     }
 
 

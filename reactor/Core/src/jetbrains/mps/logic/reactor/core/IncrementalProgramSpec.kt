@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.core
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 
+
 interface IncrementalProgramSpec
 {
     fun isPrincipal(ctr: Constraint): Boolean

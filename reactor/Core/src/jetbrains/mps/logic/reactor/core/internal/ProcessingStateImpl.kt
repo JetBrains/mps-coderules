@@ -142,8 +142,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
         while (it.hasNext()) { // note: if there's only an initial chunk, we have nothing to do
             val chunk = it.next()
-            val chunkRule = chunk.match.rule()
-            val pp = chunkRule.principalOccurrence()
+            val pp = chunk.principalConstraint()
 
             // Does this chunk have principal occurrence and can activate anything at all?
             if (pp != null) {
@@ -174,6 +173,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 //  either as the last one, after all existing activations
                 //  or according to the ordering between rules.
 
+                val chunkRule = chunk.match.rule()
                 val currRuleOrder = ruleOrder[chunkRule.uniqueTag()]
                     ?: throw(IllegalStateException("There can be no chunks with rules not in rule index!"))
                 val candRuleOrder = ruleOrder[candRule.uniqueTag()]
@@ -294,14 +294,4 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
 
     private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
-
-    private fun Rule.headAll() = headKept() + headReplaced()
-
-    // todo: use IncrementalProgramSpec; move method to Chunk, supposedly?
-    private fun Rule.principalOccurrence(): Constraint? {
-        val princProds = bodyAlternation().first().filter {
-            it is Constraint && it.isPrincipal()
-        }
-        return if (princProds.isNotEmpty()) princProds.first() as Constraint else null
-    }
 }
