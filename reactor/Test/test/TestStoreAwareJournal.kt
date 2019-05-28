@@ -398,6 +398,7 @@ class TestStoreAwareJournal {
                     // walk by history, remove the third chunk (i.e. match of rule2a)
                     //  continue from the second chunk (match of rule1)
                     val rmIt = iterator()
+                    rmIt.next() // skip initial chunk
                     val continueFrom = rmIt.next()
                     rmIt.next()
                     rmIt.remove()
