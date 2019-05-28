@@ -51,7 +51,9 @@ class TestIncrementalProgram {
         override fun isPrincipal(rule: CRule): Boolean = principalRuleTags.contains(rule.uniqueTag())
     }
 
-    private fun Builder.launch(name: String, incrSpec: IncrementalProgramSpec, resultHandler: (EvaluationResult) -> Unit): Pair<Builder, EvaluationResult> {
+    private fun Builder.launch(name: String, incrSpec: IncrementalProgramSpec, resultHandler: (EvaluationResult) -> Unit)
+        : Pair<Builder, EvaluationResult>
+    {
         val result = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .withIncrSpec(incrSpec)
@@ -61,7 +63,9 @@ class TestIncrementalProgram {
         return this to result
     }
 
-    private fun Builder.relaunch(name: String, incrSpec: IncrementalProgramSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit) {
+    private fun Builder.relaunch( name: String, incrSpec: IncrementalProgramSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit )
+        : Pair<Builder, EvaluationResult>
+    {
         val result = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .withIncrSpec(incrSpec)
@@ -69,13 +73,47 @@ class TestIncrementalProgram {
             .start(MockSupervisor())
         result.feedback()?.let { if (it.isFailure) throw it.failureCause() }
         resultHandler(result)
+        return this to result
     }
 
 
     @Test
-    fun addRuleAtEnd() {
+    fun addNewMatch() {
         val progSpec = MockIncrProgSpec(
-            setOf("main", "main.foobar", "main.foobaz"),
+            setOf("main", "foo.bar"),
+            setOf(sym0("foo"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                ))
+        ).launch("addRule", progSpec) { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+
+        }.also { (builder, evalRes) ->
+            builder.programWithRules(
+                rule("foo.bar",
+                    headReplaced(
+                        princConstraint("foo")
+                    ),
+                    body(
+                        constraint("bar")
+                    )
+                )
+            ).relaunch("test1", progSpec, evalRes.token()) { result ->
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"))
+            }
+        }
+    }
+
+    @Test
+    fun addOneMoreMatch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz"),
             setOf(sym0("foo"))
         )
         programWithRules(
@@ -86,7 +124,7 @@ class TestIncrementalProgram {
                 body(
                     princConstraint("foo")
                 )),
-            rule("main.foobar",
+            rule("foo.bar",
                 headKept(
                     princConstraint("foo")
                 ),
@@ -94,12 +132,12 @@ class TestIncrementalProgram {
                     constraint("bar")
                 )
             )
-        ).launch("replace", progSpec) { result ->
+        ).launch("addRule", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"))
 
         }.also { (builder, evalRes) ->
-            builder.programWithRules (
-                rule("main.foobaz",
+            builder.programWithRules(
+                rule("foo.baz",
                     headKept(
                         princConstraint("foo")
                     ),
@@ -107,10 +145,242 @@ class TestIncrementalProgram {
                         constraint("baz")
                     )
                 )
-            ).relaunch("test", progSpec, evalRes.token()) { result ->
+            ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
             }
         }
     }
 
+    @Test
+    fun addMatchAfterReplaced() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "main.bar"),
+            setOf(sym0("main"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    princConstraint("main")
+                ),
+                body(
+                    constraint("foo")
+                ))
+        ).launch("addRule", progSpec) { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+
+        }.also { (builder, evalRes) ->
+            builder.programWithRules(
+                rule("main.bar",
+                    headKept(
+                        princConstraint("main")
+                    ),
+                    body(
+                        constraint("bar")
+                    )
+                )
+            ).relaunch("test1", progSpec, evalRes.token()) { result ->
+                // no new matches: 'main' has been already discarded
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+            }
+        }
+    }
+
+    @Test
+    fun addMatchBeforeReplaced() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz", "baz.dummy"),
+            setOf(sym0("foo"), sym0("baz"))
+        )
+        val p1 = programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                )),
+            rule("baz.dummy",
+                headKept(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("dummy")
+                )
+            )
+        )
+        // p2 differs in that before discarding foo in foo.baz it also produces bar in foo.bar
+        val p2 = programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.bar",
+                headKept(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("bar")
+                )),
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("baz")
+                )),
+            rule("baz.dummy",
+                headKept(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("dummy")
+                )
+            )
+        )
+
+        val evalRes1 = p1.launch("initial run", progSpec) { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"), sym0("dummy"))
+        }.second
+
+        p2.relaunch("test1", progSpec, evalRes1.token()) { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("dummy"))
+        }
+    }
+
+    @Test
+    fun addMatchAfterKeptBeforeReplaced() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz", "foo.qux"),
+            setOf(sym0("foo"))
+        )
+        val p1 = programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.bar",
+                headKept(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("bar")
+                )),
+            rule("foo.qux",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("qux")
+                )
+            )
+        )
+        val p2 = programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.bar",
+                headKept(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("bar")
+                )),
+            rule("foo.baz",
+                headKept(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("baz")
+                )),
+            rule("foo.qux",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("qux")
+                )
+            )
+        )
+
+        val evalRes1 = p1.launch("initial run", progSpec) { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("qux"))
+        }.second
+
+        p2.relaunch("test1", progSpec, evalRes1.token()) { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("qux"))
+        }
+    }
+
+    @Test
+    fun relaunchTwice() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz", "baz.lax"),
+            setOf(sym0("foo"), sym0("baz"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.bar",
+                headKept(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("bar")
+                )
+            )
+        ).launch("addRule", progSpec) { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"))
+
+            // Add single rule and relaunch
+        }.also { (builder, evalRes) ->
+            builder.programWithRules(
+                rule("foo.baz",
+                    headKept(
+                        princConstraint("foo")
+                    ),
+                    body(
+                        princConstraint("baz")
+                    )
+                )
+            ).relaunch("test1", progSpec, evalRes.token()) { result ->
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
+
+            }.also { (builder, evalRes) ->
+                builder.programWithRules(
+                    rule("baz.lax",
+                        headKept(
+                            princConstraint("baz")
+                        ),
+                        body(
+                            constraint("lax")
+                        )
+                    )
+                ).relaunch("test2", progSpec, evalRes.token()) { result ->
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("qux"))
+                }
+            }
+        }
+    }
 }

@@ -232,11 +232,13 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 active.stored = true
                 trace.activate(active)
 
+                // todo: need doing it at reactivation?
+                logActivation(active)
+
             } else {
                 trace.reactivate(active)
             }
 
-            logActivation(active)
             this.dispatchingFront = dispatchingFront.expand(active)
 
             val outStatus = dispatchingFront.matches().toList().fold(inStatus) { status, match ->
