@@ -14,19 +14,8 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.evaluation;
+package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.core.SessionToken;
+import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 
-/**
- * @author Fedor Isakov
- */
-public interface EvaluationResult {
-
-    public SessionToken token();
-
-    public StoreView storeView();
-    
-    public EvaluationFeedback feedback();
-
-}
+data class SessionToken(val journalView: MatchJournal.View, val ruleTags: Iterable<Any>, val frontState: DispatchingFrontState)

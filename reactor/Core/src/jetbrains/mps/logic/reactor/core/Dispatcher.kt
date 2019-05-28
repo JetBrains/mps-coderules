@@ -17,8 +17,12 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.Maps
+import javaslang.collection.Map
 import jetbrains.mps.logic.reactor.core.internal.RuleMatchImpl
 import com.github.andrewoma.dexx.collection.Map as PersMap
+
+
+typealias DispatchingFrontState = PersMap<Any, RuleMatchingProbe>
 
 /**
  * A front-end interface to [RuleMatcher].
@@ -41,11 +45,22 @@ class Dispatcher (val ruleIndex: RuleIndex) {
      */
     fun front() = DispatchingFront()
 
+    fun frontFromState(predState: DispatchingFrontState) = DispatchingFront(predState)
+
     inner class DispatchingFront {
 
         private var ruletag2probe: PersMap<Any, RuleMatchingProbe>
 
         private val allMatches = arrayListOf<RuleMatchImpl>()
+
+        // fixme: make it a default constructor also, with empty input?
+        constructor(predState: DispatchingFrontState) {
+            this.ruletag2probe = Maps.of()
+            ruletag2matcher.entries.forEach { e ->
+                val probe = predState[e.key] ?: e.value.probe()
+                this.ruletag2probe = ruletag2probe.put(e.key, probe)
+            }
+        }
 
         constructor() {
             this.ruletag2probe = Maps.of()
@@ -73,6 +88,8 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          * Returns all matches satisfied by the constraint occurrences received so far.
          */
         fun matches() : Iterable<RuleMatchEx> = allMatches
+
+        fun state() : DispatchingFrontState = ruletag2probe
 
         /**
          * Returns a new [DispatchingFront] instance that is "expanded" with matches corresponding to the

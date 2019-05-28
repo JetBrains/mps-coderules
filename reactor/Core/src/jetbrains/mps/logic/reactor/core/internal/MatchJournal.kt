@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import jetbrains.mps.logic.reactor.core.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.core.Justs
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.justsOf
@@ -47,12 +48,15 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
     data class View(val chunks: List<Chunk>, val nextChunkId: Int)
 
-    data class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : Pos {
+    class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : Pos {
         data class Entry(val occ: Occurrence, val isDiscarded: Boolean = false) {
             override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
         }
 
         var occurrences: MutableList<Entry> = mutableListOf()
+
+        fun findOccurrence(ctr: Constraint): Occurrence? =
+            occurrences.find { !it.isDiscarded && it.occ.constraint.symbol() == ctr.symbol() }?.occ
 
         override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, $occurrences)"
         override fun equals(other: Any?) =
@@ -72,7 +76,10 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 }
 
 
-internal open class MatchJournalImpl(view: MatchJournal.View? = null): MatchJournal
+internal open class MatchJournalImpl(
+    private val ispec: IncrementalProgramSpec,
+    view: MatchJournal.View? = null
+) : MatchJournal
 {
     // invariant: never empty
     private val hist: MutableList<MatchJournal.Chunk>
@@ -91,21 +98,24 @@ internal open class MatchJournalImpl(view: MatchJournal.View? = null): MatchJour
         }
     }
 
+    constructor(view: MatchJournal.View? = null) : this(IncrementalProgramSpec.NonIncrSpec, view)
 
     private var pos: MutableListIterator<MatchJournal.Chunk> = hist.listIterator()
     private var current: MatchJournal.Chunk = pos.next() // take the initial chunk, move pos
 
 
-    // Forbid access to the initial chunk
-    override fun iterator() = hist.iterator().apply { next() }
+    override fun iterator() = hist.iterator()
 
 
     override fun logMatch(match: RuleMatch) {
         // TODO: think, what about principal (i.e. 'matching') rules, but with empty head justs?
 
-        // If the set of justifications isn't empty, then we deal with principal rule
+        // Two cases when a new chunk is created:
+        //  either the set of justifications isn't empty
+        //  or we directly know that we deal with a principal rule.
         val justs = match.headJustifications()
-        if (!justs.isEmpty) {
+        if (ispec.isPrincipal(match.rule()) || !justs.isEmpty) {
+
             justs.add(nextChunkId)
             val newChunk = MatchJournal.Chunk(match, nextChunkId, justs)
             pos.add(newChunk)
@@ -114,9 +124,8 @@ internal open class MatchJournalImpl(view: MatchJournal.View? = null): MatchJour
             current = newChunk
         }
 
-        val m = match as RuleMatchImpl
-        // Log discards
-        match.forEachReplaced {occ ->
+         // Log discards
+        (match as RuleMatchImpl).forEachReplaced {occ ->
             current.occurrences.add(MatchJournal.Chunk.Entry(occ, true))
             occ.terminate()
         }
@@ -133,7 +142,6 @@ internal open class MatchJournalImpl(view: MatchJournal.View? = null): MatchJour
     // fixme: unclear, whether this makes sense here, in "pure" journal without store? along with reset and replay?
     // reset to the beginning, even before the initial chunk, because 'replay' after 'resetPos' is expected
     override fun resetPos() { pos = hist.listIterator() }
-//    override fun resetPos() { pos = hist.listIterator().apply { next() } }
 
     override fun reset(pastPos: MatchJournal.Pos) {
         while (pos.hasPrevious()) {

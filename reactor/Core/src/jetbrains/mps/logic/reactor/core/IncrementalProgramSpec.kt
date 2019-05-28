@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.evaluation;
+package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.core.SessionToken;
+import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.Rule
 
-/**
- * @author Fedor Isakov
- */
-public interface EvaluationResult {
+interface IncrementalProgramSpec
+{
+    fun isPrincipal(ctr: Constraint): Boolean
+    fun isPrincipal(rule: Rule): Boolean
 
-    public SessionToken token();
-
-    public StoreView storeView();
-    
-    public EvaluationFeedback feedback();
-
+    object NonIncrSpec : IncrementalProgramSpec
+    {
+        override fun isPrincipal(ctr: Constraint): Boolean = false
+        override fun isPrincipal(rule: Rule): Boolean = false
+    }
 }

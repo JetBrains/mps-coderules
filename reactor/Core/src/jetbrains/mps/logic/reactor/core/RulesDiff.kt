@@ -14,19 +14,22 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.evaluation;
+package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.core.SessionToken;
+import jetbrains.mps.logic.reactor.program.Rule
 
-/**
- * @author Fedor Isakov
- */
-public interface EvaluationResult {
+data class RulesDiff(val added: Iterable<Rule>, val removed: Set<Any>) {
+    companion object {
+        fun emptyDiff() = RulesDiff(emptyList(), emptySet())
 
-    public SessionToken token();
+        fun findDiff(old: Iterable<Any>, new: Iterable<Rule>): RulesDiff {
+            val oldSet = old.toHashSet()
+            val newSet = new.toHashSet()
 
-    public StoreView storeView();
-    
-    public EvaluationFeedback feedback();
+            val added = new.filter { !oldSet.contains(it.uniqueTag()) }
+            val removed = oldSet.minus(newSet.map { it.uniqueTag() })
 
+            return RulesDiff(added, removed)
+        }
+    }
 }

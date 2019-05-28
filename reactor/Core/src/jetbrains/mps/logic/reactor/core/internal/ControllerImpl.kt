@@ -31,12 +31,10 @@ import com.github.andrewoma.dexx.collection.Map as PersMap
 internal class ControllerImpl (
     val supervisor: Supervisor,
     val state: ProcessingStateImpl,
+    val ispec: IncrementalProgramSpec = IncrementalProgramSpec.NonIncrSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null) : Controller
 {
-    // fixme
-//    val journal: StoreAwareJournalImpl = StoreAwareJournalImpl(state, null)
-
     /** For tests only */
     override fun storeView(): StoreView = state.storeView()
 
@@ -50,6 +48,13 @@ internal class ControllerImpl (
             throw status.failure.failureCause()
         }
         return storeView()
+    }
+
+    fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): FeedbackStatus {
+        // todo: use profiler here?
+        state.invalidateByRules(rulesDiff.removed)
+        state.addRuleApplications(rulesDiff.added)
+        return state.launchQueue(this)
     }
 
     fun activate(constraint: Constraint) : FeedbackStatus {
@@ -139,7 +144,8 @@ internal class ControllerImpl (
                 val itemOk = when (item) {
                     is Constraint -> {
                         // track justifications only for principal constraints
-                        val justs = if (item.isPrincipal) currentJusts else emptyJusts()
+//                        val justs = if (item.isPrincipal) currentJusts else emptyJusts()
+                        val justs = if (ispec.isPrincipal(item)) currentJusts else emptyJusts()
                         activateConstraint(item, justs, context)
                     }
                     is Predicate -> tellPredicate(item, context)
@@ -298,4 +304,10 @@ fun createController(
     trace: EvaluationTrace = EvaluationTrace.NULL,
     profiler: Profiler? = null) : Controller =
 
-    ControllerImpl(supervisor, ProcessingStateImpl(MatchJournalImpl(), Dispatcher(ruleIndex)), trace, profiler)
+    ControllerImpl(
+        supervisor,
+        ProcessingStateImpl(Dispatcher(ruleIndex).front(), MatchJournalImpl(), ruleIndex, trace, profiler),
+        IncrementalProgramSpec.NonIncrSpec,
+        trace,
+        profiler
+    )

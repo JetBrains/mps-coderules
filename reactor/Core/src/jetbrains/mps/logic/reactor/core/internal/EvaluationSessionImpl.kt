@@ -41,12 +41,34 @@ internal class EvaluationSessionImpl private constructor (
 
     override fun controller() = controller
 
-    private fun launch(main: Constraint, profiler: Profiler?) : FeedbackStatus {
-        val dispatcher = Dispatcher(RuleIndex(program().handlers()))
-        val journal = MatchJournalImpl()
-        val state = ProcessingStateImpl(journal, dispatcher, trace, profiler)
-        this.controller = ControllerImpl(supervisor, state, trace, profiler)
-        return controller.activate(main)
+//    private fun launch(main: Constraint, profiler: Profiler?) : FeedbackStatus {
+//        val journal = MatchJournalImpl()
+//        val state = ProcessingStateImpl(journal, dispatcher, trace, profiler)
+//        this.controller = ControllerImpl(supervisor, state, trace, profiler)
+//        return controller.activate(main)
+//    }
+
+    private fun incrLaunch(main: Constraint, profiler: Profiler?, token: SessionToken?, ispec: IncrementalProgramSpec) : FeedbackStatus {
+        val ruleIndex = RuleIndex(program().handlers())
+        val dispatcher = Dispatcher(ruleIndex)
+
+        if (ispec is IncrementalProgramSpec.NonIncrSpec || token == null) {
+            val state = ProcessingStateImpl(dispatcher.front(), MatchJournalImpl(ispec), ruleIndex, trace, profiler)
+
+            this.controller = ControllerImpl(supervisor, state, ispec, trace, profiler)
+            return controller.activate(main)
+
+        } else {
+            val state = ProcessingStateImpl(
+                dispatcher.frontFromState(token.frontState),
+                MatchJournalImpl(ispec, token.journalView),
+                ruleIndex, trace, profiler
+            )
+
+            val rulesDiff = RulesDiff.findDiff(token.ruleTags, ruleIndex)
+            this.controller = ControllerImpl(supervisor, state, ispec, trace, profiler)
+            return controller.incrLaunch(main, rulesDiff)
+        }
     }
 
     private class Config(val program: Program) : EvaluationSession.Config() {
@@ -55,12 +77,25 @@ internal class EvaluationSessionImpl private constructor (
 
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
 
+        var ispec: IncrementalProgramSpec = IncrementalProgramSpec.NonIncrSpec
+
+        var token: SessionToken? = null
+
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
             this.evaluationTrace = computingTracer
             return this
         }
 
         override fun withStoreView(storeView: StoreView): EvaluationSession.Config {
+            return this
+        }
+
+        override fun withSessionToken(token: SessionToken): EvaluationSession.Config {
+            this.token = token
+            return this
+        }
+        override fun withIncrSpec(ispec: IncrementalProgramSpec): EvaluationSession.Config {
+            this.ispec = ispec
             return this
         }
 
@@ -83,7 +118,8 @@ internal class EvaluationSessionImpl private constructor (
             var failure: Feedback? = null
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                val status = session.launch(main, profiler)
+//                val status = session.launch(main, profiler)
+                val status = session.incrLaunch(main, profiler, token, ispec)
                 if (status is FAILED) {
                     failure = status.failure
                 }
@@ -102,6 +138,8 @@ internal class EvaluationSessionImpl private constructor (
             }
 
             return object : EvaluationResult {
+                override fun token(): SessionToken = session.controller.state.snapshot()
+
                 override fun storeView(): StoreView? = session.controller.storeView()
 
                 override fun feedback():  EvaluationFeedback? = failure

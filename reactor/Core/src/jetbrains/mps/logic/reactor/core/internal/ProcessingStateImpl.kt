@@ -17,15 +17,14 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
-import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
-import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.util.Id
+import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
+import org.jetbrains.kotlin.utils.mapToIndex
 import java.util.*
 
 
@@ -103,15 +102,115 @@ internal open class StateFrameStack() : ProcessingState, LogicalObserver
 }
 
 
-internal class ProcessingStateImpl(journal: MatchJournal,
-                                   dispatcher: Dispatcher,
+internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.DispatchingFront,
+                                   journal: MatchJournal,
+                                   ruleIndex: RuleIndex,
                                    val trace: EvaluationTrace = EvaluationTrace.NULL,
                                    val profiler: Profiler? = null)
     : StoreAwareJournalImpl(journal)
 {
+    private val ruleOrder: Map<Any, Int> = ruleIndex.map { it.uniqueTag() }.mapToIndex()
 
-    private var dispatchingFront: Dispatcher.DispatchingFront = dispatcher.front()
+    private val execQueue: Queue<ExecPos> = LinkedList<ExecPos>()
 
+    private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
+
+    // only for tests
+    fun pushActivateFirstOccOf(ctr: Constraint): Boolean {
+        val pos = currentPos()
+        val occ = pos.chunk().findOccurrence(ctr)
+        if (occ != null) {
+            execQueue.offer(ExecPos(pos, occ))
+            return true
+        }
+        return false
+    }
+
+    fun invalidateByRules(ruleIds: Set<Any>) {
+//        for (ruleTag in rulesDiff.removed) {
+//
+//        }
+    }
+
+    private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
+
+    fun addRuleApplications(rules: Iterable<Rule>) {
+        val activationCandidates = mutableListOf<MatchCandidate>()
+
+        val it = journal.iterator()
+        var prevChunk = it.next() // skip initial chunk
+
+        while (it.hasNext()) { // note: if there's only an initial chunk, we have nothing to do
+            val chunk = it.next()
+            val chunkRule = chunk.match.rule()
+            val pp = chunkRule.principalProduction()
+
+            // Does this chunk have princ. production and can activate anything at all?
+            if (pp != null) {
+                for (rule in rules) {
+                    // Can this rule be matched by 'pp'?
+                    // fixme: maybe use RuleIndex here?
+                    if (rule.headKept().contains(pp) || rule.headReplaced().contains(pp)) {
+
+                        val princOcc = chunk.findOccurrence(pp)
+                            ?: throw IllegalStateException("Chunk with principal production must have it in activated occurrences!")
+
+                        // Then we will need to find the place among existing child chunks
+                        //  (i.e. among some number of following ones)
+                        //  to activate this occurrence, to (possibly) match this rule.
+                        // Also remember the parent justification of this rule candidate
+                        //  to drop it from monitoring when child chunks end.
+                        activationCandidates.add(MatchCandidate(rule, princOcc, chunk.id))
+                        // todo: also use the rule to help Dispatcher in future? i.e. try matching only on the candidate rule
+                    }
+                }
+            }
+
+            val it = activationCandidates.listIterator()
+            while (it.hasNext()) {
+                val (candRule, candOcc, parentId) = it.next()
+
+                // Place to activate candidate:
+                //  either as the last one, after all existing activations
+                //  or according to the ordering between rules.
+
+                val childChunksEnded = !chunk.justifications.contains(parentId)
+
+                val currRuleOrder = ruleOrder[chunkRule.uniqueTag()]
+                    ?: throw(IllegalStateException("There can be no chunks with rules not in rule index!"))
+                val candRuleOrder = ruleOrder[candRule.uniqueTag()]
+                    ?: throw(IllegalStateException("Match candidate rule must be present in the rule index!"))
+
+                if (childChunksEnded || currRuleOrder < candRuleOrder) {
+                    // 'replay' replays the whole chunk, so we need the previous chunk as pos (i.e. adding after it).
+                    execQueue.offer(ExecPos(prevChunk, candOcc))
+                    // Drop the candidate after appropriate activation place is found.
+                    it.remove()
+                }
+            }
+
+            prevChunk = chunk
+        }
+    }
+
+    fun launchQueue(controller: Controller): FeedbackStatus.NORMAL {
+        if (execQueue.isNotEmpty()) {
+            resetStore()
+
+            do {
+                val execPos = execQueue.poll()
+                replay(execPos.pos)
+                controller.reactivate(execPos.activeOcc)
+            } while (execQueue.isNotEmpty())
+        }
+        // todo: replay to the end after queue is fully executed?
+        // fixme: get FeedbackStatus out of reactivate()
+        return FeedbackStatus.NORMAL()
+    }
+
+    fun snapshot(): SessionToken {
+        return SessionToken(view(), ruleOrder.keys, dispatchingFront.state())
+    }
 
     /**
      * Called to update the state with the currently active constraint occurrence.
@@ -191,4 +290,14 @@ internal class ProcessingStateImpl(journal: MatchJournal,
 
 
     private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
+
+    private fun Rule.headAll() = headKept() + headReplaced()
+
+    // todo: use IncrementalProgramSpec; move method to Chunk, supposedly?
+    private fun Rule.principalProduction(): Constraint? {
+        val princProds = bodyAlternation().first().filter {
+            it is Constraint && it.isPrincipal()
+        }
+        return if (princProds.isNotEmpty()) princProds.first() as Constraint else null
+    }
 }

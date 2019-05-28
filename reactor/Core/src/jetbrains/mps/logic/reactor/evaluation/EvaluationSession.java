@@ -17,6 +17,8 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 
+import jetbrains.mps.logic.reactor.core.IncrementalProgramSpec;
+import jetbrains.mps.logic.reactor.core.SessionToken;
 import jetbrains.mps.logic.reactor.program.Program;
 
 /**
@@ -93,6 +95,10 @@ public abstract class EvaluationSession {
          */
         @Deprecated
         public abstract Config withStoreView(StoreView storeView);
+
+        public abstract Config withSessionToken(SessionToken token);
+
+        public abstract Config withIncrSpec(IncrementalProgramSpec ispec);
 
         public abstract EvaluationResult start(Supervisor supervisor);
 
