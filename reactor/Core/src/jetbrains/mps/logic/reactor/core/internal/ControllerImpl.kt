@@ -54,7 +54,8 @@ internal class ControllerImpl (
         // todo: use profiler here?
         state.invalidateByRules(rulesDiff.removed)
         state.addRuleApplications(rulesDiff.added)
-        return state.launchQueue(this)
+        val status = state.launchQueue(this)
+        return status
     }
 
     fun activate(constraint: Constraint) : FeedbackStatus {

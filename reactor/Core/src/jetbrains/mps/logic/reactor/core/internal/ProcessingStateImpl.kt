@@ -207,7 +207,8 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 controller.reactivate(execPos.activeOcc)
             } while (execQueue.isNotEmpty())
         }
-        // todo: replay to the end after queue is fully executed?
+        // Also replay to the end after queue is fully executed
+        replay(journal.last())
         // fixme: get FeedbackStatus out of reactivate()
         return FeedbackStatus.NORMAL()
     }

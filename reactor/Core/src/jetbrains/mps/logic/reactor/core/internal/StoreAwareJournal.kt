@@ -36,7 +36,8 @@ internal open class StoreAwareJournalImpl(journal: MatchJournal, private val sta
     : StoreAwareJournal(journal), ProcessingState by state
 {
 
-    private data class PosImpl(val frame: StateFrame, val chunk: MatchJournal.Chunk, val entriesInChunk: Int = 0) : MatchJournal.Pos {
+    private class PosImpl(val frame: StateFrame, val chunk: MatchJournal.Chunk, val entriesInChunk: Int = 0) : MatchJournal.Pos()
+    {
         override fun chunk(): MatchJournal.Chunk = chunk
         override fun entriesInChunk(): Int = entriesInChunk
     }

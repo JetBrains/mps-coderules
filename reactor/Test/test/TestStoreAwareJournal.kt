@@ -145,8 +145,7 @@ class TestStoreAwareJournal {
                     replay(savedPos)
 
                     storeView().allOccurrences() shouldBe oldStore
-                    currentPos().chunk() shouldBe savedPos.chunk()
-                    currentPos().entriesInChunk() shouldBe savedPos.entriesInChunk()
+                    currentPos() shouldBe savedPos
                 }
             }
         }
@@ -202,7 +201,7 @@ class TestStoreAwareJournal {
                     // reset to the very beginning
                     reset(initialPos)
 
-                    currentPos().chunk() shouldBe initialPos.chunk()
+                    currentPos().chunk() shouldBeSame initialPos.chunk()
                     view().chunks.size shouldBe 1
                     storeView().allOccurrences().count() shouldBe 0
                 }
@@ -296,9 +295,7 @@ class TestStoreAwareJournal {
                 oldState.chunks.size shouldBe 2
                 hist.view().chunks shouldBe oldState.chunks
                 hist.storeView().allOccurrences() shouldBe oldStore
-
-                hist.currentPos().chunk() shouldBe savedPos.chunk()
-                hist.currentPos().entriesInChunk() shouldBe savedPos.entriesInChunk()
+                hist.currentPos() shouldBe savedPos
             }
         }
     }

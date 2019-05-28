@@ -48,7 +48,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
     data class View(val chunks: List<Chunk>, val nextChunkId: Int)
 
-    abstract class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : Pos
+    abstract class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : Pos()
     {
         data class Entry(val occ: Occurrence, val isDiscarded: Boolean = false) {
             override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
@@ -59,19 +59,19 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         abstract fun principalConstraint(): Constraint?
 
         override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${occurrences()})"
-        override fun equals(other: Any?) =
-            other is Chunk
-            && other.id == id
-            && other.occurrences() == occurrences()
-            && other.justifications == justifications
 
         override fun chunk(): Chunk = this
         override fun entriesInChunk(): Int = occurrences().size
     }
 
-    interface Pos {
-        fun chunk(): Chunk
-        fun entriesInChunk(): Int
+    abstract class Pos {
+        abstract fun chunk(): Chunk
+        abstract fun entriesInChunk(): Int
+
+        override fun equals(other: Any?) =
+            other is Pos
+            && other.chunk() === chunk()
+            && other.entriesInChunk() == entriesInChunk()
     }
 }
 
@@ -150,7 +150,7 @@ internal open class MatchJournalImpl(
             current = pos.previous()
             pos.remove()
         }
-        throw IllegalStateException()
+        if (currentPos() != pastPos) throw IllegalStateException()
     }
 
     // NB: can't replay inside the same chunk
@@ -163,7 +163,7 @@ internal open class MatchJournalImpl(
             }
             replayOccurrences(current.occurrences)
         }
-        throw IllegalStateException()
+        if (currentPos() != futurePos) throw IllegalStateException()
     }
 
     private fun replayOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
