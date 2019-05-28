@@ -143,9 +143,9 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         while (it.hasNext()) { // note: if there's only an initial chunk, we have nothing to do
             val chunk = it.next()
             val chunkRule = chunk.match.rule()
-            val pp = chunkRule.principalProduction()
+            val pp = chunkRule.principalOccurrence()
 
-            // Does this chunk have princ. production and can activate anything at all?
+            // Does this chunk have principal occurrence and can activate anything at all?
             if (pp != null) {
                 for (rule in rules) {
                     // Can this rule be matched by 'pp'?
@@ -153,7 +153,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     if (rule.headKept().contains(pp) || rule.headReplaced().contains(pp)) {
 
                         val princOcc = chunk.findOccurrence(pp)
-                            ?: throw IllegalStateException("Chunk with principal production must have it in activated occurrences!")
+                            ?: throw IllegalStateException("Chunk with principal occurrence must have it in activated occurrences!")
 
                         // Then we will need to find the place among existing child chunks
                         //  (i.e. among some number of following ones)
@@ -166,27 +166,31 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 }
             }
 
-            val it = activationCandidates.listIterator()
-            while (it.hasNext()) {
-                val (candRule, candOcc, parentId) = it.next()
+            val aIt = activationCandidates.listIterator()
+            while (aIt.hasNext()) {
+                val (candRule, candOcc, parentId) = aIt.next()
 
                 // Place to activate candidate:
                 //  either as the last one, after all existing activations
                 //  or according to the ordering between rules.
-
-                val childChunksEnded = !chunk.justifications.contains(parentId)
 
                 val currRuleOrder = ruleOrder[chunkRule.uniqueTag()]
                     ?: throw(IllegalStateException("There can be no chunks with rules not in rule index!"))
                 val candRuleOrder = ruleOrder[candRule.uniqueTag()]
                     ?: throw(IllegalStateException("Match candidate rule must be present in the rule index!"))
 
-                if (childChunksEnded || currRuleOrder < candRuleOrder) {
-                    // 'replay' replays the whole chunk, so we need the previous chunk as pos (i.e. adding after it).
-                    execQueue.offer(ExecPos(prevChunk, candOcc))
-                    // Drop the candidate after appropriate activation place is found.
-                    it.remove()
-                }
+                val childChunksEnded = !chunk.justifications.contains(parentId)
+
+                val pos =
+                    // We need the previous chunk as pos here (i.e. adding after it).
+                    if (childChunksEnded || currRuleOrder > candRuleOrder) prevChunk
+                    // Case when adding at the very end
+                    else if (!it.hasNext()) chunk
+                    else continue
+
+                execQueue.offer(ExecPos(pos, candOcc))
+                // Drop the candidate if appropriate activation place is found.
+                aIt.remove()
             }
 
             prevChunk = chunk
@@ -294,7 +298,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     private fun Rule.headAll() = headKept() + headReplaced()
 
     // todo: use IncrementalProgramSpec; move method to Chunk, supposedly?
-    private fun Rule.principalProduction(): Constraint? {
+    private fun Rule.principalOccurrence(): Constraint? {
         val princProds = bodyAlternation().first().filter {
             it is Constraint && it.isPrincipal()
         }

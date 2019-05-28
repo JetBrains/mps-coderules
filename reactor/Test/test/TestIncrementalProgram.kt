@@ -1,9 +1,12 @@
+import jetbrains.mps.logic.reactor.core.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
+import jetbrains.mps.logic.reactor.core.SessionToken
 import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.Rule as CRule
 import org.junit.*
 import program.MockConstraint
 
@@ -43,59 +46,69 @@ class TestIncrementalProgram {
         }
     }
 
-    private fun Builder.launch(name: String, resultHandler: (EvaluationResult) -> Unit): Pair<Builder, StoreView> {
-        val result = EvaluationSession.newSession(program(name))
-            .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
-            .start(MockSupervisor())
-        result.feedback()?.let { if (it.isFailure) throw it.failureCause() }
-        resultHandler(result)
-        return this to result.storeView()
+    private class MockIncrProgSpec(val principalRuleTags: Set<Any>, val principalCtrSyms: Set<ConstraintSymbol>) : IncrementalProgramSpec {
+        override fun isPrincipal(ctr: Constraint): Boolean = principalCtrSyms.contains(ctr.symbol())
+        override fun isPrincipal(rule: CRule): Boolean = principalRuleTags.contains(rule.uniqueTag())
     }
 
-    private fun Builder.relaunch(name: String, storeView: StoreView, resultHandler: (EvaluationResult) -> Unit) {
+    private fun Builder.launch(name: String, incrSpec: IncrementalProgramSpec, resultHandler: (EvaluationResult) -> Unit): Pair<Builder, EvaluationResult> {
         val result = EvaluationSession.newSession(program(name))
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
-            .withStoreView(storeView)
+            .withIncrSpec(incrSpec)
+            .start(MockSupervisor())
+        result.feedback()?.let { if (it.isFailure) throw it.failureCause() }
+        resultHandler(result)
+        return this to result
+    }
+
+    private fun Builder.relaunch(name: String, incrSpec: IncrementalProgramSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit) {
+        val result = EvaluationSession.newSession(program(name))
+            .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
+            .withIncrSpec(incrSpec)
+            .withSessionToken(sessionToken)
             .start(MockSupervisor())
         result.feedback()?.let { if (it.isFailure) throw it.failureCause() }
         resultHandler(result)
     }
+
 
     @Test
-    @Ignore
-    fun replace() {
+    fun addRuleAtEnd() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "main.foobar", "main.foobaz"),
+            setOf(sym0("foo"))
+        )
         programWithRules(
             rule("main",
                 headReplaced(
                     constraint("main")
                 ),
                 body(
-                    constraint("foo")
+                    princConstraint("foo")
                 )),
-            rule("main.foo",
+            rule("main.foobar",
                 headKept(
-                    constraint("foo")
+                    princConstraint("foo")
                 ),
                 body(
                     constraint("bar")
                 )
             )
-        ).launch("replace") { result ->
+        ).launch("replace", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"))
 
-        }.also { (builder, storeView) ->
+        }.also { (builder, evalRes) ->
             builder.programWithRules (
-                rule("main.foo",
+                rule("main.foobaz",
                     headKept(
-                        constraint("foo")
+                        princConstraint("foo")
                     ),
                     body(
                         constraint("baz")
                     )
                 )
-            ).relaunch("test", storeView) { result ->
+            ).relaunch("test", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
-
             }
         }
     }
