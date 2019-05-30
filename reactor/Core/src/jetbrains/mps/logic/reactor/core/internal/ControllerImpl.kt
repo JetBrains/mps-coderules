@@ -43,7 +43,7 @@ internal class ControllerImpl (
         // create the internal occurrence
         val active = occ.constraint().occurrence(this, occ.arguments(), occ.justifications())
 
-        val status = state.processActivated(active, NORMAL())
+        val status = state.processActivated(this, active, NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
         }
@@ -86,7 +86,7 @@ internal class ControllerImpl (
     override fun reactivate(occ: Occurrence) {
         // FIXME propagate the status further up the call stack
 
-        val status = state.processActivated(occ, NORMAL())
+        val status = state.processActivated(this, occ, NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
         }
@@ -205,7 +205,7 @@ internal class ControllerImpl (
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
-            state.processActivated(constraint.occurrence(this, args, justs, context.logicalContext), status)
+            state.processActivated(this, constraint.occurrence(this, args, justs, context.logicalContext), status)
         }
     }
 

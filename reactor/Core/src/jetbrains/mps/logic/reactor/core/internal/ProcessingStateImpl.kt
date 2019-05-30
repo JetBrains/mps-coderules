@@ -115,6 +115,11 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
 
+
+    override fun replayOccurrences(controller: Controller, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
+        occSpecs.forEach { if (it.isDiscarded) it.occ.terminate(controller) else it.occ.revive(controller) }
+
+
     // only for tests
     fun pushActivateFirstOccOf(ctr: Constraint): Boolean {
         val pos = currentPos()
@@ -203,12 +208,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
             do {
                 val execPos = execQueue.poll()
-                replay(execPos.pos)
+                replay(controller, execPos.pos)
                 controller.reactivate(execPos.activeOcc)
             } while (execQueue.isNotEmpty())
         }
         // Also replay to the end after queue is fully executed
-        replay(journal.last())
+        replay(controller, journal.last())
         // fixme: get FeedbackStatus out of reactivate()
         return FeedbackStatus.NORMAL()
     }
@@ -222,7 +227,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
      * Calls the controller to process matches (if any) that were triggered.
      * This method may be called at most once for a fresh state frame.
      */
-    fun processActivated(active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
+    fun processActivated(controller: Controller, active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
         push()
         assert(active.alive)
 
@@ -234,6 +239,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
                 // todo: need doing it at reactivation?
                 logActivation(active)
+                active.revive(controller)
 
             } else {
                 trace.reactivate(active)
@@ -245,7 +251,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // TODO: paranoid check. should be isAlive() instead
                 // FIXME: move this check elsewhere
                 if (status.operational && active.stored && match.allStored())
-                    processMatch(active.controller, match, status)
+                    processMatch(controller, match, status)
                 else
                     status
             }
@@ -276,12 +282,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 } else -> it
             } }
             .also { trace.trigger(match) }
-            .also { accept(match) }
+            .also { accept(controller, match) }
             .then { controller.processBody(match, it) }
             .also { trace.finish(match) }
 
 
-    private fun accept (match: RuleMatchEx) {
+    private fun accept(controller: Controller, match: RuleMatchEx) {
         logMatch(match)
         this.dispatchingFront = dispatchingFront.consume(match)
 
@@ -289,7 +295,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             this.dispatchingFront = dispatchingFront.contract(occ)
 
             occ.stored = false
-//            occ.terminate() // logMatch terminates occurrences
+            occ.terminate(controller)
 
             trace.discard(occ)
         }

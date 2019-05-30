@@ -32,18 +32,32 @@ fun emptyJusts() = TIntHashSet(1)
 fun justsOf(vararg elements: Int) = TIntHashSet(elements)
 fun justsFromCollection(collection: Collection<Int>) = TIntHashSet(collection)
 
+
+data class OccurrenceObserver(val occurrence: Occurrence, val controller: Controller) : LogicalObserver {
+    override fun valueUpdated(logical: Logical<*>) {
+        if (occurrence.alive) {
+            controller.reactivate(occurrence)
+        }
+    }
+
+    override fun parentUpdated(logical: Logical<*>) {
+        if (occurrence.alive) {
+            controller.reactivate(occurrence)
+        }
+    }
+}
+
 /**
- * Data class representing a single constraint occurrence.
+ * Class representing a single constraint occurrence.
  *
  * @author Fedor Isakov
  */
-data class Occurrence (val controller: Controller,
-                       val constraint: Constraint,
-                       val logicalContext: LogicalContext,
-                       val arguments: List<*>,
-                       val justifications: Justs):
-    ConstraintOccurrence,
-    LogicalObserver
+class Occurrence (controller: Controller,
+                  val constraint: Constraint,
+                  val logicalContext: LogicalContext,
+                  val arguments: List<*>,
+                  val justifications: Justs):
+    ConstraintOccurrence
 {
 
     var alive = true
@@ -51,7 +65,7 @@ data class Occurrence (val controller: Controller,
     var stored = false
 
     init {
-        revive()
+        revive(controller)
     }
 
     override fun constraint(): Constraint = constraint
@@ -62,31 +76,21 @@ data class Occurrence (val controller: Controller,
 
     override fun justifications(): Justs = justifications
 
-    override fun valueUpdated(logical: Logical<*>) {
-        if (alive) {
-            controller.reactivate(this)
-        }
-    }
-
-    override fun parentUpdated(logical: Logical<*>) {
-        if (alive) {
-            controller.reactivate(this)
-        }
-    }
-
-    fun terminate() {
+    fun terminate(controller: Controller) {
+        val obs = OccurrenceObserver(this, controller)
         for (a in arguments) {
             if (a is Logical<*>) {
-                controller.state().removeForwardingObserver(a, this)
+                controller.state().removeForwardingObserver(a, obs)
             }
         }
         alive = false
     }
 
-    fun revive() {
+    fun revive(controller: Controller) {
+        val obs = OccurrenceObserver(this, controller)
         for (a in arguments) {
             if (a is Logical<*>) {
-                controller.state().addForwardingObserver(a, this)
+                controller.state().addForwardingObserver(a, obs)
             }
         }
         alive = true

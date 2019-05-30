@@ -104,6 +104,7 @@ class TestStoreAwareJournal {
 
     @Test
     fun testResetStoreThenReplay() {
+        val mockController = MockController()
         with(programWithRules(
             rule("rule1",
                 headKept(
@@ -142,7 +143,7 @@ class TestStoreAwareJournal {
 
                     storeView().allOccurrences().count() shouldBe 0
 
-                    replay(savedPos)
+                    replay(mockController, savedPos)
 
                     storeView().allOccurrences() shouldBe oldStore
                     currentPos() shouldBe savedPos
@@ -303,13 +304,14 @@ class TestStoreAwareJournal {
 
     @Test
     fun testRmAddInMiddle() {
+        val mockController = MockController()
         with(programWithRules(
             rule("rule1",
                 headKept(
                     princConstraint("foo")
                 ),
                 body(
-                    // 'bar' occurrences are activated manually, see test code
+                    // 'bar' entries are activated manually, see test code
 //                    constraint("bar1"),
 //                    constraint("bar2"),
                     princConstraint("bazz")
@@ -403,7 +405,7 @@ class TestStoreAwareJournal {
                     // store is not longer valid after removing chunks from history, so reset it
                     resetStore()
                     // move to the point where we want to insert new rule
-                    replay(continueFrom)
+                    replay(mockController, continueFrom)
 
                     // we removed (canceled) rule discarding bar1, so after roll we should have it in the store
                     val bar1StoredAfterRoll = storeView().occurrences(ConstraintSymbol.symbol("bar1", 0))
@@ -437,7 +439,7 @@ class TestStoreAwareJournal {
                     // finally, purely go the the end, applying the rest of the history to the store
                     assertNotEquals(lastPos, currentPos())
 
-                    replay(lastPos)
+                    replay(mockController, lastPos)
 
                     view().chunks.size shouldBe 6
                     currentPos().chunk() shouldBeSame lastPos.chunk() // we inserted in the middle -- the last chunk should remain the same

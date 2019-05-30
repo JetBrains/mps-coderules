@@ -16,10 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.IncrementalProgramSpec
-import jetbrains.mps.logic.reactor.core.Justs
-import jetbrains.mps.logic.reactor.core.Occurrence
-import jetbrains.mps.logic.reactor.core.justsOf
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.StoreView
@@ -40,7 +37,8 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     fun currentPos(): Pos
     fun resetPos()
     fun reset(pastPos: Pos)
-    fun replay(futurePos: Pos)
+    fun replay(controller: Controller, futurePos: Pos)
+    fun replayOccurrences(controller: Controller, occSpecs: Iterable<MatchJournal.Chunk.Entry>) {}
 
     fun view(): View
     fun storeView(): StoreView
@@ -54,14 +52,17 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
         }
 
-        abstract fun occurrences(): List<Entry>
+        abstract fun entries(): List<Entry>
+        fun activated(): List<Occurrence> = entries().filter { !it.isDiscarded }.map { it.occ }
+        fun discarded(): List<Occurrence> = entries().filter { it.isDiscarded }.map { it.occ }
+
         abstract fun findOccurrence(ctr: Constraint): Occurrence?
         abstract fun principalConstraint(): Constraint?
 
-        override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${occurrences()})"
+        override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${entries()})"
 
         override fun chunk(): Chunk = this
-        override fun entriesInChunk(): Int = occurrences().size
+        override fun entriesInChunk(): Int = entries().size
     }
 
     abstract class Pos {
@@ -125,13 +126,11 @@ internal open class MatchJournalImpl(
          // Log discards
         (match as RuleMatchImpl).forEachReplaced {occ ->
             current.occurrences.add(MatchJournal.Chunk.Entry(occ, true))
-            occ.terminate()
         }
     }
 
     override fun logActivation(occ: Occurrence) {
         current.occurrences.add(MatchJournal.Chunk.Entry(occ))
-        occ.revive()
     }
 
 
@@ -153,21 +152,19 @@ internal open class MatchJournalImpl(
         if (currentPos() != pastPos) throw IllegalStateException()
     }
 
-    // NB: can't replay inside the same chunk
-    override fun replay(futurePos: MatchJournal.Pos) {
+    override fun replay(controller: Controller, futurePos: MatchJournal.Pos) {
         while (pos.hasNext()) {
             current = pos.next()
             if (futurePos.chunk() === current) {
-                replayOccurrences(current.occurrences.take(futurePos.entriesInChunk()))
+                replayOccurrences(controller, current.occurrences.take(futurePos.entriesInChunk()))
                 return
             }
-            replayOccurrences(current.occurrences)
+            replayOccurrences(controller, current.occurrences)
         }
         if (currentPos() != futurePos) throw IllegalStateException()
     }
 
-    private fun replayOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
-        occSpecs.forEach { if (it.isDiscarded) it.occ.terminate() else it.occ.revive() }
+//    override fun replayOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) {}
 
 
     override fun view() = MatchJournal.View(ArrayList(hist), nextChunkId)
@@ -181,7 +178,7 @@ internal open class MatchJournalImpl(
 
         val set = HashSet<Id<Occurrence>>()
         for (chunk in hist) { // initial chunk is counted too
-            chunk.occurrences().forEach {
+            chunk.entries().forEach {
                 if (it.isDiscarded) set.remove(Id(it.occ)) else set.add(Id(it.occ))
             }
             if (chunk === current) {
@@ -196,7 +193,7 @@ internal open class MatchJournalImpl(
     {
         var occurrences: MutableList<MatchJournal.Chunk.Entry> = mutableListOf()
 
-        override fun occurrences(): List<MatchJournal.Chunk.Entry> = occurrences
+        override fun entries(): List<MatchJournal.Chunk.Entry> = occurrences
 
         override fun findOccurrence(ctr: Constraint): Occurrence? =
             occurrences.find { !it.isDiscarded && it.occ.constraint.symbol() == ctr.symbol() }?.occ
