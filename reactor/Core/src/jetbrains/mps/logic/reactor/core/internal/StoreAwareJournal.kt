@@ -19,10 +19,11 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.ProcessingState
 import java.lang.IllegalArgumentException
 
-abstract class StoreAwareJournal(val journal: MatchJournal): MatchJournal by journal {
 
-    abstract fun testPush()
-    abstract fun resetStore()
+interface StoreAwareJournal : MatchJournal {
+
+    fun testPush()
+    fun resetStore()
 
     // for tests
     companion object {
@@ -31,8 +32,8 @@ abstract class StoreAwareJournal(val journal: MatchJournal): MatchJournal by jou
 }
 
 
-internal open class StoreAwareJournalImpl(journal: MatchJournal, private val state: StateFrameStack = StateFrameStack())
-    : StoreAwareJournal(journal), ProcessingState by state
+internal open class StoreAwareJournalImpl(private val journal: MatchJournal, private val state: StateFrameStack = StateFrameStack())
+    : MatchJournal by journal, StoreAwareJournal, ProcessingState by state
 {
 
     private class PosImpl(val frame: StateFrame, val chunk: MatchJournal.Chunk, val entriesInChunk: Int = 0) : MatchJournal.Pos()
@@ -42,12 +43,7 @@ internal open class StoreAwareJournalImpl(journal: MatchJournal, private val sta
     }
 
 
-    fun currentFrame() = state.currentFrame()
-
     fun push() = state.push()
-
-    //fixme: remove, temporary
-    fun reset(frame: StateFrame) = state.reset(frame)
 
     override fun testPush() { state.push() }
 
@@ -59,14 +55,14 @@ internal open class StoreAwareJournalImpl(journal: MatchJournal, private val sta
 
 
     override fun currentPos(): MatchJournal.Pos =
-        PosImpl(state.currentFrame(), super.currentPos().chunk(), super.currentPos().entriesInChunk())
+        PosImpl(state.currentFrame(), journal.currentPos().chunk(), journal.currentPos().entriesInChunk())
 
     // Throw away recently added chunks and reset store accordingly
     // NB: not checking that chunks are actually recently added, from this exec session
     override fun reset(pastPos: MatchJournal.Pos) {
         if (pastPos is PosImpl) {
             state.reset(pastPos.frame)
-            super.reset(pastPos)
+            journal.reset(pastPos)
         } else {
             throw IllegalArgumentException()
         }

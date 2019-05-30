@@ -138,7 +138,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     fun addRuleApplications(rules: Iterable<Rule>) {
         val activationCandidates = mutableListOf<MatchCandidate>()
 
-        val it = journal.iterator()
+        val it = this.iterator()
         var prevChunk = it.next() // skip initial chunk
 
         while (it.hasNext()) { // note: if there's only an initial chunk, we have nothing to do
@@ -209,7 +209,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             } while (execQueue.isNotEmpty())
         }
         // Also replay to the end after queue is fully executed
-        replay(controller, journal.last())
+        replay(controller, this.last())
         // fixme: get FeedbackStatus out of reactivate()
         return FeedbackStatus.NORMAL()
     }
