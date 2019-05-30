@@ -1,9 +1,9 @@
 import jetbrains.mps.logic.reactor.core.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.core.SessionToken
 import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
-import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Rule as CRule
@@ -147,9 +147,12 @@ class TestIncrementalProgram {
                 )
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
+                result.token().journalView.chunks.last().activated().constraintSymbols() shouldBe listOf(sym0("baz"))
             }
         }
     }
+
+    private fun Iterable<Occurrence>.constraintSymbols() = this.map { it.constraint.symbol() }
 
     @Test
     fun addMatchAfterReplaced() {
@@ -370,6 +373,9 @@ class TestIncrementalProgram {
             }.also { (builder, evalRes) ->
                 builder.programWithRules(
                     rule("baz.lax",
+                        headReplaced(
+                            princConstraint("foo")
+                        ),
                         headKept(
                             princConstraint("baz")
                         ),
@@ -378,7 +384,7 @@ class TestIncrementalProgram {
                         )
                     )
                 ).relaunch("test2", progSpec, evalRes.token()) { result ->
-                    result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("qux"))
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("lax"))
                 }
             }
         }

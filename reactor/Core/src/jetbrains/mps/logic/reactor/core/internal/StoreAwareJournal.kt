@@ -16,7 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.Dispatcher
 import jetbrains.mps.logic.reactor.core.ProcessingState
 import java.lang.IllegalArgumentException
 

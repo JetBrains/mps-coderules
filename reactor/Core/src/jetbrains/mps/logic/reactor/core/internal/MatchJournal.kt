@@ -38,7 +38,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     fun resetPos()
     fun reset(pastPos: Pos)
     fun replay(controller: Controller, futurePos: Pos)
-    fun replayOccurrences(controller: Controller, occSpecs: Iterable<MatchJournal.Chunk.Entry>) {}
 
     fun view(): View
     fun storeView(): StoreView
@@ -164,7 +163,8 @@ internal open class MatchJournalImpl(
         if (currentPos() != futurePos) throw IllegalStateException()
     }
 
-//    override fun replayOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) {}
+    private fun replayOccurrences(controller: Controller, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
+        occSpecs.forEach { if (it.isDiscarded) it.occ.terminate(controller) else it.occ.revive(controller) }
 
 
     override fun view() = MatchJournal.View(ArrayList(hist), nextChunkId)

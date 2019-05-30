@@ -116,10 +116,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
 
 
-    override fun replayOccurrences(controller: Controller, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
-        occSpecs.forEach { if (it.isDiscarded) it.occ.terminate(controller) else it.occ.revive(controller) }
-
-
     // only for tests
     fun pushActivateFirstOccOf(ctr: Constraint): Boolean {
         val pos = currentPos()
