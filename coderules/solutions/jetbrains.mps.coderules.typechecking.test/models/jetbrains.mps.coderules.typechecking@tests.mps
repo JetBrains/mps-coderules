@@ -4,7 +4,7 @@
   <languages>
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="1" />
@@ -198,11 +198,8 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+        <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -368,6 +365,14 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -849,8 +854,43 @@
                 </node>
               </node>
               <node concept="3SKdUt" id="6d0cWF2SWTd" role="3cqZAp">
-                <node concept="3SKdUq" id="6d0cWF2SWTe" role="3SKWNk">
-                  <property role="3SKdUp" value="FIXME: refactor into an extension point to avoid having to hardcode fqname" />
+                <node concept="1PaTwC" id="589APehYygi" role="3ndbpf">
+                  <node concept="3oM_SD" id="589APehYygj" role="1PaTwD">
+                    <property role="3oM_SC" value="FIXME:" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygk" role="1PaTwD">
+                    <property role="3oM_SC" value="refactor" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygl" role="1PaTwD">
+                    <property role="3oM_SC" value="into" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygm" role="1PaTwD">
+                    <property role="3oM_SC" value="an" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygn" role="1PaTwD">
+                    <property role="3oM_SC" value="extension" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygo" role="1PaTwD">
+                    <property role="3oM_SC" value="point" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygp" role="1PaTwD">
+                    <property role="3oM_SC" value="to" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygq" role="1PaTwD">
+                    <property role="3oM_SC" value="avoid" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygr" role="1PaTwD">
+                    <property role="3oM_SC" value="having" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygs" role="1PaTwD">
+                    <property role="3oM_SC" value="to" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygt" role="1PaTwD">
+                    <property role="3oM_SC" value="hardcode" />
+                  </node>
+                  <node concept="3oM_SD" id="589APehYygu" role="1PaTwD">
+                    <property role="3oM_SC" value="fqname" />
+                  </node>
                 </node>
               </node>
               <node concept="3cpWs8" id="6OXbTD_oquh" role="3cqZAp">
@@ -1860,8 +1900,37 @@
         </node>
         <node concept="3clFbH" id="4BHjwwGU7wu" role="3cqZAp" />
         <node concept="3SKdUt" id="4BHjwwGU6Qg" role="3cqZAp">
-          <node concept="3SKdUq" id="4BHjwwGU6Qi" role="3SKWNk">
-            <property role="3SKdUp" value="this method throws exception and &quot;read action&quot; doesn't like that" />
+          <node concept="1PaTwC" id="589APehYygv" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYygw" role="1PaTwD">
+              <property role="3oM_SC" value="this" />
+            </node>
+            <node concept="3oM_SD" id="589APehYygx" role="1PaTwD">
+              <property role="3oM_SC" value="method" />
+            </node>
+            <node concept="3oM_SD" id="589APehYygy" role="1PaTwD">
+              <property role="3oM_SC" value="throws" />
+            </node>
+            <node concept="3oM_SD" id="589APehYygz" role="1PaTwD">
+              <property role="3oM_SC" value="exception" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyg$" role="1PaTwD">
+              <property role="3oM_SC" value="and" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyg_" role="1PaTwD">
+              <property role="3oM_SC" value="&quot;read" />
+            </node>
+            <node concept="3oM_SD" id="589APehYygA" role="1PaTwD">
+              <property role="3oM_SC" value="action&quot;" />
+            </node>
+            <node concept="3oM_SD" id="589APehYygB" role="1PaTwD">
+              <property role="3oM_SC" value="doesn't" />
+            </node>
+            <node concept="3oM_SD" id="589APehYygC" role="1PaTwD">
+              <property role="3oM_SC" value="like" />
+            </node>
+            <node concept="3oM_SD" id="589APehYygD" role="1PaTwD">
+              <property role="3oM_SC" value="that" />
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="27bTNFfbxlM" role="3cqZAp">

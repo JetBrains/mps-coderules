@@ -10,7 +10,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
@@ -293,11 +293,8 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+        <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -349,6 +346,14 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
       <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7" />
+    </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -1851,8 +1856,19 @@
                             <node concept="1DcWWT" id="6IQb_Rxsy5K" role="3cqZAp">
                               <node concept="3clFbS" id="6IQb_Rxsy5L" role="2LFqv$">
                                 <node concept="3SKdUt" id="6IQb_Rxsy5M" role="3cqZAp">
-                                  <node concept="3SKdUq" id="6IQb_Rxsy5N" role="3SKWNk">
-                                    <property role="3SKdUp" value="actually show the trace" />
+                                  <node concept="1PaTwC" id="589APehYyhQ" role="3ndbpf">
+                                    <node concept="3oM_SD" id="589APehYyhR" role="1PaTwD">
+                                      <property role="3oM_SC" value="actually" />
+                                    </node>
+                                    <node concept="3oM_SD" id="589APehYyhS" role="1PaTwD">
+                                      <property role="3oM_SC" value="show" />
+                                    </node>
+                                    <node concept="3oM_SD" id="589APehYyhT" role="1PaTwD">
+                                      <property role="3oM_SC" value="the" />
+                                    </node>
+                                    <node concept="3oM_SD" id="589APehYyhU" role="1PaTwD">
+                                      <property role="3oM_SC" value="trace" />
+                                    </node>
                                   </node>
                                 </node>
                                 <node concept="3clFbF" id="6IQb_Rxsy5O" role="3cqZAp">

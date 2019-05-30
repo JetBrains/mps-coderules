@@ -166,11 +166,8 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+        <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -212,6 +209,14 @@
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
+    </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
       </concept>
     </language>
   </registry>
@@ -400,8 +405,10 @@
       </node>
       <node concept="3clFbS" id="lvX$8VFrSg" role="3clF47">
         <node concept="3SKdUt" id="5BwsbZJE0e4" role="3cqZAp">
-          <node concept="3SKdUq" id="5BwsbZJE0e6" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME" />
+          <node concept="1PaTwC" id="589APehYyi4" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYyi5" role="1PaTwD">
+              <property role="3oM_SC" value="FIXME" />
+            </node>
           </node>
         </node>
         <node concept="YS8fn" id="5BwsbZJDTpI" role="3cqZAp">
@@ -432,8 +439,10 @@
       </node>
       <node concept="3clFbS" id="lvX$8VFrSr" role="3clF47">
         <node concept="3SKdUt" id="5BwsbZJE0V0" role="3cqZAp">
-          <node concept="3SKdUq" id="5BwsbZJE0V2" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME" />
+          <node concept="1PaTwC" id="589APehYyi6" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYyi7" role="1PaTwD">
+              <property role="3oM_SC" value="FIXME" />
+            </node>
           </node>
         </node>
         <node concept="YS8fn" id="5BwsbZJE0lq" role="3cqZAp">
@@ -708,8 +717,25 @@
       <node concept="3Tmbuc" id="siuT5mmT8o" role="1B3o_S" />
       <node concept="3clFbS" id="siuT5mmS2T" role="3clF47">
         <node concept="3SKdUt" id="siuT5mmUs1" role="3cqZAp">
-          <node concept="3SKdUq" id="siuT5mmUs2" role="3SKWNk">
-            <property role="3SKdUp" value="available to the local package only" />
+          <node concept="1PaTwC" id="589APehYyi8" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYyi9" role="1PaTwD">
+              <property role="3oM_SC" value="available" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyia" role="1PaTwD">
+              <property role="3oM_SC" value="to" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyib" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyic" role="1PaTwD">
+              <property role="3oM_SC" value="local" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyid" role="1PaTwD">
+              <property role="3oM_SC" value="package" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyie" role="1PaTwD">
+              <property role="3oM_SC" value="only" />
+            </node>
           </node>
         </node>
       </node>
@@ -793,8 +819,31 @@
           </node>
         </node>
         <node concept="3SKdUt" id="siuT5mndzv" role="3cqZAp">
-          <node concept="3SKdUq" id="siuT5mndzx" role="3SKWNk">
-            <property role="3SKdUp" value="all others are going to have lower priority" />
+          <node concept="1PaTwC" id="589APehYyif" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYyig" role="1PaTwD">
+              <property role="3oM_SC" value="all" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyih" role="1PaTwD">
+              <property role="3oM_SC" value="others" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyii" role="1PaTwD">
+              <property role="3oM_SC" value="are" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyij" role="1PaTwD">
+              <property role="3oM_SC" value="going" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyik" role="1PaTwD">
+              <property role="3oM_SC" value="to" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyil" role="1PaTwD">
+              <property role="3oM_SC" value="have" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyim" role="1PaTwD">
+              <property role="3oM_SC" value="lower" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyin" role="1PaTwD">
+              <property role="3oM_SC" value="priority" />
+            </node>
           </node>
         </node>
         <node concept="3cpWs6" id="siuT5mnbcc" role="3cqZAp">

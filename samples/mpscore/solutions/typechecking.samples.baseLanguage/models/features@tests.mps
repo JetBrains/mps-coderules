@@ -70,11 +70,8 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+        <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
@@ -135,6 +132,14 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
       </concept>
     </language>
   </registry>
@@ -299,8 +304,25 @@
       <node concept="3cqZAl" id="5moyjRHyVve" role="3clF45" />
       <node concept="3clFbS" id="5moyjRHyVvf" role="3clF47">
         <node concept="3SKdUt" id="2hrSdN96hGO" role="3cqZAp">
-          <node concept="3SKdUq" id="2hrSdN96hGQ" role="3SKWNk">
-            <property role="3SKdUp" value="error types are ignored on purpose" />
+          <node concept="1PaTwC" id="589APehYzfg" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYzfh" role="1PaTwD">
+              <property role="3oM_SC" value="error" />
+            </node>
+            <node concept="3oM_SD" id="589APehYzfi" role="1PaTwD">
+              <property role="3oM_SC" value="types" />
+            </node>
+            <node concept="3oM_SD" id="589APehYzfj" role="1PaTwD">
+              <property role="3oM_SC" value="are" />
+            </node>
+            <node concept="3oM_SD" id="589APehYzfk" role="1PaTwD">
+              <property role="3oM_SC" value="ignored" />
+            </node>
+            <node concept="3oM_SD" id="589APehYzfl" role="1PaTwD">
+              <property role="3oM_SC" value="on" />
+            </node>
+            <node concept="3oM_SD" id="589APehYzfm" role="1PaTwD">
+              <property role="3oM_SC" value="purpose" />
+            </node>
           </node>
         </node>
         <node concept="2Hmddi" id="27bTNFfbxf4" role="3cqZAp">

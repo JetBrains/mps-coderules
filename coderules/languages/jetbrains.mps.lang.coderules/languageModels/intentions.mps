@@ -8,7 +8,7 @@
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -81,11 +81,8 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+        <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
@@ -186,6 +183,14 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
+      </concept>
+    </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
@@ -272,8 +277,22 @@
     <node concept="2Sbjvc" id="4sSe4$p4oTI" role="2ZfgGD">
       <node concept="3clFbS" id="4sSe4$p4oTJ" role="2VODD2">
         <node concept="3SKdUt" id="7XmdqtdP$2a" role="3cqZAp">
-          <node concept="3SKdUq" id="7XmdqtdP$2c" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME replace with editor actions" />
+          <node concept="1PaTwC" id="589APehYwtV" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYwtW" role="1PaTwD">
+              <property role="3oM_SC" value="FIXME" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwtX" role="1PaTwD">
+              <property role="3oM_SC" value="replace" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwtY" role="1PaTwD">
+              <property role="3oM_SC" value="with" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwtZ" role="1PaTwD">
+              <property role="3oM_SC" value="editor" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwu0" role="1PaTwD">
+              <property role="3oM_SC" value="actions" />
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="4sSe4$p4w5F" role="3cqZAp">
@@ -341,8 +360,40 @@
     <node concept="2SaL7w" id="4sSe4$p4paM" role="2ZfVeh">
       <node concept="3clFbS" id="4sSe4$p4paN" role="2VODD2">
         <node concept="3SKdUt" id="4sSe4$p4t4D" role="3cqZAp">
-          <node concept="3SKdUq" id="4sSe4$p4t4F" role="3SKWNk">
-            <property role="3SKdUp" value="applicable to logical variables in user constraints within rule's head block" />
+          <node concept="1PaTwC" id="589APehYwu1" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYwu2" role="1PaTwD">
+              <property role="3oM_SC" value="applicable" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwu3" role="1PaTwD">
+              <property role="3oM_SC" value="to" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwu4" role="1PaTwD">
+              <property role="3oM_SC" value="logical" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwu5" role="1PaTwD">
+              <property role="3oM_SC" value="variables" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwu6" role="1PaTwD">
+              <property role="3oM_SC" value="in" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwu7" role="1PaTwD">
+              <property role="3oM_SC" value="user" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwu8" role="1PaTwD">
+              <property role="3oM_SC" value="constraints" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwu9" role="1PaTwD">
+              <property role="3oM_SC" value="within" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwua" role="1PaTwD">
+              <property role="3oM_SC" value="rule's" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwub" role="1PaTwD">
+              <property role="3oM_SC" value="head" />
+            </node>
+            <node concept="3oM_SD" id="589APehYwuc" role="1PaTwD">
+              <property role="3oM_SC" value="block" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="4sSe4$p4rMM" role="3cqZAp">

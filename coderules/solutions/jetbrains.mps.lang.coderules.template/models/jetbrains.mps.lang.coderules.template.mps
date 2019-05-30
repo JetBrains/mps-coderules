@@ -6,7 +6,7 @@
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
   </languages>
   <imports>
@@ -259,11 +259,8 @@
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+        <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
       <concept id="2580416627845338977" name="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" flags="ng" index="1SXeKx" />
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
@@ -300,6 +297,14 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -1349,8 +1354,61 @@
           </node>
         </node>
         <node concept="3SKdUt" id="4sSe4$oYGyc" role="3cqZAp">
-          <node concept="3SKdUq" id="4sSe4$oYGye" role="3SKWNk">
-            <property role="3SKdUp" value="invariant: if the logicals array is not empty, it must be the same size as the arguments array" />
+          <node concept="1PaTwC" id="589APehYyAn" role="3ndbpf">
+            <node concept="3oM_SD" id="589APehYyAo" role="1PaTwD">
+              <property role="3oM_SC" value="invariant:" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAp" role="1PaTwD">
+              <property role="3oM_SC" value="if" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAq" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAr" role="1PaTwD">
+              <property role="3oM_SC" value="logicals" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAs" role="1PaTwD">
+              <property role="3oM_SC" value="array" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAt" role="1PaTwD">
+              <property role="3oM_SC" value="is" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAu" role="1PaTwD">
+              <property role="3oM_SC" value="not" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAv" role="1PaTwD">
+              <property role="3oM_SC" value="empty," />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAw" role="1PaTwD">
+              <property role="3oM_SC" value="it" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAx" role="1PaTwD">
+              <property role="3oM_SC" value="must" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAy" role="1PaTwD">
+              <property role="3oM_SC" value="be" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAz" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyA$" role="1PaTwD">
+              <property role="3oM_SC" value="same" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyA_" role="1PaTwD">
+              <property role="3oM_SC" value="size" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAA" role="1PaTwD">
+              <property role="3oM_SC" value="as" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAB" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAC" role="1PaTwD">
+              <property role="3oM_SC" value="arguments" />
+            </node>
+            <node concept="3oM_SD" id="589APehYyAD" role="1PaTwD">
+              <property role="3oM_SC" value="array" />
+            </node>
           </node>
         </node>
         <node concept="1gVbGN" id="4sSe4$oYAeU" role="3cqZAp">
@@ -1515,8 +1573,43 @@
                 </node>
                 <node concept="3clFbS" id="4sSe4$prurf" role="3eOfB_">
                   <node concept="3SKdUt" id="4sSe4$prxfA" role="3cqZAp">
-                    <node concept="3SKdUq" id="4sSe4$prxfC" role="3SKWNk">
-                      <property role="3SKdUp" value="FIXME: need a way to find the interface class of the argument " />
+                    <node concept="1PaTwC" id="589APehYyAE" role="3ndbpf">
+                      <node concept="3oM_SD" id="589APehYyAF" role="1PaTwD">
+                        <property role="3oM_SC" value="FIXME:" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAG" role="1PaTwD">
+                        <property role="3oM_SC" value="need" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAH" role="1PaTwD">
+                        <property role="3oM_SC" value="a" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAI" role="1PaTwD">
+                        <property role="3oM_SC" value="way" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAJ" role="1PaTwD">
+                        <property role="3oM_SC" value="to" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAK" role="1PaTwD">
+                        <property role="3oM_SC" value="find" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAL" role="1PaTwD">
+                        <property role="3oM_SC" value="the" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAM" role="1PaTwD">
+                        <property role="3oM_SC" value="interface" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAN" role="1PaTwD">
+                        <property role="3oM_SC" value="class" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAO" role="1PaTwD">
+                        <property role="3oM_SC" value="of" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAP" role="1PaTwD">
+                        <property role="3oM_SC" value="the" />
+                      </node>
+                      <node concept="3oM_SD" id="589APehYyAQ" role="1PaTwD">
+                        <property role="3oM_SC" value="argument" />
+                      </node>
                     </node>
                   </node>
                   <node concept="3clFbF" id="4sSe4$prGBU" role="3cqZAp">
@@ -3557,8 +3650,34 @@
             </node>
             <node concept="3clFbH" id="2_NfR5wnEuz" role="3cqZAp" />
             <node concept="3SKdUt" id="2_NfR5wnNsf" role="3cqZAp">
-              <node concept="3SKdUq" id="2_NfR5wnNsh" role="3SKWNk">
-                <property role="3SKdUp" value="merge body alternation slots. create new slots on demand" />
+              <node concept="1PaTwC" id="589APehYyAR" role="3ndbpf">
+                <node concept="3oM_SD" id="589APehYyAS" role="1PaTwD">
+                  <property role="3oM_SC" value="merge" />
+                </node>
+                <node concept="3oM_SD" id="589APehYyAT" role="1PaTwD">
+                  <property role="3oM_SC" value="body" />
+                </node>
+                <node concept="3oM_SD" id="589APehYyAU" role="1PaTwD">
+                  <property role="3oM_SC" value="alternation" />
+                </node>
+                <node concept="3oM_SD" id="589APehYyAV" role="1PaTwD">
+                  <property role="3oM_SC" value="slots." />
+                </node>
+                <node concept="3oM_SD" id="589APehYyAW" role="1PaTwD">
+                  <property role="3oM_SC" value="create" />
+                </node>
+                <node concept="3oM_SD" id="589APehYyAX" role="1PaTwD">
+                  <property role="3oM_SC" value="new" />
+                </node>
+                <node concept="3oM_SD" id="589APehYyAY" role="1PaTwD">
+                  <property role="3oM_SC" value="slots" />
+                </node>
+                <node concept="3oM_SD" id="589APehYyAZ" role="1PaTwD">
+                  <property role="3oM_SC" value="on" />
+                </node>
+                <node concept="3oM_SD" id="589APehYyB0" role="1PaTwD">
+                  <property role="3oM_SC" value="demand" />
+                </node>
               </node>
             </node>
             <node concept="3cpWs8" id="2_NfR5wnF32" role="3cqZAp">
