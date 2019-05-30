@@ -78,7 +78,7 @@ class TestIncrementalProgram {
 
 
     @Test
-    fun addNewMatch() {
+    fun addNewMatchAtTheEnd() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "foo.bar"),
             setOf(sym0("foo"))
@@ -93,6 +93,7 @@ class TestIncrementalProgram {
                 ))
         ).launch("addRule", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+            result.lastChunk().activated().constraintSymbols() shouldBe listOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
             builder.programWithRules(
@@ -106,6 +107,7 @@ class TestIncrementalProgram {
                 )
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"))
+                result.lastChunk().activated().constraintSymbols() shouldBe listOf(sym0("bar"))
             }
         }
     }
@@ -134,6 +136,7 @@ class TestIncrementalProgram {
             )
         ).launch("addRule", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"))
+            result.lastChunk().activated().constraintSymbols() shouldBe listOf(sym0("bar"))
 
         }.also { (builder, evalRes) ->
             builder.programWithRules(
@@ -147,10 +150,12 @@ class TestIncrementalProgram {
                 )
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
-                result.token().journalView.chunks.last().activated().constraintSymbols() shouldBe listOf(sym0("baz"))
+                result.lastChunk().activated().constraintSymbols() shouldBe listOf(sym0("baz"))
             }
         }
     }
+
+    private fun EvaluationResult.lastChunk() = this.token().journalView.chunks.last()
 
     private fun Iterable<Occurrence>.constraintSymbols() = this.map { it.constraint.symbol() }
 
@@ -253,10 +258,12 @@ class TestIncrementalProgram {
 
         val evalRes1 = p1.launch("initial run", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"), sym0("dummy"))
+            result.lastChunk().activated().constraintSymbols() shouldBe listOf(sym0("dummy"))
         }.second
 
         p2.relaunch("test1", progSpec, evalRes1.token()) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("dummy"))
+            result.lastChunk().activated().constraintSymbols() shouldBe listOf(sym0("dummy"))
         }
     }
 

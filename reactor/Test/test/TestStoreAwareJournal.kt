@@ -97,8 +97,79 @@ class TestStoreAwareJournal {
 
 
     @Test
-    fun testReplayInitialChunk() {
+    fun testReplayCorners() {
+        val mockController = MockController()
+        with(programWithRules(
+            rule("rule1",
+                headKept(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("bar")
+                )),
+            rule("rule2",
+                headReplaced(
+                    princConstraint("bar"),
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("qux")
+                )),
+            rule("rule3",
+                headKept(
+                    princConstraint("qux")
+                ),
+                body(
+                    princConstraint("lax")
+                ))
+        ))
+        {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
+                val initPos = hist.currentPos()
+
+                logExpand(justifiedOccurrence("foo", setOf(1)))
+
+                logFirstMatch()
+                logExpandJustified("bar")
+
+                logFirstMatch()
+                logExpandJustified("qux")
+
+                logFirstMatch()
+                logExpandJustified("lax")
+
+                // 'replay' to the saved pos after full 'resetStore' must restore the store
+                with(hist) {
+
+                    val lastPos = currentPos()
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
+                    val nchunks = view().chunks.size
+                    nchunks shouldBe 4
+
+                    // try replay the last chunk
+                    replay(mockController, lastPos)
+
+                    // should change nothing
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
+                    view().chunks.size shouldBe nchunks
+
+
+                    resetStore()
+
+                    // storeView is reset, but journal remains the same
+                    storeView().allOccurrences().count() shouldBe 0
+                    view().chunks.size shouldBe nchunks
+
+                    replay(mockController, initPos)
+
+                    // storeView replays only the initial chunk, journal remains the same
+                    storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+                    view().chunks.size shouldBe nchunks
+                }
+            }
+        }
     }
 
 
