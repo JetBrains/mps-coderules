@@ -6212,35 +6212,6 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="14$_tTxAhsw" role="3clF47">
-        <node concept="3SKdUt" id="1GKZK$AfPVy" role="3cqZAp">
-          <node concept="1PaTwC" id="589APehYyjm" role="3ndbpf">
-            <node concept="3oM_SD" id="589APehYyjn" role="1PaTwD">
-              <property role="3oM_SC" value="ensure" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyjo" role="1PaTwD">
-              <property role="3oM_SC" value="read" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyjp" role="1PaTwD">
-              <property role="3oM_SC" value="access" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1GKZK$AfJKl" role="3cqZAp">
-          <node concept="2OqwBi" id="1GKZK$AfJKm" role="3clFbG">
-            <node concept="2OqwBi" id="1GKZK$AfJKn" role="2Oq$k0">
-              <node concept="37vLTw" id="1GKZK$AfJKo" role="2Oq$k0">
-                <ref role="3cqZAo" node="14$_tTxAlhx" resolve="repository" />
-              </node>
-              <node concept="liA8E" id="1GKZK$AfJKp" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess()" resolve="getModelAccess" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1GKZK$AfJKq" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.checkReadAccess()" resolve="checkReadAccess" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="1GKZK$AfIct" role="3cqZAp" />
         <node concept="3clFbF" id="443LGHBoCbP" role="3cqZAp">
           <node concept="2OqwBi" id="443LGHBoCbQ" role="3clFbG">
             <node concept="liA8E" id="443LGHBoCbR" role="2OqNvi">
@@ -6316,13 +6287,6 @@
       </node>
       <node concept="3cqZAl" id="14$_tTxAhsu" role="3clF45" />
       <node concept="3Tm1VV" id="14$_tTxAhsv" role="1B3o_S" />
-      <node concept="P$JXv" id="5lxnBcU40O5" role="lGtFl">
-        <node concept="TZ5HA" id="5lxnBcU40O6" role="TZ5H$">
-          <node concept="1dT_AC" id="5lxnBcU40O7" role="1dT_Ay">
-            <property role="1dT_AB" value="Must be called in a read action." />
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="2tJIrI" id="14$_tTxAolu" role="jymVt" />
     <node concept="3clFb_" id="14$_tTxApBG" role="jymVt">
