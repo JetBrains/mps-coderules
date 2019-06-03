@@ -27,12 +27,15 @@ import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 
 interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
     fun logMatch(match: RuleMatch)
     fun logActivation(occ: Occurrence)
+
+    fun activatingChunkOf(occ: Occurrence): Chunk?
 
     fun currentPos(): Pos
     fun resetPos()
@@ -51,17 +54,23 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
         }
 
-        abstract fun entries(): List<Entry>
-        fun activated(): List<Occurrence> = entries().filter { !it.isDiscarded }.map { it.occ }
-        fun discarded(): List<Occurrence> = entries().filter { it.isDiscarded }.map { it.occ }
+        abstract fun entriesLog(): List<Entry>
+        fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.isDiscarded }.map { it.occ }
+        fun discardedLog(): List<Occurrence> = entriesLog().filter { it.isDiscarded }.map { it.occ }
+        // Get the resulting set of activated occurrences
+        fun activated(): List<Occurrence> = HashSet<Id<Occurrence>>().apply {
+            entriesLog().forEach {
+                if (it.isDiscarded) remove(Id(it.occ)) else add(Id(it.occ))
+            }
+        }.map { it.wrapped }
 
         abstract fun findOccurrence(ctr: Constraint): Occurrence?
         abstract fun principalConstraint(): Constraint?
 
-        override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${entries()})"
+        override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${entriesLog()})"
 
         override fun chunk(): Chunk = this
-        override fun entriesInChunk(): Int = entries().size
+        override fun entriesInChunk(): Int = entriesLog().size
     }
 
     abstract class Pos {
@@ -77,7 +86,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
 
 internal open class MatchJournalImpl(
-    private val ispec: IncrementalProgramSpec,
+    protected val ispec: IncrementalProgramSpec,
     view: MatchJournal.View? = null
 ) : MatchJournal
 {
@@ -102,6 +111,8 @@ internal open class MatchJournalImpl(
 
     private var pos: MutableListIterator<ChunkImpl> = hist.listIterator()
     private var current: ChunkImpl = pos.next() // take the initial chunk, move pos
+
+    private val parentChunksIndex = HashMap<Occurrence, MatchJournal.Chunk>()
 
 
     override fun iterator(): MutableIterator<MatchJournal.Chunk> = hist.iterator()
@@ -130,6 +141,18 @@ internal open class MatchJournalImpl(
 
     override fun logActivation(occ: Occurrence) {
         current.occurrences.add(MatchJournal.Chunk.Entry(occ))
+    }
+
+
+    override fun activatingChunkOf(occ: Occurrence): MatchJournal.Chunk? {
+        if (ispec.isPrincipal(occ.constraint)) {
+            //todo: maintain index and find from index
+            // maintain, build from view, anything else?
+            return parentChunksIndex[occ]
+
+        }
+        // todo: for non-principal find manually... need it?
+        return null
     }
 
 
@@ -178,7 +201,7 @@ internal open class MatchJournalImpl(
 
         val set = HashSet<Id<Occurrence>>()
         for (chunk in hist) { // initial chunk is counted too
-            chunk.entries().forEach {
+            chunk.entriesLog().forEach {
                 if (it.isDiscarded) set.remove(Id(it.occ)) else set.add(Id(it.occ))
             }
             if (chunk === current) {
@@ -193,7 +216,7 @@ internal open class MatchJournalImpl(
     {
         var occurrences: MutableList<MatchJournal.Chunk.Entry> = mutableListOf()
 
-        override fun entries(): List<MatchJournal.Chunk.Entry> = occurrences
+        override fun entriesLog(): List<MatchJournal.Chunk.Entry> = occurrences
 
         override fun findOccurrence(ctr: Constraint): Occurrence? =
             occurrences.find { !it.isDiscarded && it.occ.constraint.symbol() == ctr.symbol() }?.occ

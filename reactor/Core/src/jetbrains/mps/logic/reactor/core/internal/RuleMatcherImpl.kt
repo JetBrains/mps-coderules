@@ -66,6 +66,12 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
                             consumedSignatures.add(ruleMatch.signature()),
                             genId)
 
+        override fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe =
+            RuleMatchFront(nodes,
+                            seenOccurrences,
+                            consumedSignatures.remove(ruleMatch.signature()),
+                            genId)
+
         override fun expand(occ: Occurrence): RuleMatchingProbe =
             expand(occ, bitSetOfOnes(head.size))
 
@@ -92,6 +98,11 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
         override fun contract(occ: Occurrence): RuleMatchFront {
             val newNodes = nodes.mapNotNull { it.unrelatedOrNull(occ) }
             return RuleMatchFront(newNodes, seenOccurrences, consumedSignatures, genId + 1)
+        }
+
+        override fun forget(occ: Occurrence): RuleMatchFront {
+            val newConsumed = Sets.copyOf(consumedSignatures.filter{ !it.contains(Id(occ)) })
+            return RuleMatchFront(nodes, seenOccurrences, newConsumed, genId)
         }
 
     }

@@ -103,7 +103,7 @@ internal open class StateFrameStack() : ProcessingState, LogicalObserver
 
 
 internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.DispatchingFront,
-                                   journal: MatchJournal,
+                                   journal: MatchJournalImpl,
                                    ruleIndex: RuleIndex,
                                    val trace: EvaluationTrace = EvaluationTrace.NULL,
                                    val profiler: Profiler? = null)
@@ -128,14 +128,68 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     }
 
     fun invalidateByRules(ruleIds: Set<Any>) {
-//        for (ruleTag in rulesDiff.removed) {
-//
-//        }
+        val justificationRoots = mutableListOf<Int>()
+
+        val it = this.iterator()
+        var prevChunk = it.next() // skip initial chunk
+
+        while (it.hasNext()) {
+            val chunk = it.next()
+
+            val toRemove = ruleIds.contains(chunk.match.rule().uniqueTag())
+            if (toRemove) {
+                justificationRoots.add(chunk.id)
+                // Remove the chunk from the journal
+                it.remove()
+
+                // We removed the match, so need to reactivate all still valid occurrences from the head
+                //  by definition of Chunk and principal rule, all occurrences from the head are principal
+                //  todo: check/assert it
+
+                val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
+                val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
+                    occ.justifications().intersects(justificationRoots)
+                }
+                assert(invalidatedOccs.isEmpty())
+
+                // todo: do need to reactivate only the main, matching~activating match?
+                //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
+                execQueue.addAll(validOccs.map { occ ->
+                    val chunkPos = activatingChunkOf(occ)
+                    if (chunkPos != null) ExecPos(chunkPos, occ) else null
+                }.filterNotNull())
+
+                continue
+            }
+
+            val toInvalidate = chunk.justifications.intersects(justificationRoots)
+            if (toInvalidate) {
+                // Remove the chunk from the journal
+                it.remove()
+
+                // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
+                //  and storing this invalid consumed match can make no harm, except some memory overhead.
+                // fixme: move Chunk's interface to RuleMatchEx instead of RuleMatch
+                dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
+
+                // 'Undo' all activated in this chunk occurrences and related to them matches.
+                chunk.activated().forEach {
+                    dispatchingFront = dispatchingFront.forget(it)
+                }
+            }
+
+            prevChunk = chunk
+        }
     }
+
+    private fun Justs.intersects(other: Iterable<Int>): Boolean = other.any { this.contains(it) }
 
     private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
 
-    fun addRuleApplications(rules: Iterable<Rule>) {
+    // todo: what if non-principal rules will be passed as input there?
+    //  only rules that can match on principal occurrences will pass through this method to the queue
+    //  so, no non-principal rule should pass it.
+    fun addRuleMatches(rules: Iterable<Rule>) {
         val activationCandidates = mutableListOf<MatchCandidate>()
 
         val it = this.iterator()
@@ -298,5 +352,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     }
 
 
-    private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
+    private fun RuleMatch.allHeads() = matchHeadKept() + matchHeadReplaced()
+    private fun RuleMatch.allStored() = allHeads().all { co -> (co as Occurrence).stored }
 }

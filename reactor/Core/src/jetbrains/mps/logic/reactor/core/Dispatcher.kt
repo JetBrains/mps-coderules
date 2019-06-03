@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.core
 
 import com.github.andrewoma.dexx.collection.Maps
-import javaslang.collection.Map
 import jetbrains.mps.logic.reactor.core.internal.RuleMatchImpl
 import com.github.andrewoma.dexx.collection.Map as PersMap
 
@@ -77,10 +76,13 @@ class Dispatcher (val ruleIndex: RuleIndex) {
             }
         }
 
-        private constructor(pred: DispatchingFront, consumedMatch: RuleMatchEx) {
+        private constructor(pred: DispatchingFront, consumedMatch: RuleMatchEx, isForgetting: Boolean) {
             this.ruletag2probe = pred.ruletag2probe
             pred.ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
-                this.ruletag2probe = ruletag2probe.put(consumedMatch.rule().uniqueTag(), it.consume(consumedMatch))
+                this.ruletag2probe = ruletag2probe.put(
+                    consumedMatch.rule().uniqueTag(),
+                    if (!isForgetting) it.consume(consumedMatch) else it.forget(consumedMatch)
+                )
             }
         }
 
@@ -113,10 +115,28 @@ class Dispatcher (val ruleIndex: RuleIndex) {
             })
 
         /**
+         * Returns a new [DispatchingFront] instance that completely "forgot" occurrence:
+         * forgot all consumed matches involving it & is contracted on it accordingly.
+         */
+        fun forget(dropped: Occurrence) = DispatchingFront(
+            // note contraction, it's needed to avoid adding dropped matches back again to allMatches
+            this.contract(dropped),
+            ruleIndex.forOccurrence(dropped).mapNotNull { rule ->
+                ruletag2probe[rule.uniqueTag()]
+            }.map { probe ->
+                probe.forget(dropped)
+            })
+
+        /**
          * Serves to indicate that the specified [RuleMatchEx] has been processed (consumed) and has to
          * be excluded from any further "match" set returned by [matches].
          */
-        internal fun consume(ruleMatch: RuleMatchEx) = DispatchingFront(this, ruleMatch)
+        internal fun consume(ruleMatch: RuleMatchEx) = DispatchingFront(this, ruleMatch, false)
+
+        /**
+         * Forgets that the specified [RuleMatchEx] has been consumed.
+         */
+        internal fun forget(ruleMatch: RuleMatchEx) = DispatchingFront(this, ruleMatch, true)
 
     }
 

@@ -33,10 +33,14 @@ interface RuleMatchingProbe {
 
     fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe
 
+    fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe
+
     fun expand(occ: Occurrence): RuleMatchingProbe
 
     fun expand(occ: Occurrence, mask: BitSet): RuleMatchingProbe
 
     fun contract(occ: Occurrence): RuleMatchingProbe
+
+    fun forget(occ: Occurrence): RuleMatchingProbe
 
 }
