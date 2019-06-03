@@ -256,9 +256,17 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         if (execQueue.isNotEmpty()) {
             resetStore()
 
+            var prevPos: ExecPos? = null
             do {
                 val execPos = execQueue.poll()
-                replay(controller, execPos.pos)
+
+                // Handles the case when several matches are added to the same position.
+                //  Then shouldn't replay, because currentPos is valid and more recent (!) then execPos.
+                if (execPos != prevPos) {
+                    replay(controller, execPos.pos)
+                }
+                prevPos = execPos
+
                 controller.reactivate(execPos.activeOcc)
             } while (execQueue.isNotEmpty())
         }
