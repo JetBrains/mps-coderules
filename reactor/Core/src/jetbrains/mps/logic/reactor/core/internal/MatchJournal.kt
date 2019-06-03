@@ -54,6 +54,9 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
         }
 
+        fun isDescendantOf(chunkId: Int): Boolean = justifications.contains(chunkId)
+        fun isTopLevel(): Boolean = justifications.size() <= 1 // this condition implies that there're no ancestor chunks
+
         abstract fun entriesLog(): List<Entry>
         fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.isDiscarded }.map { it.occ }
         fun discardedLog(): List<Occurrence> = entriesLog().filter { it.isDiscarded }.map { it.occ }
@@ -148,6 +151,7 @@ internal open class MatchJournalImpl(
         if (ispec.isPrincipal(occ.constraint)) {
             //todo: maintain index and find from index
             // maintain, build from view, anything else?
+            // how to handle removed chunks? when to invalidate index?
             return parentChunksIndex[occ]
 
         }

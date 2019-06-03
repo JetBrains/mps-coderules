@@ -150,7 +150,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
                     occ.justifications().intersects(justificationRoots)
                 }
-                assert(invalidatedOccs.isEmpty())
 
                 // todo: do need to reactivate only the main, matching~activating match?
                 //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
@@ -190,23 +189,27 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     //  only rules that can match on principal occurrences will pass through this method to the queue
     //  so, no non-principal rule should pass it.
     fun addRuleMatches(rules: Iterable<Rule>) {
+
         val activationCandidates = mutableListOf<MatchCandidate>()
+        val (headedRules, headlessRules) = rules.partition { rule ->
+            rule.headKept().count() != 0 || rule.headReplaced().count() != 0
+        }
 
         val it = this.iterator()
         var prevChunk = it.next() // skip initial chunk
 
         while (it.hasNext()) { // note: if there's only an initial chunk, we have nothing to do
             val chunk = it.next()
-            val pp = chunk.principalConstraint()
+            val pCtr = chunk.principalConstraint()
 
             // Does this chunk have principal occurrence and can activate anything at all?
-            if (pp != null) {
-                for (rule in rules) {
+            if (pCtr != null) {
+                for (rule in headedRules) {
                     // Can this rule be matched by 'pp'?
                     // fixme: maybe use RuleIndex here?
-                    if (rule.headKept().contains(pp) || rule.headReplaced().contains(pp)) {
+                    if (rule.headKept().contains(pCtr) || rule.headReplaced().contains(pCtr)) {
 
-                        val princOcc = chunk.findOccurrence(pp)
+                        val princOcc = chunk.findOccurrence(pCtr)
                             ?: throw IllegalStateException("Chunk with principal occurrence must have it in activated occurrences!")
 
                         // Then we will need to find the place among existing child chunks
@@ -227,18 +230,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // Place to activate candidate:
                 //  either as the last one, after all existing activations
                 //  or according to the ordering between rules.
-
-                val chunkRule = chunk.match.rule()
-                val currRuleOrder = ruleOrder[chunkRule.uniqueTag()]
-                    ?: throw(IllegalStateException("There can be no chunks with rules not in rule index!"))
-                val candRuleOrder = ruleOrder[candRule.uniqueTag()]
-                    ?: throw(IllegalStateException("Match candidate rule must be present in the rule index!"))
-
-                val childChunksEnded = !chunk.justifications.contains(parentId)
+                val placeToInsertFound = compareRuleOrders(chunk.match.rule(), candRule) > 0
+                val childChunksEnded = !chunk.isDescendantOf(parentId)
 
                 val pos =
                     // We need the previous chunk as pos here (i.e. adding after it).
-                    if (childChunksEnded || currRuleOrder > candRuleOrder) prevChunk
+                    if (childChunksEnded || placeToInsertFound) prevChunk
                     // Case when adding at the very end
                     else if (!it.hasNext()) chunk
                     else continue
@@ -248,8 +245,30 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 aIt.remove()
             }
 
+            // Case for headless rules, which are activated at the 'top' level according to rule order in RuleIndex
+            if (chunk.isTopLevel()) {
+                for (candRule in headlessRules) {
+                    val placeToInsertFound = compareRuleOrders(chunk.match.rule(), candRule) > 0
+                    if (placeToInsertFound) {
+                        // TODO: how 'at start' rules get activated?
+//                        execQueue.offer(ExecPos(prevChunk, candOcc))
+                        // todo: remove added rule from headlessRules
+                    }
+                }
+            }
+
             prevChunk = chunk
         }
+    }
+
+    private fun compareRuleOrders(lhs: Rule, rhs: Rule): Int {
+        val lhsRuleOrder = ruleOrder[lhs.uniqueTag()]
+        val rhsRuleOrder = ruleOrder[rhs.uniqueTag()]
+
+        if (lhsRuleOrder == null || rhsRuleOrder == null) {
+            throw(IllegalStateException("Rules compared must be present in the rule index!"))
+        }
+        return lhsRuleOrder.compareTo(rhsRuleOrder)
     }
 
     fun launchQueue(controller: Controller): FeedbackStatus.NORMAL {
@@ -261,7 +280,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 val execPos = execQueue.poll()
 
                 // Handles the case when several matches are added to the same position.
-                //  Then shouldn't replay, because currentPos is valid and more recent (!) then execPos.
+                //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
                 if (execPos != prevPos) {
                     replay(controller, execPos.pos)
                 }
