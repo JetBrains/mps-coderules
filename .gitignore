@@ -14,5 +14,5 @@ build/*
 samples/mpscore/build/*
 config/*
 system/*
-MPS_HOME
+MPS_HOME*
 TEST-*
