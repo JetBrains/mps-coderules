@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.evaluation;
 
 
 import gnu.trove.set.TIntSet;
+import gnu.trove.set.hash.TIntHashSet;
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
 import jetbrains.mps.logic.reactor.program.Constraint;
 import org.jetbrains.annotations.NotNull;
@@ -38,6 +39,6 @@ public interface ConstraintOccurrence {
     LogicalContext logicalContext();
 
     @NotNull
-    TIntSet justifications();
+    default TIntSet justifications() { return new TIntHashSet(); }
 
 }

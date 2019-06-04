@@ -96,9 +96,9 @@ public abstract class EvaluationSession {
         @Deprecated
         public abstract Config withStoreView(StoreView storeView);
 
-        public abstract Config withSessionToken(SessionToken token);
+        public Config withSessionToken(SessionToken token) { return this; }
 
-        public abstract Config withIncrSpec(IncrementalProgramSpec ispec);
+        public Config withIncrSpec(IncrementalProgramSpec ispec) { return this; }
 
         public abstract EvaluationResult start(Supervisor supervisor);
 
