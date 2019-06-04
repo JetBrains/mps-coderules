@@ -22,6 +22,7 @@ import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 import org.jetbrains.kotlin.utils.mapToIndex
@@ -110,11 +111,15 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     : StoreAwareJournalImpl(journal)
 {
     private val ruleOrder: Map<Any, Int> = ruleIndex.map { it.uniqueTag() }.mapToIndex()
+    private val journalIndex: MatchJournal.Index = journal.index()
 
     private val execQueue: Queue<ExecPos> = LinkedList<ExecPos>()
+//    private val execQueue: Queue<ExecPos> = PriorityQueue<ExecPos>(this.count() / 3) { lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos) }
 
     private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
 
+    // fixme: wtf, why idea's compiler complains???
+    override fun index(): MatchJournal.Index = journalIndex
 
     // only for tests
     fun pushActivateFirstOccOf(ctr: Constraint): Boolean {
@@ -154,7 +159,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // todo: do need to reactivate only the main, matching~activating match?
                 //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
                 execQueue.addAll(validOccs.map { occ ->
-                    val chunkPos = activatingChunkOf(occ)
+                    val chunkPos = journalIndex.activatingChunkOf(Id(occ))
                     if (chunkPos != null) ExecPos(chunkPos, occ) else null
                 }.filterNotNull())
 
@@ -205,7 +210,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             // Does this chunk have principal occurrence and can activate anything at all?
             if (pCtr != null) {
                 for (rule in headedRules) {
-                    // Can this rule be matched by 'pp'?
+                    // Can this rule be matched by principal occurrence?
                     // fixme: maybe use RuleIndex here?
                     if (rule.headKept().contains(pCtr) || rule.headReplaced().contains(pCtr)) {
 

@@ -25,7 +25,9 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.Id
+import org.jetbrains.kotlin.utils.mapToIndex
 import java.util.*
+import kotlin.Comparator
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
@@ -35,8 +37,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     fun logMatch(match: RuleMatch)
     fun logActivation(occ: Occurrence)
 
-    fun activatingChunkOf(occ: Occurrence): Chunk?
-
     fun currentPos(): Pos
     fun resetPos()
     fun reset(pastPos: Pos)
@@ -44,7 +44,11 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
     fun view(): View
     fun storeView(): StoreView
+    fun index(): Index
 
+    interface Index : Comparator<Pos> {
+        fun activatingChunkOf(occ: Id<Occurrence>): Chunk?
+    }
 
     data class View(val chunks: List<Chunk>, val nextChunkId: Int)
 
@@ -115,8 +119,6 @@ internal open class MatchJournalImpl(
     private var pos: MutableListIterator<ChunkImpl> = hist.listIterator()
     private var current: ChunkImpl = pos.next() // take the initial chunk, move pos
 
-    private val parentChunksIndex = HashMap<Occurrence, MatchJournal.Chunk>()
-
 
     override fun iterator(): MutableIterator<MatchJournal.Chunk> = hist.iterator()
 
@@ -144,19 +146,6 @@ internal open class MatchJournalImpl(
 
     override fun logActivation(occ: Occurrence) {
         current.occurrences.add(MatchJournal.Chunk.Entry(occ))
-    }
-
-
-    override fun activatingChunkOf(occ: Occurrence): MatchJournal.Chunk? {
-        if (ispec.isPrincipal(occ.constraint)) {
-            //todo: maintain index and find from index
-            // maintain, build from view, anything else?
-            // how to handle removed chunks? when to invalidate index?
-            return parentChunksIndex[occ]
-
-        }
-        // todo: for non-principal find manually... need it?
-        return null
     }
 
 
@@ -198,6 +187,8 @@ internal open class MatchJournalImpl(
 
     override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
 
+    override fun index(): MatchJournal.Index = IndexImpl(ispec, hist)
+
     private fun allOccurrences(): Sequence<Occurrence> {
         // the following loop doesn't handle this case of starting pos, when 'current' isn't valid (e.g. just right after resetPos())
         if (!pos.hasPrevious())
@@ -216,6 +207,7 @@ internal open class MatchJournalImpl(
     }
 
 
+    // todo: remove ispec from there
     private class ChunkImpl(val ispec: IncrementalProgramSpec, match: RuleMatch, id: Int, justifications: Justs) : MatchJournal.Chunk(match, id, justifications)
     {
         var occurrences: MutableList<MatchJournal.Chunk.Entry> = mutableListOf()
@@ -228,11 +220,54 @@ internal open class MatchJournalImpl(
         override fun principalConstraint(): Constraint? {
             try {
                 val body = match.rule().bodyAlternation().first()
-                val princProds = body.filter { it is Constraint && it.isPrincipal() }
-                return princProds.first() as Constraint
+                val pProds = body.filter { it is Constraint && it.isPrincipal() }
+                return pProds.first() as Constraint
             } catch (e: NoSuchElementException) {
                 return null
             }
+        }
+    }
+
+
+    class IndexImpl(ispec: IncrementalProgramSpec, chunks: Iterable<MatchJournal.Chunk>): MatchJournal.Index
+    {
+        private val chunkOrder: Map<Int, Int>
+        // only for principal constraints
+        private val parentChunks: Map<Id<Occurrence>, MatchJournal.Chunk>
+
+        init {
+            chunkOrder = chunks.map { it.id }.mapToIndex()
+
+            val m = HashMap<Id<Occurrence>, MatchJournal.Chunk>()
+            chunks.forEach {chunk ->
+                chunk.activatedLog().filter { occ ->
+                    ispec.isPrincipal(occ.constraint)
+                }.forEach {occ ->
+                    m[Id(occ)] = chunk
+                }
+            }
+            parentChunks = m
+        }
+
+        // todo: for non-principal find manually, walk through the whole journal... need it?
+        override fun activatingChunkOf(occ: Id<Occurrence>): MatchJournal.Chunk? = parentChunks[occ]
+
+        // todo: throw for invalid positions?
+        override fun compare(lhs: MatchJournal.Pos, rhs: MatchJournal.Pos): Int {
+            val co = compareBy<MatchJournal.Pos>{ chunkOrder[it.chunk().id] }.compare(lhs, rhs)
+            return if (co == 0) lhs.entriesInChunk().compareTo(rhs.entriesInChunk()) else co
+        }
+
+        // Compare occurrences by their activating chunk
+        // todo: test case for two principal occurrences activated in the same chunk???
+        fun compare(lhs: Occurrence, rhs: Occurrence): Int {
+            val cl = activatingChunkOf(Id(lhs))
+            val cr = activatingChunkOf(Id(rhs))
+
+            if (cl == null && cr == null) return 0
+            if (cl == null) return -1
+            if (cr == null) return 1
+            return this.compare(cl, cr)
         }
     }
 
