@@ -194,7 +194,6 @@
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.jar" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" />
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.analyzers.runtime.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.access.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
@@ -324,7 +323,7 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.9.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.10.jar" />
       </classpath>
     </javac>
   </target>
@@ -389,7 +388,7 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.9.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.10.jar" />
       </classpath>
     </javac>
   </target>
@@ -431,7 +430,6 @@
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.jar" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.jar" />
-      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.analyzers.runtime.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.access.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
