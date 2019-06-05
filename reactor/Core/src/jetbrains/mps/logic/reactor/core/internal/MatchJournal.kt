@@ -74,7 +74,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         }.map { it.wrapped }
 
         abstract fun findOccurrence(ctr: Constraint): Occurrence?
-        abstract fun principalConstraint(): Constraint?
+        abstract fun principalOccurrence(): Occurrence?
 
         override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${entriesLog()})"
 
@@ -126,7 +126,8 @@ internal open class MatchJournalImpl(
         if (view == null) {
             hist = LinkedList()
             nextChunkId = 0
-            val initChunk = ChunkImpl(ispec, InitRuleMatch, nextChunkId++, justsOf())
+            val initChunk = ChunkImpl(ispec, InitRuleMatch, nextChunkId, justsOf(nextChunkId))
+            nextChunkId++
             hist.add(initChunk)
         } else {
             // fixme: check somehow that initial chunk is present?
@@ -201,7 +202,15 @@ internal open class MatchJournalImpl(
     }
 
     private fun replayOccurrences(controller: Controller, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
-        occSpecs.forEach { if (it.isDiscarded) it.occ.terminate(controller) else it.occ.revive(controller) }
+        occSpecs.forEach {
+            if (it.isDiscarded) {
+                it.occ.terminate(controller)
+                it.occ.stored = false
+            } else {
+                it.occ.revive(controller)
+                it.occ.stored = true
+            }
+        }
 
 
     override fun view() = MatchJournal.View(ArrayList(hist), nextChunkId)
@@ -236,17 +245,10 @@ internal open class MatchJournalImpl(
         override fun entriesLog(): List<MatchJournal.Chunk.Entry> = occurrences
 
         override fun findOccurrence(ctr: Constraint): Occurrence? =
-            occurrences.find { !it.isDiscarded && it.occ.constraint.symbol() == ctr.symbol() }?.occ
+            activatedLog().find { it.constraint.symbol() == ctr.symbol() }
 
-        override fun principalConstraint(): Constraint? {
-            try {
-                val body = match.rule().bodyAlternation().first()
-                val pProds = body.filter { it is Constraint && it.isPrincipal() }
-                return pProds.first() as Constraint
-            } catch (e: NoSuchElementException) {
-                return null
-            }
-        }
+        override fun principalOccurrence(): Occurrence? =
+            activatedLog().find { ispec.isPrincipal(it.constraint) }
     }
 
     class IndexImpl(ispec: IncrementalProgramSpec, chunks: Iterable<MatchJournal.Chunk>): MatchJournal.Index

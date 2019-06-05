@@ -110,6 +110,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     : StoreAwareJournalImpl(journal)
 {
     private val ruleOrder: Map<Any, Int> = HashMap<Any, Int>().apply {
+        put(MatchJournalImpl.InitRuleMatch.rule().uniqueTag(), -1)
         ruleIndex.forEachIndexed { index, rule -> put(rule.uniqueTag(), index) }
     }
 
@@ -196,39 +197,35 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
 
+    private fun canMatch(rule: Rule, occ: Occurrence): Boolean =
+        (rule.headKept() + rule.headReplaced()).find { it.symbol() == occ.constraint.symbol() } != null
+
     // todo: what if non-principal rules will be passed as input there?
     //  only rules that can match on principal occurrences will pass through this method to the queue
     //  so, no non-principal rule should pass it.
     fun addRuleMatches(rules: Iterable<Rule>) {
 
         val activationCandidates = mutableListOf<MatchCandidate>()
-        val (headedRules, headlessRules) = rules.partition { rule ->
-            rule.headKept().count() != 0 || rule.headReplaced().count() != 0
-        }
-
         val it = this.iterator()
-        var prevChunk = it.next() // skip initial chunk
+        var chunk = it.next() // initial chunk
+        var prevChunk = chunk
 
-        while (it.hasNext()) { // note: if there's only an initial chunk, we have nothing to do
-            val chunk = it.next()
-            val pCtr = chunk.principalConstraint()
-
+        while (true) {
             // Does this chunk have principal occurrence and can activate anything at all?
-            if (pCtr != null) {
-                for (rule in headedRules) {
+            val pOcc = chunk.principalOccurrence()
+            if (pOcc != null) {
+
+                for (rule in rules) {
                     // Can this rule be matched by principal occurrence?
                     // fixme: maybe use RuleIndex here?
-                    if (rule.headKept().contains(pCtr) || rule.headReplaced().contains(pCtr)) {
-
-                        val princOcc = chunk.findOccurrence(pCtr)
-                            ?: throw IllegalStateException("Chunk with principal occurrence must have it in activated occurrences!")
+                    if (canMatch(rule, pOcc)) {
 
                         // Then we will need to find the place among existing child chunks
                         //  (i.e. among some number of following ones)
                         //  to activate this occurrence, to (possibly) match this rule.
                         // Also remember the parent justification of this rule candidate
                         //  to drop it from monitoring when child chunks end.
-                        activationCandidates.add(MatchCandidate(rule, princOcc, chunk.id))
+                        activationCandidates.add(MatchCandidate(rule, pOcc, chunk.id))
                         // todo: also use the rule to help Dispatcher in future? i.e. try matching only on the candidate rule
                     }
                 }
@@ -256,19 +253,9 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 aIt.remove()
             }
 
-            // Case for headless rules, which are activated at the 'top' level according to rule order in RuleIndex
-            if (chunk.isTopLevel()) {
-                for (candRule in headlessRules) {
-                    val placeToInsertFound = compareRuleOrders(chunk.match.rule(), candRule) > 0
-                    if (placeToInsertFound) {
-                        // TODO: how 'at start' rules get activated?
-//                        execQueue.offer(ExecPos(prevChunk, candOcc))
-                        // todo: remove added rule from headlessRules
-                    }
-                }
-            }
-
+            if (!it.hasNext()) break
             prevChunk = chunk
+            chunk = it.next()
         }
     }
 
@@ -292,12 +279,13 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
                 // Handles the case when several matches are added to the same position.
                 //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
-                if (execPos != prevPos) {
+                if (execPos != prevPos)
                     replay(controller, execPos.pos)
-                }
                 prevPos = execPos
 
-                controller.reactivate(execPos.activeOcc)
+                // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
+                if (execPos.activeOcc.stored)
+                    controller.reactivate(execPos.activeOcc)
             } while (execQueue.isNotEmpty())
         }
         // Also replay to the end after queue is fully executed

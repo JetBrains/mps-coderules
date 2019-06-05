@@ -203,35 +203,41 @@ class TestIncrementalProgram {
     }
 
     @Test
-    @Ignore("unresolved yet")
     fun addAtStartMatch() {
         val progSpec = MockIncrProgSpec(
-            setOf("main", "empty-head.bar"),
-            setOf(sym0("foo"))
+            setOf("main.foo", "main.bar"),
+            setOf(sym0("main"))
         )
         programWithRules(
-            rule("main",
-                headReplaced(
-                    constraint("main")
+            // 'at-start' rules are launched with a 'main' occurrence, their heads aren't actually empty
+            rule("main.foo",
+                headKept(
+                    princConstraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    constraint("foo")
                 ))
         ).launch("addRule", progSpec) { result ->
-            result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+
+            println(result.token().journalView)
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"))
             result.token().journalView.chunks.size shouldBe 2
             result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
             builder.programWithRules(
-                rule("empty-head.bar",
-                    headKept(),
+                rule("main.bar",
+                    headKept(
+                        princConstraint("main")
+                    ),
                     body(
                         constraint("bar")
                     )
                 )
             ).relaunch("atStart", progSpec, evalRes.token()) { result ->
-                result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"))
+
+                println(result.token().journalView)
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"), sym0("bar"))
                 result.token().journalView.chunks.size shouldBe 3
                 result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("bar"))
             }

@@ -62,7 +62,9 @@ internal class ControllerImpl (
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext)
 
-        activateConstraint(constraint, emptyJusts(), context)
+        // fixme: is it valid to always provide current justifications?
+        //  while this method is used only in one place at program kick-off, yes, it's initial justs provided.
+        activateConstraint(constraint, state.justs(), context)
 
         return context.currentStatus()
     }
