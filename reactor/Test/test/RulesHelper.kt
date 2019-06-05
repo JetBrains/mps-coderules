@@ -71,6 +71,22 @@ private fun updateHandler(name: String, rulesList: RulesList, vararg ruleBlocks:
     hb.toHandler()
 }
 
+private fun insertRulesInHandler(at: Int, name: String, rulesList: RulesList, vararg ruleBlocks: () -> Rule): () -> RulesList = {
+    val hb = HandlerBuilder(name)
+    rulesList.rules().forEachIndexed { index, rule ->
+        if (index == at) {
+            for (block in ruleBlocks) {
+                hb.appendRule(block())
+            }
+        }
+        hb.appendRule(rule)
+    }
+    hb.toHandler()
+}
+
+private fun insertRulesInHandlerWhen(at: (Rule) -> Boolean, name: String, rulesList: RulesList, vararg ruleBlocks: () -> Rule): () -> RulesList =
+    insertRulesInHandler(rulesList.rules().indexOfFirst(at), name, rulesList, * ruleBlocks)
+
 // builder DSL for constructing program
 
 fun programWithRules(vararg ruleBuilders: () -> Rule): Builder =
@@ -78,6 +94,12 @@ fun programWithRules(vararg ruleBuilders: () -> Rule): Builder =
 
 fun Builder.programWithRules(vararg ruleBuilders: () -> Rule): Builder =
     updateBuilder(this, arrayOf(updateHandler("test",  rulesLists.first(), * ruleBuilders)))
+
+fun Builder.insertRulesAt(at: Int, vararg ruleBuilders: () -> Rule): Builder =
+    updateBuilder(this, arrayOf(insertRulesInHandler(at, "test", rulesLists.first(), * ruleBuilders)))
+
+fun Builder.insertRulesWhen(at: (Rule) -> Boolean, vararg ruleBuilders: () -> Rule): Builder =
+    updateBuilder(this, arrayOf(insertRulesInHandlerWhen(at, "test", rulesLists.first(), * ruleBuilders)))
 
 fun rule(tag: String, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
     val rb = RuleBuilder(tag)

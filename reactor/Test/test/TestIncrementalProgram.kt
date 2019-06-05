@@ -279,7 +279,7 @@ class TestIncrementalProgram {
             setOf("main", "foo.bar", "foo.baz", "baz.dummy"),
             setOf(sym0("foo"), sym0("baz"))
         )
-        val p1 = programWithRules(
+        programWithRules(
             rule("main",
                 headReplaced(
                     constraint("main")
@@ -302,48 +302,26 @@ class TestIncrementalProgram {
                     constraint("dummy")
                 )
             )
-        )
-        // p2 differs in that before discarding foo in foo.baz it also produces bar in foo.bar
-        val p2 = programWithRules(
-            rule("main",
-                headReplaced(
-                    constraint("main")
-                ),
-                body(
-                    princConstraint("foo")
-                )),
-            rule("foo.bar",
-                headKept(
-                    princConstraint("foo")
-                ),
-                body(
-                    constraint("bar")
-                )),
-            rule("foo.baz",
-                headReplaced(
-                    princConstraint("foo")
-                ),
-                body(
-                    constraint("baz")
-                )),
-            rule("baz.dummy",
-                headKept(
-                    princConstraint("baz")
-                ),
-                body(
-                    constraint("dummy")
-                )
-            )
-        )
+        ).launch("initial run", progSpec) { result ->
 
-        val evalRes1 = p1.launch("initial run", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"), sym0("dummy"))
             result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
-        }.second
 
-        p2.relaunch("test1", progSpec, evalRes1.token()) { result ->
-            result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("dummy"))
-            result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
+        }.also { (builder, evalRes) ->
+            // Insert rule before foo.baz: produce bar before discarding foo in foo.baz
+            builder.insertRulesAt(1,
+                rule("foo.bar",
+                    headKept(
+                        princConstraint("foo")
+                    ),
+                    body(
+                        constraint("bar")
+                    ))
+            ).relaunch("test1", progSpec, evalRes.token()) { result ->
+
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("dummy"))
+                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
+            }
         }
     }
 
@@ -353,7 +331,7 @@ class TestIncrementalProgram {
             setOf("main", "foo.bar", "foo.baz", "foo.qux"),
             setOf(sym0("foo"))
         )
-        val p1 = programWithRules(
+        programWithRules(
             rule("main",
                 headReplaced(
                     constraint("main")
@@ -376,45 +354,23 @@ class TestIncrementalProgram {
                     constraint("qux")
                 )
             )
-        )
-        val p2 = programWithRules(
-            rule("main",
-                headReplaced(
-                    constraint("main")
-                ),
-                body(
-                    princConstraint("foo")
-                )),
-            rule("foo.bar",
-                headKept(
-                    princConstraint("foo")
-                ),
-                body(
-                    constraint("bar")
-                )),
-            rule("foo.baz",
-                headKept(
-                    princConstraint("foo")
-                ),
-                body(
-                    constraint("baz")
-                )),
-            rule("foo.qux",
-                headReplaced(
-                    princConstraint("foo")
-                ),
-                body(
-                    constraint("qux")
-                )
-            )
-        )
+        ).launch("initial run", progSpec) { result ->
 
-        val evalRes1 = p1.launch("initial run", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("qux"))
-        }.second
 
-        p2.relaunch("test1", progSpec, evalRes1.token()) { result ->
-            result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("qux"))
+        }.also { (builder, evalRes) ->
+            builder.insertRulesAt(2,
+                rule("foo.baz",
+                    headKept(
+                        princConstraint("foo")
+                    ),
+                    body(
+                        constraint("baz")
+                    ))
+            ).relaunch("test1", progSpec, evalRes.token()) { result ->
+
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("qux"))
+            }
         }
     }
 
