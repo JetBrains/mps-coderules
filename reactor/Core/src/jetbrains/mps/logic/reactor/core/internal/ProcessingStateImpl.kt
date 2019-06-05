@@ -25,7 +25,6 @@ import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
-import org.jetbrains.kotlin.utils.mapToIndex
 import java.util.*
 
 
@@ -110,11 +109,18 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                                    val profiler: Profiler? = null)
     : StoreAwareJournalImpl(journal)
 {
-    private val ruleOrder: Map<Any, Int> = ruleIndex.map { it.uniqueTag() }.mapToIndex()
+    private val ruleOrder: Map<Any, Int> = HashMap<Any, Int>().apply {
+        ruleIndex.forEachIndexed { index, rule -> put(rule.uniqueTag(), index) }
+    }
+
     private val journalIndex: MatchJournal.Index = journal.index()
 
-    private val execQueue: Queue<ExecPos> = LinkedList<ExecPos>()
-//    private val execQueue: Queue<ExecPos> = PriorityQueue<ExecPos>(this.count() / 3) { lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos) }
+    private val postponedMatches: MutableMap<Id<Occurrence>, List<RuleMatchEx>> = HashMap()
+
+    private val execQueue: Queue<ExecPos> =
+        PriorityQueue<ExecPos>(1 + this.count() / 2) {
+            lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos)
+        }
 
     private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
 
@@ -319,7 +325,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 active.stored = true
                 trace.activate(active)
 
-                // todo: need doing it at reactivation?
                 logActivation(active)
                 active.revive(controller)
 
@@ -329,7 +334,20 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
             this.dispatchingFront = dispatchingFront.expand(active)
 
-            val outStatus = dispatchingFront.matches().toList().fold(inStatus) { status, match ->
+            val matches = dispatchingFront.matches().toList()
+            val currentMatches =
+                // todo: assert that there can be no future matches on non-principal occurrences?
+//                if (isCurrent() || !active.isPrincipal()) {
+                if (true) {
+                    matches
+                } else {
+                    val newCurrentMatches = handleFutureMatches(matches)
+                    val allMatches = newCurrentMatches + (postponedMatches.remove(Id(active)) ?: emptyList())
+                    // Sort according to rule priorities
+                    allMatches.sortedBy { ruleOrder[it.rule().uniqueTag()] }
+                }
+
+            val outStatus = currentMatches.fold(inStatus) { status, match ->
                 // TODO: paranoid check. should be isAlive() instead
                 // FIXME: move this check elsewhere
                 if (status.operational && active.stored && match.allStored())
@@ -346,6 +364,38 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             outStatus
         }
     }
+
+    // TODO: provide ispec to ProcessingStateImpl and use it
+    private fun Occurrence.isPrincipal() = this.constraint().isPrincipal()
+
+    // Determines, filters out and enqueues (to execution queue) future matches. Returns only current matches.
+    private fun handleFutureMatches(matches: List<RuleMatchEx>): List<RuleMatchEx> {
+        val currentPos = currentPos()
+        val currentMatches = mutableListOf<RuleMatchEx>()
+
+        for (m in matches) {
+            latestMatchedOccurrence(m)?.let { pos ->
+                // if it is a future match
+                if (journalIndex.compare(currentPos, pos) > 0) {
+                    val idOcc = Id(pos.occ)
+                    postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
+                    execQueue.offer(ExecPos(pos, pos.occ))
+                } else {
+                    currentMatches.add(m)
+                }
+            }
+        }
+        return currentMatches
+    }
+
+    // The latest matched occurrence from match's head is (by definition) the occurrence which activated this match.
+    private fun latestMatchedOccurrence(match: RuleMatchEx): MatchJournal.OccurrencePos? =
+        match.signature().mapNotNull { occSig ->
+            occSig?.wrapped?.let { occ ->
+                MatchJournal.OccurrencePos.get(journalIndex, occ)
+            }
+        }.maxWith(journalIndex) // compare positions: find latest
+
 
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
         if (operational) action(this) else this

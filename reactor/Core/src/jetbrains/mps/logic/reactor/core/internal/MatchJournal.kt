@@ -38,6 +38,8 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     fun logActivation(occ: Occurrence)
 
     fun currentPos(): Pos
+    fun isCurrent(): Boolean = currentPos().chunk() == this.last()
+
     fun resetPos()
     fun reset(pastPos: Pos)
     fun replay(controller: Controller, futurePos: Pos)
@@ -89,6 +91,25 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             && other.chunk() === chunk()
             && other.entriesInChunk() == entriesInChunk()
     }
+
+    data class OccurrencePos(val occ: Occurrence, private val chunk: MatchJournal.Chunk, private val offset: Int): MatchJournal.Pos()
+    {
+        companion object {
+            fun get(index: MatchJournal.Index, occ: Occurrence): OccurrencePos? {
+                val idOcc = Id(occ)
+                val chunk = index.activatingChunkOf(idOcc) ?: return null
+                val i = chunk.entriesLog().indexOfFirst { entry ->
+                    Id(entry.occ) == idOcc && !entry.isDiscarded
+                }
+                val offset = i + 1
+                return if (offset >= 0) OccurrencePos(occ, chunk, offset) else null
+            }
+        }
+
+        override fun chunk(): MatchJournal.Chunk = chunk
+        override fun entriesInChunk(): Int = offset
+    }
+
 }
 
 
@@ -228,7 +249,6 @@ internal open class MatchJournalImpl(
         }
     }
 
-
     class IndexImpl(ispec: IncrementalProgramSpec, chunks: Iterable<MatchJournal.Chunk>): MatchJournal.Index
     {
         private val chunkOrder: Map<Int, Int>
@@ -256,18 +276,6 @@ internal open class MatchJournalImpl(
         override fun compare(lhs: MatchJournal.Pos, rhs: MatchJournal.Pos): Int {
             val co = compareBy<MatchJournal.Pos>{ chunkOrder[it.chunk().id] }.compare(lhs, rhs)
             return if (co == 0) lhs.entriesInChunk().compareTo(rhs.entriesInChunk()) else co
-        }
-
-        // Compare occurrences by their activating chunk
-        // todo: test case for two principal occurrences activated in the same chunk???
-        fun compare(lhs: Occurrence, rhs: Occurrence): Int {
-            val cl = activatingChunkOf(Id(lhs))
-            val cr = activatingChunkOf(Id(rhs))
-
-            if (cl == null && cr == null) return 0
-            if (cl == null) return -1
-            if (cr == null) return 1
-            return this.compare(cl, cr)
         }
     }
 
