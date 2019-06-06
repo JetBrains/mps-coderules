@@ -503,11 +503,16 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
+      <concept id="4065387505485742749" name="jetbrains.mps.lang.smodel.structure.AbstractPointerResolveOperation" flags="ng" index="2yCiFS">
+        <child id="3648723375513868575" name="repositoryArg" index="Vysub" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="3648723375513868532" name="jetbrains.mps.lang.smodel.structure.NodePointer_ResolveOperation" flags="ng" index="Vyspw" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -1269,22 +1274,21 @@
                                       <node concept="3uibUv" id="5lxnBcTZ0Ti" role="1tU5fm">
                                         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                                       </node>
-                                      <node concept="2OqwBi" id="5lxnBcTZ0Tj" role="33vP2m">
+                                      <node concept="2OqwBi" id="7eK3DxvkuiE" role="33vP2m">
                                         <node concept="2OqwBi" id="78H58oeUK4E" role="2Oq$k0">
                                           <node concept="2GrUjf" id="78H58oeUr5x" role="2Oq$k0">
                                             <ref role="2Gs0qQ" node="78H58oeUr5v" resolve="e" />
                                           </node>
                                           <node concept="3AY5_j" id="78H58oeUMut" role="2OqNvi" />
                                         </node>
-                                        <node concept="liA8E" id="5lxnBcTZ0Tn" role="2OqNvi">
-                                          <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository)" resolve="resolve" />
-                                          <node concept="2OqwBi" id="5lxnBcTZ0To" role="37wK5m">
-                                            <node concept="2JrnkZ" id="5lxnBcTZ0Tp" role="2Oq$k0">
-                                              <node concept="37vLTw" id="5lxnBcTZ0Tq" role="2JrQYb">
+                                        <node concept="Vyspw" id="7eK3DxvkwHz" role="2OqNvi">
+                                          <node concept="2OqwBi" id="7eK3DxvkEVp" role="Vysub">
+                                            <node concept="2JrnkZ" id="7eK3DxvkDff" role="2Oq$k0">
+                                              <node concept="37vLTw" id="7eK3Dxvky_B" role="2JrQYb">
                                                 <ref role="3cqZAo" node="5lxnBcTZ0SY" resolve="mdl" />
                                               </node>
                                             </node>
-                                            <node concept="liA8E" id="5lxnBcTZ0Tr" role="2OqNvi">
+                                            <node concept="liA8E" id="7eK3DxvkGLU" role="2OqNvi">
                                               <ref role="37wK5l" to="mhbf:~SModel.getRepository()" resolve="getRepository" />
                                             </node>
                                           </node>
@@ -1957,9 +1961,7 @@
       <node concept="37vLTG" id="78H58of1kb$" role="3clF46">
         <property role="TrG5h" value="messages" />
         <node concept="3rvAFt" id="78H58of1ojH" role="1tU5fm">
-          <node concept="3uibUv" id="78H58of1oNQ" role="3rvQeY">
-            <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-          </node>
+          <node concept="2sp9CU" id="7eK3DxvkeIe" role="3rvQeY" />
           <node concept="3Tqbb2" id="78H58of1pkb" role="3rvSg0" />
         </node>
       </node>
@@ -2060,9 +2062,7 @@
       <property role="TrG5h" value="messages" />
       <node concept="3Tmbuc" id="78H58oeTx_0" role="1B3o_S" />
       <node concept="3rvAFt" id="78H58of1BCd" role="1tU5fm">
-        <node concept="3uibUv" id="78H58of1BCe" role="3rvQeY">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
+        <node concept="2sp9CU" id="7eK3Dxvkf05" role="3rvQeY" />
         <node concept="3Tqbb2" id="78H58of1BCf" role="3rvSg0" />
       </node>
     </node>
