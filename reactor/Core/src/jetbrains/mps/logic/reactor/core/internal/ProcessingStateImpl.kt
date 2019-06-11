@@ -59,7 +59,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     private val postponedMatches: MutableMap<Id<Occurrence>, List<RuleMatchEx>> = HashMap()
 
     private val execQueue: Queue<ExecPos> =
-        PriorityQueue<ExecPos>(1 + this.count() / 2) {
+        PriorityQueue<ExecPos>(1 + this.count() / 2) { // just an estimate
             lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos)
         }
 
@@ -132,8 +132,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             prevChunk = chunk
         }
     }
-
-    private fun Justs.intersects(other: Iterable<Int>): Boolean = other.any { this.contains(it) }
 
     private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
 
@@ -284,9 +282,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         }
     }
 
-    // TODO: provide ispec to ProcessingStateImpl and use it
-    private fun Occurrence.isPrincipal() = this.constraint().isPrincipal()
-
     // Determines, filters out and enqueues (to execution queue) future matches. Returns only current matches.
     private fun handleFutureMatches(matches: List<RuleMatchEx>): List<RuleMatchEx> {
         val currentMatches = mutableListOf<RuleMatchEx>()
@@ -353,6 +348,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     }
 
 
+    // TODO: provide ispec to ProcessingStateImpl and use it
+    private fun Occurrence.isPrincipal() = this.constraint().isPrincipal()
+
+    private fun Justs.intersects(other: Iterable<Int>): Boolean = other.any { this.contains(it) }
+
     private fun RuleMatch.allHeads() = matchHeadKept() + matchHeadReplaced()
+
     private fun RuleMatch.allStored() = allHeads().all { co -> (co as Occurrence).stored }
 }
