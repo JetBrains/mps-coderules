@@ -100,7 +100,6 @@ class Dispatcher (val ruleIndex: RuleIndex) {
         fun expand(activated: Occurrence) = DispatchingFront(this,
             ruleIndex.forOccurrenceWithMask(activated).mapNotNull { (rule, mask) ->
                 ruletag2probe[rule.uniqueTag()]?.expand(activated, mask)
-                ruletag2probe[rule.uniqueTag()]?.expand(activated, mask)
             })
 
         /**
