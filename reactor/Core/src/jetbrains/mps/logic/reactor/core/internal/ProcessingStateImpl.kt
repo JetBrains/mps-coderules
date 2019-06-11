@@ -19,7 +19,6 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
-import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Id
@@ -36,71 +35,11 @@ import java.util.*
  *   - deactivating discarded occurrences from the match
  *   - processing the body of a constraints rule.
  *
- *  A ProcessingState maintains a stack of [StateFrame] instances.
- *  It also serves as a proxy for observers of [Logical] that are added during program
- *  evaluation.
+ *  A ProcessingState maintains a stack of [StateFrame] instances through [StateFrameStack].
+ *  It also serves as a proxy for observers of [Logical] that are added during program evaluation.
  *
  * @author Fedor Isakov
  */
-
-
-internal open class StateFrameStack() : ProcessingState, LogicalObserver
-{
-    // invariant: never empty
-    private val stateFrames = LinkedList<StateFrame>()
-
-    init {
-        stateFrames.push(StateFrame())
-    }
-
-    fun currentFrame() : StateFrame =
-        stateFrames.first
-
-    fun push() : StateFrame {
-        val newFrame = StateFrame(stateFrames.first)
-        stateFrames.push(newFrame)
-        return newFrame
-    }
-
-    fun reset() = reset(stateFrames.last)
-
-    fun reset(frame: StateFrame) {
-        val it = stateFrames.iterator()
-        while (it.hasNext()) {
-            if (frame === it.next()) {  // referential equality
-                return
-            }
-            it.remove()
-        }
-        throw IllegalStateException("invalid frame")
-    }
-
-    override fun addForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
-        if (!currentFrame().isObserving(logical)) {
-            logical.addObserver(this)
-        }
-        currentFrame().addForwardingObserver(logical, observer)
-    }
-
-    override fun removeForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
-        currentFrame().removeForwardingObserver(logical, observer)
-        if (!currentFrame().isObserving(logical)) {
-            logical.removeObserver(this)
-        }
-    }
-
-    override fun valueUpdated(logical: Logical<*>) {
-        // forward to the top frame
-        currentFrame().valueUpdated(logical)
-    }
-
-    override fun parentUpdated(logical: Logical<*>) {
-        // forward to the top frame
-        currentFrame().parentUpdated(logical)
-    }
-
-}
-
 
 internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.DispatchingFront,
                                    journal: MatchJournalImpl,
