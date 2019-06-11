@@ -79,6 +79,8 @@ class TestIncrementalProgram {
 
     private fun EvaluationResult.lastChunk() = this.token().journalView.chunks.last()
 
+    private fun EvaluationResult.countChunks() = this.token().journalView.chunks.size
+
     private fun Iterable<Occurrence>.constraintSymbols() = this.map { it.constraint.symbol() }
 
 
@@ -220,7 +222,7 @@ class TestIncrementalProgram {
         ).launch("addRule", progSpec) { result ->
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"))
-            result.token().journalView.chunks.size shouldBe 2
+            result.countChunks() shouldBe 2
             result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
@@ -236,7 +238,7 @@ class TestIncrementalProgram {
             ).relaunch("atStart", progSpec, evalRes.token()) { result ->
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"), sym0("bar"))
-                result.token().journalView.chunks.size shouldBe 3
+                result.countChunks() shouldBe 3
                 result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("bar"))
             }
         }
@@ -261,7 +263,7 @@ class TestIncrementalProgram {
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
-            val nPrincipalMatches = evalRes.token().journalView.chunks.size
+            val nPrincipalMatches = evalRes.countChunks()
 
             builder.programWithRules(
                 rule("main.bar",
@@ -275,7 +277,7 @@ class TestIncrementalProgram {
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 // no new matches: 'main' has been already discarded
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
-                result.token().journalView.chunks.size shouldBe nPrincipalMatches
+                result.countChunks() shouldBe nPrincipalMatches
             }
         }
     }
@@ -316,7 +318,7 @@ class TestIncrementalProgram {
             result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
 
         }.also { (builder, evalRes) ->
-            val nPrincipalMatches = evalRes.token().journalView.chunks.size
+            val nPrincipalMatches = evalRes.countChunks()
 
             // Insert rule before foo.baz: produce bar before discarding foo in foo.baz
             builder.insertRulesAt(1,
@@ -331,7 +333,7 @@ class TestIncrementalProgram {
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("dummy"))
                 result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
-                result.token().journalView.chunks.size shouldBe (1 + nPrincipalMatches)
+                result.countChunks() shouldBe (1 + nPrincipalMatches)
             }
         }
     }
@@ -370,7 +372,7 @@ class TestIncrementalProgram {
             result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("qux"))
 
         }.also { (builder, evalRes) ->
-            val nPrincipalMatches = evalRes.token().journalView.chunks.size
+            val nPrincipalMatches = evalRes.countChunks()
 
             builder.insertRulesAt(2,
                 rule("foo.baz",
@@ -383,7 +385,7 @@ class TestIncrementalProgram {
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("qux"))
-                result.token().journalView.chunks.size shouldBe (1 + nPrincipalMatches)
+                result.countChunks() shouldBe (1 + nPrincipalMatches)
             }
         }
     }
@@ -507,6 +509,64 @@ class TestIncrementalProgram {
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("start"), sym0("1st"), sym0("2nd"))
                 // ensure right rule match order: the last chunk must contain "2nd"
                 result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("2nd"))
+            }
+        }
+    }
+
+    // Test on complex condition involving consumedSignatures and 'reactivation' flag in RuleMatchFront.expand
+    @Test
+    fun reactivatePartialMatchOfPropagationRule() {
+        val progSpec = MockIncrProgSpec(
+            setOf(".foo", ".bar", "foobar"),
+            setOf(sym0("start"), sym0("foo"), sym0("bar"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("start")
+                )),
+            rule(".foo",
+                headReplaced(
+                    princConstraint("start")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            // Propagation rule that doesn't match the first time due to the lack of 'bar'
+            rule("foobar",
+                headKept(
+                    princConstraint("foo"),
+                    princConstraint("bar")
+                ),
+                body(
+                    constraint("marker")
+                ))
+        ).launch("withoutBar", progSpec) { result ->
+
+            // "foobar" hasn't matched without 'bar, so 'foo' is still here
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+
+        }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.countChunks()
+
+            // Provides 'bar' by reactivating 'foo'
+            builder.insertRulesAt(1,
+                rule(".bar",
+                    headKept(
+                        princConstraint("foo")
+                    ),
+                    body(
+                        princConstraint("bar")
+                    ))
+            ).relaunch("withBar", progSpec, evalRes.token()) { result ->
+
+                // if "foobar" happens too early, "1st" occ won't be produced
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("marker"))
+                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("marker"))
+                result.countChunks() shouldBe (2 + nPrincipalMatches) // +[.bar, foobar]
             }
         }
     }
