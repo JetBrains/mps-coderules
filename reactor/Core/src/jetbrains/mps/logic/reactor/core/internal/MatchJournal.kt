@@ -95,7 +95,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     data class OccurrencePos(val occ: Occurrence, private val chunk: MatchJournal.Chunk, private val offset: Int): MatchJournal.Pos()
     {
         companion object {
-            fun get(index: MatchJournal.Index, occ: Occurrence): OccurrencePos? {
+            fun fromIndex(index: MatchJournal.Index, occ: Occurrence): OccurrencePos? {
                 val idOcc = Id(occ)
                 val chunk = index.activatingChunkOf(idOcc) ?: return null
                 val i = chunk.entriesLog().indexOfFirst { entry ->

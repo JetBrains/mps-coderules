@@ -67,7 +67,7 @@ class TestStoreAwareJournal {
         {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                hist.justs() shouldBe justsOf()
+                hist.justs() shouldBe justsOf(0)
 
                 logExpand(justifiedOccurrence("foo", setOf(1)))
                 val fooMatches = d.matches()

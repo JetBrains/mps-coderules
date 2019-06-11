@@ -116,6 +116,11 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     private val journalIndex: MatchJournal.Index = journal.index()
 
+    // It is a position in Journal from previous session,
+    //  from which incremental execution continues.
+    // Needed for pos comparison in handleFutureMatches.
+    private lateinit var lastIncrementalRootPos: MatchJournal.Pos
+
     private val postponedMatches: MutableMap<Id<Occurrence>, List<RuleMatchEx>> = HashMap()
 
     private val execQueue: Queue<ExecPos> =
@@ -281,6 +286,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
                 if (execPos != prevPos)
                     replay(controller, execPos.pos)
+                    lastIncrementalRootPos = execPos.pos
                 prevPos = execPos
 
                 // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
@@ -325,8 +331,8 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             val matches = dispatchingFront.matches().toList()
             val currentMatches =
                 // todo: assert that there can be no future matches on non-principal occurrences?
-//                if (isCurrent() || !active.isPrincipal()) {
-                if (true) {
+                if (isCurrent() || !active.isPrincipal()) {
+//                if (true) {
                     matches
                 } else {
                     val newCurrentMatches = handleFutureMatches(matches)
@@ -358,29 +364,29 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     // Determines, filters out and enqueues (to execution queue) future matches. Returns only current matches.
     private fun handleFutureMatches(matches: List<RuleMatchEx>): List<RuleMatchEx> {
-        val currentPos = currentPos()
         val currentMatches = mutableListOf<RuleMatchEx>()
 
         for (m in matches) {
-            latestMatchedOccurrence(m)?.let { pos ->
-                // if it is a future match
-                if (journalIndex.compare(currentPos, pos) > 0) {
-                    val idOcc = Id(pos.occ)
-                    postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
-                    execQueue.offer(ExecPos(pos, pos.occ))
-                } else {
-                    currentMatches.add(m)
-                }
+            val pos = latestMatchedOccurrence(m)
+            // if it is a future match
+            if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
+                val idOcc = Id(pos.occ)
+                postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
+                execQueue.offer(ExecPos(pos, pos.occ))
+            } else {
+                currentMatches.add(m)
             }
         }
         return currentMatches
     }
 
     // The latest matched occurrence from match's head is (by definition) the occurrence which activated this match.
+    // Returns null for matches with occurrences only from this session
+    //  (because journalIndex indexes only previous session).
     private fun latestMatchedOccurrence(match: RuleMatchEx): MatchJournal.OccurrencePos? =
         match.signature().mapNotNull { occSig ->
             occSig?.wrapped?.let { occ ->
-                MatchJournal.OccurrencePos.get(journalIndex, occ)
+                MatchJournal.OccurrencePos.fromIndex(journalIndex, occ)
             }
         }.maxWith(journalIndex) // compare positions: find latest
 

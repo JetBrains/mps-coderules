@@ -219,7 +219,6 @@ class TestIncrementalProgram {
                 ))
         ).launch("addRule", progSpec) { result ->
 
-            println(result.token().journalView)
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"))
             result.token().journalView.chunks.size shouldBe 2
             result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("foo"))
@@ -236,7 +235,6 @@ class TestIncrementalProgram {
                 )
             ).relaunch("atStart", progSpec, evalRes.token()) { result ->
 
-                println(result.token().journalView)
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"), sym0("bar"))
                 result.token().journalView.chunks.size shouldBe 3
                 result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("bar"))
@@ -263,6 +261,8 @@ class TestIncrementalProgram {
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.token().journalView.chunks.size
+
             builder.programWithRules(
                 rule("main.bar",
                     headKept(
@@ -275,10 +275,12 @@ class TestIncrementalProgram {
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 // no new matches: 'main' has been already discarded
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+                result.token().journalView.chunks.size shouldBe nPrincipalMatches
             }
         }
     }
 
+    // Tests that incremental reactivation of discarded occurrences is handled correctly.
     @Test
     fun addMatchBeforeReplaced() {
         val progSpec = MockIncrProgSpec(
@@ -314,6 +316,8 @@ class TestIncrementalProgram {
             result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
 
         }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.token().journalView.chunks.size
+
             // Insert rule before foo.baz: produce bar before discarding foo in foo.baz
             builder.insertRulesAt(1,
                 rule("foo.bar",
@@ -327,6 +331,7 @@ class TestIncrementalProgram {
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("dummy"))
                 result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
+                result.token().journalView.chunks.size shouldBe (1 + nPrincipalMatches)
             }
         }
     }
@@ -365,6 +370,8 @@ class TestIncrementalProgram {
             result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("qux"))
 
         }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.token().journalView.chunks.size
+
             builder.insertRulesAt(2,
                 rule("foo.baz",
                     headKept(
@@ -376,6 +383,7 @@ class TestIncrementalProgram {
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("qux"))
+                result.token().journalView.chunks.size shouldBe (1 + nPrincipalMatches)
             }
         }
     }
@@ -438,4 +446,69 @@ class TestIncrementalProgram {
             }
         }
     }
+
+    // Description: due to incremental launch, match on 'foobar' will be known
+    //  before it should actually happen. If it happens earlier than needed,
+    //  'bar' will be discarded too early and program results will be incorrect.
+    @Test
+    fun futureMatchInDueTime() {
+        val progSpec = MockIncrProgSpec(
+            setOf(".foo", ".bar", "foobar", "bar.1st"),
+            setOf(sym0("start"), sym0("foo"), sym0("bar"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("start")
+                )),
+            rule(".foo",
+                headKept(
+                    princConstraint("start")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foobar",
+                headReplaced(
+                    princConstraint("foo"),
+                    princConstraint("bar")
+                ),
+                body(
+                    constraint("2nd")
+                )),
+            rule("bar.1st",
+                headKept(
+                    princConstraint("bar")
+                ),
+                body(
+                    constraint("1st")
+                )
+            )
+        ).launch("withoutBar", progSpec) { result ->
+
+            // "foobar" hasn't matched without 'bar, so 'foo' is still here
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("start"), sym0("foo"))
+
+        }.also { (builder, evalRes) ->
+            builder.insertRulesAt(1,
+                rule(".bar",
+                    headKept(
+                        princConstraint("start")
+                    ),
+                    body(
+                        princConstraint("bar")
+                    ))
+            ).relaunch("withBar", progSpec, evalRes.token()) { result ->
+
+                // if "foobar" happens too early, "1st" occ won't be produced
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("start"), sym0("1st"), sym0("2nd"))
+                // ensure right rule match order: the last chunk must contain "2nd"
+                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("2nd"))
+            }
+        }
+    }
+
 }
