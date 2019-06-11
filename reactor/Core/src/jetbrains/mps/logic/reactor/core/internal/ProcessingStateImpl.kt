@@ -48,11 +48,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                                    val profiler: Profiler? = null)
     : StoreAwareJournalImpl(journal)
 {
-    private val ruleOrder: Map<Any, Int> = HashMap<Any, Int>().apply {
-        put(MatchJournalImpl.InitRuleMatch.rule().uniqueTag(), -1)
-        ruleIndex.forEachIndexed { index, rule -> put(rule.uniqueTag(), index) }
-    }
-
+    private val ruleOrdering: RuleOrdering = RuleOrdering(ruleIndex)
     private val journalIndex: MatchJournal.Index = journal.index()
 
     // It is a position in Journal from previous session,
@@ -182,7 +178,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // Place to activate candidate:
                 //  either as the last one, after all existing activations
                 //  or according to the ordering between rules.
-                val placeToInsertFound = compareRuleOrders(chunk.match.rule(), candRule) > 0
+                val placeToInsertFound = ruleOrdering.compare(chunk.match.rule(), candRule) > 0
                 val childChunksEnded = !chunk.isDescendantOf(parentId)
 
                 val pos =
@@ -201,16 +197,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             prevChunk = chunk
             chunk = it.next()
         }
-    }
-
-    private fun compareRuleOrders(lhs: Rule, rhs: Rule): Int {
-        val lhsRuleOrder = ruleOrder[lhs.uniqueTag()]
-        val rhsRuleOrder = ruleOrder[rhs.uniqueTag()]
-
-        if (lhsRuleOrder == null || rhsRuleOrder == null) {
-            throw(IllegalStateException("Rules compared must be present in the rule index!"))
-        }
-        return lhsRuleOrder.compareTo(rhsRuleOrder)
     }
 
     fun launchQueue(controller: Controller): FeedbackStatus.NORMAL {
@@ -240,7 +226,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     }
 
     fun snapshot(): SessionToken {
-        return SessionToken(view(), ruleOrder.keys, dispatchingFront.state())
+        return SessionToken(view(), ruleOrdering.ruleTags(), dispatchingFront.state())
     }
 
     /**
@@ -277,7 +263,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     val newCurrentMatches = handleFutureMatches(matches)
                     val allMatches = newCurrentMatches + (postponedMatches.remove(Id(active)) ?: emptyList())
                     // Sort according to rule priorities
-                    allMatches.sortedBy { ruleOrder[it.rule().uniqueTag()] }
+                    allMatches.sortedBy { ruleOrdering.orderOf(it.rule()) }
                 }
 
             val outStatus = currentMatches.fold(inStatus) { status, match ->
