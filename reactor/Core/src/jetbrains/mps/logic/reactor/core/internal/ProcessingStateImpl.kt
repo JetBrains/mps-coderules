@@ -88,8 +88,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             val toRemove = ruleIds.contains(chunk.match.rule().uniqueTag())
             if (toRemove) {
                 justificationRoots.add(chunk.id)
-                // Remove the chunk from the journal
-                it.remove()
 
                 // We removed the match, so need to reactivate all still valid occurrences from the head
                 //  by definition of Chunk and principal rule, all occurrences from the head are principal
@@ -107,15 +105,18 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                         ExecPos(chunkPos, occ)
                     }
                 })
-
-                continue
             }
 
             // Invalidating dependent chunks
-            val toInvalidate = chunk.justifications.intersects(justificationRoots)
+            val toInvalidate = toRemove || chunk.justifications.intersects(justificationRoots)
             if (toInvalidate) {
                 // Remove the chunk from the journal
                 it.remove()
+
+                // Need to
+                chunk.match.matchHeadReplaced().forEach {
+                    dispatchingFront = dispatchingFront.contract(it as Occurrence)
+                }
 
                 // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
                 //  and storing this invalid consumed match can make no harm, except some memory overhead.

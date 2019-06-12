@@ -2,12 +2,14 @@ import jetbrains.mps.logic.reactor.core.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.core.SessionToken
+import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.Rule as CRule
 import org.junit.*
+import org.junit.Assert.assertNotEquals
 import program.MockConstraint
 
 /*
@@ -76,6 +78,10 @@ class TestIncrementalProgram {
         return this to result
     }
 
+
+    private fun EvaluationResult.chunksSymbolView() = this.token().journalView.chunks.map {
+        it.entriesLog().map { entry -> !entry.isDiscarded to entry.occ.constraint().symbol() }
+    }
 
     private fun EvaluationResult.lastChunk() = this.token().journalView.chunks.last()
 
@@ -566,8 +572,6 @@ class TestIncrementalProgram {
                     ))
             ).relaunch("withBar", progSpec, evalRes.token()) { result ->
 
-//                println(result.token().journalView.chunks)
-
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("marker"))
                 result.lastChunkSymbols() shouldBe listOf(sym0("marker"))
@@ -578,7 +582,7 @@ class TestIncrementalProgram {
 
 
     @Test
-    fun rmSingleKeptMatch() {
+    fun rmSinglePropagationMatch() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "foo.bar", "foo.baz", "baz.qux"),
             setOf(sym0("foo"), sym0("baz"))
@@ -614,13 +618,365 @@ class TestIncrementalProgram {
         }.also { (builder, evalRes) ->
             val nPrincipalMatches = evalRes.countChunks()
 
-            // Insert rule before foo.baz: produce bar before discarding foo in foo.baz
             builder.removeRules(listOf("baz.qux"))
                 .relaunch("removed", progSpec, evalRes.token()) { result ->
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"))
                 result.lastChunkSymbols() shouldBe listOf(sym0("baz"))
                 result.countChunks() shouldBe (nPrincipalMatches - 1)
+            }
+        }
+    }
+
+    @Test
+    fun rmSingleSimplificationMatch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz", "baz.qux"),
+            setOf(sym0("foo"), sym0("baz"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                )),
+            rule("baz.qux",
+                headReplaced(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("qux")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("qux"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("qux"))
+
+        }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.countChunks()
+
+            builder.removeRules(listOf("baz.qux"))
+                .relaunch("removed", progSpec, evalRes.token()) { result ->
+
+                    // 'baz' must be restored
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"))
+                    result.lastChunkSymbols() shouldBe listOf(sym0("baz"))
+                    result.countChunks() shouldBe (nPrincipalMatches - 1)
+                }
+        }
+    }
+
+    @Test
+    fun rmMatchWithDependencies() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.baz", "foo.bar", "barbaz.qux", "baz.lax"),
+            setOf(sym0("foo"), sym0("baz"), sym0("bar"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.bar",
+                headKept(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("bar")
+                )),
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                )),
+            rule("barbaz.qux",
+                headKept(
+                    princConstraint("bar"),
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("qux")
+                )),
+            rule("baz.lax",
+                headReplaced(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("lax")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("qux"), sym0("lax"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("lax"))
+
+        }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.countChunks()
+
+            // "barbaz.qux" rule match is removed as a dependency of "foo.bar" match
+            builder.removeRules(listOf("foo.bar"))
+                .relaunch("removed", progSpec, evalRes.token()) { result ->
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("lax"))
+                    result.lastChunkSymbols() shouldBe listOf(sym0("lax"))
+                    result.countChunks() shouldBe (nPrincipalMatches - 2)
+                }
+        }
+    }
+
+    @Test
+    fun rmSimplificationMatchAndMakeAnotherMatch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.baz", "foo.bar", "baz.lax"),
+            setOf(sym0("foo"), sym0("baz"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            // Note two discarding rules one after another.
+            // After removing "foo.bar" "foo.baz" must match.
+            rule("foo.bar",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("bar")
+                )),
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                )),
+            rule("baz.lax",
+                headReplaced(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("lax")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
+
+        }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.countChunks()
+
+            // "barbaz.qux" rule match is removed as a dependency of "foo.bar" match
+            builder.removeRules(listOf("foo.bar"))
+                .relaunch("removed", progSpec, evalRes.token()) { result ->
+
+                    println(result.token().journalView.chunks)
+
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
+                    result.lastChunkSymbols() shouldBe listOf(sym0("lax"))
+                    result.countChunks() shouldBe (nPrincipalMatches - 1 + 2)
+                }
+        }
+    }
+
+
+    @Test
+    fun rmAndAddSamePropagationMatch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz", "baz.qux"),
+            setOf(sym0("foo"), sym0("baz"))
+        )
+        val readdedRule =
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                ))
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            readdedRule,
+            rule("baz.qux",
+                headKept(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("qux")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"), sym0("qux"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("qux"))
+
+        }.also { (builder, evalRes) ->
+            val oldChunksView = evalRes.chunksSymbolView()
+            val oldLastChunk = evalRes.lastChunk()
+            builder.removeRules(listOf("foo.baz"))
+                .relaunch("removed", progSpec, evalRes.token()) { result ->
+
+                    // ensure something changed
+                    result.lastChunkSymbols() shouldBe listOf(sym0("foo"))
+
+                }.also { (builder, evalRes) ->
+                    builder.insertRulesAt(1, readdedRule)
+                        .relaunch("readded", progSpec, evalRes.token()) { result ->
+
+                            // ensure chunks are essentially the same, but have different identities
+                            result.chunksSymbolView() shouldBe oldChunksView
+                            assertNotEquals(result.lastChunk().id, oldLastChunk.id)
+                        }
+                }
+        }
+    }
+
+
+    @Test
+    fun rmAndAddDifferentMatch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz", "baz.qux"),
+            setOf(sym0("foo"), sym0("baz"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                )),
+            rule("baz.qux",
+                headKept(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("qux")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"), sym0("qux"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("qux"))
+
+        }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.countChunks()
+            builder.removeRules(listOf("foo.baz")).insertRulesAt(1,
+                rule("foo.bar",
+                    headReplaced(
+                        princConstraint("foo")
+                    ),
+                    body(
+                        constraint("bar")
+                    ))
+            ).relaunch("substituted", progSpec, evalRes.token()) { result ->
+
+                println(result.token().journalView.chunks)
+
+                result.countChunks() shouldBe (nPrincipalMatches - 1)
+                result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
+            }
+        }
+    }
+
+
+    @Test
+    fun rmAndTryMatchWithRemovedOccurrences() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.baz", "barbaz.cant", "baz.lax2"),
+            setOf(sym0("foo"), sym0("baz"), sym0("bar"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            // <<< removed
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                )),
+            // >>>
+            // can't match, there's no 'bar'
+            rule("barbaz.cant",
+                headKept(
+                    princConstraint("bar"),
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("cant")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            println(result.token().journalView.chunks)
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("baz"))
+
+        }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.countChunks()
+
+            builder.removeRules(listOf("foo.baz")).programWithRules(
+                rule("foo.bar",
+                    headReplaced(
+                        princConstraint("foo")
+                    ),
+                    body(
+                        princConstraint("bar")
+                    )),
+                rule("baz.lax2",
+                    headKept(
+                        princConstraint("baz")
+                    ),
+                    body(
+                        constraint("lax2")
+                    ))
+            ).relaunch("substituted", progSpec, evalRes.token()) { result ->
+
+                println(result.token().journalView.chunks)
+
+                result.countChunks() shouldBe (nPrincipalMatches)
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
             }
         }
     }
