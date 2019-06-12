@@ -1,5 +1,3 @@
-import gnu.trove.set.TIntSet
-import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
@@ -84,6 +82,22 @@ private fun insertRulesInHandler(at: Int, name: String, rulesList: RulesList, va
     hb.toHandler()
 }
 
+private fun removeRulesByIndices(at: Iterable<Int>, name: String, rulesList: RulesList): () -> RulesList = {
+    val hb = HandlerBuilder(name)
+    rulesList.rules().forEachIndexed { index, rule ->
+        if (!at.contains(index)) hb.appendRule(rule)
+    }
+    hb.toHandler()
+}
+
+private fun removeRulesByTags(tags: Iterable<Any>, name: String, rulesList: RulesList): () -> RulesList = {
+    val hb = HandlerBuilder(name)
+    rulesList.rules().forEach { rule ->
+        if (!tags.contains(rule.uniqueTag())) hb.appendRule(rule)
+    }
+    hb.toHandler()
+}
+
 private fun insertRulesInHandlerWhen(at: (Rule) -> Boolean, name: String, rulesList: RulesList, vararg ruleBlocks: () -> Rule): () -> RulesList =
     insertRulesInHandler(rulesList.rules().indexOfFirst(at), name, rulesList, * ruleBlocks)
 
@@ -94,6 +108,12 @@ fun programWithRules(vararg ruleBuilders: () -> Rule): Builder =
 
 fun Builder.programWithRules(vararg ruleBuilders: () -> Rule): Builder =
     updateBuilder(this, arrayOf(updateHandler("test",  rulesLists.first(), * ruleBuilders)))
+
+fun Builder.removeRulesAt(at: Iterable<Int>): Builder =
+    updateBuilder(this, arrayOf(removeRulesByIndices(at, "test", rulesLists.first())))
+
+fun Builder.removeRules(tags: Iterable<Any>): Builder =
+    updateBuilder(this, arrayOf(removeRulesByTags(tags, "test", rulesLists.first())))
 
 fun Builder.insertRulesAt(at: Int, vararg ruleBuilders: () -> Rule): Builder =
     updateBuilder(this, arrayOf(insertRulesInHandler(at, "test", rulesLists.first(), * ruleBuilders)))

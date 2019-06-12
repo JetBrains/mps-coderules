@@ -83,6 +83,8 @@ class TestIncrementalProgram {
 
     private fun Iterable<Occurrence>.constraintSymbols() = this.map { it.constraint.symbol() }
 
+    private fun EvaluationResult.lastChunkSymbols() = this.lastChunk().activatedLog().constraintSymbols()
+
 
     @Test
     fun addNewMatchAtTheEnd() {
@@ -100,7 +102,7 @@ class TestIncrementalProgram {
                 ))
         ).launch("addRule", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
-            result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("foo"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
             builder.programWithRules(
@@ -114,7 +116,7 @@ class TestIncrementalProgram {
                 )
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"))
-                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("bar"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
             }
         }
     }
@@ -143,7 +145,7 @@ class TestIncrementalProgram {
             )
         ).launch("addRule", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"))
-            result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("bar"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
 
         }.also { (builder, evalRes) ->
             builder.programWithRules(
@@ -157,7 +159,7 @@ class TestIncrementalProgram {
                 )
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
-                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("baz"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("baz"))
             }
         }
     }
@@ -199,7 +201,7 @@ class TestIncrementalProgram {
                 )
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("baz"))
-                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("baz"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("baz"))
             }
         }
     }
@@ -223,7 +225,7 @@ class TestIncrementalProgram {
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"))
             result.countChunks() shouldBe 2
-            result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("foo"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
             builder.programWithRules(
@@ -239,7 +241,7 @@ class TestIncrementalProgram {
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"), sym0("bar"))
                 result.countChunks() shouldBe 3
-                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("bar"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
             }
         }
     }
@@ -315,7 +317,7 @@ class TestIncrementalProgram {
         ).launch("initial run", progSpec) { result ->
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"), sym0("dummy"))
-            result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("dummy"))
 
         }.also { (builder, evalRes) ->
             val nPrincipalMatches = evalRes.countChunks()
@@ -332,7 +334,7 @@ class TestIncrementalProgram {
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("baz"), sym0("dummy"))
-                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("dummy"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("dummy"))
                 result.countChunks() shouldBe (1 + nPrincipalMatches)
             }
         }
@@ -509,7 +511,7 @@ class TestIncrementalProgram {
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("start"), sym0("1st"), sym0("2nd"))
                 // ensure right rule match order: the last chunk must contain "2nd"
-                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("2nd"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("2nd"))
             }
         }
     }
@@ -568,10 +570,58 @@ class TestIncrementalProgram {
 
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("marker"))
-                result.lastChunk().activatedLog().constraintSymbols() shouldBe listOf(sym0("marker"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("marker"))
                 result.countChunks() shouldBe (2 + nPrincipalMatches) // +[.bar, foobar]
             }
         }
     }
 
+
+    @Test
+    fun rmSingleKeptMatch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz", "baz.qux"),
+            setOf(sym0("foo"), sym0("baz"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                )),
+            rule("baz.qux",
+                headKept(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("qux")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"), sym0("qux"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("qux"))
+
+        }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.countChunks()
+
+            // Insert rule before foo.baz: produce bar before discarding foo in foo.baz
+            builder.removeRules(listOf("baz.qux"))
+                .relaunch("removed", progSpec, evalRes.token()) { result ->
+
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("baz"))
+                result.countChunks() shouldBe (nPrincipalMatches - 1)
+            }
+        }
+    }
 }

@@ -66,9 +66,16 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
 
+    private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
+
+
     // fixme: wtf, why idea's compiler complains???
     override fun index(): MatchJournal.Index = journalIndex
 
+    // Invalidation includes several activities:
+    //  - removing chunks (i.e. principal matches) corresponding to removed rules and chunks depending on them from journal
+    //  - reactivating occurrences that led to invalidated matches
+    //  - pruning invalidated occurrences and matches from Dispatcher's state
     fun invalidateByRules(ruleIds: Set<Any>) {
         val justificationRoots = mutableListOf<Int>()
 
@@ -86,23 +93,25 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
                 // We removed the match, so need to reactivate all still valid occurrences from the head
                 //  by definition of Chunk and principal rule, all occurrences from the head are principal
-                //  todo: check/assert it
-
                 val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
+                assert(matchedOccs.all { it.isPrincipal() })
+
                 val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
                     occ.justifications().intersects(justificationRoots)
                 }
 
                 // todo: do need to reactivate only the main, matching~activating match?
                 //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
-                execQueue.addAll(validOccs.map { occ ->
-                    val chunkPos = journalIndex.activatingChunkOf(Id(occ))
-                    if (chunkPos != null) ExecPos(chunkPos, occ) else null
-                }.filterNotNull())
+                execQueue.addAll(validOccs.mapNotNull { occ ->
+                    journalIndex.activatingChunkOf(Id(occ))?.let { chunkPos ->
+                        ExecPos(chunkPos, occ)
+                    }
+                })
 
                 continue
             }
 
+            // Invalidating dependent chunks
             val toInvalidate = chunk.justifications.intersects(justificationRoots)
             if (toInvalidate) {
                 // Remove the chunk from the journal
@@ -122,8 +131,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             prevChunk = chunk
         }
     }
-
-    private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
 
     private fun canMatch(rule: Rule, occ: Occurrence): Boolean =
         (rule.headKept() + rule.headReplaced()).find { it.symbol() == occ.constraint.symbol() } != null
@@ -220,7 +227,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     }
 
     fun snapshot(): SessionToken {
-        return SessionToken(view(), ruleOrdering.ruleTags(), dispatchingFront.state())
+        return SessionToken(view(), ruleOrdering.ruleTags, dispatchingFront.state())
     }
 
     /**

@@ -22,13 +22,13 @@ import jetbrains.mps.logic.reactor.program.Rule
 internal class RuleOrdering(order: Iterable<Rule>): Comparator<Rule> {
 
     private val ruleOrder: Map<Any, Int> = HashMap<Any, Int>().apply {
-        put(MatchJournalImpl.InitRuleMatch.rule().uniqueTag(), -1)
+        put(MatchJournalImpl.InitRuleMatch.rule().uniqueTag(), -1) // less than anything
         order.forEachIndexed { index, rule -> put(rule.uniqueTag(), index) }
     }
 
-    fun orderOf(rule: Rule): Int? = ruleOrder[rule.uniqueTag()]
+    val ruleTags: Set<Any> = order.map { it.uniqueTag() }.toHashSet() // NB: without initial rule
 
-    fun ruleTags(): Set<Any> = ruleOrder.keys
+    fun orderOf(rule: Rule): Int? = ruleOrder[rule.uniqueTag()]
 
     override fun compare(lhs: Rule, rhs: Rule): Int {
         val lhsRuleOrder = orderOf(lhs)
