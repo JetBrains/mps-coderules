@@ -53,7 +53,7 @@ internal class EvaluationSessionImpl private constructor (
         val dispatcher = Dispatcher(ruleIndex)
 
         if (ispec is IncrementalProgramSpec.NonIncrSpec || token == null) {
-            val state = ProcessingStateImpl(dispatcher.front(), MatchJournalImpl(ispec), ruleIndex, trace, profiler)
+            val state = ProcessingStateImpl(dispatcher.front(), MatchJournalImpl(ispec), ruleIndex, ispec, trace, profiler)
 
             this.controller = ControllerImpl(supervisor, state, ispec, trace, profiler)
             return controller.activate(main)
@@ -62,7 +62,7 @@ internal class EvaluationSessionImpl private constructor (
             val state = ProcessingStateImpl(
                 dispatcher.frontFromState(token.frontState),
                 MatchJournalImpl(ispec, token.journalView),
-                ruleIndex, trace, profiler
+                ruleIndex, ispec, trace, profiler
             )
 
             val rulesDiff = RulesDiff.findDiff(token.ruleTags, ruleIndex)

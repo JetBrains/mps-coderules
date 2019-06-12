@@ -309,7 +309,14 @@ fun createController(
 
     ControllerImpl(
         supervisor,
-        ProcessingStateImpl(Dispatcher(ruleIndex).front(), MatchJournalImpl(), ruleIndex, trace, profiler),
+        ProcessingStateImpl(
+            Dispatcher(ruleIndex).front(),
+            MatchJournalImpl(),
+            ruleIndex,
+            IncrementalProgramSpec.NonIncrSpec,
+            trace,
+            profiler
+        ),
         IncrementalProgramSpec.NonIncrSpec,
         trace,
         profiler

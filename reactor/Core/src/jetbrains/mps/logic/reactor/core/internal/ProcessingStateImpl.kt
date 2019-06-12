@@ -44,6 +44,7 @@ import java.util.*
 internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.DispatchingFront,
                                    journal: MatchJournalImpl,
                                    ruleIndex: RuleIndex,
+                                   private val ispec: IncrementalProgramSpec = IncrementalProgramSpec.NonIncrSpec,
                                    val trace: EvaluationTrace = EvaluationTrace.NULL,
                                    val profiler: Profiler? = null)
     : StoreAwareJournalImpl(journal)
@@ -67,17 +68,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     // fixme: wtf, why idea's compiler complains???
     override fun index(): MatchJournal.Index = journalIndex
-
-    // only for tests
-    fun pushActivateFirstOccOf(ctr: Constraint): Boolean {
-        val pos = currentPos()
-        val occ = pos.chunk().findOccurrence(ctr)
-        if (occ != null) {
-            execQueue.offer(ExecPos(pos, occ))
-            return true
-        }
-        return false
-    }
 
     fun invalidateByRules(ruleIds: Set<Any>) {
         val justificationRoots = mutableListOf<Int>()
@@ -358,8 +348,10 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     }
 
 
-    // TODO: provide ispec to ProcessingStateImpl and use it
-    private fun Occurrence.isPrincipal() = this.constraint().isPrincipal()
+    private fun MatchJournal.Chunk.principalOccurrence(): Occurrence? =
+        activatedLog().find { ispec.isPrincipal(it.constraint) }
+
+    private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
     private fun Justs.intersects(other: Iterable<Int>): Boolean = other.any { this.contains(it) }
 

@@ -73,9 +73,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             }
         }.map { it.wrapped }
 
-        abstract fun findOccurrence(ctr: Constraint): Occurrence?
-        abstract fun principalOccurrence(): Occurrence?
-
         override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${entriesLog()})"
 
         override fun chunk(): Chunk = this
@@ -114,7 +111,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
 
 internal open class MatchJournalImpl(
-    protected val ispec: IncrementalProgramSpec,
+    private val ispec: IncrementalProgramSpec,
     view: MatchJournal.View? = null
 ) : MatchJournal
 {
@@ -126,7 +123,7 @@ internal open class MatchJournalImpl(
         if (view == null) {
             hist = LinkedList()
             nextChunkId = 0
-            val initChunk = ChunkImpl(ispec, InitRuleMatch, nextChunkId, justsOf(nextChunkId))
+            val initChunk = ChunkImpl(InitRuleMatch, nextChunkId, justsOf(nextChunkId))
             nextChunkId++
             hist.add(initChunk)
         } else {
@@ -153,7 +150,7 @@ internal open class MatchJournalImpl(
         if (ispec.isPrincipal(match.rule()) || !justs.isEmpty) {
 
             justs.add(nextChunkId)
-            val newChunk = ChunkImpl(ispec, match, nextChunkId, justs)
+            val newChunk = ChunkImpl(match, nextChunkId, justs)
             pos.add(newChunk)
 
             ++nextChunkId
@@ -237,18 +234,11 @@ internal open class MatchJournalImpl(
     }
 
 
-    // todo: remove ispec from there
-    private class ChunkImpl(val ispec: IncrementalProgramSpec, match: RuleMatch, id: Int, justifications: Justs) : MatchJournal.Chunk(match, id, justifications)
+    private class ChunkImpl(match: RuleMatch, id: Int, justifications: Justs) : MatchJournal.Chunk(match, id, justifications)
     {
         var occurrences: MutableList<MatchJournal.Chunk.Entry> = mutableListOf()
 
         override fun entriesLog(): List<MatchJournal.Chunk.Entry> = occurrences
-
-        override fun findOccurrence(ctr: Constraint): Occurrence? =
-            activatedLog().find { it.constraint.symbol() == ctr.symbol() }
-
-        override fun principalOccurrence(): Occurrence? =
-            activatedLog().find { ispec.isPrincipal(it.constraint) }
     }
 
     class IndexImpl(ispec: IncrementalProgramSpec, chunks: Iterable<MatchJournal.Chunk>): MatchJournal.Index
