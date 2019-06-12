@@ -114,16 +114,14 @@ class Dispatcher (val ruleIndex: RuleIndex) {
             })
 
         /**
-         * Returns a new [DispatchingFront] instance that completely "forgot" occurrence:
-         * forgot all consumed matches involving it & is contracted on it accordingly.
+         * Returns a new [DispatchingFront] instance which "forgot" that it seen occurrence.
+         * Need it for incremental reactivations to discern them from reactivations due to logicals.
          */
-        fun forget(dropped: Occurrence) = DispatchingFront(
-            // note contraction, it's needed to avoid adding dropped matches back again to allMatches
-            this.contract(dropped),
+        internal fun forgetSeen(dropped: Occurrence) = DispatchingFront(this,
             ruleIndex.forOccurrence(dropped).mapNotNull { rule ->
                 ruletag2probe[rule.uniqueTag()]
             }.map { probe ->
-                probe.forget(dropped)
+                probe.forgetSeen(dropped)
             })
 
         /**

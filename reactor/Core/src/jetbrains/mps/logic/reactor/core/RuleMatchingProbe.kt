@@ -41,6 +41,6 @@ interface RuleMatchingProbe {
 
     fun contract(occ: Occurrence): RuleMatchingProbe
 
-    fun forget(occ: Occurrence): RuleMatchingProbe
+    fun forgetSeen(occ: Occurrence): RuleMatchingProbe
 
 }

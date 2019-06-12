@@ -53,7 +53,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     // It is a position in Journal from previous session,
     //  from which incremental execution continues.
-    // Needed for pos comparison in handleFutureMatches.
+    // Needed for pos comparison in postponeFutureMatches.
     private lateinit var lastIncrementalRootPos: MatchJournal.Pos
 
     private val postponedMatches: MutableMap<Id<Occurrence>, List<RuleMatchEx>> = HashMap()
@@ -123,9 +123,9 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // fixme: move Chunk's interface to RuleMatchEx instead of RuleMatch
                 dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
 
-                // 'Undo' all activated in this chunk occurrences and related to them matches.
+                // 'Undo' all activated in this chunk occurrences
                 chunk.activated().forEach {
-                    dispatchingFront = dispatchingFront.forget(it)
+                    dispatchingFront = dispatchingFront.contract(it).forgetSeen(it)
                 }
             }
 
@@ -207,14 +207,20 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
                 // Handles the case when several matches are added to the same position.
                 //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
-                if (execPos != prevPos)
+                if (execPos != prevPos) {
                     replay(controller, execPos.pos)
                     lastIncrementalRootPos = execPos.pos
+                }
                 prevPos = execPos
 
                 // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
-                if (execPos.activeOcc.stored)
+                if (execPos.activeOcc.stored) {
+                    // Forget that occ was seen.
+                    // Incremental reactivation isn't like the usual reactivation,
+                    //  it should proceed more like usual activation.
+                    this.dispatchingFront = dispatchingFront.forgetSeen(execPos.activeOcc)
                     controller.reactivate(execPos.activeOcc)
+                }
             } while (execQueue.isNotEmpty())
         }
         // Also replay to the end after queue is fully executed
@@ -252,17 +258,13 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             this.dispatchingFront = dispatchingFront.expand(active)
 
             val matches = dispatchingFront.matches().toList()
-            val currentMatches =
+            val newCurrentMatches =
                 // todo: assert that there can be no future matches on non-principal occurrences?
-                if (isCurrent() || !active.isPrincipal()) {
-//                if (true) {
+                if (isCurrent() || !active.isPrincipal())
                     matches
-                } else {
-                    val newCurrentMatches = handleFutureMatches(matches)
-                    val allMatches = newCurrentMatches + (postponedMatches.remove(Id(active)) ?: emptyList())
-                    // Sort according to rule priorities
-                    allMatches.sortedBy { ruleOrdering.orderOf(it.rule()) }
-                }
+                else
+                    postponeFutureMatches(matches)
+            val currentMatches = withPostponedMatches(active, newCurrentMatches)
 
             val outStatus = currentMatches.fold(inStatus) { status, match ->
                 // TODO: paranoid check. should be isAlive() instead
@@ -282,8 +284,14 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         }
     }
 
+    private fun withPostponedMatches(active: Occurrence, matches: List<RuleMatchEx>): List<RuleMatchEx> =
+        postponedMatches.remove(Id(active))?.let { postponed ->
+            // Sort matches according to rule priorities
+            (matches + postponed).sortedBy { ruleOrdering.orderOf(it.rule()) }
+        } ?: matches
+
     // Determines, filters out and enqueues (to execution queue) future matches. Returns only current matches.
-    private fun handleFutureMatches(matches: List<RuleMatchEx>): List<RuleMatchEx> {
+    private fun postponeFutureMatches(matches: List<RuleMatchEx>): List<RuleMatchEx> {
         val currentMatches = mutableListOf<RuleMatchEx>()
 
         for (m in matches) {
@@ -338,7 +346,9 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         this.dispatchingFront = dispatchingFront.consume(match)
 
         match.forEachReplaced { occ ->
-            this.dispatchingFront = dispatchingFront.contract(occ)
+            // Principal occurrences must be preserved for future incremental evaluation sessions
+            if (!occ.isPrincipal())
+                this.dispatchingFront = dispatchingFront.contract(occ)
 
             occ.stored = false
             occ.terminate(controller)

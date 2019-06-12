@@ -452,6 +452,7 @@ class TestIncrementalProgram {
     // Description: due to incremental launch, match on 'foobar' will be known
     //  before it should actually happen. If it happens earlier than needed,
     //  'bar' will be discarded too early and program results will be incorrect.
+    // Tests postponedMatches logic.
     @Test
     fun futureMatchInDueTime() {
         val progSpec = MockIncrProgSpec(
@@ -562,6 +563,8 @@ class TestIncrementalProgram {
                         princConstraint("bar")
                     ))
             ).relaunch("withBar", progSpec, evalRes.token()) { result ->
+
+//                println(result.token().journalView.chunks)
 
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("marker"))

@@ -347,7 +347,7 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
             return this
         }
 
-        override fun forget(occ: Occurrence): ReteNetwork {
+        override fun forgetSeen(occ: Occurrence): ReteNetwork {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 

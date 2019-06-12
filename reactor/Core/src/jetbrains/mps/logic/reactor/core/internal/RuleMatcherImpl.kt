@@ -88,7 +88,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
             for (n in nodes) {
                 n.expand(occ, genId + 1, n.matchingVacant(mask))
                     .filter { allSignatures.add(it.signature) || reactivated }  // ensure reactivated have effect
-                    .filter { !(propagation && reactivated && consumedSignatures.contains(it.signature)) } // ...unless propagation
+                    .filter { !(propagation && reactivated && consumedSignatures.contains(it.signature)) } // ...unless propagation (to avoid cycles)
                     .forEach { newNodes.add(it) }
             }
 
@@ -100,10 +100,17 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
             return RuleMatchFront(newNodes, seenOccurrences, consumedSignatures, genId + 1)
         }
 
-        override fun forget(occ: Occurrence): RuleMatchFront {
-            val newConsumed = Sets.copyOf(consumedSignatures.filter{ !it.contains(Id(occ)) })
-            return RuleMatchFront(nodes, seenOccurrences, newConsumed, genId)
+        // todo: need it for incremental removal?
+//        fun forgetConsumed(occ: Occurrence): RuleMatchFront {
+//            val newConsumed = Sets.copyOf(consumedSignatures.filter{ !it.contains(Id(occ)) })
+//            return RuleMatchFront(nodes, seenOccurrences, newConsumed, genId) // NB: not modifying genId
+//        }
+
+        override fun forgetSeen(occ: Occurrence): RuleMatchFront {
+            val newSeen = seenOccurrences.remove(Id(occ))
+            return RuleMatchFront(nodes, newSeen, consumedSignatures, genId) // NB: not modifying genId
         }
+
 
     }
 
