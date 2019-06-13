@@ -100,11 +100,10 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
             return RuleMatchFront(newNodes, seenOccurrences, consumedSignatures, genId + 1)
         }
 
-        // todo: need it for incremental removal?
-//        fun forgetConsumed(occ: Occurrence): RuleMatchFront {
-//            val newConsumed = Sets.copyOf(consumedSignatures.filter{ !it.contains(Id(occ)) })
-//            return RuleMatchFront(nodes, seenOccurrences, newConsumed, genId) // NB: not modifying genId
-//        }
+        override fun forgetConsumed(occ: Occurrence): RuleMatchFront {
+            val newConsumed = Sets.copyOf(consumedSignatures.filter{ !it.contains(Id(occ)) })
+            return RuleMatchFront(nodes, seenOccurrences, newConsumed, genId) // NB: not modifying genId
+        }
 
         override fun forgetSeen(occ: Occurrence): RuleMatchFront {
             val newSeen = seenOccurrences.remove(Id(occ))

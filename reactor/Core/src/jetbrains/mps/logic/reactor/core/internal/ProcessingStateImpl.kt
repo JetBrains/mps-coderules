@@ -50,6 +50,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     : StoreAwareJournalImpl(journal)
 {
     private val ruleOrdering: RuleOrdering = RuleOrdering(ruleIndex)
+
     private val journalIndex: MatchJournal.Index = journal.index()
 
     // It is a position in Journal from previous session,
@@ -69,14 +70,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
 
 
-    // fixme: wtf, why idea's compiler complains???
-    override fun index(): MatchJournal.Index = journalIndex
-
     // Invalidation includes several activities:
-    //  - removing chunks (i.e. principal matches) corresponding to removed rules and chunks depending on them from journal
+    //  - removing chunks (i.e. principal matches) corresponding to
+    //      removed rules and chunks depending on them from journal
     //  - reactivating occurrences that led to invalidated matches
     //  - pruning invalidated occurrences and matches from Dispatcher's state
-    fun invalidateByRules(ruleIds: Set<Any>) {
+    fun invalidateRuleMatches(ruleIds: Set<Any>) {
         val justificationRoots = mutableListOf<Int>()
 
         val it = this.iterator()
@@ -92,11 +91,10 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // We removed the match, so need to reactivate all still valid occurrences from the head
                 //  by definition of Chunk and principal rule, all occurrences from the head are principal
                 val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
-                assert(matchedOccs.all { it.isPrincipal() })
-
                 val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
                     occ.justifications().intersects(justificationRoots)
                 }
+                assert(matchedOccs.all { it.isPrincipal() })
 
                 // todo: do need to reactivate only the main, matching~activating match?
                 //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
@@ -113,20 +111,20 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // Remove the chunk from the journal
                 it.remove()
 
-                // Need to 'cancel' discarding: contract nodes with discarded occurrences.
-                // These nodes may become valid and will be processed due to reactivation of needed occurrences.
-                chunk.match.matchHeadReplaced().forEach {
-                    dispatchingFront = dispatchingFront.contract(it as Occurrence)
-                }
-
                 // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
                 //  and storing this invalid consumed match can make no harm, except some memory overhead.
                 // fixme: move Chunk's interface to RuleMatchEx instead of RuleMatch
                 dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
 
+                // Need to 'cancel' discarding.
+                // These nodes may become valid and will be processed due to reactivation of needed occurrences.
+                chunk.match.matchHeadReplaced().forEach {
+                    dispatchingFront = dispatchingFront.forget(it as Occurrence)
+                }
                 // 'Undo' all activated in this chunk occurrences
+                // todo: also forget all consumed matches invo
                 chunk.activated().forEach {
-                    dispatchingFront = dispatchingFront.contract(it).forgetSeen(it)
+                    dispatchingFront = dispatchingFront.forget(it)
                 }
             }
 
@@ -137,9 +135,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     private fun canMatch(rule: Rule, occ: Occurrence): Boolean =
         (rule.headKept() + rule.headReplaced()).find { it.symbol() == occ.constraint.symbol() } != null
 
-    // todo: what if non-principal rules will be passed as input there?
-    //  only rules that can match on principal occurrences will pass through this method to the queue
-    //  so, no non-principal rule should pass it.
     fun addRuleMatches(rules: Iterable<Rule>) {
 
         val activationCandidates = mutableListOf<MatchCandidate>()

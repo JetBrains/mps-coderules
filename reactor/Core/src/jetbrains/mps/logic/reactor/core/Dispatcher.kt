@@ -106,23 +106,32 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          * Returns a new [DispatchingFront] instance that is "contracted": all matches corresponding to the
          * specified discarded constraint occurrence are eliminated.
          */
-        fun contract(discarded: Occurrence) = DispatchingFront(this,
-            ruleIndex.forOccurrence(discarded).mapNotNull { rule ->
-                ruletag2probe[rule.uniqueTag()]
-            }.map { probe ->
+        fun contract(discarded: Occurrence) =
+            forRelatedProbe(discarded) { probe ->
                 probe.contract(discarded)
-            })
+            }
 
         /**
          * Returns a new [DispatchingFront] instance which "forgot" that it seen occurrence.
          * Need it for incremental reactivations to discern them from reactivations due to logicals.
          */
-        internal fun forgetSeen(dropped: Occurrence) = DispatchingFront(this,
-            ruleIndex.forOccurrence(dropped).mapNotNull { rule ->
-                ruletag2probe[rule.uniqueTag()]
-            }.map { probe ->
+        internal fun forgetSeen(dropped: Occurrence) =
+            forRelatedProbe(dropped) { probe ->
                 probe.forgetSeen(dropped)
-            })
+            }
+
+        internal fun forget(dropped: Occurrence) =
+            forRelatedProbe(dropped) { probe ->
+                probe.contract(dropped).forgetSeen(dropped).forgetConsumed(dropped)
+            }
+
+        private fun forRelatedProbe(occ: Occurrence, action: (RuleMatchingProbe) -> RuleMatchingProbe) =
+            DispatchingFront(this,
+                ruleIndex.forOccurrence(occ).mapNotNull { rule ->
+                    ruletag2probe[rule.uniqueTag()]
+                }.map { probe ->
+                    action(probe)
+                })
 
         /**
          * Serves to indicate that the specified [RuleMatchEx] has been processed (consumed) and has to

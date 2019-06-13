@@ -351,6 +351,10 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
+        override fun forgetConsumed(occ: Occurrence): ReteNetwork {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
         override fun matches(): Collection<RuleMatchImpl> = generations.last().matches()
 
         override fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe {

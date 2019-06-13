@@ -43,4 +43,6 @@ interface RuleMatchingProbe {
 
     fun forgetSeen(occ: Occurrence): RuleMatchingProbe
 
+    fun forgetConsumed(occ: Occurrence): RuleMatchingProbe
+
 }
