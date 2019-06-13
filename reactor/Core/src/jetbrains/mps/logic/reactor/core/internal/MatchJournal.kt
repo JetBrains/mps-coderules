@@ -25,11 +25,7 @@ import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.Id
-import org.jetbrains.kotlin.utils.mapToIndex
 import java.util.*
-import kotlin.Comparator
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 
 interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
@@ -248,7 +244,9 @@ internal open class MatchJournalImpl(
         private val parentChunks: Map<Id<Occurrence>, MatchJournal.Chunk>
 
         init {
-            chunkOrder = chunks.map { it.id }.mapToIndex()
+            chunkOrder = HashMap<Int, Int>().apply {
+                chunks.forEachIndexed { index, chunk -> put(chunk.id, index) }
+            }
 
             val m = HashMap<Id<Occurrence>, MatchJournal.Chunk>()
             chunks.forEach {chunk ->
