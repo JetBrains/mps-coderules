@@ -254,7 +254,7 @@ class TestIncrementalProgram {
 
 
     @Test
-    fun addMatchAfterReplaced() {
+    fun addAfterReplaced() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "main.bar"),
             setOf(sym0("main"))
@@ -292,7 +292,7 @@ class TestIncrementalProgram {
 
     // Tests that incremental reactivation of discarded occurrences is handled correctly.
     @Test
-    fun addMatchBeforeReplaced() {
+    fun addKeptBeforeReplaced() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "foo.bar", "foo.baz", "baz.dummy"),
             setOf(sym0("foo"), sym0("baz"))
@@ -347,7 +347,65 @@ class TestIncrementalProgram {
     }
 
     @Test
-    fun addMatchAfterKeptBeforeReplaced() {
+    @Ignore("Shouldn't pass by design. Requires removal-phase before such additions.")
+    fun addReplacedBeforeReplaced() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo.bar", "foo.baz", "baz.dummy"),
+            setOf(sym0("foo"), sym0("baz"))
+        )
+        // Program is almost identical to the one in previous test,
+        //  except added rule discards its head.
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo")
+                )),
+            rule("foo.baz",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    princConstraint("baz")
+                )),
+            rule("baz.dummy",
+                headKept(
+                    princConstraint("baz")
+                ),
+                body(
+                    constraint("dummy")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("baz"), sym0("dummy"))
+            result.lastChunkSymbols() shouldBe listOf(sym0("dummy"))
+
+        }.also { (builder, evalRes) ->
+            val nPrincipalMatches = evalRes.countChunks()
+
+            builder.insertRulesAt(1,
+                rule("foo.bar",
+                    // 'foo' will be discarded before existing foo-rules, so they shouldn't match & must be removed
+                    headReplaced(
+                        princConstraint("foo")
+                    ),
+                    body(
+                        constraint("bar")
+                    ))
+            ).relaunch("test1", progSpec, evalRes.token()) { result ->
+
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"))
+                result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
+                result.countChunks() shouldBe (nPrincipalMatches + 1 - 2)
+            }
+        }
+    }
+
+    @Test
+    fun addAfterKeptBeforeReplaced() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "foo.bar", "foo.baz", "foo.qux"),
             setOf(sym0("foo"))
@@ -555,6 +613,8 @@ class TestIncrementalProgram {
                 ))
         ).launch("withoutBar", progSpec) { result ->
 
+            println(result.token().journalView.chunks)
+
             // "foobar" hasn't matched without 'bar, so 'foo' is still here
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
 
@@ -571,6 +631,8 @@ class TestIncrementalProgram {
                         princConstraint("bar")
                     ))
             ).relaunch("withBar", progSpec, evalRes.token()) { result ->
+
+                println(result.token().journalView.chunks)
 
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("marker"))
@@ -740,7 +802,7 @@ class TestIncrementalProgram {
     }
 
     @Test
-    fun rmSimplificationMatchAndMakeAnotherMatch() {
+    fun rmReplacedBeforeReplaced() {
         val progSpec = MockIncrProgSpec(
             setOf("main", "foo.baz", "foo.bar", "baz.lax"),
             setOf(sym0("foo"), sym0("baz"))
@@ -791,7 +853,7 @@ class TestIncrementalProgram {
 
                     println(result.token().journalView.chunks)
 
-                    result.storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
+                    result.storeView().constraintSymbols() shouldBe setOf(sym0("lax"))
                     result.lastChunkSymbols() shouldBe listOf(sym0("lax"))
                     result.countChunks() shouldBe (nPrincipalMatches - 1 + 2)
                 }
@@ -935,7 +997,9 @@ class TestIncrementalProgram {
                     princConstraint("baz")
                 )),
             // >>>
-            // can't match, there's no 'bar'
+
+            // Can't match at first run, there's no 'bar'.
+            // Should't match at second run, there's no 'baz' anymore.
             rule("barbaz.cant",
                 headKept(
                     princConstraint("bar"),
@@ -956,6 +1020,7 @@ class TestIncrementalProgram {
             val nPrincipalMatches = evalRes.countChunks()
 
             builder.removeRules(listOf("foo.baz")).programWithRules(
+                // produces 'bar'
                 rule("foo.bar",
                     headReplaced(
                         princConstraint("foo")
@@ -963,6 +1028,7 @@ class TestIncrementalProgram {
                     body(
                         princConstraint("bar")
                     )),
+                // 'baz' is removed, shouldn't match
                 rule("baz.lax2",
                     headKept(
                         princConstraint("baz")
@@ -980,4 +1046,5 @@ class TestIncrementalProgram {
             }
         }
     }
+
 }

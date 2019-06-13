@@ -113,7 +113,8 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // Remove the chunk from the journal
                 it.remove()
 
-                // Need to
+                // Need to 'cancel' discarding: contract nodes with discarded occurrences.
+                // These nodes may become valid and will be processed due to reactivation of needed occurrences.
                 chunk.match.matchHeadReplaced().forEach {
                     dispatchingFront = dispatchingFront.contract(it as Occurrence)
                 }
