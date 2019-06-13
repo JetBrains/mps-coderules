@@ -46,6 +46,18 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
     interface Index : Comparator<Pos> {
         fun activatingChunkOf(occ: Id<Occurrence>): Chunk?
+        fun principalOccurrenceOf(chunk: Chunk): OccurrencePos?
+
+        // just go through two maps
+        fun principalPos(occ: Id<Occurrence>): OccurrencePos? =
+            activatingChunkOf(occ)?.let { principalOccurrenceOf(it) }
+
+        // The latest matched occurrence from match's head is (by definition)
+        // the occurrence which activated this match.
+        fun activationPos(match: RuleMatchEx): OccurrencePos? =
+            match.signature().mapNotNull { occSig ->
+                occSig?.let { principalPos(it) }
+            }.maxWith(this) // compare positions: find latest
     }
 
     data class View(val chunks: List<Chunk>, val nextChunkId: Int)
@@ -85,22 +97,23 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             && other.entriesInChunk() == entriesInChunk()
     }
 
-    data class OccurrencePos(val occ: Occurrence, private val chunk: MatchJournal.Chunk, private val offset: Int): MatchJournal.Pos()
+    data class OccurrencePos(val occ: Occurrence, private val chunk: Chunk, private val offset: Int): MatchJournal.Pos()
     {
         companion object {
             fun fromIndex(index: MatchJournal.Index, occ: Occurrence): OccurrencePos? {
                 val idOcc = Id(occ)
-                val chunk = index.activatingChunkOf(idOcc) ?: return null
-                val i = chunk.entriesLog().indexOfFirst { entry ->
+                val chunk = index.activatingChunkOf(idOcc)
+                    ?: return null
+
+                val offset = chunk.entriesLog().indexOfFirst { entry ->
                     Id(entry.occ) == idOcc && !entry.isDiscarded
                 }
-                val offset = i + 1
                 return if (offset >= 0) OccurrencePos(occ, chunk, offset) else null
             }
         }
 
         override fun chunk(): MatchJournal.Chunk = chunk
-        override fun entriesInChunk(): Int = offset
+        override fun entriesInChunk(): Int = offset + 1
     }
 
 }
@@ -232,9 +245,9 @@ internal open class MatchJournalImpl(
 
     private class ChunkImpl(match: RuleMatch, id: Int, justifications: Justs) : MatchJournal.Chunk(match, id, justifications)
     {
-        var occurrences: MutableList<MatchJournal.Chunk.Entry> = mutableListOf()
+        var occurrences: MutableList<Entry> = mutableListOf()
 
-        override fun entriesLog(): List<MatchJournal.Chunk.Entry> = occurrences
+        override fun entriesLog(): List<Entry> = occurrences
     }
 
     class IndexImpl(ispec: IncrementalProgramSpec, chunks: Iterable<MatchJournal.Chunk>): MatchJournal.Index
@@ -243,24 +256,32 @@ internal open class MatchJournalImpl(
         // only for principal constraints
         private val parentChunks: Map<Id<Occurrence>, MatchJournal.Chunk>
 
+        private val principalOccurrences: Map<Int, MatchJournal.OccurrencePos>
+
         init {
             chunkOrder = HashMap<Int, Int>().apply {
                 chunks.forEachIndexed { index, chunk -> put(chunk.id, index) }
             }
 
             val m = HashMap<Id<Occurrence>, MatchJournal.Chunk>()
-            chunks.forEach {chunk ->
-                chunk.activatedLog().filter { occ ->
-                    ispec.isPrincipal(occ.constraint)
-                }.forEach {occ ->
-                    m[Id(occ)] = chunk
+            val m2 = HashMap<Int, MatchJournal.OccurrencePos>()
+            chunks.forEach { chunk ->
+                // actually there should be only a single principal occurrence, 'find' is enough
+                chunk.entriesLog().forEachIndexed { index, e ->
+                   if (ispec.isPrincipal(e.occ.constraint) && !e.isDiscarded) {
+                       m[Id(e.occ)] = chunk
+                       m2[chunk.id] = MatchJournal.OccurrencePos(e.occ, chunk, index)
+                   }
                 }
             }
             parentChunks = m
+            principalOccurrences = m2
         }
 
         // todo: for non-principal find manually, walk through the whole journal... need it?
-        override fun activatingChunkOf(occ: Id<Occurrence>): MatchJournal.Chunk? = parentChunks[occ]
+        override fun activatingChunkOf(occ: Id<Occurrence>) = parentChunks[occ]
+
+        override fun principalOccurrenceOf(chunk: MatchJournal.Chunk) = principalOccurrences[chunk.id]
 
         // todo: throw for invalid positions?
         override fun compare(lhs: MatchJournal.Pos, rhs: MatchJournal.Pos): Int {

@@ -19,7 +19,6 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
-import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.Profiler
@@ -144,7 +143,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
         while (true) {
             // Does this chunk have principal occurrence and can activate anything at all?
-            val pOcc = chunk.principalOccurrence()
+            val pOcc = journalIndex.principalOccurrenceOf(chunk)?.occ
             if (pOcc != null) {
 
                 for (rule in rules) {
@@ -254,10 +253,11 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             val matches = dispatchingFront.matches().toList()
             val newCurrentMatches =
                 // todo: assert that there can be no future matches on non-principal occurrences?
-                if (isCurrent() || !active.isPrincipal())
+                if (isCurrent() || !active.isPrincipal()) {
                     matches
-                else
+                } else {
                     postponeFutureMatches(matches)
+                }
             val currentMatches = withPostponedMatches(active, newCurrentMatches)
 
             val outStatus = currentMatches.fold(inStatus) { status, match ->
@@ -286,10 +286,13 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     // Determines, filters out and enqueues (to execution queue) future matches. Returns only current matches.
     private fun postponeFutureMatches(matches: List<RuleMatchEx>): List<RuleMatchEx> {
-        val currentMatches = mutableListOf<RuleMatchEx>()
+        assert(matches.all { ispec.isPrincipal(it.rule()) })
 
+        val currentMatches = mutableListOf<RuleMatchEx>()
         for (m in matches) {
-            val pos = latestMatchedOccurrence(m)
+            // Returns null for matches with occurrences only from this session
+            //  because journalIndex indexes only previous session.
+            val pos = journalIndex.activationPos(m)
             // if it is a future match
             if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
                 val idOcc = Id(pos.occ)
@@ -301,16 +304,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         }
         return currentMatches
     }
-
-    // The latest matched occurrence from match's head is (by definition) the occurrence which activated this match.
-    // Returns null for matches with occurrences only from this session
-    //  (because journalIndex indexes only previous session).
-    private fun latestMatchedOccurrence(match: RuleMatchEx): MatchJournal.OccurrencePos? =
-        match.signature().mapNotNull { occSig ->
-            occSig?.wrapped?.let { occ ->
-                MatchJournal.OccurrencePos.fromIndex(journalIndex, occ)
-            }
-        }.maxWith(journalIndex) // compare positions: find latest
 
 
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
@@ -351,9 +344,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         }
     }
 
-
-    private fun MatchJournal.Chunk.principalOccurrence(): Occurrence? =
-        activatedLog().find { ispec.isPrincipal(it.constraint) }
 
     private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
