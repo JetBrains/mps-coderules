@@ -121,7 +121,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     dispatchingFront = dispatchingFront.forget(it as Occurrence)
                 }
                 // 'Undo' all activated in this chunk occurrences
-                // todo: also forget all consumed matches invo
                 chunk.activated().forEach {
                     dispatchingFront = dispatchingFront.forget(it)
                 }
