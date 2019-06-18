@@ -16,14 +16,14 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import gnu.trove.set.TIntSet
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.RuleMatch
-import jetbrains.mps.logic.reactor.evaluation.StoreView
+import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
+import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 
@@ -60,28 +60,35 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             }.maxWith(this) // compare positions: find latest
     }
 
-    data class View(val chunks: List<Chunk>, val nextChunkId: Int)
+    data class View(private val chunks: List<Chunk>, private val nextChunkId: Int) : MatchJournalView {
+        override fun getChunks(): List<Chunk> = chunks
+        override fun getNextChunkId(): Int = nextChunkId
+        override fun getStoreView(): StoreView = StoreViewImpl(
+            chunks.flatMap { it.entriesLog() }.allOccurrences().asSequence()
+        )
+    }
 
-    abstract class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : Pos()
+    abstract class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : MatchJournalChunk, Pos()
     {
-        data class Entry(val occ: Occurrence, val isDiscarded: Boolean = false) {
-            override fun toString() = (if (isDiscarded) '-' else '+') + occ.toString()
+        override fun match(): RuleMatch = match
+        override fun id(): Int = id
+        override fun justifications(): TIntSet = justifications
+
+        data class Entry(val occ: Occurrence, val discarded: Boolean = false) : MatchJournalChunk.Entry {
+            override fun occ(): ConstraintOccurrence = occ
+            override fun discarded(): Boolean = discarded
+            override fun toString() = (if (discarded) '-' else '+') + occ.toString()
         }
 
-        fun isDescendantOf(chunkId: Int): Boolean = justifications.contains(chunkId)
-        fun isTopLevel(): Boolean = justifications.size() <= 1 // this condition implies that there're no ancestor chunks
+        fun isDescendantOf(chunkId: Int): Boolean = justifications().contains(chunkId)
+        fun isTopLevel(): Boolean = justifications().size() <= 1 // this condition implies that there're no ancestor chunks
 
-        abstract fun entriesLog(): List<Entry>
-        fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.isDiscarded }.map { it.occ }
-        fun discardedLog(): List<Occurrence> = entriesLog().filter { it.isDiscarded }.map { it.occ }
+        fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded() }.map { it.occ() as Occurrence }
+        fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded() }.map { it.occ() as Occurrence }
         // Get the resulting set of activated occurrences
-        fun activated(): List<Occurrence> = HashSet<Id<Occurrence>>().apply {
-            entriesLog().forEach {
-                if (it.isDiscarded) remove(Id(it.occ)) else add(Id(it.occ))
-            }
-        }.map { it.wrapped }
+        fun activated(): List<Occurrence> = entriesLog().allOccurrences()
 
-        override fun toString() = "(id=$id, $justifications, ${match.rule().uniqueTag()}, ${entriesLog()})"
+        override fun toString() = "(id=${id()}, ${justifications()}, ${match().rule().uniqueTag()}, ${entriesLog()})"
 
         override fun chunk(): Chunk = this
         override fun entriesInChunk(): Int = entriesLog().size
@@ -106,7 +113,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
                     ?: return null
 
                 val offset = chunk.entriesLog().indexOfFirst { entry ->
-                    Id(entry.occ) == idOcc && !entry.isDiscarded
+                    Id(entry.occ()) == idOcc && !entry.discarded()
                 }
                 return if (offset >= 0) OccurrencePos(occ, chunk, offset) else null
             }
@@ -121,9 +128,9 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
 internal open class MatchJournalImpl(
     private val ispec: IncrementalProgramSpec,
-    view: MatchJournal.View? = null
-) : MatchJournal
-{
+    view: MatchJournalView? = null
+) : MatchJournal {
+
     // invariant: never empty
     private val hist: MutableList<ChunkImpl>
     private var nextChunkId: Int
@@ -142,7 +149,7 @@ internal open class MatchJournalImpl(
         }
     }
 
-    constructor(view: MatchJournal.View? = null) : this(IncrementalProgramSpec.NonIncrSpec, view)
+    constructor(view: MatchJournal.View? = null) : this(IncrementalProgramSpec.DefaultSpec, view)
 
     private var pos: MutableListIterator<ChunkImpl> = hist.listIterator()
     private var current: ChunkImpl = pos.next() // take the initial chunk, move pos
@@ -166,27 +173,28 @@ internal open class MatchJournalImpl(
             current = newChunk
         }
 
-         // Log discards
-        (match as RuleMatchImpl).forEachReplaced {occ ->
-            current.occurrences.add(MatchJournal.Chunk.Entry(occ, true))
+        // Log discards
+        (match as RuleMatchImpl).forEachReplaced { occ ->
+            current.entries.add(MatchJournal.Chunk.Entry(occ, true))
         }
     }
 
     override fun logActivation(occ: Occurrence) {
-        current.occurrences.add(MatchJournal.Chunk.Entry(occ))
+        current.entries.add(MatchJournal.Chunk.Entry(occ))
     }
 
 
     override fun currentPos(): MatchJournal.Pos = current
 
-    // fixme: unclear, whether this makes sense here, in "pure" journal without store? along with reset and replay?
     // reset to the beginning, even before the initial chunk, because 'replay' after 'resetPos' is expected
-    override fun resetPos() { pos = hist.listIterator() }
+    override fun resetPos() {
+        pos = hist.listIterator()
+    }
 
     override fun reset(pastPos: MatchJournal.Pos) {
         while (pos.hasPrevious()) {
             if (current === pastPos.chunk()) {
-                current.occurrences = current.occurrences.subList(0, pastPos.entriesInChunk())
+                current.entries = current.entries.subList(0, pastPos.entriesInChunk())
                 return
             }
             current = pos.previous()
@@ -199,17 +207,17 @@ internal open class MatchJournalImpl(
         while (pos.hasNext()) {
             current = pos.next()
             if (futurePos.chunk() === current) {
-                replayOccurrences(controller, current.occurrences.take(futurePos.entriesInChunk()))
+                replayOccurrences(controller, current.entries.take(futurePos.entriesInChunk()))
                 return
             }
-            replayOccurrences(controller, current.occurrences)
+            replayOccurrences(controller, current.entries)
         }
         if (currentPos() != futurePos) throw IllegalStateException()
     }
 
     private fun replayOccurrences(controller: Controller, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
         occSpecs.forEach {
-            if (it.isDiscarded) {
+            if (it.discarded) {
                 it.occ.terminate(controller)
                 it.occ.stored = false
             } else {
@@ -233,7 +241,8 @@ internal open class MatchJournalImpl(
         val set = HashSet<Id<Occurrence>>()
         for (chunk in hist) { // initial chunk is counted too
             chunk.entriesLog().forEach {
-                if (it.isDiscarded) set.remove(Id(it.occ)) else set.add(Id(it.occ))
+                val idOcc = Id(it.occ)
+                if (it.discarded()) set.remove(idOcc) else set.add(idOcc)
             }
             if (chunk === current) {
                 return set.map { it.wrapped }.asSequence()
@@ -242,15 +251,14 @@ internal open class MatchJournalImpl(
         throw IllegalStateException()
     }
 
+    private class ChunkImpl(match: RuleMatch, id: Int, justifications: Justs) : MatchJournal.Chunk(match, id, justifications) {
 
-    private class ChunkImpl(match: RuleMatch, id: Int, justifications: Justs) : MatchJournal.Chunk(match, id, justifications)
-    {
-        var occurrences: MutableList<Entry> = mutableListOf()
+        var entries: MutableList<MatchJournal.Chunk.Entry> = mutableListOf()
 
-        override fun entriesLog(): List<Entry> = occurrences
+        override fun entriesLog(): List<MatchJournal.Chunk.Entry> = entries
     }
 
-    class IndexImpl(ispec: IncrementalProgramSpec, chunks: Iterable<MatchJournal.Chunk>): MatchJournal.Index
+    private class IndexImpl(ispec: IncrementalProgramSpec, chunks: Iterable<ChunkImpl>): MatchJournal.Index
     {
         private val chunkOrder: Map<Int, Int>
         // only for principal constraints
@@ -260,7 +268,7 @@ internal open class MatchJournalImpl(
 
         init {
             chunkOrder = HashMap<Int, Int>().apply {
-                chunks.forEachIndexed { index, chunk -> put(chunk.id, index) }
+                chunks.forEachIndexed { index, chunk -> put(chunk.id(), index) }
             }
 
             val m = HashMap<Id<Occurrence>, MatchJournal.Chunk>()
@@ -268,7 +276,7 @@ internal open class MatchJournalImpl(
             chunks.forEach { chunk ->
                 // actually there should be only a single principal occurrence, 'find' is enough
                 chunk.entriesLog().forEachIndexed { index, e ->
-                   if (ispec.isPrincipal(e.occ.constraint) && !e.isDiscarded) {
+                   if (ispec.isPrincipal(e.occ.constraint()) && !e.discarded()) {
                        m[Id(e.occ)] = chunk
                        m2[chunk.id] = MatchJournal.OccurrencePos(e.occ, chunk, index)
                    }
@@ -290,21 +298,6 @@ internal open class MatchJournalImpl(
         }
     }
 
-
-    private class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
-
-        val allOccurrences = occurrences.toSet()
-
-        val allSymbols = allOccurrences.map { co -> co.constraint().symbol() }.toSet()
-
-        override fun constraintSymbols(): Iterable<ConstraintSymbol> = allSymbols
-
-        override fun allOccurrences(): Iterable<ConstraintOccurrence> = allOccurrences
-
-        override fun occurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
-            allOccurrences.filter { co -> co.constraint().symbol() == symbol }.toSet()
-
-    }
 
     object InitRuleMatch : RuleMatch {
         override fun rule(): Rule = EmptyRule
@@ -329,7 +322,32 @@ internal open class MatchJournalImpl(
 }
 
 
-fun MatchJournal.justs() = this.currentPos().chunk().justifications
+private class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
+
+    val allOccurrences = occurrences.toSet()
+
+    val allSymbols = allOccurrences.map { co -> co.constraint().symbol() }.toSet()
+
+    override fun constraintSymbols(): Iterable<ConstraintSymbol> = allSymbols
+
+    override fun allOccurrences(): Iterable<ConstraintOccurrence> = allOccurrences
+
+    override fun occurrences(symbol: ConstraintSymbol): Iterable<ConstraintOccurrence> =
+        allOccurrences.filter { co -> co.constraint().symbol() == symbol }.toSet()
+
+}
+
+
+private fun Iterable<MatchJournalChunk.Entry>.allOccurrences(): List<Occurrence> {
+    val set = HashSet<Id<Occurrence>>()
+    for (it in this) {
+        val idOcc = Id(it.occ() as Occurrence)
+        if (it.discarded()) set.remove(idOcc) else set.add(idOcc)
+    }
+    return set.map { it.wrapped }
+}
+
+fun MatchJournal.justs() = this.currentPos().chunk().justifications()
 
 private fun RuleMatch.headJustifications(): Justs {
     val res: Justs = justsOf()

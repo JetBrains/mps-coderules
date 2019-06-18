@@ -14,17 +14,20 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.evaluation;
+package jetbrains.mps.logic.reactor.program;
 
-/**
- * @author Fedor Isakov
- */
-public interface EvaluationResult {
 
-    public SessionToken token();
+public interface IncrementalProgramSpec {
 
-    public StoreView storeView();
-    
-    public EvaluationFeedback feedback();
+    boolean isPrincipal(Constraint ctr);
+    boolean isPrincipal(Rule rule);
 
+    class NonIncrSpec implements IncrementalProgramSpec {
+        @Override
+        public boolean isPrincipal(Constraint ctr) { return false; }
+        @Override
+        public boolean isPrincipal(Rule rule) { return false; }
+    }
+
+    NonIncrSpec DefaultSpec = new NonIncrSpec();
 }

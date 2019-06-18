@@ -17,8 +17,7 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 
-import jetbrains.mps.logic.reactor.core.IncrementalProgramSpec;
-import jetbrains.mps.logic.reactor.core.SessionToken;
+import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec;
 import jetbrains.mps.logic.reactor.program.Program;
 
 /**

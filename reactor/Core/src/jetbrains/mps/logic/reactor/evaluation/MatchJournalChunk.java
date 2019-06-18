@@ -16,15 +16,18 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
-/**
- * @author Fedor Isakov
- */
-public interface EvaluationResult {
+import gnu.trove.set.TIntSet;
+import java.util.List;
 
-    public SessionToken token();
 
-    public StoreView storeView();
-    
-    public EvaluationFeedback feedback();
+public interface MatchJournalChunk {
+    interface Entry {
+        ConstraintOccurrence occ();
+        boolean discarded();
+    }
 
+    RuleMatch match();
+    int id();
+    TIntSet justifications();
+    List<Entry> entriesLog();
 }

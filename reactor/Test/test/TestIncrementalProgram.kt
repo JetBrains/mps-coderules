@@ -1,8 +1,8 @@
-import jetbrains.mps.logic.reactor.core.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
-import jetbrains.mps.logic.reactor.core.SessionToken
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal
+import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -65,7 +65,7 @@ class TestIncrementalProgram {
         return this to result
     }
 
-    private fun Builder.relaunch( name: String, incrSpec: IncrementalProgramSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit )
+    private fun Builder.relaunch(name: String, incrSpec: IncrementalProgramSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit )
         : Pair<Builder, EvaluationResult>
     {
         val result = EvaluationSession.newSession(program(name))
@@ -80,10 +80,10 @@ class TestIncrementalProgram {
 
 
     private fun EvaluationResult.chunksSymbolView() = this.token().journalView.chunks.map {
-        it.entriesLog().map { entry -> !entry.isDiscarded to entry.occ.constraint().symbol() }
+        it.entriesLog().map { entry -> !entry.discarded() to entry.occ().constraint().symbol() }
     }
 
-    private fun EvaluationResult.lastChunk() = this.token().journalView.chunks.last()
+    private fun EvaluationResult.lastChunk() = this.token().journalView.chunks.last() as MatchJournal.Chunk
 
     private fun EvaluationResult.countChunks() = this.token().journalView.chunks.size
 

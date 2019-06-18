@@ -21,7 +21,7 @@ import jetbrains.mps.logic.reactor.core.internal.RuleMatchImpl
 import com.github.andrewoma.dexx.collection.Map as PersMap
 
 
-typealias DispatchingFrontState = PersMap<Any, RuleMatchingProbe>
+typealias DispatchingFrontState = Map<Any, RuleMatchingProbe>
 
 /**
  * A front-end interface to [RuleMatcher].
@@ -91,7 +91,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          */
         fun matches() : Iterable<RuleMatchEx> = allMatches
 
-        fun state() : DispatchingFrontState = ruletag2probe
+        fun state() : DispatchingFrontState = ruletag2probe.asMap()
 
         /**
          * Returns a new [DispatchingFront] instance that is "expanded" with matches corresponding to the

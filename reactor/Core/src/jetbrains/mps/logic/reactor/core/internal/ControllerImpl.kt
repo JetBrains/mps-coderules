@@ -23,6 +23,7 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
@@ -31,7 +32,7 @@ import com.github.andrewoma.dexx.collection.Map as PersMap
 internal class ControllerImpl (
     val supervisor: Supervisor,
     val state: ProcessingStateImpl,
-    val ispec: IncrementalProgramSpec = IncrementalProgramSpec.NonIncrSpec,
+    val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null) : Controller
 {
@@ -147,7 +148,6 @@ internal class ControllerImpl (
                 val itemOk = when (item) {
                     is Constraint -> {
                         // track justifications only for principal constraints
-//                        val justs = if (item.isPrincipal) currentJusts else emptyJusts()
                         val justs = if (ispec.isPrincipal(item)) currentJusts else emptyJusts()
                         activateConstraint(item, justs, context)
                     }
@@ -313,11 +313,11 @@ fun createController(
             Dispatcher(ruleIndex).front(),
             MatchJournalImpl(),
             ruleIndex,
-            IncrementalProgramSpec.NonIncrSpec,
+            IncrementalProgramSpec.DefaultSpec,
             trace,
             profiler
         ),
-        IncrementalProgramSpec.NonIncrSpec,
+        IncrementalProgramSpec.DefaultSpec,
         trace,
         profiler
     )

@@ -16,15 +16,14 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
-/**
- * @author Fedor Isakov
- */
-public interface EvaluationResult {
+import org.jetbrains.annotations.NotNull;
+import java.util.List;
 
-    public SessionToken token();
+public interface MatchJournalView {
+    @NotNull
+    List<MatchJournalChunk> getChunks();
 
-    public StoreView storeView();
-    
-    public EvaluationFeedback feedback();
+    int getNextChunkId();
 
+    StoreView getStoreView();
 }

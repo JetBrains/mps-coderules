@@ -14,8 +14,16 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.logic.reactor.core
+package jetbrains.mps.logic.reactor.evaluation;
 
-import jetbrains.mps.logic.reactor.core.internal.MatchJournal
+import org.jetbrains.annotations.NotNull;
+import java.util.Map;
 
-data class SessionToken(val journalView: MatchJournal.View, val ruleTags: Iterable<Any>, val frontState: DispatchingFrontState)
+public interface SessionToken {
+    @NotNull()
+    MatchJournalView getJournalView();
+    @NotNull()
+    Iterable<Object> getRuleTags();
+    @NotNull()
+    Map<Object, RuleMatchingProbeState> getFrontState();
+}

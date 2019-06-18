@@ -20,6 +20,7 @@ import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus.FAILED
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
 import java.util.*
@@ -41,31 +42,29 @@ internal class EvaluationSessionImpl private constructor (
 
     override fun controller() = controller
 
-//    private fun launch(main: Constraint, profiler: Profiler?) : FeedbackStatus {
-//        val journal = MatchJournalImpl()
-//        val state = ProcessingStateImpl(journal, dispatcher, trace, profiler)
-//        this.controller = ControllerImpl(supervisor, state, trace, profiler)
-//        return controller.activate(main)
-//    }
-
     private fun incrLaunch(main: Constraint, profiler: Profiler?, token: SessionToken?, ispec: IncrementalProgramSpec) : FeedbackStatus {
         val ruleIndex = RuleIndex(program().handlers())
         val dispatcher = Dispatcher(ruleIndex)
 
         if (ispec is IncrementalProgramSpec.NonIncrSpec || token == null) {
-            val state = ProcessingStateImpl(dispatcher.front(), MatchJournalImpl(ispec), ruleIndex, ispec, trace, profiler)
+            val state = ProcessingStateImpl(
+                dispatcher.front(),
+                MatchJournalImpl(ispec),
+                ruleIndex, ispec, trace, profiler
+            )
 
             this.controller = ControllerImpl(supervisor, state, ispec, trace, profiler)
             return controller.activate(main)
 
         } else {
+            val tkn = token as SessionTokenImpl
             val state = ProcessingStateImpl(
-                dispatcher.frontFromState(token.frontState),
-                MatchJournalImpl(ispec, token.journalView),
+                dispatcher.frontFromState(tkn.frontState),
+                MatchJournalImpl(ispec, tkn.journalView),
                 ruleIndex, ispec, trace, profiler
             )
 
-            val rulesDiff = RulesDiff.findDiff(token.ruleTags, ruleIndex)
+            val rulesDiff = RulesDiff.findDiff(tkn.ruleTags, ruleIndex)
             this.controller = ControllerImpl(supervisor, state, ispec, trace, profiler)
             return controller.incrLaunch(main, rulesDiff)
         }
@@ -77,7 +76,7 @@ internal class EvaluationSessionImpl private constructor (
 
         var evaluationTrace: EvaluationTrace = EvaluationTrace.NULL
 
-        var ispec: IncrementalProgramSpec = IncrementalProgramSpec.NonIncrSpec
+        var ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec
 
         var token: SessionToken? = null
 
@@ -118,7 +117,6 @@ internal class EvaluationSessionImpl private constructor (
             var failure: Feedback? = null
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-//                val status = session.launch(main, profiler)
                 val status = session.incrLaunch(main, profiler, token, ispec)
                 if (status is FAILED) {
                     failure = status.failure

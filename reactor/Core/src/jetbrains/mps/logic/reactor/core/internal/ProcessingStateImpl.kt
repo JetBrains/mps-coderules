@@ -18,7 +18,9 @@ package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.EvaluationTrace
+import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
+import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.Profiler
@@ -43,7 +45,7 @@ import java.util.*
 internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.DispatchingFront,
                                    journal: MatchJournalImpl,
                                    ruleIndex: RuleIndex,
-                                   private val ispec: IncrementalProgramSpec = IncrementalProgramSpec.NonIncrSpec,
+                                   private val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
                                    val trace: EvaluationTrace = EvaluationTrace.NULL,
                                    val profiler: Profiler? = null)
     : StoreAwareJournalImpl(journal)
@@ -83,13 +85,13 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         while (it.hasNext()) {
             val chunk = it.next()
 
-            val toRemove = ruleIds.contains(chunk.match.rule().uniqueTag())
+            val toRemove = ruleIds.contains(chunk.match().rule().uniqueTag())
             if (toRemove) {
                 justificationRoots.add(chunk.id)
 
                 // We removed the match, so need to reactivate all still valid occurrences from the head
                 //  by definition of Chunk and principal rule, all occurrences from the head are principal
-                val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
+                val matchedOccs = chunk.match().allHeads() as Iterable<Occurrence>
                 val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
                     occ.justifications().intersects(justificationRoots)
                 }
@@ -113,11 +115,11 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
                 //  and storing this invalid consumed match can make no harm, except some memory overhead.
                 // fixme: move Chunk's interface to RuleMatchEx instead of RuleMatch
-                dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
+                dispatchingFront = dispatchingFront.forget(chunk.match() as RuleMatchEx)
 
                 // Need to 'cancel' discarding.
                 // These nodes may become valid and will be processed due to reactivation of needed occurrences.
-                chunk.match.matchHeadReplaced().forEach {
+                chunk.match().matchHeadReplaced().forEach {
                     dispatchingFront = dispatchingFront.forget(it as Occurrence)
                 }
                 // 'Undo' all activated in this chunk occurrences
@@ -168,7 +170,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // Place to activate candidate:
                 //  either as the last one, after all existing activations
                 //  or according to the ordering between rules.
-                val placeToInsertFound = ruleOrdering.compare(chunk.match.rule(), candRule) > 0
+                val placeToInsertFound = ruleOrdering.compare(chunk.match().rule(), candRule) > 0
                 val childChunksEnded = !chunk.isDescendantOf(parentId)
 
                 val pos =
@@ -221,9 +223,8 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         return FeedbackStatus.NORMAL()
     }
 
-    fun snapshot(): SessionToken {
-        return SessionToken(view(), ruleOrdering.ruleTags, dispatchingFront.state())
-    }
+    fun snapshot(): SessionToken =
+        SessionTokenImpl(view(), ruleOrdering.ruleTags, dispatchingFront.state())
 
     /**
      * Called to update the state with the currently active constraint occurrence.
