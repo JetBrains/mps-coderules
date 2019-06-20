@@ -218,6 +218,9 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -999,6 +1002,26 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1H_6AUT8sWC" role="jymVt" />
+    <node concept="3clFb_" id="1H_6AUT8vBd" role="jymVt">
+      <property role="TrG5h" value="getProgramSpec" />
+      <node concept="3clFbS" id="1H_6AUT8vBg" role="3clF47">
+        <node concept="3clFbF" id="1H_6AUT8wMQ" role="3cqZAp">
+          <node concept="2OqwBi" id="1H_6AUT8x2G" role="3clFbG">
+            <node concept="37vLTw" id="1H_6AUT8wMP" role="2Oq$k0">
+              <ref role="3cqZAo" node="3GlpCDSzA$E" resolve="programProducer" />
+            </node>
+            <node concept="liA8E" id="1H_6AUT8xhB" role="2OqNvi">
+              <ref role="37wK5l" to="hano:1H_6AUT8p2f" resolve="getProgramSpec" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1H_6AUT8uM8" role="1B3o_S" />
+      <node concept="3uibUv" id="1H_6AUT8vyt" role="3clF45">
+        <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
       </node>
     </node>
     <node concept="2tJIrI" id="4QPCta1gZH8" role="jymVt" />
@@ -1905,6 +1928,42 @@
                                   </node>
                                   <node concept="3Tm1VV" id="7WKNeR9yo$p" role="1B3o_S" />
                                   <node concept="3clFbS" id="7WKNeR9yo$x" role="3clF47">
+                                    <node concept="1gVbGN" id="1H_6AUTkDJX" role="3cqZAp">
+                                      <node concept="3y3z36" id="1H_6AUTkEMp" role="1gVkn0">
+                                        <node concept="10Nm6u" id="1H_6AUTkF3A" role="3uHU7w" />
+                                        <node concept="2OqwBi" id="1H_6AUTkEcR" role="3uHU7B">
+                                          <node concept="37vLTw" id="1H_6AUTkDXP" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="Hg6Enc9a3G" resolve="prev" />
+                                          </node>
+                                          <node concept="liA8E" id="1H_6AUTkEBk" role="2OqNvi">
+                                            <ref role="37wK5l" node="1H_6AUT8vBd" resolve="getProgramSpec" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbF" id="1H_6AUT8zXg" role="3cqZAp">
+                                      <node concept="37vLTI" id="1H_6AUT8$eN" role="3clFbG">
+                                        <node concept="2OqwBi" id="1H_6AUT8$$b" role="37vLTx">
+                                          <node concept="37vLTw" id="1H_6AUT8$uA" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="7WKNeR9yo$m" resolve="config" />
+                                          </node>
+                                          <node concept="liA8E" id="1H_6AUT8$LY" role="2OqNvi">
+                                            <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withIncrSpec(jetbrains.mps.logic.reactor.program.IncrementalProgramSpec)" resolve="withIncrSpec" />
+                                            <node concept="2OqwBi" id="1H_6AUT8_9Y" role="37wK5m">
+                                              <node concept="37vLTw" id="1H_6AUT8$Yj" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="Hg6Enc9a3G" resolve="prev" />
+                                              </node>
+                                              <node concept="liA8E" id="1H_6AUT8_A9" role="2OqNvi">
+                                                <ref role="37wK5l" node="1H_6AUT8vBd" resolve="getProgramSpec" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="37vLTw" id="1H_6AUT8zXe" role="37vLTJ">
+                                          <ref role="3cqZAo" node="7WKNeR9yo$m" resolve="config" />
+                                        </node>
+                                      </node>
+                                    </node>
                                     <node concept="3clFbF" id="7WKNeR9zwhr" role="3cqZAp">
                                       <node concept="3K4zz7" id="7WKNeR9zwY7" role="3clFbG">
                                         <node concept="37vLTw" id="7WKNeR9zx_R" role="3K4GZi">

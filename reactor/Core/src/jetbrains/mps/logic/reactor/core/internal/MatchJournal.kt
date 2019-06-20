@@ -227,6 +227,7 @@ internal open class MatchJournalImpl(
         }
 
 
+    // Note: returns View for the whole history regardless of current pos
     override fun view() = MatchJournal.View(ArrayList(hist), nextChunkId)
 
     override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
