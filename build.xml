@@ -594,6 +594,7 @@
           <language id="l:a247e09e-2435-45ba-b8d2-07e93feba96a:jetbrains.mps.baseLanguage.tuples" />
           <language id="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
+          <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
           <language id="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" />
           <language id="l:0b80a2e8-f9f1-47b3-823f-56eb115bca42:jetbrains.mps.typechecking.annotation" />
         </uses>
@@ -2610,6 +2611,7 @@
           <language id="l:a247e09e-2435-45ba-b8d2-07e93feba96a:jetbrains.mps.baseLanguage.tuples" />
           <language id="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
+          <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
           <language id="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" />
           <language id="l:0b80a2e8-f9f1-47b3-823f-56eb115bca42:jetbrains.mps.typechecking.annotation" />
         </uses>

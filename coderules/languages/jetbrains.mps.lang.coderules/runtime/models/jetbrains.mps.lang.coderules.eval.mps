@@ -6169,6 +6169,21 @@
         <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
       </node>
     </node>
+    <node concept="2tJIrI" id="tyIfzBDkqP" role="jymVt" />
+    <node concept="3clFb_" id="tyIfzBDlP8" role="jymVt">
+      <property role="TrG5h" value="getProgramGenInfo" />
+      <node concept="3clFbS" id="tyIfzBDlPb" role="3clF47">
+        <node concept="3clFbF" id="tyIfzBDmOq" role="3cqZAp">
+          <node concept="37vLTw" id="tyIfzBDmOp" role="3clFbG">
+            <ref role="3cqZAo" node="tyIfzBDjPX" resolve="programGenInfo" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="tyIfzBDlmZ" role="1B3o_S" />
+      <node concept="3uibUv" id="tyIfzBDmqh" role="3clF45">
+        <ref role="3uigEE" to="xnrr:1H_6AUSU96G" resolve="ProgramGenInfoBuilder.ProgramGenInfo" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="6OXbTDxQQYI" role="jymVt" />
     <node concept="3clFb_" id="7kTeLbPnDc0" role="jymVt">
       <property role="TrG5h" value="doProduce" />
@@ -6333,11 +6348,11 @@
           <node concept="3cpWsn" id="1H_6AUSGoq4" role="3cpWs9">
             <property role="TrG5h" value="analysisInfoBuilder" />
             <node concept="3uibUv" id="1H_6AUT4kzY" role="1tU5fm">
-              <ref role="3uigEE" to="xnrr:1H_6AUSE5Z9" resolve="ProgramAnalysisInfoBuilder" />
+              <ref role="3uigEE" to="xnrr:1H_6AUSE5Z9" resolve="ProgramGenInfoBuilder" />
             </node>
             <node concept="2ShNRf" id="1H_6AUSGoC6" role="33vP2m">
               <node concept="HV5vD" id="1H_6AUSGpYh" role="2ShVmc">
-                <ref role="HV5vE" to="xnrr:1H_6AUSE5Z9" resolve="ProgramAnalysisInfoBuilder" />
+                <ref role="HV5vE" to="xnrr:1H_6AUSE5Z9" resolve="ProgramGenInfoBuilder" />
               </node>
             </node>
           </node>
@@ -6444,13 +6459,15 @@
               </node>
             </node>
             <node concept="3clFbH" id="1H_6AUT4mqH" role="3cqZAp" />
-            <node concept="3cpWs8" id="1H_6AUT4mw1" role="3cqZAp">
-              <node concept="3cpWsn" id="1H_6AUT4mw2" role="3cpWs9">
-                <property role="TrG5h" value="info" />
-                <node concept="3uibUv" id="1H_6AUT4mw3" role="1tU5fm">
-                  <ref role="3uigEE" to="xnrr:1H_6AUSU96G" resolve="ProgramAnalysisInfoBuilder.Info" />
+            <node concept="3clFbF" id="tyIfzBDnff" role="3cqZAp">
+              <node concept="37vLTI" id="tyIfzBDnIs" role="3clFbG">
+                <node concept="2OqwBi" id="tyIfzBDnqF" role="37vLTJ">
+                  <node concept="Xjq3P" id="tyIfzBDnfd" role="2Oq$k0" />
+                  <node concept="2OwXpG" id="tyIfzBDn_M" role="2OqNvi">
+                    <ref role="2Oxat5" node="tyIfzBDjPX" resolve="programGenInfo" />
+                  </node>
                 </node>
-                <node concept="2OqwBi" id="1H_6AUT4lei" role="33vP2m">
+                <node concept="2OqwBi" id="1H_6AUT4lei" role="37vLTx">
                   <node concept="37vLTw" id="1H_6AUT4l2S" role="2Oq$k0">
                     <ref role="3cqZAo" node="1H_6AUSGoq4" resolve="analysisInfoBuilder" />
                   </node>
@@ -6472,8 +6489,8 @@
                 <node concept="2ShNRf" id="1H_6AUT4lOu" role="33vP2m">
                   <node concept="1pGfFk" id="1H_6AUT4m0i" role="2ShVmc">
                     <ref role="37wK5l" to="xnrr:1H_6AUSTUb0" resolve="SimpleProgramAnalysis" />
-                    <node concept="37vLTw" id="1H_6AUT4mD8" role="37wK5m">
-                      <ref role="3cqZAo" node="1H_6AUT4mw2" resolve="info" />
+                    <node concept="37vLTw" id="tyIfzBDnQl" role="37wK5m">
+                      <ref role="3cqZAo" node="tyIfzBDjPX" resolve="programGenInfo" />
                     </node>
                   </node>
                 </node>
@@ -6488,8 +6505,8 @@
                 <node concept="2ShNRf" id="1H_6AUT4pER" role="33vP2m">
                   <node concept="1pGfFk" id="1H_6AUT4q22" role="2ShVmc">
                     <ref role="37wK5l" to="xnrr:1H_6AUT4mKn" resolve="IncrementalProgramSpecBuilder" />
-                    <node concept="37vLTw" id="1H_6AUT4qdW" role="37wK5m">
-                      <ref role="3cqZAo" node="1H_6AUT4mw2" resolve="info" />
+                    <node concept="37vLTw" id="tyIfzBDnWu" role="37wK5m">
+                      <ref role="3cqZAo" node="tyIfzBDjPX" resolve="programGenInfo" />
                     </node>
                     <node concept="37vLTw" id="1H_6AUT4qgt" role="37wK5m">
                       <ref role="3cqZAo" node="1H_6AUT4lKe" resolve="principalCtrsAnalysis" />
@@ -6596,6 +6613,13 @@
       <node concept="3Tm6S6" id="1H_6AUT4qRy" role="1B3o_S" />
       <node concept="3uibUv" id="1H_6AUT4rQq" role="1tU5fm">
         <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
+      </node>
+    </node>
+    <node concept="312cEg" id="tyIfzBDjPX" role="jymVt">
+      <property role="TrG5h" value="programGenInfo" />
+      <node concept="3Tm6S6" id="tyIfzBDjf6" role="1B3o_S" />
+      <node concept="3uibUv" id="tyIfzBDjNN" role="1tU5fm">
+        <ref role="3uigEE" to="xnrr:1H_6AUSU96G" resolve="ProgramGenInfoBuilder.ProgramGenInfo" />
       </node>
     </node>
     <node concept="312cEg" id="1pPth$lE8Xs" role="jymVt">
