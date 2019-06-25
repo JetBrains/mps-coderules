@@ -355,6 +355,11 @@
               <ref role="37wK5l" to="wsw7:6qi2OtU3tXr" resolve="RefScopeChecker" />
             </node>
           </node>
+          <node concept="2ShNRf" id="4CMgQNqo2MQ" role="HW$Y0">
+            <node concept="HV5vD" id="4CMgQNqocZI" role="2ShVmc">
+              <ref role="HV5vE" to="wsw7:4c7y4qc4V7B" resolve="SuppressErrorsChecker" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="_YKpA" id="1Lr58WFVJyv" role="1tU5fm">
