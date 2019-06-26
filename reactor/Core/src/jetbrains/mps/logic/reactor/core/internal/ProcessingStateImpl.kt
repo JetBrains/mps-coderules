@@ -253,7 +253,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             val matches = dispatchingFront.matches().toList()
             val newCurrentMatches =
                 // todo: assert that there can be no future matches on non-principal occurrences?
-                if (isCurrent() || !active.isPrincipal()) {
+                if (isFront() || !active.isPrincipal()) {
                     matches
                 } else {
                     postponeFutureMatches(matches)

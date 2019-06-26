@@ -20,9 +20,14 @@ import jetbrains.mps.logic.reactor.core.ProcessingState
 import java.lang.IllegalArgumentException
 
 
-interface StoreAwareJournal : MatchJournal {
+/**
+ * [MatchJournal] which also maintains observers in [ProcessingState] in sync with its current position.
+ */
+interface StoreAwareJournal : MatchJournal, ProcessingState {
 
+     // Only for testing push() in Impl
     fun testPush()
+
     fun resetStore()
 
     // for tests
@@ -36,11 +41,11 @@ internal open class StoreAwareJournalImpl(private val journal: MatchJournal, pri
     : MatchJournal by journal, StoreAwareJournal, ProcessingState by state
 {
 
-    private class PosImpl(val frame: StateFrame, val chunk: MatchJournal.Chunk, val entriesInChunk: Int = 0) : MatchJournal.Pos()
-    {
-        override fun chunk(): MatchJournal.Chunk = chunk
-        override fun entriesInChunk(): Int = entriesInChunk
-    }
+    private class PosImpl(
+        val frame: StateFrame,
+        override val chunk: MatchJournal.Chunk,
+        override val entriesInChunk: Int = 0
+    ) : MatchJournal.Pos()
 
 
     fun push() = state.push()
@@ -55,7 +60,7 @@ internal open class StoreAwareJournalImpl(private val journal: MatchJournal, pri
 
 
     override fun currentPos(): MatchJournal.Pos =
-        PosImpl(state.currentFrame(), journal.currentPos().chunk(), journal.currentPos().entriesInChunk())
+        PosImpl(state.currentFrame(), journal.currentPos().chunk, journal.currentPos().entriesInChunk)
 
     // Throw away recently added chunks and reset store accordingly
     // NB: not checking that chunks are actually recently added, from this exec session

@@ -32,6 +32,11 @@ public abstract class Rule {
     public abstract Object uniqueTag();
 
     /**
+     * A human-readable identifier, not guaranteed to be unique
+     */
+    public abstract String tag();
+
+    /**
      * An origin serves as justification for all constraints affected by this rule.
      */
     public Object origin() { return null; }

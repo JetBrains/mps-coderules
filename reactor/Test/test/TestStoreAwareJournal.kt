@@ -273,7 +273,7 @@ class TestStoreAwareJournal {
                     // reset to the very beginning
                     reset(initialPos)
 
-                    currentPos().chunk() shouldBeSame initialPos.chunk()
+                    currentPos().chunk shouldBeSame initialPos.chunk
                     view().chunks.size shouldBe 1
                     storeView().allOccurrences().count() shouldBe 0
                 }
@@ -325,12 +325,12 @@ class TestStoreAwareJournal {
                 val quxOcc = justifiedOccurrence("qux", hist.justs())
 
 
-                val curChunk = hist.currentPos().chunk()
+                val curChunk = hist.currentPos().chunk
                 // rule3
                 logFirstMatch()
                 logExpand(occurrence("bazz"))
                 // matched on rule with heads without justifications, should remain in the same chunk
-                hist.currentPos().chunk() shouldBeSame curChunk
+                hist.currentPos().chunk shouldBeSame curChunk
 
 
                 // push happens before constraints in body are activated
@@ -486,7 +486,7 @@ class TestStoreAwareJournal {
                     // finally, purely go the the end, applying the rest of the history to the store
                     replay(mockController, lastPos)
 
-                    currentPos().chunk() shouldBeSame lastPos.chunk() // we inserted in the middle -- the last chunk should remain the same
+                    currentPos().chunk shouldBeSame lastPos.chunk // we inserted in the middle -- the last chunk should remain the same
                     storeView().constraintSymbols() shouldBe setOf(sym0("bar1"), sym0("qux"), sym0("marker"))
                 }
             }

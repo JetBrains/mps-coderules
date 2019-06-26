@@ -83,6 +83,8 @@ class MockRule(
     
     override fun uniqueTag() = tag
 
+    override fun tag(): String = tag
+
     override fun headKept(): Iterable<Constraint> = kept
 
     override fun headReplaced(): Iterable<Constraint> = replaced
