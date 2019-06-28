@@ -1408,8 +1408,12 @@
     <mkdir dir="${build.tmp}/default/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.coderules.typechecking.testlang.sandbox" type="solution" uuid="f9bad4b1-59da-4f20-8feb-9f4cc4ad872e">
-        <dependencies />
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" kind="rt" />
+          <module ref="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" kind="rt" />
+        </dependencies>
         <uses>
+          <language id="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
           <language id="l:3a1f0f04-b5e0-43be-884e-b856bfdeca21:jetbrains.mps.typechecking.testlang" />
         </uses>
         <classpath>
@@ -1484,6 +1488,7 @@
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
           <language id="l:cba985fe-1e96-4f16-9f8d-b07434405d4f:jetbrains.mps.lang.smodel.types" />
           <language id="l:8585453e-6bfb-4d80-98de-b16074f1d86c:jetbrains.mps.lang.test" />
+          <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
           <language id="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" />
           <language id="l:3a1f0f04-b5e0-43be-884e-b856bfdeca21:jetbrains.mps.typechecking.testlang" />
         </uses>
@@ -4882,7 +4887,7 @@
     </javac>
   </target>
   
-  <target name="java.compile.jetbrains.mps.coderules.typechecking.testlang.sandbox">
+  <target name="java.compile.jetbrains.mps.coderules.typechecking.testlang.sandbox" depends="fetchDependencies">
     <mkdir dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.typechecking.testlang.sandbox/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.coderules.typechecking.testlang.sandbox" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.coderules.typechecking.testlang.sandbox" fork="true" encoding="utf8" includeantruntime="false" debug="true">
@@ -4890,7 +4895,9 @@
       <src>
         <path location="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.typechecking.testlang.sandbox/source_gen" />
       </src>
-      <classpath />
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-references.jar" />
+      </classpath>
     </javac>
   </target>
   

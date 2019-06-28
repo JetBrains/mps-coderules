@@ -258,6 +258,11 @@
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
       </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
+      </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="1350122676458893092" name="text" index="3ndbpf" />
@@ -271,6 +276,9 @@
       </concept>
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
@@ -3932,6 +3940,45 @@
           </node>
         </node>
         <node concept="2AHcQZ" id="51V709l4fKn" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3irtEZPv32D" role="jymVt" />
+      <node concept="3clFb_" id="3irtEZPv7SJ" role="jymVt">
+        <property role="TrG5h" value="tag" />
+        <node concept="3clFbS" id="3irtEZPv7SM" role="3clF47">
+          <node concept="3clFbF" id="3irtEZPvk0F" role="3cqZAp">
+            <node concept="3K4zz7" id="3irtEZPvk0z" role="3clFbG">
+              <node concept="3clFbC" id="3irtEZPvltc" role="3K4Cdx">
+                <node concept="37vLTw" id="3irtEZPvk28" role="3uHU7B">
+                  <ref role="3cqZAo" node="1N8$BG_3AGV" resolve="tagDetail" />
+                </node>
+                <node concept="3cmrfG" id="3irtEZPvlPU" role="3uHU7w">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="3irtEZPvlQX" role="3K4E3e">
+                <ref role="3cqZAo" node="6lpwCiZjjEm" resolve="tag" />
+              </node>
+              <node concept="3cpWs3" id="3irtEZPvozv" role="3K4GZi">
+                <node concept="37vLTw" id="3irtEZPvoBf" role="3uHU7w">
+                  <ref role="3cqZAo" node="1N8$BG_3AGV" resolve="tagDetail" />
+                </node>
+                <node concept="3cpWs3" id="3irtEZPvna0" role="3uHU7B">
+                  <node concept="37vLTw" id="3irtEZPvmfH" role="3uHU7B">
+                    <ref role="3cqZAo" node="6lpwCiZjjEm" resolve="tag" />
+                  </node>
+                  <node concept="1Xhbcc" id="3irtEZPvnyF" role="3uHU7w">
+                    <property role="1XhdNS" value=":" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3irtEZPv5oM" role="1B3o_S" />
+        <node concept="17QB3L" id="3irtEZPv7G7" role="3clF45" />
+        <node concept="2AHcQZ" id="3irtEZPvagC" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
