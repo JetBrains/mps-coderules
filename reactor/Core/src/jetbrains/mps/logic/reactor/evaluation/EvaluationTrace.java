@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.evaluation;
 
 
 import jetbrains.mps.logic.reactor.core.EvaluationFailure;
+import jetbrains.mps.logic.reactor.program.Rule;
 
 /**
  * An interface to be implemented by clients wishing to be notified of the events during evaluation.
@@ -51,4 +52,10 @@ public interface EvaluationTrace {
     default void ask(boolean result, PredicateInvocation invocation) {}
 
     default void feedback(EvaluationFeedback feedback) {}
+
+    default void invalidate(RuleMatch ruleMatch) {}
+
+    default void reactivateIncremental(ConstraintOccurrence occurrence) {}
+
+    default void potentialMatch(ConstraintOccurrence occurrence, Rule rule) {}
 }

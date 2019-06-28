@@ -452,7 +452,7 @@ class TestStoreAwareJournal {
                     //  continue from the second chunk (match of rule1)
                     val rmIt = iterator()
                     rmIt.next() // skip initial chunk
-                    val continueFrom = rmIt.next()
+                    val continueFrom = rmIt.next().toPos()
                     rmIt.next()
                     rmIt.remove()
 

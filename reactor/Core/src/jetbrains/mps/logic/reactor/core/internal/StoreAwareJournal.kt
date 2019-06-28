@@ -41,11 +41,11 @@ internal open class StoreAwareJournalImpl(private val journal: MatchJournal, pri
     : MatchJournal by journal, StoreAwareJournal, ProcessingState by state
 {
 
-    private class PosImpl(
+    private class FramePos(
         val frame: StateFrame,
-        override val chunk: MatchJournal.Chunk,
-        override val entriesInChunk: Int = 0
-    ) : MatchJournal.Pos()
+        chunk: MatchJournal.Chunk,
+        entriesCount: Int = 0
+    ) : MatchJournal.Pos(chunk, entriesCount)
 
 
     fun push() = state.push()
@@ -60,12 +60,12 @@ internal open class StoreAwareJournalImpl(private val journal: MatchJournal, pri
 
 
     override fun currentPos(): MatchJournal.Pos =
-        PosImpl(state.currentFrame(), journal.currentPos().chunk, journal.currentPos().entriesInChunk)
+        FramePos(state.currentFrame(), journal.currentPos().chunk, journal.currentPos().entriesCount)
 
     // Throw away recently added chunks and reset store accordingly
     // NB: not checking that chunks are actually recently added, from this exec session
     override fun reset(pastPos: MatchJournal.Pos) {
-        if (pastPos is PosImpl) {
+        if (pastPos is FramePos) {
             state.reset(pastPos.frame)
             journal.reset(pastPos)
         } else {

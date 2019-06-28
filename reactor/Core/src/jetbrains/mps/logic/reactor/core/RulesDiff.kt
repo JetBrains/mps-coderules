@@ -20,8 +20,10 @@ import jetbrains.mps.logic.reactor.program.Rule
 
 data class RulesDiff(val added: Iterable<Rule>, val removed: Set<Any>) {
     companion object {
+        @JvmStatic
         fun emptyDiff() = RulesDiff(emptyList(), emptySet())
 
+        @JvmStatic
         fun findDiff(old: Iterable<Any>, new: Iterable<Rule>): RulesDiff {
             val oldSet = old.toHashSet()
             val newSet = new.toHashSet()

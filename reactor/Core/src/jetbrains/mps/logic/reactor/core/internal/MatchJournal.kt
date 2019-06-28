@@ -103,21 +103,21 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
          * Returns position of the first principal occurrence activated in provided chunk.
          * Returns null if the chunk activates no principal occurrences.
          */
-        fun principalOccurrenceOf(chunk: Chunk): OccurrencePos?
+        fun principalOccurrenceOf(chunk: Chunk): Pos?
 
         /**
-         * Find [OccurrencePos] by occurrence.
+         * Find [Pos] by occurrence.
          */
-        fun principalPos(occ: Id<Occurrence>): OccurrencePos? =
+        fun principalPos(occ: Id<Occurrence>): Pos? =
             // just a composition of two operations
             activatingChunkOf(occ)?.let { principalOccurrenceOf(it) }
 
         /**
-         * Find [OccurrencePos] at which provided match was triggered.
+         * Find [Pos] at which provided match was triggered.
          * Returned position specifies [Occurrence] which triggered the match.
          * Works not for any match, must work for matches of principal rules.
          */
-        fun activationPos(match: RuleMatchEx): OccurrencePos? =
+        fun activationPos(match: RuleMatchEx): Pos? =
             // The latest matched occurrence from match's head is(by definition)
             //  the occurrence which activated this match.
             match.signature().mapNotNull { occSig ->
@@ -136,14 +136,14 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         )
     }
 
-    abstract class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : MatchJournalChunk, Pos()
+    abstract class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : MatchJournalChunk
     {
         override fun match(): RuleMatch = match
         override fun id(): Int = id
         override fun justifications(): TIntSet = justifications
 
         data class Entry(val occ: Occurrence, val discarded: Boolean = false) : MatchJournalChunk.Entry {
-            override fun occ(): ConstraintOccurrence = occ
+            override fun occ(): Occurrence = occ
             override fun discarded(): Boolean = discarded
             override fun toString() = (if (discarded) '-' else '+') + occ.toString()
         }
@@ -151,6 +151,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         fun isDescendantOf(chunkId: Int): Boolean = justifications().contains(chunkId)
         fun isTopLevel(): Boolean = justifications().size() <= 1 // this condition implies that there're no ancestor chunks
 
+        abstract override fun entriesLog(): List<Entry>
         fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded() }.map { it.occ() as Occurrence }
         fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded() }.map { it.occ() as Occurrence }
 
@@ -162,31 +163,19 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
 
         override fun toString() = "(id=${id()}, ${justifications()}, ${match().rule().uniqueTag()}, ${entriesLog()})"
 
-        // fixme: just provide toPos() instead of override?
-        override val chunk: Chunk
-            get() = this
-        override val entriesInChunk: Int
-            get() = entriesLog().size
+        fun toPos(): Pos = Pos(this, entriesLog().size)
     }
 
-    abstract class Pos {
-        abstract val chunk: Chunk
-        abstract val entriesInChunk: Int
+    open class Pos(val chunk: Chunk, val entriesCount: Int) {
+        val occ: Occurrence
+            get() = chunk.entriesLog()[entriesCount - 1].occ()
 
         override fun equals(other: Any?) =
             other is Pos
             && other.chunk === chunk
-            && other.entriesInChunk == entriesInChunk
-    }
+            && other.entriesCount == entriesCount
 
-    data class OccurrencePos(
-        val occ: Occurrence,
-        override val chunk: Chunk,
-        private val offset: Int): MatchJournal.Pos()
-    {
-        // fixme: remove 'entriesInChunk' everywhere, use just offset in Pos
-        override val entriesInChunk: Int
-            get() = offset + 1
+        override fun hashCode(): Int = 31 * chunk.hashCode() + entriesCount
     }
 
 }

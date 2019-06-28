@@ -91,7 +91,7 @@ internal open class MatchJournalImpl(
     }
 
 
-    override fun currentPos(): MatchJournal.Pos = current
+    override fun currentPos(): MatchJournal.Pos = current.toPos()
 
     override fun resetPos() {
         posPtr = hist.listIterator()
@@ -100,7 +100,7 @@ internal open class MatchJournalImpl(
     override fun reset(pastPos: MatchJournal.Pos) {
         while (posPtr.hasPrevious()) {
             if (current === pastPos.chunk) {
-                current.entries = current.entries.subList(0, pastPos.entriesInChunk)
+                current.entries = current.entries.subList(0, pastPos.entriesCount)
                 return
             }
             current = posPtr.previous()
@@ -113,7 +113,7 @@ internal open class MatchJournalImpl(
         while (posPtr.hasNext()) {
             current = posPtr.next()
             if (futurePos.chunk === current) {
-                replayOccurrences(controller, current.entries.take(futurePos.entriesInChunk))
+                replayOccurrences(controller, current.entries.take(futurePos.entriesCount))
                 return
             }
             replayOccurrences(controller, current.entries)
@@ -181,7 +181,7 @@ internal open class MatchJournalImpl(
         // only for principal constraints
         private val parentChunks: Map<Id<Occurrence>, MatchJournal.Chunk>
 
-        private val principalOccurrences: Map<Int, MatchJournal.OccurrencePos>
+        private val principalOccurrences: Map<Int, MatchJournal.Pos>
 
         init {
             chunkOrder = HashMap<Int, Int>().apply {
@@ -189,13 +189,13 @@ internal open class MatchJournalImpl(
             }
 
             val m = HashMap<Id<Occurrence>, MatchJournal.Chunk>()
-            val m2 = HashMap<Int, MatchJournal.OccurrencePos>()
+            val m2 = HashMap<Int, MatchJournal.Pos>()
             chunks.forEach { chunk ->
                 // actually there should be only a single principal occurrence, 'find' is enough
                 chunk.entriesLog().forEachIndexed { index, e ->
                    if (ispec.isPrincipal(e.occ.constraint()) && !e.discarded()) {
                        m[Id(e.occ)] = chunk
-                       m2[chunk.id] = MatchJournal.OccurrencePos(e.occ, chunk, index)
+                       m2[chunk.id] = MatchJournal.Pos(chunk, index + 1)
                    }
                 }
             }
@@ -210,7 +210,7 @@ internal open class MatchJournalImpl(
         // todo: throw for invalid positions?
         override fun compare(lhs: MatchJournal.Pos, rhs: MatchJournal.Pos): Int {
             val co = compareBy<MatchJournal.Pos>{ chunkOrder[it.chunk.id] }.compare(lhs, rhs)
-            return if (co == 0) lhs.entriesInChunk.compareTo(rhs.entriesInChunk) else co
+            return if (co == 0) lhs.entriesCount.compareTo(rhs.entriesCount) else co
         }
     }
 

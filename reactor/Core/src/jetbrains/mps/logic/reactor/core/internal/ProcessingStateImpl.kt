@@ -71,11 +71,13 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
 
 
-    // Invalidation includes several activities:
-    //  - removing chunks (i.e. principal matches) corresponding to
-    //      removed rules and chunks depending on them from journal
-    //  - reactivating occurrences that led to invalidated matches
-    //  - pruning invalidated occurrences and matches from Dispatcher's state
+    /**
+     * Invalidation includes several activities:
+     *  - removing chunks (i.e. principal matches) corresponding to
+     *      removed rules and chunks depending on them from journal
+     *  - reactivating occurrences that led to invalidated matches
+     *  - pruning invalidated occurrences and matches from Dispatcher's state
+     */
     fun invalidateRuleMatches(ruleIds: Set<Any>) {
         val justificationRoots = mutableListOf<Int>()
 
@@ -101,7 +103,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
                 execQueue.addAll(validOccs.mapNotNull { occ ->
                     journalIndex.activatingChunkOf(Id(occ))?.let { chunkPos ->
-                        ExecPos(chunkPos, occ)
+                        ExecPos(chunkPos.toPos(), occ)
                     }
                 })
             }
@@ -111,6 +113,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             if (toInvalidate) {
                 // Remove the chunk from the journal
                 it.remove()
+                trace.invalidate(chunk.match())
 
                 // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
                 //  and storing this invalid consumed match can make no harm, except some memory overhead.
@@ -158,7 +161,8 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                         // Also remember the parent justification of this rule candidate
                         //  to drop it from monitoring when child chunks end.
                         activationCandidates.add(MatchCandidate(rule, pOcc, chunk.id))
-                        // todo: also use the rule to help Dispatcher in future? i.e. try matching only on the candidate rule
+                        // todo: also use the rule to help Dispatcher in future?
+                        //  i.e. try matching only on the candidate rule
                     }
                 }
             }
@@ -175,12 +179,13 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
                 val pos =
                     // We need the previous chunk as pos here (i.e. adding after it).
-                    if (childChunksEnded || placeToInsertFound) prevChunk
+                    if (childChunksEnded || placeToInsertFound) prevChunk.toPos()
                     // Case when adding at the very end
-                    else if (!it.hasNext()) chunk
+                    else if (!it.hasNext()) chunk.toPos()
                     else continue
 
                 execQueue.offer(ExecPos(pos, candOcc))
+                trace.potentialMatch(candOcc, candRule)
                 // Drop the candidate if appropriate activation place is found.
                 aIt.remove()
             }
@@ -195,17 +200,17 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         if (execQueue.isNotEmpty()) {
             resetStore()
 
-            var prevPos: ExecPos? = null
+            var prevPos: MatchJournal.Pos? = null
             do {
                 val execPos = execQueue.poll()
 
                 // Handles the case when several matches are added to the same position.
                 //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
-                if (execPos != prevPos) {
+                if (execPos.pos != prevPos) {
                     replay(controller, execPos.pos)
                     lastIncrementalRootPos = execPos.pos
                 }
-                prevPos = execPos
+                prevPos = execPos.pos
 
                 // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
                 if (execPos.activeOcc.stored) {
@@ -213,12 +218,13 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     // Incremental reactivation isn't like the usual reactivation,
                     //  it should proceed more like usual activation.
                     this.dispatchingFront = dispatchingFront.forgetSeen(execPos.activeOcc)
+                    trace.reactivateIncremental(execPos.activeOcc)
                     controller.reactivate(execPos.activeOcc)
                 }
             } while (execQueue.isNotEmpty())
         }
         // Also replay to the end after queue is fully executed
-        replay(controller, this.last())
+        replay(controller, this.last().toPos())
         // fixme: get FeedbackStatus out of reactivate()
         return FeedbackStatus.NORMAL()
     }
