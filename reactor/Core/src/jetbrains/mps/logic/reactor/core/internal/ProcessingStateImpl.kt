@@ -44,7 +44,7 @@ import java.util.*
 
 internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.DispatchingFront,
                                    journal: MatchJournalImpl,
-                                   ruleIndex: RuleIndex,
+                                   private val ruleIndex: RuleIndex,
                                    private val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
                                    val trace: EvaluationTrace = EvaluationTrace.NULL,
                                    val profiler: Profiler? = null)
@@ -147,14 +147,14 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
         while (true) {
             // Does this chunk have principal occurrence and can activate anything at all?
-            val pOcc = journalIndex.principalOccurrenceOf(chunk)?.occ
-            if (pOcc != null) {
+            journalIndex.principalOccurrenceOf(chunk)?.occ?.let { pOcc ->
+
+                // filters out rules using occurrence's arguments
+                val allRuleCandidates = ruleIndex.forOccurrence(pOcc).map { it.uniqueTag() }.toHashSet()
 
                 for (rule in rules) {
-                    // Can this rule be matched by principal occurrence?
-                    // fixme: maybe use RuleIndex here?
-                    if (canMatch(rule, pOcc)) {
-
+                    if (allRuleCandidates.contains(rule.uniqueTag()) && canMatch(rule, pOcc)) {
+                        // Can this rule be matched by principal occurrence?
                         // Then we will need to find the place among existing child chunks
                         //  (i.e. among some number of following ones)
                         //  to activate this occurrence, to (possibly) match this rule.
@@ -290,15 +290,23 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             (matches + postponed).sortedBy { ruleOrdering.orderOf(it.rule()) }
         } ?: matches
 
-    // Determines, filters out and enqueues (to execution queue) future matches. Returns only current matches.
+    /**
+     * Determines, filters out and enqueues (to execution queue) future matches.
+     * Returns only current matches.
+     */
     private fun postponeFutureMatches(matches: List<RuleMatchEx>): List<RuleMatchEx> {
-        assert(matches.all { ispec.isPrincipal(it.rule()) })
+        assert(
+            matches.all { ispec.isPrincipal(it.rule()) },
+            { "non-principal ctrs in head of principal rule: ${ matches.filter { !ispec.isPrincipal(it.rule()) } }" }
+        )
 
         val currentMatches = mutableListOf<RuleMatchEx>()
         for (m in matches) {
+
             // Returns null for matches with occurrences only from this session
             //  because journalIndex indexes only previous session.
             val pos = journalIndex.activationPos(m)
+
             // if it is a future match
             if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
                 val idOcc = Id(pos.occ)
