@@ -35,6 +35,8 @@
     <import index="h83j" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem(MPS.Core/)" />
     <import index="7jhi" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.pattern(MPS.Core/)" />
     <import index="1ka" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typechecking(MPS.Core/)" />
+    <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -154,9 +156,13 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903862077" name="jetbrains.mps.baseLanguage.structure.LowerBoundType" flags="in" index="3qUtgH">
+        <child id="1171903869531" name="bound" index="3qUvdb" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -570,6 +576,32 @@
       <node concept="3Tm1VV" id="5BwsbZJE17x" role="1B3o_S" />
       <node concept="3uibUv" id="lvX$8VFC52" role="EKbjA">
         <ref role="3uigEE" to="1ka:~TypecheckingQueries" resolve="TypecheckingQueries" />
+      </node>
+      <node concept="3clFb_" id="ZKiX9Lu_em" role="jymVt">
+        <property role="TrG5h" value="checkRoot" />
+        <node concept="3Tm1VV" id="ZKiX9Lu_en" role="1B3o_S" />
+        <node concept="3cqZAl" id="ZKiX9Lu_ep" role="3clF45" />
+        <node concept="37vLTG" id="ZKiX9Lu_eq" role="3clF46">
+          <property role="TrG5h" value="node" />
+          <node concept="3uibUv" id="ZKiX9Lu_er" role="1tU5fm">
+            <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="ZKiX9Lu_es" role="3clF46">
+          <property role="TrG5h" value="consumer" />
+          <node concept="3uibUv" id="ZKiX9Lu_et" role="1tU5fm">
+            <ref role="3uigEE" to="82uw:~Consumer" resolve="Consumer" />
+            <node concept="3qUtgH" id="ZKiX9Lu_eu" role="11_B2D">
+              <node concept="3uibUv" id="ZKiX9Lu_ev" role="3qUvdb">
+                <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="ZKiX9Lu_ew" role="3clF47" />
+        <node concept="2AHcQZ" id="ZKiX9Lu_ex" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="siuT5mmBCy" role="jymVt" />
