@@ -100,6 +100,7 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -155,6 +156,7 @@
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -546,7 +548,142 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="tyIfzBBip1" role="3cqZAp" />
+              <node concept="3clFbH" id="6gZak$AVCzz" role="3cqZAp" />
+              <node concept="3cpWs8" id="6gZak$AVF$e" role="3cqZAp">
+                <node concept="3cpWsn" id="6gZak$AVF$f" role="3cpWs9">
+                  <property role="TrG5h" value="logicalSNode" />
+                  <node concept="3uibUv" id="6gZak$AVF$g" role="1tU5fm">
+                    <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+                    <node concept="3uibUv" id="6gZak$AVJo_" role="11_B2D">
+                      <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                    </node>
+                  </node>
+                  <node concept="2YIFZM" id="6gZak$AVH1r" role="33vP2m">
+                    <ref role="37wK5l" to="oy3s:7nPD14NOCTS" resolve="metaLogical" />
+                    <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                    <node concept="Xl_RD" id="6gZak$AVH8D" role="37wK5m">
+                      <property role="Xl_RC" value="Node" />
+                    </node>
+                    <node concept="3VsKOn" id="6gZak$AVIlk" role="37wK5m">
+                      <ref role="3VsUkX" to="mhbf:~SNode" resolve="SNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="6gZak$AVCqR" role="3cqZAp">
+                <node concept="3cpWsn" id="6gZak$AVCqS" role="3cpWs9">
+                  <property role="TrG5h" value="withPseudoSNode" />
+                  <node concept="3uibUv" id="6gZak$AVCqT" role="1tU5fm">
+                    <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
+                  </node>
+                  <node concept="2YIFZM" id="6gZak$AVCqU" role="33vP2m">
+                    <ref role="1Pybhc" node="tyIfzBAB26" resolve="ProgAnalysisTestHelper" />
+                    <ref role="37wK5l" node="tyIfzBBsSR" resolve="ctrWithArgs" />
+                    <node concept="Xl_RD" id="6gZak$AVCqV" role="37wK5m">
+                      <property role="Xl_RC" value="recover" />
+                    </node>
+                    <node concept="37vLTw" id="6gZak$AVLZv" role="37wK5m">
+                      <ref role="3cqZAo" node="6gZak$AVF$f" resolve="logicalSNode" />
+                    </node>
+                    <node concept="37vLTw" id="6gZak$AVMPg" role="37wK5m">
+                      <ref role="3cqZAo" node="3HJTsBn443w" resolve="b" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6gZak$AYVXJ" role="3cqZAp" />
+              <node concept="3cpWs8" id="6gZak$AZ68N" role="3cqZAp">
+                <node concept="3cpWsn" id="6gZak$AZ68O" role="3cpWs9">
+                  <property role="TrG5h" value="sym" />
+                  <node concept="3uibUv" id="6gZak$AZ68P" role="1tU5fm">
+                    <ref role="3uigEE" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
+                  </node>
+                  <node concept="2YIFZM" id="6gZak$AZ8T3" role="33vP2m">
+                    <ref role="37wK5l" to="av0y:~ConstraintSymbol.symbol(java.lang.String,int)" resolve="symbol" />
+                    <ref role="1Pybhc" to="av0y:~ConstraintSymbol" resolve="ConstraintSymbol" />
+                    <node concept="Xl_RD" id="6gZak$AZ9ej" role="37wK5m">
+                      <property role="Xl_RC" value="pat" />
+                    </node>
+                    <node concept="3cmrfG" id="6gZak$AZdnV" role="37wK5m">
+                      <property role="3cmrfH" value="2" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="6gZak$AZj6B" role="3cqZAp">
+                <node concept="3cpWsn" id="6gZak$AZj6C" role="3cpWs9">
+                  <property role="TrG5h" value="pat" />
+                  <node concept="3uibUv" id="6gZak$AZj6D" role="1tU5fm">
+                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                  </node>
+                  <node concept="37vLTw" id="6gZak$AZkFU" role="33vP2m">
+                    <ref role="3cqZAo" node="tyIfzBBqPq" resolve="x" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="6gZak$AZqjK" role="3cqZAp">
+                <node concept="3cpWsn" id="6gZak$AZqjL" role="3cpWs9">
+                  <property role="TrG5h" value="patternLogical" />
+                  <node concept="3uibUv" id="6gZak$AZqjM" role="1tU5fm">
+                    <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+                    <node concept="3uibUv" id="6gZak$AZtop" role="11_B2D">
+                      <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                    </node>
+                  </node>
+                  <node concept="2YIFZM" id="6gZak$AZqjO" role="33vP2m">
+                    <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                    <ref role="37wK5l" to="oy3s:7nPD14NOCTS" resolve="metaLogical" />
+                    <node concept="Xl_RD" id="6gZak$AZqjP" role="37wK5m">
+                      <property role="Xl_RC" value="Type" />
+                    </node>
+                    <node concept="3VsKOn" id="6gZak$AZqjQ" role="37wK5m">
+                      <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="6gZak$AYXue" role="3cqZAp">
+                <node concept="3cpWsn" id="6gZak$AYXuf" role="3cpWs9">
+                  <property role="TrG5h" value="withSNodeInPattern" />
+                  <node concept="3uibUv" id="6gZak$AYXug" role="1tU5fm">
+                    <ref role="3uigEE" to="av0y:~Constraint" resolve="Constraint" />
+                  </node>
+                  <node concept="2OqwBi" id="6gZak$AZ0n5" role="33vP2m">
+                    <node concept="2OqwBi" id="6gZak$AZmbT" role="2Oq$k0">
+                      <node concept="2OqwBi" id="6gZak$AZ0n6" role="2Oq$k0">
+                        <node concept="2ShNRf" id="6gZak$AZ0n7" role="2Oq$k0">
+                          <node concept="1pGfFk" id="6gZak$AZ0n8" role="2ShVmc">
+                            <ref role="37wK5l" to="i348:4sSe4$oM2rk" resolve="ConstraintBuilder" />
+                            <node concept="37vLTw" id="6gZak$AZeh0" role="37wK5m">
+                              <ref role="3cqZAo" node="6gZak$AZ68O" resolve="sym" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="6gZak$AZ0nf" role="2OqNvi">
+                          <ref role="37wK5l" to="i348:4sSe4$oM2sT" resolve="withArguments" />
+                          <node concept="37vLTw" id="6gZak$AZlvb" role="37wK5m">
+                            <ref role="3cqZAo" node="3HJTsBn443w" resolve="b" />
+                          </node>
+                          <node concept="37vLTw" id="6gZak$AZlRs" role="37wK5m">
+                            <ref role="3cqZAo" node="6gZak$AZj6C" resolve="pat" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6gZak$AZnpN" role="2OqNvi">
+                        <ref role="37wK5l" to="i348:4sSe4$oM05h" resolve="withPatternLogicals" />
+                        <node concept="10Nm6u" id="6gZak$AZo10" role="37wK5m" />
+                        <node concept="37vLTw" id="6gZak$AZuEt" role="37wK5m">
+                          <ref role="3cqZAo" node="6gZak$AZqjL" resolve="patternLogical" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6gZak$AZ0nh" role="2OqNvi">
+                      <ref role="37wK5l" to="i348:4sSe4$oM2zI" resolve="toConstraint" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6gZak$AZvrf" role="3cqZAp" />
               <node concept="3vwNmj" id="tyIfzBJ4SG" role="3cqZAp">
                 <node concept="2YIFZM" id="tyIfzBBiUE" role="3vwVQn">
                   <ref role="37wK5l" to="xnrr:1H_6AUT0Wq9" resolve="check" />
@@ -571,6 +708,24 @@
                   <ref role="1Pybhc" to="xnrr:1H_6AUSGVEF" resolve="SimpleProgramAnalysis.SNodeAccessChecker" />
                   <node concept="37vLTw" id="tyIfzBJ5tf" role="37wK5m">
                     <ref role="3cqZAo" node="tyIfzBCZ6E" resolve="withoutSNode" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3vFxKo" id="6gZak$AVW7f" role="3cqZAp">
+                <node concept="2YIFZM" id="6gZak$AVW7g" role="3vFALc">
+                  <ref role="37wK5l" to="xnrr:1H_6AUT0Wq9" resolve="check" />
+                  <ref role="1Pybhc" to="xnrr:1H_6AUSGVEF" resolve="SimpleProgramAnalysis.SNodeAccessChecker" />
+                  <node concept="37vLTw" id="6gZak$AVWfF" role="37wK5m">
+                    <ref role="3cqZAo" node="6gZak$AVCqS" resolve="withPseudoSNode" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3vFxKo" id="6gZak$AZvAd" role="3cqZAp">
+                <node concept="2YIFZM" id="6gZak$AZvAe" role="3vFALc">
+                  <ref role="1Pybhc" to="xnrr:1H_6AUSGVEF" resolve="SimpleProgramAnalysis.SNodeAccessChecker" />
+                  <ref role="37wK5l" to="xnrr:1H_6AUT0Wq9" resolve="check" />
+                  <node concept="37vLTw" id="6gZak$AZw5d" role="37wK5m">
+                    <ref role="3cqZAo" node="6gZak$AYXuf" resolve="withSNodeInPattern" />
                   </node>
                 </node>
               </node>
@@ -1146,13 +1301,12 @@
       <node concept="37vLTG" id="429xoypV5Zn" role="3clF46">
         <property role="TrG5h" value="args" />
         <node concept="8X2XB" id="429xoypV5Zo" role="1tU5fm">
-          <node concept="3uibUv" id="tyIfzBBtFx" role="8Xvag">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+          <node concept="3uibUv" id="6gZak$AVV6o" role="8Xvag">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="tyIfzBBAQg" role="jymVt" />
     <node concept="3Tm1VV" id="tyIfzBAB27" role="1B3o_S" />
   </node>
   <node concept="1lH9Xt" id="tyIfzC6NYI">

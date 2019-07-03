@@ -1824,6 +1824,44 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6gZak$AXWym" role="jymVt" />
+    <node concept="3clFb_" id="6gZak$AXZuj" role="jymVt">
+      <property role="TrG5h" value="isPatternLogical" />
+      <node concept="37vLTG" id="6gZak$AY23K" role="3clF46">
+        <property role="TrG5h" value="argIdx" />
+        <node concept="10Oyi0" id="6gZak$AY2Pd" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="6gZak$AXZum" role="3clF47">
+        <node concept="3cpWs6" id="6gZak$AY2RX" role="3cqZAp">
+          <node concept="1Wc70l" id="6gZak$AY8ZL" role="3cqZAk">
+            <node concept="3y3z36" id="6gZak$AYdkM" role="3uHU7w">
+              <node concept="10Nm6u" id="6gZak$AYdSd" role="3uHU7w" />
+              <node concept="AH0OO" id="6gZak$AYaSV" role="3uHU7B">
+                <node concept="37vLTw" id="6gZak$AYbGW" role="AHEQo">
+                  <ref role="3cqZAo" node="6gZak$AY23K" resolve="argIdx" />
+                </node>
+                <node concept="37vLTw" id="6gZak$AY9YN" role="AHHXb">
+                  <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="logicals" />
+                </node>
+              </node>
+            </node>
+            <node concept="3eOSWO" id="6gZak$AY6Ur" role="3uHU7B">
+              <node concept="2OqwBi" id="6gZak$AY3Z$" role="3uHU7B">
+                <node concept="37vLTw" id="6gZak$AY2S$" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4sSe4$oSRPL" resolve="logicals" />
+                </node>
+                <node concept="1Rwk04" id="6gZak$AY56o" role="2OqNvi" />
+              </node>
+              <node concept="3cmrfG" id="6gZak$AY7FA" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6gZak$AXYo2" role="1B3o_S" />
+      <node concept="10P_77" id="6gZak$AXZpw" role="3clF45" />
+    </node>
     <node concept="2tJIrI" id="4sSe4$oZJf2" role="jymVt" />
     <node concept="3clFb_" id="4sSe4$oTo$P" role="jymVt">
       <property role="TrG5h" value="logicalToBind" />
