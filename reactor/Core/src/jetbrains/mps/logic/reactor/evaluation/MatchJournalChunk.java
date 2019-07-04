@@ -16,7 +16,7 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
-import gnu.trove.set.TIntSet;
+//import gnu.trove.set.TIntSet;
 import java.util.List;
 
 
@@ -26,8 +26,7 @@ public interface MatchJournalChunk {
         boolean discarded();
     }
 
-    RuleMatch match();
-    int id();
-    TIntSet justifications();
+//    int id();
+//    TIntSet justifications();
     List<Entry> entriesLog();
 }

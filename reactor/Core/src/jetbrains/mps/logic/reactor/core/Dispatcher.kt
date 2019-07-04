@@ -112,14 +112,19 @@ class Dispatcher (val ruleIndex: RuleIndex) {
             }
 
         /**
-         * Returns a new [DispatchingFront] instance which "forgot" that it seen occurrence.
-         * Need it for incremental reactivations to discern them from reactivations due to logicals.
+         * Returns a new [DispatchingFront] instance which "forgot" that it has seen occurrence.
+         * Needed for incremental reactivations to discern them from reactivations due to logicals.
          */
         internal fun forgetSeen(dropped: Occurrence) =
             forRelatedProbe(dropped) { probe ->
                 probe.forgetSeen(dropped)
             }
 
+        /**
+         * Returns a new [DispatchingFront] instance which contracts state with this occurrence
+         * and "forgets" that has seen it or that consumed any matches involving it.
+         * Needed for pruning outdated unrelevant state on incremental reactivations.
+         */
         internal fun forget(dropped: Occurrence) =
             forRelatedProbe(dropped) { probe ->
                 probe.contract(dropped).forgetSeen(dropped).forgetConsumed(dropped)

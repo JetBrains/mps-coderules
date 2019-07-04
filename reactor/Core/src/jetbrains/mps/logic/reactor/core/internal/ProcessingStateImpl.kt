@@ -68,7 +68,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
 
-    private data class MatchCandidate(val rule: Rule, val occ: Occurrence, val occParentId: Int)
+    private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
 
     /**
@@ -87,13 +87,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         while (it.hasNext()) {
             val chunk = it.next()
 
-            val toRemove = ruleIds.contains(chunk.match().rule().uniqueTag())
-            if (toRemove) {
+            if (chunk is MatchJournal.MatchChunk && ruleIds.contains(chunk.match.rule().uniqueTag())) {
                 justificationRoots.add(chunk.id)
 
                 // We removed the match, so need to reactivate all still valid occurrences from the head
                 //  by definition of Chunk and principal rule, all occurrences from the head are principal
-                val matchedOccs = chunk.match().allHeads() as Iterable<Occurrence>
+                val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
                 val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
                     occ.justifications().intersects(justificationRoots)
                 }
@@ -102,32 +101,35 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 // todo: do need to reactivate only the main, matching~activating match?
                 //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
                 execQueue.addAll(validOccs.mapNotNull { occ ->
-                    journalIndex.activatingChunkOf(Id(occ))?.let { chunkPos ->
-                        ExecPos(chunkPos.toPos(), occ)
+                    journalIndex.activatingChunkOf(Id(occ))?.let { chunk ->
+                        ExecPos(chunk.toPos(), occ)
                     }
                 })
             }
 
             // Invalidating dependent chunks
-            val toInvalidate = toRemove || chunk.justifications.intersects(justificationRoots)
-            if (toInvalidate) {
-                // Remove the chunk from the journal
+            if (chunk.justifications.intersects(justificationRoots)) {
+
+                // Remove chunk from the journal
                 it.remove()
-                trace.invalidate(chunk.match())
-
-                // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
-                //  and storing this invalid consumed match can make no harm, except some memory overhead.
-                // fixme: move Chunk's interface to RuleMatchEx instead of RuleMatch
-                dispatchingFront = dispatchingFront.forget(chunk.match() as RuleMatchEx)
-
-                // Need to 'cancel' discarding.
-                // These nodes may become valid and will be processed due to reactivation of needed occurrences.
-                chunk.match().matchHeadReplaced().forEach {
-                    dispatchingFront = dispatchingFront.forget(it as Occurrence)
-                }
                 // 'Undo' all activated in this chunk occurrences
                 chunk.activated().forEach {
                     dispatchingFront = dispatchingFront.forget(it)
+                }
+
+                if (chunk is MatchJournal.MatchChunk) {
+                    trace.invalidate(chunk.match)
+
+                    // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
+                    //  and storing this invalid consumed match can make no harm, except some memory overhead.
+                    // fixme: move Chunk's interface to RuleMatchEx instead of RuleMatch
+                    dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
+
+                    // Need to 'cancel' discarding.
+                    // These nodes may become valid and will be processed due to reactivation of needed occurrences.
+                    chunk.match.matchHeadReplaced().forEach {
+                        dispatchingFront = dispatchingFront.forget(it as Occurrence)
+                    }
                 }
             }
 
@@ -146,21 +148,19 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         var prevChunk = chunk
 
         while (true) {
-            // Does this chunk have principal occurrence and can activate anything at all?
-            journalIndex.principalOccurrenceOf(chunk)?.occ?.let { pOcc ->
-
+            if (chunk is MatchJournal.OccChunk) {
                 // filters out rules using occurrence's arguments
-                val allRuleCandidates = ruleIndex.forOccurrence(pOcc).map { it.uniqueTag() }.toHashSet()
+                val allRuleCandidates = ruleIndex.forOccurrence(chunk.occ).map { it.uniqueTag() }.toHashSet()
 
                 for (rule in rules) {
-                    if (allRuleCandidates.contains(rule.uniqueTag()) && canMatch(rule, pOcc)) {
+                    if (allRuleCandidates.contains(rule.uniqueTag()) && canMatch(rule, chunk.occ)) {
                         // Can this rule be matched by principal occurrence?
                         // Then we will need to find the place among existing child chunks
                         //  (i.e. among some number of following ones)
                         //  to activate this occurrence, to (possibly) match this rule.
                         // Also remember the parent justification of this rule candidate
                         //  to drop it from monitoring when child chunks end.
-                        activationCandidates.add(MatchCandidate(rule, pOcc, chunk.id))
+                        activationCandidates.add(MatchCandidate(rule, chunk))
                         // todo: also use the rule to help Dispatcher in future?
                         //  i.e. try matching only on the candidate rule
                     }
@@ -169,13 +169,14 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
             val aIt = activationCandidates.listIterator()
             while (aIt.hasNext()) {
-                val (candRule, candOcc, parentId) = aIt.next()
+                val (candRule, occChunk) = aIt.next()
 
                 // Place to activate candidate:
-                //  either as the last one, after all existing activations
-                //  or according to the ordering between rules.
-                val placeToInsertFound = ruleOrdering.compare(chunk.match().rule(), candRule) > 0
-                val childChunksEnded = !chunk.isDescendantOf(parentId)
+                //  either according to the ordering between rules.
+                //  or as the last one, after all existing activations
+                val placeToInsertFound =
+                    chunk is MatchJournal.MatchChunk && ruleOrdering.compare(chunk.match.rule(), candRule) > 0
+                val childChunksEnded = !chunk.isDescendantOf(occChunk.id)
 
                 val pos =
                     // We need the previous chunk as pos here (i.e. adding after it).
@@ -184,8 +185,8 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     else if (!it.hasNext()) chunk.toPos()
                     else continue
 
-                execQueue.offer(ExecPos(pos, candOcc))
-                trace.potentialMatch(candOcc, candRule)
+                execQueue.offer(ExecPos(pos, occChunk.occ))
+                trace.potentialMatch(occChunk.occ, candRule)
                 // Drop the candidate if appropriate activation place is found.
                 aIt.remove()
             }

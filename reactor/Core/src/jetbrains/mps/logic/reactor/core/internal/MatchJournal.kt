@@ -91,26 +91,11 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
      * Also serves as a comparator for positions: later in journal means greater.
      */
     interface Index : Comparator<Pos> {
-
         /**
-         * Returns [Chunk] where provided occurrence was activated.
-         * Works not for all occurrences: may return null even if there exists activating chunk.
-         * Must work for principal occurrences.
+         * Returns [Chunk] where provided principal occurrence was activated.
+         * Returns null for non-principal occurrences.
          */
-        fun activatingChunkOf(occId: Id<Occurrence>): Chunk?
-
-        /**
-         * Returns position of the first principal occurrence activated in provided chunk.
-         * Returns null if the chunk activates no principal occurrences.
-         */
-        fun principalOccurrenceOf(chunk: Chunk): Pos?
-
-        /**
-         * Find [Pos] by occurrence.
-         */
-        fun principalPos(occ: Id<Occurrence>): Pos? =
-            // just a composition of two operations
-            activatingChunkOf(occ)?.let { principalOccurrenceOf(it) }
+        fun activatingChunkOf(occId: Id<Occurrence>): OccChunk?
 
         /**
          * Find [Pos] at which provided match was triggered.
@@ -121,7 +106,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             // The latest matched occurrence from match's head is(by definition)
             //  the occurrence which activated this match.
             match.signature().mapNotNull { occSig ->
-                occSig?.let { principalPos(it) }
+                occSig?.let { activatingChunkOf(it)?.toPos() }
             }.maxWith(this) // compare positions: find latest
     }
 
@@ -136,11 +121,13 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         )
     }
 
-    abstract class Chunk(val match: RuleMatch, val id: Int, val justifications: Justs) : MatchJournalChunk
-    {
-        override fun match(): RuleMatch = match
-        override fun id(): Int = id
-        override fun justifications(): TIntSet = justifications
+    interface Chunk : MatchJournalChunk {
+        val id: Int
+        val justifications: Justs
+
+        // fixme: hide rm-mutability
+        var entries: MutableList<Entry>
+        override fun entriesLog(): List<Entry> = entries
 
         data class Entry(val occ: Occurrence, val discarded: Boolean = false) : MatchJournalChunk.Entry {
             override fun occ(): Occurrence = occ
@@ -148,10 +135,9 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             override fun toString() = (if (discarded) '-' else '+') + occ.toString()
         }
 
-        fun isDescendantOf(chunkId: Int): Boolean = justifications().contains(chunkId)
-        fun isTopLevel(): Boolean = justifications().size() <= 1 // this condition implies that there're no ancestor chunks
+        fun isDescendantOf(chunkId: Int): Boolean = justifications.contains(chunkId)
+        fun isTopLevel(): Boolean = justifications.size() <= 1 // this condition implies that there're no ancestor chunks
 
-        abstract override fun entriesLog(): List<Entry>
         fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded() }.map { it.occ() as Occurrence }
         fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded() }.map { it.occ() as Occurrence }
 
@@ -161,9 +147,29 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
          */
         fun activated(): List<Occurrence> = entriesLog().allOccurrences()
 
-        override fun toString() = "(id=${id()}, ${justifications()}, ${match().rule().uniqueTag()}, ${entriesLog()})"
-
         fun toPos(): Pos = Pos(this, entriesLog().size)
+    }
+
+    class MatchChunk(override val id: Int, val match: RuleMatch) : Chunk {
+        override val justifications: Justs = match.headJustifications().apply { add(id) }
+
+        override var entries: MutableList<Chunk.Entry> = mutableListOf()
+
+        override fun entriesLog(): List<Chunk.Entry> = entries
+
+        override fun toString() = "(id=$id, $justifications, ${match.rule().tag()}, $entries)"
+    }
+
+    class OccChunk(override val id: Int, val occ: Occurrence) : Chunk {
+
+        init { occ.justifications.add(id) }
+
+        override val justifications: Justs
+            get() = occ.justifications
+
+        override var entries: MutableList<Chunk.Entry> = mutableListOf()
+
+        override fun toString() = "(id=$id, $justifications, activation of $occ)"
     }
 
     open class Pos(val chunk: Chunk, val entriesCount: Int) {
@@ -176,6 +182,8 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             && other.entriesCount == entriesCount
 
         override fun hashCode(): Int = 31 * chunk.hashCode() + entriesCount
+
+        override fun toString(): String = "($chunk, $entriesCount)"
     }
 
 }

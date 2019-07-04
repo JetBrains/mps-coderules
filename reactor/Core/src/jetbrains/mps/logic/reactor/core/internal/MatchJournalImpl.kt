@@ -20,6 +20,7 @@ import jetbrains.mps.logic.reactor.core.Controller
 import jetbrains.mps.logic.reactor.core.Justs
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.justsOf
+import jetbrains.mps.logic.reactor.core.internal.MatchJournal.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchJournalView
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
@@ -31,25 +32,28 @@ import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 
+//typealias Chunk = MatchJournal.Chunk
+
 internal open class MatchJournalImpl(
     private val ispec: IncrementalProgramSpec,
     view: MatchJournalView? = null
 ) : MatchJournal {
 
     // invariant: never empty
-    private val hist: IteratorMutableList<ChunkImpl>
+    private val hist: IteratorMutableList<Chunk>
     private var nextChunkId: Int
 
     init {
         if (view == null) {
             nextChunkId = 0
-            val initChunk = ChunkImpl(InitRuleMatch, nextChunkId, justsOf(nextChunkId))
-            nextChunkId++
-            hist = IteratorMutableList(LinkedList<ChunkImpl>().apply { add(initChunk) })
+            val initChunk = MatchChunk(nextChunkId++, InitRuleMatch)
+            hist = IteratorMutableList(LinkedList<Chunk>().apply { add(initChunk) })
         } else {
             // assert that initial chunk is present
-            assert (view.chunks.first().match() is InitRuleMatch)
-            hist = IteratorMutableList(LinkedList(view.chunks as List<ChunkImpl>))
+            with (view.chunks.first()) {
+                assert(this is MatchChunk && match is InitRuleMatch)
+            }
+            hist = IteratorMutableList(LinkedList(view.chunks as List<Chunk>))
             nextChunkId = view.nextChunkId
         }
     }
@@ -57,37 +61,31 @@ internal open class MatchJournalImpl(
     constructor(view: MatchJournal.View? = null) : this(IncrementalProgramSpec.DefaultSpec, view)
 
     // pointer to current position in history where logging (chunk additions) and log erasing (chunk removals) happens
-    private var posPtr: MutableListIterator<ChunkImpl> = hist.listIterator()
+    private var posPtr: MutableListIterator<Chunk> = hist.listIterator()
     // invariant: always contains valid chunk
-    private var current: ChunkImpl = posPtr.next() // take the initial chunk, move posPtr
+    private var current: Chunk = posPtr.next() // take the initial chunk, move posPtr
 
 
-    override fun iterator(): MutableIterator<MatchJournal.Chunk> = hist.iterator()
+    override fun iterator(): MutableIterator<Chunk> = hist.iterator()
 
 
     override fun logMatch(match: RuleMatch) {
-        // Two cases when a new chunk is created:
-        //  either the set of justifications isn't empty
-        //  or we directly know that we deal with a principal rule.
-        val justs = match.headJustifications()
-        if (ispec.isPrincipal(match.rule()) || !justs.isEmpty) {
-
-            justs.add(nextChunkId)
-            val newChunk = ChunkImpl(match, nextChunkId, justs)
-            posPtr.add(newChunk)
-
-            ++nextChunkId
-            current = newChunk
+        if (ispec.isPrincipal(match.rule())) {
+            current = MatchChunk(nextChunkId++, match)
+            posPtr.add(current)
         }
-
-        // Log discards
+        // Log discarded occurrences
         (match as RuleMatchImpl).forEachReplaced { occ ->
-            current.entries.add(MatchJournal.Chunk.Entry(occ, true))
+            current.entries.add(Chunk.Entry(occ, true))
         }
     }
 
     override fun logActivation(occ: Occurrence) {
-        current.entries.add(MatchJournal.Chunk.Entry(occ))
+        if (ispec.isPrincipal(occ.constraint)) {
+            current = OccChunk(nextChunkId++, occ)
+            posPtr.add(current)
+        }
+        current.entries.add(Chunk.Entry(occ))
     }
 
 
@@ -138,7 +136,7 @@ internal open class MatchJournalImpl(
 
     override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
 
-    override fun index(): MatchJournal.Index = IndexImpl(ispec, hist)
+    override fun index(): MatchJournal.Index = IndexImpl(hist)
 
     private fun allOccurrences(): Sequence<Occurrence> {
         // the following loop doesn't handle this case of starting posPtr, when 'current' isn't valid (e.g. just right after resetPos())
@@ -168,44 +166,22 @@ internal open class MatchJournalImpl(
         override fun listIterator(index: Int): MutableListIterator<E>  = l.listIterator(index)
     }
 
-    private class ChunkImpl(match: RuleMatch, id: Int, justifications: Justs) : MatchJournal.Chunk(match, id, justifications) {
-
-        var entries: MutableList<Entry> = mutableListOf()
-
-        override fun entriesLog(): List<Entry> = entries
-    }
-
-    private class IndexImpl(ispec: IncrementalProgramSpec, chunks: Iterable<ChunkImpl>): MatchJournal.Index
+    private class IndexImpl(chunks: Iterable<Chunk>): MatchJournal.Index
     {
-        private val chunkOrder: Map<Int, Int>
-        // only for principal constraints
-        private val parentChunks: Map<Id<Occurrence>, MatchJournal.Chunk>
-
-        private val principalOccurrences: Map<Int, MatchJournal.Pos>
+        private val chunkOrder = HashMap<Int, Int>()
+        private val occChunks = HashMap<Id<Occurrence>, OccChunk>()
 
         init {
-            chunkOrder = HashMap<Int, Int>().apply {
-                chunks.forEachIndexed { index, chunk -> put(chunk.id(), index) }
-            }
+            chunks.forEachIndexed { index, chunk ->
+                chunkOrder[chunk.id] = index
 
-            val m = HashMap<Id<Occurrence>, MatchJournal.Chunk>()
-            val m2 = HashMap<Int, MatchJournal.Pos>()
-            chunks.forEach { chunk ->
-                // actually there should be only a single principal occurrence, 'find' is enough
-                chunk.entriesLog().forEachIndexed { index, e ->
-                   if (ispec.isPrincipal(e.occ.constraint()) && !e.discarded()) {
-                       m[Id(e.occ)] = chunk
-                       m2[chunk.id] = MatchJournal.Pos(chunk, index + 1)
-                   }
+                if (chunk is OccChunk) {
+                    occChunks[Id(chunk.occ)] = chunk
                 }
             }
-            parentChunks = m
-            principalOccurrences = m2
         }
 
-        override fun activatingChunkOf(occId: Id<Occurrence>) = parentChunks[occId]
-
-        override fun principalOccurrenceOf(chunk: MatchJournal.Chunk) = principalOccurrences[chunk.id]
+        override fun activatingChunkOf(occId: Id<Occurrence>) = occChunks[occId]
 
         // todo: throw for invalid positions?
         override fun compare(lhs: MatchJournal.Pos, rhs: MatchJournal.Pos): Int {
@@ -231,19 +207,19 @@ internal open class MatchJournalImpl(
         object EmptyRule : Rule() {
             override fun kind(): Kind = Kind.PROPAGATION
             override fun uniqueTag(): Any = tag().hashCode()
-            override fun tag(): String = "initialrule${"initial_rule".hashCode()}"
+            override fun tag(): String = "initialrule${"initialrule".hashCode()}"
             override fun headKept(): Iterable<Constraint> = emptyList()
             override fun headReplaced(): Iterable<Constraint> = emptyList()
             override fun guard(): Iterable<Predicate> = emptyList()
-            override fun bodyAlternation(): Iterable<Iterable<AndItem>> = emptyList() // fixme: maybe provide 'main' constraint prod?
+            override fun bodyAlternation(): Iterable<Iterable<AndItem>> = emptyList()
             override fun all(): Iterable<AndItem> = emptyList()
         }
     }
 }
 
-fun MatchJournal.justs() = this.currentPos().chunk.justifications()
+fun MatchJournal.justs() = this.currentPos().chunk.justifications
 
-private fun RuleMatch.headJustifications(): Justs {
+fun RuleMatch.headJustifications(): Justs {
     val res: Justs = justsOf()
     this.matchHeadKept().forEach { it.justifications().let { res.addAll(it) } }
     this.matchHeadReplaced().forEach { it.justifications().let { res.addAll(it) } }
