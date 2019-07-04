@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import jetbrains.mps.logic.reactor.core.ProcessingState
+import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import java.lang.IllegalArgumentException
 
 
@@ -32,7 +33,10 @@ interface StoreAwareJournal : MatchJournal, ProcessingState {
 
     // for tests
     companion object {
-        fun fromView(view: MatchJournal.View? = null): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(view))
+        fun fromView(
+            ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
+            view: MatchJournal.View? = null
+        ): StoreAwareJournal = StoreAwareJournalImpl(MatchJournalImpl(ispec, view))
     }
 }
 

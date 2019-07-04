@@ -31,6 +31,7 @@ typealias Justs = TIntSet
 fun emptyJusts() = TIntHashSet(1)
 fun justsOf(vararg elements: Int) = TIntHashSet(elements)
 fun justsFromCollection(collection: Collection<Int>) = TIntHashSet(collection)
+fun justsCopy(other: Justs) = TIntHashSet(other)
 
 
 data class OccurrenceObserver(val occurrence: Occurrence, val controller: Controller) : LogicalObserver {

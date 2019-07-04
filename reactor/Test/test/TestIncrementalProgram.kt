@@ -7,7 +7,6 @@ import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
-import jetbrains.mps.logic.reactor.program.Rule as CRule
 import org.junit.*
 import org.junit.Assert.assertNotEquals
 import program.MockConstraint
@@ -46,11 +45,6 @@ class TestIncrementalProgram {
         fun teardown() {
             ReactorLifecycle.deinit();
         }
-    }
-
-    private class MockIncrProgSpec(val principalRuleTags: Set<Any>, val principalCtrSyms: Set<ConstraintSymbol>) : IncrementalProgramSpec {
-        override fun isPrincipal(ctr: Constraint): Boolean = principalCtrSyms.contains(ctr.symbol())
-        override fun isPrincipal(rule: CRule): Boolean = principalRuleTags.contains(rule.uniqueTag())
     }
 
     private fun Builder.launch(name: String, incrSpec: IncrementalProgramSpec, resultHandler: (EvaluationResult) -> Unit)
@@ -230,7 +224,7 @@ class TestIncrementalProgram {
         ).launch("addRule", progSpec) { result ->
 
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"))
-            result.countChunks() shouldBe 2
+            result.countChunks() shouldBe 3
             result.lastChunkSymbols() shouldBe listOf(sym0("foo"))
 
         }.also { (builder, evalRes) ->
@@ -246,7 +240,7 @@ class TestIncrementalProgram {
             ).relaunch("atStart", progSpec, evalRes.token()) { result ->
 
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("main"), sym0("bar"))
-                result.countChunks() shouldBe 3
+                result.countChunks() shouldBe 3+1
                 result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
             }
         }
@@ -635,7 +629,7 @@ class TestIncrementalProgram {
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"), sym0("bar"), sym0("marker"))
                 result.lastChunkSymbols() shouldBe listOf(sym0("marker"))
-                result.countChunks() shouldBe (2 + nPrincipalMatches) // +[.bar, foobar]
+                result.countChunks() shouldBe (2 + 1 + nPrincipalMatches) // +[.bar, foobar] +activation of bar
             }
         }
     }
@@ -859,7 +853,7 @@ class TestIncrementalProgram {
 
                     result.storeView().constraintSymbols() shouldBe setOf(sym0("lax"))
                     result.lastChunkSymbols() shouldBe listOf(sym0("lax"))
-                    result.countChunks() shouldBe (nPrincipalMatches - 2)
+                    result.countChunks() shouldBe (nPrincipalMatches - 3)
                 }
         }
     }
@@ -910,13 +904,12 @@ class TestIncrementalProgram {
         }.also { (builder, evalRes) ->
             val nPrincipalMatches = evalRes.countChunks()
 
-            // "barbaz.qux" rule match is removed as a dependency of "foo.bar" match
             builder.removeRules(listOf("foo.bar"))
                 .relaunch("removed", progSpec, evalRes.token()) { result ->
 
                     result.storeView().constraintSymbols() shouldBe setOf(sym0("lax"))
                     result.lastChunkSymbols() shouldBe listOf(sym0("lax"))
-                    result.countChunks() shouldBe (nPrincipalMatches - 1 + 2)
+                    result.countChunks() shouldBe (nPrincipalMatches - 1 + 3)
                 }
         }
     }
@@ -1026,7 +1019,7 @@ class TestIncrementalProgram {
                     ))
             ).relaunch("substituted", progSpec, evalRes.token()) { result ->
 
-                result.countChunks() shouldBe (nPrincipalMatches - 1)
+                result.countChunks() shouldBe (nPrincipalMatches - 3 + 1)
                 result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
             }
         }
@@ -1097,7 +1090,7 @@ class TestIncrementalProgram {
 
 //                println(result.token().journalView.chunks)
 
-                result.countChunks() shouldBe (nPrincipalMatches)
+                result.countChunks() shouldBe (nPrincipalMatches - 1)
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"))
                 result.lastChunkSymbols() shouldBe listOf(sym0("bar"))
             }

@@ -161,7 +161,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     }
 
     class OccChunk(override val id: Int, val occ: Occurrence) : Chunk {
-
         init { occ.justifications.add(id) }
 
         override val justifications: Justs

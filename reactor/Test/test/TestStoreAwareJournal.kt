@@ -1,6 +1,9 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.*
+import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
+import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
+import jetbrains.mps.logic.reactor.program.Rule
 import org.junit.Test
 import org.junit.Assert.*
 import org.junit.Ignore
@@ -24,8 +27,16 @@ import org.junit.Ignore
 
 class TestStoreAwareJournal {
 
-    private class JournalDispatcherHelper(dispatcher: Dispatcher, val hist: StoreAwareJournal = StoreAwareJournal.fromView())
-    {
+    private object LegacyMockIncrProgSpec : IncrementalProgramSpec {
+        override fun isPrincipal(ctr: Constraint): Boolean = ctr.isPrincipal
+        override fun isPrincipal(rule: Rule): Boolean = rule.all().any { it is Constraint && it.isPrincipal }
+    }
+
+    private class JournalDispatcherHelper(
+        dispatcher: Dispatcher,
+        ispec: IncrementalProgramSpec = LegacyMockIncrProgSpec,
+        val hist: StoreAwareJournal = StoreAwareJournal.fromView(ispec)
+    ) {
         var d: Dispatcher.DispatchingFront = dispatcher.front()
 
         fun logExpand(occ: Occurrence) {
@@ -37,7 +48,7 @@ class TestStoreAwareJournal {
 
         // log and expand occurrence while tracking its justifications
         fun logExpandJustified(id: String, vararg args: Any) =
-            logExpand(justifiedOccurrence(id, hist.justs(), * args))
+            logExpand(justifiedOccurrence(id, justsCopy(hist.justs()), * args))
     }
 
     @Test
@@ -76,7 +87,7 @@ class TestStoreAwareJournal {
                 // log first 'foo' match
 
                 hist.logMatch(fooMatches.first())
-                hist.justs() shouldBe justsOf(1)
+                hist.justs() shouldBe justsOf(1,2)
 
                 logExpandJustified("bar")
                 d.matches().count() shouldBe 0
@@ -84,13 +95,13 @@ class TestStoreAwareJournal {
                 // log second 'foo' match
 
                 hist.logMatch(fooMatches.elementAt(1))
-                hist.justs() shouldBe justsOf(1,2)
+                hist.justs() shouldBe justsOf(1,4)
 
                 logExpandJustified("qux")
                 d.matches().count() shouldBe 1
 
                 logFirstMatch()
-                hist.justs() shouldBe justsOf(1,2,3)
+                hist.justs() shouldBe justsOf(1,2,3,4,5,6) // 3 & 5 are ids of OccChunks
             }
         }
     }
@@ -130,6 +141,8 @@ class TestStoreAwareJournal {
 
                 logExpand(justifiedOccurrence("foo", setOf(1)))
 
+                val fooPos = hist.currentPos()
+
                 logFirstMatch()
                 logExpandJustified("bar")
 
@@ -146,7 +159,7 @@ class TestStoreAwareJournal {
 
                     storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
                     val nchunks = view().chunks.size
-                    nchunks shouldBe 4
+                    nchunks shouldBe 4 * 2 // 4 rules, each activates 1 principal occurrence
 
                     // try replay the last chunk
                     replay(mockController, lastPos)
@@ -164,8 +177,12 @@ class TestStoreAwareJournal {
 
                     replay(mockController, initPos)
 
-                    // storeView replays only the initial chunk, journal remains the same
+                    storeView().constraintSymbols() shouldBe setOf<ConstraintSymbol>()
+
+                    replay(mockController, fooPos)
+
                     storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+                    // although storeView() results change, journal remains the same
                     view().chunks.size shouldBe nchunks
                 }
             }
@@ -337,7 +354,6 @@ class TestStoreAwareJournal {
                 hist.testPush()
                 // last production from rule2
                 logExpand(quxOcc)
-//                logExpandJustified("qux")
 
 
                 // rule4
@@ -352,12 +368,9 @@ class TestStoreAwareJournal {
                 val oldStore = hist.storeView().allOccurrences()
                 val savedPos = hist.currentPos()
 
-//            println("chunks on save: ${oldState.chunks}")
                 hist.testPush()
                 logExpand(occurrence("last"))
 
-//            println("chunks on save: ${oldState.chunks}")
-//            println("chunks on exec: ${hist.view().chunks}")
                 oldState.chunks.size shouldBe 3
                 assertNotEquals(oldState.chunks, hist.view().chunks)
                 assertNotEquals(oldStore, hist.storeView().allOccurrences())
@@ -373,6 +386,7 @@ class TestStoreAwareJournal {
     }
 
 
+    @Ignore("manipulating journal without controller is too fragile. not a good test.")
     @Test
     fun testRmAddInMiddle() {
         val mockController = MockController()
@@ -452,9 +466,12 @@ class TestStoreAwareJournal {
                     //  continue from the second chunk (match of rule1)
                     val rmIt = iterator()
                     rmIt.next() // skip initial chunk
-                    val continueFrom = rmIt.next().toPos()
-                    rmIt.next()
-                    rmIt.remove()
+                    rmIt.next() // 'foo' activation
+                    val continueFrom = rmIt.next().toPos() // 'rule1' activation
+                    rmIt.next() // 'bar1' activation
+                    rmIt.next() // 'bazz' activation
+                    rmIt.next() // 'rule2a' match
+                    rmIt.remove() // rm rule2a match
 
                     // store is not longer valid after removing chunks from history, so reset it
                     resetStore()
@@ -462,14 +479,14 @@ class TestStoreAwareJournal {
                     replay(mockController, continueFrom)
 
                     // according to the history 'qux' wasn't activated at this point & 'bar1' wasn't discarded
-                    storeView().constraintSymbols() shouldBe setOf(sym0("bazz"), sym0("bar1"))
+                    storeView().constraintSymbols() shouldBe setOf<ConstraintSymbol>()
                 }
 
                 // add another instance of bar (i.e. bar2) and trigger another rule, rule2b
                 //  (bar2 plays a role of the reactivation of original bar)
                 logExpandJustified("bar2")
                 // 'bazz' is already expanded from the first execution
-                hist.justs() shouldBe justsOf(1) // dependency is only the first chunk
+                hist.justs() shouldBe justsOf(1,2,7) // dependency is only the first chunk, the first activation + new id
 
                 // we have only a single _new_ match; rule3 has been matched already and remains in the history, in future
                 d.matches().count() shouldBe 1
