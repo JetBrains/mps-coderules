@@ -16,17 +16,21 @@
 
 package jetbrains.mps.logic.reactor.program;
 
-public interface IncrementalProgramSpec {
+import org.jetbrains.annotations.NotNull;
+import java.util.ArrayList;
 
-    boolean isPrincipal(Constraint ctr);
-    boolean isPrincipal(Rule rule);
 
-    class NonIncrSpec implements IncrementalProgramSpec {
+public interface DependentRulesSpec {
+    @NotNull
+    Iterable<Object> getDependentRules(Rule rule);
+
+    class EmptySpec implements DependentRulesSpec {
         @Override
-        public boolean isPrincipal(Constraint ctr) { return false; }
-        @Override
-        public boolean isPrincipal(Rule rule) { return false; }
+        @NotNull
+        public Iterable<Object> getDependentRules(Rule rule) {
+            return new ArrayList<Object>();
+        }
     }
 
-    NonIncrSpec DefaultSpec = new NonIncrSpec();
+    EmptySpec EmptySpec = new EmptySpec();
 }

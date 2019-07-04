@@ -16,22 +16,41 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import jetbrains.mps.logic.reactor.program.DependentRulesSpec
 import jetbrains.mps.logic.reactor.program.Rule
 
-data class RulesDiff(val added: Iterable<Rule>, val removed: Set<Any>) {
+
+data class RulesDiff(
+    val added: Iterable<Rule>,
+    val removed: Set<Any>,
+    val removedDependent: Set<Any>
+) {
     companion object {
         @JvmStatic
-        fun emptyDiff() = RulesDiff(emptyList(), emptySet())
+        fun emptyDiff() = RulesDiff(emptyList(), emptySet(), emptySet())
 
         @JvmStatic
-        fun findDiff(old: Iterable<Any>, new: Iterable<Rule>): RulesDiff {
+        fun findDiff(old: Iterable<Any>, new: Iterable<Rule>, ruleDeps: DependentRulesSpec): RulesDiff {
             val oldSet = old.toHashSet()
             val newSet = new.toHashSet()
 
             val added = new.filter { !oldSet.contains(it.uniqueTag()) }
             val removed = oldSet.minus(newSet.map { it.uniqueTag() })
 
-            return RulesDiff(added, removed)
+            val removedDeps = HashSet<Any>()
+            for (rule in new) {
+                for (depRule in ruleDeps.getDependentRules(rule)) {
+                    if (!removed.contains(depRule)) {
+                        removedDeps.add(depRule)
+                    }
+                }
+            }
+
+            return RulesDiff(added, removed, removedDeps)
         }
+
+        @JvmStatic
+        fun findDiff(old: Iterable<Any>, new: Iterable<Rule>): RulesDiff =
+            findDiff(old, new, DependentRulesSpec.EmptySpec)
     }
 }
