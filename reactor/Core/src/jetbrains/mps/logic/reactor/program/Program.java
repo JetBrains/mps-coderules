@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.program;
 
+import java.util.ArrayList;
 
 /**
  * A collection of handlers that constitute a constraint rules program.
@@ -29,4 +30,13 @@ public abstract class Program {
 
     public abstract Iterable<RulesList> handlers();
 
+    public Iterable<Rule> rules() {
+        ArrayList<Rule> allRules = new ArrayList<Rule>();
+        for (RulesList rulesList : handlers()) {
+            for (Rule rule : rulesList.rules()) {
+                allRules.add(rule);
+            }
+        }
+        return allRules;
+    };
 }

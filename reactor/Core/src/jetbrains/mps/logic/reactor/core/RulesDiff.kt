@@ -34,11 +34,11 @@ data class RulesDiff(
             val oldSet = old.toHashSet()
             val newSet = new.toHashSet()
 
-            val added = new.filter { !oldSet.contains(it.uniqueTag()) }
-            val removed = oldSet.minus(newSet.map { it.uniqueTag() })
+            val added: List<Rule> = new.filter { !oldSet.contains(it.uniqueTag()) }
+            val removed: Set<Any> = oldSet.minus(newSet.map { it.uniqueTag() })
 
             val removedDeps = HashSet<Any>()
-            for (rule in new) {
+            for (rule in added) {
                 for (depRule in ruleDeps.getDependentRules(rule)) {
                     if (!removed.contains(depRule)) {
                         removedDeps.add(depRule)

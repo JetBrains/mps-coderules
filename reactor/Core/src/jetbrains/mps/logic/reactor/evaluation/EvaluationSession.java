@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 
+import jetbrains.mps.logic.reactor.core.RulesDiff;
 import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec;
 import jetbrains.mps.logic.reactor.program.Program;
 
@@ -96,6 +97,8 @@ public abstract class EvaluationSession {
         public abstract Config withStoreView(StoreView storeView);
 
         public Config withSessionToken(SessionToken token) { return this; }
+
+        public Config withRulesDiff(RulesDiff rulesDiff) { return this; }
 
         public Config withIncrSpec(IncrementalProgramSpec ispec) { return this; }
 

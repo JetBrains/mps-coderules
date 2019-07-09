@@ -42,7 +42,11 @@ internal class EvaluationSessionImpl private constructor (
 
     override fun controller() = controller
 
-    private fun incrLaunch(main: Constraint, profiler: Profiler?, token: SessionToken?, ispec: IncrementalProgramSpec) : FeedbackStatus {
+    private fun launch(
+        main: Constraint, profiler: Profiler?,
+        token: SessionToken?, rulesDiff: RulesDiff, ispec: IncrementalProgramSpec
+    ) : FeedbackStatus {
+
         val ruleIndex = RuleIndex(program().handlers())
         val dispatcher = Dispatcher(ruleIndex)
 
@@ -64,7 +68,6 @@ internal class EvaluationSessionImpl private constructor (
                 ruleIndex, ispec, trace, profiler
             )
 
-            val rulesDiff = RulesDiff.findDiff(tkn.ruleTags, ruleIndex)
             this.controller = ControllerImpl(supervisor, state, ispec, trace, profiler)
             return controller.incrLaunch(main, rulesDiff)
         }
@@ -80,6 +83,8 @@ internal class EvaluationSessionImpl private constructor (
 
         var token: SessionToken? = null
 
+        var rulesDiff: RulesDiff = RulesDiff.emptyDiff()
+
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
             this.evaluationTrace = computingTracer
             return this
@@ -93,6 +98,12 @@ internal class EvaluationSessionImpl private constructor (
             this.token = token
             return this
         }
+
+        override fun withRulesDiff(rulesDiff: RulesDiff): EvaluationSession.Config {
+            this.rulesDiff = rulesDiff
+            return this
+        }
+
         override fun withIncrSpec(ispec: IncrementalProgramSpec): EvaluationSession.Config {
             this.ispec = ispec
             return this
@@ -117,7 +128,7 @@ internal class EvaluationSessionImpl private constructor (
             var failure: Feedback? = null
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                val status = session.incrLaunch(main, profiler, token, ispec)
+                val status = session.launch(main, profiler, token, rulesDiff, ispec)
                 if (status is FAILED) {
                     failure = status.failure
                 }

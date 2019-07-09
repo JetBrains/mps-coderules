@@ -71,12 +71,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
 
-
     fun invalidateDependentRules(ruleIds: Set<Any>) {
         val it = this.iterator()
         while (it.hasNext()) {
             val chunk = it.next()
             if (chunk is MatchJournal.MatchChunk && ruleIds.contains(chunk.match.rule().uniqueTag())) {
+                trace.invalidate(chunk.match)
                 it.remove()
             }
         }

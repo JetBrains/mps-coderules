@@ -1,6 +1,7 @@
 import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
+import jetbrains.mps.logic.reactor.core.RulesDiff
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.evaluation.EvaluationResult
@@ -66,6 +67,7 @@ class TestIncrementalProgram {
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .withIncrSpec(incrSpec)
             .withSessionToken(sessionToken)
+            .withRulesDiff(RulesDiff.findDiff(sessionToken.ruleTags, this.rules))
             .start(MockSupervisor())
         result.feedback()?.let { if (it.isFailure) throw it.failureCause() }
         resultHandler(result)
