@@ -54,22 +54,23 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
     private val journalIndex: MatchJournal.Index = journal.index()
 
-    // It is a position in Journal from previous session,
-    //  from which incremental execution continues.
-    // Needed for pos comparison in postponeFutureMatches.
-    private lateinit var lastIncrementalRootPos: MatchJournal.Pos
+    private val execQueue: ExecutionQueue = ExecutionQueue(journalIndex, ruleOrdering)
 
-    private val postponedMatches: MutableMap<Id<Occurrence>, List<RuleMatchEx>> = HashMap()
-
-    private val execQueue: Queue<ExecPos> =
-        PriorityQueue<ExecPos>(1 + this.count() / 2) { // just an estimate
-            lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos)
-        }
-
-    private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
 
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
+
+    fun reactivate(controller: Controller, activeOcc: Occurrence) {
+        // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
+        if (activeOcc.stored) {
+            // Forget that occ was seen.
+            // Incremental reactivation isn't like the usual reactivation,
+            //  it should proceed more like usual activation.
+            this.dispatchingFront = dispatchingFront.forgetSeen(activeOcc)
+            trace.reactivateIncremental(activeOcc)
+            controller.reactivate(activeOcc)
+        }
+    }
 
     fun invalidateDependentRules(ruleIds: Set<Any>) {
         val it = this.iterator()
@@ -129,18 +130,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     // We removed the match, so need to reactivate all still valid occurrences from the head
                     //  by definition of Chunk and principal rule, all occurrences from the head are principal
                     val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
-                    val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
-                        occ.justifications().intersects(justificationRoots)
+                    val validOccs = matchedOccs.filter { occ ->
+                        !occ.justifications().intersects(justificationRoots)
                     }
                     assert(matchedOccs.all { it.isPrincipal() })
 
-                    // todo: do need to reactivate only the main, matching~activating match?
-                    //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
-                    execQueue.addAll(validOccs.mapNotNull { occ ->
-                        journalIndex.activatingChunkOf(Id(occ))?.let { chunk ->
-                            ExecPos(chunk.toPos(), occ)
-                        }
-                    })
+                    execQueue.offerAll(validOccs)
                 }
             }
 
@@ -196,7 +191,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     else if (!it.hasNext()) chunk.toPos()
                     else continue
 
-                execQueue.offer(ExecPos(pos, occChunk.occ))
+                execQueue.offer(pos, occChunk.occ)
                 trace.potentialMatch(occChunk.occ, candRule)
                 // Drop the candidate if appropriate activation place is found.
                 aIt.remove()
@@ -208,38 +203,8 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         }
     }
 
-    fun launchQueue(controller: Controller): FeedbackStatus.NORMAL {
-        if (execQueue.isNotEmpty()) {
-            resetStore()
-
-            var prevPos: MatchJournal.Pos? = null
-            do {
-                val execPos = execQueue.poll()
-
-                // Handles the case when several matches are added to the same position.
-                //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
-                if (execPos.pos != prevPos) {
-                    replay(controller, execPos.pos)
-                    lastIncrementalRootPos = execPos.pos
-                }
-                prevPos = execPos.pos
-
-                // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
-                if (execPos.activeOcc.stored) {
-                    // Forget that occ was seen.
-                    // Incremental reactivation isn't like the usual reactivation,
-                    //  it should proceed more like usual activation.
-                    this.dispatchingFront = dispatchingFront.forgetSeen(execPos.activeOcc)
-                    trace.reactivateIncremental(execPos.activeOcc)
-                    controller.reactivate(execPos.activeOcc)
-                }
-            } while (execQueue.isNotEmpty())
-        }
-        // Also replay to the end after queue is fully executed
-        replay(controller, this.last().toPos())
-        // fixme: get FeedbackStatus out of reactivate()
-        return FeedbackStatus.NORMAL()
-    }
+    fun launchQueue(controller: Controller): FeedbackStatus.NORMAL =
+        execQueue.run(controller, this)
 
     fun snapshot(): SessionToken =
         SessionTokenImpl(view(), ruleOrdering.ruleTags, dispatchingFront.state())
@@ -274,9 +239,10 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 if (isFront() || !active.isPrincipal()) {
                     matches
                 } else {
-                    postponeFutureMatches(matches)
+                    assert( matches.all { ispec.isPrincipal(it.rule()) } )
+                    execQueue.postponeFutureMatches(matches)
                 }
-            val currentMatches = withPostponedMatches(active, newCurrentMatches)
+            val currentMatches = execQueue.withPostponedMatches(active, newCurrentMatches)
 
             val outStatus = currentMatches.fold(inStatus) { status, match ->
                 // TODO: paranoid check. should be isAlive() instead
@@ -295,42 +261,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
             outStatus
         }
     }
-
-    private fun withPostponedMatches(active: Occurrence, matches: List<RuleMatchEx>): List<RuleMatchEx> =
-        postponedMatches.remove(Id(active))?.let { postponed ->
-            // Sort matches according to rule priorities
-            (matches + postponed).sortedBy { ruleOrdering.orderOf(it.rule()) }
-        } ?: matches
-
-    /**
-     * Determines, filters out and enqueues (to execution queue) future matches.
-     * Returns only current matches.
-     */
-    private fun postponeFutureMatches(matches: List<RuleMatchEx>): List<RuleMatchEx> {
-        assert(
-            matches.all { ispec.isPrincipal(it.rule()) },
-            { "non-principal ctrs in head of principal rule: ${ matches.filter { !ispec.isPrincipal(it.rule()) } }" }
-        )
-
-        val currentMatches = mutableListOf<RuleMatchEx>()
-        for (m in matches) {
-
-            // Returns null for matches with occurrences only from this session
-            //  because journalIndex indexes only previous session.
-            val pos = journalIndex.activationPos(m)
-
-            // if it is a future match
-            if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
-                val idOcc = Id(pos.occ)
-                postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
-                execQueue.offer(ExecPos(pos, pos.occ))
-            } else {
-                currentMatches.add(m)
-            }
-        }
-        return currentMatches
-    }
-
 
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
         if (operational) action(this) else this

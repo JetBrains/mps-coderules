@@ -108,6 +108,11 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             match.signature().mapNotNull { occSig ->
                 occSig?.let { activatingChunkOf(it)?.toPos() }
             }.maxWith(this) // compare positions: find latest
+
+        /**
+         * Length of the indexed [MatchJournal]
+         */
+        val size: Int
     }
 
     /**

@@ -181,6 +181,8 @@ internal open class MatchJournalImpl(
             }
         }
 
+        override val size: Int = chunks.count()
+
         override fun activatingChunkOf(occId: Id<Occurrence>) = occChunks[occId]
 
         // todo: throw for invalid positions?
