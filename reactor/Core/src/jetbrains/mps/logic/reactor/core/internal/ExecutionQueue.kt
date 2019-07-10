@@ -41,6 +41,7 @@ internal class ExecutionQueue(
             lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos)
         }
 
+    private val seen: MutableSet<ExecPos> = HashSet()
 
     fun run(controller: Controller, state: ProcessingStateImpl): FeedbackStatus.NORMAL {
         if (execQueue.isNotEmpty()) {
@@ -103,16 +104,20 @@ internal class ExecutionQueue(
     fun offerAll(occs: Iterable<Occurrence>): Boolean =
         execQueue.addAll(occs.mapNotNull { occ ->
             journalIndex.activatingChunkOf(Id(occ))?.let { chunk ->
-                ExecPos(chunk.toPos(), occ)
+                ExecPos(chunk.toPos(), occ).let {
+                    if (seen.add(it)) it else null
+                }
             }
         })
 
     fun offer(posInJournal: MatchJournal.Pos, activeOcc: Occurrence): Boolean =
-        execQueue.offer(ExecPos(posInJournal, activeOcc))
+        ExecPos(posInJournal, activeOcc).let {
+            if (seen.add(it)) execQueue.offer(it) else false
+        }
 
     // special case when position in trace corresponds to position of activated occurrence
     fun offer(posInJournal: MatchJournal.Pos): Boolean =
-        execQueue.offer(ExecPos(posInJournal, posInJournal.occ))
+        offer(posInJournal, posInJournal.occ)
 
     fun isEmpty(): Boolean = execQueue.isEmpty()
 
