@@ -100,22 +100,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
             if (chunk is MatchJournal.MatchChunk && ruleIds.contains(chunk.match.rule().uniqueTag())) {
                 justificationRoots.add(chunk.id)
-
-                // We removed the match, so need to reactivate all still valid occurrences from the head
-                //  by definition of Chunk and principal rule, all occurrences from the head are principal
-                val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
-                val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
-                    occ.justifications().intersects(justificationRoots)
-                }
-                assert(matchedOccs.all { it.isPrincipal() })
-
-                // todo: do need to reactivate only the main, matching~activating match?
-                //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
-                execQueue.addAll(validOccs.mapNotNull { occ ->
-                    journalIndex.activatingChunkOf(Id(occ))?.let { chunk ->
-                        ExecPos(chunk.toPos(), occ)
-                    }
-                })
             }
 
             // Invalidating dependent chunks
@@ -141,6 +125,22 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     chunk.match.matchHeadReplaced().forEach {
                         dispatchingFront = dispatchingFront.forget(it as Occurrence)
                     }
+
+                    // We removed the match, so need to reactivate all still valid occurrences from the head
+                    //  by definition of Chunk and principal rule, all occurrences from the head are principal
+                    val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
+                    val (invalidatedOccs, validOccs) = matchedOccs.partition { occ ->
+                        occ.justifications().intersects(justificationRoots)
+                    }
+                    assert(matchedOccs.all { it.isPrincipal() })
+
+                    // todo: do need to reactivate only the main, matching~activating match?
+                    //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
+                    execQueue.addAll(validOccs.mapNotNull { occ ->
+                        journalIndex.activatingChunkOf(Id(occ))?.let { chunk ->
+                            ExecPos(chunk.toPos(), occ)
+                        }
+                    })
                 }
             }
 
