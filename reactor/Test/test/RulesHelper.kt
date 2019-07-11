@@ -188,7 +188,7 @@ class MockController : Controller {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun reactivate(occ: Occurrence) {
+    override fun reactivate(occ: Occurrence): FeedbackStatus {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

@@ -31,7 +31,7 @@ interface Controller {
 
     fun tell(invocation: PredicateInvocation)
 
-    fun reactivate(occ: Occurrence)
+    fun reactivate(occ: Occurrence): FeedbackStatus
 
     fun state(): ProcessingState
 

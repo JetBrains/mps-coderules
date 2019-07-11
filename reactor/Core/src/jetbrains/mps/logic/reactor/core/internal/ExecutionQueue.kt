@@ -43,7 +43,8 @@ internal class ExecutionQueue(
 
     private val seen: MutableSet<ExecPos> = HashSet()
 
-    fun run(controller: Controller, state: ProcessingStateImpl): FeedbackStatus.NORMAL {
+    fun run(controller: Controller, state: ProcessingStateImpl): FeedbackStatus {
+        var status: FeedbackStatus = FeedbackStatus.NORMAL()
         if (execQueue.isNotEmpty()) {
             state.resetStore()
 
@@ -59,13 +60,17 @@ internal class ExecutionQueue(
                 }
                 prevPos = execPos.pos
 
-                state.reactivate(controller, execPos.activeOcc)
+                // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
+                if (execPos.activeOcc.stored) {
+                    status = state.reactivate(controller, execPos.activeOcc)
+                    // Leave journal state as it was at the point of failure
+                    if (!status.operational) return status
+                }
             } while (execQueue.isNotEmpty())
         }
         // Also replay to the end after queue is fully executed
         state.replay(controller, state.last().toPos())
-        // fixme: get FeedbackStatus out of reactivate()
-        return FeedbackStatus.NORMAL()
+        return status
     }
 
     fun withPostponedMatches(active: Occurrence, matches: List<RuleMatchEx>): List<RuleMatchEx> =

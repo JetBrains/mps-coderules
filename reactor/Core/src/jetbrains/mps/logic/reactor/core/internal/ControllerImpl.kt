@@ -88,14 +88,8 @@ internal class ControllerImpl (
         solver.tell(invocation)
     }
 
-    override fun reactivate(occ: Occurrence) {
-        // FIXME propagate the status further up the call stack
-
-        val status = state.processActivated(this, occ, NORMAL())
-        if (status is FAILED) {
-            throw status.failure.failureCause()
-        }
-    }
+    override fun reactivate(occ: Occurrence): FeedbackStatus =
+        state.processActivated(this, occ, NORMAL())
 
     override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
         inStatus.then { checkMatchPreconditions(match, it) }

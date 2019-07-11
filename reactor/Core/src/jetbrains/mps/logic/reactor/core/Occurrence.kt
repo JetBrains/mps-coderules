@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.core
 
 import gnu.trove.set.TIntSet
 import gnu.trove.set.hash.TIntHashSet
+import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -35,15 +36,22 @@ fun justsCopy(other: Justs) = TIntHashSet(other)
 
 
 data class OccurrenceObserver(val occurrence: Occurrence, val controller: Controller) : LogicalObserver {
-    override fun valueUpdated(logical: Logical<*>) {
+
+    override fun valueUpdated(logical: Logical<*>) = doReactivate()
+
+    override fun parentUpdated(logical: Logical<*>) = doReactivate()
+
+    private fun doReactivate() {
         if (occurrence.alive) {
-            controller.reactivate(occurrence)
+            val status = controller.reactivate(occurrence)
+            // FIXME propagate the status further up the call stack
+            handleFeedbackStatus(status)
         }
     }
 
-    override fun parentUpdated(logical: Logical<*>) {
-        if (occurrence.alive) {
-            controller.reactivate(occurrence)
+    private fun handleFeedbackStatus(status: FeedbackStatus) {
+        if (status is FeedbackStatus.FAILED) {
+            throw status.failure.failureCause()
         }
     }
 }

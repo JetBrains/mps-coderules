@@ -22,10 +22,8 @@ import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
-import java.util.*
 
 
 /**
@@ -60,16 +58,15 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
 
-    fun reactivate(controller: Controller, activeOcc: Occurrence) {
-        // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
-        if (activeOcc.stored) {
-            // Forget that occ was seen.
-            // Incremental reactivation isn't like the usual reactivation,
-            //  it should proceed more like usual activation.
-            this.dispatchingFront = dispatchingFront.forgetSeen(activeOcc)
-            trace.reactivateIncremental(activeOcc)
-            controller.reactivate(activeOcc)
-        }
+    fun reactivate(controller: Controller, activeOcc: Occurrence): FeedbackStatus {
+        assert(activeOcc.stored)
+
+        // Forget that occ was seen. Otherwise it will be
+        // processed as with reactivation through observers.
+        // Incremental reactivation should proceed more like usual activation.
+        this.dispatchingFront = dispatchingFront.forgetSeen(activeOcc)
+        trace.reactivateIncremental(activeOcc)
+        return controller.reactivate(activeOcc)
     }
 
     fun invalidateDependentRules(ruleIds: Set<Any>) {
@@ -203,7 +200,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         }
     }
 
-    fun launchQueue(controller: Controller): FeedbackStatus.NORMAL =
+    fun launchQueue(controller: Controller): FeedbackStatus =
         execQueue.run(controller, this)
 
     fun snapshot(): SessionToken =
