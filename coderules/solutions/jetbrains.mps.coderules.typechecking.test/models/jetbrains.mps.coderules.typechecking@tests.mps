@@ -1149,22 +1149,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="6tPOoeTbYY_" role="3cqZAp">
-                    <node concept="3cpWsn" id="6tPOoeTbYYA" role="3cpWs9">
-                      <property role="TrG5h" value="program" />
-                      <node concept="3uibUv" id="6tPOoeTbYYx" role="1tU5fm">
-                        <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
-                      </node>
-                      <node concept="2OqwBi" id="6tPOoeTbYYB" role="33vP2m">
-                        <node concept="37vLTw" id="6tPOoeTbYYC" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
-                        </node>
-                        <node concept="liA8E" id="6tPOoeTbYYD" role="2OqNvi">
-                          <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbF" id="1CcQBrQrYPT" role="3cqZAp">
                     <node concept="37vLTI" id="1CcQBrQrYPV" role="3clFbG">
                       <node concept="37vLTw" id="1CcQBrQrYPZ" role="37vLTJ">
@@ -1185,8 +1169,8 @@
                               <node concept="Xl_RD" id="6tPOoeTc4db" role="37wK5m">
                                 <property role="Xl_RC" value=".initial" />
                               </node>
-                              <node concept="37vLTw" id="6tPOoeTc7DG" role="37wK5m">
-                                <ref role="3cqZAo" node="6tPOoeTbYYA" resolve="program" />
+                              <node concept="37vLTw" id="7eQMSyzaBa7" role="37wK5m">
+                                <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
                               </node>
                               <node concept="10M0yZ" id="4$YN6QuoGjt" role="37wK5m">
                                 <ref role="3cqZAo" to="hano:24Vro6cS5rK" resolve="NULL" />

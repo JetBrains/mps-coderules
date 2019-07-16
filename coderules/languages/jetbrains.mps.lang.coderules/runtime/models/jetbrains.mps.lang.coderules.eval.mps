@@ -36,6 +36,7 @@
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="ksgm" ref="r:6285678b-007f-4527-bcf5-6fd38ba8c969(jetbrains.mps.lang.coderules.program)" />
     <import index="xnrr" ref="r:4fd33103-fc30-42f4-a8cf-d1e858f21988(jetbrains.mps.lang.coderules.program.analysis)" />
+    <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -675,9 +676,9 @@
         <node concept="17QB3L" id="7WKNeR9G2Fq" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="7lt0LtQtD2v" role="3clF46">
-        <property role="TrG5h" value="program" />
-        <node concept="3uibUv" id="7lt0LtQtEFj" role="1tU5fm">
-          <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
+        <property role="TrG5h" value="programProducer" />
+        <node concept="3uibUv" id="7eQMSyz9Ip6" role="1tU5fm">
+          <ref role="3uigEE" node="3GlpCDSxTG7" resolve="ProgramProducer" />
         </node>
       </node>
       <node concept="37vLTG" id="24Vro6cQKgF" role="3clF46">
@@ -695,6 +696,22 @@
               <node concept="17QB3L" id="3GlpCDSBZnQ" role="3rvSg0" />
             </node>
             <node concept="10Nm6u" id="4F3SXIF6e39" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7eQMSyz9QyK" role="3cqZAp">
+          <node concept="3cpWsn" id="7eQMSyz9QyL" role="3cpWs9">
+            <property role="TrG5h" value="program" />
+            <node concept="3uibUv" id="7eQMSyz9QyM" role="1tU5fm">
+              <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
+            </node>
+            <node concept="2OqwBi" id="7eQMSyz9TvU" role="33vP2m">
+              <node concept="37vLTw" id="7eQMSyz9TjP" role="2Oq$k0">
+                <ref role="3cqZAo" node="7lt0LtQtD2v" resolve="programProducer" />
+              </node>
+              <node concept="liA8E" id="7eQMSyz9TDq" role="2OqNvi">
+                <ref role="37wK5l" node="3GlpCDSyO$P" resolve="getProgram" />
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3clFbH" id="70Wv0dJhMDq" role="3cqZAp" />
@@ -731,8 +748,8 @@
                     <node concept="3uibUv" id="4$YN6QuccZK" role="10QFUM">
                       <ref role="3uigEE" to="ksgm:7eGEHDlcEJ0" resolve="CodeRulesProgram" />
                     </node>
-                    <node concept="37vLTw" id="70Wv0dJhOMF" role="10QFUP">
-                      <ref role="3cqZAo" node="7lt0LtQtD2v" resolve="program" />
+                    <node concept="37vLTw" id="7eQMSyza76l" role="10QFUP">
+                      <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
                     </node>
                   </node>
                 </node>
@@ -761,8 +778,8 @@
             <node concept="3uibUv" id="4$YN6QuccWT" role="2ZW6by">
               <ref role="3uigEE" to="ksgm:7eGEHDlcEJ0" resolve="CodeRulesProgram" />
             </node>
-            <node concept="37vLTw" id="70Wv0dJhNmD" role="2ZW6bz">
-              <ref role="3cqZAo" node="7lt0LtQtD2v" resolve="program" />
+            <node concept="37vLTw" id="7eQMSyz9TRM" role="2ZW6bz">
+              <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
             </node>
           </node>
         </node>
@@ -776,8 +793,8 @@
             <node concept="2YIFZM" id="7WKNeR9xpPQ" role="33vP2m">
               <ref role="37wK5l" to="w7la:~EvaluationSession.newSession(jetbrains.mps.logic.reactor.program.Program)" resolve="newSession" />
               <ref role="1Pybhc" to="w7la:~EvaluationSession" resolve="EvaluationSession" />
-              <node concept="37vLTw" id="7WKNeR9xpPR" role="37wK5m">
-                <ref role="3cqZAo" node="7lt0LtQtD2v" resolve="program" />
+              <node concept="37vLTw" id="7eQMSyz9Vlh" role="37wK5m">
+                <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
               </node>
             </node>
           </node>
@@ -945,6 +962,17 @@
           </node>
         </node>
         <node concept="3clFbH" id="8odmgCo4LW" role="3cqZAp" />
+        <node concept="3clFbF" id="6uUkLpHjIS9" role="3cqZAp">
+          <node concept="37vLTI" id="6uUkLpHjL2F" role="3clFbG">
+            <node concept="37vLTw" id="6uUkLpHjIS7" role="37vLTJ">
+              <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+            </node>
+            <node concept="2YIFZM" id="7eQMSyzaq4u" role="37vLTx">
+              <ref role="1Pybhc" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+              <ref role="37wK5l" to="zx3l:~RulesDiff.emptyDiff()" resolve="emptyDiff" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="3R7n5gYSM0R" role="3cqZAp">
           <node concept="3clFbS" id="3R7n5gYSM0S" role="3clFbx">
             <node concept="3clFbF" id="3R7n5gYSM0T" role="3cqZAp">
@@ -962,6 +990,73 @@
                 </node>
                 <node concept="37vLTw" id="3R7n5gYSM0Z" role="37vLTJ">
                   <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="7eQMSyzaIFj" role="3cqZAp" />
+            <node concept="1X3_iC" id="dgjrbRrt7d" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3clFbF" id="6uUkLpHjMAP" role="8Wnug">
+                <node concept="37vLTI" id="6uUkLpHjMPt" role="3clFbG">
+                  <node concept="37vLTw" id="6uUkLpHjMAN" role="37vLTJ">
+                    <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+                  </node>
+                  <node concept="2YIFZM" id="7eQMSyzaq4z" role="37vLTx">
+                    <ref role="37wK5l" to="zx3l:~RulesDiff.findDiff(java.lang.Iterable,java.lang.Iterable,jetbrains.mps.logic.reactor.program.DependentRulesSpec)" resolve="findDiff" />
+                    <ref role="1Pybhc" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+                    <node concept="2OqwBi" id="7eQMSyzaq4$" role="37wK5m">
+                      <node concept="liA8E" id="7eQMSyzaq4A" role="2OqNvi">
+                        <ref role="37wK5l" to="w7la:~SessionToken.getRuleTags()" resolve="getRuleTags" />
+                      </node>
+                      <node concept="37vLTw" id="7eQMSyzaqus" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="7eQMSyzaq4B" role="37wK5m">
+                      <node concept="37vLTw" id="7eQMSyzaqKc" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
+                      </node>
+                      <node concept="liA8E" id="7eQMSyzaq4F" role="2OqNvi">
+                        <ref role="37wK5l" to="av0y:~Program.rules()" resolve="rules" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="7eQMSyzaq4G" role="37wK5m">
+                      <node concept="37vLTw" id="7eQMSyzaqSz" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7lt0LtQtD2v" resolve="programProducer" />
+                      </node>
+                      <node concept="liA8E" id="7eQMSyzaq4I" role="2OqNvi">
+                        <ref role="37wK5l" node="tyIfzBDlP8" resolve="getProgramGenInfo" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6uUkLpHkm2n" role="3cqZAp">
+              <node concept="37vLTI" id="6uUkLpHkm2o" role="3clFbG">
+                <node concept="37vLTw" id="6uUkLpHkm2p" role="37vLTJ">
+                  <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+                </node>
+                <node concept="2YIFZM" id="6uUkLpHkm2q" role="37vLTx">
+                  <ref role="1Pybhc" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+                  <ref role="37wK5l" to="zx3l:~RulesDiff.findDiff(java.lang.Iterable,java.lang.Iterable)" resolve="findDiff" />
+                  <node concept="2OqwBi" id="6uUkLpHkm2r" role="37wK5m">
+                    <node concept="liA8E" id="6uUkLpHkm2s" role="2OqNvi">
+                      <ref role="37wK5l" to="w7la:~SessionToken.getRuleTags()" resolve="getRuleTags" />
+                    </node>
+                    <node concept="37vLTw" id="6uUkLpHkm2t" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6uUkLpHkm2u" role="37wK5m">
+                    <node concept="37vLTw" id="6uUkLpHkm2v" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
+                    </node>
+                    <node concept="liA8E" id="6uUkLpHkm2w" role="2OqNvi">
+                      <ref role="37wK5l" to="av0y:~Program.rules()" resolve="rules" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -1012,6 +1107,47 @@
             <node concept="10Nm6u" id="3R7n5gYSM1e" role="3uHU7w" />
             <node concept="37vLTw" id="1H_6AUSjq4B" role="3uHU7B">
               <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7eQMSyza1JA" role="3cqZAp">
+          <node concept="37vLTI" id="7eQMSyza3Wa" role="3clFbG">
+            <node concept="2OqwBi" id="7eQMSyza54k" role="37vLTx">
+              <node concept="37vLTw" id="7eQMSyza4Y_" role="2Oq$k0">
+                <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
+              </node>
+              <node concept="liA8E" id="7eQMSyza5cw" role="2OqNvi">
+                <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withIncrSpec(jetbrains.mps.logic.reactor.program.IncrementalProgramSpec)" resolve="withIncrSpec" />
+                <node concept="2OqwBi" id="7eQMSyza5vp" role="37wK5m">
+                  <node concept="37vLTw" id="7eQMSyza5fZ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7lt0LtQtD2v" resolve="programProducer" />
+                  </node>
+                  <node concept="liA8E" id="7eQMSyza5DB" role="2OqNvi">
+                    <ref role="37wK5l" node="1H_6AUT8p2f" resolve="getProgramSpec" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="7eQMSyza1J$" role="37vLTJ">
+              <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7eQMSyzjaWQ" role="3cqZAp">
+          <node concept="37vLTI" id="7eQMSyzjaWR" role="3clFbG">
+            <node concept="2OqwBi" id="7eQMSyzjaWS" role="37vLTx">
+              <node concept="37vLTw" id="7eQMSyzjaWT" role="2Oq$k0">
+                <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
+              </node>
+              <node concept="liA8E" id="7eQMSyzjaWU" role="2OqNvi">
+                <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withRulesDiff(jetbrains.mps.logic.reactor.core.RulesDiff)" resolve="withRulesDiff" />
+                <node concept="37vLTw" id="6uUkLpHjN74" role="37wK5m">
+                  <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="7eQMSyzjaWY" role="37vLTJ">
+              <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
             </node>
           </node>
         </node>
@@ -2164,6 +2300,20 @@
         <ref role="3uigEE" to="w7la:~SessionToken" resolve="SessionToken" />
       </node>
     </node>
+    <node concept="3clFb_" id="6uUkLpHjDqO" role="jymVt">
+      <property role="TrG5h" value="rulesDiff" />
+      <node concept="3clFbS" id="6uUkLpHjDqR" role="3clF47">
+        <node concept="3clFbF" id="6uUkLpHjEJO" role="3cqZAp">
+          <node concept="37vLTw" id="6uUkLpHjEJN" role="3clFbG">
+            <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6uUkLpHjCmc" role="1B3o_S" />
+      <node concept="3uibUv" id="6uUkLpHjDmc" role="3clF45">
+        <ref role="3uigEE" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3GlpCDSEXkp" role="jymVt" />
     <node concept="3clFb_" id="4jcOV4hNHoE" role="jymVt">
       <property role="TrG5h" value="severityToStatus" />
@@ -2291,6 +2441,13 @@
       <node concept="3Tm6S6" id="5cnt3vh3s4G" role="1B3o_S" />
       <node concept="3uibUv" id="5cnt3vh3sD3" role="1tU5fm">
         <ref role="3uigEE" to="w7la:~StoreView" resolve="StoreView" />
+      </node>
+    </node>
+    <node concept="312cEg" id="6uUkLpHj_La" role="jymVt">
+      <property role="TrG5h" value="rulesDiff" />
+      <node concept="3Tm6S6" id="6uUkLpHj$G_" role="1B3o_S" />
+      <node concept="3uibUv" id="6uUkLpHj_Gy" role="1tU5fm">
+        <ref role="3uigEE" to="zx3l:~RulesDiff" resolve="RulesDiff" />
       </node>
     </node>
     <node concept="312cEg" id="1H_6AUSjp6Y" role="jymVt">

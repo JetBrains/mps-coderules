@@ -4915,7 +4915,7 @@
       <node concept="37vLTG" id="1H_6AUT3Sc$" role="3clF46">
         <property role="TrG5h" value="analysisInfoBuilder" />
         <node concept="3uibUv" id="1H_6AUT3TTg" role="1tU5fm">
-          <ref role="3uigEE" to="xnrr:1H_6AUSE5Z9" resolve="ProgramAnalysisInfoBuilder" />
+          <ref role="3uigEE" to="xnrr:1H_6AUSE5Z9" resolve="ProgramGenInfoBuilder" />
         </node>
       </node>
       <node concept="37vLTG" id="70Wv0dJiUYa" role="3clF46">
@@ -8462,7 +8462,7 @@
       <property role="TrG5h" value="analysisInfoBuilder" />
       <node concept="3Tm6S6" id="1H_6AUSFFYv" role="1B3o_S" />
       <node concept="3uibUv" id="1H_6AUT3TWz" role="1tU5fm">
-        <ref role="3uigEE" to="xnrr:1H_6AUSE5Z9" resolve="ProgramAnalysisInfoBuilder" />
+        <ref role="3uigEE" to="xnrr:1H_6AUSE5Z9" resolve="ProgramGenInfoBuilder" />
       </node>
     </node>
     <node concept="312cEg" id="70Wv0dJiUY$" role="jymVt">
