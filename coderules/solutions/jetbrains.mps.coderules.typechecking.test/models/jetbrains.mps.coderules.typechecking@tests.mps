@@ -1123,6 +1123,27 @@
                   </node>
                 </node>
               </node>
+              <node concept="3cpWs8" id="3o9wrC3tYX9" role="3cqZAp">
+                <node concept="3cpWsn" id="3o9wrC3tYXa" role="3cpWs9">
+                  <property role="TrG5h" value="supervisor" />
+                  <node concept="3uibUv" id="3o9wrC3_Fke" role="1tU5fm">
+                    <ref role="3uigEE" to="hano:3o9wrC3sa$h" resolve="ReportingSupervisor" />
+                  </node>
+                  <node concept="2ShNRf" id="3o9wrC3tZfr" role="33vP2m">
+                    <node concept="1pGfFk" id="3o9wrC3u2Jf" role="2ShVmc">
+                      <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="ReportingSupervisor" />
+                      <node concept="2OqwBi" id="3o9wrC3u3mt" role="37wK5m">
+                        <node concept="37vLTw" id="3o9wrC3u307" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
+                        </node>
+                        <node concept="liA8E" id="3o9wrC3u59R" role="2OqNvi">
+                          <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbF" id="YbzkzLckMI" role="3cqZAp">
                 <node concept="2OqwBi" id="YbzkzLcpjZ" role="3clFbG">
                   <node concept="10M0yZ" id="YbzkzLcocA" role="2Oq$k0">
@@ -1171,6 +1192,9 @@
                               </node>
                               <node concept="37vLTw" id="7eQMSyzaBa7" role="37wK5m">
                                 <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
+                              </node>
+                              <node concept="37vLTw" id="3o9wrC3u6jn" role="37wK5m">
+                                <ref role="3cqZAo" node="3o9wrC3tYXa" resolve="supervisor" />
                               </node>
                               <node concept="10M0yZ" id="4$YN6QuoGjt" role="37wK5m">
                                 <ref role="3cqZAo" to="hano:24Vro6cS5rK" resolve="NULL" />

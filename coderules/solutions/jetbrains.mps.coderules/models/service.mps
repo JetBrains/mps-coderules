@@ -1985,6 +1985,28 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3cpWs8" id="3o9wrC3tl4y" role="3cqZAp">
+                        <node concept="3cpWsn" id="3o9wrC3tl4w" role="3cpWs9">
+                          <property role="3TUv4t" value="true" />
+                          <property role="TrG5h" value="supervisor" />
+                          <node concept="3uibUv" id="3o9wrC3tmgD" role="1tU5fm">
+                            <ref role="3uigEE" to="w7la:~Supervisor" resolve="Supervisor" />
+                          </node>
+                          <node concept="2ShNRf" id="3o9wrC3trPm" role="33vP2m">
+                            <node concept="1pGfFk" id="3o9wrC3ttgt" role="2ShVmc">
+                              <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="ReportingSupervisor" />
+                              <node concept="2OqwBi" id="3o9wrC3tvAX" role="37wK5m">
+                                <node concept="37vLTw" id="3o9wrC3tu_g" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
+                                </node>
+                                <node concept="liA8E" id="3o9wrC3twLu" role="2OqNvi">
+                                  <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3clFbH" id="7WKNeR9AmNV" role="3cqZAp" />
                       <node concept="3clFbF" id="Hg6Enc7CQd" role="3cqZAp">
                         <node concept="37vLTI" id="Hg6Enc7CQe" role="3clFbG">
@@ -2008,6 +2030,9 @@
                                   </node>
                                   <node concept="37vLTw" id="7WKNeR9AoxM" role="37wK5m">
                                     <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
+                                  </node>
+                                  <node concept="37vLTw" id="3o9wrC3tHFL" role="37wK5m">
+                                    <ref role="3cqZAo" node="3o9wrC3tl4w" resolve="supervisor" />
                                   </node>
                                   <node concept="2ShNRf" id="7WKNeR9Gjbf" role="37wK5m">
                                     <node concept="1pGfFk" id="7WKNeR9Gjbg" role="2ShVmc">
