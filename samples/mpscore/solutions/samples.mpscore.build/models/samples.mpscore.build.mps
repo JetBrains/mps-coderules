@@ -305,16 +305,6 @@
             <ref role="3bR37D" node="69UmpDmJW26" resolve="jetbrains.mps.baseLanguageExt" />
           </node>
         </node>
-        <node concept="1SiIV0" id="RcfYz8YTvw" role="3bR37C">
-          <node concept="3bR9La" id="RcfYz8YTvx" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:7mB3viLwG3m" resolve="jetbrains.mps.coderules.typechecking.test" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="RcfYz8YTvy" role="3bR37C">
-          <node concept="3bR9La" id="RcfYz8YTvz" role="1SiIV1">
-            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
-          </node>
-        </node>
       </node>
       <node concept="1E1JtA" id="69UmpDmJW3w" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -361,6 +351,11 @@
         <node concept="1SiIV0" id="RcfYz8YTvA" role="3bR37C">
           <node concept="3bR9La" id="RcfYz8YTvB" role="1SiIV1">
             <ref role="3bR37D" node="69UmpDmJW26" resolve="jetbrains.mps.baseLanguageExt" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3o9wrC3UQPJ" role="3bR37C">
+          <node concept="3bR9La" id="3o9wrC3UQPK" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
           </node>
         </node>
       </node>
