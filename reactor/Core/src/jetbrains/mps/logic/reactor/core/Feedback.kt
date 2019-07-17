@@ -17,8 +17,8 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
+import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.Supervisor
-import jetbrains.mps.logic.reactor.program.Rule
 
 /**
  * @author Fedor Isakov
@@ -40,14 +40,14 @@ abstract class Feedback : EvaluationFeedback() {
     /**
      * Returns true if the feedback has been handled.
      */
-    open fun handle(rule: Rule, supervisor: Supervisor): Boolean {
-        if (!alreadyHandled() && supervisor.handleFeedback(rule, this)) {
+    open fun handle(ruleMatch: RuleMatch, supervisor: Supervisor): Boolean {
+        if (!alreadyHandled() && supervisor.handleFeedback(ruleMatch, this)) {
             setHandled()
         }
         return alreadyHandled()
     }
 
-    open fun handle(rule: Rule) {
+    open fun handle(ruleMatch: RuleMatch) {
         if (!alreadyHandled()) {
             setHandled()
         }

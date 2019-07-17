@@ -17,8 +17,8 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
+import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.Supervisor
-import jetbrains.mps.logic.reactor.program.Rule
 
 import java.util.ArrayList
 import java.util.Arrays
@@ -33,12 +33,12 @@ class CompositeFeedback private constructor(private val elements: List<Feedback>
         this.severity = maxSeverity(elements)
     }
 
-    override fun handle(rule: Rule, supervisor: Supervisor): Boolean {
+    override fun handle(ruleMatch: RuleMatch, supervisor: Supervisor): Boolean {
         var unhandled = 0
         for (feedback in elements) {
             if (!feedback.alreadyHandled()) {
                 unhandled += 1
-                if (supervisor.handleFeedback(rule, feedback)) {
+                if (supervisor.handleFeedback(ruleMatch, feedback)) {
                     feedback.setHandled()
                     unhandled -= 1
                 }
@@ -47,7 +47,7 @@ class CompositeFeedback private constructor(private val elements: List<Feedback>
         return unhandled == 0
     }
 
-    override fun handle(rule: Rule) {
+    override fun handle(ruleMatch: RuleMatch) {
         for (feedback in elements) {
             if (!feedback.alreadyHandled()) {
                 feedback.setHandled()

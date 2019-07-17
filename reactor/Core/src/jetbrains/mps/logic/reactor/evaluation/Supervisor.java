@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 import jetbrains.mps.logic.reactor.logical.LogicalContext;
-import jetbrains.mps.logic.reactor.program.Rule;
 
 import java.util.List;
 
@@ -35,7 +34,7 @@ public interface Supervisor {
      * Override this method in order to "handle" the feedback.
      * Returns true if the method has handled (consumed) the feedback.
      */
-    default boolean handleFeedback(Rule rule, EvaluationFeedback feedback) {
+    default boolean handleFeedback(RuleMatch ruleMatch, EvaluationFeedback feedback) {
         return false;
     }
 

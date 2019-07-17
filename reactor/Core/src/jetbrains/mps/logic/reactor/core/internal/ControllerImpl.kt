@@ -154,7 +154,7 @@ internal class ControllerImpl (
                 if (itemOk) {
                     context.withStatus { status ->
                         if (status.feedback?.alreadyHandled() == false) {
-                            status.feedback.handle(match.rule(), supervisor)
+                            status.feedback.handle(match, supervisor)
                         }
                     }
 
@@ -168,15 +168,18 @@ internal class ControllerImpl (
                 if (status is FAILED) {
                     trace.feedback(status.failure)
 
+                    // if there's alternative body branch then try it
                     if (altIt.hasNext()) {
                         // clear the failure handled status
                         // the supervisor is NOT notified here
-                        status.failure.handle(match.rule())
+                        status.failure.handle(match)
                         status
 
-                    } else if (status.feedback?.alreadyHandled() == false && status.failure.handle(match.rule(), supervisor)) {
+                    // if failure can be handled here then recover
+                    } else if (status.feedback?.alreadyHandled() == false && status.failure.handle(match, supervisor)) {
                         status.recover()
 
+                    // else propagate further up the stack
                     } else {
                         status
                     }
@@ -243,6 +246,7 @@ internal class ControllerImpl (
         }.toList()
 
     private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
+
 
     private class Context(inStatus: FeedbackStatus,
                           val logicalContext: LogicalContext) : InvocationContext

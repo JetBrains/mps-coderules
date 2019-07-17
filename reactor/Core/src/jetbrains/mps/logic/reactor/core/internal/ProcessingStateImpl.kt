@@ -130,7 +130,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     val validOccs = matchedOccs.filter { occ ->
                         !occ.justifications().intersects(justificationRoots)
                     }
-                    assert(matchedOccs.all { it.isPrincipal() })
+//                    assert(matchedOccs.all { it.isPrincipal() })
 
                     execQueue.offerAll(validOccs)
                 }

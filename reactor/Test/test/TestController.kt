@@ -65,12 +65,12 @@ class TestController {
         return controller
     }
 
-    private fun Builder.controllerWithFeedback(feedbackHandler: (Rule, EvaluationFeedback) -> Boolean,
+    private fun Builder.controllerWithFeedback(feedbackHandler: (RuleMatch, EvaluationFeedback) -> Boolean,
                                                vararg occurrences: ConstraintOccurrence): Controller {
         val program = MockProgram("test", rulesLists, registry = MockConstraintRegistry())
         val supervisor = object : MockSupervisor() {
-            override fun handleFeedback(rule: Rule, feedback: EvaluationFeedback): Boolean =
-                feedbackHandler(rule, feedback)
+            override fun handleFeedback(ruleMatch: RuleMatch, feedback: EvaluationFeedback): Boolean =
+                feedbackHandler(ruleMatch, feedback)
         }
         MockSession.init(program, supervisor)
         val controller = createController(supervisor, RuleIndex(program.rulesLists))
@@ -821,9 +821,9 @@ class TestController {
     @Test(expected = EvaluationFailureException::class)
     fun failureHandler() {
         val failures = ArrayList<Pair<EvaluationFailure, Any>>()
-        val failureHandler =  { rule: Rule, feedback: EvaluationFeedback ->
+        val failureHandler =  { ruleMatch: RuleMatch, feedback: EvaluationFeedback ->
                 if (feedback is EvaluationFailure) {
-                    failures.add(feedback to rule.uniqueTag())
+                    failures.add(feedback to ruleMatch.rule().uniqueTag())
                 }
                 false
             }
@@ -863,10 +863,11 @@ class TestController {
     @Test
     fun failureHandlerRecover() {
         val failures = ArrayList<Pair<EvaluationFailure, Any>>()
-        val failureHandler = { rule: Rule, feedback: EvaluationFeedback ->
+        val failureHandler = { ruleMatch: RuleMatch, feedback: EvaluationFeedback ->
                 if (feedback is EvaluationFailure) {
-                    failures.add(feedback to rule.uniqueTag())
-                    (rule.uniqueTag().toString().startsWith("recoverable"))
+                    val utag = ruleMatch.rule().uniqueTag()
+                    failures.add(feedback to utag)
+                    (utag.toString().startsWith("recoverable"))
                 } else false
             }
 
@@ -917,8 +918,8 @@ class TestController {
     @Test
     fun detailsFeedbackHandler() {
         val feedbacks = arrayListOf<Pair<EvaluationFeedback, Any>>()
-        val feedbackHandler = { rule: Rule, feedback: EvaluationFeedback ->
-                feedbacks.add(feedback to rule.uniqueTag())
+        val feedbackHandler = { ruleMatch: RuleMatch, feedback: EvaluationFeedback ->
+                feedbacks.add(feedback to ruleMatch.rule().uniqueTag())
                 feedback.message.startsWith("catchme")
             }
 
