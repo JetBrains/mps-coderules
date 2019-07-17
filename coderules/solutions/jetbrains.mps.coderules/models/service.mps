@@ -356,6 +356,13 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
     </language>
     <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
       <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
@@ -1985,22 +1992,48 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3cpWs8" id="3o9wrC3tl4y" role="3cqZAp">
-                        <node concept="3cpWsn" id="3o9wrC3tl4w" role="3cpWs9">
+                      <node concept="1X3_iC" id="6fTgyZtNmid" role="lGtFl">
+                        <property role="3V$3am" value="statement" />
+                        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                        <node concept="3cpWs8" id="3o9wrC3tl4y" role="8Wnug">
+                          <node concept="3cpWsn" id="3o9wrC3tl4w" role="3cpWs9">
+                            <property role="3TUv4t" value="true" />
+                            <property role="TrG5h" value="supervisor" />
+                            <node concept="3uibUv" id="3o9wrC3tmgD" role="1tU5fm">
+                              <ref role="3uigEE" to="w7la:~Supervisor" resolve="Supervisor" />
+                            </node>
+                            <node concept="2ShNRf" id="3o9wrC3trPm" role="33vP2m">
+                              <node concept="1pGfFk" id="3o9wrC3ttgt" role="2ShVmc">
+                                <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="OriginReportingSupervisor" />
+                                <node concept="2OqwBi" id="3o9wrC3tvAX" role="37wK5m">
+                                  <node concept="37vLTw" id="3o9wrC3tu_g" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
+                                  </node>
+                                  <node concept="liA8E" id="3o9wrC3twLu" role="2OqNvi">
+                                    <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWs8" id="3o9wrC3WxS6" role="3cqZAp">
+                        <node concept="3cpWsn" id="3o9wrC3WxS7" role="3cpWs9">
                           <property role="3TUv4t" value="true" />
                           <property role="TrG5h" value="supervisor" />
-                          <node concept="3uibUv" id="3o9wrC3tmgD" role="1tU5fm">
+                          <node concept="3uibUv" id="3o9wrC3WxS8" role="1tU5fm">
                             <ref role="3uigEE" to="w7la:~Supervisor" resolve="Supervisor" />
                           </node>
-                          <node concept="2ShNRf" id="3o9wrC3trPm" role="33vP2m">
-                            <node concept="1pGfFk" id="3o9wrC3ttgt" role="2ShVmc">
-                              <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="ReportingSupervisor" />
-                              <node concept="2OqwBi" id="3o9wrC3tvAX" role="37wK5m">
-                                <node concept="37vLTw" id="3o9wrC3tu_g" role="2Oq$k0">
+                          <node concept="2ShNRf" id="3o9wrC3VZhD" role="33vP2m">
+                            <node concept="1pGfFk" id="3o9wrC3W0Hw" role="2ShVmc">
+                              <ref role="37wK5l" to="hano:3o9wrC3VMfB" resolve="PrincipalNodeReportingSupervisor" />
+                              <node concept="2OqwBi" id="3o9wrC3W3dV" role="37wK5m">
+                                <node concept="37vLTw" id="3o9wrC3W1V9" role="2Oq$k0">
                                   <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
                                 </node>
-                                <node concept="liA8E" id="3o9wrC3twLu" role="2OqNvi">
-                                  <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                                <node concept="liA8E" id="3o9wrC3W4po" role="2OqNvi">
+                                  <ref role="37wK5l" to="hano:1H_6AUT8p2f" resolve="getProgramSpec" />
                                 </node>
                               </node>
                             </node>
@@ -2031,8 +2064,8 @@
                                   <node concept="37vLTw" id="7WKNeR9AoxM" role="37wK5m">
                                     <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
                                   </node>
-                                  <node concept="37vLTw" id="3o9wrC3tHFL" role="37wK5m">
-                                    <ref role="3cqZAo" node="3o9wrC3tl4w" resolve="supervisor" />
+                                  <node concept="37vLTw" id="6fTgyZtNyLJ" role="37wK5m">
+                                    <ref role="3cqZAo" node="3o9wrC3WxS7" resolve="supervisor" />
                                   </node>
                                   <node concept="2ShNRf" id="7WKNeR9Gjbf" role="37wK5m">
                                     <node concept="1pGfFk" id="7WKNeR9Gjbg" role="2ShVmc">
