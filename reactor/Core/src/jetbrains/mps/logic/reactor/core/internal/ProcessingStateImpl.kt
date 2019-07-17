@@ -69,6 +69,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         return controller.reactivate(activeOcc)
     }
 
+    // todo: remove
     fun invalidateDependentRules(ruleIds: Set<Any>) {
         val it = this.iterator()
         while (it.hasNext()) {

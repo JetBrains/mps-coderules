@@ -52,13 +52,15 @@ internal class ControllerImpl (
     }
 
     fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): FeedbackStatus {
-        // todo: use profiler here?
-        assert(rulesDiff.removedDependent.intersect(rulesDiff.removed).isEmpty())
-        state.invalidateDependentRules(rulesDiff.removedDependent)
-        state.invalidateRuleMatches(rulesDiff.removed)
-        state.addRuleMatches(rulesDiff.added)
-        val status = state.launchQueue(this)
-        return status
+        profiler.profile("invalidation") {
+            state.invalidateRuleMatches(rulesDiff.removed)
+        }
+        profiler.profile("adding_matches") {
+            state.addRuleMatches(rulesDiff.added)
+        }
+        return profiler.profile<FeedbackStatus>("reexecution") {
+            state.launchQueue(this)
+        }
     }
 
     fun activate(constraint: Constraint) : FeedbackStatus {
