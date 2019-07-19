@@ -10,9 +10,6 @@
       <concept id="8456919074565735802" name="jetbrains.mps.typechecking.testlang.structure.Root" flags="ng" index="0U$pH">
         <child id="8456919074565735822" name="stmt" index="0U$qp" />
       </concept>
-      <concept id="8477760168143982781" name="jetbrains.mps.typechecking.testlang.structure.Int" flags="ng" index="34yDP9">
-        <property id="8477760168143982782" name="val" index="34yDPa" />
-      </concept>
       <concept id="8477760168143925028" name="jetbrains.mps.typechecking.testlang.structure.VarDeclStmt" flags="ng" index="34yUbg">
         <child id="8477760168143925044" name="decl" index="34yUb0" />
         <child id="8477760168143925046" name="init" index="34yUb2" />
@@ -42,16 +39,16 @@
       <node concept="34yUbh" id="7mB3viLdNfV" role="34yUb0">
         <property role="TrG5h" value="bar" />
       </node>
-      <node concept="34yDP9" id="7mB3viLdNg5" role="34yUb2">
-        <property role="34yDPa" value="123" />
+      <node concept="34$_Ec" id="2DIFeUB7hka" role="34yUb2">
+        <property role="34$_Ed" value="123" />
       </node>
     </node>
     <node concept="34yUbg" id="7mB3viLioHG" role="0U$qp">
       <node concept="34yUbh" id="7mB3viLioHH" role="34yUb0">
         <property role="TrG5h" value="qux" />
       </node>
-      <node concept="34yDP9" id="7mB3viLioHI" role="34yUb2">
-        <property role="34yDPa" value="1234" />
+      <node concept="34$_Ec" id="2DIFeUB7hkc" role="34yUb2">
+        <property role="34$_Ed" value="1234" />
       </node>
     </node>
   </node>

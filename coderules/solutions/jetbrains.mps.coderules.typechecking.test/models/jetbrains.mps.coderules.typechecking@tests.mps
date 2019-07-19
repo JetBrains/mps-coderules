@@ -230,9 +230,6 @@
         <property id="8477760168144047169" name="name" index="34yo6P" />
         <property id="8477760168145258292" name="val" index="34TwF0" />
       </concept>
-      <concept id="8477760168143982781" name="jetbrains.mps.typechecking.testlang.structure.Int" flags="ng" index="34yDP9">
-        <property id="8477760168143982782" name="val" index="34yDPa" />
-      </concept>
       <concept id="8477760168143925028" name="jetbrains.mps.typechecking.testlang.structure.VarDeclStmt" flags="ng" index="34yUbg">
         <child id="8477760168143925044" name="decl" index="34yUb0" />
         <child id="8477760168143925046" name="init" index="34yUb2" />
@@ -1754,7 +1751,7 @@
                     <node concept="2YFouu" id="3IIf9OA4zNd" role="3vwVQn">
                       <node concept="2c44tf" id="3IIf9OA4zNe" role="3uHU7B">
                         <node concept="34yo6O" id="7mB3viLiDA8" role="2c44tc">
-                          <property role="34yo6P" value="Integer" />
+                          <property role="34yo6P" value="String" />
                           <property role="34TwF0" value="123" />
                         </node>
                       </node>
@@ -1770,7 +1767,7 @@
                       </node>
                       <node concept="2c44tf" id="7mB3viLiFZo" role="3uHU7B">
                         <node concept="34yo6O" id="7mB3viLiFZp" role="2c44tc">
-                          <property role="34yo6P" value="Integer" />
+                          <property role="34yo6P" value="String" />
                           <property role="34TwF0" value="1234" />
                         </node>
                       </node>
@@ -2019,7 +2016,7 @@
                 </node>
                 <node concept="2c44tf" id="4BHjwwGESbl" role="JA92f">
                   <node concept="34yo6O" id="7mB3viLeK$h" role="2c44tc">
-                    <property role="34yo6P" value="Integer" />
+                    <property role="34yo6P" value="String" />
                     <property role="34TwF0" value="123" />
                   </node>
                 </node>
@@ -2054,8 +2051,8 @@
           <node concept="34yUbh" id="7mB3viLdNfV" role="34yUb0">
             <property role="TrG5h" value="bar" />
           </node>
-          <node concept="34yDP9" id="7mB3viLdNg5" role="34yUb2">
-            <property role="34yDPa" value="123" />
+          <node concept="34$_Ec" id="2DIFeUB7BAT" role="34yUb2">
+            <property role="34$_Ed" value="123" />
           </node>
           <node concept="3xLA65" id="7mB3viLoFYN" role="lGtFl">
             <property role="TrG5h" value="bar" />
@@ -2065,8 +2062,8 @@
           <node concept="34yUbh" id="7mB3viLioHH" role="34yUb0">
             <property role="TrG5h" value="qux" />
           </node>
-          <node concept="34yDP9" id="7mB3viLioHI" role="34yUb2">
-            <property role="34yDPa" value="1234" />
+          <node concept="34$_Ec" id="2DIFeUB7BE9" role="34yUb2">
+            <property role="34$_Ed" value="1234" />
           </node>
         </node>
         <node concept="3xLA65" id="7mB3viLoFoM" role="lGtFl">
@@ -2144,7 +2141,7 @@
           <node concept="2YFouu" id="3KwBCAAB$Qd" role="3vwVQn">
             <node concept="2c44tf" id="3KwBCAAB$Qe" role="3uHU7B">
               <node concept="34yo6O" id="7mB3viLoH6n" role="2c44tc">
-                <property role="34yo6P" value="Integer" />
+                <property role="34yo6P" value="String" />
                 <property role="34TwF0" value="123" />
               </node>
             </node>
