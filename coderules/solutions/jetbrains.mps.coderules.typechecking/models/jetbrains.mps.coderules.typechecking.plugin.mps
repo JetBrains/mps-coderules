@@ -577,29 +577,29 @@
       <node concept="3uibUv" id="lvX$8VFC52" role="EKbjA">
         <ref role="3uigEE" to="1ka:~TypecheckingQueries" resolve="TypecheckingQueries" />
       </node>
-      <node concept="3clFb_" id="ZKiX9Lu_em" role="jymVt">
-        <property role="TrG5h" value="checkRoot" />
-        <node concept="3Tm1VV" id="ZKiX9Lu_en" role="1B3o_S" />
-        <node concept="3cqZAl" id="ZKiX9Lu_ep" role="3clF45" />
-        <node concept="37vLTG" id="ZKiX9Lu_eq" role="3clF46">
+      <node concept="3clFb_" id="2Hyoxv0bBC" role="jymVt">
+        <property role="TrG5h" value="checkRecursively" />
+        <node concept="3Tm1VV" id="2Hyoxv0bBD" role="1B3o_S" />
+        <node concept="3cqZAl" id="2Hyoxv0bBF" role="3clF45" />
+        <node concept="37vLTG" id="2Hyoxv0bBG" role="3clF46">
           <property role="TrG5h" value="node" />
-          <node concept="3uibUv" id="ZKiX9Lu_er" role="1tU5fm">
+          <node concept="3uibUv" id="2Hyoxv0bBH" role="1tU5fm">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
           </node>
         </node>
-        <node concept="37vLTG" id="ZKiX9Lu_es" role="3clF46">
+        <node concept="37vLTG" id="2Hyoxv0bBI" role="3clF46">
           <property role="TrG5h" value="consumer" />
-          <node concept="3uibUv" id="ZKiX9Lu_et" role="1tU5fm">
+          <node concept="3uibUv" id="2Hyoxv0bBJ" role="1tU5fm">
             <ref role="3uigEE" to="82uw:~Consumer" resolve="Consumer" />
-            <node concept="3qUtgH" id="ZKiX9Lu_eu" role="11_B2D">
-              <node concept="3uibUv" id="ZKiX9Lu_ev" role="3qUvdb">
+            <node concept="3qUtgH" id="2Hyoxv0bBK" role="11_B2D">
+              <node concept="3uibUv" id="2Hyoxv0bBL" role="3qUvdb">
                 <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbS" id="ZKiX9Lu_ew" role="3clF47" />
-        <node concept="2AHcQZ" id="ZKiX9Lu_ex" role="2AJF6D">
+        <node concept="3clFbS" id="2Hyoxv0bBM" role="3clF47" />
+        <node concept="2AHcQZ" id="2Hyoxv0bBN" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
