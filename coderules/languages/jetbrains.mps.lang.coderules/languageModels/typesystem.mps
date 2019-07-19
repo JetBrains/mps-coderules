@@ -111,9 +111,7 @@
       </concept>
       <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
         <reference id="5455284157994012188" name="link" index="2pIpSl" />
-      </concept>
-      <concept id="5455284157993911097" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart" flags="ng" index="2pJxcK">
-        <child id="5455284157993911094" name="expression" index="2pJxcZ" />
+        <child id="1595412875168045827" name="initValue" index="28nt2d" />
       </concept>
       <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
         <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
@@ -1397,7 +1395,7 @@
                   <ref role="2pJxaS" to="5j4j:1mP5b6jNC0S" resolve="LogicalType" />
                   <node concept="2pIpSj" id="5WBVN_MTa8k" role="2pJxcM">
                     <ref role="2pIpSl" to="5j4j:5zfvpQ71CIE" resolve="dataType" />
-                    <node concept="36biLy" id="5WBVN_MTa8N" role="2pJxcZ">
+                    <node concept="36biLy" id="5WBVN_MTa8N" role="28nt2d">
                       <node concept="1PxgMI" id="5WBVN_MTaE6" role="36biLW">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="5WBVN_MTaEx" role="3oSUPX">

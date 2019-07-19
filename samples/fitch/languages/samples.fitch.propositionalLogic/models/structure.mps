@@ -2,7 +2,7 @@
 <model ref="r:459ba7ac-2a61-40fc-bcc4-f13a7956cbeb(samples.fitch.propositionalLogic.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="7" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -53,9 +53,9 @@
     <property role="R4oN_" value="Conjunction" />
     <node concept="1TJgyj" id="3JXBM6C3FnW" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817724" />
-      <property role="20lmBu" value="aggregation" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="conjunct" />
-      <property role="20lbJX" value="1..n" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
       <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fsj" role="PzmwI">
@@ -82,16 +82,16 @@
     <property role="R4oN_" value="Implication" />
     <node concept="1TJgyj" id="3JXBM6C3Fpi" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817810" />
-      <property role="20lmBu" value="aggregation" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="antecedent" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="1TJgyj" id="3JXBM6C3Fpk" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817812" />
-      <property role="20lmBu" value="aggregation" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="consequent" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fss" role="PzmwI">
@@ -106,16 +106,16 @@
     <property role="R4oN_" value="Biconditional" />
     <node concept="1TJgyj" id="3JXBM6C3FrF" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817963" />
-      <property role="20lmBu" value="aggregation" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="antecedent" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="1TJgyj" id="3JXBM6C3FrG" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817964" />
-      <property role="20lmBu" value="aggregation" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="consequent" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fsu" role="PzmwI">
@@ -130,9 +130,9 @@
     <property role="R4oN_" value="Negation" />
     <node concept="1TJgyj" id="3JXBM6C3Cno" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247805400" />
-      <property role="20lmBu" value="aggregation" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="target" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fsw" role="PzmwI">
@@ -147,9 +147,9 @@
     <property role="R4oN_" value="Disjunction" />
     <node concept="1TJgyj" id="3JXBM6C3Fp4" role="1TKVEi">
       <property role="IQ2ns" value="4322786184247817796" />
-      <property role="20lmBu" value="aggregation" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="disjunct" />
-      <property role="20lbJX" value="1..n" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
       <ref role="20lvS9" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
     </node>
     <node concept="PrWs8" id="3JXBM6C3Fsy" role="PzmwI">

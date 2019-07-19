@@ -2,9 +2,9 @@
 <model ref="r:43d4629d-ce89-487f-b335-2aac72284228(jetbrains.mps.logic.migration)">
   <persistence version="9" />
   <languages>
-    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="1" />
+    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="2" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="2" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -124,7 +124,7 @@
       <node concept="3Tm1VV" id="5NAQwIkSyCf" role="1B3o_S" />
       <node concept="3clFbS" id="5NAQwIkSyCh" role="3clF47">
         <node concept="RRSsy" id="5p9vXslWQ$k" role="3cqZAp">
-          <property role="RRSoG" value="error" />
+          <property role="RRSoG" value="gZ5fh_4/error" />
           <node concept="Xl_RD" id="5p9vXslWQ$l" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Extract_ListRole_from_ChildRole)" />
           </node>
@@ -183,7 +183,7 @@
       <node concept="3Tm1VV" id="5f6wxQ3pDPN" role="1B3o_S" />
       <node concept="3clFbS" id="5f6wxQ3pDPP" role="3clF47">
         <node concept="RRSsy" id="63PS1WESvQG" role="3cqZAp">
-          <property role="RRSoG" value="error" />
+          <property role="RRSoG" value="gZ5fh_4/error" />
           <node concept="Xl_RD" id="63PS1WESvQH" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Replace_LogicalValue_with_Expression)" />
           </node>

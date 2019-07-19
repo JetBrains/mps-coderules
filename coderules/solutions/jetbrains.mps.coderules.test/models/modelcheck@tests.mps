@@ -2,7 +2,7 @@
 <model ref="r:cc1a7719-27fc-407d-bcc3-f0a29456923e(jetbrains.mps.coderules.test.modelcheck@tests)">
   <persistence version="9" />
   <languages>
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="5" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests" version="1" />
@@ -289,7 +289,7 @@
             <node concept="9aQIb" id="2rIdnPwwLPG" role="9aQIa">
               <node concept="3clFbS" id="2rIdnPwwLPH" role="9aQI4">
                 <node concept="RRSsy" id="2rIdnPuCRgJ" role="3cqZAp">
-                  <property role="RRSoG" value="warn" />
+                  <property role="RRSoG" value="gZ5fksE/warn" />
                   <node concept="Xl_RD" id="2rIdnPuCRgL" role="RRSoy">
                     <property role="Xl_RC" value="Test is disabled in non-CI enviroment" />
                   </node>
