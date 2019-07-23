@@ -1669,7 +1669,7 @@
         <node concept="3clFbF" id="4MqhgXUNKmT" role="3cqZAp">
           <node concept="2ShNRf" id="4MqhgXUNKmP" role="3clFbG">
             <node concept="1pGfFk" id="4MqhgXUNKOX" role="2ShVmc">
-              <ref role="37wK5l" node="4MqhgXUM$CT" resolve="RulesListBuilder.HandlerImpl" />
+              <ref role="37wK5l" node="4MqhgXUM$CT" resolve="RulesListBuilder.RulesListImpl" />
             </node>
           </node>
         </node>
@@ -1678,7 +1678,7 @@
     <node concept="2tJIrI" id="4MqhgXUMb3H" role="jymVt" />
     <node concept="312cEu" id="4MqhgXUMzTQ" role="jymVt">
       <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="HandlerImpl" />
+      <property role="TrG5h" value="RulesListImpl" />
       <node concept="2tJIrI" id="4MqhgXUM$3u" role="jymVt" />
       <node concept="3clFbW" id="4MqhgXUM$CT" role="jymVt">
         <node concept="3cqZAl" id="4MqhgXUM$CV" role="3clF45" />
@@ -1860,7 +1860,7 @@
       </node>
       <node concept="TZ5HA" id="2$$Q_FeW4_3" role="TZ5H$">
         <node concept="1dT_AC" id="2$$Q_FeW4_4" role="1dT_Ay">
-          <property role="1dT_AB" value="Instance of RulesList produced by toHandler() returns the rules sorted by location key." />
+          <property role="1dT_AB" value="Instance of RulesList produced by toRulesList() returns the rules sorted by location key." />
         </node>
       </node>
     </node>
