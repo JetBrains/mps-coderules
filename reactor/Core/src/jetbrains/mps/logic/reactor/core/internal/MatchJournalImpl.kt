@@ -97,11 +97,12 @@ internal open class MatchJournalImpl(
 
     override fun reset(pastPos: MatchJournal.Pos) {
         while (posPtr.hasPrevious()) {
+            current = posPtr.previous()
             if (current === pastPos.chunk) {
                 current.entries = current.entries.subList(0, pastPos.entriesCount)
+                posPtr.next() // make 'posPtr' to always point right after 'current'
                 return
             }
-            current = posPtr.previous()
             posPtr.remove()
         }
         if (currentPos() != pastPos) throw IllegalStateException()

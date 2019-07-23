@@ -242,7 +242,6 @@ class TestStoreAwareJournal {
 
 
     @Test
-    @Ignore("reset is tested properly in TestController")
     fun testFullReset() {
         with(programWithRules(
             rule("rule1",
@@ -284,7 +283,7 @@ class TestStoreAwareJournal {
 
 
                 with(hist) {
-                    view().chunks.size shouldBe 2
+                    view().chunks.size shouldBe 5
                     storeView().allOccurrences().count() shouldBe 1 // only "qux"
 
                     // reset to the very beginning
@@ -300,7 +299,6 @@ class TestStoreAwareJournal {
 
 
     @Test
-    @Ignore("reset is tested properly in TestController")
     fun testPushExecReset() {
         with(programWithRules(
             rule("rule2",
@@ -326,7 +324,7 @@ class TestStoreAwareJournal {
                 princConstraint("foo")
             ),
             body(
-                constraint("last")
+                princConstraint("last")
             ))
         ))
         {
@@ -357,27 +355,26 @@ class TestStoreAwareJournal {
 
 
                 // rule4
-                hist.view().chunks.size shouldBe 2
+                hist.view().chunks.size shouldBe 4
                 logFirstMatch()
                 // match on the principal constraint must add the chunk
-                hist.view().chunks.size shouldBe 3
+                hist.view().chunks.size shouldBe 5
 
 
                 val oldState = hist.view()
-                val oldNChunks = oldState.chunks.size
                 val oldStore = hist.storeView().allOccurrences()
                 val savedPos = hist.currentPos()
 
                 hist.testPush()
-                logExpand(occurrence("last"))
+                logExpandJustified("last")
 
-                oldState.chunks.size shouldBe 3
-                assertNotEquals(oldState.chunks, hist.view().chunks)
+                hist.view().chunks.size shouldBe 6
                 assertNotEquals(oldStore, hist.storeView().allOccurrences())
+
 
                 hist.reset(savedPos)
 
-                oldState.chunks.size shouldBe 2
+                hist.view().chunks.size shouldBe oldState.chunks.size
                 hist.view().chunks shouldBe oldState.chunks
                 hist.storeView().allOccurrences() shouldBe oldStore
                 hist.currentPos() shouldBe savedPos
