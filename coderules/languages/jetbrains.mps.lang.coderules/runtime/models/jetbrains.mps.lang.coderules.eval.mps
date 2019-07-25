@@ -5889,7 +5889,7 @@
             </node>
             <node concept="3cpWs8" id="1H_6AUT4lKd" role="3cqZAp">
               <node concept="3cpWsn" id="1H_6AUT4lKe" role="3cpWs9">
-                <property role="TrG5h" value="principalCtrsAnalysis" />
+                <property role="TrG5h" value="principalsAnalysis" />
                 <node concept="3uibUv" id="1H_6AUT4lKf" role="1tU5fm">
                   <ref role="3uigEE" to="xnrr:1H_6AUT0m_J" resolve="SimpleProgramAnalysis" />
                 </node>
@@ -5906,40 +5906,21 @@
             <node concept="3clFbF" id="4VntlICmPDO" role="3cqZAp">
               <node concept="2OqwBi" id="4VntlICmPYp" role="3clFbG">
                 <node concept="37vLTw" id="4VntlICmPDM" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1H_6AUT4lKe" resolve="principalCtrsAnalysis" />
+                  <ref role="3cqZAo" node="1H_6AUT4lKe" resolve="principalsAnalysis" />
                 </node>
                 <node concept="liA8E" id="4VntlICmQjr" role="2OqNvi">
                   <ref role="37wK5l" to="xnrr:1H_6AUSXuxC" resolve="run" />
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="1H_6AUT4p_c" role="3cqZAp">
-              <node concept="3cpWsn" id="1H_6AUT4p_d" role="3cpWs9">
-                <property role="TrG5h" value="specBuilder" />
-                <node concept="3uibUv" id="1H_6AUT4p_e" role="1tU5fm">
-                  <ref role="3uigEE" to="xnrr:1H_6AUT30JE" resolve="IncrementalProgramSpecBuilder" />
-                </node>
-                <node concept="2ShNRf" id="1H_6AUT4pER" role="33vP2m">
-                  <node concept="1pGfFk" id="1H_6AUT4q22" role="2ShVmc">
-                    <ref role="37wK5l" to="xnrr:1H_6AUT4mKn" resolve="IncrementalProgramSpecBuilder" />
-                    <node concept="37vLTw" id="tyIfzBDnWu" role="37wK5m">
-                      <ref role="3cqZAo" node="tyIfzBDjPX" resolve="programGenInfo" />
-                    </node>
-                    <node concept="37vLTw" id="1H_6AUT4qgt" role="37wK5m">
-                      <ref role="3cqZAo" node="1H_6AUT4lKe" resolve="principalCtrsAnalysis" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="1H_6AUT4rSx" role="3cqZAp">
               <node concept="37vLTI" id="1H_6AUT4sig" role="3clFbG">
-                <node concept="2OqwBi" id="1H_6AUT4sAG" role="37vLTx">
-                  <node concept="37vLTw" id="1H_6AUT4swe" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1H_6AUT4p_d" resolve="specBuilder" />
+                <node concept="2OqwBi" id="1tFmpKdRMCJ" role="37vLTx">
+                  <node concept="37vLTw" id="1tFmpKdRMp4" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1H_6AUT4lKe" resolve="principalsAnalysis" />
                   </node>
-                  <node concept="liA8E" id="1H_6AUT4sHd" role="2OqNvi">
-                    <ref role="37wK5l" to="xnrr:1H_6AUT3mkR" resolve="build" />
+                  <node concept="liA8E" id="1tFmpKdRMSx" role="2OqNvi">
+                    <ref role="37wK5l" to="xnrr:1tFmpKdQTMg" resolve="getSpec" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="1H_6AUT4s3h" role="37vLTJ">

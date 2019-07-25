@@ -1984,6 +1984,10 @@
         <node concept="3xLA65" id="694toQkLwB" role="lGtFl">
           <property role="TrG5h" value="demoBounds2" />
         </node>
+        <node concept="15s5l7" id="1tFmpKdSTtY" role="lGtFl">
+          <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;" />
+          <property role="huDt6" value="all typesystem messages" />
+        </node>
       </node>
     </node>
     <node concept="1LZb2c" id="3vh3iHvq6qg" role="1SL9yI">
