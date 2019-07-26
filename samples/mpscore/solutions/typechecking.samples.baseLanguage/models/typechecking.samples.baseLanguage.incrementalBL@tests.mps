@@ -31,14 +31,10 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
-      <concept id="2325284917965760583" name="jetbrains.mps.lang.test.structure.BeforeTestsMethod" flags="ig" index="0EjCn" />
-      <concept id="2325284917965760584" name="jetbrains.mps.lang.test.structure.AfterTestsMethod" flags="ig" index="0EjCo" />
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
-        <child id="2325284917965993569" name="beforeTests" index="0EEgL" />
-        <child id="2325284917965993580" name="afterTests" index="0EEgW" />
         <child id="1216993439383" name="methods" index="1qtyYc" />
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
@@ -77,9 +73,6 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
-      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
-        <child id="1137022507850" name="body" index="2VODD2" />
-      </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -89,9 +82,6 @@
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -4806,36 +4796,6 @@
               <node concept="37vLTw" id="2u_o41fMFN4" role="2XxRq1">
                 <ref role="3cqZAo" node="2u_o41fMFKN" resolve="launcher" />
               </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="0EjCn" id="2u_o41fGD3w" role="0EEgL">
-      <node concept="3clFbS" id="2u_o41fGD3x" role="2VODD2">
-        <node concept="3clFbF" id="YbzkzLckMI" role="3cqZAp">
-          <node concept="2OqwBi" id="YbzkzLcpjZ" role="3clFbG">
-            <node concept="10M0yZ" id="YbzkzLcocA" role="2Oq$k0">
-              <ref role="3cqZAo" to="zx3l:~ReactorLifecycle.Companion" resolve="Companion" />
-              <ref role="1PxDUh" to="zx3l:~ReactorLifecycle" resolve="ReactorLifecycle" />
-            </node>
-            <node concept="liA8E" id="YbzkzLcu3A" role="2OqNvi">
-              <ref role="37wK5l" to="zx3l:~ReactorLifecycle$Companion.init()" resolve="init" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="0EjCo" id="2u_o41fGGYg" role="0EEgW">
-      <node concept="3clFbS" id="2u_o41fGGYh" role="2VODD2">
-        <node concept="3clFbF" id="2u_o41fGHHt" role="3cqZAp">
-          <node concept="2OqwBi" id="2u_o41fGHHu" role="3clFbG">
-            <node concept="10M0yZ" id="2u_o41fGHHv" role="2Oq$k0">
-              <ref role="1PxDUh" to="zx3l:~ReactorLifecycle" resolve="ReactorLifecycle" />
-              <ref role="3cqZAo" to="zx3l:~ReactorLifecycle.Companion" resolve="Companion" />
-            </node>
-            <node concept="liA8E" id="2u_o41fGHOA" role="2OqNvi">
-              <ref role="37wK5l" to="zx3l:~ReactorLifecycle$Companion.deinit()" resolve="deinit" />
             </node>
           </node>
         </node>
