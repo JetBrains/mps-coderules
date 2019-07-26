@@ -2,17 +2,17 @@
 <model ref="r:727775a3-16ae-4b9f-80a6-9ef3207ffa6a(jetbrains.mps.logic.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="3" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="2" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="4" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="2" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="2" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="2" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1751,7 +1751,7 @@
     </node>
     <node concept="j$LIH" id="677NV56tvCh" role="jxRDz">
       <node concept="1lLz0L" id="677NV56tvCi" role="1lHHLF">
-        <property role="1lMjX7" value="h1lM37o/error" />
+        <property role="1lMjX7" value="error" />
         <property role="1lLB17" value="unsupported construct" />
       </node>
     </node>
@@ -1965,7 +1965,7 @@
     </node>
     <node concept="j$LIH" id="6dMt3c5aqRs" role="jxRDz">
       <node concept="1lLz0L" id="6dMt3c5aqRt" role="1lHHLF">
-        <property role="1lMjX7" value="h1lM37o/error" />
+        <property role="1lMjX7" value="error" />
         <property role="1lLB17" value="unsupported construct" />
       </node>
     </node>
@@ -2527,7 +2527,7 @@
     </node>
     <node concept="j$LIH" id="3kjrYXAPkLh" role="jxRDz">
       <node concept="1lLz0L" id="3kjrYXAPkLi" role="1lHHLF">
-        <property role="1lMjX7" value="h1lM37o/error" />
+        <property role="1lMjX7" value="error" />
         <property role="1lLB17" value="invalid usage (type_term_feature)" />
       </node>
     </node>
@@ -2537,7 +2537,7 @@
     <property role="TrG5h" value="dataform_getter" />
     <node concept="j$LIH" id="1L74NXFa6j1" role="jxRDz">
       <node concept="1lLz0L" id="1L74NXFa6jO" role="1lHHLF">
-        <property role="1lMjX7" value="h1lM37o/error" />
+        <property role="1lMjX7" value="error" />
         <property role="1lLB17" value="invalid usage (type_term)" />
       </node>
     </node>
@@ -2965,7 +2965,7 @@
     </node>
     <node concept="j$LIH" id="1CcQBrPQaZT" role="jxRDz">
       <node concept="1lLz0L" id="1CcQBrPQaZU" role="1lHHLF">
-        <property role="1lMjX7" value="h1lM37o/error" />
+        <property role="1lMjX7" value="error" />
         <property role="1lLB17" value="invalid usage" />
       </node>
     </node>

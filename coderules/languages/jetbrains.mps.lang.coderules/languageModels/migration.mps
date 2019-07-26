@@ -2,9 +2,9 @@
 <model ref="r:51eac161-f155-4ff3-9f01-b4596f103664(jetbrains.mps.lang.coderules.migration)">
   <persistence version="9" />
   <languages>
-    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="2" />
+    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="2" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
@@ -227,7 +227,7 @@
       <node concept="3Tm1VV" id="7smgEqgGBKl" role="1B3o_S" />
       <node concept="3clFbS" id="7smgEqgGBKn" role="3clF47">
         <node concept="RRSsy" id="63PS1WEWEvB" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="63PS1WEWEvC" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Introduce_NodeAnchor)" />
           </node>
@@ -286,7 +286,7 @@
       <node concept="3Tm1VV" id="6s2wbV0R$rd" role="1B3o_S" />
       <node concept="3clFbS" id="6s2wbV0R$rf" role="3clF47">
         <node concept="RRSsy" id="63PS1WEStJg" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="63PS1WEStJh" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Replace_LogicalValue)" />
           </node>
@@ -345,7 +345,7 @@
       <node concept="3Tm1VV" id="6DOfTm$A8yt" role="1B3o_S" />
       <node concept="3clFbS" id="6DOfTm$A8yv" role="3clF47">
         <node concept="RRSsy" id="63PS1WEMePa" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="63PS1WEMePb" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Replace_TypeNodeExpression)" />
           </node>
@@ -404,7 +404,7 @@
       <node concept="3Tm1VV" id="5WBVN_N356_" role="1B3o_S" />
       <node concept="3clFbS" id="5WBVN_N356B" role="3clF47">
         <node concept="RRSsy" id="63PS1WESvQG" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="63PS1WESvQH" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Replace_LogicalValue2)" />
           </node>
@@ -463,7 +463,7 @@
       <node concept="3Tm1VV" id="49obacldLFT" role="1B3o_S" />
       <node concept="3clFbS" id="49obacldLFV" role="3clF47">
         <node concept="RRSsy" id="63PS1WEM2PQ" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="63PS1WEM2PR" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Replace_LogicalExpression)" />
           </node>
@@ -522,7 +522,7 @@
       <node concept="3Tm1VV" id="1HWyn8jSwYE" role="1B3o_S" />
       <node concept="3clFbS" id="1HWyn8jSwYG" role="3clF47">
         <node concept="RRSsy" id="63PS1WEDBBa" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="63PS1WEDBBc" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (RemoveTermArguments)" />
           </node>
@@ -581,7 +581,7 @@
       <node concept="3Tm1VV" id="Lu45F83rnP" role="1B3o_S" />
       <node concept="3clFbS" id="Lu45F83rnR" role="3clF47">
         <node concept="RRSsy" id="63PS1WEDEOr" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="63PS1WEDEOs" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (RemoveTermArgumentDeclaration)" />
           </node>
@@ -641,7 +641,7 @@
       <node concept="3Tm1VV" id="7lt0LtPAUTJ" role="1B3o_S" />
       <node concept="3clFbS" id="7lt0LtPAUTL" role="3clF47">
         <node concept="RRSsy" id="6tPOoeTmEhm" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="6tPOoeTmEhn" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (ConsolidateRuleParameters)" />
           </node>
@@ -701,7 +701,7 @@
       <node concept="3Tm1VV" id="1mdVbTSaajj" role="1B3o_S" />
       <node concept="3clFbS" id="1mdVbTSaajl" role="3clF47">
         <node concept="RRSsy" id="6tPOoeTmEeE" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="6tPOoeTmEeF" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (ReplaceDeprecatedPatternLogicalVariable)" />
           </node>
@@ -760,7 +760,7 @@
       <node concept="3Tm1VV" id="JOGAOsOdlt" role="1B3o_S" />
       <node concept="3clFbS" id="JOGAOsOdlv" role="3clF47">
         <node concept="RRSsy" id="6tPOoeTmEbX" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="6tPOoeTmEbY" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Copy_TermTable)" />
           </node>
@@ -821,7 +821,7 @@
       <node concept="3Tm1VV" id="JOGAOsQdkV" role="1B3o_S" />
       <node concept="3clFbS" id="JOGAOsQdkX" role="3clF47">
         <node concept="RRSsy" id="6tPOoeTm_8k" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="6tPOoeTm_8l" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Replace_Term)" />
           </node>
@@ -881,7 +881,7 @@
       <node concept="3Tm1VV" id="JOGAOsS0nf" role="1B3o_S" />
       <node concept="3clFbS" id="JOGAOsS0nh" role="3clF47">
         <node concept="RRSsy" id="6tPOoeTmuNp" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="6tPOoeTmuNq" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Update_TermTable)" />
           </node>
@@ -941,7 +941,7 @@
       <node concept="3Tm1VV" id="JOGAOsT9Ra" role="1B3o_S" />
       <node concept="3clFbS" id="JOGAOsT9Rc" role="3clF47">
         <node concept="RRSsy" id="6tPOoeTmsv2" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="6tPOoeTmsv3" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (Drop_TermTable)" />
           </node>
@@ -1000,7 +1000,7 @@
       <node concept="3Tm1VV" id="12QmIoyW8oZ" role="1B3o_S" />
       <node concept="3clFbS" id="12QmIoyW8p1" role="3clF47">
         <node concept="RRSsy" id="6tPOoeTmrTF" role="3cqZAp">
-          <property role="RRSoG" value="gZ5fh_4/error" />
+          <property role="RRSoG" value="error" />
           <node concept="Xl_RD" id="6tPOoeTmrTG" role="RRSoy">
             <property role="Xl_RC" value="Migration has been truncated, please downgrade. (SwitchToRuleTemplates)" />
           </node>

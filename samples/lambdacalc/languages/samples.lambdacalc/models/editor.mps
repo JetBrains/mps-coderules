@@ -2,7 +2,7 @@
 <model ref="r:a4cbccba-ea60-4d22-9e76-4b461414bf5b(samples.lambdacalc.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="13" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -111,6 +111,7 @@
         <reference id="7991336459489872009" name="outputConcept" index="3EoQqy" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
+        <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -563,7 +564,7 @@
     <node concept="1Qtc8_" id="7_8aRkgF6Dk" role="IW6Ez">
       <node concept="3cWJ9i" id="7_8aRkgF6Do" role="1Qtc8$">
         <node concept="CtIbL" id="7_8aRkgF6Dq" role="CtIbM">
-          <property role="CtIbK" value="30NnNOohrQL/RIGHT" />
+          <property role="CtIbK" value="RIGHT" />
         </node>
       </node>
       <node concept="IWgqT" id="7_8aRkgFP5Q" role="1Qtc8A">
@@ -666,7 +667,7 @@
                 <node concept="1OKiuA" id="7_8aRkgHznQ" role="2OqNvi">
                   <node concept="1Q80Hx" id="7_8aRkgHzrr" role="lBI5i" />
                   <node concept="2B6iha" id="7_8aRkgHB0P" role="lGT1i">
-                    <property role="1lyBwo" value="1S2pyLby17G/firstEditable" />
+                    <property role="1lyBwo" value="firstEditable" />
                   </node>
                 </node>
               </node>
@@ -919,6 +920,7 @@
         <property role="3F0ifm" value="∀" />
       </node>
       <node concept="3F2HdR" id="48ZGLP7q1QZ" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
         <property role="2czwfO" value=" " />
         <ref role="1NtTu8" to="8tt8:48ZGLP7q1Qc" resolve="typeVars" />
         <node concept="2iRfu4" id="48ZGLP7q1R2" role="2czzBx" />

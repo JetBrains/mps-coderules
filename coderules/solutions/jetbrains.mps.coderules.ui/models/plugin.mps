@@ -5,7 +5,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
@@ -13,7 +13,7 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="2" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
   </languages>
   <imports>
     <import index="zavc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.messageTargets(MPS.Core/)" />
@@ -12475,7 +12475,7 @@
                 </node>
               </node>
               <node concept="2xdQw9" id="YbzkzLtMB_" role="3cqZAp">
-                <property role="2xdLsb" value="gZ5fksE/warn" />
+                <property role="2xdLsb" value="warn" />
                 <node concept="Xl_RD" id="428_4iYyOss" role="9lYJi">
                   <property role="Xl_RC" value="exception while extracting presentation" />
                 </node>
@@ -25080,7 +25080,7 @@
               </node>
               <node concept="3clFbS" id="2HYHa0WQNUj" role="TDEfX">
                 <node concept="2xdQw9" id="YbzkzLtSD1" role="3cqZAp">
-                  <property role="2xdLsb" value="gZ5fksE/warn" />
+                  <property role="2xdLsb" value="warn" />
                   <node concept="Xl_RD" id="2HYHa0WQOxc" role="9lYJi">
                     <property role="Xl_RC" value="Error computing cellinfo" />
                   </node>

@@ -308,7 +308,7 @@
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="samples.fitch.demo" />
         <property role="3LESm3" value="86925f4e-7856-4553-a261-c86fbf09bb52" />
-        <property role="aoJFB" value="eYcmk9QOlj/sources_and_tests" />
+        <property role="aoJFB" value="sources and tests" />
         <node concept="55IIr" id="4$bYnYI$ZFO" role="3LF7KH">
           <node concept="2Ry0Ak" id="4$bYnYI$ZGE" role="iGT6I">
             <property role="2Ry0Am" value="solutions" />

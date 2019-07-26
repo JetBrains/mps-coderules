@@ -2,7 +2,7 @@
 <model ref="r:5e4e4f29-5632-41c5-a47c-40ca5e101249(jetbrains.mps.typechecking.testlang.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="13" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
@@ -351,7 +351,7 @@
     <node concept="1Qtc8_" id="7mB3viLbcyk" role="IW6Ez">
       <node concept="3cWJ9i" id="7mB3viLbcyo" role="1Qtc8$">
         <node concept="CtIbL" id="7mB3viLbcyq" role="CtIbM">
-          <property role="CtIbK" value="30NnNOohrQL/RIGHT" />
+          <property role="CtIbK" value="RIGHT" />
         </node>
       </node>
       <node concept="IWgqT" id="7mB3viLbcyu" role="1Qtc8A">
@@ -611,7 +611,7 @@
     <node concept="1Qtc8_" id="7mB3viLgWoH" role="IW6Ez">
       <node concept="3cWJ9i" id="7mB3viLgWoL" role="1Qtc8$">
         <node concept="CtIbL" id="7mB3viLgWoN" role="CtIbM">
-          <property role="CtIbK" value="30NnNOohrQL/RIGHT" />
+          <property role="CtIbK" value="RIGHT" />
         </node>
       </node>
       <node concept="IWgqT" id="7mB3viLgWoR" role="1Qtc8A">

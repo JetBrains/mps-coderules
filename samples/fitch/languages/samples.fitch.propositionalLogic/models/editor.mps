@@ -2,9 +2,9 @@
 <model ref="r:2ca623f4-8f74-473f-b3b6-e9b637018c0b(samples.fitch.propositionalLogic.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="13" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -307,7 +307,7 @@
     <property role="TrG5h" value="And_Actions" />
     <ref role="1h_SK9" to="27wh:3JXBM6C3FnV" resolve="And" />
     <node concept="1hA7zw" id="3JXBM6C8NIo" role="1h_SK8">
-      <property role="1hAc7j" value="g_hAxAO/delete_action_id" />
+      <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="3JXBM6C8NIp" role="1hA7z_">
         <node concept="3clFbS" id="3JXBM6C8NIq" role="2VODD2">
           <node concept="3cpWs8" id="3JXBM6C8YI2" role="3cqZAp">
@@ -480,7 +480,7 @@
     <property role="TrG5h" value="If_Actions" />
     <ref role="1h_SK9" to="27wh:3JXBM6C3Fph" resolve="If" />
     <node concept="1hA7zw" id="3JXBM6C9alQ" role="1h_SK8">
-      <property role="1hAc7j" value="g_hAxAO/delete_action_id" />
+      <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="3JXBM6C9alR" role="1hA7z_">
         <node concept="3clFbS" id="3JXBM6C9alS" role="2VODD2">
           <node concept="3clFbF" id="3JXBM6C9c2K" role="3cqZAp">
@@ -550,7 +550,7 @@
     <property role="TrG5h" value="Iff_Actions" />
     <ref role="1h_SK9" to="27wh:3JXBM6C3Frx" resolve="Iff" />
     <node concept="1hA7zw" id="3JXBM6C9dQl" role="1h_SK8">
-      <property role="1hAc7j" value="g_hAxAO/delete_action_id" />
+      <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="3JXBM6C9dQm" role="1hA7z_">
         <node concept="3clFbS" id="3JXBM6C9dQn" role="2VODD2">
           <node concept="3clFbF" id="3JXBM6C9f$R" role="3cqZAp">
@@ -628,7 +628,7 @@
     <property role="TrG5h" value="Not_Actions" />
     <ref role="1h_SK9" to="27wh:3JXBM6C3Cnn" resolve="Not" />
     <node concept="1hA7zw" id="3JXBM6C86ik" role="1h_SK8">
-      <property role="1hAc7j" value="g_hAxAO/delete_action_id" />
+      <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="3JXBM6C86il" role="1hA7z_">
         <node concept="3clFbS" id="3JXBM6C86im" role="2VODD2">
           <node concept="3clFbF" id="3JXBM6C86iz" role="3cqZAp">
@@ -694,7 +694,7 @@
     <property role="TrG5h" value="Or_Actions" />
     <ref role="1h_SK9" to="27wh:3JXBM6C3FoA" resolve="Or" />
     <node concept="1hA7zw" id="3JXBM6C8ul9" role="1h_SK8">
-      <property role="1hAc7j" value="g_hAxAO/delete_action_id" />
+      <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="3JXBM6C8ula" role="1hA7z_">
         <node concept="3clFbS" id="3JXBM6C8ulb" role="2VODD2">
           <node concept="3cpWs8" id="3JXBM6C8HbR" role="3cqZAp">
@@ -1052,7 +1052,7 @@
       </node>
       <node concept="3cWJ9i" id="3JXBM6C7kE2" role="1Qtc8$">
         <node concept="CtIbL" id="3JXBM6C7kE4" role="CtIbM">
-          <property role="CtIbK" value="30NnNOohrQL/RIGHT" />
+          <property role="CtIbK" value="RIGHT" />
         </node>
       </node>
     </node>
@@ -1250,7 +1250,7 @@
       </node>
       <node concept="3cWJ9i" id="3JXBM6C7GZR" role="1Qtc8$">
         <node concept="CtIbL" id="3JXBM6C7GZS" role="CtIbM">
-          <property role="CtIbK" value="1A4kJjlVmVt/LEFT" />
+          <property role="CtIbK" value="LEFT" />
         </node>
       </node>
     </node>

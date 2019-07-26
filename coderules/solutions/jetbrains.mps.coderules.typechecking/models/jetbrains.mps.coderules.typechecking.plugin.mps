@@ -6,7 +6,7 @@
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
@@ -271,7 +271,7 @@
       <node concept="3Tm1VV" id="3LFq2p98DNN" role="1B3o_S" />
       <node concept="3clFbS" id="3LFq2p98DNO" role="3clF47">
         <node concept="RRSsy" id="3LFq2p98DVg" role="3cqZAp">
-          <property role="RRSoG" value="h1akgim/info" />
+          <property role="RRSoG" value="info" />
           <node concept="Xl_RD" id="3LFq2p98DVi" role="RRSoy">
             <property role="Xl_RC" value="*** Coderules INITIALIZED " />
           </node>
@@ -348,7 +348,7 @@
           <property role="3V$3am" value="statement" />
           <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
           <node concept="2xdQw9" id="1GKZK$Ai41j" role="8Wnug">
-            <property role="2xdLsb" value="gZ5fksE/warn" />
+            <property role="2xdLsb" value="warn" />
             <node concept="3cpWs3" id="1GKZK$Ai7TX" role="9lYJi">
               <node concept="37vLTw" id="1GKZK$Ai8qx" role="3uHU7w">
                 <ref role="3cqZAo" node="1GKZK$AhZZq" resolve="relevant" />
@@ -681,7 +681,7 @@
           <node concept="9aQIb" id="3LFq2p98r6e" role="9aQIa">
             <node concept="3clFbS" id="3LFq2p98r6f" role="9aQI4">
               <node concept="RRSsy" id="3LFq2p98rfn" role="3cqZAp">
-                <property role="RRSoG" value="gZ5fh_4/error" />
+                <property role="RRSoG" value="error" />
                 <node concept="Xl_RD" id="3LFq2p98rfp" role="RRSoy">
                   <property role="Xl_RC" value="Coderules failed to initialize: TypecheckingBackend component not found" />
                 </node>

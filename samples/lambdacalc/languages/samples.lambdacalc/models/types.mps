@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="af858d84-85f2-42f4-a854-0b3c6b5cd482" name="samples.lambdacalc" version="-1" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
@@ -189,9 +189,6 @@
       <concept id="1196350785112" name="jetbrains.mps.lang.quotation.structure.Antiquotation" flags="ng" index="2c44te" />
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
-      </concept>
-      <concept id="4056363777117001481" name="jetbrains.mps.lang.quotation.structure.StringToTypedValueMigrationInfo" flags="ng" index="AAgTk">
-        <property id="2173356959483005420" name="stringValueMigrated" index="3qcH_f" />
       </concept>
       <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
     </language>
@@ -3615,7 +3612,7 @@
                         <ref role="3A2yKK" node="44a9n8ErWrh" resolve="app" />
                       </node>
                       <node concept="2s7oft" id="6K6UrSyIeTu" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
+                        <property role="2s7ueQ" value="error" />
                         <node concept="2YIFZM" id="6K6UrSyIfsz" role="2s7u9n">
                           <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                           <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...)" resolve="format" />
@@ -3821,7 +3818,7 @@
                         <ref role="3A2yKK" node="6_p$mL23fzC" resolve="ite" />
                       </node>
                       <node concept="2s7oft" id="6K6UrSyIgs7" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
+                        <property role="2s7ueQ" value="error" />
                         <node concept="Xl_RD" id="6K6UrSyIgtz" role="2s7u9n">
                           <property role="Xl_RC" value="mismatched type" />
                         </node>
@@ -5491,7 +5488,6 @@
                             <property role="2qtEX9" value="name" />
                             <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
                             <property role="3hQQBS" value="VarType" />
-                            <property role="3qcH_f" value="true" />
                             <node concept="1TmgYN" id="48ZGLP8Lim5" role="2c44t1">
                               <node concept="1nq8_$" id="48ZGLP8Lim6" role="1Tms7$">
                                 <node concept="a7P8L" id="48ZGLP8Lim7" role="1nq8_t">
@@ -5622,7 +5618,6 @@
                                 <property role="2qtEX9" value="name" />
                                 <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
                                 <property role="3hQQBS" value="VarType" />
-                                <property role="3qcH_f" value="true" />
                                 <node concept="1TmgYN" id="2O9ahh6LnAP" role="2c44t1">
                                   <node concept="1nq8_$" id="2O9ahh6LnBa" role="1Tms7$">
                                     <node concept="a7P8L" id="2O9ahh6LnB8" role="1nq8_t">
@@ -6714,7 +6709,6 @@
                               <node concept="2EMmih" id="47tET_X1EJF" role="lGtFl">
                                 <property role="2qtEX9" value="typeclassName" />
                                 <property role="P4ACc" value="af858d84-85f2-42f4-a854-0b3c6b5cd482/4746138258032205784/4746138258032205785" />
-                                <property role="3qcH_f" value="true" />
                                 <node concept="1TmgYN" id="47tET_X1EJJ" role="2c44t1">
                                   <node concept="1nq8_$" id="47tET_X1EJR" role="1Tms7$">
                                     <node concept="a7P8L" id="47tET_X1EJP" role="1nq8_t">
@@ -6726,7 +6720,6 @@
                               <node concept="2EMmih" id="47tET_X1EJU" role="lGtFl">
                                 <property role="2qtEX9" value="typeVarName" />
                                 <property role="P4ACc" value="af858d84-85f2-42f4-a854-0b3c6b5cd482/4746138258032205784/4746138258034063219" />
-                                <property role="3qcH_f" value="true" />
                                 <node concept="1TmgYN" id="47tET_X1EK2" role="2c44t1">
                                   <node concept="1nq8_$" id="47tET_X1EKa" role="1Tms7$">
                                     <node concept="a7P8L" id="47tET_X38ZZ" role="1nq8_t">

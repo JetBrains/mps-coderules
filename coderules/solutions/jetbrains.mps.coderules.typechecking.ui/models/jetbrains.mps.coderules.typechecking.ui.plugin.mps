@@ -9,7 +9,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
@@ -3312,27 +3312,27 @@
   </node>
   <node concept="Zd50a" id="4vBwiiVq9ko">
     <property role="TrG5h" value="MacOSX" />
-    <property role="Zd52Q" value="1mJS7WEAV1T/Mac_OS_X" />
+    <property role="Zd52Q" value="Mac OS X" />
     <property role="Z2u3V" value="false" />
     <node concept="Zd509" id="4vBwiiVq9kp" role="Zd508">
       <ref role="1bYAoF" node="4vBwiiVgYfo" resolve="ShowNodeType" />
       <node concept="pLAjd" id="4vBwiiVq9kq" role="Zd501">
         <property role="pLAjc" value="ctrl+shift" />
         <property role="pLAjf" value="VK_P" />
-        <property role="3hacHL" value="5SFo3Mf0QpD/replace_all" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
   </node>
   <node concept="Zd50a" id="4vBwiiVq9kr">
     <property role="TrG5h" value="MacOSX105" />
-    <property role="Zd52Q" value="2HiVo5PakU7/Mac_OS_X_10_5_" />
+    <property role="Zd52Q" value="Mac OS X 10.5+" />
     <property role="Z2u3V" value="false" />
     <node concept="Zd509" id="4vBwiiVq9ks" role="Zd508">
       <ref role="1bYAoF" node="4vBwiiVgYfo" resolve="ShowNodeType" />
       <node concept="pLAjd" id="4vBwiiVq9kt" role="Zd501">
         <property role="pLAjc" value="ctrl+shift" />
         <property role="pLAjf" value="VK_P" />
-        <property role="3hacHL" value="5SFo3Mf0QpD/replace_all" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
   </node>

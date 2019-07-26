@@ -2,7 +2,7 @@
 <model ref="r:ec0979fb-ae37-4823-9eaa-8550d9f5c6fd(jetbrains.mps.typechecking.testlang.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="7" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -52,9 +52,9 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7lt0LtPHOme" role="1TKVEi">
       <property role="IQ2ns" value="8456919074565735822" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="stmt" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7mB3viLb8nE" resolve="Stmt" />
     </node>
     <node concept="PrWs8" id="7mB3viLaATe" role="PzmwI">
@@ -67,9 +67,9 @@
     <ref role="1TJDcQ" node="7mB3viLb8nE" resolve="Stmt" />
     <node concept="1TJgyj" id="7lt0LtPHOmo" role="1TKVEi">
       <property role="IQ2ns" value="8456919074565735832" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expr" />
-      <property role="20lbJX" value="fLJekj4/_1" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="7lt0LtPHOmg" resolve="Expr" />
     </node>
   </node>
@@ -93,14 +93,14 @@
     <ref role="1TJDcQ" node="7mB3viLb8nE" resolve="Stmt" />
     <node concept="1TJgyj" id="7mB3viLbaWO" role="1TKVEi">
       <property role="IQ2ns" value="8477760168143925044" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="decl" />
-      <property role="20lbJX" value="fLJekj4/_1" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="7mB3viLbaW_" resolve="VarDecl" />
     </node>
     <node concept="1TJgyj" id="7mB3viLbaWQ" role="1TKVEi">
       <property role="IQ2ns" value="8477760168143925046" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="init" />
       <ref role="20lvS9" node="7lt0LtPHOmg" resolve="Expr" />
     </node>

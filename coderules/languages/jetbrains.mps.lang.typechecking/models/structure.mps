@@ -2,7 +2,7 @@
 <model ref="r:39840d4e-f61c-4452-88c5-75b1eb10e892(jetbrains.mps.lang.typechecking.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="7" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -40,9 +40,9 @@
     <ref role="1TJDcQ" to="tp25:g$eCIIG" resolve="SNodeOperation" />
     <node concept="1TJgyj" id="oI9Yrc9Ch" role="1TKVEi">
       <property role="IQ2ns" value="6958395084020241" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="typeExpr" />
-      <property role="20lbJX" value="fLJekj4/_1" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>

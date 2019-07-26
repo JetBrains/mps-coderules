@@ -2,7 +2,7 @@
 <model ref="r:72b177ed-1924-4265-b8f3-64e062fd2eed(samples.fitch.firstOrderLogic.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="7" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -100,16 +100,16 @@
     </node>
     <node concept="1TJgyj" id="3w0n0hzkQZl" role="1TKVEi">
       <property role="IQ2ns" value="4035326440040001493" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="left" />
-      <property role="20lbJX" value="fLJekj4/_1" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="bw37:2DPo4JTRwsJ" resolve="Term" />
     </node>
     <node concept="1TJgyj" id="3w0n0hzkQZn" role="1TKVEi">
       <property role="IQ2ns" value="4035326440040001495" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="right" />
-      <property role="20lbJX" value="fLJekj4/_1" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="bw37:2DPo4JTRwsJ" resolve="Term" />
     </node>
   </node>
