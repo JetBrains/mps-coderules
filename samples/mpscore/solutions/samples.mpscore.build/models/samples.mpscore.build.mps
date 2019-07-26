@@ -258,7 +258,7 @@
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.baseLanguageExt.test" />
         <property role="3LESm3" value="e44e7802-2e40-482b-9b1c-6d42660a6a11" />
-        <property role="aoJFB" value="sources and tests" />
+        <property role="aoJFB" value="eYcmk9QOlj/sources_and_tests" />
         <node concept="55IIr" id="69UmpDmJW8L" role="3LF7KH">
           <node concept="2Ry0Ak" id="69UmpDmJW9Q" role="iGT6I">
             <property role="2Ry0Am" value="solutions" />
@@ -310,7 +310,7 @@
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="typechecking.samples.baseLanguage" />
         <property role="3LESm3" value="3ddddf69-9ff0-426b-9365-51ae7356fb82" />
-        <property role="aoJFB" value="sources and tests" />
+        <property role="aoJFB" value="eYcmk9QOlj/sources_and_tests" />
         <node concept="55IIr" id="69UmpDmJW3z" role="3LF7KH">
           <node concept="2Ry0Ak" id="69UmpDmJW46" role="iGT6I">
             <property role="2Ry0Am" value="solutions" />

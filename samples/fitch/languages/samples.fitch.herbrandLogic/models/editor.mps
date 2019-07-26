@@ -2,7 +2,7 @@
 <model ref="r:0b1f15f7-167a-449c-aaf4-e2a3be522c90(samples.fitch.herbrandLogic.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="12" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="13" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
@@ -73,9 +73,7 @@
       <concept id="4323500428136740385" name="jetbrains.mps.lang.editor.structure.CellIdReferenceSelector" flags="ng" index="2TlHUq">
         <reference id="4323500428136742952" name="id" index="2TlMyj" />
       </concept>
-      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2">
-        <property id="1186403771423" name="style" index="Vbekb" />
-      </concept>
+      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -119,7 +117,6 @@
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
-        <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
         <reference id="1139959269582" name="actionMap" index="1ERwB7" />
         <child id="4323500428121274054" name="id" index="2SqHTX" />
       </concept>
@@ -203,9 +200,7 @@
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="5455284157993911077" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty" flags="ng" index="2pJxcG">
         <reference id="5455284157993911078" name="property" index="2pJxcJ" />
-      </concept>
-      <concept id="5455284157993911097" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart" flags="ng" index="2pJxcK">
-        <child id="5455284157993911094" name="expression" index="2pJxcZ" />
+        <child id="1595412875168045201" name="initValue" index="28ntcv" />
       </concept>
       <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
         <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
@@ -278,7 +273,6 @@
       </node>
       <node concept="3F2HdR" id="2DPo4JTS3gj" role="3EZMnx">
         <property role="2czwfO" value="," />
-        <property role="1cu_pB" value="0" />
         <ref role="1NtTu8" to="bw37:2DPo4JTRwtv" resolve="argument" />
         <ref role="1ERwB7" node="2DPo4JTT9wr" resolve="Function_DeleteArguments" />
         <node concept="l2Vlx" id="2DPo4JTS3gl" role="2czzBx" />
@@ -343,7 +337,6 @@
       </node>
       <node concept="3F2HdR" id="2DPo4JTS3gZ" role="3EZMnx">
         <property role="2czwfO" value="," />
-        <property role="1cu_pB" value="0" />
         <ref role="1NtTu8" to="bw37:2DPo4JTRwtF" resolve="member" />
         <ref role="1ERwB7" node="2DPo4JTTm8h" resolve="Relation_DeleteMembers" />
         <node concept="l2Vlx" id="2DPo4JTS3h0" role="2czzBx" />
@@ -428,7 +421,7 @@
     <node concept="1Qtc8_" id="2DPo4JTSM6c" role="IW6Ez">
       <node concept="3cWJ9i" id="2DPo4JTSM6g" role="1Qtc8$">
         <node concept="CtIbL" id="2DPo4JTSM6i" role="CtIbM">
-          <property role="CtIbK" value="RIGHT" />
+          <property role="CtIbK" value="30NnNOohrQL/RIGHT" />
         </node>
       </node>
       <node concept="IWgqT" id="2DPo4JTSM6m" role="1Qtc8A">
@@ -588,7 +581,7 @@
       </node>
       <node concept="3cWJ9i" id="2DPo4JTT2hn" role="1Qtc8$">
         <node concept="CtIbL" id="2DPo4JTT2ho" role="CtIbM">
-          <property role="CtIbK" value="RIGHT" />
+          <property role="CtIbK" value="30NnNOohrQL/RIGHT" />
         </node>
       </node>
     </node>
@@ -598,7 +591,7 @@
     <property role="3GE5qa" value="sentence" />
     <ref role="1h_SK9" to="bw37:2DPo4JTRwsP" resolve="Function" />
     <node concept="1hA7zw" id="2DPo4JTT9BG" role="1h_SK8">
-      <property role="1hAc7j" value="delete_action_id" />
+      <property role="1hAc7j" value="g_hAxAO/delete_action_id" />
       <property role="1hHO97" value="Delete argument list" />
       <node concept="1hAIg9" id="2DPo4JTT9BH" role="1hA7z_">
         <node concept="3clFbS" id="2DPo4JTT9BI" role="2VODD2">
@@ -671,7 +664,7 @@
     <property role="3GE5qa" value="sentence" />
     <ref role="1h_SK9" to="bw37:2DPo4JTRwtx" resolve="Relation" />
     <node concept="1hA7zw" id="2DPo4JTTm8i" role="1h_SK8">
-      <property role="1hAc7j" value="delete_action_id" />
+      <property role="1hAc7j" value="g_hAxAO/delete_action_id" />
       <property role="1hHO97" value="Delete members list" />
       <node concept="1hAIg9" id="2DPo4JTTm8j" role="1hA7z_">
         <node concept="3clFbS" id="2DPo4JTTm8k" role="2VODD2">
@@ -756,7 +749,7 @@
                 <ref role="2pJxaS" to="bw37:2DPo4JTRwsI" resolve="Object" />
                 <node concept="2pJxcG" id="2DPo4JTTBNJ" role="2pJxcM">
                   <ref role="2pJxcJ" to="tpck:h0TrG11" resolve="name" />
-                  <node concept="ub8z3" id="2DPo4JTTBU1" role="2pJxcZ" />
+                  <node concept="ub8z3" id="2DPo4JTTBU1" role="28ntcv" />
                 </node>
               </node>
             </node>
@@ -808,7 +801,7 @@
                 <ref role="2pJxaS" to="bw37:2DPo4JTRwsM" resolve="Variable" />
                 <node concept="2pJxcG" id="2DPo4JTTRku" role="2pJxcM">
                   <ref role="2pJxcJ" to="tpck:h0TrG11" resolve="name" />
-                  <node concept="ub8z3" id="2DPo4JTTRkv" role="2pJxcZ" />
+                  <node concept="ub8z3" id="2DPo4JTTRkv" role="28ntcv" />
                 </node>
               </node>
             </node>
@@ -1085,9 +1078,7 @@
       <node concept="3F0ifn" id="4h0MmDW8lXC" role="3EZMnx" />
       <node concept="3F0ifn" id="4h0MmDW8lXF" role="3EZMnx">
         <property role="3F0ifm" value="Eliminator for universal quantifier (∀)." />
-        <node concept="Vb9p2" id="4h0MmDW8lXJ" role="3F10Kt">
-          <property role="Vbekb" value="PLAIN" />
-        </node>
+        <node concept="Vb9p2" id="4h0MmDW8lXJ" role="3F10Kt" />
       </node>
       <node concept="3F0ifn" id="4h0MmDW8lXL" role="3EZMnx">
         <property role="3F0ifm" value="Must have one basis (premise) : a universal sentence (∀ X.SENTENCE)," />

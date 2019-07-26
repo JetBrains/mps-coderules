@@ -559,7 +559,7 @@
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.logic.test" />
         <property role="3LESm3" value="b189d6c6-9397-4d64-88af-1ac73760a4f5" />
-        <property role="aoJFB" value="sources and tests" />
+        <property role="aoJFB" value="eYcmk9QOlj/sources_and_tests" />
         <node concept="55IIr" id="7Ant4WkHLpe" role="3LF7KH">
           <node concept="2Ry0Ak" id="7Ant4WkHLpf" role="iGT6I">
             <property role="2Ry0Am" value="coderules" />
@@ -1156,7 +1156,7 @@
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.coderules.typechecking.test" />
         <property role="3LESm3" value="c9670c16-a215-41fb-8784-04b14329799d" />
-        <property role="aoJFB" value="sources and tests" />
+        <property role="aoJFB" value="eYcmk9QOlj/sources_and_tests" />
         <node concept="55IIr" id="7mB3viLwG3p" role="3LF7KH">
           <node concept="2Ry0Ak" id="7mB3viLwGj2" role="iGT6I">
             <property role="2Ry0Am" value="coderules" />
@@ -1984,7 +1984,7 @@
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.coderules.test" />
         <property role="3LESm3" value="c18711cb-f08b-4fae-81b0-1dd840be9c90" />
-        <property role="aoJFB" value="sources and tests" />
+        <property role="aoJFB" value="eYcmk9QOlj/sources_and_tests" />
         <node concept="55IIr" id="1Lr58WFO94S" role="3LF7KH">
           <node concept="2Ry0Ak" id="1Lr58WFO9de" role="iGT6I">
             <property role="2Ry0Am" value="coderules" />

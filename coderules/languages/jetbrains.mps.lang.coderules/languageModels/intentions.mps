@@ -2,14 +2,14 @@
 <model ref="r:0b4fa908-1136-4415-a93b-4106c8eb77b5(jetbrains.mps.lang.coderules.intentions)">
   <persistence version="9" />
   <languages>
-    <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
+    <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="7" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="15" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -109,9 +109,7 @@
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
         <reference id="5455284157994012188" name="link" index="2pIpSl" />
-      </concept>
-      <concept id="5455284157993911097" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart" flags="ng" index="2pJxcK">
-        <child id="5455284157993911094" name="expression" index="2pJxcZ" />
+        <child id="1595412875168045827" name="initValue" index="28nt2d" />
       </concept>
       <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
         <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
@@ -508,7 +506,7 @@
                             <ref role="2pJxaS" to="wq2x:6p0DfM0a6KG" resolve="EmitConstraintStatement" />
                             <node concept="2pIpSj" id="5f6wxQ3dlQO" role="2pJxcM">
                               <ref role="2pIpSl" to="wq2x:6p0DfM0ajKO" resolve="constraint" />
-                              <node concept="36biLy" id="5f6wxQ3dmeZ" role="2pJxcZ">
+                              <node concept="36biLy" id="5f6wxQ3dmeZ" role="28nt2d">
                                 <node concept="2OqwBi" id="5f6wxQ3dqSF" role="36biLW">
                                   <node concept="2OqwBi" id="5f6wxQ3dn3D" role="2Oq$k0">
                                     <node concept="1PxgMI" id="5f6wxQ3dppK" role="2Oq$k0">
@@ -722,7 +720,7 @@
                             <ref role="2pJxaS" to="wq2x:20Ay2VefOBs" resolve="ConstraintLogicalClause" />
                             <node concept="2pIpSj" id="5f6wxQ3fbQo" role="2pJxcM">
                               <ref role="2pIpSl" to="wq2x:20Ay2VefOBA" resolve="constraint" />
-                              <node concept="36biLy" id="5f6wxQ3fcdH" role="2pJxcZ">
+                              <node concept="36biLy" id="5f6wxQ3fcdH" role="28nt2d">
                                 <node concept="2OqwBi" id="5f6wxQ3fea8" role="36biLW">
                                   <node concept="2OqwBi" id="5f6wxQ3eV2W" role="2Oq$k0">
                                     <node concept="1PxgMI" id="5f6wxQ3eUKP" role="2Oq$k0">
