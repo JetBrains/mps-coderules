@@ -47,13 +47,13 @@ internal open class MatchJournalImpl(
         if (view == null) {
             nextChunkId = 0
             val initChunk = MatchChunk(nextChunkId++, InitRuleMatch)
-            hist = IteratorMutableList(LinkedList<Chunk>().apply { add(initChunk) })
+            hist = IteratorMutableList(ArrayList<Chunk>().apply { add(initChunk) })
         } else {
             // assert that initial chunk is present
             with (view.chunks.first()) {
                 assert(this is MatchChunk && match is InitRuleMatch)
             }
-            hist = IteratorMutableList(LinkedList(view.chunks as List<Chunk>))
+            hist = IteratorMutableList(ArrayList(view.chunks as List<Chunk>))
             nextChunkId = view.nextChunkId
         }
     }
