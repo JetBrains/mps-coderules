@@ -7,7 +7,7 @@
     <parent>
         <groupId>jetbrains.mps.logic.conreactor</groupId>
         <artifactId>conreactor-main</artifactId>
-        <version>0.9.10</version>
+        <version>0.9.11</version>
         <relativePath>..</relativePath>
     </parent>
 
