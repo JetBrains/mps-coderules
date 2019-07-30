@@ -20,17 +20,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="API" />
-        <module name="Core" />
         <module name="Test" />
+        <module name="Core" />
+        <module name="API" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="API" target="1.8" />
-      <module name="Core" target="1.8" />
+      <module name="Core" target="11" />
       <module name="main" target="1.5" />
-      <module name="Reactor" target="1.8" />
-      <module name="Test" target="1.8" />
+      <module name="Reactor" target="11" />
+      <module name="Test" target="11" />
       <module name="tests" target="1.8" />
       <module name="unification-lib" target="1.8" />
     </bytecodeTargetLevel>
