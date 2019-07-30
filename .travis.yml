@@ -3,7 +3,7 @@ jdk: openjdk11
 install: true
 script:
   - mvn -Dmaven.javadoc.skip=true -B -f reactor install
-  - ./gradlew check
+  - xvfb-run ./gradlew check
 after_failure:
   - for f in `find . -name 'TEST*xml'`; do echo $f && cat "$f" && echo "."; done
 deploy:
