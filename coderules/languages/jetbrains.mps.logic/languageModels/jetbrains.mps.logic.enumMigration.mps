@@ -82,7 +82,7 @@
       <concept id="1240170042401" name="jetbrains.mps.lang.smodel.structure.SEnumerationMemberType" flags="in" index="2ZThk1">
         <reference id="1240170836027" name="enum" index="2ZWj4r" />
       </concept>
-      <concept id="2453008993612717253" name="jetbrains.mps.lang.smodel.structure.ExpressionEnumBody" flags="ng" index="3X5gDF">
+      <concept id="2453008993612717253" name="jetbrains.mps.lang.smodel.structure.EnumSwitchCaseBody_Expression" flags="ng" index="3X5gDF">
         <child id="2453008993612717254" name="expression" index="3X5gDC" />
       </concept>
       <concept id="2453008993612559843" name="jetbrains.mps.lang.smodel.structure.EnumSwitchCase" flags="ng" index="3X5Udd">

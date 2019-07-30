@@ -322,7 +322,7 @@
           </node>
           <node concept="2ShNRf" id="1Lr58WFVLXH" role="HW$Y0">
             <node concept="1pGfFk" id="1Lr58WFVLXI" role="2ShVmc">
-              <ref role="37wK5l" to="wsw7:6qi2OtU3uwS" resolve="ConstraintsChecker" />
+              <ref role="37wK5l" to="wsw7:6qi2OtU3uwS" resolve="ConstraintsCheckerOld" />
             </node>
           </node>
           <node concept="2ShNRf" id="1Lr58WFVNK6" role="HW$Y0">
@@ -352,7 +352,7 @@
           </node>
           <node concept="2ShNRf" id="1Lr58WFWe0Z" role="HW$Y0">
             <node concept="1pGfFk" id="1Lr58WFWheJ" role="2ShVmc">
-              <ref role="37wK5l" to="wsw7:6qi2OtU3tXr" resolve="RefScopeChecker" />
+              <ref role="37wK5l" to="wsw7:6qi2OtU3tXr" resolve="RefScopeCheckerOld" />
             </node>
           </node>
           <node concept="2ShNRf" id="4CMgQNqo2MQ" role="HW$Y0">
