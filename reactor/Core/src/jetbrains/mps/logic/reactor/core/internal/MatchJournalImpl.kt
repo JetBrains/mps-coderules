@@ -47,13 +47,13 @@ internal open class MatchJournalImpl(
         if (view == null) {
             nextChunkId = 0
             val initChunk = MatchChunk(nextChunkId++, InitRuleMatch)
-            hist = IteratorMutableList(ArrayList<Chunk>().apply { add(initChunk) })
+            hist = IteratorMutableList(LinkedList<Chunk>().apply { add(initChunk) })
         } else {
             // assert that initial chunk is present
             with (view.chunks.first()) {
                 assert(this is MatchChunk && match is InitRuleMatch)
             }
-            hist = IteratorMutableList(ArrayList(view.chunks as List<Chunk>))
+            hist = IteratorMutableList(LinkedList(view.chunks as List<Chunk>))
             nextChunkId = view.nextChunkId
         }
     }
@@ -90,6 +90,8 @@ internal open class MatchJournalImpl(
 
 
     override fun currentPos(): MatchJournal.Pos = current.toPos()
+
+    override fun isFront(): Boolean = current == hist.last
 
     override fun resetPos() {
         posPtr = hist.listIterator()
@@ -165,6 +167,8 @@ internal open class MatchJournalImpl(
         override fun iterator(): MutableIterator<E> = l.iterator()
         override fun listIterator(): MutableListIterator<E> = l.listIterator()
         override fun listIterator(index: Int): MutableListIterator<E>  = l.listIterator(index)
+
+        val last: E get() = if (l is LinkedList) l.last else l.last()
     }
 
     private class IndexImpl(chunks: Iterable<Chunk>): MatchJournal.Index

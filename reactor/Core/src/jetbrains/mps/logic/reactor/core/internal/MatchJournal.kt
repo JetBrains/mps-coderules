@@ -46,7 +46,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     /**
      * Indicates whether journal's pos points to its end.
      */
-    fun isFront(): Boolean = currentPos().chunk == this.last()
+    fun isFront(): Boolean
 
 
     /**
