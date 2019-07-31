@@ -32,9 +32,14 @@ public abstract class Rule {
     public abstract Object uniqueTag();
 
     /**
-     * A human-readable identifier, not guaranteed to be unique
+     * Human-readable identifier, not guaranteed to be unique.
      */
     public abstract String tag();
+
+    /**
+     * Human-readable identifier shared by all rules produced from the same template.
+     */
+    public abstract String basetag();
 
     /**
      * An origin serves as justification for all constraints affected by this rule.
