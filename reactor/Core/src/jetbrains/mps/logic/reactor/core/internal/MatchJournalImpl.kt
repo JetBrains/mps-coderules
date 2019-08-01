@@ -168,7 +168,7 @@ internal open class MatchJournalImpl(
         override fun listIterator(): MutableListIterator<E> = l.listIterator()
         override fun listIterator(index: Int): MutableListIterator<E>  = l.listIterator(index)
 
-        val last: E get() = if (l is LinkedList) l.last else l.last()
+        val last: E get() = if (l is LinkedList<E>) l.last else l.last()
     }
 
     private class IndexImpl(chunks: Iterable<Chunk>): MatchJournal.Index
