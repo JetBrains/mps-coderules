@@ -48,6 +48,7 @@
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="xnrr" ref="r:4fd33103-fc30-42f4-a8cf-d1e858f21988(jetbrains.mps.lang.coderules.program.analysis)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
+    <import index="7ed7" ref="r:48788b84-8ecd-41f5-ad03-cc8c09b1f186(jetbrains.mps.lang.coderules.analysis)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -18009,9 +18010,9 @@
                 <node concept="3JmXsc" id="2SkPIT_iYvn" role="3Jn$fo">
                   <node concept="3clFbS" id="2SkPIT_iYvo" role="2VODD2">
                     <node concept="3cpWs6" id="5VJ3UjC5GcY" role="3cqZAp">
-                      <node concept="2YIFZM" id="5VJ3UjCf0q6" role="3cqZAk">
-                        <ref role="37wK5l" to="hy7p:5VJ3UjCeysT" resolve="affectedVarsFor" />
-                        <ref role="1Pybhc" to="hy7p:2SkPIT_klnG" resolve="VarModificationAnalysisUtil" />
+                      <node concept="2YIFZM" id="7qe1GumUGwO" role="3cqZAk">
+                        <ref role="37wK5l" to="7ed7:5VJ3UjCeysT" resolve="affectedVarsFor" />
+                        <ref role="1Pybhc" to="7ed7:2SkPIT_klnG" resolve="VarModificationAnalysisUtil" />
                         <node concept="30H73N" id="5VJ3UjCf0vA" role="37wK5m" />
                       </node>
                     </node>

@@ -52,6 +52,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="8tt8" ref="r:e74c1bfc-387b-4b4b-abee-2eb77ee510ec(samples.lambdacalc.structure)" />
     <import index="69ci" ref="r:d628db6e-191f-4c0f-a802-15ad423aa41e(samples.lambdacalc.types)" />
+    <import index="7ed7" ref="r:48788b84-8ecd-41f5-ad03-cc8c09b1f186(jetbrains.mps.lang.coderules.analysis)" />
     <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -2655,9 +2656,9 @@
             <node concept="2i4dXS" id="7qe1GumE41J" role="2ShVmc">
               <node concept="17QB3L" id="7qe1GumE4dB" role="HW$YZ" />
               <node concept="2OqwBi" id="7qe1GumE579" role="I$8f6">
-                <node concept="2YIFZM" id="7qe1GumE18N" role="2Oq$k0">
-                  <ref role="37wK5l" to="hy7p:5VJ3UjCeysT" resolve="affectedVarsFor" />
-                  <ref role="1Pybhc" to="hy7p:2SkPIT_klnG" resolve="VarModificationAnalysisUtil" />
+                <node concept="2YIFZM" id="7qe1GumUGwP" role="2Oq$k0">
+                  <ref role="37wK5l" to="7ed7:5VJ3UjCeysT" resolve="affectedVarsFor" />
+                  <ref role="1Pybhc" to="7ed7:2SkPIT_klnG" resolve="VarModificationAnalysisUtil" />
                   <node concept="37vLTw" id="7qe1GumTknG" role="37wK5m">
                     <ref role="3cqZAo" node="7qe1GumE3On" resolve="rule" />
                   </node>
