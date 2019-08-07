@@ -1759,9 +1759,6 @@
       <node concept="3cqZAl" id="1H_6AUSTUb2" role="3clF45" />
       <node concept="3Tm1VV" id="1H_6AUSTUb3" role="1B3o_S" />
       <node concept="3clFbS" id="1H_6AUSTUb4" role="3clF47">
-        <node concept="XkiVB" id="1H_6AUSZTNP" role="3cqZAp">
-          <ref role="37wK5l" node="1H_6AUSXnzy" resolve="ProgramAnalysis" />
-        </node>
         <node concept="3clFbF" id="1H_6AUSV32s" role="3cqZAp">
           <node concept="37vLTI" id="1H_6AUSV3p0" role="3clFbG">
             <node concept="37vLTw" id="1H_6AUSV3um" role="37vLTx">
@@ -2891,11 +2888,8 @@
     </node>
     <node concept="2tJIrI" id="1H_6AUT0n0z" role="jymVt" />
     <node concept="3Tm1VV" id="1H_6AUT0m_K" role="1B3o_S" />
-    <node concept="3uibUv" id="1H_6AUT0mAj" role="1zkMxy">
-      <ref role="3uigEE" node="1H_6AUSXnyk" resolve="ProgramAnalysis" />
-    </node>
-    <node concept="3uibUv" id="3L0F0kb7jZx" role="EKbjA">
-      <ref role="3uigEE" node="2WtKs4u1ogK" resolve="SpecProvider" />
+    <node concept="3uibUv" id="7qe1GumByDA" role="1zkMxy">
+      <ref role="3uigEE" node="6b4eZz$Pl6e" resolve="BasicProgramAnalysis" />
     </node>
     <node concept="3uibUv" id="1H_6AUT38lB" role="EKbjA">
       <ref role="3uigEE" node="1H_6AUT33xC" resolve="PrincipalConstraintProvider" />
@@ -4370,7 +4364,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tmbuc" id="5VJ3UjCiK5H" role="1B3o_S" />
+      <node concept="3Tm1VV" id="7qe1GumB596" role="1B3o_S" />
       <node concept="10P_77" id="2SkPIT_cjly" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="2SkPIT_cfuE" role="jymVt" />
