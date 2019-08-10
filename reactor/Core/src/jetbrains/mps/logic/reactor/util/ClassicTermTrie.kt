@@ -156,28 +156,26 @@ class ClassicTermTrie<T> : TermTrie<T> {
      * call the passed visitor function with values of all matching nodes and all the nodes that precede them.
      */
     private fun visitMatching(pattern: Term, visitor: (T) -> Unit) {
-        val seen = IdentityHashMap<Term, Term>()
+        val seenNonLeaf = IdentityHashMap<Term, Term>()
         val visitStack = arrayListOf<Pair<PathNode<T>, List<Term>>>(root to arrayListOf(pattern))
 
         while (!visitStack.isEmpty()) {
-            val (node, patternTerms) = visitStack.pop()
-            if (!patternTerms.isEmpty()) {
-                val patternTermsHead = patternTerms.first()
-                val patternTermsTail = patternTerms.subList(1, patternTerms.size)
+            val (node, terms) = visitStack.pop()
+            if (!terms.isEmpty()) {
+                val head = terms.first()
+                val tail = terms.subList(1, terms.size)
 
                 // dereferece the term only if it hasn't been dereferenced before
-                val patternTerm = deref(patternTermsHead).let { dt ->
-                    seen[dt]?.run { patternTermsHead } ?: dt.apply { seen[dt] = patternTermsHead }
-                }
+                val term = deref(head).let { dt -> seenNonLeaf[dt]?.run { head } ?: dt }
 
-                val sym = symbolOrWildcard(patternTerm)
+                val sym = symbolOrWildcard(term)
                 if (sym == WILDCARD) {
-                    if (!patternTermsTail.isEmpty()) {
+                    if (!tail.isEmpty()) {
                         // skip the current node
                         // match the patterns tail with the current node's direct successors
                         val (allTerms, allEdge) = node.allTerms2edge()
                         allTerms.forEach { it.values().forEach (visitor) }
-                        allEdge.forEach { visitStack.push(it to patternTermsTail)  }
+                        allEdge.forEach { visitStack.push(it to tail)  }
 
                     } else {
                         // wildcard consumes the rest of the trie
@@ -187,16 +185,19 @@ class ClassicTermTrie<T> : TermTrie<T> {
                 } else {
                     node.next(WILDCARD)?.let { nn ->
                         nn.values().forEach(visitor)
-                        if (!patternTermsTail.isEmpty()) {
-                            visitStack.push(nn to patternTermsTail)
+                        if (!tail.isEmpty()) {
+                            visitStack.push(nn to tail)
                         }
                     }
                     node.next(sym)?.let { nn ->
                         nn.values().forEach(visitor)
                         
                         // prepend this patternTerm's arguments to the tail pattern terms
-                        val newTail = ArrayList(patternTerm.arguments())
-                        newTail.addAll(patternTermsTail)
+                        val newTail = ArrayList(term.arguments())
+                        if (newTail.size > 0) {
+                            seenNonLeaf[term] = term
+                        }
+                        newTail.addAll(tail)
                         if (!newTail.isEmpty()) {
                             visitStack.push(nn to newTail)
                         }

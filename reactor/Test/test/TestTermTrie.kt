@@ -284,6 +284,19 @@ class TestTermTrie {
         assertEquals(setOf("foo", "bar", "bazz"), trie.lookupValues(key).toSet())
     }
 
+    @Test
+    fun testRefEmptyList() {
+        val nil = MockFun("nil")
+
+        val trie = termTrie<Any>().runs(
+            {  put(MockFun("f", parseTerm("a"), nil, MockFun("g", nil)), "foo") },
+            {  put(MockFun("f", parseTerm("a"), parseTerm("L"), MockFun("g", nil)), "bar") },
+            {  put(MockFun("f", parseTerm("X"), nil, MockFun("g", nil)), "bazz") }
+        )
+
+        val key = MockFun("f", parseTerm("a"), nil, MockFun("g", MockRef(nil)))
+        assertEquals(setOf("foo", "bar", "bazz"), trie.lookupValues(key).toSet())
+    }
 
     @Test
     fun testCyclicTerm() {
