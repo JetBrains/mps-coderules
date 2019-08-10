@@ -9,6 +9,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text" version="0" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
   </languages>
   <imports>
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
@@ -2176,6 +2177,31 @@
       </node>
       <node concept="3Tm1VV" id="18kNIl1wWgX" role="1B3o_S" />
       <node concept="3clFbS" id="18kNIl1wWgY" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="5DUvKnrzbv6" role="jymVt" />
+    <node concept="3clFb_" id="5DUvKnrzaID" role="jymVt">
+      <property role="TrG5h" value="expandMacro" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="5DUvKnrzaIE" role="3clF46">
+        <property role="TrG5h" value="logical" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="5DUvKnrzaIF" role="1tU5fm">
+          <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+          <node concept="3uibUv" id="5DUvKnrzaIG" role="11_B2D">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5DUvKnrzaIH" role="3clF46">
+        <property role="TrG5h" value="inputConcept" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3bZ5Sz" id="5DUvKnrzcam" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="5DUvKnrzaIJ" role="3clF45">
+        <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+      </node>
+      <node concept="3Tm1VV" id="5DUvKnrzaIK" role="1B3o_S" />
+      <node concept="3clFbS" id="5DUvKnrzaIL" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="4MEOIDFgTKR" role="jymVt" />
     <node concept="3clFb_" id="4MEOIDFgV3a" role="jymVt">

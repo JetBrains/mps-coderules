@@ -495,6 +495,34 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5DUvKnrzig5" role="jymVt" />
+    <node concept="3clFb_" id="5DUvKnrzhU$" role="jymVt">
+      <property role="TrG5h" value="doExpand" />
+      <node concept="3uibUv" id="5DUvKnrzhU_" role="3clF45">
+        <ref role="3uigEE" to="i348:7eGEHDlc$ap" resolve="RuleBuilder" />
+      </node>
+      <node concept="3Tm1VV" id="5DUvKnrzhUA" role="1B3o_S" />
+      <node concept="3clFbS" id="5DUvKnrzhUB" role="3clF47" />
+      <node concept="37vLTG" id="5DUvKnrzhUC" role="3clF46">
+        <property role="TrG5h" value="inputConcept" />
+        <node concept="3bZ5Sz" id="5DUvKnrzin1" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5DUvKnrzhUE" role="3clF46">
+        <property role="TrG5h" value="logical" />
+        <node concept="3uibUv" id="5DUvKnrzhUF" role="1tU5fm">
+          <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+          <node concept="3uibUv" id="5DUvKnrzhUG" role="11_B2D">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5DUvKnrzhUH" role="3clF46">
+        <property role="TrG5h" value="session" />
+        <node concept="3uibUv" id="5DUvKnrzhUI" role="1tU5fm">
+          <ref role="3uigEE" to="i348:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="6DOfTm$eR_X" role="jymVt" />
     <node concept="3clFb_" id="1eKXYsjvsWF" role="jymVt">
       <property role="TrG5h" value="doCall" />
