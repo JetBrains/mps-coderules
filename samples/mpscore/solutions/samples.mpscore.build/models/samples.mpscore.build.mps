@@ -305,6 +305,21 @@
             <ref role="3bR37D" node="69UmpDmJW26" resolve="jetbrains.mps.baseLanguageExt" />
           </node>
         </node>
+        <node concept="1SiIV0" id="3KN3A4uIMBU" role="3bR37C">
+          <node concept="3bR9La" id="3KN3A4uIMBV" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3KN3A4uIMBW" role="3bR37C">
+          <node concept="3bR9La" id="3KN3A4uIMBX" role="1SiIV1">
+            <ref role="3bR37D" node="69UmpDmJW3w" resolve="typechecking.samples.baseLanguage" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3KN3A4uIMBY" role="3bR37C">
+          <node concept="3bR9La" id="3KN3A4uIMBZ" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="69UmpDmJW3w" role="2G$12L">
         <property role="BnDLt" value="true" />
