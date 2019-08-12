@@ -21,6 +21,7 @@
     <dependency reexport="false">f97d84b2-8bad-4fdd-8ede-da17b3eacf4c(jetbrains.mps.coderules)</dependency>
     <dependency reexport="false">f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)</dependency>
     <dependency reexport="false">4d5d9aa1-7b71-4888-9100-1b793e5328a6(jetbrains.mps.coderules.ui)</dependency>
+    <dependency reexport="false">ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="9" />

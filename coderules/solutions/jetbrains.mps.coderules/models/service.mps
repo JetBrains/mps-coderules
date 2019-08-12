@@ -396,11 +396,11 @@
             <node concept="2OqwBi" id="78H58oeCETT" role="37vLTJ">
               <node concept="Xjq3P" id="78H58oeCF2z" role="2Oq$k0" />
               <node concept="2OwXpG" id="78H58oeCETW" role="2OqNvi">
-                <ref role="2Oxat5" node="78H58oeCDR1" resolve="aspectLookup" />
+                <ref role="2Oxat5" node="78H58oeCDR1" resolve="aspectClique" />
               </node>
             </node>
             <node concept="37vLTw" id="78H58oeCDRd" role="37vLTx">
-              <ref role="3cqZAo" node="78H58oeCC_9" resolve="aspectLookup" />
+              <ref role="3cqZAo" node="78H58oeCC_9" resolve="aspectClique" />
             </node>
           </node>
         </node>
@@ -432,13 +432,11 @@
         </node>
       </node>
       <node concept="37vLTG" id="78H58oeCC_9" role="3clF46">
-        <property role="TrG5h" value="aspectLookup" />
+        <property role="TrG5h" value="aspectClique" />
         <node concept="3uibUv" id="78H58oeCCR1" role="1tU5fm">
-          <ref role="3uigEE" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-          <node concept="3qUE_q" id="78H58oeCCWj" role="11_B2D">
-            <node concept="3uibUv" id="78H58oeCCZo" role="3qUE_r">
-              <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
-            </node>
+          <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+          <node concept="16syzq" id="3KN3A4vACD1" role="11_B2D">
+            <ref role="16sUi3" node="3KN3A4vA$Xq" resolve="T" />
           </node>
         </node>
       </node>
@@ -480,11 +478,11 @@
             <node concept="2OqwBi" id="78H58oeCFG9" role="37vLTJ">
               <node concept="Xjq3P" id="78H58oeCFGa" role="2Oq$k0" />
               <node concept="2OwXpG" id="78H58oeCFGb" role="2OqNvi">
-                <ref role="2Oxat5" node="78H58oeCDR1" resolve="aspectLookup" />
+                <ref role="2Oxat5" node="78H58oeCDR1" resolve="aspectClique" />
               </node>
             </node>
             <node concept="37vLTw" id="78H58oeCFGc" role="37vLTx">
-              <ref role="3cqZAo" node="78H58oeCDi5" resolve="aspectLookup" />
+              <ref role="3cqZAo" node="78H58oeCDi5" resolve="aspectClique" />
             </node>
           </node>
         </node>
@@ -542,13 +540,11 @@
         </node>
       </node>
       <node concept="37vLTG" id="78H58oeCDi5" role="3clF46">
-        <property role="TrG5h" value="aspectLookup" />
+        <property role="TrG5h" value="aspectClique" />
         <node concept="3uibUv" id="78H58oeCDi6" role="1tU5fm">
-          <ref role="3uigEE" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-          <node concept="3qUE_q" id="78H58oeCDi7" role="11_B2D">
-            <node concept="3uibUv" id="78H58oeCDi8" role="3qUE_r">
-              <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
-            </node>
+          <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+          <node concept="16syzq" id="3KN3A4vACOO" role="11_B2D">
+            <ref role="16sUi3" node="3KN3A4vA$Xq" resolve="T" />
           </node>
         </node>
       </node>
@@ -733,7 +729,7 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="3clFbH" id="7DvO2M9pLdh" role="3cqZAp" />
+                        <node concept="3clFbH" id="3KN3A4vCMHE" role="3cqZAp" />
                         <node concept="3cpWs8" id="12QmIoyMK_E" role="3cqZAp">
                           <node concept="3cpWsn" id="12QmIoyMK_F" role="3cpWs9">
                             <property role="TrG5h" value="session" />
@@ -743,17 +739,22 @@
                             <node concept="2ShNRf" id="78H58oeCt5l" role="33vP2m">
                               <node concept="1pGfFk" id="78H58oeCt1b" role="2ShVmc">
                                 <ref role="37wK5l" to="hano:7DvO2M9VeM1" resolve="RuleProcessingSession" />
-                                <node concept="2OqwBi" id="78H58oeCIHk" role="37wK5m">
-                                  <node concept="37vLTw" id="78H58oeCHHZ" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="78H58oeCDR1" resolve="aspectLookup" />
-                                  </node>
-                                  <node concept="liA8E" id="78H58oeCJ_3" role="2OqNvi">
-                                    <ref role="37wK5l" to="fqlx:7mB3viLmii2" resolve="allForNode" />
-                                    <node concept="37vLTw" id="78H58oeCR6e" role="37wK5m">
-                                      <ref role="3cqZAo" node="7kTeLbPtnTq" resolve="node" />
+                                <node concept="1eOMI4" id="3KN3A4vAMyF" role="37wK5m">
+                                  <node concept="10QFUN" id="3KN3A4vAMyC" role="1eOMHV">
+                                    <node concept="A3Dl8" id="3KN3A4vAMyH" role="10QFUM">
+                                      <node concept="3qUE_q" id="3KN3A4vAMyI" role="A3Ik2">
+                                        <node concept="3uibUv" id="3KN3A4vAMyJ" role="3qUE_r">
+                                          <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+                                        </node>
+                                      </node>
                                     </node>
-                                    <node concept="37vLTw" id="78H58oeCUMr" role="37wK5m">
-                                      <ref role="3cqZAo" node="6kREIVkLEGt" resolve="repository" />
+                                    <node concept="2OqwBi" id="3KN3A4vAMyN" role="10QFUP">
+                                      <node concept="liA8E" id="3KN3A4vAMyO" role="2OqNvi">
+                                        <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
+                                      </node>
+                                      <node concept="37vLTw" id="3KN3A4vCKAN" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="78H58oeCDR1" resolve="aspectClique" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -1069,15 +1070,19 @@
       </node>
     </node>
     <node concept="312cEg" id="78H58oeCDR1" role="jymVt">
-      <property role="TrG5h" value="aspectLookup" />
+      <property role="TrG5h" value="aspectClique" />
       <node concept="3Tm6S6" id="78H58oeCDR2" role="1B3o_S" />
       <node concept="3uibUv" id="78H58oeCDR4" role="1tU5fm">
-        <ref role="3uigEE" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
-        <node concept="3qUE_q" id="78H58oeCDR5" role="11_B2D">
-          <node concept="3uibUv" id="78H58oeCDR6" role="3qUE_r">
-            <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
-          </node>
+        <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+        <node concept="16syzq" id="3KN3A4vACWG" role="11_B2D">
+          <ref role="16sUi3" node="3KN3A4vA$Xq" resolve="T" />
         </node>
+      </node>
+    </node>
+    <node concept="16euLQ" id="3KN3A4vA$Xq" role="16eVyc">
+      <property role="TrG5h" value="T" />
+      <node concept="3uibUv" id="3KN3A4vABPQ" role="3ztrMU">
+        <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
       </node>
     </node>
   </node>
@@ -1564,6 +1569,11 @@
           <ref role="3uigEE" to="unkn:~Single" resolve="Single" />
           <node concept="3uibUv" id="55Q$YFtJK$L" role="11_B2D">
             <ref role="3uigEE" node="1pPth$lAwc0" resolve="ApplyTemplatesStep" />
+            <node concept="3qUE_q" id="6vFODDAYgK3" role="11_B2D">
+              <node concept="3uibUv" id="6vFODDAYhu0" role="3qUE_r">
+                <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -1599,6 +1609,11 @@
                     <property role="TrG5h" value="prev" />
                     <node concept="3uibUv" id="55Q$YFtJUbT" role="1tU5fm">
                       <ref role="3uigEE" node="1pPth$lAwc0" resolve="ApplyTemplatesStep" />
+                      <node concept="3qUE_q" id="6vFODDAYiK5" role="11_B2D">
+                        <node concept="3uibUv" id="6vFODDAYjpq" role="3qUE_r">
+                          <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                   <node concept="3clFbS" id="55Q$YFtJUbU" role="1bW5cS">
@@ -1640,6 +1655,11 @@
           <node concept="1LlUBW" id="55Q$YFtI23F" role="11_B2D">
             <node concept="3uibUv" id="55Q$YFtI23G" role="1Lm7xW">
               <ref role="3uigEE" node="1pPth$lAwc0" resolve="ApplyTemplatesStep" />
+              <node concept="3qUE_q" id="6vFODDAYnEe" role="11_B2D">
+                <node concept="3uibUv" id="6vFODDAYpoH" role="3qUE_r">
+                  <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+                </node>
+              </node>
             </node>
             <node concept="3uibUv" id="6tPOoeTcgU8" role="1Lm7xW">
               <ref role="3uigEE" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
@@ -1684,6 +1704,11 @@
                       <property role="TrG5h" value="prev" />
                       <node concept="3uibUv" id="Hg6Enc9a3E" role="1tU5fm">
                         <ref role="3uigEE" node="1pPth$lAwc0" resolve="ApplyTemplatesStep" />
+                        <node concept="3qUE_q" id="6vFODDAYCy3" role="11_B2D">
+                          <node concept="3uibUv" id="6vFODDAYCy4" role="3qUE_r">
+                            <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+                          </node>
+                        </node>
                       </node>
                       <node concept="1LFfDK" id="Hg6Enc9a3H" role="33vP2m">
                         <node concept="3cmrfG" id="Hg6Enc9a3I" role="1LF_Uc">
@@ -2327,6 +2352,11 @@
                   <node concept="1LlUBW" id="Hg6Enc8tAn" role="1tU5fm">
                     <node concept="3uibUv" id="Hg6Enc8A8x" role="1Lm7xW">
                       <ref role="3uigEE" node="1pPth$lAwc0" resolve="ApplyTemplatesStep" />
+                      <node concept="3qUE_q" id="6vFODDAYDH5" role="11_B2D">
+                        <node concept="3uibUv" id="6vFODDAYDH6" role="3qUE_r">
+                          <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+                        </node>
+                      </node>
                     </node>
                     <node concept="3uibUv" id="4BHjwwGA78e" role="1Lm7xW">
                       <ref role="3uigEE" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
@@ -2544,6 +2574,11 @@
       <ref role="3uigEE" node="1pPth$lAzAx" resolve="Step" />
       <node concept="3uibUv" id="1N_0WA5GiE0" role="11_B2D">
         <ref role="3uigEE" node="1pPth$lAwc0" resolve="ApplyTemplatesStep" />
+        <node concept="3qUE_q" id="6vFODDAYcKB" role="11_B2D">
+          <node concept="3uibUv" id="6vFODDAYedw" role="3qUE_r">
+            <ref role="3uigEE" to="fqlx:NKt6yomNZE" resolve="CoderulesAspect" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="312cEg" id="443LGHBSt7P" role="jymVt">
