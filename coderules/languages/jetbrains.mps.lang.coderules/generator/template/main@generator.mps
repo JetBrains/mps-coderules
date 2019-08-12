@@ -48,7 +48,6 @@
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="xnrr" ref="r:4fd33103-fc30-42f4-a8cf-d1e858f21988(jetbrains.mps.lang.coderules.program.analysis)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
-    <import index="7ed7" ref="r:48788b84-8ecd-41f5-ad03-cc8c09b1f186(jetbrains.mps.lang.coderules.analysis)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -17967,53 +17966,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="5VJ3UjCjOXb" role="3cqZAp" />
-            <node concept="3clFbF" id="2SkPIT_iQBt" role="3cqZAp">
-              <node concept="2OqwBi" id="2SkPIT_iSHw" role="3clFbG">
-                <node concept="37vLTw" id="2SkPIT_iQBr" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2SkPIT_65vm" resolve="rulesWithUniVars" />
-                </node>
-                <node concept="TSZUe" id="2SkPIT_iTq4" role="2OqNvi">
-                  <node concept="1Ls8ON" id="2SkPIT_iTxh" role="25WWJ7">
-                    <node concept="37vLTw" id="2SkPIT_j0u0" role="1Lso8e">
-                      <ref role="3cqZAo" node="2SkPIT_8z61" resolve="ruletag" />
-                    </node>
-                    <node concept="Xl_RD" id="5VJ3UjC5Isy" role="1Lso8e">
-                      <property role="Xl_RC" value="name" />
-                      <node concept="17Uvod" id="5VJ3UjC5Isz" role="lGtFl">
-                        <property role="2qtEX9" value="value" />
-                        <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                        <node concept="3zFVjK" id="5VJ3UjC5Is$" role="3zH0cK">
-                          <node concept="3clFbS" id="5VJ3UjC5Is_" role="2VODD2">
-                            <node concept="3clFbF" id="5VJ3UjC5IsA" role="3cqZAp">
-                              <node concept="2OqwBi" id="5VJ3UjC5IsB" role="3clFbG">
-                                <node concept="30H73N" id="5VJ3UjC5IsC" role="2Oq$k0" />
-                                <node concept="3TrcHB" id="5VJ3UjC5IsD" role="2OqNvi">
-                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="1WS0z7" id="2SkPIT_iYvk" role="lGtFl">
-                <node concept="3JmXsc" id="2SkPIT_iYvn" role="3Jn$fo">
-                  <node concept="3clFbS" id="2SkPIT_iYvo" role="2VODD2">
-                    <node concept="3cpWs6" id="5VJ3UjC5GcY" role="3cqZAp">
-                      <node concept="2YIFZM" id="7qe1GumUGwO" role="3cqZAk">
-                        <ref role="37wK5l" to="7ed7:5VJ3UjCeysT" resolve="affectedVarsFor" />
-                        <ref role="1Pybhc" to="7ed7:2SkPIT_klnG" resolve="VarModificationAnalysisUtil" />
-                        <node concept="30H73N" id="5VJ3UjCf0vA" role="37wK5m" />
                       </node>
                     </node>
                   </node>
