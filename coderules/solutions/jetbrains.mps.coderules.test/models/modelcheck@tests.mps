@@ -97,6 +97,7 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1165602531693" name="superclass" index="1zkMxy" />
@@ -132,9 +133,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
-      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT" />
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -652,12 +651,14 @@
         <property role="TrG5h" value="test_doCheck" />
         <node concept="3cqZAl" id="1Lr58WFTIGT" role="3clF45" />
         <node concept="3clFbS" id="1Lr58WFTIGU" role="3clF47">
-          <node concept="3clFbF" id="3KN3A4w9jBS" role="3cqZAp">
-            <node concept="2YIFZM" id="3KN3A4w9khZ" role="3clFbG">
-              <ref role="37wK5l" to="qox2:3KN3A4w92b9" resolve="setDisabled" />
-              <ref role="1Pybhc" to="qox2:7Tj_ODDR37X" resolve="CoderulesTypecheckingProvider" />
-              <node concept="3clFbT" id="3KN3A4w9kyy" role="37wK5m">
-                <property role="3clFbU" value="true" />
+          <node concept="3cpWs8" id="6AP7iI4I_5T" role="3cqZAp">
+            <node concept="3cpWsn" id="6AP7iI4I_5U" role="3cpWs9">
+              <property role="TrG5h" value="savedEnabledFlag" />
+              <node concept="10P_77" id="6AP7iI4I$XP" role="1tU5fm" />
+              <node concept="2YIFZM" id="6AP7iI4I_5V" role="33vP2m">
+                <ref role="37wK5l" to="qox2:3KN3A4w92b9" resolve="setEnabled" />
+                <ref role="1Pybhc" to="qox2:7Tj_ODDR37X" resolve="CoderulesTypecheckingProvider" />
+                <node concept="3clFbT" id="6AP7iI4I_5W" role="37wK5m" />
               </node>
             </node>
           </node>
@@ -903,9 +904,11 @@
             <node concept="3clFbS" id="3KN3A4w9kEH" role="2GVbov">
               <node concept="3clFbF" id="3KN3A4w9oH5" role="3cqZAp">
                 <node concept="2YIFZM" id="3KN3A4w9oH6" role="3clFbG">
-                  <ref role="37wK5l" to="qox2:3KN3A4w92b9" resolve="setDisabled" />
+                  <ref role="37wK5l" to="qox2:3KN3A4w92b9" resolve="setEnabled" />
                   <ref role="1Pybhc" to="qox2:7Tj_ODDR37X" resolve="CoderulesTypecheckingProvider" />
-                  <node concept="3clFbT" id="3KN3A4w9oH7" role="37wK5m" />
+                  <node concept="37vLTw" id="6AP7iI4IABl" role="37wK5m">
+                    <ref role="3cqZAo" node="6AP7iI4I_5U" resolve="savedEnabledFlag" />
+                  </node>
                 </node>
               </node>
             </node>

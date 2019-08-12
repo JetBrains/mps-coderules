@@ -209,6 +209,9 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -374,44 +377,81 @@
     </node>
     <node concept="2tJIrI" id="3KN3A4w8XRE" role="jymVt" />
     <node concept="2YIFZL" id="3KN3A4w92b9" role="jymVt">
-      <property role="TrG5h" value="setDisabled" />
+      <property role="TrG5h" value="setEnabled" />
       <node concept="37vLTG" id="3KN3A4w92DH" role="3clF46">
-        <property role="TrG5h" value="disabled" />
+        <property role="TrG5h" value="enabled" />
         <node concept="10P_77" id="3KN3A4w92R8" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="3KN3A4w8YwC" role="3clF47">
-        <node concept="3clFbF" id="3KN3A4w95G8" role="3cqZAp">
-          <node concept="37vLTI" id="3KN3A4w96JL" role="3clFbG">
-            <node concept="37vLTw" id="3KN3A4w977J" role="37vLTx">
-              <ref role="3cqZAo" node="3KN3A4w92DH" resolve="disabled" />
-            </node>
-            <node concept="2OqwBi" id="3KN3A4w9613" role="37vLTJ">
-              <node concept="37vLTw" id="3KN3A4w95G7" role="2Oq$k0">
+        <node concept="3cpWs8" id="6AP7iI4IACM" role="3cqZAp">
+          <node concept="3cpWsn" id="6AP7iI4IACN" role="3cpWs9">
+            <property role="TrG5h" value="prevState" />
+            <node concept="10P_77" id="6AP7iI4Ixp1" role="1tU5fm" />
+            <node concept="2OqwBi" id="6AP7iI4IACO" role="33vP2m">
+              <node concept="37vLTw" id="6AP7iI4IACP" role="2Oq$k0">
                 <ref role="3cqZAo" node="3KN3A4w8XqJ" resolve="INSTANCE" />
               </node>
-              <node concept="2OwXpG" id="3KN3A4w96md" role="2OqNvi">
-                <ref role="2Oxat5" node="3KN3A4w94mo" resolve="disabled" />
+              <node concept="2OwXpG" id="6AP7iI4IACQ" role="2OqNvi">
+                <ref role="2Oxat5" node="3KN3A4w94mo" resolve="enabled" />
               </node>
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3KN3A4w95G8" role="3cqZAp">
+          <node concept="37vLTI" id="3KN3A4w96JL" role="3clFbG">
+            <node concept="37vLTw" id="3KN3A4w977J" role="37vLTx">
+              <ref role="3cqZAo" node="3KN3A4w92DH" resolve="enabled" />
+            </node>
+            <node concept="2OqwBi" id="6AP7iI4IAOV" role="37vLTJ">
+              <node concept="37vLTw" id="6AP7iI4IAP4" role="2Oq$k0">
+                <ref role="3cqZAo" node="3KN3A4w8XqJ" resolve="INSTANCE" />
+              </node>
+              <node concept="2OwXpG" id="6AP7iI4IAOW" role="2OqNvi">
+                <ref role="2Oxat5" node="3KN3A4w94mo" resolve="enabled" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6AP7iI4IBw0" role="3cqZAp">
+          <node concept="37vLTw" id="6AP7iI4IBvY" role="3clFbG">
+            <ref role="3cqZAo" node="6AP7iI4IACN" resolve="prevState" />
+          </node>
+        </node>
       </node>
-      <node concept="3cqZAl" id="3KN3A4w8YwA" role="3clF45" />
+      <node concept="10P_77" id="6AP7iI4I$Xv" role="3clF45" />
       <node concept="3Tm1VV" id="3KN3A4w8YwB" role="1B3o_S" />
       <node concept="P$JXv" id="3KN3A4w936p" role="lGtFl">
         <node concept="TZ5HA" id="3KN3A4w936q" role="TZ5H$">
           <node concept="1dT_AC" id="3KN3A4w936r" role="1dT_Ay">
-            <property role="1dT_AB" value="To be used from tests only" />
+            <property role="1dT_AB" value="To be used from tests only. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="6AP7iI4I_5y" role="TZ5H$">
+          <node concept="1dT_AC" id="6AP7iI4I_5z" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the previous state." />
           </node>
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="3KN3A4w8VuU" role="jymVt" />
     <node concept="312cEg" id="3KN3A4w94mo" role="jymVt">
-      <property role="TrG5h" value="disabled" />
+      <property role="TrG5h" value="enabled" />
       <node concept="3Tm6S6" id="3KN3A4w94mp" role="1B3o_S" />
       <node concept="10P_77" id="3KN3A4w94U7" role="1tU5fm" />
-      <node concept="3clFbT" id="3KN3A4w95ic" role="33vP2m" />
+      <node concept="2YIFZM" id="6JVMsxq9lWE" role="33vP2m">
+        <ref role="37wK5l" to="wyt6:~Boolean.valueOf(java.lang.String)" resolve="valueOf" />
+        <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+        <node concept="2YIFZM" id="6JVMsxq9nQs" role="37wK5m">
+          <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+          <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String,java.lang.String)" resolve="getProperty" />
+          <node concept="Xl_RD" id="6JVMsxq9o9n" role="37wK5m">
+            <property role="Xl_RC" value="mps.coderules.typechecking.enabled" />
+          </node>
+          <node concept="Xl_RD" id="6JVMsxq9_wH" role="37wK5m">
+            <property role="Xl_RC" value="true" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3KN3A4w93ML" role="jymVt" />
     <node concept="3clFbW" id="3LFq2p98DNK" role="jymVt">
@@ -420,8 +460,18 @@
       <node concept="3clFbS" id="3LFq2p98DNO" role="3clF47">
         <node concept="2xdQw9" id="1oUwjADmQvh" role="3cqZAp">
           <property role="2xdLsb" value="h1akgim/info" />
-          <node concept="Xl_RD" id="1oUwjADmQvj" role="9lYJi">
-            <property role="Xl_RC" value="*** Coderules INITIALIZED " />
+          <node concept="3cpWs3" id="6JVMsxqa3ul" role="9lYJi">
+            <node concept="Xl_RD" id="6JVMsxqa44E" role="3uHU7w">
+              <property role="Xl_RC" value="]" />
+            </node>
+            <node concept="3cpWs3" id="6JVMsxq9SPk" role="3uHU7B">
+              <node concept="Xl_RD" id="1oUwjADmQvj" role="3uHU7B">
+                <property role="Xl_RC" value="CoderulesTypecheckingProvider INITIALIZED [enabled=" />
+              </node>
+              <node concept="37vLTw" id="6JVMsxq9SWz" role="3uHU7w">
+                <ref role="3cqZAo" node="3KN3A4w94mo" resolve="enabled" />
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="3KN3A4w97kn" role="3cqZAp">
@@ -446,6 +496,12 @@
             <node concept="37vLTw" id="3KN3A4w9bXX" role="37vLTJ">
               <ref role="3cqZAo" node="3KN3A4w8XqJ" resolve="INSTANCE" />
             </node>
+          </node>
+        </node>
+        <node concept="2xdQw9" id="6JVMsxqaU2_" role="3cqZAp">
+          <property role="2xdLsb" value="h1akgim/info" />
+          <node concept="Xl_RD" id="6JVMsxqaU2D" role="9lYJi">
+            <property role="Xl_RC" value="CoderulesTypecheckingProvider SHUTDOWN" />
           </node>
         </node>
       </node>
@@ -484,11 +540,15 @@
             </node>
           </node>
           <node concept="22lmx$" id="3KN3A4w9ekB" role="3clFbw">
-            <node concept="37vLTw" id="3KN3A4w9fbA" role="3uHU7B">
-              <ref role="3cqZAo" node="3KN3A4w94mo" resolve="disabled" />
+            <node concept="3fqX7Q" id="6AP7iI4IxSj" role="3uHU7B">
+              <node concept="37vLTw" id="6AP7iI4IxSl" role="3fr31v">
+                <ref role="3cqZAo" node="3KN3A4w94mo" resolve="enabled" />
+              </node>
             </node>
-            <node concept="1rXfSq" id="5DUvKnrxrLl" role="3uHU7w">
-              <ref role="37wK5l" node="5DUvKnrxdS1" resolve="checkDisabled" />
+            <node concept="3fqX7Q" id="6AP7iI4ICiP" role="3uHU7w">
+              <node concept="1rXfSq" id="6AP7iI4ICiR" role="3fr31v">
+                <ref role="37wK5l" node="5DUvKnrxdS1" resolve="checkEnabled" />
+              </node>
             </node>
           </node>
         </node>
@@ -714,7 +774,7 @@
     </node>
     <node concept="2tJIrI" id="5DUvKnrxdc4" role="jymVt" />
     <node concept="3clFb_" id="5DUvKnrxdS1" role="jymVt">
-      <property role="TrG5h" value="checkDisabled" />
+      <property role="TrG5h" value="checkEnabled" />
       <node concept="10P_77" id="5DUvKnrxeQJ" role="3clF45" />
       <node concept="3Tm6S6" id="5DUvKnrxekO" role="1B3o_S" />
       <node concept="3clFbS" id="5DUvKnrxdS5" role="3clF47">
@@ -932,7 +992,7 @@
                     <ref role="3cqZAo" node="4pwDyRAQPxK" resolve="prefComponent" />
                   </node>
                   <node concept="34pFcN" id="4pwDyRAQWjA" role="2OqNvi">
-                    <ref role="2WH_rO" node="14pL6xi901F" resolve="typecheckingDisabled" />
+                    <ref role="2WH_rO" node="14pL6xi901F" resolve="typecheckingEnabled" />
                   </node>
                 </node>
                 <node concept="3clFbT" id="4pwDyRAQWvW" role="3K4GZi" />
@@ -988,6 +1048,13 @@
         </node>
         <node concept="3clFbF" id="4pwDyRAQZ5J" role="3cqZAp">
           <node concept="3clFbT" id="4pwDyRAQZ5I" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="6AP7iI4IC$p" role="lGtFl">
+        <node concept="TZ5HA" id="6AP7iI4IC$q" role="TZ5H$">
+          <node concept="1dT_AC" id="6AP7iI4IC$r" role="1dT_Ay">
+            <property role="1dT_AB" value="Check if the plugin was explicitly enabled" />
+          </node>
         </node>
       </node>
     </node>
@@ -1684,7 +1751,7 @@
   <node concept="34j2dQ" id="uB9WAZagv8">
     <property role="TrG5h" value="Typechecking" />
     <node concept="34jfKJ" id="14pL6xi901F" role="34lFYf">
-      <property role="TrG5h" value="typecheckingDisabled" />
+      <property role="TrG5h" value="typecheckingEnabled" />
       <node concept="10P_77" id="14pL6xi908u" role="1tU5fm" />
     </node>
     <node concept="3yqqq6" id="uB9WAZagv9" role="3yq$HY">
@@ -1696,7 +1763,7 @@
               <node concept="2OqwBi" id="14pL6xi9emP" role="3uHU7w">
                 <node concept="3yMSdA" id="14pL6xi9dCf" role="2Oq$k0" />
                 <node concept="liA8E" id="14pL6xi9fo3" role="2OqNvi">
-                  <ref role="37wK5l" node="14pL6xi8DQp" resolve="isTypecheckingDisabled" />
+                  <ref role="37wK5l" node="14pL6xi8DQp" resolve="isTypecheckingEnabled" />
                 </node>
               </node>
               <node concept="2OqwBi" id="14pL6xi9cQu" role="3uHU7B">
@@ -1707,7 +1774,7 @@
                   </node>
                 </node>
                 <node concept="34pFcN" id="14pL6xi9cVA" role="2OqNvi">
-                  <ref role="2WH_rO" node="14pL6xi901F" resolve="typecheckingDisabled" />
+                  <ref role="2WH_rO" node="14pL6xi901F" resolve="typecheckingEnabled" />
                 </node>
               </node>
             </node>
@@ -1729,7 +1796,7 @@
                     </node>
                   </node>
                   <node concept="34pFcN" id="14pL6xi92Hv" role="2OqNvi">
-                    <ref role="2WH_rO" node="14pL6xi901F" resolve="typecheckingDisabled" />
+                    <ref role="2WH_rO" node="14pL6xi901F" resolve="typecheckingEnabled" />
                   </node>
                 </node>
               </node>
@@ -1744,7 +1811,7 @@
               <node concept="2OqwBi" id="14pL6xi983E" role="37vLTx">
                 <node concept="3yMSdA" id="14pL6xi97eH" role="2Oq$k0" />
                 <node concept="liA8E" id="14pL6xi98Pn" role="2OqNvi">
-                  <ref role="37wK5l" node="14pL6xi8DQp" resolve="isTypecheckingDisabled" />
+                  <ref role="37wK5l" node="14pL6xi8DQp" resolve="isTypecheckingEnabled" />
                 </node>
               </node>
               <node concept="2OqwBi" id="14pL6xi96zH" role="37vLTJ">
@@ -1755,7 +1822,7 @@
                   </node>
                 </node>
                 <node concept="34pFcN" id="14pL6xi96CJ" role="2OqNvi">
-                  <ref role="2WH_rO" node="14pL6xi901F" resolve="typecheckingDisabled" />
+                  <ref role="2WH_rO" node="14pL6xi901F" resolve="typecheckingEnabled" />
                 </node>
               </node>
             </node>
@@ -1816,14 +1883,14 @@
             <node concept="2OqwBi" id="14pL6xi8ySM" role="37vLTJ">
               <node concept="Xjq3P" id="14pL6xi8ySN" role="2Oq$k0" />
               <node concept="2OwXpG" id="14pL6xi8ySO" role="2OqNvi">
-                <ref role="2Oxat5" node="14pL6xi8ySB" resolve="disableTypecheckingCheckbox" />
+                <ref role="2Oxat5" node="14pL6xi8ySB" resolve="enableTypecheckingCheckbox" />
               </node>
             </node>
             <node concept="2ShNRf" id="14pL6xi8ySP" role="37vLTx">
               <node concept="1pGfFk" id="14pL6xi8ySQ" role="2ShVmc">
                 <ref role="37wK5l" to="dxuu:~JCheckBox.&lt;init&gt;(java.lang.String)" resolve="JCheckBox" />
                 <node concept="Xl_RD" id="14pL6xi8ySR" role="37wK5m">
-                  <property role="Xl_RC" value="Disable" />
+                  <property role="Xl_RC" value="Enable" />
                 </node>
               </node>
             </node>
@@ -1837,7 +1904,7 @@
               <node concept="1pGfFk" id="14pL6xi8MpN" role="2ShVmc">
                 <ref role="37wK5l" to="dxuu:~JLabel.&lt;init&gt;(java.lang.String)" resolve="JLabel" />
                 <node concept="Xl_RD" id="14pL6xi8Odr" role="37wK5m">
-                  <property role="Xl_RC" value="This option disables the experimental typechecking feature." />
+                  <property role="Xl_RC" value="This option controls the experimental typechecking feature." />
                 </node>
               </node>
             </node>
@@ -1849,7 +1916,7 @@
             <node concept="2OqwBi" id="14pL6xi8JqY" role="37wK5m">
               <node concept="Xjq3P" id="14pL6xi8JqZ" role="2Oq$k0" />
               <node concept="2OwXpG" id="14pL6xi8Ww4" role="2OqNvi">
-                <ref role="2Oxat5" node="14pL6xi8ySB" resolve="disableTypecheckingCheckbox" />
+                <ref role="2Oxat5" node="14pL6xi8ySB" resolve="enableTypecheckingCheckbox" />
               </node>
             </node>
           </node>
@@ -1871,7 +1938,7 @@
             <node concept="2OqwBi" id="14pL6xi8$RA" role="2Oq$k0">
               <node concept="Xjq3P" id="14pL6xi8zZc" role="2Oq$k0" />
               <node concept="2OwXpG" id="14pL6xi8_E_" role="2OqNvi">
-                <ref role="2Oxat5" node="14pL6xi8ySB" resolve="disableTypecheckingCheckbox" />
+                <ref role="2Oxat5" node="14pL6xi8ySB" resolve="enableTypecheckingCheckbox" />
               </node>
             </node>
             <node concept="liA8E" id="14pL6xi8CB8" role="2OqNvi">
@@ -1886,14 +1953,14 @@
     </node>
     <node concept="2tJIrI" id="14pL6xi8DmN" role="jymVt" />
     <node concept="3clFb_" id="14pL6xi8DQp" role="jymVt">
-      <property role="TrG5h" value="isTypecheckingDisabled" />
+      <property role="TrG5h" value="isTypecheckingEnabled" />
       <node concept="10P_77" id="14pL6xi8EFZ" role="3clF45" />
       <node concept="3Tm1VV" id="14pL6xi8DQs" role="1B3o_S" />
       <node concept="3clFbS" id="14pL6xi8DQt" role="3clF47">
         <node concept="3clFbF" id="14pL6xi8Gmw" role="3cqZAp">
           <node concept="2OqwBi" id="14pL6xi8HzU" role="3clFbG">
             <node concept="37vLTw" id="14pL6xi8Gmv" role="2Oq$k0">
-              <ref role="3cqZAo" node="14pL6xi8ySB" resolve="disableTypecheckingCheckbox" />
+              <ref role="3cqZAo" node="14pL6xi8ySB" resolve="enableTypecheckingCheckbox" />
             </node>
             <node concept="liA8E" id="14pL6xi8IRQ" role="2OqNvi">
               <ref role="37wK5l" to="dxuu:~AbstractButton.isSelected()" resolve="isSelected" />
@@ -1904,7 +1971,7 @@
     </node>
     <node concept="2tJIrI" id="14pL6xi8zvf" role="jymVt" />
     <node concept="312cEg" id="14pL6xi8ySB" role="jymVt">
-      <property role="TrG5h" value="disableTypecheckingCheckbox" />
+      <property role="TrG5h" value="enableTypecheckingCheckbox" />
       <node concept="3Tm6S6" id="14pL6xi8yS_" role="1B3o_S" />
       <node concept="3uibUv" id="14pL6xi8ySA" role="1tU5fm">
         <ref role="3uigEE" to="dxuu:~JCheckBox" resolve="JCheckBox" />
