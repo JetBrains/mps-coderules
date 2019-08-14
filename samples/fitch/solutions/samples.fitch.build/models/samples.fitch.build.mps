@@ -19,7 +19,6 @@
       <concept id="4560297596904469357" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules" flags="nn" index="22LTRH">
         <child id="4560297596904469360" name="modules" index="22LTRK" />
         <child id="6593674873639474544" name="options" index="24cAkG" />
-        <child id="7206546315286874030" name="haltonfailure" index="1S4sKv" />
       </concept>
       <concept id="4560297596904469362" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule" flags="nn" index="22LTRM">
         <reference id="4560297596904469363" name="module" index="22LTRN" />
@@ -429,11 +428,6 @@
       <property role="TrG5h" value="check" />
       <node concept="22LTRM" id="5RH_cL_bDnl" role="22LTRK">
         <ref role="22LTRN" node="4$bYnYI$ZFL" resolve="samples.fitch.demo" />
-      </node>
-      <node concept="NbPM2" id="5NV6AIIsBAQ" role="1S4sKv">
-        <node concept="3Mxwew" id="5NV6AIIsBAP" role="3MwsjC">
-          <property role="3MwjfP" value="true" />
-        </node>
       </node>
       <node concept="24cAiW" id="5NV6AIIsBB9" role="24cAkG">
         <node concept="NbPM2" id="5NV6AIIsBBc" role="24c_eh">
