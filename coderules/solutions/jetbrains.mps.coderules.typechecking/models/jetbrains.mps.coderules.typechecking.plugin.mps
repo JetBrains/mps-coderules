@@ -1071,8 +1071,8 @@
       </node>
       <node concept="37vLTG" id="lvX$8VFrSd" role="3clF46">
         <property role="TrG5h" value="flags" />
-        <node concept="3uibUv" id="lvX$8VFrSe" role="1tU5fm">
-          <ref role="3uigEE" to="ev0w:~TypecheckingSession$Flags" resolve="TypecheckingSession.Flags" />
+        <node concept="3uibUv" id="3zIrswy0eS9" role="1tU5fm">
+          <ref role="3uigEE" to="1ka:~TypecheckingSession$Flags" resolve="TypecheckingSession.Flags" />
         </node>
         <node concept="2AHcQZ" id="lvX$8VFrSf" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -1088,6 +1088,27 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="lvX$8VFrSh" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3zIrswy0dov" role="jymVt" />
+    <node concept="3clFb_" id="3zIrswy0e2b" role="jymVt">
+      <property role="TrG5h" value="getQueriesClass" />
+      <node concept="3Tm1VV" id="3zIrswy0e2c" role="1B3o_S" />
+      <node concept="3uibUv" id="3zIrswy0e2e" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+        <node concept="3uibUv" id="3zIrswy0e2g" role="11_B2D">
+          <ref role="3uigEE" node="5BwsbZJE17w" resolve="CoderulesTypecheckingProvider.Queries" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3zIrswy0e2h" role="3clF47">
+        <node concept="3clFbF" id="3zIrswy0g8o" role="3cqZAp">
+          <node concept="3VsKOn" id="3zIrswy0gNb" role="3clFbG">
+            <ref role="3VsUkX" node="5BwsbZJE17w" resolve="CoderulesTypecheckingProvider.Queries" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3zIrswy0e2i" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
