@@ -1373,25 +1373,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4VntlICngCT" role="jymVt" />
-    <node concept="3clFb_" id="tyIfzC3lMP" role="jymVt">
-      <property role="TrG5h" value="getProgramGenInfo" />
-      <node concept="3clFbS" id="tyIfzC3lMS" role="3clF47">
-        <node concept="3clFbF" id="tyIfzC3mGf" role="3cqZAp">
-          <node concept="2OqwBi" id="tyIfzC3nve" role="3clFbG">
-            <node concept="37vLTw" id="tyIfzC3no3" role="2Oq$k0">
-              <ref role="3cqZAo" node="tyIfzC1aUL" resolve="tplApp" />
-            </node>
-            <node concept="liA8E" id="tyIfzC3oht" role="2OqNvi">
-              <ref role="37wK5l" to="hano:tyIfzBDlP8" resolve="getProgramGenInfo" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="tyIfzC3ltU" role="1B3o_S" />
-      <node concept="3uibUv" id="tyIfzC3lMr" role="3clF45">
-        <ref role="3uigEE" to="xnrr:1H_6AUSU96G" resolve="ProgramGenInfoBuilder.ProgramGenInfo" />
-      </node>
-    </node>
     <node concept="3clFb_" id="4VntlICr0sg" role="jymVt">
       <property role="TrG5h" value="getRulesDiff" />
       <node concept="3clFbS" id="4VntlICr0sj" role="3clF47">
@@ -2182,13 +2163,6 @@
       <node concept="3Tm6S6" id="tyIfzC1aXj" role="1B3o_S" />
       <node concept="3uibUv" id="tyIfzC1aYV" role="1tU5fm">
         <ref role="3uigEE" to="hano:41ox5Vnk76a" resolve="ProgramEvaluator" />
-      </node>
-    </node>
-    <node concept="312cEg" id="4VntlICqYr5" role="jymVt">
-      <property role="TrG5h" value="rulesDiff" />
-      <node concept="3Tm6S6" id="4VntlICqVsZ" role="1B3o_S" />
-      <node concept="3uibUv" id="4VntlICqXfJ" role="1tU5fm">
-        <ref role="3uigEE" to="zx3l:~RulesDiff" resolve="RulesDiff" />
       </node>
     </node>
     <node concept="3Tm1VV" id="tyIfzC0ZNk" role="1B3o_S" />
