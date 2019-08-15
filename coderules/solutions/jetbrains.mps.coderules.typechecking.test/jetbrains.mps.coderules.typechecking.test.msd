@@ -19,9 +19,7 @@
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="true">26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)</dependency>
     <dependency reexport="false">c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)</dependency>
-    <dependency reexport="false">0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)</dependency>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
-    <dependency reexport="false">af858d84-85f2-42f4-a854-0b3c6b5cd482(samples.lambdacalc)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="9" />
@@ -57,7 +55,6 @@
     <module reference="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" version="0" />
     <module reference="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
-    <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
     <module reference="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c(jetbrains.mps.coderules)" version="0" />
     <module reference="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" version="0" />
     <module reference="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.coderules.typechecking.test)" version="0" />
@@ -81,7 +78,6 @@
     <module reference="b189d6c6-9397-4d64-88af-1ac73760a4f5(jetbrains.mps.logic.test)" version="0" />
     <module reference="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" version="0" />
     <module reference="3a1f0f04-b5e0-43be-884e-b856bfdeca21(jetbrains.mps.typechecking.testlang)" version="0" />
-    <module reference="af858d84-85f2-42f4-a854-0b3c6b5cd482(samples.lambdacalc)" version="0" />
   </dependencyVersions>
 </solution>
 

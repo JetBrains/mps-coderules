@@ -1128,6 +1128,17 @@
         </node>
       </node>
     </node>
+    <node concept="ns1x$" id="JfcwnvuueH" role="ns1xc">
+      <property role="TrG5h" value="Pair" />
+      <node concept="nspSf" id="JfcwnvuueI" role="ns1xx">
+        <node concept="nssqF" id="JfcwnvuueR" role="nspSe">
+          <property role="TrG5h" value="fst" />
+        </node>
+        <node concept="nssqF" id="JfcwnvuueX" role="nspSe">
+          <property role="TrG5h" value="snd" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

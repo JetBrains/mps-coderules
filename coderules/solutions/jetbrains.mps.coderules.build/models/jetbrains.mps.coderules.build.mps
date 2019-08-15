@@ -1237,6 +1237,16 @@
             <ref role="3bR37D" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="Jfcwnvu3hk" role="3bR37C">
+          <node concept="3bR9La" id="Jfcwnvu3hl" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="Jfcwnvu3hm" role="3bR37C">
+          <node concept="3bR9La" id="Jfcwnvu3hn" role="1SiIV1">
+            <ref role="3bR37D" node="7BVjoXzUx6U" resolve="jetbrains.mps.lang.coderules" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="78H58oeeFzd" role="3989C9">
