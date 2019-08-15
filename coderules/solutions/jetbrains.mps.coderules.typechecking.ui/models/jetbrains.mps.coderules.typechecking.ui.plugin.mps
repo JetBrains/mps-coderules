@@ -1649,15 +1649,10 @@
               </node>
             </node>
             <node concept="2YIFZM" id="6Yb9hAqy0NR" role="37vLTx">
-              <ref role="37wK5l" to="o35r:4i4XGQZmHHg" resolve="get" />
+              <ref role="37wK5l" to="o35r:4i4XGQZmHHg" resolve="create" />
               <ref role="1Pybhc" to="o35r:6IQb_Rx3pZ8" resolve="MessageViewInfoTracer" />
-              <node concept="2OqwBi" id="6kREIVkONuN" role="37wK5m">
-                <node concept="37vLTw" id="6kREIVkONuO" role="2Oq$k0">
-                  <ref role="3cqZAo" node="55Q$YFtIX9v" resolve="mpsProject" />
-                </node>
-                <node concept="liA8E" id="6kREIVkONuP" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c4:~MPSProject.getProject()" resolve="getProject" />
-                </node>
+              <node concept="37vLTw" id="6kREIVkONuO" role="37wK5m">
+                <ref role="3cqZAo" node="55Q$YFtIX9v" resolve="mpsProject" />
               </node>
             </node>
           </node>
