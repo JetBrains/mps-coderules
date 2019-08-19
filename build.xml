@@ -721,6 +721,7 @@
           <language id="l:28f9e497-3b42-4291-aeba-0a1039153ab1:jetbrains.mps.lang.plugin" />
           <language id="l:ef7bf5ac-d06c-4342-b11d-e42104eb9343:jetbrains.mps.lang.plugin.standalone" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
+          <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
         </uses>
         <library jar="lib/reactive-streams-1.0.0.final.jar" />
         <library jar="lib/rxjava-2.1.1.jar" />
@@ -2756,6 +2757,7 @@
           <language id="l:28f9e497-3b42-4291-aeba-0a1039153ab1:jetbrains.mps.lang.plugin" />
           <language id="l:ef7bf5ac-d06c-4342-b11d-e42104eb9343:jetbrains.mps.lang.plugin.standalone" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
+          <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
         </uses>
         <library jar="../lib/reactive-streams-1.0.0.final-0.7.jar" />
         <library jar="../lib/rxjava-2.1.1.jar" />
