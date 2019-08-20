@@ -1212,20 +1212,15 @@
               </node>
             </node>
             <node concept="3clFbH" id="1X0h_efYdfs" role="3cqZAp" />
-            <node concept="3clFbF" id="1H_6AUSjBgm" role="3cqZAp">
-              <node concept="37vLTI" id="1H_6AUSjCuR" role="3clFbG">
-                <node concept="2OqwBi" id="1H_6AUSjCHB" role="37vLTx">
-                  <node concept="37vLTw" id="1H_6AUSjCzT" role="2Oq$k0">
+            <node concept="3clFbF" id="51a$_pPM24q" role="3cqZAp">
+              <node concept="1rXfSq" id="51a$_pPM24o" role="3clFbG">
+                <ref role="37wK5l" node="51a$_pPLZra" resolve="setSessionToken" />
+                <node concept="2OqwBi" id="51a$_pPM2nQ" role="37wK5m">
+                  <node concept="37vLTw" id="51a$_pPM2g4" role="2Oq$k0">
                     <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationResult" />
                   </node>
-                  <node concept="liA8E" id="1H_6AUSjCZu" role="2OqNvi">
+                  <node concept="liA8E" id="51a$_pPM2tD" role="2OqNvi">
                     <ref role="37wK5l" to="w7la:~EvaluationResult.token()" resolve="token" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="1H_6AUSjBM7" role="37vLTJ">
-                  <node concept="Xjq3P" id="1H_6AUSjBgk" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="1H_6AUSjCfm" role="2OqNvi">
-                    <ref role="2Oxat5" node="1H_6AUSjp6Y" resolve="sessionToken" />
                   </node>
                 </node>
               </node>
@@ -1607,6 +1602,29 @@
       <node concept="3uibUv" id="4VntlICqLFj" role="3clF45">
         <ref role="3uigEE" to="w7la:~SessionToken" resolve="SessionToken" />
       </node>
+    </node>
+    <node concept="3clFb_" id="51a$_pPLZra" role="jymVt">
+      <property role="TrG5h" value="setSessionToken" />
+      <node concept="37vLTG" id="51a$_pPM05q" role="3clF46">
+        <property role="TrG5h" value="newToken" />
+        <node concept="3uibUv" id="51a$_pPM0r2" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~SessionToken" resolve="SessionToken" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="51a$_pPLZrd" role="3clF47">
+        <node concept="3clFbF" id="51a$_pPLZRd" role="3cqZAp">
+          <node concept="37vLTI" id="51a$_pPM00X" role="3clFbG">
+            <node concept="37vLTw" id="51a$_pPLZRc" role="37vLTJ">
+              <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
+            </node>
+            <node concept="37vLTw" id="51a$_pPM1S1" role="37vLTx">
+              <ref role="3cqZAo" node="51a$_pPM05q" resolve="newToken" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="51a$_pPLYVm" role="1B3o_S" />
+      <node concept="3cqZAl" id="51a$_pPLZpD" role="3clF45" />
     </node>
     <node concept="3clFb_" id="6uUkLpHjDqO" role="jymVt">
       <property role="TrG5h" value="rulesDiff" />

@@ -1075,19 +1075,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="3irtEZPtk8E" role="3cqZAp">
-          <node concept="1PaTwC" id="3o9wrC3x1iM" role="3ndbpf">
-            <node concept="3oM_SD" id="3irtEZPtkYa" role="1PaTwD">
-              <property role="3oM_SC" value="reset" />
-            </node>
-            <node concept="3oM_SD" id="3irtEZPtkYN" role="1PaTwD">
-              <property role="3oM_SC" value="known" />
-            </node>
-            <node concept="3oM_SD" id="3o9wrC3x1l3" role="1PaTwD">
-              <property role="3oM_SC" value="types" />
-            </node>
-          </node>
-        </node>
         <node concept="1X3_iC" id="6fTgyZtNhsO" role="lGtFl">
           <property role="3V$3am" value="statement" />
           <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
