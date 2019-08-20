@@ -54,8 +54,8 @@
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
-    <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
+    <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -4162,9 +4162,12 @@
       <node concept="3Tm1VV" id="NKt6yn84NL" role="1B3o_S" />
       <node concept="3clFbS" id="NKt6yn84NM" role="3clF47">
         <node concept="XkiVB" id="NKt6yn86kt" role="3cqZAp">
-          <ref role="37wK5l" to="1yqb:1pPth$lHpLU" resolve="EvaluateRulesStep" />
+          <ref role="37wK5l" node="51a$_pPOrYh" resolve="IncrEvaluateRulesStep" />
           <node concept="37vLTw" id="NKt6yn86z9" role="37wK5m">
             <ref role="3cqZAo" node="NKt6yn85Io" resolve="repository" />
+          </node>
+          <node concept="37vLTw" id="3UgiLeDlWo7" role="37wK5m">
+            <ref role="3cqZAo" node="7eK3Dxvlpvw" resolve="unitRef" />
           </node>
         </node>
         <node concept="3clFbF" id="7eK3Dxvlq8j" role="3cqZAp">
@@ -4194,7 +4197,7 @@
       <node concept="3Tm1VV" id="3KN3A4vHiEL" role="1B3o_S" />
       <node concept="3clFbS" id="3KN3A4vHiEM" role="3clF47">
         <node concept="XkiVB" id="3KN3A4vHiEN" role="3cqZAp">
-          <ref role="37wK5l" to="1yqb:1pPth$lHpLU" resolve="EvaluateRulesStep" />
+          <ref role="37wK5l" node="51a$_pPOrYx" resolve="IncrEvaluateRulesStep" />
           <node concept="37vLTw" id="3KN3A4vHiEO" role="37wK5m">
             <ref role="3cqZAo" node="3KN3A4vHiEG" resolve="repository" />
           </node>
@@ -4485,7 +4488,7 @@
         <node concept="3clFbF" id="78H58of4JwC" role="3cqZAp">
           <node concept="2OqwBi" id="78H58of4N2x" role="3clFbG">
             <node concept="3nyPlj" id="78H58of4JwA" role="2Oq$k0">
-              <ref role="37wK5l" to="1yqb:55Q$YFtHM07" resolve="scheduleWithTrace" />
+              <ref role="37wK5l" node="51a$_pPOrYI" resolve="scheduleWithTrace" />
               <node concept="37vLTw" id="1G9Y_Qv8CWa" role="37wK5m">
                 <ref role="3cqZAo" node="1G9Y_Qv8wB5" resolve="input_trace_collector" />
               </node>
@@ -4807,8 +4810,8 @@
       <node concept="2sp9CU" id="7eK3Dxvlq8i" role="1tU5fm" />
     </node>
     <node concept="3Tm1VV" id="NKt6yn81z_" role="1B3o_S" />
-    <node concept="3uibUv" id="NKt6yn81EI" role="1zkMxy">
-      <ref role="3uigEE" to="1yqb:1pPth$lBNWG" resolve="EvaluateRulesStep" />
+    <node concept="3uibUv" id="3UgiLeDjrwp" role="1zkMxy">
+      <ref role="3uigEE" node="51a$_pPMR3Z" resolve="IncrEvaluateRulesStep" />
     </node>
   </node>
   <node concept="312cEu" id="1FOQehxypKu">
@@ -9032,6 +9035,11 @@
               <node concept="37vLTw" id="443LGHB63Ou" role="37wK5m">
                 <ref role="3cqZAo" node="443LGHB61gm" resolve="repository" />
               </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3UgiLeDlxom" role="3cqZAp">
+            <node concept="1rXfSq" id="3UgiLeDlxok" role="3clFbG">
+              <ref role="37wK5l" node="7wSJS_gAcfT" resolve="clearSessionToken" />
             </node>
           </node>
         </node>
