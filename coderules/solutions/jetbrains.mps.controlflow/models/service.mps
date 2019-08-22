@@ -552,6 +552,12 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="MFuM6R0R$M" role="3clF46">
+        <property role="TrG5h" value="options" />
+        <node concept="3uibUv" id="MFuM6R0SBg" role="1tU5fm">
+          <ref role="3uigEE" to="1yqb:MFuM6QJLE2" resolve="Step.Options" />
+        </node>
+      </node>
       <node concept="37vLTG" id="6Yb9hAqJSaS" role="3clF46">
         <property role="TrG5h" value="subscribeScheduler" />
         <node concept="3uibUv" id="6Yb9hAqJSaT" role="1tU5fm">
@@ -578,6 +584,9 @@
               <ref role="37wK5l" to="1yqb:55Q$YFtHM07" resolve="scheduleWithTrace" />
               <node concept="37vLTw" id="6Yb9hAqJSfa" role="37wK5m">
                 <ref role="3cqZAo" node="6Yb9hAqJSaN" resolve="input_trace" />
+              </node>
+              <node concept="37vLTw" id="MFuM6R1kxl" role="37wK5m">
+                <ref role="3cqZAo" node="MFuM6R0R$M" resolve="options" />
               </node>
               <node concept="37vLTw" id="6Yb9hAqJSfb" role="37wK5m">
                 <ref role="3cqZAo" node="6Yb9hAqJSaS" resolve="subscribeScheduler" />

@@ -1370,6 +1370,12 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="MFuM6QKKWH" role="3clF46">
+        <property role="TrG5h" value="options" />
+        <node concept="3uibUv" id="MFuM6QKOro" role="1tU5fm">
+          <ref role="3uigEE" to="1yqb:MFuM6QJLE2" resolve="Step.Options" />
+        </node>
+      </node>
       <node concept="37vLTG" id="6kREIVkNB3d" role="3clF46">
         <property role="TrG5h" value="subscribeScheduler" />
         <node concept="3uibUv" id="6kREIVkNB3e" role="1tU5fm">
@@ -1669,6 +1675,12 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="MFuM6QKYXW" role="3clF46">
+        <property role="TrG5h" value="options" />
+        <node concept="3uibUv" id="MFuM6QL0Jk" role="1tU5fm">
+          <ref role="3uigEE" to="1yqb:MFuM6QJLE2" resolve="Step.Options" />
+        </node>
+      </node>
       <node concept="37vLTG" id="6kREIVkNs$S" role="3clF46">
         <property role="TrG5h" value="subscribeScheduler" />
         <node concept="3uibUv" id="6kREIVkNs$T" role="1tU5fm">
@@ -1842,6 +1854,9 @@
                 <ref role="37wK5l" to="tj24:78H58of4zU0" resolve="scheduleWithTrace" />
                 <node concept="37vLTw" id="55Q$YFtIv91" role="37wK5m">
                   <ref role="3cqZAo" node="Hg6EncXntT" resolve="input_trace" />
+                </node>
+                <node concept="37vLTw" id="MFuM6RahGd" role="37wK5m">
+                  <ref role="3cqZAo" node="MFuM6QKYXW" resolve="options" />
                 </node>
                 <node concept="37vLTw" id="55Q$YFtIvC0" role="37wK5m">
                   <ref role="3cqZAo" node="6kREIVkNs$S" resolve="subscribeScheduler" />
@@ -3556,6 +3571,12 @@
               <ref role="3uigEE" to="tj24:NKt6yn81z$" resolve="TypecheckingStep" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="MFuM6QKUqK" role="3clF46">
+        <property role="TrG5h" value="options" />
+        <node concept="3uibUv" id="MFuM6QKWgC" role="1tU5fm">
+          <ref role="3uigEE" to="1yqb:MFuM6QJLE2" resolve="Step.Options" />
         </node>
       </node>
       <node concept="37vLTG" id="4vBwiiV$adA" role="3clF46">
