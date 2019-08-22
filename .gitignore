@@ -4,10 +4,12 @@
 **/test_gen.caches/*
 **/classes_gen/*
 **/classes_jchr/*
+**/.mps/dictionaries/*
 **/.mps/workspace.xml
 **/.mps/shelf/*
 **/.idea/workspace.xml
 **/lib/*
+**/.DS_Store
 .gradle
 out
 build/*

@@ -2,9 +2,11 @@
   <dictionary name="grigorii.kirgizov">
     <words>
       <w>arg</w>
+      <w>coderules</w>
       <w>incrementality</w>
       <w>logicals</w>
       <w>symmetricity</w>
+      <w>typechecking</w>
       <w>unifications</w>
     </words>
   </dictionary>
