@@ -1436,6 +1436,9 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="4gD$zlTLWiu" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="2tJIrI" id="lvX$8VFxhZ" role="jymVt" />
     <node concept="3clFb_" id="lvX$8VFrSk" role="jymVt">
@@ -1485,7 +1488,7 @@
               <node concept="2OqwBi" id="7rg9TXcEpi5" role="37vLTJ">
                 <node concept="Xjq3P" id="7rg9TXcEp5l" role="2Oq$k0" />
                 <node concept="2OwXpG" id="7rg9TXcEptg" role="2OqNvi">
-                  <ref role="2Oxat5" node="7wSJS_gAHJf" resolve="incrementalEnabled" />
+                  <ref role="2Oxat5" node="7wSJS_gAHJf" resolve="incrementalityEnabled" />
                 </node>
               </node>
             </node>
@@ -1550,6 +1553,30 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3clFbJ" id="1s7XnIW4gNx" role="3cqZAp">
+                        <node concept="3clFbS" id="1s7XnIW4gNz" role="3clFbx">
+                          <node concept="3cpWs6" id="1s7XnIW4j1u" role="3cqZAp">
+                            <node concept="2YIFZM" id="1s7XnIW4$f1" role="3cqZAk">
+                              <ref role="37wK5l" to="wyt6:~Boolean.valueOf(boolean)" resolve="valueOf" />
+                              <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
+                              <node concept="37vLTw" id="1s7XnIW4$Xc" role="37wK5m">
+                                <ref role="3cqZAo" node="7wSJS_gAHJf" resolve="incrementalityEnabled" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="1s7XnIW4hAp" role="3clFbw">
+                          <node concept="Xl_RD" id="1s7XnIW4he0" role="2Oq$k0">
+                            <property role="Xl_RC" value="typechecking.incremental" />
+                          </node>
+                          <node concept="liA8E" id="1s7XnIW4hYU" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
+                            <node concept="37vLTw" id="1s7XnIW4i$z" role="37wK5m">
+                              <ref role="3cqZAo" node="MFuM6RlRm9" resolve="key" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="MFuM6RlVnw" role="3cqZAp">
                         <node concept="10Nm6u" id="MFuM6RlVnu" role="3clFbG" />
                       </node>
@@ -1578,14 +1605,6 @@
           </node>
         </node>
         <node concept="3clFbS" id="siuT5mmA0f" role="3clF47">
-          <node concept="3clFbF" id="7rg9TXc$F69" role="3cqZAp">
-            <node concept="1rXfSq" id="7rg9TXc$F67" role="3clFbG">
-              <ref role="37wK5l" node="7wSJS_gAMh5" resolve="decideAboutIncrementality" />
-              <node concept="37vLTw" id="7rg9TXc$Fk8" role="37wK5m">
-                <ref role="3cqZAo" node="siuT5mmA0c" resolve="node" />
-              </node>
-            </node>
-          </node>
           <node concept="3cpWs8" id="2qsG4AwJYbS" role="3cqZAp">
             <node concept="3cpWsn" id="2qsG4AwJYbT" role="3cpWs9">
               <property role="TrG5h" value="to" />
@@ -2333,14 +2352,6 @@
             </node>
           </node>
           <node concept="3clFbH" id="2qsG4AwKP16" role="3cqZAp" />
-          <node concept="3clFbF" id="7wSJS_gDEks" role="3cqZAp">
-            <node concept="1rXfSq" id="7wSJS_gDEkt" role="3clFbG">
-              <ref role="37wK5l" node="7wSJS_gAMh5" resolve="decideAboutIncrementality" />
-              <node concept="37vLTw" id="7wSJS_gDEku" role="37wK5m">
-                <ref role="3cqZAo" node="2Hyoxv0bBG" resolve="node" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="1oUwjADoC3X" role="3cqZAp">
             <node concept="2YIFZM" id="1oUwjADoC7W" role="3clFbG">
               <ref role="37wK5l" to="tj24:1oUwjADoavi" resolve="checkRoot" />
@@ -2538,39 +2549,9 @@
           <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
-      <node concept="2tJIrI" id="7wSJS_gDBID" role="jymVt" />
-      <node concept="3clFb_" id="7wSJS_gAMh5" role="jymVt">
-        <property role="TrG5h" value="decideAboutIncrementality" />
-        <node concept="37vLTG" id="7wSJS_gD_uV" role="3clF46">
-          <property role="TrG5h" value="node" />
-          <node concept="3Tqbb2" id="7wSJS_gDA0h" role="1tU5fm" />
-        </node>
-        <node concept="3clFbS" id="7wSJS_gAMh8" role="3clF47">
-          <node concept="3clFbJ" id="7wSJS_gAMU4" role="3cqZAp">
-            <node concept="3fqX7Q" id="7wSJS_gAN8i" role="3clFbw">
-              <node concept="37vLTw" id="7wSJS_gAN$u" role="3fr31v">
-                <ref role="3cqZAo" node="7wSJS_gAHJf" resolve="incrementalEnabled" />
-              </node>
-            </node>
-            <node concept="3clFbS" id="7wSJS_gAMU6" role="3clFbx">
-              <node concept="3clFbF" id="7wSJS_gAO_R" role="3cqZAp">
-                <node concept="2YIFZM" id="7wSJS_gD_lB" role="3clFbG">
-                  <ref role="37wK5l" to="tj24:7wSJS_gB_Oi" resolve="resetSession" />
-                  <ref role="1Pybhc" to="tj24:7kaxm0sEy3e" resolve="TypecheckingService" />
-                  <node concept="37vLTw" id="7wSJS_gDAi0" role="37wK5m">
-                    <ref role="3cqZAo" node="7wSJS_gD_uV" resolve="node" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3Tm6S6" id="7wSJS_gALFH" role="1B3o_S" />
-        <node concept="3cqZAl" id="7wSJS_gAM9y" role="3clF45" />
-      </node>
       <node concept="2tJIrI" id="7wSJS_gDB0L" role="jymVt" />
       <node concept="312cEg" id="7wSJS_gAHJf" role="jymVt">
-        <property role="TrG5h" value="incrementalEnabled" />
+        <property role="TrG5h" value="incrementalityEnabled" />
         <node concept="3Tm6S6" id="7wSJS_gAFwd" role="1B3o_S" />
         <node concept="10P_77" id="7wSJS_gAHBG" role="1tU5fm" />
         <node concept="3clFbT" id="7wSJS_gAJU4" role="33vP2m" />
