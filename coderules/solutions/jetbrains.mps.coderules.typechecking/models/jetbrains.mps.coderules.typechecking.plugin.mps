@@ -1396,8 +1396,8 @@
         <node concept="2AHcQZ" id="lvX$8VFrSf" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
-        <node concept="3uibUv" id="3zIrswy0eS9" role="1tU5fm">
-          <ref role="3uigEE" to="1ka:~TypecheckingSession$Flags" resolve="TypecheckingSession.Flags" />
+        <node concept="3uibUv" id="7rg9TXcBNwn" role="1tU5fm">
+          <ref role="3uigEE" to="ev0w:~TypecheckingSession$Flags" resolve="TypecheckingSession.Flags" />
         </node>
       </node>
       <node concept="3clFbS" id="lvX$8VFrSg" role="3clF47">
@@ -1407,6 +1407,9 @@
               <ref role="37wK5l" node="4MaHsBDeJMk" resolve="CoderulesTypecheckingProvider.Queries" />
               <node concept="1rXfSq" id="4MaHsBDeNGb" role="37wK5m">
                 <ref role="37wK5l" node="4MaHsBDes9w" resolve="discoverMPSProject" />
+              </node>
+              <node concept="1rXfSq" id="7rg9TXcEqRE" role="37wK5m">
+                <ref role="37wK5l" node="14IknWHoMvN" resolve="checkIncrementalityEnabled" />
               </node>
             </node>
           </node>
@@ -1432,9 +1435,6 @@
             <ref role="3VsUkX" node="5BwsbZJE17w" resolve="CoderulesTypecheckingProvider.Queries" />
           </node>
         </node>
-      </node>
-      <node concept="2AHcQZ" id="3zIrswy0e2i" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="lvX$8VFxhZ" role="jymVt" />
@@ -1477,12 +1477,29 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="7rg9TXcEp5n" role="3cqZAp">
+            <node concept="37vLTI" id="7rg9TXcEpR0" role="3clFbG">
+              <node concept="37vLTw" id="7rg9TXcEqxw" role="37vLTx">
+                <ref role="3cqZAo" node="7rg9TXcEoeb" resolve="incrementalityEnabled" />
+              </node>
+              <node concept="2OqwBi" id="7rg9TXcEpi5" role="37vLTJ">
+                <node concept="Xjq3P" id="7rg9TXcEp5l" role="2Oq$k0" />
+                <node concept="2OwXpG" id="7rg9TXcEptg" role="2OqNvi">
+                  <ref role="2Oxat5" node="7wSJS_gAHJf" resolve="incrementalEnabled" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="37vLTG" id="4MaHsBDeKVS" role="3clF46">
           <property role="TrG5h" value="mpsProject" />
           <node concept="3uibUv" id="4MaHsBDeKVR" role="1tU5fm">
             <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
           </node>
+        </node>
+        <node concept="37vLTG" id="7rg9TXcEoeb" role="3clF46">
+          <property role="TrG5h" value="incrementalityEnabled" />
+          <node concept="10P_77" id="7rg9TXcEoDA" role="1tU5fm" />
         </node>
       </node>
       <node concept="2tJIrI" id="4MaHsBDeIUW" role="jymVt" />
