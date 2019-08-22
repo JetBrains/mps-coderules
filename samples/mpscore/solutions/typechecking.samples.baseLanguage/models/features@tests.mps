@@ -443,6 +443,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="Or3zaY2HX" role="1SL9yI">
+      <property role="TrG5h" value="arrayTypes" />
+      <node concept="3cqZAl" id="Or3zaY2HY" role="3clF45" />
+      <node concept="3clFbS" id="Or3zaY2HZ" role="3clF47">
+        <node concept="2Hmddi" id="Or3zaY2I0" role="3cqZAp">
+          <node concept="2OqwBi" id="Or3zaY2I1" role="2Hmdds">
+            <node concept="2YIFZM" id="Or3zaY2I3" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="Or3zaY2I4" role="37wK5m">
+                <node concept="2WthIp" id="Or3zaY2I5" role="2Oq$k0" />
+                <node concept="2XshWL" id="Or3zaY2I6" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="Or3zaY2I7" role="2XxRq1">
+                    <node concept="ZC_QK" id="Or3zaY35I" role="2tJFKM">
+                      <ref role="2aWVGs" to="96nh:Or3zaY2v0" resolve="ArrayTypes" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="Or3zaY2I9" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="Or3zaY2Ib" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
