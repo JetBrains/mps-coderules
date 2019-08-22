@@ -32,6 +32,7 @@
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
+    <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -6131,6 +6132,109 @@
       <node concept="3uibUv" id="2daneBPOyiX" role="3ztrMU">
         <ref role="3uigEE" node="1pPth$lAzAx" resolve="Step" />
         <node concept="3qTvmN" id="2daneBPOyYX" role="11_B2D" />
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="1G9Y_Qvb1CP">
+    <property role="TrG5h" value="TraceObject" />
+    <node concept="2tJIrI" id="1G9Y_Qvb2MW" role="jymVt" />
+    <node concept="3clFb_" id="1G9Y_Qvb2Ov" role="jymVt">
+      <property role="TrG5h" value="addTraceEvents" />
+      <node concept="37vLTG" id="1G9Y_Qvb2PR" role="3clF46">
+        <property role="TrG5h" value="traceEvents" />
+        <node concept="3uibUv" id="1G9Y_Qvb2VQ" role="1tU5fm">
+          <ref role="3uigEE" to="31yc:2ceN1hCYUQN" resolve="TraceEventsCollector" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="1G9Y_Qvb2Ox" role="3clF45" />
+      <node concept="3Tm1VV" id="1G9Y_Qvb2Oy" role="1B3o_S" />
+      <node concept="3clFbS" id="1G9Y_Qvb2Oz" role="3clF47">
+        <node concept="3clFbF" id="1G9Y_Qvb3Xk" role="3cqZAp">
+          <node concept="37vLTI" id="1G9Y_Qvb3Xm" role="3clFbG">
+            <node concept="2OqwBi" id="1G9Y_Qvb4On" role="37vLTJ">
+              <node concept="Xjq3P" id="1G9Y_Qvb4SA" role="2Oq$k0" />
+              <node concept="2OwXpG" id="1G9Y_Qvb4Oq" role="2OqNvi">
+                <ref role="2Oxat5" node="1G9Y_Qvb3Xg" resolve="traceEvents" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="1G9Y_Qvb3Xq" role="37vLTx">
+              <ref role="3cqZAo" node="1G9Y_Qvb2PR" resolve="traceEvents" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2qsG4AwM50i" role="jymVt" />
+    <node concept="3clFb_" id="2qsG4AwM6p0" role="jymVt">
+      <property role="TrG5h" value="getTraceEvents" />
+      <node concept="3uibUv" id="2qsG4AwM6tL" role="3clF45">
+        <ref role="3uigEE" to="31yc:2ceN1hCYUQN" resolve="TraceEventsCollector" />
+      </node>
+      <node concept="3Tm1VV" id="2qsG4AwM6p3" role="1B3o_S" />
+      <node concept="3clFbS" id="2qsG4AwM6p4" role="3clF47">
+        <node concept="3clFbF" id="2qsG4AwM6Gf" role="3cqZAp">
+          <node concept="37vLTw" id="2qsG4AwM6Ge" role="3clFbG">
+            <ref role="3cqZAo" node="1G9Y_Qvb3Xg" resolve="traceEvents" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1G9Y_Qvb2N5" role="jymVt" />
+    <node concept="3clFb_" id="2qsG4AwMiaX" role="jymVt">
+      <property role="TrG5h" value="setContext" />
+      <node concept="37vLTG" id="2qsG4AwMik3" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="2qsG4AwMmuu" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="2qsG4AwMiaZ" role="3clF45" />
+      <node concept="3Tm1VV" id="2qsG4AwMib0" role="1B3o_S" />
+      <node concept="3clFbS" id="2qsG4AwMib1" role="3clF47">
+        <node concept="3clFbF" id="2qsG4AwMnaI" role="3cqZAp">
+          <node concept="37vLTI" id="2qsG4AwMnaK" role="3clFbG">
+            <node concept="2OqwBi" id="2qsG4AwMnXH" role="37vLTJ">
+              <node concept="Xjq3P" id="2qsG4AwMo1B" role="2Oq$k0" />
+              <node concept="2OwXpG" id="2qsG4AwMnXK" role="2OqNvi">
+                <ref role="2Oxat5" node="2qsG4AwMnaE" resolve="context" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2qsG4AwMnaO" role="37vLTx">
+              <ref role="3cqZAo" node="2qsG4AwMik3" resolve="context" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2qsG4AwMi8x" role="jymVt" />
+    <node concept="3clFb_" id="2qsG4AwMo6X" role="jymVt">
+      <property role="TrG5h" value="getContext" />
+      <node concept="3uibUv" id="2qsG4AwMoc7" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      </node>
+      <node concept="3Tm1VV" id="2qsG4AwMo70" role="1B3o_S" />
+      <node concept="3clFbS" id="2qsG4AwMo71" role="3clF47">
+        <node concept="3clFbF" id="2qsG4AwMp5I" role="3cqZAp">
+          <node concept="37vLTw" id="2qsG4AwMp5H" role="3clFbG">
+            <ref role="3cqZAo" node="2qsG4AwMnaE" resolve="context" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2qsG4AwMo3b" role="jymVt" />
+    <node concept="3Tm1VV" id="1G9Y_Qvb1CQ" role="1B3o_S" />
+    <node concept="312cEg" id="1G9Y_Qvb3Xg" role="jymVt">
+      <property role="TrG5h" value="traceEvents" />
+      <node concept="3Tm6S6" id="1G9Y_Qvb3Xh" role="1B3o_S" />
+      <node concept="3uibUv" id="1G9Y_Qvb3Xj" role="1tU5fm">
+        <ref role="3uigEE" to="31yc:2ceN1hCYUQN" resolve="TraceEventsCollector" />
+      </node>
+    </node>
+    <node concept="312cEg" id="2qsG4AwMnaE" role="jymVt">
+      <property role="TrG5h" value="context" />
+      <node concept="3Tm6S6" id="2qsG4AwMnaF" role="1B3o_S" />
+      <node concept="3uibUv" id="2qsG4AwMnaH" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
     </node>
   </node>

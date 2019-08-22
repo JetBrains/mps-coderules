@@ -1924,19 +1924,6 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="3clFbF" id="6IQb_Rxsy5O" role="3cqZAp">
-                              <node concept="2OqwBi" id="6IQb_Rxsy5P" role="3clFbG">
-                                <node concept="37vLTw" id="2daneBOUuMI" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="2daneBOT1Cq" resolve="openedTab" />
-                                </node>
-                                <node concept="liA8E" id="6IQb_Rxsy5R" role="2OqNvi">
-                                  <ref role="37wK5l" to="o35r:6_UQWSXcgLF" resolve="setContextEditorComponent" />
-                                  <node concept="37vLTw" id="6IQb_Rxsy5S" role="37wK5m">
-                                    <ref role="3cqZAo" node="6IQb_Rxsgb3" resolve="editorComponent" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
                             <node concept="3clFbF" id="6IQb_Rxsy5T" role="3cqZAp">
                               <node concept="2OqwBi" id="6IQb_Rxsy5U" role="3clFbG">
                                 <node concept="37vLTw" id="2daneBOUwlg" role="2Oq$k0">
