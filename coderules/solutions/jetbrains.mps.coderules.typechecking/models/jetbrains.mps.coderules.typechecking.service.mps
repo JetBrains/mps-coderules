@@ -2,17 +2,17 @@
 <model ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="0b80a2e8-f9f1-47b3-823f-56eb115bca42" name="jetbrains.mps.typechecking.annotation" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="0b80a2e8-f9f1-47b3-823f-56eb115bca42" name="jetbrains.mps.typechecking.annotation" version="0" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="2" />
   </languages>
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -4847,6 +4847,18 @@
         <node concept="3clFbH" id="1G9Y_Qv8GS5" role="3cqZAp" />
         <node concept="3clFbF" id="78H58of4JwC" role="3cqZAp">
           <node concept="2OqwBi" id="78H58of4N2x" role="3clFbG">
+            <node concept="3nyPlj" id="78H58of4JwA" role="2Oq$k0">
+              <ref role="37wK5l" node="51a$_pPOrYI" resolve="scheduleWithTrace" />
+              <node concept="37vLTw" id="1G9Y_Qv8CWa" role="37wK5m">
+                <ref role="3cqZAo" node="1G9Y_Qv8wB5" resolve="input_trace_collector" />
+              </node>
+              <node concept="37vLTw" id="MFuM6R1hcM" role="37wK5m">
+                <ref role="3cqZAo" node="MFuM6R0U3f" resolve="options" />
+              </node>
+              <node concept="37vLTw" id="78H58of4Mnl" role="37wK5m">
+                <ref role="3cqZAo" node="78H58of4zU6" resolve="subscribeScheduler" />
+              </node>
+            </node>
             <node concept="liA8E" id="78H58of4NWJ" role="2OqNvi">
               <ref role="37wK5l" to="unkn:~Single.map(io.reactivex.functions.Function)" resolve="map" />
               <node concept="1bVj0M" id="78H58of4P00" role="37wK5m">
@@ -4965,18 +4977,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3nyPlj" id="78H58of4JwA" role="2Oq$k0">
-              <ref role="37wK5l" node="51a$_pPOrYI" resolve="scheduleWithTrace" />
-              <node concept="37vLTw" id="1G9Y_Qv8CWa" role="37wK5m">
-                <ref role="3cqZAo" node="1G9Y_Qv8wB5" resolve="input_trace_collector" />
-              </node>
-              <node concept="37vLTw" id="MFuM6R1hcM" role="37wK5m">
-                <ref role="3cqZAo" node="MFuM6R0U3f" resolve="options" />
-              </node>
-              <node concept="37vLTw" id="78H58of4Mnl" role="37wK5m">
-                <ref role="3cqZAo" node="78H58of4zU6" resolve="subscribeScheduler" />
               </node>
             </node>
           </node>
@@ -7593,7 +7593,6 @@
         </node>
       </node>
       <node concept="3cqZAl" id="1G9Y_Qva5KI" role="3clF45" />
-      <node concept="3Tm6S6" id="2mhJggjAQV5" role="1B3o_S" />
       <node concept="3clFbS" id="1G9Y_Qva5KK" role="3clF47">
         <node concept="3clFbJ" id="1G9Y_QvbgV_" role="3cqZAp">
           <node concept="3clFbS" id="1G9Y_QvbgVB" role="3clFbx">
@@ -7619,6 +7618,7 @@
           </node>
         </node>
       </node>
+      <node concept="3Tm6S6" id="2mhJggjAQV5" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="1FOQehxnD2p" role="jymVt" />
     <node concept="2YIFZL" id="3IIf9O_tL1f" role="jymVt">
@@ -8027,12 +8027,6 @@
         <property role="TrG5h" value="message" />
         <node concept="17QB3L" id="1FOQehwozKs" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="4ekZiHdeHJl" role="3clF46">
-        <property role="TrG5h" value="templateRef" />
-        <node concept="3uibUv" id="4ekZiHdeHQS" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
-      </node>
       <node concept="3cqZAl" id="1FOQehwow5S" role="3clF45" />
       <node concept="3Tm1VV" id="1FOQehwow5T" role="1B3o_S" />
       <node concept="3clFbS" id="1FOQehwow5U" role="3clF47">
@@ -8060,6 +8054,12 @@
               <ref role="3cqZAo" node="4ekZiHdeHJl" resolve="templateRef" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4ekZiHdeHJl" role="3clF46">
+        <property role="TrG5h" value="templateRef" />
+        <node concept="3uibUv" id="4ekZiHdeHQS" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
         </node>
       </node>
     </node>
@@ -8239,15 +8239,15 @@
         <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
       </node>
     </node>
-    <node concept="3uibUv" id="4ekZiHdbRUL" role="EKbjA">
-      <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem" resolve="RuleIdFlavouredItem" />
-    </node>
     <node concept="312cEg" id="4ekZiHdeOLS" role="jymVt">
       <property role="TrG5h" value="templateRef" />
       <node concept="3Tm6S6" id="4ekZiHdeOLT" role="1B3o_S" />
       <node concept="3uibUv" id="4ekZiHdeOLV" role="1tU5fm">
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
       </node>
+    </node>
+    <node concept="3uibUv" id="4ekZiHdbRUL" role="EKbjA">
+      <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem" resolve="RuleIdFlavouredItem" />
     </node>
   </node>
   <node concept="312cEu" id="4Z$O9mrQIzY">
