@@ -31,6 +31,7 @@
     <import index="6rp1" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:com.github.andrewoma.dexx.collection(jetbrains.mps.logic.reactor/)" />
     <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
     <import index="1yqb" ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)" />
+    <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -644,20 +645,16 @@
         </node>
       </node>
       <node concept="3clFbS" id="4MaHsBDgib0" role="3clF47">
-        <node concept="3clFbF" id="2ceN1hCEMQE" role="3cqZAp">
-          <node concept="2OqwBi" id="2ceN1hCEO91" role="3clFbG">
-            <node concept="2OqwBi" id="2ceN1hCENng" role="2Oq$k0">
-              <node concept="37vLTw" id="2ceN1hCEMQC" role="2Oq$k0">
-                <ref role="3cqZAo" node="2ceN1hCELdh" resolve="mpsProject" />
-              </node>
-              <node concept="liA8E" id="2ceN1hCEO3z" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getModelAccess()" resolve="getModelAccess" />
-              </node>
+        <node concept="3clFbF" id="2mhJggjq7gt" role="3cqZAp">
+          <node concept="2OqwBi" id="2mhJggjq7se" role="3clFbG">
+            <node concept="2YIFZM" id="2mhJggjq7jK" role="2Oq$k0">
+              <ref role="37wK5l" to="1yqb:3KwBCAA_eqP" resolve="requireEDT" />
+              <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />
             </node>
-            <node concept="liA8E" id="2ceN1hCEOlU" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.executeCommandInEDT(java.lang.Runnable)" resolve="executeCommandInEDT" />
-              <node concept="1bVj0M" id="2ceN1hCEOnW" role="37wK5m">
-                <node concept="3clFbS" id="2ceN1hCEOnX" role="1bW5cS">
+            <node concept="liA8E" id="2mhJggjq7A3" role="2OqNvi">
+              <ref role="37wK5l" to="unkn:~Scheduler.scheduleDirect(java.lang.Runnable)" resolve="scheduleDirect" />
+              <node concept="1bVj0M" id="2mhJggjq7BT" role="37wK5m">
+                <node concept="3clFbS" id="2mhJggjq7BU" role="1bW5cS">
                   <node concept="3cpWs8" id="2ceN1hCEOyW" role="3cqZAp">
                     <node concept="3cpWsn" id="2ceN1hCEOyX" role="3cpWs9">
                       <property role="TrG5h" value="sink" />
