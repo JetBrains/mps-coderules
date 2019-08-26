@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/Core/Core.iml" filepath="$PROJECT_DIR$/Core/Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/Reactor.iml" filepath="$PROJECT_DIR$/Reactor.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../coderules/solutions/jetbrains.mps.coderules/source_gen/jetbrains/mps/coderules/coderules.iml" filepath="$PROJECT_DIR$/../coderules/solutions/jetbrains.mps.coderules/source_gen/jetbrains/mps/coderules/coderules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../coderules/languages/jetbrains.mps.lang.coderules/runtime/source_gen/jetbrains/mps/lang/lang.iml" filepath="$PROJECT_DIR$/../coderules/languages/jetbrains.mps.lang.coderules/runtime/source_gen/jetbrains/mps/lang/lang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../coderules/solutions/jetbrains.mps.coderules.typechecking/source_gen/jetbrains/mps/coderules/typechecking/typechecking.iml" filepath="$PROJECT_DIR$/../coderules/solutions/jetbrains.mps.coderules.typechecking/source_gen/jetbrains/mps/coderules/typechecking/typechecking.iml" />
     </modules>
   </component>
 </project>
