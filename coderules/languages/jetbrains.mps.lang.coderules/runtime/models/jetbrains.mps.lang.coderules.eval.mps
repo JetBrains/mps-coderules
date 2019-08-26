@@ -37,6 +37,7 @@
     <import index="ksgm" ref="r:6285678b-007f-4527-bcf5-6fd38ba8c969(jetbrains.mps.lang.coderules.program)" />
     <import index="xnrr" ref="r:4fd33103-fc30-42f4-a8cf-d1e858f21988(jetbrains.mps.lang.coderules.program.analysis)" />
     <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
+    <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4111,6 +4112,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="2Y70AYEegr_" role="3cqZAp">
+          <node concept="37vLTI" id="2Y70AYEegrB" role="3clFbG">
+            <node concept="2OqwBi" id="2Y70AYEegQP" role="37vLTJ">
+              <node concept="Xjq3P" id="2Y70AYEegRq" role="2Oq$k0" />
+              <node concept="2OwXpG" id="2Y70AYEegQS" role="2OqNvi">
+                <ref role="2Oxat5" node="2Y70AYEegrx" resolve="messageHandler" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2Y70AYEegrF" role="37vLTx">
+              <ref role="3cqZAo" node="2Y70AYEegeI" resolve="messageHandler" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="1hX44vNnpfY" role="3cqZAp">
           <node concept="1rXfSq" id="1hX44vNnpfX" role="3clFbG">
             <ref role="37wK5l" node="1hX44vNnpfT" resolve="collectMacroTables" />
@@ -4130,6 +4144,12 @@
           <node concept="3uibUv" id="7DvO2MamV75" role="A3Ik2">
             <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2Y70AYEegeI" role="3clF46">
+        <property role="TrG5h" value="messageHandler" />
+        <node concept="3uibUv" id="2Y70AYEegq6" role="1tU5fm">
+          <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
         </node>
       </node>
     </node>
@@ -4215,27 +4235,103 @@
             <property role="TrG5h" value="macroTable" />
           </node>
         </node>
-        <node concept="3clFbH" id="6UWSvq59Y1y" role="3cqZAp" />
-        <node concept="YS8fn" id="6UWSvq5a4Ig" role="3cqZAp">
-          <node concept="2ShNRf" id="6UWSvq5a5d0" role="YScLw">
-            <node concept="1pGfFk" id="6UWSvq5a5Ir" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-              <node concept="3cpWs3" id="6UWSvq5a7lN" role="37wK5m">
-                <node concept="3cpWs3" id="6UWSvq5a6TJ" role="3uHU7B">
-                  <node concept="Xl_RD" id="6UWSvq5a5OB" role="3uHU7B">
-                    <property role="Xl_RC" value="no macro template for concept \&quot;" />
-                  </node>
-                  <node concept="37vLTw" id="6UWSvq5a6XQ" role="3uHU7w">
-                    <ref role="3cqZAo" node="4nxCIBqyARP" resolve="concept" />
+        <node concept="3SKdUt" id="2Y70AYEelAT" role="3cqZAp">
+          <node concept="1PaTwC" id="2Y70AYEelAU" role="3ndbpf">
+            <node concept="3oM_SD" id="2Y70AYEelAV" role="1PaTwD">
+              <property role="3oM_SC" value="FIXME" />
+            </node>
+            <node concept="3oM_SD" id="2Y70AYEelAW" role="1PaTwD">
+              <property role="3oM_SC" value="assert" />
+            </node>
+            <node concept="3oM_SD" id="2Y70AYEelAX" role="1PaTwD">
+              <property role="3oM_SC" value="messageHandler" />
+            </node>
+            <node concept="3oM_SD" id="2Y70AYEelAY" role="1PaTwD">
+              <property role="3oM_SC" value="!=" />
+            </node>
+            <node concept="3oM_SD" id="2Y70AYEelAZ" role="1PaTwD">
+              <property role="3oM_SC" value="null" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2Y70AYEelB0" role="3cqZAp">
+          <node concept="3clFbS" id="2Y70AYEelB1" role="3clFbx">
+            <node concept="3clFbF" id="2Y70AYEelB2" role="3cqZAp">
+              <node concept="2OqwBi" id="2Y70AYEelB3" role="3clFbG">
+                <node concept="37vLTw" id="2Y70AYEelB4" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2Y70AYEegrx" resolve="messageHandler" />
+                </node>
+                <node concept="liA8E" id="2Y70AYEelB5" role="2OqNvi">
+                  <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage)" resolve="handle" />
+                  <node concept="2YIFZM" id="2Y70AYEelB6" role="37wK5m">
+                    <ref role="37wK5l" to="et5u:~Message.createMessage(jetbrains.mps.messages.MessageKind,java.lang.String,java.lang.String)" resolve="createMessage" />
+                    <ref role="1Pybhc" to="et5u:~Message" resolve="Message" />
+                    <node concept="Rm8GO" id="2Y70AYEelB7" role="37wK5m">
+                      <ref role="Rm8GQ" to="et5u:~MessageKind.WARNING" resolve="WARNING" />
+                      <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
+                    </node>
+                    <node concept="2OqwBi" id="2Y70AYEelB8" role="37wK5m">
+                      <node concept="3VsKOn" id="2Y70AYEelB9" role="2Oq$k0">
+                        <ref role="3VsUkX" node="1hX44vNlSIA" resolve="MacroTemplateIndex" />
+                      </node>
+                      <node concept="liA8E" id="2Y70AYEelBa" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Class.getSimpleName()" resolve="getSimpleName" />
+                      </node>
+                    </node>
+                    <node concept="3cpWs3" id="2Y70AYEemPN" role="37wK5m">
+                      <node concept="3cpWs3" id="2Y70AYEemPO" role="3uHU7B">
+                        <node concept="Xl_RD" id="2Y70AYEemPP" role="3uHU7B">
+                          <property role="Xl_RC" value="no macro template for concept \&quot;" />
+                        </node>
+                        <node concept="37vLTw" id="2Y70AYEemPQ" role="3uHU7w">
+                          <ref role="3cqZAo" node="4nxCIBqyARP" resolve="concept" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="2Y70AYEemPR" role="3uHU7w">
+                        <property role="Xl_RC" value="\&quot;" />
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node concept="Xl_RD" id="6UWSvq5a87Q" role="3uHU7w">
-                  <property role="Xl_RC" value="\&quot;" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="2Y70AYEelBg" role="3cqZAp">
+              <node concept="10Nm6u" id="2Y70AYEelBh" role="3cqZAk" />
+            </node>
+            <node concept="3clFbH" id="2Y70AYEelBi" role="3cqZAp" />
+          </node>
+          <node concept="3y3z36" id="2Y70AYEelBj" role="3clFbw">
+            <node concept="10Nm6u" id="2Y70AYEelBk" role="3uHU7w" />
+            <node concept="37vLTw" id="2Y70AYEelBl" role="3uHU7B">
+              <ref role="3cqZAo" node="2Y70AYEegrx" resolve="messageHandler" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="2Y70AYEelBm" role="9aQIa">
+            <node concept="3clFbS" id="2Y70AYEelBn" role="9aQI4">
+              <node concept="YS8fn" id="6UWSvq5a4Ig" role="3cqZAp">
+                <node concept="2ShNRf" id="6UWSvq5a5d0" role="YScLw">
+                  <node concept="1pGfFk" id="6UWSvq5a5Ir" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                    <node concept="3cpWs3" id="6UWSvq5a7lN" role="37wK5m">
+                      <node concept="3cpWs3" id="6UWSvq5a6TJ" role="3uHU7B">
+                        <node concept="Xl_RD" id="6UWSvq5a5OB" role="3uHU7B">
+                          <property role="Xl_RC" value="no macro template for concept \&quot;" />
+                        </node>
+                        <node concept="37vLTw" id="6UWSvq5a6XQ" role="3uHU7w">
+                          <ref role="3cqZAo" node="4nxCIBqyARP" resolve="concept" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6UWSvq5a87Q" role="3uHU7w">
+                        <property role="Xl_RC" value="\&quot;" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="6UWSvq59Y1y" role="3cqZAp" />
       </node>
       <node concept="16euLQ" id="1eKXYsjIb$d" role="16eVyc">
         <property role="TrG5h" value="Cfg" />
@@ -4311,22 +4407,97 @@
             <property role="TrG5h" value="macroTable" />
           </node>
         </node>
-        <node concept="3clFbH" id="6UWSvq5a9vB" role="3cqZAp" />
-        <node concept="YS8fn" id="6UWSvq5a9vC" role="3cqZAp">
-          <node concept="2ShNRf" id="6UWSvq5a9vD" role="YScLw">
-            <node concept="1pGfFk" id="6UWSvq5a9vE" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-              <node concept="3cpWs3" id="6UWSvq5a9vF" role="37wK5m">
-                <node concept="3cpWs3" id="6UWSvq5a9vG" role="3uHU7B">
-                  <node concept="Xl_RD" id="6UWSvq5a9vH" role="3uHU7B">
-                    <property role="Xl_RC" value="no macro template  \&quot;" />
-                  </node>
-                  <node concept="37vLTw" id="6UWSvq5adtU" role="3uHU7w">
-                    <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="templateId" />
+        <node concept="3SKdUt" id="2Y70AYEeljo" role="3cqZAp">
+          <node concept="1PaTwC" id="2Y70AYEeljp" role="3ndbpf">
+            <node concept="3oM_SD" id="2Y70AYEeljr" role="1PaTwD">
+              <property role="3oM_SC" value="FIXME" />
+            </node>
+            <node concept="3oM_SD" id="2Y70AYEel$$" role="1PaTwD">
+              <property role="3oM_SC" value="assert" />
+            </node>
+            <node concept="3oM_SD" id="2Y70AYEel$R" role="1PaTwD">
+              <property role="3oM_SC" value="messageHandler" />
+            </node>
+            <node concept="3oM_SD" id="2Y70AYEel_Y" role="1PaTwD">
+              <property role="3oM_SC" value="!=" />
+            </node>
+            <node concept="3oM_SD" id="2Y70AYEelAz" role="1PaTwD">
+              <property role="3oM_SC" value="null" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2Y70AYEegYv" role="3cqZAp">
+          <node concept="3clFbS" id="2Y70AYEegYx" role="3clFbx">
+            <node concept="3clFbF" id="2Y70AYEehEv" role="3cqZAp">
+              <node concept="2OqwBi" id="2Y70AYEehGn" role="3clFbG">
+                <node concept="37vLTw" id="2Y70AYEehEt" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2Y70AYEegrx" resolve="messageHandler" />
+                </node>
+                <node concept="liA8E" id="2Y70AYEehNl" role="2OqNvi">
+                  <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage)" resolve="handle" />
+                  <node concept="2YIFZM" id="2Y70AYEehR8" role="37wK5m">
+                    <ref role="37wK5l" to="et5u:~Message.createMessage(jetbrains.mps.messages.MessageKind,java.lang.String,java.lang.String)" resolve="createMessage" />
+                    <ref role="1Pybhc" to="et5u:~Message" resolve="Message" />
+                    <node concept="Rm8GO" id="2Y70AYEehVC" role="37wK5m">
+                      <ref role="Rm8GQ" to="et5u:~MessageKind.WARNING" resolve="WARNING" />
+                      <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
+                    </node>
+                    <node concept="2OqwBi" id="2Y70AYEeiAy" role="37wK5m">
+                      <node concept="3VsKOn" id="2Y70AYEei6U" role="2Oq$k0">
+                        <ref role="3VsUkX" node="1hX44vNlSIA" resolve="MacroTemplateIndex" />
+                      </node>
+                      <node concept="liA8E" id="2Y70AYEej54" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Class.getSimpleName()" resolve="getSimpleName" />
+                      </node>
+                    </node>
+                    <node concept="3cpWs3" id="2Y70AYEejfE" role="37wK5m">
+                      <node concept="3cpWs3" id="2Y70AYEejfF" role="3uHU7B">
+                        <node concept="Xl_RD" id="2Y70AYEejfG" role="3uHU7B">
+                          <property role="Xl_RC" value="no macro template  \&quot;" />
+                        </node>
+                        <node concept="37vLTw" id="2Y70AYEejfH" role="3uHU7w">
+                          <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="templateId" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="2Y70AYEejfI" role="3uHU7w">
+                        <property role="Xl_RC" value="\&quot;" />
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node concept="Xl_RD" id="6UWSvq5a9vJ" role="3uHU7w">
-                  <property role="Xl_RC" value="\&quot;" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="2Y70AYEekrv" role="3cqZAp">
+              <node concept="10Nm6u" id="2Y70AYEek_5" role="3cqZAk" />
+            </node>
+            <node concept="3clFbH" id="2Y70AYEel2S" role="3cqZAp" />
+          </node>
+          <node concept="3y3z36" id="2Y70AYEeh$p" role="3clFbw">
+            <node concept="10Nm6u" id="2Y70AYEehD9" role="3uHU7w" />
+            <node concept="37vLTw" id="2Y70AYEehrz" role="3uHU7B">
+              <ref role="3cqZAo" node="2Y70AYEegrx" resolve="messageHandler" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="2Y70AYEejwr" role="9aQIa">
+            <node concept="3clFbS" id="2Y70AYEejws" role="9aQI4">
+              <node concept="YS8fn" id="6UWSvq5a9vC" role="3cqZAp">
+                <node concept="2ShNRf" id="6UWSvq5a9vD" role="YScLw">
+                  <node concept="1pGfFk" id="6UWSvq5a9vE" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                    <node concept="3cpWs3" id="6UWSvq5a9vF" role="37wK5m">
+                      <node concept="3cpWs3" id="6UWSvq5a9vG" role="3uHU7B">
+                        <node concept="Xl_RD" id="6UWSvq5a9vH" role="3uHU7B">
+                          <property role="Xl_RC" value="no macro template  \&quot;" />
+                        </node>
+                        <node concept="37vLTw" id="6UWSvq5adtU" role="3uHU7w">
+                          <ref role="3cqZAo" node="4MEOIDEhHGm" resolve="templateId" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6UWSvq5a9vJ" role="3uHU7w">
+                        <property role="Xl_RC" value="\&quot;" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -4424,6 +4595,13 @@
         <node concept="3uibUv" id="7DvO2MamVag" role="_ZDj9">
           <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
         </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="2Y70AYEegrx" role="jymVt">
+      <property role="TrG5h" value="messageHandler" />
+      <node concept="3Tm6S6" id="2Y70AYEegry" role="1B3o_S" />
+      <node concept="3uibUv" id="2Y70AYEegr$" role="1tU5fm">
+        <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
       </node>
     </node>
     <node concept="2tJIrI" id="1hX44vNnjHa" role="jymVt" />
@@ -4951,14 +5129,6 @@
       <node concept="3cqZAl" id="7DvO2M9VeM2" role="3clF45" />
       <node concept="3Tm1VV" id="78H58oeCgeV" role="1B3o_S" />
       <node concept="3clFbS" id="7DvO2M9VeM4" role="3clF47">
-        <node concept="3clFbF" id="7DvO2M9VeM5" role="3cqZAp">
-          <node concept="1rXfSq" id="7DvO2M9VeM6" role="3clFbG">
-            <ref role="37wK5l" node="7DvO2M9VeMb" resolve="init" />
-            <node concept="37vLTw" id="7DvO2M9VeM7" role="37wK5m">
-              <ref role="3cqZAo" node="7DvO2M9VeM8" resolve="descriptors" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="72RDgIN3TIX" role="3cqZAp">
           <node concept="37vLTI" id="72RDgIN3TIZ" role="3clFbG">
             <node concept="2OqwBi" id="72RDgIN3TTV" role="37vLTJ">
@@ -4969,6 +5139,27 @@
             </node>
             <node concept="37vLTw" id="72RDgIN3TJ3" role="37vLTx">
               <ref role="3cqZAo" node="72RDgIN3THq" resolve="repository" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2Y70AYEbe1S" role="3cqZAp">
+          <node concept="37vLTI" id="2Y70AYEbe1U" role="3clFbG">
+            <node concept="2OqwBi" id="2Y70AYEbeZE" role="37vLTJ">
+              <node concept="Xjq3P" id="2Y70AYEbf0r" role="2Oq$k0" />
+              <node concept="2OwXpG" id="2Y70AYEbeZH" role="2OqNvi">
+                <ref role="2Oxat5" node="2Y70AYEbe1O" resolve="messageHandler" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2Y70AYEbe1Y" role="37vLTx">
+              <ref role="3cqZAo" node="2Y70AYEbbjP" resolve="messageHandler" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7DvO2M9VeM5" role="3cqZAp">
+          <node concept="1rXfSq" id="7DvO2M9VeM6" role="3clFbG">
+            <ref role="37wK5l" node="7DvO2M9VeMb" resolve="init" />
+            <node concept="37vLTw" id="7DvO2M9VeM7" role="37wK5m">
+              <ref role="3cqZAo" node="7DvO2M9VeM8" resolve="descriptors" />
             </node>
           </node>
         </node>
@@ -4987,6 +5178,12 @@
         <property role="TrG5h" value="repository" />
         <node concept="3uibUv" id="72RDgIN3TIw" role="1tU5fm">
           <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="2Y70AYEbbjP" role="3clF46">
+        <property role="TrG5h" value="messageHandler" />
+        <node concept="3uibUv" id="2Y70AYEbcAb" role="1tU5fm">
+          <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
         </node>
       </node>
     </node>
@@ -5275,6 +5472,9 @@
                 <node concept="37vLTw" id="6UWSvq5d6LC" role="37wK5m">
                   <ref role="3cqZAo" node="6UWSvq5d6Lz" resolve="macroManifests" />
                 </node>
+                <node concept="37vLTw" id="2Y70AYEfWEu" role="37wK5m">
+                  <ref role="3cqZAo" node="2Y70AYEbe1O" resolve="messageHandler" />
+                </node>
               </node>
             </node>
           </node>
@@ -5418,6 +5618,13 @@
       <node concept="3Tm6S6" id="2WtKs4tZf$D" role="1B3o_S" />
       <node concept="3uibUv" id="2WtKs4tZfG8" role="1tU5fm">
         <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
+      </node>
+    </node>
+    <node concept="312cEg" id="2Y70AYEbe1O" role="jymVt">
+      <property role="TrG5h" value="messageHandler" />
+      <node concept="3Tm6S6" id="2Y70AYEbe1P" role="1B3o_S" />
+      <node concept="3uibUv" id="2Y70AYEbe1R" role="1tU5fm">
+        <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
       </node>
     </node>
     <node concept="2tJIrI" id="7P_FdVPFLhr" role="jymVt" />

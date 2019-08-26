@@ -44,6 +44,7 @@
     <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
+    <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -991,6 +992,56 @@
                   </node>
                 </node>
               </node>
+              <node concept="3cpWs8" id="2Y70AYEbnBU" role="3cqZAp">
+                <node concept="3cpWsn" id="2Y70AYEbnBV" role="3cpWs9">
+                  <property role="TrG5h" value="errorMsgHandler" />
+                  <node concept="3uibUv" id="2Y70AYEbnBT" role="1tU5fm">
+                    <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
+                  </node>
+                  <node concept="2ShNRf" id="2Y70AYEbnBW" role="33vP2m">
+                    <node concept="YeOm9" id="2Y70AYEbnBX" role="2ShVmc">
+                      <node concept="1Y3b0j" id="2Y70AYEbnBY" role="YeSDq">
+                        <property role="2bfB8j" value="true" />
+                        <ref role="1Y3XeK" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
+                        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                        <node concept="3Tm1VV" id="2Y70AYEbnBZ" role="1B3o_S" />
+                        <node concept="3clFb_" id="2Y70AYEbnC0" role="jymVt">
+                          <property role="TrG5h" value="handle" />
+                          <node concept="3Tm1VV" id="2Y70AYEbnC1" role="1B3o_S" />
+                          <node concept="3cqZAl" id="2Y70AYEbnC2" role="3clF45" />
+                          <node concept="37vLTG" id="2Y70AYEbnC3" role="3clF46">
+                            <property role="TrG5h" value="msg" />
+                            <node concept="3uibUv" id="2Y70AYEbnC4" role="1tU5fm">
+                              <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="2Y70AYEbnC5" role="3clF47">
+                            <node concept="YS8fn" id="2Y70AYEbnC6" role="3cqZAp">
+                              <node concept="2ShNRf" id="2Y70AYEbnC7" role="YScLw">
+                                <node concept="1pGfFk" id="2Y70AYEbnC8" role="2ShVmc">
+                                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                                  <node concept="2OqwBi" id="2Y70AYEbnC9" role="37wK5m">
+                                    <node concept="37vLTw" id="2Y70AYEbnCa" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="2Y70AYEbnC3" resolve="msg" />
+                                    </node>
+                                    <node concept="liA8E" id="2Y70AYEbnCb" role="2OqNvi">
+                                      <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2AHcQZ" id="2Y70AYEbnCc" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="2Y70AYEbhJy" role="3cqZAp" />
               <node concept="3cpWs8" id="6OXbTD_o6iu" role="3cqZAp">
                 <node concept="3cpWsn" id="6OXbTD_o6iv" role="3cpWs9">
                   <property role="TrG5h" value="session" />
@@ -1021,6 +1072,9 @@
                       </node>
                       <node concept="37vLTw" id="72RDgIN4_KQ" role="37wK5m">
                         <ref role="3cqZAo" node="6OXbTD_oHcp" resolve="repo" />
+                      </node>
+                      <node concept="37vLTw" id="2Y70AYEbqBu" role="37wK5m">
+                        <ref role="3cqZAo" node="2Y70AYEbnBV" resolve="errorMsgHandler" />
                       </node>
                     </node>
                   </node>

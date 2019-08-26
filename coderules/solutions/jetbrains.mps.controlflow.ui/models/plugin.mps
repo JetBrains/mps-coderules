@@ -924,6 +924,13 @@
                     <node concept="37vLTw" id="7WKNeR8ThOi" role="37wK5m">
                       <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
                     </node>
+                    <node concept="2YIFZM" id="2Y70AYEc1s7" role="37wK5m">
+                      <ref role="1Pybhc" to="31yc:4MaHsBDdlvx" resolve="MessageLog" />
+                      <ref role="37wK5l" to="31yc:2mhJggjuVj0" resolve="get" />
+                      <node concept="37vLTw" id="2Y70AYEc1Yz" role="37wK5m">
+                        <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
+                      </node>
+                    </node>
                     <node concept="37vLTw" id="7WKNeR9foS9" role="37wK5m">
                       <ref role="3cqZAo" node="7WKNeR9fm7b" resolve="queryKind" />
                     </node>

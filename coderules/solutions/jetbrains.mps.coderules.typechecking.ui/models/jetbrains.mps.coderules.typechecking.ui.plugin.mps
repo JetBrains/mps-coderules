@@ -979,6 +979,16 @@
                     <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                   </node>
                 </node>
+                <node concept="2YIFZM" id="2Y70AYEbGrb" role="37wK5m">
+                  <ref role="1Pybhc" to="31yc:4MaHsBDdlvx" resolve="MessageLog" />
+                  <ref role="37wK5l" to="31yc:2mhJggjuVj0" resolve="get" />
+                  <node concept="2OqwBi" id="2Y70AYEbGrc" role="37wK5m">
+                    <node concept="2WthIp" id="2Y70AYEbGrd" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="2Y70AYEbGre" role="2OqNvi">
+                      <ref role="2WH_rO" node="3YJ7yg2LgUn" resolve="mpsProject" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -2704,6 +2714,13 @@
                           <node concept="37vLTw" id="1GKZK$AeOTe" role="37wK5m">
                             <ref role="3cqZAo" node="4vBwiiVz_W6" resolve="repository" />
                           </node>
+                          <node concept="2YIFZM" id="2Y70AYEcffs" role="37wK5m">
+                            <ref role="1Pybhc" to="31yc:4MaHsBDdlvx" resolve="MessageLog" />
+                            <ref role="37wK5l" to="31yc:2mhJggjuVj0" resolve="get" />
+                            <node concept="37vLTw" id="2Y70AYEcfPY" role="37wK5m">
+                              <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
+                            </node>
+                          </node>
                           <node concept="10M0yZ" id="1GKZK$AeOTf" role="37wK5m">
                             <ref role="3cqZAo" to="tj24:4t7Xo7inNvw" resolve="TYPECHECK" />
                             <ref role="1PxDUh" to="tj24:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
@@ -3120,6 +3137,13 @@
                     </node>
                     <node concept="37vLTw" id="7WKNeR8ThOi" role="37wK5m">
                       <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
+                    </node>
+                    <node concept="2YIFZM" id="2Y70AYEc4aH" role="37wK5m">
+                      <ref role="1Pybhc" to="31yc:4MaHsBDdlvx" resolve="MessageLog" />
+                      <ref role="37wK5l" to="31yc:2mhJggjuVj0" resolve="get" />
+                      <node concept="37vLTw" id="2Y70AYEc4nY" role="37wK5m">
+                        <ref role="3cqZAo" node="6hqFpWnfkNg" resolve="mpsProject" />
+                      </node>
                     </node>
                     <node concept="37vLTw" id="7WKNeR9foS9" role="37wK5m">
                       <ref role="3cqZAo" node="7WKNeR9fm7b" resolve="queryKind" />

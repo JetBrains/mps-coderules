@@ -56,6 +56,7 @@
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
+    <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -5387,34 +5388,6 @@
         <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingService" />
       </node>
       <node concept="3clFbS" id="5KrJ7UHN1Lo" role="3clF47">
-        <node concept="3SKdUt" id="5KrJ7UHN4OP" role="3cqZAp">
-          <node concept="1PaTwC" id="589APehYyiN" role="3ndbpf">
-            <node concept="3oM_SD" id="589APehYyiO" role="1PaTwD">
-              <property role="3oM_SC" value="FIXME" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyiP" role="1PaTwD">
-              <property role="3oM_SC" value="check" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyiQ" role="1PaTwD">
-              <property role="3oM_SC" value="the" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyiR" role="1PaTwD">
-              <property role="3oM_SC" value="reporter" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyiS" role="1PaTwD">
-              <property role="3oM_SC" value="hasn't" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyiT" role="1PaTwD">
-              <property role="3oM_SC" value="been" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyiU" role="1PaTwD">
-              <property role="3oM_SC" value="set" />
-            </node>
-            <node concept="3oM_SD" id="589APehYyiV" role="1PaTwD">
-              <property role="3oM_SC" value="already" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5KrJ7UHN48u" role="3cqZAp">
           <node concept="37vLTI" id="5KrJ7UHN4_M" role="3clFbG">
             <node concept="37vLTw" id="5KrJ7UHN4EN" role="37vLTx">
@@ -5435,6 +5408,38 @@
       <node concept="3Tm1VV" id="2qsG4AwGcLI" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="1G9Y_QvbsSD" role="jymVt" />
+    <node concept="3clFb_" id="2Y70AYEd10O" role="jymVt">
+      <property role="TrG5h" value="withMessageHandler" />
+      <node concept="37vLTG" id="2Y70AYEdyxn" role="3clF46">
+        <property role="TrG5h" value="messageHandler" />
+        <node concept="3uibUv" id="2Y70AYEdBjI" role="1tU5fm">
+          <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="2Y70AYEdkXM" role="3clF45">
+        <ref role="3uigEE" node="7kaxm0sEy3e" resolve="TypecheckingService" />
+      </node>
+      <node concept="3Tm1VV" id="2Y70AYEd10R" role="1B3o_S" />
+      <node concept="3clFbS" id="2Y70AYEd10S" role="3clF47">
+        <node concept="3clFbF" id="2Y70AYEdD1e" role="3cqZAp">
+          <node concept="37vLTI" id="2Y70AYEdD1g" role="3clFbG">
+            <node concept="2OqwBi" id="2Y70AYEdHrp" role="37vLTJ">
+              <node concept="Xjq3P" id="2Y70AYEdHxn" role="2Oq$k0" />
+              <node concept="2OwXpG" id="2Y70AYEdHrs" role="2OqNvi">
+                <ref role="2Oxat5" node="2Y70AYEdD1a" resolve="messageHandler" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="2Y70AYEdD1k" role="37vLTx">
+              <ref role="3cqZAo" node="2Y70AYEdyxn" resolve="messageHandler" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2Y70AYEdIKK" role="3cqZAp">
+          <node concept="Xjq3P" id="2Y70AYEdIKI" role="3clFbG" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2Y70AYEcVm4" role="jymVt" />
     <node concept="3clFb_" id="1G9Y_Qvby8B" role="jymVt">
       <property role="TrG5h" value="withTraceObject" />
       <node concept="37vLTG" id="1G9Y_QvckK$" role="3clF46">
@@ -6750,6 +6755,9 @@
                     <node concept="37vLTw" id="1FOQehxnBes" role="37wK5m">
                       <ref role="3cqZAo" node="3IIf9O_u8qV" resolve="repository" />
                     </node>
+                    <node concept="37vLTw" id="2Y70AYEdJPc" role="37wK5m">
+                      <ref role="3cqZAo" node="2Y70AYEdD1a" resolve="messageHandler" />
+                    </node>
                     <node concept="37vLTw" id="1FOQehxnBer" role="37wK5m">
                       <ref role="3cqZAo" node="1FOQehxnBeo" resolve="queryKind" />
                     </node>
@@ -6940,6 +6948,9 @@
                     </node>
                     <node concept="37vLTw" id="3KN3A4vEXnM" role="37wK5m">
                       <ref role="3cqZAo" node="3IIf9O_u8qV" resolve="repository" />
+                    </node>
+                    <node concept="37vLTw" id="2Y70AYEdLut" role="37wK5m">
+                      <ref role="3cqZAo" node="2Y70AYEdD1a" resolve="messageHandler" />
                     </node>
                     <node concept="37vLTw" id="3KN3A4vEXnN" role="37wK5m">
                       <ref role="3cqZAo" node="3KN3A4vEXnq" resolve="queryKind" />
@@ -7330,6 +7341,13 @@
       <node concept="3Tm6S6" id="MFuM6Rl4e1" role="1B3o_S" />
       <node concept="3uibUv" id="MFuM6Rl9J4" role="1tU5fm">
         <ref role="3uigEE" to="1yqb:MFuM6QJLE2" resolve="Step.Options" />
+      </node>
+    </node>
+    <node concept="312cEg" id="2Y70AYEdD1a" role="jymVt">
+      <property role="TrG5h" value="messageHandler" />
+      <node concept="3Tm6S6" id="2Y70AYEdD1b" role="1B3o_S" />
+      <node concept="3uibUv" id="2Y70AYEdD1d" role="1tU5fm">
+        <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
       </node>
     </node>
   </node>
