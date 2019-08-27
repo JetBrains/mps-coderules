@@ -6361,7 +6361,7 @@
   </node>
   <node concept="312cEu" id="2ceN1hCYUQN">
     <property role="3GE5qa" value="trace" />
-    <property role="TrG5h" value="TraceEventsCollector" />
+    <property role="TrG5h" value="TraceEvents" />
     <node concept="2tJIrI" id="2ceN1hCZebf" role="jymVt" />
     <node concept="3clFbW" id="2daneBOSyP4" role="jymVt">
       <node concept="37vLTG" id="2daneBOSCeh" role="3clF46">
