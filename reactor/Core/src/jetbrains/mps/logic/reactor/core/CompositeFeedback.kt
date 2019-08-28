@@ -107,6 +107,16 @@ class CompositeFeedback private constructor(private val elements: List<Feedback>
                 ?: ((right as? CompositeFeedback)?.composeLeft(left) ?: CompositeFeedback(Arrays.asList(left, right)))
         }
 
+        fun dropLast(mayberComposite: Feedback?): Feedback? =
+            if (mayberComposite == null || mayberComposite !is CompositeFeedback) {
+                null
+            } else if (mayberComposite.elements.size > 2) {
+                CompositeFeedback(mayberComposite.elements.dropLast(1))
+            } else if (mayberComposite.elements.size == 2) {
+                mayberComposite.elements[0]
+            } else throw NoSuchElementException()
+
+
         private fun maxSeverity(efs: List<Feedback>): EvaluationFeedback.Severity {
             var sev: EvaluationFeedback.Severity = EvaluationFeedback.Severity.DEBUG
             for (ef in efs) {

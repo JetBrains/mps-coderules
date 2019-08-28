@@ -62,7 +62,7 @@ abstract class FeedbackStatus(val feedback : Feedback?) {
 
     class ABORTED(status: FeedbackStatus, val reason: Feedback) : FeedbackStatus(compose(status.feedback, reason)) {
         override val operational = false
-        override fun recover(): FeedbackStatus = NORMAL(feedback)
+        override fun recover(): FeedbackStatus = NORMAL(CompositeFeedback.dropLast(feedback))
     }
 }
 
