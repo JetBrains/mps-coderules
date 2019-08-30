@@ -421,10 +421,6 @@
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="4992889260816483106" name="jetbrains.mps.lang.coderules.structure.Condition" flags="ng" index="cBwPQ" />
-      <concept id="6958395097955138" name="jetbrains.mps.lang.coderules.structure.SNodeReportOperation" flags="ng" index="2s7oft">
-        <property id="6958395097963305" name="kind" index="2s7ueQ" />
-        <child id="6958395097963208" name="text" index="2s7u9n" />
-      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
@@ -459,6 +455,10 @@
         <child id="3923391191348208863" name="origin" index="1lh$Hv" />
         <child id="3923391191348208865" name="replacement" index="1lh$Hx" />
         <child id="3923391191348208868" name="pattern" index="1lh$H$" />
+      </concept>
+      <concept id="4957570047283823112" name="jetbrains.mps.lang.coderules.structure.ProvideFeedbackConstraint" flags="ng" index="1lHd6T">
+        <property id="4957570047283824112" name="severity" index="1lHdp1" />
+        <child id="4957570047284421439" name="message" index="1ljv2e" />
       </concept>
       <concept id="3575255234196628445" name="jetbrains.mps.lang.coderules.structure.RequireStatement" flags="ng" index="1mebxG">
         <child id="3575255234196628696" name="node" index="1mebXD" />
@@ -3608,33 +3608,26 @@
             </node>
             <node concept="3Aq9E8" id="N6wx6Hp2i_" role="1nLNMd">
               <node concept="3I6sU6" id="N6wx6Hp2j6" role="3Ip0Jz">
-                <node concept="3I6s7M" id="6K6UrSyIe0s" role="3I6sU7">
-                  <node concept="3wWvb2" id="6K6UrSyIe0r" role="3I6s78">
-                    <node concept="2OqwBi" id="6K6UrSyIerA" role="3wWo3s">
-                      <node concept="3A2sRY" id="6K6UrSyIeje" role="2Oq$k0">
-                        <ref role="3A2yKK" node="44a9n8ErWrh" resolve="app" />
+                <node concept="3I6s7M" id="1laj_RShlPf" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RShlPe" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="2YIFZM" id="1laj_RShlQy" role="1ljv2e">
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...)" resolve="format" />
+                      <node concept="Xl_RD" id="1laj_RShlQz" role="37wK5m">
+                        <property role="Xl_RC" value="cannot unify '%s' and '%s'" />
                       </node>
-                      <node concept="2s7oft" id="6K6UrSyIeTu" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="2YIFZM" id="6K6UrSyIfsz" role="2s7u9n">
-                          <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                          <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...)" resolve="format" />
-                          <node concept="Xl_RD" id="6K6UrSyIfs$" role="37wK5m">
-                            <property role="Xl_RC" value="cannot unify '%s' and '%s'" />
+                      <node concept="1TmgYN" id="1laj_RShlQ$" role="37wK5m">
+                        <node concept="1nq8_$" id="1laj_RShlQ_" role="1Tms7$">
+                          <node concept="a7P8L" id="1laj_RShlQA" role="1nq8_t">
+                            <ref role="a7OzE" node="44a9n8ErWrT" resolve="A" />
                           </node>
-                          <node concept="1TmgYN" id="6K6UrSyIfs_" role="37wK5m">
-                            <node concept="1nq8_$" id="6K6UrSyIfsA" role="1Tms7$">
-                              <node concept="a7P8L" id="47xL5G3x5b9" role="1nq8_t">
-                                <ref role="a7OzE" node="44a9n8ErWrT" resolve="A" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="1TmgYN" id="6K6UrSyIfsC" role="37wK5m">
-                            <node concept="1nq8_$" id="6K6UrSyIfsD" role="1Tms7$">
-                              <node concept="a7P8L" id="47xL5G3x5bc" role="1nq8_t">
-                                <ref role="a7OzE" node="44a9n8Es2A7" resolve="FA" />
-                              </node>
-                            </node>
+                        </node>
+                      </node>
+                      <node concept="1TmgYN" id="1laj_RShlQB" role="37wK5m">
+                        <node concept="1nq8_$" id="1laj_RShlQC" role="1Tms7$">
+                          <node concept="a7P8L" id="1laj_RShlQD" role="1nq8_t">
+                            <ref role="a7OzE" node="44a9n8Es2A7" resolve="FA" />
                           </node>
                         </node>
                       </node>
@@ -3814,18 +3807,11 @@
             </node>
             <node concept="3Aq9E8" id="6_p$mL23rks" role="1nLNMd">
               <node concept="3I6sU6" id="6_p$mL23rkt" role="3Ip0Jz">
-                <node concept="3I6s7M" id="6K6UrSyIfPv" role="3I6sU7">
-                  <node concept="3wWvb2" id="6K6UrSyIfPt" role="3I6s78">
-                    <node concept="2OqwBi" id="6K6UrSyIfY9" role="3wWo3s">
-                      <node concept="3A2sRY" id="6K6UrSyIfPL" role="2Oq$k0">
-                        <ref role="3A2yKK" node="6_p$mL23fzC" resolve="ite" />
-                      </node>
-                      <node concept="2s7oft" id="6K6UrSyIgs7" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="6K6UrSyIgtz" role="2s7u9n">
-                          <property role="Xl_RC" value="mismatched type" />
-                        </node>
-                      </node>
+                <node concept="3I6s7M" id="1laj_RSgL8H" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RSgL8G" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RSgL8Q" role="1ljv2e">
+                      <property role="Xl_RC" value="mismatched type" />
                     </node>
                   </node>
                 </node>

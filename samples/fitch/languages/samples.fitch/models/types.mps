@@ -88,10 +88,6 @@
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
-      <concept id="6958395097955138" name="jetbrains.mps.lang.coderules.structure.SNodeReportOperation" flags="ng" index="2s7oft">
-        <property id="6958395097963305" name="kind" index="2s7ueQ" />
-        <child id="6958395097963208" name="text" index="2s7u9n" />
-      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
@@ -99,6 +95,10 @@
       <concept id="8335224865066015764" name="jetbrains.mps.lang.coderules.structure.RulesList" flags="ng" index="AVZre">
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
+      </concept>
+      <concept id="4957570047283823112" name="jetbrains.mps.lang.coderules.structure.ProvideFeedbackConstraint" flags="ng" index="1lHd6T">
+        <property id="4957570047283824112" name="severity" index="1lHdp1" />
+        <child id="4957570047284421439" name="message" index="1ljv2e" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="8456919074565751439" name="parameter" index="0UC6o" />
@@ -317,18 +317,11 @@
             </node>
             <node concept="3Aq9E8" id="2YqrT$P6Q3i" role="1nLNMd">
               <node concept="3I6sU6" id="2YqrT$P6Q3j" role="3Ip0Jz">
-                <node concept="3I6s7M" id="3dsgZcixPye" role="3I6sU7">
-                  <node concept="3wWvb2" id="3dsgZcixPyc" role="3I6s78">
-                    <node concept="2OqwBi" id="3dsgZcixPUk" role="3wWo3s">
-                      <node concept="2s7oft" id="3dsgZcixQbH" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="3dsgZcixQc7" role="2s7u9n">
-                          <property role="Xl_RC" value="invalid" />
-                        </node>
-                      </node>
-                      <node concept="3A2sRY" id="3dsgZcixQu7" role="2Oq$k0">
-                        <ref role="3A2yKK" node="2YqrT$P6Q3h" resolve="rsn" />
-                      </node>
+                <node concept="3I6s7M" id="1laj_RS2h1U" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RS2h1T" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RS2h23" role="1ljv2e">
+                      <property role="Xl_RC" value="invalid" />
                     </node>
                   </node>
                 </node>
@@ -440,18 +433,11 @@
             </node>
             <node concept="3Aq9E8" id="2YqrT$P7SAG" role="1nLNMd">
               <node concept="3I6sU6" id="2YqrT$P7SAH" role="3Ip0Jz">
-                <node concept="3I6s7M" id="3dsgZcixQcO" role="3I6sU7">
-                  <node concept="3wWvb2" id="3dsgZcixQcP" role="3I6s78">
-                    <node concept="2OqwBi" id="3dsgZcixQcQ" role="3wWo3s">
-                      <node concept="3A2sRY" id="3dsgZcixQvE" role="2Oq$k0">
-                        <ref role="3A2yKK" node="2YqrT$P7SAF" resolve="goal" />
-                      </node>
-                      <node concept="2s7oft" id="3dsgZcixQcU" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="3dsgZcixQcV" role="2s7u9n">
-                          <property role="Xl_RC" value="invalid" />
-                        </node>
-                      </node>
+                <node concept="3I6s7M" id="1laj_RS2h2v" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RS2h2u" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RS2h2C" role="1ljv2e">
+                      <property role="Xl_RC" value="invalid" />
                     </node>
                   </node>
                 </node>

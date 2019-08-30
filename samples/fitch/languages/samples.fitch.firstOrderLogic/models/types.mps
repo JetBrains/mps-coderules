@@ -226,10 +226,6 @@
         <child id="8908809128801952514" name="body" index="3unh6L" />
       </concept>
       <concept id="4992889260816483106" name="jetbrains.mps.lang.coderules.structure.Condition" flags="ng" index="cBwPQ" />
-      <concept id="6958395097955138" name="jetbrains.mps.lang.coderules.structure.SNodeReportOperation" flags="ng" index="2s7oft">
-        <property id="6958395097963305" name="kind" index="2s7ueQ" />
-        <child id="6958395097963208" name="text" index="2s7u9n" />
-      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
@@ -253,6 +249,10 @@
         <child id="3923391191348208863" name="origin" index="1lh$Hv" />
         <child id="3923391191348208865" name="replacement" index="1lh$Hx" />
         <child id="3923391191348208868" name="pattern" index="1lh$H$" />
+      </concept>
+      <concept id="4957570047283823112" name="jetbrains.mps.lang.coderules.structure.ProvideFeedbackConstraint" flags="ng" index="1lHd6T">
+        <property id="4957570047283824112" name="severity" index="1lHdp1" />
+        <child id="4957570047284421439" name="message" index="1ljv2e" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="8456919074565751439" name="parameter" index="0UC6o" />
@@ -1094,6 +1094,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="1laj_RSf1Vk" role="3cqZAp" />
         <node concept="1nLNNL" id="6$MtiK8GZNs" role="3cqZAp">
           <node concept="1nLNMm" id="6$MtiK8GZNt" role="1nLNNK">
             <node concept="0eUR_" id="3dsgZciwak1" role="0UC6o">
@@ -1310,18 +1311,11 @@
             </node>
             <node concept="3Aq9E8" id="2CF5XF5v8Pa" role="1nLNMd">
               <node concept="3I6sU6" id="2CF5XF5v8Pb" role="3Ip0Jz">
-                <node concept="3I6s7M" id="3dsgZcixPye" role="3I6sU7">
-                  <node concept="3wWvb2" id="3dsgZcixPyc" role="3I6s78">
-                    <node concept="2OqwBi" id="3dsgZcixPUk" role="3wWo3s">
-                      <node concept="2s7oft" id="3dsgZcixQbH" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="3dsgZcixQc7" role="2s7u9n">
-                          <property role="Xl_RC" value="replacement is not OK" />
-                        </node>
-                      </node>
-                      <node concept="3A2sRY" id="3dsgZcixQJL" role="2Oq$k0">
-                        <ref role="3A2yKK" node="3w0n0hzm3em" resolve="eqe" />
-                      </node>
+                <node concept="3I6s7M" id="1laj_RSf1T5" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RSf1T4" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RSf21x" role="1ljv2e">
+                      <property role="Xl_RC" value="replacement is not OK" />
                     </node>
                   </node>
                 </node>
@@ -2097,18 +2091,11 @@
             </node>
             <node concept="3Aq9E8" id="3w0n0hznw_c" role="1nLNMd">
               <node concept="3I6sU6" id="3w0n0hznw_d" role="3Ip0Jz">
-                <node concept="3I6s7M" id="3dsgZcixT1Z" role="3I6sU7">
-                  <node concept="3wWvb2" id="3dsgZcixT20" role="3I6s78">
-                    <node concept="2OqwBi" id="3dsgZcixT21" role="3wWo3s">
-                      <node concept="2s7oft" id="3dsgZcixT22" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="3dsgZcixT23" role="2s7u9n">
-                          <property role="Xl_RC" value="replacement is not OK" />
-                        </node>
-                      </node>
-                      <node concept="3A2sRY" id="3dsgZcixT24" role="2Oq$k0">
-                        <ref role="3A2yKK" node="3w0n0hznw$J" resolve="eqe" />
-                      </node>
+                <node concept="3I6s7M" id="1laj_RSf2K9" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RSf2K8" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RSf2Ki" role="1ljv2e">
+                      <property role="Xl_RC" value="replacement is not OK" />
                     </node>
                   </node>
                 </node>
