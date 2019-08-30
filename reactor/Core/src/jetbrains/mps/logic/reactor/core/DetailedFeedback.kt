@@ -27,24 +27,31 @@ import jetbrains.mps.logic.reactor.evaluation.EvaluationFeedback
 open class DetailedFeedback : Feedback {
 
     private val message: String
-    private val severity: EvaluationFeedback.Severity
+    private val severity: Severity
+    private val details: Any?
 
     constructor(message: String) {
         this.message = message
-        this.severity = EvaluationFeedback.Severity.INFO
+        this.severity = Severity.INFO
+        this.details = null
     }
 
-    constructor(message: String, severity: EvaluationFeedback.Severity) {
+    constructor(message: String, severity: Severity, details: Any? = null) {
         this.message = message
         this.severity = severity
+        this.details = details
     }
 
-    override fun getSeverity(): EvaluationFeedback.Severity {
+    override fun getSeverity(): Severity {
         return severity
     }
 
     override fun getMessage(): String {
         return message
+    }
+
+    override fun getDetails(): Any? {
+        return details
     }
 
     override fun toString(): String {

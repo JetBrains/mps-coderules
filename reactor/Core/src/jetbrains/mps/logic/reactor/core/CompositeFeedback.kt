@@ -63,6 +63,11 @@ class CompositeFeedback private constructor(private val elements: List<Feedback>
         return composeMessages(elements)
     }
 
+    override fun getDetails(): Any? {
+        // FIXME compose the details
+        return null
+    }
+
     fun elements(): List<Feedback> {
         return elements
     }

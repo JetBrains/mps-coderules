@@ -76,8 +76,12 @@ class EvaluationFailure : Feedback {
         return message
     }
 
+    override fun getDetails(): Any? {
+        return null
+    }
+
     override fun getSeverity(): EvaluationFeedback.Severity {
-        return EvaluationFeedback.Severity.ERROR
+        return EvaluationFeedback.Severity.FAILURE
     }
 
     override fun failureCause(): Throwable? {

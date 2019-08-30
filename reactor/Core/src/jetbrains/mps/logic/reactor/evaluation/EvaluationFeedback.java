@@ -17,7 +17,6 @@
 package jetbrains.mps.logic.reactor.evaluation;
 
 import jetbrains.mps.logic.reactor.core.DetailedFeedback;
-import jetbrains.mps.logic.reactor.program.Rule;
 
 /**
  * Abstract feedback to be provided by the code being evaluated.
@@ -26,36 +25,72 @@ import jetbrains.mps.logic.reactor.program.Rule;
  */
 abstract public class EvaluationFeedback {
 
+    @Deprecated
     public static EvaluationFeedback details(String message) {
-        return new DetailedFeedback(message, Severity.INFO);
+        return new DetailedFeedback(message, Severity.INFO, null);
     }
 
+    @Deprecated
     public static EvaluationFeedback details(String message, Severity severity) {
-        return new DetailedFeedback(message, severity);
+        return new DetailedFeedback(message, severity, null);
+    }
+
+    public static EvaluationFeedback debug(String message, Object details) {
+        return new DetailedFeedback(message, Severity.DEBUG, details);
+    }
+
+    public static EvaluationFeedback debug(String message) {
+        return new DetailedFeedback(message, Severity.DEBUG, null);
+    }
+
+    public static EvaluationFeedback info(String message, Object details) {
+        return new DetailedFeedback(message, Severity.INFO, details);
+    }
+
+    public static EvaluationFeedback info(String message) {
+        return new DetailedFeedback(message, Severity.INFO, null);
+    }
+
+    public static EvaluationFeedback warn(String message, Object details) {
+        return new DetailedFeedback(message, Severity.WARN, details);
+    }
+
+    public static EvaluationFeedback warn(String message) {
+        return new DetailedFeedback(message, Severity.WARN, null);
+    }
+
+    public static EvaluationFeedback error(String message, Object details) {
+        return new DetailedFeedback(message, Severity.ERROR, details);
+    }
+
+    public static EvaluationFeedback error(String message) {
+        return new DetailedFeedback(message, Severity.ERROR, null);
     }
 
     abstract public Severity getSeverity();
 
     abstract public String getMessage();
 
+    abstract public Object getDetails();
+
     public boolean isFailure() {
-        return Severity.ERROR.compareTo(getSeverity()) <= 0;
+        return Severity.FAILURE.compareTo(getSeverity()) <= 0;
     }
 
     public Throwable failureCause() { throw new UnsupportedOperationException(); }
 
-    public static enum Severity {
+    public enum Severity {
 
-        DEBUG(0, "[debug]"),
-        INFO(1, "[info]"),
-        WARN(2, "[warning]"),
-        ERROR(3, "[error]"),
-        FATAL(4, "[fatal]")
+        DEBUG("[debug]"),
+        INFO("[info]"),
+        WARN("[warning]"),
+        ERROR("[error]"),
+        FAILURE("[failure]"),
+        FATAL("[fatal]")
 
         ;
 
-        private Severity(int level, String title) {
-            this.level = level;
+        Severity(String title) {
             this.title = title;
         }
 
@@ -63,8 +98,6 @@ abstract public class EvaluationFeedback {
         public String toString() {
             return title;
         }
-
-        private final int level;
 
         private final String title;
     }
