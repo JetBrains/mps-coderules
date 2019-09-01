@@ -19,9 +19,9 @@
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="5j4j" ref="r:c8fb1c5e-8204-4904-a38f-678899d447c1(jetbrains.mps.logic.structure)" />
     <import index="qgy9" ref="r:5195f849-566d-46a3-bb0a-7ae9911e2652(jetbrains.mps.logic.editor)" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -5085,6 +5085,50 @@
         <node concept="l2Vlx" id="4jcOV4hEDuR" role="2iSdaV" />
       </node>
       <node concept="l2Vlx" id="4jcOV4hEDuS" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1laj_RSpMac">
+    <property role="3GE5qa" value="rule" />
+    <ref role="1XX52x" to="wq2x:1laj_RSpLVV" resolve="OriginSpec" />
+    <node concept="3EZMnI" id="1laj_RSpMau" role="2wV5jI">
+      <node concept="PMmxH" id="1laj_RSqwV$" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F0ifn" id="1laj_RSpMaF" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F1sOY" id="1laj_RSpMKz" role="3EZMnx">
+        <ref role="1NtTu8" to="wq2x:1laj_RSpMKx" resolve="origin" />
+      </node>
+      <node concept="3F0ifn" id="1laj_RSpMaN" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+      </node>
+      <node concept="l2Vlx" id="1laj_RSpMax" role="2iSdaV" />
+      <node concept="3F0ifn" id="gDD6fsv" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
+        <ref role="1ERwB7" to="tpen:5qguV_rZzBJ" resolve="Delete_BlockStatement" />
+        <node concept="ljvvj" id="i0uUGyn" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="giqZ3UM" role="3EZMnx">
+        <ref role="1NtTu8" to="tpee:fK9aQHS" resolve="statements" />
+        <node concept="lj46D" id="i0uUH4k" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="i0uUHXH" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="giqZ4oP" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <ref role="1ERwB7" to="tpen:5qguV_rZzBJ" resolve="Delete_BlockStatement" />
+        <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
+      </node>
     </node>
   </node>
 </model>

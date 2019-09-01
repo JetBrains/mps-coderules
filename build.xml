@@ -242,7 +242,7 @@
         <uses />
         <library jar="lib/collection-0.7.jar" />
         <library jar="lib/trove4j-3.0.3.jar" />
-        <library jar="lib/conreactor-core-0.9.11.jar" />
+        <library jar="lib/conreactor-core-0.9.12.jar" />
         <sources jar="jetbrains.mps.logic.reactor-src.jar" descriptor="jetbrains.mps.logic.reactor.msd" />
       </module>
     </echoxml>
@@ -408,6 +408,7 @@
           <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" kind="cl" />
           <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" kind="cl" />
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
+          <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="96ee7a94-411d-4cf8-9b94-96cad7e52411(jetbrains.mps.baseLanguage.jdk7)" kind="cl" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" kind="cl" />
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
@@ -2345,7 +2346,7 @@
         <uses />
         <library jar="../lib/collection-0.7.jar" />
         <library jar="../../../deploy/lib/trove4j-3.0.3.jar" />
-        <library jar="../lib/conreactor-core-0.9.11.jar" />
+        <library jar="../lib/conreactor-core-0.9.12.jar" />
         <sources jar="jetbrains.mps.logic.reactor-src.jar" descriptor="jetbrains.mps.logic.reactor.msd" />
       </module>
     </echoxml>
@@ -2447,6 +2448,7 @@
           <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" kind="cl" />
           <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" kind="cl" />
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
+          <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" kind="cl" />
           <module ref="96ee7a94-411d-4cf8-9b94-96cad7e52411(jetbrains.mps.baseLanguage.jdk7)" kind="cl" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" kind="cl" />
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="cl" />
@@ -4191,7 +4193,7 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -4242,7 +4244,7 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -4303,7 +4305,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -4353,7 +4355,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.logic.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.test/lib/mockito-core-2.0.3-beta.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.test/lib/objenesis-2.1.jar" />
         <fileset file="${artifacts.mps}/lib/hamcrest-core-1.3.jar" />
@@ -4402,7 +4404,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -4463,7 +4465,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -4544,7 +4546,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -4617,7 +4619,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/hamcrest-core-1.3.jar" />
         <fileset file="${artifacts.mps}/lib/junit-4.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
@@ -4801,7 +4803,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -4921,7 +4923,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -5052,7 +5054,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.test/lib/mockito-core-2.0.3-beta.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.test/lib/objenesis-2.1.jar" />
         <fileset file="${artifacts.mps}/lib/ant/lib/ant.jar" />
@@ -5118,7 +5120,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -5170,7 +5172,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -5243,7 +5245,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -5314,7 +5316,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -5374,7 +5376,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -5428,7 +5430,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -5497,7 +5499,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -5550,7 +5552,7 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -5598,7 +5600,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -5644,7 +5646,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.reporting.runtime" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -5703,7 +5705,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -5763,7 +5765,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -5808,7 +5810,7 @@
         <fileset file="${artifacts.mps}/lib/mps-textgen.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -5868,7 +5870,7 @@
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/lib/rxjava2-swing-0.2.1.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/collection-0.7.jar" />
         <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/trove4j-3.0.3.jar" />
-        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.11.jar" />
+        <fileset file="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.logic.reactor/lib/conreactor-core-0.9.12.jar" />
         <fileset file="${artifacts.mps}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.mps}/lib/hamcrest-core-1.3.jar" />
         <fileset file="${artifacts.mps}/lib/junit-4.12.jar" />

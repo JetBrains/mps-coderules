@@ -1559,5 +1559,34 @@
       <ref role="1YaFvo" to="wq2x:72RDgINeSQJ" resolve="ContextRepositoryExpression" />
     </node>
   </node>
+  <node concept="1YbPZF" id="1laj_RSrNoT">
+    <property role="TrG5h" value="typeof_OriginSpec" />
+    <property role="3GE5qa" value="rule" />
+    <node concept="3clFbS" id="1laj_RSrNoU" role="18ibNy">
+      <node concept="1ZobV4" id="1laj_RSrO1L" role="3cqZAp">
+        <node concept="mw_s8" id="1laj_RSrO2w" role="1ZfhKB">
+          <node concept="2c44tf" id="1laj_RSrO2s" role="mwGJk">
+            <node concept="3Tqbb2" id="1laj_RSrO2Q" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="1laj_RSrO1O" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1laj_RSrNp0" role="mwGJk">
+            <node concept="2OqwBi" id="1laj_RSrN_C" role="1Z2MuG">
+              <node concept="1YBJjd" id="1laj_RSrNqO" role="2Oq$k0">
+                <ref role="1YBMHb" node="1laj_RSrNoW" resolve="originSpec" />
+              </node>
+              <node concept="3TrEf2" id="1laj_RSrNPc" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:1laj_RSpMKx" resolve="origin" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1laj_RSrNoW" role="1YuTPh">
+      <property role="TrG5h" value="originSpec" />
+      <ref role="1YaFvo" to="wq2x:1laj_RSpLVV" resolve="OriginSpec" />
+    </node>
+  </node>
 </model>
 
