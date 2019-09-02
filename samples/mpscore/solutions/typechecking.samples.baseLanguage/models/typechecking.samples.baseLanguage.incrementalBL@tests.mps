@@ -2105,8 +2105,8 @@
               <node concept="3xONca" id="3o9wrC3NilC" role="2XxRq1">
                 <ref role="3xOPvv" node="2FNFm8neJum" resolve="demo2" />
               </node>
-              <node concept="37vLTw" id="3o9wrC3SGzu" role="2XxRq1">
-                <ref role="3cqZAo" node="3o9wrC3S$br" resolve="retStatement" />
+              <node concept="37vLTw" id="6IyCJvydikp" role="2XxRq1">
+                <ref role="3cqZAo" node="3o9wrC3S6VE" resolve="stringLiteral" />
               </node>
               <node concept="3xONca" id="3o9wrC3Ro7X" role="2XxRq1">
                 <ref role="3xOPvv" node="3o9wrC3RmD4" resolve="returned" />
