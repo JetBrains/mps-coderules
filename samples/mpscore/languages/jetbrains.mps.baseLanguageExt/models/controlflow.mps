@@ -143,6 +143,7 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
@@ -255,10 +256,6 @@
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="4992889260816483106" name="jetbrains.mps.lang.coderules.structure.Condition" flags="ng" index="cBwPQ" />
-      <concept id="6958395097955138" name="jetbrains.mps.lang.coderules.structure.SNodeReportOperation" flags="ng" index="2s7oft">
-        <property id="6958395097963305" name="kind" index="2s7ueQ" />
-        <child id="6958395097963208" name="text" index="2s7u9n" />
-      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <property id="3575255234177988511" name="exactMatch" index="1n5iKI" />
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
@@ -271,6 +268,11 @@
       </concept>
       <concept id="6856711987714624232" name="jetbrains.mps.lang.coderules.structure.LateExpressionItem" flags="ng" index="HKQnh">
         <child id="6856711987714624233" name="code" index="HKQng" />
+      </concept>
+      <concept id="4957570047283823112" name="jetbrains.mps.lang.coderules.structure.ProvideFeedbackConstraint" flags="ng" index="1lHd6T">
+        <property id="4957570047283824112" name="severity" index="1lHdp1" />
+        <child id="4957570047284421439" name="message" index="1ljv2e" />
+        <child id="1534124788593157769" name="target" index="3Gvizk" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="8456919074565751439" name="parameter" index="0UC6o" />
@@ -322,6 +324,9 @@
       </concept>
       <concept id="8581119423153238082" name="jetbrains.mps.lang.coderules.structure.NodeAnchor" flags="ng" index="3BlFb$">
         <child id="8581119423153238083" name="node" index="3BlFb_" />
+      </concept>
+      <concept id="1534124788594198142" name="jetbrains.mps.lang.coderules.structure.TargetSpec" flags="ng" index="3G3gwz">
+        <child id="1534124788594198166" name="code" index="3G3gzb" />
       </concept>
       <concept id="2316688792938826204" name="jetbrains.mps.lang.coderules.structure.ConstraintLogicalClause" flags="ng" index="3I6s7M">
         <child id="2316688792938826214" name="constraint" index="3I6s78" />
@@ -620,18 +625,11 @@
             </node>
             <node concept="3Aq9E8" id="6Yb9hAqKSyx" role="1nLNMd">
               <node concept="3I6sU6" id="6Yb9hAqKSyy" role="3Ip0Jz">
-                <node concept="3I6s7M" id="6Yb9hAqKSzl" role="3I6sU7">
-                  <node concept="3wWvb2" id="6Yb9hAqKSzm" role="3I6s78">
-                    <node concept="2OqwBi" id="6Yb9hAqKSzn" role="3wWo3s">
-                      <node concept="3A2sRY" id="6F9w2VbPLVP" role="2Oq$k0">
-                        <ref role="3A2yKK" node="6Yb9hAqKS2R" resolve="stmt" />
-                      </node>
-                      <node concept="2s7oft" id="6Yb9hAqKSzp" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="6Yb9hAqKSzq" role="2s7u9n">
-                          <property role="Xl_RC" value="unreachable statement" />
-                        </node>
-                      </node>
+                <node concept="3I6s7M" id="1laj_RU7RxD" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RU7RxC" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RU7RxM" role="1ljv2e">
+                      <property role="Xl_RC" value="unreachable statement" />
                     </node>
                   </node>
                 </node>
@@ -743,18 +741,11 @@
             </node>
             <node concept="3Aq9E8" id="6Yb9hAqL3w7" role="1nLNMd">
               <node concept="3I6sU6" id="6Yb9hAqL3w8" role="3Ip0Jz">
-                <node concept="3I6s7M" id="6Yb9hAqL3w9" role="3I6sU7">
-                  <node concept="3wWvb2" id="6Yb9hAqL3wa" role="3I6s78">
-                    <node concept="2OqwBi" id="6Yb9hAqL3wb" role="3wWo3s">
-                      <node concept="3A2sRY" id="6F9w2VbPMC0" role="2Oq$k0">
-                        <ref role="3A2yKK" node="6Yb9hAqL3dc" resolve="expr" />
-                      </node>
-                      <node concept="2s7oft" id="6Yb9hAqL3wd" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="6Yb9hAqL3we" role="2s7u9n">
-                          <property role="Xl_RC" value="unreachable expression" />
-                        </node>
-                      </node>
+                <node concept="3I6s7M" id="1laj_RU7Rye" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RU7Ryd" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RU7Ryn" role="1ljv2e">
+                      <property role="Xl_RC" value="unreachable expression" />
                     </node>
                   </node>
                 </node>
@@ -815,18 +806,11 @@
           <node concept="1nLNMm" id="5YmBCzQHTZ7" role="1nLNNK">
             <node concept="3Aq9E8" id="FAZzzit0yB" role="1nLNMd">
               <node concept="3I6sU6" id="FAZzzit0yC" role="3Ip0Jz">
-                <node concept="3I6s7M" id="FAZzzit0yF" role="3I6sU7">
-                  <node concept="3wWvb2" id="FAZzzit0yG" role="3I6s78">
-                    <node concept="2OqwBi" id="FAZzzit0yH" role="3wWo3s">
-                      <node concept="3A2sRY" id="FAZzzit0yI" role="2Oq$k0">
-                        <ref role="3A2yKK" node="6Yb9hAqONDu" resolve="lvd" />
-                      </node>
-                      <node concept="2s7oft" id="FAZzzit0yJ" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="FAZzzit0yK" role="2s7u9n">
-                          <property role="Xl_RC" value="unused assignment" />
-                        </node>
-                      </node>
+                <node concept="3I6s7M" id="1laj_RU7RyN" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RU7RyM" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RU7RyW" role="1ljv2e">
+                      <property role="Xl_RC" value="unused assignment" />
                     </node>
                   </node>
                 </node>
@@ -967,18 +951,11 @@
             </node>
             <node concept="3Aq9E8" id="6F9w2VbPMUv" role="1nLNMd">
               <node concept="3I6sU6" id="6F9w2VbPMUw" role="3Ip0Jz">
-                <node concept="3I6s7M" id="6F9w2VbPMUx" role="3I6sU7">
-                  <node concept="3wWvb2" id="6F9w2VbPMUy" role="3I6s78">
-                    <node concept="2OqwBi" id="6F9w2VbPMUz" role="3wWo3s">
-                      <node concept="3A2sRY" id="6F9w2VbPMU$" role="2Oq$k0">
-                        <ref role="3A2yKK" node="6Yb9hAqONDu" resolve="lvd" />
-                      </node>
-                      <node concept="2s7oft" id="6F9w2VbPMU_" role="2OqNvi">
-                        <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                        <node concept="Xl_RD" id="6F9w2VbPMUA" role="2s7u9n">
-                          <property role="Xl_RC" value="unused assignment" />
-                        </node>
-                      </node>
+                <node concept="3I6s7M" id="1laj_RU7RFe" role="3I6sU7">
+                  <node concept="1lHd6T" id="1laj_RU7RFd" role="3I6s78">
+                    <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                    <node concept="Xl_RD" id="1laj_RU7RFn" role="1ljv2e">
+                      <property role="Xl_RC" value="unused assignment" />
                     </node>
                   </node>
                 </node>
@@ -1105,17 +1082,18 @@
                 </node>
                 <node concept="3Aq9E8" id="FAZzzit0x0" role="1nLNMd">
                   <node concept="3I6sU6" id="FAZzzit0x1" role="3Ip0Jz">
-                    <node concept="3I6s7M" id="FAZzzit0x4" role="3I6sU7">
-                      <node concept="3wWvb2" id="FAZzzit0x5" role="3I6s78">
-                        <node concept="2OqwBi" id="FAZzzit0x6" role="3wWo3s">
-                          <node concept="37vLTw" id="FAZzzit0x7" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5YmBCzQNw$K" resolve="parent" />
-                          </node>
-                          <node concept="2s7oft" id="FAZzzit0x8" role="2OqNvi">
-                            <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                            <node concept="Xl_RD" id="FAZzzit0x9" role="2s7u9n">
-                              <property role="Xl_RC" value="unused assignment" />
+                    <node concept="3I6s7M" id="1laj_RU7RGh" role="3I6sU7">
+                      <node concept="1lHd6T" id="1laj_RU7RGg" role="3I6s78">
+                        <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                        <node concept="Xl_RD" id="1laj_RU7RGq" role="1ljv2e">
+                          <property role="Xl_RC" value="unused assignment" />
+                        </node>
+                        <node concept="3G3gwz" id="1laj_RU7RGv" role="3Gvizk">
+                          <node concept="2OqwBi" id="1laj_RU7RN5" role="3G3gzb">
+                            <node concept="37vLTw" id="1laj_RU7RGz" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5YmBCzQNw$K" resolve="parent" />
                             </node>
+                            <node concept="iZEcu" id="1laj_RU7RSE" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
@@ -1224,17 +1202,18 @@
                 </node>
                 <node concept="3Aq9E8" id="5YmBCzQNbnG" role="1nLNMd">
                   <node concept="3I6sU6" id="5YmBCzQNbnH" role="3Ip0Jz">
-                    <node concept="3I6s7M" id="5YmBCzQNbnI" role="3I6sU7">
-                      <node concept="3wWvb2" id="5YmBCzQNbnJ" role="3I6s78">
-                        <node concept="2OqwBi" id="5YmBCzQNbnK" role="3wWo3s">
-                          <node concept="37vLTw" id="5YmBCzQNw$O" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5YmBCzQNw$K" resolve="parent" />
-                          </node>
-                          <node concept="2s7oft" id="5YmBCzQNbnM" role="2OqNvi">
-                            <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                            <node concept="Xl_RD" id="5YmBCzQNbnN" role="2s7u9n">
-                              <property role="Xl_RC" value="unused assignment" />
+                    <node concept="3I6s7M" id="1laj_RU7RT4" role="3I6sU7">
+                      <node concept="1lHd6T" id="1laj_RU7RT3" role="3I6s78">
+                        <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                        <node concept="Xl_RD" id="1laj_RU7RTd" role="1ljv2e">
+                          <property role="Xl_RC" value="unused assignment" />
+                        </node>
+                        <node concept="3G3gwz" id="1laj_RU7RTi" role="3Gvizk">
+                          <node concept="2OqwBi" id="1laj_RU7RZS" role="3G3gzb">
+                            <node concept="37vLTw" id="1laj_RU7RTm" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5YmBCzQNw$K" resolve="parent" />
                             </node>
+                            <node concept="iZEcu" id="1laj_RU7S5t" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
@@ -1276,18 +1255,11 @@
                   </node>
                   <node concept="3Aq9E8" id="AoTMCCZmSB" role="1nLNMd">
                     <node concept="3I6sU6" id="AoTMCCZmSC" role="3Ip0Jz">
-                      <node concept="3I6s7M" id="AoTMCCZmSF" role="3I6sU7">
-                        <node concept="3wWvb2" id="AoTMCCZmSG" role="3I6s78">
-                          <node concept="2OqwBi" id="AoTMCCZmSH" role="3wWo3s">
-                            <node concept="3A2sRY" id="AoTMCCZmSI" role="2Oq$k0">
-                              <ref role="3A2yKK" node="6Yb9hAqOc4n" resolve="varref" />
-                            </node>
-                            <node concept="2s7oft" id="AoTMCCZmSJ" role="2OqNvi">
-                              <property role="2s7ueQ" value="oI9Ys1lFm/error" />
-                              <node concept="Xl_RD" id="AoTMCCZmSK" role="2s7u9n">
-                                <property role="Xl_RC" value="uninitialized read" />
-                              </node>
-                            </node>
+                      <node concept="3I6s7M" id="1laj_RU7S5R" role="3I6sU7">
+                        <node concept="1lHd6T" id="1laj_RU7S5Q" role="3I6s78">
+                          <property role="1lHdp1" value="4jcOV4hu0n_/ERROR" />
+                          <node concept="Xl_RD" id="1laj_RU7S60" role="1ljv2e">
+                            <property role="Xl_RC" value="uninitialized read" />
                           </node>
                         </node>
                       </node>
