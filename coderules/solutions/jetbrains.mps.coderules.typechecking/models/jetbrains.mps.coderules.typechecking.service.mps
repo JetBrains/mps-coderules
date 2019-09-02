@@ -4792,6 +4792,55 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7lt0LtQA512" role="jymVt" />
+    <node concept="2tJIrI" id="1laj_RSBHlW" role="jymVt" />
+    <node concept="3clFb_" id="1laj_RSBK94" role="jymVt">
+      <property role="TrG5h" value="addReportItem" />
+      <node concept="37vLTG" id="1laj_RSBK97" role="3clF46">
+        <property role="TrG5h" value="kind" />
+        <node concept="3uibUv" id="1laj_RSBK98" role="1tU5fm">
+          <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1laj_RSBK95" role="3clF46">
+        <property role="TrG5h" value="target" />
+        <node concept="2sp9CU" id="1laj_RSBK96" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="1laj_RSBK99" role="3clF46">
+        <property role="TrG5h" value="text" />
+        <node concept="17QB3L" id="1laj_RSBK9a" role="1tU5fm" />
+      </node>
+      <node concept="3cqZAl" id="1laj_RSBK9b" role="3clF45" />
+      <node concept="3Tmbuc" id="1laj_RSBK9c" role="1B3o_S" />
+      <node concept="3clFbS" id="1laj_RSBK9f" role="3clF47">
+        <node concept="3clFbF" id="1laj_RSBMrC" role="3cqZAp">
+          <node concept="2OqwBi" id="1laj_RSBMrD" role="3clFbG">
+            <node concept="37vLTw" id="1laj_RSBMrE" role="2Oq$k0">
+              <ref role="3cqZAo" node="1FOQehx3Ss8" resolve="reportItems" />
+            </node>
+            <node concept="TSZUe" id="1laj_RSBMrF" role="2OqNvi">
+              <node concept="2ShNRf" id="1laj_RSBMrG" role="25WWJ7">
+                <node concept="1pGfFk" id="1laj_RSBMrH" role="2ShVmc">
+                  <ref role="37wK5l" node="1FOQehwow5Q" resolve="TypecheckingReportItem" />
+                  <node concept="37vLTw" id="1laj_RSBMrI" role="37wK5m">
+                    <ref role="3cqZAo" node="1laj_RSBK97" resolve="kind" />
+                  </node>
+                  <node concept="37vLTw" id="1laj_RSBMrJ" role="37wK5m">
+                    <ref role="3cqZAo" node="1laj_RSBK95" resolve="target" />
+                  </node>
+                  <node concept="37vLTw" id="1laj_RSBMrK" role="37wK5m">
+                    <ref role="3cqZAo" node="1laj_RSBK99" resolve="text" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1laj_RSBK9g" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1laj_RSBHty" role="jymVt" />
     <node concept="312cEg" id="7lt0LtQ_Xx_" role="jymVt">
       <property role="TrG5h" value="typeNodes" />
       <property role="3TUv4t" value="false" />

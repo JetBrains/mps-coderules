@@ -45,6 +45,7 @@
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
+    <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -1360,14 +1361,38 @@
                     <ref role="3uigEE" to="hano:3o9wrC3sa$h" resolve="OriginReportingSupervisor" />
                   </node>
                   <node concept="2ShNRf" id="3o9wrC3tZfr" role="33vP2m">
-                    <node concept="1pGfFk" id="3o9wrC3u2Jf" role="2ShVmc">
-                      <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="OriginReportingSupervisor" />
-                      <node concept="2OqwBi" id="3o9wrC3u3mt" role="37wK5m">
-                        <node concept="37vLTw" id="3o9wrC3u307" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
+                    <node concept="YeOm9" id="1laj_RSBYFj" role="2ShVmc">
+                      <node concept="1Y3b0j" id="1laj_RSBYFm" role="YeSDq">
+                        <property role="2bfB8j" value="true" />
+                        <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="OriginReportingSupervisor" />
+                        <ref role="1Y3XeK" to="hano:3o9wrC3sa$h" resolve="OriginReportingSupervisor" />
+                        <node concept="3Tm1VV" id="1laj_RSBYFn" role="1B3o_S" />
+                        <node concept="2OqwBi" id="3o9wrC3u3mt" role="37wK5m">
+                          <node concept="37vLTw" id="3o9wrC3u307" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
+                          </node>
+                          <node concept="liA8E" id="3o9wrC3u59R" role="2OqNvi">
+                            <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                          </node>
                         </node>
-                        <node concept="liA8E" id="3o9wrC3u59R" role="2OqNvi">
-                          <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                        <node concept="3clFb_" id="1laj_RSC01i" role="jymVt">
+                          <property role="TrG5h" value="consumeFeedback" />
+                          <node concept="37vLTG" id="1laj_RSC01j" role="3clF46">
+                            <property role="TrG5h" value="anchor" />
+                            <node concept="2sp9CU" id="1laj_RSC01k" role="1tU5fm" />
+                          </node>
+                          <node concept="37vLTG" id="1laj_RSC01l" role="3clF46">
+                            <property role="TrG5h" value="feedback" />
+                            <node concept="3uibUv" id="1laj_RSC01m" role="1tU5fm">
+                              <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
+                            </node>
+                          </node>
+                          <node concept="3cqZAl" id="1laj_RSC01n" role="3clF45" />
+                          <node concept="3Tmbuc" id="1laj_RSC01o" role="1B3o_S" />
+                          <node concept="3clFbS" id="1laj_RSC01r" role="3clF47" />
+                          <node concept="2AHcQZ" id="1laj_RSC01s" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          </node>
                         </node>
                       </node>
                     </node>

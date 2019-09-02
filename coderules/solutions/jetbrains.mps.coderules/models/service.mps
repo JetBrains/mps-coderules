@@ -34,6 +34,7 @@
     <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -339,6 +340,7 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
@@ -2504,14 +2506,67 @@
                         <ref role="3uigEE" to="w7la:~Supervisor" resolve="Supervisor" />
                       </node>
                       <node concept="2ShNRf" id="3o9wrC3trPm" role="33vP2m">
-                        <node concept="1pGfFk" id="3o9wrC3ttgt" role="2ShVmc">
-                          <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="OriginReportingSupervisor" />
-                          <node concept="2OqwBi" id="3o9wrC3tvAX" role="37wK5m">
-                            <node concept="37vLTw" id="3o9wrC3tu_g" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
+                        <node concept="YeOm9" id="1laj_RSAOIc" role="2ShVmc">
+                          <node concept="1Y3b0j" id="1laj_RSAOIf" role="YeSDq">
+                            <property role="2bfB8j" value="true" />
+                            <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="OriginReportingSupervisor" />
+                            <ref role="1Y3XeK" to="hano:3o9wrC3sa$h" resolve="OriginReportingSupervisor" />
+                            <node concept="3Tm1VV" id="1laj_RSAOIg" role="1B3o_S" />
+                            <node concept="2OqwBi" id="3o9wrC3tvAX" role="37wK5m">
+                              <node concept="37vLTw" id="3o9wrC3tu_g" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
+                              </node>
+                              <node concept="liA8E" id="3o9wrC3twLu" role="2OqNvi">
+                                <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                              </node>
                             </node>
-                            <node concept="liA8E" id="3o9wrC3twLu" role="2OqNvi">
-                              <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                            <node concept="3clFb_" id="1laj_RSAQPC" role="jymVt">
+                              <property role="TrG5h" value="consumeFeedback" />
+                              <node concept="37vLTG" id="1laj_RSAQPD" role="3clF46">
+                                <property role="TrG5h" value="anchor" />
+                                <node concept="2sp9CU" id="1laj_RSAQPE" role="1tU5fm" />
+                              </node>
+                              <node concept="37vLTG" id="1laj_RSAQPF" role="3clF46">
+                                <property role="TrG5h" value="feedback" />
+                                <node concept="3uibUv" id="1laj_RSAQPG" role="1tU5fm">
+                                  <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
+                                </node>
+                              </node>
+                              <node concept="3cqZAl" id="1laj_RSAQPH" role="3clF45" />
+                              <node concept="3Tmbuc" id="1laj_RSAQPI" role="1B3o_S" />
+                              <node concept="3clFbS" id="1laj_RSAQPL" role="3clF47">
+                                <node concept="3clFbF" id="1laj_RSBzxu" role="3cqZAp">
+                                  <node concept="1rXfSq" id="1laj_RSBzxt" role="3clFbG">
+                                    <ref role="37wK5l" node="1laj_RSAZoB" resolve="addReportItem" />
+                                    <node concept="2YIFZM" id="1laj_RSB$EM" role="37wK5m">
+                                      <ref role="1Pybhc" to="hano:3o9wrC3s0ii" resolve="DefaultSupervisor" />
+                                      <ref role="37wK5l" to="hano:3o9wrC3WoA4" resolve="severityToStatus" />
+                                      <node concept="2OqwBi" id="1laj_RSBA2L" role="37wK5m">
+                                        <node concept="37vLTw" id="1laj_RSB_E8" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="1laj_RSAQPF" resolve="feedback" />
+                                        </node>
+                                        <node concept="liA8E" id="1laj_RSBAe3" role="2OqNvi">
+                                          <ref role="37wK5l" to="w7la:~EvaluationFeedback.getSeverity()" resolve="getSeverity" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="37vLTw" id="1laj_RSBGdc" role="37wK5m">
+                                      <ref role="3cqZAo" node="1laj_RSAQPD" resolve="anchor" />
+                                    </node>
+                                    <node concept="2OqwBi" id="1laj_RSBGVk" role="37wK5m">
+                                      <node concept="37vLTw" id="1laj_RSBGyd" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="1laj_RSAQPF" resolve="feedback" />
+                                      </node>
+                                      <node concept="liA8E" id="1laj_RSBH6I" role="2OqNvi">
+                                        <ref role="37wK5l" to="w7la:~EvaluationFeedback.getMessage()" resolve="getMessage" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="2AHcQZ" id="1laj_RSAQPM" role="2AJF6D">
+                                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -3093,8 +3148,33 @@
       </node>
       <node concept="3Tmbuc" id="23c4kVtaQuw" role="1B3o_S" />
       <node concept="3clFbS" id="23c4kVtaQux" role="3clF47" />
+      <node concept="2AHcQZ" id="1laj_RSBgTc" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="2tJIrI" id="52a_GfIGUah" role="jymVt" />
+    <node concept="3clFb_" id="1laj_RSAZoB" role="jymVt">
+      <property role="TrG5h" value="addReportItem" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="oI9YsbqwH" role="3clF46">
+        <property role="TrG5h" value="kind" />
+        <node concept="3uibUv" id="1FOQehwpalJ" role="1tU5fm">
+          <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="oI9YsbqwF" role="3clF46">
+        <property role="TrG5h" value="target" />
+        <node concept="2sp9CU" id="1FOQehwMmS7" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="oI9YsbqwJ" role="3clF46">
+        <property role="TrG5h" value="text" />
+        <node concept="17QB3L" id="oI9YsbqwK" role="1tU5fm" />
+      </node>
+      <node concept="3cqZAl" id="1laj_RSAZoD" role="3clF45" />
+      <node concept="3Tmbuc" id="1laj_RSB4uD" role="1B3o_S" />
+      <node concept="3clFbS" id="1laj_RSAZoF" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="1laj_RSATQV" role="jymVt" />
     <node concept="3clFb_" id="443LGHBSOXq" role="jymVt">
       <property role="TrG5h" value="getRepository" />
       <node concept="3uibUv" id="443LGHBSOXr" role="3clF45">
