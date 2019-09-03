@@ -271,7 +271,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                     return it.recover()         // return from the enclosing method
 
                 } is FeedbackStatus.FAILED -> { // guard failed
-                    trace.feedback(it.failure)
                     return it.recover()         // return from the enclosing method
 
                 } else -> it

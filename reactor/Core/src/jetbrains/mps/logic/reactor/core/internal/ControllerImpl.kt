@@ -65,7 +65,7 @@ internal class ControllerImpl (
 
     fun activate(constraint: Constraint) : FeedbackStatus {
         // FIXME noLogicalContext
-        val context = Context(NORMAL(), noLogicalContext)
+        val context = Context(NORMAL(), noLogicalContext, trace)
 
         // fixme: is it valid to always provide current justifications?
         //  while this method is used only in one place at program kick-off, yes, it's initial justs provided.
@@ -99,7 +99,7 @@ internal class ControllerImpl (
             .then { processGuard(match, it) }
 
     private fun checkMatchPreconditions(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext())
+        val context = Context(inStatus, match.logicalContext(), trace)
 
         // invoke matched pattern predicates
         for (prd in match.patternPredicates()) {
@@ -111,7 +111,7 @@ internal class ControllerImpl (
     }
 
     private fun processGuard(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext())
+        val context = Context(inStatus, match.logicalContext(), trace)
 
         // check guard
         for (gprd in match.rule().guard()) {
@@ -122,7 +122,7 @@ internal class ControllerImpl (
     }
 
     override fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext())
+        val context = Context(inStatus, match.logicalContext(), trace)
 
         val altIt = match.rule().bodyAlternation().iterator()
         while (altIt.hasNext()) {
@@ -168,8 +168,6 @@ internal class ControllerImpl (
 
             val altOk = context.eval { status ->
                 if (status is FAILED) {
-                    trace.feedback(status.failure)
-
                     // if there's alternative body branch then try it
                     if (altIt.hasNext()) {
                         // clear the failure handled status
@@ -251,13 +249,15 @@ internal class ControllerImpl (
 
 
     private class Context(inStatus: FeedbackStatus,
-                          val logicalContext: LogicalContext) : InvocationContext
+                          val logicalContext: LogicalContext,
+                          val trace: EvaluationTrace = EvaluationTrace.NULL) : InvocationContext
     {
 
         private var status = inStatus
         fun currentStatus(): FeedbackStatus = status
 
         override fun report(feedback: EvaluationFeedback) {
+            trace.feedback(feedback)
             when (feedback) {
                 is EvaluationFailure -> this.status = status.fail(feedback)
                 is DetailedFeedback -> this.status = status.report(feedback)
@@ -291,7 +291,9 @@ internal class ControllerImpl (
                     block()
 
                 } catch (ex: EvaluationFailureException) {
-                    this.status = status.fail(EvaluationFailure(ex))
+                    val failure = EvaluationFailure(ex)
+                    trace.feedback(failure)
+                    this.status = status.fail(failure)
                 }
             }
 
