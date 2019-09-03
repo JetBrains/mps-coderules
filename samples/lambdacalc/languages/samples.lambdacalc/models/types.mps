@@ -223,7 +223,6 @@
       <concept id="861509610434243081" name="jetbrains.mps.logic.structure.DataFormDeclaration" flags="ng" index="ns1x$">
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
-      <concept id="861509610434305888" name="jetbrains.mps.logic.structure.ListFeature" flags="ng" index="nsiOd" />
       <concept id="861509610434276453" name="jetbrains.mps.logic.structure.DataFormFeature" flags="ng" index="nspS8">
         <property id="861509610434276456" name="final" index="nspS5" />
       </concept>
@@ -1505,7 +1504,7 @@
               <node concept="ns1u0" id="7VBaGntJSGP" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntJSG6" resolve="Forall" />
                 <node concept="nsMwS" id="3vXKzDNH2NU" role="ns1xD">
-                  <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                  <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                   <node concept="1nq8_$" id="3vXKzDNH2O0" role="nsMwV">
                     <node concept="a7P8L" id="3vXKzDNKnxl" role="1nq8_t">
                       <ref role="a7OzE" node="3vXKzDNKnuh" resolve="TVs" />
@@ -6102,7 +6101,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="48ZGLP7q1P$" role="ns1xD">
-                          <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                          <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                           <node concept="1nq8_$" id="48ZGLP7q1Q5" role="nsMwV">
                             <node concept="a7P8L" id="48ZGLP7q1Q3" role="1nq8_t">
                               <ref role="a7OzE" node="48ZGLP7q1PF" resolve="TVs" />
@@ -7667,7 +7666,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="48ZGLP7pZbH" role="ns1xD">
-                          <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                          <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                           <node concept="1nq8_$" id="48ZGLP7pZbQ" role="nsMwV">
                             <node concept="a7P8L" id="48ZGLP7pZc7" role="1nq8_t">
                               <ref role="a7OzE" node="48ZGLP7pZaZ" resolve="TVs1" />
@@ -7739,7 +7738,7 @@
                         </node>
                       </node>
                       <node concept="nsMwS" id="48ZGLP7pZg2" role="ns1xD">
-                        <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                        <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                         <node concept="1nq8_$" id="48ZGLP7pZgb" role="nsMwV">
                           <node concept="a7P8L" id="48ZGLP7pZg9" role="1nq8_t">
                             <ref role="a7OzE" node="48ZGLP7pZdB" resolve="TVs" />
@@ -7922,7 +7921,7 @@
                         </node>
                       </node>
                       <node concept="nsMwS" id="48ZGLP7pYWq" role="ns1xD">
-                        <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                        <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                         <node concept="1nq8_$" id="48ZGLP7pYWr" role="nsMwV">
                           <node concept="a7P8L" id="48ZGLP7pYWs" role="1nq8_t">
                             <ref role="a7OzE" node="48ZGLP7pYW4" resolve="TVs" />
@@ -8038,7 +8037,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="48ZGLP7pYEk" role="ns1xD">
-                          <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                          <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                           <node concept="1nq8_$" id="48ZGLP7pYEl" role="nsMwV">
                             <node concept="a7P8L" id="48ZGLP7pYEm" role="1nq8_t">
                               <ref role="a7OzE" node="48ZGLP7pYE8" resolve="TVs" />
@@ -8817,7 +8816,7 @@
           <property role="TrG5h" value="type" />
           <property role="nspS5" value="false" />
         </node>
-        <node concept="nsiOd" id="48ZGLP7pnre" role="nspSe">
+        <node concept="nstbe" id="39Sam6ZkwZq" role="nspSe">
           <property role="TrG5h" value="typeVars" />
         </node>
       </node>
@@ -9810,7 +9809,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="48ZGLP8pG8P" role="ns1xD">
-                          <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                          <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                           <node concept="1nq8_$" id="48ZGLP8pG8Q" role="nsMwV">
                             <node concept="a7P8L" id="48ZGLP8pG8R" role="1nq8_t">
                               <ref role="a7OzE" node="48ZGLP8pG8E" resolve="TVs" />
@@ -9924,7 +9923,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="48ZGLP8pI8u" role="ns1xD">
-                          <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                          <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                           <node concept="1nq8_$" id="48ZGLP8pI8v" role="nsMwV">
                             <node concept="a7P8L" id="48ZGLP8pI8w" role="1nq8_t">
                               <ref role="a7OzE" node="48ZGLP8pI8d" resolve="TVs" />
@@ -12482,7 +12481,7 @@
                         <node concept="ns1u0" id="47tET_W6CzS" role="3AunhB">
                           <ref role="ns1xF" node="7VBaGntJSG6" resolve="Forall" />
                           <node concept="nsMwS" id="47tET_W6CzY" role="ns1xD">
-                            <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                            <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                             <node concept="1nq8_$" id="47tET_W6CFb" role="nsMwV">
                               <node concept="a7P8L" id="47tET_W6CF9" role="1nq8_t">
                                 <ref role="a7OzE" node="47tET_W6C$2" resolve="TVs" />
@@ -12614,7 +12613,7 @@
                       <node concept="ns1u0" id="47tET_W7Ssg" role="1uarlW">
                         <ref role="ns1xF" node="7VBaGntJSG6" resolve="Forall" />
                         <node concept="nsMwS" id="47tET_W7Ssi" role="ns1xD">
-                          <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                          <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                           <node concept="1nq8_$" id="47tET_W7SuQ" role="nsMwV">
                             <node concept="a7P8L" id="47tET_W7SuO" role="1nq8_t">
                               <ref role="a7OzE" node="47tET_W7Sui" resolve="InstTVs" />
@@ -12871,7 +12870,7 @@
                         <node concept="ns1u0" id="47tET_W7T2i" role="3A8w4Q">
                           <ref role="ns1xF" node="7VBaGntJSG6" resolve="Forall" />
                           <node concept="nsMwS" id="47tET_W7T2k" role="ns1xD">
-                            <ref role="nsMwP" node="48ZGLP7pnre" resolve="typeVars" />
+                            <ref role="nsMwP" node="39Sam6ZkwZq" resolve="typeVars" />
                             <node concept="1nq8_$" id="47tET_W7T2q" role="nsMwV">
                               <node concept="a7P8L" id="47tET_W7T2o" role="1nq8_t">
                                 <ref role="a7OzE" node="47tET_W7Sui" resolve="InstTVs" />
