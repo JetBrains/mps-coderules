@@ -113,9 +113,6 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
-      </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -678,32 +675,11 @@
                     <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                   </node>
                   <node concept="3clFbS" id="78H58oeuatE" role="3clF47">
-                    <node concept="3clFbF" id="1FOQehx4EW8" role="3cqZAp">
-                      <node concept="2OqwBi" id="1FOQehx4Gp2" role="3clFbG">
-                        <node concept="37vLTw" id="1FOQehx4EW6" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1FOQehx4tIV" resolve="reportItems" />
+                    <node concept="YS8fn" id="4ekZiHdS9o0" role="3cqZAp">
+                      <node concept="2ShNRf" id="4ekZiHdS9o1" role="YScLw">
+                        <node concept="1pGfFk" id="4ekZiHdS9o2" role="2ShVmc">
+                          <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
                         </node>
-                        <node concept="TSZUe" id="1FOQehx4HQH" role="2OqNvi">
-                          <node concept="2ShNRf" id="1FOQehx4If8" role="25WWJ7">
-                            <node concept="1pGfFk" id="1FOQehx4Jls" role="2ShVmc">
-                              <ref role="37wK5l" node="1FOQehwow5Q" resolve="ControlflowReportItem" />
-                              <node concept="37vLTw" id="1FOQehx47KN" role="37wK5m">
-                                <ref role="3cqZAo" node="78H58oeuatv" resolve="kind" />
-                              </node>
-                              <node concept="37vLTw" id="1FOQehx47KO" role="37wK5m">
-                                <ref role="3cqZAo" node="78H58oeuatt" resolve="target" />
-                              </node>
-                              <node concept="37vLTw" id="1FOQehx47KP" role="37wK5m">
-                                <ref role="3cqZAo" node="78H58oeuatx" resolve="text" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3cpWs6" id="oI9Ysby3S" role="3cqZAp">
-                      <node concept="3clFbT" id="1FOQehxPxp2" role="3cqZAk">
-                        <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
@@ -789,6 +765,10 @@
         <node concept="3uibUv" id="1laj_RSGF59" role="1tU5fm">
           <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
         </node>
+      </node>
+      <node concept="37vLTG" id="4ekZiHdexIM" role="3clF46">
+        <property role="TrG5h" value="template" />
+        <node concept="2sp9CU" id="4ekZiHdezmg" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1laj_RSGF5a" role="3clF46">
         <property role="TrG5h" value="target" />

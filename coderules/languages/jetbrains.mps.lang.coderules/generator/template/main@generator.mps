@@ -552,6 +552,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
@@ -2309,6 +2310,31 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="2YIFZM" id="4ekZiHddqi6" role="37wK5m">
+                      <ref role="37wK5l" to="w1kc:~SNodePointer.deserialize(java.lang.String)" resolve="deserialize" />
+                      <ref role="1Pybhc" to="w1kc:~SNodePointer" resolve="SNodePointer" />
+                      <node concept="Xl_RD" id="4ekZiHddqlw" role="37wK5m">
+                        <property role="Xl_RC" value="" />
+                        <node concept="17Uvod" id="4ekZiHddqoS" role="lGtFl">
+                          <property role="2qtEX9" value="value" />
+                          <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                          <node concept="3zFVjK" id="4ekZiHddqoT" role="3zH0cK">
+                            <node concept="3clFbS" id="4ekZiHddqoU" role="2VODD2">
+                              <node concept="3clFbF" id="4ekZiHddrHl" role="3cqZAp">
+                                <node concept="2YIFZM" id="4ekZiHddrHx" role="3clFbG">
+                                  <ref role="37wK5l" to="w1kc:~SNodePointer.serialize(org.jetbrains.mps.openapi.model.SNodeReference)" resolve="serialize" />
+                                  <ref role="1Pybhc" to="w1kc:~SNodePointer" resolve="SNodePointer" />
+                                  <node concept="2OqwBi" id="4ekZiHddqFH" role="37wK5m">
+                                    <node concept="30H73N" id="4ekZiHddquG" role="2Oq$k0" />
+                                    <node concept="iZEcu" id="4ekZiHddqTO" role="2OqNvi" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="10Nm6u" id="1laj_RTCekd" role="37wK5m">
                       <node concept="1W57fq" id="1laj_RTCe_g" role="lGtFl">
                         <node concept="3IZrLx" id="1laj_RTCe_h" role="3IZSJc">
@@ -2327,7 +2353,7 @@
                           </node>
                         </node>
                         <node concept="gft3U" id="1laj_RTCfws" role="UU_$l">
-                          <node concept="10M0yZ" id="1laj_RTNZGH" role="gfFT$">
+                          <node concept="10M0yZ" id="4ekZiHduFGk" role="gfFT$">
                             <ref role="3cqZAo" to="cxk7:1laj_RTNVH9" resolve="NO_ARGUMENT" />
                             <ref role="1PxDUh" to="cxk7:6Kcfpq7B0Wu" resolve="AbstractPredicate" />
                           </node>
