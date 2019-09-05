@@ -14,6 +14,7 @@
     <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
+        <child id="6106419185511570301" name="additionalLanguages" index="QG$2o" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -33,6 +34,10 @@
     <node concept="2V$Bhx" id="NKt6ynvOIJ" role="QG$2i">
       <property role="2V$B1T" value="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" />
       <property role="2V$B1Q" value="jetbrains.mps.lang.typechecking" />
+    </node>
+    <node concept="2V$Bhx" id="5MK8bDyOYCL" role="QG$2o">
+      <property role="2V$B1T" value="c4803b19-6d89-4a3b-bf82-390769514add" />
+      <property role="2V$B1Q" value="jetbrains.mps.lang.coderules" />
     </node>
   </node>
 </model>
