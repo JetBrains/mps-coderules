@@ -7828,8 +7828,8 @@
                   <node concept="2ShNRf" id="4ekZiHdROXY" role="HW$Y0">
                     <node concept="1pGfFk" id="4ekZiHdROXZ" role="2ShVmc">
                       <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeReference)" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
-                      <node concept="1rXfSq" id="4ekZiHdROY0" role="37wK5m">
-                        <ref role="37wK5l" node="4ekZiHdePyA" resolve="getTemplate" />
+                      <node concept="37vLTw" id="5MK8bDyTvrM" role="37wK5m">
+                        <ref role="3cqZAo" node="4ekZiHdeOLS" resolve="templateRef" />
                       </node>
                     </node>
                   </node>

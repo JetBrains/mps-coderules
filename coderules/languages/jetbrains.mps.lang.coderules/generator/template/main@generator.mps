@@ -2325,7 +2325,12 @@
                                   <ref role="37wK5l" to="w1kc:~SNodePointer.serialize(org.jetbrains.mps.openapi.model.SNodeReference)" resolve="serialize" />
                                   <ref role="1Pybhc" to="w1kc:~SNodePointer" resolve="SNodePointer" />
                                   <node concept="2OqwBi" id="4ekZiHddqFH" role="37wK5m">
-                                    <node concept="30H73N" id="4ekZiHddquG" role="2Oq$k0" />
+                                    <node concept="2OqwBi" id="5MK8bDyT$wb" role="2Oq$k0">
+                                      <node concept="1iwH7S" id="5MK8bDyT$az" role="2Oq$k0" />
+                                      <node concept="12$id9" id="5MK8bDyT$Ie" role="2OqNvi">
+                                        <node concept="30H73N" id="5MK8bDyT$Jm" role="12$y8L" />
+                                      </node>
+                                    </node>
                                     <node concept="iZEcu" id="4ekZiHddqTO" role="2OqNvi" />
                                   </node>
                                 </node>
