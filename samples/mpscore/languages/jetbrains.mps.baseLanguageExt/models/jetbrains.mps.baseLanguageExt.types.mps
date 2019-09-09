@@ -25431,7 +25431,7 @@
               <property role="3oM_SC" value="use" />
             </node>
             <node concept="3oM_SD" id="PltxfHB7F1" role="1PaTwD">
-              <property role="3oM_SC" value="DataFormUtil.ground()?" />
+              <property role="3oM_SC" value="DataFormUtil.ground(df)?" />
             </node>
           </node>
         </node>
@@ -25443,29 +25443,19 @@
                 <node concept="3uibUv" id="6B75gmfquBZ" role="1tU5fm">
                   <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
-                <node concept="2OqwBi" id="6B75gmfquC0" role="33vP2m">
-                  <node concept="2OqwBi" id="6B75gmfquC1" role="2Oq$k0">
-                    <node concept="2OqwBi" id="6B75gmfquC2" role="2Oq$k0">
-                      <node concept="1eOMI4" id="6B75gmfquC3" role="2Oq$k0">
-                        <node concept="10QFUN" id="6B75gmfquC4" role="1eOMHV">
-                          <node concept="3uibUv" id="6B75gmfquC5" role="10QFUM">
-                            <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
-                          </node>
-                          <node concept="37vLTw" id="6B75gmfquC6" role="10QFUP">
-                            <ref role="3cqZAo" node="6B75gmfqpsn" resolve="df" />
-                          </node>
-                        </node>
+                <node concept="2OqwBi" id="PltxfHH5m3" role="33vP2m">
+                  <node concept="1eOMI4" id="6B75gmfquC3" role="2Oq$k0">
+                    <node concept="10QFUN" id="6B75gmfquC4" role="1eOMHV">
+                      <node concept="3uibUv" id="6B75gmfquC5" role="10QFUM">
+                        <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
                       </node>
-                      <node concept="liA8E" id="6B75gmfquC7" role="2OqNvi">
-                        <ref role="37wK5l" to="oy3s:4TCblo5MS1o" resolve="logical" />
+                      <node concept="37vLTw" id="6B75gmfquC6" role="10QFUP">
+                        <ref role="3cqZAo" node="6B75gmfqpsn" resolve="df" />
                       </node>
-                    </node>
-                    <node concept="liA8E" id="6B75gmfquC8" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="6B75gmfquC9" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
+                  <node concept="liA8E" id="PltxfHH5HQ" role="2OqNvi">
+                    <ref role="37wK5l" to="oy3s:4TCblo5MPLt" resolve="get" />
                   </node>
                 </node>
               </node>
