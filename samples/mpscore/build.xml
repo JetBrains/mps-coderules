@@ -210,6 +210,7 @@
           <module ref="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" kind="cl" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
           <module ref="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.coderules.typechecking.test)" kind="cl" />
+          <module ref="c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)" kind="cl" />
           <module ref="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" kind="cl" />
         </dependencies>
         <uses>
@@ -615,21 +616,29 @@
         <fileset file="${artifacts.mps}/lib/ecj-4.10.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.coderules.typechecking.test.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.modelapi.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
+        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />

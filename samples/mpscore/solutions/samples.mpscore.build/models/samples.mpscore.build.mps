@@ -373,6 +373,11 @@
             <ref role="3bR37D" to="zqd8:7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
           </node>
         </node>
+        <node concept="1SiIV0" id="1CCT1$0M$TP" role="3bR37C">
+          <node concept="3bR9La" id="1CCT1$0M$TQ" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:7BVjoXzUx6U" resolve="jetbrains.mps.lang.coderules" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="22LTRH" id="69UmpDmJWeu" role="1hWBAP">
