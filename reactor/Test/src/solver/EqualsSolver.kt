@@ -1,5 +1,6 @@
 package solver
 
+import jetbrains.mps.logic.reactor.core.Controller
 import jetbrains.mps.logic.reactor.core.invocation
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -109,26 +110,20 @@ class EqualsSolver  : Solver {
 
 }
 
-infix fun <T : Any> T.is_eq(value: T): Boolean = EvaluationSession.current().let { session ->
+fun <T : Any> InvocationContext.askEquals(thisValue: T, thatValue: T): Boolean {
     val logicalContext = mockLogicalContext()
-    val predicate = EqualsSolver.eq(this, value)
-    val invocationContext: InvocationContext = object : InvocationContext {
-        override fun report(feedback: EvaluationFeedback) = TODO()
-    }
-    val args = session.supervisor().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
-    val inv = predicate.invocation(args, logicalContext, invocationContext)
-    session.ask(inv)
+    val predicate = EqualsSolver.eq(thisValue, thatValue)
+    val args = supervisor().instantiateArguments(predicate.arguments(), logicalContext, this)
+    val inv = predicate.invocation(args, logicalContext, this)
+    return controller().ask(inv)
 }
 
-infix fun <T : Any> T.eq(value: T) = EvaluationSession.current().let { session ->
+fun <T : Any> InvocationContext.tellEquals(thisValue: T, thatValue: T) {
     val logicalContext = mockLogicalContext()
-    val predicate = EqualsSolver.eq(this, value)
-    val invocationContext: InvocationContext = object : InvocationContext {
-        override fun report(feedback: EvaluationFeedback) = TODO()
-    }
-    val args = session.supervisor().instantiateArguments(predicate.arguments(), logicalContext, invocationContext)
-    val inv = predicate.invocation(args, logicalContext, invocationContext)
-    session.tell(inv)
+    val predicate = EqualsSolver.eq(thisValue, thatValue)
+    val args = supervisor().instantiateArguments(predicate.arguments(), logicalContext, this)
+    val inv = predicate.invocation(args, logicalContext, this)
+    controller().tell(inv)
 }
 
 private fun mockLogicalContext(): LogicalContext {

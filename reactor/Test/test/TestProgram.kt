@@ -1,5 +1,6 @@
 import jetbrains.mps.logic.reactor.core.ReactorLifecycle
 import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
+import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.program.Constraint
@@ -9,7 +10,8 @@ import org.junit.Assert.assertEquals
 import org.junit.BeforeClass
 import org.junit.Test
 import program.MockConstraint
-import solver.eq
+import solver.askEquals
+import solver.tellEquals
 
 /**
  * @author Fedor Isakov
@@ -37,6 +39,10 @@ class TestProgram {
             .start(MockSupervisor())
         return session.storeView()
     }
+
+    private fun <T : Any> PredicateInvocation.eq(left: T, right: T) = invocationContext().tellEquals(left, right)
+
+    private fun <T : Any> PredicateInvocation.is_eq(left: T, right: T): Boolean = invocationContext().askEquals(left, right)
 
     @Test
     fun replace() {
@@ -70,7 +76,7 @@ class TestProgram {
                     constraint("main")
                 ),
                 body(
-                    statement({ z -> z eq 33 }, Z),
+                    statement({ z -> eq(z, 33) }, Z),
                     constraint("foo", Z)
                 )
             ),
@@ -79,7 +85,7 @@ class TestProgram {
                     constraint("foo", X)
                 ),
                 body(
-                    statement({ x, y -> y eq (x.get() * 2) }, X, Y),
+                    statement({ x, y -> eq(y, (x.get() * 2)) }, X, Y),
                     constraint("bar", Y)
                 )
             )

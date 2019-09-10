@@ -24,23 +24,26 @@ import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.program.Program
 import jetbrains.mps.logic.reactor.util.Profiler
 import java.util.*
-import com.github.andrewoma.dexx.collection.LinkedList as PLinkedList
-import com.github.andrewoma.dexx.collection.List as PList
 
 /**
  * @author Fedor Isakov
  */
 
 internal class EvaluationSessionImpl private constructor (
-    program: Program,
-    supervisor: Supervisor,
-    trace: EvaluationTrace,
-    params: Map<ParameterKey<*>, *>?) : EvaluationSessionEx(program, supervisor, trace, params)
+    val program: Program,
+    val supervisor: Supervisor,
+    val trace: EvaluationTrace,
+    val params: Map<ParameterKey<*>, *>?) : EvaluationSession()
 {
 
     lateinit var controller: ControllerImpl
 
-    override fun controller() = controller
+    override fun program(): Program = program
+
+    override fun supervisor(): Supervisor = supervisor
+
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
     private fun launch(
         main: Constraint, profiler: Profiler?,

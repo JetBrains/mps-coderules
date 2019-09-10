@@ -248,7 +248,7 @@ internal class ControllerImpl (
     private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
 
 
-    private class Context(inStatus: FeedbackStatus,
+    inner private class Context(inStatus: FeedbackStatus,
                           val logicalContext: LogicalContext,
                           val trace: EvaluationTrace = EvaluationTrace.NULL) : InvocationContext
     {
@@ -263,6 +263,10 @@ internal class ControllerImpl (
                 is DetailedFeedback -> this.status = status.report(feedback)
             }
         }
+
+        override fun supervisor(): Supervisor = supervisor
+
+        override fun controller(): Controller = this@ControllerImpl
 
         inline fun withStatus(block: (FeedbackStatus) -> Unit) {
             block.invoke(status)

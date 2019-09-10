@@ -12,8 +12,8 @@ import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import solver.eq
-import solver.is_eq
+import solver.askEquals
+import solver.tellEquals
 
 
 /**
@@ -32,11 +32,15 @@ class TestController {
         MockSession.deinit()
     }
 
-    private class MockSession(program: Program, supervisor: Supervisor) :
-        EvaluationSessionEx(program, supervisor, EvaluationTrace.NULL, params = mapOf<ParameterKey<*>, Any>()) {
+    private class MockSession(val program: Program, val supervisor: Supervisor) : EvaluationSession()
+    {
         lateinit var controller: Controller
+        
+        override fun program(): Program = program
 
-        override fun controller(): Controller = controller
+        override fun supervisor(): Supervisor = supervisor
+
+        override fun <T : Any?> parameter(key: ParameterKey<T>?): T = TODO()
 
         class MockBackend(val session: MockSession) : Backend<MockSession> {
             override fun current(): MockSession = session
@@ -93,9 +97,9 @@ class TestController {
             occurrences.filter { it.constraint().symbol() == symbol }
     }
 
-    private fun <T : Any> eq(left: T, right: T) = left eq right
+    private fun <T : Any> PredicateInvocation.eq(left: T, right: T) = invocationContext().tellEquals(left, right)
 
-    private fun <T : Any> is_eq(left: T, right: T): Boolean = left is_eq right
+    private fun <T : Any> PredicateInvocation.is_eq(left: T, right: T): Boolean = invocationContext().askEquals(left, right)
 
     @Test
     fun processSingle() {

@@ -36,4 +36,5 @@ public interface PredicateInvocation {
     LogicalContext logicalContext();
 
     InvocationContext invocationContext();
+
 }

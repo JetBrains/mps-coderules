@@ -21,6 +21,8 @@ import jetbrains.mps.logic.reactor.core.RulesDiff;
 import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec;
 import jetbrains.mps.logic.reactor.program.Program;
 
+import java.util.Map;
+
 /**
  * The starting point to evaluate a program.
  * <p>
@@ -50,17 +52,13 @@ public abstract class EvaluationSession {
     public abstract Program program();
 
     public abstract Supervisor supervisor();
-
-    public abstract boolean ask(PredicateInvocation invocation);
-
-    public abstract void tell(PredicateInvocation invocation);
-
+    
     public abstract <T> T parameter(ParameterKey<T> key);
 
     public static class ParameterKey<T> {
 
-        private final String name;
 
+        private final String name;
         public static <T> ParameterKey<T> of(String name, Class<T> klass) {
             return new ParameterKey<T>(name);
         }
@@ -82,8 +80,8 @@ public abstract class EvaluationSession {
         public int hashCode() {
             return name != null ? name.hashCode() : 0;
         }
-    }
 
+    }
     public static abstract class Config {
 
         public abstract <T> Config withParameter(ParameterKey<T> key, T value);
@@ -104,8 +102,8 @@ public abstract class EvaluationSession {
 
         public abstract EvaluationResult start(Supervisor supervisor);
 
+
     }
-    
     protected static void setBackend(EvaluationSession.Backend<? extends EvaluationSession> backend) {
         if (ourBackend != null) throw new IllegalStateException("backend already assigned");
         ourBackend = backend;
@@ -122,7 +120,9 @@ public abstract class EvaluationSession {
 
         EvaluationSession.Config createConfig(Program program);
 
+
     }
-    
+
     private static EvaluationSession.Backend<? extends EvaluationSession> ourBackend;
+
 }

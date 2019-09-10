@@ -16,14 +16,19 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
+import jetbrains.mps.logic.reactor.core.Controller;
+
 /**
+ * Provides context for a predicate invocation.
+ *
  * @author Fedor Isakov
  */
 public interface InvocationContext {
 
     void report(EvaluationFeedback feedback);
 
+    Supervisor supervisor();
 
-
+    Controller controller();
 
 }
