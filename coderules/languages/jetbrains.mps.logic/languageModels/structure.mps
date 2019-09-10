@@ -647,6 +647,7 @@
     <property role="3GE5qa" value="dataform" />
     <property role="TrG5h" value="LogicalDataForm" />
     <property role="34LRSv" value="logical" />
+    <property role="R4oN_" value="logical variable" />
     <ref role="1TJDcQ" node="5yqFHXo6Ubn" resolve="DataForm" />
     <node concept="1TJgyj" id="PltxfHNdqi" role="1TKVEi">
       <property role="IQ2ns" value="960803923479549586" />
@@ -654,6 +655,21 @@
       <property role="20kJfa" value="logical" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariable" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="PltxfHULAb">
+    <property role="EcuMT" value="960803923481532811" />
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="ListNodeCons" />
+    <property role="34LRSv" value="cons list" />
+    <property role="R4oN_" value="cons list node" />
+    <ref role="1TJDcQ" node="1OShD0HAY6y" resolve="ListNode" />
+    <node concept="1TJgyj" id="PltxfHVVwQ" role="1TKVEi">
+      <property role="IQ2ns" value="960803923481835574" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tail" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
   </node>
 </model>
