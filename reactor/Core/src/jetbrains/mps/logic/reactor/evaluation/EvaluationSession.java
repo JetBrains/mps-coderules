@@ -34,11 +34,7 @@ import java.util.Map;
  */
 public abstract class EvaluationSession {
 
-    @SuppressWarnings("unchecked")
-    public static <S extends EvaluationSession> S current(Class<S> sessionClass) {
-        return (S) current();
-    }
-
+    @Deprecated
     public static EvaluationSession current() {
         if (ourBackend == null) throw new IllegalStateException("no backend");
         return ourBackend.current();
