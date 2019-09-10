@@ -369,7 +369,7 @@
                     <node concept="2Ry0Ak" id="YbzkzL7kK9" role="2Ry0An">
                       <property role="2Ry0Am" value="lib" />
                       <node concept="2Ry0Ak" id="YbzkzL7kKa" role="2Ry0An">
-                        <property role="2Ry0Am" value="conreactor-core-0.9.12.jar" />
+                        <property role="2Ry0Am" value="conreactor-core-0.9.13.jar" />
                       </node>
                     </node>
                   </node>
@@ -2292,7 +2292,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="4EvsDTBGxZq" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/conreactor-core-0.9.12.jar" />
+                <property role="3yLZsk" value="../lib/conreactor-core-0.9.13.jar" />
                 <node concept="398BVA" id="4EvsDTBGxZr" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="4EvsDTBGxZs" role="iGT6I">
@@ -2304,7 +2304,7 @@
                         <node concept="2Ry0Ak" id="4EvsDTBGxZv" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
                           <node concept="2Ry0Ak" id="1X0h_efWxH0" role="2Ry0An">
-                            <property role="2Ry0Am" value="conreactor-core-0.9.12.jar" />
+                            <property role="2Ry0Am" value="conreactor-core-0.9.13.jar" />
                           </node>
                         </node>
                       </node>

@@ -485,7 +485,7 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.12.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.13.jar" />
       </classpath>
     </javac>
   </target>
@@ -560,7 +560,7 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.12.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.13.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="mockito-core-2.0.3-beta.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="objenesis-2.1.jar" />
       </classpath>
@@ -637,7 +637,7 @@
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="collection-0.7.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="trove4j-3.0.3.jar" />
-        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.12.jar" />
+        <fileset dir="${artifacts.coderules}/deploy/lib" includes="conreactor-core-0.9.13.jar" />
       </classpath>
     </javac>
   </target>
