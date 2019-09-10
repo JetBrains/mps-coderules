@@ -203,10 +203,6 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="6332851714983831325" name="jetbrains.mps.baseLanguage.logging.structure.MsgStatement" flags="ng" index="2xdQw9">
-        <property id="6332851714983843871" name="severity" index="2xdLsb" />
-        <child id="5721587534047265374" name="message" index="9lYJi" />
-      </concept>
       <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -1723,18 +1719,6 @@
               </node>
             </node>
             <node concept="3clFbH" id="4ekZiHeefio" role="3cqZAp" />
-            <node concept="2xdQw9" id="4ekZiHeegmL" role="3cqZAp">
-              <property role="2xdLsb" value="h1akgim/info" />
-              <node concept="3cpWs3" id="4ekZiHeegQ4" role="9lYJi">
-                <node concept="37vLTw" id="4ekZiHeegWA" role="3uHU7w">
-                  <ref role="3cqZAo" node="3KN3A4vyRyt" resolve="aspectNs" />
-                </node>
-                <node concept="Xl_RD" id="4ekZiHeegmN" role="3uHU7B">
-                  <property role="Xl_RC" value="*** aspects=" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="4ekZiHe4Had" role="3cqZAp" />
             <node concept="3SKdUt" id="4ekZiHe3GTo" role="3cqZAp">
               <node concept="1PaTwC" id="4ekZiHe3GTp" role="3ndbpf">
                 <node concept="3oM_SD" id="4ekZiHe3GTr" role="1PaTwD">
@@ -1775,29 +1759,6 @@
                   <node concept="3clFbS" id="4ekZiHe4F1w" role="3clFbx">
                     <node concept="3clFbJ" id="4ekZiHe4Iz3" role="3cqZAp">
                       <node concept="3clFbS" id="4ekZiHe4Iz5" role="3clFbx">
-                        <node concept="3clFbH" id="4ekZiHeeh0J" role="3cqZAp" />
-                        <node concept="2xdQw9" id="4ekZiHeehgi" role="3cqZAp">
-                          <property role="2xdLsb" value="h1akgim/info" />
-                          <node concept="3cpWs3" id="4ekZiHeehrL" role="9lYJi">
-                            <node concept="2OqwBi" id="4ekZiHeehVJ" role="3uHU7w">
-                              <node concept="2OqwBi" id="4ekZiHeehC9" role="2Oq$k0">
-                                <node concept="37vLTw" id="4ekZiHeehv0" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="4ekZiHe4F2c" resolve="v" />
-                                </node>
-                                <node concept="2OwXpG" id="4ekZiHeehMd" role="2OqNvi">
-                                  <ref role="2Oxat5" node="3KN3A4uUwms" resolve="langRtm" />
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="4ekZiHeei8U" role="2OqNvi">
-                                <ref role="37wK5l" to="vndm:~LanguageRuntime.getNamespace()" resolve="getNamespace" />
-                              </node>
-                            </node>
-                            <node concept="Xl_RD" id="4ekZiHeehgk" role="3uHU7B">
-                              <property role="Xl_RC" value="*** leaf=" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbH" id="4ekZiHeehk6" role="3cqZAp" />
                         <node concept="3clFbJ" id="4ekZiHe4J7S" role="3cqZAp">
                           <node concept="3clFbS" id="4ekZiHe4J7U" role="3clFbx">
                             <node concept="3clFbF" id="4ekZiHe4LDb" role="3cqZAp">
