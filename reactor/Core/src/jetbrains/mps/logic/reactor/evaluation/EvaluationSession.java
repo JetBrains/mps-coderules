@@ -49,10 +49,6 @@ public abstract class EvaluationSession {
         return ourBackend.createConfig(program);
     }
 
-    public abstract Program program();
-
-    public abstract Supervisor supervisor();
-    
     public abstract <T> T parameter(ParameterKey<T> key);
 
     public static class ParameterKey<T> {

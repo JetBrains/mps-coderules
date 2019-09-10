@@ -35,10 +35,6 @@ class TestController {
     private class MockSession(val program: Program, val supervisor: Supervisor) : EvaluationSession()
     {
         lateinit var controller: Controller
-        
-        override fun program(): Program = program
-
-        override fun supervisor(): Supervisor = supervisor
 
         override fun <T : Any?> parameter(key: ParameterKey<T>?): T = TODO()
 

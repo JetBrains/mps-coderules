@@ -38,10 +38,6 @@ internal class EvaluationSessionImpl private constructor (
 
     lateinit var controller: ControllerImpl
 
-    override fun program(): Program = program
-
-    override fun supervisor(): Supervisor = supervisor
-
     @Suppress("UNCHECKED_CAST")
     override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
@@ -50,7 +46,7 @@ internal class EvaluationSessionImpl private constructor (
         token: SessionToken?, rulesDiff: RulesDiff, ispec: IncrementalProgramSpec
     ) : FeedbackStatus {
 
-        val ruleIndex = RuleIndex(program().handlers())
+        val ruleIndex = RuleIndex(program.handlers())
         val dispatcher = Dispatcher(ruleIndex)
 
         if (ispec is IncrementalProgramSpec.NonIncrSpec || token == null) {
