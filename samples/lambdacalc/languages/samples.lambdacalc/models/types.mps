@@ -244,6 +244,9 @@
       <concept id="960803923479540328" name="jetbrains.mps.logic.structure.LogicalDataForm" flags="ng" index="3wAshV">
         <child id="960803923479549586" name="logical" index="3wAq21" />
       </concept>
+      <concept id="960803923481532811" name="jetbrains.mps.logic.structure.ListNodeCons" flags="ng" index="3wJAYo">
+        <child id="960803923481835574" name="tail" index="3wIGS_" />
+      </concept>
       <concept id="2455719244613908503" name="jetbrains.mps.logic.structure.ValueOfExpression" flags="ng" index="1TmgYN">
         <child id="2455719244613924416" name="logical" index="1Tms7$" />
       </concept>
@@ -1349,7 +1352,7 @@
                     </node>
                   </node>
                   <node concept="Hz6ka" id="3vXKzDNU7hZ" role="3A8w4Q">
-                    <node concept="KCUsM" id="3vXKzDNU7i1" role="Hz6kd">
+                    <node concept="3wJAYo" id="3zXFZnUoM8l" role="Hz6kd">
                       <node concept="3wAshV" id="3zXFZnUhsMO" role="KCVpo">
                         <node concept="a7P8L" id="3vXKzDNU7i7" role="3wAq21">
                           <ref role="a7OzE" node="3vXKzDNGKNh" resolve="TmpTVs" />
@@ -1358,7 +1361,7 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="3wAshV" id="3zXFZnUhsMP" role="KCVpo">
+                      <node concept="3wAshV" id="3zXFZnUhsMP" role="3wIGS_">
                         <node concept="a7P8L" id="3vXKzDNU7jX" role="3wAq21">
                           <ref role="a7OzE" node="3vXKzDNU1sU" resolve="TailsTVs" />
                           <node concept="3cpWs3" id="3vXKzDNU7ZM" role="3gCZO6">
@@ -16163,13 +16166,13 @@
                         <ref role="a7OzE" node="3vXKzDNKn5S" resolve="List" />
                       </node>
                       <node concept="Hz6ka" id="3vXKzDNKmYE" role="1uarlW">
-                        <node concept="KCUsM" id="3vXKzDNKn01" role="Hz6kd">
+                        <node concept="3wJAYo" id="3zXFZnUoM8m" role="Hz6kd">
                           <node concept="3wAshV" id="3zXFZnUhsMQ" role="KCVpo">
                             <node concept="a7P8L" id="3vXKzDNKn09" role="3wAq21">
                               <ref role="a7OzE" node="3vXKzDNKmUJ" resolve="Head" />
                             </node>
                           </node>
-                          <node concept="3wAshV" id="3zXFZnUhsMR" role="KCVpo">
+                          <node concept="3wAshV" id="3zXFZnUhsMR" role="3wIGS_">
                             <node concept="a7P8L" id="3vXKzDNKn0L" role="3wAq21">
                               <ref role="a7OzE" node="3vXKzDNKmUY" resolve="Tail" />
                             </node>
