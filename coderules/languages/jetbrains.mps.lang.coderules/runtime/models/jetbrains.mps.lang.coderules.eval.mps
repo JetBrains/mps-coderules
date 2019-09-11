@@ -98,6 +98,7 @@
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
         <reference id="1182955020723" name="classConcept" index="1HBi2w" />
       </concept>
+      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -8440,6 +8441,51 @@
   </node>
   <node concept="312cEu" id="3o9wrC3s0ii">
     <property role="TrG5h" value="DefaultSupervisor" />
+    <node concept="2tJIrI" id="RZQG984ON4" role="jymVt" />
+    <node concept="3clFbW" id="RZQG984T_1" role="jymVt">
+      <node concept="3cqZAl" id="RZQG984T_3" role="3clF45" />
+      <node concept="3Tm1VV" id="RZQG984T_4" role="1B3o_S" />
+      <node concept="3clFbS" id="RZQG984T_5" role="3clF47">
+        <node concept="3clFbF" id="RZQG984Vd1" role="3cqZAp">
+          <node concept="37vLTI" id="RZQG984Vd3" role="3clFbG">
+            <node concept="2OqwBi" id="RZQG984VZf" role="37vLTJ">
+              <node concept="Xjq3P" id="RZQG984W0e" role="2Oq$k0" />
+              <node concept="2OwXpG" id="RZQG984VZi" role="2OqNvi">
+                <ref role="2Oxat5" node="RZQG984VcX" resolve="repository" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="RZQG984Vd7" role="37vLTx">
+              <ref role="3cqZAo" node="RZQG984V57" resolve="repository" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="RZQG984V57" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="RZQG984V56" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="RZQG984Rfh" role="jymVt" />
+    <node concept="3clFb_" id="RZQG984PDI" role="jymVt">
+      <property role="TrG5h" value="repository" />
+      <node concept="3uibUv" id="RZQG984PDJ" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+      </node>
+      <node concept="3Tm1VV" id="RZQG984PDK" role="1B3o_S" />
+      <node concept="3clFbS" id="RZQG984PDM" role="3clF47">
+        <node concept="3clFbF" id="RZQG984WZm" role="3cqZAp">
+          <node concept="37vLTw" id="RZQG984WZj" role="3clFbG">
+            <ref role="3cqZAo" node="RZQG984VcX" resolve="repository" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="RZQG984PDN" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="RZQG984OSd" role="jymVt" />
     <node concept="3clFb_" id="60zk4o6Suoh" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="instantiateArguments" />
@@ -8854,6 +8900,16 @@
     <node concept="3uibUv" id="3o9wrC3s0Vs" role="EKbjA">
       <ref role="3uigEE" to="w7la:~Supervisor" resolve="Supervisor" />
     </node>
+    <node concept="3uibUv" id="RZQG984MvA" role="EKbjA">
+      <ref role="3uigEE" node="RZQG984Kmz" resolve="RepositoryProvider" />
+    </node>
+    <node concept="312cEg" id="RZQG984VcX" role="jymVt">
+      <property role="TrG5h" value="repository" />
+      <node concept="3Tm6S6" id="RZQG984VcY" role="1B3o_S" />
+      <node concept="3uibUv" id="RZQG984Vd0" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="3o9wrC3sa$h">
     <property role="TrG5h" value="OriginReportingSupervisor" />
@@ -8866,9 +8922,21 @@
           <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
         </node>
       </node>
+      <node concept="37vLTG" id="RZQG984Xpz" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="RZQG984Xza" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
       <node concept="3cqZAl" id="3o9wrC3sC_e" role="3clF45" />
       <node concept="3Tm1VV" id="3o9wrC3sC_f" role="1B3o_S" />
       <node concept="3clFbS" id="3o9wrC3sC_g" role="3clF47">
+        <node concept="XkiVB" id="RZQG984XG0" role="3cqZAp">
+          <ref role="37wK5l" node="RZQG984T_1" resolve="DefaultSupervisor" />
+          <node concept="37vLTw" id="RZQG984XOk" role="37wK5m">
+            <ref role="3cqZAo" node="RZQG984Xpz" resolve="repository" />
+          </node>
+        </node>
         <node concept="3clFbF" id="3o9wrC3sGvK" role="3cqZAp">
           <node concept="37vLTI" id="3o9wrC3sGGj" role="3clFbG">
             <node concept="37vLTw" id="3o9wrC3sGvI" role="37vLTJ">
@@ -9449,9 +9517,21 @@
           <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
         </node>
       </node>
+      <node concept="37vLTG" id="RZQG984Y8E" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="RZQG984Yh4" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
       <node concept="3cqZAl" id="3o9wrC3VMfE" role="3clF45" />
       <node concept="3Tm1VV" id="3o9wrC3VMfF" role="1B3o_S" />
       <node concept="3clFbS" id="3o9wrC3VMfG" role="3clF47">
+        <node concept="XkiVB" id="RZQG984Ylb" role="3cqZAp">
+          <ref role="37wK5l" node="RZQG984T_1" resolve="DefaultSupervisor" />
+          <node concept="37vLTw" id="RZQG984Yr4" role="37wK5m">
+            <ref role="3cqZAo" node="RZQG984Y8E" resolve="repository" />
+          </node>
+        </node>
         <node concept="3clFbF" id="3o9wrC3W9j0" role="3cqZAp">
           <node concept="37vLTI" id="3o9wrC3W9j1" role="3clFbG">
             <node concept="37vLTw" id="3o9wrC3W9j2" role="37vLTx">
@@ -9904,6 +9984,20 @@
     <node concept="3uibUv" id="3o9wrC3WiX8" role="1zkMxy">
       <ref role="3uigEE" node="3o9wrC3s0ii" resolve="DefaultSupervisor" />
     </node>
+  </node>
+  <node concept="3HP615" id="RZQG984Kmz">
+    <property role="TrG5h" value="RepositoryProvider" />
+    <node concept="2tJIrI" id="RZQG984Kn_" role="jymVt" />
+    <node concept="3clFb_" id="RZQG984Ko7" role="jymVt">
+      <property role="TrG5h" value="repository" />
+      <node concept="3uibUv" id="RZQG984KoY" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+      </node>
+      <node concept="3Tm1VV" id="RZQG984Koa" role="1B3o_S" />
+      <node concept="3clFbS" id="RZQG984Kob" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="RZQG984KnI" role="jymVt" />
+    <node concept="3Tm1VV" id="RZQG984Km$" role="1B3o_S" />
   </node>
 </model>
 
