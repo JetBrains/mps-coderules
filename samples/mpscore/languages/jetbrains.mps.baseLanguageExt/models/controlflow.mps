@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="15" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="2" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="4" />
     <use id="2e120f68-abfb-4980-bb1c-bc70159b1f95" name="jetbrains.mps.lang.controlflow" version="0" />
     <engage id="2e120f68-abfb-4980-bb1c-bc70159b1f95" name="jetbrains.mps.lang.controlflow" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
