@@ -24125,14 +24125,8 @@
                         <node concept="a7P8L" id="6N2bvv_l9pS" role="3AunhB">
                           <ref role="a7OzE" node="6N2bvv_l2nb" resolve="Nodes" />
                         </node>
-                        <node concept="Hz6ka" id="2rIdnPwt6iQ" role="3AunhB">
-                          <node concept="KCUsM" id="2rIdnPwt6kC" role="Hz6kd">
-                            <node concept="3wAshV" id="3zXFZnUhsNc" role="KCVpo">
-                              <node concept="a7P8L" id="2rIdnPwt6mk" role="3wAq21">
-                                <ref role="a7OzE" node="6N2bvv_l2Kl" resolve="Tail" />
-                              </node>
-                            </node>
-                          </node>
+                        <node concept="a7P8L" id="4UXp0cuMXGy" role="3AunhB">
+                          <ref role="a7OzE" node="6N2bvv_l2Kl" resolve="Tail" />
                         </node>
                       </node>
                     </node>
