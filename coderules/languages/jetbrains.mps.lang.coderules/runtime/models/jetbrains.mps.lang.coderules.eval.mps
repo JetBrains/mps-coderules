@@ -1118,6 +1118,38 @@
           </node>
         </node>
         <node concept="2GUZhq" id="1Ry9kf2vh7F" role="3cqZAp">
+          <node concept="TDmWw" id="RZQG98Soki" role="TEXxN">
+            <node concept="3cpWsn" id="RZQG98Sokj" role="TDEfY">
+              <property role="TrG5h" value="ex" />
+              <node concept="3uibUv" id="RZQG98SpEi" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="RZQG98Sokl" role="TDEfX">
+              <node concept="RRSsy" id="RZQG98SpJh" role="3cqZAp">
+                <property role="RRSoG" value="gZ5fksE/warn" />
+                <node concept="Xl_RD" id="RZQG98SpJi" role="RRSoy">
+                  <property role="Xl_RC" value="error evaluating program" />
+                </node>
+                <node concept="37vLTw" id="RZQG98Sr8a" role="RRSow">
+                  <ref role="3cqZAo" node="RZQG98Sokj" resolve="ex" />
+                </node>
+              </node>
+              <node concept="3cpWs6" id="RZQG98SpJk" role="3cqZAp">
+                <node concept="2YIFZM" id="RZQG98SpJl" role="3cqZAk">
+                  <ref role="1Pybhc" node="7Oc59RSEjdb" resolve="Result" />
+                  <ref role="37wK5l" node="6i42QSsr2_r" resolve="FAIL" />
+                  <node concept="Xl_RD" id="RZQG98SpJm" role="37wK5m">
+                    <property role="Xl_RC" value="error during evaluation" />
+                  </node>
+                  <node concept="37vLTw" id="RZQG98SraT" role="37wK5m">
+                    <ref role="3cqZAo" node="RZQG98Sokj" resolve="ex" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="RZQG98SpMB" role="3cqZAp" />
+            </node>
+          </node>
           <node concept="TDmWw" id="7rf49NgqSok" role="TEXxN">
             <node concept="3cpWsn" id="7rf49NgqSol" role="TDEfY">
               <property role="TrG5h" value="vmerr" />
