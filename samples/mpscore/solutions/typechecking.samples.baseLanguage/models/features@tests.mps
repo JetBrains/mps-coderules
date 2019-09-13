@@ -472,6 +472,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="1yt2T3T4T6U" role="1SL9yI">
+      <property role="TrG5h" value="varargs" />
+      <node concept="3cqZAl" id="1yt2T3T4T6V" role="3clF45" />
+      <node concept="3clFbS" id="1yt2T3T4T6Z" role="3clF47">
+        <node concept="2Hmddi" id="1yt2T3T4TB9" role="3cqZAp">
+          <node concept="2OqwBi" id="1yt2T3T4TBa" role="2Hmdds">
+            <node concept="2YIFZM" id="1yt2T3T4TBb" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="1yt2T3T4TBc" role="37wK5m">
+                <node concept="2WthIp" id="1yt2T3T4TBd" role="2Oq$k0" />
+                <node concept="2XshWL" id="1yt2T3T4TBe" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="1yt2T3T4TBf" role="2XxRq1">
+                    <node concept="ZC_QK" id="1yt2T3T4TRz" role="2tJFKM">
+                      <ref role="2aWVGs" to="96nh:1yt2T3T4FOh" resolve="Varargs" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="1yt2T3T4TBh" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="1yt2T3T4TBi" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
