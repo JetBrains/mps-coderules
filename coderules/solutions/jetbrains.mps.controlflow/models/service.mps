@@ -345,7 +345,7 @@
       </node>
       <node concept="2YIFZM" id="2j1FRbx5qZx" role="33vP2m">
         <ref role="1Pybhc" to="1yqb:2daneBOWXQd" resolve="Effect" />
-        <ref role="37wK5l" to="1yqb:2j1FRbwXsxX" resolve="key" />
+        <ref role="37wK5l" to="1yqb:2j1FRbwXsxX" resolve="valueKey" />
         <node concept="Xl_RD" id="2j1FRbx5run" role="37wK5m">
           <property role="Xl_RC" value="report items" />
         </node>
