@@ -16,7 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.MetaLogical
@@ -332,7 +331,7 @@ internal class ReteRuleMatcherImpl(val rule: Rule) : RuleMatcher {
                 val posInHead = it.next()
                 val matcher = createOccurrenceMatcher(emptySubst())
                 if (matcher.matches(head[posInHead], occ)) {
-                    alphaNodes.add(AlphaNode(occ, posInHead, matcher.substitution()))
+                    alphaNodes.add(AlphaNode(occ, posInHead, matcher.subst()))
                 }
 
             }

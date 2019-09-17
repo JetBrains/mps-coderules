@@ -73,6 +73,8 @@ class Occurrence (controller: Controller,
 
     var stored = false
 
+    val identity = System.identityHashCode(this)
+
     init {
         revive(controller)
     }

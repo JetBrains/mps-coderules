@@ -54,6 +54,9 @@ internal class RuleMatchImpl(private val rule: Rule,
     override fun signature(): ArrayList<Id<Occurrence>?> =
         ArrayList((headKept + headReplaced).map { Id(it) })
 
+    override fun signatureArray(): IntArray =
+        (headKept + headReplaced).map { it.identity }.toIntArray()
+
     override fun rule(): Rule = rule
 
    override fun matchHeadKept(): Iterable<ConstraintOccurrence?> = headKept

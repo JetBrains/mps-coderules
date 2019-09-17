@@ -31,6 +31,8 @@ interface RuleMatchEx : RuleMatch {
      */
     fun signature(): ArrayList<Id<Occurrence>?>
 
+    fun signatureArray(): IntArray
+
     // TODO better be an inline extension fun
     fun forEachReplaced(action: (Occurrence) -> Unit)
 }

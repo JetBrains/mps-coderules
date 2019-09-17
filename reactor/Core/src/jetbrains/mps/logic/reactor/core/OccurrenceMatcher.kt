@@ -30,7 +30,7 @@ import jetbrains.mps.logic.reactor.program.Constraint
  */
 interface OccurrenceMatcher {
 
-    fun substitution(): Subst
+    fun subst(): Subst
 
     fun matches(cst: Constraint, occ: ConstraintOccurrence): Boolean
 

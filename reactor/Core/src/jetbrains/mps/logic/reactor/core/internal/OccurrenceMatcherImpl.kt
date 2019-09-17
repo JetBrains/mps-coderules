@@ -32,7 +32,7 @@ internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : Occurren
 
     private var matchSubst : Subst? = null
 
-    override fun substitution(): Subst = matchSubst ?: (contextSubst ?: emptySubst())
+    override fun subst(): Subst = matchSubst ?: (contextSubst ?: emptySubst())
 
     /**
      * Matches constraint and occurrence.

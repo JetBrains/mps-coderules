@@ -17,17 +17,23 @@
 package jetbrains.mps.logic.reactor.core.internal
 
 import com.github.andrewoma.dexx.collection.Sets
+import gnu.trove.list.TIntList
+import gnu.trove.list.array.TIntArrayList
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.*
-import java.lang.IllegalStateException
 import java.util.*
 import kotlin.collections.ArrayList
-import com.github.andrewoma.dexx.collection.List as PersList
-import com.github.andrewoma.dexx.collection.Map as PersMap
 import com.github.andrewoma.dexx.collection.Set as PersSet
-import com.github.andrewoma.dexx.collection.Vector as PersVector
+
+// Trove stuff
+typealias Signature = TIntList
+
+fun Signature.copy() = TIntArrayList(this)
+
+fun IntArray.toSignature() = TIntArrayList(this)
+
 
 /**
  * @author Fedor Isakov
@@ -43,34 +49,38 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
     fun lookupRule(): Rule = ruleLookup.lookupRuleByTag(tag) ?: throw IllegalStateException("can't lookup rule by tag: '${tag}'")
 
     override fun probe(): RuleMatchingProbe =
-        RuleMatchFront(listOf(MatchNode(emptySubst())),
+        RuleMatchFront(emptyList(),
+                        emptyList(),
+                        Sets.of(IntArray(head.size).toSignature()),
                         Sets.of(),
-                        Sets.of(),
-                        0)
+                        Sets.of())
 
-    inner class RuleMatchFront(private val nodes: List<MatchNode>,
-                               private val seenOccurrences: PersSet<Id<Occurrence>>,
-                               private val consumedSignatures: PersSet<ArrayList<Id<Occurrence>?>>,
-                               private val genId: Int) : RuleMatchingProbe
+    inner class RuleMatchFront(private val trunkNodes: List<MatchNode>,
+                               private val leafNodes: List<MatchNode>,
+                               private val leafSignatures: PersSet<Signature>,
+                               private val seenOccurrences: PersSet<Int>,
+                               private val consumedSignatures: PersSet<Signature>) : RuleMatchingProbe
     {
         override fun rule(): Rule = lookupRule()
 
         override fun matches(): Collection<RuleMatchImpl> =
-            nodes
-                .filter { it is ActiveMatchNode && it.complete && it.genId == genId }
-                .map { (it as ActiveMatchNode).toRuleMatch() }
+            leafNodes
+                .filter { node -> !consumedSignatures.contains(node.signature()) }
+                .map { node -> node.toRuleMatch() }
 
         override fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe =
-            RuleMatchFront(nodes,
+            RuleMatchFront(trunkNodes,
+                           leafNodes,
+                            leafSignatures,
                             seenOccurrences,
-                            consumedSignatures.add(ruleMatch.signature()),
-                            genId)
+                            consumedSignatures.add(ruleMatch.signatureArray().toSignature()))
 
         override fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe =
-            RuleMatchFront(nodes,
+            RuleMatchFront(trunkNodes,
+                            leafNodes,
+                            leafSignatures,
                             seenOccurrences,
-                            consumedSignatures.remove(ruleMatch.signature()),
-                            genId)
+                            consumedSignatures.remove(ruleMatch.signatureArray().toSignature()))
 
         override fun expand(occ: Occurrence): RuleMatchingProbe =
             expand(occ, bitSetOfOnes(head.size))
@@ -80,115 +90,110 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
          * Mask specifies possible slots for the occurrence.
          */
         override fun expand(occ: Occurrence, mask: BitSet): RuleMatchFront {
-            val reactivated = seenOccurrences.contains(Id(occ))
-            val newSeen = if (reactivated) seenOccurrences else seenOccurrences.add(Id(occ))
-            val newNodes = ArrayList<MatchNode>(nodes)
-
-            val allSignatures = newNodes.map { it.signature }.toHashSet()
-            for (n in nodes) {
-                n.expand(occ, genId + 1, n.matchingVacant(mask))
-                    .filter { allSignatures.add(it.signature) || reactivated }  // ensure reactivated have effect
-                    .filter { !(propagation && reactivated && consumedSignatures.contains(it.signature)) } // ...unless propagation (to avoid cycles)
-                    .forEach { newNodes.add(it) }
-            }
-
-            return RuleMatchFront(newNodes, newSeen, consumedSignatures, genId + 1)
-        }
-
-        override fun contract(occ: Occurrence): RuleMatchFront {
-            val newNodes = nodes.mapNotNull { it.unrelatedOrNull(occ) }
-            return RuleMatchFront(newNodes, seenOccurrences, consumedSignatures, genId + 1)
-        }
-
-        override fun forgetConsumed(occ: Occurrence): RuleMatchFront {
-            val newConsumed = Sets.copyOf(consumedSignatures.filter{ !it.contains(Id(occ)) })
-            return RuleMatchFront(nodes, seenOccurrences, newConsumed, genId) // NB: not modifying genId
-        }
-
-        override fun forgetSeen(occ: Occurrence): RuleMatchFront {
-            val newSeen = seenOccurrences.remove(Id(occ))
-            return RuleMatchFront(nodes, newSeen, consumedSignatures, genId) // NB: not modifying genId
-        }
-
-
-    }
-
-    open inner class MatchNode(val subst: Subst, val vacant: BitSet = bitSetOfOnes(head.size)) {
-
-        // a signature is a (partial) set of constraint occurrences that belong to this node
-        open val signature: ArrayList<Id<Occurrence>?> = arrayListOf(* arrayOfNulls(head.size))
-
-        /**
-         * Returns the additional nodes built from this node on adding the occurrence.
-         * If the occurrence is already in the path, return empty sequence.
-         */
-        fun expand(occ: Occurrence, genId: Int, matchingVacant: BitSet): List<ActiveMatchNode> =
-            unrelatedOrNull(occ)?.let { n ->
-                ArrayList<ActiveMatchNode>().also { expanded ->
-                    val it = matchingVacant.allSetBits()
-                    while (it.hasNext()) {
-                        val headIdx = it.next()
-                        createOccurrenceMatcher(subst).run {
-                            if (matches(head[headIdx], occ)) {
-                                expanded.add(ActiveMatchNode(substitution(), n, occ, headIdx, genId))
-                            }
+            val reactivated = seenOccurrences.contains(occ.identity)
+            val newSeen = if (reactivated) seenOccurrences else seenOccurrences.add(occ.identity)
+            val newTrunkNodes = arrayListOf<MatchNode>().apply { addAll(trunkNodes) }
+            val newLeafNodes = arrayListOf<MatchNode>()
+            var newSignatures = leafSignatures
+            val expanded = ArrayList<MatchNode>()
+            for (node in (trunkNodes + BaseMatchNode())) {
+                val effMask = mask.copyApply { and(node.vacant) }
+                if ((node is MatchNode && node.hasOccurrence(occ)) || effMask.isEmpty) continue
+                val it = effMask.allSetBits()
+                while (it.hasNext()) {
+                    val headIdx = it.next()
+                    val subst = if (node is MatchNode) node.subst else emptySubst()
+                    with (createOccurrenceMatcher(subst)) {
+                        if (matches(head[headIdx], occ)) {
+                            expanded.add(MatchNode(subst(), node, occ, headIdx))
                         }
                     }
                 }
-            } ?: emptyList()
+                for(ex in expanded) {
+                    if (ex.leaf) {
+                        // ensure reactivated have effect
+                        val signature = ex.signature()
+                        if (!reactivated && newSignatures.contains(signature)) break
+                        // ...unless propagation (to avoid cycles)
+                        if (reactivated && propagation && consumedSignatures.contains(signature)) break
+                        newLeafNodes.add(ex)
+                        newSignatures = newSignatures.add(signature)
+                    } 
+                    newTrunkNodes.add(ex)
+                }
+                expanded.clear()
+            }
 
+            return RuleMatchFront(newTrunkNodes, newLeafNodes, newSignatures, newSeen, consumedSignatures)
+        }
 
-        /**
-         * Returns this node if it doesn't have the occurrence in its path, null otherwise.
-         */
-        open fun unrelatedOrNull(occ: Occurrence): MatchNode? = this
+        override fun contract(occ: Occurrence): RuleMatchFront {
+            val newTrunkNodes = arrayListOf<MatchNode>()
+            var newSignatures = Sets.of<Signature>()
+            for (node in trunkNodes) {
+                if (!node.hasOccurrence(occ)) {
+                    newTrunkNodes.add(node)
+                    if (node.leaf) {
+                        newSignatures = newSignatures.add(node.signature())
+                    }
+                }
+            }
 
-        fun matchingVacant(mask: BitSet) = mask.copyApply { and(vacant) }
+            return RuleMatchFront(newTrunkNodes, emptyList(), newSignatures, seenOccurrences, consumedSignatures)
+        }
+
+        override fun forgetConsumed(occ: Occurrence): RuleMatchFront {
+            val newConsumed = Sets.copyOf(consumedSignatures.filter{ !it.contains(occ.identity) })
+            return RuleMatchFront(trunkNodes, leafNodes, leafSignatures, seenOccurrences, newConsumed) // NB: not modifying genId
+        }
+
+        override fun forgetSeen(occ: Occurrence): RuleMatchFront {
+            val newSeen = seenOccurrences.remove(occ.identity)
+            return RuleMatchFront(trunkNodes, leafNodes, leafSignatures, newSeen, consumedSignatures) // NB: not modifying genId
+        }
+
+    }
+
+    open inner class BaseMatchNode(val vacant: BitSet = bitSetOfOnes(head.size)) {
 
         /**
          * Folds the path to the root.
          */
-        inline protected fun <T> fold(init: T, action: (T, ActiveMatchNode) -> T): T {
+        inline protected fun <T> fold(init: T, action: (T, MatchNode) -> T): T {
             var rn = this
             var curr = init
-            while (rn is ActiveMatchNode) {
+            while (rn is MatchNode) {
                 curr = action(curr, rn)
                 rn = rn.parent
             }
             return curr
         }
 
-        /**
-         * Folds the path to the root. If an iteration yields null, fold is stopped and null is returned.
-         */
-        inline protected fun <T> foldUntilNull(init: T, action: (T, ActiveMatchNode) -> T?): T? {
-            var rn = this
-            var curr: T? = init
-            while (rn is ActiveMatchNode) {
-                curr = action(curr!!, rn)
-                if (curr == null) return null
-                rn = rn.parent
-            }
-            return curr
-        }
     }
 
-    inner class ActiveMatchNode(subst: Subst,
-                                val parent: MatchNode,
-                                val occurrence: Occurrence,
-                                val headIndex: Int,
-                                val genId: Int) :
-        MatchNode(subst, parent.vacant.clearBit(headIndex)) {
-        val complete = vacant.cardinality() == 0
-
-        override val signature: ArrayList<Id<Occurrence>?> =
-            ArrayList(parent.signature).also { it[headIndex] = Id(occurrence) }
+    inner class MatchNode(val subst: Subst,
+                          val parent: BaseMatchNode,
+                          val occurrence: Occurrence,
+                          val headIndex: Int) : BaseMatchNode(parent.vacant.clearBit(headIndex))
+    {
+        val leaf = vacant.cardinality() == 0
 
         fun constraint(): Constraint = head[headIndex]
 
-        override fun unrelatedOrNull(occ: Occurrence): ActiveMatchNode? =
-            foldUntilNull(this) { acc, rn -> if (rn.occurrence === occ) null else acc }
+        // a signature is a (partial) set of constraint occurrences that belong to this node
+        fun signature(): Signature =
+            fold(IntArray(head.size).toSignature()) { s, n ->
+                s.apply { set(n.headIndex, n.occurrence.identity) } }
 
+        fun hasOccurrence(occ: Occurrence): Boolean =
+            fold(false) { flag, n -> flag || n.occurrence === occ } // referential equality !
+
+        fun matches() : Subst? =
+            fold<OccurrenceMatcher?>(createOccurrenceMatcher(emptySubst())) { matcher, n ->
+                matcher?.let {
+                    if (it.matches(n.constraint(), n.occurrence)) it else null
+                }
+            }?.subst()
 
         fun toRuleMatch(): RuleMatchImpl {
             val matched: Array<Occurrence> =
