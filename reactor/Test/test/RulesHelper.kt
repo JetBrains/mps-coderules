@@ -3,6 +3,8 @@ import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
+import jetbrains.mps.logic.reactor.logical.LogicalContext
+import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.*
 import program.MockConstraint
 import solver.TestEqPredicate
@@ -122,7 +124,15 @@ fun Builder.insertRulesWhen(at: (Rule) -> Boolean, vararg ruleBuilders: () -> Ru
     updateBuilder(this, arrayOf(insertRulesInHandlerWhen(at, "test", rulesLists.first(), * ruleBuilders)))
 
 fun rule(tag: String, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
-    val rb = RuleBuilder(tag)
+    val rb = RuleBuilder(tag, emptyList())
+    for (cmp in component) {
+        rb.cmp()
+    }
+    rb.toRule()
+}
+
+fun rule(tag: String, segmentPath: List<Any>, vararg component: RuleBuilder.() -> Unit): () -> Rule = {
+    val rb = RuleBuilder(tag, segmentPath)
     for (cmp in component) {
         rb.cmp()
     }
@@ -163,11 +173,19 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 }
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
-    MockConstraint(ConstraintSymbol.symbol(id, args.size)).occurrence(MockController(), listOf(* args))
+    MockConstraint(ConstraintSymbol.symbol(id, args.size))
+        .occurrence(MockController(), listOf(* args), justsOf(), noLogicalContext)
+
+fun taggedOccurrence(ruleUniqueTag: Any, id: String, vararg args: Any): Occurrence =
+    MockConstraint(ConstraintSymbol.symbol(id, args.size))
+        .occurrence(MockController(), listOf(* args), justsOf(), noLogicalContext, ruleUniqueTag)
 
 fun justifiedOccurrence(id: String, justs: Justs, vararg args: Any): Occurrence =
-    MockConstraint(ConstraintSymbol.symbol(id, args.size), true).occurrence(MockController(), listOf(* args), justs)
-fun justifiedOccurrence(id: String, justs: Collection<Int>, vararg args: Any): Occurrence = justifiedOccurrence(id, justsFromCollection(justs), * args)
+    MockConstraint(ConstraintSymbol.symbol(id, args.size), true)
+        .occurrence(MockController(), listOf(* args), justs, noLogicalContext)
+
+fun justifiedOccurrence(id: String, justs: Collection<Int>, vararg args: Any): Occurrence =
+    justifiedOccurrence(id, justsFromCollection(justs), * args)
 
 fun sym0(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 0)
@@ -177,6 +195,10 @@ fun sym1(id: String): ConstraintSymbol =
 
 fun sym2(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 2)
+
+private val noLogicalContext = object : LogicalContext {
+    override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
+}
 
 class MockController : Controller {
     

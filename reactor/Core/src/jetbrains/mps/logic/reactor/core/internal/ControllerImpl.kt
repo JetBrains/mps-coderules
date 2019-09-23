@@ -42,7 +42,9 @@ internal class ControllerImpl (
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {
         // create the internal occurrence
-        val active = occ.constraint().occurrence(this, occ.arguments(), occ.justifications())
+        val active = occ.constraint().occurrence(this, occ.arguments(), occ.justifications(), object: LogicalContext {
+            override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
+        })
 
         val status = state.processActivated(this, active, NORMAL())
         if (status is FAILED) {
@@ -65,7 +67,7 @@ internal class ControllerImpl (
 
     fun activate(constraint: Constraint) : FeedbackStatus {
         // FIXME noLogicalContext
-        val context = Context(NORMAL(), noLogicalContext, trace)
+        val context = Context(NORMAL(), noLogicalContext, null, trace)
 
         // fixme: is it valid to always provide current justifications?
         //  while this method is used only in one place at program kick-off, yes, it's initial justs provided.
@@ -99,7 +101,7 @@ internal class ControllerImpl (
             .then { processGuard(match, it) }
 
     private fun checkMatchPreconditions(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext(), trace)
+        val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
 
         // invoke matched pattern predicates
         for (prd in match.patternPredicates()) {
@@ -111,7 +113,7 @@ internal class ControllerImpl (
     }
 
     private fun processGuard(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext(), trace)
+        val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
 
         // check guard
         for (gprd in match.rule().guard()) {
@@ -122,7 +124,7 @@ internal class ControllerImpl (
     }
 
     override fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext(), trace)
+        val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
 
         val altIt = match.rule().bodyAlternation().iterator()
         while (altIt.hasNext()) {
@@ -206,7 +208,7 @@ internal class ControllerImpl (
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
-            state.processActivated(this, constraint.occurrence(this, args, justsCopy(justs), context.logicalContext), status)
+            state.processActivated(this, constraint.occurrence(this, args, justsCopy(justs), context.logicalContext, context.ruleUniqueTag), status)
         }
     }
 
@@ -249,8 +251,9 @@ internal class ControllerImpl (
 
 
     inner private class Context(inStatus: FeedbackStatus,
-                          val logicalContext: LogicalContext,
-                          val trace: EvaluationTrace = EvaluationTrace.NULL) : InvocationContext
+                                val logicalContext: LogicalContext,
+                                val ruleUniqueTag: Any? = null,
+                                val trace: EvaluationTrace = EvaluationTrace.NULL) : InvocationContext
     {
 
         private var status = inStatus

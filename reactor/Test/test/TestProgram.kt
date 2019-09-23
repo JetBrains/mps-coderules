@@ -68,6 +68,53 @@ class TestProgram {
     }
 
     @Test
+    fun segmented() {
+        programWithRules(
+            rule("main.foo",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    constraint("foo")
+                )),
+            rule("foo.bar", listOf("segment1"),
+                headKept(
+                    constraint("foo")
+                ),
+                body(
+                    constraint("bar")
+                )
+            ),
+            rule("bar.qux", listOf("segment1"),
+                headKept(
+                    constraint("bar")
+                ),
+                body(
+                    constraint("qux")
+                )
+            ),
+            rule("bar.dux", listOf("segment2"),
+                headKept(
+                    constraint("bar")
+                ),
+                body(
+                    constraint("dux")
+                )
+            ),
+            rule("bar.doh",
+                headKept(
+                    constraint("bar")
+                ),
+                body(
+                    constraint("doh")
+                )
+            )
+        ).session("segmented").run {
+            constraintSymbols().map { it.id() }.toSet() shouldBe setOf("foo", "bar", "qux", "doh")
+        }
+    }
+
+    @Test
     fun logicalValue() {
         val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
         programWithRules(

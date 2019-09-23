@@ -38,7 +38,12 @@ public interface ConstraintOccurrence {
 
     LogicalContext logicalContext();
 
+    default Object ruleUniqueTag() {
+        return null;
+    }
+
+    default
     @NotNull
-    default TIntSet justifications() { return new TIntHashSet(); }
+    TIntSet justifications() { return new TIntHashSet(); }
 
 }

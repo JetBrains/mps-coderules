@@ -65,7 +65,8 @@ class Occurrence (controller: Controller,
                   val constraint: Constraint,
                   val logicalContext: LogicalContext,
                   val arguments: List<*>,
-                  val justifications: Justs):
+                  val justifications: Justs,
+                  val ruleUniqueTag: Any? = null):
     ConstraintOccurrence
 {
 
@@ -84,6 +85,8 @@ class Occurrence (controller: Controller,
     override fun arguments(): List<*> = arguments
 
     override fun logicalContext(): LogicalContext = logicalContext
+
+    override fun ruleUniqueTag(): Any? = ruleUniqueTag
 
     override fun justifications(): Justs = justifications
 
@@ -114,18 +117,7 @@ class Occurrence (controller: Controller,
 fun Constraint.occurrence(controller: Controller,
                           arguments: List<*>,
                           justifications: Justs,
-                          logicalContext: LogicalContext): Occurrence =
-    Occurrence(controller, this, logicalContext, arguments, justifications)
+                          logicalContext: LogicalContext,
+                          ruleUniqueTag: Any? = null): Occurrence =
+    Occurrence(controller, this, logicalContext, arguments, justifications, ruleUniqueTag)
 
-fun Constraint.occurrence(controller: Controller,
-                          arguments: List<*>,
-                          justifications: Justs): Occurrence =
-    Occurrence(controller, this, noLogicalContext, arguments, justifications)
-
-fun Constraint.occurrence(controller: Controller,
-                          arguments: List<*>): Occurrence =
-    Occurrence(controller, this, noLogicalContext, arguments, justsOf())
-
-private val noLogicalContext: LogicalContext = object: LogicalContext {
-    override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
-}

@@ -17,6 +17,9 @@
 package jetbrains.mps.logic.reactor.program;
 
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * A constraint rule description.
  *
@@ -25,6 +28,17 @@ package jetbrains.mps.logic.reactor.program;
 public abstract class Rule {
 
     public abstract Rule.Kind kind();
+
+    /**
+     * A list of objects identifying the segment this rule belongs to. An empty segment path signifies the root segment.
+     * An occurrence produced from the root segment can be processed by any rule in the program.
+     * An occurrence produced from segment identified by a path P can be processed by a rule from any segment that
+     * has P as the path prefix.
+     */
+    // TODO Make abstract
+    public List<Object> segmentPath() {
+        return Collections.emptyList();
+    }
 
     /**
      * A tag uniquely identifies the rule.

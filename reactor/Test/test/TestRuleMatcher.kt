@@ -676,6 +676,82 @@ class TestRuleMatcher {
         }
     }
 
+
+    @Test
+    fun testDispatcherWithSegment1() {
+        with(programWithRules(
+            rule("rule0", emptyList(),
+                headReplaced(
+                    constraint("foo")
+                ),
+                body(
+                    constraint("bar")
+                )),
+            rule("rule1", listOf("segment1"),
+                headReplaced(
+                    constraint("fooblin")
+                ),
+                body(
+                    constraint("doh")
+                ))
+        ))
+        {
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+                expand(occurrence("foo"))                           }.apply {
+                matches().count() shouldBe 1                               }.run {
+            }
+
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+                expand(taggedOccurrence("rule1", "foo"))  }.apply {
+                matches().count() shouldBe 1                               }.run {
+            }
+        }
+    }
+
+    @Test
+    fun testExpandWithSegment2() {
+        with(programWithRules(
+            rule("rule1", listOf("segment1"),
+                headReplaced(
+                    constraint("foo")
+                ),
+                body(
+                    constraint("bar")
+                )),
+            rule("rule2", listOf("segment1"),
+                headReplaced(
+                    constraint("fooblin")
+                ),
+                body(
+                    constraint("doh")
+                )),
+            rule("rule3", listOf("segment2"),
+                headReplaced(
+                    constraint("fooblin")
+                ),
+                body(
+                    constraint("doh")
+                ))
+        ))
+        {
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+                expand(occurrence("foo"))                           }.apply {
+                matches().count() shouldBe 1                               }.run {
+            }
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+                expand(taggedOccurrence("rule2", "foo"))    }.apply {
+                matches().count() shouldBe 1                               }.run {
+
+            }
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+                expand(taggedOccurrence("rule3", "foo"))    }.apply {
+                matches().count() shouldBe 0                               }.run {
+            }
+        }
+    }
+
+
+
     @Test
     fun testDispatcherIncremental() {
         with(programWithRules(
