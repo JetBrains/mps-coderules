@@ -20,7 +20,10 @@ import jetbrains.mps.logic.reactor.core.internal.RuleMatcherImpl
 import jetbrains.mps.logic.reactor.program.Rule
 
 /**
- * Abstracts a rule matching algorithm.  
+ * Abstracts a rule matching algorithm.
+ *
+ * A RuleMatcher corresponds to a single rule.
+ * The method [probe] provides a factory of [RuleMatchingProbe], which is the main handler of match operations.  
  *
  * @author Fedor Isakov
  */

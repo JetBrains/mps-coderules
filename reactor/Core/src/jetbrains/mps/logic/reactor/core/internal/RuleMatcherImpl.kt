@@ -36,6 +36,12 @@ fun IntArray.toSignature() = TIntArrayList(this)
 
 
 /**
+ * This implementation of [RuleMatcher] is based on a simple algorithm which enumerates all possible
+ * permutations of occurrences potentially matching the rule's head.
+ *
+ * Optimizations are in place to cut out permutations that don't fit for the reason that the arguments are mismatched
+ * and/or logical variables are not unifiable with the substitutions calculated previously.
+ *
  * @author Fedor Isakov
  */
 internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
