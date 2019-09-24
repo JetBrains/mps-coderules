@@ -77,7 +77,7 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
      * Returns instances of [Rule] that can potentially match the specified [ConstraintOccurrence].
      */
     fun forOccurrence(occ: ConstraintOccurrence): Iterable<Rule> {
-        val ruleBits = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
+        val (ruleBits, slotMasks) = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
         tag2rule[occ.ruleUniqueTag()]?.segmentPath()?.let {
             andRuleIndices.clear()
             for ((path, bits) in segmentPath2ruleBits.entries) {
@@ -95,7 +95,7 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
      * Returns a pair of rule and bit mask with 1's marking matching slots in constraint's head.
      */
     fun forOccurrenceWithMask(occ: ConstraintOccurrence): Iterable<Pair<Rule, BitSet>> {
-        val ruleBits = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
+        val (ruleBits, argSlotMasks) = symbol2index[occ.constraint().symbol()]?.select(occ) ?: return emptyList()
         tag2rule[occ.ruleUniqueTag()]?.segmentPath()?.let {
             andRuleIndices.clear()
             for ((path, bits) in segmentPath2ruleBits.entries) {
@@ -107,7 +107,12 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
         val it = ruleBits.allSetBits()
         while (it.hasNext()) {
             val ruleBit = it.next()
-            slotMasksList[ruleBit][occ]?.let { mask ->  result.add(rulesList[ruleBit] to mask) }
+            slotMasksList[ruleBit][occ]?.let { mask ->
+                val effMask = argSlotMasks[ruleBit]?.copyApply { and(mask) } ?: mask
+                result.add(rulesList[ruleBit] to effMask)
+            }
+
+//            slotMasksList[ruleBit][occ]?.let { mask ->  result.add(rulesList[ruleBit] to mask) }
         }
         return result
     }
@@ -130,7 +135,7 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
                 val head = rule.headKept() + rule.headReplaced()
                 val slotMask = SlotMask()
                 for ((headPos, cst) in head.withIndex()) {
-                    symbol2index.getOrPut(cst.symbol()) { ArgumentRuleIndex(cst.symbol()) }.update(cst, ruleBit)
+                    symbol2index.getOrPut(cst.symbol()) { ArgumentRuleIndex(cst.symbol()) }.update(cst, ruleBit, headPos)
                     slotMask.update(cst, headPos)
                 }
 
@@ -168,9 +173,10 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
      */
     inner class ArgumentRuleIndex(val symbol: ConstraintSymbol) {
 
-        val anySelectors = ArrayList<MutableMap<Any, BitSet>>()
+        // value -> List of Pairs of rule bits and head positions
+        val anySelectors = ArrayList<MutableMap<Any, MutableList<Pair<Int, Int>>>>()
 
-        val termSelectors = ArrayList<TermTrie<Int>>()
+        val termSelectors = ArrayList<TermTrie<Pair<Int, Int>>>()
 
         val wildcardSelectors = ArrayList<BitSet>()
 
@@ -184,7 +190,7 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
             }
         }
 
-        fun update(cst: Constraint, ruleBit: Int) {
+        fun update(cst: Constraint, ruleBit: Int, headPos: Int) {
             if (cst.arguments().isEmpty()) {
                 noArgSelector.set(ruleBit)
                 
@@ -196,9 +202,9 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
                             // all values should be accepted by a meta logical
                             wildcardSelectors[argIdx].set(ruleBit)
                         is Term             ->
-                            termSelectors.set(argIdx, termSelectors[argIdx].put(arg, ruleBit))
+                            termSelectors.set(argIdx, termSelectors[argIdx].put(arg, ruleBit to headPos))
                         is Any              ->
-                            value2indices.getOrPut(arg) { BitSet() }.apply { set(ruleBit) }
+                            value2indices.getOrPut(arg) { arrayListOf() }.add(ruleBit to headPos)
                         else                ->
                             throw NullPointerException()  // never happens
 
@@ -210,13 +216,16 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
         /**
          * Returns bit set where 1's indicate the indices of matching rules.
          */
-        fun select(occ: ConstraintOccurrence): BitSet {
+        fun select(occ: ConstraintOccurrence): Pair<BitSet, Map<Int, BitSet>> {
             if (occ.constraint().symbol() != symbol) throw IllegalArgumentException()
 
             // initially select all rules
             val upToBit = rulesList.size
             ruleBits.set(0, upToBit)
 
+            val slotVotes = HashMap<Pair<Int, Int>, BitSet>()
+            val commonVotes = BitSet()
+            
             if (occ.arguments().isEmpty()) {
                 ruleBits.and(noArgSelector)
                 
@@ -227,6 +236,7 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
                     val wildcardIndices = wildcardSelectors[argIdx]
                     if (arg is Logical<*> && !arg.isBound) {
                         // ALL values must be selected for a free logical
+                        commonVotes.set(argIdx)
                         continue
                     }
 
@@ -236,10 +246,16 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
                     val argVal = if (arg is Logical<*>) arg.findRoot().value() else arg
                     when (argVal) {
                         is Term             ->
-                            termIndices.lookupValues(argVal).forEach { andRuleIndices.set(it) }
+                            termIndices.lookupValues(argVal).forEach { (ruleBit, headPos) ->
+                                andRuleIndices.set(ruleBit)
+                                slotVotes.getOrPut(ruleBit to headPos) { BitSet() }.set(argIdx)
+                            }
                         is Any              ->
                             // ensure only rules with either matching values or wildcard arguments get selected
-                            if (value2indices.containsKey(argVal)) andRuleIndices.or(value2indices[argVal])
+                            value2indices[argVal]?.run { forEach { (ruleBit, headPos) ->
+                                andRuleIndices.set(ruleBit)
+                                slotVotes.getOrPut(ruleBit to headPos) { BitSet() }.set(argIdx)
+                            } }
                     }
                     ruleBits.and(andRuleIndices)
 
@@ -247,7 +263,15 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
                 }
             }
 
-            return ruleBits
+            val slotMasks = HashMap<Int, BitSet>()
+            for ((p, votes) in slotVotes.entries) {
+                val (ruleBit, headPos) = p
+                if (!votes.isEmpty || !commonVotes.isEmpty) {
+                    slotMasks.getOrPut(ruleBit) { BitSet() }.set(headPos)
+                }
+            }
+
+            return ruleBits to slotMasks
         }
     }
 }
