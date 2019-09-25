@@ -2977,6 +2977,36 @@
       </node>
     </node>
     <node concept="2tJIrI" id="32fHqDf8Y5W" role="jymVt" />
+    <node concept="3clFb_" id="1eEe91OXtFC" role="jymVt">
+      <property role="TrG5h" value="setSegmentPath" />
+      <node concept="37vLTG" id="1eEe91OXLTf" role="3clF46">
+        <property role="TrG5h" value="path" />
+        <node concept="3uibUv" id="1eEe91OXQHG" role="1tU5fm">
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+          <node concept="3uibUv" id="1eEe91OXR7u" role="11_B2D">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="1eEe91OXtFE" role="3clF45" />
+      <node concept="3Tm1VV" id="1eEe91OXtFF" role="1B3o_S" />
+      <node concept="3clFbS" id="1eEe91OXtFG" role="3clF47">
+        <node concept="3clFbF" id="1eEe91OXSQF" role="3cqZAp">
+          <node concept="37vLTI" id="1eEe91OXSQH" role="3clFbG">
+            <node concept="2OqwBi" id="1eEe91OXZFw" role="37vLTJ">
+              <node concept="Xjq3P" id="1eEe91OXZG6" role="2Oq$k0" />
+              <node concept="2OwXpG" id="1eEe91OXZFz" role="2OqNvi">
+                <ref role="2Oxat5" node="1eEe91OXSQA" resolve="segmentPath" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="1eEe91OXSQL" role="37vLTx">
+              <ref role="3cqZAo" node="1eEe91OXLTf" resolve="path" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1eEe91OXlkK" role="jymVt" />
     <node concept="3clFb_" id="32fHqDf8Vx1" role="jymVt">
       <property role="TrG5h" value="appendAlternation" />
       <node concept="3uibUv" id="32fHqDf936x" role="3clF45">
@@ -3804,7 +3834,21 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7eGEHDlc$dz" role="3cqZAp" />
+        <node concept="3clFbF" id="1eEe91Pbprx" role="3cqZAp">
+          <node concept="37vLTI" id="1eEe91PbqEJ" role="3clFbG">
+            <node concept="2YIFZM" id="1eEe91Pbr_M" role="37vLTx">
+              <ref role="37wK5l" to="33ny:~Collections.unmodifiableList(java.util.List)" resolve="unmodifiableList" />
+              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+              <node concept="37vLTw" id="1eEe91PbrCQ" role="37wK5m">
+                <ref role="3cqZAo" node="1eEe91OXSQA" resolve="segmentPath" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="1eEe91Pbprv" role="37vLTJ">
+              <ref role="3cqZAo" node="1eEe91OXSQA" resolve="segmentPath" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1eEe91PbrHF" role="3cqZAp" />
         <node concept="3clFbF" id="7eGEHDlc$d$" role="3cqZAp">
           <node concept="2ShNRf" id="7eGEHDlc$d_" role="3clFbG">
             <node concept="1pGfFk" id="7eGEHDlc$dA" role="2ShVmc">
@@ -4273,6 +4317,27 @@
         </node>
       </node>
       <node concept="2tJIrI" id="51V709l4dps" role="jymVt" />
+      <node concept="3clFb_" id="1eEe91OY4FB" role="jymVt">
+        <property role="TrG5h" value="segmentPath" />
+        <node concept="3Tm1VV" id="1eEe91OY4FC" role="1B3o_S" />
+        <node concept="3uibUv" id="1eEe91OY4FE" role="3clF45">
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+          <node concept="3uibUv" id="1eEe91OY4FF" role="11_B2D">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="1eEe91OY4FH" role="3clF47">
+          <node concept="3clFbF" id="1eEe91OYcB2" role="3cqZAp">
+            <node concept="37vLTw" id="1eEe91OYcAZ" role="3clFbG">
+              <ref role="3cqZAo" node="1eEe91OXSQA" resolve="segmentPath" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="1eEe91OY4FI" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="1eEe91OY9KN" role="jymVt" />
       <node concept="3clFb_" id="51V709l4fKh" role="jymVt">
         <property role="TrG5h" value="uniqueTag" />
         <node concept="3Tm1VV" id="51V709l4fKi" role="1B3o_S" />
@@ -4671,6 +4736,20 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="7eGEHDlc$f6" role="1B3o_S" />
+    <node concept="312cEg" id="1eEe91OXSQA" role="jymVt">
+      <property role="TrG5h" value="segmentPath" />
+      <node concept="3Tm6S6" id="1eEe91OXSQB" role="1B3o_S" />
+      <node concept="3uibUv" id="1eEe91OXSQD" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="1eEe91OXSQE" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="2YIFZM" id="1eEe91OY04L" role="33vP2m">
+        <ref role="37wK5l" to="33ny:~Collections.emptyList()" resolve="emptyList" />
+        <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="4sSe4$oM2B2">
     <property role="TrG5h" value="PredicateBuilder" />
