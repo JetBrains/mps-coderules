@@ -555,6 +555,26 @@ class TestController {
     }
 
     @Test
+    fun reactivateOnAssignment() {
+        val (X, Y) = metaLogical<Int>("X", "Y")
+        programWithRules(
+            rule("main",
+                headReplaced(constraint("main")),
+                body(
+                    constraint("foo", X, Y),
+                    statement({ x -> x.set(42) }, X))
+            ),
+            rule("foo.bar",
+                headReplaced(constraint("foo", X, Y)),
+                guard(expression({ x -> x.getNullable() != null }, X)),
+                body(constraint("bar"))
+            )
+        ).controller().evaluate(occurrence("main")).run {
+            constraintSymbols() shouldBe setOf(sym0("bar"))
+        }
+    }
+
+    @Test
     fun propagationHistory() {
         val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
         programWithRules(
@@ -586,19 +606,20 @@ class TestController {
         val X = metaLogical<Int>("X")
         programWithRules(
             rule("main",
-                headReplaced(constraint("main")), body(constraint("foo", X),
-                statement({ x -> eq(x, "doh") }, X)
-            )
+                headReplaced(constraint("main")),
+                body(
+                    constraint("foo", X),
+                    statement({ x -> eq(x, "doh") }, X)
+                )
             ),
             rule("foobar",
                 headKept(constraint("foo", X)),
-                guard(expression({ x -> x.isBound }, X)),
+                guard(expression({ x ->
+                    x.isBound }, X)),
                 body(constraint("foobar"))
             )
         ).controller().evaluate(occurrence("main")).run {
-            assertEquals(setOf(ConstraintSymbol("foo", 1),
-                ConstraintSymbol("foobar", 0)),
-                constraintSymbols())
+            constraintSymbols() shouldBe setOf(sym1("foo"), sym0("foobar"))
             assertEquals(1, occurrences(ConstraintSymbol("foo", 1)).count())
             assertEquals(1, occurrences(ConstraintSymbol("foobar", 0)).count())
         }
