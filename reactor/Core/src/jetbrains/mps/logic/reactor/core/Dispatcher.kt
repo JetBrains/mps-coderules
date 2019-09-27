@@ -16,9 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import com.github.andrewoma.dexx.collection.Maps
-import jetbrains.mps.logic.reactor.core.internal.RuleMatchImpl
-import com.github.andrewoma.dexx.collection.Map as PersMap
+import jetbrains.mps.logic.reactor.util.Profiler
 
 
 typealias DispatchingFrontState = Map<Any, RuleMatchingProbe>
@@ -48,41 +46,33 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
     inner class DispatchingFront {
 
-        private var ruletag2probe: PersMap<Any, RuleMatchingProbe>
+        private val ruletag2probe : HashMap<Any, RuleMatchingProbe>
 
-        private val allMatches = arrayListOf<RuleMatchImpl>()
+        private val allMatches = arrayListOf<RuleMatchEx>()
 
-        // fixme: make it a default constructor also, with empty input?
-        constructor(predState: DispatchingFrontState) {
-            this.ruletag2probe = Maps.of()
+        constructor() {
+            this.ruletag2probe = hashMapOf()
             ruletag2matcher.entries.forEach { e ->
-                val probe = predState[e.key] ?: e.value.probe()
-                this.ruletag2probe = ruletag2probe.put(e.key, probe)
+                ruletag2probe.put(e.key, e.value.probe())
             }
         }
 
-        constructor() {
-            this.ruletag2probe = Maps.of()
+        constructor(predState: DispatchingFrontState) {
+            this.ruletag2probe = hashMapOf()
             ruletag2matcher.entries.forEach { e ->
-                this.ruletag2probe = ruletag2probe.put(e.key, e.value.probe())
+                ruletag2probe[e.key] = predState[e.key] ?: e.value.probe()
             }
+        }
+
+        private constructor(pred: DispatchingFront) {
+            this.ruletag2probe = pred.ruletag2probe
         }
 
         private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>) {
             this.ruletag2probe = pred.ruletag2probe
             matching.forEach { probe ->
-                this.ruletag2probe = ruletag2probe.put(probe.rule().uniqueTag(), probe)
-                allMatches.addAll(probe.matches() as Collection<RuleMatchImpl>)
-            }
-        }
-
-        private constructor(pred: DispatchingFront, consumedMatch: RuleMatchEx, isForgetting: Boolean) {
-            this.ruletag2probe = pred.ruletag2probe
-            pred.ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
-                this.ruletag2probe = ruletag2probe.put(
-                    consumedMatch.rule().uniqueTag(),
-                    if (!isForgetting) it.consume(consumedMatch) else it.forget(consumedMatch)
-                )
+                ruletag2probe[probe.rule().uniqueTag()] = probe
+                allMatches.addAll(probe.matches())
             }
         }
 
@@ -91,63 +81,67 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          */
         fun matches() : Iterable<RuleMatchEx> = allMatches
 
-        fun state() : DispatchingFrontState = ruletag2probe.asMap()
+        fun state() : DispatchingFrontState = ruletag2probe //.asMap()
 
         /**
-         * Returns a new [DispatchingFront] instance that is "expanded" with matches corresponding to the
+         * Returns a [DispatchingFront] instance that is "expanded" with matches corresponding to the
          * specified active constraint occurrence.
          */
-        fun expand(activated: Occurrence) = DispatchingFront(this,
-            ruleIndex.forOccurrenceWithMask(activated).mapNotNull { (rule, mask) ->
-                ruletag2probe[rule.uniqueTag()]?.expand(activated, mask)
-            })
+        fun expand(activated: Occurrence): DispatchingFront = DispatchingFront(this,
+            ruleIndex.forOccurrenceWithMask(activated)
+                .mapNotNull { (rule, mask) -> ruletag2probe[rule.uniqueTag()]?.expand(activated, mask) })
 
         /**
-         * Returns a new [DispatchingFront] instance that is "contracted": all matches corresponding to the
+         * Returns a [DispatchingFront] instance that is "contracted": all matches corresponding to the
          * specified discarded constraint occurrence are eliminated.
          */
-        fun contract(discarded: Occurrence) =
-            forRelatedProbe(discarded) { probe ->
-                probe.contract(discarded)
-            }
+        fun contract(discarded: Occurrence): DispatchingFront = DispatchingFront(this,
+            ruleIndex.forOccurrence(discarded)
+                .mapNotNull { rule -> ruletag2probe[rule.uniqueTag()] }
+                .map { probe -> probe.contract(discarded) })
 
         /**
-         * Returns a new [DispatchingFront] instance which "forgot" that it has seen occurrence.
+         * Returns a [DispatchingFront] instance which "forgot" that it has seen occurrence.
          * Needed for incremental reactivations to discern them from reactivations due to logicals.
          */
-        internal fun forgetSeen(dropped: Occurrence) =
-            forRelatedProbe(dropped) { probe ->
-                probe.forgetSeen(dropped)
-            }
+        internal fun forgetSeen(dropped: Occurrence): DispatchingFront = DispatchingFront(this,
+            ruleIndex.forOccurrence(dropped)
+                .mapNotNull { rule -> ruletag2probe[rule.uniqueTag()] }
+                .map { probe -> probe.forgetSeen(dropped) }
+            )
 
         /**
          * Returns a new [DispatchingFront] instance which contracts state with this occurrence
          * and "forgets" that has seen it or that consumed any matches involving it.
          * Needed for pruning outdated unrelevant state on incremental reactivations.
          */
-        internal fun forget(dropped: Occurrence) =
-            forRelatedProbe(dropped) { probe ->
-                probe.contract(dropped).forgetSeen(dropped).forgetConsumed(dropped)
-            }
-
-        private fun forRelatedProbe(occ: Occurrence, action: (RuleMatchingProbe) -> RuleMatchingProbe) =
-            DispatchingFront(this,
-                ruleIndex.forOccurrence(occ).mapNotNull { rule ->
-                    ruletag2probe[rule.uniqueTag()]
-                }.map { probe ->
-                    action(probe)
-                })
+        internal fun forget(dropped: Occurrence): DispatchingFront = DispatchingFront(this,
+            ruleIndex.forOccurrence(dropped)
+                .mapNotNull { rule -> ruletag2probe[rule.uniqueTag()] }
+                .map { probe -> probe.contract(dropped).forgetSeen(dropped).forgetConsumed(dropped) })
 
         /**
          * Serves to indicate that the specified [RuleMatchEx] has been processed (consumed) and has to
          * be excluded from any further "match" set returned by [matches].
          */
-        internal fun consume(ruleMatch: RuleMatchEx) = DispatchingFront(this, ruleMatch, false)
+        internal fun consume(consumedMatch: RuleMatchEx): DispatchingFront {
+            ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
+                ruletag2probe[consumedMatch.rule().uniqueTag()] =
+                    it.consume(consumedMatch)
+            }
+            return DispatchingFront(this)
+        }
 
         /**
          * Forgets that the specified [RuleMatchEx] has been consumed.
          */
-        internal fun forget(ruleMatch: RuleMatchEx) = DispatchingFront(this, ruleMatch, true)
+        internal fun forget(consumedMatch: RuleMatchEx): DispatchingFront {
+            ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
+                ruletag2probe[consumedMatch.rule().uniqueTag()] =
+                    it.forget(consumedMatch)
+            }
+            return DispatchingFront(this)
+        }
 
     }
 
