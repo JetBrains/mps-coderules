@@ -55,3 +55,5 @@ interface Sets {
         fun <T> copyOf(it: Iterable<T>) = DexxCollectionSets.copyOf<T>(it)
     }
 }
+
+fun <T> PersList<T>.without(t: T) = remove(t)

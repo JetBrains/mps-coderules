@@ -167,7 +167,7 @@ class PersistentTermTrie<T>() : TermTrie<T> {
 
                     } else {
                         // wildcard consumes the rest of the trie
-                        node.allNext().forEach { visitAll(it, visitor) }
+                        node.forEachNext { visitAll(it, visitor) }
                     }
 
                 } else {
@@ -202,7 +202,7 @@ class PersistentTermTrie<T>() : TermTrie<T> {
      */
     private fun visitAll(node: PathNode<T>, visitor: (T) -> Unit) {
         node.values().forEach(visitor)
-        node.allNext().forEach { visitAll(it, visitor) }
+        node.forEachNext { visitAll(it, visitor) }
     }
 
     private fun deref(term: Term): Term {
@@ -247,7 +247,14 @@ class PersistentTermTrie<T>() : TermTrie<T> {
         /**
          * Returns all trie nodes that are direct successors of this one.
          */
-        fun allNext(): Iterable<PathNode<T>> = next.values()
+//        fun allNext(): Iterable<PathNode<T>> = next.values()
+
+        inline fun forEachNext(code: (PathNode<T>) -> Unit) {
+            val it = next.iterator()
+            while (it.hasNext()) {
+                code(it.next().getValue())
+            }
+        }
 
         /**
          * Returns a pair of iterables:
@@ -275,8 +282,8 @@ class PersistentTermTrie<T>() : TermTrie<T> {
             val edge = ArrayList<PathNode<T>>()
             
             val stack = ArrayList<Pair<PathNode<T>, Int>>()
-            for (n in allNext()) {
-                stack.push(n to 0)
+            forEachNext {
+                stack.push(it to 0)
             }
 
             while (stack.isNotEmpty()) {
@@ -287,16 +294,16 @@ class PersistentTermTrie<T>() : TermTrie<T> {
 
                 } else {
                     term.add(n)
-                    n.allNext().forEach { stack.push(it to (newCount - 1)) }
+                    n.forEachNext { stack.push(it to (newCount - 1)) }
                 }
             }
 
             return term to edge
         }
 
-        fun putNext(node: PathNode<T>): PathNode<T> = PathNode(this, next.put(node.symbol, node))
+        fun putNext(node: PathNode<T>): PathNode<T> = PathNode(this, next.assoc(node.symbol, node))
 
-        fun removeNext(node: PathNode<T>): PathNode<T> = PathNode(this, next.remove(node.symbol))
+        fun removeNext(node: PathNode<T>): PathNode<T> = PathNode(this, next.without(node.symbol))
 
         fun addValue(value: T): PathNode<T> = PathNode(this, values.add(value))
 

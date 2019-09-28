@@ -24,6 +24,7 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.util.assoc
 import jetbrains.mps.unification.Term
 
 internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : OccurrenceMatcher {
@@ -70,7 +71,7 @@ internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : Occurren
                 if (matchSubst!!.containsKey(ptn))
                     matchSubst!![ptn].let { matchAny(it, trg) }
                 else
-                    matchSubst!!.put(ptn, trg!!).also { matchSubst = it }.run { true }
+                    matchSubst!!.assoc(ptn, trg!!).also { matchSubst = it }.run { true }
             }
             is Term ->
                 when {

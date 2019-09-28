@@ -16,7 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.core.LogicalObserver
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.util.*
 
@@ -36,6 +36,7 @@ import jetbrains.mps.logic.reactor.util.*
 
 internal class StateFrame constructor() : LogicalObserver
 {
+    // FIXME use Vector instead of ConsList
     private var observers: PersMap<Id<Logical<*>>, PersList<LogicalObserver>> = Maps.of()
 
     constructor(prototype: StateFrame) : this() {
@@ -49,14 +50,14 @@ internal class StateFrame constructor() : LogicalObserver
 
     fun addForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
         val logicalId = Id(logical)
-        this.observers = observers.put(logicalId,
+        this.observers = observers.assoc(logicalId,
             observers[logicalId]?.prepend(observer) ?: Lists.of(observer))
     }
 
     fun removeForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
         val logicalId = Id(logical)
         observers[logicalId]?.let {
-            this.observers = observers.put(logicalId, it.remove(observer))
+            this.observers = observers.assoc(logicalId, it.remove(observer)!!)
         }
     }
 

@@ -17,6 +17,9 @@
 package jetbrains.mps.logic.reactor.util
 
 import com.github.andrewoma.dexx.collection.ConsList
+import com.github.andrewoma.dexx.collection.Map
+import com.github.andrewoma.dexx.collection.Pair
+import com.github.andrewoma.dexx.collection.Set
 
 /**
  * @author Fedor Isakov
@@ -38,3 +41,13 @@ fun <E> ConsList<E>?.remove(e: E): ConsList<E>? {
         if (idx >= 0) removeAt(idx) else this
     }
 }
+
+fun <T> Set<T>.put(t: T) = add(t)
+
+fun <T> Set<T>.without(t: T) = remove(t)
+
+fun <K,V> Map<K, V>.assoc(k: K, v: V) = put(k, v)
+
+fun <K,V> Map<K, V>.without(k: K) = remove(k)
+
+fun <K,V> Pair<K,V>.getValue(): V = component2()

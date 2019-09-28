@@ -68,14 +68,14 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
                            leafNodes,
                             leafSignatures,
                             seenOccurrences,
-                            consumedSignatures.add(ruleMatch.signatureArray().toSignature()))
+                            consumedSignatures.put(ruleMatch.signatureArray().toSignature()))
 
         override fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe =
             RuleMatchFront(trunkNodes,
                             leafNodes,
                             leafSignatures,
                             seenOccurrences,
-                            consumedSignatures.remove(ruleMatch.signatureArray().toSignature()))
+                            consumedSignatures.without(ruleMatch.signatureArray().toSignature()))
 
         override fun expand(occ: Occurrence): RuleMatchingProbe =
             expand(occ, bitSetOfOnes(head.size))
@@ -86,7 +86,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
          */
         override fun expand(occ: Occurrence, mask: BitSet, profiler: Profiler?): RuleMatchFront {
             val reactivated = seenOccurrences.contains(occ.identity)
-            val newSeen = if (reactivated) seenOccurrences else seenOccurrences.add(occ.identity)
+            val newSeen = if (reactivated) seenOccurrences else seenOccurrences.put(occ.identity)
             val newTrunkNodes = ArrayList<MatchNode>(trunkNodes.size).apply { addAll(trunkNodes) }
             val newLeafNodes = arrayListOf<MatchNode>()
             var newSignatures = leafSignatures
@@ -123,7 +123,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
                                 // ...unless propagation (to avoid cycles)
                                 if (reactivated && propagation && consumedSignatures.contains(signature)) break
                                 newLeafNodes.add(ex)
-                                newSignatures = newSignatures.add(signature)
+                                newSignatures = newSignatures.put(signature)
                             }
                             newTrunkNodes.add(ex)
 
@@ -141,7 +141,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
                 if (!node.hasOccurrence(occ)) {
                     newTrunkNodes.add(node)
                     if (node.leaf) {
-                        newSignatures = newSignatures.add(node.signature())
+                        newSignatures = newSignatures.without(node.signature())
                     }
                 }
             }
@@ -155,7 +155,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
         }
 
         override fun forgetSeen(occ: Occurrence): RuleMatchFront {
-            val newSeen = seenOccurrences.remove(occ.identity)
+            val newSeen = seenOccurrences.without(occ.identity)
             return RuleMatchFront(trunkNodes, leafNodes, leafSignatures, newSeen, consumedSignatures) // NB: not modifying genId
         }
 
@@ -186,7 +186,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
         val leaf = vacant.cardinality() == 0
 
         val trail: PersSet<Int> =
-            if (parent is MatchNode) parent.trail.add(occurrence.identity) else Sets.of(occurrence.identity)
+            if (parent is MatchNode) parent.trail.put(occurrence.identity) else Sets.of(occurrence.identity)
 
         fun constraint(): Constraint = head[headIndex]
 
