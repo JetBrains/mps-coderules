@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.core.internal
 import com.github.andrewoma.dexx.collection.Sets
 import gnu.trove.list.TIntList
 import gnu.trove.list.array.TIntArrayList
+import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
@@ -26,13 +27,6 @@ import jetbrains.mps.logic.reactor.util.*
 import java.util.*
 import kotlin.collections.ArrayList
 import com.github.andrewoma.dexx.collection.Set as PersSet
-
-// Trove stuff
-typealias Signature = TIntList
-
-fun Signature.copy() = TIntArrayList(this)
-
-fun IntArray.toSignature() = TIntArrayList(this)
 
 
 /**
@@ -95,40 +89,52 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
          * Expands the front by creating new leaf nodes that match the occurrence.
          * Mask specifies possible slots for the occurrence.
          */
-        override fun expand(occ: Occurrence, mask: BitSet): RuleMatchFront {
+        override fun expand(occ: Occurrence, mask: BitSet, profiler: Profiler?): RuleMatchFront {
             val reactivated = seenOccurrences.contains(occ.identity)
             val newSeen = if (reactivated) seenOccurrences else seenOccurrences.add(occ.identity)
-            val newTrunkNodes = arrayListOf<MatchNode>().apply { addAll(trunkNodes) }
+            val newTrunkNodes = ArrayList<MatchNode>(trunkNodes.size).apply { addAll(trunkNodes) }
             val newLeafNodes = arrayListOf<MatchNode>()
             var newSignatures = leafSignatures
             val expanded = ArrayList<MatchNode>()
-            for (node in (trunkNodes + BaseMatchNode())) {
-                val effMask = mask.copyApply { and(node.vacant) }
-                if ((node is MatchNode && node.hasOccurrence(occ)) || effMask.isEmpty) continue
-                val it = effMask.allSetBits()
-                while (it.hasNext()) {
-                    val headIdx = it.next()
-                    val subst = if (node is MatchNode) node.subst else emptySubst()
-                    with (createOccurrenceMatcher(subst)) {
-                        if (matches(head[headIdx], occ)) {
-                            expanded.add(MatchNode(subst(), node, occ, headIdx))
+            val effMask = mask.clone() as BitSet
+
+            for (node in (trunkNodes.asSequence() + BaseMatchNode())) {
+                effMask.clear()
+                effMask.or(mask)
+                effMask.and(node.vacant)
+//                val effMask = mask.copyApply { and(node.vacant) }
+//                profiler.profile("expand_node1_${occ.constraint.symbol()}") {
+
+                    if (!(effMask.isEmpty || node is MatchNode && node.hasOccurrence(occ))) {
+                                            
+                        expanded.clear()
+
+                        val it = effMask.allSetBits()
+                        while (it.hasNext()) {
+                            val headIdx = it.next()
+                            val subst = if (node is MatchNode) node.subst else emptySubst()
+                            with(createOccurrenceMatcher(subst)) {
+                                if (matches(head[headIdx], occ)) {
+                                    expanded.add(MatchNode(subst(), node, occ, headIdx))
+                                }
+                            }
+                        }
+
+                        for (ex in expanded) {
+                            if (ex.leaf) {
+                                // ensure reactivated have effect
+                                val signature = ex.signature()
+                                if (!reactivated && newSignatures.contains(signature)) break
+                                // ...unless propagation (to avoid cycles)
+                                if (reactivated && propagation && consumedSignatures.contains(signature)) break
+                                newLeafNodes.add(ex)
+                                newSignatures = newSignatures.add(signature)
+                            }
+                            newTrunkNodes.add(ex)
+
                         }
                     }
                 }
-                for(ex in expanded) {
-                    if (ex.leaf) {
-                        // ensure reactivated have effect
-                        val signature = ex.signature()
-                        if (!reactivated && newSignatures.contains(signature)) break
-                        // ...unless propagation (to avoid cycles)
-                        if (reactivated && propagation && consumedSignatures.contains(signature)) break
-                        newLeafNodes.add(ex)
-                        newSignatures = newSignatures.add(signature)
-                    } 
-                    newTrunkNodes.add(ex)
-                }
-                expanded.clear()
-            }
 
             return RuleMatchFront(newTrunkNodes, newLeafNodes, newSignatures, newSeen, consumedSignatures)
         }
@@ -184,6 +190,9 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
     {
         val leaf = vacant.cardinality() == 0
 
+        val trail: PersSet<Int> =
+            if (parent is MatchNode) parent.trail.add(occurrence.identity) else Sets.of(occurrence.identity)
+
         fun constraint(): Constraint = head[headIndex]
 
         // a signature is a (partial) set of constraint occurrences that belong to this node
@@ -191,8 +200,8 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
             fold(IntArray(head.size).toSignature()) { s, n ->
                 s.apply { set(n.headIndex, n.occurrence.identity) } }
 
-        fun hasOccurrence(occ: Occurrence): Boolean =
-            fold(false) { flag, n -> flag || n.occurrence === occ } // referential equality !
+        fun hasOccurrence(occ: Occurrence): Boolean = trail.contains(occ.identity)
+//            fold(false) { flag, n -> flag || n.occurrence === occ } // referential equality !
 
         fun matches() : Subst? =
             fold<OccurrenceMatcher?>(createOccurrenceMatcher(emptySubst())) { matcher, n ->

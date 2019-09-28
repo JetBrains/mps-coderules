@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.evaluation.RuleMatchingProbeState
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.Profiler
 
 import java.util.BitSet
 
@@ -38,10 +39,15 @@ interface RuleMatchingProbe : RuleMatchingProbeState {
 
     fun expand(occ: Occurrence): RuleMatchingProbe
 
-    fun expand(occ: Occurrence, mask: BitSet): RuleMatchingProbe
+    fun expand(occ: Occurrence, mask: BitSet, profiler: Profiler? = null): RuleMatchingProbe
 
     fun contract(occ: Occurrence): RuleMatchingProbe
 
+    /**
+     * The purpose and usages of this method are obscure.
+     * One of the implementations is a NOP.
+     */
+    @Deprecated("hacky stuff")
     fun forgetSeen(occ: Occurrence): RuleMatchingProbe
 
     fun forgetConsumed(occ: Occurrence): RuleMatchingProbe

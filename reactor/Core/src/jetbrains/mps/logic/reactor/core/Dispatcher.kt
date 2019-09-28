@@ -16,8 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.util.Profiler
-
 
 typealias DispatchingFrontState = Map<Any, RuleMatchingProbe>
 
@@ -71,7 +69,9 @@ class Dispatcher (val ruleIndex: RuleIndex) {
         private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>) {
             this.ruletag2probe = pred.ruletag2probe
             matching.forEach { probe ->
-                ruletag2probe[probe.rule().uniqueTag()] = probe
+                if (RULE_MATCHER_PROBE_PERSISTENT) {
+                    ruletag2probe[probe.rule().uniqueTag()] = probe
+                }
                 allMatches.addAll(probe.matches())
             }
         }
@@ -126,8 +126,10 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          */
         internal fun consume(consumedMatch: RuleMatchEx): DispatchingFront {
             ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
-                ruletag2probe[consumedMatch.rule().uniqueTag()] =
-                    it.consume(consumedMatch)
+                val probe = it.consume(consumedMatch)
+                if (RULE_MATCHER_PROBE_PERSISTENT) {
+                    ruletag2probe[consumedMatch.rule().uniqueTag()] = probe
+                }
             }
             return DispatchingFront(this)
         }
@@ -137,8 +139,10 @@ class Dispatcher (val ruleIndex: RuleIndex) {
          */
         internal fun forget(consumedMatch: RuleMatchEx): DispatchingFront {
             ruletag2probe[consumedMatch.rule().uniqueTag()]?.let {
-                ruletag2probe[consumedMatch.rule().uniqueTag()] =
-                    it.forget(consumedMatch)
+                val probe = it.forget(consumedMatch)
+                if (RULE_MATCHER_PROBE_PERSISTENT) {
+                    ruletag2probe[consumedMatch.rule().uniqueTag()] = probe
+                }
             }
             return DispatchingFront(this)
         }

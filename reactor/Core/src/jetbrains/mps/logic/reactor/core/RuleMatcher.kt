@@ -16,6 +16,9 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import gnu.trove.list.TIntList
+import gnu.trove.list.array.TIntArrayList
+import jetbrains.mps.logic.reactor.core.internal.ReteRuleMatcherImpl
 import jetbrains.mps.logic.reactor.core.internal.RuleMatcherImpl
 import jetbrains.mps.logic.reactor.program.Rule
 
@@ -33,5 +36,14 @@ interface RuleMatcher {
 
 }
 
-fun createRuleMatcher(lookup: RuleLookup, tag: Any): RuleMatcher = RuleMatcherImpl(lookup, tag)
+fun createRuleMatcher(lookup: RuleLookup, tag: Any): RuleMatcher = ReteRuleMatcherImpl(lookup, tag)
+
+val RULE_MATCHER_PROBE_PERSISTENT = false
+
+// Trove stuff
+typealias Signature = TIntList
+
+fun Signature.copy() = TIntArrayList(this)
+
+fun IntArray.toSignature() = TIntArrayList(this)
 
