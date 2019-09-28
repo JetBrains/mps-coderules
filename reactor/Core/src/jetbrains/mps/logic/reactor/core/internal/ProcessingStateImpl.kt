@@ -229,7 +229,12 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
                 trace.reactivate(active)
             }
 
-            this.dispatchingFront = dispatchingFront.expand(active)
+
+            profiler.profile("dispatch_${active.constraint().symbol()}") {
+
+                this.dispatchingFront = dispatchingFront.expand(active)
+
+            }
 
             val matches = dispatchingFront.matches().toList()
             val newCurrentMatches =
@@ -264,21 +269,41 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         if (operational) action(this) else this
 
     private fun processMatch(controller: Controller, match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
-        controller.offerMatch(match, inStatus)
-            .let  { when (it) {
-                is FeedbackStatus.ABORTED -> {  // guard is not satisfied
-                    trace.reject(match)
-                    return it.recover()         // return from the enclosing method
+        profiler.profile<FeedbackStatus>("processMatch") {
 
-                } is FeedbackStatus.FAILED -> { // guard failed
-                    return it.recover()         // return from the enclosing method
+            controller.offerMatch(match, inStatus)
+                .let {
+                    when (it) {
+                        is FeedbackStatus.ABORTED -> {  // guard is not satisfied
+                            trace.reject(match)
+                            return it.recover()         // return from the enclosing method
 
-                } else -> it
-            } }
-            .also { trace.trigger(match) }
-            .also { accept(controller, match) }
-            .then { controller.processBody(match, it) }
-            .also { trace.finish(match) }
+                        }
+                        is FeedbackStatus.FAILED -> { // guard failed
+                            return it.recover()         // return from the enclosing method
+
+                        }
+                        else -> it
+                    }
+                }
+                .also { trace.trigger(match) }
+                .also {
+                    profiler.profile("accept") {
+
+                        accept(controller, match)
+
+                    }
+                }
+                .then {
+                    profiler.profile<FeedbackStatus>("processBody") {
+
+                        controller.processBody(match, it)
+
+                    }
+                }
+                .also { trace.finish(match) }
+
+        }
 
 
     private fun accept(controller: Controller, match: RuleMatchEx) {

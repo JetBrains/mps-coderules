@@ -96,9 +96,14 @@ internal class ControllerImpl (
         state.processActivated(this, occ, NORMAL())
 
     override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
-        inStatus.then { checkMatchPreconditions(match, it) }
-            .also { trace.trying(match) }
-            .then { processGuard(match, it) }
+        profiler.profile<FeedbackStatus>("offerMatch") {
+
+                inStatus
+                    .then { checkMatchPreconditions(match, it) }
+                    .also { trace.trying(match) }
+                    .then { processGuard(match, it) }
+
+        }
 
     private fun checkMatchPreconditions(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
         val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
