@@ -16,17 +16,12 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import com.github.andrewoma.dexx.collection.Sets
-import gnu.trove.list.TIntList
-import gnu.trove.list.array.TIntArrayList
-import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.*
 import java.util.*
 import kotlin.collections.ArrayList
-import com.github.andrewoma.dexx.collection.Set as PersSet
 
 
 /**

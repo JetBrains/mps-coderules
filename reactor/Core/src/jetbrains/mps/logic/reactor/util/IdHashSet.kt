@@ -20,6 +20,7 @@ import com.github.andrewoma.dexx.collection.DerivedKeyHashMap
 import com.github.andrewoma.dexx.collection.KeyFunction
 import com.github.andrewoma.dexx.collection.internal.base.AbstractSet
 
+@Deprecated("obsolete, avoid using in new code")
 class IdHashSet<E> : AbstractSet<E> {
 
     companion object {

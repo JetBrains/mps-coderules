@@ -16,11 +16,11 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import com.github.andrewoma.dexx.collection.Maps
-import com.github.andrewoma.dexx.collection.Map as PersMap
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
+import jetbrains.mps.logic.reactor.util.Maps
+import jetbrains.mps.logic.reactor.util.PersMap
 
 /**
  *  Abstracts an algorithm for recursive matching of a [Constraint] and a [ConstraintOccurrence]

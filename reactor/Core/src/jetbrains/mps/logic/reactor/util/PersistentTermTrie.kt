@@ -16,9 +16,6 @@
 
 package jetbrains.mps.logic.reactor.util
 
-import com.github.andrewoma.dexx.collection.ConsList
-import com.github.andrewoma.dexx.collection.Map as PersMap
-import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.unification.Term
 import java.util.*
 import kotlin.collections.ArrayList
@@ -84,7 +81,7 @@ class PersistentTermTrie<T>() : TermTrie<T> {
 
     private fun putValue(matchTerm: Term, value: T): PathNode<T> {
         val seen = IdentityHashMap<Term, Term>()
-        var nodeStack: ConsList<PathNode<T>> = cons(root)
+        var nodeStack: PersList<PathNode<T>> = Lists.of(root)
         val termList = arrayListOf(matchTerm)
 
         while (!termList.isEmpty()) {
@@ -108,7 +105,7 @@ class PersistentTermTrie<T>() : TermTrie<T> {
 
     private fun removeValue(matchTerm: Term, value: T): PathNode<T> {
         val seen = IdentityHashMap<Term, Term>()
-        var nodeStack: ConsList<PathNode<T>> = cons(root)
+        var nodeStack: PersList<PathNode<T>> = Lists.of(root)
         val termStack = arrayListOf(matchTerm)
 
         while (!termStack.isEmpty()) {
@@ -146,7 +143,7 @@ class PersistentTermTrie<T>() : TermTrie<T> {
      */
     private fun visitMatching(pattern: Term, visitor: (T) -> Unit) {
         val seen = IdentityHashMap<Term, Term>()
-        val visitStack = arrayListOf(root to cons(pattern))
+        val visitStack = arrayListOf(root to Lists.of(pattern))
 
         while (!visitStack.isEmpty()) {
             val (node, patternTerms) = visitStack.pop()

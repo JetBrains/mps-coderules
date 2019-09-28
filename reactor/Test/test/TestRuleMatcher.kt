@@ -1,9 +1,9 @@
-import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.createOccurrenceMatcher
 import jetbrains.mps.logic.reactor.core.internal.logical
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol
+import jetbrains.mps.logic.reactor.util.Maps
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
 import jetbrains.mps.unification.test.MockTermsParser.*

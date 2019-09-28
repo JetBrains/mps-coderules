@@ -16,12 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import com.github.andrewoma.dexx.collection.ConsList
-import com.github.andrewoma.dexx.collection.Map as PersMap
-import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.core.Dispatcher.DispatchingFront
-import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.util.*
 
@@ -41,7 +36,7 @@ import jetbrains.mps.logic.reactor.util.*
 
 internal class StateFrame constructor() : LogicalObserver
 {
-    private var observers: PersMap<Id<Logical<*>>, ConsList<LogicalObserver>> = Maps.of()
+    private var observers: PersMap<Id<Logical<*>>, PersList<LogicalObserver>> = Maps.of()
 
     constructor(prototype: StateFrame) : this() {
         this.observers = prototype.observers
@@ -55,7 +50,7 @@ internal class StateFrame constructor() : LogicalObserver
     fun addForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
         val logicalId = Id(logical)
         this.observers = observers.put(logicalId,
-            observers[logicalId]?.prepend(observer) ?: cons(observer))
+            observers[logicalId]?.prepend(observer) ?: Lists.of(observer))
     }
 
     fun removeForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {

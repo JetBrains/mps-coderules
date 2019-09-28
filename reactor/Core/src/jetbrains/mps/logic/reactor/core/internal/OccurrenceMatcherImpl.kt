@@ -16,7 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import com.github.andrewoma.dexx.collection.Maps
 import jetbrains.mps.logic.reactor.core.OccurrenceMatcher
 import jetbrains.mps.logic.reactor.core.Subst
 import jetbrains.mps.logic.reactor.core.emptySubst
@@ -26,7 +25,6 @@ import jetbrains.mps.logic.reactor.logical.LogicalOwner
 import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.unification.Term
-import java.util.*
 
 internal class OccurrenceMatcherImpl(val contextSubst: Subst? = null) : OccurrenceMatcher {
 

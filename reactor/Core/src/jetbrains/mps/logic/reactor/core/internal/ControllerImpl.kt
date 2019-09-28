@@ -27,7 +27,6 @@ import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.program.Predicate
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
-import com.github.andrewoma.dexx.collection.Map as PersMap
 
 internal class ControllerImpl (
     val supervisor: Supervisor,
