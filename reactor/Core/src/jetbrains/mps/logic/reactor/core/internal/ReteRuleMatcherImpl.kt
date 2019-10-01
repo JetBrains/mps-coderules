@@ -16,6 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
+import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.program.Rule
@@ -33,6 +34,13 @@ import kotlin.collections.ArrayList
  *
  * @author Fedor Isakov
  */
+
+typealias Footprint = TIntHashSet
+
+fun footprintOf(): Footprint = TIntHashSet()
+
+fun Signature.toFootprint() = TIntHashSet(this)
+
 internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                                    private val tag: Any) : RuleMatcher
 {
@@ -51,23 +59,20 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
             // rules with empty head are not allowed
             assert(headSize > 0)
         }
-
-        val seenOcc2Idx = IdentityHashMap<ConstraintOccurrence, Int>()
-
-        var nextOccIdx: Int = 0
-
+        
         var lastGeneration = Generation(arrayListOf(Layer(headSize, InitialNode())))
 
         val consumedSignatures = HashSet<Signature>()
 
         abstract inner class ReteNode
         {
+            abstract val signature: Signature
 
             abstract fun subst(): Subst
 
             abstract fun occupiesHeadPosition(headPos: Int) : Boolean
 
-            abstract fun containsOccurrence(occIdx: Int) : Boolean
+            abstract fun containsOccurrence(occ: Occurrence) : Boolean
 
             abstract fun combine(that: AlphaNode, subst: Subst): ReteNode
 
@@ -77,11 +82,13 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
 
         inner class InitialNode() : ReteNode() {
 
+            override val signature: Signature = noSignature()
+
             override fun subst(): Subst = emptySubst()
 
             override fun occupiesHeadPosition(headPos: Int): Boolean = false
 
-            override fun containsOccurrence(occIdx: Int): Boolean = false
+            override fun containsOccurrence(occ: Occurrence): Boolean = false
 
             override fun combine(that: AlphaNode, subst: Subst): ReteNode = that
 
@@ -95,13 +102,13 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                               val posInHead: Int,
                               val subst: Subst) : ReteNode()
         {
-            val occIndex = indexOf(occurrence)
+            override val signature = IntArray(headSize).toSignature().apply { set(posInHead, occurrence.identity) }
 
             override fun subst(): Subst = subst
 
             override fun occupiesHeadPosition(headPos: Int): Boolean = posInHead == headPos
 
-            override fun containsOccurrence(occIdx: Int): Boolean = occIndex == occIdx
+            override fun containsOccurrence(occ: Occurrence): Boolean = occ === occurrence  // reference eq!
 
             override fun combine(that: AlphaNode, subst: Subst): ReteNode = BetaNode(this, that, subst)
             
@@ -116,6 +123,8 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
          */
         inner class BetaNode : ReteNode {
 
+            override val signature: Signature
+
             val left: ReteNode
 
             val right: AlphaNode
@@ -124,14 +133,15 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
 
             val positions: BitSet
 
-            val occIndices: BitSet
-
             constructor(left: AlphaNode, right: AlphaNode, subst: Subst) {
                 this.left = left
                 this.right = right
                 this.subst = subst
                 this.positions = bitSet(left.posInHead).apply { set(right.posInHead) }
-                this.occIndices = bitSet(left.occIndex).apply { set(right.occIndex) }
+                this.signature = IntArray(headSize).toSignature().apply {
+                    set(left.posInHead, left.occurrence.identity)
+                    set(right.posInHead, right.occurrence.identity)
+                }
             }
 
             constructor(left: BetaNode, right: AlphaNode, subst: Subst) {
@@ -139,15 +149,16 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                 this.right = right
                 this.subst = subst
                 this.positions = left.positions.copyApply { set(right.posInHead) }
-                this.occIndices = left.occIndices.copyApply { set(right.occIndex) }
-
+                this.signature = left.signature.copy().apply {
+                    set(right.posInHead, right.occurrence.identity)
+                }
             }
 
             override fun subst(): Subst = subst
 
             override fun occupiesHeadPosition(headPos: Int): Boolean = positions[headPos]
 
-            override fun containsOccurrence(occIdx: Int): Boolean = occIndices[occIdx]
+            override fun containsOccurrence(occ: Occurrence): Boolean = signature.contains(occ.identity)
 
             override fun combine(that: AlphaNode, subst: Subst): ReteNode = BetaNode(this, that, subst)
             
@@ -164,21 +175,26 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
 
             val final = (vacancies == 0)
 
-            private val occIndices: BitSet = (proto?.complete()?.occIndices?.clone() ?: BitSet()) as BitSet
+            private val footprint: Footprint by lazy(LazyThreadSafetyMode.NONE) {
+                (proto?.complete()?.footprint ?: footprintOf())
+            }
 
-            private val nodesList : MutableList<ReteNode> = proto?.complete()?.nodesList ?: ArrayList(4)
+            private val nodesList : MutableList<ReteNode> by lazy(LazyThreadSafetyMode.NONE) {
+                val protoNodes = proto?.complete()?.nodesList ?: ArrayList(4)
+                this.startIdx = protoNodes.size
+                protoNodes
+            }
 
-            private var startIdx : Int = nodesList.size
+            // guaranteed to be initialized to proper value before this var is accessed
+            private var startIdx : Int = -1
 
             /** constructs initial layer containing only [InitialNode] */
             constructor(vacancies: Int, node: ReteNode) : this (vacancies) {
                 nodesList.add(node)
             }
 
-            fun isEmpty(): Boolean = TODO() //nodesList.isEmpty() && (queue?.isEmpty() ?: true)
-
-            fun containsOccurrence(occIdx: Int): Boolean {
-                return occIndices[occIdx]
+            fun containsOccurrence(occ: Occurrence): Boolean {
+                return footprint.contains(occ.identity)
             }
 
             fun ownNodes() : Iterable<ReteNode> {
@@ -186,17 +202,17 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                 return nodesList.subList(startIdx, nodesList.size)
             }
 
-            fun allNodes() : Iterable<ReteNode> {
-                complete()
+            fun allNodes(droppedFootprint: Footprint?) : Iterable<ReteNode> {
+                complete(droppedFootprint)
                 return nodesList
             }
 
-            private fun complete() : Layer {
-                block?.complete {
+            private fun complete(droppedFootprint: Footprint? = null) : Layer {
+                 block?.complete(droppedFootprint) {
                     nodesList.add(it)
-                    when(it) {
-                        is AlphaNode -> occIndices.set(it.occIndex)
-                        is BetaNode -> occIndices.or(it.occIndices)
+                    when (it) {
+                        is AlphaNode -> footprint.addAll(it.signature)
+                        is BetaNode -> footprint.addAll(it.signature)
                     }
                 }
                 this.block = null
@@ -207,68 +223,62 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
         /**
          * An experimental feature that should allow for delayed update of network nodes. 
          */
-        abstract inner class DelayedBlock {
+        abstract inner class DelayedBlock(val occurrence: Occurrence) {
 
             abstract fun proto(): Layer?
 
-            abstract fun complete(sink: (ReteNode) -> Unit)
+            abstract fun complete(droppedFootprint: Footprint?, sink: (ReteNode) -> Unit)
 
-            abstract fun isEmpty(): Boolean
-
-            abstract fun containsOccurrence(occIdx: Int): Boolean
+            abstract fun containsOccurrence(occ: Occurrence): Boolean
 
         }
 
-        inner class IntroBlock (val occ: Occurrence, val headPosMask: BitSet, val onTopOf: Layer): DelayedBlock() {
+        inner class IntroBlock (occurrence: Occurrence, val headPosMask: BitSet, val onTopOf: Layer) :
+            DelayedBlock(occurrence)
+        {
 
-            val occIdx = indexOf(occ)
-            
             override fun proto(): Layer = onTopOf
 
-            override fun complete(sink: (ReteNode) -> Unit) {
-
-
-                    val it = headPosMask.allSetBits()
-                    while (it.hasNext()) {
-                        val headPos = it.next()
-                        for (n in onTopOf.allNodes()) {
-                            if (n.containsOccurrence(occIdx) || n.occupiesHeadPosition(headPos)) continue
+            override fun complete(droppedFootprint: Footprint?, sink: (ReteNode) -> Unit) {
+                if (droppedFootprint?.contains(occurrence.identity) ?: false) return
+                
+                for (n in onTopOf.allNodes(droppedFootprint)) {
+                    if (n.containsOccurrence(occurrence)) continue
+                        val it = headPosMask.allSetBits()
+                        while (it.hasNext()) {
+                            val headPos = it.next()
+                            if (n.occupiesHeadPosition(headPos)) continue
 
                             with(createOccurrenceMatcher(n.subst())) {
-                                if (matches(head[headPos], occ)) {
-                                    val intro = AlphaNode(occ, headPos, subst())
+                                if (matches(head[headPos], occurrence)) {
+                                    val intro = AlphaNode(occurrence, headPos, subst())
                                     sink(n.combine(intro, subst()))
-                                }
                             }
                         }
                     }
-
+                }
             }
 
-            override fun isEmpty(): Boolean = onTopOf.isEmpty()
-
-            override fun containsOccurrence(occIdx: Int): Boolean =
-                occIdx == this.occIdx || onTopOf.containsOccurrence(occIdx)
+            override fun containsOccurrence(occ: Occurrence): Boolean =
+                occurrence === occ || onTopOf.containsOccurrence(occ)           // reference eq!
         }
 
-        inner class DropBlock (val occ: Occurrence, val from: Layer) : DelayedBlock() {
-
-            val occIdx = indexOf(occ)
+        inner class DropBlock (occurrence: Occurrence, val from: Layer) : DelayedBlock(occurrence) {
 
             override fun proto(): Layer? = null
 
-            override fun complete(sink: (ReteNode) -> Unit) {
-                for (n in from.allNodes()) {
-                    if (!n.containsOccurrence(occIdx)) {
+            override fun complete(droppedFootprint: Footprint?, sink: (ReteNode) -> Unit) {
+                if (droppedFootprint?.contains(occurrence.identity) ?: false) return
+                droppedFootprint?.add(occurrence.identity)
+                for (n in from.allNodes(droppedFootprint)) {
+                    if (!n.containsOccurrence(occurrence)) {
                         sink(n)
                     }
                 }
             }
 
-            override fun isEmpty(): Boolean = from.isEmpty()
-
-            override fun containsOccurrence(occIdx: Int): Boolean  =
-                occIdx != this.occIdx && from.containsOccurrence(occIdx)
+            override fun containsOccurrence(occ: Occurrence): Boolean  =
+                occurrence !== occ && from.containsOccurrence(occ)              // reference neq!
         }
 
         /**
@@ -282,9 +292,8 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                 assert(layers.isNotEmpty())
             }
 
-            fun introduce(occ: Occurrence,  headPosMask: BitSet): Generation {
-                val occIdx = indexOf(occ)
-                val reactivated = layers.first().containsOccurrence(occIdx)
+            fun introduce(occurrence: Occurrence, headPosMask: BitSet): Generation {
+                val reactivated =  layers.first().containsOccurrence(occurrence)
 
                 // propagation history
                 if (propagation && reactivated) {
@@ -297,9 +306,10 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                     var lastLayer: Layer? = null
                     for (currLayer in layers) {
                         if (!currLayer.final) {
-                            val newLayer = Layer(currLayer.vacancies - 1, IntroBlock(occ, headPosMask, currLayer), lastLayer)
-
-                            newLayers.add(newLayer)
+                            newLayers.add(Layer(
+                                                currLayer.vacancies - 1,
+                                                IntroBlock(occurrence, headPosMask, currLayer),
+                                                lastLayer))
 
                         } else if (reactivated) {
                             newLayers.add(currLayer)
@@ -313,10 +323,10 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                 }
             }
 
-            fun drop(occ: Occurrence): Generation {
+            fun drop(occurrence: Occurrence): Generation {
                 val newLayers = ArrayList<Layer>(4)
                 for (currLayer in layers) {
-                    val newLayer = Layer(currLayer.vacancies, DropBlock(occ, currLayer))
+                    val newLayer = Layer(currLayer.vacancies, DropBlock(occurrence, currLayer))
                     newLayers.add(newLayer)
                 }
                 return Generation(newLayers)
@@ -328,12 +338,11 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                     val uniqueSignatures = HashSet<Signature>()
                     val matches = ArrayList<RuleMatchImpl>()
                     for (n in topLayer.ownNodes()) {
-                        val occArray = arrayOfNulls<Occurrence>(headSize)
-                        n.collect(occArray)
-                        val signature = occArray.map { it!!.identity }.toIntArray().toSignature()
+                        val signature = n.signature
                         if (consumedSignatures.contains(signature) || uniqueSignatures.contains(signature)) continue
                         uniqueSignatures.add(signature)
 
+                        val occArray = arrayOfNulls<Occurrence>(headSize).apply(n::collect)
                         val occList = occArray.toList() as List<Occurrence>
                         val keptCount = lookupRule().headKept().count()
 
@@ -388,9 +397,6 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
             consumedSignatures.add(ruleMatch.signatureArray().toSignature())
             return this
         }
-
-        fun indexOf(occurrence: ConstraintOccurrence): Int =
-            seenOcc2Idx[occurrence] ?: (nextOccIdx++).also { idx -> seenOcc2Idx[occurrence] = idx }
 
     }
 

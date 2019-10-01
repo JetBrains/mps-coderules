@@ -43,6 +43,8 @@ val RULE_MATCHER_PROBE_PERSISTENT = false
 // Trove stuff
 typealias Signature = TIntList
 
+fun noSignature(): Signature = TIntArrayList(0)
+
 fun Signature.copy() = TIntArrayList(this)
 
 fun IntArray.toSignature() = TIntArrayList(this)
