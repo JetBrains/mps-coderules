@@ -37,14 +37,20 @@ internal class RuleMatchImpl(private val rule: Rule,
 
        val meta2logical = HashMap<MetaLogical<*>, Logical<*>>()
 
-       override fun <V : Any> variable(meta: MetaLogical<V>): Logical<V> =
-           (meta2logical[meta] ?: subst[meta]?.let { value ->
+       override fun <V : Any> variable(meta: MetaLogical<V>): Logical<V> {
+           if (meta2logical.containsKey(meta)) return meta2logical[meta] as Logical<V>
+
+           val logical = subst[meta]?.let { value ->
                when (value) {
                    is Logical<*> -> value
                    is LogicalOwner -> value.logical()
                    else -> LogicalImpl(meta, value as V)
                }
-           } ?: meta.logical().also { logical -> meta2logical[meta] = logical }) as Logical<V>
+           } ?: meta.logical()
+
+           meta2logical[meta] = logical
+           return logical as Logical<V>
+       }
 
    }
 
