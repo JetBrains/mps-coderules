@@ -46,10 +46,11 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
         private val ruletag2probe : HashMap<Any, RuleMatchingProbe>
 
-        private val allMatches = arrayListOf<RuleMatchEx>()
+        private val matching: Iterable<RuleMatchingProbe>?
 
         constructor() {
             this.ruletag2probe = hashMapOf()
+            this.matching = null
             ruletag2matcher.entries.forEach { e ->
                 ruletag2probe.put(e.key, e.value.probe())
             }
@@ -57,29 +58,30 @@ class Dispatcher (val ruleIndex: RuleIndex) {
 
         constructor(predState: DispatchingFrontState) {
             this.ruletag2probe = hashMapOf()
+            this.matching = null
             ruletag2matcher.entries.forEach { e ->
                 ruletag2probe[e.key] = predState[e.key] ?: e.value.probe()
             }
         }
 
-        private constructor(pred: DispatchingFront) {
+        private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>? = null) {
             this.ruletag2probe = pred.ruletag2probe
-        }
-
-        private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>) {
-            this.ruletag2probe = pred.ruletag2probe
-            matching.forEach { probe ->
-                if (RULE_MATCHER_PROBE_PERSISTENT) {
-                    ruletag2probe[probe.rule().uniqueTag()] = probe
-                }
-                allMatches.addAll(probe.matches())
-            }
+            this.matching = matching
         }
 
         /**
          * Returns all matches satisfied by the constraint occurrences received so far.
          */
-        fun matches() : Iterable<RuleMatchEx> = allMatches
+        fun matches() : Iterable<RuleMatchEx> {
+            val allMatches = arrayListOf<RuleMatchEx>()
+            matching?.forEach { probe ->
+                if (RULE_MATCHER_PROBE_PERSISTENT) {
+                    ruletag2probe[probe.rule().uniqueTag()] = probe
+                }
+                allMatches.addAll(probe.matches())
+            }
+            return allMatches
+        } 
 
         fun state() : DispatchingFrontState = ruletag2probe //.asMap()
 
