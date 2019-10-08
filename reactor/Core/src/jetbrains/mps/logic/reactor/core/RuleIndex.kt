@@ -173,14 +173,14 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
      */
     inner class ArgumentRuleIndex(val symbol: ConstraintSymbol) {
 
+        val symbolSelector = BitSet()
+
         // value -> List of Pairs of rule bits and head positions
         val anySelectors = ArrayList<MutableMap<Any, MutableList<Pair<Int, Int>>>>()
 
         val termSelectors = ArrayList<TermTrie<Pair<Int, Int>>>()
 
         val wildcardSelectors = ArrayList<BitSet>()
-
-        val noArgSelector = BitSet()
 
         init {
             for (idx in 1..symbol.arity()) {
@@ -191,24 +191,20 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
         }
 
         fun update(cst: Constraint, ruleBit: Int, headPos: Int) {
-            if (cst.arguments().isEmpty()) {
-                noArgSelector.set(ruleBit)
-                
-            } else {
-                for ((argIdx, arg) in cst.arguments().withIndex()) {
-                    val value2indices = anySelectors[argIdx]
-                    when (arg) {
-                        is MetaLogical<*> ->
-                            // all values should be accepted by a meta logical
-                            wildcardSelectors[argIdx].set(ruleBit)
-                        is Term             ->
-                            termSelectors.set(argIdx, termSelectors[argIdx].put(arg, ruleBit to headPos))
-                        is Any              ->
-                            value2indices.getOrPut(arg) { arrayListOf() }.add(ruleBit to headPos)
-                        else                ->
-                            throw NullPointerException()  // never happens
+            symbolSelector.set(ruleBit)
+            for ((argIdx, arg) in cst.arguments().withIndex()) {
+                val value2indices = anySelectors[argIdx]
+                when (arg) {
+                    is MetaLogical<*> ->
+                        // all values should be accepted by a meta logical
+                        wildcardSelectors[argIdx].set(ruleBit)
+                    is Term             ->
+                        termSelectors.set(argIdx, termSelectors[argIdx].put(arg, ruleBit to headPos))
+                    is Any              ->
+                        value2indices.getOrPut(arg) { arrayListOf() }.add(ruleBit to headPos)
+                    else                ->
+                        throw NullPointerException()  // never happens
 
-                    }
                 }
             }
         }
@@ -219,48 +215,44 @@ class RuleIndex(ruleLists: Iterable<RulesList>) : Iterable<Rule>, RuleLookup {
         fun select(occ: ConstraintOccurrence): Pair<BitSet, Map<Int, BitSet>> {
             if (occ.constraint().symbol() != symbol) throw IllegalArgumentException()
 
-            // initially select all rules
-            val upToBit = rulesList.size
-            ruleBits.set(0, upToBit)
+            // initially select all rules where this constraint is in the head
+            ruleBits.clear()
+            ruleBits.or(symbolSelector)
 
             val slotVotes = HashMap<Pair<Int, Int>, BitSet>()
             val commonVotes = BitSet()
             
-            if (occ.arguments().isEmpty()) {
-                ruleBits.and(noArgSelector)
-                
-            } else {
-                for ((argIdx, arg) in occ.arguments().withIndex()) {
-                    val value2indices = anySelectors[argIdx]
-                    val termIndices = termSelectors[argIdx]
-                    val wildcardIndices = wildcardSelectors[argIdx]
-                    if (arg is Logical<*> && !arg.isBound) {
-                        // ALL values must be selected for a free logical
-                        commonVotes.set(argIdx)
-                        continue
-                    }
-
-                    andRuleIndices.clear(0, upToBit)
-                    andRuleIndices.or(wildcardIndices)
-
-                    val argVal = if (arg is Logical<*>) arg.findRoot().value() else arg
-                    when (argVal) {
-                        is Term             ->
-                            termIndices.lookupValues(argVal).forEach { (ruleBit, headPos) ->
-                                andRuleIndices.set(ruleBit)
-                                slotVotes.getOrPut(ruleBit to headPos) { BitSet() }.set(argIdx)
-                            }
-                        is Any              ->
-                            // ensure only rules with either matching values or wildcard arguments get selected
-                            value2indices[argVal]?.run { forEach { (ruleBit, headPos) ->
-                                andRuleIndices.set(ruleBit)
-                                slotVotes.getOrPut(ruleBit to headPos) { BitSet() }.set(argIdx)
-                            } }
-                    }
-                    ruleBits.and(andRuleIndices)
-
-                    if (ruleBits.isEmpty) break
+            for ((argIdx, arg) in occ.arguments().withIndex()) {
+                val value2indices = anySelectors[argIdx]
+                val termIndices = termSelectors[argIdx]
+                val wildcardIndices = wildcardSelectors[argIdx]
+                if (arg is Logical<*> && !arg.isBound) {
+                    // ALL values must be selected for a free logical
+                    commonVotes.set(argIdx)
+                    continue
                 }
+
+                andRuleIndices.clear()
+                andRuleIndices.or(wildcardIndices)
+
+                val argVal = if (arg is Logical<*>) arg.findRoot().value() else arg
+                when (argVal) {
+                    is Term             ->
+                        termIndices.lookupValues(argVal).forEach { (ruleBit, headPos) ->
+                            andRuleIndices.set(ruleBit)
+                            slotVotes.getOrPut(ruleBit to headPos) { BitSet() }.set(argIdx)
+                        }
+                    is Any              ->
+                        // ensure only rules with either matching values or wildcard arguments get selected
+                        value2indices[argVal]?.run { forEach { (ruleBit, headPos) ->
+                            andRuleIndices.set(ruleBit)
+                            slotVotes.getOrPut(ruleBit to headPos) { BitSet() }.set(argIdx)
+                        } }
+                }
+
+                ruleBits.and(andRuleIndices)
+
+                if (ruleBits.isEmpty) break
             }
 
             val slotMasks = HashMap<Int, BitSet>()
