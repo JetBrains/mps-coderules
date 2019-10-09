@@ -838,7 +838,7 @@
   </registry>
   <node concept="AVZre" id="3Qp4N06bUAA">
     <property role="TrG5h" value="Application" />
-    <property role="3GE5qa" value="expression" />
+    <property role="3GE5qa" value="rule.expression" />
     <ref role="2YbDB9" node="6qJjpCjlmVR" resolve="CheckAll" />
     <node concept="1nLNMY" id="12QmIo_7slt" role="1nK1Vg">
       <property role="TrG5h" value="dotExpression" />
@@ -1029,7 +1029,7 @@
   </node>
   <node concept="AVZre" id="3Qp4N06bUDh">
     <property role="TrG5h" value="Value" />
-    <property role="3GE5qa" value="expression" />
+    <property role="3GE5qa" value="rule.expression" />
     <ref role="2YbDB9" node="6qJjpCjlmVR" resolve="CheckAll" />
     <node concept="1nLNMY" id="pupwRqFjqc" role="1nK1Vg">
       <property role="TrG5h" value="booleanLiteral" />
@@ -2457,6 +2457,7 @@
   </node>
   <node concept="AVZre" id="6qJjpCjlmVR">
     <property role="TrG5h" value="CheckAll" />
+    <property role="3GE5qa" value="rule" />
     <ref role="2YbDB9" node="34$A1Mf51rY" resolve="TypeOf" />
     <node concept="3AqmO8" id="34$A1MfabR$" role="8PkJo">
       <property role="TrG5h" value="checkAll" />
@@ -2739,7 +2740,7 @@
   </node>
   <node concept="AVZre" id="5MHpiylysUh">
     <property role="TrG5h" value="SubclassPaths" />
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <node concept="3AqmO8" id="2rIdnPuJSDR" role="8PkJo">
       <property role="TrG5h" value="subclassPaths" />
       <node concept="1zAUYm" id="2rIdnPuJSDW" role="1zAUyy">
@@ -3983,7 +3984,7 @@
   </node>
   <node concept="AVZre" id="1zN1RIlreLa">
     <property role="TrG5h" value="MethodCall" />
-    <property role="3GE5qa" value="expression" />
+    <property role="3GE5qa" value="rule.expression" />
     <ref role="2YbDB9" node="6qJjpCjlmVR" resolve="CheckAll" />
     <node concept="3AqmO8" id="1yt2T3T19j2" role="8PkJo">
       <property role="TrG5h" value="checkArgs" />
@@ -8556,7 +8557,7 @@
   </node>
   <node concept="312cEu" id="tIwzd2cJHD">
     <property role="TrG5h" value="SubclassingUtil" />
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <node concept="2tJIrI" id="tIwzd2cJHR" role="jymVt" />
     <node concept="2YIFZL" id="5H6hZahiCgu" role="jymVt">
       <property role="DiZV1" value="false" />
@@ -9512,7 +9513,7 @@
   </node>
   <node concept="AVZre" id="6KkyQm4aYIo">
     <property role="TrG5h" value="Containment" />
-    <property role="3GE5qa" value="bounds" />
+    <property role="3GE5qa" value="rule.bounds" />
     <ref role="2YbDB9" node="5310cdpUCzb" resolve="HasBound" />
     <node concept="3AqmO8" id="6KkyQm4aRV3" role="8PkJo">
       <property role="TrG5h" value="containedIn" />
@@ -11658,7 +11659,7 @@
   </node>
   <node concept="AVZre" id="7t5VLKGTNCo">
     <property role="TrG5h" value="Block" />
-    <property role="3GE5qa" value="code" />
+    <property role="3GE5qa" value="rule.code" />
     <ref role="2YbDB9" node="6qJjpCjlmVR" resolve="CheckAll" />
     <node concept="1nLNMY" id="1Py6iKTw_r" role="1nK1Vg">
       <property role="TrG5h" value="methodDeclaration_noReturn" />
@@ -11808,7 +11809,7 @@
   </node>
   <node concept="AVZre" id="4EfgX2EQdbY">
     <property role="TrG5h" value="Statement" />
-    <property role="3GE5qa" value="code" />
+    <property role="3GE5qa" value="rule.code" />
     <ref role="2YbDB9" node="6qJjpCjlmVR" resolve="CheckAll" />
     <node concept="1nLNMY" id="12QmIo_7sll" role="1nK1Vg">
       <property role="TrG5h" value="ifStatementCondition" />
@@ -12061,7 +12062,7 @@
     </node>
   </node>
   <node concept="AVZre" id="8VaLZR_fIk">
-    <property role="3GE5qa" value="expression" />
+    <property role="3GE5qa" value="rule.expression" />
     <property role="TrG5h" value="Operation" />
     <ref role="2YbDB9" node="6qJjpCjlmVR" resolve="CheckAll" />
     <node concept="1nLNMY" id="12QmIo_7sjg" role="1nK1Vg">
@@ -12628,7 +12629,7 @@
     </node>
   </node>
   <node concept="AVZre" id="24Vro6cM_J$">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="Conversion" />
     <ref role="2YbDB9" node="6N2bvv_5VYN" resolve="Resolve" />
     <node concept="3AqmO8" id="3Qp4N06bUPu" role="8PkJo">
@@ -14859,6 +14860,7 @@
   </node>
   <node concept="0oKg$" id="E1U1n2RerB">
     <property role="TrG5h" value="Types" />
+    <property role="3GE5qa" value="macro" />
     <node concept="0oKvU" id="2HYHa0WV2_8" role="0oKgB">
       <property role="TrG5h" value="stringType" />
       <node concept="3eYOCq" id="2HYHa0WV2_9" role="3eYTkm">
@@ -15234,7 +15236,7 @@
     </node>
   </node>
   <node concept="AVZre" id="1_2bK$p16Ic">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="Promote" />
     <node concept="3AqmO8" id="1_2bK$p16Hl" role="8PkJo">
       <property role="TrG5h" value="promote" />
@@ -16829,7 +16831,7 @@
     </node>
   </node>
   <node concept="AVZre" id="7nkyKX6XTqJ">
-    <property role="3GE5qa" value="lub" />
+    <property role="3GE5qa" value="rule.lub" />
     <property role="TrG5h" value="lub" />
     <node concept="3AqmO8" id="2q0gzCFHesp" role="8PkJo">
       <property role="TrG5h" value="lub" />
@@ -17801,7 +17803,7 @@
     </node>
   </node>
   <node concept="AVZre" id="2CsZ2XTe97">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="Coerce" />
     <node concept="3AqmO8" id="2CsZ2XTe9r" role="8PkJo">
       <property role="TrG5h" value="coerce" />
@@ -18422,7 +18424,7 @@
   </node>
   <node concept="AVZre" id="3Qp4N06bUEa">
     <property role="TrG5h" value="ClassifierType" />
-    <property role="3GE5qa" value="type" />
+    <property role="3GE5qa" value="rule.type" />
     <ref role="2YbDB9" node="6qJjpCjlmVR" resolve="CheckAll" />
     <node concept="3AqmO8" id="2rIdnPwk1G5" role="8PkJo">
       <property role="TrG5h" value="createRaw" />
@@ -19160,7 +19162,7 @@
     </node>
   </node>
   <node concept="AVZre" id="ohf6zGDp28">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="PrimitiveSubtyping" />
     <node concept="3AqmO8" id="ohf6zGDp2e" role="8PkJo">
       <property role="TrG5h" value="primSubtype" />
@@ -20965,7 +20967,7 @@
     </node>
   </node>
   <node concept="AVZre" id="4nb5svirH4">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="glb" />
     <node concept="3AqmO8" id="4nb5svirFh" role="8PkJo">
       <property role="TrG5h" value="glb" />
@@ -21334,7 +21336,7 @@
     </node>
   </node>
   <node concept="AVZre" id="6txXQySZxcg">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="Boxing" />
     <node concept="3AqmO8" id="6txXQySZxcH" role="8PkJo">
       <property role="TrG5h" value="box" />
@@ -22447,6 +22449,7 @@
   </node>
   <node concept="AVZre" id="6Qzc0KyJGzD">
     <property role="TrG5h" value="Recover" />
+    <property role="3GE5qa" value="rule" />
     <ref role="2YbDB9" node="34$A1Mf51rY" resolve="TypeOf" />
     <node concept="3AqmO8" id="6Qzc0KyJGJT" role="8PkJo">
       <property role="TrG5h" value="recover" />
@@ -28228,6 +28231,7 @@
   </node>
   <node concept="1M$Gom" id="6hqFpWmMzld">
     <property role="TrG5h" value="Type Parameters" />
+    <property role="3GE5qa" value="macro" />
     <node concept="1$qIfQ" id="6hqFpWmN1Sp" role="1M$zYZ">
       <property role="TrG5h" value="substitution" />
       <node concept="3uibUv" id="6EY0p2waUM8" role="1$qIfz">
@@ -28246,7 +28250,7 @@
     </node>
   </node>
   <node concept="AVZre" id="3wxtToEiJ4m">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="Capture" />
     <ref role="2YbDB9" node="5310cdpUCzb" resolve="HasBound" />
     <node concept="3AqmO8" id="3wxtToEiJ2p" role="8PkJo">
@@ -30033,7 +30037,7 @@
     </node>
   </node>
   <node concept="AVZre" id="5310cdpUCzb">
-    <property role="3GE5qa" value="bounds" />
+    <property role="3GE5qa" value="rule.bounds" />
     <property role="TrG5h" value="HasBound" />
     <node concept="3AqmO8" id="5310cdpUCuT" role="8PkJo">
       <property role="TrG5h" value="hasBound" />
@@ -30838,6 +30842,7 @@
   </node>
   <node concept="AVZre" id="34$A1Mf51rY">
     <property role="TrG5h" value="TypeOf" />
+    <property role="3GE5qa" value="rule" />
     <node concept="3AqmO8" id="34$A1MfhdDv" role="8PkJo">
       <property role="TrG5h" value="typeOf" />
       <node concept="1zAUYm" id="34$A1MfhdDx" role="1zAUyy">
@@ -30850,6 +30855,7 @@
   </node>
   <node concept="92CTh" id="6OXbTD$fto2">
     <property role="TrG5h" value="Typecheck" />
+    <property role="3GE5qa" value="query" />
     <node concept="2bWyPT" id="6OXbTD$ftqj" role="92CTm">
       <property role="TrG5h" value="check" />
       <node concept="3clFbS" id="6OXbTD$ftqk" role="fHCRw">
@@ -30881,6 +30887,7 @@
   </node>
   <node concept="92CTh" id="6OXbTD$ftrf">
     <property role="TrG5h" value="ConvertsTo" />
+    <property role="3GE5qa" value="query" />
     <node concept="2_cOLj" id="2BZXJecOMap" role="2_cLD1">
       <property role="TrG5h" value="from" />
       <node concept="3Tqbb2" id="2BZXJecRAg9" role="2_9F96" />
@@ -30950,6 +30957,7 @@
   </node>
   <node concept="ns1xd" id="JOGAOsVt29">
     <property role="TrG5h" value="Terms" />
+    <property role="3GE5qa" value="term" />
     <node concept="ns1x$" id="JOGAOsVt2a" role="ns1xc">
       <property role="TrG5h" value="classifierType" />
       <node concept="nspSf" id="JOGAOsVt2b" role="ns1xx">
@@ -31243,7 +31251,7 @@
     </node>
   </node>
   <node concept="AVZre" id="35YJGAK4DLL">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="Binary" />
     <node concept="1nLNMY" id="2HYHa0WD7Ie" role="1nK1Vg">
       <property role="TrG5h" value="binstr_string_promote" />
@@ -31953,7 +31961,7 @@
     </node>
   </node>
   <node concept="AVZre" id="2HYHa0WMaIu">
-    <property role="3GE5qa" value="type" />
+    <property role="3GE5qa" value="rule.type" />
     <property role="TrG5h" value="PrimType" />
     <node concept="1nLNMY" id="2HYHa0WMaI$" role="1nK1Vg">
       <property role="TrG5h" value="stripValue_prim" />
@@ -32092,6 +32100,7 @@
   </node>
   <node concept="0oKg$" id="1z5AZi8EDS1">
     <property role="TrG5h" value="ReferenceTypes" />
+    <property role="3GE5qa" value="macro" />
     <node concept="0oKvU" id="7XRk2O3zfxt" role="0oKgB">
       <property role="TrG5h" value="classifierType" />
       <node concept="3tC51N" id="7XRk2O3zfpB" role="3tC56T">
@@ -33693,6 +33702,7 @@
   </node>
   <node concept="312cEu" id="6EY0p2w8VOq">
     <property role="TrG5h" value="TypeVarSubstitution" />
+    <property role="3GE5qa" value="util" />
     <node concept="3clFbW" id="6EY0p2w8VPo" role="jymVt">
       <node concept="3cqZAl" id="6EY0p2w8VPq" role="3clF45" />
       <node concept="3Tm1VV" id="6EY0p2w8VPr" role="1B3o_S" />
@@ -34181,6 +34191,7 @@
   </node>
   <node concept="0oKg$" id="5XJPBczyjne">
     <property role="TrG5h" value="PrimitiveTypes" />
+    <property role="3GE5qa" value="macro" />
     <node concept="0oKvU" id="ohf6zGDpmw" role="0oKgB">
       <property role="TrG5h" value="primType" />
       <node concept="3eYOCq" id="6DOfTm$B_1K" role="3eYTkm">
@@ -34899,7 +34910,7 @@
     </node>
   </node>
   <node concept="AVZre" id="6N2bvv_5VYN">
-    <property role="3GE5qa" value="relation" />
+    <property role="3GE5qa" value="rule.relation" />
     <property role="TrG5h" value="Resolve" />
     <ref role="2YbDB9" node="5310cdpUCzb" resolve="HasBound" />
     <node concept="1nLNMY" id="6N2bvv_e2tu" role="1nK1Vg">
@@ -35204,6 +35215,7 @@
   </node>
   <node concept="92CTh" id="7Bx7XgEggjY">
     <property role="TrG5h" value="CoerceTo" />
+    <property role="3GE5qa" value="query" />
     <node concept="2bWyPT" id="7Bx7XgEgglV" role="92CTm">
       <property role="TrG5h" value="coerceTo" />
       <node concept="3clFbS" id="7Bx7XgEgglW" role="fHCRw">
@@ -35308,7 +35320,7 @@
     </node>
   </node>
   <node concept="AVZre" id="pupwRqIThK">
-    <property role="3GE5qa" value="expression" />
+    <property role="3GE5qa" value="rule.expression" />
     <property role="TrG5h" value="Array" />
     <ref role="2YbDB9" node="6qJjpCjlmVR" resolve="CheckAll" />
     <node concept="1nLNMY" id="3M0B6RCJtkH" role="1nK1Vg">
@@ -37197,7 +37209,7 @@
     </node>
   </node>
   <node concept="AVZre" id="geDLM57Hej">
-    <property role="3GE5qa" value="lub" />
+    <property role="3GE5qa" value="rule.lub" />
     <property role="TrG5h" value="lcp" />
     <node concept="1nLNMY" id="29MBl1AmGcj" role="1nK1Vg">
       <property role="TrG5h" value="lcp" />
@@ -38308,7 +38320,7 @@
     </node>
   </node>
   <node concept="AVZre" id="29MBl1AmIMY">
-    <property role="3GE5qa" value="lub" />
+    <property role="3GE5qa" value="rule.lub" />
     <property role="TrG5h" value="lcta" />
     <node concept="1nLNMY" id="29MBl1AmIYT" role="1nK1Vg">
       <property role="TrG5h" value="lcta" />
