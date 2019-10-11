@@ -326,7 +326,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
@@ -1594,26 +1593,13 @@
       <node concept="3Tm1VV" id="55Q$YFtIVZc" role="1B3o_S" />
       <node concept="3clFbS" id="55Q$YFtIVZd" role="3clF47">
         <node concept="XkiVB" id="55Q$YFtIXBZ" role="3cqZAp">
-          <ref role="37wK5l" to="tj24:NKt6yn84NI" resolve="TypecheckingStep" />
+          <ref role="37wK5l" to="tj24:3KN3A4vHiEF" resolve="TypecheckingStep" />
           <node concept="2OqwBi" id="443LGHBSD_r" role="37wK5m">
             <node concept="37vLTw" id="55Q$YFtIYbT" role="2Oq$k0">
               <ref role="3cqZAo" node="55Q$YFtIX9v" resolve="mpsProject" />
             </node>
             <node concept="liA8E" id="443LGHBSEHm" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="7eK3Dxvn1A$" role="37wK5m">
-            <node concept="2OqwBi" id="7eK3DxvmZAr" role="2Oq$k0">
-              <node concept="37vLTw" id="7eK3DxvmYKZ" role="2Oq$k0">
-                <ref role="3cqZAo" node="6IQb_Rxsk$b" resolve="editorComponent" />
-              </node>
-              <node concept="liA8E" id="7eK3Dxvn1p0" role="2OqNvi">
-                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeForTypechecking()" resolve="getNodeForTypechecking" />
-              </node>
-            </node>
-            <node concept="liA8E" id="7eK3Dxvn1SH" role="2OqNvi">
-              <ref role="37wK5l" to="mhbf:~SNode.getReference()" resolve="getReference" />
             </node>
           </node>
         </node>
@@ -3150,21 +3136,9 @@
                   </node>
                   <node concept="2ShNRf" id="7WKNeR8TcYe" role="3K4GZi">
                     <node concept="1pGfFk" id="7WKNeR8TcYf" role="2ShVmc">
-                      <ref role="37wK5l" to="tj24:NKt6yn84NI" resolve="TypecheckingStep" />
+                      <ref role="37wK5l" to="tj24:3KN3A4vHiEF" resolve="TypecheckingStep" />
                       <node concept="37vLTw" id="7WKNeR8TiOp" role="37wK5m">
                         <ref role="3cqZAo" node="7WKNeR8SQxI" resolve="repository" />
-                      </node>
-                      <node concept="2OqwBi" id="7eK3Dxvn2zS" role="37wK5m">
-                        <node concept="2OqwBi" id="7eK3Dxvn2zT" role="2Oq$k0">
-                          <node concept="2OqwBi" id="7eK3Dxvn2zU" role="2Oq$k0">
-                            <node concept="37vLTw" id="7eK3Dxvn2zV" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6hqFpWnfpcc" resolve="nodes" />
-                            </node>
-                            <node concept="1uHKPH" id="7eK3Dxvn2zW" role="2OqNvi" />
-                          </node>
-                          <node concept="2Rxl7S" id="7eK3Dxvn2zX" role="2OqNvi" />
-                        </node>
-                        <node concept="iZEcu" id="7eK3Dxvn2zY" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
