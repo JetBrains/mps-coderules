@@ -2573,7 +2573,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="2cnGCY$rT84" role="2OqNvi">
-                        <ref role="37wK5l" to="tj24:3IIf9O_tkwF" resolve="calcTypeOf" />
+                        <ref role="37wK5l" to="tj24:3IIf9O_tkwF" resolve="getTypeOf" />
                         <node concept="2OqwBi" id="2cnGCY$rUzz" role="37wK5m">
                           <node concept="37vLTw" id="2cnGCY$rTTO" role="2Oq$k0">
                             <ref role="3cqZAo" node="6hqFpWnfpcc" resolve="nodes" />
