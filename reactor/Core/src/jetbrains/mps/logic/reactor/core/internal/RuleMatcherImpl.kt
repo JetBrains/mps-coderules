@@ -154,7 +154,7 @@ internal class RuleMatcherImpl(private val ruleLookup: RuleLookup,
             return RuleMatchFront(trunkNodes, leafNodes, leafSignatures, seenOccurrences, newConsumed) // NB: not modifying genId
         }
 
-        override fun forgetSeen(occ: Occurrence): RuleMatchFront {
+        override fun forgetExpanded(occ: Occurrence): RuleMatchFront {
             val newSeen = seenOccurrences.without(occ.identity)
             return RuleMatchFront(trunkNodes, leafNodes, leafSignatures, newSeen, consumedSignatures) // NB: not modifying genId
         }

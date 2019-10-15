@@ -197,6 +197,10 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                 return footprint.contains(occ.identity)
             }
 
+            fun forgetContains(occ: Occurrence): Boolean {
+                return footprint.remove(occ.identity)
+            }
+
             fun ownNodes() : Iterable<ReteNode> {
                 complete()
                 return nodesList.subList(startIdx, nodesList.size)
@@ -293,7 +297,7 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
             }
 
             fun introduce(occurrence: Occurrence, headPosMask: BitSet): Generation {
-                val reactivated =  layers.first().containsOccurrence(occurrence)
+                val reactivated = layers.first().containsOccurrence(occurrence)
 
                 // propagation history
                 if (propagation && reactivated) {
@@ -330,6 +334,13 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                     newLayers.add(newLayer)
                 }
                 return Generation(newLayers)
+            }
+
+            /*
+             * Allows to avoid triggering reactivation logic in the next call of "introduce" for this occurrence.
+             */
+            fun forgetIntroduced(occurrence: Occurrence) {
+                layers.first().forgetContains(occurrence)
             }
 
             fun matches(): Collection<RuleMatchImpl> {
@@ -377,7 +388,8 @@ internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
             return this
         }
 
-        override fun forgetSeen(occ: Occurrence): ReteNetwork {
+        override fun forgetExpanded(occ: Occurrence): ReteNetwork {
+            this.lastGeneration.forgetIntroduced(occ)
             return this
         }
 

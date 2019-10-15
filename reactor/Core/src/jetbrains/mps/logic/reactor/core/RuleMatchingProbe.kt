@@ -44,11 +44,12 @@ interface RuleMatchingProbe : RuleMatchingProbeState {
     fun contract(occ: Occurrence): RuleMatchingProbe
 
     /**
-     * The purpose and usages of this method are obscure.
-     * One of the implementations is a NOP.
+     * Turns the Probe's processing-related state linked with
+     * this occurrence from "fully-expanded" to "partly-expanded".
+     * Doesn't modify internal matches-related state.
+     * Instead modifies how the next "expansion" of this occurrence will be processed.
      */
-    @Deprecated("hacky stuff")
-    fun forgetSeen(occ: Occurrence): RuleMatchingProbe
+    fun forgetExpanded(occ: Occurrence): RuleMatchingProbe
 
     fun forgetConsumed(occ: Occurrence): RuleMatchingProbe
 

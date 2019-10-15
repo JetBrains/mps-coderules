@@ -64,7 +64,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         // Forget that occ was seen. Otherwise it will be
         // processed as with reactivation through observers.
         // Incremental reactivation should proceed more like usual activation.
-        this.dispatchingFront = dispatchingFront.forgetSeen(activeOcc)
+        this.dispatchingFront = dispatchingFront.forgetExpanded(activeOcc)
         trace.reactivateIncremental(activeOcc)
         return controller.reactivate(activeOcc)
     }

@@ -103,13 +103,16 @@ class Dispatcher (val ruleIndex: RuleIndex) {
                 .map { probe -> probe.contract(discarded) })
 
         /**
-         * Returns a [DispatchingFront] instance which "forgot" that it has seen occurrence.
-         * Needed for incremental reactivations to discern them from reactivations due to logicals.
+         * Returns a [DispatchingFront] instance which "forgot" that it already expanded the occurrence.
+         * After that the occurrence can be expanded again without triggering observer reactivation logic.
+         * Needed to discern incremental reactivation from observers reactivation.
+         * In other words, the state of [DispatchingFront] connected with this occurrence
+         * transitions from "fully-expanded" to "partly-expanded".
          */
-        internal fun forgetSeen(dropped: Occurrence): DispatchingFront = DispatchingFront(this,
+        internal fun forgetExpanded(dropped: Occurrence): DispatchingFront = DispatchingFront(this,
             ruleIndex.forOccurrence(dropped)
                 .mapNotNull { rule -> ruletag2probe[rule.uniqueTag()] }
-                .map { probe -> probe.forgetSeen(dropped) }
+                .map { probe -> probe.forgetExpanded(dropped) }
             )
 
         /**
@@ -120,7 +123,7 @@ class Dispatcher (val ruleIndex: RuleIndex) {
         internal fun forget(dropped: Occurrence): DispatchingFront = DispatchingFront(this,
             ruleIndex.forOccurrence(dropped)
                 .mapNotNull { rule -> ruletag2probe[rule.uniqueTag()] }
-                .map { probe -> probe.contract(dropped).forgetSeen(dropped).forgetConsumed(dropped) })
+                .map { probe -> probe.contract(dropped).forgetExpanded(dropped).forgetConsumed(dropped) })
 
         /**
          * Serves to indicate that the specified [RuleMatchEx] has been processed (consumed) and has to
