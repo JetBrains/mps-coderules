@@ -211,6 +211,7 @@
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
           <module ref="c9670c16-a215-41fb-8784-04b14329799d(jetbrains.mps.coderules.typechecking.test)" kind="cl" />
           <module ref="c4803b19-6d89-4a3b-bf82-390769514add(jetbrains.mps.lang.coderules)" kind="cl" />
+          <module ref="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" kind="cl" />
           <module ref="bbf5c548-7111-4a53-a117-cdefc664cf34(jetbrains.mps.logic.reactor)" kind="cl" />
         </dependencies>
         <uses>
@@ -638,6 +639,7 @@
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />

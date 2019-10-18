@@ -322,7 +322,6 @@
         </node>
       </node>
       <node concept="1E1JtA" id="69UmpDmJW3w" role="2G$12L">
-        <property role="BnDLt" value="true" />
         <property role="TrG5h" value="typechecking.samples.baseLanguage" />
         <property role="3LESm3" value="3ddddf69-9ff0-426b-9365-51ae7356fb82" />
         <property role="aoJFB" value="eYcmk9QOlj/sources_and_tests" />
@@ -376,6 +375,11 @@
         <node concept="1SiIV0" id="1CCT1$0M$TP" role="3bR37C">
           <node concept="3bR9La" id="1CCT1$0M$TQ" role="1SiIV1">
             <ref role="3bR37D" to="zqd8:7BVjoXzUx6U" resolve="jetbrains.mps.lang.coderules" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5gVsyvESSIZ" role="3bR37C">
+          <node concept="3bR9La" id="5gVsyvESSJ0" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
           </node>
         </node>
       </node>
