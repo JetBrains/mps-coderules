@@ -32,6 +32,7 @@
     <import index="bid0" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.util(jetbrains.mps.logic.reactor/)" />
     <import index="1yqb" ref="r:bd76f794-cfad-45dd-9c1c-e3203d1c5c7a(jetbrains.mps.coderules.service)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
+    <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
     <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" implicit="true" />
   </imports>
   <registry>
@@ -7019,25 +7020,36 @@
     <node concept="Wx3nA" id="7iCybvTsa$U" role="jymVt">
       <property role="TrG5h" value="INSTANCE" />
       <node concept="3Tm6S6" id="7iCybvTsa$W" role="1B3o_S" />
+      <node concept="10Nm6u" id="7iCybvTsbDm" role="33vP2m" />
       <node concept="3uibUv" id="7iCybvTsbcU" role="1tU5fm">
         <ref role="3uigEE" node="7iCybvToiT5" resolve="Config" />
       </node>
-      <node concept="10Nm6u" id="7iCybvTsbDm" role="33vP2m" />
     </node>
     <node concept="2tJIrI" id="7iCybvTs2Au" role="jymVt" />
-    <node concept="2tJIrI" id="2hrTH42P5TD" role="jymVt" />
     <node concept="1Pe0a1" id="2hrTH42P9C8" role="jymVt">
       <node concept="3clFbS" id="2hrTH42P9Ca" role="1Pe0a2">
-        <node concept="3clFbF" id="2hrTH42PbdW" role="3cqZAp">
-          <node concept="1rXfSq" id="2hrTH42PbdV" role="3clFbG">
-            <ref role="37wK5l" node="7iCybvTu7Tn" resolve="init" />
+        <node concept="3clFbF" id="5gVsyvFqjgU" role="3cqZAp">
+          <node concept="37vLTI" id="5gVsyvFqjgV" role="3clFbG">
+            <node concept="2ShNRf" id="5gVsyvFqjgW" role="37vLTx">
+              <node concept="1pGfFk" id="5gVsyvFqjgX" role="2ShVmc">
+                <ref role="37wK5l" node="7iCybvTs5N5" resolve="Config" />
+                <node concept="2ShNRf" id="5gVsyvFqjgY" role="37wK5m">
+                  <node concept="1pGfFk" id="5gVsyvFqjgZ" role="2ShVmc">
+                    <ref role="37wK5l" node="7iCybvTsdu8" resolve="Config.EffectiveOptions" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="5gVsyvFqjh5" role="37vLTJ">
+              <ref role="3cqZAo" node="7iCybvTsa$U" resolve="INSTANCE" />
+            </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="2hrTH42PbM5" role="jymVt" />
     <node concept="2YIFZL" id="7iCybvTu7Tn" role="jymVt">
-      <property role="TrG5h" value="init" />
+      <property role="TrG5h" value="reset" />
       <node concept="3clFbS" id="7iCybvTu6L3" role="3clF47">
         <node concept="3clFbF" id="7iCybvTuaMc" role="3cqZAp">
           <node concept="37vLTI" id="7iCybvTuaMd" role="3clFbG">
@@ -7069,29 +7081,6 @@
       <node concept="P$JXv" id="2hrTH42Peja" role="lGtFl">
         <node concept="TZ5HA" id="2hrTH42Pejb" role="TZ5H$">
           <node concept="1dT_AC" id="2hrTH42Pejc" role="1dT_Ay">
-            <property role="1dT_AB" value="Used from tests." />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7iCybvTu5iG" role="jymVt" />
-    <node concept="2YIFZL" id="7iCybvTue2c" role="jymVt">
-      <property role="TrG5h" value="deInit" />
-      <node concept="3cqZAl" id="7iCybvTue2e" role="3clF45" />
-      <node concept="3clFbS" id="7iCybvTue2g" role="3clF47">
-        <node concept="3clFbF" id="7iCybvTufAJ" role="3cqZAp">
-          <node concept="37vLTI" id="7iCybvTufO_" role="3clFbG">
-            <node concept="10Nm6u" id="7iCybvTufR$" role="37vLTx" />
-            <node concept="37vLTw" id="7iCybvTufAI" role="37vLTJ">
-              <ref role="3cqZAo" node="7iCybvTsa$U" resolve="INSTANCE" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="7iCybvTuEqo" role="1B3o_S" />
-      <node concept="P$JXv" id="2hrTH42PeyR" role="lGtFl">
-        <node concept="TZ5HA" id="2hrTH42PeyS" role="TZ5H$">
-          <node concept="1dT_AC" id="2hrTH42PeyT" role="1dT_Ay">
             <property role="1dT_AB" value="Used from tests." />
           </node>
         </node>
