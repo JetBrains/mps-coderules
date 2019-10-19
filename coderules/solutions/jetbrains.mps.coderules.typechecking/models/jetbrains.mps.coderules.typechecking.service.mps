@@ -290,6 +290,7 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
@@ -7346,6 +7347,20 @@
         </node>
         <node concept="1DcWWT" id="3KN3A4vFs_a" role="3cqZAp">
           <node concept="3clFbS" id="3KN3A4vFs_d" role="2LFqv$">
+            <node concept="3clFbJ" id="6bzOUTYjl_S" role="3cqZAp">
+              <node concept="3clFbS" id="6bzOUTYjl_U" role="3clFbx">
+                <node concept="3N13vt" id="6bzOUTYjn3L" role="3cqZAp" />
+              </node>
+              <node concept="2OqwBi" id="6bzOUTYjm75" role="3clFbw">
+                <node concept="37vLTw" id="6bzOUTYjlWp" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3KN3A4vFs_e" resolve="ac" />
+                </node>
+                <node concept="liA8E" id="6bzOUTYjmxc" role="2OqNvi">
+                  <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmtpy" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="6bzOUTYjn44" role="3cqZAp" />
             <node concept="3cpWs8" id="2j1FRbwUUAN" role="3cqZAp">
               <node concept="3cpWsn" id="2j1FRbwUUAO" role="3cpWs9">
                 <property role="TrG5h" value="configureEvalStep" />
@@ -7563,6 +7578,20 @@
         </node>
         <node concept="1DcWWT" id="3KN3A4vGUgb" role="3cqZAp">
           <node concept="3clFbS" id="3KN3A4vGUge" role="2LFqv$">
+            <node concept="3clFbJ" id="68BWwmZnoN6" role="3cqZAp">
+              <node concept="3clFbS" id="68BWwmZnoN8" role="3clFbx">
+                <node concept="3N13vt" id="68BWwmZnpQm" role="3cqZAp" />
+              </node>
+              <node concept="2OqwBi" id="68BWwmZnpi_" role="3clFbw">
+                <node concept="37vLTw" id="68BWwmZnp7T" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3KN3A4vGUgf" resolve="ac" />
+                </node>
+                <node concept="liA8E" id="68BWwmZnpA$" role="2OqNvi">
+                  <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmtpy" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="68BWwmZnpQD" role="3cqZAp" />
             <node concept="3cpWs8" id="2j1FRbwUXqC" role="3cqZAp">
               <node concept="3cpWsn" id="2j1FRbwUXqD" role="3cpWs9">
                 <property role="TrG5h" value="configureEvalStep" />
