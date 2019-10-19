@@ -311,18 +311,6 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
-    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H$" />
-      </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
-    </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
       <concept id="1213999088275" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" flags="ig" index="2BZ0e9" />
       <concept id="1213999117680" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" flags="nn" index="2BZ7hE" />
@@ -438,71 +426,6 @@
         <ref role="3uigEE" node="7Tj_ODDR37X" resolve="CoderulesTypecheckingProvider" />
       </node>
       <node concept="3Tm6S6" id="3KN3A4w8W3C" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="3KN3A4w8XRE" role="jymVt" />
-    <node concept="2YIFZL" id="3KN3A4w92b9" role="jymVt">
-      <property role="TrG5h" value="setEnabled" />
-      <node concept="37vLTG" id="3KN3A4w92DH" role="3clF46">
-        <property role="TrG5h" value="enabled" />
-        <node concept="10P_77" id="3KN3A4w92R8" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="3KN3A4w8YwC" role="3clF47">
-        <node concept="3cpWs8" id="6AP7iI4IACM" role="3cqZAp">
-          <node concept="3cpWsn" id="6AP7iI4IACN" role="3cpWs9">
-            <property role="TrG5h" value="prevState" />
-            <node concept="10P_77" id="6AP7iI4Ixp1" role="1tU5fm" />
-            <node concept="2OqwBi" id="6AP7iI4IACO" role="33vP2m">
-              <node concept="37vLTw" id="6AP7iI4IACP" role="2Oq$k0">
-                <ref role="3cqZAo" node="3KN3A4w8XqJ" resolve="INSTANCE" />
-              </node>
-              <node concept="2OwXpG" id="6AP7iI4IACQ" role="2OqNvi">
-                <ref role="2Oxat5" node="3KN3A4w94mo" resolve="enabled" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3KN3A4w95G8" role="3cqZAp">
-          <node concept="37vLTI" id="3KN3A4w96JL" role="3clFbG">
-            <node concept="37vLTw" id="3KN3A4w977J" role="37vLTx">
-              <ref role="3cqZAo" node="3KN3A4w92DH" resolve="enabled" />
-            </node>
-            <node concept="2OqwBi" id="6AP7iI4IAOV" role="37vLTJ">
-              <node concept="37vLTw" id="6AP7iI4IAP4" role="2Oq$k0">
-                <ref role="3cqZAo" node="3KN3A4w8XqJ" resolve="INSTANCE" />
-              </node>
-              <node concept="2OwXpG" id="6AP7iI4IAOW" role="2OqNvi">
-                <ref role="2Oxat5" node="3KN3A4w94mo" resolve="enabled" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6AP7iI4IBw0" role="3cqZAp">
-          <node concept="37vLTw" id="6AP7iI4IBvY" role="3clFbG">
-            <ref role="3cqZAo" node="6AP7iI4IACN" resolve="prevState" />
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="6AP7iI4I$Xv" role="3clF45" />
-      <node concept="3Tm1VV" id="3KN3A4w8YwB" role="1B3o_S" />
-      <node concept="P$JXv" id="3KN3A4w936p" role="lGtFl">
-        <node concept="TZ5HA" id="3KN3A4w936q" role="TZ5H$">
-          <node concept="1dT_AC" id="3KN3A4w936r" role="1dT_Ay">
-            <property role="1dT_AB" value="To be used from tests only. " />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="6AP7iI4I_5y" role="TZ5H$">
-          <node concept="1dT_AC" id="6AP7iI4I_5z" role="1dT_Ay">
-            <property role="1dT_AB" value="Returns the previous state." />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3KN3A4w8VuU" role="jymVt" />
-    <node concept="312cEg" id="3KN3A4w94mo" role="jymVt">
-      <property role="TrG5h" value="enabled" />
-      <node concept="3Tm6S6" id="3KN3A4w94mp" role="1B3o_S" />
-      <node concept="10P_77" id="3KN3A4w94U7" role="1tU5fm" />
-      <node concept="3clFbT" id="7WxE3hiwIun" role="33vP2m" />
     </node>
     <node concept="2tJIrI" id="3KN3A4w93ML" role="jymVt" />
     <node concept="3clFbW" id="3LFq2p98DNK" role="jymVt">
@@ -950,17 +873,12 @@
       <node concept="3Tm6S6" id="7WxE3hiw8zC" role="1B3o_S" />
       <node concept="3clFbS" id="7WxE3hiw5zi" role="3clF47">
         <node concept="3clFbF" id="7WxE3hiwl5X" role="3cqZAp">
-          <node concept="22lmx$" id="7WxE3hiwOuI" role="3clFbG">
-            <node concept="37vLTw" id="7WxE3hiwOMu" role="3uHU7B">
-              <ref role="3cqZAo" node="3KN3A4w94mo" resolve="enabled" />
-            </node>
-            <node concept="2YIFZM" id="7WxE3hiwl5Z" role="3uHU7w">
-              <ref role="37wK5l" to="31yc:7iCybvT$T_P" resolve="getValue" />
-              <ref role="1Pybhc" to="31yc:7iCybvToiT5" resolve="Config" />
-              <node concept="10M0yZ" id="7WxE3hiwl60" role="37wK5m">
-                <ref role="3cqZAo" node="7iCybvT$FWp" resolve="TYPECHECKING_ENABLED" />
-                <ref role="1PxDUh" node="7iCybvTy_Mb" resolve="TypecheckingOptions" />
-              </node>
+          <node concept="2YIFZM" id="7WxE3hiwl5Z" role="3clFbG">
+            <ref role="37wK5l" to="31yc:7iCybvT$T_P" resolve="getValue" />
+            <ref role="1Pybhc" to="31yc:7iCybvToiT5" resolve="Config" />
+            <node concept="10M0yZ" id="7WxE3hiwl60" role="37wK5m">
+              <ref role="3cqZAo" node="7iCybvT$FWp" resolve="TYPECHECKING_ENABLED" />
+              <ref role="1PxDUh" node="7iCybvTy_Mb" resolve="TypecheckingOptions" />
             </node>
           </node>
         </node>
