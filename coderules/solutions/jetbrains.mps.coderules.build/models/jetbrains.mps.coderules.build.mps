@@ -2072,6 +2072,11 @@
             <ref role="3bR37D" node="65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
+        <node concept="1SiIV0" id="xqbf82rN7X" role="3bR37C">
+          <node concept="3bR9La" id="xqbf82rN7Y" role="1SiIV1">
+            <ref role="3bR37D" node="NKt6yn9_8p" resolve="jetbrains.mps.coderules" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2sgV4H" id="7Ant4WkHLmd" role="1l3spa">
