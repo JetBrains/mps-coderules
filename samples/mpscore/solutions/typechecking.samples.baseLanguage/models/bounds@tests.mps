@@ -364,6 +364,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="2PEDwPSdjJh" role="1SL9yI">
+      <property role="TrG5h" value="Containment" />
+      <node concept="3cqZAl" id="2PEDwPSdjJi" role="3clF45" />
+      <node concept="3clFbS" id="2PEDwPSdjJj" role="3clF47">
+        <node concept="2Hmddi" id="2PEDwPSdjJk" role="3cqZAp">
+          <node concept="2OqwBi" id="2PEDwPSdjJl" role="2Hmdds">
+            <node concept="2YIFZM" id="2PEDwPSdjJm" role="2Oq$k0">
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <node concept="2OqwBi" id="2PEDwPSdjJn" role="37wK5m">
+                <node concept="2WthIp" id="2PEDwPSdjJo" role="2Oq$k0" />
+                <node concept="2XshWL" id="2PEDwPSdjJp" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="2PEDwPSdjJq" role="2XxRq1">
+                    <node concept="ZC_QK" id="2PEDwPSdkaa" role="2tJFKM">
+                      <ref role="2aWVGs" to="f6t6:2PEDwPSdaaD" resolve="Containment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="2PEDwPSdjJs" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="2PEDwPSdjJt" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="2XOHcx" id="1N_0WA5DT60">
     <property role="2XOHcw" value="${mpscore_home}" />
