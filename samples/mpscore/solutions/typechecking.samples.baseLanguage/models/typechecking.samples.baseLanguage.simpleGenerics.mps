@@ -277,14 +277,25 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="3g$8GQCaQ0m" role="3cqZAp">
-          <node concept="2OqwBi" id="3g$8GQCaQOh" role="3cqZAk">
-            <node concept="37vLTw" id="3g$8GQCaQox" role="2Oq$k0">
-              <ref role="3cqZAo" node="3g$8GQCaQou" resolve="foo" />
+        <node concept="3cpWs8" id="2PEDwPShpfH" role="3cqZAp">
+          <node concept="3cpWsn" id="2PEDwPShpfI" role="3cpWs9">
+            <property role="TrG5h" value="testStr" />
+            <node concept="3uibUv" id="2PEDwPShpfJ" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
-            <node concept="2OwXpG" id="3g$8GQCaR1I" role="2OqNvi">
-              <ref role="2Oxat5" node="3g$8GQCaPRz" resolve="theField" />
+            <node concept="2OqwBi" id="2PEDwPShpxq" role="33vP2m">
+              <node concept="37vLTw" id="2PEDwPShpu7" role="2Oq$k0">
+                <ref role="3cqZAo" node="3g$8GQCaQou" resolve="foo" />
+              </node>
+              <node concept="2OwXpG" id="2PEDwPShpCO" role="2OqNvi">
+                <ref role="2Oxat5" node="3g$8GQCaPRz" resolve="theField" />
+              </node>
             </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="2PEDwPShpPn" role="3cqZAp">
+          <node concept="37vLTw" id="2PEDwPShqNQ" role="3cqZAk">
+            <ref role="3cqZAo" node="2PEDwPShpfI" resolve="testStr" />
           </node>
         </node>
       </node>
