@@ -1264,6 +1264,9 @@
     <property role="EcuMT" value="3063948360254202562" />
     <ref role="1TJDcQ" node="2E5lcNn8iYG" resolve="LogicVariableDeclarationStatement" />
     <node concept="asaX9" id="4nIWweBB$7z" role="lGtFl" />
+    <node concept="PrWs8" id="5TXeSYSAmha" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+    </node>
   </node>
   <node concept="1TIwiD" id="72RDgINeSQJ">
     <property role="EcuMT" value="8122141922656226735" />

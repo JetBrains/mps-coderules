@@ -209,22 +209,6 @@
   <node concept="13h7C7" id="7E86$tKAuhI">
     <property role="3GE5qa" value="logical.variable" />
     <ref role="13h7C2" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
-    <node concept="13i0hz" id="7E86$tKAujJ" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="true" />
-      <property role="TrG5h" value="exportedLogicalVariable" />
-      <node concept="3Tm1VV" id="7E86$tKAujK" role="1B3o_S" />
-      <node concept="A3Dl8" id="3PWU9gi$5Wx" role="3clF45">
-        <node concept="3Tqbb2" id="3PWU9gi$5WL" role="A3Ik2">
-          <ref role="ehGHo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="7E86$tKAujM" role="3clF47">
-        <node concept="3clFbF" id="7E86$tKAuA2" role="3cqZAp">
-          <node concept="10Nm6u" id="7E86$tKAuA1" role="3clFbG" />
-        </node>
-      </node>
-    </node>
     <node concept="13i0hz" id="6YKq674fNYS" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="true" />
