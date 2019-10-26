@@ -268,6 +268,38 @@
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
+    <node concept="1LZb2c" id="5Pqb1qkLozX" role="1SL9yI">
+      <property role="TrG5h" value="Sample_bad3" />
+      <node concept="3cqZAl" id="5Pqb1qkLozY" role="3clF45" />
+      <node concept="3clFbS" id="5Pqb1qkLozZ" role="3clF47">
+        <node concept="2Hmddi" id="5Pqb1qkLo$0" role="3cqZAp">
+          <node concept="2OqwBi" id="5Pqb1qkLo$1" role="2Hmdds">
+            <node concept="2YIFZM" id="5Pqb1qkLo$2" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="5Pqb1qkLo$3" role="37wK5m">
+                <node concept="2WthIp" id="5Pqb1qkLo$4" role="2Oq$k0" />
+                <node concept="2XshWL" id="5Pqb1qkLo$5" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="5Pqb1qkLo$6" role="2XxRq1">
+                    <node concept="ZC_QK" id="5Pqb1qkLoPy" role="2tJFKM">
+                      <ref role="2aWVGs" to="7rut:5Pqb1qkLdNZ" resolve="Sample_bad3" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="5Pqb1qkLo$8" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="5Pqb1qkLo$9" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="5Pqb1qkLo$a" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+    </node>
   </node>
   <node concept="2XOHcx" id="1N_0WA5DT60">
     <property role="2XOHcw" value="${mpscore_home}" />
