@@ -1246,7 +1246,7 @@
       <ref role="30HIoZ" to="5j4j:PltxfHULAb" resolve="ListNodeCons" />
       <node concept="gft3U" id="PltxfI8BYG" role="1lVwrX">
         <node concept="2YIFZM" id="PltxfI8F1U" role="gfFT$">
-          <ref role="37wK5l" to="6exd:PltxfHVDa3" resolve="createListWithTail" />
+          <ref role="37wK5l" to="6exd:PltxfHVDa3" resolve="createConsList" />
           <ref role="1Pybhc" to="6exd:3OPtF03lco4" resolve="ListNode" />
           <node concept="10Nm6u" id="PltxfI8FcP" role="37wK5m">
             <node concept="29HgVG" id="PltxfI8FeB" role="lGtFl">
