@@ -47,11 +47,10 @@ internal class EvaluationSessionImpl private constructor (
     ) : FeedbackStatus {
 
         val ruleIndex = RuleIndex(program.handlers())
-        val dispatcher = Dispatcher(ruleIndex)
 
         if (ispec is IncrementalProgramSpec.NonIncrSpec || token == null) {
             val state = ProcessingStateImpl(
-                dispatcher.front(),
+                Dispatcher(ruleIndex).front(),
                 MatchJournalImpl(ispec),
                 ruleIndex, ispec, trace, profiler
             )
@@ -62,7 +61,7 @@ internal class EvaluationSessionImpl private constructor (
         } else {
             val tkn = token as SessionTokenImpl
             val state = ProcessingStateImpl(
-                dispatcher.frontFromState(tkn.frontState),
+                Dispatcher(ruleIndex, tkn.getFrontState()).front(),
                 MatchJournalImpl(ispec, tkn.journalView),
                 ruleIndex, ispec, trace, profiler
             )

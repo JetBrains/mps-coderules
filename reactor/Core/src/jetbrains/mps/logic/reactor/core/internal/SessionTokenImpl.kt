@@ -27,5 +27,5 @@ data class SessionTokenImpl(
 ) : SessionToken {
     override fun getJournalView(): MatchJournalView = journalView
     override fun getRuleTags(): Iterable<Any> = ruleTags
-    override fun getFrontState(): DispatchingFrontState = frontState
+    fun getFrontState(): DispatchingFrontState = frontState
 }
