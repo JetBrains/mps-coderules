@@ -26,18 +26,13 @@ import jetbrains.mps.logic.reactor.program.Rule
  * Abstracts a rule matching algorithm.
  *
  * A RuleMatcher corresponds to a single rule.
- * The method [newProbe] provides a factory of [RuleMatchingProbe], which is the main handler of match operations.
- * The method [probe] provides access to a last created instance of [RuleMatchingProbe] or creates a first one.
+ * The method [probe] provides a factory of [RuleMatchingProbe], which is the main handler of match operations.  
  *
  * @author Fedor Isakov
  */
 interface RuleMatcher {
 
-    fun newProbe(): RuleMatchingProbe
-
     fun probe(): RuleMatchingProbe
-
-    fun setRuleLookup(ruleLookup: RuleLookup): Unit
 
 }
 

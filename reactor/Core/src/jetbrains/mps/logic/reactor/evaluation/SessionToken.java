@@ -24,4 +24,6 @@ public interface SessionToken {
     MatchJournalView getJournalView();
     @NotNull()
     Iterable<Object> getRuleTags();
+    @NotNull()
+    Map<Object, RuleMatchingProbeState> getFrontState();
 }

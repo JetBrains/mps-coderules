@@ -41,7 +41,7 @@ fun footprintOf(): Footprint = TIntHashSet()
 
 fun Signature.toFootprint() = TIntHashSet(this)
 
-internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
+internal class ReteRuleMatcherImpl(private val ruleLookup: RuleLookup,
                                    private val tag: Any) : RuleMatcher
 {
 
@@ -51,13 +51,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
     fun lookupRule(): Rule = ruleLookup.lookupRuleByTag(tag) ?: throw IllegalStateException("can't lookup rule by tag: '${tag}'")
 
-    override fun setRuleLookup(ruleLookup: RuleLookup) { this.ruleLookup = ruleLookup }
-
-    override fun newProbe(): RuleMatchingProbe = ReteNetwork(head.size).also { probe = it }
-
-    override fun probe(): RuleMatchingProbe = probe ?: newProbe()
-
-    private var probe: RuleMatchingProbe? = null
+    override fun probe(): ReteNetwork = ReteNetwork(head.size)
 
     inner class ReteNetwork(val headSize: Int) : RuleMatchingProbe {
 

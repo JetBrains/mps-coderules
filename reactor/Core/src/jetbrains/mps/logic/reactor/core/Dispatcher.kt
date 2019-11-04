@@ -17,24 +17,21 @@
 package jetbrains.mps.logic.reactor.core
 
 
-typealias DispatchingFrontState = Map<Any, RuleMatcher>
+typealias DispatchingFrontState = Map<Any, RuleMatchingProbe>
 
 /**
  * A front-end interface to [RuleMatcher].
  * 
  * @author Fedor Isakov
  */
-class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = emptyMap()) {
+class Dispatcher (val ruleIndex: RuleIndex) {
 
     private val ruletag2matcher = HashMap<Any, RuleMatcher>()
 
     init {
         ruleIndex.forEach { rule ->
-            val ruletag = rule.uniqueTag()
-            // reset references to stale RuleIndex instances
-            val matcher = prevState[ruletag]?.apply { setRuleLookup(ruleIndex) }
-                    ?: createRuleMatcher(ruleIndex, ruletag)
-            ruletag2matcher.put(ruletag, matcher);
+            val matcher = createRuleMatcher(ruleIndex, rule.uniqueTag())
+            ruletag2matcher.put(rule.uniqueTag(), matcher);
         }
     }
 
@@ -42,6 +39,8 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
      * Create new empty [DispatchingFront] ready to accept constraints.
      */
     fun front() = DispatchingFront()
+
+    fun frontFromState(predState: DispatchingFrontState) = DispatchingFront(predState)
 
     inner class DispatchingFront {
 
@@ -54,6 +53,14 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
             this.matching = null
             ruletag2matcher.entries.forEach { e ->
                 ruletag2probe.put(e.key, e.value.probe())
+            }
+        }
+
+        constructor(predState: DispatchingFrontState) {
+            this.ruletag2probe = hashMapOf()
+            this.matching = null
+            ruletag2matcher.entries.forEach { e ->
+                ruletag2probe[e.key] = predState[e.key] ?: e.value.probe()
             }
         }
 
@@ -76,7 +83,7 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
             return allMatches
         } 
 
-        fun state() : DispatchingFrontState = ruletag2matcher //.asMap()
+        fun state() : DispatchingFrontState = ruletag2probe //.asMap()
 
         /**
          * Returns a [DispatchingFront] instance that is "expanded" with matches corresponding to the
