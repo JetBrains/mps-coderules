@@ -138,6 +138,9 @@
         <child id="1185805056450" name="argument" index="nvjzm" />
         <child id="1205761991995" name="argumentRepresentator" index="2X0Ygz" />
       </concept>
+      <concept id="1179479408386" name="jetbrains.mps.lang.typesystem.structure.JoinType" flags="ng" index="2usRSg">
+        <child id="1179479418730" name="argument" index="2usUpS" />
+      </concept>
       <concept id="1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" flags="nn" index="2Mj0R9">
         <child id="1175517761460" name="condition" index="2MkoU_" />
       </concept>
@@ -190,6 +193,7 @@
         <child id="1803469493727536396" name="concept" index="hTh3Z" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
         <child id="7400021826774799510" name="ref" index="2tJFKM" />
       </concept>
@@ -1445,7 +1449,7 @@
     <property role="3GE5qa" value="rule.code" />
     <node concept="3clFbS" id="36tQV5BDmjO" role="18ibNy">
       <node concept="1ZobV4" id="7lt0LtOVMp1" role="3cqZAp">
-        <property role="3wDh2S" value="false" />
+        <property role="3wDh2S" value="true" />
         <node concept="mw_s8" id="7lt0LtOVMp6" role="1ZfhK$">
           <node concept="1Z2H0r" id="7lt0LtOVMp7" role="mwGJk">
             <node concept="2OqwBi" id="7lt0LtOVMp8" role="1Z2MuG">
@@ -1458,9 +1462,12 @@
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="7lt0LtOVMp3" role="1ZfhKB">
-          <node concept="2c44tf" id="7lt0LtOVMp4" role="mwGJk">
-            <node concept="3Tqbb2" id="7lt0LtOVMp5" role="2c44tc" />
+        <node concept="mw_s8" id="6P0_DTvYfBl" role="1ZfhKB">
+          <node concept="2c44tf" id="6P0_DTvYfBj" role="mwGJk">
+            <node concept="2usRSg" id="6P0_DTvYfCm" role="2c44tc">
+              <node concept="2sp9CU" id="6P0_DTvYfCG" role="2usUpS" />
+              <node concept="3Tqbb2" id="6P0_DTvYfD5" role="2usUpS" />
+            </node>
           </node>
         </node>
       </node>
