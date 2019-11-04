@@ -5943,6 +5943,23 @@
       </node>
       <node concept="3Tm6S6" id="7kTeLbPnEee" role="1B3o_S" />
       <node concept="3clFbS" id="7kTeLbPnDc4" role="3clF47">
+        <node concept="3cpWs8" id="5yr01fEefFM" role="3cqZAp">
+          <node concept="3cpWsn" id="5yr01fEefFN" role="3cpWs9">
+            <property role="TrG5h" value="repository" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="5yr01fEefqV" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+            </node>
+            <node concept="2OqwBi" id="5yr01fEefFO" role="33vP2m">
+              <node concept="37vLTw" id="5yr01fEefFP" role="2Oq$k0">
+                <ref role="3cqZAo" node="7WKNeR9bpBf" resolve="ruleProcessingSession" />
+              </node>
+              <node concept="liA8E" id="5yr01fEefFQ" role="2OqNvi">
+                <ref role="37wK5l" node="72RDgIN45VE" resolve="repository" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="70Wv0dJiUvk" role="3cqZAp" />
         <node concept="3cpWs8" id="72RDgIN3C$C" role="3cqZAp">
           <node concept="3cpWsn" id="72RDgIN3C$D" role="3cpWs9">
@@ -5957,6 +5974,9 @@
                   <ref role="1Y3XeK" node="7DvO2M9IiKB" resolve="MacroProcessing" />
                   <ref role="37wK5l" node="7DvO2Ma0h_M" resolve="MacroProcessing" />
                   <node concept="3Tm1VV" id="72RDgIN3GAV" role="1B3o_S" />
+                  <node concept="37vLTw" id="5yr01fEeguk" role="37wK5m">
+                    <ref role="3cqZAo" node="5yr01fEefFN" resolve="repository" />
+                  </node>
                   <node concept="2OqwBi" id="72RDgIN3C$G" role="37wK5m">
                     <node concept="37vLTw" id="72RDgIN3C$H" role="2Oq$k0">
                       <ref role="3cqZAo" node="7WKNeR9bpBf" resolve="ruleProcessingSession" />
@@ -5974,13 +5994,8 @@
                     <node concept="3Tm1VV" id="72RDgIN3GL9" role="1B3o_S" />
                     <node concept="3clFbS" id="72RDgIN3GLe" role="3clF47">
                       <node concept="3clFbF" id="72RDgIN4dYT" role="3cqZAp">
-                        <node concept="2OqwBi" id="72RDgIN4e8j" role="3clFbG">
-                          <node concept="37vLTw" id="72RDgIN4dYS" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7WKNeR9bpBf" resolve="ruleProcessingSession" />
-                          </node>
-                          <node concept="liA8E" id="72RDgIN4elk" role="2OqNvi">
-                            <ref role="37wK5l" node="72RDgIN45VE" resolve="repository" />
-                          </node>
+                        <node concept="37vLTw" id="5yr01fEefFR" role="3clFbG">
+                          <ref role="3cqZAo" node="5yr01fEefFN" resolve="repository" />
                         </node>
                       </node>
                     </node>
@@ -6225,6 +6240,12 @@
       <node concept="3cqZAl" id="7DvO2Ma0h_O" role="3clF45" />
       <node concept="3Tm1VV" id="7DvO2Ma0h_P" role="1B3o_S" />
       <node concept="3clFbS" id="7DvO2Ma0h_Q" role="3clF47">
+        <node concept="XkiVB" id="5yr01fEef9a" role="3cqZAp">
+          <ref role="37wK5l" to="i348:5yr01fEdYJE" resolve="TemplateApplicationSession" />
+          <node concept="37vLTw" id="5yr01fEefkr" role="37wK5m">
+            <ref role="3cqZAo" node="5yr01fEeeBY" resolve="repository" />
+          </node>
+        </node>
         <node concept="3clFbF" id="7DvO2Ma0klf" role="3cqZAp">
           <node concept="37vLTI" id="7DvO2Ma0klh" role="3clFbG">
             <node concept="2OqwBi" id="7DvO2Ma0lz7" role="37vLTJ">
@@ -6237,6 +6258,12 @@
               <ref role="3cqZAo" node="7DvO2Ma0k9h" resolve="macroTemplateIndex" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5yr01fEeeBY" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="5yr01fEef1_" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
       <node concept="37vLTG" id="7DvO2Ma0k9h" role="3clF46">
