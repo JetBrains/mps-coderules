@@ -114,6 +114,10 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="8575328350543493365" name="message" index="huDt6" />
+        <property id="2423417345669755629" name="filter" index="1eyWvh" />
+      </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
         <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
@@ -1286,6 +1290,10 @@
             </node>
           </node>
           <node concept="3clFbF" id="5Pqb1qkLdQP" role="3cqZAp">
+            <node concept="15s5l7" id="bqQcwFSJWl" role="lGtFl">
+              <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;reference scopes (reference scopes)&quot;;FLAVOUR_MESSAGE=&quot;The reference  a():A (baseMethodDeclaration) is out of search scope&quot;;FLAVOUR_NODE_FEATURE=&quot;baseMethodDeclaration&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/6836281137582643899]&quot;;" />
+              <property role="huDt6" value="The reference  a():A (baseMethodDeclaration) is out of search scope" />
+            </node>
             <node concept="2OqwBi" id="5Pqb1qkLdQQ" role="3clFbG">
               <node concept="2OqwBi" id="5Pqb1qkLdQR" role="2Oq$k0">
                 <node concept="37vLTw" id="5Pqb1qkLdQS" role="2Oq$k0">
