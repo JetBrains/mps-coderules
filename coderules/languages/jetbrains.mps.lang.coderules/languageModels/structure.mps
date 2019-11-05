@@ -1443,7 +1443,6 @@
       <property role="IQ2ns" value="1534124788579511329" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="origin" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
