@@ -6,6 +6,7 @@
   <property name="build.tmp" location="${build.dir}/tmp/coderules" />
   <property name="build.layout" location="${build.dir}/artifacts/coderules" />
   <property name="ci.build.num" value="9999" />
+  <property name="test.jvmargs" value="-Xss2048k -Xmx2048m" />
   <property name="mps.macro.coderules_home" location="${basedir}" />
   <property name="mps_home" location="${basedir}/MPS_HOME" />
   <property name="artifacts.mps" location="${mps_home}" />
@@ -1502,6 +1503,7 @@
           <language id="l:63650c59-16c8-498a-99c8-005c7ee9515d:jetbrains.mps.lang.access" />
           <language id="l:aee9cad2-acd4-4608-aef2-0004f6a1cdbd:jetbrains.mps.lang.actions" />
           <language id="l:c4803b19-6d89-4a3b-bf82-390769514add:jetbrains.mps.lang.coderules" />
+          <language id="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" />
           <language id="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
           <language id="l:cba985fe-1e96-4f16-9f8d-b07434405d4f:jetbrains.mps.lang.smodel.types" />
@@ -3970,7 +3972,7 @@
       <zipfileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules/lib" prefix="coderules/lib" />
       <fileset dir="${build.tmp}/default/coderules-0.5.zip" />
     </zip>
-    <echo file="${build.layout}/build.properties">coderules.ci.build.num=${ci.build.num}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
+    <echo file="${build.layout}/build.properties">coderules.ci.build.num=${ci.build.num}${line.separator}coderules.test.jvmargs=${test.jvmargs}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
   <target name="buildDependents" />
@@ -6091,7 +6093,7 @@
     <junit showoutput="true" fork="true" haltonfailure="true" dir="${basedir}">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss2048k" />
-      <jvmarg value="-Xmx1024m" />
+      <jvmarg value="-Xmx2048m" />
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
       <jvmarg value="-Didea.config.path=${build.mps.config.path}" />
       <jvmarg value="-Didea.system.path=${build.mps.system.path}" />

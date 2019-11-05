@@ -25,6 +25,7 @@
       </concept>
       <concept id="6593674873639474400" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Options" flags="ng" index="24cAiW">
         <child id="6593674873639478221" name="haltonfailure" index="24c_eh" />
+        <child id="3609768169816292377" name="jvmArgs" index="1psgkv" />
       </concept>
       <concept id="4005526075820600484" name="jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin" flags="ng" index="1gjT0q" />
     </language>
@@ -194,6 +195,11 @@
         <node concept="NbPM2" id="5pz4PwHrDMq" role="24c_eh">
           <node concept="3Mxwew" id="5pz4PwHrDMp" role="3MwsjC">
             <property role="3MwjfP" value="true" />
+          </node>
+        </node>
+        <node concept="NbPM2" id="3mytCjZmOqB" role="1psgkv">
+          <node concept="3Mxwew" id="3mytCjZo1OL" role="3MwsjC">
+            <property role="3MwjfP" value="-Xss2048k -Xmx2048m" />
           </node>
         </node>
       </node>
@@ -2096,6 +2102,16 @@
         <node concept="NbPM2" id="2BiN_P7R7M9" role="aVJcq">
           <node concept="3Mxwew" id="2BiN_P7R7M8" role="3MwsjC">
             <property role="3MwjfP" value="9999" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2kB4xC" id="3mytCjZmOem" role="1l3spd">
+      <property role="TrG5h" value="test.jvmargs" />
+      <node concept="aVJcg" id="3mytCjZmOnI" role="aVJcv">
+        <node concept="NbPM2" id="3mytCjZmOnH" role="aVJcq">
+          <node concept="3Mxwew" id="3mytCjZmOnG" role="3MwsjC">
+            <property role="3MwjfP" value="-Xss2048k -Xmx2048m" />
           </node>
         </node>
       </node>

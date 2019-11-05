@@ -20,6 +20,7 @@
   <property name="mps.mps.build.counter" value="${import.mps.mps.mps.build.counter}" />
   <property name="mpsBootstrapCore.version" value="${import.mps.mpsBootstrapCore.version}" />
   <property name="coderules.ci.build.num" value="${import.coderules.coderules.ci.build.num}" />
+  <property name="coderules.test.jvmargs" value="${import.coderules.coderules.test.jvmargs}" />
   <property name="environment" value="env" />
   <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
@@ -187,7 +188,7 @@
       <zipfileset file="${basedir}/solutions/samples.lambdacalc.demo/samples.lambdacalc.demo.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-samples.lambdacalc.demo-models" prefix="module/models" />
     </jar>
-    <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}</echo>
+    <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}coderules.ci.build.num=${coderules.ci.build.num}${line.separator}coderules.test.jvmargs=${coderules.test.jvmargs}</echo>
   </target>
   
   <target name="buildDependents" />
@@ -622,7 +623,7 @@
     <junit showoutput="true" fork="true" haltonfailure="true" dir="${basedir}">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss2048k" />
-      <jvmarg value="-Xmx1024m" />
+      <jvmarg value="-Xmx2048m" />
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
       <jvmarg value="-Didea.config.path=${build.mps.config.path}" />
       <jvmarg value="-Didea.system.path=${build.mps.system.path}" />
