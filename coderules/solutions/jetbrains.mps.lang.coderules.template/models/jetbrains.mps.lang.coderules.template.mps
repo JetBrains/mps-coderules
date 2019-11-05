@@ -2006,7 +2006,7 @@
     <node concept="2tJIrI" id="18kNIl1vDQp" role="jymVt" />
     <node concept="3HP615" id="4vBwiiV6130" role="jymVt">
       <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="TemplateApplicationListener" />
+      <property role="TrG5h" value="RequireHook" />
       <node concept="2tJIrI" id="36tQV5B44$K" role="jymVt" />
       <node concept="3clFb_" id="36tQV5BD$_p" role="jymVt">
         <property role="TrG5h" value="require" />
@@ -2061,7 +2061,7 @@
         <node concept="3clFbF" id="36tQV5BDRXp" role="3cqZAp">
           <node concept="2OqwBi" id="36tQV5BDRXq" role="3clFbG">
             <node concept="37vLTw" id="36tQV5BDRXr" role="2Oq$k0">
-              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="listeners" />
+              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="requireHooks" />
             </node>
             <node concept="2es0OD" id="36tQV5BDRXs" role="2OqNvi">
               <node concept="1bVj0M" id="36tQV5BDRXt" role="23t8la">
@@ -2119,7 +2119,7 @@
         <node concept="3clFbF" id="5yr01fEelKl" role="3cqZAp">
           <node concept="2OqwBi" id="5yr01fEelKm" role="3clFbG">
             <node concept="37vLTw" id="5yr01fEelKn" role="2Oq$k0">
-              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="listeners" />
+              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="requireHooks" />
             </node>
             <node concept="2es0OD" id="5yr01fEelKo" role="2OqNvi">
               <node concept="1bVj0M" id="5yr01fEelKp" role="23t8la">
@@ -2166,7 +2166,7 @@
             <node concept="3clFbF" id="12QmIo$ysU_" role="3cqZAp">
               <node concept="2OqwBi" id="12QmIo$ysUA" role="3clFbG">
                 <node concept="37vLTw" id="12QmIo$ysUB" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="listeners" />
+                  <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="requireHooks" />
                 </node>
                 <node concept="2es0OD" id="12QmIo$ysUC" role="2OqNvi">
                   <node concept="1bVj0M" id="12QmIo$ysUD" role="23t8la">
@@ -2225,7 +2225,7 @@
         <node concept="3clFbF" id="36tQV5BucNl" role="3cqZAp">
           <node concept="2OqwBi" id="36tQV5BucNm" role="3clFbG">
             <node concept="37vLTw" id="36tQV5BucNn" role="2Oq$k0">
-              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="listeners" />
+              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="requireHooks" />
             </node>
             <node concept="2es0OD" id="36tQV5BucNo" role="2OqNvi">
               <node concept="1bVj0M" id="36tQV5BucNp" role="23t8la">
@@ -2666,12 +2666,12 @@
     </node>
     <node concept="2tJIrI" id="7DvO2M9IiN3" role="jymVt" />
     <node concept="3clFb_" id="7DvO2M9IiN4" role="jymVt">
-      <property role="TrG5h" value="addListener" />
+      <property role="TrG5h" value="addRequireHook" />
       <property role="1EzhhJ" value="false" />
       <node concept="37vLTG" id="7DvO2M9IiN5" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="7DvO2M9IiN6" role="1tU5fm">
-          <ref role="3uigEE" node="4vBwiiV6130" resolve="TemplateApplicationSession.TemplateApplicationListener" />
+          <ref role="3uigEE" node="4vBwiiV6130" resolve="TemplateApplicationSession.RequireHook" />
         </node>
       </node>
       <node concept="3cqZAl" id="7DvO2M9IiN7" role="3clF45" />
@@ -2680,7 +2680,7 @@
         <node concept="3clFbF" id="7DvO2M9IiNa" role="3cqZAp">
           <node concept="2OqwBi" id="7DvO2M9IiNb" role="3clFbG">
             <node concept="37vLTw" id="7DvO2M9IiNc" role="2Oq$k0">
-              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="listeners" />
+              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="requireHooks" />
             </node>
             <node concept="TSZUe" id="7DvO2M9IiNd" role="2OqNvi">
               <node concept="37vLTw" id="7DvO2M9IiNe" role="25WWJ7">
@@ -2693,12 +2693,12 @@
     </node>
     <node concept="2tJIrI" id="7DvO2M9IiNg" role="jymVt" />
     <node concept="3clFb_" id="7DvO2M9IiNh" role="jymVt">
-      <property role="TrG5h" value="removeListener" />
+      <property role="TrG5h" value="removeRequireHook" />
       <property role="1EzhhJ" value="false" />
       <node concept="37vLTG" id="7DvO2M9IiNi" role="3clF46">
         <property role="TrG5h" value="listener" />
         <node concept="3uibUv" id="7DvO2M9IiNj" role="1tU5fm">
-          <ref role="3uigEE" node="4vBwiiV6130" resolve="TemplateApplicationSession.TemplateApplicationListener" />
+          <ref role="3uigEE" node="4vBwiiV6130" resolve="TemplateApplicationSession.RequireHook" />
         </node>
       </node>
       <node concept="3cqZAl" id="7DvO2M9IiNk" role="3clF45" />
@@ -2707,7 +2707,7 @@
         <node concept="3clFbF" id="7DvO2M9IiNn" role="3cqZAp">
           <node concept="2OqwBi" id="7DvO2M9IiNo" role="3clFbG">
             <node concept="37vLTw" id="7DvO2M9IiNp" role="2Oq$k0">
-              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="listeners" />
+              <ref role="3cqZAo" node="7DvO2M9IiOO" resolve="requireHooks" />
             </node>
             <node concept="3dhRuq" id="7DvO2M9IiNq" role="2OqNvi">
               <node concept="37vLTw" id="7DvO2M9IiNr" role="25WWJ7">
@@ -2762,17 +2762,17 @@
     </node>
     <node concept="2tJIrI" id="6EY0p2w8wEJ" role="jymVt" />
     <node concept="312cEg" id="7DvO2M9IiOO" role="jymVt">
-      <property role="TrG5h" value="listeners" />
+      <property role="TrG5h" value="requireHooks" />
       <node concept="3Tmbuc" id="7DvO2Ma1fZX" role="1B3o_S" />
       <node concept="_YKpA" id="7DvO2M9IiOQ" role="1tU5fm">
         <node concept="3uibUv" id="7DvO2M9IiOR" role="_ZDj9">
-          <ref role="3uigEE" node="4vBwiiV6130" resolve="TemplateApplicationSession.TemplateApplicationListener" />
+          <ref role="3uigEE" node="4vBwiiV6130" resolve="TemplateApplicationSession.RequireHook" />
         </node>
       </node>
       <node concept="2ShNRf" id="7DvO2M9IiOS" role="33vP2m">
         <node concept="Tc6Ow" id="7DvO2M9IiOT" role="2ShVmc">
           <node concept="3uibUv" id="7DvO2M9IiOU" role="HW$YZ">
-            <ref role="3uigEE" node="4vBwiiV6130" resolve="TemplateApplicationSession.TemplateApplicationListener" />
+            <ref role="3uigEE" node="4vBwiiV6130" resolve="TemplateApplicationSession.RequireHook" />
           </node>
         </node>
       </node>

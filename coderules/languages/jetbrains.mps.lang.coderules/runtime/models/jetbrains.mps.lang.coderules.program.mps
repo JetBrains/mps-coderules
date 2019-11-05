@@ -488,7 +488,7 @@
       <node concept="37vLTG" id="70Wv0dJiJjG" role="3clF46">
         <property role="TrG5h" value="originIndex" />
         <node concept="3uibUv" id="70Wv0dJiJjU" role="1tU5fm">
-          <ref role="3uigEE" node="70Wv0dJhQb2" resolve="PrincipalOriginIndex" />
+          <ref role="3uigEE" node="70Wv0dJhQb2" resolve="OriginIndex" />
         </node>
       </node>
       <node concept="3cqZAl" id="7eGEHDlcF6b" role="3clF45" />
@@ -565,7 +565,7 @@
       <property role="TrG5h" value="originIndex" />
       <property role="1EzhhJ" value="false" />
       <node concept="3uibUv" id="70Wv0dJiKW3" role="3clF45">
-        <ref role="3uigEE" node="70Wv0dJhQb2" resolve="PrincipalOriginIndex" />
+        <ref role="3uigEE" node="70Wv0dJhQb2" resolve="OriginIndex" />
       </node>
       <node concept="3Tm1VV" id="70Wv0dJiKW4" role="1B3o_S" />
       <node concept="3clFbS" id="70Wv0dJiKW6" role="3clF47">
@@ -695,7 +695,7 @@
       <property role="TrG5h" value="originIndex" />
       <node concept="3Tm6S6" id="70Wv0dJiJjY" role="1B3o_S" />
       <node concept="3uibUv" id="70Wv0dJiJk0" role="1tU5fm">
-        <ref role="3uigEE" node="70Wv0dJhQb2" resolve="PrincipalOriginIndex" />
+        <ref role="3uigEE" node="70Wv0dJhQb2" resolve="OriginIndex" />
       </node>
     </node>
     <node concept="3Tm1VV" id="7nPD14O5B_4" role="1B3o_S" />
@@ -4220,10 +4220,10 @@
     <node concept="2tJIrI" id="7DvO2M9_As1" role="jymVt" />
   </node>
   <node concept="312cEu" id="70Wv0dJhQb2">
-    <property role="TrG5h" value="PrincipalOriginIndex" />
+    <property role="TrG5h" value="OriginIndex" />
     <node concept="2tJIrI" id="70Wv0dJhQb4" role="jymVt" />
     <node concept="3clFb_" id="70Wv0dJhQbd" role="jymVt">
-      <property role="TrG5h" value="isPrincipal" />
+      <property role="TrG5h" value="isValidTarget" />
       <node concept="37vLTG" id="70Wv0dJhQbs" role="3clF46">
         <property role="TrG5h" value="ref" />
         <node concept="2sp9CU" id="70Wv0dJhQbw" role="1tU5fm" />
@@ -4235,7 +4235,7 @@
           <node concept="22lmx$" id="70Wv0dJk6g2" role="3clFbG">
             <node concept="2OqwBi" id="70Wv0dJk7pt" role="3uHU7w">
               <node concept="37vLTw" id="70Wv0dJk6hD" role="2Oq$k0">
-                <ref role="3cqZAo" node="70Wv0dJjR_A" resolve="principalRefs" />
+                <ref role="3cqZAo" node="70Wv0dJjR_A" resolve="validTargetRefs" />
               </node>
               <node concept="3JPx81" id="70Wv0dJk8uu" role="2OqNvi">
                 <node concept="37vLTw" id="70Wv0dJk8Ec" role="25WWJ7">
@@ -4479,9 +4479,9 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="70Wv0dJjD99" role="jymVt" />
+    <node concept="2tJIrI" id="3mytCjYA2o1" role="jymVt" />
     <node concept="3clFb_" id="70Wv0dJjDa1" role="jymVt">
-      <property role="TrG5h" value="addPrincipal" />
+      <property role="TrG5h" value="addValidTarget" />
       <node concept="37vLTG" id="70Wv0dJjDa_" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="70Wv0dJjDaK" role="1tU5fm" />
@@ -4492,7 +4492,7 @@
         <node concept="3clFbF" id="70Wv0dJjXxv" role="3cqZAp">
           <node concept="2OqwBi" id="70Wv0dJjY4G" role="3clFbG">
             <node concept="37vLTw" id="70Wv0dJjXxu" role="2Oq$k0">
-              <ref role="3cqZAo" node="70Wv0dJjR_A" resolve="principalRefs" />
+              <ref role="3cqZAo" node="70Wv0dJjR_A" resolve="validTargetRefs" />
             </node>
             <node concept="TSZUe" id="70Wv0dJkdpd" role="2OqNvi">
               <node concept="2OqwBi" id="70Wv0dJkdp9" role="25WWJ7">
@@ -4616,8 +4616,20 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="3mytCjYA898" role="jymVt">
+      <property role="TrG5h" value="requiredRefs" />
+      <node concept="3Tm6S6" id="3mytCjYA899" role="1B3o_S" />
+      <node concept="2hMVRd" id="3mytCjYA89a" role="1tU5fm">
+        <node concept="2sp9CU" id="3mytCjYA89b" role="2hN53Y" />
+      </node>
+      <node concept="2ShNRf" id="3mytCjYA89c" role="33vP2m">
+        <node concept="2i4dXS" id="3mytCjYA89d" role="2ShVmc">
+          <node concept="2sp9CU" id="3mytCjYA89e" role="HW$YZ" />
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="70Wv0dJjR_A" role="jymVt">
-      <property role="TrG5h" value="principalRefs" />
+      <property role="TrG5h" value="validTargetRefs" />
       <node concept="3Tm6S6" id="70Wv0dJjR_B" role="1B3o_S" />
       <node concept="2hMVRd" id="70Wv0dJjR_C" role="1tU5fm">
         <node concept="2sp9CU" id="70Wv0dJjR_D" role="2hN53Y" />
@@ -4631,12 +4643,37 @@
     <node concept="3UR2Jj" id="42eP3wrZwa3" role="lGtFl">
       <node concept="TZ5HA" id="42eP3wrZwa4" role="TZ5H$">
         <node concept="1dT_AC" id="42eP3wrZwa5" role="1dT_Ay">
-          <property role="1dT_AB" value="Enables to track principal nodes, that is the nodes in source model which were included in templates" />
+          <property role="1dT_AB" value="Enables to track origin nodes, that is the nodes in source model which were included in templates" />
         </node>
       </node>
       <node concept="TZ5HA" id="42eP3wrZwMd" role="TZ5H$">
         <node concept="1dT_AC" id="42eP3wrZwMe" role="1dT_Ay">
-          <property role="1dT_AB" value="application process as origins or principals, as opposed to those that were merely required." />
+          <property role="1dT_AB" value="application process as origins as opposed to those that were merely required." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3mytCjY_ErN" role="TZ5H$">
+        <node concept="1dT_AC" id="3mytCjY_ErO" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3mytCjY_ErV" role="TZ5H$">
+        <node concept="1dT_AC" id="3mytCjY_ErW" role="1dT_Ay">
+          <property role="1dT_AB" value="A node that served as an input is an origin node." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3mytCjY_JAX" role="TZ5H$">
+        <node concept="1dT_AC" id="3mytCjY_JAY" role="1dT_Ay">
+          <property role="1dT_AB" value="A node that is referenced from an origin node and is located within the same root (???) is a relevant node." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3mytCjYA7LB" role="TZ5H$">
+        <node concept="1dT_AC" id="3mytCjYA7LC" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3mytCjY_EEM" role="TZ5H$">
+        <node concept="1dT_AC" id="3mytCjY_EEN" role="1dT_Ay">
+          <property role="1dT_AB" value="A node specified as a valid target can be used for reporting errors. " />
         </node>
       </node>
     </node>
@@ -4677,7 +4714,7 @@
       <node concept="37vLTG" id="70Wv0dJiIGc" role="3clF46">
         <property role="TrG5h" value="originIndex" />
         <node concept="3uibUv" id="70Wv0dJiIGk" role="1tU5fm">
-          <ref role="3uigEE" node="70Wv0dJhQb2" resolve="PrincipalOriginIndex" />
+          <ref role="3uigEE" node="70Wv0dJhQb2" resolve="OriginIndex" />
         </node>
       </node>
       <node concept="3uibUv" id="5rhZO$U0jE9" role="3clF45">
@@ -5199,7 +5236,7 @@
       <node concept="37vLTG" id="70Wv0dJiUYa" role="3clF46">
         <property role="TrG5h" value="originIndex" />
         <node concept="3uibUv" id="70Wv0dJiUYw" role="1tU5fm">
-          <ref role="3uigEE" node="70Wv0dJhQb2" resolve="PrincipalOriginIndex" />
+          <ref role="3uigEE" node="70Wv0dJhQb2" resolve="OriginIndex" />
         </node>
       </node>
     </node>
@@ -7020,14 +7057,14 @@
           <node concept="3cpWsn" id="4vBwiiV7yNV" role="3cpWs9">
             <property role="TrG5h" value="requiredCollector" />
             <node concept="3uibUv" id="4vBwiiV7yNT" role="1tU5fm">
-              <ref role="3uigEE" to="i348:4vBwiiV6130" resolve="TemplateApplicationSession.TemplateApplicationListener" />
+              <ref role="3uigEE" to="i348:4vBwiiV6130" resolve="TemplateApplicationSession.RequireHook" />
             </node>
             <node concept="2ShNRf" id="4vBwiiV7yNW" role="33vP2m">
               <node concept="YeOm9" id="4vBwiiV7yNX" role="2ShVmc">
                 <node concept="1Y3b0j" id="4vBwiiV7yNY" role="YeSDq">
                   <property role="2bfB8j" value="true" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <ref role="1Y3XeK" to="i348:4vBwiiV6130" resolve="TemplateApplicationSession.TemplateApplicationListener" />
+                  <ref role="1Y3XeK" to="i348:4vBwiiV6130" resolve="TemplateApplicationSession.RequireHook" />
                   <node concept="3Tm1VV" id="4vBwiiV7yNZ" role="1B3o_S" />
                   <node concept="3clFb_" id="36tQV5BDNjJ" role="jymVt">
                     <property role="1EzhhJ" value="false" />
@@ -7110,7 +7147,7 @@
             <node concept="3clFbF" id="4vBwiiV7uJ1" role="3cqZAp">
               <node concept="2OqwBi" id="4vBwiiV7w5X" role="3clFbG">
                 <node concept="liA8E" id="4vBwiiV7x2n" role="2OqNvi">
-                  <ref role="37wK5l" to="i348:7DvO2M9IiN4" resolve="addListener" />
+                  <ref role="37wK5l" to="i348:7DvO2M9IiN4" resolve="addRequireHook" />
                   <node concept="37vLTw" id="4vBwiiV7yO6" role="37wK5m">
                     <ref role="3cqZAo" node="4vBwiiV7yNV" resolve="requiredCollector" />
                   </node>
@@ -7698,7 +7735,7 @@
                 <node concept="3clFbF" id="4vBwiiV7_ak" role="3cqZAp">
                   <node concept="2OqwBi" id="4vBwiiV7_al" role="3clFbG">
                     <node concept="liA8E" id="4vBwiiV7_an" role="2OqNvi">
-                      <ref role="37wK5l" to="i348:7DvO2M9IiNh" resolve="removeListener" />
+                      <ref role="37wK5l" to="i348:7DvO2M9IiNh" resolve="removeRequireHook" />
                       <node concept="37vLTw" id="4vBwiiV7_ao" role="37wK5m">
                         <ref role="3cqZAo" node="4vBwiiV7yNV" resolve="requiredCollector" />
                       </node>
@@ -8281,7 +8318,7 @@
                     <ref role="3cqZAo" node="70Wv0dJiUY$" resolve="originIndex" />
                   </node>
                   <node concept="liA8E" id="6EY0p2wqsGP" role="2OqNvi">
-                    <ref role="37wK5l" node="70Wv0dJjDa1" resolve="addPrincipal" />
+                    <ref role="37wK5l" node="70Wv0dJjDa1" resolve="addValidTarget" />
                     <node concept="37vLTw" id="6EY0p2wqsQK" role="37wK5m">
                       <ref role="3cqZAo" node="5ntLU8GlzgG" resolve="node" />
                     </node>
@@ -8906,7 +8943,7 @@
       <property role="TrG5h" value="originIndex" />
       <node concept="3Tm6S6" id="70Wv0dJiUY_" role="1B3o_S" />
       <node concept="3uibUv" id="70Wv0dJiUYB" role="1tU5fm">
-        <ref role="3uigEE" node="70Wv0dJhQb2" resolve="PrincipalOriginIndex" />
+        <ref role="3uigEE" node="70Wv0dJhQb2" resolve="OriginIndex" />
       </node>
     </node>
     <node concept="312cEg" id="4$YN6Qt$22x" role="jymVt">

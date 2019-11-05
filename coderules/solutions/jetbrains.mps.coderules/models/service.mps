@@ -1838,8 +1838,8 @@
                         <node concept="YeOm9" id="1laj_RSAOIc" role="2ShVmc">
                           <node concept="1Y3b0j" id="1laj_RSAOIf" role="YeSDq">
                             <property role="2bfB8j" value="true" />
-                            <ref role="1Y3XeK" to="hano:3o9wrC3sa$h" resolve="OriginReportingSupervisor" />
-                            <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="OriginReportingSupervisor" />
+                            <ref role="1Y3XeK" to="hano:3o9wrC3sa$h" resolve="FeedbackReportingSupervisor" />
+                            <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="FeedbackReportingSupervisor" />
                             <node concept="3Tm1VV" id="1laj_RSAOIg" role="1B3o_S" />
                             <node concept="2OqwBi" id="3o9wrC3tvAX" role="37wK5m">
                               <node concept="37vLTw" id="3o9wrC3tu_g" role="2Oq$k0">
