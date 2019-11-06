@@ -69,18 +69,6 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         return controller.reactivate(activeOcc)
     }
 
-    // todo: remove
-    fun invalidateDependentRules(ruleIds: Set<Any>) {
-        val it = this.iterator()
-        while (it.hasNext()) {
-            val chunk = it.next()
-            if (chunk is MatchJournal.MatchChunk && ruleIds.contains(chunk.match.rule().uniqueTag())) {
-                trace.invalidate(chunk.match)
-                it.remove()
-            }
-        }
-    }
-
     /**
      * Invalidation includes several activities:
      *  - removing chunks (i.e. principal matches) corresponding to
