@@ -1,7 +1,6 @@
 import jetbrains.mps.logic.reactor.program.InvalidConstraintException
 import jetbrains.mps.logic.reactor.program.InvalidRuleException
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 
 /**
@@ -45,7 +44,7 @@ class TestProgramBuilder {
                 )
             )
         ).run {
-            assertEquals(program("test").handlers().flatMap { it.rules() }.count(), 2)
+            assertEquals(program("test").rulesLists().flatMap { it.rules() }.count(), 2)
         }
     }
 

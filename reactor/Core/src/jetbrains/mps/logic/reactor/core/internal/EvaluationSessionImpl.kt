@@ -46,7 +46,7 @@ internal class EvaluationSessionImpl private constructor (
         token: SessionToken?, rulesDiff: RulesDiff, ispec: IncrementalProgramSpec
     ) : FeedbackStatus {
 
-        val ruleIndex = RuleIndex(program.handlers())
+        val ruleIndex = RuleIndex(program.rulesLists())
         val dispatcher = Dispatcher(ruleIndex)
 
         if (ispec is IncrementalProgramSpec.NonIncrSpec || token == null) {

@@ -21,16 +21,15 @@ import jetbrains.mps.logic.reactor.core.RulesDiff;
 import java.util.ArrayList;
 
 /**
- * A collection of handlers that constitute a constraint rules program.
+ * A collection of rulesLists that constitute a constraint rules program.
  *
- * FIXME a handler is to be renamed to RulesList
  * @author Fedor Isakov
  */
 public abstract class Program {
 
     public abstract String name();
 
-    public abstract Iterable<RulesList> handlers();
+    public abstract Iterable<RulesList> rulesLists();
 
     public Program withRulesDiff(RulesDiff diff) { return this; };
 
@@ -38,7 +37,7 @@ public abstract class Program {
 
     public Iterable<Rule> rules() {
         ArrayList<Rule> allRules = new ArrayList<Rule>();
-        for (RulesList rulesList : handlers()) {
+        for (RulesList rulesList : rulesLists()) {
             for (Rule rule : rulesList.rules()) {
                 allRules.add(rule);
             }

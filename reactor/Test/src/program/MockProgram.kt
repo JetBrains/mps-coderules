@@ -116,7 +116,7 @@ class MockProgram(val name: String, val rulesLists: List<RulesList>, val registr
 
     override fun name(): String = name
 
-    override fun handlers(): Iterable<RulesList> = unmodifiableCollection(rulesLists)
+    override fun rulesLists(): Iterable<RulesList> = unmodifiableCollection(rulesLists)
 }
 
 
