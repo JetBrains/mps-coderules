@@ -16,10 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.LogicalObserver
-import jetbrains.mps.logic.reactor.core.ProcessingState
-import jetbrains.mps.logic.reactor.core.addObserver
-import jetbrains.mps.logic.reactor.core.removeObserver
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import java.util.*
 
@@ -42,12 +39,19 @@ internal open class StateFrameStack() : ProcessingState, LogicalObserver
         return newFrame
     }
 
-    fun reset() = reset(stateFrames.last)
+    fun reset() {
+        // Clear logicals from this forwarding observer on full reset
+        currentFrame().observed().forEach {
+            it.removeObserver(this)
+        }
+        reset(stateFrames.last)
+    }
 
     fun reset(frame: StateFrame) {
         val it = stateFrames.iterator()
         while (it.hasNext()) {
-            if (frame === it.next()) {  // referential equality
+            val next = it.next()
+            if (frame === next) {  // referential equality
                 return
             }
             it.remove()
@@ -60,6 +64,7 @@ internal open class StateFrameStack() : ProcessingState, LogicalObserver
             logical.addObserver(this)
         }
         currentFrame().addForwardingObserver(logical, observer)
+//        assert(checkForwardingObserverUniqueInstance(logical))
     }
 
     override fun removeForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {

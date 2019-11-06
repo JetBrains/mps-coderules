@@ -204,8 +204,15 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     fun launchQueue(controller: Controller): FeedbackStatus =
         execQueue.run(controller, this)
 
-    fun snapshot(): SessionToken =
-        SessionTokenImpl(view(), ruleOrdering.ruleTags, dispatchingFront.state())
+    /**
+     * Clears state unneeded between incremental sessions
+     * and returns [SessionToken] with session results.
+     */
+    fun endSession(): SessionToken {
+        val histView = view()
+        resetStore() // clear observers
+        return SessionTokenImpl(histView, ruleOrdering.ruleTags, dispatchingFront.state())
+    }
 
     /**
      * Called to update the state with the currently active constraint occurrence.

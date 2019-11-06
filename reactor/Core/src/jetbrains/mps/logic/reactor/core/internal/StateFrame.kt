@@ -43,11 +43,6 @@ internal class StateFrame constructor() : LogicalObserver
         this.observers = prototype.observers
     }
 
-    fun destroy() {
-        // TODO remove observers
-
-    }
-
     fun addForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
         val logicalId = Id(logical)
         this.observers = observers.assoc(logicalId,
@@ -63,6 +58,9 @@ internal class StateFrame constructor() : LogicalObserver
 
     fun isObserving(logical: Logical<*>) =
         observers[Id(logical)] != null
+
+    fun observed(): Sequence<Logical<*>> =
+        observers.keys().asSequence().map { it.wrapped }
 
     override fun valueUpdated(logical: Logical<*>) {
         observers[Id(logical)]?.let { list ->

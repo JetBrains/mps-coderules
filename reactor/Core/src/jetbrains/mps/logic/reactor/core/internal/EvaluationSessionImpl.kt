@@ -146,9 +146,11 @@ internal class EvaluationSessionImpl private constructor (
             }
 
             return object : EvaluationResult {
-                override fun token(): SessionToken = session.controller.state.snapshot()
+                private val token = session.controller.state.endSession()
 
-                override fun storeView(): StoreView? = session.controller.storeView()
+                override fun token(): SessionToken = token
+
+                override fun storeView(): StoreView = token.journalView.storeView
 
                 override fun feedback():  EvaluationFeedback? = failure
             }
