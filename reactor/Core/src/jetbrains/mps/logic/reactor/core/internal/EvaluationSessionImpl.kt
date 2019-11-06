@@ -62,7 +62,7 @@ internal class EvaluationSessionImpl private constructor (
         } else {
             val tkn = token as SessionTokenImpl
             val state = ProcessingStateImpl(
-                dispatcher.frontFromState(tkn.frontState),
+                dispatcher.frontFromState(tkn.getFrontState()),
                 MatchJournalImpl(ispec, tkn.journalView),
                 ruleIndex, ispec, trace, profiler
             )

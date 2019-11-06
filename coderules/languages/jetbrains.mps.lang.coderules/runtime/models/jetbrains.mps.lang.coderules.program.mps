@@ -31,6 +31,7 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="xnrr" ref="r:4fd33103-fc30-42f4-a8cf-d1e858f21988(jetbrains.mps.lang.coderules.program.analysis)" />
+    <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -655,7 +656,60 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="2tJIrI" id="7Oc59RSE2oP" role="jymVt" />
+    <node concept="2tJIrI" id="2jxMt58b9gJ" role="jymVt" />
+    <node concept="3clFb_" id="2jxMt58b9Wv" role="jymVt">
+      <property role="TrG5h" value="withRulesDiff" />
+      <node concept="3Tm1VV" id="2jxMt58b9Ww" role="1B3o_S" />
+      <node concept="3uibUv" id="2jxMt58b9Wy" role="3clF45">
+        <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
+      </node>
+      <node concept="37vLTG" id="2jxMt58b9Wz" role="3clF46">
+        <property role="TrG5h" value="diff" />
+        <node concept="3uibUv" id="2jxMt58b9W$" role="1tU5fm">
+          <ref role="3uigEE" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="2jxMt58b9W_" role="3clF47">
+        <node concept="3clFbF" id="2jxMt58bk0z" role="3cqZAp">
+          <node concept="37vLTI" id="2jxMt58bk_F" role="3clFbG">
+            <node concept="37vLTw" id="2jxMt58bkYe" role="37vLTx">
+              <ref role="3cqZAo" node="2jxMt58b9Wz" resolve="diff" />
+            </node>
+            <node concept="2OqwBi" id="2jxMt58bkdo" role="37vLTJ">
+              <node concept="Xjq3P" id="2jxMt58bk0y" role="2Oq$k0" />
+              <node concept="2OwXpG" id="2jxMt58bkps" role="2OqNvi">
+                <ref role="2Oxat5" node="2jxMt58biXX" resolve="rulesDiff" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2jxMt58bleb" role="3cqZAp">
+          <node concept="Xjq3P" id="2jxMt58ble9" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="2jxMt58b9WA" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2jxMt58bgpe" role="jymVt" />
+    <node concept="3clFb_" id="2jxMt58b9WE" role="jymVt">
+      <property role="TrG5h" value="incrementalDiff" />
+      <node concept="3Tm1VV" id="2jxMt58b9WF" role="1B3o_S" />
+      <node concept="3uibUv" id="2jxMt58b9WH" role="3clF45">
+        <ref role="3uigEE" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+      </node>
+      <node concept="3clFbS" id="2jxMt58b9WI" role="3clF47">
+        <node concept="3clFbF" id="2jxMt58bjtU" role="3cqZAp">
+          <node concept="37vLTw" id="2jxMt58bjL8" role="3clFbG">
+            <ref role="3cqZAo" node="2jxMt58biXX" resolve="rulesDiff" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="2jxMt58b9WJ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2jxMt58bfN8" role="jymVt" />
     <node concept="312cEg" id="7Oc59RSE6Qy" role="jymVt">
       <property role="TrG5h" value="name" />
       <node concept="3Tm6S6" id="7Oc59RSE6Qz" role="1B3o_S" />
@@ -669,6 +723,13 @@
         <node concept="3uibUv" id="4MqhgXULVdx" role="11_B2D">
           <ref role="3uigEE" to="av0y:~RulesList" resolve="RulesList" />
         </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="2jxMt58biXX" role="jymVt">
+      <property role="TrG5h" value="rulesDiff" />
+      <node concept="3Tm6S6" id="2jxMt58bioR" role="1B3o_S" />
+      <node concept="3uibUv" id="2jxMt58biL7" role="1tU5fm">
+        <ref role="3uigEE" to="zx3l:~RulesDiff" resolve="RulesDiff" />
       </node>
     </node>
     <node concept="312cEg" id="4$YN6QuY09F" role="jymVt">

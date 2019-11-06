@@ -739,6 +739,155 @@
           </node>
         </node>
         <node concept="3clFbH" id="41ox5VnkhIX" role="3cqZAp" />
+        <node concept="3clFbF" id="6uUkLpHjIS9" role="3cqZAp">
+          <node concept="37vLTI" id="6uUkLpHjL2F" role="3clFbG">
+            <node concept="37vLTw" id="6uUkLpHjIS7" role="37vLTJ">
+              <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+            </node>
+            <node concept="2YIFZM" id="7eQMSyzaq4u" role="37vLTx">
+              <ref role="1Pybhc" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+              <ref role="37wK5l" to="zx3l:~RulesDiff.emptyDiff()" resolve="emptyDiff" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3R7n5gYSM0R" role="3cqZAp">
+          <node concept="3clFbS" id="3R7n5gYSM0S" role="3clFbx">
+            <node concept="3clFbF" id="6uUkLpHkm2n" role="3cqZAp">
+              <node concept="37vLTI" id="6uUkLpHkm2o" role="3clFbG">
+                <node concept="37vLTw" id="6uUkLpHkm2p" role="37vLTJ">
+                  <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+                </node>
+                <node concept="2YIFZM" id="6uUkLpHkm2q" role="37vLTx">
+                  <ref role="1Pybhc" to="zx3l:~RulesDiff" resolve="RulesDiff" />
+                  <ref role="37wK5l" to="zx3l:~RulesDiff.findDiff(java.lang.Iterable,java.lang.Iterable)" resolve="findDiff" />
+                  <node concept="2OqwBi" id="6uUkLpHkm2r" role="37wK5m">
+                    <node concept="liA8E" id="2jxMt585yUc" role="2OqNvi">
+                      <ref role="37wK5l" to="w7la:~SessionToken.getRules()" resolve="getRules" />
+                    </node>
+                    <node concept="37vLTw" id="6uUkLpHkm2t" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6uUkLpHkm2u" role="37wK5m">
+                    <node concept="37vLTw" id="6uUkLpHkm2v" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
+                    </node>
+                    <node concept="liA8E" id="6uUkLpHkm2w" role="2OqNvi">
+                      <ref role="37wK5l" to="av0y:~Program.rules()" resolve="rules" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="2jxMt585Abg" role="3cqZAp" />
+            <node concept="3SKdUt" id="2jxMt585$tJ" role="3cqZAp">
+              <node concept="1PaTwC" id="2jxMt585$tK" role="3ndbpf">
+                <node concept="3oM_SD" id="2jxMt585A42" role="1PaTwD">
+                  <property role="3oM_SC" value="fixme:" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585A5J" role="1PaTwD">
+                  <property role="3oM_SC" value="is" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585_m_" role="1PaTwD">
+                  <property role="3oM_SC" value="it" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585_mJ" role="1PaTwD">
+                  <property role="3oM_SC" value="really" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585_os" role="1PaTwD">
+                  <property role="3oM_SC" value="needed?" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585$HK" role="1PaTwD">
+                  <property role="3oM_SC" value="and" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585PvN" role="1PaTwD">
+                  <property role="3oM_SC" value="it's" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585$Jl" role="1PaTwD">
+                  <property role="3oM_SC" value="the" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585$Nc" role="1PaTwD">
+                  <property role="3oM_SC" value="only" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585$Nh" role="1PaTwD">
+                  <property role="3oM_SC" value="usage" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585$SG" role="1PaTwD">
+                  <property role="3oM_SC" value="of" />
+                </node>
+                <node concept="3oM_SD" id="2jxMt585$YN" role="1PaTwD">
+                  <property role="3oM_SC" value="getJournalView()." />
+                </node>
+              </node>
+            </node>
+            <node concept="1DcWWT" id="3R7n5gYSM11" role="3cqZAp">
+              <node concept="3clFbS" id="3R7n5gYSM12" role="2LFqv$">
+                <node concept="3clFbF" id="3R7n5gYSM13" role="3cqZAp">
+                  <node concept="2OqwBi" id="3R7n5gYSM14" role="3clFbG">
+                    <node concept="37vLTw" id="3R7n5gYSM15" role="2Oq$k0">
+                      <ref role="3cqZAo" node="24Vro6cQKgF" resolve="tracer" />
+                    </node>
+                    <node concept="liA8E" id="3R7n5gYSM16" role="2OqNvi">
+                      <ref role="37wK5l" node="5cnt3vhfW9c" resolve="restored" />
+                      <node concept="37vLTw" id="3R7n5gYSM17" role="37wK5m">
+                        <ref role="3cqZAo" node="3R7n5gYSM18" resolve="occ" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWsn" id="3R7n5gYSM18" role="1Duv9x">
+                <property role="TrG5h" value="occ" />
+                <node concept="3uibUv" id="3R7n5gYSM19" role="1tU5fm">
+                  <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="1H_6AUSkgVP" role="1DdaDG">
+                <node concept="2OqwBi" id="1H_6AUSjxWA" role="2Oq$k0">
+                  <node concept="2OqwBi" id="1H_6AUSjxv2" role="2Oq$k0">
+                    <node concept="37vLTw" id="1H_6AUSjsDB" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
+                    </node>
+                    <node concept="liA8E" id="1H_6AUSjxLv" role="2OqNvi">
+                      <ref role="37wK5l" to="w7la:~SessionToken.getJournalView()" resolve="getJournalView" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1H_6AUSkgE9" role="2OqNvi">
+                    <ref role="37wK5l" to="w7la:~MatchJournalView.getStoreView()" resolve="getStoreView" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1H_6AUSkhe_" role="2OqNvi">
+                  <ref role="37wK5l" to="w7la:~StoreView.allOccurrences()" resolve="allOccurrences" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="3R7n5gYSM1d" role="3clFbw">
+            <node concept="10Nm6u" id="3R7n5gYSM1e" role="3uHU7w" />
+            <node concept="37vLTw" id="1H_6AUSjq4B" role="3uHU7B">
+              <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2jxMt585pEX" role="3cqZAp" />
+        <node concept="3clFbF" id="2jxMt585HnE" role="3cqZAp">
+          <node concept="37vLTI" id="2jxMt585IHz" role="3clFbG">
+            <node concept="2OqwBi" id="2jxMt585KhM" role="37vLTx">
+              <node concept="37vLTw" id="2jxMt585Kbo" role="2Oq$k0">
+                <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
+              </node>
+              <node concept="liA8E" id="2jxMt585KyI" role="2OqNvi">
+                <ref role="37wK5l" to="av0y:~Program.withRulesDiff(jetbrains.mps.logic.reactor.core.RulesDiff)" resolve="withRulesDiff" />
+                <node concept="37vLTw" id="2jxMt585KDA" role="37wK5m">
+                  <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="2jxMt585HnC" role="37vLTJ">
+              <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="7WKNeR9xpPO" role="3cqZAp">
           <node concept="3cpWsn" id="7WKNeR9xpPP" role="3cpWs9">
             <property role="TrG5h" value="config" />
@@ -917,115 +1066,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="8odmgCo4LW" role="3cqZAp" />
-        <node concept="3clFbF" id="6uUkLpHjIS9" role="3cqZAp">
-          <node concept="37vLTI" id="6uUkLpHjL2F" role="3clFbG">
-            <node concept="37vLTw" id="6uUkLpHjIS7" role="37vLTJ">
-              <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
-            </node>
-            <node concept="2YIFZM" id="7eQMSyzaq4u" role="37vLTx">
-              <ref role="1Pybhc" to="zx3l:~RulesDiff" resolve="RulesDiff" />
-              <ref role="37wK5l" to="zx3l:~RulesDiff.emptyDiff()" resolve="emptyDiff" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="3R7n5gYSM0R" role="3cqZAp">
-          <node concept="3clFbS" id="3R7n5gYSM0S" role="3clFbx">
-            <node concept="3clFbF" id="3R7n5gYSM0T" role="3cqZAp">
-              <node concept="37vLTI" id="3R7n5gYSM0U" role="3clFbG">
-                <node concept="2OqwBi" id="3R7n5gYSM0V" role="37vLTx">
-                  <node concept="37vLTw" id="3R7n5gYSM0W" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
-                  </node>
-                  <node concept="liA8E" id="3R7n5gYSM0X" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withSessionToken(jetbrains.mps.logic.reactor.evaluation.SessionToken)" resolve="withSessionToken" />
-                    <node concept="37vLTw" id="1H_6AUSjqhx" role="37wK5m">
-                      <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="3R7n5gYSM0Z" role="37vLTJ">
-                  <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="7eQMSyzaIFj" role="3cqZAp" />
-            <node concept="3clFbF" id="6uUkLpHkm2n" role="3cqZAp">
-              <node concept="37vLTI" id="6uUkLpHkm2o" role="3clFbG">
-                <node concept="37vLTw" id="6uUkLpHkm2p" role="37vLTJ">
-                  <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
-                </node>
-                <node concept="2YIFZM" id="6uUkLpHkm2q" role="37vLTx">
-                  <ref role="1Pybhc" to="zx3l:~RulesDiff" resolve="RulesDiff" />
-                  <ref role="37wK5l" to="zx3l:~RulesDiff.findDiff(java.lang.Iterable,java.lang.Iterable)" resolve="findDiff" />
-                  <node concept="2OqwBi" id="6uUkLpHkm2r" role="37wK5m">
-                    <node concept="liA8E" id="6uUkLpHkm2s" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~SessionToken.getRuleTags()" resolve="getRuleTags" />
-                    </node>
-                    <node concept="37vLTw" id="6uUkLpHkm2t" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="6uUkLpHkm2u" role="37wK5m">
-                    <node concept="37vLTw" id="6uUkLpHkm2v" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7eQMSyz9QyL" resolve="program" />
-                    </node>
-                    <node concept="liA8E" id="6uUkLpHkm2w" role="2OqNvi">
-                      <ref role="37wK5l" to="av0y:~Program.rules()" resolve="rules" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="3R7n5gYSM10" role="3cqZAp" />
-            <node concept="1DcWWT" id="3R7n5gYSM11" role="3cqZAp">
-              <node concept="3clFbS" id="3R7n5gYSM12" role="2LFqv$">
-                <node concept="3clFbF" id="3R7n5gYSM13" role="3cqZAp">
-                  <node concept="2OqwBi" id="3R7n5gYSM14" role="3clFbG">
-                    <node concept="37vLTw" id="3R7n5gYSM15" role="2Oq$k0">
-                      <ref role="3cqZAo" node="24Vro6cQKgF" resolve="tracer" />
-                    </node>
-                    <node concept="liA8E" id="3R7n5gYSM16" role="2OqNvi">
-                      <ref role="37wK5l" node="5cnt3vhfW9c" resolve="restored" />
-                      <node concept="37vLTw" id="3R7n5gYSM17" role="37wK5m">
-                        <ref role="3cqZAo" node="3R7n5gYSM18" resolve="occ" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWsn" id="3R7n5gYSM18" role="1Duv9x">
-                <property role="TrG5h" value="occ" />
-                <node concept="3uibUv" id="3R7n5gYSM19" role="1tU5fm">
-                  <ref role="3uigEE" to="w7la:~ConstraintOccurrence" resolve="ConstraintOccurrence" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="1H_6AUSkgVP" role="1DdaDG">
-                <node concept="2OqwBi" id="1H_6AUSjxWA" role="2Oq$k0">
-                  <node concept="2OqwBi" id="1H_6AUSjxv2" role="2Oq$k0">
-                    <node concept="37vLTw" id="1H_6AUSjsDB" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
-                    </node>
-                    <node concept="liA8E" id="1H_6AUSjxLv" role="2OqNvi">
-                      <ref role="37wK5l" to="w7la:~SessionToken.getJournalView()" resolve="getJournalView" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="1H_6AUSkgE9" role="2OqNvi">
-                    <ref role="37wK5l" to="w7la:~MatchJournalView.getStoreView()" resolve="getStoreView" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="1H_6AUSkhe_" role="2OqNvi">
-                  <ref role="37wK5l" to="w7la:~StoreView.allOccurrences()" resolve="allOccurrences" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3y3z36" id="3R7n5gYSM1d" role="3clFbw">
-            <node concept="10Nm6u" id="3R7n5gYSM1e" role="3uHU7w" />
-            <node concept="37vLTw" id="1H_6AUSjq4B" role="3uHU7B">
-              <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7eQMSyza1JA" role="3cqZAp">
           <node concept="37vLTI" id="7eQMSyza3Wa" role="3clFbG">
             <node concept="2OqwBi" id="7eQMSyza54k" role="37vLTx">
@@ -1049,20 +1089,20 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7eQMSyzjaWQ" role="3cqZAp">
-          <node concept="37vLTI" id="7eQMSyzjaWR" role="3clFbG">
-            <node concept="2OqwBi" id="7eQMSyzjaWS" role="37vLTx">
-              <node concept="37vLTw" id="7eQMSyzjaWT" role="2Oq$k0">
+        <node concept="3clFbF" id="3R7n5gYSM0T" role="3cqZAp">
+          <node concept="37vLTI" id="3R7n5gYSM0U" role="3clFbG">
+            <node concept="2OqwBi" id="3R7n5gYSM0V" role="37vLTx">
+              <node concept="37vLTw" id="3R7n5gYSM0W" role="2Oq$k0">
                 <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
               </node>
-              <node concept="liA8E" id="7eQMSyzjaWU" role="2OqNvi">
-                <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withRulesDiff(jetbrains.mps.logic.reactor.core.RulesDiff)" resolve="withRulesDiff" />
-                <node concept="37vLTw" id="6uUkLpHjN74" role="37wK5m">
-                  <ref role="3cqZAo" node="6uUkLpHj_La" resolve="rulesDiff" />
+              <node concept="liA8E" id="3R7n5gYSM0X" role="2OqNvi">
+                <ref role="37wK5l" to="w7la:~EvaluationSession$Config.withSessionToken(jetbrains.mps.logic.reactor.evaluation.SessionToken)" resolve="withSessionToken" />
+                <node concept="37vLTw" id="1H_6AUSjqhx" role="37wK5m">
+                  <ref role="3cqZAo" node="1H_6AUSjp6Y" resolve="sessionToken" />
                 </node>
               </node>
             </node>
-            <node concept="37vLTw" id="7eQMSyzjaWY" role="37vLTJ">
+            <node concept="37vLTw" id="3R7n5gYSM0Z" role="37vLTJ">
               <ref role="3cqZAo" node="7WKNeR9xpPP" resolve="config" />
             </node>
           </node>
