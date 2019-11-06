@@ -21,16 +21,15 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.util.*
 
 /**
- * A StateFrame captures a processing state corresponding to an event that consists
- * of an activated constraint occurrence followed by a series of triggered rule
- * matches.
+ * A [StateFrame] captures a processing state corresponding to current relevant
+ * observers of changes of logical variables. It roughly corresponds to an event
+ * that updates a set of such observers. By dropping a frame the processing state
+ * can be reverted.
  *
- * Each triggered match may result in one or more constraint occurrences
- * to be deactivated/terminated.
+ * The main (and only) example of such event is an occurrence activation and the
+ * corresponding observer reactivates occurrence on changes of logical variables
+ * used as its arguments.
  *
- * An activated or deactivated constraint occurrence updates the dispatching front --
- * an object that maintains a search tree for possible rule matches. 
- * 
  * @author Fedor Isakov
  */
 

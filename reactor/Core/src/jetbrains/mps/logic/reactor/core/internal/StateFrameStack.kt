@@ -21,6 +21,17 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import java.util.*
 
 
+/**
+ * A [StateFrameStack] maintains a stack of [StateFrame]s capturing processing
+ * state related to logical variable observers. The top [StateFrame] contains
+ * the current relevant set of [LogicalObserver]s. Events corresponding to
+ * adding and removing observers are forwarded to the top frame.
+ *
+ * Frames are added on events which could require reverting processing state to
+ * the point before them, which can be achieved by simply dropping a frame and
+ * thus dropping all added observers.
+ */
+
 internal open class StateFrameStack() : ProcessingState, LogicalObserver
 {
     // invariant: never empty
