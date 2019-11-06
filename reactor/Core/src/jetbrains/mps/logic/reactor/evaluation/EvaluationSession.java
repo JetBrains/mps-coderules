@@ -88,8 +88,6 @@ public abstract class EvaluationSession {
 
         public Config withSessionToken(SessionToken token) { return this; }
 
-        public Config withRulesDiff(RulesDiff rulesDiff) { return this; }
-
         public Config withIncrSpec(IncrementalProgramSpec ispec) { return this; }
 
         public abstract EvaluationResult start(Supervisor supervisor);

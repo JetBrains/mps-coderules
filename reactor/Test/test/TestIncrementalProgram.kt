@@ -63,11 +63,13 @@ class TestIncrementalProgram {
     private fun Builder.relaunch(name: String, incrSpec: IncrementalProgramSpec, sessionToken: SessionToken, resultHandler: (EvaluationResult) -> Unit )
         : Pair<Builder, EvaluationResult>
     {
-        val result = EvaluationSession.newSession(program(name))
+        val prog = program(name).withRulesDiff(
+            RulesDiff.findDiff(sessionToken.rules, rules)
+        )
+        val result = EvaluationSession.newSession(prog)
             .withParameter(EvaluationSession.ParameterKey.of("main", Constraint::class.java), MockConstraint(ConstraintSymbol("main", 0)))
             .withIncrSpec(incrSpec)
             .withSessionToken(sessionToken)
-            .withRulesDiff(RulesDiff.findDiff(sessionToken.ruleTags, this.rules))
             .start(MockSupervisor())
         result.feedback()?.let { if (it.isFailure) throw it.failureCause() }
         resultHandler(result)

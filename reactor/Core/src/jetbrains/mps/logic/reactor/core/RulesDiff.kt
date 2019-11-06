@@ -20,37 +20,46 @@ import jetbrains.mps.logic.reactor.program.DependentRulesSpec
 import jetbrains.mps.logic.reactor.program.Rule
 
 
-data class RulesDiff(
+class RulesDiff(
+    preserved: Iterable<Rule>,
     val added: Iterable<Rule>,
     val removed: Set<Any>,
     val removedDependent: Set<Any>
 ) {
+    private val preserved: Map<Any, Rule> = HashMap<Any, Rule>().apply {
+        preserved.forEach { put(it.uniqueTag(), it) }
+    }
+
+    fun getPreservedRule(utag: Any): Rule? = preserved[utag]
+
     companion object {
         @JvmStatic
-        fun emptyDiff() = RulesDiff(emptyList(), emptySet(), emptySet())
+        fun emptyDiff() = RulesDiff(emptyList(), emptyList(), emptySet(), emptySet())
 
         @JvmStatic
-        fun findDiff(old: Iterable<Any>, new: Iterable<Rule>, ruleDeps: DependentRulesSpec): RulesDiff {
-            val oldSet = old.toHashSet()
-            val newSet = new.toHashSet()
+        fun findDiff(old: Iterable<Rule>, new: Iterable<Rule>, ruleDeps: DependentRulesSpec): RulesDiff {
+            val oldTagsSet = old.map { it.uniqueTag() }.toHashSet()
+            val newTagsSet = new.map { it.uniqueTag() }.toHashSet()
 
-            val added: List<Rule> = new.filter { !oldSet.contains(it.uniqueTag()) }
-            val removed: Set<Any> = oldSet.minus(newSet.map { it.uniqueTag() })
+            val added = new.filter { !oldTagsSet.contains(it.uniqueTag()) }
+            val (preserved, removed) = old.partition { newTagsSet.contains(it.uniqueTag()) }
+            val removedTags: Set<Any> = removed.map { it.uniqueTag() }.toSet()
 
+            //fixme: remove
             val removedDeps = HashSet<Any>()
             for (rule in added) {
                 for (depRule in ruleDeps.getDependentRules(rule)) {
-                    if (!removed.contains(depRule)) {
+                    if (!removedTags.contains(depRule)) {
                         removedDeps.add(depRule)
                     }
                 }
             }
 
-            return RulesDiff(added, removed, removedDeps)
+            return RulesDiff(preserved, added, removedTags, removedDeps)
         }
 
         @JvmStatic
-        fun findDiff(old: Iterable<Any>, new: Iterable<Rule>): RulesDiff =
+        fun findDiff(old: Iterable<Rule>, new: Iterable<Rule>): RulesDiff =
             findDiff(old, new, DependentRulesSpec.EmptySpec)
     }
 }

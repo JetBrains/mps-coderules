@@ -2,6 +2,7 @@
  * @author Fedor Isakov
  */
 
+import jetbrains.mps.logic.reactor.core.RulesDiff
 import jetbrains.mps.logic.reactor.evaluation.InvocationContext
 import jetbrains.mps.logic.reactor.evaluation.Supervisor
 import jetbrains.mps.logic.reactor.logical.LogicalContext
@@ -104,6 +105,14 @@ class MockRule(
 }
 
 class MockProgram(val name: String, val rulesLists: List<RulesList>, val registry: MockConstraintRegistry) : Program() {
+    private var rulesDiff: RulesDiff = RulesDiff.emptyDiff()
+
+    override fun incrementalDiff(): RulesDiff = rulesDiff
+
+    override fun withRulesDiff(diff: RulesDiff): MockProgram {
+        this.rulesDiff = diff
+        return this
+    }
 
     override fun name(): String = name
 

@@ -16,14 +16,12 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
+import jetbrains.mps.logic.reactor.program.Rule;
 import org.jetbrains.annotations.NotNull;
-import java.util.Map;
 
 public interface SessionToken {
     @NotNull()
     MatchJournalView getJournalView();
     @NotNull()
-    Iterable<Object> getRuleTags();
-    @NotNull()
-    Map<Object, RuleMatchingProbeState> getFrontState();
+    Iterable<Rule> getRules();
 }

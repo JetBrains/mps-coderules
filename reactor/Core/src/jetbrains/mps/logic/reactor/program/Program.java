@@ -16,6 +16,8 @@
 
 package jetbrains.mps.logic.reactor.program;
 
+import jetbrains.mps.logic.reactor.core.RulesDiff;
+
 import java.util.ArrayList;
 
 /**
@@ -29,6 +31,10 @@ public abstract class Program {
     public abstract String name();
 
     public abstract Iterable<RulesList> handlers();
+
+    public Program withRulesDiff(RulesDiff diff) { return this; };
+
+    public RulesDiff incrementalDiff() { return RulesDiff.emptyDiff(); };
 
     public Iterable<Rule> rules() {
         ArrayList<Rule> allRules = new ArrayList<Rule>();

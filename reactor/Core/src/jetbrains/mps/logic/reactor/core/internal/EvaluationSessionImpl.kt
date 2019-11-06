@@ -82,8 +82,6 @@ internal class EvaluationSessionImpl private constructor (
 
         var token: SessionToken? = null
 
-        var rulesDiff: RulesDiff = RulesDiff.emptyDiff()
-
         override fun withTrace(computingTracer: EvaluationTrace): EvaluationSession.Config {
             this.evaluationTrace = computingTracer
             return this
@@ -93,13 +91,8 @@ internal class EvaluationSessionImpl private constructor (
             return this
         }
 
-        override fun withSessionToken(token: SessionToken): EvaluationSession.Config {
+        override fun withSessionToken(token: SessionToken?): EvaluationSession.Config {
             this.token = token
-            return this
-        }
-
-        override fun withRulesDiff(rulesDiff: RulesDiff): EvaluationSession.Config {
-            this.rulesDiff = rulesDiff
             return this
         }
 
@@ -127,7 +120,7 @@ internal class EvaluationSessionImpl private constructor (
             var failure: Feedback? = null
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                val status = session.launch(main, profiler, token, rulesDiff, ispec)
+                val status = session.launch(main, profiler, token, program.incrementalDiff(), ispec)
                 if (status is FAILED) {
                     failure = status.failure
                 }

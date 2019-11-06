@@ -211,7 +211,8 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
     fun endSession(): SessionToken {
         val histView = view()
         resetStore() // clear observers
-        return SessionTokenImpl(histView, ruleOrdering.ruleTags, dispatchingFront.state())
+        val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
+        return SessionTokenImpl(histView, rules, dispatchingFront.state())
     }
 
     /**
