@@ -321,6 +321,16 @@
             <ref role="3bR37D" to="zqd8:65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
           </node>
         </node>
+        <node concept="1SiIV0" id="1TH_SRmm_ca" role="3bR37C">
+          <node concept="3bR9La" id="1TH_SRmm_cb" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1TH_SRmm_cc" role="3bR37C">
+          <node concept="3bR9La" id="1TH_SRmm_cd" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:7mB3viLwG3m" resolve="jetbrains.mps.coderules.typechecking.test" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="69UmpDmJW3w" role="2G$12L">
         <property role="TrG5h" value="typechecking.samples.baseLanguage" />
@@ -381,6 +391,11 @@
         <node concept="1SiIV0" id="5gVsyvESSIZ" role="3bR37C">
           <node concept="3bR9La" id="5gVsyvESSJ0" role="1SiIV1">
             <ref role="3bR37D" to="ffeo:7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1TH_SRmm_ce" role="3bR37C">
+          <node concept="3bR9La" id="1TH_SRmm_cf" role="1SiIV1">
+            <ref role="3bR37D" node="69UmpDmJW8I" resolve="jetbrains.mps.baseLanguageExt.test" />
           </node>
         </node>
       </node>

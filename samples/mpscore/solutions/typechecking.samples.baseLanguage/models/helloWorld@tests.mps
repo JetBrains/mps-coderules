@@ -270,6 +270,70 @@
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
+    <node concept="1LZb2c" id="1TH_SRmNfU6" role="1SL9yI">
+      <property role="TrG5h" value="TestSubclassing" />
+      <node concept="3cqZAl" id="1TH_SRmNfU7" role="3clF45" />
+      <node concept="3clFbS" id="1TH_SRmNfU8" role="3clF47">
+        <node concept="2Hmddi" id="1TH_SRmNfU9" role="3cqZAp">
+          <node concept="2OqwBi" id="1TH_SRmNfUa" role="2Hmdds">
+            <node concept="2YIFZM" id="1TH_SRmNfUb" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="1TH_SRmNfUc" role="37wK5m">
+                <node concept="2WthIp" id="1TH_SRmNfUd" role="2Oq$k0" />
+                <node concept="2XshWL" id="1TH_SRmNfUe" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="1TH_SRmNfUf" role="2XxRq1">
+                    <node concept="ZC_QK" id="1TH_SRmNgAr" role="2tJFKM">
+                      <ref role="2aWVGs" to="bs09:4M5CNSfDyo1" resolve="Subclassing" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="1TH_SRmNfUh" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="1TH_SRmNfUi" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="1TH_SRmNfUj" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+    </node>
+    <node concept="1LZb2c" id="1TH_SRmNgFv" role="1SL9yI">
+      <property role="TrG5h" value="TestScopes" />
+      <node concept="3cqZAl" id="1TH_SRmNgFw" role="3clF45" />
+      <node concept="3clFbS" id="1TH_SRmNgFx" role="3clF47">
+        <node concept="2Hmddi" id="1TH_SRmNgFy" role="3cqZAp">
+          <node concept="2OqwBi" id="1TH_SRmNgFz" role="2Hmdds">
+            <node concept="2YIFZM" id="1TH_SRmNgF$" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="1TH_SRmNgF_" role="37wK5m">
+                <node concept="2WthIp" id="1TH_SRmNgFA" role="2Oq$k0" />
+                <node concept="2XshWL" id="1TH_SRmNgFB" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="1TH_SRmNgFC" role="2XxRq1">
+                    <node concept="ZC_QK" id="1TH_SRmNhoG" role="2tJFKM">
+                      <ref role="2aWVGs" to="bs09:4pwDyRBUfJN" resolve="Scopes" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="1TH_SRmNgFE" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="1TH_SRmNgFF" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="1TH_SRmNgFG" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+    </node>
   </node>
 </model>
 
