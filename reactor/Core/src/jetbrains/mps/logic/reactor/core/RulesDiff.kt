@@ -32,6 +32,8 @@ class RulesDiff(
 
     fun getPreservedRule(utag: Any): Rule? = preserved[utag]
 
+    fun getPreserved(): Set<Any> = preserved.keys
+
     companion object {
         @JvmStatic
         fun emptyDiff() = RulesDiff(emptyList(), emptyList(), emptySet(), emptySet())
