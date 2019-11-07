@@ -94,10 +94,7 @@ internal class ControllerImpl (
     }
 
     override fun reactivate(occ: Occurrence): FeedbackStatus {
-        // fixme: leave one of these, ensure impl is present on both reactor & mps levels
-        trace.activate(occ)
         trace.reactivateIncremental(occ)
-
         return state.processActivated(this, occ, NORMAL())
     }
 
