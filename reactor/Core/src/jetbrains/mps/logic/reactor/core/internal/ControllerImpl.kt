@@ -45,6 +45,8 @@ internal class ControllerImpl (
             override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
         })
 
+        traceActivated(occ)
+
         val status = state.processActivated(this, active, NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
@@ -91,8 +93,13 @@ internal class ControllerImpl (
         solver.tell(invocation)
     }
 
-    override fun reactivate(occ: Occurrence): FeedbackStatus =
-        state.processActivated(this, occ, NORMAL())
+    override fun reactivate(occ: Occurrence): FeedbackStatus {
+        // fixme: leave one of these, ensure impl is present on both reactor & mps levels
+        trace.activate(occ)
+        trace.reactivateIncremental(occ)
+
+        return state.processActivated(this, occ, NORMAL())
+    }
 
     override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
         profiler.profile<FeedbackStatus>("offerMatch") {
@@ -212,9 +219,19 @@ internal class ControllerImpl (
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
-            state.processActivated(this, constraint.occurrence(this, args, justsCopy(justs), context.logicalContext, context.ruleUniqueTag), status)
+            constraint.occurrence(this, args, justsCopy(justs), context.logicalContext, context.ruleUniqueTag).let { occ ->
+                traceActivated(occ)
+                state.processActivated(this, occ, status)
+            }
         }
     }
+
+    private fun traceActivated(occ: Occurrence) =
+        if (!occ.stored)
+            trace.activate(occ)
+        else
+            trace.reactivate(occ)
+
 
     private fun askPredicate(predicate: Predicate, context: Context) : Boolean =
         profiler.profile<Boolean>("ask_${predicate.symbol()}") {

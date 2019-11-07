@@ -65,7 +65,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         // processed as with reactivation through observers.
         // Incremental reactivation should proceed more like usual activation.
         this.dispatchingFront = dispatchingFront.forgetExpanded(activeOcc)
-        trace.reactivateIncremental(activeOcc)
+
         return controller.reactivate(activeOcc)
     }
 
@@ -216,15 +216,9 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
             if (!active.stored) {
                 active.stored = true
-                trace.activate(active)
-
                 logActivation(active)
                 active.revive(controller)
-
-            } else {
-                trace.reactivate(active)
             }
-
 
             profiler.profile("dispatch_${active.constraint().symbol()}") {
 
