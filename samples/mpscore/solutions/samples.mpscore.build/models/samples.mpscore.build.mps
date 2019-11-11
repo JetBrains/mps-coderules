@@ -249,11 +249,6 @@
             <ref role="3bR37D" to="ffeo:1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
-        <node concept="1SiIV0" id="1EFtv_BLZ04" role="3bR37C">
-          <node concept="3bR9La" id="1EFtv_BLZ05" role="1SiIV1">
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
-          </node>
-        </node>
       </node>
       <node concept="1E1JtA" id="69UmpDmJW8I" role="2G$12L">
         <property role="BnDLt" value="true" />
