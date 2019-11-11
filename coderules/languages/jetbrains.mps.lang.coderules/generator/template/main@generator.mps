@@ -42,7 +42,6 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.coderules.eval)" />
-    <import index="z8tp" ref="r:5bfbd177-208e-4d27-b74c-2ebd2a92eb80(jetbrains.mps.lang.smodel.types.structure)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="xnrr" ref="r:4fd33103-fc30-42f4-a8cf-d1e858f21988(jetbrains.mps.lang.coderules.program.analysis)" />
     <import index="7ed7" ref="r:48788b84-8ecd-41f5-ad03-cc8c09b1f186(jetbrains.mps.lang.coderules.analysis)" />
@@ -14440,14 +14439,6 @@
       <node concept="3uibUv" id="36tQV5AxpPS" role="1zkMxy">
         <ref role="3uigEE" node="36tQV5AoEKJ" resolve="RuleTemplateImpl.Token" />
       </node>
-    </node>
-  </node>
-  <node concept="bUwia" id="oI9YrdoXd">
-    <property role="TrG5h" value="reporting" />
-    <property role="3GE5qa" value="reporting" />
-    <node concept="3aamgX" id="oI9YrDh3R" role="3acgRq">
-      <ref role="30HIoZ" to="z8tp:6nJA6bpveD5" resolve="SNodeTypeOperation" />
-      <node concept="b5Tf3" id="oI9YrDhNx" role="1lVwrX" />
     </node>
   </node>
   <node concept="312cEu" id="6OXbTD$fBEY">

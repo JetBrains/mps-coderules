@@ -5,7 +5,6 @@
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/jetbrains.mps.lang.coderules.mpl" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.coderules/runtime/jetbrains.mps.lang.coderules.runtime.msd" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.controlflow/jetbrains.mps.lang.controlflow.mpl" folder="controlflow" />
-      <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.smodel.types/jetbrains.mps.lang.smodel.types.mpl" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.lang.typechecking/jetbrains.mps.lang.typechecking.mpl" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.logic/jetbrains.mps.logic.mpl" folder="logic" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="logic" />

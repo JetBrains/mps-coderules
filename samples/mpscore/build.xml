@@ -53,7 +53,6 @@
           <module ref="26e8f4ce-2a35-4f44-8065-e5ba154b18e9(jetbrains.mps.lang.coderules.runtime)" kind="rt" />
           <module ref="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" kind="rt" />
           <module ref="ffcd9ef5-e931-4da9-a8d1-eb9bf80d19b4(jetbrains.mps.lang.controlflow.runtime)" kind="rt" />
-          <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="rt" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" kind="rt" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" kind="cl" />
@@ -86,10 +85,8 @@
           <language id="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" />
           <language id="l:982eb8df-2c96-4bd7-9963-11712ea622e5:jetbrains.mps.lang.resources" />
           <language id="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" />
-          <language id="l:cba985fe-1e96-4f16-9f8d-b07434405d4f:jetbrains.mps.lang.smodel.types" />
           <language id="l:c72da2b9-7cce-4447-8389-f407dc1158b7:jetbrains.mps.lang.structure" />
           <language id="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
-          <language id="l:4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462:jetbrains.mps.lang.typechecking" />
           <language id="l:7a5dda62-9140-4668-ab76-d5ed1746f2b2:jetbrains.mps.lang.typesystem" />
           <language id="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" />
         </uses>
@@ -299,8 +296,6 @@
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.controlflow.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.controlflow.runtime.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.smodel.types.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
@@ -760,8 +755,6 @@
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.coderules.template.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.controlflow.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.controlflow.runtime.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.smodel.types.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
