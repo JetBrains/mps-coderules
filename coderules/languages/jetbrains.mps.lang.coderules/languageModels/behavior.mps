@@ -35,7 +35,6 @@
       </concept>
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
-        <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -1123,28 +1122,6 @@
           <ref role="ehGHo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="13h7C7" id="oI9Ys1Qb1">
-    <ref role="13h7C2" to="wq2x:oI9Ys1jH2" resolve="SNodeReportOperation" />
-    <node concept="13hLZK" id="oI9Ys1Qb2" role="13h7CW">
-      <node concept="3clFbS" id="oI9Ys1Qb3" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="oI9Ys1Qbc" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
-      <property role="TrG5h" value="applicableToNode" />
-      <property role="13i0it" value="false" />
-      <property role="13i0iv" value="false" />
-      <ref role="13i0hy" to="tpeu:1653mnvAgrs" resolve="applicableToNode" />
-      <node concept="3Tm1VV" id="oI9Ys1Qbd" role="1B3o_S" />
-      <node concept="3clFbS" id="oI9Ys1Qbi" role="3clF47">
-        <node concept="3clFbF" id="oI9Ys1Qik" role="3cqZAp">
-          <node concept="3clFbT" id="oI9Ys1Qij" role="3clFbG">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="oI9Ys1Qbj" role="3clF45" />
     </node>
   </node>
   <node concept="13h7C7" id="34$A1Mf3_W$">

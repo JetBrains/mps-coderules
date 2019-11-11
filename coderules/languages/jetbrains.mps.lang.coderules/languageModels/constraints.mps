@@ -1287,32 +1287,6 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="72RDgINqIIa">
-    <ref role="1M2myG" to="wq2x:72RDgINeSQJ" resolve="ContextRepositoryExpression" />
-    <node concept="9S07l" id="72RDgINqIIb" role="9Vyp8">
-      <node concept="3clFbS" id="72RDgINqIIc" role="2VODD2">
-        <node concept="3clFbF" id="72RDgINqIPv" role="3cqZAp">
-          <node concept="2OqwBi" id="72RDgINqL2s" role="3clFbG">
-            <node concept="2OqwBi" id="72RDgINqJ4X" role="2Oq$k0">
-              <node concept="nLn13" id="72RDgINqIPu" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="72RDgINqJmE" role="2OqNvi">
-                <node concept="3gmYPX" id="72RDgINqJKj" role="1xVPHs">
-                  <node concept="3gn64h" id="72RDgINqJKk" role="3gmYPZ">
-                    <ref role="3gnhBz" to="wq2x:36tQV5AmIsf" resolve="RuleTemplate" />
-                  </node>
-                  <node concept="3gn64h" id="72RDgINqKsI" role="3gmYPZ">
-                    <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
-                  </node>
-                </node>
-                <node concept="1xIGOp" id="72RDgINqK6n" role="1xVPHs" />
-              </node>
-            </node>
-            <node concept="3x8VRR" id="72RDgINqMNk" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="1M2fIO" id="4jcOV4hwMzQ">
     <property role="3GE5qa" value="constraint" />
     <ref role="1M2myG" to="wq2x:4jcOV4hu088" resolve="ProvideFeedbackConstraint" />
