@@ -25,25 +25,19 @@
     <import index="hano" ref="r:2b43b673-12f9-49ea-8e43-d0c7a401586a(jetbrains.mps.lang.coderules.eval)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
-    <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
     <import index="qox2" ref="r:7ff0776c-aea4-4df2-88a3-2efb6b568dc3(jetbrains.mps.coderules.typechecking.plugin)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
-    <import index="1g4i" ref="r:102178da-67ba-49f6-ba73-eb29fa352fe7(jetbrains.mps.coderules.typechecking)" />
     <import index="u46i" ref="r:c2760840-3210-4ad4-9e64-a2dfd53620e1(jetbrains.mps.lang.typechecking.aspect)" />
     <import index="sppd" ref="r:0e60ac07-77c3-4d5c-b40d-73e8fd128592(jetbrains.mps.coderules.typechecking.testlang.sandbox.test)" />
     <import index="qulx" ref="r:ec0979fb-ae37-4823-9eaa-8550d9f5c6fd(jetbrains.mps.typechecking.testlang.structure)" />
-    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="mqqo" ref="r:82cec6f7-ddec-440c-961c-1c598267be42(jetbrains.mps.logic.test.unification)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="yt73" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.unification(jetbrains.mps.logic.reactor/)" />
     <import index="z9ve" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core.internal(jetbrains.mps.logic.reactor/)" />
-    <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
-    <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
@@ -1222,102 +1216,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="oI9Yrxmcl" role="3cqZAp" />
-              <node concept="3cpWs8" id="3GEs5q_3o$J" role="3cqZAp">
-                <node concept="3cpWsn" id="3GEs5q_3o$K" role="3cpWs9">
-                  <property role="TrG5h" value="reporting" />
-                  <node concept="3uibUv" id="3GEs5q_3o$I" role="1tU5fm">
-                    <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
-                  </node>
-                  <node concept="2ShNRf" id="3GEs5q_3o$L" role="33vP2m">
-                    <node concept="YeOm9" id="3GEs5q_3o$M" role="2ShVmc">
-                      <node concept="1Y3b0j" id="3GEs5q_3o$N" role="YeSDq">
-                        <property role="2bfB8j" value="true" />
-                        <ref role="1Y3XeK" to="9x2e:oI9YrIZeS" resolve="Reporting" />
-                        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                        <node concept="3Tm1VV" id="3GEs5q_3o$O" role="1B3o_S" />
-                        <node concept="3clFb_" id="3GEs5q_3o$P" role="jymVt">
-                          <property role="TrG5h" value="assignType" />
-                          <property role="1EzhhJ" value="false" />
-                          <node concept="37vLTG" id="3GEs5q_3o$Q" role="3clF46">
-                            <property role="TrG5h" value="target" />
-                            <node concept="3Tqbb2" id="3GEs5q_3o$R" role="1tU5fm" />
-                          </node>
-                          <node concept="37vLTG" id="3GEs5q_3o$S" role="3clF46">
-                            <property role="TrG5h" value="type" />
-                            <node concept="3Tqbb2" id="3GEs5q_3o$T" role="1tU5fm" />
-                          </node>
-                          <node concept="10P_77" id="3GEs5q_3o$U" role="3clF45" />
-                          <node concept="3Tm1VV" id="3GEs5q_3o$V" role="1B3o_S" />
-                          <node concept="3clFbS" id="3GEs5q_3o$W" role="3clF47">
-                            <node concept="YS8fn" id="4ekZiHdS65_" role="3cqZAp">
-                              <node concept="2ShNRf" id="4ekZiHdS7en" role="YScLw">
-                                <node concept="1pGfFk" id="4ekZiHdS7Lu" role="2ShVmc">
-                                  <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2AHcQZ" id="3GEs5q_3o_8" role="2AJF6D">
-                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                          </node>
-                        </node>
-                        <node concept="2tJIrI" id="3GEs5q_3o_9" role="jymVt" />
-                        <node concept="3clFb_" id="3GEs5q_3o_a" role="jymVt">
-                          <property role="1EzhhJ" value="false" />
-                          <property role="TrG5h" value="contextRepository" />
-                          <node concept="3uibUv" id="3GEs5q_3o_b" role="3clF45">
-                            <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-                          </node>
-                          <node concept="3Tm1VV" id="3GEs5q_3o_c" role="1B3o_S" />
-                          <node concept="3clFbS" id="3GEs5q_3o_d" role="3clF47">
-                            <node concept="3clFbF" id="3GEs5q_3o_e" role="3cqZAp">
-                              <node concept="37vLTw" id="3GEs5q_3o_f" role="3clFbG">
-                                <ref role="3cqZAo" node="6OXbTD_oHcp" resolve="repo" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2AHcQZ" id="3GEs5q_3o_g" role="2AJF6D">
-                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                          </node>
-                        </node>
-                        <node concept="3clFb_" id="3GEs5q_3o_h" role="jymVt">
-                          <property role="1EzhhJ" value="false" />
-                          <property role="TrG5h" value="report" />
-                          <node concept="37vLTG" id="3GEs5q_3o_i" role="3clF46">
-                            <property role="TrG5h" value="kind" />
-                            <node concept="3uibUv" id="3GEs5q_3o_j" role="1tU5fm">
-                              <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
-                            </node>
-                          </node>
-                          <node concept="37vLTG" id="3GEs5q_3o_k" role="3clF46">
-                            <property role="TrG5h" value="target" />
-                            <node concept="2sp9CU" id="3GEs5q_3o_l" role="1tU5fm" />
-                          </node>
-                          <node concept="37vLTG" id="3GEs5q_3o_m" role="3clF46">
-                            <property role="TrG5h" value="text" />
-                            <node concept="17QB3L" id="3GEs5q_3o_n" role="1tU5fm" />
-                          </node>
-                          <node concept="10P_77" id="3GEs5q_3o_o" role="3clF45" />
-                          <node concept="3Tm1VV" id="3GEs5q_3o_p" role="1B3o_S" />
-                          <node concept="3clFbS" id="3GEs5q_3o_q" role="3clF47">
-                            <node concept="YS8fn" id="4ekZiHdSaOf" role="3cqZAp">
-                              <node concept="2ShNRf" id="4ekZiHdSaPd" role="YScLw">
-                                <node concept="1pGfFk" id="4ekZiHdSbbV" role="2ShVmc">
-                                  <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2AHcQZ" id="3GEs5q_3o_t" role="2AJF6D">
-                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbH" id="3GEs5q_3sbK" role="3cqZAp" />
               <node concept="3cpWs8" id="6QH_LDtbV5P" role="3cqZAp">
                 <node concept="3cpWsn" id="6QH_LDtbV5Q" role="3cpWs9">
@@ -1328,9 +1226,6 @@
                   <node concept="2ShNRf" id="6QH_LDtbV5S" role="33vP2m">
                     <node concept="1pGfFk" id="6QH_LDtbV5T" role="2ShVmc">
                       <ref role="37wK5l" to="hano:HV6urVFjOl" resolve="ProgramEvaluator" />
-                      <node concept="37vLTw" id="3GEs5q_3o_u" role="37wK5m">
-                        <ref role="3cqZAo" node="3GEs5q_3o$K" resolve="reporting" />
-                      </node>
                     </node>
                   </node>
                 </node>

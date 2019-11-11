@@ -18,13 +18,10 @@
     <import index="ouhv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.annotation(JDK/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
-    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="cxk7" ref="r:daa544a7-0a5c-49c0-a54c-4c2a5b4868aa(jetbrains.mps.logic.predicate)" />
-    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
-    <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
     <import index="xnrr" ref="r:4fd33103-fc30-42f4-a8cf-d1e858f21988(jetbrains.mps.lang.coderules.program.analysis)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
   </imports>
@@ -2344,86 +2341,7 @@
       <node concept="3Tm1VV" id="4MEOIDFgV3j" role="1B3o_S" />
       <node concept="3clFbS" id="4MEOIDFgV3k" role="3clF47" />
     </node>
-    <node concept="2tJIrI" id="1L74NXEx6$J" role="jymVt" />
-    <node concept="3clFb_" id="oI9YrJ4SU" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="assignType" />
-      <node concept="37vLTG" id="oI9YrJ4SV" role="3clF46">
-        <property role="TrG5h" value="target" />
-        <node concept="3Tqbb2" id="oI9YrJ4SW" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="oI9YrJ4SX" role="3clF46">
-        <property role="TrG5h" value="nodeType" />
-        <node concept="3Tqbb2" id="oI9YrJ4SY" role="1tU5fm" />
-      </node>
-      <node concept="10P_77" id="oI9YrJ4SZ" role="3clF45" />
-      <node concept="3Tm1VV" id="oI9YrJ4T0" role="1B3o_S" />
-      <node concept="3clFbS" id="oI9YrJ4T2" role="3clF47">
-        <node concept="YS8fn" id="oI9Ys3nmw" role="3cqZAp">
-          <node concept="2ShNRf" id="oI9Ys3nnI" role="YScLw">
-            <node concept="1pGfFk" id="oI9Ys3ny4" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="oI9YrJ4T3" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="oI9Ys3mLR" role="jymVt" />
-    <node concept="3clFb_" id="oI9Ys3m9o" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="report" />
-      <node concept="37vLTG" id="oI9Ys3m9r" role="3clF46">
-        <property role="TrG5h" value="kind" />
-        <node concept="3uibUv" id="1FOQehwpsz0" role="1tU5fm">
-          <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="oI9Ys3m9p" role="3clF46">
-        <property role="TrG5h" value="target" />
-        <node concept="2sp9CU" id="1FOQehwMiYP" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="oI9Ys3m9t" role="3clF46">
-        <property role="TrG5h" value="text" />
-        <node concept="17QB3L" id="oI9Ys3m9u" role="1tU5fm" />
-      </node>
-      <node concept="10P_77" id="oI9Ys3m9v" role="3clF45" />
-      <node concept="3Tm1VV" id="oI9Ys3m9w" role="1B3o_S" />
-      <node concept="3clFbS" id="oI9Ys3m9y" role="3clF47">
-        <node concept="YS8fn" id="oI9Ys3n$U" role="3cqZAp">
-          <node concept="2ShNRf" id="oI9Ys3n$V" role="YScLw">
-            <node concept="1pGfFk" id="oI9Ys3n$W" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="oI9Ys3m9z" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="oI9YrJ5uv" role="jymVt" />
-    <node concept="3clFb_" id="5yr01fEe32D" role="jymVt">
-      <property role="TrG5h" value="contextRepository" />
-      <node concept="3uibUv" id="5yr01fEe32E" role="3clF45">
-        <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-      </node>
-      <node concept="3Tm1VV" id="5yr01fEe32F" role="1B3o_S" />
-      <node concept="3clFbS" id="5yr01fEe32I" role="3clF47">
-        <node concept="YS8fn" id="5yr01fEe5Iq" role="3cqZAp">
-          <node concept="2ShNRf" id="5yr01fEe5Ir" role="YScLw">
-            <node concept="1pGfFk" id="5yr01fEe5Is" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5yr01fEe32J" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="5yr01fEe1DO" role="jymVt" />
     <node concept="3clFb_" id="7DvO2M9IiMh" role="jymVt">
       <property role="TrG5h" value="putParameter" />
@@ -2786,9 +2704,6 @@
     </node>
     <node concept="2tJIrI" id="4vBwiiV6bol" role="jymVt" />
     <node concept="3Tm1VV" id="18kNIl1vDQ0" role="1B3o_S" />
-    <node concept="3uibUv" id="oI9YrJ3X_" role="EKbjA">
-      <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
-    </node>
   </node>
   <node concept="312cEu" id="7nPD14OaO1O">
     <property role="TrG5h" value="RuleEx" />

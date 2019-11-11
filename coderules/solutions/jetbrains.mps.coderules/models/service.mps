@@ -23,7 +23,6 @@
     <import index="unkn" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex(jetbrains.mps.coderules/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
-    <import index="zx3l" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.core(jetbrains.mps.logic.reactor/)" />
     <import index="m4y7" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.schedulers(jetbrains.mps.coderules/)" />
     <import index="e5vs" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.jetbrains.ide(MPS.IDEA/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -31,11 +30,9 @@
     <import index="e0w6" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.observers(jetbrains.mps.coderules/)" />
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
-    <import index="9x2e" ref="r:0730b0d1-7e2f-4982-aac3-8069c5060a9c(jetbrains.mps.lang.typesystem2.reporting)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1707,9 +1704,6 @@
                             <ref role="37wK5l" to="hano:4F3SXIF5Xa$" resolve="ProgramEvaluator" />
                             <ref role="1Y3XeK" to="hano:41ox5Vnk76a" resolve="ProgramEvaluator" />
                             <node concept="3Tm1VV" id="7WKNeR9ynVB" role="1B3o_S" />
-                            <node concept="1rXfSq" id="7WKNeR9_X4s" role="37wK5m">
-                              <ref role="37wK5l" node="23c4kVtaQus" resolve="createReporting" />
-                            </node>
                             <node concept="37vLTw" id="23c4kVtm7Iq" role="37wK5m">
                               <ref role="3cqZAo" node="23c4kVtm7Il" resolve="profile" />
                             </node>
@@ -2529,19 +2523,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="Hg6Enc6sLX" role="jymVt" />
-    <node concept="3clFb_" id="23c4kVtaQus" role="jymVt">
-      <property role="TrG5h" value="createReporting" />
-      <property role="1EzhhJ" value="true" />
-      <node concept="3uibUv" id="3GEs5q_2liE" role="3clF45">
-        <ref role="3uigEE" to="9x2e:oI9YrIZeS" resolve="Reporting" />
-      </node>
-      <node concept="3Tmbuc" id="23c4kVtaQuw" role="1B3o_S" />
-      <node concept="3clFbS" id="23c4kVtaQux" role="3clF47" />
-      <node concept="2AHcQZ" id="1laj_RSBgTc" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="2tJIrI" id="52a_GfIGUah" role="jymVt" />

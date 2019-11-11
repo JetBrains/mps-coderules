@@ -773,11 +773,6 @@
               <ref role="3bR37D" node="3u5wJtgiSM" resolve="jetbrains.mps.lang.smodel.types" />
             </node>
           </node>
-          <node concept="1SiIV0" id="58VeaO3uZwW" role="3bR37C">
-            <node concept="3bR9La" id="58VeaO3uZwX" role="1SiIV1">
-              <ref role="3bR37D" node="oI9YrJ7Rx" resolve="jetbrains.mps.reporting.runtime" />
-            </node>
-          </node>
           <node concept="1SiIV0" id="58VeaO3uZwY" role="3bR37C">
             <node concept="3bR9La" id="58VeaO3uZwZ" role="1SiIV1">
               <ref role="3bR37D" node="65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
@@ -1646,9 +1641,6 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6Lg8" resolve="jetbrains.mps.runtime" />
           </node>
         </node>
-        <node concept="1E0d5M" id="oI9YrNsk8" role="1E1XAP">
-          <ref role="1E0d5P" node="oI9YrJ7Rx" resolve="jetbrains.mps.reporting.runtime" />
-        </node>
         <node concept="1SiIV0" id="4uSBgQVvlaV" role="3bR37C">
           <node concept="3bR9La" id="4uSBgQVvlaW" role="1SiIV1">
             <ref role="3bR37D" to="ffeo:5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
@@ -1721,12 +1713,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="oI9YrJ949" role="3bR37C">
-          <node concept="3bR9La" id="oI9YrJ94a" role="1SiIV1">
-            <property role="3bR36h" value="true" />
-            <ref role="3bR37D" node="oI9YrJ7Rx" resolve="jetbrains.mps.reporting.runtime" />
           </node>
         </node>
         <node concept="1SiIV0" id="4cvvxaYkWvj" role="3bR37C">
@@ -1996,40 +1982,6 @@
           </node>
         </node>
       </node>
-      <node concept="1E1JtA" id="oI9YrJ7Rx" role="2G$12L">
-        <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.reporting.runtime" />
-        <property role="3LESm3" value="da80355b-a098-4248-9ec8-70d10dd7e9af" />
-        <node concept="55IIr" id="oI9YrJ7R$" role="3LF7KH">
-          <node concept="2Ry0Ak" id="oI9YrJ898" role="iGT6I">
-            <property role="2Ry0Am" value="coderules" />
-            <node concept="2Ry0Ak" id="oI9YrJ8jh" role="2Ry0An">
-              <property role="2Ry0Am" value="solutions" />
-              <node concept="2Ry0Ak" id="oI9YrJ8tq" role="2Ry0An">
-                <property role="2Ry0Am" value="jetbrains.mps.reporting.runtime" />
-                <node concept="2Ry0Ak" id="5p9vXslXnOY" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.reporting.runtime.msd" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="Y$$FFBC2or" role="3bR37C">
-          <node concept="3bR9La" id="Y$$FFBC2os" role="1SiIV1">
-            <ref role="3bR37D" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="72RDgIN6UKy" role="3bR37C">
-          <node concept="3bR9La" id="72RDgIN6UKz" role="1SiIV1">
-            <ref role="3bR37D" to="ffeo:1H905DlDUSw" resolve="MPS.OpenAPI" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="1FOQehws5Z7" role="3bR37C">
-          <node concept="3bR9La" id="1FOQehws5Z8" role="1SiIV1">
-            <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="2G$12M" id="1Lr58WFO8Mc" role="3989C9">
       <property role="TrG5h" value="coderules-test" />
@@ -2172,9 +2124,6 @@
         </node>
         <node concept="L2wRC" id="7Ant4WkHLmq" role="39821P">
           <ref role="L2wRA" node="65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
-        </node>
-        <node concept="L2wRC" id="oI9YrJbb6" role="39821P">
-          <ref role="L2wRA" node="oI9YrJ7Rx" resolve="jetbrains.mps.reporting.runtime" />
         </node>
         <node concept="L2wRC" id="55Q$YFtv_$M" role="39821P">
           <ref role="L2wRA" node="55Q$YFtvwQY" resolve="jetbrains.mps.coderules.typechecking.ui" />
@@ -2428,9 +2377,6 @@
             </node>
             <node concept="L2wRC" id="65DJywFj_1R" role="39821P">
               <ref role="L2wRA" node="65DJywFj0Fi" resolve="jetbrains.mps.coderules.typechecking" />
-            </node>
-            <node concept="L2wRC" id="oI9YrJbsm" role="39821P">
-              <ref role="L2wRA" node="oI9YrJ7Rx" resolve="jetbrains.mps.reporting.runtime" />
             </node>
             <node concept="L2wRC" id="55Q$YFtwDpa" role="39821P">
               <ref role="L2wRA" node="55Q$YFtvwQY" resolve="jetbrains.mps.coderules.typechecking.ui" />

@@ -62,7 +62,6 @@
           <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="rt" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" kind="rt" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" kind="rt" />
-          <module ref="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" kind="rt" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" kind="cl" />
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
@@ -210,7 +209,6 @@
           <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="rt" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" kind="rt" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" kind="rt" />
-          <module ref="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" kind="rt" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
@@ -353,7 +351,6 @@
           <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="rt" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" kind="rt" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" kind="rt" />
-          <module ref="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" kind="rt" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
           <module ref="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" kind="cl" />
@@ -498,7 +495,6 @@
           <module ref="f486b8aa-5b2d-4ec0-8ef5-8f45d773fb84(jetbrains.mps.lang.typechecking.runtime)" kind="rt" />
           <module ref="a5478664-6b44-4c62-a9f7-434f8aa57eee(jetbrains.mps.logic.runtime)" kind="rt" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" kind="rt" />
-          <module ref="da80355b-a098-4248-9ec8-70d10dd7e9af(jetbrains.mps.reporting.runtime)" kind="rt" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" kind="rt" />
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="cl" />
           <module ref="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" kind="cl" />
@@ -708,7 +704,6 @@
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-      <library file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
       <library file="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.annotation.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/closures.runtime.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/collections.runtime.jar" />
@@ -910,7 +905,6 @@
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
@@ -1032,7 +1026,6 @@
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
@@ -1156,7 +1149,6 @@
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
@@ -1280,7 +1272,6 @@
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
@@ -1405,7 +1396,6 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" />
         <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-        <fileset file="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="reactive-streams-1.0.0.final.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava-2.1.1.jar" />
         <fileset dir="${artifacts.coderules}/deploy/lib" includes="rxjava2-swing-0.2.1.jar" />
@@ -1429,7 +1419,6 @@
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.reactor.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.logic.runtime.jar" />
-      <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.reporting.runtime.jar" />
       <pathelement location="${artifacts.coderules}/deploy/jetbrains.mps.typechecking.annotation.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/closures.runtime.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/collections.runtime.jar" />
