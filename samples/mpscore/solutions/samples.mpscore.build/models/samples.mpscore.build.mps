@@ -249,6 +249,11 @@
             <ref role="3bR37D" to="ffeo:1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
+        <node concept="1SiIV0" id="1mUB3w53Gjz" role="3bR37C">
+          <node concept="3bR9La" id="1mUB3w53Gj$" role="1SiIV1">
+            <ref role="3bR37D" to="zqd8:NKt6ynvPIP" resolve="jetbrains.mps.lang.typechecking" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="69UmpDmJW8I" role="2G$12L">
         <property role="BnDLt" value="true" />
