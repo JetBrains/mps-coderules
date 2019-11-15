@@ -293,6 +293,10 @@ class TestRuleMatcher {
                 matches().size shouldBe 0                               }.run {
 
                 expand(bara)                                            }.apply {
+                // the constraint that has been dropped remains dropped
+                matches().size shouldBe 0
+
+                expand(occurrence("bar", "a"))                          }.apply {
                 matches().size shouldBe 1
 
                 with(matches().first()) {
@@ -306,6 +310,52 @@ class TestRuleMatcher {
         }
     }
 
+    @Test
+    fun testAmbiguousRules() {
+        val (X, Y) = metaLogical<String>("X", "Y")
+        val x = X.logical()
+        val y = Y.logical()
+        with(programWithRules(
+            rule("rule1",
+                headReplaced(
+                    constraint("bar", X, Y)
+                ),
+                headKept(
+                    constraint("foo", X),
+                    constraint("foo", Y)
+                ),
+                body(
+                    constraint("expected")
+                )),
+            rule("rule2",
+                headReplaced(
+                    constraint("bar", X, Y)
+                ),
+                headKept(
+                    constraint("foo", X)
+                ),
+                body(
+                    constraint("unexpected")
+                ))))
+        {
+            val foox = occurrence("foo", x)
+            val fooy = occurrence("foo", y)
+
+            with(ruleMatcher().probe()) {
+                
+                expand(occurrence("foo", "schmoo"))  }.run {
+                expand(foox)                                    }.run {
+                expand(fooy)                                    }.run {
+                expand(fooy)                                    }.run {
+                expand(fooy)                                    }.run {
+                expand(occurrence("bar", x, y))             }.apply {
+
+                matches().size shouldBe 1
+                matches().first().rule().tag() shouldBe "rule1"
+                
+            }
+        }
+    }
 
     @Test
     fun testMetaLogical() {
@@ -500,10 +550,11 @@ class TestRuleMatcher {
                     constraint("qux")
                 ))))
         {
-            val occ2reactivate = occurrence("bazz", term("k", logicalVar(yLogical)))
+            val bazzk = occurrence("bazz", term("k", logicalVar(yLogical)))
 
             with(ruleMatcher().probe()) {
-                expand(occ2reactivate)                                                  }.apply {
+                expand(bazzk)                                                  }.apply {
+
                 matches().size shouldBe 0
                 yLogical.findRoot().value() shouldBe null
                                                                                         }.run {
@@ -519,7 +570,7 @@ class TestRuleMatcher {
                 // test reactivate occurrence
                 yLogical.findRoot().set(parseTerm("h"))
                                                                                         }.run {
-                expand(occ2reactivate)                                                  }.apply {
+                expand(bazzk)                                                  }.apply {
                 matches().size shouldBe 1
 
                 with(matches().first()) {
@@ -599,6 +650,7 @@ class TestRuleMatcher {
                 with(matches().first()) {
 
                     rule().uniqueTag().toString() shouldBe "rule1"
+                    logicalContext().variable(X).value() shouldBe "a"
 
                 }
                                                                                     }.run {
