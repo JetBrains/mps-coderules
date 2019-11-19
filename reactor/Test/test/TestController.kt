@@ -458,6 +458,52 @@ class TestController {
         }
     }
 
+    @Test
+    fun testReactivateCorrectOccurrence() {
+        val (X, Y, B) = metaLogical<Int>("X", "Y", "B")
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    constraint("hasBound", X, 11),
+                    constraint("hasBound", Y, 22),
+                    constraint("bindX")
+                )
+            ),
+            rule("hasBound",
+                headReplaced(
+                    constraint("hasBound", X, B)
+                ),
+                guard(
+                    expression({ x -> x.isBound }, X)
+                ),
+                body(
+                    constraint("convertsTo", X, B)
+                )),
+            rule("bindX",
+                headReplaced(
+                    constraint("bindX")
+                ),
+                headKept(
+                    constraint("hasBound", X, B)
+                ),
+                guard(
+                    expression({ b -> b.getNullable()?.equals(11) ?: false }, B)
+                ),
+                body(
+                    statement({ x -> x.set(42) }, X)
+                ))
+        ).controller().evaluate(occurrence("main")).run {
+            assertEquals(2, allOccurrences().count())
+            assertEquals(setOf(ConstraintSymbol("hasBound", 2), ConstraintSymbol("convertsTo", 2)),
+                allOccurrences().map { co -> co.constraint().symbol() }.toSet())
+
+            val convertsTo = allOccurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("convertsTo", 2) }.first()
+            assertEquals(42, (convertsTo.arguments().first() as Logical<Int>).value())
+        }
+    }
 
     @Test
     fun correctRulesOrder() {
