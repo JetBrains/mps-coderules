@@ -66,7 +66,9 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         // Incremental reactivation should proceed more like usual activation.
         this.dispatchingFront = dispatchingFront.forgetExpanded(activeOcc)
 
-        return controller.reactivate(activeOcc)
+        trace.reactivateIncremental(activeOcc)
+
+        return processActivated(controller, activeOcc, FeedbackStatus.NORMAL())
     }
 
     /**
