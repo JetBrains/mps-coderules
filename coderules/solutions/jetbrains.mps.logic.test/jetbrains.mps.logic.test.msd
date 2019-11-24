@@ -8,6 +8,9 @@
       <sourceRoot location="lib/mockito-core-2.0.3-beta.jar" />
     </modelRoot>
   </models>
+  <facets>
+    <facet type="tests" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/mockito-core-2.0.3-beta.jar" />
     <stubModelEntry path="${module}/lib/objenesis-2.1.jar" />
