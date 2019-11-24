@@ -291,24 +291,6 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 occurrence !== occ && from.containsOccurrence(occ)              // reference neq!
         }
 
-        inner class ReactivateBlock (occurrence: Occurrence, val from: Layer) : DelayedBlock(occurrence) {
-
-            override fun proto(): Layer? = null
-
-            override fun complete(droppedFootprint: Footprint?, sink: (ReteNode) -> Unit) {
-                if (droppedFootprint?.contains(occurrence.identity) ?: false) return
-
-                for (n in from.allNodes(droppedFootprint)) {
-                    if (n.containsOccurrence(occurrence)) {
-                        sink(n)
-                    }
-                }
-            }
-
-            override fun containsOccurrence(occ: Occurrence): Boolean  =
-                occurrence === occ || from.containsOccurrence(occ)              // reference eq!
-        }
-
         /**
          * Collection of [Layer] instances.
          * The new layers are prepended to the [layers] list.
@@ -333,18 +315,14 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
                     var lastLayer: Layer? = null
                     for (currLayer in layers) {
-                        // `!reactivated` is to avoid adding new IntroBlock for InitialNode-s on reactivated
-                        if (!currLayer.final && !reactivated) {
+                        if (!currLayer.final) {
                             newLayers.add(Layer(
                                                 currLayer.vacancies - 1,
                                                 IntroBlock(occurrence, headPosMask, currLayer),
                                                 lastLayer))
 
-                        } else if (currLayer.final && reactivated) {
-                            newLayers.add(Layer(
-                                                currLayer.vacancies, // == 0
-                                                ReactivateBlock(occurrence, currLayer),
-                                                lastLayer))
+                        } else if (reactivated) {
+                            newLayers.add(currLayer)
                         }
 
                         lastLayer = currLayer
