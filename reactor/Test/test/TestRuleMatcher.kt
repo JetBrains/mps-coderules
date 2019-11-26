@@ -293,10 +293,6 @@ class TestRuleMatcher {
                 matches().size shouldBe 0                               }.run {
 
                 expand(bara)                                            }.apply {
-                // the constraint that has been dropped remains dropped
-                matches().size shouldBe 0
-
-                expand(occurrence("bar", "a"))                          }.apply {
                 matches().size shouldBe 1
 
                 with(matches().first()) {

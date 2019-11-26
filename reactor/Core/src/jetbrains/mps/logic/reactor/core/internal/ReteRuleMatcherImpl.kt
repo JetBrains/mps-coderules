@@ -42,6 +42,10 @@ fun trailOf(): Trail = TIntHashSet()
 
 fun Signature.toTrail() = TIntHashSet(this)
 
+typealias SignatureIndex = TIntObjectHashMap<List<Signature>>
+
+fun signatureIndexOf() = TIntObjectHashMap<MutableList<Signature>>()
+
 internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                                    private val tag: Any) : RuleMatcher
 {
@@ -69,7 +73,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
         var lastGeneration = Generation(Layer(InitialNode()))
 
-        val consumedSignatures = HashSet<Signature>()
+        val consumedSignatures = IndexedSignatureSet()
 
         abstract inner class ReteNode
         {
@@ -218,7 +222,6 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
             }
 
             fun forgetContains(occ: Occurrence): Boolean {
-                droppedTrail.remove(occ.identity)
                 // FIXME this breaks the internal invariant
                 return introTrail.remove(occ.identity)
             }
@@ -253,7 +256,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
             }
 
             fun update(block: UpdateBlock): Boolean {
-                return block.update(nodeList, introTrail, droppedTrail)
+                return block.update(nodeList, introTrail)
             }
 
             fun queueUpdate(block: UpdateBlock): Layer {
@@ -274,7 +277,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
             abstract fun reset()
 
-            abstract fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail, droppedTrail: Trail): Boolean
+            abstract fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail): Boolean
 
         }
 
@@ -289,9 +292,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 //                nodesIt = onTopOf.iterate()
             }
 
-            override fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail, droppedTrail: Trail): Boolean {
-                if (droppedTrail.contains(occurrence.identity)) return false
-
+            override fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail): Boolean {
                 var found = false
                 while (true) {
                     val n = onTopOf.nextNode(nodesIt)
@@ -327,7 +328,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 // NOP
             }
 
-            override fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail, droppedTrail: Trail): Boolean {
+            override fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail): Boolean {
                 val it = nodes.iterator()
                 while (it.hasNext()) {
                     val n = it.next()
@@ -336,7 +337,6 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                     }
                 }
                 introTrail.remove(occurrence.identity)
-                droppedTrail.add(occurrence.identity)
 
                 return false
             }
@@ -406,6 +406,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 for (layer in layers) {
                     layer.runUpdate(DropBlock(occurrence))
                 }
+                consumedSignatures.removeAllWith(occurrence.identity)
                 return nextGeneration().reset()
             }
 
@@ -468,7 +469,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
         }
 
         override fun forgetConsumed(occ: Occurrence): ReteNetwork {
-            consumedSignatures.removeIf({ it.contains(occ.identity) })
+            consumedSignatures.removeAllWith(occ.identity)
             return this
         }
 
@@ -486,6 +487,43 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
             return this
         }
 
+    }
+
+}
+
+class IndexedSignatureSet {
+
+    val signatures = HashSet<Signature>()
+
+    val index = signatureIndexOf()
+
+    fun add(signature: Signature) {
+        signatures.add(signature)
+        for (id in signature) {
+            if (!index.contains(id)) {
+                index.put(id, arrayListOf())
+            }
+            index.get(id).add(signature)
+        }
+    }
+
+    fun remove(signature: Signature) {
+        signatures.add(signature)
+        for (id in signature) {
+            if (index.containsKey(id)) {
+                index.get(id).remove(signature)
+            }
+        }
+    }
+
+    fun contains(signature: Signature): Boolean = signatures.contains(signature)
+
+    fun removeAllWith(id: Int) {
+        if (index.contains(id)) {
+            for (s in index[id]) {
+                signatures.remove(s)
+            }
+        }
     }
 
 }
