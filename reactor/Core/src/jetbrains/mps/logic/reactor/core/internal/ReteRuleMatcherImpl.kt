@@ -204,7 +204,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
             private val droppedTrail: Trail = trailOf()
 
-            private val nodeList = LoopLinkedList<ReteNode>()
+            private val nodeList = UnionFindLinkedList<ReteNode>()
 
             private val updateQueue: MutableList<UpdateBlock> = LinkedList()
 
@@ -229,7 +229,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
             fun iterate(): Iterator<ReteNode> = nodeList.iterator()
 
             fun copyIterator(it: Iterator<ReteNode>): Iterator<ReteNode> =
-                nodeList.iterator((it as LoopLinkedList<ReteNode>.Iterator).current)
+                nodeList.iterator((it as UnionFindLinkedList<ReteNode>.Iterator).current)
 
             fun nextNode(it: Iterator<ReteNode>): ReteNode? {
                 if (!it.hasNext()) {
@@ -277,7 +277,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
             abstract fun reset()
 
-            abstract fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail): Boolean
+            abstract fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail): Boolean
 
         }
 
@@ -292,7 +292,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 //                nodesIt = onTopOf.iterate()
             }
 
-            override fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail): Boolean {
+            override fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail): Boolean {
                 var found = false
                 while (true) {
                     val n = onTopOf.nextNode(nodesIt)
@@ -328,7 +328,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 // NOP
             }
 
-            override fun update(nodes: LoopLinkedList<ReteNode>, introTrail: Trail): Boolean {
+            override fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail): Boolean {
                 val it = nodes.iterator()
                 while (it.hasNext()) {
                     val n = it.next()
@@ -528,97 +528,96 @@ class IndexedSignatureSet {
 
 }
 
-
 /**
  * Simple linked list with fail-safe iterator.
+ * This is a for-purpose implementation of append-only linked list.
+ * Adding/removal of elements doesn't invalidate the currently active iterators.
+ * The invariants are maintained through application of union-find for internal nodes.
  */
-class LoopLinkedList<T> : Iterable<T> {
+class UnionFindLinkedList<T> : Iterable<T> {
 
     open inner class Joint {
-        lateinit var prev: Joint
-        lateinit var next: Joint
 
-        open fun remove() {
-            prev.next = this.next
-            next.prev = this.prev
+        var prev: Joint? = null
+        var next: Joint? = null
+        var rep: Joint = this
+
+        fun unionNext(that: Joint) {
+            val prevRep = this.find()
+            val nextRep = that.find()
+            if (prevRep === nextRep) return
+            nextRep.rep = prevRep
+            nextRep.prev = nextRep
+            prevRep.next = nextRep.next
         }
 
-        fun prepend(that: Joint) {
-            insert(prev, that, this)
+        fun find(): Joint {
+            if (rep == this) return this
+
+            val path = arrayListOf<Joint>()
+            var p = this
+            while (p.rep !== p) {
+                path.add(p)
+                p = p.rep
+            }
+            path.forEach {
+                it.rep = p
+                it.prev = it
+            }
+            return p
         }
 
-        fun append(that: Joint) {
-            insert(this, that, next)
+        fun append(joint: Joint) : Joint {
+            this.next = joint
+            joint.prev = this
+            return joint
         }
 
-        fun insert(pred: Joint, node: Joint, succ: Joint) {
-            if (pred === node || succ === node) throw IllegalStateException()
-            pred.next = node
-            node.prev = pred
-            succ.prev = node
-            node.next = succ
+        fun remove() {
+            val rep = find()
+            rep.prev?.run {
+                unionNext(rep)
+                
+            } ?: throw NoSuchElementException()
+
         }
 
-        fun clear() {
-            this.next = this
-            this.prev = this
-        }
+        fun hasNext(): Boolean = this.next !== null
 
-        fun isDegenerate() : Boolean {
-            return this.prev === this && this.next === this
-        }
+        fun next(): Joint = this.next ?: throw NoSuchElementException()
 
     }
 
-    inner class InitialJoint: Joint() {
-        init {
-            prev = this
-            next = this
-        }
-
-        override fun remove() {
-            throw IllegalStateException()
-        }
+    inner class DataJoint(val value: T) : Joint() {
+        
     }
 
-    inner class DataJoint(val value: T) : Joint() {}
-
-    val initial = InitialJoint()
+    var head = Joint()
+    var tail = head
 
     fun add(value: T) {
-        initial.prepend(DataJoint(value))
+        this.tail = tail.find().append(DataJoint(value))
     }
 
-    fun clear() {
-        initial.clear()
-    }
+    fun isEmpty(): Boolean = head.hasNext()
 
-    fun isEmpty(): Boolean = initial.isDegenerate()
-
-    override fun iterator(): MutableIterator<T> = iterator(initial)
+    override fun iterator(): MutableIterator<T> = iterator(head)
     
     fun iterator(start: Joint): MutableIterator<T> = Iterator(start)
 
-    inner class Iterator : MutableIterator<T> {
+    inner class Iterator(var current: UnionFindLinkedList<T>.Joint) : MutableIterator<T> {
 
-        lateinit var current : LoopLinkedList<T>.Joint
-
-        constructor(start: Joint) {
-            this.current = start
-        }
-
-        override fun hasNext(): Boolean = current.next !is InitialJoint
+        override fun hasNext(): Boolean = current.find().hasNext()
 
         override fun next(): T {
-            this.current = current.next
-            if (current !is DataJoint) throw NoSuchElementException()
+            val crep = current.find()
+            if (!crep.hasNext()) throw NoSuchElementException()
+            this.current = crep.next()
             return (current as DataJoint).value
         }
 
         override fun remove() {
-            val prev = current.prev
-            current.remove()
-            this.current = prev
+            current.find().remove()
         }
 
     }

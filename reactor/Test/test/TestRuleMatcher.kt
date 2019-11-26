@@ -1,4 +1,5 @@
 import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.core.internal.UnionFindLinkedList
 import jetbrains.mps.logic.reactor.core.internal.createOccurrenceMatcher
 import jetbrains.mps.logic.reactor.core.internal.logical
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
@@ -908,5 +909,105 @@ class TestRuleMatcher {
                 matches().map { it.rule().uniqueTag().toString() }.toList() shouldBe listOf("rule1", "rule2", "rule3")
             }
         }
+    }
+
+    @Test
+    fun testUnionFindLinkedList()  {
+        run {
+            val list = UnionFindLinkedList<String>()
+            list.toList() shouldBe listOf<String>()
+
+            val it = list.iterator()
+            it.hasNext() shouldBe false
+
+            list.add("a")
+            it.next() shouldBe "a"
+            it.hasNext() shouldBe false
+
+            list.add("b")
+            it.hasNext() shouldBe true
+
+            it.next() shouldBe "b"
+            it.hasNext() shouldBe false
+        }
+
+        run {
+            val list1 = UnionFindLinkedList<String>().also { it.add("a") }.also { it.add("b") }
+            list1.toList() shouldBe listOf("a", "b")
+
+            val it = list1.iterator()
+            it.hasNext() shouldBe true
+            it.next() shouldBe "a"
+            it.next() shouldBe "b"
+            it.hasNext() shouldBe false
+
+            list1.add("c")
+            it.hasNext() shouldBe true
+        }
+
+        run {
+            val list2 = UnionFindLinkedList<String>().also { it.add("a") }.also { it.add("b") }
+            list2.toList() shouldBe listOf("a", "b")
+
+            val it1 = list2.iterator()
+            it1.hasNext() shouldBe true
+            it1.next() shouldBe "a"
+            it1.hasNext() shouldBe true
+
+            val it2 = list2.iterator()
+            it2.hasNext() shouldBe true
+            it2.next()
+            it2.remove()
+
+            it1.hasNext() shouldBe true
+            it1.next() shouldBe "b"
+        }
+
+
+        run {
+            val list3 = UnionFindLinkedList<String>().also { it.add("a") }.also { it.add("b") }
+            list3.toList() shouldBe listOf("a", "b")
+
+            val it1 = list3.iterator()
+            it1.hasNext() shouldBe true
+            it1.next() shouldBe "a"
+            it1.hasNext() shouldBe true
+            it1.next() shouldBe "b"
+
+            val it2 = list3.iterator()
+            it2.next()
+            it2.remove()
+            it2.hasNext() shouldBe true
+            it2.next()
+            it2.remove()
+
+            it1.hasNext() shouldBe false
+
+            list3.add("c")
+            it1.hasNext() shouldBe true
+            it1.next() shouldBe "c"
+        }
+
+        run {
+            val list4 = UnionFindLinkedList<String>().also { it.add("a") }
+            list4.toList() shouldBe listOf("a")
+
+            val it1 = list4.iterator()
+            it1.hasNext() shouldBe true
+            it1.next() shouldBe "a"
+            it1.hasNext() shouldBe false
+
+            val it2 = list4.iterator()
+            it2.hasNext() shouldBe true
+            it2.next() shouldBe "a"
+            it2.remove()
+
+            it1.hasNext() shouldBe false
+
+            list4.add("c")
+            it1.hasNext() shouldBe true
+            it1.next() shouldBe "c"
+        }
+
     }
 }
