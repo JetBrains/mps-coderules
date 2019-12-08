@@ -16,6 +16,8 @@
 
 package jetbrains.mps.logic.reactor.core
 
+import gnu.trove.map.hash.TIntObjectHashMap
+
 
 typealias DispatchingFrontState = Map<Any, RuleMatcher>
 
@@ -47,10 +49,13 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
 
         private val ruletag2probe : HashMap<Any, RuleMatchingProbe>
 
+        private val occId2tags : TIntObjectHashMap<MutableList<Any>>
+
         private val matching: Iterable<RuleMatchingProbe>?
 
         constructor() {
             this.ruletag2probe = hashMapOf()
+            this.occId2tags = TIntObjectHashMap()
             this.matching = null
             ruletag2matcher.entries.forEach { e ->
                 ruletag2probe.put(e.key, e.value.probe())
@@ -59,6 +64,7 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
 
         private constructor(pred: DispatchingFront, matching: Iterable<RuleMatchingProbe>? = null) {
             this.ruletag2probe = pred.ruletag2probe
+            this.occId2tags = pred.occId2tags
             this.matching = matching
         }
 
@@ -84,16 +90,21 @@ class Dispatcher (val ruleIndex: RuleIndex, prevState: DispatchingFrontState = e
          */
         fun expand(activated: Occurrence): DispatchingFront = DispatchingFront(this,
             ruleIndex.forOccurrenceWithMask(activated)
-                .mapNotNull { (rule, mask) -> ruletag2probe[rule.uniqueTag()]?.expand(activated, mask) })
+                .mapNotNull { (rule, mask) ->
+                    if (!occId2tags.contains(activated.identity)) {
+                        occId2tags.put(activated.identity, arrayListOf())
+                    }
+                    occId2tags[activated.identity].add(rule.uniqueTag())
+                    ruletag2probe[rule.uniqueTag()]?.expand(activated, mask) })
 
         /**
          * Returns a [DispatchingFront] instance that is "contracted": all matches corresponding to the
          * specified discarded constraint occurrence are eliminated.
          */
         fun contract(discarded: Occurrence): DispatchingFront = DispatchingFront(this,
-            ruleIndex.forOccurrence(discarded)
-                .mapNotNull { rule -> ruletag2probe[rule.uniqueTag()] }
-                .map { probe -> probe.contract(discarded) })
+            occId2tags.remove(discarded.identity)
+                ?.mapNotNull { ruleTag -> ruletag2probe[ruleTag] }
+                ?.map { probe -> probe.contract(discarded) })
 
         /**
          * Returns a [DispatchingFront] instance which "forgot" that it already expanded the occurrence.
