@@ -77,37 +77,41 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
         abstract inner class ReteNode
         {
-            abstract val depth: Int
-
-            abstract val signature: Signature
+            abstract fun fillSignature(signature: Signature)
 
             abstract fun subst(): Subst
 
             abstract fun occupiesHeadPosition(headPos: Int) : Boolean
 
-            abstract fun containsOccurrence(occ: Occurrence) : Boolean
-
             abstract fun combine(that: AlphaNode, subst: Subst): ReteNode
 
             abstract fun collect(occArray: Array<Occurrence?>)
+
+            abstract fun addDependent(follower: ReteNode)
+
+            abstract fun invalidate()
+
+            abstract fun isInvalid(): Boolean
 
         }
 
         inner class InitialNode() : ReteNode() {
 
-            override val depth = 0
-
-            override val signature: Signature = noSignature()
+            override fun fillSignature(signature: Signature) {}
 
             override fun subst(): Subst = emptySubst()
 
             override fun occupiesHeadPosition(headPos: Int): Boolean = false
 
-            override fun containsOccurrence(occ: Occurrence): Boolean = false
-
             override fun combine(that: AlphaNode, subst: Subst): ReteNode = that
 
             override fun collect(occArray: Array<Occurrence?>) {}
+
+            override fun addDependent(follower: ReteNode) {}
+
+            override fun invalidate() {}
+            
+            override fun isInvalid(): Boolean = false
         }
 
         /**
@@ -117,34 +121,42 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                               val posInHead: Int,
                               val subst: Subst) : ReteNode()
         {
+            val dependent = arrayListOf<ReteNode>()
 
-            override val depth = 1
+            var invalid = false
 
-            override val signature = IntArray(headSize).toSignature().apply { set(posInHead, occurrence.identity) }
+            override fun fillSignature(signature: Signature) {
+                signature.set(posInHead, occurrence.identity)
+            }
 
             override fun subst(): Subst = subst
 
             override fun occupiesHeadPosition(headPos: Int): Boolean = posInHead == headPos
-
-            override fun containsOccurrence(occ: Occurrence): Boolean = occ === occurrence  // reference eq!
 
             override fun combine(that: AlphaNode, subst: Subst): ReteNode = BetaNode(this, that, subst)
 
             override fun collect(occArray: Array<Occurrence?>) {
                 occArray[posInHead] = occurrence
             }
-        }
 
+            override fun addDependent(follower: ReteNode) {
+                dependent.add(follower)
+            }
+
+            override fun invalidate() {
+                this.invalid = true
+                for (node in dependent) {
+                    node.invalidate()
+                }
+            }
+
+            override fun isInvalid(): Boolean = invalid
+        }
 
         /**
          * A "deep" network node. Always has two parents, one of which is always an AlphaNode.
          */
         inner class BetaNode : ReteNode {
-
-            override val signature: Signature
-
-            override val depth: Int
-                get() = left.depth + right.depth
 
             val left: ReteNode
 
@@ -154,32 +166,37 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
             val positions: BitSet
 
+            val dependent = arrayListOf<ReteNode>()
+
+            var invalid = false
+
             constructor(left: AlphaNode, right: AlphaNode, subst: Subst) {
                 this.left = left
                 this.right = right
+                left.addDependent(this)
+                right.addDependent(this)
                 this.subst = subst
                 this.positions = bitSet(left.posInHead).apply { set(right.posInHead) }
-                this.signature = IntArray(headSize).toSignature().apply {
-                    set(left.posInHead, left.occurrence.identity)
-                    set(right.posInHead, right.occurrence.identity)
-                }
+
             }
 
             constructor(left: BetaNode, right: AlphaNode, subst: Subst) {
                 this.left = left
                 this.right = right
+                left.addDependent(this)
+                right.addDependent(this)
                 this.subst = subst
                 this.positions = left.positions.copyApply { set(right.posInHead) }
-                this.signature = left.signature.copy().apply {
-                    set(right.posInHead, right.occurrence.identity)
-                }
+            }
+
+            override fun fillSignature(signature: Signature) {
+                left.fillSignature(signature)
+                right.fillSignature(signature)
             }
 
             override fun subst(): Subst = subst
 
             override fun occupiesHeadPosition(headPos: Int): Boolean = positions[headPos]
-
-            override fun containsOccurrence(occ: Occurrence): Boolean = signature.contains(occ.identity)
 
             override fun combine(that: AlphaNode, subst: Subst): ReteNode = BetaNode(this, that, subst)
 
@@ -187,6 +204,19 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 left.collect(occArray)
                 right.collect(occArray)
             }
+
+            override fun addDependent(follower: ReteNode) {
+                dependent.add(follower)
+            }
+            
+            override fun invalidate() {
+                this.invalid = true
+                for (node in dependent) {
+                    node.invalidate()
+                }
+            }
+
+            override fun isInvalid(): Boolean = invalid
         }
 
 
@@ -202,7 +232,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
             private val introTrail: Trail = trailOf()
 
-            private val droppedTrail: Trail = trailOf()
+            private val introNodes = HashMap<Int, MutableList<ReteNode>>()
 
             private val nodeList = UnionFindLinkedList<ReteNode>()
 
@@ -215,23 +245,18 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 nodeList.add(node)
             }
 
-            fun isEmpty() = nodeList.isEmpty()
-
             fun containsOccurrence(occ: Occurrence): Boolean {
                 return introTrail.contains(occ.identity)
             }
 
-            fun forgetContains(occ: Occurrence): Boolean {
+            fun forgetContains(occ: Occurrence) {
                 // FIXME this breaks the internal invariant
-                return introTrail.remove(occ.identity)
+                introTrail.remove(occ.identity)
             }
 
-            fun iterate(): Iterator<ReteNode> = nodeList.iterator()
+            fun iterate(): MutableIterator<ReteNode> = nodeList.iterator()
 
-            fun copyIterator(it: Iterator<ReteNode>): Iterator<ReteNode> =
-                nodeList.iterator((it as UnionFindLinkedList<ReteNode>.Iterator).current)
-
-            fun nextNode(it: Iterator<ReteNode>): ReteNode? {
+            fun nextNode(it: MutableIterator<ReteNode>): ReteNode? {
                 if (!it.hasNext()) {
                     prime()
                 }
@@ -256,7 +281,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
             }
 
             fun update(block: UpdateBlock): Boolean {
-                return block.update(nodeList, introTrail)
+                return block.update(nodeList, introTrail, introNodes)
             }
 
             fun queueUpdate(block: UpdateBlock): Layer {
@@ -277,7 +302,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
             abstract fun reset()
 
-            abstract fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail): Boolean
+            abstract fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail, introNodes: MutableMap<Int, MutableList<ReteNode>>): Boolean
 
         }
 
@@ -285,20 +310,22 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                                 val headPosMask: BitSet,
                                 val onTopOf: Layer) : UpdateBlock(occurrence) {
 
-            var nodesIt: Iterator<ReteNode> = onTopOf.iterate()
+            var nodesIt: MutableIterator<ReteNode> = onTopOf.iterate()
 
             override fun reset() {
                 // FIXME when enabled the following code causes major slowdown on certain programs
 //                nodesIt = onTopOf.iterate()
             }
 
-            override fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail): Boolean {
+            override fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail, introNodes: MutableMap<Int, MutableList<ReteNode>>): Boolean {
                 var found = false
                 while (true) {
                     val n = onTopOf.nextNode(nodesIt)
                     if (n == null) break
-
-                    if (n.containsOccurrence(occurrence)) continue
+                    if (n.isInvalid()) {
+                        nodesIt.remove()
+                        continue
+                    }
 
                     val it = headPosMask.allSetBits()
                     while (it.hasNext()) {
@@ -308,6 +335,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                         with(createOccurrenceMatcher(n.subst())) {
                             if (matches(head[headPos], occurrence)) {
                                 val intro = AlphaNode(occurrence, headPos, subst())
+                                introNodes.getOrPut(occurrence.identity) { arrayListOf() }.add(intro)
                                 nodes.add(n.combine(intro, subst()))
                                 found = true
                             }
@@ -328,16 +356,13 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 // NOP
             }
 
-            override fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail): Boolean {
-                val it = nodes.iterator()
-                while (it.hasNext()) {
-                    val n = it.next()
-                    if (n.containsOccurrence(occurrence)) {
-                        it.remove()
+            override fun update(nodes: UnionFindLinkedList<ReteNode>, introTrail: Trail, introNodes: MutableMap<Int, MutableList<ReteNode>>): Boolean {
+                introNodes.remove(occurrence.identity)?.let {
+                    for (n in it) {
+                        n.invalidate()
                     }
                 }
                 introTrail.remove(occurrence.identity)
-
                 return false
             }
 
@@ -352,7 +377,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
             val layers: MutableList<Layer> = prev?.layers ?: ArrayList<Layer>(4)
 
-            lateinit var nodesIt: Iterator<ReteNode>
+            lateinit var nodesIt: MutableIterator<ReteNode>
 
             private var __matches: Collection<RuleMatchImpl>? = null
             val matches: Collection<RuleMatchImpl>
@@ -427,8 +452,18 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 while(true) {
                     val n = topLayer.nextNode(nodesIt)
                     if (n == null) break
+                    if (n.isInvalid()) {
+                        nodesIt.remove()
+                        continue
+                    }
                     
-                    val signature = n.signature
+                    val signature = IntArray(headSize).toSignature()
+                    n.fillSignature(signature)
+                    if (signature.toTrail().size() < headSize) {
+                        // dupes
+                        continue
+                    }
+
                     if (consumedSignatures.contains(signature) || uniqueSignatures.contains(signature)) continue
                     uniqueSignatures.add(signature)
 
