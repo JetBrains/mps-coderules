@@ -55,24 +55,39 @@ class Profiler {
     }
 
     fun formattedData(): Map<String, String> {
-        val entries = rawProfilingData().entries.toMutableList()
-        val sum = entries.asSequence().fold(0L) { acc, e -> acc + (e.value.dur/1000000) }
+        val name2data = rawProfilingData().entries.toMutableList()
+        val sum = name2data.asSequence().fold(0L) { acc, e -> acc + millis(e.value.dur) }
         var toReport = (sum * 0.98).toLong()
         // sort in-pace descending
-        Collections.sort(entries) { e1, e2 -> if (e2.value.dur < e1.value.dur) -1 else 1 }
-        return entries.asSequence().takeWhile { e -> toReport > 0 && e.value.dur / 1000000 > 0}.map { e ->
-            val millis= e.value.dur / 1000000
-            toReport -= millis
+        Collections.sort(name2data) { e1, e2 -> if (e2.value.dur < e1.value.dur) -1 else 1 }
+        return name2data
+            .asSequence()
+            .takeWhile { (_, data) -> toReport > 0 && millis(data.dur) > 0 }
+            .map { (name, data) ->
+                toReport -= millis(data.dur)
 
-            val parents = e.value.parents.entries.toMutableList()
-            //sort in-place descending
-            Collections.sort(parents) { e1, e2 -> e2.value - e1.value }
-            val sb = StringBuilder("%1\$Ts.%1\$TLs (%2\$d times)".format(millis, e.value.freq))
-            parents.forEach { e -> sb.append("\n    -- ${e.key} (${e.value} times)") }
+                val parentName2Dur = data.parentDurs.entries.toMutableList()
+                val parentsTotal = parentName2Dur.fold(0L) { acc, e -> acc + millis(e.value) }
+                var parentsToReport = (parentsTotal * 0.98).toLong()
 
-            e.key.to(sb.toString())
-        }.toMap()
+                //sort in-place descending
+                Collections.sort(parentName2Dur) { e1, e2 -> if (e2.value < e1.value) -1 else 1 }
+                val sb = StringBuilder("time %1\$Ts.%1\$TLs (%2\$d times)".format(millis(data.dur), data.freq))
+                parentName2Dur
+                    .asSequence()
+                    .takeWhile { (_, dur) -> parentsToReport > 0 && millis(dur) > 0 }
+                    .forEach { (parentName, dur) ->
+                        parentsToReport -= millis(dur)
+
+                        sb.append("\n    -- ${parentName}")
+                            .append(" time %1\$Ts.%1\$TLs".format(millis(dur)))
+                            .append(" (%1\$d times)".format(data.parentFreqs[name] ?: 0)) }
+
+                name to sb.toString()
+            }.toMap()
     }
+
+    fun millis(nanos: Long): Long = nanos / 1000000L
 
     fun clear() {
         tokenStack.clear()
@@ -103,14 +118,18 @@ class Token(val name: String, val id: Int) {
     private fun ownDuration(): Long? = duration()?.minus(children.map { ch -> ch.duration() ?: 0 }.sum())
 
     fun mergeDurations(name2durFreq: MutableMap<String, DurFreq>) {
-        children.forEach { ch ->
-            val durFreq = name2durFreq.getOrPut(ch.name) { DurFreq() }
-            ch.ownDuration()?.let { dur -> durFreq.dur += dur }
-            durFreq.freq += 1
-            durFreq.parents.set(name, 1 + durFreq.parents.getOrElse(name) {0})
+        for (ch in children) {
+            ch.mergeDurations(name2durFreq)
         }
-        for (c in children) {
-            c.mergeDurations(name2durFreq)
+        for (ch in children) {
+            val chDurFreq = name2durFreq.getOrPut(ch.name) { DurFreq() }
+            val chDuration = ch.ownDuration()
+            chDuration?.let { dur -> chDurFreq.dur += dur }
+            chDurFreq.freq += 1
+            chDurFreq.parentFreqs[name] = 1 + chDurFreq.parentFreqs.getOrElse(name) { 0 }
+            if (chDuration != null) {
+                chDurFreq.parentDurs[name] = chDuration + chDurFreq.parentDurs.getOrElse(name) { 0L }
+            }
         }
     }
 
@@ -119,7 +138,8 @@ class Token(val name: String, val id: Int) {
 class DurFreq {
     var dur: Long = 0L
     var freq: Int = 0
-    val parents: MutableMap<String, Int> = HashMap()
+    val parentFreqs: MutableMap<String, Int> = HashMap()
+    val parentDurs: MutableMap<String, Long> = HashMap()
 }
 
 inline fun Profiler?.profile(name: String, proc: () -> Unit): Unit {
