@@ -92,20 +92,19 @@ internal class ControllerImpl (
         solver.tell(invocation)
     }
 
-    override fun reactivate(occ: Occurrence): FeedbackStatus {
-        trace.reactivate(occ)
-        return state.processActivated(this, occ, NORMAL())
-    }
+    override fun reactivate(occ: Occurrence): FeedbackStatus =
+        profiler.profile<FeedbackStatus>("reactivate_${occ.constraint.symbol()}") {
 
-    override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
-        profiler.profile<FeedbackStatus>("offerMatch") {
-
-                inStatus
-                    .then { checkMatchPreconditions(match, it) }
-                    .also { trace.trying(match) }
-                    .then { processGuard(match, it) }
+            trace.reactivate(occ)
+            state.processActivated(this, occ, NORMAL())
 
         }
+
+    override fun offerMatch(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
+        inStatus
+            .then { checkMatchPreconditions(match, it) }
+            .also { trace.trying(match) }
+            .then { processGuard(match, it) }
 
     private fun checkMatchPreconditions(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
         val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
@@ -215,9 +214,13 @@ internal class ControllerImpl (
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
-            constraint.occurrence(this, args, justsCopy(justs), context.logicalContext, context.ruleUniqueTag).let { occ ->
-                trace.activate(occ)
-                state.processActivated(this, occ, status)
+            profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
+
+                constraint.occurrence(this, args, justsCopy(justs), context.logicalContext, context.ruleUniqueTag).let { occ ->
+                    trace.activate(occ)
+                    state.processActivated(this, occ, status)
+                }
+
             }
         }
     }

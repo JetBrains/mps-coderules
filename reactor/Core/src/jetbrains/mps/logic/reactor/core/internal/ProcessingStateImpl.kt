@@ -214,103 +214,107 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         push()
         assert(active.alive)
 
-        return profiler.profile<FeedbackStatus>("activated_${active.constraint().symbol()}") {
-
-            if (!active.stored) {
-                active.stored = true
-                logActivation(active)
-                active.revive(controller)
-            }
-
-            profiler.profile("dispatch_${active.constraint().symbol()}") {
-
-                this.dispatchingFront = dispatchingFront.expand(active)
-
-            }
-
-            val matches = dispatchingFront.matches().toList()
-            val newCurrentMatches =
-                // todo: assert that there can be no future matches on non-principal occurrences?
-                if (isFront() || !active.isPrincipal()) {
-                    matches
-                } else {
-                    assert( matches.all { ispec.isPrincipal(it.rule()) } )
-                    execQueue.postponeFutureMatches(matches)
-                }
-            val currentMatches = execQueue.withPostponedMatches(active, newCurrentMatches)
-
-            val outStatus = currentMatches.fold(inStatus) { status, match ->
-                // TODO: paranoid check. should be isAlive() instead
-                // FIXME: move this check elsewhere
-                if (status.operational && active.stored && match.allStored())
-                    processMatch(controller, match, status)
-                else
-                    status
-            }
-
-            // TODO: should be isAlive()
-            if (active.stored) {
-                trace.suspend(active)
-            }
-
-            outStatus
+        if (!active.stored) {
+            active.stored = true
+            logActivation(active)
+            active.revive(controller)
         }
+
+        profiler.profile("dispatch_${active.constraint().symbol()}") {
+
+            this.dispatchingFront = dispatchingFront.expand(active)
+
+        }
+
+        val matches = dispatchingFront.matches().toList()
+        val newCurrentMatches =
+            // todo: assert that there can be no future matches on non-principal occurrences?
+            if (isFront() || !active.isPrincipal()) {
+                matches
+            } else {
+                assert( matches.all { ispec.isPrincipal(it.rule()) } )
+                execQueue.postponeFutureMatches(matches)
+            }
+        val currentMatches = execQueue.withPostponedMatches(active, newCurrentMatches)
+
+        val outStatus = currentMatches.fold(inStatus) { status, match ->
+            // TODO: paranoid check. should be isAlive() instead
+            // FIXME: move this check elsewhere
+            if (status.operational && active.stored && match.allStored())
+                processMatch(controller, match, status)
+            else
+                status
+        }
+
+        // TODO: should be isAlive()
+        if (active.stored) {
+            trace.suspend(active)
+        }
+
+        return outStatus
     }
 
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
         if (operational) action(this) else this
 
     private fun processMatch(controller: Controller, match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
-        profiler.profile<FeedbackStatus>("processMatch") {
-
-            controller.offerMatch(match, inStatus)
-                .let {
-                    when (it) {
-                        is FeedbackStatus.ABORTED -> {  // guard is not satisfied
-                            trace.reject(match)
-                            return it.recover()         // return from the enclosing method
-
-                        }
-                        is FeedbackStatus.FAILED -> { // guard failed
-                            return it.recover()         // return from the enclosing method
-
-                        }
-                        else -> it
-                    }
-                }
-                .also { trace.trigger(match) }
-                .also {
-                    profiler.profile("accept") {
-
-                        accept(controller, match)
+        controller.offerMatch(match, inStatus)
+            .let {
+                when (it) {
+                    is FeedbackStatus.ABORTED -> {  // guard is not satisfied
+                        trace.reject(match)
+                        return it.recover()         // return from the enclosing method
 
                     }
-                }
-                .then {
-                    profiler.profile<FeedbackStatus>("processBody") {
-
-                        controller.processBody(match, it)
+                    is FeedbackStatus.FAILED -> { // guard failed
+                        return it.recover()         // return from the enclosing method
 
                     }
+                    else -> it
                 }
-                .also { trace.finish(match) }
-
-        }
+            }
+            .also { trace.trigger(match) }
+            .also {
+                accept(controller, match)
+            }
+            .then {
+                controller.processBody(match, it)
+            }
+            .also { trace.finish(match) }
 
 
     private fun accept(controller: Controller, match: RuleMatchEx) {
-        logMatch(match)
-        this.dispatchingFront = dispatchingFront.consume(match)
+        profiler.profile("logMatch") {
 
-        match.forEachReplaced { occ ->
-            // Principal occurrences must be preserved for future incremental evaluation sessions
-            if (!occ.isPrincipal())
-                this.dispatchingFront = dispatchingFront.contract(occ)
+            logMatch(match)
 
-            occ.stored = false
-            occ.terminate(controller)
+        }
 
-            trace.discard(occ)
+        profiler.profile("consumeMatch") {
+
+            this.dispatchingFront = dispatchingFront.consume(match)
+
+        }
+
+        profiler.profile("discardOccurrence") {
+
+            match.forEachReplaced { occ ->
+                // Principal occurrences must be preserved for future incremental evaluation sessions
+                if (!occ.isPrincipal()) {
+                    this.dispatchingFront = dispatchingFront.contract(occ)
+                }
+
+                occ.stored = false
+
+                profiler.profile("terminateOccurrence") {
+
+                    occ.terminate(controller)
+
+                }
+
+                trace.discard(occ)
+            }
+
         }
     }
 
