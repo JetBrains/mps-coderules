@@ -12,6 +12,7 @@
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="av0y" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.program(jetbrains.mps.logic.reactor/)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -117,6 +118,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -911,17 +915,34 @@
       </node>
       <node concept="3clFbS" id="1H_6AUT3qxi" role="3clF47">
         <node concept="3cpWs6" id="1H_6AUT3qxl" role="3cqZAp">
-          <node concept="2OqwBi" id="1H_6AUT3xhF" role="3cqZAk">
-            <node concept="37vLTw" id="1H_6AUT3wwu" role="2Oq$k0">
-              <ref role="3cqZAo" node="1H_6AUT3r3E" resolve="principalRules" />
+          <node concept="1Wc70l" id="cmlg9O7Wff" role="3cqZAk">
+            <node concept="2ZW3vV" id="cmlg9O7WR1" role="3uHU7B">
+              <node concept="3uibUv" id="cmlg9O7X$p" role="2ZW6by">
+                <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+              </node>
+              <node concept="37vLTw" id="cmlg9O7Ww$" role="2ZW6bz">
+                <ref role="3cqZAo" node="1H_6AUT3qxg" resolve="rule" />
+              </node>
             </node>
-            <node concept="3JPx81" id="1H_6AUT3yjD" role="2OqNvi">
-              <node concept="2OqwBi" id="1H_6AUT3yEU" role="25WWJ7">
-                <node concept="37vLTw" id="1H_6AUT3yqA" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1H_6AUT3qxg" resolve="rule" />
-                </node>
-                <node concept="liA8E" id="6xVZN2uLgGx" role="2OqNvi">
-                  <ref role="37wK5l" to="av0y:~Rule.basetag()" resolve="basetag" />
+            <node concept="2OqwBi" id="1H_6AUT3xhF" role="3uHU7w">
+              <node concept="37vLTw" id="1H_6AUT3wwu" role="2Oq$k0">
+                <ref role="3cqZAo" node="1H_6AUT3r3E" resolve="principalRules" />
+              </node>
+              <node concept="3JPx81" id="1H_6AUT3yjD" role="2OqNvi">
+                <node concept="2OqwBi" id="1H_6AUT3yEU" role="25WWJ7">
+                  <node concept="1eOMI4" id="cmlg9O7XGo" role="2Oq$k0">
+                    <node concept="10QFUN" id="cmlg9O7XGn" role="1eOMHV">
+                      <node concept="37vLTw" id="cmlg9O7XGm" role="10QFUP">
+                        <ref role="3cqZAo" node="1H_6AUT3qxg" resolve="rule" />
+                      </node>
+                      <node concept="3uibUv" id="cmlg9O7XV2" role="10QFUM">
+                        <ref role="3uigEE" to="i348:7nPD14OaO1O" resolve="RuleEx" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="6xVZN2uLgGx" role="2OqNvi">
+                    <ref role="37wK5l" to="i348:~Rule.basetag()" resolve="basetag" />
+                  </node>
                 </node>
               </node>
             </node>

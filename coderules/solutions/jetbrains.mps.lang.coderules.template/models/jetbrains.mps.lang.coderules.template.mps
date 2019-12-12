@@ -42,6 +42,7 @@
       <concept id="1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" flags="nn" index="d57v9" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="5293379017992965193" name="jetbrains.mps.baseLanguage.structure.StubStatementList" flags="ig" index="2lzX1y" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
@@ -288,6 +289,18 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="4065387505485742749" name="jetbrains.mps.lang.smodel.structure.AbstractPointerResolveOperation" flags="ng" index="2yCiFS">
@@ -300,6 +313,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -2722,6 +2736,21 @@
       </node>
       <node concept="3Tm1VV" id="7nPD14Ob4lw" role="1B3o_S" />
       <node concept="3clFbS" id="7nPD14Ob4lx" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="cmlg9O80l2" role="jymVt" />
+    <node concept="3clFb_" id="~Rule.basetag()" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="basetag" />
+      <node concept="3Tm1VV" id="cmlg9N8aR2" role="1B3o_S" />
+      <node concept="2lzX1y" id="cmlg9N8aR3" role="3clF47" />
+      <node concept="17QB3L" id="cmlg9OiJpz" role="3clF45" />
+      <node concept="P$JXv" id="cmlg9OiMIe" role="lGtFl">
+        <node concept="TZ5HA" id="cmlg9OiMIf" role="TZ5H$">
+          <node concept="1dT_AC" id="cmlg9OiMIg" role="1dT_Ay">
+            <property role="1dT_AB" value="Human-readable identifier shared by all rules produced from the same template." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="7nPD14OaO2E" role="jymVt" />
     <node concept="3Tm1VV" id="7nPD14OaO1P" role="1B3o_S" />
