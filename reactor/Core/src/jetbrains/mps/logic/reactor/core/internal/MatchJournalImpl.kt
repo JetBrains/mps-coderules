@@ -215,7 +215,6 @@ internal open class MatchJournalImpl(
             override fun kind(): Kind = Kind.PROPAGATION
             override fun uniqueTag(): Any = tag().hashCode()
             override fun tag(): String = "initialrule${"initialrule".hashCode()}"
-            override fun basetag(): String = tag()
             override fun headKept(): Iterable<Constraint> = emptyList()
             override fun headReplaced(): Iterable<Constraint> = emptyList()
             override fun guard(): Iterable<Predicate> = emptyList()

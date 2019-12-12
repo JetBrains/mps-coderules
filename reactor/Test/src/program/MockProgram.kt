@@ -89,8 +89,6 @@ class MockRule(
 
     override fun tag(): String = tag
 
-    override fun basetag(): String = tag
-
     override fun headKept(): Iterable<Constraint> = kept
 
     override fun headReplaced(): Iterable<Constraint> = replaced

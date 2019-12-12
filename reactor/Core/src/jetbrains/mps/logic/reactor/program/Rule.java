@@ -50,16 +50,6 @@ public abstract class Rule {
      */
     public abstract String tag();
 
-    /**
-     * Human-readable identifier shared by all rules produced from the same template.
-     */
-    public abstract String basetag();
-
-    /**
-     * An origin serves as justification for all constraints affected by this rule.
-     */
-    public Object origin() { return null; }
-
     public abstract Iterable<Constraint> headKept();
 
     public abstract Iterable<Constraint> headReplaced();
