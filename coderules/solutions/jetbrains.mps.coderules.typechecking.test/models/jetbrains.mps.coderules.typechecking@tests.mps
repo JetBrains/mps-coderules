@@ -41,6 +41,7 @@
     <import index="w7la" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.evaluation(jetbrains.mps.logic.reactor/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
+    <import index="ksgm" ref="r:6285678b-007f-4527-bcf5-6fd38ba8c969(jetbrains.mps.lang.coderules.program)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -1172,6 +1173,38 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="6nFpYlv0Vkh" role="3cqZAp">
+                <node concept="2OqwBi" id="6nFpYlv0VK9" role="3clFbG">
+                  <node concept="37vLTw" id="6nFpYlv0Vkf" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
+                  </node>
+                  <node concept="liA8E" id="6nFpYlv0WkN" role="2OqNvi">
+                    <ref role="37wK5l" to="hano:6nFpYluWwIS" resolve="setOriginIndex" />
+                    <node concept="2ShNRf" id="6nFpYlv0WLN" role="37wK5m">
+                      <node concept="HV5vD" id="6nFpYlv0XzE" role="2ShVmc">
+                        <ref role="HV5vE" to="ksgm:70Wv0dJhQb2" resolve="OriginIndex" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="4hQVL4feBXx" role="3cqZAp">
+                <node concept="2OqwBi" id="4hQVL4feBXy" role="3clFbG">
+                  <node concept="37vLTw" id="4hQVL4feBXz" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
+                  </node>
+                  <node concept="liA8E" id="4hQVL4feBX$" role="2OqNvi">
+                    <ref role="37wK5l" to="hano:6nFpYluW_Ik" resolve="setUpdatesRecorder" />
+                    <node concept="2ShNRf" id="4hQVL4feBX_" role="37wK5m">
+                      <node concept="1pGfFk" id="4hQVL4feE1o" role="2ShVmc">
+                        <ref role="37wK5l" to="ksgm:6nFpYlu7fpM" resolve="UpdatesRecorder" />
+                        <node concept="10Nm6u" id="4hQVL4feErQ" role="37wK5m" />
+                        <node concept="10Nm6u" id="4hQVL4feF1B" role="37wK5m" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3cpWs8" id="6$7vuu2ujxQ" role="3cqZAp">
                 <node concept="3cpWsn" id="6$7vuu2ujxR" role="3cpWs9">
                   <property role="TrG5h" value="res" />
@@ -1184,6 +1217,11 @@
                     </node>
                     <node concept="liA8E" id="6$7vuu2ujxU" role="2OqNvi">
                       <ref role="37wK5l" to="hano:7kTeLbPojCz" resolve="produce" />
+                      <node concept="2ShNRf" id="7i3KM7g6AYw" role="37wK5m">
+                        <node concept="HV5vD" id="7i3KM7g6COo" role="2ShVmc">
+                          <ref role="HV5vE" to="ksgm:7DvO2M9Uago" resolve="RulesListTable" />
+                        </node>
+                      </node>
                       <node concept="2ShNRf" id="3IIf9O_jdGL" role="37wK5m">
                         <node concept="2HTt$P" id="3IIf9O_jgA8" role="2ShVmc">
                           <node concept="3Tqbb2" id="3IIf9O_jhoV" role="2HTBi0" />

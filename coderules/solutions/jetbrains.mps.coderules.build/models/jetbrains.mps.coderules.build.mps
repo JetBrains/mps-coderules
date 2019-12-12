@@ -883,6 +883,11 @@
             <ref role="3bR37D" node="7BVjoXzUx9d" resolve="jetbrains.mps.lang.coderules.template" />
           </node>
         </node>
+        <node concept="1SiIV0" id="7i3KM7gGRWE" role="3bR37C">
+          <node concept="3bR9La" id="7i3KM7gGRWF" role="1SiIV1">
+            <ref role="3bR37D" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="55Q$YFtvwQY" role="2G$12L">
         <property role="BnDLt" value="true" />
