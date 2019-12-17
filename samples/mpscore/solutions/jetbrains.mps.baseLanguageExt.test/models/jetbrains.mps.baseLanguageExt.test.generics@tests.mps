@@ -459,6 +459,38 @@
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
+    <node concept="1LZb2c" id="3fECE2uRocv" role="1SL9yI">
+      <property role="TrG5h" value="Capture" />
+      <node concept="3cqZAl" id="3fECE2uRocw" role="3clF45" />
+      <node concept="3clFbS" id="3fECE2uRocx" role="3clF47">
+        <node concept="2Hmddi" id="3fECE2uRocy" role="3cqZAp">
+          <node concept="2OqwBi" id="3fECE2uRocz" role="2Hmdds">
+            <node concept="2YIFZM" id="3fECE2uRoc$" role="2Oq$k0">
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <node concept="2OqwBi" id="3fECE2uRoc_" role="37wK5m">
+                <node concept="2WthIp" id="3fECE2uRocA" role="2Oq$k0" />
+                <node concept="2XshWL" id="3fECE2uRocB" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="3fECE2uRocC" role="2XxRq1">
+                    <node concept="ZC_QK" id="3fECE2uRoD3" role="2tJFKM">
+                      <ref role="2aWVGs" to="wqtl:3fECE2uQCW6" resolve="Capture" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="3fECE2uRocE" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="3fECE2uRocF" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="3fECE2uRocG" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+    </node>
   </node>
 </model>
 
