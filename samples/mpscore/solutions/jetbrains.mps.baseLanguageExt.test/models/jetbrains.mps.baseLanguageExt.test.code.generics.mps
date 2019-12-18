@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:3be3464b-7052-4e73-b8e9-dc5802b8d5a9(jetbrains.mps.baseLanguageExt.test.code.generics)">
+<model ref="r:3be3464b-7052-4e73-b8e9-dc5802b8d5a9(jetbrains.mps.baseLanguageExt.test.code.generics)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
@@ -10,8 +10,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="wcmu" ref="r:1070fac4-bb22-4bb6-b0bf-ec58df816edc(jetbrains.mps.typechecking.annotation.structure)" />
-    <import index="qb9i" ref="r:8991efa4-0db2-4f35-8467-4fdbae2564cc(jetbrains.mps.typechecking.annotation.intentions)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
