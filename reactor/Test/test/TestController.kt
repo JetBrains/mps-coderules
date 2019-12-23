@@ -459,6 +459,48 @@ class TestController {
     }
 
     @Test
+    fun occurrenceReactivatedAfterUnionUnboundIndirectly() {
+        // same as previous test, but X and Y are unified through their common parent Z
+        val (X, Y, Z) = metaLogical<Int>("X", "Y", "Z")
+        programWithRules(
+            rule("first",
+                headKept(constraint("foo")),
+                body(
+                    statement({ z, x -> eq(z, x) }, Z, X),
+                    constraint("bar", X),
+                    statement({ y, z -> eq(y, z) }, Y, Z),
+                    constraint("qux", Y))
+            ),
+            rule("second",
+                headReplaced(constraint("qux", Y)),
+                body(constraint("expected1"),
+                    statement({ y -> y.set(123) }, Y))
+            ),
+            rule("third",
+                headReplaced(constraint("foo")),
+                body(constraint("unexpected"))
+            ),
+            rule("fourth",
+                headReplaced(constraint("foo")),
+                headReplaced(constraint("bar", X)), guard(expression({ x -> x.getNullable() == 123 }, X)),
+                body(constraint("expected2"))
+            ),
+            rule("fifth",
+                headKept(constraint("bar", X)),
+                body(constraint("expected3", X))
+            )
+        ).controller().evaluate(occurrence("foo")).run {
+            assertEquals(3, allOccurrences().count())
+            assertEquals(setOf(ConstraintSymbol("expected1", 0),
+                ConstraintSymbol("expected2", 0),
+                ConstraintSymbol("expected3", 1)),
+                allOccurrences().map { co -> co.constraint().symbol() }.toSet())
+            val ex3 = allOccurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("expected3", 1) }.first()
+            assertEquals(123, (ex3.arguments().first() as Logical<Int>).value())
+        }
+    }
+
+    @Test
     fun testReactivateCorrectOccurrence() {
         val (X, Y, B) = metaLogical<Int>("X", "Y", "B")
         programWithRules(
