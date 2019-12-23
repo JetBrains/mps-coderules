@@ -37,9 +37,9 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
     var rank = 0
 
-    internal val valueObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
+    val valueObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
 
-    internal val parentObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
+    val parentObservers = ArrayList<Pair<LogicalImpl<*>, LogicalObserver>>()
 
     constructor(value: T) {
         this.name = "$${++lastIdx}"
@@ -147,6 +147,16 @@ internal class LogicalImpl<T> : MutableLogical<T> {
         union(other, { a, b -> if (a != b) throw IllegalStateException("$a does not equal to $b")})
     }
 
+    override fun addObserver(observer: LogicalObserver) {
+        find().valueObservers.add(this.to(observer))
+        find().parentObservers.add(this.to(observer))
+    }
+
+    override fun removeObserver(observer: LogicalObserver) {
+        find().valueObservers.removeAll { p -> p.second == observer }
+        find().parentObservers.removeAll { p -> p.second == observer }
+    }
+
     private fun find(): LogicalImpl<T> {
         val tmp = _parent
         if (tmp == null) return this
@@ -168,13 +178,13 @@ internal class LogicalImpl<T> : MutableLogical<T> {
 
     private fun mergeValueObservers(mergeFrom: MutableLogical<T>) {
         val other = mergeFrom as LogicalImpl<T>
-        valueObservers.addAll(other.valueObservers)
+        this.find().valueObservers.addAll(other.valueObservers)
         other.valueObservers.clear()
     }
 
     private fun mergeParentObservers(mergeFrom: MutableLogical<T>) {
         val other = mergeFrom as LogicalImpl<T>
-        parentObservers.addAll(other.parentObservers)
+        this.find().parentObservers.addAll(other.parentObservers)
         other.parentObservers.clear()
     }
 

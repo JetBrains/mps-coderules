@@ -496,7 +496,7 @@ class TestController {
                 ConstraintSymbol("expected3", 1)),
                 allOccurrences().map { co -> co.constraint().symbol() }.toSet())
             val ex3 = allOccurrences().filter { co -> co.constraint().symbol() == ConstraintSymbol("expected3", 1) }.first()
-            assertEquals(123, (ex3.arguments().first() as Logical<Int>).value())
+            assertEquals(123, (ex3.arguments().first() as Logical<Int>).findRoot().value())
         }
     }
 

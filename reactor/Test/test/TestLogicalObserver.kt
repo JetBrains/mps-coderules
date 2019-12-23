@@ -1,4 +1,3 @@
-import jetbrains.mps.logic.reactor.core.addObserver
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame
 import org.junit.Test

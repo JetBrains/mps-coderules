@@ -1,5 +1,4 @@
 import jetbrains.mps.logic.reactor.core.LogicalObserver
-import jetbrains.mps.logic.reactor.core.addObserver
 import jetbrains.mps.logic.reactor.logical.Logical
 import org.junit.Test
 
