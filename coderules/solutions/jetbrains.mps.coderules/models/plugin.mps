@@ -5711,6 +5711,54 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="2Cji6EQLXOZ" role="jymVt" />
+      <node concept="3clFb_" id="2Cji6EQLUqC" role="jymVt">
+        <property role="TrG5h" value="addObserver" />
+        <node concept="3Tm1VV" id="2Cji6EQLUqD" role="1B3o_S" />
+        <node concept="3cqZAl" id="2Cji6EQLUqF" role="3clF45" />
+        <node concept="37vLTG" id="2Cji6EQLUqG" role="3clF46">
+          <property role="TrG5h" value="observer" />
+          <node concept="3uibUv" id="2Cji6EQLUqH" role="1tU5fm">
+            <ref role="3uigEE" to="zx3l:~LogicalObserver" resolve="LogicalObserver" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="2Cji6EQLUqI" role="3clF47">
+          <node concept="YS8fn" id="2Cji6EQMaBa" role="3cqZAp">
+            <node concept="2ShNRf" id="2Cji6EQMaBb" role="YScLw">
+              <node concept="1pGfFk" id="2Cji6EQMaBc" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="2Cji6EQLUqJ" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="2Cji6EQM7DI" role="jymVt" />
+      <node concept="3clFb_" id="2Cji6EQLUqK" role="jymVt">
+        <property role="TrG5h" value="removeObserver" />
+        <node concept="3Tm1VV" id="2Cji6EQLUqL" role="1B3o_S" />
+        <node concept="3cqZAl" id="2Cji6EQLUqN" role="3clF45" />
+        <node concept="37vLTG" id="2Cji6EQLUqO" role="3clF46">
+          <property role="TrG5h" value="observer" />
+          <node concept="3uibUv" id="2Cji6EQLUqP" role="1tU5fm">
+            <ref role="3uigEE" to="zx3l:~LogicalObserver" resolve="LogicalObserver" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="2Cji6EQLUqQ" role="3clF47">
+          <node concept="YS8fn" id="2Cji6EQMaQF" role="3cqZAp">
+            <node concept="2ShNRf" id="2Cji6EQMaQG" role="YScLw">
+              <node concept="1pGfFk" id="2Cji6EQMaQH" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="2Cji6EQLUqR" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
       <node concept="2tJIrI" id="1a9$hHAF2ca" role="jymVt" />
       <node concept="312cEg" id="3mz2_dYbi8c" role="jymVt">
         <property role="TrG5h" value="originalLogical" />
