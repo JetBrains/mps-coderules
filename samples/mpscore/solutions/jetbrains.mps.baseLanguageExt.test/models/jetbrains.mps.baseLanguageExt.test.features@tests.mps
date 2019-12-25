@@ -501,6 +501,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="2i6cuYQszS0" role="1SL9yI">
+      <property role="TrG5h" value="arraySubtyping" />
+      <node concept="3cqZAl" id="2i6cuYQszS1" role="3clF45" />
+      <node concept="3clFbS" id="2i6cuYQszS2" role="3clF47">
+        <node concept="2Hmddi" id="2i6cuYQszS3" role="3cqZAp">
+          <node concept="2OqwBi" id="2i6cuYQszS4" role="2Hmdds">
+            <node concept="2YIFZM" id="2i6cuYQszS5" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="2i6cuYQszS6" role="37wK5m">
+                <node concept="2WthIp" id="2i6cuYQszS7" role="2Oq$k0" />
+                <node concept="2XshWL" id="2i6cuYQszS8" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="2i6cuYQszS9" role="2XxRq1">
+                    <node concept="ZC_QK" id="2i6cuYQs$wm" role="2tJFKM">
+                      <ref role="2aWVGs" to="yg5v:2i6cuYQqrTM" resolve="ArraySubtyping" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="2i6cuYQszSb" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="2i6cuYQszSc" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1LZb2c" id="1yt2T3T4T6U" role="1SL9yI">
       <property role="TrG5h" value="varargs" />
       <node concept="3cqZAl" id="1yt2T3T4T6V" role="3clF45" />

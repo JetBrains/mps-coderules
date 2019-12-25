@@ -30,6 +30,7 @@
     <import index="tj24" ref="r:0fbbb63a-fd15-46e1-8136-78049f6d6e63(jetbrains.mps.coderules.typechecking.service)" />
     <import index="oy3s" ref="r:a6030cee-34eb-4503-b1bf-015fe5cd8c1a(jetbrains.mps.logic.unification)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -16882,6 +16883,112 @@
                     </node>
                     <node concept="a7P8L" id="15BaR5AagCP" role="3AunhB">
                       <ref role="a7OzE" node="15BaR5Aagh1" resolve="ElmRight" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1nLNMY" id="2i6cuYQqGmm" role="1nK1Vg">
+      <property role="TrG5h" value="converts_arrayType_Cloneable" />
+      <node concept="3clFbS" id="2i6cuYQqGmn" role="1nLNMH">
+        <node concept="1nLNNL" id="2i6cuYQqGmo" role="3cqZAp">
+          <node concept="1nLNMm" id="2i6cuYQqGmp" role="1nLNNK">
+            <node concept="0eUR_" id="2i6cuYQqGmq" role="0UC6o">
+              <node concept="3NuqgR" id="2i6cuYQqGmr" role="0eVf_">
+                <node concept="aZer4" id="2i6cuYQqGms" role="3XD1gS">
+                  <property role="TrG5h" value="ArrLeft" />
+                </node>
+                <node concept="aZer4" id="2i6cuYQqGmu" role="3XD1gS">
+                  <property role="TrG5h" value="ArrRight" />
+                </node>
+              </node>
+            </node>
+            <node concept="3Aq93q" id="2i6cuYQqGmw" role="1nLNMb">
+              <property role="3ArMco" value="false" />
+              <node concept="3I6sU6" id="2i6cuYQqGmx" role="3Ip0Jz">
+                <node concept="3I6s7M" id="2i6cuYQqGmy" role="3I6sU7">
+                  <node concept="3Aqt3T" id="2i6cuYQqGmz" role="3I6s78">
+                    <ref role="3AqCNq" node="3Qp4N06bUPu" resolve="convertsTo" />
+                    <node concept="1HFMs5" id="2i6cuYQqGm$" role="3AunhB">
+                      <node concept="ns1u0" id="2i6cuYQqGm_" role="1uarlW">
+                        <ref role="ns1xF" node="JOGAOsVt2o" resolve="arrayType" />
+                      </node>
+                      <node concept="a7P8L" id="2i6cuYQqGmD" role="1uarlU">
+                        <ref role="a7OzE" node="2i6cuYQqGms" resolve="ArrLeft" />
+                      </node>
+                    </node>
+                    <node concept="1HFMs5" id="2i6cuYQqGmE" role="3AunhB">
+                      <node concept="ns1u0" id="2i6cuYQqIkB" role="1uarlW">
+                        <ref role="ns1xF" node="JOGAOsVt2a" resolve="classifierType" />
+                        <node concept="nsMwS" id="2i6cuYQqIos" role="ns1xD">
+                          <ref role="nsMwP" node="JOGAOsVt2c" resolve="classifier" />
+                          <node concept="2tJFMh" id="2i6cuYQqIBG" role="nsMwV">
+                            <node concept="ZC_QK" id="2i6cuYQqIFB" role="2tJFKM">
+                              <ref role="2aWVGs" to="wyt6:~Cloneable" resolve="Cloneable" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="2i6cuYQqGmJ" role="1uarlU">
+                        <ref role="a7OzE" node="2i6cuYQqGmu" resolve="ArrRight" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1nLNMY" id="2i6cuYQqJab" role="1nK1Vg">
+      <property role="TrG5h" value="converts_arrayType_Serializable" />
+      <node concept="3clFbS" id="2i6cuYQqJac" role="1nLNMH">
+        <node concept="1nLNNL" id="2i6cuYQqJad" role="3cqZAp">
+          <node concept="1nLNMm" id="2i6cuYQqJae" role="1nLNNK">
+            <node concept="0eUR_" id="2i6cuYQqJaf" role="0UC6o">
+              <node concept="3NuqgR" id="2i6cuYQqJag" role="0eVf_">
+                <node concept="aZer4" id="2i6cuYQqJah" role="3XD1gS">
+                  <property role="TrG5h" value="ArrLeft" />
+                </node>
+                <node concept="aZer4" id="2i6cuYQqJaj" role="3XD1gS">
+                  <property role="TrG5h" value="ArrRight" />
+                </node>
+              </node>
+            </node>
+            <node concept="3Aq93q" id="2i6cuYQqJal" role="1nLNMb">
+              <property role="3ArMco" value="false" />
+              <node concept="3I6sU6" id="2i6cuYQqJam" role="3Ip0Jz">
+                <node concept="3I6s7M" id="2i6cuYQqJan" role="3I6sU7">
+                  <node concept="3Aqt3T" id="2i6cuYQqJao" role="3I6s78">
+                    <ref role="3AqCNq" node="3Qp4N06bUPu" resolve="convertsTo" />
+                    <node concept="1HFMs5" id="2i6cuYQqJap" role="3AunhB">
+                      <node concept="ns1u0" id="2i6cuYQqJaq" role="1uarlW">
+                        <ref role="ns1xF" node="JOGAOsVt2o" resolve="arrayType" />
+                      </node>
+                      <node concept="a7P8L" id="2i6cuYQqJar" role="1uarlU">
+                        <ref role="a7OzE" node="2i6cuYQqJah" resolve="ArrLeft" />
+                      </node>
+                    </node>
+                    <node concept="1HFMs5" id="2i6cuYQqJas" role="3AunhB">
+                      <node concept="ns1u0" id="2i6cuYQqJat" role="1uarlW">
+                        <ref role="ns1xF" node="JOGAOsVt2a" resolve="classifierType" />
+                        <node concept="nsMwS" id="2i6cuYQqJau" role="ns1xD">
+                          <ref role="nsMwP" node="JOGAOsVt2c" resolve="classifier" />
+                          <node concept="2tJFMh" id="2i6cuYQqJav" role="nsMwV">
+                            <node concept="ZC_QK" id="2i6cuYQqLSa" role="2tJFKM">
+                              <ref role="2aWVGs" to="guwi:~Serializable" resolve="Serializable" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="2i6cuYQqJax" role="1uarlU">
+                        <ref role="a7OzE" node="2i6cuYQqJaj" resolve="ArrRight" />
+                      </node>
                     </node>
                   </node>
                 </node>
