@@ -271,6 +271,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="2i6cuYQbqIS" role="1SL9yI">
+      <property role="TrG5h" value="stringConversion" />
+      <node concept="3cqZAl" id="2i6cuYQbqIT" role="3clF45" />
+      <node concept="3clFbS" id="2i6cuYQbqIU" role="3clF47">
+        <node concept="2Hmddi" id="2i6cuYQbqIV" role="3cqZAp">
+          <node concept="2OqwBi" id="2i6cuYQbqIW" role="2Hmdds">
+            <node concept="2YIFZM" id="2i6cuYQbqIX" role="2Oq$k0">
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <node concept="2OqwBi" id="2i6cuYQbqIY" role="37wK5m">
+                <node concept="2WthIp" id="2i6cuYQbqIZ" role="2Oq$k0" />
+                <node concept="2XshWL" id="2i6cuYQbqJ0" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="2i6cuYQbqJ1" role="2XxRq1">
+                    <node concept="ZC_QK" id="2i6cuYQbsm4" role="2tJFKM">
+                      <ref role="2aWVGs" to="yg5v:2i6cuYQ8hzP" resolve="StringConversion" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="2i6cuYQbqJ3" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="2i6cuYQbqJ4" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1LZb2c" id="6EY0p2ym72p" role="1SL9yI">
       <property role="TrG5h" value="shortConversion" />
       <node concept="3cqZAl" id="6EY0p2ym72q" role="3clF45" />
