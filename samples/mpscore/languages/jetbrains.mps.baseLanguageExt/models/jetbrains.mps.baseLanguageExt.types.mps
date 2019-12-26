@@ -32350,6 +32350,7 @@
   <node concept="AVZre" id="5310cdpUCzb">
     <property role="3GE5qa" value="rule.bounds" />
     <property role="TrG5h" value="HasBound" />
+    <ref role="2YbDB9" node="4btN1w5Jfyx" resolve="Generics" />
     <node concept="3AqmO8" id="5310cdpUCuT" role="8PkJo">
       <property role="TrG5h" value="hasBound" />
       <node concept="1zAUYm" id="5310cdpUCwS" role="1zAUyy">
