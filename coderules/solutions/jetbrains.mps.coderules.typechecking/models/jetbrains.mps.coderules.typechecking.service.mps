@@ -4363,6 +4363,73 @@
                   <node concept="1bVj0M" id="RZQG98YSrp" role="37wK5m">
                     <node concept="3clFbS" id="RZQG98YSrq" role="1bW5cS">
                       <node concept="3clFbH" id="RZQG98YXkf" role="3cqZAp" />
+                      <node concept="3cpWs8" id="RZQG98YVB3" role="3cqZAp">
+                        <node concept="3cpWsn" id="RZQG98YVB4" role="3cpWs9">
+                          <property role="TrG5h" value="program" />
+                          <node concept="3uibUv" id="RZQG98YVB5" role="1tU5fm">
+                            <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
+                          </node>
+                          <node concept="2OqwBi" id="RZQG98YVB6" role="33vP2m">
+                            <node concept="2OqwBi" id="RZQG98YVB7" role="2Oq$k0">
+                              <node concept="liA8E" id="RZQG98YVB8" role="2OqNvi">
+                                <ref role="37wK5l" to="1yqb:2daneBOX8cN" resolve="getValue" />
+                                <node concept="10M0yZ" id="RZQG98YVB9" role="37wK5m">
+                                  <ref role="3cqZAo" to="1yqb:2daneBPSu1V" resolve="PROGRAM_PRODUCER" />
+                                  <ref role="1PxDUh" to="1yqb:1pPth$lAwc0" resolve="ApplyTemplatesStep" />
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="RZQG98YX0l" role="2Oq$k0">
+                                <ref role="3cqZAo" node="RZQG98YSYz" resolve="inEff" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="RZQG98YVBd" role="2OqNvi">
+                              <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWs8" id="RZQG98Z8jm" role="3cqZAp">
+                        <node concept="3cpWsn" id="RZQG98Z8jn" role="3cpWs9">
+                          <property role="TrG5h" value="trace" />
+                          <node concept="3uibUv" id="6BMBBPCUGsV" role="1tU5fm">
+                            <ref role="3uigEE" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
+                          </node>
+                          <node concept="2OqwBi" id="RZQG98Z8jo" role="33vP2m">
+                            <node concept="37vLTw" id="RZQG98Z8jp" role="2Oq$k0">
+                              <ref role="3cqZAo" node="RZQG98YSYz" resolve="inEff" />
+                            </node>
+                            <node concept="liA8E" id="RZQG98Z8jq" role="2OqNvi">
+                              <ref role="37wK5l" to="1yqb:2daneBOX8cN" resolve="getValue" />
+                              <node concept="10M0yZ" id="RZQG98Z8jr" role="37wK5m">
+                                <ref role="1PxDUh" to="1yqb:RZQG98UNsT" resolve="ConfigureEvalStep" />
+                                <ref role="3cqZAo" to="1yqb:RZQG98Ve3Q" resolve="TRACE" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbH" id="6Rg_jP6dL$y" role="3cqZAp" />
+                      <node concept="3clFbF" id="RZQG98YVBe" role="3cqZAp">
+                        <node concept="37vLTI" id="RZQG98YVBf" role="3clFbG">
+                          <node concept="2ShNRf" id="RZQG98YVBg" role="37vLTx">
+                            <node concept="1pGfFk" id="RZQG98YVBh" role="2ShVmc">
+                              <ref role="37wK5l" to="31yc:2daneBOSyP4" resolve="TraceEvents" />
+                              <node concept="2OqwBi" id="RZQG98YVBi" role="37wK5m">
+                                <node concept="37vLTw" id="RZQG98YVBj" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="RZQG98YVB4" resolve="program" />
+                                </node>
+                                <node concept="liA8E" id="RZQG98YVBk" role="2OqNvi">
+                                  <ref role="37wK5l" to="av0y:~Program.name()" resolve="name" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="RZQG98YZD0" role="37vLTJ">
+                            <ref role="3cqZAo" node="RZQG98YY7I" resolve="traceEvents" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbH" id="6Rg_jP6dOZb" role="3cqZAp" />
                       <node concept="3cpWs8" id="2j1FRbwYTnN" role="3cqZAp">
                         <node concept="3cpWsn" id="2j1FRbwYTnO" role="3cpWs9">
                           <property role="TrG5h" value="config" />
@@ -4385,74 +4452,7 @@
                       </node>
                       <node concept="3clFbJ" id="RZQG98YVB0" role="3cqZAp">
                         <node concept="3clFbS" id="RZQG98YVB1" role="3clFbx">
-                          <node concept="3clFbH" id="RZQG98YVB2" role="3cqZAp" />
-                          <node concept="3cpWs8" id="RZQG98Z8jm" role="3cqZAp">
-                            <node concept="3cpWsn" id="RZQG98Z8jn" role="3cpWs9">
-                              <property role="TrG5h" value="trace" />
-                              <node concept="3uibUv" id="6BMBBPCUGsV" role="1tU5fm">
-                                <ref role="3uigEE" to="hano:qubcdtxBiR" resolve="EvaluationTraceExt" />
-                              </node>
-                              <node concept="2OqwBi" id="RZQG98Z8jo" role="33vP2m">
-                                <node concept="37vLTw" id="RZQG98Z8jp" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="RZQG98YSYz" resolve="inEff" />
-                                </node>
-                                <node concept="liA8E" id="RZQG98Z8jq" role="2OqNvi">
-                                  <ref role="37wK5l" to="1yqb:2daneBOX8cN" resolve="getValue" />
-                                  <node concept="10M0yZ" id="RZQG98Z8jr" role="37wK5m">
-                                    <ref role="1PxDUh" to="1yqb:RZQG98UNsT" resolve="ConfigureEvalStep" />
-                                    <ref role="3cqZAo" to="1yqb:RZQG98Ve3Q" resolve="TRACE" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbH" id="RZQG98Z3fp" role="3cqZAp" />
-                          <node concept="3cpWs8" id="RZQG98YVB3" role="3cqZAp">
-                            <node concept="3cpWsn" id="RZQG98YVB4" role="3cpWs9">
-                              <property role="TrG5h" value="program" />
-                              <node concept="3uibUv" id="RZQG98YVB5" role="1tU5fm">
-                                <ref role="3uigEE" to="av0y:~Program" resolve="Program" />
-                              </node>
-                              <node concept="2OqwBi" id="RZQG98YVB6" role="33vP2m">
-                                <node concept="2OqwBi" id="RZQG98YVB7" role="2Oq$k0">
-                                  <node concept="liA8E" id="RZQG98YVB8" role="2OqNvi">
-                                    <ref role="37wK5l" to="1yqb:2daneBOX8cN" resolve="getValue" />
-                                    <node concept="10M0yZ" id="RZQG98YVB9" role="37wK5m">
-                                      <ref role="3cqZAo" to="1yqb:2daneBPSu1V" resolve="PROGRAM_PRODUCER" />
-                                      <ref role="1PxDUh" to="1yqb:1pPth$lAwc0" resolve="ApplyTemplatesStep" />
-                                    </node>
-                                  </node>
-                                  <node concept="37vLTw" id="RZQG98YX0l" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="RZQG98YSYz" resolve="inEff" />
-                                  </node>
-                                </node>
-                                <node concept="liA8E" id="RZQG98YVBd" role="2OqNvi">
-                                  <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="RZQG98YVBe" role="3cqZAp">
-                            <node concept="37vLTI" id="RZQG98YVBf" role="3clFbG">
-                              <node concept="2ShNRf" id="RZQG98YVBg" role="37vLTx">
-                                <node concept="1pGfFk" id="RZQG98YVBh" role="2ShVmc">
-                                  <ref role="37wK5l" to="31yc:2daneBOSyP4" resolve="TraceEvents" />
-                                  <node concept="2OqwBi" id="RZQG98YVBi" role="37wK5m">
-                                    <node concept="37vLTw" id="RZQG98YVBj" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="RZQG98YVB4" resolve="program" />
-                                    </node>
-                                    <node concept="liA8E" id="RZQG98YVBk" role="2OqNvi">
-                                      <ref role="37wK5l" to="av0y:~Program.name()" resolve="name" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="37vLTw" id="RZQG98YZD0" role="37vLTJ">
-                                <ref role="3cqZAo" node="RZQG98YY7I" resolve="traceEvents" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbH" id="RZQG98YVBm" role="3cqZAp" />
+                          <node concept="3clFbH" id="6Rg_jP6dJiU" role="3cqZAp" />
                           <node concept="3cpWs8" id="RZQG98Z0jy" role="3cqZAp">
                             <node concept="3cpWsn" id="RZQG98Z0jz" role="3cpWs9">
                               <property role="TrG5h" value="evtrace" />
