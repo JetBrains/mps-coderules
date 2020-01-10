@@ -49,24 +49,25 @@ internal class EvaluationSessionImpl private constructor (
         val ruleIndex = RuleIndex(program.rulesLists())
 
         if (ispec is IncrementalProgramSpec.NonIncrSpec || token == null) {
-            val state = ProcessingStateImpl(
+            val processing
+                = ConstraintsProcessing(
                 Dispatcher(ruleIndex).front(),
                 MatchJournalImpl(ispec),
-                ruleIndex, ispec, trace, profiler
+                ruleIndex, LogicalState(), ispec, trace, profiler
             )
 
-            this.controller = ControllerImpl(supervisor, state, ispec, trace, profiler)
+            this.controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)
             return controller.activate(main)
 
         } else {
             val tkn = token as SessionTokenImpl
-            val state = ProcessingStateImpl(
+            val processing = ConstraintsProcessing(
                 Dispatcher(ruleIndex, tkn.getFrontState()).front(),
                 MatchJournalImpl(ispec, tkn.journalView),
-                ruleIndex, ispec, trace, profiler
+                ruleIndex, tkn.logicalState, ispec, trace, profiler
             )
 
-            this.controller = ControllerImpl(supervisor, state, ispec, trace, profiler)
+            this.controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)
             return controller.incrLaunch(main, rulesDiff)
         }
     }
@@ -108,7 +109,7 @@ internal class EvaluationSessionImpl private constructor (
         override fun start(supervisor: Supervisor): EvaluationResult {
             var session = Backend.ourBackend.ourSession.get()
             if (session != null) throw IllegalStateException("session already active")
-            
+
             @Suppress("UNCHECKED_CAST")
             val durations = parameters[ParameterKey.of("profiling.data", MutableMap::class.java)]
                 as MutableMap<String, String>?
@@ -125,6 +126,7 @@ internal class EvaluationSessionImpl private constructor (
                 }
             }
             finally {
+                session.controller.clearState()
                 try {
                     profiler?.run {
                         formattedData().entries.forEach { e -> durations.put(e.key, e.value) }
@@ -138,7 +140,7 @@ internal class EvaluationSessionImpl private constructor (
             }
 
             return object : EvaluationResult {
-                private val token = session.controller.state.endSession()
+                private val token = session.controller.processing.endSession()
 
                 override fun token(): SessionToken = token
 

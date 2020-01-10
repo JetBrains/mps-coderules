@@ -16,15 +16,15 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.ProcessingState
+import jetbrains.mps.logic.reactor.core.LogicalStateObservable
 import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import java.lang.IllegalArgumentException
 
 
 /**
- * [MatchJournal] which also maintains observers in [ProcessingState] in sync with its current position.
+ * [MatchJournal] which also maintains observers in [LogicalStateObservable] in sync with its current position.
  */
-interface StoreAwareJournal : MatchJournal, ProcessingState {
+interface StoreAwareJournal : MatchJournal, LogicalStateObservable {
 
      // Only for testing push() in Impl
     fun testPush()
@@ -41,12 +41,13 @@ interface StoreAwareJournal : MatchJournal, ProcessingState {
 }
 
 
-internal open class StoreAwareJournalImpl(private val journal: MatchJournal, private val state: StateFrameStack = StateFrameStack())
-    : MatchJournal by journal, StoreAwareJournal, ProcessingState by state
+internal open class StoreAwareJournalImpl(private val journal: MatchJournal,
+                                          private val state: LogicalState = LogicalState())
+    : MatchJournal by journal, StoreAwareJournal, LogicalStateObservable by state
 {
 
     private class FramePos(
-        val frame: StateFrame,
+        val frame: LogicalStateFrame,
         chunk: MatchJournal.Chunk,
         entriesCount: Int = 0
     ) : MatchJournal.Pos(chunk, entriesCount)

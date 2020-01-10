@@ -22,10 +22,26 @@ import jetbrains.mps.logic.reactor.logical.Logical
  * @author Fedor Isakov
  */
 
-interface ProcessingState {
+interface LogicalStateObservable {
 
-    fun addForwardingObserver(logical: Logical<*>, observer: LogicalObserver)
+    fun addForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver)
 
-    fun removeForwardingObserver(logical: Logical<*>, observer: LogicalObserver)
-    
+    fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver)
+
+    fun init(controller: Controller): InitToken
+
+    interface InitToken {
+
+        fun clear()
+
+    }
+
+}
+
+interface ForwardingLogicalObserver {
+
+    fun valueUpdated(logical: Logical<*>, controller: Controller)
+
+    fun parentUpdated(logical: Logical<*>, controller: Controller)
+
 }

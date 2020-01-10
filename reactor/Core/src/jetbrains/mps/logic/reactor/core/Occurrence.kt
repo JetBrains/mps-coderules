@@ -23,7 +23,6 @@ import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 
 import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
-import jetbrains.mps.logic.reactor.logical.MetaLogical
 import jetbrains.mps.logic.reactor.program.Constraint
 
 
@@ -34,40 +33,18 @@ fun justsOf(vararg elements: Int) = TIntHashSet(elements)
 fun justsFromCollection(collection: Collection<Int>) = TIntHashSet(collection)
 fun justsCopy(other: Justs) = TIntHashSet(other)
 
-
-data class OccurrenceObserver(val occurrence: Occurrence, val controller: Controller) : LogicalObserver {
-
-    override fun valueUpdated(logical: Logical<*>) = doReactivate()
-
-    override fun parentUpdated(logical: Logical<*>) = doReactivate()
-
-    private fun doReactivate() {
-        if (occurrence.alive) {
-            val status = controller.reactivate(occurrence)
-            // FIXME propagate the status further up the call stack
-            handleFeedbackStatus(status)
-        }
-    }
-
-    private fun handleFeedbackStatus(status: FeedbackStatus) {
-        if (status is FeedbackStatus.FAILED) {
-            throw status.failure.failureCause()
-        }
-    }
-}
-
 /**
  * Class representing a single constraint occurrence.
  *
  * @author Fedor Isakov
  */
-class Occurrence (controller: Controller,
+class Occurrence (observable: LogicalStateObservable,
                   val constraint: Constraint,
                   val logicalContext: LogicalContext,
                   val arguments: List<*>,
                   val justifications: Justs,
                   val ruleUniqueTag: Any? = null):
-    ConstraintOccurrence
+    ConstraintOccurrence, ForwardingLogicalObserver
 {
 
     var alive = true
@@ -77,7 +54,7 @@ class Occurrence (controller: Controller,
     val identity = System.identityHashCode(this)
 
     init {
-        revive(controller)
+        revive(observable)
     }
 
     override fun constraint(): Constraint = constraint
@@ -90,34 +67,49 @@ class Occurrence (controller: Controller,
 
     override fun justifications(): Justs = justifications
 
-    fun terminate(controller: Controller) {
-        val obs = OccurrenceObserver(this, controller)
+    override fun valueUpdated(logical: Logical<*>, controller: Controller) = doReactivate(controller)
+
+    override fun parentUpdated(logical: Logical<*>, controller: Controller) = doReactivate(controller)
+
+    fun terminate(observable: LogicalStateObservable) {
         for (a in arguments) {
             if (a is Logical<*>) {
-                controller.state().removeForwardingObserver(a, obs)
+                observable.removeForwardingObserver(a, this)
             }
         }
         alive = false
     }
 
-    fun revive(controller: Controller) {
-        val obs = OccurrenceObserver(this, controller)
+    fun revive(observable: LogicalStateObservable) {
         for (a in arguments) {
             if (a is Logical<*>) {
-                controller.state().addForwardingObserver(a, obs)
+                observable.addForwardingObserver(a, this)
             }
         }
         alive = true
     }
 
-    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
+    private fun doReactivate(controller: Controller) {
+        if (alive) {
+            val status = controller.reactivate(this)
+            // FIXME propagate the status further up the call stack
+            handleFeedbackStatus(status)
+        }
+    }
 
+    private fun handleFeedbackStatus(status: FeedbackStatus) {
+        if (status is FeedbackStatus.FAILED) {
+            throw status.failure.failureCause()
+        }
+    }
+    override fun toString(): String = "${constraint().symbol()}(${arguments().joinToString()})"
+    
 }
 
-fun Constraint.occurrence(controller: Controller,
+fun Constraint.occurrence(observable: LogicalStateObservable,
                           arguments: List<*>,
                           justifications: Justs,
                           logicalContext: LogicalContext,
                           ruleUniqueTag: Any? = null): Occurrence =
-    Occurrence(controller, this, logicalContext, arguments, justifications, ruleUniqueTag)
+    Occurrence(observable, this, logicalContext, arguments, justifications, ruleUniqueTag)
 

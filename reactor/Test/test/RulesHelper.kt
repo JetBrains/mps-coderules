@@ -174,15 +174,15 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController(), listOf(* args), justsOf(), noLogicalContext)
+        .occurrence(MockController().logicalState(), listOf(* args), justsOf(), noLogicalContext)
 
 fun taggedOccurrence(ruleUniqueTag: Any, id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController(), listOf(* args), justsOf(), noLogicalContext, ruleUniqueTag)
+        .occurrence(MockController().logicalState(), listOf(* args), justsOf(), noLogicalContext, ruleUniqueTag)
 
 fun justifiedOccurrence(id: String, justs: Justs, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size), true)
-        .occurrence(MockController(), listOf(* args), justs, noLogicalContext)
+        .occurrence(MockController().logicalState(), listOf(* args), justs, noLogicalContext)
 
 fun justifiedOccurrence(id: String, justs: Collection<Int>, vararg args: Any): Occurrence =
     justifiedOccurrence(id, justsFromCollection(justs), * args)
@@ -201,7 +201,11 @@ private val noLogicalContext = object : LogicalContext {
 }
 
 class MockController : Controller {
-    
+
+    override fun clearState() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override fun ask(invocation: PredicateInvocation): Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -218,11 +222,15 @@ class MockController : Controller {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun state(): ProcessingState = object : ProcessingState {
-        override fun addForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
+    override fun logicalState(): LogicalStateObservable = object : LogicalStateObservable {
+        override fun addForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
         }
 
-        override fun removeForwardingObserver(logical: Logical<*>, observer: LogicalObserver) {
+        override fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
+        }
+
+        override fun init(controller: Controller): LogicalStateObservable.InitToken {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
     }
 

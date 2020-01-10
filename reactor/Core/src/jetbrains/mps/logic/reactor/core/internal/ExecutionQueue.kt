@@ -43,10 +43,10 @@ internal class ExecutionQueue(
 
     private val seen: MutableSet<ExecPos> = HashSet()
 
-    fun run(controller: Controller, state: ProcessingStateImpl): FeedbackStatus {
+    fun run(controller: Controller, processing: ConstraintsProcessing): FeedbackStatus {
         var status: FeedbackStatus = FeedbackStatus.NORMAL()
         if (execQueue.isNotEmpty()) {
-            state.resetStore()
+            processing.resetStore()
 
             var prevPos: MatchJournal.Pos? = null
             do {
@@ -55,21 +55,21 @@ internal class ExecutionQueue(
                 // Handles the case when several matches are added to the same position.
                 //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
                 if (execPos.pos != prevPos) {
-                    state.replay(controller, execPos.pos)
+                    processing.replay(processing.logicalState, execPos.pos)
                     lastIncrementalRootPos = execPos.pos
                 }
                 prevPos = execPos.pos
 
                 // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
                 if (execPos.activeOcc.stored) {
-                    status = state.reactivate(controller, execPos.activeOcc)
-                    // Leave journal state as it was at the point of failure
+                    status = processing.reactivate(controller, execPos.activeOcc)
+                    // Leave journal processing as it was at the point of failure
                     if (!status.operational) return status
                 }
             } while (execQueue.isNotEmpty())
         }
         // Also replay to the end after queue is fully executed
-        state.replay(controller, state.last().toPos())
+        processing.replay(processing.logicalState, processing.last().toPos())
         return status
     }
 

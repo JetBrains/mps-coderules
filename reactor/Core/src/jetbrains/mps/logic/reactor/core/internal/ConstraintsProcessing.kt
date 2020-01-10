@@ -27,26 +27,24 @@ import jetbrains.mps.logic.reactor.util.profile
 
 
 /**
- *  Processing of constraints comprises several major activities:
+ * Represents the processing of constraints, which comprises several major activities:
  *
  *   - finding match(-es) corresponding to an active occurrence
  *   - checking the guard condition
  *   - deactivating discarded occurrences from the match
  *   - processing the body of a constraints rule.
  *
- *  A ProcessingState maintains a stack of [StateFrame] instances through [StateFrameStack].
- *  It also serves as a proxy for observers of [Logical] that are added during program evaluation.
- *
  * @author Fedor Isakov
  */
 
-internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.DispatchingFront,
-                                   journal: MatchJournalImpl,
-                                   private val ruleIndex: RuleIndex,
-                                   private val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
-                                   val trace: EvaluationTrace = EvaluationTrace.NULL,
-                                   val profiler: Profiler? = null)
-    : StoreAwareJournalImpl(journal)
+internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.DispatchingFront,
+                                     journal: MatchJournalImpl,
+                                     private val ruleIndex: RuleIndex,
+                                     val logicalState: LogicalState = LogicalState(),
+                                     private val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
+                                     val trace: EvaluationTrace = EvaluationTrace.NULL,
+                                     val profiler: Profiler? = null)
+    : StoreAwareJournalImpl(journal, logicalState)
 {
     private val ruleOrdering: RuleOrdering = RuleOrdering(ruleIndex)
 
@@ -202,7 +200,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         val histView = view()
         resetStore() // clear observers
         val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
-        return SessionTokenImpl(histView, rules, dispatchingFront.state())
+        return SessionTokenImpl(histView, rules, dispatchingFront.state(), logicalState)
     }
 
     /**
@@ -217,7 +215,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
         if (!active.stored) {
             active.stored = true
             logActivation(active)
-            active.revive(controller)
+            active.revive(logicalState)
         }
 
         profiler.profile("dispatch_${active.constraint().symbol()}") {
@@ -308,7 +306,7 @@ internal class ProcessingStateImpl(private var dispatchingFront: Dispatcher.Disp
 
                 profiler.profile("terminateOccurrence") {
 
-                    occ.terminate(controller)
+                    occ.terminate(logicalState)
 
                 }
 

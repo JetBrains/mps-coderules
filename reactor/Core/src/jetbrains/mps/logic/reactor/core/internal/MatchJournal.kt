@@ -67,7 +67,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
      * Advances journal position to specified position.
      * @throws IllegalStateException when position is not from the future (relative to current pos).
      */
-    fun replay(controller: Controller, futurePos: Pos)
+    fun replay(observable: LogicalStateObservable, futurePos: Pos)
 
 
     /**

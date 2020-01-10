@@ -30,23 +30,26 @@ import jetbrains.mps.logic.reactor.util.profile
 
 internal class ControllerImpl (
     val supervisor: Supervisor,
-    val state: ProcessingStateImpl,
+    val processing: ConstraintsProcessing,
     val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
     val trace: EvaluationTrace = EvaluationTrace.NULL,
     val profiler: Profiler? = null) : Controller
 {
+
+    private val initToken: LogicalStateObservable.InitToken = processing.init(this)
+
     /** For tests only */
-    override fun storeView(): StoreView = state.storeView()
+    override fun storeView(): StoreView = processing.storeView()
 
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {
         // create the internal occurrence
-        val active = occ.constraint().occurrence(this, occ.arguments(), occ.justifications(), object: LogicalContext {
+        val active = occ.constraint().occurrence(logicalState(), occ.arguments(), occ.justifications(), object: LogicalContext {
             override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
         })
 
         trace.activate(occ)
-        val status = state.processActivated(this, active, NORMAL())
+        val status = processing.processActivated(this, active, NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
         }
@@ -55,13 +58,13 @@ internal class ControllerImpl (
 
     fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): FeedbackStatus {
         profiler.profile("invalidation") {
-            state.invalidateRuleMatches(rulesDiff.removed)
+            processing.invalidateRuleMatches(rulesDiff.removed)
         }
         profiler.profile("adding_matches") {
-            state.addRuleMatches(rulesDiff.added)
+            processing.addRuleMatches(rulesDiff.added)
         }
         return profiler.profile<FeedbackStatus>("reexecution") {
-            state.launchQueue(this)
+            processing.launchQueue(this)
         }
     }
 
@@ -71,13 +74,17 @@ internal class ControllerImpl (
 
         // fixme: is it valid to always provide current justifications?
         //  while this method is used only in one place at program kick-off, yes, it's initial justs provided.
-        activateConstraint(constraint, state.justs(), context)
+        activateConstraint(constraint, processing.justs(), context)
 
         return context.currentStatus()
     }
 
-    override fun state(): ProcessingStateImpl =
-        state
+    override fun logicalState(): LogicalStateObservable  =
+        processing
+
+    override fun clearState() {
+        initToken.clear()
+    }
 
     override fun ask(invocation: PredicateInvocation): Boolean {
         val solver = invocation.predicate().symbol().solver()
@@ -96,7 +103,7 @@ internal class ControllerImpl (
         profiler.profile<FeedbackStatus>("reactivate_${occ.constraint.symbol()}") {
 
             trace.reactivate(occ)
-            state.processActivated(this, occ, NORMAL())
+            processing.processActivated(this, occ, NORMAL())
 
         }
 
@@ -146,9 +153,9 @@ internal class ControllerImpl (
                 }
             }
 
-            val savedPos = state.currentPos()
+            val savedPos = processing.currentPos()
 
-            val currentJusts = state.justs()
+            val currentJusts = processing.justs()
 
             for (item in body) {
                 val itemOk = when (item) {
@@ -199,7 +206,7 @@ internal class ControllerImpl (
 
             if (!altOk) {
                 // all constraints activated up to a failure are lost
-                state.reset(savedPos)
+                processing.reset(savedPos)
 
             } else {
                 // body finished normally
@@ -216,9 +223,9 @@ internal class ControllerImpl (
 
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
-                constraint.occurrence(this, args, justsCopy(justs), context.logicalContext, context.ruleUniqueTag).let { occ ->
+                constraint.occurrence(logicalState(), args, justsCopy(justs), context.logicalContext, context.ruleUniqueTag).let { occ ->
                     trace.activate(occ)
-                    state.processActivated(this, occ, status)
+                    processing.processActivated(this, occ, status)
                 }
 
             }
@@ -333,10 +340,11 @@ fun createController(
 
     ControllerImpl(
         supervisor,
-        ProcessingStateImpl(
+        ConstraintsProcessing(
             Dispatcher(ruleIndex).front(),
             MatchJournalImpl(),
             ruleIndex,
+            LogicalState(),
             IncrementalProgramSpec.DefaultSpec,
             trace,
             profiler

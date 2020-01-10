@@ -16,10 +16,7 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import jetbrains.mps.logic.reactor.core.Controller
-import jetbrains.mps.logic.reactor.core.Justs
-import jetbrains.mps.logic.reactor.core.Occurrence
-import jetbrains.mps.logic.reactor.core.justsOf
+import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 import jetbrains.mps.logic.reactor.evaluation.MatchJournalView
@@ -110,25 +107,27 @@ internal open class MatchJournalImpl(
         if (currentPos() != pastPos) throw IllegalStateException()
     }
 
-    override fun replay(controller: Controller, futurePos: MatchJournal.Pos) {
+    override fun replay(observable: LogicalStateObservable, futurePos: MatchJournal.Pos) {
         while (posPtr.hasNext()) {
             current = posPtr.next()
             if (futurePos.chunk === current) {
-                replayOccurrences(controller, current.entries.take(futurePos.entriesCount))
+                replayOccurrences(observable, current.entries.take(futurePos.entriesCount))
                 return
             }
-            replayOccurrences(controller, current.entries)
+            replayOccurrences(observable, current.entries)
         }
         if (currentPos() != futurePos) throw IllegalStateException()
     }
 
-    private fun replayOccurrences(controller: Controller, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
+    private fun replayOccurrences(observable: LogicalStateObservable, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
         occSpecs.forEach {
             if (it.discarded) {
-                it.occ.terminate(controller)
+//                it.occ.terminate(observable)
+                it.occ.alive = false
                 it.occ.stored = false
             } else {
-                it.occ.revive(controller)
+//                it.occ.revive(observable)
+                it.occ.alive = true
                 it.occ.stored = true
             }
         }
