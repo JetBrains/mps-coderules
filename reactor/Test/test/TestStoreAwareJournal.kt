@@ -162,7 +162,7 @@ class TestStoreAwareJournal {
                     nchunks shouldBe 4 * 2 // 4 rules, each activates 1 principal occurrence
 
                     // try replay the last chunk
-                    replay(mockController.logicalState(), lastPos)
+                    replay(mockController.logicalStateObservable(), lastPos)
 
                     // should change nothing
                     storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
@@ -175,11 +175,11 @@ class TestStoreAwareJournal {
                     storeView().allOccurrences().count() shouldBe 0
                     view().chunks.size shouldBe nchunks
 
-                    replay(mockController.logicalState(), initPos)
+                    replay(mockController.logicalStateObservable(), initPos)
 
                     storeView().constraintSymbols() shouldBe setOf<ConstraintSymbol>()
 
-                    replay(mockController.logicalState(), fooPos)
+                    replay(mockController.logicalStateObservable(), fooPos)
 
                     storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
                     // although storeView() results change, journal remains the same
@@ -231,7 +231,7 @@ class TestStoreAwareJournal {
 
                     storeView().allOccurrences().count() shouldBe 0
 
-                    replay(mockController.logicalState(), savedPos)
+                    replay(mockController.logicalStateObservable(), savedPos)
 
                     storeView().allOccurrences() shouldBe oldStore
                     currentPos() shouldBe savedPos
@@ -473,7 +473,7 @@ class TestStoreAwareJournal {
                     // store is not longer valid after removing chunks from history, so reset it
                     resetStore()
                     // move to the point where we want to insert new rule
-                    replay(mockController.logicalState(), continueFrom)
+                    replay(mockController.logicalStateObservable(), continueFrom)
 
                     // according to the history 'qux' wasn't activated at this point & 'bar1' wasn't discarded
                     storeView().constraintSymbols() shouldBe setOf<ConstraintSymbol>()
@@ -498,7 +498,7 @@ class TestStoreAwareJournal {
                     assertNotEquals(lastPos, currentPos())
 
                     // finally, purely go the the end, applying the rest of the history to the store
-                    replay(mockController.logicalState(), lastPos)
+                    replay(mockController.logicalStateObservable(), lastPos)
 
                     currentPos().chunk shouldBeSame lastPos.chunk // we inserted in the middle -- the last chunk should remain the same
                     storeView().constraintSymbols() shouldBe setOf(sym0("bar1"), sym0("qux"), sym0("marker"))

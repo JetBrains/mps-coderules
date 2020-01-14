@@ -28,14 +28,6 @@ interface LogicalStateObservable {
 
     fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver)
 
-    fun init(controller: Controller): InitToken
-
-    interface InitToken {
-
-        fun clear()
-
-    }
-
 }
 
 interface ForwardingLogicalObserver {

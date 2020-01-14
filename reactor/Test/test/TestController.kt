@@ -1,4 +1,5 @@
 import jetbrains.mps.logic.reactor.core.*
+import jetbrains.mps.logic.reactor.core.internal.LogicalState
 import jetbrains.mps.logic.reactor.core.internal.createController
 import jetbrains.mps.logic.reactor.core.internal.logical
 import jetbrains.mps.logic.reactor.evaluation.*

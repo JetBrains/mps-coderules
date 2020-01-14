@@ -33,9 +33,7 @@ interface Controller {
 
     fun reactivate(occ: Occurrence): FeedbackStatus
 
-    fun logicalState(): LogicalStateObservable
-
-    fun clearState()
+    fun logicalStateObservable(): LogicalStateObservable
 
     /** For tests only  */
     fun evaluate(occ: Occurrence): StoreView

@@ -40,7 +40,7 @@ import jetbrains.mps.logic.reactor.util.profile
 internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.DispatchingFront,
                                      journal: MatchJournalImpl,
                                      private val ruleIndex: RuleIndex,
-                                     val logicalState: LogicalState = LogicalState(),
+                                     val logicalState: LogicalState,
                                      private val ispec: IncrementalProgramSpec = IncrementalProgramSpec.DefaultSpec,
                                      val trace: EvaluationTrace = EvaluationTrace.NULL,
                                      val profiler: Profiler? = null)
@@ -200,7 +200,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         val histView = view()
         resetStore() // clear observers
         val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
-        return SessionTokenImpl(histView, rules, dispatchingFront.state(), logicalState)
+        return SessionTokenImpl(histView, rules, dispatchingFront.state(), logicalState.clear())
     }
 
     /**

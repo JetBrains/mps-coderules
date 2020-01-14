@@ -42,8 +42,8 @@ interface StoreAwareJournal : MatchJournal, LogicalStateObservable {
 
 
 internal open class StoreAwareJournalImpl(private val journal: MatchJournal,
-                                          private val state: LogicalState = LogicalState())
-    : MatchJournal by journal, StoreAwareJournal, LogicalStateObservable by state
+                                          private val logicalState: LogicalState = LogicalState())
+    : MatchJournal by journal, StoreAwareJournal, LogicalStateObservable by logicalState
 {
 
     private class FramePos(
@@ -53,25 +53,25 @@ internal open class StoreAwareJournalImpl(private val journal: MatchJournal,
     ) : MatchJournal.Pos(chunk, entriesCount)
 
 
-    fun push() = state.push()
+    fun push() = logicalState.push()
 
-    override fun testPush() { state.push() }
+    override fun testPush() { logicalState.push() }
 
     // Reset only store & history position, don't modify history
     override fun resetStore() {
-        state.reset()
+        logicalState.reset()
         this.resetPos()
     }
 
 
     override fun currentPos(): MatchJournal.Pos =
-        FramePos(state.currentFrame(), journal.currentPos().chunk, journal.currentPos().entriesCount)
+        FramePos(logicalState.currentFrame(), journal.currentPos().chunk, journal.currentPos().entriesCount)
 
     // Throw away recently added chunks and reset store accordingly
     // NB: not checking that chunks are actually recently added, from this exec session
     override fun reset(pastPos: MatchJournal.Pos) {
         if (pastPos is FramePos) {
-            state.reset(pastPos.frame)
+            logicalState.reset(pastPos.frame)
             journal.reset(pastPos)
         } else {
             throw IllegalArgumentException()

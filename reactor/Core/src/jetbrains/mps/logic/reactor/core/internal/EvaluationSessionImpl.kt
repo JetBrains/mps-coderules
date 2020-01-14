@@ -36,39 +36,42 @@ internal class EvaluationSessionImpl private constructor (
     val params: Map<ParameterKey<*>, *>?) : EvaluationSession()
 {
 
-    lateinit var controller: ControllerImpl
-
     @Suppress("UNCHECKED_CAST")
     override fun <T : Any> parameter(key: ParameterKey<T>): T? = params ?.get(key) as T
 
     private fun launch(
         main: Constraint, profiler: Profiler?,
         token: SessionToken?, rulesDiff: RulesDiff, ispec: IncrementalProgramSpec
-    ) : FeedbackStatus {
+    ) : Pair<FeedbackStatus, SessionToken> {
 
         val ruleIndex = RuleIndex(program.rulesLists())
 
         if (ispec is IncrementalProgramSpec.NonIncrSpec || token == null) {
-            val processing
-                = ConstraintsProcessing(
+            val logicalState = LogicalState()
+
+            val processing = ConstraintsProcessing(
                 Dispatcher(ruleIndex).front(),
                 MatchJournalImpl(ispec),
-                ruleIndex, LogicalState(), ispec, trace, profiler
+                ruleIndex, logicalState, ispec, trace, profiler
             )
 
-            this.controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)
-            return controller.activate(main)
+            val controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)
+            logicalState.init(controller)
+            return controller.activate(main) to processing.endSession()
 
         } else {
             val tkn = token as SessionTokenImpl
+            val logicalState = tkn.logicalState
+            
             val processing = ConstraintsProcessing(
                 Dispatcher(ruleIndex, tkn.getFrontState()).front(),
                 MatchJournalImpl(ispec, tkn.journalView),
-                ruleIndex, tkn.logicalState, ispec, trace, profiler
+                ruleIndex, logicalState, ispec, trace, profiler
             )
 
-            this.controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)
-            return controller.incrLaunch(main, rulesDiff)
+            val controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)
+            logicalState.init(controller)
+            return controller.incrLaunch(main, rulesDiff) to processing.endSession()
         }
     }
 
@@ -117,16 +120,20 @@ internal class EvaluationSessionImpl private constructor (
 
             session = EvaluationSessionImpl(program, supervisor, evaluationTrace, parameters)
             Backend.ourBackend.ourSession.set(session)
-            var failure: Feedback? = null
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                val status = session.launch(main, profiler, token, program.incrementalDiff(), ispec)
-                if (status is FAILED) {
-                    failure = status.failure
+                val (status, token) = session.launch(main, profiler, token, program.incrementalDiff(), ispec)
+
+                return object : EvaluationResult {
+
+                    override fun token(): SessionToken = token
+
+                    override fun storeView(): StoreView = token.journalView.storeView
+
+                    override fun feedback():  EvaluationFeedback? = if (status is FAILED) status.failure else null
                 }
             }
             finally {
-                session.controller.clearState()
                 try {
                     profiler?.run {
                         formattedData().entries.forEach { e -> durations.put(e.key, e.value) }
@@ -139,15 +146,6 @@ internal class EvaluationSessionImpl private constructor (
                 Backend.ourBackend.ourSession.set(null)
             }
 
-            return object : EvaluationResult {
-                private val token = session.controller.processing.endSession()
-
-                override fun token(): SessionToken = token
-
-                override fun storeView(): StoreView = token.journalView.storeView
-
-                override fun feedback():  EvaluationFeedback? = failure
-            }
         }
 
     }

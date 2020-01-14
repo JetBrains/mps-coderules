@@ -49,16 +49,15 @@ class LogicalState : LogicalStateObservable, LogicalObserver
         stateFrames.push(LogicalStateFrame())
     }
 
-    override fun init(controller: Controller): LogicalStateObservable.InitToken {
-        assert(this@LogicalState.controller === null)
+    fun init(controller: Controller) {
+        assert(this.controller === null)
         this.controller = controller
+    }
 
-        return object : LogicalStateObservable.InitToken {
-            override fun clear() {
-                assert(this@LogicalState.controller !== null)
-                this@LogicalState.controller = null
-            }
-        }
+    fun clear() : LogicalState {
+        assert(this.controller !== null)
+        this.controller = null
+        return this
     }
 
     fun currentFrame() : LogicalStateFrame =
@@ -73,9 +72,9 @@ class LogicalState : LogicalStateObservable, LogicalObserver
 
     fun reset() {
         // Clear logicals from this forwarding observer on full reset
-        currentFrame().observed().forEach {
-            it.removeObserver(this)
-        }
+//        currentFrame().observed().forEach {
+//            it.removeObserver(this)
+//        }
         reset(stateFrames.last)
     }
 
