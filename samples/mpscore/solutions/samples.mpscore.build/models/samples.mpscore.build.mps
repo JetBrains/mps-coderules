@@ -230,6 +230,7 @@
         </node>
         <node concept="1SiIV0" id="69UmpDmJW2v" role="3bR37C">
           <node concept="3bR9La" id="69UmpDmJW2w" role="1SiIV1">
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" to="zqd8:7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
           </node>
         </node>
