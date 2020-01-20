@@ -67,6 +67,8 @@ internal class RuleMatcherImpl(private var ruleLookup: RuleLookup,
     {
         override fun rule(): Rule = lookupRule()
 
+        override fun hasOccurrences(): Boolean = trunkNodes.size > 0 || leafNodes.size > 0
+
         override fun matches(): Collection<RuleMatchImpl> =
             leafNodes
                 .filter { node -> !consumedSignatures.contains(node.signature()) }

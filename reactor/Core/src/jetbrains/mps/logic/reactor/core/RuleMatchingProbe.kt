@@ -33,6 +33,8 @@ interface RuleMatchingProbe : RuleMatchingProbeState {
 
     fun matches(): Collection<RuleMatchEx>
 
+    fun hasOccurrences(): Boolean
+
     fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe
 
     fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe

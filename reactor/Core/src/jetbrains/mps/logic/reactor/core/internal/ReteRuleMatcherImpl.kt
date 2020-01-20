@@ -247,6 +247,8 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 nodeList.add(node)
             }
 
+            fun occurrencesCount() = introTrail.size()
+
             fun containsOccurrence(occ: Occurrence): Boolean {
                 return introTrail.contains(occ.identity)
             }
@@ -404,6 +406,10 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 nodesIt = layers.last().iterate()
             }
 
+            fun hasOccurrences(): Boolean {
+                return layers.any { it.occurrencesCount() > 0 }
+            }
+
             fun reset(): Generation {
                 this.nodesIt = layers.last().iterate()
                 return this
@@ -508,6 +514,10 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
         override fun forgetConsumed(occ: Occurrence): ReteNetwork {
             consumedSignatures.removeAllWith(occ.identity)
             return this
+        }
+
+        override fun hasOccurrences(): Boolean {
+            return this.lastGeneration.hasOccurrences()
         }
 
         override fun matches(): Collection<RuleMatchImpl> {
