@@ -33,6 +33,8 @@ import jetbrains.mps.logic.reactor.program.Rule
  */
 interface RuleMatcher {
 
+    fun rule(): Rule
+
     fun newProbe(): RuleMatchingProbe
 
     fun probe(): RuleMatchingProbe

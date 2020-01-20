@@ -200,7 +200,10 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         val histView = view()
         resetStore() // clear observers
         val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
-        return SessionTokenImpl(histView, rules, dispatchingFront.state(), logicalState.clear())
+        val principalState = dispatchingFront.state().filterValues { ruleMatcher ->
+            ispec.isPrincipal(ruleMatcher.rule())
+        }
+        return SessionTokenImpl(histView, rules, principalState, logicalState.clear())
     }
 
     /**

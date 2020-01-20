@@ -1101,4 +1101,61 @@ class TestIncrementalProgram {
         }
     }
 
+
+    @Test
+    fun completeNonprincipalRuleMatch() {
+        // Tests that state of non principal rules (i.e. their rule matchers) is preserved between sessions;
+        //  that is, that partially matched non-principal rules can be fully matched in later sessions.
+        // This is a feature, not a necessity. For example, it could be mandated that
+        //  such rules which should preserve their state can be only principal rules.
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo", "bar"),
+            setOf(sym0("foo"), sym0("bar"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    princConstraint("main")
+                ),
+                body(
+                    princConstraint("foo"),
+                    princConstraint("bar")
+                )),
+            rule("foo",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("hasBound"),
+                    constraint("eliminateBound")
+                )),
+            // matches on two hasBound, but the first program produces only a single bound
+            rule("eliminateBounds",
+                headReplaced(
+                    constraint("eliminateBound"),
+                    constraint("hasBound"),
+                    constraint("hasBound")
+                ),
+                body(
+                    constraint("expected")
+                ))
+        ).launch("singleBound", progSpec) { result ->
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("eliminateBound"), sym0("hasBound"))
+            result.storeView().allOccurrences().count() shouldBe 3
+
+        }.also { (builder, evalRes) ->
+            builder.programWithRules(
+                rule("bar",
+                    headReplaced(
+                        princConstraint("bar")
+                    ),
+                    body(
+                        constraint("hasBound")
+                    ))
+            ).relaunch("addSecondBound", progSpec, evalRes.token()) { result ->
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("expected"))
+                result.storeView().allOccurrences().count() shouldBe 1
+            }
+        }
+    }
 }

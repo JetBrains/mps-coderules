@@ -56,6 +56,8 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
     fun lookupRule(): Rule = ruleLookup.lookupRuleByTag(tag) ?: throw IllegalStateException("can't lookup rule by tag: '${tag}'")
 
+    override fun rule() = lookupRule()
+
     override fun setRuleLookup(ruleLookup: RuleLookup) { this.ruleLookup = ruleLookup }
 
     override fun newProbe(): RuleMatchingProbe = ReteNetwork(head.size).also { probe = it }
