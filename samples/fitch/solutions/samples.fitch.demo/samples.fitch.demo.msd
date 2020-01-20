@@ -4,7 +4,7 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
-  </models>  
+  </models>
   <facets>
     <facet type="tests" />
   </facets>
