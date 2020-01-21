@@ -127,7 +127,9 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+      </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
@@ -5747,6 +5749,7 @@
     <node concept="2tJIrI" id="6hpwxwiti8G" role="jymVt" />
     <node concept="Wx3nA" id="6hpwxwitD9W" role="jymVt">
       <property role="TrG5h" value="FACTORY" />
+      <property role="2dlcS1" value="true" />
       <node concept="3Tm6S6" id="6hpwxwitD9Y" role="1B3o_S" />
       <node concept="3uibUv" id="6hpwxwitLdo" role="1tU5fm">
         <ref role="3uigEE" node="6hpwxwitoJO" resolve="TypecheckingService.Factory" />
@@ -5831,6 +5834,22 @@
       </node>
       <node concept="3Tm6S6" id="6hpwxwiwZue" role="1B3o_S" />
       <node concept="3clFbS" id="6hpwxwiwZug" role="3clF47">
+        <node concept="3clFbJ" id="22KCgTW1HKe" role="3cqZAp">
+          <node concept="3clFbS" id="22KCgTW1HKg" role="3clFbx">
+            <node concept="3cpWs6" id="22KCgTW1P7S" role="3cqZAp">
+              <node concept="37vLTw" id="22KCgTW1Z72" role="3cqZAk">
+                <ref role="3cqZAo" node="6hpwxwitD9W" resolve="FACTORY" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="22KCgTW1OUV" role="3clFbw">
+            <node concept="37vLTw" id="22KCgTW1WsT" role="3uHU7B">
+              <ref role="3cqZAo" node="6hpwxwitD9W" resolve="FACTORY" />
+            </node>
+            <node concept="10Nm6u" id="22KCgTW1OB6" role="3uHU7w" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="22KCgTW1RtQ" role="3cqZAp" />
         <node concept="3cpWs8" id="6hpwxwiyh1e" role="3cqZAp">
           <node concept="3cpWsn" id="6hpwxwiyh1h" role="3cpWs9">
             <property role="TrG5h" value="retrying" />
@@ -5896,6 +5915,27 @@
           </node>
           <node concept="3clFbT" id="6hpwxwiylEn" role="2$JKZa">
             <property role="3clFbU" value="true" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="22KCgTW1Thl" role="3cqZAp" />
+        <node concept="3clFbJ" id="22KCgTW22mi" role="3cqZAp">
+          <node concept="3clFbS" id="22KCgTW22mk" role="3clFbx">
+            <node concept="YS8fn" id="22KCgTW27n3" role="3cqZAp">
+              <node concept="2ShNRf" id="22KCgTW27qR" role="YScLw">
+                <node concept="1pGfFk" id="22KCgTW29C7" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                  <node concept="Xl_RD" id="22KCgTW29I$" role="37wK5m">
+                    <property role="Xl_RC" value="accessing TypecheckingService after dispose" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="22KCgTW23Yb" role="3clFbw">
+            <node concept="10Nm6u" id="22KCgTW24EK" role="3uHU7w" />
+            <node concept="37vLTw" id="22KCgTW239l" role="3uHU7B">
+              <ref role="3cqZAo" node="6hpwxwitD9W" resolve="FACTORY" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="6hpwxwixdbu" role="3cqZAp">
