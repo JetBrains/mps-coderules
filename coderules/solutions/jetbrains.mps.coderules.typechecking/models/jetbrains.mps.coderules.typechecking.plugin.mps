@@ -2090,14 +2090,22 @@
                 <ref role="3cqZAo" node="4lCLOtwpu_0" resolve="result" />
               </node>
               <node concept="10Nm6u" id="4lCLOtwpAYm" role="3K4GZi" />
-              <node concept="2OqwBi" id="4lCLOtwpAYn" role="3K4Cdx">
-                <node concept="37vLTw" id="4lCLOtwpAYo" role="2Oq$k0">
-                  <ref role="3cqZAo" node="hEDrw1P5M4" resolve="pattern" />
-                </node>
-                <node concept="liA8E" id="4lCLOtwpAYp" role="2OqNvi">
-                  <ref role="37wK5l" to="7jhi:~IMatchingPattern.match(org.jetbrains.mps.openapi.model.SNode)" resolve="match" />
-                  <node concept="37vLTw" id="4lCLOtwpAYq" role="37wK5m">
+              <node concept="1Wc70l" id="22KCgTW0QSe" role="3K4Cdx">
+                <node concept="3y3z36" id="22KCgTW0V53" role="3uHU7B">
+                  <node concept="10Nm6u" id="22KCgTW0Vmn" role="3uHU7w" />
+                  <node concept="37vLTw" id="22KCgTW0U_5" role="3uHU7B">
                     <ref role="3cqZAo" node="4lCLOtwpu_0" resolve="result" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="4lCLOtwpAYn" role="3uHU7w">
+                  <node concept="37vLTw" id="4lCLOtwpAYo" role="2Oq$k0">
+                    <ref role="3cqZAo" node="hEDrw1P5M4" resolve="pattern" />
+                  </node>
+                  <node concept="liA8E" id="4lCLOtwpAYp" role="2OqNvi">
+                    <ref role="37wK5l" to="7jhi:~IMatchingPattern.match(org.jetbrains.mps.openapi.model.SNode)" resolve="match" />
+                    <node concept="37vLTw" id="4lCLOtwpAYq" role="37wK5m">
+                      <ref role="3cqZAo" node="4lCLOtwpu_0" resolve="result" />
+                    </node>
                   </node>
                 </node>
               </node>
