@@ -91,17 +91,25 @@ internal open class MatchJournalImpl(
     override fun isFront(): Boolean = current == hist.last
 
     override fun resetPos() {
-        posPtr = hist.listIterator()
+        // walk backwards and reset all occurrences
+        posPtr = hist.listIterator(hist.size)
+        while (posPtr.hasPrevious()) {
+            current = posPtr.previous()
+            resetOccurrences(current.entries)
+        }
     }
 
     override fun reset(pastPos: MatchJournal.Pos) {
+        // walk backwards, reset occurrences and remove history from posPtr down to pastPos
         while (posPtr.hasPrevious()) {
             current = posPtr.previous()
             if (current === pastPos.chunk) {
+                resetOccurrences(current.entries.drop(pastPos.entriesCount))
                 current.entries = current.entries.subList(0, pastPos.entriesCount)
                 posPtr.next() // make 'posPtr' to always point right after 'current'
                 return
             }
+            resetOccurrences(current.entries)
             posPtr.remove()
         }
         if (currentPos() != pastPos) throw IllegalStateException()
@@ -118,6 +126,17 @@ internal open class MatchJournalImpl(
         }
         if (currentPos() != futurePos) throw IllegalStateException()
     }
+
+    private fun resetOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
+        occSpecs.forEach {
+            if (it.discarded) {
+                it.occ.alive = true
+                it.occ.stored = true
+            } else {
+                it.occ.alive = false
+                it.occ.stored = false
+            }
+        }
 
     private fun replayOccurrences(observable: LogicalStateObservable, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
         occSpecs.forEach {

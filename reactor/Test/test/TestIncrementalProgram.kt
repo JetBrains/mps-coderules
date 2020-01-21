@@ -1158,4 +1158,71 @@ class TestIncrementalProgram {
             }
         }
     }
+
+
+    @Test
+    fun observerReactivatesFutureOccurrence() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "bindVar", "produceBound", "eliminateBound"),
+            setOf(sym1("foo"))
+        )
+        val X = metaLogical<Int>("X")
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("foo", X)
+                )),
+            rule("produceBound",
+                headKept(
+                    princConstraint("foo", X)
+                ),
+                body(
+                    princConstraint("hasBound", X)
+                )),
+            rule("eliminateBound",
+                headReplaced(
+                    princConstraint("hasBound", X)
+                ),
+                guard(
+                    expression({ x -> x.isBound }, X)
+                ),
+                body(
+                    constraint("unexpected")
+                )
+            )
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
+
+        }.also { (builder, evalRes) ->
+            // Insert rule before produceBound: test whether
+            //  occurrence reactivation due to var bind can occur
+            //  before this occurrence is actually activated,
+            //  which leads, of course, to inconsistent state.
+            builder.insertRulesAt(1,
+                rule("bindVar",
+                    headKept(
+                        princConstraint("foo", X)
+                    ),
+                    body(
+                        statement({ x -> x.set(42) }, X)
+                    ))
+            ).relaunch("test reactivation", progSpec, evalRes.token()) { result ->
+
+                // Currently incremental processing can't handle such rule dependencies
+                //  stemming from incremental changes to logicals,
+                //  so "eliminateBound" rule won't be reexecuted.
+                // But reactivation of hasBound shouldn't pass either,
+                //  because 'hasBound' isn't in store at the point of tried reactivation.
+                result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym1("hasBound"))
+
+                // NB: this is correct if incremental processing
+                //  takes into account rule dependencies due to logicals.
+                // result.storeView().constraintSymbols() shouldBe setOf(sym1("foo"), sym0("unexpected"))
+            }
+        }
+    }
 }
