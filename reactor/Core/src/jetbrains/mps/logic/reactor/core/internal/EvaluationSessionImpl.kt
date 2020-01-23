@@ -42,7 +42,11 @@ internal class EvaluationSessionImpl private constructor (
     private fun launch(
         main: Constraint, profiler: Profiler?,
         token: SessionToken?, rulesDiff: RulesDiff, ispec: IncrementalProgramSpec
-    ) : Pair<FeedbackStatus, SessionToken> {
+    ) : EvaluationResult {
+
+        val newToken: SessionToken
+        val status: FeedbackStatus
+        val invalidatedTags: Set<Any>
 
         val ruleIndex = RuleIndex(program.rulesLists())
 
@@ -54,24 +58,36 @@ internal class EvaluationSessionImpl private constructor (
                 MatchJournalImpl(ispec),
                 ruleIndex, logicalState, ispec, trace, profiler
             )
-
             val controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)
             logicalState.init(controller)
-            return controller.activate(main) to processing.endSession()
+
+            status = controller.activate(main)
+            newToken = processing.endSession()
+            invalidatedTags = emptySet()
 
         } else {
             val tkn = token as SessionTokenImpl
             val logicalState = tkn.logicalState
-            
+
             val processing = ConstraintsProcessing(
                 Dispatcher(ruleIndex, tkn.getFrontState()).front(),
                 MatchJournalImpl(ispec, tkn.journalView),
                 ruleIndex, logicalState, ispec, trace, profiler
             )
-
             val controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)
             logicalState.init(controller)
-            return controller.incrLaunch(main, rulesDiff) to processing.endSession()
+
+            val status2tags = controller.incrLaunch(main, rulesDiff)
+            newToken = processing.endSession()
+            status = status2tags.first
+            invalidatedTags = status2tags.second
+        }
+
+        return object : EvaluationResult {
+            override fun token(): SessionToken = newToken
+            override fun storeView(): StoreView = newToken.journalView.storeView
+            override fun feedback():  EvaluationFeedback? = if (status is FAILED) status.failure else null
+            override fun invalidatedTags(): Collection<Any> = invalidatedTags
         }
     }
 
@@ -122,16 +138,7 @@ internal class EvaluationSessionImpl private constructor (
             Backend.ourBackend.ourSession.set(session)
             try {
                 val main = parameters[ParameterKey.of("main", Constraint::class.java)] as Constraint
-                val (status, token) = session.launch(main, profiler, token, program.incrementalDiff(), ispec)
-
-                return object : EvaluationResult {
-
-                    override fun token(): SessionToken = token
-
-                    override fun storeView(): StoreView = token.journalView.storeView
-
-                    override fun feedback():  EvaluationFeedback? = if (status is FAILED) status.failure else null
-                }
+                return session.launch(main, profiler, token, program.incrementalDiff(), ispec)
             }
             finally {
                 try {

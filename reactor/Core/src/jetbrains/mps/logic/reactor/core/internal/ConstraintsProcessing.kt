@@ -76,8 +76,9 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
      *  - reactivating occurrences that led to invalidated matches
      *  - pruning invalidated occurrences and matches from Dispatcher's state
      */
-    fun invalidateRuleMatches(ruleIds: Set<Any>) {
+    fun invalidateRuleMatches(ruleIds: Set<Any>): Set<Any> {
         val justificationRoots = mutableListOf<Int>()
+        val allInvalidatedIds = mutableSetOf<Any>()
 
         val it = this.iterator()
         var prevChunk = it.next() // skip initial chunk
@@ -101,10 +102,10 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
                 if (chunk is MatchJournal.MatchChunk) {
                     trace.invalidate(chunk.match)
+                    allInvalidatedIds.add(chunk.match.rule().uniqueTag())
 
                     // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
                     //  and storing this invalid consumed match can make no harm, except some memory overhead.
-                    // fixme: move Chunk's interface to RuleMatchEx instead of RuleMatch
                     dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
 
                     // Need to 'cancel' discarding.
@@ -127,6 +128,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
             prevChunk = chunk
         }
+        return allInvalidatedIds
     }
 
     private fun canMatch(rule: Rule, occ: Occurrence): Boolean =

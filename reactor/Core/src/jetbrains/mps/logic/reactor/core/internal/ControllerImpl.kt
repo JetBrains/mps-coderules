@@ -54,16 +54,19 @@ internal class ControllerImpl (
         return storeView()
     }
 
-    fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): FeedbackStatus {
-        profiler.profile("invalidation") {
-            processing.invalidateRuleMatches(rulesDiff.removed)
-        }
+    fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): Pair<FeedbackStatus, Set<Any>> {
+        val invalidatedRuleTags =
+            profiler.profile<Set<Any>>("invalidation") {
+                processing.invalidateRuleMatches(rulesDiff.removed)
+            }
         profiler.profile("adding_matches") {
             processing.addRuleMatches(rulesDiff.added)
         }
-        return profiler.profile<FeedbackStatus>("reexecution") {
-            processing.launchQueue(this)
-        }
+        val status =
+            profiler.profile<FeedbackStatus>("reexecution") {
+                processing.launchQueue(this)
+            }
+        return status to invalidatedRuleTags
     }
 
     fun activate(constraint: Constraint) : FeedbackStatus {

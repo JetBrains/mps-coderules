@@ -16,6 +16,8 @@
 
 package jetbrains.mps.logic.reactor.evaluation;
 
+import java.util.Collection;
+
 /**
  * @author Fedor Isakov
  */
@@ -26,5 +28,7 @@ public interface EvaluationResult {
     public StoreView storeView();
     
     public EvaluationFeedback feedback();
+
+    public Collection<Object> invalidatedTags();
 
 }
