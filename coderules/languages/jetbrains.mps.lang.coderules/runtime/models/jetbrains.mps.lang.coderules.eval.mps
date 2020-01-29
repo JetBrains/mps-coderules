@@ -405,6 +405,7 @@
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435807" name="elementType" index="HW$YZ" />
         <child id="1237731803878" name="copyFrom" index="I$8f6" />
+        <child id="1562299158920737514" name="initSize" index="3lWHg$" />
       </concept>
       <concept id="1201306600024" name="jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation" flags="nn" index="2Nt0df">
         <child id="1201654602639" name="key" index="38cxEo" />
@@ -1006,6 +1007,23 @@
             <node concept="10Nm6u" id="7rf49NgqS96" role="33vP2m" />
           </node>
         </node>
+        <node concept="3clFbF" id="2yEnwsh7wdY" role="3cqZAp">
+          <node concept="37vLTI" id="2yEnwsh7yxs" role="3clFbG">
+            <node concept="37vLTw" id="2yEnwsh7wdW" role="37vLTJ">
+              <ref role="3cqZAo" node="2yEnwsh6Suo" resolve="invalidatedTags" />
+            </node>
+            <node concept="2ShNRf" id="2yEnwsh7E14" role="37vLTx">
+              <node concept="Tc6Ow" id="2yEnwsh7Lzi" role="2ShVmc">
+                <node concept="3uibUv" id="2yEnwsh7MUk" role="HW$YZ">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+                <node concept="3cmrfG" id="2yEnwsh7P9n" role="3lWHg$">
+                  <property role="3cmrfH" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="62kWyaxUae_" role="3cqZAp">
           <node concept="3cpWsn" id="62kWyaxUaeA" role="3cpWs9">
             <property role="TrG5h" value="result" />
@@ -1175,6 +1193,24 @@
                   </node>
                   <node concept="liA8E" id="51a$_pPM2tD" role="2OqNvi">
                     <ref role="37wK5l" to="w7la:~EvaluationResult.token()" resolve="token" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2yEnwsh756A" role="3cqZAp">
+              <node concept="37vLTI" id="2yEnwsh76Mj" role="3clFbG">
+                <node concept="2OqwBi" id="2yEnwsh77Ux" role="37vLTx">
+                  <node concept="37vLTw" id="2yEnwsh77HE" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5mr7UHcbsDS" resolve="evaluationResult" />
+                  </node>
+                  <node concept="liA8E" id="2yEnwsh78s1" role="2OqNvi">
+                    <ref role="37wK5l" to="w7la:~EvaluationResult.invalidatedTags()" resolve="invalidatedTags" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2yEnwsh75jM" role="37vLTJ">
+                  <node concept="Xjq3P" id="2yEnwsh756$" role="2Oq$k0" />
+                  <node concept="2OwXpG" id="2yEnwsh75Oq" role="2OqNvi">
+                    <ref role="2Oxat5" node="2yEnwsh6Suo" resolve="invalidatedTags" />
                   </node>
                 </node>
               </node>
@@ -1541,6 +1577,23 @@
         <ref role="3uigEE" to="w7la:~SessionToken" resolve="SessionToken" />
       </node>
     </node>
+    <node concept="3clFb_" id="2yEnwsh70Nl" role="jymVt">
+      <property role="TrG5h" value="invalidatedTags" />
+      <node concept="3clFbS" id="2yEnwsh70No" role="3clF47">
+        <node concept="3clFbF" id="2yEnwsh73Fp" role="3cqZAp">
+          <node concept="37vLTw" id="2yEnwsh73Fo" role="3clFbG">
+            <ref role="3cqZAo" node="2yEnwsh6Suo" resolve="invalidatedTags" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2yEnwsh6X60" role="1B3o_S" />
+      <node concept="3uibUv" id="2yEnwsh6YRp" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <node concept="3uibUv" id="2yEnwsh6Zk1" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+    </node>
     <node concept="3clFb_" id="51a$_pPLZra" role="jymVt">
       <property role="TrG5h" value="setSessionToken" />
       <node concept="37vLTG" id="51a$_pPM05q" role="3clF46">
@@ -1585,13 +1638,6 @@
       <node concept="3Tm6S6" id="4F3SXIF5XzL" role="1B3o_S" />
       <node concept="10P_77" id="4F3SXIF5XzN" role="1tU5fm" />
     </node>
-    <node concept="312cEg" id="5cnt3vh3s4F" role="jymVt">
-      <property role="TrG5h" value="storeView" />
-      <node concept="3Tm6S6" id="5cnt3vh3s4G" role="1B3o_S" />
-      <node concept="3uibUv" id="5cnt3vh3sD3" role="1tU5fm">
-        <ref role="3uigEE" to="w7la:~StoreView" resolve="StoreView" />
-      </node>
-    </node>
     <node concept="312cEg" id="6uUkLpHj_La" role="jymVt">
       <property role="TrG5h" value="rulesDiff" />
       <node concept="3Tm6S6" id="6uUkLpHj$G_" role="1B3o_S" />
@@ -1604,6 +1650,16 @@
       <node concept="3Tm6S6" id="1H_6AUSjoeZ" role="1B3o_S" />
       <node concept="3uibUv" id="1H_6AUSjp42" role="1tU5fm">
         <ref role="3uigEE" to="w7la:~SessionToken" resolve="SessionToken" />
+      </node>
+    </node>
+    <node concept="312cEg" id="2yEnwsh6Suo" role="jymVt">
+      <property role="TrG5h" value="invalidatedTags" />
+      <node concept="3Tm6S6" id="2yEnwsh6NZo" role="1B3o_S" />
+      <node concept="3uibUv" id="2yEnwsh6QfK" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+        <node concept="3uibUv" id="2yEnwsh6R4P" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
       </node>
     </node>
     <node concept="312cEg" id="23c4kVtmgL8" role="jymVt">
@@ -8130,6 +8186,12 @@
           <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
+      <node concept="37vLTG" id="5jKpGcQ$Zh8" role="3clF46">
+        <property role="TrG5h" value="parentPrincipalMatch" />
+        <node concept="3uibUv" id="5jKpGcQ_0kJ" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
+        </node>
+      </node>
       <node concept="37vLTG" id="4jcOV4hNvgs" role="3clF46">
         <property role="TrG5h" value="feedback" />
         <node concept="3uibUv" id="4jcOV4hNvgt" role="1tU5fm">
@@ -8160,6 +8222,27 @@
                             <ref role="37wK5l" to="w7la:~RuleMatch.rule()" resolve="rule" />
                           </node>
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="5jKpGcQ_efd" role="3cqZAp">
+                  <node concept="3cpWsn" id="5jKpGcQ_efe" role="3cpWs9">
+                    <property role="TrG5h" value="pRuleTag" />
+                    <node concept="3uibUv" id="5jKpGcQ_eff" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                    </node>
+                    <node concept="2OqwBi" id="5jKpGcQ_mfH" role="33vP2m">
+                      <node concept="2OqwBi" id="5jKpGcQ_kRJ" role="2Oq$k0">
+                        <node concept="37vLTw" id="5jKpGcQ_nEC" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5jKpGcQ$Zh8" resolve="parentPrincipalMatch" />
+                        </node>
+                        <node concept="liA8E" id="5jKpGcQ_kRL" role="2OqNvi">
+                          <ref role="37wK5l" to="w7la:~RuleMatch.rule()" resolve="rule" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5jKpGcQ_mPX" role="2OqNvi">
+                        <ref role="37wK5l" to="av0y:~Rule.uniqueTag()" resolve="uniqueTag" />
                       </node>
                     </node>
                   </node>
@@ -8330,6 +8413,9 @@
                         <node concept="37vLTw" id="4ekZiHde6su" role="37wK5m">
                           <ref role="3cqZAo" node="4ekZiHde4OB" resolve="templateRef" />
                         </node>
+                        <node concept="37vLTw" id="5jKpGcQ_rKR" role="37wK5m">
+                          <ref role="3cqZAo" node="5jKpGcQ_efe" resolve="pRuleTag" />
+                        </node>
                         <node concept="37vLTw" id="1laj_RTMHGS" role="37wK5m">
                           <ref role="3cqZAo" node="1laj_RTMHGN" resolve="targetRef" />
                         </node>
@@ -8414,6 +8500,12 @@
       <node concept="37vLTG" id="4ekZiHddUGX" role="3clF46">
         <property role="TrG5h" value="template" />
         <node concept="2sp9CU" id="4ekZiHddVim" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5b5WPl4OLex" role="3clF46">
+        <property role="TrG5h" value="ruleTag" />
+        <node concept="3uibUv" id="5b5WPl4OMLj" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
       </node>
       <node concept="37vLTG" id="1laj_RSAHJl" role="3clF46">
         <property role="TrG5h" value="target" />

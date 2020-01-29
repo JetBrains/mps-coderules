@@ -2925,6 +2925,12 @@
           <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
         </node>
       </node>
+      <node concept="37vLTG" id="5jKpGcQ$Zh8" role="3clF46">
+        <property role="TrG5h" value="parentPrincipalMatch" />
+        <node concept="3uibUv" id="5jKpGcQ_0kJ" role="1tU5fm">
+          <ref role="3uigEE" to="w7la:~RuleMatch" resolve="RuleMatch" />
+        </node>
+      </node>
       <node concept="37vLTG" id="3o9wrC3VMgo" role="3clF46">
         <property role="TrG5h" value="feedback" />
         <node concept="3uibUv" id="3o9wrC3VMgp" role="1tU5fm">
@@ -2933,6 +2939,27 @@
       </node>
       <node concept="3clFbS" id="3o9wrC3VMgq" role="3clF47">
         <node concept="3clFbH" id="3o9wrC3VMgr" role="3cqZAp" />
+        <node concept="3cpWs8" id="5jKpGcQ_efd" role="3cqZAp">
+          <node concept="3cpWsn" id="5jKpGcQ_efe" role="3cpWs9">
+            <property role="TrG5h" value="pRuleTag" />
+            <node concept="3uibUv" id="5jKpGcQ_eff" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+            </node>
+            <node concept="2OqwBi" id="5jKpGcQ_mfH" role="33vP2m">
+              <node concept="2OqwBi" id="5jKpGcQ_kRJ" role="2Oq$k0">
+                <node concept="37vLTw" id="5jKpGcQ_nEC" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5jKpGcQ$Zh8" resolve="parentPrincipalMatch" />
+                </node>
+                <node concept="liA8E" id="5jKpGcQ_kRL" role="2OqNvi">
+                  <ref role="37wK5l" to="w7la:~RuleMatch.rule()" resolve="rule" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5jKpGcQ_mPX" role="2OqNvi">
+                <ref role="37wK5l" to="av0y:~Rule.uniqueTag()" resolve="uniqueTag" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="3o9wrC3VMgs" role="3cqZAp">
           <node concept="3cpWsn" id="3o9wrC3VMgt" role="3cpWs9">
             <property role="TrG5h" value="rule" />
@@ -3229,6 +3256,9 @@
                     <node concept="37vLTw" id="4ekZiHdeg5m" role="37wK5m">
                       <ref role="3cqZAo" node="4ekZiHde8bF" resolve="templateRef" />
                     </node>
+                    <node concept="37vLTw" id="5jKpGcQ_yx8" role="37wK5m">
+                      <ref role="3cqZAo" node="5jKpGcQ_efe" resolve="pRuleTag" />
+                    </node>
                     <node concept="37vLTw" id="1laj_RSClyY" role="37wK5m">
                       <ref role="3cqZAo" node="3o9wrC3WcLt" resolve="targetRef" />
                     </node>
@@ -3310,6 +3340,12 @@
       <node concept="37vLTG" id="4ekZiHdecEm" role="3clF46">
         <property role="TrG5h" value="template" />
         <node concept="2sp9CU" id="4ekZiHdedao" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5b5WPl4Qdtu" role="3clF46">
+        <property role="TrG5h" value="ruleTag" />
+        <node concept="3uibUv" id="5b5WPl4Qe15" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
       </node>
       <node concept="37vLTG" id="1laj_RSC3bt" role="3clF46">
         <property role="TrG5h" value="target" />

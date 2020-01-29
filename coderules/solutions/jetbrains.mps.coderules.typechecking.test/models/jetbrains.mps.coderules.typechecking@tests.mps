@@ -3,19 +3,19 @@
   <persistence version="9" />
   <languages>
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="5" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="4" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="3a1f0f04-b5e0-43be-884e-b856bfdeca21" name="jetbrains.mps.typechecking.testlang" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="3" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="3a1f0f04-b5e0-43be-884e-b856bfdeca21" name="jetbrains.mps.typechecking.testlang" version="0" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="4" />
   </languages>
   <imports>
@@ -603,6 +603,13 @@
                                     <node concept="2ShNRf" id="3yEb0I3XyF_" role="37wK5m">
                                       <node concept="2i4dXS" id="3yEb0I3XyZB" role="2ShVmc">
                                         <node concept="3Tqbb2" id="3yEb0I3XzBT" role="HW$YZ" />
+                                      </node>
+                                    </node>
+                                    <node concept="2ShNRf" id="2yEnwshaWb4" role="37wK5m">
+                                      <node concept="2i4dXS" id="2yEnwshaXoy" role="2ShVmc">
+                                        <node concept="3uibUv" id="2yEnwshaYRK" role="HW$YZ">
+                                          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                                        </node>
                                       </node>
                                     </node>
                                     <node concept="1bVj0M" id="6QH_LDtdXLP" role="37wK5m">
@@ -1320,6 +1327,12 @@
                           <node concept="37vLTG" id="4ekZiHddYgg" role="3clF46">
                             <property role="TrG5h" value="template" />
                             <node concept="2sp9CU" id="4ekZiHde0r1" role="1tU5fm" />
+                          </node>
+                          <node concept="37vLTG" id="28zxH2wbMd6" role="3clF46">
+                            <property role="TrG5h" value="ruleTag" />
+                            <node concept="3uibUv" id="28zxH2wbMQH" role="1tU5fm">
+                              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                            </node>
                           </node>
                           <node concept="37vLTG" id="1laj_RSC01j" role="3clF46">
                             <property role="TrG5h" value="target" />
