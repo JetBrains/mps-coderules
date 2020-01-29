@@ -27,11 +27,14 @@ import jetbrains.mps.logic.reactor.program.Constraint
 
 
 typealias Justs = TIntSet
+
 //fun emptyJusts() = object : TIntSet {}
 fun emptyJusts() = TIntHashSet(1)
 fun justsOf(vararg elements: Int) = TIntHashSet(elements)
 fun justsFromCollection(collection: Collection<Int>) = TIntHashSet(collection)
 fun justsCopy(other: Justs) = TIntHashSet(other)
+
+fun Justs.intersects(other: Iterable<Int>): Boolean = other.any { this.contains(it) }
 
 /**
  * Class representing a single constraint occurrence.
@@ -112,4 +115,3 @@ fun Constraint.occurrence(observable: LogicalStateObservable,
                           logicalContext: LogicalContext,
                           ruleUniqueTag: Any? = null): Occurrence =
     Occurrence(observable, this, logicalContext, arguments, justifications, ruleUniqueTag)
-

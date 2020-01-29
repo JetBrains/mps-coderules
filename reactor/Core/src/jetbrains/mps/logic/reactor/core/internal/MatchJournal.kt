@@ -16,7 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core.internal
 
-import gnu.trove.set.TIntSet
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.evaluation.*
 import jetbrains.mps.logic.reactor.program.*
@@ -37,6 +36,12 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
      */
     fun logActivation(occ: Occurrence)
 
+    /**
+     * Returns nearest MatchChunk which justifies current chunk.
+     * If current chunk is [MatchChunk], then it is returned.
+     * May return initial chunk. For initial chunk case returns it.
+     */
+    fun ancestorMatch(): MatchChunk
 
     /**
      * Current position at the journal.

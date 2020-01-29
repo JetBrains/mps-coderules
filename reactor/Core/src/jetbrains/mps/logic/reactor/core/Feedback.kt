@@ -40,8 +40,8 @@ abstract class Feedback : EvaluationFeedback() {
     /**
      * Returns true if the feedback has been handled.
      */
-    open fun handle(ruleMatch: RuleMatch, supervisor: Supervisor): Boolean {
-        if (!alreadyHandled() && supervisor.handleFeedback(ruleMatch, this)) {
+    open fun handle(currentRuleMatch: RuleMatch, parentPrincipalMatch: RuleMatch, supervisor: Supervisor): Boolean {
+        if (!alreadyHandled() && supervisor.handleFeedback(currentRuleMatch, parentPrincipalMatch, this)) {
             setHandled()
         }
         return alreadyHandled()

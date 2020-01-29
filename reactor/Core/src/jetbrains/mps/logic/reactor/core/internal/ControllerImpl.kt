@@ -168,7 +168,7 @@ internal class ControllerImpl (
                 if (itemOk) {
                     context.withStatus { status ->
                         if (status.feedback?.alreadyHandled() == false) {
-                            status.feedback.handle(match, supervisor)
+                            status.feedback.handle(match, processing.ancestorMatch().match, supervisor)
                         }
                     }
 
@@ -188,7 +188,9 @@ internal class ControllerImpl (
                         status
 
                     // if failure can be handled here then recover
-                    } else if (status.feedback?.alreadyHandled() == false && status.failure.handle(match, supervisor)) {
+                    } else if (status.feedback?.alreadyHandled() == false
+                        && status.failure.handle(match, processing.ancestorMatch().match, supervisor)) {
+
                         status.recover()
 
                     // else propagate further up the stack

@@ -85,6 +85,20 @@ internal open class MatchJournalImpl(
         current.entries.add(Chunk.Entry(occ))
     }
 
+    override fun ancestorMatch(): MatchChunk {
+        if (current is MatchChunk) {
+            return current as MatchChunk
+        }
+
+        val rit = hist.listIterator(posPtr.previousIndex())
+        while (rit.hasPrevious()) {
+            val prev = rit.previous()
+            if (prev is MatchChunk && current.justifications.contains(prev.id)) {
+                return prev
+            }
+        }
+        return hist.first() as MatchChunk // initial chunk
+    }
 
     override fun currentPos(): MatchJournal.Pos = current.toPos()
 

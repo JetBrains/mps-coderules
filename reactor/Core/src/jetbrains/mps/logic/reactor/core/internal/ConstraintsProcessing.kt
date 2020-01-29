@@ -324,8 +324,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
     private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
-    private fun Justs.intersects(other: Iterable<Int>): Boolean = other.any { this.contains(it) }
-
     private fun RuleMatch.allHeads() = matchHeadKept() + matchHeadReplaced()
 
     private fun RuleMatch.allStored() = allHeads().all { co -> (co as Occurrence).stored }
