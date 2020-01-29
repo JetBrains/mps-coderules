@@ -169,7 +169,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                 //  either according to the ordering between rules.
                 //  or as the last one, after all existing activations
                 val placeToInsertFound =
-                    chunk is MatchJournal.MatchChunk && ruleOrdering.compare(chunk.match.rule(), candRule) > 0
+                    chunk is MatchJournal.MatchChunk && ruleOrdering.isEarlierThan(candRule, chunk.match.rule())
                 val childChunksEnded = !chunk.isDescendantOf(occChunk.id)
 
                 val pos =

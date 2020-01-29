@@ -40,4 +40,8 @@ internal class RuleOrdering(order: Iterable<Rule>): Comparator<Rule> {
         return lhsRuleOrder.compareTo(rhsRuleOrder)
     }
 
+    fun isEarlierThan(lhs: Rule, rhs: Rule): Boolean = compare(lhs, rhs) < 0
+
+    fun isLaterThan(lhs: Rule, rhs: Rule): Boolean = compare(lhs, rhs) > 0
+
 }
