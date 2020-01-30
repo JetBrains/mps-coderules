@@ -46,12 +46,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                                      val profiler: Profiler? = null)
     : StoreAwareJournalImpl(journal, logicalState)
 {
-    private val ruleOrdering: RuleOrdering = RuleOrdering(ruleIndex)
-
-    private val journalIndex: MatchJournal.Index = journal.index()
-
-    private val execQueue: ExecutionQueue = ExecutionQueue(journalIndex, ruleOrdering)
-
+    private val execQueue: ExecutionQueue = ExecutionQueue(journal.index(), RuleOrdering(ruleIndex))
 
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
@@ -165,19 +160,15 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             while (aIt.hasNext()) {
                 val (candRule, occChunk) = aIt.next()
 
-                // Place to activate candidate:
-                //  either according to the ordering between rules.
-                //  or as the last one, after all existing activations
-                val placeToInsertFound =
-                    chunk is MatchJournal.MatchChunk && ruleOrdering.isEarlierThan(candRule, chunk.match.rule())
-                val childChunksEnded = !chunk.isDescendantOf(occChunk.id)
-
                 val pos =
-                    // We need the previous chunk as pos here (i.e. adding after it).
-                    if (childChunksEnded || placeToInsertFound) prevChunk.toPos()
-                    // Case when adding at the very end
-                    else if (!it.hasNext()) chunk.toPos()
-                    else continue
+                    if (execQueue.canBeInserted(candRule, occChunk, chunk))
+                        // We need the previous chunk as pos here (i.e. adding after it).
+                        prevChunk.toPos()
+                    else if (!it.hasNext())
+                        // Case when adding at the very end
+                        chunk.toPos()
+                    else
+                        continue
 
                 execQueue.offer(pos, occChunk.occ)
                 trace.potentialMatch(occChunk.occ, candRule)

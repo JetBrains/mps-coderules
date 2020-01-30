@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.Controller
 import jetbrains.mps.logic.reactor.core.Occurrence
 import jetbrains.mps.logic.reactor.core.RuleMatchEx
+import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 
@@ -101,6 +102,23 @@ internal class ExecutionQueue(
             }
         }
         return currentMatches
+    }
+
+    /**
+     * Checks whether [candidateRule] can be inserted in journal as a child of [parentChunk]
+     * before one of its child chunks, [beforeChunk].
+     * It is assumed that [candidateRule] can be matched by [Occurrence] from [parentChunk].
+     */
+    fun canBeInserted(candidateRule: Rule, parentChunk: MatchJournal.OccChunk, beforeChunk: MatchJournal.Chunk): Boolean {
+        // Place to try activating candidate rule is:
+        //  either according to the ordering between rules.
+        //  or as the last one, after all existing activations
+
+        val placeToInsertFound = beforeChunk is MatchJournal.MatchChunk
+            && ruleOrdering.isEarlierThan(candidateRule, beforeChunk.match.rule())
+        val childChunksEnded = !beforeChunk.isDescendantOf(parentChunk.id)
+
+        return (childChunksEnded || placeToInsertFound)
     }
 
 
