@@ -218,18 +218,35 @@ internal open class MatchJournalImpl(
         val last: E get() = if (l is LinkedList<E>) l.last else l.last()
     }
 
-    private class IndexImpl(chunks: Iterable<Chunk>): MatchJournal.Index
+    private class IndexImpl(chunks: Collection<Chunk>): MatchJournal.Index
     {
-        private val chunkOrder = HashMap<Int, Int>()
+        private val chunkOrder = HashMap<Int, Int>() // chunk.id to its index
         private val occChunks = HashMap<Id<Occurrence>, OccChunk>()
+        private val occChunk2LastDescendant = HashMap<Int, Chunk>()
 
         init {
-            chunks.forEachIndexed { index, chunk ->
-                chunkOrder[chunk.id] = index
+            if (chunks.isNotEmpty()) {
+                val occChunksTree = LinkedList<OccChunk>()
 
-                if (chunk is OccChunk) {
-                    occChunks[Id(chunk.occ)] = chunk
+                chunks.forEachIndexed { index, chunk ->
+                    chunkOrder[chunk.id] = index
+
+                    if (chunk is OccChunk) {
+                        occChunks[Id(chunk.occ)] = chunk
+                        occChunksTree.push(chunk)
+                    }
+
+                    occChunksTree.peek()?.let {
+                        if (chunk.isDescendantOf(it.id)) {
+                            // after iteration ends will store the last descendant
+                            occChunk2LastDescendant[it.id] = chunk
+                        } else {
+                            // means descendant chunks ended
+                            occChunksTree.pop()
+                        }
+                    }
                 }
+
             }
         }
 
@@ -237,11 +254,37 @@ internal open class MatchJournalImpl(
 
         override fun activatingChunkOf(occId: Id<Occurrence>) = occChunks[occId]
 
-        // todo: throw for invalid positions?
-        override fun compare(lhs: MatchJournal.Pos, rhs: MatchJournal.Pos): Int {
-            val co = compareBy<MatchJournal.Pos>{ chunkOrder[it.chunk.id] }.compare(lhs, rhs)
-            return if (co == 0) lhs.entriesCount.compareTo(rhs.entriesCount) else co
+        override fun lastDescendantOf(occChunk: OccChunk): Chunk? = occChunk2LastDescendant[occChunk.id]
+
+        override fun activationPos(match: RuleMatchEx): Pair<Pos, Occurrence>? {
+            // The latest matched occurrence from match's head is
+            //  (by definition) the occurrence which activated this match.
+
+            val parentChunks: List<OccChunk> =
+                match.signature().mapNotNull { occSig ->
+                    occSig?.let { activatingChunkOf(it) }
+                }
+
+            val activatingChunk: OccChunk = parentChunks.maxBy { chunkOrder[it.id]!! }
+                ?: return null
+
+            // If rule discards its occurrences then it must be inserted after
+            //  all existing matches which are descendants of activating occurrence.
+            val discardingRule = match.rule().headReplaced().count() > 0
+            val posChunk =
+                if (discardingRule)
+                    // not null if activatingChunk is not null
+                    lastDescendantOf(activatingChunk)!!
+                else
+                    activatingChunk
+            return posChunk.toPos() to activatingChunk.occ
         }
+
+        // todo: throw for invalid positions?
+        override fun compare(lhs: Pos, rhs: Pos): Int =
+            compareBy<Pos>{ chunkOrder[it.chunk.id] }
+                .thenComparingInt { it.entriesCount }
+                .compare(lhs, rhs)
     }
 
 

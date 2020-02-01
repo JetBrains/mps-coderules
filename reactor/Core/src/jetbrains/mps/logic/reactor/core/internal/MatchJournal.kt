@@ -107,6 +107,14 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
          */
         fun activatingChunkOf(occId: Id<Occurrence>): OccChunk?
 
+        /**
+         * Returns [Chunk] which is the last descendant of the [occChunk]
+         * according to justifications. May return activation chunk of
+         * the occurrence if it has no descendants.
+         * Returns null for non-principal occurrences.
+         */
+        fun lastDescendantOf(occChunk: OccChunk): Chunk?
+
         // todo: remove
         /**
          * Returns [Pos] at which provided [RuleMatch] can be inserted
@@ -120,12 +128,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
          * according to its indexed head [Occurrence]s.
          * May return null for matches of non-principal rules.
          */
-        fun activationPos(match: RuleMatchEx): Pos? =
-            // The latest matched occurrence from match's head is (by definition)
-            //  the occurrence which activated this match.
-            match.signature().mapNotNull { occSig ->
-                occSig?.let { activatingChunkOf(it)?.toPos() }
-            }.maxWith(this) // compare positions: find latest
+        fun activationPos(match: RuleMatchEx): Pair<Pos, Occurrence>?
 
         /**
          * Length of the indexed [MatchJournal]

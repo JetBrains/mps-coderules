@@ -90,13 +90,13 @@ internal class ExecutionQueue(
 
             // Returns null for matches with occurrences only from this session
             //  because journalIndex indexes only previous session.
-            val pos = journalIndex.activationPos(m)
+            val pos2occ = journalIndex.activationPos(m)
 
             // if it is a future match
-            if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
-                val idOcc = Id(pos.occ)
+            if (pos2occ != null && journalIndex.compare(lastIncrementalRootPos, pos2occ.first) < 0) {
+                val idOcc = Id(pos2occ.second)
                 postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
-                offer(pos)
+                offer(pos2occ.first, pos2occ.second)
             } else {
                 currentMatches.add(m)
             }
