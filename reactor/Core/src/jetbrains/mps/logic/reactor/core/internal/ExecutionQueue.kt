@@ -105,8 +105,17 @@ internal class ExecutionQueue(
     }
 
     /**
-     * Checks whether [candidateRule] can be inserted in journal as a child of [parentChunk]
-     * before one of its child chunks, [beforeChunk].
+     * Replays [processing] until a match of [matchedRule] can be inserted according to [RuleOrdering]
+     * If [ConstraintsProcessing.isFront] is true, then no unnecessary work is done.
+     */
+    fun replayToMatch(matchedRule: Rule, activationChunk: MatchJournal.OccChunk, processing: ConstraintsProcessing) =
+        processing.replayUntil(processing.logicalState) { chunk ->
+            canBeInserted(matchedRule, activationChunk, chunk)
+        }
+
+    /**
+     * Checks whether [candidateRule] can be inserted in journal as a child
+     * of [parentChunk] before one of its child chunks, [beforeChunk].
      * It is assumed that [candidateRule] can be matched by [Occurrence] from [parentChunk].
      */
     fun canBeInserted(candidateRule: Rule, parentChunk: MatchJournal.OccChunk, beforeChunk: MatchJournal.Chunk): Boolean {

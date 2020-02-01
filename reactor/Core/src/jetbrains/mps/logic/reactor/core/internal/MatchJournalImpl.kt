@@ -141,6 +141,21 @@ internal open class MatchJournalImpl(
         if (currentPos() != futurePos) throw IllegalStateException()
     }
 
+    override fun replayUntil(observable: LogicalStateObservable, pred: (Chunk) -> Boolean) {
+        // todo: case when pred(current) == true? need replaying rest of current.entries?
+        while (posPtr.hasNext()) {
+            val previous = current
+            current = posPtr.next()
+            if (pred(current)) {
+                // reset ptr so that it points after previous chunk
+                current = previous
+                posPtr.previous()
+                return
+            }
+            replayOccurrences(observable, current.entries)
+        }
+    }
+
     private fun resetOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
         occSpecs.forEach {
             if (it.discarded) {

@@ -74,6 +74,11 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
      */
     fun replay(observable: LogicalStateObservable, futurePos: Pos)
 
+    /**
+     * Same as [replay]: replays [Chunk]s until [pred] returns true.
+     * May replay the whole journal, in which case position will point to the end of journal.
+     */
+    fun replayUntil(observable: LogicalStateObservable, pred: (Chunk) -> Boolean)
 
     /**
      * Returns snapshot of the journal.
@@ -102,13 +107,21 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
          */
         fun activatingChunkOf(occId: Id<Occurrence>): OccChunk?
 
+        // todo: remove
         /**
-         * Find [Pos] at which provided match was triggered.
-         * Returned position specifies [Occurrence] which triggered the match.
-         * Works not for any match, must work for matches of principal rules.
+         * Returns [Pos] at which provided [RuleMatch] can be inserted
+         * according to its indexed head [Occurrence]s and rule ordering.
+         * Returns for matches of non-principal rules.
+         */
+//        fun positionFor(newMatch: RuleMatchEx): Pos?
+
+        /**
+         * Returns [Pos] at which provided [RuleMatch] is triggered
+         * according to its indexed head [Occurrence]s.
+         * May return null for matches of non-principal rules.
          */
         fun activationPos(match: RuleMatchEx): Pos? =
-            // The latest matched occurrence from match's head is(by definition)
+            // The latest matched occurrence from match's head is (by definition)
             //  the occurrence which activated this match.
             match.signature().mapNotNull { occSig ->
                 occSig?.let { activatingChunkOf(it)?.toPos() }
@@ -121,7 +134,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     }
 
     /**
-     * Immutable snapshot of current state of [MatchJournal].
+     * Immutable snapshot of [MatchJournal].
      */
     data class View(private val chunks: List<Chunk>, private val nextChunkId: Int) : MatchJournalView {
         override fun getChunks(): List<Chunk> = chunks
