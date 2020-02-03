@@ -67,7 +67,7 @@ internal class ExecutionQueue(
                 // Handles the case when several matches are added to the same position.
                 //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
                 if (execPos.pos != prevPos) {
-                    processing.replay(processing.logicalState, execPos.pos)
+                    processing.replayDescendants(processing.logicalState, execPos.ancestor, execPos.pos)
                     lastIncrementalRootPos = execPos.pos
                 }
                 prevPos = execPos.pos

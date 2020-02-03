@@ -141,6 +141,28 @@ internal open class MatchJournalImpl(
         if (currentPos() != futurePos) throw IllegalStateException()
     }
 
+    override fun replayDescendants(observable: LogicalStateObservable, ancestor: Chunk, until: MatchJournal.Pos) {
+        while (posPtr.hasNext()) {
+            val previous = current
+            current = posPtr.next()
+
+            if (until.chunk === current) {
+                replayOccurrences(observable, current.entries.take(until.entriesCount))
+                return
+            }
+
+            if (previous.isDescendantOf(ancestor.id) && !current.isDescendantOf(ancestor.id)) {
+                // reset ptr so that it points after previous chunk
+                current = previous
+                posPtr.previous()
+                return
+            }
+
+            replayOccurrences(observable, current.entries)
+        }
+        if (currentPos() != until) throw IllegalStateException()
+    }
+
     override fun replayUntil(observable: LogicalStateObservable, pred: (Chunk) -> Boolean) {
         // todo: case when pred(current) == true? need replaying rest of current.entries?
         while (posPtr.hasNext()) {

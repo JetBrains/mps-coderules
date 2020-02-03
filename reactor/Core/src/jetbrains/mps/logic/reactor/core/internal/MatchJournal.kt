@@ -75,6 +75,12 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     fun replay(observable: LogicalStateObservable, futurePos: Pos)
 
     /**
+     * Same as [replay] but stops at the last descendant of [ancestor] if [until] isn't found before that.
+     * Suitable for "restricted" replay to [Pos] that can be already invalid (i.e. not in [MatchJournal]).
+     */
+    fun replayDescendants(observable: LogicalStateObservable, ancestor: Chunk, until: Pos)
+
+    /**
      * Same as [replay]: replays [Chunk]s until [pred] returns true.
      * May replay the whole journal, in which case position will point to the end of journal.
      */
