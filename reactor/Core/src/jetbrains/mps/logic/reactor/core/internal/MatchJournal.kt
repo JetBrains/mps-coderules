@@ -80,11 +80,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
      */
     fun replayDescendants(observable: LogicalStateObservable, ancestor: Chunk, until: Pos)
 
-    /**
-     * Same as [replay]: replays [Chunk]s until [pred] returns true.
-     * May replay the whole journal, in which case position will point to the end of journal.
-     */
-    fun replayUntil(observable: LogicalStateObservable, pred: (Chunk) -> Boolean)
 
     /**
      * Returns snapshot of the journal.
@@ -120,14 +115,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
          * Returns null for non-principal occurrences.
          */
         fun lastDescendantOf(occChunk: OccChunk): Chunk?
-
-        // todo: remove
-        /**
-         * Returns [Pos] at which provided [RuleMatch] can be inserted
-         * according to its indexed head [Occurrence]s and rule ordering.
-         * Returns for matches of non-principal rules.
-         */
-//        fun positionFor(newMatch: RuleMatchEx): Pos?
 
         /**
          * Returns [Pos] at which provided [RuleMatch] is triggered
@@ -170,8 +157,8 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         fun isDescendantOf(chunkId: Int): Boolean = justifications.contains(chunkId)
         fun isTopLevel(): Boolean = justifications.size() <= 1 // this condition implies that there're no ancestor chunks
 
-        fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded() }.map { it.occ() as Occurrence }
-        fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded() }.map { it.occ() as Occurrence }
+        fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded() }.map { it.occ() }
+        fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded() }.map { it.occ() }
 
         /**
          * Returns the resulting collection of activated occurrences
@@ -204,10 +191,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     }
 
     open class Pos(val chunk: Chunk, val entriesCount: Int) {
-        // todo: remove
-        val occ: Occurrence
-            get() = chunk.entriesLog()[entriesCount - 1].occ()
-
         override fun equals(other: Any?) =
             other is Pos
             && other.chunk === chunk
