@@ -175,6 +175,36 @@ internal open class MatchJournalImpl(
         if (currentPos() != until) throw IllegalStateException()
     }
 
+    override fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean) {
+        // starts iterating from the Chunk which is next after current
+        // leaves 'current' and 'posPtr' intact
+        val droppedIds = mutableListOf<Int>()
+        val start = current
+
+        while (posPtr.hasNext()) {
+            current = posPtr.next()
+            if (!current.isDescendantOf(ancestor.id)) {
+                break
+            }
+
+            if (dropIf(current)) {
+                droppedIds.add(current.id)
+                // no need to 'resetOccurrences' because journal position is left intact
+                posPtr.remove()
+            } else if (current.justifications.intersects(droppedIds)) {
+                // drop descendants of dropped Chunks
+                posPtr.remove()
+            }
+        }
+
+        // rollback to the start
+        while (current != start) {
+            current = posPtr.previous()
+        }
+        // make ptr point right after 'current' in case we changed anything
+        if (posPtr.hasNext()) posPtr.next()
+    }
+
     private fun resetOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
         occSpecs.forEach {
             if (it.discarded) {

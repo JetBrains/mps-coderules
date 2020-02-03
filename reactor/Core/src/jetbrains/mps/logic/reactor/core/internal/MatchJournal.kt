@@ -70,6 +70,13 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     fun reset(pastPos: Pos)
 
     /**
+     * Removes [Chunk]s among descendants of [ancestor] if they satisfy [dropIf] predicate.
+     * Transitively removes descendants of removed chunks.
+     * Only erases future chunks and leaves journal position intact.
+     */
+    fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean)
+
+    /**
      * Replay activated and discarded occurrences logged in journal between current and provided positions.
      * Advances journal position to specified position.
      * @throws IllegalStateException when position is not from the future (relative to current pos).

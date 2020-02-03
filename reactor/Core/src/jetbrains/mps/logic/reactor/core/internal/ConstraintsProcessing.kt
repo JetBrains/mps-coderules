@@ -22,6 +22,7 @@ import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.program.Rule
+import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 
@@ -46,7 +47,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                                      val profiler: Profiler? = null)
     : StoreAwareJournalImpl(journal, logicalState)
 {
-    private val execQueue: ExecutionQueue = ExecutionQueue(journal.index(), RuleOrdering(ruleIndex))
+    private val journalIndex: MatchJournal.Index = journal.index()
+    private val execQueue: ExecutionQueue = ExecutionQueue(journalIndex, RuleOrdering(ruleIndex))
 
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
@@ -208,10 +210,13 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         push()
         assert(active.alive)
 
+        val activationChunk: MatchJournal.OccChunk?
         if (!active.stored) {
             active.stored = true
-            logActivation(active)
+            activationChunk = logActivation(active)
             active.revive(logicalState)
+        } else {
+            activationChunk = journalIndex.activatingChunkOf(Id(active))
         }
 
         profiler.profile("dispatch_${active.constraint().symbol()}") {
@@ -223,6 +228,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         val matches = dispatchingFront.matches().toList()
         val newCurrentMatches =
             // todo: assert that there can be no future matches on non-principal occurrences?
+            //  with that move withPostponedMatches to else-branch
             if (isFront() || !active.isPrincipal()) {
                 matches
             } else {
@@ -232,6 +238,13 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         val currentMatches = execQueue.withPostponedMatches(active, newCurrentMatches)
 
         val outStatus = currentMatches.fold(inStatus) { status, match ->
+            if (activationChunk != null && !isFront()) {
+                val discards = match.matchHeadReplaced().contains(active)
+                if (discards) {
+                    dropDiscardingMatchesFor(activationChunk)
+                }
+            }
+
             // TODO: paranoid check. should be isAlive() instead
             // FIXME: move this check elsewhere
             if (status.operational && active.stored && match.allStored())
@@ -247,6 +260,12 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
         return outStatus
     }
+
+    private fun dropDiscardingMatchesFor(ancestor: MatchJournal.OccChunk) =
+        this.dropDescendantsWhile(ancestor) { chunk ->
+            chunk is MatchJournal.MatchChunk
+                && chunk.match.matchHeadReplaced().contains(ancestor.occ)
+        }
 
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
         if (operational) action(this) else this
