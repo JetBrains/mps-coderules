@@ -225,35 +225,18 @@ internal open class MatchJournalImpl(
         val last: E get() = if (l is LinkedList<E>) l.last else l.last()
     }
 
-    private class IndexImpl(chunks: Collection<Chunk>): MatchJournal.Index
+    private class IndexImpl(chunks: Iterable<Chunk>): MatchJournal.Index
     {
-        private val chunkOrder = HashMap<Int, Int>() // chunk.id to its index
+        private val chunkOrder = HashMap<Int, Int>()
         private val occChunks = HashMap<Id<Occurrence>, OccChunk>()
-        private val occChunk2LastDescendant = HashMap<Int, Chunk>()
 
         init {
-            if (chunks.isNotEmpty()) {
-                val occChunksTree = LinkedList<OccChunk>()
+            chunks.forEachIndexed { index, chunk ->
+                chunkOrder[chunk.id] = index
 
-                chunks.forEachIndexed { index, chunk ->
-                    chunkOrder[chunk.id] = index
-
-                    if (chunk is OccChunk) {
-                        occChunks[Id(chunk.occ)] = chunk
-                        occChunksTree.push(chunk)
-                    }
-
-                    occChunksTree.peek()?.let {
-                        if (chunk.isDescendantOf(it.id)) {
-                            // after iteration ends will store the last descendant
-                            occChunk2LastDescendant[it.id] = chunk
-                        } else {
-                            // means descendant chunks ended
-                            occChunksTree.pop()
-                        }
-                    }
+                if (chunk is OccChunk) {
+                    occChunks[Id(chunk.occ)] = chunk
                 }
-
             }
         }
 
@@ -261,31 +244,12 @@ internal open class MatchJournalImpl(
 
         override fun activatingChunkOf(occId: Id<Occurrence>) = occChunks[occId]
 
-        override fun lastDescendantOf(occChunk: OccChunk): Chunk? = occChunk2LastDescendant[occChunk.id]
-
-        override fun activationPos(match: RuleMatchEx): Pair<Pos, OccChunk>? {
-            // The latest matched occurrence from match's head is
-            //  (by definition) the occurrence which activated this match.
-
-            val parentChunks: List<OccChunk> =
-                match.signature().mapNotNull { occSig ->
-                    occSig?.let { activatingChunkOf(it) }
-                }
-
-            val activatingChunk: OccChunk = parentChunks.maxBy { chunkOrder[it.id]!! }
-                ?: return null
-
-            // If rule discards its occurrences then it must be inserted after
-            //  all existing matches which are descendants of activating occurrence.
-            val discardingRule = match.rule().headReplaced().count() > 0
-            val posChunk =
-                if (discardingRule)
-                    // not null if activatingChunk is not null
-                    lastDescendantOf(activatingChunk)!!
-                else
-                    activatingChunk
-            return posChunk.toPos() to activatingChunk
-        }
+        override fun activationPos(match: RuleMatchEx): OccChunk? =
+            // The latest matched occurrence from match's head is (by definition)
+            //  the occurrence which activated this match.
+            match.signature().mapNotNull { occSig ->
+                occSig?.let { activatingChunkOf(it) }
+            }.maxBy { chunkOrder[it.id]!! } // compare positions: find latest
 
         // todo: throw for invalid positions?
         override fun compare(lhs: Pos, rhs: Pos): Int =

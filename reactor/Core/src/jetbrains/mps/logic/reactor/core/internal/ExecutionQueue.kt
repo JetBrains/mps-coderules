@@ -67,7 +67,7 @@ internal class ExecutionQueue(
                 // Handles the case when several matches are added to the same position.
                 //  Then shouldn't replay, because currentPos is valid and more recent (!) than execPos.
                 if (execPos.pos != prevPos) {
-                    processing.replayDescendants(processing.logicalState, execPos.ancestor, execPos.pos)
+                    processing.replay(processing.logicalState, execPos.pos)
                     lastIncrementalRootPos = execPos.pos
                 }
                 prevPos = execPos.pos
@@ -101,13 +101,14 @@ internal class ExecutionQueue(
 
             // Returns null for matches with occurrences only from this session
             //  because journalIndex indexes only previous session.
-            val pos2occ = journalIndex.activationPos(m)
+            val occChunk = journalIndex.activationPos(m)
+            val pos = occChunk?.toPos()
 
             // if it is a future match
-            if (pos2occ != null && journalIndex.compare(lastIncrementalRootPos, pos2occ.first) < 0) {
-                val idOcc = Id(pos2occ.second.occ)
+            if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
+                val idOcc = Id(occChunk.occ)
                 postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
-                offer(pos2occ.first, pos2occ.second)
+                offer(pos, occChunk)
             } else {
                 currentMatches.add(m)
             }
