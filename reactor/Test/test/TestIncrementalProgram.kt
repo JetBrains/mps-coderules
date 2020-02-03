@@ -513,6 +513,60 @@ class TestIncrementalProgram {
         }
     }
 
+    // Weaker matches
+    @Test
+    fun invalidateStaleDiscardingMatches() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "has_type", "no_type", "typeOf"),
+            setOf(sym0("check"), sym0("recover"), sym0("expectType"), sym0("typeOf"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("main")
+                ),
+                body(
+                    princConstraint("check"),
+                    princConstraint("expectType")
+                )),
+            rule("has_type",
+                headReplaced(
+                    princConstraint("expectType")
+                ),
+                headKept(
+                    princConstraint("typeOf")
+                ),
+                body(
+                    constraint("has_type")
+                )),
+            rule("no_type",
+                headReplaced(
+                    princConstraint("expectType")
+                ),
+                body(
+                    constraint("no_type") // not expected after increm launch
+                ))
+        ).launch("initial run", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("no_type"), sym0("check"))
+
+        }.also { (builder, evalRes) ->
+
+            builder.insertRulesAt(1,
+                rule("typeOf",
+                    headKept(
+                        princConstraint("check")
+                    ),
+                    body(
+                        princConstraint("typeOf")
+                    ))
+            ).relaunch("test1", progSpec, evalRes.token()) { result ->
+
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("has_type"), sym0("check"), sym0("typeOf"))
+            }
+        }
+    }
+
     // Description: due to incremental launch, match on 'foobar' will be known
     //  before it should actually happen. If it happens earlier than needed,
     //  'bar' will be discarded too early and program results will be incorrect.
