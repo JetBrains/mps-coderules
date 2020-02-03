@@ -9,7 +9,7 @@ An experimental feature of [JetBrains MPS](https://jetbrains.com/mps). Code rule
 ## Status
 | Travis CI | TeamCity | TeamCity EAP |
 |:--|:--|:--|
-| [![Build Status](https://travis-ci.org/JetBrains/mps-coderules.svg?branch=master)](https://travis-ci.org/JetBrains/mps-coderules)  | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20192_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20192_Distribution_MpsCodeRules) | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20193_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20193_Distribution_MpsCodeRules) |
+| [![Build Status](https://travis-ci.org/JetBrains/mps-coderules.svg?branch=master)](https://travis-ci.org/JetBrains/mps-coderules)  | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20193_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20193_Distribution_MpsCodeRules) | [![](http://teamcity.jetbrains.com/app/rest/builds/buildType(id:MPS_20201_Distribution_MpsCodeRules)/statusIcon)](https://teamcity.jetbrains.com/viewType.html?buildTypeId=MPS_20201_Distribution_MpsCodeRules) |
 
 
 The status of this project is **pre-release**. Don’t rely on any of the language features or the API to be stable. The purpose of this project is to show the new technology and collect early feedback.
