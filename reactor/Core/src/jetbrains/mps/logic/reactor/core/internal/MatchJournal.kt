@@ -128,7 +128,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
          * according to its indexed head [Occurrence]s.
          * May return null for matches of non-principal rules.
          */
-        fun activationPos(match: RuleMatchEx): Pair<Pos, Occurrence>?
+        fun activationPos(match: RuleMatchEx): Pair<Pos, OccChunk>?
 
         /**
          * Length of the indexed [MatchJournal]
@@ -198,6 +198,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     }
 
     open class Pos(val chunk: Chunk, val entriesCount: Int) {
+        // todo: remove
         val occ: Occurrence
             get() = chunk.entriesLog()[entriesCount - 1].occ()
 

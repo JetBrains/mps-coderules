@@ -256,7 +256,7 @@ internal open class MatchJournalImpl(
 
         override fun lastDescendantOf(occChunk: OccChunk): Chunk? = occChunk2LastDescendant[occChunk.id]
 
-        override fun activationPos(match: RuleMatchEx): Pair<Pos, Occurrence>? {
+        override fun activationPos(match: RuleMatchEx): Pair<Pos, OccChunk>? {
             // The latest matched occurrence from match's head is
             //  (by definition) the occurrence which activated this match.
 
@@ -277,7 +277,7 @@ internal open class MatchJournalImpl(
                     lastDescendantOf(activatingChunk)!!
                 else
                     activatingChunk
-            return posChunk.toPos() to activatingChunk.occ
+            return posChunk.toPos() to activatingChunk
         }
 
         // todo: throw for invalid positions?

@@ -28,7 +28,18 @@ internal class ExecutionQueue(
     private val ruleOrdering: RuleOrdering
 ) {
 
-    private data class ExecPos(val pos: MatchJournal.Pos, val activeOcc: Occurrence)
+    /**
+     * Specifies position in [MatchJournal] for continuing Coderules program evaluation,
+     * where it's supposed that [pos] must be a descendant of [ancestor].
+     * (i.e. `pos.isDescendantOf(ancestor.id) == true`)
+     */
+    private data class ExecPos(val pos: MatchJournal.Pos, val ancestor: MatchJournal.OccChunk) {
+
+        constructor(active: MatchJournal.OccChunk) : this(active.toPos(), active)
+
+        val activeOcc: Occurrence
+            get() = ancestor.occ
+    }
 
     // It is a position in Journal from previous session,
     //  from which incremental execution continues.
@@ -94,7 +105,7 @@ internal class ExecutionQueue(
 
             // if it is a future match
             if (pos2occ != null && journalIndex.compare(lastIncrementalRootPos, pos2occ.first) < 0) {
-                val idOcc = Id(pos2occ.second)
+                val idOcc = Id(pos2occ.second.occ)
                 postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
                 offer(pos2occ.first, pos2occ.second)
             } else {
@@ -135,21 +146,22 @@ internal class ExecutionQueue(
     //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
     fun offerAll(occs: Iterable<Occurrence>): Boolean =
         execQueue.addAll(occs.mapNotNull { occ ->
-            journalIndex.activatingChunkOf(Id(occ))?.let { chunk ->
-                ExecPos(chunk.toPos(), occ).let {
+            journalIndex.activatingChunkOf(Id(occ))?.let { occChunk ->
+                ExecPos(occChunk).let {
                     if (seen.add(it)) it else null
                 }
             }
         })
 
-    fun offer(posInJournal: MatchJournal.Pos, activeOcc: Occurrence): Boolean =
-        ExecPos(posInJournal, activeOcc).let {
+    fun offer(posInJournal: MatchJournal.Pos, ancestor: MatchJournal.OccChunk): Boolean =
+        ExecPos(posInJournal, ancestor).let {
             if (seen.add(it)) execQueue.offer(it) else false
         }
 
+    // todo: remove
     // special case when position in trace corresponds to position of activated occurrence
-    fun offer(posInJournal: MatchJournal.Pos): Boolean =
-        offer(posInJournal, posInJournal.occ)
+//    fun offer(posInJournal: MatchJournal.Pos): Boolean =
+//        offer(posInJournal, posInJournal.occ)
 
     fun isEmpty(): Boolean = execQueue.isEmpty()
 

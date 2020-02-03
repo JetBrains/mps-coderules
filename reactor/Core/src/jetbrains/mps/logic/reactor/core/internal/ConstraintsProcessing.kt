@@ -170,7 +170,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                     else
                         continue
 
-                execQueue.offer(pos, occChunk.occ)
+                execQueue.offer(pos, occChunk)
                 trace.potentialMatch(occChunk.occ, candRule)
                 // Drop the candidate if appropriate activation place is found.
                 aIt.remove()
