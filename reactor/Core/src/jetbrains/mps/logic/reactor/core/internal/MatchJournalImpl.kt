@@ -66,23 +66,33 @@ internal open class MatchJournalImpl(
     override fun iterator(): MutableIterator<Chunk> = hist.iterator()
 
 
-    override fun logMatch(match: RuleMatch) {
+    override fun logMatch(match: RuleMatch): MatchChunk? {
+        var added: MatchChunk? = null
+
         if (ispec.isPrincipal(match.rule())) {
-            current = MatchChunk(nextChunkId++, match)
+            added = MatchChunk(nextChunkId++, match)
+            current = added
             posPtr.add(current)
         }
         // Log discarded occurrences
         (match as RuleMatchImpl).forEachReplaced { occ ->
             current.entries.add(Chunk.Entry(occ, true))
         }
+
+        return added
     }
 
-    override fun logActivation(occ: Occurrence) {
+    override fun logActivation(occ: Occurrence): OccChunk? {
+        var added: OccChunk? = null
+
         if (ispec.isPrincipal(occ.constraint)) {
-            current = OccChunk(nextChunkId++, occ)
+            added = OccChunk(nextChunkId++, occ)
+            current = added
             posPtr.add(current)
         }
         current.entries.add(Chunk.Entry(occ))
+
+        return added
     }
 
     override fun ancestorMatch(): MatchChunk {
@@ -118,11 +128,13 @@ internal open class MatchJournalImpl(
         while (posPtr.hasPrevious()) {
             current = posPtr.previous()
             if (current === pastPos.chunk) {
+                // todo: need reversed?
                 resetOccurrences(current.entries.drop(pastPos.entriesCount))
                 current.entries = current.entries.subList(0, pastPos.entriesCount)
                 posPtr.next() // make 'posPtr' to always point right after 'current'
                 return
             }
+            // todo: need reversed?
             resetOccurrences(current.entries)
             posPtr.remove()
         }

@@ -28,13 +28,15 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     /**
      * Add new [Chunk] for matches of principal rules.
      * Log occurrences discarded by match in current [Chunk].
+     * Returns added [Chunk], null for non-principal rules.
      */
-    fun logMatch(match: RuleMatch)
+    fun logMatch(match: RuleMatch): MatchChunk?
 
     /**
      * Log occurrence activation in current [Chunk].
+     * Returns added [Chunk], null for non-principal occurrences.
      */
-    fun logActivation(occ: Occurrence)
+    fun logActivation(occ: Occurrence): OccChunk?
 
     /**
      * Returns nearest MatchChunk which justifies current chunk.
