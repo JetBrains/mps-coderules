@@ -236,6 +236,10 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="8575328350543493365" name="message" index="huDt6" />
+        <property id="2423417345669755629" name="filter" index="1eyWvh" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
@@ -670,6 +674,10 @@
             </node>
           </node>
           <node concept="2Gpval" id="1Lr58WFTIHf" role="3cqZAp">
+            <node concept="15s5l7" id="59P$gGfuucy" role="lGtFl">
+              <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;constraints (cannot be child)&quot;;FLAVOUR_MESSAGE=&quot;There is no MPS 'project' in this kind of ITestable node&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)/7896212496293420315]&quot;;" />
+              <property role="huDt6" value="There is no MPS 'project' in this kind of ITestable node" />
+            </node>
             <node concept="2GrKxI" id="1Lr58WFTIHg" role="2Gsz3X">
               <property role="TrG5h" value="m" />
             </node>
@@ -734,6 +742,10 @@
             </node>
           </node>
           <node concept="3clFbF" id="1Lr58WFTIH_" role="3cqZAp">
+            <node concept="15s5l7" id="59P$gGfuuSP" role="lGtFl">
+              <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;constraints (cannot be child)&quot;;FLAVOUR_MESSAGE=&quot;There is no MPS 'project' in this kind of ITestable node&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)/7896212496293420315]&quot;;" />
+              <property role="huDt6" value="There is no MPS 'project' in this kind of ITestable node" />
+            </node>
             <node concept="2OqwBi" id="1Lr58WFTIHA" role="3clFbG">
               <node concept="2OqwBi" id="1Lr58WFTIHB" role="2Oq$k0">
                 <node concept="2ShNRf" id="1Lr58WFTIHC" role="2Oq$k0">
