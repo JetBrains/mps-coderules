@@ -147,9 +147,6 @@
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
-      <concept id="1227096774658" name="jetbrains.mps.lang.typesystem.structure.MessageStatement" flags="ng" index="2OEH$v">
-        <child id="1227096802790" name="nodeToReport" index="2OEOjV" />
-      </concept>
       <concept id="1205762105978" name="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration" flags="ng" index="2X1qdy" />
       <concept id="1205762656241" name="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference" flags="nn" index="2X3wrD">
         <reference id="1205762683928" name="whenConcreteVar" index="2X3Bk0" />
@@ -158,6 +155,9 @@
         <child id="1195213635060" name="body" index="18ibNy" />
       </concept>
       <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
+      <concept id="3937244445246642777" name="jetbrains.mps.lang.typesystem.structure.AbstractReportStatement" flags="ng" index="1urrMJ">
+        <child id="3937244445246642781" name="nodeToReport" index="1urrMF" />
+      </concept>
       <concept id="1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" flags="ig" index="1YaCAy">
         <reference id="1174642800329" name="concept" index="1YaFvo" />
       </concept>
@@ -621,7 +621,7 @@
                     <node concept="Xl_RD" id="1zN1RIlsbZ9" role="2MkJ7o">
                       <property role="Xl_RC" value="incompatible called method kind" />
                     </node>
-                    <node concept="1YBJjd" id="1zN1RIlsbZb" role="2OEOjV">
+                    <node concept="1YBJjd" id="1zN1RIlsbZb" role="1urrMF">
                       <ref role="1YBMHb" node="1zN1RIlrgxK" resolve="baseMethodCall" />
                     </node>
                   </node>
@@ -870,7 +870,7 @@
                         <node concept="Xl_RD" id="1zN1RIls2ja" role="2MkJ7o">
                           <property role="Xl_RC" value="unexpected enum value" />
                         </node>
-                        <node concept="1YBJjd" id="1zN1RIls2jc" role="2OEOjV">
+                        <node concept="1YBJjd" id="1zN1RIls2jc" role="1urrMF">
                           <ref role="1YBMHb" node="1zN1RIlrgxK" resolve="baseMethodCall" />
                         </node>
                       </node>
@@ -884,7 +884,7 @@
                       <node concept="Xl_RD" id="1zN1RIlsere" role="2MkJ7o">
                         <property role="Xl_RC" value="incompatible method kind" />
                       </node>
-                      <node concept="1YBJjd" id="1zN1RIlserf" role="2OEOjV">
+                      <node concept="1YBJjd" id="1zN1RIlserf" role="1urrMF">
                         <ref role="1YBMHb" node="1zN1RIlrgxK" resolve="baseMethodCall" />
                       </node>
                     </node>
@@ -946,7 +946,7 @@
         <node concept="Xl_RD" id="5bC6UNlvaoP" role="2MkJ7o">
           <property role="Xl_RC" value="Number of parameters mismatch" />
         </node>
-        <node concept="1YBJjd" id="5bC6UNlvaxI" role="2OEOjV">
+        <node concept="1YBJjd" id="5bC6UNlvaxI" role="1urrMF">
           <ref role="1YBMHb" node="5bC6UNlv2MT" resolve="userConstraint" />
         </node>
       </node>
@@ -1025,7 +1025,7 @@
               <node concept="Xl_RD" id="1hX44vMNIoQ" role="2MkJ7o">
                 <property role="Xl_RC" value="value expected" />
               </node>
-              <node concept="1YBJjd" id="1hX44vMNIoR" role="2OEOjV">
+              <node concept="1YBJjd" id="1hX44vMNIoR" role="1urrMF">
                 <ref role="1YBMHb" node="7feMCq_1rIC" resolve="codeBlock" />
               </node>
             </node>
@@ -1081,11 +1081,11 @@
             <node concept="1bVj0M" id="1hX44vMMP01" role="23t8la">
               <node concept="3clFbS" id="1hX44vMMP02" role="1bW5cS">
                 <node concept="2MkqsV" id="1hX44vMMP4S" role="3cqZAp">
-                  <node concept="37vLTw" id="1hX44vMMPad" role="2OEOjV">
-                    <ref role="3cqZAo" node="1hX44vMMP03" resolve="it" />
-                  </node>
                   <node concept="Xl_RD" id="1hX44vMMP7z" role="2MkJ7o">
                     <property role="Xl_RC" value="return statement is not allowed here" />
+                  </node>
+                  <node concept="37vLTw" id="1hX44vMMPad" role="1urrMF">
+                    <ref role="3cqZAo" node="1hX44vMMP03" resolve="it" />
                   </node>
                 </node>
               </node>

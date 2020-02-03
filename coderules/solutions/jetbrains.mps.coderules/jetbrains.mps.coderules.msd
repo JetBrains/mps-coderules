@@ -10,6 +10,11 @@
       <sourceRoot location="rxjava2-swing-0.2.1.jar" />
     </modelRoot>
   </models>
+  <facets>
+    <facet type="java">
+      <classes generated="true" path="${module}/classes_gen" />
+    </facet>
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/reactive-streams-1.0.0.final.jar" />
     <stubModelEntry path="${module}/lib/rxjava-2.1.1.jar" />
