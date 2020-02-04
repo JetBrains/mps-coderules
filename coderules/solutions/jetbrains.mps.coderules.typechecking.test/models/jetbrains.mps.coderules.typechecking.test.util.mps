@@ -1156,6 +1156,12 @@
                       <property role="TrG5h" value="templateRef" />
                       <node concept="2sp9CU" id="4ekZiHdef4M" role="1tU5fm" />
                     </node>
+                    <node concept="37vLTG" id="1IJQlQO_VYO" role="3clF46">
+                      <property role="TrG5h" value="ruleTag" />
+                      <node concept="3uibUv" id="1IJQlQO_WGD" role="1tU5fm">
+                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                      </node>
+                    </node>
                     <node concept="37vLTG" id="1laj_RSC4Bm" role="3clF46">
                       <property role="TrG5h" value="targetRef" />
                       <node concept="2sp9CU" id="1laj_RSC4Bn" role="1tU5fm" />
