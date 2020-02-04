@@ -1387,5 +1387,18 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
+  <node concept="1TIwiD" id="59P$gGfKABp">
+    <property role="EcuMT" value="5941814760080304601" />
+    <property role="3GE5qa" value="rule.clause" />
+    <property role="TrG5h" value="ItemLogicalClause" />
+    <ref role="1TJDcQ" node="20Ay2VefOqF" resolve="LogicalClause" />
+    <node concept="1TJgyj" id="59P$gGfKABq" role="1TKVEi">
+      <property role="IQ2ns" value="5941814760080304602" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="item" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
 </model>
 
