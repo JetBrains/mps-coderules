@@ -48,7 +48,12 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     : StoreAwareJournalImpl(journal, logicalState)
 {
     private val journalIndex: MatchJournal.Index = journal.index()
+
     private val execQueue: ExecutionQueue = ExecutionQueue(journalIndex, RuleOrdering(ruleIndex))
+
+    // tags of rule matches discarded at queue execution
+    private val rewrittenRuleMatches: MutableSet<Any> = mutableSetOf<Any>()
+
 
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
@@ -83,7 +88,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         while (it.hasNext()) {
             val chunk = it.next()
 
-            if (chunk is MatchJournal.MatchChunk && ruleIds.contains(chunk.match.rule().uniqueTag())) {
+            if (chunk is MatchJournal.MatchChunk && ruleIds.contains(chunk.ruleUniqueTag)) {
                 justificationRoots.add(chunk.id)
             }
 
@@ -99,7 +104,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
                 if (chunk is MatchJournal.MatchChunk) {
                     trace.invalidate(chunk.match)
-                    allInvalidatedIds.add(chunk.match.rule().uniqueTag())
+                    allInvalidatedIds.add(chunk.ruleUniqueTag)
 
                     // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
                     //  and storing this invalid consumed match can make no harm, except some memory overhead.
@@ -184,17 +189,19 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         }
     }
 
-    fun launchQueue(controller: Controller): FeedbackStatus =
-        execQueue.run(controller, this)
+    fun launchQueue(controller: Controller): Pair<FeedbackStatus, Set<Any>> =
+        execQueue.run(controller, this) to rewrittenRuleMatches
 
     /**
      * Clears state unneeded between incremental sessions
      * and returns [SessionToken] with session results.
      */
     fun endSession(): SessionToken {
+        rewrittenRuleMatches.clear()
         val histView = view()
         resetStore() // clear observers
         val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
+        // preserve only relevant and non-empty RuleMatchers
         val principalState = dispatchingFront.state().filterValues { ruleMatcher ->
             ispec.isPrincipal(ruleMatcher.rule()) || ruleMatcher.probe().hasOccurrences()
         }
@@ -241,7 +248,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             if (activationChunk != null && !isFront()) {
                 val discards = match.matchHeadReplaced().contains(active)
                 if (discards) {
-                    dropDiscardingMatchesFor(activationChunk)
+                    dropDiscardingMatchesFor(activationChunk, rewrittenRuleMatches)
                 }
             }
 
@@ -261,10 +268,15 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         return outStatus
     }
 
-    private fun dropDiscardingMatchesFor(ancestor: MatchJournal.OccChunk) =
+    private fun dropDiscardingMatchesFor(ancestor: MatchJournal.OccChunk, droppedRuleTags: MutableSet<Any>) =
         this.dropDescendantsWhile(ancestor) { chunk ->
-            chunk is MatchJournal.MatchChunk
-                && chunk.match.matchHeadReplaced().contains(ancestor.occ)
+
+            if (chunk is MatchJournal.MatchChunk
+                && chunk.match.matchHeadReplaced().contains(ancestor.occ))
+            {
+                droppedRuleTags.add(chunk.ruleUniqueTag)
+                true
+            } else false
         }
 
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =

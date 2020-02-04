@@ -178,6 +178,8 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         override fun entriesLog(): List<Chunk.Entry> = entries
 
         override fun toString() = "(id=$id, $justifications, ${match.rule().tag()}, $entries)"
+
+        val ruleUniqueTag: Any get() = match.rule().uniqueTag()
     }
 
     class OccChunk(override val id: Int, val occ: Occurrence) : Chunk {
