@@ -72,7 +72,6 @@
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
-      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -1150,9 +1149,6 @@
                     <node concept="liA8E" id="3o9wrC3WIH9" role="2OqNvi">
                       <ref role="37wK5l" to="hano:1H_6AUT8p2f" resolve="getProgramSpec" />
                     </node>
-                  </node>
-                  <node concept="37vLTw" id="RZQG985p5w" role="37wK5m">
-                    <ref role="3cqZAo" node="tyIfzC1aQx" resolve="repo" />
                   </node>
                   <node concept="3clFb_" id="1laj_RSC4Bl" role="jymVt">
                     <property role="TrG5h" value="consumeFeedback" />
@@ -2879,21 +2875,9 @@
           <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
         </node>
       </node>
-      <node concept="37vLTG" id="RZQG984Y8E" role="3clF46">
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="RZQG984Yh4" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
       <node concept="3cqZAl" id="3o9wrC3VMfE" role="3clF45" />
       <node concept="3Tm1VV" id="3o9wrC3VMfF" role="1B3o_S" />
       <node concept="3clFbS" id="3o9wrC3VMfG" role="3clF47">
-        <node concept="XkiVB" id="RZQG984Ylb" role="3cqZAp">
-          <ref role="37wK5l" to="hano:RZQG984T_1" resolve="DefaultSupervisor" />
-          <node concept="37vLTw" id="RZQG984Yr4" role="37wK5m">
-            <ref role="3cqZAo" node="RZQG984Y8E" resolve="repository" />
-          </node>
-        </node>
         <node concept="3clFbF" id="3o9wrC3W9j0" role="3cqZAp">
           <node concept="37vLTI" id="3o9wrC3W9j1" role="3clFbG">
             <node concept="37vLTw" id="3o9wrC3W9j2" role="37vLTx">
