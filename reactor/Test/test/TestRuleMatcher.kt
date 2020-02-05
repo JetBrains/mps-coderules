@@ -189,6 +189,114 @@ class TestRuleMatcher {
     }
 
     @Test
+    fun testSameOccurrenceLater() {
+        with(programWithRules(
+            rule("rule1",
+                headReplaced(
+                    constraint("foo"),
+                    constraint("foo"),
+                    constraint("bar")
+                ),
+                body(
+                    constraint("qux")
+                ))))
+        {
+            val foo = occurrence("foo")
+            with(ruleMatcher().probe()) {
+
+                expand(foo)                                             }.apply {
+                matches().size shouldBe 0                               }.run {
+
+                expand(occurrence("bar"))                           }.apply {
+                matches().size shouldBe 0                               }.run {
+
+                // no new matches can appear
+                expand(foo)                                             }.apply {
+                matches().size shouldBe 0                               }.run {
+
+                expand(occurrence("foo"))                           }.apply {
+                matches().size shouldBe 2                               }.run {
+
+            }
+        }
+    }
+
+    @Test
+    fun testSameOccurrenceAfterMatch() {
+        with(programWithRules(
+            rule("rule1",
+                headReplaced(
+                    constraint("foo"),
+                    constraint("foo"),
+                    constraint("bar")
+                ),
+                body(
+                    constraint("qux")
+                ))))
+        {
+            val foo = occurrence("foo")
+            with(ruleMatcher().probe()) {
+
+                expand(foo)                                             }.apply {
+                matches().size shouldBe 0                               }.run {
+
+                expand(occurrence("foo"))                           }.apply {
+                matches().size shouldBe 0                               }.run {
+
+                expand(occurrence("bar"))                           }.apply {
+                matches().size shouldBe 2
+                // repeated call to matches() must return same matches
+                matches().size shouldBe 2                               }.run {
+
+                // fixme: is it expected that expansion
+                //  of already expanded occurrence
+                //  brings back all its past matches?
+                expand(foo)                                             }.apply {
+                matches().size shouldBe 2                               }.run {
+            }
+        }
+    }
+
+    @Test
+    fun testMatchesReset() {
+        with(programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("foo"),
+                    constraint("bar")
+                ),
+                body(
+                    constraint("qux")
+                ))))
+        {
+            val foo = occurrence("foo")
+
+            with(ruleMatcher().probe()) {
+
+                expand(foo)                                             }.apply {
+                matches().size shouldBe 0                               }.run {
+
+                expand(occurrence("bar"))                           }.apply {
+                matches().size shouldBe 1                               }.run {
+
+                // expand of any new occurrence resets matches
+                expand(occurrence("bazz"))                          }.apply {
+                matches().size shouldBe 0                               }.run {
+
+                expand(occurrence("bar"))                           }.apply {
+                matches().size shouldBe 1                               }.run {
+
+                // fixme: is it expected that expansion
+                //  of already expanded occurrence
+                //  brings back all its past matches?
+                expand(foo)                                             }.apply {
+                matches().size shouldBe 2                               }.run {
+
+            }
+        }
+    }
+
+    @Test
     fun testSameOccurrenceLogical() {
         with(programWithRules(
             rule("rule1",
@@ -853,7 +961,6 @@ class TestRuleMatcher {
     }
 
     @Test
-    @Ignore("unclear whether this is a correct test case")
     fun testDispatcherIncrementalDiscard() {
         with(programWithRules(
             rule("rule1",
@@ -906,6 +1013,7 @@ class TestRuleMatcher {
                                                                                 }.run {
                 expand(bar)                                                  }.apply {
                 matches().count() shouldBe 3
+                // note that rule order is 1-2-3, not 2-1-3 as could be without contracting 'bar'
                 matches().map { it.rule().uniqueTag().toString() }.toList() shouldBe listOf("rule1", "rule2", "rule3")
             }
         }
