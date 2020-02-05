@@ -121,6 +121,7 @@
         <child id="1205761991995" name="argumentRepresentator" index="2X0Ygz" />
       </concept>
       <concept id="1175147569072" name="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" flags="ig" index="2sgdUx">
+        <property id="1175607673137" name="isWeak" index="2RFo0w" />
         <child id="1175147624276" name="body" index="2sgrp5" />
       </concept>
       <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
@@ -1394,6 +1395,24 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="2sgARr" id="24ciDNzqUsw">
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="supertypesOf_TermType" />
+    <property role="2RFo0w" value="true" />
+    <node concept="3clFbS" id="24ciDNzqUsx" role="2sgrp5">
+      <node concept="3clFbF" id="24ciDNzqUu6" role="3cqZAp">
+        <node concept="2c44tf" id="24ciDNzqUu4" role="3clFbG">
+          <node concept="3uibUv" id="24ciDNzqUv3" role="2c44tc">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="24ciDNzqUtF" role="1YuTPh">
+      <property role="TrG5h" value="termType" />
+      <ref role="1YaFvo" to="5j4j:24ciDNzqIuw" resolve="TermType" />
     </node>
   </node>
 </model>
