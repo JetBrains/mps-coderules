@@ -498,6 +498,9 @@
     <node concept="PrWs8" id="75vUFrS_flD" role="PzmwI">
       <ref role="PrY4T" to="5j4j:75vUFrS_9Sg" resolve="LogicalVariableDeclarationContainer" />
     </node>
+    <node concept="PrWs8" id="4beNoh2IxyQ" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1hX44vMFoce">
     <property role="EcuMT" value="1476354154047570702" />
@@ -1025,6 +1028,14 @@
       <property role="20kJfa" value="parameter" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="7lt0LtPpEVM" resolve="ParameterContainer" />
+      <node concept="asaX9" id="4beNoh250AK" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="4beNoh24Wi0" role="1TKVEi">
+      <property role="IQ2ns" value="4814011019633607808" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <property role="20kJfa" value="parameter" />
+      <ref role="20lvS9" node="PB1R3Y7Ed7" resolve="RulePartParameterDeclaration" />
     </node>
     <node concept="1TJgyj" id="36tQV5AmIsU" role="1TKVEi">
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -1098,6 +1109,7 @@
     <node concept="PrWs8" id="7lt0LtPpF3K" role="PzmwI">
       <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
     </node>
+    <node concept="asaX9" id="4beNoh24WhY" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1mdVbTS8GIV">
     <property role="EcuMT" value="1553157749316176827" />
