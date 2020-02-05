@@ -6,7 +6,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="4" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="5" />
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="-1" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -125,6 +125,7 @@
         <reference id="861509610434435672" name="feature" index="nsMwP" />
         <child id="861509610434435670" name="getter" index="nsMwV" />
       </concept>
+      <concept id="2381360340662937504" name="jetbrains.mps.logic.structure.TermType" flags="ig" index="32pEOW" />
       <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
         <child id="4780620083400582654" name="logical" index="1nq8_t" />
       </concept>
@@ -323,6 +324,7 @@
                 <node concept="aZer4" id="7lt0LtPOZW8" role="3XD1gS">
                   <property role="TrG5h" value="T" />
                 </node>
+                <node concept="32pEOW" id="24ciDNzxNuT" role="3vLBG7" />
               </node>
               <node concept="3NuqgR" id="7wAOnq6x9ez" role="0eVf_">
                 <node concept="aZer4" id="7mB3viLdI2x" role="3XD1gS">
@@ -466,6 +468,7 @@
                 <node concept="aZer4" id="7mB3viLi4qh" role="3XD1gS">
                   <property role="TrG5h" value="B" />
                 </node>
+                <node concept="32pEOW" id="24ciDNzxNuU" role="3vLBG7" />
               </node>
               <node concept="3NuqgR" id="7wAOnq6x5Pr" role="0eVf_">
                 <node concept="aZer4" id="7mB3viLi4pZ" role="3XD1gS">
@@ -576,6 +579,7 @@
                 <node concept="aZer4" id="5TXeSYT5cno" role="3XD1gS">
                   <property role="TrG5h" value="B" />
                 </node>
+                <node concept="32pEOW" id="24ciDNzxNuV" role="3vLBG7" />
               </node>
               <node concept="3NuqgR" id="5TXeSYT5cnp" role="0eVf_">
                 <node concept="aZer4" id="5TXeSYT5cnq" role="3XD1gS">
@@ -713,6 +717,7 @@
                 <node concept="aZer4" id="5TXeSYT5cFo" role="3XD1gS">
                   <property role="TrG5h" value="B" />
                 </node>
+                <node concept="32pEOW" id="24ciDNzxNuW" role="3vLBG7" />
               </node>
             </node>
           </node>
@@ -766,6 +771,7 @@
                 <node concept="aZer4" id="6OXbTD$fzlM" role="3XD1gS">
                   <property role="TrG5h" value="B" />
                 </node>
+                <node concept="32pEOW" id="24ciDNzxNuX" role="3vLBG7" />
               </node>
             </node>
           </node>
@@ -832,6 +838,7 @@
                 <node concept="aZer4" id="7mB3viLcDAk" role="3XD1gS">
                   <property role="TrG5h" value="T" />
                 </node>
+                <node concept="32pEOW" id="24ciDNzxNuY" role="3vLBG7" />
               </node>
             </node>
           </node>
@@ -908,6 +915,7 @@
                     <node concept="aZer4" id="7mB3viLdf_2" role="3XD1gS">
                       <property role="TrG5h" value="T" />
                     </node>
+                    <node concept="32pEOW" id="24ciDNzxNuZ" role="3vLBG7" />
                   </node>
                 </node>
                 <node concept="3Aq9E8" id="7mB3viLdfAx" role="1nLNMd">
@@ -1183,6 +1191,7 @@
                 <node concept="aZer4" id="7mB3viLg9gr" role="3XD1gS">
                   <property role="TrG5h" value="To" />
                 </node>
+                <node concept="32pEOW" id="24ciDNzxNv0" role="3vLBG7" />
               </node>
             </node>
           </node>
