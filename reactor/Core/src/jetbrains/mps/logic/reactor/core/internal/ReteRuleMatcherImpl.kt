@@ -530,7 +530,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
         }
 
         override fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe {
-            consumedSignatures.add(ruleMatch.signatureArray().toSignature())
+            consumedSignatures.remove(ruleMatch.signatureArray().toSignature())
             return this
         }
 
