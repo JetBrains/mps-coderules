@@ -233,16 +233,14 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         }
 
         val matches = dispatchingFront.matches().toList()
-        val newCurrentMatches =
+        val currentMatches =
             // todo: assert that there can be no future matches on non-principal occurrences?
-            //  with that move withPostponedMatches to else-branch
             if (isFront() || !active.isPrincipal()) {
                 matches
             } else {
                 assert( matches.all { ispec.isPrincipal(it.rule()) } )
                 execQueue.postponeFutureMatches(matches)
             }
-        val currentMatches = execQueue.withPostponedMatches(active, newCurrentMatches)
 
         val outStatus = currentMatches.fold(inStatus) { status, match ->
             if (activationChunk != null && !isFront()) {

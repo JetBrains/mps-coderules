@@ -106,8 +106,12 @@ internal class ExecutionQueue(
 
             // if it is a future match
             if (pos != null && journalIndex.compare(lastIncrementalRootPos, pos) < 0) {
-                val idOcc = Id(occChunk.occ)
-                postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
+//                val idOcc = Id(occChunk.occ)
+//                postponedMatches[idOcc] = (postponedMatches[idOcc] ?: emptyList()) + listOf(m)
+                // TODO: Seems, Dispatcher will again return these unconsumed
+                //  future matches on this offered activation,
+                //  so there's no need to store them.
+                //  Remove extra logic with 'postponedMatches'.
                 offer(pos, occChunk)
             } else {
                 currentMatches.add(m)
