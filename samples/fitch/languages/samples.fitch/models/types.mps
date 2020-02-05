@@ -2,7 +2,7 @@
 <model ref="r:30efdd3a-609b-4e7b-a8f2-60af62d5341f(samples.fitch.types)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="17" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="18" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="5" />
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
@@ -96,9 +96,6 @@
       </concept>
     </language>
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
-      <concept id="8456919074560454386" name="jetbrains.mps.lang.coderules.structure.ParameterContainer" flags="ng" index="0eUR_">
-        <child id="8456919074560454898" name="parameter" index="0eVf_" />
-      </concept>
       <concept id="7871500063866331595" name="jetbrains.mps.lang.coderules.structure.Query" flags="ng" index="92CTh">
         <child id="7871500063866331596" name="queryStage" index="92CTm" />
         <child id="3026409000515988658" name="parameter" index="2_cLD1" />
@@ -126,7 +123,7 @@
         <child id="4957570047284421439" name="message" index="1ljv2e" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
-        <child id="8456919074565751439" name="parameter" index="0UC6o" />
+        <child id="4814011019633607808" name="parameter" index="0Rg$4" />
         <child id="3575255234174969658" name="head" index="1nLNMb" />
         <child id="3575255234174969660" name="body" index="1nLNMd" />
       </concept>
@@ -241,16 +238,14 @@
                 </node>
               </node>
             </node>
-            <node concept="0eUR_" id="5fMWD6Iy9zE" role="0UC6o">
-              <node concept="3NuqgR" id="5fMWD6Iy9zG" role="0eVf_">
-                <node concept="aZer4" id="5fMWD6Iy9zH" role="3XD1gS">
-                  <property role="TrG5h" value="TypeCollector" />
-                </node>
-                <node concept="3uibUv" id="5fMWD6Iy9zN" role="3vLBG7">
-                  <ref role="3uigEE" to="82uw:~BiConsumer" resolve="BiConsumer" />
-                  <node concept="2sp9CU" id="5fMWD6Iy9zO" role="11_B2D" />
-                  <node concept="3Tqbb2" id="5fMWD6Iy9zP" role="11_B2D" />
-                </node>
+            <node concept="3NuqgR" id="5fMWD6Iy9zG" role="0Rg$4">
+              <node concept="aZer4" id="5fMWD6Iy9zH" role="3XD1gS">
+                <property role="TrG5h" value="TypeCollector" />
+              </node>
+              <node concept="3uibUv" id="5fMWD6Iy9zN" role="3vLBG7">
+                <ref role="3uigEE" to="82uw:~BiConsumer" resolve="BiConsumer" />
+                <node concept="2sp9CU" id="5fMWD6Iy9zO" role="11_B2D" />
+                <node concept="3Tqbb2" id="5fMWD6Iy9zP" role="11_B2D" />
               </node>
             </node>
           </node>
@@ -298,16 +293,14 @@
                 </node>
               </node>
             </node>
-            <node concept="0eUR_" id="5fMWD6Iy9Af" role="0UC6o">
-              <node concept="3NuqgR" id="5fMWD6Iy9Ah" role="0eVf_">
-                <node concept="aZer4" id="5fMWD6Iy9Ai" role="3XD1gS">
-                  <property role="TrG5h" value="TypeCollector" />
-                </node>
-                <node concept="3uibUv" id="5fMWD6Iy9Aj" role="3vLBG7">
-                  <ref role="3uigEE" to="82uw:~BiConsumer" resolve="BiConsumer" />
-                  <node concept="2sp9CU" id="5fMWD6Iy9Ak" role="11_B2D" />
-                  <node concept="3Tqbb2" id="5fMWD6Iy9Al" role="11_B2D" />
-                </node>
+            <node concept="3NuqgR" id="5fMWD6Iy9Ah" role="0Rg$4">
+              <node concept="aZer4" id="5fMWD6Iy9Ai" role="3XD1gS">
+                <property role="TrG5h" value="TypeCollector" />
+              </node>
+              <node concept="3uibUv" id="5fMWD6Iy9Aj" role="3vLBG7">
+                <ref role="3uigEE" to="82uw:~BiConsumer" resolve="BiConsumer" />
+                <node concept="2sp9CU" id="5fMWD6Iy9Ak" role="11_B2D" />
+                <node concept="3Tqbb2" id="5fMWD6Iy9Al" role="11_B2D" />
               </node>
             </node>
           </node>
@@ -419,24 +412,6 @@
       <node concept="3clFbS" id="6$MtiK8GZF0" role="1nLNMH">
         <node concept="1nLNNL" id="6$MtiK8GZF1" role="3cqZAp">
           <node concept="1nLNMm" id="6$MtiK8GZF2" role="1nLNNK">
-            <node concept="0eUR_" id="3dsgZciwajt" role="0UC6o">
-              <node concept="3NuqgR" id="5fMWD6Iy9CF" role="0eVf_">
-                <node concept="aZer4" id="5fMWD6Iy9CG" role="3XD1gS">
-                  <property role="TrG5h" value="TypeCollector" />
-                </node>
-                <node concept="3uibUv" id="5fMWD6Iy9CH" role="3vLBG7">
-                  <ref role="3uigEE" to="82uw:~BiConsumer" resolve="BiConsumer" />
-                  <node concept="2sp9CU" id="5fMWD6Iy9CI" role="11_B2D" />
-                  <node concept="3Tqbb2" id="5fMWD6Iy9CJ" role="11_B2D" />
-                </node>
-              </node>
-              <node concept="3NuqgR" id="2YqrT$P7SuF" role="0eVf_">
-                <node concept="aZer4" id="2YqrT$P7SuG" role="3XD1gS">
-                  <property role="TrG5h" value="Node" />
-                </node>
-                <node concept="3Tqbb2" id="2YqrT$P7SuH" role="3vLBG7" />
-              </node>
-            </node>
             <node concept="3Aq93q" id="2YqrT$P7Su3" role="1nLNMb">
               <property role="3ArMco" value="true" />
               <node concept="3I6sU6" id="2YqrT$P7Su4" role="3Ip0Jz">
@@ -510,6 +485,22 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3NuqgR" id="5fMWD6Iy9CF" role="0Rg$4">
+              <node concept="aZer4" id="5fMWD6Iy9CG" role="3XD1gS">
+                <property role="TrG5h" value="TypeCollector" />
+              </node>
+              <node concept="3uibUv" id="5fMWD6Iy9CH" role="3vLBG7">
+                <ref role="3uigEE" to="82uw:~BiConsumer" resolve="BiConsumer" />
+                <node concept="2sp9CU" id="5fMWD6Iy9CI" role="11_B2D" />
+                <node concept="3Tqbb2" id="5fMWD6Iy9CJ" role="11_B2D" />
+              </node>
+            </node>
+            <node concept="3NuqgR" id="2YqrT$P7SuF" role="0Rg$4">
+              <node concept="aZer4" id="2YqrT$P7SuG" role="3XD1gS">
+                <property role="TrG5h" value="Node" />
+              </node>
+              <node concept="3Tqbb2" id="2YqrT$P7SuH" role="3vLBG7" />
             </node>
           </node>
         </node>
