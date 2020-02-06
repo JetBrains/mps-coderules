@@ -1057,6 +1057,14 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <property role="IQ2ns" value="3575255234174969660" />
       <ref role="20lvS9" node="6p0DfM0a3TO" resolve="Body" />
+      <node concept="asaX9" id="6E2cNiboHlD" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="6E2cNiboHlF" role="1TKVEi">
+      <property role="IQ2ns" value="7674753015762572651" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="body" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6E2cNiboHlA" resolve="BodyBlock" />
     </node>
     <node concept="PrWs8" id="36tQV5Ax0RU" role="PzmwI">
       <ref role="PrY4T" node="7IysFeBd3kI" resolve="ApplicationSessionParticipant" />
@@ -1410,6 +1418,19 @@
       <property role="20kJfa" value="item" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6E2cNiboHlA">
+    <property role="EcuMT" value="7674753015762572646" />
+    <property role="3GE5qa" value="rule.component" />
+    <property role="TrG5h" value="BodyBlock" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6E2cNiboHlB" role="1TKVEi">
+      <property role="IQ2ns" value="7674753015762572647" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="body" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="6p0DfM0a3TO" resolve="Body" />
     </node>
   </node>
 </model>
