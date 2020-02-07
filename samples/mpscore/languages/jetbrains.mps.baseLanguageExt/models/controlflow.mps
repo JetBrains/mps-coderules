@@ -282,7 +282,6 @@
         <child id="7674753015762572651" name="body" index="3xSepv" />
       </concept>
       <concept id="3575255234174969615" name="jetbrains.mps.lang.coderules.structure.RuleTemplate" flags="ng" index="1nLNMY">
-        <property id="597338001513854136" name="principal" index="1nmhW7" />
         <child id="3575255234175001641" name="condition" index="1nLFYo" />
         <child id="3575255234174969633" name="input" index="1nLNMg" />
         <child id="3575255234174969628" name="code" index="1nLNMH" />
@@ -382,7 +381,6 @@
     <property role="TrG5h" value="Reachability" />
     <node concept="1nLNMY" id="6Yb9hAqKtVm" role="1nK1Vg">
       <property role="TrG5h" value="methodDeclaration" />
-      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="6Yb9hAqKtVn" role="1nLNMH">
         <node concept="3clFbJ" id="6Yb9hAqKJAR" role="3cqZAp">
           <node concept="3clFbS" id="6Yb9hAqKJAT" role="3clFbx">
@@ -5511,7 +5509,6 @@
     <ref role="2YbDB9" node="78H58oerI5G" resolve="Reachability" />
     <node concept="1nLNMY" id="22$xxOvW8oO" role="1nK1Vg">
       <property role="TrG5h" value="visitMethodDeclaration" />
-      <property role="1nmhW7" value="true" />
       <node concept="3clFbS" id="22$xxOvW8oP" role="1nLNMH">
         <node concept="3clFbJ" id="22$xxOvW8oQ" role="3cqZAp">
           <node concept="3clFbS" id="22$xxOvW8oR" role="3clFbx">
