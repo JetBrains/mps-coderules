@@ -4723,7 +4723,7 @@
     <property role="3GE5qa" value="context" />
     <node concept="3aamgX" id="4vbeH84FYk5" role="3acgRq">
       <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="wq2x:2E5lcNn8iYG" resolve="LogicVariableDeclarationStatement" />
+      <ref role="30HIoZ" to="wq2x:2E5lcNn5Ub2" resolve="LocalDeclarationStatement" />
       <node concept="1Koe21" id="36tQV5BuCr8" role="1lVwrX">
         <node concept="3clFbH" id="4vbeH84FZ0a" role="1Koe22">
           <node concept="raruj" id="4vbeH84FZ0c" role="lGtFl" />
@@ -4755,8 +4755,8 @@
                 <node concept="30H73N" id="PB1R3Y9rZQ" role="2Oq$k0" />
                 <node concept="2Xjw5R" id="PB1R3Y9snW" role="2OqNvi">
                   <node concept="1xMEDy" id="PB1R3Y9snY" role="1xVPHs">
-                    <node concept="chp4Y" id="PB1R3Y9tNg" role="ri$Ld">
-                      <ref role="cht4Q" to="wq2x:2E5lcNn8iYG" resolve="LogicVariableDeclarationStatement" />
+                    <node concept="chp4Y" id="6E2cNict48O" role="ri$Ld">
+                      <ref role="cht4Q" to="wq2x:2E5lcNn5Ub2" resolve="LocalDeclarationStatement" />
                     </node>
                   </node>
                 </node>

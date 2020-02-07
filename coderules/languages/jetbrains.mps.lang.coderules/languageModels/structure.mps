@@ -287,17 +287,6 @@
       <ref role="20lvS9" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2E5lcNn8iYG">
-    <property role="3GE5qa" value="constraint.variable" />
-    <property role="TrG5h" value="LogicVariableDeclarationStatement" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="EcuMT" value="3063948360254828460" />
-    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
-    <node concept="PrWs8" id="75vUFrS_9Sh" role="PzmwI">
-      <ref role="PrY4T" to="5j4j:75vUFrS_9Sg" resolve="LogicalVariableDeclarationContainer" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="4laj_h9P4cy">
     <property role="3GE5qa" value="rule.code" />
     <property role="TrG5h" value="Condition" />
@@ -1258,10 +1247,12 @@
   <node concept="1TIwiD" id="2E5lcNn5Ub2">
     <property role="3GE5qa" value="constraint.variable" />
     <property role="TrG5h" value="LocalDeclarationStatement" />
-    <property role="34LRSv" value="local" />
+    <property role="34LRSv" value="logical" />
     <property role="EcuMT" value="3063948360254202562" />
-    <ref role="1TJDcQ" node="2E5lcNn8iYG" resolve="LogicVariableDeclarationStatement" />
-    <node concept="asaX9" id="4nIWweBB$7z" role="lGtFl" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="PrWs8" id="6E2cNict01T" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:75vUFrS_9Sg" resolve="LogicalVariableDeclarationContainer" />
+    </node>
     <node concept="PrWs8" id="5TXeSYSAmha" role="PzmwI">
       <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
     </node>
