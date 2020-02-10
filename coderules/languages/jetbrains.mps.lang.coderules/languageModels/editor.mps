@@ -5842,5 +5842,9 @@
       <node concept="l2Vlx" id="6E2cNibqdSI" role="2iSdaV" />
     </node>
   </node>
+  <node concept="3p36aQ" id="6510ArmLUqS">
+    <property role="3GE5qa" value="constraint" />
+    <ref role="aqKnT" to="wq2x:6infEALDvmn" resolve="AssertExpressionConstraint" />
+  </node>
 </model>
 
