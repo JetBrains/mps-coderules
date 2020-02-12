@@ -4,7 +4,7 @@
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="20" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="5" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="6" />
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -75,11 +75,8 @@
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
       <concept id="861509610434276450" name="jetbrains.mps.logic.structure.DataFormTemplate" flags="ng" index="nspSf" />
-      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
-        <child id="4780620083400582654" name="logical" index="1nq8_t" />
-      </concept>
-      <concept id="2455719244613908503" name="jetbrains.mps.logic.structure.ValueOfExpression" flags="ng" index="1TmgYN">
-        <child id="2455719244613924416" name="logical" index="1Tms7$" />
+      <concept id="8713947027062024097" name="jetbrains.mps.logic.structure.LogicalItemValueExpression" flags="ng" index="1Ft4W6">
+        <child id="8713947027062064784" name="logical" index="1FtiSR" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -486,11 +483,9 @@
                   <node concept="3I6s7M" id="5fMWD6Iy9EN" role="3I6sU7">
                     <node concept="3wWvb2" id="5fMWD6Iy9EJ" role="3I6s78">
                       <node concept="2OqwBi" id="5fMWD6Iy9ON" role="3wWo3s">
-                        <node concept="1TmgYN" id="5fMWD6Iy9F0" role="2Oq$k0">
-                          <node concept="1nq8_$" id="5fMWD6Iy9Fb" role="1Tms7$">
-                            <node concept="a7P8L" id="5fMWD6Iy9F9" role="1nq8_t">
-                              <ref role="a7OzE" node="5fMWD6Iy9CG" resolve="TypeCollector" />
-                            </node>
+                        <node concept="1Ft4W6" id="7zIaaskbYAE" role="2Oq$k0">
+                          <node concept="a7P8L" id="5fMWD6Iy9F9" role="1FtiSR">
+                            <ref role="a7OzE" node="5fMWD6Iy9CG" resolve="TypeCollector" />
                           </node>
                         </node>
                         <node concept="liA8E" id="5fMWD6Iya6q" role="2OqNvi">
