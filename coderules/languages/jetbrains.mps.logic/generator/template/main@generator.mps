@@ -590,6 +590,52 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="7zIaasjByem" role="3acgRq">
+      <ref role="30HIoZ" to="5j4j:7zIaasjAAux" resolve="LogicalItemValueExpression" />
+      <node concept="1Koe21" id="7zIaasjB$wc" role="1lVwrX">
+        <node concept="3clFbS" id="7zIaasjB$wd" role="1Koe22">
+          <node concept="3cpWs8" id="7zIaasjB$we" role="3cqZAp">
+            <node concept="3cpWsn" id="7zIaasjB$wf" role="3cpWs9">
+              <property role="TrG5h" value="logical" />
+              <node concept="3uibUv" id="7zIaasjB$wg" role="1tU5fm">
+                <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7zIaasjB$wh" role="3cqZAp">
+            <node concept="2OqwBi" id="7zIaasjB$wi" role="3clFbG">
+              <node concept="2OqwBi" id="7zIaasjB$wj" role="2Oq$k0">
+                <node concept="liA8E" id="7zIaasjB$wk" role="2OqNvi">
+                  <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
+                </node>
+                <node concept="37vLTw" id="7zIaasjB$wl" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7zIaasjB$wf" resolve="logical" />
+                  <node concept="29HgVG" id="7zIaasjB$wm" role="lGtFl">
+                    <node concept="3NFfHV" id="7zIaasjB$wn" role="3NFExx">
+                      <node concept="3clFbS" id="7zIaasjB$wo" role="2VODD2">
+                        <node concept="3clFbF" id="7zIaasjB$wp" role="3cqZAp">
+                          <node concept="2OqwBi" id="7zIaasjB$wq" role="3clFbG">
+                            <node concept="30H73N" id="7zIaasjB$wr" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="7zIaasjB$ws" role="2OqNvi">
+                              <ref role="3Tt5mk" to="5j4j:7zIaasjAKqg" resolve="logical" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="7zIaasjB$wt" role="2OqNvi">
+                <ref role="37wK5l" to="bj13:~Logical.value()" resolve="value" />
+              </node>
+              <node concept="raruj" id="7zIaasjB$wu" role="lGtFl" />
+            </node>
+          </node>
+          <node concept="3clFbH" id="7zIaasjB$wv" role="3cqZAp" />
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="5WBVN_MJ51w" role="3acgRq">
       <ref role="30HIoZ" to="5j4j:5WBVN_MJ50y" resolve="ListLiteral" />
       <node concept="gft3U" id="5WBVN_MJ8nE" role="1lVwrX">

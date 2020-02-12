@@ -132,6 +132,9 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
+      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
+        <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
       <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
@@ -851,6 +854,23 @@
     </node>
     <node concept="13hLZK" id="JOGAOsxlgY" role="13h7CW">
       <node concept="3clFbS" id="JOGAOsxlgZ" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="7zIaasjACz8">
+    <property role="3GE5qa" value="logical.item.expression" />
+    <ref role="13h7C2" to="5j4j:7zIaasjACyh" resolve="EvaluationSubject" />
+    <node concept="13i0hz" id="1HWyn8iLEDG" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="logicalItems" />
+      <node concept="3Tm1VV" id="1HWyn8iLEDH" role="1B3o_S" />
+      <node concept="2I9FWS" id="1HWyn8iLEG5" role="3clF45">
+        <ref role="2I9WkF" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+      </node>
+      <node concept="3clFbS" id="1HWyn8iLEDJ" role="3clF47" />
+    </node>
+    <node concept="13hLZK" id="7zIaasjACz9" role="13h7CW">
+      <node concept="3clFbS" id="7zIaasjACza" role="2VODD2" />
     </node>
   </node>
 </model>

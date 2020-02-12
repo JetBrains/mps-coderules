@@ -403,6 +403,7 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="asaX9" id="7zIaasjAAuv" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="49obaclcan7">
     <property role="EcuMT" value="4780620083400582599" />
@@ -689,6 +690,23 @@
     <property role="TrG5h" value="TermType" />
     <property role="34LRSv" value="term" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+  </node>
+  <node concept="1TIwiD" id="7zIaasjAAux">
+    <property role="EcuMT" value="8713947027062024097" />
+    <property role="3GE5qa" value="logical.item.expression" />
+    <property role="TrG5h" value="LogicalItemValueExpression" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="7zIaasjAKqg" role="1TKVEi">
+      <property role="IQ2ns" value="8713947027062064784" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="logical" />
+      <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalItem" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="7zIaasjACyh">
+    <property role="EcuMT" value="8713947027062032529" />
+    <property role="3GE5qa" value="logical.item.expression" />
+    <property role="TrG5h" value="EvaluationSubject" />
   </node>
 </model>
 
