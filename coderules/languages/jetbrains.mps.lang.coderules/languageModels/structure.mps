@@ -1382,7 +1382,7 @@
     <property role="EcuMT" value="1534124788579507963" />
     <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="OriginSpec" />
-    <property role="34LRSv" value="origin" />
+    <property role="34LRSv" value="target" />
     <ref role="1TJDcQ" to="tpee:fK9aQHR" resolve="BlockStatement" />
     <node concept="1TJgyj" id="1laj_RSpMKx" role="1TKVEi">
       <property role="IQ2ns" value="1534124788579511329" />
