@@ -6443,12 +6443,6 @@
               </node>
               <node concept="32pEOW" id="24ciDNzxNxC" role="3vLBG7" />
             </node>
-            <node concept="3NuqgR" id="47tET_WiLt9" role="0Rg$4">
-              <node concept="aZer4" id="47tET_WiLta" role="3XD1gS">
-                <property role="TrG5h" value="TcPtr" />
-              </node>
-              <node concept="2sp9CU" id="47tET_WiLtB" role="3vLBG7" />
-            </node>
             <node concept="3NuqgR" id="47tET_WUy3$" role="0Rg$4">
               <node concept="aZer4" id="47tET_WUy3_" role="3XD1gS">
                 <property role="TrG5h" value="TcName" />
