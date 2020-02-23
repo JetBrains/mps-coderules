@@ -1132,20 +1132,59 @@
     <ref role="1M2myG" to="5j4j:49obaclcan7" resolve="LogicalItemExpression" />
     <node concept="9S07l" id="7zIaasjUTwj" role="9Vyp8">
       <node concept="3clFbS" id="7zIaasjUTwk" role="2VODD2">
-        <node concept="3clFbF" id="7zIaasjUT$r" role="3cqZAp">
-          <node concept="2OqwBi" id="7zIaasjUT$t" role="3clFbG">
-            <node concept="2OqwBi" id="7zIaasjUT$u" role="2Oq$k0">
-              <node concept="nLn13" id="7zIaasjUTHq" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="7zIaasjUT$v" role="2OqNvi">
-                <node concept="1xMEDy" id="7zIaasjUT$w" role="1xVPHs">
-                  <node concept="chp4Y" id="7zIaasjUT$x" role="ri$Ld">
-                    <ref role="cht4Q" to="5j4j:7zIaasjACyh" resolve="EvaluationSubject" />
+        <node concept="3clFbF" id="7zIaasjS9a4" role="3cqZAp">
+          <node concept="1Wc70l" id="hYA4RDOcb6" role="3clFbG">
+            <node concept="2OqwBi" id="hYA4RDOnBC" role="3uHU7w">
+              <node concept="2OqwBi" id="hYA4RDOnc7" role="2Oq$k0">
+                <node concept="nLn13" id="hYA4RDOoQc" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="hYA4RDOnnE" role="2OqNvi">
+                  <node concept="1xMEDy" id="hYA4REcaxF" role="1xVPHs">
+                    <node concept="chp4Y" id="hYA4REcaAm" role="ri$Ld">
+                      <ref role="cht4Q" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
+                    </node>
+                  </node>
+                  <node concept="1xIGOp" id="hYA4RDOobn" role="1xVPHs" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="hYA4RDOnOm" role="2OqNvi" />
+            </node>
+            <node concept="2OqwBi" id="7zIaasjS9a5" role="3uHU7B">
+              <node concept="2OqwBi" id="7zIaasjS9a6" role="2Oq$k0">
+                <node concept="nLn13" id="hYA4RDOoLF" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="7zIaasjS9a8" role="2OqNvi">
+                  <node concept="1xMEDy" id="7zIaasjS9a9" role="1xVPHs">
+                    <node concept="chp4Y" id="7zIaasjS9aa" role="ri$Ld">
+                      <ref role="cht4Q" to="5j4j:7zIaasjACyh" resolve="EvaluationSubject" />
+                    </node>
+                  </node>
+                  <node concept="1xIGOp" id="hYA4RDOmVp" role="1xVPHs" />
+                </node>
+              </node>
+              <node concept="3w_OXm" id="7zIaasjS9kS" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="hYA4REcaFO">
+    <property role="3GE5qa" value="logical.item.expression" />
+    <ref role="1M2myG" to="5j4j:hYA4REbm1C" resolve="LogicalVariableRefExpression" />
+    <node concept="9S07l" id="hYA4REcaFP" role="9Vyp8">
+      <node concept="3clFbS" id="hYA4REcaFQ" role="2VODD2">
+        <node concept="3clFbF" id="hYA4REcaJY" role="3cqZAp">
+          <node concept="2OqwBi" id="hYA4REcbpJ" role="3clFbG">
+            <node concept="2OqwBi" id="hYA4REcaSV" role="2Oq$k0">
+              <node concept="nLn13" id="hYA4REcaJX" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="hYA4REcbbh" role="2OqNvi">
+                <node concept="1xMEDy" id="hYA4REcbbj" role="1xVPHs">
+                  <node concept="chp4Y" id="hYA4REcbfm" role="ri$Ld">
+                    <ref role="cht4Q" to="5j4j:7E86$tKsl45" resolve="LogicalItem" />
                   </node>
                 </node>
-                <node concept="1xIGOp" id="7zIaasjUT$y" role="1xVPHs" />
               </node>
             </node>
-            <node concept="3w_OXm" id="7zIaasjUTMP" role="2OqNvi" />
+            <node concept="3w_OXm" id="hYA4REcb_n" role="2OqNvi" />
           </node>
         </node>
       </node>

@@ -695,18 +695,40 @@
     <property role="EcuMT" value="8713947027062024097" />
     <property role="3GE5qa" value="logical.item.expression" />
     <property role="TrG5h" value="LogicalItemValueExpression" />
+    <property role="R4oN_" value="evaluate logical" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7zIaasjAKqg" role="1TKVEi">
       <property role="IQ2ns" value="8713947027062064784" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="logical" />
-      <ref role="20lvS9" node="7E86$tKsl45" resolve="LogicalItem" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariable" />
     </node>
   </node>
   <node concept="PlHQZ" id="7zIaasjACyh">
     <property role="EcuMT" value="8713947027062032529" />
     <property role="3GE5qa" value="logical.item.expression" />
     <property role="TrG5h" value="EvaluationSubject" />
+  </node>
+  <node concept="1TIwiD" id="hYA4REbm1C">
+    <property role="EcuMT" value="323863683626000488" />
+    <property role="3GE5qa" value="logical.item.expression" />
+    <property role="TrG5h" value="LogicalVariableRefExpression" />
+    <property role="34LRSv" value="&amp;" />
+    <property role="R4oN_" value="reference logical variable" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="hYA4REb_WC" role="1TKVEi">
+      <property role="IQ2ns" value="323863683626065704" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="logical" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariable" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="hYA4RE$stU">
+    <property role="EcuMT" value="323863683632580474" />
+    <property role="3GE5qa" value="logical.item.expression" />
+    <property role="TrG5h" value="EvaluationSetting" />
   </node>
 </model>
 

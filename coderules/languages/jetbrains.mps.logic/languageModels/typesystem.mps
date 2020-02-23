@@ -1526,5 +1526,36 @@
       <ref role="1YaFvo" to="5j4j:7zIaasjAAux" resolve="LogicalItemValueExpression" />
     </node>
   </node>
+  <node concept="1YbPZF" id="hYA4REcbTO">
+    <property role="TrG5h" value="typeof_LogicalVariableRefExpression" />
+    <property role="3GE5qa" value="logical.item.expression" />
+    <node concept="3clFbS" id="hYA4REcbTP" role="18ibNy">
+      <node concept="1Z5TYs" id="hYA4REcc7g" role="3cqZAp">
+        <node concept="mw_s8" id="hYA4REcc7$" role="1ZfhKB">
+          <node concept="1Z2H0r" id="hYA4REcc7w" role="mwGJk">
+            <node concept="2OqwBi" id="hYA4REccgo" role="1Z2MuG">
+              <node concept="1YBJjd" id="hYA4REcc7P" role="2Oq$k0">
+                <ref role="1YBMHb" node="hYA4REcbTR" resolve="lvre" />
+              </node>
+              <node concept="3TrEf2" id="hYA4REccpH" role="2OqNvi">
+                <ref role="3Tt5mk" to="5j4j:hYA4REb_WC" resolve="logical" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="hYA4REcc7j" role="1ZfhK$">
+          <node concept="1Z2H0r" id="hYA4REcbU4" role="mwGJk">
+            <node concept="1YBJjd" id="hYA4REcbVS" role="1Z2MuG">
+              <ref role="1YBMHb" node="hYA4REcbTR" resolve="lvre" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="hYA4REcbTR" role="1YuTPh">
+      <property role="TrG5h" value="lvre" />
+      <ref role="1YaFvo" to="5j4j:hYA4REbm1C" resolve="LogicalVariableRefExpression" />
+    </node>
+  </node>
 </model>
 
