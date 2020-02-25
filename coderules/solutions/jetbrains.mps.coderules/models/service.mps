@@ -1163,9 +1163,7 @@
               <ref role="37wK5l" to="hano:6nFpYluW_Ik" resolve="setUpdatesRecorder" />
               <node concept="2ShNRf" id="4hQVL4fgQub" role="37wK5m">
                 <node concept="1pGfFk" id="4hQVL4fgVyX" role="2ShVmc">
-                  <ref role="37wK5l" to="ksgm:6nFpYlu7fpM" resolve="UpdatesRecorder" />
-                  <node concept="10Nm6u" id="4hQVL4fgVDt" role="37wK5m" />
-                  <node concept="10Nm6u" id="4hQVL4fgVKe" role="37wK5m" />
+                  <ref role="37wK5l" to="ksgm:4mdCe2g_MnB" resolve="UpdatesRecorder" />
                 </node>
               </node>
             </node>

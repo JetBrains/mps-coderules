@@ -1493,10 +1493,8 @@
             <node concept="liA8E" id="4hQVL4fdSTC" role="2OqNvi">
               <ref role="37wK5l" to="hano:6nFpYluW_Ik" resolve="setUpdatesRecorder" />
               <node concept="2ShNRf" id="4hQVL4fdSWo" role="37wK5m">
-                <node concept="1pGfFk" id="4hQVL4fdT8Y" role="2ShVmc">
-                  <ref role="37wK5l" to="ksgm:6nFpYlu7fpM" resolve="UpdatesRecorder" />
-                  <node concept="10Nm6u" id="4hQVL4fdTaR" role="37wK5m" />
-                  <node concept="10Nm6u" id="4hQVL4fdTe6" role="37wK5m" />
+                <node concept="1pGfFk" id="4mdCe2gAbnz" role="2ShVmc">
+                  <ref role="37wK5l" to="ksgm:4mdCe2g_MnB" resolve="UpdatesRecorder" />
                 </node>
               </node>
             </node>
