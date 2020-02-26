@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="20" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="7" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="8" />
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="0" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -110,9 +110,6 @@
       </concept>
       <concept id="8829335963593820278" name="jetbrains.mps.logic.structure.LogicalVariable" flags="ng" index="a7P8L">
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
-      </concept>
-      <concept id="8829335963591530299" name="jetbrains.mps.logic.structure.ExpressionLogicalVariable" flags="ng" index="aZ4PW">
-        <child id="8829335963591530990" name="expression" index="aZ4eD" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
       <concept id="861509610434242029" name="jetbrains.mps.logic.structure.DataFormConstructor" flags="ng" index="ns1u0">
@@ -401,8 +398,8 @@
           </node>
           <node concept="3Aqczg" id="3w0n0hzlYj1" role="3cqZAp">
             <node concept="3A8Hvi" id="5TfjU0xtN57" role="3Aqpz8">
-              <node concept="aZ4PW" id="3w0n0hzlYje" role="3A8wtg">
-                <node concept="3txIi4" id="3w0n0hzlYjk" role="aZ4eD" />
+              <node concept="37jhX" id="5HLeEcf2Uk4" role="3A8wtg">
+                <node concept="3txIi4" id="3w0n0hzlYjk" role="37jj2" />
               </node>
               <node concept="ns1u0" id="7VBaGntKJ8V" role="3A8w4Q">
                 <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />

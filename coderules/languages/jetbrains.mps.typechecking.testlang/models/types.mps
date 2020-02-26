@@ -6,7 +6,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="7" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="8" />
     <use id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" version="-1" />
     <engage id="4b5b4f8d-d30a-4ef8-9bf4-dfd26af9d462" name="jetbrains.mps.lang.typechecking" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -99,9 +99,6 @@
       </concept>
       <concept id="8829335963593820278" name="jetbrains.mps.logic.structure.LogicalVariable" flags="ng" index="a7P8L">
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
-      </concept>
-      <concept id="8829335963591530299" name="jetbrains.mps.logic.structure.ExpressionLogicalVariable" flags="ng" index="aZ4PW">
-        <child id="8829335963591530990" name="expression" index="aZ4eD" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
       <concept id="861509610434242029" name="jetbrains.mps.logic.structure.DataFormConstructor" flags="ng" index="ns1u0">
@@ -743,8 +740,8 @@
                   <node concept="3I6s7M" id="7mB3viLbExU" role="3I6sU7">
                     <node concept="3Aqt3T" id="7mB3viLbExT" role="3I6s78">
                       <ref role="3AqCNq" node="7lt0LtPOZVl" resolve="recover" />
-                      <node concept="aZ4PW" id="5fMWD6IydEn" role="3AunhB">
-                        <node concept="2_cIyK" id="5fMWD6IydEt" role="aZ4eD">
+                      <node concept="37jhX" id="5HLeEcf2Ujj" role="3AunhB">
+                        <node concept="2_cIyK" id="5fMWD6IydEt" role="37jj2">
                           <ref role="2_cIwb" node="5fMWD6IydE6" resolve="typeCollector" />
                         </node>
                       </node>
@@ -935,8 +932,8 @@
         <node concept="3clFbS" id="7mB3viLcERW" role="3uniRr">
           <node concept="3Aqczg" id="7mB3viLcOg5" role="3cqZAp">
             <node concept="3A8Hvi" id="5TfjU0xUSeK" role="3Aqpz8">
-              <node concept="aZ4PW" id="7mB3viLcOgX" role="3A8wtg">
-                <node concept="3txIi4" id="7mB3viLcOh3" role="aZ4eD" />
+              <node concept="37jhX" id="5HLeEcf2Ujk" role="3A8wtg">
+                <node concept="3txIi4" id="7mB3viLcOh3" role="37jj2" />
               </node>
               <node concept="ns1u0" id="7mB3viLcOh9" role="3A8w4Q">
                 <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
@@ -1008,8 +1005,8 @@
         <node concept="3clFbS" id="7mB3viLdD9K" role="3uniRr">
           <node concept="3Aqczg" id="7mB3viLdD9J" role="3cqZAp">
             <node concept="3A8Hvi" id="5TfjU0xUSeL" role="3Aqpz8">
-              <node concept="aZ4PW" id="7mB3viLdD9Q" role="3A8wtg">
-                <node concept="3txIi4" id="7mB3viLdD9W" role="aZ4eD" />
+              <node concept="37jhX" id="5HLeEcf2Ujl" role="3A8wtg">
+                <node concept="3txIi4" id="7mB3viLdD9W" role="37jj2" />
               </node>
               <node concept="ns1u0" id="7mB3viLdDcc" role="3A8w4Q">
                 <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
@@ -1079,8 +1076,8 @@
         <node concept="3clFbS" id="7mB3viLggrP" role="3uniRr">
           <node concept="3Aqczg" id="7mB3viLggrO" role="3cqZAp">
             <node concept="3A8Hvi" id="5TfjU0xUSeM" role="3Aqpz8">
-              <node concept="aZ4PW" id="7mB3viLggrV" role="3A8wtg">
-                <node concept="3txIi4" id="7mB3viLggs1" role="aZ4eD" />
+              <node concept="37jhX" id="5HLeEcf2Ujm" role="3A8wtg">
+                <node concept="3txIi4" id="7mB3viLggs1" role="37jj2" />
               </node>
               <node concept="ns1u0" id="7mB3viLggs9" role="3A8w4Q">
                 <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
