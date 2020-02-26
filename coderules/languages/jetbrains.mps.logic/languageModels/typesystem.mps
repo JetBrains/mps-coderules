@@ -1295,7 +1295,7 @@
     </node>
   </node>
   <node concept="1YbPZF" id="7lt0LtQg3Cb">
-    <property role="TrG5h" value="typeof_ConstantExpressionItem" />
+    <property role="TrG5h" value="typeof_ExpressionItem" />
     <property role="3GE5qa" value="logical.item" />
     <node concept="3clFbS" id="7lt0LtQg3Cc" role="18ibNy">
       <node concept="nvevp" id="7lt0LtQg3Hj" role="3cqZAp">
