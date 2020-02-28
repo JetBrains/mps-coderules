@@ -414,6 +414,7 @@ public class SolverTests {
                 this.wrapped = term;
             }
 
+            @NotNull
             @Override
             public Object symbol() {
                 return wrapped;

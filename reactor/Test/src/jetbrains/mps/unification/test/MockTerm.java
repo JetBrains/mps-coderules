@@ -19,6 +19,7 @@ package jetbrains.mps.unification.test;
 import jetbrains.mps.logic.reactor.logical.Logical;
 import jetbrains.mps.logic.reactor.logical.LogicalOwner;
 import jetbrains.mps.unification.Term;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -61,6 +62,7 @@ public abstract class MockTerm implements Term {
         Term lookupTerm();
     }
 
+    @NotNull
     @Override
     public Object symbol() {
         return null;
@@ -90,6 +92,7 @@ public abstract class MockTerm implements Term {
             this.myArgs = Arrays.asList(arguments);
         }
 
+        @NotNull
         @Override
         public Object symbol() {
             return mySymbol;
@@ -140,6 +143,7 @@ public abstract class MockTerm implements Term {
             myName = name;
         }
 
+        @NotNull
         @Override
         public Object symbol() {
             return myName;
@@ -174,6 +178,7 @@ public abstract class MockTerm implements Term {
             this.mySymbol = symbol;
         }
 
+        @NotNull
         @Override
         public Object symbol() {
             return mySymbol;
@@ -212,6 +217,7 @@ public abstract class MockTerm implements Term {
             return myLogical;
         }
 
+        @NotNull
         @Override
         public Object symbol() {
             return myLogical;
@@ -266,6 +272,7 @@ public abstract class MockTerm implements Term {
             this.termLookup = termLookup;
         }
 
+        @NotNull
         @Override
         public Object symbol() {
             return "^";

@@ -34,7 +34,7 @@ interface OccurrenceMatcher {
 
     fun matches(cst: Constraint, occ: ConstraintOccurrence): Boolean
 
-    fun match(left: Any?, right: Any?): Boolean
+    fun match(left: Any, right: Any): Boolean
 
 }
 

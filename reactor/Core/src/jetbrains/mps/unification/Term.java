@@ -16,6 +16,8 @@
 
 package jetbrains.mps.unification;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Collection;
 
 /**
@@ -32,9 +34,11 @@ public interface Term extends Comparable<Term> {
 
     /**
      * A symbol corresponding to the function/constant name or the variable name.
+     * Must not be null. 
      * TODO: what is the meaning of symbol in case of a reference term?
      * NOTE: two variable terms are treated as the same term if their symbols match.
      */
+    @NotNull
     Object symbol();
 
     /**
