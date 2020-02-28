@@ -9,7 +9,7 @@ import jetbrains.mps.logic.reactor.evaluation.EvaluationSession
 import jetbrains.mps.logic.reactor.program.Constraint
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import org.junit.*
-import org.junit.Assert.assertNotEquals
+import org.junit.Assert.*
 import program.MockConstraint
 
 /*
@@ -1215,6 +1215,128 @@ class TestIncrementalProgram {
         }
     }
 
+
+    @Test
+    fun trackEvidenceForNonprincipalMatch() {
+        // Tests that justifications from principal occurrences in non-principal matches
+        // are not lost and tracked in the last parent match.
+        // This logic makes sense only if non-principal matches can match on principal occurrences.
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo", "bar"),
+            setOf(sym0("main"), sym0("foo"), sym0("bar"), sym0("important"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    princConstraint("main")
+                ),
+                body(
+                    princConstraint("bar"),
+                    princConstraint("foo")
+                )),
+            rule("bar",
+                headReplaced(
+                    princConstraint("bar")
+                ),
+                body(
+                    princConstraint("important")
+                )),
+            rule("foo",
+                headReplaced(
+                    princConstraint("foo")
+                ),
+                body(
+                    constraint("expected"),
+                    constraint("doInfluence")
+                )),
+            rule("influenceResult",
+                // note: non-principal rule which nonetheless matches on a principal constraint
+                headKept(
+                    princConstraint("important")
+                ),
+                headReplaced(
+                    constraint("doInfluence"),
+                    constraint("expected")
+                ),
+                body(
+                )),
+            rule("influenceResult_default",
+                // note: non-principal rule which nonetheless matches on a principal constraint
+                headReplaced(
+                    constraint("doInfluence")
+                ),
+                body(
+                ))
+        ).launch("launch", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("important"))
+            assertTrue( result.lastChunk().let { it is MatchJournal.MatchChunk && it.match.rule().tag() == "foo" } )
+
+        }.also { (builder, evalRes) ->
+
+            // Premises of "foo" rule don't change (foo constraint is intact) on 2nd session,
+            //  but premises of one of its children, "influenceResult" rule, do change.
+            // Rule "influenceResult" isn't principal, so it isn't tracked as a chunk in journal.
+            // So what can be done --- is its principal parent can be dropped, i.e. chunk of "foo" rule.
+            //
+            // Essentially, what is checked is: "important" constraint is invalidated => "foo" rule is invalidated.
+
+            builder.removeRules(
+                listOf("bar")
+            ).relaunch("invalidate bar", progSpec, evalRes.token()) { result ->
+
+                result.storeView().constraintSymbols() shouldBe setOf( sym0("bar"), sym0("expected") )
+            }
+        }
+    }
+
+
+    @Test
+    fun trackEvidenceForNonprincipalChildMatch() {
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "bar"),
+            setOf(sym0("main"), sym0("bar"), sym0("important"), sym0("expected"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    princConstraint("main")
+                ),
+                body(
+                    princConstraint("bar"),
+                    constraint("doInfluence"),
+                    princConstraint("expected")
+                )),
+            rule("bar",
+                headReplaced(
+                    princConstraint("bar")
+                ),
+                body(
+                    princConstraint("important")
+                )),
+            rule("influenceResult",
+                // note: non-principal rule which nonetheless matches on a principal constraint
+                headKept(
+                    princConstraint("important")
+                ),
+                headReplaced(
+                    constraint("doInfluence")
+                ),
+                body(
+                ))
+        ).launch("launch", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("important"), sym0("expected"))
+
+        }.also { (builder, evalRes) ->
+
+            builder.removeRules(
+                listOf("bar")
+            ).relaunch("addSecondBound", progSpec, evalRes.token()) { result ->
+                result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("expected"))
+            }
+        }
+    }
 
     @Test
     fun observerReactivatesFutureOccurrence() {
