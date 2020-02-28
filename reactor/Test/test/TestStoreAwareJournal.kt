@@ -48,7 +48,7 @@ class TestStoreAwareJournal {
 
         // log and expand occurrence while tracking its justifications
         fun logExpandJustified(id: String, vararg args: Any) =
-            logExpand(justifiedOccurrence(id, justsCopy(hist.justs()), * args))
+            logExpand(justifiedOccurrence(id, hist.nextEvidence(), justsCopy(hist.justifications()), * args))
     }
 
     @Test
@@ -78,16 +78,16 @@ class TestStoreAwareJournal {
         {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                hist.justs() shouldBe justsOf(0)
+                hist.justifications() shouldBe justsOf(0)
 
-                logExpand(justifiedOccurrence("foo", setOf(1)))
+                logExpand(justifiedOccurrenceInit("foo"))
                 val fooMatches = d.matches()
                 fooMatches.count() shouldBe 2
 
                 // log first 'foo' match
 
                 hist.logMatch(fooMatches.first())
-                hist.justs() shouldBe justsOf(1,2)
+                hist.justifications() shouldBe justsOf(1)
 
                 logExpandJustified("bar")
                 d.matches().count() shouldBe 0
@@ -95,13 +95,13 @@ class TestStoreAwareJournal {
                 // log second 'foo' match
 
                 hist.logMatch(fooMatches.elementAt(1))
-                hist.justs() shouldBe justsOf(1,4)
+                hist.justifications() shouldBe justsOf(1,3)
 
                 logExpandJustified("qux")
                 d.matches().count() shouldBe 1
 
                 logFirstMatch()
-                hist.justs() shouldBe justsOf(1,2,3,4,5,6) // 3 & 5 are ids of OccChunks
+                hist.justifications() shouldBe justsOf(1,2,3,4,5)
             }
         }
     }
@@ -139,7 +139,7 @@ class TestStoreAwareJournal {
 
                 val initPos = hist.currentPos()
 
-                logExpand(justifiedOccurrence("foo", setOf(1)))
+                logExpand(justifiedOccurrenceInit("foo"))
 
                 val fooPos = hist.currentPos()
 
@@ -213,7 +213,7 @@ class TestStoreAwareJournal {
         {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                logExpand(justifiedOccurrence("foo", setOf(1)))
+                logExpand(justifiedOccurrenceInit("foo"))
 
                 logFirstMatch()
                 logExpandJustified("bar")
@@ -276,7 +276,7 @@ class TestStoreAwareJournal {
 
                 logFirstMatch()
                 // provide initial justification
-                logExpand(justifiedOccurrence("bar", setOf(1)))
+                logExpand(justifiedOccurrenceInit("bar"))
 
                 logFirstMatch()
                 logExpandJustified("qux")
@@ -330,14 +330,14 @@ class TestStoreAwareJournal {
         {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                logExpand(justifiedOccurrence("foo", setOf(1)))
+                logExpand(justifiedOccurrenceInit("foo"))
 
                 // rule2
                 logFirstMatch()
                 logExpand(occurrence("bar"))
                 logExpand(occurrence("bazz"))
                 // use this production later, but create it now to get relevant justs
-                val quxOcc = justifiedOccurrence("qux", hist.justs())
+                val quxOcc = justifiedOccurrence("qux", hist.nextEvidence(), hist.justifications())
 
 
                 val curChunk = hist.currentPos().chunk
@@ -435,7 +435,7 @@ class TestStoreAwareJournal {
 
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                logExpand(justifiedOccurrence("foo", setOf(1)))
+                logExpand(justifiedOccurrenceInit("foo"))
 
                 // rule1
                 logFirstMatch()
@@ -483,7 +483,7 @@ class TestStoreAwareJournal {
                 //  (bar2 plays a role of the reactivation of original bar)
                 logExpandJustified("bar2")
                 // 'bazz' is already expanded from the first execution
-                hist.justs() shouldBe justsOf(1,2,7) // dependency is only the first chunk, the first activation + new id
+                hist.justifications() shouldBe justsOf(1,2,7) // dependency is only the first chunk, the first activation + new id
 
                 // we have only a single _new_ match; rule3 has been matched already and remains in the history, in future
                 d.matches().count() shouldBe 1

@@ -79,7 +79,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
      *  - pruning invalidated occurrences and matches from Dispatcher's state
      */
     fun invalidateRuleMatches(ruleIds: Set<Any>): Set<Any> {
-        val justificationRoots = mutableListOf<Int>()
+        val justificationRoots = mutableListOf<Justified>()
         val allInvalidatedIds = mutableSetOf<Any>()
 
         val it = this.iterator()
@@ -89,11 +89,11 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             val chunk = it.next()
 
             if (chunk is MatchJournal.MatchChunk && ruleIds.contains(chunk.ruleUniqueTag)) {
-                justificationRoots.add(chunk.id)
+                justificationRoots.add(chunk)
             }
 
             // Invalidating dependent chunks
-            if (chunk.justifications.intersects(justificationRoots)) {
+            if (chunk.justifiedByAny(justificationRoots)) {
 
                 // Remove chunk from the journal
                 it.remove()
@@ -120,7 +120,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                     //  by definition of Chunk and principal rule, all occurrences from the head are principal
                     val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
                     val validOccs = matchedOccs.filter { occ ->
-                        !occ.justifications().intersects(justificationRoots)
+                        !occ.justifiedByAny(justificationRoots)
                     }
 //                    assert(matchedOccs.all { it.isPrincipal() })
 
@@ -234,7 +234,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
         val matches = dispatchingFront.matches().toList()
         val currentMatches =
-            // todo: assert that there can be no future matches on non-principal occurrences?
             if (isFront() || !active.isPrincipal()) {
                 matches
             } else {

@@ -23,7 +23,7 @@ public interface MatchJournalView {
     @NotNull
     List<MatchJournalChunk> getChunks();
 
-    int getNextChunkId();
+    int getEvidenceSeed();
 
     StoreView getStoreView();
 }

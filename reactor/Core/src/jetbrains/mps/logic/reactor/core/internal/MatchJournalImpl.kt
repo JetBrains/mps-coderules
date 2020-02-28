@@ -29,7 +29,6 @@ import jetbrains.mps.logic.reactor.program.*
 import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 
-//typealias Chunk = MatchJournal.Chunk
 
 internal open class MatchJournalImpl(
     private val ispec: IncrementalProgramSpec,
@@ -38,12 +37,16 @@ internal open class MatchJournalImpl(
 
     // invariant: never empty
     private val hist: IteratorMutableList<Chunk>
-    private var nextChunkId: Int
+
+    private var evidenceSeed: Evidence
+
+    final override fun nextEvidence(): Evidence = evidenceSeed++
+
 
     init {
         if (view == null) {
-            nextChunkId = 0
-            val initChunk = MatchChunk(nextChunkId++, InitRuleMatch)
+            evidenceSeed = 0
+            val initChunk = MatchChunk(nextEvidence(), InitRuleMatch)
             hist = IteratorMutableList(LinkedList<Chunk>().apply { add(initChunk) })
         } else {
             // assert that initial chunk is present
@@ -51,11 +54,12 @@ internal open class MatchJournalImpl(
                 assert(this is MatchChunk && match is InitRuleMatch)
             }
             hist = IteratorMutableList(LinkedList(view.chunks as List<Chunk>))
-            nextChunkId = view.nextChunkId
+            evidenceSeed = view.evidenceSeed
         }
     }
 
     constructor(view: MatchJournal.View? = null) : this(IncrementalProgramSpec.DefaultSpec, view)
+
 
     // pointer to current position in history where logging (chunk additions) and log erasing (chunk removals) happens
     private var posPtr: MutableListIterator<Chunk> = hist.listIterator()
@@ -70,7 +74,7 @@ internal open class MatchJournalImpl(
         var added: MatchChunk? = null
 
         if (ispec.isPrincipal(match.rule())) {
-            added = MatchChunk(nextChunkId++, match)
+            added = MatchChunk(nextEvidence(), match)
             current = added
             posPtr.add(current)
         }
@@ -86,7 +90,7 @@ internal open class MatchJournalImpl(
         var added: OccChunk? = null
 
         if (ispec.isPrincipal(occ.constraint)) {
-            added = OccChunk(nextChunkId++, occ)
+            added = OccChunk(occ)
             current = added
             posPtr.add(current)
         }
@@ -103,7 +107,7 @@ internal open class MatchJournalImpl(
         val rit = hist.listIterator(posPtr.previousIndex())
         while (rit.hasPrevious()) {
             val prev = rit.previous()
-            if (prev is MatchChunk && current.justifications.contains(prev.id)) {
+            if (prev is MatchChunk && current.justifiedBy(prev)) {
                 return prev
             }
         }
@@ -163,7 +167,7 @@ internal open class MatchJournalImpl(
                 return
             }
 
-            if (previous.isDescendantOf(ancestor.id) && !current.isDescendantOf(ancestor.id)) {
+            if (previous.isDescendantOf(ancestor) && !current.isDescendantOf(ancestor)) {
                 // reset ptr so that it points after previous chunk
                 current = previous
                 posPtr.previous()
@@ -178,20 +182,20 @@ internal open class MatchJournalImpl(
     override fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean) {
         // starts iterating from the Chunk which is next after current
         // leaves 'current' and 'posPtr' intact
-        val droppedIds = mutableListOf<Int>()
+        val dropped = mutableListOf<Justified>()
         val start = current
 
         while (posPtr.hasNext()) {
             current = posPtr.next()
-            if (!current.isDescendantOf(ancestor.id)) {
+            if (!current.isDescendantOf(ancestor)) {
                 break
             }
 
             if (dropIf(current)) {
-                droppedIds.add(current.id)
+                dropped.add(current)
                 // no need to 'resetOccurrences' because journal position is left intact
                 posPtr.remove()
-            } else if (current.justifications.intersects(droppedIds)) {
+            } else if (current.justifiedByAny(dropped)) {
                 // drop descendants of dropped Chunks
                 posPtr.remove()
             }
@@ -231,7 +235,7 @@ internal open class MatchJournalImpl(
 
 
     // Note: returns View for the whole history regardless of current posPtr
-    override fun view() = MatchJournal.View(ArrayList(hist), nextChunkId)
+    override fun view() = MatchJournal.View(ArrayList(hist), evidenceSeed)
 
     override fun storeView(): StoreView = StoreViewImpl(allOccurrences())
 
@@ -269,12 +273,12 @@ internal open class MatchJournalImpl(
 
     private class IndexImpl(chunks: Iterable<Chunk>): MatchJournal.Index
     {
-        private val chunkOrder = HashMap<Int, Int>()
+        private val chunkOrder = HashMap<Evidence, Int>()
         private val occChunks = HashMap<Id<Occurrence>, OccChunk>()
 
         init {
             chunks.forEachIndexed { index, chunk ->
-                chunkOrder[chunk.id] = index
+                chunkOrder[chunk.evidence] = index
 
                 if (chunk is OccChunk) {
                     occChunks[Id(chunk.occ)] = chunk
@@ -291,11 +295,11 @@ internal open class MatchJournalImpl(
             //  the occurrence which activated this match.
             match.signature().mapNotNull { occSig ->
                 occSig?.let { activatingChunkOf(it) }
-            }.maxBy { chunkOrder[it.id]!! } // compare positions: find latest
+            }.maxBy { chunkOrder[it.evidence]!! } // compare positions: find latest
 
         // todo: throw for invalid positions?
         override fun compare(lhs: Pos, rhs: Pos): Int =
-            compareBy<Pos>{ chunkOrder[it.chunk.id] }
+            compareBy<Pos>{ chunkOrder[it.chunk.evidence] }
                 .thenComparingInt { it.entriesCount }
                 .compare(lhs, rhs)
     }
@@ -327,11 +331,11 @@ internal open class MatchJournalImpl(
     }
 }
 
-fun MatchJournal.justs() = this.currentPos().chunk.justifications
+fun MatchJournal.justifications() = this.currentPos().chunk.justifications()
 
-fun RuleMatch.headJustifications(): Justs {
-    val res: Justs = justsOf()
-    this.matchHeadKept().forEach { it.justifications().let { res.addAll(it) } }
-    this.matchHeadReplaced().forEach { it.justifications().let { res.addAll(it) } }
+fun RuleMatch.justifications(): Justifications {
+    val res: Justifications = justsOf()
+    this.matchHeadKept().forEach { res.addAll( (it as Occurrence).justifications() ) }
+    this.matchHeadReplaced().forEach { res.addAll( (it as Occurrence).justifications() ) }
     return res
 }

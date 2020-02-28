@@ -42,7 +42,7 @@ internal class ControllerImpl (
     /** For tests only */
     override fun evaluate(occ: Occurrence): StoreView {
         // create the internal occurrence
-        val active = occ.constraint().occurrence(logicalStateObservable(), occ.arguments(), occ.justifications(), object: LogicalContext {
+        val active = occ.constraint().occurrence(logicalStateObservable(), occ.arguments(), occ.evidence, occ.justifications(), object: LogicalContext {
             override fun <V : Any> variable(metaLogical: MetaLogical<V>): Logical<V>? = null
         })
 
@@ -77,9 +77,7 @@ internal class ControllerImpl (
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext, null, trace)
 
-        // fixme: is it valid to always provide current justifications?
-        //  while this method is used only in one place at program kick-off, yes, it's initial justs provided.
-        activateConstraint(constraint, processing.justs(), context)
+        activateConstraint(constraint, processing.justifications(), context)
 
         return context.currentStatus()
     }
@@ -156,13 +154,13 @@ internal class ControllerImpl (
 
             val savedPos = processing.currentPos()
 
-            val currentJusts = processing.justs()
+            val currentJusts = processing.justifications()
 
             for (item in body) {
                 val itemOk = when (item) {
                     is Constraint -> {
                         // track justifications only for principal constraints
-                        val justs = if (ispec.isPrincipal(item)) currentJusts else emptyJusts()
+                        val justs = if (ispec.isPrincipal(item)) currentJusts else emptyJustifications()
                         activateConstraint(item, justs, context)
                     }
                     is Predicate -> tellPredicate(item, context)
@@ -220,13 +218,13 @@ internal class ControllerImpl (
         return context.currentStatus()
     }
     
-    private fun activateConstraint(constraint: Constraint, justs: Justs, context: Context) : Boolean {
+    private fun activateConstraint(constraint: Constraint, justifications: Justifications, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
-                constraint.occurrence(logicalStateObservable(), args, justsCopy(justs), context.logicalContext, context.ruleUniqueTag).let { occ ->
+                constraint.occurrence(logicalStateObservable(), args, processing.nextEvidence(), justsCopy(justifications), context.logicalContext, context.ruleUniqueTag).let { occ ->
                     trace.activate(occ)
                     processing.processActivated(this, occ, status)
                 }

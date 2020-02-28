@@ -132,7 +132,7 @@ internal class ExecutionQueue(
 
         val placeToInsertFound = beforeChunk is MatchJournal.MatchChunk
             && ruleOrdering.isEarlierThan(candidateRule, beforeChunk.match.rule())
-        val childChunksEnded = !beforeChunk.isDescendantOf(parentChunk.id)
+        val childChunksEnded = !beforeChunk.isDescendantOf(parentChunk)
 
         return (childChunksEnded || placeToInsertFound)
     }

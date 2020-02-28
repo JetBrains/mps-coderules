@@ -23,7 +23,7 @@ import jetbrains.mps.logic.reactor.util.Id
 import java.util.*
 
 
-interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
+interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
 
     /**
      * Add new [Chunk] for matches of principal rules.
@@ -133,17 +133,15 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
     /**
      * Immutable snapshot of [MatchJournal].
      */
-    data class View(private val chunks: List<Chunk>, private val nextChunkId: Int) : MatchJournalView {
+    data class View(private val chunks: List<Chunk>, private val evidenceSeed: Evidence) : MatchJournalView {
         override fun getChunks(): List<Chunk> = chunks
-        override fun getNextChunkId(): Int = nextChunkId
+        override fun getEvidenceSeed(): Evidence = evidenceSeed
         override fun getStoreView(): StoreView = StoreViewImpl(
             chunks.flatMap { it.entriesLog() }.allOccurrences().asSequence()
         )
     }
 
-    interface Chunk : MatchJournalChunk {
-        val id: Int
-        val justifications: Justs
+    interface Chunk : MatchJournalChunk, Justified {
 
         // fixme: hide rm-mutability
         var entries: MutableList<Entry>
@@ -155,8 +153,8 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
             override fun toString() = (if (discarded) '-' else '+') + occ.toString()
         }
 
-        fun isDescendantOf(chunkId: Int): Boolean = justifications.contains(chunkId)
-        fun isTopLevel(): Boolean = justifications.size() <= 1 // this condition implies that there're no ancestor chunks
+        fun isDescendantOf(chunk: Chunk): Boolean = this.justifiedBy(chunk)
+        fun isTopLevel(): Boolean = justifications().size() <= 1 // this condition implies that there're no ancestor chunks
 
         fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded() }.map { it.occ() }
         fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded() }.map { it.occ() }
@@ -170,27 +168,25 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk> {
         fun toPos(): Pos = Pos(this, entriesLog().size)
     }
 
-    class MatchChunk(override val id: Int, val match: RuleMatch) : Chunk {
-        override val justifications: Justs = match.headJustifications().apply { add(id) }
+    class MatchChunk(override val evidence: Evidence, val match: RuleMatch) : Chunk {
+        private val justifications = match.justifications().apply { add(evidence) }
+
+        override fun justifications(): Justifications = justifications
 
         override var entries: MutableList<Chunk.Entry> = mutableListOf()
 
         override fun entriesLog(): List<Chunk.Entry> = entries
 
-        override fun toString() = "(id=$id, $justifications, ${match.rule().tag()}, $entries)"
+        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().tag()}, $entries)"
 
         val ruleUniqueTag: Any get() = match.rule().uniqueTag()
     }
 
-    class OccChunk(override val id: Int, val occ: Occurrence) : Chunk {
-        init { occ.justifications.add(id) }
-
-        override val justifications: Justs
-            get() = occ.justifications
+    class OccChunk(val occ: Occurrence) : Chunk, Justified by occ {
 
         override var entries: MutableList<Chunk.Entry> = mutableListOf()
 
-        override fun toString() = "(id=$id, $justifications, activation of $occ)"
+        override fun toString() = "(id=$evidence, ${justifications()}, activation of $occ)"
     }
 
     open class Pos(val chunk: Chunk, val entriesCount: Int) {

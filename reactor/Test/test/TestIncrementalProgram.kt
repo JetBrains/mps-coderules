@@ -1024,7 +1024,7 @@ class TestIncrementalProgram {
 
                             // ensure chunks are essentially the same, but have different identities
                             result.chunksSymbolView() shouldBe oldChunksView
-                            assertNotEquals(result.lastChunk().id, oldLastChunk.id)
+                            assertNotEquals(result.lastChunk().evidence, oldLastChunk.evidence)
                         }
                 }
         }

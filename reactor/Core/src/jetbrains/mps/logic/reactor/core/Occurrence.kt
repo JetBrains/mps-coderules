@@ -16,8 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import gnu.trove.set.TIntSet
-import gnu.trove.set.hash.TIntHashSet
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
 
@@ -25,16 +23,6 @@ import jetbrains.mps.logic.reactor.logical.Logical
 import jetbrains.mps.logic.reactor.logical.LogicalContext
 import jetbrains.mps.logic.reactor.program.Constraint
 
-
-typealias Justs = TIntSet
-
-//fun emptyJusts() = object : TIntSet {}
-fun emptyJusts() = TIntHashSet(1)
-fun justsOf(vararg elements: Int) = TIntHashSet(elements)
-fun justsFromCollection(collection: Collection<Int>) = TIntHashSet(collection)
-fun justsCopy(other: Justs) = TIntHashSet(other)
-
-fun Justs.intersects(other: Iterable<Int>): Boolean = other.any { this.contains(it) }
 
 /**
  * Class representing a single constraint occurrence.
@@ -45,9 +33,10 @@ class Occurrence (observable: LogicalStateObservable,
                   val constraint: Constraint,
                   val logicalContext: LogicalContext,
                   val arguments: List<*>,
-                  val justifications: Justs,
+                  override val evidence: Evidence,
+                  private val justifications: Justifications,
                   val ruleUniqueTag: Any? = null):
-    ConstraintOccurrence, ForwardingLogicalObserver
+    ConstraintOccurrence, ForwardingLogicalObserver, Justified
 {
 
     var alive = true
@@ -57,6 +46,7 @@ class Occurrence (observable: LogicalStateObservable,
     val identity = System.identityHashCode(this)
 
     init {
+        justifications.add(evidence) // ensure reflexivity of justifications
         revive(observable)
     }
 
@@ -68,7 +58,7 @@ class Occurrence (observable: LogicalStateObservable,
 
     override fun ruleUniqueTag(): Any? = ruleUniqueTag
 
-    override fun justifications(): Justs = justifications
+    override fun justifications(): Justifications = justifications
 
     override fun valueUpdated(logical: Logical<*>, controller: Controller) = doReactivate(controller)
 
@@ -111,7 +101,8 @@ class Occurrence (observable: LogicalStateObservable,
 
 fun Constraint.occurrence(observable: LogicalStateObservable,
                           arguments: List<*>,
-                          justifications: Justs,
+                          evidence: Evidence,
+                          justifications: Justifications,
                           logicalContext: LogicalContext,
                           ruleUniqueTag: Any? = null): Occurrence =
-    Occurrence(observable, this, logicalContext, arguments, justifications, ruleUniqueTag)
+    Occurrence(observable, this, logicalContext, arguments, evidence, justifications, ruleUniqueTag)

@@ -174,18 +174,21 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), justsOf(), noLogicalContext)
+        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(), noLogicalContext)
 
 fun taggedOccurrence(ruleUniqueTag: Any, id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), justsOf(), noLogicalContext, ruleUniqueTag)
+        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(), noLogicalContext, ruleUniqueTag)
 
-fun justifiedOccurrence(id: String, justs: Justs, vararg args: Any): Occurrence =
+fun justifiedOccurrence(id: String, evidence: Evidence, justifications: Justifications, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size), true)
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), justs, noLogicalContext)
+        .occurrence(MockController().logicalStateObservable(), listOf(* args), evidence, justifications, noLogicalContext)
 
-fun justifiedOccurrence(id: String, justs: Collection<Int>, vararg args: Any): Occurrence =
-    justifiedOccurrence(id, justsFromCollection(justs), * args)
+fun justifiedOccurrence(id: String, evidence: Evidence, justs: Collection<Int>, vararg args: Any): Occurrence =
+    justifiedOccurrence(id, evidence, justsFromCollection(justs), * args)
+
+fun justifiedOccurrenceInit(id: String, vararg args: Any): Occurrence =
+    justifiedOccurrence(id, 1, justsFromCollection(setOf(1)), * args)
 
 fun sym0(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 0)

@@ -42,8 +42,4 @@ public interface ConstraintOccurrence {
         return null;
     }
 
-    default
-    @NotNull
-    TIntSet justifications() { return new TIntHashSet(); }
-
 }
