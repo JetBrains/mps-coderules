@@ -174,6 +174,8 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     class MatchChunk(override val evidence: Evidence, val match: RuleMatch) : Chunk {
         private val justifications = match.justifications().apply { add(evidence) }
 
+        fun justifyBy(other: Justified): Unit { justifications.addAll(other.justifications()) }
+
         override fun justifications(): Justifications = justifications
 
         override var entries: MutableList<Chunk.Entry> = mutableListOf()

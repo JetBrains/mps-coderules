@@ -160,6 +160,13 @@ internal class ControllerImpl (
                 // This match corresponds to the last added chunk
                 assert( (savedPos.chunk as? MatchJournal.MatchChunk)?.match === match )
                 newParent = savedPos.chunk as MatchJournal.MatchChunk
+            } else {
+                // If there're any principal occurrences in the non-principal match
+                //  then they must be tracked somewhere above --- i.e. in its parent
+                match.allHeads().filter { it.isPrincipal() && !it.justifiedBy(parent) }.forEach {
+                    // Avoid justifying parent by its child!
+                    parent.justifyBy(it)
+                }
             }
 
             val justifications = processing.justifications()
@@ -168,7 +175,7 @@ internal class ControllerImpl (
                 val itemOk = when (item) {
                     is Constraint -> {
                         // track justifications only for principal constraints
-                        val js = if (item.isPrincipal()) justsCopy(justifications) else emptyJustifications()
+                        val js = if (ispec.isPrincipal(item)) justsCopy(justifications) else emptyJustifications()
                         activateConstraint(item, newParent, js, context)
                     }
                     is Predicate -> tellPredicate(item, context)
@@ -178,7 +185,7 @@ internal class ControllerImpl (
                 if (itemOk) {
                     context.withStatus { status ->
                         if (status.feedback?.alreadyHandled() == false) {
-                            status.feedback.handle(match, newParent.match, supervisor)
+                            status.feedback.handle(match, processing.parentChunk().match, supervisor)
                         }
                     }
 
@@ -199,7 +206,7 @@ internal class ControllerImpl (
 
                     // if failure can be handled here then recover
                     } else if (status.feedback?.alreadyHandled() == false
-                        && status.failure.handle(match, newParent.match, supervisor)) {
+                        && status.failure.handle(match, processing.parentChunk().match, supervisor)) {
 
                         status.recover()
 

@@ -38,5 +38,6 @@ public interface Constraint extends AndItem {
      */
     Collection<? extends Predicate> patternPredicates(Collection<?> occurrenceArgs);
 
+    @Deprecated
     default boolean isPrincipal() { return false; }
 }
