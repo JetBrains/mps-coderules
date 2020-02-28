@@ -71,7 +71,7 @@ internal class EvaluationSessionImpl private constructor (
 
             val processing = ConstraintsProcessing(
                 Dispatcher(ruleIndex, tkn.getFrontState()).front(),
-                MatchJournalImpl(ispec, tkn.journalView),
+                MatchJournalImpl(ispec, tkn.journalView as MatchJournal.View),
                 ruleIndex, logicalState, ispec, trace, profiler
             )
             val controller = ControllerImpl(supervisor, processing, ispec, trace, profiler)

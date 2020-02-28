@@ -133,23 +133,21 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     /**
      * Immutable snapshot of [MatchJournal].
      */
-    data class View(private val chunks: List<Chunk>, private val evidenceSeed: Evidence) : MatchJournalView {
-        override fun getChunks(): List<Chunk> = chunks
-        override fun getEvidenceSeed(): Evidence = evidenceSeed
+    data class View(val chunks: List<Chunk>, val evidenceSeed: Evidence) : MatchJournalView {
         override fun getStoreView(): StoreView = StoreViewImpl(
             chunks.flatMap { it.entriesLog() }.allOccurrences().asSequence()
         )
     }
 
-    interface Chunk : MatchJournalChunk, Justified {
+    interface Chunk : Justified {
 
         // fixme: hide rm-mutability
         var entries: MutableList<Entry>
-        override fun entriesLog(): List<Entry> = entries
+        fun entriesLog(): List<Entry> = entries
 
-        data class Entry(val occ: Occurrence, val discarded: Boolean = false) : MatchJournalChunk.Entry {
-            override fun occ(): Occurrence = occ
-            override fun discarded(): Boolean = discarded
+        data class Entry(val occ: Occurrence, val discarded: Boolean = false) {
+            fun occ(): Occurrence = occ
+            fun discarded(): Boolean = discarded
             override fun toString() = (if (discarded) '-' else '+') + occ.toString()
         }
 
@@ -219,7 +217,7 @@ internal class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
 }
 
 
-private fun Iterable<MatchJournalChunk.Entry>.allOccurrences(): List<Occurrence> {
+private fun Iterable<MatchJournal.Chunk.Entry>.allOccurrences(): List<Occurrence> {
     val set = HashSet<Id<Occurrence>>()
     for (it in this) {
         val idOcc = Id(it.occ() as Occurrence)

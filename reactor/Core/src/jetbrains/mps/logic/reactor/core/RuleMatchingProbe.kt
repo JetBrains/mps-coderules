@@ -16,7 +16,6 @@
 
 package jetbrains.mps.logic.reactor.core
 
-import jetbrains.mps.logic.reactor.evaluation.RuleMatchingProbeState
 import jetbrains.mps.logic.reactor.program.Rule
 import jetbrains.mps.logic.reactor.util.Profiler
 
@@ -27,7 +26,7 @@ import java.util.BitSet
  *
  * @author Fedor Isakov
  */
-interface RuleMatchingProbe : RuleMatchingProbeState {
+interface RuleMatchingProbe {
 
     fun rule(): Rule
 

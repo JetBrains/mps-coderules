@@ -76,14 +76,16 @@ class TestIncrementalProgram {
         return this to result
     }
 
+    private fun SessionToken.chunks(): Collection<MatchJournal.Chunk> =
+        (this.journalView as MatchJournal.View).chunks
 
-    private fun EvaluationResult.chunksSymbolView() = this.token().journalView.chunks.map {
+    private fun EvaluationResult.chunksSymbolView() = this.token().chunks().map {
         it.entriesLog().map { entry -> !entry.discarded() to entry.occ().constraint().symbol() }
     }
 
-    private fun EvaluationResult.lastChunk() = this.token().journalView.chunks.last() as MatchJournal.Chunk
+    private fun EvaluationResult.lastChunk() = this.token().chunks().last() as MatchJournal.Chunk
 
-    private fun EvaluationResult.countChunks() = this.token().journalView.chunks.size
+    private fun EvaluationResult.countChunks() = this.token().chunks().size
 
     private fun Iterable<Occurrence>.constraintSymbols() = this.map { it.constraint.symbol() }
 
@@ -624,7 +626,7 @@ class TestIncrementalProgram {
                     ))
             ).relaunch("withBar", progSpec, evalRes.token()) { result ->
 
-                println(result.token().journalView.chunks)
+                println(result.token().chunks())
 
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("start"), sym0("1st"), sym0("2nd"))

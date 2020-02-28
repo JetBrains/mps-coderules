@@ -32,7 +32,7 @@ import java.util.*
 
 internal open class MatchJournalImpl(
     private val ispec: IncrementalProgramSpec,
-    view: MatchJournalView? = null
+    view: MatchJournal.View? = null
 ) : MatchJournal {
 
     // invariant: never empty

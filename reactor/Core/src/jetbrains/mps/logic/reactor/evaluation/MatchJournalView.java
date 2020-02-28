@@ -20,10 +20,5 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public interface MatchJournalView {
-    @NotNull
-    List<MatchJournalChunk> getChunks();
-
-    int getEvidenceSeed();
-
     StoreView getStoreView();
 }
