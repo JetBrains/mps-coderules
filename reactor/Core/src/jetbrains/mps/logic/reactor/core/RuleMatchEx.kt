@@ -36,3 +36,8 @@ interface RuleMatchEx : RuleMatch {
     // TODO better be an inline extension fun
     fun forEachReplaced(action: (Occurrence) -> Unit)
 }
+
+
+fun RuleMatch.allHeads() = (matchHeadKept().asSequence() + matchHeadReplaced().asSequence()) as Sequence<Occurrence>
+
+fun RuleMatch.allStored() = allHeads().all { it.stored }

@@ -58,7 +58,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
 
-    fun reactivate(controller: Controller, activeOcc: Occurrence): FeedbackStatus {
+    fun reactivate(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
         assert(activeOcc.stored)
 
         // Forget that occ was seen. Otherwise it will be
@@ -68,7 +68,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
         trace.reactivateIncremental(activeOcc)
 
-        return processActivated(controller, activeOcc, FeedbackStatus.NORMAL())
+        return processActivated(controller, activeOcc, parent, FeedbackStatus.NORMAL())
     }
 
     /**
@@ -118,11 +118,11 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
                     // We removed the match, so need to reactivate all still valid occurrences from the head
                     //  by definition of Chunk and principal rule, all occurrences from the head are principal
-                    val matchedOccs = chunk.match.allHeads() as Iterable<Occurrence>
+                    val matchedOccs = chunk.match.allHeads().asIterable()
                     val validOccs = matchedOccs.filter { occ ->
                         !occ.justifiedByAny(justificationRoots)
                     }
-//                    assert(matchedOccs.all { it.isPrincipal() })
+                    assert(matchedOccs.all { it.isPrincipal() })
 
                     execQueue.offerAll(validOccs)
                 }
@@ -213,7 +213,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
      * Calls the controller to process matches (if any) that were triggered.
      * This method may be called at most once for a fresh state frame.
      */
-    fun processActivated(controller: Controller, active: Occurrence, inStatus: FeedbackStatus) : FeedbackStatus {
+    fun processActivated(controller: Controller, active: Occurrence, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus {
         push()
         assert(active.alive)
 
@@ -237,7 +237,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             if (isFront() || !active.isPrincipal()) {
                 matches
             } else {
-                assert( matches.all { ispec.isPrincipal(it.rule()) } )
+                assert( matches.all { it.isPrincipal() } )
                 execQueue.postponeFutureMatches(matches)
             }
 
@@ -252,7 +252,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             // TODO: paranoid check. should be isAlive() instead
             // FIXME: move this check elsewhere
             if (status.operational && active.stored && match.allStored())
-                processMatch(controller, match, status)
+                processMatch(controller, match, parent, status)
             else
                 status
         }
@@ -279,7 +279,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     private inline fun FeedbackStatus.then(action: (FeedbackStatus) -> FeedbackStatus) : FeedbackStatus =
         if (operational) action(this) else this
 
-    private fun processMatch(controller: Controller, match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus =
+    private fun processMatch(controller: Controller, match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus =
         controller.offerMatch(match, inStatus)
             .let {
                 when (it) {
@@ -300,7 +300,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                 accept(controller, match)
             }
             .then {
-                controller.processBody(match, it)
+                controller.processBody(match, parent, it)
             }
             .also { trace.finish(match) }
 
@@ -341,9 +341,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     }
 
 
+    private fun RuleMatch.isPrincipal() = ispec.isPrincipal(this.rule())
+
     private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
-
-    private fun RuleMatch.allHeads() = matchHeadKept() + matchHeadReplaced()
-
-    private fun RuleMatch.allStored() = allHeads().all { co -> (co as Occurrence).stored }
 }

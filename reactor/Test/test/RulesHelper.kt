@@ -1,5 +1,6 @@
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
+import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -237,7 +238,7 @@ class MockController : Controller {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus): FeedbackStatus {
+    override fun processBody(match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus): FeedbackStatus {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

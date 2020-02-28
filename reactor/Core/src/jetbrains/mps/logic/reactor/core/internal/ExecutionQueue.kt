@@ -49,7 +49,7 @@ internal class ExecutionQueue(
     private val postponedMatches: MutableMap<Id<Occurrence>, List<RuleMatchEx>> = HashMap()
 
     private val execQueue: Queue<ExecPos> =
-        PriorityQueue<ExecPos>(1 + journalIndex.size / 2) { // just an estimate
+        PriorityQueue<ExecPos>(1 + journalIndex.size / 8) { // just an estimate
             lhs, rhs -> journalIndex.compare(lhs.pos, rhs.pos)
         }
 
@@ -74,7 +74,8 @@ internal class ExecutionQueue(
 
                 // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
                 if (execPos.activeOcc.stored) {
-                    status = processing.reactivate(controller, execPos.activeOcc)
+                    // fixme: parentChunk can also be tracked
+                    status = processing.reactivate(controller, execPos.activeOcc, processing.parentChunk())
                     // Leave journal processing as it was at the point of failure
                     if (!status.operational) return status
                 }

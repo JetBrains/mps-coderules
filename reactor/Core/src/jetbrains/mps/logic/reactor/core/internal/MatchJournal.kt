@@ -39,11 +39,16 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     fun logActivation(occ: Occurrence): OccChunk?
 
     /**
-     * Returns nearest MatchChunk which justifies current chunk.
+     * Returns nearest [MatchChunk] which justifies current chunk.
      * If current chunk is [MatchChunk], then it is returned.
-     * May return initial chunk. For initial chunk case returns it.
+     * May return initial chunk.
      */
-    fun ancestorMatch(): MatchChunk
+    fun parentChunk(): MatchChunk
+
+    /**
+     * Returns the initial chunk which is always present in history
+     */
+    fun initialChunk(): MatchChunk
 
     /**
      * Current position at the journal.

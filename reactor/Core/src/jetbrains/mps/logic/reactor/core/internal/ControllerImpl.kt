@@ -47,7 +47,7 @@ internal class ControllerImpl (
         })
 
         trace.activate(occ)
-        val status = processing.processActivated(this, active, NORMAL())
+        val status = processing.processActivated(this, active, processing.initialChunk(), NORMAL())
         if (status is FAILED) {
             throw status.failure.failureCause()
         }
@@ -77,7 +77,7 @@ internal class ControllerImpl (
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext, null, trace)
 
-        activateConstraint(constraint, processing.justifications(), context)
+        activateConstraint(constraint, processing.initialChunk(), justsCopy(processing.justifications()), context)
 
         return context.currentStatus()
     }
@@ -102,7 +102,8 @@ internal class ControllerImpl (
         profiler.profile<FeedbackStatus>("reactivate_${occ.constraint.symbol()}") {
 
             trace.reactivate(occ)
-            processing.processActivated(this, occ, NORMAL())
+            // FIXME: propagate parent MatchChunk through call to reactivate()
+            processing.processActivated(this, occ, processing.parentChunk(), NORMAL())
 
         }
 
@@ -135,7 +136,7 @@ internal class ControllerImpl (
         return context.currentStatus()
     }
 
-    override fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
+    override fun processBody(match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus {
         val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
 
         val altIt = match.rule().bodyAlternation().iterator()
@@ -153,15 +154,22 @@ internal class ControllerImpl (
             }
 
             val savedPos = processing.currentPos()
+            var newParent: MatchJournal.MatchChunk = parent
 
-            val currentJusts = processing.justifications()
+            if (match.isPrincipal()) {
+                // This match corresponds to the last added chunk
+                assert( (savedPos.chunk as? MatchJournal.MatchChunk)?.match === match )
+                newParent = savedPos.chunk as MatchJournal.MatchChunk
+            }
+
+            val justifications = processing.justifications()
 
             for (item in body) {
                 val itemOk = when (item) {
                     is Constraint -> {
                         // track justifications only for principal constraints
-                        val justs = if (ispec.isPrincipal(item)) currentJusts else emptyJustifications()
-                        activateConstraint(item, justs, context)
+                        val js = if (item.isPrincipal()) justsCopy(justifications) else emptyJustifications()
+                        activateConstraint(item, newParent, js, context)
                     }
                     is Predicate -> tellPredicate(item, context)
                     else -> throw IllegalArgumentException("unknown item ${item}")
@@ -170,7 +178,7 @@ internal class ControllerImpl (
                 if (itemOk) {
                     context.withStatus { status ->
                         if (status.feedback?.alreadyHandled() == false) {
-                            status.feedback.handle(match, processing.ancestorMatch().match, supervisor)
+                            status.feedback.handle(match, newParent.match, supervisor)
                         }
                     }
 
@@ -191,7 +199,7 @@ internal class ControllerImpl (
 
                     // if failure can be handled here then recover
                     } else if (status.feedback?.alreadyHandled() == false
-                        && status.failure.handle(match, processing.ancestorMatch().match, supervisor)) {
+                        && status.failure.handle(match, newParent.match, supervisor)) {
 
                         status.recover()
 
@@ -218,15 +226,15 @@ internal class ControllerImpl (
         return context.currentStatus()
     }
     
-    private fun activateConstraint(constraint: Constraint, justifications: Justifications, context: Context) : Boolean {
+    private fun activateConstraint(constraint: Constraint, parent: MatchJournal.MatchChunk, justifications: Justifications, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
-                constraint.occurrence(logicalStateObservable(), args, processing.nextEvidence(), justsCopy(justifications), context.logicalContext, context.ruleUniqueTag).let { occ ->
+                constraint.occurrence(logicalStateObservable(), args, processing.nextEvidence(), justifications, context.logicalContext, context.ruleUniqueTag).let { occ ->
                     trace.activate(occ)
-                    processing.processActivated(this, occ, status)
+                    processing.processActivated(this, occ, parent, status)
                 }
 
             }
@@ -268,7 +276,10 @@ internal class ControllerImpl (
             it.first.patternPredicates(it.second.arguments())
         }.toList()
 
-    private fun RuleMatch.allStored() = (matchHeadKept() + matchHeadReplaced()).all { co -> (co as Occurrence).stored }
+
+    private fun RuleMatch.isPrincipal() = ispec.isPrincipal(this.rule())
+
+    private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
 
     inner private class Context(inStatus: FeedbackStatus,

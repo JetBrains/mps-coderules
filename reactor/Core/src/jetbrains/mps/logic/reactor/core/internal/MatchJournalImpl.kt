@@ -99,7 +99,9 @@ internal open class MatchJournalImpl(
         return added
     }
 
-    override fun ancestorMatch(): MatchChunk {
+    override fun initialChunk(): MatchChunk = this.first() as MatchChunk
+
+    override fun parentChunk(): MatchChunk {
         if (current is MatchChunk) {
             return current as MatchChunk
         }
@@ -111,7 +113,7 @@ internal open class MatchJournalImpl(
                 return prev
             }
         }
-        return hist.first() as MatchChunk // initial chunk
+        return initialChunk()
     }
 
     override fun currentPos(): MatchJournal.Pos = current.toPos()
@@ -333,9 +335,6 @@ internal open class MatchJournalImpl(
 
 fun MatchJournal.justifications() = this.currentPos().chunk.justifications()
 
-fun RuleMatch.justifications(): Justifications {
-    val res: Justifications = justsOf()
-    this.matchHeadKept().forEach { res.addAll( (it as Occurrence).justifications() ) }
-    this.matchHeadReplaced().forEach { res.addAll( (it as Occurrence).justifications() ) }
-    return res
+fun RuleMatch.justifications(): Justifications = justsOf().also { allJss ->
+    this.allHeads().forEach { allJss.addAll(it.justifications()) }
 }

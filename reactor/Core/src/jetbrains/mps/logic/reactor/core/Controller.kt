@@ -17,6 +17,7 @@
 package jetbrains.mps.logic.reactor.core
 
 import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
+import jetbrains.mps.logic.reactor.core.internal.MatchJournal
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 
@@ -54,6 +55,6 @@ interface Controller {
      * its status allowed the operation.
      * The returned status captures the result of evaluating the rule's body.
      */
-    fun processBody(match: RuleMatchEx, inStatus: FeedbackStatus): FeedbackStatus
+    fun processBody(match: RuleMatchEx, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus): FeedbackStatus
 
 }
