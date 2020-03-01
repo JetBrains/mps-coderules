@@ -147,7 +147,7 @@ class ClassicTermTrie<T> : TermTrie<T> {
             WILDCARD
 
         } else {
-            term.symbol() ?: throw NullPointerException("term symbol can't be null")
+            term.symbol()
         }
     }
 
