@@ -164,7 +164,7 @@ fun constraint(id: String, vararg args: Any): ConjBuilder.() -> Unit = {
     add(createConstraint(args, id, false))
 }
 
-fun princConstraint(id: String, vararg args: Any): ConjBuilder.() -> Unit = {
+fun pconstraint(id: String, vararg args: Any): ConjBuilder.() -> Unit = {
     add(createConstraint(args, id, true))
 }
 

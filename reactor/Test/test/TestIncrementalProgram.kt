@@ -104,7 +104,7 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ))
         ).launch("addRule", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
@@ -114,7 +114,7 @@ class TestIncrementalProgram {
             builder.programWithRules(
                 rule("foo.bar",
                     headReplaced(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
                         constraint("bar")
@@ -139,11 +139,11 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.bar",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     constraint("bar")
@@ -157,7 +157,7 @@ class TestIncrementalProgram {
             builder.programWithRules(
                 rule("foo.baz",
                     headKept(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
                         constraint("baz")
@@ -182,7 +182,7 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ))
         ).launch("addRule", progSpec) { result ->
             result.storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
@@ -191,14 +191,14 @@ class TestIncrementalProgram {
             builder.programWithRules(
                 rule("foo.bar",
                     headKept(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
                         constraint("bar")
                     )),
                 rule("foo.baz",
                     headKept(
-                        princConstraint("foo"),
+                        pconstraint("foo"),
                         constraint("bar") // depends on the previous match being correctly logged
                     ),
                     body(
@@ -222,7 +222,7 @@ class TestIncrementalProgram {
             // 'at-start' rules are launched with a 'main' occurrence, their heads aren't actually empty
             rule("main.foo",
                 headKept(
-                    princConstraint("main")
+                    pconstraint("main")
                 ),
                 body(
                     constraint("foo")
@@ -237,7 +237,7 @@ class TestIncrementalProgram {
             builder.programWithRules(
                 rule("main.bar",
                     headKept(
-                        princConstraint("main")
+                        pconstraint("main")
                     ),
                     body(
                         constraint("bar")
@@ -262,7 +262,7 @@ class TestIncrementalProgram {
         programWithRules(
             rule("main",
                 headReplaced(
-                    princConstraint("main")
+                    pconstraint("main")
                 ),
                 body(
                     constraint("foo")
@@ -276,7 +276,7 @@ class TestIncrementalProgram {
             builder.programWithRules(
                 rule("main.bar",
                     headKept(
-                        princConstraint("main")
+                        pconstraint("main")
                     ),
                     body(
                         constraint("bar")
@@ -303,18 +303,18 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 )),
             rule("baz.dummy",
                 headKept(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("dummy")
@@ -332,7 +332,7 @@ class TestIncrementalProgram {
             builder.insertRulesAt(1,
                 rule("foo.bar",
                     headKept(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
                         constraint("bar")
@@ -361,18 +361,18 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 )),
             rule("baz.dummy",
                 headKept(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("dummy")
@@ -390,7 +390,7 @@ class TestIncrementalProgram {
                 rule("foo.bar",
                     // 'foo' will be discarded before existing foo-rules, so they shouldn't match & must be removed
                     headReplaced(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
                         constraint("bar")
@@ -416,18 +416,18 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.bar",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     constraint("bar")
                 )),
             rule("foo.qux",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     constraint("qux")
@@ -443,7 +443,7 @@ class TestIncrementalProgram {
             builder.insertRulesAt(2,
                 rule("foo.baz",
                     headKept(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
                         constraint("baz")
@@ -468,11 +468,11 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.bar",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     constraint("bar")
@@ -486,10 +486,10 @@ class TestIncrementalProgram {
             builder.programWithRules(
                 rule("foo.baz",
                     headKept(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
-                        princConstraint("baz")
+                        pconstraint("baz")
                     )
                 )
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
@@ -499,10 +499,10 @@ class TestIncrementalProgram {
                 builder.programWithRules(
                     rule("baz.lax",
                         headReplaced(
-                            princConstraint("foo")
+                            pconstraint("foo")
                         ),
                         headKept(
-                            princConstraint("baz")
+                            pconstraint("baz")
                         ),
                         body(
                             constraint("lax")
@@ -528,22 +528,22 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("check"),
-                    princConstraint("expectType")
+                    pconstraint("check"),
+                    pconstraint("expectType")
                 )),
             rule("has_type",
                 headReplaced(
-                    princConstraint("expectType")
+                    pconstraint("expectType")
                 ),
                 headKept(
-                    princConstraint("typeOf")
+                    pconstraint("typeOf")
                 ),
                 body(
                     constraint("has_type")
                 )),
             rule("no_type",
                 headReplaced(
-                    princConstraint("expectType")
+                    pconstraint("expectType")
                 ),
                 body(
                     constraint("no_type") // not expected after increm launch
@@ -557,10 +557,10 @@ class TestIncrementalProgram {
             builder.insertRulesAt(1,
                 rule("typeOf",
                     headKept(
-                        princConstraint("check")
+                        pconstraint("check")
                     ),
                     body(
-                        princConstraint("typeOf")
+                        pconstraint("typeOf")
                     ))
             ).relaunch("test1", progSpec, evalRes.token()) { result ->
 
@@ -585,26 +585,26 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("start")
+                    pconstraint("start")
                 )),
             rule(".foo",
                 headKept(
-                    princConstraint("start")
+                    pconstraint("start")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foobar",
                 headReplaced(
-                    princConstraint("foo"),
-                    princConstraint("bar")
+                    pconstraint("foo"),
+                    pconstraint("bar")
                 ),
                 body(
                     constraint("2nd")
                 )),
             rule("bar.1st",
                 headKept(
-                    princConstraint("bar")
+                    pconstraint("bar")
                 ),
                 body(
                     constraint("1st")
@@ -619,10 +619,10 @@ class TestIncrementalProgram {
             builder.insertRulesAt(1,
                 rule(".bar",
                     headKept(
-                        princConstraint("start")
+                        pconstraint("start")
                     ),
                     body(
-                        princConstraint("bar")
+                        pconstraint("bar")
                     ))
             ).relaunch("withBar", progSpec, evalRes.token()) { result ->
 
@@ -649,20 +649,20 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("start")
+                    pconstraint("start")
                 )),
             rule(".foo",
                 headReplaced(
-                    princConstraint("start")
+                    pconstraint("start")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             // Propagation rule that doesn't match the first time due to the lack of 'bar'
             rule("foobar",
                 headKept(
-                    princConstraint("foo"),
-                    princConstraint("bar")
+                    pconstraint("foo"),
+                    pconstraint("bar")
                 ),
                 body(
                     constraint("marker")
@@ -679,10 +679,10 @@ class TestIncrementalProgram {
             builder.insertRulesAt(1,
                 rule(".bar",
                     headKept(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
-                        princConstraint("bar")
+                        pconstraint("bar")
                     ))
             ).relaunch("withBar", progSpec, evalRes.token()) { result ->
 
@@ -708,27 +708,27 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("start")
+                    pconstraint("start")
                 )),
             rule(".foo",
                 headReplaced(
-                    princConstraint("start")
+                    pconstraint("start")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             // Propagation rule that doesn't match the first time due to the lack of 'bar'
             rule("foobar",
                 headKept(
-                    princConstraint("foo"),
-                    princConstraint("bar")
+                    pconstraint("foo"),
+                    pconstraint("bar")
                 ),
                 body(
                     constraint("marker")
                 )),
             rule("rmfoo",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body()
             )
@@ -744,10 +744,10 @@ class TestIncrementalProgram {
             builder.insertRulesAt(1,
                 rule(".bar",
                     headKept(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
-                        princConstraint("bar")
+                        pconstraint("bar")
                     ))
             ).relaunch("withBar", progSpec, evalRes.token()) { result ->
 
@@ -772,18 +772,18 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 )),
             rule("baz.qux",
                 headKept(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("qux")
@@ -819,18 +819,18 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 )),
             rule("baz.qux",
                 headReplaced(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("qux")
@@ -867,33 +867,33 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.bar",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("bar")
+                    pconstraint("bar")
                 )),
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 )),
             rule("barbaz.qux",
                 headKept(
-                    princConstraint("bar"),
-                    princConstraint("baz")
+                    pconstraint("bar"),
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("qux")
                 )),
             rule("baz.lax",
                 headReplaced(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("lax")
@@ -930,27 +930,27 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             // Note two discarding rules one after another.
             // After removing "foo.bar" "foo.baz" must match.
             rule("foo.bar",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     constraint("bar")
                 )),
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 )),
             rule("baz.lax",
                 headReplaced(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("lax")
@@ -984,10 +984,10 @@ class TestIncrementalProgram {
         val readdedRule =
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ))
         programWithRules(
             rule("main",
@@ -995,12 +995,12 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             readdedRule,
             rule("baz.qux",
                 headKept(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("qux")
@@ -1045,18 +1045,18 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 )),
             rule("baz.qux",
                 headKept(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("qux")
@@ -1072,7 +1072,7 @@ class TestIncrementalProgram {
             builder.removeRules(listOf("foo.baz")).insertRulesAt(1,
                 rule("foo.bar",
                     headReplaced(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
                         constraint("bar")
@@ -1098,15 +1098,15 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 )),
             // <<< removed
             rule("foo.baz",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("baz")
+                    pconstraint("baz")
                 )),
             // >>>
 
@@ -1114,8 +1114,8 @@ class TestIncrementalProgram {
             // Should't match at second run, there's no 'baz' anymore.
             rule("barbaz.cant",
                 headKept(
-                    princConstraint("bar"),
-                    princConstraint("baz")
+                    pconstraint("bar"),
+                    pconstraint("baz")
                 ),
                 body(
                     constraint("cant")
@@ -1133,15 +1133,15 @@ class TestIncrementalProgram {
                 // produces 'bar'
                 rule("foo.bar",
                     headReplaced(
-                        princConstraint("foo")
+                        pconstraint("foo")
                     ),
                     body(
-                        princConstraint("bar")
+                        pconstraint("bar")
                     )),
                 // 'baz' is removed, shouldn't match
                 rule("baz.lax2",
                     headKept(
-                        princConstraint("baz")
+                        pconstraint("baz")
                     ),
                     body(
                         constraint("lax2")
@@ -1171,15 +1171,15 @@ class TestIncrementalProgram {
         programWithRules(
             rule("main",
                 headReplaced(
-                    princConstraint("main")
+                    pconstraint("main")
                 ),
                 body(
-                    princConstraint("foo"),
-                    princConstraint("bar")
+                    pconstraint("foo"),
+                    pconstraint("bar")
                 )),
             rule("foo",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     constraint("hasBound"),
@@ -1203,7 +1203,7 @@ class TestIncrementalProgram {
             builder.programWithRules(
                 rule("bar",
                     headReplaced(
-                        princConstraint("bar")
+                        pconstraint("bar")
                     ),
                     body(
                         constraint("hasBound")
@@ -1228,22 +1228,22 @@ class TestIncrementalProgram {
         programWithRules(
             rule("main",
                 headReplaced(
-                    princConstraint("main")
+                    pconstraint("main")
                 ),
                 body(
-                    princConstraint("bar"),
-                    princConstraint("foo")
+                    pconstraint("bar"),
+                    pconstraint("foo")
                 )),
             rule("bar",
                 headReplaced(
-                    princConstraint("bar")
+                    pconstraint("bar")
                 ),
                 body(
-                    princConstraint("important")
+                    pconstraint("important")
                 )),
             rule("foo",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     constraint("expected"),
@@ -1252,7 +1252,7 @@ class TestIncrementalProgram {
             rule("influenceResult",
                 // note: non-principal rule which nonetheless matches on a principal constraint
                 headKept(
-                    princConstraint("important")
+                    pconstraint("important")
                 ),
                 headReplaced(
                     constraint("doInfluence"),
@@ -1300,24 +1300,24 @@ class TestIncrementalProgram {
         programWithRules(
             rule("main",
                 headReplaced(
-                    princConstraint("main")
+                    pconstraint("main")
                 ),
                 body(
-                    princConstraint("bar"),
+                    pconstraint("bar"),
                     constraint("doInfluence"),
-                    princConstraint("expected")
+                    pconstraint("expected")
                 )),
             rule("bar",
                 headReplaced(
-                    princConstraint("bar")
+                    pconstraint("bar")
                 ),
                 body(
-                    princConstraint("important")
+                    pconstraint("important")
                 )),
             rule("influenceResult",
                 // note: non-principal rule which nonetheless matches on a principal constraint
                 headKept(
-                    princConstraint("important")
+                    pconstraint("important")
                 ),
                 headReplaced(
                     constraint("doInfluence")
@@ -1351,18 +1351,18 @@ class TestIncrementalProgram {
                     constraint("main")
                 ),
                 body(
-                    princConstraint("foo", X)
+                    pconstraint("foo", X)
                 )),
             rule("produceBound",
                 headKept(
-                    princConstraint("foo", X)
+                    pconstraint("foo", X)
                 ),
                 body(
-                    princConstraint("hasBound", X)
+                    pconstraint("hasBound", X)
                 )),
             rule("eliminateBound",
                 headReplaced(
-                    princConstraint("hasBound", X)
+                    pconstraint("hasBound", X)
                 ),
                 guard(
                     expression({ x -> x.isBound }, X)
@@ -1383,7 +1383,7 @@ class TestIncrementalProgram {
             builder.insertRulesAt(1,
                 rule("bindVar",
                     headKept(
-                        princConstraint("foo", X)
+                        pconstraint("foo", X)
                     ),
                     body(
                         statement({ x -> x.set(42) }, X)

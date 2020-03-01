@@ -56,22 +56,22 @@ class TestStoreAwareJournal {
         with(programWithRules(
             rule("rule2",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("bar")
+                    pconstraint("bar")
                 )),
             rule("rule3",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("qux")
+                    pconstraint("qux")
                 )),
             rule("rule4",
                 headReplaced(
-                    princConstraint("bar"),
-                    princConstraint("qux")
+                    pconstraint("bar"),
+                    pconstraint("qux")
                 ),
                 body()
                 )))
@@ -113,25 +113,25 @@ class TestStoreAwareJournal {
         with(programWithRules(
             rule("rule1",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("bar")
+                    pconstraint("bar")
                 )),
             rule("rule2",
                 headReplaced(
-                    princConstraint("bar"),
-                    princConstraint("foo")
+                    pconstraint("bar"),
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("qux")
+                    pconstraint("qux")
                 )),
             rule("rule3",
                 headKept(
-                    princConstraint("qux")
+                    pconstraint("qux")
                 ),
                 body(
-                    princConstraint("lax")
+                    pconstraint("lax")
                 ))
         ))
         {
@@ -196,18 +196,18 @@ class TestStoreAwareJournal {
         with(programWithRules(
             rule("rule1",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("bar")
+                    pconstraint("bar")
                 )),
             rule("rule2",
                 headReplaced(
-                    princConstraint("bar"),
-                    princConstraint("foo")
+                    pconstraint("bar"),
+                    pconstraint("foo")
                 ),
                 body(
-                    princConstraint("qux")
+                    pconstraint("qux")
                 ))
             ))
         {
@@ -249,15 +249,15 @@ class TestStoreAwareJournal {
                     constraint("foo")
                 ),
                 body(
-                    princConstraint("bar")
+                    pconstraint("bar")
                 )),
             rule("rule2",
                 headReplaced(
-                    princConstraint("bar"),
+                    pconstraint("bar"),
                     constraint("foo")
                 ),
                 body(
-                    princConstraint("qux")
+                    pconstraint("qux")
                 ))
         ))
         {
@@ -303,12 +303,12 @@ class TestStoreAwareJournal {
         with(programWithRules(
             rule("rule2",
                 headKept(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     constraint("bar"),
                     constraint("bazz"),
-                    princConstraint("qux")
+                    pconstraint("qux")
                 )),
             rule("rule3",
                 headReplaced(
@@ -320,11 +320,11 @@ class TestStoreAwareJournal {
                 )),
             rule("rule4",
             headKept(
-                princConstraint("qux"),
-                princConstraint("foo")
+                pconstraint("qux"),
+                pconstraint("foo")
             ),
             body(
-                princConstraint("last")
+                pconstraint("last")
             ))
         ))
         {
@@ -390,29 +390,29 @@ class TestStoreAwareJournal {
         with(programWithRules(
             rule("rule1",
                 headReplaced(
-                    princConstraint("foo")
+                    pconstraint("foo")
                 ),
                 body(
                     // 'bar' occurrences are activated manually, see test code
-//                    princConstraint("bar1"),
-//                    princConstraint("bar2"),
-                    princConstraint("bazz")
+//                    pconstraint("bar1"),
+//                    pconstraint("bar2"),
+                    pconstraint("bazz")
                 )),
 
             rule("rule2a",
                 headReplaced(
-                    princConstraint("bar1")
+                    pconstraint("bar1")
                 ),
                 headKept(
-                    princConstraint("bazz")
+                    pconstraint("bazz")
                 ),
                 body()),
             rule("rule2b",
                 headReplaced(
-                    princConstraint("bar2")
+                    pconstraint("bar2")
                 ),
                 headKept(
-                    princConstraint("bazz")
+                    pconstraint("bazz")
                 ),
                 body(
                     constraint("marker")
@@ -420,7 +420,7 @@ class TestStoreAwareJournal {
 
             rule("rule3",
                 headReplaced(
-                    princConstraint("bazz")
+                    pconstraint("bazz")
                 ),
                 body(
                     constraint("qux")
