@@ -974,7 +974,6 @@ class TestIncrementalProgram {
         }
     }
 
-
     @Test
     fun rmAndAddSamePropagationMatch() {
         val progSpec = MockIncrProgSpec(
@@ -1032,7 +1031,6 @@ class TestIncrementalProgram {
         }
     }
 
-
     @Test
     fun rmAndAddDifferentMatch() {
         val progSpec = MockIncrProgSpec(
@@ -1084,7 +1082,6 @@ class TestIncrementalProgram {
             }
         }
     }
-
 
     @Test
     fun rmAndTryMatchWithRemovedOccurrences() {
@@ -1157,7 +1154,6 @@ class TestIncrementalProgram {
         }
     }
 
-
     @Test
     fun completeNonprincipalRuleMatch() {
         // Tests that state of non principal rules (i.e. their rule matchers) is preserved between sessions;
@@ -1214,7 +1210,6 @@ class TestIncrementalProgram {
             }
         }
     }
-
 
     @Test
     fun trackEvidenceForNonprincipalMatch() {
@@ -1290,7 +1285,6 @@ class TestIncrementalProgram {
         }
     }
 
-
     @Test
     fun trackEvidenceForNonprincipalChildMatch() {
         val progSpec = MockIncrProgSpec(
@@ -1334,6 +1328,89 @@ class TestIncrementalProgram {
                 listOf("bar")
             ).relaunch("addSecondBound", progSpec, evalRes.token()) { result ->
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("bar"), sym0("expected"))
+            }
+        }
+    }
+
+    @Test
+    fun trackEvidenceForNonprincipalMatchAndItsChildren() {
+        // Tests that justifications from principal occurrences in non-principal matches
+        // are not lost and tracked in the last parent match AND its dependent chunks.
+        // This logic makes sense only if non-principal matches can match on principal occurrences.
+        val progSpec = MockIncrProgSpec(
+            setOf("main", "foo", "fooChild", "bar"),
+            setOf(sym0("main"), sym0("foo"), sym0("fooChild"), sym0("bar"), sym0("important"))
+        )
+        programWithRules(
+            rule("main",
+                headReplaced(
+                    pconstraint("main")
+                ),
+                body(
+                    pconstraint("bar"),
+                    pconstraint("foo")
+                )),
+            rule("bar",
+                headReplaced(
+                    pconstraint("bar")
+                ),
+                body(
+                    pconstraint("important")
+                )),
+            rule("foo",
+                headReplaced(
+                    pconstraint("foo")
+                ),
+                body(
+                    pconstraint("fooChild"),
+                    constraint("expected"),
+                    constraint("doInfluence")
+                )),
+            rule("fooChild",
+                headReplaced(
+                    pconstraint("fooChild")
+                ),
+                body(
+                    constraint("expected2")
+                )),
+            rule("influenceResult",
+                // note: non-principal rule which nonetheless matches on a principal constraint
+                headKept(
+                    pconstraint("important")
+                ),
+                headReplaced(
+                    constraint("doInfluence"),
+                    constraint("expected")
+                ),
+                body(
+                )),
+            rule("influenceResult_default",
+                // note: non-principal rule which nonetheless matches on a principal constraint
+                headReplaced(
+                    constraint("doInfluence")
+                ),
+                body(
+                ))
+        ).launch("launch", progSpec) { result ->
+
+            result.storeView().constraintSymbols() shouldBe setOf(sym0("important"), sym0("expected2"))
+
+        }.also { (builder, evalRes) ->
+
+            // instance of occurrence from the first run
+            val occInstance1 = evalRes.storeView().allOccurrences().find { it.constraint().symbol() == sym0("expected2") }
+            occInstance1 shouldNotBeSame null
+
+            builder.removeRules(
+                listOf("bar")
+            ).relaunch("invalidate bar", progSpec, evalRes.token()) { result ->
+
+                result.storeView().constraintSymbols() shouldBe setOf( sym0("bar"), sym0("expected"), sym0("expected2") )
+                val occInstances2 = result.storeView().allOccurrences().filter { it.constraint().symbol() == sym0("expected2") }
+                // instance of occurrence from the second run must be different ---
+                // if it's same it means that "fooChild" rule wasn't invalidated!
+                occInstances2.count() shouldBe 1
+                occInstances2.first() shouldNotBeSame occInstance1
             }
         }
     }
