@@ -89,13 +89,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     fun replay(observable: LogicalStateObservable, futurePos: Pos)
 
     /**
-     * Same as [replay] but stops at the last descendant of [ancestor] if [until] isn't found before that.
-     * Suitable for "restricted" replay to [Pos] that can be already invalid (i.e. not in [MatchJournal]).
-     */
-    fun replayDescendants(observable: LogicalStateObservable, ancestor: Chunk, until: Pos)
-
-
-    /**
      * Returns snapshot of the journal.
      */
     fun view(): View
@@ -191,7 +184,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
 
         override var entries: MutableList<Chunk.Entry> = mutableListOf()
 
-        override fun toString() = "(id=$evidence, ${justifications()}, activation of $occ)"
+        override fun toString() = "(id=$evidence, ${justifications()}, activation of $occ, $entries)"
     }
 
     open class Pos(val chunk: Chunk, val entriesCount: Int) {

@@ -44,6 +44,9 @@ class TestStoreAwareJournal {
             d = d.expand(occ)
         }
 
+        fun logExpand(id: String, vararg args: Any) =
+            logExpand(occurrence(id, * args))
+
         fun logFirstMatch() = hist.logMatch(d.matches().first())
 
         // log and expand occurrence while tracking its justifications
@@ -189,6 +192,182 @@ class TestStoreAwareJournal {
         }
     }
 
+    @Test
+    fun testReplayToSamePosTwice() {
+        val mockController = MockController()
+        with(programWithRules(
+            rule("rule1",
+                headKept(
+                    pconstraint("foo")
+                ),
+                body(
+                    pconstraint("bar")
+                )),
+            rule("rule2",
+                headReplaced(
+                    pconstraint("bar"),
+                    pconstraint("foo")
+                ),
+                body(
+                    pconstraint("qux")
+                )),
+            rule("rule3",
+                headKept(
+                    pconstraint("qux")
+                ),
+                body(
+                    pconstraint("lax")
+                ))
+        ))
+        {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+
+                val initPos = hist.currentPos()
+
+                logExpand(justifiedOccurrenceInit("foo"))
+
+                val fooPos = hist.currentPos()
+
+                logFirstMatch()
+                logExpandJustified("bar")
+
+                logFirstMatch()
+                logExpandJustified("qux")
+
+                val quxPos = hist.currentPos()
+
+                logFirstMatch()
+                logExpandJustified("lax")
+
+                val lastPos = hist.currentPos()
+
+                // 'replay' to the saved pos after full 'resetStore' must restore the store
+                with(hist) {
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
+
+                    resetStore()
+
+
+                    replay(mockController.logicalStateObservable(), fooPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+
+                    // second replay to the same position, nothing should change
+                    replay(mockController.logicalStateObservable(), fooPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("foo"))
+
+
+                    replay(mockController.logicalStateObservable(), quxPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"))
+
+                    // second replay to the same position, nothing should change
+                    replay(mockController.logicalStateObservable(), quxPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"))
+                }
+            }
+        }
+    }
+
+    @Test
+    @Ignore("Journal in current state doesn't track precise position inside Chunk")
+    fun testReplayInsideChunk() {
+        val mockController = MockController()
+        with(programWithRules(
+            rule("rule1",
+                headKept(
+                    pconstraint("foo")
+                ),
+                body(
+                    pconstraint("bar")
+                )),
+            rule("rule2",
+                headReplaced(
+                    pconstraint("bar"),
+                    pconstraint("foo")
+                ),
+                body(
+                    constraint("lax"),
+                    constraint("qux"),
+                    constraint("shwux"),
+                    constraint("kex"),
+                    pconstraint("buzz")
+
+                )),
+            rule("rule3",
+                headKept(
+                    constraint("qux")
+                ),
+                headReplaced(
+                    constraint("lax"),
+                    constraint("shwux")
+                ),
+                body(
+                ))
+        ))
+        {
+            with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
+
+                val initPos = hist.currentPos()
+
+                logExpand(justifiedOccurrenceInit("foo"))
+                val fooPos = hist.currentPos()
+
+                logFirstMatch()
+                logExpandJustified("bar")
+
+                logFirstMatch()
+                logExpand("lax")
+                logExpand("qux")
+                val quxPos = hist.currentPos()
+                logExpand("shwux")
+                val shwuxPos = hist.currentPos()
+
+                logFirstMatch()
+                logExpand("kex")
+                val kexPos = hist.currentPos()
+                logExpandJustified("buzz")
+
+                val lastPos = hist.currentPos()
+
+                // 'replay' to the saved pos after full 'resetStore' must restore the store
+                with(hist) {
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("kex"), sym0("buzz"))
+
+                    resetStore()
+
+
+                    replay(mockController.logicalStateObservable(), quxPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
+
+                    // second replay to the same position inside chunk, nothing should change
+                    replay(mockController.logicalStateObservable(), quxPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"))
+
+
+                    replay(mockController.logicalStateObservable(), shwuxPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("lax"), sym0("shwux"))
+
+                    // replay inside chunk when non principal-match happenned
+                    replay(mockController.logicalStateObservable(), kexPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("kex"))
+
+
+                    replay(mockController.logicalStateObservable(), lastPos)
+
+                    storeView().constraintSymbols() shouldBe setOf(sym0("qux"), sym0("kex"), sym0("buzz"))
+                }
+            }
+        }
+    }
 
     @Test
     fun testResetStoreThenReplay() {
@@ -272,7 +451,7 @@ class TestStoreAwareJournal {
                 // execute program
 
                 hist.testPush()
-                logExpand(occurrence("foo"))
+                logExpand("foo")
 
                 logFirstMatch()
                 // provide initial justification
@@ -334,8 +513,8 @@ class TestStoreAwareJournal {
 
                 // rule2
                 logFirstMatch()
-                logExpand(occurrence("bar"))
-                logExpand(occurrence("bazz"))
+                logExpand("bar")
+                logExpand("bazz")
                 // use this production later, but create it now to get relevant justs
                 val quxOcc = justifiedOccurrence("qux", hist.nextEvidence(), hist.justifications())
 
@@ -343,7 +522,7 @@ class TestStoreAwareJournal {
                 val curChunk = hist.currentPos().chunk
                 // rule3
                 logFirstMatch()
-                logExpand(occurrence("bazz"))
+                logExpand("bazz")
                 // matched on rule with heads without justifications, should remain in the same chunk
                 hist.currentPos().chunk shouldBeSame curChunk
 
@@ -451,7 +630,7 @@ class TestStoreAwareJournal {
 
                 // rule3, this rule match will remain in history untouched
                 hist.logMatch(rule1matches.last())
-                logExpand(occurrence("qux"))
+                logExpand("qux")
 
                 // execution ended
 
@@ -489,7 +668,7 @@ class TestStoreAwareJournal {
                 d.matches().count() shouldBe 1
                 // rule2b, this rule match is added at the place of rule2a match
                 logFirstMatch()
-                logExpand(occurrence("marker"))
+                logExpand("marker")
 
                 // reexecution ended
 

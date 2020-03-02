@@ -120,6 +120,10 @@ internal open class MatchJournalImpl(
 
     override fun isFront(): Boolean = current == hist.last
 
+
+    override fun reset(pastPos: MatchJournal.Pos) = resetPos(pastPos, true)
+
+//    override fun resetPos() = resetPos(Pos(initialChunk(), 0), false)
     override fun resetPos() {
         // walk backwards and reset all occurrences
         posPtr = hist.listIterator(hist.size)
@@ -129,56 +133,38 @@ internal open class MatchJournalImpl(
         }
     }
 
-    override fun reset(pastPos: MatchJournal.Pos) {
-        // walk backwards, reset occurrences and remove history from posPtr down to pastPos
+    private fun resetPos(pastPos: MatchJournal.Pos, drop: Boolean) {
         while (posPtr.hasPrevious()) {
             current = posPtr.previous()
             if (current === pastPos.chunk) {
-                // todo: need reversed?
                 resetOccurrences(current.entries.drop(pastPos.entriesCount))
-                current.entries = current.entries.subList(0, pastPos.entriesCount)
+                if (drop) current.entries = current.entries.subList(0, pastPos.entriesCount)
                 posPtr.next() // make 'posPtr' to always point right after 'current'
                 return
             }
-            // todo: need reversed?
             resetOccurrences(current.entries)
-            posPtr.remove()
+            if (drop) posPtr.remove()
         }
         if (currentPos() != pastPos) throw IllegalStateException()
     }
 
-    override fun replay(observable: LogicalStateObservable, futurePos: MatchJournal.Pos) {
-        while (posPtr.hasNext()) {
-            current = posPtr.next()
+    override fun replay(observable: LogicalStateObservable, futurePos: MatchJournal.Pos) = replayWith(futurePos, {})
+
+    private fun replayWith(futurePos: MatchJournal.Pos, action: (Chunk) -> Unit) {
+        do {
             if (futurePos.chunk === current) {
-                replayOccurrences(observable, current.entries.take(futurePos.entriesCount))
+                replayOccurrences(current.entries.take(futurePos.entriesCount))
+                action(current)
                 return
             }
-            replayOccurrences(observable, current.entries)
-        }
-        if (currentPos() != futurePos) throw IllegalStateException()
-    }
+            replayOccurrences(current.entries)
+            action(current)
 
-    override fun replayDescendants(observable: LogicalStateObservable, ancestor: Chunk, until: MatchJournal.Pos) {
-        while (posPtr.hasNext()) {
-            val previous = current
+            if (!posPtr.hasNext()) break
             current = posPtr.next()
+        } while (true)
 
-            if (until.chunk === current) {
-                replayOccurrences(observable, current.entries.take(until.entriesCount))
-                return
-            }
-
-            if (previous.isDescendantOf(ancestor) && !current.isDescendantOf(ancestor)) {
-                // reset ptr so that it points after previous chunk
-                current = previous
-                posPtr.previous()
-                return
-            }
-
-            replayOccurrences(observable, current.entries)
-        }
-        if (currentPos() != until) throw IllegalStateException()
+        if (currentPos() != futurePos) throw IllegalStateException()
     }
 
     override fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean) {
@@ -211,7 +197,8 @@ internal open class MatchJournalImpl(
         if (posPtr.hasNext()) posPtr.next()
     }
 
-    private fun resetOccurrences(occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
+    private fun resetOccurrences(occSpecs: Iterable<Chunk.Entry>) =
+        // todo: need iterating over reversed list?
         occSpecs.forEach {
             if (it.discarded) {
                 it.occ.alive = true
@@ -222,7 +209,7 @@ internal open class MatchJournalImpl(
             }
         }
 
-    private fun replayOccurrences(observable: LogicalStateObservable, occSpecs: Iterable<MatchJournal.Chunk.Entry>) =
+    private fun replayOccurrences(occSpecs: Iterable<Chunk.Entry>) =
         occSpecs.forEach {
             if (it.discarded) {
 //                it.occ.terminate(observable)
