@@ -148,6 +148,12 @@ internal open class MatchJournalImpl(
         if (currentPos() != pastPos) throw IllegalStateException()
     }
 
+    override fun forEachChunkFrom(from: Pos, action: (Chunk) -> Unit) {
+        val to = currentPos()
+        resetPos(from, false)
+        replayWith(to, action)
+    }
+
     override fun replay(observable: LogicalStateObservable, futurePos: MatchJournal.Pos) = replayWith(futurePos, {})
 
     private fun replayWith(futurePos: MatchJournal.Pos, action: (Chunk) -> Unit) {

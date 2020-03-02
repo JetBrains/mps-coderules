@@ -89,6 +89,13 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     fun replay(observable: LogicalStateObservable, futurePos: Pos)
 
     /**
+     * Walk from specified [from] position in journal until current position
+     * while applying [action] to each visited [Chunk].
+     * Occurrences are accordingly reset and replayed
+     */
+    fun forEachChunkFrom(from: Pos, action: (Chunk) -> Unit)
+
+    /**
      * Returns snapshot of the journal.
      */
     fun view(): View
@@ -166,8 +173,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
 
     class MatchChunk(override val evidence: Evidence, val match: RuleMatch) : Chunk {
         private val justifications = match.justifications().apply { add(evidence) }
-
-        fun justifyBy(other: Justified): Unit { justifications.addAll(other.justifications()) }
 
         override fun justifications(): Justifications = justifications
 

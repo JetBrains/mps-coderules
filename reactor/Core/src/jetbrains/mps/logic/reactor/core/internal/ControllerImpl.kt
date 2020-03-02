@@ -165,7 +165,9 @@ internal class ControllerImpl (
                 //  then they must be tracked somewhere above --- i.e. in its parent
                 match.allHeads().filter { it.isPrincipal() && !it.justifiedBy(parent) }.forEach {
                     // Avoid justifying parent by its child!
-                    parent.justifyBy(it)
+                    processing.forEachChunkFrom(parent.toPos()) { child ->
+                        child.justifyBy(it)
+                    }
                 }
             }
 
@@ -239,6 +241,7 @@ internal class ControllerImpl (
 
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
+                // fixme: maybe provide no evidence for non-principal constraints?
                 constraint.occurrence(logicalStateObservable(), args, processing.nextEvidence(), justifications, context.logicalContext, context.ruleUniqueTag).let { occ ->
                     trace.activate(occ)
                     processing.processActivated(this, occ, parent, status)

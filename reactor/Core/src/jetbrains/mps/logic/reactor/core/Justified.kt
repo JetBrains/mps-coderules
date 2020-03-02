@@ -66,6 +66,11 @@ interface Justified {
      */
     fun justifiedByAny(others: Collection<Justified>): Boolean =
         others.any { this.justifiedBy(it) }
+
+    /**
+     * Append [Justifications] from [other] entity to justifications of this [Justified]
+     */
+    fun justifyBy(other: Justified): Unit { justifications().addAll(other.justifications()) }
 }
 
 
