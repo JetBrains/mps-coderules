@@ -555,10 +555,13 @@ class IndexedSignatureSet {
     }
 
     fun remove(signature: Signature) {
-        signatures.add(signature)
+        signatures.remove(signature)
         for (id in signature) {
             if (index.containsKey(id)) {
                 index.get(id).remove(signature)
+                if (index.get(id).isEmpty()) {
+                    index.remove(id)
+                }
             }
         }
     }
@@ -570,6 +573,7 @@ class IndexedSignatureSet {
             for (s in index[id]) {
                 signatures.remove(s)
             }
+            index.remove(id)
         }
     }
 
