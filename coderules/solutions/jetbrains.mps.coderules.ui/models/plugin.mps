@@ -94,6 +94,7 @@
     <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
     <import index="mpcv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.ref(JDK/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
+    <import index="xi6c" ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c/java:io.reactivex.functions(jetbrains.mps.coderules/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -23727,6 +23728,28 @@
           </node>
         </node>
         <node concept="3clFbH" id="19wqdqO140O" role="3cqZAp" />
+        <node concept="3clFbF" id="5HLeEcg9fRo" role="3cqZAp">
+          <node concept="2YIFZM" id="5HLeEcg9gMw" role="3clFbG">
+            <ref role="37wK5l" to="f4yq:~RxSwingPlugins.setOnSchedule(io.reactivex.functions.Function)" resolve="setOnSchedule" />
+            <ref role="1Pybhc" to="f4yq:~RxSwingPlugins" resolve="RxSwingPlugins" />
+            <node concept="1bVj0M" id="5HLeEcg9zi5" role="37wK5m">
+              <node concept="3clFbS" id="5HLeEcg9zi6" role="1bW5cS">
+                <node concept="3clFbF" id="5HLeEcg9z_x" role="3cqZAp">
+                  <node concept="37vLTw" id="5HLeEcg9z_w" role="3clFbG">
+                    <ref role="3cqZAo" node="5HLeEcg9zjh" resolve="run" />
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTG" id="5HLeEcg9zjh" role="1bW2Oz">
+                <property role="TrG5h" value="run" />
+                <node concept="3uibUv" id="5HLeEcg9zuv" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5HLeEcg9fpx" role="3cqZAp" />
         <node concept="3clFbF" id="2mbQB8J3N58" role="3cqZAp">
           <node concept="2YIFZM" id="2mbQB8J3N6$" role="3clFbG">
             <ref role="37wK5l" to="m4y7:~Schedulers.start()" resolve="start" />

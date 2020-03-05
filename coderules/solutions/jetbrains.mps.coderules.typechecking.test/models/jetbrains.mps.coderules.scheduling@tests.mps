@@ -23,12 +23,16 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="2325284917965760583" name="jetbrains.mps.lang.test.structure.BeforeTestsMethod" flags="ig" index="0EjCn" />
+      <concept id="2325284917965760584" name="jetbrains.mps.lang.test.structure.AfterTestsMethod" flags="ig" index="0EjCo" />
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
       <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <property id="6339244025081158986" name="needsNoWriteAction" index="3OwPAg" />
+        <child id="2325284917965993569" name="beforeTests" index="0EEgL" />
+        <child id="2325284917965993580" name="afterTests" index="0EEgW" />
         <child id="1216993439383" name="methods" index="1qtyYc" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
       </concept>
@@ -59,6 +63,9 @@
       <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
+      </concept>
+      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
+        <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -561,7 +568,7 @@
                             <node concept="2WthIp" id="3KwBCAA$IIb" role="2Oq$k0" />
                             <node concept="2XshWL" id="3KwBCAA$IIc" role="2OqNvi">
                               <ref role="2WH_rO" node="3KwBCAAvofQ" resolve="scheduleCommand" />
-                              <node concept="2YIFZM" id="NKt6yn9ky5" role="2XxRq1">
+                              <node concept="2YIFZM" id="5HLeEcg9enh" role="2XxRq1">
                                 <ref role="37wK5l" to="1yqb:3KwBCAA_eqP" resolve="requireEDT" />
                                 <ref role="1Pybhc" to="1yqb:3KwBCAA_ela" resolve="MPSSchedulers" />
                               </node>
@@ -989,6 +996,47 @@
                 <ref role="37wK5l" to="18ew:~Reference.get()" resolve="get" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="0EjCn" id="5HLeEcga4zu" role="0EEgL">
+      <node concept="3clFbS" id="5HLeEcga4zv" role="2VODD2">
+        <node concept="3clFbF" id="5HLeEcg9fRo" role="3cqZAp">
+          <node concept="2YIFZM" id="5HLeEcg9gMw" role="3clFbG">
+            <ref role="1Pybhc" to="f4yq:~RxSwingPlugins" resolve="RxSwingPlugins" />
+            <ref role="37wK5l" to="f4yq:~RxSwingPlugins.setOnSchedule(io.reactivex.functions.Function)" resolve="setOnSchedule" />
+            <node concept="1bVj0M" id="5HLeEcg9zi5" role="37wK5m">
+              <node concept="3clFbS" id="5HLeEcg9zi6" role="1bW5cS">
+                <node concept="3clFbF" id="5HLeEcg9z_x" role="3cqZAp">
+                  <node concept="37vLTw" id="5HLeEcg9z_w" role="3clFbG">
+                    <ref role="3cqZAo" node="5HLeEcg9zjh" resolve="run" />
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTG" id="5HLeEcg9zjh" role="1bW2Oz">
+                <property role="TrG5h" value="run" />
+                <node concept="3uibUv" id="5HLeEcg9zuv" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2mbQB8J3N58" role="3cqZAp">
+          <node concept="2YIFZM" id="2mbQB8J3N6$" role="3clFbG">
+            <ref role="37wK5l" to="m4y7:~Schedulers.start()" resolve="start" />
+            <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="0EjCo" id="5HLeEcgaeBO" role="0EEgW">
+      <node concept="3clFbS" id="5HLeEcgaeBP" role="2VODD2">
+        <node concept="3clFbF" id="2mbQB8J3N7P" role="3cqZAp">
+          <node concept="2YIFZM" id="19wqdqNYiZp" role="3clFbG">
+            <ref role="1Pybhc" to="m4y7:~Schedulers" resolve="Schedulers" />
+            <ref role="37wK5l" to="m4y7:~Schedulers.shutdown()" resolve="shutdown" />
           </node>
         </node>
       </node>
