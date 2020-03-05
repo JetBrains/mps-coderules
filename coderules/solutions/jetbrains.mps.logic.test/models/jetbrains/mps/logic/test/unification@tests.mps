@@ -2264,8 +2264,8 @@
                         <node concept="37vLTw" id="5_6ImQYY0r2" role="2Oq$k0">
                           <ref role="3cqZAo" node="5_6ImQYXLKw" resolve="bar" />
                         </node>
-                        <node concept="liA8E" id="5_6ImQYY0r3" role="2OqNvi">
-                          <ref role="37wK5l" to="6exd:2QE4RCGndD7" resolve="asRoot" />
+                        <node concept="liA8E" id="4p5Sefk5CPN" role="2OqNvi">
+                          <ref role="37wK5l" to="6exd:1bm7a6EXvNI" resolve="copyRecursively" />
                         </node>
                       </node>
                     </node>
@@ -2276,8 +2276,8 @@
                         <node concept="37vLTw" id="5_6ImQYY0r7" role="2Oq$k0">
                           <ref role="3cqZAo" node="5_6ImQYXLLI" resolve="bazz" />
                         </node>
-                        <node concept="liA8E" id="5_6ImQYY0r8" role="2OqNvi">
-                          <ref role="37wK5l" to="6exd:2QE4RCGndD7" resolve="asRoot" />
+                        <node concept="liA8E" id="4p5Sefk5DsU" role="2OqNvi">
+                          <ref role="37wK5l" to="6exd:1bm7a6EXvNI" resolve="copyRecursively" />
                         </node>
                       </node>
                     </node>
@@ -6844,8 +6844,8 @@
           </node>
           <node concept="3vlDli" id="3t7_2FgLjnc" role="3cqZAp">
             <node concept="2OqwBi" id="3t7_2FgLjnd" role="3tpDZB">
-              <node concept="liA8E" id="3t7_2FgLjne" role="2OqNvi">
-                <ref role="37wK5l" to="6exd:2QE4RCGndD7" resolve="asRoot" />
+              <node concept="liA8E" id="4p5Sefk5Fku" role="2OqNvi">
+                <ref role="37wK5l" to="6exd:1bm7a6EXvNI" resolve="copyRecursively" />
               </node>
               <node concept="2OqwBi" id="3t7_2FgLjnf" role="2Oq$k0">
                 <node concept="2OqwBi" id="3t7_2FgLjng" role="2Oq$k0">
@@ -7200,8 +7200,8 @@
           </node>
           <node concept="3vlDli" id="3t7_2FgLav2" role="3cqZAp">
             <node concept="2OqwBi" id="3t7_2FgLav3" role="3tpDZB">
-              <node concept="liA8E" id="3t7_2FgLav4" role="2OqNvi">
-                <ref role="37wK5l" to="6exd:2QE4RCGndD7" resolve="asRoot" />
+              <node concept="liA8E" id="4p5Sefk5FxR" role="2OqNvi">
+                <ref role="37wK5l" to="6exd:1bm7a6EXvNI" resolve="copyRecursively" />
               </node>
               <node concept="2OqwBi" id="3t7_2FgLgpZ" role="2Oq$k0">
                 <node concept="2OqwBi" id="3t7_2FgLgiw" role="2Oq$k0">

@@ -252,7 +252,6 @@
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -1542,18 +1541,12 @@
                               <node concept="37vLTw" id="46l0wJhwl3q" role="37wK5m">
                                 <ref role="3cqZAo" node="6MYr6JwRS$H" resolve="bvarLogical" />
                               </node>
-                              <node concept="2OqwBi" id="6MYr6JwS1$k" role="37wK5m">
-                                <node concept="Xjq3P" id="3gNap3frV2F" role="2Oq$k0" />
-                                <node concept="liA8E" id="6MYr6JwS1$m" role="2OqNvi">
-                                  <ref role="37wK5l" node="3FIATxbQg$x" resolve="asRoot" />
-                                  <node concept="2OqwBi" id="6MYr6JwS1$n" role="37wK5m">
-                                    <node concept="37vLTw" id="6MYr6JwS1$o" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
-                                    </node>
-                                    <node concept="liA8E" id="6MYr6JwS1$p" role="2OqNvi">
-                                      <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
-                                    </node>
-                                  </node>
+                              <node concept="2OqwBi" id="6MYr6JwS1$n" role="37wK5m">
+                                <node concept="37vLTw" id="6MYr6JwS1$o" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6SkxsMzDp28" resolve="bnd" />
+                                </node>
+                                <node concept="liA8E" id="6MYr6JwS1$p" role="2OqNvi">
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
                             </node>
@@ -3957,14 +3950,8 @@
                       <ref role="3cqZAo" node="6xYPVrp_1P$" resolve="logical" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="2T1p0CFz6av" role="37wK5m">
-                    <node concept="Xjq3P" id="3gNap3frV6S" role="2Oq$k0" />
-                    <node concept="liA8E" id="2T1p0CFz6ax" role="2OqNvi">
-                      <ref role="37wK5l" node="3FIATxbQg$x" resolve="asRoot" />
-                      <node concept="37vLTw" id="2T1p0CFz6ay" role="37wK5m">
-                        <ref role="3cqZAo" node="6xYPVrp_37O" resolve="bound" />
-                      </node>
-                    </node>
+                  <node concept="37vLTw" id="4p5Sefk9MPc" role="37wK5m">
+                    <ref role="3cqZAo" node="6xYPVrp_37O" resolve="bound" />
                   </node>
                 </node>
               </node>
@@ -4145,79 +4132,6 @@
           <node concept="3cpWs6" id="1MWQR5SpMLs" role="3cqZAp">
             <node concept="37vLTw" id="1MWQR5SpMLt" role="3cqZAk">
               <ref role="3cqZAo" node="1MWQR5SpML0" resolve="msg" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2tJIrI" id="1bm7a6EU93j" role="jymVt" />
-      <node concept="3clFb_" id="3FIATxbQg$x" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="asRoot" />
-        <node concept="37vLTG" id="3FIATxbQg$y" role="3clF46">
-          <property role="TrG5h" value="term" />
-          <node concept="16syzq" id="3FIATxbQg$z" role="1tU5fm">
-            <ref role="16sUi3" node="3FIATxbQg$A" resolve="TERM" />
-          </node>
-        </node>
-        <node concept="16syzq" id="3FIATxbQg$$" role="3clF45">
-          <ref role="16sUi3" node="3FIATxbQg$A" resolve="TERM" />
-        </node>
-        <node concept="3Tm6S6" id="3gNap3frRyq" role="1B3o_S" />
-        <node concept="16euLQ" id="3FIATxbQg$A" role="16eVyc">
-          <property role="TrG5h" value="TERM" />
-          <node concept="3uibUv" id="3FIATxbQg$B" role="3ztrMU">
-            <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="3FIATxbQg$C" role="3clF47">
-          <node concept="3clFbJ" id="3gNap3frQsX" role="3cqZAp">
-            <node concept="3clFbS" id="3gNap3frQsZ" role="3clFbx">
-              <node concept="3cpWs6" id="3gNap3frReU" role="3cqZAp">
-                <node concept="10QFUN" id="3gNap3frRf2" role="3cqZAk">
-                  <node concept="2OqwBi" id="3gNap3frRf3" role="10QFUP">
-                    <node concept="1eOMI4" id="3gNap3frRf4" role="2Oq$k0">
-                      <node concept="10QFUN" id="3gNap3frRf5" role="1eOMHV">
-                        <node concept="37vLTw" id="3gNap3frRf6" role="10QFUP">
-                          <ref role="3cqZAo" node="3FIATxbQg$y" resolve="term" />
-                        </node>
-                        <node concept="3uibUv" id="3gNap3frRf7" role="10QFUM">
-                          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="3gNap3frRf8" role="2OqNvi">
-                      <ref role="37wK5l" to="6exd:2QE4RCGndD7" resolve="asRoot" />
-                    </node>
-                  </node>
-                  <node concept="16syzq" id="3gNap3frRf9" role="10QFUM">
-                    <ref role="16sUi3" node="3FIATxbQg$A" resolve="TERM" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2ZW3vV" id="3gNap3frRey" role="3clFbw">
-              <node concept="3uibUv" id="3gNap3frReD" role="2ZW6by">
-                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-              </node>
-              <node concept="37vLTw" id="3gNap3frQtt" role="2ZW6bz">
-                <ref role="3cqZAo" node="3FIATxbQg$y" resolve="term" />
-              </node>
-            </node>
-            <node concept="9aQIb" id="3gNap3frRfF" role="9aQIa">
-              <node concept="3clFbS" id="3gNap3frRfG" role="9aQI4">
-                <node concept="3cpWs6" id="3gNap3frRfX" role="3cqZAp">
-                  <node concept="37vLTw" id="3gNap3frRgg" role="3cqZAk">
-                    <ref role="3cqZAo" node="3FIATxbQg$y" resolve="term" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="P$JXv" id="3gNap3frRgA" role="lGtFl">
-          <node concept="TZ5HA" id="3gNap3frRgB" role="TZ5H$">
-            <node concept="1dT_AC" id="3gNap3frRgC" role="1dT_Ay">
-              <property role="1dT_AB" value="Type-safe asRoot operation. Copies a data form, otherwise returns the passed parameter." />
             </node>
           </node>
         </node>
