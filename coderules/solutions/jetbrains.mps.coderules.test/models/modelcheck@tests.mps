@@ -358,11 +358,6 @@
               <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;()" resolve="StructureChecker" />
             </node>
           </node>
-          <node concept="2ShNRf" id="1Lr58WFW70r" role="HW$Y0">
-            <node concept="1pGfFk" id="6lga0XrIjBS" role="2ShVmc">
-              <ref role="37wK5l" to="k2t0:~ModelPropertiesChecker.&lt;init&gt;()" resolve="ModelPropertiesChecker" />
-            </node>
-          </node>
           <node concept="2ShNRf" id="1Lr58WFWaaF" role="HW$Y0">
             <node concept="1pGfFk" id="6lga0XrIk8C" role="2ShVmc">
               <ref role="37wK5l" to="k2t0:~ModuleChecker.&lt;init&gt;()" resolve="ModuleChecker" />
