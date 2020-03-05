@@ -593,7 +593,7 @@
                 <node concept="liA8E" id="3KwBCAA$IIl" role="2OqNvi">
                   <ref role="37wK5l" to="unkn:~Single.timeout(long,java.util.concurrent.TimeUnit)" resolve="timeout" />
                   <node concept="3cmrfG" id="3KwBCAA$IIm" role="37wK5m">
-                    <property role="3cmrfH" value="1" />
+                    <property role="3cmrfH" value="10" />
                   </node>
                   <node concept="Rm8GO" id="3KwBCAA$IIn" role="37wK5m">
                     <ref role="Rm8GQ" to="5zyv:~TimeUnit.SECONDS" resolve="SECONDS" />
@@ -824,7 +824,7 @@
                           <node concept="liA8E" id="3KwBCAAwrcc" role="2OqNvi">
                             <ref role="37wK5l" to="unkn:~Single.timeout(long,java.util.concurrent.TimeUnit)" resolve="timeout" />
                             <node concept="3cmrfG" id="3KwBCAAwrcd" role="37wK5m">
-                              <property role="3cmrfH" value="1" />
+                              <property role="3cmrfH" value="10" />
                             </node>
                             <node concept="Rm8GO" id="3KwBCAAwrce" role="37wK5m">
                               <ref role="Rm8GQ" to="5zyv:~TimeUnit.SECONDS" resolve="SECONDS" />
