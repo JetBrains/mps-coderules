@@ -2454,50 +2454,6 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="NKt6yn9_UO" role="3bR37C">
-          <node concept="1BurEX" id="NKt6yn9_UP" role="1SiIV1">
-            <node concept="398BVA" id="NKt6yn9_UC" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="NKt6yn9_UD" role="iGT6I">
-                <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="NKt6yn9_UE" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="NKt6yn9_UF" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.coderules" />
-                    <node concept="2Ry0Ak" id="NKt6yn9_UG" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="NKt6yn9_UH" role="2Ry0An">
-                        <property role="2Ry0Am" value="rxjava-2.1.1.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="NKt6yn9_V2" role="3bR37C">
-          <node concept="1BurEX" id="NKt6yn9_V3" role="1SiIV1">
-            <node concept="398BVA" id="NKt6yn9_UQ" role="1BurEY">
-              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
-              <node concept="2Ry0Ak" id="NKt6yn9_UR" role="iGT6I">
-                <property role="2Ry0Am" value="coderules" />
-                <node concept="2Ry0Ak" id="NKt6yn9_US" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="NKt6yn9_UT" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.coderules" />
-                    <node concept="2Ry0Ak" id="NKt6yn9_UU" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="NKt6yn9_UV" role="2Ry0An">
-                        <property role="2Ry0Am" value="rxjava2-swing-0.2.1.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="1SiIV0" id="xaaVXuXWzS" role="3bR37C">
           <node concept="3bR9La" id="xaaVXuXWzT" role="1SiIV1">
             <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
@@ -2530,6 +2486,50 @@
             </node>
             <node concept="3qWCbU" id="7zIaasjWoVg" role="3LXTna">
               <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5HLeEcg2$IN" role="3bR37C">
+          <node concept="1BurEX" id="5HLeEcg2$IO" role="1SiIV1">
+            <node concept="398BVA" id="5HLeEcg2$IB" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+              <node concept="2Ry0Ak" id="5HLeEcg2$IC" role="iGT6I">
+                <property role="2Ry0Am" value="coderules" />
+                <node concept="2Ry0Ak" id="5HLeEcg2$ID" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="5HLeEcg2$IE" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.coderules" />
+                    <node concept="2Ry0Ak" id="5HLeEcg2$IF" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="5HLeEcg2$IG" role="2Ry0An">
+                        <property role="2Ry0Am" value="rxjava-2.2.18.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5HLeEcg2$J1" role="3bR37C">
+          <node concept="1BurEX" id="5HLeEcg2$J2" role="1SiIV1">
+            <node concept="398BVA" id="5HLeEcg2$IP" role="1BurEY">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
+              <node concept="2Ry0Ak" id="5HLeEcg2$IQ" role="iGT6I">
+                <property role="2Ry0Am" value="coderules" />
+                <node concept="2Ry0Ak" id="5HLeEcg2$IR" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="5HLeEcg2$IS" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.coderules" />
+                    <node concept="2Ry0Ak" id="5HLeEcg2$IT" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="5HLeEcg2$IU" role="2Ry0An">
+                        <property role="2Ry0Am" value="rxjava2-swing-0.3.7.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2987,7 +2987,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="NKt6yn9Any" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/rxjava-2.1.1.jar" />
+                <property role="3yLZsk" value="../lib/rxjava-2.2.1.8jar" />
                 <node concept="398BVA" id="NKt6yn9Anz" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="NKt6yn9An$" role="iGT6I">
@@ -2998,8 +2998,8 @@
                         <property role="2Ry0Am" value="jetbrains.mps.coderules" />
                         <node concept="2Ry0Ak" id="NKt6yn9AnB" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
-                          <node concept="2Ry0Ak" id="NKt6yn9AnC" role="2Ry0An">
-                            <property role="2Ry0Am" value="rxjava-2.1.1.jar" />
+                          <node concept="2Ry0Ak" id="5HLeEcg2$L_" role="2Ry0An">
+                            <property role="2Ry0Am" value="rxjava-2.2.18.jar" />
                           </node>
                         </node>
                       </node>
@@ -3008,7 +3008,7 @@
                 </node>
               </node>
               <node concept="3yLZsm" id="NKt6yn9AnD" role="3yL2VB">
-                <property role="3yLZsk" value="../lib/rxjava2-swing-0.2.1.jar" />
+                <property role="3yLZsk" value="../lib/rxjava2-swing-0.3.7.jar" />
                 <node concept="398BVA" id="NKt6yn9AnE" role="3yLZsn">
                   <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.coderules_home" />
                   <node concept="2Ry0Ak" id="NKt6yn9AnF" role="iGT6I">
@@ -3019,8 +3019,8 @@
                         <property role="2Ry0Am" value="jetbrains.mps.coderules" />
                         <node concept="2Ry0Ak" id="NKt6yn9AnI" role="2Ry0An">
                           <property role="2Ry0Am" value="lib" />
-                          <node concept="2Ry0Ak" id="NKt6yn9AnJ" role="2Ry0An">
-                            <property role="2Ry0Am" value="rxjava2-swing-0.2.1.jar" />
+                          <node concept="2Ry0Ak" id="5HLeEcg2$OB" role="2Ry0An">
+                            <property role="2Ry0Am" value="rxjava2-swing-0.3.7.jar" />
                           </node>
                         </node>
                       </node>

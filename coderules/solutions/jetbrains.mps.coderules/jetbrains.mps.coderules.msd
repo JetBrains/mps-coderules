@@ -17,8 +17,8 @@
   </facets>
   <stubModelEntries>
     <stubModelEntry path="${module}/lib/reactive-streams-1.0.0.final.jar" />
-    <stubModelEntry path="${module}/lib/rxjava-2.1.1.jar" />
-    <stubModelEntry path="${module}/lib/rxjava2-swing-0.2.1.jar" />
+    <stubModelEntry path="${module}/lib/rxjava-2.2.18.jar" />
+    <stubModelEntry path="${module}/lib/rxjava2-swing-0.3.7.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
