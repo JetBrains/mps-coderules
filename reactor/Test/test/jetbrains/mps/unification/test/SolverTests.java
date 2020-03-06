@@ -320,6 +320,12 @@ public class SolverTests {
                 bind(var("X"), var("Y"))
         );
         assertUnifiesWithBindings(
+                MockTermsParser.parseTerm("f{^X}"),
+                MockTermsParser.parseTerm("f{ Y}"),
+
+                bind(var("X"), var("Y"))
+        );
+        assertUnifiesWithBindings(
                 MockTermsParser.parseTerm("a{b ^X}"),
                 MockTermsParser.parseTerm("a{b c{d}}"),
 
@@ -568,6 +574,60 @@ public class SolverTests {
         );
     }
 
+    @Test
+    public void testFailCyclicVarRef() throws Exception {
+//        assertUnificationFails(
+//                MockTermsParser.parseTerm("X"),
+//                MockTermsParser.parseTerm("f{^X}"),
+//
+//                CYCLE_DETECTED
+//        );
+//        assertUnificationFails(
+//                MockTermsParser.parseTerm("f{X}"),
+//                MockTermsParser.parseTerm("f{f{^X}}"),
+//
+//                CYCLE_DETECTED
+//        );
+//        assertUnificationFails(
+//                MockTermsParser.parseTerm("t {@1 f{X} g{^1}}"),
+//                MockTermsParser.parseTerm("t {   f{X} X    }"),
+//
+//                CYCLE_DETECTED
+//        );
+//        assertUnificationFails(
+//                MockTermsParser.parseTerm("t { f{^X} X     }"),
+//                MockTermsParser.parseTerm("t { Y     g{^Y} }"),
+//
+//                CYCLE_DETECTED
+//        );
+
+        // pass
+        assertUnificationFails(
+                MockTermsParser.parseTerm("t { ^X Y    }"),
+                MockTermsParser.parseTerm("t {  Y f{X} }"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                MockTermsParser.parseTerm("t { X     Y }"),
+                MockTermsParser.parseTerm("t { f{Y} ^X }"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                MockTermsParser.parseTerm("t { ^X    Y }"),
+                MockTermsParser.parseTerm("t { f{Y} ^X }"),
+
+                CYCLE_DETECTED
+        );
+        // fixme: infinitely cycles !!
+        assertUnificationFails(
+                MockTermsParser.parseTerm("t { ^X ^Y    }"),
+                MockTermsParser.parseTerm("t {  Y f{X} }"),
+
+                CYCLE_DETECTED
+        );
+    }
 
     @Test
     public void joinedLogicals() throws Exception {
