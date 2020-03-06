@@ -644,8 +644,13 @@
       </node>
       <node concept="3clFbS" id="7BhUeN7yuR5" role="3clF47">
         <node concept="3clFbF" id="7BhUeN7yvv0" role="3cqZAp">
-          <node concept="37vLTw" id="7BhUeN7yvuX" role="3clFbG">
-            <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
+          <node concept="2OqwBi" id="4p5SefkgWku" role="3clFbG">
+            <node concept="37vLTw" id="7BhUeN7yvuX" role="2Oq$k0">
+              <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
+            </node>
+            <node concept="liA8E" id="4p5SefkgWZd" role="2OqNvi">
+              <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
+            </node>
           </node>
         </node>
       </node>
@@ -1181,8 +1186,13 @@
           <node concept="9aQIb" id="7BhUeN7yBaf" role="9aQIa">
             <node concept="3clFbS" id="7BhUeN7yBag" role="9aQI4">
               <node concept="3cpWs6" id="7BhUeN7yBbL" role="3cqZAp">
-                <node concept="37vLTw" id="7BhUeN7yBeP" role="3cqZAk">
-                  <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
+                <node concept="2OqwBi" id="4p5SefkgTtp" role="3cqZAk">
+                  <node concept="37vLTw" id="7BhUeN7yBeP" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3gNap3fN2iq" resolve="logical" />
+                  </node>
+                  <node concept="liA8E" id="4p5SefkgUEv" role="2OqNvi">
+                    <ref role="37wK5l" to="bj13:~Logical.findRoot()" resolve="findRoot" />
+                  </node>
                 </node>
               </node>
             </node>

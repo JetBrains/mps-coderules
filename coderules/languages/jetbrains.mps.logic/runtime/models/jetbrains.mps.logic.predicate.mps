@@ -5825,89 +5825,50 @@
                 <node concept="3clFbS" id="6SwZmzBBWe3" role="2LFqv$">
                   <node concept="3clFbJ" id="6SwZmzBBXQl" role="3cqZAp">
                     <node concept="3clFbS" id="6SwZmzBBXQn" role="3clFbx">
-                      <node concept="3cpWs8" id="6SwZmzBBYur" role="3cqZAp">
-                        <node concept="3cpWsn" id="6SwZmzBBYus" role="3cpWs9">
-                          <property role="TrG5h" value="vLogical" />
-                          <node concept="3uibUv" id="6SwZmzBBYut" role="1tU5fm">
-                            <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                            <node concept="3uibUv" id="6SwZmzBBYuu" role="11_B2D">
-                              <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
+                      <node concept="3SKdUt" id="4p5Sefki$7U" role="3cqZAp">
+                        <node concept="1PaTwC" id="4p5Sefki$7V" role="3ndbpf">
+                          <node concept="3oM_SD" id="4p5Sefki$7X" role="1PaTwD">
+                            <property role="3oM_SC" value="same" />
+                          </node>
+                          <node concept="3oM_SD" id="4p5Sefki$gz" role="1PaTwD">
+                            <property role="3oM_SC" value="variable" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="4p5SefkixJr" role="3cqZAp">
+                        <node concept="3clFbS" id="4p5SefkixJt" role="3clFbx">
+                          <node concept="3N13vt" id="4p5SefkizPA" role="3cqZAp" />
+                        </node>
+                        <node concept="3clFbC" id="4p5SefkiyPx" role="3clFbw">
+                          <node concept="2OqwBi" id="4p5SefkizuM" role="3uHU7w">
+                            <node concept="2OqwBi" id="4p5Sefkiz4D" role="2Oq$k0">
+                              <node concept="37vLTw" id="4p5SefkiyYF" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
+                              </node>
+                              <node concept="liA8E" id="4p5SefkizaB" role="2OqNvi">
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="4p5SefkizLs" role="2OqNvi">
+                              <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
                             </node>
                           </node>
-                          <node concept="2OqwBi" id="6SwZmzBBYuv" role="33vP2m">
-                            <node concept="Xjq3P" id="6SwZmzBBYuw" role="2Oq$k0" />
-                            <node concept="liA8E" id="6SwZmzBBYux" role="2OqNvi">
-                              <ref role="37wK5l" node="6SwZmzBBLvb" resolve="asLogicalTerm" />
-                              <node concept="2OqwBi" id="6SwZmzBC0bY" role="37wK5m">
-                                <node concept="37vLTw" id="6SwZmzBC04y" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
-                                </node>
-                                <node concept="liA8E" id="6SwZmzBC0kj" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
-                                </node>
+                          <node concept="2OqwBi" id="4p5Sefkiyu9" role="3uHU7B">
+                            <node concept="2OqwBi" id="4p5Sefkiy5n" role="2Oq$k0">
+                              <node concept="37vLTw" id="4p5SefkixY_" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                               </node>
+                              <node concept="liA8E" id="4p5SefkiyaS" role="2OqNvi">
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="4p5SefkiyJY" role="2OqNvi">
+                              <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node concept="3cpWs8" id="6SwZmzBCqd_" role="3cqZAp">
-                        <node concept="3cpWsn" id="6SwZmzBCqdA" role="3cpWs9">
-                          <property role="TrG5h" value="tLogical" />
-                          <node concept="3uibUv" id="6SwZmzBCqdB" role="1tU5fm">
-                            <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                            <node concept="3uibUv" id="6SwZmzBCqdC" role="11_B2D">
-                              <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="6SwZmzBCqdD" role="33vP2m">
-                            <node concept="Xjq3P" id="6SwZmzBCqdE" role="2Oq$k0" />
-                            <node concept="liA8E" id="6SwZmzBCqdF" role="2OqNvi">
-                              <ref role="37wK5l" node="6SwZmzBBLvb" resolve="asLogicalTerm" />
-                              <node concept="2OqwBi" id="6SwZmzBCqdG" role="37wK5m">
-                                <node concept="37vLTw" id="6SwZmzBCqdH" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
-                                </node>
-                                <node concept="liA8E" id="6SwZmzBCqdI" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbJ" id="6SwZmzBCrRM" role="3cqZAp">
-                        <node concept="3clFbS" id="6SwZmzBCrRO" role="3clFbx">
-                          <node concept="3SKdUt" id="6SwZmzBCJte" role="3cqZAp">
-                            <node concept="1PaTwC" id="589APehYy4S" role="3ndbpf">
-                              <node concept="3oM_SD" id="589APehYy4T" role="1PaTwD">
-                                <property role="3oM_SC" value="same" />
-                              </node>
-                              <node concept="3oM_SD" id="589APehYy4U" role="1PaTwD">
-                                <property role="3oM_SC" value="variable" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3N13vt" id="6SwZmzBCx7k" role="3cqZAp" />
-                        </node>
-                        <node concept="3clFbC" id="6SwZmzBCuRS" role="3clFbw">
-                          <node concept="2OqwBi" id="6SwZmzBCvsJ" role="3uHU7w">
-                            <node concept="37vLTw" id="6SwZmzBCvlS" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6SwZmzBCqdA" resolve="tLogical" />
-                            </node>
-                            <node concept="liA8E" id="6SwZmzBCwD7" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="6SwZmzBCs5M" role="3uHU7B">
-                            <node concept="37vLTw" id="6SwZmzBCrXm" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6SwZmzBBYus" resolve="vLogical" />
-                            </node>
-                            <node concept="liA8E" id="6SwZmzBCtkA" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                      <node concept="3clFbH" id="4p5Sefki$QG" role="3cqZAp" />
                     </node>
                     <node concept="1Wc70l" id="6SwZmzBCptl" role="3clFbw">
                       <node concept="1rXfSq" id="6SwZmzBCpKa" role="3uHU7w">
@@ -5959,75 +5920,45 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="6SwZmzBGn_r" role="3eOfB_">
-                        <node concept="3cpWs8" id="6SwZmzBGn_s" role="3cqZAp">
-                          <node concept="3cpWsn" id="6SwZmzBGn_t" role="3cpWs9">
-                            <property role="TrG5h" value="vLogical" />
-                            <node concept="3uibUv" id="6SwZmzBGn_u" role="1tU5fm">
-                              <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                              <node concept="3qTvmN" id="6SwZmzBGn_v" role="11_B2D" />
+                        <node concept="3SKdUt" id="4p5Sefki$U6" role="3cqZAp">
+                          <node concept="1PaTwC" id="4p5Sefki$U7" role="3ndbpf">
+                            <node concept="3oM_SD" id="4p5Sefki$U8" role="1PaTwD">
+                              <property role="3oM_SC" value="same" />
                             </node>
-                            <node concept="1rXfSq" id="6SwZmzBGn_w" role="33vP2m">
-                              <ref role="37wK5l" node="6SwZmzBBLvF" resolve="asLogicalValue" />
-                              <node concept="2OqwBi" id="6SwZmzBGn_x" role="37wK5m">
-                                <node concept="37vLTw" id="6SwZmzBGn_y" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
-                                </node>
-                                <node concept="liA8E" id="6SwZmzBGn_z" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
-                                </node>
-                              </node>
+                            <node concept="3oM_SD" id="4p5Sefki$U9" role="1PaTwD">
+                              <property role="3oM_SC" value="variable" />
                             </node>
                           </node>
                         </node>
-                        <node concept="3cpWs8" id="6SwZmzBGn_$" role="3cqZAp">
-                          <node concept="3cpWsn" id="6SwZmzBGn__" role="3cpWs9">
-                            <property role="TrG5h" value="tLogical" />
-                            <node concept="3uibUv" id="6SwZmzBGn_A" role="1tU5fm">
-                              <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                              <node concept="3qTvmN" id="6SwZmzBGn_B" role="11_B2D" />
-                            </node>
-                            <node concept="1rXfSq" id="6SwZmzBGn_C" role="33vP2m">
-                              <ref role="37wK5l" node="6SwZmzBBLvF" resolve="asLogicalValue" />
-                              <node concept="2OqwBi" id="6SwZmzBGn_D" role="37wK5m">
-                                <node concept="37vLTw" id="6SwZmzBGn_E" role="2Oq$k0">
+                        <node concept="3clFbJ" id="4p5Sefki_qF" role="3cqZAp">
+                          <node concept="3clFbS" id="4p5Sefki_qG" role="3clFbx">
+                            <node concept="3N13vt" id="4p5Sefki_qH" role="3cqZAp" />
+                          </node>
+                          <node concept="3clFbC" id="4p5Sefki_qI" role="3clFbw">
+                            <node concept="2OqwBi" id="4p5Sefki_qJ" role="3uHU7w">
+                              <node concept="2OqwBi" id="4p5Sefki_qK" role="2Oq$k0">
+                                <node concept="37vLTw" id="4p5Sefki_qL" role="2Oq$k0">
                                   <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                                 </node>
-                                <node concept="liA8E" id="6SwZmzBGn_F" role="2OqNvi">
+                                <node concept="liA8E" id="4p5Sefki_qM" role="2OqNvi">
                                   <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
+                              <node concept="liA8E" id="4p5Sefki_qN" role="2OqNvi">
+                                <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
+                              </node>
                             </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbJ" id="6SwZmzBGn_G" role="3cqZAp">
-                          <node concept="3clFbS" id="6SwZmzBGn_H" role="3clFbx">
-                            <node concept="3SKdUt" id="6SwZmzBGn_I" role="3cqZAp">
-                              <node concept="1PaTwC" id="589APehYy4V" role="3ndbpf">
-                                <node concept="3oM_SD" id="589APehYy4W" role="1PaTwD">
-                                  <property role="3oM_SC" value="same" />
+                            <node concept="2OqwBi" id="4p5Sefki_qO" role="3uHU7B">
+                              <node concept="2OqwBi" id="4p5Sefki_qP" role="2Oq$k0">
+                                <node concept="37vLTw" id="4p5Sefki_qQ" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6SwZmzBBWe4" resolve="bnd" />
                                 </node>
-                                <node concept="3oM_SD" id="589APehYy4X" role="1PaTwD">
-                                  <property role="3oM_SC" value="variable" />
+                                <node concept="liA8E" id="4p5Sefki_qR" role="2OqNvi">
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                 </node>
                               </node>
-                            </node>
-                            <node concept="3N13vt" id="6SwZmzBGn_K" role="3cqZAp" />
-                          </node>
-                          <node concept="3clFbC" id="6SwZmzBGn_L" role="3clFbw">
-                            <node concept="2OqwBi" id="6SwZmzBGn_M" role="3uHU7w">
-                              <node concept="37vLTw" id="6SwZmzBGn_N" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6SwZmzBGn__" resolve="tLogical" />
-                              </node>
-                              <node concept="liA8E" id="6SwZmzBGn_O" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="6SwZmzBGn_P" role="3uHU7B">
-                              <node concept="37vLTw" id="6SwZmzBGn_Q" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6SwZmzBGn_t" resolve="vLogical" />
-                              </node>
-                              <node concept="liA8E" id="6SwZmzBGn_R" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
+                              <node concept="liA8E" id="4p5Sefki_qS" role="2OqNvi">
+                                <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
                               </node>
                             </node>
                           </node>
@@ -6576,89 +6507,50 @@
                 <node concept="3clFbS" id="6SwZmzBD5Ah" role="2LFqv$">
                   <node concept="3clFbJ" id="6SwZmzBD5Ai" role="3cqZAp">
                     <node concept="3clFbS" id="6SwZmzBD5Aj" role="3clFbx">
-                      <node concept="3cpWs8" id="6SwZmzBD5Ak" role="3cqZAp">
-                        <node concept="3cpWsn" id="6SwZmzBD5Al" role="3cpWs9">
-                          <property role="TrG5h" value="vLogical" />
-                          <node concept="3uibUv" id="6SwZmzBD5Am" role="1tU5fm">
-                            <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                            <node concept="3uibUv" id="6SwZmzBD5An" role="11_B2D">
-                              <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
+                      <node concept="3SKdUt" id="4p5SefkiALB" role="3cqZAp">
+                        <node concept="1PaTwC" id="4p5SefkiALC" role="3ndbpf">
+                          <node concept="3oM_SD" id="4p5SefkiALE" role="1PaTwD">
+                            <property role="3oM_SC" value="same" />
+                          </node>
+                          <node concept="3oM_SD" id="4p5SefkiANR" role="1PaTwD">
+                            <property role="3oM_SC" value="variable" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="4p5Sefki_z$" role="3cqZAp">
+                        <node concept="3clFbS" id="4p5Sefki_z_" role="3clFbx">
+                          <node concept="3N13vt" id="4p5Sefki_zA" role="3cqZAp" />
+                        </node>
+                        <node concept="3clFbC" id="4p5Sefki_zB" role="3clFbw">
+                          <node concept="2OqwBi" id="4p5Sefki_zC" role="3uHU7w">
+                            <node concept="2OqwBi" id="4p5Sefki_zD" role="2Oq$k0">
+                              <node concept="37vLTw" id="4p5Sefki_zE" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
+                              </node>
+                              <node concept="liA8E" id="4p5Sefki_zF" role="2OqNvi">
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="4p5Sefki_zG" role="2OqNvi">
+                              <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
                             </node>
                           </node>
-                          <node concept="2OqwBi" id="6SwZmzBD5Ao" role="33vP2m">
-                            <node concept="Xjq3P" id="6SwZmzBD5Ap" role="2Oq$k0" />
-                            <node concept="liA8E" id="6SwZmzBD5Aq" role="2OqNvi">
-                              <ref role="37wK5l" node="6SwZmzBBLvb" resolve="asLogicalTerm" />
-                              <node concept="2OqwBi" id="6SwZmzBD5Ar" role="37wK5m">
-                                <node concept="37vLTw" id="6SwZmzBD5As" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
-                                </node>
-                                <node concept="liA8E" id="6SwZmzBD5At" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
-                                </node>
+                          <node concept="2OqwBi" id="4p5Sefki_zH" role="3uHU7B">
+                            <node concept="2OqwBi" id="4p5Sefki_zI" role="2Oq$k0">
+                              <node concept="37vLTw" id="4p5Sefki_zJ" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                               </node>
+                              <node concept="liA8E" id="4p5Sefki_zK" role="2OqNvi">
+                                <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="4p5Sefki_zL" role="2OqNvi">
+                              <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node concept="3cpWs8" id="6SwZmzBD5Au" role="3cqZAp">
-                        <node concept="3cpWsn" id="6SwZmzBD5Av" role="3cpWs9">
-                          <property role="TrG5h" value="tLogical" />
-                          <node concept="3uibUv" id="6SwZmzBD5Aw" role="1tU5fm">
-                            <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                            <node concept="3uibUv" id="6SwZmzBD5Ax" role="11_B2D">
-                              <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="6SwZmzBD5Ay" role="33vP2m">
-                            <node concept="Xjq3P" id="6SwZmzBD5Az" role="2Oq$k0" />
-                            <node concept="liA8E" id="6SwZmzBD5A$" role="2OqNvi">
-                              <ref role="37wK5l" node="6SwZmzBBLvb" resolve="asLogicalTerm" />
-                              <node concept="2OqwBi" id="6SwZmzBD5A_" role="37wK5m">
-                                <node concept="37vLTw" id="6SwZmzBD5AA" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
-                                </node>
-                                <node concept="liA8E" id="6SwZmzBD5AB" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbJ" id="6SwZmzBD5AC" role="3cqZAp">
-                        <node concept="3clFbS" id="6SwZmzBD5AD" role="3clFbx">
-                          <node concept="3SKdUt" id="6SwZmzBD5AE" role="3cqZAp">
-                            <node concept="1PaTwC" id="589APehYy56" role="3ndbpf">
-                              <node concept="3oM_SD" id="589APehYy57" role="1PaTwD">
-                                <property role="3oM_SC" value="same" />
-                              </node>
-                              <node concept="3oM_SD" id="589APehYy58" role="1PaTwD">
-                                <property role="3oM_SC" value="variable" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3N13vt" id="6SwZmzBD5AG" role="3cqZAp" />
-                        </node>
-                        <node concept="3clFbC" id="6SwZmzBD5AH" role="3clFbw">
-                          <node concept="2OqwBi" id="6SwZmzBD5AI" role="3uHU7w">
-                            <node concept="37vLTw" id="6SwZmzBD5AJ" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6SwZmzBD5Av" resolve="tLogical" />
-                            </node>
-                            <node concept="liA8E" id="6SwZmzBD5AK" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="6SwZmzBD5AL" role="3uHU7B">
-                            <node concept="37vLTw" id="6SwZmzBD5AM" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6SwZmzBD5Al" resolve="vLogical" />
-                            </node>
-                            <node concept="liA8E" id="6SwZmzBD5AN" role="2OqNvi">
-                              <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                      <node concept="3clFbH" id="4p5SefkiA8E" role="3cqZAp" />
                     </node>
                     <node concept="1Wc70l" id="6SwZmzBD5AO" role="3clFbw">
                       <node concept="1rXfSq" id="6SwZmzBD5AP" role="3uHU7w">
@@ -6710,75 +6602,45 @@
                         </node>
                       </node>
                       <node concept="3clFbS" id="6SwZmzBG8UE" role="3eOfB_">
-                        <node concept="3cpWs8" id="6SwZmzBGbbX" role="3cqZAp">
-                          <node concept="3cpWsn" id="6SwZmzBGbbY" role="3cpWs9">
-                            <property role="TrG5h" value="vLogical" />
-                            <node concept="3uibUv" id="6SwZmzBGbbQ" role="1tU5fm">
-                              <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                              <node concept="3qTvmN" id="6SwZmzBGdiR" role="11_B2D" />
+                        <node concept="3SKdUt" id="4p5SefkiASL" role="3cqZAp">
+                          <node concept="1PaTwC" id="4p5SefkiASM" role="3ndbpf">
+                            <node concept="3oM_SD" id="4p5SefkiAVb" role="1PaTwD">
+                              <property role="3oM_SC" value="same" />
                             </node>
-                            <node concept="1rXfSq" id="6SwZmzBGbbZ" role="33vP2m">
-                              <ref role="37wK5l" node="6SwZmzBBLvF" resolve="asLogicalValue" />
-                              <node concept="2OqwBi" id="6SwZmzBGbc0" role="37wK5m">
-                                <node concept="37vLTw" id="6SwZmzBGbc1" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
-                                </node>
-                                <node concept="liA8E" id="6SwZmzBGbc2" role="2OqNvi">
-                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
-                                </node>
-                              </node>
+                            <node concept="3oM_SD" id="4p5SefkiAVd" role="1PaTwD">
+                              <property role="3oM_SC" value="variable" />
                             </node>
                           </node>
                         </node>
-                        <node concept="3cpWs8" id="6SwZmzBGfdM" role="3cqZAp">
-                          <node concept="3cpWsn" id="6SwZmzBGfdN" role="3cpWs9">
-                            <property role="TrG5h" value="tLogical" />
-                            <node concept="3uibUv" id="6SwZmzBGfdO" role="1tU5fm">
-                              <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                              <node concept="3qTvmN" id="6SwZmzBGfdP" role="11_B2D" />
-                            </node>
-                            <node concept="1rXfSq" id="6SwZmzBGfdQ" role="33vP2m">
-                              <ref role="37wK5l" node="6SwZmzBBLvF" resolve="asLogicalValue" />
-                              <node concept="2OqwBi" id="6SwZmzBGfdR" role="37wK5m">
-                                <node concept="37vLTw" id="6SwZmzBGfdS" role="2Oq$k0">
+                        <node concept="3clFbJ" id="4p5SefkiAaM" role="3cqZAp">
+                          <node concept="3clFbS" id="4p5SefkiAaN" role="3clFbx">
+                            <node concept="3N13vt" id="4p5SefkiAaO" role="3cqZAp" />
+                          </node>
+                          <node concept="3clFbC" id="4p5SefkiAaP" role="3clFbw">
+                            <node concept="2OqwBi" id="4p5SefkiAaQ" role="3uHU7w">
+                              <node concept="2OqwBi" id="4p5SefkiAaR" role="2Oq$k0">
+                                <node concept="37vLTw" id="4p5SefkiAaS" role="2Oq$k0">
                                   <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                                 </node>
-                                <node concept="liA8E" id="6SwZmzBGfdT" role="2OqNvi">
+                                <node concept="liA8E" id="4p5SefkiAaT" role="2OqNvi">
                                   <ref role="37wK5l" to="yt73:~Substitution$Binding.term()" resolve="term" />
                                 </node>
                               </node>
+                              <node concept="liA8E" id="4p5SefkiAaU" role="2OqNvi">
+                                <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
+                              </node>
                             </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbJ" id="6SwZmzBGgQs" role="3cqZAp">
-                          <node concept="3clFbS" id="6SwZmzBGgQt" role="3clFbx">
-                            <node concept="3SKdUt" id="6SwZmzBGgQu" role="3cqZAp">
-                              <node concept="1PaTwC" id="589APehYy59" role="3ndbpf">
-                                <node concept="3oM_SD" id="589APehYy5a" role="1PaTwD">
-                                  <property role="3oM_SC" value="same" />
+                            <node concept="2OqwBi" id="4p5SefkiAaV" role="3uHU7B">
+                              <node concept="2OqwBi" id="4p5SefkiAaW" role="2Oq$k0">
+                                <node concept="37vLTw" id="4p5SefkiAaX" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6SwZmzBD5B9" resolve="bnd" />
                                 </node>
-                                <node concept="3oM_SD" id="589APehYy5b" role="1PaTwD">
-                                  <property role="3oM_SC" value="variable" />
+                                <node concept="liA8E" id="4p5SefkiAaY" role="2OqNvi">
+                                  <ref role="37wK5l" to="yt73:~Substitution$Binding.var()" resolve="var" />
                                 </node>
                               </node>
-                            </node>
-                            <node concept="3N13vt" id="6SwZmzBGgQw" role="3cqZAp" />
-                          </node>
-                          <node concept="3clFbC" id="6SwZmzBGgQx" role="3clFbw">
-                            <node concept="2OqwBi" id="6SwZmzBGgQy" role="3uHU7w">
-                              <node concept="37vLTw" id="6SwZmzBGgQz" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6SwZmzBGfdN" resolve="tLogical" />
-                              </node>
-                              <node concept="liA8E" id="6SwZmzBGgQ$" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="6SwZmzBGgQ_" role="3uHU7B">
-                              <node concept="37vLTw" id="6SwZmzBGgQA" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6SwZmzBGbbY" resolve="vLogical" />
-                              </node>
-                              <node concept="liA8E" id="6SwZmzBGgQB" role="2OqNvi">
-                                <ref role="37wK5l" to="bj13:~MutableLogical.findRoot()" resolve="findRoot" />
+                              <node concept="liA8E" id="4p5SefkiAaZ" role="2OqNvi">
+                                <ref role="37wK5l" to="yt73:~Term.symbol()" resolve="symbol" />
                               </node>
                             </node>
                           </node>
@@ -7305,159 +7167,6 @@
           <node concept="3cpWs6" id="390NiL16JP1" role="3cqZAp">
             <node concept="37vLTw" id="390NiL16JP2" role="3cqZAk">
               <ref role="3cqZAo" node="390NiL16JO_" resolve="msg" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2tJIrI" id="6SwZmzBBO54" role="jymVt" />
-      <node concept="3clFb_" id="6SwZmzBBLvb" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="asLogicalTerm" />
-        <node concept="37vLTG" id="6SwZmzBBLvc" role="3clF46">
-          <property role="TrG5h" value="var" />
-          <node concept="16syzq" id="6SwZmzBBLvd" role="1tU5fm">
-            <ref role="16sUi3" node="6SwZmzBBLvh" resolve="TERM" />
-          </node>
-        </node>
-        <node concept="3uibUv" id="6SwZmzBBLve" role="3clF45">
-          <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-          <node concept="16syzq" id="6SwZmzBBLvf" role="11_B2D">
-            <ref role="16sUi3" node="6SwZmzBBLvh" resolve="TERM" />
-          </node>
-        </node>
-        <node concept="3Tm6S6" id="6SwZmzBBLvg" role="1B3o_S" />
-        <node concept="16euLQ" id="6SwZmzBBLvh" role="16eVyc">
-          <property role="TrG5h" value="TERM" />
-          <node concept="3uibUv" id="6SwZmzBBLvi" role="3ztrMU">
-            <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="6SwZmzBBLvj" role="3clF47">
-          <node concept="3clFbJ" id="6SwZmzBBLvk" role="3cqZAp">
-            <node concept="3clFbS" id="6SwZmzBBLvl" role="3clFbx">
-              <node concept="3cpWs6" id="6SwZmzBBLvm" role="3cqZAp">
-                <node concept="10QFUN" id="6SwZmzBBLvn" role="3cqZAk">
-                  <node concept="2OqwBi" id="6SwZmzBBLvo" role="10QFUP">
-                    <node concept="1eOMI4" id="6SwZmzBBLvp" role="2Oq$k0">
-                      <node concept="10QFUN" id="6SwZmzBBLvq" role="1eOMHV">
-                        <node concept="37vLTw" id="6SwZmzBBLvr" role="10QFUP">
-                          <ref role="3cqZAo" node="6SwZmzBBLvc" resolve="var" />
-                        </node>
-                        <node concept="3uibUv" id="6SwZmzBBLvs" role="10QFUM">
-                          <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
-                          <node concept="16syzq" id="6SwZmzBBLvt" role="11_B2D">
-                            <ref role="16sUi3" node="6SwZmzBBLvh" resolve="TERM" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6SwZmzBBLvu" role="2OqNvi">
-                      <ref role="37wK5l" to="oy3s:4TCblo5MS1o" resolve="logical" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="6SwZmzBBLvv" role="10QFUM">
-                    <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                    <node concept="16syzq" id="6SwZmzBBLvw" role="11_B2D">
-                      <ref role="16sUi3" node="6SwZmzBBLvh" resolve="TERM" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbH" id="6SwZmzBBLvx" role="3cqZAp" />
-            </node>
-            <node concept="2ZW3vV" id="6SwZmzBBLvy" role="3clFbw">
-              <node concept="3uibUv" id="6SwZmzBBLvz" role="2ZW6by">
-                <ref role="3uigEE" to="oy3s:4TCblo5MJ1m" resolve="LogicalDataForm" />
-              </node>
-              <node concept="37vLTw" id="6SwZmzBBLv$" role="2ZW6bz">
-                <ref role="3cqZAo" node="6SwZmzBBLvc" resolve="var" />
-              </node>
-            </node>
-            <node concept="9aQIb" id="6SwZmzBBLv_" role="9aQIa">
-              <node concept="3clFbS" id="6SwZmzBBLvA" role="9aQI4">
-                <node concept="YS8fn" id="6SwZmzBBLvB" role="3cqZAp">
-                  <node concept="2ShNRf" id="6SwZmzBBLvC" role="YScLw">
-                    <node concept="1pGfFk" id="6SwZmzBBLvD" role="2ShVmc">
-                      <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;()" resolve="IllegalArgumentException" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2tJIrI" id="6SwZmzBBLvE" role="jymVt" />
-      <node concept="3clFb_" id="6SwZmzBBLvF" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="asLogicalValue" />
-        <node concept="37vLTG" id="6SwZmzBBLvG" role="3clF46">
-          <property role="TrG5h" value="var" />
-          <node concept="3uibUv" id="6SwZmzBCmH5" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          </node>
-        </node>
-        <node concept="3uibUv" id="6SwZmzBBLvI" role="3clF45">
-          <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-          <node concept="16syzq" id="6SwZmzBBLvJ" role="11_B2D">
-            <ref role="16sUi3" node="6SwZmzBBLvL" resolve="T" />
-          </node>
-        </node>
-        <node concept="3Tm6S6" id="6SwZmzBBLvK" role="1B3o_S" />
-        <node concept="16euLQ" id="6SwZmzBBLvL" role="16eVyc">
-          <property role="TrG5h" value="T" />
-        </node>
-        <node concept="3clFbS" id="6SwZmzBBLvM" role="3clF47">
-          <node concept="3clFbJ" id="6SwZmzBBLvN" role="3cqZAp">
-            <node concept="3clFbS" id="6SwZmzBBLvO" role="3clFbx">
-              <node concept="3cpWs6" id="6SwZmzBBLvP" role="3cqZAp">
-                <node concept="10QFUN" id="6SwZmzBBLvQ" role="3cqZAk">
-                  <node concept="2OqwBi" id="6SwZmzBBLvR" role="10QFUP">
-                    <node concept="1eOMI4" id="6SwZmzBBLvS" role="2Oq$k0">
-                      <node concept="10QFUN" id="6SwZmzBBLvT" role="1eOMHV">
-                        <node concept="37vLTw" id="6SwZmzBBLvU" role="10QFUP">
-                          <ref role="3cqZAo" node="6SwZmzBBLvG" resolve="var" />
-                        </node>
-                        <node concept="3uibUv" id="6SwZmzBBLvV" role="10QFUM">
-                          <ref role="3uigEE" to="oy3s:3gNap3fN2hw" resolve="LogicalValue" />
-                          <node concept="16syzq" id="6SwZmzBBLvW" role="11_B2D">
-                            <ref role="16sUi3" node="6SwZmzBBLvL" resolve="T" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6SwZmzBBLvX" role="2OqNvi">
-                      <ref role="37wK5l" to="oy3s:3gNap3fN7SD" resolve="logical" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="6SwZmzBBLvY" role="10QFUM">
-                    <ref role="3uigEE" to="bj13:~MutableLogical" resolve="MutableLogical" />
-                    <node concept="16syzq" id="6SwZmzBBLvZ" role="11_B2D">
-                      <ref role="16sUi3" node="6SwZmzBBLvL" resolve="T" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbH" id="6SwZmzBBLw0" role="3cqZAp" />
-            </node>
-            <node concept="2ZW3vV" id="6SwZmzBBLw1" role="3clFbw">
-              <node concept="3uibUv" id="6SwZmzBBLw2" role="2ZW6by">
-                <ref role="3uigEE" to="oy3s:3gNap3fN2hw" resolve="LogicalValue" />
-              </node>
-              <node concept="37vLTw" id="6SwZmzBBLw3" role="2ZW6bz">
-                <ref role="3cqZAo" node="6SwZmzBBLvG" resolve="var" />
-              </node>
-            </node>
-            <node concept="9aQIb" id="6SwZmzBBLw4" role="9aQIa">
-              <node concept="3clFbS" id="6SwZmzBBLw5" role="9aQI4">
-                <node concept="YS8fn" id="6SwZmzBBLw6" role="3cqZAp">
-                  <node concept="2ShNRf" id="6SwZmzBBLw7" role="YScLw">
-                    <node concept="1pGfFk" id="6SwZmzBBLw8" role="2ShVmc">
-                      <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;()" resolve="IllegalArgumentException" />
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>
