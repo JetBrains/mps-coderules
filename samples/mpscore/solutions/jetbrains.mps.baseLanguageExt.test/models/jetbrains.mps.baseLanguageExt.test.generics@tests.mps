@@ -610,6 +610,38 @@
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
+    <node concept="1LZb2c" id="771syFLhdnE" role="1SL9yI">
+      <property role="TrG5h" value="ReturnTypeVariance" />
+      <node concept="3cqZAl" id="771syFLhdnF" role="3clF45" />
+      <node concept="3clFbS" id="771syFLhdnG" role="3clF47">
+        <node concept="2Hmddi" id="771syFLhdnH" role="3cqZAp">
+          <node concept="2OqwBi" id="771syFLhdnI" role="2Hmdds">
+            <node concept="2YIFZM" id="771syFLhdnJ" role="2Oq$k0">
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <node concept="2OqwBi" id="771syFLhdnK" role="37wK5m">
+                <node concept="2WthIp" id="771syFLhdnL" role="2Oq$k0" />
+                <node concept="2XshWL" id="771syFLhdnM" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="771syFLhdnN" role="2XxRq1">
+                    <node concept="ZC_QK" id="771syFLhdGD" role="2tJFKM">
+                      <ref role="2aWVGs" to="wqtl:7lCg3YbuczX" resolve="RetTyVariance" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="771syFLhdnP" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="771syFLhdnQ" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="771syFLhdnR" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+    </node>
   </node>
 </model>
 
