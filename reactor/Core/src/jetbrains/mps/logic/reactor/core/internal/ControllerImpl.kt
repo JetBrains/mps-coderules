@@ -117,7 +117,7 @@ internal class ControllerImpl (
             .then { processGuard(match, it) }
 
     private fun checkMatchPreconditions(match: RuleMatchEx, inStatus: FeedbackStatus) : FeedbackStatus {
-        val context = Context(inStatus, match.logicalContext(), match.rule().uniqueTag(), trace)
+        val context = Context(inStatus, true, match.logicalContext(), match.rule().uniqueTag(), trace)
 
         // invoke matched pattern predicates
         for (prd in match.patternPredicates()) {
@@ -296,12 +296,20 @@ internal class ControllerImpl (
 
 
     inner private class Context(inStatus: FeedbackStatus,
+                                val checking: Boolean,
                                 val logicalContext: LogicalContext,
                                 val ruleUniqueTag: Any? = null,
                                 val trace: EvaluationTrace = EvaluationTrace.NULL) : InvocationContext
     {
 
         private var status = inStatus
+
+        constructor(inStatus: FeedbackStatus,
+                    logicalContext: LogicalContext,
+                    ruleUniqueTag: Any?  = null,
+                    trace: EvaluationTrace = EvaluationTrace.NULL) :
+        this(inStatus, false, logicalContext, ruleUniqueTag, trace) { }
+
         fun currentStatus(): FeedbackStatus = status
 
         override fun report(feedback: EvaluationFeedback) {
@@ -344,8 +352,13 @@ internal class ControllerImpl (
 
                 } catch (ex: EvaluationFailureException) {
                     val failure = EvaluationFailure(ex)
-                    trace.feedback(failure)
-                    this.status = status.fail(failure)
+                    if (checking) {
+                        this.status = status.abort(failure)
+                        
+                    } else {
+                        trace.feedback(failure)
+                        this.status = status.fail(failure)
+                    }
                 }
             }
 
