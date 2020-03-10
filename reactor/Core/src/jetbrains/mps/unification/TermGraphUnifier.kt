@@ -58,7 +58,7 @@ typealias IntAnyHashMap<V> = TIntObjectHashMap<V>
 class TermGraphUnifier {
 
     companion object {
-        val EMPTY =TIntArrayList.wrap(kotlin.IntArray(0))
+        val EMPTY_LIST = TIntArrayList.wrap(kotlin.IntArray(0))
     }
 
     private var wrapper: TermWrapper
@@ -97,7 +97,8 @@ class TermGraphUnifier {
     }
 
     private fun findSolution(s: Int, defSubs: Substitution) : Substitution {
-        val z = innerSchema[find(s)]
+        val (_, z) = findSchema(s)
+        val vars = innerVars[find(z)]
 
         if (innerAcyclic[z]) { return defSubs } // not part of a cycle
         if (innerVisited[z]) { return failedSubstitution(CYCLE_DETECTED) } // there exists a cycle
@@ -105,22 +106,21 @@ class TermGraphUnifier {
         var subs = defSubs
         if (origin[z].`is`(FUN)) {
             innerVisited.set(z)
-
             for (c in origin[z].arguments()) {
-                subs = findSolution(toInner(c), subs)
+                val (_, zc) = findSchema(toInner(c))
+                subs = findSolution(zc, subs)
                 if (!subs.isSuccessful) break
             }
-
-            innerVisited.set(z)
+            innerVisited.clear(z)
         }
 
         if (subs.isSuccessful) {
             innerAcyclic.set(z)
 
             // avoid unnecessary instatiation
-            val success = if (subs is SuccessfulSubstitution) subs else SuccessfulSubstitution(subs)
+            val success = if (subs is SuccessfulSubstitution) subs as SuccessfulSubstitution
+                            else SuccessfulSubstitution(subs)
 
-            val vars = innerVars[find(z)]
             if (vars != null) {
                 for (v in vars) {
                    if (v != z) {
@@ -143,23 +143,10 @@ class TermGraphUnifier {
 
 
     private fun unifClosure(a: Int, b: Int): Boolean {
-        var s = find(a)
-        var t = find(b)
+        if (find(a) == find(b)) { return true }
 
-        if (s == t) { return true }
-
-        var zs = innerSchema[s]
-        var zt = innerSchema[t]
-
-        while (origin[zs].`is`(REF)) {
-            s = union(s, getRef(zs))
-            zs = innerSchema[s]
-        }
-
-        while (origin[zt].`is`(REF)) {
-            t = union(t, getRef(zt))
-            zt = innerSchema[t]
-        }
+        val (s, zs) = findSchema(a)
+        val (t, zt) = findSchema(b)
 
         // a VAR always matches another term
         if (origin[zs].`is`(VAR) || origin[zt].`is`(VAR)) {
@@ -188,13 +175,12 @@ class TermGraphUnifier {
 
             // fail if different arguments count
             return zsit.hasNext() == ztit.hasNext()
-            
+
         }  else {
             // something's wrong with the input
             throw IllegalStateException("invalid input")
         }
     }
-
 
     private fun union(a: Int, b: Int): Int {
         var s = find(a)
@@ -230,12 +216,13 @@ class TermGraphUnifier {
         if (origin[zs].`is`(REF)) {
             innerSchema[s] = zt
 
-        } else if (origin[zs].`is`(VAR) && !(origin[zt].`is`(VAR))) {
+        } else if (origin[zs].`is`(VAR) && (origin[zt].`is`(FUN))) {
             innerSchema[s] = zt
         }
 
         return s
     }
+
 
     private fun find(t: Int): Int  {
         var repr = innerClass[t]
@@ -257,18 +244,30 @@ class TermGraphUnifier {
         return repr
     }
 
-
     private fun prependVars(t: Int, vars: TIntArrayList?) {
         if (vars?.isEmpty ?: true) { return }
 
-        val newVars = IntList(innerVars[t] ?: EMPTY)
+        val newVars = IntList(innerVars[t] ?: EMPTY_LIST)
         newVars.addAll(vars)
         innerVars.put (t, newVars)
     }
 
-    private fun getRef(zs: Int): Int {
-        return if (origin[zs].`is`(REF)) toInner(origin[zs].get()) else zs
+
+    private fun findSchema(s: Int): Pair<Int, Int> {
+        var t = find(s)
+        var zt = innerSchema[t]
+        while (origin[zt].`is`(REF)) {
+            t = union(t, getRef(zt))
+            zt = innerSchema[t]
+        }
+        return t to zt
     }
+
+    private fun getRef(zs: Int): Int =
+        if (origin[zs].`is`(REF))
+            toInner(origin[zs].get())
+        else
+            zs
 
     private fun toInner(term: Term): Int {
         // Variables with matching symbols are all treated as a single term.
@@ -298,7 +297,7 @@ class TermGraphUnifier {
     private fun idSymbol(symbol: Any): Any =
         when (symbol) {
             is String       -> symbol.intern()
-            is Logical<*> -> symbol.findRoot()
+            is Logical<*>   -> symbol.findRoot()
             else            -> symbol
         }
 

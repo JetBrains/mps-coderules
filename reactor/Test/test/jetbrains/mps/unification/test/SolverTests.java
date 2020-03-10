@@ -23,6 +23,7 @@ import jetbrains.mps.unification.Substitution;
 import jetbrains.mps.unification.Term;
 import jetbrains.mps.unification.TermWrapper;
 import org.jetbrains.annotations.NotNull;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Collection;
@@ -288,7 +289,9 @@ public class SolverTests {
         );
     }
 
+    // FIXME cyclic terms are no longer supported
     @Test
+    @Ignore
     public void testCyclicVar() throws Exception {
         assertUnifiesWithBindings(
                 MockTermsParser.parseTerm("@1 a{b ^1}"),
@@ -576,32 +579,36 @@ public class SolverTests {
 
     @Test
     public void testFailCyclicVarRef() throws Exception {
-//        assertUnificationFails(
-//                MockTermsParser.parseTerm("X"),
-//                MockTermsParser.parseTerm("f{^X}"),
-//
-//                CYCLE_DETECTED
-//        );
-//        assertUnificationFails(
-//                MockTermsParser.parseTerm("f{X}"),
-//                MockTermsParser.parseTerm("f{f{^X}}"),
-//
-//                CYCLE_DETECTED
-//        );
-//        assertUnificationFails(
-//                MockTermsParser.parseTerm("t {@1 f{X} g{^1}}"),
-//                MockTermsParser.parseTerm("t {   f{X} X    }"),
-//
-//                CYCLE_DETECTED
-//        );
-//        assertUnificationFails(
-//                MockTermsParser.parseTerm("t { f{^X} X     }"),
-//                MockTermsParser.parseTerm("t { Y     g{^Y} }"),
-//
-//                CYCLE_DETECTED
-//        );
+        assertUnificationFails(
+                MockTermsParser.parseTerm("X"),
+                MockTermsParser.parseTerm("f{^X}"),
 
-        // pass
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                MockTermsParser.parseTerm("f{X}"),
+                MockTermsParser.parseTerm("f{f{^X}}"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                MockTermsParser.parseTerm("t {@1 f{X} g{^1}}"),
+                MockTermsParser.parseTerm("t {   f{X} X    }"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                MockTermsParser.parseTerm("t {@1 f{X} g{^1}}"),
+                MockTermsParser.parseTerm("t {   f{Y} Y    }"),
+
+                CYCLE_DETECTED
+        );
+        assertUnificationFails(
+                MockTermsParser.parseTerm("t { f{^X} X     }"),
+                MockTermsParser.parseTerm("t { Y     g{^Y} }"),
+
+                CYCLE_DETECTED
+        );
         assertUnificationFails(
                 MockTermsParser.parseTerm("t { ^X Y    }"),
                 MockTermsParser.parseTerm("t {  Y f{X} }"),
@@ -620,7 +627,6 @@ public class SolverTests {
 
                 CYCLE_DETECTED
         );
-        // fixme: infinitely cycles !!
         assertUnificationFails(
                 MockTermsParser.parseTerm("t { ^X ^Y    }"),
                 MockTermsParser.parseTerm("t {  Y f{X} }"),
