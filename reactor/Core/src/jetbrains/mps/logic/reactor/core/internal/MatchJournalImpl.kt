@@ -19,7 +19,6 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.MatchJournal.*
 import jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence
-import jetbrains.mps.logic.reactor.evaluation.MatchJournalView
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -154,7 +153,7 @@ internal open class MatchJournalImpl(
         replayWith(to, action)
     }
 
-    override fun replay(observable: LogicalStateObservable, futurePos: MatchJournal.Pos) = replayWith(futurePos, {})
+    override fun replay(futurePos: Pos) = replayWith(futurePos, {})
 
     private fun replayWith(futurePos: MatchJournal.Pos, action: (Chunk) -> Unit) {
         do {
@@ -245,7 +244,7 @@ internal open class MatchJournalImpl(
         for (chunk in hist) { // initial chunk is counted too
             chunk.entriesLog().forEach {
                 val idOcc = Id(it.occ)
-                if (it.discarded()) set.remove(idOcc) else set.add(idOcc)
+                if (it.discarded) set.remove(idOcc) else set.add(idOcc)
             }
             if (chunk === current) {
                 return set.map { it.wrapped }.asSequence()

@@ -51,9 +51,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
     private val execQueue: ExecutionQueue = ExecutionQueue(journalIndex, RuleOrdering(ruleIndex))
 
-    // tags of rule matches discarded at queue execution
-    private val rewrittenRuleMatches: MutableSet<Any> = mutableSetOf<Any>()
-
+    private val invalidatedRulesTags: MutableSet<Any> = mutableSetOf<Any>()
 
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
@@ -78,9 +76,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
      *  - reactivating occurrences that led to invalidated matches
      *  - pruning invalidated occurrences and matches from Dispatcher's state
      */
-    fun invalidateRuleMatches(ruleIds: Set<Any>): Set<Any> {
+    fun invalidateRuleMatches(ruleIds: Set<Any>) {
         val justificationRoots = mutableListOf<Justified>()
-        val allInvalidatedIds = mutableSetOf<Any>()
 
         val it = this.iterator()
         var prevChunk = it.next() // skip initial chunk
@@ -104,7 +101,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
                 if (chunk is MatchJournal.MatchChunk) {
                     trace.invalidate(chunk.match)
-                    allInvalidatedIds.add(chunk.ruleUniqueTag)
+                    invalidatedRulesTags.add(chunk.ruleUniqueTag)
 
                     // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
                     //  and storing this invalid consumed match can make no harm, except some memory overhead.
@@ -130,7 +127,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
             prevChunk = chunk
         }
-        return allInvalidatedIds
     }
 
     private fun canMatch(rule: Rule, occ: Occurrence): Boolean =
@@ -189,15 +185,15 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         }
     }
 
-    fun launchQueue(controller: Controller): Pair<FeedbackStatus, Set<Any>> =
-        execQueue.run(controller, this) to rewrittenRuleMatches
+    fun launchQueue(controller: Controller): FeedbackStatus =
+        execQueue.run(controller, this)
 
     /**
      * Clears state unneeded between incremental sessions
      * and returns [SessionToken] with session results.
      */
     fun endSession(): SessionToken {
-        rewrittenRuleMatches.clear()
+        invalidatedRulesTags.clear()
         val histView = view()
         resetStore() // clear observers
         val rules = ArrayList<Rule>().apply { ruleIndex.forEach { add(it) } }
@@ -207,6 +203,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         }
         return SessionTokenImpl(histView, rules, principalState, logicalState.clear())
     }
+
+    fun invalidatedRules(): Set<Any> = invalidatedRulesTags
 
     /**
      * Called to update the state with the currently active constraint occurrence.
@@ -245,7 +243,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             if (activationChunk != null && !isFront()) {
                 val discards = match.matchHeadReplaced().contains(active)
                 if (discards) {
-                    dropDiscardingMatchesFor(activationChunk, rewrittenRuleMatches)
+                    dropDiscardingMatchesFor(activationChunk, invalidatedRulesTags)
                 }
             }
 

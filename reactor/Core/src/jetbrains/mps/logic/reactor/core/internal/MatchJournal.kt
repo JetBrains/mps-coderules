@@ -86,7 +86,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
      * Advances journal position to specified position.
      * @throws IllegalStateException when position is not from the future (relative to current pos).
      */
-    fun replay(observable: LogicalStateObservable, futurePos: Pos)
+    fun replay(futurePos: Pos)
 
     /**
      * Walk from specified [from] position in journal until current position
@@ -151,16 +151,14 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
         fun entriesLog(): List<Entry> = entries
 
         data class Entry(val occ: Occurrence, val discarded: Boolean = false) {
-            fun occ(): Occurrence = occ
-            fun discarded(): Boolean = discarded
             override fun toString() = (if (discarded) '-' else '+') + occ.toString()
         }
 
         fun isDescendantOf(chunk: Chunk): Boolean = this.justifiedBy(chunk)
         fun isTopLevel(): Boolean = justifications().size() <= 1 // this condition implies that there're no ancestor chunks
 
-        fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded() }.map { it.occ() }
-        fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded() }.map { it.occ() }
+        fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded }.map { it.occ }
+        fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded }.map { it.occ }
 
         /**
          * Returns the resulting collection of activated occurrences
@@ -225,8 +223,8 @@ internal class StoreViewImpl(occurrences: Sequence<Occurrence>) : StoreView {
 private fun Iterable<MatchJournal.Chunk.Entry>.allOccurrences(): List<Occurrence> {
     val set = HashSet<Id<Occurrence>>()
     for (it in this) {
-        val idOcc = Id(it.occ() as Occurrence)
-        if (it.discarded()) set.remove(idOcc) else set.add(idOcc)
+        val idOcc = Id(it.occ)
+        if (it.discarded) set.remove(idOcc) else set.add(idOcc)
     }
     return set.map { it.wrapped }
 }

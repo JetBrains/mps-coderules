@@ -56,21 +56,24 @@ internal class ControllerImpl (
 
     fun incrLaunch(constraint: Constraint, rulesDiff: RulesDiff): Pair<FeedbackStatus, Set<Any>> {
 
-        val invalidatedRuleTags =
-            profiler.profile<Set<Any>>("invalidation") {
+        if (rulesDiff.removed.isNotEmpty()) {
+            profiler.profile("invalidation") {
                 processing.invalidateRuleMatches(rulesDiff.removed)
             }
-
-        profiler.profile("adding_matches") {
-            processing.addRuleMatches(rulesDiff.added)
         }
 
-        val (status, rewrittenRuleTags) =
-            profiler.profile<Pair<FeedbackStatus, Set<Any>>>("reexecution") {
+        if (rulesDiff.added.count() > 0) {
+            profiler.profile("adding_matches") {
+                processing.addRuleMatches(rulesDiff.added)
+            }
+        }
+
+        val status =
+            profiler.profile<FeedbackStatus>("reexecution") {
                 processing.launchQueue(this)
             }
 
-        return status to invalidatedRuleTags.union(rewrittenRuleTags)
+        return status to processing.invalidatedRules()
     }
 
     fun activate(constraint: Constraint) : FeedbackStatus {
