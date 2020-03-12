@@ -34,8 +34,26 @@ internal open class MatchJournalImpl(
     view: MatchJournal.View? = null
 ) : MatchJournal {
 
+    private abstract class ChunkImpl : Chunk {
+        var entries: MutableList<Chunk.Entry> = mutableListOf()
+        override fun entries(): List<Chunk.Entry> = entries
+    }
+
+    private class MatchChunkImpl(override val evidence: Evidence, override val match: RuleMatch) : ChunkImpl(), MatchChunk {
+        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().tag()}, $entries)"
+
+        override fun justifications(): Justifications = justifications
+
+        private val justifications = match.justifications().apply { add(evidence) }
+    }
+
+    private class OccChunkImpl(override val occ: Occurrence) : ChunkImpl(), Justified by occ, OccChunk {
+        override fun toString() = "(id=$evidence, ${justifications()}, activation of $occ, $entries)"
+    }
+
+
     // invariant: never empty
-    private val hist: IteratorMutableList<Chunk>
+    private val hist: IteratorMutableList<ChunkImpl>
 
     private var evidenceSeed: Evidence
 
@@ -45,14 +63,14 @@ internal open class MatchJournalImpl(
     init {
         if (view == null) {
             evidenceSeed = 0
-            val initChunk = MatchChunk(nextEvidence(), InitRuleMatch)
-            hist = IteratorMutableList(LinkedList<Chunk>().apply { add(initChunk) })
+            val initChunk = MatchChunkImpl(nextEvidence(), InitRuleMatch)
+            hist = IteratorMutableList(LinkedList<ChunkImpl>().apply { add(initChunk) })
         } else {
             // assert that initial chunk is present
             with (view.chunks.first()) {
                 assert(this is MatchChunk && match is InitRuleMatch)
             }
-            hist = IteratorMutableList(LinkedList(view.chunks as List<Chunk>))
+            hist = IteratorMutableList(LinkedList(view.chunks as List<ChunkImpl>))
             evidenceSeed = view.evidenceSeed
         }
     }
@@ -61,9 +79,9 @@ internal open class MatchJournalImpl(
 
 
     // pointer to current position in history where logging (chunk additions) and log erasing (chunk removals) happens
-    private var posPtr: MutableListIterator<Chunk> = hist.listIterator()
+    private var posPtr: MutableListIterator<ChunkImpl> = hist.listIterator()
     // invariant: always contains valid chunk
-    private var current: Chunk = posPtr.next() // take the initial chunk, move posPtr
+    private var current: ChunkImpl = posPtr.next() // take the initial chunk, move posPtr
 
 
     override fun iterator(): MutableIterator<Chunk> = hist.iterator()
@@ -73,7 +91,7 @@ internal open class MatchJournalImpl(
         var added: MatchChunk? = null
 
         if (ispec.isPrincipal(match.rule())) {
-            added = MatchChunk(nextEvidence(), match)
+            added = MatchChunkImpl(nextEvidence(), match)
             current = added
             posPtr.add(current)
         }
@@ -89,7 +107,7 @@ internal open class MatchJournalImpl(
         var added: OccChunk? = null
 
         if (ispec.isPrincipal(occ.constraint)) {
-            added = OccChunk(occ)
+            added = OccChunkImpl(occ)
             current = added
             posPtr.add(current)
         }
@@ -128,7 +146,7 @@ internal open class MatchJournalImpl(
         posPtr = hist.listIterator(hist.size)
         while (posPtr.hasPrevious()) {
             current = posPtr.previous()
-            resetOccurrences(current.entries)
+            resetOccurrences(current.entries())
         }
     }
 
@@ -242,7 +260,7 @@ internal open class MatchJournalImpl(
 
         val set = HashSet<Id<Occurrence>>()
         for (chunk in hist) { // initial chunk is counted too
-            chunk.entriesLog().forEach {
+            chunk.entries().forEach {
                 val idOcc = Id(it.occ)
                 if (it.discarded) set.remove(idOcc) else set.add(idOcc)
             }

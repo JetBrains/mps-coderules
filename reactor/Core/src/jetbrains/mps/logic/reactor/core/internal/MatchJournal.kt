@@ -51,7 +51,10 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     fun initialChunk(): MatchChunk
 
     /**
-     * Current position at the journal.
+     * Returns current [Chunk] position in the journal.
+     * NB: returned [Pos] isn't granular: it doesn't take into account
+     * replayed position *inside* [Chunk], that is, [Pos.entriesCount]
+     * will return the count of all [Occurrence]s.
      */
     fun currentPos(): Pos
 
@@ -82,8 +85,9 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean)
 
     /**
-     * Replay activated and discarded occurrences logged in journal between current and provided positions.
-     * Advances journal position to specified position.
+     * Replay activated and discarded occurrences logged in journal between current
+     * and provided positions. Advances journal position to specified position.
+     * Idempotent operation (can be called multiple times on same [Pos]]).
      * @throws IllegalStateException when position is not from the future (relative to current pos).
      */
     fun replay(futurePos: Pos)
@@ -140,54 +144,71 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
      */
     data class View(val chunks: List<Chunk>, val evidenceSeed: Evidence) : MatchJournalView {
         override fun getStoreView(): StoreView = StoreViewImpl(
-            chunks.flatMap { it.entriesLog() }.allOccurrences().asSequence()
+            chunks.flatMap { it.entries() }.allOccurrences().asSequence()
         )
     }
 
+    /**
+     * [MatchJournal] operates on [Chunk]s -- basic [Justified] entities.
+     * Each [Chunk] contains a number of entries, corresponding to events
+     * of activated and discarded [Occurrence]s, which happened before
+     * the next [Chunk] was logged.
+     */
     interface Chunk : Justified {
-
-        // fixme: hide rm-mutability
-        var entries: MutableList<Entry>
-        fun entriesLog(): List<Entry> = entries
-
+        /**
+         * Corresponds to event of activated or discarded [Occurrence]
+         */
         data class Entry(val occ: Occurrence, val discarded: Boolean = false) {
             override fun toString() = (if (discarded) '-' else '+') + occ.toString()
         }
 
-        fun isDescendantOf(chunk: Chunk): Boolean = this.justifiedBy(chunk)
-        fun isTopLevel(): Boolean = justifications().size() <= 1 // this condition implies that there're no ancestor chunks
+        /**
+         * Returns historically ordered list of activated and discarded [Occurrence]s.
+         */
+        fun entries(): List<Entry>
 
-        fun activatedLog(): List<Occurrence> = entriesLog().filter { !it.discarded }.map { it.occ }
-        fun discardedLog(): List<Occurrence> = entriesLog().filter { it.discarded }.map { it.occ }
+        /**
+         * Check whether this [Chunk] depends on another, which is specified by justifications.
+         */
+        fun isDescendantOf(chunk: Chunk): Boolean = this.justifiedBy(chunk)
+
+        /**
+         * Checks whether this [Chunk] has no ancestors (not counting [MatchJournal.initialChunk])
+         */
+        fun isTopLevel(): Boolean = justifications().size() <= 1
+
+        /**
+         * Same as [entries], but returns only activated [Occurrence]s.
+         */
+        fun activatedLog(): List<Occurrence> = entries().filter { !it.discarded }.map { it.occ }
+
+        /**
+         * Same as [entries], but returns only discarded [Occurrence]s.
+         */
+        fun discardedLog(): List<Occurrence> = entries().filter { it.discarded }.map { it.occ }
 
         /**
          * Returns the resulting collection of activated occurrences
          * without discarded (only in this chunk!) occurrences.
          */
-        fun activated(): List<Occurrence> = entriesLog().allOccurrences()
+        fun activated(): List<Occurrence> = entries().allOccurrences()
 
-        fun toPos(): Pos = Pos(this, entriesLog().size)
+        fun toPos(): Pos = Pos(this, entries().size)
     }
 
-    class MatchChunk(override val evidence: Evidence, val match: RuleMatch) : Chunk {
-        private val justifications = match.justifications().apply { add(evidence) }
-
-        override fun justifications(): Justifications = justifications
-
-        override var entries: MutableList<Chunk.Entry> = mutableListOf()
-
-        override fun entriesLog(): List<Chunk.Entry> = entries
-
-        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().tag()}, $entries)"
-
+    /**
+     * [Chunk] corresponding to a [RuleMatch] of a principal [Rule].
+     */
+    interface MatchChunk : Chunk {
+        val match: RuleMatch
         val ruleUniqueTag: Any get() = match.rule().uniqueTag()
     }
 
-    class OccChunk(val occ: Occurrence) : Chunk, Justified by occ {
-
-        override var entries: MutableList<Chunk.Entry> = mutableListOf()
-
-        override fun toString() = "(id=$evidence, ${justifications()}, activation of $occ, $entries)"
+    /**
+     * [Chunk] corresponding to an activation of a principal [Occurrence].
+     */
+    interface OccChunk : Chunk {
+        val occ: Occurrence
     }
 
     open class Pos(val chunk: Chunk, val entriesCount: Int) {

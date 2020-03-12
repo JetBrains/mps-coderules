@@ -80,7 +80,7 @@ class TestIncrementalProgram {
         (this.journalView as MatchJournal.View).chunks
 
     private fun EvaluationResult.chunksSymbolView() = this.token().chunks().map {
-        it.entriesLog().map { entry -> !entry.discarded to entry.occ.constraint().symbol() }
+        it.entries().map { entry -> !entry.discarded to entry.occ.constraint().symbol() }
     }
 
     private fun EvaluationResult.lastChunk() = this.token().chunks().last() as MatchJournal.Chunk
