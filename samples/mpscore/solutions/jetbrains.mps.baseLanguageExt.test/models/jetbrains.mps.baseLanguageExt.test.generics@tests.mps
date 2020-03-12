@@ -642,6 +642,85 @@
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
+    <node concept="1X3_iC" id="72cCUiu6jGm" role="lGtFl">
+      <property role="3V$3am" value="testMethods" />
+      <property role="3V$3ak" value="8585453e-6bfb-4d80-98de-b16074f1d86c/1216913645126/1217501895093" />
+      <node concept="1LZb2c" id="6_5E9TNFq_Y" role="8Wnug">
+        <property role="TrG5h" value="OverridingAndErasure" />
+        <node concept="3cqZAl" id="6_5E9TNFq_Z" role="3clF45" />
+        <node concept="3clFbS" id="6_5E9TNFqA0" role="3clF47">
+          <node concept="3SKdUt" id="72cCUiu6jSh" role="3cqZAp">
+            <node concept="1PaTwC" id="72cCUiu6jSi" role="3ndbpf">
+              <node concept="3oM_SD" id="72cCUiu6jSk" role="1PaTwD">
+                <property role="3oM_SC" value="fixme:" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jS$" role="1PaTwD">
+                <property role="3oM_SC" value="understand" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jSB" role="1PaTwD">
+                <property role="3oM_SC" value="whether" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jSF" role="1PaTwD">
+                <property role="3oM_SC" value="it" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jSK" role="1PaTwD">
+                <property role="3oM_SC" value="should" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jSQ" role="1PaTwD">
+                <property role="3oM_SC" value="be" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jSX" role="1PaTwD">
+                <property role="3oM_SC" value="checked" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jT5" role="1PaTwD">
+                <property role="3oM_SC" value="by" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jTe" role="1PaTwD">
+                <property role="3oM_SC" value="checking" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jTo" role="1PaTwD">
+                <property role="3oM_SC" value="rules" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jTz" role="1PaTwD">
+                <property role="3oM_SC" value="or" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jTJ" role="1PaTwD">
+                <property role="3oM_SC" value="by" />
+              </node>
+              <node concept="3oM_SD" id="72cCUiu6jTW" role="1PaTwD">
+                <property role="3oM_SC" value="coderules" />
+              </node>
+            </node>
+          </node>
+          <node concept="2Hmddi" id="6_5E9TNFqA1" role="3cqZAp">
+            <node concept="2OqwBi" id="6_5E9TNFqA2" role="2Hmdds">
+              <node concept="2YIFZM" id="6_5E9TNFqA3" role="2Oq$k0">
+                <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+                <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+                <node concept="2OqwBi" id="6_5E9TNFqA4" role="37wK5m">
+                  <node concept="2WthIp" id="6_5E9TNFqA5" role="2Oq$k0" />
+                  <node concept="2XshWL" id="6_5E9TNFqA6" role="2OqNvi">
+                    <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                    <node concept="2tJFMh" id="6_5E9TNFqA7" role="2XxRq1">
+                      <node concept="ZC_QK" id="6_5E9TNFtnf" role="2tJFKM">
+                        <ref role="2aWVGs" to="wqtl:6_5E9TNDqeq" resolve="OverridingAndErasure" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1jxXqW" id="6_5E9TNFqA9" role="37wK5m" />
+              </node>
+              <node concept="liA8E" id="6_5E9TNFqAa" role="2OqNvi">
+                <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3uibUv" id="6_5E9TNFqAb" role="Sfmx6">
+          <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
