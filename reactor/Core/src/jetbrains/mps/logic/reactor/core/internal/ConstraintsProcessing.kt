@@ -204,7 +204,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         return SessionTokenImpl(histView, rules, principalState, logicalState.clear())
     }
 
-    fun invalidatedRules(): Set<Any> = invalidatedRulesTags
+    fun invalidatedRules(): Set<Any> = HashSet<Any>(invalidatedRulesTags)
 
     /**
      * Called to update the state with the currently active constraint occurrence.
