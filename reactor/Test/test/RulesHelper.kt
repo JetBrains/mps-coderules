@@ -175,11 +175,11 @@ fun equals(left: Any, right: Any): ConjBuilder.() -> Unit = {
 
 fun occurrence(id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(), noLogicalContext)
+        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(0), noLogicalContext)
 
 fun taggedOccurrence(ruleUniqueTag: Any, id: String, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
-        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(), noLogicalContext, ruleUniqueTag)
+        .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(0), noLogicalContext, ruleUniqueTag)
 
 fun justifiedOccurrence(id: String, evidence: Evidence, justifications: Justifications, vararg args: Any): Occurrence =
     MockConstraint(ConstraintSymbol.symbol(id, args.size), true)
@@ -189,7 +189,7 @@ fun justifiedOccurrence(id: String, evidence: Evidence, justs: Collection<Int>, 
     justifiedOccurrence(id, evidence, justsFromCollection(justs), * args)
 
 fun justifiedOccurrenceInit(id: String, vararg args: Any): Occurrence =
-    justifiedOccurrence(id, 1, justsFromCollection(setOf(1)), * args)
+    justifiedOccurrence(id, 1, justsFromCollection(setOf(0, 1)), * args)
 
 fun sym0(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 0)

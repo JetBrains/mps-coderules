@@ -40,11 +40,11 @@ internal open class MatchJournalImpl(
     }
 
     private class MatchChunkImpl(override val evidence: Evidence, override val match: RuleMatch) : ChunkImpl(), MatchChunk {
-        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().tag()}, $entries)"
-
         override fun justifications(): Justifications = justifications
 
-        private val justifications = match.justifications().apply { add(evidence) }
+        private val justifications = match.collectJustifications(evidence)
+
+        override fun toString() = "(id=$evidence, ${justifications()}, ${match.rule().tag()}, $entries)"
     }
 
     private class OccChunkImpl(override val occ: Occurrence) : ChunkImpl(), Justified by occ, OccChunk {
@@ -55,24 +55,32 @@ internal open class MatchJournalImpl(
     // invariant: never empty
     private val hist: IteratorMutableList<ChunkImpl>
 
+    // kind of "call stack", represents all ancestors of current match chunk, including it
+    // invariant: never empty
+    private val ancestorChunksStack: MutableList<MatchChunk>
+
+
     private var evidenceSeed: Evidence
+
+    final override val initEvidence: Evidence = 0
 
     final override fun nextEvidence(): Evidence = evidenceSeed++
 
 
     init {
         if (view == null) {
-            evidenceSeed = 0
+            evidenceSeed = initEvidence
             val initChunk = MatchChunkImpl(nextEvidence(), InitRuleMatch)
             hist = IteratorMutableList(LinkedList<ChunkImpl>().apply { add(initChunk) })
         } else {
             // assert that initial chunk is present
-            with (view.chunks.first()) {
+            with(view.chunks.first()) {
                 assert(this is MatchChunk && match is InitRuleMatch)
             }
             hist = IteratorMutableList(LinkedList(view.chunks as List<ChunkImpl>))
             evidenceSeed = view.evidenceSeed
         }
+        ancestorChunksStack = mutableListOf(initialChunk())
     }
 
     constructor(view: MatchJournal.View? = null) : this(IncrementalProgramSpec.DefaultSpec, view)
@@ -90,10 +98,19 @@ internal open class MatchJournalImpl(
     override fun logMatch(match: RuleMatch): MatchChunk? {
         var added: MatchChunk? = null
 
-        if (ispec.isPrincipal(match.rule())) {
+        if (match.isPrincipal()) {
             added = MatchChunkImpl(nextEvidence(), match)
             current = added
             posPtr.add(current)
+            trackAncestor(added)
+            logAncestor(added)
+        } else {
+            val dummy: Justified = MatchChunkImpl(initEvidence, match)
+            trackAncestor(dummy)
+            // If non-principal match has any
+            //  principal occurrences in head
+            //  --- then they must be tracked
+            logJustificationsFrom(match)
         }
         // Log discarded occurrences
         (match as RuleMatchImpl).forEachReplaced { occ ->
@@ -103,10 +120,37 @@ internal open class MatchJournalImpl(
         return added
     }
 
+    private fun trackAncestor(logEvent: Justified) {
+        while (!logEvent.justifiedBy(parentChunk())) {
+            ancestorChunksStack.pop()
+        }
+        assert(logEvent.justifiedBy(parentChunk()))
+    }
+
+    private fun logAncestor(nextChunk: MatchChunk) {
+        ancestorChunksStack.push(nextChunk)
+    }
+
+    private fun logJustificationsFrom(match: RuleMatch) {
+        val parent: Chunk = parentChunk()
+
+        val moreJustifications = match.allHeads().filter {
+            // Filter to avoid justifying parent by its child!
+            it.isPrincipal() && !it.justifiedBy(parent)
+        }.toList()
+
+        if (moreJustifications.isNotEmpty()) {
+            forEachChunkFrom(parent.toPos()) { child ->
+                child.justifyByAll(moreJustifications)
+            }
+        }
+    }
+
     override fun logActivation(occ: Occurrence): OccChunk? {
         var added: OccChunk? = null
 
-        if (ispec.isPrincipal(occ.constraint)) {
+//        trackAncestor(occ)
+        if (occ.isPrincipal()) {
             added = OccChunkImpl(occ)
             current = added
             posPtr.add(current)
@@ -118,7 +162,9 @@ internal open class MatchJournalImpl(
 
     override fun initialChunk(): MatchChunk = this.first() as MatchChunk
 
-    override fun parentChunk(): MatchChunk {
+    override fun parentChunk(): MatchChunk = ancestorChunksStack.peek()!!
+
+    private fun findParentChunk(): MatchChunk {
         if (current is MatchChunk) {
             return current as MatchChunk
         }
@@ -140,14 +186,19 @@ internal open class MatchJournalImpl(
 
     override fun reset(pastPos: MatchJournal.Pos) = resetPos(pastPos, true)
 
-//    override fun resetPos() = resetPos(Pos(initialChunk(), 0), false)
+    //    override fun resetPos() = resetPos(Pos(initialChunk(), 0), false)
     override fun resetPos() {
         // walk backwards and reset all occurrences
         posPtr = hist.listIterator(hist.size)
         while (posPtr.hasPrevious()) {
             current = posPtr.previous()
-            resetOccurrences(current.entries())
+            resetOccurrences(current.entries)
         }
+        ancestorChunksStack.clear()
+
+        // restore initial state
+        ancestorChunksStack.push(initialChunk())
+        current = posPtr.next()
     }
 
     private fun resetPos(pastPos: MatchJournal.Pos, drop: Boolean) {
@@ -159,16 +210,40 @@ internal open class MatchJournalImpl(
                 posPtr.next() // make 'posPtr' to always point right after 'current'
                 return
             }
+            keepAncestors()
             resetOccurrences(current.entries)
             if (drop) posPtr.remove()
         }
         if (currentPos() != pastPos) throw IllegalStateException()
     }
 
-    override fun forEachChunkFrom(from: Pos, action: (Chunk) -> Unit) {
-        val to = currentPos()
-        resetPos(from, false)
-        replayWith(to, action)
+    private fun keepAncestors() {
+        if (current === ancestorChunksStack.peek()) ancestorChunksStack.pop()
+    }
+
+    private fun nextChunk() {
+        val next = posPtr.next()
+        trackAncestor(next)
+        if (next is MatchChunk) logAncestor(next)
+        current = next
+    }
+
+    /**
+     * Walk from specified [from] position in journal until [current] position
+     * while applying [action] to each visited [Chunk].
+     * No journal state is changed during operation (except by [action] effects).
+     */
+    private fun forEachChunkFrom(from: Pos, action: (Chunk) -> Unit) {
+        val to = current
+        do {
+            // there's always at least initial chunk
+            current = posPtr.previous()
+        } while (current !== from.chunk)
+
+        do {
+            current = posPtr.next()
+            action(current)
+        } while (current !== to)
     }
 
     override fun replay(futurePos: Pos) = replayWith(futurePos, {})
@@ -184,15 +259,17 @@ internal open class MatchJournalImpl(
             action(current)
 
             if (!posPtr.hasNext()) break
-            current = posPtr.next()
+            nextChunk()
         } while (true)
 
         if (currentPos() != futurePos) throw IllegalStateException()
     }
 
+    /**
+     * Starts iterating from the Chunk which is next after [current].
+     * Leaves [current], [posPtr] and [ancestorChunksStack] intact.
+     */
     override fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean) {
-        // starts iterating from the Chunk which is next after current
-        // leaves 'current' and 'posPtr' intact
         val dropped = mutableListOf<Justified>()
         val start = current
 
@@ -213,7 +290,7 @@ internal open class MatchJournalImpl(
         }
 
         // rollback to the start
-        while (current != start) {
+        while (current !== start) {
             current = posPtr.previous()
         }
         // make ptr point right after 'current' in case we changed anything
@@ -271,6 +348,8 @@ internal open class MatchJournalImpl(
         throw IllegalStateException()
     }
 
+    private fun RuleMatch.isPrincipal() = ispec.isPrincipal(this.rule())
+    private fun Occurrence.isPrincipal() = ispec.isPrincipal(this.constraint())
 
     /**
      * Immutable view for MutableList that provides mutability only through its iterators
@@ -333,7 +412,7 @@ internal open class MatchJournalImpl(
         object EmptyRule : Rule() {
             override fun kind(): Kind = Kind.PROPAGATION
             override fun uniqueTag(): Any = tag().hashCode()
-            override fun tag(): String = "initialrule${"initialrule".hashCode()}"
+            override fun tag(): String = "__initialrule__"
             override fun headKept(): Iterable<Constraint> = emptyList()
             override fun headReplaced(): Iterable<Constraint> = emptyList()
             override fun guard(): Iterable<Predicate> = emptyList()
@@ -343,8 +422,19 @@ internal open class MatchJournalImpl(
     }
 }
 
+// NB: returns same collection of justifications, not copy
 fun MatchJournal.justifications() = this.currentPos().chunk.justifications()
+fun MatchJournal.evidence() = this.currentPos().chunk.evidence
+// todo: this should be more correct
+//fun MatchJournal.justifications() = this.parentChunk().justifications()
+//fun MatchJournal.evidence() = this.parentChunk().evidence
 
-fun RuleMatch.justifications(): Justifications = justsOf().also { allJss ->
-    this.allHeads().forEach { allJss.addAll(it.justifications()) }
-}
+// returns new collection of justifications
+fun RuleMatch.collectJustifications(vararg withEvidence: Evidence): Justifications =
+    justsOf(*withEvidence).also { allJss ->
+        this.allHeads().forEach { allJss.addAll(it.justifications()) }
+    }
+
+internal fun <E> MutableList<E>.push(element: E) = this.add(element)
+internal fun <E> MutableList<E>.pop() = this.removeAt(this.size - 1)
+internal fun <E> MutableList<E>.peek() = this.last()

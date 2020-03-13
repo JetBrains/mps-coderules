@@ -38,14 +38,16 @@ fun justsCopy(other: Justifications): Justifications = TIntHashSet(other)
 
 
 /**
- * A logical entity whose existence is supported by a number of some facts (or premises, or evidences).
+ * A logical entity whose existence is supported by some
+ * facts (or premises, or evidences, or justifications).
  * Hence it is said that its existence is justified by them.
  * In its turn can serve as an evidence for other justified entities.
  */
 interface Justified {
 
     /**
-     * An identifier of this [Justified] entity.
+     * A logical identifier of this [Justified] entity.
+     * Not guaranteed to be unique.
      * Can serve as evidence for other [Justified] entities.
      */
     val evidence: Evidence
@@ -57,6 +59,7 @@ interface Justified {
 
     /**
      * Checks whether this [Justified] entity is supported by [other] [Justified] entity.
+     * It is reflexive and transitive relation, and implementations must ensure that.
      */
     fun justifiedBy(other: Justified): Boolean =
         this.justifications().contains(other.evidence)
@@ -71,9 +74,15 @@ interface Justified {
      * Append [Justifications] from [other] entity to justifications of this [Justified]
      */
     fun justifyBy(other: Justified): Unit { justifications().addAll(other.justifications()) }
+
+    /**
+     * Append [Justifications] from all [others] entities to justifications of this [Justified]
+     */
+    fun justifyByAll(others: Iterable<Justified>): Unit = others.forEach { justifyBy(it) }
 }
 
 
 interface EvidenceSource {
+    val initEvidence: Evidence
     fun nextEvidence(): Evidence
 }

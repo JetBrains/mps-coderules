@@ -81,7 +81,7 @@ class TestStoreAwareJournal {
         {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                hist.justifications() shouldBe justsOf(0)
+                hist.justifications() shouldBe justsOf(0) // initial chunk
 
                 logExpand(justifiedOccurrenceInit("foo"))
                 val fooMatches = d.matches()
@@ -90,7 +90,7 @@ class TestStoreAwareJournal {
                 // log first 'foo' match
 
                 hist.logMatch(fooMatches.first())
-                hist.justifications() shouldBe justsOf(1)
+                hist.justifications() shouldBe justsOf(0,1)
 
                 logExpandJustified("bar")
                 d.matches().count() shouldBe 0
@@ -98,13 +98,13 @@ class TestStoreAwareJournal {
                 // log second 'foo' match
 
                 hist.logMatch(fooMatches.elementAt(1))
-                hist.justifications() shouldBe justsOf(1,3)
+                hist.justifications() shouldBe justsOf(0,1,3)
 
                 logExpandJustified("qux")
                 d.matches().count() shouldBe 1
 
                 logFirstMatch()
-                hist.justifications() shouldBe justsOf(1,2,3,4,5)
+                hist.justifications() shouldBe justsOf(0,1,2,3,4,5)
             }
         }
     }

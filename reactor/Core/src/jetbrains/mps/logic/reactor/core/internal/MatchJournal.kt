@@ -70,7 +70,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     fun resetPos()
 
     /**
-     * Erase part of the journal between current and specified positions.
+     * Erase part of the journal between [currentPos] and [pastPos].
      * Resets journal position to specified position.
      * @param pastPos position to reset to.
      * @throws IllegalStateException when position is not from the past (relative to current pos).
@@ -80,7 +80,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
     /**
      * Removes [Chunk]s among descendants of [ancestor] if they satisfy [dropIf] predicate.
      * Transitively removes descendants of removed chunks.
-     * Only erases future chunks and leaves journal position intact.
+     * Only erases future chunks and leaves journal [currentPos] intact.
      */
     fun dropDescendantsWhile(ancestor: Chunk, dropIf: (Chunk) -> Boolean)
 
@@ -92,12 +92,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
      */
     fun replay(futurePos: Pos)
 
-    /**
-     * Walk from specified [from] position in journal until current position
-     * while applying [action] to each visited [Chunk].
-     * Occurrences are accordingly reset and replayed
-     */
-    fun forEachChunkFrom(from: Pos, action: (Chunk) -> Unit)
 
     /**
      * Returns snapshot of the journal.

@@ -163,16 +163,8 @@ internal class ControllerImpl (
                 // This match corresponds to the last added chunk
                 assert( (savedPos.chunk as? MatchJournal.MatchChunk)?.match === match )
                 newParent = savedPos.chunk as MatchJournal.MatchChunk
-            } else {
-                // If there're any principal occurrences in the non-principal match
-                //  then they must be tracked somewhere above --- i.e. in its parent
-                match.allHeads().filter { it.isPrincipal() && !it.justifiedBy(parent) }.forEach {
-                    // Avoid justifying parent by its child!
-                    processing.forEachChunkFrom(parent.toPos()) { child ->
-                        child.justifyBy(it)
-                    }
-                }
             }
+            assert(newParent === processing.parentChunk())
 
             val justifications = processing.justifications()
 

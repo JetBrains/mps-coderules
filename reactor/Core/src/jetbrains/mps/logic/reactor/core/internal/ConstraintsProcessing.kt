@@ -77,6 +77,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
      *  - pruning invalidated occurrences and matches from Dispatcher's state
      */
     fun invalidateRuleMatches(ruleIds: Set<Any>) {
+        // Track only root invalidated entities for invalidation,
+        // relying on transitivity of Justified.justifiedBy relation.
         val justificationRoots = mutableListOf<Justified>()
 
         val it = this.iterator()
@@ -103,8 +105,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                     trace.invalidate(chunk.match)
                     invalidatedRulesTags.add(chunk.ruleUniqueTag)
 
-                    // Seems, it's not strictly necessary, because some of its head occurrences are anyway invalidated forever
-                    //  and storing this invalid consumed match can make no harm, except some memory overhead.
                     dispatchingFront = dispatchingFront.forget(chunk.match as RuleMatchEx)
 
                     // Need to 'cancel' discarding.
@@ -113,12 +113,12 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
                         dispatchingFront = dispatchingFront.forget(it as Occurrence)
                     }
 
-                    // We removed the match, so need to reactivate all still valid occurrences from the head
-                    //  by definition of Chunk and principal rule, all occurrences from the head are principal
+                    // We removed the match, so need to reactivate all still valid occurrences from the head.
                     val matchedOccs = chunk.match.allHeads().asIterable()
                     val validOccs = matchedOccs.filter { occ ->
                         !occ.justifiedByAny(justificationRoots)
                     }
+                    // By definition of Chunk and principal rule, all occurrences from the head are principal
                     assert(matchedOccs.all { it.isPrincipal() })
 
                     execQueue.offerAll(validOccs)
