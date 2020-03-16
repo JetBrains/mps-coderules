@@ -27,6 +27,13 @@
         <property id="1179360856892" name="value" index="2noCCI" />
       </concept>
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1224573963862" name="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" flags="nn" index="uiWXb">
+        <reference id="1224573974191" name="enumClass" index="uiZuM" />
+      </concept>
+      <concept id="1224575136086" name="jetbrains.mps.baseLanguage.structure.EnumValueOfExpression" flags="nn" index="unr1b">
+        <reference id="1224575174120" name="enumClass" index="un$jP" />
+        <child id="1224575157853" name="value" index="unwt0" />
+      </concept>
       <concept id="5279705229678483897" name="jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant" flags="nn" index="2$xPTn">
         <property id="5279705229678483899" name="value" index="2$xPTl" />
       </concept>
@@ -51,11 +58,25 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
+        <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
+      <concept id="1083245097125" name="jetbrains.mps.baseLanguage.structure.EnumClass" flags="ig" index="Qs71p">
+        <child id="1083245396908" name="enumConstant" index="Qtgdg" />
+      </concept>
+      <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf">
+        <child id="492581319488141108" name="method" index="2HKRsH" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="5205855332950442198" name="jetbrains.mps.baseLanguage.structure.ArrayCloneOperation" flags="nn" index="2SEQ$1" />
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -11562,6 +11583,533 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="2i6cuYQukZY" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="6EK6UBPoUUz">
+    <property role="TrG5h" value="Enums" />
+    <node concept="2tJIrI" id="6EK6UBPoV1I" role="jymVt" />
+    <node concept="Qs71p" id="6EK6UBPoUYP" role="jymVt">
+      <property role="TrG5h" value="ETest" />
+      <node concept="QsSxf" id="6EK6UBPoV2s" role="Qtgdg">
+        <property role="TrG5h" value="One" />
+        <ref role="37wK5l" node="6EK6UBPp0x9" resolve="Enums.ETest" />
+        <node concept="3cmrfG" id="6EK6UBPp0Gs" role="37wK5m">
+          <property role="3cmrfH" value="1" />
+        </node>
+        <node concept="3b6qkQ" id="6EK6UBPrjq4" role="37wK5m">
+          <property role="$nhwW" value="1.0000001" />
+        </node>
+        <node concept="1U20sH" id="6EK6UBPp$Lt" role="lGtFl">
+          <property role="1U20sK" value="error" />
+        </node>
+      </node>
+      <node concept="QsSxf" id="6EK6UBPoVg2" role="Qtgdg">
+        <property role="TrG5h" value="Two" />
+        <ref role="37wK5l" node="6EK6UBPp0x9" resolve="Enums.ETest" />
+        <node concept="3cmrfG" id="6EK6UBPp0IZ" role="37wK5m">
+          <property role="3cmrfH" value="2" />
+        </node>
+      </node>
+      <node concept="QsSxf" id="6EK6UBPoVnO" role="Qtgdg">
+        <property role="TrG5h" value="ThreeOrFour" />
+        <ref role="37wK5l" node="6EK6UBPp0x9" resolve="Enums.ETest" />
+        <node concept="3b6qkQ" id="6EK6UBPp0M4" role="37wK5m">
+          <property role="$nhwW" value="3.0" />
+        </node>
+        <node concept="3clFb_" id="6EK6UBPrkvD" role="2HKRsH">
+          <property role="TrG5h" value="get" />
+          <node concept="3uibUv" id="6EK6UBPrmut" role="3clF45">
+            <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
+          </node>
+          <node concept="3clFbS" id="6EK6UBPrkvF" role="3clF47">
+            <node concept="3cpWs6" id="6EK6UBPrkYu" role="3cqZAp">
+              <node concept="3b6qkQ" id="6EK6UBPrm3l" role="3cqZAk">
+                <property role="$nhwW" value="4.0" />
+              </node>
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="6EK6UBPrmM0" role="1B3o_S" />
+        </node>
+      </node>
+      <node concept="QsSxf" id="6EK6UBPp_2f" role="Qtgdg">
+        <property role="TrG5h" value="WhyString" />
+        <ref role="37wK5l" node="6EK6UBPp0x9" resolve="Enums.ETest" />
+        <node concept="Xl_RD" id="6EK6UBPp_nV" role="37wK5m">
+          <property role="Xl_RC" value="why" />
+          <node concept="1U20sH" id="6EK6UBPp_rC" role="lGtFl">
+            <property role="1U20sK" value="error" />
+          </node>
+        </node>
+        <node concept="3clFb_" id="6EK6UBPrjw0" role="2HKRsH">
+          <property role="TrG5h" value="getContainer" />
+          <node concept="3uibUv" id="6EK6UBPrjBS" role="3clF45">
+            <ref role="3uigEE" to="33ny:~List" resolve="List" />
+            <node concept="3uibUv" id="6EK6UBPrjMQ" role="11_B2D">
+              <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="6EK6UBPrjw2" role="3clF47">
+            <node concept="3clFbF" id="6EK6UBPrk9p" role="3cqZAp">
+              <node concept="10Nm6u" id="6EK6UBPrk9o" role="3clFbG" />
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="6EK6UBPrj$7" role="1B3o_S" />
+        </node>
+      </node>
+      <node concept="QsSxf" id="6EK6UBPrhlp" role="Qtgdg">
+        <property role="TrG5h" value="BadOverride" />
+        <ref role="37wK5l" node="6EK6UBPp0x9" resolve="Enums.ETest" />
+        <node concept="3cmrfG" id="6EK6UBPrhTf" role="37wK5m">
+          <property role="3cmrfH" value="0" />
+        </node>
+        <node concept="3clFb_" id="6EK6UBPrhX6" role="2HKRsH">
+          <property role="TrG5h" value="getContainer" />
+          <node concept="3uibUv" id="6EK6UBPriZI" role="3clF45">
+            <ref role="3uigEE" to="33ny:~List" resolve="List" />
+            <node concept="3uibUv" id="6EK6UBPrja$" role="11_B2D">
+              <ref role="3uigEE" to="guwi:~Serializable" resolve="Serializable" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="6EK6UBPrhX8" role="3clF47">
+            <node concept="3SKdUt" id="29sKO70w1Gw" role="3cqZAp">
+              <node concept="1PaTwC" id="29sKO70w1Gx" role="3ndbpf">
+                <node concept="3oM_SD" id="29sKO70w1Gz" role="1PaTwD">
+                  <property role="3oM_SC" value="fixme:" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w1Ow" role="1PaTwD">
+                  <property role="3oM_SC" value="enum" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w1Wl" role="1PaTwD">
+                  <property role="3oM_SC" value="method" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w1Wp" role="1PaTwD">
+                  <property role="3oM_SC" value="overrides" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w1Wu" role="1PaTwD">
+                  <property role="3oM_SC" value="must" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w1W$" role="1PaTwD">
+                  <property role="3oM_SC" value="also" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w20G" role="1PaTwD">
+                  <property role="3oM_SC" value="be" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w24I" role="1PaTwD">
+                  <property role="3oM_SC" value="checked" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w2Q9" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+              </node>
+              <node concept="1PaTwC" id="29sKO70w2kc" role="3ndbpf">
+                <node concept="3oM_SD" id="29sKO70w2ke" role="1PaTwD">
+                  <property role="3oM_SC" value="and" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w2oF" role="1PaTwD">
+                  <property role="3oM_SC" value="there" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w2oI" role="1PaTwD">
+                  <property role="3oM_SC" value="must" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w2sU" role="1PaTwD">
+                  <property role="3oM_SC" value="be" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w2x8" role="1PaTwD">
+                  <property role="3oM_SC" value="an" />
+                </node>
+                <node concept="3oM_SD" id="29sKO70w2_o" role="1PaTwD">
+                  <property role="3oM_SC" value="error" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6EK6UBPrjmc" role="3cqZAp">
+              <node concept="10Nm6u" id="6EK6UBPrjmb" role="3clFbG" />
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="6EK6UBPriOj" role="1B3o_S" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6EK6UBPoUYA" role="1B3o_S" />
+      <node concept="3clFbW" id="6EK6UBPp0x9" role="jymVt">
+        <node concept="3cqZAl" id="6EK6UBPp0xa" role="3clF45" />
+        <node concept="3clFbS" id="6EK6UBPp0xc" role="3clF47">
+          <node concept="3clFbF" id="6EK6UBPp3vD" role="3cqZAp">
+            <node concept="37vLTI" id="6EK6UBPp4nB" role="3clFbG">
+              <node concept="37vLTw" id="6EK6UBPp4oq" role="37vLTx">
+                <ref role="3cqZAo" node="6EK6UBPp0DA" resolve="n" />
+              </node>
+              <node concept="2OqwBi" id="6EK6UBPp3Fa" role="37vLTJ">
+                <node concept="Xjq3P" id="6EK6UBPp3vC" role="2Oq$k0" />
+                <node concept="2OwXpG" id="6EK6UBPp3Sr" role="2OqNvi">
+                  <ref role="2Oxat5" node="6EK6UBPp2I5" resolve="n" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="6EK6UBPp0DA" role="3clF46">
+          <property role="TrG5h" value="n" />
+          <node concept="16syzq" id="6EK6UBPp34N" role="1tU5fm">
+            <ref role="16sUi3" node="6EK6UBPp2M3" resolve="E" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="6EK6UBPri16" role="jymVt" />
+      <node concept="3clFb_" id="6EK6UBPriiG" role="jymVt">
+        <property role="TrG5h" value="getContainer" />
+        <node concept="3clFbS" id="6EK6UBPriiJ" role="3clF47">
+          <node concept="3clFbF" id="6EK6UBPriDj" role="3cqZAp">
+            <node concept="10Nm6u" id="6EK6UBPriDi" role="3clFbG" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="6EK6UBPriao" role="1B3o_S" />
+        <node concept="3uibUv" id="6EK6UBPrivV" role="3clF45">
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+          <node concept="16syzq" id="6EK6UBPri$y" role="11_B2D">
+            <ref role="16sUi3" node="6EK6UBPp2M3" resolve="E" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="6EK6UBProCO" role="jymVt" />
+      <node concept="3clFb_" id="6EK6UBPrpM1" role="jymVt">
+        <property role="TrG5h" value="get" />
+        <node concept="3clFbS" id="6EK6UBPrpM4" role="3clF47">
+          <node concept="3clFbF" id="6EK6UBPrqbd" role="3cqZAp">
+            <node concept="2OqwBi" id="6EK6UBPrqnt" role="3clFbG">
+              <node concept="Xjq3P" id="6EK6UBPrqbc" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6EK6UBPrqFe" role="2OqNvi">
+                <ref role="2Oxat5" node="6EK6UBPp2I5" resolve="n" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="6EK6UBPrpd0" role="1B3o_S" />
+        <node concept="16syzq" id="6EK6UBPrpyq" role="3clF45">
+          <ref role="16sUi3" node="6EK6UBPp2M3" resolve="E" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="6EK6UBPp2wv" role="jymVt" />
+      <node concept="312cEg" id="6EK6UBPp2I5" role="jymVt">
+        <property role="TrG5h" value="n" />
+        <node concept="3Tm1VV" id="6EK6UBPp2Cc" role="1B3o_S" />
+        <node concept="16syzq" id="6EK6UBPp37t" role="1tU5fm">
+          <ref role="16sUi3" node="6EK6UBPp2M3" resolve="E" />
+        </node>
+      </node>
+      <node concept="16euLQ" id="6EK6UBPp2M3" role="16eVyc">
+        <property role="TrG5h" value="E" />
+        <node concept="3uibUv" id="6EK6UBPp30n" role="3ztrMU">
+          <ref role="3uigEE" to="wyt6:~Number" resolve="Number" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6EK6UBPp05k" role="jymVt" />
+    <node concept="2tJIrI" id="6EK6UBPp05E" role="jymVt" />
+    <node concept="2tJIrI" id="6EK6UBPp05R" role="jymVt" />
+    <node concept="3clFb_" id="6EK6UBPp0aJ" role="jymVt">
+      <property role="TrG5h" value="foo" />
+      <node concept="3clFbS" id="6EK6UBPp0aM" role="3clF47">
+        <node concept="3cpWs8" id="6EK6UBPrvcE" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPrvcF" role="3cpWs9">
+            <property role="TrG5h" value="e4" />
+            <node concept="3uibUv" id="6EK6UBPrvcG" role="1tU5fm">
+              <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="3qTvmN" id="29sKO70pLaE" role="11_B2D" />
+            </node>
+            <node concept="37vLTw" id="6EK6UBPrvcI" role="33vP2m">
+              <ref role="3cqZAo" node="6EK6UBPp0dc" resolve="e1" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6EK6UBPrup1" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPrup7" role="3cpWs9">
+            <property role="TrG5h" value="e3b" />
+            <node concept="3uibUv" id="6EK6UBPrup9" role="1tU5fm">
+              <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="3uibUv" id="29sKO70vmUK" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~Number" resolve="Number" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="29sKO70vnsA" role="33vP2m">
+              <ref role="3cqZAo" node="6EK6UBPp0dc" resolve="e1" />
+            </node>
+            <node concept="1U20sH" id="29sKO70tuXB" role="lGtFl">
+              <property role="1U20sK" value="error" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="29sKO70txyv" role="3cqZAp" />
+        <node concept="3SKdUt" id="29sKO70vpo1" role="3cqZAp">
+          <node concept="1PaTwC" id="29sKO70vpo2" role="3ndbpf">
+            <node concept="3oM_SD" id="29sKO70vpo4" role="1PaTwD">
+              <property role="3oM_SC" value="while" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpAG" role="1PaTwD">
+              <property role="3oM_SC" value="ETest.ThreeOrFour" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpBn" role="1PaTwD">
+              <property role="3oM_SC" value="has" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpBz" role="1PaTwD">
+              <property role="3oM_SC" value="double" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpBK" role="1PaTwD">
+              <property role="3oM_SC" value="inside," />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vz7a" role="1PaTwD">
+              <property role="3oM_SC" value="its" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vz7u" role="1PaTwD">
+              <property role="3oM_SC" value="type" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpCt" role="1PaTwD">
+              <property role="3oM_SC" value="is" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpCA" role="1PaTwD">
+              <property role="3oM_SC" value="just" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpEv" role="1PaTwD">
+              <property role="3oM_SC" value="ETest&lt;E" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpEE" role="1PaTwD">
+              <property role="3oM_SC" value="extends" />
+            </node>
+            <node concept="3oM_SD" id="29sKO70vpEY" role="1PaTwD">
+              <property role="3oM_SC" value="Number&gt;" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="29sKO70vmlH" role="3cqZAp">
+          <node concept="3cpWsn" id="29sKO70vmlI" role="3cpWs9">
+            <property role="TrG5h" value="e3c" />
+            <node concept="3uibUv" id="29sKO70vmlJ" role="1tU5fm">
+              <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="3uibUv" id="29sKO70vmlK" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
+              </node>
+            </node>
+            <node concept="Rm8GO" id="29sKO70vmlL" role="33vP2m">
+              <ref role="Rm8GQ" node="6EK6UBPoVnO" resolve="ThreeOrFour" />
+              <ref role="1Px2BO" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+            </node>
+            <node concept="1U20sH" id="29sKO70vmlM" role="lGtFl">
+              <property role="1U20sK" value="error" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="29sKO70tv1r" role="3cqZAp">
+          <node concept="3cpWsn" id="29sKO70tv1s" role="3cpWs9">
+            <property role="TrG5h" value="e3a" />
+            <node concept="3uibUv" id="29sKO70tv1t" role="1tU5fm">
+              <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="3qUE_q" id="29sKO70twzP" role="11_B2D">
+                <node concept="3uibUv" id="29sKO70twJR" role="3qUE_r">
+                  <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
+                </node>
+              </node>
+            </node>
+            <node concept="Rm8GO" id="29sKO70tv1v" role="33vP2m">
+              <ref role="Rm8GQ" node="6EK6UBPoVnO" resolve="ThreeOrFour" />
+              <ref role="1Px2BO" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+            </node>
+            <node concept="1U20sH" id="29sKO70tz_T" role="lGtFl">
+              <property role="1U20sK" value="error" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="29sKO70vtTf" role="3cqZAp">
+          <node concept="3cpWsn" id="29sKO70vtTg" role="3cpWs9">
+            <property role="TrG5h" value="n4" />
+            <node concept="3uibUv" id="29sKO70vtTh" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Double" resolve="Double" />
+            </node>
+            <node concept="2OqwBi" id="29sKO70vvv2" role="33vP2m">
+              <node concept="Rm8GO" id="29sKO70vuYh" role="2Oq$k0">
+                <ref role="Rm8GQ" node="6EK6UBPoVnO" resolve="ThreeOrFour" />
+                <ref role="1Px2BO" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              </node>
+              <node concept="liA8E" id="29sKO70vwez" role="2OqNvi">
+                <ref role="37wK5l" node="6EK6UBPrpM1" resolve="get" />
+              </node>
+            </node>
+            <node concept="1U20sH" id="29sKO70vwPH" role="lGtFl">
+              <property role="1U20sK" value="error" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="29sKO70vwUN" role="3cqZAp">
+          <node concept="3cpWsn" id="29sKO70vwUO" role="3cpWs9">
+            <property role="TrG5h" value="n5" />
+            <node concept="3uibUv" id="29sKO70vxDq" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Number" resolve="Number" />
+            </node>
+            <node concept="2OqwBi" id="29sKO70vwUQ" role="33vP2m">
+              <node concept="Rm8GO" id="29sKO70vwUR" role="2Oq$k0">
+                <ref role="Rm8GQ" node="6EK6UBPoVnO" resolve="ThreeOrFour" />
+                <ref role="1Px2BO" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              </node>
+              <node concept="liA8E" id="29sKO70vwUS" role="2OqNvi">
+                <ref role="37wK5l" node="6EK6UBPrpM1" resolve="get" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6EK6UBPrv96" role="3cqZAp" />
+        <node concept="3cpWs8" id="6EK6UBPp0UR" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPp0UU" role="3cpWs9">
+            <property role="TrG5h" value="b1" />
+            <node concept="10P_77" id="6EK6UBPp0UQ" role="1tU5fm" />
+            <node concept="3clFbC" id="6EK6UBPp1qb" role="33vP2m">
+              <node concept="Rm8GO" id="6EK6UBPrkeb" role="3uHU7w">
+                <ref role="Rm8GQ" node="6EK6UBPoVg2" resolve="Two" />
+                <ref role="1Px2BO" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              </node>
+              <node concept="37vLTw" id="6EK6UBPp0VC" role="3uHU7B">
+                <ref role="3cqZAo" node="6EK6UBPp0dc" resolve="e1" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6EK6UBPp1wz" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPp1w$" role="3cpWs9">
+            <property role="TrG5h" value="b0" />
+            <node concept="10P_77" id="6EK6UBPp1w_" role="1tU5fm" />
+            <node concept="3y3z36" id="6EK6UBPp1Ba" role="33vP2m">
+              <node concept="37vLTw" id="6EK6UBPp1wC" role="3uHU7B">
+                <ref role="3cqZAo" node="6EK6UBPp0dc" resolve="e1" />
+              </node>
+              <node concept="37vLTw" id="6EK6UBPp1$g" role="3uHU7w">
+                <ref role="3cqZAo" node="6EK6UBPp0mi" resolve="e2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6EK6UBPrA28" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPrA29" role="3cpWs9">
+            <property role="TrG5h" value="n1" />
+            <node concept="3uibUv" id="6EK6UBPrA2a" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Number" resolve="Number" />
+            </node>
+            <node concept="2OqwBi" id="6EK6UBPrA2b" role="33vP2m">
+              <node concept="37vLTw" id="6EK6UBPrA2c" role="2Oq$k0">
+                <ref role="3cqZAo" node="6EK6UBPp0dc" resolve="e1" />
+              </node>
+              <node concept="2OwXpG" id="6EK6UBPrA2d" role="2OqNvi">
+                <ref role="2Oxat5" node="6EK6UBPp2I5" resolve="n" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6EK6UBPp1F0" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPp1F1" role="3cpWs9">
+            <property role="TrG5h" value="n2" />
+            <node concept="3uibUv" id="6EK6UBPp1F2" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Number" resolve="Number" />
+            </node>
+            <node concept="2OqwBi" id="6EK6UBPp1QZ" role="33vP2m">
+              <node concept="37vLTw" id="6EK6UBPrAC9" role="2Oq$k0">
+                <ref role="3cqZAo" node="6EK6UBPp0mi" resolve="e2" />
+              </node>
+              <node concept="liA8E" id="6EK6UBPrBlk" role="2OqNvi">
+                <ref role="37wK5l" node="6EK6UBPrpM1" resolve="get" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6EK6UBPr_Yb" role="3cqZAp" />
+        <node concept="3cpWs8" id="6EK6UBPrBHN" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPrBHT" role="3cpWs9">
+            <property role="TrG5h" value="vals" />
+            <node concept="10Q1$e" id="6EK6UBPrCzh" role="1tU5fm">
+              <node concept="3uibUv" id="6EK6UBPrBHV" role="10Q1$1">
+                <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+                <node concept="3qUE_q" id="29sKO70pL_I" role="11_B2D">
+                  <node concept="3uibUv" id="29sKO70pLSy" role="3qUE_r">
+                    <ref role="3uigEE" to="wyt6:~Number" resolve="Number" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="uiWXb" id="6EK6UBPrDuV" role="33vP2m">
+              <ref role="uiZuM" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6EK6UBPrDUx" role="3cqZAp" />
+        <node concept="3cpWs8" id="6EK6UBPrE6J" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPrE6P" role="3cpWs9">
+            <property role="TrG5h" value="e5" />
+            <node concept="3uibUv" id="6EK6UBPrE6R" role="1tU5fm">
+              <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="3qTvmN" id="6EK6UBPrEAf" role="11_B2D" />
+            </node>
+            <node concept="unr1b" id="6EK6UBPrEHx" role="33vP2m">
+              <ref role="un$jP" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="Xl_RD" id="6EK6UBPrF98" role="unwt0">
+                <property role="Xl_RC" value="Two" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6EK6UBPrFa8" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPrFa9" role="3cpWs9">
+            <property role="TrG5h" value="e6" />
+            <node concept="3uibUv" id="6EK6UBPrFaa" role="1tU5fm">
+              <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="3qUE_q" id="29sKO70pMij" role="11_B2D">
+                <node concept="3uibUv" id="29sKO70pMIk" role="3qUE_r">
+                  <ref role="3uigEE" to="wyt6:~Number" resolve="Number" />
+                </node>
+              </node>
+            </node>
+            <node concept="unr1b" id="6EK6UBPrFac" role="33vP2m">
+              <ref role="un$jP" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="Xl_RD" id="6EK6UBPrFad" role="unwt0">
+                <property role="Xl_RC" value="SomethingElse" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6EK6UBPrFbd" role="3cqZAp">
+          <node concept="3cpWsn" id="6EK6UBPrFbe" role="3cpWs9">
+            <property role="TrG5h" value="e7" />
+            <node concept="3uibUv" id="6EK6UBPrFbf" role="1tU5fm">
+              <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+            </node>
+            <node concept="unr1b" id="6EK6UBPrFbh" role="33vP2m">
+              <ref role="un$jP" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+              <node concept="3cmrfG" id="6EK6UBPrG1V" role="unwt0">
+                <property role="3cmrfH" value="34" />
+              </node>
+              <node concept="1U20sH" id="6EK6UBPrG2v" role="lGtFl">
+                <property role="1U20sK" value="error" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6EK6UBPrkv4" role="3cqZAp" />
+      </node>
+      <node concept="3Tm1VV" id="6EK6UBPp08j" role="1B3o_S" />
+      <node concept="3cqZAl" id="6EK6UBPp0a$" role="3clF45" />
+      <node concept="37vLTG" id="6EK6UBPp0dc" role="3clF46">
+        <property role="TrG5h" value="e1" />
+        <node concept="3uibUv" id="6EK6UBPp0db" role="1tU5fm">
+          <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+          <node concept="3qTvmN" id="6EK6UBPp3gE" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6EK6UBPp0mi" role="3clF46">
+        <property role="TrG5h" value="e2" />
+        <node concept="3uibUv" id="6EK6UBPp0ro" role="1tU5fm">
+          <ref role="3uigEE" node="6EK6UBPoUYP" resolve="Enums.ETest" />
+          <node concept="3qTvmN" id="6EK6UBPp3r8" role="11_B2D" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6EK6UBPoVEU" role="jymVt" />
+    <node concept="2tJIrI" id="6EK6UBPoVF2" role="jymVt" />
+    <node concept="2tJIrI" id="6EK6UBPoVFb" role="jymVt" />
+    <node concept="2tJIrI" id="6EK6UBPoVFl" role="jymVt" />
+    <node concept="3Tm1VV" id="6EK6UBPoUU$" role="1B3o_S" />
   </node>
 </model>
 
