@@ -540,6 +540,10 @@
   </node>
   <node concept="92CTh" id="2rdxkKxrUlk">
     <property role="TrG5h" value="Typecheck" />
+    <node concept="2_cOLj" id="6UxFjlrFxJL" role="2_cLD1">
+      <property role="TrG5h" value="checkingScope" />
+      <node concept="3Tqbb2" id="6UxFjlrFxK1" role="2_9F96" />
+    </node>
     <node concept="2_cOLj" id="5fMWD6Iy9vK" role="2_cLD1">
       <property role="TrG5h" value="typeCollector" />
       <node concept="3uibUv" id="5fMWD6HQY7C" role="2_9F96">

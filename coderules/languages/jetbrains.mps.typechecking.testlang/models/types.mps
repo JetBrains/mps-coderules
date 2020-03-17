@@ -712,6 +712,10 @@
   </node>
   <node concept="92CTh" id="6OXbTD$fzih">
     <property role="TrG5h" value="TypecheckQuery" />
+    <node concept="2_cOLj" id="6UxFjlrEBIY" role="2_cLD1">
+      <property role="TrG5h" value="checkingScope" />
+      <node concept="3Tqbb2" id="6UxFjlrEBJS" role="2_9F96" />
+    </node>
     <node concept="2_cOLj" id="5fMWD6IydE6" role="2_cLD1">
       <property role="TrG5h" value="typeCollector" />
       <node concept="3uibUv" id="5fMWD6HQY7C" role="2_9F96">
