@@ -358,6 +358,10 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="8575328350543493365" name="message" index="huDt6" />
+        <property id="2423417345669755629" name="filter" index="1eyWvh" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -1555,6 +1559,10 @@
           <node concept="2tJIrI" id="6UxFjlrOcKw" role="jymVt" />
           <node concept="3clFb_" id="6UxFjlrOaVL" role="jymVt">
             <property role="TrG5h" value="resolvedSmth" />
+            <node concept="15s5l7" id="6UxFjlrYAzq" role="lGtFl">
+              <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;reference scopes (reference scopes)&quot;;FLAVOUR_MESSAGE=&quot;The reference  smth.InnerT (typeVariableDeclaration) is out of search scope&quot;;FLAVOUR_NODE_FEATURE=&quot;typeVariableDeclaration&quot;;FLAVOUR_RULE_ID=&quot;[r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/7898359107948137664]&quot;;" />
+              <property role="huDt6" value="The reference  smth.InnerT (typeVariableDeclaration) is out of search scope" />
+            </node>
             <node concept="37vLTG" id="6UxFjlrOb78" role="3clF46">
               <property role="TrG5h" value="smth" />
               <node concept="3uibUv" id="6UxFjlrObvp" role="1tU5fm">
