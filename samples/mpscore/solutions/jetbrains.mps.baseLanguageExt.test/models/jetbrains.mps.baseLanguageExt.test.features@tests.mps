@@ -501,6 +501,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="3XUOzow_cBQ" role="1SL9yI">
+      <property role="TrG5h" value="RawConversions" />
+      <node concept="3cqZAl" id="3XUOzow_cBR" role="3clF45" />
+      <node concept="3clFbS" id="3XUOzow_cBS" role="3clF47">
+        <node concept="2Hmddi" id="3XUOzow_cBT" role="3cqZAp">
+          <node concept="2OqwBi" id="3XUOzow_cBU" role="2Hmdds">
+            <node concept="2YIFZM" id="3XUOzow_cBV" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="3XUOzow_cBW" role="37wK5m">
+                <node concept="2WthIp" id="3XUOzow_cBX" role="2Oq$k0" />
+                <node concept="2XshWL" id="3XUOzow_cBY" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="3XUOzow_cBZ" role="2XxRq1">
+                    <node concept="ZC_QK" id="3XUOzow_eOE" role="2tJFKM">
+                      <ref role="2aWVGs" to="yg5v:3XUOzowrzqi" resolve="RawConversions" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="3XUOzow_cC1" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="3XUOzow_cC2" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1LZb2c" id="Or3zaY2HX" role="1SL9yI">
       <property role="TrG5h" value="arrayTypes" />
       <node concept="3cqZAl" id="Or3zaY2HY" role="3clF45" />
