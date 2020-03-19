@@ -294,8 +294,8 @@
                       <node concept="3gn64h" id="2TtA2rKl5c8" role="3gmYPZ">
                         <ref role="3gnhBz" to="wq2x:6p0DfM0a3TO" resolve="Body" />
                       </node>
-                      <node concept="3gn64h" id="2TtA2rKl5iD" role="3gmYPZ">
-                        <ref role="3gnhBz" to="wq2x:7IysFe_ZPX_" resolve="MacroBody" />
+                      <node concept="3gn64h" id="5itBwM5x5N7" role="3gmYPZ">
+                        <ref role="3gnhBz" to="wq2x:5itBwM5wMtr" resolve="MacroTemplateBody" />
                       </node>
                     </node>
                   </node>

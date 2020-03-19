@@ -1570,5 +1570,39 @@
       <ref role="1YaFvo" to="wq2x:1laj_RSpLVV" resolve="OriginSpec" />
     </node>
   </node>
+  <node concept="1YbPZF" id="5itBwM5rMjq">
+    <property role="TrG5h" value="typeof_CallMacroParameterReference" />
+    <property role="3GE5qa" value="macro.decl" />
+    <node concept="3clFbS" id="5itBwM5rMjr" role="18ibNy">
+      <node concept="1Z5TYs" id="5itBwM5rU6a" role="3cqZAp">
+        <node concept="mw_s8" id="5itBwM5rUT4" role="1ZfhKB">
+          <node concept="2OqwBi" id="5itBwM5rWbm" role="mwGJk">
+            <node concept="2OqwBi" id="5itBwM5rV1j" role="2Oq$k0">
+              <node concept="1YBJjd" id="5itBwM5rUT2" role="2Oq$k0">
+                <ref role="1YBMHb" node="5itBwM5rMjt" resolve="cmpr" />
+              </node>
+              <node concept="3TrEf2" id="5itBwM5rV_w" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:5itBwM5mdnH" resolve="declaration" />
+              </node>
+            </node>
+            <node concept="3TrEf2" id="5itBwM5rWQw" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:5itBwM5ifE5" resolve="type" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5itBwM5rU6d" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5itBwM5rP4Q" role="mwGJk">
+            <node concept="1YBJjd" id="5itBwM5rPvY" role="1Z2MuG">
+              <ref role="1YBMHb" node="5itBwM5rMjt" resolve="cmpr" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5itBwM5rMjt" role="1YuTPh">
+      <property role="TrG5h" value="cmpr" />
+      <ref role="1YaFvo" to="wq2x:5itBwM5kgmv" resolve="CallMacroParameterReference" />
+    </node>
+  </node>
 </model>
 

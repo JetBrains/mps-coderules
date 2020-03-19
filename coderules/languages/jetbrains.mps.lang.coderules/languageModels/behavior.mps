@@ -1456,5 +1456,86 @@
       </node>
     </node>
   </node>
+  <node concept="13h7C7" id="5itBwM5t4MP">
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="13h7C2" to="wq2x:5itBwM578SV" resolve="CallMacroTemplate" />
+    <node concept="13hLZK" id="5itBwM5t4MQ" role="13h7CW">
+      <node concept="3clFbS" id="5itBwM5t4MR" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="5itBwM5t5_C" role="13h7CS">
+      <property role="TrG5h" value="availableLogicalVariable" />
+      <ref role="13i0hy" to="ha02:6YKq674fNYS" resolve="availableLogicalVariable" />
+      <node concept="3Tm1VV" id="5itBwM5t5_D" role="1B3o_S" />
+      <node concept="3clFbS" id="5itBwM5t5_J" role="3clF47">
+        <node concept="3clFbF" id="5itBwM5AkpQ" role="3cqZAp">
+          <node concept="2OqwBi" id="5itBwM5AsDs" role="3clFbG">
+            <node concept="2OqwBi" id="5itBwM5Ao6V" role="2Oq$k0">
+              <node concept="2OqwBi" id="5itBwM5AkJx" role="2Oq$k0">
+                <node concept="13iPFW" id="5itBwM5AkpO" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="5itBwM5AlUq" role="2OqNvi">
+                  <ref role="3TtcxE" to="wq2x:5itBwM5$rCX" resolve="logical" />
+                </node>
+              </node>
+              <node concept="3goQfb" id="5itBwM5Aqw8" role="2OqNvi">
+                <node concept="1bVj0M" id="5itBwM5Aqwa" role="23t8la">
+                  <node concept="3clFbS" id="5itBwM5Aqwb" role="1bW5cS">
+                    <node concept="3clFbF" id="5itBwM5Ar0o" role="3cqZAp">
+                      <node concept="2OqwBi" id="5itBwM5ArgA" role="3clFbG">
+                        <node concept="37vLTw" id="5itBwM5Ar0n" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5itBwM5Aqwc" resolve="it" />
+                        </node>
+                        <node concept="3Tsc0h" id="5itBwM5ArVA" role="2OqNvi">
+                          <ref role="3TtcxE" to="5j4j:2E5lcNn8k3O" resolve="declaration" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="5itBwM5Aqwc" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="5itBwM5Aqwd" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3QWeyG" id="5itBwM5AtGx" role="2OqNvi">
+              <node concept="2OqwBi" id="5itBwM5tflV" role="576Qk">
+                <node concept="2OqwBi" id="5itBwM5t8ho" role="2Oq$k0">
+                  <node concept="13iPFW" id="5itBwM5t7Dw" role="2Oq$k0" />
+                  <node concept="3Tsc0h" id="5itBwM5t8Vx" role="2OqNvi">
+                    <ref role="3TtcxE" to="wq2x:5itBwM5dHGo" resolve="variable" />
+                  </node>
+                </node>
+                <node concept="3goQfb" id="5itBwM5thLN" role="2OqNvi">
+                  <node concept="1bVj0M" id="5itBwM5thLP" role="23t8la">
+                    <node concept="3clFbS" id="5itBwM5thLQ" role="1bW5cS">
+                      <node concept="3clFbF" id="5itBwM5thSz" role="3cqZAp">
+                        <node concept="2OqwBi" id="5itBwM5ti8D" role="3clFbG">
+                          <node concept="37vLTw" id="5itBwM5thSy" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5itBwM5thLR" resolve="it" />
+                          </node>
+                          <node concept="3Tsc0h" id="5itBwM5tj9l" role="2OqNvi">
+                            <ref role="3TtcxE" to="5j4j:2E5lcNn8k3O" resolve="declaration" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Rh6nW" id="5itBwM5thLR" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="5itBwM5thLS" role="1tU5fm" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="A3Dl8" id="5itBwM5t5_K" role="3clF45">
+        <node concept="3Tqbb2" id="5itBwM5t5_L" role="A3Ik2">
+          <ref role="ehGHo" to="5j4j:7E86$tKtfM3" resolve="LogicalVariableDeclaration" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

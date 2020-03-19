@@ -438,7 +438,7 @@
       <property role="20kJfa" value="macro" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <property role="IQ2ns" value="1618328391714763070" />
-      <ref role="20lvS9" node="1pPth$m5Bbz" resolve="MacroDeclaration" />
+      <ref role="20lvS9" node="5itBwM56wgT" resolve="MacroTemplate" />
     </node>
     <node concept="PrWs8" id="1pPth$m5B55" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -472,8 +472,8 @@
       <property role="20kJfa" value="body" />
       <ref role="20lvS9" node="7IysFe_ZPX_" resolve="MacroBody" />
     </node>
-    <node concept="PrWs8" id="5yr01fDEW3P" role="PzmwI">
-      <ref role="PrY4T" node="6OXbTDyHcuD" resolve="Template" />
+    <node concept="PrWs8" id="5itBwM56QHJ" role="PzmwI">
+      <ref role="PrY4T" node="5itBwM56wgT" resolve="MacroTemplate" />
     </node>
     <node concept="PrWs8" id="1pPth$m5Bb$" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -569,6 +569,9 @@
     </node>
     <node concept="PrWs8" id="7IysFe_ZPXA" role="PzmwI">
       <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+    </node>
+    <node concept="PrWs8" id="5itBwM5wQOg" role="PzmwI">
+      <ref role="PrY4T" node="5itBwM5wMtr" resolve="MacroTemplateBody" />
     </node>
   </node>
   <node concept="1TIwiD" id="7IysFe_ZPXH">
@@ -1440,6 +1443,105 @@
       <property role="20lbJX" value="fLJekj6/_1__n" />
       <ref role="20lvS9" node="6p0DfM0a3TO" resolve="Body" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="5itBwM56wgT">
+    <property role="EcuMT" value="6097203247139390521" />
+    <property role="3GE5qa" value="macro" />
+    <property role="TrG5h" value="MacroTemplate" />
+    <node concept="PrWs8" id="5itBwM56xRq" role="PrDN$">
+      <ref role="PrY4T" node="6OXbTDyHcuD" resolve="Template" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5itBwM578SV">
+    <property role="EcuMT" value="6097203247139556923" />
+    <property role="3GE5qa" value="macro.decl" />
+    <property role="TrG5h" value="CallMacroTemplate" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5itBwM57a68" role="PzmwI">
+      <ref role="PrY4T" node="5itBwM56wgT" resolve="MacroTemplate" />
+    </node>
+    <node concept="PrWs8" id="5itBwM5xp12" role="PzmwI">
+      <ref role="PrY4T" node="5itBwM5wMtr" resolve="MacroTemplateBody" />
+    </node>
+    <node concept="PrWs8" id="5itBwM57bFt" role="PzmwI">
+      <ref role="PrY4T" node="7IysFeBd3kI" resolve="ApplicationSessionParticipant" />
+    </node>
+    <node concept="PrWs8" id="5itBwM57bFu" role="PzmwI">
+      <ref role="PrY4T" to="5j4j:7E86$tK$Rgo" resolve="LogicalVariableScope" />
+    </node>
+    <node concept="PrWs8" id="5itBwM57bFv" role="PzmwI">
+      <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
+    </node>
+    <node concept="1TJgyj" id="5itBwM5$rCX" role="1TKVEi">
+      <property role="IQ2ns" value="6097203247147235901" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="logical" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="7IysFe_ZPXH" resolve="MacroBodyLogicalDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="5itBwM5irVx" role="1TKVEi">
+      <property role="IQ2ns" value="6097203247142518497" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="parameter" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5itBwM5i6X6" resolve="CallMacroParameterDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="5itBwM5dHGo" role="1TKVEi">
+      <property role="IQ2ns" value="6097203247141280536" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="variable" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="7IysFe_ZPXH" resolve="MacroBodyLogicalDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="5itBwM5dCWA" role="1TKVEi">
+      <property role="IQ2ns" value="6097203247141261094" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5itBwM5i6X6">
+    <property role="EcuMT" value="6097203247142432582" />
+    <property role="3GE5qa" value="macro.decl" />
+    <property role="TrG5h" value="CallMacroParameterDeclaration" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5itBwM5ifE5" role="1TKVEi">
+      <property role="IQ2ns" value="6097203247142468229" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="5itBwM5ie4J" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="5itBwM5ie4K" role="PzmwI">
+      <ref role="PrY4T" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
+    </node>
+    <node concept="PrWs8" id="5itBwM5ie4L" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hqLv6T6" resolve="IResolveInfo" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5itBwM5kgmv">
+    <property role="EcuMT" value="6097203247142995359" />
+    <property role="3GE5qa" value="macro.decl" />
+    <property role="TrG5h" value="CallMacroParameterReference" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="PrWs8" id="5itBwM5klv$" role="PzmwI">
+      <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
+    </node>
+    <node concept="1TJgyj" id="5itBwM5mdnH" role="1TKVEi">
+      <property role="IQ2ns" value="6097203247143507437" />
+      <property role="20kJfa" value="declaration" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5itBwM5i6X6" resolve="CallMacroParameterDeclaration" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="5itBwM5wMtr">
+    <property role="EcuMT" value="6097203247146280795" />
+    <property role="3GE5qa" value="macro" />
+    <property role="TrG5h" value="MacroTemplateBody" />
   </node>
 </model>
 
