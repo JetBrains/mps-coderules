@@ -1268,12 +1268,6 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="2OqwBi" id="36PPzUCzQyi" role="37wK5m">
-                        <node concept="37vLTw" id="36PPzUCzQ11" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7mB3viLf32I" resolve="demo" />
-                        </node>
-                        <node concept="2Rxl7S" id="36PPzUCzRe8" role="2OqNvi" />
-                      </node>
                       <node concept="37vLTw" id="7gOEBI$hjpf" role="37wK5m">
                         <ref role="3cqZAo" node="7gOEBI$hd0J" resolve="typeCollector" />
                       </node>

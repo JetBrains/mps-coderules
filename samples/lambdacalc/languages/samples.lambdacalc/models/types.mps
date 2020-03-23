@@ -8571,10 +8571,6 @@
   </node>
   <node concept="92CTh" id="5Eb7bDWO4vA">
     <property role="TrG5h" value="Typecheck" />
-    <node concept="2_cOLj" id="6UxFjlrFxIn" role="2_cLD1">
-      <property role="TrG5h" value="checkingScope" />
-      <node concept="3Tqbb2" id="6UxFjlrFxJh" role="2_9F96" />
-    </node>
     <node concept="2_cOLj" id="5fMWD6HFjux" role="2_cLD1">
       <property role="TrG5h" value="typesUpdateFun" />
       <node concept="3uibUv" id="5fMWD6HQY7C" role="2_9F96">

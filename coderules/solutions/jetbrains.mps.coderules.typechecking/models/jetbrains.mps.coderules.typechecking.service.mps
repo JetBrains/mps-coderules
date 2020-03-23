@@ -7417,15 +7417,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="36PPzUCyVNz" role="3cqZAp">
-          <node concept="3cpWsn" id="36PPzUCyVNA" role="3cpWs9">
-            <property role="TrG5h" value="checkingScope" />
-            <node concept="3Tqbb2" id="36PPzUCyVNx" role="1tU5fm" />
-            <node concept="37vLTw" id="36PPzUCz7VH" role="33vP2m">
-              <ref role="3cqZAo" node="1FOQehxnAn0" resolve="node" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="1FOQehxoMr3" role="3cqZAp">
           <node concept="3cpWsn" id="1FOQehxoMr4" role="3cpWs9">
             <property role="TrG5h" value="helpers" />
@@ -7447,9 +7438,6 @@
               <node concept="10M0yZ" id="1FOQehxoN18" role="37wK5m">
                 <ref role="3cqZAo" node="4t7Xo7inNvw" resolve="TYPECHECK" />
                 <ref role="1PxDUh" node="4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
-              </node>
-              <node concept="37vLTw" id="36PPzUCzaI7" role="37wK5m">
-                <ref role="3cqZAo" node="36PPzUCyVNA" resolve="checkingScope" />
               </node>
               <node concept="37vLTw" id="5fMWD6HQ2Ui" role="37wK5m">
                 <ref role="3cqZAo" node="5fMWD6HPS5d" resolve="typeCollector" />
@@ -8071,15 +8059,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="357z3MClL7c" role="3cqZAp" />
-        <node concept="3cpWs8" id="36PPzUCzjHm" role="3cqZAp">
-          <node concept="3cpWsn" id="36PPzUCzjHp" role="3cpWs9">
-            <property role="TrG5h" value="checkingScope" />
-            <node concept="3Tqbb2" id="36PPzUCzjHk" role="1tU5fm" />
-            <node concept="37vLTw" id="36PPzUCzsIV" role="33vP2m">
-              <ref role="3cqZAo" node="7eK3DxvmvIz" resolve="unit" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="3IIf9O_qVtZ" role="3cqZAp">
           <node concept="3cpWsn" id="3IIf9O_qVu0" role="3cpWs9">
             <property role="TrG5h" value="helpers" />
@@ -8099,9 +8078,6 @@
               <node concept="10M0yZ" id="5fMWD6HI34t" role="37wK5m">
                 <ref role="3cqZAo" node="4t7Xo7inNvw" resolve="TYPECHECK" />
                 <ref role="1PxDUh" node="4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
-              </node>
-              <node concept="37vLTw" id="36PPzUCzwY_" role="37wK5m">
-                <ref role="3cqZAo" node="36PPzUCzjHp" resolve="checkingScope" />
               </node>
               <node concept="37vLTw" id="5MNibENixnz" role="37wK5m">
                 <ref role="3cqZAo" node="5MNibENhUYB" resolve="typeCollector" />

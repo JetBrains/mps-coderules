@@ -3177,21 +3177,6 @@
             </node>
           </node>
           <node concept="3clFbH" id="6nFpYluod$P" role="3cqZAp" />
-          <node concept="3cpWs8" id="36PPzUC$GOS" role="3cqZAp">
-            <node concept="3cpWsn" id="36PPzUC$GOV" role="3cpWs9">
-              <property role="TrG5h" value="checkingScope" />
-              <node concept="3Tqbb2" id="36PPzUC$GOQ" role="1tU5fm" />
-              <node concept="2OqwBi" id="36PPzUC$KVL" role="33vP2m">
-                <node concept="2OqwBi" id="36PPzUC$Jl7" role="2Oq$k0">
-                  <node concept="37vLTw" id="36PPzUC$I4R" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6hqFpWnfpcc" resolve="nodes" />
-                  </node>
-                  <node concept="1uHKPH" id="36PPzUC$KzA" role="2OqNvi" />
-                </node>
-                <node concept="2Rxl7S" id="36PPzUC$Lo6" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="7WKNeR8TcXy" role="3cqZAp">
             <node concept="2OqwBi" id="7WKNeR8TcXz" role="3clFbG">
               <node concept="37vLTw" id="7WKNeR8TcX$" role="2Oq$k0">
@@ -3220,9 +3205,6 @@
                     </node>
                     <node concept="37vLTw" id="7WKNeR9foS9" role="37wK5m">
                       <ref role="3cqZAo" node="7WKNeR9fm7b" resolve="queryKind" />
-                    </node>
-                    <node concept="37vLTw" id="36PPzUC$LO0" role="37wK5m">
-                      <ref role="3cqZAo" node="36PPzUC$GOV" resolve="checkingScope" />
                     </node>
                     <node concept="37vLTw" id="5fMWD6IsEOE" role="37wK5m">
                       <ref role="3cqZAo" node="5fMWD6IsEOz" resolve="typeCollector" />
