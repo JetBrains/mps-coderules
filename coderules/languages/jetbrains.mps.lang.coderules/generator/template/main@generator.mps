@@ -13671,7 +13671,7 @@
     </node>
     <node concept="2tJIrI" id="xaaVXv6ItX" role="jymVt" />
     <node concept="3clFb_" id="xaaVXv6Iqg" role="jymVt">
-      <property role="TrG5h" value="isPrincipal" />
+      <property role="TrG5h" value="isAuxiliary" />
       <property role="1EzhhJ" value="false" />
       <node concept="10P_77" id="xaaVXv6Iqh" role="3clF45" />
       <node concept="3Tm1VV" id="xaaVXv6Iqi" role="1B3o_S" />
@@ -13692,7 +13692,7 @@
               <node concept="2OqwBi" id="xaaVXv6IqB" role="3clFbG">
                 <node concept="30H73N" id="xaaVXv6IqC" role="2Oq$k0" />
                 <node concept="3TrcHB" id="xaaVXv6LFt" role="2OqNvi">
-                  <ref role="3TsBF5" to="wq2x:xaaVXv4NiS" resolve="principal" />
+                  <ref role="3TsBF5" to="wq2x:xaaVXv4NiS" resolve="auxiliary" />
                 </node>
               </node>
             </node>

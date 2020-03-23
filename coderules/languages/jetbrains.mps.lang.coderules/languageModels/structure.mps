@@ -987,9 +987,8 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="xaaVXv4NiS" role="1TKVEl">
       <property role="IQ2nx" value="597338001513854136" />
-      <property role="TrG5h" value="principal" />
+      <property role="TrG5h" value="auxiliary" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-      <node concept="asaX9" id="6E2cNicXaKy" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="36tQV5AmIsx" role="1TKVEi">
       <property role="20lmBu" value="fLJjDmT/aggregation" />
