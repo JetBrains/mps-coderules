@@ -736,7 +736,7 @@
         <node concept="3clFbF" id="4MEOIDG8g_k" role="3cqZAp">
           <node concept="3cpWs3" id="4MEOIDG8hGp" role="3clFbG">
             <node concept="Xl_RD" id="4MEOIDG8hIU" role="3uHU7w">
-              <property role="Xl_RC" value="_TypeTable" />
+              <property role="Xl_RC" value="_MacroTable" />
             </node>
             <node concept="2OqwBi" id="4MEOIDG8gJs" role="3uHU7B">
               <node concept="13iPFW" id="4MEOIDG8g_j" role="2Oq$k0" />
