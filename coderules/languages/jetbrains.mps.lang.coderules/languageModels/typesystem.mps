@@ -1604,5 +1604,90 @@
       <ref role="1YaFvo" to="wq2x:5itBwM5kgmv" resolve="CallMacroParameterReference" />
     </node>
   </node>
+  <node concept="1YbPZF" id="5itBwM6CP5U">
+    <property role="TrG5h" value="typeof_ExpandMacroParameterDeclaration" />
+    <property role="3GE5qa" value="macro.decl" />
+    <node concept="3clFbS" id="5itBwM6CP5V" role="18ibNy">
+      <node concept="1ZobV4" id="5itBwM6CUq1" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="5itBwM6CUNB" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5itBwM6CUNz" role="mwGJk">
+            <node concept="2OqwBi" id="5itBwM6CVdx" role="1Z2MuG">
+              <node concept="1YBJjd" id="5itBwM6CVdc" role="2Oq$k0">
+                <ref role="1YBMHb" node="5itBwM6CP5X" resolve="empd" />
+              </node>
+              <node concept="3TrEf2" id="5itBwM6CVFg" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:5itBwM6zLOl" resolve="init" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5itBwM6CWuS" role="1ZfhKB">
+          <node concept="2OqwBi" id="5itBwM6CWxu" role="mwGJk">
+            <node concept="1YBJjd" id="5itBwM6CWuQ" role="2Oq$k0">
+              <ref role="1YBMHb" node="5itBwM6CP5X" resolve="empd" />
+            </node>
+            <node concept="3TrEf2" id="5itBwM6CWyJ" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:5itBwM6wB6D" resolve="type" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1Z5TYs" id="5itBwM6CSqL" role="3cqZAp">
+        <node concept="mw_s8" id="5itBwM6CSOn" role="1ZfhKB">
+          <node concept="2OqwBi" id="5itBwM6CSY8" role="mwGJk">
+            <node concept="1YBJjd" id="5itBwM6CSOl" role="2Oq$k0">
+              <ref role="1YBMHb" node="5itBwM6CP5X" resolve="empd" />
+            </node>
+            <node concept="3TrEf2" id="5itBwM6CTbh" role="2OqNvi">
+              <ref role="3Tt5mk" to="wq2x:5itBwM6wB6D" resolve="type" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5itBwM6CSqO" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5itBwM6CR4C" role="mwGJk">
+            <node concept="1YBJjd" id="5itBwM6CRvK" role="1Z2MuG">
+              <ref role="1YBMHb" node="5itBwM6CP5X" resolve="empd" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5itBwM6CP5X" role="1YuTPh">
+      <property role="TrG5h" value="empd" />
+      <ref role="1YaFvo" to="wq2x:5itBwM6wvc4" resolve="ExpandMacroParameterDeclaration" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5itBwM6D9Oh">
+    <property role="TrG5h" value="typeof_ExpandMacroParameterReference" />
+    <property role="3GE5qa" value="macro.decl" />
+    <node concept="3clFbS" id="5itBwM6D9Oi" role="18ibNy">
+      <node concept="1Z5TYs" id="5itBwM6DcLk" role="3cqZAp">
+        <node concept="mw_s8" id="5itBwM6Dd$g" role="1ZfhKB">
+          <node concept="1Z2H0r" id="5itBwM6Dd$c" role="mwGJk">
+            <node concept="2OqwBi" id="5itBwM6De69" role="1Z2MuG">
+              <node concept="1YBJjd" id="5itBwM6DdXP" role="2Oq$k0">
+                <ref role="1YBMHb" node="5itBwM6D9Ok" resolve="empr" />
+              </node>
+              <node concept="3TrEf2" id="5itBwM6Deg$" role="2OqNvi">
+                <ref role="3Tt5mk" to="wq2x:5itBwM6_hXY" resolve="declaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5itBwM6DcLn" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5itBwM6DaB0" role="mwGJk">
+            <node concept="1YBJjd" id="5itBwM6DcfF" role="1Z2MuG">
+              <ref role="1YBMHb" node="5itBwM6D9Ok" resolve="empr" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5itBwM6D9Ok" role="1YuTPh">
+      <property role="TrG5h" value="empr" />
+      <ref role="1YaFvo" to="wq2x:5itBwM6_4x3" resolve="ExpandMacroParameterReference" />
+    </node>
+  </node>
 </model>
 
