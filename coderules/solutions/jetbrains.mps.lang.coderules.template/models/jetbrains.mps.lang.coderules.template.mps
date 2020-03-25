@@ -2361,8 +2361,8 @@
       <node concept="3clFbS" id="5itBwM7VpMP" role="3clF47" />
       <node concept="16euLQ" id="5itBwM7VxqJ" role="16eVyc">
         <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="5itBwM7Vy8e" role="3ztrMU">
-          <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="MacroTemplate.Token" />
+        <node concept="3uibUv" id="5itBwM86yQp" role="3ztrMU">
+          <ref role="3uigEE" to="psr6:5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
         </node>
       </node>
     </node>
@@ -2397,8 +2397,8 @@
       <node concept="3clFbS" id="5itBwM7V_fI" role="3clF47" />
       <node concept="16euLQ" id="5itBwM7V_fJ" role="16eVyc">
         <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="5itBwM7V_fK" role="3ztrMU">
-          <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="MacroTemplate.Token" />
+        <node concept="3uibUv" id="5itBwM86u8n" role="3ztrMU">
+          <ref role="3uigEE" to="psr6:5itBwM86qnn" resolve="CallMacroTemplate.Token" />
         </node>
       </node>
     </node>
