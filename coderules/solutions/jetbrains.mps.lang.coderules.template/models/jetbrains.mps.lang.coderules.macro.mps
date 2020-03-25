@@ -789,8 +789,8 @@
           <ref role="3uigEE" to="i348:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
         </node>
       </node>
-      <node concept="3uibUv" id="5itBwM7cEyD" role="3clF45">
-        <ref role="3uigEE" node="1eKXYsjvsOy" resolve="MacroTemplate.Token" />
+      <node concept="16syzq" id="5itBwM7WsnX" role="3clF45">
+        <ref role="16sUi3" node="5itBwM75LFm" resolve="T" />
       </node>
       <node concept="3Tm1VV" id="5itBwM78vMx" role="1B3o_S" />
       <node concept="3clFbS" id="5itBwM78vMy" role="3clF47" />
@@ -821,8 +821,8 @@
           <ref role="3uigEE" to="i348:18kNIl1vDPZ" resolve="TemplateApplicationSession" />
         </node>
       </node>
-      <node concept="3uibUv" id="5itBwM7cJUM" role="3clF45">
-        <ref role="3uigEE" node="1eKXYsjvsOy" resolve="MacroTemplate.Token" />
+      <node concept="16syzq" id="5itBwM7Wtx2" role="3clF45">
+        <ref role="16sUi3" node="5itBwM7awuy" resolve="T" />
       </node>
       <node concept="3Tm1VV" id="5itBwM7b6jL" role="1B3o_S" />
       <node concept="3clFbS" id="5itBwM7b6jM" role="3clF47" />

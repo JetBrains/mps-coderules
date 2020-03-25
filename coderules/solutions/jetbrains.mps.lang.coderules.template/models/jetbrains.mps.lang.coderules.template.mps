@@ -26,6 +26,8 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -219,6 +221,9 @@
         <child id="1107880067339" name="method" index="3MN40a" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
+      <concept id="1171903862077" name="jetbrains.mps.baseLanguage.structure.LowerBoundType" flags="in" index="3qUtgH">
+        <child id="1171903869531" name="bound" index="3qUvdb" />
+      </concept>
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
@@ -2322,7 +2327,82 @@
       <node concept="3clFbS" id="4MEOIDFgV3k" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="oI9YrJ5uv" role="jymVt" />
-    <node concept="2tJIrI" id="5yr01fEe1DO" role="jymVt" />
+    <node concept="3clFb_" id="5itBwM7VpML" role="jymVt">
+      <property role="TrG5h" value="expandMacro" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="5itBwM7VumY" role="3clF46">
+        <property role="TrG5h" value="inputNode" />
+        <node concept="3Tqbb2" id="5itBwM7VuWs" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5itBwM7Vw0n" role="3clF46">
+        <property role="TrG5h" value="prototypeTemplateRef" />
+        <node concept="3uibUv" id="5itBwM7Vw0o" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5itBwM7Vv2X" role="3clF46">
+        <property role="TrG5h" value="proc" />
+        <node concept="3uibUv" id="5itBwM7VwPj" role="1tU5fm">
+          <ref role="3uigEE" to="82uw:~Function" resolve="Function" />
+          <node concept="3qUtgH" id="5itBwM7Xc6m" role="11_B2D">
+            <node concept="16syzq" id="5itBwM7XcaS" role="3qUvdb">
+              <ref role="16sUi3" node="5itBwM7VxqJ" resolve="T" />
+            </node>
+          </node>
+          <node concept="3uibUv" id="5itBwM7VzAG" role="11_B2D">
+            <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="5itBwM7Vq_4" role="3clF45">
+        <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+      </node>
+      <node concept="3Tm1VV" id="5itBwM7VpMO" role="1B3o_S" />
+      <node concept="3clFbS" id="5itBwM7VpMP" role="3clF47" />
+      <node concept="16euLQ" id="5itBwM7VxqJ" role="16eVyc">
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="5itBwM7Vy8e" role="3ztrMU">
+          <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="MacroTemplate.Token" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5itBwM7V_XB" role="jymVt" />
+    <node concept="3clFb_" id="5itBwM7V_fy" role="jymVt">
+      <property role="TrG5h" value="callMacro" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="5itBwM7V_f_" role="3clF46">
+        <property role="TrG5h" value="callMacroTemplateRef" />
+        <node concept="3uibUv" id="5itBwM7V_fA" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5itBwM7V_fB" role="3clF46">
+        <property role="TrG5h" value="proc" />
+        <node concept="3uibUv" id="5itBwM7V_fC" role="1tU5fm">
+          <ref role="3uigEE" to="82uw:~Function" resolve="Function" />
+          <node concept="3qUtgH" id="5itBwM7XbXm" role="11_B2D">
+            <node concept="16syzq" id="5itBwM7Xc1R" role="3qUvdb">
+              <ref role="16sUi3" node="5itBwM7V_fJ" resolve="T" />
+            </node>
+          </node>
+          <node concept="3uibUv" id="5itBwM7V_fF" role="11_B2D">
+            <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="5itBwM7V_fG" role="3clF45">
+        <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+      </node>
+      <node concept="3Tm1VV" id="5itBwM7V_fH" role="1B3o_S" />
+      <node concept="3clFbS" id="5itBwM7V_fI" role="3clF47" />
+      <node concept="16euLQ" id="5itBwM7V_fJ" role="16eVyc">
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="5itBwM7V_fK" role="3ztrMU">
+          <ref role="3uigEE" to="psr6:1eKXYsjvsOy" resolve="MacroTemplate.Token" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5itBwM7VoD8" role="jymVt" />
     <node concept="3clFb_" id="7DvO2M9IiMh" role="jymVt">
       <property role="TrG5h" value="putParameter" />
       <node concept="37vLTG" id="7DvO2M9IiMi" role="3clF46">
