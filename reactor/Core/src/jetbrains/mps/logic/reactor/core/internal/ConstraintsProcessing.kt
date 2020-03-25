@@ -221,7 +221,8 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             activationChunk = logActivation(active)
             active.revive(logicalState)
         } else {
-            activationChunk = journalIndex.activatingChunkOf(Id(active))
+            // defined (not null) & needed only for incremental execution
+            activationChunk = journalIndex.activatingChunkOf(active)
         }
 
         profiler.profile("dispatch_${active.constraint().symbol()}") {

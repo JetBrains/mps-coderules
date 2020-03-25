@@ -96,7 +96,7 @@ internal open class MatchJournalImpl(
 
 
     override fun logMatch(match: RuleMatch): MatchChunk? {
-        var added: MatchChunk? = null
+        val added: MatchChunk?
 
         if (match.isPrincipal()) {
             added = MatchChunkImpl(nextEvidence(), match)
@@ -105,11 +105,11 @@ internal open class MatchJournalImpl(
             trackAncestor(added)
             logAncestor(added)
         } else {
-            val dummy: Justified = MatchChunkImpl(initEvidence, match)
+            added = null
+            val dummy: Justified = MatchChunkImpl(initEvidence, match) // collects justifications
             trackAncestor(dummy)
-            // If non-principal match has any
-            //  principal occurrences in head
-            //  --- then they must be tracked
+            // If a non-principal match has any principal
+            // occurrences in head -- they must be tracked
             logJustificationsFrom(match)
         }
         // Log discarded occurrences
@@ -134,26 +134,28 @@ internal open class MatchJournalImpl(
     private fun logJustificationsFrom(match: RuleMatch) {
         val parent: Chunk = parentChunk()
 
-        val moreJustifications = match.allHeads().filter {
+        val moreJustified = match.allHeads().filter {
             // Filter to avoid justifying parent by its child!
             it.isPrincipal() && !it.justifiedBy(parent)
         }.toList()
 
-        if (moreJustifications.isNotEmpty()) {
+        if (moreJustified.isNotEmpty()) {
             forEachChunkFrom(parent.toPos()) { child ->
-                child.justifyByAll(moreJustifications)
+                child.justifyByAll(moreJustified)
             }
         }
     }
 
     override fun logActivation(occ: Occurrence): OccChunk? {
-        var added: OccChunk? = null
+        val added: OccChunk?
 
-//        trackAncestor(occ)
+        trackAncestor(occ)
         if (occ.isPrincipal()) {
             added = OccChunkImpl(occ)
             current = added
             posPtr.add(current)
+        } else {
+            added = null
         }
         current.entries.add(Chunk.Entry(occ))
 
@@ -275,7 +277,7 @@ internal open class MatchJournalImpl(
 
         while (posPtr.hasNext()) {
             current = posPtr.next()
-            if (!current.isDescendantOf(ancestor)) {
+            if (!current.justifiedBy(ancestor)) {
                 break
             }
 
@@ -364,35 +366,37 @@ internal open class MatchJournalImpl(
 
     private class IndexImpl(chunks: Iterable<Chunk>): MatchJournal.Index
     {
-        private val chunkOrder = HashMap<Evidence, Int>()
-        private val occChunks = HashMap<Id<Occurrence>, OccChunk>()
+        private val chunkOrder = HashMap<Id<Chunk>, Int>()
+        private val occChunks = HashMap<Int, OccChunk>()
 
         init {
             chunks.forEachIndexed { index, chunk ->
-                chunkOrder[chunk.evidence] = index
+                chunkOrder[Id(chunk)] = index
 
                 if (chunk is OccChunk) {
-                    occChunks[Id(chunk.occ)] = chunk
+                    occChunks[chunk.occ.identity] = chunk
                 }
             }
         }
 
         override val size: Int = chunks.count()
 
-        override fun activatingChunkOf(occId: Id<Occurrence>) = occChunks[occId]
+        override fun activatingChunkOf(occ: Occurrence) = occChunks[occ.identity]
 
         override fun activationPos(match: RuleMatchEx): OccChunk? =
             // The latest matched occurrence from match's head is (by definition)
             //  the occurrence which activated this match.
             match.signature().mapNotNull { occSig ->
-                occSig?.let { activatingChunkOf(it) }
-            }.maxBy { chunkOrder[it.evidence]!! } // compare positions: find latest
+                occSig?.let { activatingChunkOf(it.wrapped) }
+            }.maxBy { orderOf(it)!! } // compare positions: find latest
 
         // todo: throw for invalid positions?
         override fun compare(lhs: Pos, rhs: Pos): Int =
-            compareBy<Pos>{ chunkOrder[it.chunk.evidence] }
+            compareBy<Pos>{ orderOf(it.chunk) }
                 .thenComparingInt { it.entriesCount }
                 .compare(lhs, rhs)
+
+        private fun orderOf(chunk: Chunk): Int? = chunkOrder[Id(chunk)]
     }
 
 

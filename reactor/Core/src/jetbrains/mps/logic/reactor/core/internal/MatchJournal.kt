@@ -118,7 +118,7 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
          * Returns [Chunk] where provided principal occurrence was activated.
          * Returns null for non-principal occurrences.
          */
-        fun activatingChunkOf(occId: Id<Occurrence>): OccChunk?
+        fun activatingChunkOf(occ: Occurrence): OccChunk?
 
         /**
          * Returns [Pos] at which provided [RuleMatch] is triggered
@@ -160,11 +160,6 @@ interface MatchJournal : MutableIterable<MatchJournal.Chunk>, EvidenceSource {
          * Returns historically ordered list of activated and discarded [Occurrence]s.
          */
         fun entries(): List<Entry>
-
-        /**
-         * Check whether this [Chunk] depends on another, which is specified by justifications.
-         */
-        fun isDescendantOf(chunk: Chunk): Boolean = this.justifiedBy(chunk)
 
         /**
          * Checks whether this [Chunk] has no ancestors (not counting [MatchJournal.initialChunk])

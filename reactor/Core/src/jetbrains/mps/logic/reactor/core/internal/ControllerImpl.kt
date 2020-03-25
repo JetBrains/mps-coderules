@@ -80,7 +80,7 @@ internal class ControllerImpl (
         // FIXME noLogicalContext
         val context = Context(NORMAL(), noLogicalContext, null, trace)
 
-        activateConstraint(constraint, processing.initialChunk(), justsCopy(processing.justifications()), context)
+        activateConstraint(constraint, processing.initialChunk(), processing.evidence(), processing.justifications(), context)
 
         return context.currentStatus()
     }
@@ -105,7 +105,6 @@ internal class ControllerImpl (
         profiler.profile<FeedbackStatus>("reactivate_${occ.constraint.symbol()}") {
 
             trace.reactivate(occ)
-            // FIXME: propagate parent MatchChunk through call to reactivate()
             processing.processActivated(this, occ, processing.parentChunk(), NORMAL())
 
         }
@@ -166,15 +165,13 @@ internal class ControllerImpl (
             }
             assert(newParent === processing.parentChunk())
 
-            val justifications = processing.justifications()
+            val currentJustifications = processing.justifications()
+            val currentEvidence = processing.evidence()
 
             for (item in body) {
                 val itemOk = when (item) {
-                    is Constraint -> {
-                        // track justifications only for principal constraints
-                        val js = if (ispec.isPrincipal(item)) justsCopy(justifications) else emptyJustifications()
-                        activateConstraint(item, newParent, js, context)
-                    }
+                    // Occurrence just inherits evidence and justifications of its activating rule match
+                    is Constraint -> activateConstraint(item, newParent, currentEvidence, currentJustifications, context)
                     is Predicate -> tellPredicate(item, context)
                     else -> throw IllegalArgumentException("unknown item ${item}")
                 }
@@ -230,14 +227,13 @@ internal class ControllerImpl (
         return context.currentStatus()
     }
     
-    private fun activateConstraint(constraint: Constraint, parent: MatchJournal.MatchChunk, justifications: Justifications, context: Context) : Boolean {
+    private fun activateConstraint(constraint: Constraint, parent: MatchJournal.MatchChunk, evidence: Evidence, justifications: Justifications, context: Context) : Boolean {
         val args = supervisor.instantiateArguments(constraint.arguments(), context.logicalContext, context)
         return context.eval { status ->
 
             profiler.profile<FeedbackStatus>("activate_${constraint.symbol()}") {
 
-                // fixme: maybe provide no evidence for non-principal constraints?
-                constraint.occurrence(logicalStateObservable(), args, processing.nextEvidence(), justifications, context.logicalContext, context.ruleUniqueTag).let { occ ->
+                constraint.occurrence(logicalStateObservable(), args, evidence, justifications, context.logicalContext, context.ruleUniqueTag).let { occ ->
                     trace.activate(occ)
                     processing.processActivated(this, occ, parent, status)
                 }

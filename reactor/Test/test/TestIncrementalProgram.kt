@@ -626,8 +626,6 @@ class TestIncrementalProgram {
                     ))
             ).relaunch("withBar", progSpec, evalRes.token()) { result ->
 
-                println(result.token().chunks())
-
                 // if "foobar" happens too early, "1st" occ won't be produced
                 result.storeView().constraintSymbols() shouldBe setOf(sym0("start"), sym0("1st"), sym0("2nd"))
                 // ensure right rule match order: the last chunk must contain "2nd"
@@ -1385,7 +1383,6 @@ class TestIncrementalProgram {
                 body(
                 )),
             rule("influenceResult_default",
-                // note: non-principal rule which nonetheless matches on a principal constraint
                 headReplaced(
                     constraint("doInfluence")
                 ),

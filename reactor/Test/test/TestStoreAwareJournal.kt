@@ -45,13 +45,13 @@ class TestStoreAwareJournal {
         }
 
         fun logExpand(id: String, vararg args: Any) =
-            logExpand(occurrence(id, * args))
+            logExpand(justifiedOccurrence(id, hist, * args))
 
         fun logFirstMatch() = hist.logMatch(d.matches().first())
 
         // log and expand occurrence while tracking its justifications
         fun logExpandJustified(id: String, vararg args: Any) =
-            logExpand(justifiedOccurrence(id, hist.nextEvidence(), justsCopy(hist.justifications()), * args))
+            logExpand(principalOccurrence(id, hist, * args))
     }
 
     @Test
@@ -83,7 +83,7 @@ class TestStoreAwareJournal {
 
                 hist.justifications() shouldBe justsOf(0) // initial chunk
 
-                logExpand(justifiedOccurrenceInit("foo"))
+                logExpand(principalOccurrenceInit("foo"))
                 val fooMatches = d.matches()
                 fooMatches.count() shouldBe 2
 
@@ -98,13 +98,13 @@ class TestStoreAwareJournal {
                 // log second 'foo' match
 
                 hist.logMatch(fooMatches.elementAt(1))
-                hist.justifications() shouldBe justsOf(0,1,3)
+                hist.justifications() shouldBe justsOf(0,2)
 
                 logExpandJustified("qux")
                 d.matches().count() shouldBe 1
 
                 logFirstMatch()
-                hist.justifications() shouldBe justsOf(0,1,2,3,4,5)
+                hist.justifications() shouldBe justsOf(0,1,2,3)
             }
         }
     }
@@ -142,7 +142,7 @@ class TestStoreAwareJournal {
 
                 val initPos = hist.currentPos()
 
-                logExpand(justifiedOccurrenceInit("foo"))
+                logExpand(principalOccurrenceInit("foo"))
 
                 val fooPos = hist.currentPos()
 
@@ -224,7 +224,7 @@ class TestStoreAwareJournal {
 
                 val initPos = hist.currentPos()
 
-                logExpand(justifiedOccurrenceInit("foo"))
+                logExpand(principalOccurrenceInit("foo"))
 
                 val fooPos = hist.currentPos()
 
@@ -313,7 +313,7 @@ class TestStoreAwareJournal {
 
                 val initPos = hist.currentPos()
 
-                logExpand(justifiedOccurrenceInit("foo"))
+                logExpand(principalOccurrenceInit("foo"))
                 val fooPos = hist.currentPos()
 
                 logFirstMatch()
@@ -392,7 +392,7 @@ class TestStoreAwareJournal {
         {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                logExpand(justifiedOccurrenceInit("foo"))
+                logExpand(principalOccurrenceInit("foo"))
 
                 logFirstMatch()
                 logExpandJustified("bar")
@@ -454,8 +454,7 @@ class TestStoreAwareJournal {
                 logExpand("foo")
 
                 logFirstMatch()
-                // provide initial justification
-                logExpand(justifiedOccurrenceInit("bar"))
+                logExpandJustified("bar")
 
                 logFirstMatch()
                 logExpandJustified("qux")
@@ -509,14 +508,14 @@ class TestStoreAwareJournal {
         {
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                logExpand(justifiedOccurrenceInit("foo"))
+                logExpand(principalOccurrenceInit("foo"))
 
                 // rule2
                 logFirstMatch()
                 logExpand("bar")
                 logExpand("bazz")
                 // use this production later, but create it now to get relevant justs
-                val quxOcc = justifiedOccurrence("qux", hist.nextEvidence(), hist.justifications())
+                val quxOcc = principalOccurrence("qux", hist)
 
 
                 val curChunk = hist.currentPos().chunk
@@ -614,7 +613,7 @@ class TestStoreAwareJournal {
 
             with(JournalDispatcherHelper(Dispatcher(RuleIndex(rulesLists)))) {
 
-                logExpand(justifiedOccurrenceInit("foo"))
+                logExpand(principalOccurrenceInit("foo"))
 
                 // rule1
                 logFirstMatch()

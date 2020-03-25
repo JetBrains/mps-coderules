@@ -128,12 +128,15 @@ internal class ExecutionQueue(
      */
     fun canBeInserted(candidateRule: Rule, parentChunk: MatchJournal.OccChunk, beforeChunk: MatchJournal.Chunk): Boolean {
         // Place to try activating candidate rule is:
-        //  either according to the ordering between rules.
+        //  either according to the ordering between rules
         //  or as the last one, after all existing activations
 
         val placeToInsertFound = beforeChunk is MatchJournal.MatchChunk
             && ruleOrdering.isEarlierThan(candidateRule, beforeChunk.match.rule())
-        val childChunksEnded = !beforeChunk.isDescendantOf(parentChunk)
+
+        val isDescendant = beforeChunk.justifiedBy(parentChunk)
+        val isSibling = beforeChunk.evidence == parentChunk.evidence && beforeChunk != parentChunk
+        val childChunksEnded = !isDescendant || isSibling
 
         return (childChunksEnded || placeToInsertFound)
     }
@@ -143,7 +146,7 @@ internal class ExecutionQueue(
     //  (i.e. don't reactivate additional, inactive heads that only completed the match?)
     fun offerAll(occs: Iterable<Occurrence>): Boolean =
         execQueue.addAll(occs.mapNotNull { occ ->
-            journalIndex.activatingChunkOf(Id(occ))?.let { occChunk ->
+            journalIndex.activatingChunkOf(occ)?.let { occChunk ->
                 ExecPos(occChunk).let {
                     if (seen.add(it)) it else null
                 }

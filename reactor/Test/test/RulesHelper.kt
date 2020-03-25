@@ -1,6 +1,5 @@
 import jetbrains.mps.logic.reactor.core.*
-import jetbrains.mps.logic.reactor.core.internal.FeedbackStatus
-import jetbrains.mps.logic.reactor.core.internal.MatchJournal
+import jetbrains.mps.logic.reactor.core.internal.*
 import jetbrains.mps.logic.reactor.evaluation.PredicateInvocation
 import jetbrains.mps.logic.reactor.evaluation.StoreView
 import jetbrains.mps.logic.reactor.logical.Logical
@@ -181,15 +180,18 @@ fun taggedOccurrence(ruleUniqueTag: Any, id: String, vararg args: Any): Occurren
     MockConstraint(ConstraintSymbol.symbol(id, args.size))
         .occurrence(MockController().logicalStateObservable(), listOf(* args), 0, justsOf(0), noLogicalContext, ruleUniqueTag)
 
-fun justifiedOccurrence(id: String, evidence: Evidence, justifications: Justifications, vararg args: Any): Occurrence =
-    MockConstraint(ConstraintSymbol.symbol(id, args.size), true)
+fun justifiedOccurrence(id: String, evidence: Evidence, justifications: Justifications, principal: Boolean, vararg args: Any): Occurrence =
+    MockConstraint(ConstraintSymbol.symbol(id, args.size), principal)
         .occurrence(MockController().logicalStateObservable(), listOf(* args), evidence, justifications, noLogicalContext)
 
-fun justifiedOccurrence(id: String, evidence: Evidence, justs: Collection<Int>, vararg args: Any): Occurrence =
-    justifiedOccurrence(id, evidence, justsFromCollection(justs), * args)
+fun principalOccurrence(id: String, hist: MatchJournal, vararg args: Any): Occurrence =
+    justifiedOccurrence(id, hist.evidence(), hist.justifications(), true, * args)
 
-fun justifiedOccurrenceInit(id: String, vararg args: Any): Occurrence =
-    justifiedOccurrence(id, 1, justsFromCollection(setOf(0, 1)), * args)
+fun justifiedOccurrence(id: String, hist: MatchJournal, vararg args: Any): Occurrence =
+    justifiedOccurrence(id, hist.evidence(), hist.justifications(), false, * args)
+
+fun principalOccurrenceInit(id: String, vararg args: Any): Occurrence =
+    justifiedOccurrence(id, 0, justsFromCollection(setOf(0)), true, * args)
 
 fun sym0(id: String): ConstraintSymbol =
     ConstraintSymbol(id, 0)

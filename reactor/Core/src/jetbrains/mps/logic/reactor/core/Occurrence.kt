@@ -46,7 +46,6 @@ class Occurrence (observable: LogicalStateObservable,
     val identity = System.identityHashCode(this)
 
     init {
-        justifications.add(evidence) // ensure reflexivity of justifications
         revive(observable)
     }
 
