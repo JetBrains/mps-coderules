@@ -13,7 +13,8 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -1687,6 +1688,58 @@
     <node concept="1YaCAy" id="5itBwM6D9Ok" role="1YuTPh">
       <property role="TrG5h" value="empr" />
       <ref role="1YaFvo" to="wq2x:5itBwM6_4x3" resolve="ExpandMacroParameterReference" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5itBwM7JXVI">
+    <property role="TrG5h" value="typeof_ExpandMacroInputReference" />
+    <property role="3GE5qa" value="macro.code" />
+    <node concept="3clFbS" id="5itBwM7JXVJ" role="18ibNy">
+      <node concept="1Z5TYs" id="5itBwM7JY7D" role="3cqZAp">
+        <node concept="mw_s8" id="5itBwM7K0e$" role="1ZfhKB">
+          <node concept="2c44tf" id="5itBwM7K0eH" role="mwGJk">
+            <node concept="3Tqbb2" id="5itBwM7K0eI" role="2c44tc">
+              <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
+              <node concept="2c44tb" id="5itBwM7K0eJ" role="lGtFl">
+                <property role="2qtEX8" value="concept" />
+                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                <node concept="2OqwBi" id="5itBwM7K0eK" role="2c44t1">
+                  <node concept="1PxgMI" id="5itBwM7K0eL" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="5itBwM7K0eM" role="3oSUPX">
+                      <ref role="cht4Q" to="wq2x:5itBwM66cNU" resolve="ExpandMacroInputSpecification" />
+                    </node>
+                    <node concept="2OqwBi" id="5itBwM7K0eN" role="1m5AlR">
+                      <node concept="2OqwBi" id="5itBwM7K0eO" role="2Oq$k0">
+                        <node concept="1YBJjd" id="5itBwM7K0eP" role="2Oq$k0">
+                          <ref role="1YBMHb" node="5itBwM7JXVL" resolve="emri" />
+                        </node>
+                        <node concept="3TrEf2" id="5itBwM7K0eQ" role="2OqNvi">
+                          <ref role="3Tt5mk" to="wq2x:5itBwM7J4Oi" resolve="declaration" />
+                        </node>
+                      </node>
+                      <node concept="1mfA1w" id="5itBwM7K0eR" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="5itBwM7K0eS" role="2OqNvi">
+                    <ref role="3Tt5mk" to="wq2x:5itBwM66ULm" resolve="applicableConcept" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5itBwM7JY7G" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5itBwM7JXVV" role="mwGJk">
+            <node concept="1YBJjd" id="5itBwM7JXXJ" role="1Z2MuG">
+              <ref role="1YBMHb" node="5itBwM7JXVL" resolve="emri" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5itBwM7JXVL" role="1YuTPh">
+      <property role="TrG5h" value="emri" />
+      <ref role="1YaFvo" to="wq2x:5itBwM7J4Oh" resolve="ExpandMacroInputReference" />
     </node>
   </node>
 </model>
