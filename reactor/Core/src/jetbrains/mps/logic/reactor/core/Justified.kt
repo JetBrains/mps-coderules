@@ -59,7 +59,13 @@ interface Justified {
 
     /**
      * Checks whether this [Justified] entity is supported by [other] [Justified] entity.
-     * It is reflexive and transitive relation, and implementations must ensure that.
+     * It is reflexive, transitive and antisymmetric relation.
+     *
+     * Antisymmetric means:
+     *  if a.justifiedBy(b) then !b.justifiedBy(a), where a.evidence != b.evidence.
+     * Or, equivalently:
+     *  if a.justifiedBy(b) && b.justifiedBy(a) then a.evidence == b.evidence.
+     * Together with transitivity it ensures acyclicity of justifications.
      */
     fun justifiedBy(other: Justified): Boolean =
         this.justifications().contains(other.evidence)
@@ -71,9 +77,15 @@ interface Justified {
         others.any { this.justifiedBy(it) }
 
     /**
-     * Append [Justifications] from [other] entity to justifications of this [Justified]
+     * Append [Justifications] from [other] entity to justifications of this [Justified].
+     * After the operation this.justifiedBy(other) returns true.
      */
-    fun justifyBy(other: Justified): Unit { justifications().addAll(other.justifications()) }
+    fun justifyBy(other: Justified): Unit {
+        // ensure operation doesn't break antisymmetric property of relation
+        assert(!other.justifiedBy(this) || this.evidence == other.evidence)
+
+        justifications().addAll(other.justifications())
+    }
 
     /**
      * Append [Justifications] from all [others] entities to justifications of this [Justified]
