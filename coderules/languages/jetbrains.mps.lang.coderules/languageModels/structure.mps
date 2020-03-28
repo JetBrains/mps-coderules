@@ -433,6 +433,11 @@
     <property role="34LRSv" value="macro table" />
     <property role="EcuMT" value="1618328391714763069" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5itBwM9Rt6C" role="1TKVEi">
+      <property role="IQ2ns" value="6097203247219331496" />
+      <property role="20kJfa" value="extends" />
+      <ref role="20lvS9" node="1pPth$m5B4X" resolve="MacroTable" />
+    </node>
     <node concept="1TJgyj" id="5itBwM6ukmz" role="1TKVEi">
       <property role="IQ2ns" value="6097203247162410403" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -493,6 +498,9 @@
     </node>
     <node concept="PrWs8" id="b5g$pBzjW6" role="PzmwI">
       <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
+    </node>
+    <node concept="PrWs8" id="5itBwMaaWLe" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="PB1R3Y7Ed7">
@@ -1457,9 +1465,6 @@
     <property role="EcuMT" value="6097203247139390521" />
     <property role="3GE5qa" value="macro" />
     <property role="TrG5h" value="MacroTemplate" />
-    <node concept="PrWs8" id="5itBwM56xRq" role="PrDN$">
-      <ref role="PrY4T" node="6OXbTDyHcuD" resolve="Template" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5itBwM578SV">
     <property role="EcuMT" value="6097203247139556923" />
@@ -1480,6 +1485,9 @@
     </node>
     <node concept="PrWs8" id="5itBwM57bFv" role="PzmwI">
       <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
+    </node>
+    <node concept="PrWs8" id="5itBwMaaWqd" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="1TJgyj" id="5itBwM5$rCX" role="1TKVEi">
       <property role="IQ2ns" value="6097203247147235901" />
@@ -1777,6 +1785,7 @@
     <property role="EcuMT" value="6097203247184206287" />
     <property role="3GE5qa" value="constraint" />
     <property role="TrG5h" value="CallMacroConstraint" />
+    <property role="34LRSv" value="call" />
     <ref role="1TJDcQ" node="18kNIl0mxXI" resolve="PseudoConstraint" />
     <node concept="1TJgyj" id="5itBwM7Lv0S" role="1TKVEi">
       <property role="IQ2ns" value="6097203247184212024" />
