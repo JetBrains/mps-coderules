@@ -2366,6 +2366,46 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5itBwMbbFre" role="jymVt" />
+    <node concept="3clFb_" id="5itBwMbbE4n" role="jymVt">
+      <property role="TrG5h" value="expandMacro" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="37vLTG" id="5itBwMbbE4o" role="3clF46">
+        <property role="TrG5h" value="inputConcept" />
+        <node concept="3bZ5Sz" id="5itBwMbbHsi" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5itBwMbbE4q" role="3clF46">
+        <property role="TrG5h" value="prototypeTemplateRef" />
+        <node concept="3uibUv" id="5itBwMbbE4r" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5itBwMbbE4s" role="3clF46">
+        <property role="TrG5h" value="proc" />
+        <node concept="3uibUv" id="5itBwMbbE4t" role="1tU5fm">
+          <ref role="3uigEE" to="82uw:~Function" resolve="Function" />
+          <node concept="3qUtgH" id="5itBwMbbE4u" role="11_B2D">
+            <node concept="16syzq" id="5itBwMbbE4v" role="3qUvdb">
+              <ref role="16sUi3" node="5itBwMbbE4$" resolve="T" />
+            </node>
+          </node>
+          <node concept="3uibUv" id="5itBwMbbE4w" role="11_B2D">
+            <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="5itBwMbbE4x" role="3clF45">
+        <ref role="3uigEE" node="7eGEHDlc$ap" resolve="RuleBuilder" />
+      </node>
+      <node concept="3Tm1VV" id="5itBwMbbE4y" role="1B3o_S" />
+      <node concept="3clFbS" id="5itBwMbbE4z" role="3clF47" />
+      <node concept="16euLQ" id="5itBwMbbE4$" role="16eVyc">
+        <property role="TrG5h" value="T" />
+        <node concept="3uibUv" id="5itBwMbbE4_" role="3ztrMU">
+          <ref role="3uigEE" to="psr6:5itBwM86qUH" resolve="ExpandMacroTemplate.Token" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="5itBwM7V_XB" role="jymVt" />
     <node concept="3clFb_" id="5itBwM7V_fy" role="jymVt">
       <property role="TrG5h" value="callMacro" />
