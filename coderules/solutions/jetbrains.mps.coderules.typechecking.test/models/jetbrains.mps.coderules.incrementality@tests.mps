@@ -326,14 +326,14 @@
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
-      <concept id="5524459797186715156" name="jetbrains.mps.lang.coderules.structure.CallMacroPseudoConstraint" flags="ng" index="B_ONY">
-        <reference id="6086839168131376658" name="declaration" index="17QRF" />
-        <child id="6086839168131714100" name="argument" index="150vd" />
-        <child id="5524459797186715209" name="logical" index="B_OMz" />
+      <concept id="6097203247182936001" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraint" flags="ng" index="3jbYBd">
+        <reference id="6097203247182937177" name="template" index="3jbY9l" />
+        <child id="6097203247182937145" name="input" index="3jbY8P" />
+        <child id="6097203247182937143" name="logical" index="3jbY8V" />
       </concept>
-      <concept id="1302893676238672057" name="jetbrains.mps.lang.coderules.structure.ExpandPseudoConstraint" flags="ng" index="1imXTs">
-        <child id="1302893676238674275" name="logical" index="1imXu6" />
-        <child id="1302893676238672106" name="origin" index="1imXSf" />
+      <concept id="6097203247184206287" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraint" flags="ng" index="3jm4v3">
+        <reference id="6097203247184207800" name="template" index="3jm46O" />
+        <child id="6097203247184212024" name="logical" index="3jm6SO" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="4814011019633607808" name="parameter" index="0Rg$4" />
@@ -388,7 +388,6 @@
         <child id="2316688792939428590" name="code" index="3IrJb0" />
       </concept>
       <concept id="965748826975413063" name="jetbrains.mps.lang.coderules.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
-      <concept id="2037618519496637434" name="jetbrains.mps.lang.coderules.structure.MacroArgumentList" flags="ng" index="1Q7qz5" />
     </language>
   </registry>
   <node concept="2XOHcx" id="tyIfzBA53c">
@@ -993,13 +992,14 @@
                 <node concept="3xSepi" id="6E2cNicdlIG" role="3xSepv">
                   <node concept="3Aq9E8" id="7qe1GumUin0" role="3xSepj">
                     <node concept="3I6sU6" id="7qe1GumUin1" role="3Ip0Jz">
-                      <node concept="3I6s7M" id="7qe1GumUin7" role="3I6sU7">
-                        <node concept="1imXTs" id="7qe1GumUin4" role="3I6s78">
-                          <node concept="a7P8L" id="7qe1GumUqNj" role="1imXu6">
-                            <ref role="a7OzE" node="7qe1GumUjpj" resolve="T1" />
-                          </node>
-                          <node concept="3A2sRY" id="7qe1GumUjq4" role="1imXSf">
+                      <node concept="3I6s7M" id="1ALxU7rhpYb" role="3I6sU7">
+                        <node concept="3jbYBd" id="1ALxU7rhpY8" role="3I6s78">
+                          <ref role="3jbY9l" to="zuft:1ALxU7re3yU" resolve="extractType" />
+                          <node concept="3A2sRY" id="1ALxU7rhqQ8" role="3jbY8P">
                             <ref role="3A2yKK" node="JqEP$8slrV" resolve="pair" />
+                          </node>
+                          <node concept="a7P8L" id="1ALxU7rhqqb" role="3jbY8V">
+                            <ref role="a7OzE" node="7qe1GumUjpj" resolve="T1" />
                           </node>
                         </node>
                       </node>
@@ -3626,10 +3626,10 @@
                     <node concept="3I6sU6" id="4nIWweB_nLb" role="3Ip0Jz">
                       <node concept="3IrJb3" id="4nIWweB_nLc" role="3I6sU7">
                         <node concept="3clFbS" id="1PFbZN6tO4Q" role="3IrJb0">
-                          <node concept="3Aqczg" id="4MEOIDFrxkT" role="3cqZAp">
-                            <node concept="B_ONY" id="4MEOIDFrxkL" role="3Aqpz8">
-                              <ref role="17QRF" to="zuft:7mB3viLcERt" resolve="integer" />
-                              <node concept="a7P8L" id="4MEOIDFrxlb" role="B_OMz">
+                          <node concept="3Aqczg" id="1ALxU7reNBn" role="3cqZAp">
+                            <node concept="3jm4v3" id="1ALxU7reNBl" role="3Aqpz8">
+                              <ref role="3jm46O" to="zuft:1ALxU7rehxC" resolve="typeOfInt" />
+                              <node concept="a7P8L" id="1ALxU7rePMM" role="3jm6SO">
                                 <ref role="a7OzE" node="4nIWweB_n$x" resolve="ResultType" />
                               </node>
                             </node>
@@ -3963,15 +3963,18 @@
                 <node concept="3xSepi" id="6E2cNicdlIV" role="3xSepv">
                   <node concept="3Aq9E8" id="1PFbZN6sL9N" role="3xSepj">
                     <node concept="3I6sU6" id="4nIWweB_oxy" role="3Ip0Jz">
-                      <node concept="3I6s7M" id="4nIWweB_oxz" role="3I6sU7">
-                        <node concept="B_ONY" id="4MEOIDFrxjt" role="3I6s78">
-                          <ref role="17QRF" to="zuft:7mB3viLcERt" resolve="integer" />
-                          <node concept="a7P8L" id="4MEOIDFrxk0" role="B_OMz">
+                      <node concept="3I6s7M" id="1ALxU7rfCZ4" role="3I6sU7">
+                        <node concept="3jm4v3" id="1ALxU7rfCZ2" role="3I6s78">
+                          <ref role="3jm46O" to="zuft:1ALxU7rehxC" resolve="typeOfInt" />
+                          <node concept="a7P8L" id="1ALxU7rfDQT" role="3jm6SO">
                             <ref role="a7OzE" node="4nIWweB_ock" resolve="BoolType" />
                           </node>
-                          <node concept="1Q7qz5" id="4MEOIDFrxjz" role="150vd" />
                         </node>
                       </node>
+                    </node>
+                  </node>
+                  <node concept="3Aq9E8" id="1ALxU7rfAIN" role="3xSepj">
+                    <node concept="3I6sU6" id="1ALxU7rfAIO" role="3Ip0Jz">
                       <node concept="3I6s7M" id="4nIWweB_ox$" role="3I6sU7">
                         <node concept="3Aqt3T" id="1PFbZN6sLWN" role="3I6s78">
                           <ref role="3AqCNq" node="2NnDL4GbUnj" resolve="c3onvertsTo" />
