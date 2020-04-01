@@ -808,9 +808,6 @@
       <concept id="1878265754077060950" name="jetbrains.mps.lang.coderules.structure.ConstraintParameterDeclaration" flags="ng" index="1zAUYm">
         <child id="6036655413802463897" name="dataType" index="3gTf24" />
       </concept>
-      <concept id="4492335231042132193" name="jetbrains.mps.lang.coderules.structure.ContextParameterDeclaration" flags="ng" index="1$qIfQ">
-        <child id="4492335231042132212" name="type" index="1$qIfz" />
-      </concept>
       <concept id="7368070394769089081" name="jetbrains.mps.lang.coderules.structure.RuleInputDeclaration" flags="ng" index="3A20r5" />
       <concept id="7368070394769139970" name="jetbrains.mps.lang.coderules.structure.RuleInputReference" flags="ng" index="3A2sRY">
         <reference id="7368070394769213644" name="declaration" index="3A2yKK" />
@@ -856,9 +853,6 @@
       </concept>
       <concept id="2316688792939428589" name="jetbrains.mps.lang.coderules.structure.TemplateLogicalClause" flags="ng" index="3IrJb3">
         <child id="2316688792939428590" name="code" index="3IrJb0" />
-      </concept>
-      <concept id="7231283050490391433" name="jetbrains.mps.lang.coderules.structure.ContextParameterContainer" flags="ng" index="1M$Gom">
-        <child id="7231283050490401312" name="parameter" index="1M$zYZ" />
       </concept>
       <concept id="965748826975413063" name="jetbrains.mps.lang.coderules.structure.RulePartParameterDeclaration" flags="ng" index="3NuqgR" />
       <concept id="3063948360254202562" name="jetbrains.mps.lang.coderules.structure.LocalDeclarationStatement" flags="ng" index="3X$Joe" />
@@ -31552,26 +31546,6 @@
     <node concept="3Tm1VV" id="5H6hZahmloo" role="1B3o_S" />
     <node concept="3uibUv" id="3KV3FXk1o$R" role="1zkMxy">
       <ref role="3uigEE" node="3KV3FXk1mCr" resolve="BaseHelper" />
-    </node>
-  </node>
-  <node concept="1M$Gom" id="6hqFpWmMzld">
-    <property role="TrG5h" value="Type Parameters" />
-    <property role="3GE5qa" value="macro" />
-    <node concept="1$qIfQ" id="6hqFpWmN1Sp" role="1M$zYZ">
-      <property role="TrG5h" value="substitution" />
-      <node concept="3uibUv" id="6EY0p2waUM8" role="1$qIfz">
-        <ref role="3uigEE" node="6EY0p2w8VOq" resolve="TypeVarSubstitution" />
-      </node>
-    </node>
-    <node concept="1$qIfQ" id="6EY0p2x_O2P" role="1M$zYZ">
-      <property role="TrG5h" value="allowUncheckedConversion" />
-      <node concept="3uibUv" id="6EY0p2xIjDz" role="1$qIfz">
-        <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
-      </node>
-    </node>
-    <node concept="1$qIfQ" id="6EY0p2yeWSJ" role="1M$zYZ">
-      <property role="TrG5h" value="errorNode" />
-      <node concept="2sp9CU" id="6EY0p2yeWSR" role="1$qIfz" />
     </node>
   </node>
   <node concept="AVZre" id="3wxtToEiJ4m">
