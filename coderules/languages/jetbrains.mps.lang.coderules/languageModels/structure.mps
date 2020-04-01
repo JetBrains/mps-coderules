@@ -654,6 +654,7 @@
     <property role="TrG5h" value="MacroLogicalExpression" />
     <property role="34LRSv" value="macroLogical" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="asaX9" id="1ALxU7rdvPw" role="lGtFl" />
   </node>
   <node concept="PlHQZ" id="7IysFeBd3kI">
     <property role="EcuMT" value="8908809128822191406" />
@@ -680,6 +681,7 @@
     <node concept="PrWs8" id="3TnYLtqfhzJ" role="PzmwI">
       <ref role="PrY4T" to="tpck:hqLv6T6" resolve="IResolveInfo" />
     </node>
+    <node concept="asaX9" id="1ALxU7rdc$P" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="3TnYLtqfh$J">
     <property role="EcuMT" value="4492335231042132271" />
@@ -695,6 +697,7 @@
     <node concept="PrWs8" id="3TnYLtqfh$K" role="PzmwI">
       <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
     </node>
+    <node concept="asaX9" id="1ALxU7rdg3B" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="3TnYLtqgQYU">
     <property role="EcuMT" value="4492335231042547642" />
@@ -723,6 +726,7 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
+    <node concept="asaX9" id="1ALxU7rdgVl" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1L74NXEmF9s">
     <property role="EcuMT" value="2037618519496634972" />
@@ -747,6 +751,7 @@
     <property role="EcuMT" value="2037618519496634973" />
     <property role="3GE5qa" value="macro.invoke" />
     <property role="TrG5h" value="MacroInvocation" />
+    <node concept="asaX9" id="1ALxU7rzC1E" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="1L74NXEmFJU">
     <property role="EcuMT" value="2037618519496637434" />
@@ -885,6 +890,7 @@
     <node concept="PrWs8" id="6hqFpWmM98u" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="asaX9" id="1ALxU7rd4E4" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="7smgEqggf12">
     <property role="EcuMT" value="8581119423153238082" />
@@ -933,6 +939,7 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="6DOfTm$zRmf" resolve="MacroInputDeclaration" />
     </node>
+    <node concept="asaX9" id="1ALxU7rdzki" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="5WBVN_MT8FC">
     <property role="EcuMT" value="6856711987714624232" />
