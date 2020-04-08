@@ -657,7 +657,7 @@
                   <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
                   <node concept="2tJFMh" id="6_5E9TNFqA7" role="2XxRq1">
                     <node concept="ZC_QK" id="6_5E9TNFtnf" role="2tJFKM">
-                      <ref role="2aWVGs" to="wqtl:6_5E9TNDqeq" resolve="OverridingAndErasure" />
+                      <ref role="2aWVGs" to="wqtl:6_5E9TNDqeq" resolve="MethodOverridingAndErasure" />
                     </node>
                   </node>
                 </node>
