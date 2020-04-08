@@ -65,7 +65,6 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
-      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
@@ -169,9 +168,6 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
-      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
-        <child id="1171903916107" name="bound" index="3qUE_r" />
-      </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -185,7 +181,6 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" flags="nn" index="3uNrnE" />
-      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
         <child id="1184951007469" name="componentType" index="3$_nBY" />
         <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
@@ -213,9 +208,6 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
-      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
-        <reference id="1116615189566" name="classifier" index="3VsUkX" />
-      </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
@@ -351,47 +343,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7HUwyZbdPbb" role="jymVt" />
-    <node concept="3clFb_" id="7HUwyZbdPno" role="jymVt">
-      <property role="TrG5h" value="canRepresent" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="37vLTG" id="7HUwyZbdPnp" role="3clF46">
-        <property role="TrG5h" value="klass" />
-        <node concept="3uibUv" id="7HUwyZbdPnq" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-          <node concept="3qUE_q" id="7HUwyZbdPnr" role="11_B2D">
-            <node concept="3uibUv" id="7HUwyZbdPns" role="3qUE_r">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="7HUwyZbdPnt" role="3clF45" />
-      <node concept="3Tm1VV" id="7HUwyZbdPnu" role="1B3o_S" />
-      <node concept="3clFbS" id="7HUwyZbdPny" role="3clF47">
-        <node concept="3clFbF" id="7HUwyZbdW0Q" role="3cqZAp">
-          <node concept="2OqwBi" id="6OUp3PsSKto" role="3clFbG">
-            <node concept="2OqwBi" id="7HUwyZbdW2l" role="2Oq$k0">
-              <node concept="37vLTw" id="7HUwyZbdW0P" role="2Oq$k0">
-                <ref role="3cqZAo" node="7HUwyZbdNB$" resolve="metaLogical" />
-              </node>
-              <node concept="liA8E" id="7HUwyZbdW4K" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MetaLogical.type()" resolve="type" />
-              </node>
-            </node>
-            <node concept="liA8E" id="6OUp3PsSKJ7" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
-              <node concept="37vLTw" id="6OUp3PsSKQb" role="37wK5m">
-                <ref role="3cqZAo" node="7HUwyZbdPnp" resolve="klass" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="7HUwyZbdPnz" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7HUwyZbdNCL" role="jymVt" />
     <node concept="3clFb_" id="56MMu0Ark7v" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="get" />
@@ -708,73 +659,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3gNap3ffFBE" role="jymVt" />
-    <node concept="3clFb_" id="4TCblo5MWaC" role="jymVt">
-      <property role="TrG5h" value="canRepresent" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="37vLTG" id="4TCblo5MWaD" role="3clF46">
-        <property role="TrG5h" value="klass" />
-        <node concept="3uibUv" id="4TCblo5MWaE" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-          <node concept="3qUE_q" id="4TCblo5MWaF" role="11_B2D">
-            <node concept="3uibUv" id="4TCblo5MWaG" role="3qUE_r">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="4TCblo5MWaH" role="3clF45" />
-      <node concept="3Tm1VV" id="4TCblo5MWaI" role="1B3o_S" />
-      <node concept="3clFbS" id="4TCblo5MWaM" role="3clF47">
-        <node concept="3clFbJ" id="4TCblo5PbR3" role="3cqZAp">
-          <node concept="3y3z36" id="4TCblo5PgbW" role="3clFbw">
-            <node concept="10Nm6u" id="4TCblo5Pgg9" role="3uHU7w" />
-            <node concept="2OqwBi" id="4TCblo5PfKR" role="3uHU7B">
-              <node concept="37vLTw" id="4TCblo5Pf_R" role="2Oq$k0">
-                <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
-              </node>
-              <node concept="liA8E" id="4TCblo5PfRq" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~Logical.metaLogical()" resolve="metaLogical" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="4TCblo5Pf7P" role="3clFbx">
-            <node concept="3cpWs6" id="4TCblo5PgQh" role="3cqZAp">
-              <node concept="2OqwBi" id="6OUp3PsSGSl" role="3cqZAk">
-                <node concept="2OqwBi" id="4TCblo5PiAX" role="2Oq$k0">
-                  <node concept="2OqwBi" id="4TCblo5PhFQ" role="2Oq$k0">
-                    <node concept="37vLTw" id="4TCblo5Phlx" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4TCblo5MOOn" resolve="logical" />
-                    </node>
-                    <node concept="liA8E" id="4TCblo5Pi8Z" role="2OqNvi">
-                      <ref role="37wK5l" to="bj13:~Logical.metaLogical()" resolve="metaLogical" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4TCblo5Pj6t" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~MetaLogical.type()" resolve="type" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="6OUp3PsSHqC" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
-                  <node concept="37vLTw" id="6OUp3PsSJNn" role="37wK5m">
-                    <ref role="3cqZAo" node="4TCblo5MWaD" resolve="klass" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="4TCblo5PlEX" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="4TCblo5PmcG" role="3cqZAp">
-          <node concept="3clFbT" id="4TCblo5PmcF" role="3clFbG">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4TCblo5MWaN" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4TCblo5MKxC" role="jymVt" />
     <node concept="3clFb_" id="4TCblo5MPLt" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="get" />
@@ -1273,42 +1157,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3gNap3fN2jq" role="jymVt" />
-    <node concept="3clFb_" id="3gNap3fN2m3" role="jymVt">
-      <property role="TrG5h" value="canRepresent" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="37vLTG" id="3gNap3fN2m4" role="3clF46">
-        <property role="TrG5h" value="klass" />
-        <node concept="3uibUv" id="3gNap3fN2m5" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-          <node concept="3qUE_q" id="3gNap3fN2m6" role="11_B2D">
-            <node concept="3uibUv" id="3gNap3fN2m7" role="3qUE_r">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="3gNap3fN2m8" role="3clF45" />
-      <node concept="3Tm1VV" id="3gNap3fN2m9" role="1B3o_S" />
-      <node concept="3clFbS" id="3gNap3fN2ma" role="3clF47">
-        <node concept="3cpWs6" id="3gNap3fN2pM" role="3cqZAp">
-          <node concept="2OqwBi" id="3gNap3fN2Si" role="3cqZAk">
-            <node concept="3VsKOn" id="3gNap3fN2sr" role="2Oq$k0">
-              <ref role="3VsUkX" to="6exd:2xQ7eRAD2dj" resolve="Value" />
-            </node>
-            <node concept="liA8E" id="3gNap3fN3Rf" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
-              <node concept="37vLTw" id="3gNap3fN3SA" role="37wK5m">
-                <ref role="3cqZAo" node="3gNap3fN2m4" resolve="klass" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3gNap3fN2mu" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3gNap3fN2lr" role="jymVt" />
     <node concept="3clFb_" id="3gNap3fN3XS" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="get" />
@@ -1688,42 +1536,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3gNap3fNdz2" role="jymVt" />
-    <node concept="3clFb_" id="3gNap3fNd_v" role="jymVt">
-      <property role="TrG5h" value="canRepresent" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="37vLTG" id="3gNap3fNd_w" role="3clF46">
-        <property role="TrG5h" value="klass" />
-        <node concept="3uibUv" id="3gNap3fNd_x" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-          <node concept="3qUE_q" id="3gNap3fNd_y" role="11_B2D">
-            <node concept="3uibUv" id="3gNap3fNd_z" role="3qUE_r">
-              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="10P_77" id="3gNap3fNd_$" role="3clF45" />
-      <node concept="3Tm1VV" id="3gNap3fNd__" role="1B3o_S" />
-      <node concept="3clFbS" id="3gNap3fNd_A" role="3clF47">
-        <node concept="3cpWs6" id="3gNap3fNdAF" role="3cqZAp">
-          <node concept="2OqwBi" id="3gNap3fNdAG" role="3cqZAk">
-            <node concept="3VsKOn" id="3gNap3fNdAH" role="2Oq$k0">
-              <ref role="3VsUkX" to="6exd:2xQ7eRAD2dj" resolve="Value" />
-            </node>
-            <node concept="liA8E" id="3gNap3fNdAI" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
-              <node concept="37vLTw" id="3gNap3fNdAJ" role="37wK5m">
-                <ref role="3cqZAo" node="3gNap3fNd_w" resolve="klass" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3gNap3fNd_I" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3gNap3fNdCE" role="jymVt" />
     <node concept="3clFb_" id="3gNap3fNdAP" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="get" />
