@@ -12,6 +12,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="bj13" ref="bbf5c548-7111-4a53-a117-cdefc664cf34/java:jetbrains.mps.logic.reactor.logical(jetbrains.mps.logic.reactor/)" />
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -216,7 +217,23 @@
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -576,6 +593,13 @@
         <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
       </node>
     </node>
+    <node concept="3UR2Jj" id="1fvYCP_1sKm" role="lGtFl">
+      <node concept="TZ5HA" id="1fvYCP_1sKn" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP_1sKo" role="1dT_Ay">
+          <property role="1dT_AB" value="Serves as a prototype for LogicalDataForm." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="4TCblo5MJ1m">
     <property role="TrG5h" value="LogicalDataForm" />
@@ -656,6 +680,9 @@
       </node>
       <node concept="2AHcQZ" id="7BhUeN7yuR6" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="1fvYCP_1bI2" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2tJIrI" id="7BhUeN7yvvO" role="jymVt" />
@@ -1089,6 +1116,23 @@
         <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
       </node>
     </node>
+    <node concept="3UR2Jj" id="1fvYCP_19C5" role="lGtFl">
+      <node concept="TZ5HA" id="1fvYCP_19C6" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP_19C7" role="1dT_Ay">
+          <property role="1dT_AB" value="Bridges any FUN dataform except Value and logical variable. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1fvYCP_1bzx" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP_1bzy" role="1dT_Ay">
+          <property role="1dT_AB" value="Represents a Variable that turns into REF to the target when bound. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1fvYCP_1b_D" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP_1b_E" role="1dT_Ay">
+          <property role="1dT_AB" value="Has kind VAR when logical is unbound, otherwise REF." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="3gNap3fN2hw">
     <property role="TrG5h" value="LogicalValue" />
@@ -1201,6 +1245,9 @@
       </node>
       <node concept="2AHcQZ" id="7BhUeN7ywU8" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="1fvYCP_1dA1" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2tJIrI" id="7BhUeN7ywXu" role="jymVt" />
@@ -1515,6 +1562,23 @@
     </node>
     <node concept="16euLQ" id="3gNap3fN2hD" role="16eVyc">
       <property role="TrG5h" value="V" />
+    </node>
+    <node concept="3UR2Jj" id="1fvYCP$WC$0" role="lGtFl">
+      <node concept="TZ5HA" id="1fvYCP$WC$1" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP$WC$2" role="1dT_Ay">
+          <property role="1dT_AB" value="Bridges value dataform and logical variable." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1fvYCP$WDMN" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP$WDMO" role="1dT_Ay">
+          <property role="1dT_AB" value="Represents a Variable that effectively turns into Value when bound." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1fvYCP$WDNb" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP$WDNc" role="1dT_Ay">
+          <property role="1dT_AB" value="Has kind VAR when logical is unbound, otherwise FUN. " />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="3gNap3fNdtK">
@@ -1868,12 +1932,19 @@
     <node concept="16euLQ" id="3gNap3fNgV4" role="16eVyc">
       <property role="TrG5h" value="V" />
     </node>
+    <node concept="3UR2Jj" id="1fvYCP_1rlg" role="lGtFl">
+      <node concept="TZ5HA" id="1fvYCP_1rlh" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP_1rli" role="1dT_Ay">
+          <property role="1dT_AB" value="Serves as a prototype for LogicalValue. " />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="677NV565N1x">
     <property role="TrG5h" value="LogicalUtil" />
     <node concept="2tJIrI" id="7HUwyZb7alE" role="jymVt" />
     <node concept="2YIFZL" id="7HUwyZb7b7C" role="jymVt">
-      <property role="TrG5h" value="asVariableArray" />
+      <property role="TrG5h" value="asDataFormArray" />
       <node concept="37vLTG" id="7HUwyZb7b7D" role="3clF46">
         <property role="TrG5h" value="multiMetaLogical" />
         <node concept="3uibUv" id="7HUwyZb7bf2" role="1tU5fm">
@@ -1927,7 +1998,7 @@
                   </node>
                 </node>
                 <node concept="1rXfSq" id="7HUwyZbdRag" role="37vLTx">
-                  <ref role="37wK5l" node="7HUwyZb7chj" resolve="asVariable" />
+                  <ref role="37wK5l" node="7HUwyZb7chj" resolve="asDataForm" />
                   <node concept="2OqwBi" id="7HUwyZbdRec" role="37wK5m">
                     <node concept="37vLTw" id="7HUwyZbdRce" role="2Oq$k0">
                       <ref role="3cqZAo" node="7HUwyZb7b7D" resolve="multiMetaLogical" />
@@ -1975,10 +2046,22 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="1fvYCP_uAcD" role="lGtFl">
+        <node concept="TZ5HA" id="1fvYCP_uAcE" role="TZ5H$">
+          <node concept="1dT_AC" id="1fvYCP_uAcF" role="1dT_Ay">
+            <property role="1dT_AB" value="Wraps every MetaLogical from passed MultiMetaLogical into a MetaLogicalDataForm" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1fvYCP_uAvj" role="TZ5H$">
+          <node concept="1dT_AC" id="1fvYCP_uAvk" role="1dT_Ay">
+            <property role="1dT_AB" value="and returns an array of these as the result." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="7HUwyZb7clq" role="jymVt" />
     <node concept="2YIFZL" id="7HUwyZb7chj" role="jymVt">
-      <property role="TrG5h" value="asVariable" />
+      <property role="TrG5h" value="asDataForm" />
       <node concept="37vLTG" id="7HUwyZb7chk" role="3clF46">
         <property role="TrG5h" value="metaLogical" />
         <node concept="3uibUv" id="7HUwyZb7chm" role="1tU5fm">
@@ -2002,10 +2085,17 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="1fvYCP_u$WH" role="lGtFl">
+        <node concept="TZ5HA" id="1fvYCP_u$WI" role="TZ5H$">
+          <node concept="1dT_AC" id="1fvYCP_u$WJ" role="1dT_Ay">
+            <property role="1dT_AB" value="Wraps a MetaLogical representing dataform into MetaLogicalDataForm. " />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="4TCblo5YI1R" role="jymVt" />
     <node concept="2YIFZL" id="4TCblo5YI1H" role="jymVt">
-      <property role="TrG5h" value="asVariable" />
+      <property role="TrG5h" value="asDataForm" />
       <node concept="37vLTG" id="4TCblo5YI1I" role="3clF46">
         <property role="TrG5h" value="logical" />
         <node concept="3uibUv" id="4TCblo5YI1J" role="1tU5fm">
@@ -2040,6 +2130,13 @@
           <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
         </node>
       </node>
+      <node concept="P$JXv" id="1fvYCP_u_9_" role="lGtFl">
+        <node concept="TZ5HA" id="1fvYCP_u_9A" role="TZ5H$">
+          <node concept="1dT_AC" id="1fvYCP_u_9B" role="1dT_Ay">
+            <property role="1dT_AB" value="Wraps a Logical representing dataform into a LogicalDataForm." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3gNap3fZcV_" role="jymVt" />
     <node concept="2YIFZL" id="3gNap3gwG50" role="jymVt">
@@ -2049,7 +2146,7 @@
         <node concept="3uibUv" id="3gNap3gwG52" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
           <node concept="16syzq" id="3gNap3gwG53" role="11_B2D">
-            <ref role="16sUi3" node="3gNap3gwG5c" resolve="T" />
+            <ref role="16sUi3" node="3gNap3gwG5c" resolve="V" />
           </node>
         </node>
       </node>
@@ -2066,16 +2163,20 @@
                 <ref role="3cqZAo" node="3gNap3gwG51" resolve="metaLogical" />
               </node>
               <node concept="16syzq" id="3gNap3gwG5b" role="1pMfVU">
-                <ref role="16sUi3" node="3gNap3gwG5c" resolve="T" />
+                <ref role="16sUi3" node="3gNap3gwG5c" resolve="V" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="16euLQ" id="3gNap3gwG5c" role="16eVyc">
-        <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="3gNap3gwG5d" role="3ztrMU">
-          <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
+        <property role="TrG5h" value="V" />
+      </node>
+      <node concept="P$JXv" id="1fvYCP_u_tJ" role="lGtFl">
+        <node concept="TZ5HA" id="1fvYCP_u_tK" role="TZ5H$">
+          <node concept="1dT_AC" id="1fvYCP_u_tL" role="1dT_Ay">
+            <property role="1dT_AB" value="Wraps a MetaLogical representing Object into a MetaLogicalValue. " />
+          </node>
         </node>
       </node>
     </node>
@@ -2087,7 +2188,7 @@
         <node concept="3uibUv" id="3gNap3fZcVp" role="1tU5fm">
           <ref role="3uigEE" to="bj13:~Logical" resolve="Logical" />
           <node concept="16syzq" id="3gNap3fZcVq" role="11_B2D">
-            <ref role="16sUi3" node="3gNap3fZcVz" resolve="T" />
+            <ref role="16sUi3" node="3gNap3fZcVz" resolve="V" />
           </node>
         </node>
       </node>
@@ -2104,16 +2205,20 @@
                 <ref role="3cqZAo" node="3gNap3fZcVo" resolve="logical" />
               </node>
               <node concept="16syzq" id="3gNap3fZcVy" role="1pMfVU">
-                <ref role="16sUi3" node="3gNap3fZcVz" resolve="T" />
+                <ref role="16sUi3" node="3gNap3fZcVz" resolve="V" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="16euLQ" id="3gNap3fZcVz" role="16eVyc">
-        <property role="TrG5h" value="T" />
-        <node concept="3uibUv" id="3gNap3fZcV$" role="3ztrMU">
-          <ref role="3uigEE" to="yt73:~Term" resolve="Term" />
+        <property role="TrG5h" value="V" />
+      </node>
+      <node concept="P$JXv" id="1fvYCP_u_Bj" role="lGtFl">
+        <node concept="TZ5HA" id="1fvYCP_u_Bk" role="TZ5H$">
+          <node concept="1dT_AC" id="1fvYCP_u_Bl" role="1dT_Ay">
+            <property role="1dT_AB" value="Wraps a Logical representing Object into a LogicalValue. " />
+          </node>
         </node>
       </node>
     </node>
@@ -2162,6 +2267,18 @@
         <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
       </node>
       <node concept="3Tm1VV" id="4TCblo5NkoK" role="1B3o_S" />
+      <node concept="P$JXv" id="1fvYCP$W$Pe" role="lGtFl">
+        <node concept="TZ5HA" id="1fvYCP$W$Pf" role="TZ5H$">
+          <node concept="1dT_AC" id="1fvYCP$W$Pg" role="1dT_Ay">
+            <property role="1dT_AB" value="Instantiates logicals within a dataform by replacing all MetaLogicalValue and MetaLogicalDataForm" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1fvYCP_246X" role="TZ5H$">
+          <node concept="1dT_AC" id="1fvYCP_246Y" role="1dT_Ay">
+            <property role="1dT_AB" value="with LogicalValue and LogicalDataForm respectively. " />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="4TCblo5Nkhd" role="jymVt" />
     <node concept="312cEu" id="4TCblo5MG7R" role="jymVt">
@@ -2295,7 +2412,7 @@
             <node concept="3clFbS" id="5BGv8yzxmXS" role="3clFbx">
               <node concept="3cpWs6" id="3gNap3fZcTi" role="3cqZAp">
                 <node concept="1rXfSq" id="3gNap3fZcU4" role="3cqZAk">
-                  <ref role="37wK5l" node="4TCblo5YI1H" resolve="asVariable" />
+                  <ref role="37wK5l" node="4TCblo5YI1H" resolve="asDataForm" />
                   <node concept="2OqwBi" id="3gNap3fZcU7" role="37wK5m">
                     <node concept="37vLTw" id="3gNap3fZcU8" role="2Oq$k0">
                       <ref role="3cqZAo" node="4TCblo5MI7r" resolve="logicalContext" />
@@ -2362,6 +2479,13 @@
     </node>
     <node concept="2tJIrI" id="4TCblo5NlYH" role="jymVt" />
     <node concept="3Tm1VV" id="677NV565N1y" role="1B3o_S" />
+    <node concept="3UR2Jj" id="1fvYCP_FZrb" role="lGtFl">
+      <node concept="TZ5HA" id="1fvYCP_FZrc" role="TZ5H$">
+        <node concept="1dT_AC" id="1fvYCP_FZrd" role="1dT_Ay">
+          <property role="1dT_AB" value="Utility to provide bridge between dataforms and logical variables. " />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="7nPD14NOCSa">
     <property role="TrG5h" value="MetaLogicalFactory" />

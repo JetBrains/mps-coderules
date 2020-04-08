@@ -135,7 +135,6 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -719,14 +718,13 @@
           </node>
           <node concept="gft3U" id="4OKkcneWb1C" role="150oIE">
             <node concept="2YIFZM" id="3gNap3fNlJg" role="gfFT$">
-              <ref role="37wK5l" to="oy3s:7HUwyZb7chj" resolve="asVariable" />
+              <ref role="37wK5l" to="oy3s:7HUwyZb7chj" resolve="asDataForm" />
               <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-              <node concept="2ShNRf" id="7nPD14NOHH4" role="37wK5m">
-                <node concept="1pGfFk" id="7nPD14NOHH5" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="3VsKOn" id="2Dg5bSg3QiY" role="37wK5m">
-                    <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
-                  </node>
+              <node concept="2YIFZM" id="1fvYCP_gnXn" role="37wK5m">
+                <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                <ref role="37wK5l" to="oy3s:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                <node concept="3VsKOn" id="1fvYCP_gnXo" role="37wK5m">
+                  <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
                 </node>
               </node>
             </node>
@@ -734,14 +732,13 @@
         </node>
         <node concept="gft3U" id="4OKkcneWczK" role="14YRTM">
           <node concept="2YIFZM" id="3gNap3fNlJh" role="gfFT$">
-            <ref role="37wK5l" to="oy3s:7HUwyZb7chj" resolve="asVariable" />
+            <ref role="37wK5l" to="oy3s:7HUwyZb7chj" resolve="asDataForm" />
             <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <node concept="2ShNRf" id="2Dg5bSg3RdY" role="37wK5m">
-              <node concept="1pGfFk" id="2Dg5bSg3RdZ" role="2ShVmc">
-                <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
-                <node concept="3VsKOn" id="2Dg5bSg3Rjh" role="37wK5m">
-                  <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-                </node>
+            <node concept="2YIFZM" id="1fvYCP_gnSs" role="37wK5m">
+              <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+              <ref role="37wK5l" to="oy3s:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+              <node concept="3VsKOn" id="1fvYCP_gnSt" role="37wK5m">
+                <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
               </node>
             </node>
           </node>
@@ -1590,7 +1587,7 @@
               <ref role="37wK5l" to="6exd:1OShD0HS45f" resolve="createList" />
               <ref role="1Pybhc" to="6exd:3OPtF03lco4" resolve="ListNode" />
               <node concept="2YIFZM" id="3gNap3fNlJf" role="37wK5m">
-                <ref role="37wK5l" to="oy3s:7HUwyZb7b7C" resolve="asVariableArray" />
+                <ref role="37wK5l" to="oy3s:7HUwyZb7b7C" resolve="asDataFormArray" />
                 <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
                 <node concept="37vLTw" id="7HUwyZb7bts" role="37wK5m">
                   <ref role="3cqZAo" node="677NV56tBWz" resolve="mlp" />
@@ -1682,7 +1679,7 @@
             <node concept="3clFbF" id="7HUwyZb7cpf" role="3cqZAp">
               <node concept="2YIFZM" id="3gNap3fNlJi" role="3clFbG">
                 <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-                <ref role="37wK5l" to="oy3s:7HUwyZb7chj" resolve="asVariable" />
+                <ref role="37wK5l" to="oy3s:7HUwyZb7chj" resolve="asDataForm" />
                 <node concept="37vLTw" id="7HUwyZb7cvj" role="37wK5m">
                   <ref role="3cqZAo" node="677NV56tAlm" resolve="logical" />
                   <node concept="29HgVG" id="7HUwyZb7cBP" role="lGtFl" />
@@ -1779,7 +1776,7 @@
             <node concept="3clFbF" id="514BAS_YBDx" role="3cqZAp">
               <node concept="2YIFZM" id="3gNap3fNlJk" role="3clFbG">
                 <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-                <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+                <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
                 <node concept="37vLTw" id="514BAS_YBDz" role="37wK5m">
                   <ref role="3cqZAo" node="514BAS_YBDv" resolve="logical" />
                   <node concept="29HgVG" id="514BAS_YBD$" role="lGtFl" />

@@ -2623,7 +2623,7 @@
               <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
             <node concept="2YIFZM" id="3gNap3fNlJl" role="10QFUP">
-              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
               <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2YIFZM" id="YbzkzLdcYi" role="37wK5m">
                 <ref role="37wK5l" to="z9ve:~LogicalImplKt.namedLogical(java.lang.String)" resolve="namedLogical" />

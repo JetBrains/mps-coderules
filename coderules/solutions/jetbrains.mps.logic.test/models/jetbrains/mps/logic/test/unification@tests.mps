@@ -6442,7 +6442,7 @@
               <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
             <node concept="2YIFZM" id="3gNap3fNlJt" role="10QFUP">
-              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
               <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
               <node concept="2YIFZM" id="YbzkzLheK2" role="37wK5m">
                 <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
@@ -7316,7 +7316,7 @@
       <node concept="3clFbS" id="390NiL14kVJ" role="3clF47">
         <node concept="3clFbF" id="390NiL14kVK" role="3cqZAp">
           <node concept="2YIFZM" id="390NiL14kVL" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
             <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2YIFZM" id="YbzkzLgjzF" role="37wK5m">
               <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
@@ -9256,7 +9256,7 @@
       <node concept="3clFbS" id="390NiL15h0R" role="3clF47">
         <node concept="3clFbF" id="YbzkzLiRad" role="3cqZAp">
           <node concept="2YIFZM" id="YbzkzLiRae" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
             <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2YIFZM" id="YbzkzLiRaf" role="37wK5m">
               <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
@@ -11280,7 +11280,7 @@
       <node concept="3clFbS" id="1POzLwzc6NH" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6NI" role="3cqZAp">
           <node concept="2YIFZM" id="1POzLwzc6NJ" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
             <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2YIFZM" id="YbzkzLe4p5" role="37wK5m">
               <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
@@ -11315,7 +11315,7 @@
       <node concept="3clFbS" id="1POzLwzc6NW" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6NX" role="3cqZAp">
           <node concept="2YIFZM" id="1POzLwzc6NY" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
             <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2YIFZM" id="YbzkzLekXP" role="37wK5m">
               <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
@@ -11346,7 +11346,7 @@
       <node concept="3clFbS" id="1POzLwzc6O9" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6Oa" role="3cqZAp">
           <node concept="2YIFZM" id="1POzLwzc6Ob" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
             <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2YIFZM" id="YbzkzLeDr8" role="37wK5m">
               <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
@@ -11374,7 +11374,7 @@
       <node concept="3clFbS" id="1POzLwzc6Om" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6On" role="3cqZAp">
           <node concept="2YIFZM" id="1POzLwzc6Oo" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asVariable" />
+            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
             <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
             <node concept="2YIFZM" id="YbzkzLeTxy" role="37wK5m">
               <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
