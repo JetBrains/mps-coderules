@@ -309,9 +309,6 @@
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.ListNode" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
-      <concept id="6694277639409954681" name="jetbrains.mps.logic.structure.ListRole" flags="ng" index="38e3lM">
-        <child id="6694277639409954746" name="list" index="38e3mL" />
-      </concept>
       <concept id="7571593955706120730" name="jetbrains.mps.logic.structure.DataNodeExpression" flags="ng" index="1oi1Uc">
         <child id="7571593955706125526" name="root" index="1oi0x0" />
       </concept>
@@ -3137,9 +3134,9 @@
               </node>
               <node concept="1oi1Uc" id="2dF51l195XV" role="33vP2m">
                 <node concept="1oi5UN" id="2dF51l195XW" role="1oi0x0">
-                  <node concept="38e3lM" id="2dF51l1963P" role="1ojpOf">
+                  <node concept="1oi5ST" id="1fvYCPAk_xP" role="1ojpOf">
                     <property role="TrG5h" value="mem" />
-                    <node concept="KCUsM" id="2dF51l1963R" role="38e3mL">
+                    <node concept="KCUsM" id="2dF51l1963R" role="1oi5TL">
                       <node concept="1oi5UN" id="2dF51l1963Y" role="KCVpo">
                         <node concept="1oi5Wm" id="2dF51l19641" role="1ojpOf">
                           <property role="TrG5h" value="name" />
@@ -3243,9 +3240,9 @@
               </node>
               <node concept="1oi1Uc" id="2dF51l1981n" role="33vP2m">
                 <node concept="1oi5UN" id="2dF51l1981o" role="1oi0x0">
-                  <node concept="38e3lM" id="2dF51l1981p" role="1ojpOf">
+                  <node concept="1oi5ST" id="1fvYCPAk_xQ" role="1ojpOf">
                     <property role="TrG5h" value="mem" />
-                    <node concept="KCUsM" id="2dF51l1981q" role="38e3mL">
+                    <node concept="KCUsM" id="2dF51l1981q" role="1oi5TL">
                       <node concept="1oi5UN" id="2dF51l198Kh" role="KCVpo">
                         <node concept="1oi5Wm" id="2dF51l198Kn" role="1ojpOf">
                           <property role="TrG5h" value="name" />
@@ -3412,9 +3409,9 @@
               </node>
               <node concept="1oi1Uc" id="2dF51l1cNc_" role="33vP2m">
                 <node concept="1oi5UN" id="2dF51l1cNcA" role="1oi0x0">
-                  <node concept="38e3lM" id="2dF51l1cNcB" role="1ojpOf">
+                  <node concept="1oi5ST" id="1fvYCPAk_xR" role="1ojpOf">
                     <property role="TrG5h" value="mem" />
-                    <node concept="KCUsM" id="2dF51l1cNcC" role="38e3mL">
+                    <node concept="KCUsM" id="2dF51l1cNcC" role="1oi5TL">
                       <node concept="1oi5UN" id="2dF51l1cNcD" role="KCVpo">
                         <node concept="1oi5Wm" id="2dF51l1cNcE" role="1ojpOf">
                           <property role="TrG5h" value="name" />
@@ -3548,9 +3545,9 @@
               </node>
               <node concept="1oi1Uc" id="2dF51l1cNdf" role="33vP2m">
                 <node concept="1oi5UN" id="2dF51l1cNdg" role="1oi0x0">
-                  <node concept="38e3lM" id="2dF51l1cNdh" role="1ojpOf">
+                  <node concept="1oi5ST" id="1fvYCPAk_xS" role="1ojpOf">
                     <property role="TrG5h" value="mem" />
-                    <node concept="KCUsM" id="2dF51l1cNdi" role="38e3mL">
+                    <node concept="KCUsM" id="2dF51l1cNdi" role="1oi5TL">
                       <node concept="1oi5UN" id="2dF51l1cNdj" role="KCVpo">
                         <node concept="1oi5Wm" id="2dF51l1cNdk" role="1ojpOf">
                           <property role="TrG5h" value="name" />
