@@ -299,9 +299,6 @@
       <property role="IQ2ns" value="2105510410850136264" />
       <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
-    <node concept="PrWs8" id="PltxfHM3cd" role="PzmwI">
-      <ref role="PrY4T" node="PltxfHKvEb" resolve="LogicalUnwrapContext" />
-    </node>
   </node>
   <node concept="PlHQZ" id="75vUFrS_9Sg">
     <property role="3GE5qa" value="logical.variable" />
@@ -650,11 +647,6 @@
       <ref role="2wpffI" node="6dP_abdQo2a" />
     </node>
   </node>
-  <node concept="PlHQZ" id="PltxfHKvEb">
-    <property role="EcuMT" value="960803923478837899" />
-    <property role="3GE5qa" value="dataform" />
-    <property role="TrG5h" value="LogicalUnwrapContext" />
-  </node>
   <node concept="1TIwiD" id="PltxfHNb9C">
     <property role="EcuMT" value="960803923479540328" />
     <property role="3GE5qa" value="dataform" />
@@ -684,6 +676,7 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
+    <node concept="asaX9" id="1fvYCPAmuWa" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="24ciDNzqIuw">
     <property role="EcuMT" value="2381360340662937504" />
@@ -730,6 +723,26 @@
     <property role="EcuMT" value="323863683632580474" />
     <property role="3GE5qa" value="logical.item.expression" />
     <property role="TrG5h" value="EvaluationSetting" />
+  </node>
+  <node concept="1TIwiD" id="1fvYCPAmuWc">
+    <property role="EcuMT" value="1432138691741609740" />
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="ConsListNode" />
+    <property role="34LRSv" value="cons list" />
+    <ref role="1TJDcQ" node="5lJXKARS0" resolve="DataNode" />
+    <node concept="1TJgyj" id="1fvYCPAmuWd" role="1TKVEi">
+      <property role="IQ2ns" value="1432138691741609741" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="head" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
+    </node>
+    <node concept="1TJgyj" id="1fvYCPAmuWf" role="1TKVEi">
+      <property role="IQ2ns" value="1432138691741609743" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tail" />
+      <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
+    </node>
   </node>
 </model>
 
