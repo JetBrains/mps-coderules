@@ -813,19 +813,93 @@
     </node>
     <node concept="3aamgX" id="PltxfHQdoQ" role="3acgRq">
       <ref role="30HIoZ" to="5j4j:PltxfHNb9C" resolve="LogicalDataForm" />
-      <node concept="gft3U" id="1fvYCPA2_Zx" role="1lVwrX">
-        <node concept="2YIFZM" id="1fvYCPA2A5R" role="gfFT$">
-          <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
-          <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-          <node concept="10Nm6u" id="1fvYCPA2A8d" role="37wK5m">
-            <node concept="29HgVG" id="1fvYCPA2Abr" role="lGtFl">
-              <node concept="3NFfHV" id="1fvYCPA2AcL" role="3NFExx">
-                <node concept="3clFbS" id="1fvYCPA2AcM" role="2VODD2">
-                  <node concept="3clFbF" id="1fvYCPA2Agd" role="3cqZAp">
-                    <node concept="2OqwBi" id="1fvYCPA2Ast" role="3clFbG">
-                      <node concept="30H73N" id="1fvYCPA2Agc" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1fvYCPA2AB4" role="2OqNvi">
-                        <ref role="3Tt5mk" to="5j4j:PltxfHNdqi" resolve="logical" />
+      <node concept="14YyZ8" id="1fvYCPCmGm2" role="1lVwrX">
+        <node concept="14ZrTv" id="1fvYCPCmGxz" role="14ZwWg">
+          <node concept="30G5F_" id="1fvYCPCmGx$" role="150hEN">
+            <node concept="3clFbS" id="1fvYCPCmGx_" role="2VODD2">
+              <node concept="3clFbF" id="1fvYCPCsk$p" role="3cqZAp">
+                <node concept="2OqwBi" id="1fvYCPCsk$q" role="3clFbG">
+                  <node concept="1UaxmW" id="1fvYCPCsk$r" role="2Oq$k0">
+                    <node concept="1Yb3XT" id="1fvYCPCsk$v" role="1Ub_4A">
+                      <property role="TrG5h" value="dummy" />
+                      <node concept="2DMOqp" id="1fvYCPCsk$w" role="1YbcFS">
+                        <node concept="2c44tf" id="1fvYCPCsk$x" role="HM535">
+                          <node concept="3uibUv" id="1fvYCPCslfa" role="2c44tc">
+                            <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="1fvYCPCz6es" role="1Ub_4B">
+                      <node concept="2OqwBi" id="1fvYCPCsl06" role="2Oq$k0">
+                        <node concept="30H73N" id="1fvYCPCskOl" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="1fvYCPCsl8P" role="2OqNvi">
+                          <ref role="3Tt5mk" to="5j4j:PltxfHNdqi" resolve="logical" />
+                        </node>
+                      </node>
+                      <node concept="3JvlWi" id="1fvYCPCz6sd" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="3x8VRR" id="1fvYCPCsk$z" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1Koe21" id="1fvYCPCmIOF" role="150oIE">
+            <node concept="3clFbS" id="1fvYCPCmIOG" role="1Koe22">
+              <node concept="3cpWs8" id="1fvYCPCmIOH" role="3cqZAp">
+                <node concept="3cpWsn" id="1fvYCPCmIOI" role="3cpWs9">
+                  <property role="TrG5h" value="mlp" />
+                  <node concept="3uibUv" id="1fvYCPCmIOJ" role="1tU5fm">
+                    <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="1fvYCPCmIOK" role="3cqZAp">
+                <node concept="2YIFZM" id="1fvYCPCmIOL" role="3clFbG">
+                  <ref role="1Pybhc" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                  <ref role="37wK5l" to="6exd:1OShD0HS45f" resolve="createList" />
+                  <node concept="2YIFZM" id="1fvYCPCmIOM" role="37wK5m">
+                    <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+                    <ref role="37wK5l" to="oy3s:7HUwyZb7b7C" resolve="asDataFormArray" />
+                    <node concept="37vLTw" id="1fvYCPCmION" role="37wK5m">
+                      <ref role="3cqZAo" node="1fvYCPCmIOI" resolve="mlp" />
+                      <node concept="29HgVG" id="1fvYCPCmIOO" role="lGtFl">
+                        <node concept="3NFfHV" id="1fvYCPCmIOP" role="3NFExx">
+                          <node concept="3clFbS" id="1fvYCPCmIOQ" role="2VODD2">
+                            <node concept="3clFbF" id="1fvYCPCmIOR" role="3cqZAp">
+                              <node concept="2OqwBi" id="1fvYCPC_acZ" role="3clFbG">
+                                <node concept="30H73N" id="1fvYCPCmIOS" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="1fvYCPC_an1" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="5j4j:PltxfHNdqi" resolve="logical" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="raruj" id="1fvYCPCmIOT" role="lGtFl" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="gft3U" id="1fvYCPA2_Zx" role="14YRTM">
+          <node concept="2YIFZM" id="1fvYCPA2A5R" role="gfFT$">
+            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
+            <node concept="10Nm6u" id="1fvYCPA2A8d" role="37wK5m">
+              <node concept="29HgVG" id="1fvYCPA2Abr" role="lGtFl">
+                <node concept="3NFfHV" id="1fvYCPA2AcL" role="3NFExx">
+                  <node concept="3clFbS" id="1fvYCPA2AcM" role="2VODD2">
+                    <node concept="3clFbF" id="1fvYCPA2Agd" role="3cqZAp">
+                      <node concept="2OqwBi" id="1fvYCPA2Ast" role="3clFbG">
+                        <node concept="30H73N" id="1fvYCPA2Agc" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="1fvYCPA2AB4" role="2OqNvi">
+                          <ref role="3Tt5mk" to="5j4j:PltxfHNdqi" resolve="logical" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -1536,7 +1610,7 @@
             <node concept="3cpWsn" id="7HUwyZb1KbI" role="3cpWs9">
               <property role="TrG5h" value="lv" />
               <node concept="3uibUv" id="7HUwyZb1KbJ" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
                 <node concept="raruj" id="7HUwyZb1KbK" role="lGtFl" />
                 <node concept="29HgVG" id="7HUwyZb1KbL" role="lGtFl">
                   <node concept="3NFfHV" id="7HUwyZb1KbM" role="3NFExx">
@@ -1602,7 +1676,7 @@
             <node concept="3cpWsn" id="677NV56tBWz" role="3cpWs9">
               <property role="TrG5h" value="mlp" />
               <node concept="3uibUv" id="7HUwyZb7bp_" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
               </node>
             </node>
           </node>
@@ -1647,7 +1721,7 @@
                   <node concept="2DMOqp" id="5yj19qb1tOR" role="1YbcFS">
                     <node concept="2c44tf" id="5yj19qb1tOT" role="HM535">
                       <node concept="3uibUv" id="5yj19qb1tPi" role="2c44tc">
-                        <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                        <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
                       </node>
                     </node>
                   </node>
@@ -2032,7 +2106,7 @@
             <node concept="3cpWsn" id="6dMt3c5appH" role="3cpWs9">
               <property role="TrG5h" value="multiMetaLogical" />
               <node concept="3uibUv" id="7HUwyZaNQoy" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
               </node>
             </node>
           </node>
@@ -2096,7 +2170,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="7HUwyZaNQGE" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MultiMetaLogical.logicalAt(int)" resolve="logicalAt" />
+                <ref role="37wK5l" to="oy3s:1fvYCPC9rDX" resolve="logicalAt" />
                 <node concept="3cmrfG" id="7HUwyZaNQHA" role="37wK5m">
                   <property role="3cmrfH" value="0" />
                   <node concept="29HgVG" id="7HUwyZaNQHB" role="lGtFl">
@@ -3006,9 +3080,6 @@
       <node concept="gft3U" id="1fvYCPA6RxW" role="1lVwrX">
         <node concept="1oi5ST" id="1fvYCPA6Ry2" role="gfFT$">
           <property role="TrG5h" value="name" />
-          <node concept="3wJAYo" id="1fvYCPA6RLt" role="1oi5TL">
-            <node concept="2IllgU" id="1fvYCPA6RLu" role="3wIGS_" />
-          </node>
           <node concept="17Uvod" id="1fvYCPA6Ry4" role="lGtFl">
             <property role="2qtEX9" value="name" />
             <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -3024,6 +3095,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="3wJAYo" id="1fvYCPA6RLt" role="1oi5TL">
+            <node concept="2IllgU" id="1fvYCPA6RLu" role="3wIGS_" />
           </node>
         </node>
       </node>

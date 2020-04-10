@@ -8040,7 +8040,7 @@
             <node concept="3cpWsn" id="7nPD14NP47U" role="3cpWs9">
               <property role="TrG5h" value="$_T" />
               <node concept="3uibUv" id="7nPD14NP47V" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
               </node>
               <node concept="17Uvod" id="7nPD14NP47W" role="lGtFl">
                 <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -8406,14 +8406,14 @@
             <node concept="3cpWsn" id="75vUFrSLxaT" role="3cpWs9">
               <property role="TrG5h" value="multiLogical" />
               <node concept="3uibUv" id="7HUwyZaPUUk" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
               </node>
             </node>
           </node>
           <node concept="3clFbF" id="7HUwyZaPVcS" role="3cqZAp">
             <node concept="2OqwBi" id="7HUwyZaPVgJ" role="3clFbG">
               <node concept="liA8E" id="7HUwyZaPVif" role="2OqNvi">
-                <ref role="37wK5l" to="bj13:~MultiMetaLogical.logicalAt(int)" resolve="logicalAt" />
+                <ref role="37wK5l" to="oy3s:1fvYCPC9rDX" resolve="logicalAt" />
                 <node concept="3cmrfG" id="7HUwyZaPVje" role="37wK5m">
                   <property role="3cmrfH" value="0" />
                   <node concept="29HgVG" id="7HUwyZaPVjf" role="lGtFl">
@@ -8697,7 +8697,7 @@
               <property role="TrG5h" value="multiLogical" />
               <node concept="3Tm1VV" id="452KZTbtm6U" role="1B3o_S" />
               <node concept="3uibUv" id="7HUwyZaPLv5" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
                 <node concept="3uibUv" id="7nPD14NP2dv" role="11_B2D">
                   <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
@@ -9019,7 +9019,7 @@
           <node concept="312cEg" id="452KZTbxHgV" role="jymVt">
             <property role="TrG5h" value="var" />
             <node concept="3uibUv" id="7HUwyZaVmga" role="1tU5fm">
-              <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+              <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
             </node>
             <node concept="3Tmbuc" id="4KRwoemkxBz" role="1B3o_S" />
             <node concept="raruj" id="452KZTbxHh5" role="lGtFl" />
@@ -9251,7 +9251,7 @@
               <property role="TrG5h" value="multiLogical" />
               <node concept="3Tm1VV" id="452KZTby0Uk" role="1B3o_S" />
               <node concept="3uibUv" id="7HUwyZaWNoa" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
               </node>
             </node>
             <node concept="3Tm6S6" id="452KZTby0Um" role="1B3o_S" />
@@ -9328,7 +9328,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="7HUwyZaWNV2" role="2OqNvi">
-                    <ref role="37wK5l" to="bj13:~MultiMetaLogical.logicalAt(int)" resolve="logicalAt" />
+                    <ref role="37wK5l" to="oy3s:1fvYCPC9rDX" resolve="logicalAt" />
                     <node concept="3cmrfG" id="452KZTbxZd8" role="37wK5m">
                       <property role="3cmrfH" value="1" />
                       <node concept="29HgVG" id="452KZTbxZd9" role="lGtFl">
@@ -10197,7 +10197,7 @@
               <property role="TrG5h" value="multiLogical" />
               <node concept="3Tm1VV" id="36tQV5AufcX" role="1B3o_S" />
               <node concept="3uibUv" id="36tQV5AufcY" role="1tU5fm">
-                <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
                 <node concept="3uibUv" id="36tQV5AufcZ" role="11_B2D">
                   <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                 </node>
@@ -11687,7 +11687,7 @@
                 <property role="TrG5h" value="multiLogical" />
                 <node concept="3Tm1VV" id="12QmIo_3sJb" role="1B3o_S" />
                 <node concept="3uibUv" id="12QmIo_3sJc" role="1tU5fm">
-                  <ref role="3uigEE" to="bj13:~MultiMetaLogical" resolve="MultiMetaLogical" />
+                  <ref role="3uigEE" to="oy3s:1fvYCPC9rB6" resolve="MetaLogicalArray" />
                   <node concept="3uibUv" id="12QmIo_3sJd" role="11_B2D">
                     <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                   </node>
