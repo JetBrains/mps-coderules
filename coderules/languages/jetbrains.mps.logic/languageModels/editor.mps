@@ -1191,7 +1191,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="dfChU1zo92">
-    <property role="3GE5qa" value="dataform.expression" />
+    <property role="3GE5qa" value="dataform.attribute" />
     <ref role="1XX52x" to="5j4j:dfChU1zo4B" resolve="Splice" />
     <node concept="3EZMnI" id="dfChU1zop0" role="2wV5jI">
       <ref role="1k5W1q" node="7ksQUDZuyMD" resolve="Backquote" />
@@ -2946,7 +2946,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="JOGAOsxiLE">
-    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <ref role="1XX52x" to="5j4j:JOGAOsxiL_" resolve="DataFormFeature" />
     <node concept="3EZMnI" id="1CcQBrPqjR2" role="2wV5jI">
       <node concept="3F0ifn" id="1CcQBrPqjR9" role="3EZMnx">
@@ -3008,7 +3008,7 @@
   </node>
   <node concept="1h_SRR" id="JOGAOsxj5_">
     <property role="TrG5h" value="DataFormFeature_final" />
-    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <ref role="1h_SK9" to="5j4j:JOGAOsxiL_" resolve="DataFormFeature" />
     <node concept="1hA7zw" id="1CcQBrPqIC5" role="1h_SK8">
       <property role="1hAc7j" value="g_hAxAO/delete_action_id" />
@@ -3046,7 +3046,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="JOGAOsxkwf">
-    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <ref role="aqKnT" to="5j4j:JOGAOsxiL_" resolve="DataFormFeature" />
     <node concept="1Qtc8_" id="1CcQBrPqlWP" role="IW6Ez">
       <node concept="3cWJ9i" id="1CcQBrPqlWT" role="1Qtc8$">
@@ -3134,7 +3134,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="JOGAOsxTDr">
-    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <ref role="1XX52x" to="5j4j:JOGAOsxTDl" resolve="DataFormFeatureOverride" />
     <node concept="3EZMnI" id="1L74NXFMBU5" role="2wV5jI">
       <node concept="1iCGBv" id="1L74NXFMBUc" role="3EZMnx">
@@ -3160,7 +3160,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="JOGAOsxX6Q">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="1XX52x" to="5j4j:JOGAOsxanH" resolve="DataFormConstructor" />
     <node concept="3EZMnI" id="1L74NXElXMk" role="2wV5jI">
       <node concept="l2Vlx" id="1L74NXElXMn" role="2iSdaV" />
@@ -3208,7 +3208,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="JOGAOsxYtS">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="aqKnT" to="5j4j:JOGAOsxanH" resolve="DataFormConstructor" />
     <node concept="2F$Pav" id="7XmdqtdOhCF" role="3ft7WO">
       <node concept="3eGOop" id="7XmdqtdOhD8" role="2$S_pN">
@@ -3275,7 +3275,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="JOGAOsxCR1">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="aqKnT" to="5j4j:JOGAOsxaC9" resolve="DataFormDeclaration" />
     <node concept="1Qtc8_" id="4vr5SApqcy2" role="IW6Ez">
       <node concept="3cWJ9i" id="4vr5SApqcOk" role="1Qtc8$">
@@ -3429,7 +3429,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="JOGAOsxEW6">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="1XX52x" to="5j4j:JOGAOsxaC9" resolve="DataFormDeclaration" />
     <node concept="3EZMnI" id="4MEOIDFttNp" role="2wV5jI">
       <node concept="3F0ifn" id="4vr5SApqlad" role="3EZMnx">
@@ -3496,7 +3496,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="JOGAOsxaCz">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="1XX52x" to="5j4j:JOGAOsxaCw" resolve="DataFormTable" />
     <node concept="3EZMnI" id="5hSMZ_lNwqE" role="2wV5jI">
       <node concept="3EZMnI" id="5hSMZ_lNwqF" role="3EZMnx">
@@ -3550,7 +3550,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="JOGAOsxlgm">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="1XX52x" to="5j4j:JOGAOsxiLy" resolve="DataFormTemplate" />
     <node concept="3EZMnI" id="1pPth$m6bZO" role="2wV5jI">
       <node concept="3F0ifn" id="1pPth$m6bZV" role="3EZMnx">
@@ -3692,7 +3692,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2L$SfAAUSzE">
-    <property role="3GE5qa" value="dataform" />
+    <property role="3GE5qa" value="dataform.attribute" />
     <ref role="1XX52x" to="5j4j:2L$SfAAUQEl" resolve="NewLineAttribute" />
     <node concept="3EZMnI" id="2L$SfAAUSzP" role="2wV5jI">
       <node concept="2SsqMj" id="2L$SfAAUSzW" role="3EZMnx" />
@@ -3713,7 +3713,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="2L$SfAB9FIw">
-    <property role="3GE5qa" value="dataform" />
+    <property role="3GE5qa" value="dataform.attribute" />
     <property role="TrG5h" value="NewLineAttribute_DELETE" />
     <ref role="1h_SK9" to="5j4j:2L$SfAAUQEl" resolve="NewLineAttribute" />
     <node concept="1hA7zw" id="2L$SfAB9FIx" role="1h_SK8">
@@ -4279,7 +4279,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="4vr5SAprGdP">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="DataForm_open_DELETE" />
     <ref role="1h_SK9" to="5j4j:JOGAOsxaC9" resolve="DataFormDeclaration" />
     <node concept="1hA7zw" id="4vr5SAprGdQ" role="1h_SK8">
@@ -4538,7 +4538,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="24ciDNzqIwf">
-    <property role="3GE5qa" value="dataform" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="5j4j:24ciDNzqIuw" resolve="TermType" />
     <node concept="3EZMnI" id="24ciDNzqIwk" role="2wV5jI">
       <node concept="PMmxH" id="24ciDNzqIwr" role="3EZMnx">

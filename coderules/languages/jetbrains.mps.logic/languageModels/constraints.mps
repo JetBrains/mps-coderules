@@ -855,7 +855,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="JOGAOsxTE1">
-    <property role="3GE5qa" value="dataform.constructor.feature" />
+    <property role="3GE5qa" value="term.feature" />
     <ref role="1M2myG" to="5j4j:JOGAOsxTDl" resolve="DataFormFeatureOverride" />
     <node concept="1N5Pfh" id="1L74NXFMz8i" role="1Mr941">
       <ref role="1N5Vy1" to="5j4j:JOGAOsxTDo" resolve="feature" />
@@ -1006,7 +1006,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4vr5SAprtjH">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="1M2myG" to="5j4j:JOGAOsxaC9" resolve="DataFormDeclaration" />
     <node concept="1N5Pfh" id="4vr5SAprtjI" role="1Mr941">
       <ref role="1N5Vy1" to="5j4j:JOGAOsxaCh" resolve="prototype" />

@@ -758,7 +758,7 @@
   </node>
   <node concept="1YbPZF" id="7dgRGU4$_5X">
     <property role="TrG5h" value="typeof_Splice" />
-    <property role="3GE5qa" value="dataform.expression" />
+    <property role="3GE5qa" value="dataform.attribute" />
     <node concept="3clFbS" id="7dgRGU4$_5Y" role="18ibNy">
       <node concept="3clFbJ" id="7dgRGU4$_64" role="3cqZAp">
         <node concept="3clFbS" id="7dgRGU4$_65" role="3clFbx">
@@ -1399,7 +1399,7 @@
     </node>
   </node>
   <node concept="2sgARr" id="24ciDNzqUsw">
-    <property role="3GE5qa" value="dataform" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="supertypesOf_TermType" />
     <property role="2RFo0w" value="true" />
     <node concept="3clFbS" id="24ciDNzqUsx" role="2sgrp5">

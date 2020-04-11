@@ -235,7 +235,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7MlQDeOyT3P">
-    <property role="3GE5qa" value="dataform.expression" />
+    <property role="3GE5qa" value="dataform.attribute" />
     <ref role="13h7C2" to="5j4j:dfChU1zo4B" resolve="Splice" />
     <node concept="13i0hz" id="7MlQDeOyT3S" role="13h7CS">
       <property role="TrG5h" value="prototype" />
@@ -488,7 +488,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="JOGAOsxFgi">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="13h7C2" to="5j4j:JOGAOsxaC9" resolve="DataFormDeclaration" />
     <node concept="13i0hz" id="4lCLOtww4qi" role="13h7CS">
       <property role="TrG5h" value="prototypesStack" />
@@ -696,7 +696,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="JOGAOsxidP">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="13h7C2" to="5j4j:JOGAOsxaCw" resolve="DataFormTable" />
     <node concept="13i0hz" id="5hSMZ_lRESV" role="13h7CS">
       <property role="TrG5h" value="runtimeClassName" />
@@ -752,7 +752,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="JOGAOsxlgX">
-    <property role="3GE5qa" value="dataform.constructor" />
+    <property role="3GE5qa" value="term" />
     <ref role="13h7C2" to="5j4j:JOGAOsxiLy" resolve="DataFormTemplate" />
     <node concept="13i0hz" id="5UYwY$H7MGm" role="13h7CS">
       <property role="TrG5h" value="valueFeatures" />
