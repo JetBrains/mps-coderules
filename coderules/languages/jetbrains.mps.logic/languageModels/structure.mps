@@ -839,5 +839,21 @@
       <ref role="20lvS9" node="5yqFHXo6Ubn" resolve="DataForm" />
     </node>
   </node>
+  <node concept="1TIwiD" id="3MfP0fwgGck">
+    <property role="EcuMT" value="4363939677057762068" />
+    <property role="3GE5qa" value="dataform" />
+    <property role="TrG5h" value="TermConstructorDataForm" />
+    <ref role="1TJDcQ" node="5yqFHXo6Ubn" resolve="DataForm" />
+    <node concept="t5JxF" id="3MfP0fwgGcl" role="lGtFl">
+      <property role="t5JxN" value="Allows to use term constructor as data form." />
+    </node>
+    <node concept="1TJgyj" id="3MfP0fwgGcw" role="1TKVEi">
+      <property role="IQ2ns" value="4363939677057762080" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="constructor" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="JOGAOsxanH" resolve="DataFormConstructor" />
+    </node>
+  </node>
 </model>
 
