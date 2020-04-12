@@ -60,6 +60,7 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -871,6 +872,31 @@
     </node>
     <node concept="13hLZK" id="7zIaasjACz9" role="13h7CW">
       <node concept="3clFbS" id="7zIaasjACza" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3MfP0fxd5Oo">
+    <property role="3GE5qa" value="logical.variable" />
+    <ref role="13h7C2" to="5j4j:7E86$tK_OxQ" resolve="LogicalVariable" />
+    <node concept="13i0hz" id="3MfP0fxd5Oz" role="13h7CS">
+      <property role="TrG5h" value="isArray" />
+      <node concept="3Tm1VV" id="3MfP0fxd5O$" role="1B3o_S" />
+      <node concept="10P_77" id="3MfP0fxd5ON" role="3clF45" />
+      <node concept="3clFbS" id="3MfP0fxd5OA" role="3clF47">
+        <node concept="3clFbF" id="3MfP0fxd5Pf" role="3cqZAp">
+          <node concept="2OqwBi" id="3MfP0fxd6kc" role="3clFbG">
+            <node concept="2OqwBi" id="3MfP0fxd5YV" role="2Oq$k0">
+              <node concept="13iPFW" id="3MfP0fxd5Pe" role="2Oq$k0" />
+              <node concept="3TrEf2" id="3MfP0fxd67e" role="2OqNvi">
+                <ref role="3Tt5mk" to="5j4j:5f6wxQ3pnWr" resolve="indexExpr" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="3MfP0fxd6uZ" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="3MfP0fxd5Op" role="13h7CW">
+      <node concept="3clFbS" id="3MfP0fxd5Oq" role="2VODD2" />
     </node>
   </node>
 </model>

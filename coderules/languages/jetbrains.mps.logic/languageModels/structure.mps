@@ -752,9 +752,12 @@
       <property role="20kJfa" value="logical" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7E86$tK_OxQ" resolve="LogicalVariable" />
+      <node concept="t5JxF" id="3MfP0fx22K0" role="lGtFl">
+        <property role="t5JxN" value="!!FIXME rename to variable!!" />
+      </node>
     </node>
     <node concept="t5JxF" id="3MfP0fwg9H8" role="lGtFl">
-      <property role="t5JxN" value="Allows to use a logical variable that represents a data form." />
+      <property role="t5JxN" value="!!FIXME rename to LogicalVariableDataForm!! Allows to use a logical variable that represents a data form." />
     </node>
   </node>
   <node concept="1TIwiD" id="PltxfHULAb">
