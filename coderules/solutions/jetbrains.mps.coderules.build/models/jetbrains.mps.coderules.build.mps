@@ -666,11 +666,6 @@
             </node>
           </node>
         </node>
-        <node concept="1SiIV0" id="7zIaasjWoPs" role="3bR37C">
-          <node concept="3bR9La" id="7zIaasjWoPt" role="1SiIV1">
-            <ref role="3bR37D" to="ffeo:5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
-          </node>
-        </node>
         <node concept="1BupzO" id="7zIaasjWoPC" role="3bR31x">
           <property role="3ZfqAx" value="languageModels" />
           <property role="1Hdu6h" value="true" />
@@ -2367,6 +2362,16 @@
             <node concept="3qWCbU" id="7zIaasjWoTO" role="3LXTna">
               <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
             </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7L5omgeIJmg" role="3bR37C">
+          <node concept="3bR9La" id="7L5omgeIJmh" role="1SiIV1">
+            <ref role="3bR37D" node="7BVjoXzUx$V" resolve="jetbrains.mps.logic.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7L5omgeIJmi" role="3bR37C">
+          <node concept="3bR9La" id="7L5omgeIJmj" role="1SiIV1">
+            <ref role="3bR37D" node="7BVjoXzUxkQ" resolve="jetbrains.mps.logic" />
           </node>
         </node>
       </node>

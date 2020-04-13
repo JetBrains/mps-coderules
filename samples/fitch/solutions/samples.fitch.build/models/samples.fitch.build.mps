@@ -106,6 +106,12 @@
         <child id="763829979718664967" name="files" index="3rtmxm" />
       </concept>
       <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9" />
+      <concept id="4278635856200817744" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot" flags="ng" index="1BupzO">
+        <property id="8137134783396907368" name="convert2binary" index="1Hdu6h" />
+        <property id="8137134783396676838" name="extracted" index="1HemKv" />
+        <property id="2889113830911481881" name="deployFolderName" index="3ZfqAx" />
+        <child id="8137134783396676835" name="location" index="1HemKq" />
+      </concept>
       <concept id="4278635856200794926" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage" flags="ng" index="1Busua">
         <reference id="4278635856200794928" name="language" index="1Busuk" />
       </concept>
@@ -153,6 +159,31 @@
         <node concept="1yeLz9" id="4$bYnYI$URT" role="1TViLv">
           <property role="TrG5h" value="samples.fitch#4322786184247805322" />
           <property role="3LESm3" value="65b2d9d2-5a92-4dd0-abf5-f3a1bd399bec" />
+          <node concept="1BupzO" id="7L5omgeILcN" role="3bR31x">
+            <property role="3ZfqAx" value="generator/template" />
+            <property role="1Hdu6h" value="true" />
+            <property role="1HemKv" value="true" />
+            <node concept="3LXTmp" id="7L5omgeILcO" role="1HemKq">
+              <node concept="398BVA" id="7L5omgeILcD" role="3LXTmr">
+                <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+                <node concept="2Ry0Ak" id="7L5omgeILcE" role="iGT6I">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="7L5omgeILcF" role="2Ry0An">
+                    <property role="2Ry0Am" value="samples.fitch" />
+                    <node concept="2Ry0Ak" id="7L5omgeILcG" role="2Ry0An">
+                      <property role="2Ry0Am" value="generator" />
+                      <node concept="2Ry0Ak" id="7L5omgeILcH" role="2Ry0An">
+                        <property role="2Ry0Am" value="template" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3qWCbU" id="7L5omgeILcP" role="3LXTna">
+                <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="5p9vXslHrSF" role="3bR37C">
           <node concept="3bR9La" id="5p9vXslHrSG" role="1SiIV1">
@@ -189,6 +220,28 @@
             </node>
           </node>
         </node>
+        <node concept="1BupzO" id="7L5omgeILcA" role="3bR31x">
+          <property role="3ZfqAx" value="models" />
+          <property role="1Hdu6h" value="true" />
+          <property role="1HemKv" value="true" />
+          <node concept="3LXTmp" id="7L5omgeILcB" role="1HemKq">
+            <node concept="398BVA" id="7L5omgeILcu" role="3LXTmr">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+              <node concept="2Ry0Ak" id="7L5omgeILcv" role="iGT6I">
+                <property role="2Ry0Am" value="languages" />
+                <node concept="2Ry0Ak" id="7L5omgeILcw" role="2Ry0An">
+                  <property role="2Ry0Am" value="samples.fitch" />
+                  <node concept="2Ry0Ak" id="7L5omgeILcx" role="2Ry0An">
+                    <property role="2Ry0Am" value="models" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="7L5omgeILcC" role="3LXTna">
+              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="4$bYnYI$UVm" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -208,6 +261,31 @@
         <node concept="1yeLz9" id="4$bYnYI$UVr" role="1TViLv">
           <property role="TrG5h" value="samples.fitch.propositionalLogic#5505606474790531941" />
           <property role="3LESm3" value="53b8ab24-cc4a-4fe2-b461-11a91d798670" />
+          <node concept="1BupzO" id="7L5omgeILdb" role="3bR31x">
+            <property role="3ZfqAx" value="generator/template" />
+            <property role="1Hdu6h" value="true" />
+            <property role="1HemKv" value="true" />
+            <node concept="3LXTmp" id="7L5omgeILdc" role="1HemKq">
+              <node concept="398BVA" id="7L5omgeILd1" role="3LXTmr">
+                <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+                <node concept="2Ry0Ak" id="7L5omgeILd2" role="iGT6I">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="7L5omgeILd3" role="2Ry0An">
+                    <property role="2Ry0Am" value="samples.fitch.propositionalLogic" />
+                    <node concept="2Ry0Ak" id="7L5omgeILd4" role="2Ry0An">
+                      <property role="2Ry0Am" value="generator" />
+                      <node concept="2Ry0Ak" id="7L5omgeILd5" role="2Ry0An">
+                        <property role="2Ry0Am" value="template" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3qWCbU" id="7L5omgeILdd" role="3LXTna">
+                <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="4$bYnYI$UVu" role="3bR37C">
           <node concept="3bR9La" id="4$bYnYI$UVv" role="1SiIV1">
@@ -249,6 +327,28 @@
             </node>
           </node>
         </node>
+        <node concept="1BupzO" id="7L5omgeILcY" role="3bR31x">
+          <property role="3ZfqAx" value="models" />
+          <property role="1Hdu6h" value="true" />
+          <property role="1HemKv" value="true" />
+          <node concept="3LXTmp" id="7L5omgeILcZ" role="1HemKq">
+            <node concept="398BVA" id="7L5omgeILcQ" role="3LXTmr">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+              <node concept="2Ry0Ak" id="7L5omgeILcR" role="iGT6I">
+                <property role="2Ry0Am" value="languages" />
+                <node concept="2Ry0Ak" id="7L5omgeILcS" role="2Ry0An">
+                  <property role="2Ry0Am" value="samples.fitch.propositionalLogic" />
+                  <node concept="2Ry0Ak" id="7L5omgeILcT" role="2Ry0An">
+                    <property role="2Ry0Am" value="models" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="7L5omgeILd0" role="3LXTna">
+              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="4$bYnYI$UTN" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -268,6 +368,31 @@
         <node concept="1yeLz9" id="4$bYnYI$UTS" role="1TViLv">
           <property role="TrG5h" value="samples.fitch.herbrandLogic#3059457401298723545" />
           <property role="3LESm3" value="8efed383-9c82-409e-81c8-4bd2a012c164" />
+          <node concept="1BupzO" id="7L5omgeILdz" role="3bR31x">
+            <property role="3ZfqAx" value="generator/template" />
+            <property role="1Hdu6h" value="true" />
+            <property role="1HemKv" value="true" />
+            <node concept="3LXTmp" id="7L5omgeILd$" role="1HemKq">
+              <node concept="398BVA" id="7L5omgeILdp" role="3LXTmr">
+                <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+                <node concept="2Ry0Ak" id="7L5omgeILdq" role="iGT6I">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="7L5omgeILdr" role="2Ry0An">
+                    <property role="2Ry0Am" value="samples.fitch.herbrandLogic" />
+                    <node concept="2Ry0Ak" id="7L5omgeILds" role="2Ry0An">
+                      <property role="2Ry0Am" value="generator" />
+                      <node concept="2Ry0Ak" id="7L5omgeILdt" role="2Ry0An">
+                        <property role="2Ry0Am" value="template" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3qWCbU" id="7L5omgeILd_" role="3LXTna">
+                <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="4$bYnYI$UTT" role="3bR37C">
           <node concept="3bR9La" id="4$bYnYI$UTU" role="1SiIV1">
@@ -314,6 +439,28 @@
             </node>
           </node>
         </node>
+        <node concept="1BupzO" id="7L5omgeILdm" role="3bR31x">
+          <property role="3ZfqAx" value="models" />
+          <property role="1Hdu6h" value="true" />
+          <property role="1HemKv" value="true" />
+          <node concept="3LXTmp" id="7L5omgeILdn" role="1HemKq">
+            <node concept="398BVA" id="7L5omgeILde" role="3LXTmr">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+              <node concept="2Ry0Ak" id="7L5omgeILdf" role="iGT6I">
+                <property role="2Ry0Am" value="languages" />
+                <node concept="2Ry0Ak" id="7L5omgeILdg" role="2Ry0An">
+                  <property role="2Ry0Am" value="samples.fitch.herbrandLogic" />
+                  <node concept="2Ry0Ak" id="7L5omgeILdh" role="2Ry0An">
+                    <property role="2Ry0Am" value="models" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="7L5omgeILdo" role="3LXTna">
+              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="4$bYnYI$USZ" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -333,6 +480,31 @@
         <node concept="1yeLz9" id="4$bYnYI$UT6" role="1TViLv">
           <property role="TrG5h" value="samples.fitch.firstOrderLogic#4035326440039985569" />
           <property role="3LESm3" value="467b3222-f5a8-48be-9fe1-6c009ed73049" />
+          <node concept="1BupzO" id="7L5omgeILdV" role="3bR31x">
+            <property role="3ZfqAx" value="generator/template" />
+            <property role="1Hdu6h" value="true" />
+            <property role="1HemKv" value="true" />
+            <node concept="3LXTmp" id="7L5omgeILdW" role="1HemKq">
+              <node concept="398BVA" id="7L5omgeILdL" role="3LXTmr">
+                <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+                <node concept="2Ry0Ak" id="7L5omgeILdM" role="iGT6I">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="7L5omgeILdN" role="2Ry0An">
+                    <property role="2Ry0Am" value="samples.fitch.firstOrderLogic" />
+                    <node concept="2Ry0Ak" id="7L5omgeILdO" role="2Ry0An">
+                      <property role="2Ry0Am" value="generator" />
+                      <node concept="2Ry0Ak" id="7L5omgeILdP" role="2Ry0An">
+                        <property role="2Ry0Am" value="template" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3qWCbU" id="7L5omgeILdX" role="3LXTna">
+                <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="58VeaO3B64d" role="3bR37C">
           <node concept="3bR9La" id="58VeaO3B64e" role="1SiIV1">
@@ -371,6 +543,28 @@
                   <property role="2Ry0Am" value="samples.fitch.firstOrderLogic" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1BupzO" id="7L5omgeILdI" role="3bR31x">
+          <property role="3ZfqAx" value="models" />
+          <property role="1Hdu6h" value="true" />
+          <property role="1HemKv" value="true" />
+          <node concept="3LXTmp" id="7L5omgeILdJ" role="1HemKq">
+            <node concept="398BVA" id="7L5omgeILdA" role="3LXTmr">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+              <node concept="2Ry0Ak" id="7L5omgeILdB" role="iGT6I">
+                <property role="2Ry0Am" value="languages" />
+                <node concept="2Ry0Ak" id="7L5omgeILdC" role="2Ry0An">
+                  <property role="2Ry0Am" value="samples.fitch.firstOrderLogic" />
+                  <node concept="2Ry0Ak" id="7L5omgeILdD" role="2Ry0An">
+                    <property role="2Ry0Am" value="models" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="7L5omgeILdK" role="3LXTna">
+              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
             </node>
           </node>
         </node>
@@ -428,6 +622,28 @@
                   <property role="2Ry0Am" value="samples.fitch.demo" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1BupzO" id="7L5omgeILe6" role="3bR31x">
+          <property role="3ZfqAx" value="models" />
+          <property role="1Hdu6h" value="true" />
+          <property role="1HemKv" value="true" />
+          <node concept="3LXTmp" id="7L5omgeILe7" role="1HemKq">
+            <node concept="398BVA" id="7L5omgeILdY" role="3LXTmr">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.fitch_home" />
+              <node concept="2Ry0Ak" id="7L5omgeILdZ" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="7L5omgeILe0" role="2Ry0An">
+                  <property role="2Ry0Am" value="samples.fitch.demo" />
+                  <node concept="2Ry0Ak" id="7L5omgeILe1" role="2Ry0An">
+                    <property role="2Ry0Am" value="models" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="7L5omgeILe8" role="3LXTna">
+              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
             </node>
           </node>
         </node>

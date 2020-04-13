@@ -108,6 +108,12 @@
       <concept id="763829979718664966" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleResources" flags="ng" index="3rtmxn">
         <child id="763829979718664967" name="files" index="3rtmxm" />
       </concept>
+      <concept id="4278635856200817744" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot" flags="ng" index="1BupzO">
+        <property id="8137134783396907368" name="convert2binary" index="1Hdu6h" />
+        <property id="8137134783396676838" name="extracted" index="1HemKv" />
+        <property id="2889113830911481881" name="deployFolderName" index="3ZfqAx" />
+        <child id="8137134783396676835" name="location" index="1HemKq" />
+      </concept>
       <concept id="3189788309731840247" name="jetbrains.mps.build.mps.structure.BuildMps_Solution" flags="ng" index="1E1JtA">
         <property id="269707337715731330" name="sourcesKind" index="aoJFB" />
       </concept>
@@ -197,6 +203,28 @@
             </node>
           </node>
         </node>
+        <node concept="1BupzO" id="7L5omgeILht" role="3bR31x">
+          <property role="3ZfqAx" value="models" />
+          <property role="1Hdu6h" value="true" />
+          <property role="1HemKv" value="true" />
+          <node concept="3LXTmp" id="7L5omgeILhu" role="1HemKq">
+            <node concept="398BVA" id="7L5omgeILhl" role="3LXTmr">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.lambdacalc_home" />
+              <node concept="2Ry0Ak" id="7L5omgeILhm" role="iGT6I">
+                <property role="2Ry0Am" value="languages" />
+                <node concept="2Ry0Ak" id="7L5omgeILhn" role="2Ry0An">
+                  <property role="2Ry0Am" value="samples.lambdacalc" />
+                  <node concept="2Ry0Ak" id="7L5omgeILho" role="2Ry0An">
+                    <property role="2Ry0Am" value="models" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="7L5omgeILhv" role="3LXTna">
+              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7E7FS_VaVB_" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -236,6 +264,28 @@
                   <property role="2Ry0Am" value="samples.lambdacalc.demo" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1BupzO" id="7L5omgeILhC" role="3bR31x">
+          <property role="3ZfqAx" value="models" />
+          <property role="1Hdu6h" value="true" />
+          <property role="1HemKv" value="true" />
+          <node concept="3LXTmp" id="7L5omgeILhD" role="1HemKq">
+            <node concept="398BVA" id="7L5omgeILhw" role="3LXTmr">
+              <ref role="398BVh" node="46o4wsH3mv_" resolve="mps.macro.lambdacalc_home" />
+              <node concept="2Ry0Ak" id="7L5omgeILhx" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="7L5omgeILhy" role="2Ry0An">
+                  <property role="2Ry0Am" value="samples.lambdacalc.demo" />
+                  <node concept="2Ry0Ak" id="7L5omgeILhz" role="2Ry0An">
+                    <property role="2Ry0Am" value="models" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="7L5omgeILhE" role="3LXTna">
+              <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
             </node>
           </node>
         </node>
