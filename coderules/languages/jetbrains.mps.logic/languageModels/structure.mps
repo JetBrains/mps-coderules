@@ -9,6 +9,7 @@
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="wq2x" ref="r:83137295-aa87-45e8-b0c0-ede2adf2a396(jetbrains.mps.lang.coderules.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -46,7 +47,6 @@
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
-        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
@@ -377,187 +377,10 @@
       <property role="t5JxN" value="An abstraction of data nodes and variables." />
     </node>
   </node>
-  <node concept="1TIwiD" id="JOGAOsxm2z">
-    <property role="EcuMT" value="861509610434289827" />
-    <property role="TrG5h" value="ChildFeature" />
-    <property role="34LRSv" value="child" />
-    <property role="3GE5qa" value="term.feature" />
-    <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="DataFormFeature" />
-    <node concept="t5JxF" id="3MfP0fwg5vf" role="lGtFl">
-      <property role="t5JxN" value="Feature declaration of child term." />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="JOGAOsxiL_">
-    <property role="EcuMT" value="861509610434276453" />
-    <property role="TrG5h" value="DataFormFeature" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="3GE5qa" value="term.feature" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="JOGAOsxiLC" role="1TKVEl">
-      <property role="IQ2nx" value="861509610434276456" />
-      <property role="TrG5h" value="final" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="PrWs8" id="JOGAOsxiLA" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-    <node concept="1TJgyj" id="JOGAOsxmrx" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434291425" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="getter" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="t5JxF" id="3MfP0fwg5uK" role="lGtFl">
-      <property role="t5JxN" value="!!FIXME rename to TermFeature!! Defines a term feature." />
-      <node concept="t5JxR" id="3MfP0fwg5vc" role="t5JxU">
-        <ref role="t5JxO" node="JOGAOsxiLy" resolve="DataFormTemplate" />
-      </node>
-    </node>
-  </node>
-  <node concept="1TIwiD" id="JOGAOsxTDl">
-    <property role="EcuMT" value="861509610434435669" />
-    <property role="3GE5qa" value="term.feature" />
-    <property role="TrG5h" value="DataFormFeatureOverride" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="JOGAOsxTDo" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434435672" />
-      <property role="20kJfa" value="feature" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="JOGAOsxiL_" resolve="DataFormFeature" />
-    </node>
-    <node concept="1TJgyj" id="JOGAOsxTDm" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434435670" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="getter" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="t5JxF" id="3MfP0fwg5uI" role="lGtFl">
-      <property role="t5JxN" value="!!FIXME rename to TermFeatureOverride!! Allows to override default feature value in term constructor" />
-      <node concept="t5JxR" id="3MfP0fwg5uX" role="t5JxU">
-        <ref role="t5JxO" node="JOGAOsxanH" resolve="DataFormConstructor" />
-      </node>
-    </node>
-  </node>
-  <node concept="1TIwiD" id="JOGAOsxpXw">
-    <property role="EcuMT" value="861509610434305888" />
-    <property role="3GE5qa" value="term.feature" />
-    <property role="TrG5h" value="ListFeature" />
-    <property role="34LRSv" value="list" />
-    <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="DataFormFeature" />
-    <node concept="t5JxF" id="3MfP0fwg5w7" role="lGtFl">
-      <property role="t5JxN" value="Feature declaration of a list of child terms." />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="JOGAOsxnj6">
-    <property role="EcuMT" value="861509610434294982" />
-    <property role="TrG5h" value="ValueFeature" />
-    <property role="34LRSv" value="value" />
-    <property role="3GE5qa" value="term.feature" />
-    <ref role="1TJDcQ" node="JOGAOsxiL_" resolve="DataFormFeature" />
-    <node concept="t5JxF" id="3MfP0fwg5w9" role="lGtFl">
-      <property role="t5JxN" value="Feature declaration of an Object value." />
-    </node>
-  </node>
   <node concept="PlHQZ" id="JOGAOsIRhm">
     <property role="EcuMT" value="861509610437833814" />
     <property role="TrG5h" value="Capture" />
     <property role="3GE5qa" value="logical" />
-  </node>
-  <node concept="1TIwiD" id="JOGAOsxanH">
-    <property role="EcuMT" value="861509610434242029" />
-    <property role="TrG5h" value="DataFormConstructor" />
-    <property role="3GE5qa" value="term" />
-    <ref role="1TJDcQ" node="7E86$tKsl45" resolve="LogicalItem" />
-    <node concept="1TJgyj" id="JOGAOsxaC6" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434243078" />
-      <property role="20kJfa" value="decl" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="JOGAOsxaC9" resolve="DataFormDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="JOGAOsxaC4" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434243076" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="override" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="JOGAOsxTDl" resolve="DataFormFeatureOverride" />
-    </node>
-    <node concept="t5JxF" id="3MfP0fwg5uG" role="lGtFl">
-      <property role="t5JxN" value="!!FIXME rename to TermConstructor!! Creates a term using the template. Enables to override features." />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="JOGAOsxaC9">
-    <property role="EcuMT" value="861509610434243081" />
-    <property role="TrG5h" value="DataFormDeclaration" />
-    <property role="3GE5qa" value="term" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="4vr5SApqc6O" role="1TKVEl">
-      <property role="IQ2nx" value="5177758076344254900" />
-      <property role="TrG5h" value="open" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyj" id="JOGAOsxaCc" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434243084" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="template" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="JOGAOsxiLy" resolve="DataFormTemplate" />
-    </node>
-    <node concept="PrWs8" id="JOGAOsxaCa" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-    <node concept="1TJgyj" id="JOGAOsxaCh" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434243089" />
-      <property role="20kJfa" value="prototype" />
-      <ref role="20lvS9" node="JOGAOsxaC9" resolve="DataFormDeclaration" />
-    </node>
-    <node concept="t5JxF" id="3MfP0fwg5uQ" role="lGtFl">
-      <property role="t5JxN" value="!!FIXME rename to TermDeclaration!! Contains term template. Provides possibility to extend another term declaration." />
-      <node concept="t5JxR" id="3MfP0fwg5v7" role="t5JxU">
-        <ref role="t5JxO" node="JOGAOsxaCw" resolve="DataFormTable" />
-      </node>
-    </node>
-  </node>
-  <node concept="1TIwiD" id="JOGAOsxaCw">
-    <property role="EcuMT" value="861509610434243104" />
-    <property role="TrG5h" value="DataFormTable" />
-    <property role="34LRSv" value="DataForm Table" />
-    <property role="19KtqR" value="true" />
-    <property role="3GE5qa" value="term" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="JOGAOsxaCx" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434243105" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="contents" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="JOGAOsxaC9" resolve="DataFormDeclaration" />
-    </node>
-    <node concept="PrWs8" id="JOGAOsxfAQ" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-    <node concept="t5JxF" id="3MfP0fwg5uO" role="lGtFl">
-      <property role="t5JxN" value="!!FIXME rename to TermTable!! Contains term declarations." />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="JOGAOsxiLy">
-    <property role="EcuMT" value="861509610434276450" />
-    <property role="TrG5h" value="DataFormTemplate" />
-    <property role="3GE5qa" value="term" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="JOGAOsxiLz" role="1TKVEi">
-      <property role="IQ2ns" value="861509610434276451" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="feature" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="JOGAOsxiL_" resolve="DataFormFeature" />
-    </node>
-    <node concept="t5JxF" id="3MfP0fwg5uM" role="lGtFl">
-      <property role="t5JxN" value="!!FIXME rename to TermTemplate!! Defines a term structure by enumerating features." />
-      <node concept="t5JxR" id="3MfP0fwg5v2" role="t5JxU">
-        <ref role="t5JxO" node="JOGAOsxanH" resolve="DataFormConstructor" />
-      </node>
-    </node>
   </node>
   <node concept="1TIwiD" id="7lt0LtQg3tE">
     <property role="EcuMT" value="8456919074574710634" />
@@ -609,13 +432,6 @@
     <node concept="t5JxF" id="3MfP0fwg9H8" role="lGtFl">
       <property role="t5JxN" value="!!FIXME rename to LogicalVariableDataForm!! Allows to use a logical variable that represents a data form." />
     </node>
-  </node>
-  <node concept="1TIwiD" id="24ciDNzqIuw">
-    <property role="EcuMT" value="2381360340662937504" />
-    <property role="3GE5qa" value="term" />
-    <property role="TrG5h" value="TermType" />
-    <property role="34LRSv" value="term" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
   <node concept="1TIwiD" id="7zIaasjAAux">
     <property role="EcuMT" value="8713947027062024097" />
@@ -689,15 +505,8 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="constructor" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="JOGAOsxanH" resolve="DataFormConstructor" />
+      <ref role="20lvS9" to="wq2x:JOGAOsxanH" resolve="DataFormConstructor" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="4nUKN9YPlxw">
-    <property role="EcuMT" value="5042557354438383712" />
-    <property role="3GE5qa" value="term" />
-    <property role="TrG5h" value="TermListType" />
-    <property role="34LRSv" value="termlist" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
 </model>
 

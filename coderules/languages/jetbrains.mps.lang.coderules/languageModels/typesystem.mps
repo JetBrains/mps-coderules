@@ -3,6 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="12" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="5" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="4" />
     <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
@@ -15,6 +18,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -139,6 +143,11 @@
         <child id="1185805056450" name="argument" index="nvjzm" />
         <child id="1205761991995" name="argumentRepresentator" index="2X0Ygz" />
       </concept>
+      <concept id="1175147569072" name="jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule" flags="ig" index="2sgdUx">
+        <property id="1175607673137" name="isWeak" index="2RFo0w" />
+        <child id="1175147624276" name="body" index="2sgrp5" />
+      </concept>
+      <concept id="1175147670730" name="jetbrains.mps.lang.typesystem.structure.SubtypingRule" flags="ig" index="2sgARr" />
       <concept id="1179479408386" name="jetbrains.mps.lang.typesystem.structure.JoinType" flags="ng" index="2usRSg">
         <child id="1179479418730" name="argument" index="2usUpS" />
       </concept>
@@ -1740,6 +1749,41 @@
     <node concept="1YaCAy" id="5itBwM7JXVL" role="1YuTPh">
       <property role="TrG5h" value="emri" />
       <ref role="1YaFvo" to="wq2x:5itBwM7J4Oh" resolve="ExpandMacroInputReference" />
+    </node>
+  </node>
+  <node concept="2sgARr" id="4nUKN9YPlyX">
+    <property role="3GE5qa" value="term" />
+    <property role="TrG5h" value="supertypesOf_TermListType" />
+    <node concept="3clFbS" id="4nUKN9YPlyY" role="2sgrp5">
+      <node concept="3clFbF" id="4nUKN9YPlzW" role="3cqZAp">
+        <node concept="2c44tf" id="4nUKN9YPlzX" role="3clFbG">
+          <node concept="3uibUv" id="4nUKN9YPl$t" role="2c44tc">
+            <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4nUKN9YPlz0" role="1YuTPh">
+      <property role="TrG5h" value="termListType" />
+      <ref role="1YaFvo" to="wq2x:4nUKN9YPlxw" resolve="TermListType" />
+    </node>
+  </node>
+  <node concept="2sgARr" id="24ciDNzqUsw">
+    <property role="3GE5qa" value="term" />
+    <property role="TrG5h" value="supertypesOf_TermType" />
+    <property role="2RFo0w" value="true" />
+    <node concept="3clFbS" id="24ciDNzqUsx" role="2sgrp5">
+      <node concept="3clFbF" id="24ciDNzqUu6" role="3cqZAp">
+        <node concept="2c44tf" id="24ciDNzqUu4" role="3clFbG">
+          <node concept="3uibUv" id="24ciDNzqUv3" role="2c44tc">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="24ciDNzqUtF" role="1YuTPh">
+      <property role="TrG5h" value="termType" />
+      <ref role="1YaFvo" to="wq2x:24ciDNzqIuw" resolve="TermType" />
     </node>
   </node>
 </model>
