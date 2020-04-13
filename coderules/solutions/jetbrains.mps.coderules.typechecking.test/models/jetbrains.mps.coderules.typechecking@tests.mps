@@ -16,7 +16,7 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="3a1f0f04-b5e0-43be-884e-b856bfdeca21" name="jetbrains.mps.typechecking.testlang" version="0" />
-    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="8" />
+    <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="12" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -957,7 +957,7 @@
                                   <ref role="3cqZAo" node="4ekZiHec9__" resolve="a" />
                                 </node>
                                 <node concept="liA8E" id="4ekZiHec9_l" role="2OqNvi">
-                                  <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmtpy" />
+                                  <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmpty" />
                                 </node>
                               </node>
                             </node>
