@@ -1640,6 +1640,7 @@
       </classpath>
       
       <env key="NO_FS_ROOTS_ACCESS_CHECK" value="true" />
+      
       <sysproperty key="plugin.path" value="${mps.plugins.path.string}" />
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
