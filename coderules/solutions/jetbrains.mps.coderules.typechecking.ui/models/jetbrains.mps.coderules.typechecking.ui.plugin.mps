@@ -3062,21 +3062,13 @@
           </node>
           <node concept="3cpWs8" id="3KN3A4vDlEg" role="3cqZAp">
             <node concept="3cpWsn" id="3KN3A4vDlEh" role="3cpWs9">
-              <property role="TrG5h" value="acs" />
-              <node concept="3vKaQO" id="3KN3A4vDl$J" role="1tU5fm">
-                <node concept="3uibUv" id="3KN3A4vDl$Q" role="3O5elw">
-                  <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
-                  <node concept="3uibUv" id="3KN3A4vDl$R" role="11_B2D">
-                    <ref role="3uigEE" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
-                  </node>
-                </node>
-              </node>
+              <property role="TrG5h" value="clique" />
               <node concept="2OqwBi" id="3KN3A4vDlEi" role="33vP2m">
                 <node concept="37vLTw" id="3KN3A4vDlEj" role="2Oq$k0">
                   <ref role="3cqZAo" node="3KN3A4vDf1G" resolve="aspectLookup" />
                 </node>
                 <node concept="liA8E" id="3KN3A4vDlEk" role="2OqNvi">
-                  <ref role="37wK5l" to="fqlx:7mB3viLmii2" resolve="allForNodes" />
+                  <ref role="37wK5l" to="fqlx:7W7Inqm5F$e" resolve="relevantForNodes" />
                   <node concept="37vLTw" id="3KN3A4vDlEm" role="37wK5m">
                     <ref role="3cqZAo" node="6hqFpWnfpcc" resolve="nodes" />
                   </node>
@@ -3088,6 +3080,12 @@
                       <ref role="37wK5l" to="z1c3:~Project.getRepository()" resolve="getRepository" />
                     </node>
                   </node>
+                </node>
+              </node>
+              <node concept="3uibUv" id="3KN3A4vDl$Q" role="1tU5fm">
+                <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
+                <node concept="3uibUv" id="3KN3A4vDl$R" role="11_B2D">
+                  <ref role="3uigEE" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
                 </node>
               </node>
             </node>
@@ -3110,23 +3108,6 @@
                   <node concept="3Tqbb2" id="5fMWD6IsEOC" role="1tU5fm" />
                 </node>
                 <node concept="3clFbS" id="5fMWD6IsEOD" role="1bW5cS" />
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWs8" id="5MNibEMWyb$" role="3cqZAp">
-            <node concept="3cpWsn" id="5MNibEMWyb_" role="3cpWs9">
-              <property role="TrG5h" value="clique" />
-              <node concept="3uibUv" id="5MNibEMWknK" role="1tU5fm">
-                <ref role="3uigEE" to="fqlx:3KN3A4uUhmW" resolve="AspectClique" />
-                <node concept="3uibUv" id="5MNibEMWknN" role="11_B2D">
-                  <ref role="3uigEE" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="5MNibEMWybA" role="33vP2m">
-                <node concept="37vLTw" id="5MNibEMWybB" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3KN3A4vDlEh" resolve="acs" />
-                </node>
-                <node concept="1uHKPH" id="5MNibEMWybC" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -3153,11 +3134,8 @@
                         <node concept="liA8E" id="6nFpYluoeN5" role="2OqNvi">
                           <ref role="37wK5l" to="fqlx:3KN3A4uUhpW" resolve="aspects" />
                         </node>
-                        <node concept="2OqwBi" id="6nFpYluoeN6" role="2Oq$k0">
-                          <node concept="37vLTw" id="6nFpYluohLZ" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3KN3A4vDlEh" resolve="acs" />
-                          </node>
-                          <node concept="1uHKPH" id="6nFpYluoeN8" role="2OqNvi" />
+                        <node concept="37vLTw" id="7W7Inqm62iI" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3KN3A4vDlEh" resolve="clique" />
                         </node>
                       </node>
                     </node>
@@ -3317,8 +3295,8 @@
               <node concept="2ShNRf" id="7WKNeR8SQyA" role="2Oq$k0">
                 <node concept="1pGfFk" id="7WKNeR8SQyB" role="2ShVmc">
                   <ref role="37wK5l" to="1yqb:1pPth$lK1ZL" resolve="CoderulesHelper" />
-                  <node concept="37vLTw" id="5MNibEMWzl7" role="37wK5m">
-                    <ref role="3cqZAo" node="5MNibEMWyb_" resolve="clique" />
+                  <node concept="37vLTw" id="7W7Inqm62NJ" role="37wK5m">
+                    <ref role="3cqZAo" node="3KN3A4vDlEh" resolve="clique" />
                   </node>
                   <node concept="2ShNRf" id="7WKNeR8SQyC" role="37wK5m">
                     <node concept="YeOm9" id="7WKNeR8SQyD" role="2ShVmc">
