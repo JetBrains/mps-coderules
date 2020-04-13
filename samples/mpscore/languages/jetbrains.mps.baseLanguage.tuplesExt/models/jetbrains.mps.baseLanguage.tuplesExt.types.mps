@@ -268,9 +268,6 @@
         <property id="4957570047283824112" name="severity" index="1lHdp1" />
         <child id="4957570047284421439" name="message" index="1ljv2e" />
       </concept>
-      <concept id="3575255234196628445" name="jetbrains.mps.lang.coderules.structure.RequireStatement" flags="ng" index="1mebxG">
-        <child id="3575255234196628696" name="node" index="1mebXD" />
-      </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="4814011019633607808" name="parameter" index="0Rg$4" />
         <child id="3575255234174969658" name="head" index="1nLNMb" />
@@ -599,17 +596,6 @@
     <node concept="1nLNMY" id="4E290qPYXrV" role="1nK1Vg">
       <property role="TrG5h" value="indexedTupleMemberAccess" />
       <node concept="3clFbS" id="4E290qPYXrW" role="1nLNMH">
-        <node concept="3clFbH" id="156bt08UDPI" role="3cqZAp" />
-        <node concept="1mebxG" id="156bt08UE5$" role="3cqZAp">
-          <node concept="2OqwBi" id="156bt08UEl7" role="1mebXD">
-            <node concept="3A2sRY" id="156bt08UEb2" role="2Oq$k0">
-              <ref role="3A2yKK" node="4E290qPYXzR" resolve="tupAcc" />
-            </node>
-            <node concept="3TrEf2" id="156bt08UEBA" role="2OqNvi">
-              <ref role="3Tt5mk" to="cx9y:i1LFl1m" resolve="tuple" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="4E290qQ04$2" role="3cqZAp" />
         <node concept="3clFbJ" id="4E290qQ2lv9" role="3cqZAp">
           <node concept="3clFbS" id="4E290qQ2lvb" role="3clFbx">
