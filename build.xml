@@ -56,6 +56,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.build.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.build" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.build" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar" />
     </jar>
@@ -753,6 +754,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.jar" />
     </jar>
@@ -819,6 +821,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.ui.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.ui" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.ui" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.ui.jar" />
     </jar>
@@ -887,6 +890,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.test" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.test" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.test.jar" />
     </jar>
@@ -974,6 +978,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.typechecking.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking" />
+      <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.typechecking" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.jar" />
     </jar>
@@ -1089,6 +1094,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.typechecking.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking.runtime" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.runtime.jar" />
     </jar>
@@ -1336,6 +1342,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.typechecking.testlang.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.typechecking.testlang" />
+      <fileset dir="${basedir}/coderules/languages/jetbrains.mps.typechecking.testlang" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.typechecking.testlang/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.typechecking.testlang.jar" />
     </jar>
@@ -1422,6 +1429,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.typechecking.testlang.sandbox" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.typechecking.testlang.sandbox" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.typechecking.testlang.sandbox/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.typechecking.testlang.sandbox.jar" />
     </jar>
@@ -1505,6 +1513,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.coderules.typechecking.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.typechecking.test" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.typechecking.test" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.typechecking.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.typechecking.test.jar" />
     </jar>
@@ -1644,6 +1653,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.controlflow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.controlflow" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.jar" />
     </jar>
@@ -1706,6 +1716,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.controlflow.ui.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow.ui" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.controlflow.ui" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar" />
     </jar>
@@ -1789,6 +1800,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.controlflow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow" />
+      <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.controlflow" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar" />
     </jar>
@@ -1900,6 +1912,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.lang.controlflow.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.lang.controlflow.runtime" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar" />
     </jar>
@@ -2055,6 +2068,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.coderules.build.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.build" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.build" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.build.jar1" />
     </jar>
@@ -2688,6 +2702,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.coderules.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.jar1" />
     </jar>
@@ -2754,6 +2769,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.coderules.ui.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.coderules.ui" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.coderules.ui" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.coderules.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.coderules.ui.jar1" />
     </jar>
@@ -2841,6 +2857,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.lang.typechecking.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking" />
+      <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.typechecking" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.jar1" />
     </jar>
@@ -2956,6 +2973,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.lang.typechecking.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking.runtime" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.runtime.jar1" />
     </jar>
@@ -3190,6 +3208,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.lang.typechecking.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking" />
+      <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.typechecking" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.typechecking/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.jar2" />
     </jar>
@@ -3305,6 +3324,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.lang.typechecking.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typechecking.runtime" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typechecking.runtime.jar2" />
     </jar>
@@ -3444,6 +3464,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.controlflow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.controlflow" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.jar1" />
     </jar>
@@ -3506,6 +3527,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.controlflow.ui.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.controlflow.ui" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.controlflow.ui" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.controlflow.ui/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.controlflow.ui.jar1" />
     </jar>
@@ -3589,6 +3611,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.lang.controlflow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow" />
+      <fileset dir="${basedir}/coderules/languages/jetbrains.mps.lang.controlflow" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/languages/jetbrains.mps.lang.controlflow/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.jar1" />
     </jar>
@@ -3700,6 +3723,7 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/coderules-0.5.zip/coderules/languages/jetbrains.mps.lang.controlflow.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.controlflow.runtime" />
+      <fileset dir="${basedir}/coderules/solutions/jetbrains.mps.lang.controlflow.runtime" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.coderules_home}/coderules/solutions/jetbrains.mps.lang.controlflow.runtime/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.controlflow.runtime.jar1" />
     </jar>

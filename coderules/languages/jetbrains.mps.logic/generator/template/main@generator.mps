@@ -331,8 +331,8 @@
       <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.Value" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
       </concept>
-      <concept id="960803923481532811" name="jetbrains.mps.logic.structure.ListNodeCons" flags="ng" index="3wJAYo">
-        <child id="960803923481835574" name="tail" index="3wIGS_" />
+      <concept id="1432138691741609740" name="jetbrains.mps.logic.structure.ConsListNode" flags="ng" index="1Pxxm1">
+        <child id="1432138691741609743" name="tail" index="1Pxxm2" />
       </concept>
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
@@ -3117,8 +3117,8 @@
               </node>
             </node>
           </node>
-          <node concept="3wJAYo" id="1fvYCPA6RLt" role="1oi5TL">
-            <node concept="2IllgU" id="1fvYCPA6RLu" role="3wIGS_" />
+          <node concept="1Pxxm1" id="7L5omgeruXd" role="1oi5TL">
+            <node concept="2IllgU" id="1fvYCPA6RLu" role="1Pxxm2" />
           </node>
         </node>
       </node>

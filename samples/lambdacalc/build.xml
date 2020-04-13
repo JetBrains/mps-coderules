@@ -126,6 +126,7 @@
     </echoxml>
     <jar destfile="${build.layout}/lambdacalc/samples.lambdacalc.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.lambdacalc" />
+      <fileset dir="${basedir}/languages/samples.lambdacalc" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.lambdacalc_home}/languages/samples.lambdacalc/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.lambdacalc.jar" />
     </jar>
@@ -180,6 +181,7 @@
     </echoxml>
     <jar destfile="${build.layout}/lambdacalc/samples.lambdacalc.demo.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.lambdacalc.demo" />
+      <fileset dir="${basedir}/solutions/samples.lambdacalc.demo" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.lambdacalc_home}/solutions/samples.lambdacalc.demo/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.lambdacalc.demo.jar" />
     </jar>

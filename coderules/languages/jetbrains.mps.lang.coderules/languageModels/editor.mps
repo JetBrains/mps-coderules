@@ -8169,5 +8169,14 @@
       </node>
     </node>
   </node>
+  <node concept="Q6S24" id="7L5omgeruEi">
+    <property role="TrG5h" value="ExpandMacroPrototype_SmartReference" />
+    <property role="3GE5qa" value="macro.decl" />
+    <ref role="aqKnT" to="wq2x:5itBwM6cWQh" resolve="ExpandMacroPrototype" />
+    <node concept="3XHNnq" id="7L5omgeruEh" role="3ft7WO">
+      <ref role="3XGfJA" to="wq2x:5itBwM6dfdw" resolve="applicableConcept" />
+    </node>
+    <node concept="382kZG" id="7L5omgeruEj" role="lGtFl" />
+  </node>
 </model>
 

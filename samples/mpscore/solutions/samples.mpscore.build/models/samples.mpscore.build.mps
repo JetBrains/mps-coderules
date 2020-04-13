@@ -311,6 +311,21 @@
             </node>
           </node>
         </node>
+        <node concept="3rtmxn" id="7L5omges55K" role="3bR31x">
+          <node concept="3LXTmp" id="7L5omges55L" role="3rtmxm">
+            <node concept="3qWCbU" id="7L5omges55M" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="7L5omges55N" role="3LXTmr">
+              <node concept="2Ry0Ak" id="7L5omges55O" role="iGT6I">
+                <property role="2Ry0Am" value="languages" />
+                <node concept="2Ry0Ak" id="7L5omges55P" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguageExt" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="3DveV8qz3Qm" role="2G$12L">
         <property role="TrG5h" value="jetbrains.mps.baseLanguage.javadocExt" />
@@ -510,6 +525,21 @@
             </node>
             <node concept="3qWCbU" id="1GAclsBfDsb" role="3LXTna">
               <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+            </node>
+          </node>
+        </node>
+        <node concept="3rtmxn" id="7L5omges55y" role="3bR31x">
+          <node concept="3LXTmp" id="7L5omges55z" role="3rtmxm">
+            <node concept="3qWCbU" id="7L5omges55$" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="7L5omges55_" role="3LXTmr">
+              <node concept="2Ry0Ak" id="7L5omges55A" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="7L5omges55B" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguageExt.test" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -757,6 +787,21 @@
             </node>
             <node concept="3qWCbU" id="3mSr9E04KmZ" role="3LXTna">
               <property role="3qWCbO" value="**/*.mps, **/*.mpsr, **/.model" />
+            </node>
+          </node>
+        </node>
+        <node concept="3rtmxn" id="7L5omges55D" role="3bR31x">
+          <node concept="3LXTmp" id="7L5omges55E" role="3rtmxm">
+            <node concept="3qWCbU" id="7L5omges55F" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="7L5omges55G" role="3LXTmr">
+              <node concept="2Ry0Ak" id="7L5omges55H" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="7L5omges55I" role="2Ry0An">
+                  <property role="2Ry0Am" value="typechecking.samples.baseLanguage" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

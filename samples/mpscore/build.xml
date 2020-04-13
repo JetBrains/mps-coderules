@@ -129,6 +129,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguageExt.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.baseLanguageExt" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/languages/jetbrains.mps.baseLanguageExt/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguageExt.jar" />
     </jar>
@@ -473,6 +474,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/jetbrains.mps.baseLanguageExt.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguageExt.test" />
+      <fileset dir="${basedir}/solutions/jetbrains.mps.baseLanguageExt.test" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/solutions/jetbrains.mps.baseLanguageExt.test/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguageExt.test.jar" />
     </jar>
@@ -593,6 +595,7 @@
     </echoxml>
     <jar destfile="${build.layout}/deploy/typechecking.samples.baseLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/typechecking.samples.baseLanguage" />
+      <fileset dir="${basedir}/solutions/typechecking.samples.baseLanguage" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.mpscore_home}/solutions/typechecking.samples.baseLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/typechecking.samples.baseLanguage.jar" />
     </jar>

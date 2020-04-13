@@ -126,6 +126,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch" />
+      <fileset dir="${basedir}/languages/samples.fitch" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.jar" />
     </jar>
@@ -278,6 +279,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.firstOrderLogic.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch.firstOrderLogic" />
+      <fileset dir="${basedir}/languages/samples.fitch.firstOrderLogic" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.firstOrderLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.firstOrderLogic.jar" />
     </jar>
@@ -433,6 +435,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.herbrandLogic.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch.herbrandLogic" />
+      <fileset dir="${basedir}/languages/samples.fitch.herbrandLogic" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.herbrandLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.herbrandLogic.jar" />
     </jar>
@@ -587,6 +590,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.propositionalLogic.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch.propositionalLogic" />
+      <fileset dir="${basedir}/languages/samples.fitch.propositionalLogic" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.fitch_home}/languages/samples.fitch.propositionalLogic/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.propositionalLogic.jar" />
     </jar>
@@ -699,6 +703,7 @@
     </echoxml>
     <jar destfile="${build.layout}/modules/samples.fitch.demo.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples.fitch.demo" />
+      <fileset dir="${basedir}/solutions/samples.fitch.demo" includes="icons/**, resources/**" />
       <fileset dir="${mps.macro.fitch_home}/solutions/samples.fitch.demo/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/samples.fitch.demo.jar" />
     </jar>

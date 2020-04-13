@@ -8,9 +8,6 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
-      <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
-        <property id="1224848525476" name="isDeprecated" index="IEkAT" />
-      </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -41083,7 +41080,6 @@
     <node concept="2tJIrI" id="1ilMsMjhrcT" role="jymVt" />
     <node concept="2YIFZL" id="1ilMsMjhBm0" role="jymVt">
       <property role="TrG5h" value="getGenericClass1" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhtF5" role="3clF47">
@@ -41107,7 +41103,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhBns" role="jymVt">
       <property role="TrG5h" value="getGenericClass2" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhwp0" role="3clF47">
@@ -41131,7 +41126,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhBoS" role="jymVt">
       <property role="TrG5h" value="getGenericClass3" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhxQJ" role="3clF47">
@@ -41155,7 +41149,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhBqk" role="jymVt">
       <property role="TrG5h" value="getGenericClass4" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhxUu" role="3clF47">
@@ -41179,7 +41172,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhBrK" role="jymVt">
       <property role="TrG5h" value="getGenericClass5" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhxUB" role="3clF47">
@@ -41203,7 +41195,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhBtc" role="jymVt">
       <property role="TrG5h" value="getGenericClass6" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhxUK" role="3clF47">
@@ -41227,7 +41218,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhBuC" role="jymVt">
       <property role="TrG5h" value="getGenericClass7" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhy1D" role="3clF47">
@@ -41251,7 +41241,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhBw4" role="jymVt">
       <property role="TrG5h" value="getGenericClass8" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhy1M" role="3clF47">
@@ -41275,7 +41264,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhBxw" role="jymVt">
       <property role="TrG5h" value="getGenericClass9" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhy1V" role="3clF47">
@@ -41299,7 +41287,6 @@
     </node>
     <node concept="2YIFZL" id="1ilMsMjhByW" role="jymVt">
       <property role="TrG5h" value="getGenericClass10" />
-      <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="1ilMsMjhy24" role="3clF47">
