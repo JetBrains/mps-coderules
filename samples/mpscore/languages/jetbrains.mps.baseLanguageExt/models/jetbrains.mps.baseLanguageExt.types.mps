@@ -418,9 +418,6 @@
       <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.Value" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
       </concept>
-      <concept id="4363939677057762068" name="jetbrains.mps.logic.structure.TermConstructorDataForm" flags="ng" index="3sNhsn">
-        <child id="4363939677057762080" name="constructor" index="3sNhsz" />
-      </concept>
       <concept id="960803923479540328" name="jetbrains.mps.logic.structure.LogicalDataForm" flags="ng" index="3wAshV">
         <child id="960803923479549586" name="logical" index="3wAq21" />
       </concept>
@@ -799,6 +796,9 @@
       </concept>
       <concept id="3575255234174969664" name="jetbrains.mps.lang.coderules.structure.ConstraintRuleStatement" flags="ng" index="1nLNNL">
         <child id="3575255234174969665" name="rule" index="1nLNNK" />
+      </concept>
+      <concept id="4363939677057762068" name="" flags="ng" index="3sNhsn">
+        <child id="4363939677057762080" name="" index="3sNhsz" />
       </concept>
       <concept id="8908809128801951597" name="jetbrains.mps.lang.coderules.structure.MacroBodyLogicalDeclaration" flags="ng" index="3uniRu" />
       <concept id="5372587443968979218" name="jetbrains.mps.lang.coderules.structure.ExpressionConstraint" flags="ng" index="3wWvb2">
