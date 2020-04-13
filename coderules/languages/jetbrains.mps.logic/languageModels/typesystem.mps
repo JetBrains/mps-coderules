@@ -1399,7 +1399,7 @@
     </node>
   </node>
   <node concept="2sgARr" id="24ciDNzqUsw">
-    <property role="3GE5qa" value="" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="supertypesOf_TermType" />
     <property role="2RFo0w" value="true" />
     <node concept="3clFbS" id="24ciDNzqUsx" role="2sgrp5">
@@ -1556,6 +1556,23 @@
     <node concept="1YaCAy" id="hYA4REcbTR" role="1YuTPh">
       <property role="TrG5h" value="lvre" />
       <ref role="1YaFvo" to="5j4j:hYA4REbm1C" resolve="LogicalVariableRefExpression" />
+    </node>
+  </node>
+  <node concept="2sgARr" id="4nUKN9YPlyX">
+    <property role="3GE5qa" value="term" />
+    <property role="TrG5h" value="supertypesOf_TermListType" />
+    <node concept="3clFbS" id="4nUKN9YPlyY" role="2sgrp5">
+      <node concept="3clFbF" id="4nUKN9YPlzW" role="3cqZAp">
+        <node concept="2c44tf" id="4nUKN9YPlzX" role="3clFbG">
+          <node concept="3uibUv" id="4nUKN9YPl$t" role="2c44tc">
+            <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4nUKN9YPlz0" role="1YuTPh">
+      <property role="TrG5h" value="termListType" />
+      <ref role="1YaFvo" to="5j4j:4nUKN9YPlxw" resolve="TermListType" />
     </node>
   </node>
 </model>

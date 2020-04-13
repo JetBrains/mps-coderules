@@ -368,9 +368,12 @@
   <node concept="1TIwiD" id="7HUwyZb1HXL">
     <property role="3GE5qa" value="logical.type" />
     <property role="TrG5h" value="MultiLogicalType" />
-    <property role="34LRSv" value="multiLogical" />
+    <property role="34LRSv" value="logical[]" />
     <property role="EcuMT" value="8897567155605135217" />
     <ref role="1TJDcQ" node="1mP5b6jNC0S" resolve="LogicalType" />
+    <node concept="t5JxF" id="4nUKN9YNYro" role="lGtFl">
+      <property role="t5JxN" value="!!FIXME rename to LogicalArrayType!!" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5NAQwIkRIXT">
     <property role="EcuMT" value="6694277639409954681" />
@@ -778,7 +781,7 @@
   </node>
   <node concept="1TIwiD" id="24ciDNzqIuw">
     <property role="EcuMT" value="2381360340662937504" />
-    <property role="3GE5qa" value="" />
+    <property role="3GE5qa" value="term" />
     <property role="TrG5h" value="TermType" />
     <property role="34LRSv" value="term" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
@@ -857,6 +860,13 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="JOGAOsxanH" resolve="DataFormConstructor" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="4nUKN9YPlxw">
+    <property role="EcuMT" value="5042557354438383712" />
+    <property role="3GE5qa" value="term" />
+    <property role="TrG5h" value="TermListType" />
+    <property role="34LRSv" value="termlist" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
 </model>
 
