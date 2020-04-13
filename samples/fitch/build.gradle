@@ -19,7 +19,7 @@ ant.importBuild('build.xml') {antTarget ->
 }
 
 // ensure 'generate' runs before 'classes' ('generate' is NOT optional)
-'fitch-classes' {
+'fitch-compileJava' {
   dependsOn {
     'fitch-generate'
   }

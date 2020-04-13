@@ -19,10 +19,10 @@ ant.importBuild('build.xml') {antTarget ->
 }
 
 // ensure 'generate' runs before 'classes' ('generate' is NOT optional)
-'lambdacalc-classes' {
+'lambdacalc-compileJava' {
   dependsOn {
     'lambdacalc-generate'
-  }
+  }  
   mustRunAfter {
     'lambdacalc-generate'
   }

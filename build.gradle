@@ -1,6 +1,10 @@
 import groovy.xml.MarkupBuilder
 import java.util.regex.*
 
+//plugins {
+//  id "com.dorongold.task-tree" version "1.5"
+//}
+
 defaultTasks 'assemble'
 
 allprojects {
