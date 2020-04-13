@@ -142,27 +142,6 @@
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4">
         <child id="6036655413809169524" name="cardinalityExpr" index="3gj$pD" />
       </concept>
-      <concept id="861509610434242029" name="jetbrains.mps.logic.structure.DataFormConstructor" flags="ng" index="ns1u0">
-        <reference id="861509610434243078" name="decl" index="ns1xF" />
-        <child id="861509610434243076" name="override" index="ns1xD" />
-      </concept>
-      <concept id="861509610434243104" name="jetbrains.mps.logic.structure.DataFormTable" flags="ng" index="ns1xd">
-        <child id="861509610434243105" name="contents" index="ns1xc" />
-      </concept>
-      <concept id="861509610434243081" name="jetbrains.mps.logic.structure.DataFormDeclaration" flags="ng" index="ns1x$">
-        <property id="5177758076344254900" name="open" index="3uGXoX" />
-        <reference id="861509610434243089" name="prototype" index="ns1xW" />
-        <child id="861509610434243084" name="template" index="ns1xx" />
-      </concept>
-      <concept id="861509610434305888" name="jetbrains.mps.logic.structure.ListFeature" flags="ng" index="nsiOd" />
-      <concept id="861509610434276450" name="jetbrains.mps.logic.structure.DataFormTemplate" flags="ng" index="nspSf">
-        <child id="861509610434276451" name="feature" index="nspSe" />
-      </concept>
-      <concept id="861509610434435669" name="jetbrains.mps.logic.structure.DataFormFeatureOverride" flags="ng" index="nsMwS">
-        <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
-      </concept>
-      <concept id="2381360340662937504" name="jetbrains.mps.logic.structure.TermType" flags="ig" index="32pEOW" />
       <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
         <child id="4780620083400582654" name="logical" index="1nq8_t" />
       </concept>
@@ -216,6 +195,26 @@
         <reference id="6097203247219331496" name="extends" index="3tg4Y$" />
         <child id="1618328391714763070" name="macro" index="0oKgB" />
       </concept>
+      <concept id="861509610434242029" name="" flags="ng" index="ns1u0">
+        <reference id="861509610434243078" name="" index="ns1xF" />
+        <child id="861509610434243076" name="" index="ns1xD" />
+      </concept>
+      <concept id="861509610434243104" name="" flags="ng" index="ns1xd">
+        <child id="861509610434243105" name="" index="ns1xc" />
+      </concept>
+      <concept id="861509610434243081" name="" flags="ng" index="ns1x$">
+        <property id="5177758076344254900" name="" index="3uGXoX" />
+        <reference id="861509610434243089" name="" index="ns1xW" />
+        <child id="861509610434243084" name="" index="ns1xx" />
+      </concept>
+      <concept id="861509610434305888" name="" flags="ng" index="nsiOd" />
+      <concept id="861509610434276450" name="" flags="ng" index="nspSf">
+        <child id="861509610434276451" name="" index="nspSe" />
+      </concept>
+      <concept id="861509610434435669" name="" flags="ng" index="nsMwS">
+        <reference id="861509610434435672" name="" index="nsMwP" />
+        <child id="861509610434435670" name="" index="nsMwV" />
+      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
@@ -228,6 +227,7 @@
       <concept id="6856711987714624232" name="jetbrains.mps.lang.coderules.structure.LateExpressionItem" flags="ng" index="HKQnh">
         <child id="6856711987714624233" name="code" index="HKQng" />
       </concept>
+      <concept id="2381360340662937504" name="" flags="ng" index="32pEOW" />
       <concept id="6097203247139556923" name="jetbrains.mps.lang.coderules.structure.CallMacroTemplate" flags="ng" index="3hwh0R">
         <child id="6097203247147235901" name="logical" index="3h32gL" />
         <child id="6097203247141261094" name="code" index="3hEL4E" />
@@ -428,9 +428,9 @@
               <ref role="a7OzE" node="4E290qPYynt" resolve="Type" />
             </node>
             <node concept="ns1u0" id="4E290qPYMxa" role="3A8w4Q">
-              <ref role="ns1xF" node="4E290qPYB6e" resolve="tuple" />
+              <ref role="ns1xF" node="4E290qPYB6e" />
               <node concept="nsMwS" id="4E290qPYMxW" role="ns1xD">
-                <ref role="nsMwP" node="4E290qPYBjo" resolve="types" />
+                <ref role="nsMwP" node="4E290qPYBjo" />
                 <node concept="1nq8_$" id="4E290qPYMyR" role="nsMwV">
                   <node concept="a7P8L" id="4E290qPYMyQ" role="1nq8_t">
                     <ref role="a7OzE" node="4E290qPYySZ" resolve="CompT" />
@@ -458,23 +458,6 @@
           </node>
         </node>
         <node concept="32pEOW" id="4E290qPYyTA" role="3vLBG7" />
-      </node>
-    </node>
-  </node>
-  <node concept="ns1xd" id="4E290qPYB4i">
-    <property role="TrG5h" value="TupleTerms" />
-    <node concept="ns1x$" id="4lCLOtwq2MF" role="ns1xc">
-      <property role="TrG5h" value="type" />
-      <property role="3uGXoX" value="true" />
-      <node concept="nspSf" id="4lCLOtwq2MG" role="ns1xx" />
-    </node>
-    <node concept="ns1x$" id="4E290qPYB6e" role="ns1xc">
-      <property role="TrG5h" value="tuple" />
-      <ref role="ns1xW" node="4lCLOtwq2MF" resolve="type" />
-      <node concept="nspSf" id="4E290qPYB6f" role="ns1xx">
-        <node concept="nsiOd" id="4E290qPYBjo" role="nspSe">
-          <property role="TrG5h" value="types" />
-        </node>
       </node>
     </node>
   </node>
@@ -525,9 +508,9 @@
                         </node>
                       </node>
                       <node concept="ns1u0" id="4E290qPZMdM" role="3AunhB">
-                        <ref role="ns1xF" node="4E290qPYB6e" resolve="tuple" />
+                        <ref role="ns1xF" node="4E290qPYB6e" />
                         <node concept="nsMwS" id="4E290qPZMeh" role="ns1xD">
-                          <ref role="nsMwP" node="4E290qPYBjo" resolve="types" />
+                          <ref role="nsMwP" node="4E290qPYBjo" />
                           <node concept="1nq8_$" id="4E290qPZMfc" role="nsMwV">
                             <node concept="a7P8L" id="4E290qPZMfb" role="1nq8_t">
                               <ref role="a7OzE" node="4E290qPYTGQ" resolve="CompTypes" />
@@ -781,7 +764,7 @@
                                   <ref role="a7OzE" node="4E290qPZCaH" resolve="IndexT" />
                                 </node>
                                 <node concept="ns1u0" id="4E290qPZwqf" role="3AunhB">
-                                  <ref role="ns1xF" to="kqnc:JOGAOsVt2E" resolve="_int_" />
+                                  <ref role="ns1xF" to="kqnc:JOGAOsVt2E" />
                                 </node>
                               </node>
                             </node>
@@ -913,9 +896,9 @@
                                       <ref role="a7OzE" node="4E290qPZqQk" resolve="TupleType" />
                                     </node>
                                     <node concept="ns1u0" id="4E290qPZr0k" role="3AunhB">
-                                      <ref role="ns1xF" node="4E290qPYB6e" resolve="tuple" />
+                                      <ref role="ns1xF" node="4E290qPYB6e" />
                                       <node concept="nsMwS" id="4E290qPZr0L" role="ns1xD">
-                                        <ref role="nsMwP" node="4E290qPYBjo" resolve="types" />
+                                        <ref role="nsMwP" node="4E290qPYBjo" />
                                         <node concept="1nq8_$" id="4E290qPZr1G" role="nsMwV">
                                           <node concept="a7P8L" id="4E290qPZr1F" role="1nq8_t">
                                             <ref role="a7OzE" node="4E290qPYXCS" resolve="ComponentTypesList" />
@@ -1123,9 +1106,9 @@
                     </node>
                     <node concept="1HFMs5" id="1mdVbTSaq2o" role="3AunhB">
                       <node concept="ns1u0" id="JOGAOsVt9$" role="1uarlW">
-                        <ref role="ns1xF" node="4E290qPYB6e" resolve="tuple" />
+                        <ref role="ns1xF" node="4E290qPYB6e" />
                         <node concept="nsMwS" id="2WQBycG$n_7" role="ns1xD">
-                          <ref role="nsMwP" node="4E290qPYBjo" resolve="types" />
+                          <ref role="nsMwP" node="4E290qPYBjo" />
                           <node concept="1nq8_$" id="2WQBycG$nAg" role="nsMwV">
                             <node concept="a7P8L" id="2WQBycG$nAf" role="1nq8_t">
                               <ref role="a7OzE" node="5upUcEtdY0_" resolve="CompTypes" />
@@ -1216,6 +1199,23 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="ns1xd" id="4E290qPYB4i">
+    <property role="TrG5h" value="TupleTerms" />
+    <node concept="ns1x$" id="4lCLOtwq2MF" role="ns1xc">
+      <property role="TrG5h" value="type" />
+      <property role="3uGXoX" value="true" />
+      <node concept="nspSf" id="4lCLOtwq2MG" role="ns1xx" />
+    </node>
+    <node concept="ns1x$" id="4E290qPYB6e" role="ns1xc">
+      <property role="TrG5h" value="tuple" />
+      <ref role="ns1xW" node="4lCLOtwq2MF" />
+      <node concept="nspSf" id="4E290qPYB6f" role="ns1xx">
+        <node concept="nsiOd" id="4E290qPYBjo" role="nspSe">
+          <property role="TrG5h" value="types" />
         </node>
       </node>
     </node>

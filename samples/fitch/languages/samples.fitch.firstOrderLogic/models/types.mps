@@ -112,28 +112,6 @@
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
-      <concept id="861509610434242029" name="jetbrains.mps.logic.structure.DataFormConstructor" flags="ng" index="ns1u0">
-        <reference id="861509610434243078" name="decl" index="ns1xF" />
-        <child id="861509610434243076" name="override" index="ns1xD" />
-      </concept>
-      <concept id="861509610434243104" name="jetbrains.mps.logic.structure.DataFormTable" flags="ng" index="ns1xd">
-        <child id="861509610434243105" name="contents" index="ns1xc" />
-      </concept>
-      <concept id="861509610434243081" name="jetbrains.mps.logic.structure.DataFormDeclaration" flags="ng" index="ns1x$">
-        <child id="861509610434243084" name="template" index="ns1xx" />
-      </concept>
-      <concept id="861509610434276453" name="jetbrains.mps.logic.structure.DataFormFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
-      <concept id="861509610434276450" name="jetbrains.mps.logic.structure.DataFormTemplate" flags="ng" index="nspSf">
-        <child id="861509610434276451" name="feature" index="nspSe" />
-      </concept>
-      <concept id="861509610434289827" name="jetbrains.mps.logic.structure.ChildFeature" flags="ng" index="nstbe" />
-      <concept id="861509610434435669" name="jetbrains.mps.logic.structure.DataFormFeatureOverride" flags="ng" index="nsMwS">
-        <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
-      </concept>
-      <concept id="2381360340662937504" name="jetbrains.mps.logic.structure.TermType" flags="ig" index="32pEOW" />
       <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
         <child id="4780620083400582654" name="logical" index="1nq8_t" />
       </concept>
@@ -220,6 +198,27 @@
         <reference id="6097203247219331496" name="extends" index="3tg4Y$" />
         <child id="1618328391714763070" name="macro" index="0oKgB" />
       </concept>
+      <concept id="861509610434242029" name="" flags="ng" index="ns1u0">
+        <reference id="861509610434243078" name="" index="ns1xF" />
+        <child id="861509610434243076" name="" index="ns1xD" />
+      </concept>
+      <concept id="861509610434243104" name="" flags="ng" index="ns1xd">
+        <child id="861509610434243105" name="" index="ns1xc" />
+      </concept>
+      <concept id="861509610434243081" name="" flags="ng" index="ns1x$">
+        <child id="861509610434243084" name="" index="ns1xx" />
+      </concept>
+      <concept id="861509610434276453" name="" flags="ng" index="nspS8">
+        <property id="861509610434276456" name="" index="nspS5" />
+      </concept>
+      <concept id="861509610434276450" name="" flags="ng" index="nspSf">
+        <child id="861509610434276451" name="" index="nspSe" />
+      </concept>
+      <concept id="861509610434289827" name="" flags="ng" index="nstbe" />
+      <concept id="861509610434435669" name="" flags="ng" index="nsMwS">
+        <reference id="861509610434435672" name="" index="nsMwP" />
+        <child id="861509610434435670" name="" index="nsMwV" />
+      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
@@ -228,6 +227,7 @@
         <reference id="3541122455446356437" name="extends" index="2YbDB9" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
+      <concept id="2381360340662937504" name="" flags="ng" index="32pEOW" />
       <concept id="6097203247156088058" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputSpecification" flags="ng" index="3ixlbQ">
         <reference id="6097203247156276310" name="applicableConcept" index="3ixz9q" />
         <child id="6097203247156107501" name="input" index="3ix8rx" />
@@ -362,9 +362,9 @@
               </node>
             </node>
             <node concept="ns1u0" id="7VBaGntKJ8V" role="3A8w4Q">
-              <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
+              <ref role="ns1xF" node="7VBaGntKJ6C" />
               <node concept="nsMwS" id="7VBaGntKJ8W" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />
+                <ref role="nsMwP" node="7VBaGntKJ6E" />
                 <node concept="1nq8_$" id="3w0n0hzlYjG" role="nsMwV">
                   <node concept="a7P8L" id="3w0n0hzlYjF" role="1nq8_t">
                     <ref role="a7OzE" node="3w0n0hzlYhK" resolve="Left" />
@@ -372,7 +372,7 @@
                 </node>
               </node>
               <node concept="nsMwS" id="7VBaGntKJ8X" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ6F" resolve="right" />
+                <ref role="nsMwP" node="7VBaGntKJ6F" />
                 <node concept="1nq8_$" id="3w0n0hzlYwu" role="nsMwV">
                   <node concept="a7P8L" id="3w0n0hzlYwt" role="1nq8_t">
                     <ref role="a7OzE" node="3w0n0hzlYhT" resolve="Right" />
@@ -478,9 +478,9 @@
                     <ref role="3AqCNq" to="6r1k:2aBGSFgfwNi" resolve="conclusion" />
                     <node concept="1HFMs5" id="7VBaGntKIM7" role="3AunhB">
                       <node concept="ns1u0" id="7VBaGntKJ94" role="1uarlW">
-                        <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
+                        <ref role="ns1xF" node="7VBaGntKJ6C" />
                         <node concept="nsMwS" id="7VBaGntKJ95" role="ns1xD">
-                          <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />
+                          <ref role="nsMwP" node="7VBaGntKJ6E" />
                           <node concept="1nq8_$" id="3w0n0hzmj5J" role="nsMwV">
                             <node concept="a7P8L" id="3w0n0hzmj5I" role="1nq8_t">
                               <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Term" />
@@ -488,7 +488,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="7VBaGntKJ96" role="ns1xD">
-                          <ref role="nsMwP" node="7VBaGntKJ6F" resolve="right" />
+                          <ref role="nsMwP" node="7VBaGntKJ6F" />
                           <node concept="1nq8_$" id="3w0n0hzmjcz" role="nsMwV">
                             <node concept="a7P8L" id="2gcGVmG$Rdc" role="1nq8_t">
                               <ref role="a7OzE" node="3w0n0hzmj4c" resolve="Term" />
@@ -1113,9 +1113,9 @@
                         <ref role="3AqCNq" to="6r1k:2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIM5" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJ8Y" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
+                            <ref role="ns1xF" node="7VBaGntKJ6C" />
                             <node concept="nsMwS" id="7VBaGntKJ8Z" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />
+                              <ref role="nsMwP" node="7VBaGntKJ6E" />
                               <node concept="1nq8_$" id="3w0n0hzmnoI" role="nsMwV">
                                 <node concept="a7P8L" id="3w0n0hzmnoH" role="1nq8_t">
                                   <ref role="a7OzE" node="3w0n0hzmjfs" resolve="EqLeft" />
@@ -1123,7 +1123,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJ90" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ6F" resolve="right" />
+                              <ref role="nsMwP" node="7VBaGntKJ6F" />
                               <node concept="1nq8_$" id="3w0n0hzmnri" role="nsMwV">
                                 <node concept="a7P8L" id="3w0n0hzmnrh" role="1nq8_t">
                                   <ref role="a7OzE" node="3w0n0hzmjfI" resolve="EqRight" />
@@ -1894,9 +1894,9 @@
                         <ref role="3AqCNq" to="6r1k:2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIM6" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJ91" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ6C" resolve="Equality" />
+                            <ref role="ns1xF" node="7VBaGntKJ6C" />
                             <node concept="nsMwS" id="7VBaGntKJ92" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ6E" resolve="left" />
+                              <ref role="nsMwP" node="7VBaGntKJ6E" />
                               <node concept="1nq8_$" id="3w0n0hznwzX" role="nsMwV">
                                 <node concept="a7P8L" id="3w0n0hznwzY" role="1nq8_t">
                                   <ref role="a7OzE" node="3w0n0hznw$l" resolve="EqLeft" />
@@ -1904,7 +1904,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJ93" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ6F" resolve="right" />
+                              <ref role="nsMwP" node="7VBaGntKJ6F" />
                               <node concept="1nq8_$" id="3w0n0hznw$3" role="nsMwV">
                                 <node concept="a7P8L" id="3w0n0hznw$4" role="1nq8_t">
                                   <ref role="a7OzE" node="3w0n0hznw$m" resolve="EqRight" />

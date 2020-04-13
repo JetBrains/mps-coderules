@@ -87,34 +87,10 @@
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4">
         <child id="6036655413809169524" name="cardinalityExpr" index="3gj$pD" />
       </concept>
-      <concept id="861509610434242029" name="jetbrains.mps.logic.structure.DataFormConstructor" flags="ng" index="ns1u0">
-        <reference id="861509610434243078" name="decl" index="ns1xF" />
-        <child id="861509610434243076" name="override" index="ns1xD" />
-      </concept>
-      <concept id="861509610434243104" name="jetbrains.mps.logic.structure.DataFormTable" flags="ng" index="ns1xd">
-        <child id="861509610434243105" name="contents" index="ns1xc" />
-      </concept>
-      <concept id="861509610434243081" name="jetbrains.mps.logic.structure.DataFormDeclaration" flags="ng" index="ns1x$">
-        <child id="861509610434243084" name="template" index="ns1xx" />
-      </concept>
-      <concept id="861509610434305888" name="jetbrains.mps.logic.structure.ListFeature" flags="ng" index="nsiOd" />
-      <concept id="861509610434276453" name="jetbrains.mps.logic.structure.DataFormFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
-      <concept id="861509610434276450" name="jetbrains.mps.logic.structure.DataFormTemplate" flags="ng" index="nspSf">
-        <child id="861509610434276451" name="feature" index="nspSe" />
-      </concept>
-      <concept id="861509610434294982" name="jetbrains.mps.logic.structure.ValueFeature" flags="ng" index="nssqF" />
-      <concept id="861509610434289827" name="jetbrains.mps.logic.structure.ChildFeature" flags="ng" index="nstbe" />
-      <concept id="861509610434435669" name="jetbrains.mps.logic.structure.DataFormFeatureOverride" flags="ng" index="nsMwS">
-        <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
-      </concept>
       <concept id="2784663291567294648" name="jetbrains.mps.logic.structure.Wildcard" flags="ng" index="2IllgU" />
       <concept id="2105510410850132386" name="jetbrains.mps.logic.structure.ListNode" flags="ng" index="KCUsM">
         <child id="2105510410850136264" name="contents" index="KCVpo" />
       </concept>
-      <concept id="2381360340662937504" name="jetbrains.mps.logic.structure.TermType" flags="ig" index="32pEOW" />
       <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
         <child id="4780620083400582654" name="logical" index="1nq8_t" />
       </concept>
@@ -179,6 +155,29 @@
         <child id="1618328391714763070" name="macro" index="0oKgB" />
         <child id="6097203247162410403" name="prototype" index="3iTdIJ" />
       </concept>
+      <concept id="861509610434242029" name="" flags="ng" index="ns1u0">
+        <reference id="861509610434243078" name="" index="ns1xF" />
+        <child id="861509610434243076" name="" index="ns1xD" />
+      </concept>
+      <concept id="861509610434243104" name="" flags="ng" index="ns1xd">
+        <child id="861509610434243105" name="" index="ns1xc" />
+      </concept>
+      <concept id="861509610434243081" name="" flags="ng" index="ns1x$">
+        <child id="861509610434243084" name="" index="ns1xx" />
+      </concept>
+      <concept id="861509610434305888" name="" flags="ng" index="nsiOd" />
+      <concept id="861509610434276453" name="" flags="ng" index="nspS8">
+        <property id="861509610434276456" name="" index="nspS5" />
+      </concept>
+      <concept id="861509610434276450" name="" flags="ng" index="nspSf">
+        <child id="861509610434276451" name="" index="nspSe" />
+      </concept>
+      <concept id="861509610434294982" name="" flags="ng" index="nssqF" />
+      <concept id="861509610434289827" name="" flags="ng" index="nstbe" />
+      <concept id="861509610434435669" name="" flags="ng" index="nsMwS">
+        <reference id="861509610434435672" name="" index="nsMwP" />
+        <child id="861509610434435670" name="" index="nsMwV" />
+      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
@@ -188,6 +187,7 @@
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
+      <concept id="2381360340662937504" name="" flags="ng" index="32pEOW" />
       <concept id="6097203247156088058" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputSpecification" flags="ng" index="3ixlbQ">
         <reference id="6097203247156276310" name="applicableConcept" index="3ixz9q" />
         <child id="6097203247156107501" name="input" index="3ix8rx" />
@@ -297,9 +297,9 @@
               <ref role="a7OzE" node="5itBwM9U0XA" resolve="Sent" />
             </node>
             <node concept="ns1u0" id="5itBwM9U1$0" role="3A8w4Q">
-              <ref role="ns1xF" node="7VBaGntKJ7X" resolve="Const" />
+              <ref role="ns1xF" node="7VBaGntKJ7X" />
               <node concept="nsMwS" id="5itBwM9U1$2" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ7Z" resolve="name" />
+                <ref role="nsMwP" node="7VBaGntKJ7Z" />
                 <node concept="1nq8_$" id="5itBwM9U29D" role="nsMwV">
                   <node concept="37jhX" id="5itBwM9U29C" role="1nq8_t">
                     <node concept="2OqwBi" id="5itBwM9U2m7" role="37jj2">
@@ -420,9 +420,9 @@
               </node>
             </node>
             <node concept="ns1u0" id="5itBwM9YtBi" role="3A8w4Q">
-              <ref role="ns1xF" node="7VBaGntKJ80" resolve="And" />
+              <ref role="ns1xF" node="7VBaGntKJ80" />
               <node concept="nsMwS" id="5itBwM9YtBj" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ82" resolve="conjuncts" />
+                <ref role="nsMwP" node="7VBaGntKJ82" />
                 <node concept="1nq8_$" id="5itBwM9YtBk" role="nsMwV">
                   <node concept="37jhX" id="5itBwMa4JBL" role="1nq8_t">
                     <node concept="1nq8_$" id="5itBwMa4JBK" role="37jj2">
@@ -551,9 +551,9 @@
               </node>
             </node>
             <node concept="ns1u0" id="5itBwMa4_iJ" role="3A8w4Q">
-              <ref role="ns1xF" node="7VBaGntKJ83" resolve="Or" />
+              <ref role="ns1xF" node="7VBaGntKJ83" />
               <node concept="nsMwS" id="5itBwMa4_iK" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ85" resolve="disjuncts" />
+                <ref role="nsMwP" node="7VBaGntKJ85" />
                 <node concept="1nq8_$" id="5itBwMa4_iL" role="nsMwV">
                   <node concept="37jhX" id="5itBwMa4Kv$" role="1nq8_t">
                     <node concept="1nq8_$" id="5itBwMa4Kvz" role="37jj2">
@@ -638,9 +638,9 @@
               </node>
             </node>
             <node concept="ns1u0" id="5itBwMa4F78" role="3A8w4Q">
-              <ref role="ns1xF" node="7VBaGntKJ86" resolve="Not" />
+              <ref role="ns1xF" node="7VBaGntKJ86" />
               <node concept="nsMwS" id="5itBwMa4F79" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ88" resolve="target" />
+                <ref role="nsMwP" node="7VBaGntKJ88" />
                 <node concept="1nq8_$" id="5itBwMa4F7a" role="nsMwV">
                   <node concept="a7P8L" id="5itBwMa4F7b" role="1nq8_t">
                     <ref role="a7OzE" node="5itBwMa4CQK" resolve="Target" />
@@ -715,9 +715,9 @@
               </node>
             </node>
             <node concept="ns1u0" id="5itBwMa5UrK" role="3A8w4Q">
-              <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+              <ref role="ns1xF" node="7VBaGntKJ89" />
               <node concept="nsMwS" id="5itBwMa5UrL" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                <ref role="nsMwP" node="7VBaGntKJ8b" />
                 <node concept="1nq8_$" id="5itBwMa5UrM" role="nsMwV">
                   <node concept="a7P8L" id="5itBwMa5UrN" role="1nq8_t">
                     <ref role="a7OzE" node="5itBwMa5SHO" resolve="Atcd" />
@@ -725,7 +725,7 @@
                 </node>
               </node>
               <node concept="nsMwS" id="5itBwMa5UrO" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                <ref role="nsMwP" node="7VBaGntKJ8c" />
                 <node concept="1nq8_$" id="5itBwMa5UrP" role="nsMwV">
                   <node concept="a7P8L" id="5itBwMa5UrQ" role="1nq8_t">
                     <ref role="a7OzE" node="5itBwMa5STx" resolve="Csqt" />
@@ -803,9 +803,9 @@
               </node>
             </node>
             <node concept="ns1u0" id="5itBwMa5UZh" role="3A8w4Q">
-              <ref role="ns1xF" node="7VBaGntKJ8d" resolve="Iff" />
+              <ref role="ns1xF" node="7VBaGntKJ8d" />
               <node concept="nsMwS" id="5itBwMa5UZi" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ8f" resolve="antecedent" />
+                <ref role="nsMwP" node="7VBaGntKJ8f" />
                 <node concept="1nq8_$" id="5itBwMa5UZj" role="nsMwV">
                   <node concept="a7P8L" id="5itBwMa5UZk" role="1nq8_t">
                     <ref role="a7OzE" node="5itBwMa5UZp" resolve="Atcd" />
@@ -813,7 +813,7 @@
                 </node>
               </node>
               <node concept="nsMwS" id="5itBwMa5UZl" role="ns1xD">
-                <ref role="nsMwP" node="7VBaGntKJ8g" resolve="consequence" />
+                <ref role="nsMwP" node="7VBaGntKJ8g" />
                 <node concept="1nq8_$" id="5itBwMa5UZm" role="nsMwV">
                   <node concept="a7P8L" id="5itBwMa5UZn" role="1nq8_t">
                     <ref role="a7OzE" node="5itBwMa5UZq" resolve="Csqt" />
@@ -1268,9 +1268,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIR1" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJef" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ80" resolve="And" />
+                            <ref role="ns1xF" node="7VBaGntKJ80" />
                             <node concept="nsMwS" id="7VBaGntKJeg" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ82" resolve="conjuncts" />
+                              <ref role="nsMwP" node="7VBaGntKJ82" />
                               <node concept="1oi1Uc" id="2AfSc6JvNjG" role="nsMwV">
                                 <node concept="KCUsM" id="2AfSc6JvNm_" role="1oi0x0">
                                   <node concept="3wAshV" id="3zXFZnUhsMC" role="KCVpo">
@@ -1482,9 +1482,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRb" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJfe" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ80" resolve="And" />
+                            <ref role="ns1xF" node="7VBaGntKJ80" />
                             <node concept="nsMwS" id="7VBaGntKJff" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ82" resolve="conjuncts" />
+                              <ref role="nsMwP" node="7VBaGntKJ82" />
                               <node concept="1oi1Uc" id="2AfSc6JvO6C" role="nsMwV">
                                 <node concept="KCUsM" id="2AfSc6JvO6D" role="1oi0x0">
                                   <node concept="3wAshV" id="3zXFZnUhsME" role="KCVpo">
@@ -1653,9 +1653,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRo" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJf1" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ80" resolve="And" />
+                            <ref role="ns1xF" node="7VBaGntKJ80" />
                             <node concept="nsMwS" id="7VBaGntKJf2" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ82" resolve="conjuncts" />
+                              <ref role="nsMwP" node="7VBaGntKJ82" />
                               <node concept="1oi1Uc" id="2AfSc6Jwgqh" role="nsMwV">
                                 <node concept="KCUsM" id="2AfSc6Jwgta" role="1oi0x0">
                                   <node concept="3wAshV" id="3zXFZnUhsMG" role="KCVpo">
@@ -1803,9 +1803,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIR8" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJf9" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ80" resolve="And" />
+                            <ref role="ns1xF" node="7VBaGntKJ80" />
                             <node concept="nsMwS" id="7VBaGntKJfa" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ82" resolve="conjuncts" />
+                              <ref role="nsMwP" node="7VBaGntKJ82" />
                               <node concept="1oi1Uc" id="2AfSc6Jw_SP" role="nsMwV">
                                 <node concept="KCUsM" id="2AfSc6Jw_SQ" role="1oi0x0">
                                   <node concept="2IllgU" id="2AfSc6Jw_SV" role="KCVpo" />
@@ -1966,9 +1966,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRj" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJer" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ83" resolve="Or" />
+                            <ref role="ns1xF" node="7VBaGntKJ83" />
                             <node concept="nsMwS" id="7VBaGntKJes" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ85" resolve="disjuncts" />
+                              <ref role="nsMwP" node="7VBaGntKJ85" />
                               <node concept="1oi1Uc" id="2YqrT$P4bbQ" role="nsMwV">
                                 <node concept="KCUsM" id="2YqrT$P4beJ" role="1oi0x0">
                                   <node concept="3wAshV" id="3zXFZnUhsMI" role="KCVpo">
@@ -2111,9 +2111,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRl" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJdV" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ83" resolve="Or" />
+                            <ref role="ns1xF" node="7VBaGntKJ83" />
                             <node concept="nsMwS" id="7VBaGntKJdW" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ85" resolve="disjuncts" />
+                              <ref role="nsMwP" node="7VBaGntKJ85" />
                               <node concept="1oi1Uc" id="2YqrT$P4hvt" role="nsMwV">
                                 <node concept="KCUsM" id="2YqrT$P4hvu" role="1oi0x0">
                                   <node concept="2IllgU" id="2YqrT$P4hvz" role="KCVpo" />
@@ -2243,9 +2243,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIQV" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJeo" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJep" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVnr0E" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVnr0D" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVnmQi" resolve="Disj1" />
@@ -2253,7 +2253,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJeq" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="2AfSc6JyU7k" role="nsMwV">
                                 <node concept="a7P8L" id="2AfSc6JyU7j" role="1nq8_t">
                                   <ref role="a7OzE" node="2AfSc6JyU4R" resolve="Con" />
@@ -2292,9 +2292,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRe" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJfg" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJfh" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVnrk5" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVnrk4" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVnmVa" resolve="Disj2" />
@@ -2302,7 +2302,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJfi" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVnrhp" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVnrsh" role="1nq8_t">
                                   <ref role="a7OzE" node="2AfSc6JyU4R" resolve="Con" />
@@ -2341,9 +2341,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIR6" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJf7" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ83" resolve="Or" />
+                            <ref role="ns1xF" node="7VBaGntKJ83" />
                             <node concept="nsMwS" id="7VBaGntKJf8" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ85" resolve="disjuncts" />
+                              <ref role="nsMwP" node="7VBaGntKJ85" />
                               <node concept="1oi1Uc" id="3l440nVnqu3" role="nsMwV">
                                 <node concept="KCUsM" id="3l440nVnqx4" role="1oi0x0">
                                   <node concept="3wAshV" id="3zXFZnUhsMK" role="KCVpo">
@@ -2561,9 +2561,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIR5" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJeV" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJeW" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVo7SD" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVo7SE" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVo7Tl" resolve="Disj1" />
@@ -2571,7 +2571,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJeX" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVo7SJ" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVo7SK" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVo7Tj" resolve="Con" />
@@ -2610,9 +2610,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIQX" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJe4" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJe5" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVo7T2" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVo7T3" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVo7Tm" resolve="Disj2" />
@@ -2620,7 +2620,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJe6" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVo7T8" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVo7T9" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVo7Tj" resolve="Con" />
@@ -2659,9 +2659,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIR2" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJfm" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ83" resolve="Or" />
+                            <ref role="ns1xF" node="7VBaGntKJ83" />
                             <node concept="nsMwS" id="7VBaGntKJfn" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ85" resolve="disjuncts" />
+                              <ref role="nsMwP" node="7VBaGntKJ85" />
                               <node concept="1oi1Uc" id="3l440nVo7Sk" role="nsMwV">
                                 <node concept="KCUsM" id="3l440nVo7Sl" role="1oi0x0">
                                   <node concept="3wAshV" id="3zXFZnUhsMM" role="KCVpo">
@@ -2866,9 +2866,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIQY" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJe7" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ86" resolve="Not" />
+                            <ref role="ns1xF" node="7VBaGntKJ86" />
                             <node concept="nsMwS" id="7VBaGntKJe8" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ88" resolve="target" />
+                              <ref role="nsMwP" node="7VBaGntKJ88" />
                               <node concept="1nq8_$" id="2YqrT$P4Dek" role="nsMwV">
                                 <node concept="a7P8L" id="2YqrT$P4Dej" role="1nq8_t">
                                   <ref role="a7OzE" node="2YqrT$P4CCk" resolve="PremAtcd" />
@@ -2891,9 +2891,9 @@
                       <node concept="3Aqt3T" id="2YqrT$P4CCM" role="3I6s78">
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="ns1u0" id="7VBaGntKJel" role="3AunhB">
-                          <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                          <ref role="ns1xF" node="7VBaGntKJ89" />
                           <node concept="nsMwS" id="7VBaGntKJem" role="ns1xD">
-                            <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                            <ref role="nsMwP" node="7VBaGntKJ8b" />
                             <node concept="1nq8_$" id="2YqrT$P4CDm" role="nsMwV">
                               <node concept="a7P8L" id="2YqrT$P4CDl" role="1nq8_t">
                                 <ref role="a7OzE" node="2YqrT$P4CCk" resolve="PremAtcd" />
@@ -2901,7 +2901,7 @@
                             </node>
                           </node>
                           <node concept="nsMwS" id="7VBaGntKJen" role="ns1xD">
-                            <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                            <ref role="nsMwP" node="7VBaGntKJ8c" />
                             <node concept="1nq8_$" id="2YqrT$P4CLS" role="nsMwV">
                               <node concept="a7P8L" id="2YqrT$P4CLR" role="1nq8_t">
                                 <ref role="a7OzE" node="2YqrT$P4CCw" resolve="PremCsq" />
@@ -2935,9 +2935,9 @@
                       <node concept="3Aqt3T" id="2YqrT$P4I0G" role="3I6s78">
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="ns1u0" id="7VBaGntKJdP" role="3AunhB">
-                          <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                          <ref role="ns1xF" node="7VBaGntKJ89" />
                           <node concept="nsMwS" id="7VBaGntKJdQ" role="ns1xD">
-                            <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                            <ref role="nsMwP" node="7VBaGntKJ8b" />
                             <node concept="1nq8_$" id="2YqrT$P4I0M" role="nsMwV">
                               <node concept="a7P8L" id="2YqrT$P4I0N" role="1nq8_t">
                                 <ref role="a7OzE" node="2YqrT$P4CCk" resolve="PremAtcd" />
@@ -2945,12 +2945,12 @@
                             </node>
                           </node>
                           <node concept="nsMwS" id="7VBaGntKJdR" role="ns1xD">
-                            <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                            <ref role="nsMwP" node="7VBaGntKJ8c" />
                             <node concept="1nq8_$" id="2YqrT$P4If5" role="nsMwV">
                               <node concept="ns1u0" id="7VBaGntKJet" role="1nq8_t">
-                                <ref role="ns1xF" node="7VBaGntKJ86" resolve="Not" />
+                                <ref role="ns1xF" node="7VBaGntKJ86" />
                                 <node concept="nsMwS" id="7VBaGntKJeu" role="ns1xD">
-                                  <ref role="nsMwP" node="7VBaGntKJ88" resolve="target" />
+                                  <ref role="nsMwP" node="7VBaGntKJ88" />
                                   <node concept="1nq8_$" id="2YqrT$P4IjJ" role="nsMwV">
                                     <node concept="a7P8L" id="2YqrT$P4IjI" role="1nq8_t">
                                       <ref role="a7OzE" node="2YqrT$P4CCw" resolve="PremCsq" />
@@ -3111,9 +3111,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRd" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJex" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ86" resolve="Not" />
+                            <ref role="ns1xF" node="7VBaGntKJ86" />
                             <node concept="nsMwS" id="7VBaGntKJey" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ88" resolve="target" />
+                              <ref role="nsMwP" node="7VBaGntKJ88" />
                               <node concept="1nq8_$" id="2YqrT$P4IqB" role="nsMwV">
                                 <node concept="a7P8L" id="2YqrT$P4IqC" role="1nq8_t">
                                   <ref role="a7OzE" node="2YqrT$P4Irx" resolve="PremAtcd" />
@@ -3136,9 +3136,9 @@
                       <node concept="3Aqt3T" id="2YqrT$P4Ir3" role="3I6s78">
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="ns1u0" id="7VBaGntKJeY" role="3AunhB">
-                          <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                          <ref role="ns1xF" node="7VBaGntKJ89" />
                           <node concept="nsMwS" id="7VBaGntKJeZ" role="ns1xD">
-                            <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                            <ref role="nsMwP" node="7VBaGntKJ8b" />
                             <node concept="1nq8_$" id="2YqrT$P4Ir9" role="nsMwV">
                               <node concept="a7P8L" id="2YqrT$P4Ira" role="1nq8_t">
                                 <ref role="a7OzE" node="2YqrT$P4Irx" resolve="PremAtcd" />
@@ -3146,12 +3146,12 @@
                             </node>
                           </node>
                           <node concept="nsMwS" id="7VBaGntKJf0" role="ns1xD">
-                            <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                            <ref role="nsMwP" node="7VBaGntKJ8c" />
                             <node concept="1nq8_$" id="2YqrT$P4Irf" role="nsMwV">
                               <node concept="ns1u0" id="7VBaGntKJev" role="1nq8_t">
-                                <ref role="ns1xF" node="7VBaGntKJ86" resolve="Not" />
+                                <ref role="ns1xF" node="7VBaGntKJ86" />
                                 <node concept="nsMwS" id="7VBaGntKJew" role="ns1xD">
-                                  <ref role="nsMwP" node="7VBaGntKJ88" resolve="target" />
+                                  <ref role="nsMwP" node="7VBaGntKJ88" />
                                   <node concept="1nq8_$" id="2YqrT$P4Irl" role="nsMwV">
                                     <node concept="a7P8L" id="2YqrT$P4Irm" role="1nq8_t">
                                       <ref role="a7OzE" node="2YqrT$P4Iry" resolve="PremCsq" />
@@ -3188,9 +3188,9 @@
                       <node concept="3Aqt3T" id="2YqrT$P4IqG" role="3I6s78">
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="ns1u0" id="7VBaGntKJdZ" role="3AunhB">
-                          <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                          <ref role="ns1xF" node="7VBaGntKJ89" />
                           <node concept="nsMwS" id="7VBaGntKJe0" role="ns1xD">
-                            <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                            <ref role="nsMwP" node="7VBaGntKJ8b" />
                             <node concept="1nq8_$" id="2YqrT$P4IqM" role="nsMwV">
                               <node concept="a7P8L" id="2YqrT$P4IqN" role="1nq8_t">
                                 <ref role="a7OzE" node="2YqrT$P4Irx" resolve="PremAtcd" />
@@ -3198,7 +3198,7 @@
                             </node>
                           </node>
                           <node concept="nsMwS" id="7VBaGntKJe1" role="ns1xD">
-                            <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                            <ref role="nsMwP" node="7VBaGntKJ8c" />
                             <node concept="1nq8_$" id="2YqrT$P4IqS" role="nsMwV">
                               <node concept="a7P8L" id="2YqrT$P4IqT" role="1nq8_t">
                                 <ref role="a7OzE" node="2YqrT$P4Iry" resolve="PremCsq" />
@@ -3369,14 +3369,14 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRn" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJdX" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ86" resolve="Not" />
+                            <ref role="ns1xF" node="7VBaGntKJ86" />
                             <node concept="nsMwS" id="7VBaGntKJdY" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ88" resolve="target" />
+                              <ref role="nsMwP" node="7VBaGntKJ88" />
                               <node concept="1nq8_$" id="2YqrT$P5jLb" role="nsMwV">
                                 <node concept="ns1u0" id="7VBaGntKJf5" role="1nq8_t">
-                                  <ref role="ns1xF" node="7VBaGntKJ86" resolve="Not" />
+                                  <ref role="ns1xF" node="7VBaGntKJ86" />
                                   <node concept="nsMwS" id="7VBaGntKJf6" role="ns1xD">
-                                    <ref role="nsMwP" node="7VBaGntKJ88" resolve="target" />
+                                    <ref role="nsMwP" node="7VBaGntKJ88" />
                                     <node concept="1nq8_$" id="2YqrT$P5jNi" role="nsMwV">
                                       <node concept="a7P8L" id="2YqrT$P5rMC" role="1nq8_t">
                                         <ref role="a7OzE" node="2YqrT$P4S09" resolve="Con" />
@@ -3517,9 +3517,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRf" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJdM" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJdN" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="2YqrT$P64tX" role="nsMwV">
                                 <node concept="a7P8L" id="2YqrT$P64tW" role="1nq8_t">
                                   <ref role="a7OzE" node="2YqrT$P64s7" resolve="Atcd" />
@@ -3527,7 +3527,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJdO" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="2YqrT$P64EJ" role="nsMwV">
                                 <node concept="a7P8L" id="2YqrT$P64EI" role="1nq8_t">
                                   <ref role="a7OzE" node="2YqrT$P64tc" resolve="Csqt" />
@@ -3778,9 +3778,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIQW" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJeS" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJeT" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="2AfSc6JxXJm" role="nsMwV">
                                 <node concept="a7P8L" id="2AfSc6JxXJn" role="1nq8_t">
                                   <ref role="a7OzE" node="2AfSc6JxXK4" resolve="Ass" />
@@ -3788,7 +3788,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJeU" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="2AfSc6JxXJs" role="nsMwV">
                                 <node concept="a7P8L" id="2AfSc6JxYMg" role="1nq8_t">
                                   <ref role="a7OzE" node="2AfSc6JxXK4" resolve="Ass" />
@@ -4009,9 +4009,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRc" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJeD" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJeE" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="2AfSc6JuArn" role="nsMwV">
                                 <node concept="a7P8L" id="2AfSc6JuArm" role="1nq8_t">
                                   <ref role="a7OzE" node="2AfSc6JuA9o" resolve="AtcdPrem" />
@@ -4019,7 +4019,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJeF" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="2AfSc6Juz2J" role="nsMwV">
                                 <node concept="a7P8L" id="2AfSc6Juz2I" role="1nq8_t">
                                   <ref role="a7OzE" node="2AfSc6JuwUs" resolve="Con" />
@@ -4209,9 +4209,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRk" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJdS" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJdT" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVrMxP" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVrMxO" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrMcp" resolve="Atcd" />
@@ -4219,7 +4219,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJdU" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVrM$p" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVrM$o" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrMcF" resolve="Csqt" />
@@ -4258,9 +4258,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIR9" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJdJ" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJdK" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVrQu5" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVsmqS" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrMcF" resolve="Csqt" />
@@ -4268,7 +4268,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJdL" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVrQub" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVsmEY" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrMcp" resolve="Atcd" />
@@ -4307,9 +4307,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRi" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJec" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ8d" resolve="Iff" />
+                            <ref role="ns1xF" node="7VBaGntKJ8d" />
                             <node concept="nsMwS" id="7VBaGntKJed" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8f" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8f" />
                               <node concept="1nq8_$" id="3l440nVrMgT" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVrMgS" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrMcp" resolve="Atcd" />
@@ -4317,7 +4317,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJee" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8g" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8g" />
                               <node concept="1nq8_$" id="3l440nVrMnH" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVrMnG" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrMcF" resolve="Csqt" />
@@ -4470,9 +4470,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIQZ" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJeJ" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJeK" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVrS7l" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVrS7m" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrS8j" resolve="Atcd" />
@@ -4480,7 +4480,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJeL" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVrS7r" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVrS7s" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrS8k" resolve="Csqt" />
@@ -4519,9 +4519,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRa" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJe9" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJea" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVrS7I" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVsmO_" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrS8k" resolve="Csqt" />
@@ -4529,7 +4529,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJeb" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVrS7O" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVsmYc" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrS8j" resolve="Atcd" />
@@ -4568,9 +4568,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIR3" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJfj" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ8d" resolve="Iff" />
+                            <ref role="ns1xF" node="7VBaGntKJ8d" />
                             <node concept="nsMwS" id="7VBaGntKJfk" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8f" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8f" />
                               <node concept="1nq8_$" id="3l440nVrS87" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVrT6x" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrS8k" resolve="Csqt" />
@@ -4578,7 +4578,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJfl" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8g" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8g" />
                               <node concept="1nq8_$" id="3l440nVrS8d" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVrTfl" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVrS8j" resolve="Atcd" />
@@ -4676,9 +4676,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRg" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJfb" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJfc" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVqBjm" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVqBjl" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVqBii" resolve="Acdt" />
@@ -4686,7 +4686,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJfd" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVqBA6" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVqBA5" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVqBiE" resolve="Csqt" />
@@ -4710,9 +4710,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRh" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJez" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ8d" resolve="Iff" />
+                            <ref role="ns1xF" node="7VBaGntKJ8d" />
                             <node concept="nsMwS" id="7VBaGntKJe$" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8f" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8f" />
                               <node concept="1nq8_$" id="3l440nVqBK4" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVqBK5" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVqBii" resolve="Acdt" />
@@ -4720,7 +4720,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJe_" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8g" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8g" />
                               <node concept="1nq8_$" id="3l440nVqBKa" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVqBKb" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVqBiE" resolve="Csqt" />
@@ -4856,9 +4856,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIRm" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJeM" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ89" resolve="If" />
+                            <ref role="ns1xF" node="7VBaGntKJ89" />
                             <node concept="nsMwS" id="7VBaGntKJeN" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8b" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8b" />
                               <node concept="1nq8_$" id="3l440nVqJkR" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVqJkS" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVqJlt" resolve="Acdt" />
@@ -4866,7 +4866,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJeO" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8c" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8c" />
                               <node concept="1nq8_$" id="3l440nVqJkX" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVqJkY" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVqJlu" resolve="Csqt" />
@@ -4890,9 +4890,9 @@
                         <ref role="3AqCNq" node="2aBGSFgfwNi" resolve="conclusion" />
                         <node concept="1HFMs5" id="7VBaGntKIR7" role="3AunhB">
                           <node concept="ns1u0" id="7VBaGntKJeA" role="1uarlW">
-                            <ref role="ns1xF" node="7VBaGntKJ8d" resolve="Iff" />
+                            <ref role="ns1xF" node="7VBaGntKJ8d" />
                             <node concept="nsMwS" id="7VBaGntKJeB" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8f" resolve="antecedent" />
+                              <ref role="nsMwP" node="7VBaGntKJ8f" />
                               <node concept="1nq8_$" id="3l440nVqJla" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVqKhl" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVqJlu" resolve="Csqt" />
@@ -4900,7 +4900,7 @@
                               </node>
                             </node>
                             <node concept="nsMwS" id="7VBaGntKJeC" role="ns1xD">
-                              <ref role="nsMwP" node="7VBaGntKJ8g" resolve="consequence" />
+                              <ref role="nsMwP" node="7VBaGntKJ8g" />
                               <node concept="1nq8_$" id="3l440nVqJlg" role="nsMwV">
                                 <node concept="a7P8L" id="3l440nVqKpT" role="1nq8_t">
                                   <ref role="a7OzE" node="3l440nVqJlt" resolve="Acdt" />

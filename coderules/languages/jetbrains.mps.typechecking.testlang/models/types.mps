@@ -107,28 +107,6 @@
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
-      <concept id="861509610434242029" name="jetbrains.mps.logic.structure.DataFormConstructor" flags="ng" index="ns1u0">
-        <reference id="861509610434243078" name="decl" index="ns1xF" />
-        <child id="861509610434243076" name="override" index="ns1xD" />
-      </concept>
-      <concept id="861509610434243104" name="jetbrains.mps.logic.structure.DataFormTable" flags="ng" index="ns1xd">
-        <child id="861509610434243105" name="contents" index="ns1xc" />
-      </concept>
-      <concept id="861509610434243081" name="jetbrains.mps.logic.structure.DataFormDeclaration" flags="ng" index="ns1x$">
-        <child id="861509610434243084" name="template" index="ns1xx" />
-      </concept>
-      <concept id="861509610434276453" name="jetbrains.mps.logic.structure.DataFormFeature" flags="ng" index="nspS8">
-        <property id="861509610434276456" name="final" index="nspS5" />
-      </concept>
-      <concept id="861509610434276450" name="jetbrains.mps.logic.structure.DataFormTemplate" flags="ng" index="nspSf">
-        <child id="861509610434276451" name="feature" index="nspSe" />
-      </concept>
-      <concept id="861509610434294982" name="jetbrains.mps.logic.structure.ValueFeature" flags="ng" index="nssqF" />
-      <concept id="861509610434435669" name="jetbrains.mps.logic.structure.DataFormFeatureOverride" flags="ng" index="nsMwS">
-        <reference id="861509610434435672" name="feature" index="nsMwP" />
-        <child id="861509610434435670" name="getter" index="nsMwV" />
-      </concept>
-      <concept id="2381360340662937504" name="jetbrains.mps.logic.structure.TermType" flags="ig" index="32pEOW" />
       <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
         <child id="4780620083400582654" name="logical" index="1nq8_t" />
       </concept>
@@ -187,6 +165,27 @@
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
+      <concept id="861509610434242029" name="" flags="ng" index="ns1u0">
+        <reference id="861509610434243078" name="" index="ns1xF" />
+        <child id="861509610434243076" name="" index="ns1xD" />
+      </concept>
+      <concept id="861509610434243104" name="" flags="ng" index="ns1xd">
+        <child id="861509610434243105" name="" index="ns1xc" />
+      </concept>
+      <concept id="861509610434243081" name="" flags="ng" index="ns1x$">
+        <child id="861509610434243084" name="" index="ns1xx" />
+      </concept>
+      <concept id="861509610434276453" name="" flags="ng" index="nspS8">
+        <property id="861509610434276456" name="" index="nspS5" />
+      </concept>
+      <concept id="861509610434276450" name="" flags="ng" index="nspSf">
+        <child id="861509610434276451" name="" index="nspSe" />
+      </concept>
+      <concept id="861509610434294982" name="" flags="ng" index="nssqF" />
+      <concept id="861509610434435669" name="" flags="ng" index="nsMwS">
+        <reference id="861509610434435672" name="" index="nsMwP" />
+        <child id="861509610434435670" name="" index="nsMwV" />
+      </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
@@ -202,6 +201,7 @@
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
+      <concept id="2381360340662937504" name="" flags="ng" index="32pEOW" />
       <concept id="6097203247139556923" name="jetbrains.mps.lang.coderules.structure.CallMacroTemplate" flags="ng" index="3hwh0R">
         <child id="6097203247147235901" name="logical" index="3h32gL" />
         <child id="6097203247141261094" name="code" index="3hEL4E" />
@@ -360,9 +360,9 @@
                         <ref role="a7OzE" node="7lt0LtPOZW8" resolve="T" />
                       </node>
                       <node concept="ns1u0" id="7mB3viLbLNi" role="1uarlW">
-                        <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+                        <ref role="ns1xF" node="JOGAOsVt6y" />
                         <node concept="nsMwS" id="7mB3viLdI7t" role="ns1xD">
-                          <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                          <ref role="nsMwP" node="7mB3viLdDa5" />
                           <node concept="1nq8_$" id="7mB3viLdI7A" role="nsMwV">
                             <node concept="a7P8L" id="7mB3viLdI7$" role="1nq8_t">
                               <ref role="a7OzE" node="7mB3viLdI2x" resolve="Name" />
@@ -370,7 +370,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="7mB3viLbLNk" role="ns1xD">
-                          <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
+                          <ref role="nsMwP" node="JOGAOsVt6$" />
                           <node concept="1nq8_$" id="7mB3viLbLOy" role="nsMwV">
                             <node concept="a7P8L" id="7mB3viLbLOw" role="1nq8_t">
                               <ref role="a7OzE" node="7lt0LtPP29U" resolve="Val" />
@@ -484,15 +484,15 @@
                         <ref role="a7OzE" node="7mB3viLi4pQ" resolve="A" />
                       </node>
                       <node concept="ns1u0" id="7mB3viLi4rf" role="1uarlW">
-                        <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+                        <ref role="ns1xF" node="JOGAOsVt6y" />
                         <node concept="nsMwS" id="7mB3viLi4rl" role="ns1xD">
-                          <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                          <ref role="nsMwP" node="7mB3viLdDa5" />
                           <node concept="Xl_RD" id="7mB3viLi4rr" role="nsMwV">
                             <property role="Xl_RC" value="Integer" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="7mB3viLi4rh" role="ns1xD">
-                          <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
+                          <ref role="nsMwP" node="JOGAOsVt6$" />
                           <node concept="1nq8_$" id="7mB3viLi4v0" role="nsMwV">
                             <node concept="a7P8L" id="7mB3viLi4uY" role="1nq8_t">
                               <ref role="a7OzE" node="7mB3viLi4pZ" resolve="AVal" />
@@ -506,15 +506,15 @@
                         <ref role="a7OzE" node="7mB3viLi4qh" resolve="B" />
                       </node>
                       <node concept="ns1u0" id="7mB3viLi4vZ" role="1uarlW">
-                        <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+                        <ref role="ns1xF" node="JOGAOsVt6y" />
                         <node concept="nsMwS" id="7mB3viLi4w0" role="ns1xD">
-                          <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                          <ref role="nsMwP" node="7mB3viLdDa5" />
                           <node concept="Xl_RD" id="7mB3viLi4w1" role="nsMwV">
                             <property role="Xl_RC" value="Integer" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="7mB3viLi4w2" role="ns1xD">
-                          <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
+                          <ref role="nsMwP" node="JOGAOsVt6$" />
                           <node concept="1nq8_$" id="7mB3viLi4w3" role="nsMwV">
                             <node concept="a7P8L" id="7mB3viLi4wZ" role="1nq8_t">
                               <ref role="a7OzE" node="7mB3viLi4qx" resolve="BVal" />
@@ -589,15 +589,15 @@
                         <ref role="a7OzE" node="5TXeSYT5cnn" resolve="A" />
                       </node>
                       <node concept="ns1u0" id="2DIFeUB7n6m" role="1uarlW">
-                        <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+                        <ref role="ns1xF" node="JOGAOsVt6y" />
                         <node concept="nsMwS" id="2DIFeUB7n6n" role="ns1xD">
-                          <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                          <ref role="nsMwP" node="7mB3viLdDa5" />
                           <node concept="Xl_RD" id="2DIFeUB7n6o" role="nsMwV">
                             <property role="Xl_RC" value="String" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="2DIFeUB7n6p" role="ns1xD">
-                          <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
+                          <ref role="nsMwP" node="JOGAOsVt6$" />
                           <node concept="1nq8_$" id="2DIFeUB7n6q" role="nsMwV">
                             <node concept="a7P8L" id="2DIFeUB7sez" role="1nq8_t">
                               <ref role="a7OzE" node="5TXeSYT5cnq" resolve="AVal" />
@@ -611,15 +611,15 @@
                         <ref role="a7OzE" node="5TXeSYT5cno" resolve="B" />
                       </node>
                       <node concept="ns1u0" id="2DIFeUB7n6u" role="1uarlW">
-                        <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+                        <ref role="ns1xF" node="JOGAOsVt6y" />
                         <node concept="nsMwS" id="2DIFeUB7n6v" role="ns1xD">
-                          <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                          <ref role="nsMwP" node="7mB3viLdDa5" />
                           <node concept="Xl_RD" id="2DIFeUB7n6w" role="nsMwV">
                             <property role="Xl_RC" value="String" />
                           </node>
                         </node>
                         <node concept="nsMwS" id="2DIFeUB7n6x" role="ns1xD">
-                          <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
+                          <ref role="nsMwP" node="JOGAOsVt6$" />
                           <node concept="1nq8_$" id="2DIFeUB7n6y" role="nsMwV">
                             <node concept="a7P8L" id="2DIFeUB7seD" role="1nq8_t">
                               <ref role="a7OzE" node="5TXeSYT5cnr" resolve="BVal" />
@@ -1038,15 +1038,15 @@
               </node>
             </node>
             <node concept="ns1u0" id="7mB3viLcOh9" role="3A8w4Q">
-              <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+              <ref role="ns1xF" node="JOGAOsVt6y" />
               <node concept="nsMwS" id="7mB3viLdDgZ" role="ns1xD">
-                <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                <ref role="nsMwP" node="7mB3viLdDa5" />
                 <node concept="Xl_RD" id="7mB3viLdDh5" role="nsMwV">
                   <property role="Xl_RC" value="Integer" />
                 </node>
               </node>
               <node concept="nsMwS" id="7mB3viLcOhb" role="ns1xD">
-                <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
+                <ref role="nsMwP" node="JOGAOsVt6$" />
                 <node concept="37vLTw" id="1ALxU7reSPU" role="nsMwV">
                   <ref role="3cqZAo" node="1ALxU7reSPQ" resolve="val" />
                 </node>
@@ -1132,15 +1132,15 @@
               </node>
             </node>
             <node concept="ns1u0" id="7mB3viLdDcc" role="3A8w4Q">
-              <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+              <ref role="ns1xF" node="JOGAOsVt6y" />
               <node concept="nsMwS" id="7mB3viLdDce" role="ns1xD">
-                <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                <ref role="nsMwP" node="7mB3viLdDa5" />
                 <node concept="Xl_RD" id="7mB3viLdDcD" role="nsMwV">
                   <property role="Xl_RC" value="String" />
                 </node>
               </node>
               <node concept="nsMwS" id="7mB3viLdDci" role="ns1xD">
-                <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
+                <ref role="nsMwP" node="JOGAOsVt6$" />
                 <node concept="37vLTw" id="1ALxU7rfknU" role="nsMwV">
                   <ref role="3cqZAo" node="1ALxU7rfknQ" resolve="val" />
                 </node>
@@ -1200,9 +1200,9 @@
               <ref role="a7OzE" node="1ALxU7rh13o" resolve="Type" />
             </node>
             <node concept="ns1u0" id="1ALxU7rhb4_" role="3A8w4Q">
-              <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+              <ref role="ns1xF" node="JOGAOsVt6y" />
               <node concept="nsMwS" id="1ALxU7rhbwt" role="ns1xD">
-                <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                <ref role="nsMwP" node="7mB3viLdDa5" />
                 <node concept="Xl_RD" id="1ALxU7rhcod" role="nsMwV">
                   <property role="Xl_RC" value="Pair" />
                 </node>
@@ -1265,9 +1265,9 @@
               </node>
             </node>
             <node concept="ns1u0" id="7mB3viLggs9" role="3A8w4Q">
-              <ref role="ns1xF" node="JOGAOsVt6y" resolve="Type" />
+              <ref role="ns1xF" node="JOGAOsVt6y" />
               <node concept="nsMwS" id="7mB3viLggsn" role="ns1xD">
-                <ref role="nsMwP" node="7mB3viLdDa5" resolve="name" />
+                <ref role="nsMwP" node="7mB3viLdDa5" />
                 <node concept="2OqwBi" id="1ALxU7rgm5L" role="nsMwV">
                   <node concept="3hN9Ij" id="1ALxU7rglY_" role="2Oq$k0">
                     <ref role="3hLkJx" node="1ALxU7rgfrQ" resolve="type" />
@@ -1278,7 +1278,7 @@
                 </node>
               </node>
               <node concept="nsMwS" id="7mB3viLggsC" role="ns1xD">
-                <ref role="nsMwP" node="JOGAOsVt6$" resolve="val" />
+                <ref role="nsMwP" node="JOGAOsVt6$" />
                 <node concept="2OqwBi" id="1ALxU7rgnGQ" role="nsMwV">
                   <node concept="3hN9Ij" id="1ALxU7rgn_E" role="2Oq$k0">
                     <ref role="3hLkJx" node="1ALxU7rgfrQ" resolve="type" />
