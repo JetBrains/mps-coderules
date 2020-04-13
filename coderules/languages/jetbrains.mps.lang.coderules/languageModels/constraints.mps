@@ -2220,7 +2220,7 @@
   </node>
   <node concept="1M2fIO" id="JOGAOsxTE1">
     <property role="3GE5qa" value="term.feature" />
-    <ref role="1M2myG" to="wq2x:JOGAOsxTDl" resolve="DataFormFeatureOverride" />
+    <ref role="1M2myG" to="wq2x:JOGAOsxTDl" resolve="TermFeatureOverride" />
     <node concept="1N5Pfh" id="1L74NXFMz8i" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:JOGAOsxTDo" resolve="feature" />
       <node concept="3dgokm" id="6fXjIfxgfU1" role="1N6uqs">
@@ -2229,7 +2229,7 @@
             <node concept="3cpWsn" id="6fXjIfxgfU4" role="3cpWs9">
               <property role="TrG5h" value="dfd" />
               <node concept="3Tqbb2" id="6fXjIfxgfU5" role="1tU5fm">
-                <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="DataFormDeclaration" />
+                <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
               </node>
               <node concept="2OqwBi" id="6fXjIfxgfU6" role="33vP2m">
                 <node concept="2OqwBi" id="6fXjIfxgfU7" role="2Oq$k0">
@@ -2237,7 +2237,7 @@
                   <node concept="2Xjw5R" id="6fXjIfxgfU9" role="2OqNvi">
                     <node concept="1xMEDy" id="6fXjIfxgfUa" role="1xVPHs">
                       <node concept="chp4Y" id="JOGAOsxUUx" role="ri$Ld">
-                        <ref role="cht4Q" to="wq2x:JOGAOsxanH" resolve="DataFormConstructor" />
+                        <ref role="cht4Q" to="wq2x:JOGAOsxanH" resolve="TermConstructor" />
                       </node>
                     </node>
                     <node concept="1xIGOp" id="6fXjIfxgfUc" role="1xVPHs" />
@@ -2308,7 +2308,7 @@
   </node>
   <node concept="1M2fIO" id="4vr5SAprtjH">
     <property role="3GE5qa" value="term" />
-    <ref role="1M2myG" to="wq2x:JOGAOsxaC9" resolve="DataFormDeclaration" />
+    <ref role="1M2myG" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
     <node concept="1N5Pfh" id="4vr5SAprtjI" role="1Mr941">
       <ref role="1N5Vy1" to="wq2x:JOGAOsxaCh" resolve="prototype" />
       <node concept="3dgokm" id="4vr5SAprtjM" role="1N6uqs">
@@ -2326,7 +2326,7 @@
                       <node concept="1PxgMI" id="4vr5SAprBxC" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="4vr5SAprBxD" role="3oSUPX">
-                          <ref role="cht4Q" to="wq2x:JOGAOsxaCw" resolve="DataFormTable" />
+                          <ref role="cht4Q" to="wq2x:JOGAOsxaCw" resolve="TermTable" />
                         </node>
                         <node concept="2OqwBi" id="4vr5SAprBxE" role="1m5AlR">
                           <node concept="2rP1CM" id="4vr5SAprBxF" role="2Oq$k0" />

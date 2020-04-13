@@ -1961,13 +1961,13 @@
   </node>
   <node concept="13h7C7" id="JOGAOsxFgi">
     <property role="3GE5qa" value="term" />
-    <ref role="13h7C2" to="wq2x:JOGAOsxaC9" resolve="DataFormDeclaration" />
+    <ref role="13h7C2" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
     <node concept="13i0hz" id="4lCLOtww4qi" role="13h7CS">
       <property role="TrG5h" value="prototypesStack" />
       <node concept="3Tm1VV" id="4lCLOtww4qj" role="1B3o_S" />
       <node concept="2BANLN" id="4lCLOtww4G2" role="3clF45">
         <node concept="3Tqbb2" id="4lCLOtww4H2" role="_ZDj9">
-          <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="DataFormDeclaration" />
+          <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
         </node>
       </node>
       <node concept="3clFbS" id="4lCLOtww4ql" role="3clF47">
@@ -1976,13 +1976,13 @@
             <property role="TrG5h" value="stack" />
             <node concept="2BANLN" id="4lCLOtww5ji" role="1tU5fm">
               <node concept="3Tqbb2" id="4lCLOtww5jl" role="_ZDj9">
-                <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="DataFormDeclaration" />
+                <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
               </node>
             </node>
             <node concept="2ShNRf" id="4lCLOtww5jw" role="33vP2m">
               <node concept="2Jqq0_" id="4lCLOtww5jx" role="2ShVmc">
                 <node concept="3Tqbb2" id="4lCLOtww5jy" role="HW$YZ">
-                  <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="DataFormDeclaration" />
+                  <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
                 </node>
               </node>
             </node>
@@ -1992,7 +1992,7 @@
           <node concept="3cpWsn" id="4lCLOtww5EX" role="3cpWs9">
             <property role="TrG5h" value="prototype" />
             <node concept="3Tqbb2" id="4lCLOtww5CJ" role="1tU5fm">
-              <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="DataFormDeclaration" />
+              <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
             </node>
             <node concept="2OqwBi" id="4lCLOtww5EY" role="33vP2m">
               <node concept="13iPFW" id="4lCLOtww5EZ" role="2Oq$k0" />
@@ -2066,7 +2066,7 @@
       <node concept="3Tm1VV" id="7c96q9tALRs" role="1B3o_S" />
       <node concept="A3Dl8" id="7c96q9tAM63" role="3clF45">
         <node concept="3Tqbb2" id="7c96q9tAM6o" role="A3Ik2">
-          <ref role="ehGHo" to="wq2x:JOGAOsxiL_" resolve="DataFormFeature" />
+          <ref role="ehGHo" to="wq2x:JOGAOsxiL_" resolve="TermFeature" />
         </node>
       </node>
       <node concept="3clFbS" id="7c96q9tALRu" role="3clF47">
@@ -2090,7 +2090,7 @@
       <node concept="3Tm1VV" id="7c96q9tCSXA" role="1B3o_S" />
       <node concept="A3Dl8" id="7c96q9tCSXB" role="3clF45">
         <node concept="3Tqbb2" id="7c96q9tCSXC" role="A3Ik2">
-          <ref role="ehGHo" to="wq2x:JOGAOsxiL_" resolve="DataFormFeature" />
+          <ref role="ehGHo" to="wq2x:JOGAOsxiL_" resolve="TermFeature" />
         </node>
       </node>
       <node concept="3clFbS" id="7c96q9tCSXD" role="3clF47">
@@ -2146,7 +2146,7 @@
                   <node concept="2Xjw5R" id="4MEOIDG8np9" role="2OqNvi">
                     <node concept="1xMEDy" id="4MEOIDG8npb" role="1xVPHs">
                       <node concept="chp4Y" id="JOGAOsX26P" role="ri$Ld">
-                        <ref role="cht4Q" to="wq2x:JOGAOsxaCw" resolve="DataFormTable" />
+                        <ref role="cht4Q" to="wq2x:JOGAOsxaCw" resolve="TermTable" />
                       </node>
                     </node>
                   </node>
@@ -2169,7 +2169,7 @@
   </node>
   <node concept="13h7C7" id="JOGAOsxidP">
     <property role="3GE5qa" value="term" />
-    <ref role="13h7C2" to="wq2x:JOGAOsxaCw" resolve="DataFormTable" />
+    <ref role="13h7C2" to="wq2x:JOGAOsxaCw" resolve="TermTable" />
     <node concept="13i0hz" id="5hSMZ_lRESV" role="13h7CS">
       <property role="TrG5h" value="runtimeClassName" />
       <node concept="3Tm1VV" id="5hSMZ_lRESW" role="1B3o_S" />
@@ -2225,13 +2225,13 @@
   </node>
   <node concept="13h7C7" id="JOGAOsxlgX">
     <property role="3GE5qa" value="term" />
-    <ref role="13h7C2" to="wq2x:JOGAOsxiLy" resolve="DataFormTemplate" />
+    <ref role="13h7C2" to="wq2x:JOGAOsxiLy" resolve="TermTemplate" />
     <node concept="13i0hz" id="5UYwY$H7MGm" role="13h7CS">
       <property role="TrG5h" value="valueFeatures" />
       <node concept="3Tm1VV" id="5UYwY$H7MGn" role="1B3o_S" />
       <node concept="A3Dl8" id="5UYwY$H7MID" role="3clF45">
         <node concept="3Tqbb2" id="5UYwY$H7MIQ" role="A3Ik2">
-          <ref role="ehGHo" to="wq2x:JOGAOsxiL_" resolve="DataFormFeature" />
+          <ref role="ehGHo" to="wq2x:JOGAOsxiL_" resolve="TermFeature" />
         </node>
       </node>
       <node concept="3clFbS" id="5UYwY$H7MGp" role="3clF47">
@@ -2274,7 +2274,7 @@
       <node concept="3Tm1VV" id="5UYwY$H7TrM" role="1B3o_S" />
       <node concept="A3Dl8" id="5UYwY$H7TDk" role="3clF45">
         <node concept="3Tqbb2" id="5UYwY$H7TDx" role="A3Ik2">
-          <ref role="ehGHo" to="wq2x:JOGAOsxiL_" resolve="DataFormFeature" />
+          <ref role="ehGHo" to="wq2x:JOGAOsxiL_" resolve="TermFeature" />
         </node>
       </node>
       <node concept="3clFbS" id="5UYwY$H7TrO" role="3clF47">
