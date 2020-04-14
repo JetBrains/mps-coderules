@@ -450,7 +450,7 @@
         <node concept="2sp9CU" id="4ekZiHdezmg" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="5b5WPl4PA5$" role="3clF46">
-        <property role="TrG5h" value="ruleTag" />
+        <property role="TrG5h" value="feedbackKey" />
         <node concept="3uibUv" id="5b5WPl4PBA3" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>

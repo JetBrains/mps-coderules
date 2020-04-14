@@ -1939,20 +1939,19 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="3o9wrC3tl4y" role="3cqZAp">
-                    <node concept="3cpWsn" id="3o9wrC3tl4w" role="3cpWs9">
+                  <node concept="3cpWs8" id="6RN9TdHnHUM" role="3cqZAp">
+                    <node concept="3cpWsn" id="6RN9TdHnHUK" role="3cpWs9">
                       <property role="3TUv4t" value="true" />
-                      <property role="TrG5h" value="supervisor" />
-                      <node concept="3uibUv" id="3o9wrC3tmgD" role="1tU5fm">
-                        <ref role="3uigEE" to="w7la:~Supervisor" resolve="Supervisor" />
+                      <property role="TrG5h" value="feedbackSink" />
+                      <node concept="3uibUv" id="6RN9TdHnX9n" role="1tU5fm">
+                        <ref role="3uigEE" to="hano:6RN9TdHmQLy" resolve="FeedbackConsumer" />
                       </node>
-                      <node concept="2ShNRf" id="3o9wrC3trPm" role="33vP2m">
-                        <node concept="YeOm9" id="1laj_RSAOIc" role="2ShVmc">
-                          <node concept="1Y3b0j" id="1laj_RSAOIf" role="YeSDq">
+                      <node concept="2ShNRf" id="6RN9TdHnLvm" role="33vP2m">
+                        <node concept="YeOm9" id="6RN9TdHnY6O" role="2ShVmc">
+                          <node concept="1Y3b0j" id="6RN9TdHnY6R" role="YeSDq">
                             <property role="2bfB8j" value="true" />
-                            <ref role="1Y3XeK" to="hano:3o9wrC3sa$h" resolve="FeedbackReportingSupervisor" />
-                            <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="FeedbackReportingSupervisor" />
-                            <node concept="3Tm1VV" id="1laj_RSAOIg" role="1B3o_S" />
+                            <ref role="1Y3XeK" to="hano:6RN9TdHmQY0" resolve="OriginScopeFeedbackConsumer" />
+                            <ref role="37wK5l" to="hano:6RN9TdHmUdh" resolve="OriginScopeFeedbackConsumer" />
                             <node concept="2OqwBi" id="3o9wrC3tvAX" role="37wK5m">
                               <node concept="37vLTw" id="3o9wrC3tu_g" role="2Oq$k0">
                                 <ref role="3cqZAo" node="7WKNeR9AoxI" resolve="programProducer" />
@@ -1961,31 +1960,38 @@
                                 <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
                               </node>
                             </node>
-                            <node concept="3clFb_" id="1laj_RSAQPC" role="jymVt">
-                              <property role="TrG5h" value="consumeFeedback" />
-                              <node concept="37vLTG" id="4ekZiHddVJ8" role="3clF46">
+                            <node concept="3Tm1VV" id="6RN9TdHnY6S" role="1B3o_S" />
+                            <node concept="3clFb_" id="6RN9TdHnZwV" role="jymVt">
+                              <property role="TrG5h" value="consumeFeedbackImpl" />
+                              <node concept="37vLTG" id="6RN9TdHnZwW" role="3clF46">
                                 <property role="TrG5h" value="template" />
-                                <node concept="2sp9CU" id="4ekZiHddXvL" role="1tU5fm" />
+                                <node concept="2sp9CU" id="6RN9TdHnZwX" role="1tU5fm" />
                               </node>
-                              <node concept="37vLTG" id="5b5WPl4OWvc" role="3clF46">
-                                <property role="TrG5h" value="ruleTag" />
-                                <node concept="3uibUv" id="5b5WPl4P7i$" role="1tU5fm">
-                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                              <node concept="37vLTG" id="6RN9TdHnZwY" role="3clF46">
+                                <property role="TrG5h" value="rule" />
+                                <node concept="3uibUv" id="5rVYEA6mgY6" role="1tU5fm">
+                                  <ref role="3uigEE" to="av0y:~Rule" resolve="Rule" />
                                 </node>
                               </node>
-                              <node concept="37vLTG" id="1laj_RSAQPD" role="3clF46">
+                              <node concept="37vLTG" id="6RN9TdHnZx0" role="3clF46">
                                 <property role="TrG5h" value="target" />
-                                <node concept="2sp9CU" id="1laj_RSAQPE" role="1tU5fm" />
+                                <node concept="2sp9CU" id="6RN9TdHnZx1" role="1tU5fm" />
                               </node>
-                              <node concept="37vLTG" id="1laj_RSAQPF" role="3clF46">
+                              <node concept="37vLTG" id="6RN9TdHnZx2" role="3clF46">
                                 <property role="TrG5h" value="feedback" />
-                                <node concept="3uibUv" id="1laj_RSAQPG" role="1tU5fm">
+                                <node concept="3uibUv" id="6RN9TdHnZx3" role="1tU5fm">
                                   <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
                                 </node>
                               </node>
-                              <node concept="3cqZAl" id="1laj_RSAQPH" role="3clF45" />
-                              <node concept="3Tmbuc" id="1laj_RSAQPI" role="1B3o_S" />
-                              <node concept="3clFbS" id="1laj_RSAQPL" role="3clF47">
+                              <node concept="37vLTG" id="5rVYEA6mid8" role="3clF46">
+                                <property role="TrG5h" value="feedbackKey" />
+                                <node concept="3uibUv" id="5rVYEA6mjYK" role="1tU5fm">
+                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                                </node>
+                              </node>
+                              <node concept="3cqZAl" id="6RN9TdHnZx4" role="3clF45" />
+                              <node concept="3Tmbuc" id="6RN9TdHnZx5" role="1B3o_S" />
+                              <node concept="3clFbS" id="6RN9TdHnZx8" role="3clF47">
                                 <node concept="3clFbF" id="1laj_RSBzxu" role="3cqZAp">
                                   <node concept="1rXfSq" id="1laj_RSBzxt" role="3clFbG">
                                     <ref role="37wK5l" node="1laj_RSAZoB" resolve="addReportItem" />
@@ -1994,7 +2000,7 @@
                                       <ref role="1Pybhc" to="hano:3o9wrC3s0ii" resolve="DefaultSupervisor" />
                                       <node concept="2OqwBi" id="1laj_RSBA2L" role="37wK5m">
                                         <node concept="37vLTw" id="1laj_RSB_E8" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="1laj_RSAQPF" resolve="feedback" />
+                                          <ref role="3cqZAo" node="6RN9TdHnZx2" resolve="feedback" />
                                         </node>
                                         <node concept="liA8E" id="1laj_RSBAe3" role="2OqNvi">
                                           <ref role="37wK5l" to="w7la:~EvaluationFeedback.getSeverity()" resolve="getSeverity" />
@@ -2002,17 +2008,17 @@
                                       </node>
                                     </node>
                                     <node concept="37vLTw" id="4ekZiHdeGCU" role="37wK5m">
-                                      <ref role="3cqZAo" node="4ekZiHddVJ8" resolve="template" />
+                                      <ref role="3cqZAo" node="6RN9TdHnZwW" resolve="template" />
                                     </node>
-                                    <node concept="37vLTw" id="5b5WPl4PQaX" role="37wK5m">
-                                      <ref role="3cqZAo" node="5b5WPl4OWvc" resolve="ruleTag" />
+                                    <node concept="37vLTw" id="5rVYEA6mlr9" role="37wK5m">
+                                      <ref role="3cqZAo" node="5rVYEA6mid8" resolve="feedbackKey" />
                                     </node>
                                     <node concept="37vLTw" id="1laj_RSBGdc" role="37wK5m">
-                                      <ref role="3cqZAo" node="1laj_RSAQPD" resolve="target" />
+                                      <ref role="3cqZAo" node="6RN9TdHnZx0" resolve="target" />
                                     </node>
                                     <node concept="2OqwBi" id="1laj_RSBGVk" role="37wK5m">
                                       <node concept="37vLTw" id="1laj_RSBGyd" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="1laj_RSAQPF" resolve="feedback" />
+                                        <ref role="3cqZAo" node="6RN9TdHnZx2" resolve="feedback" />
                                       </node>
                                       <node concept="liA8E" id="1laj_RSBH6I" role="2OqNvi">
                                         <ref role="37wK5l" to="w7la:~EvaluationFeedback.getMessage()" resolve="getMessage" />
@@ -2021,10 +2027,27 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="2AHcQZ" id="1laj_RSAQPM" role="2AJF6D">
+                              <node concept="2AHcQZ" id="6RN9TdHnZx9" role="2AJF6D">
                                 <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                               </node>
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="3o9wrC3tl4y" role="3cqZAp">
+                    <node concept="3cpWsn" id="3o9wrC3tl4w" role="3cpWs9">
+                      <property role="3TUv4t" value="true" />
+                      <property role="TrG5h" value="supervisor" />
+                      <node concept="3uibUv" id="3o9wrC3tmgD" role="1tU5fm">
+                        <ref role="3uigEE" to="w7la:~Supervisor" resolve="Supervisor" />
+                      </node>
+                      <node concept="2ShNRf" id="3o9wrC3trPm" role="33vP2m">
+                        <node concept="1pGfFk" id="6RN9TdHo4b$" role="2ShVmc">
+                          <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="FeedbackReportingSupervisor" />
+                          <node concept="37vLTw" id="6RN9TdHo8NX" role="37wK5m">
+                            <ref role="3cqZAo" node="6RN9TdHnHUK" resolve="feedbackSink" />
                           </node>
                         </node>
                       </node>
@@ -2667,7 +2690,7 @@
         <node concept="2sp9CU" id="4ekZiHdevUV" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="5b5WPl4Pvqv" role="3clF46">
-        <property role="TrG5h" value="ruleTag" />
+        <property role="TrG5h" value="feedbackKey" />
         <node concept="3uibUv" id="5b5WPl4PxZU" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
         </node>

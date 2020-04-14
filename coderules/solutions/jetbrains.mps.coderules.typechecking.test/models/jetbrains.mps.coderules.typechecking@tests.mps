@@ -1303,47 +1303,18 @@
                     <ref role="3uigEE" to="hano:3o9wrC3sa$h" resolve="FeedbackReportingSupervisor" />
                   </node>
                   <node concept="2ShNRf" id="3o9wrC3tZfr" role="33vP2m">
-                    <node concept="YeOm9" id="1laj_RSBYFj" role="2ShVmc">
-                      <node concept="1Y3b0j" id="1laj_RSBYFm" role="YeSDq">
-                        <property role="2bfB8j" value="true" />
-                        <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="FeedbackReportingSupervisor" />
-                        <ref role="1Y3XeK" to="hano:3o9wrC3sa$h" resolve="FeedbackReportingSupervisor" />
-                        <node concept="3Tm1VV" id="1laj_RSBYFn" role="1B3o_S" />
-                        <node concept="2OqwBi" id="3o9wrC3u3mt" role="37wK5m">
-                          <node concept="37vLTw" id="3o9wrC3u307" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
-                          </node>
-                          <node concept="liA8E" id="3o9wrC3u59R" role="2OqNvi">
-                            <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
-                          </node>
-                        </node>
-                        <node concept="3clFb_" id="1laj_RSC01i" role="jymVt">
-                          <property role="TrG5h" value="consumeFeedback" />
-                          <node concept="37vLTG" id="4ekZiHddYgg" role="3clF46">
-                            <property role="TrG5h" value="template" />
-                            <node concept="2sp9CU" id="4ekZiHde0r1" role="1tU5fm" />
-                          </node>
-                          <node concept="37vLTG" id="28zxH2wbMd6" role="3clF46">
-                            <property role="TrG5h" value="ruleTag" />
-                            <node concept="3uibUv" id="28zxH2wbMQH" role="1tU5fm">
-                              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                    <node concept="1pGfFk" id="6RN9TdHofDR" role="2ShVmc">
+                      <ref role="37wK5l" to="hano:3o9wrC3sC_c" resolve="FeedbackReportingSupervisor" />
+                      <node concept="2ShNRf" id="6RN9TdHoj5N" role="37wK5m">
+                        <node concept="1pGfFk" id="6RN9TdHojUR" role="2ShVmc">
+                          <ref role="37wK5l" to="hano:6RN9TdHmUdh" resolve="OriginScopeFeedbackConsumer" />
+                          <node concept="2OqwBi" id="3o9wrC3u3mt" role="37wK5m">
+                            <node concept="37vLTw" id="3o9wrC3u307" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6$7vuu2ugt3" resolve="tplApp" />
                             </node>
-                          </node>
-                          <node concept="37vLTG" id="1laj_RSC01j" role="3clF46">
-                            <property role="TrG5h" value="target" />
-                            <node concept="2sp9CU" id="1laj_RSC01k" role="1tU5fm" />
-                          </node>
-                          <node concept="37vLTG" id="1laj_RSC01l" role="3clF46">
-                            <property role="TrG5h" value="feedback" />
-                            <node concept="3uibUv" id="1laj_RSC01m" role="1tU5fm">
-                              <ref role="3uigEE" to="w7la:~EvaluationFeedback" resolve="EvaluationFeedback" />
+                            <node concept="liA8E" id="3o9wrC3u59R" role="2OqNvi">
+                              <ref role="37wK5l" to="hano:3GlpCDSyO$P" resolve="getProgram" />
                             </node>
-                          </node>
-                          <node concept="3cqZAl" id="1laj_RSC01n" role="3clF45" />
-                          <node concept="3Tmbuc" id="1laj_RSC01o" role="1B3o_S" />
-                          <node concept="3clFbS" id="1laj_RSC01r" role="3clF47" />
-                          <node concept="2AHcQZ" id="1laj_RSC01s" role="2AJF6D">
-                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                           </node>
                         </node>
                       </node>
