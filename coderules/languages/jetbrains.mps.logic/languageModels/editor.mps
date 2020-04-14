@@ -3284,17 +3284,17 @@
   </node>
   <node concept="24kQdi" id="PltxfHNefA">
     <property role="3GE5qa" value="dataform" />
-    <ref role="1XX52x" to="5j4j:PltxfHNb9C" resolve="LogicalDataForm" />
+    <ref role="1XX52x" to="5j4j:PltxfHNb9C" resolve="LogicalVariableDataForm" />
     <node concept="3EZMnI" id="PltxfHNeGf" role="2wV5jI">
       <node concept="3F1sOY" id="PltxfHNeK9" role="3EZMnx">
-        <ref role="1NtTu8" to="5j4j:PltxfHNdqi" resolve="logical" />
+        <ref role="1NtTu8" to="5j4j:PltxfHNdqi" resolve="variable" />
       </node>
       <node concept="l2Vlx" id="PltxfHNeGi" role="2iSdaV" />
     </node>
   </node>
   <node concept="3p36aQ" id="PltxfIrOTO">
     <property role="3GE5qa" value="dataform" />
-    <ref role="aqKnT" to="5j4j:PltxfHNb9C" resolve="LogicalDataForm" />
+    <ref role="aqKnT" to="5j4j:PltxfHNb9C" resolve="LogicalVariableDataForm" />
     <node concept="3N5dw7" id="PltxfIrYl_" role="3ft7WO">
       <node concept="3N5aqt" id="PltxfIrYlA" role="3Na0zg">
         <node concept="3clFbS" id="PltxfIrYlB" role="2VODD2">
@@ -3302,12 +3302,12 @@
             <node concept="3cpWsn" id="PltxfIrYUP" role="3cpWs9">
               <property role="TrG5h" value="ldf" />
               <node concept="3Tqbb2" id="PltxfIrYUL" role="1tU5fm">
-                <ref role="ehGHo" to="5j4j:PltxfHNb9C" resolve="LogicalDataForm" />
+                <ref role="ehGHo" to="5j4j:PltxfHNb9C" resolve="LogicalVariableDataForm" />
               </node>
               <node concept="2ShNRf" id="PltxfIrZhg" role="33vP2m">
                 <node concept="3zrR0B" id="PltxfIrZLl" role="2ShVmc">
                   <node concept="3Tqbb2" id="PltxfIrZLn" role="3zrR0E">
-                    <ref role="ehGHo" to="5j4j:PltxfHNb9C" resolve="LogicalDataForm" />
+                    <ref role="ehGHo" to="5j4j:PltxfHNb9C" resolve="LogicalVariableDataForm" />
                   </node>
                 </node>
               </node>
@@ -3320,7 +3320,7 @@
                   <ref role="3cqZAo" node="PltxfIrYUP" resolve="ldf" />
                 </node>
                 <node concept="3TrEf2" id="PltxfIs0$h" role="2OqNvi">
-                  <ref role="3Tt5mk" to="5j4j:PltxfHNdqi" resolve="logical" />
+                  <ref role="3Tt5mk" to="5j4j:PltxfHNdqi" resolve="variable" />
                 </node>
               </node>
               <node concept="2oxUTD" id="PltxfIs16o" role="2OqNvi">
