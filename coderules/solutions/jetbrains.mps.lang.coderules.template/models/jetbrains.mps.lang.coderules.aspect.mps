@@ -1498,7 +1498,7 @@
             </node>
             <node concept="3JPx81" id="66WUpTIv1aa" role="2OqNvi">
               <node concept="37vLTw" id="66WUpTIv1Jm" role="25WWJ7">
-                <ref role="3cqZAo" node="1PixfKRpaZJ" resolve="namespace" />
+                <ref role="3cqZAo" node="1PixfKRpaZJ" resolve="langNamespace" />
               </node>
             </node>
           </node>
@@ -1507,8 +1507,20 @@
       <node concept="3Tm1VV" id="1PixfKRoZeG" role="1B3o_S" />
       <node concept="10P_77" id="1PixfKRp4Bx" role="3clF45" />
       <node concept="37vLTG" id="1PixfKRpaZJ" role="3clF46">
-        <property role="TrG5h" value="namespace" />
+        <property role="TrG5h" value="langNamespace" />
         <node concept="17QB3L" id="1PixfKRpaZI" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="5rVYEA67gi7" role="lGtFl">
+        <node concept="TZ5HA" id="5rVYEA67gi8" role="TZ5H$">
+          <node concept="1dT_AC" id="5rVYEA67gi9" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks whether this aspect clique has aspects from specified namespace," />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5rVYEA67kM1" role="TZ5H$">
+          <node concept="1dT_AC" id="5rVYEA67kM2" role="1dT_Ay">
+            <property role="1dT_AB" value="in other words, whether this aspect clique is relevant for the namespace." />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="5MNibEMU$Hc" role="jymVt" />
