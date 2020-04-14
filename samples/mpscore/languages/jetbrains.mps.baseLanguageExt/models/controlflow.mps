@@ -2,7 +2,7 @@
 <model ref="r:6a71ba3e-550e-4491-a65a-abcddca431cd(jetbrains.mps.baseLanguageExt.controlflow)">
   <persistence version="9" />
   <languages>
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="20" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="12" />
     <use id="2e120f68-abfb-4980-bb1c-bc70159b1f95" name="jetbrains.mps.lang.controlflow" version="0" />
     <engage id="2e120f68-abfb-4980-bb1c-bc70159b1f95" name="jetbrains.mps.lang.controlflow" />

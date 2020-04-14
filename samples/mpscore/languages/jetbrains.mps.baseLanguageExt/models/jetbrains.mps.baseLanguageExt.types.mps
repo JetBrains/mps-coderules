@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="35320f26-77cb-4c55-be9f-a97a27770af1" name="jetbrains.mps.logic" version="12" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="-1" />
+    <use id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules" version="21" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
@@ -418,8 +418,8 @@
       <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.Value" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
       </concept>
-      <concept id="960803923479540328" name="jetbrains.mps.logic.structure.LogicalVariableDataForm" flags="ng" index="3wAshV">
-        <child id="960803923479549586" name="variable" index="3wAq21" />
+      <concept id="960803923479540328" name="jetbrains.mps.logic.structure.LogicalDataForm" flags="ng" index="3wAshV">
+        <child id="960803923479549586" name="logical" index="3wAq21" />
       </concept>
       <concept id="8713947027062024097" name="jetbrains.mps.logic.structure.LogicalItemValueExpression" flags="ng" index="1Ft4W6">
         <child id="8713947027062064784" name="logical" index="1FtiSR" />
@@ -18462,6 +18462,28 @@
         </node>
       </node>
     </node>
+    <node concept="3iF_et" id="5itBwMau8m1" role="3iTdIJ">
+      <property role="TrG5h" value="lift" />
+      <ref role="3iEmPG" to="tpee:fz3vP1H" resolve="Type" />
+      <node concept="3uniRu" id="5itBwMau8pc" role="3iPQ67">
+        <node concept="aZer4" id="5itBwMau8pd" role="3XD1gS">
+          <property role="TrG5h" value="Type" />
+        </node>
+        <node concept="32pEOW" id="5itBwMau8pp" role="3vLBG7" />
+      </node>
+      <node concept="3i76O8" id="5itBwMaLICh" role="3i7zYg">
+        <property role="TrG5h" value="substitution" />
+        <node concept="3uibUv" id="5itBwMaLJw4" role="3i7YY_">
+          <ref role="3uigEE" node="6EY0p2w8VOq" resolve="TypeVarSubstitution" />
+        </node>
+      </node>
+      <node concept="3i76O8" id="5itBwMb2a1b" role="3i7zYg">
+        <property role="TrG5h" value="allowUncheckedConversion" />
+        <node concept="3uibUv" id="5itBwMb2ata" role="3i7YY_">
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+        </node>
+      </node>
+    </node>
     <node concept="3iyZe8" id="5itBwMau8m4" role="0oKgB">
       <ref role="3iRiWT" node="5itBwMau8m1" resolve="lift" />
       <node concept="3clFbS" id="5itBwMau8m5" role="3iwQuN">
@@ -18491,28 +18513,6 @@
           <property role="TrG5h" value="Type" />
         </node>
         <node concept="32pEOW" id="5itBwMau8qn" role="3vLBG7" />
-      </node>
-    </node>
-    <node concept="3iF_et" id="5itBwMau8m1" role="3iTdIJ">
-      <property role="TrG5h" value="lift" />
-      <ref role="3iEmPG" to="tpee:fz3vP1H" resolve="Type" />
-      <node concept="3uniRu" id="5itBwMau8pc" role="3iPQ67">
-        <node concept="aZer4" id="5itBwMau8pd" role="3XD1gS">
-          <property role="TrG5h" value="Type" />
-        </node>
-        <node concept="32pEOW" id="5itBwMau8pp" role="3vLBG7" />
-      </node>
-      <node concept="3i76O8" id="5itBwMaLICh" role="3i7zYg">
-        <property role="TrG5h" value="substitution" />
-        <node concept="3uibUv" id="5itBwMaLJw4" role="3i7YY_">
-          <ref role="3uigEE" node="6EY0p2w8VOq" resolve="TypeVarSubstitution" />
-        </node>
-      </node>
-      <node concept="3i76O8" id="5itBwMb2a1b" role="3i7zYg">
-        <property role="TrG5h" value="allowUncheckedConversion" />
-        <node concept="3uibUv" id="5itBwMb2ata" role="3i7YY_">
-          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
-        </node>
       </node>
     </node>
   </node>
