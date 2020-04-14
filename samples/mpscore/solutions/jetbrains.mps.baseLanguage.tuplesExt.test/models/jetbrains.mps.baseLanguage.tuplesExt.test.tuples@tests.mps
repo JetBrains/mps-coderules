@@ -149,7 +149,7 @@
                   <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
                   <node concept="2tJFMh" id="27bTNFfc1c1" role="2XxRq1">
                     <node concept="ZC_QK" id="4E290qQ0kDi" role="2tJFKM">
-                      <ref role="2aWVGs" to="qwqz:4E290qQ09_i" resolve="DemoTuples" />
+                      <ref role="2aWVGs" to="qwqz:4E290qQ09_i" resolve="DemoIndexedTuples" />
                     </node>
                   </node>
                 </node>

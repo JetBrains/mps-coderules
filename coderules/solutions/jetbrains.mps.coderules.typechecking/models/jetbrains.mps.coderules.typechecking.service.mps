@@ -8536,7 +8536,7 @@
                   <ref role="3cqZAo" node="7i3KM7glTNp" resolve="aspectClique" />
                 </node>
                 <node concept="liA8E" id="7i3KM7glTMN" role="2OqNvi">
-                  <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmtpy" />
+                  <ref role="37wK5l" to="fqlx:4ekZiHe4j$O" resolve="isEmpty" />
                 </node>
               </node>
             </node>
