@@ -7313,23 +7313,28 @@
       <node concept="3Tmbuc" id="390NiL14DQq" role="1B3o_S" />
       <node concept="3clFbS" id="390NiL14kVJ" role="3clF47">
         <node concept="3clFbF" id="390NiL14kVK" role="3cqZAp">
-          <node concept="2YIFZM" id="390NiL14kVL" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <node concept="2YIFZM" id="YbzkzLgjzF" role="37wK5m">
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <node concept="2ShNRf" id="YbzkzLgjzG" role="37wK5m">
-                <node concept="1pGfFk" id="YbzkzLgjzH" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="37vLTw" id="YbzkzLgjzI" role="37wK5m">
-                    <ref role="3cqZAo" node="390NiL14kVF" resolve="name" />
-                  </node>
-                  <node concept="3VsKOn" id="YbzkzLgjzJ" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+          <node concept="10QFUN" id="4U$Q3dKgFf0" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgFeU" role="10QFUP">
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <node concept="2YIFZM" id="4U$Q3dKgFeV" role="37wK5m">
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <node concept="2ShNRf" id="4U$Q3dKgFeW" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgFeX" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="37vLTw" id="4U$Q3dKgFeY" role="37wK5m">
+                      <ref role="3cqZAo" node="390NiL14kVF" resolve="name" />
+                    </node>
+                    <node concept="3VsKOn" id="4U$Q3dKgFeZ" role="37wK5m">
+                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgFu6" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
@@ -7348,23 +7353,28 @@
       <node concept="3Tmbuc" id="6SwZmzBDvSa" role="1B3o_S" />
       <node concept="3clFbS" id="6SwZmzBDszj" role="3clF47">
         <node concept="3clFbF" id="6SwZmzBDszk" role="3cqZAp">
-          <node concept="2YIFZM" id="6SwZmzBDszl" role="3clFbG">
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <ref role="37wK5l" to="oy3s:3gNap3fZcVn" resolve="asValue" />
-            <node concept="2YIFZM" id="YbzkzLg_wV" role="37wK5m">
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <node concept="2ShNRf" id="YbzkzLg_wW" role="37wK5m">
-                <node concept="1pGfFk" id="YbzkzLg_wX" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="37vLTw" id="YbzkzLg_wY" role="37wK5m">
-                    <ref role="3cqZAo" node="6SwZmzBDszf" resolve="name" />
-                  </node>
-                  <node concept="3VsKOn" id="YbzkzLg_wZ" role="37wK5m">
-                    <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+          <node concept="10QFUN" id="4U$Q3dKgOOt" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgOOn" role="10QFUP">
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <ref role="37wK5l" to="oy3s:3gNap3fZcVn" resolve="asValue" />
+              <node concept="2YIFZM" id="4U$Q3dKgOOo" role="37wK5m">
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <node concept="2ShNRf" id="4U$Q3dKgOOp" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgOOq" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="37vLTw" id="4U$Q3dKgOOr" role="37wK5m">
+                      <ref role="3cqZAo" node="6SwZmzBDszf" resolve="name" />
+                    </node>
+                    <node concept="3VsKOn" id="4U$Q3dKgOOs" role="37wK5m">
+                      <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgP7F" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
@@ -9253,23 +9263,28 @@
       <node concept="3Tmbuc" id="390NiL15h0Q" role="1B3o_S" />
       <node concept="3clFbS" id="390NiL15h0R" role="3clF47">
         <node concept="3clFbF" id="YbzkzLiRad" role="3cqZAp">
-          <node concept="2YIFZM" id="YbzkzLiRae" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <node concept="2YIFZM" id="YbzkzLiRaf" role="37wK5m">
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <node concept="2ShNRf" id="YbzkzLiRag" role="37wK5m">
-                <node concept="1pGfFk" id="YbzkzLiRah" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="37vLTw" id="YbzkzLiRai" role="37wK5m">
-                    <ref role="3cqZAo" node="390NiL15h0N" resolve="name" />
-                  </node>
-                  <node concept="3VsKOn" id="YbzkzLiRaj" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+          <node concept="10QFUN" id="4U$Q3dKgIjh" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgIjb" role="10QFUP">
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <node concept="2YIFZM" id="4U$Q3dKgIjc" role="37wK5m">
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <node concept="2ShNRf" id="4U$Q3dKgIjd" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgIje" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="37vLTw" id="4U$Q3dKgIjf" role="37wK5m">
+                      <ref role="3cqZAo" node="390NiL15h0N" resolve="name" />
+                    </node>
+                    <node concept="3VsKOn" id="4U$Q3dKgIjg" role="37wK5m">
+                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgIyn" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
@@ -9288,23 +9303,28 @@
       <node concept="3Tmbuc" id="6SwZmzBExYJ" role="1B3o_S" />
       <node concept="3clFbS" id="6SwZmzBExYK" role="3clF47">
         <node concept="3clFbF" id="YbzkzLj0Bc" role="3cqZAp">
-          <node concept="2YIFZM" id="YbzkzLj0Bd" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:3gNap3fZcVn" resolve="asValue" />
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <node concept="2YIFZM" id="YbzkzLj0Be" role="37wK5m">
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <node concept="2ShNRf" id="YbzkzLj0Bf" role="37wK5m">
-                <node concept="1pGfFk" id="YbzkzLj0Bg" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="37vLTw" id="YbzkzLj0Bh" role="37wK5m">
-                    <ref role="3cqZAo" node="6SwZmzBExYG" resolve="name" />
-                  </node>
-                  <node concept="3VsKOn" id="YbzkzLj0Bi" role="37wK5m">
-                    <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+          <node concept="10QFUN" id="4U$Q3dKgQcS" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgQcM" role="10QFUP">
+              <ref role="37wK5l" to="oy3s:3gNap3fZcVn" resolve="asValue" />
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <node concept="2YIFZM" id="4U$Q3dKgQcN" role="37wK5m">
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <node concept="2ShNRf" id="4U$Q3dKgQcO" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgQcP" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="37vLTw" id="4U$Q3dKgQcQ" role="37wK5m">
+                      <ref role="3cqZAo" node="6SwZmzBExYG" resolve="name" />
+                    </node>
+                    <node concept="3VsKOn" id="4U$Q3dKgQcR" role="37wK5m">
+                      <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgQw6" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
@@ -11242,23 +11262,28 @@
       <node concept="3Tmbuc" id="1POzLwzc8YX" role="1B3o_S" />
       <node concept="3clFbS" id="1POzLwzc6Nu" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6Nv" role="3cqZAp">
-          <node concept="2YIFZM" id="1POzLwzc6Nw" role="3clFbG">
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <ref role="37wK5l" to="oy3s:3gNap3fZcVn" resolve="asValue" />
-            <node concept="2YIFZM" id="YbzkzLdOgq" role="37wK5m">
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <node concept="2ShNRf" id="1POzLwzc6Nz" role="37wK5m">
-                <node concept="1pGfFk" id="1POzLwzc6N$" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="37vLTw" id="1POzLwzc6N_" role="37wK5m">
-                    <ref role="3cqZAo" node="1POzLwzc6Nq" resolve="name" />
-                  </node>
-                  <node concept="3VsKOn" id="1POzLwzc6NA" role="37wK5m">
-                    <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+          <node concept="10QFUN" id="4U$Q3dKgR5i" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgR5c" role="10QFUP">
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <ref role="37wK5l" to="oy3s:3gNap3fZcVn" resolve="asValue" />
+              <node concept="2YIFZM" id="4U$Q3dKgR5d" role="37wK5m">
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <node concept="2ShNRf" id="4U$Q3dKgR5e" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgR5f" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="37vLTw" id="4U$Q3dKgR5g" role="37wK5m">
+                      <ref role="3cqZAo" node="1POzLwzc6Nq" resolve="name" />
+                    </node>
+                    <node concept="3VsKOn" id="4U$Q3dKgR5h" role="37wK5m">
+                      <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgRfo" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
@@ -11277,23 +11302,28 @@
       <node concept="3Tmbuc" id="1POzLwzc9rA" role="1B3o_S" />
       <node concept="3clFbS" id="1POzLwzc6NH" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6NI" role="3cqZAp">
-          <node concept="2YIFZM" id="1POzLwzc6NJ" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <node concept="2YIFZM" id="YbzkzLe4p5" role="37wK5m">
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <node concept="2ShNRf" id="1POzLwzc6NM" role="37wK5m">
-                <node concept="1pGfFk" id="1POzLwzc6NN" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="37vLTw" id="1POzLwzc6NO" role="37wK5m">
-                    <ref role="3cqZAo" node="1POzLwzc6ND" resolve="name" />
-                  </node>
-                  <node concept="3VsKOn" id="1POzLwzc6NP" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+          <node concept="10QFUN" id="4U$Q3dKgIQ6" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgIQ0" role="10QFUP">
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <node concept="2YIFZM" id="4U$Q3dKgIQ1" role="37wK5m">
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <node concept="2ShNRf" id="4U$Q3dKgIQ2" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgIQ3" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="37vLTw" id="4U$Q3dKgIQ4" role="37wK5m">
+                      <ref role="3cqZAo" node="1POzLwzc6ND" resolve="name" />
+                    </node>
+                    <node concept="3VsKOn" id="4U$Q3dKgIQ5" role="37wK5m">
+                      <ref role="3VsUkX" to="6exd:5JQSuNswOXL" resolve="TermNode" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgIZa" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
@@ -11312,23 +11342,28 @@
       <node concept="3Tmbuc" id="1POzLwzc9NF" role="1B3o_S" />
       <node concept="3clFbS" id="1POzLwzc6NW" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6NX" role="3cqZAp">
-          <node concept="2YIFZM" id="1POzLwzc6NY" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <node concept="2YIFZM" id="YbzkzLekXP" role="37wK5m">
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <node concept="2ShNRf" id="1POzLwzc6O1" role="37wK5m">
-                <node concept="1pGfFk" id="1POzLwzc6O2" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="37vLTw" id="1POzLwzc6O3" role="37wK5m">
-                    <ref role="3cqZAo" node="1POzLwzc6NS" resolve="name" />
-                  </node>
-                  <node concept="3VsKOn" id="1POzLwzc6O4" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:3OPtF03lco4" resolve="ListNode" />
+          <node concept="10QFUN" id="4U$Q3dKgJ30" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgJ2U" role="10QFUP">
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <node concept="2YIFZM" id="4U$Q3dKgJ2V" role="37wK5m">
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <node concept="2ShNRf" id="4U$Q3dKgJ2W" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgJ2X" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.String,java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="37vLTw" id="4U$Q3dKgJ2Y" role="37wK5m">
+                      <ref role="3cqZAo" node="1POzLwzc6NS" resolve="name" />
+                    </node>
+                    <node concept="3VsKOn" id="4U$Q3dKgJ2Z" role="37wK5m">
+                      <ref role="3VsUkX" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgJgc" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
@@ -11343,20 +11378,25 @@
       <node concept="3Tmbuc" id="1POzLwzcabK" role="1B3o_S" />
       <node concept="3clFbS" id="1POzLwzc6O9" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6Oa" role="3cqZAp">
-          <node concept="2YIFZM" id="1POzLwzc6Ob" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <node concept="2YIFZM" id="YbzkzLeDr8" role="37wK5m">
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <node concept="2ShNRf" id="1POzLwzc6Oe" role="37wK5m">
-                <node concept="1pGfFk" id="1POzLwzc6Of" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="3VsKOn" id="1POzLwzc6Og" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+          <node concept="10QFUN" id="4U$Q3dKgJk2" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgJjX" role="10QFUP">
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <node concept="2YIFZM" id="4U$Q3dKgJjY" role="37wK5m">
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <node concept="2ShNRf" id="4U$Q3dKgJjZ" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgJk0" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="3VsKOn" id="4U$Q3dKgJk1" role="37wK5m">
+                      <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgJxk" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
@@ -11371,20 +11411,25 @@
       <node concept="3Tmbuc" id="1POzLwzca_V" role="1B3o_S" />
       <node concept="3clFbS" id="1POzLwzc6Om" role="3clF47">
         <node concept="3clFbF" id="1POzLwzc6On" role="3cqZAp">
-          <node concept="2YIFZM" id="1POzLwzc6Oo" role="3clFbG">
-            <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
-            <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
-            <node concept="2YIFZM" id="YbzkzLeTxy" role="37wK5m">
-              <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
-              <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
-              <node concept="2ShNRf" id="1POzLwzc6Or" role="37wK5m">
-                <node concept="1pGfFk" id="1POzLwzc6Os" role="2ShVmc">
-                  <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
-                  <node concept="3VsKOn" id="1POzLwzc6Ot" role="37wK5m">
-                    <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+          <node concept="10QFUN" id="4U$Q3dKgK$2" role="3clFbG">
+            <node concept="2YIFZM" id="4U$Q3dKgKzX" role="10QFUP">
+              <ref role="37wK5l" to="oy3s:4TCblo5YI1H" resolve="asDataForm" />
+              <ref role="1Pybhc" to="oy3s:677NV565N1x" resolve="LogicalUtil" />
+              <node concept="2YIFZM" id="4U$Q3dKgKzY" role="37wK5m">
+                <ref role="1Pybhc" to="z9ve:~LogicalImplKt" resolve="LogicalImplKt" />
+                <ref role="37wK5l" to="z9ve:~LogicalImplKt.logical(jetbrains.mps.logic.reactor.logical.MetaLogical)" resolve="logical" />
+                <node concept="2ShNRf" id="4U$Q3dKgKzZ" role="37wK5m">
+                  <node concept="1pGfFk" id="4U$Q3dKgK$0" role="2ShVmc">
+                    <ref role="37wK5l" to="bj13:~MetaLogical.&lt;init&gt;(java.lang.Class)" resolve="MetaLogical" />
+                    <node concept="3VsKOn" id="4U$Q3dKgK$1" role="37wK5m">
+                      <ref role="3VsUkX" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                    </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="4U$Q3dKgKQw" role="10QFUM">
+              <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
             </node>
           </node>
         </node>
