@@ -1813,17 +1813,24 @@
                     <ref role="3cqZAo" node="7HUwyZb7b7S" resolve="array" />
                   </node>
                 </node>
-                <node concept="1rXfSq" id="7HUwyZbdRag" role="37vLTx">
-                  <ref role="37wK5l" node="7HUwyZb7chj" resolve="asDataForm" />
-                  <node concept="2OqwBi" id="7HUwyZbdRec" role="37wK5m">
-                    <node concept="37vLTw" id="7HUwyZbdRce" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7HUwyZb7b7D" resolve="multiMetaLogical" />
-                    </node>
-                    <node concept="liA8E" id="7HUwyZbdRgZ" role="2OqNvi">
-                      <ref role="37wK5l" node="1fvYCPC9rDX" resolve="logicalAt" />
-                      <node concept="37vLTw" id="7HUwyZbdRiC" role="37wK5m">
-                        <ref role="3cqZAo" node="7HUwyZb7b8h" resolve="i" />
+                <node concept="1eOMI4" id="4U$Q3dKgNvL" role="37vLTx">
+                  <node concept="10QFUN" id="4U$Q3dKgNvK" role="1eOMHV">
+                    <node concept="1rXfSq" id="4U$Q3dKgNvF" role="10QFUP">
+                      <ref role="37wK5l" node="7HUwyZb7chj" resolve="asDataForm" />
+                      <node concept="2OqwBi" id="4U$Q3dKgNvG" role="37wK5m">
+                        <node concept="37vLTw" id="4U$Q3dKgNvH" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7HUwyZb7b7D" resolve="multiMetaLogical" />
+                        </node>
+                        <node concept="liA8E" id="4U$Q3dKgNvI" role="2OqNvi">
+                          <ref role="37wK5l" node="1fvYCPC9rDX" resolve="logicalAt" />
+                          <node concept="37vLTw" id="4U$Q3dKgNvJ" role="37wK5m">
+                            <ref role="3cqZAo" node="7HUwyZb7b8h" resolve="i" />
+                          </node>
+                        </node>
                       </node>
+                    </node>
+                    <node concept="3uibUv" id="4U$Q3dKgNvE" role="10QFUM">
+                      <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
                     </node>
                   </node>
                 </node>
@@ -1921,8 +1928,8 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="kTK1BeAeTc" role="3clF45">
-        <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
+      <node concept="3uibUv" id="4U$Q3dKgMRO" role="3clF45">
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
       </node>
       <node concept="3Tm1VV" id="4TCblo5YI1L" role="1B3o_S" />
       <node concept="3clFbS" id="4TCblo5YI1M" role="3clF47">
@@ -1954,7 +1961,70 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="4U$Q3dL0CDr" role="jymVt" />
+    <node concept="2YIFZL" id="4U$Q3dL0BAK" role="jymVt">
+      <property role="TrG5h" value="asDataForm" />
+      <node concept="37vLTG" id="4U$Q3dL0BAL" role="3clF46">
+        <property role="TrG5h" value="arr" />
+        <node concept="3uibUv" id="4U$Q3dL0D0e" role="1tU5fm">
+          <ref role="3uigEE" node="1fvYCPC9rB6" resolve="MetaLogicalArray" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="4U$Q3dL0BAN" role="3clF45">
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+      </node>
+      <node concept="3Tm1VV" id="4U$Q3dL0BAO" role="1B3o_S" />
+      <node concept="3clFbS" id="4U$Q3dL0BAP" role="3clF47">
+        <node concept="3clFbF" id="4U$Q3dL0E8K" role="3cqZAp">
+          <node concept="2YIFZM" id="4U$Q3dL0E9q" role="3clFbG">
+            <ref role="37wK5l" to="6exd:1OShD0HS45f" resolve="createList" />
+            <ref role="1Pybhc" to="6exd:3OPtF03lco4" resolve="ListNode" />
+            <node concept="1rXfSq" id="4U$Q3dL0Ecm" role="37wK5m">
+              <ref role="37wK5l" node="7HUwyZb7b7C" resolve="asDataFormArray" />
+              <node concept="37vLTw" id="4U$Q3dL0EyT" role="37wK5m">
+                <ref role="3cqZAo" node="4U$Q3dL0BAL" resolve="arr" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="4U$Q3dL0BAS" role="lGtFl">
+        <node concept="TZ5HA" id="4U$Q3dL0BAT" role="TZ5H$">
+          <node concept="1dT_AC" id="4U$Q3dL0BAU" role="1dT_Ay">
+            <property role="1dT_AB" value="An overload of same method accepting logical to support wrapping list." />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="3gNap3fZcV_" role="jymVt" />
+    <node concept="2YIFZL" id="4U$Q3dKg$bJ" role="jymVt">
+      <property role="TrG5h" value="asDataForm" />
+      <node concept="37vLTG" id="4U$Q3dKg$bK" role="3clF46">
+        <property role="TrG5h" value="df" />
+        <node concept="3uibUv" id="4U$Q3dKg$Kh" role="1tU5fm">
+          <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="4U$Q3dKg_bR" role="3clF45">
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+      </node>
+      <node concept="3Tm1VV" id="4U$Q3dKg$bO" role="1B3o_S" />
+      <node concept="3clFbS" id="4U$Q3dKg$bP" role="3clF47">
+        <node concept="3clFbF" id="4U$Q3dKg_6F" role="3cqZAp">
+          <node concept="37vLTw" id="4U$Q3dKg_6E" role="3clFbG">
+            <ref role="3cqZAo" node="4U$Q3dKg$bK" resolve="df" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="4U$Q3dKg$bX" role="lGtFl">
+        <node concept="TZ5HA" id="4U$Q3dKg$bY" role="TZ5H$">
+          <node concept="1dT_AC" id="4U$Q3dKg$bZ" role="1dT_Ay">
+            <property role="1dT_AB" value="An overload of same method accepting logical to support identity transformation." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4U$Q3dKg$bI" role="jymVt" />
     <node concept="2YIFZL" id="3gNap3gwG50" role="jymVt">
       <property role="TrG5h" value="asValue" />
       <node concept="37vLTG" id="3gNap3gwG51" role="3clF46">
@@ -1966,8 +2036,8 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="3gNap3gwGeH" role="3clF45">
-        <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
+      <node concept="3uibUv" id="4U$Q3dKgRRM" role="3clF45">
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
       </node>
       <node concept="3Tm1VV" id="3gNap3gwG55" role="1B3o_S" />
       <node concept="3clFbS" id="3gNap3gwG56" role="3clF47">
@@ -2008,8 +2078,8 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="3gNap3gwGf6" role="3clF45">
-        <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
+      <node concept="3uibUv" id="4U$Q3dKgRr5" role="3clF45">
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
       </node>
       <node concept="3Tm1VV" id="3gNap3fZcVs" role="1B3o_S" />
       <node concept="3clFbS" id="3gNap3fZcVt" role="3clF47">
@@ -2037,6 +2107,94 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="2tJIrI" id="4U$Q3dKgSp1" role="jymVt" />
+    <node concept="2YIFZL" id="4U$Q3dKt95T" role="jymVt">
+      <property role="TrG5h" value="asValue" />
+      <node concept="3clFbS" id="4U$Q3dKgSID" role="3clF47">
+        <node concept="3clFbF" id="4U$Q3dKgVGe" role="3cqZAp">
+          <node concept="37vLTw" id="4U$Q3dKgVGd" role="3clFbG">
+            <ref role="3cqZAo" node="4U$Q3dKgTI6" resolve="value" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4U$Q3dKgTI6" role="3clF46">
+        <property role="TrG5h" value="value" />
+        <node concept="3uibUv" id="4U$Q3dKgUnL" role="1tU5fm">
+          <ref role="3uigEE" to="6exd:2xQ7eRAD2dj" resolve="Value" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="4U$Q3dKgT0T" role="3clF45">
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+      </node>
+      <node concept="P$JXv" id="4U$Q3dKgVM9" role="lGtFl">
+        <node concept="TZ5HA" id="4U$Q3dKgVMa" role="TZ5H$">
+          <node concept="1dT_AC" id="4U$Q3dKgVMb" role="1dT_Ay">
+            <property role="1dT_AB" value="An overload of the same method accepting logical to support identity transformation." />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4U$Q3dKgSIC" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4U$Q3dKt5dW" role="jymVt" />
+    <node concept="2YIFZL" id="4U$Q3dLiFgv" role="jymVt">
+      <property role="TrG5h" value="asValue" />
+      <node concept="3clFbS" id="4U$Q3dLiFgw" role="3clF47">
+        <node concept="3clFbF" id="4U$Q3dLiFgx" role="3cqZAp">
+          <node concept="37vLTw" id="4U$Q3dLiFgy" role="3clFbG">
+            <ref role="3cqZAo" node="4U$Q3dLiFgz" resolve="variable" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4U$Q3dLiFgz" role="3clF46">
+        <property role="TrG5h" value="variable" />
+        <node concept="3uibUv" id="4U$Q3dLiFEI" role="1tU5fm">
+          <ref role="3uigEE" to="6exd:uNmovXiEd4" resolve="Variable" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="4U$Q3dLiFg_" role="3clF45">
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+      </node>
+      <node concept="P$JXv" id="4U$Q3dLiFgA" role="lGtFl">
+        <node concept="TZ5HA" id="4U$Q3dLiFgB" role="TZ5H$">
+          <node concept="1dT_AC" id="4U$Q3dLiFgC" role="1dT_Ay">
+            <property role="1dT_AB" value="An overload of the same method accepting logical to support identity transformation." />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4U$Q3dLiFgD" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4U$Q3dLiFgu" role="jymVt" />
+    <node concept="2YIFZL" id="4U$Q3dKt9sz" role="jymVt">
+      <property role="TrG5h" value="asValue" />
+      <node concept="3clFbS" id="4U$Q3dKt4OA" role="3clF47">
+        <node concept="3clFbF" id="4U$Q3dKt5X4" role="3cqZAp">
+          <node concept="2YIFZM" id="4U$Q3dKt63l" role="3clFbG">
+            <ref role="37wK5l" to="6exd:5JQSuNsxb_I" resolve="create" />
+            <ref role="1Pybhc" to="6exd:2xQ7eRAD2dj" resolve="Value" />
+            <node concept="37vLTw" id="4U$Q3dKt69V" role="37wK5m">
+              <ref role="3cqZAo" node="4U$Q3dKt4Oy" resolve="obj" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4U$Q3dKt4Oy" role="3clF46">
+        <property role="TrG5h" value="obj" />
+        <node concept="3uibUv" id="4U$Q3dKt5wb" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="4U$Q3dKt4O$" role="3clF45">
+        <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+      </node>
+      <node concept="P$JXv" id="4U$Q3dKt4OD" role="lGtFl">
+        <node concept="TZ5HA" id="4U$Q3dKt4OE" role="TZ5H$">
+          <node concept="1dT_AC" id="4U$Q3dKt4OF" role="1dT_Ay">
+            <property role="1dT_AB" value="An overload of the same method accepting logical or value to support wrapping any object into a value." />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4U$Q3dKt4O_" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="3gNap3gwG5e" role="jymVt" />
     <node concept="2YIFZL" id="4TCblo5NqWF" role="jymVt">
