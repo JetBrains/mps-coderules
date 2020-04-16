@@ -418,8 +418,8 @@
       <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.Value" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
       </concept>
-      <concept id="960803923479540328" name="jetbrains.mps.logic.structure.LogicalDataForm" flags="ng" index="3wAshV">
-        <child id="960803923479549586" name="logical" index="3wAq21" />
+      <concept id="960803923479540328" name="jetbrains.mps.logic.structure.LogicalVariableDataForm" flags="ng" index="3wAshV">
+        <child id="960803923479549586" name="variable" index="3wAq21" />
       </concept>
       <concept id="8713947027062024097" name="jetbrains.mps.logic.structure.LogicalItemValueExpression" flags="ng" index="1Ft4W6">
         <child id="8713947027062064784" name="logical" index="1FtiSR" />
@@ -17679,28 +17679,6 @@
         </node>
       </node>
     </node>
-    <node concept="3iF_et" id="5itBwMau8m1" role="3iTdIJ">
-      <property role="TrG5h" value="lift" />
-      <ref role="3iEmPG" to="tpee:fz3vP1H" resolve="Type" />
-      <node concept="3uniRu" id="5itBwMau8pc" role="3iPQ67">
-        <node concept="aZer4" id="5itBwMau8pd" role="3XD1gS">
-          <property role="TrG5h" value="Type" />
-        </node>
-        <node concept="32pEOW" id="5itBwMau8pp" role="3vLBG7" />
-      </node>
-      <node concept="3i76O8" id="5itBwMaLICh" role="3i7zYg">
-        <property role="TrG5h" value="substitution" />
-        <node concept="3uibUv" id="5itBwMaLJw4" role="3i7YY_">
-          <ref role="3uigEE" node="6EY0p2w8VOq" resolve="TypeVarSubstitution" />
-        </node>
-      </node>
-      <node concept="3i76O8" id="5itBwMb2a1b" role="3i7zYg">
-        <property role="TrG5h" value="allowUncheckedConversion" />
-        <node concept="3uibUv" id="5itBwMb2ata" role="3i7YY_">
-          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
-        </node>
-      </node>
-    </node>
     <node concept="3iyZe8" id="5itBwMau8m4" role="0oKgB">
       <ref role="3iRiWT" node="5itBwMau8m1" resolve="lift" />
       <node concept="3clFbS" id="5itBwMau8m5" role="3iwQuN">
@@ -17730,6 +17708,28 @@
           <property role="TrG5h" value="Type" />
         </node>
         <node concept="32pEOW" id="5itBwMau8qn" role="3vLBG7" />
+      </node>
+    </node>
+    <node concept="3iF_et" id="5itBwMau8m1" role="3iTdIJ">
+      <property role="TrG5h" value="lift" />
+      <ref role="3iEmPG" to="tpee:fz3vP1H" resolve="Type" />
+      <node concept="3uniRu" id="5itBwMau8pc" role="3iPQ67">
+        <node concept="aZer4" id="5itBwMau8pd" role="3XD1gS">
+          <property role="TrG5h" value="Type" />
+        </node>
+        <node concept="32pEOW" id="5itBwMau8pp" role="3vLBG7" />
+      </node>
+      <node concept="3i76O8" id="5itBwMaLICh" role="3i7zYg">
+        <property role="TrG5h" value="substitution" />
+        <node concept="3uibUv" id="5itBwMaLJw4" role="3i7YY_">
+          <ref role="3uigEE" node="6EY0p2w8VOq" resolve="TypeVarSubstitution" />
+        </node>
+      </node>
+      <node concept="3i76O8" id="5itBwMb2a1b" role="3i7zYg">
+        <property role="TrG5h" value="allowUncheckedConversion" />
+        <node concept="3uibUv" id="5itBwMb2ata" role="3i7YY_">
+          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+        </node>
       </node>
     </node>
   </node>
