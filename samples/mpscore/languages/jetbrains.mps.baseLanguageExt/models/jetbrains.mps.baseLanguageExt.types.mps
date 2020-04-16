@@ -735,6 +735,7 @@
         <child id="6097203247163011497" name="type" index="3i7YY_" />
       </concept>
       <concept id="6097203247156088058" name="jetbrains.mps.lang.coderules.structure.ExpandMacroInputSpecification" flags="ng" index="3ixlbQ">
+        <property id="6097203247156101019" name="exactMatch" index="3ixm6n" />
         <reference id="6097203247156276310" name="applicableConcept" index="3ixz9q" />
         <child id="6097203247156107501" name="input" index="3ix8rx" />
       </concept>
@@ -17981,37 +17982,6 @@
   <node concept="0oKg$" id="E1U1n2RerB">
     <property role="TrG5h" value="Types" />
     <property role="3GE5qa" value="macro" />
-    <node concept="3iyZe8" id="5itBwMau8m4" role="0oKgB">
-      <ref role="3iRiWT" node="5itBwMau8m1" resolve="lift" />
-      <node concept="3clFbS" id="5itBwMau8m5" role="3iwQuN">
-        <node concept="3Aqczg" id="4lCLOtwq46N" role="3cqZAp">
-          <node concept="3A8Hvi" id="4lCLOtwq46O" role="3Aqpz8">
-            <node concept="37jhX" id="5HLeEcf2UrE" role="3A8wtg">
-              <node concept="1nq8_$" id="5itBwMau8qD" role="37jj2">
-                <node concept="a7P8L" id="5itBwMau8qC" role="1nq8_t">
-                  <ref role="a7OzE" node="5itBwMau8qb" resolve="Type" />
-                </node>
-              </node>
-            </node>
-            <node concept="ns1u0" id="4lCLOtwq4cs" role="3A8w4Q">
-              <ref role="ns1xF" node="4lCLOtwq2MF" resolve="type" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3ixlbQ" id="5itBwMau8m6" role="3iweTQ">
-        <ref role="3ixz9q" to="tpee:fz3vP1H" resolve="Type" />
-        <node concept="3ixQyH" id="5itBwMau8m7" role="3ix8rx">
-          <property role="TrG5h" value="blType" />
-        </node>
-      </node>
-      <node concept="3uniRu" id="5itBwMau8qa" role="3tb1AD">
-        <node concept="aZer4" id="5itBwMau8qb" role="3XD1gS">
-          <property role="TrG5h" value="Type" />
-        </node>
-        <node concept="32pEOW" id="5itBwMau8qn" role="3vLBG7" />
-      </node>
-    </node>
     <node concept="3iyZe8" id="5itBwMau8xb" role="0oKgB">
       <ref role="3iRiWT" node="5itBwMau8m1" resolve="lift" />
       <node concept="3clFbS" id="5itBwMau8xc" role="3iwQuN">
@@ -18490,6 +18460,37 @@
         <node concept="3ixQyH" id="5itBwMayQVf" role="3ix8rx">
           <property role="TrG5h" value="nullType" />
         </node>
+      </node>
+    </node>
+    <node concept="3iyZe8" id="5itBwMau8m4" role="0oKgB">
+      <ref role="3iRiWT" node="5itBwMau8m1" resolve="lift" />
+      <node concept="3clFbS" id="5itBwMau8m5" role="3iwQuN">
+        <node concept="3Aqczg" id="4lCLOtwq46N" role="3cqZAp">
+          <node concept="3A8Hvi" id="4lCLOtwq46O" role="3Aqpz8">
+            <node concept="37jhX" id="5HLeEcf2UrE" role="3A8wtg">
+              <node concept="1nq8_$" id="5itBwMau8qD" role="37jj2">
+                <node concept="a7P8L" id="5itBwMau8qC" role="1nq8_t">
+                  <ref role="a7OzE" node="5itBwMau8qb" resolve="Type" />
+                </node>
+              </node>
+            </node>
+            <node concept="ns1u0" id="4lCLOtwq4cs" role="3A8w4Q">
+              <ref role="ns1xF" node="4lCLOtwq2MF" resolve="type" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3ixlbQ" id="5itBwMau8m6" role="3iweTQ">
+        <ref role="3ixz9q" to="tpee:fz3vP1H" resolve="Type" />
+        <node concept="3ixQyH" id="5itBwMau8m7" role="3ix8rx">
+          <property role="TrG5h" value="blType" />
+        </node>
+      </node>
+      <node concept="3uniRu" id="5itBwMau8qa" role="3tb1AD">
+        <node concept="aZer4" id="5itBwMau8qb" role="3XD1gS">
+          <property role="TrG5h" value="Type" />
+        </node>
+        <node concept="32pEOW" id="5itBwMau8qn" role="3vLBG7" />
       </node>
     </node>
     <node concept="3iF_et" id="5itBwMau8m1" role="3iTdIJ">
@@ -36504,6 +36505,7 @@
         </node>
       </node>
       <node concept="3ixlbQ" id="5itBwMaUTy$" role="3iweTQ">
+        <property role="3ixm6n" value="true" />
         <ref role="3ixz9q" to="tpee:g7uibYu" resolve="ClassifierType" />
         <node concept="3ixQyH" id="5itBwMaUTy_" role="3ix8rx">
           <property role="TrG5h" value="clsType" />
