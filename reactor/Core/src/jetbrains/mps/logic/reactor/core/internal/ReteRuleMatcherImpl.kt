@@ -247,7 +247,8 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 nodeList.add(node)
             }
 
-            fun occurrencesCount() = introTrail.size()
+            fun hasOccurrences(): Boolean
+                = introTrail.size() > 0 || updateQueue.size > 0
 
             fun containsOccurrence(occ: Occurrence): Boolean {
                 return introTrail.contains(occ.identity)
@@ -407,7 +408,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
             }
 
             fun hasOccurrences(): Boolean {
-                return layers.any { it.occurrencesCount() > 0 }
+                return layers.any { it.hasOccurrences() }
             }
 
             fun reset(): Generation {
