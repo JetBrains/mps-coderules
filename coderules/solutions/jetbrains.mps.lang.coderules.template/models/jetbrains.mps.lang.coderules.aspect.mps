@@ -12,7 +12,6 @@
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
-    <import index="psr6" ref="r:ce187d46-c94b-47d6-8d77-26aa6af239e8(jetbrains.mps.lang.coderules.macro)" />
     <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
@@ -1071,7 +1070,7 @@
     <node concept="3clFb_" id="NKt6yomP6t" role="jymVt">
       <property role="TrG5h" value="createMacroManifest" />
       <node concept="3uibUv" id="NKt6yomP6u" role="3clF45">
-        <ref role="3uigEE" to="psr6:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
+        <ref role="3uigEE" to="i348:2N2MQGCMVqD" resolve="AbstractMacroManifest" />
       </node>
       <node concept="3Tm1VV" id="NKt6yomP6v" role="1B3o_S" />
       <node concept="3clFbS" id="NKt6yomP6w" role="3clF47" />
