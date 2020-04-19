@@ -6145,7 +6145,7 @@
           <node concept="3cpWsn" id="2WtKs4u1jqC" role="3cpWs9">
             <property role="TrG5h" value="mergedAnalysis" />
             <node concept="3uibUv" id="2WtKs4u1jqD" role="1tU5fm">
-              <ref role="3uigEE" to="xnrr:1H_6AUSXnyk" resolve="ProgramAnalysis" />
+              <ref role="3uigEE" to="i348:1H_6AUSXnyk" resolve="ProgramAnalysis" />
             </node>
             <node concept="10Nm6u" id="2WtKs4u1jV7" role="33vP2m" />
           </node>
@@ -6231,7 +6231,7 @@
                           <ref role="3cqZAo" node="2WtKs4u1jqC" resolve="mergedAnalysis" />
                         </node>
                         <node concept="liA8E" id="2WtKs4u1kvN" role="2OqNvi">
-                          <ref role="37wK5l" to="xnrr:2WtKs4tZgH_" resolve="merge" />
+                          <ref role="37wK5l" to="i348:2WtKs4tZgH_" resolve="merge" />
                           <node concept="2OqwBi" id="2WtKs4u1kCq" role="37wK5m">
                             <node concept="37vLTw" id="2WtKs4u1kxn" role="2Oq$k0">
                               <ref role="3cqZAo" node="7wfdmjRl43a" resolve="ruleManifest" />

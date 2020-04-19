@@ -2439,11 +2439,6 @@
             <ref role="3bR37D" node="7BVjoXzUxoR" resolve="jetbrains.mps.logic.reactor" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2Ap6smoezi" role="3bR37C">
-          <node concept="3bR9La" id="2Ap6smoezj" role="1SiIV1">
-            <ref role="3bR37D" node="7BVjoXzUxee" resolve="jetbrains.mps.lang.coderules.runtime" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="2o8vGoPP7lr" role="3bR37C">
           <node concept="3bR9La" id="2o8vGoPP7ls" role="1SiIV1">
             <ref role="3bR37D" to="ffeo:7Kfy9QB6Lg8" resolve="jetbrains.mps.runtime" />
