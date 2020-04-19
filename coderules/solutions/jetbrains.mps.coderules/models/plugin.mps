@@ -1825,7 +1825,7 @@
     <node concept="2tJIrI" id="74PwTvF278O" role="jymVt" />
     <node concept="3clFb_" id="74PwTvF243d" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="reactivateIncremental" />
+      <property role="TrG5h" value="activateContinue" />
       <node concept="37vLTG" id="74PwTvF243e" role="3clF46">
         <property role="TrG5h" value="occurrence" />
         <node concept="3uibUv" id="74PwTvF243f" role="1tU5fm">
@@ -1888,8 +1888,8 @@
         <node concept="3clFbF" id="74PwTvF243A" role="3cqZAp">
           <node concept="1rXfSq" id="74PwTvF243B" role="3clFbG">
             <ref role="37wK5l" node="YGS68MDG_7" resolve="recordActivationEvent" />
-            <node concept="Rm8GO" id="74PwTvF2q5P" role="37wK5m">
-              <ref role="Rm8GQ" node="5X6ji59xKuJ" resolve="REACTIVATE" />
+            <node concept="Rm8GO" id="5WgCxzHgo2Q" role="37wK5m">
+              <ref role="Rm8GQ" node="5WgCxzHgiSi" resolve="ACTIVATE_CONTINUE" />
               <ref role="1Px2BO" node="5X6ji59xezw" resolve="ActivationEvent" />
             </node>
             <node concept="1bVj0M" id="74PwTvF243D" role="37wK5m">
@@ -1908,7 +1908,7 @@
                         <ref role="3cqZAo" node="74PwTvF243k" resolve="snapshot" />
                       </node>
                       <node concept="Xl_RD" id="74PwTvF243L" role="37wK5m">
-                        <property role="Xl_RC" value="reactivate" />
+                        <property role="Xl_RC" value="continue" />
                       </node>
                     </node>
                   </node>
@@ -2762,6 +2762,10 @@
       <property role="TrG5h" value="REACTIVATE" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
     </node>
+    <node concept="QsSxf" id="5WgCxzHgiSi" role="Qtgdg">
+      <property role="TrG5h" value="ACTIVATE_CONTINUE" />
+      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+    </node>
     <node concept="QsSxf" id="5X6ji59xKHY" role="Qtgdg">
       <property role="TrG5h" value="SUSPEND" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -3027,7 +3031,7 @@
     <node concept="2tJIrI" id="5cnt3vhgdSm" role="jymVt" />
     <node concept="3clFb_" id="YGS68ME8GL" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="reactivateIncremental" />
+      <property role="TrG5h" value="activateContinue" />
       <node concept="37vLTG" id="YGS68ME8GM" role="3clF46">
         <property role="TrG5h" value="occurrence" />
         <node concept="3uibUv" id="YGS68ME8GN" role="1tU5fm">

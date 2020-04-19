@@ -2914,7 +2914,7 @@
     </node>
     <node concept="3clFb_" id="74PwTvF1oW8" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="reactivateIncremental" />
+      <property role="TrG5h" value="activateContinue" />
       <node concept="37vLTG" id="74PwTvF1oW9" role="3clF46">
         <property role="TrG5h" value="occurrence" />
         <node concept="3uibUv" id="74PwTvF1oWa" role="1tU5fm">
@@ -2937,7 +2937,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="74PwTvF1oWl" role="2OqNvi">
-                  <ref role="37wK5l" to="w7la:~EvaluationTrace.reactivateIncremental(jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence)" resolve="reactivateIncremental" />
+                  <ref role="37wK5l" to="w7la:~EvaluationTrace.activateContinue(jetbrains.mps.logic.reactor.evaluation.ConstraintOccurrence)" resolve="activateContinue" />
                   <node concept="37vLTw" id="74PwTvF1oWm" role="37wK5m">
                     <ref role="3cqZAo" node="74PwTvF1oW9" resolve="occurrence" />
                   </node>

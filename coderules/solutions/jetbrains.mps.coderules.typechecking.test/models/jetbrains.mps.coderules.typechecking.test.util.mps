@@ -1985,7 +1985,7 @@
         </node>
       </node>
       <node concept="3clFb_" id="4VntlICpys7" role="jymVt">
-        <property role="TrG5h" value="reactivateIncremental" />
+        <property role="TrG5h" value="activateContinue" />
         <node concept="3Tm1VV" id="4VntlICpys9" role="1B3o_S" />
         <node concept="3cqZAl" id="4VntlICpysb" role="3clF45" />
         <node concept="37vLTG" id="4VntlICpysc" role="3clF46">
@@ -2022,7 +2022,7 @@
               <ref role="37wK5l" node="4VntlICz3QP" resolve="logMsg" />
               <node concept="3cpWs3" id="4VntlICzmuA" role="37wK5m">
                 <node concept="Xl_RD" id="4VntlICzk32" role="3uHU7B">
-                  <property role="Xl_RC" value="reactivate " />
+                  <property role="Xl_RC" value="continue " />
                 </node>
                 <node concept="37vLTw" id="4VntlICzmw6" role="3uHU7w">
                   <ref role="3cqZAo" node="4VntlICpysc" resolve="occurrence" />

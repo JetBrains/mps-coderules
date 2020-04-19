@@ -17972,6 +17972,10 @@
           <ref role="1Px2BO" to="31yc:5X6ji59xezw" resolve="ActivationEvent" />
           <ref role="Rm8GQ" to="31yc:5X6ji59xKuJ" resolve="REACTIVATE" />
         </node>
+        <node concept="Rm8GO" id="5WgCxzHgIF9" role="2BsfMF">
+          <ref role="Rm8GQ" to="31yc:5WgCxzHgiSi" resolve="ACTIVATE_CONTINUE" />
+          <ref role="1Px2BO" to="31yc:5X6ji59xezw" resolve="ActivationEvent" />
+        </node>
         <node concept="Rm8GO" id="6_UQWSXg1B6" role="2BsfMF">
           <ref role="1Px2BO" to="31yc:5X6ji59xezw" resolve="ActivationEvent" />
           <ref role="Rm8GQ" to="31yc:5X6ji59xKHY" resolve="SUSPEND" />
