@@ -75,7 +75,7 @@ internal class ExecutionQueue(
                 // If the occurrence is still in the store after replay (i.e. if it's valid to activate it)
                 if (execPos.activeOcc.stored) {
                     // fixme: parentChunk can also be tracked
-                    status = processing.reactivate(controller, execPos.activeOcc, processing.parentChunk())
+                    status = processing.activateContinue(controller, execPos.activeOcc, processing.parentChunk())
                     // Leave journal processing as it was at the point of failure
                     if (!status.operational) return status
                 }

@@ -22,7 +22,6 @@ import jetbrains.mps.logic.reactor.program.IncrementalProgramSpec
 import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.evaluation.SessionToken
 import jetbrains.mps.logic.reactor.program.Rule
-import jetbrains.mps.logic.reactor.util.Id
 import jetbrains.mps.logic.reactor.util.Profiler
 import jetbrains.mps.logic.reactor.util.profile
 
@@ -56,7 +55,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
     private data class MatchCandidate(val rule: Rule, val occChunk: MatchJournal.OccChunk)
 
 
-    fun reactivate(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
+    fun activateContinue(controller: Controller, activeOcc: Occurrence, parent: MatchJournal.MatchChunk): FeedbackStatus {
         assert(activeOcc.stored)
 
         // Forget that occ was seen. Otherwise it will be
@@ -64,7 +63,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
         // Incremental reactivation should proceed more like usual activation.
         this.dispatchingFront = dispatchingFront.forgetExpanded(activeOcc)
 
-        trace.reactivateIncremental(activeOcc)
+        trace.activateContinue(activeOcc)
 
         return processActivated(controller, activeOcc, parent, FeedbackStatus.NORMAL())
     }

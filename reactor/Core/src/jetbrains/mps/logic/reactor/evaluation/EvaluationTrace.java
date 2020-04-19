@@ -33,7 +33,7 @@ public interface EvaluationTrace {
 
     default void reactivate(ConstraintOccurrence occurrence) {}
 
-    default void reactivateIncremental(ConstraintOccurrence occurrence) {}
+    default void activateContinue(ConstraintOccurrence occurrence) {}
 
     default void suspend(ConstraintOccurrence occurrence) {}
 
