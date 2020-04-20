@@ -135,7 +135,7 @@
   <node concept="1lH9Xt" id="4E290qQ07Va">
     <property role="TrG5h" value="Closures" />
     <node concept="1LZb2c" id="7AyqXCdNg6Z" role="1SL9yI">
-      <property role="TrG5h" value="tuples" />
+      <property role="TrG5h" value="literals" />
       <node concept="3cqZAl" id="7AyqXCdNg70" role="3clF45" />
       <node concept="3clFbS" id="7AyqXCdNg71" role="3clF47">
         <node concept="2Hmddi" id="27bTNFfbxgE" role="3cqZAp">
@@ -148,8 +148,8 @@
                 <node concept="2XshWL" id="27bTNFfc1c0" role="2OqNvi">
                   <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
                   <node concept="2tJFMh" id="27bTNFfc1c1" role="2XxRq1">
-                    <node concept="ZC_QK" id="4E290qQ0kDi" role="2tJFKM">
-                      <ref role="2aWVGs" to="anco:4E290qQ09_i" resolve="DemoClosures" />
+                    <node concept="ZC_QK" id="4yZzE4kyIno" role="2tJFKM">
+                      <ref role="2aWVGs" to="anco:zb1Nk79_lP" resolve="ClosureLiterals" />
                     </node>
                   </node>
                 </node>
@@ -157,6 +157,64 @@
               <node concept="1jxXqW" id="27bTNFfc1dX" role="37wK5m" />
             </node>
             <node concept="liA8E" id="27bTNFfbxgJ" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="4yZzE4kyI3j" role="1SL9yI">
+      <property role="TrG5h" value="conversions" />
+      <node concept="3cqZAl" id="4yZzE4kyI3k" role="3clF45" />
+      <node concept="3clFbS" id="4yZzE4kyI3l" role="3clF47">
+        <node concept="2Hmddi" id="4yZzE4kyI3m" role="3cqZAp">
+          <node concept="2OqwBi" id="4yZzE4kyI3n" role="2Hmdds">
+            <node concept="2YIFZM" id="4yZzE4kyI3o" role="2Oq$k0">
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <node concept="2OqwBi" id="4yZzE4kyI3p" role="37wK5m">
+                <node concept="2WthIp" id="4yZzE4kyI3q" role="2Oq$k0" />
+                <node concept="2XshWL" id="4yZzE4kyI3r" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="4yZzE4kyI3s" role="2XxRq1">
+                    <node concept="ZC_QK" id="4yZzE4kyI3t" role="2tJFKM">
+                      <ref role="2aWVGs" to="anco:4E290qQ09_i" resolve="ClosureConversions" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="4yZzE4kyI3u" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="4yZzE4kyI3v" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="4yZzE4kyIfQ" role="1SL9yI">
+      <property role="TrG5h" value="invocations" />
+      <node concept="3cqZAl" id="4yZzE4kyIfR" role="3clF45" />
+      <node concept="3clFbS" id="4yZzE4kyIfS" role="3clF47">
+        <node concept="2Hmddi" id="4yZzE4kyIfT" role="3cqZAp">
+          <node concept="2OqwBi" id="4yZzE4kyIfU" role="2Hmdds">
+            <node concept="2YIFZM" id="4yZzE4kyIfV" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="4yZzE4kyIfW" role="37wK5m">
+                <node concept="2WthIp" id="4yZzE4kyIfX" role="2Oq$k0" />
+                <node concept="2XshWL" id="4yZzE4kyIfY" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="4yZzE4kyIfZ" role="2XxRq1">
+                    <node concept="ZC_QK" id="4yZzE4kyIFO" role="2tJFKM">
+                      <ref role="2aWVGs" to="anco:4S1mDSNPBsJ" resolve="ClosureInvocations" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="4yZzE4kyIg1" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="4yZzE4kyIg2" role="2OqNvi">
               <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
