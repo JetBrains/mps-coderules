@@ -6964,8 +6964,8 @@
         <node concept="37vLTG" id="5itBwM86qEU" role="3clF46">
           <property role="TrG5h" value="logical" />
           <node concept="8X2XB" id="5itBwM86qEV" role="1tU5fm">
-            <node concept="3uibUv" id="5itBwM86qEW" role="8Xvag">
-              <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+            <node concept="3uibUv" id="5OEUA2SPxml" role="8Xvag">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
         </node>
@@ -7024,8 +7024,8 @@
         <node concept="37vLTG" id="5itBwM86qUS" role="3clF46">
           <property role="TrG5h" value="logical" />
           <node concept="8X2XB" id="5itBwM86qUT" role="1tU5fm">
-            <node concept="3uibUv" id="5itBwM86qUU" role="8Xvag">
-              <ref role="3uigEE" to="bj13:~MetaLogical" resolve="MetaLogical" />
+            <node concept="3uibUv" id="5OEUA2SPv9N" role="8Xvag">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
         </node>
