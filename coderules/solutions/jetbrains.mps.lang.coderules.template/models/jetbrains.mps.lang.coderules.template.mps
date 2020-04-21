@@ -1068,6 +1068,9 @@
     <property role="TrG5h" value="QueryKind" />
     <property role="3GE5qa" value="query" />
     <node concept="3Tm1VV" id="4t7Xo7inshO" role="1B3o_S" />
+    <node concept="2AHcQZ" id="5EDW3XE0A4H" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
   </node>
   <node concept="312cEu" id="5uFPQ7BZsAX">
     <property role="TrG5h" value="AbstractConstraint" />
@@ -7410,6 +7413,19 @@
       <node concept="3clFbT" id="1H_6AUSXxtU" role="33vP2m" />
     </node>
     <node concept="3Tm1VV" id="1H_6AUSXnyl" role="1B3o_S" />
+  </node>
+  <node concept="3HP615" id="5EDW3XDYeWv">
+    <property role="3GE5qa" value="query" />
+    <property role="TrG5h" value="Query" />
+    <node concept="2tJIrI" id="5EDW3XDYeXd" role="jymVt" />
+    <node concept="3clFb_" id="5EDW3XDYeXO" role="jymVt">
+      <property role="TrG5h" value="fqName" />
+      <node concept="17QB3L" id="5EDW3XDYeYn" role="3clF45" />
+      <node concept="3Tm1VV" id="5EDW3XDYeXR" role="1B3o_S" />
+      <node concept="3clFbS" id="5EDW3XDYeXS" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="5EDW3XDYeXm" role="jymVt" />
+    <node concept="3Tm1VV" id="5EDW3XDYeWw" role="1B3o_S" />
   </node>
 </model>
 
