@@ -21,6 +21,7 @@
     <import index="6exd" ref="r:0f9b1fb3-00f9-4480-b235-1a906a087ab2(jetbrains.mps.logic.dataform)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="x5bw" ref="r:15ea4f4e-2f41-4ce3-b7e4-a4e0737f0171(jetbrains.mps.lang.coderules.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -108,6 +109,7 @@
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
+        <property id="6489343236075007666" name="label" index="3hQQBS" />
         <child id="1196350785111" name="expression" index="2c44t1" />
       </concept>
       <concept id="1196350785117" name="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" flags="ng" index="2c44tb" />
@@ -1603,6 +1605,49 @@
     <node concept="1YaCAy" id="24ciDNzqUtF" role="1YuTPh">
       <property role="TrG5h" value="termType" />
       <ref role="1YaFvo" to="wq2x:24ciDNzqIuw" resolve="TermType" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5EDW3XEbJHV">
+    <property role="TrG5h" value="typeof_QueryParameter" />
+    <property role="3GE5qa" value="query" />
+    <node concept="3clFbS" id="5EDW3XEbJHW" role="18ibNy">
+      <node concept="1Z5TYs" id="5EDW3XEbJNz" role="3cqZAp">
+        <node concept="mw_s8" id="5EDW3XEbJNR" role="1ZfhKB">
+          <node concept="2c44tf" id="5EDW3XEbJNN" role="mwGJk">
+            <node concept="3uibUv" id="5EDW3XEbJOd" role="2c44tc">
+              <node concept="2c44tb" id="5EDW3XEbJOV" role="lGtFl">
+                <property role="2qtEX8" value="classifier" />
+                <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
+                <property role="3hQQBS" value="ClassifierType" />
+                <node concept="2OqwBi" id="5EDW3XEbL5R" role="2c44t1">
+                  <node concept="2OqwBi" id="5EDW3XEbJYD" role="2Oq$k0">
+                    <node concept="1YBJjd" id="5EDW3XEbJPj" role="2Oq$k0">
+                      <ref role="1YBMHb" node="5EDW3XEbJHY" resolve="qp" />
+                    </node>
+                    <node concept="2qgKlT" id="5EDW3XEbKPs" role="2OqNvi">
+                      <ref role="37wK5l" to="x5bw:5EDW3XEbK7c" resolve="getQueryTemplate" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="5EDW3XEbLk4" role="2OqNvi">
+                    <ref role="3Tt5mk" to="wq2x:5EDW3XE6suU" resolve="queryType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5EDW3XEbJNA" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5EDW3XEbJI5" role="mwGJk">
+            <node concept="1YBJjd" id="5EDW3XEbJJT" role="1Z2MuG">
+              <ref role="1YBMHb" node="5EDW3XEbJHY" resolve="qp" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5EDW3XEbJHY" role="1YuTPh">
+      <property role="TrG5h" value="qp" />
+      <ref role="1YaFvo" to="wq2x:5EDW3XEaQl5" resolve="QueryParameter" />
     </node>
   </node>
 </model>

@@ -237,6 +237,9 @@
         <child id="1107880067339" name="method" index="3MN40a" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -13579,6 +13582,27 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4t7Xo7icolH" role="jymVt" />
+    <node concept="3clFb_" id="5EDW3XE0F7L" role="jymVt">
+      <property role="TrG5h" value="queryClass" />
+      <node concept="3Tm1VV" id="5EDW3XE0F7N" role="1B3o_S" />
+      <node concept="3uibUv" id="5EDW3XE0F7O" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+        <node concept="3qUE_q" id="5EDW3XE0F7P" role="11_B2D">
+          <node concept="3uibUv" id="5EDW3XE0F7Q" role="3qUE_r">
+            <ref role="3uigEE" to="i348:5EDW3XDYeWv" resolve="Query" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="5EDW3XE0F7U" role="3clF47">
+        <node concept="3clFbF" id="5EDW3XE6x5r" role="3cqZAp">
+          <node concept="10Nm6u" id="5EDW3XE6x5q" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5EDW3XE0F7V" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5EDW3XE0GCG" role="jymVt" />
     <node concept="3clFb_" id="7P_FdVPsJk6" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="newQuery" />

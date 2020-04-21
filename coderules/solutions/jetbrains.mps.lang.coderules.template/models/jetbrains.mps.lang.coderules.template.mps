@@ -1027,8 +1027,25 @@
       <node concept="3uibUv" id="4t7Xo7intc6" role="3clF45">
         <ref role="3uigEE" node="4t7Xo7inshN" resolve="QueryKind" />
       </node>
+      <node concept="2AHcQZ" id="5EDW3XE0DfZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="2tJIrI" id="6OXbTD$iO0D" role="jymVt" />
+    <node concept="3clFb_" id="5EDW3XE0DF4" role="jymVt">
+      <property role="TrG5h" value="queryClass" />
+      <node concept="3clFbS" id="5EDW3XE0DF7" role="3clF47" />
+      <node concept="3Tm1VV" id="5EDW3XE0DF8" role="1B3o_S" />
+      <node concept="3uibUv" id="5EDW3XE0Dl6" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+        <node concept="3qUE_q" id="5EDW3XE0DnS" role="11_B2D">
+          <node concept="3uibUv" id="5EDW3XE0Do4" role="3qUE_r">
+            <ref role="3uigEE" node="5EDW3XDYeWv" resolve="Query" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5EDW3XE0Dj$" role="jymVt" />
     <node concept="3clFb_" id="5itBwM78vMu" role="jymVt">
       <property role="TrG5h" value="createToken" />
       <node concept="37vLTG" id="5itBwM78zqd" role="3clF46">

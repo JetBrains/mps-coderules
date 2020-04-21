@@ -837,6 +837,17 @@
     <property role="TrG5h" value="QueryTemplate" />
     <property role="3GE5qa" value="query" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="5EDW3XEcagK" role="1TKVEl">
+      <property role="IQ2nx" value="6533016889632793648" />
+      <property role="TrG5h" value="queryName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="5EDW3XE6suU" role="1TKVEi">
+      <property role="IQ2ns" value="6533016889631295418" />
+      <property role="20kJfa" value="queryType" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:g7pOWCK" resolve="Classifier" />
+    </node>
     <node concept="1TJgyj" id="6OXbTDyyU9U" role="1TKVEi">
       <property role="IQ2ns" value="7871500063838282362" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -877,6 +888,7 @@
       <property role="20kJfa" value="queryKind" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="5EDW3XE6mPT" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="6OXbTD$dU7c" role="1TKVEi">
       <property role="IQ2ns" value="7871500063866331596" />
@@ -1710,6 +1722,31 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="JOGAOsxanH" resolve="TermConstructor" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5EDW3XE0OAL">
+    <property role="EcuMT" value="6533016889629821361" />
+    <property role="3GE5qa" value="query" />
+    <property role="TrG5h" value="QueryTable" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="query table" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5EDW3XE0PmY" role="1TKVEi">
+      <property role="IQ2ns" value="6533016889629824446" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="7P_FdVQ_S6B" resolve="QueryTemplate" />
+    </node>
+    <node concept="PrWs8" id="5EDW3XE0OBD" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5EDW3XEaQl5">
+    <property role="EcuMT" value="6533016889632449861" />
+    <property role="3GE5qa" value="query" />
+    <property role="TrG5h" value="QueryParameter" />
+    <property role="34LRSv" value="query" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
 </model>
 
