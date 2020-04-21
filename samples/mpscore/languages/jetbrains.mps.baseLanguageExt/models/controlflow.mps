@@ -249,6 +249,7 @@
       </concept>
       <concept id="6928531011218148071" name="jetbrains.mps.lang.coderules.structure.IsboundVariableConstraint" flags="ng" index="2aM9Np" />
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
+        <reference id="6533016889631295418" name="queryType" index="KG3u5" />
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="6691972578451976398" name="jetbrains.mps.lang.coderules.structure.RuleInputSpecification" flags="ng" index="2t___k">
@@ -334,6 +335,7 @@
     <property role="TrG5h" value="CheckControlflow" />
     <node concept="2bWyPT" id="78H58oerI06" role="92CTm">
       <property role="TrG5h" value="check" />
+      <ref role="KG3u5" to="fjx4:5EDW3XDZxpN" resolve="CheckQuery" />
       <node concept="3clFbS" id="78H58oerI07" role="fHCRw">
         <node concept="1nLNNL" id="78H58oerI2s" role="3cqZAp">
           <node concept="1nLNMm" id="78H58oerI2t" role="1nLNNK">

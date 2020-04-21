@@ -383,6 +383,7 @@
       </concept>
       <concept id="6928531011218148071" name="jetbrains.mps.lang.coderules.structure.IsboundVariableConstraint" flags="ng" index="2aM9Np" />
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
+        <reference id="6533016889631295418" name="queryType" index="KG3u5" />
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="861509610434242029" name="jetbrains.mps.lang.coderules.structure.TermConstructor" flags="ng" index="ns1u0">
@@ -7402,6 +7403,7 @@
     </node>
     <node concept="2bWyPT" id="5Eb7bDWO9gE" role="92CTm">
       <property role="TrG5h" value="recover" />
+      <ref role="KG3u5" to="tj24:5EDW3XDYNPr" resolve="CheckQuery" />
       <node concept="3clFbS" id="5Eb7bDWO9gF" role="fHCRw">
         <node concept="1nLNNL" id="5Eb7bDWO9jS" role="3cqZAp">
           <node concept="1nLNMm" id="5Eb7bDWO9jT" role="1nLNNK">

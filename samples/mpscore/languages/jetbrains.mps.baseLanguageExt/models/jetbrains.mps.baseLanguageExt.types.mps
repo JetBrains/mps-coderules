@@ -663,6 +663,7 @@
       </concept>
       <concept id="6928531011218148071" name="jetbrains.mps.lang.coderules.structure.IsboundVariableConstraint" flags="ng" index="2aM9Np" />
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
+        <reference id="6533016889631295418" name="queryType" index="KG3u5" />
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="861509610434242029" name="jetbrains.mps.lang.coderules.structure.TermConstructor" flags="ng" index="ns1u0">
@@ -32458,6 +32459,7 @@
     </node>
     <node concept="2bWyPT" id="6OXbTD$ftqj" role="92CTm">
       <property role="TrG5h" value="check" />
+      <ref role="KG3u5" to="tj24:5EDW3XDYNPr" resolve="CheckQuery" />
       <node concept="3clFbS" id="6OXbTD$ftqk" role="fHCRw">
         <node concept="1nLNNL" id="6OXbTD$ftql" role="3cqZAp">
           <node concept="1nLNMm" id="6OXbTD$ftqm" role="1nLNNK">
@@ -32515,6 +32517,7 @@
     </node>
     <node concept="2bWyPT" id="6OXbTD$fttw" role="92CTm">
       <property role="TrG5h" value="subtypeOf" />
+      <ref role="KG3u5" to="tj24:5EDW3XDYNS7" resolve="ConvertQuery" />
       <node concept="3clFbS" id="6OXbTD$fttx" role="fHCRw">
         <node concept="1nLNNL" id="6OXbTD$fttF" role="3cqZAp">
           <node concept="1nLNMm" id="6OXbTD$fttG" role="1nLNNK">
@@ -32533,11 +32536,11 @@
                   <node concept="3I6s7M" id="6OXbTD$fttJ" role="3I6sU7">
                     <node concept="3jbYBd" id="5itBwMb5r7w" role="3I6s78">
                       <ref role="3jbY9l" node="5itBwMau8m1" resolve="lift" />
-                      <node concept="2_cIyK" id="2BZXJecXiSC" role="3jbY8P">
-                        <ref role="2_cIwb" node="2BZXJecOMap" resolve="from" />
-                      </node>
                       <node concept="a7P8L" id="6OXbTD$fttL" role="3jbY8V">
                         <ref role="a7OzE" node="6OXbTD$fttX" resolve="A" />
+                      </node>
+                      <node concept="2_cIyK" id="5EDW3XEeTty" role="3jbY8P">
+                        <ref role="2_cIwb" node="2BZXJecOMap" resolve="from" />
                       </node>
                     </node>
                   </node>
@@ -38296,6 +38299,7 @@
     <property role="3GE5qa" value="query" />
     <node concept="2bWyPT" id="7Bx7XgEgglV" role="92CTm">
       <property role="TrG5h" value="coerceTo" />
+      <ref role="KG3u5" to="tj24:5EDW3XDYNTS" resolve="CoerceQuery" />
       <node concept="3clFbS" id="7Bx7XgEgglW" role="fHCRw">
         <node concept="1nLNNL" id="7Bx7XgEggn0" role="3cqZAp">
           <node concept="1nLNMm" id="7Bx7XgEggn1" role="1nLNNK">

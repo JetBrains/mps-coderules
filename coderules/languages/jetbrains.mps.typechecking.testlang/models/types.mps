@@ -163,6 +163,7 @@
         <child id="3026409000513569515" name="queryKind" index="2_lZgo" />
       </concept>
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
+        <reference id="6533016889631295418" name="queryType" index="KG3u5" />
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="861509610434242029" name="jetbrains.mps.lang.coderules.structure.TermConstructor" flags="ng" index="ns1u0">
@@ -747,6 +748,7 @@
     </node>
     <node concept="2bWyPT" id="6OXbTD$fzli" role="92CTm">
       <property role="TrG5h" value="main" />
+      <ref role="KG3u5" to="tj24:5EDW3XDYNPr" resolve="CheckQuery" />
       <node concept="3clFbS" id="6OXbTD$fzlj" role="fHCRw">
         <node concept="1nLNNL" id="6OXbTD$fzlv" role="3cqZAp">
           <node concept="1nLNMm" id="6OXbTD$fzlw" role="1nLNNK">
@@ -1312,6 +1314,7 @@
     </node>
     <node concept="2bWyPT" id="7mB3viLg9bK" role="92CTm">
       <property role="TrG5h" value="main" />
+      <ref role="KG3u5" to="tj24:5EDW3XDYNS7" resolve="ConvertQuery" />
       <node concept="3clFbS" id="7mB3viLg9bL" role="fHCRw">
         <node concept="1nLNNL" id="7mB3viLg9c$" role="3cqZAp">
           <node concept="1nLNMm" id="7mB3viLg9cA" role="1nLNNK">

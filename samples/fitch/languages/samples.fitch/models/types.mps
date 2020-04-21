@@ -89,6 +89,7 @@
         <child id="3026409000513569515" name="queryKind" index="2_lZgo" />
       </concept>
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
+        <reference id="6533016889631295418" name="queryType" index="KG3u5" />
         <child id="7871500063838282362" name="code" index="fHCRw" />
       </concept>
       <concept id="861509610434243104" name="jetbrains.mps.lang.coderules.structure.TermTable" flags="ng" index="ns1xd">
@@ -550,6 +551,7 @@
     </node>
     <node concept="2bWyPT" id="2rdxkKxrXzd" role="92CTm">
       <property role="TrG5h" value="checkAll" />
+      <ref role="KG3u5" to="tj24:5EDW3XDYNPr" resolve="CheckQuery" />
       <node concept="3clFbS" id="2rdxkKxrXze" role="fHCRw">
         <node concept="1nLNNL" id="2rdxkKxrX$v" role="3cqZAp">
           <node concept="1nLNMm" id="2rdxkKxrX$x" role="1nLNNK">
