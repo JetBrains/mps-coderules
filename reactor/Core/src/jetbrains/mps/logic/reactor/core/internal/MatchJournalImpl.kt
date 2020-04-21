@@ -299,9 +299,10 @@ internal open class MatchJournalImpl(
         if (posPtr.hasNext()) posPtr.next()
     }
 
-    private fun resetOccurrences(occSpecs: Iterable<Chunk.Entry>) =
-        // todo: need iterating over reversed list?
-        occSpecs.forEach {
+    private fun resetOccurrences(occSpecs: List<Chunk.Entry>) =
+        // assume occSpecs are ordered in order of processing
+        //  so, iterate over reversed list
+        occSpecs.asReversed().forEach {
             if (it.discarded) {
                 it.occ.alive = true
                 it.occ.stored = true
@@ -311,7 +312,7 @@ internal open class MatchJournalImpl(
             }
         }
 
-    private fun replayOccurrences(occSpecs: Iterable<Chunk.Entry>) =
+    private fun replayOccurrences(occSpecs: List<Chunk.Entry>) =
         occSpecs.forEach {
             if (it.discarded) {
 //                it.occ.terminate(observable)
