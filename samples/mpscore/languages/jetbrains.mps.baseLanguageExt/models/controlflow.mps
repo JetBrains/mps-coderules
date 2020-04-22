@@ -48,9 +48,6 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -241,7 +238,6 @@
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
       <concept id="7871500063866331595" name="jetbrains.mps.lang.coderules.structure.Query" flags="ng" index="92CTh">
         <child id="7871500063866331596" name="queryStage" index="92CTm" />
-        <child id="3026409000513569515" name="queryKind" index="2_lZgo" />
       </concept>
       <concept id="6928531011217292466" name="jetbrains.mps.lang.coderules.structure.IsfreeVariableConstraint" flags="ng" index="2aLmEc" />
       <concept id="6928531011217258898" name="jetbrains.mps.lang.coderules.structure.LogicVariableConstraint" flags="ng" index="2aLIYG">
@@ -363,10 +359,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="10M0yZ" id="78H58oerHZ5" role="2_lZgo">
-      <ref role="3cqZAo" to="fjx4:4t7Xo7inNvw" resolve="CHECK" />
-      <ref role="1PxDUh" to="fjx4:4t7Xo7inNgi" resolve="ControlflowQueryKind" />
     </node>
   </node>
   <node concept="AVZre" id="78H58oerI5G">

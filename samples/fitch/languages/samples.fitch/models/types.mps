@@ -24,12 +24,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
-      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
-        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
-      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -65,6 +59,9 @@
         <reference id="8829335963593822893" name="declaration" index="a7OzE" />
       </concept>
       <concept id="8829335963591572611" name="jetbrains.mps.logic.structure.LogicalVariableDeclaration" flags="ng" index="aZer4" />
+      <concept id="4780620083400582599" name="jetbrains.mps.logic.structure.LogicalItemExpression" flags="ng" index="1nq8_$">
+        <child id="4780620083400582654" name="logical" index="1nq8_t" />
+      </concept>
       <concept id="8713947027062024097" name="jetbrains.mps.logic.structure.LogicalItemValueExpression" flags="ng" index="1Ft4W6">
         <child id="8713947027062064784" name="logical" index="1FtiSR" />
       </concept>
@@ -85,8 +82,6 @@
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
       <concept id="7871500063866331595" name="jetbrains.mps.lang.coderules.structure.Query" flags="ng" index="92CTh">
         <child id="7871500063866331596" name="queryStage" index="92CTm" />
-        <child id="3026409000515988658" name="parameter" index="2_cLD1" />
-        <child id="3026409000513569515" name="queryKind" index="2_lZgo" />
       </concept>
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
         <reference id="6533016889631295418" name="queryType" index="KG3u5" />
@@ -103,16 +98,11 @@
         <reference id="6691972578451990912" name="applicableConcept" index="2t_S0q" />
         <child id="6691972578451986151" name="input" index="2t_VXX" />
       </concept>
-      <concept id="3026409000516001347" name="jetbrains.mps.lang.coderules.structure.QueryParameterReference" flags="ng" index="2_cIyK">
-        <reference id="3026409000516001528" name="declaration" index="2_cIwb" />
-      </concept>
-      <concept id="3026409000515975840" name="jetbrains.mps.lang.coderules.structure.QueryParameterDeclaration" flags="ng" index="2_cOLj">
-        <child id="3026409000516797621" name="type" index="2_9F96" />
-      </concept>
       <concept id="8335224865066015764" name="jetbrains.mps.lang.coderules.structure.RulesList" flags="ng" index="AVZre">
         <child id="1980609059185345194" name="constraint" index="8PkJo" />
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
+      <concept id="6533016889632449861" name="jetbrains.mps.lang.coderules.structure.QueryParameter" flags="ng" index="KwDlU" />
       <concept id="4957570047283823112" name="jetbrains.mps.lang.coderules.structure.ProvideFeedbackConstraint" flags="ng" index="1lHd6T">
         <property id="4957570047283824112" name="severity" index="1lHdp1" />
         <child id="4957570047284421439" name="message" index="1ljv2e" />
@@ -541,14 +531,6 @@
   </node>
   <node concept="92CTh" id="2rdxkKxrUlk">
     <property role="TrG5h" value="Typecheck" />
-    <node concept="2_cOLj" id="5fMWD6Iy9vK" role="2_cLD1">
-      <property role="TrG5h" value="typeCollector" />
-      <node concept="3uibUv" id="5fMWD6HQY7C" role="2_9F96">
-        <ref role="3uigEE" to="82uw:~BiConsumer" resolve="BiConsumer" />
-        <node concept="2sp9CU" id="5fMWD6HQY7D" role="11_B2D" />
-        <node concept="3Tqbb2" id="5fMWD6HQY7E" role="11_B2D" />
-      </node>
-    </node>
     <node concept="2bWyPT" id="2rdxkKxrXzd" role="92CTm">
       <property role="TrG5h" value="checkAll" />
       <ref role="KG3u5" to="tj24:5EDW3XDYNPr" resolve="CheckQuery" />
@@ -562,8 +544,15 @@
                     <node concept="3Aqt3T" id="2rdxkKxrXAk" role="3I6s78">
                       <ref role="3AqCNq" node="2aBGSFge6lJ" resolve="checkAll" />
                       <node concept="37jhX" id="5HLeEcf2UnH" role="3AunhB">
-                        <node concept="2_cIyK" id="5fMWD6IydCt" role="37jj2">
-                          <ref role="2_cIwb" node="5fMWD6Iy9vK" resolve="typeCollector" />
+                        <node concept="1nq8_$" id="5EDW3XEGqcw" role="37jj2">
+                          <node concept="37jhX" id="5EDW3XEGqcv" role="1nq8_t">
+                            <node concept="2OqwBi" id="5EDW3XEGqlP" role="37jj2">
+                              <node concept="KwDlU" id="5EDW3XEGqcu" role="2Oq$k0" />
+                              <node concept="liA8E" id="5EDW3XEGqwI" role="2OqNvi">
+                                <ref role="37wK5l" to="tj24:5EDW3XDYOgY" resolve="getTypesCollector" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -574,10 +563,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="10M0yZ" id="4RzhaQIJMWM" role="2_lZgo">
-      <ref role="3cqZAo" to="tj24:4t7Xo7inNvw" resolve="TYPECHECK" />
-      <ref role="1PxDUh" to="tj24:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
     </node>
   </node>
   <node concept="ns1xd" id="7VBaGntKJ6x">
