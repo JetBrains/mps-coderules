@@ -5656,7 +5656,7 @@
       <node concept="37vLTG" id="5ntLU8GlSnJ" role="3clF46">
         <property role="TrG5h" value="tpl" />
         <node concept="3uibUv" id="1ffsG7c51iR" role="1tU5fm">
-          <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstraceRuleTemplate" />
+          <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstractRuleTemplate" />
           <node concept="16syzq" id="7XdbJdyQi3s" role="11_B2D">
             <ref role="16sUi3" node="7XdbJdyQdwM" resolve="T" />
           </node>
@@ -6055,7 +6055,7 @@
       <node concept="37vLTG" id="7XdbJdyNeFb" role="3clF46">
         <property role="TrG5h" value="tpl" />
         <node concept="3uibUv" id="7XdbJdyNeFc" role="1tU5fm">
-          <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstraceRuleTemplate" />
+          <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstractRuleTemplate" />
           <node concept="16syzq" id="7XdbJdyQuae" role="11_B2D">
             <ref role="16sUi3" node="7XdbJdyQn2x" resolve="T" />
           </node>
@@ -6211,7 +6211,7 @@
         <property role="TrG5h" value="tpls" />
         <node concept="A3Dl8" id="tIwzd1I3Xn" role="1tU5fm">
           <node concept="3uibUv" id="6tPOoeTdbj8" role="A3Ik2">
-            <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstraceRuleTemplate" />
+            <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstractRuleTemplate" />
             <node concept="3qUE_q" id="6tPOoeTdbj9" role="11_B2D">
               <node concept="3uibUv" id="6tPOoeTdbja" role="3qUE_r">
                 <ref role="3uigEE" to="i348:2RRx4MZ6_68" resolve="RuleTemplate.Token" />
@@ -6372,7 +6372,7 @@
                   <node concept="3cpWsn" id="4MqhgXUBzFo" role="3cpWs9">
                     <property role="TrG5h" value="template" />
                     <node concept="3uibUv" id="4MqhgXUBzF7" role="1tU5fm">
-                      <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstraceRuleTemplate" />
+                      <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstractRuleTemplate" />
                       <node concept="3qUE_q" id="7XdbJdyRy2h" role="11_B2D">
                         <node concept="3uibUv" id="7XdbJdyRyYU" role="3qUE_r">
                           <ref role="3uigEE" to="i348:2RRx4MZ6_68" resolve="RuleTemplate.Token" />
@@ -7010,7 +7010,7 @@
           <node concept="3cpWsn" id="tIwzd1I3Xj" role="1Duv9x">
             <property role="TrG5h" value="tpl" />
             <node concept="3uibUv" id="6tPOoeTdcfx" role="1tU5fm">
-              <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstraceRuleTemplate" />
+              <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstractRuleTemplate" />
               <node concept="3qUE_q" id="6tPOoeTdcfy" role="11_B2D">
                 <node concept="3uibUv" id="6tPOoeTdcfz" role="3qUE_r">
                   <ref role="3uigEE" to="i348:2RRx4MZ6_68" resolve="RuleTemplate.Token" />
@@ -7528,7 +7528,7 @@
               <property role="TrG5h" value="tpls" />
               <node concept="A3Dl8" id="5ntLU8GlzSt" role="1tU5fm">
                 <node concept="3uibUv" id="1ffsG7c5hrm" role="A3Ik2">
-                  <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstraceRuleTemplate" />
+                  <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstractRuleTemplate" />
                   <node concept="3qUE_q" id="7XdbJdyRI0u" role="11_B2D">
                     <node concept="3uibUv" id="7XdbJdyRId5" role="3qUE_r">
                       <ref role="3uigEE" to="i348:2RRx4MZ6_68" resolve="RuleTemplate.Token" />

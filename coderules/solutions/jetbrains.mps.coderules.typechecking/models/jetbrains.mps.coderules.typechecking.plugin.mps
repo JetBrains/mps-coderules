@@ -686,7 +686,7 @@
             </node>
             <node concept="2YIFZM" id="3KN3A4uZFD0" role="33vP2m">
               <ref role="37wK5l" to="fqlx:78H58oefoaA" resolve="discoverable" />
-              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="DefaultCoderulesAspect" />
+              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
               <node concept="3VsKOn" id="3KN3A4uZFD1" role="37wK5m">
                 <ref role="3VsUkX" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
               </node>
@@ -701,7 +701,7 @@
             </node>
             <node concept="2YIFZM" id="3KN3A4v2PX8" role="33vP2m">
               <ref role="37wK5l" to="fqlx:3KN3A4uZLWT" resolve="sidekickDetectable" />
-              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="DefaultCoderulesAspect" />
+              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
             </node>
           </node>
         </node>

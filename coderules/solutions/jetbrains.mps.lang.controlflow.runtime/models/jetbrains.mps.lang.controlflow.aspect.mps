@@ -122,7 +122,7 @@
             <ref role="1Pybhc" to="fqlx:NKt6ynorWQ" resolve="AspectLookup" />
             <ref role="37wK5l" to="fqlx:78H58oefSjC" resolve="lookup" />
             <node concept="2YIFZM" id="3KN3A4v3zEB" role="37wK5m">
-              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="DefaultCoderulesAspect" />
+              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
               <ref role="37wK5l" to="fqlx:78H58oefoaA" resolve="discoverable" />
               <node concept="3VsKOn" id="3KN3A4v3zEC" role="37wK5m">
                 <ref role="3VsUkX" node="7km57Pkjxf4" resolve="ControlflowAspect" />
@@ -130,7 +130,7 @@
             </node>
             <node concept="2YIFZM" id="3KN3A4v3zED" role="37wK5m">
               <ref role="37wK5l" to="fqlx:3KN3A4uZLWT" resolve="sidekickDetectable" />
-              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="DefaultCoderulesAspect" />
+              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
             </node>
           </node>
         </node>
@@ -199,7 +199,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="NKt6yp1DsV" role="1zkMxy">
-      <ref role="3uigEE" to="fqlx:NKt6yp1COZ" resolve="DefaultCoderulesAspect" />
+      <ref role="3uigEE" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
     </node>
   </node>
 </model>

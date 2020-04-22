@@ -695,7 +695,7 @@
               <node concept="3cpWsn" id="1CcQBrPeqBu" role="3cpWs9">
                 <property role="TrG5h" value="template" />
                 <node concept="3uibUv" id="3IIf9OADWM$" role="1tU5fm">
-                  <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstraceRuleTemplate" />
+                  <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstractRuleTemplate" />
                   <node concept="3qTvmN" id="3IIf9OADXsN" role="11_B2D" />
                 </node>
                 <node concept="37vLTw" id="6tPOoeTdjBM" role="33vP2m">
@@ -767,7 +767,7 @@
           <node concept="3cpWsn" id="3YJ7yg2N2M5" role="1Duv9x">
             <property role="TrG5h" value="tpl" />
             <node concept="3uibUv" id="1ffsG7c4ezn" role="1tU5fm">
-              <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstraceRuleTemplate" />
+              <ref role="3uigEE" to="i348:1ffsG7bUbCM" resolve="AbstractRuleTemplate" />
               <node concept="3qUE_q" id="7XdbJdyRKIf" role="11_B2D">
                 <node concept="3uibUv" id="7XdbJdyRMGp" role="3qUE_r">
                   <ref role="3uigEE" to="i348:2RRx4MZ6_68" resolve="RuleTemplate.Token" />
