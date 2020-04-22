@@ -222,6 +222,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -1117,10 +1120,9 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="6OXbTD_oqun" role="2OqNvi">
-                      <ref role="37wK5l" to="hano:4t7Xo7inmSj" resolve="byKind" />
-                      <node concept="10M0yZ" id="4RzhaQIJMWT" role="37wK5m">
-                        <ref role="3cqZAo" to="tj24:4t7Xo7inNvw" resolve="TYPECHECK" />
-                        <ref role="1PxDUh" to="tj24:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+                      <ref role="37wK5l" to="hano:5EDW3XEzBxY" resolve="byQueryType" />
+                      <node concept="3VsKOn" id="5EDW3XEUDys" role="37wK5m">
+                        <ref role="3VsUkX" to="tj24:5EDW3XDYNPr" resolve="CheckQuery" />
                       </node>
                     </node>
                   </node>
@@ -1265,8 +1267,12 @@
                           </node>
                         </node>
                       </node>
-                      <node concept="37vLTw" id="7gOEBI$hjpf" role="37wK5m">
-                        <ref role="3cqZAo" node="7gOEBI$hd0J" resolve="typeCollector" />
+                      <node concept="2YIFZM" id="5EDW3XEzAnI" role="37wK5m">
+                        <ref role="37wK5l" to="tj24:5EDW3XDYggE" resolve="check" />
+                        <ref role="1Pybhc" to="tj24:5EDW3XDYg8Y" resolve="TypecheckingQueries" />
+                        <node concept="37vLTw" id="7gOEBI$hjpf" role="37wK5m">
+                          <ref role="3cqZAo" node="7gOEBI$hd0J" resolve="typeCollector" />
+                        </node>
                       </node>
                     </node>
                   </node>

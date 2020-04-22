@@ -115,6 +115,9 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -750,6 +753,29 @@
       </node>
       <node concept="3uibUv" id="5EDW3XE0dCx" role="EKbjA">
         <ref role="3uigEE" node="5EDW3XDZxpN" resolve="CheckQuery" />
+      </node>
+      <node concept="2tJIrI" id="5EDW3XE$nUv" role="jymVt" />
+      <node concept="3clFb_" id="5EDW3XE$o1z" role="jymVt">
+        <property role="TrG5h" value="type" />
+        <node concept="3uibUv" id="5EDW3XE$o1$" role="3clF45">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qUE_q" id="5EDW3XE$o1_" role="11_B2D">
+            <node concept="3uibUv" id="5EDW3XE$o1A" role="3qUE_r">
+              <ref role="3uigEE" to="i348:5EDW3XDYeWv" resolve="Query" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="5EDW3XE$o1B" role="1B3o_S" />
+        <node concept="3clFbS" id="5EDW3XE$o1D" role="3clF47">
+          <node concept="3clFbF" id="5EDW3XE$ogd" role="3cqZAp">
+            <node concept="3VsKOn" id="5EDW3XE$oh9" role="3clFbG">
+              <ref role="3VsUkX" node="5EDW3XDZxpN" resolve="CheckQuery" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="5EDW3XE$o1E" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="5EDW3XE0d4j" role="jymVt" />

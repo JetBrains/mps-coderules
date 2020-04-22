@@ -35,6 +35,7 @@
     <import index="fqlx" ref="r:2cc226a9-8a78-4010-b962-823343fd28ff(jetbrains.mps.lang.coderules.aspect)" />
     <import index="31yc" ref="r:0c18ff61-1cb9-4ff0-a899-c949ad03f97c(jetbrains.mps.coderules.plugin)" />
     <import index="ksgm" ref="r:6285678b-007f-4527-bcf5-6fd38ba8c969(jetbrains.mps.lang.coderules.program)" />
+    <import index="i348" ref="r:42a15dec-83a9-4fe1-80d6-3bf898c512bd(jetbrains.mps.lang.coderules.template)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -339,9 +340,9 @@
               <node concept="2ShNRf" id="78H58oeuBhR" role="2Oq$k0">
                 <node concept="1pGfFk" id="78H58oeuBZk" role="2ShVmc">
                   <ref role="37wK5l" node="7WKNeR8SQxi" resolve="ControlflowActions.LaunchQuery" />
-                  <node concept="10M0yZ" id="78H58oeuC3J" role="37wK5m">
-                    <ref role="3cqZAo" to="fjx4:4t7Xo7inNvw" resolve="CHECK" />
-                    <ref role="1PxDUh" to="fjx4:4t7Xo7inNgi" resolve="ControlflowQueryKind" />
+                  <node concept="2YIFZM" id="5EDW3XEoR$1" role="37wK5m">
+                    <ref role="37wK5l" to="fjx4:5EDW3XE0cmi" resolve="check" />
+                    <ref role="1Pybhc" to="fjx4:5EDW3XE0ciC" resolve="ControlflowQueries" />
                   </node>
                   <node concept="2OqwBi" id="78H58oeuCf$" role="37wK5m">
                     <node concept="2WthIp" id="78H58oeuCfB" role="2Oq$k0" />
@@ -786,10 +787,10 @@
       <property role="TrG5h" value="LaunchQuery" />
       <node concept="2tJIrI" id="7WKNeR8SQxh" role="jymVt" />
       <node concept="3clFbW" id="7WKNeR8SQxi" role="jymVt">
-        <node concept="37vLTG" id="7WKNeR9ahrT" role="3clF46">
-          <property role="TrG5h" value="queryKind" />
-          <node concept="3uibUv" id="78H58oetGzy" role="1tU5fm">
-            <ref role="3uigEE" to="fjx4:4t7Xo7inNgi" resolve="ControlflowQueryKind" />
+        <node concept="37vLTG" id="5EDW3XEoPeM" role="3clF46">
+          <property role="TrG5h" value="query" />
+          <node concept="3uibUv" id="5EDW3XEoPt7" role="1tU5fm">
+            <ref role="3uigEE" to="i348:5EDW3XDYeWv" resolve="Query" />
           </node>
         </node>
         <node concept="37vLTG" id="7WKNeR8SQxl" role="3clF46">
@@ -830,11 +831,11 @@
               <node concept="2OqwBi" id="7WKNeR9fnha" role="37vLTJ">
                 <node concept="Xjq3P" id="7WKNeR9fnxk" role="2Oq$k0" />
                 <node concept="2OwXpG" id="7WKNeR9fnhd" role="2OqNvi">
-                  <ref role="2Oxat5" node="7WKNeR9fm7b" resolve="queryKind" />
+                  <ref role="2Oxat5" node="7WKNeR9fm7b" resolve="query" />
                 </node>
               </node>
-              <node concept="37vLTw" id="7WKNeR9fm7l" role="37vLTx">
-                <ref role="3cqZAo" node="7WKNeR9ahrT" resolve="queryKind" />
+              <node concept="37vLTw" id="5EDW3XEoR6C" role="37vLTx">
+                <ref role="3cqZAo" node="5EDW3XEoPeM" resolve="query" />
               </node>
             </node>
           </node>
@@ -1001,7 +1002,7 @@
               <node concept="TSZUe" id="7WKNeR8TcX_" role="2OqNvi">
                 <node concept="2ShNRf" id="7WKNeR8TcXE" role="25WWJ7">
                   <node concept="1pGfFk" id="7WKNeR8TcXF" role="2ShVmc">
-                    <ref role="37wK5l" to="1yqb:7WKNeR9fh8j" resolve="ApplyTemplatesStep" />
+                    <ref role="37wK5l" to="1yqb:5EDW3XEoy55" resolve="ApplyTemplatesStep" />
                     <node concept="37vLTw" id="6nFpYluoru8" role="37wK5m">
                       <ref role="3cqZAo" node="6nFpYlun4Ef" resolve="session" />
                     </node>
@@ -1020,7 +1021,7 @@
                       </node>
                     </node>
                     <node concept="37vLTw" id="7WKNeR9foS9" role="37wK5m">
-                      <ref role="3cqZAo" node="7WKNeR9fm7b" resolve="queryKind" />
+                      <ref role="3cqZAo" node="7WKNeR9fm7b" resolve="query" />
                     </node>
                   </node>
                 </node>
@@ -1235,10 +1236,10 @@
         <ref role="3uigEE" node="7WKNeR8RiDf" resolve="ControlflowActions.AbstractAction" />
       </node>
       <node concept="312cEg" id="7WKNeR9fm7b" role="jymVt">
-        <property role="TrG5h" value="queryKind" />
+        <property role="TrG5h" value="query" />
         <node concept="3Tm6S6" id="7WKNeR9fm7c" role="1B3o_S" />
-        <node concept="3uibUv" id="78H58oetHu2" role="1tU5fm">
-          <ref role="3uigEE" to="fjx4:4t7Xo7inNgi" resolve="ControlflowQueryKind" />
+        <node concept="3uibUv" id="5EDW3XEoQuU" role="1tU5fm">
+          <ref role="3uigEE" to="i348:5EDW3XDYeWv" resolve="Query" />
         </node>
       </node>
     </node>
@@ -1903,9 +1904,9 @@
                 <node concept="2ShNRf" id="6Yb9hAqUWJw" role="2Oq$k0">
                   <node concept="1pGfFk" id="6Yb9hAqUWJx" role="2ShVmc">
                     <ref role="37wK5l" node="7WKNeR8SQxi" resolve="ControlflowActions.LaunchQuery" />
-                    <node concept="10M0yZ" id="6Yb9hAqUWJy" role="37wK5m">
-                      <ref role="3cqZAo" to="fjx4:4t7Xo7inNvw" resolve="CHECK" />
-                      <ref role="1PxDUh" to="fjx4:4t7Xo7inNgi" resolve="ControlflowQueryKind" />
+                    <node concept="2YIFZM" id="5EDW3XEoS63" role="37wK5m">
+                      <ref role="37wK5l" to="fjx4:5EDW3XE0cmi" resolve="check" />
+                      <ref role="1Pybhc" to="fjx4:5EDW3XE0ciC" resolve="ControlflowQueries" />
                     </node>
                     <node concept="2OqwBi" id="6Yb9hAqUWJz" role="37wK5m">
                       <node concept="2WthIp" id="6Yb9hAqUWJ$" role="2Oq$k0" />

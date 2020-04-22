@@ -87,9 +87,6 @@
       <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
         <child id="1164991057263" name="throwable" index="YScLw" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -224,6 +221,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="7400021826771268254" name="jetbrains.mps.lang.smodel.structure.SNodePointerType" flags="ig" index="2sp9CU" />
       <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
         <child id="7400021826774799510" name="ref" index="2tJFKM" />
       </concept>
@@ -560,9 +558,20 @@
                       <node concept="37vLTw" id="2Y70AYEcq0D" role="37wK5m">
                         <ref role="3cqZAo" node="2Y70AYEbnBV" resolve="errorMsgHandler" />
                       </node>
-                      <node concept="10M0yZ" id="tyIfzC5MVS" role="37wK5m">
-                        <ref role="3cqZAo" to="tj24:4t7Xo7inNvw" resolve="TYPECHECK" />
-                        <ref role="1PxDUh" to="tj24:4t7Xo7inNgi" resolve="TypecheckingQueryKind" />
+                      <node concept="2YIFZM" id="5EDW3XEUzwx" role="37wK5m">
+                        <ref role="37wK5l" to="tj24:5EDW3XDYggE" resolve="check" />
+                        <ref role="1Pybhc" to="tj24:5EDW3XDYg8Y" resolve="TypecheckingQueries" />
+                        <node concept="1bVj0M" id="5EDW3XEUz_T" role="37wK5m">
+                          <node concept="37vLTG" id="5EDW3XEUzG1" role="1bW2Oz">
+                            <property role="TrG5h" value="p" />
+                            <node concept="2sp9CU" id="5EDW3XEUzMj" role="1tU5fm" />
+                          </node>
+                          <node concept="37vLTG" id="5EDW3XEUzWk" role="1bW2Oz">
+                            <property role="TrG5h" value="n" />
+                            <node concept="3Tqbb2" id="5EDW3XEU$5C" role="1tU5fm" />
+                          </node>
+                          <node concept="3clFbS" id="5EDW3XEUz_U" role="1bW5cS" />
+                        </node>
                       </node>
                     </node>
                   </node>
