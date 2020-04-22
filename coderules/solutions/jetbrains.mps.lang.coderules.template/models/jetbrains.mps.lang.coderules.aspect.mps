@@ -3467,8 +3467,8 @@
       <property role="TrG5h" value="macroTables" />
       <property role="1EzhhJ" value="true" />
       <node concept="3vKaQO" id="6UWSvq4Vu6$" role="3clF45">
-        <node concept="3uibUv" id="6UWSvq4Vu7$" role="3O5elw">
-          <ref role="3uigEE" to="i348:1pPth$m7IVF" resolve="AbstractMacroTable" />
+        <node concept="3uibUv" id="tbauFxRB8v" role="3O5elw">
+          <ref role="3uigEE" to="i348:tbauFxRzkz" resolve="MacroTable" />
         </node>
       </node>
       <node concept="3Tm1VV" id="6UWSvq4Vu5Y" role="1B3o_S" />
@@ -3479,8 +3479,8 @@
       <property role="TrG5h" value="ruleTables" />
       <property role="1EzhhJ" value="true" />
       <node concept="3vKaQO" id="5EDW3XF609H" role="3clF45">
-        <node concept="3uibUv" id="5EDW3XF609J" role="3O5elw">
-          <ref role="3uigEE" to="i348:5EDW3XF5Zh6" resolve="AbstractRuleTable" />
+        <node concept="3uibUv" id="tbauFxRRsb" role="3O5elw">
+          <ref role="3uigEE" to="i348:4MqhgXU9fm3" resolve="RuleTable" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4MqhgXUaiLA" role="1B3o_S" />
@@ -3491,8 +3491,8 @@
       <property role="TrG5h" value="queryTables" />
       <property role="1EzhhJ" value="true" />
       <node concept="3vKaQO" id="5EDW3XF60af" role="3clF45">
-        <node concept="3uibUv" id="5EDW3XF60b$" role="3O5elw">
-          <ref role="3uigEE" to="i348:5EDW3XF608m" resolve="AbstractQueryTable" />
+        <node concept="3uibUv" id="tbauFxRQEm" role="3O5elw">
+          <ref role="3uigEE" to="i348:tbauFxRORi" resolve="QueryTable" />
         </node>
       </node>
       <node concept="3Tm1VV" id="5EDW3XF60ah" role="1B3o_S" />
