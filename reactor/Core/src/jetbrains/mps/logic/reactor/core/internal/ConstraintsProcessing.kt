@@ -249,10 +249,10 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
 
             // TODO: paranoid check. should be isAlive() instead
             // FIXME: move this check elsewhere
-            if (status.operational && active.stored && match.allStored())
+            if (status.operational && active.stored && match.allStored()) {
+                assert(match.allHeads().contains(active))
                 processMatch(controller, match, parent, status)
-            else
-                status
+            } else status
         }
 
         // TODO: should be isAlive()
