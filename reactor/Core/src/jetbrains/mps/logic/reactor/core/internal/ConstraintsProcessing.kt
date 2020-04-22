@@ -212,7 +212,6 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
      */
     fun processActivated(controller: Controller, active: Occurrence, parent: MatchJournal.MatchChunk, inStatus: FeedbackStatus) : FeedbackStatus {
         push()
-        assert(active.alive)
 
         val activationChunk: MatchJournal.OccChunk?
         if (!active.stored) {
@@ -223,6 +222,7 @@ internal class ConstraintsProcessing(private var dispatchingFront: Dispatcher.Di
             // defined (not null) & needed only for incremental execution
             activationChunk = journalIndex.activatingChunkOf(active)
         }
+        assert(active.alive)
 
         profiler.profile("dispatch_${active.constraint().symbol()}") {
 

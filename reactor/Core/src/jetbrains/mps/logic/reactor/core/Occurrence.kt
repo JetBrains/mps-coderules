@@ -39,14 +39,14 @@ class Occurrence (observable: LogicalStateObservable,
     ConstraintOccurrence, ForwardingLogicalObserver, Justified
 {
 
-    var alive = true
+    var alive = false
 
     var stored = false
 
     val identity = System.identityHashCode(this)
 
     init {
-        revive(observable)
+//        revive(observable)
     }
 
     override fun constraint(): Constraint = constraint
@@ -64,18 +64,22 @@ class Occurrence (observable: LogicalStateObservable,
     override fun parentUpdated(logical: Logical<*>, controller: Controller) = doReactivate(controller)
 
     fun terminate(observable: LogicalStateObservable) {
-        for (a in arguments) {
-            if (a is Logical<*>) {
-                observable.removeForwardingObserver(a, this)
+        if (alive) {
+            for (a in arguments) {
+                if (a is Logical<*>) {
+                    observable.removeForwardingObserver(a, this)
+                }
             }
         }
         alive = false
     }
 
     fun revive(observable: LogicalStateObservable) {
-        for (a in arguments) {
-            if (a is Logical<*>) {
-                observable.addForwardingObserver(a, this)
+        if (!alive) {
+            for (a in HashSet(arguments)) { // avoid duplicate subscriptions
+                if (a is Logical<*>) {
+                    observable.addForwardingObserver(a, this)
+                }
             }
         }
         alive = true
