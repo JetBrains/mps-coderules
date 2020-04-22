@@ -19,6 +19,7 @@ package jetbrains.mps.logic.reactor.core.internal
 import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.logical.Logical
 import java.util.*
+import java.util.Collections.singleton
 
 /**
  * Captures the state of logical variables in respect to observers.
@@ -95,7 +96,6 @@ class LogicalState : LogicalStateObservable, LogicalObserver
             logical.addObserver(this)
         }
         currentFrame().addForwardingObserver(logical, observer)
-//        assert(checkForwardingObserverUniqueInstance(logical))
     }
 
     override fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
@@ -106,12 +106,12 @@ class LogicalState : LogicalStateObservable, LogicalObserver
     }
 
     override fun valueUpdated(logical: Logical<*>) {
-        // forward to the top frame
+        // forward to the top frame with added transient state (Controller)
         currentFrame().valueUpdated(logical, controller!!)
     }
 
     override fun parentUpdated(logical: Logical<*>) {
-        // forward to the top frame
+        // forward to the top frame with added transient state (Controller)
         currentFrame().parentUpdated(logical, controller!!)
     }
 
@@ -134,7 +134,7 @@ class LogicalState : LogicalStateObservable, LogicalObserver
  */
 
 @Deprecated("to be removed")
-class LogicalStateFrame : ForwardingLogicalObserver
+class LogicalStateFrame : LogicalStateObservable, ForwardingLogicalObserver
 {
     // FIXME use Vector instead of ConsList
 //    private var observers: PersMap<Id<Logical<*>>, PersList<LogicalObserver>> = Maps.of()
@@ -145,26 +145,28 @@ class LogicalStateFrame : ForwardingLogicalObserver
 //        this.observers = prototype.observers
 //    }
 
-    fun addForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
+    override fun addForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
 //        val logicalId = Id(logical)
 //        this.observers = observers.assoc(logicalId,
 //            observers[logicalId]?.prepend(observer) ?: Lists.of(observer))
         observers.getOrPut(logical) { arrayListOf() }.add(observer)
     }
 
-    fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
+    override fun removeForwardingObserver(logical: Logical<*>, observer: ForwardingLogicalObserver) {
 //        val logicalId = Id(logical)
 //        observers[logicalId]?.let {
 //            this.observers = observers.assoc(logicalId, it.remove(observer)!!)
 //        }
-        observers[logical]?.remove(observer)
+        observers[logical]?.apply {
+            removeAll(singleton(observer))
+            if (isEmpty()) observers.remove(logical)
+        }
     }
-
-    fun isObserving(logical: Logical<*>) = observers.containsKey(logical)
-//        observers[Id(logical)] != null
 
     fun observed(): Sequence<Logical<*>> = observers.keys.asSequence()
 //        observers.keys().asSequence().map { it.wrapped }
+
+    fun isObserving(logical: Logical<*>) = observers.containsKey(logical)
 
     override fun valueUpdated(logical: Logical<*>, controller: Controller) {
         observers[logical]?.let { list ->

@@ -17,7 +17,7 @@
 package jetbrains.mps.logic.reactor.logical;
 
 
-import jetbrains.mps.logic.reactor.core.LogicalObserver;
+import jetbrains.mps.logic.reactor.core.LogicalObservable;
 
 /**
  * A run-time representation of a logical variable.
@@ -26,7 +26,7 @@ import jetbrains.mps.logic.reactor.core.LogicalObserver;
  *
  * @author Fedor Isakov
  */
-public interface Logical<T> {
+public interface Logical<T> extends LogicalObservable {
 
     String name();
 
@@ -52,8 +52,4 @@ public interface Logical<T> {
     boolean isWildcard();
 
     MetaLogical<T> metaLogical();
-
-    void addObserver(LogicalObserver observer);
-
-    void removeObserver(LogicalObserver observer);
 }

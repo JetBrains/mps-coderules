@@ -148,13 +148,13 @@ internal class LogicalImpl<T> : MutableLogical<T> {
     }
 
     override fun addObserver(observer: LogicalObserver) {
-        find().valueObservers.add(this.to(observer))
-        find().parentObservers.add(this.to(observer))
+        find().valueObservers.add(this to observer)
+        find().parentObservers.add(this to observer)
     }
 
     override fun removeObserver(observer: LogicalObserver) {
-        find().valueObservers.removeAll { p -> p.second == observer }
-        find().parentObservers.removeAll { p -> p.second == observer }
+        find().valueObservers.remove(this to observer)
+        find().parentObservers.remove(this to observer)
     }
 
     private fun find(): LogicalImpl<T> {

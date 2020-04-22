@@ -20,6 +20,15 @@ import jetbrains.mps.logic.reactor.core.internal.LogicalImpl
 import jetbrains.mps.logic.reactor.core.internal.LogicalState
 import jetbrains.mps.logic.reactor.logical.Logical
 
+
+interface LogicalObservable {
+
+    fun addObserver(observer: LogicalObserver)
+
+    fun removeObserver(observer: LogicalObserver)
+
+}
+
 /**
  * An observer interface of a [Logical] instance.
  *
@@ -31,12 +40,6 @@ interface LogicalObserver {
 
     fun parentUpdated(logical: Logical<*>)
 
-}
-
-// Helps ensuring absence of memory leak of StateFrameStack through variable's internal arrays of observers
-internal fun checkForwardingObserverUniqueInstance(logical: Logical<*>): Boolean = with(logical as LogicalImpl<*>) {
-    valueObservers.map { it.second }.filterIsInstance<LogicalState>().toHashSet().size <= 1 &&
-        parentObservers.map { it.second }.filterIsInstance<LogicalState>().toHashSet().size <= 1
 }
 
 
