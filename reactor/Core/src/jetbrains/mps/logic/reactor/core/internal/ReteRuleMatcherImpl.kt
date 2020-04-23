@@ -384,6 +384,8 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
 
             lateinit var nodesIt: MutableIterator<ReteNode>
 
+            private var lastIntroduced: Occurrence? = prev?.lastIntroduced
+
             private var __matches: Collection<RuleMatchImpl>? = null
             val matches: Collection<RuleMatchImpl>
                 get() {
@@ -432,6 +434,7 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                 for (i in firstAffected until layers.size) {
                     layers[i].reset()
                 }
+                if (firstAffected >= 0) lastIntroduced = occurrence
 
                 return nextGeneration()
             }
@@ -448,7 +451,9 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
              * Allows to avoid triggering reactivation logic in the next call of "introduce" for this occurrence.
              */
             fun forgetIntroduced(occurrence: Occurrence): Generation {
-                layers.last().forgetContains(occurrence)
+                for (layer in layers) {
+                    layer.forgetContains(occurrence)
+                }
                 return nextGeneration()
             }
 
@@ -468,10 +473,9 @@ internal class ReteRuleMatcherImpl(private var ruleLookup: RuleLookup,
                     
                     val signature = IntArray(headSize).toSignature()
                     n.fillSignature(signature)
-                    if (signature.toTrail().size() < headSize) {
-                        // dupes
-                        continue
-                    }
+                    val trail = signature.toTrail()
+                    if (trail.size() < headSize) continue // has dupes
+                    if (lastIntroduced?.let { trail.contains(it.identity) } == false) continue // not relevant match
 
                     if (consumedSignatures.contains(signature) || uniqueSignatures.contains(signature)) continue
                     uniqueSignatures.add(signature)
