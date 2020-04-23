@@ -7396,6 +7396,7 @@
   <node concept="312cEu" id="5EDW3XF608m">
     <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="AbstractQueryTable" />
+    <property role="1sVAO0" value="true" />
     <node concept="2tJIrI" id="5EDW3XF609u" role="jymVt" />
     <node concept="2tJIrI" id="5EDW3XF609w" role="jymVt" />
     <node concept="3Tm1VV" id="5EDW3XF608n" role="1B3o_S" />
@@ -7485,6 +7486,18 @@
   <node concept="3HP615" id="tbauFxRORi">
     <property role="3GE5qa" value="query" />
     <property role="TrG5h" value="QueryTable" />
+    <node concept="2tJIrI" id="tbauFy9RCK" role="jymVt" />
+    <node concept="3clFb_" id="tbauFy9ROe" role="jymVt">
+      <property role="TrG5h" value="queryTemplates" />
+      <node concept="3vKaQO" id="tbauFy9RTL" role="3clF45">
+        <node concept="3uibUv" id="tbauFy9RUu" role="3O5elw">
+          <ref role="3uigEE" node="6OXbTD$iNPP" resolve="QueryTemplate" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="tbauFy9ROh" role="1B3o_S" />
+      <node concept="3clFbS" id="tbauFy9ROi" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="tbauFy9RCP" role="jymVt" />
     <node concept="3Tm1VV" id="tbauFxRORj" role="1B3o_S" />
   </node>
 </model>
