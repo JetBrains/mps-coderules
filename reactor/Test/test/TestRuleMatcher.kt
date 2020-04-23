@@ -2,14 +2,15 @@ import jetbrains.mps.logic.reactor.core.*
 import jetbrains.mps.logic.reactor.core.internal.UnionFindLinkedList
 import jetbrains.mps.logic.reactor.core.internal.createOccurrenceMatcher
 import jetbrains.mps.logic.reactor.core.internal.logical
+import jetbrains.mps.logic.reactor.evaluation.RuleMatch
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol
 import jetbrains.mps.logic.reactor.program.ConstraintSymbol.symbol
 import jetbrains.mps.logic.reactor.util.Maps
 import jetbrains.mps.unification.Term
 import jetbrains.mps.unification.test.MockTerm.*
 import jetbrains.mps.unification.test.MockTermsParser.*
-import org.junit.Ignore
 import org.junit.Test
+import org.junit.Assert
 import program.MockConstraint
 
 /*
@@ -32,6 +33,12 @@ import program.MockConstraint
  * @author Fedor Isakov
  */
 
+
+fun RuleMatch.relevantFor(occurrence: Occurrence): Boolean
+    = this.allHeads().contains(occurrence)
+
+infix fun RuleMatch.shouldBeRelevantFor(that: Occurrence)
+    = Assert.assertTrue(this.relevantFor(that))
 
 class TestRuleMatcher {
 
@@ -189,7 +196,7 @@ class TestRuleMatcher {
     }
 
     @Test
-    fun testSameOccurrenceLater() {
+    fun testSameOccurrenceInterleaved() {
         with(programWithRules(
             rule("rule1",
                 headReplaced(
@@ -235,6 +242,7 @@ class TestRuleMatcher {
                 ))))
         {
             val foo = occurrence("foo")
+
             with(ruleMatcher().probe()) {
 
                 expand(foo)                                             }.apply {
@@ -248,9 +256,6 @@ class TestRuleMatcher {
                 // repeated call to matches() must return same matches
                 matches().size shouldBe 2                               }.run {
 
-                // fixme: is it expected that expansion
-                //  of already expanded occurrence
-                //  brings back all its past matches?
                 expand(foo)                                             }.apply {
                 matches().size shouldBe 2                               }.run {
             }
@@ -258,7 +263,7 @@ class TestRuleMatcher {
     }
 
     @Test
-    fun testMatchesReset() {
+    fun testMatchesResetOnNewExpand() {
         with(programWithRules(
             rule("main",
                 headReplaced(
@@ -279,18 +284,107 @@ class TestRuleMatcher {
                 expand(occurrence("bar"))                           }.apply {
                 matches().size shouldBe 1                               }.run {
 
-                // expand of any new occurrence resets matches
+                // expand of any NEW occurrence resets matches
+                //  because only matches relevant to the last
+                //  occurrence must be returned
                 expand(occurrence("bazz"))                          }.apply {
                 matches().size shouldBe 0                               }.run {
 
                 expand(occurrence("bar"))                           }.apply {
                 matches().size shouldBe 1                               }.run {
 
-                // fixme: is it expected that expansion
-                //  of already expanded occurrence
-                //  brings back all its past matches?
+                // NB: expansion of already expanded occurrence
+                //  returns all unconsumed matches relevant to it
                 expand(foo)                                             }.apply {
-                matches().size shouldBe 2                               }.run {
+                matches().size shouldBe 2
+                matches().forEach { it shouldBeRelevantFor foo }
+
+                consume(matches().first())                              }.run {
+                expand(foo)                                             }.apply {
+                matches().size shouldBe 1                               }.apply {
+
+            }
+        }
+    }
+
+    @Test
+    fun testMatchesResetOnContract() {
+        with(programWithRules(
+            rule("main",
+                headReplaced(
+                    constraint("foo")
+                ),
+                body(
+                    constraint("qux")
+                ))))
+        {
+            val foo1 = occurrence("foo")
+            val foo2 = occurrence("foo")
+            val foo3 = occurrence("foo")
+
+            with(ruleMatcher().probe()) {
+
+                expand(foo1)                                            }.apply {
+                matches().size shouldBe 1                               }.run {
+
+                expand(foo2)                                            }.apply {
+                // only matches relevant to last
+                //  occurrence must be returned
+                matches().size shouldBe 1                               }.run {
+
+                // contract() shouldn't influence the behavior
+                //  that only relevant matches are returned
+                contract(foo2)                                          }.apply {
+                expand(foo3)                                            }.apply {
+                matches().size shouldBe 1
+                matches().first() shouldBeRelevantFor foo3              }.run {
+
+                // NB: expansion of already expanded occurrence
+                //  returns all unconsumed matches relevant to it
+                expand(foo1)                                            }.apply {
+                matches().size shouldBe 1
+                matches().first() shouldBeRelevantFor foo1              }.run {
+
+            }
+        }
+    }
+
+    @Test
+    fun testMatchesOnlyRelevant() {
+        with(programWithRules(
+            rule("main",
+                headKept(
+                    constraint("bar")
+                ),
+                headReplaced(
+                    constraint("foo")
+                ),
+                body(
+                    constraint("qux")
+                ))))
+        {
+            val foo1 = occurrence("foo")
+            val foo2 = occurrence("foo")
+            val foo3 = occurrence("foo")
+            val bar0 = occurrence("bar")
+
+//            with(ruleMatcher().probe()) {
+            with(Dispatcher(RuleIndex(rulesLists)).front()) {
+
+                expand(foo1)                                            }.apply {
+                matches().count() shouldBe 0                               }.run {
+
+                expand(foo2)                                            }.apply {
+                matches().count() shouldBe 0                               }.run {
+
+                expand(bar0)                                            }.apply {
+                matches().count() shouldBe 2                               }.run {
+
+                expand(foo3)                                            }.apply {
+                matches().count() shouldBe 1                               }.run {
+
+                expand(bar0)                                            }.apply {
+                matches().count() shouldBe 3                               }.run {
 
             }
         }
