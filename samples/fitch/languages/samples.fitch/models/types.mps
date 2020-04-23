@@ -80,9 +80,6 @@
       </concept>
     </language>
     <language id="c4803b19-6d89-4a3b-bf82-390769514add" name="jetbrains.mps.lang.coderules">
-      <concept id="7871500063866331595" name="jetbrains.mps.lang.coderules.structure.Query" flags="ng" index="92CTh">
-        <child id="7871500063866331596" name="queryStage" index="92CTm" />
-      </concept>
       <concept id="9035818301008609703" name="jetbrains.mps.lang.coderules.structure.QueryTemplate" flags="ng" index="2bWyPT">
         <reference id="6533016889631295418" name="queryType" index="KG3u5" />
         <child id="7871500063838282362" name="code" index="fHCRw" />
@@ -103,6 +100,9 @@
         <child id="3575255234175157601" name="template" index="1nK1Vg" />
       </concept>
       <concept id="6533016889632449861" name="jetbrains.mps.lang.coderules.structure.QueryParameter" flags="ng" index="KwDlU" />
+      <concept id="6533016889629821361" name="jetbrains.mps.lang.coderules.structure.QueryTable" flags="ng" index="KEFAe">
+        <child id="6533016889629824446" name="query" index="KEEm1" />
+      </concept>
       <concept id="4957570047283823112" name="jetbrains.mps.lang.coderules.structure.ProvideFeedbackConstraint" flags="ng" index="1lHd6T">
         <property id="4957570047283824112" name="severity" index="1lHdp1" />
         <child id="4957570047284421439" name="message" index="1ljv2e" />
@@ -529,26 +529,33 @@
       </node>
     </node>
   </node>
-  <node concept="92CTh" id="2rdxkKxrUlk">
-    <property role="TrG5h" value="Typecheck" />
-    <node concept="2bWyPT" id="2rdxkKxrXzd" role="92CTm">
-      <property role="TrG5h" value="checkAll" />
+  <node concept="ns1xd" id="7VBaGntKJ6x">
+    <property role="TrG5h" value="Types" />
+    <node concept="ns1x$" id="7VBaGntKJ6y" role="ns1xc">
+      <property role="TrG5h" value="Ok" />
+      <node concept="nspSf" id="7VBaGntKJ6z" role="ns1xx" />
+    </node>
+  </node>
+  <node concept="KEFAe" id="tbauFycdZ3">
+    <property role="TrG5h" value="Queries" />
+    <node concept="2bWyPT" id="tbauFycdZe" role="KEEm1">
+      <property role="TrG5h" value="check" />
       <ref role="KG3u5" to="tj24:5EDW3XDYNPr" resolve="CheckQuery" />
-      <node concept="3clFbS" id="2rdxkKxrXze" role="fHCRw">
-        <node concept="1nLNNL" id="2rdxkKxrX$v" role="3cqZAp">
-          <node concept="1nLNMm" id="2rdxkKxrX$x" role="1nLNNK">
-            <node concept="3xSepi" id="6E2cNicdhiD" role="3xSepv">
-              <node concept="3Aq9E8" id="2rdxkKxrXAg" role="3xSepj">
-                <node concept="3I6sU6" id="2rdxkKxrXAh" role="3Ip0Jz">
-                  <node concept="3I6s7M" id="2rdxkKxrXAl" role="3I6sU7">
-                    <node concept="3Aqt3T" id="2rdxkKxrXAk" role="3I6s78">
+      <node concept="3clFbS" id="tbauFycdZf" role="fHCRw">
+        <node concept="1nLNNL" id="tbauFycdZg" role="3cqZAp">
+          <node concept="1nLNMm" id="tbauFycdZh" role="1nLNNK">
+            <node concept="3xSepi" id="tbauFycdZi" role="3xSepv">
+              <node concept="3Aq9E8" id="tbauFycdZj" role="3xSepj">
+                <node concept="3I6sU6" id="tbauFycdZk" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="tbauFycdZl" role="3I6sU7">
+                    <node concept="3Aqt3T" id="tbauFycdZm" role="3I6s78">
                       <ref role="3AqCNq" node="2aBGSFge6lJ" resolve="checkAll" />
-                      <node concept="37jhX" id="5HLeEcf2UnH" role="3AunhB">
-                        <node concept="1nq8_$" id="5EDW3XEGqcw" role="37jj2">
-                          <node concept="37jhX" id="5EDW3XEGqcv" role="1nq8_t">
-                            <node concept="2OqwBi" id="5EDW3XEGqlP" role="37jj2">
-                              <node concept="KwDlU" id="5EDW3XEGqcu" role="2Oq$k0" />
-                              <node concept="liA8E" id="5EDW3XEGqwI" role="2OqNvi">
+                      <node concept="37jhX" id="tbauFycdZn" role="3AunhB">
+                        <node concept="1nq8_$" id="tbauFycdZo" role="37jj2">
+                          <node concept="37jhX" id="tbauFycdZp" role="1nq8_t">
+                            <node concept="2OqwBi" id="tbauFycdZq" role="37jj2">
+                              <node concept="KwDlU" id="tbauFycdZr" role="2Oq$k0" />
+                              <node concept="liA8E" id="tbauFycdZs" role="2OqNvi">
                                 <ref role="37wK5l" to="tj24:5EDW3XDYOgY" resolve="getTypesCollector" />
                               </node>
                             </node>
@@ -563,13 +570,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="ns1xd" id="7VBaGntKJ6x">
-    <property role="TrG5h" value="Types" />
-    <node concept="ns1x$" id="7VBaGntKJ6y" role="ns1xc">
-      <property role="TrG5h" value="Ok" />
-      <node concept="nspSf" id="7VBaGntKJ6z" role="ns1xx" />
     </node>
   </node>
 </model>
