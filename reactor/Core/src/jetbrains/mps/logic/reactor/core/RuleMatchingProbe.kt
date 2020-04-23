@@ -28,30 +28,61 @@ import java.util.BitSet
  */
 interface RuleMatchingProbe {
 
+    /**
+     * Returns rule for which this probe is created.
+     */
     fun rule(): Rule
 
+    /**
+     * Returns all unconsumed (see [consume]) rule matches
+     * relevant for the last expanded (see [expand]) [Occurrence].
+     *
+     * Returns up-to-date result only if called after [expand].
+     * Shouldn't be relied upon if called after e.g. [consume] or [contract].
+     */
     fun matches(): Collection<RuleMatchEx>
 
+    /**
+     * States whether this probe has any state
+     * important for rule matching algorithm.
+     */
     fun hasOccurrences(): Boolean
 
+    /**
+     * Tells the probe that [ruleMatch] is consumed.
+     * Alters behavior of [matches].
+     */
     fun consume(ruleMatch: RuleMatchEx): RuleMatchingProbe
 
+    /**
+     * Clears all internal state related to [ruleMatch].
+     */
     fun forget(ruleMatch: RuleMatchEx): RuleMatchingProbe
 
     fun expand(occ: Occurrence): RuleMatchingProbe
 
     fun expand(occ: Occurrence, mask: BitSet, profiler: Profiler? = null): RuleMatchingProbe
 
+    /**
+     * Tells the probe that [occ] can't be used for finding matches.
+     */
     fun contract(occ: Occurrence): RuleMatchingProbe
 
     /**
      * Turns the Probe's processing-related state linked with
-     * this occurrence from "fully-expanded" to "partly-expanded".
-     * Doesn't modify internal matches-related state.
-     * Instead modifies how the next "expansion" of this occurrence will be processed.
+     * [occ] from "fully-expanded" to "partially-expanded".
+     * Doesn't modify internal state related to [matches], instead
+     * modifies how the next [expand] of [occ] will be processed.
+     *
+     * Notion of "partially-expanded" state is important
+     * only for incremental execution.
      */
     fun forgetExpanded(occ: Occurrence): RuleMatchingProbe
 
+    /**
+     * Clears internal state related to [consume]
+     * as if [occ] were never seen by this probe.
+     */
     fun forgetConsumed(occ: Occurrence): RuleMatchingProbe
 
 }
