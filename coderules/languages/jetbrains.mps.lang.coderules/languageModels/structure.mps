@@ -110,7 +110,7 @@
     <property role="TrG5h" value="RulesList" />
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="rule" />
-    <property role="34LRSv" value="rulesList" />
+    <property role="34LRSv" value="rule table" />
     <property role="EcuMT" value="8335224865066015764" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="34$A1Mf2w7l" role="1TKVEi">
@@ -137,6 +137,9 @@
     </node>
     <node concept="PrWs8" id="b5g$pBzjBm" role="PzmwI">
       <ref role="PrY4T" node="1CgWc1Tyjkz" resolve="Commentable" />
+    </node>
+    <node concept="t5JxF" id="7LI_gNMj$_R" role="lGtFl">
+      <property role="t5JxN" value="!! FIXME rename to RuleTable !!" />
     </node>
   </node>
   <node concept="1TIwiD" id="6p0DfM0a3d3">
@@ -1608,7 +1611,7 @@
   <node concept="1TIwiD" id="JOGAOsxaCw">
     <property role="EcuMT" value="861509610434243104" />
     <property role="TrG5h" value="TermTable" />
-    <property role="34LRSv" value="DataForm Table" />
+    <property role="34LRSv" value="term table" />
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="term" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
