@@ -1615,6 +1615,11 @@
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="term" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7LI_gNMkNTa" role="1TKVEi">
+      <property role="IQ2ns" value="8966267790978924106" />
+      <property role="20kJfa" value="extended" />
+      <ref role="20lvS9" node="JOGAOsxaCw" resolve="TermTable" />
+    </node>
     <node concept="1TJgyj" id="JOGAOsxaCx" role="1TKVEi">
       <property role="IQ2ns" value="861509610434243105" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
