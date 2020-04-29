@@ -531,9 +531,9 @@
         </node>
       </node>
       <node concept="1E1JtD" id="7BVjoXzUxkQ" role="2G$12L">
-        <property role="BnDLt" value="true" />
         <property role="TrG5h" value="jetbrains.mps.logic" />
         <property role="3LESm3" value="35320f26-77cb-4c55-be9f-a97a27770af1" />
+        <property role="BnDLt" value="true" />
         <node concept="55IIr" id="7BVjoXzUxlc" role="3LF7KH">
           <node concept="2Ry0Ak" id="7BVjoXzUxlM" role="iGT6I">
             <property role="2Ry0Am" value="coderules" />
