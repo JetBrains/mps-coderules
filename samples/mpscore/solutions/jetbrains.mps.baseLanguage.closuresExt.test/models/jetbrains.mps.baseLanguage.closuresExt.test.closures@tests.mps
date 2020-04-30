@@ -221,6 +221,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="5QlJgjTF$RH" role="1SL9yI">
+      <property role="TrG5h" value="literalsAndRecInvocations" />
+      <node concept="3cqZAl" id="5QlJgjTF$RI" role="3clF45" />
+      <node concept="3clFbS" id="5QlJgjTF$RJ" role="3clF47">
+        <node concept="2Hmddi" id="5QlJgjTF$RK" role="3cqZAp">
+          <node concept="2OqwBi" id="5QlJgjTF$RL" role="2Hmdds">
+            <node concept="2YIFZM" id="5QlJgjTF$RM" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="5QlJgjTF$RN" role="37wK5m">
+                <node concept="2WthIp" id="5QlJgjTF$RO" role="2Oq$k0" />
+                <node concept="2XshWL" id="5QlJgjTF$RP" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="5QlJgjTF$RQ" role="2XxRq1">
+                    <node concept="ZC_QK" id="5QlJgjTF_4C" role="2tJFKM">
+                      <ref role="2aWVGs" to="anco:4yZzE4kOJc5" resolve="ClosureLiteralsInvoke" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="5QlJgjTF$RS" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="5QlJgjTF$RT" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2XrIbr" id="35YJGAJTxCf" role="1qtyYc">
       <property role="TrG5h" value="resolve" />
       <node concept="37vLTG" id="35YJGAJTxCF" role="3clF46">
