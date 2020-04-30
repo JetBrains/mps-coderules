@@ -100,9 +100,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
-      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT" />
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -422,7 +420,7 @@
     </node>
     <node concept="3Tm1VV" id="1H_6AUT30JF" role="1B3o_S" />
     <node concept="3uibUv" id="5Ud1wlIO9Yw" role="EKbjA">
-      <ref role="3uigEE" node="2WtKs4u1ogK" resolve="SpecProvider" />
+      <ref role="3uigEE" to="i348:2WtKs4u1ogK" resolve="SpecProvider" />
     </node>
   </node>
   <node concept="312cEu" id="1H_6AUT30Sc">
@@ -497,10 +495,12 @@
         </node>
       </node>
       <node concept="3Tmbuc" id="5VJ3UjCjiO4" role="1B3o_S" />
-      <node concept="10P_77" id="5VJ3UjCjiO5" role="3clF45" />
+      <node concept="3uibUv" id="5ka_cIaiY1t" role="3clF45">
+        <ref role="3uigEE" to="i348:1H_6AUSXnyk" resolve="ProgramAnalysis" />
+      </node>
       <node concept="3clFbS" id="5VJ3UjCjiO6" role="3clF47">
         <node concept="3clFbF" id="5VJ3UjCjiO9" role="3cqZAp">
-          <node concept="3clFbT" id="5VJ3UjCjiO8" role="3clFbG" />
+          <node concept="Xjq3P" id="5ka_cIajkzy" role="3clFbG" />
         </node>
       </node>
       <node concept="2AHcQZ" id="5VJ3UjCjiO7" role="2AJF6D">
@@ -710,18 +710,6 @@
       </node>
     </node>
   </node>
-  <node concept="3HP615" id="2WtKs4u1ogK">
-    <property role="TrG5h" value="SpecProvider" />
-    <node concept="3clFb_" id="5Ud1wlIOa8f" role="jymVt">
-      <property role="TrG5h" value="getSpec" />
-      <node concept="3clFbS" id="5Ud1wlIOa8i" role="3clF47" />
-      <node concept="3Tm1VV" id="5Ud1wlIOa8j" role="1B3o_S" />
-      <node concept="3uibUv" id="5Ud1wlIOa7U" role="3clF45">
-        <ref role="3uigEE" to="av0y:~IncrementalProgramSpec" resolve="IncrementalProgramSpec" />
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="2WtKs4u1ogL" role="1B3o_S" />
-  </node>
   <node concept="312cEu" id="6b4eZz$Pl6e">
     <property role="1sVAO0" value="true" />
     <property role="TrG5h" value="BasicProgramAnalysis" />
@@ -765,6 +753,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5ka_cIaj6kt" role="jymVt" />
     <node concept="3clFb_" id="6b4eZz$PC$s" role="jymVt">
       <property role="TrG5h" value="getSpec" />
       <node concept="3clFbS" id="6b4eZz$PC$t" role="3clF47">
@@ -880,15 +869,15 @@
         </node>
         <node concept="3clFbH" id="6b4eZz$PR9H" role="3cqZAp" />
         <node concept="3cpWs6" id="6b4eZz$PR9I" role="3cqZAp">
-          <node concept="3clFbT" id="6b4eZz$PR9J" role="3cqZAk">
-            <property role="3clFbU" value="true" />
-          </node>
+          <node concept="Xjq3P" id="5ka_cIaj52J" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tmbuc" id="6b4eZz$PR9K" role="1B3o_S" />
-      <node concept="10P_77" id="6b4eZz$PR9L" role="3clF45" />
       <node concept="2AHcQZ" id="6b4eZz$PR9M" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="3uibUv" id="5ka_cIaj3iN" role="3clF45">
+        <ref role="3uigEE" to="i348:1H_6AUSXnyk" resolve="ProgramAnalysis" />
       </node>
     </node>
     <node concept="2tJIrI" id="7m2UX3UIaRM" role="jymVt" />
@@ -926,11 +915,11 @@
     </node>
     <node concept="2tJIrI" id="6b4eZz$PQ4u" role="jymVt" />
     <node concept="3Tm1VV" id="6b4eZz$Pl6f" role="1B3o_S" />
+    <node concept="3uibUv" id="6b4eZz$PmDz" role="EKbjA">
+      <ref role="3uigEE" to="i348:2WtKs4u1ogK" resolve="SpecProvider" />
+    </node>
     <node concept="3uibUv" id="6b4eZz$PlaI" role="1zkMxy">
       <ref role="3uigEE" to="i348:1H_6AUSXnyk" resolve="ProgramAnalysis" />
-    </node>
-    <node concept="3uibUv" id="6b4eZz$PmDz" role="EKbjA">
-      <ref role="3uigEE" node="2WtKs4u1ogK" resolve="SpecProvider" />
     </node>
   </node>
 </model>
