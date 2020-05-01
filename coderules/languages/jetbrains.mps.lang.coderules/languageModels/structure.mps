@@ -671,7 +671,7 @@
     <property role="EcuMT" value="3575255234174969615" />
     <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="RuleTemplate" />
-    <property role="34LRSv" value="template" />
+    <property role="34LRSv" value="rule template" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="xaaVXv4NiS" role="1TKVEl">
       <property role="IQ2nx" value="597338001513854136" />
