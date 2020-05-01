@@ -200,10 +200,10 @@
         <child id="861509610434243076" name="override" index="ns1xD" />
       </concept>
       <concept id="861509610434243104" name="jetbrains.mps.lang.coderules.structure.TermTable" flags="ng" index="ns1xd">
+        <reference id="8966267790978924106" name="extended" index="2efqH6" />
         <child id="861509610434243105" name="contents" index="ns1xc" />
       </concept>
       <concept id="861509610434243081" name="jetbrains.mps.lang.coderules.structure.TermDeclaration" flags="ng" index="ns1x$">
-        <property id="5177758076344254900" name="open" index="3uGXoX" />
         <reference id="861509610434243089" name="prototype" index="ns1xW" />
         <child id="861509610434243084" name="template" index="ns1xx" />
       </concept>
@@ -1191,14 +1191,10 @@
   </node>
   <node concept="ns1xd" id="4E290qPYB4i">
     <property role="TrG5h" value="TupleTerms" />
-    <node concept="ns1x$" id="4lCLOtwq2MF" role="ns1xc">
-      <property role="TrG5h" value="type" />
-      <property role="3uGXoX" value="true" />
-      <node concept="nspSf" id="4lCLOtwq2MG" role="ns1xx" />
-    </node>
+    <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
     <node concept="ns1x$" id="4E290qPYB6e" role="ns1xc">
       <property role="TrG5h" value="tuple" />
-      <ref role="ns1xW" node="4lCLOtwq2MF" resolve="type" />
+      <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
       <node concept="nspSf" id="4E290qPYB6f" role="ns1xx">
         <node concept="nsiOd" id="4E290qPYBjo" role="nspSe">
           <property role="TrG5h" value="types" />
