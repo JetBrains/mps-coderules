@@ -25,7 +25,6 @@
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.lang.typechecking.runtime/jetbrains.mps.lang.typechecking.runtime.msd" folder="typechecking.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.logic.reactor/jetbrains.mps.logic.reactor.msd" folder="logic" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.logic.test/jetbrains.mps.logic.test.msd" folder="logic" />
-      <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.firstOrderLogic/samples.fitch.firstOrderLogic.mpl" folder="samples.fitch" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.herbrandLogic/samples.fitch.herbrandLogic.mpl" folder="samples.fitch" />
       <modulePath path="$PROJECT_DIR$/samples/fitch/languages/samples.fitch.propositionalLogic/samples.fitch.propositionalLogic.mpl" folder="samples.fitch" />
@@ -36,6 +35,8 @@
       <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/samples.lambdacalc.build/samples.lambdacalc.build.msd" folder="samples.lambdacalc" />
       <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/samples.lambdacalc.demo/samples.lambdacalc.demo.msd" folder="samples.lambdacalc" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.javadocExt/jetbrains.mps.baseLanguage.javadocExt.mpl" folder="samples.mpscore.baseLanguageExt" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.sequence/jetbrains.mps.baseLanguage.sequence.mpl" folder="samples.mpscore.baseLanguageExt" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/samples.mpscore.build/samples.mpscore.build.msd" folder="samples.mpscore.build" />
