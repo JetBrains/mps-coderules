@@ -50,6 +50,7 @@
         <module reference="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" version="0" />
         <module reference="c1f5ad88-21f4-4e0e-927c-48b1ca0c2334(jetbrains.mps.baseLanguage.collectionsExt)" version="0" />
         <module reference="16bb0310-b3c9-4a1a-9a50-71bc986ac00d(jetbrains.mps.baseLanguage.collectionsExt#01)" version="0" />
+        <module reference="96eeb076-cd7e-4797-9c2a-348e3f826e65(jetbrains.mps.baseLanguage.function)" version="0" />
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
         <module reference="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" version="0" />
         <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
@@ -113,6 +114,7 @@
     <module reference="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" version="0" />
     <module reference="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" version="0" />
     <module reference="c1f5ad88-21f4-4e0e-927c-48b1ca0c2334(jetbrains.mps.baseLanguage.collectionsExt)" version="0" />
+    <module reference="96eeb076-cd7e-4797-9c2a-348e3f826e65(jetbrains.mps.baseLanguage.function)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
     <module reference="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" version="0" />
     <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
@@ -129,6 +131,7 @@
     <extendedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</extendedLanguage>
     <extendedLanguage>0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)</extendedLanguage>
     <extendedLanguage>88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)</extendedLanguage>
+    <extendedLanguage>96eeb076-cd7e-4797-9c2a-348e3f826e65(jetbrains.mps.baseLanguage.function)</extendedLanguage>
   </extendedLanguages>
 </language>
 
