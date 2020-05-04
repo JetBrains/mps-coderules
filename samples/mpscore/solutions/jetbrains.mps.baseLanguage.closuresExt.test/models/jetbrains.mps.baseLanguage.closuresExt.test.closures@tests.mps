@@ -250,6 +250,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="4AYiKM_Sxfs" role="1SL9yI">
+      <property role="TrG5h" value="functionalInterfaces" />
+      <node concept="3cqZAl" id="4AYiKM_Sxft" role="3clF45" />
+      <node concept="3clFbS" id="4AYiKM_Sxfx" role="3clF47">
+        <node concept="2Hmddi" id="4AYiKM_Sxjs" role="3cqZAp">
+          <node concept="2OqwBi" id="4AYiKM_Sxjt" role="2Hmdds">
+            <node concept="2YIFZM" id="4AYiKM_Sxju" role="2Oq$k0">
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <node concept="2OqwBi" id="4AYiKM_Sxjv" role="37wK5m">
+                <node concept="2WthIp" id="4AYiKM_Sxjw" role="2Oq$k0" />
+                <node concept="2XshWL" id="4AYiKM_Sxjx" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="4AYiKM_Sxjy" role="2XxRq1">
+                    <node concept="ZC_QK" id="4AYiKM_Sxql" role="2tJFKM">
+                      <ref role="2aWVGs" to="anco:4AYiKM_P$tr" resolve="FunctionalInterfaces" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="4AYiKM_Sxj$" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="4AYiKM_Sxj_" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2XrIbr" id="35YJGAJTxCf" role="1qtyYc">
       <property role="TrG5h" value="resolve" />
       <node concept="37vLTG" id="35YJGAJTxCF" role="3clF46">
