@@ -248,7 +248,6 @@
         <child id="6097203247182937145" name="input" index="3jbY8P" />
         <child id="6097203247182937143" name="logical" index="3jbY8V" />
       </concept>
-      <concept id="7248331023826941335" name="jetbrains.mps.lang.coderules.structure.AssertExpressionConstraint" flags="ng" index="3lcGGY" />
       <concept id="3923391191348208850" name="jetbrains.mps.lang.coderules.structure.Substitution" flags="ng" index="1lh$Hi">
         <child id="3923391191348208863" name="origin" index="1lh$Hv" />
         <child id="3923391191348208865" name="replacement" index="1lh$Hx" />
@@ -1270,9 +1269,9 @@
                 <node concept="3xSepi" id="6E2cNicdh87" role="3xSepv">
                   <node concept="3Aq9E8" id="3w0n0hzmrM0" role="3xSepj">
                     <node concept="3I6sU6" id="3w0n0hzmrM1" role="3Ip0Jz">
-                      <node concept="3I6s7M" id="3w0n0hzno$y" role="3I6sU7">
-                        <node concept="3lcGGY" id="3w0n0hzno$x" role="3I6s78">
-                          <node concept="37vLTw" id="6$MtiK8GZNA" role="3wWo3s">
+                      <node concept="3I6s7M" id="7AMUQZVqbEr" role="3I6sU7">
+                        <node concept="3wWvb2" id="7AMUQZVqbEn" role="3I6s78">
+                          <node concept="37vLTw" id="7AMUQZVqbED" role="3wWo3s">
                             <ref role="3cqZAo" node="3w0n0hzmrNy" resolve="replOk" />
                           </node>
                         </node>
@@ -2051,9 +2050,9 @@
                 <node concept="3xSepi" id="6E2cNicdh89" role="3xSepv">
                   <node concept="3Aq9E8" id="3w0n0hznw_3" role="3xSepj">
                     <node concept="3I6sU6" id="3w0n0hznw_4" role="3Ip0Jz">
-                      <node concept="3I6s7M" id="3w0n0hznw_5" role="3I6sU7">
-                        <node concept="3lcGGY" id="3w0n0hznw_6" role="3I6s78">
-                          <node concept="37vLTw" id="6$MtiK8GZNB" role="3wWo3s">
+                      <node concept="3I6s7M" id="7AMUQZVqbIW" role="3I6sU7">
+                        <node concept="3wWvb2" id="7AMUQZVqbIV" role="3I6s78">
+                          <node concept="37vLTw" id="7AMUQZVqbJ6" role="3wWo3s">
                             <ref role="3cqZAo" node="3w0n0hznw_s" resolve="replOk" />
                           </node>
                         </node>
