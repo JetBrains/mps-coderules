@@ -443,6 +443,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="6KIXGIaSEhp" role="1SL9yI">
+      <property role="TrG5h" value="loopAndConditionalStatements" />
+      <node concept="3cqZAl" id="6KIXGIaSEhq" role="3clF45" />
+      <node concept="3clFbS" id="6KIXGIaSEhr" role="3clF47">
+        <node concept="2Hmddi" id="6KIXGIaSEhs" role="3cqZAp">
+          <node concept="2OqwBi" id="6KIXGIaSEht" role="2Hmdds">
+            <node concept="2YIFZM" id="6KIXGIaSEhu" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="6KIXGIaSEhv" role="37wK5m">
+                <node concept="2WthIp" id="6KIXGIaSEhw" role="2Oq$k0" />
+                <node concept="2XshWL" id="6KIXGIaSEhx" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="6KIXGIaSEhy" role="2XxRq1">
+                    <node concept="ZC_QK" id="6KIXGIaSEHA" role="2tJFKM">
+                      <ref role="2aWVGs" to="yg5v:6KIXGIaNI5i" resolve="LoopAndConditionStatements" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="6KIXGIaSEh$" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="6KIXGIaSEh_" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1LZb2c" id="2i6cuYQuHi8" role="1SL9yI">
       <property role="TrG5h" value="operators" />
       <node concept="3cqZAl" id="2i6cuYQuHi9" role="3clF45" />
@@ -502,7 +531,7 @@
       </node>
     </node>
     <node concept="1LZb2c" id="3XUOzow_cBQ" role="1SL9yI">
-      <property role="TrG5h" value="RawConversions" />
+      <property role="TrG5h" value="awConversions" />
       <node concept="3cqZAl" id="3XUOzow_cBR" role="3clF45" />
       <node concept="3clFbS" id="3XUOzow_cBS" role="3clF47">
         <node concept="2Hmddi" id="3XUOzow_cBT" role="3cqZAp">
@@ -618,7 +647,7 @@
       </node>
     </node>
     <node concept="1LZb2c" id="PltxfHwhDC" role="1SL9yI">
-      <property role="TrG5h" value="Lub" />
+      <property role="TrG5h" value="LUB" />
       <node concept="3cqZAl" id="PltxfHwhDD" role="3clF45" />
       <node concept="3clFbS" id="PltxfHwhDH" role="3clF47">
         <node concept="2Hmddi" id="PltxfHwhRP" role="3cqZAp">
@@ -647,7 +676,7 @@
       </node>
     </node>
     <node concept="1LZb2c" id="6EK6UBPqaQ3" role="1SL9yI">
-      <property role="TrG5h" value="Enums" />
+      <property role="TrG5h" value="enums" />
       <node concept="3cqZAl" id="6EK6UBPqaQ4" role="3clF45" />
       <node concept="3clFbS" id="6EK6UBPqaQ5" role="3clF47">
         <node concept="2Hmddi" id="6EK6UBPqaQ6" role="3cqZAp">
