@@ -661,7 +661,7 @@
   <node concept="AVZre" id="4S1mDSNOe5f">
     <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="Closures" />
-    <ref role="2YbDB9" to="kqnc:6qJjpCjlmVR" resolve="CheckAll" />
+    <ref role="2YbDB9" to="kqnc:34$A1Mf51rY" resolve="TypeOf" />
     <node concept="1nLNMY" id="4S1mDSNOe5g" role="1nK1Vg">
       <property role="TrG5h" value="closureLiteral" />
       <node concept="3clFbS" id="4S1mDSNOe5h" role="1nLNMH">
@@ -4067,24 +4067,6 @@
                                       </node>
                                     </node>
                                   </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3Aq93q" id="4AYiKM_RfRz" role="1nLNMb">
-                          <property role="3ArMco" value="true" />
-                          <node concept="3I6sU6" id="4AYiKM_RfR$" role="3Ip0Jz">
-                            <node concept="3I6s7M" id="4AYiKM_RfRM" role="3I6sU7">
-                              <node concept="3Aqt3T" id="4AYiKM_RfRL" role="3I6s78">
-                                <ref role="3AqCNq" to="kqnc:4btN1w5A2ZH" resolve="genDecl" />
-                                <node concept="37jhX" id="4AYiKM_RfRT" role="3AunhB">
-                                  <node concept="37vLTw" id="4AYiKM_RfRR" role="37jj2">
-                                    <ref role="3cqZAo" node="4AYiKM_RdDr" resolve="mdecl" />
-                                  </node>
-                                </node>
-                                <node concept="a7P8L" id="4AYiKM_RBZv" role="3AunhB">
-                                  <ref role="a7OzE" node="4AYiKM_RfSa" resolve="Decl" />
                                 </node>
                               </node>
                             </node>

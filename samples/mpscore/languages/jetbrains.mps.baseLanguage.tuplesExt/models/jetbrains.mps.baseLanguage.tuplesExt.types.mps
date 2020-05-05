@@ -461,7 +461,7 @@
   <node concept="AVZre" id="4E290qPYMO2">
     <property role="TrG5h" value="IndexedTuple" />
     <property role="3GE5qa" value="rule" />
-    <ref role="2YbDB9" to="kqnc:6qJjpCjlmVR" resolve="CheckAll" />
+    <ref role="2YbDB9" to="kqnc:34$A1Mf51rY" resolve="TypeOf" />
     <node concept="3AqmO8" id="4E290qPZ$ob" role="8PkJo">
       <property role="TrG5h" value="tupleAccessImpl" />
       <node concept="1zAUYm" id="1PW9iVES6h8" role="1zAUyy">

@@ -219,7 +219,7 @@
   </registry>
   <node concept="AVZre" id="7LI_gNMWq1K">
     <property role="TrG5h" value="Check" />
-    <ref role="2YbDB9" to="kqnc:6qJjpCjlmVR" resolve="CheckAll" />
+    <ref role="2YbDB9" to="kqnc:34$A1Mf51rY" resolve="TypeOf" />
     <node concept="1nLNMY" id="7LI_gNMWuaG" role="1nK1Vg">
       <property role="TrG5h" value="logicalContextExpression" />
       <node concept="3clFbS" id="7LI_gNMWuaH" role="1nLNMH">
