@@ -55,6 +55,7 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="qqrq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.components(MPS.IDEA/)" />
+    <import index="mpcv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.ref(JDK/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -2898,8 +2899,13 @@
                           <ref role="37wK5l" to="wyt6:~StringBuilder.toString()" resolve="toString" />
                         </node>
                       </node>
-                      <node concept="37vLTw" id="1vxei$1pZxj" role="37wK5m">
-                        <ref role="3cqZAo" node="1vxei$17IvL" resolve="to" />
+                      <node concept="2ShNRf" id="4ourwoEhXBd" role="37wK5m">
+                        <node concept="1pGfFk" id="4ourwoEierz" role="2ShVmc">
+                          <ref role="37wK5l" to="mpcv:~SoftReference.&lt;init&gt;(java.lang.Object)" resolve="SoftReference" />
+                          <node concept="37vLTw" id="4ourwoEieWR" role="37wK5m">
+                            <ref role="3cqZAo" node="1vxei$17IvL" resolve="to" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
