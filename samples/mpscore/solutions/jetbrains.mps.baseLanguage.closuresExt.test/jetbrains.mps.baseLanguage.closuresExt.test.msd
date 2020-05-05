@@ -24,7 +24,7 @@
     <language slang="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" version="0" />
     <language slang="l:9e36d2ee-c59c-4580-9e81-646748d0614b:jetbrains.mps.baseLanguage.closuresExt" version="0" />
     <language slang="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" version="1" />
-    <language slang="l:c1f5ad88-21f4-4e0e-927c-48b1ca0c2334:jetbrains.mps.baseLanguage.collectionsExt" version="0" />
+    <language slang="l:96eeb076-cd7e-4797-9c2a-348e3f826e65:jetbrains.mps.baseLanguage.function" version="0" />
     <language slang="l:88dcbb14-19c3-4776-8f81-33611ca4d87c:jetbrains.mps.baseLanguage.sequence" version="0" />
     <language slang="l:f61473f9-130f-42f6-b98d-6c438812c2f6:jetbrains.mps.baseLanguage.unitTest" version="1" />
     <language slang="l:0fda14cc-a416-4c81-869a-2175d8b3325d:jetbrains.mps.baseLanguageExt" version="0" />
@@ -45,6 +45,7 @@
     <module reference="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" version="0" />
     <module reference="9e36d2ee-c59c-4580-9e81-646748d0614b(jetbrains.mps.baseLanguage.closuresExt)" version="0" />
     <module reference="3c682bda-3c05-41c1-b4bb-e321b08cbff0(jetbrains.mps.baseLanguage.closuresExt.test)" version="0" />
+    <module reference="96eeb076-cd7e-4797-9c2a-348e3f826e65(jetbrains.mps.baseLanguage.function)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
     <module reference="88dcbb14-19c3-4776-8f81-33611ca4d87c(jetbrains.mps.baseLanguage.sequence)" version="0" />
     <module reference="0fda14cc-a416-4c81-869a-2175d8b3325d(jetbrains.mps.baseLanguageExt)" version="0" />
