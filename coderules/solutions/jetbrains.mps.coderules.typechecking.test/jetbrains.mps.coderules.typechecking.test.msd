@@ -51,6 +51,8 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
     <language slang="l:35320f26-77cb-4c55-be9f-a97a27770af1:jetbrains.mps.logic" version="12" />
     <language slang="l:3a1f0f04-b5e0-43be-884e-b856bfdeca21:jetbrains.mps.typechecking.testlang" version="0" />
+    <language slang="l:f2222c61-5f49-4d55-bb88-a14d6fed1be7:jetbrains.mps.typechecking.testlangCycle1" version="0" />
+    <language slang="l:a32939ba-878b-4531-93ec-c5e14424159b:jetbrains.mps.typechecking.testlangCycle2" version="0" />
   </languageVersions>
   <dependencyVersions>
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
