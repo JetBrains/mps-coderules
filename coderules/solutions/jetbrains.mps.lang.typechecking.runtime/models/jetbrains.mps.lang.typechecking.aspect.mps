@@ -129,10 +129,6 @@
                 <ref role="3VsUkX" node="7km57Pkjxf4" resolve="TypecheckingAspect" />
               </node>
             </node>
-            <node concept="2YIFZM" id="3KN3A4v4kbG" role="37wK5m">
-              <ref role="37wK5l" to="fqlx:3KN3A4uZLWT" resolve="sidekickDetectable" />
-              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
-            </node>
           </node>
         </node>
       </node>

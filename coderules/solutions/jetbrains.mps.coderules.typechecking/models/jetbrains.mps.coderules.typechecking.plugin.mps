@@ -678,9 +678,12 @@
         <node concept="3clFbH" id="2ceN1hCDHRW" role="3cqZAp" />
         <node concept="3cpWs8" id="3KN3A4uZFCY" role="3cqZAp">
           <node concept="3cpWsn" id="3KN3A4uZFCZ" role="3cpWs9">
-            <property role="TrG5h" value="ad" />
+            <property role="TrG5h" value="discoverable" />
             <node concept="3uibUv" id="3KN3A4uZFjJ" role="1tU5fm">
               <ref role="3uigEE" to="fqlx:NKt6ynom3d" resolve="AspectDiscoverable" />
+              <node concept="3uibUv" id="6nx4rRkXlnq" role="11_B2D">
+                <ref role="3uigEE" to="vndm:~LanguageRuntime" resolve="LanguageRuntime" />
+              </node>
               <node concept="3uibUv" id="3KN3A4uZFjM" role="11_B2D">
                 <ref role="3uigEE" to="u46i:7km57Pkjxf4" resolve="TypecheckingAspect" />
               </node>
@@ -694,19 +697,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="3KN3A4v2PX6" role="3cqZAp">
-          <node concept="3cpWsn" id="3KN3A4v2PX7" role="3cpWs9">
-            <property role="TrG5h" value="sd" />
-            <node concept="3uibUv" id="3KN3A4v2PVb" role="1tU5fm">
-              <ref role="3uigEE" to="fqlx:3KN3A4uUig2" resolve="SidekickDetectable" />
-            </node>
-            <node concept="2YIFZM" id="3KN3A4v2PX8" role="33vP2m">
-              <ref role="37wK5l" to="fqlx:3KN3A4uZLWT" resolve="sidekickDetectable" />
-              <ref role="1Pybhc" to="fqlx:NKt6yp1COZ" resolve="AbstractCoderulesAspect" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="2ceN1hCDAA8" role="3cqZAp" />
         <node concept="3cpWs8" id="2ceN1hCDCZX" role="3cqZAp">
           <node concept="3cpWsn" id="2ceN1hCDCZY" role="3cpWs9">
             <property role="TrG5h" value="srcCliques" />
@@ -727,11 +717,8 @@
                   <ref role="3cqZAo" node="uB9WAZ6Tj1" resolve="srcModel" />
                 </node>
               </node>
-              <node concept="37vLTw" id="2ceN1hCDD01" role="37wK5m">
-                <ref role="3cqZAo" node="3KN3A4v2PX7" resolve="sd" />
-              </node>
               <node concept="37vLTw" id="2ceN1hCDD02" role="37wK5m">
-                <ref role="3cqZAo" node="3KN3A4uZFCZ" resolve="ad" />
+                <ref role="3cqZAo" node="3KN3A4uZFCZ" resolve="discoverable" />
               </node>
             </node>
           </node>
@@ -763,11 +750,8 @@
                       <ref role="3cqZAo" node="2ceN1hCDJ1y" resolve="trgModel" />
                     </node>
                   </node>
-                  <node concept="37vLTw" id="2ceN1hCE33q" role="37wK5m">
-                    <ref role="3cqZAo" node="3KN3A4v2PX7" resolve="sd" />
-                  </node>
                   <node concept="37vLTw" id="2ceN1hCE33r" role="37wK5m">
-                    <ref role="3cqZAo" node="3KN3A4uZFCZ" resolve="ad" />
+                    <ref role="3cqZAo" node="3KN3A4uZFCZ" resolve="discoverable" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="2ceN1hCE4yL" role="37vLTJ">
