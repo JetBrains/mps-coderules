@@ -1,6 +1,17 @@
 import groovy.xml.MarkupBuilder
 import java.util.regex.*
 
+// In case gradle build fails to execute any of the tasks imported from
+// buid.xml, try the following steps: 
+//
+// 1. Uncomment the following section importing the task-tree plugin
+// 2. Run `./gradlew assemble taskTree --no-repeat`
+//
+// If the above command generates suspiciously-looking output and never
+// finishes, the most likely cause is that the target definitions in Ant
+// build.xml file have cyclic dependencies. This needs to be fixed in build
+// script, and build.xml regenerated.
+
 //plugins {
 //  id "com.dorongold.task-tree" version "1.5"
 //}
