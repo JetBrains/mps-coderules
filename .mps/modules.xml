@@ -10,8 +10,6 @@
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.logic/runtime/jetbrains.mps.logic.runtime.msd" folder="coderules.lang" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.typechecking.annotation/jetbrains.mps.typechecking.annotation.mpl" folder="typechecking.annotation" />
       <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.typechecking.testlang/jetbrains.mps.typechecking.testlang.mpl" folder="typechecking.test" />
-      <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.typechecking.testlangCycle1/jetbrains.mps.typechecking.testlangCycle1.mpl" folder="typechecking.test" />
-      <modulePath path="$PROJECT_DIR$/coderules/languages/jetbrains.mps.typechecking.testlangCycle2/jetbrains.mps.typechecking.testlangCycle2.mpl" folder="typechecking.test" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules.build/jetbrains.mps.coderules.build.msd" folder="coderules.build" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules.test/jetbrains.mps.coderules.test.msd" folder="coderules.test" />
       <modulePath path="$PROJECT_DIR$/coderules/solutions/jetbrains.mps.coderules.typechecking.test/jetbrains.mps.coderules.typechecking.test.msd" folder="typechecking.test" />
@@ -43,11 +41,10 @@
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.sequence/jetbrains.mps.baseLanguage.sequence.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguageExt/jetbrains.mps.baseLanguageExt.mpl" folder="samples.mpscore.baseLanguageExt" />
-      <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.closuresExt.test/jetbrains.mps.baseLanguage.closuresExt.test.msd" folder="samples.mpscore.baseLanguageExt" />
-      <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/jetbrains.mps.baseLanguage.collectionsExt.test.msd" folder="samples.mpscore.baseLanguageExt" />
-      <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/jetbrains.mps.baseLanguage.tuplesExt.test.msd" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.lang.coderulesExt.mpl" folder="samples.mpscore.coderulesExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.logicExt/jetbrains.mps.logicExt.mpl" folder="samples.mpscore.coderulesExt" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.closuresExt.test/jetbrains.mps.baseLanguage.closuresExt.test.msd" folder="samples.mpscore.baseLanguageExt" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.collectionsExt.test/jetbrains.mps.baseLanguage.collectionsExt.test.msd" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguage.tuplesExt.test/jetbrains.mps.baseLanguage.tuplesExt.test.msd" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/jetbrains.mps.baseLanguageExt.test/jetbrains.mps.baseLanguageExt.test.msd" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/solutions/samples.mpscore.build/samples.mpscore.build.msd" folder="samples.mpscore.build" />
