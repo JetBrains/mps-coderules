@@ -36,7 +36,7 @@
       <modulePath path="$PROJECT_DIR$/samples/lambdacalc/solutions/samples.lambdacalc.demo/samples.lambdacalc.demo.msd" folder="samples.lambdacalc" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.closuresExt/jetbrains.mps.baseLanguage.closuresExt.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.collectionsExt/jetbrains.mps.baseLanguage.collectionsExt.mpl" folder="samples.mpscore.baseLanguageExt" />
-      <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.function/jetbrains.mps.baseLanguage.function.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.function/jetbrains.mps.baseLanguage.function.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.javadocExt/jetbrains.mps.baseLanguage.javadocExt.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.sequence/jetbrains.mps.baseLanguage.sequence.mpl" folder="samples.mpscore.baseLanguageExt" />
       <modulePath path="$PROJECT_DIR$/samples/mpscore/languages/jetbrains.mps.baseLanguage.tuplesExt/jetbrains.mps.baseLanguage.tuplesExt.mpl" folder="samples.mpscore.baseLanguageExt" />

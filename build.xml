@@ -864,6 +864,7 @@
           <module ref="f97d84b2-8bad-4fdd-8ede-da17b3eacf4c(jetbrains.mps.coderules)" kind="cl" />
           <module ref="6998f568-f0e9-473b-b4a8-9efb6499fc8d(jetbrains.mps.coderules.typechecking)" kind="cl" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" kind="cl" />
+          <module ref="ff6372a2-2f45-4ec3-952b-02581666015f(jetbrains.mps.lang.coderules.template)" kind="cl" />
           <module ref="707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)" kind="cl" />
         </dependencies>
         <uses>
