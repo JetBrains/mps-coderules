@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:adc5f7a2-194e-4476-81d8-c4dac5765bcf(typechecking.samples.baseLanguage.hugeSample)" doNotGenerate="true">
+<model ref="r:adc5f7a2-194e-4476-81d8-c4dac5765bcf(typechecking.samples.baseLanguage.hugeSample)">
   <persistence version="9" />
+  <attribute name="doNotGenerate" value="true" />
   <languages>
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>

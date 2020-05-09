@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:24bdfe1a-5c8f-4e02-bf75-2d22a609ac69(jetbrains.mps.baseLanguageExt.test.code.features)" doNotGenerate="true">
+<model ref="r:24bdfe1a-5c8f-4e02-bf75-2d22a609ac69(jetbrains.mps.baseLanguageExt.test.code.features)">
   <persistence version="9" />
+  <attribute name="doNotGenerate" value="true" />
   <languages>
     <use id="0b80a2e8-f9f1-47b3-823f-56eb115bca42" name="jetbrains.mps.typechecking.annotation" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />

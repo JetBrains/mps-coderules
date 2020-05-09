@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:42bdc5da-5ab1-401b-822c-d8fc1e4f2876(jetbrains.mps.baseLanguage.tuplesExt.test.tuples)" doNotGenerate="true">
+<model ref="r:42bdc5da-5ab1-401b-822c-d8fc1e4f2876(jetbrains.mps.baseLanguage.tuplesExt.test.tuples)">
   <persistence version="9" />
+  <attribute name="doNotGenerate" value="true" />
   <languages>
     <use id="0b80a2e8-f9f1-47b3-823f-56eb115bca42" name="jetbrains.mps.typechecking.annotation" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />

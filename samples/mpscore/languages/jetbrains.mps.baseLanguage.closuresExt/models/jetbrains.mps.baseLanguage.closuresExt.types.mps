@@ -3462,7 +3462,7 @@
                           </node>
                           <node concept="1mIQ4w" id="25sdewUNOKA" role="2OqNvi">
                             <node concept="chp4Y" id="25sdewUNOKC" role="cj9EA">
-                              <ref role="cht4Q" to="tpee:gMGUZlm" resolve="TryStatement" />
+                              <ref role="cht4Q" to="tpee:gMGUZlm" resolve="TryFinallyStatement" />
                             </node>
                           </node>
                         </node>
@@ -3496,7 +3496,7 @@
                                       <ref role="3cqZAo" node="hLFMmZX" resolve="stmt" />
                                     </node>
                                     <node concept="chp4Y" id="714IaVdH09k" role="3oSUPX">
-                                      <ref role="cht4Q" to="tpee:gMGUZlm" resolve="TryStatement" />
+                                      <ref role="cht4Q" to="tpee:gMGUZlm" resolve="TryFinallyStatement" />
                                     </node>
                                   </node>
                                   <node concept="3Tsc0h" id="25sdewUNOLu" role="2OqNvi">

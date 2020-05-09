@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:5da568ce-4965-4c3e-b8b4-edfc36d00b67(jetbrains.mps.baseLanguage.closuresExt.test.yield)" doNotGenerate="true">
+<model ref="r:5da568ce-4965-4c3e-b8b4-edfc36d00b67(jetbrains.mps.baseLanguage.closuresExt.test.yield)">
   <persistence version="9" />
+  <attribute name="doNotGenerate" value="true" />
   <languages>
     <use id="9e36d2ee-c59c-4580-9e81-646748d0614b" name="jetbrains.mps.baseLanguage.closuresExt" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
