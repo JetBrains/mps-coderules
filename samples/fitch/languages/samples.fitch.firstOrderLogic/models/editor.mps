@@ -2,7 +2,7 @@
 <model ref="r:c18170ff-96aa-486a-aea5-01ae6cdbba3f(samples.fitch.firstOrderLogic.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="13" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -16,6 +16,8 @@
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="5991739802479784073" name="jetbrains.mps.lang.editor.structure.MenuTypeDefault" flags="ng" index="22hDWj" />
+      <concept id="2000375450116423800" name="jetbrains.mps.lang.editor.structure.SubstituteMenu" flags="ng" index="22mcaB" />
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
         <child id="2597348684684069742" name="contextHints" index="CpUAK" />
       </concept>
@@ -54,10 +56,10 @@
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
         <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
+        <child id="5991739802479788259" name="type" index="22hAXT" />
       </concept>
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
       <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
-      <concept id="3308396621974580100" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Default" flags="ng" index="3p36aQ" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
@@ -273,10 +275,6 @@
       <node concept="l2Vlx" id="3JXBM6C3URl" role="2iSdaV" />
     </node>
   </node>
-  <node concept="3p36aQ" id="3w0n0hzkOyd">
-    <property role="3GE5qa" value="proof" />
-    <ref role="aqKnT" to="yhz9:3w0n0hzkN6G" resolve="FirstOrderProof" />
-  </node>
   <node concept="24kQdi" id="3w0n0hzkQZq">
     <property role="3GE5qa" value="sentence" />
     <ref role="1XX52x" to="yhz9:3w0n0hzkQZb" resolve="Equality" />
@@ -422,6 +420,10 @@
     <node concept="1PE4EZ" id="4h0MmDW88l2" role="1PM95z">
       <ref role="1PE7su" to="8v9h:4h0MmDW7NkU" resolve="Judgement_DOC" />
     </node>
+  </node>
+  <node concept="22mcaB" id="3w0n0hzkOyd">
+    <ref role="aqKnT" to="yhz9:3w0n0hzkN6G" resolve="FirstOrderProof" />
+    <node concept="22hDWj" id="2TBKtozZDVI" role="22hAXT" />
   </node>
 </model>
 

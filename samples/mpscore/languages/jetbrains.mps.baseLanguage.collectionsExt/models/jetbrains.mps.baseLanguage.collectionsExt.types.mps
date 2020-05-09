@@ -31,7 +31,7 @@
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="1350122676458893092" name="text" index="3ndbpf" />
+        <child id="8356039341262087992" name="line" index="1aUNEU" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -258,7 +258,7 @@
           <node concept="9aQIb" id="4NtT$ZxGJ6q" role="9aQIa">
             <node concept="3clFbS" id="4NtT$ZxGJ6r" role="9aQI4">
               <node concept="3SKdUt" id="4NtT$ZxGJaG" role="3cqZAp">
-                <node concept="1PaTwC" id="4NtT$ZxGJaH" role="3ndbpf">
+                <node concept="1PaTwC" id="4NtT$ZxGJaH" role="1aUNEU">
                   <node concept="3oM_SD" id="4NtT$ZxGJaJ" role="1PaTwD">
                     <property role="3oM_SC" value="todo:" />
                   </node>

@@ -2,7 +2,7 @@
 <model ref="r:873e37f0-b045-47b9-ae9e-db79c2628975(samples.fitch.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="13" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <use id="0272d3b4-4cc8-481e-9e2f-07793fbfcb41" name="jetbrains.mps.lang.editor.table" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -15,9 +15,11 @@
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
+      <concept id="5991739802479784073" name="jetbrains.mps.lang.editor.structure.MenuTypeDefault" flags="ng" index="22hDWj" />
       <concept id="2000375450116454183" name="jetbrains.mps.lang.editor.structure.ISubstituteMenu" flags="ng" index="22mbnS">
         <child id="414384289274416996" name="parts" index="3ft7WO" />
       </concept>
+      <concept id="2000375450116423800" name="jetbrains.mps.lang.editor.structure.SubstituteMenu" flags="ng" index="22mcaB" />
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi">
         <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
         <child id="2597348684684069742" name="contextHints" index="CpUAK" />
@@ -62,7 +64,6 @@
         <child id="8371900013785948359" name="part" index="2$S_pN" />
         <child id="8371900013785948365" name="parameterQuery" index="2$S_pT" />
       </concept>
-      <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
       <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW">
         <child id="7033942394258392116" name="overridenEditorComponent" index="1PM95z" />
       </concept>
@@ -77,6 +78,7 @@
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
         <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
+        <child id="5991739802479788259" name="type" index="22hAXT" />
       </concept>
       <concept id="1630016958697286851" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject" flags="ng" index="2ZBlsa" />
       <concept id="1630016958697057551" name="jetbrains.mps.lang.editor.structure.IMenuPartParameterized" flags="ng" index="2ZBHr6">
@@ -96,7 +98,6 @@
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
-      <concept id="3308396621974580100" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Default" flags="ng" index="3p36aQ" />
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1219226236603" name="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" flags="ln" index="3vyZuw" />
       <concept id="5425882385312046132" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode" flags="nn" index="1yR$tW" />
@@ -128,6 +129,7 @@
       <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
       </concept>
+      <concept id="5624877018226900666" name="jetbrains.mps.lang.editor.structure.TransformationMenu" flags="ng" index="3ICUPy" />
       <concept id="7033942394256351208" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference" flags="ng" index="1PE4EZ">
         <reference id="7033942394256351817" name="editorComponent" index="1PE7su" />
       </concept>
@@ -386,119 +388,6 @@
       <node concept="l2Vlx" id="3JXBM6C3UQJ" role="2iSdaV" />
       <node concept="3vyZuw" id="3JXBM6C5ZS6" role="3F10Kt">
         <property role="VOm3f" value="true" />
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="3JXBM6C6A54">
-    <property role="3GE5qa" value="proof.reasoning" />
-    <ref role="aqKnT" to="jfgh:3JXBM6C3FsN" resolve="Reference" />
-    <node concept="3XHNnq" id="3JXBM6C6A55" role="3ft7WO">
-      <ref role="3XGfJA" to="jfgh:3JXBM6C3FuH" resolve="reasoning" />
-      <node concept="1WAQ3h" id="3JXBM6C6Adw" role="1WZ6D9">
-        <node concept="3clFbS" id="3JXBM6C6Adx" role="2VODD2">
-          <node concept="3clFbF" id="3JXBM6C6Am4" role="3cqZAp">
-            <node concept="2YIFZM" id="3JXBM6C6BDU" role="3clFbG">
-              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
-              <node concept="2OqwBi" id="3JXBM6C6AC_" role="37wK5m">
-                <node concept="1WAUZh" id="3JXBM6C6Am3" role="2Oq$k0" />
-                <node concept="3TrcHB" id="3JXBM6C6AXv" role="2OqNvi">
-                  <ref role="3TsBF5" to="jfgh:3JXBM6C54BE" resolve="sequenceNum" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="1WAQ3h" id="5jVx7S23o6W" role="3PHfNJ">
-        <node concept="3clFbS" id="5jVx7S23o6Y" role="2VODD2">
-          <node concept="3clFbF" id="5jVx7S23oit" role="3cqZAp">
-            <node concept="3cpWs3" id="5jVx7S23rqt" role="3clFbG">
-              <node concept="3cpWs3" id="5jVx7S23qlD" role="3uHU7B">
-                <node concept="2OqwBi" id="5jVx7S23phj" role="3uHU7B">
-                  <node concept="2OqwBi" id="5jVx7S23ozu" role="2Oq$k0">
-                    <node concept="1WAUZh" id="5jVx7S23ois" role="2Oq$k0" />
-                    <node concept="2yIwOk" id="5jVx7S23oPc" role="2OqNvi" />
-                  </node>
-                  <node concept="3n3YKJ" id="5jVx7S23pB0" role="2OqNvi" />
-                </node>
-                <node concept="Xl_RD" id="5jVx7S23quJ" role="3uHU7w">
-                  <property role="Xl_RC" value=" " />
-                </node>
-              </node>
-              <node concept="2YIFZM" id="5jVx7S23rqO" role="3uHU7w">
-                <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
-                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                <node concept="2OqwBi" id="5jVx7S23rqP" role="37wK5m">
-                  <node concept="1WAUZh" id="5jVx7S23rqQ" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="5jVx7S23rqR" role="2OqNvi">
-                    <ref role="3TsBF5" to="jfgh:3JXBM6C54BE" resolve="sequenceNum" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="3JXBM6C6Hgb">
-    <property role="3GE5qa" value="proof" />
-    <ref role="aqKnT" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
-  </node>
-  <node concept="3p36aQ" id="3JXBM6C6Jqd">
-    <property role="3GE5qa" value="proof.reasoning" />
-    <ref role="aqKnT" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
-    <node concept="3eGOop" id="3JXBM6C6Jqe" role="3ft7WO">
-      <ref role="3EoQqy" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
-      <node concept="ucgPf" id="3JXBM6C6Jqf" role="3aKz83">
-        <node concept="3clFbS" id="3JXBM6C6Jqg" role="2VODD2">
-          <node concept="3cpWs8" id="3JXBM6C6LYE" role="3cqZAp">
-            <node concept="3cpWsn" id="3JXBM6C6LYF" role="3cpWs9">
-              <property role="TrG5h" value="sp" />
-              <node concept="3Tqbb2" id="3JXBM6C6LYD" role="1tU5fm">
-                <ref role="ehGHo" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
-              </node>
-              <node concept="2ShNRf" id="3JXBM6C6LYG" role="33vP2m">
-                <node concept="3zrR0B" id="3JXBM6C6LYH" role="2ShVmc">
-                  <node concept="3Tqbb2" id="3JXBM6C6LYI" role="3zrR0E">
-                    <ref role="ehGHo" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="3JXBM6C6Mhg" role="3cqZAp">
-            <node concept="2OqwBi" id="3JXBM6C6NZc" role="3clFbG">
-              <node concept="2OqwBi" id="3JXBM6C6Mr0" role="2Oq$k0">
-                <node concept="37vLTw" id="3JXBM6C6Mhe" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3JXBM6C6LYF" resolve="sp" />
-                </node>
-                <node concept="3Tsc0h" id="3JXBM6C6MEd" role="2OqNvi">
-                  <ref role="3TtcxE" to="jfgh:3JXBM6C3UQ_" resolve="content" />
-                </node>
-              </node>
-              <node concept="WFELt" id="3JXBM6C6QOf" role="2OqNvi">
-                <ref role="1A0vxQ" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="3JXBM6C6JuB" role="3cqZAp">
-            <node concept="37vLTw" id="3JXBM6C6LYJ" role="3clFbG">
-              <ref role="3cqZAo" node="3JXBM6C6LYF" resolve="sp" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="16NfWO" id="3JXBM6C6Rrb" role="upBLP">
-        <node concept="2h3Zct" id="3JXBM6C6Rvc" role="16NeZM">
-          <property role="2h4Kg1" value="assume" />
-        </node>
-      </node>
-      <node concept="16NL0t" id="3JXBM6C6Wqh" role="upBLP">
-        <node concept="2h3Zct" id="3JXBM6C6WEM" role="16NL0q">
-          <property role="2h4Kg1" value="Assumption" />
-        </node>
       </node>
     </node>
   </node>
@@ -781,9 +670,193 @@
       <property role="3F0ifm" value="OK" />
     </node>
   </node>
-  <node concept="3p36aQ" id="5jVx7S1YuHD">
+  <node concept="PKFIW" id="4h0MmDW7E1r">
     <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Premise_DOC" />
+    <ref role="1XX52x" to="jfgh:$u9BK__JRe" resolve="Premise" />
+    <node concept="3EZMnI" id="4h0MmDW7E1t" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW7E1$" role="3EZMnx">
+        <property role="3F0ifm" value="Premise" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW7IEj" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW7E1B" role="3EZMnx">
+        <property role="3F0ifm" value="A sentence that serves as an input to the proof. Must be on top level. Doesn't require a proof." />
+        <node concept="Vb9p2" id="4h0MmDW7IEh" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW7E1w" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW7Nk2">
+    <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Assumption_DOC" />
+    <ref role="1XX52x" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
+    <node concept="3EZMnI" id="4h0MmDW7Nk4" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW7Nkb" role="3EZMnx">
+        <property role="3F0ifm" value="Assumption" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW7Nke" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW7Nkh" role="3EZMnx">
+        <property role="3F0ifm" value="Introduce assumption. Starts a new subproof. " />
+        <node concept="Vb9p2" id="4h0MmDW7Nkl" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW7Nk7" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW7NkU">
+    <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Judgement_DOC" />
+    <ref role="1XX52x" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
+    <node concept="3EZMnI" id="4h0MmDW7NkW" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW7Nl3" role="3EZMnx">
+        <property role="3F0ifm" value="Judgement" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW7Nl6" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW7Nl9" role="3EZMnx">
+        <property role="3F0ifm" value="Judgement is an act of making a conclusion." />
+        <node concept="Vb9p2" id="4h0MmDW7Nld" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW7NkZ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="4h0MmDW8$kN">
+    <property role="3GE5qa" value="proof.reasoning" />
+    <property role="TrG5h" value="Reiteration_DOC" />
+    <ref role="1XX52x" to="jfgh:5jVx7S1Yau5" resolve="Reiteration" />
+    <node concept="3EZMnI" id="4h0MmDW8$kR" role="2wV5jI">
+      <node concept="3F0ifn" id="4h0MmDW8$kY" role="3EZMnx">
+        <property role="3F0ifm" value="Reiteration" />
+      </node>
+      <node concept="3F0ifn" id="4h0MmDW8$l1" role="3EZMnx" />
+      <node concept="3F0ifn" id="4h0MmDW8$l4" role="3EZMnx">
+        <property role="3F0ifm" value="Allows to reuse a previous assumption or a premise." />
+        <node concept="Vb9p2" id="4h0MmDW8z3H" role="3F10Kt" />
+      </node>
+      <node concept="2iRkQZ" id="4h0MmDW8$kU" role="2iSdaV" />
+    </node>
+    <node concept="1PE4EZ" id="4h0MmDW8$kP" role="1PM95z">
+      <ref role="1PE7su" node="4h0MmDW7NkU" resolve="Judgement_DOC" />
+    </node>
+  </node>
+  <node concept="3ICUPy" id="2DPo4JTQI2h">
+    <ref role="aqKnT" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
+    <node concept="22hDWj" id="2TBKtozZDVX" role="22hAXT" />
+  </node>
+  <node concept="22mcaB" id="3JXBM6C6A54">
+    <ref role="aqKnT" to="jfgh:3JXBM6C3FsN" resolve="Reference" />
+    <node concept="22hDWj" id="2TBKtozZDVY" role="22hAXT" />
+    <node concept="3XHNnq" id="3JXBM6C6A55" role="3ft7WO">
+      <ref role="3XGfJA" to="jfgh:3JXBM6C3FuH" resolve="reasoning" />
+      <node concept="1WAQ3h" id="3JXBM6C6Adw" role="1WZ6D9">
+        <node concept="3clFbS" id="3JXBM6C6Adx" role="2VODD2">
+          <node concept="3clFbF" id="3JXBM6C6Am4" role="3cqZAp">
+            <node concept="2YIFZM" id="3JXBM6C6BDU" role="3clFbG">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <node concept="2OqwBi" id="3JXBM6C6AC_" role="37wK5m">
+                <node concept="1WAUZh" id="3JXBM6C6Am3" role="2Oq$k0" />
+                <node concept="3TrcHB" id="3JXBM6C6AXv" role="2OqNvi">
+                  <ref role="3TsBF5" to="jfgh:3JXBM6C54BE" resolve="sequenceNum" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1WAQ3h" id="5jVx7S23o6W" role="3PHfNJ">
+        <node concept="3clFbS" id="5jVx7S23o6Y" role="2VODD2">
+          <node concept="3clFbF" id="5jVx7S23oit" role="3cqZAp">
+            <node concept="3cpWs3" id="5jVx7S23rqt" role="3clFbG">
+              <node concept="3cpWs3" id="5jVx7S23qlD" role="3uHU7B">
+                <node concept="2OqwBi" id="5jVx7S23phj" role="3uHU7B">
+                  <node concept="2OqwBi" id="5jVx7S23ozu" role="2Oq$k0">
+                    <node concept="1WAUZh" id="5jVx7S23ois" role="2Oq$k0" />
+                    <node concept="2yIwOk" id="5jVx7S23oPc" role="2OqNvi" />
+                  </node>
+                  <node concept="3n3YKJ" id="5jVx7S23pB0" role="2OqNvi" />
+                </node>
+                <node concept="Xl_RD" id="5jVx7S23quJ" role="3uHU7w">
+                  <property role="Xl_RC" value=" " />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="5jVx7S23rqO" role="3uHU7w">
+                <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                <node concept="2OqwBi" id="5jVx7S23rqP" role="37wK5m">
+                  <node concept="1WAUZh" id="5jVx7S23rqQ" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="5jVx7S23rqR" role="2OqNvi">
+                    <ref role="3TsBF5" to="jfgh:3JXBM6C54BE" resolve="sequenceNum" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="22mcaB" id="3JXBM6C6Hgb">
+    <ref role="aqKnT" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
+    <node concept="22hDWj" id="2TBKtozZDVZ" role="22hAXT" />
+  </node>
+  <node concept="22mcaB" id="3JXBM6C6Jqd">
+    <ref role="aqKnT" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
+    <node concept="22hDWj" id="2TBKtozZDW0" role="22hAXT" />
+    <node concept="3eGOop" id="3JXBM6C6Jqe" role="3ft7WO">
+      <ref role="3EoQqy" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
+      <node concept="ucgPf" id="3JXBM6C6Jqf" role="3aKz83">
+        <node concept="3clFbS" id="3JXBM6C6Jqg" role="2VODD2">
+          <node concept="3cpWs8" id="3JXBM6C6LYE" role="3cqZAp">
+            <node concept="3cpWsn" id="3JXBM6C6LYF" role="3cpWs9">
+              <property role="TrG5h" value="sp" />
+              <node concept="3Tqbb2" id="3JXBM6C6LYD" role="1tU5fm">
+                <ref role="ehGHo" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
+              </node>
+              <node concept="2ShNRf" id="3JXBM6C6LYG" role="33vP2m">
+                <node concept="3zrR0B" id="3JXBM6C6LYH" role="2ShVmc">
+                  <node concept="3Tqbb2" id="3JXBM6C6LYI" role="3zrR0E">
+                    <ref role="ehGHo" to="jfgh:3JXBM6C3UQ$" resolve="SubProof" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3JXBM6C6Mhg" role="3cqZAp">
+            <node concept="2OqwBi" id="3JXBM6C6NZc" role="3clFbG">
+              <node concept="2OqwBi" id="3JXBM6C6Mr0" role="2Oq$k0">
+                <node concept="37vLTw" id="3JXBM6C6Mhe" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3JXBM6C6LYF" resolve="sp" />
+                </node>
+                <node concept="3Tsc0h" id="3JXBM6C6MEd" role="2OqNvi">
+                  <ref role="3TtcxE" to="jfgh:3JXBM6C3UQ_" resolve="content" />
+                </node>
+              </node>
+              <node concept="WFELt" id="3JXBM6C6QOf" role="2OqNvi">
+                <ref role="1A0vxQ" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3JXBM6C6JuB" role="3cqZAp">
+            <node concept="37vLTw" id="3JXBM6C6LYJ" role="3clFbG">
+              <ref role="3cqZAo" node="3JXBM6C6LYF" resolve="sp" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16NfWO" id="3JXBM6C6Rrb" role="upBLP">
+        <node concept="2h3Zct" id="3JXBM6C6Rvc" role="16NeZM">
+          <property role="2h4Kg1" value="assume" />
+        </node>
+      </node>
+      <node concept="16NL0t" id="3JXBM6C6Wqh" role="upBLP">
+        <node concept="2h3Zct" id="3JXBM6C6WEM" role="16NL0q">
+          <property role="2h4Kg1" value="Assumption" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="22mcaB" id="5jVx7S1YuHD">
     <ref role="aqKnT" to="jfgh:5jVx7S1Yau5" resolve="Reiteration" />
+    <node concept="22hDWj" id="2TBKtozZDW1" role="22hAXT" />
     <node concept="2F$Pav" id="5jVx7S1YuHE" role="3ft7WO">
       <node concept="3eGOop" id="5jVx7S1ZzTI" role="2$S_pN">
         <node concept="ucgPf" id="5jVx7S1ZzTK" role="3aKz83">
@@ -1026,76 +1099,6 @@
       </node>
     </node>
     <node concept="3VyMlK" id="5jVx7S20VFl" role="3ft7WO" />
-  </node>
-  <node concept="IW6AY" id="2DPo4JTQI2h">
-    <ref role="aqKnT" to="jfgh:4LBPYGV4cY1" resolve="Sentence" />
-  </node>
-  <node concept="PKFIW" id="4h0MmDW7E1r">
-    <property role="3GE5qa" value="proof.reasoning" />
-    <property role="TrG5h" value="Premise_DOC" />
-    <ref role="1XX52x" to="jfgh:$u9BK__JRe" resolve="Premise" />
-    <node concept="3EZMnI" id="4h0MmDW7E1t" role="2wV5jI">
-      <node concept="3F0ifn" id="4h0MmDW7E1$" role="3EZMnx">
-        <property role="3F0ifm" value="Premise" />
-      </node>
-      <node concept="3F0ifn" id="4h0MmDW7IEj" role="3EZMnx" />
-      <node concept="3F0ifn" id="4h0MmDW7E1B" role="3EZMnx">
-        <property role="3F0ifm" value="A sentence that serves as an input to the proof. Must be on top level. Doesn't require a proof." />
-        <node concept="Vb9p2" id="4h0MmDW7IEh" role="3F10Kt" />
-      </node>
-      <node concept="2iRkQZ" id="4h0MmDW7E1w" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="PKFIW" id="4h0MmDW7Nk2">
-    <property role="3GE5qa" value="proof.reasoning" />
-    <property role="TrG5h" value="Assumption_DOC" />
-    <ref role="1XX52x" to="jfgh:3JXBM6C3Pwi" resolve="Assumption" />
-    <node concept="3EZMnI" id="4h0MmDW7Nk4" role="2wV5jI">
-      <node concept="3F0ifn" id="4h0MmDW7Nkb" role="3EZMnx">
-        <property role="3F0ifm" value="Assumption" />
-      </node>
-      <node concept="3F0ifn" id="4h0MmDW7Nke" role="3EZMnx" />
-      <node concept="3F0ifn" id="4h0MmDW7Nkh" role="3EZMnx">
-        <property role="3F0ifm" value="Introduce assumption. Starts a new subproof. " />
-        <node concept="Vb9p2" id="4h0MmDW7Nkl" role="3F10Kt" />
-      </node>
-      <node concept="2iRkQZ" id="4h0MmDW7Nk7" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="PKFIW" id="4h0MmDW7NkU">
-    <property role="3GE5qa" value="proof.reasoning" />
-    <property role="TrG5h" value="Judgement_DOC" />
-    <ref role="1XX52x" to="jfgh:3JXBM6C3FsA" resolve="Judgement" />
-    <node concept="3EZMnI" id="4h0MmDW7NkW" role="2wV5jI">
-      <node concept="3F0ifn" id="4h0MmDW7Nl3" role="3EZMnx">
-        <property role="3F0ifm" value="Judgement" />
-      </node>
-      <node concept="3F0ifn" id="4h0MmDW7Nl6" role="3EZMnx" />
-      <node concept="3F0ifn" id="4h0MmDW7Nl9" role="3EZMnx">
-        <property role="3F0ifm" value="Judgement is an act of making a conclusion." />
-        <node concept="Vb9p2" id="4h0MmDW7Nld" role="3F10Kt" />
-      </node>
-      <node concept="2iRkQZ" id="4h0MmDW7NkZ" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="PKFIW" id="4h0MmDW8$kN">
-    <property role="3GE5qa" value="proof.reasoning" />
-    <property role="TrG5h" value="Reiteration_DOC" />
-    <ref role="1XX52x" to="jfgh:5jVx7S1Yau5" resolve="Reiteration" />
-    <node concept="3EZMnI" id="4h0MmDW8$kR" role="2wV5jI">
-      <node concept="3F0ifn" id="4h0MmDW8$kY" role="3EZMnx">
-        <property role="3F0ifm" value="Reiteration" />
-      </node>
-      <node concept="3F0ifn" id="4h0MmDW8$l1" role="3EZMnx" />
-      <node concept="3F0ifn" id="4h0MmDW8$l4" role="3EZMnx">
-        <property role="3F0ifm" value="Allows to reuse a previous assumption or a premise." />
-        <node concept="Vb9p2" id="4h0MmDW8z3H" role="3F10Kt" />
-      </node>
-      <node concept="2iRkQZ" id="4h0MmDW8$kU" role="2iSdaV" />
-    </node>
-    <node concept="1PE4EZ" id="4h0MmDW8$kP" role="1PM95z">
-      <ref role="1PE7su" node="4h0MmDW7NkU" resolve="Judgement_DOC" />
-    </node>
   </node>
 </model>
 
