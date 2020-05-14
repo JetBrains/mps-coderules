@@ -50,6 +50,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -172,6 +175,14 @@
         <reference id="6097203247182937177" name="template" index="3jbY9l" />
         <child id="6097203247182937145" name="input" index="3jbY8P" />
         <child id="6097203247182937143" name="logical" index="3jbY8V" />
+        <child id="6097203247185615297" name="arglist" index="3jhGvd" />
+      </concept>
+      <concept id="6097203247185614706" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraintArglist" flags="ng" index="3jhG_Y">
+        <child id="6097203247185614855" name="binding" index="3jhGob" />
+      </concept>
+      <concept id="6097203247185614707" name="jetbrains.mps.lang.coderules.structure.ExpandMacroConstraintArgBinding" flags="ng" index="3jhG_Z">
+        <reference id="6097203247185614710" name="declaration" index="3jhG_U" />
+        <child id="6097203247185614708" name="argument" index="3jhG_S" />
       </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="4814011019633607808" name="parameter" index="0Rg$4" />
@@ -377,6 +388,12 @@
           <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
         </node>
       </node>
+      <node concept="3hPv5a" id="554EtBHzVCE" role="3hP23H">
+        <property role="TrG5h" value="subs" />
+        <node concept="3uibUv" id="554EtBHzVCM" role="3hPmi9">
+          <ref role="3uigEE" to="kqnc:6EY0p2w8VOq" resolve="TypeVarSubstitution" />
+        </node>
+      </node>
       <node concept="3clFbS" id="6$MmqWfmo8v" role="3hEL4E">
         <node concept="3clFbJ" id="2MpDLe9wosm" role="3cqZAp">
           <node concept="3clFbS" id="2MpDLe9woso" role="3clFbx">
@@ -404,6 +421,14 @@
                       <ref role="a7OzE" node="6$MmqWfmrsz" resolve="ParamTypes" />
                       <node concept="37vLTw" id="4E290qPYH4_" role="3gCZO6">
                         <ref role="3cqZAo" node="4E290qPYBov" resolve="i" />
+                      </node>
+                    </node>
+                    <node concept="3jhG_Y" id="554EtBHzVCQ" role="3jhGvd">
+                      <node concept="3jhG_Z" id="554EtBHzVCS" role="3jhGob">
+                        <ref role="3jhG_U" to="kqnc:5itBwMaLICh" resolve="substitution" />
+                        <node concept="3hN9Ij" id="554EtBHzVCW" role="3jhG_S">
+                          <ref role="3hLkJx" node="554EtBHzVCE" resolve="subs" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -450,6 +475,14 @@
                 </node>
                 <node concept="a7P8L" id="6$MmqWfmw1D" role="3jbY8V">
                   <ref role="a7OzE" node="6$MmqWfmrtC" resolve="ResultType" />
+                </node>
+                <node concept="3jhG_Y" id="554EtBHzVD3" role="3jhGvd">
+                  <node concept="3jhG_Z" id="554EtBHzVD5" role="3jhGob">
+                    <ref role="3jhG_U" to="kqnc:5itBwMaLICh" resolve="substitution" />
+                    <node concept="3hN9Ij" id="554EtBHzVD9" role="3jhG_S">
+                      <ref role="3hLkJx" node="554EtBHzVCE" resolve="subs" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
