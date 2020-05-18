@@ -1546,12 +1546,7 @@
             <node concept="3Tqbb2" id="4lCLOtww5CJ" role="1tU5fm">
               <ref role="ehGHo" to="wq2x:JOGAOsxaC9" resolve="TermDeclaration" />
             </node>
-            <node concept="2OqwBi" id="4lCLOtww5EY" role="33vP2m">
-              <node concept="13iPFW" id="4lCLOtww5EZ" role="2Oq$k0" />
-              <node concept="3TrEf2" id="4lCLOtww5F0" role="2OqNvi">
-                <ref role="3Tt5mk" to="wq2x:JOGAOsxaCh" resolve="prototype" />
-              </node>
-            </node>
+            <node concept="13iPFW" id="4lCLOtww5EZ" role="33vP2m" />
           </node>
         </node>
         <node concept="2$JKZl" id="4lCLOtww5KA" role="3cqZAp">
