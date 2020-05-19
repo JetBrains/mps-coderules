@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:b7d48b6b-72b6-4070-81f0-91a348d69e72(jetbrains.mps.baseLanguage.closuresExt.test.yield@tests)">
+<model ref="r:b7d48b6b-72b6-4070-81f0-91a348d69e72(jetbrains.mps.baseLanguage.closuresExt.test.collections@tests)">
   <persistence version="9" />
   <languages>
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="5" />
@@ -133,7 +133,7 @@
     </language>
   </registry>
   <node concept="1lH9Xt" id="7u0sJ20Oy8r">
-    <property role="TrG5h" value="ClosuresYield" />
+    <property role="TrG5h" value="ClosuresWithCollections" />
     <node concept="1LZb2c" id="7u0sJ20Oy8s" role="1SL9yI">
       <property role="TrG5h" value="closuresAndSequence" />
       <node concept="3cqZAl" id="7u0sJ20Oy8y" role="3clF45" />
@@ -157,6 +157,35 @@
               <node concept="1jxXqW" id="7u0sJ20Oy9h" role="37wK5m" />
             </node>
             <node concept="liA8E" id="7u0sJ20Oy93" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="5pvXCF9sDdD" role="1SL9yI">
+      <property role="TrG5h" value="closureParamInference" />
+      <node concept="3cqZAl" id="5pvXCF9sDdE" role="3clF45" />
+      <node concept="3clFbS" id="5pvXCF9sDdF" role="3clF47">
+        <node concept="2Hmddi" id="5pvXCF9sDdG" role="3cqZAp">
+          <node concept="2OqwBi" id="5pvXCF9sDdH" role="2Hmdds">
+            <node concept="2YIFZM" id="5pvXCF9sDdI" role="2Oq$k0">
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <node concept="2OqwBi" id="5pvXCF9sDdJ" role="37wK5m">
+                <node concept="2WthIp" id="5pvXCF9sDdK" role="2Oq$k0" />
+                <node concept="2XshWL" id="5pvXCF9sDdL" role="2OqNvi">
+                  <ref role="2WH_rO" node="7u0sJ20Oy8x" resolve="resolve" />
+                  <node concept="2tJFMh" id="5pvXCF9sDdM" role="2XxRq1">
+                    <node concept="ZC_QK" id="5pvXCF9sETl" role="2tJFKM">
+                      <ref role="2aWVGs" to="kui3:554EtBHyc2K" resolve="ClosureParamInference" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="5pvXCF9sDdO" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="5pvXCF9sDdP" role="2OqNvi">
               <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
             </node>
           </node>
