@@ -535,9 +535,6 @@
       <concept id="7571593955706137573" name="jetbrains.mps.logic.structure.Value" flags="ng" index="1oi5XN">
         <property id="7571593955706137638" name="value" index="1oi5yK" />
       </concept>
-      <concept id="1432138691741609740" name="jetbrains.mps.logic.structure.ConsListNode" flags="ng" index="1Pxxm1">
-        <child id="1432138691741609743" name="tail" index="1Pxxm2" />
-      </concept>
     </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
       <concept id="1173996401517" name="jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression" flags="nn" index="1nCR9W">
@@ -16067,7 +16064,17 @@
           <node concept="1oi1Uc" id="1fvYCPA6RdQ" role="gfFT$">
             <node concept="1oi5ST" id="1fvYCPA6RdR" role="1oi0x0">
               <property role="TrG5h" value="name" />
-              <node concept="KCUsM" id="1fvYCPA6RdS" role="1oi5TL" />
+              <node concept="1oi5UN" id="3qUnz9vhUyO" role="1oi5TL">
+                <node concept="22Ky0T" id="3qUnz9vhUyP" role="lGtFl">
+                  <node concept="2YIFZM" id="3qUnz9vhUyQ" role="22Ky0K">
+                    <ref role="1Pybhc" to="oy3s:7nPD14NOCSa" resolve="MetaLogicalFactory" />
+                    <ref role="37wK5l" to="oy3s:7nPD14NOHGU" resolve="wildcardMetaLogical" />
+                    <node concept="3VsKOn" id="3qUnz9vhUyR" role="37wK5m">
+                      <ref role="3VsUkX" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="17Uvod" id="1fvYCPA6Re2" role="lGtFl">
                 <property role="2qtEX9" value="name" />
                 <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -16183,6 +16190,7 @@
       <node concept="gft3U" id="1fvYCPA6RxW" role="1lVwrX">
         <node concept="1oi5ST" id="1fvYCPA6Ry2" role="gfFT$">
           <property role="TrG5h" value="name" />
+          <node concept="2IllgU" id="1fvYCPA6RLu" role="1oi5TL" />
           <node concept="17Uvod" id="1fvYCPA6Ry4" role="lGtFl">
             <property role="2qtEX9" value="name" />
             <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -16198,9 +16206,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="1Pxxm1" id="7L5omgeruXd" role="1oi5TL">
-            <node concept="2IllgU" id="1fvYCPA6RLu" role="1Pxxm2" />
           </node>
         </node>
       </node>
