@@ -472,6 +472,35 @@
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="ZJPHcufCSq" role="1SL9yI">
+      <property role="TrG5h" value="alternativeType" />
+      <node concept="3cqZAl" id="ZJPHcufCSr" role="3clF45" />
+      <node concept="3clFbS" id="ZJPHcufCSs" role="3clF47">
+        <node concept="2Hmddi" id="ZJPHcufCSt" role="3cqZAp">
+          <node concept="2OqwBi" id="ZJPHcufCSu" role="2Hmdds">
+            <node concept="2YIFZM" id="ZJPHcufCSv" role="2Oq$k0">
+              <ref role="1Pybhc" to="tj24:1N_0WA5JxZO" resolve="TypecheckingTestHelper" />
+              <ref role="37wK5l" to="tj24:27bTNFfaOo$" resolve="ofNode" />
+              <node concept="2OqwBi" id="ZJPHcufCSw" role="37wK5m">
+                <node concept="2WthIp" id="ZJPHcufCSx" role="2Oq$k0" />
+                <node concept="2XshWL" id="ZJPHcufCSy" role="2OqNvi">
+                  <ref role="2WH_rO" node="35YJGAJTxCf" resolve="resolve" />
+                  <node concept="2tJFMh" id="ZJPHcufCSz" role="2XxRq1">
+                    <node concept="ZC_QK" id="ZJPHcufDg9" role="2tJFKM">
+                      <ref role="2aWVGs" to="yg5v:ZJPHcuc$ch" resolve="AltType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1jxXqW" id="ZJPHcufCS_" role="37wK5m" />
+            </node>
+            <node concept="liA8E" id="ZJPHcufCSA" role="2OqNvi">
+              <ref role="37wK5l" to="tj24:27bTNFfaYS2" resolve="checkTypes" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1LZb2c" id="2i6cuYQuHi8" role="1SL9yI">
       <property role="TrG5h" value="operators" />
       <node concept="3cqZAl" id="2i6cuYQuHi9" role="3clF45" />
