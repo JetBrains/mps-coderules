@@ -168,6 +168,11 @@
         <child id="6097203247182937145" name="input" index="3jbY8P" />
         <child id="6097203247182937143" name="logical" index="3jbY8V" />
       </concept>
+      <concept id="6097203247184206287" name="jetbrains.mps.lang.coderules.structure.CallMacroConstraint" flags="ng" index="3jm4v3">
+        <reference id="6097203247184207800" name="template" index="3jm46O" />
+        <child id="6097203247185219723" name="argument" index="3jicU7" />
+        <child id="6097203247184212024" name="logical" index="3jm6SO" />
+      </concept>
       <concept id="3575255234174969639" name="jetbrains.mps.lang.coderules.structure.ConstraintRule" flags="ng" index="1nLNMm">
         <child id="4814011019633607808" name="parameter" index="0Rg$4" />
         <child id="3575255234174969658" name="head" index="1nLNMb" />
@@ -238,6 +243,19 @@
             <node concept="3xSepi" id="7LI_gNMWub9" role="3xSepv">
               <node concept="3Aq9E8" id="7LI_gNMWuba" role="3xSepj">
                 <node concept="3I6sU6" id="7LI_gNMWubb" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="kHzC1TY7_k" role="3I6sU7">
+                    <node concept="3jm4v3" id="kHzC1TY7_i" role="3I6s78">
+                      <ref role="3jm46O" to="kqnc:3qUnz9vk$1o" resolve="classifierTypeNonGeneric" />
+                      <node concept="2tJFMh" id="7LI_gNMWubV" role="3jicU7">
+                        <node concept="ZC_QK" id="7LI_gNMWuc4" role="2tJFKM">
+                          <ref role="2aWVGs" to="bj13:~LogicalContext" resolve="LogicalContext" />
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="kHzC1TY7A0" role="3jm6SO">
+                        <ref role="a7OzE" node="kHzC1TY7_z" resolve="Cls" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3I6s7M" id="7LI_gNMWubg" role="3I6sU7">
                     <node concept="3Aqt3T" id="7LI_gNMWubf" role="3I6s78">
                       <ref role="3AqCNq" to="kqnc:34$A1MfhdDv" resolve="typeOf" />
@@ -246,21 +264,19 @@
                           <ref role="3A2yKK" node="7LI_gNMWuaL" resolve="lce" />
                         </node>
                       </node>
-                      <node concept="ns1u0" id="7LI_gNMWubF" role="3AunhB">
-                        <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
-                        <node concept="nsMwS" id="7LI_gNMWubJ" role="ns1xD">
-                          <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="2tJFMh" id="7LI_gNMWubV" role="nsMwV">
-                            <node concept="ZC_QK" id="7LI_gNMWuc4" role="2tJFKM">
-                              <ref role="2aWVGs" to="bj13:~LogicalContext" resolve="LogicalContext" />
-                            </node>
-                          </node>
-                        </node>
+                      <node concept="a7P8L" id="kHzC1TY7Ar" role="3AunhB">
+                        <ref role="a7OzE" node="kHzC1TY7_z" resolve="Cls" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3NuqgR" id="kHzC1TY7_y" role="0Rg$4">
+              <node concept="aZer4" id="kHzC1TY7_z" role="3XD1gS">
+                <property role="TrG5h" value="Cls" />
+              </node>
+              <node concept="32pEOW" id="kHzC1TY7_J" role="3vLBG7" />
             </node>
           </node>
         </node>
@@ -608,6 +624,27 @@
             <node concept="3xSepi" id="7LI_gNMXkRS" role="3xSepv">
               <node concept="3Aq9E8" id="7LI_gNMXkRT" role="3xSepj">
                 <node concept="3I6sU6" id="7LI_gNMXkRU" role="3Ip0Jz">
+                  <node concept="3I6s7M" id="kHzC1TY7Ub" role="3I6sU7">
+                    <node concept="3jm4v3" id="kHzC1TY7U9" role="3I6s78">
+                      <ref role="3jm46O" to="kqnc:3qUnz9vk$1o" resolve="classifierTypeNonGeneric" />
+                      <node concept="2OqwBi" id="7LI_gNMXlnQ" role="3jicU7">
+                        <node concept="2OqwBi" id="7LI_gNMXl0Q" role="2Oq$k0">
+                          <node concept="3A2sRY" id="7LI_gNMXkT0" role="2Oq$k0">
+                            <ref role="3A2yKK" node="7LI_gNMXkRz" resolve="qp" />
+                          </node>
+                          <node concept="2qgKlT" id="7LI_gNMXl9x" role="2OqNvi">
+                            <ref role="37wK5l" to="x5bw:5EDW3XEbK7c" resolve="getQueryTemplate" />
+                          </node>
+                        </node>
+                        <node concept="2qgKlT" id="7LI_gNMXB1c" role="2OqNvi">
+                          <ref role="37wK5l" to="x5bw:7LI_gNMXm_R" resolve="getQueryClassifier" />
+                        </node>
+                      </node>
+                      <node concept="a7P8L" id="kHzC1TY7UJ" role="3jm6SO">
+                        <ref role="a7OzE" node="kHzC1TY7B9" resolve="Cls" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3I6s7M" id="7LI_gNMXkRZ" role="3I6sU7">
                     <node concept="3Aqt3T" id="7LI_gNMXkRY" role="3I6s78">
                       <ref role="3AqCNq" to="kqnc:34$A1MfhdDv" resolve="typeOf" />
@@ -616,29 +653,19 @@
                           <ref role="3A2yKK" node="7LI_gNMXkRz" resolve="qp" />
                         </node>
                       </node>
-                      <node concept="ns1u0" id="7LI_gNMXkSm" role="3AunhB">
-                        <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
-                        <node concept="nsMwS" id="7LI_gNMXkSq" role="ns1xD">
-                          <ref role="nsMwP" to="kqnc:JOGAOsVt2c" resolve="classifier" />
-                          <node concept="2OqwBi" id="7LI_gNMXlnQ" role="nsMwV">
-                            <node concept="2OqwBi" id="7LI_gNMXl0Q" role="2Oq$k0">
-                              <node concept="3A2sRY" id="7LI_gNMXkT0" role="2Oq$k0">
-                                <ref role="3A2yKK" node="7LI_gNMXkRz" resolve="qp" />
-                              </node>
-                              <node concept="2qgKlT" id="7LI_gNMXl9x" role="2OqNvi">
-                                <ref role="37wK5l" to="x5bw:5EDW3XEbK7c" resolve="getQueryTemplate" />
-                              </node>
-                            </node>
-                            <node concept="2qgKlT" id="7LI_gNMXB1c" role="2OqNvi">
-                              <ref role="37wK5l" to="x5bw:7LI_gNMXm_R" resolve="getQueryClassifier" />
-                            </node>
-                          </node>
-                        </node>
+                      <node concept="a7P8L" id="kHzC1TY7Vz" role="3AunhB">
+                        <ref role="a7OzE" node="kHzC1TY7B9" resolve="Cls" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3NuqgR" id="kHzC1TY7B8" role="0Rg$4">
+              <node concept="aZer4" id="kHzC1TY7B9" role="3XD1gS">
+                <property role="TrG5h" value="Cls" />
+              </node>
+              <node concept="32pEOW" id="kHzC1TY7Kw" role="3vLBG7" />
             </node>
           </node>
         </node>
