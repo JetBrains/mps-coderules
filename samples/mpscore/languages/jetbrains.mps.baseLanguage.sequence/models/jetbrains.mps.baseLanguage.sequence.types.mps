@@ -288,7 +288,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="3MFPGC50Eol" role="ns1xD">
-                          <ref role="nsMwP" to="kqnc:JOGAOsVt2e" resolve="parameter" />
+                          <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
                           <node concept="1nq8_$" id="3MFPGC50Erl" role="nsMwV">
                             <node concept="Hz6ka" id="4NtT$ZxGOeo" role="1nq8_t">
                               <node concept="KCUsM" id="4NtT$ZxGOeI" role="Hz6kd">
@@ -378,7 +378,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="3MFPGC50Fak" role="ns1xD">
-                          <ref role="nsMwP" to="kqnc:JOGAOsVt2e" resolve="parameter" />
+                          <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
                           <node concept="1nq8_$" id="4NtT$ZxGOm4" role="nsMwV">
                             <node concept="Hz6ka" id="4NtT$ZxGOm3" role="1nq8_t">
                               <node concept="KCUsM" id="4NtT$ZxGOm9" role="Hz6kd">

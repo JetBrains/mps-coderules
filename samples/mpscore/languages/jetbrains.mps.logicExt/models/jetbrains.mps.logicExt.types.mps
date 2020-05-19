@@ -1023,7 +1023,7 @@
                           </node>
                         </node>
                         <node concept="nsMwS" id="kHzC1TYbQX" role="ns1xD">
-                          <ref role="nsMwP" to="kqnc:JOGAOsVt2e" resolve="parameter" />
+                          <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
                           <node concept="1oi1Uc" id="kHzC1TYbR4" role="nsMwV">
                             <node concept="KCUsM" id="kHzC1TYbR9" role="1oi0x0">
                               <node concept="3wAshV" id="kHzC1TYbRk" role="KCVpo">

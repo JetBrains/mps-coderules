@@ -2098,7 +2098,7 @@
                     <node concept="3I6sU6" id="5QlJgjTEhLQ" role="3Ip0Jz">
                       <node concept="3I6s7M" id="5QlJgjTEhLV" role="3I6sU7">
                         <node concept="3jm4v3" id="3qUnz9vkVLH" role="3I6s78">
-                          <ref role="3jm46O" to="kqnc:3qUnz9vk$1o" resolve="classifierTypePlain" />
+                          <ref role="3jm46O" to="kqnc:3qUnz9vk$1o" resolve="classifierTypeNonGeneric" />
                           <node concept="2tJFMh" id="3qUnz9vkVLV" role="3jicU7">
                             <node concept="ZC_QK" id="3qUnz9vkVM3" role="2tJFKM">
                               <ref role="2aWVGs" to="wyt6:~Object" resolve="Object" />
@@ -4098,7 +4098,7 @@
                         <node concept="ns1u0" id="554EtBHBWP2" role="3AunhB">
                           <ref role="ns1xF" to="kqnc:JOGAOsVt2a" resolve="classifier" />
                           <node concept="nsMwS" id="554EtBHBWP4" role="ns1xD">
-                            <ref role="nsMwP" to="kqnc:JOGAOsVt2e" resolve="parameter" />
+                            <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
                             <node concept="1nq8_$" id="554EtBHCaWd" role="nsMwV">
                               <node concept="a7P8L" id="554EtBHCaWc" role="1nq8_t">
                                 <ref role="a7OzE" node="554EtBHBWUn" resolve="ClsTyParams" />
@@ -5377,7 +5377,7 @@
                                       </node>
                                     </node>
                                     <node concept="nsMwS" id="554EtBH_$CT" role="ns1xD">
-                                      <ref role="nsMwP" to="kqnc:JOGAOsVt2e" resolve="parameter" />
+                                      <ref role="nsMwP" to="kqnc:ZJPHcupkiC" resolve="typeParams" />
                                       <node concept="1nq8_$" id="554EtBH_$CU" role="nsMwV">
                                         <node concept="a7P8L" id="554EtBH_$CV" role="1nq8_t">
                                           <ref role="a7OzE" node="554EtBH_$D2" resolve="ClsTypeArgs" />
