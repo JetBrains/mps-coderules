@@ -58,7 +58,6 @@
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
-      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -335,9 +334,8 @@
           <node concept="3clFbJ" id="485pdrSFLlE" role="3cqZAp">
             <node concept="3clFbS" id="485pdrSFLlG" role="3clFbx">
               <node concept="3cpWs6" id="485pdrSFMld" role="3cqZAp">
-                <node concept="2OqwBi" id="485pdrSFOmB" role="3cqZAk">
-                  <node concept="1Wqviy" id="485pdrSFMzz" role="2Oq$k0" />
-                  <node concept="17RlXB" id="485pdrSFOXi" role="2OqNvi" />
+                <node concept="3clFbT" id="rZZ6HMVnh" role="3cqZAk">
+                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>
