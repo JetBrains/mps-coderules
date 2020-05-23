@@ -23868,6 +23868,33 @@
             </node>
           </node>
         </node>
+        <node concept="1DcWWT" id="3bgqfmlVBgR" role="3cqZAp">
+          <node concept="3clFbS" id="3bgqfmlVBgU" role="2LFqv$">
+            <node concept="3clFbF" id="3bgqfmlWYp$" role="3cqZAp">
+              <node concept="2YIFZM" id="3bgqfmlWYqo" role="3clFbG">
+                <ref role="37wK5l" to="zn9m:~Disposer.dispose(com.intellij.openapi.Disposable)" resolve="dispose" />
+                <ref role="1Pybhc" to="zn9m:~Disposer" resolve="Disposer" />
+                <node concept="37vLTw" id="3bgqfmlWYyt" role="37wK5m">
+                  <ref role="3cqZAo" node="3bgqfmlVBgV" resolve="tab" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="3bgqfmlVBgV" role="1Duv9x">
+            <property role="TrG5h" value="tab" />
+            <node concept="3uibUv" id="3bgqfmlVBgZ" role="1tU5fm">
+              <ref role="3uigEE" node="7kbj6I73aWI" resolve="MessageViewTab" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3bgqfmlVBh0" role="1DdaDG">
+            <node concept="37vLTw" id="3bgqfmlVBh1" role="2Oq$k0">
+              <ref role="3cqZAo" node="4MaHsBDfxin" resolve="tabs" />
+            </node>
+            <node concept="liA8E" id="3bgqfmlVBh2" role="2OqNvi">
+              <ref role="37wK5l" to="5zyv:~ConcurrentHashMap.values()" resolve="values" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="4MaHsBDe5CX" role="jymVt" />
@@ -24332,13 +24359,18 @@
                 <ref role="2Oxat5" node="2EeqUFabAmC" resolve="navigationManager" />
               </node>
             </node>
-            <node concept="2OqwBi" id="2EeqUFabAmR" role="37vLTx">
-              <node concept="37vLTw" id="2EeqUFabAmS" role="2Oq$k0">
-                <ref role="3cqZAo" node="7kbj6I73bUU" resolve="mpsProject" />
+            <node concept="2OqwBi" id="4JBuioI4uCs" role="37vLTx">
+              <node concept="2OqwBi" id="2EeqUFabAmR" role="2Oq$k0">
+                <node concept="37vLTw" id="2EeqUFabAmS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7kbj6I73bUU" resolve="mpsProject" />
+                </node>
+                <node concept="liA8E" id="4JBuioI4umo" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~MPSProject.getProject()" resolve="getProject" />
+                </node>
               </node>
-              <node concept="liA8E" id="2EeqUFabAmT" role="2OqNvi">
-                <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class)" resolve="getComponent" />
-                <node concept="3VsKOn" id="2EeqUFabAmU" role="37wK5m">
+              <node concept="liA8E" id="4JBuioI4v1j" role="2OqNvi">
+                <ref role="37wK5l" to="1m72:~ComponentManager.getService(java.lang.Class)" resolve="getService" />
+                <node concept="3VsKOn" id="4JBuioI4yDb" role="37wK5m">
                   <ref role="3VsUkX" to="efbw:~NavigationManager" resolve="NavigationManager" />
                 </node>
               </node>
@@ -24435,6 +24467,16 @@
             </node>
             <node concept="liA8E" id="7kbj6I75_uM" role="2OqNvi">
               <ref role="37wK5l" to="57ty:~MessageList.clear()" resolve="clear" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3bgqfmlTqw2" role="3cqZAp">
+          <node concept="2OqwBi" id="3bgqfmlTreT" role="3clFbG">
+            <node concept="37vLTw" id="3bgqfmlTqw0" role="2Oq$k0">
+              <ref role="3cqZAo" node="7kbj6I75dOw" resolve="tabMessageList" />
+            </node>
+            <node concept="liA8E" id="3bgqfmlTrJF" role="2OqNvi">
+              <ref role="37wK5l" to="57ty:~MessageList.dispose()" resolve="dispose" />
             </node>
           </node>
         </node>
