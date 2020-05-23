@@ -48,6 +48,7 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -56,6 +57,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -379,25 +381,38 @@
               <node concept="1bVj0M" id="1zN1RIlro2V" role="23t8la">
                 <node concept="3clFbS" id="1zN1RIlro2W" role="1bW5cS">
                   <node concept="3clFbF" id="1zN1RIlro2X" role="3cqZAp">
-                    <node concept="3clFbC" id="1zN1RIlro2Y" role="3clFbG">
-                      <node concept="2OqwBi" id="4cvvxaYhCI5" role="3uHU7B">
-                        <node concept="2JrnkZ" id="4cvvxaYhCfO" role="2Oq$k0">
-                          <node concept="2OqwBi" id="1zN1RIlro30" role="2JrQYb">
-                            <node concept="37vLTw" id="1zN1RIlro31" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1zN1RIlro33" resolve="annInst" />
-                            </node>
-                            <node concept="3TrEf2" id="1zN1RIlro32" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
-                            </node>
+                    <node concept="1Wc70l" id="4JBuioHu4Ln" role="3clFbG">
+                      <node concept="3y3z36" id="4JBuioHu6D0" role="3uHU7B">
+                        <node concept="10Nm6u" id="4JBuioHu6Zy" role="3uHU7w" />
+                        <node concept="2OqwBi" id="4JBuioHu5JB" role="3uHU7B">
+                          <node concept="37vLTw" id="4JBuioHu5qx" role="2Oq$k0">
+                            <ref role="3cqZAo" node="1zN1RIlro33" resolve="annInst" />
+                          </node>
+                          <node concept="3TrEf2" id="4JBuioHu64U" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
                           </node>
                         </node>
-                        <node concept="liA8E" id="4cvvxaYhDrT" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SNode.getReference()" resolve="getReference" />
-                        </node>
                       </node>
-                      <node concept="2tJFMh" id="4cvvxaYhE4e" role="3uHU7w">
-                        <node concept="ZC_QK" id="4cvvxaYhE4f" role="2tJFKM">
-                          <ref role="2aWVGs" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
+                      <node concept="17R0WA" id="4JBuioHu4qi" role="3uHU7w">
+                        <node concept="2OqwBi" id="4JBuioHu4qj" role="3uHU7B">
+                          <node concept="2JrnkZ" id="4JBuioHu4qk" role="2Oq$k0">
+                            <node concept="2OqwBi" id="4JBuioHu4ql" role="2JrQYb">
+                              <node concept="37vLTw" id="4JBuioHu4qm" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1zN1RIlro33" resolve="annInst" />
+                              </node>
+                              <node concept="3TrEf2" id="4JBuioHu4qn" role="2OqNvi">
+                                <ref role="3Tt5mk" to="tpee:hiAI5P0" resolve="annotation" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="4JBuioHu4qo" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SNode.getReference()" resolve="getReference" />
+                          </node>
+                        </node>
+                        <node concept="2tJFMh" id="4JBuioHu4qp" role="3uHU7w">
+                          <node concept="ZC_QK" id="4JBuioHu4qq" role="2tJFKM">
+                            <ref role="2aWVGs" to="i348:4OKkcnfu_Am" resolve="RuleTemplateMethod" />
+                          </node>
                         </node>
                       </node>
                     </node>
