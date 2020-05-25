@@ -630,7 +630,7 @@
                       <node concept="2OqwBi" id="7LI_gNMXlnQ" role="3jicU7">
                         <node concept="2OqwBi" id="7LI_gNMXl0Q" role="2Oq$k0">
                           <node concept="3A2sRY" id="7LI_gNMXkT0" role="2Oq$k0">
-                            <ref role="3A2yKK" node="7LI_gNMXkRz" />
+                            <ref role="3A2yKK" node="7LI_gNMXkRz" resolve="qp" />
                           </node>
                           <node concept="2qgKlT" id="7LI_gNMXl9x" role="2OqNvi">
                             <ref role="37wK5l" to="x5bw:5EDW3XEbK7c" resolve="getQueryTemplate" />
@@ -1335,19 +1335,6 @@
       </node>
     </node>
   </node>
-  <node concept="ns1xd" id="7LI_gNMWw2z">
-    <property role="TrG5h" value="SmodelTerms" />
-    <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
-    <node concept="ns1x$" id="7LI_gNMWw2A" role="ns1xc">
-      <property role="TrG5h" value="node" />
-      <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
-      <node concept="nspSf" id="7LI_gNMWw2B" role="ns1xx">
-        <node concept="nssqF" id="7LI_gNMWxb4" role="nspSe">
-          <property role="TrG5h" value="concept" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="ns1xd" id="7LI_gNMXjAr">
     <property role="TrG5h" value="CollectionsTerms" />
     <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
@@ -1499,6 +1486,19 @@
       <property role="TrG5h" value="termList" />
       <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
       <node concept="nspSf" id="7LI_gNNfeOU" role="ns1xx" />
+    </node>
+  </node>
+  <node concept="ns1xd" id="7LI_gNMWw2z">
+    <property role="TrG5h" value="SmodelTerms" />
+    <ref role="2efqH6" to="kqnc:JOGAOsVt29" resolve="Terms" />
+    <node concept="ns1x$" id="7LI_gNMWw2A" role="ns1xc">
+      <property role="TrG5h" value="node" />
+      <ref role="ns1xW" to="kqnc:4lCLOtwq2MF" resolve="type" />
+      <node concept="nspSf" id="7LI_gNMWw2B" role="ns1xx">
+        <node concept="nssqF" id="7LI_gNMWxb4" role="nspSe">
+          <property role="TrG5h" value="concept" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
