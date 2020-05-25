@@ -968,12 +968,6 @@
     </node>
     <node concept="2XrIbr" id="rZZ6HYdlC" role="1qtyYc">
       <property role="TrG5h" value="toInstVertex" />
-      <node concept="37vLTG" id="4JBuioGsN4n" role="3clF46">
-        <property role="TrG5h" value="graph" />
-        <node concept="3uibUv" id="4JBuioGsNCy" role="1tU5fm">
-          <ref role="3uigEE" to="kqnc:rZZ6H4XHN" resolve="ClassHierarchyGraph" />
-        </node>
-      </node>
       <node concept="37vLTG" id="rZZ6HYfGu" role="3clF46">
         <property role="TrG5h" value="v" />
         <node concept="3uibUv" id="rZZ6HYfI$" role="1tU5fm">
@@ -987,15 +981,12 @@
             <node concept="3uibUv" id="rZZ6I084N" role="1tU5fm">
               <ref role="3uigEE" to="kqnc:rZZ6HYot1" resolve="ClassHierarchyGraph.InstVertex" />
             </node>
-            <node concept="2OqwBi" id="4JBuioGsRBj" role="33vP2m">
-              <node concept="37vLTw" id="4JBuioGsRfu" role="2Oq$k0">
-                <ref role="3cqZAo" node="4JBuioGsN4n" resolve="graph" />
+            <node concept="2OqwBi" id="3bgqfmmGn_M" role="33vP2m">
+              <node concept="37vLTw" id="3bgqfmmGnnF" role="2Oq$k0">
+                <ref role="3cqZAo" node="rZZ6HYfGu" resolve="v" />
               </node>
-              <node concept="liA8E" id="4JBuioGsS3d" role="2OqNvi">
-                <ref role="37wK5l" to="kqnc:4JBuioGnAyh" resolve="instantiateVertex" />
-                <node concept="37vLTw" id="4JBuioGsSla" role="37wK5m">
-                  <ref role="3cqZAo" node="rZZ6HYfGu" resolve="v" />
-                </node>
+              <node concept="liA8E" id="3bgqfmmGorm" role="2OqNvi">
+                <ref role="37wK5l" to="kqnc:3bgqfmmG6T4" resolve="instatiate" />
               </node>
             </node>
           </node>
@@ -2086,9 +2077,6 @@
                   <node concept="2WthIp" id="rZZ6I0b3P" role="2Oq$k0" />
                   <node concept="2XshWL" id="rZZ6I0b3R" role="2OqNvi">
                     <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                    <node concept="37vLTw" id="4JBuioGsPgs" role="2XxRq1">
-                      <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
-                    </node>
                     <node concept="2OqwBi" id="3bgqfmmtaWc" role="2XxRq1">
                       <node concept="37vLTw" id="3bgqfmmtaWd" role="2Oq$k0">
                         <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
@@ -2120,9 +2108,6 @@
                   <node concept="2WthIp" id="3bgqfmmt9M0" role="2Oq$k0" />
                   <node concept="2XshWL" id="3bgqfmmt9M1" role="2OqNvi">
                     <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                    <node concept="37vLTw" id="3bgqfmmt9M2" role="2XxRq1">
-                      <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
-                    </node>
                     <node concept="2OqwBi" id="3bgqfmmt9M3" role="2XxRq1">
                       <node concept="37vLTw" id="3bgqfmmt9M4" role="2Oq$k0">
                         <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
@@ -2230,9 +2215,6 @@
                   <node concept="2WthIp" id="rZZ6I0ckc" role="2Oq$k0" />
                   <node concept="2XshWL" id="rZZ6I0ckd" role="2OqNvi">
                     <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                    <node concept="37vLTw" id="4JBuioGsPjR" role="2XxRq1">
-                      <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
-                    </node>
                     <node concept="37vLTw" id="rZZ6I0cke" role="2XxRq1">
                       <ref role="3cqZAo" node="rZZ6HY9Vq" resolve="v" />
                     </node>
@@ -2250,9 +2232,6 @@
                   <node concept="2WthIp" id="3bgqfmmtc52" role="2Oq$k0" />
                   <node concept="2XshWL" id="3bgqfmmtc53" role="2OqNvi">
                     <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                    <node concept="37vLTw" id="3bgqfmmtc54" role="2XxRq1">
-                      <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
-                    </node>
                     <node concept="2OqwBi" id="3bgqfmmtc55" role="2XxRq1">
                       <node concept="37vLTw" id="3bgqfmmtc56" role="2Oq$k0">
                         <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
@@ -2284,9 +2263,6 @@
                   <node concept="2WthIp" id="3bgqfmmtcSk" role="2Oq$k0" />
                   <node concept="2XshWL" id="3bgqfmmtcSl" role="2OqNvi">
                     <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                    <node concept="37vLTw" id="3bgqfmmtcSm" role="2XxRq1">
-                      <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
-                    </node>
                     <node concept="2OqwBi" id="3bgqfmmtcSn" role="2XxRq1">
                       <node concept="37vLTw" id="3bgqfmmtcSo" role="2Oq$k0">
                         <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
@@ -2417,9 +2393,6 @@
                   <node concept="2WthIp" id="rZZ6I1mwt" role="2Oq$k0" />
                   <node concept="2XshWL" id="rZZ6I1mwu" role="2OqNvi">
                     <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                    <node concept="37vLTw" id="4JBuioGsPuM" role="2XxRq1">
-                      <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
-                    </node>
                     <node concept="2OqwBi" id="3bgqfmmtfS6" role="2XxRq1">
                       <node concept="37vLTw" id="3bgqfmmtfS7" role="2Oq$k0">
                         <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
@@ -2451,9 +2424,6 @@
                   <node concept="2WthIp" id="3bgqfmmth46" role="2Oq$k0" />
                   <node concept="2XshWL" id="3bgqfmmth47" role="2OqNvi">
                     <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                    <node concept="37vLTw" id="3bgqfmmth48" role="2XxRq1">
-                      <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
-                    </node>
                     <node concept="2OqwBi" id="3bgqfmmth49" role="2XxRq1">
                       <node concept="37vLTw" id="3bgqfmmth4a" role="2Oq$k0">
                         <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
@@ -2485,9 +2455,6 @@
                   <node concept="2WthIp" id="3bgqfmmti4H" role="2Oq$k0" />
                   <node concept="2XshWL" id="3bgqfmmti4I" role="2OqNvi">
                     <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                    <node concept="37vLTw" id="3bgqfmmti4J" role="2XxRq1">
-                      <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
-                    </node>
                     <node concept="2OqwBi" id="3bgqfmmti4K" role="2XxRq1">
                       <node concept="37vLTw" id="3bgqfmmti4L" role="2Oq$k0">
                         <ref role="3cqZAo" node="4JBuioGsOEv" resolve="g" />
@@ -2738,9 +2705,6 @@
                       <node concept="2WthIp" id="4JBuioGkMs9" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGkMsa" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGsQPf" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGsPzk" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGkMsb" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGg4lK" resolve="a1" />
                         </node>
@@ -2750,9 +2714,6 @@
                       <node concept="2WthIp" id="4JBuioGkMsd" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGkMse" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGsR54" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGsPzk" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGkMsf" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGg603" resolve="a2" />
                         </node>
@@ -2901,9 +2862,6 @@
                       <node concept="2WthIp" id="4JBuioGJJRN" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGJJRO" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGJJRP" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGJJRi" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGJJRQ" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGJJRp" resolve="b1" />
                         </node>
@@ -2913,9 +2871,6 @@
                       <node concept="2WthIp" id="4JBuioGJJRS" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGJJRT" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGJJRU" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGJJRi" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGJJRV" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGJJRz" resolve="b2" />
                         </node>
@@ -3064,9 +3019,6 @@
                       <node concept="2WthIp" id="4JBuioGJ3bt" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGJ3bu" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGJ3bv" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGJ3aW" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGJ3bw" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGJ3b3" resolve="b" />
                         </node>
@@ -3076,9 +3028,6 @@
                       <node concept="2WthIp" id="4JBuioGJ3by" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGJ3bz" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGJ3b$" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGJ3aW" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGJ3b_" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGJ3bd" resolve="a" />
                         </node>
@@ -3227,9 +3176,6 @@
                       <node concept="2WthIp" id="4JBuioGK6x8" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGK6x9" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGK6xa" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGK6wB" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGK6xb" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGK6wI" resolve="b" />
                         </node>
@@ -3239,9 +3185,6 @@
                       <node concept="2WthIp" id="4JBuioGK6xd" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGK6xe" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGK6xf" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGK6wB" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGK6xg" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGK6wS" resolve="c" />
                         </node>
@@ -3390,9 +3333,6 @@
                       <node concept="2WthIp" id="4JBuioGJ5nZ" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGJ5o0" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGJ5o1" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGJ5nu" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGJ5o2" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGJ5n_" resolve="b" />
                         </node>
@@ -3402,9 +3342,6 @@
                       <node concept="2WthIp" id="4JBuioGJ5o4" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGJ5o5" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGJ5o6" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGJ5nu" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGJ5o7" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGJ5nJ" resolve="a" />
                         </node>
@@ -3559,9 +3496,6 @@
                       <node concept="2WthIp" id="4JBuioGPDBb" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGPDBc" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGPDBd" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGPDAE" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGPDBe" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGPDAL" resolve="d" />
                         </node>
@@ -3571,9 +3505,6 @@
                       <node concept="2WthIp" id="4JBuioGPDBg" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGPDBh" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGPDBi" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGPDAE" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGPDBj" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGPDAV" resolve="f" />
                         </node>
@@ -3749,9 +3680,6 @@
                       <node concept="2WthIp" id="4JBuioGQTPA" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGQTPB" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGQTPC" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGQTP5" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGQTPD" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGQTPc" resolve="c" />
                         </node>
@@ -3761,9 +3689,6 @@
                       <node concept="2WthIp" id="4JBuioGQTPF" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGQTPG" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGQTPH" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGQTP5" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGQTPI" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGQTPm" resolve="f" />
                         </node>
@@ -3924,9 +3849,6 @@
                       <node concept="2WthIp" id="4JBuioGRGyM" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGRGyN" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGRGyO" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGRGyh" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGRGyP" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGRGyo" resolve="j" />
                         </node>
@@ -3936,9 +3858,6 @@
                       <node concept="2WthIp" id="4JBuioGRGyR" role="2Oq$k0" />
                       <node concept="2XshWL" id="4JBuioGRGyS" role="2OqNvi">
                         <ref role="2WH_rO" node="rZZ6HYdlC" resolve="toInstVertex" />
-                        <node concept="37vLTw" id="4JBuioGRGyT" role="2XxRq1">
-                          <ref role="3cqZAo" node="4JBuioGRGyh" resolve="g" />
-                        </node>
                         <node concept="37vLTw" id="4JBuioGRGyU" role="2XxRq1">
                           <ref role="3cqZAo" node="4JBuioGRGyy" resolve="k" />
                         </node>
@@ -4468,15 +4387,12 @@
             <node concept="3uibUv" id="4JBuioGUR2w" role="1tU5fm">
               <ref role="3uigEE" to="kqnc:rZZ6HYot1" resolve="ClassHierarchyGraph.InstVertex" />
             </node>
-            <node concept="2OqwBi" id="4JBuioGUR2x" role="33vP2m">
-              <node concept="37vLTw" id="4JBuioGUR2y" role="2Oq$k0">
-                <ref role="3cqZAo" node="4JBuioGUR2p" resolve="graph" />
+            <node concept="2OqwBi" id="3bgqfmmGjKa" role="33vP2m">
+              <node concept="37vLTw" id="3bgqfmmGiD1" role="2Oq$k0">
+                <ref role="3cqZAo" node="4JBuioGUR2r" resolve="v" />
               </node>
-              <node concept="liA8E" id="4JBuioGUR2z" role="2OqNvi">
-                <ref role="37wK5l" to="kqnc:4JBuioGnAyh" resolve="instantiateVertex" />
-                <node concept="37vLTw" id="4JBuioGUR2$" role="37wK5m">
-                  <ref role="3cqZAo" node="4JBuioGUR2r" resolve="v" />
-                </node>
+              <node concept="liA8E" id="3bgqfmmGjZe" role="2OqNvi">
+                <ref role="37wK5l" to="kqnc:3bgqfmmG6T4" resolve="instatiate" />
               </node>
             </node>
           </node>

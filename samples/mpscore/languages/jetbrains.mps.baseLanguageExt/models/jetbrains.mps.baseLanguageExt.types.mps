@@ -2772,17 +2772,12 @@
                                 <ref role="a7OzE" node="3bgqfmm0$Ox" resolve="IVertex" />
                               </node>
                               <node concept="HKQnh" id="3bgqfmm0_xJ" role="3A8w4Q">
-                                <node concept="2OqwBi" id="3bgqfmm0_xR" role="HKQng">
-                                  <node concept="2YIFZM" id="3bgqfmm0_xS" role="2Oq$k0">
-                                    <ref role="37wK5l" node="74XSvywIN2p" resolve="parameterizedGraph" />
-                                    <ref role="1Pybhc" node="74XSvywIK4w" resolve="ClassHierarchy" />
-                                    <node concept="3clFbT" id="3bgqfmm0_xT" role="37wK5m" />
+                                <node concept="2OqwBi" id="3bgqfmmGfAU" role="HKQng">
+                                  <node concept="37vLTw" id="3bgqfmm0_xV" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="3bgqfmm02cw" resolve="vertex" />
                                   </node>
-                                  <node concept="liA8E" id="3bgqfmm0_xU" role="2OqNvi">
-                                    <ref role="37wK5l" node="4JBuioGnAyh" resolve="instantiateVertex" />
-                                    <node concept="37vLTw" id="3bgqfmm0_xV" role="37wK5m">
-                                      <ref role="3cqZAo" node="3bgqfmm02cw" resolve="vertex" />
-                                    </node>
+                                  <node concept="liA8E" id="3bgqfmmGfOi" role="2OqNvi">
+                                    <ref role="37wK5l" node="3bgqfmmG6T4" resolve="instatiate" />
                                   </node>
                                 </node>
                               </node>
@@ -3023,20 +3018,6 @@
                         </node>
                       </node>
                     </node>
-                  </node>
-                </node>
-                <node concept="3NuqgR" id="3bgqfmm0C6b" role="0Rg$4">
-                  <node concept="aZer4" id="3bgqfmm0C6c" role="3XD1gS">
-                    <property role="TrG5h" value="IPaths" />
-                    <node concept="2OqwBi" id="3bgqfmm0CI_" role="3gj$pD">
-                      <node concept="37vLTw" id="3bgqfmm2LKJ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3bgqfmm2LKE" resolve="allPaths" />
-                      </node>
-                      <node concept="34oBXx" id="3bgqfmm0CID" role="2OqNvi" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="3bgqfmm0Clu" role="3vLBG7">
-                    <ref role="3uigEE" node="rZZ6HIC52" resolve="HierarchyGraph.InstPath" />
                   </node>
                 </node>
               </node>
@@ -45508,6 +45489,27 @@
         </node>
       </node>
       <node concept="2tJIrI" id="rZZ6I4dg9" role="jymVt" />
+      <node concept="3clFb_" id="3bgqfmmFYj_" role="jymVt">
+        <property role="TrG5h" value="instatiate" />
+        <node concept="3Tm1VV" id="3bgqfmmFYjC" role="1B3o_S" />
+        <node concept="3clFbS" id="3bgqfmmFYjD" role="3clF47">
+          <node concept="3clFbF" id="3bgqfmmG5qn" role="3cqZAp">
+            <node concept="2ShNRf" id="3bgqfmmG5ql" role="3clFbG">
+              <node concept="1pGfFk" id="3bgqfmmG6cO" role="2ShVmc">
+                <ref role="37wK5l" node="74XSvywaG6K" resolve="HierarchyGraph.InstVertex" />
+                <node concept="Xjq3P" id="3bgqfmmG6iO" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3uibUv" id="3bgqfmmG34y" role="3clF45">
+          <ref role="3uigEE" node="74XSvywaFO7" resolve="HierarchyGraph.InstVertex" />
+          <node concept="16syzq" id="3bgqfmmG35G" role="11_B2D">
+            <ref role="16sUi3" node="74XSvyw4JFt" resolve="T" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3bgqfmmFUYH" role="jymVt" />
       <node concept="312cEg" id="74XSvyw6rBy" role="jymVt">
         <property role="TrG5h" value="paths" />
         <node concept="3Tm6S6" id="74XSvyw6rBz" role="1B3o_S" />
@@ -45604,219 +45606,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="rZZ6HI$WF" role="jymVt" />
-    <node concept="312cEu" id="rZZ6HIC52" role="jymVt">
-      <property role="TrG5h" value="InstPath" />
-      <node concept="3clFbW" id="rZZ6HIGtI" role="jymVt">
-        <node concept="37vLTG" id="rZZ6HIGEL" role="3clF46">
-          <property role="TrG5h" value="origPath" />
-          <node concept="_YKpA" id="rZZ6HIGJK" role="1tU5fm">
-            <node concept="16syzq" id="rZZ6HIGPv" role="_ZDj9">
-              <ref role="16sUi3" node="rZZ6HIG4y" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cqZAl" id="rZZ6HIGtK" role="3clF45" />
-        <node concept="3Tm1VV" id="rZZ6HIGtL" role="1B3o_S" />
-        <node concept="3clFbS" id="rZZ6HIGtM" role="3clF47">
-          <node concept="3clFbF" id="rZZ6HIGY8" role="3cqZAp">
-            <node concept="37vLTI" id="rZZ6HIGYa" role="3clFbG">
-              <node concept="2OqwBi" id="rZZ6HIM5P" role="37vLTJ">
-                <node concept="Xjq3P" id="rZZ6HIM7x" role="2Oq$k0" />
-                <node concept="2OwXpG" id="4JBuioG4g$r" role="2OqNvi">
-                  <ref role="2Oxat5" node="4JBuioG4fCT" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="rZZ6HIGYe" role="37vLTx">
-                <ref role="3cqZAo" node="rZZ6HIGEL" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="rZZ6HNiJd" role="jymVt">
-        <property role="TrG5h" value="getOrigPath" />
-        <node concept="_YKpA" id="rZZ6HNjy0" role="3clF45">
-          <node concept="16syzq" id="rZZ6HNk0x" role="_ZDj9">
-            <ref role="16sUi3" node="rZZ6HIG4y" resolve="T" />
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="rZZ6HNiJg" role="1B3o_S" />
-        <node concept="3clFbS" id="rZZ6HNiJh" role="3clF47">
-          <node concept="3clFbF" id="rZZ6HNmvH" role="3cqZAp">
-            <node concept="37vLTw" id="4JBuioG4ilf" role="3clFbG">
-              <ref role="3cqZAo" node="4JBuioG4fCT" resolve="origPath" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="rZZ6HIMEv" role="jymVt">
-        <property role="TrG5h" value="setTermPath" />
-        <node concept="37vLTG" id="rZZ6HINRa" role="3clF46">
-          <property role="TrG5h" value="tpath" />
-          <node concept="3uibUv" id="rZZ6HIOf3" role="1tU5fm">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-          </node>
-        </node>
-        <node concept="3cqZAl" id="rZZ6HIMEx" role="3clF45" />
-        <node concept="3Tm1VV" id="rZZ6HIMEy" role="1B3o_S" />
-        <node concept="3clFbS" id="rZZ6HIMEz" role="3clF47">
-          <node concept="3cpWs8" id="4JBuioG4m12" role="3cqZAp">
-            <node concept="3cpWsn" id="4JBuioG4m13" role="3cpWs9">
-              <property role="TrG5h" value="value" />
-              <node concept="3uibUv" id="4JBuioG4m14" role="1tU5fm">
-                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-              </node>
-              <node concept="2YIFZM" id="4JBuioG4m15" role="33vP2m">
-                <ref role="37wK5l" to="6exd:6HT7BWBOXr$" resolve="ground" />
-                <ref role="1Pybhc" to="6exd:6HT7BWBOXme" resolve="DataFormUtil" />
-                <node concept="37vLTw" id="4JBuioG4m16" role="37wK5m">
-                  <ref role="3cqZAo" node="rZZ6HINRa" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbJ" id="4JBuioG4m17" role="3cqZAp">
-            <node concept="3fqX7Q" id="4JBuioG4m18" role="3clFbw">
-              <node concept="2ZW3vV" id="4JBuioG4m19" role="3fr31v">
-                <node concept="3uibUv" id="4JBuioG4m1a" role="2ZW6by">
-                  <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
-                </node>
-                <node concept="37vLTw" id="4JBuioG4m1b" role="2ZW6bz">
-                  <ref role="3cqZAo" node="4JBuioG4m13" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbS" id="4JBuioG4m1c" role="3clFbx">
-              <node concept="YS8fn" id="4JBuioG4m1d" role="3cqZAp">
-                <node concept="2ShNRf" id="4JBuioG4m1e" role="YScLw">
-                  <node concept="1pGfFk" id="4JBuioG4m1f" role="2ShVmc">
-                    <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-                    <node concept="Xl_RD" id="4JBuioG4m1g" role="37wK5m">
-                      <property role="Xl_RC" value="ListNode expected" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="4JBuioG4m1h" role="3cqZAp" />
-          <node concept="3cpWs8" id="4JBuioG4m1i" role="3cqZAp">
-            <node concept="3cpWsn" id="4JBuioG4m1j" role="3cpWs9">
-              <property role="TrG5h" value="contents" />
-              <node concept="3uibUv" id="4JBuioG4m1k" role="1tU5fm">
-                <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                <node concept="3uibUv" id="4JBuioG4m1l" role="11_B2D">
-                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-                </node>
-              </node>
-              <node concept="10QFUN" id="4JBuioG4m1m" role="33vP2m">
-                <node concept="2OqwBi" id="4JBuioG4m1n" role="10QFUP">
-                  <node concept="1eOMI4" id="4JBuioG4m1o" role="2Oq$k0">
-                    <node concept="10QFUN" id="4JBuioG4m1p" role="1eOMHV">
-                      <node concept="3uibUv" id="4JBuioG4m1q" role="10QFUM">
-                        <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
-                      </node>
-                      <node concept="37vLTw" id="4JBuioG4m1r" role="10QFUP">
-                        <ref role="3cqZAo" node="rZZ6HINRa" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4JBuioG4m1s" role="2OqNvi">
-                    <ref role="37wK5l" to="6exd:5YIOneOT0Zn" resolve="contents" />
-                  </node>
-                </node>
-                <node concept="3uibUv" id="4JBuioG4m1t" role="10QFUM">
-                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                  <node concept="3uibUv" id="4JBuioG4m1u" role="11_B2D">
-                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="4JBuioG4n7N" role="3cqZAp">
-            <node concept="37vLTI" id="4JBuioG4nZ2" role="3clFbG">
-              <node concept="37vLTw" id="4JBuioG4ocN" role="37vLTx">
-                <ref role="3cqZAo" node="4JBuioG4m1j" />
-              </node>
-              <node concept="2OqwBi" id="4JBuioG4oWr" role="37vLTJ">
-                <node concept="Xjq3P" id="4JBuioG4oL0" role="2Oq$k0" />
-                <node concept="2OwXpG" id="4JBuioG4p8Q" role="2OqNvi">
-                  <ref role="2Oxat5" node="4JBuioG4hxm" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="P$JXv" id="4JBuioHavbD" role="lGtFl">
-          <node concept="TZ5HA" id="4JBuioHavbE" role="TZ5H$">
-            <node concept="1dT_AC" id="4JBuioHavbF" role="1dT_Ay">
-              <property role="1dT_AB" value="Supposed to be called from the template with the instantiated term path." />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="4JBuioG4GNm" role="jymVt">
-        <property role="TrG5h" value="getTermPath" />
-        <node concept="_YKpA" id="4JBuioG4IaF" role="3clF45">
-          <node concept="3uibUv" id="4JBuioG4JBm" role="_ZDj9">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="4JBuioG4GNp" role="1B3o_S" />
-        <node concept="3clFbS" id="4JBuioG4GNq" role="3clF47">
-          <node concept="3clFbF" id="4JBuioG4O0p" role="3cqZAp">
-            <node concept="37vLTw" id="4JBuioG4O0o" role="3clFbG">
-              <ref role="3cqZAo" node="4JBuioG4hxm" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="312cEg" id="4JBuioG4fCT" role="jymVt">
-        <property role="TrG5h" value="origPath" />
-        <node concept="3Tm6S6" id="4JBuioG4fCU" role="1B3o_S" />
-        <node concept="_YKpA" id="4JBuioG4gls" role="1tU5fm">
-          <node concept="16syzq" id="4JBuioG4gmN" role="_ZDj9">
-            <ref role="16sUi3" node="rZZ6HIG4y" resolve="T" />
-          </node>
-        </node>
-      </node>
-      <node concept="312cEg" id="4JBuioG4hxm" role="jymVt">
-        <property role="TrG5h" value="termPath" />
-        <node concept="3Tm6S6" id="4JBuioG4hxn" role="1B3o_S" />
-        <node concept="_YKpA" id="4JBuioG4hU$" role="1tU5fm">
-          <node concept="3uibUv" id="4JBuioG4hWZ" role="_ZDj9">
-            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="rZZ6HIC53" role="1B3o_S" />
-      <node concept="16euLQ" id="rZZ6HIG4y" role="16eVyc">
-        <property role="TrG5h" value="T" />
-      </node>
-      <node concept="3UR2Jj" id="4JBuioHamyr" role="lGtFl">
-        <node concept="TZ5HA" id="4JBuioHamys" role="TZ5H$">
-          <node concept="1dT_AC" id="4JBuioHamyt" role="1dT_Ay">
-            <property role="1dT_AB" value="A pair of paths: " />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="4JBuioHaqt8" role="TZ5H$">
-          <node concept="1dT_AC" id="4JBuioHaqt9" role="1dT_Ay">
-            <property role="1dT_AB" value=" - the original hierarchy path; and" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="4JBuioHaqzO" role="TZ5H$">
-          <node concept="1dT_AC" id="4JBuioHaqzP" role="1dT_Ay">
-            <property role="1dT_AB" value=" - the &quot;instantiated&quot; path of terms. " />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="4JBuioHaqFq" role="TZ5H$">
-          <node concept="1dT_AC" id="4JBuioHaqFr" role="1dT_Ay">
-            <property role="1dT_AB" value="Both start with the original node and end with the root of the hierarchy. " />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="4JBuioG43i_" role="jymVt" />
     <node concept="312cEu" id="74XSvywaFO7" role="jymVt">
       <property role="TrG5h" value="InstVertex" />
@@ -45835,55 +45624,6 @@
               </node>
               <node concept="37vLTw" id="74XSvywaLEa" role="37vLTx">
                 <ref role="3cqZAo" node="74XSvywaGb9" resolve="proto" />
-              </node>
-            </node>
-          </node>
-          <node concept="1X3_iC" id="3bgqfmm6tEp" role="lGtFl">
-            <property role="3V$3am" value="statement" />
-            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-            <node concept="3clFbF" id="4JBuioG3IAG" role="8Wnug">
-              <node concept="2OqwBi" id="4JBuioG3JYk" role="3clFbG">
-                <node concept="2OqwBi" id="4JBuioG3IKS" role="2Oq$k0">
-                  <node concept="Xjq3P" id="4JBuioG3IAE" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="4JBuioG3IWi" role="2OqNvi">
-                    <ref role="2Oxat5" node="74XSvywoo$o" resolve="instPaths" />
-                  </node>
-                </node>
-                <node concept="X8dFx" id="4JBuioG3KJa" role="2OqNvi">
-                  <node concept="2OqwBi" id="4JBuioG3MUq" role="25WWJ7">
-                    <node concept="2OqwBi" id="4JBuioG3LKx" role="2Oq$k0">
-                      <node concept="37vLTw" id="4JBuioG3L8Q" role="2Oq$k0">
-                        <ref role="3cqZAo" node="74XSvywaGb9" resolve="proto" />
-                      </node>
-                      <node concept="liA8E" id="4JBuioG3MlZ" role="2OqNvi">
-                        <ref role="37wK5l" node="74XSvywo0JV" resolve="allPaths" />
-                      </node>
-                    </node>
-                    <node concept="3$u5V9" id="4JBuioG3NU_" role="2OqNvi">
-                      <node concept="1bVj0M" id="4JBuioG3NUB" role="23t8la">
-                        <node concept="3clFbS" id="4JBuioG3NUC" role="1bW5cS">
-                          <node concept="3clFbF" id="4JBuioG4w$0" role="3cqZAp">
-                            <node concept="2ShNRf" id="4JBuioG4wzU" role="3clFbG">
-                              <node concept="1pGfFk" id="4JBuioG4yIn" role="2ShVmc">
-                                <ref role="37wK5l" node="rZZ6HIGtI" resolve="HierarchyGraph.InstPath" />
-                                <node concept="37vLTw" id="4JBuioG4z3z" role="37wK5m">
-                                  <ref role="3cqZAo" node="4JBuioG3NUD" resolve="it" />
-                                </node>
-                                <node concept="16syzq" id="4JBuioG9QXD" role="1pMfVU">
-                                  <ref role="16sUi3" node="74XSvywaG2i" resolve="T" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="Rh6nW" id="4JBuioG3NUD" role="1bW2Oz">
-                          <property role="TrG5h" value="it" />
-                          <node concept="2jxLKc" id="4JBuioG3NUE" role="1tU5fm" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -45938,37 +45678,76 @@
         <node concept="3cqZAl" id="3bgqfmm0H0z" role="3clF45" />
         <node concept="3Tm1VV" id="3bgqfmm0H0$" role="1B3o_S" />
         <node concept="3clFbS" id="3bgqfmm0H0_" role="3clF47">
-          <node concept="3cpWs8" id="3bgqfmm6rPv" role="3cqZAp">
-            <node concept="3cpWsn" id="3bgqfmm6rPw" role="3cpWs9">
-              <property role="TrG5h" value="ipath" />
-              <node concept="3uibUv" id="3bgqfmm6rNk" role="1tU5fm">
-                <ref role="3uigEE" node="rZZ6HIC52" resolve="HierarchyGraph.InstPath" />
-                <node concept="16syzq" id="3bgqfmm6rNn" role="11_B2D">
-                  <ref role="16sUi3" node="74XSvywaG2i" resolve="T" />
+          <node concept="3cpWs8" id="3bgqfmm_iDY" role="3cqZAp">
+            <node concept="3cpWsn" id="3bgqfmm_iDZ" role="3cpWs9">
+              <property role="TrG5h" value="value" />
+              <node concept="3uibUv" id="3bgqfmm_iE0" role="1tU5fm">
+                <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+              </node>
+              <node concept="2YIFZM" id="3bgqfmm_iE1" role="33vP2m">
+                <ref role="37wK5l" to="6exd:6HT7BWBOXr$" resolve="ground" />
+                <ref role="1Pybhc" to="6exd:6HT7BWBOXme" resolve="DataFormUtil" />
+                <node concept="37vLTw" id="3bgqfmm_iE2" role="37wK5m">
+                  <ref role="3cqZAo" node="3bgqfmm0Xhx" resolve="tpath" />
                 </node>
               </node>
-              <node concept="2ShNRf" id="3bgqfmm6rPx" role="33vP2m">
-                <node concept="1pGfFk" id="3bgqfmm6rPy" role="2ShVmc">
-                  <ref role="37wK5l" node="rZZ6HIGtI" resolve="HierarchyGraph.InstPath" />
-                  <node concept="16syzq" id="3bgqfmm6rPz" role="1pMfVU">
-                    <ref role="16sUi3" node="74XSvywaG2i" resolve="T" />
-                  </node>
-                  <node concept="37vLTw" id="3bgqfmm6rP$" role="37wK5m">
-                    <ref role="3cqZAo" node="3bgqfmm6iYk" resolve="origPath" />
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3bgqfmm_iE3" role="3cqZAp">
+            <node concept="3fqX7Q" id="3bgqfmm_iE4" role="3clFbw">
+              <node concept="2ZW3vV" id="3bgqfmm_iE5" role="3fr31v">
+                <node concept="3uibUv" id="3bgqfmm_iE6" role="2ZW6by">
+                  <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                </node>
+                <node concept="37vLTw" id="3bgqfmm_iE7" role="2ZW6bz">
+                  <ref role="3cqZAo" node="3bgqfmm_iDZ" resolve="value" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="3bgqfmm_iE8" role="3clFbx">
+              <node concept="YS8fn" id="3bgqfmm_iE9" role="3cqZAp">
+                <node concept="2ShNRf" id="3bgqfmm_iEa" role="YScLw">
+                  <node concept="1pGfFk" id="3bgqfmm_iEb" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                    <node concept="Xl_RD" id="3bgqfmm_iEc" role="37wK5m">
+                      <property role="Xl_RC" value="ListNode expected" />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="3bgqfmm6sPk" role="3cqZAp">
-            <node concept="2OqwBi" id="3bgqfmm6t3X" role="3clFbG">
-              <node concept="37vLTw" id="3bgqfmm6sPi" role="2Oq$k0">
-                <ref role="3cqZAo" node="3bgqfmm6rPw" resolve="ipath" />
+          <node concept="3clFbH" id="3bgqfmm_iDE" role="3cqZAp" />
+          <node concept="3cpWs8" id="3bgqfmm_kbb" role="3cqZAp">
+            <node concept="3cpWsn" id="3bgqfmm_kbc" role="3cpWs9">
+              <property role="TrG5h" value="contents" />
+              <node concept="3uibUv" id="3bgqfmm_kbd" role="1tU5fm">
+                <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                <node concept="3uibUv" id="3bgqfmm_kbe" role="11_B2D">
+                  <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                </node>
               </node>
-              <node concept="liA8E" id="3bgqfmm6ter" role="2OqNvi">
-                <ref role="37wK5l" node="rZZ6HIMEv" resolve="setTermPath" />
-                <node concept="37vLTw" id="3bgqfmm6tkv" role="37wK5m">
-                  <ref role="3cqZAo" node="3bgqfmm0Xhx" resolve="tpath" />
+              <node concept="10QFUN" id="3bgqfmm_kbf" role="33vP2m">
+                <node concept="2OqwBi" id="3bgqfmm_kbg" role="10QFUP">
+                  <node concept="1eOMI4" id="3bgqfmm_kbh" role="2Oq$k0">
+                    <node concept="10QFUN" id="3bgqfmm_kbi" role="1eOMHV">
+                      <node concept="3uibUv" id="3bgqfmm_kbj" role="10QFUM">
+                        <ref role="3uigEE" to="6exd:3OPtF03lco4" resolve="ListNode" />
+                      </node>
+                      <node concept="37vLTw" id="3bgqfmm_kbk" role="10QFUP">
+                        <ref role="3cqZAo" node="3bgqfmm0Xhx" resolve="tpath" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3bgqfmm_kbl" role="2OqNvi">
+                    <ref role="37wK5l" to="6exd:5YIOneOT0Zn" resolve="contents" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="3bgqfmm_kbm" role="10QFUM">
+                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                  <node concept="3uibUv" id="3bgqfmm_kbn" role="11_B2D">
+                    <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -45979,10 +45758,28 @@
                 <ref role="3cqZAo" node="74XSvywoo$o" resolve="instPaths" />
               </node>
               <node concept="TSZUe" id="3bgqfmm6p2s" role="2OqNvi">
-                <node concept="37vLTw" id="3bgqfmm6rP_" role="25WWJ7">
-                  <ref role="3cqZAo" node="3bgqfmm6rPw" resolve="ipath" />
+                <node concept="2ShNRf" id="3bgqfmm_n0b" role="25WWJ7">
+                  <node concept="1pGfFk" id="3bgqfmm_n0c" role="2ShVmc">
+                    <ref role="37wK5l" node="rZZ6HIGtI" resolve="HierarchyGraph.InstPath" />
+                    <node concept="16syzq" id="3bgqfmm_n0d" role="1pMfVU">
+                      <ref role="16sUi3" node="74XSvywaG2i" resolve="T" />
+                    </node>
+                    <node concept="37vLTw" id="3bgqfmm_n0e" role="37wK5m">
+                      <ref role="3cqZAo" node="3bgqfmm6iYk" resolve="origPath" />
+                    </node>
+                    <node concept="37vLTw" id="3bgqfmm_n0f" role="37wK5m">
+                      <ref role="3cqZAo" node="3bgqfmm_kbc" resolve="contents" />
+                    </node>
+                  </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="P$JXv" id="3bgqfmm_eCr" role="lGtFl">
+          <node concept="TZ5HA" id="3bgqfmm_h_n" role="TZ5H$">
+            <node concept="1dT_AC" id="3bgqfmm_h_o" role="1dT_Ay">
+              <property role="1dT_AB" value="Supposed to be called from the template with the instantiated term path." />
             </node>
           </node>
         </node>
@@ -46043,12 +45840,105 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4JBuioH4Eqb" role="jymVt" />
+    <node concept="312cEu" id="rZZ6HIC52" role="jymVt">
+      <property role="TrG5h" value="InstPath" />
+      <node concept="3clFbW" id="rZZ6HIGtI" role="jymVt">
+        <node concept="37vLTG" id="rZZ6HIGEL" role="3clF46">
+          <property role="TrG5h" value="origPath" />
+          <node concept="_YKpA" id="rZZ6HIGJK" role="1tU5fm">
+            <node concept="16syzq" id="rZZ6HIGPv" role="_ZDj9">
+              <ref role="16sUi3" node="rZZ6HIG4y" resolve="T" />
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="3bgqfmm_kW5" role="3clF46">
+          <property role="TrG5h" value="termPath" />
+          <node concept="_YKpA" id="3bgqfmm_lm6" role="1tU5fm">
+            <node concept="3uibUv" id="3bgqfmm_lBY" role="_ZDj9">
+              <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cqZAl" id="rZZ6HIGtK" role="3clF45" />
+        <node concept="3Tm1VV" id="rZZ6HIGtL" role="1B3o_S" />
+        <node concept="3clFbS" id="rZZ6HIGtM" role="3clF47">
+          <node concept="3clFbF" id="rZZ6HIGY8" role="3cqZAp">
+            <node concept="37vLTI" id="rZZ6HIGYa" role="3clFbG">
+              <node concept="2OqwBi" id="rZZ6HIM5P" role="37vLTJ">
+                <node concept="Xjq3P" id="rZZ6HIM7x" role="2Oq$k0" />
+                <node concept="2OwXpG" id="4JBuioG4g$r" role="2OqNvi">
+                  <ref role="2Oxat5" node="4JBuioG4fCT" resolve="origPath" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="rZZ6HIGYe" role="37vLTx">
+                <ref role="3cqZAo" node="rZZ6HIGEL" resolve="origPath" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3bgqfmmDcFw" role="3cqZAp">
+            <node concept="37vLTI" id="3bgqfmmDdPw" role="3clFbG">
+              <node concept="37vLTw" id="3bgqfmmDdVp" role="37vLTx">
+                <ref role="3cqZAo" node="3bgqfmm_kW5" resolve="termPath" />
+              </node>
+              <node concept="2OqwBi" id="3bgqfmmDcUO" role="37vLTJ">
+                <node concept="Xjq3P" id="3bgqfmmDcFu" role="2Oq$k0" />
+                <node concept="2OwXpG" id="3bgqfmmDd4k" role="2OqNvi">
+                  <ref role="2Oxat5" node="4JBuioG4hxm" resolve="termPath" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="312cEg" id="4JBuioG4fCT" role="jymVt">
+        <property role="TrG5h" value="origPath" />
+        <node concept="3Tmbuc" id="3bgqfmm_IoZ" role="1B3o_S" />
+        <node concept="_YKpA" id="4JBuioG4gls" role="1tU5fm">
+          <node concept="16syzq" id="4JBuioG4gmN" role="_ZDj9">
+            <ref role="16sUi3" node="rZZ6HIG4y" resolve="T" />
+          </node>
+        </node>
+      </node>
+      <node concept="312cEg" id="4JBuioG4hxm" role="jymVt">
+        <property role="TrG5h" value="termPath" />
+        <node concept="3Tmbuc" id="3bgqfmm_JMG" role="1B3o_S" />
+        <node concept="_YKpA" id="4JBuioG4hU$" role="1tU5fm">
+          <node concept="3uibUv" id="4JBuioG4hWZ" role="_ZDj9">
+            <ref role="3uigEE" to="6exd:1bm7a6EXvsP" resolve="DataForm" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="3bgqfmm_FeA" role="1B3o_S" />
+      <node concept="16euLQ" id="rZZ6HIG4y" role="16eVyc">
+        <property role="TrG5h" value="T" />
+      </node>
+      <node concept="3UR2Jj" id="4JBuioHamyr" role="lGtFl">
+        <node concept="TZ5HA" id="4JBuioHamys" role="TZ5H$">
+          <node concept="1dT_AC" id="4JBuioHamyt" role="1dT_Ay">
+            <property role="1dT_AB" value="A pair of paths: " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4JBuioHaqt8" role="TZ5H$">
+          <node concept="1dT_AC" id="4JBuioHaqt9" role="1dT_Ay">
+            <property role="1dT_AB" value=" - the original hierarchy path; and" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4JBuioHaqzO" role="TZ5H$">
+          <node concept="1dT_AC" id="4JBuioHaqzP" role="1dT_Ay">
+            <property role="1dT_AB" value=" - the &quot;instantiated&quot; path of terms. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4JBuioHaqFq" role="TZ5H$">
+          <node concept="1dT_AC" id="4JBuioHaqFr" role="1dT_Ay">
+            <property role="1dT_AB" value="Both start with the original node and end with the root of the hierarchy. " />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="4JBuioH4EEG" role="jymVt" />
     <node concept="312cEu" id="4JBuioH4NGV" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="PathFinder" />
-      <node concept="2tJIrI" id="4JBuioH4Yc7" role="jymVt" />
-      <node concept="2tJIrI" id="3bgqfmmlu82" role="jymVt" />
       <node concept="3clFb_" id="3bgqfmmlr7K" role="jymVt">
         <property role="TrG5h" value="findHierarchyPath" />
         <node concept="37vLTG" id="3bgqfmmlr7L" role="3clF46">
@@ -46419,8 +46309,8 @@
                                 <node concept="37vLTw" id="3bgqfmmlr9I" role="2Oq$k0">
                                   <ref role="3cqZAo" node="3bgqfmmlr9L" resolve="it" />
                                 </node>
-                                <node concept="liA8E" id="3bgqfmmlr9J" role="2OqNvi">
-                                  <ref role="37wK5l" node="rZZ6HNiJd" resolve="getOrigPath" />
+                                <node concept="2OwXpG" id="3bgqfmm_8Dw" role="2OqNvi">
+                                  <ref role="2Oxat5" node="4JBuioG4fCT" resolve="origPath" />
                                 </node>
                               </node>
                               <node concept="34oBXx" id="3bgqfmmlr9K" role="2OqNvi" />
@@ -46486,59 +46376,13 @@
             </node>
           </node>
         </node>
-        <node concept="P$JXv" id="3bgqfmmlra6" role="lGtFl">
-          <node concept="TZ5HA" id="3bgqfmmlra7" role="TZ5H$">
-            <node concept="1dT_AC" id="3bgqfmmlra8" role="1dT_Ay">
-              <property role="1dT_AB" value="Finds the shortest path in the hierarchy graph originating at the node" />
-            </node>
-          </node>
-          <node concept="TZ5HA" id="3bgqfmmlra9" role="TZ5H$">
-            <node concept="1dT_AC" id="3bgqfmmlraa" role="1dT_Ay">
-              <property role="1dT_AB" value="represented by this vertex, and ending at the node that would produce" />
-            </node>
-          </node>
-          <node concept="TZ5HA" id="3bgqfmmlrab" role="TZ5H$">
-            <node concept="1dT_AC" id="3bgqfmmlrac" role="1dT_Ay">
-              <property role="1dT_AB" value="the specified " />
-            </node>
-            <node concept="1dT_AA" id="3bgqfmmlrad" role="1dT_Ay">
-              <node concept="VVOAv" id="3bgqfmmlrae" role="qph3F">
-                <node concept="TZ5HA" id="3bgqfmmlraf" role="2Xj1qM">
-                  <node concept="1dT_AC" id="3bgqfmmlrag" role="1dT_Ay">
-                    <property role="1dT_AB" value="target" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="1dT_AC" id="3bgqfmmlrah" role="1dT_Ay">
-              <property role="1dT_AB" value=" as the instance of its origin," />
-            </node>
-          </node>
-          <node concept="TZ5HA" id="3bgqfmmlrai" role="TZ5H$">
-            <node concept="1dT_AC" id="3bgqfmmlraj" role="1dT_Ay">
-              <property role="1dT_AB" value="if a vertex were to be created from it. " />
-            </node>
-          </node>
-          <node concept="TZ5HA" id="3bgqfmmlrak" role="TZ5H$">
-            <node concept="1dT_AC" id="3bgqfmmlral" role="1dT_Ay">
-              <property role="1dT_AB" value="The target here is supposed to be higher in the hierarchy." />
-            </node>
-          </node>
-          <node concept="TZ5HA" id="3bgqfmmlram" role="TZ5H$">
-            <node concept="1dT_AC" id="3bgqfmmlran" role="1dT_Ay">
-              <property role="1dT_AB" value="Throws an EvaluationFailureException in case no path can be found. " />
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="3Tmbuc" id="4JBuioH4X$m" role="1B3o_S" />
-      <node concept="2tJIrI" id="4JBuioH4Ycc" role="jymVt" />
     </node>
     <node concept="2tJIrI" id="74XSvyw4Fb6" role="jymVt" />
     <node concept="312cEu" id="rZZ6I3T2O" role="jymVt">
       <property role="TrG5h" value="LubFinder" />
       <property role="2bfB8j" value="true" />
-      <node concept="2tJIrI" id="4JBuioGh3L7" role="jymVt" />
       <node concept="3clFb_" id="4JBuioGh6QY" role="jymVt">
         <property role="TrG5h" value="findLub" />
         <node concept="37vLTG" id="4JBuioGKPSo" role="3clF46">
@@ -47766,43 +47610,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="4JBuioGgvog" role="jymVt" />
-    <node concept="3clFb_" id="4JBuioGmV0F" role="jymVt">
-      <property role="TrG5h" value="instantiateVertex" />
-      <node concept="37vLTG" id="4JBuioGnkYm" role="3clF46">
-        <property role="TrG5h" value="v" />
-        <node concept="3uibUv" id="4JBuioGnpqf" role="1tU5fm">
-          <ref role="3uigEE" node="74XSvyw4Fue" resolve="HierarchyGraph.Vertex" />
-          <node concept="16syzq" id="4JBuioGnpsl" role="11_B2D">
-            <ref role="16sUi3" node="74XSvywaW55" resolve="T" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="4JBuioGn1Jp" role="3clF45">
-        <ref role="3uigEE" node="74XSvywaFO7" resolve="HierarchyGraph.InstVertex" />
-        <node concept="16syzq" id="4JBuioGn6Tp" role="11_B2D">
-          <ref role="16sUi3" node="74XSvywaW55" resolve="T" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4JBuioGmV0I" role="1B3o_S" />
-      <node concept="3clFbS" id="4JBuioGmV0J" role="3clF47">
-        <node concept="3clFbF" id="4JBuioGnDM5" role="3cqZAp">
-          <node concept="2ShNRf" id="4JBuioGnDM3" role="3clFbG">
-            <node concept="1pGfFk" id="4JBuioH7Nj$" role="2ShVmc">
-              <ref role="37wK5l" node="74XSvywaG6K" resolve="HierarchyGraph.InstVertex" />
-              <node concept="16syzq" id="4JBuioGo7sk" role="1pMfVU">
-                <ref role="16sUi3" node="74XSvywaW55" resolve="T" />
-              </node>
-              <node concept="37vLTw" id="4JBuioGnEU9" role="37wK5m">
-                <ref role="3cqZAo" node="4JBuioGnkYm" resolve="v" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="4JBuioGmOaM" role="jymVt" />
-    <node concept="2tJIrI" id="4JBuioH3HTY" role="jymVt" />
     <node concept="3clFb_" id="3bgqfmmljvI" role="jymVt">
       <property role="TrG5h" value="buildPath" />
       <node concept="37vLTG" id="3bgqfmmljvJ" role="3clF46">
@@ -47847,6 +47655,28 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="3bgqfmmGS3_" role="lGtFl">
+        <node concept="TZ5HA" id="3bgqfmmGYOk" role="TZ5H$">
+          <node concept="1dT_AC" id="3bgqfmmGYOl" role="1dT_Ay">
+            <property role="1dT_AB" value="Finds the shortest path in the hierarchy graph originating at the node" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3bgqfmmGYOm" role="TZ5H$">
+          <node concept="1dT_AC" id="3bgqfmmGYOn" role="1dT_Ay">
+            <property role="1dT_AB" value="represented by source, and ending at the node represented by target. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3bgqfmmGYOo" role="TZ5H$">
+          <node concept="1dT_AC" id="3bgqfmmGYOp" role="1dT_Ay">
+            <property role="1dT_AB" value="The target here is supposed to be higher in the hierarchy." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3bgqfmmGYOq" role="TZ5H$">
+          <node concept="1dT_AC" id="3bgqfmmGYOr" role="1dT_Ay">
+            <property role="1dT_AB" value="Throws an EvaluationFailureException in case no path can be found. " />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3bgqfmmljvH" role="jymVt" />
     <node concept="3clFb_" id="4JBuioGg$$g" role="jymVt">
@@ -47874,20 +47704,6 @@
       </node>
       <node concept="3Tm1VV" id="4JBuioGg$$j" role="1B3o_S" />
       <node concept="3clFbS" id="4JBuioGg$$k" role="3clF47">
-        <node concept="3cpWs8" id="4JBuioGh2YJ" role="3cqZAp">
-          <node concept="3cpWsn" id="4JBuioGh2YK" role="3cpWs9">
-            <property role="TrG5h" value="finder" />
-            <node concept="3uibUv" id="4JBuioGh2IK" role="1tU5fm">
-              <ref role="3uigEE" node="rZZ6I3T2O" resolve="HierarchyGraph.LubFinder" />
-            </node>
-            <node concept="2ShNRf" id="4JBuioGh2YL" role="33vP2m">
-              <node concept="HV5vD" id="4JBuioGKXma" role="2ShVmc">
-                <ref role="HV5vE" node="rZZ6I3T2O" resolve="HierarchyGraph.LubFinder" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="4JBuioGKW53" role="3cqZAp" />
         <node concept="3clFbF" id="4JBuioGh29t" role="3cqZAp">
           <node concept="2OqwBi" id="4JBuioGh3oV" role="3clFbG">
             <node concept="liA8E" id="4JBuioGj6a8" role="2OqNvi">
@@ -47899,8 +47715,10 @@
                 <ref role="3cqZAo" node="4JBuioGgWLx" resolve="right" />
               </node>
             </node>
-            <node concept="37vLTw" id="4JBuioGh2YP" role="2Oq$k0">
-              <ref role="3cqZAo" node="4JBuioGh2YK" resolve="finder" />
+            <node concept="2ShNRf" id="3bgqfmmH0k_" role="2Oq$k0">
+              <node concept="HV5vD" id="3bgqfmmH0kA" role="2ShVmc">
+                <ref role="HV5vE" node="rZZ6I3T2O" resolve="HierarchyGraph.LubFinder" />
+              </node>
             </node>
           </node>
         </node>
@@ -47918,7 +47736,7 @@
         </node>
         <node concept="TZ5HA" id="4JBuioH3s4H" role="TZ5H$">
           <node concept="1dT_AC" id="4JBuioH3s4I" role="1dT_Ay">
-            <property role="1dT_AB" value="The result is the nested list of unique parameterizations of terms representing the LUB of the two types." />
+            <property role="1dT_AB" value="The result is the nested list of unique parametrizations of terms representing the LUB of the two types." />
           </node>
         </node>
         <node concept="TZ5HA" id="4JBuioH3jEI" role="TZ5H$">
@@ -48621,6 +48439,27 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="3bgqfmmG9Ye" role="jymVt" />
+      <node concept="3clFb_" id="3bgqfmmG6T4" role="jymVt">
+        <property role="TrG5h" value="instatiate" />
+        <node concept="3Tm1VV" id="3bgqfmmG6T5" role="1B3o_S" />
+        <node concept="3uibUv" id="3bgqfmmGlr2" role="3clF45">
+          <ref role="3uigEE" node="rZZ6HYot1" resolve="ClassHierarchyGraph.InstVertex" />
+        </node>
+        <node concept="3clFbS" id="3bgqfmmG6Te" role="3clF47">
+          <node concept="3clFbF" id="3bgqfmmGdqB" role="3cqZAp">
+            <node concept="2ShNRf" id="3bgqfmmGdq_" role="3clFbG">
+              <node concept="1pGfFk" id="3bgqfmmGdPu" role="2ShVmc">
+                <ref role="37wK5l" node="rZZ6HYs2r" resolve="ClassHierarchyGraph.InstVertex" />
+                <node concept="Xjq3P" id="3bgqfmmGdVQ" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="3bgqfmmG6Tf" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
       <node concept="2tJIrI" id="rZZ6H4ZVF" role="jymVt" />
       <node concept="3clFb_" id="rZZ6H505u" role="jymVt">
         <property role="TrG5h" value="substitutionMap" />
@@ -48710,43 +48549,6 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="rZZ6Haw9Q" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="rZZ6H52LJ" role="jymVt" />
-    <node concept="3clFb_" id="4JBuioGnAyh" role="jymVt">
-      <property role="TrG5h" value="instantiateVertex" />
-      <node concept="37vLTG" id="4JBuioGnAyi" role="3clF46">
-        <property role="TrG5h" value="v" />
-        <node concept="3uibUv" id="4JBuioGnAyj" role="1tU5fm">
-          <ref role="3uigEE" node="74XSvyw4Fue" resolve="HierarchyGraph.Vertex" />
-          <node concept="3Tqbb2" id="4JBuioGnAyq" role="11_B2D">
-            <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="4JBuioGo5mx" role="3clF45">
-        <ref role="3uigEE" node="rZZ6HYot1" resolve="ClassHierarchyGraph.InstVertex" />
-      </node>
-      <node concept="3Tm1VV" id="4JBuioGnAyn" role="1B3o_S" />
-      <node concept="3clFbS" id="4JBuioGnAyr" role="3clF47">
-        <node concept="3clFbF" id="4JBuioGnBCs" role="3cqZAp">
-          <node concept="2ShNRf" id="4JBuioGnBCq" role="3clFbG">
-            <node concept="1pGfFk" id="4JBuioH7$Zn" role="2ShVmc">
-              <ref role="37wK5l" node="rZZ6HYs2r" resolve="ClassHierarchyGraph.InstVertex" />
-              <node concept="10QFUN" id="4JBuioGrc3Q" role="37wK5m">
-                <node concept="37vLTw" id="4JBuioGrc3P" role="10QFUP">
-                  <ref role="3cqZAo" node="4JBuioGnAyi" resolve="v" />
-                </node>
-                <node concept="3uibUv" id="4JBuioGrc3O" role="10QFUM">
-                  <ref role="3uigEE" node="rZZ6H4Y2j" resolve="ClassHierarchyGraph.Vertex" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4JBuioGnAys" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
