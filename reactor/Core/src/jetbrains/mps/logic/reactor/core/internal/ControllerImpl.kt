@@ -89,14 +89,14 @@ internal class ControllerImpl (
         processing
 
     override fun ask(invocation: PredicateInvocation): Boolean {
-        val solver = invocation.predicate().symbol().solver()
+        val solver = invocation.predicate().symbol().solver(supervisor)
         val result = solver.ask(invocation)
         trace.ask(result, invocation)
         return result
     }
 
     override fun tell(invocation: PredicateInvocation) {
-        val solver = invocation.predicate().symbol().solver()
+        val solver = invocation.predicate().symbol().solver(supervisor)
         trace.tell(invocation)
         solver.tell(invocation)
     }

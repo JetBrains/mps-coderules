@@ -18,6 +18,7 @@ package jetbrains.mps.logic.reactor.program;
 
 
 import jetbrains.mps.logic.reactor.evaluation.Solver;
+import jetbrains.mps.logic.reactor.evaluation.Supervisor;
 
 /**
  * A predicate symbol.
@@ -31,6 +32,10 @@ public abstract class PredicateSymbol extends Symbol {
     }
 
     public abstract Solver solver();
+
+    public Solver solver(Supervisor supervisor) {
+        return solver();
+    }
 
     @Override
     public String toString() {
